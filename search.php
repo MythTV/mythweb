@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2005.01.23 (xris)
+    search.php                               Last Updated: 2005.01.24 (xris)
 
     Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -24,15 +24,16 @@
         $_SESSION['search']['search_exact']         = _or($_GET['search_exact'],         $_POST['search_exact']);
     }
 // Individual search strings for different fields
-    elseif ($_GET['title'] || $_GET['subtitle'] || $_GET['description'] || $_GET['category'] || $_GET['category_type']
-            || $_POST['title'] || $_POST['subtitle'] || $_POST['description'] || $_POST['category'] || $_POST['category_type']) {
+    elseif ($_GET['title'] || $_GET['subtitle'] || $_GET['description'] || $_GET['category'] || $_GET['category_type'] || $_GET['originalairdate']
+            || $_POST['title'] || $_POST['subtitle'] || $_POST['description'] || $_POST['category'] || $_POST['category_type'] || $_POST['originalairdate'] ) {
         unset($_SESSION['search']);
-        $_SESSION['search']['title']         = _or($_GET['title'],         $_POST['title']);
-        $_SESSION['search']['subtitle']      = _or($_GET['subtitle'],      $_POST['subtitle']);
-        $_SESSION['search']['description']   = _or($_GET['description'],   $_POST['description']);
-        $_SESSION['search']['category']      = _or($_GET['category'],      $_POST['category']);
-        $_SESSION['search']['category_type'] = _or($_GET['category_type'], $_POST['category_type']);
-        $_SESSION['search']['search_exact']  = _or($_GET['search_exact'],  $_POST['search_exact']);
+        $_SESSION['search']['title']           = _or($_GET['title'],           $_POST['title']);
+        $_SESSION['search']['subtitle']        = _or($_GET['subtitle'],        $_POST['subtitle']);
+        $_SESSION['search']['description']     = _or($_GET['description'],     $_POST['description']);
+        $_SESSION['search']['category']        = _or($_GET['category'],        $_POST['category']);
+        $_SESSION['search']['category_type']   = _or($_GET['category_type'],   $_POST['category_type']);
+        $_SESSION['search']['originalairdate'] = _or($_GET['originalairdate'], $_POST['originalairdate']);
+        $_SESSION['search']['search_exact']    = _or($_GET['search_exact'],    $_POST['search_exact']);
     }
 
 // Start the query out as an array
@@ -86,6 +87,8 @@
             $query[] = "program.category$compare".search_escape($_SESSION['search']['category']);
         if (isset($_SESSION['search']['category_type']))
             $query[] = "program.category_type$compare".search_escape($_SESSION['search']['category_type']);
+    if (isset($_SESSION['search']['originalairdate']))
+        $query[] = "program.originalairdate > NOW()";
     }
 
 // No query?
