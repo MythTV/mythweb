@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    conf.php                                  Last Updated: 2004.05.05 (xris)
+    conf.php                                  Last Updated: 2004.06.03 (xris)
 
     global configuration for mythweb
 \***                                                                        ***/
@@ -28,7 +28,7 @@
     define('server_domain', $_SERVER['SERVER_NAME'] ? $_SERVER['SERVER_NAME'] : $_SERVER['HTTP_HOST']);
 
 // Email address to which php and database errors are mailed to
-    define('Error_Email', 'php_errors@'.preg_match('/([\w\-]+\.[\w\-]+)$/', server_domain));
+    define('Error_Email', 'php_errors@'.preg_replace('/.*?\b([\w\-]+\.[\w\-]+)$/', '$1', server_domain));
 
 // Path to the image cache directory
     define('image_cache', 'image_cache');
