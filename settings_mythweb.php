@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2004.07.06 (xris)
+    settings.php                            Last Updated: 2004.11.30 (xris)
 
     mythweb settings
 \***                                                                        ***/
@@ -66,16 +66,12 @@
 */
     function language_select() {
         echo '<select name="language">';
-        foreach (get_sorted_files("languages/") as $file) {
-        // Skip the CVS directory
-            if ($file == 'CVS') continue;
-            if (!ereg('(.*)\.php$', $file, $regs)) continue;
-            $language = $regs[1];
+        foreach ($GLOBALS['Languages'] as $lang => $details) {
         // Print the option
-            echo '<option value="'.htmlentities($language).'"';
-            if ($_SESSION['language'] == $language)
+            echo '<option value="'.htmlentities($lang).'"';
+            if ($_SESSION['language'] == $lang)
                 echo ' SELECTED';
-            echo '>'.htmlentities($language).'</option>';
+            echo '>'.$details[0].'</option>';
         }
         echo '</select>';
     }
