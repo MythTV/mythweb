@@ -31,7 +31,7 @@ class Theme {
 <p>
 <table width="100%" border="0" cellspacing="2" cellpadding="2">
 <tr>
-	<td rowspan="2" width="300" align="center"><A HREF="http://www.mythtv.org"><img src="<?=theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('/themes/Default/pngbehavior.htc');"></a></td>
+	<td rowspan="2" width="300" align="center"><a href="http://www.mythtv.org"><img src="<?=theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('<?=theme_dir?>pngbehavior.htc');"></a></td>
 	<td colspan="2" align="right"><table border="0" cellspacing="2" cellpadding="2" style="padding-right: 10px">
 		<tr>
 <?
