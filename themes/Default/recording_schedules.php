@@ -44,8 +44,8 @@ class Theme_recording_schedules extends Theme {
 
 <?php
 $group_field = $_GET['sortby'];
-if ($group_field == "")
-    $group_field = "title";
+if ($group_field == "title")
+    $group_field = "";
 elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "type") || ($group_field == "profile")) )
 	$group_field = "";
 
@@ -159,8 +159,6 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
 		$cur_group = $show->texttype;
 	elseif ($group_field == 'channum')
 		$cur_group = $show->channel->name;
-	elseif ($group_field == 'title')
-		$cur_group = $show->title;
 	elseif ($group_field == 'profile')
 		$cur_group = $show->profile;
 
