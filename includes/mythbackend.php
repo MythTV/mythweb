@@ -1,6 +1,6 @@
 <?
 /***																		***\
-	mythbackend.php                          Last Updated: 2003.08.03 (xris)
+	mythbackend.php                          Last Updated: 2003.08.17 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -140,8 +140,8 @@
 		$pngpath = pixmap_local_path . '/' . basename($fileurl) . ".png";
 		if (!is_file($pngpath)) {
 			$hostname = chop(`hostname`);
-			if ('myth://' != substr($fileurl, 0, 7)) {
-				$generate_pixmap = !is_file("$fileurl.png");
+			if (substr($fileurl, 0, 7) != 'myth://') {
+				$generate_pixmap = (is_file("$fileurl.png") && is_readable("$fileurl.png")) ? false : true;
 			}
 			else {
 				$recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
@@ -185,9 +185,8 @@
 															  $datasocket));
 			}
 
-			if (substr($fileurl, 0, 7) != 'myth://') {
-				if (is_file("$fileurl.png"))
-					copy("$fileurl.png", $pngpath);
+			if (substr($fileurl, 0, 7) != 'myth://' && is_file("$fileurl.png") && is_readable("$fileurl.png")) {
+				copy("$fileurl.png", $pngpath);
 			}
 			elseif ($datasocket && $recs[3]) {
 				$cmd = "QUERY_FILETRANSFER " . $recs[1] . backend_sep . 'REQUEST_BLOCK' . backend_sep . $recs[3];

@@ -73,7 +73,7 @@
 
 // Locan and web paths to the pixmap image cache
 	define('pixmap_local_path', 'image_cache');
-	define('pixmap_web_path', '/image_cache');
+	define('pixmap_web_path', 'image_cache');
 
 // Height and width of generated pixmaps (for now, these are fixed - please do not change these numbers)
 	define('pixmap_width',  160);
