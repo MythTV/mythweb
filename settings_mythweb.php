@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2005.01.23 (xris)
+    settings.php                            Last Updated: 2005.02.11 (xris)
 
     mythweb settings
 \***                                                                        ***/
@@ -49,8 +49,8 @@
     function theme_select() {
         echo '<select name="theme">';
         foreach (get_sorted_files("themes/") as $theme) {
-        // Skip the CVS directory
-            if ($theme == 'CVS') continue;
+        // Skip the CVS directory and the non-browser themes
+            if (in_array($theme, array('CVS', 'wap', 'wml', 'vxml'))) continue;
         // Ignore non-directories
             if (!is_dir("themes/$theme")) continue;
         // Print the option
