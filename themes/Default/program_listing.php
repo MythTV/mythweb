@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2004.05.04 (xris)
+    program_listing.php                      Last Updated: 2004.07.21 (xris)
 
     This file defines a theme class for the program listing section.
     It must define several methods, some of which have specific
@@ -26,7 +26,7 @@ class Theme_program_listing extends Theme {
     <td width="50%" align="center"><?php echo _LANG_CURRENTLY_BROWSING . strftime(' %a %b %e, %Y, %I:%M %p', $start_time)?></td>
     <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <form class="form" id="program_listing" action="program_listing.php" method="get">
-        <table width="100%" border="0" cellspacing="0" cellpadding="2">
+        <table border="0" cellspacing="0" cellpadding="2">
         <tr>
 
             <td align="center"><? echo _LANG_JUMP_TO?>:&nbsp;&nbsp;</td>
@@ -55,7 +55,7 @@ class Theme_program_listing extends Theme {
                     echo ">".strftime($_SESSION['date_listing_jump'] , $time)."</option>";
                 }
                 ?></select></td>
-            <td align="center"><input type="submit" class="submit" value="<? echo _LANG_JUMP?>"></td>
+            <td align="center"><noscript><input type="submit" class="submit" value="<? echo _LANG_JUMP?>"></noscript></td>
 
 
         </tr>
