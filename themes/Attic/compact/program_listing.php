@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2003.07.23 (xris)
+    program_listing.php                      Last Updated: 2004.02.04 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -234,19 +234,15 @@ class Theme_program_listing extends Theme {
 			 .$program->title
 			 .(strlen($program->subtitle) > 0 ? ": $program->subtitle" : '');
 	// Print some additional information for movies
-		if ($program->category_type == 'movie'
-			|| $program->category_type == 'Film') )
-		{
+		if ($program->category_type == 'movie' || $program->category_type == 'Film') {
 			if ($program->airdate > 0)
 				$parens = sprintf('%4d', $program->airdate);
-			if (strlen($program->rating) > 0)
-			{
+			if (strlen($program->rating) > 0) {
 				if ($parens)
 					$parens .= ", ";
 				$parens .= "<i>$program->rating</i>";
 			}
-			if (strlen($program->starstring) > 0)
-			{
+			if (strlen($program->starstring) > 0) {
 				if ($parens)
 					$parens .= ", ";
 				$parens .= $program->starstring;
