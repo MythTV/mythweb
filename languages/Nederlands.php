@@ -90,7 +90,7 @@ define ('_LANG_KEY_BINDINGS', 			'Toetsbindingen');
 define ('_LANG_CONFIGURE', 			'Instellen');
 define ('_LANG_GO_TO', 				'Ga Naar');
 define ('_LANG_ADVANCED', 			'Geavanceerd');
-define ('_LANG_SEARCH', 			'zoek');
+define ('_LANG_SEARCH', 			'Zoek');
 define ('_LANG_FORMAT_HELP', 			'format help');
 define ('_LANG_STATUS_BAR', 			'Status Balk');
 define ('_LANG_SCHEDULED_RECORDINGS', 		'Geplande Opnames');
@@ -113,8 +113,9 @@ define ('_LANG_DATE', 			'Datum');
 define ('_LANG_JUMP', 			'Ga Naar');
 
 /* program_detail.php */
-define ('_LANG_SEARCH_IMDB', 		'Zoek op IMDB');
-define ('_LANG_SEARCH_GOOGLE', 		'Zoek op Google');
+define ('_LANG_IMDB', 		    'IMDB');
+define ('_LANG_GOOGLE', 		'Google');
+define ('_LANG_TVTOME', 		'TVTome');
 define ('_LANG_MINUTES', 		'minuten');
 define ('_LANG_TO', 			'tot');
 define ('_LANG_CATEGORY', 		'Categorie');
