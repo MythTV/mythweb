@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2004.03.28 (xris)
+	program_detail.php                       Last Updated: 2004.04.19 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
@@ -24,19 +24,19 @@ class Theme_program_detail extends Theme {
 				if (show_channel_icons === true) {
 					?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
 					<tr>
-						<td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $start_time?>" class="huge"
+						<td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $this_program->starttime?>" class="huge"
 														onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
 														onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign?></a>&nbsp;</td>
 						<td width="50%" align="right"><?php
 							if (is_file($this_channel->icon)) {
-								?><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $start_time?>"
+								?><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $this_program->starttime?>"
 									onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
 									onmouseout="window.status='';return true"><img src="<?php echo $this_channel->icon?>" height="30" width="30"></a><?php
 							} else {
 								echo '&nbsp;';
 							}?></td>
 					</tr><tr>
-						<td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $start_time?>"
+						<td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $this_program->starttime?>"
 														onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
 														onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->callsign : $this_channel->channum?></a></td>
 					</tr>
@@ -54,7 +54,7 @@ class Theme_program_detail extends Theme {
 				</span><BR>
 				<span class="small">
 				<?php
-				if (isset($_GET['recordid']))
+				if ($_GET['recordid'])
 					echo "<em>";
 				echo date('D, M jS', $this_program->starttime);
 				if ($this_program->previouslyshown)
@@ -63,8 +63,9 @@ class Theme_program_detail extends Theme {
 					.date('g:i A', $this_program->starttime) . ' ' . _LANG_TO . ' ' . date('g:i A', $this_program->endtime);
 				if (!isset($_GET['recordid']))
 					echo ' (' . (int)($this_program->length/60) . ' ' . _LANG_MINUTES .')';
+				if ($_GET['recordid'])
+					echo "</em>";
 				echo "<br />\n\t\t\t";
-				if (isset($_GET['recordid'])) echo "</em>";
  				echo '('._LANG_SEARCH.': &nbsp;'
 					.' <a href="http://www.imdb.com/Find?select=Titles&for='.urlencode($this_program->title).'">'._LANG_IMDB.'</a>'
 					.' &nbsp;-&nbsp; '
@@ -75,53 +76,85 @@ class Theme_program_detail extends Theme {
 				?></span></td>
 		</tr><tr>
 			<td colspan="3">&nbsp;</td>
-		</tr><?php if (strlen($this_program->subtitle)) { ?><tr>
-			<td colspan="2" align="right"> <?php if (isset($_GET[recordid])) echo "<em>"; ?>Episode:&nbsp;
-							<?php if (isset($_GET[recordid])) echo "</em>"; ?></td>
-			<td><?php if (isset($_GET[recordid])) echo "<em>";
-				  echo $this_program->subtitle;
-				  if (isset($_GET[recordid])) echo "</em>"; ?></td>
-		</tr><?php }
-				if (strlen($this_program->description)) { ?><tr>
-			<td colspan="2" align="right" valign="top"> <?php if (isset($_GET[recordid])) echo "<em>";?>
-				Description:&nbsp;<?php if (isset($_GET[recordid])) echo "</em>"; ?></td>
-			<td><?php if (isset($_GET[recordid])) echo "<em>";
-				  echo wordwrap($this_program->description, 45, "<BR>\n");
-				  if (isset($_GET[recordid])) echo "</em>"; ?></td>
-		</tr><?php } ?><tr>
+		</tr><?php
+				if (strlen($this_program->subtitle)) {
+		?><tr>
+			<td colspan="2" align="right"><?php
+				if ($_GET['recordid'])
+					echo "<em>";
+				echo 'Episode:&nbsp;';
+				if ($_GET['recordid'])
+					echo "</em>";
+				?></td>
+			<td><?php
+				if ($_GET['recordid'])
+					echo "<em>";
+				echo $this_program->subtitle;
+				if ($_GET['recordid'])
+					echo "</em>";
+				?></td>
+		</tr><?php
+				}
+				if (strlen($this_program->description)) {
+		?><tr>
+			<td colspan="2" align="right" valign="top"><?php
+				if ($_GET['recordid'])
+					echo "<em>";
+				echo 'Description:&nbsp;';
+				if ($_GET['recordid'])
+					echo "</em>";
+				?></td>
+			<td><?php
+				if ($_GET['recordid'])
+					echo "<em>";
+				echo wordwrap($this_program->description, 45, "<BR>\n");
+				if ($_GET['recordid'])
+					echo "</em>";
+				?></td>
+		</tr><?php
+				}
+		?><tr>
 			<td colspan="3">&nbsp;</td>
-		</tr><?php if (strlen($this_program->category)) {?><tr>
+		</tr><?php
+			if (strlen($this_program->category)) {
+		?><tr>
 			<td colspan="2" align="right"><? echo _LANG_CATEGORY?>:&nbsp;</td>
 			<td><?php echo $this_program->category?></td>
-		</tr><?php }
-				if (strlen($this_program->airdate)) {?><tr>
+		</tr><?php
+			}
+			if (strlen($this_program->airdate)) {
+		?><tr>
 			<td nowrap colspan="2" align="right"><? echo _LANG_ORIG_AIRDATE?>:&nbsp;</td>
 			<td><?php echo $this_program->airdate?></td>
-		</tr><?php }
-				if (strlen($this_program->rating)) {?><tr>
+		</tr><?php
+			}
+			if (strlen($this_program->rating)) {
+		?><tr>
 			<td colspan="2" align="right"><?php echo strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?>Rating:&nbsp;</td>
 			<td><?php echo $this_program->rating?></td>
-		</tr><?php } ?>
+		</tr><?php
+			}
+		?>
+
 		</table>
 
 	<td valign="top" align="right" rowspan="2">
 
-		<form action="program_detail.php" method="get" name="record_settings">
-		<?php if (isset($_GET[recordid])) {?>
-		<input type="hidden" name="recordid" value="<?php echo $_GET['recordid']?>">
-		<?php } else {?>
-		<input type="hidden" name="chanid" value="<?php echo $_GET['chanid']?>">
-		<input type="hidden" name="starttime" value="<?php echo $_GET['starttime']?>">
-		<?php } ?>
+		<form name="program_detail" method="post" action="program_detail.php?<?php
+			if ($_GET['recordid'])
+				echo 'recordid='.urlencode($_GET['recordid']);
+			else
+				echo 'chanid='.urlencode($_GET['chanid']).'&starttime='.urlencode($_GET['starttime'])
+			?>">
 
 		<table class="command command_border_l command_border_t command_border_b command_border_r" align="center" border="0" cellspacing="0" cellpadding="5">
 		<tr>
 			<td><p align="center"><?php echo _LANG_RECORDING_OPTIONS?>:</p></td></tr>
-		<tr><td>
-				<input type="radio" class="radio" name="record" value="never" id="record_never"<?php echo
+		<tr>
+			<td><input type="radio" class="radio" name="record" value="never" id="record_never"<?php echo
 				$this_program->will_record ? '' : ' CHECKED'?>></input>
 				<a onclick="get_element('record_never').checked=true;"><?php
-					if (isset($_GET[recordid]))
+					if ($this_program->will_record)
 						echo _LANG_CANCEL_THIS_SCHEDULE;
 					else
 						echo _LANG_DONT_RECORD_THIS_PROGRAM;
@@ -244,7 +277,7 @@ class Theme_program_detail extends Theme {
 </tr>
 <tr>
 	<td height="100%" align="center" valign="bottom">
-<?php if (isset($_GET[recordid])) { ?>
+<?php if ($_GET['recordid']) { ?>
 		<a href="recording_schedules.php"><?php echo _LANG_BACK_TO_RECORDING_SCHEDULES?></a></td>
 <?php } else { ?>
 	 	<a href="program_listing.php?time=<?php echo $this_program->starttime?>"><?php echo _LANG_WHAT_ELSE_IS_ON_AT_THIS_TIME?></a>

@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                 Last Updated: 2004.04.14 (xris)
+	scheduled_recordings.php                 Last Updated: 2004.04.19 (xris)
 
 	view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -44,10 +44,11 @@
 		elseif ($_GET['suppress'] || $_POST['suppress']) {
 			$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
 				or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-			$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
+			$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description) VALUES ('
 									.escape($program->recordid).','
 									.'2,'	// record override type:   1 == record, 2 == don't record
 									.escape($program->chanid)                    .','
+									.escape($program->channel->callsign)         .','
 									.'FROM_UNIXTIME('.escape($program->starttime).'),'
 									.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
 									.escape($program->title)                     .','
@@ -61,10 +62,11 @@
 			if ($show->recording == 0 || $show->recstatus) {
 				$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
 					or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-				$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
+				$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description) VALUES ('
 										.escape($program->recordid).','
 										.'1,'	// record override type:   1 == record, 2 == don't record
 										.escape($program->chanid)                    .','
+										.escape($program->channel->callsign)         .','
 										.'FROM_UNIXTIME('.escape($program->starttime).'),'
 										.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
 										.escape($program->title)                     .','

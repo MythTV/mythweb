@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.03.28 (xris)
+    programs.php                             Last Updated: 2004.04.19 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -401,269 +401,105 @@ class Program {
 			$this->length = $this->endtime - $this->starttime;
 
 	// Find out which css category this program falls into
-		if ($this->chanid != "")
-			$this->category_class();
+		if ($this->chanid != '')
+			$this->class = category_class($this);
 
 	}
 
-	function record_always() {
-	// Wipe out any pre-existing settings for this program
-		$this->record_never(false);
-	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type ,title, profile,recpriority,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset)
-																			VALUES (4,'.escape($this->title).','
-																				.escape($this->profile).','
-																				.escape($this->recpriority).','
-																				.escape($this->dupin).','
-																				.escape($this->dupmethod).','
-																				.escape($this->maxnewest).','
-																				.escape($this->maxepisodes).','
-																				.escape($this->autoexpire).','
-																				.escape($this->startoffset).','
-																				.escape($this->endoffset).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Clean up the program variable
-		$this->record_always = $this->will_record = true;
-	// Notify the backend of the changes
-		backend_notify_changes();
-	}
+}
 
-	function record_findone() {
-	// Wipe out any pre-existing settings for this program
-		$this->record_never(false);
-	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type ,title, profile,recpriority,dupin,dupmethod,maxnewest,maxepisodes,autoexpire)
-																			VALUES (6,'.escape($this->title).','
-																				.escape($this->profile).','
-																				.escape($this->recpriority).','
-																				.escape($this->dupin).','
-																				.escape($this->dupmethod).','
-																				.escape($this->maxnewest).','
-																				.escape($this->maxepisodes).','
-																				.escape($this->autoexpire).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Clean up the program variable
-		$this->record_findone = $this->will_record = true;
-	// Notify the backend of the changes
-		backend_notify_changes();
-	}
+/*
+	category_class:
 
-	function record_channel() {
-	// Wipe out any pre-existing settings for this program
-		$this->record_never(false);
-	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,title,chanid,profile,recpriority,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset)
-																		VALUES (3,'.escape($this->title).','
-																				.escape($this->chanid).','
-																				.escape($this->profile).','
-																				.escape($this->recpriority).','
-																				.escape($this->dupin).','
-																				.escape($this->dupmethod).','
-																				.escape($this->maxnewest).','
-																				.escape($this->maxepisodes).','
-																				.escape($this->autoexpire).','
-																				.escape($this->startoffset).','
-																				.escape($this->endoffset).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Clean up the program variable
-		$this->record_channel = $this->will_record = true;
-	// Notify the backend of the changes
-		backend_notify_changes();
-	}
-
-	function record_weekly() {
-	// Wipe out any pre-existing settings for this program
-		$this->record_never(false);
-	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,startdate,starttime,enddate,endtime,title,profile,recpriority,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset)
-							VALUES (5,'	.escape($this->chanid) .','
-								.'FROM_UNIXTIME('.escape($this->starttime).'),'
-								.'FROM_UNIXTIME('.escape($this->starttime).'),'
-								.'FROM_UNIXTIME('.escape($this->endtime).'),'
-								.'FROM_UNIXTIME('.escape($this->endtime).'),'
-								.escape($this->title)  .','
-								.escape($this->profile).','
-								.escape($this->recpriority).','
-								.escape($this->dupin).','
-								.escape($this->dupmethod).','
-								.escape($this->maxnewest).','
-								.escape($this->maxepisodes).','
-								.escape($this->autoexpire).','
-								.escape($this->startoffset).','
-								.escape($this->endoffset).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Clean up the program variable
-		$this->record_weekly = $this->will_record = true;
-	// Notify the backend of the changes
-		backend_notify_changes();
-	}
-
-	function record_daily() {
-	// Wipe out any pre-existing settings for this program
-		$this->record_never(false);
-	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,profile,recpriority,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset) VALUES (2,'
-								.escape($this->chanid).','
-								.'FROM_UNIXTIME('.escape($this->starttime).'),'
-								.'FROM_UNIXTIME('.escape($this->starttime).'),'
-								.'FROM_UNIXTIME('.escape($this->endtime).'),'
-								.'FROM_UNIXTIME('.escape($this->endtime).'),'
-								.escape($this->title)  .','
-								.escape($this->profile).','
-								.escape($this->recpriority).','
-								.escape($this->dupin).','
-								.escape($this->dupmethod).','
-								.escape($this->maxnewest).','
-								.escape($this->maxepisodes).','
-								.escape($this->autoexpire).','
-								.escape($this->startoffset).','
-								.escape($this->endoffset).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Clean up the program variable
-		$this->record_daily = $this->will_record = true;
-	// Notify the backend of the changes
-		backend_notify_changes();
-	}
-
-	function record_once() {
-	// Wipe out any pre-existing settings for this program
-		$this->record_never(false);
-	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset) values (1,'
-								.escape($this->chanid).','
-								.'FROM_UNIXTIME('.escape($this->starttime).'),'
-								.'FROM_UNIXTIME('.escape($this->starttime).'),'
-								.'FROM_UNIXTIME('.escape($this->endtime).'),'
-								.'FROM_UNIXTIME('.escape($this->endtime).'),'
-								.escape($this->title).','
-								.escape($this->subtitle).','
-								.escape($this->description).','
-								.escape($this->profile).','
-								.escape($this->recpriority).','
-								.escape($this->dupin).','
-								.escape($this->dupmethod).','
-								.escape($this->maxnewest).','
-								.escape($this->maxepisodes).','
-								.escape($this->autoexpire).','
-								.escape($this->startoffset).','
-								.escape($this->endoffset).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Clean up the program variable
-		$this->record_once = $this->will_record = true;
-	// Notify the backend of the changes
-		backend_notify_changes();
-	}
-
-	function record_never($notify = true) {
-	// Already set?  just return
-		if ($notify && !$this->will_record)
-			return;
-	// Wipe out any pre-existing settings for this program
-		$result = mysql_query('DELETE FROM record WHERE (type=1 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND startdate=FROM_UNIXTIME('.escape($this->starttime).'))'
-												  .' OR (type=2 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).'))'
-												  .' OR (type=3 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).')'
-												  .' OR (type=4 AND title='.escape($this->title).')'
-												  .' OR (type=6 AND title='.escape($this->title).')'
-												  .' OR (type=5 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND DAYOFWEEK(startdate)='.escape(date('w', $this->starttime)+1).')');
-	// Clean up the program variable
-		$this->will_record    = false;
-		$this->record_always  = false;
-		$this->record_channel = false;
-		$this->record_once    = false;
-		$this->record_daily   = false;
-		$this->record_weekly  = false;
-	// Notify the backend of the changes
-		if ($notify)
-			backend_notify_changes();
-	}
-
-	function category_class() {
-		$this->class = '';
+*/
+	function category_class(&$item) {
+		$class = '';
 	// Recording classes?
-		if ($this->will_record) {
-			if ($this->recstatus == 'WillRecord')
-				$this->class .= 'will_record ';
-			elseif ($this->recstatus == 'Conflict' || $this->recstatus == 'Overlap')
-				$this->class .= 'record_conflicting ';
-			elseif ($this->recstatus == 'PreviousRecording' || $this->recstatus == 'CurrentRecording')
-				$this->class .= 'record_duplicate ';
+		if ($item->will_record && get_class($item) == 'program') {
+			if ($item->recstatus == 'WillRecord')
+				$class .= 'will_record ';
+			elseif ($item->recstatus == 'Conflict' || $item->recstatus == 'Overlap')
+				$class .= 'record_conflicting ';
+			elseif ($item->recstatus == 'PreviousRecording' || $item->recstatus == 'CurrentRecording')
+				$class .= 'record_duplicate ';
 			else
-				$this->class .= 'record_suppressed ';
+				$class .= 'record_suppressed ';
 		}
 	// Category type?
-		if ($this->category_type && !preg_match('/unknown/i', $this->category_type))
-			$this->class .= 'type_'.preg_replace("/[^a-zA-Z0-9\-_]+/", '_', $this->category_type).' ';
+		if ($item->category_type && !preg_match('/unknown/i', $item->category_type))
+			$class .= 'type_'.preg_replace("/[^a-zA-Z0-9\-_]+/", '_', $item->category_type).' ';
 	// Category cache
-		$category = strtolower($this->category);	// user lowercase to avoid a little overhead later
+		$category = strtolower($item->category);	// user lowercase to avoid a little overhead later
 		static $cache = array();
 		if ($cache[$category])
-			$this->class .= $cache[$category];
+			$class .= $cache[$category];
 	// Now comes the hard part
 		elseif (preg_match('/'._LANG_CATMATCH_ACTION.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Action';
+			$class .= $cache[$category] = 'cat_Action';
 		elseif (preg_match('/'._LANG_CATMATCH_ADULT.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Adult';
+			$class .= $cache[$category] = 'cat_Adult';
 		elseif (preg_match('/'._LANG_CATMATCH_ANIMALS.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Animals';
+			$class .= $cache[$category] = 'cat_Animals';
 		elseif (preg_match('/'._LANG_CATMATCH_ART_MUSIC.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Art_Music';
+			$class .= $cache[$category] = 'cat_Art_Music';
 		elseif (preg_match('/'._LANG_CATMATCH_BISINESS.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Business';
+			$class .= $cache[$category] = 'cat_Business';
 		elseif (preg_match('/'._LANG_CATMATCH_CHILDREN.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Children';
+			$class .= $cache[$category] = 'cat_Children';
 		elseif (preg_match('/'._LANG_CATMATCH_COMEDY.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Comedy';
+			$class .= $cache[$category] = 'cat_Comedy';
 		elseif (preg_match('/'._LANG_CATMATCH_CRIME_MYSTERY.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Crime_Mystery';
+			$class .= $cache[$category] = 'cat_Crime_Mystery';
 		elseif (preg_match('/'._LANG_CATMATCH_DOCUMENTARY.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Documentary';
+			$class .= $cache[$category] = 'cat_Documentary';
         elseif (preg_match('/'._LANG_CATMATCH_DRAMA.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Drama';
+			$class .= $cache[$category] = 'cat_Drama';
 		elseif (preg_match('/'._LANG_CATMATCH_EDUCATIONAL.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Educational';
+			$class .= $cache[$category] = 'cat_Educational';
 		elseif (preg_match('/'._LANG_CATMATCH_FOOD.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Food';
+			$class .= $cache[$category] = 'cat_Food';
 		elseif (preg_match('/'._LANG_CATMATCH_GAME.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Game';
+			$class .= $cache[$category] = 'cat_Game';
 		elseif (preg_match('/'._LANG_CATMATCH_HEALTH_MEDICAL.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Health_Medical';
+			$class .= $cache[$category] = 'cat_Health_Medical';
 		elseif (preg_match('/'._LANG_CATMATCH_HISTORY.'/', $category))
-			$this->class .= $cache[$category] = 'cat_History';
+			$class .= $cache[$category] = 'cat_History';
         elseif (preg_match('/'._LANG_CATMATCH_HOWTO.'/', $category))
-			$this->class .= $cache[$category] = 'cat_HowTo';
+			$class .= $cache[$category] = 'cat_HowTo';
         elseif (preg_match('/'._LANG_CATMATCH_HORROR.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Horror';
+			$class .= $cache[$category] = 'cat_Horror';
 		elseif (preg_match('/'._LANG_CATMATCH_MISC.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Misc';
+			$class .= $cache[$category] = 'cat_Misc';
 		elseif (preg_match('/'._LANG_CATMATCH_NEWS.'/', $category))
-			$this->class .= $cache[$category] = 'cat_News';
+			$class .= $cache[$category] = 'cat_News';
 		elseif (preg_match('/'._LANG_CATMATCH_REALITY.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Reality';
+			$class .= $cache[$category] = 'cat_Reality';
 		elseif (preg_match('/'._LANG_CATMATCH_ROMANCE.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Romance';
+			$class .= $cache[$category] = 'cat_Romance';
 		elseif (preg_match('/'._LANG_CATMATCH_SCIENCE_NATURE.'/', $category))
-			$this->class .= $cache[$category] = 'cat_SciFi_Fantasy';
+			$class .= $cache[$category] = 'cat_SciFi_Fantasy';
 		elseif (preg_match('/'._LANG_CATMATCH_SCIENCE_NATURE.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Science_Nature';
+			$class .= $cache[$category] = 'cat_Science_Nature';
 		elseif (preg_match('/'._LANG_CATMATCH_SHOPPING.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Shopping';
+			$class .= $cache[$category] = 'cat_Shopping';
 		elseif (preg_match('/'._LANG_CATMATCH_SOAPS.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Soaps';
+			$class .= $cache[$category] = 'cat_Soaps';
 		elseif (preg_match('/'._LANG_CATMATCH_SPIRITUAL.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Spiritual';
+			$class .= $cache[$category] = 'cat_Spiritual';
 		elseif (preg_match('/'._LANG_CATMATCH_SPORTS.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Sports';
+			$class .= $cache[$category] = 'cat_Sports';
 		elseif (preg_match('/'._LANG_CATMATCH_TALK.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Talk';
+			$class .= $cache[$category] = 'cat_Talk';
 		elseif (preg_match('/'._LANG_CATMATCH_TRAVEL.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Travel';
+			$class .= $cache[$category] = 'cat_Travel';
         elseif (preg_match('/'._LANG_CATMATCH_WAR.'/', $category))
-			$this->class .= $cache[$category] = 'cat_War';
+			$class .= $cache[$category] = 'cat_War';
         elseif (preg_match('/'._LANG_CATMATCH_WESTERN.'/', $category))
-			$this->class .= $cache[$category] = 'cat_Western';
+			$class .= $cache[$category] = 'cat_Western';
 		else
-			$this->class .= $cache[$category] = 'cat_Unknown';
+			$class .= $cache[$category] = 'cat_Unknown';
+	// Return
+		return $class;
 	}
-}
 
 ?>

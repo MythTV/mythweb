@@ -21,7 +21,7 @@
 		$result = mysql_query('SELECT * FROM channel ORDER BY (channum + 0), chanid')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 		while ($channel_data = mysql_fetch_assoc($result)) 	{
-			$Channels[] = new Channel($channel_data);
+			$Channels[$channel_data['chanid']] = new Channel($channel_data);
 		}
 		mysql_free_result($result);
 	}
@@ -37,9 +37,9 @@
 		$result = mysql_query('SELECT * FROM channel WHERE chanid='.escape($chanid))
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 		$channel_data = mysql_fetch_assoc($result);
-		$Channels[] = new Channel($channel_data);
+		$Channels[$channel_data['chanid']] = new Channel($channel_data);
 		mysql_free_result($result);
-		return $Channels[count($Channels)-1];
+		return $Channels[$channel_data['chanid']];
 	}
 
 /*
