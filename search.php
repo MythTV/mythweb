@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	search.php                               Last Updated: 2004.03.11 (xris)
+	search.php                               Last Updated: 2004.03.28 (xris)
 
 	Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -135,10 +135,10 @@
 
 // One little function to help us format search queries
 	function search_escape($value) {
-		//if we are asking for an exact match, dont put the '%'s in
-		if($_GET['search_exact'])
-			return "'" . $value . "'";
-
+	// If we are asking for an exact match, dont put the '%'s in
+		if ($_GET['search_exact'])
+			return escape($value);
+	// Replace whitespace with the % wildcard
 		return escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
 	}
 	function regexp_escape($value) {
