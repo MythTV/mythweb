@@ -20,37 +20,38 @@ class Theme_program_detail extends Theme {
         // Print the page contents
 ?>
 <p>
+<br/>
 <a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>" ><?php echo $this_channel->channum." ".$this_channel->callsign; ?></a><br/>
-<?php echo htmlspecialchars($this_program->title)?><br/>
-<a href="#cardmodify" ><?php echo _LANG_RECORDING_OPTIONS; ?></a><br/>
-<?php echo strftime(generic_date, $this_program->starttime)?><br/>
-<?php echo strftime($_SESSION['time_format'], $this_program->starttime)?> <?php echo _LANG_TO;?> <?php echo strftime($_SESSION['time_format'], $this_program->endtime)?> (<?php echo (int)($this_program->length/60)?> <?php echo _LANG_MINUTES; ?>)<br/>
+<b><?php echo htmlspecialchars($this_program->title)?></b><br/>
+<a href="#cardmodify" ><?php echo t('Recording Options') ?></a><br/>
+<?php echo strftime(t('generic_date'), $this_program->starttime)?><br/>
+<?php echo t('$1 to $2', strftime('%r', $this_program->starttime), strftime('%r', $this_program->endtime)).' ('.tn('$1 min', '$1 mins', (int)($this_program->length/60)).')' ?> <br/>
 <?php
         if ($this_program->previouslyshown) {
-            echo _LANG_RERUN.' ';
+            echo t('Rerun').' ';
         }
         if (strlen($this_program->subtitle)) { 
 ?>
-<?php echo _LANG_SUBTITLE; ?>: <b><?php echo htmlspecialchars($this_program->subtitle)?></b><br/>
+<?php echo t('Subtitle') ?>: <b><?php echo htmlspecialchars($this_program->subtitle)?></b><br/>
 <?php }
         if (strlen($this_program->description)) {?>
-<?php echo _LANG_DESCRIPTION; ?>: <?php echo htmlspecialchars(str_replace('$', '', $this_program->description))?><br/>
+<?php echo t('Description') ?>: <?php echo htmlspecialchars(str_replace('$', '', $this_program->description))?><br/>
 <?php         }
          if (strlen($this_program->category)) {
-            echo _LANG_CATEGORY; ?>: <?php echo $this_program->category?><br/>
+            echo t('Category') ?>: <?php echo $this_program->category?><br/>
 <?php         }
         if (strlen($this_program->airdate)) {
-            echo _LANG_ORIG_AIRDATE; ?>: <?php echo $this_program->airdate?><br/>
+            echo t('Original Airdate') ?>: <?php echo $this_program->airdate?><br/>
 <?php         }
         if (strlen($this_program->rating)) {?>
-<?php echo strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?><?php echo _LANG_RATING; ?>: <?php echo $this_program->rating?><br/>
+<?php echo strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?><?php echo t('Rating') ?>: <?php echo $this_program->rating?><br/>
 <?php
                 ?><br/>
 <?php     } 
 ?>
 </p>
 </card>
-<card id="cardmodify" title="<?php echo _LANG_SETTINGS; ?>">
+<card id="cardmodify" title="<?php echo t('Update Recording Settings') ?>">
 <?php
     $HREFUrl = "";
     if ($_GET['recordid']) {
@@ -68,13 +69,13 @@ class Theme_program_detail extends Theme {
 <postfield name="maxepisodes" value="$(maxepisodes)"/>
 <postfield name="startoffset" value="$(startoffset)"/>
 <postfield name="endoffset" value="$(endoffset)"/>
-<postfield name="recorddups" value="$(recorddups)"/>
+<postfield name="dupmethod" value="$(dupmethod)"/>
 <postfield name="autoexpire" value="$(autoexpire)"/>
 <postfield name="maxnewest" value="$(maxnewest)"/>
 </go>
 </do>
 <p>
-<?php echo _LANG_RECORDING_OPTIONS; ?>:
+<?php echo t('Recording Options') ?>:
 <?php
     $record_opt="";
     if (! $this_program->will_record) $record_opt="never";
@@ -87,18 +88,16 @@ class Theme_program_detail extends Theme {
 
 ?>
 <select name="record" value="<?php echo $record_opt ?>">
-<option value="never" id="record_never"><?php if ($record_opt=="never") echo "(*)"; ?><?php echo _LANG_RECTYPE_DONTREC; ?></option>
-<option value="once" id="record_once"><?php if ($record_opt=="once") echo "(*)"; ?><?php echo _LANG_RECTYPE_LONG_ONCE; ?></option>
-<option value="daily" id="record_daily"><?php if ($record_opt=="daily") echo "(*)"; ?>Record <?php echo _LANG_RECTYPE_LONG_DAILY; ?></option>
-<option value="weekly" id="record_weekly"><?php if ($record_opt=="weekly") echo "(*)"; ?>Record <?php echo _LANG_RECTYPE_LONG_WEEKLY?></option>
-<option value="channel" id="record_channel"><?php if ($record_opt=="channel") echo "(*)"; ?><?php echo _LANG_RECTYPE_LONG_CHANNEL; ?></option>
-<option value="always" id="record_always"><?php if ($record_opt=="always") echo "(*)"; ?><?php echo _LANG_RECTYPE_LONG_ALWAYS; ?></option>
-<option value="findone" id="record_findone"><?php if ($record_opt=="findone") echo "(*)"; ?><?php echo _LANG_RECTYPE_LONG_FINDONE; ?></option>
+<option value="never" id="record_never"><?php if ($record_opt=="never") echo "(*)"; ?><?php echo t('rectype: dontrec') ?></option>
+<option value="once" id="record_once"><?php if ($record_opt=="once") echo "(*)"; ?><?php echo t('rectype: once') ?></option>
+<option value="daily" id="record_daily"><?php if ($record_opt=="daily") echo "(*)"; ?>Record <?php echo t('rectype: daily') ?></option>
+<option value="weekly" id="record_weekly"><?php if ($record_opt=="weekly") echo "(*)"; ?>Record <?php echo t('rectype: weekly') ?></option>
+<option value="channel" id="record_channel"><?php if ($record_opt=="channel") echo "(*)"; ?><?php echo t('rectype: channel') ?></option>
+<option value="always" id="record_always"><?php if ($record_opt=="always") echo "(*)"; ?><?php echo t('rectype: always') ?></option>
+<option value="findone" id="record_findone"><?php if ($record_opt=="findone") echo "(*)"; ?><?php echo t('rectype: findone') ?></option>
 </select>
-</p>
-<p>
+<?php echo t('Recording Profile') ?>:
 <select name="profile" value="<?php echo $this_program->profile ?>">
-<optgroup title="<?php echo _LANG_RECORDING_PROFILE; ?>">
 <?php
 
     global $Profiles;
@@ -107,23 +106,33 @@ class Theme_program_detail extends Theme {
         echo htmlentities($profile).'</option>';
     }
 ?>
-</optgroup></select>
-<?php echo _LANG_RECPRIORITY; ?>: <input name="recpriority" type="text" value="<?php echo $this_program->recpriority ?>" format="N*" size="2"/>
+</select>
+<?php echo t('Recording Priority') ?>: <input name="recpriority" type="text" value="<?php echo $this_program->recpriority ?>" format="N*" size="2"/>
 <br/>
-<?php echo _LANG_NO_OF_RECORDINGS_TO_KEEP; ?>:<input type="text" name="maxepisodes" emptyok="true" size="1" format="N" value="<?php echo htmlentities($this_program->maxepisodes) ?>"/>
+<?php echo t('No. of recordings to keep') ?>:<input type="text" name="maxepisodes" emptyok="true" size="1" format="N" value="<?php echo htmlentities($this_program->maxepisodes) ?>"/>
 <br/>
-<?php echo _LANG_START_EARLY; ?>:<input type="text" name="startoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($this_program->startoffset) ?>"/>
+<?php echo t('Start Early') ?>:<input type="text" name="startoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($this_program->startoffset) ?>"/>
 <br/>
-<?php echo _LANG_END_LATE; ?>:<input type="text" name="endoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($this_program->endoffset) ?>"/>
+<?php echo t('End Late') ?>:<input type="text" name="endoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($this_program->endoffset) ?>"/>
 <br/>
-<select name="recorddups" multiple="true" value="<?php if ($this_program->recorddups) echo 'checked' ?>">
-<option value="checked" id="o1"><?php echo _LANG_DUPLICATES; ?>?</option>
+<?php echo t('Duplicate Check method') ?>
+<?php 
+if ($this_program->dupmethod == 0 || $this_program->dupmethod == 6)
+    $local_dupmethod = 6;
+else
+    $local_dupmethod = $this_program->dupmethod;
+?>
+<select name="dupmethod" value="<?php $local_dupmethod ?>">
+<option value="1"><?php echo t('None') ?></option>
+<option value="2"><?php echo t('Subtitle') ?></option>
+<option value="4"><?php echo t('Description') ?></option>
+<option value="6"><?php echo t('Subtitle and Description') ?></option>
 </select>
 <select name="autoexpire" multiple="true" value="<?php if ($this_program->autoexpire) echo "checked" ?>">
-<option value="checked" id="o2"><?php echo _LANG_AUTO_EXPIRE_RECORDINGS; ?></option>
+<option value="checked" id="o2"><?php echo t('Auto-expire recordings') ?></option>
 </select>
 <select name="maxnewest" multiple="true" value="<?php if ($this_program->maxnewest) echo "checked" ?>">
-<option value="checked"><?php echo _LANG_RECORD_NEW_AND_EXPIRE_OLD; ?></option>
+<option value="checked"><?php echo t('Record new and expire old') ?></option>
 </select>
 </p></card>
 <?php

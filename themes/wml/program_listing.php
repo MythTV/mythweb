@@ -13,7 +13,7 @@ class Theme_program_listing extends Theme {
     function print_header($start_time, $end_time) {
 
         // Print the main page header
-        parent::print_header('MythWeb - '._LANG_LISTINGS);
+        parent::print_header('MythWeb - '.t('Listings'));
         parent::print_menu_content();
     }
 
@@ -117,6 +117,7 @@ Enter Channel:<br/>
 
             if ($page != 1) echo '<a href="program_listing.php?listbycallsign=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
             if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbycallsign=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
+            echo "<br/>";
 
             foreach (array_keys($Channels) as $key) {
 
@@ -132,7 +133,7 @@ Enter Channel:<br/>
                     continue;
                 }
 
-                echo "<a href='channel_detail.php?chanid=".$Channels[$key]->chanid."'>".$Channels[$key]->callsign."</a> ";
+                echo "<a href='channel_detail.php?chanid=".$Channels[$key]->chanid."'>".$Channels[$key]->callsign."</a><br/> ";
 
                 // Count this channel
                 $channel_count++;
@@ -210,7 +211,7 @@ Enter Channel:<br/>
             if ($page != 1) echo '<a href="program_listing.php?listbytime=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
             if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbytime=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
 
-            echo '<br/>'._LANG_JUMP_TO.' '._LANG_HOUR.':';
+            echo '<br/>'.t('Jump to').' '.t('Hour').':';
             echo '<input type="text" name="hour" format="N*" size="2" emptyok="true"/>';
         }
 

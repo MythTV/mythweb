@@ -12,7 +12,7 @@ class Theme_scheduled_recordings extends Theme {
     function print_page() {
 
         // Print the main page header
-        parent::print_header('MythWeb - '._LANG_SCHEDULED_RECORDINGS);
+        parent::print_header('MythWeb - '.t('Scheduled Recordings'));
         parent::print_menu_content();
 
         // Print the page contents
@@ -73,7 +73,7 @@ class Theme_scheduled_recordings extends Theme {
             // Print a dividing row if grouping changes
             if ($group_field == "airdate")
             {
-                $cur_group = strftime(generic_date, $show->starttime); 
+                $cur_group = strftime(t('generic_date'), $show->starttime); 
                 $cur_group_detail = date('D', $show->starttime)." ";
             }
             elseif ($group_field == "channum")
@@ -105,7 +105,7 @@ class Theme_scheduled_recordings extends Theme {
 
             if (!(($row < $page_start) || ($row >= $page_end))) {
                 $has_output = 1;
-                $card_data[$group_no].="<p><b>".htmlspecialchars($show->title)."</b> ".htmlspecialchars($show->subtitle)."<br/>".$show->recstatus."<br/> ".strftime(generic_time, $show->starttime)."<br/><a href=\"program_detail.php?chanid=".$show->chanid."&amp;starttime=".$show->starttime."\">Details</a><br/></p>\n";
+                $card_data[$group_no].="<p><b>".htmlspecialchars($show->title)."</b> ".htmlspecialchars($show->subtitle)."<br/>".$show->recstatus."<br/> ".strftime(t('generic_time'), $show->starttime)."<br/><a href=\"program_detail.php?chanid=".$show->chanid."&amp;starttime=".$show->starttime."\">Details</a><br/></p>\n";
             }
         }
 

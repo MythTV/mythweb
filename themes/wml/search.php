@@ -12,7 +12,7 @@ class Theme_search extends Theme {
     function print_page() {
 
         // Print the main page header
-        parent::print_header('MythWeb - '._LANG_SEARCH);
+        parent::print_header('MythWeb - '.t('Search'));
         parent::print_menu_content();
 
         // Print any search results
@@ -37,7 +37,7 @@ class Theme_search extends Theme {
 <postfield name="searchstr" value="$(searchstr)"/>
 </go>
 </do>
-<p><?php echo _LANG_SEARCH; ?>:<input type="text" name="searchstr"/></p>
+<p><?php echo t('Search') ?>:<input type="text" name="searchstr"/></p>
 </card>
 <?php
             return;
@@ -52,7 +52,7 @@ class Theme_search extends Theme {
 </go>
 </do>
 <p><?php echo "0 Results" ?></p>
-<p><?php echo _LANG_SEARCH; ?>:<input type="text" name="searchstr"/></p>
+<p><?php echo t('Search') ?>:<input type="text" name="searchstr"/></p>
 </card>
 <?php
             return;
@@ -78,7 +78,7 @@ class Theme_search extends Theme {
 <?php
     if (!isset($page)) {
 ?>
-<a href="#cardresults"><?php echo _LANG_SEARCH_RESULTS; ?></a><br/>
+<a href="#cardresults"><?php echo t('Search Results') ?></a><br/>
 <?php
     } else {
 ?>
@@ -86,7 +86,7 @@ class Theme_search extends Theme {
 <?php
     } 
 ?>
-<?php echo _LANG_SEARCH; ?>:<input type="text" name="searchstr"/>
+<?php echo t('Search') ?>:<input type="text" name="searchstr"/>
 </p>
 </card>
 <card id="cardresults" title="results">
@@ -129,7 +129,7 @@ class Theme_search extends Theme {
             if(strlen($show->subtitle)) echo htmlspecialchars($show->subtitle).'<br/>';
 
             //  echo $show->description.'<br/>';
-            echo strftime(generic_date." ".generic_time, $show->starttime).'<br/>';
+            echo strftime(t('generic_date')." ".t('generic_time'), $show->starttime).'<br/>';
             echo $show->channel->callsign.' '.$show->channel->channum.' - '.nice_length($show->length)."<br/><br/>\n";
         }
 

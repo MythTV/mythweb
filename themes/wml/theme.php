@@ -30,11 +30,11 @@ class Theme {
 
     function print_menu_content() {
 ?>
-<p><a href="program_listing.php"><?php echo _LANG_LISTINGS; ?></a></p>
-<p><a href="scheduled_recordings.php"><?php echo _LANG_SCHEDULE; ?></a></p>
-<p><a href="recorded_programs.php"><?php echo _LANG_RECORDED_PROGRAMS;?></a></p>
-<p><a href="search.php"><?php echo _LANG_SEARCH;?></a></p>
-<p><a href="<?php echo theme_dir?>status.php"><?php echo ucfirst(_LANG_BACKEND_STATUS);?></a></p>
+<p><a href="program_listing.php"><?php echo t('Listings') ?></a></p>
+<p><a href="scheduled_recordings.php"><?php echo t('Scheduled Recordings') ?></a></p>
+<p><a href="recorded_programs.php"><?php echo t('Recorded Programs') ?></a></p>
+<p><a href="search.php"><?php echo t('Search')?></a></p>
+<p><a href="<?php echo theme_dir?>status.php"><?php echo t('Backend Status') ?></a></p>
 <?php
     }
 

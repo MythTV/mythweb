@@ -12,7 +12,7 @@ class Theme_recorded_programs extends Theme {
     function print_page() {
 
         // Print the main page header
-        parent::print_header("MythWeb - "._LANG_RECORDED_PROGRAMS);
+        parent::print_header("MythWeb - ".t('Recorded Programs'));
         parent::print_menu_content();
 
         // Print the page contents
@@ -77,7 +77,10 @@ $confirm_cards .= "<card id=\"card".$row."\" title=\"Confirm\"><p>Confirm Delete
         if (($page * $page_size) < count($All_Shows)) echo ' <a href="recorded_programs.php?page='.($page + 1).'">next &gt;</a>';
 
         //echo "<br/>".$GLOBALS['Total_Programs'].' programs, using '.nice_filesize(disk_used).' out of '.nice_filesize(disk_size);
-        echo "<br/>".$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.' '.nice_filesize(disk_used) .' ('.nice_length($Total_Time).') ' ._LANG_OUT_OF.nice_filesize(disk_size);
+        echo "<br/>".t('$1 programs, using $2 ($3) out of $4.', t($GLOBALS['Total_Programs']),
+                                                    nice_filesize(disk_used),
+                                                    nice_length($Total_Time),
+                                                    nice_filesize(disk_size));
 ?>
 </p></card>
 <?php
