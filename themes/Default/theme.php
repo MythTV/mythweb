@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2004.08.09 (xris)
+    theme.php                             Last Updated: 2004.09.08 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -129,6 +129,8 @@ class Theme {
                 <a href="scheduled_recordings.php"><?php echo _LANG_SCHEDULED_RECORDINGS?></a>
                 &nbsp; | &nbsp;
                 <a href="recorded_programs.php"><?php echo _LANG_RECORDED_PROGRAMS?></a>
+                &nbsp; | &nbsp;
+                <a href="schedule_manually.php"><?php echo _LANG_MANUALLY_SCHEDULE ?></a>
                 &nbsp; | &nbsp;
                 <a href="status.php"><?php echo _LANG_BACKEND_STATUS?></a><?php
         # really should move the category_legend footnote to this section,

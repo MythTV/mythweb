@@ -17,6 +17,7 @@ define ('_LANG_FAVOURITES',           'Favourites');
 define ('_LANG_SCHEDULED_RECORDINGS', 'Scheduled Recordings');
 define ('_LANG_RECORDING_SCHEDULES',  'Recording Schedules');
 define ('_LANG_RECORDED_PROGRAMS',    'Recorded Programs');
+define ('_LANG_MANUALLY_SCHEDULE',    'Manually Schedule');
 define ('_LANG_CATEGORY_LEGEND',      'Category Legend');
 define ('_LANG_ACTION',               'Action');
 define ('_LANG_ADULT',                'Adult');
