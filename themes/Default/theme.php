@@ -113,7 +113,7 @@ class Theme {
 	}
 
 	function print_menu_content() {
-		?><a id="category_legend_anchor" onmouseover="show('category_legend');return true;" onmouseout="hide('category_legend');return true;">MythTV:</a> &nbsp; &nbsp;
+		?><a id="category_legend" onmouseover="show('category_legend');return true;" onmouseout="hide();return true;">MythTV:</a> &nbsp; &nbsp;
 				<a href="program_listing.php">Listings</a>
 				&nbsp; | &nbsp;
 				<a href="search.php?searchstr=<?php echo movie_word?>&search_category_type=yes"><?php echo movie_word?>s</a>
@@ -147,7 +147,7 @@ class Theme {
 	}
 ?>
 
-<div id="category_legend" class="hidden">
+<div id="category_legend_popup" class="hidden">
 <table width="400" bgcolor="#003060" border="1" cellpadding="0" cellspacing="0">
 <tr>
 	<td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">

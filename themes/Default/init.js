@@ -1,5 +1,5 @@
 /***                                                                        ***\
-    init.js                                  Last Updated: 2003.09.05 (xris)
+    init.js                                  Last Updated: 2004.02.05 (xris)
     basic javascript routines
 \***                                                                        ***/
 
@@ -23,9 +23,11 @@
 
 	function get_element(id) {
 		if (typeof id != 'string') return id;
-		if (isW3C)
+		if (document.getElementById)
 			return document.getElementById(id);
-		return document.all[id];
+		if (document.all)
+			return document.all[id];
+		return null;
 	}
 
 // Image Preloader
@@ -50,33 +52,11 @@
 		img.src=img_off[which].src;
 	}
 
-// Start tracking mouse movements, so we can show dynamic content
-
-	var mouse_x = 0;
-	var mouse_y = 0;
-
-	function grabEv(e) {
-		e = e ? e : event;
-		if (e.clientX || e.clientY) {
-			mouse_x = e.clientX + window.scrollX;
-			mouse_y = e.clientY + window.scrollY;
-		}
-		else if (e.pageX || e.pageY) {
-			mouse_x = e.pageX;
-			mouse_y = e.pageY;
-		}
-		else {
-			mouse_x = e.x + document.documentElement.scrollLeft + document.body.scrollLeft;
-			mouse_y = e.y + document.documentElement.scrollTop  + document.body.scrollTop;
-		}
+// Window status changer
+	function wstatus(str) {
+		window.status = str ? str : '';
+		return true;
 	}
-
-// We don't currently need this stuff now that we have find_position()
-//	if (isNN4)
-//		document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE);
-//	document.onmousemove = grabEv;
-
-// Functions to show/hide sections of the page (for mouseovers)
 
 /*
 	find_position:
@@ -130,35 +110,43 @@
 	I'm open to suggestions for fixing it.
 */
 	var last_shown = null;
-	var gtimeout = null;    // global timeout id
-	var gname = null;       // global name to "show"
-	function show(name) {
+	var gtimeout   = null;	// global timeout id
+	var gname      = null;	// global name to "show"
+	var gparent    = null;	// global name to "show"
+	var x_offset   = 0;
+	var y_offset   = 5;
+	function show(id, popup_id, x, y) {
 	// store data in global var
-		gname = name;
-	// remove timed display if already active
-		if (gtimeout)
-			clearTimeout(gtimeout);
-	// delay .1s to give position time to be better
-		gtimeout = setTimeout('timed_show()', 75);
+		if (popup_id && popup_id.length > 0)
+			gname = popup_id + '_popup';
+		else
+			gname = id + '_popup';
+		gparent = id;
+	// Adjust x and y offsets?
+		x_offset = isNaN(x) ? 0 : x;
+		y_offset = isNaN(y) ? 5 : y;
+	// delay to give position time to be better
+		clear_timeout();
+		gtimeout = setTimeout('timed_show()', 50);
 	}
 
 	function timed_show() {
+		clear_timeout();
 	// retrieve data from global var
 		name = gname;
-		gtimeout = null;
 	// In case the last was stuck on, let's hide it
-		if (last_shown)
-			hide(last_shown);
+		if (last_shown && last_shown != name)
+			timed_hide();
 	// Grab the current element to be shown
 		last_shown = name;
 		var field = get_element(name);
 		if (field.style)
 			field = field.style;
 	// Get the location of the parent element
-		var pos = find_position(get_element(name+'_anchor'));
+		var pos = find_position(get_element(gparent));
 	// Set the initial position of the hidden element
 		var x = parseInt(pos[0]);
-		var y = parseInt(pos[1]) + get_element(name+'_anchor').offsetHeight;
+		var y = parseInt(pos[1]) + get_element(gparent).offsetHeight;
 	// Get some window information so we can make sure the box doesn't extend off the edge of the screen
 		var window_width = 0, window_height = 0, scroll_left = 0, scroll_top = 0;
 		if (document.documentElement.clientWidth) {
@@ -189,17 +177,22 @@
 				x = window_width + scroll_left - width - 2;		// subtract a couple of extra pixels to account for borders
 			if (y > window_height + scroll_top - height - 7)
 				y = window_height + scroll_top - height - 7;	// subtract a couple of extra pixels to account for borders
-		// Does this now conflict with the mouse?
+		// Does this now conflict with the parent element?
 			if (y < parseInt(pos[1])) {
 				if (x < parseInt(pos[0]))
 					y = parseInt(pos[1]) - height - 10;
 				else
-					x += get_element(name+'_anchor').offsetWidth + 5;
+					x += get_element(gparent).offsetWidth + 5 - x_offset;
 			}
 		}
+	// Make some minor corrections
+		x += x_offset;
+		y += y_offset;
+		if (x < 0) x = 0;
+		if (y < 0) y = 0;
 	// Adjust the element
 		field.left = x;
-		field.top  = y + 5;
+		field.top  = y;
 		if (isNN4) {
 			field.xpos       = x;
 			field.ypos       = y;
@@ -209,15 +202,26 @@
 			field.visibility = 'visible';
 	}
 
-	function hide(name) {
-		if (gtimeout) {
-			clearTimeout(gtimeout);
-			gtimeout=null;
-		}
-		last_shown = null;
-		var field = get_element(name);
+	function hide(delay) {
+		delay = parseInt(delay);
+		if (isNaN(delay) || delay < 1)
+			delay = 0;
+		clear_timeout();
+		gtimeout = setTimeout('timed_hide()', delay);
+	}
+
+	function timed_hide() {
+		clear_timeout();
+		var field = get_element(last_shown);
 		if (field.style)
 			field = field.style;
 		field.visibility = isNN4 ? 'hide' : 'hidden';
+		last_shown = null;
 	}
 
+	function clear_timeout() {
+		if (gtimeout) {
+			clearTimeout(gtimeout);
+			gtimeout = null;
+		}
+	}

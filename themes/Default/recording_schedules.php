@@ -78,7 +78,7 @@ if ($group_field == "") {
 			$program_id_counter++;
 		// Add a footnote
 			global $Footnotes;
-			$Footnotes[] = "<div id=\"program_$program_id_counter\" class=\"hidden\">
+			$Footnotes[] = "<div id=\"program_{$program_id_counter}_popup\" class=\"hidden\">
 <table class=\"menu small\" border=\"1\" cellpadding=\"5\" cellspacing=\"0\">
 <tr>
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
@@ -157,9 +157,9 @@ if ($group_field == "") {
 	<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
 	<td class="<?php echo $show->class?>"><?php
 		// Print a link to record this show
-		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?recordid='.$show->recordid.'"'
+		echo '<a id="program_'.$program_id_counter.'" href="program_detail.php?recordid='.$show->recordid.'"'
 			 .(show_popup_info ? ' onmouseover="window.status=\'Details for: '.str_replace('\'', '\\\]', $show->title).'\';show(\'program_'.$program_id_counter.'\');return true"'
-			 					.' onmouseout="window.status=\'\';hide(\'program_'.$program_id_counter.'\');return true"'
+			 					.' onmouseout="window.status=\'\';hide();return true"'
 							   : '')
 			 .'>'.$show->title
 			 .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2004.01.27 (xris)
+    program_listing.php                      Last Updated: 2004.02.05 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -192,7 +192,7 @@ class Theme_program_listing extends Theme {
 			$program_id_counter++;
 		// Add a footnote
 			global $Footnotes;
-			$Footnotes[] = "<div id=\"program_$program_id_counter\" class=\"hidden\">
+			$Footnotes[] = "<div id=\"program_{$program_id_counter}_popup\" class=\"hidden\">
 <table class=\"menu small\" border=\"1\" cellpadding=\"5\" cellspacing=\"0\">
 <tr>
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
@@ -259,10 +259,10 @@ class Theme_program_listing extends Theme {
 			$mouseover .= 'show(\'program_'.$program_id_counter.'\');';
 		$mouseover .= 'return true;" onmouseout="window.status=\'\';';
 		if (show_popup_info)
-			$mouseover .= 'hide(\'program_'.$program_id_counter.'\');';
+			$mouseover .= 'hide();';
 		$mouseover .= 'return true;"';
 	// Print a link to record this show
-		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'"'.$mouseover.'>';
+		echo '<a id="program_'.$program_id_counter.'" href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'"'.$mouseover.'>';
 		if ($percent > 5) {
 			echo $program->title;
 			if (strlen($program->subtitle) > 0) {
