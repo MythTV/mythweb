@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    translate.php                            Last Updated: 2005.01.24 (xris)
+    translate.php                            Last Updated: 2005.02.14 (xris)
 
     Basic routines that allow for language translation.  Please see
     languages/translations.txt for information about using the translation
@@ -16,10 +16,9 @@
 // the matching language and charset codes.
     $Languages = array();
     $Languages['Australian'] = array('Australian',      '');     // Australian is a joke, don't try to detect it
-    $Languages['Dutch']      = array('Nederlands',      'nl_NL');
+    $Languages['Dutch']      = array('Nederlands',      array('nl_NL', 'nl_BE'));
     $Languages['English']    = array('English',         'en_US.ISO-8859-1');
     $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR');
-    $Languages['German']     = array('Deutsch',         'de_DE');
     $Languages['Japanese']   = array('Japanese',        'ja_JP');
     $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES');
     $Languages['Swedish']    = array('Svenska',         'sv_SE');
@@ -196,32 +195,35 @@
         $curcscore = 0;
         $curlang   = null;
         foreach($GLOBALS['Languages'] as $lang => $details) {
-            $tmp      = @explode('.', str_replace('_', '-', $details[1]));
-            $allang   = strtolower($tmp[0]);
-            $cs       = strtoupper($tmp[1]);
-            $noct     = explode('-', $allang);
-            $testvals = array(
-                              array($alscores[$allang],  $acscores[$cs]),
-                              array($alscores[$noct[0]], $acscores[$cs]),
-                              array($alscores[$allang],  $acscores['*']),
-                              array($alscores[$noct[0]], $acscores['*']),
-                              array($alscores['*'],      $acscores[$cs]),
-                              array($alscores['*'],      $acscores['*'])
-                             );
-        // Scan through the possible test-match values until we find a valid set
-            foreach($testvals as $tval) {
-                if(!isset($tval[0]) || !isset($tval[1]))
-                    continue;
-                if($curlscore < $tval[0]) {
-                    $curlscore = $tval[0];
-                    $curcscore = $tval[1];
-                    $curlang   = $lang;
+            $encodings = is_array($details[1]) ? $details[1] : array($details[1]);
+            foreach ($encodings as $encoding) {
+                $tmp      = @explode('.', str_replace('_', '-', $encoding));
+                $allang   = strtolower($tmp[0]);
+                $cs       = strtoupper($tmp[1]);
+                $noct     = explode('-', $allang);
+                $testvals = array(
+                                  array($alscores[$allang],  $acscores[$cs]),
+                                  array($alscores[$noct[0]], $acscores[$cs]),
+                                  array($alscores[$allang],  $acscores['*']),
+                                  array($alscores[$noct[0]], $acscores['*']),
+                                  array($alscores['*'],      $acscores[$cs]),
+                                  array($alscores['*'],      $acscores['*'])
+                                 );
+            // Scan through the possible test-match values until we find a valid set
+                foreach($testvals as $tval) {
+                    if(!isset($tval[0]) || !isset($tval[1]))
+                        continue;
+                    if($curlscore < $tval[0]) {
+                        $curlscore = $tval[0];
+                        $curcscore = $tval[1];
+                        $curlang   = $lang;
+                    }
+                    elseif ($curlscore == $tval[0] && $curcscore < $tval[1]) {
+                        $curcscore = $tval[1];
+                        $curlang   = $lang;
+                    }
+                    break;
                 }
-                elseif ($curlscore == $tval[0] && $curcscore < $tval[1]) {
-                    $curcscore = $tval[1];
-                    $curlang   = $lang;
-                }
-                break;
             }
         }
     // Return the language we found
