@@ -89,7 +89,6 @@ define ('_LANG_KEY_BINDINGS',                  'Key Bindings');
 define ('_LANG_CONFIGURE',                     'Configure');
 define ('_LANG_GO_TO',                         'Go To');
 define ('_LANG_ADVANCED',                      'advanced');
-define ('_LANG_SEARCH',                        'search');
 define ('_LANG_FORMAT_HELP',                   'format help');
 define ('_LANG_STATUS_BAR',                    'Status Bar');
 define ('_LANG_SCHEDULED_RECORDINGS',          'Scheduled Recordings');
@@ -112,9 +111,10 @@ define ('_LANG_DATE',               'Date');
 define ('_LANG_JUMP',               'Jump');
 
 /* program_detail.php */
-define ('_LANG_SEARCH_IMDB',                        'Search IMDB');
-define ('_LANG_SEARCH_GOOGLE',                      'Search Google');
-define ('_LANG_SEARCH_TVTOME',                      'Search TV Tome');
+define ('_LANG_SEARCH',                             'Search');
+define ('_LANG_IMDB',                               'IMDB');
+define ('_LANG_GOOGLE',                             'Google');
+define ('_LANG_TVTOME',                             'TV Tome');
 define ('_LANG_MINUTES',                            'minutes');
 define ('_LANG_TO',                                 'to');
 define ('_LANG_CATEGORY',                           'Category');

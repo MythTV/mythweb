@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2004.02.15 (xris)
+	program_detail.php                       Last Updated: 2004.03.28 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
@@ -50,21 +50,28 @@ class Theme_program_detail extends Theme {
 					?></td>
 			<td width="24px">&nbsp;</td>
 			<td><span class="huge"><a href="search.php?searchstr=<?php echo urlencode($this_program->title)?>&search_title=yes">"<?php echo $this_program->title?>"</a>
-			<?php if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
-			</span><BR>
+				<?php if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
+				</span><BR>
 				<span class="small">
 				<?php
-				if (isset($_GET[recordid])) echo "<em>";
-				echo date('D, M jS', $this_program->starttime) . '<br>';
-				echo date('g:i A', $this_program->starttime) . ' ' . _LANG_TO . ' ' . date('g:i A', $this_program->endtime);
-				if (!isset($_GET[recordid])) echo ' (' . (int)($this_program->length/60) . ' ' . _LANG_MINUTES .')';?><BR>
-				<?php
+				if (isset($_GET['recordid']))
+					echo "<em>";
+				echo date('D, M jS', $this_program->starttime);
 				if ($this_program->previouslyshown)
-					echo '(Rerun) ';
-				if (isset($_GET[recordid])) echo "</em>";
- 				echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">" . _LANG_SEARCH_IMDB . "</a>)";
-				echo " (<a href=\"http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString=" . urlencode($this_program->title) . "\">" . _LANG_SEARCH_TVTOME . "</a>)";
- 				echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">" . _LANG_SEARCH_GOOGLE . "</a>)";
+					echo ' ('._LANG_RERUN.')';
+				echo '<br />'
+					.date('g:i A', $this_program->starttime) . ' ' . _LANG_TO . ' ' . date('g:i A', $this_program->endtime);
+				if (!isset($_GET['recordid']))
+					echo ' (' . (int)($this_program->length/60) . ' ' . _LANG_MINUTES .')';
+				echo "<br />\n\t\t\t";
+				if (isset($_GET['recordid'])) echo "</em>";
+ 				echo '('._LANG_SEARCH.': &nbsp;'
+					.' <a href="http://www.imdb.com/Find?select=Titles&for='.urlencode($this_program->title).'">'._LANG_IMDB.'</a>'
+					.' &nbsp;-&nbsp; '
+					.' <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString='.urlencode($this_program->title).'">'._LANG_TVTOME . '</a>'
+					.' &nbsp;-&nbsp; '
+ 					.' <a href="http://www.google.com/search?q='.urlencode($this_program->title).'">'._LANG_GOOGLE.'</a>'
+					.')';
 				?></span></td>
 		</tr><tr>
 			<td colspan="3">&nbsp;</td>
