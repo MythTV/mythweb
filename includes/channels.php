@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	channels.php                             Last Updated: 2003.07.30 (xris)
+	channels.php                             Last Updated: 2003.11.19 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -96,19 +96,10 @@ class Channel {
 				$program_starts = $start_time;
 			if ($program->endtime > $end_time)
 				$program_ends = $end_time;
-		// Make sure this program extends all the way through its timeslots
-			if ($program->endtime > $program_ends + timeslot_size) {
-				$program_ends += timeslot_size;
-			}
-			#$program->title .= date("g:i", $program_starts)." - ".date("g:i", $program_ends)."<BR>";
 		// Calculate the number of time slots this program gets
-			$timeslots_used = round(($program_ends - $program_starts) / timeslot_size);
-		// We might need to add another timeslot
-			#if ($program_ends < $program_starts + ($timeslots_used) * timeslot_size)
-			#	$timeslots_used++;
-		// Too short to fit into a timeslot - skip it
-			if ($timeslots_used < 1)
-				continue;
+			$length = (($program_ends - $program_starts) / timeslot_size);
+			if ($length < .5) continue;	// ignore shows that don't take up at least half a timeslot
+			$timeslots_used = ceil($length);
 		// Increment $start_time so we avoid putting tiny shows (ones smaller than a timeslot) into their own timeslot
 			$start_time += $timeslots_used * timeslot_size;
 		// Make sure this doesn't put us over
