@@ -23,6 +23,7 @@
     $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES');
     $Languages['Swedish']    = array('Svenska',         'sv_SE');
     $Languages['Danish']     = array('Dansk',           'da_DK');
+    $Languages['German']     = array('Deutsch',         'de_DE');
 
 // Change language?
     if ($_POST['language'])
