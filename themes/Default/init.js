@@ -1,5 +1,5 @@
 /***                                                                        ***\
-    init.js                                  Last Updated: 2004.02.05 (xris)
+    init.js                                  Last Updated: 2004.02.16 (xris)
     basic javascript routines
 \***                                                                        ***/
 
@@ -212,10 +212,12 @@
 
 	function timed_hide() {
 		clear_timeout();
-		var field = get_element(last_shown);
-		if (field.style)
-			field = field.style;
-		field.visibility = isNN4 ? 'hide' : 'hidden';
+		if (last_shown) {
+			var field = get_element(last_shown);
+			if (field.style)
+				field = field.style;
+			field.visibility = isNN4 ? 'hide' : 'hidden';
+		}
 		last_shown = null;
 	}
 
