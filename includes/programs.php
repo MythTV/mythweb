@@ -42,7 +42,7 @@
 		                       'EarlierShowing'		=> _LANG_RECSTATUS_LONG_EARLIERSHOWING,
 		                       'TooManyRecordings'	=> _LANG_RECSTATUS_LONG_TOOMANYRECORDINGS,
 		                       'Cancelled' 			=> _LANG_RECSTATUS_LONG_CANCELLED,
-		                       'Conflict'		=> _LANG_RECSTATUS_LONG_CONFLICT,
+		                       'Conflict'			=> _LANG_RECSTATUS_LONG_CONFLICT,
 		                       'LaterShowing'		=> _LANG_RECSTATUS_LONG_LATERSHOWING,
 		                       'Overlap'	   		=> _LANG_RECSTATUS_LONG_OERLAP,
 		                       'LowDiskSpace'  		=> _LANG_RECSTATUS_LONG_LOWDISKSPACE,
@@ -297,16 +297,16 @@ class Program {
 			#$fs_low           = $program_data[10];
 			#$starttime        = $program_data[11];
 			#$endtime          = $program_data[12];
-			$this->override    = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
-			$this->hostname    = $program_data[16];					#  myth
-			#$this->sourceid   = $program_data[17];					#  -1
-			#$this->cardid     = $program_data[18];					#  -1
-			#$this->inputid    = $program_data[19];					#
-			$this->recpriority = $program_data[20];					#
-			$this->recstatus   = $program_data[21];					#
-			$this->conflicting = ($this->recstatus == 'Conflict');	# conflicts with another scheduled recording?
-			$this->recording   = ($this->recstatus <= 'WillRecord'); # scheduled to record?
-			$this->recordid    = $program_data[22];			        #
+			$this->override    = $program_data[15] ? true : false;	 # matches an item in oldrecorded, and won't be recorded
+			$this->hostname    = $program_data[16];					 #  myth
+			#$this->sourceid   = $program_data[17];					 #  -1
+			#$this->cardid     = $program_data[18];					 #  -1
+			#$this->inputid    = $program_data[19];					 #
+			$this->recpriority = $program_data[20];					 #
+			$this->recstatus   = $program_data[21];					 #
+			$this->conflicting = ($this->recstatus == 'Conflict');	 # conflicts with another scheduled recording?
+			$this->recording   = ($this->recstatus == 'WillRecord'); # scheduled to record?
+			$this->recordid    = $program_data[22];			         #
 			#$this->rectype     = $program_data[23];
 			$this->dupin       = $program_data[24];
 			$this->dupmethod   = $program_data[25];
@@ -576,10 +576,10 @@ class Program {
 		$this->class = '';
 	// Recording classes?
 		if ($this->will_record) {
-			if ($this->conflicting)
-				$this->class .= 'record_conflicting ';
-			elseif ($this->recording)
+			if ($this->recstatus == 'WillRecord')
 				$this->class .= 'will_record ';
+			elseif ($this->recstatus == 'Conflict' || $this->recstatus == 'Overlap')
+				$this->class .= 'record_conflicting ';
 			elseif ($this->recstatus == 'PreviousRecording' || $this->recstatus == 'CurrentRecording')
 				$this->class .= 'record_duplicate ';
 			else
