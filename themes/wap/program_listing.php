@@ -17,7 +17,7 @@ class Theme_program_listing extends Theme {
 	*/
 	function print_header($start_time, $end_time) {
 	// Print the main page header
-		parent::print_header('MythWeb - Program Listing:  '.date('F j, Y, g:i A', $start_time));
+		parent::print_header('MythWeb - Program Listing:  '.strftime('%B %e, %Y, %I:%M %p', $start_time));
 	// Print the header info specific to the program listing
 ?>
 <p>		

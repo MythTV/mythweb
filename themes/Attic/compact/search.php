@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	search.php                    Last Updated: 2004.04.12 (xris)
+	search.php                    Last Updated: 2004.05.04 (xris)
 
 	This file defines a theme class for the search section.
 	It must define one method.   documentation will be added someday.
@@ -72,7 +72,7 @@ class Theme_search extends Theme {
 	</td>
 	<td><?php echo $show->description?></td>
 	<td><?php echo $show->channel->name?></td>
-	<td nowrap><?php print nice_date($show->starttime) . date(' g:i a', $show->starttime) ?></td>
+	<td nowrap><?php print nice_date($show->starttime) . strftime(' %i', $show->starttime) ?></td>
 	<td nowrap><?php echo nice_duration($show->length)?></td>
 </tr><?php
 			$row++;

@@ -105,7 +105,7 @@ if ($group_field == "") {
 
 	// Print a dividing row if grouping changes
 	if ($group_field == "airdate")
-	    $cur_group = date($_SESSION['date_listing_jump'], $show->starttime);
+	    $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
 	elseif ($group_field == "channum")
 		$cur_group = $show->channel->name;
 	elseif ($group_field == "title")
@@ -154,7 +154,7 @@ if ($group_field == "") {
         echo("<td>".$show->description."</td>");
 ?>
 	<td><?php echo $show->channame?></td>
-	<td nowrap><?php echo date($_SESSION['date_recorded'], $show->starttime)?></td>
+	<td nowrap><?php echo strftime($_SESSION['date_recorded'], $show->starttime)?></td>
 	<td nowrap><?php echo nice_length($show->length)?></td>
 	<td nowrap><?php echo nice_filesize($show->filesize)?></td>
 <?php	if ($show->endtime > time()) { ?>

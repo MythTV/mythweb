@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2004.02.04 (xris)
+    program_listing.php                      Last Updated: 2004.05.04 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -13,13 +13,13 @@ class Theme_program_listing extends Theme {
 
 	function print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime) {
 	// Print the main page header
-		parent::print_header('MythWeb - Program Listing:  '.date('F j, Y, g:i A', $list_starttime));
+		parent::print_header('MythWeb - Program Listing:  '.strftime('%B %e, %Y, %I:%M %p', $list_starttime));
 	// Print the header info specific to the program listing
 ?>
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-	<td width="50%" align="center">Currently Browsing:  <?=date('F j, Y, g:i A', $list_starttime)?></td>
+	<td width="50%" align="center">Currently Browsing:  <?php echo strftime('%B %e, %Y, %I:%M %p', $list_starttime)?></td>
 	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
 		<form class="form" action="program_listing.php" method="get">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
@@ -48,7 +48,7 @@ class Theme_program_listing extends Theme {
 					$date = date("Ymd", $time);
 					echo "<option value=\"$date\"";
 					if ($date == date("Ymd", $list_starttime)) echo " selected";
-					echo ">".date("F j, Y" , $time)."</option>";
+					echo ">".strftime('%B %e, %Y', $time)."</option>";
 				}
 				?></select></td>
 			<td align="center"><input type="submit" class="submit" value="Jump"></td>

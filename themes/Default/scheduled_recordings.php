@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2004.03.07 (xris)
+	scheduled_recordings.php                    Last Updated: 2004.05.04 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.
@@ -120,7 +120,7 @@ if ($group_field == "") {
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
 			<td align=\"right\">"._LANG_AIRTIME.":</td>
-			<td>".date($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.date($_SESSION['time_format'], $show->endtime)."</td>
+			<td>".strftime($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.strftime($_SESSION['time_format'], $show->endtime)."</td>
 		</tr><tr>
 			<td align=\"right\">"._LANG_TITLE.":</td>
 			<td>$show->title</td>
@@ -174,7 +174,7 @@ if ($group_field == "") {
 
 	// Print a dividing row if grouping changes
 	if ($group_field == "airdate")
-	    $cur_group = date($_SESSION['date_listing_jump'], $show->starttime);
+	    $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
 	elseif ($group_field == "channum")
 		$cur_group = $show->channel->name;
 	elseif ($group_field == "title")
@@ -200,7 +200,7 @@ if ($group_field == "") {
 			 .'</a>';
 		?></td>
 	<td><?php echo $show->channel->name?></td>
-	<td nowrap><?php echo date($_SESSION['date_scheduled'], $show->starttime)?></td>
+	<td nowrap><?php echo strftime($_SESSION['date_scheduled'], $show->starttime)?></td>
 	<td nowrap><?php echo nice_length($show->length)?></td>
 <?php	foreach ($commands as $command) { ?>
 	<td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo $command?></td>

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	init.php				                 Last Updated: 2004.02.21 (xris)
+	init.php				                 Last Updated: 2004.05.04 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -143,6 +143,18 @@
 		}
 		closedir($dir);
 	}
+
+// Upgrading from an earlier version?  Wipe the session date data
+    if (!strstr('%', $_SESSION['date_statusbar']))
+        unset($_SESSION['date_statusbar'],
+              $_SESSION['date_scheduled'],
+              $_SESSION['date_scheduled_popup'],
+              $_SESSION['date_recorded'],
+              $_SESSION['date_search'],
+              $_SESSION['date_listing_key'],
+              $_SESSION['date_listing_jump'],
+              $_SESSION['date_channel_jump'],
+              $_SESSION['time_format']);
 
 // Load/set default session data
 	if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = generic_date . ', ' . generic_time;

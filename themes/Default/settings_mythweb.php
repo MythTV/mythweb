@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings_mythweb.php                     Last Updated: 2004.02.15 (xris)
+    settings_mythweb.php                     Last Updated: 2004.05.04 (xris)
 
 	main configuration index
 \***                                                                        ***/
@@ -27,42 +27,42 @@ class Theme_settings_mythweb extends Theme_settings {
 	<td colspan="2"><?php echo _LANG_RECORDED_PROGRAMS?>:</td>
 </tr><tr>
 	<td class="command_border_b" align="right"><?php echo _LANG_SHOW_DESCRIPTIONS_ON_NEW_LINE?>:</td>
-	<td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." size="12" name="recorded_descunder"<?php if (htmlentities($_SESSION['recorded_descunder']) == "on") echo ' CHECKED' ?>></td>
+	<td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if (htmlentities($_SESSION['recorded_descunder']) == "on") echo ' CHECKED' ?>></td>
 </tr><tr>
 	<td><?php echo _LANG_DATEFORMATS?>:</td>
-	<td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.date.php" target="_blank"><?php echo _LANG_FORMAT_HELP?></a></div></td>
+	<td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.strftime.php" target="_blank"><?php echo _LANG_FORMAT_HELP?></a></div></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_STATUS_BAR?>:&nbsp;</td>
-	<td><input type="text" size="12" name="date_statusbar" value="<?php    echo htmlentities($_SESSION['date_statusbar']) ?>"></td>
+	<td><input type="text" size="24" name="date_statusbar" value="<?php    echo htmlentities($_SESSION['date_statusbar']) ?>"></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_SCHEDULED_RECORDINGS?>:&nbsp;</td>
-	<td><input type="text" size="12" name="date_scheduled" value="<?php    echo htmlentities($_SESSION['date_scheduled']) ?>"></td>
+	<td><input type="text" size="24" name="date_scheduled" value="<?php    echo htmlentities($_SESSION['date_scheduled']) ?>"></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_SCHEDULED_POPUP?>:&nbsp;</td>
-	<td><input type="text" size="12" name="date_scheduled_popup" value="<?php    echo htmlentities($_SESSION['date_scheduled_popup']) ?>"></td>
+	<td><input type="text" size="24" name="date_scheduled_popup" value="<?php echo htmlentities($_SESSION['date_scheduled_popup']) ?>"></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_RECORDED_PROGRAMS?>:&nbsp;</td>
-	<td><input type="text" size="12" name="date_recorded" value="<?php     echo htmlentities($_SESSION['date_recorded']) ?>"></td>
+	<td><input type="text" size="24" name="date_recorded" value="<?php     echo htmlentities($_SESSION['date_recorded']) ?>"></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_SEARCH_RESULTS?>:&nbsp;</td>
-	<td><input type="text" size="12" name="date_search" value="<?php       echo htmlentities($_SESSION['date_search']) ?>"></td>
+	<td><input type="text" size="24" name="date_search" value="<?php       echo htmlentities($_SESSION['date_search']) ?>"></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_LISTING_TIME_KEY?>:&nbsp;</td>
-	<td><input type="text" size="12" name="date_listing_key" value="<?php  echo htmlentities($_SESSION['date_listing_key']) ?>"></td>
+	<td><input type="text" size="24" name="date_listing_key" value="<?php  echo htmlentities($_SESSION['date_listing_key']) ?>"></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_LISTING_JUMP_TO?>&nbsp;</td>
-	<td><input type="text" size="12" name="date_listing_jump" value="<?php echo htmlentities($_SESSION['date_listing_jump']) ?>"></td>
+	<td><input type="text" size="24" name="date_listing_jump" value="<?php echo htmlentities($_SESSION['date_listing_jump']) ?>"></td>
 </tr><tr>
 	<td align="right"><?php echo _LANG_CHANNEL_JUMP_TO?>&nbsp;</td>
-	<td><input type="text" size="12" name="date_channel_jump" value="<?php echo htmlentities($_SESSION['date_channel_jump']) ?>"></td>
+	<td><input type="text" size="24" name="date_channel_jump" value="<?php echo htmlentities($_SESSION['date_channel_jump']) ?>"></td>
 </tr><tr>
 	<td align="right"><? echo _LANG_HOUR_FORMAT?>&nbsp;</td>
 	<td><select name="time_format" style="text-align: center"><?php
-		foreach (array('g:i a', 'g:i A', 'h:i a', 'h:i A', 'G:i', 'H:i') as $code) {
+		foreach (array('%I:%M %p', '%H:%M') as $code) {
 			echo "<option value=\"$code\"";
 			if ($_SESSION['time_format'] == $code)
 				echo ' SELECTED';
-			echo '>'.date($code, strtotime('9:00 AM')).' / '.date($code, strtotime('9:00 PM')).'</option>';
+			echo '>'.strftime($code, strtotime('9:00 AM')).' / '.strftime($code, strtotime('9:00 PM')).'</option>';
 		}
 		?></select></td>
 </tr><tr>

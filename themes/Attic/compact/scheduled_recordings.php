@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2003.12.02 (xris)
+	scheduled_recordings.php                    Last Updated: 2004.05.04 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.
@@ -51,7 +51,7 @@ class Theme_scheduled_recordings extends Theme {
 			$command = '';
 		}
 
-		$mouseover = ' onmouseover="window.status=\'' . str_replace(array("'", '"'), array("\\'", '&quot;'), $show->title) . ' (' . date('g:ia', $show->starttime) . ' - ' . date('g:ia', $show->endtime) . ')';
+		$mouseover = ' onmouseover="window.status=\'' . str_replace(array("'", '"'), array("\\'", '&quot;'), $show->title) . ' (' . strftime('%i', $show->starttime) . ' - ' . strftime('%i', $show->endtime) . ')';
 		if ($show->description)
 			$mouseover .= ': ' . str_replace(array("'", '"'), array("\\'", '&quot;'), sprintf('%.75s', $show->description));
 		$mouseover .= '\'; return true;" onmouseout="window.status=\'\'; return true;" ';

@@ -52,8 +52,8 @@
 	define('movie_word', 'Movie');
 
 // Date formats
-	define('generic_date', 'D, M j');
-	define('generic_time', 'h:i A');
+	define('generic_date', '%b %e, %Y');
+	define('generic_time', '%I:%M %p');
 
 // Language
 	define('default_language', 'English');

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2004.03.28 (xris)
+    program_listing.php                      Last Updated: 2004.05.04 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -17,13 +17,13 @@ class Theme_program_listing extends Theme {
 	*/
 	function print_header($start_time, $end_time) {
 	// Print the main page header
-		parent::print_header('MythWeb - Program Listing:  '.date('D F j, Y, g:i A', $start_time));
+		parent::print_header('MythWeb - Program Listing:  '.strftime('%A %B %e, %Y, %I:%M %p', $start_time));
 	// Print the header info specific to the program listing
 ?>
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-	<td width="50%" align="center"><?php echo _LANG_CURRENTLY_BROWSING?>:<?php echo date('D, F j, Y, g:i A', $start_time)?></td>
+	<td width="50%" align="center"><?php echo _LANG_CURRENTLY_BROWSING . strftime(' %a %b %e, %Y, %I:%M %p', $start_time)?></td>
 	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
 		<form class="form" id="program_listing" action="program_listing.php" method="get">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
@@ -36,7 +36,7 @@ class Theme_program_listing extends Theme {
 					echo "<option value=\"$h\"";
 					if ($h == date('H', $start_time))
 						echo ' SELECTED';
-					echo '>'.date($_SESSION['time_format'], strtotime("$h:00")).'</option>';
+					echo '>'.strftime($_SESSION['time_format'], strtotime("$h:00")).'</option>';
 				}
 				?></select></td>
 			<td align="right"><?echo _LANG_DATE?>:&nbsp;</td>
@@ -52,7 +52,7 @@ class Theme_program_listing extends Theme {
 					$date = date("Ymd", $time);
 					echo "<option value=\"$date\"";
 					if ($date == date("Ymd", $start_time)) echo " selected";
-					echo ">".date($_SESSION['date_listing_jump'] , $time)."</option>";
+					echo ">".strftime($_SESSION['date_listing_jump'] , $time)."</option>";
 				}
 				?></select></td>
 			<td align="center"><input type="submit" class="submit" value="<? echo _LANG_JUMP?>"></td>
@@ -136,7 +136,7 @@ class Theme_program_listing extends Theme {
 		foreach ($timeslots as $time) {
 			if ($count++ % timeslot_blocks) continue;
 ?>
-	<td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo (int)(timeslot_blocks * 96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo date($_SESSION['time_format'], $time)?></a></td>
+	<td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo (int)(timeslot_blocks * 96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo strftime($_SESSION['time_format'], $time)?></a></td>
 <?php	} ?>
 	<td nowrap class="menu" width="2%"><a href="program_listing.php?time=<?php echo $start_time + (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
 </tr><?php
@@ -203,7 +203,7 @@ class Theme_program_listing extends Theme {
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
 			<td align=\"right\">"._LANG_AIRTIME.":</td>
-			<td>".date($_SESSION['time_format'], $program->starttime).' to '.date($_SESSION['time_format'], $program->endtime)."</td>
+			<td>".strftime($_SESSION['time_format'], $program->starttime).' to '.strftime($_SESSION['time_format'], $program->endtime)."</td>
 		</tr><tr>
 			<td align=\"right\">"._LANG_TITLE.":</td>
 			<td>$program->title</td>
@@ -255,7 +255,7 @@ class Theme_program_listing extends Theme {
 		$percent = (int)($timeslots_used * 96 / num_time_slots);
 ?>
 	<td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" width="<?php echo $percent?>%" valign="top"><?php
-		$mouseover = 'onmouseover="window.status=\''.date($_SESSION['time_format'], $program->starttime).' - '.date($_SESSION['time_format'], $program->endtime).' -- '
+		$mouseover = 'onmouseover="window.status=\''.strftime($_SESSION['time_format'], $program->starttime).' - '.strftime($_SESSION['time_format'], $program->endtime).' -- '
 					 .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
 					 .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
 					 					  : '')

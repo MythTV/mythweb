@@ -52,7 +52,7 @@ class Theme {
 			<table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
 				<tr>
 					<td><?php $this->print_menu_content() ?></td>
-					<td align="right"><?=date(longdate_format, time())?></td>
+					<td align="right"><?php echo strftime(longdate_format, time())?></td>
 				</tr>
 			</table>
 		</td>

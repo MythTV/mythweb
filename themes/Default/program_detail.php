@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2004.04.19 (xris)
+	program_detail.php                       Last Updated: 2004.05.04 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
@@ -56,11 +56,11 @@ class Theme_program_detail extends Theme {
 				<?php
 				if ($_GET['recordid'])
 					echo "<em>";
-				echo date('D, M jS', $this_program->starttime);
+				echo strftime('%a, %b %e', $this_program->starttime);
 				if ($this_program->previouslyshown)
 					echo ' ('._LANG_RERUN.')';
 				echo '<br />'
-					.date('g:i A', $this_program->starttime) . ' ' . _LANG_TO . ' ' . date('g:i A', $this_program->endtime);
+					.strftime('%r', $this_program->starttime) . ' ' . _LANG_TO . ' ' . strftime('%r', $this_program->endtime);
 				if (!isset($_GET['recordid']))
 					echo ' (' . (int)($this_program->length/60) . ' ' . _LANG_MINUTES .')';
 				if ($_GET['recordid'])

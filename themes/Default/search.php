@@ -82,7 +82,7 @@ class Theme_search extends Theme {
 
 			// Print a dividing row if grouping changes
 			if ($group_field == "airdate") {
-			    $cur_group = date($_SESSION['date_listing_jump'], $show->starttime);
+			    $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
 			} elseif ($group_field == "channum") {
 				$cur_group = $show->channel->name;
 			} elseif ($group_field == "title") {
@@ -127,7 +127,7 @@ class Theme_search extends Theme {
 	<td><?php echo $show->subtitle?></td>
 	<td><?php echo $show->description?></td>
 	<td><?php echo $show->channel->name?></td>
-	<td nowrap><?php echo date($_SESSION['date_search'], $show->starttime)?></td>
+	<td nowrap><?php echo strftime($_SESSION['date_search'], $show->starttime)?></td>
 	<td nowrap><?php echo nice_length($show->length)?></td>
 </tr><?php
 			$prev_group = $cur_group;

@@ -2,7 +2,7 @@
 
 function nice_date($timestamp)
 {
-	$midnight = strtotime("12:00 am");
+	$midnight   = strtotime('12:00 am');
 	$delta_days = floor(($timestamp - $midnight) / 86400);
 	if (0 == $delta_days)
 		$ret = "Today";
@@ -11,9 +11,9 @@ function nice_date($timestamp)
 	elseif (-1 == $delta_days)
 		$ret = "Yesterday";
 	elseif (7 > abs($delta_days))
-		$ret = date("l", $timestamp);
+		$ret = strftime('%A', $timestamp);
 	else
-		$ret = date("j M Y", $timestamp);
+		$ret = strftime('%B %e, %Y', $timestamp);
 
 	return $ret;
 }

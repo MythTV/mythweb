@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2004.04.09 (xris)
+    theme.php                             Last Updated: 2004.05.04 (xris)
 
 	This is the main theme class for the Default MythWeb theme.  It should
 	not be instantiated directly, but will most likely contain methods
@@ -106,7 +106,7 @@ class Theme {
 	<td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
 		<tr>
 			<td><?php $this->print_menu_content() ?></td>
-			<td align="right"><?php echo date($_SESSION['date_statusbar'], time())?></td>
+			<td align="right"><?php echo strftime($_SESSION['date_statusbar'], time())?></td>
 		</tr>
 		</table></td>
 

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.20 (xris)
+	recorded_programs.php                    Last Updated: 2004.05.04 (xris)
 
 	This file defines a theme class for the recorded programs section.
 	It must define one method.   documentation will be added someday.
@@ -120,7 +120,7 @@ class Theme_recorded_programs extends Theme {
 	<td><?=$show->title?><?=trim($show->subtitle) != "" ? ": $show->subtitle" : ""?></td>
 	<td><?=$show->description?></td>
 	<td><?=$show->channame?></td>
-	<td nowrap><?=nice_date($show->starttime)?><br><?=date("g:i a", $show->starttime)?></td>
+	<td nowrap><?=nice_date($show->starttime)?><br><?php strftime('%i', $show->starttime)?></td>
 	<td nowrap align="right"><?=nice_duration($show->length)?></td>
 	<td nowrap align="right"><?=nice_filesize($show->filesize)?></td>
 	<td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">

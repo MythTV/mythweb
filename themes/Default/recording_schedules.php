@@ -90,7 +90,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
 				$Footnotes[] .= "
 		<tr>
  			<td align=\"right\">"._LANG_AIRTIME.":</td>
-			<td>".date($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.date($_SESSION['time_format'], $show->endtime)."</td>
+			<td>".strftime($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.strftime($_SESSION['time_format'], $show->endtime)."</td>
 		</tr>"
 			.(preg_match('/\\S/', $show->subtitle) ? "<tr>
  			<td align=\"right\">"._LANG_SUBTITLE.":</td>
