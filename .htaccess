@@ -1,11 +1,18 @@
-#AuthType Basic
-#AuthName "MythTV"
-#AuthUserFile /var/www/htpasswd
-#Require valid-user
+AuthType Basic
+AuthName "MythTV"
+AuthUserFile /var/www/htpasswd
+Require valid-user
 
+# Todo:
 # set up different auth for:
-#settings_channels.php
+# settings_channels.php
 
+# If you have nuv files that are actually mpeg2 files, uncomment this
+#AddType video/mpeg .nuv
+# If you have normal software-encoded nuv files, use this type
+AddType video/nuppelvideo .nuv
+
+# Some special handlers for 
 <FilesMatch "\.php$">
     php_value safe_mode                     0
 
@@ -15,7 +22,7 @@
     php_value register_globals              0
     php_value magic_quotes_gpc              0
     php_value file_uploads                  0
-    php_value allow_url_fopen               1
+    php_value allow_url_fopen               On
 
     php_value zlib.output_handler           Off
     php_value zlib.output_compression       16384

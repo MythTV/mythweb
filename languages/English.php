@@ -6,7 +6,7 @@ define ('_LANG_LANGUAGE_NAME', 'English');
 setlocale(LC_ALL, 'en_US.UTF-8');
 
 /* Default date and time formats */
-define('generic_date', '%b %e, %Y');
+define('generic_date', '%a %b %e, %Y');
 define('generic_time', '%I:%M %p');
 
 /* theme.php */
