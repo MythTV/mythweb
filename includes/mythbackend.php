@@ -240,7 +240,7 @@
             else {
                 preg_match('#myth://(.+?):(\d+)/(.+)$#', $fileurl, $matches);
                 list($matches, $host, $port, $path) = $matches;
-                $recs = explode(backend_sep, backend_command2(array("ANN FileTransfer $hostname", "$fileurl.png",
+                $recs = explode(backend_sep, backend_command2(array("ANN FileTransfer $hostname", "$fileurl.png"),
                                                               $datasocket,
                                                               $host, $port));
                 $generate_pixmap = (0 == $recs[3]) ? true : false;
