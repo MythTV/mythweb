@@ -120,9 +120,9 @@ class Theme {
 				<?/*&nbsp; | &nbsp;
 				<a href="index.php?mode=favourites"><?php echo _LANG_FAVOURITES?></a>*/?>
 				&nbsp; | &nbsp;
-				<a href="scheduled_recordings.php"><?php echo _LANG_SCHEDULED_RECORDINGS?></a>
-				&nbsp; | &nbsp;
 				<a href="recording_schedules.php"><?php echo _LANG_RECORDING_SCHEDULES?></a>
+				&nbsp; | &nbsp;
+				<a href="scheduled_recordings.php"><?php echo _LANG_SCHEDULED_RECORDINGS?></a>
 				&nbsp; | &nbsp;
 				<a href="recorded_programs.php"><?php echo _LANG_RECORDED_PROGRAMS?></a>
 				&nbsp; | &nbsp;
