@@ -252,7 +252,8 @@
                       .' '                            .backend_sep  // commfree
                           .' '                            .backend_sep  // chanoutputfilters
                           .$show->seriesid                .backend_sep  // seriesid
-                          .$show->programid               .backend_sep; // programid
+                          .$show->programid               .backend_sep  // programid
+						  .unix2mythtime($show->starttime).backend_sep; // dummy lastmodified
 
                 $ret = backend_command($cmd);
 
