@@ -214,7 +214,7 @@ if ($group_field == "") {
              .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
              .'</a>';
         ?></td>
-    <td><?php echo $show->channel->name?></td>
+    <td><?php echo $show->channel->channum, ' - ', $show->channel->name?></td>
     <td nowrap><?php echo strftime($_SESSION['date_scheduled'], $show->starttime)?></td>
     <td nowrap><?php echo nice_length($show->length)?></td>
 <?php   foreach ($commands as $command) { ?>
