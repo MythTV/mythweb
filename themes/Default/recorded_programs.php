@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.08.09 (xris)
+    recorded_programs.php                    Last Updated: 2004.11.25 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -139,7 +139,7 @@ if ($group_field == "") {
         echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
         generate_preview_pixmap($show);
         if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
-            echo '<a href="'.video_url.'/'.basename($show->filename).'">'
+            echo '<a href="'.video_url().'/'.basename($show->filename).'">'
                 .'<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">'
                 .'</a>';
         }
@@ -148,8 +148,8 @@ if ($group_field == "") {
         echo "</td>\n";
     }
     ?>
-    <td><?php echo '<a href="'.video_url.'/'.basename($show->filename).'">'.$show->title.'</a>'    ?></td>
-    <td><?php echo '<a href="'.video_url.'/'.basename($show->filename).'">'.$show->subtitle.'</a>' ?></td>
+    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'.$show->title.'</a>'    ?></td>
+    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'.$show->subtitle.'</a>' ?></td>
 <?php
     if (!$_SESSION['recorded_descunder'])
         echo "\t<td>".$show->description."</td>\n";

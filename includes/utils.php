@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    utils.php                                Last Updated: 2004.04.12 (xris)
+    utils.php                                Last Updated: 2004.11.25 (xris)
 
     utility routines used throughout mythweb
 \***                                                                        ***/
@@ -107,6 +107,26 @@ function nice_length($length) {
 */
     function _or($this, $or_this) {
         return $this ? $this : $or_this;
+    }
+
+/*
+    video_url:
+    returns video_url constant, or sets it according to the browser type
+*/
+    function video_url() {
+    // Not defined?
+        if (!video_url || video_url == 'video_url') {
+        // Mac and Linux just get a link to the direectory
+            if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
+                define('video_url', video_dir);
+        // Windows gets a myth:// url
+            else {
+                global $Master_Host, $Master_Port;
+                define('video_url', "myth://$Master_Host:$Master_Port");
+            }
+        }
+    // Return
+        return video_url;
     }
 
 /*
