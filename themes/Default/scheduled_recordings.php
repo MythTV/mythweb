@@ -17,7 +17,34 @@ class Theme_scheduled_recordings extends Theme {
 		global $All_Shows;
 ?>
 
-<table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<script language="JavaScript" type="text/javascript">
+<!--
+	function changevisible() {
+		for (var i=1; i < document.getElementById("listings").rows.length; i++) {
+ 			if (document.getElementById(document.getElementById("listings").rows[i].className).checked)
+				document.getElementById("listings").rows[i].style.display = "";
+ 			else
+				document.getElementById("listings").rows[i].style.display = "none";
+      	}
+	}
+// -->
+</script>
+
+<table border="0" align="center">
+<tr>
+	<td>Display:</td>
+	<td><input type="checkbox" id="scheduled" CHECKED onclick="changevisible()"></td>
+	<td>Scheduled</td>
+	<td><input type="checkbox" id="duplicate" CHECKED onclick="changevisible()"></td>
+	<td>Duplicates</td>
+	<td><input type="checkbox" id="deactivated" CHECKED onclick="changevisible()"></td>
+	<td>Deactivated</td>
+	<td><input type="checkbox" id="conflict" CHECKED onclick="changevisible()"></td>
+	<td>Conflicts</td>
+</tr>
+</table>
+
+<table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 	<td><a href="scheduled_recordings.php?sortby=title">show</a></td>
 	<td><a href="scheduled_recordings.php?sortby=channum">station</a></td>
