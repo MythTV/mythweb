@@ -336,7 +336,7 @@
             }
 
             if ($datasocket) {
-                #backend_command2('DONE', $datasocket);
+                #backend_command2('DONE', $datasocket, $host, $port);
                 fclose($datasocket);
                 $datasocket = NULL;
             }
