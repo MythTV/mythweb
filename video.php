@@ -34,7 +34,7 @@
 // Set sorting
     if (!is_array($_SESSION['video_sortby']))
         $_SESSION['video_sortby'] = array(array('field' => 'title',
-                                                   'reverse' => true));
+                                                   'reverse' => false));
 
 // Sort the programs
     if (count($All_Shows))
@@ -57,6 +57,7 @@
 
 class Video {
 
+    var $intid;
     var $plot;
     var $rating;    // this should be a reference to the $Channel array value
 
@@ -72,6 +73,7 @@ class Video {
     var $childid;
 
     function Video($program_data) {
+        $this->intid            = $program_data['intid'];
         $this->plot            = $program_data['plot'];
         $this->rating          = $program_data['rating'];
         $this->title           = $program_data['title'];
