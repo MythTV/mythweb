@@ -57,9 +57,16 @@
 	mysql_free_result($result);
 
 // Load all of the keys from the database
-        $result = mysql_query('SELECT * FROM keybindings WHERE hostname='.escape($usehost))
-                or trigger_error('SQL Error: '.mysql_error(), FATAL);
         $Keys = array();
+
+        $result = mysql_query('SELECT * FROM keybindings WHERE hostname='.escape($usehost).' AND context = \'Global\'')
+		or trigger_error('SQL Error: '.mysql_error(), FATAL);
+	while ($row = mysql_fetch_assoc($result))
+		$Keys[] = $row;
+	mysql_free_result($result);
+
+        $result = mysql_query('SELECT * FROM keybindings WHERE hostname='.escape($usehost).' AND context != \'Global\' ORDER BY context')
+                or trigger_error('SQL Error: '.mysql_error(), FATAL);
         while ($row = mysql_fetch_assoc($result))
                 $Keys[] = $row;
         mysql_free_result($result);
