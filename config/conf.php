@@ -19,9 +19,6 @@
     define('db_password', 'mythtv');
     define('db_dbname',   'mythconverg');
 
-// Language
-    define('default_language', 'English');
-
 // The domain of this webserver, for cookie validation and other things.  If you
 // don't have "canonical names" turned on in apache, you need to set this to the
 // name or IP you use to access this server, or session data will not work.

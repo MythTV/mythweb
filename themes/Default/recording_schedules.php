@@ -54,11 +54,11 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td><?php echo get_sort_link('title')   ?></td>
-    <td><?php echo get_sort_link('channum') ?></td>
-    <td><?php echo get_sort_link('profile') ?></td>
-    <td><?php echo get_sort_link('recgroup') ?></td>
-    <td><?php echo get_sort_link('type')    ?></td>
+    <td><?php echo get_sort_link('title',    t('title'))    ?></td>
+    <td><?php echo get_sort_link('channum',  t('channum'))  ?></td>
+    <td><?php echo get_sort_link('profile',  t('profile'))  ?></td>
+    <td><?php echo get_sort_link('recgroup', t('recgroup')) ?></td>
+    <td><?php echo get_sort_link('type',     t('type'))     ?></td>
 </tr><?php
     $row = 0;
 

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.11.25 (xris)
+    recorded_programs.php                    Last Updated: 2004.11.30 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -101,17 +101,17 @@ if ($group_field == "") {
     if (show_recorded_pixmaps)
         echo "\t<td>".t('preview')."</td>\n";
 ?>
-    <td><?php echo get_sort_link('title')    ?></td>
-    <td><?php echo get_sort_link('subtitle') ?></td>
+    <td><?php echo get_sort_link('title',    t('title'))    ?></td>
+    <td><?php echo get_sort_link('subtitle', t('subtitle')) ?></td>
 <?php
     if (!$_SESSION['recorded_descunder'])
-        echo "\t<td>".get_sort_link('description')."</td>\n";
+        echo "\t<td>".get_sort_link('description', t('description'))."</td>\n";
 ?>
-    <td><?php echo get_sort_link('channum')   ?></td>
-    <td><?php echo get_sort_link('recgroup')   ?></td>
-    <td><?php echo get_sort_link('airdate')   ?></td>
-    <td><?php echo get_sort_link('length')    ?></td>
-    <td><?php echo get_sort_link('file_size') ?></td>
+    <td><?php echo get_sort_link('channum',   t('channum'))  ?></td>
+    <td><?php echo get_sort_link('recgroup',  t('recgroup'))  ?></td>
+    <td><?php echo get_sort_link('airdate',   t('airdate'))  ?></td>
+    <td><?php echo get_sort_link('length',    t('length'))   ?></td>
+    <td><?php echo get_sort_link('file_size', t('file_size')) ?></td>
 </tr><?php
     $row = 0;
 

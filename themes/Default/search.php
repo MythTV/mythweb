@@ -66,12 +66,12 @@ class Theme_search extends Theme {
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != "") echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td><?php echo get_sort_link('title')       ?></td>
-    <td><?php echo get_sort_link('subtitle')    ?></td>
-    <td><?php echo get_sort_link('description') ?></td>
-    <td><?php echo get_sort_link('channum')     ?></td>
-    <td><?php echo get_sort_link('airdate')     ?></td>
-    <td><?php echo get_sort_link('length')      ?></td>
+    <td><?php echo get_sort_link('title',       t('title'))       ?></td>
+    <td><?php echo get_sort_link('subtitle',    t('subtitle'))    ?></td>
+    <td><?php echo get_sort_link('description', t('description')) ?></td>
+    <td><?php echo get_sort_link('channum',     t('channum'))     ?></td>
+    <td><?php echo get_sort_link('airdate',     t('airdate'))     ?></td>
+    <td><?php echo get_sort_link('length',      t('length'))      ?></td>
 </tr><?php
         $row = 0;
 

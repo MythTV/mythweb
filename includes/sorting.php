@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2004.11.29 (xris)
+    sorting.php                              Last Updated: 2004.11.30 (xris)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -12,10 +12,10 @@
     get_sort_link:
     returns a formatted link to the specified sort field
 */
-    function get_sort_link($field) {
+    function get_sort_link($field, $string) {
         $status = sort_status($field);
         $link = '<a href="'.$_SERVER['PHP_SELF'].'?sortby='.urlencode($field).'">'
-               .t($field)
+               .$string
                .'</a>';
         if ($status == 1)
             $link .= ' <span class="large">&darr;</span>';
