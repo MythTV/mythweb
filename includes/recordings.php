@@ -80,8 +80,8 @@ class Recording {
 	var $maxnewest;
 	var $dupin;
 	var $dupmethod;
-	var $preroll;
-	var $postroll;
+	var $startoffset;
+	var $endoffset;
 
 	var $texttype;
 	var $channel;
@@ -115,8 +115,8 @@ class Recording {
 			$this->maxnewest   = $recording_data['maxnewest'];
 			$this->dupin       = $recording_data['dupin'];
 			$this->dupmethod   = $recording_data['dupmethod'];
-			$this->preroll     = $recording_data['preroll'];
-			$this->postroll    = $recording_data['postroll'];
+			$this->startoffset = $recording_data['startoffset'];
+			$this->endoffset   = $recording_data['endoffset'];
 		} else {
 			$this->recordid    = $recording_data->recordid;
 			$this->type        = $recording_data->type;
@@ -136,8 +136,8 @@ class Recording {
 			$this->maxnewest   = $recording_data->maxnewest;
 			$this->dupin       = $recording_data->dupin;
 			$this->dupmethod   = $recording_data->dupmethod;
-			$this->preroll     = $recording_data->preroll;
-			$this->postroll    = $recording_data->postroll;
+			$this->startoffset = $recording_data->startoffset;
+			$this->endoffset   = $recording_data->postroll;
 		}
 
 		// We get various recording-related information, too

@@ -203,10 +203,10 @@ class Theme_program_detail extends Theme {
 					<td><input type="checkbox" class="radio" name="maxnewest" <?php if ($this_program->maxnewest) echo "CHECKED" ?>></td>
 				</tr><tr>
 					<td nowrap align="right">Start Early (minutes):&nbsp;</td>
-					<td><input type="input" name="preroll" size="1" value="<?php echo htmlentities($this_program->preroll) ?>"></td>
+					<td><input type="input" name="startoffset" size="1" value="<?php echo htmlentities($this_program->startoffset) ?>"></td>
 				</tr><tr>
 					<td nowrap align="right">End Late (minutes):&nbsp;</td>
-					<td><input type="input" name="postroll" size="1" value="<?php echo htmlentities($this_program->postroll) ?>"></td>
+					<td><input type="input" name="endoffset" size="1" value="<?php echo htmlentities($this_program->endoffset) ?>"></td>
 				</tr>
 				</table>
 				</p>

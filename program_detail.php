@@ -37,10 +37,10 @@
 			$this_program->maxepisodes=$_GET['maxepisodes'];
 		$this_program->dupin = isset($_GET['dupin']) ? $_GET['dupin'] : 15;
 		$this_program->dupmethod = isset($_GET['dupmethod']) ? $_GET['dupmethod'] : 6;
-		if (isset($_GET['preroll']))
-			$this_program->preroll=$_GET['preroll'];
-		if (isset($_GET['postroll']))
-			$this_program->postroll=$_GET['postroll'];
+		if (isset($_GET['startoffset']))
+			$this_program->startoffset=$_GET['startoffset'];
+		if (isset($_GET['endoffset']))
+			$this_program->endoffset=$_GET['endoffset'];
 		$this_program->autoexpire = (isset($_GET['autoexpire']) && $_GET['autoexpire'] == "on") ? 1 : 0;
 		$this_program->maxnewest  = (isset($_GET['maxnewest']) && $_GET['maxnewest'] == "on")   ? 1 : 0;
 		if (isset($_GET['recordid'])) {
