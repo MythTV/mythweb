@@ -193,18 +193,18 @@
          */
         $curlscore = 0;
         $curcscore = 0;
-        $curgtlang = NULL;
+        $curlang   = null;
         foreach($GLOBALS['Languages'] as $lang => $details) {
             $tmp      = @explode('.', str_replace('_', '-', $details[1]));
             $allang   = strtolower($tmp[0]);
-            $gtcs     = strtoupper($tmp[1]);
+            $cs       = strtoupper($tmp[1]);
             $noct     = explode('-', $allang);
             $testvals = array(
-                              array($alscores[$allang],  $acscores[$gtcs]),
-                              array($alscores[$noct[0]], $acscores[$gtcs]),
+                              array($alscores[$allang],  $acscores[$cs]),
+                              array($alscores[$noct[0]], $acscores[$cs]),
                               array($alscores[$allang],  $acscores['*']),
                               array($alscores[$noct[0]], $acscores['*']),
-                              array($alscores['*'],      $acscores[$gtcs]),
+                              array($alscores['*'],      $acscores[$cs]),
                               array($alscores['*'],      $acscores['*'])
                              );
         // Scan through the possible test-match values until we find a valid set
@@ -214,17 +214,17 @@
                 if($curlscore < $tval[0]) {
                     $curlscore = $tval[0];
                     $curcscore = $tval[1];
-                    $curgtlang = $lang;
+                    $curlang   = $lang;
                 }
                 elseif ($curlscore == $tval[0] && $curcscore < $tval[1]) {
                     $curcscore = $tval[1];
-                    $curgtlang = $lang;
+                    $curlang   = $lang;
                 }
                 break;
             }
         }
     // Return the language we found
-        return $curgtlang;
+        return $curlang;
     }
 
 ?>
