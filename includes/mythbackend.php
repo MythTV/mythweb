@@ -110,7 +110,7 @@
         Check that we are speaking a version of the protocol that is compatible with the backend
 */
 	function check_proto_version($fp) {
-		$our_version = "6";
+		$our_version = "8";
 		$response = explode(backend_sep, backend_command2("MYTH_PROTO_VERSION " . $our_version, $fp));
 		if ($response[0] == "ACCEPT")
 			return;
@@ -239,7 +239,10 @@
 					  .' '                            .backend_sep  // program flags
 					  .' '                            .backend_sep	// recgroup
 					  .' '                            .backend_sep	// commfree
-				          .' '                            .backend_sep;	// chanoutputfilters
+				          .' '                            .backend_sep	// chanoutputfilters
+				          .$show->seriesid                .backend_sep	// seriesid
+				          .$show->programid               .backend_sep;	// programid
+
 				$ret = backend_command($cmd);
 
 				$recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',

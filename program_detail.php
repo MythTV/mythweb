@@ -110,7 +110,7 @@
 					or trigger_error('SQL Error: '.mysql_error(), FATAL);
 			}
 			else {
-				$result = mysql_query('REPLACE INTO record (recordid,type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset) values ('
+				$result = mysql_query('REPLACE INTO record (recordid,type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
 										.escape($this_program->recordid, true)             .','
 										.escape($this_program->type)                       .','
 										.escape($this_program->chanid)                     .','
@@ -131,7 +131,9 @@
 										.escape($this_program->maxepisodes)                .','
 										.escape($this_program->autoexpire)                 .','
 										.escape($this_program->startoffset)                .','
-										.escape($this_program->endoffset)                 .')')
+										.escape($this_program->endoffset)                  .','
+										.escape($this_program->seriesid)                   .','
+										.escape($this_program->programid)                  .')')
 					or trigger_error('SQL Error: '.mysql_error(), FATAL);
 				$recordid = mysql_insert_id();
 				if (mysql_affected_rows() < 1 || $recordid < 1)

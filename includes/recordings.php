@@ -83,6 +83,9 @@ class Recording {
 	var $startoffset;
 	var $endoffset;
 
+	var $seriesid;
+	var $programid;
+
 	var $texttype;
 	var $channel;
 
@@ -117,6 +120,8 @@ class Recording {
 			$this->dupmethod   = $recording_data['dupmethod'];
 			$this->startoffset = $recording_data['startoffset'];
 			$this->endoffset   = $recording_data['endoffset'];
+			$this->seriesid    = $recording_data['seriesid'];
+			$this->programid   = $recording_data['programid'];
 		} else {
 			$this->recordid    = $recording_data->recordid;
 			$this->type        = $recording_data->type;
@@ -138,6 +143,8 @@ class Recording {
 			$this->dupmethod   = $recording_data->dupmethod;
 			$this->startoffset = $recording_data->startoffset;
 			$this->endoffset   = $recording_data->postroll;
+			$this->seriesid    = $recording_data->seriesid;
+			$this->programid   = $recording_data->programid;
 		}
 
 		// We get various recording-related information, too

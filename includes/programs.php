@@ -242,6 +242,9 @@ class Program {
 	var $filesize;
 	var $hostname;
 
+	var $seriesid;
+	var $programid;
+
 	var $will_record    = false;
 	var $record_daily   = false;
 	var $record_weekly  = false;
@@ -319,6 +322,8 @@ class Program {
 			#$this->recgroup    = $program_data[30];
 			#$this->commfree    = $program_data[31];
                         #$this->outputfilters = $program_data[32];
+                        $this->seriesid     = $program_data[33];
+                        $this->programid    = $program_data[34];
 		}
 	// SQL data
 		else {
@@ -346,6 +351,9 @@ class Program {
 			$this->autoexpire      = $program_data['autoexpire'];
 			$this->startoffset     = $program_data['startoffset'];
 			$this->endoffset       = $program_data['endoffset'];
+			$this->seriesid        = $program_data['seriesid'];
+			$this->programid       = $program_data['programid'];
+
 		// Check to see if there is any additional data from mythbackend about this program
 			global $Pending_Programs;
 			load_pending();

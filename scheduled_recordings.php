@@ -25,7 +25,7 @@
 		}
 	// Fake an old recording so that this show won't record again
 		elseif ($_GET['never_record'] || $_POST['never_record']) {
-			$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category) VALUES ('
+			$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category, seriesid, seriesid, programid) VALUES ('
 									.escape($program->chanid)                    .','
 									.'FROM_UNIXTIME('.escape($program->starttime).'),'
 									#.'"1970-01-01",'
@@ -34,7 +34,9 @@
 									.escape($program->title)                     .','
 									.escape($program->subtitle)                  .','
 									.escape($program->description)               .','
-									.escape($program->category)                  .')')
+									.escape($program->category)                  .','
+									.escape($program->seriesid)                  .','
+									.escape($program->programid)                 .')')
 				or trigger_error('SQL Error: '.mysql_error(), FATAL);
 		// Make sure the aren't any manual overrides set for this show, either
 			$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($_GET['chanid']).' AND title='.escape($program->title).' AND subtitle='.escape($program->subtitle).' AND description='.escape($program->desription))
@@ -44,7 +46,7 @@
 		elseif ($_GET['suppress'] || $_POST['suppress']) {
 			$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
 				or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-			$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description) VALUES ('
+			$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description,seriesid,programid) VALUES ('
 									.escape($program->recordid).','
 									.'2,'	// record override type:   1 == record, 2 == don't record
 									.escape($program->chanid)                    .','
@@ -53,7 +55,9 @@
 									.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
 									.escape($program->title)                     .','
 									.escape($program->subtitle)                  .','
-									.escape($program->description)               .')')
+									.escape($program->description)               .','
+									.escape($program->seriesid)                  .','
+									.escape($program->programid)                 .')')
 				or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
 		}
 	// Record a show that wouldn't otherwise record (various reasons, read below)
@@ -62,7 +66,7 @@
 			if ($show->recording == 0 || $show->recstatus) {
 				$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
 					or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-				$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description) VALUES ('
+				$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description,seriesid,programid) VALUES ('
 										.escape($program->recordid).','
 										.'1,'	// record override type:   1 == record, 2 == don't record
 										.escape($program->chanid)                    .','
@@ -71,7 +75,9 @@
 										.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
 										.escape($program->title)                     .','
 										.escape($program->subtitle)                  .','
-										.escape($program->description)               .')')
+										.escape($program->description)               .','
+										.escape($program->seriesid)                  .','
+										.escape($program->programid)                 .')')
 					or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
 			}
 		}
