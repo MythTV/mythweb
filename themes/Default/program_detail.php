@@ -53,22 +53,33 @@ class Theme_program_detail extends Theme {
 			<?php if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
 			</span><BR>
 				<span class="small">
-				<?php echo date('g:i A', $this_program->starttime)?> to <?php echo date('g:i A', $this_program->endtime)?> (<?php echo (int)($this_program->length/60)?> minutes)<BR>
+				<?php
+				if (isset($_GET[recordid])) echo "<em>";
+				echo date('D, M jS', $this_program->starttime) . "<BR>";
+				echo date('g:i A', $this_program->starttime) ." to " . date('g:i A', $this_program->endtime);
+				if (!isset($_GET[recordid])) echo "(" . (int)($this_program->length/60) . " minutes)";?><BR>
 				<?php
 				if ($this_program->previouslyshown)
 					echo '(Rerun) ';
+				if (isset($_GET[recordid])) echo "</em>";
 				echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">Search IMDB</a>)";
 				echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";
 				?></span></td>
 		</tr><tr>
 			<td colspan="3">&nbsp;</td>
-		</tr><?php if (!isset($_GET[recordid]) && strlen($this_program->subtitle)) { ?><tr>
-			<td colspan="2" align="right">Episode:&nbsp;</td>
-			<td><?php echo $this_program->subtitle?></td>
+		</tr><?php if (strlen($this_program->subtitle)) { ?><tr>
+			<td colspan="2" align="right"> <?php if (isset($_GET[recordid])) echo "<em>"; ?>Episode:&nbsp;
+							<?php if (isset($_GET[recordid])) echo "</em>"; ?></td>
+			<td><?php if (isset($_GET[recordid])) echo "<em>";
+				  echo $this_program->subtitle;
+				  if (isset($_GET[recordid])) echo "</em>"; ?></td>
 		</tr><?php }
-				if (!isset($_GET[recordid]) && strlen($this_program->description)) {?><tr>
-			<td colspan="2" align="right" valign="top">Description:&nbsp;</td>
-			<td><?php echo wordwrap($this_program->description, 45, "<BR>\n")?></td>
+				if (strlen($this_program->description)) { ?><tr>
+			<td colspan="2" align="right" valign="top"> <?php if (isset($_GET[recordid])) echo "<em>";?>
+				Description:&nbsp;<?php if (isset($_GET[recordid])) echo "</em>"; ?></td>
+			<td><?php if (isset($_GET[recordid])) echo "<em>";
+				  echo wordwrap($this_program->description, 45, "<BR>\n");
+				  if (isset($_GET[recordid])) echo "</em>"; ?></td>
 		</tr><?php } ?><tr>
 			<td colspan="3">&nbsp;</td>
 		</tr><?php if (strlen($this_program->category)) {?><tr>
@@ -101,12 +112,17 @@ class Theme_program_detail extends Theme {
 		<tr><td>
 				<input type="radio" class="radio" name="record" value="never" id="record_never"<?php echo
 				$this_program->will_record ? '' : ' CHECKED'?>></input>
-				<a onclick="get_element('record_never').checked=true;">Don't record this program.</a>
+				<a onclick="get_element('record_never').checked=true;"><?php if (isset($_GET[recordid])) { ?>
+					Cancel this schedule.
+				<?php } else { ?>
+					Don't record this program. <?php } ?></a>
 				<br/>
+				<?php if (($this_program->type == 1) || ($this_program->starttime > time())) { ?>
 				<input type="radio" class="radio" name="record" value="once" id="record_once"<?php echo
 				$this_program->record_once ? ' CHECKED' : ''?>></input>
 				<a onclick="get_element('record_once').checked=true;">Record only this showing.</a>
 				<br/>
+				<?php } ?>
 				<input type="radio" class="radio" name="record" value="daily" id="record_daily"<?php echo
 				$this_program->record_daily ? ' CHECKED' : ''?>></input>
 				<a onclick="get_element('record_daily').checked=true;">Record this program in this timeslot every day.</a>

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recording_schedules.php                  Last Updated: 2004.02.04 (xris)
+	recording_schedules.php                 Last Updated: 2004.02.07 (alden)
 
 	This file defines a theme class for the all recordings section.
 	It must define one method.   documentation will be added someday.
@@ -83,24 +83,30 @@ if ($group_field == "") {
 <tr>
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
-			<td align=\"right\">Airtime:</td>
-			<td>".date($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.date($_SESSION['time_format'], $show->endtime)."</td>
-		</tr><tr>
 			<td align=\"right\">Program:</td>
 			<td>$show->title</td>
+		</tr>";
+			if (($show->type == 1) || ($show->type == 2) || ($show->type == 5)) {
+				$Footnotes[] .= "
+		<tr>
+			<td align=\"right\">Airtime:</td>
+			<td>".date($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.date($_SESSION['time_format'], $show->endtime)."</td>
 		</tr>"
-		.(preg_match('/\\S/', $show->subtitle) ? "<tr>
+			.(preg_match('/\\S/', $show->subtitle) ? "<tr>
 			<td align=\"right\">Episode:</td>
 			<td>$show->subtitle</td>
 		</tr>" : '')
-		.(preg_match('/\\S/', $show->description) ? "<tr>
+			.(preg_match('/\\S/', $show->description) ? "<tr>
 			<td align=\"right\" valign=\"top\">Description:</td>
 			<td>".nl2br(wordwrap($show->description, 70))."</td>
 		</tr>" : '')
-		.(preg_match('/\\S/', $show->rating) ? "<tr>
+			.(preg_match('/\\S/', $show->rating) ? "<tr>
 			<td align=\"right\" valign=\"top\">Rating:</td>
 			<td>$show->rating</td>
-		</tr>" : '') . "<tr>
+		</tr>" : '');
+			}
+
+			$Footnotes[] .= "<tr>
 			<td align=\"right\">Type:</td>
 			<td>$show->texttype</td>
 		</tr>"
@@ -124,6 +130,15 @@ if ($group_field == "") {
 					: ($show->record_channel ? "Always record on this channel"
 					: ($show->record_findone ? "Record one showing of this program at any time"
 					: "Always record")))))."</td>
+		</tr>" : '')
+		.($show->dupmethod > 0 ? "<tr>
+			<td align=\"right\">Dup Method:</td>
+			<td>".($show->dupmethod == 1	? "None"
+					: ($show->dupmethod == 2	? "Subtitle"
+					: ($show->dupmethod == 4	? "Description"
+					: ($show->dupmethod == 6	? "Subtitle & Description"
+					: ($show->dupmethod == 22	? "Sub & Desc (Empty matches)"
+					: "")))))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->profile) ? "<tr>
 			<td align=\"right\">Profile:</td>
@@ -163,7 +178,7 @@ if ($group_field == "") {
 			 					.' onmouseout="window.status=\'\';hide();return true"'
 							   : '')
 			 .'>'.$show->title
-			 .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
+			 .($show->type == 1 && preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
 			 .'</a>';
 		?></td>
 	<td><?php echo $show->channel->name?></td>
