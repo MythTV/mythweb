@@ -37,6 +37,9 @@
     provided for your convenience.
 ***/
 
+// file system encoding, uses music and video file link to local file
+    define('fs_encoding', 'ISO-8859-1');
+
 // Path to the image cache directory
     define('image_cache', 'image_cache');
 

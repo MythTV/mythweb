@@ -120,7 +120,7 @@ class Video {
         $this->url = video_url;
         foreach (preg_split('/\//', substr($this->filename, strlen($videodir))) as $dir) {
             if (!$dir) continue;
-            $this->url .= '/'.rawurlencode($dir);
+            $this->url .= '/'.rawurlencode(mb_convert_encoding($dir, fs_encoding, 'UTF-8'));
         }
     }
 }
