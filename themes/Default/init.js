@@ -207,6 +207,32 @@
 			field.visibility = 'visible';
 	}
 
+/*
+	//  http://www.rci.rutgers.edu/~hofman/js/balloon.js
+	function putBalloon( id, x, y ) {
+		var l;
+		if (document.layers) {
+			l = document.layers[id];
+			l.left = Math.min(Math.max(x, window.pageXOffset), window.pageXOffset + window.innerWidth - l.clip.width);
+			l.top = Math.min(Math.max(y, window.pageYOffset), window.pageYOffset + window.innerHeight - l.clip.height);
+			l.visibility = "visible";
+			l.zIndex = 100;
+		} else if (document.all) {
+			l = document.all[id];
+			l.style.pixelLeft = Math.min(Math.max(x, document.body.scrollLeft + document.documentElement.scrollLeft), document.body.scrollLeft + document.documentElement.scrollLeft + document.body.clientWidth - l.offsetWidth);
+			l.style.pixelTop = Math.min(Math.max(y, document.body.scrollTop + document.documentElement.scrollTop), document.body.scrollTop + document.documentElement.scrollTop + document.body.clientHeight - l.offsetHeight);
+			l.style.visibility = "visible";
+			l.style.zIndex = 100;
+		} else if (document.getElementById) {
+			l = document.getElementById(id);
+			l.style.left = Math.min(Math.max(x, window.pageXOffset), window.pageXOffset + window.innerWidth - l.offsetWidth) +"px";
+			l.style.top = Math.min(Math.max(y, window.pageYOffset), window.pageYOffset + window.innerHeight - l.offsetHeight) +"px";
+			l.style.visibility = "visible";
+			l.style.zIndex = 100;
+		}
+	}
+*/
+
 	function hide(name) {
 		if (gtimeout) {
 			clearTimeout(gtimeout);
