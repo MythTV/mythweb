@@ -27,51 +27,76 @@
 // Start the query out as an array
 	$query = array();
 	$joiner = ' OR ';
+	$compare = ' LIKE ';
 
 // How do we want to build this query?
+	if (preg_match('/^\~/', $_GET['searchstr'])) {
+		$compare = ' REGEXP ';
+		$search = regexp_escape($_GET['searchstr']);	
+		if ($_GET['search_title'])
+			$query[] = 'program.title '.$compare.' '.$search;
+		if ($_GET['search_subtitle'])
+			$query[] = 'program.subtitle '.$compare.' '.$search;
+		if ($_GET['search_description'])
+			$query[] = 'program.description '.$compare.' '.$search;
+		if ($_GET['search_category'])
+			$query[] = 'program.category '.$compare.' '.$search;
+		if ($_GET['search_category_type'])
+			$query[] = 'program.category_type '.$compare.' '.$search;
+	// No query formed - default to quicksearch
+		if (!count($query)) {
+			$query[] = 'program.title '.$compare.' '.$search;
+			$query[] = 'program.subtitle '.$compare.' '.$search;
+			$_GET['search_title']    = true;
+			$_GET['search_subtitle'] = true;
+		}
+	} else {
+
 	if (preg_match('/\\w/', $_GET['searchstr'])) {
 		$search = search_escape($_GET['searchstr']);
 		if ($_GET['search_title'])
-			$query[] = 'program.title LIKE '.$search;
+			$query[] = 'program.title '.$compare.' '.$search;
 		if ($_GET['search_subtitle'])
-			$query[] = 'program.subtitle LIKE '.$search;
+			$query[] = 'program.subtitle '.$compare.' '.$search;
 		if ($_GET['search_description'])
-			$query[] = 'program.description LIKE '.$search;
+			$query[] = 'program.description '.$compare.' '.$search;
 		if ($_GET['search_category'])
-			$query[] = 'program.category LIKE '.$search;
+			$query[] = 'program.category '.$compare.' '.$search;
 		if ($_GET['search_category_type'])
-			$query[] = 'program.category_type LIKE '.$search;
+			$query[] = 'program.category_type '.$compare.' '.$search;
 	// No query formed - default to quicksearch
 		if (!count($query)) {
-			$query[] = 'program.title LIKE '.$search;
-			$query[] = 'program.subtitle LIKE '.$search;
+			$query[] = 'program.title '.$compare.' '.$search;
+			$query[] = 'program.subtitle '.$compare.' '.$search;
 			$_GET['search_title']    = true;
 			$_GET['search_subtitle'] = true;
 		}
 	}
+
 	else {
 		$joiner = ' AND ';
 		if (isset($_GET['title'])) {
-			$query[] = 'program.title LIKE '.search_escape($_GET['title']);
+			$query[] = 'program.title '.$compare.' '.search_escape($_GET['title']);
 			$_GET['search_title'] = true;
 		}
 		if (isset($_GET['subtitle'])) {
-			$query[] = 'program.subtitle LIKE '.search_escape($_GET['subtitle']);
+			$query[] = 'program.subtitle '.$compare.' '.search_escape($_GET['subtitle']);
 			$_GET['search_subtitle'] = true;
 		}
 		if (isset($_GET['description'])) {
-			$query[] = 'program.description LIKE '.search_escape($_GET['description']);
+			$query[] = 'program.description '.$compare.' '.search_escape($_GET['description']);
 			$_GET['search_description'] = true;
 		}
 		if (isset($_GET['category'])) {
-			$query[] = 'program.category LIKE '.search_escape($_GET['category']);
+			$query[] = 'program.category '.$compare.' '.search_escape($_GET['category']);
 			$_GET['search_category'] = true;
 		}
 		if (isset($_GET['category_type'])) {
-			$query[] = 'program.category_type LIKE '.search_escape($_GET['category_type']);
+			$query[] = 'program.category_type '.$compare.' '.search_escape($_GET['category_type']);
 			$_GET['search_category_type'] = true;
 		}
 	}
+     }
 
 // No query?
 	if (count($query) < 1)
@@ -105,6 +130,9 @@
 // One little function to help us format search queries
 	function search_escape($value) {
 		return escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
+	}
+	function regexp_escape($value) {
+		return escape(preg_replace('/^\~/', '', $value));
 	}
 
 ?>
