@@ -19,12 +19,11 @@
 								1  => 'ManualOverride',
 								2  => 'PreviousRecording',
 								3  => 'CurrentRecording',
-								4  => 'OtherShowing',
+								4  => 'EarlierShowing',
 								5  => 'TooManyRecordings',
 								6  => 'Cancelled',
-								7  => 'LowerRecPriority',
-								8  => 'ManualConflict',
-								9  => 'AutoConflict',
+								7  => 'Conflict',
+								8  => 'LaterShowing',
 								10 => 'Overlap',
 								11 => 'LowDiskSpace',
 								12 => 'TunerBusy'
@@ -40,12 +39,11 @@
 		                       'ManualOverride'		=> _LANG_RECSTATUS_LONG_MANUALOVERRIDE,
 		                       'PreviousRecording'	=> _LANG_RECSTATUS_LONG_PREVIOUSRECORDING,
 		                       'CurrentRecording'	=> _LANG_RECSTATUS_LONG_CURRENTRECORDING,
-		                       'OtherShowing'		=> _LANG_RECSTATUS_LONG_OTHERSHOWING,
+		                       'EarlierShowing'		=> _LANG_RECSTATUS_LONG_EARLIERSHOWING,
 		                       'TooManyRecordings'	=> _LANG_RECSTATUS_LONG_TOOMANYRECORDINGS,
 		                       'Cancelled' 			=> _LANG_RECSTATUS_LONG_CANCELLED,
-		                       'LowerRecPriority'	=> _LANG_RECSTATUS_LONG_LOWERRECPRIORITY,
-		                       'ManualConflict'		=> _LANG_RECSTATUS_LONG_MANUALCONFLICT,
-		                       'AutoConflict'  		=> _LANG_RECSTATUS_LONG_AUTOCONFLICT,
+		                       'Conflict'		=> _LANG_RECSTATUS_LONG_CONFLICT,
+		                       'LaterShowing'		=> _LANG_RECSTATUS_LONG_LATERSHOWING,
 		                       'Overlap'	   		=> _LANG_RECSTATUS_LONG_OERLAP,
 		                       'LowDiskSpace'  		=> _LANG_RECSTATUS_LONG_LOWDISKSPACE,
 			                   'TunerBusy'	   		=> _LANG_RECSTATUS_LONG_TUNERBUSY
@@ -299,8 +297,6 @@ class Program {
 			#$fs_low           = $program_data[10];
 			#$starttime        = $program_data[11];
 			#$endtime          = $program_data[12];
-			$this->conflicting = $program_data[13] ? true : false;	# conflicts with another scheduled recording?
-			$this->recording   = $program_data[14] ? true : false;	# scheduled to record?
 			$this->override    = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
 			$this->hostname    = $program_data[16];					#  myth
 			#$this->sourceid   = $program_data[17];					#  -1
@@ -308,6 +304,8 @@ class Program {
 			#$this->inputid    = $program_data[19];					#
 			$this->recpriority = $program_data[20];					#
 			$this->recstatus   = $program_data[21];					#
+			$this->conflicting = ($this->recstatus == 'Conflict');	# conflicts with another scheduled recording?
+			$this->recording   = ($this->recstatus <= 'WillRecord'); # scheduled to record?
 			$this->recordid    = $program_data[22];			        #
 			#$this->rectype     = $program_data[23];
 			$this->dupin       = $program_data[24];
@@ -349,10 +347,10 @@ class Program {
 			global $Pending_Programs;
 			load_pending();
 			if ($Pending_Programs[$this->chanid][$this->starttime]) {
-				$this->conflicting = $Pending_Programs[$this->chanid][$this->starttime][13] ? true : false;
-				$this->recording   = $Pending_Programs[$this->chanid][$this->starttime][14] ? true : false;
 				$this->recpriority = $Pending_Programs[$this->chanid][$this->starttime][20];
 				$this->recstatus   = $Pending_Programs[$this->chanid][$this->starttime][21];
+				$this->conflicting = ($this->recstatus == 'Conflict');
+				$this->recording   = ($this->recstatus <= 'WillRecord');
 				$this->recordid    = $Pending_Programs[$this->chanid][$this->starttime][22];
 			}
 		// We get various recording-related information, too

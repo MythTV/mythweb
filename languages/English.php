@@ -213,12 +213,11 @@ define ('_LANG_RECSTATUS_LONG_UNKNOWN',             'The status of this showing 
 define ('_LANG_RECSTATUS_LONG_MANUALOVERRIDE',      'This was manually set to not record');
 define ('_LANG_RECSTATUS_LONG_PREVIOUSRECORDING',   'This episode was previously recorded according to the duplicate policy chosen for this title.');
 define ('_LANG_RECSTATUS_LONG_CURRENTRECORDING',    'This episode was previously recorded and is still available in the list of recordings.');
-define ('_LANG_RECSTATUS_LONG_OTHERSHOWING',        'This episode will be recorded at another time instead.');
+define ('_LANG_RECSTATUS_LONG_EARLIERSHOWING',      'This episode will be recorded at an earlier time instead.');
+define ('_LANG_RECSTATUS_LONG_LATERSHOWING',        'This episode will be recorded at a later time instead.');
 define ('_LANG_RECSTATUS_LONG_TOOMANYRECORDINGS',   'Too many recordings of this program have already been recorded.');
 define ('_LANG_RECSTATUS_LONG_CANCELLED',           'This was scheduled to be recorded but was manually canceled.');
-define ('_LANG_RECSTATUS_LONG_LOWERRECPRIORITY',    'Another program with a higher recording priority will be recorded.');
-define ('_LANG_RECSTATUS_LONG_MANUALCONFLICT',      'Another program was manually chosen to be recorded instead.');
-define ('_LANG_RECSTATUS_LONG_AUTOCONFLICT',        'Another program was automatically chosen to be recorded instead.');
+define ('_LANG_RECSTATUS_LONG_CONFLICT',            'Another program with a higher recording priority will be recorded.');
 define ('_LANG_RECSTATUS_LONG_OVERLAP',             'This is covered by another scheduled recording for the same program.');
 define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',        'There wasn\'t enough disk space available to record this program.');
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',           'The tuner card was already being used when this program was scheduled to be recorded.');

@@ -96,11 +96,6 @@ if ($group_field == "") {
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_RECORD_THIS.'</a>';
 			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		}
-		elseif ($show->recstatus == 'AutoConflict') {
-			$class   = 'deactivated';
-			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
-			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
-		}
 		elseif ($show->recording == 0 || $show->recstatus != 'WillRecord') {
 			$class   = 'deactivated';
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';

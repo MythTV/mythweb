@@ -212,12 +212,11 @@ define ('_LANG_RECSTATUS_LONG_UNKNOWN',             '個の番組のステータ
 define ('_LANG_RECSTATUS_LONG_MANUALOVERRIDE',      '手動で録画市内を設定されました。');
 define ('_LANG_RECSTATUS_LONG_PREVIOUSRECORDING',   '以前録画されています。重複ポリシーで設定されています。');
 define ('_LANG_RECSTATUS_LONG_CURRENTRECORDING',    '以前録画されています。録画リストから利用できます。');
-define ('_LANG_RECSTATUS_LONG_OTHERSHOWING',        '他の時間の変わりにこの番組が録画されます。');
+define ('_LANG_RECSTATUS_LONG_EARLIERSHOWING',      '他の時間の変わりにこの番組が録画されます。');
+define ('_LANG_RECSTATUS_LONG_LATERSHOWING',        '他の時間の変わりにこの番組が録画されます。');
 define ('_LANG_RECSTATUS_LONG_TOOMANYRECORDINGS',   '既に数多く録画されています。');
 define ('_LANG_RECSTATUS_LONG_CANCELLED',           '手動でキャンセルされました。');
-define ('_LANG_RECSTATUS_LONG_LOWERRECPRIORITY',    '他の録画優先順位の高い番組が録画されます。');
-define ('_LANG_RECSTATUS_LONG_MANUALCONFLICT',      '手動で他の番組を録画するように選択されています。');
-define ('_LANG_RECSTATUS_LONG_AUTOCONFLICT',        '自動で他の番組を録画するように選択されています。');
+define ('_LANG_RECSTATUS_LONG_CONFLICT',            '他の録画優先順位の高い番組が録画されます。');
 define ('_LANG_RECSTATUS_LONG_OVERLAP',             '他の予約で同じ番組も録画されます。');
 define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',        '個の番組を録画するのに必要なディスクの空き容量が有りません。');
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',           '利用可能なチューナーが有りません。');
