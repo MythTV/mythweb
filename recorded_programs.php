@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.07.06 (xris)
+    recorded_programs.php                    Last Updated: 2004.08.09 (xris)
 
     view and manipulate recorded programs.
 \***                                                                        ***/
@@ -34,7 +34,8 @@
     isset($_GET['title']) or $_GET['title']  = $_SESSION['recorded_title'];
 
 // Parse the program list
-    $recordings = get_backend_rows('QUERY_RECORDINGS Delete');
+    $recordings     = get_backend_rows('QUERY_RECORDINGS Delete');
+    $Total_Time     = 0;
     $Total_Programs = 0;
     $All_Shows      = array();
     $Programs       = array();
@@ -57,6 +58,8 @@
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$show->title]))
                 $Programs[$show->title] = array();
+        // Keep track of the total time
+            $Total_Time += $show->length;
         // Assign a reference to this show to the various arrays
             $All_Shows[]                         =& $show;
             $Programs[$show->title][]            =& $show;

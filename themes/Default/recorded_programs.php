@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.07.06 (xris)
+    recorded_programs.php                    Last Updated: 2004.08.09 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -14,7 +14,7 @@ class Theme_recorded_programs extends Theme {
     // Print the main page header
         parent::print_header("MythWeb - Recorded Programs");
     // Print the page contents
-        global $All_Shows;
+        global $All_Shows, $Total_Time;
 ?>
 
 <script language="JavaScript" type="text/javascript">
@@ -173,7 +173,11 @@ if ($group_field == "") {
 ?>
 </table>
 <?php
-    echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.' '.nice_filesize(disk_used)._LANG_OUT_OF.nice_filesize(disk_size).'</p>';
+    echo '<p align="right" style="padding-right: 75px">'
+         .$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.' '.nice_filesize(disk_used)
+         .' ('.nice_length($Total_Time).') '
+         ._LANG_OUT_OF.nice_filesize(disk_size)
+         .'</p>';
 
     // Print the main page footer
         parent::print_footer();
