@@ -45,7 +45,7 @@ class Theme_channel_detail extends Theme {
                     echo ">".strftime($_SESSION['date_channel_jump'] , $time)."</option>";
                 }
                 ?></select></td>
-            <td align="center"><noscript><input type="submit" class="submit" value="Jump"></noscript</td>
+            <td align="center"><noscript><input type="submit" class="submit" value="Jump"></noscript></td>
 
             </form>
 
