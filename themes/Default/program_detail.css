@@ -2,11 +2,16 @@
     margin: 10px auto;
     min-width: 800px;
     max-width: 1000px;
+    font-size: 9pt;
+}
+#program_content td {
+    vertical-align: top;
+    padding:        0px 10px;
 }
 
 #program_info {
     min-width: 350px;
-    max-width: 630px;
+    max-width: 500px;
     margin:    0px;
 }
 
@@ -69,7 +74,7 @@
     margin:      20px auto 0px auto;
     padding:     10px;
     border:      1px solid #446;
-    text-align:  center;
+    text-align:  center !important;
     white-space: nowrap;
 }
 #local_links a {
@@ -80,8 +85,6 @@
 
 
 #recording_info {
-    float:       right;
-    margin-left: 20px;
     width:       350px;
 }
 
