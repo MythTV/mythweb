@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2005.03.21 (xris)
+    scheduled_recordings.php                 Last Updated: 2005.03.22 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -81,9 +81,8 @@ class Theme_scheduled_recordings extends Theme {
                 $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
                               .$urlstr.'">'.t('Don\'t Record').'</a>';
             // Offer to suppress any recordings that have enough info to do so.
-                if (preg_match('/\\S/', $show->title) &&
-                        preg_match('/\\S/', $show->subtitle) &&
-                        preg_match('/\\S/', $show->description)) {
+                if (preg_match('/\\S/', $show->title)
+                        && (preg_match('/\\S/', $show->programid.$show->subtitle.$show->description))) {
                     $commands[] = '<a href="scheduled_recordings.php?'
                                   .'never_record=yes&'.$urlstr.'">'
                                   .t('Never Record').'</a>';
@@ -114,6 +113,10 @@ class Theme_scheduled_recordings extends Theme {
             case 'EarlierShowing':
                 $rec_char = 'E';
                 $class    = 'deactivated';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Activate').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                              .$urlstr.'">'.t('Default').'</a>';
                 break;
             case 'TooManyRecordings':
                 $rec_char = 'T';
@@ -144,6 +147,10 @@ class Theme_scheduled_recordings extends Theme {
             case 'LaterShowing':
                 $rec_char = 'L';
                 $class    = 'deactivated';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Activate').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                              .$urlstr.'">'.t('Default').'</a>';
                 break;
             case 'LowDiskSpace':
                 $rec_char   = 'K';
@@ -171,7 +178,7 @@ class Theme_scheduled_recordings extends Theme {
                 $commands[] = '<a href="scheduled_recordings.php?default=yes&'
                               .$urlstr.'">'.t('Default').'</a>';
                 break;
-            case 'ForcedRecording':
+            case 'ForceRecord':
                 $rec_char   = 'F';
                 $class      = 'scheduled';
                 $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
