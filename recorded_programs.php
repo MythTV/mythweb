@@ -46,6 +46,7 @@
     $Total_Programs = 0;
     $All_Shows      = array();
     $Programs       = array();
+    $Groups         = array();
     while (true) {
         $Program_Titles = array();
         foreach ($recordings as $key => $record) {
