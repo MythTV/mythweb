@@ -25,6 +25,13 @@
             break;
         }
     // Redirect back to the page again, but without the query string, so reloads are cleaner
+    // WML browser often require a fully qualified URL for redirects to work. Also, set content type
+        if ($_SESSION['Theme'] == 'wml') {
+            header('Content-type: text/vnd.wap.wml');
+            header('Location: http://'.$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]);
+            echo "\n"; // need at least 1 byte in body
+            exit;
+        }
         header('Location: recorded_programs.php');
         exit;
     }

@@ -100,9 +100,15 @@
                         'LGE-', // LG phones
                         );
     if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"VND.WAP.WML") > 0 // The browser/gateway says it accepts WML.
-            || in_array(substr(trim($_SERVER['HTTP_USER_AGENT']), 0, 4), $wap_agents))
-        define('Theme', 'wap');
-	elseif (strpos($_SERVER['HTTP_USER_AGENT'],"MythPhone") !== false) // The browser is MythPhone
+            || in_array(substr(trim($_SERVER['HTTP_USER_AGENT']), 0, 4), $wap_agents)) {
+            // This browser is WAP.  Now check if it supports html or wml
+            if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"TEXT/HTML") !== false) {
+                define('Theme', 'wap');
+            } else {
+                // browser didn't explicitly state html, use wml only.
+                define('Theme', 'wml');
+            }
+	} elseif (strpos($_SERVER['HTTP_USER_AGENT'],"MythPhone") !== false) // The browser is MythPhone
 		define('Theme', 'vxml');
 // Load the theme from session data?
     elseif (file_exists('themes/'.$_SESSION['Theme'].'/theme.php') && !$_GET['RESET_THEME'] && !$_POST['RESET_THEME'])
