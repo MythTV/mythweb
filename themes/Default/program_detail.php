@@ -145,11 +145,11 @@ class Theme_program_detail extends Theme {
 				</tr><tr>
 					<td nowrap align="right">Rank:&nbsp;</td>
 					<td><select align=right name="rank"><?php
-						for($rankcount=-10;$rankcount<=10;++$rankcount) {
-							echo '<option value="'.htmlentities($rankcount).'"';
+						for($rankcount=25;$rankcount>=-25;--$rankcount) {
+							echo '<option value="'.$rankcount.'"';
 							if ($this_program->rank == $rankcount)
 								echo ' SELECTED';
-							echo '>'.htmlentities($rankcount).'</option>';
+							echo ">$rankcount</option>";
 						}
 						?></select></td>
 				</tr><tr>
