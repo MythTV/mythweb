@@ -52,38 +52,38 @@ define ('_LANG_WAR',                  			'Oorlog');
 define ('_LANG_WESTERN',              			'Films');
 define ('_LANG_MOVIES',               			'Films');
 define ('_LANG_UNKNOWN',              			'Onbekend');
-define ('_LANG_CATMATCH_ACTION',               		'\\b(?:action|avon|actie)');
-define ('_LANG_CATMATCH_ADULT',                		'\\b(?:adult|erot|sex)');
-define ('_LANG_CATMATCH_ANIMALS',              		'\\b(?:animal|dier)');
-define ('_LANG_CATMATCH_ART_MUSIC',            		'\\b(?:art|kunst|dans|musi[ck]|muziek|kunst|[ck]ultur)');
-define ('_LANG_CATMATCH_BUSINESS',             		'\\b(?:biz|busine|zake)');
-define ('_LANG_CATMATCH_CHILDREN',             		'\\b(?:child|jeugd|animatie|kin?d|infan)');
-define ('_LANG_CATMATCH_COMEDY',               		'\\b(?:comed|entertain|sitcom|serie)');
-define ('_LANG_CATMATCH_CRIME_MYSTERY',        		'\\b(?:[ck]rim|myster|misdaad)');
-define ('_LANG_CATMATCH_DOCUMENTARY',          		'\\b(?:informatief|docu)');
-define ('_LANG_CATMATCH_DRAMA',                		'\\b(?:drama)');
-define ('_LANG_CATMATCH_EDUCATIONAL',          		'\\b(?:edu|interes)');
-define ('_LANG_CATMATCH_FOOD',                 		'\\b(?:food|cook|[dt]rink|kook|eten|kok)');
-define ('_LANG_CATMATCH_GAME',                 		'\\b(?:game|spel|quiz)');
-define ('_LANG_CATMATCH_HEALTH_MEDICAL',       		'\\b(?:medisch|gezond)');
-define ('_LANG_CATMATCH_HISTORY',              		'\\b(?:hist|geschied)');
-define ('_LANG_CATMATCH_HOWTO',                		'\\b(?:how|home|house|garden|huis|tuin|woning)');
-define ('_LANG_CATMATCH_HORROR',               		'\\b(?:horror)');
-define ('_LANG_CATMATCH_MISC',                 		'\\b(?:special|variety|info|collect)');
-define ('_LANG_CATMATCH_NEWS',                 		'\\b(?:news|current|nieuws|duiding|actua)');
-define ('_LANG_CATMATCH_REALITY',              		'\\b(?:reality|leven)');
-define ('_LANG_CATMATCH_ROMANCE',              		'\\b(?:romance|lief)');
-define ('_LANG_CATMATCH_SCIENCE_NATURE',       		'\\b(?:fantasy|sci\\w*\\W*fi|natuur|wetenschap)');
-define ('_LANG_CATMATCH_SCIFI_FANTASY',        		'\\b(?:science|natuur|environment|wetenschap)');
-define ('_LANG_CATMATCH_SHOPPING',             		'\\b(?:shop|koop)');
-define ('_LANG_CATMATCH_SOAPS',                		'\\b(?:soap)');
-define ('_LANG_CATMATCH_SPIRITUAL',            		'\\b(?:spirit|relig)');
-define ('_LANG_CATMATCH_SPORTS',               		'\\b(?:sport|deportes|voetbal|tennis)');
-define ('_LANG_CATMATCH_TALK',                 		'\\b(?:talk|praat)');
-define ('_LANG_CATMATCH_TRAVEL',               		'\\b(?:travel|reis)');
-define ('_LANG_CATMATCH_WAR',                  		'\\b(?:war|oorlog)');
-define ('_LANG_CATMATCH_WESTERN',              		'\\b(?:west|film)');
-define ('_LANG_CATMATCH_MOVIES',               		'\\b(?:film|movie)');	
+define ('_CATMATCH_ACTION',               		'\\b(?:action|avon|actie)');
+define ('_CATMATCH_ADULT',                		'\\b(?:adult|erot|sex)');
+define ('_CATMATCH_ANIMALS',              		'\\b(?:animal|dier)');
+define ('_CATMATCH_ART_MUSIC',            		'\\b(?:art|kunst|dans|musi[ck]|muziek|kunst|[ck]ultur)');
+define ('_CATMATCH_BUSINESS',             		'\\b(?:biz|busine|zake)');
+define ('_CATMATCH_CHILDREN',             		'\\b(?:child|jeugd|animatie|kin?d|infan)');
+define ('_CATMATCH_COMEDY',               		'\\b(?:comed|entertain|sitcom|serie)');
+define ('_CATMATCH_CRIME_MYSTERY',        		'\\b(?:[ck]rim|myster|misdaad)');
+define ('_CATMATCH_DOCUMENTARY',          		'\\b(?:informatief|docu)');
+define ('_CATMATCH_DRAMA',                		'\\b(?:drama)');
+define ('_CATMATCH_EDUCATIONAL',          		'\\b(?:edu|interes)');
+define ('_CATMATCH_FOOD',                 		'\\b(?:food|cook|[dt]rink|kook|eten|kok)');
+define ('_CATMATCH_GAME',                 		'\\b(?:game|spel|quiz)');
+define ('_CATMATCH_HEALTH_MEDICAL',       		'\\b(?:medisch|gezond)');
+define ('_CATMATCH_HISTORY',              		'\\b(?:hist|geschied)');
+define ('_CATMATCH_HOWTO',                		'\\b(?:how|home|house|garden|huis|tuin|woning)');
+define ('_CATMATCH_HORROR',               		'\\b(?:horror)');
+define ('_CATMATCH_MISC',                 		'\\b(?:special|variety|info|collect)');
+define ('_CATMATCH_NEWS',                 		'\\b(?:news|current|nieuws|duiding|actua)');
+define ('_CATMATCH_REALITY',              		'\\b(?:reality|leven)');
+define ('_CATMATCH_ROMANCE',              		'\\b(?:romance|lief)');
+define ('_CATMATCH_SCIENCE_NATURE',       		'\\b(?:fantasy|sci\\w*\\W*fi|natuur|wetenschap)');
+define ('_CATMATCH_SCIFI_FANTASY',        		'\\b(?:science|natuur|environment|wetenschap)');
+define ('_CATMATCH_SHOPPING',             		'\\b(?:shop|koop)');
+define ('_CATMATCH_SOAPS',                		'\\b(?:soap)');
+define ('_CATMATCH_SPIRITUAL',            		'\\b(?:spirit|relig)');
+define ('_CATMATCH_SPORTS',               		'\\b(?:sport|deportes|voetbal|tennis)');
+define ('_CATMATCH_TALK',                 		'\\b(?:talk|praat)');
+define ('_CATMATCH_TRAVEL',               		'\\b(?:travel|reis)');
+define ('_CATMATCH_WAR',                  		'\\b(?:war|oorlog)');
+define ('_CATMATCH_WESTERN',              		'\\b(?:west|film)');
+define ('_CATMATCH_MOVIES',               		'\\b(?:film|movie)');
 
 /* settings.php */
 define ('_LANG_SETTINGS_HEADER1',			'Dit is de indexpagina voor de configuratie-instellingen...');
@@ -110,7 +110,7 @@ define ('_LANG_RESET',              			'Annuleren');
 define ('_LANG_SAVE',               			'Opslaan');
 define ('_LANG_SHOW_DESCRIPTIONS_ON_NEW_LINE',  	'Programmabeschrijving op nieuwe regel?');
 
-/* program_listings.php */	
+/* program_listings.php */
 define ('_LANG_CURRENTLY_BROWSING',     		'Tijdstip:');
 define ('_LANG_JUMP_TO',        			'Spring&nbsp;naar');
 define ('_LANG_HOUR',           			'Uur');
@@ -215,7 +215,7 @@ define ('_LANG_RECTYPE_WEEKLY',      			'Wekelijks');
 define ('_LANG_RECTYPE_FINDONE',     			'Eens');
 define ('_LANG_RECTYPE_OVERRIDE',    			'Overschrijf opname');
 define ('_LANG_RECTYPE_DONTREC',     			'Niet opnemen');
-	
+
 define ('_LANG_RECTYPE_LONG_ONCE',      		'Enkel deze vertoning opnemen.');
 define ('_LANG_RECTYPE_LONG_DAILY',     		'Neem dagelijks op in dit tijdsslot.');
 define ('_LANG_RECTYPE_LONG_CHANNEL',   		'Neem dit programma altijd op op deze zender: ');
@@ -276,7 +276,7 @@ define ('_LANG_SUNDAY',			            	'Zondag');
 define ('_LANG_HR',                                 	'u');
 define ('_LANG_HRS',                                	'u');
 define ('_LANG_MINS',                               	'min');
-	
+
 
 
 

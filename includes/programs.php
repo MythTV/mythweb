@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.10.11 (xris)
+    programs.php                             Last Updated: 2004.11.25 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -175,7 +175,7 @@
             $query .= ' AND '.$extra_query;
     // Group, sort and query
         $query .= ' GROUP BY program.chanid, program.starttime ORDER BY program.starttime';
-			
+
 			// print '<pre>';
 			// print_r($query);
 			// print '</pre>';
@@ -525,67 +525,67 @@ class Program {
         if ($cache[$category])
             $class .= $cache[$category];
     // Now comes the hard part
-        elseif (preg_match('/'._LANG_CATMATCH_ACTION.'/', $category))
+        elseif (preg_match('/'._CATMATCH_ACTION.'/', $category))
             $class .= $cache[$category] = 'cat_Action';
-        elseif (preg_match('/'._LANG_CATMATCH_ADULT.'/', $category))
+        elseif (preg_match('/'._CATMATCH_ADULT.'/', $category))
             $class .= $cache[$category] = 'cat_Adult';
-        elseif (preg_match('/'._LANG_CATMATCH_ANIMALS.'/', $category))
+        elseif (preg_match('/'._CATMATCH_ANIMALS.'/', $category))
             $class .= $cache[$category] = 'cat_Animals';
-        elseif (preg_match('/'._LANG_CATMATCH_ART_MUSIC.'/', $category))
+        elseif (preg_match('/'._CATMATCH_ART_MUSIC.'/', $category))
             $class .= $cache[$category] = 'cat_Art_Music';
-        elseif (preg_match('/'._LANG_CATMATCH_BUSINESS.'/', $category))
+        elseif (preg_match('/'._CATMATCH_BUSINESS.'/', $category))
             $class .= $cache[$category] = 'cat_Business';
-        elseif (preg_match('/'._LANG_CATMATCH_CHILDREN.'/', $category))
+        elseif (preg_match('/'._CATMATCH_CHILDREN.'/', $category))
             $class .= $cache[$category] = 'cat_Children';
-        elseif (preg_match('/'._LANG_CATMATCH_COMEDY.'/', $category))
+        elseif (preg_match('/'._CATMATCH_COMEDY.'/', $category))
             $class .= $cache[$category] = 'cat_Comedy';
-        elseif (preg_match('/'._LANG_CATMATCH_CRIME_MYSTERY.'/', $category))
+        elseif (preg_match('/'._CATMATCH_CRIME_MYSTERY.'/', $category))
             $class .= $cache[$category] = 'cat_Crime_Mystery';
-        elseif (preg_match('/'._LANG_CATMATCH_DOCUMENTARY.'/', $category))
+        elseif (preg_match('/'._CATMATCH_DOCUMENTARY.'/', $category))
             $class .= $cache[$category] = 'cat_Documentary';
-        elseif (preg_match('/'._LANG_CATMATCH_DRAMA.'/', $category))
+        elseif (preg_match('/'._CATMATCH_DRAMA.'/', $category))
             $class .= $cache[$category] = 'cat_Drama';
-        elseif (preg_match('/'._LANG_CATMATCH_EDUCATIONAL.'/', $category))
+        elseif (preg_match('/'._CATMATCH_EDUCATIONAL.'/', $category))
             $class .= $cache[$category] = 'cat_Educational';
-        elseif (preg_match('/'._LANG_CATMATCH_FOOD.'/', $category))
+        elseif (preg_match('/'._CATMATCH_FOOD.'/', $category))
             $class .= $cache[$category] = 'cat_Food';
-        elseif (preg_match('/'._LANG_CATMATCH_GAME.'/', $category))
+        elseif (preg_match('/'._CATMATCH_GAME.'/', $category))
             $class .= $cache[$category] = 'cat_Game';
-        elseif (preg_match('/'._LANG_CATMATCH_HEALTH_MEDICAL.'/', $category))
+        elseif (preg_match('/'._CATMATCH_HEALTH_MEDICAL.'/', $category))
             $class .= $cache[$category] = 'cat_Health_Medical';
-        elseif (preg_match('/'._LANG_CATMATCH_HISTORY.'/', $category))
+        elseif (preg_match('/'._CATMATCH_HISTORY.'/', $category))
             $class .= $cache[$category] = 'cat_History';
-        elseif (preg_match('/'._LANG_CATMATCH_HOWTO.'/', $category))
+        elseif (preg_match('/'._CATMATCH_HOWTO.'/', $category))
             $class .= $cache[$category] = 'cat_HowTo';
-        elseif (preg_match('/'._LANG_CATMATCH_HORROR.'/', $category))
+        elseif (preg_match('/'._CATMATCH_HORROR.'/', $category))
             $class .= $cache[$category] = 'cat_Horror';
-        elseif (preg_match('/'._LANG_CATMATCH_MISC.'/', $category))
+        elseif (preg_match('/'._CATMATCH_MISC.'/', $category))
             $class .= $cache[$category] = 'cat_Misc';
-        elseif (preg_match('/'._LANG_CATMATCH_NEWS.'/', $category))
+        elseif (preg_match('/'._CATMATCH_NEWS.'/', $category))
             $class .= $cache[$category] = 'cat_News';
-        elseif (preg_match('/'._LANG_CATMATCH_REALITY.'/', $category))
+        elseif (preg_match('/'._CATMATCH_REALITY.'/', $category))
             $class .= $cache[$category] = 'cat_Reality';
-        elseif (preg_match('/'._LANG_CATMATCH_ROMANCE.'/', $category))
+        elseif (preg_match('/'._CATMATCH_ROMANCE.'/', $category))
             $class .= $cache[$category] = 'cat_Romance';
-        elseif (preg_match('/'._LANG_CATMATCH_SCIFI_FANTASY.'/', $category))
+        elseif (preg_match('/'._CATMATCH_SCIFI_FANTASY.'/', $category))
             $class .= $cache[$category] = 'cat_SciFi_Fantasy';
-        elseif (preg_match('/'._LANG_CATMATCH_SCIENCE_NATURE.'/', $category))
+        elseif (preg_match('/'._CATMATCH_SCIENCE_NATURE.'/', $category))
             $class .= $cache[$category] = 'cat_Science_Nature';
-        elseif (preg_match('/'._LANG_CATMATCH_SHOPPING.'/', $category))
+        elseif (preg_match('/'._CATMATCH_SHOPPING.'/', $category))
             $class .= $cache[$category] = 'cat_Shopping';
-        elseif (preg_match('/'._LANG_CATMATCH_SOAPS.'/', $category))
+        elseif (preg_match('/'._CATMATCH_SOAPS.'/', $category))
             $class .= $cache[$category] = 'cat_Soaps';
-        elseif (preg_match('/'._LANG_CATMATCH_SPIRITUAL.'/', $category))
+        elseif (preg_match('/'._CATMATCH_SPIRITUAL.'/', $category))
             $class .= $cache[$category] = 'cat_Spiritual';
-        elseif (preg_match('/'._LANG_CATMATCH_SPORTS.'/', $category))
+        elseif (preg_match('/'._CATMATCH_SPORTS.'/', $category))
             $class .= $cache[$category] = 'cat_Sports';
-        elseif (preg_match('/'._LANG_CATMATCH_TALK.'/', $category))
+        elseif (preg_match('/'._CATMATCH_TALK.'/', $category))
             $class .= $cache[$category] = 'cat_Talk';
-        elseif (preg_match('/'._LANG_CATMATCH_TRAVEL.'/', $category))
+        elseif (preg_match('/'._CATMATCH_TRAVEL.'/', $category))
             $class .= $cache[$category] = 'cat_Travel';
-        elseif (preg_match('/'._LANG_CATMATCH_WAR.'/', $category))
+        elseif (preg_match('/'._CATMATCH_WAR.'/', $category))
             $class .= $cache[$category] = 'cat_War';
-        elseif (preg_match('/'._LANG_CATMATCH_WESTERN.'/', $category))
+        elseif (preg_match('/'._CATMATCH_WESTERN.'/', $category))
             $class .= $cache[$category] = 'cat_Western';
         else
             $class .= $cache[$category] = 'cat_Unknown';

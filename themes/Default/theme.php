@@ -19,9 +19,9 @@ class Theme {
 <head>
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 
-    <Link Rel="stylesheet" HRef="<?=theme_dir?>style.css" Type="text/css" Media="screen">
+    <Link Rel="stylesheet" HRef="<?php echo theme_dir?>style.css" Type="text/css" Media="screen">
 
-    <title><?=$page_title?></title>
+    <title><?php echo $page_title?></title>
 
     <script type="text/javascript" src="<?php echo theme_dir?>init.js"></script>
 </head>
@@ -31,7 +31,7 @@ class Theme {
 <p>
 <table width="100%" border="0" cellspacing="2" cellpadding="0">
 <tr>
-    <td rowspan="2" width="300" align="center" valign="top"><a href="http://www.mythtv.org"><img src="<?=theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('<?=theme_dir?>pngbehavior.htc');"></a></td>
+    <td rowspan="2" width="300" align="center" valign="top"><a href="http://www.mythtv.org"><img src="<?php echo theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('<?php echo theme_dir?>pngbehavior.htc');"></a></td>
     <td colspan="2" align="right"><table border="0" cellspacing="2" cellpadding="2" style="padding-right: 10px">
         <tr>
 <?
@@ -64,16 +64,16 @@ class Theme {
             break;
     }
 ?>
-            <td><i><?=$quote['text']?></i></td>
+            <td><i><?php echo $quote['text']?></i></td>
         </tr><tr>
-            <td colspan="2" align="right"><small>- <?=$quote['author']?></small></td>
+            <td colspan="2" align="right"><small>- <?php echo $quote['author']?></small></td>
         </tr>
         </table></td>
 </tr><tr>
 
     <td valign="bottom"><table width="100%" border="0" cellspacing="2" cellpadding="2">
         <tr align="center">
-            <td valign="top"><?php echo _LANG_GO_TO?>: &nbsp; &nbsp;
+            <td valign="top"><?php echo t('Go To') ?>: &nbsp; &nbsp;
                 <a href="program_listing.php">MythTV</a>
                 &nbsp; | &nbsp;
                 <a href="mythmusic.php">MythMusic</a>
@@ -82,7 +82,7 @@ class Theme {
                 &nbsp; | &nbsp;
                 <a href="weather.php">MythWeather</a>
                 &nbsp; | &nbsp;
-                <a href="settings.php"><?php echo _LANG_SETTINGS?></a></td>
+                <a href="settings.php"><?php echo t('Settings') ?></a></td>
 
 
 
@@ -91,10 +91,10 @@ class Theme {
                 <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td><input type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>"></td>
-                    <td>&nbsp; <input type="submit" class="submit" value="<?php echo _LANG_SEARCH?>"></td>
+                    <td>&nbsp; <input type="submit" class="submit" value="<?php echo t('Search') ?>"></td>
                 </tr>
                 <tr>
-                    <td align="right" colspan=3>&nbsp; <a href="search.php">[<? echo _LANG_ADVANCED?>]</a></td>
+                    <td align="right" colspan=3>&nbsp; <a href="search.php">[<? echo t('advanced') ?>]</a></td>
                 <tr>
                 </table>
                 </form></td>
@@ -118,21 +118,21 @@ class Theme {
 
     function print_menu_content() {
         ?><a id="category_legend" onmouseover="show('category_legend');return true;" onmouseout="hide();return true;">MythTV:</a> &nbsp; &nbsp;
-                <a href="program_listing.php"><?php echo _LANG_LISTINGS?></a>
+                <a href="program_listing.php"><?php echo t('Listings') ?></a>
                 &nbsp; | &nbsp;
-                <a href="search.php?category_type=<?php echo movie_word?>"><?php echo _LANG_MOVIES ?></a>
+                <a href="search.php?category_type=<?php echo movie_word?>"><?php echo t('Movies') ?></a>
                 <?/*&nbsp; | &nbsp;
-                <a href="index.php?mode=favourites"><?php echo _LANG_FAVOURITES?></a>*/?>
+                <a href="index.php?mode=favourites"><?php echo t('Favorites') ?></a>*/?>
                 &nbsp; | &nbsp;
-                <a href="schedule_manually.php"><?php echo _LANG_MANUALLY_SCHEDULE ?></a>
+                <a href="schedule_manually.php"><?php echo t('Manually Schedule') ?></a>
                 &nbsp; | &nbsp;
-                <a href="recording_schedules.php"><?php echo _LANG_RECORDING_SCHEDULES?></a>
+                <a href="recording_schedules.php"><?php echo t('Recording Schedules') ?></a>
                 &nbsp; | &nbsp;
-                <a href="scheduled_recordings.php"><?php echo _LANG_SCHEDULED_RECORDINGS?></a>
+                <a href="scheduled_recordings.php"><?php echo t('Scheduled Recordings') ?></a>
                 &nbsp; | &nbsp;
-                <a href="recorded_programs.php"><?php echo _LANG_RECORDED_PROGRAMS?></a>
+                <a href="recorded_programs.php"><?php echo t('Recorded Programs') ?></a>
                 &nbsp; | &nbsp;
-                <a href="status.php"><?php echo _LANG_BACKEND_STATUS?></a><?php
+                <a href="status.php"><?php echo t('Backend Status') ?></a><?php
         # really should move the category_legend footnote to this section,
         # so it doesn't render in other sections
     }

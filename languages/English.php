@@ -1,17 +1,38 @@
 <?php
 
-define ('_LANG_LANGUAGE_NAME', 'English');
-
-/* Set the locale to UTF-8 */
+// Set the locale to UTF-8
 setlocale(LC_ALL, 'en_US.UTF-8');
 
-/* Default date and time formats */
-define('generic_date', '%a %b %e, %Y');
-define('generic_time', '%I:%M %p');
+// Define the language lookup array
+$L = array(
+// Generic terms
+    'LANGUAGE'             => 'English',
+// Time terms
+    'generic_date'         => '%a %b %e, %Y',
+    'generic_time'         => '%I:%M %p',
+    'hr'                   => '',
+    'hrs'                  => '',
+    'mins'                 => '',
+// Main Menu
+    'Go To'                => '',
+    'Settings'             => '',
+    'Search'               => '',
+    'advanced'             => '',
+    'Listings'             => '',
+    'Movies'               => '',
+    'Manually Schedule'    => '',
+    'Recording Schedules'  => '',
+    'Scheduled Recordings' => '',
+    'Recorded Programs'    => '',
+    'Backend Status'       => '',
+    'Category Legend'      => '',
+// Recorded Programs
+    '%d programs, using %s (%s) out of %s.' => '',
+// End of the array
+          );
 
 /* theme.php */
 define ('_LANG_BACKEND_STATUS',       'Backend Status');
-define ('_LANG_SETTINGS',             'Settings');
 define ('_LANG_LISTINGS',             'Listings');
 define ('_LANG_FAVOURITES',           'Favourites');
 define ('_LANG_SCHEDULED_RECORDINGS', 'Scheduled Recordings');
@@ -53,38 +74,38 @@ define ('_LANG_WESTERN',              'Western');
 define ('_LANG_MOVIES',               'Movies');
 define ('_LANG_UNKNOWN',              'Unknown');
 
-define ('_LANG_CATMATCH_ACTION',               '\\b(?:action|adven)');
-define ('_LANG_CATMATCH_ADULT',                '\\b(?:adult|erot)');
-define ('_LANG_CATMATCH_ANIMALS',              '\\b(?:animal|tiere)');
-define ('_LANG_CATMATCH_ART_MUSIC',            '\\b(?:art|dance|musi[ck]|kunst|[ck]ultur)');
-define ('_LANG_CATMATCH_BUSINESS',             '\\b(?:biz|busine)');
-define ('_LANG_CATMATCH_CHILDREN',             '\\b(?:child|kin?d|infan|animation)');
-define ('_LANG_CATMATCH_COMEDY',               '\\b(?:comed|entertain|sitcom)');
-define ('_LANG_CATMATCH_CRIME_MYSTERY',        '\\b(?:[ck]rim|myster)');
-define ('_LANG_CATMATCH_DOCUMENTARY',          '\\b(?:do[ck])');
-define ('_LANG_CATMATCH_DRAMA',                '\\b(?:drama)');
-define ('_LANG_CATMATCH_EDUCATIONAL',          '\\b(?:edu|bildung|interests)');
-define ('_LANG_CATMATCH_FOOD',                 '\\b(?:food|cook|essen|[dt]rink)');
-define ('_LANG_CATMATCH_GAME',                 '\\b(?:game|spiele)');
-define ('_LANG_CATMATCH_HEALTH_MEDICAL',       '\\b(?:health|medic|gesundheit)');
-define ('_LANG_CATMATCH_HISTORY',              '\\b(?:hist|geschichte)');
-define ('_LANG_CATMATCH_HOWTO',                '\\b(?:how|home|house|garden)');
-define ('_LANG_CATMATCH_HORROR',               '\\b(?:horror)');
-define ('_LANG_CATMATCH_MISC',                 '\\b(?:special|variety|info|collect)');
-define ('_LANG_CATMATCH_NEWS',                 '\\b(?:news|nachrichten|current)');
-define ('_LANG_CATMATCH_REALITY',              '\\b(?:reality)');
-define ('_LANG_CATMATCH_ROMANCE',              '\\b(?:romance|lieb)');
-define ('_LANG_CATMATCH_SCIENCE_NATURE',       '\\b(?:science|nature|environment|wissenschaft)');
-define ('_LANG_CATMATCH_SCIFI_FANTASY',        '\\b(?:fantasy|sci\\w*\\W*fi)');
-define ('_LANG_CATMATCH_SHOPPING',             '\\b(?:shop)');
-define ('_LANG_CATMATCH_SOAPS',                '\\b(?:soaps)');
-define ('_LANG_CATMATCH_SPIRITUAL',            '\\b(?:spirit|relig)');
-define ('_LANG_CATMATCH_SPORTS',               '\\b(?:sport|deportes|futbol)');
-define ('_LANG_CATMATCH_TALK',                 '\\b(?:talk)');
-define ('_LANG_CATMATCH_TRAVEL',               '\\b(?:travel|reisen)');
-define ('_LANG_CATMATCH_WAR',                  '\\b(?:war|krieg)');
-define ('_LANG_CATMATCH_WESTERN',              '\\b(?:west)');
-define ('_LANG_CATMATCH_MOVIES',               '');
+define ('_CATMATCH_ACTION',               '\\b(?:action|adven)');
+define ('_CATMATCH_ADULT',                '\\b(?:adult|erot)');
+define ('_CATMATCH_ANIMALS',              '\\b(?:animal|tiere)');
+define ('_CATMATCH_ART_MUSIC',            '\\b(?:art|dance|musi[ck]|kunst|[ck]ultur)');
+define ('_CATMATCH_BUSINESS',             '\\b(?:biz|busine)');
+define ('_CATMATCH_CHILDREN',             '\\b(?:child|kin?d|infan|animation)');
+define ('_CATMATCH_COMEDY',               '\\b(?:comed|entertain|sitcom)');
+define ('_CATMATCH_CRIME_MYSTERY',        '\\b(?:[ck]rim|myster)');
+define ('_CATMATCH_DOCUMENTARY',          '\\b(?:do[ck])');
+define ('_CATMATCH_DRAMA',                '\\b(?:drama)');
+define ('_CATMATCH_EDUCATIONAL',          '\\b(?:edu|bildung|interests)');
+define ('_CATMATCH_FOOD',                 '\\b(?:food|cook|essen|[dt]rink)');
+define ('_CATMATCH_GAME',                 '\\b(?:game|spiele)');
+define ('_CATMATCH_HEALTH_MEDICAL',       '\\b(?:health|medic|gesundheit)');
+define ('_CATMATCH_HISTORY',              '\\b(?:hist|geschichte)');
+define ('_CATMATCH_HOWTO',                '\\b(?:how|home|house|garden)');
+define ('_CATMATCH_HORROR',               '\\b(?:horror)');
+define ('_CATMATCH_MISC',                 '\\b(?:special|variety|info|collect)');
+define ('_CATMATCH_NEWS',                 '\\b(?:news|nachrichten|current)');
+define ('_CATMATCH_REALITY',              '\\b(?:reality)');
+define ('_CATMATCH_ROMANCE',              '\\b(?:romance|lieb)');
+define ('_CATMATCH_SCIENCE_NATURE',       '\\b(?:science|nature|environment|wissenschaft)');
+define ('_CATMATCH_SCIFI_FANTASY',        '\\b(?:fantasy|sci\\w*\\W*fi)');
+define ('_CATMATCH_SHOPPING',             '\\b(?:shop)');
+define ('_CATMATCH_SOAPS',                '\\b(?:soaps)');
+define ('_CATMATCH_SPIRITUAL',            '\\b(?:spirit|relig)');
+define ('_CATMATCH_SPORTS',               '\\b(?:sport|deportes|futbol)');
+define ('_CATMATCH_TALK',                 '\\b(?:talk)');
+define ('_CATMATCH_TRAVEL',               '\\b(?:travel|reisen)');
+define ('_CATMATCH_WAR',                  '\\b(?:war|krieg)');
+define ('_CATMATCH_WESTERN',              '\\b(?:west)');
+define ('_CATMATCH_MOVIES',               '');
 
 /* settings.php */
 define ('_LANG_SETTINGS_HEADER1',              'This is the index page for the configuration settings...');

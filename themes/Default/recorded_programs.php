@@ -190,10 +190,11 @@ if ($group_field == "") {
 </table>
 <?php
     echo '<p align="right" style="padding-right: 75px">'
-         .$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.' '.nice_filesize(disk_used)
-         .' ('.nice_length($Total_Time).') '
-         ._LANG_OUT_OF.nice_filesize(disk_size)
-         .'</p>';
+        .t('%d programs, using %s (%s) out of %s.', $GLOBALS['Total_Programs'],
+                                                    nice_filesize(disk_used),
+                                                    nice_length($Total_Time),
+                                                    nice_filesize(disk_size))
+        .'</p>';
 
     // Print the main page footer
         parent::print_footer();
