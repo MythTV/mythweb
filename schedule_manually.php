@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    schedule_manually.php                      Last Updated: 2005.02.07 (xris)
+    schedule_manually.php                      Last Updated: 2005.02.08 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -57,6 +57,7 @@
             $schedule->endoffset    = intval($_POST['endoffset']);
         // Some settings specific to manual recordings (since we have no program to match against)
             $schedule->chanid      = $_POST['channel'];
+            $schedule->station     = $Channels[$schedule->chanid]->callsign;
             $schedule->starttime   = strtotime($_POST['startdate'].' '.$_POST['starttime']);
             $schedule->endtime     = $schedule->starttime + ($_POST['length'] * 60);
             $schedule->description = 'Manually scheduled';

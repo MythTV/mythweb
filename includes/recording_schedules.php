@@ -239,7 +239,10 @@ class Schedule {
         elseif ($program->recordid && $program->recordid != $recordid)
             trigger_error('Error updating recording schedule - different id was returned', FATAL);
     // Notify the backend of the changes
-        backend_notify_changes($this->recordid);
+        if ($this->recordid)
+            backend_notify_changes($this->recordid);
+        else
+            backend_notify_changes();
     }
 
 /*
