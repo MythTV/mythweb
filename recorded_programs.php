@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.19 (xris)
+	recorded_programs.php                    Last Updated: 2003.08.20 (xris)
 
 	view and manipulate recorded programs.
 \***                                                                        ***/
@@ -90,25 +90,6 @@
 	if (count($All_Shows))
 		sort_programs($All_Shows, 'recorded_sortby');
 
-// Make sure the image cache path exists
-	$path = '';
-	foreach (split('/+', pixmap_local_path) as $dir) {
-		$path .= $path ? '/' . $dir : $dir;
-		if(!is_dir($path) && !mkdir($path, 0755))
-			trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
-	}
-
-// Clean out stale thumbnails
-	if ($dir = opendir(pixmap_local_path)) {
-		while (($file = readdir($dir))) {
-			if (!is_file(pixmap_local_path.'/'.$file) || !ereg('\\.(png,jpg,gif)$', $file))
-				continue;
-		// Delete files that haven't been touched in the last 3 days
-			if (fileatime(pixmap_local_path.'/'.$file) > 3 * 24 * 60 * 60)
-				unlink(pixmap_local_path.'/'.$file);
-		}
-		closedir($dir);
-	}
 
 // How much free disk space on the backend machine?
 	list($disk_size, $disk_used) = explode(backend_sep, backend_command('QUERY_FREESPACE'));

@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	init.php				                 Last Updated: 2003.08.19 (xris)
+	init.php				                 Last Updated: 2003.08.20 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -75,5 +75,24 @@
 // Load the overall page theme class
 	require_once theme_dir."theme.php";
 
+// Make sure the image cache path exists
+	$path = '';
+	foreach (split('/+', image_cache) as $dir) {
+		$path .= $path ? '/' . $dir : $dir;
+		if(!is_dir($path) && !mkdir($path, 0755))
+			trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
+	}
+
+// Clean out stale thumbnails
+	if ($dir = opendir(image_cache)) {
+		while (($file = readdir($dir))) {
+			if (!is_file(image_cache.'/'.$file) || !ereg('\\.(png,jpg,gif)$', $file))
+				continue;
+		// Delete files that haven't been touched in the last 3 days
+			if (fileatime(image_cache.'/'.$file) > 3 * 24 * 60 * 60)
+				unlink(image_cache.'/'.$file);
+		}
+		closedir($dir);
+	}
 
 ?>

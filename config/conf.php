@@ -34,7 +34,6 @@
 
 
 // Locan and web paths to the pixmap image cache
-	define('pixmap_local_path', 'image_cache');
-	define('pixmap_web_path', 'image_cache');
+	define('image_cache', 'image_cache');
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 /***																		***\
-	mythbackend.php                          Last Updated: 2003.08.19 (xris)
+	mythbackend.php                          Last Updated: 2003.08.20 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -146,7 +146,7 @@
 */
 	function generate_preview_pixmap($show) {
 		$fileurl = $show->filename;
-		$pngpath = pixmap_local_path . '/' . basename($fileurl) . ".png";
+		$pngpath = image_cache . '/' . basename($fileurl) . ".png";
 		if (!is_file($pngpath)) {
 			$hostname = chop(`hostname`);
 			if (substr($fileurl, 0, 7) != 'myth://') {

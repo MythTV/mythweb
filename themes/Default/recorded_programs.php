@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.19 (xris)
+	recorded_programs.php                    Last Updated: 2003.08.20 (xris)
 
 	This file defines a theme class for the recorded programs section.
 	It must define one method.   documentation will be added someday.
@@ -85,8 +85,8 @@ class Theme_recorded_programs extends Theme {
 	<td><?php
 		if (show_recorded_pixmaps) {
 			generate_preview_pixmap($show);
-			if (file_exists(pixmap_local_path.'/'.basename($show->filename).'.png'))
-				echo '<img id="'.$show->filename."\" src=\"".pixmap_web_path.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'">';
+			if (file_exists(image_cache.'/'.basename($show->filename).'.png'))
+				echo '<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'">';
 			else
 				echo '&nbsp;';
 		}
