@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2003.11.22 (xris)
+	program_detail.php                       Last Updated: 2004.01.14 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
@@ -49,7 +49,7 @@ class Theme_program_detail extends Theme {
 				}
 					?></td>
 			<td width="24px">&nbsp;</td>
-			<td><span class="huge"><a href="/mythweb/search.php?searchstr=<?=urlencode($this_program->title)?>">"<?=$this_program->title?>"</a></span><BR>"
+			<td><span class="huge"><a href="search.php?searchstr=<?=urlencode($this_program->title)?>&search_title=yes">"<?=$this_program->title?>"</a></span><BR>"
 				<span class="small">
 				<?=date('g:i A', $this_program->starttime)?> to <?=date('g:i A', $this_program->endtime)?> (<?=(int)($this_program->length/60)?> minutes)<BR>
 				<?
@@ -58,7 +58,7 @@ class Theme_program_detail extends Theme {
 				if ($this_program->category_type == 'movie')
 					echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">Search IMDB</a>)";
 				else
-					echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";					
+					echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";
 					echo " (<a href=\"http://us.imdb.com/Tsearch?title=" . urlencode($this_program->title) . "&restrict=Movies+and+TV\">Search IMDB</a>)";
 				?></span></td>
 		</tr><tr>
@@ -88,7 +88,7 @@ class Theme_program_detail extends Theme {
 				?></td>
 		</tr><? } ?>
 		</table>
-				
+
 	<td valign="top" align="right" rowspan="2">
 
 		<form action="program_detail.php" method="get" name="record_settings">

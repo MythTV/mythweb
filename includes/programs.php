@@ -441,9 +441,11 @@ class Program {
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,endtime,title,profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire) VALUES (2,'
+		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire) VALUES (2,'
 								.escape($this->chanid).','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
+								.'FROM_UNIXTIME('.escape($this->starttime).'),'
+								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.escape($this->title)  .','
 								.escape($this->profile).','
