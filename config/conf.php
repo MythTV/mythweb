@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2003.08.20 (xris)
+	conf.php                                  Last Updated: 2003.11.03 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -39,4 +39,6 @@
 // Path to the mythvideo "covers" directory
 	define('video_img_path', '');
 
+// Movie word
+	define('movie_word', 'Movie');
 ?>

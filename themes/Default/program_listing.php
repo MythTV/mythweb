@@ -17,13 +17,13 @@ class Theme_program_listing extends Theme {
 	*/
 	function print_header($start_time, $end_time) {
 	// Print the main page header
-		parent::print_header('MythWeb - Program Listing:  '.date('F j, Y, g:i A', $start_time));
+		parent::print_header('MythWeb - Program Listing:  '.date('D F j, Y, g:i A', $start_time));
 	// Print the header info specific to the program listing
 ?>
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-	<td width="50%" align="center">Currently Browsing:  <?=date('F j, Y, g:i A', $start_time)?></td>
+	<td width="50%" align="center">Currently Browsing:  <?=date('D, F j, Y, g:i A', $start_time)?></td>
 	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
 		<form class="form" action="program_listing.php" method="get">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
@@ -52,7 +52,7 @@ class Theme_program_listing extends Theme {
 					$date = date("Ymd", $time);
 					echo "<option value=\"$date\"";
 					if ($date == date("Ymd", $start_time)) echo " selected";
-					echo ">".date("F j, Y" , $time)."</option>";
+					echo ">".date("D, F j, Y" , $time)."</option>";
 				}
 				?></select></td>
 			<td align="center"><input type="submit" class="submit" value="Jump"></td>
@@ -127,7 +127,7 @@ class Theme_program_listing extends Theme {
 ?><tr>
 	<td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?=$start_time - (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>" name="anchor<?=$timeslot_anchor?>"><img src="images/left.gif" border="0" alt="left"></a></td>
 <?		foreach ($timeslots as $time) { ?>
-	<td class="menu" width="<?=(int)(96 / num_time_slots)?>%" align="center"><?=date('g:i', $time)?></td>
+	<td class="menu" width="<?=(int)(96 / num_time_slots)?>%" align="center"><?php echo date('G:i', $time)?></td>
 <?		} ?>
 	<td class="menu" width="2%"><a href="program_listing.php?time=<?=$start_time + (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
 </tr><?
@@ -258,7 +258,8 @@ class Theme_program_listing extends Theme {
 			 .(strlen($program->subtitle) > 0 ? ":<BR>$program->subtitle" : '')
 			 .'</a>';
 	// Print some additional information for movies
-		if ($program->category_type == 'movie') {
+		if ($program->category_type == 'movie'
+				|| $program->category_type == 'film') {
 			if ($program->airdate > 0)
 				$parens = sprintf('%4d', $program->airdate);
 			if (strlen($program->rating) > 0) {

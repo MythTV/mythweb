@@ -106,7 +106,7 @@ class Theme {
 		?><a id="category_legend_anchor" onmouseover="show('category_legend');return true;" onmouseout="hide('category_legend');return true;">MythTV:</a> &nbsp; &nbsp;
 				<a href="program_listing.php">Listings</a>
 				&nbsp; | &nbsp;
-				<a href="search.php?searchstr=movie&search_category_type=yes">Movies</a>
+				<a href="search.php?searchstr=<?php echo movie_word?>&search_category_type=yes"><?php echo movie_word?>s</a>
 				<?/*&nbsp; | &nbsp;
 				<a href="index.php?mode=favourites">Favourites</a>*/?>
 				&nbsp; | &nbsp;

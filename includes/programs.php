@@ -495,9 +495,9 @@ class Program {
 			$this->class .= $cache[$category] = 'cat_Art_Music';
 		elseif (preg_match('/\\b(?:biz|busine)/', $category))
 			$this->class .= $cache[$category] = 'cat_Business';
-		elseif (preg_match('/\\b(?:child|kin?d|infan)/', $category))
+		elseif (preg_match('/\\b(?:child|kin?d|infan|animation)/', $category))
 			$this->class .= $cache[$category] = 'cat_Children';
-		elseif (preg_match('/\\b(?:comed)/', $category))
+		elseif (preg_match('/\\b(?:comed|entertain|sitcom)/', $category))
 			$this->class .= $cache[$category] = 'cat_Comedy';
 		elseif (preg_match('/\\b(?:[ck]rim|myster)/', $category))
 			$this->class .= $cache[$category] = 'cat_Crime_Mystery';
@@ -505,7 +505,7 @@ class Program {
 			$this->class .= $cache[$category] = 'cat_Documentary';
 		elseif (preg_match('/\\b(?:drama)/', $category))
 			$this->class .= $cache[$category] = 'cat_Drama';
-		elseif (preg_match('/\\b(?:edu|bildung)/', $category))
+		elseif (preg_match('/\\b(?:edu|bildung|interests)/', $category))
 			$this->class .= $cache[$category] = 'cat_Educational';
 		elseif (preg_match('/\\b(?:food|cook|essen|[dt]rink)/', $category))
 			$this->class .= $cache[$category] = 'cat_Food';
@@ -521,7 +521,7 @@ class Program {
 			$this->class .= $cache[$category] = 'cat_Horror';
 		elseif (preg_match('/\\b(?:special|variety|info|collect)/', $category))
 			$this->class .= $cache[$category] = 'cat_Misc';
-		elseif (preg_match('/\\b(?:news|nachrichten)/', $category))
+		elseif (preg_match('/\\b(?:news|nachrichten|current)/', $category))
 			$this->class .= $cache[$category] = 'cat_News';
 		elseif (preg_match('/\\b(?:reality)/', $category))
 			$this->class .= $cache[$category] = 'cat_Reality';
@@ -529,7 +529,7 @@ class Program {
 			$this->class .= $cache[$category] = 'cat_Romance';
 		elseif (preg_match('/\\b(?:fantasy|sci\\w*\\W*fi)/', $category))
 			$this->class .= $cache[$category] = 'cat_SciFi_Fantasy';
-		elseif (preg_match('/\\b(?:science|nature|wissenschaft)/', $category))
+		elseif (preg_match('/\\b(?:science|nature|environment|wissenschaft)/', $category))
 			$this->class .= $cache[$category] = 'cat_Science_Nature';
 		elseif (preg_match('/\\b(?:shop)/', $category))
 			$this->class .= $cache[$category] = 'cat_Shopping';
