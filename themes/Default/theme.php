@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2005.02.08 (xris)
+    theme.php                             Last Updated: 2005.02.27 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -109,8 +109,19 @@ class Theme {
                     </table>
                     <hr/>
                     <?php echo t('Search options') ?>:<br />
-                    <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>>
-                        <a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th><input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>>
+                            </th>
+                        <td><a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a>
+                            </td>
+                        <th><input type="checkbox" class="radio" id="search_hd" name="search_hd" value="1"<?php echo $_SESSION['search']['search_hd'] ? ' CHECKED' : ''?>>
+                            </th>
+                        <td><a onclick="get_element('search_hd').checked=get_element('search_hd').checked ? false : true;"><?php echo t('HD Only') ?></a>
+                            </td>
+                    </tr>
+                    </table>
+
                     <hr/>
                     <?php echo t('Search help') ?>:
                     <dl>

@@ -238,6 +238,7 @@ $L = array(
     'Category Legend'                            => 'Categorie Legende',
     'Edit MythWeb and some MythTV settings.'     => 'Bewerk MythWeb en enkele MythTV instellingen',
     'Favorites'                                  => 'Favorieten',
+    'HD Only'                                    => '',
     'Manually Schedule'                          => 'Handmatig Programmeren',
     'Movies'                                     => 'Films',
     'MythMusic on the web.'                      => 'Muziek',

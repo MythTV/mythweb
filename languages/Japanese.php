@@ -238,6 +238,7 @@ $L = array(
     'Category Legend'                            => 'カテゴリー凡例',
     'Edit MythWeb and some MythTV settings.'     => 'MythWebとMythTVの設定',
     'Favorites'                                  => 'お気に入り',
+    'HD Only'                                    => '',
     'Manually Schedule'                          => '手動録画',
     'Movies'                                     => '映画',
     'MythMusic on the web.'                      => 'MythMusic オンザウェブ',

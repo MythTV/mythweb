@@ -239,6 +239,7 @@ $L = array(
     'Category Legend'                            => '',
     'Edit MythWeb and some MythTV settings.'     => 'Warning: Do not do while drunk!',
     'Favorites'                                  => '',
+    'HD Only'                                    => '',
     'Manually Schedule'                          => '',
     'Movies'                                     => '',
     'MythMusic on the web.'                      => '',

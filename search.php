@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2005.02.09 (xris)
+    search.php                               Last Updated: 2005.02.27 (xris)
 
     Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -24,7 +24,6 @@
         $_SESSION['search']['search_description']   = _or($_GET['search_description'],   $_POST['search_description']);
         $_SESSION['search']['search_category']      = _or($_GET['search_category'],      $_POST['search_category']);
         $_SESSION['search']['search_category_type'] = _or($_GET['search_category_type'], $_POST['search_category_type']);
-        $_SESSION['search']['search_exact']         = _or($_GET['search_exact'],         $_POST['search_exact']);
     }
 // Individual search strings for different fields
     elseif ($_GET['title'] || $_GET['subtitle'] || $_GET['description'] || $_GET['category'] || $_GET['category_type'] || $_GET['originalairdate']
@@ -36,16 +35,24 @@
         $_SESSION['search']['category']        = _or($_GET['category'],        $_POST['category']);
         $_SESSION['search']['category_type']   = _or($_GET['category_type'],   $_POST['category_type']);
         $_SESSION['search']['originalairdate'] = _or($_GET['originalairdate'], $_POST['originalairdate']);
-        $_SESSION['search']['search_exact']    = _or($_GET['search_exact'],    $_POST['search_exact']);
     }
+// Update some universal search settings
+    if ($_GET['search_exact'] || $_POST['search_exact'])
+        $_SESSION['search']['search_exact'] = _or($_GET['search_exact'], $_POST['search_exact']);
+    if ($_GET['search_hd'] || $_POST['search_hd'])
+        $_SESSION['search']['search_hd'] = _or($_GET['search_hd'], $_POST['search_hd']);
 
 // Start the query out as an array
-    $query      = array();
-    $star_query = '';
+    $query       = array();
+    $extra_query = array();
     if ($_SESSION['search']['search_exact'])
         $compare = ' = ';
     else
         $compare = ' LIKE ';
+
+// HDTV only?
+    if ($_SESSION['search']['search_hd'])
+        $extra_query[] = 'hdtv=1';
 
 // How do we want to build this query?
     if (preg_match('/\\S/', $_SESSION['search']['searchstr'])) {
@@ -58,7 +65,7 @@
             if (preg_match( "/1\\/2|\\.5|-/", $stars[1]))
                 $starcount += 0.125;
         // Add this to the query -- convert european decimal to something mysql can understand
-            $star_query = ' AND program.stars >= '.str_replace(',', '.', $starcount);
+            $extra_query[] = 'program.stars >= '.str_replace(',', '.', $starcount);
         // Remove the stars from the search string so we can continue looking for other things
             $search_str = preg_replace('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*#', '', $search_str);
         }
@@ -102,8 +109,8 @@
             $query[] = "program.category$compare".search_escape($_SESSION['search']['category']);
         if (isset($_SESSION['search']['category_type']))
             $query[] = "program.category_type$compare".search_escape($_SESSION['search']['category_type']);
-    if (isset($_SESSION['search']['originalairdate']))
-        $query[] = "program.originalairdate > NOW()";
+        if (isset($_SESSION['search']['originalairdate']))
+            $query[] = "program.originalairdate > NOW()";
     }
 
 // No query?
@@ -116,8 +123,12 @@
         # obviously, we need to do something here
         # starttime
         # endtime
+    // Build the query string
+        $query = '('.implode($joiner, $query).')';
+        if (count($extra_query))
+            $query = "($query AND ".implode(' AND ', $extra_query).')';
     // Perform the query
-        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, '(('.implode($joiner, $query).')'.$star_query.')');
+        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
     // Sort the results
         if (count($Results))
             sort_programs($Results, 'search_sortby');
