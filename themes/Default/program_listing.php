@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2003.08.19 (xris)
+    program_listing.php                      Last Updated: 2003.10.22 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -205,7 +205,7 @@ class Theme_program_listing extends Theme {
 		</tr>" : '')
 		.(strlen($program->description) > 0 ? "<tr>
 			<td align=\"right\" valign=\"top\">Description:</td>
-			<td>$program->description</td>
+			<td>".nl2br(wordwrap($program->description, 70))."</td>
 		</tr>" : '')
 		.(strlen($program->rating) > 0 ? "<tr>
 			<td align=\"right\" valign=\"top\">Rating:</td>

@@ -73,7 +73,7 @@ class Theme_scheduled_recordings extends Theme {
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->description) ? "<tr>
 			<td align=\"right\" valign=\"top\">Description:</td>
-			<td>$show->description</td>
+			<td>".nl2br(wordwrap($show->description, 70))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->rating) ? "<tr>
 			<td align=\"right\" valign=\"top\">Rating:</td>
