@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.08.22 (xris)
+    programs.php                             Last Updated: 2003.09.03 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -69,20 +69,26 @@
 		}
 	// If there are recordings, we need to grab that info, too - if there aren't, this query info will interfere with the query
 		if ($num_recordings > 0) {
-			$record_table  = ', record LEFT JOIN recordingprofiles ON record.profile=recordingprofiles.id';
-			$record_values = ' SUM(record.type = 5 AND program.title = record.title AND record.chanid = program.chanid AND '
+			$record_table  = ' LEFT JOIN record ON '
+							.' ((record.type = 5 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'      record.starttime = SEC_TO_TIME(time_to_sec(program.starttime)) AND '
-							.'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime))>0 as record_weekly, '
-							.' SUM(record.type = 4 AND program.title = record.title) > 0 AS record_always, '
-							.' SUM(record.type = 3 AND program.title = record.title AND record.chanid = program.chanid) > 0 AS record_channel, '
-							.' SUM(record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
+							.'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime)) '
+							.' OR (record.type = 4 AND program.title = record.title) '
+							.' OR (record.type = 3 AND program.title = record.title AND record.chanid = program.chanid)'
+							.' OR (record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-							.'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) > 0 AS record_daily, '
-							.' SUM(record.type = 1 AND program.title = record.title AND record.chanid = program.chanid AND '
+							.'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) '
+							.' OR (record.type = 1 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-							.'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))) > 0 AS record_once,'
-							.'record.profile, record.rank, record.recorddups, record.maxnewest, record.maxepisodes, record.autoexpire, '
-							.'IF(recordingprofiles.name > 0, recordingprofiles.name, \'Default\') as profilename, ';
+							.'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))))'
+							.' LEFT JOIN recordingprofiles ON record.profile=recordingprofiles.id ';
+			$record_values = ' SUM(record.type = 5) > 0 as record_weekly,'
+							.' SUM(record.type = 4) > 0 AS record_always,'
+							.' SUM(record.type = 3) > 0 AS record_channel,'
+							.' SUM(record.type = 2) > 0 AS record_daily,'
+							.' SUM(record.type = 1) > 0 AS record_once,'
+							.' IF(record.profile > 0, recordingprofiles.name, \'Default\') as profilename,'
+							.' record.profile, record.rank, record.recorddups, record.maxnewest, record.maxepisodes, record.autoexpire,';
 		}
 		else {
 			$record_table  = '';
@@ -300,7 +306,6 @@ class Program {
 									  || $this->record_channel
 									  || $this->record_always ) ? true : false;
 		}
-
 	// Do we have a chanid?  Load some info about it
 		if ($this->chanid && !isset($this->channel)) {
 		// No channel data?  Load it
