@@ -74,8 +74,8 @@ A:hover   { color: #F0F000; text-decoration: underline; }
 .recorded {    background-color: #506080 }
 
 /* a class for the the cells containing recored programs in recorded_programs.php */
-.scheduled     {    background-color: #506090 }
-.conflict     {    background-color: #806050 }
+.scheduled   {    background-color: #506090 }
+.conflict    {    background-color: #806050 }
 .duplicate   {    background-color: #304050 }
 .deactivated {    background-color: #508060 }
 
@@ -117,7 +117,7 @@ TextArea {
 }
 
 /* A special class for form stuff, to avoid those nasty extra linefeeds in IE </form> tags */
-.form { display: inline; }
+form, .form { display: inline; }
 
 /* A special class for error stuff */
 .error {
