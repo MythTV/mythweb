@@ -66,9 +66,21 @@ class Theme_recorded_programs extends Theme {
 </form>
 </p>
 
+<?
+// Setup for grouping by various sort orders
+$group_field = $_GET['sortby'];
+if ($group_field == "") {
+    $group_field = "airdate";
+} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
+	$group_field = "";
+}
+?>
+
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-<?php	if (show_recorded_pixmap) { ?>
+<?php  ?>
+<?php	if ($group_field != "") { echo "<td>&nbsp;</td>"; }
+		if (show_recorded_pixmaps) { ?>
 	<td>preview</td>
 <?php	} ?>
 	<td><a href="recorded_programs.php?sortby=title">show</a></td>
@@ -81,13 +93,6 @@ class Theme_recorded_programs extends Theme {
 </tr><?php
 	$row = 0;
 
-	// Setup for grouping by various sort orders
-	$group_field = $_GET['sortby'];
-	if ($group_field == "") {
-	    $group_field = "airdate";
-	} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
-		$group_field = "";
-	}
 	$prev_group="";
 	$cur_group="";
 
@@ -95,28 +100,31 @@ class Theme_recorded_programs extends Theme {
 
 	// Print a dividing row if grouping changes
 	if ($group_field == "airdate")
-	    $cur_group = date("d m Y", $show->starttime);
+	    $cur_group = date($_SESSION['date_listing_jump'], $show->starttime);
 	elseif ($group_field == "channum")
 		$cur_group = $show->channel->name;
 	elseif ($group_field == "title")
 		$cur_group = $show->title;
 
-	if ( $row > 0 && $cur_group != $prev_group && $group_field != '' ) {
-?><tr class="blank_row">
-	<td colspan="9" class="no_padding"><img src="<?php echo theme_dir?>img/src.php" height="5" width="1" border="0"></td>
+	if ( $cur_group != $prev_group && $group_field != '' ) {
+?><tr class="list_separator">
+	<td colspan="9" class="list_separator"><?=$cur_group?></td>
 </tr><?
 	}
 
 	?><tr class="recorded">
-	<td><?php
+	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
+	<?php
 		if (show_recorded_pixmaps) {
+			echo '<td>';
 			generate_preview_pixmap($show);
 			if (file_exists(image_cache.'/'.basename($show->filename).'.png'))
 				echo '<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'">';
 			else
 				echo '&nbsp;';
+			echo '</td>';
 		}
-	?></td>
+	?>
 	<td><?php echo $show->title?></td>
 	<td><?php echo $show->subtitle?></td>
 	<td><?php echo $show->description?></td>

@@ -133,14 +133,14 @@
 	}
 
 // Load/set default session data
-	if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = 'D, M d, g:i A';
-	if (!$_SESSION['date_scheduled'])       $_SESSION['date_scheduled']       = 'D, M j (g:i A)';
-	if (!$_SESSION['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = 'D, M j';
-	if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = 'D, M j (g:i A)';
-	if (!$_SESSION['date_search'])          $_SESSION['date_search']          = 'D, M d, g:i A';
-	if (!$_SESSION['date_listing_key'])     $_SESSION['date_listing_key']     = 'D, M d, g:i A';
-	if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = 'D, F j';
-	if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = 'D, F j';
-	if (!$_SESSION['time_format'])          $_SESSION['time_format']          = 'h:i A';
+	if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = generic_date . ', ' . generic_time;
+	if (!$_SESSION['date_scheduled'])       $_SESSION['date_scheduled']       = generic_date . ' (' . generic_time . ')';
+	if (!$_SESSION['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = generic_date;
+	if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = generic_date . ' (' . generic_time . ')';
+	if (!$_SESSION['date_search'])          $_SESSION['date_search']          = generic_date . ', ' . generic_time;
+	if (!$_SESSION['date_listing_key'])     $_SESSION['date_listing_key']     = generic_date . ', ' . generic_time;
+	if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = generic_date;
+	if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = generic_date;
+	if (!$_SESSION['time_format'])          $_SESSION['time_format']          = generic_time;
 
 ?>

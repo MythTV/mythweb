@@ -25,13 +25,13 @@ class Theme_program_listing extends Theme {
 <tr>
 	<td width="50%" align="center">Currently Browsing:  <?php echo date('D, F j, Y, g:i A', $start_time)?></td>
 	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-		<form class="form" action="program_listing.php" method="get">
+		<form class="form" id="program_listing" action="program_listing.php" method="get">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 		<tr>
 
 			<td align="center">Jump&nbsp;to:&nbsp;&nbsp;</td>
 			<td align="right">Hour:&nbsp;</td>
-			<td><select name="hour" style="text-align: right"><?php
+			<td><select name="hour" style="text-align: right" onchange="get_element('program_listing').submit()"><?php
 				for ($h=0;$h<24;$h++) {
 					echo "<option value=\"$h\"";
 					if ($h == date('H', $start_time))
@@ -40,7 +40,7 @@ class Theme_program_listing extends Theme {
 				}
 				?></select></td>
 			<td align="right">Date:&nbsp;</td>
-			<td><select name="date"><?php
+			<td><select name="date" onchange="get_element('program_listing').submit()"><?php
 			// Find out how many days into the future we should bother checking
 				$result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
 					or trigger_error('SQL Error: '.mysql_error(), FATAL);
@@ -276,7 +276,7 @@ class Theme_program_listing extends Theme {
 		echo '</a>';
 	// Print some additional information for movies
 		if ($program->category_type == 'movie'
-				|| $program->category_type == 'film') {
+				|| $program->category_type == 'Film') {
 			if ($program->airdate > 0)
 				$parens = sprintf('%4d', $program->airdate);
 			if (strlen($program->rating) > 0) {

@@ -54,6 +54,7 @@ A:hover   { color: #F0F000; text-decoration: underline; }
 .list_border_b { border-bottom: 1px solid #9090B0 }
 .list_border_l { border-left:   1px solid #9090B0 }
 .list_border_r { border-right:  1px solid #9090B0 }
+.list_separator { border-top: 	4px }
 
 /* a class for the the cells containing settings in the various settings files */
 .settings {	background-color: #506080 }

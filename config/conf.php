@@ -38,4 +38,8 @@
 
 // Movie word
 	define('movie_word', 'Movie');
+	
+// Date formats
+	define('generic_date', 'D, M j');
+	define('generic_time', 'h:i A')
 ?>

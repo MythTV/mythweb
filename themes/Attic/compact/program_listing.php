@@ -234,7 +234,8 @@ class Theme_program_listing extends Theme {
 			 .$program->title
 			 .(strlen($program->subtitle) > 0 ? ": $program->subtitle" : '');
 	// Print some additional information for movies
-		if ($program->category_type == 'movie')
+		if ($program->category_type == 'movie'
+			|| $program->category_type == 'Film') )
 		{
 			if ($program->airdate > 0)
 				$parens = sprintf('%4d', $program->airdate);

@@ -49,17 +49,16 @@ class Theme_program_detail extends Theme {
 				}
 					?></td>
 			<td width="24px">&nbsp;</td>
-			<td><span class="huge"><a href="search.php?searchstr=<?=urlencode($this_program->title)?>&search_title=yes">"<?=$this_program->title?>"</a></span><BR>"
+			<td><span class="huge"><a href="search.php?searchstr=<?=urlencode($this_program->title)?>&search_title=yes">"<?=$this_program->title?>"</a>
+			<? if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
+			</span><BR>"
 				<span class="small">
 				<?=date('g:i A', $this_program->starttime)?> to <?=date('g:i A', $this_program->endtime)?> (<?=(int)($this_program->length/60)?> minutes)<BR>
 				<?
 				if ($this_program->previouslyshown)
 					echo '(Rerun) ';
-				if ($this_program->category_type == 'movie')
-					echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">Search IMDB</a>)";
-				else
-					echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";
-					echo " (<a href=\"http://us.imdb.com/Tsearch?title=" . urlencode($this_program->title) . "&restrict=Movies+and+TV\">Search IMDB</a>)";
+				echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">Search IMDB</a>)";
+				echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";					
 				?></span></td>
 		</tr><tr>
 			<td colspan="3">&nbsp;</td>
@@ -82,10 +81,7 @@ class Theme_program_detail extends Theme {
 		</tr><? }
 				if (strlen($this_program->rating)) {?><tr>
 			<td colspan="2" align="right"><?=strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?>Rating:&nbsp;</td>
-			<td><?=$this_program->rating?><?
-				if (strlen($this_program->starstring) > 0)
-					echo ", $this_program->starstring";
-				?></td>
+			<td><?=$this_program->rating?></td>
 		</tr><? } ?>
 		</table>
 

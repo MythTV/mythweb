@@ -23,12 +23,12 @@ class Theme_scheduled_recordings extends Theme {
 		var prev_visible_class = "no_padding";
 
 		for (var i=1; i < document.getElementById("listings").rows.length; i++) {
-			if (document.getElementById("listings").rows[i].className == "no_padding") {
-				if (prev_visible_class == "no_padding")
+			if (document.getElementById("listings").rows[i].className == "list_separator") {
+				if (prev_visible_class == "list_separator")
 					document.getElementById("listings").rows[i].style.display = "none";
 				else
 					document.getElementById("listings").rows[i].style.display = "";
-				prev_visible_class = "no_padding";
+				prev_visible_class = "list_separator";
 			}
 			else {
 	 			if (document.getElementById(document.getElementById("listings").rows[i].className).checked) {
@@ -57,20 +57,25 @@ class Theme_scheduled_recordings extends Theme {
 </tr>
 </table>
 
+<?
+$group_field = $_GET['sortby'];
+if ($group_field == "") {
+    $group_field = "airdate";
+} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
+	$group_field = "";
+}
+?>
+
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
+	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
 	<td><a href="scheduled_recordings.php?sortby=title">show</a></td>
 	<td><a href="scheduled_recordings.php?sortby=channum">station</a></td>
 	<td><a href="scheduled_recordings.php?sortby=airdate">air&nbsp;date</a></td>
 	<td><a href="scheduled_recordings.php?sortby=length">length</a></td>
 </tr><?
 	$row = 0;
-	$group_field = $_GET['sortby'];
-	if ($group_field == "") {
-	    $group_field = "airdate";
-	} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
-		$group_field = "";
-	}
+
 	$prev_group="";
 	$cur_group="";
 
@@ -173,20 +178,21 @@ class Theme_scheduled_recordings extends Theme {
 
 	// Print a dividing row if grouping changes
 	if ($group_field == "airdate")
-	    $cur_group = date("d m Y", $show->starttime);
+	    $cur_group = date($_SESSION['date_listing_jump'], $show->starttime);
 	elseif ($group_field == "channum")
 		$cur_group = $show->channel->name;
 	elseif ($group_field == "title")
 		$cur_group = $show->title;
 
-	if ( $row > 0 && $cur_group != $prev_group && $group_field != '' ) {
-?><tr class="no_padding">
-	<td colspan="6" class="no_padding"><img src="<?php echo theme_dir?>img/src.php" height="5" width="1" border="0"></td>
+	if ( $cur_group != $prev_group && $group_field != '' ) {
+?><tr class="list_separator">
+	<td colspan="6" class="list_separator"><?=$cur_group?></td>
 </tr><?
 	}
 
 	// Print the content
 	?><tr class="<?=$class?>">
+	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
 	<td class="<?=$show->class?>"><?php
 		// Print a link to record this show
 		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'

@@ -59,9 +59,19 @@ class Theme_search extends Theme {
 		if ($_GET['search_description'])   $search_str .= '&search_description=yes';
 		if ($_GET['search_category'])	   $search_str .= '&search_category=yes';
 		if ($_GET['search_category_type']) $search_str .= '&search_category_type=yes';
+
+	// Setup for grouping by various sort orders
+	$group_field = $_GET['sortby'];
+	if ($group_field == "") {
+	    $group_field = "airdate";
+	} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
+		$group_field = "";
+	}
+
 	// Display the results
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
+	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
 	<td><a href="search.php?sortby=title<?php echo $search_str?>">show</a></td>
 	<td><a href="search.php?sortby=subtitle<?php echo $search_str?>">episode</a></td>
 	<td>description</td>
@@ -70,12 +80,55 @@ class Theme_search extends Theme {
 	<td><a href="search.php?sortby=length<?php echo $search_str?>">length</a></td>
 </tr><?php
 		$row = 0;
+		
+		$prev_group="";
+		$cur_group="";
+
 		foreach ($Results as $show) {
+
+			// Print a dividing row if grouping changes
+			if ($group_field == "airdate") {
+			    $cur_group = date($_SESSION['date_listing_jump'], $show->starttime);
+			} elseif ($group_field == "channum") {
+				$cur_group = $show->channel->name;
+			} elseif ($group_field == "title") {
+				$cur_group = $show->title;
+			}
+			
+			if ( ($cur_group <> $prev_group) && ($group_field <> "") ) { ?>
+	<tr class="list_separator">
+	<td colspan="9">
+		<?=$cur_group?>
+		</td>
+	</tr><?
+			}
+
+	// Print some additional information for movies
+	$additional = '';
+	if ($show->category_type == 'movie'
+	        || $show->category_type == 'Film') {
+	    if ($show->airdate > 0)
+	            $additional = sprintf('%4d', $show->airdate);
+	    if (strlen($show->rating) > 0) {
+	        if ($additional)
+	            $additional .= ", ";
+	        $additional .= "<i>$show->rating</i>";
+	    }
+	    if (strlen($show->starstring) > 0) {
+	        if ($additional)
+	            $additional .= ", ";
+	        $additional .= $show->starstring;
+	    }
+	    if ($additional)
+	    	$additional = ', (' . $additional . ')';
+	}
+	
 	// Print the content
 	?><tr class="<?php echo $show->class ?>">
+	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; }?>
 	<td class="<?php echo $show->class ?>"><?php
 		echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
-			 .$show->title.'</a>';
+			 .$show->title . $additional.'</a>';
 		?></td>
 	<td><?php echo $show->subtitle?></td>
 	<td><?php echo $show->description?></td>
@@ -83,6 +136,7 @@ class Theme_search extends Theme {
 	<td nowrap><?php echo date($_SESSION['date_search'], $show->starttime)?></td>
 	<td nowrap><?php echo nice_length($show->length)?></td>
 </tr><?php
+			$prev_group = $cur_group;
 			$row++;
 		}
 ?>

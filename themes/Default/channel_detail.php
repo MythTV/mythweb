@@ -74,14 +74,36 @@ class Theme_channel_detail extends Theme {
 	<td>description</td>
 	<td><a href="scheduled_recordings.php?sortby=length">length</a></td>
 </tr><?php
+
 		$row = 0;
 		foreach ($this_channel->programs as $show) {
+
+        // Print some additional information for movies
+        $additional = '';
+        if ($show->category_type == 'movie'
+                || $show->category_type == 'Film') {
+            if ($show->airdate > 0)
+                    $additional = sprintf('%4d', $show->airdate);
+            if (strlen($show->rating) > 0) {
+                if ($additional)
+                    $additional .= ", ";
+                $additional .= "<i>$show->rating</i>";
+            }
+            if (strlen($show->starstring) > 0) {
+                if ($additional)
+                    $additional .= ", ";
+                $additional .= $show->starstring;
+            }
+            if ($additional)
+                $additional = ', (' . $additional . ')';
+        }
+
 	// Print the content
 	?><tr class="<?php echo $show->class ?>">
 	<td nowrap align="center"><a href="program_listing.php?time=<?php echo $show->starttime ?>"><?php echo date($_SESSION['time_format'], $show->starttime)?> - <?php echo date($_SESSION['time_format'], $show->endtime)?></a></td>
 	<td class="<?php echo $show->class ?>"><?php
 		echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
-			 .$show->title.'</a>';
+			 .$show->title.$additional.'</a>';
 		?></td>
 	<td><?php echo $show->subtitle?></td>
 	<td><?php echo $show->description?></td>
