@@ -1,5 +1,5 @@
 /***                                                                        ***\
-    mouseovers.js                            Last Updated: 2005.01.22 (xris)
+    mouseovers.js                            Last Updated: 2005.01.24 (xris)
 
     Functions to show/hide sections of the page (for mouseovers)
 \***                                                                        ***/
@@ -136,6 +136,9 @@
             clear_popup_timeout();
             return;
         }
+    // No need to do this?
+        if (!popups[0])
+            return;
     // Grab the current element to be shown
         var popup = popups[0];
         var field = get_element(popup.popup_id);
