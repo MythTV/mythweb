@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2005.02.27 (xris)
+    recorded_programs.php                    Last Updated: 2005.04.02 (xris)
 
     view and manipulate recorded programs.
 \***                                                                        ***/
@@ -17,8 +17,13 @@
     $_GET['delete'] or $_GET['delete'] = $_POST['delete'];
     $_GET['file']   or $_GET['file']   = $_POST['file'];
     if ($_GET['delete'] && preg_match('/\\d+_\\d+/', $_GET['file'])) {
+    // Keep a previous-row counter to return to after deleting
+        $prev_row = -2;
     // We need to scan through the available recordings to get at the additional information required by the DELETE_RECORDING query
         foreach (get_backend_rows('QUERY_RECORDINGS Delete') as $row) {
+        // increment if row has the same title as the show we're deleting or if viewing 'all recordings'
+            if (($_SESSION['recorded_title'] == $row[0]) || ($_SESSION['recorded_title'] == ''))
+                $prev_row++;
         // This row isn't the one we're looking for
             if ($row[8] != $_GET['file'])
                 continue;
@@ -38,7 +43,10 @@
             echo "\n"; // need at least 1 byte in body
             exit;
         }
-        header('Location: recorded_programs.php');
+    // Return to the row just prior to the one deleted
+    //  (with some fuzz to account for normal screen height
+    //   -- remember that rows are numbered starting at zero)
+        header('Location: recorded_programs.php'.($prev_row > 0 ? "#$prev_row" : ''));
         exit;
     }
 

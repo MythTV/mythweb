@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2005.02.09 (xris)
+    recorded_programs.php                    Last Updated: 2005.04.02 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -62,6 +62,7 @@ class Theme_recorded_programs extends Theme {
         }
         ?>
     </select></td>
+<?php if (count($Groups) > 1) { ?>
     <td><?php echo t('Show group') ?>:</td>
     <td><select name="recgroup" onchange="get_element('program_titles').submit()">
         <option value=""><?php echo t('All recordings')?></option><?php
@@ -76,6 +77,7 @@ class Theme_recorded_programs extends Theme {
         }
         ?>
     </select></td>
+<?php } ?>
     <td><noscript><input type="submit" value="<?php echo t('Go') ?>"></noscript></td>
 </tr>
 </table>
@@ -142,17 +144,20 @@ if ($group_field == "") {
     if (show_recorded_pixmaps) {
         echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
         if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
-            echo '<a href="'.video_url().'/'.basename($show->filename).'">'
+            echo '<a href="'.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
                 .'<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">'
                 .'</a>';
         }
         else
-            echo '&nbsp;';
+            echo "<a name=\"$row\">&nbsp;</a>";
         echo "</td>\n";
     }
     ?>
-    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'.$show->title.'</a>'    ?></td>
-    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'.$show->subtitle.'</a>' ?></td>
+    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'"'
+                    .(show_recorded_pixmaps ? '' : " name=\"$row\"")
+                    .'>'.$show->title.'</a>' ?></td>
+    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'
+                    .$show->subtitle.'</a>' ?></td>
 <?php
     if (!$_SESSION['recorded_descunder'])
         echo "\t<td>".$show->description."</td>\n";
