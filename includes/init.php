@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2004.05.06 (xris)
+    init.php                                 Last Updated: 2004.05.31 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -97,6 +97,7 @@
                         'fetc', // fetchpage.cgi Perl script from www.wapcab.de
                         'ALAV', // yet another unknown UP based browser ?
                         'Wapa', // another unknown browser (Web based "Wapalyzer"?)
+                        'LGE-', // LG phones
                         );
     if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"VND.WAP.WML") > 0 // The browser/gateway says it accepts WML.
             || in_array(substr(trim($_SERVER['HTTP_USER_AGENT']), 0, 4), $wap_agents))
