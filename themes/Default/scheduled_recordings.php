@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2005.02.08 (xris)
+    scheduled_recordings.php                 Last Updated: 2005.02.28 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -64,8 +64,8 @@ class Theme_scheduled_recordings extends Theme {
 </tr><?php
     $row = 0;
 
-    $prev_group="";
-    $cur_group="";
+    $prev_group = '';
+    $cur_group  = '';
     foreach ($shows as $show) {
     // Reset the command variable to a default URL
         $commands = array();
@@ -93,7 +93,8 @@ class Theme_scheduled_recordings extends Theme {
             $class   = 'scheduled';
             $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
         // Offer to suppress any recordings that have enough info to do so.
-            if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
+            if (preg_match('/\\S/', $show->title)
+                    && (preg_match('/\\S/', $show->programid.$show->subtitle.$show->description)))
                 $commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'.t('Never Record').'</a>';
         }
         elseif ($show->recstatus == 'ForceRecord') {
