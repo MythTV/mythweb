@@ -1,7 +1,7 @@
-AuthType Basic
-AuthName "MythTV"
-AuthUserFile /var/www/htpasswd
-Require valid-user
+#AuthType Basic
+#AuthName "MythTV"
+#AuthUserFile /var/www/htpasswd
+#Require valid-user
 
 # Todo:
 # set up different auth for:
@@ -12,7 +12,9 @@ Require valid-user
 # If you have normal software-encoded nuv files, use this type
 AddType video/nuppelvideo .nuv
 
-# Some special handlers for 
+# Some special handlers for php
+#  If your version of apache doesn't support php_value, then use these
+#  settings as examples for your own php.ini files.
 <FilesMatch "\.php$">
     php_value safe_mode                     0
 
