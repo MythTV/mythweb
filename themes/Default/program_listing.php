@@ -220,22 +220,19 @@ class Theme_program_listing extends Theme {
         if ($program->starttime < $GLOBALS['list_starttime'])
             echo '<img src="themes/Default/img/leftwhite.png" border="0" class="left_arrow">';
     // Does this program 'Continue'?
-        $right_arrow = '';
         if ($program->endtime > $GLOBALS['list_endtime'])
-            $right_arrow = '<img src="themes/Default/img/rightwhite.png" border="0" class="right_arrow">';
+            echo '<img src="themes/Default/img/rightwhite.png" border="0" class="right_arrow">';
         if ($percent > 5) {
             echo $program->title;
             if (strlen($program->subtitle) > 0) {
                 if ($percent > 8)
-                    echo ":$right_arrow<br />$program->subtitle";
+                    echo ":<br />$program->subtitle";
                 else
-                    echo ': ...'.$right_arrow;
+                    echo ': ...';
             }
-            else
-                echo $right_arrow;
         }
         else
-            echo '...'.$right_arrow;
+            echo '...';
     // Finish off the link
         echo '</a>';
 

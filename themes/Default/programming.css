@@ -13,6 +13,7 @@
 }
 
 .right_arrow {
+    float: right;
 }
 .left_arrow {
     float: left;
