@@ -104,7 +104,7 @@ class Theme_scheduled_recordings extends Theme {
 	?><tr class="<?=$class?>">
 	<td class="<?=$show->class?>"><?php
 		// Print a link to record this show
-		echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'
+		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'
 			 .(show_popup_info ? ' onmouseover="window.status=\'Details for: '.str_replace('\'', '\\\]', $show->title).'\';show(\'program_'.$program_id_counter.'\');return true"'
 			 					.' onmouseout="window.status=\'\';hide(\'program_'.$program_id_counter.'\');return true"'
 							   : '')

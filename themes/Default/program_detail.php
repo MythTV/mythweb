@@ -20,14 +20,14 @@ class Theme_program_detail extends Theme {
 <tr>
 	<td valign="top"><table border="0" cellspacing="0" cellpadding="2">
 		<tr>
-			<td width="80px" class="menu menu_border_t menu_border_b menu_border_l menu_border_r" width="60" align="center"><?
+			<td width="<?=prefer_channum ? '80' : '120'?>px" class="menu menu_border_t menu_border_b menu_border_l menu_border_r" width="60" align="center" nowrap><?
 				if (show_channel_icons === true) {
 					?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
 					<tr>
-						<td width="50%" align="center"><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>" class="huge"
+						<td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>" class="huge"
 														onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
-														onmouseout="window.status='';return true"><?=$this_channel->channum?>&nbsp;</a></td>
-						<td width="50%" align="center"><?
+														onmouseout="window.status='';return true"><?=prefer_channum ? $this_channel->channum : $this_channel->callsign?></a>&nbsp;</td>
+						<td width="50%" align="right"><?
 							if (is_file($this_channel->icon)) {
 								?><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>"
 									onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
@@ -36,16 +36,16 @@ class Theme_program_detail extends Theme {
 								echo '&nbsp;';
 							}?></td>
 					</tr><tr>
-						<td colspan="2" align="center"><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>"
+						<td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>"
 														onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
-														onmouseout="window.status='';return true"><?=$this_channel->callsign?></a></td>
+														onmouseout="window.status='';return true"><?=prefer_channum ? $this_channel->callsign : $this_channel->channum?></a></td>
 					</tr>
 					</table><?
 				} else {
 					?><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>" class="huge"
 						onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
-						onmouseout="window.status='';return true"><?=$this_channel->channum?><BR>
-					<?=$this_channel->callsign?></a><?
+						onmouseout="window.status='';return true"><?=prefer_channum ? $this_channel->channum : $this_channel->callsign?><BR>
+					<?=prefer_channum ? $this_channel->callsign : $this_channel->channum?></a><?
 				}
 					?></td>
 			<td width="24px">&nbsp;</td>

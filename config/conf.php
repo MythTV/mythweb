@@ -48,6 +48,9 @@
 // show the channel icons?  true/false
 	define('show_channel_icons', true);
 
+// Prefer channum over callsign?
+	define('prefer_channum', true);
+
 // The number of time slots to display in the channel listing
 	define('num_time_slots', 12);
 

@@ -18,21 +18,22 @@
 // Was there a search string?
 	$_GET['searchstr'] or $_GET['searchstr'] = $_POST['searchstr'];
 	if (preg_match('/\\w/', $_GET['searchstr'])) {
+		$search = escape('%'.preg_replace('/[\\s-_]+/', '%', $_GET['searchstr']).'%');
 		$query = array();
 		if ($_GET['search_title'])
-			$query[] = 'program.title LIKE '.escape('%'.$_GET['searchstr'].'%');
+			$query[] = 'program.title LIKE '.$search;
 		if ($_GET['search_subtitle'])
-			$query[] = 'program.subtitle LIKE '.escape('%'.$_GET['searchstr'].'%');
+			$query[] = 'program.subtitle LIKE '.$search;
 		if ($_GET['search_description'])
-			$query[] = 'program.description LIKE '.escape('%'.$_GET['searchstr'].'%');
+			$query[] = 'program.description LIKE '.$search;
 		if ($_GET['search_category'])
-			$query[] = 'program.category LIKE '.escape('%'.$_GET['searchstr'].'%');
+			$query[] = 'program.category LIKE '.$search;
 		if ($_GET['search_category_type'])
-			$query[] = 'program.category_type LIKE '.escape('%'.$_GET['searchstr'].'%');
+			$query[] = 'program.category_type LIKE '.$search;
 	// No query formed - default to quicksearch
 		if (!count($query)) {
-			$query[] = 'program.title LIKE '.escape('%'.preg_replace('/[\\s-_]+/', '%', $_GET['searchstr']).'%');
-			$query[] = 'program.subtitle LIKE '.escape('%'.preg_replace('/[\\s-_]+/', '%', $_GET['searchstr']).'%');
+			$query[] = 'program.title LIKE '.$search;
+			$query[] = 'program.subtitle LIKE '.$search;
 			$_GET['search_title'] = true;
 			$_GET['search_subtitle'] = true;
 		}

@@ -57,21 +57,73 @@
 
 	function grabEv(e) {
 		e = e ? e : event;
-		if (e.pageX || e.pageY) {
+		if (e.clientX || e.clientY) {
+			mouse_x = e.clientX + window.scrollX;
+			mouse_y = e.clientY + window.scrollY;
+		}
+		else if (e.pageX || e.pageY) {
 			mouse_x = e.pageX;
 			mouse_y = e.pageY;
 		}
 		else {
-			mouse_x = e.x + document.body.scrollLeft;
-			mouse_y = e.y + document.body.scrollTop;
+			mouse_x = e.x + document.documentElement.scrollLeft + document.body.scrollLeft;
+			mouse_y = e.y + document.documentElement.scrollTop  + document.body.scrollTop;
 		}
 	}
 
-	if (isNN4)
-		document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE);
-	document.onmousemove = grabEv;
+// We don't currently need this stuff now that we have find_position()
+//	if (isNN4)
+//		document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE);
+//	document.onmousemove = grabEv;
 
 // Functions to show/hide sections of the page (for mouseovers)
+
+/*
+	find_position:
+	returns the page position of any element on the screen
+	thanks to webreference.com for info about tables, etc.
+*/
+	function find_position(element) {
+	// No parent, just return the coordinates
+		if (! element.offsetParent)
+			return [element.x, element.y];
+	// Scan backwards through the parents
+		for( var x = 0, y = 0; element.offsetParent; element = element.offsetParent ) {
+		// If IE...
+			if (isIE4 || isIE6) {
+				// If element is not a table or body tag, append the cell border info
+				if (element.tagName != 'TABLE' && element.tagName != 'BODY') {
+					x += element.clientLeft
+					x += element.clientTop
+				}
+			}
+		// Gecko?
+			else {
+			// We need to take the table border into consideration
+				if (element.tagName == 'TABLE') {
+					var border = parseInt(element.border);
+				// No visible border, check for a frame attribute
+					if (isNaN(border)) {
+						var frame = element.getAttribute('frame');
+					// Found a frame attribute, but only add one pixel for it.
+						if (frame != null) {
+							x++;
+							y++;
+						}
+					}
+				// Visible border, add it to the calculation, too
+					else if (border > 0) {
+						x += border;
+						y += border;
+					}
+				}
+			}
+		// Don't forget the actual location of the element
+			x += element.offsetLeft;
+			y += element.offsetTop;
+		}
+		return [x, y];
+	}
 
 /*
 	for some reason, this doesn't seem to work properly in IE when scrolled down the page a bit...
@@ -87,7 +139,7 @@
 		if (gtimeout)
 			clearTimeout(gtimeout);
 	// delay .1s to give position time to be better
-		gtimeout = setTimeout("timed_show()",100);
+		gtimeout = setTimeout('timed_show()', 75);
 	}
 
 	function timed_show() {
@@ -102,9 +154,47 @@
 		var field = get_element(name);
 		if (field.style)
 			field = field.style;
-	// Add some padding
-		var x = parseInt(mouse_x + 10);
-		var y = parseInt(mouse_y + 10);
+	// Get the location of the parent element
+		var pos = find_position(get_element(name+'_anchor'));
+	// Set the initial position of the hidden element
+		var x = parseInt(pos[0]);
+		var y = parseInt(pos[1]) + 20;
+	// Get some window information so we can make sure the box doesn't extend off the edge of the screen
+		var window_width = 0, window_height = 0, scroll_left = 0, scroll_top = 0;
+		if (document.documentElement.clientWidth) {
+			window_width  = document.documentElement.clientWidth;
+			window_height = document.documentElement.clientHeight;
+			scroll_left   = document.documentElement.scrollLeft;
+			scroll_top    = document.documentElement.scrollTop;
+		}
+		else if (document.body.clientWidth || document.body.clientHeight) {
+			window_width  = document.body.clientWidth;
+			window_height = document.body.clientHeight;
+			scroll_left   = document.body.scrollLeft;
+			scroll_top    = document.body.scrollTop;
+		}
+		else {
+			window_width  = window.innerWidth;
+			window_height = window.innerHeight;
+			scroll_left   = document.body.scrollLeft;
+			scroll_top    = document.body.scrollTop;
+		}
+	// Do our best to try to keep the popup onscreen
+		if (window_width > 0 && window_height > 0) {
+		// Force the default popup size so we can do some calculations
+		// (FIXME!  need to determine the actual size of the element, not just resize it)
+			field.width  = 300;
+			field.height = 150;
+			var safe_space = 50;
+		// Get some numbers we can work with
+			width  = parseInt(field.width);
+			height = parseInt(field.height);
+		// Adjust the element location?
+			if (x > window_width - width - safe_space + scroll_left)
+					x = window_width - width - safe_space + scroll_left;
+			if (y > window_height - height - safe_space + scroll_top)
+					y = window_height - height - safe_space + scroll_top;
+		}
 	// Adjust the element
 		field.left = x;
 		field.top  = y;

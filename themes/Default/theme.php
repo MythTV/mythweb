@@ -87,7 +87,7 @@ class Theme {
 
 	<td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
 		<tr>
-			<td><a onmouseover="show('category_legend');return true;" onmouseout="hide('category_legend');return true;">MythTV:</a> &nbsp; &nbsp;
+			<td><a id="category_legend_anchor" onmouseover="show('category_legend');return true;" onmouseout="hide('category_legend');return true;">MythTV:</a> &nbsp; &nbsp;
 				<a href="program_listing.php">Listings</a>
 				&nbsp; | &nbsp;
 				<a href="search.php?searchstr=movie&search_category_type=yes">Movies</a>
