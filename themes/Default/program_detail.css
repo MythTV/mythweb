@@ -1,11 +1,13 @@
 #program_content {
-    margin: 10px 5%;
-    width:  90%;
+    margin: 10px auto;
+    min-width: 800px;
+    max-width: 1000px;
 }
 
 #program_info {
-    float: left;
-    max-width: 50em;
+    min-width: 350px;
+    max-width: 630px;
+    margin:    0px;
 }
 
 #program_header {
@@ -46,7 +48,7 @@
     margin: 5px 0px;
 }
 #program_details dl dt, #program_extra_details dl dt {
-    clear:       both;
+    clear:       left;
     float:       left;
     width:       8em;
     padding-top: 3px;
@@ -80,11 +82,15 @@
 #recording_info {
     float:       right;
     margin-left: 20px;
-    width:       32em;
+    width:       350px;
 }
 
+#recording_info ul {
+    padding-left: 1em;
+}
 #recording_info li {
     list-style-type: none;
+    white-space:     nowrap;
 }
 
 #schedule_override {

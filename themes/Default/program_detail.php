@@ -18,171 +18,7 @@ class Theme_program_detail extends Theme {
 ?>
 <div id="program_content">
 
-    <div id="program_info" class="clearfix">
-        <div id="program_header" class="clearfix">
-<?php if ($channel) { ?>
-            <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
-                <a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $program->starttime?>"
-                        onmouseover="return wstatus('Details for: <?php echo $channel->channum.' '.$channel->callsign?>')"
-                        onmouseout="return wstatus('')">
-<?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
-                    <img src="<?php echo $channel->icon?>" height="30" width="30"></a>
-<?php       } ?>
-                    <span class="preferred"><?php echo _or(prefer_channum ? $channel->channum : $channel->callsign, '&nbsp') ?></span><br />
-                    <?php echo (prefer_channum ? $channel->callsign : $channel->channum)."\n" ?>
-                </a>
-            </div>
-<?php } ?>
-            <div id="program_title">
-                <h1>
-                    <a href="search.php?searchstr=<?php echo urlencode($program->title)?>&search_title=yes">"<?php echo $schedule->title?>"</a>
-<?php       if (strlen($program->starstring) > 0)
-                echo "                    $program->starstring\n";
-?>
-                </h1>
-                <div id="program_time">
-<?php
-            if ($_GET['recordid'])
-                echo '<span class="bold">';
-            echo strftime('%a, %b %e', $schedule->starttime);
-            if ($program && $program->previouslyshown)
-                echo ' ('.t('Rerun').')';
-            echo '<br />'
-                .t('$1 to $2', strftime('%r', $schedule->starttime), strftime('%r', $schedule->endtime));
-            if ($program)
-                echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
-            if ($_GET['recordid'])
-                echo "</span>";
-            echo "<br />\n";
-?>
-                </div>
-                <div id="external_searches">
-                    (<?php echo t('Search') ?>: &nbsp;
-                    <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($schedule->title) ?>"><?php echo t('IMDB') ?></a>
-                    &nbsp;-&nbsp;
-                    <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString=<?php echo urlencode($schedule->title) ?>"><?php echo t('TVTome') ?></a>
-                    &nbsp;-&nbsp;
-                    <a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Google') ?></a>
-                    )
-                </div>
-            </div>
-        </div>
-<?php       if ($program) {
-                if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
-        <div id="program_details" class="clearfix">
-            <dl>
-<?php               if (strlen($schedule->subtitle)) { ?>
-                <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Episode') ?>:&nbsp;</dt>
-                <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
-                    echo $schedule->subtitle;
-                    ?></dd>
-<?php               }
-                    if (strlen($schedule->description)) {
-?>
-                <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Description') ?>:&nbsp;</dt>
-                <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
-                    echo nl2br($schedule->description);
-                    ?></dd>
-<?php               }
-                    if (!empty($program->recstatus)) {
-?>
-                <dt><?php echo t('Notes') ?>:&nbsp;</dt>
-                <dd><?php
-                    echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
-                    ?></dd>
-<?php               } ?>
-            </dl>
-        </div>
-<?php           } ?>
-        <div id="program_extra_details">
-            <dl>
-<?php           if (strlen($program->category)) { ?>
-                <dt><?php echo t('Category') ?>:&nbsp;</dt>
-                <dd><?php echo $program->category ?></dd>
-<?php           }
-               if (strlen($program->airdate)) {
-?>
-                <dt><?php echo t('Original Airdate') ?>:&nbsp;</dt>
-                <dd><?php echo $program->airdate ?></dd>
-<?php           }
-                if (strlen($program->rating)) {
-?>
-                <dt><?php
-                    if (strlen($program->rater))
-                        echo t('$1 Rating', $program->rater);
-                    else
-                        echo t('Rating');
-                    ?>:&nbsp;</dt>
-                <dd><?php echo $program->rating ?></dd>
-<?php           }
-                if ($program->get_credits('host')) {
-?>
-                <dt><?php echo t('Hosted by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('host') ?></dd>
-<?php           }
-                if ($program->get_credits('presenter')) {
-?>
-                <dt><?php echo t('Presented by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('presenter') ?></dd>
-<?php           }
-                if ($program->get_credits('actor')) {
-?>
-                <dt><?php echo t('Cast') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('actor') ?></dd>
-<?php           }
-                if ($program->get_credits('guest_star')) {
-?>
-                <dt><?php echo t('Guest Starring') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('guest_star') ?></dd>
-<?php           }
-                if ($program->get_credits('director')) {
-?>
-                <dt><?php echo t('Directed by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('director') ?></dd>
-<?php           }
-                if ($program->get_credits('producer')) {
-?>
-                <dt><?php echo t('Produced by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('producer') ?></dd>
-<?php           }
-                if ($program->get_credits('executive_producer')) {
-?>
-                <dt><?php echo t('Exec. Producer') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('executive_producer') ?></dd>
-<?php           }
-                if ($program->get_credits('writer')) {
-?>
-                <dt><?php echo t('Written by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('writer') ?></dd>
-<?php           } ?>
-            </dl>
-        </div>
-<?php   } ?>
-
-        <div id="local_links">
-<?php       if ($_GET['recordid']) { ?>
-            <a href="recording_schedules.php"><?php
-                echo t('Back to the recording schedules')
-            ?></a>
-<?php       } else { ?>
-            <a href="program_listing.php?time=<?php echo $program->starttime ?>"><?php
-                echo t('What else is on at this time?')
-            ?></a>
-<?php       } ?>
-            <a href="search.php?searchstr=<?php echo urlencode($schedule->title) ?>&search_title=1"><?php
-                if ($_GET['recordid'])
-                    echo t('Find showings of this program');
-                else
-                    echo t('Find other showings of this program');
-            ?></a>
-            <a href="program_listing.php?time=<?php echo $_SESSION['list_time'] ?>"><?php
-                echo t('Back to the program listing')
-            ?></a>
-        </div>
-
-    </div>
-
-    <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r">
+    <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
         <form name="program_detail" method="post" action="program_detail.php?<?php
             if ($_GET['recordid'])
@@ -344,6 +180,170 @@ class Theme_program_detail extends Theme {
         </div>
 
         </form>
+
+    </div>
+
+    <div id="program_info" class="clearfix">
+        <div id="program_header">
+<?php if ($channel) { ?>
+            <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
+                <a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $program->starttime?>"
+                        onmouseover="return wstatus('Details for: <?php echo $channel->channum.' '.$channel->callsign?>')"
+                        onmouseout="return wstatus('')">
+<?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
+                    <img src="<?php echo $channel->icon?>" height="30" width="30"></a>
+<?php       } ?>
+                    <span class="preferred"><?php echo _or(prefer_channum ? $channel->channum : $channel->callsign, '&nbsp') ?></span><br />
+                    <?php echo (prefer_channum ? $channel->callsign : $channel->channum)."\n" ?>
+                </a>
+            </div>
+<?php } ?>
+            <div id="program_title">
+                <h1>
+                    <a href="search.php?searchstr=<?php echo urlencode($program->title)?>&search_title=yes">"<?php echo $schedule->title?>"</a>
+<?php       if (strlen($program->starstring) > 0)
+                echo "                    $program->starstring\n";
+?>
+                </h1>
+                <div id="program_time">
+<?php
+            if ($_GET['recordid'])
+                echo '<span class="bold">';
+            echo strftime('%a, %b %e', $schedule->starttime);
+            if ($program && $program->previouslyshown)
+                echo ' ('.t('Rerun').')';
+            echo '<br />'
+                .t('$1 to $2', strftime('%r', $schedule->starttime), strftime('%r', $schedule->endtime));
+            if ($program)
+                echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
+            if ($_GET['recordid'])
+                echo "</span>";
+            echo "<br />\n";
+?>
+                </div>
+                <div id="external_searches">
+                    (<?php echo t('Search') ?>: &nbsp;
+                    <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($schedule->title) ?>"><?php echo t('IMDB') ?></a>
+                    &nbsp;-&nbsp;
+                    <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString=<?php echo urlencode($schedule->title) ?>"><?php echo t('TVTome') ?></a>
+                    &nbsp;-&nbsp;
+                    <a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Google') ?></a>
+                    )
+                </div>
+            </div>
+        </div>
+<?php       if ($program) {
+                if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
+        <div id="program_details">
+            <dl>
+<?php               if (strlen($schedule->subtitle)) { ?>
+                <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Episode') ?>:&nbsp;</dt>
+                <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
+                    echo $schedule->subtitle;
+                    ?></dd>
+<?php               }
+                    if (strlen($schedule->description)) {
+?>
+                <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Description') ?>:&nbsp;</dt>
+                <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
+                    echo nl2br($schedule->description);
+                    ?></dd>
+<?php               }
+                    if (!empty($program->recstatus)) {
+?>
+                <dt><?php echo t('Notes') ?>:&nbsp;</dt>
+                <dd><?php
+                    echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
+                    ?></dd>
+<?php               } ?>
+            </dl>
+        </div>
+<?php           } ?>
+        <div id="program_extra_details">
+            <dl>
+<?php           if (strlen($program->category)) { ?>
+                <dt><?php echo t('Category') ?>:&nbsp;</dt>
+                <dd><?php echo $program->category ?></dd>
+<?php           }
+               if (strlen($program->airdate)) {
+?>
+                <dt><?php echo t('Original Airdate') ?>:&nbsp;</dt>
+                <dd><?php echo $program->airdate ?></dd>
+<?php           }
+                if (strlen($program->rating)) {
+?>
+                <dt><?php
+                    if (strlen($program->rater))
+                        echo t('$1 Rating', $program->rater);
+                    else
+                        echo t('Rating');
+                    ?>:&nbsp;</dt>
+                <dd><?php echo $program->rating ?></dd>
+<?php           }
+                if ($program->get_credits('host')) {
+?>
+                <dt><?php echo t('Hosted by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('host') ?></dd>
+<?php           }
+                if ($program->get_credits('presenter')) {
+?>
+                <dt><?php echo t('Presented by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('presenter') ?></dd>
+<?php           }
+                if ($program->get_credits('actor')) {
+?>
+                <dt><?php echo t('Cast') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('actor') ?></dd>
+<?php           }
+                if ($program->get_credits('guest_star')) {
+?>
+                <dt><?php echo t('Guest Starring') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('guest_star') ?></dd>
+<?php           }
+                if ($program->get_credits('director')) {
+?>
+                <dt><?php echo t('Directed by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('director') ?></dd>
+<?php           }
+                if ($program->get_credits('producer')) {
+?>
+                <dt><?php echo t('Produced by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('producer') ?></dd>
+<?php           }
+                if ($program->get_credits('executive_producer')) {
+?>
+                <dt><?php echo t('Exec. Producer') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('executive_producer') ?></dd>
+<?php           }
+                if ($program->get_credits('writer')) {
+?>
+                <dt><?php echo t('Written by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('writer') ?></dd>
+<?php           } ?>
+            </dl>
+        </div>
+<?php   } ?>
+
+        <div id="local_links">
+<?php       if ($_GET['recordid']) { ?>
+            <a href="recording_schedules.php"><?php
+                echo t('Back to the recording schedules')
+            ?></a>
+<?php       } else { ?>
+            <a href="program_listing.php?time=<?php echo $program->starttime ?>"><?php
+                echo t('What else is on at this time?')
+            ?></a>
+<?php       } ?>
+            <a href="search.php?searchstr=<?php echo urlencode($schedule->title) ?>&search_title=1"><?php
+                if ($_GET['recordid'])
+                    echo t('Find showings of this program');
+                else
+                    echo t('Find other showings of this program');
+            ?></a>
+            <a href="program_listing.php?time=<?php echo $_SESSION['list_time'] ?>"><?php
+                echo t('Back to the program listing')
+            ?></a>
+        </div>
 
     </div>
 
