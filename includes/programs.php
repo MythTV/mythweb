@@ -117,8 +117,8 @@
 			$query .= ' AND UNIX_TIMESTAMP(program.starttime) = ' . escape($start_time);
 	// We're looking at a time range
 		else
-			$query .= ' AND (UNIX_TIMESTAMP(program.endtime) >= ' . escape($start_time)
-					   .' AND UNIX_TIMESTAMP(program.starttime) <= ' . escape($end_time) .')';
+			$query .= ' AND (UNIX_TIMESTAMP(program.endtime) > ' . escape($start_time)
+					   .' AND UNIX_TIMESTAMP(program.starttime) < ' . escape($end_time) .' AND program.starttime != program.endtime)';
 	// The extra query, if there is one
 		if ($extra_query)
 			$query .= ' AND '.$extra_query;

@@ -26,6 +26,9 @@
 // How many channels to skip between re-showing the timeslot bar
 	define('timeslotbar_skip', 20);
 
+// How many channels to show per page, 'All' to never break into multiple pages
+	define('channels_per_page', 'All');
+
 // Display controls for movie "star" ratings
 	define('max_stars', 4);					// maximum star rating for movies
 	define('star_character', '&diams;');	// the character(s) to represent stars with
@@ -35,7 +38,7 @@
 	The following constants are defined for the recorded programs page
 
 */
-	define('programs_per_page', 10);
+	define('programs_per_page', 10); // 'All' to never break into multiple pages
 
 	define('show_recorded_pixmaps', true);
 

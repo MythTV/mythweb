@@ -24,6 +24,8 @@ class Theme_recorded_programs extends Theme {
 		if (strcasecmp(programs_per_page, 'All'))
 		{
 			$page_start = $_GET['start'];
+			if ($page_start >= count($All_Shows))
+				$page_start = 0;
 			$page_end = $page_start + programs_per_page;
 			if ($page_end > count($All_Shows))
 				$page_end = count($All_Shows);
@@ -55,13 +57,13 @@ class Theme_recorded_programs extends Theme {
 	on_load['recorded_programs'] = fix_hrefs;
 	function fix_hrefs() {
 		for (i=<?=$page_start?>;i<<?=$page_end?>;i++) {
-			get_element('delete_' + i).innerHTML = '<a onclick="confirm_delete('+i+')">Delete</a>';
+			get_element('delete_' + i).innerHTML = '<a onclick="confirm_delete('+(i-<?=$page_start?>)+')">Delete</a>';
 		}
 	}
 
 	function confirm_delete(id) {
 		if (confirm("Are you sure you want to delete the following show?\n\n     "+files[id][0]))
-			location.href = "recorded_programs.php?delete=yes&file="+files[id][1];
+			location.href = "recorded_programs.php?delete=yes&file="+files[id][1]+"&start="+<?=$page_start?>;
 	}
 
 // -->

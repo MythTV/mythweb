@@ -11,19 +11,15 @@
 #class theme_program_listing extends Theme {
 class Theme_program_listing extends Theme {
 
-	/*
-		print_header:
-		This function prints the header portion of the page specific to the program listing
-	*/
-	function print_header($start_time, $end_time) {
+	function print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime) {
 	// Print the main page header
-		parent::print_header('MythWeb - Program Listing:  '.date('F j, Y, g:i A', $start_time));
+		parent::print_header('MythWeb - Program Listing:  '.date('F j, Y, g:i A', $list_starttime));
 	// Print the header info specific to the program listing
 ?>
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-	<td width="50%" align="center">Currently Browsing:  <?=date('F j, Y, g:i A', $start_time)?></td>
+	<td width="50%" align="center">Currently Browsing:  <?=date('F j, Y, g:i A', $list_starttime)?></td>
 	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
 		<form class="form" action="program_listing.php" method="get">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
@@ -34,7 +30,7 @@ class Theme_program_listing extends Theme {
 			<td><select name="hour"><?
 				for ($h=0;$h<24;$h++) {
 					echo "<option value=\"$h\"";
-					if ($h == date('H', $start_time))
+					if ($h == date('H', $list_starttime))
 						echo ' SELECTED';
 					echo ">$h:00</option>";
 				}
@@ -51,7 +47,7 @@ class Theme_program_listing extends Theme {
 					$time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
 					$date = date("Ymd", $time);
 					echo "<option value=\"$date\"";
-					if ($date == date("Ymd", $start_time)) echo " selected";
+					if ($date == date("Ymd", $list_starttime)) echo " selected";
 					echo ">".date("F j, Y" , $time)."</option>";
 				}
 				?></select></td>
@@ -73,44 +69,76 @@ class Theme_program_listing extends Theme {
 		<col style="width: 20px">
 	</colgroup>
 <?
-	}
+		$_GET['start'] or $_GET['start'] = $_POST['start'];
+		$_GET['start'] or $_GET['start'] = 0;
 
-
-	function print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime) {
-	// Display the listing page header
-		$this->print_header($list_starttime, $list_endtime);
-
-		$this->print_timeslots($Timeslots, $list_starttime, $list_endtime, 'first');
+		if (strcasecmp(channels_per_page, 'All'))
+		{
+			$page_start = $_GET['start'];
+			$page_end = $page_start + channels_per_page;
+			if ($page_end > count($Channels))
+				$page_end = count($Channels);
+		}
+		else
+		{
+			$page_start = 0;
+			$page_end = count($Channels);
+		}
 
 		// Go through each channel and load/print its info - use references to avoid "copy" overhead
 		$channel_count = 0;
+		$good_channel_list = array();
 		foreach ($Channels as $channel) {
 		// Ignore channels with no number
 			if (strlen($channel->channum) < 1 || 0 == count($channel->programs))
 				continue;
 		// Count this channel
 			$channel_count++;
+			$good_channel_list[] = prefer_channum ? $channel->channum : $channel->callsign;
+			if ($channel_count <= $page_start || $channel_count > $page_end)
+				continue;
+		// Display the timeslot bar?
+			if (($channel_count - $page_start) % timeslotbar_skip == 1)
+				$this->print_timeslots($Timeslots, $list_starttime, $list_endtime);
 		// Print the data
 			$this->print_channel(&$channel, $list_starttime, $list_endtime);
-		// Display the timeslot bar?
-			if ($channel_count % timeslotbar_skip == 0)
-				$this->print_timeslots($Timeslots, $list_starttime, $list_endtime, $channel_count);
 		}
-
-	// Display the listing page footer
-		$this->print_footer();
-	}
-
-
-	/*
-		print_footer:
-		This function prints the footer portion of the page specific to the program listing
-	*/
-	function print_footer() {
 ?>
 </table>
 </p>
 <?
+		if (channels_per_page < $channel_count && strcasecmp(channels_per_page, 'All'))
+		{
+			echo '<p align="center">';
+
+			if ($page_start > 0)
+			{
+				$back = $page_start - channels_per_page;
+				if ($back < 0)
+					$back = 0;
+				echo "	<a href=\"program_listing.php?start=$back\">&lt;&lt; Back</a> &nbsp; | &nbsp;";
+			}
+
+			for($i=0; $i<$channel_count; $i += channels_per_page)
+			{
+				if (0 != $i)
+					echo " &nbsp; | &nbsp;";
+
+				$end = $i + channels_per_page - 1;
+				if ($end >= $channel_count)
+					$end = $channel_count - 1;
+
+				if ($i != $page_start)
+					echo "<a href=\"program_listing.php?start=$i\">".$good_channel_list[$i]." - ".$good_channel_list[$end]."</a>";
+				else
+					echo "<b>".$good_channel_list[$i]." - ".$good_channel_list[$end]."</b>";
+			}
+
+			if ($page_end < $channel_count)
+				print "\n	&nbsp; | &nbsp; <a href=\"program_listing.php?start=$page_end\">Next &gt;&gt;</a>";
+
+			print "\n</p><br>";
+		}
 	// Print the main page's footer
 		parent::print_footer();
 	}
@@ -119,7 +147,7 @@ class Theme_program_listing extends Theme {
 		print_timeslot:
 
 	*/
-	function print_timeslots($timeslots, $start_time, $end_time, $sequence = NULL) {
+	function print_timeslots($timeslots, $start_time, $end_time) {
 		static $timeslot_anchor = 0;
 
 		// Update the timeslot anchor
@@ -127,7 +155,7 @@ class Theme_program_listing extends Theme {
 ?><tr>
 	<td class="menu" align="right"><a href="program_listing.php?time=<?=$start_time - (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>" name="anchor<?=$timeslot_anchor?>"><img src="images/left.gif" border="0" alt="left"></a></td>
 <?		foreach ($timeslots as $time) { ?>
-	<td class="menu" align="center" colspan="<?=timeslot_size / 60?>"><a href="program_listing.php?time=<?=$time?>#anchor<?=$timslot_anchor?>"><?=date('g:i', $time)?></a></td>
+	<td class="menu" align="center" colspan="<?=timeslot_size / 60?>"><a href="program_listing.php?time=<?=$time?>#anchor<?=$timeslot_anchor?>"><?=date('g:i', $time)?></a></td>
 <?		} ?>
 	<td class="menu"><a href="program_listing.php?time=<?=$start_time + (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
 </tr><?
