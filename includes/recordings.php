@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recordings.php                           Last Updated: 2005.01.21 (xris)
+    recordings.php                           Last Updated: 2005.02.09 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
