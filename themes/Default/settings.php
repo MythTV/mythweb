@@ -17,7 +17,8 @@ It should get some nifty images to link to the various sections, but for now, we
 <a href="settings_mythweb.php">MythWeb</a>
 <p>
 <a href="settings_channels.php">Channels</a>
-
+<p>
+<a href="settings_keys.php">Key Bindings</a>
 <?php
 		$this->print_footer();
 	}
@@ -27,6 +28,8 @@ It should get some nifty images to link to the various sections, but for now, we
 				<a href="settings_mythweb.php">MythWeb</a>
 				&nbsp; | &nbsp;
 				<a href="settings_channels.php">Channels</a>
+				&nbsp; | &nbsp;
+				<a href="settings_keys.php">Key Bindings</a>
 <?php
 	}
 
