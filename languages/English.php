@@ -81,6 +81,7 @@ $L = array(
     'recstatus: previousrecording' => 'This episode was previously recorded according to the duplicate policy chosen for this title.',
     'recstatus: recorded'          => 'This showing was recorded.',
     'recstatus: recording'         => 'This showing is being recorded.',
+    'recstatus: repeat'            => 'This showing is a repeat and will not be recorded.',
     'recstatus: stopped'           => 'This showing was recorded but was stopped before recording was completed.',
     'recstatus: toomanyrecordings' => 'Too many recordings of this program have already been recorded.',
     'recstatus: tunerbusy'         => 'The tuner card was already being used when this program was scheduled to be recorded.',
@@ -118,6 +119,7 @@ $L = array(
     'Find other showings of this program' => '',
     'Google'                              => '',
     'IMDB'                                => '',
+    'Only New Episodes'                   => '',
     'TVTome'                              => '',
     'What else is on at this time?'       => '',
 // themes/.../program_listing.php

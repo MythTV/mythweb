@@ -80,6 +80,7 @@ $L = array(
     'recstatus: previousrecording' => '録画状態: 前回録画',
     'recstatus: recorded'          => '録画状態: 録画済',
     'recstatus: recording'         => '録画状態: 録画中',
+    'recstatus: repeat'            => '',
     'recstatus: stopped'           => '録画状態: 停止',
     'recstatus: toomanyrecordings' => '録画状態: 録画が多すぎます',
     'recstatus: tunerbusy'         => '録画状態: チューナーが使用中です',
@@ -117,6 +118,7 @@ $L = array(
     'Find other showings of this program' => 'この番組のほかの放送を見つける',
     'Google'                              => '',
     'IMDB'                                => '',
+    'Only New Episodes'                   => '',
     'TVTome'                              => '',
     'What else is on at this time?'       => 'この時間の番組表',
 // themes/.../program_listing.php

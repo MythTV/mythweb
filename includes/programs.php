@@ -24,6 +24,7 @@
                                 6  => 'Cancelled',
                                 7  => 'Conflict',
                                 8  => 'LaterShowing',
+                                9  => 'Repeat',
                                 10 => 'Overlap',
                                 11 => 'LowDiskSpace',
                                 12 => 'TunerBusy'
@@ -43,6 +44,7 @@
                                'TooManyRecordings'  => t('recstatus: toomanyrecordings'),
                                'Cancelled'          => t('recstatus: cancelled'),
                                'Conflict'           => t('recstatus: conflict'),
+                               'Repeat'             => t('recstatus: repeat'),
                                'LaterShowing'       => t('recstatus: latershowing'),
                                'Overlap'            => t('recstatus: overlap'),
                                'LowDiskSpace'       => t('recstatus: lowdiskspace'),

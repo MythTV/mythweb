@@ -80,6 +80,7 @@ $L = array(
     'recstatus: previousrecording' => 'Detta avsnitt redan spelats in enligt dubblettkontrollen vald för detta program.',
     'recstatus: recorded'          => 'Denna visning spelades in.',
     'recstatus: recording'         => 'Denna visning spelas in.',
+    'recstatus: repeat'            => '',
     'recstatus: stopped'           => 'Denna visning spelades in men stoppades innan den var färdiginspelad.',
     'recstatus: toomanyrecordings' => 'För många inspelningar av detta program redan gjorts.',
     'recstatus: tunerbusy'         => 'Denna visning spelades inte in därför att TV-kortet redan användes.',
@@ -117,6 +118,7 @@ $L = array(
     'Find other showings of this program' => 'Hitta andra visningar av detta program',
     'Google'                              => 'Google',
     'IMDB'                                => 'IMDB',
+    'Only New Episodes'                   => '',
     'TVTome'                              => 'TVTime',
     'What else is on at this time?'       => 'Vad visas mer vid denna tid?',
 // themes/.../program_listing.php

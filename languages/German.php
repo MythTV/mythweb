@@ -80,6 +80,7 @@ $L = array(
     'recstatus: previousrecording' => '',
     'recstatus: recorded'          => '',
     'recstatus: recording'         => '',
+    'recstatus: repeat'            => '',
     'recstatus: stopped'           => '',
     'recstatus: toomanyrecordings' => '',
     'recstatus: tunerbusy'         => '',
@@ -117,6 +118,7 @@ $L = array(
     'Find other showings of this program' => '',
     'Google'                              => '',
     'IMDB'                                => '',
+    'Only New Episodes'                   => '',
     'TVTome'                              => '',
     'What else is on at this time?'       => '',
 // themes/.../program_listing.php

@@ -285,6 +285,10 @@ class Theme_program_detail extends Theme {
                             if ($this_program->dupin == 2)
                                 echo ' SELECTED';
                             echo '>' . t('Previous recordings') . '</option>';
+                            echo '<option value="4"';
+                            if ($this_program->dupin == 4)
+                                echo ' SELECTED';
+                            echo '>' . t('Only New Episodes') . '</option>';
                             echo '<option value="15"';
                             if (($this_program->dupin == 15) ||
                                 ($this_program->dupin == 0))

@@ -81,6 +81,7 @@ $L = array(
     'recstatus: previousrecording' => 'This beer was previously drank, according to the duplicate policy chosen for this beer.',
     'recstatus: recorded'          => 'This beer was drank.',
     'recstatus: recording'         => 'This beer is being consumed now.',
+    'recstatus: repeat'            => '',
     'recstatus: stopped'           => 'This beer was being drank but was stopped before drinking was completed.',
     'recstatus: toomanyrecordings' => 'Too many bottles of this beer have already been drank.',
     'recstatus: tunerbusy'         => 'The bottle opener was already being used when this beer was scheduled to be drank.',
@@ -118,6 +119,7 @@ $L = array(
     'Find other showings of this program' => 'Find other bottles of this beer',
     'Google'                              => 'Liquorland',
     'IMDB'                                => '',
+    'Only New Episodes'                   => '',
     'TVTome'                              => '',
     'What else is on at this time?'       => 'What else is drinkable at this time?',
 // themes/.../program_listing.php
