@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2004.06.22 (xris)
+    search.php                               Last Updated: 2004.08.09 (xris)
 
     This file defines a theme class for the search section.
     It must define one method.   documentation will be added someday.
@@ -56,16 +56,16 @@ class Theme_search extends Theme {
         }
 
     // Setup for grouping by various sort orders
-        $group_field = $_SESSION['search_sortby'];
+        $group_field = $_SESSION['search_sortby'][0]['field'];
         if ($group_field == "")
             $group_field = "airdate";
-        elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) )
+        elseif ($group_field != "title" && $group_field != "channum" && $group_field != "airdate")
             $group_field = "";
 
     // Display the results
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-    <?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
+    <?php if ($group_field != "") echo "<td class=\"list\">&nbsp;</td>\n"; ?>
     <td><?php echo get_sort_link('title')       ?></td>
     <td><?php echo get_sort_link('subtitle')    ?></td>
     <td><?php echo get_sort_link('description') ?></td>
@@ -92,7 +92,7 @@ class Theme_search extends Theme {
             if ( ($cur_group <> $prev_group) && ($group_field <> "") ) { ?>
     <tr class="list_separator">
     <td colspan="9">
-        <?=$cur_group?>
+        <?php echo $cur_group?>
         </td>
     </tr><?
             }
@@ -119,7 +119,7 @@ class Theme_search extends Theme {
 
     // Print the content
     ?><tr class="<?php echo $show->class ?>">
-    <?php if ($group_field != "") { echo "<td>&nbsp;</td>"; }?>
+    <?php if ($group_field != "") echo "<td class=\"list\">&nbsp;</td>\n"; ?>
     <td class="<?php echo $show->class ?>"><?php
         echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
              .$show->title . $additional.'</a>';
