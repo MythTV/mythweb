@@ -1,5 +1,5 @@
 /***                                                                        ***\
-    mouseovers.js                            Last Updated: 2005.02.08 (xris)
+    mouseovers.js                            Last Updated: 2005.03.21 (xris)
 
     Functions to show/hide sections of the page (for mouseovers)
 \***                                                                        ***/
@@ -213,7 +213,8 @@
     function timed_hide_popup() {
         clear_popup_timeout();
     // Set the timeout
-        popup_timeout = setTimeout('hide_popup()', popups[0].menu ? 500 : 5);
+    	if (popups.length > 0)
+            popup_timeout = setTimeout('hide_popup()', popups[0].menu ? 500 : 5);
     // Let events bubble down
         no_bodyclick = false;
     }
