@@ -27,7 +27,7 @@ $L = array(
     'Backend Status'       => '',
     'Category Legend'      => '',
 // Recorded Programs
-    '%d programs, using %s (%s) out of %s.' => '',
+    '$1 programs, using $2 ($3) out of $4.' => '',
 // End of the array
           );
 

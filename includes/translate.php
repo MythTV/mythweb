@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    translate.php                            Last Updated: 2004.11.25 (xris)
+    translate.php                            Last Updated: 2004.11.26 (xris)
 
     Basic routines that allow for language translation.
 \***                                                                        ***/
@@ -31,9 +31,18 @@
     // Nothing extra to print
         if (func_num_args() == 1)
             return $L[$str];
-    // Otherwise, call sprintf with the passed-in parameters
+    // Otherwise, parse in replacement strings as needed
+        $str = $L[$str];
         $a = func_get_args();
-        return call_user_func_array('sprintf', $a);
+        array_shift($a);
+        foreach ($a as $i => $arg) {
+            $str = preg_replace('/(?<!\\\\)\\$'.($i+1).'/',
+                                str_replace('$', '\\\\\\$', $arg),  // Replace $ with \$ so sub-args don't get reinterpreted
+                                $str
+                               );
+        }
+        $str = preg_replace('/\\\\\\$(?=\d\b)/', '$', $str);        // unescape any \$ sequences
+        return $str;
     }
 
 ?>

@@ -158,7 +158,7 @@ class Theme {
 <tr>
     <td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">
         <tr>
-            <td colspan="3"><?php echo _LANG_CATEGORY_LEGEND?>:</td><?php
+            <td colspan="3"><?php echo t('Category Legend') ?>:</td><?php
     $categories = array('cat_Action'        => _LANG_ACTION,
                         'cat_Adult'         => _LANG_ADULT,
                         'cat_Animals'       => _LANG_ANIMALS,

@@ -190,7 +190,7 @@ if ($group_field == "") {
 </table>
 <?php
     echo '<p align="right" style="padding-right: 75px">'
-        .t('%d programs, using %s (%s) out of %s.', $GLOBALS['Total_Programs'],
+        .t('$1 programs, using $2 ($3) out of $4.', $GLOBALS['Total_Programs'],
                                                     nice_filesize(disk_used),
                                                     nice_length($Total_Time),
                                                     nice_filesize(disk_size))
