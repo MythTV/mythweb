@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythbackend.php                          Last Updated: 2004.09.08 (xris)
+    mythbackend.php                          Last Updated: 2004.11.25 (xris)
 
     Routines that allow mythweb to communicate with mythbackend
 \***                                                                        ***/
@@ -20,6 +20,12 @@
 // the number of items in a ProgramInfo QStringList group used by
 // ProgramInfo::ToSringList and ProgramInfo::FromStringList.
     $NUMPROGRAMLINES = 38;
+
+// Keep track of the master backend port/ip
+    $Master_Host = get_backend_setting('MasterServerIP');
+    $Master_Port = get_backend_setting('MasterServerPort');
+    if (!$Master_Host || !$Master_Port)
+        trigger_error("MasterServerIP or MasterServerPort not found! You man need to check your settings.php file or re-run setup mythtv's setup", FATAL);
 
 // Make sure we're connected to mythbackend
     if (backend_command('ANN Playback '.trim(`hostname`).' 0') != 'OK')
@@ -69,15 +75,10 @@
 
     // A second backend command, so we can allow certain routines to use their own file pointer
     function backend_command2($command, &$fp) {
-    // Load some information about the master backend
-        $host = get_backend_setting('MasterServerIP');
-        $port = get_backend_setting('MasterServerPort');
-        if (!$host || !$port)
-            trigger_error("MasterServerIP or MasterServerPort not found! You man need to check your settings.php file or re-run setup mythtv's setup", FATAL);
-
+        global $Master_Host, $Master_Port;
     // Open a connection to the master backend, unless we've already done so
         if (!$fp) {
-            $fp = fsockopen($host, $port, $errno, $errstr, 25);
+            $fp = fsockopen($Master_Host, $Master_Port, $errno, $errstr, 25);
             if ($fp)
                 check_proto_version($fp);
         }
@@ -255,8 +256,8 @@
                       .$show->programid               .backend_sep  // programid
                       .$show->starttime               .backend_sep  // dummy lastmodified
                       .'0'                            .backend_sep  // dummy stars
-                      .$show->starttime               .backend_sep; // dummy org airdate 
-      
+                      .$show->starttime               .backend_sep; // dummy org airdate
+
                 $ret = backend_command($cmd);
 
 
