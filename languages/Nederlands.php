@@ -202,6 +202,13 @@ define ('_LANG_DELETE',         'Wis');
 define ('_LANG_PROGRAMS_USING',     'opnames, gebruiken ');
 define ('_LANG_OUT_OF',         ' van de ');
 define ('_LANG_EPISODES',           'episodes');
+define ('_LANG_SHOW_HAS_COMMFLAG',   'flagged commercials');
+define ('_LANG_SHOW_HAS_CUTLIST',    'has cutlist');
+define ('_LANG_SHOW_IS_EDITING',     'being edited');
+define ('_LANG_SHOW_AUTO_EXPIRE',    'auto expire');
+define ('_LANG_SHOW_HAS_BOOKMARK',   'has bookmark');
+define ('_LANG_YES',                 'Yes');
+define ('_LANG_NO',                  'No');
 
 /* recordings.php */
 define ('_LANG_RECTYPE_ONCE',    'Eenmalig');

@@ -157,16 +157,16 @@ if ($group_field == "") {
 ?>
 </tr><tr class="recorded">
     <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 6 : 7 ?>" align="center">
-        <span style="padding-right: 25px">flagged commercials:&nbsp;
-            <b><?php echo $show->has_commflag ? 'Yes' : 'No' ?></b></span>
-        <span style="padding-right: 25px">has cutlist:&nbsp;
-            <b><?php echo $show->has_cutlist ? 'Yes' : 'No' ?></b></span>
-        <span style="padding-right: 25px">being edited:&nbsp;
-            <b><?php echo $show->is_editing ? 'Yes' : 'No' ?></b></span>
-        <span style="padding-right: 25px">auto expire:&nbsp;
-            <b><?php echo $show->auto_expire ? 'Yes' : 'No' ?></b></span>
-        has bookmark:&nbsp;
-            <b><?php echo $show->bookmark ? 'Yes' : 'No' ?></b>
+        <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_COMMFLAG?>:&nbsp;
+            <b><?php echo $show->has_commflag ? _LANG_YES : _LANG_NO ?></b></span>
+        <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_CUTLIST?>:&nbsp;
+            <b><?php echo $show->has_cutlist ? _LANG_YES : _LANG_NO ?></b></span>
+        <span style="padding-right: 25px"><?php echo _LANG_SHOW_IS_EDITING?>:&nbsp;
+            <b><?php echo $show->is_editing ? _LANG_YES : _LANG_NO ?></b></span>
+        <span style="padding-right: 25px"><?php echo _LANG_SHOW_AUTO_EXPIRE?>:&nbsp;
+            <b><?php echo $show->auto_expire ? _LANG_YES : _LANG_NO ?></b></span>
+        <?php echo _LANG_SHOW_HAS_BOOKMARK?>:&nbsp;
+            <b><?php echo $show->bookmark ? _LANG_YES : _LANG_NO ?></b>
         </td>
 <?php
     }

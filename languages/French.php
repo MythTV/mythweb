@@ -197,6 +197,13 @@ define ('_LANG_DELETE',          'Supprimer');
 define ('_LANG_PROGRAMS_USING',  'enregistrement(s) occupant ');
 define ('_LANG_OUT_OF',          ' sur ');
 define ('_LANG_EPISODES',        '&eacute;pisodes');
+define ('_LANG_SHOW_HAS_COMMFLAG',   'flagged commercials');
+define ('_LANG_SHOW_HAS_CUTLIST',    'has cutlist');
+define ('_LANG_SHOW_IS_EDITING',     'being edited');
+define ('_LANG_SHOW_AUTO_EXPIRE',    'auto expire');
+define ('_LANG_SHOW_HAS_BOOKMARK',   'has bookmark');
+define ('_LANG_YES',                 'Yes');
+define ('_LANG_NO',                  'No');
 
 /* recordings.php */
 define ('_LANG_RECTYPE_ONCE',    'Unique');
