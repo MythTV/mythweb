@@ -86,7 +86,7 @@ class Theme {
 				<form action="search.php" method="post">
 				<table border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td><input type="text" name="searchstr" size="15" value="<?php echo $_GET['searchstr']?>"></td>
+					<td><input type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr']) ?>"></td>
 					<td>&nbsp; <input type="submit" class="submit" value="<?php echo _LANG_SEARCH?>"></td>
 				</tr>
 				<tr>

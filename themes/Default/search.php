@@ -21,17 +21,17 @@ class Theme_search extends Theme {
  	<td align="right"><?php echo _LANG_SEARCH?>:</td>
   	<td><input type="text" name="searchstr" size="15" value="<?php echo $_GET['searchstr']?>"></td>
  	<td>&nbsp; <input type="submit" class="submit" value="<?php echo _LANG_SEARCH?>"></td>
-  	<td align="right"><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_GET['search_title'] ? ' CHECKED' : ''?>></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>></td>
  	<td onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><a><?php echo _LANG_TITLE?></a></td>
-  	<td align="right"><input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_GET['search_subtitle'] ? ' CHECKED' : ''?>></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : ''?>></td>
  	<td onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><a><?php echo _LANG_SUBTITLE?></a></td>
-  	<td align="right"><input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_GET['search_description'] ? ' CHECKED' : ''?>></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : ''?>></td>
  	<td onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><a><?php echo _LANG_DESCRIPTION?></a></td>
-  	<td align="right"><input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_GET['search_category'] ? ' CHECKED' : ''?>></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : ''?>></td>
  	<td onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><a><?php echo _LANG_CATEGORY?></a></td>
-  	<td align="right"><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_GET['search_category_type'] ? ' CHECKED' : ''?>></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : ''?>></td>
  	<td onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><a><?php echo _LANG_CATEGORY_TYPE?></a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_GET['search_exact'] ? ' CHECKED' : ''?>></td>
+	<td align="right"><input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>></td>
 	<td onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><a><?php echo _LANG_EXACT_MATCH ?></a></td>
 </tr>
 </table>
