@@ -9,6 +9,8 @@
 
 class Theme {
 
+    var $headers = array(); // Any extra headers that child objects might want to display.
+
     function print_header($page_title = 'MythWeb') {
 // Print the appropriate header information
         header("Content-Type: text/html; charset=utf-8");
@@ -21,12 +23,19 @@ class Theme {
 
     <title><?php echo $page_title?></title>
 
-    <link rel="stylesheet" href="<?php echo theme_dir?>style.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo theme_dir?>header.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo theme_dir?>menus.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo theme_dir?>programming.css" type="text/css" />
-
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>header.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>menus.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>programming.css" />
     <script type="text/javascript" src="js/init.js"></script>
+<?php
+    if (count($this->headers)) {
+        echo "\n";
+        foreach ($this->headers as $header) {
+            echo "    $header\n";
+        }
+    }
+?>
 </head>
 
 <body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythbackend.php                          Last Updated: 2004.11.25 (xris)
+    mythbackend.php                          Last Updated: 2005.01.31 (xris)
 
     Routines that allow mythweb to communicate with mythbackend
 \***                                                                        ***/
@@ -167,12 +167,14 @@
 
 /*
     backend_notify_changes:
-    Updates or inserts a row to notify the backend that there have been database changes
+    Tell the backend to reschedule a particular record entry.  If the change
+    isn't specific to a single record entry (e.g. channel or record type
+    priorities), then use 0.  I don't think mythweb should need it, but if you
+    need to indicate every record rule is affected, then use -1.
 */
     function backend_notify_changes($recordid = -1, $sleep = 1) {
-    // Tell mythfrontend that something has changed
+    // Tell the master backend that something has changed
         backend_command('RESCHEDULE_RECORDINGS ' . $recordid);
-
     // Give the backend time to catch up?
         if ($sleep > 0)
             sleep($sleep);

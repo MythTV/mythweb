@@ -1,0 +1,123 @@
+#program_content {
+    margin: 10px 10%;
+    width:  80%;
+}
+
+#program_info {
+    float: left;
+    max-width: 50em;
+}
+
+#program_header {
+    margin-bottom: 15px;
+}
+
+#channel_info {
+    float:      left;
+    width:      110px;
+    text-align: center;
+    padding:    5px;
+}
+#channel_info span.preferred {
+    position:    relative;
+    top:         -4px;
+    margin-left: 5px;
+    font-size:   32px;
+}
+
+#program_title {
+    margin-left: 135px;
+}
+#program_title h1 {
+    padding: 0px;
+    margin:  0px;
+}
+#program_time {
+    white-space: nowrap;
+}
+#external_searches {
+    white-space: nowrap;
+}
+
+
+#program_details {
+}
+#program_details dl, #program_extra_details dl {
+    margin: 5px 0px;
+}
+#program_details dl dt, #program_extra_details dl dt {
+    clear:       both;
+    float:       left;
+    width:       8em;
+    padding-top: 3px;
+    text-align:  right;
+    color:       #ffe;
+    white-space: nowrap;
+}
+#program_details dl dd, #program_extra_details dl dd {
+    padding-top: 3px;
+    margin-left: 8.5em;
+}
+
+#program_extra_details {
+}
+
+#local_links {
+    width:       20em;
+    margin:      20px auto 0px auto;
+    padding:     10px;
+    border:      1px solid #446;
+    text-align:  center;
+    white-space: nowrap;
+}
+#local_links a {
+    display: block;
+    padding: 5px;
+}
+
+
+
+#recording_info {
+    float:       right;
+    margin-left: 20px;
+    width:       32em;
+}
+
+#recording_info li {
+    list-style-type: none;
+}
+
+#schedule_override {
+    width:  29em;
+    margin: 0px auto;
+}
+#schedule_options {
+    width:  29em;
+    margin: 0px auto;
+}
+
+#advanced_options {
+    width:  29em;
+    margin: 0px auto;
+}
+#advanced_options dl {
+    margin: 5px 10px;
+}
+#advanced_options dl dt {
+    clear:       left;
+    float:       left;
+    width:       13em;
+    padding-top: 6px;
+    text-align:  right;
+    white-space: nowrap;
+}
+#advanced_options dl dd {
+    padding-top: 3px;
+    margin-left: 13.5em;
+}
+#advanced_options input {
+}
+#advanced_options select {
+    width: 14em;
+}
+

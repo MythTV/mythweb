@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2005.01.21 (xris)
+    scheduled_recordings.php                    Last Updated: 2005.01.31 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -103,18 +103,18 @@ if ($group_field == "") {
         elseif ($show->recstatus == 'Conflict' || $show->recstatus == 'Overlap') {
             $class   = 'conflict';
             $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'.t('Record This').'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
+            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
         }
         elseif ($show->recstatus == 'WillRecord') {
             $class   = 'scheduled';
-            $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
+            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
         // Offer to suppress any recordings that have enough info to do so.
             if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
                 $commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'.t('Never Record').'</a>';
         }
         elseif ($show->recstatus == 'ForceRecord') {
             $class = 'scheduled';
-            $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
+            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
             $commands[] = '<a href="scheduled_recordings.php?default=yes&'.$urlstr.'">'.t('Default').'</a>';
         }
         elseif ($show->recstatus == 'ManualOverride' || $show->recstatus == 'Cancelled') {
@@ -125,7 +125,7 @@ if ($group_field == "") {
         else {
             $class   = 'deactivated';
             $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'.t('Activate').'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
+            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
         }
     // A program id counter for popup info
         if (show_popup_info) {

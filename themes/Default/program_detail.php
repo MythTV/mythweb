@@ -1,199 +1,24 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                       Last Updated: 2004.11.29 (xris)
+    program_detail.php                       Last Updated: 2005.02.02 (xris)
 
     This file defines a theme class for the program details section.
     It must define one method.   documentation will be added someday.
 
 \***                                                                        ***/
 
-#class theme_program_detail extends Theme {
 class Theme_program_detail extends Theme {
 
-    function print_page() {
-        global $this_channel, $this_program;
+    function print_page(&$program, &$schedule, &$channel) {
+    // Load this page's custom stylesheet
+        $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'program_detail.css" />';
     // Print the main page header
-        parent::print_header("MythWeb - Program Detail:  $this_program->title");
+        parent::print_header("MythWeb - Program Detail:  $program->title");
     // Print the page contents
 ?>
-<table align="center" border="0" cellspacing="0" cellpadding="15">
-<tr>
-    <td valign="top"><table border="0" cellspacing="0" cellpadding="2">
-        <tr>
-            <td width="<?php echo prefer_channum ? '80' : '120'?>px" class="menu menu_border_t menu_border_b menu_border_l menu_border_r" width="60" align="center" nowrap><?php
-                if (show_channel_icons === true) {
-                    ?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
-                    <tr>
-                        <td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $this_program->starttime?>" class="huge"
-                                                        onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
-                                                        onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign?></a>&nbsp;</td>
-                        <td width="50%" align="right"><?php
-                            if (is_file($this_channel->icon)) {
-                                ?><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $this_program->starttime?>"
-                                    onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
-                                    onmouseout="window.status='';return true"><img src="<?php echo $this_channel->icon?>" height="30" width="30"></a><?php
-                            } else {
-                                echo '&nbsp;';
-                            }?></td>
-                    </tr><tr>
-                        <td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $this_program->starttime?>"
-                                                        onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
-                                                        onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->callsign : $this_channel->channum?></a></td>
-                    </tr>
-                    </table><?php
-                } else {
-                    ?><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>" class="huge"
-                        onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
-                        onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?><BR>
-                    <?php echo prefer_channum ? $this_channel->callsign : $this_channel->channum?></a><?php
-                }
-                    ?></td>
-            <td width="24px">&nbsp;</td>
-            <td><span class="huge"><a href="search.php?searchstr=<?php echo urlencode($this_program->title)?>&search_title=yes">"<?php echo $this_program->title?>"</a>
-                <?php if (strlen($this_program->starstring) > 0) echo " $this_program->starstring";?>
-                </span><BR>
-                <span class="small">
-                <?php
-                if ($_GET['recordid'])
-                    echo "<em>";
-                echo strftime('%a, %b %e', $this_program->starttime);
-                if ($this_program->previouslyshown)
-                    echo ' ('.t('Rerun').')';
-                echo '<br />'
-                    .t('$1 to $2', strftime('%r', $this_program->starttime), strftime('%r', $this_program->endtime));
-                if (!isset($_GET['recordid']))
-                    echo ' ('.tn('$1 min', '$1 mins', (int)($this_program->length/60)).')';
-                if ($_GET['recordid'])
-                    echo "</em>";
-                echo "<br />\n\t\t\t";
-                echo '('.t('Search').': &nbsp;'
-                    .' <a href="http://www.imdb.com/Find?select=Titles&for='.urlencode($this_program->title).'">'.t('IMDB').'</a>'
-                    .' &nbsp;-&nbsp; '
-                    .' <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString='.urlencode($this_program->title).'">'.t('TVTome').'</a>'                    .' &nbsp;-&nbsp; '
-                    .' <a href="http://www.google.com/search?q='.urlencode($this_program->title).'">'.t('Google').'</a>'
-                    .')';
-                ?></span></td>
-        </tr><tr>
-            <td colspan="3">&nbsp;</td>
-        </tr><?php
-                if (strlen($this_program->subtitle)) {
-        ?><tr>
-            <td colspan="2" align="right"><?php
-                if ($_GET['recordid'])
-                    echo "<em>";
-                echo 'Episode:&nbsp;';
-                if ($_GET['recordid'])
-                    echo "</em>";
-                ?></td>
-            <td><?php
-                if ($_GET['recordid'])
-                    echo "<em>";
-                echo $this_program->subtitle;
-                if ($_GET['recordid'])
-                    echo "</em>";
-                ?></td>
-        </tr><?php
-                }
-                if (strlen($this_program->description)) {
-        ?><tr>
-            <td colspan="2" align="right" valign="top"><?php
-                if ($_GET['recordid'])
-                    echo "<em>";
-                echo 'Description:&nbsp;';
-                if ($_GET['recordid'])
-                    echo "</em>";
-                ?></td>
-            <td><?php
-                if ($_GET['recordid'])
-                    echo "<em>";
-                echo wordwrap($this_program->description, 45, "<BR>\n");
-                if ($_GET['recordid'])
-                    echo "</em>";
-                ?></td>
-        </tr><?php
-                }
-        ?><tr>
-            <td colspan="3">&nbsp;</td>
-        </tr><?php
-            if (strlen($this_program->category)) {
-        ?><tr>
-            <td colspan="2" align="right"><? echo t('Category') ?>:&nbsp;</td>
-            <td><?php echo $this_program->category?></td>
-        </tr><?php
-            }
-            if (strlen($this_program->airdate)) {
-        ?><tr>
-            <td nowrap colspan="2" align="right"><? echo t('Original Airdate') ?>:&nbsp;</td>
-            <td><?php echo $this_program->airdate?></td>
-        </tr><?php
-            }
-            if (strlen($this_program->rating)) {
-        ?><tr>
-            <td colspan="2" align="right"><?php echo strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?>Rating:&nbsp;</td>
-            <td><?php echo $this_program->rating?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'host');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Hosted by:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'presenter');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Presented by:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'actor');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Cast:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'guest_star');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Guest Starring:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'director');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Directed by:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'producer');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Produced by:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'executive_producer');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Exec.&nbsp;Producer<?php echo strchr($list,',')?'s':'' ?>:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-            $list = getCredits($this_program->chanid,$this_program->starttime,'writer');
-            if (strlen($list)) {
-        ?><tr valign="top">
-            <td colspan="2" align="right">Written by:&nbsp;</td>
-            <td><?php echo $list?></td>
-        </tr><?php
-            }
-        ?>
+<div id="program_content">
 
-        </table>
-
-    <td valign="top" align="right" rowspan="2">
+    <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r">
 
         <form name="program_detail" method="post" action="program_detail.php?<?php
             if ($_GET['recordid'])
@@ -202,160 +27,328 @@ class Theme_program_detail extends Theme {
                 echo 'chanid='.urlencode($_GET['chanid']).'&starttime='.urlencode($_GET['starttime'])
             ?>">
 
-        <table class="command command_border_l command_border_t command_border_b command_border_r" align="center" border="0" cellspacing="0" cellpadding="5">
-        <tr>
-            <td><p align="center"><?php echo t('Recording Options') ?>:</p></td></tr>
-        <tr>
-            <td><input type="radio" class="radio" name="record" value="never" id="record_never"<?php echo
-                $this_program->will_record ? '' : ' CHECKED'?>></input>
-                <a onclick="get_element('record_never').checked=true;"><?php
-                    if ($this_program->will_record)
-                        echo t('Cancel this schedule');
-                    else
-                        echo t('Don\'t record this program');
-                    ?></a>
-                <br/>
-                <input type="radio" class="radio" name="record" value="once" id="record_once"<?php
-                    echo $this_program->record_once ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a>
-                <br/>
-                <input type="radio" class="radio" name="record" value="daily" id="record_daily"<?php echo
-                $this_program->record_daily ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_daily').checked=true;"><? echo t('rectype-long: daily') ?></a>
-                <br/>
-                <input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?php echo
-                $this_program->record_weekly ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_weekly').checked=true;"><? echo t('rectype-long: weekly') ?></a>
-                <br/>
-                <input type="radio" class="radio" name="record" value="channel" id="record_channel"<?php echo
-                $this_program->record_channel ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_channel').checked=true;"><? echo t('rectype-long: channel') ?> <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?>.</a>
-                <br/>
-                <input type="radio" class="radio" name="record" value="always" id="record_always"<?php echo
-                $this_program->record_always ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_always').checked=true;"><?php echo t('rectype-long: always') ?></a>
-                <br/>
-                <input type="radio" class="radio" name="record" value="findone" id="record_findone"<?php echo
-                $this_program->record_findone ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_findone').checked=true;"><?php echo t('rectype-long: findone') ?></a>
-                </td>
-        </tr><tr>
-            <td><p>
-                <table width="100%" border="0" cellspacing="0" cellpadding="2">
-                <tr>
-                    <td nowrap align="right"><?php echo t('Recording Profile') ?>:&nbsp;</td>
-                    <td><select align=right name="profile"><?php
-                        global $Profiles;
-                        foreach($Profiles as $profile) {
-                            echo '<option value="'.htmlentities($profile).'"';
-                            if ($this_program->profile == $profile)
-                                echo ' SELECTED';
-                            echo '>'.htmlentities($profile).'</option>';
-                        }
-                        ?></select></td>
-                </tr><tr>
-                    <td nowrap align="right"><?php echo t('Recording Group') ?>:&nbsp;</td>
-                    <td><select align=right name="recgroup"><?php
-                        global $Groups;
-                        foreach($Groups as $group) {
-                            echo '<option value="'.htmlentities($group).'"';
-                            if ($this_program->recgroup == $group)
-                                echo ' SELECTED';
-                            echo '>'.htmlentities($group).'</option>';
-                        }
-                        ?></select></td>
-                </tr><tr>
-                    <td nowrap align="right"><?php echo t('Recording Priority') ?>:&nbsp;</td>
-                    <td><select align=right name="recpriority"><?php
-                        for($recprioritycount=99;$recprioritycount>=-99;--$recprioritycount) {
-                            echo '<option value="'.$recprioritycount.'"';
-                            if ($this_program->recpriority == $recprioritycount)
-                                echo ' SELECTED';
-                            echo ">$recprioritycount</option>";
-                        }
-                        ?></select></td>
-                </tr><tr>
-                    <td nowrap align="right"><?php echo t('Check for duplicates in') ?>:&nbsp;</td>
-                    <td><select align=right name="dupin"><?php
-                            echo '<option value="1"';
-                            if ($this_program->dupin == 1)
-                                echo ' SELECTED';
-                            echo '>' . t('Current recordings') . '</option>';
-                            echo '<option value="2"';
-                            if ($this_program->dupin == 2)
-                                echo ' SELECTED';
-                            echo '>' . t('Previous recordings') . '</option>';
-                            echo '<option value="4"';
-                            if ($this_program->dupin == 4)
-                                echo ' SELECTED';
-                            echo '>' . t('Only New Episodes') . '</option>';
-                            echo '<option value="15"';
-                            if (($this_program->dupin == 15) ||
-                                ($this_program->dupin == 0))
-                                echo ' SELECTED';
-                            echo '>' . t('All recordings') . '</option>';
-                       ?></select></td>
-                </tr><tr>
-                    <td nowrap align="right"><? echo t('Duplicate Check method') ?>:&nbsp;</td>
-                    <td><select align=right name="dupmethod"><?php
-                            echo '<option value="1"';
-                            if ($this_program->dupmethod == 1)
-                                echo ' SELECTED';
-                            echo '>' . t('None') . '</option>';
-                            echo '<option value="2"';
-                            if ($this_program->dupmethod == 2)
-                                echo ' SELECTED';
-                            echo '>' . t('Subtitle') . '</option>';
-                            echo '<option value="4"';
-                            if ($this_program->dupmethod == 4)
-                                echo ' SELECTED';
-                            echo '>' . t('Description') . '</option>';
-                            echo '<option value="6"';
-                            if (($this_program->dupmethod == 6) ||
-                                ($this_program->dupmethod == 0))
-                                echo ' SELECTED';
-                            echo '>'.t('Subtitle and Description').'</option>';
-                       ?></select></td>
-                </tr><tr>
-                    <td nowrap align="right"><? echo t('Auto-expire recordings') ?>&nbsp;</td>
-                    <td><input type="checkbox" class="radio" name="autoexpire" <?php if ($this_program->autoexpire) echo "CHECKED" ?>></td>
-                </tr><tr>
-                    <td nowrap align="right"><?php echo t('No. of recordings to keep') ?>&nbsp;</td>
-                    <td><input type="input" name="maxepisodes" size="1" value="<?php echo htmlentities($this_program->maxepisodes) ?>"></td>
-                </tr><tr>
-                    <td nowrap align="right"><? echo t('Record new and expire old') ?>&nbsp;</td>
-                    <td><input type="checkbox" class="radio" name="maxnewest" <?php if ($this_program->maxnewest) echo "CHECKED" ?>></td>
-                </tr><tr>
-                    <td nowrap align="right"><?php echo t('Start Early') ?>:&nbsp;</td>
-                    <td><input type="input" name="startoffset" size="1" value="<?php echo htmlentities($this_program->startoffset) ?>"></td>
-                </tr><tr>
-                    <td nowrap align="right"><?php echo t('End Late') ?>:&nbsp;</td>
-                    <td><input type="input" name="endoffset" size="1" value="<?php echo htmlentities($this_program->endoffset) ?>"></td>
-                </tr>
-                </table>
-                </p>
+<?php   if (!$schedule || $schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
+        <div id="schedule_options">
+            <h3><?php echo t('Schedule Options') ?>:</h3>
 
-                <p align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Update Recording Settings') ?>"></p></td>
+            <ul>
+                <li><input type="radio" class="radio" name="record" value="0" id="record_never"<?php
+                        if (!$schedule->recordid) echo ' CHECKED' ?> />
+                    <a onclick="get_element('record_never').checked=true;"><?php
+                        if ($schedule->recordid)
+                            echo t('Cancel this schedule');
+                        else
+                            echo t('Don\'t record this program');
+                        ?></a></li>
 
-        </tr>
-        </table>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
+                        echo $schedule->type == rectype_once ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
+                        echo $schedule->type == rectype_daily ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_daily').checked=true;"><? echo t('rectype-long: daily') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php
+                        echo $schedule->type == rectype_weekly ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_weekly').checked=true;"><? echo t('rectype-long: weekly') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="record_findone"<?php
+                        echo $schedule->type == rectype_findone ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_findone').checked=true;"><? echo t('rectype-long: findone') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_finddaily ?>" id="record_finddaily"<?php
+                        echo $schedule->type == rectype_finddaily ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_finddaily').checked=true;"><? echo t('rectype-long: finddaily') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findweekly ?>" id="record_findweekly"<?php
+                        echo $schedule->type == rectype_findweekly ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_findweekly').checked=true;"><? echo t('rectype-long: findweekly') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_channel ?>" id="record_channel"<?php
+                        echo $schedule->type == rectype_channel ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_channel').checked=true;"><? echo t('rectype-long: channel', prefer_channum ? $channel->channum : $channel->callsign) ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
+                        echo $schedule->type == rectype_always ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_always').checked=true;"><?php echo t('rectype-long: always') ?></a></li>
+
+            </ul>
+        </div>
+<?php
+        }
+        if ($program || $schedule->type == rectype_override || $schedule->type == rectype_dontrec) {
+?>
+        <div id="schedule_override">
+            <h3><?php echo t('Schedule Override') ?>:</h3>
+
+            <ul>
+<?php       if ($schedule->type == rectype_override || $schedule->type == rectype_dontrec) { ?>
+                <li><input type="radio" class="radio" name="record" value="0" id="schedule_default"<?php
+                        if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) echo ' CHECKED' ?> />
+                    <a onclick="get_element('schedule_default').checked=true;"><?php
+                        echo t('Schedule normally.') ?></a></li>
+<?php       } ?>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_override ?>" id="record_override"<?php
+                        if ($schedule->type == rectype_override) echo ' CHECKED' ?> />
+                    <a onclick="get_element('record_override').checked=true;"><?php
+                        echo t('rectype-long: override') ?></a></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_dontrec ?>" id="record_dontrec"<?php
+                        if ($schedule->type == rectype_dontrec) echo ' CHECKED' ?> />
+                    <a onclick="get_element('record_dontrec').checked=true;"><?php
+                        echo t('rectype-long: dontrec') ?></a></li>
+
+            </ul>
+        </div>
+<?      } ?>
+
+        <div id="advanced_options">
+            <h3><?php echo t('Advanced Options') ?>:</h3>
+
+            <dl class="clearfix">
+                <dt><?php echo t('Recording Profile') ?>:</dt>
+                <dd><?php profile_select($schedule->profile) ?></dd>
+                <dt><?php echo t('Recording Group') ?>:</dt>
+                <dd><?php recgroup_select($schedule->recgroup) ?></dd>
+                <dt><?php echo t('Recording Priority') ?>:</dt>
+                <dd><select name="recpriority"><?php
+                    for ($i=99; $i>=-99; --$i) {
+                        echo "<option value=\"$i\"";
+                        if ($schedule->recpriority == $i)
+                            echo ' SELECTED';
+                        echo ">$i</option>";
+                    }
+                    ?></select></dd>
+                <dt><?php echo t('Check for duplicates in') ?>:</dt>
+                <dd><select name="dupin"><?php
+                        echo '<option value="1"';
+                        if ($schedule->dupin == 1)
+                            echo ' SELECTED';
+                        echo '>' . t('Current recordings') . '</option>';
+                        echo '<option value="2"';
+                        if ($schedule->dupin == 2)
+                            echo ' SELECTED';
+                        echo '>' . t('Previous recordings') . '</option>';
+                        echo '<option value="4"';
+                        if ($schedule->dupin == 4)
+                            echo ' SELECTED';
+                        echo '>' . t('Only New Episodes') . '</option>';
+                        echo '<option value="15"';
+                        if ($schedule->dupin == 15 || $schedule->dupin == 0)
+                            echo ' SELECTED';
+                        echo '>' . t('All recordings') . '</option>';
+                   ?></select></dd>
+                <dt><? echo t('Duplicate Check method') ?>:</dt>
+                <dd><select name="dupmethod"><?php
+                        echo '<option value="1"';
+                        if ($schedule->dupmethod == 1)
+                            echo ' SELECTED';
+                        echo '>' . t('None') . '</option>';
+                        echo '<option value="2"';
+                        if ($schedule->dupmethod == 2)
+                            echo ' SELECTED';
+                        echo '>' . t('Subtitle') . '</option>';
+                        echo '<option value="4"';
+                        if ($schedule->dupmethod == 4)
+                            echo ' SELECTED';
+                        echo '>' . t('Description') . '</option>';
+                        echo '<option value="6"';
+                        if ($schedule->dupmethod == 6 || $schedule->dupmethod == 0)
+                            echo ' SELECTED';
+                        echo '>'.t('Subtitle and Description').'</option>';
+                   ?></select></dd>
+                <dt><? echo t('Auto-flag commercials') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><? echo t('Auto-expire recordings') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><? echo t('Record new and expire old') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><?php echo t('No. of recordings to keep') ?>:</dt>
+                <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" /></dd>
+                <dt><?php echo t('Start Early') ?>:</dt>
+                <dd><input type="input" class="quantity" name="startoffset" value="<?php echo htmlentities($schedule->startoffset) ?>" />
+                    <?php echo t('seconds') ?></dd>
+                <dt><?php echo t('End Late') ?>:</dt>
+                <dd><input type="input" class="quantity" name="endoffset" value="<?php echo htmlentities($schedule->endoffset) ?>" />
+                    <?php echo t('seconds') ?></dd>
+            </dl>
+
+            <p align="center">
+                <input type="submit" class="submit" name="save" value="<?php echo t('Update Recording Settings') ?>">
+            </p>
+
+        </div>
 
         </form>
-    </td>
-</tr>
-<tr>
-    <td height="100%" align="center" valign="bottom">
-<?php if ($_GET['recordid']) { ?>
-        <a href="recording_schedules.php"><?php echo t('Back to the recording schedules') ?></a></td>
-<?php } else { ?>
-        <a href="program_listing.php?time=<?php echo $this_program->starttime?>"><?php echo t('What else is on at this time?') ?></a>
-        <p>
-        <a href="search.php?searchstr=<?php echo $this_program->title?>&search_title=1"><?php echo t('Find other showings of this program') ?></a>
-        <p>
-        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>"><?php echo t('Back to the program listing') ?></a></td>
+
+    </div>
+
+    <div id="program_info" class="clearfix">
+        <div id="program_header" class="clearfix">
+<?php if ($channel) { ?>
+            <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
+                <a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $program->starttime?>"
+                        onmouseover="return wstatus('Details for: <?php echo $channel->channum.' '.$channel->callsign?>')"
+                        onmouseout="return wstatus('')">
+<?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
+                    <img src="<?php echo $channel->icon?>" height="30" width="30"></a>
+<?php       } ?>
+                    <span class="preferred"><?php echo _or(prefer_channum ? $channel->channum : $channel->callsign, '&nbsp') ?></span><br />
+                    <?php echo (prefer_channum ? $channel->callsign : $channel->channum)."\n" ?>
+                </a>
+            </div>
 <?php } ?>
-</tr>
-</table>
+            <div id="program_title">
+                <h1>
+                    <a href="search.php?searchstr=<?php echo urlencode($program->title)?>&search_title=yes">"<?php echo $schedule->title?>"</a>
+<?php       if (strlen($program->starstring) > 0)
+                echo "                    $program->starstring\n";
+?>
+                </h1>
+                <div id="program_time">
+<?php
+            if ($_GET['recordid'])
+                echo '<span class="bold">';
+            echo strftime('%a, %b %e', $schedule->starttime);
+            if ($program && $program->previouslyshown)
+                echo ' ('.t('Rerun').')';
+            echo '<br />'
+                .t('$1 to $2', strftime('%r', $schedule->starttime), strftime('%r', $schedule->endtime));
+            if ($program)
+                echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
+            if ($_GET['recordid'])
+                echo "</span>";
+            echo "<br />\n";
+?>
+                </div>
+                <div id="external_searches">
+                    (<?php echo t('Search') ?>: &nbsp;
+                    <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($schedule->title) ?>"><?php echo t('IMDB') ?></a>
+                    &nbsp;-&nbsp;
+                    <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString=<?php echo urlencode($schedule->title) ?>"><?php echo t('TVTome') ?></a>
+                    &nbsp;-&nbsp;
+                    <a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Google') ?></a>
+                    )
+                </div>
+            </div>
+        </div>
+<?php       if ($program) {
+                if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
+        <div id="program_details" class="clearfix">
+            <dl>
+<?php               if (strlen($schedule->subtitle)) { ?>
+                <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Episode') ?>:&nbsp;</dt>
+                <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
+                    echo $schedule->subtitle;
+                    ?></dd>
+<?php               }
+                    if (strlen($schedule->description)) {
+?>
+                <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Description') ?>:&nbsp;</dt>
+                <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
+                    echo nl2br($schedule->description);
+                    ?></dd>
+<?php               }
+                    if (!empty($program->recstatus)) {
+?>
+                <dt><?php echo t('Notes') ?>:&nbsp;</dt>
+                <dd><?php
+                    echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
+                    ?></dd>
+<?php               } ?>
+            </dl>
+        </div>
+<?php           } ?>
+        <div id="program_extra_details">
+            <dl>
+<?php           if (strlen($program->category)) { ?>
+                <dt><?php echo t('Category') ?>:&nbsp;</dt>
+                <dd><?php echo $program->category ?></dd>
+<?php           }
+               if (strlen($program->airdate)) {
+?>
+                <dt><?php echo t('Original Airdate') ?>:&nbsp;</dt>
+                <dd><?php echo $program->airdate ?></dd>
+<?php           }
+                if (strlen($program->rating)) {
+?>
+                <dt><?php
+                    if (strlen($program->rater))
+                        echo t('$1 Rating', $program->rater);
+                    else
+                        echo t('Rating');
+                    ?>:&nbsp;</dt>
+                <dd><?php echo $program->rating ?></dd>
+<?php           }
+                if ($program->get_credits('host')) {
+?>
+                <dt><?php echo t('Hosted by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('host') ?></dd>
+<?php           }
+                if ($program->get_credits('presenter')) {
+?>
+                <dt><?php echo t('Presented by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('presenter') ?></dd>
+<?php           }
+                if ($program->get_credits('actor')) {
+?>
+                <dt><?php echo t('Cast') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('actor') ?></dd>
+<?php           }
+                if ($program->get_credits('guest_star')) {
+?>
+                <dt><?php echo t('Guest Starring') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('guest_star') ?></dd>
+<?php           }
+                if ($program->get_credits('director')) {
+?>
+                <dt><?php echo t('Directed by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('director') ?></dd>
+<?php           }
+                if ($program->get_credits('producer')) {
+?>
+                <dt><?php echo t('Produced by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('producer') ?></dd>
+<?php           }
+                if ($program->get_credits('executive_producer')) {
+?>
+                <dt><?php echo t('Exec. Producer') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('executive_producer') ?></dd>
+<?php           }
+                if ($program->get_credits('writer')) {
+?>
+                <dt><?php echo t('Written by') ?>:&nbsp;</dt>
+                <dd><?php echo $program->get_credits('writer') ?></dd>
+<?php           } ?>
+            </dl>
+        </div>
+<?php   } ?>
+
+        <div id="local_links">
+<?php       if ($_GET['recordid']) { ?>
+            <a href="recording_schedules.php"><?php
+                echo t('Back to the recording schedules')
+            ?></a>
+<?php       } else { ?>
+            <a href="program_listing.php?time=<?php echo $program->starttime ?>"><?php
+                echo t('What else is on at this time?')
+            ?></a>
+<?php       } ?>
+            <a href="search.php?searchstr=<?php echo urlencode($schedule->title) ?>&search_title=1"><?php
+                if ($_GET['recordid'])
+                    echo t('Find showings of this program');
+                else
+                    echo t('Find other showings of this program');
+            ?></a>
+            <a href="program_listing.php?time=<?php echo $_SESSION['list_time'] ?>"><?php
+                echo t('Back to the program listing')
+            ?></a>
+        </div>
+
+    </div>
+
+</div>
+
 <?php
     // Print the main page footer
         parent::print_footer();

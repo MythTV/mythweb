@@ -21,7 +21,7 @@
 
 // Passed in a recording schedule id?  Load the starttime/endtime for it
 //    if ($_GET['recordid'])
-//        $this_program =& load_all_recordings($_GET['recordid']);
+//        $this_program =& load_all_schedules($_GET['recordid']);
 // Grab the one and only program on this channel that starts at the specified time
 //    else
 //        $this_program =& load_one_program($_GET['starttime'], $_GET['chanid']);

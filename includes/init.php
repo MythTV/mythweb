@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2005.01.21 (xris)
+    init.php                                 Last Updated: 2005.01.26 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -61,15 +61,16 @@
 
 // Include a few useful functions
     require_once "includes/utils.php";
+    require_once "includes/css.php";
     require_once "includes/mouseovers.php";
 
 // Connect to the backend and load some more handy utilities
     require_once "includes/mythbackend.php";
 
-// Load in the channel, program and recording classes
+// Load in the TV-related classes
     require_once "includes/channels.php";
     require_once "includes/programs.php";
-    require_once "includes/recordings.php";
+    require_once "includes/recording_schedules.php";
 
 // Detect WAP browsers
     $wap_agents = array('Noki', // Nokia phones and emulators

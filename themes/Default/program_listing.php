@@ -254,7 +254,7 @@ class Theme_program_listing extends Theme {
             if ($parens)
                 echo " ($parens)";
         }
-	$parens = "";
+        $parens = '';
     // Finally, print some other information
         if ($program->previouslyshown)
             $parens = "<i>Rerun</i>";

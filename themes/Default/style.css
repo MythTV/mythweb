@@ -1,11 +1,11 @@
 Body {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
+    border:           0;
+    margin:           0;
+    padding:          0;
+    font-size:        12px;
+    font-family:      Arial, Helvetica, sans-serif;
     background-color: #002650;
-    color: #dedede;
+    color:            #dedede;
 }
 
 /* make transparent png's render properly in IE */
@@ -94,38 +94,50 @@ A:hover   { color: #F0F000; text-decoration: underline; }
 .radio { height: 14px }
 
 /* Default styles for form fields */
-Select {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #001060;
+select {
+    font-family:      Arial, Helvetica, sans-serif;
+    color:            #001060;
     background-color: #C0C0D0;
-    font-size: 12px;
-    height: 18px;
+    font-size:        12px;
+    height:           18px;
 }
 
-Input {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #001060;
+input {
+    font-family:      Arial, Helvetica, sans-serif;
+    color:            #001060;
     background-color: #C0C0D0;
-    font-size: 14px;
-    height: 22px;
+    font-size:        14px;
+    height:           22px;
 }
 
-TextArea {
-    font-family: terminal, courier, courier-new;
-    color: #001060;
+textarea {
+    font-family:      terminal, courier, courier-new;
+    color:            #001060;
     background-color: #C0C0D0;
-    font-size: 12px;
+    font-size:        12px;
+}
+
+input.quantity {
+    width:      2em;
+    text-align: center;
 }
 
 /* A special class for form stuff, to avoid those nasty extra linefeeds in IE </form> tags */
-form, .form { display: inline; }
+form { display: inline; }
 
 /* A special class for error stuff */
 .error {
-    color: #F03030;
+    color:            #F03030;
     background-color: #360000;
-    border-color: #F03030;
-    border: thin groove #F03030;
+    border-color:     #F03030;
+    border:           thin groove #F03030;
+}
+#error {
+    color:            #F03030;
+    background-color: #360000;
+    border-color:     #F03030;
+    border:           thin groove #F03030;
+    padding:          8px;
 }
 
 /* clearfix -- see http://positioniseverything.net/easyclearing.html for details on how/why this works*/

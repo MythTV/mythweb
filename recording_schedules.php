@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2005.01.23 (xris)
+    recording_schedules.php                 Last Updated: 2005.01.27 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -14,16 +14,15 @@
     require_once "includes/sorting.php";
 
 // Load the recordings
-    $records = load_all_recordings();
+    global $Schedules;
 
 // Parse the recording list
     $All_Shows = array();
     $Channels  = array();
 
-    foreach ($records as $record) {
-        $show = new Recording($record);
+    foreach ($Schedules as $show) {
     // Assign a reference to this show to the various arrays
-        $All_Shows[]                 = &$show;
+        $All_Shows[] = &$show;
         if (is_array($show))
             $Channels[$show['chanid']][] = &$show;
         else

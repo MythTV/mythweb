@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    channels.php                             Last Updated: 2004.03.28 (xris)
+    channels.php                             Last Updated: 2005.02.02 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -34,12 +34,17 @@
         global $Channels;
         if (!is_array($Channels))
             $Channels = array();
-        $result = mysql_query('SELECT * FROM channel WHERE chanid='.escape($chanid))
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-        $channel_data = mysql_fetch_assoc($result);
-        $Channels[$channel_data['chanid']] = new Channel($channel_data);
-        mysql_free_result($result);
-        return $Channels[$channel_data['chanid']];
+        if (!isset($Channels[$chanid])) {
+            $result = mysql_query('SELECT * FROM channel WHERE chanid='.escape($chanid))
+                or trigger_error('SQL Error: '.mysql_error(), FATAL);
+            $channel_data = mysql_fetch_assoc($result);
+            mysql_free_result($result);
+            if ($channel_data)
+                $Channels[$chanid] = new Channel($channel_data);
+            else
+                $Channels[$chanid] = NULL;
+        }
+        return $Channels[$chanid];
     }
 
 /*

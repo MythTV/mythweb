@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2005.01.21 (xris)
+    programs.php                             Last Updated: 2005.02.02 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -58,7 +58,9 @@
     a shortcut to load_all_program_data's single-program query
 */
     function &load_one_program($start_time, $chanid) {
-        $program = &load_all_program_data($start_time, $start_time, $chanid, true);
+        $program =& load_all_program_data($start_time, $start_time, $chanid, true);
+        if (!is_object($program) || get_class($program) != 'program')
+            return NULL;
         return $program;
     }
 
@@ -70,7 +72,7 @@
 */
     function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '') {
         global $Channels;
-    // Make a local assoc of channel chanid's with references to the actual channel data
+    // Make a local hash of channel chanid's with references to the actual channel data
         $channel_hash = array();
     // An array (that later gets converted to a string) containing the id's of channels we want to load
         $these_channels = array();
@@ -104,91 +106,58 @@
         if (!count($these_channels))
             trigger_error("load_all_program_data() attempted with an empty \$Channels array", FATAL);
         $these_channels = implode(',', $these_channels);
-    // Find out if there are any recordings queued
-        static $num_recordings = false;
-        if ($num_recordings === false) {
-            $result = mysql_query('SELECT count(*) FROM record')
-                or trigger_error('SQL Error: '.mysql_error(), FATAL);
-            list($num_recordings) = mysql_fetch_row($result);
-            mysql_free_result($result);
-        }
-    // If there are recordings, we need to grab that info, too - if there aren't, this query info will interfere with the query
-        if ($num_recordings > 0) {
-            $record_table  = ' LEFT JOIN record ON '
-                            .' ((record.type = 5 AND program.title = record.title AND record.chanid = program.chanid AND '
-                            .'      record.starttime = SEC_TO_TIME(time_to_sec(program.starttime)) AND '
-                            .'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime)) '
-                            .' OR (record.type = 4 AND program.title = record.title) '
-                            .' OR (record.type = 6 AND program.title = record.title) '
-                            .' OR (record.type = 3 AND program.title = record.title AND record.chanid = program.chanid)'
-                            .' OR (record.type IN (7, 8) AND program.title = record.title AND record.chanid = program.chanid AND '
-                            .'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-                            .'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))) '
-                            .' OR (record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
-                            .'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-                            .'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) '
-                            .' OR (record.type = 1 AND program.title = record.title AND record.chanid = program.chanid AND '
-                            .'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-                            .'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))))'
-                            .' LEFT JOIN recordingprofiles ON record.profile=recordingprofiles.id ';
-            $record_values = ' SUM(record.type = 8) > 0 AS record_suppress,'
-                            .' SUM(record.type = 7) > 0 AS record_override,'
-                            .' SUM(record.type = 6) > 0 AS record_findone,'
-                            .' SUM(record.type = 5) > 0 AS record_weekly,'
-                            .' SUM(record.type = 4) > 0 AS record_always,'
-                            .' SUM(record.type = 3) > 0 AS record_channel,'
-                            .' SUM(record.type = 2) > 0 AS record_daily,'
-                            .' SUM(record.type = 1) > 0 AS record_once,'
-                            .' IF(record.profile > 0, recordingprofiles.name, \'Default\') as profilename,'
-                            .' record.profile, record.recpriority, record.dupin, record.dupmethod, record.maxnewest, record.maxepisodes, record.autoexpire, record.startoffset, record.endoffset,record.recgroup,';
-        }
-        else {
-            $record_table  = '';
-            $record_values = '';
-        }
     // Build the sql query, and execute it
-        $star_char = escape(star_character);
-        $max_stars = escape(max_stars);
-        $query = "SELECT program.*,"
-                 .$record_values
+        $query = 'SELECT program.*,'
                  .' UNIX_TIMESTAMP(program.starttime) AS starttime_unix,'
                  .' UNIX_TIMESTAMP(program.endtime) AS endtime_unix,'
-                 ." CONCAT(repeat($star_char, program.stars * $max_stars), IF((program.stars * $max_stars * 10) % 10, '&frac12;', '')) AS starstring,"
-                 .' IFNULL(programrating.system, \'\') AS rater,'
-                 .' IFNULL(programrating.rating, \'\') AS rating'
+                 .' CONCAT(repeat('.escape(star_character).', program.stars * '.escape(max_stars).'), IF((program.stars * '.escape(max_stars).' * 10) % 10, "&frac12;", "")) AS starstring,'
+                 .' IFNULL(programrating.system, "") AS rater,'
+                 .' IFNULL(programrating.rating, "") AS rating'
                  .' FROM program LEFT JOIN programrating USING (chanid, starttime)'
-                 .$record_table;
+                 .' WHERE';
     // Only loading a single channel worth of information
         if ($chanid > 0)
-            $query .= ' WHERE program.chanid='.escape($chanid);
+            $query .= ' program.chanid='.escape($chanid);
     // Loading a group of channels (probably all of them)
-        elseif ($these_channels)
-            $query .= ' WHERE program.chanid IN ('.$these_channels.')';
+        else
+            $query .= ' program.chanid IN ('.$these_channels.')';
     // Requested start time is the same as the end time - don't bother with fancy calculations
         if ($start_time == $end_time)
             $query .= ' AND program.starttime = FROM_UNIXTIME(' . escape($start_time) . ')';
     // We're looking at a time range
         else
             $query .= ' AND (program.endtime > FROM_UNIXTIME(' . escape($start_time) . ')'
-                       .' AND program.starttime < FROM_UNIXTIME(' . escape($end_time) .') AND program.starttime != program.endtime)';
+                          .' AND program.starttime < FROM_UNIXTIME(' . escape($end_time) .') AND program.starttime != program.endtime)';
     // The extra query, if there is one
         if ($extra_query)
             $query .= ' AND '.$extra_query;
     // Group, sort and query
         $query .= ' GROUP BY program.chanid, program.starttime ORDER BY program.starttime';
-
-			// print '<pre>';
-			// print_r($query);
-			// print '</pre>';
         $result = mysql_query($query)
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
+    // No results
+        if (mysql_num_rows($result) < 1) {
+            mysql_free_result($result);
+            return NULL;
+        }
     // Load in all of the programs (if any?)
+        global $Scheduled_Recordings;
         $these_programs = array();
-        while ($program_data = mysql_fetch_assoc($result)) {
-        // Add this as an object to the channel's programs array
-            $program =& new Program($program_data);
-            $channel_hash[$program_data['chanid']]->programs[] = &$program;
-            $these_programs[] = &$program;
+        while ($data = mysql_fetch_assoc($result)) {
+            if (!$data['chanid'])
+                continue;
+        // This program has already been loaded, and is attached to a recording schedule
+            if ($Scheduled_Recordings[$data['chanid']][$data['starttime_unix']]) {
+                $program =& $Scheduled_Recordings[$data['chanid']][$data['starttime_unix']];
+            }
+        // Otherwise, create a new instance of the program
+            else {
+                $program =& new Program($data);
+            }
+        // Add this program to the channel hash, etc.
+            $these_programs[]                          =& $program;
+            $channel_hash[$data['chanid']]->programs[] =& $program;
+        // Cleanup
             unset($program);
         }
     // Cleanup
@@ -204,28 +173,6 @@
         return $these_programs;
     }
 
-/*
-    load_pending:
-    Loads the pending recordings from mythbackend.  Encapsulated here, so it's
-    only called when needed.
-*/
-    function load_pending() {
-        global $Pending_Programs;
-    // No need to run this more than once
-        if (is_array($Pending_Programs))
-            return;
-    // Load the mythbackend pending programs
-        $Pending_Programs = array();
-        $programs = get_backend_rows('QUERY_GETALLPENDING', 2);
-        $Pending_Programs['offset'] = $programs['offset'];
-        foreach ($programs as $program) {
-        // Fix some things that need fixing
-            $program[11] = $program[11];         // show start-time
-            $program[12] = $program[12];         // show end-time
-        // $Pending_Programs[chanid][starttime]
-            $Pending_Programs[$program[4]][$program[11]] = $program;
-        }
-    }
 
 //
 //  Programs class
@@ -260,16 +207,6 @@ class Program {
     var $seriesid;
     var $programid;
 
-    var $will_record     = false;
-    var $record_daily    = false;
-    var $record_weekly   = false;
-    var $record_once     = false;
-    var $record_channel  = false;
-    var $record_always   = false;
-    var $record_findone  = false;
-    var $record_suppress = false;
-    var $record_override = false;
-
     var $profile        = 0;
     var $max_newest     = 0;
     var $max_episodes   = 0;
@@ -292,16 +229,18 @@ class Program {
     var $starstring;
     var $is_movie;
 
-    function Program($program_data) {
+    var $credits = array();
+
+    function Program($data) {
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
-        if (!isset($program_data['chanid']) && isset($program_data[0])) {
+        if (!isset($data['chanid']) && isset($data[0])) {
         // Grab some initial data so we can see if extra information is needed
-            $this->chanid      = $program_data[4];                  # mysql chanid
-            $this->filename    = $program_data[8];                  # filename
-            $fs_high           = $program_data[9];                  # high-word of file size
-            $fs_low            = $program_data[10];                 # low-word of file size
-            $this->starttime   = $program_data[11];  # show start-time
-            $this->endtime     = $program_data[12];  # show end-time
+            $this->chanid      = $data[4];   # mysql chanid
+            $this->filename    = $data[8];   # filename
+            $fs_high           = $data[9];   # high-word of file size
+            $fs_low            = $data[10];  # low-word of file size
+            $this->starttime   = $data[11];  # show start-time
+            $this->endtime     = $data[12];  # show end-time
         // Is this a previously-recorded program?  Calculate the filesize
             if (preg_match('/\\d+_\\d+/', $this->filename)) {
                 $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
@@ -311,128 +250,94 @@ class Program {
                 unset($this->filename);
             // Kludge to avoid redefining the object, which doesn't work in php5
                 $tmp = @get_object_vars(load_one_program($this->starttime, $this->chanid));
-                if (count($tmp) > 0) {
+                if (is_array($tmp) && count($tmp) > 0) {
                     foreach ($tmp as $key => $value) {
                         $this->$key = $value;
                     }
                 }
             }
         // Load the remaining info we got from mythbackend
-            $this->title       = $program_data[0];                  # program name/title
-            $this->subtitle    = $program_data[1];                  # episode name
-            $this->description = $program_data[2];                  # episode description
-            $this->category    = $program_data[3];                  #
-            #$chanid           = $program_data[4];
-            #$channum          = $program_data[5];                  # channel number
-            #$callsign         = $program_data[6];                  # callsign (eg. FOOD or SCIFI)
-            $this->channame    = $program_data[7];                  # Channel 35 FOOD
-            #$pathname         = $program_data[8];
-            #$fs_high          = $program_data[9];
-            #$fs_low           = $program_data[10];
-            #$starttime        = $program_data[11];
-            #$endtime          = $program_data[12];
-            $this->hostname    = $program_data[16];                  #  myth
-            #$this->sourceid   = $program_data[17];                  #  -1
-            #$this->cardid     = $program_data[18];                  #  -1
-            #$this->inputid    = $program_data[19];                  #
-            $this->recpriority = $program_data[20];                  #
-            $this->recstatus   = $program_data[21];                  #
-            $this->conflicting = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
-            $this->recording   = ($this->recstatus == 'WillRecord'); # scheduled to record?
-            $this->recordid    = $program_data[22];                  #
-            #$this->rectype     = $program_data[23];
-            $this->dupin       = $program_data[24];
-            $this->dupmethod   = $program_data[25];
-            $this->recstartts  = $program_data[26];                  # ACTUAL start time
-            $this->recendts    = $program_data[27];                  # ACTUAL end time
-            #$this->repeat      = $program_data[28];
-            $progflags         = $program_data[29];
-            $this->recgroup    = $program_data[30];
-            #$this->commfree    = $program_data[31];
-            #$this->outputfilters = $program_data[32];
-            $this->seriesid     = $program_data[33];
-            $this->programid    = $program_data[34];
-            $this->lastmodified = $program_data[35];                  # ACTUAL start time
+            $this->title        = $data[0];                  # program name/title
+            $this->subtitle     = $data[1];                  # episode name
+            $this->description  = $data[2];                  # episode description
+            $this->category     = $data[3];
+            #$chanid            = $data[4];   # Extracted a few lines earlier
+            #$channum           = $data[5];
+            #$callsign          = $data[6];
+            $this->channame     = $data[7];
+            #$pathname          = $data[8];   # Extracted a few lines earlier
+            #$fs_high           = $data[9];   # Extracted a few lines earlier
+            #$fs_low            = $data[10];  # Extracted a few lines earlier
+            #$starttime         = $data[11];  # Extracted a few lines earlier
+            #$endtime           = $data[12];  # Extracted a few lines earlier
+            $this->hostname     = $data[16];
+            #$this->sourceid    = $data[17];
+            #$this->cardid      = $data[18];
+            #$this->inputid     = $data[19];
+            $this->recpriority  = $data[20];
+            $this->recstatus    = $data[21];
+            $this->conflicting  = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
+            $this->recording    = ($this->recstatus == 'WillRecord'); # scheduled to record?
+            $this->recordid     = $data[22];
+            $this->rectype      = $data[23];
+            $this->dupin        = $data[24];
+            $this->dupmethod    = $data[25];
+            $this->recstartts   = $data[26];                  # ACTUAL start time
+            $this->recendts     = $data[27];                  # ACTUAL end time
+            $this->repeat       = $data[28];
+            $progflags          = $data[29];
+            $this->recgroup     = $data[30];
+            $this->commfree     = $data[31];
+            $this->outputfilters = $data[32];
+            $this->seriesid      = $data[33];
+            $this->programid     = $data[34];
+            $this->lastmodified  = $data[35];
+            $this->recpriority   = $data[36];
+            #$this->airdate      = $data[37];
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
             $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02
             $this->auto_expire  = ($progflags & 0x04) ? true : false;    // FL_AUTOEXP   = 0x04
             $this->is_editing   = ($progflags & 0x08) ? true : false;    // FL_EDITING   = 0x08
             $this->bookmark     = ($progflags & 0x10) ? true : false;    // FL_BOOKMARK  = 0x10
+        // Turn recstatus into a word
+            if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
+                $this->recstatus = $GLOBALS['RecStatus_Types'][$this->recstatus];
+        // Add a generic "will record" variable, too
+            $this->will_record = ($this->rectype && $this->rectype != rectype_dontrec) ? true : false;
         }
     // SQL data
         else {
-            $this->chanid          = $program_data['chanid'];
-            $this->starttime       = $program_data['starttime_unix'];
-            $this->endtime         = $program_data['endtime_unix'];
-            $this->title           = $program_data['title'];
-            $this->subtitle        = $program_data['subtitle'];
-            $this->description     = $program_data['description'];
-            $this->category        = $program_data['category']      ? $program_data['category']      : t('Unknown');
-            $this->category_type   = $program_data['category_type'] ? $program_data['category_type'] : t('Unknown');
-            $this->airdate         = _or($program_data['originalairdate'], $program_data['airdate']);
-            $this->stars           = $program_data['stars'];
-            $this->previouslyshown = $program_data['previouslyshown'];
-            $this->hdtv            = $program_data['hdtv'];
-            $this->starstring      = $program_data['starstring'];
-            $this->rater           = $program_data['rater'];
-            $this->rating          = $program_data['rating'];
-            $this->profile         = $program_data['profile'];
-            $this->profilename     = $program_data['profilename'];
-            $this->recpriority     = $program_data['recpriority'];
-            $this->dupin           = $program_data['dupin'];
-            $this->dupmethod       = $program_data['dupmethod'];
-            $this->maxnewest       = $program_data['maxnewest'];
-            $this->maxepisodes     = $program_data['maxepisodes'];
-            $this->autoexpire      = $program_data['autoexpire'];
-            $this->startoffset     = $program_data['startoffset'];
-            $this->endoffset       = $program_data['endoffset'];
-            $this->seriesid        = $program_data['seriesid'];
-            $this->programid       = $program_data['programid'];
-            $this->recgroup        = $program_data['recgroup'];
-        // No longer a null column, so check for blank entries
-            if ($this->airdate == '0000-00-00')
-                $this->airdate = NULL;
-        // Check to see if there is any additional data from mythbackend about this program
-            global $Pending_Programs;
-            load_pending();
-            if ($Pending_Programs[$this->chanid][$this->starttime]) {
-                $this->recpriority = $Pending_Programs[$this->chanid][$this->starttime][20];
-                $this->recstatus   = $Pending_Programs[$this->chanid][$this->starttime][21];
-                $this->conflicting = ($this->recstatus == 'Conflict');
-                $this->recording   = ($this->recstatus <= 'WillRecord');
-                $this->recordid    = $Pending_Programs[$this->chanid][$this->starttime][22];
-            }
-        // We get various recording-related information, too
-            if ($program_data['record_findone'])
-                $this->record_findone  = true;
-            else if ($program_data['record_always'])
-                $this->record_always   = true;
-            elseif ($program_data['record_channel'])
-                $this->record_channel  =  true;
-            elseif ($program_data['record_once'])
-                $this->record_once     =  true;
-            elseif ($program_data['record_daily'])
-                $this->record_daily    =  true;
-            elseif ($program_data['record_weekly'])
-                $this->record_weekly   =  true;
-
-            if ($program_data['record_suppress'])
-                $this->record_suppress =  true;
-            elseif ($program_data['record_override'])
-                $this->record_override = true;
-
-        // Add a generic "will record" variable, too
-            $this->will_record = ($this->record_daily
-                                  || $this->record_weekly
-                                  || $this->record_once
-                                  || $this->record_channel
-                                  || $this->record_always
-                                  || $this->record_findone) ? true : false;
+            $this->airdate                 = _or($data['originalairdate'], $data['airdate']);
+            $this->category                = _or($data['category'],        t('Unknown'));
+            $this->category_type           = _or($data['category_type'],   t('Unknown'));
+            $this->chanid                  = $data['chanid'];
+            $this->description             = $data['description'];
+            $this->endtime                 = $data['endtime_unix'];
+            $this->hdtv                    = $data['hdtv'];
+            $this->previouslyshown         = $data['previouslyshown'];
+            $this->programid               = $data['programid'];
+            $this->rater                   = $data['rater'];
+            $this->rating                  = $data['rating'];
+            $this->seriesid                = $data['seriesid'];
+            $this->showtype                = $data['showtype'];
+            $this->stars                   = $data['stars'];
+            $this->starstring              = $data['starstring'];
+            $this->starttime               = $data['starttime_unix'];
+            $this->subtitle                = $data['subtitle'];
+            $this->subtitled               = $data['subtitled'];
+            $this->title                   = $data['title'];
+            $this->partnumber              = $data['partnumber'];
+            $this->parttotal               = $data['parttotal'];
+            $this->stereo                  = $data['stereo'];
+            $this->closecaptioned          = $data['closecaptioned'];
+            $this->colorcode               = $data['colorcode'];
+            $this->syndicatedepisodenumber = $data['syndicatedepisodenumber'];
+            $this->title_pronounce         = $data['title_pronounce'];
         }
-    // Turn recstatus into a word
-        if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
-            $this->recstatus = $GLOBALS['RecStatus_Types'][$this->recstatus];
+    // No longer a null column, so check for blank entries
+        if ($this->airdate == '0000-00-00')
+            $this->airdate = NULL;
     // Do we have a chanid?  Load some info about it
         if ($this->chanid && !isset($this->channel)) {
         // No channel data?  Load it
@@ -454,8 +359,8 @@ class Program {
         else
             $this->length = $this->endtime - $this->starttime;
 
-    // A special recstatus for shows that were manually set to record
-        if ($this->record_override)
+    // A special recstatus for shows that this was manually set to record
+        if ($this->rectype == rectype_override)
             $this->recstatus = 'ForceRecord';
 
     // Find out which css category this program falls into
@@ -531,12 +436,19 @@ class Program {
             $str .= "<tr>\n\t<td align=\"right\">"
                    .t('Schedule')
                    .":</td>\n\t<td>";
-            if ($this->record_daily)       { $str .= t('rectype-long: daily');   }
-            elseif ($this->record_weekly)  { $str .= t('rectype-long: weekly');  }
-            elseif ($this->record_once)    { $str .= t('rectype-long: once');    }
-            elseif ($this->record_channel) { $str .= t('rectype-long: channel'); }
-            elseif ($this->record_findone) { $str .= t('rectype-long: findone'); }
-            else                           { $str .= t('rectype-long: always');  }
+            switch ($this->rectype) {
+                case rectype_once:       $str .= t('rectype-long: once');       break;
+                case rectype_daily:      $str .= t('rectype-long: daily');      break;
+                case rectype_channel:    $str .= t('rectype-long: channel', prefer_channum ? $this->channel->channum : $this->channel->callsign);    break;
+                case rectype_always:     $str .= t('rectype-long: always');     break;
+                case rectype_weekly:     $str .= t('rectype-long: weekly');     break;
+                case rectype_findone:    $str .= t('rectype-long: findone');    break;
+                case rectype_override:   $str .= t('rectype-long: override');   break;
+                case rectype_dontrec:    $str .= t('rectype-long: dontrec');    break;
+                case rectype_finddaily:  $str .= t('rectype-long: finddaily');  break;
+                case rectype_findweekly: $str .= t('rectype-long: findweekly'); break;
+                default:                 $str .= t('Unknown');
+            }
             $str .= "</td>\n</tr>";
         }
     // Recording status
@@ -552,86 +464,100 @@ class Program {
         return $str;
     }
 
-}
-
-/*
-    getCredits:
-    returns credits information for a particular show
-*/
-    function getCredits($chanid, $starttime, $role) {
-        // get credits for the show, cull on 'role'
-        $query  = 'SELECT person FROM credits WHERE role='.escape($role)
-                 .' AND chanid='.escape($chanid)
-                 .' AND starttime=FROM_UNIXTIME('.escape($starttime).')';
-        $result = mysql_query($query)
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-        $people=array();
-        if (mysql_num_rows($result)) {
-            // convert the person #'s to string names by querying people table
-            while($person = mysql_fetch_assoc($result)) {
-                $people []= escape($person['person']);
-            }
-            mysql_free_result($result);
-            $query  = 'SELECT name FROM people WHERE person='.implode($people, " OR person=");
+    function get_credits($role) {
+    // Not enough info in this object
+        if (!$this->chanid || !$this->starttime)
+            return '';
+    // No cached value -- load it
+        if (!isset($this->credits[$role])) {
+        // Get the credits for the requested role
+            $query  = 'SELECT people.name FROM credits, people'
+                     .' WHERE credits.person=people.person'
+                     .' AND credits.role='.escape($role)
+                     .' AND credits.chanid='.escape($this->chanid)
+                     .' AND credits.starttime=FROM_UNIXTIME('.escape($this->starttime).')';
             $result = mysql_query($query)
                 or trigger_error('SQL Error: '.mysql_error(), FATAL);
-            // assemble list of names into string
-            unset($people);
-            $people=array();
-            while($person = mysql_fetch_assoc($result)) {
-                $people[] = str_replace(" ", "&nbsp;", $person['name']);
+            $people = array();
+            while (list($name) = mysql_fetch_row($result)) {
+                $people[] = $name;
             }
+            mysql_free_result($result);
+        // Cache it
+            $this->credits[$role] = trim(implode(', ', $people));
         }
-        mysql_free_result($result);
-        return implode($people,", ");
+        return $this->credits[$role];
     }
 
 /*
-    category_class:
+ *  The following methods relate to a programs control over its recording options.
+ */
 
-*/
-    function category_class(&$item) {
-        $class = '';
-    // Recording classes?
-        if ($item->will_record && get_class($item) == 'program') {
-            if ($item->recstatus == 'ForceRecord')
-                $class .= 'record_override_record ';
-            elseif ($item->recstatus == 'WillRecord')
-                $class .= 'will_record ';
-            elseif ($item->recstatus == 'Conflict' || $item->recstatus == 'Overlap')
-                $class .= 'record_conflicting ';
-            elseif ($item->recstatus == 'PreviousRecording' || $item->recstatus == 'CurrentRecording')
-                $class .= 'record_duplicate ';
-            elseif ($item->recstatus == 'ManualOverride' || $item->recstatus == 'Cancelled')
-                $class .= 'record_override_suppress ';
-            else
-                $class .= 'record_suppressed ';
-        }
-    // Category type?
-        if ($item->category_type && !preg_match('/unknown/i', $item->category_type))
-            $class .= 'type_'.preg_replace("/[^a-zA-Z0-9\-_]+/", '_', $item->category_type).' ';
-    // Category cache
-        $category = strtolower($item->category);    // user lowercase to avoid a little overhead later
-        static $cache = array();
-        if ($cache[$category])
-            $class .= $cache[$category];
-    // Scan the $Categories hash for any matches
-        else {
-            global $Categories;
-            foreach ($Categories as $cat => $details) {
-                if (!$details[1])
-                    continue;
-                if (preg_match('/'.$details[1].'/', $category)) {
-                    $class .= $cache[$category] = 'cat_'.$cat.' ';
-                    break;
-                }
-            }
-        }
-    // No category found?
-        if (!$cache[$category])
-            $class .= $cache[$category] = 'cat_Unknown';
-    // Return
-        return trim($class);
+/*
+ *  Tell mythtv to forget that it already recorded this show.
+ */
+    function rec_forget_old() {
+        $result = mysql_query('DELETE FROM oldrecorded WHERE'
+                                .' title='          .escape($this->title)
+                                .' AND subtitle='   .escape($this->subtitle)
+                                .' AND description='.escape($this->description))
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+    // Notify the backend of the changes
+        backend_notify_changes();
     }
+
+/*
+ *  "Never" record this show, by telling mythtv that it was already recorded
+ */
+    function rec_never_record() {
+        $result = mysql_query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid) VALUES ('
+                                .escape($this->chanid)                    .','
+                                .'FROM_UNIXTIME('.escape($this->starttime).'),'
+                                .'"1970-01-01",'
+                                .escape($this->title)                     .','
+                                .escape($this->subtitle)                  .','
+                                .escape($this->description)               .','
+                                .escape($this->category)                  .','
+                                .escape($this->seriesid)                  .','
+                                .escape($this->programid)                 .')')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+    // Notify the backend of the changes
+        backend_notify_changes();
+    }
+
+/*
+ *  Revert a show to its default recording schedule settings
+ */
+    function rec_default() {
+        $schedule =& $GLOBALS['Schedules'][$this->recordid];
+        if ($schedule && ($schedule->type == rectype_override || $schedule->type == rectype_dontrec))
+            $schedule->delete();
+    }
+
+/*
+ *  rec_override:  Add an override or dontrec record to force this show to/not record
+ *  pass in rectype_dontrec or rectype_override constants
+ */
+    function rec_override($rectype) {
+        $schedule =& $GLOBALS['Schedules'][$this->recordid];
+    // Unknown schedule?
+        if (!$schedule)
+            trigger_error('Unknown schedule for this program\'s recordid:  '.$this->recordid, FATAL);
+    // Update the schedule with the new program info
+        $schedule->chanid      = $this->chanid;
+        $schedule->starttime   = $this->starttime;
+        $schedule->endtime     = $this->endtime;
+        $schedule->title       = $this->title;
+        $schedule->subtitle    = $this->subtitle;
+        $schedule->description = $this->description;
+        $schedule->category    = $this->category;
+        $schedule->station     = $this->channel->callsign;       // Note that "callsign" becomes "station"
+        $schedule->seriesid    = $this->seriesid;
+        $schedule->programid   = $this->programid;
+    // Save the schedule -- it'll know what to do about the override
+        $schedule->save($rectype);
+    }
+
+}
 
 ?>
