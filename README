@@ -94,7 +94,7 @@ What could be simpler?
        which user/group apache is set to run as.
 
     Did you read the THIS IS VERY VERY IMPORTANT note in the previous paragraph?
-People seem to skip over the config file and for some reason assume that 
+People seem to skip over the config file and for some reason assume that
 mythweb will just work with no configuration.  While I've tried to make it
 as auto-detecting as possible, it often still needs some hand-editing.
 
@@ -138,6 +138,17 @@ A: Some distributions (gentoo in particular) disable the allow_url_fopen
     setting by default, and php ignores this setting in the included .htaccess
     file.  You will need to edit your /etc/php.ini file (or wherever it is in
     your distribution) and set the value of allow_url_fopen to On.
+
+Q: I've fixed a bug (or added a feature), how do I submit my patch?
+A: First, join the mythtv-dev mailing list.  Then create your patch against
+    mythweb CVS with `cvs diff -u`, first having made sure that your code is
+    indented with 4 spaces and not tabs.  Next, either email your patch to the
+    mailing list, or if it is bigger than 40k or so, put it on a web page and
+    send a URL to the mailing list.  Either way, please include a detailed
+    description of your patch in the email.  Make sure that the email contains
+    "mythweb" in the subject line, or I may not see it.  If you don't hear back
+    from me right away, don't worry.  As long as you follow these instructions,
+    I will at least get back to you one way or another -- eventually.
 
 4.0 Plan/TODO
 =============
