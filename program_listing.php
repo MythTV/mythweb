@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	program_listing.php                      Last Updated: 2003.07.23 (xris)
+	program_listing.php                      Last Updated: 2003.08.06 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -56,6 +56,10 @@
 // Go through each channel and load/print its info - use references to avoid "copy" overhead
 	$channel_count = 0;
 	foreach (array_keys($Channels) as $key) {
+	// Ignore channels with no number
+		if (strlen($Channels[$key]->channum) < 1)
+			continue;
+	// Count this channel
 		$channel_count++;
 	// Grab the reference
 		$channel = &$Channels[$key];
