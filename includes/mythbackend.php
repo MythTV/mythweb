@@ -1,6 +1,6 @@
 <?php
 /***																		***\
-	mythbackend.php                          Last Updated: 2003.08.20 (xris)
+	mythbackend.php                          Last Updated: 2003.09.18 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -68,14 +68,14 @@
 			trigger_error("MasterServerIP or MasterServerPort not found! You man need to check your settings.php file or re-run setup mythtv's setup", FATAL);
 	// Open a connection to the master backend, unless we've already done so
 		if (!$fp)
-			$fp = fsockopen($host, $port, $errno, $errstr, 3);
+			$fp = fsockopen($host, $port, $errno, $errstr, 25);
 	// Connection opened, let's do something
 		if ($fp) {
 		// Build the command string
 		// The format should be <length + whitespace to 8 total bytes><data>
 			$command = strlen($command) . str_repeat(' ', 8 - strlen(strlen($command))) . $command;
 		// If we don't get a response back in 4 seconds, something went wrong
-			socket_set_timeout($fp, 3);
+			socket_set_timeout($fp, 25);
 		// Send our command
 			fputs ($fp, $command);
 		// Read the response header to find out how much data we'll be grabbing
