@@ -37,7 +37,7 @@ class Theme_recorded_programs extends Theme {
 	}
 
 	function confirm_delete(id) {
-		if (confirm("Are you sure you want to delete the following show?\n\n     "+files[id][0]))
+		if (confirm("<?php echo _LANG_CONFIRM_DELETE?>\n\n     "+files[id][0]))
 			location.href = "recorded_programs.php?delete=yes&file="+files[id][1];
 	}
 
@@ -48,9 +48,9 @@ class Theme_recorded_programs extends Theme {
 <form class="form" id="program_titles" action="recorded_programs.php" method="get">
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
-	<td>Show recordings:</td>
+	<td><?php echo _LANG_SHOW_RECORDINGS?>:</td>
 	<td><select name="title" onchange="get_element('program_titles').submit()">
-		<option value="">All recordings</option><?php
+		<option value=""><?php echo _LANG_ALL_RECORDINGS?></option><?php
 		global $Program_Titles;
 		foreach($Program_Titles as $title => $count) {
 			echo '<option value="'.$title.'"';
@@ -60,7 +60,7 @@ class Theme_recorded_programs extends Theme {
 		}
 		?>
 	</select></td>
-	<td><input type="submit" value="Go"></td>
+	<td><input type="submit" value="<?php echo _LANG_GO?>"></td>
 </tr>
 </table>
 </form>
@@ -82,15 +82,15 @@ if ($group_field == "") {
 	if ($group_field != "")
 		echo "\t<td class=\"list\">&nbsp;</td>\n";
 	if (show_recorded_pixmaps)
-		echo "\t<td>preview</td>\n";
+		echo "\t<td>"._LANG_PREVIEW."</td>\n";
 ?>
-	<td><a href="recorded_programs.php?sortby=title">show</a></td>
-	<td><a href="recorded_programs.php?sortby=subtitle">episode</a></td>
-	<td><a href="recorded_programs.php?sortby=description">description</a></td>
-	<td><a href="recorded_programs.php?sortby=channum">station</a></td>
-	<td><a href="recorded_programs.php?sortby=airdate">air&nbsp;date</a></td>
-	<td><a href="recorded_programs.php?sortby=length">length</a></td>
-	<td><a href="recorded_programs.php?sortby=filesize">file&nbsp;size</a></td>
+	<td><a href="recorded_programs.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
+	<td><a href="recorded_programs.php?sortby=subtitle"><?php echo _LANG_SUBTITLE?></a></td>
+	<td><a href="recorded_programs.php?sortby=description"><?php echo _LANG_DESCRIPTION?></a></td>
+	<td><a href="recorded_programs.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
+	<td><a href="recorded_programs.php?sortby=airdate"><?php echo _LANG_AIRDATE?></a></td>
+	<td><a href="recorded_programs.php?sortby=length"><?php echo _LANG_LENGTH?></a></td>
+	<td><a href="recorded_programs.php?sortby=filesize"><?php echo _LANG_FILE_SIZE?></a></td>
 </tr><?php
 	$row = 0;
 
@@ -142,7 +142,7 @@ if ($group_field == "") {
 	<td width="5%">currently recording</td>
 <?php	} else { ?>
 	<td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-		<a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete</a></td>
+		<a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>"><?php echo _LANG_DELETE?></a></td>
 <?php	} ?>
 </tr><?
 		$prev_group = $cur_group;
@@ -152,7 +152,7 @@ if ($group_field == "") {
 
 </table>
 <?php
-	echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' programs, using '.nice_filesize(disk_used).' out of '.nice_filesize(disk_size).'</p>';
+	echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.nice_filesize(disk_used)._LANG_OUT_OF.nice_filesize(disk_size).'</p>';
 
 	// Print the main page footer
 		parent::print_footer();

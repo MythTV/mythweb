@@ -1,4 +1,3 @@
-3
 <?php
 /***																		***\
 	mythbackend.php                          Last Updated: 2004.01.27 (xris)

@@ -23,14 +23,14 @@ class Theme_program_listing extends Theme {
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-	<td width="50%" align="center">Currently Browsing:  <?php echo date('D, F j, Y, g:i A', $start_time)?></td>
+	<td width="50%" align="center"><?php echo _LANG_CURRENTLY_BROWSING?>:<?php echo date('D, F j, Y, g:i A', $start_time)?></td>
 	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
 		<form class="form" id="program_listing" action="program_listing.php" method="get">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 		<tr>
 
-			<td align="center">Jump&nbsp;to:&nbsp;&nbsp;</td>
-			<td align="right">Hour:&nbsp;</td>
+			<td align="center"><? echo _LANG_JUMP_TO?>:&nbsp;&nbsp;</td>
+			<td align="right"><? echo _LANG_HOUR?>:&nbsp;</td>
 			<td><select name="hour" style="text-align: right" onchange="get_element('program_listing').submit()"><?php
 				for ($h=0;$h<24;$h++) {
 					echo "<option value=\"$h\"";
@@ -39,7 +39,7 @@ class Theme_program_listing extends Theme {
 					echo '>'.date($_SESSION['time_format'], strtotime("$h:00")).'</option>';
 				}
 				?></select></td>
-			<td align="right">Date:&nbsp;</td>
+			<td align="right"><?echo _LANG_DATE?>:&nbsp;</td>
 			<td><select name="date" onchange="get_element('program_listing').submit()"><?php
 			// Find out how many days into the future we should bother checking
 				$result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
@@ -55,7 +55,7 @@ class Theme_program_listing extends Theme {
 					echo ">".date($_SESSION['date_listing_jump'] , $time)."</option>";
 				}
 				?></select></td>
-			<td align="center"><input type="submit" class="submit" value="Jump"></td>
+			<td align="center"><input type="submit" class="submit" value="<? echo _LANG_JUMP?>"></td>
 
 
 		</tr>

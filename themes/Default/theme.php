@@ -69,14 +69,14 @@ class Theme {
 
 	<td valign="bottom"><table width="100%" border="0" cellspacing="2" cellpadding="2">
 		<tr align="center">
-			<td valign="top">Go To: &nbsp; &nbsp;
+			<td valign="top"><?php echo _LANG_GO_TO?>: &nbsp; &nbsp;
 				<a href="program_listing.php">MythTV</a>
 				&nbsp; | &nbsp;
 				<a href="mythmusic.php">MythMusic</a>
 				&nbsp; | &nbsp;
 				<a href="video.php">MythVideo</a>
 				&nbsp; | &nbsp;
-				<a href="settings.php">Settings</a>
+				<a href="settings.php"><?php echo _LANG_SETTINGS?></a>
 				<!--&nbsp; | &nbsp;
 				<a href="#">MythWeather</a>--></td>
 
@@ -87,10 +87,10 @@ class Theme {
 				<table border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td><input type="text" name="searchstr" size="15" value="<?php echo $_GET['searchstr']?>"></td>
-					<td>&nbsp; <input type="submit" class="submit" value="search"></td>
+					<td>&nbsp; <input type="submit" class="submit" value="<?php echo _LANG_SEARCH?>"></td>
 				</tr>
 				<tr>
-					<td align="right" colspan=3>&nbsp; <a href="search.php">[advanced]</a></td>
+					<td align="right" colspan=3>&nbsp; <a href="search.php">[<? echo _LANG_ADVANCED?>]</a></td>
 				<tr>
 				</table>
 				</form></td>
@@ -114,19 +114,19 @@ class Theme {
 
 	function print_menu_content() {
 		?><a id="category_legend" onmouseover="show('category_legend');return true;" onmouseout="hide();return true;">MythTV:</a> &nbsp; &nbsp;
-				<a href="program_listing.php">Listings</a>
+				<a href="program_listing.php"><?php echo _LANG_LISTINGS?></a>
 				&nbsp; | &nbsp;
 				<a href="search.php?searchstr=<?php echo movie_word?>&search_category_type=yes"><?php echo movie_word?>s</a>
 				<?/*&nbsp; | &nbsp;
-				<a href="index.php?mode=favourites">Favourites</a>*/?>
+				<a href="index.php?mode=favourites"><?php echo _LANG_FAVOURITES?></a>*/?>
 				&nbsp; | &nbsp;
-				<a href="scheduled_recordings.php">Scheduled Recordings</a>
+				<a href="scheduled_recordings.php"><?php echo _LANG_SCHEDULED_RECORDINGS?></a>
 				&nbsp; | &nbsp;
-				<a href="recording_schedules.php">Recording Schedules</a>
+				<a href="recording_schedules.php"><?php echo _LANG_RECORDING_SCHEDULES?></a>
 				&nbsp; | &nbsp;
-				<a href="recorded_programs.php">Recorded Programs</a>
+				<a href="recorded_programs.php"><?php echo _LANG_RECORDED_PROGRAMS?></a>
 				&nbsp; | &nbsp;
-				<a href="status.php">Backend Status</a><?php
+				<a href="status.php"><?php echo _LANG_BACKEND_STATUS?></a><?php
 		# really should move the category_legend footnote to this section,
 		# so it doesn't render in other sections
 	}
@@ -152,7 +152,7 @@ class Theme {
 <tr>
 	<td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">
 		<tr>
-			<td colspan="3">Category Legend:</td><?php
+			<td colspan="3"><?php echo _LANG_CATEGORY_LEGEND?>:</td><?php
 	$categories = array('Action',
 						'Adult',
 						'Animals',
@@ -192,7 +192,7 @@ class Theme {
 		echo "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>$cat</b></td>\n";
 	}
 		?>
-			<td class="type_movie" align="center"><b>Movies</b></td>
+			<td class="type_movie" align="center"><b><?php echo _LANG_MOVIES?></b></td>
 		</tr>
 		</table></td>
 </tr>

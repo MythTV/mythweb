@@ -45,15 +45,15 @@ class Theme_scheduled_recordings extends Theme {
 
 <table border="0" align="center">
 <tr>
-	<td>Display:</td>
+	<td><?php echo _LANG_DISPLAY?>:</td>
 	<td><input type="checkbox" id="scheduled" class="radio" onclick="changevisible()" CHECKED></td>
-	<td>Scheduled</td>
+	<td><?php echo _LANG_SCHEDULED?></td>
 	<td><input type="checkbox" id="duplicate" class="radio" onclick="changevisible()" CHECKED></td>
-	<td>Duplicates</td>
+	<td><?php echo _LANG_DUPLICATES?></td>
 	<td><input type="checkbox" id="deactivated" class="radio" onclick="changevisible()" CHECKED></td>
-	<td>Deactivated</td>
+	<td><?php echo _LANG_DEACTIVATED?></td>
 	<td><input type="checkbox" id="conflict" class="radio" onclick="changevisible()" CHECKED></td>
-	<td>Conflicts</td>
+	<td><?php echo _LANG_CONFLICTS?></td>
 </tr>
 </table>
 
@@ -69,11 +69,11 @@ if ($group_field == "") {
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 	<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-	<td><a href="scheduled_recordings.php?sortby=title">show</a></td>
-	<td><a href="scheduled_recordings.php?sortby=channum">station</a></td>
-	<td><a href="scheduled_recordings.php?sortby=airdate">air&nbsp;date</a></td>
-	<td><a href="scheduled_recordings.php?sortby=length">length</a></td>
-	<td><a href="scheduled_recordings.php?sortby=status">status</a></td>
+	<td><a href="scheduled_recordings.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
+	<td><a href="scheduled_recordings.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
+	<td><a href="scheduled_recordings.php?sortby=airdate"><?php echo _LANG_AIRDATE?></a></td>
+	<td><a href="scheduled_recordings.php?sortby=length"><?php echo _LANG_LENGTH?></a></td>
+	<td><a href="scheduled_recordings.php?sortby=status"><?php echo _LANG_STATUS?></a></td>
 </tr><?php
 	$row = 0;
 
@@ -88,30 +88,30 @@ if ($group_field == "") {
 # This needs a major overhaul, to support the new recording schedule types, etc
 		if ($show->recstatus == 'PreviousRecording' || $show->recstatus == 'CurrentRecording') {
 			$class = 'duplicate';
-			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record This</a>';
-			$commands[] = '<a href="scheduled_recordings.php?forget_old=yes&'.$urlstr.'">Forget Old</a>';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_RECORD_THIS.'</a>';
+			$commands[] = '<a href="scheduled_recordings.php?forget_old=yes&'.$urlstr.'">'._LANG_FORGET_OLD.'</a>';
 		}
 		elseif ($show->conflicting == 1) {
 			$class   = 'conflict';
-			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record This</a>';
-			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_RECORD_THIS.'</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		}
 		elseif ($show->recstatus == 'AutoConflict') {
 			$class   = 'deactivated';
-			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Activate</a>';
-			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		}
 		elseif ($show->recording == 0 || $show->recstatus != 'WillRecord') {
 			$class   = 'deactivated';
-			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Activate</a>';
-			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		}
 		else {
 			$class   = 'scheduled';
-			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		// Offer to suppress any recordings that have enough info to do so.
 			if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
-				$commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">Never&nbsp;Record</a>';
+				$commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'._LANG_NEVER_RECORD.'</a>';
 		}
 	// Build a popup table for the mouseover of the cell, with extra program information?
 		if (show_popup_info) {
@@ -125,51 +125,51 @@ if ($group_field == "") {
 <tr>
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
-			<td align=\"right\">Airtime:</td>
+			<td align=\"right\">"._LANG_AIRTIME.":</td>
 			<td>".date($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.date($_SESSION['time_format'], $show->endtime)."</td>
 		</tr><tr>
-			<td align=\"right\">Program:</td>
+			<td align=\"right\">"._LANG_TITLE.":</td>
 			<td>$show->title</td>
 		</tr>"
 		.(preg_match('/\\S/', $show->subtitle) ? "<tr>
-			<td align=\"right\">Episode:</td>
+			<td align=\"right\">"._LANG_SUBTITLE.":</td>
 			<td>$show->subtitle</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->description) ? "<tr>
-			<td align=\"right\" valign=\"top\">Description:</td>
+			<td align=\"right\" valign=\"top\">"._LANG_DESCRIPTION.":</td>
 			<td>".nl2br(wordwrap($show->description, 70))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->rating) ? "<tr>
-			<td align=\"right\" valign=\"top\">Rating:</td>
+			<td align=\"right\" valign=\"top\">"._LANG_RATING.":</td>
 			<td>$show->rating</td>
 		</tr>" : '')
 		.($show->airdate > 0 ? "<tr>
-			<td align=\"right\">Orig.&nbsp;Airdate:</td>
+			<td align=\"right\">"._LANG_ORIG_AIRDATE.":</td>
 			<td>$show->airdate</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->category) ? "<tr>
-			<td align=\"right\">Category:</td>
+			<td align=\"right\">"._LANG_CATEGORY.":</td>
 			<td>$show->category</td>
 		</tr>" : '')
 		.($show->previouslyshown ? "<tr>
-			<td align=\"right\">Rerun:</td>
+			<td align=\"right\">"._LANG_RERUN.":</td>
 			<td>Yes</td>
 		</tr>" : '')
 		.($show->will_record ? "<tr>
-			<td align=\"right\">Schedule:</td>
-			<td>".($show->record_daily       ? "Always record on this channel at this time"
-					: ($show->record_weekly  ? "Always record on this channel at this time on this day of the week"
-					: ($show->record_once    ? "Will be recorded once"
-					: ($show->record_channel ? "Always record on this channel"
-					: ($show->record_findone ? "Record one showing of this program at any time"
-					: "Always record")))))."</td>
+			<td align=\"right\">"._LANG_SCHEDULE.":</td>
+			<td>".($show->record_daily       ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_DAY
+					: ($show->record_weekly  ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_WEEK
+					: ($show->record_once    ? _LANG_RECORD_ONLY_THIS_SHOWING
+					: ($show->record_channel ? _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_CHANNEL
+					: ($show->record_findone ? _LANG_RECORD_ONE_SHOWING_OF_THIS_PROGRAM_AT_ANY_TIME
+					: _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_ANY_CHANNEL)))))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->profile) ? "<tr>
-			<td align=\"right\">Profile:</td>
+			<td align=\"right\">"._LANG_PROFILE.":</td>
 			<td>$show->profile</td>
 		</tr>" : '')
 		.($show->recstatus ? "<tr>
-			<td align=\"right\">Notes:</td>
+			<td align=\"right\">"._LANG_NOTES.":</td>
 			<td>".$GLOBALS['RecStatus_Reasons'][$show->recstatus]."</td>
 		</tr>" : '')
 		."</table></td>

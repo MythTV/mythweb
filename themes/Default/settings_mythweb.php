@@ -18,37 +18,40 @@ class Theme_settings_mythweb extends Theme_settings {
 
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5" style="float: left;margin-left: 20px">
 <tr>
-	<td class="command_border_b" align="right">MythWeb Theme:</td>
+	<td class="command_border_b" align="right">MythWeb <? echo _LANG_THEME?>:</td>
 	<td class="command_border_b"><?php theme_select() ?></td>
 </tr><tr>
-	<td>Date/Date Formats:</td>
-	<td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.date.php" target="_blank">format help</a></div></td>
+	<td class="command_border_b" align="right"><?php echo _LANG_LANGUAGE?>:</td>
+	<td class="command_border_b"><?php language_select() ?></td>
 </tr><tr>
-	<td align="right">Status Bar:&nbsp;</td>
+	<td><?php echo _LANG_DATEFORMATS?>:</td>
+	<td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.date.php" target="_blank"><?php echo _LANG_FORMAT_HELP?></a></div></td>
+</tr><tr>
+	<td align="right"><?php echo _LANG_STATUS_BAR?>:&nbsp;</td>
 	<td><input type="text" size="12" name="date_statusbar" value="<?php    echo htmlentities($_SESSION['date_statusbar']) ?>"></td>
 </tr><tr>
-	<td align="right">Scheduled Recordings:&nbsp;</td>
+	<td align="right"><?php echo _LANG_SCHEDULED_RECORDINGS?>:&nbsp;</td>
 	<td><input type="text" size="12" name="date_scheduled" value="<?php    echo htmlentities($_SESSION['date_scheduled']) ?>"></td>
 </tr><tr>
-	<td align="right">Scheduled Popup:&nbsp;</td>
+	<td align="right"><?php echo _LANG_SCHEDULED_POPUP?>:&nbsp;</td>
 	<td><input type="text" size="12" name="date_scheduled_popup" value="<?php    echo htmlentities($_SESSION['date_scheduled_popup']) ?>"></td>
 </tr><tr>
-	<td align="right">Recorded Programs:&nbsp;</td>
+	<td align="right"><?php echo _LANG_RECORDED_PROGRAMS?>:&nbsp;</td>
 	<td><input type="text" size="12" name="date_recorded" value="<?php     echo htmlentities($_SESSION['date_recorded']) ?>"></td>
 </tr><tr>
-	<td align="right">Search Results:&nbsp;</td>
+	<td align="right"><?php echo _LANG_SEARCH_RESULTS?>:&nbsp;</td>
 	<td><input type="text" size="12" name="date_search" value="<?php       echo htmlentities($_SESSION['date_search']) ?>"></td>
 </tr><tr>
-	<td align="right">Listing Time Key:&nbsp;</td>
+	<td align="right"><?php echo _LANG_LISTING_TIME_KEY?>:&nbsp;</td>
 	<td><input type="text" size="12" name="date_listing_key" value="<?php  echo htmlentities($_SESSION['date_listing_key']) ?>"></td>
 </tr><tr>
-	<td align="right">Listing &quot;Jump to&quot;&nbsp;</td>
+	<td align="right"><?php echo _LANG_LISTING_JUMP_TO?>&nbsp;</td>
 	<td><input type="text" size="12" name="date_listing_jump" value="<?php echo htmlentities($_SESSION['date_listing_jump']) ?>"></td>
 </tr><tr>
-	<td align="right">Channel &quot;Jump to&quot;&nbsp;</td>
+	<td align="right"><?php echo _LANG_CHANNEL_JUMP_TO?>&nbsp;</td>
 	<td><input type="text" size="12" name="date_channel_jump" value="<?php echo htmlentities($_SESSION['date_channel_jump']) ?>"></td>
 </tr><tr>
-	<td align="right">Hour Format&nbsp;</td>
+	<td align="right"><? echo _LANG_HOUR_FORMAT?>&nbsp;</td>
 	<td><select name="time_format" style="text-align: center"><?php
 		foreach (array('g:i a', 'g:i A', 'h:i a', 'h:i A', 'G:i', 'H:i') as $code) {
 			echo "<option value=\"$code\"";
@@ -58,8 +61,8 @@ class Theme_settings_mythweb extends Theme_settings {
 		}
 		?></select></td>
 </tr><tr>
-	<td class="command_border_t" align="center"><input type="reset" value="Reset"></td>
-	<td class="command_border_t" align="center"><input type="submit" name="save" value="Save"></td>
+	<td class="command_border_t" align="center"><input type="reset" value="<?php echo _LANG_RESET?>"></td>
+	<td class="command_border_t" align="center"><input type="submit" name="save" value="<?php echo _LANG_SAVE?>"></td>
 </tr>
 </table>
 

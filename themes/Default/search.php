@@ -18,21 +18,21 @@ class Theme_search extends Theme {
 <form action="search.php" method="post">
 <table class="command command_border_l command_border_t command_border_b command_border_r" align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-	<td align="right">Search:</td>
-	<td><input type="text" name="searchstr" size="15" value="<?php echo $_GET['searchstr']?>"></td>
-	<td>&nbsp; <input type="submit" class="submit" value="search"></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_GET['search_title'] ? ' CHECKED' : ''?>></td>
-	<td onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><a>title (show)</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_GET['search_subtitle'] ? ' CHECKED' : ''?>></td>
-	<td onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><a>subtitle (episode)</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_GET['search_description'] ? ' CHECKED' : ''?>></td>
-	<td onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><a>description</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_GET['search_category'] ? ' CHECKED' : ''?>></td>
-	<td onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><a>category</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_GET['search_category_type'] ? ' CHECKED' : ''?>></td>
-	<td onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><a>category&nbsp;type</a></td>
+ 	<td align="right"><?php echo _LANG_SEARCH?>:</td>
+  	<td><input type="text" name="searchstr" size="15" value="<?php echo $_GET['searchstr']?>"></td>
+ 	<td>&nbsp; <input type="submit" class="submit" value="<?php echo _LANG_SEARCH?>"></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_GET['search_title'] ? ' CHECKED' : ''?>></td>
+ 	<td onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><a><?php echo _LANG_TITLE?></a></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_GET['search_subtitle'] ? ' CHECKED' : ''?>></td>
+ 	<td onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><a><?php echo _LANG_SUBTITLE?></a></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_GET['search_description'] ? ' CHECKED' : ''?>></td>
+ 	<td onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><a><?php echo _LANG_DESCRIPTION?></a></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_GET['search_category'] ? ' CHECKED' : ''?>></td>
+ 	<td onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><a><?php echo _LANG_CATEGORY?></a></td>
+  	<td align="right"><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_GET['search_category_type'] ? ' CHECKED' : ''?>></td>
+ 	<td onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><a><?php echo _LANG_CATEGORY_TYPE?></a></td>
 	<td align="right"><input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_GET['search_exact'] ? ' CHECKED' : ''?>></td>
-	<td onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><a>exact&nbsp;match</a></td>
+	<td onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><a><?php echo _LANG_EXACT_MATCH ?></a></td>
 </tr>
 </table>
 </form>
@@ -51,7 +51,7 @@ class Theme_search extends Theme {
 			return;
 	// Search, but nothing found - notify the user
 		if (!count($Results)) {
-			echo '<p class="huge" align="center">No matches found</p>';
+			echo '<p class="huge" align="center">"._LANG_NO_MATCHES_FOUND."</p>';
 			return;
 		}
 	// Get the url search string so we don't have to recreate it for each sort type
@@ -74,15 +74,15 @@ class Theme_search extends Theme {
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
-	<td><a href="search.php?sortby=title<?php echo $search_str?>">show</a></td>
-	<td><a href="search.php?sortby=subtitle<?php echo $search_str?>">episode</a></td>
-	<td>description</td>
-	<td><a href="search.php?sortby=channum<?php echo $search_str?>">station</a></td>
-	<td><a href="search.php?sortby=airdate<?php echo $search_str?>">air&nbsp;date</a></td>
-	<td><a href="search.php?sortby=length<?php echo $search_str?>">length</a></td>
+	<td><a href="search.php?sortby=title<?php echo $search_str?>"><?php echo _LANG_TITLE?></a></td>
+	<td><a href="search.php?sortby=subtitle<?php echo $search_str?>"><?php echo _LANG_SUBTITLE?></a></td>
+	<td><?php echo _LANG_DESCRIPTION?></td>
+	<td><a href="search.php?sortby=channum<?php echo $search_str?>"><?php echo _LANG_STATION?></a></td>
+	<td><a href="search.php?sortby=airdate<?php echo $search_str?>"><?php echo _LANG_AIRDATE?></a></td>
+	<td><a href="search.php?sortby=length<?php echo $search_str?>"><?php echo _LANG_LENGTH?></a></td>
 </tr><?php
 		$row = 0;
-		
+
 		$prev_group="";
 		$cur_group="";
 
@@ -96,7 +96,7 @@ class Theme_search extends Theme {
 			} elseif ($group_field == "title") {
 				$cur_group = $show->title;
 			}
-			
+
 			if ( ($cur_group <> $prev_group) && ($group_field <> "") ) { ?>
 	<tr class="list_separator">
 	<td colspan="9">
@@ -124,7 +124,7 @@ class Theme_search extends Theme {
 	    if ($additional)
 	    	$additional = ', (' . $additional . ')';
 	}
-	
+
 	// Print the content
 	?><tr class="<?php echo $show->class ?>">
 	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; }?>

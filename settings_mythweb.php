@@ -57,4 +57,24 @@
 		}
 		echo '</select>';
 	}
+
+/*
+	language_select:
+	displays a <select> of the available languages
+*/
+	function language_select() {
+		echo '<select name="language">';
+		foreach (get_sorted_files("languages/") as $file) {
+		// Skip the CVS directory
+			if ($file == 'CVS') continue;
+			if (!ereg('(.*)\.php$', $file, $regs)) continue;
+			$language = $regs[1];
+		// Print the option
+			echo '<option value="'.htmlentities($language).'"';
+			if ($_SESSION['language'] == $language)
+				echo ' SELECTED';
+			echo '>'.htmlentities($language).'</option>';
+		}
+		echo '</select>';
+	}
 ?>

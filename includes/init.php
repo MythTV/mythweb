@@ -45,6 +45,14 @@
 	session_set_cookie_params(60 * 60 * 24 * 355, '/', server_domain);
 	session_start();
 
+// Load the language file
+	if ($_POST{'language'})
+		$_SESSION{'language'} = $_POST{'language'};
+	if (!$_SESSION['language'])
+		$_SESSION['language'] = default_language;
+	if (file_exists('languages/'.$_SESSION['language'].'.php'))
+		require_once 'languages/'.$_SESSION['language'].'.php';
+
 // Connect to the database, or restore a persistent connection
 //  please note that calling mysql_close is unnecessary - see php documentation for details
     #$dbh = mysql_pconnect(db_host, db_username, db_password)

@@ -10,26 +10,26 @@ class Theme_settings extends Theme {
 	function print_page() {
 		$this->print_header();
 ?>
-This is the index page for the configuration settings...
+<? echo _LANG_SETTINGS_HEADER1?>
 <p>
-It should get some nifty images to link to the various sections, but for now, we get:
+<? echo _LANG_SETTINGS_HEADER2?>
 <p>
 <a href="settings_mythweb.php">MythWeb</a>
 <p>
-<a href="settings_channels.php">Channels</a>
+<a href="settings_channels.php"><? echo _LANG_CHANNELS?></a>
 <p>
-<a href="settings_keys.php">Key Bindings</a>
+<a href="settings_keys.php"><? echo _LANG_KEY_BINDINGS?></a>
 <?php
 		$this->print_footer();
 	}
 
 	function print_menu_content() {
-			?>Configure: &nbsp; &nbsp;
+			?><?php echo _LANG_CONFIGURE?>: &nbsp; &nbsp;
 				<a href="settings_mythweb.php">MythWeb</a>
 				&nbsp; | &nbsp;
-				<a href="settings_channels.php">Channels</a>
+				<a href="settings_channels.php"><?php echo _LANG_CHANNELS?></a>
 				&nbsp; | &nbsp;
-				<a href="settings_keys.php">Key Bindings</a>
+				<a href="settings_keys.php"><?php echo _LANG_KEY_BINDINGS?></a>
 <?php
 	}
 

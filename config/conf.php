@@ -44,5 +44,9 @@
 
 // Date formats
 	define('generic_date', 'D, M j');
-	define('generic_time', 'h:i A')
+	define('generic_time', 'h:i A');
+
+// Language
+	define('default_language', 'English');
+
 ?>

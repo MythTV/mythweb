@@ -39,7 +39,7 @@ Please be warned that by altering this table without knowing what you are doing,
 	<td><?php echo htmlentities($channel['sourceid'])?></td>
 	<td><input type="text" size="3" name="channum_<?php echo $channel['chanid']?>" id="channum_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['channum'])?>"></td>
 	<td><input type="text" size="15" name="callsign_<?php echo $channel['chanid']?>" id="callsign_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['callsign'])?>"></td>
-	<td><input type="text" size="27" name="name_<?php echo $channel['chanid']?>" id="name_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['name'])?>"></td>
+	<td><input type="text" size="27" name="name_<?php echo $channel['chanid']?>" id="name_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['name'], ENT_COMPAT, "UTF-8")?>"></td>
 	<td><input type="text" size="3" name="freqid_<?php echo $channel['chanid']?>" id="freqid_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['freqid'])?>"></td>
 	<td><input type="text" size="3" name="finetune_<?php echo $channel['chanid']?>" id="finetune_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['finetune'])?>"></td>
 	<td><input type="text" size="3" name="videofilter_<?php echo $channel['chanid']?>" id="videofilter_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['videofilters'])?>"></td>

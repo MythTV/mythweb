@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recording_schedules.php                 Last Updated: 2004.02.07 (alden)
+	recording_schedules.php                 Last Updated: 2004.02.14 (xris)
 
 	This file defines a theme class for the all recordings section.
 	It must define one method.   documentation will be added someday.
@@ -55,9 +55,9 @@ if ($group_field == "") {
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 	<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-	<td><a href="recording_schedules.php?sortby=title">show</a></td>
-	<td><a href="recording_schedules.php?sortby=channum">station</a></td>
-	<td><a href="recording_schedules.php?sortby=type">type</a></td>
+	<td><a href="recording_schedules.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
+	<td><a href="recording_schedules.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
+	<td><a href="recording_schedules.php?sortby=type"><?php echo _LANG_TYPE?></a></td>
 </tr><?php
 	$row = 0;
 
@@ -89,47 +89,47 @@ if ($group_field == "") {
 			if (($show->type == 1) || ($show->type == 2) || ($show->type == 5)) {
 				$Footnotes[] .= "
 		<tr>
-			<td align=\"right\">Airtime:</td>
+ 			<td align=\"right\">"._LANG_AIRTIME.":</td>
 			<td>".date($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.date($_SESSION['time_format'], $show->endtime)."</td>
 		</tr>"
 			.(preg_match('/\\S/', $show->subtitle) ? "<tr>
-			<td align=\"right\">Episode:</td>
+ 			<td align=\"right\">"._LANG_SUBTITLE.":</td>
 			<td>$show->subtitle</td>
 		</tr>" : '')
 			.(preg_match('/\\S/', $show->description) ? "<tr>
-			<td align=\"right\" valign=\"top\">Description:</td>
+			<td align=\"right\" valign=\"top\">"._LANG_DESCRIPTION.":</td>
 			<td>".nl2br(wordwrap($show->description, 70))."</td>
 		</tr>" : '')
 			.(preg_match('/\\S/', $show->rating) ? "<tr>
-			<td align=\"right\" valign=\"top\">Rating:</td>
+ 			<td align=\"right\" valign=\"top\">"._LANG_RATING.":</td>
 			<td>$show->rating</td>
 		</tr>" : '');
 			}
 
 			$Footnotes[] .= "<tr>
-			<td align=\"right\">Type:</td>
+ 			<td align=\"right\">"._LANG_TYPE.":</td>
 			<td>$show->texttype</td>
 		</tr>"
 //		.($show->airdate > 0 ? "<tr>
-//			<td align=\"right\">Orig.&nbsp;Airdate:</td>
+//			<td align=\"right\">"._LANG_ORIG_AIRDATE.":</td>
 //			<td>$show->airdate</td>
 //		</tr>" : '')
 		.(preg_match('/\\S/', $show->category) ? "<tr>
-			<td align=\"right\">Category:</td>
+ 			<td align=\"right\">"._LANG_CATEGORY.":</td>
 			<td>$show->category</td>
 		</tr>" : '')
 		.($show->previouslyshown ? "<tr>
-			<td align=\"right\">Rerun:</td>
+ 			<td align=\"right\">"._LANG_RERUN.":</td>
 			<td>Yes</td>
 		</tr>" : '')
 		.($show->will_record ? "<tr>
-			<td align=\"right\">Schedule:</td>
-			<td>".($show->record_daily       ? "Always record on this channel at this time"
-					: ($show->record_weekly  ? "Always record on this channel at this time on this day of the week"
-					: ($show->record_once    ? "Will be recorded once"
-					: ($show->record_channel ? "Always record on this channel"
-					: ($show->record_findone ? "Record one showing of this program at any time"
-					: "Always record")))))."</td>
+ 			<td align=\"right\">"._LANG_SCHEDULE.":</td>
+ 			<td>".($show->record_daily       ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_DAY
+ 					: ($show->record_weekly  ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_WEEK
+ 					: ($show->record_once    ? _LANG_RECORD_ONLY_THIS_SHOWING
+ 					: ($show->record_channel ? _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_CHANNEL
+ 					: ($show->record_findone ? _LANG_RECORD_ONE_SHOWING_OF_THIS_PROGRAM_AT_ANY_TIME
+ 					: _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_ANY_CHANNEL)))))."</td>
 		</tr>" : '')
 		.($show->dupmethod > 0 ? "<tr>
 			<td align=\"right\">Dup Method:</td>
@@ -141,11 +141,11 @@ if ($group_field == "") {
 					: "")))))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->profile) ? "<tr>
-			<td align=\"right\">Profile:</td>
+ 			<td align=\"right\">"._LANG_PROFILE.":</td>
 			<td>$show->profile</td>
 		</tr>" : '')
 		.($show->recstatus ? "<tr>
-			<td align=\"right\">Notes:</td>
+ 			<td align=\"right\">"._LANG_NOTES.":</td>
 			<td>".$GLOBALS['RecStatus_Reasons'][$show->recstatus]."</td>
 		</tr>" : '')
 		."</table></td>
