@@ -50,7 +50,7 @@ class Theme_settings_channels extends Theme_settings {
     <td><input type="text" size="27" name="name_<?php echo $channel['chanid']?>" id="name_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['name'], ENT_COMPAT, 'UTF-8')?>"></td>
     <td><input type="text" size="3" name="freqid_<?php echo $channel['chanid']?>" id="freqid_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['freqid'])?>"></td>
     <td><input type="text" size="3" name="finetune_<?php echo $channel['chanid']?>" id="finetune_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['finetune'])?>"></td>
-    <td><input type="text" size="3" name="videofilter_<?php echo $channel['chanid']?>" id="videofilter_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['videofilters'])?>"></td>
+    <td><input type="text" size="3" name="videofilters_<?php echo $channel['chanid']?>" id="videofilters_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['videofilters'])?>"></td>
     <td><input type="text" size="6" name="brightness_<?php echo $channel['chanid']?>" id="brightness_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['brightness'])?>"></td>
     <td><input type="text" size="6" name="contrast_<?php echo $channel['chanid']?>" id="contrast_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['contrast'])?>"></td>
     <td><input type="text" size="6" name="colour_<?php echo $channel['chanid']?>" id="colour_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['colour'])?>"></td>
