@@ -11,7 +11,7 @@
     <field name="choice" type="digits?length=1" modal="true">
       <prompt>Press 1 to hear your message replayed</prompt>
       <prompt>Press 2 to erase the message and record another</prompt>
-      <prompt>Or press hash or hang up to leave the message<break time="4s"></prompt>
+      <prompt>Or press hash or hang up to leave the message<break time="4s"/></prompt>
     </field>
     <noinput>
       Goodbye
