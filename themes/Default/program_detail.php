@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2004.01.14 (xris)
+	program_detail.php                       Last Updated: 2004.02.04 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
