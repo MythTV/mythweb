@@ -80,18 +80,40 @@ class Theme {
                     <input id="search_submit" type="submit" class="submit" value="<?php echo t('Search') ?>">
                 </div>
                 <div id="search_options">
+                    <?php echo t('Search fields') ?>:<br />
+                    <span class="column">
                     <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>>
                         <a onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><?php echo t('Title') ?></a>
+                    </span>
+                    <span class="column">
                     <input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : ''?>></td>
                         <a onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><?php echo t('Subtitle') ?></a></td>
+                    </span>
+                    <span class="column">
                     <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : ''?>></td>
                         <a onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><?php echo t('Description') ?></a></td>
+                    </span>
+                    <br />
+                    <span class="column">
                     <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : ''?>></td>
                         <a onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><?php echo t('Category') ?></a></td>
+                    </span>
+                    <span class="column">
                     <input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : ''?>></td>
                         <a onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><?php echo t('Category Type') ?></a></td>
+                    </span>
+                    <hr/>
+                    <?php echo t('Search options') ?>:<br />
                     <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>></td>
                         <a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a></td>
+                    <hr/>
+                    <?php echo t('Search help') ?>:
+                    <dl>
+                        <dt><?php echo t('Search help: movie search') ?>:</dt>
+                        <dd><?php echo t('Search help: movie example') ?></d>
+                        <dt><?php echo t('Search help: regex search') ?>:</dt>
+                        <dd><?php echo t('Search help: regex example') ?></d>
+                    </dl>
                 </div>
             </form>
         </div>

@@ -53,18 +53,18 @@
     // Normal search is an OR search
         $joiner = ' OR ';
     // If it starts with a pair of stars, it's a movie rating query
-        if (preg_match('#(\\*+(1/2\b|0?\.5\b|-)?)\s*#', $search_str, $stars)) {
+        if (preg_match('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*#', $search_str, $stars)) {
             $starcount = substr_count($stars[1], '*') / 4.0;
             if (preg_match( "/1\\/2|\\.5|-/", $stars[1]))
                 $starcount += 0.125;
             $star_query = " AND program.stars >= $starcount";
         // Remove the stars from the search string so we can continue looking for other things
-            $search_str = preg_replace('#(\\*+(1/2\b|0?\.5\b|-)?)\s*#', '', $search_str);
+            $search_str = preg_replace('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*#', '', $search_str);
         }
     // Regex search?
-        if (preg_match('/^~/', $search_str)) {
+        if (preg_match('#^/(.+)/$#', $search_str, $match)) {
             $compare = ' REGEXP ';
-            $search = escape(preg_replace('/^~/', '', $search_str));
+            $search = escape($match[1]);
         }
         else
             $search = search_escape($search_str);
