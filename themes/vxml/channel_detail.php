@@ -2,8 +2,26 @@
 /***                                                                        ***\
 	channel_detail.php                        Last Updated: 2003.07.23 (xris)
 
-	This file defines a theme class for the channel detail section.
-	It must define one method.   documentation will be added someday.
+  For each show we print a block that looks like this; which reads the show
+  title whilst checking for * or # hit during the reading of the title.
+    
+    <form>
+      <field name="keyhit" type="digits?length=1" modal="true">
+        <prompt>6-30 pm Starsky and Hutch<break time="400ms"></prompt>
+      </field>
+      <filled>
+        <if cond="keyhit == #">
+          <submit next="channel_detail.php?...." method="get" />
+        <if cond="keyhit == *">
+          <submit next="program_detail.php?...." method="get" />
+        </if>
+      </filled>
+    </form>
+
+  If the calling parameter is set action=next or action=previous; then this just creates a 
+  jump to the programme details of the next programme after the indicated time; i.e.
+
+    <submit next="program_detail.php?...." method="get" />
 
 \***                                                                        ***/
 
@@ -14,31 +32,56 @@ class Theme_channel_detail extends Theme {
 		print_header:
 		This function prints the header portion of the page specific to the program listing
 	*/
-	function print_header($start_time, $end_time) {
+	function print_header() {
 		global $this_channel;
 ?>
 <vxml>
-  <form>
-    <field name="choice" type="digits?minlength=1;maxlength=2" modal="true">
-      <prompt>Channel <?=$this_channel->channum?></prompt><?
+  <prompt>Channel <?=$this_channel->channum?></prompt>
+  <prompt>Press star to select a program or hash to replay the list</prompt>
+<?
 	}
 
 
 	function print_page() {
-	// Print the main page header
 		global $this_channel;
-   	$this->print_header($list_starttime, $list_endtime);
+    $start_time = $_SESSION['list_time'];
 
 	// No search was performed, just return
 		if (!is_array($this_channel->programs))
 			return;
 
+  // Check for next/previous actions. These are returned from programme_detail to move back/forward.
+    if ($_GET['action'] == "next") {
+      foreach ($this_channel->programs as $show) {
+        if ($show->starttime > $start_time) {
+          ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$show->starttime?>" method="get" /></vxml><?
+          return;            
+        }
+      }
+      // No shows later; redo current show
+      ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$start_time?>" method="get" /></vxml><?
+    }
+
+  // Check for next/previous actions. These are returned from programme_detail to move back/forward.
+    if ($_GET['action'] == "previous") {
+      $prev_show = $this_channel->programs[0];
+      foreach ($this_channel->programs as $show) {
+        if ($show->starttime >= $start_time)
+        {
+          ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$prev_show->starttime?>" method="get" /></vxml><?
+          return;
+        }
+        $prev_show = $show;
+      }
+      // No shows later; redo current show
+      ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$start_time?>" method="get" /></vxml><?
+    }
+
+	// Print the main page header
+   	$this->print_header();
+
 	// List the shows
-		$this->print_shows_1();
-
-   	$this->print_mid_block();
-
-		$this->print_shows_2();
+		$this->print_shows_1($_SESSION['list_time']);
 
 	// Print the main page footer
    	$this->print_footer();
@@ -46,72 +89,54 @@ class Theme_channel_detail extends Theme {
 
 
 
-	/*
-		print_mid_block:
-	*/
-	function print_mid_block() {
-?> 
-      <prompt>Press hash twice to repeat the list or star twice to go back to the channel list</prompt> 
-    </field>
-    <noinput count="1">
-      I didn't hear anything
-      <reprompt/>
-    </noinput>
-    <noinput count="2">
-      I still didn't hear anything. Last chance
-      <reprompt/>
-    </noinput>
-    <filled>
-<?
-	}
-
-
 	function print_footer() {
 ?>
-      <elseif cond="choice == ##">
-        <reprompt/>
-      <elseif cond="choice == **">
+  <form>
+    <field name="keyhit" type="digits?length=1" modal="true">
+      <prompt>Press Hash to play the list again or star to pick another channel<break time="3s"></prompt>
+    </field>
+    <filled>
+      <if cond="keyhit == #">
+        <submit next="channel_detail.php?chanid=<?=$this_channel->chanid?>+time=<?=$_SESSION['list_time']?>" method="get" />
+      <elseif cond="keyhit == *">
         <submit next="program_listing.php" method="get" />
-      <else>
-        That is not a supported option
-        <reprompt/>
+      </elseif>
       </if>
     </filled>
   </form>
+  <prompt>Goodbye</prompt>
 </vxml>		
 <?
 	}
 
 
-	function print_shows_1() {
+	function print_shows_1($start_time) {
 		global $this_channel;
+		global $list_starttime;
 	// Display the results
 		$row = 0;
 		foreach ($this_channel->programs as $show) {
-	?>
-    
-<?php
+	?><?php
 	  $row++;
-		echo '      <prompt>Press '.$row.' for '.$show->title.'</prompt>';
+    if ($show->starttime + $show->length < $start_time)
+        continue;
+?>
+    <form>
+      <field name="keyhit" type="digits?length=1" modal="true">
+        <prompt><?=date('g:i A', $show->starttime)?> <?php echo $show->title; ?><break time="400ms"/></prompt>
+      </field>
+      <filled>
+        <if cond="keyhit == #">
+          <submit next="channel_detail.php?chanid=<?=$show->chanid?>+time=<?=$start_time?>" method="get" />
+        <elseif cond="keyhit == *">
+          <submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$show->starttime?>" method="get" />
+        </elseif>
+        </if>
+      </filled>
+    </form><?php
 		}
 	}
 
-
-	function print_shows_2() {
-		global $this_channel;
-	// Display the results
-		$row = 0;
-		foreach ($this_channel->programs as $show) {
-	  $row++;
-    if ($row > 1)
-        echo "      <else";
-    else
-        echo "      <";
-    ?>if cond="choice == <?=$row ?>">
-         <submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$show->starttime?>" method="get" />
-<?
-	}
-  }
 
 }
 

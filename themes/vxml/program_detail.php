@@ -38,11 +38,11 @@ class Theme_program_detail extends Theme {
     <form>
       <field name="choice" type="digits?length=1" modal="true">
         <prompt>Press 1 for programme details</prompt>
-        <prompt>Press 2 to not record this programme</prompt>
-        <prompt>Press 3 to record this programme once</prompt>
-        <prompt>Press 4 to record this timeslot daily</prompt>
-        <prompt>Press 5 to record this timeslot weekly</prompt>
+        <prompt>Press 2 for the next programme</prompt>
+        <prompt>Press 3 for the previous programme</prompt>
+        <prompt>Press 4 to <?=$this_program->will_record ? 'cancel recording of' : 'record'?> this programme</prompt>
         <prompt>Press Hash to hear these options again</prompt>
+        <prompt>Press Star to choose another channel<break time="2s"></prompt>
       </field>
       <noinput count="1">
         I didn't hear anything
@@ -54,17 +54,18 @@ class Theme_program_detail extends Theme {
       </noinput>
       <filled>
         <if cond="choice == 1">
-          List Programme Details not yet implemented
+          <?= $this_program->description ?>
+        <reprompt/>
         <elseif cond="choice == 2">
-          <submit next="program_detail.php?chanid=<?=$this_channel->chanid?>+starttime=<?=$this_program->starttime?>+record=never+profile=Default+recpriority=0+autoexpire=on+maxepisodes=+save=Update" method="get" />
-        <elseif cond="choice == 3">
-          <submit next="program_detail.php?chanid=<?=$this_channel->chanid?>+starttime=<?=$this_program->starttime?>+record=once+profile=Default+recpriority=0+autoexpire=on+maxepisodes=+save=Update" method="get" />
+          <submit next="channel_detail.php?chanid=<?=$this_program->chanid?>+time=<?=($this_program->starttime)?>+action=next" method="get" />
+        <elseif cond="choice == 3">                                          
+          <submit next="channel_detail.php?chanid=<?=$this_program->chanid?>+time=<?=($this_program->starttime)?>+action=previous" method="get" />
         <elseif cond="choice == 4">
-          <submit next="program_detail.php?chanid=<?=$this_channel->chanid?>+starttime=<?=$this_program->starttime?>+record=daily+profile=Default+recpriority=0+autoexpire=on+maxepisodes=+save=Update" method="get" />
-        <elseif cond="choice == 5">
-          <submit next="program_detail.php?chanid=<?=$this_channel->chanid?>+starttime=<?=$this_program->starttime?>+record=weekly+profile=Default+recpriority=0+autoexpire=on+maxepisodes=+save=Update" method="get" />
+          <submit next="program_detail.php?chanid=<?=$this_channel->chanid?>+starttime=<?=$this_program->starttime?>" namelist="record=<?=$this_program->will_record ? 'never' : 'once'?>+save=Update" method="post" />
         <elseif cond="choice == #">
           <reprompt/>
+        <elseif cond="choice == *">
+          <submit next="program_listing.php" method="get" />
         <else>
           That is not a supported option
           <reprompt/>
