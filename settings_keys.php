@@ -7,22 +7,26 @@
 // Initialize the script, database, etc.
     require_once "includes/init.php";
 
-    $usehost = "";
+// Reset keybindings?   (still need a way to get the backend to repopulate these)
+#    if ($_GET['RESET_KEYS']) {
+#        $result = mysql_query('DELETE FROM keybindings')
+#            or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
+#        backend_notify_changes();
+#    }
 
 // Save?
+    $usehost = "";
     if ($_POST['save']) {
-                foreach (array_keys($_POST) as $key) {
-            if (preg_match('/^jump:([\\w_\/]+):(\\w+)$/', $key, $matches))
-            {
+        foreach (array_keys($_POST) as $key) {
+            if (preg_match('/^jump:([\\w_\/]+):(\\w+)$/', $key, $matches)) {
                 list($match, $dest, $host) = $matches;
-                                $dest = str_replace("_", " ", $dest);
+                $dest = str_replace("_", " ", $dest);
                 $usehost = $host;
                 $query = 'UPDATE jumppoints SET keylist='.escape($_POST[$key]).' WHERE destination='.escape($dest).' AND hostname='.escape($host).';';
                 $result = mysql_query($query)
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
             }
-            else if (preg_match('/^key:([\\w_\/]+):(\\w+):(\\w+)$/', $key, $matches))
-            {
+            elseif (preg_match('/^key:([\\w_\/]+):(\\w+):(\\w+)$/', $key, $matches)) {
                 list($match, $context, $action, $host) = $matches;
                 $usehost = $host;
                 $context = str_replace("_", " ", $context);
@@ -30,22 +34,20 @@
                 $result = mysql_query($query)
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
             }
-
         }
     }
 
-        $result = mysql_query('SELECT hostname FROM jumppoints GROUP BY hostname ORDER BY hostname')
+    $result = mysql_query('SELECT hostname FROM jumppoints GROUP BY hostname ORDER BY hostname')
         or trigger_error('SQL Error: '.mysql_error(), FATAL);
     $Hosts = array();
-    while ($row = mysql_fetch_assoc($result))
-    {
+    while ($row = mysql_fetch_assoc($result)) {
         $Hosts[] = $row;
         if ($usehost == "")
             $usehost = $row['hostname'];
     }
     mysql_free_result($result);
 
-        if ($_GET['host'])
+    if ($_GET['host'])
         $usehost = $_GET['host'];
 
 // Load all of the jump points from the database
