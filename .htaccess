@@ -5,6 +5,8 @@ Require valid-user
 
 php_value safe_mode                     0
 
+php_value session.save_path             php_sessions
+
 php_value output_buffering              0
 php_value register_globals              0
 php_value magic_quotes_gpc              0

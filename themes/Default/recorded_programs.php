@@ -24,13 +24,13 @@ class Theme_recorded_programs extends Theme {
 //  by default, these will just submit, but if javascript is enabled, we want to
 //  require confirmation.
 	var files = new Array();
-<?	foreach ($All_Shows as $show) { ?>
-	files.push([<?=escape($show->title.': '.$show->subtitle)?>, <?=escape(urlencode($show->filename))?>]);
-<?	} ?>
+<?php	foreach ($All_Shows as $show) { ?>
+	files.push([<?php echo escape($show->title.': '.$show->subtitle)?>, <?php echo escape(urlencode($show->filename))?>]);
+<?php	} ?>
 
 	on_load['recorded_programs'] = fix_hrefs;
 	function fix_hrefs() {
-		for (i=0;i<<?=count($All_Shows)?>;i++) {
+		for (i=0;i<<?php echo count($All_Shows)?>;i++) {
 			get_element('delete_' + i).innerHTML = '<a onclick="confirm_delete('+i+')">Delete</a>';
 		}
 	}
@@ -49,7 +49,7 @@ class Theme_recorded_programs extends Theme {
 <tr>
 	<td>Show recordings:</td>
 	<td><select name="title" onchange="get_element('program_titles').submit()">
-		<option value="">All recordings</option><?
+		<option value="">All recordings</option><?php
 		global $Program_Titles;
 		foreach($Program_Titles as $title => $count) {
 			echo '<option value="'.$title.'"';
@@ -81,30 +81,35 @@ class Theme_recorded_programs extends Theme {
 	$row = 0;
 	foreach ($All_Shows as $show) {
 	?><tr class="recorded">
-<?php
+	<td><?php
 		if (show_recorded_pixmaps) {
 			generate_preview_pixmap($show);
-?>
-	<td><img id="<?php echo $show->filename?>" src="<?=pixmap_web_path?>/<?=basename($show->filename)?>.png" width="<?php echo pixmap_width?>" height="<?php echo pixmap_height?>"></td>
-<?php
+			if (file_exists(pixmap_local_path.'/'.basename($show->filename).'.png'))
+				echo '<img id="'.$show->filename."\" src=\"".pixmap_web_path.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'">';
+			else
+				echo '&nbsp;';
 		}
-?>
-	<td><?=$show->title?></td>
-	<td><?=$show->subtitle?></td>
-	<td><?=$show->description?></td>
-	<td><?=$show->channame?></td>
-	<td nowrap><?=date('D, M j,Y (g:i A)', $show->starttime)?></td>
-	<td nowrap><?=$show->length?></td>
-	<td nowrap><?=$show->filesize?></td>
+	?></td>
+	<td><?php echo $show->title?></td>
+	<td><?php echo $show->subtitle?></td>
+	<td><?php echo $show->description?></td>
+	<td><?php echo $show->channame?></td>
+	<td nowrap><?php echo date('D, M j,Y (g:i A)', $show->starttime)?></td>
+	<td nowrap><?php echo $show->length?></td>
+	<td nowrap><?php echo $show->filesize?></td>
+<?php	if ($show->endtime > time()) { ?>
+	<td width="5%">currently recording</td>
+<?php	} else { ?>
 	<td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-		<span id="delete_<?=$row?>"><a href="recorded_programs.php?delete=yes&file=<?=urlencode($show->filename)?>">Delete</a></span></td>
+		<span id="delete_<?php echo $row?>"><a href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete</a></span></td>
+<?php	} ?>
 </tr><?
 		$row++;
 	}
 ?>
 
 </table>
-<?
+<?php
 	echo '<p align="right" style="padding-right: 75px">'.disk_free.' out of '.disk_size.' used</p>';
 
 	// Print the main page footer

@@ -30,7 +30,6 @@
 	isset($_GET['title'])  or $_GET['title']  = $_POST['title'];
 	isset($_GET['title'])  or $_GET['title']  = $_SESSION['recorded_title'];
 
-
 // Parse the program list
 	$recordings = get_backend_rows('QUERY_RECORDINGS Delete');
 	$All_Shows      = array();
