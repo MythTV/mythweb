@@ -143,6 +143,9 @@ class Theme_mythmusic extends Theme {
         printf("<tr><td>No Tracks Available</p>\n");
     }
 
+	function print_menu_content() {
+		echo "MythMusic";
+	}
 
     function print_header($filterPlaylist,$filterArtist,$filterAlbum,$filterGenre) {
         $this->filterPlaylist=$filterPlaylist;
