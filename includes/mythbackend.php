@@ -108,8 +108,8 @@
         // Build the command string
         // The format should be <length + whitespace to 8 total bytes><data>
             $command = strlen($command) . str_repeat(' ', 8 - strlen(strlen($command))) . $command;
-        // If we don't get a response back in 4 seconds, something went wrong
-            socket_set_timeout($fp, 4);
+        // If we don't get a response back in 20 seconds, something went wrong
+            socket_set_timeout($fp, 20);
         // Send our command
             fputs ($fp, $command);
         // Did we send the close command?  Close the socket and set the file pointer to null - don't even bother waiting for a response
