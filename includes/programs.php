@@ -138,7 +138,7 @@
                             .' SUM(record.type = 2) > 0 AS record_daily,'
                             .' SUM(record.type = 1) > 0 AS record_once,'
                             .' IF(record.profile > 0, recordingprofiles.name, \'Default\') as profilename,'
-                            .' record.profile, record.recpriority, record.dupin, record.dupmethod, record.maxnewest, record.maxepisodes, record.autoexpire, record.startoffset, record.endoffset,';
+                            .' record.profile, record.recpriority, record.dupin, record.dupmethod, record.maxnewest, record.maxepisodes, record.autoexpire, record.startoffset, record.endoffset,record.recgroup,';
         }
         else {
             $record_table  = '';
@@ -153,8 +153,7 @@
                  .' UNIX_TIMESTAMP(program.endtime) AS endtime_unix,'
                  ." CONCAT(repeat($star_char, program.stars * $max_stars), IF((program.stars * $max_stars * 10) % 10, '&frac12;', '')) AS starstring,"
                  .' IFNULL(programrating.system, \'\') AS rater,'
-                 .' IFNULL(programrating.rating, \'\') AS rating,'
-                 .' record.recgroup'
+                 .' IFNULL(programrating.rating, \'\') AS rating'
                  .' FROM program LEFT JOIN programrating USING (chanid, starttime)'
                  .$record_table;
     // Only loading a single channel worth of information
