@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	errors.php                               Last Updated: 2003.07.23 (xris)
+	errors.php                               Last Updated: 2003.08.23 (xris)
 
 	alternate constants for user-invoked errors
 	changes error_reporting
@@ -54,7 +54,7 @@
 			}
 			$err .= "\n\n";
 		// Email the error to the website's error mailbox
-			if (strstr(Error_Email, '@') && ($errno == E_USER_WARNING || $errno == E_WARNING)) {
+			if (strstr(Error_Email, '@')) {
 				mail(Error_Email, "FATAL Error in $errfile, line $errline" , $err,
 					 'From:  PHP Error <php_errors@'.server_domain.">\n");
 			}
