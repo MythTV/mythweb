@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings_channels.php                    Last Updated: 2003.08.23 (xris)
+    settings_channels.php                    Last Updated: 2003.11.22 (xris)
 
 	mythtv channels settings
 \***                                                                        ***/
@@ -23,7 +23,7 @@
 									 .'contrast='.escape($_POST['contrast_'.$chanid])    .','
 									   .'colour='.escape($_POST['colour_'.$chanid])      .','
 										  .'hue='.escape($_POST['hue_'.$chanid])         .','
-										 .'rank='.escape($_POST['rank_'.$chanid]);
+								  .'recpriority='.escape($_POST['recpriority_'.$chanid]);
 		// next, the fields that need to have a value, so we won't change them if they were emptied
 			if ($_POST['channum_'.$chanid])
 				$query .= ',channum='.escape($_POST['channum_'.$chanid]);

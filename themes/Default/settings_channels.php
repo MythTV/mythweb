@@ -31,7 +31,7 @@ Please be warned that by altering this table without knowing what you are doing,
 	<td width="8%">contrast</td>
 	<td width="8%">colour</td>
 	<td width="8%">hue</td>
-	<td width="5%">rank</td>
+	<td width="5%">recpriority</td>
 </tr><?php
 		foreach ($Channels as $channel) {
 ?><tr class="settings" align="center">
@@ -46,7 +46,7 @@ Please be warned that by altering this table without knowing what you are doing,
 	<td><input type="text" size="6" name="contrast_<?php echo $channel['chanid']?>" id="contrast_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['contrast'])?>"></td>
 	<td><input type="text" size="6" name="colour_<?php echo $channel['chanid']?>" id="colour_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['colour'])?>"></td>
 	<td><input type="text" size="6" name="hue_<?php echo $channel['chanid']?>" id="hue_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['hue'])?>"></td>
-	<td><input type="text" size="2" name="rank_<?php echo $channel['chanid']?>" id="rank_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['rank'])?>"></td>
+	<td><input type="text" size="2" name="recpriority_<?php echo $channel['chanid']?>" id="recpriority_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['recpriority'])?>"></td>
 </tr><?php
 		}
 ?>

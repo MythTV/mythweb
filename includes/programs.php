@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.10.22 (xris)
+    programs.php                             Last Updated: 2003.11.22 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -88,7 +88,7 @@
 							.' SUM(record.type = 2) > 0 AS record_daily,'
 							.' SUM(record.type = 1) > 0 AS record_once,'
 							.' IF(record.profile > 0, recordingprofiles.name, \'Default\') as profilename,'
-							.' record.profile, /*record.rank,*/ record.recorddups, record.maxnewest, record.maxepisodes, record.autoexpire,';
+							.' record.profile, record.recpriority, record.recorddups, record.maxnewest, record.maxepisodes, record.autoexpire,';
 		}
 		else {
 			$record_table  = '';
@@ -204,7 +204,7 @@ class Program {
 	var $record_channel = false;
 	var $record_always  = false;
 	var $profile        = 0;
-	var $rank			= 0;
+	var $recpriority	= 0;
 	var $max_newest		= 0;
 	var $max_episodes	= 0;
 	var $auto_expire	= 0;
@@ -253,7 +253,7 @@ class Program {
 			#$this->sourceid    = $program_data[17];					#  -1
 			#$this->cardid      = $program_data[18];					#  -1
 			#$this->inputid     = $program_data[19];					#
-			$this->rank        = $program_data[20];					#
+			$this->recpriority = $program_data[20];					#
 			$this->suppressed  = $program_data[21];					#
 			$this->reason_suppressed = $program_data[22];			#
 		}
@@ -275,7 +275,7 @@ class Program {
 			$this->rating          = $program_data['rating'];
 			$this->profile         = $program_data['profile'];
 			$this->profilename     = $program_data['profilename'];
-			$this->rank            = $program_data['rank'];
+			$this->recpriority     = $program_data['recpriority'];
 			$this->recorddups      = $program_data['recorddups'];
 			$this->maxnewest       = $program_data['maxnewest'];
 			$this->maxepisodes     = $program_data['maxepisodes'];
@@ -334,10 +334,10 @@ class Program {
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type ,title, profile,rank,recorddups,maxnewest,maxepisodes,autoexpire)
+		$result = mysql_query('REPLACE INTO record (type ,title, profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire)
 																			VALUES (4,'.escape($this->title).','
 																				.escape($this->profile).','
-																				.escape($this->rank).','
+																				.escape($this->recpriority).','
 																				.escape($this->recorddups).','
 																				.escape($this->maxnewest).','
 																				.escape($this->maxepisodes).','
@@ -353,11 +353,11 @@ class Program {
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,title,chanid,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire)
+		$result = mysql_query('REPLACE INTO record (type,title,chanid,profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire)
 																		VALUES (3,'.escape($this->title).','
 																				.escape($this->chanid).','
 																				.escape($this->profile).','
-																				.escape($this->rank).','
+																				.escape($this->recpriority).','
 																				.escape($this->recorddups).','
 																				.escape($this->maxnewest).','
 																				.escape($this->maxepisodes).','
@@ -373,7 +373,7 @@ class Program {
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,startdate,starttime,enddate,endtime,title,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire)
+		$result = mysql_query('REPLACE INTO record (type,chanid,startdate,starttime,enddate,endtime,title,profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire)
 							VALUES (5,'	.escape($this->chanid) .','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
@@ -381,7 +381,7 @@ class Program {
 								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.escape($this->title)  .','
 								.escape($this->profile).','
-								.escape($this->rank).','
+								.escape($this->recpriority).','
 								.escape($this->recorddups).','
 								.escape($this->maxnewest).','
 								.escape($this->maxepisodes).','
@@ -397,13 +397,13 @@ class Program {
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,endtime,title,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire) VALUES (2,'
+		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,endtime,title,profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire) VALUES (2,'
 								.escape($this->chanid).','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.escape($this->title)  .','
 								.escape($this->profile).','
-								.escape($this->rank).','
+								.escape($this->recpriority).','
 								.escape($this->recorddups).','
 								.escape($this->maxnewest).','
 								.escape($this->maxepisodes).','
@@ -419,7 +419,7 @@ class Program {
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire) values (1,'
+		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire) values (1,'
 								.escape($this->chanid).','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
@@ -429,7 +429,7 @@ class Program {
 								.escape($this->subtitle).','
 								.escape($this->description).','
 								.escape($this->profile).','
-								.escape($this->rank).','
+								.escape($this->recpriority).','
 								.escape($this->recorddups).','
 								.escape($this->maxnewest).','
 								.escape($this->maxepisodes).','

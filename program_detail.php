@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	program_detail.php                      Last Updated: 2003.08.24 (xris)
+	program_detail.php                      Last Updated: 2003.11.22 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -27,8 +27,8 @@
 	if (isset($_GET['save'])) {
 		if (isset($_GET['profile']))
 			$this_program->profile = $_GET['profile'];
-		if (isset($_GET['rank']))
-			$this_program->rank = $_GET['rank'];
+		if (isset($_GET['recpriority']))
+			$this_program->recpriority = $_GET['recpriority'];
 		if (isset($_GET['maxepisodes']))
 			$this_program->maxepisodes=$_GET['maxepisodes'];
 		$this_program->recorddups = (isset($_GET['recorddups']) && $_GET['recorddups'] == "on") ? 1 : 0;
@@ -57,10 +57,10 @@
 		}
 	}
 	elseif (!$this_program->will_record) {
-		//Load default settings for rank, autoexpire etc
-		$rankresult = mysql_query("SELECT rank from channel where chanid=".escape($this_program->chanid));
-		while ($row = mysql_fetch_assoc($rankresult)) {
-			$this_program->rank = $row['rank'];
+		//Load default settings for recpriority, autoexpire etc
+		$recpriorityresult = mysql_query("SELECT recpriority from channel where chanid=".escape($this_program->chanid));
+		while ($row = mysql_fetch_assoc($recpriorityresult)) {
+			$this_program->recpriority = $row['recpriority'];
 		}
 		$autoexpire = mysql_query("SELECT data from settings where value='AutoExpireDefault'");
 		while ($row = mysql_fetch_assoc($autoexpire)) {

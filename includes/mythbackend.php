@@ -1,6 +1,6 @@
 <?php
 /***																		***\
-	mythbackend.php                          Last Updated: 2003.09.30 (xris)
+	mythbackend.php                          Last Updated: 2003.11.22 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -202,7 +202,7 @@
 					  .'-1'                           .backend_sep	// sourceid
 					  .'-1'                           .backend_sep	// cardid
 					  .'-1'                           .backend_sep	// inputid
-					  .' '                            .backend_sep	// rank
+					  .' '                            .backend_sep	// recpriority
 					  .' '                            .backend_sep	// norecord
 					  .' '                            .backend_sep	// recordid
 					  .' '                            .backend_sep	// rectype
