@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	utils.php                             Last Updated: 2004.04.12 (xris)
+	utils.php                                Last Updated: 2004.04.12 (xris)
 
 	utility routines used throughout mythweb
 \***                                                                        ***/
