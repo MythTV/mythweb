@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    schedule_manually.php                      Last Updated: 2005.02.06 (xris)
+    schedule_manually.php                      Last Updated: 2005.02.07 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -76,14 +76,14 @@
             else
                 $schedule->subtitle = $_POST['subtitle'];
         // Insert a blank program entry so the scheduler has something to match against
-           $result = mysql_query('REPLACE INTO program (chanid,starttime,endtime,title,subtitle,description,category) values ('
-                                        .escape($schedule->chanid)                 .','
-                                        .'FROM_UNIXTIME('.escape($start_timestamp).'),'
-                                        .'FROM_UNIXTIME('.escape($end_timestamp)  .'),'
-                                        .escape($schedule->title)                  .','
-                                        .escape($schedule->subtitle)               .','
-                                        .escape($schedule->description)            .','
-                                        .'"Manual recording"'                      .')')
+           $result = mysql_query('REPLACE INTO program (chanid,starttime,endtime,title,subtitle,description,category) VALUES ('
+                                        .escape($schedule->chanid)                    .','
+                                        .'FROM_UNIXTIME('.escape($schedule->starttime).'),'
+                                        .'FROM_UNIXTIME('.escape($schedule->endtime)  .'),'
+                                        .escape($schedule->title)                     .','
+                                        .escape($schedule->subtitle)                  .','
+                                        .escape($schedule->description)               .','
+                                        .'"Manual recording"'                         .')')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
         // Save the schedule
             $schedule->save($type);
