@@ -47,7 +47,6 @@
 			$recording =& new Recording($recording_data);
 			if ($recordid > 0) {
 				mysql_free_result($result);
-echo "returning with =" . $recording->will_record . "=" . $recording->type . "=<br>\n";
 				return $recording;
 			}
 			$these_recordings[] = &$recording;
