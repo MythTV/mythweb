@@ -1,8 +1,8 @@
 <vxml version="1.0">
-  <prompt>Hello. <break time="600ms"/> I am not at home at the moment.</prompt>
   <form>
     <field name="runmenu" type="digits?length=1" modal="true">
-      <prompt>Press hash for options or hold to leave a message</prompt>
+      <prompt>Hello. <break time="600ms"/> I am not at home at the moment.
+      Press hash for options or hold to leave a message<break time="2s"/></prompt>
     </field>
     <noinput>
       <submit next="voicemail.vxml" method="get" />
@@ -15,7 +15,7 @@
   </form>
   <form>
     <field name="pin" type="digits?length=5" modal="true">
-      <prompt>Enter a 5 digit password</prompt>
+      <prompt>Enter a 5 digit password<break time="3s"/></prompt>
     </field>
     <noinput count="1">
       I didn't get 5 digits, please try again.

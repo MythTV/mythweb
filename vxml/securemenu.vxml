@@ -2,8 +2,10 @@
   <prompt>Welcome to the secure menu</prompt>
   <form>
     <field name="menuchoice" type="digits?length=1" modal="true">
-      <prompt>Press 1 to hear the TV guide</prompt>
-      <prompt>Press 2 to hear the scheduled recordings</prompt>
+      <prompt>Press 1 for today's listings</prompt>
+      <prompt>Press 2 for whats on now</prompt>
+      <prompt>Press 4 for what on another day</prompt>
+      <prompt>Press 5 to listen to voicemails</prompt>
       <prompt>Press hash to hear this menu again</prompt>
     </field>
     <noinput count="1">
@@ -16,10 +18,18 @@
     </noinput>
     <filled>
       <if cond="menuchoice == 1">
-        TV Guide not yet implemented.
-        <reprompt/>
+        <submit next="../program_listing.php" method="get" />
       <elseif cond="menuchoice == 2">
-        List of scheduled recordings is not yet implemented.
+        Whats on now is not yet implemented.
+        <reprompt/>
+      <elseif cond="menuchoice == 3">
+        Listings later today are not yet implemented.
+        <reprompt/>
+      <elseif cond="menuchoice == 4">
+        Listings by day are not yet implemented.
+        <reprompt/>
+      <elseif cond="menuchoice == 5">
+        Listening to voicemails is not yet implemented.
         <reprompt/>
       <elseif cond="menuchoice == #">
         <reprompt/>
