@@ -8,59 +8,8 @@
 // Make sure the "Channels" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
     require_once 'includes/channels.php';
 
-//
-    $RecTypes = array(
-                        1 => t('rectype: once'),
-                        2 => t('rectype: daily'),
-                        3 => t('rectype: channel'),
-                        4 => t('rectype: always'),
-                        5 => t('rectype: weekly'),
-                        6 => t('rectype: findone'),
-                        7 => t('rectype: override'),
-                        8 => t('rectype: dontrec'),
-                     );
-
-/*
-    load_all_recordings:
-    loads all recording data for the specified time range into the $Channels array.
-    Set $single_recording to true if you only want information about recordings that
-    start exactly at $start_time (used by recording_detail.php)
-*/
-    function &load_all_recordings($recordid = 0) {
-        global $Channels;
-    // An array (that later gets converted to a string) containing the id's of channels we want to load
-        $these_channels = array();
-    // No channel data?  Load it
-        if (!is_array($Channels) || !count($Channels))
-            load_all_channels();
-
-    // Build the sql query, and execute it
-        $query = 'SELECT *, if(type=4,-1,chanid) as chanid, UNIX_TIMESTAMP(startdate)+TIME_TO_SEC(starttime) AS starttime_unix,'
-                .' UNIX_TIMESTAMP(enddate)+TIME_TO_SEC(endtime) AS endtime_unix '
-                .'FROM record ';
-        if ($recordid > 0)
-            $query .= " WHERE recordid = $recordid ";
-        $query .= 'ORDER BY title, subtitle, description, startdate, starttime';
-
-        $result = mysql_query($query)
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-    // Load in all of the recordings (if any?)
-        $these_recordings = array();
-        while ($recording_data = mysql_fetch_assoc($result)) {
-            $recording =& new Recording($recording_data);
-            if ($recordid > 0) {
-                mysql_free_result($result);
-                return $recording;
-            }
-            $these_recordings[] = &$recording;
-        }
-
-    // Cleanup
-        mysql_free_result($result);
-    // Just in case, return an array of all recordings found
-
-        return $these_recordings;
-    }
+// Make sure the recording schedule type data gets loaded
+    require_once 'includes/recording_schedules.php';
 
 //
 //  Recordings class
