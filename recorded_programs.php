@@ -45,21 +45,21 @@
         // Skip the offset
             if ($key === 'offset')  // WHY IN THE WORLD DOES 0 == 'offset'?!?!?  so we use ===
                 continue;
-        // Skip programs the user doesn't want to look at, but keep track of their names and how many episodes we have recorded
-            $Total_Programs++;
-            $Program_Titles[$record[0]]++;
-            if ($_GET['title'] && $_GET['title'] != $record[0])
-                continue;
         // Create a new program object
             $show = new Program($record);
         // Make sure this is a valid show
             if (!$show->chanid || $show->length < 1)
                 continue;
+        // Keep track of the total time
+            $Total_Time += $show->length;
+        // Skip programs the user doesn't want to look at, but keep track of their names and how many episodes we have recorded
+            $Total_Programs++;
+            $Program_Titles[$record[0]]++;
+            if ($_GET['title'] && $_GET['title'] != $record[0])
+                continue;
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$show->title]))
                 $Programs[$show->title] = array();
-        // Keep track of the total time
-            $Total_Time += $show->length;
         // Assign a reference to this show to the various arrays
             $All_Shows[]                         =& $show;
             $Programs[$show->title][]            =& $show;
