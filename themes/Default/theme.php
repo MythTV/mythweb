@@ -91,7 +91,7 @@ class Theme {
 				</tr>
 				<tr>
 					<td align="right" colspan=3>&nbsp; <a href="search.php">[advanced]</a></td>
-				<tr>	
+				<tr>
 				</table>
 				</form></td>
 
@@ -122,7 +122,9 @@ class Theme {
 				&nbsp; | &nbsp;
 				<a href="scheduled_recordings.php">Scheduled Recordings</a>
 				&nbsp; | &nbsp;
-				<a href="recorded_programs.php">Recorded Programs</a><?php
+				<a href="recorded_programs.php">Recorded Programs</a>
+				&nbsp; | &nbsp;
+				<a href="status.php">Backend Status</a><?php
 		# really should move the category_legend footnote to this section,
 		# so it doesn't render in other sections
 	}
