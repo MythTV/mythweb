@@ -151,8 +151,47 @@ class Theme_program_detail extends Theme {
 						}
 						?></select></td>
 				</tr><tr>
-					<td nowrap align="right">Record Duplicates?&nbsp;</td>
-					<td><input type="checkbox" class="radio" name="recorddups"<?php if ($this_program->recorddups) echo ' CHECKED' ?>></td>
+					<td nowrap align="right">Check For Duplicates In:&nbsp;</td>
+					<td><select align=right name="dupin"><?php
+							echo '<option value="1"';
+							if ($this_program->dupin == 1)
+								echo ' SELECTED';
+							echo '>Current Recordings</option>';
+							echo '<option value="2"';
+							if ($this_program->dupin == 2)
+								echo ' SELECTED';
+							echo '>Previous Recordings</option>';
+							echo '<option value="15"';
+							if (($this_program->dupin == 15) ||
+								($this_program->dupin == 0))
+								echo ' SELECTED';
+							echo '>All Recordings</option>';
+					   ?></select></td>
+				</tr><tr>
+					<td nowrap align="right">Duplicate Check Method:&nbsp;</td>
+					<td><select align=right name="dupmethod"><?php
+							echo '<option value="1"';
+							if ($this_program->dupmethod == 1)
+								echo ' SELECTED';
+							echo '>None</option>';
+							echo '<option value="2"';
+							if ($this_program->dupmethod == 2)
+								echo ' SELECTED';
+							echo '>Subtitle</option>';
+							echo '<option value="4"';
+							if ($this_program->dupmethod == 4)
+								echo ' SELECTED';
+							echo '>Description</option>';
+							echo '<option value="6"';
+							if (($this_program->dupmethod == 6) ||
+								($this_program->dupmethod == 0))
+								echo ' SELECTED';
+							echo '>Subtitle & Description</option>';
+							echo '<option value="22"';
+							if ($this_program->dupmethod == 22)
+								echo ' SELECTED';
+							echo '>Sub & Desc (Empty matches)</option>';
+					   ?></select></td>
 				</tr><tr>
 					<td nowrap align="right">Auto-expire Recordings?&nbsp;</td>
 					<td><input type="checkbox" class="radio" name="autoexpire" <?php if ($this_program->autoexpire) echo "CHECKED" ?>></td>

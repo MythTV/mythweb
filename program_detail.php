@@ -35,11 +35,12 @@
 			$this_program->recpriority = $_GET['recpriority'];
 		if (isset($_GET['maxepisodes']))
 			$this_program->maxepisodes=$_GET['maxepisodes'];
+		$this_program->dupin = isset($_GET['dupin']) ? $_GET['dupin'] : 15;
+		$this_program->dupmethod = isset($_GET['dupmethod']) ? $_GET['dupmethod'] : 6;
 		if (isset($_GET['preroll']))
 			$this_program->preroll=$_GET['preroll'];
 		if (isset($_GET['postroll']))
 			$this_program->postroll=$_GET['postroll'];
-		$this_program->recorddups = (isset($_GET['recorddups']) && $_GET['recorddups'] == "on") ? 1 : 0;
 		$this_program->autoexpire = (isset($_GET['autoexpire']) && $_GET['autoexpire'] == "on") ? 1 : 0;
 		$this_program->maxnewest  = (isset($_GET['maxnewest']) && $_GET['maxnewest'] == "on")   ? 1 : 0;
 		if (isset($_GET['recordid'])) {

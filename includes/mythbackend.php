@@ -110,7 +110,7 @@
         Check that we are speaking a version of the protocol that is compatible with the backend
 */
 	function check_proto_version($fp) {
-		$our_version = "2";
+		$our_version = "3";
 		$response = explode(backend_sep, backend_command2("MYTH_PROTO_VERSION " . $our_version, $fp));
 		if ($response[0] == "ACCEPT")
 			return;
@@ -135,8 +135,9 @@
 		$col = 0;
 		for($i = $offset; $i < count($recs); $i++) {
 			$rows[$row][$col] = $recs[$i];
-		// Every 29 fields (0 through 28) means a new row - please note that this changes between myth versions
-			if ($col == 28) {
+		// Every 32 fields (0 through 31) means a new row
+        // Please note that this changes between myth versions
+			if ($col == 31) {
 				$col = 0;
 				$row++;
 			}
@@ -230,11 +231,14 @@
 					  .' '                            .backend_sep	// recstatus
 					  .' '                            .backend_sep	// recordid
 					  .' '                            .backend_sep	// rectype
-					  .' '                            .backend_sep 	// recdups
+					  .'15'                           .backend_sep 	// dupin
+					  .'6'                            .backend_sep 	// dupmethod
 					  .unix2mythtime($show->starttime).backend_sep  // recstarttime
 					  .unix2mythtime($show->endtime)  .backend_sep 	// recendtime
 					  .' '                            .backend_sep	// repeat
-					  .' '				  .backend_sep; // program flags
+					  .' '                            .backend_sep  // program flags
+					  .' '                            .backend_sep	// recgroup
+					  .' '                            .backend_sep;	// commfree
 				$ret = backend_command($cmd);
 
 				$recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',

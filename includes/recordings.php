@@ -78,7 +78,8 @@ class Recording {
 	var $autoexpire;
 	var $maxepisodes;
 	var $maxnewest;
-	var $recorddups;
+	var $dupin;
+	var $dupmethod;
 	var $preroll;
 	var $postroll;
 
@@ -112,7 +113,8 @@ class Recording {
 			$this->autoexpire  = $recording_data['autoexpire'];
 			$this->maxepisodes = $recording_data['maxepisodes'];
 			$this->maxnewest   = $recording_data['maxnewest'];
-			$this->recorddups  = $recording_data['recorddups'];
+			$this->dupin       = $recording_data['dupin'];
+			$this->dupmethod   = $recording_data['dupmethod'];
 			$this->preroll     = $recording_data['preroll'];
 			$this->postroll    = $recording_data['postroll'];
 		} else {
@@ -132,7 +134,8 @@ class Recording {
 			$this->autoexpire  = $recording_data->autoexpire;
 			$this->maxepisodes = $recording_data->maxepisodes;
 			$this->maxnewest   = $recording_data->maxnewest;
-			$this->recorddups  = $recording_data->recorddups;
+			$this->dupin       = $recording_data->dupin;
+			$this->dupmethod   = $recording_data->dupmethod;
 			$this->preroll     = $recording_data->preroll;
 			$this->postroll    = $recording_data->postroll;
 		}
@@ -222,8 +225,9 @@ class Recording {
 						.escape($this->profile).', recpriority='
 						.escape($this->recpriority).', autoexpire='
 						.escape($this->autoexpire).', maxnewest='
-						.escape($this->maxnewest).', recorddups='
-						.escape($this->recorddups).' where recordid='
+						.escape($this->maxnewest).', dupin='
+						.escape($this->dupin).', dupmethod='
+						.escape($this->dupmethod).' where recordid='
 						.escape($this->recordid))
 				or trigger_error('SQL Error: '.mysql_error(), FATAL);
 
