@@ -67,6 +67,8 @@ class Theme {
 				<a href="mythmusic.php">MythMusic</a>
 				&nbsp; | &nbsp;
 				<a href="video.php">MythVideo</a>
+				&nbsp; | &nbsp;
+				<a href="settings.php">Settings</a>
 				<!--&nbsp; | &nbsp;
 				<a href="#">MythWeather</a>--></td>
 
