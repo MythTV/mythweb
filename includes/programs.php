@@ -196,6 +196,12 @@ class Program {
 	var $record_once    = false;
 	var $record_channel = false;
 	var $record_always  = false;
+	var $profile        = 0;
+	var $rank			= 0;
+	var $max_newest		= 0;
+	var $max_episodes	= 0;
+	var $auto_expire	= 0;
+
 	var $conflicting    = false;
 	var $recording      = false;
 	var $duplicate      = false;
@@ -337,18 +343,12 @@ class Program {
 		if ($this->record_always)
 			return;
 	// Wipe out any pre-existing settings for this program
-		$result = mysql_query('DELETE FROM record WHERE title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('INSERT INTO record (type ,title) VALUES (4,'.escape($this->title).')')
+		$result = mysql_query('REPLACE INTO record (type ,title) VALUES (4,'.escape($this->title).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record    = true;
-		$this->record_always  = true;
-		$this->record_channel = false;
-		$this->record_once    = false;
-		$this->record_daily   = false;
-		$this->record_weekly  = false;
+		$this->record_always = $this->will_record = true;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
@@ -358,26 +358,35 @@ class Program {
 		if ($this->record_channel)
 			return;
 	// Wipe out any pre-existing settings for this program
-		$result = mysql_query('DELETE FROM record WHERE type=4 AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type IN (1,2,3) AND chanid='.escape($this->chanid).' AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('INSERT INTO record (type,title,chanid) VALUES (3,'.escape($this->title).','
+		$result = mysql_query('REPLACE INTO record (type,title,chanid) VALUES (3,'.escape($this->title).','
 																				 .escape($this->chanid).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record    = true;
-		$this->record_always  = false;
-		$this->record_channel = true;
-		$this->record_once    = false;
-		$this->record_daily   = false;
-		$this->record_weekly  = false;
+		$this->record_channel = $this->will_record = true;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
 
 	function record_weekly() {
+	// Already set?  just return
+		if ($this->record_weekly)
+			return;
+	// Wipe out any pre-existing settings for this program
+		$this->record_never(false);
+	// Insert this recording choice into the database
+		$result = mysql_query('REPLACE INTO record (type,chanid,startdate,starttime,enddate,endtime,title,profile) VALUES (5,'
+								.escape($this->chanid) .','
+								.'FROM_UNIXTIME('.escape($this->starttime).'),'
+								.'FROM_UNIXTIME('.escape($this->starttime).'),'
+								.'FROM_UNIXTIME('.escape($this->endtime).'),'
+								.'FROM_UNIXTIME('.escape($this->endtime).'),'
+								.escape($this->title)  .','
+								.escape($this->profile).')')
+			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+	// Notify the backend of the changes
+		backend_notify_changes();
 	}
 
 	function record_daily() {
@@ -385,27 +394,17 @@ class Program {
 		if ($this->record_daily)
 			return;
 	// Wipe out any pre-existing settings for this program
-		$result = mysql_query('DELETE FROM record WHERE type=1 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND startdate=FROM_UNIXTIME('.escape($this->starttime).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=2 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=3 AND chanid='.escape($this->chanid).' AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=4 AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type, chanid, starttime, endtime, title) VALUES (2,'.escape($this->chanid).','
-																										.'FROM_UNIXTIME('.escape($this->starttime).'),'
-																										.'FROM_UNIXTIME('.escape($this->endtime).'),'
-																										.escape($this->title).')')
+		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,endtime,title,profile) VALUES (2,'
+								.escape($this->chanid).','
+								.'FROM_UNIXTIME('.escape($this->starttime).'),'
+								.'FROM_UNIXTIME('.escape($this->endtime).'),'
+								.escape($this->title)  .','
+								.escape($this->profile).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record    = true;
-		$this->record_always  = false;
-		$this->record_channel = false;
-		$this->record_once    = false;
-		$this->record_daily   = true;
-		$this->record_weekly  = false;
+		$this->record_daily = $this->will_record = true;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
@@ -415,16 +414,9 @@ class Program {
 		if ($this->record_once)
 			return;
 	// Wipe out any pre-existing settings for this program
-		$result = mysql_query('DELETE FROM record WHERE type=1 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND startdate=FROM_UNIXTIME('.escape($this->starttime).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=2 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=3 AND chanid='.escape($this->chanid).' AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=4 AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description) values (1,'
+		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile) values (1,'
 								.escape($this->chanid).','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
@@ -433,34 +425,24 @@ class Program {
 								.escape($this->title).','
 								.escape($this->subtitle).','
 								.escape($this->description).')')
+								.escape($this->profile).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record    = true;
-		$this->record_always  = false;
-		$this->record_channel = false;
-		$this->record_once    = true;
-		$this->record_daily   = false;
-		$this->record_weekly  = false;
+		$this->record_once = $this->will_record = true;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
 
-	function record_never() {
+	function record_never($notify = true) {
 	// Already set?  just return
-		if (!$this->will_record)
+		if ($notify && !$this->will_record)
 			return;
 	// Wipe out any pre-existing settings for this program
-		$result = mysql_query('DELETE FROM record WHERE type=1 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND startdate=FROM_UNIXTIME('.escape($this->starttime).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=2 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).')')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=3 AND chanid='.escape($this->chanid).' AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		$result = mysql_query('DELETE FROM record WHERE type=4 AND title='.escape($this->title))
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Tell mythfrontend that something has changed
-		$result = mysql_query('UPDATE settings SET data="yes" WHERE value="RecordChanged"')
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+		$result = mysql_query('DELETE FROM record WHERE (type=1 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND startdate=FROM_UNIXTIME('.escape($this->starttime).'))'
+												  .' OR (type=2 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).'))'
+												  .' OR (type=3 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).')'
+												  .' OR (type=4 AND title='.escape($this->title).')'
+												  .' OR (type=5 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND DAYOFWEEK(startdate)='.escape(date('w', $this->starttime)+1).')');
 	// Clean up the program variable
 		$this->will_record    = false;
 		$this->record_always  = false;
@@ -469,7 +451,8 @@ class Program {
 		$this->record_daily   = false;
 		$this->record_weekly  = false;
 	// Notify the backend of the changes
-		backend_notify_changes();
+		if ($notify)
+			backend_notify_changes();
 	}
 
 	function category_class() {
