@@ -69,7 +69,7 @@
 		}
 	// If there are recordings, we need to grab that info, too - if there aren't, this query info will interfere with the query
 		if ($num_recordings > 0) {
-			$record_table  = ', record';
+			$record_table  = ', record LEFT JOIN recordingprofiles ON record.profile=recordingprofiles.id';
 			$record_values = ' SUM(record.type = 5 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'      record.starttime = SEC_TO_TIME(time_to_sec(program.starttime)) AND '
 							.'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime))>0 as record_weekly, '
@@ -80,7 +80,9 @@
 							.'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) > 0 AS record_daily, '
 							.' SUM(record.type = 1 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-							.'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))) > 0 AS record_once,';
+							.'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))) > 0 AS record_once,'
+							.'record.profile, record.rank, record.recorddups, record.maxnewest, record.maxepisodes, record.autoexpire, '
+							.'IF(recordingprofiles.name > 0, recordingprofiles.name, \'Default\') as profilename, ';
 		}
 		else {
 			$record_table  = '';
@@ -212,29 +214,13 @@ class Program {
 	function Program($program_data) {
 	// This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
 		if (!isset($program_data['chanid']) && isset($program_data[0])) {
-			$this->title       = $program_data[0];					# program name/title
-			$this->subtitle    = $program_data[1];					# episode name
-			$this->description = $program_data[2];					# episode description
-			$this->category    = $program_data[3];					#
+		// Grab some initial data so we can see if extra information is needed
 			$this->chanid      = $program_data[4];					# mysql chanid
-			$channum           = $program_data[5];					# channel number
-			$callsign          = $program_data[6];					# callsign (eg. FOOD or SCIFI)
-			$channame          = $program_data[7];					# Channel 35 FOOD
 			$this->filename    = $program_data[8];					# filename
 			$fs_high           = $program_data[9];					# high-word of file size
 			$fs_low            = $program_data[10];					# low-word of file size
 			$this->starttime   = myth2unixtime($program_data[11]);	# show start-time in myth time format (eg. 2003-06-28T06:30:00)
 			$this->endtime     = myth2unixtime($program_data[12]);	# show end-time in myth time format (eg. 2003-06-28T06:30:00)
-			$this->conflicting = $program_data[13] ? true : false;	# conflicts with another scheduled recording?
-			$this->recording   = $program_data[14] ? true : false;	# scheduled to record?
-			$this->duplicate   = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
-			$this->hostname    = $program_data[16];					#  myth
-			#$this->sourceid    = $program_data[17];				#  -1
-			#$this->cardid      = $program_data[18];				#  -1
-			#$this->inputid     = $program_data[19];				#
-			#$this->rank        = $program_data[20];				#
-			#$this->suppressed  = $program_data[21];				#
-			#$this->reason_suppressed = $program_data[22];			#
 		// Is this a previously-recorded program?  Calculate the filesize
 			if (preg_match('/\\d+_\\d+/', $this->filename)) {
 				$this->channame = $channame;
@@ -243,20 +229,27 @@ class Program {
 		// Ah, a scheduled recording - let's load more information about it, to be parsed in below
 			elseif ($this->chanid) {
 				unset($this->filename);
-				$program_data = load_one_program($this->starttime, $this->chanid);
-			// Load data that wasn't given by the backend
-				$this->stars           = $program_data['stars'];
-				$this->previouslyshown = $program_data['previouslyshown'];
-				$this->starstring      = $program_data['starstring'];
-				$this->rater           = $program_data['rater'];
-				$this->rating          = $program_data['rating'];
-				$this->record_always   = $program_data->record_always;
-				$this->record_channel  = $program_data->record_channel;
-				$this->record_once     = $program_data->record_once;
-				$this->record_daily    = $program_data->record_daily;
-				$this->record_weekly   = $program_data->record_weekly;
-				$this->will_record     = $program_data->will_record;
+			// Redefine this object - we won't need any filesize information because this isn't a recorded program
+				$this = load_one_program($this->starttime, $this->chanid);
 			}
+		// Load the remaining info we got from mythbackend
+			$this->title       = $program_data[0];					# program name/title
+			$this->subtitle    = $program_data[1];					# episode name
+			$this->description = $program_data[2];					# episode description
+			$this->category    = $program_data[3];					#
+			#$channum           = $program_data[5];					# channel number
+			#$callsign          = $program_data[6];					# callsign (eg. FOOD or SCIFI)
+			#$channame          = $program_data[7];					# Channel 35 FOOD
+			$this->conflicting = $program_data[13] ? true : false;	# conflicts with another scheduled recording?
+			$this->recording   = $program_data[14] ? true : false;	# scheduled to record?
+			$this->duplicate   = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
+			$this->hostname    = $program_data[16];					#  myth
+			#$this->sourceid    = $program_data[17];					#  -1
+			#$this->cardid      = $program_data[18];					#  -1
+			#$this->inputid     = $program_data[19];					#
+			$this->rank        = $program_data[20];					#
+			$this->suppressed  = $program_data[21];					#
+			$this->reason_suppressed = $program_data[22];			#
 		}
 	// SQL data
 		else {
@@ -274,7 +267,13 @@ class Program {
 			$this->starstring      = $program_data['starstring'];
 			$this->rater           = $program_data['rater'];
 			$this->rating          = $program_data['rating'];
-
+			$this->profile         = $program_data['profile'];
+			$this->profilename     = $program_data['profilename'];
+			$this->rank            = $program_data['rank'];
+			$this->recorddups      = $program_data['recorddups'];
+			$this->maxnewest       = $program_data['maxnewest'];
+			$this->maxepisodes     = $program_data['maxepisodes'];
+			$this->autoexpire      = $program_data['autoexpire'];
 		// Check to see if there is any additional data from mythbackend about this program
 			global $Pending_Programs;
 			load_pending();
@@ -300,41 +299,10 @@ class Program {
 									  || $this->record_once
 									  || $this->record_channel
 									  || $this->record_always ) ? true : false;
-		// something from the original mythweb - need to figure out what's up with this
-		#	$myprog->whenRecord += $line["record_once"]<<1;
-		#	$myprog->whenRecord += $line["record_daily"]<<2;
-		#	$myprog->whenRecord += $line["record_channel"]<<3;
-		#	$myprog->whenRecord += $line["record_always"]<<4;
-		#	$myprog->whenRecord += $line["record_weekly"]<<5;
 		}
-	// Get data for recordings
-		$query = 'SELECT * from record where title = '.escape($this->title).'';
-		$result = mysql_query($query)
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-		while ($record_data = mysql_fetch_assoc($result)) {
-			$this->profile         = $record_data['profile'];
-			$this->rank            = $record_data['rank'];
-			$this->recorddups      = $record_data['recorddups'];
-			$this->maxnewest       = $record_data['maxnewest'];
-			$this->maxepisodes     = $record_data['maxepisodes'];
-			$this->autoexpire      = $record_data['autoexpire'];
-		//And get the name of the profile
-			if ($this->profile == 0)
-				$this->profilename = "Default";
-			else {
-				$profilequery = 'SELECT name from recordingprofiles where id = '.$this->profile.'';
-				$profileresult = mysql_query($profilequery)
-					or trigger_error('SQL Error: '.mysql_error(), FATAL);
-				while ($profile_data = mysql_fetch_assoc($profileresult)) {
-					$this->profilename         = $profile_data['name'];
-				}
-			}
-		}
-
-
 
 	// Do we have a chanid?  Load some info about it
-		if ($this->chanid) {
+		if ($this->chanid && !isset($this->channel)) {
 		// No channel data?  Load it
 			global $Channels;
 			if (!is_array($Channels) || !count($Channels))
