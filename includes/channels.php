@@ -18,7 +18,7 @@
     function load_all_channels() {
         global $Channels;
         $Channels = array();
-        $result = mysql_query('SELECT * FROM channel ORDER BY (channum + 0), chanid')
+        $result = mysql_query('SELECT * FROM channel GROUP BY callsign ORDER BY (channum + 0), chanid')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
         while ($channel_data = mysql_fetch_assoc($result))  {
             $Channels[$channel_data['chanid']] = new Channel($channel_data);
