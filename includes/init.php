@@ -40,9 +40,9 @@
 		}
 	}
 
-// Start the session
+// Start the session, and set the cookie to expire in one year
 	session_name('mythweb_id');
-	session_set_cookie_params(0, '/', server_domain);
+	session_set_cookie_params(60 * 60 * 24 * 355, '/', server_domain);
 	session_start();
 
 // Connect to the database, or restore a persistent connection

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2003.08.08 (xris)
+    sorting.php                              Last Updated: 2003.08.11 (xris)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -76,6 +76,10 @@
 
 	function by_subtitle(&$a, &$b) {
 		return strcasecmp($a->subtitle, $b->subtitle);
+	}
+
+	function by_description(&$a, &$b) {
+		return strcasecmp($a->description, $b->description);
 	}
 
 	function by_channum(&$a, &$b) {
