@@ -31,6 +31,10 @@
 // Email address to which php and database errors are mailed to
     define('Error_Email', 'php_errors@'.preg_replace('/.*?\b([\w\-]+\.[\w\-]+)$/', '$1', server_domain));
 
+// For the "movies" search -- set this to the word your listings provider uses to
+//   describe movies/films/peliculas/etc.
+    define('movie_word', 'movie');
+
 /***
     You probably don't need to edit anything below here, but the variables are
     provided for your convenience.
@@ -48,9 +52,6 @@
 
 // Path to the mythvideo "covers" directory
     define('video_img_path', '');
-
-// Movie word (if you like to see "Film" instead of "Movie")
-    define('movie_word', 'Movie');
 
 // video_url is normally determined automatically (a local link to video_dir for
 //   Linux/MacOS, and a myth:// URL for windows machines), but you can override
