@@ -185,10 +185,10 @@ $L = array(
     'Recording profiles' => 'Inspelningsprofiler',
 // themes/.../recording_schedules.php
     'Any'                                       => 'Alla',
-    'No recording schedules have been defined.' => '',
-    'channel'                                   => '',
-    'profile'                                   => 'Profil',
-    'type'                                      => 'Typ',
+    'No recording schedules have been defined.' => 'Inga schemalagda inspelningar',
+    'channel'                                   => 'kanal',
+    'profile'                                   => 'profil',
+    'type'                                      => 'typ',
 // themes/.../scheduled_recordings.php
     'Activate'      => 'Aktivera',
     'Commands'      => 'Kommando',
