@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.03.05 (xris)
+    programs.php                             Last Updated: 2004.03.28 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -395,7 +395,10 @@ class Program {
 		}
 
 	// Calculate the duration
-		$this->length = $this->recendts - $this->recstartts;
+		if ($this->recendts)
+			$this->length = $this->recendts - $this->recstartts;
+		else
+			$this->length = $this->endtime - $this->starttime;
 
 	// Find out which css category this program falls into
 		if ($this->chanid != "")
