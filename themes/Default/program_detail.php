@@ -114,6 +114,11 @@ class Theme_program_detail extends Theme {
 					$this_program->record_daily ? ' CHECKED' : ''?>></input>
 					<a>Record this program in this timeslot every day.</a>
 					</p>
+				<p onclick="get_element('record_weekly').checked=true;">
+					<input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?=
+					$this_program->record_weekly ? ' CHECKED' : ''?>></input>
+					<a>Record this program in this timeslot every week.</a>
+					</p>
 				<p onclick="get_element('record_channel').checked=true;">
 					<input type="radio" class="radio" name="record" value="channel" id="record_channel"<?=
 					$this_program->record_channel ? ' CHECKED' : ''?>></input>

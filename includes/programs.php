@@ -70,7 +70,10 @@
 	// If there are recordings, we need to grab that info, too - if there aren't, this query info will interfere with the query
 		if ($num_recordings > 0) {
 			$record_table  = ', record';
-			$record_values = ' SUM(record.type = 4 AND program.title = record.title) > 0 AS record_always, '
+			$record_values = ' SUM(record.type = 5 AND program.title = record.title AND record.chanid = program.chanid AND '
+							.'      record.starttime = SEC_TO_TIME(time_to_sec(program.starttime)) AND '
+							.'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime))>0 as record_weekly, '
+							.' SUM(record.type = 4 AND program.title = record.title) > 0 AS record_always, '
 							.' SUM(record.type = 3 AND program.title = record.title AND record.chanid = program.chanid) > 0 AS record_channel, '
 							.' SUM(record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
@@ -301,6 +304,12 @@ class Program {
 									  || $this->record_once
 									  || $this->record_channel
 									  || $this->record_always ) ? true : false;
+		// something from the original mythweb - need to figure out what's up with this
+		#	$myprog->whenRecord += $line["record_once"]<<1;
+		#	$myprog->whenRecord += $line["record_daily"]<<2;
+		#	$myprog->whenRecord += $line["record_channel"]<<3;
+		#	$myprog->whenRecord += $line["record_always"]<<4;
+		#	$myprog->whenRecord += $line["record_weekly"]<<5;
 		}
 
 	// Do we have a chanid?  Load some info about it
@@ -385,6 +394,8 @@ class Program {
 								.escape($this->title)  .','
 								.escape($this->profile).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+	// Clean up the program variable
+		$this->record_weekly = $this->will_record = true;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
