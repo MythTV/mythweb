@@ -151,10 +151,9 @@ if ($group_field == "") {
 <?php   }
 
         if ($_SESSION['recorded_descunder'])
-            echo("</tr><tr class=\"recorded\">\n\t<td colspan=\"6\">".$show->description."</td>\n</tr>");
+            echo("</tr><tr class=\"recorded\">\n\t<td colspan=\"6\">".$show->description."</td>\n");
         $prev_group = $cur_group;
         $row++;
-    }
 ?>
 </tr><tr class="recorded">
     <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 6 : 7 ?>" align="center">
@@ -169,6 +168,9 @@ if ($group_field == "") {
         has bookmark:&nbsp;
             <b><?php echo $show->bookmark ? 'Yes' : 'No' ?></b>
         </td>
+<?php
+    }
+?>
 </table>
 <?php
     echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.' '.nice_filesize(disk_used)._LANG_OUT_OF.nice_filesize(disk_size).'</p>';
