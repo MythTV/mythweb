@@ -64,7 +64,6 @@
 	// Load some information about the master backend
 		$host = get_backend_setting('MasterServerIP');
 		$port = get_backend_setting('MasterServerPort');
-                $host = "127.0.0.1";
 		if (!$host || !$port)
 			trigger_error("MasterServerIP or MasterServerPort not found! You man need to check your settings.php file or re-run setup mythtv's setup", FATAL);
 
