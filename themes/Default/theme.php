@@ -164,7 +164,7 @@ class Theme {
     foreach ($Categories as $cat => $details) {
         if ($count++ % 3 == 0)
             echo "\n\t\t</tr><tr>\n";
-        echo "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".htmlentities($details[0])."</b></td>\n";
+        echo "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".htmlentities($details[0], ENT_COMPAT, 'UTF-8')."</b></td>\n";
     }
         ?>
         </tr>

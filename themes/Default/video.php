@@ -49,7 +49,7 @@ function newWindow(newContent)
         else
             echo '&nbsp;';
     ?></td>
-    <td><?php echo '<a href="'.$show->url.'">'.htmlentities($show->title).'</a>'?></td>
+    <td><?php echo '<a href="'.$show->url.'">'.htmlentities($show->title, ENT_COMPAT, 'UTF-8').'</a>'?></td>
     <td><?php echo $show->director?></td>
     <td><?php echo $show->plot?></td>
     <td><?php echo $show->rating?></td>

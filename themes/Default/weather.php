@@ -41,7 +41,7 @@ class Theme_weather extends Theme {
 						<td style="text-align: right;"><?php echo $site->UV . " (";
 						if($site->UV < 3) echo t('UV Minimal');
 							else if($site->UV < 6) echo t('UV Moderate');
-							else if($site->UV < 8) eccho t('UV High');
+							else if($site->UV < 8) echo t('UV High');
 							else echo t('UV Extreme');
 						 ?>)</td></tr>
 				</table>
