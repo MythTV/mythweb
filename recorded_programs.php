@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2005.02.09 (xris)
+    recorded_programs.php                    Last Updated: 2005.02.27 (xris)
 
     view and manipulate recorded programs.
 \***                                                                        ***/
@@ -120,8 +120,8 @@
     define(disk_used, $disk_used * 1024 * 1024);
 
 // Try to create a symlink to video_dir if it doesn't exist
-    if (!file_exists(video_dir) && $All_Shows[0] && $All_Shows[0]->filename)
-        symlink(dirname($All_Shows[0]->filename), video_dir);
+    if (!file_exists(preg_replace('#/+$#', '', video_dir)) && $All_Shows[0] && $All_Shows[0]->filename)
+        @symlink(dirname($All_Shows[0]->filename), video_dir);
 
 // Load the class for this page
     require_once theme_dir.'recorded_programs.php';
