@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2003.08.22 (xris)
+	program_detail.php                       Last Updated: 2003.10.16 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
@@ -145,7 +145,7 @@ class Theme_program_detail extends Theme {
 				</tr><tr>
 					<td nowrap align="right">Rank:&nbsp;</td>
 					<td><select align=right name="rank"><?php
-						for($rankcount=25;$rankcount>=-25;--$rankcount) {
+						for($rankcount=99;$rankcount>=-99;--$rankcount) {
 							echo '<option value="'.$rankcount.'"';
 							if ($this_program->rank == $rankcount)
 								echo ' SELECTED';

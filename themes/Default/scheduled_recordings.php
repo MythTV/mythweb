@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2003.08.05 (xris)
+	scheduled_recordings.php                    Last Updated: 2003.10.16 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.
@@ -67,15 +67,15 @@ class Theme_scheduled_recordings extends Theme {
 			<td align=\"right\">Program:</td>
 			<td>$show->title</td>
 		</tr>"
-		.(strlen($show->subtitle) > 0 ? "<tr>
+		.(preg_match('/\\S/', $show->subtitle) ? "<tr>
 			<td align=\"right\">Episode:</td>
 			<td>$show->subtitle</td>
 		</tr>" : '')
-		.(strlen($show->description) > 0 ? "<tr>
+		.(preg_match('/\\S/', $show->description) ? "<tr>
 			<td align=\"right\" valign=\"top\">Description:</td>
 			<td>$show->description</td>
 		</tr>" : '')
-		.(strlen($show->rating) > 0 ? "<tr>
+		.(preg_match('/\\S/', $show->rating) ? "<tr>
 			<td align=\"right\" valign=\"top\">Rating:</td>
 			<td>$show->rating</td>
 		</tr>" : '')
@@ -83,7 +83,7 @@ class Theme_scheduled_recordings extends Theme {
 			<td align=\"right\">Orig.&nbsp;Airdate:</td>
 			<td>$show->airdate</td>
 		</tr>" : '')
-		.(strlen($show->category) > 0 ? "<tr>
+		.(preg_match('/\\S/', $show->category) ? "<tr>
 			<td align=\"right\">Category:</td>
 			<td>$show->category</td>
 		</tr>" : '')
@@ -99,7 +99,7 @@ class Theme_scheduled_recordings extends Theme {
 					: ($show->record_channel ? "Always record on this channel"
 					: "Always record"))))."</td>
 		</tr>" : '')
-		.(strlen($show->profile) > 0 ? "<tr>
+		.(preg_match('/\\S/', $show->profile) ? "<tr>
 			<td align=\"right\">Profile:</td>
 			<td>$show->profile</td>
 		</tr>" : '')
