@@ -265,6 +265,11 @@ class Program {
     var $profile        = 0;
     var $max_newest     = 0;
     var $max_episodes   = 0;
+
+    var $has_commflag   = 0;
+    var $has_cutlist    = 0;
+    var $is_editing     = 0;
+    var $bookmark       = 0;
     var $auto_expire    = 0;
 
     var $conflicting    = false;
@@ -327,13 +332,18 @@ class Program {
             $this->recstartts  = myth2unixtime($program_data[26]);                  # ACTUAL start time
             $this->recendts    = myth2unixtime($program_data[27]);                  # ACTUAL end time
             #$this->repeat      = $program_data[28];
-            #$this->progflags  = $program_data[29];
+            $progflags         = $program_data[29];
             #$this->recgroup    = $program_data[30];
             #$this->commfree    = $program_data[31];
             #$this->outputfilters = $program_data[32];
             $this->seriesid     = $program_data[33];
             $this->programid    = $program_data[34];
-
+        // Assign the program flags
+            $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
+            $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02
+            $this->auto_expire  = ($progflags & 0x04) ? true : false;    // FL_AUTOEXP   = 0x04
+            $this->is_editing   = ($progflags & 0x08) ? true : false;    // FL_EDITING   = 0x08
+            $this->bookmark     = ($progflags & 0x10) ? true : false;    // FL_BOOKMARK  = 0x10
         }
     // SQL data
         else {
