@@ -117,14 +117,19 @@ if ($group_field == "") {
 	if ($group_field != "")
 		echo "\t<td class=\"list\">&nbsp;</td>\n";
 	if (show_recorded_pixmaps) {
-			echo "\t<td>";
-			generate_preview_pixmap($show);
-			if (file_exists(image_cache.'/'.basename($show->filename).'.png'))
-				echo '<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'">';
-			else
-				echo '&nbsp;';
-			echo "</td>\n";
+		echo "\t<td>";
+		generate_preview_pixmap($show);
+		if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
+			if (file_exists(video_dir.'/'.basename($show->filename)))
+				echo '<a href="'.video_dir.'/'.basename($show->filename).'">';
+			echo '<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">';
+			if (file_exists(video_dir.'/'.basename($show->filename)))
+				echo '</a>';
 		}
+		else
+			echo '&nbsp;';
+		echo "</td>\n";
+	}
 	?>
 	<td><?php echo $show->title?></td>
 	<td><?php echo $show->subtitle?></td>

@@ -95,6 +95,10 @@
 	define(disk_size, $disk_size * 1024 * 1024);
 	define(disk_used, $disk_used * 1024 * 1024);
 
+// Try to create a symlink to video_dir if it doesn't exist
+	if (!file_exists(video_dir) && $All_Shows[0] && $All_Shows[0]->filename)
+		symlink(dirname($All_Shows[0]->filename), video_dir);
+
 // Load the class for this page
 	require_once theme_dir.'recorded_programs.php';
 

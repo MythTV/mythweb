@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2003.12.19 (xris)
+	conf.php                                  Last Updated: 2004.02.05 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -33,12 +33,15 @@
 // Path to the image cache directory
 	define('image_cache', 'image_cache');
 
+// Local (web-friendly) path to the mythtv video dir (use a symlink to the real one - one will be auto-created if it can be)
+	define('video_dir', 'video_dir');
+
 // Path to the mythvideo "covers" directory
 	define('video_img_path', '');
 
 // Movie word
 	define('movie_word', 'Movie');
-	
+
 // Date formats
 	define('generic_date', 'D, M j');
 	define('generic_time', 'h:i A')
