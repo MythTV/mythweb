@@ -7,7 +7,7 @@
     
     <form>
       <field name="keyhit" type="digits?length=1" modal="true">
-        <prompt>6-30 pm Starsky and Hutch<break time="400ms"></prompt>
+        <prompt>6-30 pm Starsky and Hutch<break time="400ms"/></prompt>
       </field>
       <filled>
         <if cond="keyhit == #">
@@ -93,7 +93,7 @@ class Theme_channel_detail extends Theme {
 ?>
   <form>
     <field name="keyhit" type="digits?length=1" modal="true">
-      <prompt>Press Hash to play the list again or star to pick another channel<break time="3s"></prompt>
+      <prompt>Press Hash to play the list again or star to pick another channel<break time="3s"/></prompt>
     </field>
     <filled>
       <if cond="keyhit == #">
