@@ -81,7 +81,6 @@ class Theme {
                 </div>
                 <div id="search_options">
                     <?php echo t('Search fields') ?>:<br />
-                    <!-- is there a better way to do this cleanly without tables ---- enlighten me, please! -->
                     <div class="search_table clearfix">
                         <div class="cell">
                             <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>>
