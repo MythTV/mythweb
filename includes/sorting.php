@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2004.06.24 (irish)
+    sorting.php                              Last Updated: 2004.09.22 (xris)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -32,6 +32,9 @@
     // Null session means to load the last sorted session
         if (!$session)
             $session = $GLOBALS['last_sort_session'];
+    // Make sure this is an array
+        if (!is_array($_SESSION[$session]))
+            $_SESSION[$session] = array();
     // Make sure the field is lower case
         $field = strtolower($field);
     // No sort function for this variable
