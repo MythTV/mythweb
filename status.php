@@ -24,7 +24,7 @@
 
 // Extract the page title
     preg_match('#<title>(.+?)</title>#s', $page, $title);
-    $title = $title[0];
+    $title = $title[1];
 
 // Clean up the page, and add some invisible content with the actual URL grabbed
     $page = "<!-- Obtained from:  http://$masterhost:$statusport -->\n"
