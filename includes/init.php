@@ -108,7 +108,7 @@
             }
 	}
     elseif (strpos($_SERVER['HTTP_USER_AGENT'],"MythPhone") !== false) // The browser is MythPhone
-		define('Theme', 'vxml');
+        define('Theme', 'vxml');
 // Load the theme from session data?
     elseif (file_exists('themes/'.$_SESSION['Theme'].'/theme.php') && !$_GET['RESET_THEME'] && !$_POST['RESET_THEME'])
         define('Theme', $_SESSION['Theme']);
