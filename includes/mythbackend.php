@@ -1,6 +1,6 @@
 <?php
 /***																		***\
-	mythbackend.php                          Last Updated: 2003.09.18 (xris)
+	mythbackend.php                          Last Updated: 2003.09.30 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -78,6 +78,12 @@
 			socket_set_timeout($fp, 25);
 		// Send our command
 			fputs ($fp, $command);
+		// Did we send the close command?  Close the socket and set the file pointer to null - don't even bother waiting for a response
+			if ($command == 'DONE') {
+				fclose($fp);
+				$fp = NULL;
+				return;
+			}
 		// Read the response header to find out how much data we'll be grabbing
 			$length = rtrim(fread($fp, 8));
 		// Read and return any data that was returned
@@ -89,11 +95,6 @@
 					break; // EOF
 				$ret .= $data;
 				$length -= strlen($data);
-			}
-		// Did we send the close command?  Close the socket and set the file pointer to null
-			if ($command == 'DONE') {
-				fclose($fp);
-				$fp = NULL;
 			}
 		// Return
 			return $ret;
