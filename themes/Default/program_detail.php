@@ -222,7 +222,7 @@ class Theme_program_detail extends Theme {
 <tr>
 	<td height="100%" align="center" valign="bottom">
 		<?php if (isset($_GET[recordid])) { ?>
-	<a href="all_recordings.php">Back to All recordings!</a></td>
+	<a href="recording_schedules.php">Back to Recording Schedules</a></td>
 		<?php } else { ?>
 	<a href="program_listing.php?time=<?php echo $this_program->starttime?>">What else is on at this time?</a>&nbsp;&nbsp;&nbsp;
         <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td> <?php } ?>
