@@ -142,7 +142,7 @@ class Recording {
 			$this->dupin       = $recording_data->dupin;
 			$this->dupmethod   = $recording_data->dupmethod;
 			$this->startoffset = $recording_data->startoffset;
-			$this->endoffset   = $recording_data->postroll;
+			$this->endoffset   = $recording_data->endoffset;
 			$this->seriesid    = $recording_data->seriesid;
 			$this->programid   = $recording_data->programid;
 		}

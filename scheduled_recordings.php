@@ -25,7 +25,7 @@
 		}
 	// Fake an old recording so that this show won't record again
 		elseif ($_GET['never_record'] || $_POST['never_record']) {
-			$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category, seriesid, seriesid, programid) VALUES ('
+			$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category, seriesid, programid) VALUES ('
 									.escape($program->chanid)                    .','
 									.'FROM_UNIXTIME('.escape($program->starttime).'),'
 									#.'"1970-01-01",'
