@@ -25,7 +25,6 @@ $L = array(
     'Auto-flag commercials'                 => 'Reclame Autom. Markeren',
     'Backend Status'                        => 'Backend Status',
     'Category'                              => 'Categorie',
-    'Category Type'                         => 'Categorie Type',
     'Channel'                               => 'Zender',
     'Check for duplicates in'               => 'Controleer op dubbels in',
     'Create Schedule'                       => 'Maak Schema',
@@ -35,7 +34,6 @@ $L = array(
     'Duplicate Check method'                => 'Testmethode herh.',
     'End Late'                              => 'Later stoppen',
     'Episode'                               => 'Aflevering',
-    'Exact Match'                           => 'Exacte Overeenkomst',
     'Go'                                    => 'Doorgaan',
     'Hour'                                  => 'Uur',
     'Jump'                                  => 'Ga',
@@ -137,6 +135,10 @@ $L = array(
     'The requested recording schedule has been deleted.' => 'Het gevraagde opnameschema is verwijderd',
     'Unknown Program.'                                   => 'Onbekend Programma.',
     'Unknown Recording Schedule.'                        => 'Onbekend Opnameschema',
+// search.php
+    'Please search for something.' => '',
+// themes/.../canned_searches.php
+    'handy: overview' => '',
 // themes/.../channel_detail.php
     'Length' => 'Duur',
     'Show'   => 'Toon',
@@ -207,6 +209,7 @@ $L = array(
     'Update'        => 'Pas Aan',
 // themes/.../search.php
     'No matches found' => 'Geen programma\'s gevonden',
+    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => 'Zenders',
     'Configure'          => 'Instellen',
@@ -236,11 +239,11 @@ $L = array(
     'format help'                     => 'formaat help',
 // themes/.../theme.php
     'Category Legend'                            => 'Categorie Legende',
+    'Category Type'                              => 'Categorie Type',
     'Edit MythWeb and some MythTV settings.'     => 'Bewerk MythWeb en enkele MythTV instellingen',
-    'Favorites'                                  => 'Favorieten',
+    'Exact Match'                                => 'Exacte Overeenkomst',
     'HD Only'                                    => '',
     'Manually Schedule'                          => 'Handmatig Programmeren',
-    'Movies'                                     => 'Films',
     'MythMusic on the web.'                      => 'Muziek',
     'MythVideo on the web.'                      => 'Video',
     'MythWeb Weather.'                           => 'Weer',
@@ -252,6 +255,7 @@ $L = array(
     'Search help: regex example'                 => '/^Good Eats/',
     'Search help: regex search'                  => 'regex zoeken',
     'Search options'                             => 'Zoek Opties',
+    'Searches'                                   => '',
     'Settings'                                   => 'Instellingen',
     'TV functions, including recorded programs.' => 'TV functies, inclusief opgenomen programma\'s',
 // themes/.../weather.php

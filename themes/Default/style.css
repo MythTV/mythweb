@@ -29,10 +29,11 @@ a:hover   { color: #F0F000; text-decoration: underline; }
 }
 
 /* font size classes */
-.tiny  { font-size: 9px; }
-.small { font-size: 9pt; }
-.large { font-size: 12pt; }
-.huge  { font-size: 24px; }
+.tiny   { font-size: 9px; }
+.small  { font-size: 9pt; }
+.normal { font-size: 10pt; }
+.large  { font-size: 12pt; }
+.huge   { font-size: 24px; }
 
 /* fony style classes */
 .bold, .bold a, .bold a:link, .bold a:visited, .bold a:active, .bold a:hover {

@@ -21,12 +21,12 @@ class Theme {
 <head>
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 
-    <title><?php echo $page_title?></title>
+    <title><?php echo $page_title ?></title>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>style.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>header.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>menus.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir?>programming.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>header.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>menus.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>programming.css" />
     <script type="text/javascript" src="js/init.js"></script>
 <?php
     if (count($this->headers)) {
@@ -43,7 +43,7 @@ class Theme {
 <div id="page_header" class="clearfix">
     <div id="logo_box">
         <a id="mythtv_logo" href="http://www.mythtv.org">
-        <img src="<?php echo theme_dir?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
+        <img src="<?php echo theme_dir ?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
         </a>
     </div>
     <div id="sections">
@@ -67,7 +67,7 @@ class Theme {
         <div id="help_wrapper">
             <div id="help_box">
                 <div id="help_text_default">
-                MythWeb: <?php echo strftime($_SESSION['date_statusbar'], time())?>
+                MythWeb: <?php echo strftime($_SESSION['date_statusbar'], time()) ?>
                 </div>
                 <div id="help_text">
                 </div>
@@ -83,24 +83,24 @@ class Theme {
                     <?php echo t('Search fields') ?>:<br />
                     <div class="search_table clearfix">
                         <div class="cell">
-                            <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>>
+                            <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><?php echo t('Title') ?></a>
                         </div>
                         <div class="cell">
-                            <input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : ''?>>
+                            <input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><?php echo t('Subtitle') ?></a>
                         </div>
                         <div>
-                            <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : ''?>>
+                            <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><?php echo t('Description') ?></a>
                         </div>
                         <br/>
                         <div class="cell">
-                            <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : ''?>>
+                            <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><?php echo t('Category') ?></a>
                         </div>
                         <div>
-                            <input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : ''?>>
+                            <input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><?php echo t('Category Type') ?></a>
                         </div>
                     </div>
@@ -108,11 +108,11 @@ class Theme {
                     <?php echo t('Search options') ?>:<br />
                     <div class="search_table clearfix">
                         <div class="cell">
-                            <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>>
+                            <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a>
                         </div>
                         <div>
-                            <input type="checkbox" class="radio" id="search_hd" name="search_hd" value="1"<?php echo $_SESSION['search']['search_hd'] ? ' CHECKED' : ''?>>
+                            <input type="checkbox" class="radio" id="search_hd" name="search_hd" value="1"<?php echo $_SESSION['search']['search_hd'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_hd').checked=get_element('search_hd').checked ? false : true;"><?php echo t('HD Only') ?></a>
                         </div>
                     </div>
@@ -120,9 +120,9 @@ class Theme {
                     <hr/>
                     <?php echo t('Search help') ?>:
                     <dl>
-                        <dt><?php echo t('Search help: movie search')  ?>:</dt>
+                        <dt><?php echo t('Search help: movie search') ?>:</dt>
                         <dd><?php echo t('Search help: movie example') ?></dd>
-                        <dt><?php echo t('Search help: regex search')  ?>:</dt>
+                        <dt><?php echo t('Search help: regex search') ?>:</dt>
                         <dd><?php echo t('Search help: regex example') ?></dd>
                     </dl>
                 </div>
@@ -144,16 +144,16 @@ class Theme {
 </tr>
 </table>
 
-<?
+<?php
+        display_errors();
+
     }
 
     function print_menu_content() {
         ?><a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
                 <a href="program_listing.php"><?php echo t('Listings') ?></a>
                 &nbsp; | &nbsp;
-                <a href="search.php?category_type=<?php echo movie_word?>"><?php echo t('Movies') ?></a>
-                <?/*&nbsp; | &nbsp;
-                <a href="index.php?mode=favourites"><?php echo t('Favorites') ?></a>*/?>
+                <a href="canned_searches.php"><?php echo t('Searches') ?></a>
                 &nbsp; | &nbsp;
                 <a href="schedule_manually.php"><?php echo t('Manually Schedule') ?></a>
                 &nbsp; | &nbsp;
@@ -191,12 +191,12 @@ EOF;
         }
 
     function print_footer() {
-/*?>
+/* ?>
 <p align="center">
 <font size="-1">MythWeb is part of the <a href="http://www.mythtv.org">MythTV</a> Project</font>
 </p>
 
-<?*/
+<?php */
 // Display footnotes
     global $Footnotes;
     if (is_array($Footnotes)) {
@@ -208,7 +208,7 @@ EOF;
 
 </body>
 </html>
-<?
+<?php
     }
 }
 

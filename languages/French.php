@@ -25,7 +25,6 @@ $L = array(
     'Auto-flag commercials'                 => 'Marquer les pubs',
     'Backend Status'                        => 'Statut du Backend',
     'Category'                              => 'cat&eacute;gorie',
-    'Category Type'                         => 'Type de cat&eacute;gorie',
     'Channel'                               => 'Cha&icirc;ne',
     'Check for duplicates in'               => 'Cherche les doublons dans',
     'Create Schedule'                       => '',
@@ -35,7 +34,6 @@ $L = array(
     'Duplicate Check method'                => 'M&eacute;thode de test des doublons',
     'End Late'                              => 'Fin tardive',
     'Episode'                               => 'Episode',
-    'Exact Match'                           => 'Correspondance exacte',
     'Go'                                    => 'Go',
     'Hour'                                  => 'Heure',
     'Jump'                                  => 'Aller',
@@ -137,6 +135,10 @@ $L = array(
     'The requested recording schedule has been deleted.' => 'L\'enregistrement demandé a été effacé',
     'Unknown Program.'                                   => 'Programme inconnu',
     'Unknown Recording Schedule.'                        => 'Programmation inconnue',
+// search.php
+    'Please search for something.' => '',
+// themes/.../canned_searches.php
+    'handy: overview' => '',
 // themes/.../channel_detail.php
     'Length' => 'Dur&eacute;e',
     'Show'   => 'Diffusion',
@@ -207,6 +209,7 @@ $L = array(
     'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Aucune correspondance',
+    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => 'Cha&icirc;nes',
     'Configure'          => 'Configuration',
@@ -236,11 +239,11 @@ $L = array(
     'format help'                     => 'Format d&acute;aide',
 // themes/.../theme.php
     'Category Legend'                            => 'L&eacute;g&eacute;nde de Cat&eacute;gorie',
+    'Category Type'                              => 'Type de cat&eacute;gorie',
     'Edit MythWeb and some MythTV settings.'     => 'Editer les param&egrave;tres de Mythweb et certains de MythTV',
-    'Favorites'                                  => 'Favoris',
+    'Exact Match'                                => 'Correspondance exacte',
     'HD Only'                                    => '',
     'Manually Schedule'                          => 'Programmation Manuelle',
-    'Movies'                                     => 'Films',
     'MythMusic on the web.'                      => 'MythMusic sur le Web',
     'MythVideo on the web.'                      => 'Mythvideo sur le Web',
     'MythWeb Weather.'                           => 'M&eacute;t&eacute;o sur le web',
@@ -252,6 +255,7 @@ $L = array(
     'Search help: regex example'                 => '/^Good Eats/',
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => '',
+    'Searches'                                   => '',
     'Settings'                                   => 'param&egrave;tres',
     'TV functions, including recorded programs.' => 'Fonctions TV, inclant les enregistrements d&acute;&eacute;missions',
 // themes/.../weather.php

@@ -25,7 +25,6 @@ $L = array(
     'Auto-flag commercials'                 => 'CM自動検知',
     'Backend Status'                        => 'バックエンドステータス',
     'Category'                              => 'カテゴリー',
-    'Category Type'                         => 'カテゴリータイプ',
     'Channel'                               => 'チャンネル',
     'Check for duplicates in'               => '重複チェック対象',
     'Create Schedule'                       => '予約作成',
@@ -35,7 +34,6 @@ $L = array(
     'Duplicate Check method'                => '重複チェック方法',
     'End Late'                              => '録画延長',
     'Episode'                               => 'サブタイトル',
-    'Exact Match'                           => '正確に一致',
     'Go'                                    => '移動',
     'Hour'                                  => '時',
     'Jump'                                  => '移動',
@@ -137,6 +135,10 @@ $L = array(
     'The requested recording schedule has been deleted.' => '要求された予約は既に削除されています。',
     'Unknown Program.'                                   => '不明な番組',
     'Unknown Recording Schedule.'                        => '不明な予約',
+// search.php
+    'Please search for something.' => '',
+// themes/.../canned_searches.php
+    'handy: overview' => '',
 // themes/.../channel_detail.php
     'Length' => '時間',
     'Show'   => '番組',
@@ -207,6 +209,7 @@ $L = array(
     'Update'        => '更新',
 // themes/.../search.php
     'No matches found' => '一致する物がありませんでした',
+    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => 'チャンネル',
     'Configure'          => '設定',
@@ -236,11 +239,11 @@ $L = array(
     'format help'                     => '書式ヘルプ',
 // themes/.../theme.php
     'Category Legend'                            => 'カテゴリー凡例',
+    'Category Type'                              => 'カテゴリータイプ',
     'Edit MythWeb and some MythTV settings.'     => 'MythWebとMythTVの設定',
-    'Favorites'                                  => 'お気に入り',
+    'Exact Match'                                => '正確に一致',
     'HD Only'                                    => '',
     'Manually Schedule'                          => '手動録画',
-    'Movies'                                     => '映画',
     'MythMusic on the web.'                      => 'MythMusic オンザウェブ',
     'MythVideo on the web.'                      => 'MythVideo オンザウェブ',
     'MythWeb Weather.'                           => 'MythWeb 天気',
@@ -252,6 +255,7 @@ $L = array(
     'Search help: regex example'                 => '/^Good Eats/',
     'Search help: regex search'                  => '正規表現検索',
     'Search options'                             => '検索オプション',
+    'Searches'                                   => '',
     'Settings'                                   => '設定',
     'TV functions, including recorded programs.' => 'TV 録画',
 // themes/.../weather.php

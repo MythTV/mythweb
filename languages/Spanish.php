@@ -25,7 +25,6 @@ $L = array(
     'Auto-flag commercials'                 => '',
     'Backend Status'                        => '',
     'Category'                              => '',
-    'Category Type'                         => '',
     'Channel'                               => '',
     'Check for duplicates in'               => '',
     'Create Schedule'                       => '',
@@ -35,7 +34,6 @@ $L = array(
     'Duplicate Check method'                => '',
     'End Late'                              => '',
     'Episode'                               => '',
-    'Exact Match'                           => '',
     'Go'                                    => '',
     'Hour'                                  => '',
     'Jump'                                  => '',
@@ -137,6 +135,10 @@ $L = array(
     'The requested recording schedule has been deleted.' => '',
     'Unknown Program.'                                   => '',
     'Unknown Recording Schedule.'                        => '',
+// search.php
+    'Please search for something.' => '',
+// themes/.../canned_searches.php
+    'handy: overview' => '',
 // themes/.../channel_detail.php
     'Length' => '',
     'Show'   => '',
@@ -207,6 +209,7 @@ $L = array(
     'Update'        => '',
 // themes/.../search.php
     'No matches found' => '',
+    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => '',
     'Configure'          => '',
@@ -236,11 +239,11 @@ $L = array(
     'format help'                     => '',
 // themes/.../theme.php
     'Category Legend'                            => '',
+    'Category Type'                              => '',
     'Edit MythWeb and some MythTV settings.'     => '',
-    'Favorites'                                  => '',
+    'Exact Match'                                => '',
     'HD Only'                                    => '',
     'Manually Schedule'                          => '',
-    'Movies'                                     => '',
     'MythMusic on the web.'                      => '',
     'MythVideo on the web.'                      => '',
     'MythWeb Weather.'                           => '',
@@ -252,6 +255,7 @@ $L = array(
     'Search help: regex example'                 => '/^Good Eats/',
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => '',
+    'Searches'                                   => '',
     'Settings'                                   => '',
     'TV functions, including recorded programs.' => '',
 // themes/.../weather.php

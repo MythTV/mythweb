@@ -1,6 +1,6 @@
 <?php
 /***                                                                ***\
-    errordisplay.php                Last Updated: 2004.10.29 (xris)
+    errordisplay.php                Last Updated: 2005.02.28 (xris)
 
     This file contains a number of error-display related routines
 \***                                                                ***/
@@ -109,4 +109,9 @@ EOF;
             $_SESSION['WARNINGS'][] = $warning;
         }
     }
+
+// Returns true or false if there are errors/warnings
+    function has_errors()   { return !empty($GLOBALS['Errors']);   }
+    function has_warnings() { return !empty($GLOBALS['Warnings']); }
+
 ?>

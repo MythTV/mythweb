@@ -25,7 +25,6 @@ $L = array(
     'Auto-flag commercials'                 => 'Werbung markieren',
     'Backend Status'                        => 'Backend Status',
     'Category'                              => 'Kategorie',
-    'Category Type'                         => 'Kategorietyp',
     'Channel'                               => 'Sender',
     'Check for duplicates in'               => 'Nach Wdhgn. suchen in',
     'Create Schedule'                       => '',
@@ -35,7 +34,6 @@ $L = array(
     'Duplicate Check method'                => 'Testmethode für Wdhgn.',
     'End Late'                              => 'verspätetes Aufnahmeende',
     'Episode'                               => 'Folge',
-    'Exact Match'                           => 'Exakte Übereinstimmung',
     'Go'                                    => 'Los',
     'Hour'                                  => 'Stunde',
     'Jump'                                  => 'Gehe',
@@ -137,6 +135,10 @@ $L = array(
     'The requested recording schedule has been deleted.' => 'Die geplante Aufnahme wurde gel�scht.',
     'Unknown Program.'                                   => 'Unbekannte Sendung.',
     'Unknown Recording Schedule.'                        => '',
+// search.php
+    'Please search for something.' => '',
+// themes/.../canned_searches.php
+    'handy: overview' => '',
 // themes/.../channel_detail.php
     'Length' => 'Dauer',
     'Show'   => 'Sendung',
@@ -207,6 +209,7 @@ $L = array(
     'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Keine Übereinstimmungen gefunden',
+    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => 'Sender',
     'Configure'          => 'Konfigurieren',
@@ -236,11 +239,11 @@ $L = array(
     'format help'                     => 'Format Hilfe',
 // themes/.../theme.php
     'Category Legend'                            => 'Kategorien',
+    'Category Type'                              => 'Kategorietyp',
     'Edit MythWeb and some MythTV settings.'     => 'MythWeb & einige MythTV Einstellungen ändern.',
-    'Favorites'                                  => 'Favoriten',
+    'Exact Match'                                => 'Exakte Übereinstimmung',
     'HD Only'                                    => '',
     'Manually Schedule'                          => 'manuelle Aufnahme',
-    'Movies'                                     => 'Filme',
     'MythMusic on the web.'                      => 'MythMusic im Internet.',
     'MythVideo on the web.'                      => 'MythVideo im Internet.',
     'MythWeb Weather.'                           => 'MythWeb Wetter.',
@@ -252,6 +255,7 @@ $L = array(
     'Search help: regex example'                 => '/^Good Eats/',
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => '',
+    'Searches'                                   => '',
     'Settings'                                   => 'Einstellungen',
     'TV functions, including recorded programs.' => 'TV Funktionen, mit allen Aufnahmen.',
 // themes/.../weather.php

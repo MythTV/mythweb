@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2005.02.27 (xris)
+    search.php                               Last Updated: 2005.02.28 (xris)
 
     Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -25,6 +25,8 @@
         $_SESSION['search']['search_category']      = _or($_GET['search_category'],      $_POST['search_category']);
         $_SESSION['search']['search_category_type'] = _or($_GET['search_category_type'], $_POST['search_category_type']);
     }
+
+
 // Individual search strings for different fields
     elseif ($_GET['title'] || $_GET['subtitle'] || $_GET['description'] || $_GET['category'] || $_GET['category_type'] || $_GET['originalairdate']
             || $_POST['title'] || $_POST['subtitle'] || $_POST['description'] || $_POST['category'] || $_POST['category_type'] || $_POST['originalairdate'] ) {
@@ -42,7 +44,11 @@
     if ($_GET['search_hd'] || $_POST['search_hd'])
         $_SESSION['search']['search_hd'] = _or($_GET['search_hd'], $_POST['search_hd']);
 
-// Start the query out as an array
+// Flags that apply in all cases
+    $nodups = _or($_GET['nodups'], $_POST['nodups']);
+
+// Start the query
+    $search_name = '';
     $query       = array();
     $extra_query = array();
     if ($_SESSION['search']['search_exact'])
@@ -54,9 +60,25 @@
     if ($_SESSION['search']['search_hd'])
         $extra_query[] = 'hdtv=1';
 
+// Canned search query
+    if (preg_match('/^\s*canned:\s*(.+)\s*$/', $_SESSION['search']['searchstr'], $search_name)) {
+        $search_name = $search_name[1];
+    // Load the canned searches
+        require_once 'config/canned_searches.php';
+    // Find the query
+        if ($Canned_Searches[$search_name]) {
+            $query = array($Canned_Searches[$search_name]);
+        // default nodups on here, unless explicitly set
+            if (!empty($nodups))
+                $nodups = true;
+        }
+        else
+            add_warning("Unknown canned query: $search_name");
+    }
 // How do we want to build this query?
-    if (preg_match('/\\S/', $_SESSION['search']['searchstr'])) {
-        $search_str = $_SESSION['search']['searchstr'];
+    elseif (preg_match('/\\S/', $_SESSION['search']['searchstr'])) {
+        $search_str  = $_SESSION['search']['searchstr'];
+        $search_name = $search_str;
     // Normal search is an OR search
         $joiner = ' OR ';
     // If it starts with a pair of stars, it's a movie rating query
@@ -114,9 +136,11 @@
     }
 
 // No query?
-    if (count($query) < 1)
-        $Errors[] = 'Please search for something';
-
+    if (count($query) < 1) {
+        $Results = NULL;
+        if (!has_warnings())
+            add_warning(t('Please search for something.'));
+    }
 // Get ready to perform the query
     else {
     // Limit by start and end times?
@@ -129,6 +153,25 @@
             $query = "($query AND ".implode(' AND ', $extra_query).')';
     // Perform the query
         $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
+        if (empty($Results))
+            $Results = array();
+
+    // Remove dups from the results if requested
+        if ($nodups) {
+            $seen = array();        // program ids already seen
+            foreach( $Results as $dex => $row ) {
+                $uniquer = $row->programid . $row->chanid;
+                if( $seen[$uniquer] ) {
+                    // add a new field to the old row
+                    $Results[$seen[$uniquer]]->extra_showings[] =
+                                $row->starttime;
+                    unset( $Results[$dex] );
+                } else {
+                    $seen[$uniquer] = $dex;
+                }
+
+            }
+        }
     // Sort the results
         if (count($Results))
             sort_programs($Results, 'search_sortby');
@@ -141,7 +184,7 @@
     $Page = new Theme_search();
 
 // Display the page
-    $Page->print_page();
+    $Page->print_page($search_name, &$Results);
 
 // Exit
     exit;

@@ -25,7 +25,6 @@ $L = array(
     'Auto-flag commercials'                 => 'Marker automatisk reklamer',
     'Backend Status'                        => 'System status',
     'Category'                              => 'Kategori',
-    'Category Type'                         => 'Kategori Type',
     'Channel'                               => 'Kanal',
     'Check for duplicates in'               => 'Kontroller for dubletter i',
     'Create Schedule'                       => 'Planlæg',
@@ -35,7 +34,6 @@ $L = array(
     'Duplicate Check method'                => 'dubletkontrol metode',
     'End Late'                              => 'Slut senere (min)',
     'Episode'                               => 'Afsnit',
-    'Exact Match'                           => 'Præcis match',
     'Go'                                    => 'Gå',
     'Hour'                                  => 'Time',
     'Jump'                                  => 'Gå',
@@ -137,6 +135,10 @@ $L = array(
     'The requested recording schedule has been deleted.' => 'Den planlagte optagelse er blevet slettet',
     'Unknown Program.'                                   => 'Ukendt program',
     'Unknown Recording Schedule.'                        => 'Ukendt planlagt optagelse',
+// search.php
+    'Please search for something.' => '',
+// themes/.../canned_searches.php
+    'handy: overview' => '',
 // themes/.../channel_detail.php
     'Length' => 'Længde',
     'Show'   => 'Program',
@@ -207,6 +209,7 @@ $L = array(
     'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Ingen resultater',
+    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => 'Kanaler',
     'Configure'          => 'Konfigurer',
@@ -236,11 +239,11 @@ $L = array(
     'format help'                     => 'Formatteringshjælp',
 // themes/.../theme.php
     'Category Legend'                            => 'Kategoriforklaring',
+    'Category Type'                              => 'Kategori Type',
     'Edit MythWeb and some MythTV settings.'     => 'Rediger MythWeb- og nogle MythTV-indstillinger',
-    'Favorites'                                  => 'Favoritter',
+    'Exact Match'                                => 'Præcis match',
     'HD Only'                                    => '',
     'Manually Schedule'                          => 'Planlæg manuelt',
-    'Movies'                                     => 'Film',
     'MythMusic on the web.'                      => 'MythMusic på www',
     'MythVideo on the web.'                      => 'MythVideo på www',
     'MythWeb Weather.'                           => 'MythWeb Vejrudsigt',
@@ -252,6 +255,7 @@ $L = array(
     'Search help: regex example'                 => '/^Good Eats/',
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => '',
+    'Searches'                                   => '',
     'Settings'                                   => 'Indstillinger',
     'TV functions, including recorded programs.' => 'TV funktioner inkl. optagede programmer',
 // themes/.../weather.php
