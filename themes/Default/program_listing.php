@@ -311,9 +311,17 @@ class Theme_program_listing extends Theme {
             if ($parens)
                 echo " ($parens)";
         }
+	$parens = "";
     // Finally, print some other information
         if ($program->previouslyshown)
-            echo "<BR><i>(Rerun)</i>";
+            $parens = "<i>Rerun</i>";
+        if ($program->hdtv) {
+            if ($parens)
+                $parens .= ", ";
+            $parens .=  "<font color=\"yellow\"><b>HD</b></font>";
+	}
+        if ($parens)
+            echo "<BR>($parens)";    
 
     ?></td>
 <?php

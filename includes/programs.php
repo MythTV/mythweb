@@ -237,6 +237,7 @@ class Program {
     var $airdate;
     var $stars;
     var $previouslyshown;
+    var $hdtv;
 
     var $starttime;
     var $endtime;
@@ -360,6 +361,7 @@ class Program {
             $this->airdate         = _or($program_data['originalairdate'], $program_data['airdate']);
             $this->stars           = $program_data['stars'];
             $this->previouslyshown = $program_data['previouslyshown'];
+            $this->hdtv            = $program_data['hdtv'];
             $this->starstring      = $program_data['starstring'];
             $this->rater           = $program_data['rater'];
             $this->rating          = $program_data['rating'];
