@@ -1,6 +1,6 @@
 <?php
 /***																		***\
-	mythbackend.php                          Last Updated: 2003.11.22 (xris)
+	mythbackend.php                          Last Updated: 2003.12.02 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -135,7 +135,7 @@
 	backend_notify_changes:
 	Updates or inserts a row to notify the backend that there have been database changes
 */
-	function backend_notify_changes() {
+	function backend_notify_changes($sleep = true) {
 	// Tell mythfrontend that something has changed
 		$result = mysql_query('UPDATE settings SET data="yes" WHERE value="RecordChanged"')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
@@ -144,6 +144,9 @@
 			$result = mysql_query('INSERT INTO settings (data, value) VALUES ("yes", "RecordChanged")')
 				or trigger_error('SQL Error: '.mysql_error(), FATAL);
 		}
+	// Give the backend time to catch up?
+		if ($sleep)
+			sleep(1);
 	}
 
 /*

@@ -8,6 +8,19 @@
 // Make sure the "Channels" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
 	require_once 'includes/channels.php';
 
+// Reasons a recording wouldn't be happening (from libs/libmythtv/programinfo.h)
+	$No_Record_Types = array('Unknown',				# 0
+							 'ManualOverride',      # 1		it was manually set to not record
+							 'PreviousRecording',   # 2     this episode was previously recorded according to the duplicate policy chosen for this title
+							 'CurrentRecording',    # 3     this episode was previously recorded and is still available in the list of recordings
+							 'OtherShowing',        # 4     this episode will be recorded at another time instead
+							 'TooManyRecordings',   # 5     too many recordings of this program have already been recorded
+							 'DontRecordList',      # 6     it is currently being recorded or was manually canceled
+							 'LowerRecPriority',    # 7     another program with a higher recording priority will be recorded
+							 'ManualConflict',      # 8     another program was manually chosen to be recorded instead
+							 'AutoConflict',        # 9     another program was automatically chosen to be recorded instead
+							 'Overlap');            # 10    it is covered by another scheduled recording for the same program
+
 /*
 	load_one_program:
 	a shortcut to load_all_program_data's single-program query
@@ -204,14 +217,15 @@ class Program {
 	var $record_channel = false;
 	var $record_always  = false;
 	var $profile        = 0;
-	var $recpriority	= 0;
 	var $max_newest		= 0;
 	var $max_episodes	= 0;
 	var $auto_expire	= 0;
 
 	var $conflicting    = false;
 	var $recording      = false;
-	var $duplicate      = false;
+
+	var $recpriority	= 0;
+	var $norecord       = NULL;
 
 	var $rater;
 	var $rating;
@@ -243,19 +257,30 @@ class Program {
 			$this->subtitle    = $program_data[1];					# episode name
 			$this->description = $program_data[2];					# episode description
 			$this->category    = $program_data[3];					#
-			#$channum           = $program_data[5];					# channel number
-			#$callsign          = $program_data[6];					# callsign (eg. FOOD or SCIFI)
+			#$chanid           = $program_data[4];
+			#$channum          = $program_data[5];					# channel number
+			#$callsign         = $program_data[6];					# callsign (eg. FOOD or SCIFI)
 			$this->channame    = $program_data[7];					# Channel 35 FOOD
+			#$pathname         = $program_data[8];
+			#$fs_high          = $program_data[9];
+			#$fs_low           = $program_data[10];
+			#$starttime        = $program_data[11];
+			#$endtime          = $program_data[12];
 			$this->conflicting = $program_data[13] ? true : false;	# conflicts with another scheduled recording?
 			$this->recording   = $program_data[14] ? true : false;	# scheduled to record?
-			$this->duplicate   = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
+			$this->override    = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
 			$this->hostname    = $program_data[16];					#  myth
-			#$this->sourceid    = $program_data[17];					#  -1
-			#$this->cardid      = $program_data[18];					#  -1
-			#$this->inputid     = $program_data[19];					#
+			#$this->sourceid   = $program_data[17];					#  -1
+			#$this->cardid     = $program_data[18];					#  -1
+			#$this->inputid    = $program_data[19];					#
 			$this->recpriority = $program_data[20];					#
-			$this->suppressed  = $program_data[21];					#
-			$this->reason_suppressed = $program_data[22];			#
+			$this->norecord    = $program_data[21];
+			$this->recordid    = $program_data[22];			#
+			#$rectype          = $program_data[23];
+			#$recdups          = $program_data[24];
+			#$recstartts       = $program_data[25];
+			#$recendts         = $program_data[26];
+			#$repeat           = $program_data[27];
 		}
 	// SQL data
 		else {
@@ -284,9 +309,9 @@ class Program {
 			global $Pending_Programs;
 			load_pending();
 			if ($Pending_Programs[$this->chanid][$this->starttime]) {
-				$this->conflicting = $Pending_Programs[$this->chanid][$this->starttime][13];
-				$this->recording   = $Pending_Programs[$this->chanid][$this->starttime][14];
-				$this->duplicate   = $Pending_Programs[$this->chanid][$this->starttime][15];
+				$this->conflicting = $Pending_Programs[$this->chanid][$this->starttime][13] ? true : false;
+				$this->recording   = $Pending_Programs[$this->chanid][$this->starttime][14] ? true : false;
+				$this->norecord    = $Pending_Programs[$this->chanid][$this->starttime][21];
 			}
 		// We get various recording-related information, too
 			if ($program_data['record_always'])
@@ -306,6 +331,9 @@ class Program {
 									  || $this->record_channel
 									  || $this->record_always ) ? true : false;
 		}
+	// Turn norecord into a word
+		if (strlen($this->norecord) > 0)
+			$this->norecord = $GLOBALS['No_Record_Types'][$this->norecord];
 	// Do we have a chanid?  Load some info about it
 		if ($this->chanid && !isset($this->channel)) {
 		// No channel data?  Load it
@@ -471,7 +499,7 @@ class Program {
 				$this->class .= 'record_conflicting ';
 			elseif ($this->recording)
 				$this->class .= 'will_record ';
-			elseif ($this->duplicate)
+			elseif ($this->norecord == 'PreviousRecording' || $this->norecord == 'CurrentRecording')
 				$this->class .= 'record_duplicate ';
 			else
 				$this->class .= 'record_suppressed ';

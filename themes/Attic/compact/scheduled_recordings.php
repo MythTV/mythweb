@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2003.06.29 (xris)
+	scheduled_recordings.php                    Last Updated: 2003.12.02 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.
@@ -28,20 +28,22 @@ class Theme_scheduled_recordings extends Theme {
 </tr><?
 	$row = 0;
 	foreach ($All_Shows as $show) {
-	// Reset the command variable
+	// Reset the command variable to a default URL
 		$command = '';
+		$urlstr = 'title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'&recordid='.$show->recordid;
 	// Which class does this show fall into?
-		if ($show->duplicate == 1) {
+# This needs a major overhaul, to support the new recording schedule types, etc
+		if ($show->norecord == 'PreviousRecording' || $show->norecord == 'CurrentRecording') {
 			$class = 'duplicate';
-			$command = '<a href="scheduled_recordings.php?rerecord=yes&title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'">Rerecord</a>';
+			$command = '<a href="scheduled_recordings.php?rerecord=yes&'.$urlstr.'">Rerecord</a>';
 		}
 		elseif ($show->conflicting == 1) {
 			$class   = 'conflict';
-			$command = '<a href="scheduled_recordings.php?record=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Record</a>';
+			$command = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record</a>';
 		}
 		elseif ($show->recording == 0) {
 			$class   = 'deactivated';
-			$command = '<a href="scheduled_recordings.php?activate=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Activate</a>';
+			$command = '<a href="scheduled_recordings.php?activate=yes&'.$urlstr.'">Activate</a>';
 		}
 		else {
 			$class   = 'scheduled';

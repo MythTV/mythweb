@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                 Last Updated: 2003.08.05 (xris)
+	scheduled_recordings.php                 Last Updated: 2003.12.02 (xris)
 
 	view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -10,31 +10,42 @@
 	require_once "includes/init.php";
 	require_once "includes/sorting.php";
 
-// Make sure that we get some form data
-	$_GET['chanid']    or $_GET['chanid']    = $_POST['chanid'];
-	$_GET['starttime'] or $_GET['starttime'] = $_POST['starttime'];
-	$_GET['endtime']   or $_GET['endtime']   = $_POST['endtime'];
+// Make sure we get the form data
+	isset($_GET['recordid'])    or $_GET['recordid']    = $_POST['recordid'];
+	isset($_GET['chanid'])      or $_GET['chanid']      = $_POST['chanid'];
+	isset($_GET['starttime'])   or $_GET['starttime']   = $_POST['starttime'];
+	isset($_GET['endtime'])     or $_GET['endtime']     = $_POST['endtime'];
+	isset($_GET['title'])       or $_GET['title']       = $_POST['title'];
+	isset($_GET['subtitle'])    or $_GET['subtitle']    = $_POST['subtitle'];
+	isset($_GET['description']) or $_GET['description'] = $_POST['description'];
+	isset($_GET['category'])    or $_GET['category']    = $_POST['category'];
+
+# Should see about pulling description, etc from the database so we don't have to pass it on the url
 
 // Re-recording something that has been suppressed
 	if ($_GET['rerecord'] || $_POST['rerecord']) {
-		$_GET['title']       or $_GET['title']       = $_POST['title'];
-		$_GET['subtitle']    or $_GET['subtitle']    = $_POST['subtitle'];
-		$_GET['description'] or $_GET['description'] = $_POST['description'];
 #insert into oldrecorded (chanid, starttime, endtime, title, subtitle, description)
 #    values (1035, 20030525153000, 20030525160000, 'Good Eats', 'Tomatoes', 'Tomato sandwich; tomato sauce; close look at serrated knives.');
 		$result = mysql_query('DELETE FROM oldrecorded WHERE title='.escape($_GET['title']).' AND subtitle='.escape($_GET['subtitle']).' AND description='.escape($_GET['description']))
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+#		$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($_GET['chanid']).' AND starttime=FROM_UNIXTIME('.escape($_GET['starttime']).') AND endtime=FROM_UNIXTIME('.escape($_GET['endtime']).')')
+#			or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
+#		$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
+#								.escape($_GET['recordid']).','
+#								.'1,'	// record override type:   1 == record, 2 == don't record
+#								.escape($_GET['chanid'])                    .','
+#								.'FROM_UNIXTIME('.escape($_GET['starttime']).'),'
+#								.'FROM_UNIXTIME('.escape($_GET['endtime'])  .'),'
+#								.escape($_GET['title'])                     .','
+#								.escape($_GET['subtitle'])                  .','
+#								.escape($_GET['description'])               .')')
+#			or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
+	// Notify the backend of the changes
+		backend_notify_changes();
 	}
 
 // Suppressing something that shouldn't be recorded
-	if ($_GET['suppress'] || $_POST['suppress']) {
-		isset($_GET['chanid'])      or $_GET['chanid']      = $_POST['chanid'];
-		isset($_GET['starttime'])   or $_GET['starttime']   = $_POST['starttime'];
-		isset($_GET['endtime'])     or $_GET['endtime']     = $_POST['endtime'];
-		isset($_GET['title'])       or $_GET['title']       = $_POST['title'];
-		isset($_GET['subtitle'])    or $_GET['subtitle']    = $_POST['subtitle'];
-		isset($_GET['description']) or $_GET['description'] = $_POST['description'];
-		isset($_GET['category'])    or $_GET['category']    = $_POST['category'];
+	elseif ($_GET['suppress'] || $_POST['suppress']) {
 		$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category) VALUES ('
 								.escape($_GET['chanid'])                    .','
 								.'FROM_UNIXTIME('.escape($_GET['starttime']).'),'
@@ -44,14 +55,12 @@
 								.escape($_GET['description'])               .','
 								.escape($_GET['category'])                  .')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+	// Notify the backend of the changes
+		backend_notify_changes();
 	}
 
 // Set myth to record a show in order to resolve a conflict
-	if ($_GET['record'] || $_POST['record']) {
-	// Make sure we got all of the variables
-		$_GET['chanid']    or $_GET['chanid']    = $_POST['chanid'];
-		$_GET['starttime'] or $_GET['starttime'] = $_POST['starttime'];
-		$_GET['endtime']   or $_GET['endtime']   = $_POST['endtime'];
+	elseif ($_GET['record'] || $_POST['record']) {
 	// Scan through the pending shows for anything that's currently conflicting
 		foreach (get_backend_rows('QUERY_GETALLPENDING', 2) as $program) {
 			if ($program[13] != 1)
@@ -76,11 +85,7 @@
 	}
 
 // Activating a recording?
-	if ($_GET['activate'] || $_POST['activate']) {
-	// Make sure we got all of the variables
-		$_GET['chanid']    or $_GET['chanid']    = $_POST['chanid'];
-		$_GET['starttime'] or $_GET['starttime'] = $_POST['starttime'];
-		$_GET['endtime']   or $_GET['endtime']   = $_POST['endtime'];
+	elseif ($_GET['activate'] || $_POST['activate']) {
 	// Find the previous (disabled) recording setting for this show
 		$result = mysql_query('SELECT preferchanid, preferstarttime, preferendtime FROM conflictresolutionsingle WHERE dislikechanid='.escape($_GET['chanid']).' AND dislikestarttime=FROM_UNIXTIME('.escape($_GET['starttime']).') AND dislikeendtime=FROM_UNIXTIME('.escape($_GET['endtime']).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
