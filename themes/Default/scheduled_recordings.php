@@ -133,7 +133,8 @@ class Theme_scheduled_recordings extends Theme {
             //  used when displaying the recording status character.
             // However, there is already a class named 'conflict' so we
             //  need to modify this specific recstatus to avoid a conflict.
-                $rec_class  = "conflicting";
+                $rec_class = implode(' ', array(recstatus_class($show),
+                                     'conflicting'));
                 $class      = 'conflict';
                 $commands[] = '<a href="scheduled_recordings.php?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
