@@ -185,7 +185,7 @@ define ('_LANG_GO',              'Go');
 define ('_LANG_PREVIEW',         'preview');
 define ('_LANG_FILE_SIZE',       'file&nbsp;size');
 define ('_LANG_DELETE',          'Delete');
-define ('_LANG_PROGRAMS_USING',  'programs, using');
+define ('_LANG_PROGRAMS_USING',  'programs, using ');
 define ('_LANG_OUT_OF',          ' out of ');
 define ('_LANG_EPISODES',        'episodes');
 
