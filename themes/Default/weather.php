@@ -67,7 +67,7 @@ class Theme_weather extends Theme {
     </div>
 
     <div class="forecast clearfix">
-		<h2><?php echo t('Forecast') ?>:</h2>
+        <h2><?php echo t('Forecast') ?>:</h2>
 
 <?php
             for ($i=0; $i<6; $i++) {
@@ -81,7 +81,7 @@ class Theme_weather extends Theme {
                 $today = date("m/d/Y");
                 $tomorrow = date("m/d/Y", mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")));
 
-			    switch($forecast->dayofweek) {
+                switch($forecast->dayofweek) {
                     case 1:  $day = t('Monday');        break;
                     case 2:  $day = t('Tuesday');       break;
                     case 3:  $day = t('Wednesday');     break;
@@ -90,7 +90,7 @@ class Theme_weather extends Theme {
                     case 6:  $day = t('Saturday');      break;
                     case 7:  $day = t('Sunday');        break;
                     default: $day = $forecast->date;    break;
-			    }
+                }
 
                 if ($forecast->date == $today)
                     echo t('Today')." ($day)";
@@ -101,9 +101,9 @@ class Theme_weather extends Theme {
 
                 ?></h3>
 
-			<img src="themes/Default/img/weather/<?php echo $forecast->DescImage; ?>" class="alpha_png" />
+            <img src="themes/Default/img/weather/<?php echo $forecast->DescImage; ?>" class="alpha_png" />
 
-			<h3><?php echo $forecast->DescText; ?></h3>
+            <h3><?php echo $forecast->DescText; ?></h3>
 
             <div class="temps">
                 <div class="low">
@@ -135,7 +135,7 @@ class Theme_weather extends Theme {
     </div>
 
     <p class="last_updated">
-		<?php echo t('Last Updated') ?>: <?php echo $site->LastUpdated; ?>
+        <?php echo t('Last Updated') ?>: <?php echo $site->LastUpdated; ?>
     </p>
 </div>
 <?php

@@ -1,9 +1,9 @@
 <?
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2003.08.22 (xris)
+    program_detail.php                       Last Updated: 2003.08.22 (xris)
 
-	This file defines a theme class for the program details section.
-	It must define one method.   documentation will be added someday.
+    This file defines a theme class for the program details section.
+    It must define one method.   documentation will be added someday.
 
 \***                                                                        ***/
 
@@ -11,25 +11,25 @@
 class Theme_program_detail extends Theme {
 
 
-	/*
-		print_header:
-		This function prints the header portion of the page specific to the program listing
-	*/
-	function print_header($start_time, $end_time) {
+    /*
+        print_header:
+        This function prints the header portion of the page specific to the program listing
+    */
+    function print_header($start_time, $end_time) {
 ?>
 <vxml>
 <?
-	}
+    }
 
 
 
 
-	function print_page() {
-		global $this_channel, $this_program;
+    function print_page() {
+        global $this_channel, $this_program;
 
-   	$this->print_header($list_starttime, $list_endtime);
+    $this->print_header($list_starttime, $list_endtime);
 
-	// Print the page contents
+    // Print the page contents
 ?>
 <prompt>You have selected <?=$this_program->title?> on channel <?=$this_channel->channum?></prompt>
 <prompt>at <?=date('g:i A', $this_program->starttime)?> lasting <?=(int)($this_program->length/60)?> minutes</prompt>
@@ -58,7 +58,7 @@ class Theme_program_detail extends Theme {
         <reprompt/>
         <elseif cond="choice == 2">
           <submit next="channel_detail.php?chanid=<?=$this_program->chanid?>+time=<?=($this_program->starttime)?>+action=next" method="get" />
-        <elseif cond="choice == 3">                                          
+        <elseif cond="choice == 3">
           <submit next="channel_detail.php?chanid=<?=$this_program->chanid?>+time=<?=($this_program->starttime)?>+action=previous" method="get" />
         <elseif cond="choice == 4">
           <submit next="program_detail.php?chanid=<?=$this_channel->chanid?>+starttime=<?=$this_program->starttime?>" namelist="record=<?=$this_program->will_record ? 'never' : 'once'?>+save=Update" method="post" />
@@ -71,10 +71,10 @@ class Theme_program_detail extends Theme {
           <reprompt/>
         </if>
       </filled>
-		</form>
+        </form>
 </vxml>
 <?
-	}
+    }
 
 }
 

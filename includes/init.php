@@ -106,7 +106,7 @@
             else {
                 define('Theme', 'wml');
             }
-	}
+    }
     elseif (strpos($_SERVER['HTTP_USER_AGENT'],"MythPhone") !== false) // The browser is MythPhone
         define('Theme', 'vxml');
 // Load the theme from session data?
