@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythbackend.php                          Last Updated: 2005.01.31 (xris)
+    mythbackend.php                          Last Updated: 2005.02.09 (xris)
 
     Routines that allow mythweb to communicate with mythbackend
 \***                                                                        ***/
