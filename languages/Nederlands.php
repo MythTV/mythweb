@@ -205,6 +205,7 @@ define ('_LANG_RECTYPE_LONG_WEEKLY',    'Neem wekelijks op in dit tijdsslot.');
 define ('_LANG_RECTYPE_LONG_CHANNEL',   'Neem dit programma altijd op op deze zender: ');
 define ('_LANG_RECTYPE_LONG_ALWAYS',    'Neem dit programma altijd op, op alle zenders.');
 define ('_LANG_RECTYPE_LONG_FINDONE',   'Neem dit programma eenmalig op.');
+define ('_LANG_CANCEL_THIS_SCHEDULE',    	'Deze vertoning niet opnemen.');
 
 define ('_LANG_RECSTATUS_LONG_DELETED',             'Deze uitzending werd opgenomen maar verwijderd voordat ze voltooid was.');
 define ('_LANG_RECSTATUS_LONG_STOPPED',     	    'Deze uitzending werd opgenomen maar is stopgezet voor ze voltooid was.');
@@ -221,6 +222,7 @@ define ('_LANG_RECSTATUS_LONG_CANCELLED',           'Dit was een geplande opname
 define ('_LANG_RECSTATUS_LONG_LOWERRECPRIORITY',    'Een ander programma heeft een hogere opnameprioriteit en zal opgenomen worden.');
 define ('_LANG_RECSTATUS_LONG_MANUALCONFLICT',      'Een ander programma is manueel gekozen om opgenomen te worden.');
 define ('_LANG_RECSTATUS_LONG_AUTOCONFLICT',        'Een ander programma is automatisch gekozen om opgenomen te worden.');
+define ('_LANG_RECSTATUS_LONG_CONFLICT',            'Een ander programma is automatisch gekozen om opgenomen te worden.');
 define ('_LANG_RECSTATUS_LONG_OVERLAP',             'Dit wordt reeds op een andere tijdstip opgenomen.');
 define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',        'Er was onvoldoende schijfruimte om dit programma op te nemen.');
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',           'De tvkaart was al in gebruik op het moment dat deze opname gepland stond.');
