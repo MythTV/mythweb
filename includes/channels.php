@@ -96,6 +96,18 @@ class Channel {
 				$program_starts = $start_time;
 			if ($program->endtime > $end_time)
 				$program_ends = $end_time;
+		// If there is a gap before the current program, put a NO DATA block in.
+			if ($program_starts > $start_time) {
+				$length = (($program_starts - $start_time) / timeslot_size);
+				if ($length >= 0.5) {
+					$timeslots_used = ceil($length);
+					$Page->print_nodata($timeslots_used);
+					$start_time += $timeslots_used * timeslot_size;
+					if ($timeslots_left < $timeslots_used)
+						$timeslots_used = $timeslots_left;
+					$timeslots_left -= $timeslots_used;
+				}
+			}
 		// Calculate the number of time slots this program gets
 			$length = (($program_ends - $program_starts) / timeslot_size);
 			if ($length < .5) continue;	// ignore shows that don't take up at least half a timeslot
