@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2003.08.06 (xris)
+    sorting.php                              Last Updated: 2003.08.08 (xris)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -45,6 +45,9 @@
 														 'reverse' => $_GET['reverse'] ? true : false));
 			}
 		}
+	// No sortby, but requested a reversal of the main field
+		elseif ($_GET['reverse'])
+			$_SESSION[$session][0]['reverse'] = $_SESSION[$session][0]['reverse'] ? false : true;
 	// Once we've processed the information, we should make sure that we're actually sorting an array
 		if (!count($programs))
 			return;

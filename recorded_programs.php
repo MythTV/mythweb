@@ -75,7 +75,7 @@
 	$_SESSION['recorded_title'] = $_GET['title'];
 
 // The default sorting choice isn't so good for recorded programs, so we'll set our own default
-	if (!is_array($_SESSION['recorded_sortby']))
+	if (!is_array($_SESSION['recorded_sortby']) || !count($_SESSION['recorded_sortby']))
 		$_SESSION['recorded_sortby'] = array(array('field' => 'airdate',
 												   'reverse' => true),
 											 array('field' => 'title',
