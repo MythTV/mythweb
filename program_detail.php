@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	program_detail.php                      Last Updated: 2003.07.23 (xris)
+	program_detail.php                      Last Updated: 2003.07.30 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -35,8 +35,11 @@
 			case 'once':
 				$this_program->record_once();
 				break;
-			case 'timeslot':
-				$this_program->record_timeslot();
+			case 'daily':
+				$this_program->record_daily();
+				break;
+			case 'weekly':
+				$this_program->record_weekly();
 				break;
 		// Default to no recording
 			default:

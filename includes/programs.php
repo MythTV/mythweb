@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.07.21 (xris)
+    programs.php                             Last Updated: 2003.07.30 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -74,7 +74,7 @@
 							.' SUM(record.type = 3 AND program.title = record.title AND record.chanid = program.chanid) > 0 AS record_channel, '
 							.' SUM(record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-							.'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) > 0 AS record_timeslot, '
+							.'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) > 0 AS record_daily, '
 							.' SUM(record.type = 1 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
 							.'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))) > 0 AS record_once,';
@@ -190,14 +190,15 @@ class Program {
 	var $filename;
 	var $filesize;
 
-	var $will_record     = false;
-	var $record_timeslot = false;
-	var $record_once     = false;
-	var $record_channel  = false;
-	var $record_always   = false;
-	var $conflicting     = false;
-	var $recording       = false;
-	var $duplicate       = false;
+	var $will_record    = false;
+	var $record_daily   = false;
+	var $record_weekly  = false;
+	var $record_once    = false;
+	var $record_channel = false;
+	var $record_always  = false;
+	var $conflicting    = false;
+	var $recording      = false;
+	var $duplicate      = false;
 
 	var $rater;
 	var $rating;
@@ -248,7 +249,8 @@ class Program {
 				$this->record_always   = $program_data->record_always;
 				$this->record_channel  = $program_data->record_channel;
 				$this->record_once     = $program_data->record_once;
-				$this->record_timeslot = $program_data->record_timeslot;
+				$this->record_daily    = $program_data->record_daily;
+				$this->record_weekly   = $program_data->record_weekly;
 				$this->will_record     = $program_data->will_record;
 			}
 		}
@@ -278,15 +280,18 @@ class Program {
 			}
 		// We get various recording-related information, too
 			if ($program_data['record_always'])
-				$this->record_always   = true;
+				$this->record_always  = true;
 			elseif ($program_data['record_channel'])
-				$this->record_channel  =  true;
+				$this->record_channel =  true;
 			elseif ($program_data['record_once'])
-				$this->record_once     =  true;
-			elseif ($program_data['record_timeslot'])
-				$this->record_timeslot =  true;
+				$this->record_once    =  true;
+			elseif ($program_data['record_daily'])
+				$this->record_daily   =  true;
+			elseif ($program_data['record_weekly'])
+				$this->record_weekly  =  true;
 		// Add a generic "will record" variable, too
-			$this->will_record     = ($this->record_timeslot
+			$this->will_record     = ($this->record_daily
+									  || $this->record_weekly
 									  || $this->record_once
 									  || $this->record_channel
 									  || $this->record_always ) ? true : false;
@@ -338,11 +343,12 @@ class Program {
 		$result = mysql_query('INSERT INTO record (type ,title) VALUES (4,'.escape($this->title).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record     = true;
-		$this->record_always   = true;
-		$this->record_channel  = false;
-		$this->record_once     = false;
-		$this->record_timeslot = false;
+		$this->will_record    = true;
+		$this->record_always  = true;
+		$this->record_channel = false;
+		$this->record_once    = false;
+		$this->record_daily   = false;
+		$this->record_weekly  = false;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
@@ -361,18 +367,22 @@ class Program {
 																				 .escape($this->chanid).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record     = true;
-		$this->record_always   = false;
-		$this->record_channel  = true;
-		$this->record_once     = false;
-		$this->record_timeslot = false;
+		$this->will_record    = true;
+		$this->record_always  = false;
+		$this->record_channel = true;
+		$this->record_once    = false;
+		$this->record_daily   = false;
+		$this->record_weekly  = false;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
 
-	function record_timeslot() {
+	function record_weekly() {
+	}
+
+	function record_daily() {
 	// Already set?  just return
-		if ($this->record_timeslot)
+		if ($this->record_daily)
 			return;
 	// Wipe out any pre-existing settings for this program
 		$result = mysql_query('DELETE FROM record WHERE type=1 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND startdate=FROM_UNIXTIME('.escape($this->starttime).')')
@@ -390,11 +400,12 @@ class Program {
 																										.escape($this->title).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record     = true;
-		$this->record_always   = false;
-		$this->record_channel  = false;
-		$this->record_once     = false;
-		$this->record_timeslot = true;
+		$this->will_record    = true;
+		$this->record_always  = false;
+		$this->record_channel = false;
+		$this->record_once    = false;
+		$this->record_daily   = true;
+		$this->record_weekly  = false;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
@@ -424,11 +435,12 @@ class Program {
 								.escape($this->description).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record     = true;
-		$this->record_always   = false;
-		$this->record_channel  = false;
-		$this->record_once     = true;
-		$this->record_timeslot = false;
+		$this->will_record    = true;
+		$this->record_always  = false;
+		$this->record_channel = false;
+		$this->record_once    = true;
+		$this->record_daily   = false;
+		$this->record_weekly  = false;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
@@ -450,11 +462,12 @@ class Program {
 		$result = mysql_query('UPDATE settings SET data="yes" WHERE value="RecordChanged"')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
-		$this->will_record     = false;
-		$this->record_always   = false;
-		$this->record_channel  = false;
-		$this->record_once     = false;
-		$this->record_timeslot = false;
+		$this->will_record    = false;
+		$this->record_always  = false;
+		$this->record_channel = false;
+		$this->record_once    = false;
+		$this->record_daily   = false;
+		$this->record_weekly  = false;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}

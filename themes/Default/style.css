@@ -120,6 +120,7 @@ TextArea {
 
 */
 
+.record_weekly      { border: 1px solid #00D000; }
 .record_timeslot    { border: 1px solid #00D000; }
 .record_once	    { border: 1px solid #00D000; }
 .record_channel	    { border: 1px solid #00D000; }

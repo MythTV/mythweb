@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	channels.php                             Last Updated: 2003.06.30 (xris)
+	channels.php                             Last Updated: 2003.07.30 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -73,67 +73,6 @@ class Channel {
 		$this->brightness   = $channel_data['brightness'];
 		$this->colour       = $channel_data['colour'];
 		$this->icon         = "images/icons/" . basename($channel_data['icon']);
-	}
-
-	function load_programs($start_time, $end_time) {
-### this function is deprecated, and has been replaced by the single-query load_all_program_data in programs.php
-	// Reinitialize the programs array
-		$this->programs = array();
-	// Find out if there are any recordings queued
-		static $num_recordings = false;
-		if ($num_recordings === false) {
-			$result = mysql_query('SELECT count(*) FROM record')
-				or trigger_error('SQL Error: '.mysql_error(), FATAL);
-			list($num_recordings) = mysql_fetch_row($result);
-			mysql_free_result($result);
-		}
-	// If there are recordings, we need to grab that info, too - if there aren't, the query info will interfere with the query
-		if ($num_recordings > 0) {
-			$record_table  = ', record';
-			$record_values = ' SUM(record.type = 4 AND program.title = record.title) > 0 AS record_always, '
-							.' SUM(record.type = 3 AND program.title = record.title AND record.chanid = program.chanid) > 0 AS record_channel, '
-							.' SUM(record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
-							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-							.'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) > 0 AS record_once, '
-							.' SUM(record.type = 1 AND program.title = record.title AND record.chanid = program.chanid AND '
-							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
-							.'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))) > 0 AS record_timeslot,';
-		}
-		else {
-			$record_table  = '';
-			$record_values = '';
-		}
-	// Build the sql query, and execute it
-		$star_char = escape(star_character);
-		$max_stars = escape(max_stars);
-		$query = "SELECT program.*,"
-				 .$record_values
-				 .' UNIX_TIMESTAMP(program.starttime) AS starttime_unix,'
-				 .' UNIX_TIMESTAMP(program.endtime) AS endtime_unix,'
-				 ." CONCAT(repeat($star_char, program.stars * $max_stars), IF((program.stars * $max_stars * 10) % 10, '&frac12;', '')) AS starstring,"
-				 .' IFNULL(programrating.system, \'\') AS rater,'
-				 .' IFNULL(programrating.rating, \'\') AS rating,'
-				 .' ((UNIX_TIMESTAMP(program.endtime) - UNIX_TIMESTAMP(program.starttime)) / 60 ) AS duration'
-				 .' FROM program LEFT JOIN programrating USING (chanid, starttime)'
-				 .$record_table
-				 .' WHERE program.chanid='.escape($this->chanid)
-				 .' AND (UNIX_TIMESTAMP(program.starttime) >= ' . escape($start_time)
-					   .' AND UNIX_TIMESTAMP(program.starttime) <= '   . escape($end_time + round(timeslot_size/2))	# catch shows that start part way through the last timeslot
-					 .' OR UNIX_TIMESTAMP(program.endtime) >= ' . escape($start_time - round(timeslot_size/2))		# catch shows that end part way through the first timeslot
-					   .' AND UNIX_TIMESTAMP(program.endtime) <= '   . escape($end_time)
-					 .' OR UNIX_TIMESTAMP(program.starttime) <= ' . escape($start_time)								# catch shows that start before and end after the requested times
-					   .' AND UNIX_TIMESTAMP(program.endtime) >= '   . escape($end_time)
-					 .')'
-				 .' GROUP BY program.chanid, program.starttime ORDER BY program.starttime';
-		$result = mysql_query($query)
-			or trigger_error('SQL Error: '.mysql_error(), FATAL);
-	// Load in all of the programs (if any?)
-		while ($program_data = mysql_fetch_assoc($result)) {
-		// Add this as an object to the programs array
-			$this->programs[] = new Program($program_data);
-		}
-	// Cleanup
-		mysql_free_result($result);
 	}
 
 	function display_programs($start_time, $end_time) {
