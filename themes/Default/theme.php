@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-    theme.php                             Last Updated: 2003.06.14 (xris)
+    theme.php                             Last Updated: 2003.08.19 (xris)
 
 	This is the main theme class for the Default MythWeb theme.  It should
 	not be instantiated directly, but will most likely contain methods
@@ -65,6 +65,8 @@ class Theme {
 				<a href="program_listing.php">MythTV</a>
 				&nbsp; | &nbsp;
 				<a href="mythmusic.php">MythMusic</a>
+				&nbsp; | &nbsp;
+				<a href="video.php">MythVideo</a>
 				<!--&nbsp; | &nbsp;
 				<a href="#">MythWeather</a>--></td>
 

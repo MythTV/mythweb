@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.05 (xris)
+	recorded_programs.php                    Last Updated: 2003.08.19 (xris)
 
 	This file defines a theme class for the recorded programs section.
 	It must define one method.   documentation will be added someday.
@@ -111,7 +111,7 @@ class Theme_recorded_programs extends Theme {
 
 </table>
 <?php
-	echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' programs, using '.disk_free.' out of '.disk_size.'</p>';
+	echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' programs, using '.nice_filesize(disk_used).' out of '.nice_filesize(disk_size).'</p>';
 
 	// Print the main page footer
 		parent::print_footer();

@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.03 (xris)
+	recorded_programs.php                    Last Updated: 2003.08.19 (xris)
 
 	view and manipulate recorded programs.
 \***                                                                        ***/
@@ -52,6 +52,11 @@
 		// Make sure this is a valid show
 			if (!$show->chanid || $show->length < 1)
 				continue;
+		// Make sure that everything we're dealing with is an array
+			if (!is_array($Programs[$show->title]))
+				$Programs[$show->title] = array();
+			if (!is_array($Channels[$show->chanid]))
+				$Channels[$show->chanid] = array();
 		// Assign a reference to this show to the various arrays
 			$All_Shows[]                 = &$show;
 			$Programs[$show->title][]    = &$show;
@@ -106,9 +111,9 @@
 	}
 
 // How much free disk space on the backend machine?
-	list($freespace, $disk_size) = explode(backend_sep, backend_command('QUERY_FREESPACE'));
-	define(disk_free, nice_filesize($disk_size * 1024 * 1024));
-	define(disk_size, nice_filesize($freespace * 1024 * 1024));
+	list($disk_size, $disk_used) = explode(backend_sep, backend_command('QUERY_FREESPACE'));
+	define(disk_size, $disk_size * 1024 * 1024);
+	define(disk_used, $disk_used * 1024 * 1024);
 
 // Load the class for this page
 	require_once theme_dir.'recorded_programs.php';

@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	init.php				                 Last Updated: 2003.08.07 (xris)
+	init.php				                 Last Updated: 2003.08.19 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -67,7 +67,10 @@
 	#
 	# we'll eventually load theme settings from cookie/session info
 	#
-	define('theme_dir', 'themes/Default/');
+	define('theme_dir', 'themes/'.Theme.'/');
+
+// Load the theme config
+	require_once 'config/theme_'.Theme.'.php';
 
 // Load the overall page theme class
 	require_once theme_dir."theme.php";

@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2003.07.23 (xris)
+    program_listing.php                      Last Updated: 2003.08.19 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -69,6 +69,37 @@ class Theme_program_listing extends Theme {
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <?
 	}
+
+
+	function print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime) {
+	// Display the listing page header
+		$this->print_header($list_starttime, $list_endtime);
+
+		$this->print_timeslots($Timeslots, $list_starttime, $list_endtime, 'first');
+
+		// Go through each channel and load/print its info - use references to avoid "copy" overhead
+		$channel_count = 0;
+		foreach (array_keys($Channels) as $key) {
+		// Ignore channels with no number
+			if (strlen($Channels[$key]->channum) < 1)
+				continue;
+		// Count this channel
+			$channel_count++;
+		// Grab the reference
+			$channel = &$Channels[$key];
+		// Print the data
+			$this->print_channel(&$channel, $list_starttime, $list_endtime);
+		// Cleanup is a good thing
+			unset($channel);
+		// Display the timeslot bar?
+			if ($channel_count % timeslotbar_skip == 0)
+				$this->print_timeslots($Timeslots, $list_starttime, $list_endtime, $channel_count);
+		}
+
+	// Display the listing page footer
+		$this->print_footer();
+	}
+
 
 	/*
 		print_footer:
@@ -209,11 +240,20 @@ class Theme_program_listing extends Theme {
 // then, we just display the info
 ?>
 	<td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" valign="top"><?
+		$mouseover = 'onmouseover="window.status=\''.date('g:ia', $program->starttime).' - '.date('g:ia', $program->endtime).' -- '
+					 .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
+					 .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
+					 					  : '')
+					 .'\';';
+		if (show_popup_info)
+			$mouseover .= 'show(\'program_'.$program_id_counter.'\');';
+		$mouseover .= 'return true;" onmouseout="window.status=\'\';';
+		if (show_popup_info)
+			$mouseover .= 'hide(\'program_'.$program_id_counter.'\');';
+		$mouseover .= 'return true;"';
 	// Print a link to record this show
 		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'"'
-			 .(show_popup_info ? ' onmouseover="window.status=\'Details for: '.str_replace('\'', '\\\]', $program->title).'\';show(\'program_'.$program_id_counter.'\');return true"'
-			 					.' onmouseout="window.status=\'\';hide(\'program_'.$program_id_counter.'\');return true"'
-							   : '')
+			 .$mouseover
 			 .'>'.$program->title
 			 .(strlen($program->subtitle) > 0 ? ":<BR>$program->subtitle" : '')
 			 .'</a>';

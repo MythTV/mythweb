@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	program_listing.php                      Last Updated: 2003.08.06 (xris)
+	program_listing.php                      Last Updated: 2003.08.19 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -47,32 +47,5 @@
 // Create an instance of this page from its theme object
 	$Page = new Theme_program_listing;
 
-// Display the listing page header
-	$Page->print_header($list_starttime, $list_endtime);
-
-// Print the page content
-	$Page->print_timeslots($Timeslots, $list_starttime, $list_endtime, 'first');
-
-// Go through each channel and load/print its info - use references to avoid "copy" overhead
-	$channel_count = 0;
-	foreach (array_keys($Channels) as $key) {
-	// Ignore channels with no number
-		if (strlen($Channels[$key]->channum) < 1)
-			continue;
-	// Count this channel
-		$channel_count++;
-	// Grab the reference
-		$channel = &$Channels[$key];
-	// Print the data
-		$Page->print_channel(&$channel, $list_starttime, $list_endtime);
-	// Cleanup is a good thing
-		unset($channel);
-	// Display the timeslot bar?
-		if ($channel_count % timeslotbar_skip == 0)
-			$Page->print_timeslots($Timeslots, $list_starttime, $list_endtime, $channel_count);
-	}
-
-// Display the listing page footer
-	$Page->print_footer();
-
+	$Page->print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime);
 ?>

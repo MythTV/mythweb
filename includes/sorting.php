@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2003.08.11 (xris)
+    sorting.php                              Last Updated: 2003.08.20 (irish)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -99,6 +99,18 @@
 	function by_filesize(&$a, &$b) {
         if ($a->filesize == $b->filesize) return 0;
         return ($a->filesize > $b->filesize) ? 1 : -1;
+	}
+
+	function by_director(&$a, &$b) {
+		return strcasecmp($a->director, $b->director);
+	}
+
+	function by_userrating(&$a, &$b) {
+		return strcasecmp($a->userrating, $b->userrating);
+	}
+
+	function by_year(&$a, &$b) {
+		return strcasecmp($a->year, $b->year);
 	}
 
 ?>
