@@ -185,10 +185,11 @@ $L = array(
     'Profile Groups'     => 'Beer Brands',
     'Recording profiles' => 'Beer beerofiles',
 // themes/.../recording_schedules.php
-    'Any'     => '',
-    'channel' => '',
-    'profile' => '',
-    'type'    => '',
+    'Any'                                       => '',
+    'No recording schedules have been defined.' => '',
+    'channel'                                   => '',
+    'profile'                                   => '',
+    'type'                                      => '',
 // themes/.../scheduled_recordings.php
     'Activate'      => '',
     'Commands'      => '',

@@ -184,10 +184,11 @@ $L = array(
     'Profile Groups'     => 'Profielgroepen',
     'Recording profiles' => 'Opnameprofielen',
 // themes/.../recording_schedules.php
-    'Any'     => 'Alle',
-    'channel' => '',
-    'profile' => 'profiel',
-    'type'    => 'type',
+    'Any'                                       => 'Alle',
+    'No recording schedules have been defined.' => '',
+    'channel'                                   => '',
+    'profile'                                   => 'profiel',
+    'type'                                      => 'type',
 // themes/.../scheduled_recordings.php
     'Activate'      => 'Activeer',
     'Commands'      => 'Opdrachten',

@@ -184,10 +184,11 @@ $L = array(
     'Profile Groups'     => 'プロファイルグループ',
     'Recording profiles' => '録画プロファイル',
 // themes/.../recording_schedules.php
-    'Any'     => '全て',
-    'channel' => '',
-    'profile' => 'プロファイル',
-    'type'    => 'タイプ',
+    'Any'                                       => '全て',
+    'No recording schedules have been defined.' => '',
+    'channel'                                   => '',
+    'profile'                                   => 'プロファイル',
+    'type'                                      => 'タイプ',
 // themes/.../scheduled_recordings.php
     'Activate'      => '有効',
     'Commands'      => 'コマンド',

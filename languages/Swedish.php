@@ -184,10 +184,11 @@ $L = array(
     'Profile Groups'     => 'Profilgrupper',
     'Recording profiles' => 'Inspelningsprofiler',
 // themes/.../recording_schedules.php
-    'Any'     => 'Alla',
-    'channel' => '',
-    'profile' => 'Profil',
-    'type'    => 'Typ',
+    'Any'                                       => 'Alla',
+    'No recording schedules have been defined.' => '',
+    'channel'                                   => '',
+    'profile'                                   => 'Profil',
+    'type'                                      => 'Typ',
 // themes/.../scheduled_recordings.php
     'Activate'      => 'Aktivera',
     'Commands'      => 'Kommando',
