@@ -96,7 +96,7 @@
 // Clean out stale thumbnails
 	if ($dir = opendir(pixmap_local_path)) {
 		while (($file = readdir($dir))) {
-			if (!is_file(pixmap_local_path.'/'.$file))
+			if (!is_file(pixmap_local_path.'/'.$file) || !ereg('\\.(png,jpg,gif)$', $file))
 				continue;
 		// Delete files that haven't been touched in the last 3 days
 			if (fileatime(pixmap_local_path.'/'.$file) > 3 * 24 * 60 * 60)
