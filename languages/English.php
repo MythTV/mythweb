@@ -199,7 +199,7 @@ define ('_LANG_RECTYPE_FINDONE', 'FindOne');
 
 define ('_LANG_RECTYPE_LONG_ONCE',          'Record only this showing.');
 define ('_LANG_RECTYPE_LONG_DAILY',         'Record this program in this timeslot every day.');
-define ('_LANG_RECTYPE_LONG_CHANNEL',       'Always record this program on channel.');
+define ('_LANG_RECTYPE_LONG_CHANNEL',       'Always record this program on channel ');
 define ('_LANG_RECTYPE_LONG_ALWAYS',        'Always record this program on any channel.');
 define ('_LANG_RECTYPE_LONG_WEEKLY',        'Record this program in this timeslot every week.');
 define ('_LANG_RECTYPE_LONG_FINDONE',       'Record one showing of this program at any time.');
