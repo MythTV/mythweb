@@ -23,14 +23,14 @@ class Theme_program_listing extends Theme {
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-    <td width="50%" align="center"><?php echo _LANG_CURRENTLY_BROWSING . strftime(' %a %b %e, %Y, %I:%M %p', $start_time)?></td>
+    <td width="50%" align="center"><?php echo t('Currently Browsing:  $1', strftime(' %a %b %e, %Y, %I:%M %p', $start_time)) ?></td>
     <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <form class="form" id="program_listing" action="program_listing.php" method="get">
         <table border="0" cellspacing="0" cellpadding="2">
         <tr>
 
-            <td align="center"><? echo _LANG_JUMP_TO?>:&nbsp;&nbsp;</td>
-            <td align="right"><? echo _LANG_HOUR?>:&nbsp;</td>
+            <td align="center"><? echo t('Jump To') ?>:&nbsp;&nbsp;</td>
+            <td align="right"><? echo t('Hour') ?>:&nbsp;</td>
             <td><select name="hour" style="text-align: right" onchange="get_element('program_listing').submit()"><?php
                 for ($h=0;$h<24;$h++) {
                     echo "<option value=\"$h\"";
@@ -39,7 +39,7 @@ class Theme_program_listing extends Theme {
                     echo '>'.strftime($_SESSION['time_format'], strtotime("$h:00")).'</option>';
                 }
                 ?></select></td>
-            <td align="right"><?echo _LANG_DATE?>:&nbsp;</td>
+            <td align="right"><?echo t('Date') ?>:&nbsp;</td>
             <td><select name="date" onchange="get_element('program_listing').submit()"><?php
             // Find out how many days into the future we should bother checking
                 $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
@@ -55,7 +55,7 @@ class Theme_program_listing extends Theme {
                     echo ">".strftime($_SESSION['date_listing_jump'] , $time)."</option>";
                 }
                 ?></select></td>
-            <td align="center"><noscript><input type="submit" class="submit" value="<? echo _LANG_JUMP?>"></noscript></td>
+            <td align="center"><noscript><input type="submit" class="submit" value="<? echo t('Jump') ?>"></noscript></td>
 
 
         </tr>
@@ -202,38 +202,38 @@ class Theme_program_listing extends Theme {
 <tr>
     <td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
         <tr>
-            <td align=\"right\">"._LANG_AIRTIME.":</td>
+            <td align=\"right\">".t('Airtime').":</td>
             <td>".strftime($_SESSION['time_format'], $program->starttime).' to '.strftime($_SESSION['time_format'], $program->endtime)."</td>
         </tr><tr>
-            <td align=\"right\">"._LANG_TITLE.":</td>
+            <td align=\"right\">".t('Title').":</td>
             <td>$program->title</td>
         </tr>"
         .(strlen($program->subtitle) > 0 ? "<tr>
-            <td align=\"right\">"._LANG_SUBTITLE.":</td>
+            <td align=\"right\">".t('Subtitle').":</td>
             <td>$program->subtitle</td>
         </tr>" : '')
         .(strlen($program->description) > 0 ? "<tr>
-            <td align=\"right\" valign=\"top\">"._LANG_DESCRIPTION.":</td>
+            <td align=\"right\" valign=\"top\">".t('Description').":</td>
             <td>".nl2br(wordwrap($program->description, 70))."</td>
         </tr>" : '')
         .(strlen($program->rating) > 0 ? "<tr>
-            <td align=\"right\" valign=\"top\">"._LANG_RATING.":</td>
+            <td align=\"right\" valign=\"top\">".t('Rating').":</td>
             <td>$program->rating</td>
         </tr>" : '')
         .($program->airdate > 0 ? "<tr>
-            <td align=\"right\">"._LANG_ORIG_AIRDATE.":</td>
+            <td align=\"right\">".t('Original Airdate').":</td>
             <td>$program->airdate</td>
         </tr>" : '')
         .(strlen($program->category) > 0 ? "<tr>
-            <td align=\"right\">"._LANG_CATEGORY.":</td>
+            <td align=\"right\">".t('Category').":</td>
             <td>$program->category</td>
         </tr>" : '')
         .($program->previouslyshown ? "<tr>
-            <td align=\"right\">"._LANG_RERUN.":</td>
+            <td align=\"right\">".t('Rerun').":</td>
             <td>Yes</td>
         </tr>" : '')
         .($program->will_record ? "<tr>
-            <td align=\"right\">"._LANG_SCHEDULE.":</td>
+            <td align=\"right\">".t('Schedule').":</td>
             <td>".($program->record_daily       ? _LANG_RECTYPE_LONG_DAILY
                     : ($program->record_weekly  ? _LANG_RECTYPE_LONG_WEEKLY
                     : ($program->record_once    ? _LANG_RECTYPE_LONG_ONCE
@@ -242,7 +242,7 @@ class Theme_program_listing extends Theme {
                     : _LANG_RECTYPE_LONG_ALWAYS)))))."</td>
         </tr>" : '')
         .($program->recstatus ? "<tr>
-            <td align=\"right\">"._LANG_NOTES.":</td>
+            <td align=\"right\">".t('Notes').":</td>
             <td>".$GLOBALS['RecStatus_Reasons'][$program->recstatus]."</td>
         </tr>" : '')
         ."</table></td>
@@ -321,7 +321,7 @@ class Theme_program_listing extends Theme {
             $parens .=  "<font color=\"yellow\"><b>HD</b></font>";
 	}
         if ($parens)
-            echo "<BR>($parens)";    
+            echo "<BR>($parens)";
 
     ?></td>
 <?php

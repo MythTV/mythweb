@@ -58,7 +58,7 @@ class Theme_program_detail extends Theme {
                     echo "<em>";
                 echo strftime('%a, %b %e', $this_program->starttime);
                 if ($this_program->previouslyshown)
-                    echo ' ('._LANG_RERUN.')';
+                    echo ' ('.t('Rerun').')';
                 echo '<br />'
                     .strftime('%r', $this_program->starttime) . ' ' . _LANG_TO . ' ' . strftime('%r', $this_program->endtime);
                 if (!isset($_GET['recordid']))
@@ -66,12 +66,11 @@ class Theme_program_detail extends Theme {
                 if ($_GET['recordid'])
                     echo "</em>";
                 echo "<br />\n\t\t\t";
-                echo '('._LANG_SEARCH.': &nbsp;'
-                    .' <a href="http://www.imdb.com/Find?select=Titles&for='.urlencode($this_program->title).'">'._LANG_IMDB.'</a>'
+                echo '('.t('Search').': &nbsp;'
+                    .' <a href="http://www.imdb.com/Find?select=Titles&for='.urlencode($this_program->title).'">'.t('IMDB').'</a>'
                     .' &nbsp;-&nbsp; '
-                    .' <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString='.urlencode($this_program->title).'">'._LANG_TVTOME . '</a>'
-                    .' &nbsp;-&nbsp; '
-                    .' <a href="http://www.google.com/search?q='.urlencode($this_program->title).'">'._LANG_GOOGLE.'</a>'
+                    .' <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString='.urlencode($this_program->title).'">'.t('TVTome').'</a>'                    .' &nbsp;-&nbsp; '
+                    .' <a href="http://www.google.com/search?q='.urlencode($this_program->title).'">'.t('Google').'</a>'
                     .')';
                 ?></span></td>
         </tr><tr>
@@ -118,13 +117,13 @@ class Theme_program_detail extends Theme {
         </tr><?php
             if (strlen($this_program->category)) {
         ?><tr>
-            <td colspan="2" align="right"><? echo _LANG_CATEGORY?>:&nbsp;</td>
+            <td colspan="2" align="right"><? echo t('Category') ?>:&nbsp;</td>
             <td><?php echo $this_program->category?></td>
         </tr><?php
             }
             if (strlen($this_program->airdate)) {
         ?><tr>
-            <td nowrap colspan="2" align="right"><? echo _LANG_ORIG_AIRDATE?>:&nbsp;</td>
+            <td nowrap colspan="2" align="right"><? echo t('Original Airdate') ?>:&nbsp;</td>
             <td><?php echo $this_program->airdate?></td>
         </tr><?php
             }
@@ -205,15 +204,15 @@ class Theme_program_detail extends Theme {
 
         <table class="command command_border_l command_border_t command_border_b command_border_r" align="center" border="0" cellspacing="0" cellpadding="5">
         <tr>
-            <td><p align="center"><?php echo _LANG_RECORDING_OPTIONS?>:</p></td></tr>
+            <td><p align="center"><?php echo t('Recording Options') ?>:</p></td></tr>
         <tr>
             <td><input type="radio" class="radio" name="record" value="never" id="record_never"<?php echo
                 $this_program->will_record ? '' : ' CHECKED'?>></input>
                 <a onclick="get_element('record_never').checked=true;"><?php
                     if ($this_program->will_record)
-                        echo _LANG_CANCEL_THIS_SCHEDULE;
+                        echo t('Cancel this schedule');
                     else
-                        echo _LANG_DONT_RECORD_THIS_PROGRAM;
+                        echo t('Don\'t record this program');
                     ?></a>
                 <br/>
                 <input type="radio" class="radio" name="record" value="once" id="record_once"<?php
@@ -244,7 +243,7 @@ class Theme_program_detail extends Theme {
             <td><p>
                 <table width="100%" border="0" cellspacing="0" cellpadding="2">
                 <tr>
-                    <td nowrap align="right"><?php echo _LANG_RECORDING_PROFILE ?>:&nbsp;</td>
+                    <td nowrap align="right"><?php echo t('Recording Profile') ?>:&nbsp;</td>
                     <td><select align=right name="profile"><?php
                         global $Profiles;
                         foreach($Profiles as $profile) {
@@ -255,7 +254,7 @@ class Theme_program_detail extends Theme {
                         }
                         ?></select></td>
                 </tr><tr>
-                    <td nowrap align="right"><?php echo _LANG_RECORDING_GROUP ?>:&nbsp;</td>
+                    <td nowrap align="right"><?php echo t('Recording Group') ?>:&nbsp;</td>
                     <td><select align=right name="recgroup"><?php
                         global $Groups;
                         foreach($Groups as $group) {
@@ -266,7 +265,7 @@ class Theme_program_detail extends Theme {
                         }
                         ?></select></td>
                 </tr><tr>
-                    <td nowrap align="right"><?php echo _LANG_RECPRIORITY?>:&nbsp;</td>
+                    <td nowrap align="right"><?php echo t('Recording Priority') ?>:&nbsp;</td>
                     <td><select align=right name="recpriority"><?php
                         for($recprioritycount=99;$recprioritycount>=-99;--$recprioritycount) {
                             echo '<option value="'.$recprioritycount.'"';
@@ -276,16 +275,16 @@ class Theme_program_detail extends Theme {
                         }
                         ?></select></td>
                 </tr><tr>
-                    <td nowrap align="right"><?php echo _LANG_CHECK_FOR_DUPLICATES_IN?>:&nbsp;</td>
+                    <td nowrap align="right"><?php echo t('Check for duplicates in') ?>:&nbsp;</td>
                     <td><select align=right name="dupin"><?php
                             echo '<option value="1"';
                             if ($this_program->dupin == 1)
                                 echo ' SELECTED';
-                            echo '>' . _LANG_CURRENT_RECORDINGS . '</option>';
+                            echo '>' . t('Current Recordings') . '</option>';
                             echo '<option value="2"';
                             if ($this_program->dupin == 2)
                                 echo ' SELECTED';
-                            echo '>' . _LANG_PREVIOUS_RECORDINGS . '</option>';
+                            echo '>' . t('Previous Recordings') . '</option>';
                             echo '<option value="15"';
                             if (($this_program->dupin == 15) ||
                                 ($this_program->dupin == 0))
@@ -293,46 +292,46 @@ class Theme_program_detail extends Theme {
                             echo '>' . _LANG_ALL_RECORDINGS . '</option>';
                        ?></select></td>
                 </tr><tr>
-                    <td nowrap align="right"><? echo _LANG_DUPLICATE_CHECK_METHOD?>:&nbsp;</td>
+                    <td nowrap align="right"><? echo t('Duplicate Check method') ?>:&nbsp;</td>
                     <td><select align=right name="dupmethod"><?php
                             echo '<option value="1"';
                             if ($this_program->dupmethod == 1)
                                 echo ' SELECTED';
-                            echo '>' . _LANG_NONE . '</option>';
+                            echo '>' . t('None') . '</option>';
                             echo '<option value="2"';
                             if ($this_program->dupmethod == 2)
                                 echo ' SELECTED';
-                            echo '>' . _LANG_SUBTITLE . '</option>';
+                            echo '>' . t('Subtitle') . '</option>';
                             echo '<option value="4"';
                             if ($this_program->dupmethod == 4)
                                 echo ' SELECTED';
-                            echo '>' . _LANG_DESCRIPTION . '</option>';
+                            echo '>' . t('Description') . '</option>';
                             echo '<option value="6"';
                             if (($this_program->dupmethod == 6) ||
                                 ($this_program->dupmethod == 0))
                                 echo ' SELECTED';
-                            echo '>'._LANG_SUBTITLE_AND_DESCRIPTION.'</option>';
+                            echo '>'.t('Subtitle and Description').'</option>';
                        ?></select></td>
                 </tr><tr>
-                    <td nowrap align="right"><? echo _LANG_AUTO_EXPIRE_RECORDINGS?>&nbsp;</td>
+                    <td nowrap align="right"><? echo t('Auto-expire recordings') ?>&nbsp;</td>
                     <td><input type="checkbox" class="radio" name="autoexpire" <?php if ($this_program->autoexpire) echo "CHECKED" ?>></td>
                 </tr><tr>
-                    <td nowrap align="right"><?php echo _LANG_NO_OF_RECORDINGS_TO_KEEP?>&nbsp;</td>
+                    <td nowrap align="right"><?php echo t('No. of recordings to keep') ?>&nbsp;</td>
                     <td><input type="input" name="maxepisodes" size="1" value="<?php echo htmlentities($this_program->maxepisodes) ?>"></td>
                 </tr><tr>
-                    <td nowrap align="right"><? echo _LANG_RECORD_NEW_AND_EXPIRE_OLD?>&nbsp;</td>
+                    <td nowrap align="right"><? echo t('Record new and expire old') ?>&nbsp;</td>
                     <td><input type="checkbox" class="radio" name="maxnewest" <?php if ($this_program->maxnewest) echo "CHECKED" ?>></td>
                 </tr><tr>
-                    <td nowrap align="right"><?php echo _LANG_START_EARLY?>:&nbsp;</td>
+                    <td nowrap align="right"><?php echo t('Start Early') ?>:&nbsp;</td>
                     <td><input type="input" name="startoffset" size="1" value="<?php echo htmlentities($this_program->startoffset) ?>"></td>
                 </tr><tr>
-                    <td nowrap align="right"><?php echo _LANG_END_LATE?>:&nbsp;</td>
+                    <td nowrap align="right"><?php echo t('End Late') ?>:&nbsp;</td>
                     <td><input type="input" name="endoffset" size="1" value="<?php echo htmlentities($this_program->endoffset) ?>"></td>
                 </tr>
                 </table>
                 </p>
 
-                <p align="center"><input type="submit" class="submit" name="save" value="<?php echo _LANG_UPDATE_RECORDING_SETTINGS?>"></p></td>
+                <p align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Update Recording Settings') ?>"></p></td>
 
         </tr>
         </table>

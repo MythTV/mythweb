@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-#Last Updated: 2004.11.28 (xris)
+#Last Updated: 2004.11.29 (xris)
 #
 #  build_translation.pl
 #
@@ -89,7 +89,7 @@
         }
         $new =~ s#,\n$#\n// End of the translation hash ** Do not touch the next line\n          );\n#s;
     # Replace the new strings into $data
-        $data =~ s#(?:\s*//[^\n]+)+\n\s*\$L\s*=\s*array\(\s*\n(.+?)\n\s*\);\s*#\n\n$new\n\n#s;
+        $data =~ s#(?:\s*//[^\n]+)?\n\s*\$L\s*=\s*array\(\s*\n(.+?)\n\s*\);\s*#\n\n$new\n\n#s;
     # Print it back to the file
         open(DATA, ">$languages_path/tmp.$$.php") or die "Couldn't create tempfile $languages_path/tmp.$$.php:  $!\n";
         print DATA $data;

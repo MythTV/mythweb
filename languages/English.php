@@ -6,7 +6,7 @@
     other translations, since it's mostly just blank (default) entries.
 \***                                                                        ***/
 
-// Set the locale to UTF-8
+// Set the locale to English UTF-8
 setlocale(LC_ALL, 'en_US.UTF-8');
 
 // Define the language lookup hash ** Do not touch the next line
@@ -15,7 +15,12 @@ $L = array(
 // Warning, any custom comments will be lost during translation updates.
 //
 // Shared Terms
-    'Search' => '',
+    'Category'         => '',
+    'Description'      => '',
+    'Original Airdate' => '',
+    'Rerun'            => '',
+    'Search'           => '',
+    'Subtitle'         => '',
 // includes/init.php
     'generic_date' => '%a %b %e, %Y',
     'generic_time' => '%I:%M %p',
@@ -29,6 +34,44 @@ $L = array(
     '$1 hrs'  => '',
     '$1 min'  => '',
     '$1 mins' => '',
+// themes/.../channel_detail.php
+    'Episode' => '',
+    'Length'  => '',
+    'Show'    => '',
+    'Time'    => '',
+// themes/.../program_detail.php
+    'Auto-expire recordings'     => '',
+    'Cancel this schedule'       => '',
+    'Check for duplicates in'    => '',
+    'Current Recordings'         => '',
+    'Don\'t record this program' => '',
+    'Duplicate Check method'     => '',
+    'End Late'                   => '',
+    'Google'                     => '',
+    'IMDB'                       => '',
+    'No. of recordings to keep'  => '',
+    'None'                       => '',
+    'Previous Recordings'        => '',
+    'Record new and expire old'  => '',
+    'Recording Group'            => '',
+    'Recording Options'          => '',
+    'Recording Priority'         => '',
+    'Recording Profile'          => '',
+    'Start Early'                => '',
+    'Subtitle and Description'   => '',
+    'TVTome'                     => '',
+    'Update Recording Settings'  => '',
+// themes/.../program_listing.php
+    'Airtime'                 => '',
+    'Currently Browsing:  $1' => '',
+    'Date'                    => '',
+    'Hour'                    => '',
+    'Jump'                    => '',
+    'Jump To'                 => '',
+    'Notes'                   => '',
+    'Rating'                  => '',
+    'Schedule'                => '',
+    'Title'                   => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '',
     '$1 episodes'                                         => '',

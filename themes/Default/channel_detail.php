@@ -19,17 +19,17 @@ class Theme_channel_detail extends Theme {
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
 <?php   if (show_channel_icons && is_file($this_channel->icon)) { ?>
-    <td align="right"><img src="<?=$this_channel->icon?>" height="30" width="30"></td>
+    <td align="right"><img src="<?php echo $this_channel->icon?>" height="30" width="30"></td>
 <?      } ?>
     <td width="66%" valign="center" class="huge">
-        Channel <?=$this_channel->channum?>:  <?=$this_channel->callsign?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time'])?></td>
+        Channel <?php echo $this_channel->channum?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time'])?></td>
     <td class="command command_border_l command_border_t command_border_b command_border_r" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
-            <form id="form" action="channel_detail.php?chanid=<?php echo $_GET['chanid']?>" method="post">
+            <form id="form" action="channel_detail.php?chanid=<?php echo $_GET['chanid'] ?>" method="post">
 
             <td align="center">Jump&nbsp;to:&nbsp;&nbsp;</td>
             <td align="right">Date:&nbsp;</td>
-            <td><select name="time" onchange="get_element('form').submit()"><?
+            <td><select name="time" onchange="get_element('form').submit()"><?php
             // Find out how many days into the future we should bother checking
                 $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
@@ -68,11 +68,11 @@ class Theme_channel_detail extends Theme {
     // Display the results
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-    <td><a href="scheduled_recordings.php?sortby=airdate">time</a></td>
-    <td><a href="scheduled_recordings.php?sortby=title">show</a></td>
-    <td>episode</td>
-    <td>description</td>
-    <td><a href="scheduled_recordings.php?sortby=length">length</a></td>
+    <td><a href="scheduled_recordings.php?sortby=airdate"><?php echo t('Time') ?></a></td>
+    <td><a href="scheduled_recordings.php?sortby=title"><?php echo t('Show') ?></a></td>
+    <td><?php echo t('Episode') ?></td>
+    <td><?php t('Description') ?></td>
+    <td><a href="scheduled_recordings.php?sortby=length"><?php echo t('Length') ?></a></td>
 </tr><?php
 
         $row = 0;
@@ -105,8 +105,8 @@ class Theme_channel_detail extends Theme {
         echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
              .$show->title.$additional.'</a>';
         ?></td>
-    <td><?php echo $show->subtitle?></td>
-    <td><?php echo $show->description?></td>
+    <td><?php echo $show->subtitle ?></td>
+    <td><?php echo $show->description ?></td>
     <td nowrap><?php echo nice_length($show->length)?></td>
 </tr><?php
             $row++;

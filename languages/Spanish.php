@@ -1,13 +1,107 @@
 <?php
+/***                                                                        ***\
+    languages/Spanish.php
 
-define ('_LANG_LANGUAGE_NAME', 'Spanish');
+    Translation hash for Spanish.
+\***                                                                        ***/
 
-/* Set the locale to UTF-8 */
+// Set the locale to Spanish UTF-8
 setlocale(LC_ALL, 'es_ES.UTF-8');
 
-/* Default date and time formats */
-define('generic_date', '%b %e, %Y');
-define('generic_time', '%I:%M %p');
+// Define the language lookup hash ** Do not touch the next line
+$L = array(
+// Add your translations below here.
+// Warning, any custom comments will be lost during translation updates.
+//
+// Shared Terms
+    'Category'         => '',
+    'Description'      => '',
+    'Original Airdate' => '',
+    'Rerun'            => '',
+    'Search'           => '',
+    'Subtitle'         => '',
+// includes/init.php
+    'generic_date' => '%b %e, %Y',
+    'generic_time' => '%I:%M %p',
+// includes/utils.php
+    '$1 B'    => '',
+    '$1 GB'   => '',
+    '$1 KB'   => '',
+    '$1 MB'   => '',
+    '$1 TB'   => '',
+    '$1 hr'   => '',
+    '$1 hrs'  => '',
+    '$1 min'  => '',
+    '$1 mins' => '',
+// themes/.../channel_detail.php
+    'Episode' => '',
+    'Length'  => '',
+    'Show'    => '',
+    'Time'    => '',
+// themes/.../program_detail.php
+    'Auto-expire recordings'     => '',
+    'Cancel this schedule'       => '',
+    'Check for duplicates in'    => '',
+    'Current Recordings'         => '',
+    'Don\'t record this program' => '',
+    'Duplicate Check method'     => '',
+    'End Late'                   => '',
+    'Google'                     => '',
+    'IMDB'                       => '',
+    'No. of recordings to keep'  => '',
+    'None'                       => '',
+    'Previous Recordings'        => '',
+    'Record new and expire old'  => '',
+    'Recording Group'            => '',
+    'Recording Options'          => '',
+    'Recording Priority'         => '',
+    'Recording Profile'          => '',
+    'Start Early'                => '',
+    'Subtitle and Description'   => '',
+    'TVTome'                     => '',
+    'Update Recording Settings'  => '',
+// themes/.../program_listing.php
+    'Airtime'                 => '',
+    'Currently Browsing:  $1' => '',
+    'Date'                    => '',
+    'Hour'                    => '',
+    'Jump'                    => '',
+    'Jump To'                 => '',
+    'Notes'                   => '',
+    'Rating'                  => '',
+    'Schedule'                => '',
+    'Title'                   => '',
+// themes/.../recorded_programs.php
+    '$1 episode'                                          => '',
+    '$1 episodes'                                         => '',
+    '$1 programs, using $2 ($3) out of $4.'               => '',
+    '$1 recording'                                        => '',
+    '$1 recordings'                                       => '',
+    'All recordings'                                      => '',
+    'Are you sure you want to delete the following show?' => '',
+    'Delete'                                              => '',
+    'Go'                                                  => '',
+    'No'                                                  => '',
+    'Show group'                                          => '',
+    'Show recordings'                                     => '',
+    'Yes'                                                 => '',
+    'preview'                                             => '',
+// themes/.../theme.php
+    'Backend Status'       => '',
+    'Category Legend'      => '',
+    'Favorites'            => '',
+    'Go To'                => '',
+    'Listings'             => '',
+    'Manually Schedule'    => '',
+    'Movies'               => '',
+    'Recorded Programs'    => '',
+    'Recording Schedules'  => '',
+    'Scheduled Recordings' => '',
+    'Settings'             => '',
+    'advanced'             => ''
+// End of the translation hash ** Do not touch the next line
+          );
+
 
 /* theme.php */
 define ('_LANG_BACKEND_STATUS',       'Backend');
