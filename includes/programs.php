@@ -241,7 +241,7 @@ class Program {
 		// Load the remaining info we got from mythbackend
 			$this->title       = $program_data[0];					# program name/title
 			$this->subtitle    = $program_data[1];					# episode name
-			$this->description = $program_data[2];					# episode description
+			$this->description = nl2br(wordwrap($program_data[2], 50));	# episode description
 			$this->category    = $program_data[3];					#
 			#$channum           = $program_data[5];					# channel number
 			#$callsign          = $program_data[6];					# callsign (eg. FOOD or SCIFI)
@@ -264,7 +264,7 @@ class Program {
 			$this->endtime         = $program_data['endtime_unix'];
 			$this->title           = $program_data['title'];
 			$this->subtitle        = $program_data['subtitle'];
-			$this->description     = $program_data['description'];
+			$this->description     = nl2br(wordwrap($program_data['description'], 50));
 			$this->category        = $program_data['category']     ? $program_data['category']       : 'Unknown';
 			$this->category_type   = $program_data['category_type'] ? $program_data['category_type'] : 'Unknown';
 			$this->airdate         = $program_data['airdate'];
