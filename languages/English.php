@@ -227,7 +227,7 @@ define ('_LANG_RECTYPE_LONG_DAILY',         'Record this program in this timeslo
 define ('_LANG_RECTYPE_LONG_CHANNEL',       'Always record this program on this channel ');
 define ('_LANG_RECTYPE_LONG_ALWAYS',        'Always record this program on any channel.');
 define ('_LANG_RECTYPE_LONG_WEEKLY',        'Record this program in this timeslot every week.');
-define ('_LANG_RECTYPE_LONG_FINDONE',       'Record one showing of this program at any time.');
+define ('_LANG_RECTYPE_LONG_FINDONE',       'Find a showing of this program and record it.');
 
 define ('_LANG_RECSTATUS_LONG_DELETED',           'This showing was recorded but was deleted before recording was completed.');
 define ('_LANG_RECSTATUS_LONG_STOPPED',           'This showing was recorded but was stopped before recording was completed.');
