@@ -126,9 +126,9 @@ class Theme_mythmusic extends Theme {
         printf("</tr>\n");
         printf("</table>\n");
     }
-    function printDetail($trackName,$trackTime,$trackArtist,$trackAlbum,$trackGenre) {
+    function printDetail($trackName,$trackTime,$trackArtist,$trackAlbum,$trackGenre,$urlfilename) {
         printf("<tr class=\"musicRow\">\n");
-        printf("<td class=\"musicTrack\"> %s</td>\n",htmlspecialchars($trackName));
+        printf("<td class=\"musicTrack\"> <a href=\"%s\">%s</a></td>\n",$urlfilename,htmlspecialchars($trackName));
         $calcLength=$trackTime/1000;
         $calcMin=$calcLength/60;
         $calcSec=$calcLength%60;
