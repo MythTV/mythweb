@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythmusic.php                             Last Updated: 2005.02.06 (xris)
+    music.php                                Last Updated: 2005.02.06 (xris)
 
     MythMusic
 \***                                                                        ***/
@@ -13,7 +13,7 @@
 //  entire playlists to any spot on planet earth
 //
 require_once "includes/init.php";
-require_once theme_dir."mythmusic.php";
+require_once theme_dir."music.php";
 
 class mythMusic {
     var $filterPlaylist;
@@ -117,7 +117,7 @@ class mythMusic {
 
     function display()
     {
-        $music = new Theme_mythmusic();
+        $music = new Theme_music();
         $this->init($music->getMaxPerPage());
         $music->setOffset($this->offset);
         $music->setTotalCount($this->totalCount);

@@ -50,7 +50,7 @@ class Theme {
         <a id="tv_link"<?php if (section == 'tv') echo ' class="current_section"' ?> href="program_listing.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
         </a>
-        <a id="music_link"<?php if (section == 'music') echo ' class="current_section"' ?> href="mythmusic.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
+        <a id="music_link"<?php if (section == 'music') echo ' class="current_section"' ?> href="music.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic" />
         </a>
         <a id="video_link"<?php if (section == 'video') echo ' class="current_section"' ?> href="video.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
