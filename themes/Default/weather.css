@@ -62,6 +62,13 @@
 }
 .weather_site .current_conditions table td {
 }
+.weather_site .current_conditions table td.temp {
+}
+.weather_site .current_conditions table td.temp sup {
+    font-size: 7pt;
+    position:  relative;
+    top:       3px;
+}
 
 .weather_site .forecast {
     margin:  10px 20px;

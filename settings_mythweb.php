@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2005.02.11 (xris)
+    settings_mythweb.php                     Last Updated: 2005.02.11 (xris)
 
     mythweb settings
 \***                                                                        ***/
@@ -25,8 +25,13 @@
         if ($_POST['time_format'])          $_SESSION['time_format']          = $_POST['time_format'];
     // Save the theme
         if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
+    // Use SI units?
+        if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
+
     // Recorded Programs
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
+    // Guide Settings
+        $_SESSION['guide_favonly'] = $_POST['guide_favonly'] ? true : false;
     }
 
 // Load the class for this page
@@ -76,6 +81,60 @@
                 echo ' SELECTED';
             echo '>'.$details[0].'</option>';
         }
+        echo '</select>';
+    }
+
+    /*
+    unit_select:
+    displays a <select> for the unit type
+    */
+    function unit_select() {
+        echo '<select name="siunits">';
+        if(!$_SESSION['siunits'])
+        {
+            $result = mysql_query('SELECT * FROM settings WHERE value="SIUnits"')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+
+            $row = mysql_fetch_assoc($result);
+            $si = $row["data"];
+            $_SESSION['siunits'] = $si;
+
+            mysql_free_result($result);
+        }
+        else
+        {
+            $si = $_SESSION['siunits'];
+        }
+
+        echo "<option value='YES'".($si=='YES'?' SELECTED':'').">".t('Yes')."</option>\n";
+        echo "<option value='NO'".($si=='YES'?'':' SELECTED').">".t('No')."</option>\n";
+        echo '</select>';
+    }
+
+    /*
+    unit_select:
+    displays a <select> for the unit type
+    */
+    function unit_select() {
+        echo '<select name="siunits">';
+        if(!$_SESSION['siunits'])
+        {
+            $result = mysql_query('SELECT * FROM settings WHERE value="SIUnits"')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+
+            $row = mysql_fetch_assoc($result);
+            $si = $row["data"];
+            $_SESSION['siunits'] = $si;
+
+            mysql_free_result($result);
+        }
+        else
+        {
+            $si = $_SESSION['siunits'];
+        }
+
+        echo "<option value='YES'".($si=='YES'?' SELECTED':'').">".t('Yes')."</option>\n";
+        echo "<option value='NO'".($si=='YES'?'':' SELECTED').">".t('No')."</option>\n";
         echo '</select>';
     }
 ?>

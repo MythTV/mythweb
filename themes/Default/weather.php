@@ -38,20 +38,22 @@ class Theme_weather extends Theme {
         <table border="0" cellspacing="0" cellpadding="0">
         <tr>
             <th><?php echo t('Humidity') ?></th>
-            <td><?php echo $site->Humidity; ?>%</td></tr>
-        <tr>
+            <td><?php echo $site->Humidity; ?>%</td>
+        </tr><tr>
             <th><?php echo t('Pressure') ?></th>
-            <td><?php echo $site->BarometricPressure; if($site->use_metric == "YES") echo " cm"; else echo " in"; ?> </td></tr>
-        <tr>
+            <td><?php echo $site->BarometricPressure; if($site->use_metric == "YES") echo " cm"; else echo " in"; ?> </td>
+        </tr><tr>
             <th><?php echo t('Wind') ?></th>
-            <td><?php echo $site->WindDirection . t(' at ') .  $site->WindSpeed; if($site->use_metric == "YES") echo " kph"; else echo " mph"; ?></td></tr>
-        <tr>
+            <td><?php echo $site->WindDirection . t(' at ') .  $site->WindSpeed; if($site->use_metric == "YES") echo " kph"; else echo " mph"; ?></td>
+        </tr><tr>
             <th><?php echo t('Visibility') ?></th>
-            <td><?php echo $site->Visibility; if($site->use_metric == "YES") echo " km"; else echo " mi"; ?></td></tr>
-        <tr>
+            <td><?php echo $site->Visibility; if($site->use_metric == "YES") echo " km"; else echo " mi"; ?></td>
+        </tr><tr>
             <th><?php echo t('Wind Chill') ?></th>
-            <td><?php echo $site->Real; if($site->use_metric == "YES") echo " C"; else echo " F"; ?></td></tr>
-        <tr>
+            <td class="temp"><?php echo $site->Real.'&deg;<sup>';
+                      echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F';
+                ?></sup></td>
+        </tr><tr>
             <th><?php echo t('UV Index') ?></th>
             <td><?php
                     echo $site->UV . " (";

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings_mythweb.php                     Last Updated: 2004.11.29 (xris)
+    settings_mythweb.php                    Last Updated: 2004.12.01 (cyberknet)
 
     main configuration index
 \***                                                                        ***/
@@ -24,10 +24,19 @@ class Theme_settings_mythweb extends Theme_settings {
     <td class="command_border_b" align="right"><?php echo t('Language') ?>:</td>
     <td class="command_border_b"><?php language_select() ?></td>
 </tr><tr>
+    <td class="command_border_b" align="right"><?php echo t('SI Units?') ?>:</td>
+    <td class="command_border_b"><?php unit_select() ?></td>
+</tr><tr>
     <td colspan="2"><?php echo t('Recorded Programs') ?>:</td>
 </tr><tr>
     <td class="command_border_b" align="right"><?php echo t('Show descriptions on new line')?>:</td>
     <td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
+</tr><tr>
+    <td colspan="2"><?php echo t('Guide Settings') ?>:</td>
+</tr><tr>
+    <td class="command_border_b" align="right"><?php echo t('Only display favourite channels')?>:</td>
+    <td class="command_border_b"><input class="radio" type="checkbox" title="In the program listing, only show channels marked as favourite channels" name="guide_favonly"<?php if ($_SESSION['guide_favonly']) echo ' CHECKED' ?>></td>
+</tr><tr>
 </tr><tr>
     <td><?php echo t('Date Formats') ?>:</td>
     <td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.strftime.php" target="_blank"><?php echo t('format help') ?></a></div></td>

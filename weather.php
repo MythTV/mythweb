@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    weather.php                             Last Updated: 2005.01.23 (xris)
+    weather.php                              Last Updated: 2005.01.23 (xris)
 
     MythWeather
 \***                                                                        ***/
@@ -14,13 +14,18 @@
 
     $WeatherSites = array();
 
+    if(!$_SESSION['siunits']) {
     $result = mysql_query('SELECT * FROM settings WHERE value="SIUnits"')
 	or trigger_error('SQL Error: '.mysql_error(), FATAL);
 
     $row = mysql_fetch_assoc($result);
     $use_metric = $row["data"];
+        $_SESSION['siunits'] = $use_metric;
 
     mysql_free_result($result);
+    }
+    else
+        $use_metric = $_SESSION['siunits'];
 
     $result = mysql_query('SELECT * FROM settings WHERE value="locale"')
 	or trigger_error('SQL Error: '.mysql_error(), FATAL);
