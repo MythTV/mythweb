@@ -40,6 +40,8 @@ class mythMusic {
     var $genre;
     var $length;
     var $rating;
+    var $filename;
+    var $urlfilename;
 
     function mythMusic()
     {
@@ -97,6 +99,15 @@ class mythMusic {
                 $this->genre=$row[4];
                 $this->length=$row[5];
                 $this->rating=$row[6];
+                $this->filename=$row[7];
+                
+                $this->urlfilename=music_url;
+                global $musicdir;
+                foreach (preg_split('/\//', substr($this->filename, strlen($musicdir))) as $dir) {
+                    if (!$dir) continue;
+                    $this->urlfilename .= '/'.rawurlencode($dir);
+                }
+                
                 return(true);
             }
             return(false);
@@ -116,7 +127,7 @@ class mythMusic {
         {
             while($this->readRow())
             {
-                $music->printDetail($this->title,$this->length,$this->artist,$this->album,$this->genre);
+                $music->printDetail($this->title,$this->length,$this->artist,$this->album,$this->genre,$this->urlfilename);
             }
         }
         else
@@ -248,12 +259,12 @@ class mythMusic {
 
             if($this->filter != "")
             {
-                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating from musicmetadata where  $this->filter order by artist,album,tracknum $limitText");
+                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata where  $this->filter order by artist,album,tracknum $limitText");
 
             }
             else
             {
-                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating from musicmetadata order by artist,album,tracknum " . $limitText);
+                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata order by artist,album,tracknum " . $limitText);
 
             }
         }
