@@ -243,6 +243,7 @@ class Program {
     var $recstartts;
     var $recendts;
     var $length;
+    var $lastmodified;
 
     var $channame;
     var $filename;
@@ -338,6 +339,7 @@ class Program {
             #$this->outputfilters = $program_data[32];
             $this->seriesid     = $program_data[33];
             $this->programid    = $program_data[34];
+            $this->lastmodified = myth2unixtime($program_data[35]);                  # ACTUAL start time
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
             $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02
