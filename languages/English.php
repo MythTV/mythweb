@@ -118,6 +118,7 @@ define ('_LANG_MINUTES',                  'minutes');
 define ('_LANG_TO',                       'to');
 define ('_LANG_CATEGORY',                 'Category');
 define ('_LANG_ORIG_AIRDATE',             'Orig. Airdate');
+define ('_LANG_AIRDATE',             'Airdate');
 define ('_LANG_RECORDING_OPTIONS',        'Recording Options');
 define ('_LANG_DONT_RECORD_THIS_PROGRAM', 'Don\'t record this program.');
 define ('_LANG_CANCEL_THIS_SCHEDULE',     'Cancel this schedule.');
