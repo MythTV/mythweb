@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2004.05.31 (xris)
+    init.php                                 Last Updated: 2004.07.06 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -162,7 +162,7 @@
     if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = generic_date . ', ' . generic_time;
     if (!$_SESSION['date_scheduled'])       $_SESSION['date_scheduled']       = generic_date . ' (' . generic_time . ')';
     if (!$_SESSION['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = generic_date;
-    if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = generic_date . ' (' . generic_time . ')';
+    if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = generic_date . '<br>('.generic_time.')';
     if (!$_SESSION['date_search'])          $_SESSION['date_search']          = generic_date . ', ' . generic_time;
     if (!$_SESSION['date_listing_key'])     $_SESSION['date_listing_key']     = generic_date . ', ' . generic_time;
     if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = generic_date;

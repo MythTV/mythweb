@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings_mythweb.php                     Last Updated: 2004.05.04 (xris)
+    settings_mythweb.php                     Last Updated: 2004.07.06 (xris)
 
     main configuration index
 \***                                                                        ***/
@@ -27,7 +27,7 @@ class Theme_settings_mythweb extends Theme_settings {
     <td colspan="2"><?php echo _LANG_RECORDED_PROGRAMS?>:</td>
 </tr><tr>
     <td class="command_border_b" align="right"><?php echo _LANG_SHOW_DESCRIPTIONS_ON_NEW_LINE?>:</td>
-    <td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if (htmlentities($_SESSION['recorded_descunder']) == "on") echo ' CHECKED' ?>></td>
+    <td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
 </tr><tr>
     <td><?php echo _LANG_DATEFORMATS?>:</td>
     <td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.strftime.php" target="_blank"><?php echo _LANG_FORMAT_HELP?></a></div></td>

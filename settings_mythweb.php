@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2003.12.19 (xris)
+    settings.php                            Last Updated: 2004.07.06 (xris)
 
     mythweb settings
 \***                                                                        ***/
@@ -23,8 +23,7 @@
     // Save the theme
         if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
     // Recorded Programs
-        if ($_POST['recorded_descunder'])   $_SESSION['recorded_descunder']   = $_POST['recorded_descunder'];
-        else                                $_SESSION['recorded_descunder']   = "";
+        $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
     }
 
 // Load the class for this page

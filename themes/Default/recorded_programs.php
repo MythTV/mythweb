@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.06.22 (xris)
+    recorded_programs.php                    Last Updated: 2004.07.06 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -88,7 +88,7 @@ if ($group_field == "") {
     <td><?php echo get_sort_link('title')    ?></td>
     <td><?php echo get_sort_link('subtitle') ?></td>
 <?php
-    if ($_SESSION['recorded_descunder'] != "on")
+    if (!$_SESSION['recorded_descunder'])
         echo "\t<td>".get_sort_link('description')."</td>\n";
 ?>
     <td><?php echo get_sort_link('channum')   ?></td>
@@ -113,21 +113,15 @@ if ($group_field == "") {
 
     if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="9" class="list_separator"><?=$cur_group?></td>
+    <td colspan="9" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?
     }
 ?><tr class="recorded">
 <?php
     if ($group_field != "")
-        if ($_SESSION['recorded_descunder'] != "on")
-            echo "\t<td class=\"list\">&nbsp;</td>\n";
-        else
-            echo "\t<td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
+        echo "\t<td class=\"list\" rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2)."\">&nbsp;</td>\n";
     if (show_recorded_pixmaps) {
-        if ($_SESSION['recorded_descunder'] != "on")
-            echo "\t<td>";
-        else
-            echo "\t<td rowspan=\"2\">";
+        echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
         generate_preview_pixmap($show);
         if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
             echo '<a href="'.video_url.'/'.basename($show->filename).'">'
@@ -139,38 +133,42 @@ if ($group_field == "") {
         echo "</td>\n";
     }
     ?>
-    <td><?php
-            echo '<a href="'.video_url.'/'.basename($show->filename).'">'
-                .$show->title
-                .'</a>';
-        ?></td>
-    <td><?php
-            echo '<a href="'.video_url.'/'.basename($show->filename).'">'
-                .$show->subtitle
-                .'</a>';
-        ?></td>
+    <td><?php echo '<a href="'.video_url.'/'.basename($show->filename).'">'.$show->title.'</a>'    ?></td>
+    <td><?php echo '<a href="'.video_url.'/'.basename($show->filename).'">'.$show->subtitle.'</a>' ?></td>
 <?php
-    if ($_SESSION['recorded_descunder'] != "on")
-        echo("<td>".$show->description."</td>");
+    if (!$_SESSION['recorded_descunder'])
+        echo "\t<td>".$show->description."</td>\n";
 ?>
-    <td><?php echo $show->channame?></td>
-    <td nowrap><?php echo strftime($_SESSION['date_recorded'], $show->starttime)?></td>
+    <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
+    <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime)?></td>
     <td nowrap><?php echo nice_length($show->length)?></td>
     <td nowrap><?php echo nice_filesize($show->filesize)?></td>
 <?php   if ($show->endtime > time()) { ?>
     <td width="5%">currently recording</td>
 <?php   } else { ?>
-    <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
+    <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 3 : 2 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>"><?php echo _LANG_DELETE?></a></td>
-<?php   } ?>
-</tr><?
-        if ($_SESSION['recorded_descunder'] == "on")
-            echo("<tr class=\"recorded\">\n\t<td colspan=\"7\">".$show->description."</td>\n</tr>");
+<?php   }
+
+        if ($_SESSION['recorded_descunder'])
+            echo("</tr><tr class=\"recorded\">\n\t<td colspan=\"6\">".$show->description."</td>\n</tr>");
         $prev_group = $cur_group;
         $row++;
     }
 ?>
-
+</tr><tr class="recorded">
+    <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 6 : 7 ?>" align="center">
+        <span style="padding-right: 25px">flagged commercials:&nbsp;
+            <b><?php echo $show->has_commflag ? 'Yes' : 'No' ?></b></span>
+        <span style="padding-right: 25px">has cutlist:&nbsp;
+            <b><?php echo $show->has_cutlist ? 'Yes' : 'No' ?></b></span>
+        <span style="padding-right: 25px">being edited:&nbsp;
+            <b><?php echo $show->is_editing ? 'Yes' : 'No' ?></b></span>
+        <span style="padding-right: 25px">auto expire:&nbsp;
+            <b><?php echo $show->auto_expire ? 'Yes' : 'No' ?></b></span>
+        has bookmark:&nbsp;
+            <b><?php echo $show->bookmark ? 'Yes' : 'No' ?></b>
+        </td>
 </table>
 <?php
     echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.' '.nice_filesize(disk_used)._LANG_OUT_OF.nice_filesize(disk_size).'</p>';

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.03.07 (xris)
+    recorded_programs.php                    Last Updated: 2004.07.06 (xris)
 
     view and manipulate recorded programs.
 \***                                                                        ***/
@@ -38,7 +38,6 @@
     $Total_Programs = 0;
     $All_Shows      = array();
     $Programs       = array();
-    $Channels       = array();
     while (true) {
         $Program_Titles = array();
         foreach ($recordings as $key => $record) {
@@ -58,12 +57,10 @@
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$show->title]))
                 $Programs[$show->title] = array();
-            if (!is_array($Channels[$show->chanid]))
-                $Channels[$show->chanid] = array();
         // Assign a reference to this show to the various arrays
-            $All_Shows[]                 = &$show;
-            $Programs[$show->title][]    = &$show;
-            $Channels[$show->chanid][]   = &$show;
+            $All_Shows[]                         =& $show;
+            $Programs[$show->title][]            =& $show;
+            $Channels[$show->chanid]->programs[] =& $show;
             unset($show);
         }
     // Did we try to view a program that we don't have recorded?  Revert to showing all programs
