@@ -155,7 +155,7 @@ $L = array(
     'TVTome'                              => '',
     'What else is on at this time?'       => '',
     'Written by'                          => '',
-    'seconds'                             => '',
+    'minutes'                             => '',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => '',
     'Jump'                    => '',

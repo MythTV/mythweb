@@ -154,7 +154,7 @@ $L = array(
     'TVTome'                              => 'TVTome',
     'What else is on at this time?'       => 'Wat wordt er nog uitgezonden op dit tijdstip',
     'Written by'                          => 'Auteur',
-    'seconds'                             => 'seconden',
+    'minutes'                             => '',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Tijdstip: $1',
     'Jump'                    => 'Ga',

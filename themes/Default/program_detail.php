@@ -331,10 +331,10 @@ class Theme_program_detail extends Theme {
                 <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" /></dd>
                 <dt><?php echo t('Start Early') ?>:</dt>
                 <dd><input type="input" class="quantity" name="startoffset" value="<?php echo htmlentities($schedule->startoffset) ?>" />
-                    <?php echo t('seconds') ?></dd>
+                    <?php echo t('minutes') ?></dd>
                 <dt><?php echo t('End Late') ?>:</dt>
                 <dd><input type="input" class="quantity" name="endoffset" value="<?php echo htmlentities($schedule->endoffset) ?>" />
-                    <?php echo t('seconds') ?></dd>
+                    <?php echo t('minutes') ?></dd>
             </dl>
 
             <p align="center">

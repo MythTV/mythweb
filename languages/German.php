@@ -154,7 +154,7 @@ $L = array(
     'TVTome'                              => '',
     'What else is on at this time?'       => 'Was läuft noch zu dieser Zeit?',
     'Written by'                          => 'Geschrieben von',
-    'seconds'                             => 'Sekunden',
+    'minutes'                             => 'Minuten',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Aktuell: $1',
     'Jump'                    => 'Gehe',

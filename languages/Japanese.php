@@ -154,7 +154,7 @@ $L = array(
     'TVTome'                              => '',
     'What else is on at this time?'       => 'この時間の番組表',
     'Written by'                          => '著者',
-    'seconds'                             => '秒',
+    'minutes'                             => '',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => '表示日: $1',
     'Jump'                    => '移動',

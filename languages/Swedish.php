@@ -154,7 +154,7 @@ $L = array(
     'TVTome'                              => 'TVTime',
     'What else is on at this time?'       => 'Vad visas mer vid denna tid?',
     'Written by'                          => 'Skriven av',
-    'seconds'                             => 'sekunder',
+    'minutes'                             => '',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Just nu visas:  $1',
     'Jump'                    => 'Gå',
