@@ -11,7 +11,7 @@ class Theme {
 
     function print_header($page_title = 'MythWeb') {
 // Print the appropriate header information
-    header("Content-Type: text/html; charset=utf-8");
+        header("Content-Type: text/html; charset=utf-8");
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -124,13 +124,13 @@ class Theme {
                 <?/*&nbsp; | &nbsp;
                 <a href="index.php?mode=favourites"><?php echo _LANG_FAVOURITES?></a>*/?>
                 &nbsp; | &nbsp;
+                <a href="schedule_manually.php"><?php echo _LANG_MANUALLY_SCHEDULE ?></a>
+                &nbsp; | &nbsp;
                 <a href="recording_schedules.php"><?php echo _LANG_RECORDING_SCHEDULES?></a>
                 &nbsp; | &nbsp;
                 <a href="scheduled_recordings.php"><?php echo _LANG_SCHEDULED_RECORDINGS?></a>
                 &nbsp; | &nbsp;
                 <a href="recorded_programs.php"><?php echo _LANG_RECORDED_PROGRAMS?></a>
-                &nbsp; | &nbsp;
-                <a href="schedule_manually.php"><?php echo _LANG_MANUALLY_SCHEDULE ?></a>
                 &nbsp; | &nbsp;
                 <a href="status.php"><?php echo _LANG_BACKEND_STATUS?></a><?php
         # really should move the category_legend footnote to this section,
