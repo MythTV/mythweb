@@ -54,7 +54,7 @@ Note:  You probably want to use function keys or keys combined with a modifier (
 Note:  Changes to keybindings/jumppoints requires a restart of the affected mythfrontend for now.  This will change in a future release.
 </p>
 <form class="form" method="post" action="settings_keys.php">
-<table width = "100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
     <td colspan="3">JumpPoints Editor</td>
 </tr>
@@ -73,8 +73,8 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
         }
 ?>
 </table>
-<p><p>
-<table width = "100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<p></p>
+<table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
         <td colspan="4">Keybindings Editor</td>
 </tr>
