@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	channels.php                             Last Updated: 2003.11.19 (xris)
+	channels.php                             Last Updated: 2004.03.28 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -75,6 +75,9 @@ class Channel {
 		$this->colour       = $channel_data['colour'];
 		$this->visible      = $channel_data['visible'];
 		$this->icon         = "images/icons/" . basename($channel_data['icon']);
+	// Try to copy over any missing channel icons
+		if (!file_exists($this->icon))
+			@copy($channel_data['icon'], $this->icon);
 	}
 
 	function display_programs($start_time, $end_time) {
