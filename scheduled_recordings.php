@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2004.05.23 (xris)
+    scheduled_recordings.php                 Last Updated: 2004.08.03 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -43,12 +43,16 @@
         }
     // Revert to default recording rules
         elseif ($_GET['default'] || $_POST['default']) {
-            $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
+            $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid)
+                                       .' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND startdate=FROM_UNIXTIME('.escape($program->starttime).')'
+                                       .' AND endtime=FROM_UNIXTIME('.escape($program->endtime).') AND enddate=FROM_UNIXTIME('.escape($program->endtime).')')
                 or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
         }
     // Suppress something that shouldn't be recorded
         elseif ($_GET['suppress'] || $_POST['suppress']) {
-            $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
+            $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid)
+                                       .' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND startdate=FROM_UNIXTIME('.escape($program->starttime).')'
+                                       .' AND endtime=FROM_UNIXTIME('.escape($program->endtime).') AND enddate=FROM_UNIXTIME('.escape($program->endtime).')')
                 or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
             $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
                                   .'8,'
