@@ -110,7 +110,7 @@
         Check that we are speaking a version of the protocol that is compatible with the backend
 */
 	function check_proto_version($fp) {
-		$our_version = "4";
+		$our_version = "5";
 		$response = explode(backend_sep, backend_command2("MYTH_PROTO_VERSION " . $our_version, $fp));
 		if ($response[0] == "ACCEPT")
 			return;
