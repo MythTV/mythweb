@@ -84,22 +84,27 @@ directories.  This should be as simple as:  **
     chgrp -R apache /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
     chmod g+rw /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
 
-    You should then edit the file config/conf.php (instructions for what to
-set are included in the file). That's it. Point your web browser at
-http://{whatever your machine is called}/{the directory off htdocs where you
-copied the files}. What could be simpler?
+    Finally, and THIS IS VERY VERY IMPORTANT, you should then edit the file
+config/conf.php (instructions for what to set are included in the file).
+That's it. Point your web browser at http://your_machine_name/your_mythweb_path/
+What could be simpler?
 
     ** Some distributions run apache as "nobody/nogroup" so please be aware
        that you may need to consult your /etc/httpd/httpd.conf file to verify
        which user/group apache is set to run as.
 
+    Did you read the THIS IS VERY VERY IMPORTANT note in the previous paragraph?
+People seem to skip over the config file and for some reason assume that 
+mythweb will just work with no configuration.  While I've tried to make it
+as auto-detecting as possible, it often still needs some hand-editing.
 
 3.0 FAQs
 ========
 
-Q: Why don't my sessions stick?
+Q: Why don't my sessions stick?  (often manifests as sorting issues)
 A: Make sure the php_sessions directory has the proper permissions, as detailed
-    in INSTRUCTIONS above.
+    in INSTRUCTIONS above.  Check config/conf.php to make sure that the
+    server_domain constant is set correctly.
 
 Q: Why is my browser trying to display the PHP code instead of the server
     executing it for me?
