@@ -85,7 +85,7 @@ class Theme_channel_detail extends Theme {
 		?></td>
 	<td><?php echo $show->subtitle?></td>
 	<td><?php echo $show->description?></td>
-	<td nowrap><?php echo $show->length?></td>
+	<td nowrap><?php echo nice_length($show->length)?></td>
 </tr><?php
 			$row++;
 		}

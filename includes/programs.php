@@ -109,13 +109,8 @@
 			$query .= ' AND UNIX_TIMESTAMP(program.starttime) = ' . escape($start_time);
 	// We're looking at a time range
 		else
-			$query .= ' AND (UNIX_TIMESTAMP(program.starttime) >= ' . escape($start_time)
-					   .' AND UNIX_TIMESTAMP(program.starttime) <= '   . escape($end_time + round(timeslot_size/2))	# catch shows that start part way through the last timeslot
-					 .' OR UNIX_TIMESTAMP(program.endtime) >= ' . escape($start_time - round(timeslot_size/2))		# catch shows that end part way through the first timeslot
-					   .' AND UNIX_TIMESTAMP(program.endtime) <= '   . escape($end_time)
-					 .' OR UNIX_TIMESTAMP(program.starttime) <= ' . escape($start_time)								# catch shows that start before and end after the requested times
-					   .' AND UNIX_TIMESTAMP(program.endtime) >= '   . escape($end_time)
-					 .')';
+			$query .= ' AND (UNIX_TIMESTAMP(program.endtime) >= ' . escape($start_time)
+					   .' AND UNIX_TIMESTAMP(program.starttime) <= ' . escape($end_time) .')';
 	// The extra query, if there is one
 		if ($extra_query)
 			$query .= ' AND '.$extra_query;
@@ -187,7 +182,6 @@ class Program {
 
 	var $starttime;
 	var $endtime;
-	var $duration;
 	var $length;
 
 	var $filename;
@@ -328,20 +322,8 @@ class Program {
 			}
 		}
 
-	// Calculate the duration, and then extract a human-readable length
-		$this->duration = $this->endtime - $this->starttime;
-		$this->length = '';
-		$mins  = (int) (($this->duration % 3600) / 60);
-		$hours = (int) ($this->duration / 3600);
-		if ($hours == 1)
-			$this->length = '1 hr';
-		elseif ($hours > 0)
-			$this->length = $hours.' hrs';
-		if ($mins > 0) {
-			if ($this->length)
-				$this->length .= ' ';
-			$this->length .= $mins.' mins';
-		}
+	// Calculate the duration
+		$this->length = $this->endtime - $this->starttime;
 
 	// Find out which css category this program falls into
 		$this->category_class();

@@ -115,7 +115,7 @@ class Theme_scheduled_recordings extends Theme {
 		?></td>
 	<td><?=$show->channel->name?></td>
 	<td nowrap><?=date('D, M j (g:i A)', $show->starttime)?></td>
-	<td nowrap><?=$show->length?></td>
+	<td nowrap><?=nice_length($show->length)?></td>
 <?	if ($command) { ?>
 	<td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?=$command?></td>
 <?	} ?>

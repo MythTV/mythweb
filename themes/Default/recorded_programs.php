@@ -96,7 +96,7 @@ class Theme_recorded_programs extends Theme {
 	<td><?php echo $show->description?></td>
 	<td><?php echo $show->channame?></td>
 	<td nowrap><?php echo date('D, M j,Y (g:i A)', $show->starttime)?></td>
-	<td nowrap><?php echo $show->length?></td>
+	<td nowrap><?php echo nice_length($show->length)?></td>
 	<td nowrap><?php echo nice_filesize($show->filesize)?></td>
 <?php	if ($show->endtime > time()) { ?>
 	<td width="5%">currently recording</td>

@@ -51,7 +51,7 @@ class Theme_program_detail extends Theme {
 			<td width="24px">&nbsp;</td>
 			<td><span class="huge"><?=$this_program->title?></span><BR>
 				<span class="small">
-				<?=date('g:i A', $this_program->starttime)?> to <?=date('g:i A', $this_program->endtime)?> (<?=(int)($this_program->duration/60)?> minutes)<BR>
+				<?=date('g:i A', $this_program->starttime)?> to <?=date('g:i A', $this_program->endtime)?> (<?=(int)($this_program->length/60)?> minutes)<BR>
 				<?
 				if ($this_program->previouslyshown)
 					echo '(Rerun) ';

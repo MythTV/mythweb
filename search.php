@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	search.php                               Last Updated: 2003.08.05 (xris)
+	search.php                               Last Updated: 2003.08.06 (xris)
 
 	Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -17,10 +17,20 @@
 	}
 
 // Was there a search string?
-	$_GET['searchstr'] or $_GET['searchstr'] = $_POST['searchstr'];
+	isset($_GET['searchstr'])      or $_GET['searchstr']      = $_POST['searchstr'];
+	isset($_GET['title'])          or $_GET['title']          = $_POST['title'];
+	isset($_GET['subtitle'])       or $_GET['subtitle']       = $_POST['subtitle'];
+	isset($_GET['description'])    or $_GET['description']    = $_POST['description'];
+	isset($_GET['category'])       or $_GET['category']       = $_POST['category'];
+	isset($_GET['category_type'])  or $_GET['category_type']  = $_POST['category_type'];
+
+// Start the query out as an array
+	$query = array();
+	$joiner = ' OR ';
+
+// How do we want to build this query?
 	if (preg_match('/\\w/', $_GET['searchstr'])) {
-		$search = escape('%'.preg_replace('/[\\s-_]+/', '%', $_GET['searchstr']).'%');
-		$query = array();
+		$search = search_escape($_GET['searchstr']);
 		if ($_GET['search_title'])
 			$query[] = 'program.title LIKE '.$search;
 		if ($_GET['search_subtitle'])
@@ -35,34 +45,50 @@
 		if (!count($query)) {
 			$query[] = 'program.title LIKE '.$search;
 			$query[] = 'program.subtitle LIKE '.$search;
-			$_GET['search_title'] = true;
+			$_GET['search_title']    = true;
 			$_GET['search_subtitle'] = true;
 		}
-	// No query?
-		if (count($query) < 1) {
-			$GLOBALS['Errors'][] = 'Please search for something';
-			return NULL;
-		}
-		#starttime
-		#endtime
-	// Query and return
-		$Results = &load_all_program_data(time(), strtotime('+1 month'), false, false, '('.implode(' OR ', $query).')');
 	}
 	else {
-		$_GET['search_title'] = true;
-		$_GET['search_subtitle'] = true;
+		$joiner = ' AND ';
+		if (isset($_GET['title'])) {
+			$query[] = 'program.title LIKE '.search_escape($_GET['title']);
+			$_GET['search_title'] = true;
+		}
+		if (isset($_GET['subtitle'])) {
+			$query[] = 'program.subtitle LIKE '.search_escape($_GET['subtitle']);
+			$_GET['search_subtitle'] = true;
+		}
+		if (isset($_GET['description'])) {
+			$query[] = 'program.description LIKE '.search_escape($_GET['description']);
+			$_GET['search_description'] = true;
+		}
+		if (isset($_GET['category'])) {
+			$query[] = 'program.category LIKE '.search_escape($_GET['category']);
+			$_GET['search_category'] = true;
+		}
+		if (isset($_GET['category_type'])) {
+			$query[] = 'program.category_type LIKE '.search_escape($_GET['category_type']);
+			$_GET['search_category_type'] = true;
+		}
 	}
 
-// The default sorting choice isn't so good for recorded programs, so we'll set our own default
-	if (!is_array($_SESSION['search_sortby']))
-		$_SESSION['search_sortby'] = array(array('field' => 'airdate',
-												 'reverse' => true),
-										   array('field' => 'title',
-												 'reverse' => false));
+// No query?
+	if (count($query) < 1)
+		$Errors[] = 'Please search for something';
 
-// Sort the programs
-	if (count($Results))
-		sort_programs($Results, 'search_sortby');
+// Get ready to perform the query
+	else {
+	// Limit by start and end times?
+		# obviously, we need to do something here
+		# starttime
+		# endtime
+	// Perform the query
+		$Results = &load_all_program_data(time(), strtotime('+1 month'), false, false, '('.implode($joiner, $query).')');
+	// Sort the results
+		if (count($Results))
+			sort_programs($Results, 'search_sortby');
+	}
 
 // Load the class for this page
 	require_once theme_dir."search.php";
@@ -75,5 +101,10 @@
 
 // Exit
 	exit;
+
+// One little function to help us format search queries
+	function search_escape($value) {
+		return escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
+	}
 
 ?>

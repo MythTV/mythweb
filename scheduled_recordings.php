@@ -101,7 +101,7 @@
 	foreach ($records as $record) {
 		$show = new Program($record);
 	// Make sure this is a valid show (ie. skip in-progress recordings and other junk)
-		if (!$show->chanid || $show->duration < 1)
+		if (!$show->chanid || $show->length < 1)
 			continue;
 	// Assign a reference to this show to the various arrays
 		$All_Shows[]                 = &$show;

@@ -32,14 +32,30 @@ function nice_filesize($size) {
 		return $size.' B';
 // Otherwise we keep going until the size is in the appropriate measurement range.
 	elseif ($size < mb)
-		return round($size / kb, 1).' KB';
+		return round($size / kb, ($size < 10 * kb)).' KB';
 	elseif ($size < gb)
-		return round($size / mb, 1).' MB';
+		return round($size / mb, ($size < 10 * mb)).' MB';
 	elseif ($size < tb)
-		return round($size / gb, 1).' GB';
+		return round($size / gb, ($size < 10 * gb)).' GB';
 	else
-		return round($size / tb, 1).' TB';
+		return round($size / tb, ($size < 10 * tb)).' TB';
 }
+
+function nice_length($length) {
+	$mins  = (int) (($length % 3600) / 60);
+	$hours = (int) ($length / 3600);
+	if ($hours == 1)
+		$ret = '1 hr';
+	elseif ($hours > 0)
+		$ret = $hours.' hrs';
+	if ($mins > 0) {
+		if ($ret)
+			$ret .= ' ';
+		$ret .= $mins.' mins';
+	}
+	return $ret;
+}
+
 
 /*
 	unixtime:

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2003.08.05 (xris)
+    sorting.php                              Last Updated: 2003.08.06 (xris)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -12,8 +12,8 @@
 */
 	function sort_programs(&$programs, $session) {
 	// First, check for a sort variable passed in by the user
-		$_GET['reverse'] or $_GET['reverse'] = $_POST['reverse'];
-		$_GET['sortby']  or $_GET['sortby']   = $_POST['sortby'];
+		isset($_GET['reverse']) or $_GET['reverse'] = $_POST['reverse'];
+		isset($_GET['sortby'])  or $_GET['sortby']   = $_POST['sortby'];
 	// If we were given a sort parameter, let's put it into the sort preferences
 		if ($_GET['sortby'] || !is_array($_SESSION[$session]) || !count($_SESSION[$session])) {
 			$_GET['sortby'] = strtolower($_GET['sortby']);
@@ -25,9 +25,13 @@
 												  'reverse' => false),
 											array('field' => 'title',
 												  'reverse' => false));
-		// This sortby method is the first element in the sort array, let's reverse it
-			if ($_SESSION[$session][0]['field'] == $_GET['sortby'])
-				$_SESSION[$session][0]['reverse'] = $_SESSION[$session][0]['reverse'] ? false : true;
+		// This sortby method is the first element in the sort array, let's reverse it (unless told otherwise)
+			if ($_SESSION[$session][0]['field'] == $_GET['sortby']) {
+				if (isset($_GET['reverse']))
+					$_SESSION[$session][0]['reverse'] = ($_GET['reverse'] > 0 || eregi('^y', $_GET['reverse'])) ? true : false;
+				else
+					$_SESSION[$session][0]['reverse'] = $_SESSION[$session][0]['reverse'] ? false : true;
+			}
 		// Otherwise, we need to parse the array, and add the current choice to the top
 			else {
 			// Scan the sort array for any entries matching the current choice, and remove them
@@ -81,8 +85,8 @@
 	}
 
 	function by_length(&$a, &$b) {
-        if ($a->duration == $b->duration) return 0;
-        return ($a->duration > $b->duration) ? 1 : -1;
+        if ($a->length == $b->length) return 0;
+        return ($a->length > $b->length) ? 1 : -1;
 	}
 
 	function by_filesize(&$a, &$b) {
