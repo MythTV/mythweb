@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    css.php                                  Last Updated: 2005.01.27 (xris)
+    css.php                                  Last Updated: 2005.02.04 (xris)
 
     various routines that deal with figuring out and/or displaying css.
 \***                                                                        ***/
@@ -13,7 +13,7 @@
     function category_class(&$item) {
         $class = '';
     // Recording classes?
-        if ($item->recordid && get_class($item) == 'program') {
+        if ($item->recordid && !strcasecmp(get_class($item), 'program')) {
             if ($item->recstatus == 'ForceRecord')
                 $class .= 'record_override_record ';
             elseif ($item->recstatus == 'WillRecord')

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2005.02.02 (xris)
+    programs.php                             Last Updated: 2005.02.04 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -59,7 +59,7 @@
 */
     function &load_one_program($start_time, $chanid) {
         $program =& load_all_program_data($start_time, $start_time, $chanid, true);
-        if (!is_object($program) || get_class($program) != 'program')
+        if (!is_object($program) || strcasecmp(get_class($program), 'program'))
             return NULL;
         return $program;
     }

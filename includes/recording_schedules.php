@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                  Last Updated: 2005.02.03 (xris)
+    recording_schedules.php                  Last Updated: 2005.02.04 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -116,7 +116,7 @@ class Schedule {
     // Schedule object data -- just copy it into place
         if (is_object($data)) {
         // Not the right type of object?
-            if (get_class($data) != 'schedule')
+            if (strcasecmp(get_class($data), 'schedule'))
                 trigger_error("Incorrect object of class ".get_class($data)." passed to new Schedule()", FATAL);
         // Copy its variables into place
             $a = @get_object_vars($data);
