@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2003.11.28 (xris)
+	conf.php                                  Last Updated: 2003.12.19 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -11,8 +11,6 @@
 //	a php interface to change it (someday...)
 //
 
-
-	define('Theme', 'Default');
 
 //
 //	How to access the database

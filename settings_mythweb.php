@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2003.11.18 (xris)
+    settings.php                            Last Updated: 2003.12.19 (xris)
 
 	mythweb settings
 \***                                                                        ***/
@@ -10,6 +10,7 @@
 
 // Save?
 	if ($_POST['save']) {
+	// Save the date formats
 		if ($_POST['date_statusbar'])       $_SESSION['date_statusbar']       = $_POST['date_statusbar'];
 		if ($_POST['date_scheduled'])       $_SESSION['date_scheduled']       = $_POST['date_scheduled'];
 		if ($_POST['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = $_POST['date_scheduled_popup'];
@@ -19,6 +20,8 @@
 		if ($_POST['date_listing_jump'])    $_SESSION['date_listing_jump']    = $_POST['date_listing_jump'];
 		if ($_POST['date_channel_jump'])    $_SESSION['date_channel_jump']    = $_POST['date_channel_jump'];
 		if ($_POST['time_format'])          $_SESSION['time_format']          = $_POST['time_format'];
+	// Save the theme
+		if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
 	}
 
 // Load the class for this page
@@ -33,4 +36,25 @@
 // Exit
 	exit;
 
+
+/*
+	theme_select:
+	displays a <select> of the available themes
+*/
+	function theme_select() {
+		echo '<select name="theme">';
+		foreach (get_sorted_files("themes/") as $theme) {
+		// Skip the CVS directory
+			if ($theme == 'CVS') continue;
+		// Ignore non-directories
+			if (!is_dir("themes/$theme")) continue;
+		// Print the option
+			echo '<option value="'.htmlentities($theme).'"';
+			if ($_SESSION['Theme'] == $theme)
+				echo ' SELECTED';
+			$theme = ereg_replace('_', ' ', $theme);
+			echo '>'.htmlentities($theme).'</option>';
+		}
+		echo '</select>';
+	}
 ?>

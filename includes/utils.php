@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	utils.php                             Last Updated: 2003.08.05 (xris)
+	utils.php                             Last Updated: 2003.12.19 (xris)
 
 	utility routines used throughout mythweb
 \***                                                                        ***/
@@ -77,6 +77,22 @@ function nice_length($length) {
 */
 	function escape($string) {
 		return "'".mysql_escape_string($string)."'";
+	}
+
+/*
+	get_sorted_files:
+	Returns a sorted list of files in a directory, minus . and ..
+*/
+	function get_sorted_files($dir = '.', $regex = '') {
+		$handle = opendir($dir);
+		while(false != ($file = readdir($handle))) {
+			if ($file == '.' || $file == '..') continue;
+			if (!$regex || preg_match($regex, $file))
+				$list[] = $file;
+		}
+		closedir($handle);
+		sort($list);
+		return $list;
 	}
 
 /*

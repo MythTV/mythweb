@@ -16,8 +16,11 @@ class Theme_settings_mythweb extends Theme_settings {
 
 <form class="form" method="post" action="settings_mythweb.php">
 
-<table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5">
+<table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5" style="float: left;margin-left: 20px">
 <tr>
+	<td class="command_border_b" align="right">MythWeb Theme:</td>
+	<td class="command_border_b"><?php theme_select() ?></td>
+</tr><tr>
 	<td>Date/Date Formats:</td>
 	<td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.date.php" target="_blank">format help</a></div></td>
 </tr><tr>
@@ -55,8 +58,8 @@ class Theme_settings_mythweb extends Theme_settings {
 		}
 		?></select></td>
 </tr><tr>
-	<td align="center"><input type="reset" value="Reset"></td>
-	<td align="center"><input type="submit" name="save" value="Save"></td>
+	<td class="command_border_t" align="center"><input type="reset" value="Reset"></td>
+	<td class="command_border_t" align="center"><input type="submit" name="save" value="Save"></td>
 </tr>
 </table>
 

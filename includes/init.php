@@ -1,6 +1,6 @@
-<?
+<?php
 /***                                                                        ***\
-	init.php				                 Last Updated: 2003.11.18 (xris)
+	init.php				                 Last Updated: 2003.12.19 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -62,6 +62,43 @@
 // Load in the channel and program classes
 	require_once "includes/channels.php";
 	require_once "includes/programs.php";
+
+// Detect WAP browsers
+	$wap_agents = array('Noki', // Nokia phones and emulators
+						'Eric', // Ericsson WAP phones and emulators
+						'WapI', // Ericsson WapIDE 2.0
+						'MC21', // Ericsson MC218
+						'AUR ', // Ericsson R320
+						'R380', // Ericsson R380
+						'UP.B', // UP.Browser
+						'WinW', // WinWAP browser
+						'UPG1', // UP.SDK 4.0
+						'upsi', // another kind of UP.Browser ??
+						'QWAP', // unknown QWAPPER browser
+						'Jigs', // unknown JigSaw browser
+						'Java', // unknown Java based browser
+						'Alca', // unknown Alcatel-BE3 browser (UP based?)
+						'MITS', // unknown Mitsubishi browser
+						'MOT-', // unknown browser (UP based?)
+						'My S', // unknown Ericsson devkit browser ?
+						'WAPJ', // Virtual WAPJAG www.wapjag.de
+						'fetc', // fetchpage.cgi Perl script from www.wapcab.de
+						'ALAV', // yet another unknown UP based browser ?
+						'Wapa', // another unknown browser (Web based "Wapalyzer"?)
+						);
+	if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"VND.WAP.WML") > 0 // The browser/gateway says it accepts WML.
+			|| in_array(substr(trim($_SERVER['HTTP_USER_AGENT']), 0, 4), $wap_agents))
+		define('Theme', 'wap');
+// Load the theme from session data?
+	elseif (file_exists('themes/'.$_SESSION['Theme'].'/theme.php') && !$_GET['RESET_THEME'] && !$_POST['RESET_THEME'])
+		define('Theme', $_SESSION['Theme']);
+// Load the default theme, and set the session if someone opted to reset
+	else {
+		define('Theme', 'Default');
+	}
+
+// Update the session variable
+	$_SESSION['Theme'] = Theme;
 
 // Load the user's theme settings
 	#
