@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    video.php                               Last Updated: 2003.08.19 (xris)
+    video.php                               Last Updated: 2004.05.24 (bobc)
 
 \***                                                                        ***/
 
@@ -11,6 +11,7 @@ class Theme_video extends Theme {
         parent::print_header("MythWeb - Videos");
     // Print the page contents
         global $All_Shows;
+        global $videodir;
 ?>
 
 <SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT">
@@ -45,13 +46,13 @@ function newWindow(newContent)
     <td><?php
         if (show_recorded_pixmaps) {
             if (file_exists(video_img_path.'/'.basename($show->coverfile)))
-                echo '<a href="'.videos_url.'/'.rawurlencode(basename($show->filename)).'">.<img id="'.$show->filename."\" src=\"".video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
+                echo '<a href="'.videos_url.'/'.rawurlencode(substr($show->filename,strlen($videodir)+1)).'">.<img id="'.$show->filename."\" src=\"".video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
             else
                 echo '&nbsp;';
         }
     ?></td>
     <td><?php echo '<a 
-href="'.videos_url.'/'.rawurlencode(basename($show->filename)).'">'."$show->title".'</a>'?></td>
+href="'.videos_url.'/'.rawurlencode(substr($show->filename,strlen($videodir)+1)).'">'."$show->title".'</a>'?></td>
     <td><?php echo $show->director?></td>
     <td><?php echo $show->plot?></td>
     <td><?php echo $show->rating?></td>

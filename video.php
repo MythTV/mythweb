@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    video.php                               Last Updated: 2003.08.20 (irish)
+    video.php                               Last Updated: 2004.05.24 (bobc)
 
     view video files.
 \***                                                                        ***/
@@ -39,6 +39,12 @@
 // Sort the programs
     if (count($All_Shows))
         sort_programs($All_Shows, 'video_sortby');
+
+// Get the video store directory
+   $result = mysql_query('SELECT data from settings where value="VideoStartupDir"')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+   $videostore=mysql_fetch_assoc($result);
+   $videodir=$videostore['data'];
 
 
 // Load the class for this page
