@@ -31,7 +31,8 @@ class Theme_recorded_programs extends Theme {
 	on_load['recorded_programs'] = fix_hrefs;
 	function fix_hrefs() {
 		for (i=0;i<<?php echo count($All_Shows)?>;i++) {
-			get_element('delete_' + i).innerHTML = '<a onclick="confirm_delete('+i+')">Delete</a>';
+			if (get_element('delete_' + i))
+				get_element('delete_' + i).innerHTML = '<a onclick="confirm_delete('+i+')">Delete</a>';
 		}
 	}
 
