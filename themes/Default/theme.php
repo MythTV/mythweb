@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2004.03.28 (xris)
+    theme.php                             Last Updated: 2004.04.09 (xris)
 
 	This is the main theme class for the Default MythWeb theme.  It should
 	not be instantiated directly, but will most likely contain methods
@@ -120,7 +120,7 @@ class Theme {
 		?><a id="category_legend" onmouseover="show('category_legend');return true;" onmouseout="hide();return true;">MythTV:</a> &nbsp; &nbsp;
 				<a href="program_listing.php"><?php echo _LANG_LISTINGS?></a>
 				&nbsp; | &nbsp;
-				<a href="search.php?searchstr=<?php echo movie_word?>&search_category_type=yes"><?php echo movie_word?>s</a>
+				<a href="search.php?category_type=<?php echo movie_word?>"><?php echo movie_word?>s</a>
 				<?/*&nbsp; | &nbsp;
 				<a href="index.php?mode=favourites"><?php echo _LANG_FAVOURITES?></a>*/?>
 				&nbsp; | &nbsp;
