@@ -1,11 +1,7 @@
-short open tags!!!!!
-
-
-
 This is the README file for the MythWeb package.
-June 10, 2003
+August 4, 2003
 
-Version: .9
+Version: .11
 (c) 2002, 2003 Thor Sigvaldason (mythtv at lamedomainname.com)
                Isaac Richards (ijr at po.cwru.edu)
                Chris Petersen (mythweb at forevermore.net)
@@ -13,9 +9,10 @@ Version: .9
 with contributions from many people including:
 
 Michael Kedl <kedlm at knology.net>
+Jonathan Kolb <jkolb at greyshift.net
 
-MythWeb is distributed under the GNU GENERAL PUBLIC LICENSE version 2 (see
-http://www.gnu.org)
+MythWeb is distributed under the GNU GENERAL PUBLIC LICENSE version 2
+(see http://www.gnu.org)
 
 
 
@@ -66,6 +63,10 @@ and php up and running on the same machine as MythTV:
 for php. Make sure to build both according to the instructions at the php
 home site, and be sure to include support for MySQL when building PHP.
 
+    At least for the time being, you will also need to make sure that
+"short open tags" are enabled in /etc/php.ini (or wherever your favorite distro
+chooses to place it).
+
 	Somewhere in or off your root directory for htdocs (/www/htdocs if
 you followed the instuctions at php.net), you should copy
 all the files included in this distribution. To make sure you get images
@@ -73,25 +74,34 @@ subdirectory, you should do something like
 
 	cp -r . /wwww/htdocs/myMythWebDirectory
 
-	You should then edit the file settings.php (instructions for what to
+    Next, you need to make sure that your web server can write to a couple of
+directories.  This should be as simple as:
+
+    chgrp -R apache /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
+    chmod g+rw /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
+
+	You should then edit the file config/conf.php (instructions for what to
 set are included in the file). That's it. Point your web browser at
 http://{whatever your machine is called}/{the directory off htdocs where you
 copied the files}. What could be simpler?
 
 
-
 3.0 FAQs
 ========
 
-Q: Why does the red box to indicate that a show is being/has been recorded not
-stretch out to the edges of the cell?
+Q: Why don't my sessions stick?
+A: Make sure the php_sessions directory has the proper permissions, as detailed
+    in INSTRUCTIONS above.
 
-A: Not all browsers get the HEIGHT="100%" stuff quite right inside a table
-element. Upgrading to a recent copy of mozilla/konquerer/nautilus/opera/lynx
-or what have you should (?) solve the "problem". Either that or the guy
-writing the php code knows nothing about HTML.
-
-
+Q: Why is my browser trying to display the PHP code instead of the server
+    executing it for me?
+A: First, make sure that you have PHP enabled in your webserver settings.  Once
+    you have made sure that this is the case, look at the .htaccess file
+    included with mythweb and remove (or comment out) the lines that mention
+    "zlib".  It seems that some installations don't like these settings in
+    .htaccess.  If you wish to enable compression (I suggest you do, since it
+    significantly speeds up page-load times), you can safely re-enable these
+    settings in /etc/php.ini.
 
 4.0 Notes
 =========
