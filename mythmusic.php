@@ -12,10 +12,14 @@
 
 
 //
-//	Someday, music.php will let us stream 
+//	Someday, music.php will let us stream
 //	entire playlists to any spot on planet earth
 //
+require_once "includes/init.php";
+require_once "themes/Default/mythmusic.php";
 
-print("<BR><BR><BR><CENTER>Sorry, music doesn't do anything yet</CENTER><BR><BR><BR>");
+$music = new Theme_mythmusic();
+
+$music->print_page();
 
 ?>

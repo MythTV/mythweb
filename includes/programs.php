@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.07.30 (xris)
+    programs.php                             Last Updated: 2003.08.02 (xris)
 
 	This contains the Program class
 \***                                                                        ***/

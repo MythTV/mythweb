@@ -61,11 +61,11 @@ class Theme {
 
 	<td valign="bottom"><table width="100%" border="0" cellspacing="2" cellpadding="2">
 		<tr align="center">
-			<td><!--Go To: &nbsp; &nbsp;
+			<td>Go To: &nbsp; &nbsp;
 				<a href="program_listing.php">MythTV</a>
 				&nbsp; | &nbsp;
 				<a href="mythmusic.php">MythMusic</a>
-				&nbsp; | &nbsp;
+				<!--&nbsp; | &nbsp;
 				<a href="#">MythWeather</a>--></td>
 
 
