@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.11.29 (xris)
+    programs.php                             Last Updated: 2005.01.21 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -390,7 +390,9 @@ class Program {
             $this->seriesid        = $program_data['seriesid'];
             $this->programid       = $program_data['programid'];
             $this->recgroup        = $program_data['recgroup'];
-
+        // No longer a null column, so check for blank entries
+            if ($this->airdate == '0000-00-00')
+                $this->airdate = NULL;
         // Check to see if there is any additional data from mythbackend about this program
             global $Pending_Programs;
             load_pending();
