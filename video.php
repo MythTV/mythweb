@@ -92,7 +92,7 @@ class Video {
         $this->childid         = $program_data['childid'];
     // Figure out the URL
         global $videodir;
-        $this->url = videos_url;
+        $this->url = video_url;
         foreach (preg_split('/\//', substr($this->filename, strlen($videodir))) as $dir) {
             if (!$dir) continue;
             $this->url .= '/'.rawurlencode($dir);
