@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    video.php                               Last Updated: 2004.05.30 (xris)
+    video.php                               Last Updated: 2004.05.31 (xris)
 
     view video files.
 \***                                                                        ***/
@@ -13,8 +13,13 @@
 // Queries for a specific program title
     isset($_GET['title'])  or $_GET['title']  = $_POST['title'];
 
-// Parse the list
+// Get the video store directory
+   $result = mysql_query('SELECT data from settings where value="VideoStartupDir"')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+   list($videodir) = mysql_fetch_row($result);
+   mysql_free_result($result);
 
+// Parse the list
     $Total_Programs = 0;
     $All_Shows      = array();
     while (true) {
@@ -30,22 +35,14 @@
         break;
     }
 
-
 // Set sorting
     if (!is_array($_SESSION['video_sortby']))
-        $_SESSION['video_sortby'] = array(array('field' => 'title',
-                                                   'reverse' => false));
+        $_SESSION['video_sortby'] = array(array('field'   => 'title',
+                                                'reverse' => false));
 
 // Sort the programs
     if (count($All_Shows))
         sort_programs($All_Shows, 'video_sortby');
-
-// Get the video store directory
-   $result = mysql_query('SELECT data from settings where value="VideoStartupDir"')
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-   list($videodir) = mysql_fetch_row($result);
-   mysql_free_result($result);
-
 
 // Load the class for this page
     require_once theme_dir.'video.php';
