@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    video.php                               Last Updated: 2004.05.24 (bobc)
+    video.php                               Last Updated: 2004.05.30 (xris)
 
     view video files.
 \***                                                                        ***/
@@ -24,7 +24,7 @@
         // Create a new object
             $show = new Video($video_data);
         // Assign a reference to this show to the array
-            $All_Shows[]                 = &$show;
+            $All_Shows[] = &$show;
             unset($show);
         }
         break;
@@ -43,8 +43,8 @@
 // Get the video store directory
    $result = mysql_query('SELECT data from settings where value="VideoStartupDir"')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
-   $videostore=mysql_fetch_assoc($result);
-   $videodir=$videostore['data'];
+   list($videodir) = mysql_fetch_row($result);
+   mysql_free_result($result);
 
 
 // Load the class for this page
@@ -77,9 +77,10 @@ class Video {
     var $filename;
     var $coverfile;
     var $childid;
+    var $url;
 
     function Video($program_data) {
-        $this->intid            = $program_data['intid'];
+        $this->intid           = $program_data['intid'];
         $this->plot            = $program_data['plot'];
         $this->rating          = $program_data['rating'];
         $this->title           = $program_data['title'];
@@ -92,6 +93,13 @@ class Video {
         $this->filename        = $program_data['filename'];
         $this->coverfile       = $program_data['coverfile'];
         $this->childid         = $program_data['childid'];
+    // Figure out the URL
+        global $videodir;
+        $this->url = videos_url;
+        foreach (preg_split('/\//', substr($this->filename, strlen($videodir))) as $dir) {
+            if (!$dir) continue;
+            $this->url .= '/'.rawurlencode($dir);
+        }
     }
 }
 
