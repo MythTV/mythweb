@@ -51,7 +51,7 @@ class Theme_program_detail extends Theme {
 			<td width="24px">&nbsp;</td>
 			<td><span class="huge"><a href="search.php?searchstr=<?php echo urlencode($this_program->title)?>&search_title=yes">"<?php echo $this_program->title?>"</a>
 			<?php if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
-			</span><BR>"
+			</span><BR>
 				<span class="small">
 				<?php echo date('g:i A', $this_program->starttime)?> to <?php echo date('g:i A', $this_program->endtime)?> (<?php echo (int)($this_program->length/60)?> minutes)<BR>
 				<?php
