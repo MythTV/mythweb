@@ -102,6 +102,7 @@
                                         .', recpriority='  .escape($this_program->recpriority)
                                         .', autoexpire='   .escape($this_program->autoexpire)
                                         .', maxnewest='    .escape($this_program->maxnewest)
+                                        .', maxepisodes='  .escape($this_program->maxepisodes)
                                         .', dupin='        .escape($this_program->dupin)
                                         .', dupmethod='    .escape($this_program->dupmethod)
                                         .', startoffset='  .escape($this_program->startoffset)
