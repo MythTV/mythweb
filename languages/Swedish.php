@@ -140,9 +140,9 @@ $L = array(
     'Unknown Program.'            => 'Okänt program.',
     'Unknown Recording Schedule.' => 'Okänt inspelningsschema.',
 // search.php
-    'Please search for something.' => '',
+    'Please search for something.' => 'Välj något att söka efter.',
 // themes/.../canned_searches.php
-    'handy: overview' => '',
+    'handy: overview' => 'Denna sida innehåller förberedda komplexa sökningar av programlistorna.',
 // themes/.../channel_detail.php
     'Length' => 'Längd',
     'Show'   => 'Program',
@@ -195,7 +195,7 @@ $L = array(
     'profile'                                   => 'profil',
     'type'                                      => 'typ',
 // themes/.../schedule_manually.php
-    'Save Schedule' => '',
+    'Save Schedule' => 'Spara schema',
 // themes/.../scheduled_recordings.php
     'Activate'      => 'Aktivera',
     'Commands'      => 'Kommando',
@@ -212,7 +212,7 @@ $L = array(
     'Update'        => 'Uppdatera',
 // themes/.../search.php
     'No matches found' => 'Inga matchningar funna',
-    'Search for:  $1'  => '',
+    'Search for:  $1'  => 'Sök efter:  $1',
 // themes/.../settings.php
     'Channels'           => 'Kanaler',
     'Configure'          => 'Konfigurera',
@@ -239,14 +239,14 @@ $L = array(
     'Scheduled Popup'                 => 'Schemalagd popup',
     'Show descriptions on new line'   => 'Visa beskrivning på ny rad',
     'Status Bar'                      => 'Statusrad',
-    'Weather Icons'                   => '',
+    'Weather Icons'                   => 'Väderikoner',
     'format help'                     => 'formathjälp',
 // themes/.../theme.php
     'Category Legend'                            => 'Kategoriförklaring',
     'Category Type'                              => 'Kategorityp',
     'Edit MythWeb and some MythTV settings.'     => 'Ändra MythWeb och några MythTV-inställningar',
     'Exact Match'                                => 'Exakt matchning',
-    'HD Only'                                    => '',
+    'HD Only'                                    => 'Endast HD',
     'Manually Schedule'                          => 'Manuell schemaläggning',
     'MythMusic on the web.'                      => 'MythMusic på webben',
     'MythVideo on the web.'                      => 'MythVideo på webben',
@@ -259,7 +259,7 @@ $L = array(
     'Search help: regex example'                 => '/^Alpint/',
     'Search help: regex search'                  => 'Reguljärt uttryck',
     'Search options'                             => 'Sökval',
-    'Searches'                                   => '',
+    'Searches'                                   => 'Sökningar',
     'Settings'                                   => 'Inställningar',
     'TV functions, including recorded programs.' => 'Tv-funktioner, inkl. inspelade program.',
 // themes/.../weather.php
