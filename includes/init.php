@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	init.php				                 Last Updated: 2003.12.19 (xris)
+	init.php				                 Last Updated: 2004.02.21 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -22,7 +22,9 @@
 
 // Clean up any linefeed messiness we get from the form data
 	foreach (array_keys($_GET) as $key) {
-		$_GET[$key] = ereg_replace("\r\n", "\n", $_GET[$key]);
+	// Fix linebreaks
+		if (is_string($_GET[$key]))
+			$_GET[$key] = ereg_replace("\r\n", "\n", $_GET[$key]);
 	// Process any imagemap submissions to make sure we also get the name itself
 		if (ereg('_[xy]$', $key)) {
 			$key = ereg_replace('_[xy]$', '', $key);
@@ -31,7 +33,9 @@
 		}
 	}
 	foreach (array_keys($_POST) as $key) {
-		$_POST[$key] = ereg_replace("\r\n", "\n", $_POST[$key]);
+	// Fix linebreaks
+		if (is_string($_POST[$key]))
+			$_POST[$key] = ereg_replace("\r\n", "\n", $_POST[$key]);
 	// Process any imagemap submissions to make sure we also get the name itself
 		if (ereg('_[xy]$', $key)) {
 			$key = ereg_replace('_[xy]$', '', $key);
@@ -48,10 +52,9 @@
 // Load the language file
 	if ($_POST{'language'})
 		$_SESSION{'language'} = $_POST{'language'};
-	if (!$_SESSION['language'])
+	if (!file_exists('languages/'.$_SESSION['language'].'.php'))
 		$_SESSION['language'] = default_language;
-	if (file_exists('languages/'.$_SESSION['language'].'.php'))
-		require_once 'languages/'.$_SESSION['language'].'.php';
+	require_once 'languages/'.$_SESSION['language'].'.php';
 
 // Connect to the database, or restore a persistent connection
 //  please note that calling mysql_close is unnecessary - see php documentation for details
