@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2005.02.09 (xris)
+    init.php                                 Last Updated: 2005.02.27 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -98,14 +98,14 @@
                         );
     if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"VND.WAP.WML") > 0 // The browser/gateway says it accepts WML.
             || in_array(substr(trim($_SERVER['HTTP_USER_AGENT']), 0, 4), $wap_agents)) {
-        // This browser is WAP.  Now check if it supports html or wml
-            if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"TEXT/HTML") !== false) {
-                define('Theme', 'wap');
-            }
-        // browser didn't explicitly state html, use wml only.
-            else {
-                define('Theme', 'wml');
-            }
+    // This browser is WAP.  Now check if it supports html or wml
+        if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"TEXT/HTML") !== false) {
+            define('Theme', 'wap');
+        }
+    // browser didn't explicitly state html, use wml only.
+        else {
+            define('Theme', 'wml');
+        }
     }
     elseif (strpos($_SERVER['HTTP_USER_AGENT'],"MythPhone") !== false) // The browser is MythPhone
         define('Theme', 'vxml');
@@ -141,16 +141,18 @@
     }
 
 // Clean out stale thumbnails
-    if ($dir = opendir(image_cache)) {
-        while (($file = readdir($dir))) {
-            if (!is_file(image_cache.'/'.$file) || !ereg('\\.(png|jpg|gif)$', $file))
-                continue;
-        // Delete files older than the last week.
-            if (filemtime(image_cache.'/'.$file) < time() - 7 * 24 * 60 * 60)
-                unlink(image_cache.'/'.$file);
+    if (is_dir(image_cache)) {
+        if ($dir = opendir(image_cache)) {
+            while (($file = readdir($dir))) {
+                if (!preg_match('/\\.(png|jpg|gif)$/', $file) || !is_file(image_cache.'/'.$file))
+                    continue;
+            // Delete files older than the last week.
+                if (filemtime(image_cache.'/'.$file) < time() - 7 * 24 * 60 * 60)
+                    unlink(image_cache.'/'.$file);
+            }
+            closedir($dir);
+            clearstatcache();
         }
-        closedir($dir);
-        clearstatcache();
     }
 
 // Upgrading from an earlier version?  Wipe the session date data
