@@ -24,6 +24,8 @@
                 continue;
         // Delete the recording
             backend_command('DELETE_RECORDING' . backend_sep . implode(backend_sep, $row) . backend_sep . '0');
+        // Delay a second so the backend can catch up
+            sleep 1;
         // No need to scan the rest of the items, so leave early
             break;
         }
