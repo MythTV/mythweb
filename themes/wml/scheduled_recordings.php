@@ -9,14 +9,13 @@
 
 class Theme_scheduled_recordings extends Theme {
 
-    function print_page() {
+    function print_page(&$shows) {
 
         // Print the main page header
         parent::print_header('MythWeb - '.t('Scheduled Recordings'));
         parent::print_menu_content();
 
         // Print the page contents
-        global $All_Shows;
 
 // exclude the sorting for this theme, not needed
 /*  <a href="scheduled_recordings.php?sortby=title">show</a><br>
@@ -44,7 +43,7 @@ class Theme_scheduled_recordings extends Theme {
         $first_group_has_been_shown = 0;
         $has_output = 0;
 
-        foreach ($All_Shows as $show) {
+        foreach ($shows as $show) {
 
             $row++;
 
@@ -111,7 +110,7 @@ class Theme_scheduled_recordings extends Theme {
 
         echo "<p>";
         if ($page != 1) echo '<a href="scheduled_recordings.php?page='.($page - 1).$prev_query.'">&lt; prev</a>';
-        if (($page * $page_size) < count($All_Shows)) echo '<a href="scheduled_recordings.php?page='.($page + 1).$prev_query.'">next &gt;</a>';
+        if (($page * $page_size) < count($shows)) echo '<a href="scheduled_recordings.php?page='.($page + 1).$prev_query.'">next &gt;</a>';
 
         // end the main card
         echo "</p></card>";
