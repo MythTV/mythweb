@@ -47,6 +47,12 @@ Note:  This settings page has absolutely no error checking yet.  You can easily 
 <p class="large">
 Note:  JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is that same as one defined in the Keybindings section, the JumpPoint will override the keybinding.
 </p>
+<p class="large">
+Note:  You probably want to use function keys or keys combined with a modifier (alt, control) for JumpPoints, otherwise you may run into some problems.
+</p>
+<p class = "large">
+Note:  Changes to keybindings/jumppoints requires a restart of the affected mythfrontend for now.  This will change in a future release.
+</p>
 <form class="form" method="post" action="settings_keys.php">
 <table width = "100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu large" align="center">
