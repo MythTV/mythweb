@@ -155,7 +155,7 @@ if ($group_field == "") {
 					: ($show->record_weekly  ? _LANG_RECTYPE_LONG_WEEKLY
 					: ($show->record_once    ? _LANG_RECTYPE_LONG_ONCE
 					: ($show->record_channel ? _LANG_RECTYPE_LONG_CHANNEL
-					: ($show->record_findone ? _LANG_RECTYPE_LONG_FINEONE
+					: ($show->record_findone ? _LANG_RECTYPE_LONG_FINDONE
 					: _LANG_RECTYPE_LONG_ALWAYS)))))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->profile) ? "<tr>
