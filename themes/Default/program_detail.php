@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                       Last Updated: 2005.02.06 (xris)
+    program_detail.php                       Last Updated: 2005.02.08 (xris)
 
     This file defines a theme class for the program details section.
     It must define one method.   documentation will be added someday.
@@ -210,15 +210,16 @@ class Theme_program_detail extends Theme {
                         if (!$schedule->recordid) echo ' CHECKED' ?> />
                     <a onclick="get_element('record_never').checked=true;"><?php
                         if ($schedule->recordid)
-                            echo t('Cancel this schedule');
+                            echo t('Cancel this schedule.');
                         else
-                            echo t('Don\'t record this program');
+                            echo t('Don\'t record this program.');
                         ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
                         echo $schedule->type == rectype_once ? ' CHECKED' : ''?> />
                     <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a></li>
 
+<?php       if ($schedule->description != 'Manually scheduled') { ?>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
                         echo $schedule->type == rectype_daily ? ' CHECKED' : ''?> />
                     <a onclick="get_element('record_daily').checked=true;"><? echo t('rectype-long: daily') ?></a></li>
@@ -246,7 +247,7 @@ class Theme_program_detail extends Theme {
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
                         echo $schedule->type == rectype_always ? ' CHECKED' : ''?> />
                     <a onclick="get_element('record_always').checked=true;"><?php echo t('rectype-long: always') ?></a></li>
-
+<?php       } ?>
             </ul>
         </div>
 <?php
