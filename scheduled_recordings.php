@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                 Last Updated: 2004.03.07 (xris)
+	scheduled_recordings.php                 Last Updated: 2004.04.14 (xris)
 
 	view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -28,7 +28,9 @@
 			$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category) VALUES ('
 									.escape($program->chanid)                    .','
 									.'FROM_UNIXTIME('.escape($program->starttime).'),'
-									.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
+									#.'"1970-01-01",'
+									#.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
+									.'"1970-01-01",'
 									.escape($program->title)                     .','
 									.escape($program->subtitle)                  .','
 									.escape($program->description)               .','
