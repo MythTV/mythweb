@@ -101,7 +101,8 @@ as auto-detecting as possible, it often still needs some hand-editing.
 3.0 FAQs
 ========
 
-Q: Why don't my sessions stick?  (often manifests as sorting issues)
+Q: Why don't my sessions stick?  (often manifests as sorting issues or settings
+    not storing properly)
 A: Make sure the php_sessions directory has the proper permissions, as detailed
     in INSTRUCTIONS above.  Check config/conf.php to make sure that the
     server_domain constant is set correctly.
