@@ -65,7 +65,7 @@ $L = array(
     'title'                     => 'titel',
 // includes/init.php
     'generic_date' => '%Y-%m-%d',
-    'generic_time' => '%H:%i',
+    'generic_time' => '%H:%M',
 // includes/programs.php
     'recstatus: cancelled'         => 'Denna visning spelades inte in därför att den avbröts manuellt.',
     'recstatus: conflict'          => 'Ett annat program med en högre prioritet kommer att spelas in.',
