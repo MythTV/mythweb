@@ -186,6 +186,7 @@ class Program {
 	var $endtime;
 	var $length;
 
+	var $channame;
 	var $filename;
 	var $filesize;
 	var $hostname;
@@ -223,7 +224,6 @@ class Program {
 			$this->endtime     = myth2unixtime($program_data[12]);	# show end-time in myth time format (eg. 2003-06-28T06:30:00)
 		// Is this a previously-recorded program?  Calculate the filesize
 			if (preg_match('/\\d+_\\d+/', $this->filename)) {
-				$this->channame = $channame;
 				$this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
 			}
 		// Ah, a scheduled recording - let's load more information about it, to be parsed in below
@@ -239,7 +239,7 @@ class Program {
 			$this->category    = $program_data[3];					#
 			#$channum           = $program_data[5];					# channel number
 			#$callsign          = $program_data[6];					# callsign (eg. FOOD or SCIFI)
-			#$channame          = $program_data[7];					# Channel 35 FOOD
+			$this->channame    = $program_data[7];					# Channel 35 FOOD
 			$this->conflicting = $program_data[13] ? true : false;	# conflicts with another scheduled recording?
 			$this->recording   = $program_data[14] ? true : false;	# scheduled to record?
 			$this->duplicate   = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
