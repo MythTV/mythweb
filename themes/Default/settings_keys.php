@@ -42,10 +42,12 @@ class Theme_settings_keys extends Theme_settings {
 </table>
 <p><p>
 <p class="large">
-Note:  This settings page has absolutely no error checking yet.  You can easily screw things up if you're not careful.
+Note: This settings page has absolutely no error checking yet.  You can easily screw things up if
+you're not careful.
 </p>
 <p class="large">
-Note:  JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is that same as one defined in the Keybindings section, the JumpPoint will override the keybinding.
+Note: JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is the same as
+one defined in the Keybindings section, the JumpPoint will override the keybinding.
 </p>
 <p class="large">
 Note:  You probably want to use function keys or keys combined with a modifier (alt, control) for JumpPoints, otherwise you may run into some problems.
