@@ -27,6 +27,8 @@
         if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
     // Use SI units?
         if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
+    // Save the weather icon set
+        if ($_POST['weathericonset'])       $_SESSION['weathericonset']       = $_POST['weathericonset'];
 
     // Recorded Programs
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
@@ -61,6 +63,27 @@
         // Print the option
             echo '<option value="'.htmlentities($theme).'"';
             if ($_SESSION['Theme'] == $theme)
+                echo ' SELECTED';
+            $theme = ereg_replace('_', ' ', $theme);
+            echo '>'.htmlentities($theme).'</option>';
+        }
+        echo '</select>';
+    }
+
+/*
+    weathericonset_select:
+    displays a <select> of available weather icon sets
+*/
+    function weathericonset_select() {
+        echo '<select name="weathericonset">';
+        foreach (get_sorted_files("images/weather/") as $theme) {
+        // Skip the CVS directory and the non-browser themes
+            if (in_array($theme, array('CVS'))) continue;
+        // Ignore non-directories
+            if (!is_dir("images/weather/$theme")) continue;
+        // Print the option
+            echo '<option value="'.htmlentities($theme).'"';
+            if ($_SESSION['weathericonset'] == $theme)
                 echo ' SELECTED';
             $theme = ereg_replace('_', ' ', $theme);
             echo '>'.htmlentities($theme).'</option>';

@@ -27,6 +27,9 @@ class Theme_settings_mythweb extends Theme_settings {
     <td class="command_border_b" align="right"><?php echo t('SI Units?') ?>:</td>
     <td class="command_border_b"><?php unit_select() ?></td>
 </tr><tr>
+    <td class="command_border_b" align="right"><?php echo t('Weather Icons') ?>:</td>
+    <td class="command_border_b"><?php weathericonset_select() ?></td>
+</tr><tr>
     <td colspan="2"><?php echo t('Recorded Programs') ?>:</td>
 </tr><tr>
     <td class="command_border_b" align="right"><?php echo t('Show descriptions on new line')?>:</td>
