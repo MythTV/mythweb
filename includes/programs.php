@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.06.02 (xris)
+    programs.php                             Last Updated: 2004.06.07 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -436,6 +436,38 @@ class Program {
     }
 
 }
+
+/*
+    getCredits:
+    returns credits information for a particular show
+*/
+    function getCredits($chanid, $starttime, $role) {
+        // get credits for the show, cull on 'role'
+        $query  = 'SELECT person FROM credits WHERE role='.escape($role)
+                 .' AND chanid='.escape($chanid)
+                 .' AND starttime=FROM_UNIXTIME('.escape($starttime).')';
+        $result = mysql_query($query)
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+        $people=array();
+        if (mysql_num_rows($result)) {
+            // convert the person #'s to string names by querying people table
+            while($person = mysql_fetch_assoc($result)) {
+                $people []= escape($person['person']);
+            }
+            mysql_free_result($result);
+            $query  = 'SELECT name FROM people WHERE person='.implode($people, " OR person=");
+            $result = mysql_query($query)
+                or trigger_error('SQL Error: '.mysql_error(), FATAL);
+            // assemble list of names into string
+            unset($people);
+            $people=array();
+            while($person = mysql_fetch_assoc($result)) {
+                $people[] = str_replace(" ", "&nbsp;", $person['name']);
+            }
+        }
+        mysql_free_result($result);
+        return implode($people,", ");
+    }
 
 /*
     category_class:

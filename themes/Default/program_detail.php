@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                       Last Updated: 2004.05.04 (xris)
+    program_detail.php                       Last Updated: 2004.06.07 (xris)
 
     This file defines a theme class for the program details section.
     It must define one method.   documentation will be added someday.
@@ -132,6 +132,55 @@ class Theme_program_detail extends Theme {
         ?><tr>
             <td colspan="2" align="right"><?php echo strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?>Rating:&nbsp;</td>
             <td><?php echo $this_program->rating?></td>
+        </tr><?php
+            }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'host');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Hosted by:&nbsp;</td>
+            <td><?php echo $list?></td>
+        </tr><?php
+            }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'actor');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Cast:&nbsp;</td>
+            <td><?php echo $list?></td>
+        </tr><?php
+            }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'guest_star');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Guest Starring:&nbsp;</td>
+            <td><?php echo $list?></td>
+        </tr><?php
+            }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'director');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Directed by:&nbsp;</td>
+            <td><?php echo $list?></td>
+        </tr><?php
+            }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'producer');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Produced by:&nbsp;</td>
+            <td><?php echo $list?></td>
+        </tr><?php
+            }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'executive_producer');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Exec.&nbsp;Producer<?php echo strchr($list,',')?'s':'' ?>:&nbsp;</td>
+            <td><?php echo $list?></td>
+        </tr><?php
+            }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'writer');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Written by:&nbsp;</td>
+            <td><?php echo $list?></td>
         </tr><?php
             }
         ?>
