@@ -20,7 +20,7 @@ class Theme_scheduled_recordings extends Theme {
         if (empty($group_field)) {
             $group_field = "airdate";
         }
-        elseif (!in_array($group_field, 'title', 'channum', 'airdate')) {
+        elseif (!in_array($group_field, array('title', 'channum', 'airdate'))) {
             $group_field = '';
         }
     // Print the page contents
