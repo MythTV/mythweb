@@ -85,9 +85,11 @@
 
 
 #recording_info {
-    width:       350px;
+    padding:    10px;
 }
-
+#recording_info h3 {
+    margin: 0px;
+}
 #recording_info ul {
     padding-left: 1em;
 }
