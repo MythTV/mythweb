@@ -253,4 +253,29 @@ define ('_LANG_', '');
 define ('_LANG_', '');
 */
 
+/* mythweather */
+define ('_LANG_CURRENT_CONDITIONS',	'Aktuelle Wetterlage');
+define ('_LANG_HUMIDITY',		'Feuchtigkeit');
+define ('_LANG_PRESSURE',		'Luftdruck');
+define ('_LANG_WIND',			'Windrichtung');
+define ('_LANG_VISIBILITY',		'Sichtweite');
+define ('_LANG_AT',			'mit');
+define ('_LANG_WIND_CHILL',		'Windschnelligkeit');
+define ('_LANG_UV_INDEX',		'Ozonwert');
+define ('_LANG_UV_MINIMAL',		'Minimal');
+define ('_LANG_FORECAST',		'Vorschau');
+define ('_LANG_MONDAY',			'Montag');
+define ('_LANG_TUESDAY',		'Dienstag');
+define ('_LANG_WEDNESDAY',		'Mittwoch');
+define ('_LANG_THURSDAY',		'Donnerstag');
+define ('_LANG_FRIDAY',			'Freitag');
+define ('_LANG_SATURDAY',		'Samstag');
+define ('_LANG_SUNDAY',			'Sonntag');
+define ('_LANG_TODAY',			'Heute');
+define ('_LANG_TOMORROW',		'Morgen');
+define ('_LANG_LOW',			'Min');
+define ('_LANG_HIGH',			'Max');
+define ('_LANG_RADAR',			'Radarbild');
+define ('_LANG_LAST_UPDATED',		'Zuletzt aktualisiert');
+
 ?>
