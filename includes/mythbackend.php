@@ -109,15 +109,18 @@
         check_proto_version:
         Check that we are speaking a version of the protocol that is compatible with the backend
 */
-        function check_proto_version($fp) {
-                $our_version = "1";
-                $response = explode($backend_sep,backend_command2("MYTH_PROTO_VERSION " . $our_version, $fp));
-                if ($response[0] == "ACCEPT")
-                        return;
-                if ($response[0] == "REJECT")
-                        trigger_error("Incompatible protocol version (mythweb=" . $our_version . ", backend=" . $response[1] . ")");
-                trigger_error("Unexpected response to MYTH_PROTO_VERSION: " . $response[0]);
-        }
+	function check_proto_version($fp) {
+		$our_version = "1";
+		$response = explode(backend_sep, backend_command2("MYTH_PROTO_VERSION " . $our_version, $fp));
+		if ($response[0] == "ACCEPT")
+			return;
+		if ($response[0] == "REJECT")
+		{
+			trigger_error("Incompatible protocol version (mythweb=" . $our_version . ", backend=" . $response[1] . ")");
+			return;
+		}
+		trigger_error("Unexpected response to MYTH_PROTO_VERSION: " . $response[0]);
+	}
 
 /*
 	get_backend_rows:
