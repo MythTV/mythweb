@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    channels.php                             Last Updated: 2005.02.02 (xris)
+    channels.php                             Last Updated: 2005.02.28 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -22,11 +22,15 @@
     function load_all_channels() {
         global $Channels;
         $Channels = array();
-        if ($_SESSION['guide_favonly']) {
-            $sql = "SELECT channel.* FROM channel, favorites WHERE channel.chanid = favorites.chanid GROUP BY channum,callsign ORDER BY (channum + 0), chanid";
-        } else {
-            $sql = "SELECT * FROM channel GROUP BY channum,callsign ORDER BY (channum + 0), chanid";
-        }
+        if ($_SESSION['guide_favonly'])
+            $sql = "SELECT channel.* FROM channel, favorites WHERE channel.chanid = favorites.chanid";
+        else
+            $sql = "SELECT * FROM channel";
+    // Group and sort
+        $sql .= ' GROUP BY channum, callsign ORDER BY '
+                .(prefer_channum ? '' : 'callsign, ')
+                .'(channum + 0), chanid';
+    // Query
         $result = mysql_query($sql)
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
         while ($channel_data = mysql_fetch_assoc($result))  {
