@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2005.02.05 (xris)
+    program_listing.php                      Last Updated: 2005.02.06 (xris)
 
     This file defines a theme class for the program listing section.
     It must define several methods, some of which have specific
@@ -29,7 +29,7 @@ class Theme_program_listing extends Theme {
         <table border="0" cellspacing="0" cellpadding="2">
         <tr>
 
-            <td align="center"><? echo t('Jump To') ?>:&nbsp;&nbsp;</td>
+            <td nowrap align="center"><? echo t('Jump To') ?>:&nbsp;&nbsp;</td>
             <td align="right"><? echo t('Hour') ?>:&nbsp;</td>
             <td><select name="hour" style="text-align: right" onchange="get_element('program_listing').submit()"><?php
                 for ($h=0;$h<24;$h++) {

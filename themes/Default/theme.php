@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2005.01.23 (xris)
+    theme.php                             Last Updated: 2005.02.06 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -120,9 +120,31 @@ class Theme {
                 <a href="recorded_programs.php"><?php echo t('Recorded Programs') ?></a>
                 &nbsp; | &nbsp;
                 <a href="status.php"><?php echo t('Backend Status') ?></a><?php
-        # really should move the category_legend footnote to this section,
-        # so it doesn't render in other sections
-    }
+    // Create the category legend popup
+        global $Categories, $Footnotes;
+        $legend = <<<EOF
+<div id="category_legend_popup">
+<table width="400" bgcolor="#003060" border="1" cellpadding="0" cellspacing="0">
+<tr>
+    <td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">
+        <tr>
+EOF;
+            $legend .= "\t\t\t<td colspan=\"3\">".t('Category Legend').':</td>';
+            $count = 0;
+            foreach ($Categories as $cat => $details) {
+                if ($count++ % 3 == 0)
+                    $legend .= "\n\t\t</tr><tr>\n";
+                $legend .= "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".htmlentities($details[0], ENT_COMPAT, 'UTF-8')."</b></td>\n";
+            }
+            $legend .= <<<EOF
+        </tr>
+        </table></td>
+</tr>
+</table>
+</div>
+EOF;
+            $Footnotes[] = $legend;
+        }
 
     function print_footer() {
 /*?>
@@ -139,26 +161,6 @@ class Theme {
         }
     }
 ?>
-
-<div id="category_legend_popup">
-<table width="400" bgcolor="#003060" border="1" cellpadding="0" cellspacing="0">
-<tr>
-    <td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">
-        <tr>
-            <td colspan="3"><?php echo t('Category Legend') ?>:</td><?php
-    $count = 0;
-    global $Categories;
-    foreach ($Categories as $cat => $details) {
-        if ($count++ % 3 == 0)
-            echo "\n\t\t</tr><tr>\n";
-        echo "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".htmlentities($details[0], ENT_COMPAT, 'UTF-8')."</b></td>\n";
-    }
-        ?>
-        </tr>
-        </table></td>
-</tr>
-</table>
-</div>
 
 </body>
 </html>
