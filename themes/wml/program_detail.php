@@ -10,10 +10,7 @@
 #class theme_program_detail extends Theme {
 class Theme_program_detail extends Theme {
 
-    function print_page() {
-
-        global $this_channel, $this_program;
-        // Print the main page header
+    function print_page(&$program, &$schedule, &$channel) {
 
         parent::print_header("Prog Detail");
         parent::print_menu_content();
@@ -21,30 +18,30 @@ class Theme_program_detail extends Theme {
 ?>
 <p>
 <br/>
-<a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>" ><?php echo $this_channel->channum." ".$this_channel->callsign; ?></a><br/>
-<b><?php echo htmlspecialchars($this_program->title)?></b><br/>
+<a href="channel_detail.php?chanid=<?php echo $channel->chanid?>" ><?php echo $channel->channum." ".$channel->callsign; ?></a><br/>
+<b><?php echo htmlspecialchars($program->title)?></b><br/>
 <a href="#cardmodify" ><?php echo t('Recording Options') ?></a><br/>
-<?php echo strftime(t('generic_date'), $this_program->starttime)?><br/>
-<?php echo t('$1 to $2', strftime('%r', $this_program->starttime), strftime('%r', $this_program->endtime)).' ('.tn('$1 min', '$1 mins', (int)($this_program->length/60)).')' ?> <br/>
+<?php echo strftime(t('generic_date'), $program->starttime)?><br/>
+<?php echo t('$1 to $2', strftime('%r', $program->starttime), strftime('%r', $program->endtime)).' ('.tn('$1 min', '$1 mins', (int)($program->length/60)).')' ?> <br/>
 <?php
-        if ($this_program->previouslyshown) {
+        if ($program->previouslyshown) {
             echo t('Rerun').' ';
         }
-        if (strlen($this_program->subtitle)) { 
+        if (strlen($program->subtitle)) { 
 ?>
-<?php echo t('Subtitle') ?>: <b><?php echo htmlspecialchars($this_program->subtitle)?></b><br/>
+<?php echo t('Subtitle') ?>: <b><?php echo htmlspecialchars($program->subtitle)?></b><br/>
 <?php }
-        if (strlen($this_program->description)) {?>
-<?php echo t('Description') ?>: <?php echo htmlspecialchars(str_replace('$', '', $this_program->description))?><br/>
+        if (strlen($program->description)) {?>
+<?php echo t('Description') ?>: <?php echo htmlspecialchars(str_replace('$', '', $program->description))?><br/>
 <?php         }
-         if (strlen($this_program->category)) {
-            echo t('Category') ?>: <?php echo $this_program->category?><br/>
+         if (strlen($program->category)) {
+            echo t('Category') ?>: <?php echo $program->category?><br/>
 <?php         }
-        if (strlen($this_program->airdate)) {
-            echo t('Original Airdate') ?>: <?php echo $this_program->airdate?><br/>
+        if (strlen($program->airdate)) {
+            echo t('Original Airdate') ?>: <?php echo $program->airdate?><br/>
 <?php         }
-        if (strlen($this_program->rating)) {?>
-<?php echo strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?><?php echo t('Rating') ?>: <?php echo $this_program->rating?><br/>
+        if (strlen($program->rating)) {?>
+<?php echo strlen($program->rater) > 0 ? "$program->rater " : ''?><?php echo t('Rating') ?>: <?php echo $program->rating?><br/>
 <?php
                 ?><br/>
 <?php     } 
@@ -76,51 +73,42 @@ class Theme_program_detail extends Theme {
 </do>
 <p>
 <?php echo t('Recording Options') ?>:
-<?php
-    $record_opt="";
-    if (! $this_program->will_record) $record_opt="never";
-    if ($this_program->record_once) $record_opt="once";
-    if ($this_program->record_daily) $record_opt="daily";
-    if ($this_program->record_weekly) $record_opt="weekly";
-    if ($this_program->record_channel) $record_opt="channel";
-    if ($this_program->record_always) $record_opt="always";
-    if ($this_program->record_findone) $record_opt="findone";
-
-?>
-<select name="record" value="<?php echo $record_opt ?>">
-<option value="never" id="record_never"><?php if ($record_opt=="never") echo "(*)"; ?><?php echo t('rectype: dontrec') ?></option>
-<option value="once" id="record_once"><?php if ($record_opt=="once") echo "(*)"; ?><?php echo t('rectype: once') ?></option>
-<option value="daily" id="record_daily"><?php if ($record_opt=="daily") echo "(*)"; ?>Record <?php echo t('rectype: daily') ?></option>
-<option value="weekly" id="record_weekly"><?php if ($record_opt=="weekly") echo "(*)"; ?>Record <?php echo t('rectype: weekly') ?></option>
-<option value="channel" id="record_channel"><?php if ($record_opt=="channel") echo "(*)"; ?><?php echo t('rectype: channel') ?></option>
-<option value="always" id="record_always"><?php if ($record_opt=="always") echo "(*)"; ?><?php echo t('rectype: always') ?></option>
-<option value="findone" id="record_findone"><?php if ($record_opt=="findone") echo "(*)"; ?><?php echo t('rectype: findone') ?></option>
+<select name="record" value="<?php echo $schedule->type ?>">
+<option value="<?php echo rectype_dontrec ?>" id="<?php echo rectype_dontrec ?>"><?php if (!$schedule->recordid) echo "(*)"; ?><?php echo t('rectype: dontrec') ?></option>
+<option value="<?php echo rectype_once ?>" id="<?php echo rectype_once ?>"><?php if ($schedule->type == rectype_once) echo "(*)"; ?><?php echo t('rectype: once') ?></option>
+<option value="<?php echo rectype_daily ?>" id="<?php echo rectype_daily ?>"><?php if ($schedule->type == retype_daily) echo "(*)"; ?>Record <?php echo t('rectype: daily') ?></option>
+<option value="<?php echo rectype_weekly ?>" id="<?php echo rectype_weekly ?>"><?php if ($schedule->type ==rectype_weekly) echo "(*)"; ?>Record <?php echo t('rectype: weekly') ?></option>
+<option value="<?php echo rectype_channel ?>" id="<?php echo rectype_channel ?>"><?php if ($schedule->type == rectype_channel) echo "(*)"; ?><?php echo t('rectype: channel') ?></option>
+<option value="<?php echo rectype_always ?>" id="<?php echo rectype_always ?>"><?php if ($schedule->type == rectype_always) echo "(*)"; ?><?php echo t('rectype: always') ?></option>
+<option value="<?php echo rectype_findone ?>" id="<?php echo rectype_findone ?>"><?php if ($schedule->type == rectype_findone) echo "(*)"; ?><?php echo t('rectype: findone') ?></option>
+<option value="<?php echo rectype_finddaily ?>" id="<?php echo rectype_finddaily ?>"><?php if ($schedule->type == rectype_finddaily) echo "(*)"; ?><?php echo t('rectype-long: finddaily') ?></option>
+<option value="<?php echo rectype_findweekly ?>" id="<?php echo rectype_findweekly ?>"><?php if ($schedule->type == rectype_findweekly) echo "(*)"; ?><?php echo t('rectype-long: findweekly') ?></option>
+<option value="<?php echo rectype_override ?>" id="<?php echo rectype_override ?>"><?php if ($schedule->type == rectype_override) echo "(*)"; ?><?php echo t('rectype: override') ?></option>
 </select>
 <?php echo t('Recording Profile') ?>:
-<select name="profile" value="<?php echo $this_program->profile ?>">
+<select name="profile" value="<?php echo $program->profile ?>">
 <?php
 
-    global $Profiles;
-    foreach($Profiles as $profile) {
+    foreach(array('Default', 'Live TV', 'High Quality', 'Low Quality') as $profile) {
         echo '<option value="'.htmlentities($profile).'">';
         echo htmlentities($profile).'</option>';
     }
 ?>
 </select>
-<?php echo t('Recording Priority') ?>: <input name="recpriority" type="text" value="<?php echo $this_program->recpriority ?>" format="N*" size="2"/>
+<?php echo t('Recording Priority') ?>: <input name="recpriority" type="text" value="<?php echo $program->recpriority ?>" format="N*" size="2"/>
 <br/>
-<?php echo t('No. of recordings to keep') ?>:<input type="text" name="maxepisodes" emptyok="true" size="1" format="N" value="<?php echo htmlentities($this_program->maxepisodes) ?>"/>
+<?php echo t('No. of recordings to keep') ?>:<input type="text" name="maxepisodes" emptyok="true" size="1" format="N" value="<?php echo htmlentities($program->maxepisodes) ?>"/>
 <br/>
-<?php echo t('Start Early') ?>:<input type="text" name="startoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($this_program->startoffset) ?>"/>
+<?php echo t('Start Early') ?>:<input type="text" name="startoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($program->startoffset) ?>"/>
 <br/>
-<?php echo t('End Late') ?>:<input type="text" name="endoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($this_program->endoffset) ?>"/>
+<?php echo t('End Late') ?>:<input type="text" name="endoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($program->endoffset) ?>"/>
 <br/>
 <?php echo t('Duplicate Check method') ?>
 <?php 
-if ($this_program->dupmethod == 0 || $this_program->dupmethod == 6)
+if ($program->dupmethod == 0 || $program->dupmethod == 6)
     $local_dupmethod = 6;
 else
-    $local_dupmethod = $this_program->dupmethod;
+    $local_dupmethod = $program->dupmethod;
 ?>
 <select name="dupmethod" value="<?php $local_dupmethod ?>">
 <option value="1"><?php echo t('None') ?></option>
@@ -128,10 +116,10 @@ else
 <option value="4"><?php echo t('Description') ?></option>
 <option value="6"><?php echo t('Subtitle and Description') ?></option>
 </select>
-<select name="autoexpire" multiple="true" value="<?php if ($this_program->autoexpire) echo "checked" ?>">
+<select name="autoexpire" multiple="true" value="<?php if ($program->autoexpire) echo "checked" ?>">
 <option value="checked" id="o2"><?php echo t('Auto-expire recordings') ?></option>
 </select>
-<select name="maxnewest" multiple="true" value="<?php if ($this_program->maxnewest) echo "checked" ?>">
+<select name="maxnewest" multiple="true" value="<?php if ($program->maxnewest) echo "checked" ?>">
 <option value="checked"><?php echo t('Record new and expire old') ?></option>
 </select>
 </p></card>
