@@ -113,6 +113,7 @@
     visibility:         hidden;
     top:                0px;
     left:               0px;
+    width:              26em;
     margin:             -2px 0px 0px 4px;
     background-color:   #247;
     border-right:       1px solid #79c;
@@ -122,11 +123,17 @@
     padding:            10px;
     font-size:          9pt;
 }
-#search_options table {
+#search_options .search_table {
     font-size: 9pt;
 }
-#search_options table td {
-    width:  6em;
+#search_options .search_table div {
+    float:   left;
+}
+#search_options .search_table div.cell {
+    width:   8em;
+}
+#search_options .search_table br {
+    clear: both;
 }
 #search_options hr {
     border-top:    1px solid #68b;

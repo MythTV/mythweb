@@ -81,46 +81,42 @@ class Theme {
                 </div>
                 <div id="search_options">
                     <?php echo t('Search fields') ?>:<br />
-                    <!-- can't find a way to do this cleanly without tables -- enlighten me, please! -->
-                    <table border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <th><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>>
-                            </th>
-                        <td><a onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><?php echo t('Title') ?></a>
-                            </td>
-                        <th><input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : ''?>>
-                            </th>
-                        <td><a onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><?php echo t('Subtitle') ?></a>
-                            </td>
-                        <th><input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : ''?>>
-                            </th>
-                        <td><a onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><?php echo t('Description') ?></a>
-                            </td>
-                    </tr><tr>
-                        <th><input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : ''?>>
-                            </th>
-                        <td><a onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><?php echo t('Category') ?></a>
-                            </td>
-                        <th><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : ''?>>
-                            </th>
-                        <td colspan="3"><a onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><?php echo t('Category Type') ?></a>
-                            </td>
-                    </tr>
-                    </table>
+                    <!-- is there a better way to do this cleanly without tables ---- enlighten me, please! -->
+                    <div class="search_table clearfix">
+                        <div class="cell">
+                            <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>>
+                            <a onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><?php echo t('Title') ?></a>
+                        </div>
+                        <div class="cell">
+                            <input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : ''?>>
+                            <a onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><?php echo t('Subtitle') ?></a>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : ''?>>
+                            <a onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><?php echo t('Description') ?></a>
+                        </div>
+                        <br/>
+                        <div class="cell">
+                            <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : ''?>>
+                            <a onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><?php echo t('Category') ?></a>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : ''?>>
+                            <a onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><?php echo t('Category Type') ?></a>
+                        </div>
+                    </div>
                     <hr/>
                     <?php echo t('Search options') ?>:<br />
-                    <table border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <th><input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>>
-                            </th>
-                        <td><a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a>
-                            </td>
-                        <th><input type="checkbox" class="radio" id="search_hd" name="search_hd" value="1"<?php echo $_SESSION['search']['search_hd'] ? ' CHECKED' : ''?>>
-                            </th>
-                        <td><a onclick="get_element('search_hd').checked=get_element('search_hd').checked ? false : true;"><?php echo t('HD Only') ?></a>
-                            </td>
-                    </tr>
-                    </table>
+                    <div class="search_table clearfix">
+                        <div class="cell">
+                            <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>>
+                            <a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="radio" id="search_hd" name="search_hd" value="1"<?php echo $_SESSION['search']['search_hd'] ? ' CHECKED' : ''?>>
+                            <a onclick="get_element('search_hd').checked=get_element('search_hd').checked ? false : true;"><?php echo t('HD Only') ?></a>
+                        </div>
+                    </div>
 
                     <hr/>
                     <?php echo t('Search help') ?>:
