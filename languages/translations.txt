@@ -28,6 +28,11 @@ For translators:
     are shorthand, and are even "translated" in English.php into more verbose
     sentences.
 
+    Don't forget to add your language to the $Languages array in
+    includes/translate.php, too.  That way, it will attempt to auto-detect the
+    browser's preferred language, and show up in the mythweb settings language
+    choice menu.
+
 For theme developers and coders:
 
     Mythweb now has two translation functions:  t() and tn().
