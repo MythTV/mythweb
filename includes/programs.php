@@ -424,7 +424,7 @@ class Program {
 								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.escape($this->title).','
 								.escape($this->subtitle).','
-								.escape($this->description).')')
+								.escape($this->description).','
 								.escape($this->profile).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
