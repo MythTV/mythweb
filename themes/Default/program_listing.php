@@ -234,12 +234,12 @@ class Theme_program_listing extends Theme {
         </tr>" : '')
         .($program->will_record ? "<tr>
             <td align=\"right\">".t('Schedule').":</td>
-            <td>".($program->record_daily       ? _LANG_RECTYPE_LONG_DAILY
-                    : ($program->record_weekly  ? _LANG_RECTYPE_LONG_WEEKLY
-                    : ($program->record_once    ? _LANG_RECTYPE_LONG_ONCE
-                    : ($program->record_channel ? _LANG_RECTYPE_LONG_CHANNEL
-                    : ($program->record_findone ? _LANG_RECTYPE_LONG_FINDONE
-                    : _LANG_RECTYPE_LONG_ALWAYS)))))."</td>
+            <td>".($program->record_daily       ? t('rectype-long: daily')
+                    : ($program->record_weekly  ? t('rectype-long: weekly')
+                    : ($program->record_once    ? t('rectype-long: once')
+                    : ($program->record_channel ? t('rectype-long: channel')
+                    : ($program->record_findone ? t('rectype-long: findone')
+                    : t('rectype-long: always'))))))."</td>
         </tr>" : '')
         .($program->recstatus ? "<tr>
             <td align=\"right\">".t('Notes').":</td>

@@ -1,8 +1,12 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2003.08.22 (xris)
+    settings.php                            Last Updated: 2004.11.29 (xris)
 
     main configuration index
+
+    Please be aware that there are many non-translated strings in this page.
+    They have been left this way intentionally, because they refer to
+    database fields.
 \***                                                                        ***/
 
 // Load the parent class for all settings pages
@@ -13,8 +17,9 @@ class Theme_settings_channels extends Theme_settings {
     function print_page() {
         global $Channels;
         $this->print_header();
+        echo "\n"
+            .t('Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality.');
 ?>
-Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality.
 
 <form class="form" method="post" action="settings_channels.php">
 

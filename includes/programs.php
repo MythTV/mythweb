@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.11.25 (xris)
+    programs.php                             Last Updated: 2004.11.29 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -30,25 +30,25 @@
                             );
 
     $RecStatus_Reasons = array(
-                               'Deleted'            => _LANG_RECSTATUS_LONG_DELETED,
-                               'Stopped'            => _LANG_RECSTATUS_LONG_STOPPED,
-                               'Recorded'           => _LANG_RECSTATUS_LONG_RECORDED,
-                               'Recording'          => _LANG_RECSTATUS_LONG_RECORDING,
-                               'WillRecord'         => _LANG_RECSTATUS_LONG_WILLRECORD,
-                               'Unknown'            => _LANG_RECSTATUS_LONG_UNKNOWN,
-                               'ManualOverride'     => _LANG_RECSTATUS_LONG_MANUALOVERRIDE,
-                               'PreviousRecording'  => _LANG_RECSTATUS_LONG_PREVIOUSRECORDING,
-                               'CurrentRecording'   => _LANG_RECSTATUS_LONG_CURRENTRECORDING,
-                               'EarlierShowing'     => _LANG_RECSTATUS_LONG_EARLIERSHOWING,
-                               'TooManyRecordings'  => _LANG_RECSTATUS_LONG_TOOMANYRECORDINGS,
-                               'Cancelled'          => _LANG_RECSTATUS_LONG_CANCELLED,
-                               'Conflict'           => _LANG_RECSTATUS_LONG_CONFLICT,
-                               'LaterShowing'       => _LANG_RECSTATUS_LONG_LATERSHOWING,
-                               'Overlap'            => _LANG_RECSTATUS_LONG_OVERLAP,
-                               'LowDiskSpace'       => _LANG_RECSTATUS_LONG_LOWDISKSPACE,
-                               'TunerBusy'          => _LANG_RECSTATUS_LONG_TUNERBUSY,
+                               'Deleted'            => t('recstatus: deleted'),
+                               'Stopped'            => t('recstatus: stopped'),
+                               'Recorded'           => t('recstatus: recorded'),
+                               'Recording'          => t('recstatus: recording'),
+                               'WillRecord'         => t('recstatus: willrecord'),
+                               'Unknown'            => t('recstatus: unknown'),
+                               'ManualOverride'     => t('recstatus: manualoverride'),
+                               'PreviousRecording'  => t('recstatus: previousrecording'),
+                               'CurrentRecording'   => t('recstatus: currentrecording'),
+                               'EarlierShowing'     => t('recstatus: earliershowing'),
+                               'TooManyRecordings'  => t('recstatus: toomanyrecordings'),
+                               'Cancelled'          => t('recstatus: cancelled'),
+                               'Conflict'           => t('recstatus: conflict'),
+                               'LaterShowing'       => t('recstatus: latershowing'),
+                               'Overlap'            => t('recstatus: overlap'),
+                               'LowDiskSpace'       => t('recstatus: lowdiskspace'),
+                               'TunerBusy'          => t('recstatus: tunerbusy'),
                             // A special category for mythweb, since this feature doesn't exist in the backend
-                               'ForceRecord'        => _LANG_RECSTATUS_LONG_FORCE_RECORD,
+                               'ForceRecord'        => t('recstatus: force_record'),
                               );
 
 /*
@@ -367,8 +367,8 @@ class Program {
             $this->title           = $program_data['title'];
             $this->subtitle        = $program_data['subtitle'];
             $this->description     = $program_data['description'];
-            $this->category        = $program_data['category']      ? $program_data['category']       : _LANG_UNKNOWN;
-            $this->category_type   = $program_data['category_type'] ? $program_data['category_type'] : 'Unknown';
+            $this->category        = $program_data['category']      ? $program_data['category']      : t('Unknown');
+            $this->category_type   = $program_data['category_type'] ? $program_data['category_type'] : t('Unknown');
             $this->airdate         = _or($program_data['originalairdate'], $program_data['airdate']);
             $this->stars           = $program_data['stars'];
             $this->previouslyshown = $program_data['previouslyshown'];
@@ -524,73 +524,23 @@ class Program {
         static $cache = array();
         if ($cache[$category])
             $class .= $cache[$category];
-    // Now comes the hard part
-        elseif (preg_match('/'._CATMATCH_ACTION.'/', $category))
-            $class .= $cache[$category] = 'cat_Action';
-        elseif (preg_match('/'._CATMATCH_ADULT.'/', $category))
-            $class .= $cache[$category] = 'cat_Adult';
-        elseif (preg_match('/'._CATMATCH_ANIMALS.'/', $category))
-            $class .= $cache[$category] = 'cat_Animals';
-        elseif (preg_match('/'._CATMATCH_ART_MUSIC.'/', $category))
-            $class .= $cache[$category] = 'cat_Art_Music';
-        elseif (preg_match('/'._CATMATCH_BUSINESS.'/', $category))
-            $class .= $cache[$category] = 'cat_Business';
-        elseif (preg_match('/'._CATMATCH_CHILDREN.'/', $category))
-            $class .= $cache[$category] = 'cat_Children';
-        elseif (preg_match('/'._CATMATCH_COMEDY.'/', $category))
-            $class .= $cache[$category] = 'cat_Comedy';
-        elseif (preg_match('/'._CATMATCH_CRIME_MYSTERY.'/', $category))
-            $class .= $cache[$category] = 'cat_Crime_Mystery';
-        elseif (preg_match('/'._CATMATCH_DOCUMENTARY.'/', $category))
-            $class .= $cache[$category] = 'cat_Documentary';
-        elseif (preg_match('/'._CATMATCH_DRAMA.'/', $category))
-            $class .= $cache[$category] = 'cat_Drama';
-        elseif (preg_match('/'._CATMATCH_EDUCATIONAL.'/', $category))
-            $class .= $cache[$category] = 'cat_Educational';
-        elseif (preg_match('/'._CATMATCH_FOOD.'/', $category))
-            $class .= $cache[$category] = 'cat_Food';
-        elseif (preg_match('/'._CATMATCH_GAME.'/', $category))
-            $class .= $cache[$category] = 'cat_Game';
-        elseif (preg_match('/'._CATMATCH_HEALTH_MEDICAL.'/', $category))
-            $class .= $cache[$category] = 'cat_Health_Medical';
-        elseif (preg_match('/'._CATMATCH_HISTORY.'/', $category))
-            $class .= $cache[$category] = 'cat_History';
-        elseif (preg_match('/'._CATMATCH_HOWTO.'/', $category))
-            $class .= $cache[$category] = 'cat_HowTo';
-        elseif (preg_match('/'._CATMATCH_HORROR.'/', $category))
-            $class .= $cache[$category] = 'cat_Horror';
-        elseif (preg_match('/'._CATMATCH_MISC.'/', $category))
-            $class .= $cache[$category] = 'cat_Misc';
-        elseif (preg_match('/'._CATMATCH_NEWS.'/', $category))
-            $class .= $cache[$category] = 'cat_News';
-        elseif (preg_match('/'._CATMATCH_REALITY.'/', $category))
-            $class .= $cache[$category] = 'cat_Reality';
-        elseif (preg_match('/'._CATMATCH_ROMANCE.'/', $category))
-            $class .= $cache[$category] = 'cat_Romance';
-        elseif (preg_match('/'._CATMATCH_SCIFI_FANTASY.'/', $category))
-            $class .= $cache[$category] = 'cat_SciFi_Fantasy';
-        elseif (preg_match('/'._CATMATCH_SCIENCE_NATURE.'/', $category))
-            $class .= $cache[$category] = 'cat_Science_Nature';
-        elseif (preg_match('/'._CATMATCH_SHOPPING.'/', $category))
-            $class .= $cache[$category] = 'cat_Shopping';
-        elseif (preg_match('/'._CATMATCH_SOAPS.'/', $category))
-            $class .= $cache[$category] = 'cat_Soaps';
-        elseif (preg_match('/'._CATMATCH_SPIRITUAL.'/', $category))
-            $class .= $cache[$category] = 'cat_Spiritual';
-        elseif (preg_match('/'._CATMATCH_SPORTS.'/', $category))
-            $class .= $cache[$category] = 'cat_Sports';
-        elseif (preg_match('/'._CATMATCH_TALK.'/', $category))
-            $class .= $cache[$category] = 'cat_Talk';
-        elseif (preg_match('/'._CATMATCH_TRAVEL.'/', $category))
-            $class .= $cache[$category] = 'cat_Travel';
-        elseif (preg_match('/'._CATMATCH_WAR.'/', $category))
-            $class .= $cache[$category] = 'cat_War';
-        elseif (preg_match('/'._CATMATCH_WESTERN.'/', $category))
-            $class .= $cache[$category] = 'cat_Western';
-        else
+    // Scan the $Categories hash for any matches
+        else {
+            global $Categories;
+            foreach ($Categories as $cat => $details) {
+                if (!$details[1])
+                    continue;
+                if (preg_match('/'.$details[1].'/', $category)) {
+                    $class .= $cache[$category] = 'cat_'.$cat.' ';
+                    break;
+                }
+            }
+        }
+    // No category found?
+        if (!$cache[$category])
             $class .= $cache[$category] = 'cat_Unknown';
     // Return
-        return $class;
+        return trim($class);
     }
 
 ?>

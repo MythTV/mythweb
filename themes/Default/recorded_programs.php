@@ -57,7 +57,7 @@ class Theme_recorded_programs extends Theme {
             if ($_GET['title'] == $title)
                 echo ' SELECTED';
             echo '>'.htmlentities($title, ENT_COMPAT, 'UTF-8')
-                .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count, array($count)).')' : "")
+                .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count).')' : "")
                 .'</option>';
         }
         ?>
@@ -71,7 +71,7 @@ class Theme_recorded_programs extends Theme {
             if ($_GET['recgroup'] == $recgroup)
                 echo ' SELECTED';
             echo '>'.htmlentities($recgroup, ENT_COMPAT, 'UTF-8')
-                .' ('.tn('$1 recording', '$1 recordings', $count, array($count))
+                .' ('.tn('$1 recording', '$1 recordings', $count)
                 .')</option>';
         }
         ?>
@@ -177,15 +177,15 @@ if ($group_field == "") {
 ?>
 </tr><tr class="recorded">
     <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 7 : 8 ?>" align="center">
-        <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_COMMFLAG?>:&nbsp;
+        <span style="padding-right: 25px"><?php echo t('has commflag') ?>:&nbsp;
             <b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></span>
-        <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_CUTLIST?>:&nbsp;
+        <span style="padding-right: 25px"><?php echo t('has cutlist')?>:&nbsp;
             <b><?php echo $show->has_cutlist ? t('Yes') : t('No') ?></b></span>
-        <span style="padding-right: 25px"><?php echo _LANG_SHOW_IS_EDITING?>:&nbsp;
+        <span style="padding-right: 25px"><?php echo t('is editing') ?>:&nbsp;
             <b><?php echo $show->is_editing ? t('Yes') : t('No') ?></b></span>
-        <span style="padding-right: 25px"><?php echo _LANG_SHOW_AUTO_EXPIRE?>:&nbsp;
+        <span style="padding-right: 25px"><?php echo t('auto-expire') ?>:&nbsp;
             <b><?php echo $show->auto_expire ? t('Yes') : t('No') ?></b></span>
-        <?php echo _LANG_SHOW_HAS_BOOKMARK?>:&nbsp;
+        <?php echo t('has bookmark') ?>:&nbsp;
             <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b>
         </td>
 <?php

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    translate.php                            Last Updated: 2004.11.27 (xris)
+    translate.php                            Last Updated: 2004.11.29 (xris)
 
     Basic routines that allow for language translation.  Please see
     languages/translations.txt for information about using the translation
@@ -66,17 +66,19 @@
     tn:
     return different translated strings based on the numerical value of int.
     an optional array of string arguments can be included and will be passed
-    to t() for interpretation.
+    to t() for interpretation.  If no array is passed in, a default will be
+    created using the value of t(int).
 */
     function tn(/* string1, string2, stringN, int [, array-of-args] */) {
         $a   = func_get_args();
     // Array of arguments?
         if (is_array($a[count($a)-1]))
             $args = array_pop($a);
-        else
-            $args = array();
     // Pull off the int
         $int = array_pop($a);
+    // Default parameters to $int
+        if (!isset($args))
+            $args = array(t($int));
     // Return the appropriate translated string
         if ($a[$int-1])
             return t($a[$int-1], $args);

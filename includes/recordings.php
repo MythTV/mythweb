@@ -10,14 +10,14 @@
 
 //
     $RecTypes = array(
-                        1 => _LANG_RECTYPE_ONCE,
-                        2 => _LANG_RECTYPE_DAILY,
-                        3 => _LANG_RECTYPE_CHANNEL,
-                        4 => _LANG_RECTYPE_ALWAYS,
-                        5 => _LANG_RECTYPE_WEEKLY,
-                        6 => _LANG_RECTYPE_FINDONE,
-                        7 => _LANG_RECTYPE_OVERRIDE,
-                        8 => _LANG_RECTYPE_DONTREC
+                        1 => t('rectype: once'),
+                        2 => t('rectype: daily'),
+                        3 => t('rectype: channel'),
+                        4 => t('rectype: always'),
+                        5 => t('rectype: weekly'),
+                        6 => t('rectype: findone'),
+                        7 => t('rectype: override'),
+                        8 => t('rectype: dontrec'),
                      );
 
 /*

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                       Last Updated: 2004.06.07 (xris)
+    program_detail.php                       Last Updated: 2004.11.29 (xris)
 
     This file defines a theme class for the program details section.
     It must define one method.   documentation will be added someday.
@@ -60,9 +60,9 @@ class Theme_program_detail extends Theme {
                 if ($this_program->previouslyshown)
                     echo ' ('.t('Rerun').')';
                 echo '<br />'
-                    .strftime('%r', $this_program->starttime) . ' ' . _LANG_TO . ' ' . strftime('%r', $this_program->endtime);
+                    .t('$1 to $2', strftime('%r', $this_program->starttime), strftime('%r', $this_program->endtime));
                 if (!isset($_GET['recordid']))
-                    echo ' (' . (int)($this_program->length/60) . ' ' . _LANG_MINUTES .')';
+                    echo ' ('.tn('$1 min', '$1 mins', (int)($this_program->length/60)).')';
                 if ($_GET['recordid'])
                     echo "</em>";
                 echo "<br />\n\t\t\t";
@@ -217,27 +217,27 @@ class Theme_program_detail extends Theme {
                 <br/>
                 <input type="radio" class="radio" name="record" value="once" id="record_once"<?php
                     echo $this_program->record_once ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_once').checked=true;"><?php echo _LANG_RECTYPE_LONG_ONCE?></a>
+                <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a>
                 <br/>
                 <input type="radio" class="radio" name="record" value="daily" id="record_daily"<?php echo
                 $this_program->record_daily ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_daily').checked=true;"><? echo _LANG_RECTYPE_LONG_DAILY?></a>
+                <a onclick="get_element('record_daily').checked=true;"><? echo t('rectype-long: daily') ?></a>
                 <br/>
                 <input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?php echo
                 $this_program->record_weekly ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_weekly').checked=true;"><? echo _LANG_RECTYPE_LONG_WEEKLY?></a>
+                <a onclick="get_element('record_weekly').checked=true;"><? echo t('rectype-long: weekly') ?></a>
                 <br/>
                 <input type="radio" class="radio" name="record" value="channel" id="record_channel"<?php echo
                 $this_program->record_channel ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_channel').checked=true;"><? echo _LANG_RECTYPE_LONG_CHANNEL?> <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?>.</a>
+                <a onclick="get_element('record_channel').checked=true;"><? echo t('rectype-long: channel') ?> <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?>.</a>
                 <br/>
                 <input type="radio" class="radio" name="record" value="always" id="record_always"<?php echo
                 $this_program->record_always ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_always').checked=true;"><?php echo _LANG_RECTYPE_LONG_ALWAYS?></a>
+                <a onclick="get_element('record_always').checked=true;"><?php echo t('rectype-long: always') ?></a>
                 <br/>
                 <input type="radio" class="radio" name="record" value="findone" id="record_findone"<?php echo
                 $this_program->record_findone ? ' CHECKED' : ''?>></input>
-                <a onclick="get_element('record_findone').checked=true;"><?php echo _LANG_RECTYPE_LONG_FINDONE?></a>
+                <a onclick="get_element('record_findone').checked=true;"><?php echo t('rectype-long: findone') ?></a>
                 </td>
         </tr><tr>
             <td><p>
@@ -280,16 +280,16 @@ class Theme_program_detail extends Theme {
                             echo '<option value="1"';
                             if ($this_program->dupin == 1)
                                 echo ' SELECTED';
-                            echo '>' . t('Current Recordings') . '</option>';
+                            echo '>' . t('Current recordings') . '</option>';
                             echo '<option value="2"';
                             if ($this_program->dupin == 2)
                                 echo ' SELECTED';
-                            echo '>' . t('Previous Recordings') . '</option>';
+                            echo '>' . t('Previous recordings') . '</option>';
                             echo '<option value="15"';
                             if (($this_program->dupin == 15) ||
                                 ($this_program->dupin == 0))
                                 echo ' SELECTED';
-                            echo '>' . _LANG_ALL_RECORDINGS . '</option>';
+                            echo '>' . t('All recordings') . '</option>';
                        ?></select></td>
                 </tr><tr>
                     <td nowrap align="right"><? echo t('Duplicate Check method') ?>:&nbsp;</td>
@@ -342,13 +342,13 @@ class Theme_program_detail extends Theme {
 <tr>
     <td height="100%" align="center" valign="bottom">
 <?php if ($_GET['recordid']) { ?>
-        <a href="recording_schedules.php"><?php echo _LANG_BACK_TO_RECORDING_SCHEDULES?></a></td>
+        <a href="recording_schedules.php"><?php echo t('Back to the recording schedules') ?></a></td>
 <?php } else { ?>
-        <a href="program_listing.php?time=<?php echo $this_program->starttime?>"><?php echo _LANG_WHAT_ELSE_IS_ON_AT_THIS_TIME?></a>
+        <a href="program_listing.php?time=<?php echo $this_program->starttime?>"><?php echo t('What else is on at this time?') ?></a>
         <p>
-        <a href="search.php?searchstr=<?php echo $this_program->title?>&search_title=1"><?php echo _LANG_FIND_OTHER_SHOWING_OF_THIS_PROGRAM?></a>
+        <a href="search.php?searchstr=<?php echo $this_program->title?>&search_title=1"><?php echo t('Find other showings of this program') ?></a>
         <p>
-        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>"><?php echo _LANG_BACK_TO_THE_PROGRAM_LISTING?></a></td>
+        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>"><?php echo t('Back to the program listing') ?></a></td>
 <?php } ?>
 </tr>
 </table>

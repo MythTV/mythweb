@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    utils.php                                Last Updated: 2004.11.27 (xris)
+    utils.php                                Last Updated: 2004.11.29 (xris)
 
     utility routines used throughout mythweb
 \***                                                                        ***/
@@ -38,13 +38,13 @@ function nice_length($length) {
     $mins  = (int) (($length % 3600) / 60);
     $hours = (int) ($length / 3600);
     if ($hours)
-        $ret = tn('$1 hr', '$1 hrs', $hours, array(t($hours)));
+        $ret = tn('$1 hr', '$1 hrs', $hours);
     else
         $ret = '';
     if ($mins > 0) {
         if ($ret)
             $ret .= ' ';
-        $ret .= tn('$1 min', '$1 mins', $mins, array(t($mins)));
+        $ret .= tn('$1 min', '$1 mins', $mins);
     }
     return $ret;
 }

@@ -73,7 +73,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
         $class = ($show->type == 8 ? 'deactivated' : 'scheduled');
     // If this is an 'always on any channel' or 'find one' recording w/o a channel, set the channel name to 'Any'
         if ($show->type == 4 || ($show->type == 6 && !preg_match('/\\S/', $show->channel->channum)))
-            $show->channel->name = '[ '._LANG_ANY.' ]';
+            $show->channel->name = '[ '.t('Any').' ]';
     // Build a popup table for the mouseover of the cell, with extra program information?
         if (show_popup_info) {
         // A program id counter
@@ -86,73 +86,73 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
 <tr>
     <td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
         <tr>
-            <td align=\"right\">"._LANG_TITLE.":</td>
+            <td align=\"right\">".t('Title').":</td>
             <td>$show->title</td>
         </tr>";
             if (($show->type == 1) || ($show->type == 2) || ($show->type == 5) || ($show->type == 7) || ($show->type == 8)) {
                 $Footnotes[] .= "
         <tr>
-            <td align=\"right\">"._LANG_AIRTIME.":</td>
+            <td align=\"right\">".t('Airtime').":</td>
             <td>".strftime($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.strftime($_SESSION['time_format'], $show->endtime)."</td>
         </tr>"
             .(preg_match('/\\S/', $show->subtitle) ? "<tr>
-            <td align=\"right\">"._LANG_SUBTITLE.":</td>
+            <td align=\"right\">".t('Subtitle').":</td>
             <td>$show->subtitle</td>
         </tr>" : '')
             .(preg_match('/\\S/', $show->description) ? "<tr>
-            <td align=\"right\" valign=\"top\">"._LANG_DESCRIPTION.":</td>
+            <td align=\"right\" valign=\"top\">".t('Description').":</td>
             <td>".nl2br(wordwrap($show->description, 70))."</td>
         </tr>" : '')
             .(preg_match('/\\S/', $show->rating) ? "<tr>
-            <td align=\"right\" valign=\"top\">"._LANG_RATING.":</td>
+            <td align=\"right\" valign=\"top\">".t('Rating').":</td>
             <td>$show->rating</td>
         </tr>" : '');
             }
 
             $Footnotes[] .= "<tr>
-            <td align=\"right\">"._LANG_TYPE.":</td>
+            <td align=\"right\">".t('Type').":</td>
             <td>$show->texttype</td>
         </tr>"
 //      .($show->airdate > 0 ? "<tr>
-//          <td align=\"right\">"._LANG_ORIG_AIRDATE.":</td>
+//          <td align=\"right\">".t('Original Airdate').":</td>
 //          <td>$show->airdate</td>
 //      </tr>" : '')
         .(preg_match('/\\S/', $show->category) ? "<tr>
-            <td align=\"right\">"._LANG_CATEGORY.":</td>
+            <td align=\"right\">".t('Category').":</td>
             <td>$show->category</td>
         </tr>" : '')
         .($show->previouslyshown ? "<tr>
-            <td align=\"right\">"._LANG_RERUN.":</td>
+            <td align=\"right\">".t('Rerun').":</td>
             <td>Yes</td>
         </tr>" : '')
         .($show->will_record ? "<tr>
-            <td align=\"right\">"._LANG_SCHEDULE.":</td>
-            <td>".($show->record_daily       ? _LANG_RECTYPE_LONG_DAILY
-                    : ($show->record_weekly  ? _LANG_RECTYPE_LONG_WEEKLY
-                    : ($show->record_once    ? _LANG_RECTYPE_LONG_ONCE
-                    : ($show->record_channel ? _LANG_RECTYPE_LONG_CHANNEL
-                    : ($show->record_findone ? _LANG_RECTYPE_LONG_FINDONE
-                    : _LANG_RECTYPE_LONG_ALWAYS)))))."</td>
+            <td align=\"right\">".t('Schedule').":</td>
+            <td>".($show->record_daily       ? t('rectype-long: daily')
+                    : ($show->record_weekly  ? t('rectype-long: weekly')
+                    : ($show->record_once    ? t('rectype-long: once')
+                    : ($show->record_channel ? t('rectype-long: channel')
+                    : ($show->record_findone ? t('rectype-long: findone')
+                    : t('rectype-long: always'))))))."</td>
         </tr>" : '')
         .($show->dupmethod > 0 ? "<tr>
-            <td align=\"right\">"._LANG_DUP_METHOD.":</td>
+            <td align=\"right\">".t('Dup Method').":</td>
             <td>".($show->dupmethod == 1    ? "None"
-                    : ($show->dupmethod == 2    ? _LANG_SUBTITLE
-                    : ($show->dupmethod == 4    ? _LANG_DESCRIPTION
-                    : ($show->dupmethod == 6    ? _LANG_SUBTITLE_AND_DESCRIPTION
-                    : ($show->dupmethod == 22   ? _LANG_SUB_AND_DESC
+                    : ($show->dupmethod == 2    ? t('Subtitle')
+                    : ($show->dupmethod == 4    ? t('Description')
+                    : ($show->dupmethod == 6    ? t('Subtitle and Description')
+                    : ($show->dupmethod == 22   ? t('Sub and Desc (Empty matches)')
                     : "")))))."</td>
         </tr>" : '')
         .(preg_match('/\\S/', $show->profile) ? "<tr>
-            <td align=\"right\">"._LANG_PROFILE.":</td>
+            <td align=\"right\">".t('Profile').":</td>
             <td>$show->profile</td>
         </tr>" : '')
         .(!empty($show->recgroup) ? "<tr>
-            <td align=\"right\">"._LANG_RECGROUP.":</td>
+            <td align=\"right\">".t('Recording Group').":</td>
             <td>$show->recgroup</td>
         </tr>" : '')
         .($show->recstatus ? "<tr>
-            <td align=\"right\">"._LANG_NOTES.":</td>
+            <td align=\"right\">".t('Notes').":</td>
             <td>".$GLOBALS['RecStatus_Reasons'][$show->recstatus]."</td>
         </tr>" : '')
         ."</table></td>

@@ -27,10 +27,11 @@ class Theme_channel_detail extends Theme {
         <tr>
             <form id="form" action="channel_detail.php?chanid=<?php echo $_GET['chanid'] ?>" method="post">
 
-            <td align="center">Jump&nbsp;to:&nbsp;&nbsp;</td>
-            <td align="right">Date:&nbsp;</td>
+            <td nowrap align="center"><?php echo t('Jump to') ?>:&nbsp;&nbsp;</td>
+            <td align="right"><?php echo t('Date') ?>:&nbsp;</td>
             <td><select name="time" onchange="get_element('form').submit()"><?php
             // Find out how many days into the future we should bother checking
+            ### wtf is there still code in the display files?!?
                 $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
                 list($max_days) = mysql_fetch_row($result);

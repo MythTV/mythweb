@@ -1,13 +1,12 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2004.09.22 (xris)
+    sorting.php                              Last Updated: 2004.11.29 (xris)
 
     routines for sorting Program objects
 \***                                                                        ***/
 
 // A global variable to track the last-used session;
     global $last_sort_session;
-
 
 /*
     get_sort_link:
@@ -16,7 +15,7 @@
     function get_sort_link($field) {
         $status = sort_status($field);
         $link = '<a href="'.$_SERVER['PHP_SELF'].'?sortby='.urlencode($field).'">'
-               .constant('_LANG_'.strtoupper($field))
+               .t($field)
                .'</a>';
         if ($status == 1)
             $link .= ' <span class="large">&darr;</span>';

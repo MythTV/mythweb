@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2003.08.22 (xris)
+    settings.php                             Last Updated: 2004.11.29 (xris)
 
     main configuration index
 \***                                                                        ***/
@@ -10,26 +10,28 @@ class Theme_settings extends Theme {
     function print_page() {
         $this->print_header();
 ?>
-<? echo _LANG_SETTINGS_HEADER1?>
-<p>
-<? echo _LANG_SETTINGS_HEADER2?>
-<p>
-<a href="settings_mythweb.php">MythWeb</a>
-<p>
-<a href="settings_channels.php"><? echo _LANG_CHANNELS?></a>
-<p>
-<a href="settings_keys.php"><? echo _LANG_KEY_BINDINGS?></a>
+
+<div style="padding: 20px">
+    <? echo t('settings: overview') ?>
+    <p>
+    <a href="settings_mythweb.php"><?php echo t('MythWeb Settings') ?></a>
+    <p>
+    <a href="settings_channels.php"><? echo t('Channels') ?></a>
+    <p>
+    <a href="settings_keys.php"><? echo t('Key Bindings') ?></a>
+</div>
+
 <?php
         $this->print_footer();
     }
 
     function print_menu_content() {
-            ?><?php echo _LANG_CONFIGURE?>: &nbsp; &nbsp;
+            ?><?php echo t('Configure') ?>: &nbsp; &nbsp;
                 <a href="settings_mythweb.php">MythWeb</a>
                 &nbsp; | &nbsp;
-                <a href="settings_channels.php"><?php echo _LANG_CHANNELS?></a>
+                <a href="settings_channels.php"><?php echo t('Channels') ?></a>
                 &nbsp; | &nbsp;
-                <a href="settings_keys.php"><?php echo _LANG_KEY_BINDINGS?></a>
+                <a href="settings_keys.php"><?php echo t('Key Bindings') ?></a>
 <?php
     }
 

@@ -22,7 +22,7 @@ class Theme_settings_keys extends Theme_settings {
     <form class="form" action="settings_keys.php" method="get">
     <table width="100%" border="0" cellspacing="0" cellpadding="2">
     <tr>
-        <td align="center">Editing&nbsp;keybindings&nbsp;on:&nbsp;&nbsp;</td>
+        <td nowrap align="center"><?php echo t('Edit keybindings on') ?>:&nbsp;&nbsp;</td>
             <td><select name="host" style="text-align: right">
 <?php
         foreach ($Hosts as $availhost) {
