@@ -24,9 +24,9 @@ class Theme_settings_mythweb extends Theme_settings {
 	<td class="command_border_b" align="right"><?php echo _LANG_LANGUAGE?>:</td>
 	<td class="command_border_b"><?php language_select() ?></td>
 </tr><tr>
-	<td colspan="2">Recorded Programs:</td>
+	<td colspan="2"><?php echo _LANG_RECORDED_PROGRAMS?>:</td>
 </tr><tr>
-	<td class="command_border_b" align="right">Show descriptions on new line:</td>
+	<td class="command_border_b" align="right"><?php echo _LANG_SHOW_DESCRIPTIONS_ON_NEW_LINE?>:</td>
 	<td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." size="12" name="recorded_descunder"<?php if (htmlentities($_SESSION['recorded_descunder']) == "on") echo ' CHECKED' ?>></td>
 </tr><tr>
 	<td><?php echo _LANG_DATEFORMATS?>:</td>

@@ -157,12 +157,12 @@ if ($group_field == "") {
 		</tr>" : '')
 		.($show->will_record ? "<tr>
 			<td align=\"right\">"._LANG_SCHEDULE.":</td>
-			<td>".($show->record_daily       ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_DAY
-					: ($show->record_weekly  ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_WEEK
-					: ($show->record_once    ? _LANG_RECORD_ONLY_THIS_SHOWING
-					: ($show->record_channel ? _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_CHANNEL
-					: ($show->record_findone ? _LANG_RECORD_ONE_SHOWING_OF_THIS_PROGRAM_AT_ANY_TIME
-					: _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_ANY_CHANNEL)))))."</td>
+			<td>".($show->record_daily       ? _LANG_RECTYPE_LONG_DAILY
+					: ($show->record_weekly  ? _LANG_RECTYPE_LONG_WEEKLY
+					: ($show->record_once    ? _LANG_RECTYPE_LONG_ONCE
+					: ($show->record_channel ? _LANG_RECTYPE_LONG_CHANNEL
+					: ($show->record_findone ? _LANG_RECTYPE_LONG_FINEONE
+					: _LANG_RECTYPE_LONG_ALWAYS)))))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->profile) ? "<tr>
 			<td align=\"right\">"._LANG_PROFILE.":</td>

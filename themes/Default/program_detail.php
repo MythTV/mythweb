@@ -122,28 +122,28 @@ class Theme_program_detail extends Theme {
 <?php		if (($this_program->type == 1) || ($this_program->starttime > time())) { ?>
 				<input type="radio" class="radio" name="record" value="once" id="record_once"<?php
 					echo $this_program->record_once ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_once').checked=true;"><?php echo _LANG_RECORD_ONLY_THIS_SHOWING ?></a>
+				<a onclick="get_element('record_once').checked=true;"><?php echo _LANG_RECTYPE_LONG_ONCE?></a>
 				<br/>
 <?php		} ?>
 				<input type="radio" class="radio" name="record" value="daily" id="record_daily"<?php echo
 				$this_program->record_daily ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_daily').checked=true;"><? echo _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_DAY?></a>
+				<a onclick="get_element('record_daily').checked=true;"><? echo _LANG_RECTYPE_LONG_DAILY?></a>
 				<br/>
 				<input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?php echo
 				$this_program->record_weekly ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_weekly').checked=true;"><? echo _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_WEEK?></a>
+				<a onclick="get_element('record_weekly').checked=true;"><? echo _LANG_RECTYPE_LONG_WEEKLY?></a>
 				<br/>
 				<input type="radio" class="radio" name="record" value="channel" id="record_channel"<?php echo
 				$this_program->record_channel ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_channel').checked=true;"><? echo _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_CHANNEL?> <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?>.</a>
+				<a onclick="get_element('record_channel').checked=true;"><? echo _LANG_RECTYPE_LONG_CHANNEL?> <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?>.</a>
 				<br/>
 				<input type="radio" class="radio" name="record" value="always" id="record_always"<?php echo
 				$this_program->record_always ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_always').checked=true;"><?php echo _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_ANY_CHANNEL?></a>
+				<a onclick="get_element('record_always').checked=true;"><?php echo _LANG_RECTYPE_LONG_ALWAYS?></a>
 				<br/>
 				<input type="radio" class="radio" name="record" value="findone" id="record_findone"<?php echo
 				$this_program->record_findone ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_findone').checked=true;"><?php echo _LANG_RECORD_ONE_SHOWING_OF_THIS_PROGRAM_AT_ANY_TIME?></a>
+				<a onclick="get_element('record_findone').checked=true;"><?php echo _LANG_RECTYPE_LONG_FINDONE?></a>
 				</td>
 		</tr><tr>
 			<td><p>
@@ -237,7 +237,7 @@ class Theme_program_detail extends Theme {
 <tr>
 	<td height="100%" align="center" valign="bottom">
 <?php if (isset($_GET[recordid])) { ?>
-		<a href="recording_schedules.php">Back to Recording Schedules</a></td>
+		<a href="recording_schedules.php"><?php echo _LANG_BACK_TO_RECORDING_SCHEDULES?></a></td>
 <?php } else { ?>
 	 	<a href="program_listing.php?time=<?php echo $this_program->starttime?>"><?php echo _LANG_WHAT_ELSE_IS_ON_AT_THIS_TIME?></a>
 		<p>

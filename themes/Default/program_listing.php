@@ -197,47 +197,47 @@ class Theme_program_listing extends Theme {
 <tr>
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
-			<td align=\"right\">Airtime:</td>
+			<td align=\"right\">"._LANG_AIRTIME.":</td>
 			<td>".date($_SESSION['time_format'], $program->starttime).' to '.date($_SESSION['time_format'], $program->endtime)."</td>
 		</tr><tr>
-			<td align=\"right\">Program:</td>
+			<td align=\"right\">"._LANG_TITLE.":</td>
 			<td>$program->title</td>
 		</tr>"
 		.(strlen($program->subtitle) > 0 ? "<tr>
-			<td align=\"right\">Episode:</td>
+			<td align=\"right\">"._LANG_SUBTITLE.":</td>
 			<td>$program->subtitle</td>
 		</tr>" : '')
 		.(strlen($program->description) > 0 ? "<tr>
-			<td align=\"right\" valign=\"top\">Description:</td>
+			<td align=\"right\" valign=\"top\">"._LANG_DESCRIPTION.":</td>
 			<td>".nl2br(wordwrap($program->description, 70))."</td>
 		</tr>" : '')
 		.(strlen($program->rating) > 0 ? "<tr>
-			<td align=\"right\" valign=\"top\">Rating:</td>
+			<td align=\"right\" valign=\"top\">"._LANG_RATING.":</td>
 			<td>$program->rating</td>
 		</tr>" : '')
 		.($program->airdate > 0 ? "<tr>
-			<td align=\"right\">Orig.&nbsp;Airdate:</td>
+			<td align=\"right\">"._LANG_ORIG_AIRDATE.":</td>
 			<td>$program->airdate</td>
 		</tr>" : '')
 		.(strlen($program->category) > 0 ? "<tr>
-			<td align=\"right\">Category:</td>
+			<td align=\"right\">"._LANG_CATEGORY.":</td>
 			<td>$program->category</td>
 		</tr>" : '')
 		.($program->previouslyshown ? "<tr>
-			<td align=\"right\">Rerun:</td>
+			<td align=\"right\">"._LANG_RERUN.":</td>
 			<td>Yes</td>
 		</tr>" : '')
 		.($program->will_record ? "<tr>
-			<td align=\"right\">Schedule:</td>
-			<td>".($program->record_daily       ? "Always record on this channel at this time"
-					: ($program->record_weekly  ? "Always record on this channel at this time on this day of the week"
-					: ($program->record_once    ? "Will be recorded once"
-					: ($program->record_channel ? "Always record on this channel"
-					: ($program->record_findone ? "Record one showing of this program at any time"
-					: "Always record")))))."</td>
+			<td align=\"right\">"._LANG_SCHEDULE.":</td>
+			<td>".($program->record_daily       ? _LANG_RECTYPE_LONG_DAILY
+					: ($program->record_weekly  ? _LANG_RECTYPE_LONG_WEEKLY
+					: ($program->record_once    ? _LANG_RECTYPE_LONG_ONCE
+					: ($program->record_channel ? _LANG_RECTYPE_LONG_CHANNEL
+					: ($program->record_findone ? _LANG_RECTYPE_LONG_FINDONE
+					: _LANG_RECTYPE_LONG_ALWAYS)))))."</td>
 		</tr>" : '')
 		.($program->recstatus ? "<tr>
-			<td align=\"right\">Notes:</td>
+			<td align=\"right\">"._LANG_NOTES.":</td>
 			<td>".$GLOBALS['RecStatus_Reasons'][$program->recstatus]."</td>
 		</tr>" : '')
 		."</table></td>

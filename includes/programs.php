@@ -31,42 +31,24 @@
 							);
 
 	$RecStatus_Reasons = array(
-							   'Deleted'
-							   		=> 'This showing was recorded but was deleted before recording was completed.',
-							   'Stopped'
-							   		=> 'This showing was recorded but was stopped before recording was completed.',
-							   'Recorded'
-							   		=> 'This showing was recorded.',
-							   'Recording'
-							   		=> 'This showing is being recorded.',
-							   'WillRecord'
-							   		=> 'This showing will be recorded.',
-							   'Unknown'
-							   		=> 'The status of this showing is unknown.',
-		                       'ManualOverride'
-							   		=> 'This was manually set to not record',
-		                       'PreviousRecording'
-							   		=> 'This episode was previously recorded according to the duplicate policy chosen for this title.',
-		                       'CurrentRecording'
-							   		=> 'This episode was previously recorded and is still available in the list of recordings.',
-		                       'OtherShowing'
-							   		=> 'This episode will be recorded at another time instead.',
-		                       'TooManyRecordings'
-							   		=> 'Too many recordings of this program have already been recorded.',
-		                       'Cancelled'
-							   		=> 'This was scheduled to be recorded but was manually canceled.',
-		                       'LowerRecPriority'
-							   		=> 'Another program with a higher recording priority will be recorded.',
-		                       'ManualConflict'
-							   		=> 'Another program was manually chosen to be recorded instead.',
-		                       'AutoConflict'
-							   		=> 'Another program was automatically chosen to be recorded instead.',
-		                       'Overlap'
-							   		=> 'This is covered by another scheduled recording for the same program.',
-		                       'LowDiskSpace'
-							   		=> 'There wasn\'t enough disk space available to record this program.',
-			                   'TunerBusy'
-							   		=> 'The tuner card was already being used when this program was scheduled to be recorded.'
+							   'Deleted' 			=> _LANG_RECSTATUS_LONG_DELETED,
+							   'Stopped' 			=> _LANG_RECSTATUS_LONG_STOPPED,
+							   'Recorded'			=> _LANG_RECSTATUS_LONG_RECORDED,
+							   'Recording'			=> _LANG_RECSTATUS_LONG_RECORDING,
+							   'WillRecord'			=> _LANG_RECSTATUS_LONG_WILLRECORD,
+							   'Unknown'			=> _LANG_RECSTATUS_LONG_UNKNOWN,
+		                       'ManualOverride'		=> _LANG_RECSTATUS_LONG_MANUALOVERRIDE,
+		                       'PreviousRecording'	=> _LANG_RECSTATUS_LONG_PREVIOUSRECORDING,
+		                       'CurrentRecording'	=> _LANG_RECSTATUS_LONG_CURRENTRECORDING,
+		                       'OtherShowing'		=> _LANG_RECSTATUS_LONG_OTHERSHOWING,
+		                       'TooManyRecordings'	=> _LANG_RECSTATUS_LONG_TOOMANYRECORDINGS,
+		                       'Cancelled' 			=> _LANG_RECSTATUS_LONG_CANCELLED,
+		                       'LowerRecPriority'	=> _LANG_RECSTATUS_LONG_LOWERRECPRIORITY,
+		                       'ManualConflict'		=> _LANG_RECSTATUS_LONG_MANUALCONFLICT,
+		                       'AutoConflict'  		=> _LANG_RECSTATUS_LONG_AUTOCONFLICT,
+		                       'Overlap'	   		=> _LANG_RECSTATUS_LONG_OERLAP,
+		                       'LowDiskSpace'  		=> _LANG_RECSTATUS_LONG_LOWDISKSPACE,
+			                   'TunerBusy'	   		=> _LANG_RECSTATUS_LONG_TUNERBUSY
 							  );
 
 /*
@@ -345,7 +327,7 @@ class Program {
 			$this->title           = $program_data['title'];
 			$this->subtitle        = $program_data['subtitle'];
 			$this->description     = $program_data['description'];
-			$this->category        = $program_data['category']      ? $program_data['category']       : 'Unknown';
+			$this->category        = $program_data['category']      ? $program_data['category']       : _LANG_UNKNOWN;
 			$this->category_type   = $program_data['category_type'] ? $program_data['category_type'] : 'Unknown';
 			$this->airdate         = $program_data['airdate'];
 			$this->stars           = $program_data['stars'];
@@ -614,67 +596,67 @@ class Program {
 		if ($cache[$category])
 			$this->class .= $cache[$category];
 	// Now comes the hard part
-		elseif (preg_match('/\\b(?:action|adven)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_ACTION.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Action';
-		elseif (preg_match('/\\b(?:adult|erot)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_ADULT.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Adult';
-		elseif (preg_match('/\\b(?:animal|tiere)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_ANIMALS.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Animals';
-		elseif (preg_match('/\\b(?:art|dance|musi[ck]|kunst|[ck]ultur)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_ART_MUSIC.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Art_Music';
-		elseif (preg_match('/\\b(?:biz|busine)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_BISINESS.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Business';
-		elseif (preg_match('/\\b(?:child|kin?d|infan|animation)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_CHILDREN.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Children';
-		elseif (preg_match('/\\b(?:comed|entertain|sitcom)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_COMEDY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Comedy';
-		elseif (preg_match('/\\b(?:[ck]rim|myster)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_CRIME_MYSTERY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Crime_Mystery';
-		elseif (preg_match('/\\b(?:do[ck])/', $category))
+		elseif (preg_match('/'._LANG_DOCUMENTARY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Documentary';
-		elseif (preg_match('/\\b(?:drama)/', $category))
+		elseif (preg_match('/'._LANG_DRAMA.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Drama';
-		elseif (preg_match('/\\b(?:edu|bildung|interests)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_EDUCATIONAL.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Educational';
-		elseif (preg_match('/\\b(?:food|cook|essen|[dt]rink)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_FOOD.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Food';
-		elseif (preg_match('/\\b(?:game|spiele)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_GAME.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Game';
-		elseif (preg_match('/\\b(?:health|medic|gesundheit)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_HEALTH_MEDICAL.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Health_Medical';
-		elseif (preg_match('/\\b(?:hist|geschichte)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_HISTORY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_History';
-		elseif (preg_match('/\\b(?:how|home|house|garden)/', $category))
+		elseif (preg_match('/'._LANG_HOWTO.'/', $category))
 			$this->class .= $cache[$category] = 'cat_HowTo';
-		elseif (preg_match('/\\b(?:horror)/', $category))
+		elseif (preg_match('/'._LANG_HORROR.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Horror';
-		elseif (preg_match('/\\b(?:special|variety|info|collect)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_MISC.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Misc';
-		elseif (preg_match('/\\b(?:news|nachrichten|current)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_NEWS.'/', $category))
 			$this->class .= $cache[$category] = 'cat_News';
-		elseif (preg_match('/\\b(?:reality)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_REALITY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Reality';
-		elseif (preg_match('/\\b(?:romance|lieb)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_ROMANCE.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Romance';
-		elseif (preg_match('/\\b(?:fantasy|sci\\w*\\W*fi)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_SCIENCE_NATURE.'/', $category))
 			$this->class .= $cache[$category] = 'cat_SciFi_Fantasy';
-		elseif (preg_match('/\\b(?:science|nature|environment|wissenschaft)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_SCIENCE_NATURE.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Science_Nature';
-		elseif (preg_match('/\\b(?:shop)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_SHOPPING.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Shopping';
-		elseif (preg_match('/\\b(?:soaps)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_SOAPS.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Soaps';
-		elseif (preg_match('/\\b(?:spirit|relig)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_SPIRITUAL.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Spiritual';
-		elseif (preg_match('/\\b(?:sport|deportes|futbol)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_SPORTS.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Sports';
-		elseif (preg_match('/\\b(?:talk)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_TALK.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Talk';
-		elseif (preg_match('/\\b(?:travel|reisen)/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_TRAVEL.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Travel';
-		elseif (preg_match('/\\b(?:war|krieg)/', $category))
+		elseif (preg_match('/'._LANG_WAR.'/', $category))
 			$this->class .= $cache[$category] = 'cat_War';
-		elseif (preg_match('/\\b(?:west)/', $category))
+		elseif (preg_match('/'._LANG_WESTERN.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Western';
 		else
 			$this->class .= $cache[$category] = 'cat_Unknown';

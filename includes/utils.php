@@ -45,13 +45,13 @@ function nice_length($length) {
 	$mins  = (int) (($length % 3600) / 60);
 	$hours = (int) ($length / 3600);
 	if ($hours == 1)
-		$ret = '1 hr';
+		$ret = '1 '._LANG_HR;
 	elseif ($hours > 0)
-		$ret = $hours.' hrs';
+		$ret = $hours.' '._LANG_HRS;
 	if ($mins > 0) {
 		if ($ret)
 			$ret .= ' ';
-		$ret .= $mins.' mins';
+		$ret .= $mins.' '._LANG_MINS;
 	}
 	return $ret;
 }

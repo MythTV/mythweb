@@ -153,46 +153,49 @@ class Theme {
 	<td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">
 		<tr>
 			<td colspan="3"><?php echo _LANG_CATEGORY_LEGEND?>:</td><?php
-	$categories = array('Action',
-						'Adult',
-						'Animals',
-						'Art_Music',
-						'Business',
-						'Children',
-						'Comedy',
-						'Crime_Mystery',
-						'Documentary',
-						'Drama',
-						'Educational',
-						'Food',
-						'Game',
-						'Health_Medical',
-						'History',
-						'HowTo',
-						'Horror',
-						'Misc',
-						'News',
-						'Reality',
-						'Romance',
-						'Science_Nature',
-						'SciFi_Fantasy',
-						'Shopping',
-						'Soaps',
-						'Spiritual',
-						'Sports',
-						'Talk',
-						'Travel',
-						'War',
-						'Western',
-						'Unknown');
+	$categories = array('cat_Action'		=> _LANG_ACTION,
+						'cat_Adult'			=> _LANG_ADULT,
+						'cat_Animals'		=> _LANG_ANIMALS,
+						'cat_Art_Music'		=> _LANG_ART_MUSIC,
+						'cat_Business'		=> _LANG_BUSINESS,
+						'cat_Children'		=> _LANG_CHILDREN,
+						'cat_Comedy'		=> _LANG_COMEDY,
+						'cat_Crime_Mystery'	=> _LANG_CRIME_MYSTERY,
+						'cat_Documentary'	=> _LANG_DOCUMENTARY,
+						'cat_Drama'			=> _LANG_DRAMA,
+						'cat_Educational'	=> _LANG_EDUCATIONAL,
+						'cat_Food'			=> _LANG_FOOD,
+						'cat_Game'			=> _LANG_GAME,
+						'cat_Health_Medical'=> _LANG_HEALTH_MEDICAL,
+						'cat_History'		=> _LANG_HISTORY,
+						'cat_HowTo'			=> _LANG_HOWTO,
+						'cat_Horror'		=> _LANG_HORROR,
+						'cat_Misc'			=> _LANG_MISC,
+						'cat_News'			=> _LANG_NEWS,
+						'cat_Reality'		=> _LANG_REALITY,
+						'cat_Romance'		=> _LANG_ROMANCE,
+						'cat_Science_Nature'=> _LANG_SCIENCE_NATURE,
+						'cat_SciFi_Fantasy'	=> _LANG_SCIFI_FANTASY,
+						'cat_Shopping'		=> _LANG_SHOPPING,
+						'cat_Soaps'			=> _LANG_SOAPS,
+						'cat_Spiritual'		=> _LANG_SPIRITUAL,
+						'cat_Sports'		=> _LANG_SPORTS,
+						'cat_Talk'			=> _LANG_TALK,
+						'cat_Travel'		=> _LANG_TRAVEL,
+						'cat_War'			=> _LANG_WAR,
+						'cat_Western'		=> _LANG_WESTERN,
+						'cat_Unknown'		=> _LANG_UNKNOWN,
+						'type_movie'		=> _LANG_MOVIES);
 	$count = 0;
-	foreach ($categories as $cat) {
+	foreach ($categories as $cat => $cat_display) {
+		// skip no display string
+		if($cat_display == '')
+			continue;
 		if ($count++ % 3 == 0)
 			echo "\n\t\t</tr><tr>\n";
-		echo "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>$cat</b></td>\n";
+		echo "\t\t\t<td class=\"$cat\" align=\"center\"><b>$cat_display</b></td>\n";
 	}
 		?>
-			<td class="type_movie" align="center"><b><?php echo _LANG_MOVIES?></b></td>
 		</tr>
 		</table></td>
 </tr>

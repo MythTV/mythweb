@@ -10,12 +10,12 @@
 
 //
 	$RecTypes = array(
-						1 => 'Once',
-						2 => 'Daily',
-						3 => 'Channel',
-						4 => 'Always',
-						5 => 'Weekly',
-						6 => 'FindOne'
+						1 => _LANG_RECTYPE_ONCE,
+						2 => _LANG_RECTYPE_DAILY,
+						3 => _LANG_RECTYPE_CHANNEL,
+						4 => _LANG_RECTYPE_ALWAYS,
+						5 => _LANG_RECTYPE_WEEKLY,
+						6 => _LANG_RECTYPE_FINDONE
 					 );
 
 /*

@@ -51,7 +51,7 @@ class Theme_search extends Theme {
 			return;
 	// Search, but nothing found - notify the user
 		if (!count($Results)) {
-			echo '<p class="huge" align="center">"._LANG_NO_MATCHES_FOUND."</p>';
+			echo '<p class="huge" align="center">'._LANG_NO_MATCHES_FOUND.'</p>';
 			return;
 		}
 	// Get the url search string so we don't have to recreate it for each sort type

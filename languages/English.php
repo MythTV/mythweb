@@ -11,7 +11,72 @@ define ('_LANG_SCHEDULED_RECORDINGS', 'Scheduled Recordings');
 define ('_LANG_RECORDING_SCHEDULES',  'Recording Schedules');
 define ('_LANG_RECORDED_PROGRAMS',    'Recorded Programs');
 define ('_LANG_CATEGORY_LEGEND',      'Category Legend');
-define ('_LANG_LANG_MOVIES',          'Movies');
+define ('_LANG_ACTION',               'Action');
+define ('_LANG_ADULT',                'Adult');
+define ('_LANG_ANIMALS',              'Animals');
+define ('_LANG_ART_MUSIC',            'Art_Music');
+define ('_LANG_BUSINESS',             'Business');
+define ('_LANG_CHILDREN',             'Children');
+define ('_LANG_COMEDY',               'Comedy');
+define ('_LANG_CRIME_MYSTERY',        'Crime_Mystery');
+define ('_LANG_DOCUMENTARY',          'Documentary');
+define ('_LANG_DRAMA',                'Drama');
+define ('_LANG_EDUCATIONAL',          'Educational');
+define ('_LANG_FOOD',                 'Food');
+define ('_LANG_GAME',                 'Game');
+define ('_LANG_HEALTH_MEDICAL',       'Health_Medical');
+define ('_LANG_HISTORY',              'History');
+define ('_LANG_HOWTO',                'HowTo');
+define ('_LANG_HORROR',               'Horror');
+define ('_LANG_MISC',                 'Misc');
+define ('_LANG_NEWS',                 'News');
+define ('_LANG_REALITY',              'Reality');
+define ('_LANG_ROMANCE',              'Romance');
+define ('_LANG_SCIENCE_NATURE',       'Science_Nature');
+define ('_LANG_SCIFI_FANTASY',        'SciFi_Fantasy');
+define ('_LANG_SHOPPING',             'Shopping');
+define ('_LANG_SOAPS',                'Soaps');
+define ('_LANG_SPIRITUAL',            'Spiritual');
+define ('_LANG_SPORTS',               'Sports');
+define ('_LANG_TALK',                 'Talk');
+define ('_LANG_TRAVEL',               'Travel');
+define ('_LANG_WAR',                  'War');
+define ('_LANG_WESTERN',              'Western');
+define ('_LANG_MOVIES',               'Movies');
+define ('_LANG_UNKNOWN',              'Unknown');
+
+define ('_LANG_CATMATCH_ACTION',               '\\b(?:action|adven)');
+define ('_LANG_CATMATCH_ADULT',                '\\b(?:adult|erot)');
+define ('_LANG_CATMATCH_ANIMALS',              '\\b(?:animal|tiere)');
+define ('_LANG_CATMATCH_ART_MUSIC',            '\\b(?:art|dance|musi[ck]|kunst|[ck]ultur)');
+define ('_LANG_CATMATCH_BUSINESS',             '\\b(?:biz|busine)');
+define ('_LANG_CATMATCH_CHILDREN',             '\\b(?:child|kin?d|infan|animation)');
+define ('_LANG_CATMATCH_COMEDY',               '\\b(?:comed|entertain|sitcom)');
+define ('_LANG_CATMATCH_CRIME_MYSTERY',        '\\b(?:[ck]rim|myster)');
+define ('_LANG_CATMATCH_DOCUMENTARY',          '\\b(?:do[ck])');
+define ('_LANG_CATMATCH_DRAMA',                '\\b(?:drama)');
+define ('_LANG_CATMATCH_EDUCATIONAL',          '\\b(?:edu|bildung|interests)');
+define ('_LANG_CATMATCH_FOOD',                 '\\b(?:food|cook|essen|[dt]rink)');
+define ('_LANG_CATMATCH_GAME',                 '\\b(?:game|spiele)');
+define ('_LANG_CATMATCH_HEALTH_MEDICAL',       '\\b(?:health|medic|gesundheit)');
+define ('_LANG_CATMATCH_HISTORY',              '\\b(?:hist|geschichte)');
+define ('_LANG_CATMATCH_HOWTO',                '\\b(?:how|home|house|garden)');
+define ('_LANG_CATMATCH_HORROR',               '\\b(?:horror)');
+define ('_LANG_CATMATCH_MISC',                 '\\b(?:special|variety|info|collect)');
+define ('_LANG_CATMATCH_NEWS',                 '\\b(?:news|nachrichten|current)');
+define ('_LANG_CATMATCH_REALITY',              '\\b(?:reality)');
+define ('_LANG_CATMATCH_ROMANCE',              '\\b(?:romance|lieb)');
+define ('_LANG_CATMATCH_SCIENCE_NATURE',       '\\b(?:fantasy|sci\\w*\\W*fi)');
+define ('_LANG_CATMATCH_SCIFI_FANTASY',        '\\b(?:science|nature|environment|wissenschaft)');
+define ('_LANG_CATMATCH_SHOPPING',             '\\b(?:shop)');
+define ('_LANG_CATMATCH_SOAPS',                '\\b(?:soaps)');
+define ('_LANG_CATMATCH_SPIRITUAL',            '\\b(?:spirit|relig)');
+define ('_LANG_CATMATCH_SPORTS',               '\\b(?:sport|deportes|futbol)');
+define ('_LANG_CATMATCH_TALK',                 '\\b(?:talk)');
+define ('_LANG_CATMATCH_TRAVEL',               '\\b(?:travel|reisen)');
+define ('_LANG_CATMATCH_WAR',                  '\\b(?:war|krieg)');
+define ('_LANG_CATMATCH_WESTERN',              '\\b(?:west)');
+define ('_LANG_CATMATCH_MOVIES',               '');
 
 /* settings.php */
 define ('_LANG_SETTINGS_HEADER1',     'This is the index page for the configuration settings...');
@@ -37,6 +102,7 @@ define ('_LANG_CHANNEL_JUMP_TO',      'Channel &quot;Jump to&quot;');
 define ('_LANG_HOUR_FORMAT',          'Hour Format');
 define ('_LANG_RESET',                'Reset');
 define ('_LANG_SAVE',                 'Save');
+define ('_LANG_SHOW_DESCRIPTIONS_ON_NEW_LINE', 'Show descriptions on new line');
 
 /* program_listings.php */
 define ('_LANG_CURRENTLY_BROWSING', 'Currently Browsing:');
@@ -55,12 +121,6 @@ define ('_LANG_ORIG_AIRDATE',             'Orig. Airdate');
 define ('_LANG_RECORDING_OPTIONS',        'Recording Options');
 define ('_LANG_DONT_RECORD_THIS_PROGRAM', 'Don\'t record this program.');
 define ('_LANG_CANCEL_THIS_SCHEDULE',     'Cancel this schedule.');
-define ('_LANG_RECORD_ONLY_THIS_SHOWING', 'Record only this showing.');
-define ('_LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_DAY',  'Record this program in this timeslot every day.');
-define ('_LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_WEEK', 'Record this program in this timeslot every week.');
-define ('_LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_CHANNEL',           'Always record this program on channel');
-define ('_LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_ANY_CHANNEL',       'Always record this program on any channel.');
-define ('_LANG_RECORD_ONE_SHOWING_OF_THIS_PROGRAM_AT_ANY_TIME',  'Record one showing of this program at any time.');
 define ('_LANG_RECORDING_PROFILE',         'Recording Profile');
 define ('_LANG_RECPRIORITY',               'Recpriority');
 define ('_LANG_CHECK_FOR_DUPLICATES_IN',   'Check For Duplicates In');
@@ -82,14 +142,15 @@ define ('_LANG_UPDATE_RECORDING_SETTINGS', 'Update Recording Settings');
 define ('_LANG_WHAT_ELSE_IS_ON_AT_THIS_TIME',       'What else is on at this time?');
 define ('_LANG_BACK_TO_THE_PROGRAM_LISTING',        'Back to the program listing!');
 define ('_LANG_FIND_OTHER_SHOWING_OF_THIS_PROGRAM', 'Find other showing of this program');
+define ('_LANG_BACK_TO_RECORDING_SCHEDULES', 'Back to Recording Schedules');
 
 /* scheduled_recordings.php */
 /* recording_schedules_php */
 /* search.php */
-define ('_LANG_NO_MATCHES_',   'No matches found');
+define ('_LANG_NO_MATCHES_FOUND', 'No matches found');
 define ('_LANG_SEARCH',        'Search');
-define ('_LANG_TITLE',         'title (show)');
-define ('_LANG_SUBTITLE',      'subtitle (episode)');
+define ('_LANG_TITLE',         'Program');
+define ('_LANG_SUBTITLE',      'Eepisode');
 define ('_LANG_CATEGORY_TYPE', 'category&nbsp;type');
 define ('_LANG_EXACT_MATCH',   'exact&nbsp;match');
 define ('_LANG_STATION',       'station');
@@ -113,6 +174,7 @@ define ('_LANG_RERUN',         'Rerun');
 define ('_LANG_SCHEDULE',      'Schedule');
 define ('_LANG_PROFILE',       'Profile');
 define ('_LANG_NOTES',         'Notes');
+define ('_LANG_DUP_METHOD',    'Dup Method');
 
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS', 'Show recordings');
@@ -124,6 +186,46 @@ define ('_LANG_FILE_SIZE',       'file&nbsp;size');
 define ('_LANG_DELETE',          'Delete');
 define ('_LANG_PROGRAMS_USING',  'programs, using');
 define ('_LANG_OUT_OF',          ' out of ');
+define ('_LANG_EPISODES',        'episodes');
+
+/* recordings.php */
+define ('_LANG_RECTYPE_ONCE',    'Once');
+define ('_LANG_RECTYPE_DAILY',   'Daily');
+define ('_LANG_RECTYPE_CHANNEL', 'Channel');
+define ('_LANG_RECTYPE_ALWAYS',  'Always');
+define ('_LANG_RECTYPE_WEEKLY',  'Weekly');
+define ('_LANG_RECTYPE_FINDONE', 'FindOne');
+
+define ('_LANG_RECTYPE_LONG_ONCE',          'Record only this showing.');
+define ('_LANG_RECTYPE_LONG_DAILY',         'Record this program in this timeslot every day.');
+define ('_LANG_RECTYPE_LONG_CHANNEL',       'Always record this program on channel.');
+define ('_LANG_RECTYPE_LONG_ALWAYS',        'Always record this program on any channel.');
+define ('_LANG_RECTYPE_LONG_WEEKLY',        'Record this program in this timeslot every week.');
+define ('_LANG_RECTYPE_LONG_FINDONE',       'Record one showing of this program at any time.');
+
+define ('_LANG_RECSTATUS_LONG_DELETED',             'This showing was recorded but was deleted before recording was completed.');
+define ('_LANG_RECSTATUS_LONG_STOPPED',     	    'This showing was recorded but was stopped before recording was completed.');
+define ('_LANG_RECSTATUS_LONG_RECORDED',            'This showing was recorded.');
+define ('_LANG_RECSTATUS_LONG_RECORDING',           'This showing is being recorded.');
+define ('_LANG_RECSTATUS_LONG_WILLRECORD',          'This showing will be recorded.');
+define ('_LANG_RECSTATUS_LONG_UNKNOWN',             'The status of this showing is unknown.');
+define ('_LANG_RECSTATUS_LONG_MANUALOVERRIDE',      'This was manually set to not record');
+define ('_LANG_RECSTATUS_LONG_PREVIOUSRECORDING',   'This episode was previously recorded according to the duplicate policy chosen for this title.');
+define ('_LANG_RECSTATUS_LONG_CURRENTRECORDING',    'This episode was previously recorded and is still available in the list of recordings.');
+define ('_LANG_RECSTATUS_LONG_OTHERSHOWING',        'This episode will be recorded at another time instead.');
+define ('_LANG_RECSTATUS_LONG_TOOMANYRECORDINGS',   'Too many recordings of this program have already been recorded.');
+define ('_LANG_RECSTATUS_LONG_CANCELLED',           'This was scheduled to be recorded but was manually canceled.');
+define ('_LANG_RECSTATUS_LONG_LOWERRECPRIORITY',    'Another program with a higher recording priority will be recorded.');
+define ('_LANG_RECSTATUS_LONG_MANUALCONFLICT',      'Another program was manually chosen to be recorded instead.');
+define ('_LANG_RECSTATUS_LONG_AUTOCONFLICT',        'Another program was automatically chosen to be recorded instead.');
+define ('_LANG_RECSTATUS_LONG_OVERLAP',             'This is covered by another scheduled recording for the same program.');
+define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',        'There wasn\'t enough disk space available to record this program.');
+define ('_LANG_RECSTATUS_LONG_TUNERBUSY',           'The tuner card was already being used when this program was scheduled to be recorded.');
+
+/* utils.php */
+define ('_LANG_HR',              'hr');
+define ('_LANG_HRS',             'hrs');
+define ('_LANG_MINS',            'mins');
 
 /*
 define ('_LANG_', '');

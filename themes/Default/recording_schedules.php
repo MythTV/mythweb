@@ -83,7 +83,7 @@ if ($group_field == "") {
 <tr>
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
-			<td align=\"right\">Program:</td>
+			<td align=\"right\">"._LANG_TITLE.":</td>
 			<td>$show->title</td>
 		</tr>";
 			if (($show->type == 1) || ($show->type == 2) || ($show->type == 5)) {
@@ -124,20 +124,20 @@ if ($group_field == "") {
 		</tr>" : '')
 		.($show->will_record ? "<tr>
  			<td align=\"right\">"._LANG_SCHEDULE.":</td>
- 			<td>".($show->record_daily       ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_DAY
- 					: ($show->record_weekly  ? _LANG_RECORD_THIS_PROGRAM_IN_THIS_TIMESLOT_EVERY_WEEK
- 					: ($show->record_once    ? _LANG_RECORD_ONLY_THIS_SHOWING
- 					: ($show->record_channel ? _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_CHANNEL
- 					: ($show->record_findone ? _LANG_RECORD_ONE_SHOWING_OF_THIS_PROGRAM_AT_ANY_TIME
- 					: _LANG_ALWAYS_RECORD_THIS_PROGRAM_ON_ANY_CHANNEL)))))."</td>
+ 			<td>".($show->record_daily       ? _LANG_RECTYPE_LONG_DAILY
+ 					: ($show->record_weekly  ? _LANG_RECTYPE_LONG_WEEKLY
+ 					: ($show->record_once    ? _LANG_RECTYPE_LONG_ONCE
+ 					: ($show->record_channel ? _LANG_RECTYPE_LONG_CHANNEL
+ 					: ($show->record_findone ? _LANG_RECTYPE_LONG_FINEONE
+ 					: _LANG_RECTYPE_LONG_ALWAYS)))))."</td>
 		</tr>" : '')
 		.($show->dupmethod > 0 ? "<tr>
-			<td align=\"right\">Dup Method:</td>
+			<td align=\"right\">"._LANG_DUP_METHOD.":</td>
 			<td>".($show->dupmethod == 1	? "None"
-					: ($show->dupmethod == 2	? "Subtitle"
-					: ($show->dupmethod == 4	? "Description"
-					: ($show->dupmethod == 6	? "Subtitle & Description"
-					: ($show->dupmethod == 22	? "Sub & Desc (Empty matches)"
+					: ($show->dupmethod == 2	? _LANG_SUBTITLE
+					: ($show->dupmethod == 4	? _LANG_DESCRIPTION
+					: ($show->dupmethod == 6	? _LANG_SUBTITLE_AND_DESCRIPTION
+					: ($show->dupmethod == 22	? _LANG_SUB_AND_DESC
 					: "")))))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->profile) ? "<tr>
