@@ -40,7 +40,8 @@
     }
 
 // Start the query out as an array
-    $query = array();
+    $query      = array();
+    $star_query = '';
     if ($_SESSION['search']['search_exact'])
         $compare = ' = ';
     else
@@ -48,15 +49,25 @@
 
 // How do we want to build this query?
     if (preg_match('/\\S/', $_SESSION['search']['searchstr'])) {
+        $search_str = $_SESSION['search']['searchstr'];
     // Normal search is an OR search
         $joiner = ' OR ';
+    // If it starts with a pair of stars, it's a movie rating query
+        if (preg_match('#(\\*+(1/2\b|0?\.5\b|-)?)\s*#', $search_str, $stars)) {
+            $starcount = substr_count($stars[1], '*') / 4.0;
+            if (preg_match( "/1\\/2|\\.5|-/", $stars[1]))
+                $starcount += 0.125;
+            $star_query = " AND program.stars >= $starcount";
+        // Remove the stars from the search string so we can continue looking for other things
+            $search_str = preg_replace('#(\\*+(1/2\b|0?\.5\b|-)?)\s*#', '', $search_str);
+        }
     // Regex search?
-        if (preg_match('/^~/', $_SESSION['search']['searchstr'])) {
+        if (preg_match('/^~/', $search_str)) {
             $compare = ' REGEXP ';
-            $search = escape(preg_replace('/^~/', '', $_SESSION['search']['searchstr']));
+            $search = escape(preg_replace('/^~/', '', $search_str));
         }
         else
-            $search = search_escape($_SESSION['search']['searchstr']);
+            $search = search_escape($search_str);
     // Build the query
         if ($_SESSION['search']['search_title'])
             $query[] = "program.title$compare$search";
@@ -105,7 +116,7 @@
         # starttime
         # endtime
     // Perform the query
-        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, '('.implode($joiner, $query).')');
+        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, '(('.implode($joiner, $query).')'.$star_query.')');
     // Sort the results
         if (count($Results))
             sort_programs($Results, 'search_sortby');
