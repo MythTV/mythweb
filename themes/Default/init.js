@@ -1,5 +1,5 @@
 /***                                                                        ***\
-    init.js                                  Last Updated: 2003.02.10 (xris)
+    init.js                                  Last Updated: 2003.09.05 (xris)
     basic javascript routines
 \***                                                                        ***/
 
@@ -158,7 +158,7 @@
 		var pos = find_position(get_element(name+'_anchor'));
 	// Set the initial position of the hidden element
 		var x = parseInt(pos[0]);
-		var y = parseInt(pos[1]) + 20;
+		var y = parseInt(pos[1]) + get_element(name+'_anchor').offsetHeight;
 	// Get some window information so we can make sure the box doesn't extend off the edge of the screen
 		var window_width = 0, window_height = 0, scroll_left = 0, scroll_top = 0;
 		if (document.documentElement.clientWidth) {
@@ -179,25 +179,27 @@
 			scroll_left   = document.body.scrollLeft;
 			scroll_top    = document.body.scrollTop;
 		}
-	// Do our best to try to keep the popup onscreen
+	// Do our best to try to keep the popup onscreen and away from the mouse
 		if (window_width > 0 && window_height > 0) {
-		// Force the default popup size so we can do some calculations
-		// (FIXME!  need to determine the actual size of the element, not just resize it)
-			field.width  = 300;
-			field.height = 150;
-			var safe_space = 50;
-		// Get some numbers we can work with
-			width  = parseInt(field.width);
-			height = parseInt(field.height);
+			var orig_field = get_element(name);
+			width  = parseInt(orig_field.offsetWidth);
+			height = parseInt(orig_field.offsetHeight);
 		// Adjust the element location?
-			if (x > window_width - width - safe_space + scroll_left)
-					x = window_width - width - safe_space + scroll_left;
-			if (y > window_height - height - safe_space + scroll_top)
-					y = window_height - height - safe_space + scroll_top;
+			if (x > window_width + scroll_left - width - 2)
+				x = window_width + scroll_left - width - 2;		// subtract a couple of extra pixels to account for borders
+			if (y > window_height + scroll_top - height - 7)
+				y = window_height + scroll_top - height - 7;	// subtract a couple of extra pixels to account for borders
+		// Does this now conflict with the mouse?
+			if (y < parseInt(pos[1])) {
+				if (x < parseInt(pos[0]))
+					y = parseInt(pos[1]) - height - 10;
+				else
+					x += get_element(name+'_anchor').offsetWidth + 5;
+			}
 		}
 	// Adjust the element
 		field.left = x;
-		field.top  = y;
+		field.top  = y + 5;
 		if (isNN4) {
 			field.xpos       = x;
 			field.ypos       = y;
@@ -206,32 +208,6 @@
 		else
 			field.visibility = 'visible';
 	}
-
-/*
-	//  http://www.rci.rutgers.edu/~hofman/js/balloon.js
-	function putBalloon( id, x, y ) {
-		var l;
-		if (document.layers) {
-			l = document.layers[id];
-			l.left = Math.min(Math.max(x, window.pageXOffset), window.pageXOffset + window.innerWidth - l.clip.width);
-			l.top = Math.min(Math.max(y, window.pageYOffset), window.pageYOffset + window.innerHeight - l.clip.height);
-			l.visibility = "visible";
-			l.zIndex = 100;
-		} else if (document.all) {
-			l = document.all[id];
-			l.style.pixelLeft = Math.min(Math.max(x, document.body.scrollLeft + document.documentElement.scrollLeft), document.body.scrollLeft + document.documentElement.scrollLeft + document.body.clientWidth - l.offsetWidth);
-			l.style.pixelTop = Math.min(Math.max(y, document.body.scrollTop + document.documentElement.scrollTop), document.body.scrollTop + document.documentElement.scrollTop + document.body.clientHeight - l.offsetHeight);
-			l.style.visibility = "visible";
-			l.style.zIndex = 100;
-		} else if (document.getElementById) {
-			l = document.getElementById(id);
-			l.style.left = Math.min(Math.max(x, window.pageXOffset), window.pageXOffset + window.innerWidth - l.offsetWidth) +"px";
-			l.style.top = Math.min(Math.max(y, window.pageYOffset), window.pageYOffset + window.innerHeight - l.offsetHeight) +"px";
-			l.style.visibility = "visible";
-			l.style.zIndex = 100;
-		}
-	}
-*/
 
 	function hide(name) {
 		if (gtimeout) {
