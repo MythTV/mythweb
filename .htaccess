@@ -1,0 +1,13 @@
+AuthType Basic
+AuthName "MythTV"
+AuthUserFile /var/www/htpasswd
+Require valid-user
+
+php_value output_buffering              0
+php_value register_globals              0
+php_value magic_quotes_gpc              0
+php_value file_uploads                  0
+
+php_value zlib.output_compression       1
+php_value zlib.output_compression_level 4
+

@@ -1,0 +1,122 @@
+short open tags!!!!!
+
+
+
+This is the README file for the MythWeb package.
+June 10, 2003
+
+Version: .9
+(c) 2002, 2003 Thor Sigvaldason (mythtv at lamedomainname.com)
+               Isaac Richards (ijr at po.cwru.edu)
+               Chris Petersen (mythweb at forevermore.net)
+
+with contributions from many people including:
+
+Michael Kedl <kedlm at knology.net>
+
+MythWeb is distributed under the GNU GENERAL PUBLIC LICENSE version 2 (see
+http://www.gnu.org)
+
+
+
+Contents
+========
+
+
+1.0	About
+2.0	Installation
+3.0	FAQs
+4.0     Notes
+5.0	Plans/TODO
+
+
+
+1.0 About
+=========
+
+	MythWeb is a set of php files intended (note the use future tense)
+to let you access your listings, flag shows for recording, delete
+recordings, etc., from a web browser. At some point in the future, it may
+allow you to play your recorded content (music and/or(?) video) across a
+network. Then again, it may not.
+
+	Note that MythWeb is totally insecure and makes no pretense of
+including any security mechanisms of any sort. You should really only run it
+on an isolated network or (at the very least) behind a well secured firewall.
+
+
+
+2.0 Installation
+================
+
+	First of all, you need mythTV, which you should be able to track down
+at:
+
+		http://www.mythtv.org
+
+	In addition to all the various things required to get MythTV up and
+running (which are documented in the main MythTV source), you need apache
+and php up and running on the same machine as MythTV:
+
+		http://www.apache.org
+		http://www.php.net
+
+	Current versions of these in use by the MythWeb developer(s) are
+1.3.26 for Apache (Apache version 2's do not play nice with PHP) and 4.2.2
+for php. Make sure to build both according to the instructions at the php
+home site, and be sure to include support for MySQL when building PHP.
+
+	Somewhere in or off your root directory for htdocs (/www/htdocs if
+you followed the instuctions at php.net), you should copy
+all the files included in this distribution. To make sure you get images
+subdirectory, you should do something like
+
+	cp -r . /wwww/htdocs/myMythWebDirectory
+
+	You should then edit the file settings.php (instructions for what to
+set are included in the file). That's it. Point your web browser at
+http://{whatever your machine is called}/{the directory off htdocs where you
+copied the files}. What could be simpler?
+
+
+
+3.0 FAQs
+========
+
+Q: Why does the red box to indicate that a show is being/has been recorded not
+stretch out to the edges of the cell?
+
+A: Not all browsers get the HEIGHT="100%" stuff quite right inside a table
+element. Upgrading to a recent copy of mozilla/konquerer/nautilus/opera/lynx
+or what have you should (?) solve the "problem". Either that or the guy
+writing the php code knows nothing about HTML.
+
+
+
+4.0 Notes
+=========
+
+- Support has been added for channel based anytime recordings.
+
+5.0 Plan/TODO
+=============
+
+	Over the next few days:
+
+		Clean up the code (some of it is very rushed) and
+		complete the basic functionality.
+
+	Over the next few weeks:
+
+		Vastly improve design and capabilities so that the
+		thing will work well, fast, and completely through
+		a standard browser.
+
+	Over the next few months:
+
+		Redo everything with a pure web services (SOAP)
+		substructure. This will create an abstract interface
+		which can then be called by browser, phone, PDA, other
+		software etc., etc. Given that substructure, start to
+		think about how to do P2P interactions with a decent
+		permissioning mechanism. Lots of potential here.
