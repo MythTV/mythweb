@@ -38,19 +38,19 @@ class Theme {
         </a>
     </div>
     <div id="sections" class="clearfix">
-        <a id="tv_link"<?php if (section == 'tv') echo ' class="current_section"' ?> href="program_listing.php" onmouseover="return help_text('<?php echo t('TV functions, including recorded programs.') ?>')" onmouseout="return help_text()">
+        <a id="tv_link"<?php if (section == 'tv') echo ' class="current_section"' ?> href="program_listing.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
         </a>
-        <a id="music_link"<?php if (section == 'music') echo ' class="current_section"' ?> href="mythmusic.php" onmouseover="return help_text('<?php echo t('MythMusic on the web.') ?>')" onmouseout="return help_text()">
+        <a id="music_link"<?php if (section == 'music') echo ' class="current_section"' ?> href="mythmusic.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic" />
         </a>
-        <a id="video_link"<?php if (section == 'video') echo ' class="current_section"' ?> href="video.php" onmouseover="return help_text('<?php echo t('MythVideo on the web.') ?>')" onmouseout="return help_text()">
+        <a id="video_link"<?php if (section == 'video') echo ' class="current_section"' ?> href="video.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/video.png" width="48" height="48" class="alpha_png" alt="MythVideo" />
         </a>
-        <a id="weather_link"<?php if (section == 'weather') echo ' class="current_section"' ?> href="weather.php" onmouseover="return help_text('<?php echo t('MythWeb Weather.') ?>')" onmouseout="return help_text()">
+        <a id="weather_link"<?php if (section == 'weather') echo ' class="current_section"' ?> href="weather.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/weather.png" width="48" height="48" class="alpha_png" alt="MythWeather" />
         </a>
-        <a id="settings_link"<?php if (section == 'settings') echo ' class="current_section"' ?> href="settings.php" onmouseover="return help_text('<?php echo t('Edit MythWeb and some MythTV settings.') ?>')" onmouseout="return help_text()">
+        <a id="settings_link"<?php if (section == 'settings') echo ' class="current_section"' ?> href="settings.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/settings.png" width="48" height="48" class="alpha_png" alt="<?php echo t('Settings') ?>" />
         </a>
     </div>
