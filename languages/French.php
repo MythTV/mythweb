@@ -241,6 +241,36 @@ define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',      'Il n\'y avait pas assez d\'es
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',         'La carte TV &eacute;tait en cours d\'utilisation quand ce programme devait &ecirc;tre enregistr&eacute;');
 define ('_LANG_RECSTATUS_LONG_FORCE_RECORD',      'This show was manually set to record this specific instance.');
 
+/* weather.php */
+define ('_LANG_HUMIDITY',           'Humidit&eacute;');
+define ('_LANG_PRESSURE',           'Pression');
+define ('_LANG_WIND',               'Vent');
+define ('_LANG_VISIBILITY',         'Visibilit&eacute;');
+define ('_LANG_WIND_CHILL',         'Facteur Eolien');
+define ('_LANG_UV_INDEX',           'Index UV');
+define ('_LANG_UV_MINIMAL',         'minimal');
+define ('_LANG_UV_MODERATE',        'mod&eacute;r&eacute;');
+define ('_LANG_UV_HIGH',            'haut');
+define ('_LANG_UV_EXTREME',         'extreme');
+define ('_LANG_CURRENT_CONDITIONS', 'Conditions Courantes');
+define ('_LANG_FORECAST',           'Pr&eacute;vision');
+define ('_LANG_LAST_UPDATED',       'Derni&egrave;re Mise a Jour');
+define ('_LANG_HIGH',               'Haut');
+define ('_LANG_LOW',                'Bas');
+define ('_LANG_UNKNOWN',            'Inconnu');
+define ('_LANG_RADAR',              'Radar');
+define ('_LANG_AT',                 '&agrave;');
+
+define ('_LANG_TODAY',              'Aujourd hui');
+define ('_LANG_TOMORROW',           'Demain');
+define ('_LANG_MONDAY',             'Lundi');
+define ('_LANG_TUESDAY',            'Mardi');
+define ('_LANG_WEDNESDAY',          'Mercredi');
+define ('_LANG_THURSDAY',           'Jeudi');
+define ('_LANG_FRIDAY',             'Vendredi');
+define ('_LANG_SATURDAY',           'Samedi');
+define ('_LANG_SUNDAY',             'Dimanche');
+
 /* utils.php */
 define ('_LANG_HR',              'hr');
 define ('_LANG_HRS',             'hrs');
