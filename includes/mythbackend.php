@@ -12,10 +12,18 @@
     $Scheduled_Recordings = array();
     $Recorded_Programs    = array();
 
+// MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
+// and should be the current MythTV protocol version.
+    $MYTH_PROTO_VERSION = "11";
+
+// NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
+// the number of items in a ProgramInfo QStringList group used by
+// ProgramInfo::ToSringList and ProgramInfo::FromStringList.
+    $NUMPROGRAMLINES = 36;
+
 // Make sure we're connected to mythbackend
     if (backend_command('ANN Playback '.trim(`hostname`).' 0') != 'OK')
         trigger_error("Unable to connect to mythbackend, is it running?\n", FATAL);
-
 
 /*
     get_backend_setting:
@@ -110,8 +118,10 @@
         Check that we are speaking a version of the protocol that is compatible with the backend
 */
     function check_proto_version($fp) {
-        $our_version = "10";
-        $response = explode(backend_sep, backend_command2("MYTH_PROTO_VERSION " . $our_version, $fp));
+        global $MYTH_PROTO_VERSION;
+        $our_version = $MYTH_PROTO_VERSION;
+        $cmd = "MYTH_PROTO_VERSION " . $our_version;
+        $response = explode(backend_sep, backend_command2($cmd, $fp));
         if ($response[0] == "ACCEPT")
             return;
         if ($response[0] == "REJECT")
@@ -119,7 +129,7 @@
             trigger_error("Incompatible protocol version (mythweb=" . $our_version . ", backend=" . $response[1] . ")");
             return;
         }
-        trigger_error("Unexpected response to MYTH_PROTO_VERSION: " . $response[0]);
+        trigger_error("Unexpected response to MYTH_PROTO_VERSION '" . $cmd . "': " . $response[0]);
     }
 
 /*
@@ -127,6 +137,7 @@
     performs a mythbackend query and splits the response into the appropriate number of rows.
 */
     function get_backend_rows($query, $offset = 1) {
+        global $NUMPROGRAMLINES;
         $rows = array();
     // Query the backend, and split the response into an array
         $recs = explode(backend_sep, backend_command($query));
@@ -135,9 +146,9 @@
         $col = 0;
         for($i = $offset; $i < count($recs); $i++) {
             $rows[$row][$col] = $recs[$i];
-        // Every 34 fields (0 through 33) means a new row
-        // Please note that this changes between myth versions
-            if ($col == 34) {
+        // Every $NUMPROGRAMLINES fields (0 through ($NUMPROGRAMLINES-1)) means
+        // a new row.  Please note that this changes between myth versions
+            if ($col == ($NUMPROGRAMLINES - 1)) {
                 $col = 0;
                 $row++;
             }
