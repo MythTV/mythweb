@@ -135,6 +135,7 @@
 							.'      record.starttime = SEC_TO_TIME(time_to_sec(program.starttime)) AND '
 							.'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime)) '
 							.' OR (record.type = 4 AND program.title = record.title) '
+							.' OR (record.type = 6 AND program.title = record.title) '
 							.' OR (record.type = 3 AND program.title = record.title AND record.chanid = program.chanid)'
 							.' OR (record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
@@ -143,7 +144,8 @@
 							.'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
 							.'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))))'
 							.' LEFT JOIN recordingprofiles ON record.profile=recordingprofiles.id ';
-			$record_values = ' SUM(record.type = 5) > 0 as record_weekly,'
+			$record_values = ' SUM(record.type = 6) > 0 AS record_findone,'
+			                .' SUM(record.type = 5) > 0 AS record_weekly,'
 							.' SUM(record.type = 4) > 0 AS record_always,'
 							.' SUM(record.type = 3) > 0 AS record_channel,'
 							.' SUM(record.type = 2) > 0 AS record_daily,'
@@ -264,6 +266,7 @@ class Program {
 	var $record_once    = false;
 	var $record_channel = false;
 	var $record_always  = false;
+	var $record_findone = false;
 	var $profile        = 0;
 	var $max_newest		= 0;
 	var $max_episodes	= 0;
@@ -364,7 +367,9 @@ class Program {
 				$this->recordid    = $Pending_Programs[$this->chanid][$this->starttime][22];
 			}
 		// We get various recording-related information, too
-			if ($program_data['record_always'])
+			if ($program_data['record_findone'])
+				$this->record_findone = true;
+			else if ($program_data['record_always'])
 				$this->record_always  = true;
 			elseif ($program_data['record_channel'])
 				$this->record_channel =  true;
@@ -379,7 +384,8 @@ class Program {
 									  || $this->record_weekly
 									  || $this->record_once
 									  || $this->record_channel
-									  || $this->record_always ) ? true : false;
+									  || $this->record_always
+                                      || $this->record_findone ) ? true : false;
 		}
 	// Turn recstatus into a word
 		if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
@@ -423,6 +429,25 @@ class Program {
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
 		$this->record_always = $this->will_record = true;
+	// Notify the backend of the changes
+		backend_notify_changes();
+	}
+
+	function record_findone() {
+	// Wipe out any pre-existing settings for this program
+		$this->record_never(false);
+	// Insert this recording choice into the database
+		$result = mysql_query('REPLACE INTO record (type ,title, profile,recpriority,recorddups,maxnewest,maxepisodes,autoexpire)
+																			VALUES (6,'.escape($this->title).','
+																				.escape($this->profile).','
+																				.escape($this->recpriority).','
+																				.escape($this->recorddups).','
+																				.escape($this->maxnewest).','
+																				.escape($this->maxepisodes).','
+																				.escape($this->autoexpire).')')
+			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+	// Clean up the program variable
+		$this->record_findone = $this->will_record = true;
 	// Notify the backend of the changes
 		backend_notify_changes();
 	}
@@ -530,6 +555,7 @@ class Program {
 												  .' OR (type=2 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).'))'
 												  .' OR (type=3 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).')'
 												  .' OR (type=4 AND title='.escape($this->title).')'
+												  .' OR (type=6 AND title='.escape($this->title).')'
 												  .' OR (type=5 AND chanid='.escape($this->chanid).' AND title='.escape($this->title).' AND starttime=FROM_UNIXTIME('.escape($this->starttime).') AND DAYOFWEEK(startdate)='.escape(date('w', $this->starttime)+1).')');
 	// Clean up the program variable
 		$this->will_record    = false;

@@ -129,6 +129,11 @@ class Theme_program_detail extends Theme {
 					$this_program->record_always ? ' CHECKED' : ''?>></input>
 					<a>Always record this program on any channel.</a>
 					</p>
+				<p onclick="get_element('record_findone').checked=true;">
+					<input type="radio" class="radio" name="findone" value="findone" id="record_findone"<?=
+					$this_program->record_findone ? ' CHECKED' : ''?>></input>
+					<a>Record one showing of this program at any time.</a>
+					</p>
 				<p align="center"><input type="submit" class="submit" name="save" value="Update Recording Settings"></p></td>
 
 

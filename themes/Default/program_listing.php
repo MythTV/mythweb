@@ -233,7 +233,8 @@ class Theme_program_listing extends Theme {
 					: ($program->record_weekly  ? "Always record on this channel at this time on this day of the week"
 					: ($program->record_once    ? "Will be recorded once"
 					: ($program->record_channel ? "Always record on this channel"
-					: "Always record"))))."</td>
+					: ($program->record_findone ? "Record one showing of this program at any time"
+					: "Always record")))))."</td>
 		</tr>" : '')
 		.($program->recstatus ? "<tr>
 			<td align=\"right\">Notes:</td>

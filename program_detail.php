@@ -36,6 +36,9 @@
 		$this_program->maxnewest  = (isset($_GET['maxnewest']) && $_GET['maxnewest'] == "on")   ? 1 : 0;
 	// Update
 		switch ($_GET['record']) {
+			case 'findone':
+				$this_program->record_findone();
+				break;
 			case 'always':
 				$this_program->record_always();
 				break;
