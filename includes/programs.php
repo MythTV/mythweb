@@ -318,6 +318,7 @@ class Program {
 			#$this->progflags  = $program_data[29];
 			#$this->recgroup    = $program_data[30];
 			#$this->commfree    = $program_data[31];
+                        #$this->outputfilters = $program_data[32];
 		}
 	// SQL data
 		else {
