@@ -63,7 +63,7 @@ class Theme_search extends Theme {
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 	<td><a href="search.php?sortby=title<?php echo $search_str?>">show</a></td>
-	<td>episode</td>
+	<td><a href="search.php?sortby=subtitle<?php echo $search_str?>">episode</a></td>
 	<td>description</td>
 	<td><a href="search.php?sortby=channum<?php echo $search_str?>">station</a></td>
 	<td><a href="search.php?sortby=airdate<?php echo $search_str?>">air&nbsp;date</a></td>

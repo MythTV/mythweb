@@ -67,6 +67,10 @@
 		return strcasecmp($a->title, $b->title);
 	}
 
+	function by_subtitle(&$a, &$b) {
+		return strcasecmp($a->subtitle, $b->subtitle);
+	}
+
 	function by_channum(&$a, &$b) {
 		return strnatcasecmp($a->channel->channum, $b->channel->channum);
 	}

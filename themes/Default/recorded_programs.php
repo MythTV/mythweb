@@ -72,7 +72,7 @@ class Theme_recorded_programs extends Theme {
 	<td>preview</td>
 <?php	} ?>
 	<td><a href="recorded_programs.php?sortby=title">show</a></td>
-	<td>episode</td>
+	<td><a href="recorded_programs.php?sortby=subtitle">episode</a></td>
 	<td>description</td>
 	<td><a href="recorded_programs.php?sortby=channum">station</a></td>
 	<td><a href="recorded_programs.php?sortby=airdate">air&nbsp;date</a></td>
