@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2005.01.23 (xris)
+    recorded_programs.php                    Last Updated: 2005.02.09 (xris)
 
     view and manipulate recorded programs.
 \***                                                                        ***/
@@ -74,6 +74,10 @@
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$show->title]))
                 $Programs[$show->title] = array();
+        // Generate any thumbnail images we might need
+            if (show_recorded_pixmaps) {
+                generate_preview_pixmap($show);
+            }
         // Assign a reference to this show to the various arrays
             $All_Shows[]                         =& $show;
             $Programs[$show->title][]            =& $show;

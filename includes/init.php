@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2005.01.26 (xris)
+    init.php                                 Last Updated: 2005.02.09 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -145,11 +145,12 @@
         while (($file = readdir($dir))) {
             if (!is_file(image_cache.'/'.$file) || !ereg('\\.(png|jpg|gif)$', $file))
                 continue;
-        // Delete files that haven't been touched in the last 3 days
-            if (fileatime(image_cache.'/'.$file) < time() - 3 * 24 * 60 * 60)
+        // Delete files older than the last week.
+            if (filemtime(image_cache.'/'.$file) < time() - 7 * 24 * 60 * 60)
                 unlink(image_cache.'/'.$file);
         }
         closedir($dir);
+        clearstatcache();
     }
 
 // Upgrading from an earlier version?  Wipe the session date data

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.11.30 (xris)
+    recorded_programs.php                    Last Updated: 2005.02.09 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -141,7 +141,6 @@ if ($group_field == "") {
         echo "\t<td class=\"list\" rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2)."\">&nbsp;</td>\n";
     if (show_recorded_pixmaps) {
         echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
-        generate_preview_pixmap($show);
         if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
             echo '<a href="'.video_url().'/'.basename($show->filename).'">'
                 .'<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">'
