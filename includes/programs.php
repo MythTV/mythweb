@@ -44,7 +44,7 @@
 		                       'Cancelled' 			=> _LANG_RECSTATUS_LONG_CANCELLED,
 		                       'Conflict'			=> _LANG_RECSTATUS_LONG_CONFLICT,
 		                       'LaterShowing'		=> _LANG_RECSTATUS_LONG_LATERSHOWING,
-		                       'Overlap'	   		=> _LANG_RECSTATUS_LONG_OERLAP,
+		                       'Overlap'	   		=> _LANG_RECSTATUS_LONG_OVERLAP,
 		                       'LowDiskSpace'  		=> _LANG_RECSTATUS_LONG_LOWDISKSPACE,
 			                   'TunerBusy'	   		=> _LANG_RECSTATUS_LONG_TUNERBUSY
 							  );
