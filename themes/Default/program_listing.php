@@ -31,12 +31,12 @@ class Theme_program_listing extends Theme {
 
 			<td align="center">Jump&nbsp;to:&nbsp;&nbsp;</td>
 			<td align="right">Hour:&nbsp;</td>
-			<td><select name="hour"><?
+			<td><select name="hour" style="text-align: right"><?
 				for ($h=0;$h<24;$h++) {
 					echo "<option value=\"$h\"";
 					if ($h == date('H', $start_time))
 						echo ' SELECTED';
-					echo ">$h:00</option>";
+					echo '>'.date($_SESSION['time_format'], strtotime("$h:00")).'</option>';
 				}
 				?></select></td>
 			<td align="right">Date:&nbsp;</td>
@@ -52,7 +52,7 @@ class Theme_program_listing extends Theme {
 					$date = date("Ymd", $time);
 					echo "<option value=\"$date\"";
 					if ($date == date("Ymd", $start_time)) echo " selected";
-					echo ">".date("D, F j, Y" , $time)."</option>";
+					echo ">".date($_SESSION['date_listing_jump'] , $time)."</option>";
 				}
 				?></select></td>
 			<td align="center"><input type="submit" class="submit" value="Jump"></td>
@@ -127,7 +127,7 @@ class Theme_program_listing extends Theme {
 ?><tr>
 	<td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?=$start_time - (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>" name="anchor<?=$timeslot_anchor?>"><img src="images/left.gif" border="0" alt="left"></a></td>
 <?		foreach ($timeslots as $time) { ?>
-	<td class="menu" width="<?=(int)(96 / num_time_slots)?>%" align="center"><?php echo date('G:i', $time)?></td>
+	<td class="menu" width="<?=(int)(96 / num_time_slots)?>%" align="center"><?php echo date($_SESSION['time_format'], $time)?></td>
 <?		} ?>
 	<td class="menu" width="2%"><a href="program_listing.php?time=<?=$start_time + (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
 </tr><?
@@ -194,7 +194,7 @@ class Theme_program_listing extends Theme {
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
 			<td align=\"right\">Airtime:</td>
-			<td>".date('g:i A', $program->starttime).' to '.date('g:i A', $program->endtime)."</td>
+			<td>".date($_SESSION['time_format'], $program->starttime).' to '.date($_SESSION['time_format'], $program->endtime)."</td>
 		</tr><tr>
 			<td align=\"right\">Program:</td>
 			<td>$program->title</td>
@@ -240,7 +240,7 @@ class Theme_program_listing extends Theme {
 // then, we just display the info
 ?>
 	<td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" valign="top"><?
-		$mouseover = 'onmouseover="window.status=\''.date('g:ia', $program->starttime).' - '.date('g:ia', $program->endtime).' -- '
+		$mouseover = 'onmouseover="window.status=\''.date($_SESSION['time_format'], $program->starttime).' - '.date($_SESSION['time_format'], $program->endtime).' -- '
 					 .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
 					 .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
 					 					  : '')

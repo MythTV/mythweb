@@ -89,7 +89,7 @@ class Theme_scheduled_recordings extends Theme {
 	<td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
 		<tr>
 			<td align=\"right\">Airtime:</td>
-			<td>".date('D, M j, g:i A', $show->starttime).' to '.date('g:i A', $show->endtime)."</td>
+			<td>".date($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.date($_SESSION['time_format'], $show->endtime)."</td>
 		</tr><tr>
 			<td align=\"right\">Program:</td>
 			<td>$show->title</td>
@@ -148,7 +148,7 @@ class Theme_scheduled_recordings extends Theme {
 			 .'</a>';
 		?></td>
 	<td><?=$show->channel->name?></td>
-	<td nowrap><?=date('D, M j (g:i A)', $show->starttime)?></td>
+	<td nowrap><?=date($_SESSION['date_scheduled'], $show->starttime)?></td>
 	<td nowrap><?=nice_length($show->length)?></td>
 <?	if ($command) { ?>
 	<td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?=$command?></td>

@@ -80,7 +80,7 @@ class Theme_search extends Theme {
 	<td><?php echo $show->subtitle?></td>
 	<td><?php echo $show->description?></td>
 	<td><?php echo $show->channel->name?></td>
-	<td nowrap><?php echo date('D, M j (g:i A)', $show->starttime)?></td>
+	<td nowrap><?php echo date($_SESSION['date_search'], $show->starttime)?></td>
 	<td nowrap><?php echo nice_length($show->length)?></td>
 </tr><?php
 			$row++;

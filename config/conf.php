@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2003.11.03 (xris)
+	conf.php                                  Last Updated: 2003.11.18 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -28,10 +28,6 @@
 
 // Email address to which php and database errors are mailed to
     define('Error_Email', 'php_errors@'.server_domain);
-
-// Date and time format used in menustrip
-    define('longdate_format', "D, M d, g:i A");
-
 
 // Path to the image cache directory
 	define('image_cache', 'image_cache');

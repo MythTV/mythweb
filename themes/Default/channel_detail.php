@@ -39,9 +39,9 @@ class Theme_channel_detail extends Theme {
 				for ($i=-1;$i<=$max_days;$i++) {
 					$time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
 					$date = date("Ymd", $time);
-					echo "<option value=\"$time\"";
+					echo "<option value=\"$date\"";
 					if ($date == date("Ymd", $_SESSION['list_time'])) echo " selected";
-					echo ">".date("F j, Y" , $time)."</option>";
+					echo ">".date($_SESSION['date_channel_jump'] , $time)."</option>";
 				}
 				?></select></td>
 			<td align="center"><input type="submit" class="submit" value="Jump"></td>
@@ -78,7 +78,7 @@ class Theme_channel_detail extends Theme {
 		foreach ($this_channel->programs as $show) {
 	// Print the content
 	?><tr class="<?php echo $show->class ?>">
-	<td nowrap align="center"><a href="program_listing.php?time=<?php echo $show->starttime ?>"><?php echo date('g:i A', $show->starttime)?> - <?php echo date('g:i A', $show->endtime)?></a></td>
+	<td nowrap align="center"><a href="program_listing.php?time=<?php echo $show->starttime ?>"><?php echo date($_SESSION['time_format'], $show->starttime)?> - <?php echo date($_SESSION['time_format'], $show->endtime)?></a></td>
 	<td class="<?php echo $show->class ?>"><?php
 		echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
 			 .$show->title.'</a>';
