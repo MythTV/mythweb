@@ -1,12 +1,15 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2003.08.19 (xris)
+    program_listing.php                      Last Updated: 2005.01.23 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
 
     This is the default viewing mode, and shows the current program listings.
 \***                                                                        ***/
+
+// Which section are we in?
+    define('section', 'tv');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

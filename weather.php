@@ -1,10 +1,13 @@
 <?php
 /***                                                                        ***\
-    weather.php
+    weather.php                             Last Updated: 2005.01.23 (xris)
 
     MythWeather
 \***                                                                        ***/
 
+
+// Which section are we in?
+    define('section', 'weather');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";
@@ -203,7 +206,7 @@ class WeatherSite {
 
 	    $url2 = substr(trim($line), 24);
 	    $url2 = substr($url2, 0, strpos($url2, '"'));
-	    break; 
+	    break;
 	}
 	return $url2;
     }
@@ -277,7 +280,7 @@ class Forecast {
 
 		$this->date = date("m/d/Y", mktime(0, 0, 0, $month  , $day+1, $year));
 	else
-		$this->date = $date;	
+		$this->date = $date;
     }
 }
 

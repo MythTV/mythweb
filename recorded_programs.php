@@ -1,10 +1,13 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.08.09 (xris)
+    recorded_programs.php                    Last Updated: 2005.01.23 (xris)
 
     view and manipulate recorded programs.
 \***                                                                        ***/
 
+
+// Which section are we in?
+    define('section', 'tv');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

@@ -1,10 +1,15 @@
 <?php
 /***                                                                        ***\
-    video_edit.php                  Last Updated: 2004.05.21 (bobcottingham)
+    video_edit.php                  Last Updated: 2005.01.23 (xris)
 
     edit video info
 \***                                                                        ***/
 
+#### this file needs to be rewritten to live in a theme!!!
+
+
+// Which section are we in?
+    define('section', 'video');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

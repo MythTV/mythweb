@@ -1,9 +1,12 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2004.08.09 (xris)
+    search.php                               Last Updated: 2005.01.23 (xris)
 
     Searches the database for programs matching a particular query.
 \***                                                                        ***/
+
+// Which section are we in?
+    define('section', 'tv');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

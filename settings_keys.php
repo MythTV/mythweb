@@ -4,6 +4,9 @@
     mythtv keybindings config
 \***                                                                        ***/
 
+// Which section are we in?
+    define('section', 'settings');
+
 // Initialize the script, database, etc.
     require_once "includes/init.php";
 

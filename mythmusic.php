@@ -1,15 +1,12 @@
 <?php
+/***                                                                        ***\
+    mythmusic.php                             Last Updated: 2005.01.23 (xris)
 
-    //
-    //  This file is part of MythWeb,
-    //  a php-based interface into MythTV.
-    //
-    //  (c) 2002 by Thor Sigvaldason and Isaac Richards
-    //  MythWeb is distributed under the
-    //  GNU GENERAL PUBLIC LICENSE version 2
-    //  (see http://www.gnu.org)
-    //
+    MythMusic
+\***                                                                        ***/
 
+// Which section are we in?
+    define('section', 'music');
 
 //
 //  Someday, music.php will let us stream
@@ -100,14 +97,14 @@ class mythMusic {
                 $this->length=$row[5];
                 $this->rating=$row[6];
                 $this->filename=$row[7];
-                
+
                 $this->urlfilename=music_url;
                 global $musicdir;
                 foreach (preg_split('/\//', substr($this->filename, strlen($musicdir))) as $dir) {
                     if (!$dir) continue;
                     $this->urlfilename .= '/'.rawurlencode($dir);
                 }
-                
+
                 return(true);
             }
             return(false);

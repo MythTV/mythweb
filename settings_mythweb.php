@@ -1,9 +1,12 @@
 <?php
 /***                                                                        ***\
-    settings.php                            Last Updated: 2004.11.30 (xris)
+    settings.php                            Last Updated: 2005.01.23 (xris)
 
     mythweb settings
 \***                                                                        ***/
+
+// Which section are we in?
+    define('section', 'settings');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                      Last Updated: 2004.11.13 (xris)
+    program_detail.php                      Last Updated: 2005.01.23 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -8,6 +8,9 @@
     This displays details about a program, as well as provides recording
     commands.
 \***                                                                        ***/
+
+// Which section are we in?
+    define('section', 'tv');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

@@ -1,10 +1,13 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2004.08.03 (xris)
+    scheduled_recordings.php                 Last Updated: 2005.01.23 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
 
+
+// Which section are we in?
+    define('section', 'tv');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

@@ -36,6 +36,15 @@
 #sections a img {
     border: none;
 }
+
+#sections a.current_section {
+    background-color:   #164;
+    border-top:         1px solid #7b9;
+    border-right:       1px solid #030;
+    border-bottom:      1px solid #000;
+    border-left:        1px solid #6a8;
+}
+
 #tv_link {
 }
 #music_link {

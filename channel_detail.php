@@ -1,9 +1,12 @@
 <?php
 /***                                                                        ***\
-    channel_detail.php                       Last Updated: 2003.08.06 (xris)
+    channel_detail.php                       Last Updated: 2005.01.23 (xris)
 
 
 \***                                                                        ***/
+
+// Which section are we in?
+    define('section', 'tv');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

@@ -1,9 +1,12 @@
 <?php
 /***                                                                        ***\
-    settings_channels.php                    Last Updated: 2003.11.22 (xris)
+    settings_channels.php                    Last Updated: 2005.01.23 (xris)
 
     mythtv channels settings
 \***                                                                        ***/
+
+// Which section are we in?
+    define('section', 'settings');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";

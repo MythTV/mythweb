@@ -1,10 +1,12 @@
 <?php
 /***                                                                        ***\
-    video.php                               Last Updated: 2004.05.31 (xris)
+    video.php                               Last Updated: 2005.01.23 (xris)
 
     view video files.
 \***                                                                        ***/
 
+// Which section are we in?
+    define('section', 'video');
 
 // Initialize the script, database, etc.
     require_once "includes/init.php";
