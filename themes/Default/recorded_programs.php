@@ -167,7 +167,7 @@ if ($group_field == "") {
 
 </table>
 <?php
-	echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.nice_filesize(disk_used)._LANG_OUT_OF.nice_filesize(disk_size).'</p>';
+	echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' '._LANG_PROGRAMS_USING.' '.nice_filesize(disk_used)._LANG_OUT_OF.nice_filesize(disk_size).'</p>';
 
 	// Print the main page footer
 		parent::print_footer();
