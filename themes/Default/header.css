@@ -122,10 +122,11 @@
     padding:            10px;
     font-size:          9pt;
 }
-#search_options span.column {
-    display: inline-block;
-    display: -moz-inline-box;
-    width:   7em !important;
+#search_options table {
+    font-size: 9pt;
+}
+#search_options table td {
+    width:  6em;
 }
 #search_options hr {
     border-top:    1px solid #68b;
@@ -147,10 +148,6 @@
 #search_options dl dd {
     margin-left: 9.5em;
     white-space: nowrap;
-}
-#search_options input.radio {
-    height: 12px !important;
-    width:  12px !important;
 }
 
 
