@@ -1,6 +1,6 @@
 <?php
 /***																		***\
-	mythbackend.php                          Last Updated: 2004.01.27 (xris)
+	mythbackend.php                          Last Updated: 2004.05.10 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -135,9 +135,9 @@
 		$col = 0;
 		for($i = $offset; $i < count($recs); $i++) {
 			$rows[$row][$col] = $recs[$i];
-		// Every 32 fields (0 through 31) means a new row
+		// Every 34 fields (0 through 33) means a new row
         // Please note that this changes between myth versions
-			if ($col == 32) {
+			if ($col == 34) {
 				$col = 0;
 				$row++;
 			}

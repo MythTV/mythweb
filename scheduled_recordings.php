@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                 Last Updated: 2004.04.19 (xris)
+	scheduled_recordings.php                 Last Updated: 2004.05.10 (xris)
 
 	view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -25,7 +25,7 @@
 		}
 	// Fake an old recording so that this show won't record again
 		elseif ($_GET['never_record'] || $_POST['never_record']) {
-			$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category, seriesid, programid) VALUES ('
+			$result = mysql_query('REPLACE INTO oldrecorded (chanid, starttime, endtime, title, subtitle, description, category) VALUES ('
 									.escape($program->chanid)                    .','
 									.'FROM_UNIXTIME('.escape($program->starttime).'),'
 									#.'"1970-01-01",'
@@ -34,9 +34,7 @@
 									.escape($program->title)                     .','
 									.escape($program->subtitle)                  .','
 									.escape($program->description)               .','
-									.escape($program->category)                  .','
-									.escape($program->seriesid)                  .','
-									.escape($program->programid)                 .')')
+									.escape($program->category)                  .')')
 				or trigger_error('SQL Error: '.mysql_error(), FATAL);
 		// Make sure the aren't any manual overrides set for this show, either
 			$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($_GET['chanid']).' AND title='.escape($program->title).' AND subtitle='.escape($program->subtitle).' AND description='.escape($program->desription))
@@ -46,18 +44,15 @@
 		elseif ($_GET['suppress'] || $_POST['suppress']) {
 			$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
 				or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-			$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description,seriesid,programid) VALUES ('
+			$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
 									.escape($program->recordid).','
 									.'2,'	// record override type:   1 == record, 2 == don't record
 									.escape($program->chanid)                    .','
-									.escape($program->channel->callsign)         .','
 									.'FROM_UNIXTIME('.escape($program->starttime).'),'
 									.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
 									.escape($program->title)                     .','
 									.escape($program->subtitle)                  .','
-									.escape($program->description)               .','
-									.escape($program->seriesid)                  .','
-									.escape($program->programid)                 .')')
+									.escape($program->description)               .')')
 				or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
 		}
 	// Record a show that wouldn't otherwise record (various reasons, read below)
@@ -66,18 +61,15 @@
 			if ($show->recording == 0 || $show->recstatus) {
 				$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
 					or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-				$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,station,starttime,endtime,title,subtitle,description,seriesid,programid) VALUES ('
+				$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
 										.escape($program->recordid).','
 										.'1,'	// record override type:   1 == record, 2 == don't record
 										.escape($program->chanid)                    .','
-										.escape($program->channel->callsign)         .','
 										.'FROM_UNIXTIME('.escape($program->starttime).'),'
 										.'FROM_UNIXTIME('.escape($program->endtime)  .'),'
 										.escape($program->title)                     .','
 										.escape($program->subtitle)                  .','
-										.escape($program->description)               .','
-										.escape($program->seriesid)                  .','
-										.escape($program->programid)                 .')')
+										.escape($program->description)               .')')
 					or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
 			}
 		}
@@ -101,10 +93,8 @@
 
 // Parse the program list
 	$All_Shows = array();
-	$Programs  = array();
-	$Channels  = array();
 	foreach ($records as $record) {
-		$show = new Program($record);
+		$show =& new Program($record);
 	// Skip things we've already recorded
 		if ($show->starttime <= time())
 			continue;
@@ -112,9 +102,7 @@
 		if (!$show->chanid || $show->length < 1)
 			continue;
 	// Assign a reference to this show to the various arrays
-		$All_Shows[]                 = &$show;
-		$Programs[$show['title']][]  = &$show;
-		$Channels[$show['chanid']][] = &$show;
+		$All_Shows[] =& $show;
 		unset($show);
 	}
 
