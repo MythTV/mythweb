@@ -132,6 +132,13 @@ A: Access any of the mythweb files and include RESET_THEME=yes among the URL
     will reset your theme to Default, where you can readjust your settings as
     needed.
 
+Q: I can't open the status link, and get an error about url_fopen, what's
+    wrong?
+A: Some distributions (gentoo in particular) disable the allow_url_fopen
+    setting by default, and php ignores this setting in the included .htaccess
+    file.  You will need to edit your /etc/php.ini file (or wherever it is in
+    your distribution) and set the value of allow_url_fopen to On.
+
 4.0 Plan/TODO
 =============
 
