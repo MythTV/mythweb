@@ -39,10 +39,10 @@
 // Type of url for the links to recorded programs. Filename will be added at the end
     define('video_url', video_dir);     //Normal http url
 
-// Type of url for the links to mythvideo videos. Filename will be added to the end. 
+// Type of url for the links to mythvideo videos. Filename will be added to the end.
 // For this to work, create a 'videos' symlink in mythweb which points to the path for mythvideo videos
 // Link can set as either html:// or file://.  file:// is useful over lan for avi's to play immediately.
-// Replace 'machine_name/path_to_videos' with relevent info for file:// 
+// Replace 'machine_name/path_to_videos' with relevent info for file://
     #define('video_url', videos);
     #define('video_url','file://machine_name/path_to_videos');
 
