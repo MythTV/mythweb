@@ -62,11 +62,12 @@ class Theme_recorded_programs extends Theme {
         }
         ?>
     </select></td>
-<?php if (count($Groups) > 1) { ?>
+<?php
+global $Groups;
+if (count($Groups) > 1) { ?>
     <td><?php echo t('Show group') ?>:</td>
     <td><select name="recgroup" onchange="get_element('program_titles').submit()">
         <option value=""><?php echo t('All recordings')?></option><?php
-        global $Groups;
         foreach($Groups as $recgroup => $count) {
             echo '<option value="'.htmlspecialchars($recgroup).'"';
             if ($_GET['recgroup'] == $recgroup)
