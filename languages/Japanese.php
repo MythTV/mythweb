@@ -217,7 +217,6 @@ $L = array(
     'Recording Schedules'                        => '録画予約',
     'Settings'                                   => '設定',
     'TV functions, including recorded programs.' => '',
-    'Welcome to MythWeb!'                        => '',
     'advanced'                                   => 'アドバンスト',
 // themes/.../weather.php
     ' at '               => '',

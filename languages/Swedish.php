@@ -217,7 +217,6 @@ $L = array(
     'Recording Schedules'                        => 'Inspelningsscheman',
     'Settings'                                   => 'Inställningar',
     'TV functions, including recorded programs.' => '',
-    'Welcome to MythWeb!'                        => '',
     'advanced'                                   => 'avancerad',
 // themes/.../weather.php
     ' at '               => ' vid ',

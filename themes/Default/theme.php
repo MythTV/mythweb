@@ -58,7 +58,7 @@ class Theme {
         <div id="help_wrapper">
             <div id="help_box">
                 <div id="help_text_default">
-                <?php echo t('Welcome to MythWeb!') ?>
+                MythWeb: <?php echo strftime($_SESSION['date_statusbar'], time())?>
                 </div>
                 <div id="help_text">
                 </div>
@@ -85,7 +85,6 @@ class Theme {
     <td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
         <tr>
             <td><?php $this->print_menu_content() ?></td>
-            <td align="right"><?php echo strftime($_SESSION['date_statusbar'], time())?></td>
         </tr>
         </table></td>
 
