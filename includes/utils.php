@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	utils.php                             Last Updated: 2003.12.19 (xris)
+	utils.php                             Last Updated: 2004.04.12 (xris)
 
 	utility routines used throughout mythweb
 \***                                                                        ***/
@@ -75,24 +75,38 @@ function nice_length($length) {
 	For lack of a function that escapes strings AND adds quotes, I wrote one
 	myself to make the rest of my code read a bit easier.
 */
-	function escape($string) {
-		return "'".mysql_escape_string($string)."'";
+	function escape($string, $allow_null = false) {
+	// Null?
+		if ($allow_null && is_null($string))
+			return 'NULL';
+	// Just a string
+		$string = mysql_escape_string($string);	// Do this beforehand in case someone passes in a reference
+		return "'$string'";
 	}
 
 /*
 	get_sorted_files:
 	Returns a sorted list of files in a directory, minus . and ..
 */
-	function get_sorted_files($dir = '.', $regex = '') {
+	function get_sorted_files($dir = '.', $regex = '', $negate = false) {
+		$list = array();
 		$handle = opendir($dir);
 		while(false != ($file = readdir($handle))) {
 			if ($file == '.' || $file == '..') continue;
-			if (!$regex || preg_match($regex, $file))
+			if (!$regex || (!$negate && preg_match($regex, $file)) || ($negate && !preg_match($regex, $file)))
 				$list[] = $file;
 		}
 		closedir($handle);
 		sort($list);
 		return $list;
+	}
+
+/*
+	_or:
+	returns $this or $or_this
+*/
+	function _or($this, $or_this) {
+		return $this ? $this : $or_this;
 	}
 
 /*
