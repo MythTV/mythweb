@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2004.04.12 (xris)
+    search.php                               Last Updated: 2004.08.09 (xris)
 
     Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -40,7 +40,7 @@
         $compare = ' LIKE ';
 
 // How do we want to build this query?
-    if (preg_match('/\\w/', $_SESSION['search']['searchstr'])) {
+    if (preg_match('/\\S/', $_SESSION['search']['searchstr'])) {
     // Normal search is an OR search
         $joiner = ' OR ';
     // Regex search?
