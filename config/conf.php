@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2003.08.19 (xris)
+	conf.php                                  Last Updated: 2003.08.20 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -33,7 +33,10 @@
     define('longdate_format', "D, M d, g:i A");
 
 
-// Locan and web paths to the pixmap image cache
+// Path to the image cache directory
 	define('image_cache', 'image_cache');
+
+// Path to the mythvideo "covers" directory
+	define('video_img_path', '');
 
 ?>

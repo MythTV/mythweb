@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2003.07.14 (xris)
+	program_detail.php                       Last Updated: 2003.08.22 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
@@ -129,6 +129,45 @@ class Theme_program_detail extends Theme {
 					$this_program->record_always ? ' CHECKED' : ''?>></input>
 					<a>Always record this program on any channel.</a>
 					</p>
+				<p>
+				<table width="100%" border="0" cellspacing="0" cellpadding="2">
+				<tr>
+					<td nowrap align="right">Recording Profile:&nbsp;</td>
+					<td><select align=right name="profile"><?php
+						global $Profiles;
+						foreach($Profiles as $profile) {
+							echo '<option value="'.htmlentities($profile['id']).'"';
+							if ($this_program->profile == $profile['id'])
+								echo ' SELECTED';
+							echo '>'.htmlentities($profile['name']).'</option>';
+						}
+						?></select></td>
+				</tr><tr>
+					<td nowrap align="right">Rank:&nbsp;</td>
+					<td><select align=right name="rank"><?php
+						for($rankcount=-10;$rankcount<=10;++$rankcount) {
+							echo '<option value="'.htmlentities($rankcount).'"';
+							if ($this_program->rank == $rankcount)
+								echo ' SELECTED';
+							echo '>'.htmlentities($rankcount).'</option>';
+						}
+						?></select></td>
+				</tr><tr>
+					<td nowrap align="right">Record Duplicates?&nbsp;</td>
+					<td><input type="checkbox" class="radio" name="recorddups"<?php if ($this_program->recorddups) echo ' CHECKED' ?>></td>
+				</tr><tr>
+					<td nowrap align="right">Auto-expire Recordings?&nbsp;</td>
+					<td><input type="checkbox" class="radio" name="autoexpire" <?php if ($this_program->autoexpire) echo "CHECKED" ?>></td>
+				</tr><tr>
+					<td nowrap align="right">No of recordings to keep?&nbsp;</td>
+					<td><input type="input" name="maxepisodes" size="1" value="<?php echo htmlentities($this_program->maxepisodes) ?>"></td>
+				</tr><tr>
+					<td nowrap align="right">Record new and expire old?&nbsp;</td>
+					<td><input type="checkbox" class="radio" name="maxnewest" <?php if ($this_program->maxnewest) echo "CHECKED" ?>></td>
+				</tr>
+				</table>
+				</p>
+
 				<p align="center"><input type="submit" class="submit" name="save" value="Update Recording Settings"></p></td>
 
 

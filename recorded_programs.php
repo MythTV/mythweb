@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.20 (xris)
+	recorded_programs.php                    Last Updated: 2003.08.22 (irish)
 
 	view and manipulate recorded programs.
 \***                                                                        ***/
@@ -89,7 +89,6 @@
 // Sort the programs
 	if (count($All_Shows))
 		sort_programs($All_Shows, 'recorded_sortby');
-
 
 // How much free disk space on the backend machine?
 	list($disk_size, $disk_used) = explode(backend_sep, backend_command('QUERY_FREESPACE'));

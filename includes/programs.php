@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.08.05 (xris)
+    programs.php                             Last Updated: 2003.08.22 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -274,6 +274,7 @@ class Program {
 			$this->starstring      = $program_data['starstring'];
 			$this->rater           = $program_data['rater'];
 			$this->rating          = $program_data['rating'];
+
 		// Check to see if there is any additional data from mythbackend about this program
 			global $Pending_Programs;
 			load_pending();
@@ -306,6 +307,20 @@ class Program {
 		#	$myprog->whenRecord += $line["record_always"]<<4;
 		#	$myprog->whenRecord += $line["record_weekly"]<<5;
 		}
+	// Get data for recordings
+		$query = 'SELECT * from record where chanid='.$this->chanid.' AND title = '.escape($this->title).'';
+		$result = mysql_query($query)
+			or trigger_error('SQL Error: '.mysql_error(), FATAL);
+		while ($record_data = mysql_fetch_assoc($result)) {
+			$this->profile         = $record_data['profile'];
+			$this->rank            = $record_data['rank'];
+			$this->recorddups      = $record_data['recorddups'];
+			$this->maxnewest       = $record_data['maxnewest'];
+			$this->maxepisodes     = $record_data['maxepisodes'];
+			$this->autoexpire      = $record_data['autoexpire'];
+		}
+
+
 
 	// Do we have a chanid?  Load some info about it
 		if ($this->chanid) {
@@ -331,13 +346,17 @@ class Program {
 	}
 
 	function record_always() {
-	// Already set?  just return
-		if ($this->record_always)
-			return;
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type ,title) VALUES (4,'.escape($this->title).')')
+		$result = mysql_query('REPLACE INTO record (type ,title, profile,rank,recorddups,maxnewest,maxepisodes,autoexpire)
+																			VALUES (4,'.escape($this->title).','
+																				.escape($this->profile).','
+																				.escape($this->rank).','
+																				.escape($this->recorddups).','
+																				.escape($this->maxnewest).','
+																				.escape($this->maxepisodes).','
+																				.escape($this->autoexpire).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
 		$this->record_always = $this->will_record = true;
@@ -346,14 +365,18 @@ class Program {
 	}
 
 	function record_channel() {
-	// Already set?  just return
-		if ($this->record_channel)
-			return;
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,title,chanid) VALUES (3,'.escape($this->title).','
-																				 .escape($this->chanid).')')
+		$result = mysql_query('REPLACE INTO record (type,title,chanid,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire)
+																		VALUES (3,'.escape($this->title).','
+																				.escape($this->chanid).','
+																				.escape($this->profile).','
+																				.escape($this->rank).','
+																				.escape($this->recorddups).','
+																				.escape($this->maxnewest).','
+																				.escape($this->maxepisodes).','
+																				.escape($this->autoexpire).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
 		$this->record_channel = $this->will_record = true;
@@ -362,20 +385,22 @@ class Program {
 	}
 
 	function record_weekly() {
-	// Already set?  just return
-		if ($this->record_weekly)
-			return;
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,startdate,starttime,enddate,endtime,title,profile) VALUES (5,'
-								.escape($this->chanid) .','
+		$result = mysql_query('REPLACE INTO record (type,chanid,startdate,starttime,enddate,endtime,title,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire)
+							VALUES (5,'	.escape($this->chanid) .','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.escape($this->title)  .','
-								.escape($this->profile).')')
+								.escape($this->profile).','
+								.escape($this->rank).','
+								.escape($this->recorddups).','
+								.escape($this->maxnewest).','
+								.escape($this->maxepisodes).','
+								.escape($this->autoexpire).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
 		$this->record_weekly = $this->will_record = true;
@@ -384,18 +409,20 @@ class Program {
 	}
 
 	function record_daily() {
-	// Already set?  just return
-		if ($this->record_daily)
-			return;
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,endtime,title,profile) VALUES (2,'
+		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,endtime,title,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire) VALUES (2,'
 								.escape($this->chanid).','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->endtime).'),'
 								.escape($this->title)  .','
-								.escape($this->profile).')')
+								.escape($this->profile).','
+								.escape($this->rank).','
+								.escape($this->recorddups).','
+								.escape($this->maxnewest).','
+								.escape($this->maxepisodes).','
+								.escape($this->autoexpire).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
 		$this->record_daily = $this->will_record = true;
@@ -404,13 +431,10 @@ class Program {
 	}
 
 	function record_once() {
-	// Already set?  just return
-		if ($this->record_once)
-			return;
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile) values (1,'
+		$result = mysql_query('REPLACE INTO record (type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile,rank,recorddups,maxnewest,maxepisodes,autoexpire) values (1,'
 								.escape($this->chanid).','
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
 								.'FROM_UNIXTIME('.escape($this->starttime).'),'
@@ -419,7 +443,12 @@ class Program {
 								.escape($this->title).','
 								.escape($this->subtitle).','
 								.escape($this->description).','
-								.escape($this->profile).')')
+								.escape($this->profile).','
+								.escape($this->rank).','
+								.escape($this->recorddups).','
+								.escape($this->maxnewest).','
+								.escape($this->maxepisodes).','
+								.escape($this->autoexpire).')')
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 	// Clean up the program variable
 		$this->record_once = $this->will_record = true;
