@@ -37,7 +37,7 @@ class Theme {
 <?
 //	Work in a random quote (anybody got more of these?)
 	$quote = array();
-	switch(rand(1,5)) {
+	switch(rand(1,6)) {
 		case 1:
 			$quote['text']   = "Basically, I want the mythical convergence box that's been talked about for a few years now.";
 			$quote['author'] = "Isaac Richards";
@@ -57,6 +57,10 @@ class Theme {
 		case 5:
 			$quote['text']   = "I think that consumers just won't buy devices that don't let them do what they want to do.";
 			$quote['author'] = "Linus Torvalds";
+			break;
+		case 6:
+			$quote['text']   = "More education is necessary. One form of education is lawsuits.";
+			$quote['author'] = "Jonathan Lamy (Spokesperson, RIAA)";
 			break;
 	}
 ?>
