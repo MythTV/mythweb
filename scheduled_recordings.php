@@ -79,7 +79,9 @@
         elseif ($_GET['record'] || $_POST['record']) {
         // Activate a program that was inactive for other reasons
             if ($program->recording == 0 || $program->recstatus) {
-                $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
+                $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid)
+                                           .' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND startdate=FROM_UNIXTIME('.escape($program->starttime).')'
+                                           .' AND endtime=FROM_UNIXTIME('.escape($program->endtime).') AND enddate=FROM_UNIXTIME('.escape($program->endtime).')')
                     or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
                 $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
                                       .'7,'
