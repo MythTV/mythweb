@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2004.02.05 (xris)
+	conf.php                                  Last Updated: 2004.03.28 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -35,6 +35,15 @@
 
 // Local (web-friendly) path to the mythtv video dir (use a symlink to the real one - one will be auto-created if it can be)
 	define('video_dir', 'video_dir');
+
+// Type of url for the links to recorded programs. Filename will be added at the end
+	define('video_url', video_dir);		//Normal http url
+
+	//Url for windows filters. This need to be changed if you use a different
+	//port or the webserver is not running on the backend machine.
+	//You may have to adjust the playback app in the filter configuration program.
+	#define('video_url', 'myth://'.$_SERVER['HTTP_HOST'].':6543');
+	#define('video_url', 'myth://ip_of_mythbackend:6543');
 
 // Path to the mythvideo "covers" directory
 	define('video_img_path', '');
