@@ -55,6 +55,10 @@
         global $Channels;
         echo '<select name="chanid" onchange="submit_form()">';
         foreach ($Channels as $channel) {
+        // Not visible?
+            if (empty($channel->visible))
+                continue;
+        // Print the option
             echo '<option value="'.htmlentities($channel->chanid).'"';
             if ($channel->chanid == $_GET['chanid'])
                 echo ' SELECTED';
