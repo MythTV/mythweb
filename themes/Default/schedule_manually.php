@@ -64,7 +64,7 @@ class Theme_schedule_manually extends Theme {
                 </table>
             </td>
         </tr><tr>
-            <td><input type="radio" class="radio" name="record" value="once" id="record_once" checked></input>
+            <td><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once" checked></input>
                 <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a>
                 </td>
         </tr><tr>

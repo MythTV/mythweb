@@ -370,73 +370,63 @@ class Program {
 
     }
 
-    function details_table() {
-    // Start the table, and print the show airtime and title
-        $str = "<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">\n<tr>\n\t<td align=\"right\">"
+/*
+    details_list:
+    The "details list" for each program.
+*/
+    function details_list() {
+    // Start the list, and print the show airtime and title
+        $str = "<dl class=\"details_list\">\n"
             // Airtime
-              .t('Airtime')
-              .":</td>\n\t<td>"
-              .strftime($_SESSION['time_format'], $this->starttime)
-              .' to '.strftime($_SESSION['time_format'], $this->endtime)
-              ."</td>\n</tr><tr>\n\t<td align=\"right\">"
+              ."\t<dt>".t('Airtime').":</dt>\n"
+              ."\t<dd>".strftime($_SESSION['time_format'], $this->starttime)
+                       .' to '
+                       .strftime($_SESSION['time_format'], $this->endtime)
+                       ."</dd>\n"
             // Title
-              .t('Title')
-              .":</td>\n\t<td>"
-              .$this->title
-              ."</td>\n</tr>";
+              ."\t<dt>".t('Title').":</dt>\n"
+              ."\t<dd>".htmlentities($this->title, ENT_COMPAT, 'UTF-8')
+                       ."</dd>\n";
     // Subtitle
         if (preg_match('/\\S/', $this->subtitle)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Subtitle')
-                   .":</td>\n\t<td>"
-                   .$this->subtitle
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Subtitle').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->subtitle, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
         }
     // Description
         if (preg_match('/\\S/', $this->description)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Description')
-                   .":</td>\n\t<td>"
-                   .nl2br(wordwrap($this->description, 70))
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Description').":</dt>\n"
+                   ."\t<dd>".nl2br(htmlentities($this->description, ENT_COMPAT, 'UTF-8'))
+                            ."</dd>\n";
         }
     // Rating
         if (preg_match('/\\S/', $this->rating)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Rating')
-                   .":</td>\n\t<td>"
-                   .$this->rating
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Rating').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->rating, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
         }
     // Original Airdate
         if (!empty($this->airdate)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Original Airdate')
-                   .":</td>\n\t<td>"
-                   .$this->airdate
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Original Airdate').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->airdate, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
         }
     // Category
         if (preg_match('/\\S/', $this->category)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Category')
-                   .":</td>\n\t<td>"
-                   .$this->category
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Category').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->category, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
         }
     // Rerun?
         if (!empty($this->previouslyshown)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Rerun')
-                   .":</td>\n\t<td>"
-                   .t('Yes')
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Rerun').":</dt>\n"
+                   ."\t<dd>".t('Yes')
+                            ."</dd>\n";
         }
     // Will be recorded at some point in the future?
         if (!empty($this->will_record)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Schedule')
-                   .":</td>\n\t<td>";
+            $str .= "\t<dt>".t('Schedule').":</dt>\n"
+                   ."\t<dd>";
             switch ($this->rectype) {
                 case rectype_once:       $str .= t('rectype-long: once');       break;
                 case rectype_daily:      $str .= t('rectype-long: daily');      break;
@@ -450,18 +440,16 @@ class Program {
                 case rectype_findweekly: $str .= t('rectype-long: findweekly'); break;
                 default:                 $str .= t('Unknown');
             }
-            $str .= "</td>\n</tr>";
+            $str .= "</dd>\n";
         }
     // Recording status
         if (!empty($this->recstatus)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Notes')
-                   .":</td>\n\t<td>"
-                   .$GLOBALS['RecStatus_Reasons'][$this->recstatus]
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Notes').":</dt>\n"
+                   ."\t<dd>".$GLOBALS['RecStatus_Reasons'][$this->recstatus]
+                            ."</dd>\n";
         }
     // Finish off the table and return
-        $str .= "\n</table>";
+        $str .= "\n</dl>";
         return $str;
     }
 

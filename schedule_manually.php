@@ -61,34 +61,10 @@
         $this_program->record_always  = false;
         $this_program->record_weekly  = false;
         $this_program->record_findone = false;
-        switch ($_POST['record']) {
-            case 'once':
-                $this_program->type = 1;
-                $this_program->record_once    = true;
-                break;
-            case 'daily':
-                $this_program->type = 2;
-                $this_program->record_daily   = true;
-                break;
-            case 'channel':
-                $this_program->type = 3;
-                $this_program->record_channel = true;
-                break;
-            case 'always':
-                $this_program->type = 4;
-                $this_program->record_always  = true;
-                break;
-            case 'weekly':
-                $this_program->type = 5;
-                $this_program->record_weekly  = true;
-                break;
-            case 'findone':
-                $this_program->type = 6;
-                $this_program->record_findone = true;
-                break;
-            default:
-                $this_program->type = 0;
-        }
+        if ($_POST['record'])
+            $this_program->type = $_POST['record'];
+        else
+            $this_program->type = 0;
         $this_program->chanid = $_POST['channel'];
         $this_program->starttime = $_POST['starttime'];
         $this_program->startdate = $_POST['startdate'];

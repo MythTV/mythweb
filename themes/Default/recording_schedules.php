@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2004.06.22 (xris)
+    recording_schedules.php                 Last Updated: 2005.02.05 (xris)
 
     This file defines a theme class for the all recordings section.
     It must define one method.   documentation will be added someday.
@@ -110,7 +110,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
     // Print a link to the program detail for this schedule
         echo '<a';
         if (show_popup_info)
-            echo show_popup("program_$program_id_counter", $show->details_table(), NULL, 'popup', $wstatus);
+            echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup', $wstatus);
         else
             echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
         echo ' href="program_detail.php?recordid='.$show->recordid.'"'

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2005.01.31 (xris)
+    scheduled_recordings.php                    Last Updated: 2005.02.05 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -159,7 +159,7 @@ if ($group_field == "") {
     // Print the link to edit this scheduled recording
         echo '<a';
         if (show_popup_info)
-            echo show_popup("program_$program_id_counter", $show->details_table(), NULL, 'popup', $wstatus);
+            echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup', $wstatus);
         else
             echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
         echo ' href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                  Last Updated: 2005.02.04 (xris)
+    recording_schedules.php                  Last Updated: 2005.02.06 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -252,79 +252,65 @@ class Schedule {
     }
 
 /*
-    details_table:
-    The "details table" for recording schedules.  Very similar to that for
+    details_list:
+    The "details list" for recording schedules.  Very similar to that for
     programs, but with a few extra checks, and some information arranged
     differently.
 */
-    function details_table() {
-    // Start the table, and print the show title
-        $str = "<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">\n<tr>\n\t<td align=\"right\">"
-              .t('Title')
-              .":</td>\n\t<td>"
-              .$this->title
-              ."</td>\n</tr>";
-    // Type
-        $str .= "<tr>\n\t<td align=\"right\">"
-               .t('Type')
-               .":</td>\n\t<td>"
-               .$this->texttype
-               ."</td>\n</tr>";
+    function details_list() {
+    // Start the list, and print the title and schedule type
+        $str = "<dl class=\"details_list\">\n"
+            // Title
+              ."\t<dt>".t('Title').":</dt>\n"
+              ."\t<dd>".htmlentities($this->title, ENT_COMPAT, 'UTF-8')
+                       ."</dd>\n"
+            // Type
+              ."\t<dt>".t('Type').":</dt>\n"
+              ."\t<dd>".htmlentities($this->texttype, ENT_COMPAT, 'UTF-8')
+                       ."</dd>\n";
     // Only show these fields for recording types where they're relevant
         if (in_array($this->type, array(rectype_once, rectype_daily, rectype_weekly, rectype_override, rectype_dontrec))) {
         // Airtime
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Airtime')
-                   .":</td>\n\t<td>"
-                   .strftime($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $this->starttime)
-                   .' to '.strftime($_SESSION['time_format'], $this->endtime)
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Airtime').":</dt>\n"
+                   ."\t<dd>".strftime($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $this->starttime)
+                            .' to '
+                            .strftime($_SESSION['time_format'], $this->endtime)
+                            ."</dd>\n";
         // Subtitle
             if (preg_match('/\\S/', $this->subtitle)) {
-                $str .= "<tr>\n\t<td align=\"right\">"
-                       .t('Subtitle')
-                       .":</td>\n\t<td>"
-                       .$this->subtitle
-                       ."</td>\n</tr>";
+                $str .= "\t<dt>".t('Subtitle').":</dt>\n"
+                       ."\t<dd>".htmlentities($this->subtitle, ENT_COMPAT, 'UTF-8')
+                                ."</dd>\n";
             }
         // Description
             if (preg_match('/\\S/', $this->description)) {
-                $str .= "<tr>\n\t<td align=\"right\" valign=\"top\">"
-                       .t('Description')
-                       .":</td>\n\t<td>"
-                       .nl2br(wordwrap($this->description, 70))
-                       ."</td>\n</tr>";
+                $str .= "\t<dt>".t('Description').":</dt>\n"
+                       ."\t<dd>".nl2br(htmlentities($this->description, ENT_COMPAT, 'UTF-8'))
+                                ."</dd>\n";
             }
         // Rating
             if (preg_match('/\\S/', $this->rating)) {
-                $str .= "<tr>\n\t<td align=\"right\">"
-                       .t('Rating')
-                       .":</td>\n\t<td>"
-                       .$this->rating
-                       ."</td>\n</tr>";
+                $str .= "\t<dt>".t('Rating').":</dt>\n"
+                       ."\t<dd>".htmlentities($this->rating, ENT_COMPAT, 'UTF-8')
+                                ."</dd>\n";
             }
         }
     // Category
         if (preg_match('/\\S/', $this->category)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Category')
-                   .":</td>\n\t<td>"
-                   .$this->category
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Category').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->category, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
         }
     // Rerun?
         if (!empty($this->previouslyshown)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Rerun')
-                   .":</td>\n\t<td>"
-                   .t('Yes')
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Rerun').":</dt>\n"
+                   ."\t<dd>".t('Yes')
+                            ."</dd>\n";
         }
     // Will be recorded at some point in the future?
         if (!empty($this->will_record)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Schedule')
-                   .":</td>\n\t<td>";
+            $str .= "\t<dt>".t('Schedule').":</dt>\n"
+                   ."\t<dd>";
             switch ($this->type) {
                 case rectype_once:       $str .= t('rectype-long: once');       break;
                 case rectype_daily:      $str .= t('rectype-long: daily');      break;
@@ -341,13 +327,12 @@ class Schedule {
                 case rectype_findweekly: $str .= t('rectype-long: findweekly'); break;
                 default:                 $str .= t('Unknown');
             }
-            $str .= "</td>\n</tr>";
+            $str .= "</dd>\n";
         }
     // Which duplicate-checking method will be used
         if ($this->dupmethod > 0) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Dup Method')
-                   .":</td>\n\t<td>";
+            $str .= "\t<dt>".t('Dup Method').":</dt>\n"
+                   ."\t<dd>";
             switch ($this->dupmethod) {
                 case 1:  $str .= t('None');                         break;
                 case 2:  $str .= t('Subtitle');                     break;
@@ -355,26 +340,22 @@ class Schedule {
                 case 6:  $str .= t('Subtitle and Description');     break;
                 case 22: $str .= t('Sub and Desc (Empty matches)'); break;
             }
-            $str .= "</td>\n</tr>";
+            $str .= "</dd>\n";
         }
     // Profile
         if (preg_match('/\\S/', $this->profile)) {
-            $str .= "<tr>\n\t<td align=\"right\">"
-                   .t('Profile')
-                   .":</td>\n\t<td>"
-                   .$this->profile
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Profile').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->profile, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
         }
     // Recording Group
         if (!empty($this->recgroup)) {
-            $str .="<tr>\n\t<td align=\"right\">"
-                   .t('Recording Group')
-                   .":</td>\n\t<td>"
-                   .$this->recgroup
-                   ."</td>\n</tr>";
+            $str .= "\t<dt>".t('Recording Group').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->recgroup, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
         }
     // Finish off the table and return
-        $str .= "\n</table>";
+        $str .= "\n</dl>";
         return $str;
     }
 

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2004.07.21 (xris)
+    program_listing.php                      Last Updated: 2005.02.05 (xris)
 
     This file defines a theme class for the program listing section.
     It must define several methods, some of which have specific
@@ -211,7 +211,7 @@ class Theme_program_listing extends Theme {
     // Start printing the link to record this show
         echo '<a';
         if (show_popup_info)
-            echo show_popup("program_$program_id_counter", $program->details_table(), NULL, 'popup', $wstatus);
+            echo show_popup("program_$program_id_counter", $program->details_list(), NULL, 'popup', $wstatus);
         else
             echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
 
