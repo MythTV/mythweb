@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2004.02.05 (xris)
+    program_listing.php                      Last Updated: 2004.03.28 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -136,9 +136,9 @@ class Theme_program_listing extends Theme {
 		foreach ($timeslots as $time) {
 			if ($count++ % timeslot_blocks) continue;
 ?>
-	<td class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo (int)(timeslot_blocks * 96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo date($_SESSION['time_format'], $time)?></a></td>
+	<td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo (int)(timeslot_blocks * 96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo date($_SESSION['time_format'], $time)?></a></td>
 <?php	} ?>
-	<td class="menu" width="2%"><a href="program_listing.php?time=<?php echo $start_time + (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
+	<td nowrap class="menu" width="2%"><a href="program_listing.php?time=<?php echo $start_time + (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
 </tr><?php
 	}
 
@@ -189,7 +189,7 @@ class Theme_program_listing extends Theme {
 		print_program:
 
 	*/
-	function print_program($program, $timeslots_used, $list_starttime) {
+	function print_program($program, $timeslots_used, $starttime) {
 	// Build a popup table for the mouseover of the cell, with extra program information?
 		if (show_popup_info) {
 		// A program id counter
@@ -268,18 +268,31 @@ class Theme_program_listing extends Theme {
 		$mouseover .= 'return true;"';
 	// Print a link to record this show
 		echo '<a id="program_'.$program_id_counter.'" href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'"'.$mouseover.'>';
+
+	// Is this program 'Already in Progress'?
+		if ($program->starttime < $GLOBALS['list_starttime'])
+			echo '<img src="themes/Default/img/leftwhite.png" border="0">';
+
+	// Does this program 'Continue'?
+		$right_arrow = '';
+		if ($program->endtime > $GLOBALS['list_endtime'])
+			$right_arrow = '<img src="themes/Default/img/rightwhite.png" border="0">';
+
 		if ($percent > 5) {
 			echo $program->title;
 			if (strlen($program->subtitle) > 0) {
 				if ($percent > 8)
-					echo ":<BR>$program->subtitle";
+					echo ":$right_arrow<BR>$program->subtitle";
 				else
-					echo ': ...';
+					echo ': ...'.$right_arrow;
 			}
+			else
+				echo $right_arrow;
 		}
 		else
-			echo '...';
+			echo '...'.$right_arrow;
 		echo '</a>';
+
 	// Print some additional information for movies
 		if ($program->category_type == 'movie'
 				|| $program->category_type == 'Film') {
@@ -301,6 +314,7 @@ class Theme_program_listing extends Theme {
 	// Finally, print some other information
 		if ($program->previouslyshown)
 			echo "<BR><i>(Rerun)</i>";
+
 	?></td>
 <?php
 	}
