@@ -7,7 +7,7 @@
 /* a class for the the cells containing recored programs in recorded_programs.php */
 .recorded {    background-color: #506080; }
 
-/* a class for the the cells containing recored programs in recorded_programs.php */
+/* a class for the the cells containing recorded programs in recorded_programs.php */
 .scheduled   { background-color: #506090; }
 .conflict    { background-color: #806050; }
 .duplicate   { background-color: #304050; }
@@ -24,6 +24,29 @@
 .record_suppressed        { border: 2px dotted #60B0B0; }
 .record_override_suppress { border: 2px dotted #D03060; }
 .record_override_record   { border: 2px solid  #00FF90; }
+
+/* There should be exactly one class in the next section corresponding to
+    each possible value of RecStatus_Types as defined in
+    includes/programs.php */
+.rec_class {
+    background:  transparent;
+    text-align:  center;
+    font-weight: bold;
+}
+.recording                { color: #00F000; }
+.willRecord               { color: #00F000; }
+.previousRecording        { color: #90B0A0; }
+.currentRecording         { color: #00F000; }
+.repeat                   { color: #90B0A0; }
+.earlierShowing           { color: #90B0A0; }
+.laterShowing             { color: #90B0A0; }
+.tooManyRecordings        { color: #60B0B0; }
+.cancelled                { color: #60B0B0; }
+.conflicting              { color: #FF0000; }
+.lowDiskSpace             { color: #60B0B0; }
+.tunerBusy                { color: #60B0B0; }
+.manualOverride           { color: #D03060; }
+.overlap                  { color: #FF0000; }
 
 .cat_Action         { background-color: #906020; }
 .cat_Adult          { background-color: #702020; }

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2005.02.28 (xris)
+    scheduled_recordings.php                 Last Updated: 2005.03.21 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -67,51 +67,128 @@ class Theme_scheduled_recordings extends Theme {
     $prev_group = '';
     $cur_group  = '';
     foreach ($shows as $show) {
+    // Set the class to be used to display the recording status character
+        $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));
     // Reset the command variable to a default URL
         $commands = array();
         $urlstr = 'chanid='.$show->chanid.'&starttime='.$show->starttime;
-    // Which class does this show fall into?
-        if ($show->recstatus == 'LowDiskSpace') {
-            $class = 'deactivated';
-            $commands[] = 'Not Enough Disk Space';
+    // Set the recording status character, class and any applicable commands for each show
+        switch ($show->recstatus) {
+            case 'Recording':
+            case 'WillRecord':
+                $rec_char   = $show->cardid;
+                $class      = 'scheduled';
+                $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+            // Offer to suppress any recordings that have enough info to do so.
+                if (preg_match('/\\S/', $show->title) &&
+                        preg_match('/\\S/', $show->subtitle) &&
+                        preg_match('/\\S/', $show->description)) {
+                    $commands[] = '<a href="scheduled_recordings.php?'
+                                  .'never_record=yes&'.$urlstr.'">'
+                                  .t('Never Record').'</a>';
+                }
+                break;
+            case 'PreviousRecording':
+                $rec_char   = 'P';
+                $class      = 'duplicate';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Record This').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?'
+                              .'forget_old=yes&'.$urlstr.'">'
+                              .t('Forget Old').'</a>';
+                break;
+            case 'CurrentRecording':
+                $rec_char   = 'R';
+                $class      = 'duplicate';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Record This').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?'
+                              .'forget_old=yes&'.$urlstr.'">'
+                              .t('Forget Old').'</a>';
+                break;
+            case 'Repeat':
+                $rec_char = 'r';
+                $class    = 'duplicate';
+                break;
+            case 'EarlierShowing':
+                $rec_char = 'E';
+                $class    = 'deactivated';
+                break;
+            case 'TooManyRecordings':
+                $rec_char = 'T';
+                $class    = 'deactivated';
+                break;
+            case 'Cancelled':
+                $rec_char   = 'N';
+                $class      = 'deactivated';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Activate').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                              .$urlstr.'">'.t('Default').'</a>';
+                break;
+            case 'Conflict':
+                $rec_char = 'C';
+            // We normally use the recstatus value as the name of the class
+            //  used when displaying the recording status character.
+            // However, there is already a class named 'conflict' so we
+            //  need to modify this specific recstatus to avoid a conflict.
+                $rec_class  = "conflicting";
+                $class      = 'conflict';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Record This').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                break;
+            case 'LaterShowing':
+                $rec_char = 'L';
+                $class    = 'deactivated';
+                break;
+            case 'LowDiskSpace':
+                $rec_char   = 'K';
+                $class      = 'deactivated';
+                $commands[] = 'Not Enough Disk Space';
+                break;
+            case 'TunerBusy':
+                $rec_char   = 'B';
+                $class      = 'deactivated';
+                $commands[] = 'Tuner is busy';
+                break;
+            case 'Overlap':
+                $rec_char   = 'X';
+                $class      = 'conflict';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Record This').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                break;
+            case 'ManualOverride':
+                $rec_char   = 'X';
+                $class      = 'deactivated';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Activate').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                              .$urlstr.'">'.t('Default').'</a>';
+                break;
+            case 'ForcedRecording':
+                $rec_char   = 'F';
+                $class      = 'scheduled';
+                $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                              .$urlstr.'">'.t('Default').'</a>';
+                break;
+            default:
+                $rec_char   = '&nbsp;';
+                $rec_class  = '';
+                $class      = 'deactivated';
+                $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                              .$urlstr.'">'.t('Activate').'</a>';
+                $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                break;
         }
-        elseif ($show->recstatus == 'TunerBusy') {
-            $class = 'deactivated';
-            $commands[] = 'Tuner is busy';
-        }
-        if ($show->recstatus == 'PreviousRecording' || $show->recstatus == 'CurrentRecording') {
-            $class = 'duplicate';
-            $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'.t('Record This').'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?forget_old=yes&'.$urlstr.'">'.t('Forget Old').'</a>';
-        }
-        elseif ($show->recstatus == 'Conflict' || $show->recstatus == 'Overlap') {
-            $class   = 'conflict';
-            $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'.t('Record This').'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
-        }
-        elseif ($show->recstatus == 'WillRecord') {
-            $class   = 'scheduled';
-            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
-        // Offer to suppress any recordings that have enough info to do so.
-            if (preg_match('/\\S/', $show->title)
-                    && (preg_match('/\\S/', $show->programid.$show->subtitle.$show->description)))
-                $commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'.t('Never Record').'</a>';
-        }
-        elseif ($show->recstatus == 'ForceRecord') {
-            $class = 'scheduled';
-            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?default=yes&'.$urlstr.'">'.t('Default').'</a>';
-        }
-        elseif ($show->recstatus == 'ManualOverride' || $show->recstatus == 'Cancelled') {
-            $class   = 'deactivated';
-            $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'.t('Activate').'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?default=yes&'.$urlstr.'">'.t('Default').'</a>';
-        }
-        else {
-            $class   = 'deactivated';
-            $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'.t('Activate').'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
-        }
+
     // A program id counter for popup info
         if (show_popup_info) {
             static $program_id_counter = 0;
@@ -134,7 +211,7 @@ class Theme_scheduled_recordings extends Theme {
 
     // Print the content
 ?><tr class="<?php echo $class?>">
-<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
+<?php if (!empty($group_field)) echo "    <td class=\"rec_class $rec_class\">$rec_char</td>\n"; ?>
     <td class="<?php echo $show->class?>"><?php
     // Window status text, for the mouseover
         $wstatus = strftime($_SESSION['time_format'], $show->starttime).' - '.strftime($_SESSION['time_format'], $show->endtime).' -- '

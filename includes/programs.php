@@ -273,7 +273,7 @@ class Program {
             #$endtime           = $data[12];  # Extracted a few lines earlier
             $this->hostname     = $data[16];
             #$this->sourceid    = $data[17];
-            #$this->cardid      = $data[18];
+            $this->cardid      = $data[18];
             #$this->inputid     = $data[19];
             $this->recpriority  = $data[20];
             $this->recstatus    = $data[21];
