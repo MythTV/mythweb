@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2004.07.06 (xris)
+    init.php                                 Last Updated: 2004.11.25 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -49,20 +49,15 @@
     session_set_cookie_params(60 * 60 * 24 * 355, '/', server_domain);
     session_start();
 
-// Load the language file
-    if ($_POST{'language'})
-        $_SESSION{'language'} = $_POST{'language'};
-    if (!file_exists('languages/'.$_SESSION['language'].'.php'))
-        $_SESSION['language'] = default_language;
-    require_once 'languages/'.$_SESSION['language'].'.php';
-
-// Connect to the database, or restore a persistent connection
+// Connect to the database (mysql_pconnect seems to use too many resources, so don't do it)
 //  please note that calling mysql_close is unnecessary - see php documentation for details
-    #$dbh = mysql_pconnect(db_host, db_username, db_password)
     $dbh = mysql_connect(db_host, db_username, db_password)
         or trigger_error("Can't connect to the database server.  Did you use the correct settings in config/conf.php?", FATAL);
     mysql_select_db(db_dbname)
         or trigger_error("Can't access the database file:  " . mysql_error() . " [#" . mysql_errno() . "]", FATAL);
+
+// Load the translation routines
+    require_once 'includes/translate.php';
 
 // Include a few useful functions
     require_once "includes/utils.php";

@@ -5,15 +5,8 @@
     utility routines used throughout mythweb
 \***                                                                        ***/
 
-    //
-    //  This file is part of MythWeb,
-    //  a php-based interface into MythTV.
-    //
-    //  (c) 2002 by Thor Sigvaldason and Isaac Richards
-    //  MythWeb is distributed under the
-    //  GNU GENERAL PUBLIC LICENSE version 2
-    //  (see http://www.gnu.org)
-    //
+// Make sure we have the translation module loaded
+    require_once('includes/translate.php');
 
 // Set up some constants used by nice_filesystem()
     define('kb', 1024);         // Kilobyte
@@ -45,13 +38,13 @@ function nice_length($length) {
     $mins  = (int) (($length % 3600) / 60);
     $hours = (int) ($length / 3600);
     if ($hours == 1)
-        $ret = '1 '._LANG_HR;
+        $ret = '1 '.t('hr');
     elseif ($hours > 0)
-        $ret = $hours.' '._LANG_HRS;
+        $ret = $hours.' '.t('hrs');
     if ($mins > 0) {
         if ($ret)
             $ret .= ' ';
-        $ret .= $mins.' '._LANG_MINS;
+        $ret .= $mins.' '.t('mins');
     }
     return $ret;
 }
