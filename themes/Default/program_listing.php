@@ -126,9 +126,13 @@ class Theme_program_listing extends Theme {
 		$timeslot_anchor++;
 ?><tr>
 	<td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?php echo $start_time - (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>" name="anchor<?php echo $timeslot_anchor?>"><img src="images/left.gif" border="0" alt="left"></a></td>
-<?php		foreach ($timeslots as $time) { ?>
-	<td class="menu" width="<?php echo (int)(96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo date($_SESSION['time_format'], $time)?></a></td>
-<?php		} ?>
+<?php
+		$count;
+		foreach ($timeslots as $time) {
+			if ($count++ % timeslot_blocks) continue;
+?>
+	<td class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo (int)(timeslot_blocks * 96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo date($_SESSION['time_format'], $time)?></a></td>
+<?php	} ?>
 	<td class="menu" width="2%"><a href="program_listing.php?time=<?php echo $start_time + (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
 </tr><?php
 	}
@@ -238,8 +242,9 @@ class Theme_program_listing extends Theme {
 		}
 
 // then, we just display the info
+		$percent = (int)($timeslots_used * 96 / num_time_slots);
 ?>
-	<td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" valign="top"><?php
+	<td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" width="<?php echo $percent?>%" valign="top"><?php
 		$mouseover = 'onmouseover="window.status=\''.date($_SESSION['time_format'], $program->starttime).' - '.date($_SESSION['time_format'], $program->endtime).' -- '
 					 .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
 					 .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
@@ -252,11 +257,19 @@ class Theme_program_listing extends Theme {
 			$mouseover .= 'hide(\'program_'.$program_id_counter.'\');';
 		$mouseover .= 'return true;"';
 	// Print a link to record this show
-		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'"'
-			 .$mouseover
-			 .'>'.$program->title
-			 .(strlen($program->subtitle) > 0 ? ":<BR>$program->subtitle" : '')
-			 .'</a>';
+		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'"'.$mouseover.'>';
+		if ($percent > 5) {
+			echo $program->title;
+			if (strlen($program->subtitle) > 0) {
+				if ($percent > 8)
+					echo ":<BR>$program->subtitle";
+				else
+					echo ': ...';
+			}
+		}
+		else
+			echo '...';
+		echo '</a>';
 	// Print some additional information for movies
 		if ($program->category_type == 'movie'
 				|| $program->category_type == 'film') {

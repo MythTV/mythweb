@@ -26,10 +26,13 @@
 	define('prefer_channum', true);
 
 // The number of time slots to display in the channel listing
-	define('num_time_slots', 12);
+	define('num_time_slots', 36);
+
+// How many timeslots to block together in headers and listing "now" rounds
+	define('timeslot_blocks', 3);
 
 // the size of timeslots, in seconds (1800 = 30 minutes)
-	define('timeslot_size', 900);
+	define('timeslot_size', 300);
 
 // How many channels to skip between re-showing the timeslot bar
 	define('timeslotbar_skip', 20);

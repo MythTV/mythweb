@@ -22,7 +22,7 @@
 		$list_starttime = time();
 
 // Round *back* to the nearest timeslot size
-	$list_starttime -= $list_starttime % timeslot_size;
+	$list_starttime -= $list_starttime % (timeslot_size * timeslot_blocks);
 
 // Setup the time slots
 	$list_endtime = $list_starttime;
