@@ -1,6 +1,6 @@
-<?
+<?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2003.10.22 (xris)
+    program_listing.php                      Last Updated: 2003.11.19 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -23,7 +23,7 @@ class Theme_program_listing extends Theme {
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-	<td width="50%" align="center">Currently Browsing:  <?=date('D, F j, Y, g:i A', $start_time)?></td>
+	<td width="50%" align="center">Currently Browsing:  <?php echo date('D, F j, Y, g:i A', $start_time)?></td>
 	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
 		<form class="form" action="program_listing.php" method="get">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
@@ -31,7 +31,7 @@ class Theme_program_listing extends Theme {
 
 			<td align="center">Jump&nbsp;to:&nbsp;&nbsp;</td>
 			<td align="right">Hour:&nbsp;</td>
-			<td><select name="hour" style="text-align: right"><?
+			<td><select name="hour" style="text-align: right"><?php
 				for ($h=0;$h<24;$h++) {
 					echo "<option value=\"$h\"";
 					if ($h == date('H', $start_time))
@@ -40,7 +40,7 @@ class Theme_program_listing extends Theme {
 				}
 				?></select></td>
 			<td align="right">Date:&nbsp;</td>
-			<td><select name="date"><?
+			<td><select name="date"><?php
 			// Find out how many days into the future we should bother checking
 				$result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
 					or trigger_error('SQL Error: '.mysql_error(), FATAL);
@@ -67,7 +67,7 @@ class Theme_program_listing extends Theme {
 
 <p>
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
-<?
+<?php
 	}
 
 
@@ -109,7 +109,7 @@ class Theme_program_listing extends Theme {
 ?>
 </table>
 </p>
-<?
+<?php
 	// Print the main page's footer
 		parent::print_footer();
 	}
@@ -125,12 +125,12 @@ class Theme_program_listing extends Theme {
 #		$timeslot_anchor = 0;
 		$timeslot_anchor++;
 ?><tr>
-	<td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?=$start_time - (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>" name="anchor<?=$timeslot_anchor?>"><img src="images/left.gif" border="0" alt="left"></a></td>
-<?		foreach ($timeslots as $time) { ?>
-	<td class="menu" width="<?=(int)(96 / num_time_slots)?>%" align="center"><?php echo date($_SESSION['time_format'], $time)?></td>
-<?		} ?>
-	<td class="menu" width="2%"><a href="program_listing.php?time=<?=$start_time + (timeslot_size * num_time_slots)?>#anchor<?=$timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
-</tr><?
+	<td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?php echo $start_time - (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>" name="anchor<?php echo $timeslot_anchor?>"><img src="images/left.gif" border="0" alt="left"></a></td>
+<?php		foreach ($timeslots as $time) { ?>
+	<td class="menu" width="<?php echo (int)(96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo date($_SESSION['time_format'], $time)?></a></td>
+<?php		} ?>
+	<td class="menu" width="2%"><a href="program_listing.php?time=<?php echo $start_time + (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
+</tr><?php
 	}
 
 	/*
@@ -140,40 +140,40 @@ class Theme_program_listing extends Theme {
 	function print_channel($channel, $start_time, $end_time) {
 ?>
 <tr>
-	<td align="center" class="menu" nowrap><?
+	<td align="center" class="menu" nowrap><?php
 	if (show_channel_icons === true) {
 		?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
 		<tr>
-			<td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?=$channel->chanid?>&time=<?=$start_time?>" class="huge"
-											onmouseover="window.status='Details for: <?=$channel->channum?> <?=$channel->callsign?>';return true"
-											onmouseout="window.status='';return true"><?=prefer_channum ? $channel->channum : $channel->callsign?></a>&nbsp;</td>
-			<td width="50%" align="right"><?
+			<td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>" class="huge"
+											onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
+											onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->channum : $channel->callsign?></a>&nbsp;</td>
+			<td width="50%" align="right"><?php
 				if (is_file($channel->icon)) {
-					?><a href="channel_detail.php?chanid=<?=$channel->chanid?>&time=<?=$start_time?>"
-						onmouseover="window.status='Details for: <?=$channel->channum?> <?=$channel->callsign?>';return true"
-						onmouseout="window.status='';return true"><img src="<?=$channel->icon?>" height="30" width="30"></a><?
+					?><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
+						onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
+						onmouseout="window.status='';return true"><img src="<?php echo $channel->icon?>" height="30" width="30"></a><?php
 				} else {
 					echo '&nbsp;';
 				}?></td>
 		</tr><tr>
-			<td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?=$channel->chanid?>&time=<?=$start_time?>"
-											onmouseover="window.status='Details for: <?=$channel->channum?> <?=$channel->callsign?>';return true"
-											onmouseout="window.status='';return true"><?=prefer_channum ? $channel->callsign : $channel->channum?></a></td>
+			<td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
+											onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
+											onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->callsign : $channel->channum?></a></td>
 		</tr>
-		</table><?
+		</table><?php
 	} else {
-		?><a href="channel_detail.php?chanid=<?=$channel->chanid?>" class="huge"
-			onmouseover="window.status='Details for: <?=$channel->channum?> <?=$channel->callsign?>';return true"
-			onmouseout="window.status='';return true"><?=prefer_channum ? $channel->channum : $channel->callsign?><BR>
-		<?=prefer_channum ? $channel->callsign : $channel->channum?></a><?
+		?><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>" class="huge"
+			onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
+			onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->channum : $channel->callsign?><BR>
+		<?php echo prefer_channum ? $channel->callsign : $channel->channum?></a><?php
 	}
 		?></td>
-<?
+<?php
 // Let the channel object figure out how to display its programs
 	$channel->display_programs($start_time, $end_time);
 ?>
 	<td>&nbsp;</td>
-</tr><?
+</tr><?php
 	}
 
 	/*
@@ -239,7 +239,7 @@ class Theme_program_listing extends Theme {
 
 // then, we just display the info
 ?>
-	<td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" valign="top"><?
+	<td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" valign="top"><?php
 		$mouseover = 'onmouseover="window.status=\''.date($_SESSION['time_format'], $program->starttime).' - '.date($_SESSION['time_format'], $program->endtime).' -- '
 					 .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
 					 .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
@@ -279,7 +279,7 @@ class Theme_program_listing extends Theme {
 		if ($program->previouslyshown)
 			echo "<BR><i>(Rerun)</i>";
 	?></td>
-<?
+<?php
 	}
 
 	/*
