@@ -11,7 +11,12 @@ class Theme_video extends Theme {
         parent::print_header("MythWeb - Videos");
     // Print the page contents
         global $All_Shows;
+        global $Category_String;
+        global $Total_Categories;
+        global $Filter_Category;
         global $videodir;
+        global $sortby;
+        global $reverse;
 ?>
 
 <SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT">
@@ -24,6 +29,31 @@ function newWindow(newContent)
 
  //Stop hiding script from old browsers -->
  </SCRIPT>
+<table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<tr class="menu">
+<td>
+<?php
+    echo "<form action=\"video.php\" method=\"GET\">\n";
+    echo "Display: ";
+    echo "<select name=\"category\">\n";
+    echo "<option value=-1 ";
+    if( $Filter_Category == -1)
+        echo "selected";
+    echo ">All</option>\n";
+    for($i=0;$i<=$Total_Categories;$i++) {
+        echo "<option value=$i ";
+        if( $i == $Filter_Category )
+            echo "selected";
+        echo ">"; 
+        echo "$Category_String[$i]</option>\n";
+    }
+    echo "</select>\n";
+    echo "<input TYPE=\"SUBMIT\" VALUE=\"Update\" >";
+    echo "</form>\n";
+?>
+</td>
+</tr>
+</table>
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
@@ -33,6 +63,7 @@ function newWindow(newContent)
     <td><a href="video.php?sortby=title">title</a></td>
     <td><a href="video.php?sortby=director">director</a></td>
     <td>plot</td>
+    <td><a href="video.php?sortby=category">category</a></td>
     <td>rating</a></td>
     <td>IMDB</a></td>
     <td><a href="video.php?sortby=length">length</a></td>
@@ -52,6 +83,7 @@ function newWindow(newContent)
     <td><?php echo '<a href="'.$show->url.'">'.htmlentities($show->title, ENT_COMPAT, 'UTF-8').'</a>'?></td>
     <td><?php echo $show->director?></td>
     <td><?php echo $show->plot?></td>
+    <td><?php echo $Category_String[$show->category]?></td>
     <td><?php echo $show->rating?></td>
     <td><a href="http://www.imdb.com/Title?<?php echo $show->inetref?>"><?php echo $show->inetref?></a></td>
     <td nowrap><?php echo nice_length($show->length * 60) ?></td>
@@ -72,7 +104,26 @@ function newWindow(newContent)
     }
 
     function print_menu_content() {
-        echo 'MythVideo';
+        if($_GET['sortby'])
+            $new_sortby = $_GET['sortby'];
+        if ( $_GET['reverse'] == 1 )  {
+            $new_reverse = 0;
+        } else  {
+            $new_reverse = 1;
+        }
+        if ( $_GET['category'] ) 
+            $new_cat = $_GET['category'];    
+       
+        echo 'MythVideo:';
+        echo "&nbsp; &nbsp;";
+        echo "<a href=\"video.php?reverse=$new_reverse";
+        if($new_sortby)
+            echo "&sortby=$new_sortby";
+        if($new_cat)
+            echo "&category=$new_cat";
+        echo "\">";
+        echo "Reverse Order";
+        echo "</a>";
     }
 }
 

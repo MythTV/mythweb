@@ -162,6 +162,11 @@
         return strcasecmp($a->director, $b->director);
     }
 
+    function by_category(&$a, &$b) {
+        if ($a->category == $b->category) return 0;
+        return ($a->category > $b->category) ? 1 : -1;
+    }
+
     function by_userrating(&$a, &$b) {
         return strcasecmp($a->userrating, $b->userrating);
     }

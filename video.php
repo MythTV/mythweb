@@ -19,11 +19,32 @@
    list($videodir) = mysql_fetch_row($result);
    mysql_free_result($result);
 
+// Get the video categories on the system
+   $Total_Categories = 0;
+   $result = mysql_query('SELECT * FROM videocategory')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+   while( $cat_data = mysql_fetch_assoc($result) )  {
+        $Category_String[$cat_data["intid"]] = $cat_data["category"];
+        $Total_Categories++;
+   }
+   $Category_String[0] = "Uncategorized";
+   mysql_free_result($result);
+
 // Parse the list
+// Filter_Category of -1 means All, 0 mean uncategorized
     $Total_Programs = 0;
     $All_Shows      = array();
+    if( isset($_GET['category']) ) {
+        $Filter_Category = $_GET['category'];
+        if($Filter_Category != -1)
+            $where = "WHERE category=$Filter_Category";
+    }
+    else {
+        $Filter_Category = -1;
+    }
     while (true) {
-        $result = mysql_query('SELECT * FROM videometadata ORDER BY title')
+        $query = "SELECT * FROM videometadata " . $where . " ORDER BY title";
+        $result = mysql_query($query)
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
         while ($video_data = mysql_fetch_assoc($result))    {
         // Create a new object
@@ -62,6 +83,7 @@ class Video {
 
     var $intid;
     var $plot;
+    var $category;
     var $rating;    // this should be a reference to the $Channel array value
 
     var $title;
@@ -79,6 +101,7 @@ class Video {
     function Video($program_data) {
         $this->intid           = $program_data['intid'];
         $this->plot            = $program_data['plot'];
+        $this->category        = $program_data['category'];
         $this->rating          = $program_data['rating'];
         $this->title           = $program_data['title'];
         $this->director        = $program_data['director'];
