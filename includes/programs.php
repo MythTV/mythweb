@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.05.30 (xris)
+    programs.php                             Last Updated: 2004.06.02 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -345,7 +345,7 @@ class Program {
             $this->description     = $program_data['description'];
             $this->category        = $program_data['category']      ? $program_data['category']       : _LANG_UNKNOWN;
             $this->category_type   = $program_data['category_type'] ? $program_data['category_type'] : 'Unknown';
-            $this->airdate         = $program_data['airdate'];
+            $this->airdate         = _or($program_data['originalairdate'], $program_data['airdate']);
             $this->stars           = $program_data['stars'];
             $this->previouslyshown = $program_data['previouslyshown'];
             $this->starstring      = $program_data['starstring'];
