@@ -44,6 +44,9 @@
     border-bottom:      1px solid #000;
     border-left:        1px solid #6a8;
 }
+#sections a.current_section:hover {
+    background-color:   #275;
+}
 
 #tv_link {
 }
