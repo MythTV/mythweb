@@ -1,7 +1,7 @@
-AuthType Basic
-AuthName "MythTV"
-AuthUserFile /var/www/htpasswd
-Require valid-user
+#AuthType Basic
+#AuthName "MythTV"
+#AuthUserFile /var/www/htpasswd
+#Require valid-user
 
 # Todo:
 # set up different auth for:
