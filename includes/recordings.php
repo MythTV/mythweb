@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recordings.php                           Last Updated: 2004.06.14 (xris)
+    recordings.php                           Last Updated: 2004.09.08 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -100,7 +100,7 @@ class Recording {
 
     function Recording($recording_data) {
 
-        if (isset($recording_data['recordid'])) {
+        if (is_array($recording_data) && isset($recording_data['recordid'])) {
     // SQL data
             $this->recordid    = $recording_data['recordid'];
             $this->type        = $recording_data['type'];

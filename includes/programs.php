@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.06.07 (xris)
+    programs.php                             Last Updated: 2004.09.08 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -302,8 +302,11 @@ class Program {
         // Ah, a scheduled recording - let's load more information about it, to be parsed in below
             elseif ($this->chanid) {
                 unset($this->filename);
-            // Redefine this object - we won't need any filesize information because this isn't a recorded program
-                $this = load_one_program($this->starttime, $this->chanid);
+            // Kludge to avoid redefining the object, which doesn't work in php5
+                $tmp = load_one_program($this->starttime, $this->chanid);
+                foreach (get_object_vars($tmp) as $key => $value) {
+                    $this->$key = $value;
+                }
             }
         // Load the remaining info we got from mythbackend
             $this->title       = $program_data[0];                  # program name/title

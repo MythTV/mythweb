@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythbackend.php                          Last Updated: 2004.05.10 (xris)
+    mythbackend.php                          Last Updated: 2004.09.08 (xris)
 
     Routines that allow mythweb to communicate with mythbackend
 \***                                                                        ***/
@@ -308,6 +308,8 @@
     1.0 cvs changed the format to:  2003-06-28T06:30:00
 */
     function myth2unixtime($mythtime) {
+        if (strlen($mythtime) < 1)
+            return '';
         return strtotime(str_replace('T', ' ', $mythtime));
     }
 
