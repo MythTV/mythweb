@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2003.08.20 (irish)
+    sorting.php                              Last Updated: 2004.06.24 (irish)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -19,9 +19,9 @@
                .constant('_LANG_'.strtoupper($field))
                .'</a>';
         if ($status == 1)
-            $link = "<span class=\"bold\">$link</span>";
+            $link .= ' <span class="large">&darr;</span>';
         elseif ($status == -1)
-            $link = "<span class=\"italic\">$link</span>";
+            $link .= ' <span class="large">&uarr;</span>';
         return $link;
     }
 /*
