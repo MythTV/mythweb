@@ -28,7 +28,7 @@
     define('server_domain', $_SERVER['SERVER_NAME'] ? $_SERVER['SERVER_NAME'] : $_SERVER['HTTP_HOST']);
 
 // Email address to which php and database errors are mailed to
-    define('Error_Email', 'php_errors@'.server_domain);
+    define('Error_Email', 'php_errors@'.preg_match('/([\w\-]+\.[\w\-]+)$/', server_domain));
 
 // Path to the image cache directory
     define('image_cache', 'image_cache');
