@@ -11,6 +11,14 @@
 
     $WeatherSites = array();
 
+    $result = mysql_query('SELECT * FROM settings WHERE value="SIUnits"')
+	or trigger_error('SQL Error: '.mysql_error(), FATAL);
+
+    $row = mysql_fetch_assoc($result);
+    $use_metric = $row["data"];
+
+    mysql_free_result($result);
+
     $result = mysql_query('SELECT * FROM settings WHERE value="locale"')
 	or trigger_error('SQL Error: '.mysql_error(), FATAL);
     while ($weather_site = mysql_fetch_assoc($result))    {
@@ -19,6 +27,7 @@
 	    continue;
 	}
 
+	$weather_site["use_metric"] = $use_metric;
 	$WeatherSites[$weather_site["data"]] = new WeatherSite($weather_site);
     }
     mysql_free_result($result);
@@ -44,6 +53,7 @@ class WeatherSite {
     var $country;
     var $region;
 
+    var $use_metric;
     var $Temperature;
     var $CIcon;
     var $ConditionImage;
@@ -65,6 +75,7 @@ class WeatherSite {
     function WeatherSite($site) {
         $this->acid	= $site['data'];
         $this->host	= $site['hostname'];
+	$this->use_metric = $site['use_metric'];
 
 	$this->getData();
 	$this->RadarImage = $this->getRadarURL();
@@ -155,6 +166,15 @@ class WeatherSite {
 	    }
 	}
 
+	//Are we using metric or imperial system
+	if($this->use_metric == "Yes") {
+		$this->Temperature = round((5/9) * ($this->Temperature - 32));
+		$this->Real = round((5/9) * ($this->Real - 32));
+		$this->BarometricPressure = round($this->BarometricPressure * 2.54);
+		$this->Visibility = round($this->Visibility * 1.609344);
+		$this->WindSpeed = round($this->WindSpeed * 1.609344);
+	}
+
 	if(strlen($this->ConText) > 0) {
 	    $this->ConditionText = $this->ConText;
 	    $this->ConditionImage = getImageFromName($this->ConditionText);
@@ -193,13 +213,19 @@ class WeatherSite {
 
 	$data = explode("|", $data);
 	for($i = 0;$i<5;$i++) {
-	    $forecast = new Forecast($data[5 + $i]);
+	    $forecast = new Forecast($data[5 + $i],$data[$i]);
 	    $forecast->dayofweek = $data[$i];
 	    list($forecast->DescImage,$forecast->DescText) = getImageAndDescFromId($data[15 + $i]);
 	    $forecast->DescImage = (strlen($forecast->DescImage) > 0) ? $forecast->DescImage : "unknown.png";
 	    $forecast->DescText = (strlen($forecast->DescText) > 0) ? $forecast->DescText : _LANG_UNKNOWN . " (" . $data[15+$i] . ")";
-	    $forecast->HighTemperature = $data[20 + $i];
-	    $forecast->LowTemperature = $data[40 + $i];
+	    if($this->use_metric == "Yes") {
+	    	$forecast->HighTemperature = round((5/9) * ($data[20 + $i] - 32));
+	    	$forecast->LowTemperature = round((5/9) * ($data[40 + $i] -32 ));
+	    } else {
+		$forecast->HighTemperature = $data[20 + $i];
+		$forecast->LowTemperature = $data[40 + $i];
+	    }
+
 	    $ret[$i] = $forecast;
 	}
 
@@ -237,8 +263,21 @@ class Forecast {
     var $HighTemperature;
     var $LowTemperature;
 
-    function Forecast($date) {
-	$this->date = $date;
+    function Forecast($date,$real_dayofweek) {
+
+	$month = substr($date,0,2);
+	$day = substr($date,3,2);
+	$year = substr($date,6,4);
+
+	$temp_date = mktime(0,0,0,$month,$day,$year);
+	$date_time_array = getdate( $temp_date );
+	$claimed_dayofweek = $date_time_array['wday'];
+
+	if($real_dayofweek != $claimed_dayofweek)
+
+		$this->date = date("m/d/Y", mktime(0, 0, 0, $month  , $day+1, $year));
+	else
+		$this->date = $date;	
     }
 }
 
