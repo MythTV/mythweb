@@ -1,43 +1,43 @@
 <?php
 /***                                                                        ***\
     settings_keys.php
-	keybindings config
+    keybindings config
 \***                                                                        ***/
 
 // Load the parent class for all settings pages
-	require_once theme_dir.'settings.php';
+    require_once theme_dir.'settings.php';
 
 class Theme_settings_keys extends Theme_settings {
 
-	function print_page() {
-		global $Hosts;
-		global $usehost;
-		global $Jumps;
-		global $Keys;
-		$this->print_header();
+    function print_page() {
+        global $Hosts;
+        global $usehost;
+        global $Jumps;
+        global $Keys;
+        $this->print_header();
 ?>
 <table align="center" width="40%" cellspacing="2" cellpadding="2">
 <tr>
-	<td width="50%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-	<form class="form" action="settings_keys.php" method="get">
-	<table width="100%" border="0" cellspacing="0" cellpadding="2">
-	<tr>
-		<td align="center">Editing&nbsp;keybindings&nbsp;on:&nbsp;&nbsp;</td>
-        	<td><select name="host" style="text-align: right">
+    <td width="50%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
+    <form class="form" action="settings_keys.php" method="get">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2">
+    <tr>
+        <td align="center">Editing&nbsp;keybindings&nbsp;on:&nbsp;&nbsp;</td>
+            <td><select name="host" style="text-align: right">
 <?php
-		foreach ($Hosts as $availhost) {
-			echo '<option value='.$availhost['hostname'];
-			if ($availhost['hostname'] == $usehost)
-				echo ' SELECTED';
-			echo '>'.$availhost['hostname'].'</option>';
-		}
+        foreach ($Hosts as $availhost) {
+            echo '<option value='.$availhost['hostname'];
+            if ($availhost['hostname'] == $usehost)
+                echo ' SELECTED';
+            echo '>'.$availhost['hostname'].'</option>';
+        }
 ?>
-		</select></td>
-		<td align="center"><input type="submit" class="submit" value="Set Host"></td>
-	</tr>
-	</table>
-	</form>
-	</td>
+        </select></td>
+        <td align="center"><input type="submit" class="submit" value="Set Host"></td>
+    </tr>
+    </table>
+    </form>
+    </td>
 </tr>
 </table>
 <p><p>
@@ -56,21 +56,21 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 <form class="form" method="post" action="settings_keys.php">
 <table width = "100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu large" align="center">
-	<td colspan="3">JumpPoints Editor</td>
+    <td colspan="3">JumpPoints Editor</td>
 </tr>
 <tr class="menu" align="center">
-	<td width="33%">Destination</td>
-	<td width="33%">Description</td>
-	<td width="33%">Key bindings</td>
+    <td width="33%">Destination</td>
+    <td width="33%">Description</td>
+    <td width="33%">Key bindings</td>
 </tr><?php
-		foreach ($Jumps as $jumppoint) {
+        foreach ($Jumps as $jumppoint) {
 ?><tr class="settings" align="center">
-	<td><?php echo htmlentities($jumppoint['destination'])?></td>
-	<td><?php echo htmlentities($jumppoint['description'])?></td>
-	<td><input type="text" size="35" name="jump:<?php echo $jumppoint['destination'].':'.$usehost?>" value="<?php echo str_replace("\\\\", "\\", htmlentities($jumppoint['keylist']))?>"></td>
+    <td><?php echo htmlentities($jumppoint['destination'])?></td>
+    <td><?php echo htmlentities($jumppoint['description'])?></td>
+    <td><input type="text" size="35" name="jump:<?php echo $jumppoint['destination'].':'.$usehost?>" value="<?php echo str_replace("\\\\", "\\", htmlentities($jumppoint['keylist']))?>"></td>
 </tr>
 <?php
-		}
+        }
 ?>
 </table>
 <p><p>
@@ -103,16 +103,16 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 
 </form>
 <?php
-		$this->print_footer();
-    	}
+        $this->print_footer();
+        }
 
     function print_header() {
         parent::print_header("MythWeb - Configure Keybindings");
     }
 
-	function print_footer() {
-		parent::print_footer();
-	}
+    function print_footer() {
+        parent::print_footer();
+    }
 
 }
 ?>

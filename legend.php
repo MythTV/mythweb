@@ -1,4 +1,4 @@
-<?
+<?php
 include "includes/init.php";
 ?>
 <center><font size=2><b>Legend</b></font></center>

@@ -1,19 +1,19 @@
 <?php
 
-	//
-	//	This file is part of MythWeb,
-	//	a php-based interface into MythTV.
-	//
-	//	(c) 2002 by Thor Sigvaldason and Isaac Richards
-	//	MythWeb is distributed under the
-	//	GNU GENERAL PUBLIC LICENSE version 2
-	//	(see http://www.gnu.org)
-	//
+    //
+    //  This file is part of MythWeb,
+    //  a php-based interface into MythTV.
+    //
+    //  (c) 2002 by Thor Sigvaldason and Isaac Richards
+    //  MythWeb is distributed under the
+    //  GNU GENERAL PUBLIC LICENSE version 2
+    //  (see http://www.gnu.org)
+    //
 
 
 //
-//	Someday, music.php will let us stream
-//	entire playlists to any spot on planet earth
+//  Someday, music.php will let us stream
+//  entire playlists to any spot on planet earth
 //
 require_once "includes/init.php";
 require_once theme_dir."mythmusic.php";
@@ -125,7 +125,7 @@ class mythMusic {
         }
         if($this->result)
             mysql_free_result($this->result);
-        
+
         $music->print_footer();
     }
 
