@@ -64,11 +64,16 @@
 	// Load some information about the master backend
 		$host = get_backend_setting('MasterServerIP');
 		$port = get_backend_setting('MasterServerPort');
+                $host = "127.0.0.1";
 		if (!$host || !$port)
 			trigger_error("MasterServerIP or MasterServerPort not found! You man need to check your settings.php file or re-run setup mythtv's setup", FATAL);
+
 	// Open a connection to the master backend, unless we've already done so
-		if (!$fp)
+		if (!$fp) {
 			$fp = fsockopen($host, $port, $errno, $errstr, 25);
+                        if ($fp)
+                                check_proto_version($fp);
+                }
 	// Connection opened, let's do something
 		if ($fp) {
 		// Build the command string
@@ -100,6 +105,20 @@
 			return $ret;
 		}
 	}
+
+/*
+        check_proto_version:
+        Check that we are speaking a version of the protocol that is compatible with the backend
+*/
+        function check_proto_version($fp) {
+                $our_version = "1";
+                $response = explode($backend_sep,backend_command2("MYTH_PROTO_VERSION " . $our_version, $fp));
+                if ($response[0] == "ACCEPT")
+                        return;
+                if ($response[0] == "REJECT")
+                        trigger_error("Incompatible protocol version (mythweb=" . $our_version . ", backend=" . $response[1] . ")");
+                trigger_error("Unexpected response to MYTH_PROTO_VERSION: " . $response[0]);
+        }
 
 /*
 	get_backend_rows:
