@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2003.08.19 (xris)
+    theme.php                             Last Updated: 2004.03.28 (xris)
 
 	This is the main theme class for the Default MythWeb theme.  It should
 	not be instantiated directly, but will most likely contain methods
@@ -26,7 +26,7 @@ class Theme {
 	<script type="text/javascript" src="<?php echo theme_dir?>init.js"></script>
 </head>
 
-<body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
+<body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4" onclick="hide()">
 
 <p>
 <table width="100%" border="0" cellspacing="2" cellpadding="0">
