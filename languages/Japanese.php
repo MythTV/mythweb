@@ -3,7 +3,7 @@
 define ('_LANG_LANGUAGE_NAME', 'Japanese');
 
 /* Set locale to French */
-setlocale(LC_ALL, 'ja_JP');
+setlocale(LC_ALL, 'ja_JP.utf-8');
 
 /* theme.php */
 define ('_LANG_BACKEND_STATUS',         'バックエンドステータス');
