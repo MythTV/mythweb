@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.01.27 (xris)
+    programs.php                             Last Updated: 2004.03.05 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -233,6 +233,8 @@ class Program {
 
 	var $starttime;
 	var $endtime;
+	var $recstartts;
+	var $recendts;
 	var $length;
 
 	var $channame;
@@ -310,8 +312,8 @@ class Program {
 			#$this->rectype     = $program_data[23];
 			$this->dupin       = $program_data[24];
 			$this->dupmethod   = $program_data[25];
-			#$this->recstartts  = $program_data[26];
-			#$this->recendts    = $program_data[27];
+			$this->recstartts  = myth2unixtime($program_data[26]);					# ACTUAL start time
+			$this->recendts    = myth2unixtime($program_data[27]);					# ACTUAL end time
 			#$this->repeat      = $program_data[28];
 			#$this->progflags  = $program_data[29];
 			#$this->recgroup    = $program_data[30];
@@ -393,7 +395,7 @@ class Program {
 		}
 
 	// Calculate the duration
-		$this->length = $this->endtime - $this->starttime;
+		$this->length = $this->recendts - $this->recstartts;
 
 	// Find out which css category this program falls into
 		if ($this->chanid != "")
