@@ -1,5 +1,5 @@
 /***                                                                        ***\
-    mouseovers.js                            Last Updated: 2005.01.24 (xris)
+    mouseovers.js                            Last Updated: 2005.02.08 (xris)
 
     Functions to show/hide sections of the page (for mouseovers)
 \***                                                                        ***/
@@ -114,9 +114,12 @@
     // Get the name and popup name
         this.id = id;
         if (popup_id && popup_id.length > 0)
-            this.popup_id = popup_id + '_popup';    // In case we're trying to recycle popup id's
+            this.popup_id = popup_id;
         else
-            this.popup_id = id + '_popup';
+            this.popup_id = id;
+    // In case were trying to recycle popup id's, look for a _popup field
+        if (get_element(this.popup_id + '_popup'))
+            this.popup_id = this.popup_id + '_popup';
     // Set the mouseout behavior
         var field = get_element(this.id)
         if (!click)

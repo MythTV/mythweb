@@ -8,7 +8,6 @@
 \***                                                                        ***/
 
 
-#class theme_program_listing extends Theme {
 class Theme_program_listing extends Theme {
 
     /*

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2005.02.06 (xris)
+    theme.php                             Last Updated: 2005.02.08 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -73,14 +73,25 @@ class Theme {
                 </div>
             </div>
         </div>
-        <div id="search">
+        <div id="search" onmouseover="popup('search', 'search_options', 0, 0, false, true); return true;">
             <form action="search.php" method="post">
                 <div id="simple_search">
                     <input id="search_text" type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>">
                     <input id="search_submit" type="submit" class="submit" value="<?php echo t('Search') ?>">
                 </div>
                 <div id="search_options">
-                    <a href="search.php">[<? echo t('advanced') ?>]</a>
+                    <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>>
+                        <a onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><?php echo t('Title') ?></a>
+                    <input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : ''?>></td>
+                        <a onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><?php echo t('Subtitle') ?></a></td>
+                    <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : ''?>></td>
+                        <a onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><?php echo t('Description') ?></a></td>
+                    <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : ''?>></td>
+                        <a onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><?php echo t('Category') ?></a></td>
+                    <input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : ''?>></td>
+                        <a onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><?php echo t('Category Type') ?></a></td>
+                    <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : ''?>></td>
+                        <a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a></td>
                 </div>
             </form>
         </div>

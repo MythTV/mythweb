@@ -109,11 +109,20 @@
     padding-top: 1px;
 }
 #search_options {
-    position:         absolute;
-    visibility:       hidden;
-    top:              0px;
-    left:             0px;
+    position:           absolute;
+    visibility:         hidden;
+    top:                0px;
+    left:               0px;
+    margin:             -1px 0px 0px 4px;
+    background-color:   #247;
+    border-right:       1px solid #79c;
+    border-bottom:      1px solid #68b;
+    border-left:        1px solid #002;
+    -moz-border-radius: 0px 0px 8px 8px;
+    padding:            10px;
+    font-size:          13px;
 }
+
 #search_text {
     height:       22px;
     width:        150px;
