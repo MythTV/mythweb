@@ -13,6 +13,17 @@ class Theme_video extends Theme {
         global $All_Shows;
 ?>
 
+<SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT">
+<!--Hide script from old browsers
+
+function newWindow(newContent)
+ {
+  winContent = window.open(newContent, 'nextWin', 'right=0, top=20,width=350,height=410, toolbar=no,scrollbars=no, resizable=yes')         
+ }
+
+ //Stop hiding script from old browsers -->
+ </SCRIPT>
+
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 <?php   if (show_recorded_pixmap) { ?>
@@ -26,6 +37,7 @@ class Theme_video extends Theme {
     <td><a href="video.php?sortby=length">length</a></td>
     <td><a href="video.php?sortby=userrating">imdb&nbsp;rating</a></td>
     <td><a href="video.php?sortby=year">year</a></td>
+    <td>Edit</a></td>
 </tr><?php
     $row = 0;
     foreach ($All_Shows as $show) {
@@ -33,12 +45,13 @@ class Theme_video extends Theme {
     <td><?php
         if (show_recorded_pixmaps) {
             if (file_exists(video_img_path.'/'.basename($show->coverfile)))
-                echo '<img id="'.$show->filename."\" src=\"".video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
+                echo '<a href="'.videos_url.'/'.rawurlencode(basename($show->filename)).'">.<img id="'.$show->filename."\" src=\"".video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
             else
                 echo '&nbsp;';
         }
     ?></td>
-    <td><?php echo $show->title?></td>
+    <td><?php echo '<a 
+href="'.videos_url.'/'.rawurlencode(basename($show->filename)).'">'."$show->title".'</a>'?></td>
     <td><?php echo $show->director?></td>
     <td><?php echo $show->plot?></td>
     <td><?php echo $show->rating?></td>
@@ -46,6 +59,7 @@ class Theme_video extends Theme {
     <td nowrap><?php echo nice_length(($show->length*60))?></td>
     <td nowrap><?php echo $show->userrating?></td>
     <td nowrap><?php echo $show->year?></td>
+    <td><a href="javascript:newWindow ('video_edit.php?intid=<?php echo $show->intid?>')" >Edit</a> 
 <?php
         $row++;
     }
