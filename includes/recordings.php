@@ -76,6 +76,7 @@ class Recording {
     var $description;
     var $category;
     var $profile;
+    var $recgroup;
     var $recpriority;
     var $autoexpire;
     var $maxepisodes;
@@ -114,6 +115,7 @@ class Recording {
             $this->description = $recording_data['description'];
             $this->category    = $recording_data['category'];
             $this->profile     = $recording_data['profile'];
+            $this->recgroup     = $recording_data['recgroup'];
             $this->recpriority = $recording_data['recpriority'];
             $this->autoexpire  = $recording_data['autoexpire'];
             $this->maxepisodes = $recording_data['maxepisodes'];
@@ -137,6 +139,7 @@ class Recording {
             $this->description = $recording_data->description;
             $this->category    = $recording_data->category;
             $this->profile     = $recording_data->profile;
+            $this->recgroup     = $recording_data->recgroup;
             $this->recpriority = $recording_data->recpriority;
             $this->autoexpire  = $recording_data->autoexpire;
             $this->maxepisodes = $recording_data->maxepisodes;

@@ -60,6 +60,18 @@ class Theme_recorded_programs extends Theme {
         }
         ?>
     </select></td>
+    <td><?php echo _LANG_SHOW_GROUP?>:</td>
+    <td><select name="recgroup" onchange="get_element('program_titles').submit()">
+        <option value=""><?php echo _LANG_ALL_RECORDINGS?></option><?php
+        global $Groups;
+        foreach($Groups as $recgroup => $count) {
+            echo '<option value="'.htmlspecialchars($recgroup).'"';
+            if ($_GET['recgroup'] == $recgroup)
+                echo ' SELECTED';
+            echo '>'.htmlentities($recgroup, ENT_COMPAT, 'UTF-8') . " ($count " . ($count > 1 ? _LANG_RECORDINGS : _LANG_RECORDING) .')</option>';
+        }
+        ?>
+    </select></td>
     <td><noscript><input type="submit" value="<?php echo _LANG_GO?>"></noscript></td>
 </tr>
 </table>
@@ -71,7 +83,7 @@ class Theme_recorded_programs extends Theme {
 $group_field = $_GET['sortby'];
 if ($group_field == "") {
     $group_field = "airdate";
-} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
+} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) ) {
     $group_field = "";
 }
 
@@ -92,6 +104,7 @@ if ($group_field == "") {
         echo "\t<td>".get_sort_link('description')."</td>\n";
 ?>
     <td><?php echo get_sort_link('channum')   ?></td>
+    <td><?php echo get_sort_link('recgroup')   ?></td>
     <td><?php echo get_sort_link('airdate')   ?></td>
     <td><?php echo get_sort_link('length')    ?></td>
     <td><?php echo get_sort_link('file_size') ?></td>
@@ -106,6 +119,8 @@ if ($group_field == "") {
     // Print a dividing row if grouping changes
     if ($group_field == "airdate")
         $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
+    elseif ($group_field == "recgroup")
+        $cur_group = $show->recgroup;
     elseif ($group_field == "channum")
         $cur_group = $show->channel->name;
     elseif ($group_field == "title")
@@ -113,7 +128,7 @@ if ($group_field == "") {
 
     if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="9" class="list_separator"><?php echo $cur_group ?></td>
+    <td colspan="10" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?
     }
 ?><tr class="recorded">
@@ -140,6 +155,7 @@ if ($group_field == "") {
         echo "\t<td>".$show->description."</td>\n";
 ?>
     <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
+    <td nowrap align="center"><?php echo $show->recgroup?></td>
     <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime)?></td>
     <td nowrap><?php echo nice_length($show->length)?></td>
     <td nowrap><?php echo nice_filesize($show->filesize)?></td>
@@ -151,12 +167,12 @@ if ($group_field == "") {
 <?php   }
 
         if ($_SESSION['recorded_descunder'])
-            echo("</tr><tr class=\"recorded\">\n\t<td colspan=\"6\">".$show->description."</td>\n");
+            echo("</tr><tr class=\"recorded\">\n\t<td colspan=\"7\">".$show->description."</td>\n");
         $prev_group = $cur_group;
         $row++;
 ?>
 </tr><tr class="recorded">
-    <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 6 : 7 ?>" align="center">
+    <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 7 : 8 ?>" align="center">
         <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_COMMFLAG?>:&nbsp;
             <b><?php echo $show->has_commflag ? _LANG_YES : _LANG_NO ?></b></span>
         <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_CUTLIST?>:&nbsp;

@@ -153,7 +153,8 @@
                  .' UNIX_TIMESTAMP(program.endtime) AS endtime_unix,'
                  ." CONCAT(repeat($star_char, program.stars * $max_stars), IF((program.stars * $max_stars * 10) % 10, '&frac12;', '')) AS starstring,"
                  .' IFNULL(programrating.system, \'\') AS rater,'
-                 .' IFNULL(programrating.rating, \'\') AS rating'
+                 .' IFNULL(programrating.rating, \'\') AS rating,'
+                 .' record.recgroup'
                  .' FROM program LEFT JOIN programrating USING (chanid, starttime)'
                  .$record_table;
     // Only loading a single channel worth of information
@@ -174,6 +175,10 @@
             $query .= ' AND '.$extra_query;
     // Group, sort and query
         $query .= ' GROUP BY program.chanid, program.starttime ORDER BY program.starttime';
+			
+			// print '<pre>';
+			// print_r($query);
+			// print '</pre>';
         $result = mysql_query($query)
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Load in all of the programs (if any?)
@@ -267,6 +272,7 @@ class Program {
     var $profile        = 0;
     var $max_newest     = 0;
     var $max_episodes   = 0;
+    var $group          = '';
 
     var $has_commflag   = 0;
     var $has_cutlist    = 0;
@@ -340,7 +346,7 @@ class Program {
             $this->recendts    = $program_data[27];                  # ACTUAL end time
             #$this->repeat      = $program_data[28];
             $progflags         = $program_data[29];
-            #$this->recgroup    = $program_data[30];
+            $this->recgroup    = $program_data[30];
             #$this->commfree    = $program_data[31];
             #$this->outputfilters = $program_data[32];
             $this->seriesid     = $program_data[33];
@@ -382,6 +388,7 @@ class Program {
             $this->endoffset       = $program_data['endoffset'];
             $this->seriesid        = $program_data['seriesid'];
             $this->programid       = $program_data['programid'];
+            $this->recgroup        = $program_data['recgroup'];
 
         // Check to see if there is any additional data from mythbackend about this program
             global $Pending_Programs;

@@ -55,7 +55,10 @@
         // Skip programs the user doesn't want to look at, but keep track of their names and how many episodes we have recorded
             $Total_Programs++;
             $Program_Titles[$record[0]]++;
+            $Groups[$record[30]]++;
             if ($_GET['title'] && $_GET['title'] != $record[0])
+                continue;
+            if ($_GET['recgroup'] && $_GET['recgroup'] != $record[30])
                 continue;
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$show->title]))

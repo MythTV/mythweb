@@ -46,7 +46,7 @@ class Theme_recording_schedules extends Theme {
 $group_field = $_GET['sortby'];
 if ($group_field == "title")
     $group_field = "";
-elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "type") || ($group_field == "profile")) )
+elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "type") || ($group_field == "profile") || ($group_field == "recgroup")) )
     $group_field = "";
 
 ?>
@@ -57,6 +57,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
     <td><?php echo get_sort_link('title')   ?></td>
     <td><?php echo get_sort_link('channum') ?></td>
     <td><?php echo get_sort_link('profile') ?></td>
+    <td><?php echo get_sort_link('recgroup') ?></td>
     <td><?php echo get_sort_link('type')    ?></td>
 </tr><?php
     $row = 0;
@@ -146,6 +147,10 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
             <td align=\"right\">"._LANG_PROFILE.":</td>
             <td>$show->profile</td>
         </tr>" : '')
+        .(!empty($show->recgroup) ? "<tr>
+            <td align=\"right\">"._LANG_RECGROUP.":</td>
+            <td>$show->recgroup</td>
+        </tr>" : '')
         .($show->recstatus ? "<tr>
             <td align=\"right\">"._LANG_NOTES.":</td>
             <td>".$GLOBALS['RecStatus_Reasons'][$show->recstatus]."</td>
@@ -163,6 +168,8 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
         $cur_group = ($show->channel->channum ? $show->channel->channum.' - ' : '').$show->channel->name;
     elseif ($group_field == 'profile')
         $cur_group = $show->profile;
+    elseif ($group_field == 'recgroup')
+        $cur_group = $show->recgroup;
 
    $style_class = $show->class;
    if ($show->type == 7)
@@ -172,7 +179,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
 
     if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="5" class="list_separator"><?php echo $cur_group?></td>
+    <td colspan="6" class="list_separator"><?php echo $cur_group?></td>
 </tr><?php
     }
 
@@ -195,6 +202,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
         echo $show->channel->name
         ?></td>
     <td nowrap><?php if($show->type != 8) echo $show->profile; ?></td>
+    <td nowrap><?php if($show->type != 8) echo $show->recgroup; ?></td>
     <td nowrap><?php echo $show->texttype ?></td>
 <?php   foreach ($commands as $command) { ?>
     <td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo $command?></td>

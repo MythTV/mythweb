@@ -144,6 +144,11 @@
         return ($a->starttime > $b->starttime) ? 1 : -1;
     }
 
+    function by_recgroup(&$a, &$b) {
+        if ($a->recgroup == $b->recgroup) return 0;
+        return ($a->recgroup > $b->recgroup) ? 1 : -1;
+    }
+
     function by_length(&$a, &$b) {
         if ($a->length == $b->length) return 0;
         return ($a->length > $b->length) ? 1 : -1;

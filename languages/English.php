@@ -128,10 +128,12 @@ define ('_LANG_TO',                                 'to');
 define ('_LANG_CATEGORY',                           'Category');
 define ('_LANG_ORIG_AIRDATE',                       'Orig. Airdate');
 define ('_LANG_AIRDATE',                            'Airdate');
+define ('_LANG_RECGROUP',                           'Group');
 define ('_LANG_RECORDING_OPTIONS',                  'Recording Options');
 define ('_LANG_DONT_RECORD_THIS_PROGRAM',           'Don\'t record this program.');
 define ('_LANG_CANCEL_THIS_SCHEDULE',               'Cancel this schedule.');
 define ('_LANG_RECORDING_PROFILE',                  'Recording Profile');
+define ('_LANG_RECORDING_GROUP',                    'Recording Group');
 define ('_LANG_RECPRIORITY',                        'Recpriority');
 define ('_LANG_CHECK_FOR_DUPLICATES_IN',            'Check For Duplicates In');
 define ('_LANG_CURRENT_RECORDINGS',                 'Current Recordings');
@@ -190,6 +192,9 @@ define ('_LANG_ANY',              'Any');
 
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS', 'Show recordings');
+define ('_LANG_RECORDING', 'Recording');
+define ('_LANG_RECORDINGS', 'Recordings');
+define ('_LANG_SHOW_GROUP', 'Show Group');
 define ('_LANG_CONFIRM_DELETE',  'Are you sure you want to delete the following show?');
 define ('_LANG_ALL_RECORDINGS',  'All recordings');
 define ('_LANG_GO',              'Go');

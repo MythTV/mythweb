@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                      Last Updated: 2004.04.19 (xris)
+    program_detail.php                      Last Updated: 2004.11.13 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -33,6 +33,8 @@
     if (isset($_POST['save'])) {
         if (isset($_POST['profile']))
             $this_program->profile     = $_POST['profile'];
+        if (isset($_POST['recgroup']))
+            $this_program->recgroup     = $_POST['recgroup'];
         if (isset($_POST['recpriority']))
             $this_program->recpriority = $_POST['recpriority'];
         if (isset($_POST['maxepisodes']))
@@ -99,6 +101,7 @@
                 $result = mysql_query('UPDATE record SET'
                                         .' type='          .escape($this_program->type)
                                         .', profile='      .escape($this_program->profile)
+                                        .', recgroup='      .escape($this_program->recgroup)
                                         .', recpriority='  .escape($this_program->recpriority)
                                         .', autoexpire='   .escape($this_program->autoexpire)
                                         .', maxnewest='    .escape($this_program->maxnewest)
@@ -167,6 +170,22 @@
 
 // Load the recording profiles
     $Profiles = array('Default', 'Live TV', 'High Quality', 'Low Quality');
+
+// Load the recording groups
+    $Groups['Default'] = 'Default';
+    $result = mysql_query('SELECT DISTINCT recgroup FROM record');
+    while (list($group) = mysql_fetch_row($result)) {
+        $group or $group = 'Default';
+        $Groups[$group]  = $group;
+    }
+    mysql_free_result($result);
+
+    $result = mysql_query('SELECT DISTINCT recgroup FROM recorded');
+    while (list($group) = mysql_fetch_row($result)) {
+        $group or $group = 'Default';
+        $Groups[$group]  = $group;
+    }
+    mysql_free_result($result);
 
 // Load the class for this page
     require_once theme_dir.'program_detail.php';

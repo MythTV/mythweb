@@ -255,6 +255,17 @@ class Theme_program_detail extends Theme {
                         }
                         ?></select></td>
                 </tr><tr>
+                    <td nowrap align="right"><?php echo _LANG_RECORDING_GROUP ?>:&nbsp;</td>
+                    <td><select align=right name="recgroup"><?php
+                        global $Groups;
+                        foreach($Groups as $group) {
+                            echo '<option value="'.htmlentities($group).'"';
+                            if ($this_program->recgroup == $group)
+                                echo ' SELECTED';
+                            echo '>'.htmlentities($group).'</option>';
+                        }
+                        ?></select></td>
+                </tr><tr>
                     <td nowrap align="right"><?php echo _LANG_RECPRIORITY?>:&nbsp;</td>
                     <td><select align=right name="recpriority"><?php
                         for($recprioritycount=99;$recprioritycount>=-99;--$recprioritycount) {

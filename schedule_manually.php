@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    schedule_manually.php                      Last Updated: 2004.09.05 (dka)
+    schedule_manually.php                      Last Updated: 2004.11.13 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -167,6 +167,22 @@
 
 // Load the recording profiles
     $Profiles = array('Default', 'Live TV', 'High Quality', 'Low Quality');
+
+// Load the recording groups
+    $Groups['Default'] = 'Default';
+    $result = mysql_query('SELECT DISTINCT recgroup FROM record');
+    while (list($group) = mysql_fetch_row($result)) {
+        $group or $group = 'Default';
+        $Groups[$group]  = $group;
+    }
+    mysql_free_result($result);
+
+    $result = mysql_query('SELECT DISTINCT recgroup FROM recorded');
+    while (list($group) = mysql_fetch_row($result)) {
+        $group or $group = 'Default';
+        $Groups[$group]  = $group;
+    }
+    mysql_free_result($result);
 
 // Load the class for this page
     require_once theme_dir.'schedule_manually.php';
