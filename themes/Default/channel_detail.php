@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    channel_detail.php                        Last Updated: 2004.05.04 (xris)
+    channel_detail.php                        Last Updated: 2005.02.28 (xris)
 
     This file defines a theme class for the channel detail section.
     It must define one method.   documentation will be added someday.
@@ -9,11 +9,10 @@
 
 class Theme_channel_detail extends Theme {
 
-    function print_page() {
+    function print_page(&$this_channel) {
     // Print the main page header
         parent::print_header('MythWeb - Channel Detail');
     // Print out some header info about this channel and time
-        global $this_channel;
 ?>
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
@@ -23,46 +22,30 @@ class Theme_channel_detail extends Theme {
 <?      } ?>
     <td width="66%" valign="center" class="huge">
         Channel <?php echo $this_channel->channum?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time'])?></td>
-    <td class="command command_border_l command_border_t command_border_b command_border_r" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="2">
+    <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
+        <form method="get" id="form" action="channel_detail.php">
+        <table width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
-            <form id="form" action="channel_detail.php?chanid=<?php echo $_GET['chanid'] ?>" method="post">
-
             <td nowrap align="center"><?php echo t('Jump to') ?>:&nbsp;&nbsp;</td>
+            <td><?php channel_select() ?></td>
             <td align="right"><?php echo t('Date') ?>:&nbsp;</td>
-            <td><select name="time" onchange="get_element('form').submit()"><?php
-            // Find out how many days into the future we should bother checking
-            ### wtf is there still code in the display files?!?
-                $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
-                    or trigger_error('SQL Error: '.mysql_error(), FATAL);
-                list($max_days) = mysql_fetch_row($result);
-                mysql_free_result($result);
-            // Print out the list
-                for ($i=-1;$i<=$max_days;$i++) {
-                    $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
-                    $date = date("Ymd", $time);
-                    echo "<option value=\"$time\"";
-                    if ($date == date("Ymd", $_SESSION['list_time'])) echo " selected";
-                    echo ">".strftime($_SESSION['date_channel_jump'] , $time)."</option>";
-                }
-                ?></select></td>
+            <td><?php date_select() ?></td>
             <td align="center"><noscript><input type="submit" class="submit" value="<?php echo t('Jump') ?>"></noscript></td>
-
-            </form>
-
-            </tr>
-            </table></td>
+        </tr>
+        </table>
+        </form>
+        </td>
 </tr>
 </table>
 </p>
 <?php
     // Print the shows for today
-        $this->print_shows();
+        $this->print_shows($this_channel);
     // Print the main page footer
         parent::print_footer();
     }
 
-    function print_shows() {
-        global $this_channel;
+    function print_shows(&$this_channel) {
     // No search was performed, just return
         if (!is_array($this_channel->programs))
             return;
