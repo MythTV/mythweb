@@ -32,7 +32,7 @@ class Theme_recorded_programs extends Theme {
 	function fix_hrefs() {
 		for (i=0;i<<?php echo count($All_Shows)?>;i++) {
 			if (get_element('delete_' + i))
-				get_element('delete_' + i).innerHTML = '<a onclick="confirm_delete('+i+')">Delete</a>';
+				get_element('delete_' + i).href = 'javascript:confirm_delete('+i+')';
 		}
 	}
 
@@ -102,7 +102,7 @@ class Theme_recorded_programs extends Theme {
 	<td width="5%">currently recording</td>
 <?php	} else { ?>
 	<td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-		<span id="delete_<?php echo $row?>"><a href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete</a></span></td>
+		<a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete</a></td>
 <?php	} ?>
 </tr><?
 		$row++;
