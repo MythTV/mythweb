@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2003.10.16 (xris)
+	scheduled_recordings.php                    Last Updated: 2003.12.18 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.
@@ -20,23 +20,23 @@ class Theme_scheduled_recordings extends Theme {
 <script language="JavaScript" type="text/javascript">
 <!--
 	function changevisible() {
-		var prev_visible_class = "blank_row";
+		var prev_visible_class = "no_padding";
 
 		for (var i=1; i < document.getElementById("listings").rows.length; i++) {
-			if (document.getElementById("listings").rows[i].className == "blank_row") {
-				if (prev_visible_class == "blank_row") {
+			if (document.getElementById("listings").rows[i].className == "no_padding") {
+				if (prev_visible_class == "no_padding")
 					document.getElementById("listings").rows[i].style.display = "none";
-				} else {
+				else
 					document.getElementById("listings").rows[i].style.display = "";
-				}
-				prev_visible_class = "blank_row";
-			} else {
+				prev_visible_class = "no_padding";
+			}
+			else {
 	 			if (document.getElementById(document.getElementById("listings").rows[i].className).checked) {
 					document.getElementById("listings").rows[i].style.display = "";
 					prev_visible_class = document.getElementById("listings").rows[i].className;
-	 			} else {
+	 			}
+				else
 					document.getElementById("listings").rows[i].style.display = "none";
-				}
 			}
       	}
 	}
@@ -180,7 +180,7 @@ class Theme_scheduled_recordings extends Theme {
 		$cur_group = $show->title;
 
 	if ( $row > 0 && $cur_group != $prev_group && $group_field != '' ) {
-?><tr>
+?><tr class="no_padding">
 	<td colspan="6" class="no_padding"><img src="<?php echo theme_dir?>img/src.php" height="5" width="1" border="0"></td>
 </tr><?
 	}
