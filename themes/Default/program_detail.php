@@ -63,6 +63,7 @@ class Theme_program_detail extends Theme {
 					echo '(Rerun) ';
 				if (isset($_GET[recordid])) echo "</em>";
  				echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">" . _LANG_SEARCH_IMDB . "</a>)";
+				echo " (<a href=\"http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString=" . urlencode($this_program->title) . "\">" . _LANG_SEARCH_TVTOME . "</a>)";
  				echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">" . _LANG_SEARCH_GOOGLE . "</a>)";
 				?></span></td>
 		</tr><tr>

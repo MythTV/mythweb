@@ -114,6 +114,7 @@ define ('_LANG_JUMP',               'Jump');
 /* program_detail.php */
 define ('_LANG_SEARCH_IMDB',              'Search IMDB');
 define ('_LANG_SEARCH_GOOGLE',            'Search Google');
+define ('_LANG_SEARCH_TVTOME',		  'Search TV Tome');
 define ('_LANG_MINUTES',                  'minutes');
 define ('_LANG_TO',                       'to');
 define ('_LANG_CATEGORY',                 'Category');
