@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    css.php                                  Last Updated: 2003.00.00 (xris)
+    css.php                                  Last Updated: 2005.01.23 (xris)
 
     a test file for viewing the css settings
 \***                                                                        ***/
@@ -19,7 +19,7 @@
 
 	<title>CSS Test</title>
 
-	<script type="text/javascript" src="/js/init.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
 </head>
 
 <table width="400" bgcolor="#003060" border="1" cellpadding="0" cellspacing="0">

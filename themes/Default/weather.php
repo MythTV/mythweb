@@ -21,7 +21,7 @@ class Theme_weather extends Theme {
 				<h2 style="font-weight:normal;padding-left: 2.5em;"><?php echo t('Current Conditions') ?></h2>
 
 				<div style="float: left; width: 220px; text-align: center;margin: 1em;padding: 5px;">
-					<img src="themes/Default/img/weather/<?php echo $site->ConditionImage; ?>" style="behavior: url('<?=theme_dir?>pngbehavior.htc');" />
+					<img src="themes/Default/img/weather/<?php echo $site->ConditionImage; ?>" style="behavior: url('js/pngbehavior.htc');" />
 					<p style="font-size: 150%;margin: 0;padding: .3em 0"><?php echo $site->ConditionText; ?></p>
 					<p style="font-size: 250%;margin: 0;"><?php echo $site->Temperature; ?><span style="vertical-align: text-top;font-size:50%;">O</span><span><?php if($site->use_metric == "YES") echo " C"; else echo " F"; ?></span></p>
 				</div>
@@ -84,7 +84,7 @@ class Theme_weather extends Theme {
 				echo $day;
 
 					?></p>
-					<img src="themes/Default/img/weather/<?php echo $forecast->DescImage; ?>" style="behavior: url('<?=theme_dir?>pngbehavior.htc');" />
+					<img src="themes/Default/img/weather/<?php echo $forecast->DescImage; ?>" style="behavior: url('js/pngbehavior.htc');" />
 					<p style="margin:0;padding: .3em 0 .3em 0;font-size: 125%"><?php echo $forecast->DescText; ?></p>
 					<table style="width: 200px; text-align: center;" border="0">
 						<tr><th><?php echo t('Low') ?></th><th><?php echo t('High') ?></th></tr>

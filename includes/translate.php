@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    translate.php                            Last Updated: 2004.11.30 (xris)
+    translate.php                            Last Updated: 2005.01.23 (xris)
 
     Basic routines that allow for language translation.  Please see
     languages/translations.txt for information about using the translation
@@ -53,7 +53,7 @@
             return '';
     // No translation for this string?
         if (!isset($L[$str]) && !(int)($str) && $str != '0')
-            return "!!NoTrans: $str!!";
+            return htmlspecialchars("!!NoTrans: $str!!");
     // Parse out anything passed in as an array (usually from tn())
         $args = array();
         if (func_num_args() > 1) {
@@ -74,7 +74,7 @@
             $str = $L[$str];
     // Nothing extra to print
         if (count($args) < 1)
-            return $str;
+            return htmlspecialchars($str);
     // Otherwise, parse in replacement strings as needed
         foreach ($args as $i => $arg) {
             $str = preg_replace('/(?<!\\\\)\\$'.($i+1).'/',
@@ -83,7 +83,7 @@
                                );
         }
         $str = preg_replace('/\\\\\\$(?=\d\b)/', '$', $str);        // unescape any \$ sequences
-        return $str;
+        return htmlspecialchars($str);
     }
 
 /*

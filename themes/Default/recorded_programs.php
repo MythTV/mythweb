@@ -45,7 +45,7 @@ class Theme_recorded_programs extends Theme {
 </script>
 
 <p>
-<form class="form" id="program_titles" action="recorded_programs.php" method="get">
+<form id="program_titles" action="recorded_programs.php" method="get">
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
     <td><?php echo t('Show recordings') ?>:</td>

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2005.01.23 (xris)
+    theme.php                             Last Updated: 2005.01.21 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -21,88 +21,65 @@ class Theme {
 
     <title><?php echo $page_title?></title>
 
-    <link rel="stylesheet" href="<?php echo theme_dir?>style.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo theme_dir?>menus.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo theme_dir?>style.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo theme_dir?>header.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo theme_dir?>menus.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo theme_dir?>programming.css" type="text/css" />
 
     <script type="text/javascript" src="js/init.js"></script>
 </head>
 
 <body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
 
-<p>
+<div id="page_header" class="clearfix">
+    <div id="logo_box">
+        <a id="mythtv_logo" href="http://www.mythtv.org">
+        <img src="<?php echo theme_dir?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
+        </a>
+    </div>
+    <div id="sections" class="clearfix">
+        <a id="tv_link" href="program_listing.php" onmouseover="return help_text('<?php echo t('TV functions, including recorded programs.') ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_dir ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
+        <a id="music_link" href="mythmusic.php" onmouseover="return help_text('<?php echo t('MythMusic on the web.') ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_dir ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic" />
+        </a>
+        <a id="video_link" href="video.php" onmouseover="return help_text('<?php echo t('MythVideo on the web.') ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_dir ?>img/video.png" width="48" height="48" class="alpha_png" alt="MythVideo" />
+        </a>
+        <a id="weather_link" href="weather.php" onmouseover="return help_text('<?php echo t('MythWeb Weather.') ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_dir ?>img/weather.png" width="48" height="48" class="alpha_png" alt="MythWeather" />
+        </a>
+        <a id="settings_link" href="settings.php" onmouseover="return help_text('<?php echo t('Edit MythWeb and some MythTV settings.') ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_dir ?>img/settings.png" width="48" height="48" class="alpha_png" alt="<?php echo t('Settings') ?>" />
+        </a>
+    </div>
+    <div id="extra_header">
+        <div id="help_wrapper">
+            <div id="help_box">
+                <div id="help_text_default">
+                <?php echo t('Welcome to MythWeb!') ?>
+                </div>
+                <div id="help_text">
+                </div>
+            </div>
+        </div>
+        <div id="search">
+            <form action="search.php" method="post">
+                <div id="simple_search">
+                    <input id="search_text" type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>">
+                    <input id="search_submit" type="submit" class="submit" value="<?php echo t('Search') ?>">
+                </div>
+                <div id="search_options">
+                    <a href="search.php">[<? echo t('advanced') ?>]</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <table width="100%" border="0" cellspacing="2" cellpadding="0">
 <tr>
-    <td rowspan="2" width="300" align="center" valign="top"><a href="http://www.mythtv.org"><img src="<?php echo theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('<?php echo theme_dir?>pngbehavior.htc');"></a></td>
-    <td colspan="2" align="right"><table border="0" cellspacing="2" cellpadding="2" style="padding-right: 10px">
-        <tr>
-<?
-//  Work in a random quote (anybody got more of these?)
-    $quote = array();
-    switch(rand(1,6)) {
-        case 1:
-            $quote['text']   = "Basically, I want the mythical convergence box that's been talked about for a few years now.";
-            $quote['author'] = "Isaac Richards";
-            break;
-        case 2:
-            $quote['text']   = "Anytime you skip a commercial ... you're actually stealing the programming.";
-            $quote['author'] = "Jamie Kellner (then CEO, Turner Broadcasting)";
-            break;
-        case 3:
-            $quote['text']   = "I say to you that the VCR is to the ... American public as the Boston strangler is to the woman home alone.";
-            $quote['author'] = "Jack Valenti (CEO, MPAA)";
-            break;
-        case 4:
-            $quote['text']   = "I am becoming more and more convinced that intellectual property is on a collision course with personal liberty.";
-            $quote['author'] = "Posted on Slashdot";
-            break;
-        case 5:
-            $quote['text']   = "I think that consumers just won't buy devices that don't let them do what they want to do.";
-            $quote['author'] = "Linus Torvalds";
-            break;
-        case 6:
-            $quote['text']   = "More education is necessary. One form of education is lawsuits.";
-            $quote['author'] = "Jonathan Lamy (Spokesperson, RIAA)";
-            break;
-    }
-?>
-            <td><i><?php echo $quote['text']?></i></td>
-        </tr><tr>
-            <td colspan="2" align="right"><small>- <?php echo $quote['author']?></small></td>
-        </tr>
-        </table></td>
-</tr><tr>
-
-    <td valign="bottom"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr align="center">
-            <td valign="top"><?php echo t('Go To') ?>: &nbsp; &nbsp;
-                <a href="program_listing.php">MythTV</a>
-                &nbsp; | &nbsp;
-                <a href="mythmusic.php">MythMusic</a>
-                &nbsp; | &nbsp;
-                <a href="video.php">MythVideo</a>
-                &nbsp; | &nbsp;
-                <a href="weather.php">MythWeather</a>
-                &nbsp; | &nbsp;
-                <a href="settings.php"><?php echo t('Settings') ?></a></td>
-
-
-
-            <td align="right">
-                <form action="search.php" method="post">
-                <table border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <td><input type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>"></td>
-                    <td>&nbsp; <input type="submit" class="submit" value="<?php echo t('Search') ?>"></td>
-                </tr>
-                <tr>
-                    <td align="right" colspan=3>&nbsp; <a href="search.php">[<? echo t('advanced') ?>]</a></td>
-                <tr>
-                </table>
-                </form></td>
-
-        </tr>
-        </table></td>
-</tr><tr>
 
     <td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
         <tr>
@@ -113,7 +90,7 @@ class Theme {
 
 </tr>
 </table>
-</p>
+
 <?
     }
 
