@@ -67,7 +67,9 @@ $L = array(
     'rectype-long: always'                  => 'Jede Ausstrahlung aufnehmen',
     'rectype-long: channel'                 => 'Jede Ausstrahlung auf diesem Sender aufnehmen',
     'rectype-long: daily'                   => 'Täglich aufnehmen',
+    'rectype-long: finddaily'               => '',
     'rectype-long: findone'                 => 'Finde eine Ausstrahlung',
+    'rectype-long: findweekly'              => '',
     'rectype-long: once'                    => 'Einmalige Aufnahme',
     'rectype-long: weekly'                  => 'Wöchentlich aufnehmen',
     'rectype: always'                       => 'Immer',
@@ -113,8 +115,6 @@ $L = array(
     '$1 TB'  => '',
     '$1 hr'  => '$1 Std.',
     '$1 hrs' => '$1 Std.',
-// patches/For_themes_Default_dir_mythgallery.php
-    'No images available' => '',
 // themes/.../channel_detail.php
     'Episode' => 'Folge',
     'Length'  => 'Dauer',

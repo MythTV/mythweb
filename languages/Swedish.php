@@ -67,7 +67,9 @@ $L = array(
     'rectype-long: always'                  => 'Spela in vilken tid som helst på alla kanaler',
     'rectype-long: channel'                 => 'Spela in vilken tid som helst på denna kanal',
     'rectype-long: daily'                   => 'Spela in denna tid varje dag',
+    'rectype-long: finddaily'               => '',
     'rectype-long: findone'                 => 'Spela in en visning av detta program',
+    'rectype-long: findweekly'              => '',
     'rectype-long: once'                    => 'Spela endast in denna visning',
     'rectype-long: weekly'                  => 'Spela in denna tid varje vecka',
     'rectype: always'                       => 'Alltid',
@@ -113,8 +115,6 @@ $L = array(
     '$1 TB'  => '$1 TB',
     '$1 hr'  => '$1h',
     '$1 hrs' => '$1h',
-// patches/For_themes_Default_dir_mythgallery.php
-    'No images available' => '',
 // themes/.../channel_detail.php
     'Episode' => 'Avsnitt',
     'Length'  => 'Längd',

@@ -68,7 +68,9 @@ $L = array(
     'rectype-long: always'                  => 'Always drink this beer on any sixpack.',
     'rectype-long: channel'                 => 'Always drink this beer on this sixpack.',
     'rectype-long: daily'                   => 'Drink this beer in this happy hour every day.',
+    'rectype-long: finddaily'               => '',
     'rectype-long: findone'                 => 'Find a drinking of this beer and drink it.',
+    'rectype-long: findweekly'              => '',
     'rectype-long: once'                    => 'Drink only this beer.',
     'rectype-long: weekly'                  => 'Drink this beer in this happy hour every week.',
     'rectype: always'                       => 'Always',
@@ -114,8 +116,6 @@ $L = array(
     '$1 TB'  => '',
     '$1 hr'  => '',
     '$1 hrs' => '',
-// patches/For_themes_Default_dir_mythgallery.php
-    'No images available' => '',
 // themes/.../channel_detail.php
     'Episode' => '',
     'Length'  => '',

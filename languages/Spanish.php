@@ -67,7 +67,9 @@ $L = array(
     'rectype-long: always'                  => '',
     'rectype-long: channel'                 => '',
     'rectype-long: daily'                   => '',
+    'rectype-long: finddaily'               => '',
     'rectype-long: findone'                 => '',
+    'rectype-long: findweekly'              => '',
     'rectype-long: once'                    => '',
     'rectype-long: weekly'                  => '',
     'rectype: always'                       => '',
@@ -113,8 +115,6 @@ $L = array(
     '$1 TB'  => '',
     '$1 hr'  => '',
     '$1 hrs' => '',
-// patches/For_themes_Default_dir_mythgallery.php
-    'No images available' => '',
 // themes/.../channel_detail.php
     'Episode' => '',
     'Length'  => '',
