@@ -110,7 +110,8 @@
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
             }
             else {
-                $result = mysql_query('REPLACE INTO record (recordid,type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,category,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
+				$AutoCommercialFlag = get_backend_setting("AutoCommercialFlag");
+                $result = mysql_query('REPLACE INTO record (recordid,type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,category,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid,autocommflag) values ('
                                         .escape($this_program->recordid, true)             .','
                                         .escape($this_program->type)                       .','
                                         .escape($this_program->chanid)                     .','
@@ -134,7 +135,8 @@
                                         .escape($this_program->startoffset)                .','
                                         .escape($this_program->endoffset)                  .','
                                         .escape($this_program->seriesid)                   .','
-                                        .escape($this_program->programid)                  .')')
+                                        .escape($this_program->programid)                  .','
+                                        .escape($AutoCommercialFlag)                       .')')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
                 $recordid = mysql_insert_id();
                 if (mysql_affected_rows() < 1 || $recordid < 1)
