@@ -325,7 +325,8 @@ class Program {
 		$this->length = $this->endtime - $this->starttime;
 
 	// Find out which css category this program falls into
-		$this->category_class();
+		if ($this->chanid != "")
+			$this->category_class();
 
 	}
 

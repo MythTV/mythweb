@@ -136,10 +136,10 @@ class Theme_program_detail extends Theme {
 					<td><select align=right name="profile"><?php
 						global $Profiles;
 						foreach($Profiles as $profile) {
-							echo '<option value="'.htmlentities($profile['id']).'"';
-							if ($this_program->profile == $profile['id'])
+							echo '<option value="'.htmlentities($profile).'"';
+							if ($this_program->profile == $profile)
 								echo ' SELECTED';
-							echo '>'.htmlentities($profile['name']).'</option>';
+							echo '>'.htmlentities($profile).'</option>';
 						}
 						?></select></td>
 				</tr><tr>

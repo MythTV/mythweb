@@ -69,11 +69,7 @@
 	}
 
 // Load the recording profiles
-	$Profiles = array();
-	$profileresult = mysql_query("select id, name from recordingprofiles");
-	while ($row = mysql_fetch_assoc($profileresult)){
-		$Profiles[] = $row;
-	}
+	$Profiles = array("Default", "Live TV", "High Quality", "Low Quality");
 
 // Load the class for this page
 	require_once theme_dir."program_detail.php";
