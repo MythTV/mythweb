@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.05.23 (xris)
+    programs.php                             Last Updated: 2004.05.30 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -475,7 +475,7 @@ class Program {
             $class .= $cache[$category] = 'cat_Animals';
         elseif (preg_match('/'._LANG_CATMATCH_ART_MUSIC.'/', $category))
             $class .= $cache[$category] = 'cat_Art_Music';
-        elseif (preg_match('/'._LANG_CATMATCH_BISINESS.'/', $category))
+        elseif (preg_match('/'._LANG_CATMATCH_BUSINESS.'/', $category))
             $class .= $cache[$category] = 'cat_Business';
         elseif (preg_match('/'._LANG_CATMATCH_CHILDREN.'/', $category))
             $class .= $cache[$category] = 'cat_Children';
