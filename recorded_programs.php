@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.22 (irish)
+	recorded_programs.php                    Last Updated: 2004.03.07 (xris)
 
 	view and manipulate recorded programs.
 \***                                                                        ***/
@@ -24,6 +24,9 @@
 		// No need to scan the rest of the items, so leave early
 			break;
 		}
+	// Redirect back to the page again, but without the query string, so reloads are cleaner
+		header('Location: recorded_programs.php');
+		exit;
 	}
 
 // Queries for a specific program title

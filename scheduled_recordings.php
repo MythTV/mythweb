@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                 Last Updated: 2004.01.27 (xris)
+	scheduled_recordings.php                 Last Updated: 2004.03.07 (xris)
 
 	view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -74,6 +74,10 @@
 
 	// Notify the backend of the changes
 		backend_notify_changes();
+
+	// Redirect back to the page again, but without the query string, so reloads are cleaner
+		header('Location: scheduled_recordings.php');
+		exit;
 	}
 
 

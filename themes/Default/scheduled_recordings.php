@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2004.01.27 (xris)
+	scheduled_recordings.php                    Last Updated: 2004.03.07 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.
@@ -90,22 +90,22 @@ if ($group_field == "") {
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_RECORD_THIS.'</a>';
 			$commands[] = '<a href="scheduled_recordings.php?forget_old=yes&'.$urlstr.'">'._LANG_FORGET_OLD.'</a>';
 		}
-		elseif ($show->conflicting == 1) {
+		elseif ($show->recstatus == 'Conflict') {
 			$class   = 'conflict';
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_RECORD_THIS.'</a>';
 			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		}
-		elseif ($show->recording == 0 || $show->recstatus != 'WillRecord') {
-			$class   = 'deactivated';
-			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
-			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
-		}
-		else {
+		elseif ($show->recstatus == 'WillRecord') {
 			$class   = 'scheduled';
 			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		// Offer to suppress any recordings that have enough info to do so.
 			if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
 				$commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'._LANG_NEVER_RECORD.'</a>';
+		}
+		else {
+			$class   = 'deactivated';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
 		}
 	// Build a popup table for the mouseover of the cell, with extra program information?
 		if (show_popup_info) {

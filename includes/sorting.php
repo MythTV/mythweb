@@ -117,4 +117,10 @@
 		return strcasecmp($a->year, $b->year);
 	}
 
+	function by_profile(&$a, &$b) {
+        if ($a->profile == $b->profile) return 0;
+        return ($a->profile > $b->profile) ? 1 : -1;
+	}
+
+
 ?>

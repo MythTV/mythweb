@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recording_schedules.php                 Last Updated: 2004.02.14 (xris)
+	recording_schedules.php                 Last Updated: 2004.03.07 (xris)
 
 	This file defines a theme class for the all recordings section.
 	It must define one method.   documentation will be added someday.
@@ -44,11 +44,10 @@ class Theme_recording_schedules extends Theme {
 
 <?php
 $group_field = $_GET['sortby'];
-if ($group_field == "") {
+if ($group_field == "")
     $group_field = "title";
-} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "type")) ) {
+elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "type") || ($group_field == "profile")) )
 	$group_field = "";
-}
 
 ?>
 
@@ -57,6 +56,7 @@ if ($group_field == "") {
 	<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
 	<td><a href="recording_schedules.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
 	<td><a href="recording_schedules.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
+	<td><a href="recording_schedules.php?sortby=profile"><?php echo _LANG_PROFILE?></a></td>
 	<td><a href="recording_schedules.php?sortby=type"><?php echo _LANG_TYPE?></a></td>
 </tr><?php
 	$row = 0;
@@ -155,12 +155,14 @@ if ($group_field == "") {
 		}
 
 	// Print a dividing row if grouping changes
-	if ($group_field == "type")
+	if ($group_field == 'type')
 		$cur_group = $show->texttype;
-	elseif ($group_field == "channum")
+	elseif ($group_field == 'channum')
 		$cur_group = $show->channel->name;
-	elseif ($group_field == "title")
+	elseif ($group_field == 'title')
 		$cur_group = $show->title;
+	elseif ($group_field == 'profile')
+		$cur_group = $show->profile;
 
 	if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
@@ -182,6 +184,7 @@ if ($group_field == "") {
 			 .'</a>';
 		?></td>
 	<td><?php echo $show->channel->name?></td>
+	<td nowrap><?php echo $show->profile ?></td>
 	<td nowrap><?php echo $show->texttype ?></td>
 <?php	foreach ($commands as $command) { ?>
 	<td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo $command?></td>
