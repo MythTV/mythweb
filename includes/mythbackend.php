@@ -114,8 +114,8 @@
 		$col = 0;
 		for($i = $offset; $i < count($recs); $i++) {
 			$rows[$row][$col] = $recs[$i];
-		// Every 25 fields (0 through 24) means a new row - please note that this changes between myth versions
-			if ($col == 24) {
+		// Every 27 fields (0 through 26) means a new row - please note that this changes between myth versions
+			if ($col == 26) {
 				$col = 0;
 				$row++;
 			}
@@ -206,7 +206,9 @@
 					  .' '                            .backend_sep	// norecord
 					  .' '                            .backend_sep	// recordid
 					  .' '                            .backend_sep	// rectype
-					  .' '                            .backend_sep;	// recdups
+					  .' '                            .backend_sep 	// recdups
+					  .unix2mythtime($show->starttime).backend_sep  // recstarttime
+					  .unix2mythtime($show->endtime)  .backend_sep;	// recendtime
 				$ret = backend_command($cmd);
 
 				$recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
