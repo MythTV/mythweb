@@ -165,4 +165,3 @@ class Theme_schedule_manually extends Theme {
 }
 
 ?>
-
