@@ -1,0 +1,32 @@
+<vxml version="1.0">
+  <prompt>Welcome to the secure menu</prompt>
+  <form>
+    <field name="menuchoice" type="digits?length=1" modal="true">
+      <prompt>Press 1 to hear the TV guide</prompt>
+      <prompt>Press 2 to hear the scheduled recordings</prompt>
+      <prompt>Press hash to hear this menu again</prompt>
+    </field>
+    <noinput count="1">
+      I didn't hear anything
+      <reprompt/>
+    </noinput>
+    <noinput count="2">
+      I still didn't hear anything. Last chance
+      <reprompt/>
+    </noinput>
+    <filled>
+      <if cond="menuchoice == 1">
+        TV Guide not yet implemented.
+        <reprompt/>
+      <elseif cond="menuchoice == 2">
+        List of scheduled recordings is not yet implemented.
+        <reprompt/>
+      <elseif cond="menuchoice == #">
+        <reprompt/>
+      <else>
+        That is not a supported option
+        <reprompt/>
+      </if>
+    </filled>
+  </form>
+</vxml>
