@@ -159,7 +159,7 @@ $L = array(
     'Produced by'                         => 'Producerad av',
     'Schedule Override'                   => 'Åsidosätt schemaläggning',
     'Schedule normally.'                  => 'Schemalägg normalt',
-    'TVTome'                              => 'TVTime',
+    'TVTome'                              => 'TVTome',
     'What else is on at this time?'       => 'Vad visas mer vid denna tid?',
     'Written by'                          => 'Skriven av',
 // themes/.../program_listing.php
