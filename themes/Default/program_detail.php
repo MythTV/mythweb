@@ -187,10 +187,6 @@ class Theme_program_detail extends Theme {
 								($this_program->dupmethod == 0))
 								echo ' SELECTED';
 							echo '>Subtitle & Description</option>';
-							echo '<option value="22"';
-							if ($this_program->dupmethod == 22)
-								echo ' SELECTED';
-							echo '>Sub & Desc (Empty matches)</option>';
 					   ?></select></td>
 				</tr><tr>
 					<td nowrap align="right">Auto-expire Recordings?&nbsp;</td>
