@@ -24,7 +24,7 @@ class Theme_weather extends Theme {
             echo "$site->acid: $site->city, $site->subdiv, $site->country";
     ?></p>
 
-    <div class="current_conditions" class="clearfix">
+    <div class="current_conditions clearfix">
         <h2><?php echo t('Current Conditions') ?>:</h2>
 
         <div class="overview">
