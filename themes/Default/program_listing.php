@@ -194,11 +194,11 @@ class Theme_program_listing extends Theme {
 		</tr>" : '')
 		.($program->will_record ? "<tr>
 			<td align=\"right\">Schedule:</td>
-			<td>".($program->record_daily      ? "Always record on this channel at this time"
-					: $program->record_weekly  ? "Always record on this channel at this time on this day of the week"
-					: $program->record_once    ? "Will be recorded once"
-					: $program->record_channel ? "Always record on this channel"
-					: "Always record")."</td>
+			<td>".($show->record_daily       ? "Always record on this channel at this time"
+					: ($show->record_weekly  ? "Always record on this channel at this time on this day of the week"
+					: ($show->record_once    ? "Will be recorded once"
+					: ($show->record_channel ? "Always record on this channel"
+					: "Always record"))))."</td>
 		</tr>" : '')
 		."</table></td>
 </tr>
