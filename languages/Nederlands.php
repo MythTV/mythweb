@@ -157,36 +157,38 @@ define ('_LANG_DUPLICATE_CHECK_METHOD', 'Zoeken op dubbels');
 /* scheduled_recordings.php */
 /* recording_schedules_php */
 /* search.php */
-define ('_LANG_NO_MATCHES_FOUND',   'Niets gevonden');
-define ('_LANG_SEARCH',         'Zoek');
-define ('_LANG_TITLE',          'Titel (programma)');
-define ('_LANG_SUBTITLE',       'Subtitel (aflevering)');
-define ('_LANG_CATEGORY',       'Categorie&nbsp;type');
-define ('_LANG_STATION',        'Zender');
-define ('_LANG_AIRDATE',        'Uitgezonden');
-define ('_LANG_LENGTH',         'Lengte');
-define ('_LANG_STATUS',         'Status');
-define ('_LANG_DONT_RECORD',        'Niet Opnemen');
-define ('_LANG_ACTIVATE',       'Activeren');
-define ('_LANG_NEVER_RECORD',       'Nooit&nbsp;Openemen');
-define ('_LANG_RECORD_THIS',        'Neem dit op');
-define ('_LANG_FORGET_OLD',         'Negeer oude opname');
-define ('_LANG_RATING',         'Waardering');
-define ('_LANG_SCHEDULE',       'Schema');
-define ('_LANG_DISPLAY',        'Display');
-define ('_LANG_SCHEDULED',      'Gepland');
-define ('_LANG_DUPLICATES',         'Dubbels');
-define ('_LANG_DEACTIVATED',        'Gedeactiveerd');
-define ('_LANG_CONFLICTS',      'Conflicten');
-define ('_LANG_TYPE',           'Type');
-define ('_LANG_AIRTIME',        'Uitzenduur');
-define ('_LANG_RERUN',          'Herhaling');
-define ('_LANG_SCHEDULE',       'Schema');
-define ('_LANG_PROFILE',        'Profiel');
-define ('_LANG_NOTES',          'Notities');
-define ('_LANG_DUP_METHOD',         'Heruitzending detectie');
-define ('_LANG_CATEGORY_TYPE',      'Categorietype');
-define ('_LANG_EXACT_MATCH',        'Exacte zoekterm');
+define ('_LANG_NO_MATCHES_FOUND', 'Niets gevonden');
+define ('_LANG_SEARCH',           'Zoek');
+define ('_LANG_TITLE',            'Titel (programma)');
+define ('_LANG_SUBTITLE',         'Subtitel (aflevering)');
+define ('_LANG_CATEGORY',         'Categorie&nbsp;type');
+define ('_LANG_STATION',          'Zender');
+define ('_LANG_AIRDATE',          'Uitgezonden');
+define ('_LANG_LENGTH',           'Lengte');
+define ('_LANG_STATUS',           'Status');
+define ('_LANG_DONT_RECORD',      'Niet Opnemen');
+define ('_LANG_ACTIVATE',         'Activeren');
+define ('_LANG_NEVER_RECORD',     'Nooit&nbsp;Openemen');
+define ('_LANG_RECORD_THIS',      'Neem dit op');
+define ('_LANG_FORGET_OLD',       'Negeer oude opname');
+define ('_LANG_DEFAULT',          'Default');
+define ('_LANG_RATING',           'Waardering');
+define ('_LANG_SCHEDULE',         'Schema');
+define ('_LANG_DISPLAY',          'Display');
+define ('_LANG_SCHEDULED',        'Gepland');
+define ('_LANG_DUPLICATES',       'Dubbels');
+define ('_LANG_DEACTIVATED',      'Gedeactiveerd');
+define ('_LANG_CONFLICTS',        'Conflicten');
+define ('_LANG_TYPE',             'Type');
+define ('_LANG_AIRTIME',          'Uitzenduur');
+define ('_LANG_RERUN',            'Herhaling');
+define ('_LANG_SCHEDULE',         'Schema');
+define ('_LANG_PROFILE',          'Profiel');
+define ('_LANG_NOTES',            'Notities');
+define ('_LANG_DUP_METHOD',       'Heruitzending detectie');
+define ('_LANG_CATEGORY_TYPE',    'Categorietype');
+define ('_LANG_EXACT_MATCH',      'Exacte zoekterm');
+
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS',    'Overzicht opnames');
 define ('_LANG_CONFIRM_DELETE',     'Ben u zeker dat u deze opname wil verwijderen?');
@@ -234,6 +236,7 @@ define ('_LANG_RECSTATUS_LONG_CONFLICT',            'Een ander programma is auto
 define ('_LANG_RECSTATUS_LONG_OVERLAP',             'Dit wordt reeds op een andere tijdstip opgenomen.');
 define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',        'Er was onvoldoende schijfruimte om dit programma op te nemen.');
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',           'De tvkaart was al in gebruik op het moment dat deze opname gepland stond.');
+define ('_LANG_RECSTATUS_LONG_FORCE_RECORD',      'This show was manually set to record this specific instance.');
 
 /* utils.php */
 define ('_LANG_HR',              'u');

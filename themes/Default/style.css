@@ -138,15 +138,17 @@ TextArea {
 
 */
 
-.record_weekly      { border: 1px solid #00D000; }
-.record_timeslot    { border: 1px solid #00D000; }
-.record_once	    { border: 1px solid #00D000; }
-.record_channel	    { border: 1px solid #00D000; }
-.record_always	    { border: 1px solid #00D000; }
-.will_record	    { border: 1px solid #00D000; }
-.record_conflicting { border: 1px solid #FF0000; }
-.record_duplicate   { border: 2px dashed #90B0A0; }
-.record_suppressed  { border: 2px dotted #60B0B0; }
+.record_weekly            { border: 1px solid  #00F000; }
+.record_timeslot          { border: 1px solid  #00F000; }
+.record_once	          { border: 1px solid  #00F000; }
+.record_channel	          { border: 1px solid  #00F000; }
+.record_always	          { border: 1px solid  #00F000; }
+.will_record	          { border: 1px solid  #00F000; }
+.record_conflicting       { border: 1px solid  #FF0000; }
+.record_duplicate         { border: 2px dashed #90B0A0; }
+.record_suppressed        { border: 2px dotted #60B0B0; }
+.record_override_suppress { border: 2px dotted #D03060; }
+.record_override_record   { border: 2px solid  #00FF90; }
 
 .type_movie         { background-color: #809090 !important; }
 .type_Film          { background-color: #809090 !important; }

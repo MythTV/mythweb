@@ -46,7 +46,9 @@
                                'LaterShowing'       => _LANG_RECSTATUS_LONG_LATERSHOWING,
                                'Overlap'            => _LANG_RECSTATUS_LONG_OVERLAP,
                                'LowDiskSpace'       => _LANG_RECSTATUS_LONG_LOWDISKSPACE,
-                               'TunerBusy'          => _LANG_RECSTATUS_LONG_TUNERBUSY
+                               'TunerBusy'          => _LANG_RECSTATUS_LONG_TUNERBUSY,
+                            // A special category for mythweb, since this feature doesn't exist in the backend
+                               'ForceRecord'        => _LANG_RECSTATUS_LONG_FORCE_RECORD,
                               );
 
 /*
@@ -116,9 +118,10 @@
                             .'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime)) '
                             .' OR (record.type = 4 AND program.title = record.title) '
                             .' OR (record.type = 6 AND program.title = record.title) '
-                            .' OR (record.type = 7 AND program.title = record.title) '
-                            .' OR (record.type = 8 AND program.title = record.title) '
                             .' OR (record.type = 3 AND program.title = record.title AND record.chanid = program.chanid)'
+                            .' OR (record.type IN (7, 8) AND program.title = record.title AND record.chanid = program.chanid AND '
+                            .'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
+                            .'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))) '
                             .' OR (record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
                             .'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
                             .'     record.endtime = SEC_TO_TIME(TIME_TO_SEC(program.endtime))) '
@@ -249,13 +252,16 @@ class Program {
     var $seriesid;
     var $programid;
 
-    var $will_record    = false;
-    var $record_daily   = false;
-    var $record_weekly  = false;
-    var $record_once    = false;
-    var $record_channel = false;
-    var $record_always  = false;
-    var $record_findone = false;
+    var $will_record     = false;
+    var $record_daily    = false;
+    var $record_weekly   = false;
+    var $record_once     = false;
+    var $record_channel  = false;
+    var $record_always   = false;
+    var $record_findone  = false;
+    var $record_suppress = false;
+    var $record_override = false;
+
     var $profile        = 0;
     var $max_newest     = 0;
     var $max_episodes   = 0;
@@ -369,8 +375,6 @@ class Program {
                 $this->recordid    = $Pending_Programs[$this->chanid][$this->starttime][22];
             }
         // We get various recording-related information, too
-            if ($program_data['record_suppress'])
-                $this->record_suppress =  true;
             if ($program_data['record_findone'])
                 $this->record_findone  = true;
             else if ($program_data['record_always'])
@@ -384,7 +388,9 @@ class Program {
             elseif ($program_data['record_weekly'])
                 $this->record_weekly   =  true;
 
-            if ($program_data['record_override'])
+            if ($program_data['record_suppress'])
+                $this->record_suppress =  true;
+            elseif ($program_data['record_override'])
                 $this->record_override = true;
 
         // Add a generic "will record" variable, too
@@ -419,6 +425,10 @@ class Program {
         else
             $this->length = $this->endtime - $this->starttime;
 
+    // A special recstatus for shows that were manually set to record
+        if ($this->record_override)
+            $this->recstatus = 'ForceRecord';
+
     // Find out which css category this program falls into
         if ($this->chanid != '')
             $this->class = category_class($this);
@@ -435,12 +445,16 @@ class Program {
         $class = '';
     // Recording classes?
         if ($item->will_record && get_class($item) == 'program') {
-            if ($item->recstatus == 'WillRecord')
+            if ($item->recstatus == 'ForceRecord')
+                $class .= 'record_override_record ';
+            elseif ($item->recstatus == 'WillRecord')
                 $class .= 'will_record ';
             elseif ($item->recstatus == 'Conflict' || $item->recstatus == 'Overlap')
                 $class .= 'record_conflicting ';
             elseif ($item->recstatus == 'PreviousRecording' || $item->recstatus == 'CurrentRecording')
                 $class .= 'record_duplicate ';
+            elseif ($item->recstatus == 'ManualOverride' || $item->recstatus == 'Cancelled')
+                $class .= 'record_override_suppress ';
             else
                 $class .= 'record_suppressed ';
         }

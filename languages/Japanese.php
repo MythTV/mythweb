@@ -155,34 +155,35 @@ define ('_LANG_BACK_TO_RECORDING_SCHEDULES',            '録画予約に戻る')
 /* recording_schedules_php */
 /* search.php */
 define ('_LANG_NO_MATCHES_FOUND', '一致する物が有りませんでした');
-define ('_LANG_SEARCH', '検索');
-define ('_LANG_TITLE', 'タイトル');
-define ('_LANG_SUBTITLE', 'サブタイトル');
-define ('_LANG_CATEGORY', 'カテゴリタイプ');
-define ('_LANG_STATION', 'ステーション');
-define ('_LANG_AIRDATE', '放送日');
-define ('_LANG_LENGTH', '長さ');
-define ('_LANG_STATUS', 'ステータス');
-define ('_LANG_DONT_RECORD', '録画しない');
-define ('_LANG_ACTIVATE', '有効にする');
-define ('_LANG_NEVER_RECORD', 'もう録画しない');
-define ('_LANG_RECORD_THIS', '録画する');
-define ('_LANG_FORGET_OLD', 'Forget Old');
-define ('_LANG_RATING', 'Rating');
-define ('_LANG_SCHEDULE', '予約');
-define ('_LANG_DISPLAY', '表示');
-define ('_LANG_SCHEDULED', '予約済');
-define ('_LANG_DUPLICATES', '重複');
-define ('_LANG_DEACTIVATED', '停止');
-define ('_LANG_CONFLICTS', '衝突');
-define ('_LANG_TYPE', 'タイプ');
-define ('_LANG_AIRTIME', '放送時間');
-define ('_LANG_RERUN', 'Rerun');
-define ('_LANG_PROFILE', 'プロファイル');
-define ('_LANG_NOTES', '注釈');
-define ('_LANG_DUP_METHOD',    '重複検知');
-define ('_LANG_CATEGORY_TYPE', 'カテゴリータイプ');
-define ('_LANG_EXACT_MATCH', '正確一致');
+define ('_LANG_SEARCH',           '検索');
+define ('_LANG_TITLE',            'タイトル');
+define ('_LANG_SUBTITLE',         'サブタイトル');
+define ('_LANG_CATEGORY',         'カテゴリタイプ');
+define ('_LANG_STATION',          'ステーション');
+define ('_LANG_AIRDATE',          '放送日');
+define ('_LANG_LENGTH',           '長さ');
+define ('_LANG_STATUS',           'ステータス');
+define ('_LANG_DONT_RECORD',      '録画しない');
+define ('_LANG_ACTIVATE',         '有効にする');
+define ('_LANG_NEVER_RECORD',     'もう録画しない');
+define ('_LANG_RECORD_THIS',      '録画する');
+define ('_LANG_FORGET_OLD',       'Forget Old');
+define ('_LANG_DEFAULT',          'Default');
+define ('_LANG_RATING',           'Rating');
+define ('_LANG_SCHEDULE',         '予約');
+define ('_LANG_DISPLAY',          '表示');
+define ('_LANG_SCHEDULED',        '予約済');
+define ('_LANG_DUPLICATES',       '重複');
+define ('_LANG_DEACTIVATED',      '停止');
+define ('_LANG_CONFLICTS',        '衝突');
+define ('_LANG_TYPE',             'タイプ');
+define ('_LANG_AIRTIME',          '放送時間');
+define ('_LANG_RERUN',            'Rerun');
+define ('_LANG_PROFILE',          'プロファイル');
+define ('_LANG_NOTES',            '注釈');
+define ('_LANG_DUP_METHOD',       '重複検知');
+define ('_LANG_CATEGORY_TYPE',    'カテゴリータイプ');
+define ('_LANG_EXACT_MATCH',      '正確一致');
 
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS', '録画表示');
@@ -229,6 +230,7 @@ define ('_LANG_RECSTATUS_LONG_CONFLICT',            '他の録画優先順位の
 define ('_LANG_RECSTATUS_LONG_OVERLAP',             '他の予約で同じ番組も録画されます。');
 define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',        '個の番組を録画するのに必要なディスクの空き容量が有りません。');
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',           '利用可能なチューナーが有りません。');
+define ('_LANG_RECSTATUS_LONG_FORCE_RECORD',      'This show was manually set to record this specific instance.');
 
 /* in theme wap */
 define ('_LANG_RECORDED',       '録画済');

@@ -41,8 +41,8 @@
             $result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($_GET['chanid']).' AND title='.escape($program->title).' AND subtitle='.escape($program->subtitle).' AND description='.escape($program->desription))
                 or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
         }
-    // Revert to normal recording rules
-        elseif ($_GET['revert'] || $_POST['revert']) {
+    // Revert to default recording rules
+        elseif ($_GET['default'] || $_POST['default']) {
             $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
                 or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
         }

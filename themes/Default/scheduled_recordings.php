@@ -109,9 +109,13 @@ if ($group_field == "") {
             if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
                 $commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'._LANG_NEVER_RECORD.'</a>';
         }
+        elseif ($show->recstatus == 'ForceRecord') {
+            $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
+            $commands[] = '<a href="scheduled_recordings.php?default=yes&'.$urlstr.'">'._LANG_DEFAULT.'</a>';
+        }
         elseif ($show->recstatus == 'ManualOverride' || $show->recstatus == 'Cancelled') {
             $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
-            $commands[] = '<a href="scheduled_recordings.php?revert=yes&'.$urlstr.'">'._LANG_REVERT.'</a>';
+            $commands[] = '<a href="scheduled_recordings.php?default=yes&'.$urlstr.'">'._LANG_DEFAULT.'</a>';
         }
         else {
             $class   = 'deactivated';
