@@ -37,7 +37,7 @@ class Theme {
         <img src="<?php echo theme_dir?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
         </a>
     </div>
-    <div id="sections" class="clearfix">
+    <div id="sections">
         <a id="tv_link"<?php if (section == 'tv') echo ' class="current_section"' ?> href="program_listing.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_dir ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
         </a>
