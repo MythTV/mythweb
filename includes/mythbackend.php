@@ -14,12 +14,12 @@
 
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
-    $MYTH_PROTO_VERSION = "11";
+    $MYTH_PROTO_VERSION = "12";
 
 // NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
 // the number of items in a ProgramInfo QStringList group used by
 // ProgramInfo::ToSringList and ProgramInfo::FromStringList.
-    $NUMPROGRAMLINES = 36;
+    $NUMPROGRAMLINES = 38;
 
 // Make sure we're connected to mythbackend
     if (backend_command('ANN Playback '.trim(`hostname`).' 0') != 'OK')
