@@ -2,7 +2,7 @@
 
 define ('_LANG_LANGUAGE_NAME', 'Japanese');
 
-/* Set locale to French */
+/* Set locale to Japanese utf-8 encoding */
 setlocale(LC_ALL, 'ja_JP.utf-8');
 
 /* theme.php */
@@ -92,7 +92,6 @@ define ('_LANG_KEY_BINDINGS', 'キーバインド');
 define ('_LANG_CONFIGURE', '設定');
 define ('_LANG_GO_TO', '移動');
 define ('_LANG_ADVANCED', 'アドバンスト');
-define ('_LANG_SEARCH', '検索');
 define ('_LANG_FORMAT_HELP', 'フォーマットヘルプ');
 define ('_LANG_STATUS_BAR', 'ステータスバー');
 define ('_LANG_SCHEDULED_RECORDINGS', '予約録画');
@@ -115,36 +114,38 @@ define ('_LANG_DATE', '日付');
 define ('_LANG_JUMP', '移動');
 
 /* program_detail.php */
-define ('_LANG_SEARCH_IMDB', 'IMDBで検索');
-define ('_LANG_SEARCH_GOOGLE', 'Googleで検索');
-define ('_LANG_MINUTES', '分');
-define ('_LANG_TO', 'から');
-define ('_LANG_CATEGORY', 'カテゴリー');
-define ('_LANG_ORIG_AIRDATE', '放送日');
-define ('_LANG_RECORDING_OPTIONS', '録画オプション');
-define ('_LANG_DONT_RECORD_THIS_PROGRAM', '録画しない');
-define ('_LANG_RECORDING_PROFILE', '録画プロファイル');
-define ('_LANG_RECPRIORITY', '録画優先順位');
-define ('_LANG_CHECK_FOR_DUPLICATES_IN', '重複チェック先');
-define ('_LANG_CURRENT_RECORDINGS', '現在の録画');
-define ('_LANG_PREVIOUS_RECORDINGS', '以前の録画');
-define ('_LANG_ALL_RECORDINGS', '全ての録画');
-define ('_LANG_DUPLICATE_CHECK_METHOD', '重複チェック方法');
-define ('_LANG_NONE', '無し');
-define ('_LANG_SUBTITLE', 'サブタイトル');
-define ('_LANG_DESCRIPTION', '内容');
-define ('_LANG_SUBTITLE_AND_DESCRIPTION', 'サブタイトルと内容');
-define ('_LANG_SUB_AND_DESC', 'サブタイトルと内容(無しも一致)');
-define ('_LANG_AUTO_EXPIRE_RECORDINGS', '自動削除?');
-define ('_LANG_NO_OF_RECORDINGS_TO_KEEP', '録画保存数?');
-define ('_LANG_RECORD_NEW_AND_EXPIRE_OLD', '新しく録画して古いのを削除する?');
-define ('_LANG_START_EARLY', '開始先行 (分)');
-define ('_LANG_END_LATE', '終了遅れ (分)');
-define ('_LANG_UPDATE_RECORDING_SETTINGS', '録画設定を更新');
-define ('_LANG_WHAT_ELSE_IS_ON_AT_THIS_TIME', 'この時間の他の放送');
-define ('_LANG_BACK_TO_THE_PROGRAM_LISTING', '番組一覧に戻る');
-define ('_LANG_FIND_OTHER_SHOWING_OF_THIS_PROGRAM', '他の放送を検索する');
-define ('_LANG_BACK_TO_RECORDING_SCHEDULES', '録画予約に戻る');
+define ('_LANG_SEARCH',                                 '検索');
+define ('_LANG_IMDB',                                   'IMDB');
+define ('_LANG_GOOGLE',                                 'Google');
+define ('_LANG_TVTOME',                                 'TV Tome');
+define ('_LANG_MINUTES',                                '分');
+define ('_LANG_TO',                                     'から');
+define ('_LANG_CATEGORY',                               'カテゴリー');
+define ('_LANG_ORIG_AIRDATE',                           '放送日');
+define ('_LANG_RECORDING_OPTIONS',                      '録画オプション');
+define ('_LANG_DONT_RECORD_THIS_PROGRAM',               '録画しない');
+define ('_LANG_RECORDING_PROFILE',                      '録画プロファイル');
+define ('_LANG_RECPRIORITY',                            '録画優先順位');
+define ('_LANG_CHECK_FOR_DUPLICATES_IN',                '重複チェック先');
+define ('_LANG_CURRENT_RECORDINGS',                     '現在の録画');
+define ('_LANG_PREVIOUS_RECORDINGS',                    '以前の録画');
+define ('_LANG_ALL_RECORDINGS',                         '全ての録画');
+define ('_LANG_DUPLICATE_CHECK_METHOD',                 '重複チェック方法');
+define ('_LANG_NONE',                                   '無し');
+define ('_LANG_SUBTITLE',                               'サブタイトル');
+define ('_LANG_DESCRIPTION',                            '内容');
+define ('_LANG_SUBTITLE_AND_DESCRIPTION',               'サブタイトルと内容');
+define ('_LANG_SUB_AND_DESC',                           'サブタイトルと内容(無しも一致)');
+define ('_LANG_AUTO_EXPIRE_RECORDINGS',                 '自動削除?');
+define ('_LANG_NO_OF_RECORDINGS_TO_KEEP',               '録画保存数?');
+define ('_LANG_RECORD_NEW_AND_EXPIRE_OLD',              '新しく録画して古いのを削除する?');
+define ('_LANG_START_EARLY',                            '開始先行 (分)');
+define ('_LANG_END_LATE',                               '終了遅れ (分)');
+define ('_LANG_UPDATE_RECORDING_SETTINGS',              '録画設定を更新');
+define ('_LANG_WHAT_ELSE_IS_ON_AT_THIS_TIME',           'この時間の他の放送');
+define ('_LANG_BACK_TO_THE_PROGRAM_LISTING',            '番組一覧に戻る');
+define ('_LANG_FIND_OTHER_SHOWING_OF_THIS_PROGRAM',     '他の放送を検索する');
+define ('_LANG_BACK_TO_RECORDING_SCHEDULES',            '録画予約に戻る');
 
 /* scheduled_recordings.php */
 /* recording_schedules_php */
@@ -190,6 +191,7 @@ define ('_LANG_DELETE', '削除');
 define ('_LANG_PROGRAMS_USING', '番組, 使用');
 define ('_LANG_OUT_OF', ' 全');
 define ('_LANG_EPISODES',        '番組');
+define ('_LANG_CURRENTLY_RECORDING', '録画中');
 
 /* recordings.php */
 define ('_LANG_RECTYPE_ONCE',    '一回');
@@ -223,6 +225,14 @@ define ('_LANG_RECSTATUS_LONG_CONFLICT',            '他の録画優先順位の
 define ('_LANG_RECSTATUS_LONG_OVERLAP',             '他の予約で同じ番組も録画されます。');
 define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',        '個の番組を録画するのに必要なディスクの空き容量が有りません。');
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',           '利用可能なチューナーが有りません。');
+
+/* in theme wap */
+define ('_LANG_RECORDED',       '録画済');
+define ('_LANG_CHANNEL',        'チャンネル');
+define ('_LANG_RECORD_DUPS',    '重複録画');
+define ('_LANG_AUTO_EXPIRE',    '自動削除');
+define ('_LANG_UPDATE_SETTINGS','更新');
+define ('_LANG_RECORDINGS',     '録画');
 
 /* utils.php */
 define ('_LANG_HR',              '時間');
