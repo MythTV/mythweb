@@ -111,7 +111,7 @@ if ($group_field == "") {
     <td><?php echo get_sort_link('recgroup',  t('recgroup'))  ?></td>
     <td><?php echo get_sort_link('airdate',   t('airdate'))  ?></td>
     <td><?php echo get_sort_link('length',    t('length'))   ?></td>
-    <td><?php echo get_sort_link('file_size', t('file_size')) ?></td>
+    <td><?php echo get_sort_link('file_size', t('file size')) ?></td>
 </tr><?php
     $row = 0;
 
