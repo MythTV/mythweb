@@ -3,18 +3,16 @@
 #AuthUserFile /var/www/htpasswd
 #Require valid-user
 
-# Todo:
-# set up different auth for:
-# settings_channels.php
-
 # If you have nuv files that are actually mpeg2 files, uncomment this
 #AddType video/mpeg .nuv
 # If you have normal software-encoded nuv files, use this type
 AddType video/nuppelvideo .nuv
 
 # Some special handlers for php
-#  If your version of apache doesn't support php_value, then use these
-#  settings as examples for your own php.ini files.
+#  These settings are intended for apache 2.x.  If your version of apache
+#  doesn't support php_value, or things like memory_limit aren't working
+#  as expected, then use these settings as examples for your own php.ini
+#  files.
 <FilesMatch "\.php$">
     php_value safe_mode                     0
 
