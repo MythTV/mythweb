@@ -159,7 +159,10 @@
         else
             $this_program->recordid = NULL;
     // Notify the backend of the changes
-        backend_notify_changes();
+        if ($this_program->recordid > 0)
+            backend_notify_changes($this_program->recordid);
+        else
+            backend_notify_changes();
     }
 // Load default settings for recpriority, autoexpire etc
     elseif (!$this_program->will_record) {

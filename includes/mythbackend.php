@@ -169,15 +169,10 @@
     backend_notify_changes:
     Updates or inserts a row to notify the backend that there have been database changes
 */
-    function backend_notify_changes($sleep = 1) {
+    function backend_notify_changes($recordid = -1, $sleep = 1) {
     // Tell mythfrontend that something has changed
-        $result = mysql_query('UPDATE settings SET data="yes" WHERE value="RecordChanged"')
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-    // No affected rows?  Insert one
-        if (mysql_affected_rows() < 1) {
-            $result = mysql_query('INSERT INTO settings (data, value) VALUES ("yes", "RecordChanged")')
-                or trigger_error('SQL Error: '.mysql_error(), FATAL);
-        }
+        backend_command('RESCHEDULE_RECORDINGS ' . $recordid);
+
     // Give the backend time to catch up?
         if ($sleep > 0)
             sleep($sleep);

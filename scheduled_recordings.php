@@ -120,7 +120,10 @@
         }
 
     // Notify the backend of the changes
-        backend_notify_changes();
+    //    if ($program->recordid > 0)
+    //        backend_notify_changes($program->recordid);
+    //    else
+            backend_notify_changes();
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         header('Location: scheduled_recordings.php');
