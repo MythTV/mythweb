@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythmusic.php                             Last Updated: 2005.01.23 (xris)
+    mythmusic.php                             Last Updated: 2005.02.06 (xris)
 
     MythMusic
 \***                                                                        ***/
@@ -102,7 +102,10 @@ class mythMusic {
                 global $musicdir;
                 foreach (preg_split('/\//', substr($this->filename, strlen($musicdir))) as $dir) {
                     if (!$dir) continue;
-                    $this->urlfilename .= '/'.rawurlencode(mb_convert_encoding($dir, fs_encoding, 'UTF-8'));
+                    if (function_exists('mb_convert_encoding'))
+                        $this->urlfilename .= '/'.rawurlencode(mb_convert_encoding($dir, fs_encoding, 'UTF-8'));
+                    else
+                        $this->urlfilename .= '/'.rawurlencode($dir);
                 }
 
                 return(true);
