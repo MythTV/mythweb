@@ -1,0 +1,60 @@
+
+#recording_info {
+    margin: 20px auto;
+    width:  350px;
+}
+
+#schedule_options {
+    width:  29em;
+    margin: 0px auto;
+}
+#schedule_options dl {
+    margin: 5px 10px;
+}
+#schedule_options dl dt {
+    clear:       left;
+    float:       left;
+    width:       9em;
+    padding-top: 8px;
+    text-align:  right;
+    white-space: nowrap;
+}
+#schedule_options dl dd {
+    padding-top: 3px;
+    margin-left: 9.5em;
+}
+#schedule_options input {
+    width:     14em;
+}
+#schedule_options select {
+    font-size: 9pt;
+    width:     16em;
+}
+
+#advanced_options {
+    width:  29em;
+    margin: 0px auto;
+}
+
+#advanced_options dl {
+    margin: 5px 10px;
+}
+#advanced_options dl dt {
+    clear:       left;
+    float:       left;
+    width:       13em;
+    padding-top: 8px;
+    text-align:  right;
+    white-space: nowrap;
+}
+#advanced_options dl dd {
+    padding-top: 3px;
+    margin-left: 13.5em;
+}
+
+#advanced_options input {
+}
+#advanced_options select {
+    width: 14em;
+}
+

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                      Last Updated: 2005.02.04 (xris)
+    program_detail.php                      Last Updated: 2005.02.06 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -60,7 +60,7 @@
 
 // The user tried to update the recording settings - update the database and the variable in memory
     if (isset($_POST['save'])) {
-    // Which type of recording is this?
+    // Which type of recording is this?  Make sure an illegal one isn't specified
         switch ($_POST['record']) {
             case rectype_once:        $type = rectype_once;        break;
             case rectype_daily:       $type = rectype_daily;       break;
@@ -147,58 +147,5 @@
 
 // Exit
     exit;
-
-
-
-/*
-    profile_select:
-    prints a <select> of the various recording profiles to choose from
-*/
-    function profile_select($this_profile, $name='profile') {
-        echo "<select name=\"$name\">";
-        foreach(array('Default', 'Live TV', 'High Quality', 'Low Quality') as $profile) {
-            echo '<option value="'.htmlentities($profile).'"';
-            if ($this_profile == $profile)
-                echo ' SELECTED';
-            echo '>'.htmlentities($profile).'</option>';
-        }
-        echo '</select>';
-    }
-
-/*
-    recgroup_select:
-    prints a <select> of the various recgroups available
-*/
-    function recgroup_select($this_group, $name = 'recgroup') {
-        static $groups = array();
-    // Load the recording groups?
-        if (!count($groups)) {
-        // Default
-            $groups['Default'] = 'Default';
-        // Current recgroups
-            $result = mysql_query('SELECT DISTINCT recgroup FROM record');
-            while (list($group) = mysql_fetch_row($result)) {
-                $group or $group = 'Default';
-                $groups[$group]  = $group;
-            }
-            mysql_free_result($result);
-        // recgroups from current recordings
-            $result = mysql_query('SELECT DISTINCT recgroup FROM recorded');
-            while (list($group) = mysql_fetch_row($result)) {
-                $group or $group = 'Default';
-                $groups[$group]  = $group;
-            }
-            mysql_free_result($result);
-        }
-    // Print the <select>
-        echo "<select name=\"$name\">";
-        foreach($groups as $group) {
-            echo '<option value="'.htmlentities($group).'"';
-            if ($this_group == $group)
-                echo ' SELECTED';
-            echo '>'.htmlentities($group).'</option>';
-        }
-        echo '</select>';
-    }
 
 ?>

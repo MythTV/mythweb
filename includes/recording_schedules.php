@@ -361,4 +361,56 @@ class Schedule {
 
 }
 
+/*
+    profile_select:
+    prints a <select> of the various recording profiles to choose from
+*/
+    function profile_select($this_profile, $name='profile') {
+        echo "<select name=\"$name\">";
+        foreach(array('Default', 'Live TV', 'High Quality', 'Low Quality') as $profile) {
+            echo '<option value="'.htmlentities($profile).'"';
+            if ($this_profile == $profile)
+                echo ' SELECTED';
+            echo '>'.htmlentities($profile).'</option>';
+        }
+        echo '</select>';
+    }
+
+/*
+    recgroup_select:
+    prints a <select> of the various recgroups available
+*/
+    function recgroup_select($this_group, $name = 'recgroup') {
+        static $groups = array();
+    // Load the recording groups?
+        if (!count($groups)) {
+        // Default
+            $groups['Default'] = 'Default';
+        // Current recgroups
+            $result = mysql_query('SELECT DISTINCT recgroup FROM record');
+            while (list($group) = mysql_fetch_row($result)) {
+                $group or $group = 'Default';
+                $groups[$group]  = $group;
+            }
+            mysql_free_result($result);
+        // recgroups from current recordings
+            $result = mysql_query('SELECT DISTINCT recgroup FROM recorded');
+            while (list($group) = mysql_fetch_row($result)) {
+                $group or $group = 'Default';
+                $groups[$group]  = $group;
+            }
+            mysql_free_result($result);
+        }
+    // Print the <select>
+        echo "<select name=\"$name\">";
+        foreach($groups as $group) {
+            echo '<option value="'.htmlentities($group).'"';
+            if ($this_group == $group)
+                echo ' SELECTED';
+            echo '>'.htmlentities($group).'</option>';
+        }
+        echo '</select>';
+    }
+
+
 ?>

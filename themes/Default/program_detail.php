@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                       Last Updated: 2005.02.02 (xris)
+    program_detail.php                       Last Updated: 2005.02.06 (xris)
 
     This file defines a theme class for the program details section.
     It must define one method.   documentation will be added someday.
@@ -232,33 +232,34 @@ class Theme_program_detail extends Theme {
                 </div>
             </div>
         </div>
-<?php       if ($program) {
-                if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
+<?php       if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
         <div id="program_details">
             <dl>
-<?php               if (strlen($schedule->subtitle)) { ?>
+<?php           if (strlen($schedule->subtitle)) { ?>
                 <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Episode') ?>:&nbsp;</dt>
                 <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
                     echo $schedule->subtitle;
                     ?></dd>
-<?php               }
-                    if (strlen($schedule->description)) {
+<?php           }
+                if (strlen($schedule->description)) {
 ?>
                 <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Description') ?>:&nbsp;</dt>
                 <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
                     echo nl2br($schedule->description);
                     ?></dd>
-<?php               }
-                    if (!empty($program->recstatus)) {
+<?php           }
+                if (!empty($program->recstatus)) {
 ?>
                 <dt><?php echo t('Notes') ?>:&nbsp;</dt>
                 <dd><?php
                     echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
                     ?></dd>
-<?php               } ?>
+<?php           } ?>
             </dl>
         </div>
-<?php           } ?>
+<?php       }
+            if ($program) {
+?>
         <div id="program_extra_details">
             <dl>
 <?php           if (strlen($program->category)) { ?>
