@@ -162,6 +162,12 @@ class Theme_program_detail extends Theme {
 				</tr><tr>
 					<td nowrap align="right">Record new and expire old?&nbsp;</td>
 					<td><input type="checkbox" class="radio" name="maxnewest" <?php if ($this_program->maxnewest) echo "CHECKED" ?>></td>
+				</tr><tr>
+					<td nowrap align="right">Start Early (minutes):&nbsp;</td>
+					<td><input type="input" name="preroll" size="1" value="<?php echo htmlentities($this_program->preroll) ?>"></td>
+				</tr><tr>
+					<td nowrap align="right">End Late (minutes):&nbsp;</td>
+					<td><input type="input" name="postroll" size="1" value="<?php echo htmlentities($this_program->postroll) ?>"></td>
 				</tr>
 				</table>
 				</p>
