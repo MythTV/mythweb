@@ -114,8 +114,8 @@
 		$col = 0;
 		for($i = $offset; $i < count($recs); $i++) {
 			$rows[$row][$col] = $recs[$i];
-		// Every 23 fields (0 through 22) means a new row - please note that this changes between myth versions
-			if ($col == 22) {
+		// Every 25 fields (0 through 24) means a new row - please note that this changes between myth versions
+			if ($col == 24) {
 				$col = 0;
 				$row++;
 			}
