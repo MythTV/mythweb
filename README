@@ -103,9 +103,10 @@ as auto-detecting as possible, it often still needs some hand-editing.
 
 Q: Why don't my sessions stick?  (often manifests as sorting issues or settings
     not storing properly)
-A: Make sure the php_sessions directory has the proper permissions, as detailed
-    in INSTRUCTIONS above.  Check config/conf.php to make sure that the
-    server_domain constant is set correctly.
+A: Make sure the php_sessions directory has the proper permissions, and that
+    apache's AllowOverride setting is correct, as detailed in INSTRUCTIONS
+    above.  Check config/conf.php to make sure that the server_domain constant
+    is set correctly so that cookies will work properly.
 
 Q: Why is my browser trying to display the PHP code instead of the server
     executing it for me?
