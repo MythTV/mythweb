@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.09.08 (xris)
+    programs.php                             Last Updated: 2004.09.27 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -303,9 +303,11 @@ class Program {
             elseif ($this->chanid) {
                 unset($this->filename);
             // Kludge to avoid redefining the object, which doesn't work in php5
-                $tmp = load_one_program($this->starttime, $this->chanid);
-                foreach (get_object_vars($tmp) as $key => $value) {
-                    $this->$key = $value;
+                $tmp = @get_object_vars(load_one_program($this->starttime, $this->chanid));
+                if (count($tmp) > 0) {
+                    foreach ($tmp as $key => $value) {
+                        $this->$key = $value;
+                    }
                 }
             }
         // Load the remaining info we got from mythbackend
