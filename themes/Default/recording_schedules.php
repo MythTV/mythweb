@@ -69,9 +69,9 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
         $commands = array();
         $urlstr = 'recordid='.$show->recordid;
 
-        $class   = 'scheduled';
-    // If this is an 'always on any channel' recording, set the channel name to 'Any'
-        if (($show->type == 4))
+        $class = ($show->type == 8 ? 'deactivated' : 'scheduled');
+    // If this is an 'always on any channel' or 'find one' recording w/o a channel, set the channel name to 'Any'
+        if ($show->type == 4 || ($show->type == 6 && !preg_match('/\\S/', $show->channel->channum)))
             $show->channel->name = '[ '._LANG_ANY.' ]';
     // Build a popup table for the mouseover of the cell, with extra program information?
         if (show_popup_info) {
@@ -88,7 +88,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
             <td align=\"right\">"._LANG_TITLE.":</td>
             <td>$show->title</td>
         </tr>";
-            if (($show->type == 1) || ($show->type == 2) || ($show->type == 5)) {
+            if (($show->type == 1) || ($show->type == 2) || ($show->type == 5) || ($show->type == 7) || ($show->type == 8)) {
                 $Footnotes[] .= "
         <tr>
             <td align=\"right\">"._LANG_AIRTIME.":</td>
@@ -164,6 +164,12 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
     elseif ($group_field == 'profile')
         $cur_group = $show->profile;
 
+   $style_class = $show->class;
+   if ($show->type == 7)
+        $style_class .= ' record_override_record';
+   elseif ($show->type == 8)
+	$style_class .= ' record_override_suppress';
+
     if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
     <td colspan="5" class="list_separator"><?php echo $cur_group?></td>
@@ -173,14 +179,14 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
     // Print the content
     ?><tr class="<?php echo $class?>">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td class="<?php echo $show->class?>"><?php
+    <td class="<?php echo $style_class?>"><?php
         // Print a link to record this show
         echo '<a id="program_'.$program_id_counter.'" href="program_detail.php?recordid='.$show->recordid.'"'
              .(show_popup_info ? ' onmouseover="window.status=\'Details for: '.str_replace('\'', '\\\]', $show->title).'\';show(\'program_'.$program_id_counter.'\');return true"'
                                 .' onmouseout="window.status=\'\';hide();return true"'
                                : '')
              .'>'.$show->title
-             .($show->type == 1 && preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
+             .(($show->type == 1 || $show->type == 7 || $show->type == 8) && preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
              .'</a>';
         ?></td>
     <td><?php
@@ -188,7 +194,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
             echo $show->channel->channum.' - ';
         echo $show->channel->name
         ?></td>
-    <td nowrap><?php echo $show->profile ?></td>
+    <td nowrap><?php if($show->type != 8) echo $show->profile; ?></td>
     <td nowrap><?php echo $show->texttype ?></td>
 <?php   foreach ($commands as $command) { ?>
     <td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo $command?></td>

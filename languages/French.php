@@ -212,6 +212,8 @@ define ('_LANG_RECTYPE_CHANNEL', 'Cha&icirc;ne');
 define ('_LANG_RECTYPE_ALWAYS',  'Permanente');
 define ('_LANG_RECTYPE_WEEKLY',  'Hebdomadaire');
 define ('_LANG_RECTYPE_FINDONE', 'Prochain');
+define ('_LANG_RECTYPE_OVERRIDE', '[translate me] Override (record)');
+define ('_LANG_RECTYPE_DONTREC', '[translate me] Do Not Record');
 
 define ('_LANG_RECTYPE_LONG_ONCE',          'Enregistrer uniquement ce programme');
 define ('_LANG_RECTYPE_LONG_DAILY',         'Enregistrer ce programme &agrave; cet horaire chaque jour');

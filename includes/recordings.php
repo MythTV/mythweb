@@ -15,7 +15,9 @@
                         3 => _LANG_RECTYPE_CHANNEL,
                         4 => _LANG_RECTYPE_ALWAYS,
                         5 => _LANG_RECTYPE_WEEKLY,
-                        6 => _LANG_RECTYPE_FINDONE
+                        6 => _LANG_RECTYPE_FINDONE,
+                        7 => _LANG_RECTYPE_OVERRIDE,
+                        8 => _LANG_RECTYPE_DONTREC
                      );
 
 /*

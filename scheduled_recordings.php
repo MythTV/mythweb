@@ -54,7 +54,7 @@
                                        .' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND startdate=FROM_UNIXTIME('.escape($program->starttime).')'
                                        .' AND endtime=FROM_UNIXTIME('.escape($program->endtime).') AND enddate=FROM_UNIXTIME('.escape($program->endtime).')')
                 or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-            $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
+            $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,category,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
                                   .'8,'
                                   .escape($program->chanid)                     .','
                                   .escape($channel->callsign)                   .','
@@ -65,6 +65,7 @@
                                   .escape($program->title)                      .','
                                   .escape($program->subtitle)                   .','
                                   .escape($program->description)                .','
+                                  .escape($program->category)                   .','
                                   .escape($program->profile)                    .','
                                   .escape($program->recpriority)                .','
                                   .escape($program->recgroup)                   .','
@@ -87,7 +88,7 @@
                                            .' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND startdate=FROM_UNIXTIME('.escape($program->starttime).')'
                                            .' AND endtime=FROM_UNIXTIME('.escape($program->endtime).') AND enddate=FROM_UNIXTIME('.escape($program->endtime).')')
                     or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-                $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
+                $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,category,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
                                       .'7,'
                                       .escape($program->chanid)                     .','
                                       .escape($channel->callsign)                   .','
@@ -98,6 +99,7 @@
                                       .escape($program->title)                      .','
                                       .escape($program->subtitle)                   .','
                                       .escape($program->description)                .','
+                                      .escape($program->category)                   .','
                                       .escape($program->profile)                    .','
                                       .escape($program->recpriority)                .','
                                       .escape($program->recgroup)                   .','

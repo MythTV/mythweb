@@ -212,6 +212,8 @@ define ('_LANG_RECTYPE_CHANNEL', 'Kanal');
 define ('_LANG_RECTYPE_ALWAYS',  'Alltid');
 define ('_LANG_RECTYPE_WEEKLY',  'Veckovis');
 define ('_LANG_RECTYPE_FINDONE', 'Bästa tillfälle');
+define ('_LANG_RECTYPE_OVERRIDE', '[translate me] Override (record)');
+define ('_LANG_RECTYPE_DONTREC', '[translate me] Do Not Record');
 
 define ('_LANG_RECTYPE_LONG_ONCE',          'Spela enbart in denna visning.');
 define ('_LANG_RECTYPE_LONG_DAILY',         'Spela in detta program vid denna tid varje dag.');

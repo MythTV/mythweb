@@ -212,6 +212,8 @@ define ('_LANG_RECTYPE_CHANNEL', 'チャンネル');
 define ('_LANG_RECTYPE_ALWAYS',  '常に');
 define ('_LANG_RECTYPE_WEEKLY',  '週間');
 define ('_LANG_RECTYPE_FINDONE', '検索');
+define ('_LANG_RECTYPE_OVERRIDE', '[translate me] Override (record)');
+define ('_LANG_RECTYPE_DONTREC', '[translate me] Do Not Record');
 
 define ('_LANG_RECTYPE_LONG_ONCE',      'この放送のみ録画する');
 define ('_LANG_RECTYPE_LONG_DAILY',     'この番組を毎日この時間帯に録画する');

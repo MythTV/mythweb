@@ -217,6 +217,8 @@ define ('_LANG_RECTYPE_CHANNEL', 'Kanaal');
 define ('_LANG_RECTYPE_ALWAYS',  'Altijd');
 define ('_LANG_RECTYPE_WEEKLY',  'Wekelijks');
 define ('_LANG_RECTYPE_FINDONE', 'Eens');
+define ('_LANG_RECTYPE_OVERRIDE', '[translate me] Override (record)');
+define ('_LANG_RECTYPE_DONTREC', '[translate me] Do Not Record');
 
 define ('_LANG_RECTYPE_LONG_ONCE',      'Enkel deze vertoning opnemen.');
 define ('_LANG_RECTYPE_LONG_DAILY',     'Neem dagelijks op in dit tijdsslot.');
