@@ -24,6 +24,10 @@ For translators:
     telling them that there is an untranslated string.  See below for info about
     untranslated strings.
 
+    Please look at English.php for examples.  Some of the translation strings
+    are shorthand, and are even "translated" in English.php into more verbose
+    sentences.
+
 For theme developers and coders:
 
     Mythweb now has two translation functions:  t() and tn().
