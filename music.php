@@ -102,10 +102,7 @@ class mythMusic {
                 global $musicdir;
                 foreach (preg_split('/\//', substr($this->filename, strlen($musicdir))) as $dir) {
                     if (!$dir) continue;
-                    if (function_exists('mb_convert_encoding'))
-                        $this->urlfilename .= '/'.rawurlencode(mb_convert_encoding($dir, fs_encoding, 'UTF-8'));
-                    else
-                        $this->urlfilename .= '/'.rawurlencode($dir);
+                    $this->urlfilename .= '/'.rawurlencode(utf8tolocal($dir));
                 }
 
                 return(true);

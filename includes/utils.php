@@ -123,6 +123,23 @@ function nice_length($length) {
     }
 
 /*
+    utf8tolocal:
+    returns strings convert UTF-8 to local encoding
+*/
+    function utf8tolocal($str) {
+        if (!defined("fs_encoding") || fs_encoding == '')
+            return $str;
+        if (function_exists('mb_convert_encoding'))
+            return mb_convert_encoding($str, fs_encoding, 'UTF-8');
+        if (function_exists('iconv'))
+            return iconv($int_encoding, fs_encoding, $str);
+        if (function_exists('recode_string'))
+            return recode_string("UTF-8.." . fs_encoding, $str);
+
+        return $str;
+    }
+
+/*
     DEBUG:
     prints out a piece of data
 */
