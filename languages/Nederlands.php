@@ -29,7 +29,7 @@ define ('_LANG_HISTORY',              'Geschiedenis');
 define ('_LANG_HOWTO',                'Hulp');
 define ('_LANG_HORROR',               'Horror');
 define ('_LANG_MISC',                 'Divers');
-define ('_LANG_NEWS',                 'Niewws');
+define ('_LANG_NEWS',                 'Nieuws');
 define ('_LANG_REALITY',              'Reality');
 define ('_LANG_ROMANCE',              'Romantiek');
 define ('_LANG_SCIENCE_NATURE',       'Wetenschap_Natuur');
@@ -66,7 +66,7 @@ define ('_LANG_CATMATCH_MISC',                 '\\b(?:special|variety|info|colle
 define ('_LANG_CATMATCH_NEWS',                 '\\b(?:news|current|nieuws|duiding|actua)');
 define ('_LANG_CATMATCH_REALITY',              '\\b(?:reality|leven)');
 define ('_LANG_CATMATCH_ROMANCE',              '\\b(?:romance|lief)');
-define ('_LANG_CATMATCH_SCIENCE_NATURE',       '\\b(?:fantasy|sci\\w*\\W*fi)');
+define ('_LANG_CATMATCH_SCIENCE_NATURE',       '\\b(?:fantasy|sci\\w*\\W*fi|natuur|wetenschap)');
 define ('_LANG_CATMATCH_SCIFI_FANTASY',        '\\b(?:science|natuur|environment|wetenschap)');
 define ('_LANG_CATMATCH_SHOPPING',             '\\b(?:shop|koop)');
 define ('_LANG_CATMATCH_SOAPS',                '\\b(?:soap)');
