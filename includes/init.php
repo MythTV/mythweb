@@ -89,7 +89,7 @@
 			if (!is_file(image_cache.'/'.$file) || !ereg('\\.(png|jpg|gif)$', $file))
 				continue;
 		// Delete files that haven't been touched in the last 3 days
-			if (fileatime(image_cache.'/'.$file) > 3 * 24 * 60 * 60)
+			if (fileatime(image_cache.'/'.$file) < time() - 3 * 24 * 60 * 60)
 				unlink(image_cache.'/'.$file);
 		}
 		closedir($dir);
