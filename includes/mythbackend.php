@@ -90,6 +90,12 @@
 				$ret .= $data;
 				$length -= strlen($data);
 			}
+		// Did we send the close command?  Close the socket and set the file pointer to null
+			if ($command == 'DONE') {
+				fclose($fp);
+				$fp = NULL;
+			}
+		// Return
 			return $ret;
 		}
 	}
@@ -139,6 +145,15 @@
 		}
 	}
 
+/*
+	backend_disconnect:
+	sends the disconnect/DONE command to the backend
+*/
+	# This is disabled because it seems to REALLY slow things down....
+	#register_shutdown_function('backend_disconnect');
+	function backend_disconnect() {
+		backend_command('DONE');
+	}
 
 /*
 	generate_preview_pixmap:
@@ -160,6 +175,7 @@
 
 			if ($generate_pixmap) {
 				if ($datasocket) {
+					#backend_command2('DONE', $datasocket);
 					fclose($datasocket);
 					$datasocket = NULL;
 				}
@@ -227,8 +243,11 @@
 				}
 			}
 
-			if ($datasocket)
+			if ($datasocket) {
+				#backend_command2('DONE', $datasocket);
 				fclose($datasocket);
+				$datasocket = NULL;
+			}
 		}
 	}
 
