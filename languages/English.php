@@ -21,6 +21,7 @@ $L = array(
     'Rerun'            => '',
     'Search'           => '',
     'Subtitle'         => '',
+    'Unknown'          => '',
 // includes/init.php
     'generic_date' => '%a %b %e, %Y',
     'generic_time' => '%I:%M %p',
@@ -99,7 +100,34 @@ $L = array(
     'Recording Schedules'  => '',
     'Scheduled Recordings' => '',
     'Settings'             => '',
-    'advanced'             => ''
+    'advanced'             => '',
+// themes/.../weather.php
+    ' at '               => '',
+    'Current Conditions' => '',
+    'Forecast'           => '',
+    'Friday'             => '',
+    'High'               => '',
+    'Humidity'           => '',
+    'Last Updated'       => '',
+    'Low'                => '',
+    'Monday'             => '',
+    'Pressure'           => '',
+    'Radar'              => '',
+    'Saturday'           => '',
+    'Sunday'             => '',
+    'Thursday'           => '',
+    'Today'              => '',
+    'Tomorrow'           => '',
+    'Tuesday'            => '',
+    'UV Extreme'         => '',
+    'UV High'            => '',
+    'UV Index'           => '',
+    'UV Minimal'         => '',
+    'UV Moderate'        => '',
+    'Visibility'         => '',
+    'Wednesday'          => '',
+    'Wind'               => '',
+    'Wind Chill'         => ''
 // End of the translation hash ** Do not touch the next line
           );
 
