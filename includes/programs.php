@@ -464,6 +464,94 @@ class Program {
 
     }
 
+    function details_table() {
+    // Start the table, and print the show airtime and title
+        $str = "<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">\n<tr>\n\t<td align=\"right\">"
+            // Airtime
+              .t('Airtime')
+              .":</td>\n\t<td>"
+              .strftime($_SESSION['time_format'], $this->starttime)
+              .' to '.strftime($_SESSION['time_format'], $this->endtime)
+              ."</td>\n</tr><tr>\n\t<td align=\"right\">"
+            // Title
+              .t('Title')
+              .":</td>\n\t<td>"
+              .$this->title
+              ."</td>\n</tr>";
+    // Subtitle
+        if (preg_match('/\\S/', $this->subtitle)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Subtitle')
+                   .":</td>\n\t<td>"
+                   .$this->subtitle
+                   ."</td>\n</tr>";
+        }
+    // Description
+        if (preg_match('/\\S/', $this->description)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Description')
+                   .":</td>\n\t<td>"
+                   .nl2br(wordwrap($this->description, 70))
+                   ."</td>\n</tr>";
+        }
+    // Rating
+        if (preg_match('/\\S/', $this->rating)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Rating')
+                   .":</td>\n\t<td>"
+                   .$this->rating
+                   ."</td>\n</tr>";
+        }
+    // Original Airdate
+        if (!empty($this->airdate)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Original Airdate')
+                   .":</td>\n\t<td>"
+                   .$this->airdate
+                   ."</td>\n</tr>";
+        }
+    // Category
+        if (preg_match('/\\S/', $this->category)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Category')
+                   .":</td>\n\t<td>"
+                   .$this->category
+                   ."</td>\n</tr>";
+        }
+    // Rerun?
+        if (!empty($this->previouslyshown)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Rerun')
+                   .":</td>\n\t<td>"
+                   .t('Yes')
+                   ."</td>\n</tr>";
+        }
+    // Will be recorded at some point in the future?
+        if (!empty($this->will_record)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Schedule')
+                   .":</td>\n\t<td>";
+            if ($this->record_daily)       { $str .= t('rectype-long: daily');   }
+            elseif ($this->record_weekly)  { $str .= t('rectype-long: weekly');  }
+            elseif ($this->record_once)    { $str .= t('rectype-long: once');    }
+            elseif ($this->record_channel) { $str .= t('rectype-long: channel'); }
+            elseif ($this->record_findone) { $str .= t('rectype-long: findone'); }
+            else                           { $str .= t('rectype-long: always');  }
+            $str .= "</td>\n</tr>";
+        }
+    // Recording status
+        if (!empty($this->recstatus)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Notes')
+                   .":</td>\n\t<td>"
+                   .$GLOBALS['RecStatus_Reasons'][$this->recstatus]
+                   ."</td>\n</tr>";
+        }
+    // Finish off the table and return
+        $str .= "\n</table>";
+        return $str;
+    }
+
 }
 
 /*

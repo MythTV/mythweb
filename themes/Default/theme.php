@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2004.09.08 (xris)
+    theme.php                             Last Updated: 2005.01.21 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -19,14 +19,15 @@ class Theme {
 <head>
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 
-    <Link Rel="stylesheet" HRef="<?php echo theme_dir?>style.css" Type="text/css" Media="screen">
-
     <title><?php echo $page_title?></title>
 
-    <script type="text/javascript" src="<?php echo theme_dir?>init.js"></script>
+    <link rel="stylesheet" href="<?php echo theme_dir?>style.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo theme_dir?>menus.css" type="text/css">
+
+    <script type="text/javascript" src="/js/init.js"></script>
 </head>
 
-<body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4" onclick="hide()">
+<body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
 
 <p>
 <table width="100%" border="0" cellspacing="2" cellpadding="0">
@@ -117,7 +118,7 @@ class Theme {
     }
 
     function print_menu_content() {
-        ?><a id="category_legend" onmouseover="show('category_legend');return true;" onmouseout="hide();return true;">MythTV:</a> &nbsp; &nbsp;
+        ?><a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
                 <a href="program_listing.php"><?php echo t('Listings') ?></a>
                 &nbsp; | &nbsp;
                 <a href="search.php?category_type=<?php echo movie_word?>"><?php echo t('Movies') ?></a>
@@ -153,7 +154,7 @@ class Theme {
     }
 ?>
 
-<div id="category_legend_popup" class="hidden">
+<div id="category_legend_popup">
 <table width="400" bgcolor="#003060" border="1" cellpadding="0" cellspacing="0">
 <tr>
     <td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">

@@ -5,7 +5,7 @@ Body {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #002650;
-    color: #DEDEDE;
+    color: #dedede;
 }
 
 /* make transparent png's render properly in IE */
@@ -43,7 +43,7 @@ A:hover   { color: #F0F000; text-decoration: underline; }
 }
 
 /* a class for the menu across the top of the page as well as menu headers throughout the page */
-.menu {    background-color: #265990 }
+.menu {          background-color: #265990 }
 .menu_border_t { border-top:    2px solid #9090B0 }
 .menu_border_b { border-bottom: 2px solid #9090B0 }
 .menu_border_l { border-left:   2px solid #9090B0 }
@@ -129,11 +129,8 @@ form, .form { display: inline; }
 
 /* for mouseover popup menus */
 .hidden {
-    position: absolute;
     visibility: hidden;
-    z-index: 99;
-    top: 0px;
-    left: 0px;
+    display:    none;
 }
 
 .no_padding {
@@ -204,3 +201,16 @@ form, .form { display: inline; }
 .tv_Serie          { background-color: DarkOrchid }
 .tv_SHOW           { background-color: sienna }
 .tv_Tiempo         { background-color: #33ff99 }
+
+
+/* the category legend */
+#category_legend_popup {
+    position:         absolute;
+    visibility:       hidden;
+    top:              0px;
+    left:             0px;
+    padding:          2px;
+}
+#category_legend_popup table {
+    font-size:        9pt;
+}

@@ -190,94 +190,36 @@ class Theme_program_listing extends Theme {
 
     */
     function print_program($program, $timeslots_used, $starttime) {
-    // Build a popup table for the mouseover of the cell, with extra program information?
+    // A program id counter for popup info
         if (show_popup_info) {
-        // A program id counter
             static $program_id_counter = 0;
             $program_id_counter++;
-        // Add a footnote
-            global $Footnotes;
-            $Footnotes[] = "<div id=\"program_{$program_id_counter}_popup\" class=\"hidden\">
-<table class=\"menu small\" border=\"1\" cellpadding=\"5\" cellspacing=\"0\">
-<tr>
-    <td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
-        <tr>
-            <td align=\"right\">".t('Airtime').":</td>
-            <td>".strftime($_SESSION['time_format'], $program->starttime).' to '.strftime($_SESSION['time_format'], $program->endtime)."</td>
-        </tr><tr>
-            <td align=\"right\">".t('Title').":</td>
-            <td>$program->title</td>
-        </tr>"
-        .(strlen($program->subtitle) > 0 ? "<tr>
-            <td align=\"right\">".t('Subtitle').":</td>
-            <td>$program->subtitle</td>
-        </tr>" : '')
-        .(strlen($program->description) > 0 ? "<tr>
-            <td align=\"right\" valign=\"top\">".t('Description').":</td>
-            <td>".nl2br(wordwrap($program->description, 70))."</td>
-        </tr>" : '')
-        .(strlen($program->rating) > 0 ? "<tr>
-            <td align=\"right\" valign=\"top\">".t('Rating').":</td>
-            <td>$program->rating</td>
-        </tr>" : '')
-        .($program->airdate > 0 ? "<tr>
-            <td align=\"right\">".t('Original Airdate').":</td>
-            <td>$program->airdate</td>
-        </tr>" : '')
-        .(strlen($program->category) > 0 ? "<tr>
-            <td align=\"right\">".t('Category').":</td>
-            <td>$program->category</td>
-        </tr>" : '')
-        .($program->previouslyshown ? "<tr>
-            <td align=\"right\">".t('Rerun').":</td>
-            <td>Yes</td>
-        </tr>" : '')
-        .($program->will_record ? "<tr>
-            <td align=\"right\">".t('Schedule').":</td>
-            <td>".($program->record_daily       ? t('rectype-long: daily')
-                    : ($program->record_weekly  ? t('rectype-long: weekly')
-                    : ($program->record_once    ? t('rectype-long: once')
-                    : ($program->record_channel ? t('rectype-long: channel')
-                    : ($program->record_findone ? t('rectype-long: findone')
-                    : t('rectype-long: always'))))))."</td>
-        </tr>" : '')
-        .($program->recstatus ? "<tr>
-            <td align=\"right\">".t('Notes').":</td>
-            <td>".$GLOBALS['RecStatus_Reasons'][$program->recstatus]."</td>
-        </tr>" : '')
-        ."</table></td>
-</tr>
-</table>
-</div>";
         }
 
 // then, we just display the info
         $percent = (int)($timeslots_used * 96 / num_time_slots);
 ?>
     <td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" width="<?php echo $percent?>%" valign="top"><?php
-        $mouseover = 'onmouseover="window.status=\''.strftime($_SESSION['time_format'], $program->starttime).' - '.strftime($_SESSION['time_format'], $program->endtime).' -- '
-                     .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
-                     .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
-                                          : '')
-                     .'\';';
+    // Window status text, for the mouseover
+        $wstatus = strftime($_SESSION['time_format'], $program->starttime).' - '.strftime($_SESSION['time_format'], $program->endtime).' -- '
+                  .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
+                  .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
+                                          : '');
+    // Start printing the link to record this show
+        echo '<a';
         if (show_popup_info)
-            $mouseover .= 'show(\'program_'.$program_id_counter.'\');';
-        $mouseover .= 'return true;" onmouseout="window.status=\'\';';
-        if (show_popup_info)
-            $mouseover .= 'hide();';
-        $mouseover .= 'return true;"';
-    // Print a link to record this show
-        echo '<a id="program_'.$program_id_counter.'" href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'"'.$mouseover.'>';
+            echo show_popup("program_$program_id_counter", $program->details_table(), NULL, 'popup', $wstatus);
+        else
+            echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
 
+        echo ' href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
             echo '<img src="themes/Default/img/leftwhite.png" border="0">';
-
     // Does this program 'Continue'?
         $right_arrow = '';
         if ($program->endtime > $GLOBALS['list_endtime'])
             $right_arrow = '<img src="themes/Default/img/rightwhite.png" border="0">';
-
         if ($percent > 5) {
             echo $program->title;
             if (strlen($program->subtitle) > 0) {
@@ -291,6 +233,7 @@ class Theme_program_listing extends Theme {
         }
         else
             echo '...'.$right_arrow;
+    // Finish off the link
         echo '</a>';
 
     // Print some additional information for movies

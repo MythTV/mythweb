@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recordings.php                           Last Updated: 2004.09.08 (xris)
+    recordings.php                           Last Updated: 2005.01.21 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -103,8 +103,8 @@ class Recording {
 
     function Recording($recording_data) {
 
-        if (is_array($recording_data) && isset($recording_data['recordid'])) {
     // SQL data
+        if (is_array($recording_data) && isset($recording_data['recordid'])) {
             $this->recordid    = $recording_data['recordid'];
             $this->type        = $recording_data['type'];
             $this->chanid      = $recording_data['chanid'];
@@ -115,7 +115,7 @@ class Recording {
             $this->description = $recording_data['description'];
             $this->category    = $recording_data['category'];
             $this->profile     = $recording_data['profile'];
-            $this->recgroup     = $recording_data['recgroup'];
+            $this->recgroup    = $recording_data['recgroup'];
             $this->recpriority = $recording_data['recpriority'];
             $this->autoexpire  = $recording_data['autoexpire'];
             $this->maxepisodes = $recording_data['maxepisodes'];
@@ -126,47 +126,28 @@ class Recording {
             $this->endoffset   = $recording_data['endoffset'];
             $this->seriesid    = $recording_data['seriesid'];
             $this->programid   = $recording_data['programid'];
-        } else {
-            $this->recordid    = $recording_data->recordid;
-            $this->type        = $recording_data->type;
-            $this->chanid      = $recording_data->chanid;
-            $this->starttime   = $recording_data->starttime;
-            $this->startdate   = $recording_data->startdate;
-            $this->endtime     = $recording_data->endtime;
-            $this->enddate     = $recording_data->enddate;
-            $this->title       = $recording_data->title;
-            $this->subtitle    = $recording_data->subtitle;
-            $this->description = $recording_data->description;
-            $this->category    = $recording_data->category;
-            $this->profile     = $recording_data->profile;
-            $this->recgroup     = $recording_data->recgroup;
-            $this->recpriority = $recording_data->recpriority;
-            $this->autoexpire  = $recording_data->autoexpire;
-            $this->maxepisodes = $recording_data->maxepisodes;
-            $this->maxnewest   = $recording_data->maxnewest;
-            $this->dupin       = $recording_data->dupin;
-            $this->dupmethod   = $recording_data->dupmethod;
-            $this->startoffset = $recording_data->startoffset;
-            $this->endoffset   = $recording_data->endoffset;
-            $this->seriesid    = $recording_data->seriesid;
-            $this->programid   = $recording_data->programid;
+        }
+    // Recording object data
+        else {
+            $tmp = @get_object_vars($recording_data);
+            if (count($tmp) > 0) {
+                foreach ($tmp as $key => $value) {
+                    $this->$key = $value;
+                }
+            }
         }
 
-        // We get various recording-related information, too
-        if ($this->type == 1)
-            $this->record_once = true;
-        elseif ($this->type == 2)
-            $this->record_daily = true;
-        elseif ($this->type == 3)
-            $this->record_channel = true;
-        elseif ($this->type == 4)
-            $this->record_always = true;
-        elseif ($this->type == 5)
-            $this->record_weekly = true;
-        elseif ($this->type == 6)
-            $this->record_findone = true;
+    // We get various recording-related information, too
+        switch ($this->type) {
+            case 1: $this->record_once    = true;  break;
+            case 2: $this->record_daily   = true;  break;
+            case 3: $this->record_channel = true;  break;
+            case 4: $this->record_always  = true;  break;
+            case 5: $this->record_weekly  = true;  break;
+            case 6: $this->record_findone = true;  break;
+        }
 
-        // Add a generic "will record" variable, too
+    // Add a generic "will record" variable, too
         $this->will_record = ($this->record_daily
                               || $this->record_weekly
                               || $this->record_once
@@ -193,6 +174,130 @@ class Recording {
     // Find out which css category this recording falls into
         if ($this->chanid != '')
             $this->class = category_class($this);
+    }
+
+/*
+    details_table:
+    The "details table" for recordings.  Very similar to that for programs, but
+    with a few extra checks, and some information arranged differently.
+*/
+    function details_table() {
+    // Start the table, and print the show title
+        $str = "<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">\n<tr>\n\t<td align=\"right\">"
+              .t('Title')
+              .":</td>\n\t<td>"
+              .$this->title
+              ."</td>\n</tr>";
+    // Type
+        $str .= "<tr>\n\t<td align=\"right\">"
+               .t('Type')
+               .":</td>\n\t<td>"
+               .$this->texttype
+               ."</td>\n</tr>";
+    // Only show these fields for recording types where they're relevant (1:once, 2:daily, 5:weekly, 7:override, 8:dontrec)
+        if (($this->type == 1) || ($this->type == 2) || ($this->type == 5) || ($this->type == 7) || ($this->type == 8)) {
+        // Airtime
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Airtime')
+                   .":</td>\n\t<td>"
+                   .strftime($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $this->starttime)
+                   .' to '.strftime($_SESSION['time_format'], $this->endtime)
+                   ."</td>\n</tr>";
+        // Subtitle
+            if (preg_match('/\\S/', $this->subtitle)) {
+                $str .= "<tr>\n\t<td align=\"right\">"
+                       .t('Subtitle')
+                       .":</td>\n\t<td>"
+                       .$this->subtitle
+                       ."</td>\n</tr>";
+            }
+        // Description
+            if (preg_match('/\\S/', $this->description)) {
+                $str .= "<tr>\n\t<td align=\"right\" valign=\"top\">"
+                       .t('Description')
+                       .":</td>\n\t<td>"
+                       .nl2br(wordwrap($this->description, 70))
+                       ."</td>\n</tr>";
+            }
+        // Rating
+            if (preg_match('/\\S/', $this->rating)) {
+                $str .= "<tr>\n\t<td align=\"right\">"
+                       .t('Rating')
+                       .":</td>\n\t<td>"
+                       .$this->rating
+                       ."</td>\n</tr>";
+            }
+        }
+    // Category
+        if (preg_match('/\\S/', $this->category)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Category')
+                   .":</td>\n\t<td>"
+                   .$this->category
+                   ."</td>\n</tr>";
+        }
+    // Rerun?
+        if (!empty($this->previouslyshown)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Rerun')
+                   .":</td>\n\t<td>"
+                   .t('Yes')
+                   ."</td>\n</tr>";
+        }
+    // Will be recorded at some point in the future?
+        if (!empty($this->will_record)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Schedule')
+                   .":</td>\n\t<td>";
+            if ($this->record_daily)       { $str .= t('rectype-long: daily');   }
+            elseif ($this->record_weekly)  { $str .= t('rectype-long: weekly');  }
+            elseif ($this->record_once)    { $str .= t('rectype-long: once');    }
+            elseif ($this->record_channel) { $str .= t('rectype-long: channel'); }
+            elseif ($this->record_findone) { $str .= t('rectype-long: findone'); }
+            else                           { $str .= t('rectype-long: always');  }
+            $str .= "</td>\n</tr>";
+        }
+    // Which duplicate-checking method will be used
+        if ($this->dupmethod > 0) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Dup Method')
+                   .":</td>\n\t<td>";
+            switch ($this->dupmethod) {
+                case 1:  $str .= t('None');                         break;
+                case 2:  $str .= t('Subtitle');                     break;
+                case 4:  $str .= t('Description');                  break;
+                case 6:  $str .= t('Subtitle and Description');     break;
+                case 22: $str .= t('Sub and Desc (Empty matches)'); break;
+            }
+            $str .= "</td>\n</tr>";
+        }
+    // Profile
+        if (preg_match('/\\S/', $this->profile)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Profile')
+                   .":</td>\n\t<td>"
+                   .$this->profile
+                   ."</td>\n</tr>";
+        }
+    // Recording Group
+        if (!empty($this->recgroup)) {
+            $str .="<tr>\n\t<td align=\"right\">"
+                   .t('Recording Group')
+                   .":</td>\n\t<td>"
+                   .$this->recgroup
+                   ."</td>\n</tr>";
+        }
+    // Recording status
+        if (!empty($this->recstatus)) {
+            $str .= "<tr>\n\t<td align=\"right\">"
+                   .t('Notes')
+                   .":</td>\n\t<td>"
+                   .$GLOBALS['RecStatus_Reasons'][$this->recstatus]
+                   ."</td>\n</tr>";
+        }
+    // Finish off the table and return
+        $str .= "\n</table>";
+        return $str;
     }
 
 }

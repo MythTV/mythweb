@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2004.09.08 (xris)
+    scheduled_recordings.php                    Last Updated: 2005.01.21 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -127,97 +127,45 @@ if ($group_field == "") {
             $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'.t('Activate').'</a>';
             $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'.t('Don\'t Record').'</a>';
         }
-    // Build a popup table for the mouseover of the cell, with extra program information?
+    // A program id counter for popup info
         if (show_popup_info) {
-        // A program id counter
             static $program_id_counter = 0;
             $program_id_counter++;
-        // Add a footnote
-            global $Footnotes;
-            $Footnotes[] = "<div id=\"program_{$program_id_counter}_popup\" class=\"hidden\">
-<table class=\"menu small\" border=\"1\" cellpadding=\"5\" cellspacing=\"0\">
-<tr>
-    <td><table class=\"menu small\" cellpadding=\"2\" cellspacing=\"0\">
-        <tr>
-            <td align=\"right\">".t('Airtime').":</td>
-            <td>".strftime($_SESSION['date_scheduled_popup'].', '.$_SESSION['time_format'], $show->starttime).' to '.strftime($_SESSION['time_format'], $show->endtime)."</td>
-        </tr><tr>
-            <td align=\"right\">".t('Title').":</td>
-            <td>$show->title</td>
-        </tr>"
-        .(preg_match('/\\S/', $show->subtitle) ? "<tr>
-            <td align=\"right\">".t('Subtitle').":</td>
-            <td>$show->subtitle</td>
-        </tr>" : '')
-        .(preg_match('/\\S/', $show->description) ? "<tr>
-            <td align=\"right\" valign=\"top\">".t('Description').":</td>
-            <td>".nl2br(wordwrap($show->description, 70))."</td>
-        </tr>" : '')
-        .(preg_match('/\\S/', $show->rating) ? "<tr>
-            <td align=\"right\" valign=\"top\">".t('Rating').":</td>
-            <td>$show->rating</td>
-        </tr>" : '')
-        .($show->airdate > 0 ? "<tr>
-            <td align=\"right\">".t('Original Airdate').":</td>
-            <td>$show->airdate</td>
-        </tr>" : '')
-        .(preg_match('/\\S/', $show->category) ? "<tr>
-            <td align=\"right\">".t('Category').":</td>
-            <td>$show->category</td>
-        </tr>" : '')
-        .($show->previouslyshown ? "<tr>
-            <td align=\"right\">".t('Rerun').":</td>
-            <td>Yes</td>
-        </tr>" : '')
-        .($show->will_record ? "<tr>
-            <td align=\"right\">".t('Schedule').":</td>
-            <td>".($show->record_daily       ? t('rectype-long: daily')
-                    : ($show->record_weekly  ? t('rectype-long: weekly')
-                    : ($show->record_once    ? t('rectype-long: once')
-                    : ($show->record_channel ? t('rectype-long: channel')
-                    : ($show->record_findone ? t('rectype-long: findone')
-                    : t('rectype-long: always'))))))."</td>
-        </tr>" : '')
-        .(preg_match('/\\S/', $show->profile) ? "<tr>
-            <td align=\"right\">".t('Profile').":</td>
-            <td>$show->profile</td>
-        </tr>" : '')
-        .($show->recstatus ? "<tr>
-            <td align=\"right\">".t('Notes').":</td>
-            <td>".$GLOBALS['RecStatus_Reasons'][$show->recstatus]."</td>
-        </tr>" : '')
-        ."</table></td>
-</tr>
-</table>
-</div>";
         }
 
     // Print a dividing row if grouping changes
-    if ($group_field == "airdate")
-        $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
-    elseif ($group_field == "channum")
-        $cur_group = $show->channel->name;
-    elseif ($group_field == "title")
-        $cur_group = $show->title;
+        if ($group_field == "airdate")
+            $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
+        elseif ($group_field == "channum")
+            $cur_group = $show->channel->name;
+        elseif ($group_field == "title")
+            $cur_group = $show->title;
 
-    if ( $cur_group != $prev_group && $group_field != '' ) {
+        if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
     <td colspan="5" class="list_separator"><?php echo $cur_group?></td>
 </tr><?php
-    }
+        }
 
     // Print the content
 ?><tr class="<?php echo $class?>">
 <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
     <td class="<?php echo $show->class?>"><?php
-        // Print a link to record this show
-        echo '<a id="program_'.$program_id_counter.'" href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'
-             .(show_popup_info ? ' onmouseover="window.status=\'Details for: '.str_replace('\'', '\\\]', $show->title).'\';show(\'program_'.$program_id_counter.'\');return true"'
-                                .' onmouseout="window.status=\'\';hide();return true"'
-                               : '')
-             .'>'.$show->title
-             .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
-             .'</a>';
+    // Window status text, for the mouseover
+        $wstatus = strftime($_SESSION['time_format'], $show->starttime).' - '.strftime($_SESSION['time_format'], $show->endtime).' -- '
+                  .str_replace(array("'", '"'),array("\\'", '&quot;'), $show->title)
+                  .($show->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $show->subtitle)
+                                          : '');
+    // Print the link to edit this scheduled recording
+        echo '<a';
+        if (show_popup_info)
+            echo show_popup("program_$program_id_counter", $show->details_table(), NULL, 'popup', $wstatus);
+        else
+            echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
+        echo ' href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
+            .$show->title
+            .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
+            .'</a>';
         ?></td>
     <td><?php echo $show->channel->channum, ' - ', $show->channel->name?></td>
     <td nowrap><?php echo strftime($_SESSION['date_scheduled'], $show->starttime)?></td>

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2004.11.25 (xris)
+    init.php                                 Last Updated: 2005.01.21 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -61,6 +61,7 @@
 
 // Include a few useful functions
     require_once "includes/utils.php";
+    require_once "includes/mouseovers.php";
 
 // Connect to the backend and load some more handy utilities
     require_once "includes/mythbackend.php";
