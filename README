@@ -136,12 +136,3 @@ A: The main .htaccess file contains commented-out apache controls for enabling
 		Vastly improve design and capabilities so that the
 		thing will work well, fast, and completely through
 		a standard browser.
-
-	Over the next few months:
-
-		Redo everything with a pure web services (SOAP)
-		substructure. This will create an abstract interface
-		which can then be called by browser, phone, PDA, other
-		software etc., etc. Given that substructure, start to
-		think about how to do P2P interactions with a decent
-		permissioning mechanism. Lots of potential here.

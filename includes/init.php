@@ -86,7 +86,7 @@
 // Clean out stale thumbnails
 	if ($dir = opendir(image_cache)) {
 		while (($file = readdir($dir))) {
-			if (!is_file(image_cache.'/'.$file) || !ereg('\\.(png,jpg,gif)$', $file))
+			if (!is_file(image_cache.'/'.$file) || !ereg('\\.(png|jpg|gif)$', $file))
 				continue;
 		// Delete files that haven't been touched in the last 3 days
 			if (fileatime(image_cache.'/'.$file) > 3 * 24 * 60 * 60)
