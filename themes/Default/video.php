@@ -24,7 +24,7 @@ class Theme_video extends Theme {
 
 function newWindow(newContent)
  {
-  winContent = window.open(newContent, 'nextWin', 'right=0, top=20,width=350,height=410, toolbar=no,scrollbars=no, resizable=yes')
+  winContent = window.open(newContent, 'nextWin', 'right=0, top=20,width=350,height=440, toolbar=no,scrollbars=no, resizable=yes')
  }
 
  //Stop hiding script from old browsers -->

@@ -32,15 +32,16 @@ function refreshParent() {
 if (isset($_POST['submit'])) {
 
       //insert data into database
-      mysql_query("UPDATE videometadata SET title='{$_POST['title']}',director='{$_POST['director']}',plot='{$_POST['plot']}',rating='{$_POST['rating']}',inetref='{$_POST['inetref']}',year='{$_POST['year']}',userrating='{$_POST['userrating']}',length='{$_POST['length']}' WHERE intid='{$_POST['intid']}'");
+      mysql_query("UPDATE videometadata SET
+                   title='{$_POST['title']}',director='{$_POST['director']}',plot='{$_POST['plot']}',category='{$_POST['category']}',rating='{$_POST['rating']}',inetref='{$_POST['inetref']}',year='{$_POST['year']}',userrating='{$_POST['userrating']}',length='{$_POST['length']}' WHERE intid='{$_POST['intid']}'");
       //close window and refresh parent
       ?><body onLoad="refreshParent()"</body><?php
 }
 
 //get data to prefill form if we're editing an existing entry
-   $edit_result = mysql_query("SELECT intid,title,director,plot,rating,inetref,year,userrating,length FROM videometadata WHERE intid=' {$_REQUEST['intid']}'")
+   $edit_result = mysql_query("SELECT intid,title,director,plot,category,rating,inetref,year,userrating,length FROM videometadata WHERE intid=' {$_REQUEST['intid']}'")
           or trigger_error('SQL Error: '.mysql_error(), FATAL);
-     list($intid,$title,$director,$plot,$rating,$inetref,$year,$userrating,$length)=mysql_fetch_array($edit_result);
+     list($intid,$title,$director,$plot,$category,$rating,$inetref,$year,$userrating,$length)=mysql_fetch_array($edit_result);
 //output html form
 ?>
 
@@ -78,6 +79,19 @@ td,body {
 </tr><tr>
     <td>Plot:</td>
     <td><textarea name="plot" rows="5" cols="30" wrap="VIRTUAL"><?if (isset($plot)) print $plot; ?></textarea></td>
+</tr><tr>
+    <td>Category:</td>
+    <td><select name="category">
+       <option <?if (!(isset($category)) || ($category == 0)) print "selected"; ?> value="0">Uncategorized</option>
+       <?php
+       $result = mysql_query('SELECT * FROM videocategory')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+           while( $cat_data = mysql_fetch_assoc($result) )  {
+           $num_cat++;
+           $cat_str = $cat_data["category"]; ?>
+       <option <?if ($category == $num_cat) print "selected"; ?> value="<?print $num_cat; ?>"><?print $cat_str; ?></option>
+       <?}
+   ?></td>
 </tr><tr>
     <td>Rating:</td>
     <td><input name="rating" type="text" value="<?if (isset($rating)) print $rating; ?>"></td>
