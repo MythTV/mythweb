@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                       Last Updated: 2005.02.08 (xris)
+    program_detail.php                       Last Updated: 2005.02.20 (xris)
 
     This file defines a theme class for the program details section.
     It must define one method.   documentation will be added someday.
@@ -252,7 +252,7 @@ class Theme_program_detail extends Theme {
         </div>
 <?php
         }
-        if ($program || $schedule->type == rectype_override || $schedule->type == rectype_dontrec) {
+        if ($schedule && $schedule->type) {
 ?>
         <div id="schedule_override">
             <h3><?php echo t('Schedule Override') ?>:</h3>
