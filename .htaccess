@@ -14,6 +14,7 @@ php_value output_buffering              0
 php_value register_globals              0
 php_value magic_quotes_gpc              0
 php_value file_uploads                  0
+php_value allow_url_fopen				1
 
 php_value zlib.output_compression       1
 php_value zlib.output_compression_level 4
