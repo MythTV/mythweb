@@ -38,7 +38,7 @@ class Theme {
 ?>
 </head>
 
-<body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
+<body>
 
 <div id="page_header" class="clearfix">
     <div id="logo_box">

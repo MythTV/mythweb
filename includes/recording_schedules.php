@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                  Last Updated: 2005.02.06 (xris)
+    recording_schedules.php                  Last Updated: 2005.02.07 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -22,6 +22,12 @@
     define('rectype_dontrec',     8);
     define('rectype_finddaily',   9);
     define('rectype_findweekly', 10);
+
+// Define the search types
+    define('searchtype_power',    1);
+    define('searchtype_title',    2);
+    define('searchtype_keyword',  3);
+    define('searchtype_people',   4);
 
 // Recording types -- enum at the top of libs/libmythtv/recordingtypes.h
     $RecTypes = array(

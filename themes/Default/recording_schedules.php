@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2005.02.05 (xris)
+    recording_schedules.php                 Last Updated: 2005.02.08 (xris)
 
     This file defines a theme class for the all recordings section.
     It must define one method.   documentation will be added someday.
@@ -9,71 +9,38 @@
 
 class Theme_recording_schedules extends Theme {
 
-    function print_page() {
+    function print_page(&$the_schedules) {
     // Print the main page header
         parent::print_header('MythWeb - Recording Schedules');
     // Print the page contents
-        global $All_Shows;
 ?>
 
-<script language="JavaScript" type="text/javascript">
-<!--
-    function changevisible() {
-        var prev_visible_class = "no_padding";
-
-        for (var i=1; i < document.getElementById("listings").rows.length; i++) {
-            if (document.getElementById("listings").rows[i].className == "list_separator") {
-                if (prev_visible_class == "list_separator")
-                    document.getElementById("listings").rows[i].style.display = "none";
-                else
-                    document.getElementById("listings").rows[i].style.display = "";
-                prev_visible_class = "list_separator";
-            }
-            else {
-                if (document.getElementById(document.getElementById("listings").rows[i].className).checked) {
-                    document.getElementById("listings").rows[i].style.display = "";
-                    prev_visible_class = document.getElementById("listings").rows[i].className;
-                }
-                else
-                    document.getElementById("listings").rows[i].style.display = "none";
-            }
-        }
-    }
-// -->
-</script>
-
 <?php
-$group_field = $_GET['sortby'];
-if ($group_field == "title")
-    $group_field = "";
-elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "type") || ($group_field == "profile") || ($group_field == "recgroup")) )
-    $group_field = "";
-
+    $group_field = $_GET['sortby'];
+    if ($group_field == 'title' || !in_array($group_field, array('title', 'channum', 'type', 'profile', 'recgroup')))
+        $group_field = '';
 ?>
 
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
     <td><?php echo get_sort_link('title',    t('title'))    ?></td>
-    <td><?php echo get_sort_link('channum',  t('channum'))  ?></td>
+    <td><?php echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('channel')) ?></td>
     <td><?php echo get_sort_link('profile',  t('profile'))  ?></td>
     <td><?php echo get_sort_link('recgroup', t('recgroup')) ?></td>
     <td><?php echo get_sort_link('type',     t('type'))     ?></td>
 </tr><?php
-    $row = 0;
+    $prev_group = '';
+    $cur_group  = '';
 
-    $prev_group="";
-    $cur_group="";
-
-    foreach ($All_Shows as $show) {
+    foreach ($the_schedules as $schedule) {
     // Reset the command variable to a default URL
-        $commands = array();
-        $urlstr = 'recordid='.$show->recordid;
+        $urlstr = 'recordid='.$schedule->recordid;
 
-        $class = ($show->type == 8 ? 'deactivated' : 'scheduled');
+        $class = ($schedule->type == rectype_dontrec ? 'deactivated' : 'scheduled');
     // If this is an 'always on any channel' or 'find one' recording w/o a channel, set the channel name to 'Any'
-        if ($show->type == 4 || ($show->type == 6 && !preg_match('/\\S/', $show->channel->channum)))
-            $show->channel->name = '[ '.t('Any').' ]';
+        if ($schedule->type == rectype_always || ($schedule->type == rectype_findone && !preg_match('/\\S/', $schedule->channel->channum)))
+            $schedule->channel->name = '[ '.t('Any').' ]';
     // A program id counter for popup info
         if (show_popup_info) {
             static $program_id_counter = 0;
@@ -82,18 +49,20 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
 
     // Print a dividing row if grouping changes
         if ($group_field == 'type')
-            $cur_group = $show->texttype;
+            $cur_group = $schedule->texttype;
         elseif ($group_field == 'channum')
-            $cur_group = ($show->channel->channum ? $show->channel->channum.' - ' : '').$show->channel->name;
+            $cur_group = ($schedule->channel->channum ? $schedule->channel->channum.' - ' : '').$schedule->channel->name;
         elseif ($group_field == 'profile')
-            $cur_group = $show->profile;
+            $cur_group = $schedule->profile;
         elseif ($group_field == 'recgroup')
-            $cur_group = $show->recgroup;
+            $cur_group = $schedule->recgroup;
+    // "none"?
+        $cur_group or $cur_group = t('None');
 
-        $style_class = $show->class;
-        if ($show->type == 7)
+        $style_class = $schedule->class;
+        if ($schedule->type == rectype_override)
             $style_class .= ' record_override_record';
-        elseif ($show->type == 8)
+        elseif ($schedule->type == rectype_dontrec)
             $style_class .= ' record_override_suppress';
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
@@ -103,35 +72,38 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
         }
     // Print the content
     ?><tr class="<?php echo $class?>">
-    <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
+        <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
     <td class="<?php echo $style_class?>"><?php
     // Window status text, for the mouseover
-        $wstatus = "Details for $show->title";
+        $wstatus = "Details for $schedule->title";
     // Print a link to the program detail for this schedule
         echo '<a';
         if (show_popup_info)
-            echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup', $wstatus);
+            echo show_popup("program_$program_id_counter", $schedule->details_list(), NULL, 'popup', $wstatus);
         else
             echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
-        echo ' href="program_detail.php?recordid='.$show->recordid.'"'
-             .'>'.$show->title
-             .(($show->type == 1 || $show->type == 7 || $show->type == 8) && preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
-             .'</a>';
+        echo ' href="program_detail.php?recordid='.$schedule->recordid.'"'
+             .'>'.$schedule->title;
+        if (in_array($schedule->type, array(rectype_once, rectype_override, rectype_dontrec)) && preg_match('/\\w/', $schedule->subtitle))
+            echo ":  $schedule->subtitle";
+        echo '</a>';
         ?></td>
     <td><?php
-        if ($show->channel->channum)
-            echo $show->channel->channum.' - ';
-        echo $show->channel->name
+        if (prefer_channum) {
+            if ($schedule->channel->channum)
+                echo $schedule->channel->channum.' - ';
+        }
+        else {
+            if ($schedule->channel->callsign)
+                echo $schedule->channel->callsign.' - ';
+        }
+        echo $schedule->channel->name;
         ?></td>
-    <td nowrap><?php if($show->type != 8) echo $show->profile; ?></td>
-    <td nowrap><?php if($show->type != 8) echo $show->recgroup; ?></td>
-    <td nowrap><?php echo $show->texttype ?></td>
-<?php   foreach ($commands as $command) { ?>
-    <td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo $command?></td>
-<?php   } ?>
+    <td nowrap><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
+    <td nowrap><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
+    <td nowrap><?php echo $schedule->texttype ?></td>
 </tr><?php
         $prev_group = $cur_group;
-        $row++;
     }
 ?>
 

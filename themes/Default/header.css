@@ -14,6 +14,7 @@
 }
 
 #sections {
+    white-space: nowrap;
 }
 #sections a {
     float:              left;
