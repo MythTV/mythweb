@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2004.08.09 (xris)
+    search.php                               Last Updated: 2005.02.04 (xris)
 
     This file defines a theme class for the search section.
     It must define one method.   documentation will be added someday.
@@ -121,6 +121,8 @@ class Theme_search extends Theme {
     ?><tr class="<?php echo $show->class ?>">
     <?php if ($group_field != "") echo "<td class=\"list\">&nbsp;</td>\n"; ?>
     <td class="<?php echo $show->class ?>"><?php
+        if ($show->hdtv)
+            echo '<span class="hdtv_icon">HD</span>';
         echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
              .$show->title . $additional.'</a>';
         ?></td>

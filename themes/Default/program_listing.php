@@ -205,6 +205,9 @@ class Theme_program_listing extends Theme {
                   .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
                   .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
                                           : '');
+    // hdtv?
+        if ($program->hdtv && $percent > 5)
+            echo '<span class="hdtv_icon">HD</span>';
     // Start printing the link to record this show
         echo '<a';
         if (show_popup_info)
@@ -215,16 +218,16 @@ class Theme_program_listing extends Theme {
         echo ' href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
-            echo '<img src="themes/Default/img/leftwhite.png" border="0">';
+            echo '<img src="themes/Default/img/leftwhite.png" border="0" class="left_arrow">';
     // Does this program 'Continue'?
         $right_arrow = '';
         if ($program->endtime > $GLOBALS['list_endtime'])
-            $right_arrow = '<img src="themes/Default/img/rightwhite.png" border="0">';
+            $right_arrow = '<img src="themes/Default/img/rightwhite.png" border="0" class="right_arrow">';
         if ($percent > 5) {
             echo $program->title;
             if (strlen($program->subtitle) > 0) {
                 if ($percent > 8)
-                    echo ":$right_arrow<BR>$program->subtitle";
+                    echo ":$right_arrow<br />$program->subtitle";
                 else
                     echo ': ...'.$right_arrow;
             }
@@ -258,11 +261,6 @@ class Theme_program_listing extends Theme {
     // Finally, print some other information
         if ($program->previouslyshown)
             $parens = "<i>Rerun</i>";
-        if ($program->hdtv) {
-            if ($parens)
-                $parens .= ", ";
-            $parens .=  "<font color=\"yellow\"><b>HD</b></font>";
-	}
         if ($parens)
             echo "<BR>($parens)";
 

@@ -4,6 +4,20 @@
 
 */
 
+.hdtv_icon {
+    font-size:   9pt;
+    float:       right;
+    color:       yellow;
+    display:     inline;
+    font-weight: bold;
+}
+
+.right_arrow {
+}
+.left_arrow {
+    float: left;
+}
+
 .record_weekly            { border: 1px solid  #00F000; }
 .record_timeslot          { border: 1px solid  #00F000; }
 .record_once              { border: 1px solid  #00F000; }
