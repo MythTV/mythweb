@@ -612,9 +612,9 @@ class Program {
 			$this->class .= $cache[$category] = 'cat_Comedy';
 		elseif (preg_match('/'._LANG_CATMATCH_CRIME_MYSTERY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Crime_Mystery';
-		elseif (preg_match('/'._LANG_DOCUMENTARY.'/', $category))
+		elseif (preg_match('/'._LANG_CATMATCH_DOCUMENTARY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Documentary';
-		elseif (preg_match('/'._LANG_DRAMA.'/', $category))
+        elseif (preg_match('/'._LANG_CATMATCH_DRAMA.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Drama';
 		elseif (preg_match('/'._LANG_CATMATCH_EDUCATIONAL.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Educational';
@@ -626,9 +626,9 @@ class Program {
 			$this->class .= $cache[$category] = 'cat_Health_Medical';
 		elseif (preg_match('/'._LANG_CATMATCH_HISTORY.'/', $category))
 			$this->class .= $cache[$category] = 'cat_History';
-		elseif (preg_match('/'._LANG_HOWTO.'/', $category))
+        elseif (preg_match('/'._LANG_CATMATCH_HOWTO.'/', $category))
 			$this->class .= $cache[$category] = 'cat_HowTo';
-		elseif (preg_match('/'._LANG_HORROR.'/', $category))
+        elseif (preg_match('/'._LANG_CATMATCH_HORROR.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Horror';
 		elseif (preg_match('/'._LANG_CATMATCH_MISC.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Misc';
@@ -654,9 +654,9 @@ class Program {
 			$this->class .= $cache[$category] = 'cat_Talk';
 		elseif (preg_match('/'._LANG_CATMATCH_TRAVEL.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Travel';
-		elseif (preg_match('/'._LANG_WAR.'/', $category))
+        elseif (preg_match('/'._LANG_CATMATCH_WAR.'/', $category))
 			$this->class .= $cache[$category] = 'cat_War';
-		elseif (preg_match('/'._LANG_WESTERN.'/', $category))
+        elseif (preg_match('/'._LANG_CATMATCH_WESTERN.'/', $category))
 			$this->class .= $cache[$category] = 'cat_Western';
 		else
 			$this->class .= $cache[$category] = 'cat_Unknown';

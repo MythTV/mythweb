@@ -66,8 +66,8 @@ define ('_LANG_CATMATCH_MISC',                 '\\b(?:special|variety|info|colle
 define ('_LANG_CATMATCH_NEWS',                 '\\b(?:news|nachrichten|current)');
 define ('_LANG_CATMATCH_REALITY',              '\\b(?:reality)');
 define ('_LANG_CATMATCH_ROMANCE',              '\\b(?:romance|lieb)');
-define ('_LANG_CATMATCH_SCIENCE_NATURE',       '\\b(?:fantasy|sci\\w*\\W*fi)');
-define ('_LANG_CATMATCH_SCIFI_FANTASY',        '\\b(?:science|nature|environment|wissenschaft)');
+define ('_LANG_CATMATCH_SCIENCE_NATURE',       '\\b(?:science|nature|environment|wissenschaft)');
+define ('_LANG_CATMATCH_SCIFI_FANTASY',        '\\b(?:fantasy|sci\\w*\\W*fi)');
 define ('_LANG_CATMATCH_SHOPPING',             '\\b(?:shop)');
 define ('_LANG_CATMATCH_SOAPS',                '\\b(?:soaps)');
 define ('_LANG_CATMATCH_SPIRITUAL',            '\\b(?:spirit|relig)');
