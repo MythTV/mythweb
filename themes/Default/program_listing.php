@@ -83,6 +83,11 @@ class Theme_program_listing extends Theme {
 		// Ignore channels with no number
 			if (strlen($Channels[$key]->channum) < 1)
 				continue;
+
+			// Ignore invisible channels
+			if ($Channels[$key]->visible == 0) {
+				continue;
+			}
 		// Count this channel
 			$channel_count++;
 		// Grab the reference

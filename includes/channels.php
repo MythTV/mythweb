@@ -58,6 +58,7 @@ class Channel {
 	var $contrast;
 	var $brightness;
 	var $colour;
+	var $visible;
 	var $programs = array();
 
 	function Channel($channel_data) {
@@ -72,6 +73,7 @@ class Channel {
 		$this->contrast     = $channel_data['contrast'];
 		$this->brightness   = $channel_data['brightness'];
 		$this->colour       = $channel_data['colour'];
+		$this->visible      = $channel_data['visible'];
 		$this->icon         = "images/icons/" . basename($channel_data['icon']);
 	}
 
