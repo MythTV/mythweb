@@ -119,7 +119,7 @@ dl.details_list dd {
 /* A special class for radio buttons and check boxes because some browsers render them weird */
 .radio {
     height: 14px !important;
-    width: 14px  !important;
+    width:  14px !important;
 }
 
 /* Default styles for form fields */

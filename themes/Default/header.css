@@ -148,6 +148,10 @@
     margin-left: 9.5em;
     white-space: nowrap;
 }
+#search_options input.radio {
+    height: 12px !important;
+    width:  12px !important;
+}
 
 
 #search_text {

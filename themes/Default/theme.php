@@ -109,10 +109,10 @@ class Theme {
                     <hr/>
                     <?php echo t('Search help') ?>:
                     <dl>
-                        <dt><?php echo t('Search help: movie search') ?>:</dt>
-                        <dd><?php echo t('Search help: movie example') ?></d>
-                        <dt><?php echo t('Search help: regex search') ?>:</dt>
-                        <dd><?php echo t('Search help: regex example') ?></d>
+                        <dt><?php echo t('Search help: movie search')  ?>:</dt>
+                        <dd><?php echo t('Search help: movie example') ?></dd>
+                        <dt><?php echo t('Search help: regex search')  ?>:</dt>
+                        <dd><?php echo t('Search help: regex example') ?></dd>
                     </dl>
                 </div>
             </form>
