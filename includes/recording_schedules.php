@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                  Last Updated: 2005.02.02 (xris)
+    recording_schedules.php                  Last Updated: 2005.02.03 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -200,9 +200,9 @@ class Schedule {
             // Wipe the recordid so we actually create a new record
                 $this->recordid = NULL;
             }
-        // Update the type
-            $this->type = $new_type;
         }
+    // Update the type, in case it changed
+        $this->type = $new_type;
     // Update the record
         $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,category,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag) values ('
                                 .escape($this->recordid, true)             .','
