@@ -61,6 +61,7 @@
             $schedule->starttime   = strtotime($_POST['startdate'].' '.$_POST['starttime']);
             $schedule->endtime     = $schedule->starttime + ($_POST['length'] * 60);
             $schedule->description = 'Manually scheduled';
+            $schedule->category    = 'Manual recording';
         // Figure out the title
             if (strcasecmp($_POST['title'], 'use callsign') == 0) {
                 if (prefer_channum)
@@ -84,7 +85,7 @@
                                         .escape($schedule->title)                     .','
                                         .escape($schedule->subtitle)                  .','
                                         .escape($schedule->description)               .','
-                                        .'"Manual recording"'                         .')')
+                                        .escape($schedule->category)                  .')')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
         // Save the schedule
             $schedule->save($type);
