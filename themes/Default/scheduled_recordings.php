@@ -43,8 +43,11 @@ class Theme_scheduled_recordings extends Theme {
 		}
 		else {
 			$class   = 'scheduled';
-			#$command = 'Don\'t&nbsp;Record';
-			$command = '';
+		// Offer to suppress any recordings that have enough info to do so.
+			if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
+				$command = '<a href="scheduled_recordings.php?suppress=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'&title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'&category='.urlencode($show->category).'">Don\'t&nbsp;Record</a>';
+			else
+				$command = '';
 		}
 	// Build a popup table for the mouseover of the cell, with extra program information?
 		if (show_popup_info) {
