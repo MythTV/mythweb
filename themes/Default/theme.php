@@ -122,6 +122,8 @@ class Theme {
 				&nbsp; | &nbsp;
 				<a href="scheduled_recordings.php">Scheduled Recordings</a>
 				&nbsp; | &nbsp;
+				<a href="recording_schedules.php">Recording Schedules</a>
+				&nbsp; | &nbsp;
 				<a href="recorded_programs.php">Recorded Programs</a>
 				&nbsp; | &nbsp;
 				<a href="status.php">Backend Status</a><?php

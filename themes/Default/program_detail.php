@@ -62,11 +62,11 @@ class Theme_program_detail extends Theme {
 				?></span></td>
 		</tr><tr>
 			<td colspan="3">&nbsp;</td>
-		</tr><? if (strlen($this_program->subtitle)) { ?><tr>
+		</tr><? if (!isset($_GET[recordid]) && strlen($this_program->subtitle)) { ?><tr>
 			<td colspan="2" align="right">Episode:&nbsp;</td>
 			<td><?=$this_program->subtitle?></td>
 		</tr><? }
-				if (strlen($this_program->description)) {?><tr>
+				if (!isset($_GET[recordid]) && strlen($this_program->description)) {?><tr>
 			<td colspan="2" align="right" valign="top">Description:&nbsp;</td>
 			<td><?=wordwrap($this_program->description, 45, "<BR>\n")?></td>
 		</tr><? } ?><tr>
@@ -88,8 +88,12 @@ class Theme_program_detail extends Theme {
 	<td valign="top" align="right" rowspan="2">
 
 		<form action="program_detail.php" method="get" name="record_settings">
+		<? if (isset($_GET[recordid])) {?>
+		<input type="hidden" name="recordid" value="<?=$_GET['recordid']?>">
+		<? } else {?>
 		<input type="hidden" name="chanid" value="<?=$_GET['chanid']?>">
 		<input type="hidden" name="starttime" value="<?=$_GET['starttime']?>">
+		<? } ?>
 
 		<table class="command command_border_l command_border_t command_border_b command_border_r" align="center" border="0" cellspacing="0" cellpadding="5">
 		<tr>
@@ -172,8 +176,11 @@ class Theme_program_detail extends Theme {
 </tr>
 <tr>
 	<td height="100%" align="center" valign="bottom">
-		<a href="program_listing.php?time=<?php echo $this_program->starttime?>">What else is on at this time?</a>&nbsp;&nbsp;&nbsp;
-        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td>
+		<? if (isset($_GET[recordid])) { ?>
+	<a href="all_recordings.php">Back to All recordings!</a></td>
+		<? } else { ?>
+	<a href="program_listing.php?time=<?php echo $this_program->starttime?>">What else is on at this time?</a>&nbsp;&nbsp;&nbsp;
+        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td> <? } ?>
 	</td>
 </tr>
 </table>

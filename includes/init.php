@@ -59,9 +59,10 @@
 // Connect to the backend and load some more handy utilities
 	require_once "includes/mythbackend.php";
 
-// Load in the channel and program classes
+// Load in the channel, program and recording classes
 	require_once "includes/channels.php";
 	require_once "includes/programs.php";
+	require_once "includes/recordings.php";
 
 // Detect WAP browsers
 	$wap_agents = array('Noki', // Nokia phones and emulators

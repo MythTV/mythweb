@@ -74,6 +74,10 @@
 		return strcasecmp($a->title, $b->title);
 	}
 
+	function by_type(&$a, &$b) {
+		return strcasecmp($a->texttype, $b->texttype);
+	}
+
 	function by_subtitle(&$a, &$b) {
 		return strcasecmp($a->subtitle, $b->subtitle);
 	}

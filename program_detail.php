@@ -14,7 +14,11 @@
 
 
 // Grab the one and only program on this channel that starts at the specified time
-	$this_program = &load_one_program($_GET['starttime'], $_GET['chanid']);
+	if (isset($_GET['recordid']))
+		$this_program = &load_all_recordings($_GET['recordid']);
+	else
+		$this_program = &load_one_program($_GET['starttime'], $_GET['chanid']);
+
 	$this_channel = &$this_program->channel;
 
 // Make sure this is a valid program.  If not, forward the user back to the listings page
@@ -34,6 +38,10 @@
 		$this_program->recorddups = (isset($_GET['recorddups']) && $_GET['recorddups'] == "on") ? 1 : 0;
 		$this_program->autoexpire = (isset($_GET['autoexpire']) && $_GET['autoexpire'] == "on") ? 1 : 0;
 		$this_program->maxnewest  = (isset($_GET['maxnewest']) && $_GET['maxnewest'] == "on")   ? 1 : 0;
+		if (isset($_GET['recordid'])) {
+			$this_program->recordid = $_GET['recordid'];
+			$this_program->record_update();
+		} else
 	// Update
 		switch ($_GET['record']) {
 			case 'findone':
