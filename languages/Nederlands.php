@@ -3,8 +3,8 @@
 define ('_LANG_LANGUAGE_NAME', 'Nederlands');
 
 /* Default date and time formats */
-define('generic_date', '%e %b, %Y');
-define('generic_time', '%I:%M %p');
+define('generic_date', '%b %e, %Y');
+define('generic_time', '%H:%M');
 
 /* Set locale to Dutch */
 setlocale(LC_ALL, 'nl_NL');
@@ -165,7 +165,8 @@ define ('_LANG_CATEGORY',         'Categorie&nbsp;type');
 define ('_LANG_CHANNUM',          'Zender');
 define ('_LANG_AIRDATE',          'Uitgezonden');
 define ('_LANG_LENGTH',           'Lengte');
-define ('_LANG_COMMANDS',         'commands');
+define ('_LANG_COMMANDS',          'Wijzig');
+define ('_LANG_STATUS',           'Status');
 define ('_LANG_DONT_RECORD',      'Niet Opnemen');
 define ('_LANG_ACTIVATE',         'Activeren');
 define ('_LANG_NEVER_RECORD',     'Nooit&nbsp;Openemen');
@@ -188,6 +189,7 @@ define ('_LANG_NOTES',            'Notities');
 define ('_LANG_DUP_METHOD',       'Heruitzending detectie');
 define ('_LANG_CATEGORY_TYPE',    'Categorietype');
 define ('_LANG_EXACT_MATCH',      'Exacte zoekterm');
+define ('_LANG_ANY',      	  'Alle');
 
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS',    'Overzicht opnames');
