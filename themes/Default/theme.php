@@ -29,9 +29,9 @@ class Theme {
 <body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
 
 <p>
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
+<table width="100%" border="0" cellspacing="2" cellpadding="0">
 <tr>
-	<td rowspan="2" width="300" align="center"><a href="http://www.mythtv.org"><img src="<?=theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('<?=theme_dir?>pngbehavior.htc');"></a></td>
+	<td rowspan="2" width="300" align="center" valign="top"><a href="http://www.mythtv.org"><img src="<?=theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('<?=theme_dir?>pngbehavior.htc');"></a></td>
 	<td colspan="2" align="right"><table border="0" cellspacing="2" cellpadding="2" style="padding-right: 10px">
 		<tr>
 <?
@@ -69,7 +69,7 @@ class Theme {
 
 	<td valign="bottom"><table width="100%" border="0" cellspacing="2" cellpadding="2">
 		<tr align="center">
-			<td>Go To: &nbsp; &nbsp;
+			<td valign="top">Go To: &nbsp; &nbsp;
 				<a href="program_listing.php">MythTV</a>
 				&nbsp; | &nbsp;
 				<a href="mythmusic.php">MythMusic</a>
@@ -88,8 +88,10 @@ class Theme {
 				<tr>
 					<td><input type="text" name="searchstr" size="15" value="<?php echo $_GET['searchstr']?>"></td>
 					<td>&nbsp; <input type="submit" class="submit" value="search"></td>
-					<td>&nbsp; <a href="search.php">[advanced]</a></td>
 				</tr>
+				<tr>
+					<td align="right" colspan=3>&nbsp; <a href="search.php">[advanced]</a></td>
+				<tr>	
 				</table>
 				</form></td>
 

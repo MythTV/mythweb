@@ -49,7 +49,7 @@ class Theme_program_detail extends Theme {
 				}
 					?></td>
 			<td width="24px">&nbsp;</td>
-			<td><span class="huge"><?=$this_program->title?></span><BR>
+			<td><span class="huge"><a href="/mythweb/search.php?searchstr=<?=urlencode($this_program->title)?>">"<?=$this_program->title?>"</a></span><BR>"
 				<span class="small">
 				<?=date('g:i A', $this_program->starttime)?> to <?=date('g:i A', $this_program->endtime)?> (<?=(int)($this_program->length/60)?> minutes)<BR>
 				<?
@@ -58,7 +58,8 @@ class Theme_program_detail extends Theme {
 				if ($this_program->category_type == 'movie')
 					echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">Search IMDB</a>)";
 				else
-					echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";
+					echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";					
+					echo " (<a href=\"http://us.imdb.com/Tsearch?title=" . urlencode($this_program->title) . "&restrict=Movies+and+TV\">Search IMDB</a>)";
 				?></span></td>
 		</tr><tr>
 			<td colspan="3">&nbsp;</td>
@@ -86,9 +87,9 @@ class Theme_program_detail extends Theme {
 					echo ", $this_program->starstring";
 				?></td>
 		</tr><? } ?>
-
-		</table></td>
-	<td valign="top" align="right">
+		</table>
+				
+	<td valign="top" align="right" rowspan="2">
 
 		<form action="program_detail.php" method="get" name="record_settings">
 		<input type="hidden" name="chanid" value="<?=$_GET['chanid']?>">
@@ -96,40 +97,33 @@ class Theme_program_detail extends Theme {
 
 		<table class="command command_border_l command_border_t command_border_b command_border_r" align="center" border="0" cellspacing="0" cellpadding="5">
 		<tr>
-
-
-			<td><p align="center">Recording Options:</p>
-				<p onclick="get_element('record_never').checked=true;">
-					<input type="radio" class="radio" name="record" value="never" id="record_never"<?=
-					$this_program->will_record ? '' : ' CHECKED'?>></input>
-					<a>Don't record this program.</a>
-					</p>
-				<p onclick="get_element('record_once').checked=true;">
-					<input type="radio" class="radio" name="record" value="once" id="record_once"<?=
-					$this_program->record_once ? ' CHECKED' : ''?>></input>
-					<a>Record only this showing.</a>
-					</p>
-				<p onclick="get_element('record_daily').checked=true;">
-					<input type="radio" class="radio" name="record" value="daily" id="record_daily"<?=
-					$this_program->record_daily ? ' CHECKED' : ''?>></input>
-					<a>Record this program in this timeslot every day.</a>
-					</p>
-				<p onclick="get_element('record_weekly').checked=true;">
-					<input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?=
-					$this_program->record_weekly ? ' CHECKED' : ''?>></input>
-					<a>Record this program in this timeslot every week.</a>
-					</p>
-				<p onclick="get_element('record_channel').checked=true;">
-					<input type="radio" class="radio" name="record" value="channel" id="record_channel"<?=
-					$this_program->record_channel ? ' CHECKED' : ''?>></input>
-					<a>Always record this program on this channel.</a>
-					</p>
-				<p onclick="get_element('record_always').checked=true;">
-					<input type="radio" class="radio" name="record" value="always" id="record_always"<?=
-					$this_program->record_always ? ' CHECKED' : ''?>></input>
-					<a>Always record this program on any channel.</a>
-					</p>
-				<p>
+			<td><p align="center">Recording Options:</p></td></tr>
+		<tr><td>
+				<input type="radio" class="radio" name="record" value="never" id="record_never"<?=
+				$this_program->will_record ? '' : ' CHECKED'?>></input>
+				<a onclick="get_element('record_never').checked=true;">Don't record this program.</a>
+				<br/>
+				<input type="radio" class="radio" name="record" value="once" id="record_once"<?=
+				$this_program->record_once ? ' CHECKED' : ''?>></input>
+				<a onclick="get_element('record_once').checked=true;">Record only this showing.</a>
+				<br/>
+				<input type="radio" class="radio" name="record" value="daily" id="record_daily"<?=
+				$this_program->record_daily ? ' CHECKED' : ''?>></input>
+				<a onclick="get_element('record_daily').checked=true;">Record this program in this timeslot every day.</a>
+				<br/>
+				<input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?=
+				$this_program->record_weekly ? ' CHECKED' : ''?>></input>
+				<a onclick="get_element('record_weekly').checked=true;">Record this program in this timeslot every week.</a>
+				<br/>
+				<input type="radio" class="radio" name="record" value="channel" id="record_channel"<?=
+				$this_program->record_channel ? ' CHECKED' : ''?>></input>
+				<a onclick="get_element('record_channel').checked=true;">Always record this program on this channel.</a>
+				<br/>
+				<input type="radio" class="radio" name="record" value="always" id="record_always"<?=
+				$this_program->record_always ? ' CHECKED' : ''?>></input>
+				<a onclick="get_element('record_always').checked=true;">Always record this program on any channel.</a>
+		</td></tr>
+		<tr><td><p>
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 				<tr>
 					<td nowrap align="right">Recording Profile:&nbsp;</td>
@@ -170,14 +164,17 @@ class Theme_program_detail extends Theme {
 
 				<p align="center"><input type="submit" class="submit" name="save" value="Update Recording Settings"></p></td>
 
-
 		</tr>
 		</table>
 
-		</form></td>
-</tr><tr>
-	<td align="center"><a href="program_listing.php?time=<?php echo $this_program->starttime?>">What else is on at this time?</td>
-	<td align="center"><a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td>
+		</form>
+	</td>
+</tr>
+<tr>
+	<td height="100%" align="center" valign="bottom">
+		<a href="program_listing.php?time=<?php echo $this_program->starttime?>">What else is on at this time?</a>&nbsp;&nbsp;&nbsp;
+        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td>
+	</td>
 </tr>
 </table>
 <?
