@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    settings_mythweb.php                     Last Updated: 2005.02.11 (xris)
+    settings_mythweb.php                     Last Updated: 2005.02.20 (xris)
 
     mythweb settings
 \***                                                                        ***/
@@ -84,10 +84,10 @@
         echo '</select>';
     }
 
-    /*
+/*
     unit_select:
     displays a <select> for the unit type
-    */
+*/
     function unit_select() {
         echo '<select name="siunits">';
         if(!$_SESSION['siunits'])
@@ -111,30 +111,4 @@
         echo '</select>';
     }
 
-    /*
-    unit_select:
-    displays a <select> for the unit type
-    */
-    function unit_select() {
-        echo '<select name="siunits">';
-        if(!$_SESSION['siunits'])
-        {
-            $result = mysql_query('SELECT * FROM settings WHERE value="SIUnits"')
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-
-            $row = mysql_fetch_assoc($result);
-            $si = $row["data"];
-            $_SESSION['siunits'] = $si;
-
-            mysql_free_result($result);
-        }
-        else
-        {
-            $si = $_SESSION['siunits'];
-        }
-
-        echo "<option value='YES'".($si=='YES'?' SELECTED':'').">".t('Yes')."</option>\n";
-        echo "<option value='NO'".($si=='YES'?'':' SELECTED').">".t('No')."</option>\n";
-        echo '</select>';
-    }
 ?>
