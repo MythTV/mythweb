@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.08.03 (xris)
+    programs.php                             Last Updated: 2003.08.05 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -244,7 +244,7 @@ class Program {
 		// Is this a previously-recorded program?  Calculate the filesize
 			if (preg_match('/\\d+_\\d+/', $this->filename)) {
 				$this->channame = $channame;
-				$this->filesize = nice_largefilesize($fs_high, $fs_low);
+				$this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
 			}
 		// Ah, a scheduled recording - let's load more information about it, to be parsed in below
 			elseif ($this->chanid) {

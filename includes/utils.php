@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	utils.php                             Last Updated: 2003.08.02 (xris)
+	utils.php                             Last Updated: 2003.08.05 (xris)
 
 	utility routines used throughout mythweb
 \***                                                                        ***/
@@ -39,40 +39,6 @@ function nice_filesize($size) {
 		return round($size / gb, 1).' GB';
 	else
 		return round($size / tb, 1).' TB';
-}
-
-/*
-	nice_largefilesize:
-	pass in high- and low-word portions of a large filesize in bytes,
-	and receive a more human-readable version
-*/
-
-function nice_largefilesize($high_word, $low_word) {
-// An array of the various human-readable sizes
-	static $label = array(' B', ' KB', ' MB', ' GB', ' TB', ' PB', ' EB');
-// Make sure we have integers
-	$high_word = (int)$high_word;
-	$low_word  = (int)$low_word;
-// Leave early?  (zero-byte file)
-	if ($low_word == 0)
-		return '0 B';
-// start going through the bits and doing some shifting
-	$shiftcount = 0;
-	while ($shiftcount < 6 && ($high_word != 0 || $low_word <= 0 || $low_word > 1024)) {
-		$high_lowbits = $high_word & 0x3FF;
-		$high_word >>= 10;
-
-		$low_lowbits = $low_word & 0x3FF;
-		if ($low_word < 0)
-			$low_word = (((($low_word & 0x7FFFFFFF)) >> 1) | 0x40000000) >> 9;
-		else
-			$low_word >>= 10;
-		$low_word |= $high_lowbits << 22;
-		$shiftcount++;
-	}
-// Cleanup and return
-	$low_word += round($low_lowbits / 1024, 1);
-	return $low_word . $label[$shiftcount];
 }
 
 /*

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    sorting.php                              Last Updated: 2003.07.22 (xris)
+    sorting.php                              Last Updated: 2003.08.05 (xris)
 
     routines for sorting Program objects
 \***                                                                        ***/
@@ -76,6 +76,11 @@
 	function by_length(&$a, &$b) {
         if ($a->duration == $b->duration) return 0;
         return ($a->duration > $b->duration) ? 1 : -1;
+	}
+
+	function by_filesize(&$a, &$b) {
+        if ($a->filesize == $b->filesize) return 0;
+        return ($a->filesize > $b->filesize) ? 1 : -1;
 	}
 
 ?>
