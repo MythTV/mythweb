@@ -1,44 +1,67 @@
 <?php
+/***                                                                        ***\
+    languages/English.php
+
+    Translation hash for English.  This also doubles as the template for
+    other translations, since it's mostly just blank (default) entries.
+\***                                                                        ***/
 
 // Set the locale to UTF-8
 setlocale(LC_ALL, 'en_US.UTF-8');
 
-// Define the language lookup array
+// Define the language lookup hash ** Do not touch the next line
 $L = array(
-// Generic terms
-    'LANGUAGE'             => 'English',
-// Time terms
-    'generic_date'         => '%a %b %e, %Y',
-    'generic_time'         => '%I:%M %p',
-    'hr'                   => '',
-    'hrs'                  => '',
-    'mins'                 => '',
-// Main Menu
-    'Go To'                => '',
-    'Settings'             => '',
-    'Search'               => '',
-    'advanced'             => '',
-    'Listings'             => '',
-    'Movies'               => '',
-    'Manually Schedule'    => '',
-    'Recording Schedules'  => '',
-    'Scheduled Recordings' => '',
-    'Recorded Programs'    => '',
+// Add your translations below here.
+// Warning, any custom comments will be lost during translation updates.
+//
+// Shared Terms
+    'Search' => '',
+// includes/init.php
+    'generic_date' => '%a %b %e, %Y',
+    'generic_time' => '%I:%M %p',
+// includes/utils.php
+    '$1 B'    => '',
+    '$1 GB'   => '',
+    '$1 KB'   => '',
+    '$1 MB'   => '',
+    '$1 TB'   => '',
+    '$1 hr'   => '',
+    '$1 hrs'  => '',
+    '$1 min'  => '',
+    '$1 mins' => '',
+// themes/.../recorded_programs.php
+    '$1 episode'                                          => '',
+    '$1 episodes'                                         => '',
+    '$1 programs, using $2 ($3) out of $4.'               => '',
+    '$1 recording'                                        => '',
+    '$1 recordings'                                       => '',
+    'All recordings'                                      => '',
+    'Are you sure you want to delete the following show?' => '',
+    'Delete'                                              => '',
+    'Go'                                                  => '',
+    'No'                                                  => '',
+    'Show group'                                          => '',
+    'Show recordings'                                     => '',
+    'Yes'                                                 => '',
+    'preview'                                             => '',
+// themes/.../theme.php
     'Backend Status'       => '',
     'Category Legend'      => '',
-// Recorded Programs
-    '$1 programs, using $2 ($3) out of $4.' => '',
-// End of the array
+    'Favorites'            => '',
+    'Go To'                => '',
+    'Listings'             => '',
+    'Manually Schedule'    => '',
+    'Movies'               => '',
+    'Recorded Programs'    => '',
+    'Recording Schedules'  => '',
+    'Scheduled Recordings' => '',
+    'Settings'             => '',
+    'advanced'             => ''
+// End of the translation hash ** Do not touch the next line
           );
 
+
 /* theme.php */
-define ('_LANG_BACKEND_STATUS',       'Backend Status');
-define ('_LANG_LISTINGS',             'Listings');
-define ('_LANG_FAVOURITES',           'Favourites');
-define ('_LANG_SCHEDULED_RECORDINGS', 'Scheduled Recordings');
-define ('_LANG_RECORDING_SCHEDULES',  'Recording Schedules');
-define ('_LANG_RECORDED_PROGRAMS',    'Recorded Programs');
-define ('_LANG_MANUALLY_SCHEDULE',    'Manually Schedule');
 define ('_LANG_CATEGORY_LEGEND',      'Category Legend');
 define ('_LANG_ACTION',               'Action');
 define ('_LANG_ADULT',                'Adult');
@@ -212,19 +235,16 @@ define ('_LANG_DUP_METHOD',       'Dup Method');
 define ('_LANG_ANY',              'Any');
 
 /* recorded_programs.php */
-define ('_LANG_SHOW_RECORDINGS', 'Show recordings');
 define ('_LANG_RECORDING', 'Recording');
 define ('_LANG_RECORDINGS', 'Recordings');
 define ('_LANG_SHOW_GROUP', 'Show Group');
 define ('_LANG_CONFIRM_DELETE',  'Are you sure you want to delete the following show?');
-define ('_LANG_ALL_RECORDINGS',  'All recordings');
 define ('_LANG_GO',              'Go');
 define ('_LANG_PREVIEW',         'preview');
 define ('_LANG_FILE_SIZE',       'file&nbsp;size');
 define ('_LANG_DELETE',          'Delete');
 define ('_LANG_PROGRAMS_USING',  'programs, using ');
 define ('_LANG_OUT_OF',          ' out of ');
-define ('_LANG_EPISODES',        'episodes');
 define ('_LANG_SHOW_HAS_COMMFLAG',   'flagged commercials');
 define ('_LANG_SHOW_HAS_CUTLIST',    'has cutlist');
 define ('_LANG_SHOW_IS_EDITING',     'being edited');

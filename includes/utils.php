@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    utils.php                                Last Updated: 2004.11.25 (xris)
+    utils.php                                Last Updated: 2004.11.27 (xris)
 
     utility routines used throughout mythweb
 \***                                                                        ***/
@@ -22,29 +22,29 @@
 function nice_filesize($size) {
 //  If it's less than a kb we just return the size
     if ($size < kb)
-        return $size.' B';
+        return t('$1 B', t($size));
 // Otherwise we keep going until the size is in the appropriate measurement range.
     elseif ($size < mb)
-        return round($size / kb, ($size < 10 * kb)).' KB';
+        return t('$1 KB', t(round($size / kb, ($size < 10 * kb))));
     elseif ($size < gb)
-        return round($size / mb, ($size < 10 * mb)).' MB';
+        return t('$1 MB', t(round($size / mb, ($size < 10 * mb))));
     elseif ($size < tb)
-        return round($size / gb, ($size < 10 * gb)).' GB';
+        return t('$1 GB', t(round($size / gb, ($size < 10 * gb))));
     else
-        return round($size / tb, ($size < 10 * tb)).' TB';
+        return t('$1 TB', t(round($size / tb, ($size < 10 * tb))));
 }
 
 function nice_length($length) {
     $mins  = (int) (($length % 3600) / 60);
     $hours = (int) ($length / 3600);
-    if ($hours == 1)
-        $ret = '1 '.t('hr');
-    elseif ($hours > 0)
-        $ret = $hours.' '.t('hrs');
+    if ($hours)
+        $ret = tn('$1 hr', '$1 hrs', $hours, array(t($hours)));
+    else
+        $ret = '';
     if ($mins > 0) {
         if ($ret)
             $ret .= ' ';
-        $ret .= $mins.' '.t('mins');
+        $ret .= tn('$1 min', '$1 mins', $mins, array(t($mins)));
     }
     return $ret;
 }

@@ -37,7 +37,7 @@ class Theme_recorded_programs extends Theme {
     }
 
     function confirm_delete(id) {
-        if (confirm("<?php echo _LANG_CONFIRM_DELETE?>\n\n     "+files[id][0]))
+        if (confirm("<?php echo t('Are you sure you want to delete the following show?') ?>\n\n     "+files[id][0]))
             location.href = "recorded_programs.php?delete=yes&file="+files[id][1];
     }
 
@@ -48,31 +48,35 @@ class Theme_recorded_programs extends Theme {
 <form class="form" id="program_titles" action="recorded_programs.php" method="get">
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
-    <td><?php echo _LANG_SHOW_RECORDINGS?>:</td>
+    <td><?php echo t('Show recordings') ?>:</td>
     <td><select name="title" onchange="get_element('program_titles').submit()">
-        <option value=""><?php echo _LANG_ALL_RECORDINGS?></option><?php
+        <option value=""><?php echo t('All recordings') ?></option><?php
         global $Program_Titles;
         foreach($Program_Titles as $title => $count) {
             echo '<option value="'.htmlspecialchars($title).'"';
             if ($_GET['title'] == $title)
                 echo ' SELECTED';
-            echo '>'.htmlentities($title, ENT_COMPAT, 'UTF-8').($count > 1 ? " ($count "._LANG_EPISODES.")" : "").'</option>';
+            echo '>'.htmlentities($title, ENT_COMPAT, 'UTF-8')
+                .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count, array($count)).')' : "")
+                .'</option>';
         }
         ?>
     </select></td>
-    <td><?php echo _LANG_SHOW_GROUP?>:</td>
+    <td><?php echo t('Show group') ?>:</td>
     <td><select name="recgroup" onchange="get_element('program_titles').submit()">
-        <option value=""><?php echo _LANG_ALL_RECORDINGS?></option><?php
+        <option value=""><?php echo t('All recordings')?></option><?php
         global $Groups;
         foreach($Groups as $recgroup => $count) {
             echo '<option value="'.htmlspecialchars($recgroup).'"';
             if ($_GET['recgroup'] == $recgroup)
                 echo ' SELECTED';
-            echo '>'.htmlentities($recgroup, ENT_COMPAT, 'UTF-8') . " ($count " . ($count > 1 ? _LANG_RECORDINGS : _LANG_RECORDING) .')</option>';
+            echo '>'.htmlentities($recgroup, ENT_COMPAT, 'UTF-8')
+                .' ('.tn('$1 recording', '$1 recordings', $count, array($count))
+                .')</option>';
         }
         ?>
     </select></td>
-    <td><noscript><input type="submit" value="<?php echo _LANG_GO?>"></noscript></td>
+    <td><noscript><input type="submit" value="<?php echo t('Go') ?>"></noscript></td>
 </tr>
 </table>
 </form>
@@ -95,7 +99,7 @@ if ($group_field == "") {
     if ($group_field != "")
         echo "\t<td class=\"list\">&nbsp;</td>\n";
     if (show_recorded_pixmaps)
-        echo "\t<td>"._LANG_PREVIEW."</td>\n";
+        echo "\t<td>".t('preview')."</td>\n";
 ?>
     <td><?php echo get_sort_link('title')    ?></td>
     <td><?php echo get_sort_link('subtitle') ?></td>
@@ -163,7 +167,7 @@ if ($group_field == "") {
     <td width="5%">currently recording</td>
 <?php   } else { ?>
     <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 3 : 2 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>"><?php echo _LANG_DELETE?></a></td>
+        <a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>"><?php echo t('Delete') ?></a></td>
 <?php   }
 
         if ($_SESSION['recorded_descunder'])
@@ -174,15 +178,15 @@ if ($group_field == "") {
 </tr><tr class="recorded">
     <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 7 : 8 ?>" align="center">
         <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_COMMFLAG?>:&nbsp;
-            <b><?php echo $show->has_commflag ? _LANG_YES : _LANG_NO ?></b></span>
+            <b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></span>
         <span style="padding-right: 25px"><?php echo _LANG_SHOW_HAS_CUTLIST?>:&nbsp;
-            <b><?php echo $show->has_cutlist ? _LANG_YES : _LANG_NO ?></b></span>
+            <b><?php echo $show->has_cutlist ? t('Yes') : t('No') ?></b></span>
         <span style="padding-right: 25px"><?php echo _LANG_SHOW_IS_EDITING?>:&nbsp;
-            <b><?php echo $show->is_editing ? _LANG_YES : _LANG_NO ?></b></span>
+            <b><?php echo $show->is_editing ? t('Yes') : t('No') ?></b></span>
         <span style="padding-right: 25px"><?php echo _LANG_SHOW_AUTO_EXPIRE?>:&nbsp;
-            <b><?php echo $show->auto_expire ? _LANG_YES : _LANG_NO ?></b></span>
+            <b><?php echo $show->auto_expire ? t('Yes') : t('No') ?></b></span>
         <?php echo _LANG_SHOW_HAS_BOOKMARK?>:&nbsp;
-            <b><?php echo $show->bookmark ? _LANG_YES : _LANG_NO ?></b>
+            <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b>
         </td>
 <?php
     }
@@ -190,7 +194,7 @@ if ($group_field == "") {
 </table>
 <?php
     echo '<p align="right" style="padding-right: 75px">'
-        .t('$1 programs, using $2 ($3) out of $4.', $GLOBALS['Total_Programs'],
+        .t('$1 programs, using $2 ($3) out of $4.', t($GLOBALS['Total_Programs']),
                                                     nice_filesize(disk_used),
                                                     nice_length($Total_Time),
                                                     nice_filesize(disk_size))
