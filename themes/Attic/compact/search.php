@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	search.php                    Last Updated: 2003.07.23 (xris)
+	search.php                    Last Updated: 2004.04.12 (xris)
 
 	This file defines a theme class for the search section.
 	It must define one method.   documentation will be added someday.
@@ -21,17 +21,17 @@ class Theme_search extends Theme {
 <table class="command command_border_l command_border_t command_border_b command_border_r" align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
 	<td align="right">Search:</td>
-	<td><input type="text" name="searchstr" size="15" value="<?php echo $_GET['searchstr']?>"></td>
+	<td><input type="text" name="searchstr" size="15" value="<?php echo $_SESSION['search']['searchstr']?>"></td>
 	<td>&nbsp; <input type="submit" class="submit" value="search"></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_GET['search_title'] ? ' CHECKED' : ''?>></td>
+	<td align="right"><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>></td>
 	<td onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><a>title (show)</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_GET['search_subtitle'] ? ' CHECKED' : ''?>></td>
+	<td align="right"><input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : ''?>></td>
 	<td onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><a>subtitle (episode)</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_GET['search_description'] ? ' CHECKED' : ''?>></td>
+	<td align="right"><input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : ''?>></td>
 	<td onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><a>description</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_GET['search_category'] ? ' CHECKED' : ''?>></td>
+	<td align="right"><input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : ''?>></td>
 	<td onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><a>category</a></td>
-	<td align="right"><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_GET['search_category_type'] ? ' CHECKED' : ''?>></td>
+	<td align="right"><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : ''?>></td>
 	<td onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><a>category&nbsp;type</a></td>
 </tr>
 </table>

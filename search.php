@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	search.php                               Last Updated: 2004.03.28 (xris)
+	search.php                               Last Updated: 2004.04.12 (xris)
 
 	Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -9,99 +9,80 @@
 	require_once "includes/init.php";
 	require_once "includes/sorting.php";
 
-// Override search types that would conflict
+// A single search string passed in
 	if ($_GET['searchstr'] || $_POST['searchstr']) {
-		unset($_GET['title'],         $_POST['title'],         $_SESSION['search']['title'],
-			  $_GET['subtitle'],      $_POST['subtitle'],      $_SESSION['search']['subtitle'],
-			  $_GET['description'],   $_POST['description'],   $_SESSION['search']['description'],
-			  $_GET['category'],      $_POST['category'],      $_SESSION['search']['category'],
-			  $_GET['category_type'], $_POST['category_type'], $_SESSION['search']['category_type']
-			  );
+		unset($_SESSION['search']);
+		$_SESSION['search']['searchstr']            = _or($_GET['searchstr'],            $_POST['searchstr']);
+		$_SESSION['search']['search_title']         = _or($_GET['search_title'],         $_POST['search_title']);
+		$_SESSION['search']['search_subtitle']      = _or($_GET['search_subtitle'],      $_POST['search_subtitle']);
+		$_SESSION['search']['search_description']   = _or($_GET['search_description'],   $_POST['search_description']);
+		$_SESSION['search']['search_category']      = _or($_GET['search_category'],      $_POST['search_category']);
+		$_SESSION['search']['search_category_type'] = _or($_GET['search_category_type'], $_POST['search_category_type']);
+		$_SESSION['search']['search_exact']         = _or($_GET['search_exact'],         $_POST['search_exact']);
 	}
+// Individual search strings for different fields
 	elseif ($_GET['title'] || $_GET['subtitle'] || $_GET['description'] || $_GET['category'] || $_GET['category_type']
 			|| $_POST['title'] || $_POST['subtitle'] || $_POST['description'] || $_POST['category'] || $_POST['category_type']) {
-		unset($_GET['searchstr'], $_POST['searchstr'], $_SESSION['search']['searchstr']);
-	}
-
-// Search variables
-	foreach (array('search_title', 'search_subtitle', 'search_description', 'search_category', 'search_category_type', 'search_exact',
-					'searchstr', 'title', 'subtitle', 'description', 'category', 'category_type') as $search_var) {
-		isset($_GET[$search_var]) or $_GET[$search_var] = $_POST[$search_var];
-		isset($_GET[$search_var]) or $_GET[$search_var] = $_SESSION['search'][$search_var];
-		$_SESSION['search'][$search_var] = $_GET[$search_var];
+		unset($_SESSION['search']);
+		$_SESSION['search']['title']         = _or($_GET['title'],         $_POST['title']);
+		$_SESSION['search']['subtitle']      = _or($_GET['subtitle'],      $_POST['subtitle']);
+		$_SESSION['search']['description']   = _or($_GET['description'],   $_POST['description']);
+		$_SESSION['search']['category']      = _or($_GET['category'],      $_POST['category']);
+		$_SESSION['search']['category_type'] = _or($_GET['category_type'], $_POST['category_type']);
+		$_SESSION['search']['search_exact']  = _or($_GET['search_exact'],  $_POST['search_exact']);
 	}
 
 // Start the query out as an array
 	$query = array();
-	$joiner = ' OR ';
-	$compare = ' LIKE ';
-	if ($_GET['search_exact'])
+	if ($_SESSION['search']['search_exact'])
 		$compare = ' = ';
+	else
+		$compare = ' LIKE ';
 
 // How do we want to build this query?
-	if (preg_match('/^\~/', $_GET['searchstr'])) {
-		$compare = ' REGEXP ';
-		$search = regexp_escape($_GET['searchstr']);
-		if ($_GET['search_title'])
-			$query[] = 'program.title '.$compare.' '.$search;
-		if ($_GET['search_subtitle'])
-			$query[] = 'program.subtitle '.$compare.' '.$search;
-		if ($_GET['search_description'])
-			$query[] = 'program.description '.$compare.' '.$search;
-		if ($_GET['search_category'])
-			$query[] = 'program.category '.$compare.' '.$search;
-		if ($_GET['search_category_type'])
-			$query[] = 'program.category_type '.$compare.' '.$search;
-	// No query formed - default to quicksearch
-		if (!count($query)) {
-			$query[] = 'program.title '.$compare.' '.$search;
-			$query[] = 'program.subtitle '.$compare.' '.$search;
-			$_GET['search_title']    = $_SESSION['search']['search_title']    = true;
-			$_GET['search_subtitle'] = $_SESSION['search']['search_subtitle'] = true;
+	if (preg_match('/\\w/', $_SESSION['search']['searchstr'])) {
+	// Normal search is an OR search
+		$joiner = ' OR ';
+	// Regex search?
+		if (preg_match('/^~/', $_SESSION['search']['searchstr'])) {
+			$compare = ' REGEXP ';
+			$search = escape(preg_replace('/^~/', '', $_SESSION['search']['searchstr']));
 		}
-	}
-	elseif (preg_match('/\\w/', $_GET['searchstr'])) {
-		$search = search_escape($_GET['searchstr']);
-		if ($_GET['search_title'])
-			$query[] = 'program.title '.$compare.' '.$search;
-		if ($_GET['search_subtitle'])
-			$query[] = 'program.subtitle '.$compare.' '.$search;
-		if ($_GET['search_description'])
-			$query[] = 'program.description '.$compare.' '.$search;
-		if ($_GET['search_category'])
-			$query[] = 'program.category '.$compare.' '.$search;
-		if ($_GET['search_category_type'])
-			$query[] = 'program.category_type '.$compare.' '.$search;
+		else
+			$search = search_escape($_SESSION['search']['searchstr']);
+	// Build the query
+		if ($_SESSION['search']['search_title'])
+			$query[] = "program.title$compare$search";
+		if ($_SESSION['search']['search_subtitle'])
+			$query[] = "program.subtitle$compare$search";
+		if ($_SESSION['search']['search_description'])
+			$query[] = "program.description$compare$search";
+		if ($_SESSION['search']['search_category'])
+			$query[] = "program.category$compare$search";
+		if ($_SESSION['search']['search_category_type'])
+			$query[] = "program.category_type$compare$search";
 	// No query formed - default to quicksearch
 		if (!count($query)) {
-			$query[] = 'program.title '.$compare.' '.$search;
-			$query[] = 'program.subtitle '.$compare.' '.$search;
-			$_GET['search_title']    = $_SESSION['search']['search_title']    = true;
-			$_GET['search_subtitle'] = $_SESSION['search']['search_subtitle'] = true;
+			$query[] = "program.title$compare$search";
+			$query[] = "program.subtitle$compare$search";
+			$_SESSION['search']['search_title']    = true;
+			$_SESSION['search']['search_subtitle'] = true;
 		}
 	}
 	else {
+	// Individual-field search is an AND search
 		$joiner = ' AND ';
-		if (isset($_GET['title'])) {
-			$query[] = 'program.title '.$compare.' '.search_escape($_GET['title']);
-			$_GET['search_title'] = true;
-		}
-		if (isset($_GET['subtitle'])) {
-			$query[] = 'program.subtitle '.$compare.' '.search_escape($_GET['subtitle']);
-			$_GET['search_subtitle'] = true;
-		}
-		if (isset($_GET['description'])) {
-			$query[] = 'program.description '.$compare.' '.search_escape($_GET['description']);
-			$_GET['search_description'] = true;
-		}
-		if (isset($_GET['category'])) {
-			$query[] = 'program.category '.$compare.' '.search_escape($_GET['category']);
-			$_GET['search_category'] = true;
-		}
-		if (isset($_GET['category_type'])) {
-			$query[] = 'program.category_type '.$compare.' '.search_escape($_GET['category_type']);
-			$_GET['search_category_type'] = true;
-		}
+	// Build the query
+		if ($_SESSION['search']['title'])
+			$query[] = "program.title$compare".search_escape($_SESSION['search']['title']);
+		if (isset($_SESSION['search']['subtitle']))
+			$query[] = "program.subtitle$compare".search_escape($_SESSION['search']['subtitle']);
+		if (isset($_SESSION['search']['description']))
+			$query[] = "program.description$compare".search_escape($_SESSION['search']['description']);
+		if (isset($_SESSION['search']['category']))
+			$query[] = "program.category$compare".search_escape($_SESSION['search']['category']);
+		if (isset($_SESSION['search']['category_type']))
+			$query[] = "program.category_type$compare".search_escape($_SESSION['search']['category_type']);
 	}
 
 // No query?
@@ -136,13 +117,10 @@
 // One little function to help us format search queries
 	function search_escape($value) {
 	// If we are asking for an exact match, dont put the '%'s in
-		if ($_GET['search_exact'])
+		if ($_SESSION['search']['search_exact'])
 			return escape($value);
 	// Replace whitespace with the % wildcard
 		return escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
-	}
-	function regexp_escape($value) {
-		return escape(preg_replace('/^\~/', '', $value));
 	}
 
 ?>
