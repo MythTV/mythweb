@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2005.01.24 (xris)
+    search.php                               Last Updated: 2005.02.04 (xris)
 
     Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -11,6 +11,9 @@
 // Initialize the script, database, etc.
     require_once "includes/init.php";
     require_once "includes/sorting.php";
+
+// Load all channels
+    load_all_channels();
 
 // A single search string passed in
     if ($_GET['searchstr'] || $_POST['searchstr']) {
@@ -102,7 +105,7 @@
         # starttime
         # endtime
     // Perform the query
-        $Results = &load_all_program_data(time(), strtotime('+1 month'), false, false, '('.implode($joiner, $query).')');
+        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, '('.implode($joiner, $query).')');
     // Sort the results
         if (count($Results))
             sort_programs($Results, 'search_sortby');
