@@ -88,7 +88,7 @@
 							.' SUM(record.type = 2) > 0 AS record_daily,'
 							.' SUM(record.type = 1) > 0 AS record_once,'
 							.' IF(record.profile > 0, recordingprofiles.name, \'Default\') as profilename,'
-							.' record.profile, record.rank, record.recorddups, record.maxnewest, record.maxepisodes, record.autoexpire,';
+							.' record.profile, /*record.rank,*/ record.recorddups, record.maxnewest, record.maxepisodes, record.autoexpire,';
 		}
 		else {
 			$record_table  = '';
