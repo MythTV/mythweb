@@ -33,13 +33,13 @@ class Theme_scheduled_recordings extends Theme {
 <table border="0" align="center">
 <tr>
 	<td>Display:</td>
-	<td><input type="checkbox" id="scheduled" CHECKED onclick="changevisible()"></td>
+	<td><input type="checkbox" id="scheduled" class="radio" onclick="changevisible()" CHECKED></td>
 	<td>Scheduled</td>
-	<td><input type="checkbox" id="duplicate" CHECKED onclick="changevisible()"></td>
+	<td><input type="checkbox" id="duplicate" class="radio" onclick="changevisible()" CHECKED></td>
 	<td>Duplicates</td>
-	<td><input type="checkbox" id="deactivated" CHECKED onclick="changevisible()"></td>
+	<td><input type="checkbox" id="deactivated" class="radio" onclick="changevisible()" CHECKED></td>
 	<td>Deactivated</td>
-	<td><input type="checkbox" id="conflict" CHECKED onclick="changevisible()"></td>
+	<td><input type="checkbox" id="conflict" class="radio" onclick="changevisible()" CHECKED></td>
 	<td>Conflicts</td>
 </tr>
 </table>
