@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2005.02.04 (xris)
+    search.php                               Last Updated: 2005.02.09 (xris)
 
     Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -57,7 +57,8 @@
             $starcount = substr_count($stars[1], '*') / 4.0;
             if (preg_match( "/1\\/2|\\.5|-/", $stars[1]))
                 $starcount += 0.125;
-            $star_query = " AND program.stars >= $starcount";
+        // Add this to the query -- convert european decimal to something mysql can understand
+            $star_query = ' AND program.stars >= '.str_replace(',', '.', $starcount);
         // Remove the stars from the search string so we can continue looking for other things
             $search_str = preg_replace('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*#', '', $search_str);
         }
