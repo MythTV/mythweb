@@ -41,6 +41,9 @@
 														 'reverse' => $_GET['reverse'] ? true : false));
 			}
 		}
+	// Once we've processed the information, we should make sure that we're actually sorting an array
+		if (!count($programs))
+			return;
 	// Now we just need to sort the array
 		$GLOBALS['user_sort_choice'] = &$_SESSION[$session];
 		usort($programs, 'by_user_choice');

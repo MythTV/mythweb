@@ -82,7 +82,8 @@
 												   'reverse' => false));
 
 // Sort the programs
-	sort_programs($All_Shows, 'recorded_sortby');
+	if (count($All_Shows))
+		sort_programs($All_Shows, 'recorded_sortby');
 
 // Make sure the image cache path exists
 	$path = '';

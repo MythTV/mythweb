@@ -1,12 +1,13 @@
 <?php
 /***                                                                        ***\
-	search.php                               Last Updated: 2003.07.24 (xris)
+	search.php                               Last Updated: 2003.08.05 (xris)
 
 	Searches the database for programs matching a particular query.
 \***                                                                        ***/
 
 // Initialize the script, database, etc.
 	require_once "includes/init.php";
+	require_once "includes/sorting.php";
 
 // Session variables for search types
 	foreach (array('search_title', 'search_subtitle', 'search_description', 'search_category', 'search_category_type') as $search_var) {
@@ -51,6 +52,17 @@
 		$_GET['search_title'] = true;
 		$_GET['search_subtitle'] = true;
 	}
+
+// The default sorting choice isn't so good for recorded programs, so we'll set our own default
+	if (!is_array($_SESSION['search_sortby']))
+		$_SESSION['search_sortby'] = array(array('field' => 'airdate',
+												 'reverse' => true),
+										   array('field' => 'title',
+												 'reverse' => false));
+
+// Sort the programs
+	if (count($Results))
+		sort_programs($Results, 'search_sortby');
 
 // Load the class for this page
 	require_once theme_dir."search.php";

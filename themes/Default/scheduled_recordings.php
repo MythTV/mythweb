@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2003.06.29 (xris)
+	scheduled_recordings.php                    Last Updated: 2003.08.05 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.

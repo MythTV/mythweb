@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                 Last Updated: 2003.07.22 (xris)
+	scheduled_recordings.php                 Last Updated: 2003.08.05 (xris)
 
 	view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -111,7 +111,8 @@
 	}
 
 // Sort the programs
-	sort_programs($All_Shows, 'scheduled_sortby');
+	if (count($All_Shows))
+		sort_programs($All_Shows, 'scheduled_sortby');
 
 // Load the class for this page
 	require_once theme_dir."scheduled_recordings.php";

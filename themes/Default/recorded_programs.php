@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.06.30 (xris)
+	recorded_programs.php                    Last Updated: 2003.08.05 (xris)
 
 	This file defines a theme class for the recorded programs section.
 	It must define one method.   documentation will be added someday.
