@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2004.05.10 (xris)
+    scheduled_recordings.php                 Last Updated: 2004.05.23 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -17,6 +17,7 @@
 // Doing something to a program?  Load its detailed info
     if ($_GET['chanid'] && $_GET['starttime']) {
         $program = load_one_program($_GET['starttime'], $_GET['chanid']);
+        $channel =& $program->channel;
 
     // Forget all knowledge of old recordings
         if ($_GET['forget_old'] || $_POST['forget_old']) {
@@ -40,37 +41,70 @@
             $result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($_GET['chanid']).' AND title='.escape($program->title).' AND subtitle='.escape($program->subtitle).' AND description='.escape($program->desription))
                 or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
         }
+    // Revert to normal recording rules
+        elseif ($_GET['revert'] || $_POST['revert']) {
+            $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
+                or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
+        }
     // Suppress something that shouldn't be recorded
         elseif ($_GET['suppress'] || $_POST['suppress']) {
-            $result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
+            $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
                 or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-            $result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
-                                    .escape($program->recordid).','
-                                    .'2,'   // record override type:   1 == record, 2 == don't record
-                                    .escape($program->chanid)                    .','
-                                    .'FROM_UNIXTIME('.escape($program->starttime).'),'
-                                    .'FROM_UNIXTIME('.escape($program->endtime)  .'),'
-                                    .escape($program->title)                     .','
-                                    .escape($program->subtitle)                  .','
-                                    .escape($program->description)               .')')
-                or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
+            $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
+                                  .'8,'
+                                  .escape($program->chanid)                     .','
+                                  .escape($channel->callsign)                   .','
+                                  .'FROM_UNIXTIME('.escape($program->starttime).'),'
+                                  .'FROM_UNIXTIME('.escape($program->starttime).'),'
+                                  .'FROM_UNIXTIME('.escape($program->endtime)  .'),'
+                                  .'FROM_UNIXTIME('.escape($program->endtime)  .'),'
+                                  .escape($program->title)                      .','
+                                  .escape($program->subtitle)                   .','
+                                  .escape($program->description)                .','
+                                  .escape($program->profile)                    .','
+                                  .escape($program->recpriority)                .','
+                                  .escape($program->recgroup)                   .','
+                                  .escape($program->dupin)                      .','
+                                  .escape($program->dupmethod)                  .','
+                                  .escape($program->maxnewest)                  .','
+                                  .escape($program->maxepisodes)                .','
+                                  .escape($program->autoexpire)                 .','
+                                  .escape($program->startoffset)                .','
+                                  .escape($program->endoffset)                  .','
+                                  .escape($program->seriesid)                   .','
+                                  .escape($program->programid)                  .')')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
         }
     // Record a show that wouldn't otherwise record (various reasons, read below)
         elseif ($_GET['record'] || $_POST['record']) {
         // Activate a program that was inactive for other reasons
-            if ($show->recording == 0 || $show->recstatus) {
-                $result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
+            if ($program->recording == 0 || $program->recstatus) {
+                $result = mysql_query('DELETE FROM record WHERE (type=7 OR type=8) AND chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
                     or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-                $result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
-                                        .escape($program->recordid).','
-                                        .'1,'   // record override type:   1 == record, 2 == don't record
-                                        .escape($program->chanid)                    .','
-                                        .'FROM_UNIXTIME('.escape($program->starttime).'),'
-                                        .'FROM_UNIXTIME('.escape($program->endtime)  .'),'
-                                        .escape($program->title)                     .','
-                                        .escape($program->subtitle)                  .','
-                                        .escape($program->description)               .')')
-                    or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
+                $result = mysql_query('REPLACE INTO record (type,chanid,station,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,recgroup,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,seriesid,programid) values ('
+                                      .'7,'
+                                      .escape($program->chanid)                     .','
+                                      .escape($channel->callsign)                   .','
+                                      .'FROM_UNIXTIME('.escape($program->starttime).'),'
+                                      .'FROM_UNIXTIME('.escape($program->starttime).'),'
+                                      .'FROM_UNIXTIME('.escape($program->endtime)  .'),'
+                                      .'FROM_UNIXTIME('.escape($program->endtime)  .'),'
+                                      .escape($program->title)                      .','
+                                      .escape($program->subtitle)                   .','
+                                      .escape($program->description)                .','
+                                      .escape($program->profile)                    .','
+                                      .escape($program->recpriority)                .','
+                                      .escape($program->recgroup)                   .','
+                                      .escape($program->dupin)                      .','
+                                      .escape($program->dupmethod)                  .','
+                                      .escape($program->maxnewest)                  .','
+                                      .escape($program->maxepisodes)                .','
+                                      .escape($program->autoexpire)                 .','
+                                      .escape($program->startoffset)                .','
+                                      .escape($program->endoffset)                  .','
+                                      .escape($program->seriesid)                   .','
+                                      .escape($program->programid)                  .')')
+                or trigger_error('SQL Error: '.mysql_error(), FATAL);
             }
         }
 

@@ -170,6 +170,7 @@ define ('_LANG_ACTIVATE',         'Activate');
 define ('_LANG_NEVER_RECORD',     'Never&nbsp;Record');
 define ('_LANG_RECORD_THIS',      'Record This');
 define ('_LANG_FORGET_OLD',       'Forget Old');
+define ('_LANG_REVERT',           'Revert');
 define ('_LANG_RATING',           'Rating');
 define ('_LANG_SCHEDULE',         'Schedule');
 define ('_LANG_DISPLAY',          'Display');

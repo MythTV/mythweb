@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2004.05.04 (xris)
+    scheduled_recordings.php                    Last Updated: 2004.05.23 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -84,13 +84,20 @@ if ($group_field == "") {
         $commands = array();
         $urlstr = 'chanid='.$show->chanid.'&starttime='.$show->starttime;
     // Which class does this show fall into?
-# This needs a major overhaul, to support the new recording schedule types, etc
+        if ($show->recstatus == 'LowDiskSpace') {
+            $class = 'deactivated';
+            $commands[] = 'Not Enough Disk Space';
+        }
+        elseif ($show->recstatus == 'TunerBusy') {
+            $class = 'deactivated';
+            $commands[] = 'Tuner is busy';
+        }
         if ($show->recstatus == 'PreviousRecording' || $show->recstatus == 'CurrentRecording') {
             $class = 'duplicate';
             $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_RECORD_THIS.'</a>';
             $commands[] = '<a href="scheduled_recordings.php?forget_old=yes&'.$urlstr.'">'._LANG_FORGET_OLD.'</a>';
         }
-        elseif ($show->recstatus == 'Conflict') {
+        elseif ($show->recstatus == 'Conflict' || $show->recstatus == 'Overlap') {
             $class   = 'conflict';
             $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_RECORD_THIS.'</a>';
             $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
@@ -101,6 +108,10 @@ if ($group_field == "") {
         // Offer to suppress any recordings that have enough info to do so.
             if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
                 $commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'._LANG_NEVER_RECORD.'</a>';
+        }
+        elseif ($show->recstatus == 'ManualOverride' || $show->recstatus == 'Cancelled') {
+            $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
+            $commands[] = '<a href="scheduled_recordings.php?revert=yes&'.$urlstr.'">'._LANG_REVERT.'</a>';
         }
         else {
             $class   = 'deactivated';

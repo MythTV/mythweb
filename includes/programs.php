@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2004.04.19 (xris)
+    programs.php                             Last Updated: 2004.05.23 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -116,6 +116,8 @@
                             .'      DAYOFWEEK(record.enddate) = DAYOFWEEK(program.endtime)) '
                             .' OR (record.type = 4 AND program.title = record.title) '
                             .' OR (record.type = 6 AND program.title = record.title) '
+                            .' OR (record.type = 7 AND program.title = record.title) '
+                            .' OR (record.type = 8 AND program.title = record.title) '
                             .' OR (record.type = 3 AND program.title = record.title AND record.chanid = program.chanid)'
                             .' OR (record.type = 2 AND program.title = record.title AND record.chanid = program.chanid AND '
                             .'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
@@ -124,7 +126,9 @@
                             .'     record.starttime = SEC_TO_TIME(TIME_TO_SEC(program.starttime)) AND '
                             .'     record.startdate = FROM_DAYS(TO_DAYS(program.starttime))))'
                             .' LEFT JOIN recordingprofiles ON record.profile=recordingprofiles.id ';
-            $record_values = ' SUM(record.type = 6) > 0 AS record_findone,'
+            $record_values = ' SUM(record.type = 8) > 0 AS record_suppress,'
+                            .' SUM(record.type = 7) > 0 AS record_override,'
+                            .' SUM(record.type = 6) > 0 AS record_findone,'
                             .' SUM(record.type = 5) > 0 AS record_weekly,'
                             .' SUM(record.type = 4) > 0 AS record_always,'
                             .' SUM(record.type = 3) > 0 AS record_channel,'
@@ -302,7 +306,6 @@ class Program {
             #$fs_low           = $program_data[10];
             #$starttime        = $program_data[11];
             #$endtime          = $program_data[12];
-            $this->override    = $program_data[15] ? true : false;   # matches an item in oldrecorded, and won't be recorded
             $this->hostname    = $program_data[16];                  #  myth
             #$this->sourceid   = $program_data[17];                  #  -1
             #$this->cardid     = $program_data[18];                  #  -1
@@ -321,9 +324,10 @@ class Program {
             #$this->progflags  = $program_data[29];
             #$this->recgroup    = $program_data[30];
             #$this->commfree    = $program_data[31];
-                        #$this->outputfilters = $program_data[32];
-                        $this->seriesid     = $program_data[33];
-                        $this->programid    = $program_data[34];
+            #$this->outputfilters = $program_data[32];
+            $this->seriesid     = $program_data[33];
+            $this->programid    = $program_data[34];
+
         }
     // SQL data
         else {
@@ -365,25 +369,31 @@ class Program {
                 $this->recordid    = $Pending_Programs[$this->chanid][$this->starttime][22];
             }
         // We get various recording-related information, too
+            if ($program_data['record_suppress'])
+                $this->record_suppress =  true;
             if ($program_data['record_findone'])
-                $this->record_findone = true;
+                $this->record_findone  = true;
             else if ($program_data['record_always'])
-                $this->record_always  = true;
+                $this->record_always   = true;
             elseif ($program_data['record_channel'])
-                $this->record_channel =  true;
+                $this->record_channel  =  true;
             elseif ($program_data['record_once'])
-                $this->record_once    =  true;
+                $this->record_once     =  true;
             elseif ($program_data['record_daily'])
-                $this->record_daily   =  true;
+                $this->record_daily    =  true;
             elseif ($program_data['record_weekly'])
-                $this->record_weekly  =  true;
+                $this->record_weekly   =  true;
+
+            if ($program_data['record_override'])
+                $this->record_override = true;
+
         // Add a generic "will record" variable, too
-            $this->will_record     = ($this->record_daily
-                                      || $this->record_weekly
-                                      || $this->record_once
-                                      || $this->record_channel
-                                      || $this->record_always
-                                      || $this->record_findone ) ? true : false;
+            $this->will_record = ($this->record_daily
+                                  || $this->record_weekly
+                                  || $this->record_once
+                                  || $this->record_channel
+                                  || $this->record_always
+                                  || $this->record_findone) ? true : false;
         }
     // Turn recstatus into a word
         if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
