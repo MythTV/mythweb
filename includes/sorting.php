@@ -14,17 +14,17 @@
 	// First, check for a sort variable passed in by the user
 		isset($_GET['reverse']) or $_GET['reverse'] = $_POST['reverse'];
 		isset($_GET['sortby'])  or $_GET['sortby']   = $_POST['sortby'];
+	// Now we build an array the user's sort preferences
+		if (!is_array($_SESSION[$session]) || !count($_SESSION[$session]))
+			$_SESSION[$session] = array(array('field' => 'airdate',
+											  'reverse' => false),
+										array('field' => 'title',
+											  'reverse' => false));
 	// If we were given a sort parameter, let's put it into the sort preferences
-		if ($_GET['sortby'] || !is_array($_SESSION[$session]) || !count($_SESSION[$session])) {
+		if ($_GET['sortby']) {
 			$_GET['sortby'] = strtolower($_GET['sortby']);
 			if (!function_exists('by_'.$_GET['sortby']))
 				$_GET['sortby'] = 'title';
-		// Now we build an array the user's sort preferences
-			if (!is_array($_SESSION[$session]))
-				$_SESSION[$session] = array(array('field' => 'airdate',
-												  'reverse' => false),
-											array('field' => 'title',
-												  'reverse' => false));
 		// This sortby method is the first element in the sort array, let's reverse it (unless told otherwise)
 			if ($_SESSION[$session][0]['field'] == $_GET['sortby']) {
 				if (isset($_GET['reverse']))

@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	init.php				                 Last Updated: 2003.07.22 (xris)
+	init.php				                 Last Updated: 2003.08.07 (xris)
 
 	This file is part of MythWeb, a php-based interface for MythTV.
 	See README and LICENSE for details.
@@ -47,7 +47,8 @@
 
 // Connect to the database, or restore a persistent connection
 //  please note that calling mysql_close is unnecessary - see php documentation for details
-    $dbh = mysql_pconnect(db_host, db_username, db_password)
+    #$dbh = mysql_pconnect(db_host, db_username, db_password)
+    $dbh = mysql_connect(db_host, db_username, db_password)
         or trigger_error("Can't connect to the database server.  Did you use the correct settings in config/conf.php?", FATAL);
     mysql_select_db(db_dbname)
 		or trigger_error("Can't access the database file:  " . mysql_error() . " [#" . mysql_errno() . "]", FATAL);

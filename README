@@ -103,6 +103,16 @@ A: First, make sure that you have PHP enabled in your webserver settings.  Once
     significantly speeds up page-load times), you can safely re-enable these
     settings in /etc/php.ini.
 
+Q: I want to access mythweb from the rest of the internet.
+    How do I make it more secure?
+A: The main .htaccess file contains commented-out apache controls for enabling
+    htpasswd password authentication.  If you uncomment these, and create
+    /var/www/htpasswd (see `man htpasswd` for details on how to do this), you
+    will have some rudimentary password protection.  Combine this with making
+    your mythweb connect only via SSL (see your webserver documentation for
+    details), and you will have mythweb as secure as you can get without some
+    fancy firewall rules.
+
 4.0 Notes
 =========
 
