@@ -163,7 +163,9 @@ class Theme {
                 &nbsp; | &nbsp;
                 <a href="recorded_programs.php"><?php echo t('Recorded Programs') ?></a>
                 &nbsp; | &nbsp;
-                <a href="status.php"><?php echo t('Backend Status') ?></a><?php
+                <a href="status.php"><?php echo t('Backend Status') ?></a>
+                &nbsp; | &nbsp;
+                <a href="log.php"><?php echo ('Backend Logs') ?></a><?php
     // Create the category legend popup
         global $Categories, $Footnotes;
         $legend = <<<EOF
