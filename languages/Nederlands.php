@@ -2,6 +2,9 @@
 
 define ('_LANG_LANGUAGE_NAME', 'Nederlands');
 
+/* Set locale to Dutch */
+setlocale(LC_ALL, 'nl_NL');
+
 /* theme.php */
 define ('_LANG_BACKEND_STATUS',       	'Systeemstatus');
 define ('_LANG_SETTINGS', 		'Instellingen');

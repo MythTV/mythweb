@@ -2,6 +2,9 @@
 
 define ('_LANG_LANGUAGE_NAME', 'French');
 
+/* Set locale to French */
+setlocale(LC_ALL, 'fr_FR');
+
 /* theme.php */
 define ('_LANG_BACKEND_STATUS',       'Etat du syst&egrave;me');
 define ('_LANG_SETTINGS',             'Configuration');

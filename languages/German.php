@@ -2,6 +2,9 @@
 
 define ('_LANG_LANGUAGE_NAME', 'German');
 
+/* Set locale to German */
+setlocale(LC_ALL, 'de_DE');
+
 /* theme.php */
 define ('_LANG_BACKEND_STATUS',       'Backend Status');
 define ('_LANG_SETTINGS',             'Einstellungen');
