@@ -57,7 +57,7 @@ class Theme_program_detail extends Theme {
 				if (isset($_GET[recordid])) echo "<em>";
 				echo date('D, M jS', $this_program->starttime) . '<br>';
 				echo date('g:i A', $this_program->starttime) . ' ' . _LANG_TO . ' ' . date('g:i A', $this_program->endtime);
-				if (!isset($_GET[recordid])) echo '(' . (int)($this_program->length/60) . _LANG_MINUTES .')';?><BR>
+				if (!isset($_GET[recordid])) echo ' (' . (int)($this_program->length/60) . ' ' . _LANG_MINUTES .')';?><BR>
 				<?php
 				if ($this_program->previouslyshown)
 					echo '(Rerun) ';
