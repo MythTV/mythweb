@@ -240,6 +240,36 @@ define ('_LANG_RECSTATUS_LONG_LOWDISKSPACE',      'There wasn\'t enough disk spa
 define ('_LANG_RECSTATUS_LONG_TUNERBUSY',         'The tuner card was already being used when this program was scheduled to be recorded.');
 define ('_LANG_RECSTATUS_LONG_FORCE_RECORD',      'This show was manually set to record this specific instance.');
 
+/* weather.php */
+define ('_LANG_HUMIDITY',		'Humidity');
+define ('_LANG_PRESSURE',		'Pressure');
+define ('_LANG_WIND',			'Wind');
+define ('_LANG_VISIBILITY',		'Visibility');
+define ('_LANG_WIND_CHILL',		'Wind Chill');
+define ('_LANG_UV_INDEX',		'UV Index');
+define ('_LANG_UV_MINIMAL',		'minimal');
+define ('_LANG_UV_MODERATE',		'moderate');
+define ('_LANG_UV_HIGH',		'high');
+define ('_LANG_UV_EXTREME',		'extreme');
+define ('_LANG_CURRENT_CONDITIONS',	'Current Conditions');
+define ('_LANG_FORECAST',		'Forecast');
+define ('_LANG_LAST_UPDATED',		'Last Updated');
+define ('_LANG_HIGH',			'High');
+define ('_LANG_LOW',			'Low');
+define ('_LANG_UNKNOWN',		'Unknown');
+define ('_LANG_RADAR',			'Radar');
+define ('_LANG_AT',			'at');
+
+define ('_LANG_TODAY',			'Today');
+define ('_LANG_TOMORROW',		'Tomorrow');
+define ('_LANG_MONDAY',			'Monday');
+define ('_LANG_TUESDAY',		'Tuesday');
+define ('_LANG_WEDNESDAY',		'Wednesday');
+define ('_LANG_THURSDAY',		'Thursday');
+define ('_LANG_FRIDAY',			'Friday');
+define ('_LANG_SATURDAY',		'Saturday');
+define ('_LANG_SUNDAY',			'Sunday');
+
 /* utils.php */
 define ('_LANG_HR',              'hr');
 define ('_LANG_HRS',             'hrs');

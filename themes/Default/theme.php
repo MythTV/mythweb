@@ -80,9 +80,9 @@ class Theme {
                 &nbsp; | &nbsp;
                 <a href="video.php">MythVideo</a>
                 &nbsp; | &nbsp;
-                <a href="settings.php"><?php echo _LANG_SETTINGS?></a>
-                <!--&nbsp; | &nbsp;
-                <a href="#">MythWeather</a>--></td>
+                <a href="weather.php">MythWeather</a>
+                &nbsp; | &nbsp;
+                <a href="settings.php"><?php echo _LANG_SETTINGS?></a></td>
 
 
 
