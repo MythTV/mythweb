@@ -237,7 +237,7 @@ class Theme_program_detail extends Theme {
 	<a href="recording_schedules.php">Back to Recording Schedules</a></td>
 		<?php } else { ?>
 	<a href="program_listing.php?time=<?php echo $this_program->starttime?>">What else is on at this time?</a>&nbsp;&nbsp;&nbsp;
-	<a href="search.php?searchstr=<?php echo $this_program->title?>&search_title=1">Find other showings of this program</a>&nbsp;&nbsp;&nbsp;
+	<a href="search.php?searchstr=<?php echo $this_program->title?>&search_title=1&search_exact=1">Find other showings of this program</a>&nbsp;&nbsp;&nbsp;
         <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td> <?php } ?>
 	</td>
 </tr>

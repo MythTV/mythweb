@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	search.php                               Last Updated: 2003.08.06 (xris)
+	search.php                               Last Updated: 2004.02.14 (xris)
 
 	Searches the database for programs matching a particular query.
 \***                                                                        ***/
@@ -10,7 +10,7 @@
 	require_once "includes/sorting.php";
 
 // Session variables for search types
-	foreach (array('search_title', 'search_subtitle', 'search_description', 'search_category', 'search_category_type') as $search_var) {
+	foreach (array('search_title', 'search_subtitle', 'search_description', 'search_category', 'search_category_type', 'search_exact') as $search_var) {
 		isset($_GET[$search_var]) or $_GET[$search_var] = $_POST[$search_var];
 		#isset($_GET[$search_var]) or $_GET[$search_var] = $_SESSION[$search_var];
 		#$_SESSION[$search_var] = $_GET[$search_bar];
@@ -23,16 +23,19 @@
 	isset($_GET['description'])    or $_GET['description']    = $_POST['description'];
 	isset($_GET['category'])       or $_GET['category']       = $_POST['category'];
 	isset($_GET['category_type'])  or $_GET['category_type']  = $_POST['category_type'];
+	isset($_GET['search_exact'])   or $_GET['search_exact']   = $_POST['serach_exact'];
 
 // Start the query out as an array
 	$query = array();
 	$joiner = ' OR ';
 	$compare = ' LIKE ';
+	if($_GET['search_exact'])
+	  $compare = ' = ';
 
 // How do we want to build this query?
 	if (preg_match('/^\~/', $_GET['searchstr'])) {
 		$compare = ' REGEXP ';
-		$search = regexp_escape($_GET['searchstr']);	
+		$search = regexp_escape($_GET['searchstr']);
 		if ($_GET['search_title'])
 			$query[] = 'program.title '.$compare.' '.$search;
 		if ($_GET['search_subtitle'])
@@ -129,6 +132,10 @@
 
 // One little function to help us format search queries
 	function search_escape($value) {
+		//if we are asking for an exact match, dont put the '%'s in
+		if($_GET['search_exact'])
+			return "'" . $value . "'";
+
 		return escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
 	}
 	function regexp_escape($value) {

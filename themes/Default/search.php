@@ -31,6 +31,8 @@ class Theme_search extends Theme {
 	<td onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><a>category</a></td>
 	<td align="right"><input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_GET['search_category_type'] ? ' CHECKED' : ''?>></td>
 	<td onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><a>category&nbsp;type</a></td>
+	<td align="right"><input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_GET['search_exact'] ? ' CHECKED' : ''?>></td>
+	<td onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><a>exact&nbsp;match</a></td>
 </tr>
 </table>
 </form>
