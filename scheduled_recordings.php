@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2005.01.31 (xris)
+    scheduled_recordings.php                 Last Updated: 2005.02.08 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -47,9 +47,30 @@
         exit;
     }
 
+// Ignore certain shows?
+    if ($_POST['change_display']) {
+        $_SESSION['scheduled_recordings']['disp_scheduled']   = $_POST['disp_scheduled']   ? true : false;
+        $_SESSION['scheduled_recordings']['disp_duplicates']  = $_POST['disp_duplicates']  ? true : false;
+        $_SESSION['scheduled_recordings']['disp_deactivated'] = $_POST['disp_deactivated'] ? true : false;
+        $_SESSION['scheduled_recordings']['disp_conflicts']   = $_POST['disp_conflicts']   ? true : false;
+    }
+
+// Defaults
+    if (!is_array($_SESSION['scheduled_recordings'])
+        || !($_SESSION['scheduled_recordings']['disp_scheduled']
+             || $_SESSION['scheduled_recordings']['disp_duplicates']
+             || $_SESSION['scheduled_recordings']['disp_deactivated']
+             || $_SESSION['scheduled_recordings']['disp_conflicts'])) {
+        $_SESSION['scheduled_recordings'] = array('disp_scheduled'   => true,
+                                                  'disp_duplicates'  => true,
+                                                  'disp_deactivated' => true,
+                                                  'disp_conflicts'   => true
+                                                 );
+    }
+
 // Parse the list of scheduled recordings
     global $Scheduled_Recordings;
-    $All_Shows = array();
+    $all_shows = array();
     foreach ($Scheduled_Recordings as $chanid => $shows) {
     // Now the shows in this channel
         foreach ($shows as $starttime => $show) {
@@ -59,14 +80,33 @@
         // Make sure this is a valid show (ie. skip in-progress recordings and other junk)
             if (!$chanid || $show->length < 1)
                 continue;
+        // Skip scheduled shows?
+            if (in_array($show->recstatus, array('WillRecord', 'ForceRecord'))) {
+                if (!$_SESSION['scheduled_recordings']['disp_scheduled'])
+                    continue;
+            }
+        // Skip conflicting shows?
+            elseif (in_array($show->recstatus, array('Conflict', 'Overlap'))) {
+                if (!$_SESSION['scheduled_recordings']['disp_conflicts'])
+                    continue;
+            }
+        // Skip duplicate shows?
+            elseif (in_array($show->recstatus, array('PreviousRecording', 'CurrentRecording', 'EarlierShowing', 'LaterShowing'))) {
+                if (!$_SESSION['scheduled_recordings']['disp_duplicates'])
+                    continue;
+            }
+        // Skip deactivated shows?
+            elseif (!$_SESSION['scheduled_recordings']['disp_deactivated']) {
+                continue;
+            }
         // Assign a reference to this show to the various arrays
-            $All_Shows[] =& $Scheduled_Recordings[$chanid][$starttime];
+            $all_shows[] =& $Scheduled_Recordings[$chanid][$starttime];
         }
     }
 
 // Sort the programs
-    if (count($All_Shows))
-        sort_programs($All_Shows, 'scheduled_sortby');
+    if (count($all_shows))
+        sort_programs($all_shows, 'scheduled_sortby');
 
 // Load the class for this page
     require_once theme_dir."scheduled_recordings.php";
@@ -75,7 +115,7 @@
     $Page = new Theme_scheduled_recordings();
 
 // Display the page
-    $Page->print_page();
+    $Page->print_page($all_shows);
 
 // Exit
     exit;

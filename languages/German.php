@@ -38,6 +38,7 @@ $L = array(
     'Exact Match'                           => 'Exakte Übereinstimmung',
     'Go'                                    => 'Los',
     'Hour'                                  => 'Stunde',
+    'Jump'                                  => 'Gehe',
     'Jump to'                               => 'Gehe zu',
     'Length (min)'                          => 'Dauer (Min.)',
     'Listings'                              => 'TV Programm',
@@ -163,7 +164,6 @@ $L = array(
     'Written by'                          => 'Geschrieben von',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Aktuell: $1',
-    'Jump'                    => 'Gehe',
     'Jump To'                 => 'Gehe zu',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 Folge',
@@ -204,6 +204,7 @@ $L = array(
     'Never Record'  => 'Niemals aufnehmen',
     'Record This'   => 'Diese Sendung aufnehmen',
     'Scheduled'     => 'Geplant',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Keine Übereinstimmungen gefunden',
 // themes/.../settings.php

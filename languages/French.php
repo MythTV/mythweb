@@ -38,6 +38,7 @@ $L = array(
     'Exact Match'                           => 'Correspondance exacte',
     'Go'                                    => 'Go',
     'Hour'                                  => 'Heure',
+    'Jump'                                  => 'Aller',
     'Jump to'                               => 'Sauter vers',
     'Length (min)'                          => 'Dur&eacute;e (min)',
     'Listings'                              => 'Liste',
@@ -163,7 +164,6 @@ $L = array(
     'Written by'                          => 'Ecrit par',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Actuellement Affich&eacute;',
-    'Jump'                    => 'Aller',
     'Jump To'                 => 'Aller &agrave;',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 &eacute;pisode',
@@ -204,6 +204,7 @@ $L = array(
     'Never Record'  => 'Ne jamais enregistrer',
     'Record This'   => 'Enregistrer Ceci',
     'Scheduled'     => 'Programm&eacute;',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Aucune correspondance',
 // themes/.../settings.php

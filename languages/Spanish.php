@@ -38,6 +38,7 @@ $L = array(
     'Exact Match'                           => '',
     'Go'                                    => '',
     'Hour'                                  => '',
+    'Jump'                                  => '',
     'Jump to'                               => '',
     'Length (min)'                          => '',
     'Listings'                              => '',
@@ -163,7 +164,6 @@ $L = array(
     'Written by'                          => '',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => '',
-    'Jump'                    => '',
     'Jump To'                 => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '',
@@ -204,6 +204,7 @@ $L = array(
     'Never Record'  => '',
     'Record This'   => '',
     'Scheduled'     => '',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => '',
 // themes/.../settings.php

@@ -38,6 +38,7 @@ $L = array(
     'Exact Match'                           => '正確に一致',
     'Go'                                    => '移動',
     'Hour'                                  => '時',
+    'Jump'                                  => '移動',
     'Jump to'                               => '移動',
     'Length (min)'                          => '時間 (分)',
     'Listings'                              => '一覧',
@@ -163,7 +164,6 @@ $L = array(
     'Written by'                          => '著者',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => '表示日: $1',
-    'Jump'                    => '移動',
     'Jump To'                 => '移動',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1番組',
@@ -204,6 +204,7 @@ $L = array(
     'Never Record'  => 'もう録画しない',
     'Record This'   => 'これを録画する',
     'Scheduled'     => '予約',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => '一致する物がありませんでした',
 // themes/.../settings.php

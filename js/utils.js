@@ -1,5 +1,5 @@
 /***                                                                        ***\
-    utils.js                                  Last Updated: 2005.01.23 (xris)
+    utils.js                                  Last Updated: 2005.02.08 (xris)
     a random assortment of javascript utility routines
 \***                                                                        ***/
 
@@ -55,6 +55,27 @@
         return true;
     }
 
+// Submit a form
+    function submit_form(newvar, val, form, confirm_str) {
+    // Confirm?
+        if (confirm_str && !confirm(confirm_str))
+            return;
+    // Find the form we want to submit
+        form = get_element(form ? form : 'form');
+        if (!form)
+            form = document.form ? document.form : document.forms[0];
+    // Create a new variable?
+        if (newvar) {
+            var hidden = document.createElement('input');
+            hidden.type  = 'hidden';
+            hidden.name  = newvar;
+            hidden.value = val ? val : 1;
+            form.appendChild(hidden);
+        }
+    // Submit
+        form.submit();
+    }
+
 // Add a css class to a specified element
     function add_class(id, classname) {
         var field = get_element(id);
@@ -77,6 +98,12 @@
         if (!field)
             return;
         field.className = field.className.replace(RegExp('\\b'+classname+'\\s*\\b|\\b\\s*'+classname+'\\b', 'g'), '') ;
+    }
+
+// Toggle a checkbox
+    function toggle_checkbox(id) {
+        var e = get_element(id)
+        e.checked = e.checked ? false : true;
     }
 
 // Change the help text

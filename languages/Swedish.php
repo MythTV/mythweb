@@ -38,6 +38,7 @@ $L = array(
     'Exact Match'                           => 'Exakt matchning',
     'Go'                                    => 'Gå',
     'Hour'                                  => 'Timme',
+    'Jump'                                  => 'Gå',
     'Jump to'                               => 'Gå till',
     'Length (min)'                          => 'Längd (min)',
     'Listings'                              => 'TV-tablåer',
@@ -163,7 +164,6 @@ $L = array(
     'Written by'                          => 'Skriven av',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Just nu visas:  $1',
-    'Jump'                    => 'Gå',
     'Jump To'                 => 'Gå till',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 avsnitt',
@@ -204,6 +204,7 @@ $L = array(
     'Never Record'  => 'Spela aldrig in',
     'Record This'   => 'Spela in',
     'Scheduled'     => 'Schemalagd',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Inga matchningar funna',
 // themes/.../settings.php

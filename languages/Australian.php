@@ -39,6 +39,7 @@ $L = array(
     'Exact Match'                           => '',
     'Go'                                    => 'Beer!',
     'Hour'                                  => '',
+    'Jump'                                  => '',
     'Jump to'                               => '',
     'Length (min)'                          => '',
     'Listings'                              => '',
@@ -164,7 +165,6 @@ $L = array(
     'Written by'                          => '',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Currently Drinking: $1',
-    'Jump'                    => '',
     'Jump To'                 => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 beer',
@@ -205,6 +205,7 @@ $L = array(
     'Never Record'  => '',
     'Record This'   => '',
     'Scheduled'     => '',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => '',
 // themes/.../settings.php

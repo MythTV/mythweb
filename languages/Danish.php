@@ -38,6 +38,7 @@ $L = array(
     'Exact Match'                           => 'Præcis match',
     'Go'                                    => 'Gå',
     'Hour'                                  => 'Time',
+    'Jump'                                  => 'Gå',
     'Jump to'                               => 'Gå til',
     'Length (min)'                          => 'Længde (min)',
     'Listings'                              => 'Programoversigt',
@@ -163,7 +164,6 @@ $L = array(
     'Written by'                          => 'Skrevet af',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Lige nu vises: $1',
-    'Jump'                    => 'Gå',
     'Jump To'                 => 'Gå Til',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 afsnit',
@@ -204,6 +204,7 @@ $L = array(
     'Never Record'  => 'Optag aldrig',
     'Record This'   => 'Optag dette',
     'Scheduled'     => 'Planlagt',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Ingen resultater',
 // themes/.../settings.php

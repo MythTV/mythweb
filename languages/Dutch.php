@@ -38,6 +38,7 @@ $L = array(
     'Exact Match'                           => 'Exacte Overeenkomst',
     'Go'                                    => 'Doorgaan',
     'Hour'                                  => 'Uur',
+    'Jump'                                  => 'Ga',
     'Jump to'                               => 'Spring naar',
     'Length (min)'                          => 'Duur (min)',
     'Listings'                              => 'Programmagids',
@@ -163,7 +164,6 @@ $L = array(
     'Written by'                          => 'Auteur',
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Tijdstip: $1',
-    'Jump'                    => 'Ga',
     'Jump To'                 => 'Ga naar',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 aflevering',
@@ -204,6 +204,7 @@ $L = array(
     'Never Record'  => 'Nooit Opnemen',
     'Record This'   => 'Dit Opnemen',
     'Scheduled'     => 'Geprogrammeerd',
+    'Update'        => '',
 // themes/.../search.php
     'No matches found' => 'Geen programma\'s gevonden',
 // themes/.../settings.php

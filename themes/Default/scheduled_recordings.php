@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2005.02.05 (xris)
+    scheduled_recordings.php                 Last Updated: 2005.02.08 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -10,64 +10,48 @@
 #class theme_program_detail extends Theme {
 class Theme_scheduled_recordings extends Theme {
 
-    function print_page() {
+    function print_page(&$shows) {
+    // Load this page's custom stylesheet
+        $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'scheduled_recordings.css" />';
     // Print the main page header
         parent::print_header('MythWeb - Scheduled Recordings');
-    // Print the page contents
-        global $All_Shows;
-?>
-
-<script language="JavaScript" type="text/javascript">
-<!--
-    function changevisible() {
-        var prev_visible_class = "no_padding";
-        var prev_separator_index = 0;
-
-        for (var i=1; i < get_element("listings").rows.length; i++) {
-            if (get_element("listings").rows[i].className == "list_separator") {
-                if (prev_visible_class == "list_separator")
-                    get_element("listings").rows[prev_separator_index].style.display = "none";
-                get_element("listings").rows[i].style.display = "";
-                prev_visible_class = "list_separator";
-                prev_separator_index = i;
-            }
-            else {
-                if (get_element(get_element("listings").rows[i].className).checked) {
-                    get_element("listings").rows[i].style.display = "";
-                    prev_visible_class = get_element("listings").rows[i].className;
-                }
-                else
-                    get_element("listings").rows[i].style.display = "none";
-            }
+    // Which field are we grouping by?
+        $group_field = $_GET['sortby'];
+        if (empty($group_field)) {
+            $group_field = "airdate";
         }
-	if(prev_visible_class == "list_separator")
-        	get_element("listings").rows[prev_separator_index].style.display = "none";
-    }
-// -->
-</script>
-
-<table border="0" align="center">
-<tr>
-    <td><?php echo t('Display') ?>:</td>
-    <td><input type="checkbox" id="scheduled" class="radio" onclick="changevisible()" CHECKED></td>
-    <td><?php echo t('Scheduled') ?></td>
-    <td><input type="checkbox" id="duplicate" class="radio" onclick="changevisible()" CHECKED></td>
-    <td><?php echo t('Duplicates') ?></td>
-    <td><input type="checkbox" id="deactivated" class="radio" onclick="changevisible()" CHECKED></td>
-    <td><?php echo t('Deactivated') ?></td>
-    <td><input type="checkbox" id="conflict" class="radio" onclick="changevisible()" CHECKED></td>
-    <td><?php echo t('Conflicts') ?></td>
-</tr>
-</table>
-
-<?php
-$group_field = $_GET['sortby'];
-if ($group_field == "") {
-    $group_field = "airdate";
-} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
-    $group_field = "";
-}
+        elseif (!in_array($group_field, 'title', 'channum', 'airdate')) {
+            $group_field = '';
+        }
+    // Print the page contents
 ?>
+
+<div id="display_options" class="command command_border_l command_border_t command_border_b command_border_r">
+
+    <form id="change_display" action="scheduled_recordings.php" method="post">
+    <input type="hidden" name="change_display" value="1">
+
+    <?php echo t('Display') ?>:
+
+    <input type="checkbox" id="disp_scheduled" name="disp_scheduled" class="radio" onclick="submit_form('','','change_display')"<?php
+        if ($_SESSION['scheduled_recordings']['disp_scheduled']) echo ' CHECKED' ?>>
+    <a onclick="toggle_checkbox('disp_scheduled');submit_form('','','change_display')"><?php echo t('Scheduled') ?></a>
+    |
+    <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="submit_form('','','change_display')" <?php
+        if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
+    <a onclick="toggle_checkbox('disp_duplicates');submit_form('','','change_display')"><?php echo t('Duplicates') ?></a>
+    |
+    <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="submit_form('','','change_display')" <?php
+        if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
+    <a onclick="toggle_checkbox('disp_deactivated');submit_form('','','change_display')"><?php echo t('Deactivated') ?></a>
+    |
+    <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="get_element('change_display').submit()" <?php
+        if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
+    <a onclick="toggle_checkbox('disp_conflicts');submit_form('','','change_display')"><?php echo t('Conflicts') ?></a>
+
+    <noscript><input type="submit" value="<?php echo t('Update') ?>"></noscript>
+    </form>
+</div>
 
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
@@ -82,7 +66,7 @@ if ($group_field == "") {
 
     $prev_group="";
     $cur_group="";
-    foreach ($All_Shows as $show) {
+    foreach ($shows as $show) {
     // Reset the command variable to a default URL
         $commands = array();
         $urlstr = 'chanid='.$show->chanid.'&starttime='.$show->starttime;
