@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2003.11.18 (xris)
+	conf.php                                  Last Updated: 2003.11.28 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -23,7 +23,10 @@
 	define('db_password', 'mythtv');
 	define('db_dbname',   'mythconverg');
 
-// The domain of this webserver, for cookie validation and other things
+// The domain of this webserver, for cookie validation and other things.  If you
+// don't have "canonical names" turned on in apache, you need to set this to the
+// name or IP you use to access this server, or session data will not work.
+// Turning on "canonical names" in apache's httpd.conf is the preferred option.
 	define('server_domain', $_SERVER['SERVER_NAME'] ? $_SERVER['SERVER_NAME'] : $_SERVER['HTTP_HOST']);
 
 // Email address to which php and database errors are mailed to
