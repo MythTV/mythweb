@@ -20,6 +20,7 @@ Please be warned that by altering this table without knowing what you are doing,
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu" align="center">
+    <td width="4%">delete</td>
     <td width="4%">sourceid</td>
     <td width="5%">channum</td>
     <td width="12%">callsign</td>
@@ -27,16 +28,17 @@ Please be warned that by altering this table without knowing what you are doing,
     <td width="5%">freqid</td>
     <td width="5%">finetune</td>
     <td width="5%">videofilters</td>
-    <td width="8%">brightness</td>
-    <td width="8%">contrast</td>
-    <td width="8%">colour</td>
-    <td width="8%">hue</td>
+    <td width="7%">brightness</td>
+    <td width="7%">contrast</td>
+    <td width="7%">colour</td>
+    <td width="7%">hue</td>
     <td width="5%">recpriority</td>
     <td width="5%">commfree</td>
     <td width="5%">visible</td>
 </tr><?php
         foreach ($Channels as $channel) {
 ?><tr class="settings" align="center">
+    <td><input type="checkbox" name="delete_<?php echo $channel['chanid']?>" id="delete_<?php echo $channel['chanid']?>" value="true"></td>
     <td><?php echo htmlentities($channel['sourceid'])?></td>
     <td><input type="text" size="3" name="channum_<?php echo $channel['chanid']?>" id="channum_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['channum'])?>"></td>
     <td><input type="text" size="15" name="callsign_<?php echo $channel['chanid']?>" id="callsign_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['callsign'])?>"></td>

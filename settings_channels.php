@@ -15,8 +15,13 @@
         // Figure out the chanid, or leave
             if (!preg_match('/^channum_(\\d+)$/', $key, $match)) continue;
             list($match, $chanid) = $match;
-        // First, grab values that can be empty
-            $query = 'UPDATE channel SET freqid='.escape($_POST['freqid_'.$chanid])      .','
+        // First, delete any unwanted channels
+            if ($_POST['delete_'.$chanid] == "true") {
+                $query = 'DELETE FROM channel';
+            }
+            else {
+            // Not deleting so grab values that can be empty
+                $query = 'UPDATE channel SET freqid='.escape($_POST['freqid_'.$chanid])      .','
                                      .'finetune='.escape($_POST['finetune_'.$chanid])    .','
                                  .'videofilters='.escape($_POST['videofilters_'.$chanid]).','
                                    .'brightness='.escape($_POST['brightness_'.$chanid])  .','
@@ -26,13 +31,14 @@
                                   .'recpriority='.escape($_POST['recpriority_'.$chanid]) .','
                                   .'commfree='.escape((isset($_POST['commfree_'.$chanid]) && $_POST['commfree_'.$chanid] == "on") ? 1 : 0) .','
                                   .'visible='.escape((isset($_POST['visible_'.$chanid]) && $_POST['visible_'.$chanid] == "on") ? 1 : 0);
-        // next, the fields that need to have a value, so we won't change them if they were emptied
-            if ($_POST['channum_'.$chanid])
-                $query .= ',channum='.escape($_POST['channum_'.$chanid]);
-            if ($_POST['callsign_'.$chanid])
-                $query .= ',callsign='.escape($_POST['callsign_'.$chanid]);
-            if ($_POST['name_'.$chanid])
-                $query .= ',name='.escape($_POST['name_'.$chanid]);
+            // next, the fields that need to have a value, so we won't change them if they were emptied
+                if ($_POST['channum_'.$chanid])
+                    $query .= ',channum='.escape($_POST['channum_'.$chanid]);
+                if ($_POST['callsign_'.$chanid])
+                    $query .= ',callsign='.escape($_POST['callsign_'.$chanid]);
+                if ($_POST['name_'.$chanid])
+                    $query .= ',name='.escape($_POST['name_'.$chanid]);
+            }
         // Submit the query
             $result = mysql_query($query.' WHERE chanid='.escape($chanid))
                 or trigger_error('SQL Error: '.mysql_error(), FATAL);
