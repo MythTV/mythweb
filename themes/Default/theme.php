@@ -44,11 +44,11 @@ class Theme {
 			break;
 		case 2:
 			$quote['text']   = "Anytime you skip a commercial ... you're actually stealing the programming.";
-			$quote['author'] = "Jamie Kellner (CEO, Turner Broadcasting)";
+			$quote['author'] = "Jamie Kellner (then CEO, Turner Broadcasting)";
 			break;
 		case 3:
 			$quote['text']   = "I say to you that the VCR is to the ... American public as the Boston strangler is to the woman home alone.";
-			$quote['author'] = "Jack Valenti";
+			$quote['author'] = "Jack Valenti (CEO, MPAA)";
 			break;
 		case 4:
 			$quote['text']   = "I am becoming more and more convinced that intellectual property is on a collision course with personal liberty.";
