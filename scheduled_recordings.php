@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	scheduled_recordings.php                 Last Updated: 2003.12.02 (xris)
+	scheduled_recordings.php                 Last Updated: 2004.01.27 (xris)
 
 	view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -78,7 +78,7 @@
 				}
 			}
 		// Activate a recording that was deactivated because of a conflict?
-			elseif ($show->norecord == 'AutoConflict') {
+			elseif ($show->recstatus == 'AutoConflict') {
 			// Find the previous (disabled) recording setting for this show
 				$result = mysql_query('SELECT preferchanid, preferstarttime, preferendtime FROM conflictresolutionsingle WHERE dislikechanid='.escape($program->chanid).' AND dislikestarttime=FROM_UNIXTIME('.escape($program->starttime).') AND dislikeendtime=FROM_UNIXTIME('.escape($program->endtime).')')
 					or trigger_error('SQL Error: '.mysql_error(), FATAL);
@@ -101,7 +101,7 @@
 					or trigger_error('SQL Error: '.mysql_error(), FATAL);
 			}
 		// Activate a program that was inactive for other reasons
-			elseif ($show->recording == 0 || $show->norecord) {
+			elseif ($show->recording == 0 || $show->recstatus) {
 				$result = mysql_query('DELETE FROM recordoverride WHERE chanid='.escape($program->chanid).' AND starttime=FROM_UNIXTIME('.escape($program->starttime).') AND endtime=FROM_UNIXTIME('.escape($program->endtime).')')
 					or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
 				$result = mysql_query('REPLACE INTO recordoverride (recordid,type,chanid,starttime,endtime,title,subtitle,description) VALUES ('
@@ -136,6 +136,9 @@
 	$Channels  = array();
 	foreach ($records as $record) {
 		$show = new Program($record);
+	// Skip things we've already recorded
+		if ($show->starttime <= time())
+			continue;
 	// Make sure this is a valid show (ie. skip in-progress recordings and other junk)
 		if (!$show->chanid || $show->length < 1)
 			continue;

@@ -1,6 +1,6 @@
-<?
+<?php
 /***                                                                        ***\
-	scheduled_recordings.php                    Last Updated: 2003.12.18 (xris)
+	scheduled_recordings.php                    Last Updated: 2004.01.27 (xris)
 
 	This file defines a theme class for the scheduled recordings section.
 	It must define one method.   documentation will be added someday.
@@ -57,7 +57,7 @@ class Theme_scheduled_recordings extends Theme {
 </tr>
 </table>
 
-<?
+<?php
 $group_field = $_GET['sortby'];
 if ($group_field == "") {
     $group_field = "airdate";
@@ -68,12 +68,12 @@ if ($group_field == "") {
 
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
+	<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
 	<td><a href="scheduled_recordings.php?sortby=title">show</a></td>
 	<td><a href="scheduled_recordings.php?sortby=channum">station</a></td>
 	<td><a href="scheduled_recordings.php?sortby=airdate">air&nbsp;date</a></td>
 	<td><a href="scheduled_recordings.php?sortby=length">length</a></td>
-</tr><?
+</tr><?php
 	$row = 0;
 
 	$prev_group="";
@@ -85,7 +85,7 @@ if ($group_field == "") {
 		$urlstr = 'chanid='.$show->chanid.'&starttime='.$show->starttime;
 	// Which class does this show fall into?
 # This needs a major overhaul, to support the new recording schedule types, etc
-		if ($show->norecord == 'PreviousRecording' || $show->norecord == 'CurrentRecording') {
+		if ($show->recstatus == 'PreviousRecording' || $show->recstatus == 'CurrentRecording') {
 			$class = 'duplicate';
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record This</a>';
 			$commands[] = '<a href="scheduled_recordings.php?forget_old=yes&'.$urlstr.'">Forget Old</a>';
@@ -95,12 +95,12 @@ if ($group_field == "") {
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record This</a>';
 			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
 		}
-		elseif ($show->norecord == 'AutoConflict') {
+		elseif ($show->recstatus == 'AutoConflict') {
 			$class   = 'deactivated';
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Activate</a>';
 			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
 		}
-		elseif ($show->recording == 0 || $show->norecord) {
+		elseif ($show->recording == 0 || $show->recstatus) {
 			$class   = 'deactivated';
 			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Activate</a>';
 			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
@@ -166,9 +166,9 @@ if ($group_field == "") {
 			<td align=\"right\">Profile:</td>
 			<td>$show->profile</td>
 		</tr>" : '')
-		.($show->norecord ? "<tr>
-			<td align=\"right\">Not recording:</td>
-			<td>".$GLOBALS['No_Record_Reasons'][$show->norecord].' ('.$show->norecord.")</td>
+		.($show->recstatus ? "<tr>
+			<td align=\"right\">Notes:</td>
+			<td>".$GLOBALS['RecStatus_Reasons'][$show->recstatus]."</td>
 		</tr>" : '')
 		."</table></td>
 </tr>
@@ -186,14 +186,14 @@ if ($group_field == "") {
 
 	if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-	<td colspan="6" class="list_separator"><?=$cur_group?></td>
-</tr><?
+	<td colspan="5" class="list_separator"><?php echo $cur_group?></td>
+</tr><?php
 	}
 
 	// Print the content
-	?><tr class="<?=$class?>">
-	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
-	<td class="<?=$show->class?>"><?php
+	?><tr class="<?php echo $class?>">
+	<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
+	<td class="<?php echo $show->class?>"><?php
 		// Print a link to record this show
 		echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'
 			 .(show_popup_info ? ' onmouseover="window.status=\'Details for: '.str_replace('\'', '\\\]', $show->title).'\';show(\'program_'.$program_id_counter.'\');return true"'
@@ -203,20 +203,20 @@ if ($group_field == "") {
 			 .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
 			 .'</a>';
 		?></td>
-	<td><?=$show->channel->name?></td>
-	<td nowrap><?=date($_SESSION['date_scheduled'], $show->starttime)?></td>
-	<td nowrap><?=nice_length($show->length)?></td>
-<?	foreach ($commands as $command) { ?>
-	<td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?=$command?></td>
-<?	} ?>
-</tr><?
+	<td><?php echo $show->channel->name?></td>
+	<td nowrap><?php echo date($_SESSION['date_scheduled'], $show->starttime)?></td>
+	<td nowrap><?php echo nice_length($show->length)?></td>
+<?php	foreach ($commands as $command) { ?>
+	<td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo $command?></td>
+<?php	} ?>
+</tr><?php
 		$prev_group = $cur_group;
 		$row++;
 	}
 ?>
 
 </table>
-<?
+<?php
 
 	// Print the main page footer
 		parent::print_footer();

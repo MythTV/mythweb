@@ -63,7 +63,7 @@ for Apache and 4.2.2 for php.  Make sure to build both according to the
 instructions at the php home site, and be sure to include support for MySQL
 when building PHP.
 
-    In order for the included .htaccess to work properly, you will need to 
+    In order for the included .htaccess to work properly, you will need to
 set apache's "AllowOverride" setting to "All" (or at least "Options") for
 the root mythweb directory.  This directive lives within <Directory/> tags,
 so make sure you're changing the setting for the correct directory.
@@ -121,6 +121,12 @@ A: The main .htaccess file contains commented-out apache controls for enabling
     your mythweb connect only via SSL (see your webserver documentation for
     details), and you will have mythweb as secure as you can get without some
     fancy firewall rules.
+
+Q: I've changed my theme to one that doesn't have a "settings" section.  Help!
+A: Access any of the mythweb files and include RESET_THEME=yes among the URL
+    parameters (eg. http://my.mythweb.tld/settings.php?RESET_THEME=yes ).  This
+    will reset your theme to Default, where you can readjust your settings as
+    needed.
 
 4.0 Notes
 =========

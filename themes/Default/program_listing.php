@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2003.12.03 (xris)
+    program_listing.php                      Last Updated: 2004.01.27 (xris)
 
 	This file defines a theme class for the program listing section.
 	It must define several methods, some of which have specific
@@ -235,9 +235,9 @@ class Theme_program_listing extends Theme {
 					: ($program->record_channel ? "Always record on this channel"
 					: "Always record"))))."</td>
 		</tr>" : '')
-		.($program->norecord ? "<tr>
-			<td align=\"right\">Not recording:</td>
-			<td>".$GLOBALS['No_Record_Reasons'][$program->norecord].' ('.$program->norecord.")</td>
+		.($program->recstatus ? "<tr>
+			<td align=\"right\">Notes:</td>
+			<td>".$GLOBALS['RecStatus_Reasons'][$program->recstatus]."</td>
 		</tr>" : '')
 		."</table></td>
 </tr>

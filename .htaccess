@@ -3,6 +3,9 @@
 #AuthUserFile /var/www/htpasswd
 #Require valid-user
 
+# set up different auth for:
+#settings_channels.php
+
 php_value safe_mode                     0
 
 php_value session.save_path             php_sessions

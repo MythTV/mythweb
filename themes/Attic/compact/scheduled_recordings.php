@@ -33,7 +33,7 @@ class Theme_scheduled_recordings extends Theme {
 		$urlstr = 'title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'&recordid='.$show->recordid;
 	// Which class does this show fall into?
 # This needs a major overhaul, to support the new recording schedule types, etc
-		if ($show->norecord == 'PreviousRecording' || $show->norecord == 'CurrentRecording') {
+		if ($show->recstatus == 'PreviousRecording' || $show->recstatus == 'CurrentRecording') {
 			$class = 'duplicate';
 			$command = '<a href="scheduled_recordings.php?rerecord=yes&'.$urlstr.'">Rerecord</a>';
 		}

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.08.20 (xris)
+	recorded_programs.php                    Last Updated: 2004.01.27 (xris)
 
 	This file defines a theme class for the recorded programs section.
 	It must define one method.   documentation will be added someday.
@@ -78,11 +78,12 @@ if ($group_field == "") {
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-<?php  ?>
-<?php	if ($group_field != "") { echo "<td>&nbsp;</td>"; }
-		if (show_recorded_pixmaps) { ?>
-	<td>preview</td>
-<?php	} ?>
+<?php
+	if ($group_field != "")
+		echo "\t<td class=\"list\">&nbsp;</td>\n";
+	if (show_recorded_pixmaps)
+		echo "\t<td>preview</td>\n";
+?>
 	<td><a href="recorded_programs.php?sortby=title">show</a></td>
 	<td><a href="recorded_programs.php?sortby=subtitle">episode</a></td>
 	<td><a href="recorded_programs.php?sortby=description">description</a></td>
@@ -111,18 +112,18 @@ if ($group_field == "") {
 	<td colspan="9" class="list_separator"><?=$cur_group?></td>
 </tr><?
 	}
-
-	?><tr class="recorded">
-	<?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
-	<?php
-		if (show_recorded_pixmaps) {
-			echo '<td>';
+?><tr class="recorded">
+<?php
+	if ($group_field != "")
+		echo "\t<td class=\"list\">&nbsp;</td>\n";
+	if (show_recorded_pixmaps) {
+			echo "\t<td>";
 			generate_preview_pixmap($show);
 			if (file_exists(image_cache.'/'.basename($show->filename).'.png'))
 				echo '<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'">';
 			else
 				echo '&nbsp;';
-			echo '</td>';
+			echo "</td>\n";
 		}
 	?>
 	<td><?php echo $show->title?></td>

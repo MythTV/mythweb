@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.12.03 (xris)
+    programs.php                             Last Updated: 2004.01.27 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -9,29 +9,65 @@
 	require_once 'includes/channels.php';
 
 // Reasons a recording wouldn't be happening (from libs/libmythtv/programinfo.h)
-	$No_Record_Types = array('Unknown',				# 0
-							 'ManualOverride',      # 1
-							 'PreviousRecording',   # 2
-							 'CurrentRecording',    # 3
-							 'OtherShowing',        # 4
-							 'TooManyRecordings',   # 5
-							 'DontRecordList',      # 6
-							 'LowerRecPriority',    # 7
-							 'ManualConflict',      # 8
-							 'AutoConflict',        # 9
-							 'Overlap');            # 10
+	$RecStatus_Types = array(
+							  '-5' => 'Deleted',
+							  '-4' => 'Stopped',
+							  '-3' => 'Recorded',
+							  '-2' => 'Recording',
+							  '-1' => 'WillRecord',
+								0  => 'Unknown',
+								1  => 'ManualOverride',
+								2  => 'PreviousRecording',
+								3  => 'CurrentRecording',
+								4  => 'OtherShowing',
+								5  => 'TooManyRecordings',
+								6  => 'Cancelled',
+								7  => 'LowerRecPriority',
+								8  => 'ManualConflict',
+								9  => 'AutoConflict',
+								10 => 'Overlap',
+								11 => 'LowDiskSpace',
+								12 => 'TunerBusy'
+							);
 
-	$No_Record_Reasons = array();
-	$No_Record_Reasons['ManualOverride']    = 'This was manually set to not record';
-	$No_Record_Reasons['PreviousRecording'] = 'This episode was previously recorded according to the duplicate policy chosen for this title';
-	$No_Record_Reasons['CurrentRecording']  = 'This episode was previously recorded and is still available in the list of recordings';
-	$No_Record_Reasons['OtherShowing']      = 'This episode will be recorded at another time instead';
-	$No_Record_Reasons['TooManyRecordings'] = 'Ttoo many recordings of this program have already been recorded';
-	$No_Record_Reasons['DontRecordList']    = 'This is currently being recorded or was manually canceled';
-	$No_Record_Reasons['LowerRecPriority']  = 'Another program with a higher recording priority will be recorded';
-	$No_Record_Reasons['ManualConflict']    = 'Another program was manually chosen to be recorded instead';
-	$No_Record_Reasons['AutoConflict']      = 'Another program was automatically chosen to be recorded instead';
-	$No_Record_Reasons['Overlap']           = 'This is covered by another scheduled recording for the same program';
+	$RecStatus_Reasons = array(
+							   'Deleted'
+							   		=> 'This showing was recorded but was deleted before recording was completed.',
+							   'Stopped'
+							   		=> 'This showing was recorded but was stopped before recording was completed.',
+							   'Recorded'
+							   		=> 'This showing was recorded.',
+							   'Recording'
+							   		=> 'This showing is being recorded.',
+							   'WillRecord'
+							   		=> 'This showing will be recorded.',
+							   'Unknown'
+							   		=> 'The status of this showing is unknown.',
+		                       'ManualOverride'
+							   		=> 'This was manually set to not record',
+		                       'PreviousRecording'
+							   		=> 'This episode was previously recorded according to the duplicate policy chosen for this title.',
+		                       'CurrentRecording'
+							   		=> 'This episode was previously recorded and is still available in the list of recordings.',
+		                       'OtherShowing'
+							   		=> 'This episode will be recorded at another time instead.',
+		                       'TooManyRecordings'
+							   		=> 'Too many recordings of this program have already been recorded.',
+		                       'Cancelled'
+							   		=> 'This was scheduled to be recorded but was manually canceled.',
+		                       'LowerRecPriority'
+							   		=> 'Another program with a higher recording priority will be recorded.',
+		                       'ManualConflict'
+							   		=> 'Another program was manually chosen to be recorded instead.',
+		                       'AutoConflict'
+							   		=> 'Another program was automatically chosen to be recorded instead.',
+		                       'Overlap'
+							   		=> 'This is covered by another scheduled recording for the same program.',
+		                       'LowDiskSpace'
+							   		=> 'There wasn\'t enough disk space available to record this program.',
+			                   'TunerBusy'
+							   		=> 'The tuner card was already being used when this program was scheduled to be recorded.'
+							  );
 
 /*
 	load_one_program:
@@ -155,7 +191,7 @@
 		$these_programs = array();
 		while ($program_data = mysql_fetch_assoc($result)) {
 		// Add this as an object to the channel's programs array
-			$program = new Program($program_data);
+			$program =& new Program($program_data);
 			$channel_hash[$program_data['chanid']]->programs[] = &$program;
 			$these_programs[] = &$program;
 			unset($program);
@@ -237,7 +273,7 @@ class Program {
 	var $recording      = false;
 
 	var $recpriority	= 0;
-	var $norecord       = NULL;
+	var $recstatus      = NULL;
 
 	var $rater;
 	var $rating;
@@ -286,8 +322,8 @@ class Program {
 			#$this->cardid     = $program_data[18];					#  -1
 			#$this->inputid    = $program_data[19];					#
 			$this->recpriority = $program_data[20];					#
-			$this->norecord    = $program_data[21];
-			$this->recordid    = $program_data[22];			#
+			$this->recstatus   = $program_data[21];					#
+			$this->recordid    = $program_data[22];			        #
 			#$rectype          = $program_data[23];
 			#$recdups          = $program_data[24];
 			#$recstartts       = $program_data[25];
@@ -324,7 +360,7 @@ class Program {
 				$this->conflicting = $Pending_Programs[$this->chanid][$this->starttime][13] ? true : false;
 				$this->recording   = $Pending_Programs[$this->chanid][$this->starttime][14] ? true : false;
 				$this->recpriority = $Pending_Programs[$this->chanid][$this->starttime][20];
-				$this->norecord    = $Pending_Programs[$this->chanid][$this->starttime][21];
+				$this->recstatus   = $Pending_Programs[$this->chanid][$this->starttime][21];
 				$this->recordid    = $Pending_Programs[$this->chanid][$this->starttime][22];
 			}
 		// We get various recording-related information, too
@@ -345,11 +381,9 @@ class Program {
 									  || $this->record_channel
 									  || $this->record_always ) ? true : false;
 		}
-	// Turn norecord into a word
-		if ($this->norecord > 0)
-			$this->norecord = $GLOBALS['No_Record_Types'][$this->norecord];
-		else
-			$this->norecord = NULL;
+	// Turn recstatus into a word
+		if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
+			$this->recstatus = $GLOBALS['RecStatus_Types'][$this->recstatus];
 	// Do we have a chanid?  Load some info about it
 		if ($this->chanid && !isset($this->channel)) {
 		// No channel data?  Load it
@@ -517,7 +551,7 @@ class Program {
 				$this->class .= 'record_conflicting ';
 			elseif ($this->recording)
 				$this->class .= 'will_record ';
-			elseif ($this->norecord == 'PreviousRecording' || $this->norecord == 'CurrentRecording')
+			elseif ($this->recstatus == 'PreviousRecording' || $this->recstatus == 'CurrentRecording')
 				$this->class .= 'record_duplicate ';
 			else
 				$this->class .= 'record_suppressed ';
