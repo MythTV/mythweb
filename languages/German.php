@@ -181,22 +181,22 @@ define ('_LANG_DUP_METHOD',    'Dup Method');
 
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS', 'Aufnahmen zeigen');
-define ('_LANG_CONFIRM_DELETE',  'Bist Du sicher das Du die folgende Show löschen möchtest?');
+define ('_LANG_CONFIRM_DELETE',  'Bist Du sicher das Du die folgende Show l&ouml;schen m&ouml;chtest?');
 define ('_LANG_ALL_RECORDINGS',  'Alle Aufnahmen');
 define ('_LANG_GO',              'Gehe');
 define ('_LANG_PREVIEW',         'Vorschau');
 define ('_LANG_FILE_SIZE',       'Datei&nbsp;gr&ouml;sse');
-define ('_LANG_DELETE',          'Löschen');
+define ('_LANG_DELETE',          'L&ouml;schen');
 define ('_LANG_PROGRAMS_USING',  'programs, using ');
 define ('_LANG_OUT_OF',          ' out of ');
 define ('_LANG_EPISODES',        'Episoden');
 
 /* recordings.php */
 define ('_LANG_RECTYPE_ONCE',    'Einmal');
-define ('_LANG_RECTYPE_DAILY',   'Täglich');
+define ('_LANG_RECTYPE_DAILY',   'T&auml;glich');
 define ('_LANG_RECTYPE_CHANNEL', 'Sender');
 define ('_LANG_RECTYPE_ALWAYS',  'Immer');
-define ('_LANG_RECTYPE_WEEKLY',  'Wöchentlich');
+define ('_LANG_RECTYPE_WEEKLY',  'W&ouml;chentlich');
 define ('_LANG_RECTYPE_FINDONE', 'FindOne');
 
 define ('_LANG_RECTYPE_LONG_ONCE',          'Record only this showing.');
