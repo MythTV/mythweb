@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2004.06.22 (xris)
+    scheduled_recordings.php                    Last Updated: 2004.09.08 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -21,24 +21,27 @@ class Theme_scheduled_recordings extends Theme {
 <!--
     function changevisible() {
         var prev_visible_class = "no_padding";
+        var prev_separator_index = 0;
 
-        for (var i=1; i < document.getElementById("listings").rows.length; i++) {
-            if (document.getElementById("listings").rows[i].className == "list_separator") {
+        for (var i=1; i < get_element("listings").rows.length; i++) {
+            if (get_element("listings").rows[i].className == "list_separator") {
                 if (prev_visible_class == "list_separator")
-                    document.getElementById("listings").rows[i].style.display = "none";
-                else
-                    document.getElementById("listings").rows[i].style.display = "";
+                    get_element("listings").rows[prev_separator_index].style.display = "none";
+                get_element("listings").rows[i].style.display = "";
                 prev_visible_class = "list_separator";
+                prev_separator_index = i;
             }
             else {
-                if (document.getElementById(document.getElementById("listings").rows[i].className).checked) {
-                    document.getElementById("listings").rows[i].style.display = "";
-                    prev_visible_class = document.getElementById("listings").rows[i].className;
+                if (get_element(get_element("listings").rows[i].className).checked) {
+                    get_element("listings").rows[i].style.display = "";
+                    prev_visible_class = get_element("listings").rows[i].className;
                 }
                 else
-                    document.getElementById("listings").rows[i].style.display = "none";
+                    get_element("listings").rows[i].style.display = "none";
             }
         }
+	if(prev_visible_class == "list_separator")
+        	get_element("listings").rows[prev_separator_index].style.display = "none";
     }
 // -->
 </script>
@@ -110,10 +113,12 @@ if ($group_field == "") {
                 $commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">'._LANG_NEVER_RECORD.'</a>';
         }
         elseif ($show->recstatus == 'ForceRecord') {
+            $class = 'scheduled';
             $commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">'._LANG_DONT_RECORD.'</a>';
             $commands[] = '<a href="scheduled_recordings.php?default=yes&'.$urlstr.'">'._LANG_DEFAULT.'</a>';
         }
         elseif ($show->recstatus == 'ManualOverride' || $show->recstatus == 'Cancelled') {
+            $class   = 'deactivated';
             $commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">'._LANG_ACTIVATE.'</a>';
             $commands[] = '<a href="scheduled_recordings.php?default=yes&'.$urlstr.'">'._LANG_DEFAULT.'</a>';
         }
