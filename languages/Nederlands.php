@@ -178,7 +178,8 @@ define ('_LANG_SCHEDULE', 		'Schema');
 define ('_LANG_PROFILE', 		'Profiel');
 define ('_LANG_NOTES', 			'Notities');
 define ('_LANG_DUP_METHOD',    		'Heruitzending detectie');
-
+define ('_LANG_CATEGORY_TYPE',		'Categorietype');
+define ('_LANG_EXACT_MATCH',		'Exacte zoekterm');
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS', 	'Overzicht opnames');
 define ('_LANG_CONFIRM_DELETE', 	'Ben u zeker dat u deze opname wil verwijderen?');
