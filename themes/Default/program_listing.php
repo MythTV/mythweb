@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2005.02.06 (xris)
+    program_listing.php                      Last Updated: 2005.02.28 (xris)
 
     This file defines a theme class for the program listing section.
     It must define several methods, some of which have specific
@@ -153,13 +153,13 @@ class Theme_program_listing extends Theme {
         ?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>" class="huge"
-                                            onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
-                                            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->channum : $channel->callsign?></a>&nbsp;</td>
+                                            onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\$1', $channel->channum.' '.$channel->callsign) ?>')"
+                                            onmouseout="return wstatus('')"><?php echo prefer_channum ? $channel->channum : $channel->callsign?></a>&nbsp;</td>
             <td width="50%" align="right"><?php
                 if (is_file($channel->icon)) {
                     ?><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
-                        onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
-                        onmouseout="window.status='';return true"><img src="<?php echo $channel->icon?>" height="30" width="30"></a><?php
+                        onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\$1', $channel->channum.' '.$channel->callsign) ?>')"
+                        onmouseout="return wstatus('')"><img src="<?php echo $channel->icon?>" height="30" width="30"></a><?php
                 } else {
                     echo '&nbsp;';
                 }?></td>
