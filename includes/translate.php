@@ -15,14 +15,14 @@
 // point to an array containing first the user-visible name of the language and
 // the matching language and charset codes.
     $Languages = array();
-    $Languages['Australian'] = array('Australian',     '');     // Australian is a joke, don't try to detect it
-    $Languages['Dutch']      = array('Nederlands',     'nl_NL');
-    $Languages['English']    = array('English',        'en_US.ISO-8859-1');
-    $Languages['French']     = array('French',         'fr_FR');
-    $Languages['German']     = array('Deutsch',        'de_DE');
-    $Languages['Japanese']   = array('Japanese',       'ja_JP');
-    $Languages['Spanish']    = array('Espa&ntilde;ol', 'es_ES');
-    $Languages['Swedish']    = array('Swedish',        'sv_SE');
+    $Languages['Australian'] = array('Australian',      '');     // Australian is a joke, don't try to detect it
+    $Languages['Dutch']      = array('Nederlands',      'nl_NL');
+    $Languages['English']    = array('English',         'en_US.ISO-8859-1');
+    $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR');
+    $Languages['German']     = array('Deutsch',         'de_DE');
+    $Languages['Japanese']   = array('Japanese',        'ja_JP');
+    $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES');
+    $Languages['Swedish']    = array('Svenska',         'sv_SE');
 
 // Change language?
     if ($_POST['language'])
