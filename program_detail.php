@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                      Last Updated: 2005.02.03 (xris)
+    program_detail.php                      Last Updated: 2005.02.04 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -31,7 +31,7 @@
         $schedule = new Schedule(NULL);
 
 // Make sure this is a valid program.  If not, forward the user back to the listings page
-    if (!strlen($program->title) && !$schedule->recordid) {
+    if (!strlen($program->starttime) && !$schedule->recordid) {
         if ($_GET['recordid']) {
             add_warning(t('Unknown Recording Schedule.'));
             header('Location: recording_schedules.php');
