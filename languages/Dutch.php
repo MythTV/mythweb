@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    languages/Nederlands.php
+    languages/Dutch.php
 
     Translation hash for Dutch.
 \***                                                                        ***/
@@ -50,12 +50,19 @@ $L = array(
     'Title'                     => '',
     'Unknown'                   => '',
     'Update Recording Settings' => '',
+    'airdate'                   => '',
+    'channum'                   => '',
+    'description'               => '',
+    'length'                    => '',
+    'recgroup'                  => '',
     'rectype-long: always'      => '',
     'rectype-long: channel'     => '',
     'rectype-long: daily'       => '',
     'rectype-long: findone'     => '',
     'rectype-long: once'        => '',
     'rectype-long: weekly'      => '',
+    'subtitle'                  => '',
+    'title'                     => '',
 // includes/init.php
     'generic_date' => '%b %e, %Y',
     'generic_time' => '%H:%M',
@@ -130,6 +137,7 @@ $L = array(
     'Show recordings'                                     => '',
     'Yes'                                                 => '',
     'auto-expire'                                         => '',
+    'file_size'                                           => '',
     'has bookmark'                                        => '',
     'has commflag'                                        => '',
     'has cutlist'                                         => '',
@@ -143,6 +151,8 @@ $L = array(
     'Dup Method'                   => '',
     'Sub and Desc (Empty matches)' => '',
     'Type'                         => '',
+    'profile'                      => '',
+    'type'                         => '',
 // themes/.../schedule_manually.php
     'Channel'      => '',
     'Length (min)' => '',
