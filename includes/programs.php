@@ -214,8 +214,8 @@
         $Pending_Programs['offset'] = $programs['offset'];
         foreach ($programs as $program) {
         // Fix some things that need fixing
-            $program[11] = myth2unixtime($program[11]);         // show start-time in myth time format (eg. 2003-06-28T06:30:00)
-            $program[12] = myth2unixtime($program[12]);         // show end-time in myth time format (eg. 2003-06-28T06:30:00)
+            $program[11] = $program[11];         // show start-time
+            $program[12] = $program[12];         // show end-time
         // $Pending_Programs[chanid][starttime]
             $Pending_Programs[$program[4]][$program[11]] = $program;
         }
@@ -293,8 +293,8 @@ class Program {
             $this->filename    = $program_data[8];                  # filename
             $fs_high           = $program_data[9];                  # high-word of file size
             $fs_low            = $program_data[10];                 # low-word of file size
-            $this->starttime   = myth2unixtime($program_data[11]);  # show start-time in myth time format (eg. 2003-06-28T06:30:00)
-            $this->endtime     = myth2unixtime($program_data[12]);  # show end-time in myth time format (eg. 2003-06-28T06:30:00)
+            $this->starttime   = $program_data[11];  # show start-time
+            $this->endtime     = $program_data[12];  # show end-time
         // Is this a previously-recorded program?  Calculate the filesize
             if (preg_match('/\\d+_\\d+/', $this->filename)) {
                 $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
@@ -336,8 +336,8 @@ class Program {
             #$this->rectype     = $program_data[23];
             $this->dupin       = $program_data[24];
             $this->dupmethod   = $program_data[25];
-            $this->recstartts  = myth2unixtime($program_data[26]);                  # ACTUAL start time
-            $this->recendts    = myth2unixtime($program_data[27]);                  # ACTUAL end time
+            $this->recstartts  = $program_data[26];                  # ACTUAL start time
+            $this->recendts    = $program_data[27];                  # ACTUAL end time
             #$this->repeat      = $program_data[28];
             $progflags         = $program_data[29];
             #$this->recgroup    = $program_data[30];
@@ -345,7 +345,7 @@ class Program {
             #$this->outputfilters = $program_data[32];
             $this->seriesid     = $program_data[33];
             $this->programid    = $program_data[34];
-            $this->lastmodified = myth2unixtime($program_data[35]);                  # ACTUAL start time
+            $this->lastmodified = $program_data[35];                  # ACTUAL start time
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
             $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02

@@ -14,7 +14,7 @@
 
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
-    $MYTH_PROTO_VERSION = "13";
+    $MYTH_PROTO_VERSION = "14";
 
 // NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
 // the number of items in a ProgramInfo QStringList group used by
@@ -229,8 +229,8 @@
                       .$show->filename                .backend_sep  // filename
                       .'0'                            .backend_sep  // upper 32 bits
                       .'0'                            .backend_sep  // lower 32 bits
-                      .unix2mythtime($show->starttime).backend_sep  // starttime
-                      .unix2mythtime($show->endtime)  .backend_sep  // endtime
+                      .$show->starttime               .backend_sep  // starttime
+                      .$show->endtime                 .backend_sep  // endtime
                       .'0'                            .backend_sep  // conflicting
                       .'1'                            .backend_sep  // recording
                       .'0'                            .backend_sep  // duplicate
@@ -244,18 +244,21 @@
                       .' '                            .backend_sep  // rectype
                       .'15'                           .backend_sep  // dupin
                       .'6'                            .backend_sep  // dupmethod
-                      .unix2mythtime($show->starttime).backend_sep  // recstarttime
-                      .unix2mythtime($show->endtime)  .backend_sep  // recendtime
+                      .$show->starttime               .backend_sep  // recstarttime
+                      .$show->endtime                 .backend_sep  // recendtime
                       .' '                            .backend_sep  // repeat
                       .' '                            .backend_sep  // program flags
                       .' '                            .backend_sep  // recgroup
                       .' '                            .backend_sep  // commfree
-                          .' '                            .backend_sep  // chanoutputfilters
-                          .$show->seriesid                .backend_sep  // seriesid
-                          .$show->programid               .backend_sep  // programid
-						  .unix2mythtime($show->starttime).backend_sep; // dummy lastmodified
-
+                      .' '                            .backend_sep  // chanoutputfilters
+                      .$show->seriesid                .backend_sep  // seriesid
+                      .$show->programid               .backend_sep  // programid
+                      .$show->starttime               .backend_sep  // dummy lastmodified
+                      .'0'                            .backend_sep  // dummy stars
+                      .$show->starttime               .backend_sep; // dummy org airdate 
+      
                 $ret = backend_command($cmd);
+
 
                 $recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
                                                               $datasocket));
