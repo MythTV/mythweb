@@ -141,6 +141,13 @@ class Theme_program_detail extends Theme {
             <td><?php echo $list?></td>
         </tr><?php
             }
+            $list = getCredits($this_program->chanid,$this_program->starttime,'presenter');
+            if (strlen($list)) {
+        ?><tr valign="top">
+            <td colspan="2" align="right">Presented by:&nbsp;</td>
+            <td><?php echo $list?></td>
+        </tr><?php
+            }
             $list = getCredits($this_program->chanid,$this_program->starttime,'actor');
             if (strlen($list)) {
         ?><tr valign="top">
