@@ -203,8 +203,10 @@
 					  .'-1'                           .backend_sep	// cardid
 					  .'-1'                           .backend_sep	// inputid
 					  .' '                            .backend_sep	// rank
-					  .'0'                            .backend_sep	// suppressed
-					  .' '                            .backend_sep;	// reasonsuppressed
+					  .' '                            .backend_sep	// norecord
+					  .' '                            .backend_sep	// recordid
+					  .' '                            .backend_sep	// rectype
+					  .' '                            .backend_sep;	// recdups
 				$ret = backend_command($cmd);
 
 				$recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
