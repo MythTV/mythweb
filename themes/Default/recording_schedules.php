@@ -70,7 +70,9 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
         $urlstr = 'recordid='.$show->recordid;
 
         $class   = 'scheduled';
-
+    // If this is an 'always on any channel' recording, set the channel name to 'Any'
+        if (($show->type == 4))
+            $show->channel->name = '[ '._LANG_ANY.' ]';
     // Build a popup table for the mouseover of the cell, with extra program information?
         if (show_popup_info) {
         // A program id counter

@@ -185,6 +185,7 @@ define ('_LANG_SCHEDULE',         'Schedule');
 define ('_LANG_PROFILE',          'Profile');
 define ('_LANG_NOTES',            'Notes');
 define ('_LANG_DUP_METHOD',       'Dup Method');
+define ('_LANG_ANY',              'Any');
 
 /* recorded_programs.php */
 define ('_LANG_SHOW_RECORDINGS', 'Show recordings');

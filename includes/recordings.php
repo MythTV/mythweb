@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recordings.php                           Last Updated: 2004.04.19 (xris)
+    recordings.php                           Last Updated: 2004.06.14 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -33,7 +33,7 @@
             load_all_channels();
 
     // Build the sql query, and execute it
-        $query = 'SELECT *, UNIX_TIMESTAMP(startdate)+TIME_TO_SEC(starttime) AS starttime_unix,'
+        $query = 'SELECT *, if(type=4,-1,chanid) as chanid, UNIX_TIMESTAMP(startdate)+TIME_TO_SEC(starttime) AS starttime_unix,'
                 .' UNIX_TIMESTAMP(enddate)+TIME_TO_SEC(endtime) AS endtime_unix '
                 .'FROM record ';
         if ($recordid > 0)
