@@ -60,7 +60,7 @@ class Theme_recorded_programs extends Theme {
         }
         ?>
     </select></td>
-    <td><input type="submit" value="<?php echo _LANG_GO?>"></td>
+    <td><noscript><input type="submit" value="<?php echo _LANG_GO?>"></noscript></td>
 </tr>
 </table>
 </form>
