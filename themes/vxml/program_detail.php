@@ -42,7 +42,7 @@ class Theme_program_detail extends Theme {
         <prompt>Press 3 for the previous programme</prompt>
         <prompt>Press 4 to <?=$this_program->will_record ? 'cancel recording of' : 'record'?> this programme</prompt>
         <prompt>Press Hash to hear these options again</prompt>
-        <prompt>Press Star to choose another channel<break time="2s"></prompt>
+        <prompt>Press Star to choose another channel<break time="2s"/></prompt>
       </field>
       <noinput count="1">
         I didn't hear anything
