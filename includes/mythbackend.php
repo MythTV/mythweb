@@ -75,13 +75,23 @@
 		// The format should be <length + whitespace to 8 total bytes><data>
 			$command = strlen($command) . str_repeat(' ', 8 - strlen(strlen($command))) . $command;
 		// If we don't get a response back in 4 seconds, something went wrong
-			socket_set_timeout($fp, 3);
+			socket_set_timeout($fp, 6);
 		// Send our command
 			fputs ($fp, $command);
 		// Read the response header to find out how much data we'll be grabbing
 			$length = rtrim(fread($fp, 8));
 		// Read and return any data that was returned
-			return fread($fp, $length);
+			$ret = '';
+			while ($length > 0) {
+				$size = min(8192, $length);
+				$data = fread($fp, $size);
+				if (strlen($data) < 1)
+					break; // EOF
+				$ret .= $data;
+				$length -= strlen($data);
+			}
+
+			return $ret;
 		}
 	}
 
