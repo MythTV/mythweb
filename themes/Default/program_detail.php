@@ -1,4 +1,4 @@
-<?
+<?php
 /***                                                                        ***\
 	program_detail.php                       Last Updated: 2004.01.14 (xris)
 
@@ -20,110 +20,110 @@ class Theme_program_detail extends Theme {
 <tr>
 	<td valign="top"><table border="0" cellspacing="0" cellpadding="2">
 		<tr>
-			<td width="<?=prefer_channum ? '80' : '120'?>px" class="menu menu_border_t menu_border_b menu_border_l menu_border_r" width="60" align="center" nowrap><?
+			<td width="<?php echo prefer_channum ? '80' : '120'?>px" class="menu menu_border_t menu_border_b menu_border_l menu_border_r" width="60" align="center" nowrap><?php
 				if (show_channel_icons === true) {
 					?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
 					<tr>
-						<td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>" class="huge"
-														onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
-														onmouseout="window.status='';return true"><?=prefer_channum ? $this_channel->channum : $this_channel->callsign?></a>&nbsp;</td>
-						<td width="50%" align="right"><?
+						<td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $start_time?>" class="huge"
+														onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
+														onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign?></a>&nbsp;</td>
+						<td width="50%" align="right"><?php
 							if (is_file($this_channel->icon)) {
-								?><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>"
-									onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
-									onmouseout="window.status='';return true"><img src="<?=$this_channel->icon?>" height="30" width="30"></a><?
+								?><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $start_time?>"
+									onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
+									onmouseout="window.status='';return true"><img src="<?php echo $this_channel->icon?>" height="30" width="30"></a><?php
 							} else {
 								echo '&nbsp;';
 							}?></td>
 					</tr><tr>
-						<td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>&time=<?=$start_time?>"
-														onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
-														onmouseout="window.status='';return true"><?=prefer_channum ? $this_channel->callsign : $this_channel->channum?></a></td>
+						<td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>&time=<?php echo $start_time?>"
+														onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
+														onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->callsign : $this_channel->channum?></a></td>
 					</tr>
-					</table><?
+					</table><?php
 				} else {
-					?><a href="channel_detail.php?chanid=<?=$this_channel->chanid?>" class="huge"
-						onmouseover="window.status='Details for: <?=$this_channel->channum?> <?=$this_channel->callsign?>';return true"
-						onmouseout="window.status='';return true"><?=prefer_channum ? $this_channel->channum : $this_channel->callsign?><BR>
-					<?=prefer_channum ? $this_channel->callsign : $this_channel->channum?></a><?
+					?><a href="channel_detail.php?chanid=<?php echo $this_channel->chanid?>" class="huge"
+						onmouseover="window.status='Details for: <?php echo $this_channel->channum?> <?php echo $this_channel->callsign?>';return true"
+						onmouseout="window.status='';return true"><?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?><BR>
+					<?php echo prefer_channum ? $this_channel->callsign : $this_channel->channum?></a><?php
 				}
 					?></td>
 			<td width="24px">&nbsp;</td>
-			<td><span class="huge"><a href="search.php?searchstr=<?=urlencode($this_program->title)?>&search_title=yes">"<?=$this_program->title?>"</a>
-			<? if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
+			<td><span class="huge"><a href="search.php?searchstr=<?php echo urlencode($this_program->title)?>&search_title=yes">"<?php echo $this_program->title?>"</a>
+			<?php if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
 			</span><BR>"
 				<span class="small">
-				<?=date('g:i A', $this_program->starttime)?> to <?=date('g:i A', $this_program->endtime)?> (<?=(int)($this_program->length/60)?> minutes)<BR>
-				<?
+				<?php echo date('g:i A', $this_program->starttime)?> to <?php echo date('g:i A', $this_program->endtime)?> (<?php echo (int)($this_program->length/60)?> minutes)<BR>
+				<?php
 				if ($this_program->previouslyshown)
 					echo '(Rerun) ';
 				echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">Search IMDB</a>)";
-				echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";					
+				echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";
 				?></span></td>
 		</tr><tr>
 			<td colspan="3">&nbsp;</td>
-		</tr><? if (!isset($_GET[recordid]) && strlen($this_program->subtitle)) { ?><tr>
+		</tr><?php if (!isset($_GET[recordid]) && strlen($this_program->subtitle)) { ?><tr>
 			<td colspan="2" align="right">Episode:&nbsp;</td>
-			<td><?=$this_program->subtitle?></td>
-		</tr><? }
+			<td><?php echo $this_program->subtitle?></td>
+		</tr><?php }
 				if (!isset($_GET[recordid]) && strlen($this_program->description)) {?><tr>
 			<td colspan="2" align="right" valign="top">Description:&nbsp;</td>
-			<td><?=wordwrap($this_program->description, 45, "<BR>\n")?></td>
-		</tr><? } ?><tr>
+			<td><?php echo wordwrap($this_program->description, 45, "<BR>\n")?></td>
+		</tr><?php } ?><tr>
 			<td colspan="3">&nbsp;</td>
-		</tr><? if (strlen($this_program->category)) {?><tr>
+		</tr><?php if (strlen($this_program->category)) {?><tr>
 			<td colspan="2" align="right">Category:&nbsp;</td>
-			<td><?=$this_program->category?></td>
-		</tr><? }
+			<td><?php echo $this_program->category?></td>
+		</tr><?php }
 				if (strlen($this_program->airdate)) {?><tr>
 			<td nowrap colspan="2" align="right">Orig. Airdate:&nbsp;</td>
-			<td><?=$this_program->airdate?></td>
-		</tr><? }
+			<td><?php echo $this_program->airdate?></td>
+		</tr><?php }
 				if (strlen($this_program->rating)) {?><tr>
-			<td colspan="2" align="right"><?=strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?>Rating:&nbsp;</td>
-			<td><?=$this_program->rating?></td>
-		</tr><? } ?>
+			<td colspan="2" align="right"><?php echo strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?>Rating:&nbsp;</td>
+			<td><?php echo $this_program->rating?></td>
+		</tr><?php } ?>
 		</table>
 
 	<td valign="top" align="right" rowspan="2">
 
 		<form action="program_detail.php" method="get" name="record_settings">
-		<? if (isset($_GET[recordid])) {?>
-		<input type="hidden" name="recordid" value="<?=$_GET['recordid']?>">
-		<? } else {?>
-		<input type="hidden" name="chanid" value="<?=$_GET['chanid']?>">
-		<input type="hidden" name="starttime" value="<?=$_GET['starttime']?>">
-		<? } ?>
+		<?php if (isset($_GET[recordid])) {?>
+		<input type="hidden" name="recordid" value="<?php echo $_GET['recordid']?>">
+		<?php } else {?>
+		<input type="hidden" name="chanid" value="<?php echo $_GET['chanid']?>">
+		<input type="hidden" name="starttime" value="<?php echo $_GET['starttime']?>">
+		<?php } ?>
 
 		<table class="command command_border_l command_border_t command_border_b command_border_r" align="center" border="0" cellspacing="0" cellpadding="5">
 		<tr>
 			<td><p align="center">Recording Options:</p></td></tr>
 		<tr><td>
-				<input type="radio" class="radio" name="record" value="never" id="record_never"<?=
+				<input type="radio" class="radio" name="record" value="never" id="record_never"<?php echo
 				$this_program->will_record ? '' : ' CHECKED'?>></input>
 				<a onclick="get_element('record_never').checked=true;">Don't record this program.</a>
 				<br/>
-				<input type="radio" class="radio" name="record" value="once" id="record_once"<?=
+				<input type="radio" class="radio" name="record" value="once" id="record_once"<?php echo
 				$this_program->record_once ? ' CHECKED' : ''?>></input>
 				<a onclick="get_element('record_once').checked=true;">Record only this showing.</a>
 				<br/>
-				<input type="radio" class="radio" name="record" value="daily" id="record_daily"<?=
+				<input type="radio" class="radio" name="record" value="daily" id="record_daily"<?php echo
 				$this_program->record_daily ? ' CHECKED' : ''?>></input>
 				<a onclick="get_element('record_daily').checked=true;">Record this program in this timeslot every day.</a>
 				<br/>
-				<input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?=
+				<input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?php echo
 				$this_program->record_weekly ? ' CHECKED' : ''?>></input>
 				<a onclick="get_element('record_weekly').checked=true;">Record this program in this timeslot every week.</a>
 				<br/>
-				<input type="radio" class="radio" name="record" value="channel" id="record_channel"<?=
+				<input type="radio" class="radio" name="record" value="channel" id="record_channel"<?php echo
 				$this_program->record_channel ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_channel').checked=true;">Always record this program on this channel.</a>
+				<a onclick="get_element('record_channel').checked=true;">Always record this program on channel <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?>.</a>
 				<br/>
-				<input type="radio" class="radio" name="record" value="always" id="record_always"<?=
+				<input type="radio" class="radio" name="record" value="always" id="record_always"<?php echo
 				$this_program->record_always ? ' CHECKED' : ''?>></input>
 				<a onclick="get_element('record_always').checked=true;">Always record this program on any channel.</a>
 				<br/>
-				<input type="radio" class="radio" name="record" value="findone" id="record_findone"<?=
+				<input type="radio" class="radio" name="record" value="findone" id="record_findone"<?php echo
 				$this_program->record_findone ? ' CHECKED' : ''?>></input>
 				<a onclick="get_element('record_always').checked=true;">Record one showing of this program at any time.</a>
 		</td></tr>
@@ -176,15 +176,15 @@ class Theme_program_detail extends Theme {
 </tr>
 <tr>
 	<td height="100%" align="center" valign="bottom">
-		<? if (isset($_GET[recordid])) { ?>
+		<?php if (isset($_GET[recordid])) { ?>
 	<a href="all_recordings.php">Back to All recordings!</a></td>
-		<? } else { ?>
+		<?php } else { ?>
 	<a href="program_listing.php?time=<?php echo $this_program->starttime?>">What else is on at this time?</a>&nbsp;&nbsp;&nbsp;
-        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td> <? } ?>
+        <a href="program_listing.php?time=<?php echo $_SESSION['list_time']?>">Back to the program listing!</a></td> <?php } ?>
 	</td>
 </tr>
 </table>
-<?
+<?php
 	// Print the main page footer
 		parent::print_footer();
 	}
