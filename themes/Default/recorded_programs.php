@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.05.23 (xris)
+    recorded_programs.php                    Last Updated: 2004.06.07 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -53,7 +53,7 @@ class Theme_recorded_programs extends Theme {
         <option value=""><?php echo _LANG_ALL_RECORDINGS?></option><?php
         global $Program_Titles;
         foreach($Program_Titles as $title => $count) {
-            echo '<option value="'.$title.'"';
+            echo '<option value="'.htmlspecialchars($title).'"';
             if ($_GET['title'] == $title)
                 echo ' SELECTED';
             echo '>'.htmlentities($title, ENT_COMPAT, 'UTF-8').($count > 1 ? " ($count "._LANG_EPISODES.")" : "").'</option>';
