@@ -209,12 +209,10 @@ class Theme_program_detail extends Theme {
                         echo _LANG_DONT_RECORD_THIS_PROGRAM;
                     ?></a>
                 <br/>
-<?php       if (($this_program->type == 1) || ($this_program->starttime > time())) { ?>
                 <input type="radio" class="radio" name="record" value="once" id="record_once"<?php
                     echo $this_program->record_once ? ' CHECKED' : ''?>></input>
                 <a onclick="get_element('record_once').checked=true;"><?php echo _LANG_RECTYPE_LONG_ONCE?></a>
                 <br/>
-<?php       } ?>
                 <input type="radio" class="radio" name="record" value="daily" id="record_daily"<?php echo
                 $this_program->record_daily ? ' CHECKED' : ''?>></input>
                 <a onclick="get_element('record_daily').checked=true;"><? echo _LANG_RECTYPE_LONG_DAILY?></a>
