@@ -79,7 +79,6 @@ if ($group_field == "") {
 
 	$prev_group="";
 	$cur_group="";
-
 	foreach ($All_Shows as $show) {
 	// Reset the command variable to a default URL
 		$commands = array();
@@ -188,8 +187,8 @@ if ($group_field == "") {
 	}
 
 	// Print the content
-	?><tr class="<?php echo $class?>">
-	<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
+?><tr class="<?php echo $class?>">
+<?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
 	<td class="<?php echo $show->class?>"><?php
 		// Print a link to record this show
 		echo '<a id="program_'.$program_id_counter.'" href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'
