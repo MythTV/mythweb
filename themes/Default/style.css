@@ -34,6 +34,14 @@ A:hover   { color: #F0F000; text-decoration: underline; }
 .large { font-size: 14px; }
 .huge  { font-size: 24px; }
 
+/* fony style classes */
+.bold, .bold A, .bold A:link, .bold A:visited, .bold A:active, .bold A:hover {
+    font-weight: bold !important;
+}
+.italic, .italic A, .italic A:link, .italic A:visited, .italic A:active, .italic A:hover {
+    font-style: italic !important;
+}
+
 /* a class for the menu across the top of the page as well as menu headers throughout the page */
 .menu {	background-color: #265990 }
 .menu_border_t { border-top:    2px solid #9090B0 }

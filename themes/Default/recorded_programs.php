@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.06.07 (xris)
+    recorded_programs.php                    Last Updated: 2004.06.22 (xris)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
@@ -85,16 +85,16 @@ if ($group_field == "") {
     if (show_recorded_pixmaps)
         echo "\t<td>"._LANG_PREVIEW."</td>\n";
 ?>
-    <td><a href="recorded_programs.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
-    <td><a href="recorded_programs.php?sortby=subtitle"><?php echo _LANG_SUBTITLE?></a></td>
+    <td><?php echo get_sort_link('title')    ?></td>
+    <td><?php echo get_sort_link('subtitle') ?></td>
 <?php
     if ($_SESSION['recorded_descunder'] != "on")
-        echo "\t<td><a href=\"recorded_programs.php?sortby=description\">"._LANG_DESCRIPTION."</a></td>\n";
+        echo "\t<td>".get_sort_link('description')."</td>\n";
 ?>
-    <td><a href="recorded_programs.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
-    <td><a href="recorded_programs.php?sortby=airdate"><?php echo _LANG_AIRDATE?></a></td>
-    <td><a href="recorded_programs.php?sortby=length"><?php echo _LANG_LENGTH?></a></td>
-    <td><a href="recorded_programs.php?sortby=filesize"><?php echo _LANG_FILE_SIZE?></a></td>
+    <td><?php echo get_sort_link('channum')   ?></td>
+    <td><?php echo get_sort_link('airdate')   ?></td>
+    <td><?php echo get_sort_link('length')    ?></td>
+    <td><?php echo get_sort_link('file_size') ?></td>
 </tr><?php
     $row = 0;
 

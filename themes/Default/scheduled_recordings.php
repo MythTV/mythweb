@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2004.05.23 (xris)
+    scheduled_recordings.php                    Last Updated: 2004.06.22 (xris)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
@@ -69,11 +69,11 @@ if ($group_field == "") {
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td><a href="scheduled_recordings.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
-    <td><a href="scheduled_recordings.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
-    <td><a href="scheduled_recordings.php?sortby=airdate"><?php echo _LANG_AIRDATE?></a></td>
-    <td><a href="scheduled_recordings.php?sortby=length"><?php echo _LANG_LENGTH?></a></td>
-    <td><a href="scheduled_recordings.php?sortby=status"><?php echo _LANG_STATUS?></a></td>
+    <td><?php echo get_sort_link('title')   ?></td>
+    <td><?php echo get_sort_link('channum') ?></td>
+    <td><?php echo get_sort_link('airdate') ?></td>
+    <td><?php echo get_sort_link('length')  ?></td>
+    <td align="center" colspan="2"><?php echo _LANG_COMMANDS?></a></td>
 </tr><?php
     $row = 0;
 

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                               Last Updated: 2004.05.23 (xris)
+    search.php                               Last Updated: 2004.06.22 (xris)
 
     This file defines a theme class for the search section.
     It must define one method.   documentation will be added someday.
@@ -66,12 +66,12 @@ class Theme_search extends Theme {
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != "") { echo "<td>&nbsp;</td>"; } ?>
-    <td><a href="search.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
-    <td><a href="search.php?sortby=subtitle"><?php echo _LANG_SUBTITLE?></a></td>
-    <td><?php echo _LANG_DESCRIPTION?></td>
-    <td><a href="search.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
-    <td><a href="search.php?sortby=airdate"><?php echo _LANG_AIRDATE?></a></td>
-    <td><a href="search.php?sortby=length"><?php echo _LANG_LENGTH?></a></td>
+    <td><?php echo get_sort_link('title')       ?></td>
+    <td><?php echo get_sort_link('subtitle')    ?></td>
+    <td><?php echo get_sort_link('description') ?></td>
+    <td><?php echo get_sort_link('channum')     ?></td>
+    <td><?php echo get_sort_link('airdate')     ?></td>
+    <td><?php echo get_sort_link('length')      ?></td>
 </tr><?php
         $row = 0;
 
@@ -126,7 +126,7 @@ class Theme_search extends Theme {
         ?></td>
     <td><?php echo $show->subtitle?></td>
     <td><?php echo $show->description?></td>
-    <td><?php echo $show->channel->name?></td>
+    <td><?php echo $show->channel->channum.' - '.$show->channel->name?></td>
     <td nowrap><?php echo strftime($_SESSION['date_search'], $show->starttime)?></td>
     <td nowrap><?php echo nice_length($show->length)?></td>
 </tr><?php

@@ -5,15 +5,61 @@
     routines for sorting Program objects
 \***                                                                        ***/
 
+// A global variable to track the last-used session;
+    global $last_sort_session;
+
+
+/*
+    get_sort_link:
+    returns a formatted link to the specified sort field
+*/
+    function get_sort_link($field) {
+        $status = sort_status($field);
+        $link = '<a href="'.$_SERVER['PHP_SELF'].'?sortby='.urlencode($field).'">'
+               .constant('_LANG_'.strtoupper($field))
+               .'</a>';
+        if ($status == 1)
+            $link = "<span class=\"bold\">$link</span>";
+        elseif ($status == -1)
+            $link = "<span class=\"italic\">$link</span>";
+        return $link;
+    }
+/*
+    sort_status:
+    returns the sort status of
+*/
+    function sort_status($field, $session = NULL) {
+    // Null session means to load the last sorted session
+        if (!$session)
+            $session = $GLOBALS['last_sort_session'];
+    // Make sure the field is lower case
+        $field = strtolower($field);
+    // No sort function for this variable
+        if (!function_exists("by_$field"))
+            return NULL;
+    // Scan the sort array for any entries matching the current choice, and remove them
+        $depth = 0;
+        foreach ($_SESSION[$session] as $key => $sort) {
+            $depth++;
+        // No match, continue looking
+            if ($sort['field'] != $field)
+                continue;
+        // What to do now...
+            return ($sort['reverse'] ? 0 - $depth : $depth);
+        }
+    // No match found
+        return false;
+    }
 
 /*
     sort_programs:
     sorts a list of programs by the user's session preferences
 */
     function sort_programs(&$programs, $session) {
+        $GLOBALS['last_sort_session'] = $session;
     // First, check for a sort variable passed in by the user
         isset($_GET['reverse']) or $_GET['reverse'] = $_POST['reverse'];
-        isset($_GET['sortby'])  or $_GET['sortby']   = $_POST['sortby'];
+        isset($_GET['sortby'])  or $_GET['sortby']  = $_POST['sortby'];
     // Now we build an array the user's sort preferences
         if (!is_array($_SESSION[$session]) || !count($_SESSION[$session]))
             $_SESSION[$session] = array(array('field' => 'airdate',
@@ -100,7 +146,7 @@
         return ($a->length > $b->length) ? 1 : -1;
     }
 
-    function by_filesize(&$a, &$b) {
+    function by_file_size(&$a, &$b) {
         if ($a->filesize == $b->filesize) return 0;
         return ($a->filesize > $b->filesize) ? 1 : -1;
     }

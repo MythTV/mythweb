@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2004.03.07 (xris)
+    recording_schedules.php                 Last Updated: 2004.06.22 (xris)
 
     This file defines a theme class for the all recordings section.
     It must define one method.   documentation will be added someday.
@@ -54,10 +54,10 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td><a href="recording_schedules.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
-    <td><a href="recording_schedules.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
-    <td><a href="recording_schedules.php?sortby=profile"><?php echo _LANG_PROFILE?></a></td>
-    <td><a href="recording_schedules.php?sortby=type"><?php echo _LANG_TYPE?></a></td>
+    <td><?php echo get_sort_link('title')   ?></td>
+    <td><?php echo get_sort_link('channum') ?></td>
+    <td><?php echo get_sort_link('profile') ?></td>
+    <td><?php echo get_sort_link('type')    ?></td>
 </tr><?php
     $row = 0;
 
@@ -160,7 +160,7 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
     if ($group_field == 'type')
         $cur_group = $show->texttype;
     elseif ($group_field == 'channum')
-        $cur_group = $show->channel->name;
+        $cur_group = ($show->channel->channum ? $show->channel->channum.' - ' : '').$show->channel->name;
     elseif ($group_field == 'profile')
         $cur_group = $show->profile;
 
@@ -183,7 +183,11 @@ elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_
              .($show->type == 1 && preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
              .'</a>';
         ?></td>
-    <td><?php echo $show->channel->name?></td>
+    <td><?php
+        if ($show->channel->channum)
+            echo $show->channel->channum.' - ';
+        echo $show->channel->name
+        ?></td>
     <td nowrap><?php echo $show->profile ?></td>
     <td nowrap><?php echo $show->texttype ?></td>
 <?php   foreach ($commands as $command) { ?>
