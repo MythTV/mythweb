@@ -156,19 +156,10 @@ class Schedule {
 
     // Turn type int a word
         $this->texttype = $GLOBALS['RecTypes'][$this->type];
+
     // Do we have a chanid?  Load some info about it
         if ($this->chanid && !isset($this->channel)) {
-        // No channel data?  Load it
-            global $Channels;
-            if (!is_array($Channels) || !count($Channels))
-                load_all_channels($this->chanid);
-        // Now we really should scan the $Channel array and add a link to this recording's channel
-            foreach (array_keys($Channels) as $key) {
-                if ($Channels[$key]->chanid == $this->chanid) {
-                    $this->channel = &$Channels[$key];
-                    break;
-                }
-            }
+            $this->channel =& load_one_channel($this->chanid);
         }
 
     // Find out which css category this recording falls into
@@ -337,7 +328,10 @@ class Schedule {
             switch ($this->type) {
                 case rectype_once:       $str .= t('rectype-long: once');       break;
                 case rectype_daily:      $str .= t('rectype-long: daily');      break;
-                case rectype_channel:    $str .= t('rectype-long: channel');    break;
+                case rectype_channel:
+                    $channel =& load_one_channel($this->chanid);
+                    $str     .= t('rectype-long: channel', prefer_channum ? $channel->channum : $channel->callsign);
+                    break;
                 case rectype_always:     $str .= t('rectype-long: always');     break;
                 case rectype_weekly:     $str .= t('rectype-long: weekly');     break;
                 case rectype_findone:    $str .= t('rectype-long: findone');    break;

@@ -11,6 +11,10 @@
 // Make sure the "Programs" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
     require_once 'includes/programs.php';
 
+// Initialize the global channels array
+    global $Channels;
+    $Channels = array();
+
 /*
     load_all_channels:
     Loads all of the channels into channel objects, AND returns the global array $Channels
@@ -39,8 +43,9 @@
                 or trigger_error('SQL Error: '.mysql_error(), FATAL);
             $channel_data = mysql_fetch_assoc($result);
             mysql_free_result($result);
-            if ($channel_data)
+            if ($channel_data) {
                 $Channels[$chanid] = new Channel($channel_data);
+            }
             else
                 $Channels[$chanid] = NULL;
         }

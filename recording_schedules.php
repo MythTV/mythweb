@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2005.01.27 (xris)
+    recording_schedules.php                 Last Updated: 2005.02.03 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -18,16 +18,8 @@
 
 // Parse the recording list
     $All_Shows = array();
-    $Channels  = array();
-
-    foreach ($Schedules as $show) {
-    // Assign a reference to this show to the various arrays
-        $All_Shows[] = &$show;
-        if (is_array($show))
-            $Channels[$show['chanid']][] = &$show;
-        else
-            $Channels[$show->chanid] = &$show;
-        unset($show);
+    foreach (array_keys($Schedules) as $key) {
+        $All_Shows[] =& $Schedules[$key];
     }
 
 // Sort the recordings
