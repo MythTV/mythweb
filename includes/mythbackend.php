@@ -1,6 +1,6 @@
 <?
 /***																		***\
-	mythbackend.php                          Last Updated: 2003.07.22 (xris)
+	mythbackend.php                          Last Updated: 2003.08.03 (xris)
 
 	Routines that allow mythweb to communicate with mythbackend
 \***																		***/
@@ -56,6 +56,11 @@
 	function backend_command($command) {
 	// Use a static file pointer so we can leave the same connection open
 		static $fp;
+		return backend_command2($command, $fp);
+	}
+
+	// A second backend command, so we can allow certain routines to use their own file pointer
+	function backend_command2($command, &$fp) {
 	// Load some information about the master backend
 		$host = get_backend_setting('MasterServerIP');
 		$port = get_backend_setting('MasterServerPort');
@@ -127,6 +132,99 @@
 
 
 /*
+	generate_preview_pixmap:
+	gets a preview image of the requested show
+*/
+	function generate_preview_pixmap($show) {
+		$fileurl = $show->filename;
+		$pngpath = pixmap_local_path . '/' . basename($fileurl) . ".png";
+		if (!is_file($pngpath)) {
+			$hostname = chop(`hostname`);
+			if ('myth://' != substr($fileurl, 0, 7)) {
+				$generate_pixmap = !is_file("$fileurl.png");
+			}
+			else {
+				$recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
+															  $datasocket));
+				$generate_pixmap = (0 == $recs[3]);
+			}
+
+			if ($generate_pixmap) {
+				if ($datasocket) {
+					fclose($datasocket);
+					$datasocket = NULL;
+				}
+
+				$cmd = 'QUERY_GENPIXMAP'              .backend_sep
+					  .' '                            .backend_sep	// title
+					  .' '                            .backend_sep	// subtitle
+					  .' '                            .backend_sep	// description
+					  .' '                            .backend_sep	// category
+					  .$show->chanid                  .backend_sep	// chanid
+					  .' '                            .backend_sep	// chanstr
+					  .' '                            .backend_sep	// chansign
+					  .' '                            .backend_sep	// channame
+					  .$show->filename                .backend_sep	// filename
+					  .'0'                            .backend_sep	// upper 32 bits
+					  .'0'                            .backend_sep	// lower 32 bits
+					  .unix2mythtime($show->starttime).backend_sep	// starttime
+					  .unix2mythtime($show->endtime)  .backend_sep	// endtime
+					  .'0'                            .backend_sep	// conflicting
+					  .'1'                            .backend_sep	// recording
+					  .'0'                            .backend_sep	// duplicate
+					  .$show->hostname                .backend_sep	// hostname
+					  .'-1'                           .backend_sep	// sourceid
+					  .'-1'                           .backend_sep	// cardid
+					  .'-1'                           .backend_sep	// inputid
+					  .' '                            .backend_sep	// rank
+					  .'0'                            .backend_sep	// suppressed
+					  .' '                            .backend_sep;	// reasonsuppressed
+				$ret = backend_command($cmd);
+
+				$recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
+															  $datasocket));
+			}
+
+			if (substr($fileurl, 0, 7) != 'myth://') {
+				if (is_file("$fileurl.png"))
+					copy("$fileurl.png", $pngpath);
+			}
+			elseif ($datasocket && $recs[3]) {
+				$cmd = "QUERY_FILETRANSFER " . $recs[1] . backend_sep . 'REQUEST_BLOCK' . backend_sep . $recs[3];
+				$ret = backend_command($cmd);
+
+				$length = $recs[3];
+				$data = '';
+				while($length > 0) {
+					$size = min(8192, $length);
+					$data = fread($datasocket, $size);
+					if (strlen($data) < 1)
+						break; // EOF
+					$pngdata .= $data;
+					$length -= strlen($data);
+				}
+
+			// Make sure the local path exists
+				$path = '';
+				foreach (split('/+', dirname($pngpath)) as $dir) {
+					$path .= $path ? '/' . $dir : $dir;
+					if(!is_dir($path) && !mkdir($path, 0755))
+						trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
+				}
+
+				$pngfile = fopen($pngpath, 'wb');
+				if ($pngfile) {
+					fwrite($pngfile, $pngdata, $recs[3]);
+					fclose($pngfile);
+				}
+			}
+
+			if ($datasocket)
+				fclose($datasocket);
+		}
+	}
+
+/*
 	myth2unixtime:
 	converts a myth timestamp into a unix timestamp
 	1.0 cvs changed the format to:  2003-06-28T06:30:00
@@ -135,6 +233,13 @@
 		return strtotime(str_replace('T', ' ', $mythtime));
 	}
 
+/*
+	unix2mythtime:
+	converts a unix timestamp into a myth timestamp
+*/
+	function unix2mythtime($time) {
+		return date('Y-m-d\TH:i:s', $time);
+	}
 
 /*
 

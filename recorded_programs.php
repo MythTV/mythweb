@@ -1,6 +1,6 @@
 <?
 /***                                                                        ***\
-	recorded_programs.php                    Last Updated: 2003.07.22 (xris)
+	recorded_programs.php                    Last Updated: 2003.08.03 (xris)
 
 	view and manipulate recorded programs.
 \***                                                                        ***/
@@ -26,25 +26,52 @@
 		}
 	}
 
+// Queries for a specific program title
+	isset($_GET['title'])  or $_GET['title']  = $_POST['title'];
+	isset($_GET['title'])  or $_GET['title']  = $_SESSION['recorded_title'];
+
+
 // Parse the program list
-	$All_Shows = array();
-	$Programs  = array();
-	$Channels  = array();
-	foreach (get_backend_rows('QUERY_RECORDINGS Delete') as $key => $record) {
-	// Skip the offset
-		if ($key === 'offset')
-			continue;
-	// Create a new program object
-		$show = new Program($record);
-	// Make sure this is a valid show (ie. skip in-progress recordings and other junk)
-		if (!$show->chanid || $show->duration < 1)
-			continue;
-	// Assign a reference to this show to the various arrays
-		$All_Shows[]                 = &$show;
-		$Programs[$show['title']][]  = &$show;
-		$Channels[$show['chanid']][] = &$show;
-		unset($show);
+	$recordings = get_backend_rows('QUERY_RECORDINGS Delete');
+	$All_Shows      = array();
+	$Programs       = array();
+	$Channels       = array();
+	while (true) {
+		$Program_Titles = array();
+		foreach ($recordings as $key => $record) {
+		// Skip the offset
+			if ($key === 'offset')
+				continue;
+		// Skip programs the user doesn't want to look at, but keep track of their names and how many episodes we have recorded
+			$Program_Titles[$record[0]]++;
+			if ($_GET['title'] && $_GET['title'] != $record[0])
+				continue;
+		// Create a new program object
+			$show = new Program($record);
+		// Make sure this is a valid show (ie. skip in-progress recordings and other junk)
+			if (!$show->chanid || $show->duration < 1)
+				continue;
+		// Assign a reference to this show to the various arrays
+			$All_Shows[]                 = &$show;
+			$Programs[$show->title][]    = &$show;
+			$Channels[$show->chanid][]   = &$show;
+			unset($show);
+		}
+	// Did we try to view a program that we don't have recorded?  Revert to showing all programs
+		if ($_GET['title'] && !count($Programs)) {
+			$Warnings[] = 'No matching programs found.  Showing all programs.';
+			unset($_GET['title']);
+		}
+	// Found some programs, let's move on
+		else
+			break;
 	}
+
+// Sort the program titles
+	ksort($Program_Titles);
+
+// Keep track of the program/title the user wants to view
+	$_SESSION['recorded_title'] = $_GET['title'];
 
 // The default sorting choice isn't so good for recorded programs, so we'll set our own default
 	if (!is_array($_SESSION['recorded_sortby']))
@@ -55,6 +82,26 @@
 
 // Sort the programs
 	sort_programs($All_Shows, 'recorded_sortby');
+
+// Make sure the image cache path exists
+	$path = '';
+	foreach (split('/+', pixmap_local_path) as $dir) {
+		$path .= $path ? '/' . $dir : $dir;
+		if(!is_dir($path) && !mkdir($path, 0755))
+			trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
+	}
+
+// Clean out stale thumbnails
+	if ($dir = opendir(pixmap_local_path)) {
+		while (($file = readdir($dir))) {
+			if (!is_file(pixmap_local_path.'/'.$file))
+				continue;
+		// Delete files that haven't been touched in the last 3 days
+			if (fileatime(pixmap_local_path.'/'.$file) > 3 * 24 * 60 * 60)
+				unlink(pixmap_local_path.'/'.$file);
+		}
+		closedir($dir);
+	}
 
 // How much free disk space on the backend machine?
 	list($freespace, $disk_size) = explode(backend_sep, backend_command('QUERY_FREESPACE'));

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.08.02 (xris)
+    programs.php                             Last Updated: 2003.08.03 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -192,6 +192,7 @@ class Program {
 
 	var $filename;
 	var $filesize;
+	var $hostname;
 
 	var $will_record    = false;
 	var $record_daily   = false;
@@ -217,7 +218,7 @@ class Program {
 	function Program($program_data) {
 	// This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
 		if (!isset($program_data['chanid']) && isset($program_data[0])) {
-			$this->title       = $program_data[0];
+			$this->title       = $program_data[0];					# program name/title
 			$this->subtitle    = $program_data[1];					# episode name
 			$this->description = $program_data[2];					# episode description
 			$this->category    = $program_data[3];					#
@@ -233,13 +234,13 @@ class Program {
 			$this->conflicting = $program_data[13] ? true : false;	# conflicts with another scheduled recording?
 			$this->recording   = $program_data[14] ? true : false;	# scheduled to record?
 			$this->duplicate   = $program_data[15] ? true : false;	# matches an item in oldrecorded, and won't be recorded
-			#$this->hostname    = $program_data[16];		#  myth
-			#$this->sourceid    = $program_data[17];		#  -1
-			#$this->cardid      = $program_data[18];		#  -1
-			#$this->inputid     = $program_data[19];		#
-			#$this->rank        = $program_data[20];		#
-			#$this->suppressed  = $program_data[21];		#
-			#$this->reason_suppressed = $program_data[22];		#
+			$this->hostname    = $program_data[16];					#  myth
+			#$this->sourceid    = $program_data[17];				#  -1
+			#$this->cardid      = $program_data[18];				#  -1
+			#$this->inputid     = $program_data[19];				#
+			#$this->rank        = $program_data[20];				#
+			#$this->suppressed  = $program_data[21];				#
+			#$this->reason_suppressed = $program_data[22];			#
 		// Is this a previously-recorded program?  Calculate the filesize
 			if (preg_match('/\\d+_\\d+/', $this->filename)) {
 				$this->channame = $channame;

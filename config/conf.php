@@ -64,4 +64,19 @@
 	define('max_stars', 4);					// maximum star rating for movies
 	define('star_character', '&diams;');	// the character(s) to represent stars with
 
+/*
+
+	The following constants are defined for the recorded programs page
+
+*/
+	define('show_recorded_pixmaps', true);
+
+// Locan and web paths to the pixmap image cache
+	define('pixmap_local_path', 'image_cache');
+	define('pixmap_web_path', '/image_cache');
+
+// Height and width of generated pixmaps (for now, these are fixed - please do not change these numbers)
+	define('pixmap_width',  160);
+	define('pixmap_height', 120);
+
 ?>

@@ -23,7 +23,7 @@ class Theme {
 
 	<title><?=$page_title?></title>
 
-	<script type="text/javascript" src="<?=theme_dir?>init.js"></script>
+	<script type="text/javascript" src="<?php echo theme_dir?>init.js"></script>
 </head>
 
 <body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
@@ -31,7 +31,7 @@ class Theme {
 <p>
 <table width="100%" border="0" cellspacing="2" cellpadding="2">
 <tr>
-	<td rowspan="2" width="300" align="center"><A HREF="http://www.mythtv.org"><img src="<?=theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV"></a></td>
+	<td rowspan="2" width="300" align="center"><A HREF="http://www.mythtv.org"><img src="<?=theme_dir?>img/mythtv-logo.png" height="110" width="290" border="0" alt="MythTV" style="behavior: url('/themes/Default/pngbehavior.htc');"></a></td>
 	<td colspan="2" align="right"><table border="0" cellspacing="2" cellpadding="2" style="padding-right: 10px">
 		<tr>
 <?
@@ -87,16 +87,7 @@ class Theme {
 
 	<td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
 		<tr>
-			<td><a id="category_legend_anchor" onmouseover="show('category_legend');return true;" onmouseout="hide('category_legend');return true;">MythTV:</a> &nbsp; &nbsp;
-				<a href="program_listing.php">Listings</a>
-				&nbsp; | &nbsp;
-				<a href="search.php?searchstr=movie&search_category_type=yes">Movies</a>
-				<?/*&nbsp; | &nbsp;
-				<a href="index.php?mode=favourites">Favourites</a>*/?>
-				&nbsp; | &nbsp;
-				<a href="scheduled_recordings.php">Scheduled Recordings</a>
-				&nbsp; | &nbsp;
-				<a href="recorded_programs.php">Recorded Programs</a></td>
+			<td><?php $this->print_menu_content() ?></td>
 			<td align="right"><?=date(longdate_format, time())?></td>
 		</tr>
 		</table></td>
@@ -105,6 +96,21 @@ class Theme {
 </table>
 </p>
 <?
+	}
+
+	function print_menu_content() {
+		?><a id="category_legend_anchor" onmouseover="show('category_legend');return true;" onmouseout="hide('category_legend');return true;">MythTV:</a> &nbsp; &nbsp;
+				<a href="program_listing.php">Listings</a>
+				&nbsp; | &nbsp;
+				<a href="search.php?searchstr=movie&search_category_type=yes">Movies</a>
+				<?/*&nbsp; | &nbsp;
+				<a href="index.php?mode=favourites">Favourites</a>*/?>
+				&nbsp; | &nbsp;
+				<a href="scheduled_recordings.php">Scheduled Recordings</a>
+				&nbsp; | &nbsp;
+				<a href="recorded_programs.php">Recorded Programs</a><?php
+		# really should move the category_legend footnote to this section,
+		# so it doesn't render in other sections
 	}
 
 	function print_footer() {

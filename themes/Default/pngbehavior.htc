@@ -4,7 +4,7 @@
 
 var supported = /MSIE (5\.5)|[6789]/.test(navigator.userAgent) && navigator.platform == "Win32";
 var realSrc;
-var blankSrc = "themes/Default/img/spacer.gif";
+var blankSrc = "/themes/Default/img/spacer.gif";
 
 if (supported) fixImage();
 
@@ -13,38 +13,42 @@ function propertyChanged() {
 
 	var pName = event.propertyName;
 	if (pName != "src") return;
-	// if not set to blank
+// if not set to blank
 	if ( ! new RegExp(blankSrc).test(src))
 		fixImage();
 };
 
 function fixImage() {
-   // get src
-   var src = element.src;
+// get src
+	var src = element.src;
 
-   // check for real change
-   if (src == realSrc) {
-      element.src = blankSrc;
-      return;
-   }
+// check for real change
+	if (src == realSrc && element.runtimeStyle.filter != "") {
+		element.src = blankSrc;
+		return;
+	}
 
-   if ( ! new RegExp(blankSrc).test(src)) {
-      // backup old src
-      realSrc = src;
-   }
+// backup old src
+	if ( ! new RegExp(blankSrc).test(src))
+		realSrc = src;
 
-   // test for png
-   if ( /\.png$/.test( realSrc.toLowerCase() ) ) {
-      // set blank image
-      element.src = blankSrc;
-      // set filter
-      element.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" +
-                                     src + "',sizingMethod='scale')";
-   }
-   else {
-      // remove filter
-      element.runtimeStyle.filter = "";
-   }
+// test for png
+	if ( realSrc && /\.png$/.test( realSrc.toLowerCase() ) ) {
+	// Make sure that width and height are preserved
+		var width  = element.width;
+		var height = element.height;
+	// set blank image
+		element.src = blankSrc;
+	// set filter
+		element.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
+									  + src + "',sizingMethod='scale')";
+	// Restore width and height
+		element.width  = width;
+		element.height = height;
+	}
+// remove filter
+	else
+		element.runtimeStyle.filter = "";
 }
 
 </script>

@@ -24,9 +24,10 @@ class Theme_program_listing extends Theme {
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
 	<td width="50%" align="center">Currently Browsing:  <?=date('F j, Y, g:i A', $start_time)?></td>
-	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="2">
+	<td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
+		<form class="form" action="program_listing.php" method="get">
+		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 		<tr>
-			<form action="program_listing.php" method="get">
 
 			<td align="center">Jump&nbsp;to:&nbsp;&nbsp;</td>
 			<td align="right">Hour:&nbsp;</td>
@@ -56,10 +57,10 @@ class Theme_program_listing extends Theme {
 				?></select></td>
 			<td align="center"><input type="submit" class="submit" value="Jump"></td>
 
-			</form>
 
-			</tr>
-			</table></td>
+		</tr>
+		</table>
+		</form></td>
 </tr>
 </table>
 </p>
