@@ -39,7 +39,7 @@ class Theme_channel_detail extends Theme {
 				for ($i=-1;$i<=$max_days;$i++) {
 					$time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
 					$date = date("Ymd", $time);
-					echo "<option value=\"$date\"";
+					echo "<option value=\"$time\"";
 					if ($date == date("Ymd", $_SESSION['list_time'])) echo " selected";
 					echo ">".date($_SESSION['date_channel_jump'] , $time)."</option>";
 				}
