@@ -124,6 +124,10 @@ TextArea {
 	left: 0px;
 }
 
+.no_padding {
+	padding: 0px 0px 0px 0px;
+}
+
 /*
 
 	The following subclasses are used for list displays

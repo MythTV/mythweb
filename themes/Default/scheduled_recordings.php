@@ -20,11 +20,24 @@ class Theme_scheduled_recordings extends Theme {
 <script language="JavaScript" type="text/javascript">
 <!--
 	function changevisible() {
+		var prev_visible_class = "blank_row";
+
 		for (var i=1; i < document.getElementById("listings").rows.length; i++) {
- 			if (document.getElementById(document.getElementById("listings").rows[i].className).checked)
-				document.getElementById("listings").rows[i].style.display = "";
- 			else
-				document.getElementById("listings").rows[i].style.display = "none";
+			if (document.getElementById("listings").rows[i].className == "blank_row") {
+				if (prev_visible_class == "blank_row") {
+					document.getElementById("listings").rows[i].style.display = "none";
+				} else {
+					document.getElementById("listings").rows[i].style.display = "";
+				}
+				prev_visible_class = "blank_row";
+			} else {
+	 			if (document.getElementById(document.getElementById("listings").rows[i].className).checked) {
+					document.getElementById("listings").rows[i].style.display = "";
+					prev_visible_class = document.getElementById("listings").rows[i].className;
+	 			} else {
+					document.getElementById("listings").rows[i].style.display = "none";
+				}
+			}
       	}
 	}
 // -->
@@ -52,6 +65,15 @@ class Theme_scheduled_recordings extends Theme {
 	<td><a href="scheduled_recordings.php?sortby=length">length</a></td>
 </tr><?
 	$row = 0;
+	$group_field = $_GET['sortby'];
+	if ($group_field == "") {
+	    $group_field = "airdate";
+	} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
+		$group_field = "";
+	}
+	$prev_group="";
+	$cur_group="";
+
 	foreach ($All_Shows as $show) {
 	// Reset the command variable to a default URL
 		$commands = array();
@@ -148,6 +170,21 @@ class Theme_scheduled_recordings extends Theme {
 </table>
 </div>";
 		}
+
+	// Print a dividing row if grouping changes
+	if ($group_field == "airdate")
+	    $cur_group = date("d m Y", $show->starttime);
+	elseif ($group_field == "channum")
+		$cur_group = $show->channel->name;
+	elseif ($group_field == "title")
+		$cur_group = $show->title;
+
+	if ( $row > 0 && $cur_group != $prev_group && $group_field != '' ) {
+?><tr>
+	<td colspan="6" class="no_padding"><img src="<?php echo theme_dir?>img/src.php" height="5" width="1" border="0"></td>
+</tr><?
+	}
+
 	// Print the content
 	?><tr class="<?=$class?>">
 	<td class="<?=$show->class?>"><?php
@@ -167,6 +204,7 @@ class Theme_scheduled_recordings extends Theme {
 	<td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?=$command?></td>
 <?	} ?>
 </tr><?
+		$prev_group = $cur_group;
 		$row++;
 	}
 ?>

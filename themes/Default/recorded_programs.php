@@ -80,7 +80,33 @@ class Theme_recorded_programs extends Theme {
 	<td><a href="recorded_programs.php?sortby=filesize">file&nbsp;size</a></td>
 </tr><?php
 	$row = 0;
+
+	// Setup for grouping by various sort orders
+	$group_field = $_GET['sortby'];
+	if ($group_field == "") {
+	    $group_field = "airdate";
+	} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
+		$group_field = "";
+	}
+	$prev_group="";
+	$cur_group="";
+
 	foreach ($All_Shows as $show) {
+
+	// Print a dividing row if grouping changes
+	if ($group_field == "airdate")
+	    $cur_group = date("d m Y", $show->starttime);
+	elseif ($group_field == "channum")
+		$cur_group = $show->channel->name;
+	elseif ($group_field == "title")
+		$cur_group = $show->title;
+
+	if ( $row > 0 && $cur_group != $prev_group && $group_field != '' ) {
+?><tr class="blank_row">
+	<td colspan="9" class="no_padding"><img src="<?php echo theme_dir?>img/src.php" height="5" width="1" border="0"></td>
+</tr><?
+	}
+
 	?><tr class="recorded">
 	<td><?php
 		if (show_recorded_pixmaps) {
@@ -105,6 +131,7 @@ class Theme_recorded_programs extends Theme {
 		<a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete</a></td>
 <?php	} ?>
 </tr><?
+		$prev_group = $cur_group;
 		$row++;
 	}
 ?>
