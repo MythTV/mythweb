@@ -22,6 +22,9 @@
 		if ($_POST['time_format'])          $_SESSION['time_format']          = $_POST['time_format'];
 	// Save the theme
 		if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
+    // Recorded Programs
+        if ($_POST['recorded_descunder'])   $_SESSION['recorded_descunder']   = $_POST['recorded_descunder'];
+        else                                $_SESSION['recorded_descunder']   = "";
 	}
 
 // Load the class for this page

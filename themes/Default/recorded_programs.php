@@ -74,6 +74,7 @@ if ($group_field == "") {
 } elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate")) ) {
 	$group_field = "";
 }
+
 ?>
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
@@ -86,7 +87,10 @@ if ($group_field == "") {
 ?>
 	<td><a href="recorded_programs.php?sortby=title"><?php echo _LANG_TITLE?></a></td>
 	<td><a href="recorded_programs.php?sortby=subtitle"><?php echo _LANG_SUBTITLE?></a></td>
-	<td><a href="recorded_programs.php?sortby=description"><?php echo _LANG_DESCRIPTION?></a></td>
+<?php
+	if ($_SESSION['recorded_descunder'] != "on")
+		echo "\t<td><a href=\"recorded_programs.php?sortby=description\">"._LANG_DESCRIPTION."</a></td>\n";
+?>
 	<td><a href="recorded_programs.php?sortby=channum"><?php echo _LANG_STATION?></a></td>
 	<td><a href="recorded_programs.php?sortby=airdate"><?php echo _LANG_AIRDATE?></a></td>
 	<td><a href="recorded_programs.php?sortby=length"><?php echo _LANG_LENGTH?></a></td>
@@ -115,9 +119,15 @@ if ($group_field == "") {
 ?><tr class="recorded">
 <?php
 	if ($group_field != "")
-		echo "\t<td class=\"list\">&nbsp;</td>\n";
+        if ($_SESSION['recorded_descunder'] != "on")
+		    echo "\t<td class=\"list\">&nbsp;</td>\n";
+        else
+		    echo "\t<td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
 	if (show_recorded_pixmaps) {
-		echo "\t<td>";
+        if ($_SESSION['recorded_descunder'] != "on")
+    	    echo "\t<td>";
+        else
+		    echo "\t<td rowspan=\"2\">";
 		generate_preview_pixmap($show);
 		if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
 			if (@file_exists(video_dir.'/'.basename($show->filename)))
@@ -133,7 +143,10 @@ if ($group_field == "") {
 	?>
 	<td><?php echo $show->title?></td>
 	<td><?php echo $show->subtitle?></td>
-	<td><?php echo $show->description?></td>
+<?php
+    if ($_SESSION['recorded_descunder'] != "on")
+        echo("<td>".$show->description."</td>");
+?>
 	<td><?php echo $show->channame?></td>
 	<td nowrap><?php echo date($_SESSION['date_recorded'], $show->starttime)?></td>
 	<td nowrap><?php echo nice_length($show->length)?></td>
@@ -145,6 +158,8 @@ if ($group_field == "") {
 		<a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>"><?php echo _LANG_DELETE?></a></td>
 <?php	} ?>
 </tr><?
+		if ($_SESSION['recorded_descunder'] == "on")
+			echo("<tr class=\"recorded\">\n\t<td colspan=\"7\">".$show->description."</td>\n</tr>");
 		$prev_group = $cur_group;
 		$row++;
 	}
