@@ -95,7 +95,7 @@ class Theme_channel_detail extends Theme {
                 $additional .= $show->starstring;
             }
             if ($additional)
-                $additional = ', (' . $additional . ')';
+                $additional = ' (' . $additional . ')';
         }
 
     // Print the content

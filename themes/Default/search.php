@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    search.php                    Last Updated: 2004.04.12 (xris)
+    search.php                               Last Updated: 2004.05.23 (xris)
 
     This file defines a theme class for the search section.
     It must define one method.   documentation will be added someday.
@@ -19,7 +19,7 @@ class Theme_search extends Theme {
 <table class="command command_border_l command_border_t command_border_b command_border_r" align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
     <td align="right"><?php echo _LANG_SEARCH?>:</td>
-    <td><input type="text" name="searchstr" size="15" value="<?php echo $_SESSION['search']['searchstr']?>"></td>
+    <td><input type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>"></td>
     <td>&nbsp; <input type="submit" class="submit" value="<?php echo _LANG_SEARCH?>"></td>
     <td align="right"><input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : ''?>></td>
     <td onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><a><?php echo _LANG_TITLE?></a></td>
@@ -114,7 +114,7 @@ class Theme_search extends Theme {
             $additional .= $show->starstring;
         }
         if ($additional)
-            $additional = ', (' . $additional . ')';
+            $additional = ' (' . $additional . ')';
     }
 
     // Print the content

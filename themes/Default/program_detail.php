@@ -50,7 +50,7 @@ class Theme_program_detail extends Theme {
                     ?></td>
             <td width="24px">&nbsp;</td>
             <td><span class="huge"><a href="search.php?searchstr=<?php echo urlencode($this_program->title)?>&search_title=yes">"<?php echo $this_program->title?>"</a>
-                <?php if (strlen($this_program->starstring) > 0) echo ", $this_program->starstring";?>
+                <?php if (strlen($this_program->starstring) > 0) echo " $this_program->starstring";?>
                 </span><BR>
                 <span class="small">
                 <?php

@@ -485,7 +485,7 @@ class Program {
             $class .= $cache[$category] = 'cat_Reality';
         elseif (preg_match('/'._LANG_CATMATCH_ROMANCE.'/', $category))
             $class .= $cache[$category] = 'cat_Romance';
-        elseif (preg_match('/'._LANG_CATMATCH_SCIENCE_NATURE.'/', $category))
+        elseif (preg_match('/'._LANG_CATMATCH_SCIFI_FANTASY.'/', $category))
             $class .= $cache[$category] = 'cat_SciFi_Fantasy';
         elseif (preg_match('/'._LANG_CATMATCH_SCIENCE_NATURE.'/', $category))
             $class .= $cache[$category] = 'cat_Science_Nature';

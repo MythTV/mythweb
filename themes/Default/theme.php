@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2004.05.04 (xris)
+    theme.php                             Last Updated: 2004.05.23 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -90,7 +90,7 @@ class Theme {
                 <form action="search.php" method="post">
                 <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td><input type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr']) ?>"></td>
+                    <td><input type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>"></td>
                     <td>&nbsp; <input type="submit" class="submit" value="<?php echo _LANG_SEARCH?>"></td>
                 </tr>
                 <tr>
