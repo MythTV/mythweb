@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythbackend.php                          Last Updated: 2005.02.09 (xris)
+    mythbackend.php                          Last Updated: 2005.01.31 (xris)
 
     Routines that allow mythweb to communicate with mythbackend
 \***                                                                        ***/
@@ -14,7 +14,7 @@
 
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
-    $MYTH_PROTO_VERSION = "14";
+    define('MYTH_PROTO_VERSION', 14);
 
 // NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
 // the number of items in a ProgramInfo QStringList group used by
@@ -67,20 +67,41 @@
     executes the requested command and returns the backend's response string
     JS: haven't tested UTF-8
 */
-    function backend_command($command) {
-    // Use a static file pointer so we can leave the same connection open
-        static $fp;
-        return backend_command2($command, $fp);
+    function backend_command($command, $host = NULL, $port = NULL) {
+        global $Master_Host, $Master_Port;
+    // Use a static cache of hosts
+        static $cache;
+        if (!$cache)
+            $cache = array($Master_Host => array($Master_Port => $fp));
+    // Default values
+        if (!$host || !$port) {
+            $host = $Master_Host;
+            $port = $Master_Port;
+        }
+    // Need a new file pointer?
+        if (!$cache[$host][$port]) {
+            $cache[$host][$port] = NULL;
+        }
+    // Execute the command
+        return backend_command2($command, $cache[$host][$port], $host, $port);
     }
 
     // A second backend command, so we can allow certain routines to use their own file pointer
-    function backend_command2($command, &$fp) {
-        global $Master_Host, $Master_Port;
+    function backend_command2($command, &$fp, $host=NULL, $port=NULL) {
+    // Command is an array -- join it
+        if (is_array($command))
+            $command = implode(backend_sep, $command);
+    // Default values
+        if (!$host || !$port) {
+            global $Master_Host, $Master_Port;
+            $host = $Master_Host;
+            $port = $Master_Port;
+        }
     // Open a connection to the master backend, unless we've already done so
         if (!$fp) {
-            $fp = fsockopen($Master_Host, $Master_Port, $errno, $errstr, 25);
+            $fp = fsockopen($host, $port, $errno, $errstr, 25);
             if ($fp)
-                check_proto_version($fp);
+                check_proto_version($host, $port);
         }
     // Connection opened, let's do something
         if ($fp) {
@@ -88,7 +109,7 @@
         // The format should be <length + whitespace to 8 total bytes><data>
             $command = strlen($command) . str_repeat(' ', 8 - strlen(strlen($command))) . $command;
         // If we don't get a response back in 4 seconds, something went wrong
-            socket_set_timeout($fp, 25);
+            socket_set_timeout($fp, 4);
         // Send our command
             fputs ($fp, $command);
         // Did we send the close command?  Close the socket and set the file pointer to null - don't even bother waiting for a response
@@ -102,8 +123,7 @@
         // Read and return any data that was returned
             $ret = '';
             while ($length > 0) {
-                $size = min(8192, $length);
-                $data = fread($fp, $size);
+                $data = fread($fp, min(8192, $length));
                 if (strlen($data) < 1)
                     break; // EOF
                 $ret .= $data;
@@ -118,19 +138,25 @@
         check_proto_version:
         Check that we are speaking a version of the protocol that is compatible with the backend
 */
-    function check_proto_version($fp) {
-        global $MYTH_PROTO_VERSION;
-        $our_version = $MYTH_PROTO_VERSION;
-        $cmd = "MYTH_PROTO_VERSION " . $our_version;
-        $response = explode(backend_sep, backend_command2($cmd, $fp));
-        if ($response[0] == "ACCEPT")
+    function check_proto_version($host, $port) {
+        static $cache;
+        if (!$cache)
+            $cache = array();
+    // Cache?
+        if ($cache[$host][$port])
             return;
-        if ($response[0] == "REJECT")
-        {
-            trigger_error("Incompatible protocol version (mythweb=" . $our_version . ", backend=" . $response[1] . ")");
+    // No cache
+        $cmd = 'MYTH_PROTO_VERSION '.MYTH_PROTO_VERSION;
+        $response = explode(backend_sep, backend_command($cmd, $host, $port));
+        if ($response[0] == "ACCEPT") {
+            $cache[$host][$port] = true;
             return;
         }
-        trigger_error("Unexpected response to MYTH_PROTO_VERSION '" . $cmd . "': " . $response[0]);
+        if ($response[0] == "REJECT") {
+            trigger_error("Incompatible protocol version (mythweb=" . MYTH_PROTO_VERSION . ", backend=" . $response[1] . ")");
+            return;
+        }
+        trigger_error("Unexpected response to MYTH_PROTO_VERSION '$cmd': ".$response[0]);
     }
 
 /*
@@ -202,82 +228,90 @@
             unlink($pngpath);
             clearstatcache();
         }
-    // Need
+    // Need a new pixmap?
         if (!is_file($pngpath)) {
             $hostname = chop(`hostname`);
+            $host     = $GLOBALS['Master_Host'];
+            $port     = $GLOBALS['Master_Port'];
             if (substr($fileurl, 0, 7) != 'myth://') {
                 $generate_pixmap = (is_file("$fileurl.png") && is_readable("$fileurl.png")) ? false : true;
+                $path = $fileurl;
             }
             else {
-                $recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
-                                                              $datasocket));
-                $generate_pixmap = (0 == $recs[3]);
+                preg_match('#myth://(.+?):(\d+)/(.+)$#', $fileurl, $matches);
+                list($matches, $host, $port, $path) = $matches;
+                $recs = explode(backend_sep, backend_command2(array("ANN FileTransfer $hostname", "$fileurl.png",
+                                                              $datasocket,
+                                                              $host, $port));
+                $generate_pixmap = (0 == $recs[3]) ? true : false;
             }
 
             if ($generate_pixmap) {
                 if ($datasocket) {
-                    #backend_command2('DONE', $datasocket);
                     fclose($datasocket);
                     $datasocket = NULL;
                 }
 
-                $cmd = 'QUERY_GENPIXMAP'              .backend_sep
-                      .' '                            .backend_sep  // title
-                      .' '                            .backend_sep  // subtitle
-                      .' '                            .backend_sep  // description
-                      .' '                            .backend_sep  // category
-                      .$show->chanid                  .backend_sep  // chanid
-                      .' '                            .backend_sep  // chanstr
-                      .' '                            .backend_sep  // chansign
-                      .' '                            .backend_sep  // channame
-                      .$show->filename                .backend_sep  // filename
-                      .'0'                            .backend_sep  // upper 32 bits
-                      .'0'                            .backend_sep  // lower 32 bits
-                      .$show->starttime               .backend_sep  // starttime
-                      .$show->endtime                 .backend_sep  // endtime
-                      .'0'                            .backend_sep  // conflicting
-                      .'1'                            .backend_sep  // recording
-                      .'0'                            .backend_sep  // duplicate
-                      .$show->hostname                .backend_sep  // hostname
-                      .'-1'                           .backend_sep  // sourceid
-                      .'-1'                           .backend_sep  // cardid
-                      .'-1'                           .backend_sep  // inputid
-                      .' '                            .backend_sep  // recpriority
-                      .' '                            .backend_sep  // recstatus
-                      .' '                            .backend_sep  // recordid
-                      .' '                            .backend_sep  // rectype
-                      .'15'                           .backend_sep  // dupin
-                      .'6'                            .backend_sep  // dupmethod
-                      .$show->starttime               .backend_sep  // recstarttime
-                      .$show->endtime                 .backend_sep  // recendtime
-                      .' '                            .backend_sep  // repeat
-                      .' '                            .backend_sep  // program flags
-                      .' '                            .backend_sep  // recgroup
-                      .' '                            .backend_sep  // commfree
-                      .' '                            .backend_sep  // chanoutputfilters
-                      .$show->seriesid                .backend_sep  // seriesid
-                      .$show->programid               .backend_sep  // programid
-                      .$show->starttime               .backend_sep  // dummy lastmodified
-                      .'0'                            .backend_sep  // dummy stars
-                      .$show->starttime               .backend_sep; // dummy org airdate
-
+                $cmd = array('QUERY_GENPIXMAP',
+                             ' ',                 // title
+                             ' ',                 // subtitle
+                             ' ',                 // description
+                             ' ',                 // category
+                             $show->chanid,       // chanid
+                             ' ',                 // chanstr
+                             ' ',                 // chansign
+                             ' ',                 // channame
+                             $show->filename,     // filename
+                             '0',                 // upper 32 bits
+                             '0',                 // lower 32 bits
+                             $show->starttime,    // starttime
+                             $show->endtime,      // endtime
+                             '0',                 // conflicting
+                             '1',                 // recording
+                             '0',                 // duplicate
+                             $show->hostname,     // hostname
+                             '-1',                // sourceid
+                             '-1',                // cardid
+                             '-1',                // inputid
+                             ' ',                 // recpriority
+                             ' ',                 // recstatus
+                             ' ',                 // recordid
+                             ' ',                 // rectype
+                             '15',                // dupin
+                             '6',                 // dupmethod
+                             $show->starttime,    // recstarttime
+                             $show->endtime,      // recendtime
+                             ' ',                 // repeat
+                             ' ',                 // program flags
+                             ' ',                 // recgroup
+                             ' ',                 // commfree
+                             ' ',                 // chanoutputfilters
+                             $show->seriesid,     // seriesid
+                             $show->programid,    // programid
+                             $show->starttime,    // dummy lastmodified
+                             '0',                 // dummy stars
+                             $show->starttime,    // dummy org airdate
+                             '',                  // trailing separator
+                            );
                 $ret = backend_command($cmd);
 
-
-                $recs = explode(backend_sep, backend_command2('ANN FileTransfer '.$hostname.backend_sep.$fileurl.'.png',
-                                                              $datasocket));
+                $recs = explode(backend_sep, backend_command2(array("ANN FileTransfer $hostname", "$fileurl.png"),
+                                                              $datasocket,
+                                                              $host, $port));
             }
 
             if (substr($fileurl, 0, 7) != 'myth://' && is_file("$fileurl.png") && is_readable("$fileurl.png")) {
                 copy("$fileurl.png", $pngpath);
             }
             elseif ($datasocket && $recs[3]) {
-                $cmd = "QUERY_FILETRANSFER " . $recs[1] . backend_sep . 'REQUEST_BLOCK' . backend_sep . $recs[3];
-                $ret = backend_command($cmd);
+                backend_command("ANN Playback $hostname 0",
+                                $host, $port);
+                backend_command(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
+                                $host, $port);
 
                 $length = $recs[3];
-                $data = '';
-                while($length > 0) {
+                $data   = '';
+                while ($length > 0) {
                     $size = min(8192, $length);
                     $data = fread($datasocket, $size);
                     if (strlen($data) < 1)
@@ -339,7 +373,7 @@ function getCardStatus() {
     $inputresult = mysql_query($inputquery) or die("Couldn't open the channel table in the mythconverg database.");
     while ($inputline = mysql_fetch_array($inputresult, MYSQL_ASSOC)) {
         $line = $inputline['cardid'];
-        $recording = backendCommand("QUERY_RECORDER " . $line . backend_sep . "IS_RECORDING");
+        $recording = backendCommand(array("QUERY_RECORDER $line", 'IS_RECORDING'));
         $idStatus[$line] = $recording;
     }
     mysql_free_result($inputresult);
