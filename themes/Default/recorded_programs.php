@@ -56,7 +56,7 @@ class Theme_recorded_programs extends Theme {
 			echo '<option value="'.$title.'"';
 			if ($_GET['title'] == $title)
 				echo ' SELECTED';
-			echo '>'.$title.($count > 1 ? " ($count "._LANG_EPISODES.")" : "").'</option>';
+			echo '>'.htmlentities($title).($count > 1 ? " ($count "._LANG_EPISODES.")" : "").'</option>';
 		}
 		?>
 	</select></td>
