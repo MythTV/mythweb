@@ -80,7 +80,7 @@ subdirectory, you should do something like
 	cp -r . /wwww/htdocs/myMythWebDirectory
 
     Next, you need to make sure that your web server can write to a couple of
-directories.  This should be as simple as:
+directories.  This should be as simple as:  **
 
     chgrp -R apache /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
     chmod g+rw /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
@@ -89,6 +89,10 @@ directories.  This should be as simple as:
 set are included in the file). That's it. Point your web browser at
 http://{whatever your machine is called}/{the directory off htdocs where you
 copied the files}. What could be simpler?
+
+	** Some distributions run apache as "nobody/nogroup" so please be aware
+	   that you may need to consult your /etc/httpd/httpd.conf file to verify
+	   which user/group apache is set to run as.
 
 
 3.0 FAQs
