@@ -12,7 +12,7 @@ class Theme_status extends Theme {
     // Load this page's custom stylesheet
         $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'status.css" />';
     // Print the main page header
-        parent::print_header("MythWeb - Schedule Manually");
+        parent::print_header($title);
     // Print the page contents
         echo "<div id=\"content_wrapper\">\n"
             .$content
