@@ -54,29 +54,36 @@ class Theme_scheduled_recordings extends Theme {
 	$row = 0;
 	foreach ($All_Shows as $show) {
 	// Reset the command variable to a default URL
-		$command = '';
-		$urlstr = 'title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'&recordid='.$show->recordid;
+		$commands = array();
+		$urlstr = 'chanid='.$show->chanid.'&starttime='.$show->starttime;
 	// Which class does this show fall into?
 # This needs a major overhaul, to support the new recording schedule types, etc
 		if ($show->norecord == 'PreviousRecording' || $show->norecord == 'CurrentRecording') {
 			$class = 'duplicate';
-			$command = '<a href="scheduled_recordings.php?rerecord=yes&'.$urlstr.'">Rerecord</a>';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record This</a>';
+			$commands[] = '<a href="scheduled_recordings.php?forget_old=yes&'.$urlstr.'">Forget Old</a>';
 		}
 		elseif ($show->conflicting == 1) {
 			$class   = 'conflict';
-			$command = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record</a>';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Record This</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
 		}
-		elseif ($show->recording == 0) {
+		elseif ($show->norecord == 'AutoConflict') {
 			$class   = 'deactivated';
-			$command = '<a href="scheduled_recordings.php?activate=yes&'.$urlstr.'">Activate</a>';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Activate</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
+		}
+		elseif ($show->recording == 0 || $show->norecord) {
+			$class   = 'deactivated';
+			$commands[] = '<a href="scheduled_recordings.php?record=yes&'.$urlstr.'">Activate</a>';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
 		}
 		else {
 			$class   = 'scheduled';
+			$commands[] = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
 		// Offer to suppress any recordings that have enough info to do so.
 			if (preg_match('/\\S/', $show->title) && preg_match('/\\S/', $show->subtitle) && preg_match('/\\S/', $show->description))
-				$command = '<a href="scheduled_recordings.php?suppress=yes&'.$urlstr.'">Don\'t&nbsp;Record</a>';
-			else
-				$command = '';
+				$commands[] = '<a href="scheduled_recordings.php?never_record=yes&'.$urlstr.'">Never&nbsp;Record</a>';
 		}
 	// Build a popup table for the mouseover of the cell, with extra program information?
 		if (show_popup_info) {
@@ -132,6 +139,10 @@ class Theme_scheduled_recordings extends Theme {
 			<td align=\"right\">Profile:</td>
 			<td>$show->profile</td>
 		</tr>" : '')
+		.($show->norecord ? "<tr>
+			<td align=\"right\">Not recording:</td>
+			<td>".$GLOBALS['No_Record_Reasons'][$show->norecord].' ('.$show->norecord.")</td>
+		</tr>" : '')
 		."</table></td>
 </tr>
 </table>
@@ -152,8 +163,8 @@ class Theme_scheduled_recordings extends Theme {
 	<td><?=$show->channel->name?></td>
 	<td nowrap><?=date($_SESSION['date_scheduled'], $show->starttime)?></td>
 	<td nowrap><?=nice_length($show->length)?></td>
-<?	if ($command) { ?>
-	<td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?=$command?></td>
+<?	foreach ($commands as $command) { ?>
+	<td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?=$command?></td>
 <?	} ?>
 </tr><?
 		$row++;

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2003.11.22 (xris)
+    programs.php                             Last Updated: 2003.12.03 (xris)
 
 	This contains the Program class
 \***                                                                        ***/
@@ -10,16 +10,28 @@
 
 // Reasons a recording wouldn't be happening (from libs/libmythtv/programinfo.h)
 	$No_Record_Types = array('Unknown',				# 0
-							 'ManualOverride',      # 1		it was manually set to not record
-							 'PreviousRecording',   # 2     this episode was previously recorded according to the duplicate policy chosen for this title
-							 'CurrentRecording',    # 3     this episode was previously recorded and is still available in the list of recordings
-							 'OtherShowing',        # 4     this episode will be recorded at another time instead
-							 'TooManyRecordings',   # 5     too many recordings of this program have already been recorded
-							 'DontRecordList',      # 6     it is currently being recorded or was manually canceled
-							 'LowerRecPriority',    # 7     another program with a higher recording priority will be recorded
-							 'ManualConflict',      # 8     another program was manually chosen to be recorded instead
-							 'AutoConflict',        # 9     another program was automatically chosen to be recorded instead
-							 'Overlap');            # 10    it is covered by another scheduled recording for the same program
+							 'ManualOverride',      # 1
+							 'PreviousRecording',   # 2
+							 'CurrentRecording',    # 3
+							 'OtherShowing',        # 4
+							 'TooManyRecordings',   # 5
+							 'DontRecordList',      # 6
+							 'LowerRecPriority',    # 7
+							 'ManualConflict',      # 8
+							 'AutoConflict',        # 9
+							 'Overlap');            # 10
+
+	$No_Record_Reasons = array();
+	$No_Record_Reasons['ManualOverride']    = 'This was manually set to not record';
+	$No_Record_Reasons['PreviousRecording'] = 'This episode was previously recorded according to the duplicate policy chosen for this title';
+	$No_Record_Reasons['CurrentRecording']  = 'This episode was previously recorded and is still available in the list of recordings';
+	$No_Record_Reasons['OtherShowing']      = 'This episode will be recorded at another time instead';
+	$No_Record_Reasons['TooManyRecordings'] = 'Ttoo many recordings of this program have already been recorded';
+	$No_Record_Reasons['DontRecordList']    = 'This is currently being recorded or was manually canceled';
+	$No_Record_Reasons['LowerRecPriority']  = 'Another program with a higher recording priority will be recorded';
+	$No_Record_Reasons['ManualConflict']    = 'Another program was manually chosen to be recorded instead';
+	$No_Record_Reasons['AutoConflict']      = 'Another program was automatically chosen to be recorded instead';
+	$No_Record_Reasons['Overlap']           = 'This is covered by another scheduled recording for the same program';
 
 /*
 	load_one_program:
@@ -311,7 +323,9 @@ class Program {
 			if ($Pending_Programs[$this->chanid][$this->starttime]) {
 				$this->conflicting = $Pending_Programs[$this->chanid][$this->starttime][13] ? true : false;
 				$this->recording   = $Pending_Programs[$this->chanid][$this->starttime][14] ? true : false;
+				$this->recpriority = $Pending_Programs[$this->chanid][$this->starttime][20];
 				$this->norecord    = $Pending_Programs[$this->chanid][$this->starttime][21];
+				$this->recordid    = $Pending_Programs[$this->chanid][$this->starttime][22];
 			}
 		// We get various recording-related information, too
 			if ($program_data['record_always'])
@@ -332,8 +346,10 @@ class Program {
 									  || $this->record_always ) ? true : false;
 		}
 	// Turn norecord into a word
-		if (strlen($this->norecord) > 0)
+		if ($this->norecord > 0)
 			$this->norecord = $GLOBALS['No_Record_Types'][$this->norecord];
+		else
+			$this->norecord = NULL;
 	// Do we have a chanid?  Load some info about it
 		if ($this->chanid && !isset($this->channel)) {
 		// No channel data?  Load it
