@@ -17,6 +17,7 @@ define ('_LANG_FAVOURITES',             'お気に入り');
 define ('_LANG_SCHEDULED_RECORDINGS',   '録画予定');
 define ('_LANG_RECORDING_SCHEDULES',    '録画予約');
 define ('_LANG_RECORDED_PROGRAMS',      '録画番組');
+define ('_LANG_MANUALLY_SCHEDULE',    'マニュアル予約');
 define ('_LANG_CATEGORY_LEGEND',        'カテゴリー凡例');
 define ('_LANG_ACTION',                 'アクション');
 define ('_LANG_ADULT',                  'アダルト');
