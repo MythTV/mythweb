@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    utils.php                                Last Updated: 2004.11.29 (xris)
+    utils.php                                Last Updated: 2005.02.10 (xris)
 
     utility routines used throughout mythweb
 \***                                                                        ***/
@@ -112,10 +112,18 @@ function nice_length($length) {
         // Mac and Linux just get a link to the direectory
             if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
                 define('video_url', video_dir);
-        // Windows gets a myth:// url
+        // Windows likely gets a myth:// url
             else {
                 global $Master_Host, $Master_Port;
-                define('video_url', "myth://$Master_Host:$Master_Port");
+            // Is either the browser xor the master in an rfc 1918 zone?
+                if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
+                        xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
+                    define('video_url', video_dir);
+                }
+            // Send the myth url
+                else {
+                    define('video_url', "myth://$Master_Host:$Master_Port");
+                }
             }
         }
     // Return
