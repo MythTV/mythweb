@@ -70,9 +70,9 @@
     // Open a connection to the master backend, unless we've already done so
         if (!$fp) {
             $fp = fsockopen($host, $port, $errno, $errstr, 25);
-                        if ($fp)
-                                check_proto_version($fp);
-                }
+            if ($fp)
+                check_proto_version($fp);
+        }
     // Connection opened, let's do something
         if ($fp) {
         // Build the command string
