@@ -14,7 +14,8 @@
 						2 => 'Daily',
 						3 => 'Channel',
 						4 => 'Always',
-						5 => 'Weekly'
+						5 => 'Weekly',
+                        6 => 'FindOne'
 					 );
 
 /*

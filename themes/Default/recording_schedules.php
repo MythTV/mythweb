@@ -122,7 +122,8 @@ if ($group_field == "") {
 					: ($show->record_weekly  ? "Always record on this channel at this time on this day of the week"
 					: ($show->record_once    ? "Will be recorded once"
 					: ($show->record_channel ? "Always record on this channel"
-					: "Always record"))))."</td>
+					: ($show->record_findone ? "Record one showing of this program at any time"
+					: "Always record")))))."</td>
 		</tr>" : '')
 		.(preg_match('/\\S/', $show->profile) ? "<tr>
 			<td align=\"right\">Profile:</td>

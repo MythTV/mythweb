@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	program_detail.php                       Last Updated: 2004.02.04 (xris)
+	program_detail.php                       Last Updated: 2004.02.05 (xris)
 
 	This file defines a theme class for the program details section.
 	It must define one method.   documentation will be added someday.
@@ -125,7 +125,7 @@ class Theme_program_detail extends Theme {
 				<br/>
 				<input type="radio" class="radio" name="record" value="findone" id="record_findone"<?php echo
 				$this_program->record_findone ? ' CHECKED' : ''?>></input>
-				<a onclick="get_element('record_always').checked=true;">Record one showing of this program at any time.</a>
+				<a onclick="get_element('record_findone').checked=true;">Record one showing of this program at any time.</a>
 		</td></tr>
 		<tr><td><p>
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
