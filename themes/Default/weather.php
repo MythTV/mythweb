@@ -23,20 +23,20 @@ class Theme_weather extends Theme {
 				<div style="float: left; width: 220px; text-align: center;margin: 1em;padding: 5px;">
 					<img src="themes/Default/img/weather/<?php echo $site->ConditionImage; ?>" style="behavior: url('<?=theme_dir?>pngbehavior.htc');" />
 					<p style="font-size: 150%;margin: 0;padding: .3em 0"><?php echo $site->ConditionText; ?></p>
-					<p style="font-size: 250%;margin: 0;"><?php echo $site->Temperature; ?><span style="vertical-align: text-top;font-size:50%;">O</span><span><?php if($site->use_metric == "Yes") echo " C"; else echo " F"; ?></span></p>
+					<p style="font-size: 250%;margin: 0;"><?php echo $site->Temperature; ?><span style="vertical-align: text-top;font-size:50%;">O</span><span><?php if($site->use_metric == "YES") echo " C"; else echo " F"; ?></span></p>
 				</div>
 
 				<table border="0" style="width: 300px; margin-top: 1em; line-height: 1.7em;">
 					<tr>	<td><?php echo _LANG_HUMIDITY; ?></td>
 						<td style="text-align: right;"><?php echo $site->Humidity; ?>%</td></tr>
 					<tr>	<td><?php echo _LANG_PRESSURE; ?></td>
-						<td style="text-align: right;"><?php echo $site->BarometricPressure; if($site->use_metric == "Yes") echo " cm"; else echo " in"; ?> </td></tr>
+						<td style="text-align: right;"><?php echo $site->BarometricPressure; if($site->use_metric == "YES") echo " cm"; else echo " in"; ?> </td></tr>
 					<tr>	<td><?php echo _LANG_WIND; ?></td>
-						<td style="text-align: right;"><?php echo $site->WindDirection . " " . _LANG_AT . " " .  $site->WindSpeed; if($site->use_metric == "Yes") echo " kph"; else echo " mph"; ?></td></tr>
+						<td style="text-align: right;"><?php echo $site->WindDirection . " " . _LANG_AT . " " .  $site->WindSpeed; if($site->use_metric == "YES") echo " kph"; else echo " mph"; ?></td></tr>
 					<tr>	<td><?php echo _LANG_VISIBILITY; ?></td>
-						<td style="text-align: right;"><?php echo $site->Visibility; if($site->use_metric == "Yes") echo " km"; else echo " mi"; ?></td></tr>
+						<td style="text-align: right;"><?php echo $site->Visibility; if($site->use_metric == "YES") echo " km"; else echo " mi"; ?></td></tr>
 					<tr>	<td><?php echo _LANG_WIND_CHILL; ?></td>
-						<td style="text-align: right;"><?php echo $site->Real; if($site->use_metric == "Yes") echo " C"; else echo " F"; ?></td></tr>
+						<td style="text-align: right;"><?php echo $site->Real; if($site->use_metric == "YES") echo " C"; else echo " F"; ?></td></tr>
 					<tr>	<td><?php echo _LANG_UV_INDEX; ?></td>
 						<td style="text-align: right;"><?php echo $site->UV . " (";
 						if($site->UV < 3) echo _LANG_UV_MINIMAL;
@@ -88,8 +88,8 @@ class Theme_weather extends Theme {
 					<p style="margin:0;padding: .3em 0 .3em 0;font-size: 125%"><?php echo $forecast->DescText; ?></p>
 					<table style="width: 200px; text-align: center;" border="0">
 						<tr><th><?php echo _LANG_LOW; ?></th><th><?php echo _LANG_HIGH; ?></th></tr>
-						<tr><td><p style="font-size: 150%;margin: 0;"><?php echo $forecast->LowTemperature; ?><span style="vertical-align: text-top;font-size: 50%;">O</span><span><?php if($site->use_metric == "Yes") echo " C"; else echo " F"; ?></span></p></td>
-						<td><p style="font-size: 150%;margin: 0;"><?php echo $forecast->HighTemperature; ?><span style="vertical-align: text-top;font-size: 50%;">O</span><span><?php if($site->use_metric == "Yes") echo " C"; else echo " F"; ?></span></p></td></tr>
+						<tr><td><p style="font-size: 150%;margin: 0;"><?php echo $forecast->LowTemperature; ?><span style="vertical-align: text-top;font-size: 50%;">O</span><span><?php if($site->use_metric == "YES") echo " C"; else echo " F"; ?></span></p></td>
+						<td><p style="font-size: 150%;margin: 0;"><?php echo $forecast->HighTemperature; ?><span style="vertical-align: text-top;font-size: 50%;">O</span><span><?php if($site->use_metric == "YES") echo " C"; else echo " F"; ?></span></p></td></tr>
 					</table>
 				</div>
 			<?php	}

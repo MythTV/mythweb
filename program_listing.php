@@ -47,5 +47,5 @@
 // Create an instance of this page from its theme object
     $Page = new Theme_program_listing;
 
-    $Page->print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime);
+    $Page->print_page($Channels, $Timeslots, $list_starttime, $list_endtime);
 ?>

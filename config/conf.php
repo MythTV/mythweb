@@ -54,7 +54,7 @@
 
 // Type of url for the links to mythmusic files. Filename will be added to the end.
 // For this to work, create a 'music' symlink in mythweb which points to the path for mythmusic files.
-    define('music_url', music);
+    define('music_url', 'music');
 
 // Path to the mythvideo "covers" directory
     define('video_img_path', '');

@@ -191,7 +191,7 @@
     $Page = new Theme_schedule_manually();
 
 // Display the page
-    $Page->print_page(&$Channels);
+    $Page->print_page($Channels);
 
 // Exit
     exit;

@@ -21,7 +21,10 @@
         $show = new Recording($record);
     // Assign a reference to this show to the various arrays
         $All_Shows[]                 = &$show;
-        $Channels[$show['chanid']][] = &$show;
+        if (is_array($show))
+            $Channels[$show['chanid']][] = &$show;
+        else
+            $Channels[$show->chanid] = &$show;
         unset($show);
     }
 

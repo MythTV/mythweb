@@ -167,7 +167,7 @@ class WeatherSite {
 	}
 
 	//Are we using metric or imperial system
-	if($this->use_metric == "Yes") {
+	if($this->use_metric == "YES") {
 		$this->Temperature = round((5/9) * ($this->Temperature - 32));
 		$this->Real = round((5/9) * ($this->Real - 32));
 		$this->BarometricPressure = round($this->BarometricPressure * 2.54);
@@ -218,7 +218,7 @@ class WeatherSite {
 	    list($forecast->DescImage,$forecast->DescText) = getImageAndDescFromId($data[15 + $i]);
 	    $forecast->DescImage = (strlen($forecast->DescImage) > 0) ? $forecast->DescImage : "unknown.png";
 	    $forecast->DescText = (strlen($forecast->DescText) > 0) ? $forecast->DescText : _LANG_UNKNOWN . " (" . $data[15+$i] . ")";
-	    if($this->use_metric == "Yes") {
+	    if($this->use_metric == "YES") {
 	    	$forecast->HighTemperature = round((5/9) * ($data[20 + $i] - 32));
 	    	$forecast->LowTemperature = round((5/9) * ($data[40 + $i] -32 ));
 	    } else {
