@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    schedule_manually.php                      Last Updated: 2005.02.08 (xris)
+    schedule_manually.php                      Last Updated: 2005.03.09 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -17,30 +17,42 @@
 // Populate the $Channels array
     load_all_channels();
 
-
+// Load an existing schedule?
+    if ($_GET['recordid'] && $Schedules[$_GET['recordid']])
+        $schedule =& $Schedules[$_GET['recordid']];
 // Create a new, empty schedule
-    $schedule = new Schedule(NULL);
+    else
+        $schedule = new Schedule(NULL);
 
 // The user tried to update the recording settings - update the database and the variable in memory
     if (isset($_POST['save'])) {
     // Which type of recording is this?  Make sure an illegal one isn't specified
         switch ($_POST['record']) {
+        // Only certain rectypes are allowed
             case rectype_once:        $type = rectype_once;        break;
             case rectype_daily:       $type = rectype_daily;       break;
-            case rectype_channel:     $type = rectype_channel;     break;
-            case rectype_always:      $type = rectype_always;      break;
             case rectype_weekly:      $type = rectype_weekly;      break;
-            case rectype_findone:     $type = rectype_findone;     break;
-            case rectype_finddaily:   $type = rectype_finddaily;   break;
-            case rectype_findweekly:  $type = rectype_findweekly;  break;
+        // Can override
             case rectype_override:    $type = rectype_override;    break;
             case rectype_dontrec:     $type = rectype_dontrec;     break;
+        // Everything else gets ignored
             default:                  $type = 0;
         }
-    // For now, we only have one schedule type
-        $type = rectype_once;
+    // Cancelling a schedule?
+        if ($type == 0) {
+        // Cancel this schedule
+            if ($schedule && $schedule->recordid) {
+            // Delete the schedule
+                $schedule->delete();
+            // Redirect back to the schedule list
+                add_warning(t('The requested recording schedule has been deleted.'));
+                save_session_errors();
+                header('Location: recording_schedules.php');
+                exit;
+            }
+        }
     // Adding a new schedule
-        if ($type != 0) {
+        else {
         // Make sure we have channel info
             $channel = $Channels[$_POST['channel']];
         // Set things as the user requested
@@ -62,6 +74,9 @@
             $schedule->endtime     = $schedule->starttime + ($_POST['length'] * 60);
             $schedule->description = 'Manually scheduled';
             $schedule->category    = 'Manual recording';
+            $schedule->search      = searchtype_manual;
+            $schedule->findday     = date('w',     $schedule->starttime);
+            $schedule->findtime    = date('H:m:s', $schedule->starttime);
         // Figure out the title
             if (strcasecmp($_POST['title'], 'use callsign') == 0) {
                 if (prefer_channum)
@@ -77,25 +92,21 @@
                                      .' ('.tn('$1 min', '$1 mins', $_POST['length']).')';
             else
                 $schedule->subtitle = $_POST['subtitle'];
-        // Insert a blank program entry so the scheduler has something to match against
-           $result = mysql_query('REPLACE INTO program (chanid,starttime,endtime,title,subtitle,description,category) VALUES ('
-                                        .escape($schedule->chanid)                    .','
-                                        .'FROM_UNIXTIME('.escape($schedule->starttime).'),'
-                                        .'FROM_UNIXTIME('.escape($schedule->endtime)  .'),'
-                                        .escape($schedule->title)                     .','
-                                        .escape($schedule->subtitle)                  .','
-                                        .escape($schedule->description)               .','
-                                        .escape($schedule->category)                  .')')
-                    or trigger_error('SQL Error: '.mysql_error(), FATAL);
         // Save the schedule
             $schedule->save($type);
         // Redirect to the new schedule
-            header('Location: program_detail.php?recordid='.$schedule->recordid);
+            header('Location: schedule_manually.php?recordid='.$schedule->recordid);
             exit;
         }
     }
 // Load default settings for recpriority, autoexpire etc
     else {
+    // Make sure we have a default rectype
+        if (!$schedule->type)
+            $schedule->type = rectype_once;
+    // Date/time/etc
+        if (!$schedule->starttime)
+            $schedule->starttime = time();
     // auto-commercial-flag
         if (!isset($schedule->autocommflag))
             $schedule->autocommflag = get_backend_setting('AutoCommercialFlag');
@@ -113,6 +124,11 @@
         }
     }
 
+// Calculate the length
+    $schedule->length = intval(($schedule->endtime - $schedule->starttime) / 60);
+    if ($schedule->length < 1)
+        $schedule->length = 120;
+
 // Load the class for this page
     require_once theme_dir.'schedule_manually.php';
 
@@ -120,7 +136,7 @@
     $Page = new Theme_schedule_manually();
 
 // Display the page
-    $Page->print_page($Channels);
+    $Page->print_page($schedule, $Channels);
 
 // Exit
     exit;

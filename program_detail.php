@@ -90,8 +90,6 @@
             // Relocate back to the program details page
                 header('Location: program_detail.php?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
             }
-        // Nothing to do -- it wasn't scheduled in the first place
-        //  else { }
         }
     // Modifying an existing schedule, or adding a new one
         else {

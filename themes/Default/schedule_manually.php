@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    schedule_manually.php                    Last Updated: 2005.02.06 (xris)
+    schedule_manually.php                    Last Updated: 2005.03.09 (xris)
 
     This file defines a theme class for the schedule manually section.
     It must define one method.   documentation will be added someday.
@@ -8,7 +8,7 @@
 
 class Theme_schedule_manually extends Theme {
 
-    function print_page(&$Channels) {
+    function print_page(&$schedule, &$Channels) {
         global $this_channel, $this_program;
     // Load this page's custom stylesheet
         $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'schedule_manually.css" />';
@@ -19,20 +19,73 @@ class Theme_schedule_manually extends Theme {
 
     <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
-        <form name="schedule_manually" method="post" action="schedule_manually.php">
+        <form name="schedule_manually" method="post" action="schedule_manually.php<?php if ($schedule->recordid) echo '?recordid='.urlencode($schedule->recordid) ?>">
 
+<?php   if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
         <div id="schedule_options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
+
+            <ul>
+<?php       if ($schedule->recordid) { ?>
+                <li><input type="radio" class="radio" name="record" value="0" id="record_never"<?php
+                        if (!$schedule->recordid) echo ' CHECKED' ?> />
+                    <a onclick="get_element('record_never').checked=true;"><?php
+                            echo t('Cancel this schedule.');
+                        ?></a></li>
+
+<?php       } ?>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
+                        echo $schedule->type == rectype_once ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
+                        echo $schedule->type == rectype_daily ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_daily').checked=true;"><? echo t('rectype-long: daily') ?></a></li>
+
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php
+                        echo $schedule->type == rectype_weekly ? ' CHECKED' : ''?> />
+                    <a onclick="get_element('record_weekly').checked=true;"><? echo t('rectype-long: weekly') ?></a></li>
+            </ul>
+        </div>
+<?php
+        }
+        if ($schedule->recordid) {
+?>
+        <div id="schedule_override">
+            <h3><?php echo t('Schedule Override') ?>:</h3>
+
+            <ul>
+<?php       if ($schedule->type == rectype_override || $schedule->type == rectype_dontrec) { ?>
+                <li><input type="radio" class="radio" name="record" value="0" id="schedule_default"<?php
+                        if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) echo ' CHECKED' ?> />
+                    <a onclick="get_element('schedule_default').checked=true;"><?php
+                        echo t('Schedule normally.') ?></a></li>
+<?php       } ?>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_override ?>" id="record_override"<?php
+                        if ($schedule->type == rectype_override) echo ' CHECKED' ?> />
+                    <a onclick="get_element('record_override').checked=true;"><?php
+                        echo t('rectype-long: override') ?></a></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_dontrec ?>" id="record_dontrec"<?php
+                        if ($schedule->type == rectype_dontrec) echo ' CHECKED' ?> />
+                    <a onclick="get_element('record_dontrec').checked=true;"><?php
+                        echo t('rectype-long: dontrec') ?></a></li>
+
+            </ul>
+        </div>
+<?      } ?>
+
+        <div id="recording_options">
+            <h3><?php echo t('Recording Options') ?>:</h3>
 
             <dl>
                 <dt><?php echo t('Channel') ?>:&nbsp;</dt>
                 <dd><?php channel_select() ?></dd>
                 <dt><?php echo t('Start Date') ?>:&nbsp;</dt>
-                <dd><input type="text" name="startdate" size="10" maxlength="10" value="<?php echo date("Y-m-d") ?>"></dd>
+                <dd><input type="text" name="startdate" size="10" maxlength="10" value="<?php echo date("Y-m-d", $schedule->starttime) ?>"></dd>
                 <dt><?php echo t('Start Time') ?>:&nbsp;</dt>
-                <dd><input type="text" name="starttime" size="10" maxlength="8" value="<?php echo date("H:i:00") ?>"></dd>
+                <dd><input type="text" name="starttime" size="10" maxlength="8" value="<?php echo date("H:i:00", $schedule->starttime) ?>"></dd>
                 <dt><?php echo t('Length (min)') ?>:&nbsp;</dt>
-                <dd><input type="text" name="length" value="120" size="10" maxlength="4"></dd>
+                <dd><input type="text" name="length" value="<?php echo $schedule->length ?>" size="10" maxlength="4"></dd>
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
                 <dd><input type="text" name="title" value="use callsign" size="30"></dd>
                 <dt><?php echo t('Subtitle') ?>:&nbsp;</dt>
@@ -113,7 +166,7 @@ class Theme_schedule_manually extends Theme {
             </dl>
 
             <p align="center">
-                <input type="submit" class="submit" name="save" value="<?php echo t('Create Schedule') ?>">
+                <input type="submit" class="submit" name="save" value="<?php echo $schedule->recordid ? t('Save Schedule') : t('Create Schedule') ?>">
             </p>
 
         </div>

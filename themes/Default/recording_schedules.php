@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2005.02.08 (xris)
+    recording_schedules.php                 Last Updated: 2005.03.09 (xris)
 
     This file defines a theme class for the all recordings section.
     It must define one method.   documentation will be added someday.
@@ -89,7 +89,18 @@ class Theme_recording_schedules extends Theme {
                 echo show_popup("program_$program_id_counter", $schedule->details_list(), NULL, 'popup', $wstatus);
             else
                 echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
-            echo ' href="program_detail.php?recordid='.$schedule->recordid.'"'
+            echo ' href="';
+        // Link to different places for different kinds of schedules
+            if ($schedule->search) {
+                if ($schedule->search == searchtype_manual)
+                    echo 'schedule_manually';
+                else
+                    echo 'unsupport_search_schedule!!!';
+            }
+            else
+                echo 'program_detail';
+        // Finish off the link
+            echo '.php?recordid='.$schedule->recordid.'"'
                  .'>'.$schedule->title;
             if (in_array($schedule->type, array(rectype_once, rectype_override, rectype_dontrec)) && preg_match('/\\w/', $schedule->subtitle))
                 echo ":  $schedule->subtitle";

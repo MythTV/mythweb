@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                  Last Updated: 2005.02.07 (xris)
+    recording_schedules.php                  Last Updated: 2005.03.08 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -28,6 +28,7 @@
     define('searchtype_title',    2);
     define('searchtype_keyword',  3);
     define('searchtype_people',   4);
+    define('searchtype_manual',   5);
 
 // Recording types -- enum at the top of libs/libmythtv/recordingtypes.h
     $RecTypes = array(
@@ -201,7 +202,7 @@ class Schedule {
     // Update the type, in case it changed
         $this->type = $new_type;
     // Update the record
-        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,title,subtitle,description,profile,recpriority,category,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag) values ('
+        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid) values ('
                                 .escape($this->recordid, true)             .','
                                 .escape($this->type)                       .','
                                 .escape($this->chanid)                     .','
@@ -209,6 +210,7 @@ class Schedule {
                                 .'FROM_UNIXTIME('.escape($this->starttime).'),'
                                 .'FROM_UNIXTIME('.escape($this->endtime)  .'),'
                                 .'FROM_UNIXTIME('.escape($this->endtime)  .'),'
+                                .escape($this->search)                     .','
                                 .escape($this->title)                      .','
                                 .escape($this->subtitle)                   .','
                                 .escape($this->description)                .','
@@ -226,7 +228,10 @@ class Schedule {
                                 .escape($this->station)                    .',' // callsign!
                                 .escape($this->seriesid)                   .','
                                 .escape($this->programid)                  .','
-                                .escape($this->autocommflag)               .')')
+                                .escape($this->autocommflag)               .','
+                                .escape($this->findday)                    .','
+                                .escape($this->findtime)                   .','
+                                .escape($this->findid)                     .')')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Get the id that was returned
         $recordid = mysql_insert_id();

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2005.02.08 (xris)
+    recording_schedules.php                 Last Updated: 2005.03.09 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -19,8 +19,8 @@
 // Parse the recording list
     $the_schedules = array();
     foreach ($Schedules as $key => $schedule) {
-    // Ignore search schedules
-        if ($schedule->search)
+    // Ignore search schedules (except for manual schedules)
+        if ($schedule->search && $schedule->search != searchtype_manual)
             continue;
     // Ignore overrides
     #    if ($schedule->type == rectype_override)
