@@ -96,6 +96,10 @@ class Theme_scheduled_recordings extends Theme {
 					: ($show->record_channel ? "Always record on this channel"
 					: "Always record"))))."</td>
 		</tr>" : '')
+		.(strlen($show->profilename) > 0 ? "<tr>
+			<td align=\"right\">Profile:</td>
+			<td>$show->profilename</td>
+		</tr>" : '')
 		."</table></td>
 </tr>
 </table>

@@ -308,7 +308,7 @@ class Program {
 		#	$myprog->whenRecord += $line["record_weekly"]<<5;
 		}
 	// Get data for recordings
-		$query = 'SELECT * from record where chanid='.$this->chanid.' AND title = '.escape($this->title).'';
+		$query = 'SELECT * from record where title = '.escape($this->title).'';
 		$result = mysql_query($query)
 			or trigger_error('SQL Error: '.mysql_error(), FATAL);
 		while ($record_data = mysql_fetch_assoc($result)) {
@@ -318,6 +318,17 @@ class Program {
 			$this->maxnewest       = $record_data['maxnewest'];
 			$this->maxepisodes     = $record_data['maxepisodes'];
 			$this->autoexpire      = $record_data['autoexpire'];
+		//And get the name of the profile
+			if ($this->profile == 0)
+				$this->profilename = "Default";
+			else {
+				$profilequery = 'SELECT name from recordingprofiles where id = '.$this->profile.'';
+				$profileresult = mysql_query($profilequery)
+					or trigger_error('SQL Error: '.mysql_error(), FATAL);
+				while ($profile_data = mysql_fetch_assoc($profileresult)) {
+					$this->profilename         = $profile_data['name'];
+				}
+			}
 		}
 
 
