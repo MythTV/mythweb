@@ -2,42 +2,42 @@ This is the README file for the MythWeb package.
 August 4, 2003
 
 Version: .14
-(c) 2002, 2003 Thor Sigvaldason (mythtv at lamedomainname.com)
-               Isaac Richards (ijr at po.cwru.edu)
-               Chris Petersen (mythweb at forevermore.net)
+(c) 2002, 2003 Thor Sigvaldason <mythtv(a)lamedomainname(o)com>
+               Isaac Richards   <ijr(a)po(o)cwru(o)edu>
+               Chris Petersen   <mythweb(a)forevermore(o)net>
 
 with contributions from many people including:
 
-Michael Kedl <kedlm at knology.net>
-Jonathan Kolb <jkolb at greyshift.net
+Michael Kedl   <kedlm(a)knology(o)net>
+Jonathan Kolb  <jkolb(a)greyshift(o)net
+Ed Wildgoose   <edward(o)wildgoose(a)frmhedge(o)com>
+Kenneth Aafloy <ke-aa(a)frisurf(o)no>
 
 MythWeb is distributed under the GNU GENERAL PUBLIC LICENSE version 2
 (see http://www.gnu.org)
-
 
 
 Contents
 ========
 
 
-1.0	About
-2.0	Installation
-3.0	FAQs
-4.0     Notes
-5.0	Plans/TODO
-
+1.0    About
+2.0    Installation
+3.0    FAQs
+4.0    Plans/TODO
+5.0    Submitting Patches
 
 
 1.0 About
 =========
 
-	MythWeb is a set of php files intended (note the use future tense)
+    MythWeb is a set of php files intended (note the use future tense)
 to let you access your listings, flag shows for recording, delete
 recordings, etc., from a web browser. At some point in the future, it may
 allow you to play your recorded content (music and/or(?) video) across a
 network. Then again, it may not.
 
-	Note that MythWeb is totally insecure and makes no pretense of
+    Note that MythWeb is totally insecure and makes no pretense of
 including any security mechanisms of any sort. You should really only run it
 on an isolated network or (at the very least) behind a well secured firewall.
 
@@ -46,19 +46,18 @@ on an isolated network or (at the very least) behind a well secured firewall.
 2.0 Installation
 ================
 
-	First of all, you need mythTV, which you should be able to track down
-at:
+    First of all, you need mythTV, which you should be able to track down at:
 
-		http://www.mythtv.org
+        http://www.mythtv.org
 
-	In addition to all the various things required to get MythTV up and
+    In addition to all the various things required to get MythTV up and
 running (which are documented in the main MythTV source), you need apache
 and php up and running on the same machine as MythTV:
 
-		http://www.apache.org
-		http://www.php.net
+        http://www.apache.org
+        http://www.php.net
 
-	Current versions of these in use by the MythWeb developer(s) are 2.0.40
+    Current versions of these in use by the MythWeb developer(s) are 2.0.40
 for Apache and 4.2.2 for php.  Make sure to build both according to the
 instructions at the php home site, and be sure to include support for MySQL
 when building PHP.
@@ -72,12 +71,12 @@ so make sure you're changing the setting for the correct directory.
 "short open tags" are enabled in /etc/php.ini (or wherever your favorite
 distro chooses to place it).
 
-	Somewhere in or off your root directory for htdocs (/www/htdocs if
-you followed the instuctions at php.net), you should copy
-all the files included in this distribution. To make sure you get images
-subdirectory, you should do something like
+    Somewhere in or off your root directory for htdocs (/www/htdocs if
+you followed the instuctions at php.net), you should copy all the files
+included in this distribution. To make sure you get images subdirectory,
+you should do something like:
 
-	cp -r . /wwww/htdocs/myMythWebDirectory
+    cp -r . /wwww/htdocs/myMythWebDirectory
 
     Next, you need to make sure that your web server can write to a couple of
 directories.  This should be as simple as:  **
@@ -85,14 +84,14 @@ directories.  This should be as simple as:  **
     chgrp -R apache /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
     chmod g+rw /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
 
-	You should then edit the file config/conf.php (instructions for what to
+    You should then edit the file config/conf.php (instructions for what to
 set are included in the file). That's it. Point your web browser at
 http://{whatever your machine is called}/{the directory off htdocs where you
 copied the files}. What could be simpler?
 
-	** Some distributions run apache as "nobody/nogroup" so please be aware
-	   that you may need to consult your /etc/httpd/httpd.conf file to verify
-	   which user/group apache is set to run as.
+    ** Some distributions run apache as "nobody/nogroup" so please be aware
+       that you may need to consult your /etc/httpd/httpd.conf file to verify
+       which user/group apache is set to run as.
 
 
 3.0 FAQs
@@ -128,21 +127,34 @@ A: Access any of the mythweb files and include RESET_THEME=yes among the URL
     will reset your theme to Default, where you can readjust your settings as
     needed.
 
-4.0 Notes
-=========
-
-- Support has been added for channel based anytime recordings.
-
-5.0 Plan/TODO
+4.0 Plan/TODO
 =============
 
-	Over the next few days:
+-Add more settings (recording profiles, etc)
+-Find a way to integrate nuvexport and/or mythtranscode
+-Clean up the inteface.
 
-		Clean up the code (some of it is very rushed) and
-		complete the basic functionality.
+There are also a couple of feature requests that I don't have the time or
+knowhow to implement.  If you're interested in taking any of these on, please
+contact me so we can work out any necessary details (and by all means
+subscribe to mythtv-dev)
 
-	Over the next few weeks:
+    gettext - Our current translation system is messy and IMHO ugly.  Would
+        be really cool to have gettext support.
 
-		Vastly improve design and capabilities so that the
-		thing will work well, fast, and completely through
-		a standard browser.
+    Smarty templates - It's been suggested that we use smarty templates
+        instead of the current custom solution.  I don't mind this idea,
+        as long as themes will be easy to update.
+
+5.0 Submitting Patches
+======================
+
+I'm always open to people submitting patches.  The best way to do this is to
+merely submit them to the mythtv mailing list (dev is best, but I subscribe
+to both lists), with the word "mythweb" in the subject line (if you don't, I
+probably won't see it), and preferably also the word "[PATCH]".
+
+Please create patches against the most recent version of CVS by doing
+"cvs diff -u".  I can deal with other "diff -u" patches, but if there have
+been any major changes in cvs (there occasionally are), I won't put much
+effort into trying to make your patch work, so please just use cvs.
