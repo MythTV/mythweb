@@ -111,7 +111,7 @@ class Theme_recorded_programs extends Theme {
 
 </table>
 <?php
-	echo '<p align="right" style="padding-right: 75px">'.disk_free.' out of '.disk_size.' used</p>';
+	echo '<p align="right" style="padding-right: 75px">'.$GLOBALS['Total_Programs'].' programs, using '.disk_free.' out of '.disk_size.'</p>';
 
 	// Print the main page footer
 		parent::print_footer();

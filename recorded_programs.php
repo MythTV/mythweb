@@ -32,6 +32,7 @@
 
 // Parse the program list
 	$recordings = get_backend_rows('QUERY_RECORDINGS Delete');
+	$Total_Programs = 0;
 	$All_Shows      = array();
 	$Programs       = array();
 	$Channels       = array();
@@ -39,9 +40,10 @@
 		$Program_Titles = array();
 		foreach ($recordings as $key => $record) {
 		// Skip the offset
-			if ($key === 'offset')
+			if ($key === 'offset')	// WHY IN THE WORLD DOES 0 == 'offset'?!?!?  so we use ===
 				continue;
 		// Skip programs the user doesn't want to look at, but keep track of their names and how many episodes we have recorded
+			$Total_Programs++;
 			$Program_Titles[$record[0]]++;
 			if ($_GET['title'] && $_GET['title'] != $record[0])
 				continue;
