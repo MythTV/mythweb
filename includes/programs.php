@@ -467,7 +467,7 @@ class Program {
 	// Wipe out any pre-existing settings for this program
 		$this->record_never(false);
 	// Insert this recording choice into the database
-		$result = mysql_query('REPLACE INTO record (type,title,chanid,profile,recpriority,dupin,dupmethod,,maxnewest,maxepisodes,autoexpire,startoffset,endoffset)
+		$result = mysql_query('REPLACE INTO record (type,title,chanid,profile,recpriority,dupin,dupmethod,maxnewest,maxepisodes,autoexpire,startoffset,endoffset)
 																		VALUES (3,'.escape($this->title).','
 																				.escape($this->chanid).','
 																				.escape($this->profile).','
