@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    video.php                               Last Updated: 2005.01.23 (xris)
+    video.php                               Last Updated: 2005.02.06 (xris)
 
     view video files.
 \***                                                                        ***/
@@ -120,7 +120,11 @@ class Video {
         $this->url = video_url;
         foreach (preg_split('/\//', substr($this->filename, strlen($videodir))) as $dir) {
             if (!$dir) continue;
-            $this->url .= '/'.rawurlencode(mb_convert_encoding($dir, fs_encoding, 'UTF-8'));
+            htmlentities($this->subtitle, ENT_COMPAT, 'UTF-8')
+            if (function_exists('mb_convert_encoding'))
+                $this->url .= '/'.rawurlencode(mb_convert_encoding($dir, fs_encoding, 'UTF-8'));
+            else
+                $this->url .= '/'.rawurlencode($dir);
         }
     }
 }
