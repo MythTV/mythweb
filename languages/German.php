@@ -2,6 +2,10 @@
 
 define ('_LANG_LANGUAGE_NAME', 'German');
 
+/* Default date and time formats */
+define('generic_date', '%e %b, %Y');
+define('generic_time', '%I:%M %p');
+
 /* Set locale to German */
 setlocale(LC_ALL, 'de_DE');
 

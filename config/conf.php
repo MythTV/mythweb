@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-	conf.php                                  Last Updated: 2004.03.28 (xris)
+	conf.php                                  Last Updated: 2004.05.05 (xris)
 
 	global configuration for mythweb
 \***                                                                        ***/
@@ -50,10 +50,6 @@
 
 // Movie word
 	define('movie_word', 'Movie');
-
-// Date formats
-	define('generic_date', '%b %e, %Y');
-	define('generic_time', '%I:%M %p');
 
 // Language
 	define('default_language', 'English');

@@ -2,6 +2,10 @@
 
 define ('_LANG_LANGUAGE_NAME', 'French');
 
+/* Default date and time formats */
+define('generic_date', '%e %b, %Y');
+define('generic_time', '%I:%M %p');
+
 /* Set locale to French */
 setlocale(LC_ALL, 'fr_FR');
 

@@ -2,6 +2,10 @@
 
 define ('_LANG_LANGUAGE_NAME', 'Japanese');
 
+/* Default date and time formats */
+define('generic_date', '%e %b, %Y');
+define('generic_time', '%I:%M %p');
+
 /* Set locale to Japanese utf-8 encoding */
 setlocale(LC_ALL, 'ja_JP.utf-8');
 

@@ -2,6 +2,10 @@
 
 define ('_LANG_LANGUAGE_NAME', 'Nederlands');
 
+/* Default date and time formats */
+define('generic_date', '%e %b, %Y');
+define('generic_time', '%I:%M %p');
+
 /* Set locale to Dutch */
 setlocale(LC_ALL, 'nl_NL');
 

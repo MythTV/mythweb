@@ -2,6 +2,10 @@
 
 define ('_LANG_LANGUAGE_NAME', 'English');
 
+/* Default date and time formats */
+define('generic_date', '%b %e, %Y');
+define('generic_time', '%I:%M %p');
+
 /* theme.php */
 define ('_LANG_BACKEND_STATUS',       'Backend Status');
 define ('_LANG_SETTINGS',             'Settings');
