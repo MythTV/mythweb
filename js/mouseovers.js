@@ -150,17 +150,17 @@
         var y = parseInt(pos.y) + get_element(popup.id).offsetHeight;
     // Get some window information so we can make sure the box doesn't extend off the edge of the screen
         var window_width = 0, window_height = 0, scroll_left = 0, scroll_top = 0;
-        if (!is_gecko && document.documentElement.clientWidth) {
-            window_width  = document.documentElement.clientWidth;
-            window_height = document.documentElement.clientHeight;
-            scroll_left   = document.documentElement.scrollLeft;
-            scroll_top    = document.documentElement.scrollTop;
-        }
-        else if (document.body.clientWidth || document.body.clientHeight) {
+        if (document.body.clientWidth || document.body.clientHeight) {
             window_width  = document.body.clientWidth;
             window_height = document.body.clientHeight;
             scroll_left   = document.body.scrollLeft;
             scroll_top    = document.body.scrollTop;
+        }
+        else if (document.documentElement.clientWidth) {
+            window_width  = document.documentElement.clientWidth;
+            window_height = document.documentElement.clientHeight;
+            scroll_left   = document.documentElement.scrollLeft;
+            scroll_top    = document.documentElement.scrollTop;
         }
         else {
             window_width  = window.innerWidth;
