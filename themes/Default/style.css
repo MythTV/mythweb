@@ -171,10 +171,10 @@ form { display: inline; }
 
 /* clearfix -- see http://positioniseverything.net/easyclearing.html for details on how/why this works*/
 .clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
+    content:    ".";
+    display:    block;
+    height:     0;
+    clear:      both;
     visibility: hidden;
 }
 .clearfix {display: inline-block;}
