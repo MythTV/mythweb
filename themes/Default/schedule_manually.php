@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    schedule_manually.php                    Last Updated: 2005.03.09 (xris)
+    schedule_manually.php                    Last Updated: 2005.04.09 (xris)
 
     This file defines a theme class for the schedule manually section.
     It must define one method.   documentation will be added someday.
@@ -79,7 +79,7 @@ class Theme_schedule_manually extends Theme {
 
             <dl>
                 <dt><?php echo t('Channel') ?>:&nbsp;</dt>
-                <dd><?php channel_select() ?></dd>
+                <dd><?php channel_select($schedule->chanid) ?></dd>
                 <dt><?php echo t('Start Date') ?>:&nbsp;</dt>
                 <dd><input type="text" name="startdate" size="10" maxlength="10" value="<?php echo date("Y-m-d", $schedule->starttime) ?>"></dd>
                 <dt><?php echo t('Start Time') ?>:&nbsp;</dt>
@@ -87,9 +87,9 @@ class Theme_schedule_manually extends Theme {
                 <dt><?php echo t('Length (min)') ?>:&nbsp;</dt>
                 <dd><input type="text" name="length" value="<?php echo $schedule->length ?>" size="10" maxlength="4"></dd>
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
-                <dd><input type="text" name="title" value="use callsign" size="30"></dd>
+                <dd><input type="text" name="title" value="<?php echo $schedule->title ?>" size="30"></dd>
                 <dt><?php echo t('Subtitle') ?>:&nbsp;</dt>
-                <dd><input type="text" name="subtitle" value="use datetime" size="30"></dd>
+                <dd><input type="text" name="subtitle" value="<?php echo $schedule->subtitle ?>" size="30"></dd>
             </dl>
 
         </div>

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2005.02.08 (xris)
+    scheduled_recordings.php                 Last Updated: 2005.04.09 (xris)
 
     view and fix scheduling conflicts.
 \***                                                                        ***/
@@ -73,34 +73,37 @@
     $all_shows = array();
     foreach ($Scheduled_Recordings as $chanid => $shows) {
     // Now the shows in this channel
-        foreach ($shows as $starttime => $show) {
+        foreach ($shows as $starttime => $show_group) {
         // Skip things we've already recorded
             if ($starttime <= time())
                 continue;
-        // Make sure this is a valid show (ie. skip in-progress recordings and other junk)
-            if (!$chanid || $show->length < 1)
-                continue;
-        // Skip scheduled shows?
-            if (in_array($show->recstatus, array('WillRecord', 'ForceRecord'))) {
-                if (!$_SESSION['scheduled_recordings']['disp_scheduled'])
+        // Parse each show group
+            foreach ($show_group as $key => $show) {
+            // Make sure this is a valid show (ie. skip in-progress recordings and other junk)
+                if (!$chanid || $show->length < 1)
                     continue;
-            }
-        // Skip conflicting shows?
-            elseif (in_array($show->recstatus, array('Conflict', 'Overlap'))) {
-                if (!$_SESSION['scheduled_recordings']['disp_conflicts'])
+            // Skip scheduled shows?
+                if (in_array($show->recstatus, array('WillRecord', 'ForceRecord'))) {
+                    if (!$_SESSION['scheduled_recordings']['disp_scheduled'])
+                        continue;
+                }
+            // Skip conflicting shows?
+                elseif (in_array($show->recstatus, array('Conflict', 'Overlap'))) {
+                    if (!$_SESSION['scheduled_recordings']['disp_conflicts'])
+                        continue;
+                }
+            // Skip duplicate shows?
+                elseif (in_array($show->recstatus, array('PreviousRecording', 'CurrentRecording', 'EarlierShowing', 'LaterShowing'))) {
+                    if (!$_SESSION['scheduled_recordings']['disp_duplicates'])
+                        continue;
+                }
+            // Skip deactivated shows?
+                elseif (!$_SESSION['scheduled_recordings']['disp_deactivated']) {
                     continue;
+                }
+            // Assign a reference to this show to the various arrays
+                $all_shows[] =& $Scheduled_Recordings[$chanid][$starttime][$key];
             }
-        // Skip duplicate shows?
-            elseif (in_array($show->recstatus, array('PreviousRecording', 'CurrentRecording', 'EarlierShowing', 'LaterShowing'))) {
-                if (!$_SESSION['scheduled_recordings']['disp_duplicates'])
-                    continue;
-            }
-        // Skip deactivated shows?
-            elseif (!$_SESSION['scheduled_recordings']['disp_deactivated']) {
-                continue;
-            }
-        // Assign a reference to this show to the various arrays
-            $all_shows[] =& $Scheduled_Recordings[$chanid][$starttime];
         }
     }
 

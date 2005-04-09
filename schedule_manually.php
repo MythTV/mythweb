@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    schedule_manually.php                      Last Updated: 2005.03.09 (xris)
+    schedule_manually.php                      Last Updated: 2005.04.09 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -101,6 +101,11 @@
     }
 // Load default settings for recpriority, autoexpire etc
     else {
+    // Default title/subtitle
+        if (!$schedule->title) {
+            $schedule->title    = 'use callsign';
+            $schedule->subtitle = 'use datetime';
+        }
     // Make sure we have a default rectype
         if (!$schedule->type)
             $schedule->type = rectype_once;
@@ -141,12 +146,11 @@
 // Exit
     exit;
 
-
 /*
     channel_select:
     prints a <select> of the available channels
 */
-    function channel_select($name = 'channel') {
+    function channel_select($chanid) {
         global $Channels;
         echo "<select name=\"$name\">";
         foreach ($Channels as $channel) {
@@ -154,7 +158,12 @@
             if ($channel->visible == 0)
                 continue;
         // Print the option
-            echo '<option value="'.$channel->chanid.'">';
+            echo '<option value="'.$channel->chanid.'"';
+        // Selected?
+            if ($channel->chanid == $chanid)
+                echo ' SELECTED';
+        // Print ther est of the content
+            echo '>';
             if (prefer_channum)
                 echo $channel->channum.'&nbsp;&nbsp;('.htmlentities($channel->callsign).')';
             else

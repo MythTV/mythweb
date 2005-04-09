@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    recording_schedules.php                  Last Updated: 2005.03.08 (xris)
+    recording_schedules.php                  Last Updated: 2005.04.09 (xris)
 
     The Recording object, and a couple of related subroutines.
 \***                                                                        ***/
@@ -70,9 +70,9 @@
         if ($key === 'offset') {
             list($Num_Conflicts, $Num_Scheduled) = $program;
         }
-    // Normal entry:  $Scheduled_Recordings[chanid][starttime]
+    // Normal entry:  $Scheduled_Recordings[chanid][starttime][]
         else {
-            $Scheduled_Recordings[$program[4]][$program[11]] =& new Program($program);
+            $Scheduled_Recordings[$program[4]][$program[11]][] =& new Program($program);
         }
     }
 

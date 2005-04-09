@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    programs.php                             Last Updated: 2005.02.04 (xris)
+    programs.php                             Last Updated: 2005.04.09 (xris)
 
     This contains the Program class
 \***                                                                        ***/
@@ -149,7 +149,7 @@
                 continue;
         // This program has already been loaded, and is attached to a recording schedule
             if ($Scheduled_Recordings[$data['chanid']][$data['starttime_unix']]) {
-                $program =& $Scheduled_Recordings[$data['chanid']][$data['starttime_unix']];
+                $program =& $Scheduled_Recordings[$data['chanid']][$data['starttime_unix']][0];
             }
         // Otherwise, create a new instance of the program
             else {
