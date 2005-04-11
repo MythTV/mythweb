@@ -152,7 +152,7 @@
 */
     function channel_select($chanid) {
         global $Channels;
-        echo "<select name=\"$name\">";
+        echo '<select name="channel">';
         foreach ($Channels as $channel) {
         // Ignore invisible channels
             if ($channel->visible == 0)
