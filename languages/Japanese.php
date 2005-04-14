@@ -140,9 +140,9 @@ $L = array(
     'Unknown Program.'            => '不明な番組',
     'Unknown Recording Schedule.' => '不明な予約',
 // search.php
-    'Please search for something.' => '',
+    'Please search for something.' => '検索する文字を入力してください。',
 // themes/.../canned_searches.php
-    'handy: overview' => '',
+    'handy: overview' => 'おてがる検索: 一覧',
 // themes/.../channel_detail.php
     'Length' => '時間',
     'Show'   => '番組',
@@ -195,7 +195,7 @@ $L = array(
     'profile'                                   => 'プロファイル',
     'type'                                      => 'タイプ',
 // themes/.../schedule_manually.php
-    'Save Schedule' => '',
+    'Save Schedule' => '保存',
 // themes/.../scheduled_recordings.php
     'Activate'      => '有効',
     'Commands'      => 'コマンド',
@@ -212,7 +212,7 @@ $L = array(
     'Update'        => '更新',
 // themes/.../search.php
     'No matches found' => '一致する物がありませんでした',
-    'Search for:  $1'  => '',
+    'Search for:  $1'  => '$1 の検索結果',
 // themes/.../settings.php
     'Channels'           => 'チャンネル',
     'Configure'          => '設定',
@@ -226,27 +226,27 @@ $L = array(
 // themes/.../settings_mythweb.php
     'Channel &quot;Jump to&quot;'     => 'チャンネル &quot;移動&quot;',
     'Date Formats'                    => '日付書式',
-    'Guide Settings'                  => '',
+    'Guide Settings'                  => 'ガイド設定',
     'Hour Format'                     => '時間書式',
     'Language'                        => '言語',
     'Listing &quot;Jump to&quot;'     => '一覧 &quot;移動&quot;',
     'Listing Time Key'                => '一覧 タイムキー',
     'MythWeb Theme'                   => 'MythWebテーマ',
-    'Only display favourite channels' => '',
+    'Only display favourite channels' => 'お気に入りのチャンネルのみ表示する',
     'Reset'                           => 'リセット',
-    'SI Units?'                       => '',
+    'SI Units?'                       => 'SI単位を使用する',
     'Save'                            => '保存',
     'Scheduled Popup'                 => '予約ポップアップ',
     'Show descriptions on new line'   => '内容を新しい行で表示する',
     'Status Bar'                      => 'ステータスバー',
-    'Weather Icons'                   => '',
+    'Weather Icons'                   => '天気アイコン',
     'format help'                     => '書式ヘルプ',
 // themes/.../theme.php
     'Category Legend'                            => 'カテゴリー凡例',
     'Category Type'                              => 'カテゴリータイプ',
     'Edit MythWeb and some MythTV settings.'     => 'MythWebとMythTVの設定',
     'Exact Match'                                => '正確に一致',
-    'HD Only'                                    => '',
+    'HD Only'                                    => 'HDのみ',
     'Manually Schedule'                          => '手動録画',
     'MythMusic on the web.'                      => 'MythMusic オンザウェブ',
     'MythVideo on the web.'                      => 'MythVideo オンザウェブ',
@@ -259,7 +259,7 @@ $L = array(
     'Search help: regex example'                 => '/^Good Eats/',
     'Search help: regex search'                  => '正規表現検索',
     'Search options'                             => '検索オプション',
-    'Searches'                                   => '',
+    'Searches'                                   => '検索メニュー',
     'Settings'                                   => '設定',
     'TV functions, including recorded programs.' => 'TV 録画',
 // themes/.../weather.php
@@ -307,20 +307,20 @@ $Categories['Adult']          = array('アダルト',               'アダル�
 $Categories['Animals']        = array('動物',                   '動物');
 $Categories['Art_Music']      = array('芸術 音楽',              '(芸術|音楽)');
 $Categories['Business']       = array('ビジネス',               'ビジネス');
-$Categories['Children']       = array('子供',                   'アニメ');
+$Categories['Children']       = array('子供',                   '(アニメ|キッズ)');
 $Categories['Comedy']         = array('コメディー',             'コメディー');
 $Categories['Crime_Mystery']  = array('犯罪　ミステリー',       '(犯罪|ミステリー)');
 $Categories['Documentary']    = array('ドキュメンタリー',       'ドキュメンタリー');
 $Categories['Drama']          = array('ドラマ',                 'ドラマ');
-$Categories['Educational']    = array('教育',                   '教養');
+$Categories['Educational']    = array('教育',                   '教育');
 $Categories['Food']           = array('食事',                   '食事');
 $Categories['Game']           = array('ゲーム',                 'ゲーム');
 $Categories['Health_Medical'] = array('健康　医療',             '(健康|医療)');
 $Categories['History']        = array('歴史',                   '歴史');
 $Categories['Horror']         = array('ホラー',                 'ホラー');
 $Categories['HowTo']          = array('ハウツー',               'ハウツー');
-$Categories['Misc']           = array('バラエティー',           'バラエティー');
-$Categories['News']           = array('報道',                   '報道');
+$Categories['Misc']           = array('バラエティ',             'バラエティ');
+$Categories['News']           = array('報道',                   '(報道|情報)');
 $Categories['Reality']        = array('リアリティー',           'リアリティー');
 $Categories['Romance']        = array('ロマンス',               'ロマンス');
 $Categories['SciFi_Fantasy']  = array('SF　ファンタジー',       'SF　ファンタジー');
