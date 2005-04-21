@@ -151,21 +151,21 @@ class Theme {
 
     function print_menu_content() {
         ?><a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
-                <a href="program_listing.php"><?php echo t('Listings') ?></a>
+                <a href="program_listing.php"><?php echo str_replace(' ','&nbsp;',t('Listings')) ?></a>
                 &nbsp; | &nbsp;
-                <a href="canned_searches.php"><?php echo t('Searches') ?></a>
+                <a href="canned_searches.php"><?php echo str_replace(' ','&nbsp;',t('Searches')) ?></a>
                 &nbsp; | &nbsp;
-                <a href="schedule_manually.php"><?php echo t('Manually Schedule') ?></a>
+                <a href="schedule_manually.php"><?php echo str_replace(' ','&nbsp;',t('Manually Schedule')) ?></a>
                 &nbsp; | &nbsp;
-                <a href="recording_schedules.php"><?php echo t('Recording Schedules') ?></a>
+                <a href="recording_schedules.php"><?php echo str_replace(' ','&nbsp;',t('Recording Schedules')) ?></a>
                 &nbsp; | &nbsp;
-                <a href="scheduled_recordings.php"><?php echo t('Scheduled Recordings') ?></a>
+                <a href="scheduled_recordings.php"><?php echo str_replace(' ','&nbsp;',t('Scheduled Recordings')) ?></a>
                 &nbsp; | &nbsp;
-                <a href="recorded_programs.php"><?php echo t('Recorded Programs') ?></a>
+                <a href="recorded_programs.php"><?php echo str_replace(' ','&nbsp;',t('Recorded Programs')) ?></a>
                 &nbsp; | &nbsp;
-                <a href="status.php"><?php echo t('Backend Status') ?></a>
+                <a href="status.php"><?php echo str_replace(' ','&nbsp;',t('Backend Status')) ?></a>
                 &nbsp; | &nbsp;
-                <a href="log.php"><?php echo ('Backend Logs') ?></a><?php
+                <a href="log.php"><?php echo str_replace(' ','&nbsp;',('Backend Logs')) ?></a><?php
     // Create the category legend popup
         global $Categories, $Footnotes;
         $legend = <<<EOF
