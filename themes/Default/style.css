@@ -196,6 +196,9 @@ form { display: inline; }
 }
 
 /* the category legend */
+#command_choices {
+    white-space:      nowrap;
+}
 #category_legend_popup {
     position:         absolute;
     visibility:       hidden;

@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    theme.php                             Last Updated: 2005.02.27 (xris)
+    theme.php                             Last Updated: 2005.04.21 (xris)
 
     This is the main theme class for the Default MythWeb theme.  It should
     not be instantiated directly, but will most likely contain methods
@@ -150,7 +150,8 @@ class Theme {
     }
 
     function print_menu_content() {
-        ?><a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
+        ?><div id="command_choices">
+                <a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
                 <a href="program_listing.php"><?php echo t('Listings') ?></a>
                 &nbsp; | &nbsp;
                 <a href="canned_searches.php"><?php echo t('Searches') ?></a>
@@ -165,7 +166,8 @@ class Theme {
                 &nbsp; | &nbsp;
                 <a href="status.php"><?php echo t('Backend Status') ?></a>
                 &nbsp; | &nbsp;
-                <a href="log.php"><?php echo ('Backend Logs') ?></a><?php
+                <a href="log.php"><?php echo ('Backend Logs') ?></a>
+        </div><?php
     // Create the category legend popup
         global $Categories, $Footnotes;
         $legend = <<<EOF
