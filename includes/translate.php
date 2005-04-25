@@ -24,6 +24,7 @@
     $Languages['Swedish']    = array('Svenska',         'sv_SE');
     $Languages['Danish']     = array('Dansk',           'da_DK');
     $Languages['German']     = array('Deutsch',         'de_DE');
+    $Languages['Slovenian']  = array('Slovensko',       'sl_SI');
 
 // Change language?
     if ($_POST['language'])
