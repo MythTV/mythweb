@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    mythbackend.php                          Last Updated: 2005.02.09 (xris)
+    mythbackend.php                          Last Updated: 2005.05.14 (xris)
 
     Routines that allow mythweb to communicate with mythbackend
 \***                                                                        ***/
@@ -221,18 +221,60 @@
     gets a preview image of the requested show
 */
     function generate_preview_pixmap($show) {
-        $fileurl = $show->filename;
-        $pngpath = image_cache . '/' . basename($fileurl) . ".png";
-    // Delete outdated images
-        if (is_file($pngpath) && filemtime($pngpath) < $show->lastmodified) {
+        $fileurl  = $show->filename;
+        $pngpath  = image_cache . '/' . basename($fileurl) . '.png';
+        $hostname = chop(`hostname`);
+        $host     = $GLOBALS['Master_Host'];
+        $port     = $GLOBALS['Master_Port'];
+        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',
+                     ' ',                 // title
+                     ' ',                 // subtitle
+                     ' ',                 // description
+                     ' ',                 // category
+                     $show->chanid,       // chanid
+                     ' ',                 // chanstr
+                     ' ',                 // chansign
+                     ' ',                 // channame
+                     $show->filename,     // filename
+                     '0',                 // upper 32 bits
+                     '0',                 // lower 32 bits
+                     $show->starttime,    // starttime
+                     $show->endtime,      // endtime
+                     '0',                 // conflicting
+                     '1',                 // recording
+                     '0',                 // duplicate
+                     $show->hostname,     // hostname
+                     '-1',                // sourceid
+                     '-1',                // cardid
+                     '-1',                // inputid
+                     ' ',                 // recpriority
+                     ' ',                 // recstatus
+                     ' ',                 // recordid
+                     ' ',                 // rectype
+                     '15',                // dupin
+                     '6',                 // dupmethod
+                     $show->starttime,    // recstarttime
+                     $show->endtime,      // recendtime
+                     ' ',                 // repeat
+                     ' ',                 // program flags
+                     ' ',                 // recgroup
+                     ' ',                 // commfree
+                     ' ',                 // chanoutputfilters
+                     $show->seriesid,     // seriesid
+                     $show->programid,    // programid
+                     $show->starttime,    // dummy lastmodified
+                     '0',                 // dummy stars
+                     $show->starttime,    // dummy org airdate
+                     '',                  // trailing separator
+                    );
+        $lastmodified = strtotime(backend_command($cmd));
+    // Delete outdated images, but not until the show has finished recording
+        if (is_file($pngpath) && $lastmodified < $show->lastmodified && $show->lastmodified >= $show->endtime) {
             unlink($pngpath);
             clearstatcache();
         }
     // Need a new pixmap?
         if (!is_file($pngpath)) {
-            $hostname = chop(`hostname`);
-            $host     = $GLOBALS['Master_Host'];
-            $port     = $GLOBALS['Master_Port'];
             if (substr($fileurl, 0, 7) != 'myth://') {
                 $generate_pixmap = (is_file("$fileurl.png") && is_readable("$fileurl.png")) ? false : true;
                 $path = $fileurl;
@@ -246,54 +288,18 @@
                 $generate_pixmap = (0 == $recs[3]) ? true : false;
             }
 
+        // Regenerate backend pixmap if outdated
+            $generate_pixmap = ($lastmodified < $show->lastmodified) ? true : false;
+
             if ($generate_pixmap) {
                 if ($datasocket) {
                     fclose($datasocket);
                     $datasocket = NULL;
                 }
 
-                $cmd = array('QUERY_GENPIXMAP',
-                             ' ',                 // title
-                             ' ',                 // subtitle
-                             ' ',                 // description
-                             ' ',                 // category
-                             $show->chanid,       // chanid
-                             ' ',                 // chanstr
-                             ' ',                 // chansign
-                             ' ',                 // channame
-                             $show->filename,     // filename
-                             '0',                 // upper 32 bits
-                             '0',                 // lower 32 bits
-                             $show->starttime,    // starttime
-                             $show->endtime,      // endtime
-                             '0',                 // conflicting
-                             '1',                 // recording
-                             '0',                 // duplicate
-                             $show->hostname,     // hostname
-                             '-1',                // sourceid
-                             '-1',                // cardid
-                             '-1',                // inputid
-                             ' ',                 // recpriority
-                             ' ',                 // recstatus
-                             ' ',                 // recordid
-                             ' ',                 // rectype
-                             '15',                // dupin
-                             '6',                 // dupmethod
-                             $show->starttime,    // recstarttime
-                             $show->endtime,      // recendtime
-                             ' ',                 // repeat
-                             ' ',                 // program flags
-                             ' ',                 // recgroup
-                             ' ',                 // commfree
-                             ' ',                 // chanoutputfilters
-                             $show->seriesid,     // seriesid
-                             $show->programid,    // programid
-                             $show->starttime,    // dummy lastmodified
-                             '0',                 // dummy stars
-                             $show->starttime,    // dummy org airdate
-                             '0',                 // dummy has airdate
-                             '',                  // trailing separator
-                            );
+            // Replace QUERY_PIXMAP_LASTMODIFIED with QUERY_GENPIXMAP
+                $cmd[0] = 'QUERY_GENPIXMAP';
+
                 $ret = backend_command($cmd);
 
                 $recs = explode(backend_sep, backend_command2(array("ANN FileTransfer $hostname", "$fileurl.png"),
