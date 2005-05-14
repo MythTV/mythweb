@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    conf.php                                  Last Updated: 2004.11.25 (xris)
+    conf.php                                  Last Updated: 2005.05.13 (xris)
 
     global configuration for mythweb
 \***                                                                        ***/
@@ -36,6 +36,9 @@
     You probably don't need to edit anything below here, but the variables are
     provided for your convenience.
 ***/
+
+// The hostname of this machine -- so you can override manually as needed
+    define('hostname', chop(`/bin/hostname`));
 
 // file system encoding, uses music and video file link to local file
     define('fs_encoding', 'ISO-8859-1');

@@ -16,10 +16,11 @@
     isset($_GET['title'])  or $_GET['title']  = $_POST['title'];
 
 // Get the video store directory
-   $result = mysql_query('SELECT data from settings where value="VideoStartupDir"')
+    $result = mysql_query('SELECT data FROM settings WHERE'
+                         .' value="VideoStartupDir" AND hostname='.escape(hostname))
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
-   list($videodir) = mysql_fetch_row($result);
-   mysql_free_result($result);
+    list($videodir) = mysql_fetch_row($result);
+    mysql_free_result($result);
 
 // Get the video categories on the system
    $Total_Categories = 0;

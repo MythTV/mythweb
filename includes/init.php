@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2005.02.27 (xris)
+    init.php                                 Last Updated: 2005.05.13 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -15,6 +15,10 @@
 
 // Load the user-defined configuration settings
     require_once 'config/conf.php';
+
+// Make sure that people have actually defined certain (new) config options
+    if (hostname == 'hostname')
+        trigger_error('Please configure "hostname" in conf.php', FATAL);
 
 // Clean up some variables
     if (!ereg('/$', $_SERVER['DOCUMENT_ROOT']))
