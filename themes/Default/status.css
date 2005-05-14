@@ -75,8 +75,8 @@ div.loadstatus {
     height: 7em;
     float:  right;
 }
-.jobfinished { color: white0ff; }
-.jobaborted  { color: #7f0000;  }
-.joberrored  { color: #ff0000;  }
-.jobrunning  { color: #005f00;  }
+.jobfinished { color: white; }
+.jobaborted  { color: #ff2222;  }
+.joberrored  { color: #ff4444;  }
+.jobrunning  { color: #00ff00;  }
 
