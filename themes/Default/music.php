@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    music.php                                Last Updated: 2005.02.06 (xris)
+    music.php                                Last Updated: 2005.05.15 (xris)
 
     This file defines a theme class for the music section.
     It must define one method.   documentation will be added someday.
@@ -15,6 +15,8 @@ class Theme_music extends Theme {
     var $result;
     var $statusMessage;
     var $filterPlaylist;
+
+    var $alphacount;
 
     function getMaxPerPage()
     {
@@ -37,6 +39,7 @@ class Theme_music extends Theme {
 
         if($queryResults)
         {
+            printf("<td align=\"center\">");
             $row=mysql_fetch_row($queryResults);
             printf("<select name=\"filterPlaylist\">\n");
             printf("\t<option value=\"_All_\" ");
@@ -76,7 +79,7 @@ class Theme_music extends Theme {
     {
 
         $pageCount=($this->totalCount / $this->maxPerPage) +1;
-        printf("<table class=\"musicTable\" width=\"100%%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n");
+        /*** printf("<table class=\"musicTable\" width=\"100%%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n");  ***/
         printf("<tr class=\"menu\">\n");
         if($this->offset > 0)
         {
@@ -91,15 +94,20 @@ class Theme_music extends Theme {
 
             printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
                    $this->offset - $this->maxPerPage,$this->keepFilters, "Previous");
-            printf("</td>");
 
         } else {
             printf("<td align=\"left\"><a href=\"music.php\" >%s</a>","All Music");
             printf("%s","&nbsp;|&nbsp;Top");
             printf("%s","&nbsp;|&nbsp;-" . (5 * $this->maxPerPage));
             printf("%s","&nbsp;|&nbsp;Previous");
-            printf("</td>");
         }
+
+        /**** Print out alphabet links ****/
+        printf("</td><td align=\"center\">\n");
+        for ($alphacount = 65; $alphacount <= 90; $alphacount++)
+            printf("<a href=\"music.php?alphalink=%s\" >%s</a> \n", chr($alphacount), chr($alphacount));
+
+        printf("</td>");
 
         if($this->totalCount > ($this->maxPerPage + $this->offset))
         {
@@ -163,10 +171,6 @@ class Theme_music extends Theme {
             printf("%s\n","<td align=\"left\" >" . $this->totalCount . " Unfiltered</td>");
 
 
-
-
-        printf("<td align=\"center\" >");
-
         $this->playListSelector();
         $this->actionSelector();
         printf("<input TYPE=\"SUBMIT\" NAME=\"updateButton\" VALUE=\"Update\">");
@@ -186,7 +190,6 @@ class Theme_music extends Theme {
         }
 
         printf("</tr>");
-        printf("</table>");
         $this->printNavBar();
         printf("<table class=\"list small\" width=\"100%%\" border=\"0\" cellpadding=\"4\" cellspacing=\"2\">\n");
         printf("<tr class=\"menu\">");
@@ -211,6 +214,8 @@ class Theme_music extends Theme {
     function print_footer()
     {
         printf("</table>\n");
+        printf("<table class=\"musicTable\" width=\"100%%\" border=\"0\" cellpa
+dding=\"0\" cellspacing=\"0\">\n");
         $this->printNavBar();
 
         printf("</form>");

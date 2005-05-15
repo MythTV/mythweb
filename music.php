@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    music.php                                Last Updated: 2005.02.06 (xris)
+    music.php                                Last Updated: 2005.05.15 (xris)
 
     MythMusic
 \***                                                                        ***/
@@ -40,6 +40,9 @@ class mythMusic {
     var $filename;
     var $urlfilename;
 
+    var $alphalink;
+    var $alphaoffset;
+
     function mythMusic()
     {
         if($_GET['offset'] >=0 )
@@ -47,7 +50,14 @@ class mythMusic {
         else
             $this->offset=0;
 
-
+        /**** If alphalink set, then change offset to new value ****/
+        if ($_GET['alphalink']) {
+            $alphalink = $_GET['alphalink'];
+            $result=mysql_query("select count(1) from musicmetadata where upper(artist) < ".escape($alphalink));
+            $alphaoffset=mysql_fetch_row($result);
+            $this->offset=$alphaoffset[0];
+            mysql_free_result($result);
+        }
 
         if($_GET['filterPlaylist'])
         {
@@ -144,7 +154,7 @@ class mythMusic {
 
         if($this->filterPlaylist != "_All_")
         {
-            $playlistResult = mysql_query("select playlistid,name,songlist,hostname from musicplaylist where playlistid=\"" . $this->filterPlaylist . "\"");
+            $playlistResult = mysql_query("select playlistid,name,songlist,hostname from musicplaylist where playlistid=".escape($this->filterPlaylist));
             if($playlistResult)
             {
                 if(mysql_num_rows($playlistResult)==1)
@@ -172,10 +182,10 @@ class mythMusic {
         if($this->filterArtist != "_All_" )
         {
             if($prevFilter==1)
-                $this->filter=$this->filter . "and artist=\"" . $this->filterArtist . "\"";
+                $this->filter=$this->filter . "and artist=".escape($this->filterArtist);
             else
             {
-                $this->filter="artist=\"" . $this->filterArtist . "\"";
+                $this->filter="artist=".escape($this->filterArtist);
                 $prevFilter=1;
             }
 
@@ -232,7 +242,7 @@ class mythMusic {
     function init($maxPerPage) {
         $this->prepFilter();
         if($this->filter != "") {
-            $result=mysql_query("select count(*) as cnt from musicmetadata where  $this->filter");
+            $result=mysql_query("select count(*) as cnt from musicmetadata where $this->filter");
         }
         else
             $result=mysql_query("select count(*) as cnt from musicmetadata");
@@ -256,7 +266,7 @@ class mythMusic {
 
             if($this->filter != "")
             {
-                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata where  $this->filter order by artist,album,tracknum $limitText");
+                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata where $this->filter order by artist,album,tracknum $limitText");
 
             }
             else
