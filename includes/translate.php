@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    translate.php                            Last Updated: 2005.02.14 (xris)
+    translate.php                            Last Updated: 2005.05.15 (xris)
 
     Basic routines that allow for language translation.  Please see
     languages/translations.txt for information about using the translation
@@ -199,6 +199,8 @@
         foreach($GLOBALS['Languages'] as $lang => $details) {
             $encodings = is_array($details[1]) ? $details[1] : array($details[1]);
             foreach ($encodings as $encoding) {
+                if (!$encoding)
+                    continue;
                 $tmp      = @explode('.', str_replace('_', '-', $encoding));
                 $allang   = strtolower($tmp[0]);
                 $cs       = strtoupper($tmp[1]);
