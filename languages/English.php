@@ -38,6 +38,7 @@ $L = array(
     'Episode'                                            => '',
     'Go'                                                 => '',
     'Hour'                                               => '',
+    'Inactive'                                           => '',
     'Jump'                                               => '',
     'Jump to'                                            => '',
     'Length (min)'                                       => '',

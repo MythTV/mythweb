@@ -37,6 +37,7 @@ $L = array(
     'Episode'                                            => 'Aflevering',
     'Go'                                                 => 'Doorgaan',
     'Hour'                                               => 'Uur',
+    'Inactive'                                           => '',
     'Jump'                                               => 'Ga',
     'Jump to'                                            => 'Spring naar',
     'Length (min)'                                       => 'Duur (min)',

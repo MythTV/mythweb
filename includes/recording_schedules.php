@@ -93,6 +93,7 @@ class Schedule {
     var $recpriority;
     var $category;
     var $maxnewest;
+    var $inactive;
     var $maxepisodes;
     var $autoexpire;
     var $startoffset;
@@ -202,7 +203,7 @@ class Schedule {
     // Update the type, in case it changed
         $this->type = $new_type;
     // Update the record
-        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid) values ('
+        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid) values ('
                                 .escape($this->recordid, true)             .','
                                 .escape($this->type)                       .','
                                 .escape($this->chanid)                     .','
@@ -218,6 +219,7 @@ class Schedule {
                                 .escape($this->recpriority)                .','
                                 .escape($this->category)                   .','
                                 .escape($this->maxnewest)                  .','
+                                .escape($this->inactive)                   .','
                                 .escape($this->maxepisodes)                .','
                                 .escape($this->autoexpire)                 .','
                                 .escape($this->startoffset)                .','

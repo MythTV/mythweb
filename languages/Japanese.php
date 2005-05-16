@@ -37,6 +37,7 @@ $L = array(
     'Episode'                                            => 'サブタイトル',
     'Go'                                                 => '移動',
     'Hour'                                               => '時',
+    'Inactive'                                           => '',
     'Jump'                                               => '移動',
     'Jump to'                                            => '移動',
     'Length (min)'                                       => '時間 (分)',

@@ -35,6 +35,7 @@ $L = array(
     'Episode'                                            => 'Episode',
     'Go'                                                 => 'Go',
     'Hour'                                               => 'Heure',
+    'Inactive'                                           => 'Inactif',
     'Jump'                                               => 'Aller',
     'Jump to'                                            => 'Sauter vers',
     'Listings'                                           => 'Liste',
