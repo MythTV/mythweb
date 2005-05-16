@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    init.php                                 Last Updated: 2005.05.13 (xris)
+    init.php                                 Last Updated: 2005.05.16 (xris)
 
     This file is part of MythWeb, a php-based interface for MythTV.
     See README and LICENSE for details.
@@ -76,47 +76,26 @@
     require_once "includes/programs.php";
     require_once "includes/recording_schedules.php";
 
-// Detect WAP browsers
-    $wap_agents = array('Noki', // Nokia phones and emulators
-                        'Eric', // Ericsson WAP phones and emulators
-                        'WapI', // Ericsson WapIDE 2.0
-                        'MC21', // Ericsson MC218
-                        'AUR ', // Ericsson R320
-                        'R380', // Ericsson R380
-                        'UP.B', // UP.Browser
-                        'WinW', // WinWAP browser
-                        'UPG1', // UP.SDK 4.0
-                        'upsi', // another kind of UP.Browser ??
-                        'QWAP', // unknown QWAPPER browser
-                        'Jigs', // unknown JigSaw browser
-                        'Java', // unknown Java based browser
-                        'Alca', // unknown Alcatel-BE3 browser (UP based?)
-                        'MITS', // unknown Mitsubishi browser
-                        'MOT-', // unknown browser (UP based?)
-                        'My S', // unknown Ericsson devkit browser ?
-                        'WAPJ', // Virtual WAPJAG www.wapjag.de
-                        'fetc', // fetchpage.cgi Perl script from www.wapcab.de
-                        'ALAV', // yet another unknown UP based browser ?
-                        'Wapa', // another unknown browser (Web based "Wapalyzer"?)
-                        'LGE-', // LG phones
-                        );
-    if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"VND.WAP.WML") > 0 // The browser/gateway says it accepts WML.
-            || in_array(substr(trim($_SERVER['HTTP_USER_AGENT']), 0, 4), $wap_agents)) {
-    // This browser is WAP.  Now check if it supports html or wml
-        if (strpos(strtoupper($_SERVER['HTTP_ACCEPT']),"TEXT/HTML") !== false) {
+// Detect different types of browsers and set the theme accordingly.
+    require_once "includes/mobile.php";
+    if (isMobileUser()) {
+    // Browser is mobile but does it accept HTML? If not, use the WML theme.
+        if (browserAcceptsMediaType(array('text/html'))) {
             define('Theme', 'wap');
-        }
-    // browser didn't explicitly state html, use wml only.
-        else {
+        } else {
             define('Theme', 'wml');
         }
     }
-    elseif (strpos($_SERVER['HTTP_USER_AGENT'],"MythPhone") !== false) // The browser is MythPhone
+// The browser is MythPhone.
+    elseif (strpos($_SERVER['HTTP_USER_AGENT'],'MythPhone') !== false) {
         define('Theme', 'vxml');
-// Load the theme from session data?
-    elseif (file_exists('themes/'.$_SESSION['Theme'].'/theme.php') && !$_GET['RESET_THEME'] && !$_POST['RESET_THEME'])
+    }
+// Load theme from session if it exists and the user is not resetting the theme.
+    elseif ((file_exists('themes/'.$_SESSION['Theme'].'/theme.php') && !$_GET['RESET_THEME']
+           && !$_POST['RESET_THEME'])) {
         define('Theme', $_SESSION['Theme']);
-// Load the default theme, and set the session if someone opted to reset
+    }
+// Otherwise set the default theme.
     else {
         define('Theme', 'Default');
     }
