@@ -33,7 +33,7 @@
  * @return true or false
  */
 function isMobileUser() {
-  return (getScreenSize() === false);
+  return (getScreenSize() === false) ? false : true;
 }
 
 
@@ -125,7 +125,6 @@ function getScreenSize() {
 
     $isChecked = true;
   }
-
   return $screen;
 }
 
