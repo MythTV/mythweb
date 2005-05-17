@@ -33,7 +33,7 @@
  * @return true or false
  */
 function isMobileUser() {
-  return (getScreenSize() === false) ? false : true;
+  return empty(getScreenSize());
 }
 
 
