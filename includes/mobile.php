@@ -33,7 +33,7 @@
  * @return true or false
  */
 function isMobileUser() {
-  return empty(getScreenSize());
+  return (getScreenSize() === false);
 }
 
 
@@ -118,7 +118,7 @@ function getScreenSize() {
 
     /* If the user agent was not in our list, check if the terminal accepts WML. */
     if ($screen === false) {
-      if (browserAcceptsMediaType(array('VND', 'WAP', 'WML'))) {
+      if (browserAcceptsMediaType(array('WAP', 'WML'))) {
         $screen = array();
       }
     }
