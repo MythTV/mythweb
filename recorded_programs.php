@@ -123,9 +123,9 @@
         sort_programs($All_Shows, 'recorded_sortby');
 
 // How much free disk space on the backend machine?
-    list($disk_size, $disk_used) = explode(backend_sep, backend_command('QUERY_FREESPACE'));
-    define(disk_size, $disk_size * 1024 * 1024);
-    define(disk_used, $disk_used * 1024 * 1024);
+    list($ignore, $disk_size, $ignore, $disk_used) = explode(backend_sep, backend_command('QUERY_FREE_SPACE'));
+    define(disk_size, $disk_size * 1024);
+    define(disk_used, $disk_used * 1024);
 
 // Try to create a symlink to video_dir if it doesn't exist
     if (!file_exists(preg_replace('#/+$#', '', video_dir)) && $All_Shows[0] && $All_Shows[0]->filename)
