@@ -32,13 +32,16 @@ class Theme_recorded_programs extends Theme {
     function fix_hrefs() {
         for (i=0;i<<?php echo count($All_Shows)?>;i++) {
             if (get_element('delete_' + i))
-                get_element('delete_' + i).href = 'javascript:confirm_delete('+i+')';
+                get_element('delete_' + i).href = 'javascript:confirm_delete('+i+', false)';
+            if (get_element('delete_rerecord_' + i))
+                get_element('delete_rerecord_' + i).href = 'javascript:confirm_delete('+i+', true)';
         }
     }
 
-    function confirm_delete(id) {
+    function confirm_delete(id, forget_old) {
         if (confirm("<?php echo t('Are you sure you want to delete the following show?') ?>\n\n     "+files[id][0]))
-            location.href = "recorded_programs.php?delete=yes&file="+files[id][1];
+            location.href = "recorded_programs.php?delete=yes&file="+files[id][1]
+                            + (forget_old ? '&forget_old' : '');
     }
 
 // -->
@@ -171,7 +174,7 @@ if ($group_field == "") {
 <?php   if ($show->endtime > time()) { ?>
     <td width="5%">currently recording</td>
 <?php   } else { ?>
-    <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 3 : 2 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
+    <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 2 : 1 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>"><?php echo t('Delete') ?></a></td>
 <?php   }
 
@@ -193,6 +196,8 @@ if ($group_field == "") {
         <?php echo t('has bookmark') ?>:&nbsp;
             <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b>
         </td>
+    <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
+        <a id="delete_rerecord_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>&forget_old"><?php echo t('Delete and Record Again') ?></a></td>
 <?php
     }
 ?>

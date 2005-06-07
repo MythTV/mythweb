@@ -14,8 +14,9 @@
     require_once "includes/sorting.php";
 
 // Delete a program?
-    $_GET['delete'] or $_GET['delete'] = $_POST['delete'];
-    $_GET['file']   or $_GET['file']   = $_POST['file'];
+    isset($_GET['forget_old']) or $_GET['forget_old'] = $_POST['forget_old'];
+    isset($_GET['delete'])     or $_GET['delete']     = $_POST['delete'];
+    isset($_GET['file'])       or $_GET['file']       = $_POST['file'];
     if ($_GET['delete'] && preg_match('/\\d+_\\d+/', $_GET['file'])) {
     // Keep a previous-row counter to return to after deleting
         $prev_row = -2;
@@ -29,6 +30,12 @@
                 continue;
         // Delete the recording
             backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
+        // Forget all knowledge of old recordings
+            if (isset($_GET['forget_old'])) {
+                preg_match('/^(\d+)_(\d+)_/', $_GET['file'], $matches);
+                $program = load_one_program($matches[2], $matches[1]);
+                $program->rec_forget_old();
+            }
         // Delay a second so the backend can catch up
         # Disabled because I don't really think it's needed
         #    sleep(1);
