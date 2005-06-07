@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    video_edit.php                  Last Updated: 2005.01.23 (xris)
+    video_edit.php                  Last Updated: 2005.06.06 (xris)
 
     edit video info
 \***                                                                        ***/
@@ -32,8 +32,17 @@ function refreshParent() {
 if (isset($_POST['submit'])) {
 
       //insert data into database
-      mysql_query("UPDATE videometadata SET
-                   title='{$_POST['title']}',director='{$_POST['director']}',plot='{$_POST['plot']}',category='{$_POST['category']}',rating='{$_POST['rating']}',inetref='{$_POST['inetref']}',year='{$_POST['year']}',userrating='{$_POST['userrating']}',length='{$_POST['length']}' WHERE intid='{$_POST['intid']}'");
+      mysql_query('UPDATE videometadata SET'
+                 .' title='    .escape($_POST['title'])     .','
+                 .'director='  .escape($_POST['director'])  .','
+                 .'plot='      .escape($_POST['plot'])      .','
+                 .'category='  .escape($_POST['category'])  .','
+                 .'rating='    .escape($_POST['rating'])    .','
+                 .'inetref='   .escape($_POST['inetref'])   .','
+                 .'year='      .escape($_POST['year'])      .','
+                 .'userrating='.escape($_POST['userrating']).','
+                 .'length='    .escape($_POST['length'])
+                 .' WHERE intid='.escape($_POST['intid']));
       //close window and refresh parent
       ?><body onLoad="refreshParent()"</body><?php
 }
