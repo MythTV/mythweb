@@ -180,8 +180,6 @@ if ($group_field == "") {
 
         if ($_SESSION['recorded_descunder'])
             echo("</tr><tr class=\"recorded\">\n\t<td colspan=\"7\">".$show->description."</td>\n");
-        $prev_group = $cur_group;
-        $row++;
 ?>
 </tr><tr class="recorded">
     <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 7 : 8 ?>" align="center">
@@ -197,8 +195,10 @@ if ($group_field == "") {
             <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b>
         </td>
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <a id="delete_rerecord_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>&forget_old"><?php echo t('Delete and Record Again') ?></a></td>
+        <a id="delete_rerecord_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>&forget_old"><?php echo t('Delete + Rerecord') ?></a></td>
 <?php
+        $prev_group = $cur_group;
+        $row++;
     }
 ?>
 </table>
