@@ -28,14 +28,14 @@
         // This row isn't the one we're looking for
             if ($row[8] != $_GET['file'])
                 continue;
-        // Delete the recording
-            backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
         // Forget all knowledge of old recordings
             if (isset($_GET['forget_old'])) {
-                preg_match('/^(\d+)_(\d+)_/', $_GET['file'], $matches);
-                $program = load_one_program($matches[2], $matches[1]);
-                $program->rec_forget_old();
+                preg_match('/\/(\d+)_(\d+)_\d+\.nuv$/', $_GET['file'], $matches);
+                $show = new Program($row);
+                $show->rec_forget_old();
             }
+        // Delete the recording
+            backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
         // Delay a second so the backend can catch up
         # Disabled because I don't really think it's needed
         #    sleep(1);
@@ -47,13 +47,15 @@
         if ($_SESSION['Theme'] == 'wml') {
             header('Content-type: text/vnd.wap.wml');
             header('Location: http://'.$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]);
-            echo "\n"; // need at least 1 byte in body
-            exit;
         }
     // Return to the row just prior to the one deleted
     //  (with some fuzz to account for normal screen height
     //   -- remember that rows are numbered starting at zero)
-        header('Location: recorded_programs.php'.($prev_row > 0 ? "#$prev_row" : ''));
+        else {
+            header('Location: recorded_programs.php'.($prev_row > 0 ? "#$prev_row" : ''));
+        }
+    // need at least 1 byte in body
+        echo "\n";
         exit;
     }
 
