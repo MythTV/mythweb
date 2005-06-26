@@ -84,14 +84,14 @@ directories.  This should be as simple as:  **
     chgrp -R apache /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
     chmod g+rw /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
 
+    ** Some distributions run apache as "nobody/nogroup" so please be aware
+       that you may need to consult your /etc/httpd/httpd.conf file to verify
+       which user/group apache is set to run as.
+
     Finally, and THIS IS VERY VERY IMPORTANT, you should then edit the file
 config/conf.php (instructions for what to set are included in the file).
 That's it. Point your web browser at http://your_machine_name/your_mythweb_path/
 What could be simpler?
-
-    ** Some distributions run apache as "nobody/nogroup" so please be aware
-       that you may need to consult your /etc/httpd/httpd.conf file to verify
-       which user/group apache is set to run as.
 
     Did you read the THIS IS VERY VERY IMPORTANT note in the previous paragraph?
 People seem to skip over the config file and for some reason assume that
