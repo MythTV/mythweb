@@ -9,62 +9,85 @@
     shared files for the entire program.
 \***                                                                        ***/
 
-// Load in the error libraries before we do anything that might cause some.
-    require_once 'includes/errors.php';
-    require_once 'includes/errordisplay.php';
+// Clean the document root variable and make sure it doesn't have a trailing slash
+    $_SERVER['DOCUMENT_ROOT'] = preg_replace('/\/+$/', '', $_SERVER['DOCUMENT_ROOT']);
+
+// Add the shared_code directory to our search path
+    ini_set('include_path', ini_get('include_path').':'.dirname($_SERVER['DOCUMENT_ROOT']).':'.$_SERVER['DOCUMENT_ROOT']);
+
+// Are we running in SSL mode?
+    define('is_ssl', ($_SERVER['SERVER_PORT'] == 443 || !empty($_SERVER['SSL_PROTOCOL']) || !empty($_SERVER['HTTPS']))
+                     ? true
+                     : false);
 
 // Load the user-defined configuration settings
     require_once 'config/conf.php';
 
-// Make sure that people have actually defined certain (new) config options
-    if (hostname == 'hostname')
-        trigger_error('Please configure "hostname" in conf.php', FATAL);
+// Load the generic utilities so we have access to stuff like DEBUG()
+    require_once 'includes/utils.php';
 
-// Clean up some variables
-    if (!ereg('/$', $_SERVER['DOCUMENT_ROOT']))
-        $_SERVER['DOCUMENT_ROOT'] .= '/';
-
-// Clean up any linefeed messiness we get from the form data
-    foreach (array_keys($_GET) as $key) {
-    // Fix linebreaks
-        if (is_string($_GET[$key]))
-            $_GET[$key] = ereg_replace("\r\n", "\n", $_GET[$key]);
-    // Process any imagemap submissions to make sure we also get the name itself
-        if (ereg('_[xy]$', $key)) {
-            $key = ereg_replace('_[xy]$', '', $key);
-            if (!isset($_GET[$key]))
-                $_GET[$key] = true;
-        }
-    }
-    foreach (array_keys($_POST) as $key) {
-    // Fix linebreaks
-        if (is_string($_POST[$key]))
-            $_POST[$key] = ereg_replace("\r\n", "\n", $_POST[$key]);
-    // Process any imagemap submissions to make sure we also get the name itself
-        if (ereg('_[xy]$', $key)) {
-            $key = ereg_replace('_[xy]$', '', $key);
-            if (!isset($_POST[$key]))
-                $_POST[$key] = true;
-        }
-    }
-
-// Start the session, and set the cookie to expire in one year
-    session_name('mythweb_id');
-    session_set_cookie_params(60 * 60 * 24 * 355, '/', server_domain);
-    session_start();
-
-// Connect to the database (mysql_pconnect seems to use too many resources, so don't do it)
-//  please note that calling mysql_close is unnecessary - see php documentation for details
-    $dbh = mysql_connect(db_host, db_username, db_password)
-        or trigger_error("Can't connect to the database server.  Did you use the correct settings in config/conf.php?", FATAL);
-    mysql_select_db(db_dbname)
-        or trigger_error("Can't access the database file:  " . mysql_error() . " [#" . mysql_errno() . "]", FATAL);
+// Load the error trapping and display routines
+    require_once 'includes/errors.php';
+    require_once 'includes/errordisplay.php';
 
 // Load the translation routines
     require_once 'includes/translate.php';
 
+// Make sure we're running a new enough version of php
+    if (substr(phpversion(), 0, 3) < 4.3)
+        trigger_error('You must be running at least php 4.3 to use this program.', FATAL);
+
+// Clean up input data
+    fix_crlfxy($_GET);
+    fix_crlfxy($_POST);
+    if (get_magic_quotes_gpc()) {
+        fix_magic_quotes($_COOKIE);
+        fix_magic_quotes($_ENV);
+        fix_magic_quotes($_GET);
+        fix_magic_quotes($_POST);
+        fix_magic_quotes($_REQUEST);
+        fix_magic_quotes($_SERVER);
+    }
+
+// Load the database connection routines
+    require_once 'includes/db.php';
+
+// Connect to the database
+    global $db;
+    $db = new Database(db_name, db_login, db_password, db_server);
+
+// Support legacy database code
+    $dbh = $db->dbh;
+
+// Access denied -- probably means that there is no database
+    if ($db->errno == 1045) {
+        require_once 'templates/_db_access_denied.php';
+        exit;
+    }
+
+//
+//  If there was a database connection error, this will send an email to
+//    the administrator, and then present the user with a static page
+//    informing them of the trouble.
+//
+    if ($db->error) {
+    // Notify the admin that the database is offline!
+        if (strstr(error_email, '@'))
+            mail(error_email, "Database Connection Error" ,
+                 $db->error,
+                 'From:  PHP Error <php_errors@'.server_domain.">\n");
+    // Let the user know in a nice way that something's wrong
+        require_once 'templates/_site_down.php';
+        exit;
+    }
+
+// Make sure the database is up to date
+    require_once 'includes/db_update.php';
+
+// Load the session handler routines
+    require_once 'includes/session.php';
+
 // Include a few useful functions
-    require_once "includes/utils.php";
     require_once "includes/css.php";
     require_once "includes/mouseovers.php";
 
@@ -162,4 +185,3 @@
     if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = t('generic_date');
     if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
 
-?>

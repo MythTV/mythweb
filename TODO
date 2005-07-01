@@ -1,4 +1,10 @@
+add "symlink" stuff to .htaccess
+
 add width tag or good wordwrap to mouseover popup show descriptions
 mouseover pulldown for advanced search options
 add time offset support
 finish settings editor (esp. user-specified date formats)
+
+# set up different auth for:
+# settings_channels.php
+

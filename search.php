@@ -138,7 +138,7 @@
 // No query?
     if (count($query) < 1) {
         $Results = NULL;
-        if (!has_warnings())
+        if (!warnings())
             add_warning(t('Please search for something.'));
     }
 // Get ready to perform the query

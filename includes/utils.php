@@ -15,45 +15,115 @@
     define('tb', 1024 * gb);    // Terabyte
 
 /*
-    nice_filesize:
-    pass in a filesize in bytes, and receive a more human-readable version
-    JS: adapted from php.net: sponger 10-Jun-2002 12:28
-*/
-function nice_filesize($size) {
-//  If it's less than a kb we just return the size
-    if ($size < kb)
-        return t('$1 B', t($size));
-// Otherwise we keep going until the size is in the appropriate measurement range.
-    elseif ($size < mb)
-        return t('$1 KB', t(round($size / kb, ($size < 10 * kb))));
-    elseif ($size < gb)
-        return t('$1 MB', t(round($size / mb, ($size < 10 * mb))));
-    elseif ($size < tb)
-        return t('$1 GB', t(round($size / gb, ($size < 10 * gb))));
-    else
-        return t('$1 TB', t(round($size / tb, ($size < 10 * tb))));
-}
-
-function nice_length($length) {
-    $mins  = (int) (($length % 3600) / 60);
-    $hours = (int) ($length / 3600);
-    if ($hours)
-        $ret = tn('$1 hr', '$1 hrs', $hours);
-    else
-        $ret = '';
-    if ($mins > 0) {
-        if ($ret)
-            $ret .= ' ';
-        $ret .= tn('$1 min', '$1 mins', $mins);
+ *  setting:
+ *    get or set a database setting
+/*/
+    function setting($field, $new_value = "old\0old") {
+        static $cache = array();
+        global $db;
+    // Assigning a new value
+        if ($new_value !== "old\0old") {
+            $db->query('REPLACE INTO settings (value, data) VALUES (?,?)',
+                       $field, $new_value);
+            $cache[$field] = $new_value;
+        }
+    // Not cached?
+        elseif (!array_key_exists($field, $cache)) {
+            $sh = $db->query('SELECT data FROM settings WHERE value=?',
+                             $field);
+            list($cache[$field]) = $sh->fetch_row();
+            $sh->finish();
+        }
+    // Return the cached value
+        return $cache[$field];
     }
-    return $ret;
-}
+
+/*
+ *  fix_crlfxy:
+ *    Recursively fixes silly \r\n stuff that some browsers send.
+ *    Also adds a generic entry for fiends ending in _x or _y to better deal
+ *    with image inputs.
+/*/
+    function &fix_crlfxy(&$array) {
+        foreach ($array as $key => $val) {
+			if (is_array($val))
+				fix_crlfxy($array[$key]);
+            elseif (is_string($val)) {
+                $array[$key] = str_replace("\r\n", "\n", $val);
+            // Process any imagemap submissions to make sure we also get the name itself
+                if ($key != ($new_key = preg_replace('/_[xy]$/', '', $key))) {
+                    if (!array_key_exists($new_key, $array))
+                        $array[$new_key] = true;
+                }
+            }
+        }
+        return $array;
+    }
+
+/*
+ *  fix_magic_quotes:
+ *    Recursively strip slashes from an array (eg. $_GET).
+/*/
+	function &fix_magic_quotes(&$array) {
+		foreach ($array as $key => $val) {
+			if (is_array($val))
+				fix_magic_quotes($array[$key]);
+			else
+				$array[$key] = stripslashes($val);
+		}
+		return $array;
+	}
+
+/*
+ *  redirect_browser:
+ *  Print a redirect header and exit
+/*/
+    function redirect_browser($url) {
+        header("Location: $url");
+        echo "\n";
+        exit;
+    }
+
+/*
+ *  nice_filesize:
+ *  pass in a filesize in bytes, and receive a more human-readable version
+ *  JS: adapted from php.net: sponger 10-Jun-2002 12:28
+/*/
+    function nice_filesize($size) {
+    //  If it's less than a kb we just return the size
+        if ($size < kb)
+            return t('$1 B', t($size));
+    // Otherwise we keep going until the size is in the appropriate measurement range.
+        elseif ($size < mb)
+            return t('$1 KB', t(round($size / kb, ($size < 10 * kb))));
+        elseif ($size < gb)
+            return t('$1 MB', t(round($size / mb, ($size < 10 * mb))));
+        elseif ($size < tb)
+            return t('$1 GB', t(round($size / gb, ($size < 10 * gb))));
+        else
+            return t('$1 TB', t(round($size / tb, ($size < 10 * tb))));
+    }
+
+    function nice_length($length) {
+        $mins  = (int) (($length % 3600) / 60);
+        $hours = (int) ($length / 3600);
+        if ($hours)
+            $ret = tn('$1 hr', '$1 hrs', $hours);
+        else
+            $ret = '';
+        if ($mins > 0) {
+            if ($ret)
+                $ret .= ' ';
+            $ret .= tn('$1 min', '$1 mins', $mins);
+        }
+        return $ret;
+    }
 
 
 /*
-    unixtime:
-    converts an sql timestamp into unixtime
-*/
+ *  unixtime:
+ *  converts an sql timestamp into unixtime
+/*/
     function unixtime($sql_timestamp) {
         return mktime(substr($sql_timestamp, 8, 2),     // hour
                       substr($sql_timestamp, 10, 2),    // minute
@@ -63,11 +133,11 @@ function nice_length($length) {
                       substr($sql_timestamp, 0, 4));    // year
     }
 
-/*
-    escape:
-    For lack of a function that escapes strings AND adds quotes, I wrote one
-    myself to make the rest of my code read a bit easier.
-*/
+/*  DEPRECATED -- use db.php routines instead!!
+ *  escape:
+ *  For lack of a function that escapes strings AND adds quotes, I wrote one
+ *  myself to make the rest of my code read a bit easier.
+/*/
     function escape($string, $allow_null = false) {
     // Null?
         if ($allow_null && is_null($string))
@@ -78,9 +148,9 @@ function nice_length($length) {
     }
 
 /*
-    get_sorted_files:
-    Returns a sorted list of files in a directory, minus . and ..
-*/
+ *  get_sorted_files:
+ *  Returns a sorted list of files in a directory, minus . and ..
+/*/
     function get_sorted_files($dir = '.', $regex = '', $negate = false) {
         $list = array();
         $handle = opendir($dir);
@@ -95,17 +165,23 @@ function nice_length($length) {
     }
 
 /*
-    _or:
-    returns $this or $or_this
-*/
-    function _or($this, $or_this) {
+ *  _or:
+ *  returns $this or $or_this
+ *  if $gt is set to true, $this will only be returned if it's > 0
+ *  if $gt is set to a number, $this will only be returned if it's > $gt
+/*/
+    function _or($this, $or_this, $gt = false) {
+        if ($gt === true)
+            return $this > 0 ? $this : $or_this;
+        if (!empty($gt))
+            return $this > $gt ? $this : $or_this;
         return $this ? $this : $or_this;
     }
 
 /*
-    video_url:
-    returns video_url constant, or sets it according to the browser type
-*/
+ *  video_url:
+ *  returns video_url constant, or sets it according to the browser type
+/*/
     function video_url() {
     // Not defined?
         if (!video_url || video_url == 'video_url') {
@@ -131,9 +207,9 @@ function nice_length($length) {
     }
 
 /*
-    utf8tolocal:
-    returns strings convert UTF-8 to local encoding
-*/
+ *  utf8tolocal:
+ *  returns strings convert UTF-8 to local encoding
+/*/
     function utf8tolocal($str) {
         if (!defined("fs_encoding") || fs_encoding == '')
             return $str;
@@ -148,21 +224,27 @@ function nice_length($length) {
     }
 
 /*
-    DEBUG:
-    prints out a piece of data
-*/
-    function DEBUG($data) {
-        echo "<hr>";
-        if (is_array($data) || is_object($data)) {
-            echo "<pre>";
+ *  DEBUG:
+ *  prints out a piece of data
+/*/
+    function DEBUG($data, $file = false) {
+    // Catch our data into a string
+        ob_start();
+        if (is_array($data) || is_object($data))
             print_r($data);
-            echo "</pre>";
-        }
         elseif (isset($data))
             echo $data;
         else
-            echo "NULL";
-        echo "<hr>";
+            echo 'NULL';
+        $str = ob_get_contents();
+        ob_end_clean();
+    // Print the message
+        echo '<hr><pre>'.$str.'</pre><hr>';
+    // Print to a file?
+        if ($file) {
+            $out = fopen('/tmp/debug.txt', 'a');
+            fwrite($out, "$str\n");
+            fclose($out);
+        }
     }
 
-?>

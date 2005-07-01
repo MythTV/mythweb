@@ -1,9 +1,13 @@
 <?php
-/***                                                                ***\
-    errordisplay.php                Last Updated: 2005.02.28 (xris)
-
-    This file contains a number of error-display related routines
-\***                                                                ***/
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  errordisplay.php
+ *
+ *  This file contains a number of error-display related routines
+ */
 
 // These are arrays that will contain error messages
     global $Errors, $Warnings;
@@ -26,17 +30,10 @@
             unset($_SESSION['WARNINGS']);
         }
     // Nothing to show?
-        if (!count($Errors) && !count($Warnings)) return;
-    // Warnings?
-        if (Is_Editor && $Warnings)
-            array_unshift($Warnings, (count($Errors) ? "\n" : '')."Warning:\n");
+        if (empty($Errors) && empty($Warnings)) return;
     // Load the errors
         $js_errstr = implode("\n", array_merge($Errors, $Warnings));
         $errstr    = str_replace("\n", "<br>\n", htmlentities($js_errstr));
-        if (Is_Editor && count($Errors)) {
-            $errstr    .= "\n<p>\nNo changes were committed.";
-            $js_errstr .= "\n\nNo changes were committed.";
-        }
     // Clean up the javascript error string
         $js_errstr = str_replace("\n", "\\n",
                         str_replace('"', '\\"',
@@ -98,6 +95,14 @@ EOF;
             $BadItems[$fields] = true;
     }
 
+// Functions to test the existence of errors and/or warnings
+    function errors() {
+        return !empty($GLOBALS['Errors']);
+    }
+    function warnings() {
+        return !empty($GLOBALS['Warnings']);
+    }
+
 // Save errors and warnings into a session error/warning variable
     function save_session_errors() {
         global $Errors, $Warnings;
@@ -110,8 +115,3 @@ EOF;
         }
     }
 
-// Returns true or false if there are errors/warnings
-    function has_errors()   { return !empty($GLOBALS['Errors']);   }
-    function has_warnings() { return !empty($GLOBALS['Warnings']); }
-
-?>

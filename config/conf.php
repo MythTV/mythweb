@@ -1,41 +1,45 @@
 <?php
-/***                                                                        ***\
-    conf.php                                  Last Updated: 2005.05.13 (xris)
-
-    global configuration for mythweb
-\***                                                                        ***/
-
-//
-//  All end-user customizations (should?) happen here
-//  Most of this should really by in a MySQL table with
-//  a php interface to change it (someday...)
-//
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  conf.php
+ *
+ *    Global configuration for MythWeb.
+ *
+ *    All end-user customizations (should?) happen here
+ *    Most of this should really by in a MySQL table with
+ *    a php interface to change it (someday...)
+/*/
 
 //
 //  How to access the database
 //
-    define('db_host',     'localhost');
-    define('db_username', 'mythtv');
+    define('db_name',     'mythconverg');
+    define('db_login',    'mythtv');
     define('db_password', 'mythtv');
-    define('db_dbname',   'mythconverg');
+    define('db_server',   'localhost');
 
-// The domain of this webserver, for cookie validation and other things.  If you
-// don't have "canonical names" turned on in apache, you need to set this to the
-// name or IP you use to access this server, or session data will not work.
-// Turning on "canonical names" in apache's httpd.conf is the preferred option.
+// The domain of this webserver, for cookie validation and other things.  This
+//  *should* work automatically as-is, but if cookies don't work, you may need
+//  to manually set this to the full domain name of this server.
+//
+//    eg.  define('server_domain', 'example.com')
+//
     define('server_domain', $_SERVER['SERVER_NAME'] ? $_SERVER['SERVER_NAME'] : $_SERVER['HTTP_HOST']);
 
 // Email address to which php and database errors are mailed to
-    define('Error_Email', 'php_errors@'.preg_replace('/.*?\b([\w\-]+\.[\w\-]+)$/', '$1', server_domain));
+    define('error_email', 'mythweb_errors@'.preg_replace('/.*?\b([\w\-]+\.[\w\-]+)$/', '$1', server_domain));
 
 // For the "movies" search -- set this to the word your listings provider uses to
 //   describe movies/films/peliculas/etc.
     define('movie_word', 'movie');
 
-/***
-    You probably don't need to edit anything below here, but the variables are
-    provided for your convenience.
-***/
+/*
+ *  You probably don't need to edit anything below here, but the variables are
+ *  provided for your convenience.
+/*/
 
 // The hostname of this machine -- so you can override manually as needed
     define('hostname', chop(`/bin/hostname`));
@@ -63,4 +67,3 @@
 #   define('video_url', 'file://machine_name/path_to_videos');
 #   define('video_url', 'myth://slave_backend_ip:6543');
 
-?>
