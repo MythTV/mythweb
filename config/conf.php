@@ -60,6 +60,12 @@
 // Path to the mythvideo "covers" directory
     define('video_img_path', '');
 
+// Where in the local filesystem are the mythvideo files stored
+    define('mythvideo_dir', '/pub/video');
+
+// URL path to the mythvideo files directory (most likely a symlink to mythvideo_dir)
+    define('mythvideo_url', 'mythvideo');
+
 // video_url is normally determined automatically (a local link to video_dir for
 //   Linux/MacOS, and a myth:// URL for windows machines), but you can override
 //   it here to something else if you really need to.

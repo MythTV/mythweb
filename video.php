@@ -118,10 +118,13 @@ class Video {
         $this->childid         = $program_data['childid'];
     // Figure out the URL
         global $videodir;
-        $this->url = video_url;
-        foreach (preg_split('/\//', substr($this->filename, strlen($videodir))) as $dir) {
-            if (!$dir) continue;
-            $this->url .= '/'.rawurlencode(utf8tolocal($dir));
+        $this->url = '#';
+        if (mythvideo_url != 'mythvideo_url' && file_exists(mythvideo_url)) {
+            $this->url = implode('/', array_map('rawurlencode',
+                                      array_map('utf8tolocal',
+                                      explode('/',
+                                      mythvideo_url . '/' . preg_replace('#^'.mythvideo_dir.'/?#', '', $this->filename)
+                                ))));
         }
     }
 }
