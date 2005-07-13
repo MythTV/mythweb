@@ -65,6 +65,7 @@
 
 // Parse the program list
     $recordings     = get_backend_rows('QUERY_RECORDINGS Delete');
+    $Total_Used     = 0;
     $Total_Time     = 0;
     $Total_Programs = 0;
     $All_Shows      = array();
@@ -81,8 +82,9 @@
         // Make sure this is a valid show
             if (!$show->chanid || $show->length < 1)
                 continue;
-        // Keep track of the total time
+        // Keep track of the total time and disk space used
             $Total_Time += $show->length;
+            $Total_Used += $show->filesize;
         // Skip programs the user doesn't want to look at, but keep track of their names and how many episodes we have recorded
             $Total_Programs++;
             $Program_Titles[$record[0]]++;

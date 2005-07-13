@@ -14,7 +14,7 @@ class Theme_recorded_programs extends Theme {
     // Print the main page header
         parent::print_header("MythWeb - Recorded Programs");
     // Print the page contents
-        global $All_Shows, $Total_Time;
+        global $All_Shows, $Total_Time, $Total_Used;
 ?>
 
 <script language="JavaScript" type="text/javascript">
@@ -204,10 +204,11 @@ if ($group_field == "") {
 </table>
 <?php
     echo '<p align="right" style="padding-right: 75px">'
-        .t('$1 programs, using $2 ($3) out of $4.', t($GLOBALS['Total_Programs']),
-                                                    nice_filesize(disk_used),
+        .t('$1 programs, using $2 ($3) out of $4 ($5 free).', t($GLOBALS['Total_Programs']),
+                                                    nice_filesize($Total_Used),
                                                     nice_length($Total_Time),
-                                                    nice_filesize(disk_size))
+                                                    nice_filesize(disk_size),
+                                                    nice_filesize(disk_size - disk_used))
         .'</p>';
 
     // Print the main page footer
