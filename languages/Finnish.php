@@ -1,9 +1,14 @@
 <?php
-/***                                                                        ***\
-    languages/Finnish.php
-
-    Translation hash for Finnish.
-\***                                                                        ***/
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  languages/Finnish.php
+ *
+ *    Translation hash for Finnish.
+ *
+/*/
 
 // Set the locale
 setlocale(LC_ALL, 'fi_FI.UTF-8');
