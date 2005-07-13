@@ -10,7 +10,7 @@
 #class theme_program_detail extends Theme {
 class Theme_scheduled_recordings extends Theme {
 
-    function print_page() {
+    function print_page(&$shows) {
     // Print the main page header
         parent::print_header('MythWeb - Scheduled Recordings');
     // Print the page contents
@@ -24,7 +24,7 @@ class Theme_scheduled_recordings extends Theme {
 */
 
     $row = 0;
-    foreach ($All_Shows as $show) {
+    foreach ($shows as $show) {
     // Reset the command variable
         $command = '';
     // Which class does this show fall into?

@@ -10,101 +10,106 @@
 #class theme_program_detail extends Theme {
 class Theme_program_detail extends Theme {
 
-    function print_page() {
-        global $this_channel, $this_program;
+    function print_page(&$program, &$schedule, &$channel) {
     // Print the main page header
-        parent::print_header("MythWeb - Program Detail:  $this_program->title");
+        parent::print_header("MythWeb - Program Detail:  $program->title");
     // Print the page contents
 ?>
 <a href="channel_detail.php?chanid=<?=$this_channel->chanid?>" >
 <?=prefer_channum ? $this_channel->channum : $this_channel->callsign?> &nbsp;
 <?=prefer_channum ? $this_channel->callsign : $this_channel->channum?></a><br>
 
-<?=$this_program->title?><BR>
-<?=date('D m/d/y', $$this_program->starttime)?><br>
-<?=date('g:i A', $this_program->starttime)?> to <?=date('g:i A', $this_program->endtime)?> (<?=(int)($this_program->length/60)?> minutes)<BR>
+<?=$program->title?><BR>
+<?=date('D m/d/y', $program->starttime)?><br>
+<?=date('g:i A', $program->starttime)?> to <?=date('g:i A', $program->endtime)?> (<?=(int)($program->length/60)?> minutes)<BR>
                 <?
-                if ($this_program->previouslyshown)
+                if ($program->previouslyshown)
                     echo '(Rerun) ';
-//              if ($this_program->category_type == 'movie')
-//                  echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($this_program->title) . "\">Search IMDB</a>)";
+//              if ($program->category_type == 'movie')
+//                  echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($program->title) . "\">Search IMDB</a>)";
 //              else
-//                  echo " (<a href=\"http://www.google.com/search?q=" . urlencode($this_program->title) . "\">Search Google</a>)";
+//                  echo " (<a href=\"http://www.google.com/search?q=" . urlencode($program->title) . "\">Search Google</a>)";
                 ?>
-        <? if (strlen($this_program->subtitle)) { ?>
-            Episode: <b><?=$this_program->subtitle?></b><br>
+        <? if (strlen($program->subtitle)) { ?>
+            Episode: <b><?=$program->subtitle?></b><br>
         <? }
-           if (strlen($this_program->description)) {?>
-                Description: <?=$this_program->description?><br>
+           if (strlen($program->description)) {?>
+                Description: <?=$program->description?><br>
         <? } ?>
-        <? if (strlen($this_program->category)) {?>
-                Category: <?=$this_program->category?><br>
+        <? if (strlen($program->category)) {?>
+                Category: <?=$program->category?><br>
         <? }
-           if (strlen($this_program->airdate)) {?>
-                Orig. Airdate: <?=$this_program->airdate?><br>
+           if (strlen($program->airdate)) {?>
+                Orig. Airdate: <?=$program->airdate?><br>
         <? }
-           if (strlen($this_program->rating)) {?>
-                <?=strlen($this_program->rater) > 0 ? "$this_program->rater " : ''?>Rating: <?=$this_program->rating?><br>
+           if (strlen($program->rating)) {?>
+                <?=strlen($program->rater) > 0 ? "$program->rater " : ''?>Rating: <?=$program->rating?><br>
         <?
-           if (strlen($this_program->starstring) > 0)
-                    echo ", $this_program->starstring";
+           if (strlen($program->starstring) > 0)
+                    echo ", $program->starstring";
                 ?><br>
         <? } ?>
 
-        <form action="program_detail.php" method="get" name="record_settings">
-        <input type="hidden" name="chanid" value="<?=$_GET['chanid']?>">
-        <input type="hidden" name="starttime" value="<?=$_GET['starttime']?>">
-<br>
-        <center>Recording Options:</center>
-                    <input type="radio" class="radio" name="record" value="never" id="record_never"<?=
-                    $this_program->will_record ? '' : ' CHECKED'?>></input>
-  <a>Don't record</a><br>
-                    <input type="radio" class="radio" name="record" value="once" id="record_once"<?=
-                    $this_program->record_once ? ' CHECKED' : ''?>></input>
-  <a>Record showing</a><br>
-                    <input type="radio" class="radio" name="record" value="daily" id="record_daily"<?=
-                    $this_program->record_daily ? ' CHECKED' : ''?>></input>
-  <a>Record every day</a> at this time<br>
-                    <input type="radio" class="radio" name="record" value="weekly" id="record_weekly"<?=
-                    $this_program->record_weekly ? ' CHECKED' : ''?>></input>
-  <a>Record every week</a> at this time<br>
-                    <input type="radio" class="radio" name="record" value="channel" id="record_channel"<?=
-                    $this_program->record_channel ? ' CHECKED' : ''?>></input>
-  <a>Always record on this channel</a><br>
-                    <input type="radio" class="radio" name="record" value="always" id="record_always"<?=
-                    $this_program->record_always ? ' CHECKED' : ''?>></input>
-  <a>Always record on any channel</a><br>
+        <form name="program_detail" method="post" action="program_detail.php?<?php
+            if ($_GET['recordid'])
+                echo 'recordid='.urlencode($_GET['recordid']);
+            else
+                echo 'chanid='.urlencode($_GET['chanid']).'&starttime='.urlencode($_GET['starttime'])
+            ?>">
+        <center>Schedule Options:</center>
+                    <input type="radio" class="radio" name="record" value="record_never" id="record_never"<?=
+                    $schedule->recordid ? '' : ' CHECKED'?>></input>
+  <a><?php 
+    if ($schedule->recordid) 
+       echo 'Cancel';
+    else
+       echo 'Don\'t record';
+      ?> 
+  </a><br>
+    <input type="radio" class="radio" name="record" value="<? echo rectype_once?>" id="record_once"<?=
+        $schedule->type == rectype_once ? ' CHECKED' : ''?>></input>
+        <a>Record showing</a><br>
+    <input type="radio" class="radio" name="record" value="<?echo rectype_daily ?>" id="record_daily"<?=
+        $schedule->type == rectype_daily ? ' CHECKED' : ''?>></input>
+        <a>Record every day</a> at this time<br>
+    <input type="radio" class="radio" name="record" value="<? echo rectype_weekly?>" id="record_weekly"<?=
+        $schedule->type == rectype_weekly ? ' CHECKED' : ''?>></input>
+        <a>Record every week</a> at this time<br>
+    <input type="radio" class="radio" name="record" value="<? echo rectype_findone ?>" id="record_findone"<?=
+        $schedule->type == rectype_findone ? ' CHECKED' : ''?>></input>
+        <a>Find one episode</a><br>
+    <input type="radio" class="radio" name="record" value="<? echo rectype_finddaily ?>" id="record_finddaily"<?=
+        $schedule->type == rectype_finddaily ? ' CHECKED' : ''?>></input>
+        <a>Find one episode every day</a><br>
+    <input type="radio" class="radio" name="record" value="<? echo rectype_findweekly ?>" id="record_findweekly"<?=
+        $schedule->type == rectype_finddaily ? ' CHECKED' : ''?>></input>
+        <a>Find one episode every week</a><br>
+    <input type="radio" class="radio" name="record" value="<? echo rectype_channel?>" id="record_channel"<?=
+        $schedule->type == rectype_channel ? ' CHECKED' : ''?>></input>
+        <a>Always record on this channel</a><br>
+    <input type="radio" class="radio" name="record" value="<? echo retype_always ?>" id="record_always"<?=
+        $schedule->type == rectype_always ? ' CHECKED' : ''?>></input>
+        <a>Always record on any channel</a><br>
                 <br>
   Recording Profile<br>
-  <select name="profile">
-                    <?php
-
-                        global $Profiles;
-                        foreach($Profiles as $profile) {
-                            echo '<option value="'.htmlentities($profile['id']).'"';
-                            if ($this_program->profile == $profile['id'])
-                                echo ' SELECTED';
-                            echo '>'.htmlentities($profile['name']).'</option>';
-                        }
-                        ?></select><br>
-  Rank<br>
-  <select name="rank">
-                    <?php
-                        for($rankcount=-10;$rankcount<=10;++$rankcount) {
-                            echo '<option value="'.htmlentities($rankcount).'"';
-                            if ($this_program->rank == $rankcount)
-                                echo ' SELECTED';
-                            echo '>'.htmlentities($rankcount).'</option>';
-                        }
-                        ?></select><br>
-  <input type="checkbox" class="radio" name="recorddups"<?php if ($this_program->recorddups) echo ' CHECKED' ?>>
-  Record Dupes?&nbsp;<br>
-  <input type="checkbox" class="radio" name="autoexpire" <?php if ($this_program->autoexpire) echo "CHECKED" ?>>
-  Auto-expire?&nbsp;<br>
-                    No of recordings to keep?<br><input type="input" name="maxepisodes" size="1" value="<?php echo htmlentities($this_program->maxepisodes) ?>"><br>
-  <input type="checkbox" class="radio" name="maxnewest" <?php if ($this_program->maxnewest) echo "CHECKED" ?>>
-  Record new and expire old?&nbsp;<br>
-
+  <?php profile_select($schedule->profile) ?>
+                        <br>
+  <input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" />
+       <a><? echo t('Auto-flag commercials') ?></a><br/>
+  <input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" />
+       <a><? echo t('Auto-expire recordings') ?></a><br/>
+  <input type="checkbox" class="radio" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1" />
+       <a><? echo t('Record new and expire old') ?></a><br/>
+  <input type="checkbox" class="radio" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1" />
+       <a><? echo t('Inactive') ?></a><br/>
+  <?php echo t('No. of recordings to keep') ?>:
+  <input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" size="2"/><br/>
+  <?php echo t('Start Early') ?>:
+  <input type="input" class="quantity" name="startoffset" value="<?php echo htmlentities($schedule->startoffset) ?>" size="2"/>
+       <?php echo t('minutes') ?><br/>
+  <?php echo t('End Late') ?>:
+  <input type="input" class="quantity" name="endoffset" value="<?php echo htmlentities($schedule->endoffset) ?>" size="2"/>
+  <?php echo t('minutes') ?><br/>
                     <center><input type="submit" class="submit" name="save" value="Update Settings"></center>
                 <br>
 
