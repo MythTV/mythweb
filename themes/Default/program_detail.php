@@ -66,7 +66,7 @@ class Theme_program_detail extends Theme {
                     (<?php echo t('Search') ?>: &nbsp;
                     <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($schedule->title) ?>"><?php echo t('IMDB') ?></a>
                     &nbsp;-&nbsp;
-                    <a href="http://www.tvtome.com/tvtome/servlet/Search?searchType=show&searchString=<?php echo urlencode($schedule->title) ?>"><?php echo t('TVTome') ?></a>
+                    <a href="http://www.tv.com/search.php?type=11&stype=all&qs=<?php echo urlencode($schedule->title) ?>"><?php echo t('TV.com') ?></a>
                     &nbsp;-&nbsp;
                     <a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Google') ?></a>
                     )

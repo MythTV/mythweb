@@ -195,7 +195,7 @@ $L = array(
     'Presented by'                        => 'Esittää',
     'Produced by'                         => 'Tuottajana',
     'Program Detail'                      => '',
-    'TVTome'                              => 'TVTome',
+    'TV.com'                              => '',
     'What else is on at this time?'       => 'Mitä muuta on tähän aikaan?',
     'Written by'                          => 'Käsikirjoittaja',
 // themes/.../program_listing.php

@@ -190,7 +190,7 @@ $L = array(
     'Presented by'                        => '提供',
     'Produced by'                         => '製作',
     'Program Detail'                      => '',
-    'TVTome'                              => '',
+    'TV.com'                              => '',
     'What else is on at this time?'       => 'この時間の番組表',
     'Written by'                          => '著者',
 // themes/.../program_listing.php

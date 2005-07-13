@@ -190,7 +190,7 @@ $L = array(
     'Presented by'                        => 'Présenté par',
     'Produced by'                         => 'Produit par',
     'Program Detail'                      => '',
-    'TVTome'                              => 'TVTome',
+    'TV.com'                              => '',
     'What else is on at this time?'       => 'Quoi d&acute;autre &agrave; cette heure',
     'Written by'                          => 'Ecrit par',
 // themes/.../program_listing.php
