@@ -37,6 +37,15 @@
             $Channels[$channel_data['chanid']] = new Channel($channel_data);
         }
         mysql_free_result($result);
+    // No channels returned?
+        if (empty($Channels)) {
+            unset($_SESSION['guide_favonly']);
+            trigger_error('No channels were detected.  '
+                         .($_SESSION['guide_favonly']
+                            ? 'The "favorites only" option has now been turned off, please reload this page to try again.'
+                            : 'Are you sure that MythTV is properly configured?'),
+                          FATAL);
+        }
     }
 
 /*
