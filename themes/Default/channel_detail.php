@@ -86,6 +86,8 @@ class Theme_channel_detail extends Theme {
     ?><tr class="<?php echo $show->class ?>">
     <td nowrap align="center"><a href="program_listing.php?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime)?> - <?php echo strftime($_SESSION['time_format'], $show->endtime)?></a></td>
     <td class="<?php echo $show->class ?>"><?php
+        if ($show->hdtv)
+               echo '<span class="hdtv_icon">HD</span>';
         echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
              .$show->title.$additional.'</a>';
         ?></td>
