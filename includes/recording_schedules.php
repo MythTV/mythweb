@@ -76,6 +76,22 @@
         }
     }
 
+// Transcoder names
+    global $Transcoders;
+    $Transcoders = array();
+    $Transcoders[0] = 'Autodetect';
+    $result = mysql_query('SELECT r.id, r.name'
+                    .' FROM recordingprofiles AS r, profilegroups AS p'
+                    .' WHERE cardtype = "TRANSCODE"'
+                    .'   AND r.profilegroup = p.id')
+            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+    while ($row = mysql_fetch_assoc($result)) {
+        if ($row['name'] != "RTjpeg/MPEG4" && $row['name'] != "MPEG2") {
+            $Transcoders[$row['id']] = $row['name'];
+        }
+    }
+    mysql_free_result($result);
+
 //
 //  Recording Schedule class
 //
@@ -114,6 +130,7 @@ class Schedule {
     var $findday;
     var $findtime;
     var $findid;
+    var $transcoder;
 
     var $texttype;
     var $channel;
@@ -162,7 +179,7 @@ class Schedule {
     // Add a generic "will record" variable, too
         $this->will_record = ($this->type && $this->type != rectype_dontrec) ? true : false;
 
-    // Turn type int a word
+    // Turn type into a word
         $this->texttype = $GLOBALS['RecTypes'][$this->type];
 
     // Do we have a chanid?  Load some info about it
@@ -203,7 +220,7 @@ class Schedule {
     // Update the type, in case it changed
         $this->type = $new_type;
     // Update the record
-        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid) values ('
+        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid,autotranscode,transcoder) values ('
                                 .escape($this->recordid, true)             .','
                                 .escape($this->type)                       .','
                                 .escape($this->chanid)                     .','
@@ -233,7 +250,9 @@ class Schedule {
                                 .escape($this->autocommflag)               .','
                                 .escape($this->findday)                    .','
                                 .escape($this->findtime)                   .','
-                                .escape($this->findid)                     .')')
+                                .escape($this->findid)                     .','
+                                .escape($this->autotranscode)              .','
+                                .escape($this->transcoder)                 .')')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Get the id that was returned
         $recordid = mysql_insert_id();
@@ -364,6 +383,12 @@ class Schedule {
                    ."\t<dd>".htmlentities($this->profile, ENT_COMPAT, 'UTF-8')
                             ."</dd>\n";
         }
+    // Transcoder
+        if (preg_match('/\\S/', $this->transcoder)) {
+            $str .= "\t<dt>".t('Transcoder').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->transcoder, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
+        }
     // Recording Group
         if (!empty($this->recgroup)) {
             $str .= "\t<dt>".t('Recording Group').":</dt>\n"
@@ -388,6 +413,23 @@ class Schedule {
             if ($this_profile == $profile)
                 echo ' SELECTED';
             echo '>'.htmlentities($profile).'</option>';
+        }
+        echo '</select>';
+    }
+
+/*
+    transcoder_select:
+    prints a <select> of the various transcoders to choose from
+*/
+    function transcoder_select($this_transcoder, $name='transcoder') {
+        global $Transcoders;
+        echo "<select name=\"$name\">";
+        foreach ($Transcoders as $transcoderid => $transcoder) {
+            echo '<option value="'.htmlentities($transcoderid).'"';
+            if ($this_transcoder == $transcoderid) {
+                echo ' SELECTED';
+            }
+            echo '>'.htmlentities($transcoder).'</option>';
         }
         echo '</select>';
     }

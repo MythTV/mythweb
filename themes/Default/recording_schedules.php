@@ -35,6 +35,7 @@ class Theme_recording_schedules extends Theme {
     <td><?php echo get_sort_link('title',    t('title'))    ?></td>
     <td><?php echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('channel')) ?></td>
     <td><?php echo get_sort_link('profile',  t('profile'))  ?></td>
+    <td><?php echo get_sort_link('transcoder',  t('transcoder'))  ?></td>
     <td><?php echo get_sort_link('recgroup', t('recgroup')) ?></td>
     <td><?php echo get_sort_link('type',     t('type'))     ?></td>
 </tr><?php
@@ -118,6 +119,12 @@ class Theme_recording_schedules extends Theme {
             echo $schedule->channel->name;
         ?></td>
     <td nowrap><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
+    <td nowrap>
+        <?php
+        global $Transcoders;
+        echo _or($Transcoders[$schedule->transcoder],  '&nbsp;')
+        ?>
+    </td>
     <td nowrap><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
     <td nowrap><?php echo $schedule->texttype ?></td>
 </tr><?php

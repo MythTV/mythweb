@@ -77,6 +77,8 @@
             $schedule->search      = searchtype_manual;
             $schedule->findday     = date('w',     $schedule->starttime);
             $schedule->findtime    = date('H:m:s', $schedule->starttime);
+            $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
+            $schedule->transcoder  = $_POST['transcoder'];
         // Figure out the title
             if (strcasecmp($_POST['title'], 'use callsign') == 0) {
                 if (prefer_channum)
@@ -115,6 +117,12 @@
     // auto-commercial-flag
         if (!isset($schedule->autocommflag))
             $schedule->autocommflag = get_backend_setting('AutoCommercialFlag');
+    // auto-transcode
+        if (!isset($schedule->autotranscode))
+            $schedule->autotranscode = get_backend_setting('AutoTranscode');
+    // transcoder
+        if (!isset($schedule->transcoder))
+            $schedule->transcoder = get_backend_setting('DefaultTranscoder');
     // recpriority
         if (!isset($schedule->recpriority)) {
             $result = mysql_query('SELECT recpriority from channel where chanid='.escape($program->chanid));

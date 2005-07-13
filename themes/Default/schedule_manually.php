@@ -100,6 +100,8 @@ class Theme_schedule_manually extends Theme {
             <dl class="clearfix">
                 <dt><?php echo t('Recording Profile') ?>:</dt>
                 <dd><?php profile_select($schedule->profile) ?></dd>
+                <dt><?php echo t('Transcoder') ?>:</dt>
+                <dd><?php transcoder_select($schedule->transcoder) ?></dd>
                 <dt><?php echo t('Recording Group') ?>:</dt>
                 <dd><?php recgroup_select($schedule->recgroup) ?></dd>
                 <dt><?php echo t('Recording Priority') ?>:</dt>
@@ -151,6 +153,8 @@ class Theme_schedule_manually extends Theme {
                    ?></select></dd>
                 <dt><? echo t('Auto-flag commercials') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><? echo t('Auto-transcode') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autotranscode"<?php if ($schedule->autotranscode) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><? echo t('Auto-expire recordings') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><? echo t('Record new and expire old') ?>:</dt>
