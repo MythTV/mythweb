@@ -16,13 +16,13 @@ class Theme_program_listing extends Theme {
     */
     function print_header($start_time, $end_time) {
     // Print the main page header
-        parent::print_header('MythWeb - Program Listing:  '.strftime('%A %B %e, %Y, %I:%M %p', $start_time));
+        parent::print_header('MythWeb - ' . t('Program Listing') . ': '.strftime($_SESSION['date_statusbar'], $start_time));
     // Print the header info specific to the program listing
 ?>
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-    <td width="50%" align="center"><?php echo t('Currently Browsing:  $1', strftime(' %a %b %e, %Y, %I:%M %p', $start_time)) ?></td>
+    <td width="50%" align="center"><?php echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $start_time)) ?></td>
     <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <form class="form" id="program_listing" action="program_listing.php" method="get">
         <table border="0" cellspacing="0" cellpadding="2">
@@ -158,7 +158,7 @@ class Theme_program_listing extends Theme {
             <td width="50%" align="right"><?php
                 if (is_file($channel->icon)) {
                     ?><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
-                        onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\$1', $channel->channum.' '.$channel->callsign) ?>')"
+                        onmouseover="return wstatus('<? echo t('Details for')?>: <?php echo preg_replace("/([\"'])/", '\\$1', $channel->channum.' '.$channel->callsign) ?>')"
                         onmouseout="return wstatus('')"><img src="<?php echo $channel->icon?>" height="30" width="30"></a><?php
                 } else {
                     echo '&nbsp;';

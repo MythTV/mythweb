@@ -10,7 +10,7 @@ class Theme_weather extends Theme {
     // Load this page's custom stylesheet
         $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'weather.css" />';
     // Print the main page header
-        parent::print_header("MythWeb - Weather");
+        parent::print_header("MythWeb - ".t('Weather'));
     // Print the page contents
         global $WeatherSites;
 

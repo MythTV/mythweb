@@ -33,7 +33,7 @@ class Theme_settings_keys extends Theme_settings {
         }
 ?>
         </select></td>
-        <td align="center"><input type="submit" class="submit" value="Set Host"></td>
+        <td align="center"><input type="submit" class="submit" value="<?php echo t('Set Host')?>"></td>
     </tr>
     </table>
     </form>
@@ -42,12 +42,10 @@ class Theme_settings_keys extends Theme_settings {
 </table>
 <p><p>
 <p class="large">
-Note: This settings page has absolutely no error checking yet.  You can easily screw things up if
-you're not careful.
+Note: This settings page has absolutely no error checking yet. You can easily screw things up if you're not careful.
 </p>
 <p class="large">
-Note: JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is the same as
-one defined in the Keybindings section, the JumpPoint will override the keybinding.
+Note: JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is the same as one defined in the Keybindings section, the JumpPoint will override the keybinding.
 </p>
 <p class="large">
 Note:  You probably want to use function keys or keys combined with a modifier (alt, control) for JumpPoints, otherwise you may run into some problems.
@@ -58,12 +56,12 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 <form class="form" method="post" action="settings_keys.php">
 <table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
-    <td colspan="3">JumpPoints Editor</td>
+    <td colspan="3"><?php echo t('JumpPoints Editor')?></td>
 </tr>
 <tr class="menu" align="center">
-    <td width="33%">Destination</td>
-    <td width="33%">Description</td>
-    <td width="33%">Key bindings</td>
+    <td width="33%"><?php echo t('Destination')?></td>
+    <td width="33%"><?php echo t('Description')?></td>
+    <td width="33%"><?php echo t('Key bindings')?></td>
 </tr><?php
         foreach ($Jumps as $jumppoint) {
 ?><tr class="settings" align="center">
@@ -78,13 +76,13 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 <p></p>
 <table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
-        <td colspan="4">Keybindings Editor</td>
+        <td colspan="4"><?php echo t('Keybindings Editor')?></td>
 </tr>
 <tr class="menu" align="center">
-        <td width="15%">Context</td>
-        <td width="25%">Action</td>
-        <td width="40%">Description</td>
-        <td width="20%">Key bindings</td>
+        <td width="15%"><?php echo t('Context')?></td>
+        <td width="25%"><?php echo t('Action')?></td>
+        <td width="40%"><?php echo t('Description')?></td>
+        <td width="20%"><?php echo t('Key bindings')?></td>
 </tr><?php
                 foreach ($Keys as $keyb) {
 ?><tr class="settings" align="center">
@@ -100,7 +98,7 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 </table>
 
 <p align="center">
-<input type="submit" name="save" value="Save">
+<input type="submit" name="save" value="<?php echo t('Save')?>">
 </p>
 
 </form>
@@ -109,7 +107,7 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
         }
 
     function print_header() {
-        parent::print_header("MythWeb - Configure Keybindings");
+        parent::print_header("MythWeb - " . t('Configure Keybindings'));
     }
 
     function print_footer() {

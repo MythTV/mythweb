@@ -8,7 +8,7 @@ class Theme_video extends Theme {
 
     function print_page() {
     // Print the main page header
-        parent::print_header("MythWeb - Videos");
+        parent::print_header("MythWeb - ".t('Videos'));
     // Print the page contents
         global $All_Shows;
         global $Category_String;
@@ -34,7 +34,7 @@ function newWindow(newContent)
 <td>
 <?php
     echo "<form action=\"video.php\" method=\"GET\">\n";
-    echo "Display: ";
+    echo t('Display') . ": ";
     echo "<select name=\"category\">\n";
     echo "<option value=-1 ";
     if( $Filter_Category == -1)
@@ -47,10 +47,10 @@ function newWindow(newContent)
         echo ">"; 
         echo "$Category_String[$i]</option>\n";
     }
-    echo "</select>\n";
-    echo "<input TYPE=\"SUBMIT\" VALUE=\"Update\" >";
-    echo "</form>\n";
 ?>
+    </select>
+    <input type="submit" value="<?php echo t('Update')?>">
+</form>
 </td>
 </tr>
 </table>
@@ -58,18 +58,18 @@ function newWindow(newContent)
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 <?php   if (show_recorded_pixmap) { ?>
-    <td>cover</td>
+    <td><?php echo t('cover')?></td>
 <?php   } ?>
-    <td><a href="video.php?sortby=title">title</a></td>
-    <td><a href="video.php?sortby=director">director</a></td>
-    <td>plot</td>
-    <td><a href="video.php?sortby=category">category</a></td>
-    <td>rating</a></td>
-    <td>IMDB</a></td>
-    <td><a href="video.php?sortby=length">length</a></td>
-    <td><a href="video.php?sortby=userrating">imdb&nbsp;rating</a></td>
-    <td><a href="video.php?sortby=year">year</a></td>
-    <td>Edit</a></td>
+    <td><a href="video.php?sortby=title"><?php echo t('title')?></a></td>
+    <td><a href="video.php?sortby=director"><?php echo t('director')?></a></td>
+    <td><?php echo t('plot')?></td>
+    <td><a href="video.php?sortby=category"><?php echo t('category')?></a></td>
+    <td><?php echo t('rating')?></a></td>
+    <td><?php echo t('IMDB')?></a></td>
+    <td><a href="video.php?sortby=length"><?php echo t('length')?></a></td>
+    <td><a href="video.php?sortby=userrating"><?php echo t('imdb rating')?></a></td>
+    <td><a href="video.php?sortby=year"><?php echo t('year')?></a></td>
+    <td><?php echo t('Edit')?></a></td>
 </tr><?php
     $row = 0;
     foreach ($All_Shows as $show) {
@@ -89,7 +89,7 @@ function newWindow(newContent)
     <td nowrap><?php echo nice_length($show->length * 60) ?></td>
     <td nowrap><?php echo $show->userrating?></td>
     <td nowrap><?php echo $show->year?></td>
-    <td><a href="javascript:newWindow ('video_edit.php?intid=<?php echo $show->intid?>')" >Edit</a>
+    <td><a href="javascript:newWindow ('video_edit.php?intid=<?php echo $show->intid ?>')" ><?php echo t('Edit') ?></a>
 <?php
         $row++;
     }
@@ -122,7 +122,7 @@ function newWindow(newContent)
         if($new_cat)
             echo "&category=$new_cat";
         echo "\">";
-        echo "Reverse Order";
+        echo t('Reverse Order');
         echo "</a>";
     }
 }

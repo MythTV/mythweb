@@ -25,21 +25,21 @@ class Theme_settings_channels extends Theme_settings {
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu" align="center">
-    <td width="4%">delete</td>
-    <td width="4%">sourceid</td>
-    <td width="5%">channum</td>
-    <td width="12%">callsign</td>
-    <td width="25%">name</td>
-    <td width="5%">freqid</td>
-    <td width="5%">finetune</td>
-    <td width="5%">videofilters</td>
-    <td width="7%">brightness</td>
-    <td width="7%">contrast</td>
-    <td width="7%">colour</td>
-    <td width="7%">hue</td>
-    <td width="5%">recpriority</td>
-    <td width="5%">commfree</td>
-    <td width="5%">visible</td>
+    <td width="4%"><?php  echo t('delete')       ?></td>
+    <td width="4%"><?php  echo t('sourceid')     ?></td>
+    <td width="5%"><?php  echo t('channum')      ?></td>
+    <td width="12%"><?php echo t('callsign')     ?></td>
+    <td width="25%"><?php echo t('name')         ?></td>
+    <td width="5%"><?php  echo t('freqid')       ?></td>
+    <td width="5%"><?php  echo t('finetune')     ?></td>
+    <td width="5%"><?php  echo t('videofilters') ?></td>
+    <td width="7%"><?php  echo t('brightness')   ?></td>
+    <td width="7%"><?php  echo t('contrast')     ?></td>
+    <td width="7%"><?php  echo t('colour')       ?></td>
+    <td width="7%"><?php  echo t('hue')          ?></td>
+    <td width="5%"><?php  echo t('recpriority')  ?></td>
+    <td width="5%"><?php  echo t('commfree')     ?></td>
+    <td width="5%"><?php  echo t('visible')      ?></td>
 </tr><?php
         foreach ($Channels as $channel) {
 ?><tr class="settings" align="center">
@@ -64,7 +64,7 @@ class Theme_settings_channels extends Theme_settings {
 </table>
 
 <p align="center">
-<input type="submit" name="save" value="Save">
+<input type="submit" name="save" value="<?php echo t('Save')?>">
 </p>
 
 </form>
@@ -73,7 +73,7 @@ class Theme_settings_channels extends Theme_settings {
     }
 
     function print_header() {
-        parent::print_header("MythWeb - Configure Channels");
+        parent::print_header("MythWeb - " . t('Configure Channels'));
     }
 
     function print_footer() {

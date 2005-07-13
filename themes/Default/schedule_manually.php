@@ -13,7 +13,7 @@ class Theme_schedule_manually extends Theme {
     // Load this page's custom stylesheet
         $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'schedule_manually.css" />';
     // Print the main page header
-        parent::print_header("MythWeb - Schedule Manually");
+        parent::print_header("MythWeb - ".t('Schedule Manually'));
     // Print the page contents
 ?>
 

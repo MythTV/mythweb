@@ -83,8 +83,8 @@ class Theme_music extends Theme {
         printf("<tr class=\"menu\">\n");
         if($this->offset > 0)
         {
-            printf("<td align=\"left\"><a href=\"music.php\" >%s</a>","All Music");
-            printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",0,$this->keepFilters,"Top");
+            printf("<td align=\"left\"><a href=\"music.php\" >%s</a>",t('All Music'));
+            printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",0,$this->keepFilters,t('Top'));
 
             if( ($this->offset - ($this->maxPerPage * 5)) > 0)
                 printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
@@ -93,13 +93,13 @@ class Theme_music extends Theme {
                 printf("%s","&nbsp;|&nbsp;-" . (5 * $this->maxPerPage));
 
             printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
-                   $this->offset - $this->maxPerPage,$this->keepFilters, "Previous");
+                   $this->offset - $this->maxPerPage,$this->keepFilters, t('Previous'));
 
         } else {
-            printf("<td align=\"left\"><a href=\"music.php\" >%s</a>","All Music");
-            printf("%s","&nbsp;|&nbsp;Top");
+            printf("<td align=\"left\"><a href=\"music.php\" >%s</a>",t('All Music'));
+            printf("%s","&nbsp;|&nbsp;" . t('Top'));
             printf("%s","&nbsp;|&nbsp;-" . (5 * $this->maxPerPage));
-            printf("%s","&nbsp;|&nbsp;Previous");
+            printf("%s","&nbsp;|&nbsp;" . t('Previous'));
         }
 
         /**** Print out alphabet links ****/
@@ -112,20 +112,20 @@ class Theme_music extends Theme {
         if($this->totalCount > ($this->maxPerPage + $this->offset))
         {
             printf("<td align=\"right\"><a href=\"music.php?offset=%d%s\" >%s</a>",
-                   $this->offset + $this->maxPerPage,$this->keepFilters,"Next");
+                   $this->offset + $this->maxPerPage,$this->keepFilters,t('Next'));
             if( (($this->maxPerPage * 5) + $this->offset) < $this->totalCount )
                 printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
                        $this->offset + (5 * $this->maxPerPage),$this->keepFilters,"+" . (5 * $this->maxPerPage));
             else
                 printf("%s","&nbsp;|&nbsp;+" . 5 * $this->maxPerPage);
             printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
-                   $this->totalCount - $this->maxPerPage,$this->keepFilters,"End");
+                   $this->totalCount - $this->maxPerPage,$this->keepFilters,t('End'));
             printf("</td>");
 
         } else {
-            printf("<td align=\"right\">%s","Next");
+            printf("<td align=\"right\">%s",t('Next'));
             printf("%s","&nbsp;|&nbsp;+" .(5 * $this->maxPerPage));
-            printf("%s","&nbsp;|&nbsp;End");
+            printf("%s","&nbsp;|&nbsp;".t('End'));
             printf("</td>");
         }
 
@@ -148,7 +148,7 @@ class Theme_music extends Theme {
     }
     function printNoDetail()
     {
-        printf("<tr><td>No Tracks Available</p>\n");
+        printf("<tr><td>".t('No Tracks Available')."</p>\n");
     }
 
     function print_menu_content() {
@@ -157,7 +157,7 @@ class Theme_music extends Theme {
 
     function print_header($filterPlaylist,$filterArtist,$filterAlbum,$filterGenre) {
         $this->filterPlaylist=$filterPlaylist;
-        parent::print_header("MythWeb - Music: ");
+        parent::print_header("MythWeb - ".t('Music').": ");
         printf("<form  action=\"music.php\" method=\"GET\" >\n");
         printf("<input type=\"hidden\" name=\"mode\" value=\"music\" />\n");
 
@@ -166,9 +166,9 @@ class Theme_music extends Theme {
         printf("<tr class=\"menu\" >");
 
         if($filterArtist != "_All_" || $filterAlbum != "_All_" || $filterGenre != "_All_" || $filterPlaylist != "_All_")
-            printf("%s\n","<td align=\"left\" >" . $this->totalCount . " Filtered</td>");
+            printf("%s\n","<td align=\"left\" >" . $this->totalCount . " ".t('Filtered')."</td>");
         else
-            printf("%s\n","<td align=\"left\" >" . $this->totalCount . " Unfiltered</td>");
+            printf("%s\n","<td align=\"left\" >" . $this->totalCount . " ".t('Unfiltered')."</td>");
 
 
         $this->playListSelector();
@@ -179,34 +179,34 @@ class Theme_music extends Theme {
         if($filterArtist != "_All_" || $filterAlbum != "_All_" || $filterGenre != "_All_" )
         {
             if( ($this->offset + $this->maxPerPage) > $this->totalCount)
-                printf("%s\n","<td align=\"right\" >"  . "Displaying: " .(0 + $this->offset) . "-" . $this->totalCount . "</td>");
+                printf("%s\n","<td align=\"right\" >" . t('Displaying') . ": " . (0 + $this->offset) . "-" . $this->totalCount . "</td>");
             else
-                printf("%s\n","<td align=\"right\" >" . "Displaying: " .( 0 + $this->offset) . "-" . ( $this->offset + $this->maxPerPage) . "</td>");
+                printf("%s\n","<td align=\"right\" >" . t('Displaying') . ": " . ( 0 + $this->offset) . "-" . ( $this->offset + $this->maxPerPage) . "</td>");
         } else {
             if( ($this->offset + $this->maxPerPage) > $this->totalCount)
-                printf("%s\n","<td align=\"right\" >"  . "Displaying: " .( 0 + $this->offset) . "-" . $this->totalCount . "</td>");
+                printf("%s\n","<td align=\"right\" >" . t('Displaying') . ": " . ( 0 + $this->offset) . "-" . $this->totalCount . "</td>");
             else
-                printf("%s\n","<td align=\"right\" >" . "Displaying: " .( 0 + $this->offset) . "-" . ( $this->offset + $this->maxPerPage) . "</td>");
+                printf("%s\n","<td align=\"right\" >" . t('Displaying') . ": " . ( 0 + $this->offset) . "-" . ( $this->offset + $this->maxPerPage) . "</td>");
         }
 
         printf("</tr>");
         $this->printNavBar();
         printf("<table class=\"list small\" width=\"100%%\" border=\"0\" cellpadding=\"4\" cellspacing=\"2\">\n");
         printf("<tr class=\"menu\">");
-        printf("<td>Track Name</td>\n");
-        printf("<td>Time</td>\n");
+        printf("<td>" . t('Track Name') . "</td>\n");
+        printf("<td>" . t('Duration') . "</td>\n");
         if($filterArtist=="_All_")
-            printf("<td>Artist</td>\n");
+            printf("<td>" . t('Artist') . "</td>\n");
         else
-            printf("<td>Artist (filtered)</br>%s</td>",htmlspecialchars($filterArtist));
+            printf("<td>" . t('Artist (filtered)') . "</br>%s</td>",htmlspecialchars($filterArtist));
         if($filterAlbum=="_All_")
-            printf("<td>Album</td>\n");
+            printf("<td>" . t('Album') . "</td>\n");
         else
-            printf("<td>Album (filtered)</br>%s</td>",htmlspecialchars($filterAlbum));
+            printf("<td>" . t('Album (filtered)') . "</br>%s</td>",htmlspecialchars($filterAlbum));
         if($filterGenre=="_All_")
-            printf("<td>Genre</td>\n");
+            printf("<td>" . t('Genre') . "</td>\n");
         else
-            printf("<td>Genre (filtered)</br>%s</td>",htmlspecialchars($filterGenre));
+            printf("<td>" . t('Genre (filtered)') . "</br>%s</td>",htmlspecialchars($filterGenre));
         printf("</tr>");
 
 
@@ -214,8 +214,7 @@ class Theme_music extends Theme {
     function print_footer()
     {
         printf("</table>\n");
-        printf("<table class=\"musicTable\" width=\"100%%\" border=\"0\" cellpa
-dding=\"0\" cellspacing=\"0\">\n");
+        printf("<table class=\"musicTable\" width=\"100%%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n");
         $this->printNavBar();
 
         printf("</form>");

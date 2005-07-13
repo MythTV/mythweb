@@ -13,7 +13,7 @@ class Theme_program_detail extends Theme {
     // Load this page's custom stylesheet
         $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'program_detail.css" />';
     // Print the main page header
-        parent::print_header("MythWeb - Program Detail:  $program->title");
+        parent::print_header("MythWeb - ".t('Program Detail').":  $program->title");
     /* Print the page contents:
      * I really hate tables, but this layout just doesn't work right with pure-css.
      * In its defense, it *is* somewhat tabular.
@@ -29,7 +29,7 @@ class Theme_program_detail extends Theme {
 <?php if ($channel) { ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
                 <a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $program->starttime?>"
-                        onmouseover="return wstatus('Details for: <?php echo $channel->channum.' '.$channel->callsign?>')"
+                        onmouseover="return wstatus('<? echo t('Details for')?>: <?php echo $channel->channum.' '.$channel->callsign?>')"
                         onmouseout="return wstatus('')">
 <?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon?>" height="30" width="30"></a>
