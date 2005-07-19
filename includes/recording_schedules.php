@@ -136,6 +136,7 @@ class Schedule {
     var $channel;
     var $will_record = false;
     var $class;         // css class, based on category and/or category_type
+    var $tsdefault;
 
     function Schedule($data) {
     // Schedule object data -- just copy it into place
@@ -153,6 +154,7 @@ class Schedule {
         }
     // Empty Schedule
         elseif (is_null($data)) {
+            $this->tsdefault = defined('default_rec_ts') ? default_rec_ts : 1.0;
             return;
         }
     // Something else
@@ -220,7 +222,7 @@ class Schedule {
     // Update the type, in case it changed
         $this->type = $new_type;
     // Update the record
-        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid,autotranscode,transcoder) values ('
+        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid,autotranscode,transcoder,tsdefault) values ('
                                 .escape($this->recordid, true)             .','
                                 .escape($this->type)                       .','
                                 .escape($this->chanid)                     .','
@@ -252,7 +254,8 @@ class Schedule {
                                 .escape($this->findtime)                   .','
                                 .escape($this->findid)                     .','
                                 .escape($this->autotranscode)              .','
-                                .escape($this->transcoder)                 .')')
+                                .escape($this->transcoder)                 .','
+                                .escape($this->tsdefault)                  .')')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Get the id that was returned
         $recordid = mysql_insert_id();

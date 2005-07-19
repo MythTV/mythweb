@@ -248,3 +248,9 @@
         }
     }
 
+    function fequals($lhs, $rhs) {
+        $epsilon = 1e-3;
+        return abs($lhs - $rhs) <= $epsilon * abs($lhs);
+    }
+
+?>

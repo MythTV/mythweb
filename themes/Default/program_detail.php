@@ -296,6 +296,31 @@ class Theme_program_detail extends Theme {
                         echo ">$i</option>";
                     }
                     ?></select></dd>
+                <dt><?php echo t('Time Stretch Default') ?>:</dt>
+                <dd>
+                    <select name="timestretch">
+                <?php
+                    $tsstep = 0.05;
+                    for ($tscount = 0.5; $tscount < 2.01; $tscount += $tsstep) {
+                        $matches = fequals($schedule->tsdefault, $tscount);
+
+                        if (!$matches &&
+                                $schedule->tsdefault < $tscount &&
+                                $schedule->tsdefault > $tscount - $tsstep) {
+                            printf('<option value="%01.2f" selected>%01.2f' .
+                                    "</option>\n", $schedule->tsdefault,
+                                    $schedule->tsdefault);
+                        }
+
+                        printf('<option value="%01.2f"', $tscount);
+                        if ($matches) {
+                            echo ' selected';
+                        }
+                        printf(">%01.2f</option>\n", $tscount);
+                    }
+                ?>
+                    </select>
+                </dd>
                 <dt><?php echo t('Check for duplicates in') ?>:</dt>
                 <dd><select name="dupin"><?php
                         echo '<option value="1"';

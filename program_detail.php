@@ -108,6 +108,7 @@
             $schedule->endoffset    = intval($_POST['endoffset']);
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
             $schedule->transcoder    = $_POST['transcoder'];
+            $schedule->tsdefault = $_POST['timestretch'];
         // Back up the program type, and save the schedule
             $schedule->save($type);
         }

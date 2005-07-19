@@ -230,6 +230,8 @@ class Program {
     var $starstring;
     var $is_movie;
 
+    var $timestretch;
+
     var $credits = array();
 
     function Program($data) {
@@ -295,6 +297,8 @@ class Program {
             $this->lastmodified  = $data[35];
             $this->recpriority   = $data[36];
             #$this->airdate      = $data[37];
+            #$this->hasairdate   = $data[38];
+            $this->timestretch = $program_data[39];
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
             $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02
@@ -335,6 +339,12 @@ class Program {
             $this->colorcode               = $data['colorcode'];
             $this->syndicatedepisodenumber = $data['syndicatedepisodenumber'];
             $this->title_pronounce         = $data['title_pronounce'];
+
+            if ($program_data['tsdefault']) {
+                $this->timestretch = $program_data['tsdefault'];
+            } else {
+                $this->timestretch = 1.0;
+            }
         }
     // No longer a null column, so check for blank entries
         if ($this->airdate == '0000-00-00')
