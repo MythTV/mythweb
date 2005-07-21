@@ -128,23 +128,21 @@ select {
     font-family:      Arial, Helvetica, sans-serif;
     color:            #001060;
     background-color: #C0C0D0;
-    font-size:        12px;
-    height:           18px;
+    font-size:        9pt;
 }
 
 input {
     font-family:      Arial, Helvetica, sans-serif;
     color:            #001060;
     background-color: #C0C0D0;
-    font-size:        14px;
-    height:           22px;
+    font-size:        9pt;
 }
 
 textarea {
     font-family:      terminal, courier, courier-new;
     color:            #001060;
     background-color: #C0C0D0;
-    font-size:        12px;
+    font-size:        9pt;
 }
 
 input.quantity {

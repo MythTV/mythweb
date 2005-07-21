@@ -118,12 +118,12 @@
     clear:       left;
     float:       left;
     width:       13em;
-    padding-top: 8px;
+    margin-bottom: 0.25em;
     text-align:  right;
     white-space: nowrap;
 }
 #advanced_options dl dd {
-    padding-top: 3px;
+    margin-bottom: 0.25em;
     margin-left: 13.5em;
 }
 #advanced_options input {
