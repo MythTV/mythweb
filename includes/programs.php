@@ -10,6 +10,9 @@
 
 // Reasons a recording wouldn't be happening (from libs/libmythtv/programinfo.h)
     $RecStatus_Types = array(
+                              '-8' => 'TunerBusy',
+                              '-7' => 'LowDiskSpace',
+                              '-6' => 'Cancelled',
                               '-5' => 'Deleted',
                               '-4' => 'Stopped',
                               '-3' => 'Recorded',
@@ -21,16 +24,18 @@
                                 3  => 'CurrentRecording',
                                 4  => 'EarlierShowing',
                                 5  => 'TooManyRecordings',
-                                6  => 'Cancelled',
+                                6  => 'NotListed',
                                 7  => 'Conflict',
                                 8  => 'LaterShowing',
                                 9  => 'Repeat',
                                 10 => 'Overlap',
-                                11 => 'LowDiskSpace',
-                                12 => 'TunerBusy'
+                                11 => 'NeverRecord'
                             );
 
     $RecStatus_Reasons = array(
+                               'TunerBusy'          => t('recstatus: tunerbusy'),
+                               'LowDiskSpace'       => t('recstatus: lowdiskspace'),
+                               'Cancelled'          => t('recstatus: cancelled'),
                                'Deleted'            => t('recstatus: deleted'),
                                'Stopped'            => t('recstatus: stopped'),
                                'Recorded'           => t('recstatus: recorded'),
@@ -42,13 +47,12 @@
                                'CurrentRecording'   => t('recstatus: currentrecording'),
                                'EarlierShowing'     => t('recstatus: earliershowing'),
                                'TooManyRecordings'  => t('recstatus: toomanyrecordings'),
-                               'Cancelled'          => t('recstatus: cancelled'),
+                               'NotListed'          => t('recstatus: notlisted'),
                                'Conflict'           => t('recstatus: conflict'),
                                'Repeat'             => t('recstatus: repeat'),
                                'LaterShowing'       => t('recstatus: latershowing'),
                                'Overlap'            => t('recstatus: overlap'),
-                               'LowDiskSpace'       => t('recstatus: lowdiskspace'),
-                               'TunerBusy'          => t('recstatus: tunerbusy'),
+                               'NeverRecord'        => t('recstatus: neverrecord'),
                             // A special category for mythweb, since this feature doesn't exist in the backend
                                'ForceRecord'        => t('recstatus: force_record'),
                               );
@@ -509,16 +513,21 @@ class Program {
  *  "Never" record this show, by telling mythtv that it was already recorded
  */
     function rec_never_record() {
-        $result = mysql_query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid) VALUES ('
+        $result = mysql_query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid,recordid,station,rectype,recstatus,duplicate) VALUES ('
                                 .escape($this->chanid)                    .','
-                                .'FROM_UNIXTIME('.escape($this->starttime).'),'
-                                .'"1970-01-01",'
+                                .'NOW()'                                  .','
+                                .'NOW()'                                  .','
                                 .escape($this->title)                     .','
                                 .escape($this->subtitle)                  .','
                                 .escape($this->description)               .','
                                 .escape($this->category)                  .','
                                 .escape($this->seriesid)                  .','
-                                .escape($this->programid)                 .')')
+                                .escape($this->programid)                 .','
+                                .escape($this->recordid)                  .','
+                                .escape($this->station)                   .','
+                                .escape($this->rectype)                   .','
+                                .'11'                                     .','
+                                .'1'                                      .')')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Notify the backend of the changes
         backend_notify_changes();
