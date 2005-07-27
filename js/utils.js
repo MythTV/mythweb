@@ -1,8 +1,14 @@
-/***                                                                        ***\
-    utils.js                                  Last Updated: 2005.02.08 (xris)
-    a random assortment of javascript utility routines
-\***                                                                        ***/
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  utils.js
+ *
+ *    A random assortment of javascript utility routines
+/*/
 
+// Wrapper for various "get element id" functions
     function get_element(id) {
         if (typeof id != 'string') return id;
         if (document.getElementById)
@@ -12,19 +18,86 @@
         return null;
     }
 
-    function value(id, value) {
-        var e = get_element(id);
+// For some reason, calling "value" from within onclick doesn't work
+// Seems to be a name conflict somewhere, but I can't find it.
+    function set_field(id, val) {
+        value(id, val);
+    }
+
+// Pass in value to change, otherwise it returns the value of the "e" element
+    function value(e, new_value) {
+        if (typeof e == 'string')
+            var e = get_element(e);
         if (!e) return '';
-    // Just an html element?
-        if (isNaN(e.value)) {
-            if (value != null)
-                e.innerHTML = value;
+    // A <select>
+        if (e.options) {
+            if (new_value != null) {
+            // This would scan the options and choose the one that matches
+            // new_value.  Not used anywhere yet, so no need to hook it up.
+            }
+            return value(e.options[e.selectedIndex]);
+        }
+    // Just an html element?  (or in IE, an option element with no value="" specified)
+        else if (e.value == null || e.tagName.toLowerCase() == 'option' && e.value == '') {
+            if (new_value != null)
+                e.innerHTML = new_value;
             return e.innerHTML;
         }
     // Form field
-        if (value != null)
-            e.value = value;
+        if (new_value != null) {
+            e.value = new_value;
+        }
         return e.value;
+    }
+
+// Overwrite the href attribute of all <a> tags with a js_href attribute
+    on_load.push(add_js_attributes);
+    function add_js_attributes(w) {
+        if (!w)
+            w = window;
+    // Get all links in this form
+        var links = w.document.getElementsByTagName('a');
+        for (var i=0; i<links.length; i++) {
+        // js_href
+            var js_href = links[i].getAttribute('js_href');
+            if (js_href && js_href.length)
+                links[i].href = js_href;
+        // show the link title in the status bar
+            if (!links[i].onmouseover && !links[i].onmouseout) {
+                var title = links[i].getAttribute('title');
+                if (title && title.length) {
+                    links[i].onmouseover = function () {
+                                               window.status = this.getAttribute('title');
+                                               return true;
+                                           }
+                    links[i].onmouseout = function () {
+                                              window.status = '';
+                                              return true;
+                                          }
+                }
+            }
+        }
+    // Process textareas, too
+        var text = w.document.getElementsByTagName('textarea');
+        for (var i=0; i<text.length; i++) {
+            var auto = text[i].getAttribute('autorows');
+            if (auto && auto.length) {
+                if (parseInt(auto) < 1)
+                    auto = null;
+            // First, run textarea_autorows on the field as it stands now
+                textarea_autorows(text[i], auto);
+            // Then, populate the event code
+                text[i].onkeyup = function () {
+                                      textarea_autorows(this, this.getAttribute('autorows'));
+                                  }
+            }
+        }
+    // Handle any subframes
+        if (w && w.frames) {
+            for(var i=0; i<w.frames.length; i++){
+                add_js_attributes(w.frames[i]);
+            }
+        }
     }
 
 // Image Preloader
@@ -100,10 +173,15 @@
         field.className = field.className.replace(RegExp('\\b'+classname+'\\s*\\b|\\b\\s*'+classname+'\\b', 'g'), '') ;
     }
 
-// Toggle a checkbox
-    function toggle_checkbox(id) {
-        var e = get_element(id)
-        e.checked = e.checked ? false : true;
+// Check/uncheck a checkbox
+    function toggle_checkbox(id, check) {
+        var e = get_element(id);
+        if (check)
+            e.checked = true;
+        else if (check != null)
+            e.checked = false;
+        else
+            e.checked = e.checked ? false : true;
     }
 
 // Change the help text
@@ -116,4 +194,80 @@
         toggle_vis('help_text');
     // Return true so wstatus works
         return true;
+    }
+
+// Resize a the specified <textarea>
+    function resize_textarea(id, rows, cols) {
+        var text = get_element(id);
+        text.rows = rows != null ? rows : value(id + '_rows');
+        text.cols = cols != null ? cols : value(id + '_cols');
+    }
+
+// Adjust the number of rows in textarea id to match the number of lines it has
+    function textarea_autorows(element, max) {
+        if (typeof element != 'object')
+            element = get_element(element);
+        var text = element.value;
+    // First, scan for newlines
+        var list = text.match(/\n/g);
+        var rows = parseInt((list && list.length) ? list.length + 1 : 0);
+    // Next, scan for extra-long lines that may have wrapped (not perfect, but close enough)
+        var re = new RegExp('(\\S [^\n]{'+(parseInt(element.cols)-2)+',})(?!\n)', 'g');
+        list   = text.match(re);
+        if (list && list.length) {
+            for (line in list) {
+                rows += parseInt(list[line].length / element.cols) + 1;
+            }
+        }
+    // Apply
+        if (rows < 1)
+            rows = 1;
+        if (max != null && max < rows)
+            rows = max;
+        if (element.rows != rows)
+            element.rows = rows;
+    }
+
+// Return a time in hours and minutes
+    function nice_length(mylength, rx_hr, rx_hrs, rx_min, rx_mins) {
+        var mins  = Math.round((mylength % 3600) / 60);
+        var hours = Math.round(mylength / 3600);
+        var ret;
+        if (hours) {
+            if (hours > 1)
+                ret = rx_hrs.replace(/\$1/, hours);
+            else
+                ret = rx_hr.replace(/\$1/, hours);
+        }
+        else
+            ret = '';
+        if (mins > 0) {
+            if (ret.length)
+                ret = ret + ' ';
+            if (mins > 1)
+                ret = ret + rx_mins.replace(/\$1/, mins);
+            else
+                ret = ret + rx_min.replace(/\$1/, mins);
+        }
+        return ret;
+    }
+
+// Return a human-readable filesize
+    function nice_filesize(size) {
+        var kb = 1024;         // Kilobyte
+        var mb = 1024 * kb;    // Megabyte
+        var gb = 1024 * mb;    // Gigabyte
+        var tb = 1024 * gb;    // Terabyte
+    //  If it's less than a kb we just return the size
+        if (size < kb)
+            return size + ' B';
+    // Otherwise we keep going until the size is in the appropriate measurement range.
+        else if (size < mb)
+            return Math.round(size/kb) + ' KB';
+        else if (size < gb)
+            return Math.round(size/mb) + ' MB';
+        else if (size < tb)
+            return Math.round(size/gb) + ' GB';
+        else
+            return Math.round(size/tb) + ' TB';
     }

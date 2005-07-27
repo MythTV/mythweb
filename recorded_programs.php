@@ -46,13 +46,13 @@
     // WML browser often require a fully qualified URL for redirects to work. Also, set content type
         if ($_SESSION['Theme'] == 'wml') {
             header('Content-type: text/vnd.wap.wml');
-            header('Location: http://'.$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]);
+            header('Location: http://'.$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'?refresh');
         }
     // Return to the row just prior to the one deleted
     //  (with some fuzz to account for normal screen height
     //   -- remember that rows are numbered starting at zero)
         else {
-            header('Location: recorded_programs.php'.($prev_row > 0 ? "#$prev_row" : ''));
+            header('Location: recorded_programs.php?refresh'.($prev_row > 0 ? "#$prev_row" : ''));
         }
     // need at least 1 byte in body
         echo "\n";
@@ -61,7 +61,7 @@
 
 // Queries for a specific program title
     isset($_GET['title']) or $_GET['title']  = $_POST['title'];
-    isset($_GET['title']) or $_GET['title']  = $_SESSION['recorded_title'];
+    isset($_GET['title']) or $_GET['title']  = isset($_GET['refresh']) ? '' : $_SESSION['recorded_title'];
 
 // Parse the program list
     $recordings     = get_backend_rows('QUERY_RECORDINGS Delete');
@@ -107,7 +107,7 @@
             unset($show);
         }
     // Did we try to view a program that we don't have recorded?  Revert to showing all programs
-        if ($_GET['title'] && !count($Programs)) {
+        if ($_GET['title'] && !count($Programs) && !isset($_GET['refresh'])) {
             $Warnings[] = 'No matching programs found.  Showing all programs.';
             unset($_GET['title']);
         }
