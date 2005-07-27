@@ -1,15 +1,19 @@
 <?php
-/***                                                                        ***\
-    translate.php                            Last Updated: 2005.05.15 (xris)
-
-    Basic routines that allow for language translation.  Please see
-    languages/translations.txt for information about using the translation
-    routines in this library, along with some guidelines of good practice.
-
-    Language detection is also done here.  If no language preference is
-    present in the session, this library will attempt to detect the
-    preferred language based on the browser's specifications.
-\***                                                                        ***/
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  translate.php
+ *
+ *    Basic routines that allow for language translation.  Please see
+ *    languages/translations.txt for information about using the translation
+ *    routines in this library, along with some guidelines of good practice.
+ *
+ *    Language detection is also done here.  If no language preference is
+ *    present in the session, this library will attempt to detect the
+ *    preferred language based on the browser's specifications.
+/*/
 
 // Define the languages that mythweb can translate into.  Each hash entry should
 // point to an array containing first the user-visible name of the language and
@@ -199,8 +203,10 @@
         $curlang   = null;
         foreach($GLOBALS['Languages'] as $lang => $details) {
             $encodings = is_array($details[1]) ? $details[1] : array($details[1]);
+            if (empty($encodings))
+                continue;
             foreach ($encodings as $encoding) {
-                if (!$encoding)
+                if (empty($encoding))
                     continue;
                 $tmp      = @explode('.', str_replace('_', '-', $encoding));
                 $allang   = strtolower($tmp[0]);
@@ -235,4 +241,3 @@
         return $curlang;
     }
 
-?>
