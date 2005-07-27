@@ -1,13 +1,17 @@
 <?php
-/***                                                                        ***\
-    init.php                                 Last Updated: 2005.05.16 (xris)
-
-    This file is part of MythWeb, a php-based interface for MythTV.
-    See README and LICENSE for details.
-
-    Initialization routines.  This file basically loads all of the necessary
-    shared files for the entire program.
-\***                                                                        ***/
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  init.php
+ *
+ *    This file is part of MythWeb, a php-based interface for MythTV.
+ *    See README and LICENSE for details.
+ *
+ *    Initialization routines.  This file basically loads all of the necessary
+ *    shared files for the entire program.
+/*/
 
 // Clean the document root variable and make sure it doesn't have a trailing slash
     $_SERVER['DOCUMENT_ROOT'] = preg_replace('/\/+$/', '', $_SERVER['DOCUMENT_ROOT']);
@@ -29,9 +33,6 @@
 // Load the error trapping and display routines
     require_once 'includes/errors.php';
     require_once 'includes/errordisplay.php';
-
-// Load the translation routines
-    require_once 'includes/translate.php';
 
 // Make sure we're running a new enough version of php
     if (substr(phpversion(), 0, 3) < 4.3)
@@ -86,6 +87,9 @@
 
 // Load the session handler routines
     require_once 'includes/session.php';
+
+// Load the translation routines
+    require_once 'includes/translate.php';
 
 // Include a few useful functions
     require_once "includes/css.php";

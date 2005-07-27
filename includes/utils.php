@@ -1,12 +1,14 @@
 <?php
-/***                                                                        ***\
-    utils.php                                Last Updated: 2005.02.10 (xris)
-
-    utility routines used throughout mythweb
-\***                                                                        ***/
-
-// Make sure we have the translation module loaded
-    require_once('includes/translate.php');
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  utils.php
+ *
+ *    utility routines used throughout mythweb
+ *
+/*/
 
 // Set up some constants used by nice_filesystem()
     define('kb', 1024);         // Kilobyte
@@ -253,4 +255,3 @@
         return abs($lhs - $rhs) <= $epsilon * abs($lhs);
     }
 
-?>

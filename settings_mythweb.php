@@ -1,9 +1,14 @@
 <?php
-/***                                                                        ***\
-    settings_mythweb.php                     Last Updated: 2005.02.20 (xris)
-
-    mythweb settings
-\***                                                                        ***/
+/*
+ *  $Date$
+ *  $Revision$
+ *  $Author$
+ *
+ *  settings_mythweb.php
+ *
+ *    display/save mythweb settings
+ *
+/*/
 
 // Which section are we in?
     define('section', 'settings');
@@ -23,6 +28,8 @@
         if ($_POST['date_listing_jump'])    $_SESSION['date_listing_jump']    = $_POST['date_listing_jump'];
         if ($_POST['date_channel_jump'])    $_SESSION['date_channel_jump']    = $_POST['date_channel_jump'];
         if ($_POST['time_format'])          $_SESSION['time_format']          = $_POST['time_format'];
+    // Change language?
+        if ($_POST['language'])             $_SESSION['language']             = $_POST['language'];
     // Save the theme
         if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
     // Use SI units?
@@ -134,4 +141,3 @@
         echo '</select>';
     }
 
-?>

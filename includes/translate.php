@@ -31,11 +31,8 @@
     $Languages['Slovenian']  = array('Slovensko',       'sl_SI');
     $Languages['Finnish']    = array('Suomi',           'fi_FI');
 
-// Change language?
-    if ($_POST['language'])
-        $_SESSION['language'] = $_POST['language'];
 // Need to detect the language?
-    elseif (!$_SESSION['language'])
+    if (!$_SESSION['language'])
         $_SESSION['language'] = get_browser_lang();
 
 // Default language file is English
