@@ -18,9 +18,9 @@
 
 // Load the status page
     if (function_exists('file_get_contents'))
-        $page .= file_get_contents("http://$masterhost:$statusport");
+        $page = file_get_contents("http://$masterhost:$statusport");
     else
-        $page .= implode("\n", file("http://$masterhost:$statusport"));
+        $page = implode("\n", file("http://$masterhost:$statusport"));
 
 // Extract the page title
     preg_match('#<title>(.+?)</title>#s', $page, $title);
