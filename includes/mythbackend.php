@@ -1,9 +1,13 @@
 <?php
-/***                                                                        ***\
-    mythbackend.php                          Last Updated: 2005.05.14 (xris)
-
-    Routines that allow mythweb to communicate with mythbackend
-\***                                                                        ***/
+/**
+ * Routines that allow mythweb to communicate with mythbackend
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ *
+/**/
 
 // The character string used by the backend to separate records
     define('backend_sep', '[]:[]');
@@ -226,47 +230,47 @@
         $hostname = chop(`hostname`);
         $host     = $GLOBALS['Master_Host'];
         $port     = $GLOBALS['Master_Port'];
-        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',
-                     ' ',                 // title
-                     ' ',                 // subtitle
-                     ' ',                 // description
-                     ' ',                 // category
-                     $show->chanid,       // chanid
-                     ' ',                 // chanstr
-                     ' ',                 // chansign
-                     ' ',                 // channame
-                     $show->filename,     // filename
-                     '0',                 // upper 32 bits
-                     '0',                 // lower 32 bits
-                     $show->starttime,    // starttime
-                     $show->endtime,      // endtime
-                     '0',                 // conflicting
-                     '1',                 // recording
-                     '0',                 // duplicate
-                     $show->hostname,     // hostname
-                     '-1',                // sourceid
-                     '-1',                // cardid
-                     '-1',                // inputid
-                     ' ',                 // recpriority
-                     ' ',                 // recstatus
-                     ' ',                 // recordid
-                     ' ',                 // rectype
-                     '15',                // dupin
-                     '6',                 // dupmethod
-                     $show->starttime,    // recstarttime
-                     $show->endtime,      // recendtime
-                     ' ',                 // repeat
-                     ' ',                 // program flags
-                     ' ',                 // recgroup
-                     ' ',                 // commfree
-                     ' ',                 // chanoutputfilters
-                     $show->seriesid,     // seriesid
-                     $show->programid,    // programid
-                     $show->starttime,    // dummy lastmodified
-                     '0',                 // dummy stars
-                     $show->starttime,    // dummy org airdate
-                     '',                  // dummy timestretch
-                     '',                  // trailing separator
+        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',   // 00 command
+                     ' ',                           // 01 title
+                     ' ',                           // 02 subtitle
+                     ' ',                           // 03 description
+                     ' ',                           // 04 category
+                     $show->chanid,                 // 05 chanid
+                     ' ',                           // 06 chanstr
+                     ' ',                           // 07 chansign
+                     ' ',                           // 08 channame
+                     $show->filename,               // 09 filename
+                     '0',                           // 10 upper 32 bits
+                     '0',                           // 11 lower 32 bits
+                     $show->starttime,              // 12 starttime
+                     $show->endtime,                // 13 endtime
+                     '0',                           // 14 conflicting
+                     '1',                           // 15 recording
+                     '0',                           // 16 duplicate
+                     $show->hostname,               // 17 hostname
+                     '-1',                          // 18 sourceid
+                     '-1',                          // 19 cardid
+                     '-1',                          // 20 inputid
+                     ' ',                           // 21 recpriority
+                     ' ',                           // 22 recstatus
+                     ' ',                           // 23 recordid
+                     ' ',                           // 24 rectype
+                     '15',                          // 25 dupin
+                     '6',                           // 26 dupmethod
+                     $show->recstartts,             // 27 recstarttime
+                     $show->recendts,               // 28 recendtime
+                     ' ',                           // 29 repeat
+                     ' ',                           // 30 program flags
+                     ' ',                           // 31 recgroup
+                     ' ',                           // 32 commfree
+                     ' ',                           // 33 chanoutputfilters
+                     $show->seriesid,               // 34 seriesid
+                     $show->programid,              // 35 programid
+                     $show->starttime,              // 36 dummy lastmodified
+                     '0',                           // 37 dummy stars
+                     $show->starttime,              // 38 dummy org airdate
+                     '',                            // 39 dummy timestretch
+                     '',                            // 40 trailing separator
                     );
         $lastmodified = strtotime(backend_command($cmd));
     // Delete outdated images, but not until the show has finished recording
@@ -388,4 +392,3 @@ function getCardStatus() {
     return $idStatus;
 }
 
-?>

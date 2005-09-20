@@ -74,8 +74,8 @@
     foreach ($Scheduled_Recordings as $chanid => $shows) {
     // Now the shows in this channel
         foreach ($shows as $starttime => $show_group) {
-        // Skip things we've already recorded
-            if ($starttime <= time())
+        // Skip things we've already recorded (or missed)
+            if ($starttime <= time() && $show->recstatus != 'Recording')
                 continue;
         // Parse each show group
             foreach ($show_group as $key => $show) {

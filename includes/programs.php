@@ -249,7 +249,7 @@ class Program {
             $this->starttime   = $data[11];  # show start-time
             $this->endtime     = $data[12];  # show end-time
         // Is this a previously-recorded program?  Calculate the filesize
-            if (preg_match('/\\d+_\\d+/', $this->filename)) {
+            if (!empty($this->filename)) {
                 $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
             }
         // Ah, a scheduled recording - let's load more information about it, to be parsed in below

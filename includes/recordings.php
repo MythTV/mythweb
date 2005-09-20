@@ -34,11 +34,14 @@ class Recording {
     var $dupmethod;
     var $startoffset;
     var $endoffset;
-
+    var $progstart;
+    var $progend;
     var $seriesid;
     var $programid;
-
     var $texttype;
+
+    var $basename;
+
     var $channel;
 
     var $will_record    = false;
@@ -75,6 +78,9 @@ class Recording {
             $this->endoffset   = $recording_data['endoffset'];
             $this->seriesid    = $recording_data['seriesid'];
             $this->programid   = $recording_data['programid'];
+            $this->progstart   = $recording_data['progstart'];
+            $this->progend     = $recording_data['progend'];
+            $this->basename    = $recording_data['basename'];
         }
     // Recording object data
         else {
@@ -127,4 +133,4 @@ class Recording {
 
 }
 
-?>
+
