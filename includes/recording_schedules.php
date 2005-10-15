@@ -200,8 +200,12 @@ class Schedule {
 */
     function save($new_type) {
     // Make sure that recordid is null if it's empty
-        if (empty($this->recordid))
+        if (empty($this->recordid)) {
             $this->recordid = NULL;
+            $this->findday = (date("w", $this->starttime) + 1) % 7;
+            $this->findtime = date("G:i:s", $this->starttime);
+            $this->findid = (date("U", $this->starttime)/60/60/24) + 719528;
+        }
     // Changing the type of recording
         if ($this->recordid && $this->type && $new_type != $this->type) {
         // Delete this schedule?
