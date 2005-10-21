@@ -62,8 +62,8 @@ class Theme_recorded_programs extends Theme {
                 count_text = (episode_count > 1) ? ' (' + episode_count + ' episodes)' : '';
                 get_element('Title ' + title).innerHTML = title + count_text;
             }
-        // TODO: test changing the groups dropdown on the fly
-            //I can't test it because I haven't set up any recording groups, and probably never will
+        // TODO: test changing the groups dropdown on the fly.
+        // I can't test it because I haven't set up any recording groups, and probably never will
             if (group) {
             // Decrement the number of episodes for this group
                 groups[group]--;
@@ -82,7 +82,7 @@ class Theme_recorded_programs extends Theme {
             if (rowsection < 1)
                 location.href = "recorded_programs.php?delete=yes&file="+filename;
             else
-                submit_url("recorded_programs.php?delete=yes&file="+filename , updateResults);
+                submit_url("recorded_programs.php?delete=yes&file="+filename, http_success, http_failure);
         // Debug statements - uncomment to verify that the right file is being deleted
             //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
             //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
@@ -105,8 +105,13 @@ class Theme_recorded_programs extends Theme {
         }
     }
 
-    function updateResults() {
-        alert('The file was deleted successfully');
+    function http_success(result) {
+        // Eventually, we should perform the removal-from-the-list here instead
+        // of in confirm_delete()
+    }
+
+    function http_failure(err, errstr) {
+        alert("Can't delete requested file.\nHTTP Error:  " + errstr + ' (' + err + ')');
     }
 
 // -->
