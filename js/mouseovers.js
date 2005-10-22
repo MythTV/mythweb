@@ -1,8 +1,13 @@
-/***                                                                        ***\
-    mouseovers.js                            Last Updated: 2005.03.21 (xris)
-
-    Functions to show/hide sections of the page (for mouseovers)
-\***                                                                        ***/
+/**
+ * Functions to show/hide sections of the page (for mouseovers)
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     LGPL
+ *
+/**/
 
 /*
     find_position:

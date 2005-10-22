@@ -5,9 +5,7 @@
  * @date        $Date$
  * @version     $Revision$
  * @author      $Author$
- *
- * @package     MythWeb
- * @subpackage  javascript
+ * @license     LGPL
  *
 /**/
 

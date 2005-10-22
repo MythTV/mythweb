@@ -1,13 +1,19 @@
-/***                                                                        ***\
-    visibility.js                            Last Updated: 2005.01.21 (xris)
-
-    Functions to show/hide html elements
-\***                                                                        ***/
+/**
+ * Functions to show/hide html elements
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     LGPL
+ *
+/**/
 
 // Toggle the visibility of an element
     var toggle_vis_cache = new Array();
     function toggle_vis(field, vis) {
         var e = get_element(field);
+        if (!e) return;
     // Get the display type
         var display = get_display(field);
     // Show

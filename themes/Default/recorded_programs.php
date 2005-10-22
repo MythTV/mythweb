@@ -79,6 +79,7 @@ class Theme_recorded_programs extends Theme {
     // Hide the row from view
         toggle_vis('inforow_' + id,   'display');
         toggle_vis('statusrow_' + id, 'display');
+        toggle_vis('descunderrow_' + id, 'display');
     // decrement the number of rows in a section
         var section   = rowsection[id];
         rowcount[section]--;
@@ -286,7 +287,7 @@ if ($group_field == "") {
 <?php   }
 
         if ($_SESSION['recorded_descunder'])
-            echo("</tr><tr class=\"recorded\">\n\t<td colspan=\"7\">".$show->description."</td>\n");
+            echo("</tr><tr id=\"descunderrow_".$row."\" class=\"recorded\">\n\t<td colspan=\"7\">".$show->description."</td>\n");
 ?>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
     <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 7 : 8 ?>" align="center">

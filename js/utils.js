@@ -1,12 +1,13 @@
-/*
- *  $Date$
- *  $Revision$
- *  $Author$
+/**
+ * A random assortment of javascript utility routines
  *
- *  utils.js
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     LGPL
  *
- *    A random assortment of javascript utility routines
-/*/
+/**/
 
 // Wrapper for various "get element id" functions
     function get_element(id) {

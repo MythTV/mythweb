@@ -1,9 +1,14 @@
-/***                                                                        ***\
-    init.js                                  Last Updated: 2005.01.23 (xris)
-
-    javascript initialization routine, and the content necessary to load the
-    other javascript files.
-\***                                                                        ***/
+/**
+ * javascript initialization routine, and the content necessary to load the
+ * other javascript files.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     LGPL
+ *
+/**/
 
     window.onload = init;
 
