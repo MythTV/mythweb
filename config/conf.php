@@ -29,7 +29,14 @@
 //
     define('server_domain', $_SERVER['SERVER_NAME'] ? $_SERVER['SERVER_NAME'] : $_SERVER['HTTP_HOST']);
 
-// Email address to which php and database errors are mailed to
+// Email address to which php and database errors are mailed to.
+//
+//    eg. define('error_email', 'mythweb_errors@example.com');
+//
+//    Or the match below will send mail to your server, such that if your box is
+//    defined as mythtv.mydomain.com in server_domain above, mail will go to
+//    mythweb_errors@mydomain.com.
+//
     define('error_email', 'mythweb_errors@'.preg_replace('/.*?\b([\w\-]+\.[\w\-]+)$/', '$1', server_domain));
 
 // For the "movies" search -- set this to the word your listings provider uses to
