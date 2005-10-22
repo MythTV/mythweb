@@ -1,11 +1,17 @@
 <?php
-/***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2005.04.02 (xris)
-
-    This file defines a theme class for the recorded programs section.
-    It must define one method.   documentation will be added someday.
-
-\***                                                                        ***/
+/**
+ * This file defines a theme class for the recorded programs section.
+ * It must define one method.   documentation will be added someday.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 #class theme_program_detail extends Theme {
 class Theme_recorded_programs extends Theme {
@@ -14,104 +20,124 @@ class Theme_recorded_programs extends Theme {
     // Print the main page header
         parent::print_header("MythWeb - Recorded Programs");
     // Print the page contents
-        global $All_Shows, $Total_Time, $Total_Used;
+        global $All_Shows, $Total_Programs, $Total_Time, $Total_Used,
+               $Groups,    $Program_Titles;
 ?>
 
 <script language="JavaScript" type="text/javascript">
 <!--
 
+// Some initial values for global counters
+    var diskused       = '<?php echo addslashes(disk_used)       ?>';
+    var programcount   = '<?php echo addslashes($Total_Programs) ?>';
+    var programs_shown = '<?php echo count($All_Shows)           ?>';
+    var totaltime      = '<?php echo addslashes($Total_Time)     ?>';
+
+// Initialize some variables that will get set after the page table is printed
+    var rowcount     = new Array();
+    var rowsection   = new Array();
+    var titles       = new Object;
+    var groups       = new Object;
+
 // Load the known shows
+    var file  = null;
     var files = new Array();
-<?php   foreach ($All_Shows as $show) { ?>
-    files.push([<?php echo escape($show->title) ?>,
-                <?php echo escape($show->subtitle) ?>,
-                <?php echo escape(urlencode($show->group)) ?>,
-                <?php echo escape(urlencode($show->recendts-$show->recstartts)) ?>,
-                <?php echo escape(urlencode($show->filesize)) ?>,
-                <?php echo escape(urlencode($show->filename)) ?>]);
-<?php   } ?>
+
+<?php
+    foreach ($All_Shows as $show) {
+?>
+    file = new Object();
+    file.title    = '<?php echo addslashes($show->title)                        ?>';
+    file.subtitle = '<?php echo addslashes($show->subtitle)                     ?>';
+    file.group    = '<?php echo addslashes(urlencode($show->group))             ?>';
+    file.filename = '<?php echo addslashes(urlencode($show->filename))          ?>';
+    file.size     = '<?php echo addslashes($show->filesize)                     ?>';
+    file.length   = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
+    files.push(file);
+
+<?php
+    }
+?>
 
     function confirm_delete(id, forget_old) {
-        var title      = files[id][0];
-        var subtitle   = files[id][1];
-        var group      = files[id][2];
-        var filelength = files[id][3];
-        var filesize   = files[id][4];
-        var filename   = files[id][5]
-        if (confirm("<?php echo t('Are you sure you want to delete the following show?') ?>\n\n     "+title+": "+subtitle)) {
-        // Hide the row from view
-            toggle_vis('inforow_' + id,   'display');
-            toggle_vis('statusrow_' + id, 'display');
-        // decrement the number of rows in a section
-            rowcount[section]--;
-            var section   = rowsection[id];
-            var row_count = rowcount[section];
-        // Decrement the number of episodes for this title
-            titles[title]--;
-            var episode_count = titles[title]
-        // If we just hid the only row in a section, then hide the section break above it as well
-            if (row_count == 0) {
-                toggle_vis('breakrow_' + section, 'display');
-            }
-        // Change the recordings dropdown menu on the fly
-            if (episode_count == 0) {
-                toggle_vis('Title ' + title, 'display');
-            }
-            else {
-                var count_text;
-                count_text = (episode_count > 1) ? ' (' + episode_count + ' episodes)' : '';
-                get_element('Title ' + title).innerHTML = title + count_text;
-            }
-        // TODO: test changing the groups dropdown on the fly.
-        // I can't test it because I haven't set up any recording groups, and probably never will
-            if (group) {
-            // Decrement the number of episodes for this group
-                groups[group]--;
-                var group_count = titles[title]
-            // Change the groups dropdown menu on the fly
-                if (group_count == 0) {
-                    toggle_vis('Group ' + group, 'display');
-                }
-                else {
-                    var count_text;
-                    group_text = (group_count >1) ? ' (' + group_count + ' episodes)' : '';
-                    get_element('Group ' + group).innerHTML = group + group_text;
-                }
-            }
+        var file = files[id];
+        if (confirm("<?php echo t('Are you sure you want to delete the following show?') ?>\n\n     "+file.title+": "+file.subtitle)) {
         // Do the actual deletion
-            if (rowsection < 1)
-                location.href = "recorded_programs.php?delete=yes&file="+filename;
+            if (programs_shown == 1)
+                location.href = 'recorded_programs.php?delete=yes&file='+file.filename;
             else
-                submit_url("recorded_programs.php?delete=yes&file="+filename, http_success, http_failure);
+                submit_url('recorded_programs.php?ajax&delete=yes&file='+file.filename, http_success, http_failure, id, file);
         // Debug statements - uncomment to verify that the right file is being deleted
             //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
             //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
-        // Decrement the total number of shows and update the page
-            programcount--;
-            get_element('programcount').innerHTML = programcount;
-        // Decrease the total amount of time by the amount of the show
-            totaltime -= filelength;
-            get_element('totaltime').innerHTML = nice_length(totaltime, <?php
-                                                        echo escape(t('$1 hr')) .', '
-                                                            .escape(t('$1 hrs')).', '
-                                                            .escape(t('$1 min')).', '
-                                                            .escape(t('$1 mins'));
-                                                        ?>);
-        // Decrease the disk usage indicator by the amount of the show
-            diskused -= filesize;
-            get_element('diskused').innerHTML = nice_filesize(diskused);
-        // Adjust the freespace shown
-            get_element('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
         }
     }
 
-    function http_success(result) {
+    function http_success(result, args) {
+        var id   = args.shift();
+        var file = args.shift();
+    // Hide the row from view
+        toggle_vis('inforow_' + id,   'display');
+        toggle_vis('statusrow_' + id, 'display');
+    // decrement the number of rows in a section
+        var section   = rowsection[id];
+        rowcount[section]--;
+    // Decrement the number of episodes for this title
+        titles[file.title]--;
+        var episode_count = titles[file.title]
+    // If we just hid the only row in a section, then hide the section break above it as well
+        if (rowcount[section] == 0) {
+            toggle_vis('breakrow_' + section, 'display');
+        }
+    // Change the recordings dropdown menu on the fly
+        if (episode_count == 0) {
+            toggle_vis('Title ' + file.title, 'display');
+        }
+        else {
+            var count_text;
+            count_text = (episode_count > 1) ? ' (' + episode_count + ' episodes)' : '';
+            get_element('Title ' + file.title).innerHTML = file.title + count_text;
+        }
+    // TODO: test changing the groups dropdown on the fly.
+    // I can't test it because I haven't set up any recording groups, and probably never will
+        if (file.group) {
+        // Decrement the number of episodes for this group
+            groups[file.group]--;
+            var group_count = titles[file.title]
+        // Change the groups dropdown menu on the fly
+            if (group_count == 0) {
+                toggle_vis('Group ' + file.group, 'display');
+            }
+            else {
+                var count_text;
+                group_text = (group_count >1) ? ' (' + group_count + ' episodes)' : '';
+                get_element('Group ' + file.group).innerHTML = file.group + group_text;
+            }
+        }
+    // Decrement the total number of shows and update the page
+        programs_shown--;
+        programcount--;
+        get_element('programcount').innerHTML = programcount;
+    // Decrease the total amount of time by the amount of the show
+        totaltime -= file.length;
+        get_element('totaltime').innerHTML = nice_length(totaltime, <?php
+                                                         echo "'", addslashes(t('$1 hr')),   "', ",
+                                                              "'", addslashes(t('$1 hrs')),  "', ",
+                                                              "'", addslashes(t('$1 min')),  "', ",
+                                                              "'", addslashes(t('$1 mins')), "'";
+                                                         ?>);
+    // Decrease the disk usage indicator by the amount of the show
+        diskused -= file.filesize;
+        get_element('diskused').innerHTML = nice_filesize(diskused);
+    // Adjust the freespace shown
+        get_element('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
         // Eventually, we should perform the removal-from-the-list here instead
         // of in confirm_delete()
     }
 
-    function http_failure(err, errstr) {
-        alert("Can't delete requested file.\nHTTP Error:  " + errstr + ' (' + err + ')');
+    function http_failure(err, errstr, args) {
+        var file = args[0];
+        alert("Can't delete "+file.title+': '+file.subtitle+".\nHTTP Error:  " + errstr + ' (' + err + ')');
     }
 
 // -->
@@ -124,7 +150,6 @@ class Theme_recorded_programs extends Theme {
     <td><?php echo t('Show recordings') ?>:</td>
     <td width="250" align="center"><select name="title" onchange="get_element('program_titles').submit()">
         <option id="All recordings" value=""><?php echo t('All recordings') ?></option><?php
-        global $Program_Titles;
         foreach($Program_Titles as $title => $count) {
             echo '<option id="Title '.htmlspecialchars($title).'" value="'.htmlspecialchars($title).'"';
             if ($_GET['title'] == $title)
@@ -136,7 +161,6 @@ class Theme_recorded_programs extends Theme {
         ?>
     </select></td>
 <?php
-global $Groups;
 if (count($Groups) > 1) { ?>
     <td><?php echo t('Show group') ?>:</td>
     <td><select name="recgroup" onchange="get_element('program_titles').submit()">
@@ -198,36 +222,42 @@ if ($group_field == "") {
     foreach ($All_Shows as $show) {
 
     // Print a dividing row if grouping changes
-    if ($group_field == "airdate")
-        $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
-    elseif ($group_field == "recgroup")
-        $cur_group = $show->recgroup;
-    elseif ($group_field == "channum")
-        $cur_group = $show->channel->name;
-    elseif ($group_field == "title")
-        $cur_group = $show->title;
+        switch ($group_field) {
+            case 'airdate':
+                $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
+                break;
+            case 'recgroup':
+                $cur_group = $show->recgroup;
+                break;
+            case 'channum':
+                $cur_group = $show->channel->name;
+                break;
+            case 'title':
+                $cur_group = $show->title;
+                break;
+        }
 
-    if ( $cur_group != $prev_group && $group_field != '' ) {
-        $section++;
+        if ( $cur_group != $prev_group && $group_field != '' ) {
+            $section++;
 ?><tr id="breakrow_<?php echo $section ?>" class="list_separator">
     <td colspan="10" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?php
-    }
+        }
 ?><tr id="inforow_<?php echo $row ?>" class="recorded">
 <?php
-    if ($group_field != "")
-        echo "\t<td class=\"list\" rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2)."\">&nbsp;</td>\n";
-    if (show_recorded_pixmaps) {
-        echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
-        if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
-            echo '<a href="'.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
-                .'<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">'
-                .'</a>';
+        if ($group_field != "")
+            echo "\t<td class=\"list\" rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2)."\">&nbsp;</td>\n";
+        if (show_recorded_pixmaps) {
+            echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
+            if (file_exists(image_cache.'/'.basename($show->filename).'.png')) {
+                echo '<a href="'.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
+                    .'<img id="'.$show->filename."\" src=\"".image_cache.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">'
+                    .'</a>';
+            }
+            else
+                echo "<a name=\"$row\">&nbsp;</a>";
+            echo "</td>\n";
         }
-        else
-            echo "<a name=\"$row\">&nbsp;</a>";
-        echo "</td>\n";
-    }
     ?>
     <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'"'
                     .(show_recorded_pixmaps ? '' : " name=\"$row\"")
@@ -235,8 +265,8 @@ if ($group_field == "") {
     <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'
                     .$show->subtitle.'</a>' ?></td>
 <?php
-    if (!$_SESSION['recorded_descunder'])
-        echo "\t<td>".$show->description."</td>\n";
+        if (!$_SESSION['recorded_descunder'])
+            echo "\t<td>".$show->description."</td>\n";
 ?>
     <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
     <td nowrap align="center"><?php echo $show->recgroup ?></td>
@@ -292,26 +322,18 @@ if ($group_field == "") {
 </table>
 
 <script language="JavaScript" type="text/javascript">
-/* FIXME -- move this code to the top of the page */
-    var rowcount     = new Array();
-    var rowsection   = new Array();
-    var titles       = new Object;
-    var groups       = new Object;
-    var programcount = <?php echo $GLOBALS['Total_Programs'] ?>;
-    var diskused     = <?php echo disk_used ?>;
-    var totaltime    = <?php echo $Total_Time ?>;
 <?php
     foreach ($row_count as $count) {
-        echo 'rowcount.push(['.escape($count).']);';
+        echo 'rowcount.push(['.escape($count)."]);\n";
     }
     foreach ($row_section as $section) {
-        echo 'rowsection.push(['.escape($section).']);';
+        echo 'rowsection.push(['.escape($section)."]);\n";
     }
     foreach($Program_Titles as $title => $count) {
-        echo 'titles['.escape($title).'] = '.escape($count).';';
+        echo 'titles['.escape($title).'] = '.escape($count).";\n";
     }
     foreach($Groups as $recgroup => $count) {
-        echo 'groups['.escape($recgroup).'] = '.escape($count).';';
+        echo 'groups['.escape($recgroup).'] = '.escape($count).";\n";
     }
 ?>
 </script>
@@ -319,7 +341,7 @@ if ($group_field == "") {
 <?php
     echo '<p align="right" style="padding-right: 75px">'
         .t('$1 programs, using $2 ($3) out of $4 ($5 free).',
-           '<span id="programcount">'.t($GLOBALS['Total_Programs']).'</span>',
+           '<span id="programcount">'.t($Total_Programs).'</span>',
            '<span id="diskused">'.nice_filesize($Total_Used).'</span>',
            '<span id="totaltime">'.nice_length($Total_Time).'</span>',
            '<span id="disksize">'.nice_filesize(disk_size).'</span>',
@@ -333,4 +355,3 @@ if ($group_field == "") {
 
 }
 
-?>

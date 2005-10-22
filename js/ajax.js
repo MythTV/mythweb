@@ -32,12 +32,17 @@
     }
 
 // Submit a simple URL and execute optional success_handler if it succeeds (or
-// optional failure_handler if it fails).
-    function submit_url(/* url, [success_handler, ] [failure_handler] */) {
-        var args            = submit_url.arguments;
-        var url             = args[0]
-        var success_handler = args[1];
-        var failure_handler = args[2];
+// optional failure_handler if it fails).  handler_args are any additional
+// arguments passed in, and they are passed as an array to the success/failure
+// handler functions.
+    function submit_url(/* url, [success_handler, ] [failure_handler, ] [handler_args, ...] */) {
+        var handler_args = new Array();
+        for (var i=0; i<submit_url.arguments.length; i++) {
+            handler_args.push(submit_url.arguments[i]);
+        }
+        var url             = handler_args.shift()
+        var success_handler = handler_args.shift();
+        var failure_handler = handler_args.shift();
     // No shared http object defined yet -- load it
         if (typeof(shared_httpobj) == 'undefined') {
             shared_httpobj = get_connection_object();
@@ -56,7 +61,7 @@
             // Custom success handler receives the returned content as a parameter.
             // There is no default success handler
                 if (typeof(success_handler) != 'undefined') {
-                    success_handler(httpobj.responseXML ? httpobj.responseXML : httpobj.responseText);
+                    success_handler(httpobj.responseXML ? httpobj.responseXML : httpobj.responseText, handler_args);
                 }
             }
         // Failure
@@ -66,7 +71,7 @@
                     alert('HTTP Error:  ' + httpobj.statusText + ' (' + httpobj.status + ')');
             // Custom failure handler receives status and statusText as parameters.
                 else
-                    failure_handler(httpobj.status, httpobj.statusText);
+                    failure_handler(httpobj.status, httpobj.statusText, handler_args);
             }
         }
     // Submit the query

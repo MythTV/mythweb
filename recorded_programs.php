@@ -1,10 +1,15 @@
 <?php
-/***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2005.04.02 (xris)
-
-    view and manipulate recorded programs.
-\***                                                                        ***/
-
+/**
+ * view and manipulate recorded programs.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ *
+ * @package     MythWeb
+ *
+/**/
 
 // Which section are we in?
     define('section', 'tv');
@@ -36,6 +41,11 @@
             }
         // Delete the recording
             backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
+        // Exit early if we're in AJAX mode.
+            if (isset($_GET['ajax'])) {
+                echo 'success';
+                exit;
+            }
         // Delay a second so the backend can catch up
         # Disabled because I don't really think it's needed
         #    sleep(1);
