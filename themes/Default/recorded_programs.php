@@ -28,10 +28,10 @@ class Theme_recorded_programs extends Theme {
 <!--
 
 // Some initial values for global counters
-    var diskused       = '<?php echo addslashes(disk_used)       ?>';
-    var programcount   = '<?php echo addslashes($Total_Programs) ?>';
-    var programs_shown = '<?php echo count($All_Shows)           ?>';
-    var totaltime      = '<?php echo addslashes($Total_Time)     ?>';
+    var diskused       = parseInt('<?php echo addslashes(disk_used)       ?>');
+    var programcount   = parseInt('<?php echo addslashes($Total_Programs) ?>');
+    var programs_shown = parseInt('<?php echo count($All_Shows)           ?>');
+    var totaltime      = parseInt('<?php echo addslashes($Total_Time)     ?>');
 
 // Initialize some variables that will get set after the page table is printed
     var rowcount     = new Array();
@@ -128,7 +128,7 @@ class Theme_recorded_programs extends Theme {
                                                               "'", addslashes(t('$1 mins')), "'";
                                                          ?>);
     // Decrease the disk usage indicator by the amount of the show
-        diskused -= file.filesize;
+        diskused -= file.size;
         get_element('diskused').innerHTML = nice_filesize(diskused);
     // Adjust the freespace shown
         get_element('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
