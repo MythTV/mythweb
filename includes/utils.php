@@ -40,6 +40,28 @@
         return $cache[$field];
     }
 
+/**
+ * smart_args:
+ *  I like how in perl, you can pass variables into functions in lists or
+ *  arrays, and they all show up to the function as one giant list.  This takes
+ *  an array containing scalars and arrays of scalars, and returns one clean
+ *  array of all values.
+/**/
+    function smart_args($args) {
+        $new_args = array();
+    // Not an array
+        if (!is_array($args))
+            return array($args);
+    // Loop
+        foreach ($args as $arg) {
+            foreach (smart_args($arg) as $arg2) {
+                $new_args[] = $arg2;
+            }
+        }
+    // Return
+        return $new_args;
+    }
+
 /*
  *  fix_crlfxy:
  *    Recursively fixes silly \r\n stuff that some browsers send.
