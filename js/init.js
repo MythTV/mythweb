@@ -12,12 +12,6 @@
 
     window.onload = init;
 
-// Include some other modules
-    document.write('<script type="text/javascript" src="js/utils.js"></script>');
-    document.write('<script type="text/javascript" src="js/mouseovers.js"></script>');
-    document.write('<script type="text/javascript" src="js/visibility.js"></script>');
-    document.write('<script type="text/javascript" src="js/ajax.js"></script>');
-
 // Define some global variables
     var isCSS, isW3C, isIE4, isNN4, isIE6, is_gecko, is_safari, is_khtml, is_opera;
     var on_load = new Array();                // An array of functions to be executed in init()

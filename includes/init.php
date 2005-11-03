@@ -1,17 +1,43 @@
 <?php
-/*
- *  $Date$
- *  $Revision$
- *  $Author$
+/**
+ * This file is part of MythWeb, a php-based interface for MythTV.
+ * See http://www.mythtv.org/ for details.
  *
- *  init.php
+ * Initialization routines.  This file basically loads all of the necessary
+ * shared files for the entire program.
  *
- *    This file is part of MythWeb, a php-based interface for MythTV.
- *    See README and LICENSE for details.
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
  *
- *    Initialization routines.  This file basically loads all of the necessary
- *    shared files for the entire program.
-/*/
+ * @package     MythWeb
+ *
+/**/
+
+/**
+ * $Path is an array of PATH_INFO passed into the script via mod_rewrite or some
+ * other lesser means.  It contains most of the information required for
+ * figuring out what functions the user wants to access.
+ *
+ * @global  array   $GLOBALS['Path']
+ * @name    $Path
+/**/
+    global $Path;
+    $Path = explode('/', preg_replace('/^\/+/',   '',    // Remove leading slashes
+                         preg_replace('/[_\s]+/', ' ',   // Convert underscores and extra whitespace
+                             $_SERVER['PATH_INFO']       // Grab the path info from various different places.
+                                ? $_SERVER['PATH_INFO']
+                                : ($_ENV['PATH_INFO']
+                                    ? $_ENV['PATH_INFO']
+                                    : ($_GET['PATH_INFO']
+                                       ? $_GET['PATH_INFO']
+                                       : $_SERVER['REQUEST_URI']
+                                      )
+                                  )
+                         ))
+                   );
 
 // Clean the document root variable and make sure it doesn't have a trailing slash
     $_SERVER['DOCUMENT_ROOT'] = preg_replace('/\/+$/', '', $_SERVER['DOCUMENT_ROOT']);
@@ -23,6 +49,10 @@
     define('is_ssl', ($_SERVER['SERVER_PORT'] == 443 || !empty($_SERVER['SSL_PROTOCOL']) || !empty($_SERVER['HTTPS']))
                      ? true
                      : false);
+
+// Figure out the root path for this mythweb installation.  We need this in order
+// to cleanly reference things like the /js directory from subpaths.
+    define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));;
 
 // Load the user-defined configuration settings
     require_once 'config/conf.php';
@@ -50,21 +80,51 @@
         fix_magic_quotes($_SERVER);
     }
 
+// No database connection info defined?
+    if (empty($_SERVER['db_server']) || empty($_SERVER['db_name'])
+            || empty($_SERVER['db_login']) || empty($_SERVER['db_password'])) {
+        require_once 'templates/_db_vars_error.php';
+        exit;
+    }
+
 // Load the database connection routines
     require_once 'includes/db.php';
 
-// Connect to the database
+/**
+ * All database connections should now go through this object.
+ *
+ * @global  Database    $GLOBALS['db']
+ * @name    $db
+/**/
     global $db;
-    $db = new Database(db_name, db_login, db_password, db_server);
 
-// Support legacy database code
-    $dbh = $db->dbh;
+// Connect to the database
+    $db = new Database($_SERVER['db_name'],
+                       $_SERVER['db_login'],
+                       $_SERVER['db_password'],
+                       $_SERVER['db_server']);
 
 // Access denied -- probably means that there is no database
     if ($db->errno == 1045) {
         require_once 'templates/_db_access_denied.php';
         exit;
     }
+
+// We don't need these security risks hanging around taking up memory.
+    unset($_SERVER['db_name'],
+          $_SERVER['db_login'],
+          $_SERVER['db_password'],
+          $_SERVER['db_server']);
+
+/**
+ * Support legacy database code.  :(
+ * @deprecated  deprecated since the use of db.php
+ *
+ * @global  resource    $GLOBALS['dbh']
+ * @name    $dbh
+/**/
+    global $dbh;
+    $dbh = $db->dbh;
 
 //
 //  If there was a database connection error, this will send an email to
@@ -135,6 +195,7 @@
     # we'll eventually load theme settings from cookie/session info
     #
     define('theme_dir', 'themes/'.Theme.'/');
+    define('theme_url', root.'themes/'.Theme.'/');
 
 // Load the theme config
     require_once 'config/theme_'.Theme.'.php';

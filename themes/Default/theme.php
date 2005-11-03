@@ -1,11 +1,18 @@
 <?php
-/***                                                                        ***\
-    theme.php                             Last Updated: 2005.04.21 (xris)
-
-    This is the main theme class for the Default MythWeb theme.  It should
-    not be instantiated directly, but will most likely contain methods
-    called from its child classes via the parent:: construct.
-\***                                                                        ***/
+/**
+ * This is the main theme class for the Default MythWeb theme.  It should
+ * not be instantiated directly, but will most likely contain methods
+ * called from its child classes via the parent:: construct.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 class Theme {
 
@@ -23,11 +30,15 @@ class Theme {
 
     <title><?php echo $page_title ?></title>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>style.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>header.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>menus.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_dir ?>programming.css" />
-    <script type="text/javascript" src="js/init.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>header.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>menus.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>programming.css" />
+    <script type="text/javascript" src="<?php echo root ?>js/init.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/mouseovers.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/visibility.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/ajax.js"></script>
 <?php
     if (count($this->headers)) {
         echo "\n";
@@ -43,24 +54,24 @@ class Theme {
 <div id="page_header" class="clearfix">
     <div id="logo_box">
         <a id="mythtv_logo" href="http://www.mythtv.org">
-        <img src="<?php echo theme_dir ?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
+        <img src="<?php echo theme_url ?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
         </a>
     </div>
     <div id="sections">
-        <a id="tv_link"<?php if (section == 'tv') echo ' class="current_section"' ?> href="program_listing.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo theme_dir ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
+        <a id="tv_link"<?php if (section == 'tv') echo ' class="current_section"' ?> href="<?php echo root ?>program_listing.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_url ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
         </a>
-        <a id="music_link"<?php if (section == 'music') echo ' class="current_section"' ?> href="music.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo theme_dir ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic" />
+        <a id="music_link"<?php if (section == 'music') echo ' class="current_section"' ?> href="<?php echo root ?>music.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_url ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic" />
         </a>
-        <a id="video_link"<?php if (section == 'video') echo ' class="current_section"' ?> href="video.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo theme_dir ?>img/video.png" width="48" height="48" class="alpha_png" alt="MythVideo" />
+        <a id="video_link"<?php if (section == 'video') echo ' class="current_section"' ?> href="<?php echo root ?>video.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_url ?>img/video.png" width="48" height="48" class="alpha_png" alt="MythVideo" />
         </a>
-        <a id="weather_link"<?php if (section == 'weather') echo ' class="current_section"' ?> href="weather.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo theme_dir ?>img/weather.png" width="48" height="48" class="alpha_png" alt="MythWeather" />
+        <a id="weather_link"<?php if (section == 'weather') echo ' class="current_section"' ?> href="<?php echo root ?>weather.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_url ?>img/weather.png" width="48" height="48" class="alpha_png" alt="MythWeather" />
         </a>
-        <a id="settings_link"<?php if (section == 'settings') echo ' class="current_section"' ?> href="settings.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo theme_dir ?>img/settings.png" width="48" height="48" class="alpha_png" alt="<?php echo t('Settings') ?>" />
+        <a id="settings_link"<?php if (section == 'settings') echo ' class="current_section"' ?> href="<?php echo root ?>settings.php" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
+            <img src="<?php echo theme_url ?>img/settings.png" width="48" height="48" class="alpha_png" alt="<?php echo t('Settings') ?>" />
         </a>
     </div>
     <div id="extra_header">
@@ -152,21 +163,21 @@ class Theme {
     function print_menu_content() {
         ?><div id="command_choices">
                 <a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
-                <a href="program_listing.php"><?php echo t('Listings') ?></a>
+                <a href="<?php echo root ?>program_listing.php"><?php echo t('Listings') ?></a>
                 &nbsp; | &nbsp;
-                <a href="canned_searches.php"><?php echo t('Searches') ?></a>
+                <a href="<?php echo root ?>canned_searches.php"><?php echo t('Searches') ?></a>
                 &nbsp; | &nbsp;
-                <a href="schedule_manually.php"><?php echo t('Manually Schedule') ?></a>
+                <a href="<?php echo root ?>schedule_manually.php"><?php echo t('Manually Schedule') ?></a>
                 &nbsp; | &nbsp;
-                <a href="recording_schedules.php"><?php echo t('Recording Schedules') ?></a>
+                <a href="<?php echo root ?>recording_schedules.php"><?php echo t('Recording Schedules') ?></a>
                 &nbsp; | &nbsp;
-                <a href="scheduled_recordings.php"><?php echo t('Scheduled Recordings') ?></a>
+                <a href="<?php echo root ?>scheduled_recordings.php"><?php echo t('Scheduled Recordings') ?></a>
                 &nbsp; | &nbsp;
-                <a href="recorded_programs.php"><?php echo t('Recorded Programs') ?></a>
+                <a href="<?php echo root ?>recorded_programs.php"><?php echo t('Recorded Programs') ?></a>
                 &nbsp; | &nbsp;
-                <a href="status.php"><?php echo t('Backend Status') ?></a>
+                <a href="<?php echo root ?>status.php"><?php echo t('Backend Status') ?></a>
                 &nbsp; | &nbsp;
-                <a href="log.php"><?php echo ('Backend Logs') ?></a>
+                <a href="<?php echo root ?>log.php"><?php echo ('Backend Logs') ?></a>
         </div><?php
     // Create the category legend popup
         global $Categories, $Footnotes;

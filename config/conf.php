@@ -13,14 +13,6 @@
  *    a php interface to change it (someday...)
 /*/
 
-//
-//  How to access the database
-//
-    define('db_name',     'mythconverg');
-    define('db_login',    'mythtv');
-    define('db_password', 'mythtv');
-    define('db_server',   'localhost');
-
 // The domain of this webserver, for cookie validation and other things.  This
 //  *should* work automatically as-is, but if cookies don't work, you may need
 //  to manually set this to the full domain name of this server.

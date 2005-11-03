@@ -20,6 +20,10 @@
     <title>CSS Test</title>
 
     <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/mouseovers.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/visibility.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/ajax.js"></script>
 </head>
 
 <table width="400" bgcolor="#003060" border="1" cellpadding="0" cellspacing="0">

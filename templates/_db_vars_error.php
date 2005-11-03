@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title>Database Access Denied</title>
+    <title>Database Setup Error</title>
 
     <style type="text/css">
 		body	 { background-color:#ccc }
@@ -26,15 +26,12 @@
 
 <div id="message">
 
-<h2>Database Access Denied</h2>
+<h2>Database Setup Error</h2>
 
 <p>
-You are most likely receiving this message because you<br />
-have failed to configure mythweb's database login info.
-</p>
-
-<p>
-Please see .htaccess for instructions.
+The database environment variables are not correctly set in the<br />
+included .htaccess file.  Please read through the comments included<br />
+in the file and set up the db_* environment variables correctly.
 </p>
 
 </div>

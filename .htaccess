@@ -1,43 +1,99 @@
-#AuthType Basic
-#AuthName "MythTV"
-#AuthUserFile /var/www/htpasswd
-#Require valid-user
+#
+# .htaccess file for MythWeb.  Please read the descriptive comments for help
+# using these directives in your own setup.  If you so desire (and for a small
+# increase in efficiency, you can put this entire block into the apache config
+# for your MythWeb host configuration).
+#
+# See http://www.mythtv.org/ for information about MythTV itself.
+#
+# @url       $URL$
+# @date      $Date$
+# @version   $Revision$
+# @author    $Author$
+#
 
-# If you have nuv files that are actually mpeg2 files, uncomment this
-#AddType video/mpeg .nuv
-# If you have normal software-encoded nuv files, use this type
-AddType video/nuppelvideo .nuv
+#
+# I *strongly* urge you to turn on authentication for MythWeb.  It is disabled
+# by default because it requires you to set up your own password file.  Please
+# see the man page for htdigest and then configure the folowing four directives
+# to suit your authentication needs.
+#
+#    AuthType           Digest
+#    AuthName           "MythTV"
+#    AuthDigestFile     /var/www/htdigest
+#    Require            valid-user
 
-# Some special handlers for php
-#  These settings are intended for apache 2.x.  If your version of apache
-#  doesn't support php_value, or things like memory_limit aren't working
-#  as expected, then use these settings as examples for your own php.ini
-#  files.
-<FilesMatch "\.php$">
-    php_value safe_mode                     0
+# MythTV now uses the correct file suffix for mpeg files, so all .nuv files
+# should actually be NuppleVideo.  However, apache probably doesn't know what
+# those are, so we should tell it.
+    AddType video/nuppelvideo .nuv
 
-    php_value memory_limit                  32M
+# Some special instructions for the PHP files of MythWeb.
+    <FilesMatch "\.php$">
 
-    php_value session.save_path             php_sessions
+    #
+    # Use the following environment settings to tell MythWeb where you want it to
+    # look to connect to the database, the name of the database to connect to, and
+    # the authentication info to use to connect.  The defaults will usually work
+    # fine unless you've changed mythtv's mysql.txt file, or are running MythWeb on
+    # a different server from your main backend.
+    #
+        setenv db_server        "localhost"
+        setenv db_name          "mythconverg"
+        setenv db_login         "mythtv"
+        setenv db_password      "mythtv"
 
-    php_value output_buffering              4096
-    php_value register_globals              0
-    php_value magic_quotes_gpc              0
-    php_value file_uploads                  0
-    php_value allow_url_fopen               On
+    #  These settings are intended for apache 2.x.  If your version of apache
+    #  doesn't support php_value, or things like memory_limit aren't working
+    #  as expected, then use these settings as examples for your own php.ini
+    #  files.
+        php_value safe_mode                     0
 
-    php_value zlib.output_handler           Off
-    php_value zlib.output_compression       16384
-    php_value zlib.output_compression_level 4
+        php_value memory_limit                  32M
 
-    php_value url_rewriter.tags             a=href,area=href,frame=src,input=src,form=action
+        php_value session.save_path             php_sessions
 
-# These values do not change - bug in php
-    php_value output_handler                NULL
-    php_value short_open_tag                1
+        php_value output_buffering              4096
+        php_value register_globals              0
+        php_value magic_quotes_gpc              0
+        php_value file_uploads                  0
+        php_value allow_url_fopen               On
 
-# php_flag does not work in older versions of php
-    php_flag output_handler                 "NULL"
-    php_flag short_open_tag                 "On"
+        php_value zlib.output_handler           Off
+        php_value zlib.output_compression       16384
+        php_value zlib.output_compression_level 4
 
-</FilesMatch>
+        php_value url_rewriter.tags             a=href,area=href,frame=src,input=src,form=action
+
+    # These values do not change - bug in php
+        php_value output_handler                NULL
+        php_value short_open_tag                1
+
+    # php_flag does not work in older versions of php
+        php_flag output_handler                 "NULL"
+        php_flag short_open_tag                 "On"
+
+    </FilesMatch>
+
+#
+# The settings below relate specifically to mod_rewrite and the rewrite engine
+# used to make the MythWeb user experience a little easier to deal with by
+# simplifying the URL's neeced to access the various sections.  Do not touch
+# these settings.
+#
+
+# Turn on the rewrite engine
+    RewriteEngine  on
+
+# Skip out early if we've already been through rewrites,
+# or if this is a /css/, /js/ or /cache/ directory request.
+    RewriteRule    ^(css|js|cache|images|image_cache|video_dir|mythvideo|themes|[a-z_]+\.php)(/|$)     -                           [L]
+
+# Redirect most of the remaining URL requests to the main cooktools script.
+# It will then handle any requests given to it.
+    RewriteRule     ^(.*)$                  mythweb.php/$1              [QSA,L]
+
+# If you're experiencing trouble with the previous line in your copy of apache,
+# you could also use something like:
+#    RewriteRule     ^([\w\-]+(/.*)?)?$      mythweb.php?PATH_INFO=/$1   [L,QSA]
+
