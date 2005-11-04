@@ -17,6 +17,8 @@
 // Were we passed a timestamp?  This is going to be the most common occurrence
     if ($_GET['time'])
         $list_starttime = (int)$_GET['time'];
+    elseif(isset($_GET['daytime']))
+        $list_starttime = unixtime(sprintf('%08d%04d00', $_GET['date'], $_GET['daytime']));
 // Did we get passed a date (and probably an hour, too)?
     elseif(isset($_GET['date']))
         $list_starttime = unixtime(sprintf('%08d%02d0000', $_GET['date'], $_GET['hour']));

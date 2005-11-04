@@ -68,7 +68,7 @@ class Theme_program_detail extends Theme {
   </a><br>
     <input type="radio" class="radio" name="record" value="<? echo rectype_once?>" id="record_once"<?=
         $schedule->type == rectype_once ? ' CHECKED' : ''?>></input>
-        <a>Record showing</a><br>
+        <a>Record this showing</a><br>
     <input type="radio" class="radio" name="record" value="<?echo rectype_daily ?>" id="record_daily"<?=
         $schedule->type == rectype_daily ? ' CHECKED' : ''?>></input>
         <a>Record every day</a> at this time<br>
@@ -82,12 +82,12 @@ class Theme_program_detail extends Theme {
         $schedule->type == rectype_finddaily ? ' CHECKED' : ''?>></input>
         <a>Find one episode every day</a><br>
     <input type="radio" class="radio" name="record" value="<? echo rectype_findweekly ?>" id="record_findweekly"<?=
-        $schedule->type == rectype_finddaily ? ' CHECKED' : ''?>></input>
+        $schedule->type == rectype_findweekly ? ' CHECKED' : ''?>></input>
         <a>Find one episode every week</a><br>
     <input type="radio" class="radio" name="record" value="<? echo rectype_channel?>" id="record_channel"<?=
         $schedule->type == rectype_channel ? ' CHECKED' : ''?>></input>
         <a>Always record on this channel</a><br>
-    <input type="radio" class="radio" name="record" value="<? echo retype_always ?>" id="record_always"<?=
+    <input type="radio" class="radio" name="record" value="<? echo rectype_always ?>" id="record_always"<?=
         $schedule->type == rectype_always ? ' CHECKED' : ''?>></input>
         <a>Always record on any channel</a><br>
                 <br>

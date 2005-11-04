@@ -40,6 +40,7 @@ class Theme {
                 <a href="program_listing.php">Listings</a><br>
                 <a href="scheduled_recordings.php">Scheduled</a><br>
                 <a href="recorded_programs.php">Recorded</a><br>
+		<a href="status.php">Backend Status</a><br>
 <?php
     }
 

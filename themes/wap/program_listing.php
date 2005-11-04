@@ -26,12 +26,15 @@ class Theme_program_listing extends Theme {
     Currently Browsing<br><?=date('D m/d/y', $start_time)?><br>
     <?=date('g:i A', $start_time)?><br>
             Jump to<br>
-            <select name="hour"><?
-                for ($h=0;$h<24;$h++) {
-                    echo "<option value=\"$h\"";
-                    if ($h == date('H', $start_time))
-                        echo ' SELECTED';
-                    echo ">$h:00</option>";
+            <select name="daytime"><?
+		$day=getdate($start_time);
+		$start=$start_time - $day['hours'] * 60 * 60 - $day['minutes'] * 60;
+		for ($t=0;$t<48;$t++) {
+		    //echo "<option value=\"".($start + $t * 30 * 60)."\"";
+		    echo "<option value=\"".date('Hi',$start + $t * 30 * 60)."\"";
+		    if ($start+$t*30*60 <= $start_time && $start+($t+1)*30*60 > $start_time )
+		        echo ' SELECTED';
+		    echo '>'.date('g:i A',$start+$t*30*60).'</option>';
                 }
                 ?></select><br>
             <select name="date"><?
@@ -104,10 +107,12 @@ class Theme_program_listing extends Theme {
     function print_channel($channel, $start_time, $end_time) {
         ?>
         <a href="channel_detail.php?chanid=<?=$channel->chanid?>&time=<?=$start_time?>">
-        <?=prefer_channum ? $channel->channum : $channel->callsign?>&nbsp;
-        <?=prefer_channum ? $channel->callsign : $channel->channum?></a><br>
+        <?=prefer_channum ? $channel->channum : $chann->callsign?>&nbsp;
+        <?=prefer_channum ? $channel->callsign : $channel->channum?> </a>
+	<a href="program_detail.php?chanid=<?=$channel->chanid?>&starttime=<?=$channel->programs[0]->starttime?>"><?=$channel->programs[0]->title?></a><br>
         <?
     }
+
 
 }
 

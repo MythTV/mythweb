@@ -28,22 +28,34 @@ class Theme_scheduled_recordings extends Theme {
     // Reset the command variable
         $command = '';
     // Which class does this show fall into?
-        if ($show->duplicate == 1) {
+        if ($show->recstatus == 'PreviousRecording' || $show->recstatus == 'CurrentRecording') {
             $class = 'duplicate';
             $command = '<a href="scheduled_recordings.php?rerecord=yes&title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'">Rerecord</a>';
         }
-        elseif ($show->conflicting == 1) {
+        elseif ($show->recstatus == 'Conflict' || $show->recstatus == 'Overlap') {
             $class   = 'conflict';
-            $command = '<a href="scheduled_recordings.php?record=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Record</a>';
+            $command = '<a href="scheduled_recordings.php?record=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'">Record</a>';
         }
-        elseif ($show->recording == 0) {
+        elseif ($show->recstatus == 'WillRecord') {
+            $class   = 'scheduled';
+            $command = '<a href="scheduled_recordings.php?suppress=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'">Don\'t Record</a>';
+        }
+        elseif ($show->recstatus == 'ForceRecord') {
+            $class   = 'scheduled';
+            $command = '<a href="scheduled_recordings.php?default=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'">Remove Record</a>';
+        }
+        elseif ($show->recstatus == 'ManualOverride' || $show->recstatus == 'Cancelled') {
             $class   = 'deactivated';
-            $command = '<a href="scheduled_recordings.php?activate=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Activate</a>';
+            $command = '<a href="scheduled_recordings.php?activate=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'">Remove Block</a>';
+        }
+        elseif ($show->recstatus == 'LaterShowing' || $show->recstatus == 'EarlierShowing' ) {
+            $class   = 'deactivated';
+            $command = '<a href="scheduled_recordings.php?record=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'">Activate</a>';
         }
         else {
             $class   = 'scheduled';
             #$command = 'Don\'t&nbsp;Record';
-            $command = '';
+            $command = 'Unknown '.$show->recstatus;
         }
 
     // Print the content

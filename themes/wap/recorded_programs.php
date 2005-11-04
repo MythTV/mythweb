@@ -50,10 +50,11 @@ class Theme_recorded_programs extends Theme {
         echo nice_length($show->length)." ".nice_filesize($show->filesize)."<br>";
 
         if ($show->endtime > time()) { ?>
-            <font color="#FF0000">currently recording</font><br>
-<?php   } else { ?>
-            <b></b><a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete</a></b><br>
-<?php   }
+            <font color="#FF0000">currently recording - </font>
+<?php   } ?>
+            <b></b><a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete </a></b>
+            <b></b><a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>&forget_old">Rerecord</a></b><br>
+<?php 
         echo "<br>";
 
         $row++;
