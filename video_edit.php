@@ -96,9 +96,7 @@ td,body {
        $result = mysql_query('SELECT * FROM videocategory')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
            while( $cat_data = mysql_fetch_assoc($result) )  {
-           $num_cat++;
-           $cat_str = $cat_data["category"]; ?>
-       <option <?if ($category == $num_cat) print "selected"; ?> value="<?print $num_cat; ?>"><?print $cat_str; ?></option>
+      ?><option <?if ($category == $cat_data["intid"]) print "selected"; ?> value="<?print $cat_data["intid"]; ?>"><?print $cat_data["category"]; ?></option>
        <?}
    ?></td>
 </tr><tr>

@@ -40,7 +40,7 @@ function newWindow(newContent)
     if( $Filter_Category == -1)
         echo "selected";
     echo ">All</option>\n";
-    for($i=0;$i<=$Total_Categories;$i++) {
+    foreach (array_keys($Category_String) as $i) {
         echo "<option value=$i ";
         if( $i == $Filter_Category )
             echo "selected";
