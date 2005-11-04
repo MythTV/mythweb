@@ -41,10 +41,7 @@ class Theme_program_detail extends Theme {
 <?php } ?>
             <div id="program_title">
                 <h1>
-                    <a href="search.php?searchstr=<?php echo urlencode($program->title)?>&search_title=yes">"<?php echo $schedule->title?>"</a>
-<?php       if (strlen($program->starstring) > 0)
-                echo "                    $program->starstring\n";
-?>
+                    <a href="search.php?searchstr=<?php echo urlencode($program->title)?>&search_title=yes"><?php echo $schedule->title?></a>
                 </h1>
                 <div id="program_time">
 <?php
@@ -161,6 +158,11 @@ class Theme_program_detail extends Theme {
 ?>
                 <dt><?php echo t('Written by') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('writer') ?></dd>
+<?php           }
+		if (strlen($program->starstring) > 0) {
+?>
+		   <dt><?php echo t('Guide rating') ?>:&nbsp;</dt>
+		   <dd><?php echo $program->starstring ?></dd>
 <?php           } ?>
             </dl>
         </div>
