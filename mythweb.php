@@ -12,21 +12,9 @@
  *
 /**/
 
-
-/**
- * By default, php will always search the current directory for include files,
- * but if you wish to install these directories outside of the current path
- * (eg. for security reasons), set this variable to the directory that the
- * directories like languages and templates are located inside of.  eg.
- *
- *  define('search_path', '/usr/share/mythweb');
-/**/
-    define('search_path', '.');
-
-// Add the aforementioned path to the global search path, though don't bother if
-// it's '.' because php already searches the current directory.
-    if (search_path != '.')
-        ini_set('include_path', ini_get('include_path').':'.search_path);
+// Add a custom include path?
+    if (!empty($_SERVER['include_path']) && $_SERVER['include_path'] != '.')
+        ini_set('include_path', ini_get('include_path').':'.$_SERVER['include_path']);
 
 // Init
     require_once 'includes/init.php';

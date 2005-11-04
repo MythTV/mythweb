@@ -43,6 +43,13 @@
         setenv db_login         "mythtv"
         setenv db_password      "mythtv"
 
+    # By default, php will always search the current directory for include files,
+    # but if you wish to install these directories outside of the current path
+    # (eg. for security reasons), set this variable to the directory that
+    # contains the directories like languages and templates.  eg.
+    #
+    #   setenv include_path      "/usr/share/mythweb"
+
     #  These settings are intended for apache 2.x.  If your version of apache
     #  doesn't support php_value, or things like memory_limit aren't working
     #  as expected, then use these settings as examples for your own php.ini
@@ -87,7 +94,7 @@
 
 # Skip out early if we've already been through rewrites,
 # or if this is a /css/, /js/ or /cache/ directory request.
-    RewriteRule    ^(css|js|cache|images|image_cache|video_dir|mythvideo|themes|[a-z_]+\.php)(/|$)     -                           [L]
+    RewriteRule    ^(css|js|cache|images|video_dir|mythvideo|themes|[a-z_]+\.php)(/|$)     -                           [L]
 
 # Redirect most of the remaining URL requests to the main cooktools script.
 # It will then handle any requests given to it.

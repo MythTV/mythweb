@@ -47,7 +47,7 @@
     define('fs_encoding', 'ISO-8859-1');
 
 // Path to the image cache directory
-    define('image_cache', 'image_cache');
+    define('image_cache', 'cache');
 
 // Local (web-friendly) path to the mythtv video dir (use a symlink to the real one - one will be auto-created if it can be)
     define('video_dir', 'video_dir');
