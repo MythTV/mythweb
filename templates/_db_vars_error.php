@@ -2,24 +2,7 @@
 <html>
 <head>
     <title>Database Setup Error</title>
-
-    <style type="text/css">
-		body	 { background-color:#ccc }
-		#message {
-            position:           absolute;
-            top:                50%;
-            left:               50%;
-            height:             13em;
-            margin-top:         -6.5em;
-            width:              40%;
-            margin-left:        -20%;
-            line-height:        2em;
-            text-align:         center;
-            border:             2px ridge #228;
-            background-color:   white
-        }
-	</style>
-
+    <link rel="stylesheet" type="text/css" href="templates/errors.css" />
 </head>
 
 <body>
