@@ -158,19 +158,19 @@ class Theme_program_listing extends Theme {
         ?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>" class="huge"
-                                            onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\$1', $channel->channum.' '.$channel->callsign) ?>')"
+                                            onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
                                             onmouseout="return wstatus('')"><?php echo prefer_channum ? $channel->channum : $channel->callsign?></a>&nbsp;</td>
             <td width="50%" align="right"><?php
                 if (is_file($channel->icon)) {
                     ?><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
-                        onmouseover="return wstatus('<? echo t('Details for')?>: <?php echo preg_replace("/([\"'])/", '\\$1', $channel->channum.' '.$channel->callsign) ?>')"
+                        onmouseover="return wstatus('<? echo t('Details for')?>: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
                         onmouseout="return wstatus('')"><img src="<?php echo $channel->icon?>" height="30" width="30"></a><?php
                 } else {
                     echo '&nbsp;';
                 }?></td>
         </tr><tr>
             <td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
-                                            onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
+                                            onmouseover="window.status='Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '. $channel->callsign) ?>';return true"
                                             onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->callsign : $channel->channum?></a></td>
         </tr>
         </table><?php
