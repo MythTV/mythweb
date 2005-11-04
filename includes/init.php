@@ -167,7 +167,7 @@
     require_once "includes/mobile.php";
     if (isMobileUser()) {
     // Browser is mobile but does it accept HTML? If not, use the WML theme.
-        if (browserAcceptsMediaType(array('text/html'))) {
+        if (browserAcceptsMediaType(array('text/html', '\*/\*'))) {
             define('Theme', 'wap');
         } else {
             define('Theme', 'wml');

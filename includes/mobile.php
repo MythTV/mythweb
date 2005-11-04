@@ -69,6 +69,7 @@ function getScreenSize() {
     $mobiles = array(/* Phones using the Series 60 platform, e.g. Nokia 3650 and 6600. */
              'Series 60' => array('width' => 176, 'height' => 208),
              'Series60' => array('width' => 176, 'height' => 208),
+             'C500' => array('width'=>176, 'height'=> 220), // SPV C500
 
              /* Phones using the Series 90 platform, e.g. Nokia 7710. */
              'Series 90' => array('width' => 640, 'height' => 320),
