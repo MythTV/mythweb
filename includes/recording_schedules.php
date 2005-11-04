@@ -388,6 +388,12 @@ class Schedule {
             }
             $str .= "</dd>\n";
         }
+    // Recording Priority
+        if (preg_match('/\\S/', $this->recpriority)) {
+            $str .= "\t<dt>".t('Recording Priority').":</dt>\n"
+                   ."\t<dd>".htmlentities($this->recpriority, ENT_COMPAT, 'UTF-8')
+                            ."</dd>\n";
+        }
     // Profile
         if (preg_match('/\\S/', $this->profile)) {
             $str .= "\t<dt>".t('Profile').":</dt>\n"
@@ -396,8 +402,9 @@ class Schedule {
         }
     // Transcoder
         if (preg_match('/\\S/', $this->transcoder)) {
+            global $Transcoders;
             $str .= "\t<dt>".t('Transcoder').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->transcoder, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".htmlentities(_or($Transcoders[$this->transcoder], '&nbsp;'), ENT_COMPAT, 'UTF-8')
                             ."</dd>\n";
         }
     // Recording Group

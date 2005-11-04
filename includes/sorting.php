@@ -175,6 +175,12 @@
         return strcasecmp($a->year, $b->year);
     }
 
+    function by_recpriority(&$a, &$b) {
+	// reverse sort so that high priority is listed first
+        if ($a->recpriority == $b->recpriority) return 0;
+        return ($a->recpriority > $b->recpriority) ? -1 : 1;
+    }
+
     function by_profile(&$a, &$b) {
         if ($a->profile == $b->profile) return 0;
         return ($a->profile > $b->profile) ? 1 : -1;

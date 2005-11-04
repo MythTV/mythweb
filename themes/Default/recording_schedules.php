@@ -33,6 +33,7 @@ class Theme_recording_schedules extends Theme {
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
     <td><?php echo get_sort_link('title',    t('title'))    ?></td>
+    <td><?php echo get_sort_link('recpriority', t('recpriority'))    ?></td>
     <td><?php echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('channel')) ?></td>
     <td><?php echo get_sort_link('profile',  t('profile'))  ?></td>
     <td><?php echo get_sort_link('transcoder',  t('transcoder'))  ?></td>
@@ -106,6 +107,9 @@ class Theme_recording_schedules extends Theme {
             if (in_array($schedule->type, array(rectype_once, rectype_override, rectype_dontrec)) && preg_match('/\\w/', $schedule->subtitle))
                 echo ":  $schedule->subtitle";
             echo '</a>';
+        ?></td>
+    <td><?php
+            echo $schedule->recpriority
         ?></td>
     <td><?php
             if (prefer_channum) {
