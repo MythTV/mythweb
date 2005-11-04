@@ -19,6 +19,28 @@ class Theme_program_listing extends Theme {
         parent::print_header('MythWeb - ' . t('Program Listing') . ': '.strftime($_SESSION['date_statusbar'], $start_time));
     // Print the header info specific to the program listing
 ?>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+    function MoveProgramListing(amount) {
+        var length = get_element('program_listing').date.length;
+        var cur = get_element('program_listing').date.selectedIndex;
+        var newPos = cur;
+        if (cur + amount < 0) {
+            newPos = 0;
+        } else if (cur + amount > length - 1) {
+            newPos = length - 1;
+        } else {
+            newPos = cur + amount;
+        }
+        get_element('program_listing').date.selectedIndex = newPos;
+        get_element('program_listing').submit();
+    }
+
+// -->
+</script>
+
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
@@ -39,7 +61,8 @@ class Theme_program_listing extends Theme {
                 }
                 ?></select></td>
             <td align="right"><?echo t('Date') ?>:&nbsp;</td>
-            <td><select name="date" onchange="get_element('program_listing').submit()"><?php
+            <td style="vertical-align:middle;" nowrap><img src="images/left.gif" onclick="MoveProgramListing(-1)">
+                <select name="date" onchange="get_element('program_listing').submit()"><?php
             // Find out how many days into the past we should bother checking
                 $result = mysql_query('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
@@ -58,7 +81,8 @@ class Theme_program_listing extends Theme {
                     if ($date == date("Ymd", $start_time)) echo " selected";
                     echo ">".strftime($_SESSION['date_listing_jump'] , $time)."</option>";
                 }
-                ?></select></td>
+                ?></select>
+                <img src="images/right.gif" onclick="MoveProgramListing(+1)"></td>
             <td align="center"><noscript><input type="submit" class="submit" value="<? echo t('Jump') ?>"></noscript></td>
 
 
