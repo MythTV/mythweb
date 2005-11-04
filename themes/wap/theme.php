@@ -20,6 +20,7 @@ class Theme {
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 
     <Link Rel="stylesheet" HRef="<?=theme_dir?>style.css" Type="text/css" Media="screen">
+    <Link Rel="stylesheet" HRef="<?=theme_dir?>handheld.css" Type="text/css" Media="handheld">
 </head>
 
 <body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
@@ -36,11 +37,13 @@ class Theme {
     }
 
     function print_menu_content() {
-        ?>
-                <a href="program_listing.php">Listings</a><br>
-                <a href="scheduled_recordings.php">Scheduled</a><br>
-                <a href="recorded_programs.php">Recorded</a><br>
+?>
+    <span class="menu">
+        <a href="program_listing.php">Listings</a><br>
+        <a href="scheduled_recordings.php">Scheduled</a><br>
+        <a href="recorded_programs.php">Recorded</a><br>
 		<a href="status.php">Backend Status</a><br>
+    </span>
 <?php
     }
 
