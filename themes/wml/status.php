@@ -6,17 +6,28 @@
     See README and LICENSE for details.
 \***                                                                        ***/
 
+// Initialize the script, database, etc.
 chdir("../..");
 require_once "includes/init.php";
-
 
 // Get the address/port of the master machine
 $masterhost = get_backend_setting('MasterServerIP');
 $statusport = get_backend_setting('BackendStatusPort');
 
-// Since the status service directly outputs html we parse it
-// the old fasion way
-$str = file_get_contents("http://$masterhost:$statusport");
+$file = "http://$masterhost:$statusport/xml";
+$depth = array();
+$JobFlag = 0;
+$SchedDoneFlag = 0;
+$JobData = "";
+
+// set the global string builders
+$encoders="";
+$statusline="";
+$sched="";
+$disk="";
+$load="";
+$fill="";
+$ddstatus="";
 
 // Make sure the content is interpreted as UTF-8
 header("Content-Type: text/vnd.wap.wml");
@@ -24,8 +35,130 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");    
+echo "<?xml version=\"1.0\"?>";
 
-echo "<?xml version=\"1.0\"?>"
+
+
+function startElement($parser, $name, $attrs)
+{
+   global $depth;
+   global $JobFlag;
+   global $SchedDoneFlag;
+   global $DDFlag;
+   global $encoders;
+   global $statusline;
+   global $sched;
+   global $disk;
+   global $load;
+   global $fill;
+   global $ddstatus;
+
+   switch ($name)
+   {
+      case "STATUS":
+         $statusline.= $attrs['VERSION']."<br/>\n";
+         $statusline.= $attrs['DATE']." ".$attrs['TIME']."<br/>\n";
+         break;
+      case "ENCODER":
+         if ($attrs['CONNECTED'] == "1")
+         {
+            if ($attrs['STATE'] == "1")
+            {
+               $status = "currently recording";
+            }
+            else
+            {
+               $status = "not currently recording";
+            }
+         }
+         else
+         {
+           $status = "not connected";
+         }
+         $encoders.="Encoder ".$attrs['ID']." is ".(($attrs['LOCAL'] == "1") ? "local" : "remote")." on ".$attrs['HOSTNAME']." and is ".$status."<br/>\n";
+         break;
+      case "PROGRAM":
+         $sched.="Encoder ".$attrs['INPUTID']." - ".$attrs['TITLE']." - ";
+         break;
+      case "CHANNEL":
+         if ($SchedDoneFlag == 0)
+         {
+            $sched.=$attrs['CHANNELNAME']."<br/>\n";
+         }
+         break;
+      case "JOB":
+         $JobFlag = 1;
+         break;
+      case "STORAGE":
+         $disk.="Total Space:".$attrs['USED']."<br/>Spaced Used:".$attrs['USED']."<br/>Space Free:".$attrs['FREE']."<br/>\n";
+         break;
+      case "LOAD":
+         $load.= "1 Minute: ".$attrs['AVG1']."<br/>5 Minutes: ".$attrs['AVG2']."<br/>15 Minutes: ".$attrs['AVG3']."<br/>\n";
+         break;
+      case "GUIDE":
+         $fill.= "Last mythfilldatabase run started on ".$attrs['START']." and ended on ".$attrs['END']." ".$attrs['STATUS']."<br/>There's guide data until ".$attrs['GUIDETHRU']." (".$attrs['GUIDEDAYS']." days).<br/>DirectData Status: ";
+         $DDFlag = 1;
+         break;
+   }
+   $depth[$parser]++;
+}
+
+function endElement($parser, $name)
+{
+   global $depth;
+   global $JobFlag;
+   global $SchedDoneFlag;
+   global $DDFlag;
+   global $JobData;
+   global $ddstatus;
+
+   if ($name == "JOB")
+   {
+      # echo "Job : ".$JobData."<br/>\n";
+      $JobFlag = 0;
+   }
+   if ($name == "SCHEDULED")
+   {
+      $SchedDoneFlag = 1;
+   }
+   $depth[$parser]--;
+}
+
+function characterData($parser, $data)
+{
+   global $JobData;
+   global $JobFlag;
+   global $DDFlag;
+   global $fill;
+
+   if ($JobFlag == 1)
+   {
+      $JobData = $data;
+      $JobFlag = 0;
+   }
+   if ($DDFlag == 1)
+   {
+      $fill.=$data."<br/>\n";
+      $DDFlag = 0;
+   }
+}
+
+$xml_parser = xml_parser_create();
+xml_set_element_handler($xml_parser, "startElement", "endElement");
+xml_set_character_data_handler($xml_parser, "characterData");
+if (!($fp = fopen($file, "r"))) {
+   die("could not open XML input");
+}
+
+while ($data = fread($fp, 4096)) {
+   if (!xml_parse($xml_parser, $data, feof($fp))) {
+       die(sprintf("XML error: %s at line %d",
+                   xml_error_string(xml_get_error_code($xml_parser)),
+                   xml_get_current_line_number($xml_parser)));
+   }
+}
+xml_parser_free($xml_parser);
+
 ?>
 <!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml">
 
@@ -33,6 +166,7 @@ echo "<?xml version=\"1.0\"?>"
 
 <card id="card1" title="Status">
 <p>
+<?php echo $statusline; ?>
 <a href="#encoders">Encoder status</a><br/>
 <a href="#schedules">Schedules</a><br/>
 <a href="#jobs">Job Status</a><br/>
@@ -41,79 +175,6 @@ echo "<?xml version=\"1.0\"?>"
 <a href="#fill">Mythfilldatabase</a><br/>
 </p>
 </card>
-<?php
-$encoders="";
-$sched="";
-$disk="";
-$load="";
-$fill="";
-$arr1 = preg_split("/\n/", $str, -1, PREG_SPLIT_NO_EMPTY);
-$count = count($arr1);
-for ($i=0; $i < $count; $i++)
-{
-    $line = $arr1[$i];
-
-    if (strpos($line, "    Encoder ") !== FALSE) {
-        trim($line);
-        $line = substr($line, strpos($line, "<li>")+4, strpos($line, ".")-4);
-        $encoders.=$line."<br/>\n";
-    } else if (strpos($line, "<div id=\"schedule\">") !== FALSE) {
-        $i++;
-        $line = $arr1[$i];
-        while (strpos($line, "</div>") === FALSE) {
-            $sched.=substr($line, strpos($line, "<a href=\"#\">")+12, strpos($line, "<br />")-18)."<br/>\n";
-            $i++;
-            $line = $arr1[$i];
-        }
-    } else if (strpos($line, "    Jobs currently in") !== FALSE) {
-        $i++;
-        $line = $arr1[$i];
-        $job="";
-        while (strpos($line, "<br />    <div") !== FALSE) {
-            $i++;
-            $line = $arr1[$i];
-            $job.=substr($line, strpos($line, ">") + 1, strpos($line, "<f")-12);
-            $last_tok =  strpos($line, "<f")+3;
-            $line = substr($line, $last_tok + 1);
-            $job.=" (".substr($line, strpos($line, ">") + 1, strpos($line, "</f")-22).")<br/>";
-            $i+=2;
-            $line = $arr1[$i];
-        }
-    } else if (strpos($line, "      Disk Usage:") !== FALSE) {
-        $i += 2;
-        $line = $arr1[$i];
-        $disk.=substr($line, strpos($line, "<li>")+4, strpos($line, "<li/>")-6)."<br/>\n";
-        $i++;
-        $line = $arr1[$i];
-        $disk.=substr($line, strpos($line, "<li>")+4, strpos($line, "<li/>")-6)."<br/>\n";
-        $i++;
-        $line = $arr1[$i];
-        $disk.=substr($line, strpos($line, "<li>")+4, strpos($line, "<li/>")-6)."<br/>\n";
-        
-    } else if (strpos($line, "      This machine's load") !== FALSE) {
-        $i += 2;
-        $line = $arr1[$i];
-        $load.=substr($line, strpos($line, "<li>")+4, strpos($line, "<li/>")-6)."<br/>\n";
-        $i++;
-        $line = $arr1[$i];
-        $load.=substr($line, strpos($line, "<li>")+4, strpos($line, "<li/>")-6)."<br/>\n";
-        $i++;
-        $line = $arr1[$i];
-        $load.=substr($line, strpos($line, "<li>")+4, strpos($line, "<li/>")-6)."<br/>\n";
-    } else if (strpos($line, "    Last mythfilldatabase") !== FALSE) {
-        $fill.=$line;
-        $line = $arr1[++$i];
-        if (strpos($line, "</div>") === FALSE) {    
-            $fill.=$line;
-            $line = $arr1[++$i];
-            if (strpos($line, "</div>") === FALSE) {    
-                $fill.=$line;
-            }
-        }
-    }
-
-}
-?>
 <card id="encoders" title="Encoders">
 <p>
 <?php echo $encoders; ?>
@@ -126,7 +187,7 @@ for ($i=0; $i < $count; $i++)
 </card>
 <card id="jobs" title="Jobs">
 <p>
-<?php echo $job; ?>
+<?php echo $JobData; ?>
 </p>
 </card>
 <card id="disks" title="Disks">
