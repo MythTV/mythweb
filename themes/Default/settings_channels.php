@@ -40,6 +40,7 @@ class Theme_settings_channels extends Theme_settings {
     <td width="5%"><?php  echo t('recpriority')  ?></td>
     <td width="5%"><?php  echo t('commfree')     ?></td>
     <td width="5%"><?php  echo t('visible')      ?></td>
+    <td width="5%"><?php  echo t('useonairguide') ?></td>
 </tr><?php
         foreach ($Channels as $channel) {
 ?><tr class="settings" align="center">
@@ -58,6 +59,7 @@ class Theme_settings_channels extends Theme_settings {
     <td><input type="text" size="2" name="recpriority_<?php echo $channel['chanid']?>" id="recpriority_<?php echo $channel['chanid']?>" value="<?php echo htmlentities($channel['recpriority'])?>"></td>
     <td><input type="checkbox" name="commfree_<?php echo $channel['chanid']?>" <?php if (htmlentities($channel['commfree'])) echo "CHECKED" ?> ></td>
     <td><input type="checkbox" name="visible_<?php echo $channel['chanid']?>" <?php if (htmlentities($channel['visible'])) echo "CHECKED" ?> ></td>
+    <td><input type="checkbox" name="useonairguide_<?php echo $channel['chanid']?>" <?php if (htmlentities($channel['useonairguide'])) echo "CHECKED" ?> ></td>
 </tr><?php
         }
 ?>

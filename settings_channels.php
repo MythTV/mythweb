@@ -33,6 +33,7 @@
                                           .'hue='.escape($_POST['hue_'.$chanid])         .','
                                   .'recpriority='.escape($_POST['recpriority_'.$chanid]) .','
                                   .'commfree='.escape((isset($_POST['commfree_'.$chanid]) && $_POST['commfree_'.$chanid] == "on") ? 1 : 0) .','
+                                  .'useonairguide='.escape((isset($_POST['useonairguide_'.$chanid]) && $_POST['useonairguide_'.$chanid] == "on") ? 1 : 0) .','
                                   .'visible='.escape((isset($_POST['visible_'.$chanid]) && $_POST['visible_'.$chanid] == "on") ? 1 : 0);
             // next, the fields that need to have a value, so we won't change them if they were emptied
                 if ($_POST['channum_'.$chanid])
