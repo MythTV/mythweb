@@ -78,11 +78,11 @@ you should do something like:
 
     cp -r . /wwww/htdocs/myMythWebDirectory
 
-    Next, you need to make sure that your web server can write to a couple of
-directories.  This should be as simple as:  **
+    Next, you need to make sure that your web server can write to the image
+cache directory.  This should be as simple as:  **
 
-    chgrp -R apache /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
-    chmod g+rw /wwww/htdocs/myMythWebDirectory/{image_cache,php_sessions}
+    chgrp -R apache /wwww/htdocs/myMythWebDirectory/cache
+    chmod g+rw /wwww/htdocs/myMythWebDirectory/cache
 
     ** Some distributions run apache as "nobody/nogroup" so please be aware
        that you may need to consult your /etc/httpd/httpd.conf file to verify
@@ -141,15 +141,15 @@ A: Some distributions (gentoo in particular) disable the allow_url_fopen
     your distribution) and set the value of allow_url_fopen to On.
 
 Q: I've fixed a bug (or added a feature), how do I submit my patch?
-A: First, join the mythtv-dev mailing list.  Then create your patch against
-    mythweb CVS with `cvs diff -u`, first having made sure that your code is
-    indented with 4 spaces and not tabs.  Next, either email your patch to the
-    mailing list, or if it is bigger than 40k or so, put it on a web page and
-    send a URL to the mailing list.  Either way, please include a detailed
-    description of your patch in the email.  Make sure that the email contains
-    "mythweb" in the subject line, or I may not see it.  If you don't hear back
-    from me right away, don't worry.  As long as you follow these instructions,
-    I will at least get back to you one way or another -- eventually.
+A: First, create your patch against mythweb SVN with `svn diff`, having made
+    sure that your code is indented with 4 spaces and not tabs.  Next, post the
+    patch on the MythTV Trac Server ( http://svn.mythtv.org/trac/ ) as
+    described on the Trac server's home page.  Please include a detailed
+    description of your patch on the ticket.  Select the ticket Type "patch",
+    Component "mythweb", and type 'xris' into the "Assign To" text box.  If you
+    don't hear back from me or see the patch committed right away, don't worry.
+    As long as you follow these instructions, I will at least get back to you
+    one way or another -- eventually.
 
 4.0 Plan/TODO
 =============
@@ -173,12 +173,11 @@ subscribe to mythtv-dev)
 5.0 Submitting Patches
 ======================
 
-I'm always open to people submitting patches.  The best way to do this is to
-merely submit them to the mythtv mailing list (dev is best, but I subscribe
-to both lists), with the word "mythweb" in the subject line (if you don't, I
-probably won't see it), and preferably also the word "[PATCH]".
+I'm always open to people submitting patches.  Please submit the patch as
+described in the final FAQ above.
 
-Please create patches against the most recent version of CVS by doing
-"cvs diff -u".  I can deal with other "diff -u" patches, but if there have
-been any major changes in cvs (there occasionally are), I won't put much
-effort into trying to make your patch work, so please just use cvs.
+Please create patches against the most recent version of SVN.  I can deal with
+other "diff -u" patches, but if there have been any major changes in SVN (there
+occasionally are), I won't put much effort into trying to make your patch work,
+so please just use SVN.
+
