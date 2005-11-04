@@ -1,10 +1,16 @@
 <?php
-/***                                                                        ***\
-    scheduled_recordings.php                 Last Updated: 2005.04.09 (xris)
-
-    view and fix scheduling conflicts.
-\***                                                                        ***/
-
+/**
+ * View and fix scheduling conflicts.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 // Which section are we in?
     define('section', 'tv');
@@ -41,6 +47,8 @@
         elseif ($_GET['record'] || $_POST['record']) {
             $program->rec_override(rectype_override);
         }
+    // Wait for a second so the backend can catch up
+        sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         header('Location: scheduled_recordings.php');
