@@ -8,6 +8,12 @@
 
 $Canned_Searches = array(
 
+    "New Titles, Premieres"
+        => "program.previouslyshown = 0"
+            . " AND (program.category = 'Special'"
+            . "     OR program.programid LIKE 'EP%0001')"
+            . " AND DAYOFYEAR(program.originalairdate) = DAYOFYEAR(program.starttime)",
+
     "Movies"
         => "category_type='".movie_word."'",
 
