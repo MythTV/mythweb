@@ -226,7 +226,7 @@ class Schedule {
     // Update the type, in case it changed
         $this->type = $new_type;
     // Update the record
-        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid,autotranscode,transcoder,tsdefault) values ('
+        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid,autotranscode,transcoder,tsdefault,autouserjob1,autouserjob2,autouserjob3,autouserjob4) values ('
                                 .escape($this->recordid, true)             .','
                                 .escape($this->type)                       .','
                                 .escape($this->chanid)                     .','
@@ -259,7 +259,11 @@ class Schedule {
                                 .escape($this->findid)                     .','
                                 .escape($this->autotranscode)              .','
                                 .escape($this->transcoder)                 .','
-                                .escape($this->tsdefault)                  .')')
+                                .escape($this->tsdefault)                  .','
+                                .escape($this->autouserjob1)               .','
+                                .escape($this->autouserjob2)               .','
+                                .escape($this->autouserjob3)               .','
+                                .escape($this->autouserjob4)               .')')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Get the id that was returned
         $recordid = mysql_insert_id();

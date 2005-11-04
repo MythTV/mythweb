@@ -155,6 +155,14 @@ class Theme_schedule_manually extends Theme {
                 <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><? echo t('Auto-transcode') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autotranscode"<?php if ($schedule->autotranscode) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><? echo get_backend_setting('UserJobDesc1') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autouserjob1"<?php if ($schedule->autouserjob1) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><? echo get_backend_setting('UserJobDesc2') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autouserjob2"<?php if ($schedule->autouserjob2) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><? echo get_backend_setting('UserJobDesc3') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1" /></dd>
+                <dt><? echo get_backend_setting('UserJobDesc4') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><? echo t('Auto-expire recordings') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><? echo t('Record new and expire old') ?>:</dt>

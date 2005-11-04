@@ -98,6 +98,10 @@
             $schedule->recgroup     = $_POST['recgroup'];
             $schedule->autoexpire   = $_POST['autoexpire']   ? 1 : 0;
             $schedule->autocommflag = $_POST['autocommflag'] ? 1 : 0;
+            $schedule->autouserjob1 = $_POST['autouserjob1'] ? 1 : 0;
+            $schedule->autouserjob2 = $_POST['autouserjob2'] ? 1 : 0;
+            $schedule->autouserjob3 = $_POST['autouserjob3'] ? 1 : 0;
+            $schedule->autouserjob4 = $_POST['autouserjob4'] ? 1 : 0;
             $schedule->maxnewest    = $_POST['maxnewest']    ? 1 : 0;
             $schedule->inactive     = $_POST['inactive']     ? 1 : 0;
             $schedule->dupin        = _or($_POST['dupin'],    15);
@@ -118,6 +122,15 @@
     // auto-commercial-flag
         if (!isset($schedule->autocommflag))
             $schedule->autocommflag = get_backend_setting('AutoCommercialFlag');
+    // auto-user-jobs
+        if (!isset($schedule->autouserjob1))
+            $schedule->autouserjob1 = get_backend_setting('AutoRunUserJob1');
+        if (!isset($schedule->autouserjob2))
+            $schedule->autouserjob2 = get_backend_setting('AutoRunUserJob2');
+        if (!isset($schedule->autouserjob3))
+            $schedule->autouserjob3 = get_backend_setting('AutoRunUserJob3');
+        if (!isset($schedule->autouserjob4))
+            $schedule->autouserjob4 = get_backend_setting('AutoRunUserJob4');
     // auto-transcode
         if (!isset($schedule->autotranscode))
             $schedule->autotranscode = get_backend_setting('AutoTranscode');
