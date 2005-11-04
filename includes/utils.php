@@ -16,13 +16,12 @@
     define('gb', 1024 * mb);    // Gigabyte
     define('tb', 1024 * gb);    // Terabyte
 
-/*
- *  setting:
- *    get or set a database setting
-/*/
+/**
+ * Get or set a database setting.
+/**/
     function setting($field, $new_value = "old\0old") {
-        static $cache = array();
         global $db;
+        static $cache = array();
     // Assigning a new value
         if ($new_value !== "old\0old") {
             $db->query('REPLACE INTO settings (value, data) VALUES (?,?)',
@@ -38,6 +37,24 @@
         }
     // Return the cached value
         return $cache[$field];
+    }
+
+/**
+ * Find a particular file in the current include_path
+ *
+ * @param        string     $file       Name of the file to look for
+ * @return       mixed      Full path to the requested file, or null if it isn't found.
+/**/
+    function find_in_path($file) {
+    // Split out each of the search paths
+        foreach (explode(PATH_SEPARATOR, ini_get('include_path')) as $path) {
+        // Formulate the absolute path
+            $full_path = $path . DIRECTORY_SEPARATOR . $file;
+        // Exists?
+            if (file_exists($full_path))
+                return $full_path;
+        }
+        return null;
     }
 
 /**

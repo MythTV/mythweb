@@ -42,9 +42,6 @@
 // Clean the document root variable and make sure it doesn't have a trailing slash
     $_SERVER['DOCUMENT_ROOT'] = preg_replace('/\/+$/', '', $_SERVER['DOCUMENT_ROOT']);
 
-// Add the shared_code directory to our search path
-    ini_set('include_path', ini_get('include_path').':'.dirname($_SERVER['DOCUMENT_ROOT']).':'.$_SERVER['DOCUMENT_ROOT']);
-
 // Are we running in SSL mode?
     define('is_ssl', ($_SERVER['SERVER_PORT'] == 443 || !empty($_SERVER['SSL_PROTOCOL']) || !empty($_SERVER['HTTPS']))
                      ? true
@@ -142,6 +139,29 @@
         exit;
     }
 
+/**
+ * @global  array       $GLOBALS['Modules']
+ * @name    $Modules    A list of the available MythWeb modules
+/**/
+    $Modules = array();
+
+// Load the various modules (search for the "tv" subdirectory in case it might
+// find some other "modules" directory, too.
+    $path = find_in_path('modules/tv');
+    if ($path) {
+        $path = dirname($path);
+        foreach (get_sorted_files($path) as $module) {
+            if (!file_exists("$path/$module/init.php"))
+                continue;
+            $Modules[$module] = true;
+
+        }
+    }
+    if (empty($Modules)) {
+        require_once 'templates/_no_modules.php';
+        exit;
+    }
+
 // Make sure the database is up to date
     require_once 'includes/db_update.php';
 
@@ -163,28 +183,31 @@
     require_once "includes/programs.php";
     require_once "includes/recording_schedules.php";
 
-// Detect different types of browsers and set the theme accordingly.
-    require_once "includes/mobile.php";
-    if (isMobileUser()) {
-    // Browser is mobile but does it accept HTML? If not, use the WML theme.
-        if (browserAcceptsMediaType(array('text/html', '\*/\*'))) {
-            define('Theme', 'wap');
-        } else {
-            define('Theme', 'wml');
-        }
-    }
 // The browser is MythPhone.
-    elseif (strpos($_SERVER['HTTP_USER_AGENT'],'MythPhone') !== false) {
+    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
         define('Theme', 'vxml');
     }
 // Load theme from session if it exists and the user is not resetting the theme.
-    elseif ((file_exists('themes/'.$_SESSION['Theme'].'/theme.php') && !$_GET['RESET_THEME']
-           && !$_POST['RESET_THEME'])) {
+    elseif (file_exists('themes/'.$_SESSION['Theme'].'/theme.php')
+            && !$_GET['RESET_THEME']
+            && !$_POST['RESET_THEME']) {
         define('Theme', $_SESSION['Theme']);
     }
-// Otherwise set the default theme.
+// Now that we've tried a few things, we can load the mobile library
     else {
-        define('Theme', 'Default');
+    // Detect different types of browsers and set the theme accordingly.
+        require_once "includes/mobile.php";
+        if (isMobileUser()) {
+        // Browser is mobile but does it accept HTML? If not, use the WML theme.
+            if (browserAcceptsMediaType(array('text/html', '\*/\*')))
+                define('Theme', 'wap');
+            else
+                define('Theme', 'wml');
+        }
+    // Otherwise set the default theme.
+        else {
+            define('Theme', 'Default');
+        }
     }
 
 // Update the session variable
@@ -204,12 +227,8 @@
     require_once theme_dir."theme.php";
 
 // Make sure the image cache path exists
-    $path = '';
-    foreach (split('/+', image_cache) as $dir) {
-        $path .= $path ? '/' . $dir : $dir;
-        if(!is_dir($path) && !mkdir($path, 0755))
-            trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
-    }
+    if(!is_dir(image_cache) && !mkdir(image_cache, 0755))
+        trigger_error('Error creating path for '.image_cache.': Please check permissions.', FATAL);
 
 // Clean out stale thumbnails
     if (is_dir(image_cache)) {
