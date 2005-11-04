@@ -58,7 +58,7 @@ and php up and running on the same machine as MythTV:
         http://www.php.net
 
     Current versions of these in use by the MythWeb developer(s) are 2.0.40
-for Apache and 4.2.2 for php.  Make sure to build both according to the
+for Apache and 4.3 for php.  Make sure to build both according to the
 instructions at the php home site, and be sure to include support for MySQL
 when building PHP.
 
