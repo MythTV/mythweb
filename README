@@ -67,10 +67,6 @@ set apache's "AllowOverride" setting to "All" (or at least "Options") for
 the root mythweb directory.  This directive lives within <Directory/> tags,
 so make sure you're changing the setting for the correct directory.
 
-    At least for the time being, you will also need to make sure that
-"short open tags" are enabled in /etc/php.ini (or wherever your favorite
-distro chooses to place it).
-
     Somewhere in or off your root directory for htdocs (/www/htdocs if
 you followed the instuctions at php.net), you should copy all the files
 included in this distribution. To make sure you get images subdirectory,
