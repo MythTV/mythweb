@@ -42,17 +42,16 @@ class Theme_search extends Theme {
         $row = 0;
         foreach ($Results as $show) {
     // Print the content
-        echo $show->channel->name.'<br>';
-        echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'.$show->title.'</a><br>';
+        echo $show->channel->name.'<br />';
+        echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'.$show->title.'</a><br />';
         if(strlen($show->subtitle))
-            echo $show->subtitle.'<br>';
-    //  echo $show->description.'<br>';
-        echo date('D m/d/y', $show->starttime).'<br>';
-        echo date('(g:i A)', $show->starttime).' '.nice_length($show->length).'<br><br>';
+            echo $show->subtitle.'<br />';
+    //  echo $show->description.'<br />';
+        echo date('D m/d/y', $show->starttime).'<br />';
+        echo date('(g:i A)', $show->starttime).' '.nice_length($show->length).'<br /><br />';
 
             $row++;
         }
     }
 }
 
-?>

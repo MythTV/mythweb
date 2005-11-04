@@ -18,10 +18,10 @@ class Theme_channel_detail extends Theme {
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
 <?php   if (show_channel_icons && is_file($this_channel->icon)) { ?>
-    <td align="right"><img src="<?php echo $this_channel->icon?>" height="30" width="30"></td>
-<?      } ?>
+    <td align="right"><img src="<?php echo $this_channel->icon ?>" height="30" width="30"></td>
+<?php      } ?>
     <td width="66%" valign="center" class="huge">
-        Channel <?php echo $this_channel->channum?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time'])?></td>
+        Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?></td>
     <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <form method="get" id="form" action="channel_detail.php">
         <table width="100%" border="0" cellspacing="0" cellpadding="2">
@@ -84,7 +84,7 @@ class Theme_channel_detail extends Theme {
 
     // Print the content
     ?><tr class="<?php echo $show->class ?>">
-    <td nowrap align="center"><a href="program_listing.php?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime)?> - <?php echo strftime($_SESSION['time_format'], $show->endtime)?></a></td>
+    <td nowrap align="center"><a href="program_listing.php?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
     <td class="<?php echo $show->class ?>"><?php
         if ($show->hdtv)
                echo '<span class="hdtv_icon">HD</span>';
@@ -93,7 +93,7 @@ class Theme_channel_detail extends Theme {
         ?></td>
     <td><?php echo $show->subtitle ?></td>
     <td><?php echo $show->description ?></td>
-    <td nowrap><?php echo nice_length($show->length)?></td>
+    <td nowrap><?php echo nice_length($show->length) ?></td>
 </tr><?php
             $row++;
         }
@@ -105,4 +105,3 @@ class Theme_channel_detail extends Theme {
 
 }
 
-?>

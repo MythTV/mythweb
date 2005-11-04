@@ -409,4 +409,3 @@ $Categories['Western']        = array('Films',              '\\b(?:west|film)');
 $Categories['Unknown']        = array('Onbekend');
 $Categories['movie']          = array('Films'  );
 
-?>

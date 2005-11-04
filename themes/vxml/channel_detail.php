@@ -36,9 +36,9 @@ class Theme_channel_detail extends Theme {
         global $this_channel;
 ?>
 <vxml>
-  <prompt>Channel <?=$this_channel->channum?></prompt>
+  <prompt>Channel <?php echo $this_channel->channum ?></prompt>
   <prompt>Press star to select a program or hash to replay the list</prompt>
-<?
+<?php
     }
 
 
@@ -54,12 +54,12 @@ class Theme_channel_detail extends Theme {
     if ($_GET['action'] == "next") {
       foreach ($this_channel->programs as $show) {
         if ($show->starttime > $start_time) {
-          ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$show->starttime?>" method="get" /></vxml><?
+          ?><vxml><submit next="program_detail.php?chanid=<?php echo $show->chanid ?>+starttime=<?php echo $show->starttime ?>" method="get" /></vxml><?php
           return;
         }
       }
       // No shows later; redo current show
-      ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$start_time?>" method="get" /></vxml><?
+      ?><vxml><submit next="program_detail.php?chanid=<?php echo $show->chanid ?>+starttime=<?php echo $start_time ?>" method="get" /></vxml><?php
     }
 
   // Check for next/previous actions. These are returned from programme_detail to move back/forward.
@@ -68,13 +68,13 @@ class Theme_channel_detail extends Theme {
       foreach ($this_channel->programs as $show) {
         if ($show->starttime >= $start_time)
         {
-          ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$prev_show->starttime?>" method="get" /></vxml><?
+          ?><vxml><submit next="program_detail.php?chanid=<?php echo $show->chanid ?>+starttime=<?php echo $prev_show->starttime ?>" method="get" /></vxml><?php
           return;
         }
         $prev_show = $show;
       }
       // No shows later; redo current show
-      ?><vxml><submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$start_time?>" method="get" /></vxml><?
+      ?><vxml><submit next="program_detail.php?chanid=<?php echo $show->chanid ?>+starttime=<?php echo $start_time ?>" method="get" /></vxml><?php
     }
 
     // Print the main page header
@@ -97,7 +97,7 @@ class Theme_channel_detail extends Theme {
     </field>
     <filled>
       <if cond="keyhit == #">
-        <submit next="channel_detail.php?chanid=<?=$this_channel->chanid?>+time=<?=$_SESSION['list_time']?>" method="get" />
+        <submit next="channel_detail.php?chanid=<?php echo $this_channel->chanid ?>+time=<?php echo $_SESSION['list_time'] ?>" method="get" />
       <elseif cond="keyhit == *">
         <submit next="program_listing.php" method="get" />
       </elseif>
@@ -106,7 +106,7 @@ class Theme_channel_detail extends Theme {
   </form>
   <prompt>Goodbye</prompt>
 </vxml>
-<?
+<?php
     }
 
 
@@ -123,13 +123,13 @@ class Theme_channel_detail extends Theme {
 ?>
     <form>
       <field name="keyhit" type="digits?length=1" modal="true">
-        <prompt><?=date('g:i A', $show->starttime)?> <?php echo $show->title; ?><break time="400ms"/></prompt>
+        <prompt><?php echo date('g:i A', $show->starttime) ?> <?php echo $show->title ?><break time="400ms"/></prompt>
       </field>
       <filled>
         <if cond="keyhit == #">
-          <submit next="channel_detail.php?chanid=<?=$show->chanid?>+time=<?=$start_time?>" method="get" />
+          <submit next="channel_detail.php?chanid=<?php echo $show->chanid ?>+time=<?php echo $start_time ?>" method="get" />
         <elseif cond="keyhit == *">
-          <submit next="program_detail.php?chanid=<?=$show->chanid?>+starttime=<?=$show->starttime?>" method="get" />
+          <submit next="program_detail.php?chanid=<?php echo $show->chanid ?>+starttime=<?php echo $show->starttime ?>" method="get" />
         </elseif>
         </if>
       </filled>
@@ -140,4 +140,3 @@ class Theme_channel_detail extends Theme {
 
 }
 
-?>

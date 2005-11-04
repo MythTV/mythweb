@@ -75,48 +75,48 @@ td,body {
 <font size="+1">Edit Video Info</font>
 </p>
 
-<br>
+<br />
 
-<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 <table width="302" border="0" cellspacing="0" cellpadding="3">
 <tr>
     <td width="99">Title:</td>
-    <td width="301"><input name="title" type="text" value="<?if (isset($title)) print $title; ?>"></td>
+    <td width="301"><input name="title" type="text" value="<?php if (isset($title)) print $title ?>"></td>
 </tr><tr>
     <td>Director:</td>
-    <td><input name="director" type="text" value="<?if (isset($director)) print $director; ?>"></td>
+    <td><input name="director" type="text" value="<?php if (isset($director)) print $director ?>"></td>
 </tr><tr>
     <td>Plot:</td>
-    <td><textarea name="plot" rows="5" cols="30" wrap="VIRTUAL"><?if (isset($plot)) print $plot; ?></textarea></td>
+    <td><textarea name="plot" rows="5" cols="30" wrap="VIRTUAL"><?php if (isset($plot)) print $plot ?></textarea></td>
 </tr><tr>
     <td>Category:</td>
     <td><select name="category">
-       <option <?if (!(isset($category)) || ($category == 0)) print "selected"; ?> value="0">Uncategorized</option>
+       <option <?php if (!(isset($category)) || ($category == 0)) print "selected" ?> value="0">Uncategorized</option>
        <?php
        $result = mysql_query('SELECT * FROM videocategory')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
            while( $cat_data = mysql_fetch_assoc($result) )  {
-      ?><option <?if ($category == $cat_data["intid"]) print "selected"; ?> value="<?print $cat_data["intid"]; ?>"><?print $cat_data["category"]; ?></option>
-       <?}
+      ?><option <?php if ($category == $cat_data["intid"]) print "selected" ?> value="<?php print $cat_data["intid"] ?>"><?php print $cat_data["category"] ?></option>
+       <?php }
    ?></td>
 </tr><tr>
     <td>Rating:</td>
-    <td><input name="rating" type="text" value="<?if (isset($rating)) print $rating; ?>"></td>
+    <td><input name="rating" type="text" value="<?php if (isset($rating)) print $rating ?>"></td>
 </tr><tr>
     <td>IMDB:</td>
-    <td><input name="inetref" type="text" value="<?if (isset($inetref)) print $inetref; ?>"></td>
+    <td><input name="inetref" type="text" value="<?php if (isset($inetref)) print $inetref ?>"></td>
 </tr><tr>
     <td>Year:</td>
-    <td><input name="year" type="text" size=4 value="<?if (isset($year)) print $year; ?>"></td>
+    <td><input name="year" type="text" size=4 value="<?php if (isset($year)) print $year ?>"></td>
 </tr><tr>
     <td>Userrating:</td>
-    <td><input name="userrating" type="text" size=3 value="<?if (isset($userrating)) print $userrating; ?>"></td>
+    <td><input name="userrating" type="text" size=3 value="<?php if (isset($userrating)) print $userrating ?>"></td>
 </tr><tr>
     <td>Length:</td>
-    <td><input name="length" type="text" size=3 value="<?if (isset($length)) print $length; ?>"> in minutes</td>
+    <td><input name="length" type="text" size=3 value="<?php if (isset($length)) print $length ?>"> in minutes</td>
 </tr><tr>
     <td></td>
-    <td><input type="hidden" name="intid" value="<?if (isset($_REQUEST['intid'])) print $_REQUEST['intid']?>">
+    <td><input type="hidden" name="intid" value="<?php if (isset($_REQUEST['intid'])) print $_REQUEST['intid'] ?>">
        <input type="submit" name="submit" value="submit"></td>
 </tr>
 </table>

@@ -31,14 +31,14 @@ class Theme_recording_schedules extends Theme {
 
 <table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-    <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td><?php echo get_sort_link('title',    t('title'))    ?></td>
-    <td><?php echo get_sort_link('recpriority', t('recpriority'))    ?></td>
+    <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
+    <td><?php echo get_sort_link('title',    t('title')) ?></td>
+    <td><?php echo get_sort_link('recpriority', t('recpriority')) ?></td>
     <td><?php echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('channel')) ?></td>
-    <td><?php echo get_sort_link('profile',  t('profile'))  ?></td>
-    <td><?php echo get_sort_link('transcoder',  t('transcoder'))  ?></td>
+    <td><?php echo get_sort_link('profile',  t('profile')) ?></td>
+    <td><?php echo get_sort_link('transcoder',  t('transcoder')) ?></td>
     <td><?php echo get_sort_link('recgroup', t('recgroup')) ?></td>
-    <td><?php echo get_sort_link('type',     t('type'))     ?></td>
+    <td><?php echo get_sort_link('type',     t('type')) ?></td>
 </tr><?php
         $prev_group = '';
         $cur_group  = '';
@@ -76,13 +76,13 @@ class Theme_recording_schedules extends Theme {
 
             if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="6" class="list_separator"><?php echo $cur_group?></td>
+    <td colspan="6" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?php
             }
         // Print the content
-    ?><tr class="<?php echo $class?>">
-        <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td class="<?php echo $style_class?>"><?php
+    ?><tr class="<?php echo $class ?>">
+        <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
+    <td class="<?php echo $style_class ?>"><?php
         // Window status text, for the mouseover
             $wstatus = "Details for $schedule->title";
         // Print a link to the program detail for this schedule
@@ -145,4 +145,3 @@ class Theme_recording_schedules extends Theme {
 
 }
 
-?>

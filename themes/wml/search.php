@@ -74,17 +74,17 @@ class Theme_search extends Theme {
 </go>
 </do>
 <p>
-<?php echo count($Results); ?> Result(s) for "<?php echo urlencode($_SESSION['search']['searchstr']); ?>"<br/>
+<?php echo count($Results) ?> Result(s) for "<?php echo urlencode($_SESSION['search']['searchstr']) ?>"<br />
 <?php
     if (!isset($page)) {
 ?>
-<a href="#cardresults"><?php echo t('Search Results') ?></a><br/>
+<a href="#cardresults"><?php echo t('Search Results') ?></a><br />
 <?php
     } else {
 ?>
-<a href="#cardresults">Page <?php echo $page; ?> of <?php echo ceil(count($Results) / $page_size); ?></a><br/>
+<a href="#cardresults">Page <?php echo $page ?> of <?php echo ceil(count($Results) / $page_size) ?></a><br />
 <?php
-    } 
+    }
 ?>
 <?php echo t('Search') ?>:<input type="text" name="searchstr"/>
 </p>
@@ -99,20 +99,20 @@ class Theme_search extends Theme {
         $row = 0;
         if (! isset($page)) $page = 1;
         $page_start = ($page - 1) * $page_size + 1;
-        $page_end = $page_start + $page_size; 
+        $page_end = $page_start + $page_size;
 
         if ($page != 1) echo '<a href="search.php?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
         echo " (".$page.") ";
         if (($page * $page_size) < count($Results)) {
-            echo ' <a href="search.php?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br/>';
+            echo ' <a href="search.php?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
         } else {
-            echo '<br/>';
+            echo '<br />';
         }
 
 
         // I'd really like to cache the results in the session
         // but that requires changes to the underlying search code
-        // and cannot be coded only in the theme.  Maybe this will 
+        // and cannot be coded only in the theme.  Maybe this will
         // change at some later date.
         foreach ($Results as $show) {
 
@@ -124,19 +124,19 @@ class Theme_search extends Theme {
             }
 
             // Print the content
-            echo '<a href="program_detail.php?chanid='.$show->chanid.'&amp;starttime='.$show->starttime.'">'.htmlspecialchars($show->title).'</a><br/>';
+            echo '<a href="program_detail.php?chanid='.$show->chanid.'&amp;starttime='.$show->starttime.'">'.htmlspecialchars($show->title).'</a><br />';
 
-            if(strlen($show->subtitle)) echo htmlspecialchars($show->subtitle).'<br/>';
+            if(strlen($show->subtitle)) echo htmlspecialchars($show->subtitle).'<br />';
 
-            //  echo $show->description.'<br/>';
-            echo strftime(t('generic_date')." ".t('generic_time'), $show->starttime).'<br/>';
-            echo $show->channel->callsign.' '.$show->channel->channum.' - '.nice_length($show->length)."<br/><br/>\n";
+            //  echo $show->description.'<br />';
+            echo strftime(t('generic_date')." ".t('generic_time'), $show->starttime).'<br />';
+            echo $show->channel->callsign.' '.$show->channel->channum.' - '.nice_length($show->length)."<br /><br />\n";
         }
 
         if ($page != 1) echo '<a href="search.php?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
         echo " (".$page.") ";
-        if (($page * $page_size) < count($Results)) echo ' <a href="search.php?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br/>';
+        if (($page * $page_size) < count($Results)) echo ' <a href="search.php?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
         echo '</p></card>';
     }
 }
-?>
+

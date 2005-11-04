@@ -50,8 +50,8 @@ class Theme_program_listing extends Theme {
         <table border="0" cellspacing="0" cellpadding="2">
         <tr>
 
-            <td nowrap align="center"><? echo t('Jump To') ?>:&nbsp;&nbsp;</td>
-            <td align="right"><? echo t('Hour') ?>:&nbsp;</td>
+            <td nowrap align="center"><?php echo t('Jump To') ?>:&nbsp;&nbsp;</td>
+            <td align="right"><?php echo t('Hour') ?>:&nbsp;</td>
             <td><select name="hour" style="text-align: right" onchange="get_element('program_listing').submit()"><?php
                 for ($h=0;$h<24;$h++) {
                     echo "<option value=\"$h\"";
@@ -60,7 +60,7 @@ class Theme_program_listing extends Theme {
                     echo '>'.strftime($_SESSION['time_format'], strtotime("$h:00")).'</option>';
                 }
                 ?></select></td>
-            <td align="right"><?echo t('Date') ?>:&nbsp;</td>
+            <td align="right"><?php echo t('Date') ?>:&nbsp;</td>
             <td style="vertical-align:middle;" nowrap><img src="images/left.gif" onclick="MoveProgramListing(-1)">
                 <select name="date" onchange="get_element('program_listing').submit()"><?php
             // Find out how many days into the past we should bother checking
@@ -83,7 +83,7 @@ class Theme_program_listing extends Theme {
                 }
                 ?></select>
                 <img src="images/right.gif" onclick="MoveProgramListing(+1)"></td>
-            <td align="center"><noscript><input type="submit" class="submit" value="<? echo t('Jump') ?>"></noscript></td>
+            <td align="center"><noscript><input type="submit" class="submit" value="<?php echo t('Jump') ?>"></noscript></td>
 
 
         </tr>
@@ -158,15 +158,15 @@ class Theme_program_listing extends Theme {
 #       $timeslot_anchor = 0;
         $timeslot_anchor++;
 ?><tr>
-    <td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?php echo $start_time - (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>" name="anchor<?php echo $timeslot_anchor?>"><img src="images/left.gif" border="0" alt="left"></a></td>
+    <td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?php echo $start_time - (timeslot_size * num_time_slots) ?>#anchor<?php echo $timeslot_anchor ?>" name="anchor<?php echo $timeslot_anchor ?>"><img src="images/left.gif" border="0" alt="left"></a></td>
 <?php
         $count;
         foreach ($timeslots as $time) {
             if ($count++ % timeslot_blocks) continue;
 ?>
-    <td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo (int)(timeslot_blocks * 96 / num_time_slots)?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo strftime($_SESSION['time_format'], $time)?></a></td>
+    <td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo (int)(timeslot_blocks * 96 / num_time_slots) ?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo strftime($_SESSION['time_format'], $time) ?></a></td>
 <?php   } ?>
-    <td nowrap class="menu" width="2%"><a href="program_listing.php?time=<?php echo $start_time + (timeslot_size * num_time_slots)?>#anchor<?php echo $timeslot_anchor?>"><img src="images/right.gif" border="0" alt="right"></a></td>
+    <td nowrap class="menu" width="2%"><a href="program_listing.php?time=<?php echo $start_time + (timeslot_size * num_time_slots) ?>#anchor<?php echo $timeslot_anchor ?>"><img src="images/right.gif" border="0" alt="right"></a></td>
 </tr><?php
     }
 
@@ -181,28 +181,28 @@ class Theme_program_listing extends Theme {
     if (show_channel_icons === true) {
         ?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
-            <td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>" class="huge"
+            <td width="50%" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&time=<?php echo $start_time ?>" class="huge"
                                             onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
-                                            onmouseout="return wstatus('')"><?php echo prefer_channum ? $channel->channum : $channel->callsign?></a>&nbsp;</td>
+                                            onmouseout="return wstatus('')"><?php echo prefer_channum ? $channel->channum : $channel->callsign ?></a>&nbsp;</td>
             <td width="50%" align="right"><?php
                 if (is_file($channel->icon)) {
-                    ?><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
-                        onmouseover="return wstatus('<? echo t('Details for')?>: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
-                        onmouseout="return wstatus('')"><img src="<?php echo $channel->icon?>" height="30" width="30"></a><?php
+                    ?><a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&time=<?php echo $start_time ?>"
+                        onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
+                        onmouseout="return wstatus('')"><img src="<?php echo $channel->icon ?>" height="30" width="30"></a><?php
                 } else {
                     echo '&nbsp;';
-                }?></td>
+                } ?></td>
         </tr><tr>
-            <td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $start_time?>"
+            <td colspan="2" align="center" nowrap><a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&time=<?php echo $start_time ?>"
                                             onmouseover="window.status='Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '. $channel->callsign) ?>';return true"
-                                            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->callsign : $channel->channum?></a></td>
+                                            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a></td>
         </tr>
         </table><?php
     } else {
-        ?><a href="channel_detail.php?chanid=<?php echo $channel->chanid?>" class="huge"
-            onmouseover="window.status='Details for: <?php echo $channel->channum?> <?php echo $channel->callsign?>';return true"
-            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->channum : $channel->callsign?><BR>
-        <?php echo prefer_channum ? $channel->callsign : $channel->channum?></a><?php
+        ?><a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>" class="huge"
+            onmouseover="window.status='Details for: <?php echo $channel->channum ?> <?php echo $channel->callsign ?>';return true"
+            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->channum : $channel->callsign ?><BR>
+        <?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a><?php
     }
         ?></td>
 <?php
@@ -227,7 +227,7 @@ class Theme_program_listing extends Theme {
 // then, we just display the info
         $percent = (int)($timeslots_used * 96 / num_time_slots);
 ?>
-    <td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used?>" width="<?php echo $percent?>%" valign="top"><?php
+    <td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used ?>" width="<?php echo $percent ?>%" valign="top"><?php
     // Window status text, for the mouseover
         $wstatus = strftime($_SESSION['time_format'], $program->starttime).' - '.strftime($_SESSION['time_format'], $program->endtime).' -- '
                   .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
@@ -303,4 +303,3 @@ class Theme_program_listing extends Theme {
 
 }
 
-?>

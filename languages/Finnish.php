@@ -414,4 +414,3 @@ $Categories['Western']        = array('Lännen',          '\\b(?:west)');
 $Categories['Unknown']        = array('Tuntematon');
 $Categories['movie']          = array('Elokuva'  );
 
-?>

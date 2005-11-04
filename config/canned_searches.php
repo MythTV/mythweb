@@ -37,4 +37,3 @@ $Canned_Searches = array(
 
     );
 
-?>

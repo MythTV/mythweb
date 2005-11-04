@@ -28,26 +28,26 @@ class Theme_weather extends Theme {
         <h2><?php echo t('Current Conditions') ?>:</h2>
 
         <div class="overview">
-            <img src="<?php echo $site->ChooseThemeImage($_SESSION['weathericonset'], $site->ConditionImage); ?>" class="alpha_png" />
-            <h3><?php echo $site->ConditionText;?></h3>
+            <img src="<?php echo $site->ChooseThemeImage($_SESSION['weathericonset'], $site->ConditionImage) ?>" class="alpha_png" />
+            <h3><?php echo $site->ConditionText ?></h3>
             <p class="temp">
-                <?php echo $site->Temperature; ?>&deg;<sup><?php echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F' ?></sup>
+                <?php echo $site->Temperature ?>&deg;<sup><?php echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F' ?></sup>
             </p>
         </div>
 
         <table border="0" cellspacing="0" cellpadding="0">
         <tr>
             <th><?php echo t('Humidity') ?></th>
-            <td><?php echo $site->Humidity; ?>%</td>
+            <td><?php echo $site->Humidity ?>%</td>
         </tr><tr>
             <th><?php echo t('Pressure') ?></th>
-            <td><?php echo $site->BarometricPressure; if($site->use_metric == "YES") echo " cm"; else echo " in"; ?> </td>
+            <td><?php echo $site->BarometricPressure; if($site->use_metric == "YES") echo " cm"; else echo " in" ?> </td>
         </tr><tr>
             <th><?php echo t('Wind') ?></th>
-            <td><?php echo $site->WindDirection . t(' at ') .  $site->WindSpeed; if($site->use_metric == "YES") echo " kph"; else echo " mph"; ?></td>
+            <td><?php echo $site->WindDirection . t(' at ') .  $site->WindSpeed; if($site->use_metric == "YES") echo " kph"; else echo " mph" ?></td>
         </tr><tr>
             <th><?php echo t('Visibility') ?></th>
-            <td><?php echo $site->Visibility; if($site->use_metric == "YES") echo " km"; else echo " mi"; ?></td>
+            <td><?php echo $site->Visibility; if($site->use_metric == "YES") echo " km"; else echo " mi" ?></td>
         </tr><tr>
             <th><?php echo t('Wind Chill') ?></th>
             <td class="temp"><?php echo $site->Real.'&deg;<sup>';
@@ -101,21 +101,21 @@ class Theme_weather extends Theme {
 
                 ?></h3>
 
-            <img src="<?php echo $site->ChooseThemeImage($_SESSION['weathericonset'], $forecast->DescImage); ?>" class="alpha_png" />
+            <img src="<?php echo $site->ChooseThemeImage($_SESSION['weathericonset'], $forecast->DescImage) ?>" class="alpha_png" />
 
-            <h3><?php echo $forecast->DescText; ?></h3>
+            <h3><?php echo $forecast->DescText ?></h3>
 
             <div class="temps">
                 <div class="low">
                     <p><?php echo t('Low') ?></p>
                     <p class="temp">
-                        <?php echo $forecast->LowTemperature; ?>&deg;<sup><?php echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F' ?></sup>
+                        <?php echo $forecast->LowTemperature ?>&deg;<sup><?php echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F' ?></sup>
                     </p>
                 </div>
                 <div class="high">
                     <p><?php echo t('High') ?></p>
                     <p class="temp">
-                        <?php echo $forecast->HighTemperature; ?>&deg;<sup><?php echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F' ?></sup>
+                        <?php echo $forecast->HighTemperature ?>&deg;<sup><?php echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F' ?></sup>
                     </p>
                 </div>
             </div>
@@ -129,13 +129,13 @@ class Theme_weather extends Theme {
         <h2><?php echo t('Radar') ?>:</h2>
 
         <div class="radar_image">
-            <img src="<?php echo $site->RadarImage; ?>" />
+            <img src="<?php echo $site->RadarImage ?>" />
         </div>
 
     </div>
 
     <p class="last_updated">
-        <?php echo t('Last Updated') ?>: <?php echo $site->LastUpdated; ?>
+        <?php echo t('Last Updated') ?>: <?php echo $site->LastUpdated ?>
     </p>
 </div>
 <?php
@@ -150,4 +150,3 @@ class Theme_weather extends Theme {
     }
 }
 
-?>

@@ -1,4 +1,4 @@
-<?
+<?php
 /***                                                                        ***\
     program_listing.php                      Last Updated: 2003.08.19 (xris)
 
@@ -22,7 +22,7 @@ class Theme_program_listing extends Theme {
     <field name="channelchoice" type="digits?minlength=1;maxlength=2" modal="true">
       <prompt>Please pick a channel</prompt>
       <prompt>Hash twice will repeat the list</prompt>
-<?
+<?php
     }
 
 
@@ -85,7 +85,7 @@ class Theme_program_listing extends Theme {
       <reprompt/>
     </noinput>
     <filled>
-<?
+<?php
     }
 
 
@@ -106,7 +106,7 @@ class Theme_program_listing extends Theme {
     </filled>
   </form>
 </vxml>
-<?
+<?php
     }
 
 
@@ -116,8 +116,8 @@ class Theme_program_listing extends Theme {
     */
     function print_channel_block_1($channel, $count, $start_time, $end_time) {
         ?>
-    <prompt>Press <?=$count ?> for <?=prefer_channum ? $channel->channum : $channel->callsign?></prompt>
-        <?
+    <prompt>Press <?php echo $count ?> for <?php echo prefer_channum ? $channel->channum : $channel->callsign ?></prompt>
+        <?php
     }
 
 
@@ -130,11 +130,10 @@ class Theme_program_listing extends Theme {
         echo "      <else";
     else
         echo "      <";
-    ?>if cond="channelchoice == <?=$count ?>">
-         <submit next="channel_detail.php?chanid=<?=$channel->chanid?>+time=<?=$start_time?>" method="get" />
-<?
+    ?>if cond="channelchoice == <?php echo $count ?>">
+         <submit next="channel_detail.php?chanid=<?php echo $channel->chanid ?>+time=<?php echo $start_time ?>" method="get" />
+<?php
     }
 
 }
 
-?>

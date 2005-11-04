@@ -20,7 +20,7 @@ class Theme_recorded_programs extends Theme {
 <p>
 <form class="form" id="program_titles" action="recorded_programs.php" method="get">
 <center>
-    Recordings<br>
+    Recordings<br />
     <select name="title">
         <option value="">All recordings</option><?php
         global $Program_Titles;
@@ -31,8 +31,8 @@ class Theme_recorded_programs extends Theme {
             echo '>'.$title.($count > 1 ? " ($count episodes)" : "").'</option>';
         }
         ?>
-    </select><br>
-    <input type="submit" value="Go"><br><br>
+    </select><br />
+    <input type="submit" value="Go"><br /><br />
 </center>
 </form>
 </p>
@@ -40,21 +40,21 @@ class Theme_recorded_programs extends Theme {
 <?php
     $row = 0;
     foreach ($All_Shows as $show) {
-        echo $show->title."<br>";
-        echo $show->channame."<br>";
+        echo $show->title."<br />";
+        echo $show->channame."<br />";
         if(strlen($show->subtitle)>1)
-            echo "<b>".$show->subtitle."</b><br>";
+            echo "<b>".$show->subtitle."</b><br />";
         if(strlen($show->description)>1)
-            echo $show->description."<br>";
-        echo date('D, M j,Y (g:i A)', $show->starttime)."<br>";
-        echo nice_length($show->length)." ".nice_filesize($show->filesize)."<br>";
+            echo $show->description."<br />";
+        echo date('D, M j,Y (g:i A)', $show->starttime)."<br />";
+        echo nice_length($show->length)." ".nice_filesize($show->filesize)."<br />";
 
         if ($show->endtime > time()) { ?>
-            <font color="#FF0000">currently recording</font><br>
+            <font color="#FF0000">currently recording</font><br />
 <?php   } else { ?>
-            <b></b><a id="delete_<?php echo $row?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename)?>">Delete</a></b><br>
+            <b></b><a id="delete_<?php echo $row ?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename) ?>">Delete</a></b><br />
 <?php   }
-        echo "<br>";
+        echo "<br />";
 
         $row++;
     }
@@ -68,5 +68,3 @@ class Theme_recorded_programs extends Theme {
     }
 
 }
-
-?>

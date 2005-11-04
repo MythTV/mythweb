@@ -198,4 +198,3 @@
         return escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
     }
 
-?>

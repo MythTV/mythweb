@@ -191,4 +191,3 @@
         return ($a->transcoder > $b->transcoder) ? 1 : -1;
     }
 
-?>

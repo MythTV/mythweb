@@ -12,13 +12,13 @@ class Theme_settings extends Theme {
 ?>
 
 <div style="padding: 20px">
-    <? echo t('settings: overview') ?>
+    <?php echo t('settings: overview') ?>
     <p>
     <a href="settings_mythweb.php"><?php echo t('MythWeb Settings') ?></a>
     <p>
-    <a href="settings_channels.php"><? echo t('Channels') ?></a>
+    <a href="settings_channels.php"><?php echo t('Channels') ?></a>
     <p>
-    <a href="settings_keys.php"><? echo t('Key Bindings') ?></a>
+    <a href="settings_keys.php"><?php echo t('Key Bindings') ?></a>
 </div>
 
 <?php
@@ -44,4 +44,4 @@ class Theme_settings extends Theme {
     }
 
 }
-?>
+

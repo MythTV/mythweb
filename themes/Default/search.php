@@ -44,13 +44,13 @@ class Theme_search extends Theme {
 <p>
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-    <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n"; ?>
-    <td><?php echo get_sort_link('title',       t('title'))       ?></td>
-    <td><?php echo get_sort_link('subtitle',    t('subtitle'))    ?></td>
+    <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
+    <td><?php echo get_sort_link('title',       t('title')) ?></td>
+    <td><?php echo get_sort_link('subtitle',    t('subtitle')) ?></td>
     <td><?php echo get_sort_link('description', t('description')) ?></td>
-    <td><?php echo get_sort_link('channum',     t('channum'))     ?></td>
-    <td><?php echo get_sort_link('airdate',     t('airdate'))     ?></td>
-    <td><?php echo get_sort_link('length',      t('length'))      ?></td>
+    <td><?php echo get_sort_link('channum',     t('channum')) ?></td>
+    <td><?php echo get_sort_link('airdate',     t('airdate')) ?></td>
+    <td><?php echo get_sort_link('length',      t('length')) ?></td>
 </tr><?php
         $row = 0;
 
@@ -71,9 +71,9 @@ class Theme_search extends Theme {
             if ( ($cur_group != $prev_group) && !empty($group_field) ) { ?>
     <tr class="list_separator">
     <td colspan="9">
-        <?php echo $cur_group?>
+        <?php echo $cur_group ?>
         </td>
-    </tr><?
+    </tr><?php
             }
 
     // Print some additional information for movies
@@ -98,27 +98,27 @@ class Theme_search extends Theme {
 
     // Print the content
     ?><tr class="<?php echo $show->class ?>">
-    <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n"; ?>
+    <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <td class="<?php echo $show->class ?>"><?php
         if ($show->hdtv)
             echo '<span class="hdtv_icon">HD</span>';
         echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
              .$show->title . $additional.'</a>';
         ?></td>
-    <td><?php echo $show->subtitle?></td>
-    <td><?php echo $show->description?></td>
-    <td><?php echo $show->channel->channum.' - '.$show->channel->name?></td>
+    <td><?php echo $show->subtitle ?></td>
+    <td><?php echo $show->description ?></td>
+    <td><?php echo $show->channel->channum.' - '.$show->channel->name ?></td>
     <td nowrap><?php
-            echo '<br><a href="program_detail.php?chanid='. $show->chanid.
+            echo '<br /><a href="program_detail.php?chanid='. $show->chanid.
                 '&starttime='.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if( $show->extra_showings )
                 foreach( $show->extra_showings as $showtime )
-                    echo '<br><a href="program_detail.php?chanid='.
+                    echo '<br /><a href="program_detail.php?chanid='.
                         $show->chanid.'&starttime='.$showtime.'">'.
                         strftime($_SESSION['date_search'],$showtime). '</a>';
                 ?></td>
-    <td nowrap><?php echo nice_length($show->length)?></td>
+    <td nowrap><?php echo nice_length($show->length) ?></td>
 </tr><?php
             $prev_group = $cur_group;
             $row++;
@@ -132,4 +132,3 @@ class Theme_search extends Theme {
 
 }
 
-?>

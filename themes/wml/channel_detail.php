@@ -18,10 +18,10 @@ class Theme_channel_detail extends Theme {
         // Print out some header info about this channel and time
         global $this_channel;
 ?>
-<p><br/>
-<?php 
+<p><br />
+<?php
         if (! isset($_GET['jump'])) {
-            echo '<a href="channel_detail.php?chanid='.$_GET['chanid'].'&amp;jump=y">'.t('Jump to')." ".t('Date').'</a><br/>';
+            echo '<a href="channel_detail.php?chanid='.$_GET['chanid'].'&amp;jump=y">'.t('Jump to')." ".t('Date').'</a><br />';
         }
         echo "<b>Channel ".$this_channel->channum." ".$this_channel->callsign."</b></p>";
         echo "<p>";
@@ -43,7 +43,7 @@ class Theme_channel_detail extends Theme {
         for ($i=-1;$i<=$max_days;$i++) {
             $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
             $date = date("Ymd", $time);
-            $carddata.="<a href=\"channel_detail.php?chanid=".$_GET['chanid']."&amp;time=".$time."\">".strftime(t('generic_date'), $time)."</a><br/>\n";
+            $carddata.="<a href=\"channel_detail.php?chanid=".$_GET['chanid']."&amp;time=".$time."\">".strftime(t('generic_date'), $time)."</a><br />\n";
         }
 
         // Print the shows for today
@@ -62,14 +62,14 @@ class Theme_channel_detail extends Theme {
         }
 
         if (isset($_GET['jump'])) {
-            echo '<br/>';
+            echo '<br />';
             echo $carddata;
             echo '</p></card>';
         } else {
 ?>
 <do type="accept">
 <go href="program_detail.php" method="get">
-<postfield name="chanid" value="<?php echo $_GET['chanid']?>"/>
+<postfield name="chanid" value="<?php echo $_GET['chanid'] ?>"/>
 <postfield name="starttime" value="$(starttime)"/>
 </go>
 </do>
@@ -87,4 +87,4 @@ class Theme_channel_detail extends Theme {
         }
     }
 }
-?>
+

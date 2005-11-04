@@ -1,4 +1,4 @@
-<?
+<?php
 /***                                                                        ***\
     program_detail.php                       Last Updated: 2003.08.22 (xris)
 
@@ -18,7 +18,7 @@ class Theme_program_detail extends Theme {
     function print_header($start_time, $end_time) {
 ?>
 <vxml>
-<?
+<?php
     }
 
 
@@ -31,16 +31,16 @@ class Theme_program_detail extends Theme {
 
     // Print the page contents
 ?>
-<prompt>You have selected <?=$this_program->title?> on channel <?=$this_channel->channum?></prompt>
-<prompt>at <?=date('g:i A', $this_program->starttime)?> lasting <?=(int)($this_program->length/60)?> minutes</prompt>
-<prompt>This programme is <?=$this_program->will_record ? '' : 'not'?> scheduled to record </prompt>
+<prompt>You have selected <?php echo $this_program->title ?> on channel <?php echo $this_channel->channum ?></prompt>
+<prompt>at <?php echo date('g:i A', $this_program->starttime) ?> lasting <?php echo (int)($this_program->length/60) ?> minutes</prompt>
+<prompt>This programme is <?php echo $this_program->will_record ? '' : 'not' ?> scheduled to record </prompt>
 
     <form>
       <field name="choice" type="digits?length=1" modal="true">
         <prompt>Press 1 for programme details</prompt>
         <prompt>Press 2 for the next programme</prompt>
         <prompt>Press 3 for the previous programme</prompt>
-        <prompt>Press 4 to <?=$this_program->will_record ? 'cancel recording of' : 'record'?> this programme</prompt>
+        <prompt>Press 4 to <?php echo $this_program->will_record ? 'cancel recording of' : 'record' ?> this programme</prompt>
         <prompt>Press Hash to hear these options again</prompt>
         <prompt>Press Star to choose another channel<break time="2s"/></prompt>
       </field>
@@ -54,14 +54,14 @@ class Theme_program_detail extends Theme {
       </noinput>
       <filled>
         <if cond="choice == 1">
-          <?= $this_program->description ?>
+          <?php echo $this_program->description ?>
         <reprompt/>
         <elseif cond="choice == 2">
-          <submit next="channel_detail.php?chanid=<?=$this_program->chanid?>+time=<?=($this_program->starttime)?>+action=next" method="get" />
+          <submit next="channel_detail.php?chanid=<?php echo $this_program->chanid ?>+time=<?php echo ($this_program->starttime) ?>+action=next" method="get" />
         <elseif cond="choice == 3">
-          <submit next="channel_detail.php?chanid=<?=$this_program->chanid?>+time=<?=($this_program->starttime)?>+action=previous" method="get" />
+          <submit next="channel_detail.php?chanid=<?php echo $this_program->chanid ?>+time=<?php echo ($this_program->starttime) ?>+action=previous" method="get" />
         <elseif cond="choice == 4">
-          <submit next="program_detail.php?chanid=<?=$this_channel->chanid?>+starttime=<?=$this_program->starttime?>" namelist="record=<?=$this_program->will_record ? 'never' : 'once'?>+save=Update" method="post" />
+          <submit next="program_detail.php?chanid=<?php echo $this_channel->chanid ?>+starttime=<?php echo $this_program->starttime ?>" namelist="record=<?php echo $this_program->will_record ? 'never' : 'once' ?>+save=Update" method="post" />
         <elseif cond="choice == #">
           <reprompt/>
         <elseif cond="choice == *">
@@ -73,9 +73,8 @@ class Theme_program_detail extends Theme {
       </filled>
         </form>
 </vxml>
-<?
+<?php
     }
 
 }
 
-?>

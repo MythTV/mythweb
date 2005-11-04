@@ -28,11 +28,11 @@ class Theme_program_detail extends Theme {
         <div id="program_header">
 <?php if ($channel) { ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
-                <a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&time=<?php echo $program->starttime?>"
-                        onmouseover="return wstatus('<? echo t('Details for')?>: <?php echo $channel->channum.' '.$channel->callsign?>')"
+                <a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&time=<?php echo $program->starttime ?>"
+                        onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo $channel->channum.' '.$channel->callsign ?>')"
                         onmouseout="return wstatus('')">
 <?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
-                    <img src="<?php echo $channel->icon?>" height="30" width="30"></a>
+                    <img src="<?php echo $channel->icon ?>" height="30" width="30"></a>
 <?php       } ?>
                     <span class="preferred"><?php echo _or(prefer_channum ? $channel->channum : $channel->callsign, '&nbsp') ?></span><br />
                     <?php echo (prefer_channum ? $channel->callsign : $channel->channum)."\n" ?>
@@ -41,7 +41,7 @@ class Theme_program_detail extends Theme {
 <?php } ?>
             <div id="program_title">
                 <h1>
-                    <a href="search.php?searchstr=<?php echo urlencode($program->title)?>&search_title=yes"><?php echo $schedule->title?></a>
+                    <a href="search.php?searchstr=<?php echo urlencode($program->title) ?>&search_title=yes"><?php echo $schedule->title ?></a>
                 </h1>
                 <div id="program_time">
 <?php
@@ -218,36 +218,36 @@ class Theme_program_detail extends Theme {
                         ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
-                        echo $schedule->type == rectype_once ? ' CHECKED' : ''?> />
+                        echo $schedule->type == rectype_once ? ' CHECKED' : '' ?> />
                     <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a></li>
 
 <?php       if ($schedule->description != 'Manually scheduled') { ?>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
-                        echo $schedule->type == rectype_daily ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_daily').checked=true;"><? echo t('rectype-long: daily') ?></a></li>
+                        echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_daily').checked=true;"><?php echo t('rectype-long: daily') ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php
-                        echo $schedule->type == rectype_weekly ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_weekly').checked=true;"><? echo t('rectype-long: weekly') ?></a></li>
+                        echo $schedule->type == rectype_weekly ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_weekly').checked=true;"><?php echo t('rectype-long: weekly') ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="record_findone"<?php
-                        echo $schedule->type == rectype_findone ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_findone').checked=true;"><? echo t('rectype-long: findone') ?></a></li>
+                        echo $schedule->type == rectype_findone ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_findone').checked=true;"><?php echo t('rectype-long: findone') ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_finddaily ?>" id="record_finddaily"<?php
-                        echo $schedule->type == rectype_finddaily ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_finddaily').checked=true;"><? echo t('rectype-long: finddaily') ?></a></li>
+                        echo $schedule->type == rectype_finddaily ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_finddaily').checked=true;"><?php echo t('rectype-long: finddaily') ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findweekly ?>" id="record_findweekly"<?php
-                        echo $schedule->type == rectype_findweekly ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_findweekly').checked=true;"><? echo t('rectype-long: findweekly') ?></a></li>
+                        echo $schedule->type == rectype_findweekly ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_findweekly').checked=true;"><?php echo t('rectype-long: findweekly') ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_channel ?>" id="record_channel"<?php
-                        echo $schedule->type == rectype_channel ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_channel').checked=true;"><? echo t('rectype-long: channel', prefer_channum ? $channel->channum : $channel->callsign) ?></a></li>
+                        echo $schedule->type == rectype_channel ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_channel').checked=true;"><?php echo t('rectype-long: channel', prefer_channum ? $channel->channum : $channel->callsign) ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
-                        echo $schedule->type == rectype_always ? ' CHECKED' : ''?> />
+                        echo $schedule->type == rectype_always ? ' CHECKED' : '' ?> />
                     <a onclick="get_element('record_always').checked=true;"><?php echo t('rectype-long: always') ?></a></li>
 <?php       } ?>
             </ul>
@@ -277,7 +277,7 @@ class Theme_program_detail extends Theme {
 
             </ul>
         </div>
-<?      } ?>
+<?php      } ?>
 
         <div id="advanced_options">
             <h3><?php echo t('Advanced Options') ?>:</h3>
@@ -342,7 +342,7 @@ class Theme_program_detail extends Theme {
                             echo ' SELECTED';
                         echo '>' . t('All recordings') . '</option>';
                    ?></select></dd>
-                <dt><? echo t('Duplicate Check method') ?>:</dt>
+                <dt><?php echo t('Duplicate Check method') ?>:</dt>
                 <dd><select name="dupmethod"><?php
                         echo '<option value="1"';
                         if ($schedule->dupmethod == 1)
@@ -361,23 +361,23 @@ class Theme_program_detail extends Theme {
                             echo ' SELECTED';
                         echo '>'.t('Subtitle and Description').'</option>';
                    ?></select></dd>
-                <dt><? echo t('Auto-flag commercials') ?>:</dt>
+                <dt><?php echo t('Auto-flag commercials') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo t('Auto-transcode') ?>:</dt>
+                <dt><?php echo t('Auto-transcode') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autotranscode"<?php if ($schedule->autotranscode) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc1') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc1') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob1"<?php if ($schedule->autouserjob1) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc2') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc2') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob2"<?php if ($schedule->autouserjob2) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc3') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc3') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc4') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc4') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo t('Auto-expire recordings') ?>:</dt>
+                <dt><?php echo t('Auto-expire recordings') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo t('Record new and expire old') ?>:</dt>
+                <dt><?php echo t('Record new and expire old') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo t('Inactive') ?>:</dt>
+                <dt><?php echo t('Inactive') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo t('No. of recordings to keep') ?>:</dt>
                 <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" /></dd>
@@ -411,4 +411,3 @@ class Theme_program_detail extends Theme {
 
 }
 
-?>

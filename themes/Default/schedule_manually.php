@@ -35,16 +35,16 @@ class Theme_schedule_manually extends Theme {
 
 <?php       } ?>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
-                        echo $schedule->type == rectype_once ? ' CHECKED' : ''?> />
+                        echo $schedule->type == rectype_once ? ' CHECKED' : '' ?> />
                     <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
-                        echo $schedule->type == rectype_daily ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_daily').checked=true;"><? echo t('rectype-long: daily') ?></a></li>
+                        echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_daily').checked=true;"><?php echo t('rectype-long: daily') ?></a></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php
-                        echo $schedule->type == rectype_weekly ? ' CHECKED' : ''?> />
-                    <a onclick="get_element('record_weekly').checked=true;"><? echo t('rectype-long: weekly') ?></a></li>
+                        echo $schedule->type == rectype_weekly ? ' CHECKED' : '' ?> />
+                    <a onclick="get_element('record_weekly').checked=true;"><?php echo t('rectype-long: weekly') ?></a></li>
             </ul>
         </div>
 <?php
@@ -72,7 +72,7 @@ class Theme_schedule_manually extends Theme {
 
             </ul>
         </div>
-<?      } ?>
+<?php      } ?>
 
         <div id="recording_options">
             <h3><?php echo t('Recording Options') ?>:</h3>
@@ -132,7 +132,7 @@ class Theme_schedule_manually extends Theme {
                             echo ' SELECTED';
                         echo '>' . t('All recordings') . '</option>';
                    ?></select></dd>
-                <dt><? echo t('Duplicate Check method') ?>:</dt>
+                <dt><?php echo t('Duplicate Check method') ?>:</dt>
                 <dd><select name="dupmethod"><?php
                         echo '<option value="1"';
                         if ($schedule->dupmethod == 1)
@@ -151,21 +151,21 @@ class Theme_schedule_manually extends Theme {
                             echo ' SELECTED';
                         echo '>'.t('Subtitle and Description').'</option>';
                    ?></select></dd>
-                <dt><? echo t('Auto-flag commercials') ?>:</dt>
+                <dt><?php echo t('Auto-flag commercials') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo t('Auto-transcode') ?>:</dt>
+                <dt><?php echo t('Auto-transcode') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autotranscode"<?php if ($schedule->autotranscode) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc1') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc1') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob1"<?php if ($schedule->autouserjob1) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc2') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc2') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob2"<?php if ($schedule->autouserjob2) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc3') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc3') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo get_backend_setting('UserJobDesc4') ?>:</dt>
+                <dt><?php echo get_backend_setting('UserJobDesc4') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo t('Auto-expire recordings') ?>:</dt>
+                <dt><?php echo t('Auto-expire recordings') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><? echo t('Record new and expire old') ?>:</dt>
+                <dt><?php echo t('Record new and expire old') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo t('No. of recordings to keep') ?>:</dt>
                 <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" /></dd>
@@ -194,4 +194,3 @@ class Theme_schedule_manually extends Theme {
 
 }
 
-?>

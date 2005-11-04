@@ -19,7 +19,7 @@ class Theme_recording_profiles extends Theme_settings {
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
     <td><?php echo t('Profile Groups') ?>:</td>
-    <td><?php group_select(); ?></td>
+    <td><?php group_select() ?></td>
     <td><noscript><input type="submit" value="<?php echo t('Go') ?>"></noscript></td>
 </tr>
 </table>
@@ -44,7 +44,7 @@ class Theme_recording_profiles extends Theme_settings {
             <td><?php echo $profile['params']['height'] ?></td>
         </tr>
         </table></td>
-    <td><input type="radio" class="radio" name="vid_type_<?php echo $id?>"<?php if ($profile['videocodec'] == 'MPEG-4') echo ' CHECKED' ?>>mpeg4</td>
+    <td><input type="radio" class="radio" name="vid_type_<?php echo $id ?>"<?php if ($profile['videocodec'] == 'MPEG-4') echo ' CHECKED' ?>>mpeg4</td>
     <td align="center"><table class="small" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td align="right">mpeg4bitrate:</td>
@@ -70,7 +70,7 @@ class Theme_recording_profiles extends Theme_settings {
         </tr>
         </table></td>
 </tr><tr class="settings">
-    <td><input type="radio" class="radio" name="vid_type_<?php echo $id?>"<?php if ($profile['videocodec'] == 'RTjpeg') echo ' CHECKED' ?>>rtjpeg</td>
+    <td><input type="radio" class="radio" name="vid_type_<?php echo $id ?>"<?php if ($profile['videocodec'] == 'RTjpeg') echo ' CHECKED' ?>>rtjpeg</td>
     <td align="center"><table class="small" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td align="right">quality:</td>
@@ -94,7 +94,7 @@ class Theme_recording_profiles extends Theme_settings {
             <td><?php echo $profile['params']['volume'] ?></td>
         </tr>
         </table></td>
-    <td><input type="radio" class="radio" name="aud_type_<?php echo $id?>"<?php if ($profile['audiocodec'] == 'MP3') echo ' CHECKED' ?>>mp3</td>
+    <td><input type="radio" class="radio" name="aud_type_<?php echo $id ?>"<?php if ($profile['audiocodec'] == 'MP3') echo ' CHECKED' ?>>mp3</td>
     <td align="center"><table class="small" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td align="right">quality:</td>
@@ -102,7 +102,7 @@ class Theme_recording_profiles extends Theme_settings {
         </tr>
         </table></td>
 </tr><tr class="settings">
-    <td><input type="radio" class="radio" name="aud_type_<?php echo $id?>"<?php if ($profile['audiocodec'] != 'MP3') echo ' CHECKED' ?>>uncompressed</td>
+    <td><input type="radio" class="radio" name="aud_type_<?php echo $id ?>"<?php if ($profile['audiocodec'] != 'MP3') echo ' CHECKED' ?>>uncompressed</td>
 </tr><?php
     }
 ?>
@@ -116,4 +116,4 @@ class Theme_recording_profiles extends Theme_settings {
     }
 
 }
-?>
+

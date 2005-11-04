@@ -33,7 +33,7 @@ class Theme_settings_keys extends Theme_settings {
         }
 ?>
         </select></td>
-        <td align="center"><input type="submit" class="submit" value="<?php echo t('Set Host')?>"></td>
+        <td align="center"><input type="submit" class="submit" value="<?php echo t('Set Host') ?>"></td>
     </tr>
     </table>
     </form>
@@ -56,18 +56,18 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 <form class="form" method="post" action="settings_keys.php">
 <table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
-    <td colspan="3"><?php echo t('JumpPoints Editor')?></td>
+    <td colspan="3"><?php echo t('JumpPoints Editor') ?></td>
 </tr>
 <tr class="menu" align="center">
-    <td width="33%"><?php echo t('Destination')?></td>
-    <td width="33%"><?php echo t('Description')?></td>
-    <td width="33%"><?php echo t('Key bindings')?></td>
+    <td width="33%"><?php echo t('Destination') ?></td>
+    <td width="33%"><?php echo t('Description') ?></td>
+    <td width="33%"><?php echo t('Key bindings') ?></td>
 </tr><?php
         foreach ($Jumps as $jumppoint) {
 ?><tr class="settings" align="center">
-    <td><?php echo htmlentities($jumppoint['destination'])?></td>
-    <td><?php echo htmlentities($jumppoint['description'])?></td>
-    <td><input type="text" size="35" name="jump:<?php echo $jumppoint['destination'].':'.$usehost?>" value="<?php echo str_replace("\\\\", "\\", htmlentities($jumppoint['keylist']))?>"></td>
+    <td><?php echo htmlentities($jumppoint['destination']) ?></td>
+    <td><?php echo htmlentities($jumppoint['description']) ?></td>
+    <td><input type="text" size="35" name="jump:<?php echo $jumppoint['destination'].':'.$usehost ?>" value="<?php echo str_replace("\\\\", "\\", htmlentities($jumppoint['keylist'])) ?>"></td>
 </tr>
 <?php
         }
@@ -76,20 +76,20 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 <p></p>
 <table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
-        <td colspan="4"><?php echo t('Keybindings Editor')?></td>
+        <td colspan="4"><?php echo t('Keybindings Editor') ?></td>
 </tr>
 <tr class="menu" align="center">
-        <td width="15%"><?php echo t('Context')?></td>
-        <td width="25%"><?php echo t('Action')?></td>
-        <td width="40%"><?php echo t('Description')?></td>
-        <td width="20%"><?php echo t('Key bindings')?></td>
+        <td width="15%"><?php echo t('Context') ?></td>
+        <td width="25%"><?php echo t('Action') ?></td>
+        <td width="40%"><?php echo t('Description') ?></td>
+        <td width="20%"><?php echo t('Key bindings') ?></td>
 </tr><?php
                 foreach ($Keys as $keyb) {
 ?><tr class="settings" align="center">
-        <td><?php echo htmlentities($keyb['context'])?></td>
-        <td><?php echo htmlentities($keyb['action'])?></td>
-        <td><?php echo htmlentities($keyb['description'])?></td>
-        <td><input type="text" size="25" name="key:<?php echo $keyb['context'].':'.$keyb['action'].':'.$usehost?>" value="<?php echo str_replace("\\\\", "\\", htmlentities($keyb['keylist']))?>
+        <td><?php echo htmlentities($keyb['context']) ?></td>
+        <td><?php echo htmlentities($keyb['action']) ?></td>
+        <td><?php echo htmlentities($keyb['description']) ?></td>
+        <td><input type="text" size="25" name="key:<?php echo $keyb['context'].':'.$keyb['action'].':'.$usehost ?>" value="<?php echo str_replace("\\\\", "\\", htmlentities($keyb['keylist'])) ?>
 "></td>
 </tr>
 <?php
@@ -98,7 +98,7 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
 </table>
 
 <p align="center">
-<input type="submit" name="save" value="<?php echo t('Save')?>">
+<input type="submit" name="save" value="<?php echo t('Save') ?>">
 </p>
 
 </form>
@@ -115,4 +115,4 @@ Note:  Changes to keybindings/jumppoints requires a restart of the affected myth
     }
 
 }
-?>
+

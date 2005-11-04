@@ -18,7 +18,7 @@ class Theme_settings_mythweb extends Theme_settings {
 
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5" style="float: left;margin-left: 20px">
 <tr>
-    <td class="command_border_b" align="right"><? echo t('MythWeb Theme') ?>:</td>
+    <td class="command_border_b" align="right"><?php echo t('MythWeb Theme') ?>:</td>
     <td class="command_border_b"><?php theme_select() ?></td>
 </tr><tr>
     <td class="command_border_b" align="right"><?php echo t('Language') ?>:</td>
@@ -32,12 +32,12 @@ class Theme_settings_mythweb extends Theme_settings {
 </tr><tr>
     <td colspan="2"><?php echo t('Recorded Programs') ?>:</td>
 </tr><tr>
-    <td class="command_border_b" align="right"><?php echo t('Show descriptions on new line')?>:</td>
+    <td class="command_border_b" align="right"><?php echo t('Show descriptions on new line') ?>:</td>
     <td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
 </tr><tr>
     <td colspan="2"><?php echo t('Guide Settings') ?>:</td>
 </tr><tr>
-    <td class="command_border_b" align="right"><?php echo t('Only display favourite channels')?>:</td>
+    <td class="command_border_b" align="right"><?php echo t('Only display favourite channels') ?>:</td>
     <td class="command_border_b"><input class="radio" type="checkbox" title="In the program listing, only show channels marked as favourite channels" name="guide_favonly"<?php if ($_SESSION['guide_favonly']) echo ' CHECKED' ?>></td>
 </tr><tr>
 </tr><tr>
@@ -59,16 +59,16 @@ class Theme_settings_mythweb extends Theme_settings {
     <td align="right"><?php echo t('Search Results') ?>:&nbsp;</td>
     <td><input type="text" size="24" name="date_search" value="<?php       echo htmlentities($_SESSION['date_search']) ?>"></td>
 </tr><tr>
-    <td align="right"><?php echo t('Listing Time Key')?>:&nbsp;</td>
+    <td align="right"><?php echo t('Listing Time Key') ?>:&nbsp;</td>
     <td><input type="text" size="24" name="date_listing_key" value="<?php  echo htmlentities($_SESSION['date_listing_key']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Listing &quot;Jump to&quot;') ?>&nbsp;</td>
     <td><input type="text" size="24" name="date_listing_jump" value="<?php echo htmlentities($_SESSION['date_listing_jump']) ?>"></td>
 </tr><tr>
-    <td align="right"><?php echo t('Channel &quot;Jump to&quot;')?>&nbsp;</td>
+    <td align="right"><?php echo t('Channel &quot;Jump to&quot;') ?>&nbsp;</td>
     <td><input type="text" size="24" name="date_channel_jump" value="<?php echo htmlentities($_SESSION['date_channel_jump']) ?>"></td>
 </tr><tr>
-    <td align="right"><? echo t('Hour Format') ?>&nbsp;</td>
+    <td align="right"><?php echo t('Hour Format') ?>&nbsp;</td>
     <td><select name="time_format" style="text-align: center"><?php
         foreach (array('%I:%M %p', '%H:%M') as $code) {
             echo "<option value=\"$code\"";
@@ -99,4 +99,4 @@ class Theme_settings_mythweb extends Theme_settings {
     }
 
 }
-?>
+

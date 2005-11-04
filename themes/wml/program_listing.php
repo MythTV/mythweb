@@ -25,13 +25,13 @@ class Theme_program_listing extends Theme {
         if ((! isset($_GET['listbytime'])) && (! isset($_GET['listbychannum'])) && (! isset($_GET['listbycallsign']))) {
 ?>
 <p>
-View listings by<br/>
-<a href="#card2">Time</a> or <br/><a href="program_listing.php?listbychannum=y">Channel Number</a> or <br/><a href="program_listing.php?listbycallsign">Call Sign</a>
+View listings by<br />
+<a href="#card2">Time</a> or <br /><a href="program_listing.php?listbychannum=y">Channel Number</a> or <br /><a href="program_listing.php?listbycallsign">Call Sign</a>
 </p>
 </card>
 <card id="card2" title="By Time">
 <p>
-<a href="program_listing.php?listbytime=y">Listings Now</a><br/>
+<a href="program_listing.php?listbytime=y">Listings Now</a><br />
 <?php
             $seconds_in_day = 60 * 60 * 24;
 
@@ -46,7 +46,7 @@ View listings by<br/>
             for ($i=-1;$i<=$max_days;$i++) {
                 $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
                 $date = date("Ymd", $time);
-                echo '<a href="program_listing.php?listbytime=y&amp;date='.$date.'">'.date("D n/j", $time)."</a><br/>\n";
+                echo '<a href="program_listing.php?listbytime=y&amp;date='.$date.'">'.date("D n/j", $time)."</a><br />\n";
             }
 ?>
 </p>
@@ -56,10 +56,10 @@ View listings by<br/>
 <do type="accept" label="Go">
 <go href="channel_detail.php" method="get">
 <postfield name="chanid" value="$(chanid)"/>
-<postfield name="time" value="<?php echo $start_time; ?>"/>
+<postfield name="time" value="<?php echo $start_time ?>"/>
 </go>
 </do>
-Enter Channel:<br/>
+Enter Channel:<br />
 (use chanid)
 <input name="chanid" type="text" format="N*" size="4"/>
 
@@ -117,7 +117,7 @@ Enter Channel:<br/>
 
             if ($page != 1) echo '<a href="program_listing.php?listbycallsign=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
             if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbycallsign=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
-            echo "<br/>";
+            echo "<br />";
 
             foreach (array_keys($Channels) as $key) {
 
@@ -133,12 +133,12 @@ Enter Channel:<br/>
                     continue;
                 }
 
-                echo "<a href='channel_detail.php?chanid=".$Channels[$key]->chanid."'>".$Channels[$key]->callsign."</a><br/> ";
+                echo "<a href='channel_detail.php?chanid=".$Channels[$key]->chanid."'>".$Channels[$key]->callsign."</a><br /> ";
 
                 // Count this channel
                 $channel_count++;
             }
-            
+
         }
         if (isset($bytime)) {
 ?>
@@ -146,7 +146,7 @@ Enter Channel:<br/>
 <go href="program_listing.php" method="get">
 <postfield name="listbytime" value="y"/>
 <postfield name="hour" value="$(hour)"/>
-<postfield name="date" value="<?php echo date("Ymd", $list_starttime); ?>"/>
+<postfield name="date" value="<?php echo date("Ymd", $list_starttime) ?>"/>
 </go>
 </do>
 <?php
@@ -178,7 +178,7 @@ Enter Channel:<br/>
 
             if ($page != 1) echo '<a href="program_listing.php?listbytime=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
             if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbytime=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
-            echo "<br/>";
+            echo "<br />";
 
             foreach (array_keys($Channels) as $key) {
 
@@ -211,7 +211,7 @@ Enter Channel:<br/>
             if ($page != 1) echo '<a href="program_listing.php?listbytime=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
             if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbytime=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
 
-            echo '<br/>'.t('Jump to').' '.t('Hour').':';
+            echo '<br />'.t('Jump to').' '.t('Hour').':';
             echo '<input type="text" name="hour" format="N*" size="2" emptyok="true"/>';
         }
 
@@ -236,9 +236,9 @@ Enter Channel:<br/>
     */
     function print_channel($channel, $start_time, $end_time) {
 ?>
-<a href="channel_detail.php?chanid=<?php echo $channel->chanid?>&amp;time=<?php echo $start_time?>">
-<?php echo prefer_channum ? $channel->channum : $channel->callsign?>&nbsp;
-<?php echo prefer_channum ? $channel->callsign : $channel->channum?></a><br/>
+<a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&amp;time=<?php echo $start_time ?>">
+<?php echo prefer_channum ? $channel->channum : $channel->callsign ?>&nbsp;
+<?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a><br />
 <?php
     }
 
@@ -248,7 +248,7 @@ Enter Channel:<br/>
         echo strftime($_SESSION['time_format'], $program->starttime);
         echo ' - <a href="program_detail.php?chanid='.$program->chanid.'&amp;starttime='.$program->starttime.'">';
         echo htmlspecialchars($program->title);
-        echo "</a><br/>\n";
+        echo "</a><br />\n";
 
     }
 
@@ -256,4 +256,3 @@ Enter Channel:<br/>
     }
 }
 
-?>

@@ -13,7 +13,7 @@ class Theme_canned_searches extends Theme {
 
 <div class="normal" style="width: 50em; margin: 0px auto">
     <p>
-    <? echo t('handy: overview') ?>
+    <?php echo t('handy: overview') ?>
     </p>
 
     <ul style="list-style-type: circle">
@@ -37,4 +37,4 @@ class Theme_canned_searches extends Theme {
     }
 
 }
-?>
+

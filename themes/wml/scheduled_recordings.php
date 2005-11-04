@@ -18,10 +18,10 @@ class Theme_scheduled_recordings extends Theme {
         // Print the page contents
 
 // exclude the sorting for this theme, not needed
-/*  <a href="scheduled_recordings.php?sortby=title">show</a><br>
-    <a href="scheduled_recordings.php?sortby=channum">station</a><br>
-    <a href="scheduled_recordings.php?sortby=airdate">air&nbsp;date</a><br>
-    <a href="scheduled_recordings.php?sortby=length">length</a><br>
+/*  <a href="scheduled_recordings.php?sortby=title">show</a><br />
+    <a href="scheduled_recordings.php?sortby=channum">station</a><br />
+    <a href="scheduled_recordings.php?sortby=airdate">air&nbsp;date</a><br />
+    <a href="scheduled_recordings.php?sortby=length">length</a><br />
 */
         $page_size=15;
         $page = $_GET['page'];
@@ -72,7 +72,7 @@ class Theme_scheduled_recordings extends Theme {
             // Print a dividing row if grouping changes
             if ($group_field == "airdate")
             {
-                $cur_group = strftime(t('generic_date'), $show->starttime); 
+                $cur_group = strftime(t('generic_date'), $show->starttime);
                 $cur_group_detail = date('D', $show->starttime)." ";
             }
             elseif ($group_field == "channum")
@@ -104,7 +104,7 @@ class Theme_scheduled_recordings extends Theme {
 
             if (!(($row < $page_start) || ($row >= $page_end))) {
                 $has_output = 1;
-                $card_data[$group_no].="<p><b>".htmlspecialchars($show->title)."</b> ".htmlspecialchars($show->subtitle)."<br/>".$show->recstatus."<br/> ".strftime(t('generic_time'), $show->starttime)."<br/><a href=\"program_detail.php?chanid=".$show->chanid."&amp;starttime=".$show->starttime."\">Details</a><br/></p>\n";
+                $card_data[$group_no].="<p><b>".htmlspecialchars($show->title)."</b> ".htmlspecialchars($show->subtitle)."<br />".$show->recstatus."<br /> ".strftime(t('generic_time'), $show->starttime)."<br /><a href=\"program_detail.php?chanid=".$show->chanid."&amp;starttime=".$show->starttime."\">Details</a><br /></p>\n";
             }
         }
 
@@ -133,4 +133,3 @@ class Theme_scheduled_recordings extends Theme {
     }
 }
 
-?>

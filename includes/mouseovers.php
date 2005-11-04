@@ -104,4 +104,3 @@
         return $text.str_repeat('  ', $overload)."</ul>\n";
     }
 
-?>

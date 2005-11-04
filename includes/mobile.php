@@ -77,7 +77,7 @@ function getScreenSize() {
 
 	     /* The following strings are added for the Palm browser WebPro
               * WebPro sometimes supplies the screen dimensions, but sometimes not
-	      * but we try to detect the best as possible 
+	      * but we try to detect the best as possible
               */
 	     '320x480' => array('width' => 320, 'height' => 480), // For Palm Tungsten T
 	     '480x320' => array('width' => 480, 'height' => 320), // For Palm Tungsten T
@@ -183,4 +183,3 @@ function getScreenHeight() {
   return isset($screen['height']) ? $screen['height'] : null;
 }
 
-?>

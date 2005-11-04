@@ -23,4 +23,3 @@ class Theme_status extends Theme {
 
 }
 
-?>

@@ -409,4 +409,3 @@ $Categories['Western']        = array('Western',                                
 $Categories['Unknown']        = array('Inconnu');
 $Categories['movie']          = array('Film'  );
 
-?>

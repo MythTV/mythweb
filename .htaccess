@@ -74,7 +74,6 @@
 
     # These values do not change - bug in php
         php_value output_handler                NULL
-        php_value short_open_tag                1
 
     # php_flag does not work in older versions of php
         php_flag output_handler                 "NULL"

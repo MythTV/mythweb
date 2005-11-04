@@ -23,10 +23,10 @@ class Theme_program_listing extends Theme {
 <p>
     <form class="form" action="program_listing.php" method="get">
     <center>
-    Currently Browsing<br><?=date('D m/d/y', $start_time)?><br>
-    <?=date('g:i A', $start_time)?><br>
-            Jump to<br>
-            <select name="daytime"><?
+    Currently Browsing<br /><?php echo date('D m/d/y', $start_time) ?><br />
+    <?php echo date('g:i A', $start_time) ?><br />
+            Jump to<br />
+            <select name="daytime"><?php
 		$day=getdate($start_time);
 		$start=$start_time - $day['hours'] * 60 * 60 - $day['minutes'] * 60;
 		for ($t=0;$t<48;$t++) {
@@ -36,8 +36,8 @@ class Theme_program_listing extends Theme {
 		        echo ' SELECTED';
 		    echo '>'.date('g:i A',$start+$t*30*60).'</option>';
                 }
-                ?></select><br>
-            <select name="date"><?
+                ?></select><br />
+            <select name="date"><?php
             // Find out how many days into the future we should bother checking
                 $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);
@@ -51,12 +51,12 @@ class Theme_program_listing extends Theme {
                     if ($date == date("Ymd", $start_time)) echo " selected";
                     echo ">".date("D m/d/y" , $time)."</option>";
                 }
-                ?></select><br>
+                ?></select><br />
             <input type="submit" class="submit" value="Jump">
             </center>
         </form>
-        <br><br>
-<?
+        <br /><br />
+<?php
     }
 
 
@@ -106,14 +106,13 @@ class Theme_program_listing extends Theme {
     */
     function print_channel($channel, $start_time, $end_time) {
         ?>
-        <a href="channel_detail.php?chanid=<?=$channel->chanid?>&time=<?=$start_time?>">
-        <?=prefer_channum ? $channel->channum : $chann->callsign?>&nbsp;
-        <?=prefer_channum ? $channel->callsign : $channel->channum?> </a>
-	<a href="program_detail.php?chanid=<?=$channel->chanid?>&starttime=<?=$channel->programs[0]->starttime?>"><?=$channel->programs[0]->title?></a><br>
-        <?
+        <a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&time=<?php echo $start_time ?>">
+        <?php echo prefer_channum ? $channel->channum : $chann->callsign ?>&nbsp;
+        <?php echo prefer_channum ? $channel->callsign : $channel->channum ?> </a>
+    	<a href="program_detail.php?chanid=<?php echo $channel->chanid ?>&starttime=<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
+        <?php
     }
 
 
 }
 
-?>

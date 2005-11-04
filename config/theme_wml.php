@@ -53,4 +53,3 @@
     define('video_img_width',  94);
     define('video_img_height', 140);
 
-?>

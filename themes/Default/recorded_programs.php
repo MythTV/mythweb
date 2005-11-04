@@ -28,10 +28,10 @@ class Theme_recorded_programs extends Theme {
 <!--
 
 // Some initial values for global counters
-    var diskused       = parseInt('<?php echo addslashes(disk_used)       ?>');
+    var diskused       = parseInt('<?php echo addslashes(disk_used) ?>');
     var programcount   = parseInt('<?php echo addslashes($Total_Programs) ?>');
-    var programs_shown = parseInt('<?php echo count($All_Shows)           ?>');
-    var totaltime      = parseInt('<?php echo addslashes($Total_Time)     ?>');
+    var programs_shown = parseInt('<?php echo count($All_Shows) ?>');
+    var totaltime      = parseInt('<?php echo addslashes($Total_Time) ?>');
 
 // Initialize some variables that will get set after the page table is printed
     var rowcount     = new Array();
@@ -47,11 +47,11 @@ class Theme_recorded_programs extends Theme {
     foreach ($All_Shows as $show) {
 ?>
     file = new Object();
-    file.title    = '<?php echo addslashes($show->title)                        ?>';
-    file.subtitle = '<?php echo addslashes($show->subtitle)                     ?>';
-    file.group    = '<?php echo addslashes(urlencode($show->group))             ?>';
-    file.filename = '<?php echo addslashes(urlencode($show->filename))          ?>';
-    file.size     = '<?php echo addslashes($show->filesize)                     ?>';
+    file.title    = '<?php echo addslashes($show->title) ?>';
+    file.subtitle = '<?php echo addslashes($show->subtitle) ?>';
+    file.group    = '<?php echo addslashes(urlencode($show->group)) ?>';
+    file.filename = '<?php echo addslashes(urlencode($show->filename)) ?>';
+    file.size     = '<?php echo addslashes($show->filesize) ?>';
     file.length   = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
     files.push(file);
 

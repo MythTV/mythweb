@@ -280,7 +280,7 @@
         $str = ob_get_contents();
         ob_end_clean();
     // Print the message
-        echo '<hr><pre>'.$str.'</pre><hr>';
+        echo '<hr /><pre>'.$str.'</pre><hr />';
     // Print to a file?
         if ($file) {
             $out = fopen('/tmp/debug.txt', 'a');

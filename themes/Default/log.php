@@ -26,28 +26,27 @@ class Theme_Logs extends Theme {
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr align="center">
-
-<b><td>LogID</td>
-<td>Module</td>
-<td>Log Date</td>
-<td>Host</td>
-<td>Message</td>
-<td>Details</td></b>
+    <th>LogID</th>
+    <th>Module</th>
+    <th>Log Date</th>
+    <th>Host</th>
+    <th>Message</th>
+    <th>Details</th>
 </tr>
 <?php
         foreach ($Logs as $Log) {
 ?><tr class="settings" align="center">
 
-    <td><?php echo htmlentities($Log['logid'])?></td>
-    <td><?php echo htmlentities($Log['module'])?></td>
-    <td><?php echo htmlentities($Log['logdate'])?></td>
-    <td><?php echo htmlentities($Log['host'])?></td>
-    <td><?php echo htmlentities($Log['message'])?></td>
-    <td><?php echo htmlentities($Log['details'])?></td>
-    
-    
-    
-   
+    <td><?php echo htmlentities($Log['logid'])   ?></td>
+    <td><?php echo htmlentities($Log['module'])  ?></td>
+    <td><?php echo htmlentities($Log['logdate']) ?></td>
+    <td><?php echo htmlentities($Log['host'])    ?></td>
+    <td><?php echo htmlentities($Log['message']) ?></td>
+    <td><?php echo htmlentities($Log['details']) ?></td>
+
+
+
+
 </tr><?php
         }
 ?>
@@ -68,4 +67,4 @@ class Theme_Logs extends Theme {
     }
 
 }
-?>
+

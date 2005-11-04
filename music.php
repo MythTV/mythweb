@@ -282,5 +282,3 @@ class mythMusic {
 $mythmusic = new mythMusic();
 $mythmusic->display();
 
-
-?>

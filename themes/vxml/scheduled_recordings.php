@@ -1,4 +1,4 @@
-<?
+<?php
 /***                                                                        ***\
     scheduled_recordings.php                    Last Updated: 2003.08.05 (xris)
 
@@ -17,10 +17,10 @@ class Theme_scheduled_recordings extends Theme {
         global $All_Shows;
 
 
-/*  <a href="scheduled_recordings.php?sortby=title">show</a><br>
-    <a href="scheduled_recordings.php?sortby=channum">station</a><br>
-    <a href="scheduled_recordings.php?sortby=airdate">air&nbsp;date</a><br>
-    <a href="scheduled_recordings.php?sortby=length">length</a><br>
+/*  <a href="scheduled_recordings.php?sortby=title">show</a><br />
+    <a href="scheduled_recordings.php?sortby=channum">station</a><br />
+    <a href="scheduled_recordings.php?sortby=airdate">air&nbsp;date</a><br />
+    <a href="scheduled_recordings.php?sortby=length">length</a><br />
 */
 
     $row = 0;
@@ -47,34 +47,32 @@ class Theme_scheduled_recordings extends Theme {
         }
 
     // Print the content
-//  <tr class="<?=$class>">
-//  <td class="<?=$show->class>">
+//  <tr class="<?php echo $class>">
+//  <td class="<?php echo $show->class>">
 
         // Print a link to record this show
         echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'
              .'>'.$show->title
              .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
-             .'</a><br>';
+             .'</a><br />';
         ?>
-    <?=$show->channel->name?><br>
-    <?=date('D, M j', $show->starttime)?><br>
-    <?=date('(g:i A)', $show->starttime)?> <?=nice_length($show->length)?><br>
-<?  if ($command) { ?>
-    <b><?=$command?></b><br>
-<?  } ?>
-    <br>
-    <?
+    <?php echo $show->channel->name ?><br />
+    <?php echo date('D, M j', $show->starttime) ?><br />
+    <?php echo date('(g:i A)', $show->starttime) ?> <?php echo nice_length($show->length) ?><br />
+<?php  if ($command) { ?>
+    <b><?php echo $command ?></b><br />
+<?php  } ?>
+    <br />
+    <?php
         $row++;
     }
 ?>
 
 </table>
-<?
+<?php
 
     // Print the main page footer
         parent::print_footer();
     }
 
 }
-
-?>

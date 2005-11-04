@@ -83,15 +83,15 @@
                 mail(error_email, "FATAL Error in $errfile, line $errline" , $err,
                      'From:  PHP Error <'.error_email.">\n");
         // Print out a nice error page for the user
-            echo "<hr><b>Fatal Error</b> at $errfile, line $errline:<BR>$errstr<p>"
-                ."The system administrator has been notified and the problem will be remedied shortly.<hr>";
+            echo "<hr /><b>Fatal Error</b> at $errfile, line $errline:<BR>$errstr<p>"
+                ."The system administrator has been notified and the problem will be remedied shortly.<hr />";
         // Exit
             exit;
         }
     // Otherwise, just report the error
-        echo "<hr><b>Error</b><p>\n"
-            ."The system administrator has been notified and the problem will be remedied shortly.\n<hr>\n"
-            ."<hr><b>" . $errortype[$errno] . "</b> at $errfile, line $errline:<BR>$errstr <hr>\n";
+        echo "<hr /><b>Error</b><p>\n"
+            ."The system administrator has been notified and the problem will be remedied shortly.\n<hr />\n"
+            ."<hr /><b>" . $errortype[$errno] . "</b> at $errfile, line $errline:<BR>$errstr <hr />\n";
     // Email errors, but not warnings
         if (strstr(error_email, '@') && ($errno == E_USER_WARNING || $errno == E_WARNING))
             mail(error_email, "Error in $errfile, line $errline" ,
@@ -99,4 +99,3 @@
                  'From:  PHP Error <'.error_email.">\n");
     }
 
-?>

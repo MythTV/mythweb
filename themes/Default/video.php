@@ -44,12 +44,12 @@ function newWindow(newContent)
         echo "<option value=$i ";
         if( $i == $Filter_Category )
             echo "selected";
-        echo ">"; 
+        echo ">";
         echo "$Category_String[$i]</option>\n";
     }
 ?>
     </select>
-    <input type="submit" value="<?php echo t('Update')?>">
+    <input type="submit" value="<?php echo t('Update') ?>">
 </form>
 </td>
 </tr>
@@ -58,18 +58,18 @@ function newWindow(newContent)
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 <?php   if (show_recorded_pixmap) { ?>
-    <td><?php echo t('cover')?></td>
+    <td><?php echo t('cover') ?></td>
 <?php   } ?>
-    <td><a href="video.php?sortby=title"><?php echo t('title')?></a></td>
-    <td><a href="video.php?sortby=director"><?php echo t('director')?></a></td>
-    <td><?php echo t('plot')?></td>
-    <td><a href="video.php?sortby=category"><?php echo t('category')?></a></td>
-    <td><?php echo t('rating')?></a></td>
-    <td><?php echo t('IMDB')?></a></td>
-    <td><a href="video.php?sortby=length"><?php echo t('length')?></a></td>
-    <td><a href="video.php?sortby=userrating"><?php echo t('imdb rating')?></a></td>
-    <td><a href="video.php?sortby=year"><?php echo t('year')?></a></td>
-    <td><?php echo t('Edit')?></a></td>
+    <td><a href="video.php?sortby=title"><?php echo t('title') ?></a></td>
+    <td><a href="video.php?sortby=director"><?php echo t('director') ?></a></td>
+    <td><?php echo t('plot') ?></td>
+    <td><a href="video.php?sortby=category"><?php echo t('category') ?></a></td>
+    <td><?php echo t('rating') ?></a></td>
+    <td><?php echo t('IMDB') ?></a></td>
+    <td><a href="video.php?sortby=length"><?php echo t('length') ?></a></td>
+    <td><a href="video.php?sortby=userrating"><?php echo t('imdb rating') ?></a></td>
+    <td><a href="video.php?sortby=year"><?php echo t('year') ?></a></td>
+    <td><?php echo t('Edit') ?></a></td>
 </tr><?php
     $row = 0;
     foreach ($All_Shows as $show) {
@@ -80,15 +80,15 @@ function newWindow(newContent)
         else
             echo '&nbsp;';
     ?></td>
-    <td><?php echo '<a href="'.$show->url.'">'.htmlentities($show->title, ENT_COMPAT, 'UTF-8').'</a>'?></td>
-    <td><?php echo $show->director?></td>
-    <td><?php echo $show->plot?></td>
-    <td><?php echo $Category_String[$show->category]?></td>
-    <td><?php echo $show->rating?></td>
-    <td><a href="http://www.imdb.com/Title?<?php echo $show->inetref?>"><?php echo $show->inetref?></a></td>
+    <td><?php echo '<a href="'.$show->url.'">'.htmlentities($show->title, ENT_COMPAT, 'UTF-8').'</a>' ?></td>
+    <td><?php echo $show->director ?></td>
+    <td><?php echo $show->plot ?></td>
+    <td><?php echo $Category_String[$show->category] ?></td>
+    <td><?php echo $show->rating ?></td>
+    <td><a href="http://www.imdb.com/Title?<?php echo $show->inetref ?>"><?php echo $show->inetref ?></a></td>
     <td nowrap><?php echo nice_length($show->length * 60) ?></td>
-    <td nowrap><?php echo $show->userrating?></td>
-    <td nowrap><?php echo $show->year?></td>
+    <td nowrap><?php echo $show->userrating ?></td>
+    <td nowrap><?php echo $show->year ?></td>
     <td><a href="javascript:newWindow ('video_edit.php?intid=<?php echo $show->intid ?>')" ><?php echo t('Edit') ?></a>
 <?php
         $row++;
@@ -111,9 +111,9 @@ function newWindow(newContent)
         } else  {
             $new_reverse = 1;
         }
-        if ( $_GET['category'] ) 
-            $new_cat = $_GET['category'];    
-       
+        if ( $_GET['category'] )
+            $new_cat = $_GET['category'];
+
         echo 'MythVideo:';
         echo "&nbsp; &nbsp;";
         echo "<a href=\"video.php?reverse=$new_reverse";
@@ -127,4 +127,3 @@ function newWindow(newContent)
     }
 }
 
-?>

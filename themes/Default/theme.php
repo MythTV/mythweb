@@ -105,7 +105,7 @@ class Theme {
                             <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><?php echo t('Description') ?></a>
                         </div>
-                        <br/>
+                        <br />
                         <div class="cell">
                             <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : '' ?>>
                             <a onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><?php echo t('Category') ?></a>
@@ -115,7 +115,7 @@ class Theme {
                             <a onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><?php echo t('Category Type') ?></a>
                         </div>
                     </div>
-                    <hr/>
+                    <hr />
                     <?php echo t('Search options') ?>:<br />
                     <div class="search_table clearfix">
                         <div class="cell">
@@ -128,7 +128,7 @@ class Theme {
                         </div>
                     </div>
 
-                    <hr/>
+                    <hr />
                     <?php echo t('Search help') ?>:
                     <dl>
                         <dt><?php echo t('Search help: movie search') ?>:</dt>
@@ -227,5 +227,3 @@ EOF;
     }
 }
 
-
-?>
