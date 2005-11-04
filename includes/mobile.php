@@ -74,6 +74,18 @@ function getScreenSize() {
              'Series 90' => array('width' => 640, 'height' => 320),
              'Series90' => array('width' => 640, 'height' => 320),
 
+	     /* The following strings are added for the Palm browser WebPro
+              * WebPro sometimes supplies the screen dimensions, but sometimes not
+	      * but we try to detect the best as possible 
+              */
+	     '320x480' => array('width' => 320, 'height' => 480), // For Palm Tungsten T
+	     '480x320' => array('width' => 480, 'height' => 320), // For Palm Tungsten T
+	     '320x320' => array('width' => 320, 'height' => 320), // For all Palm Tungsten models
+	     '320x480x16' => array('width' => 320, 'height' => 480), // For Palm Tungsten T
+	     '480x320x16' => array('width' => 480, 'height' => 320), // For Palm Tungsten T
+	     '320x320x16' => array('width' => 320, 'height' => 320),
+	     'WebPro' => array('width' => 320, 'height' => 320), // For all Palm Tungsten models
+
              /* A generic mobile phone using Symbian OS. All Symbian phones don't
               * necessarily have the same screen size so if you want to include
               * some specific Symbian phones then place them above this line. */
