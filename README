@@ -57,15 +57,19 @@ and php up and running on the same machine as MythTV:
         http://www.apache.org
         http://www.php.net
 
-    Current versions of these in use by the MythWeb developer(s) are 2.0.40
-for Apache and 4.3 for php.  Make sure to build both according to the
+    Current versions of these in use by the MythWeb developer(s) are 2.0.x
+for Apache and 4.3.x for php.  Make sure to build both according to the
 instructions at the php home site, and be sure to include support for MySQL
 when building PHP.
 
     In order for the included .htaccess to work properly, you will need to
 set apache's "AllowOverride" setting to "All" (or at least "Options") for
 the root mythweb directory.  This directive lives within <Directory/> tags,
-so make sure you're changing the setting for the correct directory.
+so make sure you're changing the setting for the correct directory.  You will
+also need to make sure that the following apache module are enabled:
+
+    mod_env
+    mod_rewrite
 
     Somewhere in or off your root directory for htdocs (/www/htdocs if
 you followed the instuctions at php.net), you should copy all the files
