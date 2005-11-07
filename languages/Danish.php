@@ -61,6 +61,7 @@ $L = array(
     'Only New Episodes'                                  => 'Kun Nye Afsnit',
     'Original Airdate'                                   => 'Oprindelig visningsdato',
     'Previous recordings'                                => 'Tidligere optagelser',
+    'Program Listing'                                    => '',
     'Rating'                                             => 'Karakterer',
     'Record This'                                        => 'Optag dette',
     'Record new and expire old'                          => 'Optag nye og udløb gamle',
@@ -69,6 +70,7 @@ $L = array(
     'Recording Options'                                  => 'Optageindstillinger',
     'Recording Priority'                                 => 'Optageprioritet',
     'Recording Profile'                                  => 'Optageprofil',
+    'Recording Schedules'                                => 'Optagelsesplanlægning',
     'Rerun'                                              => 'Genudsendelse',
     'Save'                                               => 'Gem',
     'Schedule'                                           => 'Planlæg',
@@ -161,8 +163,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -218,7 +220,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Lige nu vises: $1',
     'Jump To'                 => 'Gå Til',
-    'Program Listing'         => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 afsnit',
     '$1 episodes'                                         => '$1 afsnit',
@@ -320,7 +321,6 @@ $L = array(
     'MythMusic on the web.'                      => 'MythMusic på www',
     'MythVideo on the web.'                      => 'MythVideo på www',
     'MythWeb Weather.'                           => 'MythWeb Vejrudsigt',
-    'Recording Schedules'                        => 'Optagelsesplanlægning',
     'Search fields'                              => '',
     'Search help'                                => '',
     'Search help: movie example'                 => '*** 1/2 Adventure',
@@ -367,7 +367,20 @@ $L = array(
     'Visibility'         => 'Sigtbarhed',
     'Wednesday'          => 'Onsdag',
     'Wind'               => 'Vind',
-    'Wind Chill'         => 'Vindafkølningseffekt'
+    'Wind Chill'         => 'Vindafkølningseffekt',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

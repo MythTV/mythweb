@@ -62,6 +62,7 @@ $L = array(
     'Only New Episodes'                                  => 'Only Cold Beers',
     'Original Airdate'                                   => 'Original Beer Date',
     'Previous recordings'                                => 'Previous Beers',
+    'Program Listing'                                    => '',
     'Rating'                                             => 'Brew Rating',
     'Record This'                                        => 'Drink This',
     'Record new and expire old'                          => 'Get coldies, discard warmies',
@@ -70,6 +71,7 @@ $L = array(
     'Recording Options'                                  => 'Beer Options',
     'Recording Priority'                                 => 'Beerority',
     'Recording Profile'                                  => 'Beer Beerofile',
+    'Recording Schedules'                                => '',
     'Rerun'                                              => 'Beererun',
     'Save'                                               => '',
     'Schedule'                                           => 'Beerdule',
@@ -162,8 +164,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -219,7 +221,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Currently Drinking: $1',
     'Jump To'                 => '',
-    'Program Listing'         => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 beer',
     '$1 episodes'                                         => '$1 beers',
@@ -321,7 +322,6 @@ $L = array(
     'MythMusic on the web.'                      => '',
     'MythVideo on the web.'                      => '',
     'MythWeb Weather.'                           => '',
-    'Recording Schedules'                        => '',
     'Search fields'                              => '',
     'Search help'                                => '',
     'Search help: movie example'                 => '*** 1/2 Adventure',
@@ -368,7 +368,20 @@ $L = array(
     'Visibility'         => 'Grogginess',
     'Wednesday'          => 'Wednesbeer',
     'Wind'               => '',
-    'Wind Chill'         => ''
+    'Wind Chill'         => '',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

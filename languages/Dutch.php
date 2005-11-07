@@ -61,6 +61,7 @@ $L = array(
     'Only New Episodes'                                  => 'Enkel Nieuwe Afleveringen',
     'Original Airdate'                                   => 'Oorsp. Datum',
     'Previous recordings'                                => 'Eerdere opnames',
+    'Program Listing'                                    => '',
     'Rating'                                             => 'Beoordeling',
     'Record This'                                        => 'Dit Opnemen',
     'Record new and expire old'                          => 'Neem nieuwe op, wis oude',
@@ -69,6 +70,7 @@ $L = array(
     'Recording Options'                                  => 'Opname Opties',
     'Recording Priority'                                 => 'Opname Prioriteit',
     'Recording Profile'                                  => 'Opname Profiel',
+    'Recording Schedules'                                => 'Opnameschema',
     'Rerun'                                              => 'Opnieuw Uitvoeren',
     'Save'                                               => 'Opslaan',
     'Schedule'                                           => 'Programmeer',
@@ -161,8 +163,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -218,7 +220,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Tijdstip: $1',
     'Jump To'                 => 'Ga naar',
-    'Program Listing'         => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 aflevering',
     '$1 episodes'                                         => '$1 afleveringen',
@@ -320,7 +321,6 @@ $L = array(
     'MythMusic on the web.'                      => 'Muziek',
     'MythVideo on the web.'                      => 'Video',
     'MythWeb Weather.'                           => 'Weer',
-    'Recording Schedules'                        => 'Opnameschema',
     'Search fields'                              => 'Zoek Velden',
     'Search help'                                => 'Zoek Help',
     'Search help: movie example'                 => '*** 1/2 Avontuur',
@@ -367,7 +367,20 @@ $L = array(
     'Visibility'         => 'Zichtbaarheid',
     'Wednesday'          => 'Woensdag',
     'Wind'               => 'Wind',
-    'Wind Chill'         => 'Voeltemp. Wind'
+    'Wind Chill'         => 'Voeltemp. Wind',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

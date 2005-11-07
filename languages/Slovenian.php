@@ -61,6 +61,7 @@ $L = array(
     'Only New Episodes'                                  => 'Samo eno oddajo',
     'Original Airdate'                                   => 'Izvirni datum predvajanja',
     'Previous recordings'                                => 'Že posneto',
+    'Program Listing'                                    => '',
     'Rating'                                             => 'Ocena',
     'Record This'                                        => 'Posnami to',
     'Record new and expire old'                          => 'Snemaj novo in briši staro',
@@ -69,6 +70,7 @@ $L = array(
     'Recording Options'                                  => 'Snemalne možnosti',
     'Recording Priority'                                 => 'Snemalne prioritete',
     'Recording Profile'                                  => 'Snemalni profili',
+    'Recording Schedules'                                => 'Snemalni plani',
     'Rerun'                                              => 'Ponovno zaženi',
     'Save'                                               => 'Shrani',
     'Schedule'                                           => 'Nastavi snemanje',
@@ -161,8 +163,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -218,7 +220,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Trenutno brskanje:  $1',
     'Jump To'                 => 'Skoči na',
-    'Program Listing'         => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 serija',
     '$1 episodes'                                         => '$1 serije',
@@ -320,7 +321,6 @@ $L = array(
     'MythMusic on the web.'                      => 'MythMusic na spletu',
     'MythVideo on the web.'                      => 'MythVideo na spletu',
     'MythWeb Weather.'                           => 'MythWeb vreme',
-    'Recording Schedules'                        => 'Snemalni plani',
     'Search fields'                              => 'Iskalna polja',
     'Search help'                                => 'Pomoč iskanja',
     'Search help: movie example'                 => '*** 1/2 Adventure',
@@ -367,7 +367,20 @@ $L = array(
     'Visibility'         => 'Vidljivost',
     'Wednesday'          => 'Sreda',
     'Wind'               => 'Veter',
-    'Wind Chill'         => 'Temperatura zraka'
+    'Wind Chill'         => 'Temperatura zraka',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

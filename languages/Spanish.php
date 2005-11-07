@@ -61,6 +61,7 @@ $L = array(
     'Only New Episodes'                                  => 'Sólo nuevos episodios',
     'Original Airdate'                                   => 'Emisión original',
     'Previous recordings'                                => 'Grabaciones anteriores',
+    'Program Listing'                                    => 'Listado Programas',
     'Rating'                                             => 'Puntuación',
     'Record This'                                        => 'Grabar',
     'Record new and expire old'                          => 'Grabar nuevos y expirar antiguos',
@@ -69,6 +70,7 @@ $L = array(
     'Recording Options'                                  => 'Opciones grabación',
     'Recording Priority'                                 => 'Prioridad grabación',
     'Recording Profile'                                  => 'Perfil grabación',
+    'Recording Schedules'                                => 'Programaciones',
     'Rerun'                                              => 'Reejecutar',
     'Save'                                               => 'Guardar',
     'Schedule'                                           => 'Programar',
@@ -161,8 +163,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -218,7 +220,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Navegando por:  $1',
     'Jump To'                 => 'Saltar a',
-    'Program Listing'         => 'Listado Programas',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 episodio',
     '$1 episodes'                                         => '$1 episodios',
@@ -320,7 +321,6 @@ $L = array(
     'MythMusic on the web.'                      => 'MythMusic en el web',
     'MythVideo on the web.'                      => 'MythVideo en el web',
     'MythWeb Weather.'                           => 'Tiempo MythWeb',
-    'Recording Schedules'                        => 'Programaciones',
     'Search fields'                              => 'Campos bsqueda',
     'Search help'                                => 'Ayuda bsqueda',
     'Search help: movie example'                 => '*** 1/2 Aventura',
@@ -367,7 +367,20 @@ $L = array(
     'Visibility'         => 'Visibilidad',
     'Wednesday'          => 'Miércoles',
     'Wind'               => 'Viento',
-    'Wind Chill'         => 'Sensación'
+    'Wind Chill'         => 'Sensación',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

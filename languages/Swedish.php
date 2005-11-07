@@ -61,6 +61,7 @@ $L = array(
     'Only New Episodes'                                  => 'Endast nya avsnitt',
     'Original Airdate'                                   => 'Sändningsdatum',
     'Previous recordings'                                => 'Tidigare inspelningar',
+    'Program Listing'                                    => 'Programlista',
     'Rating'                                             => 'Betyg',
     'Record This'                                        => 'Spela in',
     'Record new and expire old'                          => 'Spela in nya och radera gamla',
@@ -69,6 +70,7 @@ $L = array(
     'Recording Options'                                  => 'Inspelningsinställningar',
     'Recording Priority'                                 => 'Inspelningsprioritet',
     'Recording Profile'                                  => 'Inspelningsprofil',
+    'Recording Schedules'                                => 'Inspelningsscheman',
     'Rerun'                                              => 'Repris',
     'Save'                                               => 'Spara',
     'Schedule'                                           => 'Schema',
@@ -161,8 +163,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -218,7 +220,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Just nu visas:  $1',
     'Jump To'                 => 'Gå till',
-    'Program Listing'         => 'Programlista',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 avsnitt',
     '$1 episodes'                                         => '$1 avsnitt',
@@ -320,7 +321,6 @@ $L = array(
     'MythMusic on the web.'                      => 'MythMusic på webben',
     'MythVideo on the web.'                      => 'MythVideo på webben',
     'MythWeb Weather.'                           => 'MythWeb väder.',
-    'Recording Schedules'                        => 'Inspelningsscheman',
     'Search fields'                              => 'Sökfält',
     'Search help'                                => 'Sökhjälp',
     'Search help: movie example'                 => '*** Äventyr',
@@ -367,7 +367,20 @@ $L = array(
     'Visibility'         => 'Sikt',
     'Wednesday'          => 'Onsdag',
     'Wind'               => 'Vind',
-    'Wind Chill'         => 'Vindkyleffekt'
+    'Wind Chill'         => 'Vindkyleffekt',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

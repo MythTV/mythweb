@@ -66,6 +66,7 @@ $L = array(
     'Only New Episodes'                                  => 'Vain Uudet Jaksot',
     'Original Airdate'                                   => 'Vuosi',
     'Previous recordings'                                => 'Aiemmat nauhoitukset',
+    'Program Listing'                                    => 'Ohjelmalistaus',
     'Rating'                                             => 'Arvostelu',
     'Record This'                                        => 'Nauhoita Tämä',
     'Record new and expire old'                          => 'Nauhoita uusi ja poista vanha',
@@ -74,6 +75,7 @@ $L = array(
     'Recording Options'                                  => 'Nauhoitusvalinnat',
     'Recording Priority'                                 => 'Nauhoituksen Prioriteetti',
     'Recording Profile'                                  => 'Nauhoitusprofiili',
+    'Recording Schedules'                                => 'Tulevat Nauhoitukset',
     'Rerun'                                              => 'Tee uudelleen',
     'Save'                                               => 'Tallenna?',
     'Schedule'                                           => 'Ajoitus',
@@ -166,8 +168,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -223,7 +225,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => 'Selataan:  $1',
     'Jump To'                 => 'Hyppää',
-    'Program Listing'         => 'Ohjelmalistaus',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1 jakso',
     '$1 episodes'                                         => '$1 jaksoa',
@@ -325,7 +326,6 @@ $L = array(
     'MythMusic on the web.'                      => 'MythMusic Netissä.',
     'MythVideo on the web.'                      => 'MythVideo Netissä.',
     'MythWeb Weather.'                           => 'MythWeb Sääennuste.',
-    'Recording Schedules'                        => 'Tulevat Nauhoitukset',
     'Search fields'                              => 'Etsintäasetukset',
     'Search help'                                => 'Etsintäapu',
     'Search help: movie example'                 => '*** 1/2 Seikkailu',
@@ -372,7 +372,20 @@ $L = array(
     'Visibility'         => 'Näkyvyys',
     'Wednesday'          => 'Keskiviikko',
     'Wind'               => 'Tuuli',
-    'Wind Chill'         => 'Tuulen Viileys'
+    'Wind Chill'         => 'Tuulen Viileys',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

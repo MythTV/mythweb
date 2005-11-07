@@ -63,16 +63,10 @@
 
     <div id="module_info">
 <?php
-// Print out the list of modules
+// Print out the list of modules.  Each theme should include a welcome page for
+// each module.
     foreach ($Modules as $id => $module) {
-        echo '        <div id="info_', $id, '"';
-        if ($id != 'tv')
-            echo ' style="display: none"';
-        echo '>';
-        if (file_exists(skin_dir."/img/$id.png"))
-             echo '<img src="', skin_url, '/img/', $id, '.png" class="module_icon" />';
-        echo $module['description'],
-             "</div>\n";
+        include(theme_dir.'/'.$id.'/welcome.php');
     }
 ?>
     </div>

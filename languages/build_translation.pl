@@ -159,7 +159,9 @@
 
     sub clean_string {
         my $str = shift;
-        eval("\$str = $str;");
-        return $str;
+        if (eval("\$str = $str;")) {
+            return $str;
+        }
+        return '';
     }
 

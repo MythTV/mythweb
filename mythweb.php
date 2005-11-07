@@ -31,6 +31,7 @@
         require_once 'templates/_unknown_module.php';
     }
     else {
+    # check to make sure the user didn't want the old style page
         if (file_exists(theme_dir.'/welcome.php'))
             require_once 'modules/welcome.php';
         else

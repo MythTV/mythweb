@@ -61,6 +61,7 @@ $L = array(
     'Only New Episodes'                                  => '新しい番組のみ',
     'Original Airdate'                                   => '初回放送',
     'Previous recordings'                                => '以前の録画',
+    'Program Listing'                                    => '',
     'Rating'                                             => 'レーティング',
     'Record This'                                        => 'これを録画する',
     'Record new and expire old'                          => '古い物から削除する',
@@ -69,6 +70,7 @@ $L = array(
     'Recording Options'                                  => '録画オプション',
     'Recording Priority'                                 => '録画優先順位',
     'Recording Profile'                                  => '録画プロファイル',
+    'Recording Schedules'                                => '録画予約',
     'Rerun'                                              => '再開',
     'Save'                                               => '保存',
     'Schedule'                                           => '予約',
@@ -161,8 +163,8 @@ $L = array(
 // modules/settings/init.php
     'settings' => '',
 // modules/tv/init.php
-    'TV' => '',
-    'tv' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
+    'TV'                                                                                     => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -218,7 +220,6 @@ $L = array(
 // themes/.../program_listing.php
     'Currently Browsing:  $1' => '表示日: $1',
     'Jump To'                 => '移動',
-    'Program Listing'         => '',
 // themes/.../recorded_programs.php
     '$1 episode'                                          => '$1番組',
     '$1 episodes'                                         => '$1番組',
@@ -320,7 +321,6 @@ $L = array(
     'MythMusic on the web.'                      => 'MythMusic オンザウェブ',
     'MythVideo on the web.'                      => 'MythVideo オンザウェブ',
     'MythWeb Weather.'                           => 'MythWeb 天気',
-    'Recording Schedules'                        => '録画予約',
     'Search fields'                              => '検索フィールド',
     'Search help'                                => '検索ヘルプ',
     'Search help: movie example'                 => '*** 1/2 アドベンチャー',
@@ -367,7 +367,20 @@ $L = array(
     'Visibility'         => '視界',
     'Wednesday'          => '水曜日',
     'Wind'               => '風',
-    'Wind Chill'         => '体感温度'
+    'Wind Chill'         => '体感温度',
+// themes/default/movietimes/welcome.php
+    'Get listings for movies playing at local theatres.' => '',
+// themes/default/music/welcome.php
+    'Browse your music collection.' => '',
+// themes/default/settings/welcome.php
+    'Configure MythWeb.' => '',
+// themes/default/tv/welcome.php
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'Upcoming Recordings'                                                                                                       => '',
+// themes/default/video/welcome.php
+    'Browse your video collection.' => '',
+// themes/default/weather/welcome.php
+    'Get the local weather forecast.' => ''
 // End of the translation hash ** Do not touch the next line
           );
 
