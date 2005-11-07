@@ -30,10 +30,10 @@ class Theme {
 
     <title><?php echo $page_title ?></title>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>style.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>header.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>menus.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>programming.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>/style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>/header.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>/menus.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo theme_url ?>/programming.css" />
     <script type="text/javascript" src="<?php echo root ?>js/init.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/mouseovers.js"></script>

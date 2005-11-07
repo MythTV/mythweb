@@ -53,6 +53,7 @@ $L = array(
     'Jump to'                                            => '',
     'Length (min)'                                       => '',
     'Listings'                                           => '',
+    'Music'                                              => '',
     'Never Record'                                       => '',
     'No'                                                 => '',
     'No. of recordings to keep'                          => '',
@@ -78,6 +79,7 @@ $L = array(
     'Scheduled Recordings'                               => '',
     'Search'                                             => '',
     'Search Results'                                     => '',
+    'Settings'                                           => '',
     'Start Date'                                         => '',
     'Start Early'                                        => '',
     'Start Time'                                         => '',
@@ -89,6 +91,7 @@ $L = array(
     'Unknown'                                            => '',
     'Update'                                             => '',
     'Update Recording Settings'                          => '',
+    'Weather'                                            => '',
     'Yes'                                                => '',
     'airdate'                                            => '',
     'channum'                                            => '',
@@ -154,6 +157,15 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => '',
     'Unknown Recording Schedule.' => '',
@@ -177,7 +189,6 @@ $L = array(
     'Filtered'            => '',
     'Genre'               => '',
     'Genre (filtered)'    => '',
-    'Music'               => '',
     'Next'                => '',
     'No Tracks Available' => '',
     'Previous'            => '',
@@ -319,7 +330,6 @@ $L = array(
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => '',
     'Searches'                                   => '',
-    'Settings'                                   => '',
     'TV functions, including recorded programs.' => '',
 // themes/.../video.php
     'Edit'          => '',
@@ -356,7 +366,6 @@ $L = array(
     'UV Minimal'         => '',
     'UV Moderate'        => '',
     'Visibility'         => '',
-    'Weather'            => '',
     'Wednesday'          => '',
     'Wind'               => '',
     'Wind Chill'         => ''

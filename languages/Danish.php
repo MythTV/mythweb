@@ -52,6 +52,7 @@ $L = array(
     'Jump to'                                            => 'Gå til',
     'Length (min)'                                       => 'Længde (min)',
     'Listings'                                           => 'Programoversigt',
+    'Music'                                              => '',
     'Never Record'                                       => 'Optag aldrig',
     'No'                                                 => 'Nej',
     'No. of recordings to keep'                          => 'Gem antal optagelser',
@@ -77,6 +78,7 @@ $L = array(
     'Scheduled Recordings'                               => 'Planlagte optagelser',
     'Search'                                             => 'Søg',
     'Search Results'                                     => 'Søgeresultater',
+    'Settings'                                           => 'Indstillinger',
     'Start Date'                                         => 'Startdato',
     'Start Early'                                        => 'Start tidligere (min)',
     'Start Time'                                         => 'Starttidspunkt',
@@ -88,6 +90,7 @@ $L = array(
     'Unknown'                                            => 'Ukendt',
     'Update'                                             => '',
     'Update Recording Settings'                          => 'Opdater optagelsesindstillinger',
+    'Weather'                                            => '',
     'Yes'                                                => 'Ja',
     'airdate'                                            => 'visningsdato',
     'channum'                                            => 'kanalnummer',
@@ -153,6 +156,15 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => 'Ukendt program',
     'Unknown Recording Schedule.' => 'Ukendt planlagt optagelse',
@@ -176,7 +188,6 @@ $L = array(
     'Filtered'            => '',
     'Genre'               => '',
     'Genre (filtered)'    => '',
-    'Music'               => '',
     'Next'                => '',
     'No Tracks Available' => '',
     'Previous'            => '',
@@ -318,7 +329,6 @@ $L = array(
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => '',
     'Searches'                                   => '',
-    'Settings'                                   => 'Indstillinger',
     'TV functions, including recorded programs.' => 'TV funktioner inkl. optagede programmer',
 // themes/.../video.php
     'Edit'          => '',
@@ -355,7 +365,6 @@ $L = array(
     'UV Minimal'         => 'UV-stråling minimal',
     'UV Moderate'        => 'UV-stråling middel',
     'Visibility'         => 'Sigtbarhed',
-    'Weather'            => '',
     'Wednesday'          => 'Onsdag',
     'Wind'               => 'Vind',
     'Wind Chill'         => 'Vindafkølningseffekt'

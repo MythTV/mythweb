@@ -52,6 +52,7 @@ $L = array(
     'Jump to'                                            => '移動',
     'Length (min)'                                       => '時間 (分)',
     'Listings'                                           => '一覧',
+    'Music'                                              => '',
     'Never Record'                                       => 'もう録画しない',
     'No'                                                 => 'いいえ',
     'No. of recordings to keep'                          => '録画番組保存数',
@@ -77,6 +78,7 @@ $L = array(
     'Scheduled Recordings'                               => 'これからの録画',
     'Search'                                             => '検索',
     'Search Results'                                     => '検索結果',
+    'Settings'                                           => '設定',
     'Start Date'                                         => '開始日',
     'Start Early'                                        => '早めの録画',
     'Start Time'                                         => '開始時間',
@@ -88,6 +90,7 @@ $L = array(
     'Unknown'                                            => '不明',
     'Update'                                             => '更新',
     'Update Recording Settings'                          => '録画設定を保存',
+    'Weather'                                            => '',
     'Yes'                                                => 'はい',
     'airdate'                                            => '放送日',
     'channum'                                            => 'チャンネル',
@@ -153,6 +156,15 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => '不明な番組',
     'Unknown Recording Schedule.' => '不明な予約',
@@ -176,7 +188,6 @@ $L = array(
     'Filtered'            => '',
     'Genre'               => '',
     'Genre (filtered)'    => '',
-    'Music'               => '',
     'Next'                => '',
     'No Tracks Available' => '',
     'Previous'            => '',
@@ -318,7 +329,6 @@ $L = array(
     'Search help: regex search'                  => '正規表現検索',
     'Search options'                             => '検索オプション',
     'Searches'                                   => '検索メニュー',
-    'Settings'                                   => '設定',
     'TV functions, including recorded programs.' => 'TV 録画',
 // themes/.../video.php
     'Edit'          => '',
@@ -355,7 +365,6 @@ $L = array(
     'UV Minimal'         => 'UV 弱い',
     'UV Moderate'        => 'UV 穏やか',
     'Visibility'         => '視界',
-    'Weather'            => '',
     'Wednesday'          => '水曜日',
     'Wind'               => '風',
     'Wind Chill'         => '体感温度'

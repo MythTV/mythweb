@@ -57,6 +57,7 @@ $L = array(
     'Jump to'                                            => 'Hyppää',
     'Length (min)'                                       => 'Pituus (min)',
     'Listings'                                           => 'Listaus',
+    'Music'                                              => 'Musiikki',
     'Never Record'                                       => 'Älä Koskaan Nauhoita',
     'No'                                                 => 'Ei',
     'No. of recordings to keep'                          => 'N:o nauhoituksia pidettäväksi',
@@ -82,6 +83,7 @@ $L = array(
     'Scheduled Recordings'                               => 'Ajoitetut Nauhoitukset',
     'Search'                                             => 'Etsi',
     'Search Results'                                     => 'Etsinnän Tulokset',
+    'Settings'                                           => 'Asetukset',
     'Start Date'                                         => 'Päivämäärä',
     'Start Early'                                        => 'Aloita Aiemmin',
     'Start Time'                                         => 'Aloitusaika',
@@ -93,6 +95,7 @@ $L = array(
     'Unknown'                                            => 'Tuntematon',
     'Update'                                             => 'Päivitä',
     'Update Recording Settings'                          => 'Päivitä Nauhoitusasetukset',
+    'Weather'                                            => 'Säätila',
     'Yes'                                                => 'Kyllä',
     'airdate'                                            => 'lähetysaika',
     'channum'                                            => 'Kanava',
@@ -158,6 +161,15 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => 'Tuntematon Ohjelma.',
     'Unknown Recording Schedule.' => 'Tuntematon Ajoitus.',
@@ -181,7 +193,6 @@ $L = array(
     'Filtered'            => 'Suodatettu',
     'Genre'               => 'Laji',
     'Genre (filtered)'    => 'Laji (suodatettu)',
-    'Music'               => 'Musiikki',
     'Next'                => 'Seuraava',
     'No Tracks Available' => 'Kappaleita Ei Saatavilla',
     'Previous'            => 'Edellinen',
@@ -323,7 +334,6 @@ $L = array(
     'Search help: regex search'                  => 'regex Etsintä',
     'Search options'                             => 'Etsintävalinnat',
     'Searches'                                   => 'Etsinnät',
-    'Settings'                                   => 'Asetukset',
     'TV functions, including recorded programs.' => 'Nauhoitetut ohjelmat ja muut TV-asetukset.',
 // themes/.../video.php
     'Edit'          => 'Muokkaa',
@@ -360,7 +370,6 @@ $L = array(
     'UV Minimal'         => 'Alhainen UV',
     'UV Moderate'        => 'Keskimääräinen UV',
     'Visibility'         => 'Näkyvyys',
-    'Weather'            => 'Säätila',
     'Wednesday'          => 'Keskiviikko',
     'Wind'               => 'Tuuli',
     'Wind Chill'         => 'Tuulen Viileys'

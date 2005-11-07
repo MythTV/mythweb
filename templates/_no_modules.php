@@ -9,10 +9,10 @@
 
 <div id="message">
 
-<h2>Database Error</h2>
+<h2>No Modules</h2>
 
 <p>
-<?php echo htmlentities($db->error) ?>
+<?php echo 'No modules were found.' ?>
 </p>
 
 </div>

@@ -16,6 +16,9 @@
  *
 /**/
 
+// temporary
+    define('new_code', false);
+
 /**
  * $Path is an array of PATH_INFO passed into the script via mod_rewrite or some
  * other lesser means.  It contains most of the information required for
@@ -65,6 +68,42 @@
     if (substr(phpversion(), 0, 3) < 4.3)
         trigger_error('You must be running at least php 4.3 to use this program.', FATAL);
 
+// Load the translation routines so the modules can translate their descriptions
+    require_once 'includes/translate.php';
+
+/**
+ * Define each module individually in order because it's easier than storing a
+ * sort-order setting in each module.
+ *
+ * @global  array       $GLOBALS['Modules']
+ * @name    $Modules    A list of the available MythWeb modules
+/**/
+    $Modules = array('tv'         => null,
+                     'video'      => null,
+                     'music'      => null,
+                     'weather'    => null,
+                     'movietimes' => null,
+                     'settings'   => null,
+                    );
+
+// Load the various modules (search for the "tv" subdirectory in case it might
+// find some other "modules" directory, too.
+    $path = find_in_path('modules/tv/init.php');
+    if ($path) {
+        $path = dirname(dirname($path));
+        foreach (array_keys($Modules) as $module) {
+            if (!file_exists("$path/$module/init.php"))
+                continue;
+            require_once "$path/$module/init.php";
+            if (empty($Modules[$module]))
+                unset($Modules[$module]);
+        }
+    }
+    if (empty($Modules)) {
+        require_once 'templates/_no_modules.php';
+        exit;
+    }
+
 // Clean up input data
     fix_crlfxy($_GET);
     fix_crlfxy($_POST);
@@ -78,8 +117,7 @@
     }
 
 // No database connection info defined?
-    if (empty($_SERVER['db_server']) || empty($_SERVER['db_name'])
-            || empty($_SERVER['db_login']) || empty($_SERVER['db_password'])) {
+    if (empty($_SERVER['db_server']) || empty($_SERVER['db_name']) || empty($_SERVER['db_login'])) {
         require_once 'templates/_db_vars_error.php';
         exit;
     }
@@ -139,37 +177,11 @@
         exit;
     }
 
-/**
- * @global  array       $GLOBALS['Modules']
- * @name    $Modules    A list of the available MythWeb modules
-/**/
-    $Modules = array();
-
-// Load the various modules (search for the "tv" subdirectory in case it might
-// find some other "modules" directory, too.
-    $path = find_in_path('modules/tv');
-    if ($path) {
-        $path = dirname($path);
-        foreach (get_sorted_files($path) as $module) {
-            if (!file_exists("$path/$module/init.php"))
-                continue;
-            $Modules[$module] = true;
-
-        }
-    }
-    if (empty($Modules)) {
-        require_once 'templates/_no_modules.php';
-        exit;
-    }
-
 // Make sure the database is up to date
     require_once 'includes/db_update.php';
 
 // Load the session handler routines
     require_once 'includes/session.php';
-
-// Load the translation routines
-    require_once 'includes/translate.php';
 
 // Include a few useful functions
     require_once "includes/css.php";
@@ -189,8 +201,7 @@
     }
 // Load theme from session if it exists and the user is not resetting the theme.
     elseif (file_exists('themes/'.$_SESSION['Theme'].'/theme.php')
-            && !$_GET['RESET_THEME']
-            && !$_POST['RESET_THEME']) {
+            && !$_REQUEST['RESET_THEME']) {
         define('Theme', $_SESSION['Theme']);
     }
 // Now that we've tried a few things, we can load the mobile library
@@ -206,25 +217,39 @@
         }
     // Otherwise set the default theme.
         else {
-            define('Theme', 'Default');
+            if (new_code)
+                define('Theme', 'default');
+            else
+                define('Theme', 'Default');
         }
     }
 
 // Update the session variable
     $_SESSION['Theme'] = Theme;
 
-// Load the user's theme settings
-    #
-    # we'll eventually load theme settings from cookie/session info
-    #
+// Is there a preferred skin?
+    if (file_exists('skins/'.$_SESSION['Skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
+        define('Skin', $_SESSION['Skin']);
+    }
+    else {
+        define('Skin', 'default');
+    }
+    $_SESSION['Skin'] = Skin;
+
+// Set up some handy constants
+    define('skin_dir', 'skins/'.Skin);
+    define('skin_url', root.skin_dir);
     define('theme_dir', 'themes/'.Theme.'/');
-    define('theme_url', root.'themes/'.Theme.'/');
+    define('theme_url', root.theme_dir);
 
-// Load the theme config
-    require_once 'config/theme_'.Theme.'.php';
+// Ignore in new code
+    if (!new_code) {
+    // Load the theme config
+        require_once 'config/theme_'.Theme.'.php';
 
-// Load the overall page theme class
-    require_once theme_dir."theme.php";
+    // Load the overall page theme class
+        require_once theme_dir.'/theme.php';
+    }
 
 // Make sure the image cache path exists
     if(!is_dir(image_cache) && !mkdir(image_cache, 0755))

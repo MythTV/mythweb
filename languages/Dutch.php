@@ -52,6 +52,7 @@ $L = array(
     'Jump to'                                            => 'Spring naar',
     'Length (min)'                                       => 'Duur (min)',
     'Listings'                                           => 'Programmagids',
+    'Music'                                              => '',
     'Never Record'                                       => 'Nooit Opnemen',
     'No'                                                 => 'Nee',
     'No. of recordings to keep'                          => 'Aantal opnames bewaren',
@@ -77,6 +78,7 @@ $L = array(
     'Scheduled Recordings'                               => 'Geprogrammeerde Opnames',
     'Search'                                             => 'Zoeken',
     'Search Results'                                     => 'Zoekresultaten',
+    'Settings'                                           => 'Instellingen',
     'Start Date'                                         => 'Start Datum',
     'Start Early'                                        => 'Eerder Beginnen',
     'Start Time'                                         => 'Start Tijd',
@@ -88,6 +90,7 @@ $L = array(
     'Unknown'                                            => 'Onbekend',
     'Update'                                             => 'Pas Aan',
     'Update Recording Settings'                          => 'Opname-instellingen Vernieuwen',
+    'Weather'                                            => '',
     'Yes'                                                => 'Ja',
     'airdate'                                            => 'uitzenddatum',
     'channum'                                            => 'zender',
@@ -153,6 +156,15 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => 'Onbekend Programma.',
     'Unknown Recording Schedule.' => 'Onbekend Opnameschema',
@@ -176,7 +188,6 @@ $L = array(
     'Filtered'            => '',
     'Genre'               => '',
     'Genre (filtered)'    => '',
-    'Music'               => '',
     'Next'                => '',
     'No Tracks Available' => '',
     'Previous'            => '',
@@ -318,7 +329,6 @@ $L = array(
     'Search help: regex search'                  => 'regex zoeken',
     'Search options'                             => 'Zoek Opties',
     'Searches'                                   => '',
-    'Settings'                                   => 'Instellingen',
     'TV functions, including recorded programs.' => 'TV functies, inclusief opgenomen programma\'s',
 // themes/.../video.php
     'Edit'          => '',
@@ -355,7 +365,6 @@ $L = array(
     'UV Minimal'         => 'UV Laag',
     'UV Moderate'        => 'UV Gemiddeld',
     'Visibility'         => 'Zichtbaarheid',
-    'Weather'            => '',
     'Wednesday'          => 'Woensdag',
     'Wind'               => 'Wind',
     'Wind Chill'         => 'Voeltemp. Wind'

@@ -52,6 +52,7 @@ $L = array(
     'Jump to'                                            => 'Saltar a',
     'Length (min)'                                       => 'Duración (min)',
     'Listings'                                           => 'Listados',
+    'Music'                                              => 'Msica',
     'Never Record'                                       => 'Nunca grabar',
     'No'                                                 => 'No',
     'No. of recordings to keep'                          => 'N de grabaciones a guardar',
@@ -77,6 +78,7 @@ $L = array(
     'Scheduled Recordings'                               => 'Grabaciones programadas',
     'Search'                                             => 'Buscar',
     'Search Results'                                     => 'Resultados bsqueda',
+    'Settings'                                           => 'Ajustes',
     'Start Date'                                         => 'Fecha comienzo',
     'Start Early'                                        => 'Comenzar antes',
     'Start Time'                                         => 'Hora comienzo',
@@ -88,6 +90,7 @@ $L = array(
     'Unknown'                                            => 'Desconocido',
     'Update'                                             => 'Actualizar',
     'Update Recording Settings'                          => 'Actualizar Ajustes Grabación',
+    'Weather'                                            => 'Tiempo',
     'Yes'                                                => 'Sí',
     'airdate'                                            => 'emisión',
     'channum'                                            => 'nºcanal',
@@ -153,6 +156,15 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => 'Programa desconocido',
     'Unknown Recording Schedule.' => 'Programación desconocida',
@@ -176,7 +188,6 @@ $L = array(
     'Filtered'            => 'Filtrado',
     'Genre'               => 'Género',
     'Genre (filtered)'    => 'Género (filtrado)',
-    'Music'               => 'Msica',
     'Next'                => 'Siguiente',
     'No Tracks Available' => 'No hay pistas disponibles',
     'Previous'            => 'Anterior',
@@ -318,7 +329,6 @@ $L = array(
     'Search help: regex search'                  => 'bsqueda regex',
     'Search options'                             => 'Opciones bsqueda',
     'Searches'                                   => 'Búsquedas',
-    'Settings'                                   => 'Ajustes',
     'TV functions, including recorded programs.' => 'Funciones TV, incluyendo programas grabados',
 // themes/.../video.php
     'Edit'          => 'Editar',
@@ -355,7 +365,6 @@ $L = array(
     'UV Minimal'         => 'UV mínimo',
     'UV Moderate'        => 'UV moderado',
     'Visibility'         => 'Visibilidad',
-    'Weather'            => 'Tiempo',
     'Wednesday'          => 'Miércoles',
     'Wind'               => 'Viento',
     'Wind Chill'         => 'Sensación'

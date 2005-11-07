@@ -52,6 +52,7 @@ $L = array(
     'Jump to'                                            => 'Sauter vers',
     'Length (min)'                                       => 'Dur&eacute;e (min)',
     'Listings'                                           => 'Liste',
+    'Music'                                              => '',
     'Never Record'                                       => 'Ne jamais enregistrer',
     'No'                                                 => 'Non',
     'No. of recordings to keep'                          => 'Nombre d&acute;enregistrements &agrave; garder',
@@ -77,6 +78,7 @@ $L = array(
     'Scheduled Recordings'                               => 'Enregistrements programm&eacute;s',
     'Search'                                             => 'Recherche',
     'Search Results'                                     => 'R&eacute;sultats de recherche',
+    'Settings'                                           => 'param&egrave;tres',
     'Start Date'                                         => 'Date de d&eacute;but',
     'Start Early'                                        => 'D&eacute;marrer plus tot',
     'Start Time'                                         => 'Heure de d&eacute;but',
@@ -88,6 +90,7 @@ $L = array(
     'Unknown'                                            => 'Inconnu',
     'Update'                                             => 'Rafraîchir',
     'Update Recording Settings'                          => 'Actualiser les param&egrave;tres d&acute;enregistrement',
+    'Weather'                                            => '',
     'Yes'                                                => 'Oui',
     'airdate'                                            => 'Date de diffusion',
     'channum'                                            => 'Chaine',
@@ -153,6 +156,15 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => 'Programme inconnu',
     'Unknown Recording Schedule.' => 'Programmation inconnue',
@@ -176,7 +188,6 @@ $L = array(
     'Filtered'            => '',
     'Genre'               => '',
     'Genre (filtered)'    => '',
-    'Music'               => '',
     'Next'                => '',
     'No Tracks Available' => '',
     'Previous'            => '',
@@ -318,7 +329,6 @@ $L = array(
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => 'Options de recherche',
     'Searches'                                   => 'Recherches',
-    'Settings'                                   => 'param&egrave;tres',
     'TV functions, including recorded programs.' => 'Fonctions TV, inclant les enregistrements d&acute;&eacute;missions',
 // themes/.../video.php
     'Edit'          => '',
@@ -355,7 +365,6 @@ $L = array(
     'UV Minimal'         => 'Indice UV minimal',
     'UV Moderate'        => 'Indice UV mod&eacute;r&eacute;',
     'Visibility'         => 'Visibilit&eacute;',
-    'Weather'            => '',
     'Wednesday'          => 'Mercredi',
     'Wind'               => 'Vent',
     'Wind Chill'         => 'Vent Frais'

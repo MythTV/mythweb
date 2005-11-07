@@ -52,6 +52,7 @@ $L = array(
     'Jump to'                                            => 'Gå till',
     'Length (min)'                                       => 'Längd (min)',
     'Listings'                                           => 'TV-tablåer',
+    'Music'                                              => 'Musik',
     'Never Record'                                       => 'Spela aldrig in',
     'No'                                                 => 'Nej',
     'No. of recordings to keep'                          => 'Antal inspelningar att behålla',
@@ -77,6 +78,7 @@ $L = array(
     'Scheduled Recordings'                               => 'Schemalagda inspelningar',
     'Search'                                             => 'Sök',
     'Search Results'                                     => 'Sökresultat',
+    'Settings'                                           => 'Inställningar',
     'Start Date'                                         => 'Startdatum',
     'Start Early'                                        => 'Börja tidigare',
     'Start Time'                                         => 'Starttid',
@@ -88,6 +90,7 @@ $L = array(
     'Unknown'                                            => 'Okänd',
     'Update'                                             => 'Uppdatera',
     'Update Recording Settings'                          => 'Uppdatera inspelningsinställningar',
+    'Weather'                                            => 'Väder',
     'Yes'                                                => 'Ja',
     'airdate'                                            => 'visningsdatum',
     'channum'                                            => 'kanalnummer',
@@ -153,6 +156,15 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => 'Okänt program.',
     'Unknown Recording Schedule.' => 'Okänt inspelningsschema.',
@@ -176,7 +188,6 @@ $L = array(
     'Filtered'            => 'Filtrerat',
     'Genre'               => 'Genre',
     'Genre (filtered)'    => 'Genre (filtrerad)',
-    'Music'               => 'Musik',
     'Next'                => 'Nästa',
     'No Tracks Available' => 'Inga spår tillgängliga',
     'Previous'            => 'Föregående',
@@ -318,7 +329,6 @@ $L = array(
     'Search help: regex search'                  => 'Reguljärt uttryck',
     'Search options'                             => 'Sökval',
     'Searches'                                   => 'Sökningar',
-    'Settings'                                   => 'Inställningar',
     'TV functions, including recorded programs.' => 'Tv-funktioner, inkl. inspelade program.',
 // themes/.../video.php
     'Edit'          => 'Redigera',
@@ -355,7 +365,6 @@ $L = array(
     'UV Minimal'         => 'UV-strålning minimal',
     'UV Moderate'        => 'UV-strålning måttlig',
     'Visibility'         => 'Sikt',
-    'Weather'            => 'Väder',
     'Wednesday'          => 'Onsdag',
     'Wind'               => 'Vind',
     'Wind Chill'         => 'Vindkyleffekt'

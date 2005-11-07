@@ -52,6 +52,7 @@ $L = array(
     'Jump to'                                            => 'Skoči na',
     'Length (min)'                                       => 'Dolžina (min)',
     'Listings'                                           => 'Seznam',
+    'Music'                                              => '',
     'Never Record'                                       => 'Nikoli ne snemaj',
     'No'                                                 => 'Ne',
     'No. of recordings to keep'                          => 'Št. ohranjenih snemanj',
@@ -77,6 +78,7 @@ $L = array(
     'Scheduled Recordings'                               => 'Snemalni plan',
     'Search'                                             => 'Iskanje',
     'Search Results'                                     => 'Rezultati iskanja',
+    'Settings'                                           => 'Nastavitve',
     'Start Date'                                         => 'Datum začetka',
     'Start Early'                                        => 'Začni prej',
     'Start Time'                                         => 'Čas začetka',
@@ -88,6 +90,7 @@ $L = array(
     'Unknown'                                            => 'Neznano',
     'Update'                                             => 'Posodobi',
     'Update Recording Settings'                          => 'Posodobi snemalne nastavitve',
+    'Weather'                                            => '',
     'Yes'                                                => 'Da',
     'airdate'                                            => 'datum oddajanja',
     'channum'                                            => 'številka kanala',
@@ -153,6 +156,15 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/movietimes/init.php
+    'Movie Times' => '',
+// modules/settings/init.php
+    'settings' => '',
+// modules/tv/init.php
+    'TV' => '',
+    'tv' => '',
+// modules/video/init.php
+    'Video' => '',
 // program_detail.php
     'Unknown Program.'            => 'Neznani program',
     'Unknown Recording Schedule.' => 'Neznani plan snemanja',
@@ -176,7 +188,6 @@ $L = array(
     'Filtered'            => '',
     'Genre'               => '',
     'Genre (filtered)'    => '',
-    'Music'               => '',
     'Next'                => '',
     'No Tracks Available' => '',
     'Previous'            => '',
@@ -318,7 +329,6 @@ $L = array(
     'Search help: regex search'                  => 'regex search',
     'Search options'                             => 'Možnosti iskanja',
     'Searches'                                   => 'Iskanja',
-    'Settings'                                   => 'Nastavitve',
     'TV functions, including recorded programs.' => 'Funkcije TV, vključno z posnetimi programi.',
 // themes/.../video.php
     'Edit'          => '',
@@ -355,7 +365,6 @@ $L = array(
     'UV Minimal'         => 'UV minimalni',
     'UV Moderate'        => 'UV srednji',
     'Visibility'         => 'Vidljivost',
-    'Weather'            => '',
     'Wednesday'          => 'Sreda',
     'Wind'               => 'Veter',
     'Wind Chill'         => 'Temperatura zraka'
