@@ -15,6 +15,11 @@
 // The TV module is always enabled.
     $Modules['tv'] = array('path'        => 'tv',
                            'name'        => t('TV'),
-                           'description' => t('See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.')
+                           'links'       => array('listing'   => t('Program Listing'),
+                                                  'searches'  => t('Special Searches'),
+                                                  'upcoming'  => t('Upcoming Recordings'),
+                                                  'schedules' => t('Recording Schedules'),
+                                                  'recorded'  => t('Recorded Programs'),
+                                                 ),
                           );
 
