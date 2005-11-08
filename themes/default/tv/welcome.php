@@ -21,12 +21,11 @@
           ."already recorded.  Please see the following choices:"),
 
 // Next, print a list of possible subsectons
-         '<ul>',
-         '    <li>', t('Program Listing'),     "</li>\n",
-         '    <li>', t('Upcoming Recordings'), "</li>\n",
-         '    <li>', t('Recording Schedules'), "</li>\n",
-         '    <li>', t('Recorded Programs'),   "</li>\n",
-         '</ul>',
+         '<ul>';
+     foreach ($Modules['tv']['links'] as $link => $name) {
+         echo '    <li><a href="', root, 'tv/', $link, '">', htmlentities($name), "</a></li>\n";
+     }
+     echo '</ul>',
 
 // Close the div
          "</div>\n";
