@@ -38,7 +38,7 @@
                   )
               );
 
-// Not really much to do here but print the list of modules
+// Print the status page template
     require_once theme_dir.'/status/status.php';
 
 // Yup, that really is it.
