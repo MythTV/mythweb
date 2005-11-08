@@ -84,6 +84,7 @@
                      'weather'    => null,
                      'movietimes' => null,
                      'settings'   => null,
+                     'status'     => null,
                     );
 
 // Load the various modules (search for the "tv" subdirectory in case it might

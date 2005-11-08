@@ -1,13 +1,17 @@
 <?php
-/***                                                                        ***\
-    status.php                               Last Updated: 2005.02.06 (xris)
-
-    This file is part of MythWeb, a php-based interface for MythTV.
-    See README and LICENSE for details.
-\***                                                                        ***/
-
-// Initialize the script, database, etc.
-    require_once "includes/init.php";
+/**
+ * A straight passthrough for the mythbackend status web page (usually on
+ * port 6544)
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 // Get the address/port of the master machine
     $masterhost = get_backend_setting('MasterServerIP');
@@ -18,29 +22,24 @@
 
 // Load the status page
     if (function_exists('file_get_contents'))
-        $page = file_get_contents("http://$masterhost:$statusport");
+        $status = file_get_contents("http://$masterhost:$statusport");
     else
-        $page = implode("\n", file("http://$masterhost:$statusport"));
+        $status = implode("\n", file("http://$masterhost:$statusport"));
 
 // Extract the page title
-    preg_match('#<title>(.+?)</title>#s', $page, $title);
+    preg_match('#<title>(.+?)</title>#s', $status, $title);
     $title = $title[1];
 
 // Clean up the page, and add some invisible content with the actual URL grabbed
-    $page = "<!-- Obtained from:  http://$masterhost:$statusport -->\n"
-           .preg_replace('#\s*</body>\s*</html>\s*$#s', '',
-                preg_replace('/^.+?<body>\s*\n/s', "\n",
-                    $page
-                )
-            );
+    $status = "<!-- Obtained from:  http://$masterhost:$statusport -->\n"
+             .preg_replace('#\s*</body>\s*</html>\s*$#s', '',
+                  preg_replace('/^.+?<body>\s*\n/s', "\n",
+                      $status
+                  )
+              );
 
-// Load the class for this page
-    require_once theme_dir.'status.php';
+// Not really much to do here but print the list of modules
+    require_once theme_dir.'/status/status.php';
 
-// Create the page object
-    $Page = new Theme_status;
-
-// Print the page
-    $Page->print_page($page, $title);
-
-?>
+// Yup, that really is it.
+    exit;

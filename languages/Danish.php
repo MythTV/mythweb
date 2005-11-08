@@ -162,9 +162,12 @@ $L = array(
     'Movie Times' => '',
 // modules/settings/init.php
     'settings' => '',
+// modules/status/init.php
+    'Status' => '',
 // modules/tv/init.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.' => '',
-    'TV'                                                                                     => '',
+    'Special Searches'    => '',
+    'TV'                  => '',
+    'Upcoming Recordings' => '',
 // modules/video/init.php
     'Video' => '',
 // program_detail.php
@@ -374,9 +377,10 @@ $L = array(
     'Browse your music collection.' => '',
 // themes/default/settings/welcome.php
     'Configure MythWeb.' => '',
+// themes/default/status/welcome.php
+    'Show the backend status page.' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
-    'Upcoming Recordings'                                                                                                       => '',
 // themes/default/video/welcome.php
     'Browse your video collection.' => '',
 // themes/default/weather/welcome.php
