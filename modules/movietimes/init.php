@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialization routines for the MythWeb TV module
+ * Initialization routines for the MythWeb Movie Times module
  *
  * @url         $URL$
  * @date        $Date$
@@ -13,11 +13,11 @@
 /**/
 
 // First, we should check to see that MythVideo is configured.
-    $has_video = true;
+    $has_movietimes = false;
 
 
 // If video is enabled, add it to the list.
-    if ($has_video)
+    if ($has_movietimes)
         $Modules['movietimes'] = array('path'        => 'movietimes',
                                        'name'        => t('Movie Times'),
                                        'description' => t('')

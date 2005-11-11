@@ -108,8 +108,15 @@ class Channel {
             @copy($channel_data['icon'], $this->icon);
     }
 
+/** @deprecated FIXME:  this routine should get split out on its own, accepting
+ *                      $channel as a parameter, and put into modules/tv/list.php
+ */
     function display_programs($start_time, $end_time) {
         global $Page;
+    // Keep track of each program this routine handles (for unique id generation)
+        static $program_id_counter;
+        if (empty($program_id_counter))
+            $program_id_counter = 0;
     ## we will eventually need to check for list vs "by channel" display
     #  for now, we only have the main list display
         $timeslots_left = num_time_slots;
@@ -134,7 +141,10 @@ class Channel {
                 $length = (($program_starts - $start_time) / timeslot_size);
                 if ($length >= 0.5) {
                     $timeslots_used = ceil($length);
-                    $Page->print_nodata($timeslots_used);
+                    if (new_code)
+                        require theme_dir.'/tv/list_cell_nodata.php';
+                    else
+                        $Page->print_nodata($timeslots_used);
                     $start_time += $timeslots_used * timeslot_size;
                     if ($timeslots_left < $timeslots_used)
                         $timeslots_used = $timeslots_left;
@@ -151,14 +161,22 @@ class Channel {
             if ($timeslots_left < $timeslots_used)
                 $timeslots_used = $timeslots_left;
             $timeslots_left -= $timeslots_used;
-        #if ($timeslots_left > 0)
-            $Page->print_program(&$program, $timeslots_used, $start_time);
+            #if ($timeslots_left > 0)
+            if (new_code)
+                require theme_dir.'/tv/list_cell_program.php';
+            else
+                $Page->print_program(&$program, $timeslots_used, $start_time);
         // Cleanup is good
             unset($program);
         }
     // Uh oh, there are leftover timeslots - display a no data message
-        if ($timeslots_left > 0)
-            $Page->print_nodata($timeslots_left);
+        if ($timeslots_left > 0) {
+            $timeslots_left = $timeslots_used;
+            if (new_code)
+                require theme_dir.'/tv/list_cell_nodata.php';
+            else
+                $Page->print_nodata($timeslots_left);
+        }
     }
 }
 

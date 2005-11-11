@@ -192,9 +192,12 @@
     require_once "includes/mythbackend.php";
 
 // Load in the TV-related classes
-    require_once "includes/channels.php";
-    require_once "includes/programs.php";
-    require_once "includes/recording_schedules.php";
+### DEPRECATED -- handled in modules/tv/handler.php
+    if (!new_code) {
+        require_once "includes/channels.php";
+        require_once "includes/programs.php";
+        require_once "includes/recording_schedules.php";
+    }
 
 // The browser is MythPhone.
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
