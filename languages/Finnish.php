@@ -79,7 +79,7 @@ $L = array(
     'MythVideo on the web.'                              => 'MythVideo Netissä.',
     'MythWeb Weather.'                                   => 'MythWeb Sääennuste.',
     'Never Record'                                       => 'Älä Koskaan Nauhoita',
-    'No'                                                 => 'Ei',
+    'No'                                                 => 'N:o',
     'No. of recordings to keep'                          => 'N:o nauhoituksia pidettäväksi',
     'None'                                               => 'Ei Mikään',
     'Notes'                                              => 'Viesti',
@@ -182,7 +182,7 @@ $L = array(
     'recstatus: deleted'           => 'Jaksoa nauhoitettiin, mutta nauhoitus poistettiin sen aikana.',
     'recstatus: earliershowing'    => 'Jakso tullaan nauhoittamaan aikaisemmin.',
     'recstatus: force_record'      => 'Ohjelman nauhoitus ajoitettiin käsin tälle ajankohdalle.',
-    'recstatus: inactive'          => '',
+    'recstatus: inactive'          => 'Nauhoitus on poistettu käytöstä tälle ohjelmalle.',
     'recstatus: latershowing'      => 'Jakso tullaan nauhoittamaan myöhemmin.',
     'recstatus: lowdiskspace'      => 'Levytilaa ei ollut tarpeeksi tämän ohjelman nauhoittamiseen.',
     'recstatus: manualoverride'    => 'Ohjelman nauhoitus peruttiin manuaalisesti.',
@@ -211,18 +211,18 @@ $L = array(
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
 // modules/movietimes/init.php
-    'Movie Times' => '',
+    'Movie Times' => 'Elokuvahaku',
 // modules/settings/init.php
-    'settings' => '',
+    'settings' => 'Asetukset',
 // modules/status/init.php
-    'Status' => '',
+    'Status' => 'Systeemin Tila',
 // modules/tv/init.php
-    'Search TV'           => '',
-    'Special Searches'    => '',
+    'Search TV'           => 'Ohjelmahaku',
+    'Special Searches'    => 'Edistynyt Haku',
     'TV'                  => '',
-    'Upcoming Recordings' => '',
+    'Upcoming Recordings' => 'Tulevat Nauhoitukset',
 // modules/video/init.php
-    'Video' => '',
+    'Video' => 'Videot',
 // program_detail.php
     'Unknown Program.'            => 'Tuntematon Ohjelma.',
     'Unknown Recording Schedule.' => 'Tuntematon Ajoitus.',
@@ -332,7 +332,7 @@ $L = array(
     'hue'                                                                                                                                => 'Värikylläisyys',
     'name'                                                                                                                               => 'Nimi',
     'sourceid'                                                                                                                           => '',
-    'useonairguide'                                                                                                                      => '',
+    'useonairguide'                                                                                                                      => 'Käytä Ohjelmavirran Opasta',
     'videofilters'                                                                                                                       => 'Videosuodattimet',
     'visible'                                                                                                                            => 'Näkyvä',
 // themes/.../settings_keys.php
@@ -374,21 +374,21 @@ $L = array(
     'rating'        => 'arvostelu',
     'year'          => 'vuosi',
 // themes/default/movietimes/welcome.php
-    'Get listings for movies playing at local theatres.' => '',
+    'Get listings for movies playing at local theatres.' => 'Hae Paikallisten elokuvateattereiden elokuvat.',
 // themes/default/music/welcome.php
-    'Browse your music collection.' => '',
+    'Browse your music collection.' => 'Selaa Musiikkitietokantaa.',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => '',
+    'Configure MythWeb.' => 'Aseta MythWeb.',
 // themes/default/status/welcome.php
-    'Show the backend status page.' => '',
+    'Show the backend status page.' => 'Näytä Systeemin tila.',
 // themes/default/tv/list_cell_nodata.php
-    'NO DATA' => '',
+    'NO DATA' => 'EI DATAA',
 // themes/default/tv/welcome.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => 'TV-ohjelmien nauhoittamisasetukset. Valitse seuraavista:',
 // themes/default/video/welcome.php
-    'Browse your video collection.' => '',
+    'Browse your video collection.' => 'Selaa videoita.',
 // themes/default/weather/welcome.php
-    'Get the local weather forecast.' => ''
+    'Get the local weather forecast.' => 'Katso paikallinen säätiedotus.'
 // End of the translation hash ** Do not touch the next line
           );
 
