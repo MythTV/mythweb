@@ -33,21 +33,20 @@
         // This row isn't the one we're looking for
             if ($row[8] != $_GET['file'])
                 continue;
+        // Delete the recording
+            backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
         // Forget all knowledge of old recordings
             if (isset($_GET['forget_old'])) {
                 $show = new Program($row);
                 $show->rec_forget_old();
+            // Delay a second so the backend's scheduler can catch up
+                sleep(1);
             }
-        // Delete the recording
-            backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
         // Exit early if we're in AJAX mode.
             if (isset($_GET['ajax'])) {
                 echo 'success';
                 exit;
             }
-        // Delay a second so the backend can catch up
-        # Disabled because I don't really think it's needed anymore
-        #    sleep(1);
         // No need to scan the rest of the items, so leave early
             break;
         }
