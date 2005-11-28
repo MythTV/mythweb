@@ -21,7 +21,7 @@
         else
             echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
 
-        echo ' href="program_detail.php?chanid='.$program->chanid.'&starttime='.$program->starttime.'">';
+        echo ' href="'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
             echo '<img src="themes/Default/img/leftwhite.png" border="0" class="left_arrow">';

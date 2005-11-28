@@ -18,7 +18,8 @@
     require_once "includes/recording_schedules.php";
 
 // Unknown section?  Use the default
-    if (empty($Modules['tv']['links'][$Path[1]]))
+    if (!in_array($Path[1], array('detail', 'channel'))
+            && empty($Modules['tv']['links'][$Path[1]]))
         $Path[1] = 'list';
 
 // Show the requested section

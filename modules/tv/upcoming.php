@@ -51,7 +51,7 @@
         sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        header('Location: scheduled_recordings.php');
+        header('Location: '.root.'tv/upcoming');
         exit;
     }
 
@@ -120,7 +120,7 @@
         sort_programs($all_shows, 'scheduled_sortby');
 
 // Load the class for this page
-    require_once theme_dir."scheduled_recordings.php";
+    require_once theme_dir.'tv/upcoming.php';
 
 // Create an instance of this page from its theme object
     $Page = new Theme_scheduled_recordings();

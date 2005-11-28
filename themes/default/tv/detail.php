@@ -1,23 +1,33 @@
 <?php
-/***                                                                        ***\
-    program_detail.php                       Last Updated: 2005.02.20 (xris)
+/**
+ * This displays details about a program, as well as provides recording
+ * commands.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ * @subpackage  TV
+ *
+/**/
 
-    This file defines a theme class for the program details section.
-    It must define one method.   documentation will be added someday.
+// Set the desired page title
+    $page_title = 'MythWeb - '.t('Program Detail').":  $program->title";
 
-\***                                                                        ***/
+// Custom headers
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css" />';
 
-class Theme_program_detail extends Theme {
+// Print the page header
+    require_once theme_dir.'/header.php';
 
-    function print_page(&$program, &$schedule, &$channel) {
-    // Load this page's custom stylesheet
-        $this->headers[] = '<link rel="stylesheet" type="text/css" href="'.theme_dir.'program_detail.css" />';
-    // Print the main page header
-        parent::print_header("MythWeb - ".t('Program Detail').":  $program->title");
-    /* Print the page contents:
-     * I really hate tables, but this layout just doesn't work right with pure-css.
-     * In its defense, it *is* somewhat tabular.
-     */
+/*
+ * Print the page contents:
+ * I really hate tables, but this layout just doesn't work right with pure-css.
+ * In its defense, it *is* somewhat tabular.
+/*/
 ?>
 <table id="program_content" border="0" cellspacing="0" cellpadding="0">
 <tr>
@@ -28,7 +38,7 @@ class Theme_program_detail extends Theme {
         <div id="program_header">
 <?php if ($channel) { ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
-                <a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&time=<?php echo $program->starttime ?>"
+                <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>&time=<?php echo $program->starttime ?>"
                         onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo $channel->channum.' '.$channel->callsign ?>')"
                         onmouseout="return wstatus('')">
 <?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
@@ -170,11 +180,11 @@ class Theme_program_detail extends Theme {
 
         <div id="local_links">
 <?php       if ($_GET['recordid']) { ?>
-            <a href="recording_schedules.php"><?php
+            <a href="<?php echo root ?>tv/schedules"><?php
                 echo t('Back to the recording schedules')
             ?></a>
 <?php       } else { ?>
-            <a href="program_listing.php?time=<?php echo $program->starttime ?>"><?php
+            <a href="<?php echo root ?>tv/list?time=<?php echo $program->starttime ?>"><?php
                 echo t('What else is on at this time?')
             ?></a>
 <?php       } ?>
@@ -184,7 +194,7 @@ class Theme_program_detail extends Theme {
                 else
                     echo t('Find other showings of this program');
             ?></a>
-            <a href="program_listing.php?time=<?php echo $_SESSION['list_time'] ?>"><?php
+            <a href="<?php echo root ?>tv/list?time=<?php echo $_SESSION['list_time'] ?>"><?php
                 echo t('Back to the program listing')
             ?></a>
         </div>
@@ -196,11 +206,11 @@ class Theme_program_detail extends Theme {
 
     <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
-        <form name="program_detail" method="post" action="program_detail.php?<?php
+        <form name="program_detail" method="post" action="<?php echo root ?>tv/detail<?php
             if ($_GET['recordid'])
-                echo 'recordid='.urlencode($_GET['recordid']);
+                echo '?recordid='.urlencode($_GET['recordid']);
             else
-                echo 'chanid='.urlencode($_GET['chanid']).'&starttime='.urlencode($_GET['starttime'])
+                echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime'])
             ?>">
 
 <?php   if (!$schedule || $schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
@@ -405,9 +415,7 @@ class Theme_program_detail extends Theme {
 </table>
 
 <?php
-    // Print the main page footer
-        parent::print_footer();
-    }
 
-}
+// Print the page footer
+    require_once theme_dir.'/footer.php';
 

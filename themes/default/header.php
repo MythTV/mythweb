@@ -142,21 +142,21 @@
         <tr>
             <td><div id="command_choices">
                     <a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
-                    <a href="<?php echo root ?>program_listing.php"><?php echo t('Listings') ?></a>
+                    <a href="<?php echo root ?>tv/list"><?php echo t('Listings') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>canned_searches.php"><?php echo t('Searches') ?></a>
+                    <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>schedule_manually.php"><?php echo t('Manually Schedule') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>recording_schedules.php"><?php echo t('Recording Schedules') ?></a>
+                    <a href="<?php echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>scheduled_recordings.php"><?php echo t('Scheduled Recordings') ?></a>
+                    <a href="<?php echo root ?>tv/upcoming"><?php echo t('Scheduled Recordings') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>recorded_programs.php"><?php echo t('Recorded Programs') ?></a>
+                    <a href="<?php echo root ?>tv/recorded"><?php echo t('Recorded Programs') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>status.php"><?php echo t('Backend Status') ?></a>
+                    <a href="<?php echo root ?>status"><?php echo t('Backend Status') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>log.php"><?php echo ('Backend Logs') ?></a>
+                    <a href="<?php echo root ?>backend_log"><?php echo ('Backend Logs') ?></a>
                 </div></td>
         </tr>
         </table></td>

@@ -17,7 +17,8 @@
 /**/
 
 // temporary
-    define('new_code', false);
+    if (new_code != 'new_code' || !new_code)
+        define('new_code', false);
 
 /**
  * $Path is an array of PATH_INFO passed into the script via mod_rewrite or some

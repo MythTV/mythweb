@@ -22,7 +22,7 @@
     isset($_GET['forget_old']) or $_GET['forget_old'] = $_POST['forget_old'];
     isset($_GET['delete'])     or $_GET['delete']     = $_POST['delete'];
     isset($_GET['file'])       or $_GET['file']       = $_POST['file'];
-    if ($_GET['delete'] && preg_match('/\\d+_\\d+/', $_GET['file'])) {
+    if ($_GET['delete']) {
     // Keep a previous-row counter to return to after deleting
         $prev_row = -2;
     // We need to scan through the available recordings to get at the additional information required by the DELETE_RECORDING query
@@ -35,9 +35,10 @@
                 continue;
         // Forget all knowledge of old recordings
             if (isset($_GET['forget_old'])) {
-                preg_match('/\/(\d+)_(\d+)_\d+\.nuv$/', $_GET['file'], $matches);
                 $show = new Program($row);
                 $show->rec_forget_old();
+            // Delay a second so the backend can catch up
+                sleep(1);
             }
         // Delete the recording
             backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
@@ -46,9 +47,6 @@
                 echo 'success';
                 exit;
             }
-        // Delay a second so the backend can catch up
-        # Disabled because I don't really think it's needed
-        #    sleep(1);
         // No need to scan the rest of the items, so leave early
             break;
         }
@@ -153,13 +151,7 @@
         @symlink(dirname($All_Shows[0]->filename), video_dir);
 
 // Load the class for this page
-    require_once theme_dir.'recorded_programs.php';
-
-// Create an instance of this page from its theme object
-    $Page = new Theme_recorded_programs();
-
-// Display the page
-    $Page->print_page();
+    require_once theme_dir.'tv/recorded.php';
 
 // Exit
     exit;

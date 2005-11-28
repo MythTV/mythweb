@@ -1,10 +1,16 @@
 <?php
-/***                                                                        ***\
-    recording_schedules.php                 Last Updated: 2005.03.09 (xris)
-
-    view and fix scheduling conflicts.
-\***                                                                        ***/
-
+/**
+ * View all recording schedules
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 // Which section are we in?
     define('section', 'tv');

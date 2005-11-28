@@ -1,25 +1,38 @@
 <?php
-/***                                                                        ***\
-    program_detail.php                      Last Updated: 2005.02.06 (xris)
-
-    This file is part of MythWeb, a php-based interface for MythTV.
-    See README and LICENSE for details.
-
-    This displays details about a program, as well as provides recording
-    commands.
-\***                                                                        ***/
+/**
+ * This displays details about a program, as well as provides recording
+ * commands.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ * @subpackage  TV
+ *
+/**/
 
 // Which section are we in?
     define('section', 'tv');
 
 // Initialize the script, database, etc.
-    require_once "includes/init.php";
+    require_once 'includes/init.php';
+
 
 // Load the program info, unless a schedule was requested
     if ($_GET['recordid'])
         $program = null;
-    else
+    else {
+    // Use the new directory structure?
+        if (!$_GET['chanid'] && !$_GET['starttime']) {
+            $_GET['chanid']    = $Path[2];
+            $_GET['starttime'] = $Path[3];
+        }
+    // Load the program
         $program =& load_one_program($_GET['starttime'], $_GET['chanid']);
+    }
 
 // Get the schedule for this recording, if one exists
     global $Schedules;
@@ -34,11 +47,11 @@
     if (!strlen($program->starttime) && !$schedule->recordid) {
         if ($_GET['recordid']) {
             add_warning(t('Unknown Recording Schedule.'));
-            header('Location: recording_schedules.php');
+            header('Location: '.rot.'tv/schedules');
         }
         else {
             add_warning(t('Unknown Program.'));
-            header("Location: program_listing.php?time=".$_SESSION['list_time']);
+            header('Location: '.root.'tv/list?time='.$_SESSION['list_time']);
         }
         save_session_errors();
         exit;
@@ -84,35 +97,35 @@
                 if (!$program) {
                     add_warning(t('The requested recording schedule has been deleted.'));
                     save_session_errors();
-                    header('Location: recording_schedules.php');
+                    header('Location: '.root.'tv/schedules');
                     exit;
                 }
             // Relocate back to the program details page
-                header('Location: program_detail.php?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
+                header('Location: '.root.'tv/detail?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
             }
         }
     // Modifying an existing schedule, or adding a new one
         else {
         // Set things as the user requested
-            $schedule->profile      = $_POST['profile'];
-            $schedule->recgroup     = $_POST['recgroup'];
-            $schedule->autoexpire   = $_POST['autoexpire']   ? 1 : 0;
-            $schedule->autocommflag = $_POST['autocommflag'] ? 1 : 0;
-            $schedule->autouserjob1 = $_POST['autouserjob1'] ? 1 : 0;
-            $schedule->autouserjob2 = $_POST['autouserjob2'] ? 1 : 0;
-            $schedule->autouserjob3 = $_POST['autouserjob3'] ? 1 : 0;
-            $schedule->autouserjob4 = $_POST['autouserjob4'] ? 1 : 0;
-            $schedule->maxnewest    = $_POST['maxnewest']    ? 1 : 0;
-            $schedule->inactive     = $_POST['inactive']     ? 1 : 0;
-            $schedule->dupin        = _or($_POST['dupin'],    15);
-            $schedule->dupmethod    = _or($_POST['dupmethod'], 6);
-            $schedule->recpriority  = intval($_POST['recpriority']);
-            $schedule->maxepisodes  = intval($_POST['maxepisodes']);
-            $schedule->startoffset  = intval($_POST['startoffset']);
-            $schedule->endoffset    = intval($_POST['endoffset']);
+            $schedule->profile       = $_POST['profile'];
+            $schedule->recgroup      = $_POST['recgroup'];
+            $schedule->autoexpire    = $_POST['autoexpire']   ? 1 : 0;
+            $schedule->autocommflag  = $_POST['autocommflag'] ? 1 : 0;
+            $schedule->autouserjob1  = $_POST['autouserjob1'] ? 1 : 0;
+            $schedule->autouserjob2  = $_POST['autouserjob2'] ? 1 : 0;
+            $schedule->autouserjob3  = $_POST['autouserjob3'] ? 1 : 0;
+            $schedule->autouserjob4  = $_POST['autouserjob4'] ? 1 : 0;
+            $schedule->maxnewest     = $_POST['maxnewest']    ? 1 : 0;
+            $schedule->inactive      = $_POST['inactive']     ? 1 : 0;
+            $schedule->dupin         = _or($_POST['dupin'],     15);
+            $schedule->dupmethod     = _or($_POST['dupmethod'], 6);
+            $schedule->recpriority   = intval($_POST['recpriority']);
+            $schedule->maxepisodes   = intval($_POST['maxepisodes']);
+            $schedule->startoffset   = intval($_POST['startoffset']);
+            $schedule->endoffset     = intval($_POST['endoffset']);
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
             $schedule->transcoder    = $_POST['transcoder'];
-            $schedule->tsdefault = $_POST['timestretch'];
+            $schedule->tsdefault     = $_POST['timestretch'];
         // Back up the program type, and save the schedule
             $schedule->save($type);
         }
@@ -158,13 +171,7 @@
         $channel =& load_one_channel($schedule->chanid);
 
 // Load the class for this page
-    require_once theme_dir.'program_detail.php';
-
-// Create an instance of this page from its theme object
-    $Page = new Theme_program_detail();
-
-// Display the page
-    $Page->print_page($program, $schedule, $channel);
+    require_once theme_dir.'tv/detail.php';
 
 // Exit
     exit;

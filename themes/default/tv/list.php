@@ -1,8 +1,6 @@
 <?php
 /**
- * This file defines a theme class for the program listing section.
- * It must define several methods, some of which have specific
- * parameters.   documentation will be added someday.
+ * Print the program list
  *
  * @url         $URL$
  * @date        $Date$
@@ -64,7 +62,7 @@
                 }
                 ?></select></td>
             <td align="right"><?php echo t('Date') ?>:&nbsp;</td>
-            <td style="vertical-align:middle;" nowrap><img src="images/left.gif" onclick="MoveProgramListing(-1)">
+            <td style="vertical-align:middle;" nowrap><img src="<?php echo theme_url ?>img/left.gif" onclick="MoveProgramListing(-1)">
                 <select name="date" onchange="get_element('program_listing').submit()"><?php
             // Find out how many days into the past we should bother checking
                 $result = mysql_query('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program')
@@ -85,7 +83,7 @@
                     echo ">".strftime($_SESSION['date_listing_jump'] , $time)."</option>";
                 }
                 ?></select>
-                <img src="images/right.gif" onclick="MoveProgramListing(+1)"></td>
+                <img src="<?php echo theme_url ?>img/right.gif" onclick="MoveProgramListing(+1)"></td>
             <td align="center"><noscript><input type="submit" class="submit" value="<?php echo t('Jump') ?>"></noscript></td>
 
 
@@ -103,7 +101,7 @@
         $timeslot_anchor    = 0;
         $channel_count      = 0;
 
-        // Go through each channel and load/print its info - use references to avoid "copy" overhead
+    // Go through each channel and load/print its info - use references to avoid "copy" overhead
 
         foreach ($Channels as $channel) {
         // Ignore channels with no number
@@ -118,18 +116,18 @@
             // Update the timeslot anchor
                 $timeslot_anchor++;
 ?><tr>
-    <td class="menu" width="4%" align="right"><a href="program_listing.php?time=<?php echo $list_starttime - (timeslot_size * num_time_slots) ?>#anchor<?php echo $timeslot_anchor ?>" name="anchor<?php echo $timeslot_anchor ?>"><img src="images/left.gif" border="0" alt="left"></a></td>
+    <td class="menu" width="4%" align="right"><a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime - (timeslot_size * num_time_slots) ?>#anchor<?php echo $timeslot_anchor ?>" name="anchor<?php echo $timeslot_anchor ?>"><img src="<?php echo theme_url ?>img/left.gif" border="0" alt="left"></a></td>
 <?php
                 $block_count = 0;
                 foreach ($Timeslots as $time) {
                     if ($block_count++ % timeslot_blocks)
                         continue;
 ?>
-    <td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo intVal(timeslot_blocks * 94 / num_time_slots) ?>%" align="center"><a href="program_listing.php?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo strftime($_SESSION['time_format'], $time) ?></a></td>
+    <td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo intVal(timeslot_blocks * 94 / num_time_slots) ?>%" align="center"><a href="<?php echo root ?>tv/list?time=<?php echo $time.'#anchor'.$timeslot_anchor ?>"><?php echo strftime($_SESSION['time_format'], $time) ?></a></td>
 <?php
                 }
 ?>
-    <td nowrap class="menu" width="2%"><a href="program_listing.php?time=<?php echo $list_starttime + (timeslot_size * num_time_slots) ?>#anchor<?php echo $timeslot_anchor ?>"><img src="images/right.gif" border="0" alt="right"></a></td>
+    <td nowrap class="menu" width="2%"><a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime + (timeslot_size * num_time_slots) ?>#anchor<?php echo $timeslot_anchor ?>"><img src="<?php echo theme_url ?>img/right.gif" border="0" alt="right"></a></td>
 </tr><?php
             }
         // Count this channel
