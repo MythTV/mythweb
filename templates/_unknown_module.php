@@ -9,10 +9,10 @@
 
 <div id="message">
 
-<h2>Database Error</h2>
+<h2>An unknown module was specified</h2>
 
 <p>
-<?php echo htmlentities($db->error) ?>
+<?php echo $Path[0] ?>
 </p>
 
 </div>
