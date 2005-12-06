@@ -122,12 +122,6 @@
 // Load the class for this page
     require_once theme_dir.'tv/upcoming.php';
 
-// Create an instance of this page from its theme object
-    $Page = new Theme_scheduled_recordings();
-
-// Display the page
-    $Page->print_page($all_shows);
-
 // Exit
     exit;
 

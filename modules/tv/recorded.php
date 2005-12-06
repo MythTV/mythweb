@@ -15,7 +15,6 @@
     define('section', 'tv');
 
 // Initialize the script, database, etc.
-    require_once "includes/init.php";
     require_once "includes/sorting.php";
 
 // Delete a program?

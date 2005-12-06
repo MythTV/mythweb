@@ -16,7 +16,6 @@
     define('section', 'tv');
 
 // Initialize the script, database, etc.
-    require_once "includes/init.php";
     require_once "includes/sorting.php";
 
 // Load the recordings
@@ -50,13 +49,7 @@
         sort_programs($the_schedules, 'schedules_sortby');
 
 // Load the class for this page
-    require_once theme_dir."recording_schedules.php";
-
-// Create an instance of this page from its theme object
-    $Page = new Theme_recording_schedules();
-
-// Display the page
-    $Page->print_page($the_schedules);
+    require_once theme_dir.'tv/schedules.php';
 
 // Exit
     exit;
