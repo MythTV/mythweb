@@ -29,7 +29,7 @@
 /**/
     global $Path;
     $Path = explode('/', preg_replace('/^\/+/',   '',    // Remove leading slashes
-                         preg_replace('/[_\s]+/', ' ',   // Convert underscores and extra whitespace
+                         preg_replace('/[\s]+/', ' ',    // Convert extra whitespace
                              $_SERVER['PATH_INFO']       // Grab the path info from various different places.
                                 ? $_SERVER['PATH_INFO']
                                 : ($_ENV['PATH_INFO']
@@ -70,40 +70,6 @@
 
 // Load the translation routines so the modules can translate their descriptions
     require_once 'includes/translate.php';
-
-/**
- * Define each module individually in order because it's easier than storing a
- * sort-order setting in each module.
- *
- * @global  array       $GLOBALS['Modules']
- * @name    $Modules    A list of the available MythWeb modules
-/**/
-    $Modules = array('tv'         => null,
-                     'video'      => null,
-                     'music'      => null,
-                     'weather'    => null,
-                     'movietimes' => null,
-                     'settings'   => null,
-                     'status'     => null,
-                    );
-
-// Load the various modules (search for the "tv" subdirectory in case it might
-// find some other "modules" directory, too.
-    $path = find_in_path('modules/tv/init.php');
-    if ($path) {
-        $path = dirname(dirname($path));
-        foreach (array_keys($Modules) as $module) {
-            if (!file_exists("$path/$module/init.php"))
-                continue;
-            require_once "$path/$module/init.php";
-            if (empty($Modules[$module]))
-                unset($Modules[$module]);
-        }
-    }
-    if (empty($Modules)) {
-        require_once 'templates/_no_modules.php';
-        exit;
-    }
 
 // Clean up input data
     fix_crlfxy($_GET);
@@ -180,6 +146,41 @@
 
 // Make sure the database is up to date
     require_once 'includes/db_update.php';
+
+/**
+ * Define each module individually in order because it's easier than storing a
+ * sort-order setting in each module.
+ *
+ * @global  array       $GLOBALS['Modules']
+ * @name    $Modules    A list of the available MythWeb modules
+/**/
+    $Modules = array('tv'           => null,
+                     'video'        => null,
+                     'music'        => null,
+                     'weather'      => null,
+                     'movietimes'   => null,
+                     'settings'     => null,
+                     'status'       => null,
+                     'backend_log' => null,
+                    );
+
+// Load the various modules (search for the "tv" subdirectory in case it might
+// find some other "modules" directory, too.
+    $path = find_in_path('modules/tv/init.php');
+    if ($path) {
+        $path = dirname(dirname($path));
+        foreach (array_keys($Modules) as $module) {
+            if (!file_exists("$path/$module/init.php"))
+                continue;
+            require_once "$path/$module/init.php";
+            if (empty($Modules[$module]))
+                unset($Modules[$module]);
+        }
+    }
+    if (empty($Modules)) {
+        require_once 'templates/_no_modules.php';
+        exit;
+    }
 
 // Load the session handler routines
     require_once 'includes/session.php';
