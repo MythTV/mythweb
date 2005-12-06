@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => '',
     'Back to the program listing'                         => 'Terug naar programmagids',
     'Back to the recording schedules'                     => 'Terug naar opnameschema',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'Backend Status',
     'Cancel this schedule.'                               => 'Annuleer deze opname',
     'Cast'                                                => 'Acteurs',
     'Category'                                            => 'Categorie',
     'Category Legend'                                     => 'Categorie Legende',
     'Category Type'                                       => 'Categorie Type',
-    'Channel'                                             => 'Zender',
     'Check for duplicates in'                             => 'Controleer op dubbels in',
     'Commands'                                            => 'Opdrachten',
     'Conflicts'                                           => 'Conflicten',
-    'Create Schedule'                                     => 'Maak Schema',
     'Current Conditions'                                  => 'Huidige Waarnemingen',
     'Current recordings'                                  => 'Huidige Opnames',
     'Currently Browsing:  $1'                             => 'Tijdstip: $1',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => 'Ga naar',
     'Jump to'                                             => 'Spring naar',
     'Last Updated'                                        => 'Laatst Vernieuwd',
-    'Length (min)'                                        => 'Duur (min)',
     'Listings'                                            => 'Programmagids',
     'Low'                                                 => 'Minimum',
     'Manually Schedule'                                   => 'Handmatig Programmeren',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => 'Instellingen',
     'Show group'                                          => 'Toon groep',
     'Show recordings'                                     => 'Toon opnames',
-    'Start Date'                                          => 'Start Datum',
     'Start Early'                                         => 'Eerder Beginnen',
-    'Start Time'                                          => 'Start Tijd',
     'Subtitle'                                            => 'Aflevering',
     'Subtitle and Description'                            => 'Aflevering en Beschrijving',
     'Sunday'                                              => 'Zondag',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => 'type',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Zender',
+    'Create Schedule'   => 'Maak Schema',
+    'Length (min)'      => 'Duur (min)',
     'Save Schedule'     => '',
     'Schedule Manually' => '',
+    'Start Date'        => 'Start Datum',
+    'Start Time'        => 'Start Tijd',
 // themes/.../search.php
     'No matches found' => 'Geen programma\'s gevonden',
     'Search for:  $1'  => '',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => '',
     'rating'        => '',
     'year'          => '',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

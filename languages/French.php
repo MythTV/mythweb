@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => '',
     'Back to the program listing'                         => 'Retourner &agrave; la liste des &eacute;missions',
     'Back to the recording schedules'                     => 'Retourner aux programmations programm&eacute;es',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'Statut du Backend',
     'Cancel this schedule.'                               => 'Annuler cette programmation',
     'Cast'                                                => 'Acteurs',
     'Category'                                            => 'cat&eacute;gorie',
     'Category Legend'                                     => 'L&eacute;g&eacute;nde de Cat&eacute;gorie',
     'Category Type'                                       => 'Type de cat&eacute;gorie',
-    'Channel'                                             => 'Cha&icirc;ne',
     'Check for duplicates in'                             => 'Cherche les doublons dans',
     'Commands'                                            => 'Commandes',
     'Conflicts'                                           => 'entre en conflit',
-    'Create Schedule'                                     => 'Creer une programmation',
     'Current Conditions'                                  => 'Conditions courantes',
     'Current recordings'                                  => 'Enregistrements courant',
     'Currently Browsing:  $1'                             => 'Actuellement Affich&eacute;',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => 'Aller &agrave;',
     'Jump to'                                             => 'Sauter vers',
     'Last Updated'                                        => 'Derni&egrave;re mise &agrave; jour',
-    'Length (min)'                                        => 'Dur&eacute;e (min)',
     'Listings'                                            => 'Liste',
     'Low'                                                 => 'faible',
     'Manually Schedule'                                   => 'Programmation Manuelle',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => 'param&egrave;tres',
     'Show group'                                          => 'Monter les groupes',
     'Show recordings'                                     => 'Monter les enregistrements',
-    'Start Date'                                          => 'Date de d&eacute;but',
     'Start Early'                                         => 'D&eacute;marrer plus tot',
-    'Start Time'                                          => 'Heure de d&eacute;but',
     'Subtitle'                                            => 'Soustitre',
     'Subtitle and Description'                            => 'Soustitre et description',
     'Sunday'                                              => 'Dimanche',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => 'Type',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Cha&icirc;ne',
+    'Create Schedule'   => 'Creer une programmation',
+    'Length (min)'      => 'Dur&eacute;e (min)',
     'Save Schedule'     => 'Sauver une programmation',
     'Schedule Manually' => '',
+    'Start Date'        => 'Date de d&eacute;but',
+    'Start Time'        => 'Heure de d&eacute;but',
 // themes/.../search.php
     'No matches found' => 'Aucune correspondance',
     'Search for:  $1'  => 'Chercher:    $1',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => '',
     'rating'        => '',
     'year'          => '',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

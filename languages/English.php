@@ -37,18 +37,15 @@ $L = array(
     'Auto-transcode'                                      => '',
     'Back to the program listing'                         => '',
     'Back to the recording schedules'                     => '',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => '',
     'Cancel this schedule.'                               => '',
     'Cast'                                                => '',
     'Category'                                            => '',
     'Category Legend'                                     => '',
     'Category Type'                                       => '',
-    'Channel'                                             => '',
     'Check for duplicates in'                             => '',
     'Commands'                                            => '',
     'Conflicts'                                           => '',
-    'Create Schedule'                                     => '',
     'Current Conditions'                                  => '',
     'Current recordings'                                  => '',
     'Currently Browsing:  $1'                             => '',
@@ -92,7 +89,6 @@ $L = array(
     'Jump To'                                             => '',
     'Jump to'                                             => '',
     'Last Updated'                                        => '',
-    'Length (min)'                                        => '',
     'Listings'                                            => '',
     'Low'                                                 => '',
     'Manually Schedule'                                   => '',
@@ -147,9 +143,7 @@ $L = array(
     'Settings'                                            => '',
     'Show group'                                          => '',
     'Show recordings'                                     => '',
-    'Start Date'                                          => '',
     'Start Early'                                         => '',
-    'Start Time'                                          => '',
     'Subtitle'                                            => '',
     'Subtitle and Description'                            => '',
     'Sunday'                                              => '',
@@ -253,6 +247,8 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -300,8 +296,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => '',
 // themes/.../schedule_manually.php
+    'Channel'           => '',
+    'Create Schedule'   => '',
+    'Length (min)'      => '',
     'Save Schedule'     => '',
     'Schedule Manually' => '',
+    'Start Date'        => '',
+    'Start Time'        => '',
 // themes/.../search.php
     'No matches found' => '',
     'Search for:  $1'  => '',
@@ -366,6 +367,8 @@ $L = array(
     'plot'          => '',
     'rating'        => '',
     'year'          => '',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

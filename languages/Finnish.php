@@ -41,18 +41,15 @@ $L = array(
     'Auto-transcode'                                      => 'Automaattinen jälkikäsittely',
     'Back to the program listing'                         => 'Takaisin ohjelmalistaukseen',
     'Back to the recording schedules'                     => 'Takaisin nauhoituksen ajoitukseen',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'Palvelimen Tila',
     'Cancel this schedule.'                               => 'Peruuta nauhoitus',
     'Cast'                                                => 'Pääosat',
     'Category'                                            => 'Kategoria',
     'Category Legend'                                     => 'Kategorian Merkit',
     'Category Type'                                       => 'Kategorian Tyyppi',
-    'Channel'                                             => 'Kanava',
     'Check for duplicates in'                             => 'Tarkista kaksoiskappaleet',
     'Commands'                                            => 'Komennot',
     'Conflicts'                                           => 'Ristiriidat',
-    'Create Schedule'                                     => 'Ajoita Nauhoitus',
     'Current Conditions'                                  => 'Säätila',
     'Current recordings'                                  => 'Nykyiset nauhoitukset',
     'Currently Browsing:  $1'                             => 'Selataan:  $1',
@@ -96,7 +93,6 @@ $L = array(
     'Jump To'                                             => 'Hyppää',
     'Jump to'                                             => 'Hyppää',
     'Last Updated'                                        => 'Päivitetty Viimeksi',
-    'Length (min)'                                        => 'Pituus (min)',
     'Listings'                                            => 'Listaus',
     'Low'                                                 => 'Alin',
     'Manually Schedule'                                   => 'Manuaalinen Ajastus',
@@ -151,9 +147,7 @@ $L = array(
     'Settings'                                            => 'Asetukset',
     'Show group'                                          => 'Näytä ryhmä',
     'Show recordings'                                     => 'Näytä nauhoitukset',
-    'Start Date'                                          => 'Päivämäärä',
     'Start Early'                                         => 'Aloita Aiemmin',
-    'Start Time'                                          => 'Aloitusaika',
     'Subtitle'                                            => 'Jakson Nimi',
     'Subtitle and Description'                            => 'Jakson Kuvaus',
     'Sunday'                                              => 'Sunnuntai',
@@ -257,6 +251,8 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => 'Elokuvahaku',
 // modules/settings/init.php
@@ -304,8 +300,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => 'tyyppi',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Kanava',
+    'Create Schedule'   => 'Ajoita Nauhoitus',
+    'Length (min)'      => 'Pituus (min)',
     'Save Schedule'     => 'Tallenna Ajoitus',
     'Schedule Manually' => 'Ajoita Manuaalisesti',
+    'Start Date'        => 'Päivämäärä',
+    'Start Time'        => 'Aloitusaika',
 // themes/.../search.php
     'No matches found' => 'Ei vastaavuuksia',
     'Search for:  $1'  => 'Etsi:  $1',
@@ -370,6 +371,8 @@ $L = array(
     'plot'          => 'juoni',
     'rating'        => 'arvostelu',
     'year'          => 'vuosi',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

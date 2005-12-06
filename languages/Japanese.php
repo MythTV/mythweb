@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => '',
     'Back to the program listing'                         => '番組一覧に戻る',
     'Back to the recording schedules'                     => '録画予約に戻る',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'バックエンドステータス',
     'Cancel this schedule.'                               => 'この予約をキャンセルする',
     'Cast'                                                => 'キャスト',
     'Category'                                            => 'カテゴリー',
     'Category Legend'                                     => 'カテゴリー凡例',
     'Category Type'                                       => 'カテゴリータイプ',
-    'Channel'                                             => 'チャンネル',
     'Check for duplicates in'                             => '重複チェック対象',
     'Commands'                                            => 'コマンド',
     'Conflicts'                                           => '衝突',
-    'Create Schedule'                                     => '予約作成',
     'Current Conditions'                                  => '現在の状況',
     'Current recordings'                                  => '現在の録画',
     'Currently Browsing:  $1'                             => '表示日: $1',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => '移動',
     'Jump to'                                             => '移動',
     'Last Updated'                                        => '最後の更新',
-    'Length (min)'                                        => '時間 (分)',
     'Listings'                                            => '一覧',
     'Low'                                                 => '低',
     'Manually Schedule'                                   => '手動録画',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => '設定',
     'Show group'                                          => 'グループ表示',
     'Show recordings'                                     => '番組表示',
-    'Start Date'                                          => '開始日',
     'Start Early'                                         => '早めの録画',
-    'Start Time'                                          => '開始時間',
     'Subtitle'                                            => 'サブタイトル',
     'Subtitle and Description'                            => 'サブタイトルと内容',
     'Sunday'                                              => '日曜日',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => 'タイプ',
 // themes/.../schedule_manually.php
+    'Channel'           => 'チャンネル',
+    'Create Schedule'   => '予約作成',
+    'Length (min)'      => '時間 (分)',
     'Save Schedule'     => '保存',
     'Schedule Manually' => '',
+    'Start Date'        => '開始日',
+    'Start Time'        => '開始時間',
 // themes/.../search.php
     'No matches found' => '一致する物がありませんでした',
     'Search for:  $1'  => '$1 の検索結果',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => '',
     'rating'        => '',
     'year'          => '',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

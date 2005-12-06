@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => 'Auto-recodificar',
     'Back to the program listing'                         => 'Volver al listado de programas',
     'Back to the recording schedules'                     => 'Volver a la programación',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'Estado backend',
     'Cancel this schedule.'                               => 'Cancelar programación',
     'Cast'                                                => 'Reparto',
     'Category'                                            => 'Categoría',
     'Category Legend'                                     => 'Leyenda Categoría',
     'Category Type'                                       => 'Tipo Categoría',
-    'Channel'                                             => 'Canal',
     'Check for duplicates in'                             => 'Buscar duplicados en',
     'Commands'                                            => 'Comandos',
     'Conflicts'                                           => 'Conflictos',
-    'Create Schedule'                                     => 'Crear programación',
     'Current Conditions'                                  => 'Condiciones Actuales',
     'Current recordings'                                  => 'Grabaciones actuales',
     'Currently Browsing:  $1'                             => 'Navegando por:  $1',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => 'Saltar a',
     'Jump to'                                             => 'Saltar a',
     'Last Updated'                                        => 'Útima Actualización',
-    'Length (min)'                                        => 'Duración (min)',
     'Listings'                                            => 'Listados',
     'Low'                                                 => 'Bajo',
     'Manually Schedule'                                   => 'Programar manualmente',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => 'Ajustes',
     'Show group'                                          => 'Mostrar grupo',
     'Show recordings'                                     => 'Mostrar grabaciones',
-    'Start Date'                                          => 'Fecha comienzo',
     'Start Early'                                         => 'Comenzar antes',
-    'Start Time'                                          => 'Hora comienzo',
     'Subtitle'                                            => 'Subtítulo',
     'Subtitle and Description'                            => 'Subtítulo y Descripción',
     'Sunday'                                              => 'Domingo',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => 'recodificador',
     'type'                                      => 'tipo',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Canal',
+    'Create Schedule'   => 'Crear programación',
+    'Length (min)'      => 'Duración (min)',
     'Save Schedule'     => 'Guardar programaci�',
     'Schedule Manually' => 'Programar manualmente',
+    'Start Date'        => 'Fecha comienzo',
+    'Start Time'        => 'Hora comienzo',
 // themes/.../search.php
     'No matches found' => 'Sin resultados',
     'Search for:  $1'  => 'Buscar: $1',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => '',
     'rating'        => 'puntuación',
     'year'          => 'año',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

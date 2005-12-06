@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => 'autom. Umwandeln',
     'Back to the program listing'                         => 'Zurück zum TV Programm',
     'Back to the recording schedules'                     => 'Zurück zum Aufnahmeplan',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'Backend Status',
     'Cancel this schedule.'                               => 'Aufnahme abbrechen',
     'Cast'                                                => 'Besetzung',
     'Category'                                            => 'Kategorie',
     'Category Legend'                                     => 'Kategorien',
     'Category Type'                                       => 'Kategorietyp',
-    'Channel'                                             => 'Sender',
     'Check for duplicates in'                             => 'Nach Wdhgn. suchen in',
     'Commands'                                            => 'Optionen',
     'Conflicts'                                           => 'Überschneidungen',
-    'Create Schedule'                                     => 'Speichern',
     'Current Conditions'                                  => 'Das aktuelle Wetter',
     'Current recordings'                                  => 'Aktuelle Aufnahmen',
     'Currently Browsing:  $1'                             => 'Aktuell: $1',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => 'Gehe zu',
     'Jump to'                                             => 'Gehe zu',
     'Last Updated'                                        => 'zuletzt aktualisiert',
-    'Length (min)'                                        => 'Dauer (Min.)',
     'Listings'                                            => 'TV Programm',
     'Low'                                                 => 'Min',
     'Manually Schedule'                                   => 'manuelle Aufnahme',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => 'Einstellungen',
     'Show group'                                          => 'Gruppe zeigen',
     'Show recordings'                                     => 'Aufnahmen zeigen',
-    'Start Date'                                          => 'Datum',
     'Start Early'                                         => 'vorzeitiger Aufnahmestart',
-    'Start Time'                                          => 'Uhrzeit',
     'Subtitle'                                            => 'Untertitel',
     'Subtitle and Description'                            => 'Untertitel und Beschreibung',
     'Sunday'                                              => 'Sonntag',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '$1 kB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => 'Umwandlungsprofil',
     'type'                                      => 'Modus',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Sender',
+    'Create Schedule'   => 'Speichern',
+    'Length (min)'      => 'Dauer (Min.)',
     'Save Schedule'     => 'Aufnahme speichern',
     'Schedule Manually' => 'Manuell aufnehmen',
+    'Start Date'        => 'Datum',
+    'Start Time'        => 'Uhrzeit',
 // themes/.../search.php
     'No matches found' => 'Keine Übereinstimmungen gefunden',
     'Search for:  $1'  => 'Suche nach: $1',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => 'Handlung',
     'rating'        => 'Bewertung',
     'year'          => 'Jahr',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

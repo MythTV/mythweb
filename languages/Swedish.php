@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => 'Omkoda automatiskt',
     'Back to the program listing'                         => 'Tillbaka till programlistan',
     'Back to the recording schedules'                     => 'Tillbaka till inspelningsschemat',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'Systemstatus',
     'Cancel this schedule.'                               => 'Avbryt denna schemaläggning',
     'Cast'                                                => 'Rollbesättning',
     'Category'                                            => 'Kategori',
     'Category Legend'                                     => 'Kategoriförklaring',
     'Category Type'                                       => 'Kategorityp',
-    'Channel'                                             => 'Kanal',
     'Check for duplicates in'                             => 'Sök dubbletter i',
     'Commands'                                            => 'Kommando',
     'Conflicts'                                           => 'Konflikter',
-    'Create Schedule'                                     => 'Schemalägg',
     'Current Conditions'                                  => 'Nuvarande förhållanden',
     'Current recordings'                                  => 'Nuvarande inspelningar',
     'Currently Browsing:  $1'                             => 'Just nu visas:  $1',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => 'Gå till',
     'Jump to'                                             => 'Gå till',
     'Last Updated'                                        => 'Senast uppdaterad',
-    'Length (min)'                                        => 'Längd (min)',
     'Listings'                                            => 'TV-tablåer',
     'Low'                                                 => 'Låg',
     'Manually Schedule'                                   => 'Manuell schemaläggning',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => 'Inställningar',
     'Show group'                                          => 'Visa grupp',
     'Show recordings'                                     => 'Visa inspelningar',
-    'Start Date'                                          => 'Startdatum',
     'Start Early'                                         => 'Börja tidigare',
-    'Start Time'                                          => 'Starttid',
     'Subtitle'                                            => 'Undertitel',
     'Subtitle and Description'                            => 'Undertitel och beskrivning',
     'Sunday'                                              => 'Söndag',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '$1 KB',
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => 'omkodare',
     'type'                                      => 'typ',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Kanal',
+    'Create Schedule'   => 'Schemalägg',
+    'Length (min)'      => 'Längd (min)',
     'Save Schedule'     => 'Spara schema',
     'Schedule Manually' => 'Schemalägg manuellt',
+    'Start Date'        => 'Startdatum',
+    'Start Time'        => 'Starttid',
 // themes/.../search.php
     'No matches found' => 'Inga matchningar funna',
     'Search for:  $1'  => 'Sök efter:  $1',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => 'handling',
     'rating'        => 'betyg',
     'year'          => 'år',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

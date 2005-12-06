@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => '',
     'Back to the program listing'                         => 'Nazaj na seznam programov',
     'Back to the recording schedules'                     => 'Nazaj na planiranje snemanj',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'Status Backenda',
     'Cancel this schedule.'                               => 'Prekliči ta plan',
     'Cast'                                                => 'Zasedba',
     'Category'                                            => 'Kategorija',
     'Category Legend'                                     => 'Legenda kategorij',
     'Category Type'                                       => 'Tip kategorij',
-    'Channel'                                             => 'Kanal',
     'Check for duplicates in'                             => 'Preveri za duplikati v',
     'Commands'                                            => 'Ukazi',
     'Conflicts'                                           => 'Konflikti',
-    'Create Schedule'                                     => 'Ustvari plan snemanja',
     'Current Conditions'                                  => 'Trenutni pogoji',
     'Current recordings'                                  => 'Trenutna snemanja',
     'Currently Browsing:  $1'                             => 'Trenutno brskanje:  $1',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => 'Skoči na',
     'Jump to'                                             => 'Skoči na',
     'Last Updated'                                        => 'Zadnjič posodobljeno',
-    'Length (min)'                                        => 'Dolžina (min)',
     'Listings'                                            => 'Seznam',
     'Low'                                                 => 'Nizka',
     'Manually Schedule'                                   => 'Ročno planiranje',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => 'Nastavitve',
     'Show group'                                          => 'Pokaži skupino',
     'Show recordings'                                     => 'Pokaži snemanja',
-    'Start Date'                                          => 'Datum začetka',
     'Start Early'                                         => 'Začni prej',
-    'Start Time'                                          => 'Čas začetka',
     'Subtitle'                                            => 'Podnaslov',
     'Subtitle and Description'                            => 'Podnaslov in opis',
     'Sunday'                                              => 'Nedelja',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => 'tip',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Kanal',
+    'Create Schedule'   => 'Ustvari plan snemanja',
+    'Length (min)'      => 'Dolžina (min)',
     'Save Schedule'     => 'Shrani snemalni plan',
     'Schedule Manually' => '',
+    'Start Date'        => 'Datum začetka',
+    'Start Time'        => 'Čas začetka',
 // themes/.../search.php
     'No matches found' => 'Ni zadetkov',
     'Search for:  $1'  => 'Iskanje:  $1',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => '',
     'rating'        => '',
     'year'          => '',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

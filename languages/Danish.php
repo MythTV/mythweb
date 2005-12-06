@@ -36,18 +36,15 @@ $L = array(
     'Auto-transcode'                                      => '',
     'Back to the program listing'                         => 'Tilbage til programoversigten',
     'Back to the recording schedules'                     => 'Tilbage til planlagte optagelser',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => 'System status',
     'Cancel this schedule.'                               => 'Annuller denne optagelse',
     'Cast'                                                => 'Rolleliste',
     'Category'                                            => 'Kategori',
     'Category Legend'                                     => 'Kategoriforklaring',
     'Category Type'                                       => 'Kategori Type',
-    'Channel'                                             => 'Kanal',
     'Check for duplicates in'                             => 'Kontroller for dubletter i',
     'Commands'                                            => 'Kommandoer',
     'Conflicts'                                           => 'Konflikter',
-    'Create Schedule'                                     => 'Planlæg',
     'Current Conditions'                                  => 'Nuværende forhold',
     'Current recordings'                                  => 'Nuværende optagelser',
     'Currently Browsing:  $1'                             => 'Lige nu vises: $1',
@@ -91,7 +88,6 @@ $L = array(
     'Jump To'                                             => 'Gå Til',
     'Jump to'                                             => 'Gå til',
     'Last Updated'                                        => 'Sidst opdateret',
-    'Length (min)'                                        => 'Længde (min)',
     'Listings'                                            => 'Programoversigt',
     'Low'                                                 => 'Lav',
     'Manually Schedule'                                   => 'Planlæg manuelt',
@@ -146,9 +142,7 @@ $L = array(
     'Settings'                                            => 'Indstillinger',
     'Show group'                                          => 'Vis gruppe',
     'Show recordings'                                     => 'Vis optagelser',
-    'Start Date'                                          => 'Startdato',
     'Start Early'                                         => 'Start tidligere (min)',
-    'Start Time'                                          => 'Starttidspunkt',
     'Subtitle'                                            => 'Undertitel',
     'Subtitle and Description'                            => 'Undertitel og beskrivelse',
     'Sunday'                                              => 'Søndag',
@@ -252,6 +246,8 @@ $L = array(
     '$1 KB' => '',
     '$1 MB' => '',
     '$1 TB' => '',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -299,8 +295,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => 'type',
 // themes/.../schedule_manually.php
+    'Channel'           => 'Kanal',
+    'Create Schedule'   => 'Planlæg',
+    'Length (min)'      => 'Længde (min)',
     'Save Schedule'     => '',
     'Schedule Manually' => '',
+    'Start Date'        => 'Startdato',
+    'Start Time'        => 'Starttidspunkt',
 // themes/.../search.php
     'No matches found' => 'Ingen resultater',
     'Search for:  $1'  => '',
@@ -365,6 +366,8 @@ $L = array(
     'plot'          => '',
     'rating'        => '',
     'year'          => '',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php

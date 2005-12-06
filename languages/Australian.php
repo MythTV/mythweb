@@ -37,18 +37,15 @@ $L = array(
     'Auto-transcode'                                      => '',
     'Back to the program listing'                         => 'Back to the refrigerator',
     'Back to the recording schedules'                     => 'Back to the temperatures',
-    'Backend Logs'                                        => '',
     'Backend Status'                                      => '',
     'Cancel this schedule.'                               => 'Cancel this drinking',
     'Cast'                                                => 'Ingredients',
     'Category'                                            => 'Beer',
     'Category Legend'                                     => '',
     'Category Type'                                       => '',
-    'Channel'                                             => '',
     'Check for duplicates in'                             => 'Check for old beers in',
     'Commands'                                            => '',
     'Conflicts'                                           => 'Bad Beer',
-    'Create Schedule'                                     => '',
     'Current Conditions'                                  => '',
     'Current recordings'                                  => 'Cold beers',
     'Currently Browsing:  $1'                             => 'Currently Drinking: $1',
@@ -92,7 +89,6 @@ $L = array(
     'Jump To'                                             => '',
     'Jump to'                                             => '',
     'Last Updated'                                        => '',
-    'Length (min)'                                        => '',
     'Listings'                                            => '',
     'Low'                                                 => '',
     'Manually Schedule'                                   => '',
@@ -147,9 +143,7 @@ $L = array(
     'Settings'                                            => '',
     'Show group'                                          => 'Show sixpack',
     'Show recordings'                                     => 'Show beers',
-    'Start Date'                                          => '',
     'Start Early'                                         => 'AM Beer',
-    'Start Time'                                          => '',
     'Subtitle'                                            => 'Beertitle',
     'Subtitle and Description'                            => 'Beertitle and beer info',
     'Sunday'                                              => 'Sunbeer',
@@ -253,6 +247,8 @@ $L = array(
     '$1 KB' => '$1 halfpint',
     '$1 MB' => '$1 pint',
     '$1 TB' => '$1 yard',
+// modules/backend_log/init.php
+    'Logs' => '',
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
@@ -300,8 +296,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => '',
 // themes/.../schedule_manually.php
+    'Channel'           => '',
+    'Create Schedule'   => '',
+    'Length (min)'      => '',
     'Save Schedule'     => '',
     'Schedule Manually' => '',
+    'Start Date'        => '',
+    'Start Time'        => '',
 // themes/.../search.php
     'No matches found' => '',
     'Search for:  $1'  => '',
@@ -366,6 +367,8 @@ $L = array(
     'plot'          => '',
     'rating'        => '',
     'year'          => '',
+// themes/default/backend_log/backend_log.php
+    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'Show the server logs.' => '',
 // themes/default/movietimes/welcome.php
