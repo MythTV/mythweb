@@ -154,14 +154,15 @@
  * @global  array       $GLOBALS['Modules']
  * @name    $Modules    A list of the available MythWeb modules
 /**/
-    $Modules = array('tv'           => null,
-                     'video'        => null,
-                     'music'        => null,
-                     'weather'      => null,
-                     'movietimes'   => null,
-                     'settings'     => null,
-                     'status'       => null,
+    $Modules = array('tv'          => null,
+                     'video'       => null,
+                     'music'       => null,
+                     'weather'     => null,
+                     'movietimes'  => null,
+                     'settings'    => null,
+                     'status'      => null,
                      'backend_log' => null,
+                     'stream'      => null,
                     );
 
 // Load the various modules (search for the "tv" subdirectory in case it might

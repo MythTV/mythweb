@@ -50,6 +50,10 @@
 <?php
 // Print out the list of modules
     foreach ($Modules as $id => $module) {
+    // Hidden module?
+        if ($module['hidden'])
+            continue;
+    // Show this module
         echo '        <li id="module_', $id, '"';
         if ($id == 'tv')
             echo ' class="selected"';
@@ -66,7 +70,7 @@
 // Print out the list of modules.  Each theme should include a welcome page for
 // each module.
     foreach ($Modules as $id => $module) {
-        include(theme_dir.'/'.$id.'/welcome.php');
+        @include(theme_dir.'/'.$id.'/welcome.php');
     }
 ?>
     </div>
