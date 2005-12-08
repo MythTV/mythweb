@@ -53,7 +53,7 @@ $L = array(
     'Deactivated'                                         => 'Avaktiverad',
     'Default'                                             => 'Standard',
     'Delete'                                              => 'Radera',
-    'Delete $1'                                           => 'Rader $1',
+    'Delete $1'                                           => 'Radera $1',
     'Delete + Rerecord'                                   => 'Radera + Återinspela',
     'Delete and rerecord $1'                              => 'Radera och återinspela $1',
     'Description'                                         => 'Beskrivning',
@@ -77,7 +77,7 @@ $L = array(
     'Go'                                                  => 'Gå',
     'Google'                                              => 'Google',
     'Guest Starring'                                      => 'Gästspel',
-    'Guide rating'                                        => '',
+    'Guide rating'                                        => 'Betyg',
     'HD Only'                                             => 'Endast HD',
     'High'                                                => 'Hög',
     'Hosted by'                                           => 'Värd',
@@ -171,7 +171,7 @@ $L = array(
     'Unknown'                                             => 'Okänd',
     'Unknown Program.'                                    => 'Okänt program.',
     'Unknown Recording Schedule.'                         => 'Okänt inspelningsschema.',
-    'Upcoming Recordings'                                 => '',
+    'Upcoming Recordings'                                 => 'Kommande inspelningar',
     'Update'                                              => 'Uppdatera',
     'Update Recording Settings'                           => 'Uppdatera inspelningsinställningar',
     'Visibility'                                          => 'Sikt',
@@ -230,7 +230,7 @@ $L = array(
     'recstatus: deleted'           => 'Denna visning spelades in men togs bort innan inspelningen var slutförd.',
     'recstatus: earliershowing'    => 'Detta avsnitt kommer att spelas in vid en tidigare tidpunkt istället.',
     'recstatus: force_record'      => 'Denna visning sattes manuellt att spela in.',
-    'recstatus: inactive'          => '',
+    'recstatus: inactive'          => 'Detta inspelningsschema är inaktivt.',
     'recstatus: latershowing'      => 'Detta avsnitt kommer att spelas in vid en senare tidpunkt istället.',
     'recstatus: lowdiskspace'      => 'Denna visning spelades inte in därför att det inte fanns tillräckligt med ledigt diskutrymme.',
     'recstatus: manualoverride'    => 'Denna visning sattes manuellt till att inte spela in.',
@@ -259,21 +259,21 @@ $L = array(
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
 // modules/backend_log/init.php
-    'Logs' => '',
+    'Logs' => 'Logg',
 // modules/movietimes/init.php
-    'Movie Times' => '',
+    'Movie Times' => 'Filmtider',
 // modules/settings/init.php
-    'settings' => '',
+    'settings' => 'inställningar',
 // modules/status/init.php
-    'Status' => '',
+    'Status' => 'Status',
 // modules/stream/init.php
     'Streaming' => '',
 // modules/tv/init.php
-    'Search TV'        => '',
-    'Special Searches' => '',
-    'TV'               => '',
+    'Search TV'        => 'Sök program',
+    'Special Searches' => 'Speciella sökningar',
+    'TV'               => 'TV',
 // modules/video/init.php
-    'Video' => '',
+    'Video' => 'Video',
 // themes/.../music.php
     'Album'               => 'Album',
     'Album (filtered)'    => 'Album (filtrerat)',
@@ -365,23 +365,23 @@ $L = array(
     'rating'        => 'betyg',
     'year'          => 'år',
 // themes/default/backend_log/backend_log.php
-    'Backend Logs' => '',
+    'Backend Logs' => 'Logg',
 // themes/default/backend_log/welcome.php
-    'Show the server logs.' => '',
+    'Show the server logs.' => 'Visa serverns logg.',
 // themes/default/movietimes/welcome.php
     'Get listings for movies playing at local theatres.' => '',
 // themes/default/music/welcome.php
     'Browse your music collection.' => '',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => '',
+    'Configure MythWeb.' => 'Konfigurera MythWeb.',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
 // themes/default/tv/channel.php
-    'Channel Detail' => '',
+    'Channel Detail' => 'Kanaldetaljer',
 // themes/default/tv/list_cell_nodata.php
-    'NO DATA' => '',
+    'NO DATA' => 'INGEN DATA',
 // themes/default/tv/search.php
-    'No matching programs were found.' => '',
+    'No matching programs were found.' => 'Inga matchande program hittades.',
 // themes/default/tv/searches.php
     'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
