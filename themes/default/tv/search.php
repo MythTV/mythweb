@@ -108,20 +108,18 @@
     <td class="<?php echo $show->class ?>"><?php
         if ($show->hdtv)
             echo '<span class="hdtv_icon">HD</span>';
-        echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'
+        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
              .$show->title . $additional.'</a>';
         ?></td>
     <td><?php echo $show->subtitle ?></td>
     <td><?php echo $show->description ?></td>
     <td><?php echo $show->channel->channum.' - '.$show->channel->name ?></td>
     <td nowrap><?php
-            echo '<br /><a href="program_detail.php?chanid='. $show->chanid.
-                '&starttime='.$show->starttime.'">'.
+            echo '<br /><a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if( $show->extra_showings )
                 foreach( $show->extra_showings as $showtime )
-                    echo '<br /><a href="program_detail.php?chanid='.
-                        $show->chanid.'&starttime='.$showtime.'">'.
+                    echo '<br /><a href="'.root.'tv/detail/'.$show->chanid.'/'.$showtime.'">'.
                         strftime($_SESSION['date_search'],$showtime). '</a>';
                 ?></td>
     <td nowrap><?php echo nice_length($show->length) ?></td>

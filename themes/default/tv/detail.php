@@ -51,7 +51,7 @@
 <?php } ?>
             <div id="program_title">
                 <h1>
-                    <a href="search.php?searchstr=<?php echo urlencode($program->title) ?>&search_title=yes"><?php echo $schedule->title ?></a>
+                    <a href="<?php echo root ?>tv/search/<?php echo urlencode($program->title) ?>&search_title=yes"><?php echo $schedule->title ?></a>
                 </h1>
                 <div id="program_time">
 <?php
@@ -188,7 +188,7 @@
                 echo t('What else is on at this time?')
             ?></a>
 <?php       } ?>
-            <a href="search.php?searchstr=<?php echo urlencode($schedule->title) ?>&search_title=1"><?php
+            <a href="<?php echo root ?>tv/search/<?php echo urlencode($schedule->title) ?>&search_title=1"><?php
                 if ($_GET['recordid'])
                     echo t('Find showings of this program');
                 else
