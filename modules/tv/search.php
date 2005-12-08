@@ -1,19 +1,28 @@
 <?php
-/***                                                                        ***\
-    search.php                               Last Updated: 2005.02.28 (xris)
+/**
+ * Searches the database for programs matching a particular query.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ * @subpackage  TV
+ *
+/**/
 
-    Searches the database for programs matching a particular query.
-\***                                                                        ***/
-
-// Which section are we in?
-    define('section', 'tv');
-
-// Initialize the script, database, etc.
-    require_once "includes/init.php";
+// Load the sorting routines
     require_once "includes/sorting.php";
 
 // Load all channels
     load_all_channels();
+
+// Path-based search
+    if ($Path[2]) {
+        $_GET['searchstr'] = $Path[2];
+    }
 
 // A single search string passed in
     if ($_GET['searchstr'] || $_POST['searchstr']) {
@@ -25,7 +34,6 @@
         $_SESSION['search']['search_category']      = _or($_GET['search_category'],      $_POST['search_category']);
         $_SESSION['search']['search_category_type'] = _or($_GET['search_category_type'], $_POST['search_category_type']);
     }
-
 
 // Individual search strings for different fields
     elseif ($_GET['title'] || $_GET['subtitle'] || $_GET['description'] || $_GET['category'] || $_GET['category_type'] || $_GET['originalairdate']
@@ -178,13 +186,7 @@
     }
 
 // Load the class for this page
-    require_once theme_dir."search.php";
-
-// Create an instance of this page from its theme object
-    $Page = new Theme_search();
-
-// Display the page
-    $Page->print_page($search_name, &$Results);
+    require_once theme_dir.'tv/search.php';
 
 // Exit
     exit;

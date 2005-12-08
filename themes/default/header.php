@@ -77,7 +77,7 @@
             </div>
         </div>
         <div id="search" onmouseover="popup('search', 'search_options', 0, 0, false, true); return true;">
-            <form action="search.php" method="post">
+            <form action="/tv/search" method="post">
                 <div id="simple_search">
                     <input id="search_text" type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>">
                     <input id="search_submit" type="submit" class="submit" value="<?php echo t('Search') ?>">
