@@ -14,13 +14,6 @@
  *
 /**/
 
-// Which section are we in?
-    define('section', 'tv');
-
-// Initialize the script, database, etc.
-    require_once 'includes/init.php';
-
-
 // Load the program info, unless a schedule was requested
     if ($_GET['recordid'])
         $program = null;

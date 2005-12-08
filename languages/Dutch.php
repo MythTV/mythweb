@@ -30,6 +30,7 @@ $L = array(
     'Advanced Options'                                    => 'Geavanceerde Opties',
     'Airtime'                                             => 'Uitzendtijd',
     'All recordings'                                      => 'Alle opnames',
+    'Any'                                                 => 'Alle',
     'Are you sure you want to delete the following show?' => 'Bent U zeker van het verwijderen van volgend programma?',
     'Auto-expire recordings'                              => 'Opnames Autom. Vervallen',
     'Auto-flag commercials'                               => 'Reclame Autom. Markeren',
@@ -88,6 +89,7 @@ $L = array(
     'Jump To'                                             => 'Ga naar',
     'Jump to'                                             => 'Spring naar',
     'Last Updated'                                        => 'Laatst Vernieuwd',
+    'Length'                                              => 'Duur',
     'Listings'                                            => 'Programmagids',
     'Low'                                                 => 'Minimum',
     'Manually Schedule'                                   => 'Handmatig Programmeren',
@@ -98,6 +100,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'Weer',
     'Never Record'                                        => 'Nooit Opnemen',
     'No'                                                  => 'Nee',
+    'No matches found'                                    => 'Geen programma\'s gevonden',
+    'No recording schedules have been defined.'           => 'Er zijn geen opnameschema\'s gevonden.',
     'No. of recordings to keep'                           => 'Aantal opnames bewaren',
     'None'                                                => 'Geen',
     'Notes'                                               => 'Opmerkingen',
@@ -132,6 +136,7 @@ $L = array(
     'Search'                                              => 'Zoeken',
     'Search Results'                                      => 'Zoekresultaten',
     'Search fields'                                       => 'Zoek Velden',
+    'Search for:  $1'                                     => '',
     'Search help'                                         => 'Zoek Help',
     'Search help: movie example'                          => '*** 1/2 Avontuur',
     'Search help: movie search'                           => 'zoek films',
@@ -140,6 +145,7 @@ $L = array(
     'Search options'                                      => 'Zoek Opties',
     'Searches'                                            => '',
     'Settings'                                            => 'Instellingen',
+    'Show'                                                => 'Toon',
     'Show group'                                          => 'Toon groep',
     'Show recordings'                                     => 'Toon opnames',
     'Start Early'                                         => 'Eerder Beginnen',
@@ -150,6 +156,7 @@ $L = array(
     'TV.com'                                              => '',
     'The requested recording schedule has been deleted.'  => 'Het gevraagde opnameschema is verwijderd',
     'Thursday'                                            => 'Donderdag',
+    'Time'                                                => 'Tijd',
     'Time Stretch Default'                                => '',
     'Title'                                               => 'Titel',
     'Today'                                               => 'Vandaag',
@@ -177,11 +184,13 @@ $L = array(
     'Yes'                                                 => 'Ja',
     'airdate'                                             => 'uitzenddatum',
     'auto-expire'                                         => 'automatisch vervallen',
+    'channel'                                             => 'zender',
     'channum'                                             => 'zender',
     'description'                                         => 'beschrijving',
     'file size'                                           => 'bestandsgrootte',
     'generic_date'                                        => '%a %e %b, %Y',
     'generic_time'                                        => '%H:%M',
+    'handy: overview'                                     => '',
     'has bookmark'                                        => 'heeft index',
     'has commflag'                                        => 'heeft reclamemarkering',
     'has cutlist'                                         => 'heeft knippunten',
@@ -189,6 +198,7 @@ $L = array(
     'length'                                              => 'duur',
     'minutes'                                             => 'minuten',
     'preview'                                             => 'preview',
+    'profile'                                             => 'profiel',
     'recgroup'                                            => 'opnamegroep',
     'recpriority'                                         => '',
     'rectype-long: always'                                => 'Dit programma altijd op elke zender opnemen.',
@@ -211,6 +221,8 @@ $L = array(
     'rectype: weekly'                                     => 'Wekelijks',
     'subtitle'                                            => 'aflevering',
     'title'                                               => 'titel',
+    'transcoder'                                          => '',
+    'type'                                                => 'type',
 // includes/programs.php
     'recstatus: cancelled'         => 'Dit programma zou opgenomen worden maar werd handmatig geannuleerd',
     'recstatus: conflict'          => 'Een ander programma met hogere prioriteit zal opgenomen worden',
@@ -254,18 +266,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => '',
-// themes/.../channel_detail.php
-    'Length' => 'Duur',
-    'Show'   => 'Toon',
-    'Time'   => 'Tijd',
 // themes/.../music.php
     'Album'               => '',
     'Album (filtered)'    => '',
@@ -287,13 +295,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profielgroepen',
     'Recording profiles' => 'Opnameprofielen',
-// themes/.../recording_schedules.php
-    'Any'                                       => 'Alle',
-    'No recording schedules have been defined.' => 'Er zijn geen opnameschema\'s gevonden.',
-    'channel'                                   => 'zender',
-    'profile'                                   => 'profiel',
-    'transcoder'                                => '',
-    'type'                                      => 'type',
 // themes/.../schedule_manually.php
     'Channel'           => 'Zender',
     'Create Schedule'   => 'Maak Schema',
@@ -302,9 +303,6 @@ $L = array(
     'Schedule Manually' => '',
     'Start Date'        => 'Start Datum',
     'Start Time'        => 'Start Tijd',
-// themes/.../search.php
-    'No matches found' => 'Geen programma\'s gevonden',
-    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => 'Zenders',
     'Configure'          => 'Instellen',
@@ -378,8 +376,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php

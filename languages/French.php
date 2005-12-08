@@ -30,6 +30,7 @@ $L = array(
     'Advanced Options'                                    => 'Options avancées',
     'Airtime'                                             => 'Heure de diffusion',
     'All recordings'                                      => 'Tous les enregistrements',
+    'Any'                                                 => 'Tous',
     'Are you sure you want to delete the following show?' => 'Etes vous s&ucirc;r d&acute;effacer cette &eacute;mission',
     'Auto-expire recordings'                              => 'Enregistrements auto-exiprant',
     'Auto-flag commercials'                               => 'Marquer les pubs',
@@ -88,6 +89,7 @@ $L = array(
     'Jump To'                                             => 'Aller &agrave;',
     'Jump to'                                             => 'Sauter vers',
     'Last Updated'                                        => 'Derni&egrave;re mise &agrave; jour',
+    'Length'                                              => 'Dur&eacute;e',
     'Listings'                                            => 'Liste',
     'Low'                                                 => 'faible',
     'Manually Schedule'                                   => 'Programmation Manuelle',
@@ -98,6 +100,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'M&eacute;t&eacute;o sur le web',
     'Never Record'                                        => 'Ne jamais enregistrer',
     'No'                                                  => 'Non',
+    'No matches found'                                    => 'Aucune correspondance',
+    'No recording schedules have been defined.'           => 'Aucune programmation n\'est définie',
     'No. of recordings to keep'                           => 'Nombre d&acute;enregistrements &agrave; garder',
     'None'                                                => 'Aucun',
     'Notes'                                               => 'Notes',
@@ -132,6 +136,7 @@ $L = array(
     'Search'                                              => 'Recherche',
     'Search Results'                                      => 'R&eacute;sultats de recherche',
     'Search fields'                                       => 'Champs de recherche',
+    'Search for:  $1'                                     => 'Chercher:    $1',
     'Search help'                                         => 'Aide de la recherche',
     'Search help: movie example'                          => '*** 1/2 Adventure',
     'Search help: movie search'                           => 'movie search',
@@ -140,6 +145,7 @@ $L = array(
     'Search options'                                      => 'Options de recherche',
     'Searches'                                            => 'Recherches',
     'Settings'                                            => 'param&egrave;tres',
+    'Show'                                                => 'Diffusion',
     'Show group'                                          => 'Monter les groupes',
     'Show recordings'                                     => 'Monter les enregistrements',
     'Start Early'                                         => 'D&eacute;marrer plus tot',
@@ -150,6 +156,7 @@ $L = array(
     'TV.com'                                              => '',
     'The requested recording schedule has been deleted.'  => 'L\'enregistrement demandé a été effacé',
     'Thursday'                                            => 'Jeudi',
+    'Time'                                                => 'Heure',
     'Time Stretch Default'                                => '',
     'Title'                                               => 'Titre',
     'Today'                                               => 'Aujourd&acute;hui',
@@ -177,11 +184,13 @@ $L = array(
     'Yes'                                                 => 'Oui',
     'airdate'                                             => 'Date de diffusion',
     'auto-expire'                                         => 'auto-expire',
+    'channel'                                             => 'Chaîne',
     'channum'                                             => 'Chaine',
     'description'                                         => 'Description',
     'file size'                                           => 'taille de fichier',
     'generic_date'                                        => '%e %b, %Y',
     'generic_time'                                        => '%I:%M %p',
+    'handy: overview'                                     => 'Cette page contient des recherches préparées dans le programme TV',
     'has bookmark'                                        => 'a des signets',
     'has commflag'                                        => 'a des marques de pub',
     'has cutlist'                                         => 'a une liste de coupe',
@@ -189,6 +198,7 @@ $L = array(
     'length'                                              => 'Dur&eacute;e',
     'minutes'                                             => 'minutes',
     'preview'                                             => 'Aper&ccedil;u',
+    'profile'                                             => 'Profil',
     'recgroup'                                            => 'Groupe d&eacute;enr',
     'recpriority'                                         => '',
     'rectype-long: always'                                => 'Enregistrer tout le temps quelque soit la chaine.',
@@ -211,6 +221,8 @@ $L = array(
     'rectype: weekly'                                     => 'hebdomadaire',
     'subtitle'                                            => 'Sous titre',
     'title'                                               => 'Titre',
+    'transcoder'                                          => '',
+    'type'                                                => 'Type',
 // includes/programs.php
     'recstatus: cancelled'         => 'Enregistrement pr&eacute;vu mais annul&eacute;',
     'recstatus: conflict'          => 'Un autre programme plus prioritaire sera enregistr&eacute;',
@@ -254,18 +266,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => 'Cette page contient des recherches préparées dans le programme TV',
-// themes/.../channel_detail.php
-    'Length' => 'Dur&eacute;e',
-    'Show'   => 'Diffusion',
-    'Time'   => 'Heure',
 // themes/.../music.php
     'Album'               => '',
     'Album (filtered)'    => '',
@@ -287,13 +295,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Groupes de profil',
     'Recording profiles' => 'Profils d&acute;enregistrement',
-// themes/.../recording_schedules.php
-    'Any'                                       => 'Tous',
-    'No recording schedules have been defined.' => 'Aucune programmation n\'est définie',
-    'channel'                                   => 'Chaîne',
-    'profile'                                   => 'Profil',
-    'transcoder'                                => '',
-    'type'                                      => 'Type',
 // themes/.../schedule_manually.php
     'Channel'           => 'Cha&icirc;ne',
     'Create Schedule'   => 'Creer une programmation',
@@ -302,9 +303,6 @@ $L = array(
     'Schedule Manually' => '',
     'Start Date'        => 'Date de d&eacute;but',
     'Start Time'        => 'Heure de d&eacute;but',
-// themes/.../search.php
-    'No matches found' => 'Aucune correspondance',
-    'Search for:  $1'  => 'Chercher:    $1',
 // themes/.../settings.php
     'Channels'           => 'Cha&icirc;nes',
     'Configure'          => 'Configuration',
@@ -378,8 +376,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php

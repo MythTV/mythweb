@@ -30,6 +30,7 @@ $L = array(
     'Advanced Options'                                    => 'アドバンストオプション',
     'Airtime'                                             => '放送時間',
     'All recordings'                                      => '全ての録画',
+    'Any'                                                 => '全て',
     'Are you sure you want to delete the following show?' => 'この録画を削除してよろしいですか？',
     'Auto-expire recordings'                              => '自動削除',
     'Auto-flag commercials'                               => 'CM自動検知',
@@ -88,6 +89,7 @@ $L = array(
     'Jump To'                                             => '移動',
     'Jump to'                                             => '移動',
     'Last Updated'                                        => '最後の更新',
+    'Length'                                              => '時間',
     'Listings'                                            => '一覧',
     'Low'                                                 => '低',
     'Manually Schedule'                                   => '手動録画',
@@ -98,6 +100,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'MythWeb 天気',
     'Never Record'                                        => 'もう録画しない',
     'No'                                                  => 'いいえ',
+    'No matches found'                                    => '一致する物がありませんでした',
+    'No recording schedules have been defined.'           => '予約が設定されていません',
     'No. of recordings to keep'                           => '録画番組保存数',
     'None'                                                => '無し',
     'Notes'                                               => '備考',
@@ -132,6 +136,7 @@ $L = array(
     'Search'                                              => '検索',
     'Search Results'                                      => '検索結果',
     'Search fields'                                       => '検索フィールド',
+    'Search for:  $1'                                     => '$1 の検索結果',
     'Search help'                                         => '検索ヘルプ',
     'Search help: movie example'                          => '*** 1/2 アドベンチャー',
     'Search help: movie search'                           => '映画検索',
@@ -140,6 +145,7 @@ $L = array(
     'Search options'                                      => '検索オプション',
     'Searches'                                            => '検索メニュー',
     'Settings'                                            => '設定',
+    'Show'                                                => '番組',
     'Show group'                                          => 'グループ表示',
     'Show recordings'                                     => '番組表示',
     'Start Early'                                         => '早めの録画',
@@ -150,6 +156,7 @@ $L = array(
     'TV.com'                                              => '',
     'The requested recording schedule has been deleted.'  => '要求された予約は既に削除されています。',
     'Thursday'                                            => '木曜日',
+    'Time'                                                => '放送時間',
     'Time Stretch Default'                                => '',
     'Title'                                               => 'タイトル',
     'Today'                                               => '今日',
@@ -177,11 +184,13 @@ $L = array(
     'Yes'                                                 => 'はい',
     'airdate'                                             => '放送日',
     'auto-expire'                                         => '自動削除',
+    'channel'                                             => 'チャンネル',
     'channum'                                             => 'チャンネル',
     'description'                                         => '内容',
     'file size'                                           => 'ファイルサイズ',
     'generic_date'                                        => '%Y %b %e',
     'generic_time'                                        => '%I:%M %p',
+    'handy: overview'                                     => 'おてがる検索: 一覧',
     'has bookmark'                                        => 'ブックマーク',
     'has commflag'                                        => 'CMマーク',
     'has cutlist'                                         => 'カットリスト',
@@ -189,6 +198,7 @@ $L = array(
     'length'                                              => '時間',
     'minutes'                                             => '分',
     'preview'                                             => 'プレビュー',
+    'profile'                                             => 'プロファイル',
     'recgroup'                                            => 'グループ',
     'recpriority'                                         => '',
     'rectype-long: always'                                => 'この番組をどのチャンネルでも録画する',
@@ -211,6 +221,8 @@ $L = array(
     'rectype: weekly'                                     => '毎週',
     'subtitle'                                            => 'サブタイトル',
     'title'                                               => 'タイトル',
+    'transcoder'                                          => '',
+    'type'                                                => 'タイプ',
 // includes/programs.php
     'recstatus: cancelled'         => '録画状態: キャンセル',
     'recstatus: conflict'          => '録画状態: 衝突',
@@ -254,18 +266,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => 'おてがる検索: 一覧',
-// themes/.../channel_detail.php
-    'Length' => '時間',
-    'Show'   => '番組',
-    'Time'   => '放送時間',
 // themes/.../music.php
     'Album'               => '',
     'Album (filtered)'    => '',
@@ -287,13 +295,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'プロファイルグループ',
     'Recording profiles' => '録画プロファイル',
-// themes/.../recording_schedules.php
-    'Any'                                       => '全て',
-    'No recording schedules have been defined.' => '予約が設定されていません',
-    'channel'                                   => 'チャンネル',
-    'profile'                                   => 'プロファイル',
-    'transcoder'                                => '',
-    'type'                                      => 'タイプ',
 // themes/.../schedule_manually.php
     'Channel'           => 'チャンネル',
     'Create Schedule'   => '予約作成',
@@ -302,9 +303,6 @@ $L = array(
     'Schedule Manually' => '',
     'Start Date'        => '開始日',
     'Start Time'        => '開始時間',
-// themes/.../search.php
-    'No matches found' => '一致する物がありませんでした',
-    'Search for:  $1'  => '$1 の検索結果',
 // themes/.../settings.php
     'Channels'           => 'チャンネル',
     'Configure'          => '設定',
@@ -378,8 +376,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php

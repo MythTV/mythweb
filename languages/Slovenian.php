@@ -30,6 +30,7 @@ $L = array(
     'Advanced Options'                                    => 'Dodatne možnosti',
     'Airtime'                                             => 'Čas predvajanja',
     'All recordings'                                      => 'Vsa snemanja',
+    'Any'                                                 => 'Katera koli',
     'Are you sure you want to delete the following show?' => 'Ste prepričani, da želite izbrisati to oddajo?',
     'Auto-expire recordings'                              => 'Snemanja avto-preteka',
     'Auto-flag commercials'                               => 'Avto-označi reklame',
@@ -88,6 +89,7 @@ $L = array(
     'Jump To'                                             => 'Skoči na',
     'Jump to'                                             => 'Skoči na',
     'Last Updated'                                        => 'Zadnjič posodobljeno',
+    'Length'                                              => 'Trajanje',
     'Listings'                                            => 'Seznam',
     'Low'                                                 => 'Nizka',
     'Manually Schedule'                                   => 'Ročno planiranje',
@@ -98,6 +100,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'MythWeb vreme',
     'Never Record'                                        => 'Nikoli ne snemaj',
     'No'                                                  => 'Ne',
+    'No matches found'                                    => 'Ni zadetkov',
+    'No recording schedules have been defined.'           => 'Definiran ni bil noben snemalni plan.',
     'No. of recordings to keep'                           => 'Št. ohranjenih snemanj',
     'None'                                                => 'Nobeno',
     'Notes'                                               => 'Opombe',
@@ -132,6 +136,7 @@ $L = array(
     'Search'                                              => 'Iskanje',
     'Search Results'                                      => 'Rezultati iskanja',
     'Search fields'                                       => 'Iskalna polja',
+    'Search for:  $1'                                     => 'Iskanje:  $1',
     'Search help'                                         => 'Pomoč iskanja',
     'Search help: movie example'                          => '*** 1/2 Adventure',
     'Search help: movie search'                           => 'movie search',
@@ -140,6 +145,7 @@ $L = array(
     'Search options'                                      => 'Možnosti iskanja',
     'Searches'                                            => 'Iskanja',
     'Settings'                                            => 'Nastavitve',
+    'Show'                                                => 'Oddaja',
     'Show group'                                          => 'Pokaži skupino',
     'Show recordings'                                     => 'Pokaži snemanja',
     'Start Early'                                         => 'Začni prej',
@@ -150,6 +156,7 @@ $L = array(
     'TV.com'                                              => '',
     'The requested recording schedule has been deleted.'  => 'Zahtevani snemalni plan je bil izbrisan',
     'Thursday'                                            => 'Četrtek',
+    'Time'                                                => 'Čas',
     'Time Stretch Default'                                => '',
     'Title'                                               => 'Naslov',
     'Today'                                               => 'Danes',
@@ -177,11 +184,13 @@ $L = array(
     'Yes'                                                 => 'Da',
     'airdate'                                             => 'datum oddajanja',
     'auto-expire'                                         => 'avto-brisanje',
+    'channel'                                             => 'kanal',
     'channum'                                             => 'številka kanala',
     'description'                                         => 'opis',
     'file size'                                           => 'velikost datoteke',
     'generic_date'                                        => '%e.%m.%Y',
     'generic_time'                                        => '%H:%M',
+    'handy: overview'                                     => 'Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.',
     'has bookmark'                                        => 'ima zaznamek',
     'has commflag'                                        => 'ima označene reklame',
     'has cutlist'                                         => 'ima seznam rezov',
@@ -189,6 +198,7 @@ $L = array(
     'length'                                              => 'dolžina',
     'minutes'                                             => 'minute',
     'preview'                                             => 'predogled',
+    'profile'                                             => 'profil',
     'recgroup'                                            => 'snemalna skupina',
     'recpriority'                                         => '',
     'rectype-long: always'                                => '',
@@ -211,6 +221,8 @@ $L = array(
     'rectype: weekly'                                     => 'tedensko',
     'subtitle'                                            => 'Podnaslov',
     'title'                                               => 'Naslov',
+    'transcoder'                                          => '',
+    'type'                                                => 'tip',
 // includes/programs.php
     'recstatus: cancelled'         => 'Bilo je planirano za snemanje, ampak je bilo ročno preklicano.',
     'recstatus: conflict'          => 'Sneman bo drugi program z višjo prioriteto.',
@@ -254,18 +266,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => 'Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.',
-// themes/.../channel_detail.php
-    'Length' => 'Trajanje',
-    'Show'   => 'Oddaja',
-    'Time'   => 'Čas',
 // themes/.../music.php
     'Album'               => '',
     'Album (filtered)'    => '',
@@ -287,13 +295,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profilne skupine',
     'Recording profiles' => 'Snemalne skupine',
-// themes/.../recording_schedules.php
-    'Any'                                       => 'Katera koli',
-    'No recording schedules have been defined.' => 'Definiran ni bil noben snemalni plan.',
-    'channel'                                   => 'kanal',
-    'profile'                                   => 'profil',
-    'transcoder'                                => '',
-    'type'                                      => 'tip',
 // themes/.../schedule_manually.php
     'Channel'           => 'Kanal',
     'Create Schedule'   => 'Ustvari plan snemanja',
@@ -302,9 +303,6 @@ $L = array(
     'Schedule Manually' => '',
     'Start Date'        => 'Datum začetka',
     'Start Time'        => 'Čas začetka',
-// themes/.../search.php
-    'No matches found' => 'Ni zadetkov',
-    'Search for:  $1'  => 'Iskanje:  $1',
 // themes/.../settings.php
     'Channels'           => 'Kanali',
     'Configure'          => 'Konfiguracija',
@@ -378,8 +376,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php

@@ -35,6 +35,7 @@ $L = array(
     'Advanced Options'                                    => 'Edistyneet Valinnat',
     'Airtime'                                             => 'Lähetysaika',
     'All recordings'                                      => 'Kaikki nauhoitukset',
+    'Any'                                                 => 'Mikä vain',
     'Are you sure you want to delete the following show?' => 'Poistetaanko seuraavat ohjelmat?',
     'Auto-expire recordings'                              => 'Aut. vanheneminen',
     'Auto-flag commercials'                               => 'Aut. mainosten merkkaus',
@@ -93,6 +94,7 @@ $L = array(
     'Jump To'                                             => 'Hyppää',
     'Jump to'                                             => 'Hyppää',
     'Last Updated'                                        => 'Päivitetty Viimeksi',
+    'Length'                                              => 'Pituus',
     'Listings'                                            => 'Listaus',
     'Low'                                                 => 'Alin',
     'Manually Schedule'                                   => 'Manuaalinen Ajastus',
@@ -103,6 +105,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'MythWeb Sääennuste.',
     'Never Record'                                        => 'Älä Koskaan Nauhoita',
     'No'                                                  => 'N:o',
+    'No matches found'                                    => 'Ei vastaavuuksia',
+    'No recording schedules have been defined.'           => 'Ajoituksia ei määritelty.',
     'No. of recordings to keep'                           => 'N:o nauhoituksia pidettäväksi',
     'None'                                                => 'Ei Mikään',
     'Notes'                                               => 'Viesti',
@@ -137,6 +141,7 @@ $L = array(
     'Search'                                              => 'Etsi',
     'Search Results'                                      => 'Etsinnän Tulokset',
     'Search fields'                                       => 'Etsintäasetukset',
+    'Search for:  $1'                                     => 'Etsi:  $1',
     'Search help'                                         => 'Etsintäapu',
     'Search help: movie example'                          => '*** 1/2 Seikkailu',
     'Search help: movie search'                           => 'Elokuvan Haku',
@@ -145,6 +150,7 @@ $L = array(
     'Search options'                                      => 'Etsintävalinnat',
     'Searches'                                            => 'Etsinnät',
     'Settings'                                            => 'Asetukset',
+    'Show'                                                => 'Ohjelma',
     'Show group'                                          => 'Näytä ryhmä',
     'Show recordings'                                     => 'Näytä nauhoitukset',
     'Start Early'                                         => 'Aloita Aiemmin',
@@ -155,6 +161,7 @@ $L = array(
     'TV.com'                                              => 'TV.com',
     'The requested recording schedule has been deleted.'  => 'Ajoitettu nauhoitus on poistettu',
     'Thursday'                                            => 'Torstai',
+    'Time'                                                => 'Aika',
     'Time Stretch Default'                                => 'Ajan Säädön Oletus',
     'Title'                                               => 'Nimike',
     'Today'                                               => 'Tänään',
@@ -182,11 +189,13 @@ $L = array(
     'Yes'                                                 => 'Kyllä',
     'airdate'                                             => 'lähetysaika',
     'auto-expire'                                         => 'anna vanheta',
+    'channel'                                             => 'kanava',
     'channum'                                             => 'Kanava',
     'description'                                         => 'kuvaus',
     'file size'                                           => 'tiedostokoko',
     'generic_date'                                        => '%a %b %e, %Y',
     'generic_time'                                        => '%I:%M %p',
+    'handy: overview'                                     => 'Sisältää valmiita edistyneen etsinnän lauseita.',
     'has bookmark'                                        => 'kirjanmerkitty',
     'has commflag'                                        => 'mainokset merkitty',
     'has cutlist'                                         => 'on leikattu',
@@ -194,6 +203,7 @@ $L = array(
     'length'                                              => 'pituus',
     'minutes'                                             => 'minuuttia',
     'preview'                                             => 'esikatselu',
+    'profile'                                             => 'profiili',
     'recgroup'                                            => 'nauh.ryhmä',
     'recpriority'                                         => 'Nauhoitusprioriteetti',
     'rectype-long: always'                                => 'Nauhoita mihin aikaan tahansa millä kanavalla tahansa.',
@@ -216,6 +226,8 @@ $L = array(
     'rectype: weekly'                                     => 'Viikottain',
     'subtitle'                                            => 'Jakson nimi',
     'title'                                               => 'Nimike',
+    'transcoder'                                          => '',
+    'type'                                                => 'tyyppi',
 // includes/programs.php
     'recstatus: cancelled'         => 'Ajoitettu nauhoitus oli manuaalisesti peruttu.',
     'recstatus: conflict'          => 'Toinen korkeamman prioriteetin ohjelma nauhoitetaan tämän sijasta.',
@@ -259,18 +271,14 @@ $L = array(
     'settings' => 'Asetukset',
 // modules/status/init.php
     'Status' => 'Systeemin Tila',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => 'Ohjelmahaku',
     'Special Searches' => 'Edistynyt Haku',
     'TV'               => '',
 // modules/video/init.php
     'Video' => 'Videot',
-// themes/.../canned_searches.php
-    'handy: overview' => 'Sisältää valmiita edistyneen etsinnän lauseita.',
-// themes/.../channel_detail.php
-    'Length' => 'Pituus',
-    'Show'   => 'Ohjelma',
-    'Time'   => 'Aika',
 // themes/.../music.php
     'Album'               => 'Albumi',
     'Album (filtered)'    => 'Albumi (suodatettu)',
@@ -292,13 +300,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profiililuokat',
     'Recording profiles' => 'Nauhoitusprofiilit',
-// themes/.../recording_schedules.php
-    'Any'                                       => 'Mikä vain',
-    'No recording schedules have been defined.' => 'Ajoituksia ei määritelty.',
-    'channel'                                   => 'kanava',
-    'profile'                                   => 'profiili',
-    'transcoder'                                => '',
-    'type'                                      => 'tyyppi',
 // themes/.../schedule_manually.php
     'Channel'           => 'Kanava',
     'Create Schedule'   => 'Ajoita Nauhoitus',
@@ -307,9 +308,6 @@ $L = array(
     'Schedule Manually' => 'Ajoita Manuaalisesti',
     'Start Date'        => 'Päivämäärä',
     'Start Time'        => 'Aloitusaika',
-// themes/.../search.php
-    'No matches found' => 'Ei vastaavuuksia',
-    'Search for:  $1'  => 'Etsi:  $1',
 // themes/.../settings.php
     'Channels'           => 'Kanavat',
     'Configure'          => 'Asetukset',
@@ -383,8 +381,14 @@ $L = array(
     'Configure MythWeb.' => 'Aseta MythWeb.',
 // themes/default/status/welcome.php
     'Show the backend status page.' => 'Näytä Systeemin tila.',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => 'EI DATAA',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => 'TV-ohjelmien nauhoittamisasetukset. Valitse seuraavista:',
 // themes/default/video/welcome.php

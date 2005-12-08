@@ -30,6 +30,7 @@ $L = array(
     'Advanced Options'                                    => 'Avancerade inställningar',
     'Airtime'                                             => 'Sändningstid',
     'All recordings'                                      => 'Alla inspelningar',
+    'Any'                                                 => 'Alla',
     'Are you sure you want to delete the following show?' => 'Är du säker på att du vill ta bort följande inspelning?',
     'Auto-expire recordings'                              => 'Autoradera inspelningar',
     'Auto-flag commercials'                               => 'Markera reklam automatiskt',
@@ -88,6 +89,7 @@ $L = array(
     'Jump To'                                             => 'Gå till',
     'Jump to'                                             => 'Gå till',
     'Last Updated'                                        => 'Senast uppdaterad',
+    'Length'                                              => 'Längd',
     'Listings'                                            => 'TV-tablåer',
     'Low'                                                 => 'Låg',
     'Manually Schedule'                                   => 'Manuell schemaläggning',
@@ -98,6 +100,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'MythWeb väder.',
     'Never Record'                                        => 'Spela aldrig in',
     'No'                                                  => 'Nej',
+    'No matches found'                                    => 'Inga matchningar funna',
+    'No recording schedules have been defined.'           => 'Inga schemalagda inspelningar',
     'No. of recordings to keep'                           => 'Antal inspelningar att behålla',
     'None'                                                => 'Ingen',
     'Notes'                                               => 'Anteckningar',
@@ -132,6 +136,7 @@ $L = array(
     'Search'                                              => 'Sök',
     'Search Results'                                      => 'Sökresultat',
     'Search fields'                                       => 'Sökfält',
+    'Search for:  $1'                                     => 'Sök efter:  $1',
     'Search help'                                         => 'Sökhjälp',
     'Search help: movie example'                          => '*** Äventyr',
     'Search help: movie search'                           => 'Filmsökning',
@@ -140,6 +145,7 @@ $L = array(
     'Search options'                                      => 'Sökval',
     'Searches'                                            => 'Sökningar',
     'Settings'                                            => 'Inställningar',
+    'Show'                                                => 'Program',
     'Show group'                                          => 'Visa grupp',
     'Show recordings'                                     => 'Visa inspelningar',
     'Start Early'                                         => 'Börja tidigare',
@@ -150,6 +156,7 @@ $L = array(
     'TV.com'                                              => 'TV.com',
     'The requested recording schedule has been deleted.'  => 'Det begärda inspelningsschemat har tagits bort.',
     'Thursday'                                            => 'Torsdag',
+    'Time'                                                => 'Tid',
     'Time Stretch Default'                                => 'Förvalt tempo',
     'Title'                                               => 'Titel',
     'Today'                                               => 'Idag',
@@ -177,11 +184,13 @@ $L = array(
     'Yes'                                                 => 'Ja',
     'airdate'                                             => 'visningsdatum',
     'auto-expire'                                         => 'autoradera',
+    'channel'                                             => 'kanal',
     'channum'                                             => 'kanalnummer',
     'description'                                         => 'beskrivning',
     'file size'                                           => 'filstorlek',
     'generic_date'                                        => '%Y-%m-%d',
     'generic_time'                                        => '%H:%M',
+    'handy: overview'                                     => 'Denna sida innehåller förberedda komplexa sökningar av programlistorna.',
     'has bookmark'                                        => 'bokmärke',
     'has commflag'                                        => 'markerad reklam',
     'has cutlist'                                         => 'klipplista',
@@ -189,6 +198,7 @@ $L = array(
     'length'                                              => 'längd',
     'minutes'                                             => 'minuter',
     'preview'                                             => 'förhandsvisning',
+    'profile'                                             => 'profil',
     'recgroup'                                            => 'inspelningsgrupp',
     'recpriority'                                         => 'inspelningsprioritet',
     'rectype-long: always'                                => 'Spela in vilken tid som helst på alla kanaler.',
@@ -211,6 +221,8 @@ $L = array(
     'rectype: weekly'                                     => 'Veckovis',
     'subtitle'                                            => 'undertitel',
     'title'                                               => 'titel',
+    'transcoder'                                          => 'omkodare',
+    'type'                                                => 'typ',
 // includes/programs.php
     'recstatus: cancelled'         => 'Denna visning spelades inte in därför att den avbröts manuellt.',
     'recstatus: conflict'          => 'Ett annat program med en högre prioritet kommer att spelas in.',
@@ -254,18 +266,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => 'Denna sida innehåller förberedda komplexa sökningar av programlistorna.',
-// themes/.../channel_detail.php
-    'Length' => 'Längd',
-    'Show'   => 'Program',
-    'Time'   => 'Tid',
 // themes/.../music.php
     'Album'               => 'Album',
     'Album (filtered)'    => 'Album (filtrerat)',
@@ -287,13 +295,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profilgrupper',
     'Recording profiles' => 'Inspelningsprofiler',
-// themes/.../recording_schedules.php
-    'Any'                                       => 'Alla',
-    'No recording schedules have been defined.' => 'Inga schemalagda inspelningar',
-    'channel'                                   => 'kanal',
-    'profile'                                   => 'profil',
-    'transcoder'                                => 'omkodare',
-    'type'                                      => 'typ',
 // themes/.../schedule_manually.php
     'Channel'           => 'Kanal',
     'Create Schedule'   => 'Schemalägg',
@@ -302,9 +303,6 @@ $L = array(
     'Schedule Manually' => 'Schemalägg manuellt',
     'Start Date'        => 'Startdatum',
     'Start Time'        => 'Starttid',
-// themes/.../search.php
-    'No matches found' => 'Inga matchningar funna',
-    'Search for:  $1'  => 'Sök efter:  $1',
 // themes/.../settings.php
     'Channels'           => 'Kanaler',
     'Configure'          => 'Konfigurera',
@@ -378,8 +376,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php

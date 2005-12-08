@@ -30,6 +30,7 @@ $L = array(
     'Advanced Options'                                    => 'Avancerede indstillinger',
     'Airtime'                                             => 'Visningsdato',
     'All recordings'                                      => 'Alle optagelser',
+    'Any'                                                 => 'Alle',
     'Are you sure you want to delete the following show?' => 'Er du sikker på at du vil slette programmet?',
     'Auto-expire recordings'                              => 'Auto-udløb optagelser',
     'Auto-flag commercials'                               => 'Marker automatisk reklamer',
@@ -88,6 +89,7 @@ $L = array(
     'Jump To'                                             => 'Gå Til',
     'Jump to'                                             => 'Gå til',
     'Last Updated'                                        => 'Sidst opdateret',
+    'Length'                                              => 'Længde',
     'Listings'                                            => 'Programoversigt',
     'Low'                                                 => 'Lav',
     'Manually Schedule'                                   => 'Planlæg manuelt',
@@ -98,6 +100,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'MythWeb Vejrudsigt',
     'Never Record'                                        => 'Optag aldrig',
     'No'                                                  => 'Nej',
+    'No matches found'                                    => 'Ingen resultater',
+    'No recording schedules have been defined.'           => '',
     'No. of recordings to keep'                           => 'Gem antal optagelser',
     'None'                                                => 'Ingen',
     'Notes'                                               => 'Bemærkninger',
@@ -132,6 +136,7 @@ $L = array(
     'Search'                                              => 'Søg',
     'Search Results'                                      => 'Søgeresultater',
     'Search fields'                                       => '',
+    'Search for:  $1'                                     => '',
     'Search help'                                         => '',
     'Search help: movie example'                          => '*** 1/2 Adventure',
     'Search help: movie search'                           => 'movie search',
@@ -140,6 +145,7 @@ $L = array(
     'Search options'                                      => '',
     'Searches'                                            => '',
     'Settings'                                            => 'Indstillinger',
+    'Show'                                                => 'Program',
     'Show group'                                          => 'Vis gruppe',
     'Show recordings'                                     => 'Vis optagelser',
     'Start Early'                                         => 'Start tidligere (min)',
@@ -150,6 +156,7 @@ $L = array(
     'TV.com'                                              => '',
     'The requested recording schedule has been deleted.'  => 'Den planlagte optagelse er blevet slettet',
     'Thursday'                                            => 'Torsdag',
+    'Time'                                                => 'Tidspunkt',
     'Time Stretch Default'                                => '',
     'Title'                                               => 'Titel',
     'Today'                                               => 'I dag',
@@ -177,11 +184,13 @@ $L = array(
     'Yes'                                                 => 'Ja',
     'airdate'                                             => 'visningsdato',
     'auto-expire'                                         => 'auto-udløb',
+    'channel'                                             => '',
     'channum'                                             => 'kanalnummer',
     'description'                                         => 'beskrivelse',
     'file size'                                           => 'filstørrelse',
     'generic_date'                                        => '%a %e %b %Y',
     'generic_time'                                        => '%H:%M',
+    'handy: overview'                                     => '',
     'has bookmark'                                        => 'har bookmark(s)',
     'has commflag'                                        => 'har markeret reklameblokke',
     'has cutlist'                                         => 'har klippeliste',
@@ -189,6 +198,7 @@ $L = array(
     'length'                                              => 'længde',
     'minutes'                                             => 'minutter',
     'preview'                                             => 'forhåndsvisning',
+    'profile'                                             => 'profil',
     'recgroup'                                            => 'Optagelsesgrupper',
     'recpriority'                                         => '',
     'rectype-long: always'                                => 'Optag når som helst på alle kanaler.',
@@ -211,6 +221,8 @@ $L = array(
     'rectype: weekly'                                     => 'Ugentligt',
     'subtitle'                                            => 'undertitel',
     'title'                                               => 'titel',
+    'transcoder'                                          => '',
+    'type'                                                => 'type',
 // includes/programs.php
     'recstatus: cancelled'         => 'Dette var planlagt til at skulle optages, men blev aflyst manuelt.',
     'recstatus: conflict'          => 'Et andet program med højere optageprioritet bliver optaget.',
@@ -254,18 +266,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => '',
-// themes/.../channel_detail.php
-    'Length' => 'Længde',
-    'Show'   => 'Program',
-    'Time'   => 'Tidspunkt',
 // themes/.../music.php
     'Album'               => '',
     'Album (filtered)'    => '',
@@ -287,13 +295,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profilgrupper',
     'Recording profiles' => 'Optagelsesprofiler',
-// themes/.../recording_schedules.php
-    'Any'                                       => 'Alle',
-    'No recording schedules have been defined.' => '',
-    'channel'                                   => '',
-    'profile'                                   => 'profil',
-    'transcoder'                                => '',
-    'type'                                      => 'type',
 // themes/.../schedule_manually.php
     'Channel'           => 'Kanal',
     'Create Schedule'   => 'Planlæg',
@@ -302,9 +303,6 @@ $L = array(
     'Schedule Manually' => '',
     'Start Date'        => 'Startdato',
     'Start Time'        => 'Starttidspunkt',
-// themes/.../search.php
-    'No matches found' => 'Ingen resultater',
-    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => 'Kanaler',
     'Configure'          => 'Konfigurer',
@@ -378,8 +376,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php

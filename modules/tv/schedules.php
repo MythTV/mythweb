@@ -13,10 +13,7 @@
  *
 /**/
 
-// Which section are we in?
-    define('section', 'tv');
-
-// Initialize the script, database, etc.
+// Load the sorting routines
     require_once "includes/sorting.php";
 
 // Load the recordings

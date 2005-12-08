@@ -31,6 +31,7 @@ $L = array(
     'Advanced Options'                                    => '',
     'Airtime'                                             => '',
     'All recordings'                                      => '',
+    'Any'                                                 => '',
     'Are you sure you want to delete the following show?' => '',
     'Auto-expire recordings'                              => '',
     'Auto-flag commercials'                               => '',
@@ -89,6 +90,7 @@ $L = array(
     'Jump To'                                             => '',
     'Jump to'                                             => '',
     'Last Updated'                                        => '',
+    'Length'                                              => '',
     'Listings'                                            => '',
     'Low'                                                 => '',
     'Manually Schedule'                                   => '',
@@ -99,6 +101,8 @@ $L = array(
     'MythWeb Weather.'                                    => '',
     'Never Record'                                        => '',
     'No'                                                  => '',
+    'No matches found'                                    => '',
+    'No recording schedules have been defined.'           => '',
     'No. of recordings to keep'                           => '',
     'None'                                                => '',
     'Notes'                                               => '',
@@ -133,6 +137,7 @@ $L = array(
     'Search'                                              => '',
     'Search Results'                                      => '',
     'Search fields'                                       => '',
+    'Search for:  $1'                                     => '',
     'Search help'                                         => '',
     'Search help: movie example'                          => '*** 1/2 Adventure',
     'Search help: movie search'                           => 'movie search',
@@ -141,6 +146,7 @@ $L = array(
     'Search options'                                      => '',
     'Searches'                                            => '',
     'Settings'                                            => '',
+    'Show'                                                => '',
     'Show group'                                          => '',
     'Show recordings'                                     => '',
     'Start Early'                                         => '',
@@ -151,6 +157,7 @@ $L = array(
     'TV.com'                                              => '',
     'The requested recording schedule has been deleted.'  => '',
     'Thursday'                                            => '',
+    'Time'                                                => '',
     'Time Stretch Default'                                => '',
     'Title'                                               => '',
     'Today'                                               => '',
@@ -178,11 +185,13 @@ $L = array(
     'Yes'                                                 => '',
     'airdate'                                             => '',
     'auto-expire'                                         => '',
+    'channel'                                             => '',
     'channum'                                             => '',
     'description'                                         => '',
     'file size'                                           => '',
     'generic_date'                                        => '%a %b %e, %Y',
     'generic_time'                                        => '%I:%M %p',
+    'handy: overview'                                     => 'This page contains pre-prepared complex searches of the program listings.',
     'has bookmark'                                        => '',
     'has commflag'                                        => '',
     'has cutlist'                                         => '',
@@ -190,6 +199,7 @@ $L = array(
     'length'                                              => '',
     'minutes'                                             => '',
     'preview'                                             => '',
+    'profile'                                             => '',
     'recgroup'                                            => '',
     'recpriority'                                         => '',
     'rectype-long: always'                                => 'Record at any time on any channel.',
@@ -212,6 +222,8 @@ $L = array(
     'rectype: weekly'                                     => 'Weekly',
     'subtitle'                                            => '',
     'title'                                               => '',
+    'transcoder'                                          => '',
+    'type'                                                => '',
 // includes/programs.php
     'recstatus: cancelled'         => 'This was scheduled to be recorded but was manually canceled.',
     'recstatus: conflict'          => 'Another program with a higher recording priority will be recorded.',
@@ -255,18 +267,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => 'This page contains pre-prepared complex searches of the program listings.',
-// themes/.../channel_detail.php
-    'Length' => '',
-    'Show'   => '',
-    'Time'   => '',
 // themes/.../music.php
     'Album'               => '',
     'Album (filtered)'    => '',
@@ -288,13 +296,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => '',
     'Recording profiles' => '',
-// themes/.../recording_schedules.php
-    'Any'                                       => '',
-    'No recording schedules have been defined.' => '',
-    'channel'                                   => '',
-    'profile'                                   => '',
-    'transcoder'                                => '',
-    'type'                                      => '',
 // themes/.../schedule_manually.php
     'Channel'           => '',
     'Create Schedule'   => '',
@@ -303,9 +304,6 @@ $L = array(
     'Schedule Manually' => '',
     'Start Date'        => '',
     'Start Time'        => '',
-// themes/.../search.php
-    'No matches found' => '',
-    'Search for:  $1'  => '',
 // themes/.../settings.php
     'Channels'           => '',
     'Configure'          => '',
@@ -379,8 +377,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php

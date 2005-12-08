@@ -30,6 +30,7 @@ $L = array(
     'Advanced Options'                                    => 'Opciones Avanzadas',
     'Airtime'                                             => 'Horario',
     'All recordings'                                      => 'Todas las grabaciones',
+    'Any'                                                 => 'Cualquiera',
     'Are you sure you want to delete the following show?' => 'Está seguro de borrar el siguiente programa?',
     'Auto-expire recordings'                              => 'Autoexpirar grabaciones',
     'Auto-flag commercials'                               => 'Automarcar anuncios',
@@ -88,6 +89,7 @@ $L = array(
     'Jump To'                                             => 'Saltar a',
     'Jump to'                                             => 'Saltar a',
     'Last Updated'                                        => 'Útima Actualización',
+    'Length'                                              => 'Duración',
     'Listings'                                            => 'Listados',
     'Low'                                                 => 'Bajo',
     'Manually Schedule'                                   => 'Programar manualmente',
@@ -98,6 +100,8 @@ $L = array(
     'MythWeb Weather.'                                    => 'Tiempo MythWeb',
     'Never Record'                                        => 'Nunca grabar',
     'No'                                                  => 'No',
+    'No matches found'                                    => 'Sin resultados',
+    'No recording schedules have been defined.'           => 'No se han definido programaciones',
     'No. of recordings to keep'                           => 'N de grabaciones a guardar',
     'None'                                                => 'Ninguna',
     'Notes'                                               => 'Notas',
@@ -132,6 +136,7 @@ $L = array(
     'Search'                                              => 'Buscar',
     'Search Results'                                      => 'Resultados bsqueda',
     'Search fields'                                       => 'Campos bsqueda',
+    'Search for:  $1'                                     => 'Buscar: $1',
     'Search help'                                         => 'Ayuda bsqueda',
     'Search help: movie example'                          => '*** 1/2 Aventura',
     'Search help: movie search'                           => 'buscar película',
@@ -140,6 +145,7 @@ $L = array(
     'Search options'                                      => 'Opciones bsqueda',
     'Searches'                                            => 'Búsquedas',
     'Settings'                                            => 'Ajustes',
+    'Show'                                                => 'Programa',
     'Show group'                                          => 'Mostrar grupo',
     'Show recordings'                                     => 'Mostrar grabaciones',
     'Start Early'                                         => 'Comenzar antes',
@@ -150,6 +156,7 @@ $L = array(
     'TV.com'                                              => '',
     'The requested recording schedule has been deleted.'  => 'La programación pedida ha sido borrada.',
     'Thursday'                                            => 'Jueves',
+    'Time'                                                => 'Hora',
     'Time Stretch Default'                                => 'Ajuste de tiempo por defecto',
     'Title'                                               => 'Título',
     'Today'                                               => 'Hoy',
@@ -177,11 +184,13 @@ $L = array(
     'Yes'                                                 => 'Sí',
     'airdate'                                             => 'emisión',
     'auto-expire'                                         => 'autoexpirar',
+    'channel'                                             => 'canal',
     'channum'                                             => 'nºcanal',
     'description'                                         => 'descripción',
     'file size'                                           => 'tamaño fichero',
     'generic_date'                                        => '%b %e, %Y',
     'generic_time'                                        => '%I:%M %p',
+    'handy: overview'                                     => '',
     'has bookmark'                                        => 'tiene marcador',
     'has commflag'                                        => 'anuncios marcados',
     'has cutlist'                                         => 'lista de corte',
@@ -189,6 +198,7 @@ $L = array(
     'length'                                              => 'duración',
     'minutes'                                             => 'minutos',
     'preview'                                             => 'vista previa',
+    'profile'                                             => 'perfil',
     'recgroup'                                            => 'grupo',
     'recpriority'                                         => 'prioridad',
     'rectype-long: always'                                => 'rectype-long: siempre',
@@ -211,6 +221,8 @@ $L = array(
     'rectype: weekly'                                     => 'rectype: semanal',
     'subtitle'                                            => 'subtítulo',
     'title'                                               => 'título',
+    'transcoder'                                          => 'recodificador',
+    'type'                                                => 'tipo',
 // includes/programs.php
     'recstatus: cancelled'         => 'estado: cancelado',
     'recstatus: conflict'          => 'estado: conflicto',
@@ -254,18 +266,14 @@ $L = array(
     'settings' => '',
 // modules/status/init.php
     'Status' => '',
+// modules/stream/init.php
+    'Streaming' => '',
 // modules/tv/init.php
     'Search TV'        => '',
     'Special Searches' => '',
     'TV'               => '',
 // modules/video/init.php
     'Video' => '',
-// themes/.../canned_searches.php
-    'handy: overview' => '',
-// themes/.../channel_detail.php
-    'Length' => 'Duración',
-    'Show'   => 'Programa',
-    'Time'   => 'Hora',
 // themes/.../music.php
     'Album'               => 'Álbum',
     'Album (filtered)'    => 'Álbum (filtrado)',
@@ -287,13 +295,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Grupos de Perfiles',
     'Recording profiles' => 'Perfiles de Grabaci�',
-// themes/.../recording_schedules.php
-    'Any'                                       => 'Cualquiera',
-    'No recording schedules have been defined.' => 'No se han definido programaciones',
-    'channel'                                   => 'canal',
-    'profile'                                   => 'perfil',
-    'transcoder'                                => 'recodificador',
-    'type'                                      => 'tipo',
 // themes/.../schedule_manually.php
     'Channel'           => 'Canal',
     'Create Schedule'   => 'Crear programación',
@@ -302,9 +303,6 @@ $L = array(
     'Schedule Manually' => 'Programar manualmente',
     'Start Date'        => 'Fecha comienzo',
     'Start Time'        => 'Hora comienzo',
-// themes/.../search.php
-    'No matches found' => 'Sin resultados',
-    'Search for:  $1'  => 'Buscar: $1',
 // themes/.../settings.php
     'Channels'           => 'Canales',
     'Configure'          => 'Configurar',
@@ -378,8 +376,14 @@ $L = array(
     'Configure MythWeb.' => '',
 // themes/default/status/welcome.php
     'Show the backend status page.' => '',
+// themes/default/tv/channel.php
+    'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
     'NO DATA' => '',
+// themes/default/tv/search.php
+    'No matching programs were found.' => '',
+// themes/default/tv/searches.php
+    'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
     'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
 // themes/default/video/welcome.php
