@@ -13,6 +13,12 @@
  *
 /**/
 
+// Scheduling a manual recording gets its own page
+    if ($Path[2] == 'manual') {
+        require_once 'modules/tv/schedules_manual.php';
+        exit;
+    }
+
 // Load the sorting routines
     require_once "includes/sorting.php";
 

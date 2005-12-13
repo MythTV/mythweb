@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Schedule Manually');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule_manually.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedules_manual.css" />';
 
 // Print the page header
     require_once theme_dir.'/header.php';
@@ -27,7 +27,7 @@
 
     <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
-        <form name="schedule_manually" method="post" action="schedule_manually.php<?php if ($schedule->recordid) echo '?recordid='.urlencode($schedule->recordid) ?>">
+        <form name="schedule_manually" method="post" action="<?php echo root ?>tv/schedules/manual<?php if ($schedule->recordid) echo '?recordid='.urlencode($schedule->recordid) ?>">
 
 <?php   if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
         <div id="schedule_options">

@@ -154,7 +154,7 @@
         $schedule->length = 120;
 
 // Load the class for this page
-    require_once theme_dir.'tv/schedule_manually.php';
+    require_once theme_dir.'tv/schedules_manual.php';
 
 // Exit
     exit;

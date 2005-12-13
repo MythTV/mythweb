@@ -105,7 +105,7 @@
         // Link to different places for different kinds of schedules
             if ($schedule->search) {
                 if ($schedule->search == searchtype_manual)
-                    echo 'schedule_manually';
+                    echo 'schedules/manual';
                 else
                     echo 'unsupport_search_schedule!!!';
             }
