@@ -45,7 +45,7 @@
             // Redirect back to the schedule list
                 add_warning(t('The requested recording schedule has been deleted.'));
                 save_session_errors();
-                header('Location: recording_schedules.php');
+                header('Location: '.root.'tv/schedules');
                 exit;
             }
         }
@@ -99,7 +99,7 @@
         // Save the schedule
             $schedule->save($type);
         // Redirect to the new schedule
-            header('Location: schedule_manually.php?recordid='.$schedule->recordid);
+            header('Location: '.root.'tv/schedules/manual?recordid='.$schedule->recordid);
             exit;
         }
     }
