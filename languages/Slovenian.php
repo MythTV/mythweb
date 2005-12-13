@@ -43,9 +43,11 @@ $L = array(
     'Category'                                            => 'Kategorija',
     'Category Legend'                                     => 'Legenda kategorij',
     'Category Type'                                       => 'Tip kategorij',
+    'Channel'                                             => 'Kanal',
     'Check for duplicates in'                             => 'Preveri za duplikati v',
     'Commands'                                            => 'Ukazi',
     'Conflicts'                                           => 'Konflikti',
+    'Create Schedule'                                     => 'Ustvari plan snemanja',
     'Current Conditions'                                  => 'Trenutni pogoji',
     'Current recordings'                                  => 'Trenutna snemanja',
     'Currently Browsing:  $1'                             => 'Trenutno brskanje:  $1',
@@ -90,6 +92,7 @@ $L = array(
     'Jump to'                                             => 'Skoči na',
     'Last Updated'                                        => 'Zadnjič posodobljeno',
     'Length'                                              => 'Trajanje',
+    'Length (min)'                                        => 'Dolžina (min)',
     'Listings'                                            => 'Seznam',
     'Low'                                                 => 'Nizka',
     'Manually Schedule'                                   => 'Ročno planiranje',
@@ -127,7 +130,9 @@ $L = array(
     'Rerun'                                               => 'Ponovno zaženi',
     'Saturday'                                            => 'Sobota',
     'Save'                                                => 'Shrani',
+    'Save Schedule'                                       => 'Shrani snemalni plan',
     'Schedule'                                            => 'Nastavi snemanje',
+    'Schedule Manually'                                   => '',
     'Schedule Options'                                    => 'Možnosti planiranja',
     'Schedule Override'                                   => 'Prepiši planiranje',
     'Schedule normally.'                                  => 'Normalno planiranje',
@@ -148,7 +153,9 @@ $L = array(
     'Show'                                                => 'Oddaja',
     'Show group'                                          => 'Pokaži skupino',
     'Show recordings'                                     => 'Pokaži snemanja',
+    'Start Date'                                          => 'Datum začetka',
     'Start Early'                                         => 'Začni prej',
+    'Start Time'                                          => 'Čas začetka',
     'Subtitle'                                            => 'Podnaslov',
     'Subtitle and Description'                            => 'Podnaslov in opis',
     'Sunday'                                              => 'Nedelja',
@@ -263,7 +270,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
-    'settings' => '',
+    'MythTV channel info' => '',
+    'MythTV key bindings' => '',
+    'MythWeb settings'    => '',
+    'settings'            => '',
 // modules/status/init.php
     'Status' => '',
 // modules/stream/init.php
@@ -295,14 +305,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profilne skupine',
     'Recording profiles' => 'Snemalne skupine',
-// themes/.../schedule_manually.php
-    'Channel'           => 'Kanal',
-    'Create Schedule'   => 'Ustvari plan snemanja',
-    'Length (min)'      => 'Dolžina (min)',
-    'Save Schedule'     => 'Shrani snemalni plan',
-    'Schedule Manually' => '',
-    'Start Date'        => 'Datum začetka',
-    'Start Time'        => 'Čas začetka',
 // themes/.../settings.php
     'Channels'           => 'Kanali',
     'Configure'          => 'Konfiguracija',
@@ -367,15 +369,15 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
-    'Show the server logs.' => '',
+    'welcome: backend_log' => '',
 // themes/default/movietimes/welcome.php
-    'Get listings for movies playing at local theatres.' => '',
+    'welcome: movietimes' => '',
 // themes/default/music/welcome.php
-    'Browse your music collection.' => '',
+    'welcome: music' => '',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => '',
+    'welcome: settings' => '',
 // themes/default/status/welcome.php
-    'Show the backend status page.' => '',
+    'welcome: status' => '',
 // themes/default/tv/channel.php
     'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
@@ -385,11 +387,11 @@ $L = array(
 // themes/default/tv/searches.php
     'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'welcome: tv' => '',
 // themes/default/video/welcome.php
-    'Browse your video collection.' => '',
+    'welcome: video' => '',
 // themes/default/weather/welcome.php
-    'Get the local weather forecast.' => ''
+    'welcome: weather' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

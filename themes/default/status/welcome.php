@@ -17,7 +17,7 @@
          '<img src="', skin_url, '/img/status.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t('Show the backend status page.'),
+         t('welcome: status'),
 
 // Close the div
          "</div>\n";

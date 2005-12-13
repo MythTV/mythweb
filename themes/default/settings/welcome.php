@@ -9,6 +9,7 @@
  * @license     GPL
  *
  * @package     MythWeb
+ * @subpackage  Settings
  *
 /**/
 
@@ -17,10 +18,14 @@
          '<img src="', skin_url, '/img/settings.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t("Configure MythWeb."),
+         t('welcome: settings'),
 
 // Next, print a list of possible subsectons
-    ####
+         '<ul>';
+    foreach ($Modules['settings']['links'] as $link => $name) {
+        echo '    <li><a href="', root, 'settings/', $link, '">', htmlentities($name), "</a></li>\n";
+    }
+    echo '</ul>',
 
 // Close the div
          "</div>\n";

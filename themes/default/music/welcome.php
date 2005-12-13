@@ -17,7 +17,7 @@
          '<img src="', skin_url, '/img/music.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t("Browse your music collection."),
+         t('welcome: music'),
 
 // Next, print a list of possible subsectons
     ####

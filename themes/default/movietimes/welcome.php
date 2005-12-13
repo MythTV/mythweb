@@ -17,7 +17,7 @@
          '<img src="', skin_url, '/img/movietimes.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t("Get listings for movies playing at local theatres."),
+         t('welcome: movietimes'),
 
 // Next, print a list of possible subsectons
     ####

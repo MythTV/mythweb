@@ -43,9 +43,11 @@ $L = array(
     'Category'                                            => 'Kategori',
     'Category Legend'                                     => 'Kategoriförklaring',
     'Category Type'                                       => 'Kategorityp',
+    'Channel'                                             => 'Kanal',
     'Check for duplicates in'                             => 'Sök dubbletter i',
     'Commands'                                            => 'Kommando',
     'Conflicts'                                           => 'Konflikter',
+    'Create Schedule'                                     => 'Schemalägg',
     'Current Conditions'                                  => 'Nuvarande förhållanden',
     'Current recordings'                                  => 'Nuvarande inspelningar',
     'Currently Browsing:  $1'                             => 'Just nu visas:  $1',
@@ -90,6 +92,7 @@ $L = array(
     'Jump to'                                             => 'Gå till',
     'Last Updated'                                        => 'Senast uppdaterad',
     'Length'                                              => 'Längd',
+    'Length (min)'                                        => 'Längd (min)',
     'Listings'                                            => 'TV-tablåer',
     'Low'                                                 => 'Låg',
     'Manually Schedule'                                   => 'Manuell schemaläggning',
@@ -127,7 +130,9 @@ $L = array(
     'Rerun'                                               => 'Repris',
     'Saturday'                                            => 'Lördag',
     'Save'                                                => 'Spara',
+    'Save Schedule'                                       => 'Spara schema',
     'Schedule'                                            => 'Schema',
+    'Schedule Manually'                                   => 'Schemalägg manuellt',
     'Schedule Options'                                    => 'Schemaläggningsval',
     'Schedule Override'                                   => 'Åsidosätt schemaläggning',
     'Schedule normally.'                                  => 'Schemalägg normalt',
@@ -148,7 +153,9 @@ $L = array(
     'Show'                                                => 'Program',
     'Show group'                                          => 'Visa grupp',
     'Show recordings'                                     => 'Visa inspelningar',
+    'Start Date'                                          => 'Startdatum',
     'Start Early'                                         => 'Börja tidigare',
+    'Start Time'                                          => 'Starttid',
     'Subtitle'                                            => 'Undertitel',
     'Subtitle and Description'                            => 'Undertitel och beskrivning',
     'Sunday'                                              => 'Söndag',
@@ -263,7 +270,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => 'Filmtider',
 // modules/settings/init.php
-    'settings' => 'inställningar',
+    'MythTV channel info' => '',
+    'MythTV key bindings' => '',
+    'MythWeb settings'    => '',
+    'settings'            => 'inställningar',
 // modules/status/init.php
     'Status' => 'Status',
 // modules/stream/init.php
@@ -295,14 +305,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profilgrupper',
     'Recording profiles' => 'Inspelningsprofiler',
-// themes/.../schedule_manually.php
-    'Channel'           => 'Kanal',
-    'Create Schedule'   => 'Schemalägg',
-    'Length (min)'      => 'Längd (min)',
-    'Save Schedule'     => 'Spara schema',
-    'Schedule Manually' => 'Schemalägg manuellt',
-    'Start Date'        => 'Startdatum',
-    'Start Time'        => 'Starttid',
 // themes/.../settings.php
     'Channels'           => 'Kanaler',
     'Configure'          => 'Konfigurera',
@@ -367,15 +369,15 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => 'Logg',
 // themes/default/backend_log/welcome.php
-    'Show the server logs.' => 'Visa serverns logg.',
+    'welcome: backend_log' => '',
 // themes/default/movietimes/welcome.php
-    'Get listings for movies playing at local theatres.' => '',
+    'welcome: movietimes' => '',
 // themes/default/music/welcome.php
-    'Browse your music collection.' => '',
+    'welcome: music' => '',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => 'Konfigurera MythWeb.',
+    'welcome: settings' => '',
 // themes/default/status/welcome.php
-    'Show the backend status page.' => '',
+    'welcome: status' => '',
 // themes/default/tv/channel.php
     'Channel Detail' => 'Kanaldetaljer',
 // themes/default/tv/list_cell_nodata.php
@@ -385,11 +387,11 @@ $L = array(
 // themes/default/tv/searches.php
     'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'welcome: tv' => '',
 // themes/default/video/welcome.php
-    'Browse your video collection.' => '',
+    'welcome: video' => '',
 // themes/default/weather/welcome.php
-    'Get the local weather forecast.' => ''
+    'welcome: weather' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

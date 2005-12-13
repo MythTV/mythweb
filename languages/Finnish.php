@@ -48,9 +48,11 @@ $L = array(
     'Category'                                            => 'Kategoria',
     'Category Legend'                                     => 'Kategorian Merkit',
     'Category Type'                                       => 'Kategorian Tyyppi',
+    'Channel'                                             => 'Kanava',
     'Check for duplicates in'                             => 'Tarkista kaksoiskappaleet',
     'Commands'                                            => 'Komennot',
     'Conflicts'                                           => 'Ristiriidat',
+    'Create Schedule'                                     => 'Ajoita Nauhoitus',
     'Current Conditions'                                  => 'Säätila',
     'Current recordings'                                  => 'Nykyiset nauhoitukset',
     'Currently Browsing:  $1'                             => 'Selataan:  $1',
@@ -95,6 +97,7 @@ $L = array(
     'Jump to'                                             => 'Hyppää',
     'Last Updated'                                        => 'Päivitetty Viimeksi',
     'Length'                                              => 'Pituus',
+    'Length (min)'                                        => 'Pituus (min)',
     'Listings'                                            => 'Listaus',
     'Low'                                                 => 'Alin',
     'Manually Schedule'                                   => 'Manuaalinen Ajastus',
@@ -132,7 +135,9 @@ $L = array(
     'Rerun'                                               => 'Tee uudelleen',
     'Saturday'                                            => 'Lauantai',
     'Save'                                                => 'Tallenna?',
+    'Save Schedule'                                       => 'Tallenna Ajoitus',
     'Schedule'                                            => 'Ajoitus',
+    'Schedule Manually'                                   => 'Ajoita Manuaalisesti',
     'Schedule Options'                                    => 'Ajoitusvalinnat',
     'Schedule Override'                                   => 'Ajoituksen Syrjäytys',
     'Schedule normally.'                                  => 'Ajoita normaalisti',
@@ -153,7 +158,9 @@ $L = array(
     'Show'                                                => 'Ohjelma',
     'Show group'                                          => 'Näytä ryhmä',
     'Show recordings'                                     => 'Näytä nauhoitukset',
+    'Start Date'                                          => 'Päivämäärä',
     'Start Early'                                         => 'Aloita Aiemmin',
+    'Start Time'                                          => 'Aloitusaika',
     'Subtitle'                                            => 'Jakson Nimi',
     'Subtitle and Description'                            => 'Jakson Kuvaus',
     'Sunday'                                              => 'Sunnuntai',
@@ -268,7 +275,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => 'Elokuvahaku',
 // modules/settings/init.php
-    'settings' => 'Asetukset',
+    'MythTV channel info' => '',
+    'MythTV key bindings' => '',
+    'MythWeb settings'    => '',
+    'settings'            => 'Asetukset',
 // modules/status/init.php
     'Status' => 'Systeemin Tila',
 // modules/stream/init.php
@@ -300,14 +310,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profiililuokat',
     'Recording profiles' => 'Nauhoitusprofiilit',
-// themes/.../schedule_manually.php
-    'Channel'           => 'Kanava',
-    'Create Schedule'   => 'Ajoita Nauhoitus',
-    'Length (min)'      => 'Pituus (min)',
-    'Save Schedule'     => 'Tallenna Ajoitus',
-    'Schedule Manually' => 'Ajoita Manuaalisesti',
-    'Start Date'        => 'Päivämäärä',
-    'Start Time'        => 'Aloitusaika',
 // themes/.../settings.php
     'Channels'           => 'Kanavat',
     'Configure'          => 'Asetukset',
@@ -372,15 +374,15 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
-    'Show the server logs.' => '',
+    'welcome: backend_log' => '',
 // themes/default/movietimes/welcome.php
-    'Get listings for movies playing at local theatres.' => 'Hae Paikallisten elokuvateattereiden elokuvat.',
+    'welcome: movietimes' => '',
 // themes/default/music/welcome.php
-    'Browse your music collection.' => 'Selaa Musiikkitietokantaa.',
+    'welcome: music' => '',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => 'Aseta MythWeb.',
+    'welcome: settings' => '',
 // themes/default/status/welcome.php
-    'Show the backend status page.' => 'Näytä Systeemin tila.',
+    'welcome: status' => '',
 // themes/default/tv/channel.php
     'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
@@ -390,11 +392,11 @@ $L = array(
 // themes/default/tv/searches.php
     'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => 'TV-ohjelmien nauhoittamisasetukset. Valitse seuraavista:',
+    'welcome: tv' => '',
 // themes/default/video/welcome.php
-    'Browse your video collection.' => 'Selaa videoita.',
+    'welcome: video' => '',
 // themes/default/weather/welcome.php
-    'Get the local weather forecast.' => 'Katso paikallinen säätiedotus.'
+    'welcome: weather' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

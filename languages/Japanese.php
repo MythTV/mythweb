@@ -43,9 +43,11 @@ $L = array(
     'Category'                                            => 'カテゴリー',
     'Category Legend'                                     => 'カテゴリー凡例',
     'Category Type'                                       => 'カテゴリータイプ',
+    'Channel'                                             => 'チャンネル',
     'Check for duplicates in'                             => '重複チェック対象',
     'Commands'                                            => 'コマンド',
     'Conflicts'                                           => '衝突',
+    'Create Schedule'                                     => '予約作成',
     'Current Conditions'                                  => '現在の状況',
     'Current recordings'                                  => '現在の録画',
     'Currently Browsing:  $1'                             => '表示日: $1',
@@ -90,6 +92,7 @@ $L = array(
     'Jump to'                                             => '移動',
     'Last Updated'                                        => '最後の更新',
     'Length'                                              => '時間',
+    'Length (min)'                                        => '時間 (分)',
     'Listings'                                            => '一覧',
     'Low'                                                 => '低',
     'Manually Schedule'                                   => '手動録画',
@@ -127,7 +130,9 @@ $L = array(
     'Rerun'                                               => '再開',
     'Saturday'                                            => '土曜日',
     'Save'                                                => '保存',
+    'Save Schedule'                                       => '保存',
     'Schedule'                                            => '予約',
+    'Schedule Manually'                                   => '',
     'Schedule Options'                                    => '予約オプション',
     'Schedule Override'                                   => '予約上書き',
     'Schedule normally.'                                  => '通常の予約',
@@ -148,7 +153,9 @@ $L = array(
     'Show'                                                => '番組',
     'Show group'                                          => 'グループ表示',
     'Show recordings'                                     => '番組表示',
+    'Start Date'                                          => '開始日',
     'Start Early'                                         => '早めの録画',
+    'Start Time'                                          => '開始時間',
     'Subtitle'                                            => 'サブタイトル',
     'Subtitle and Description'                            => 'サブタイトルと内容',
     'Sunday'                                              => '日曜日',
@@ -263,7 +270,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
-    'settings' => '',
+    'MythTV channel info' => '',
+    'MythTV key bindings' => '',
+    'MythWeb settings'    => '',
+    'settings'            => '',
 // modules/status/init.php
     'Status' => '',
 // modules/stream/init.php
@@ -295,14 +305,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'プロファイルグループ',
     'Recording profiles' => '録画プロファイル',
-// themes/.../schedule_manually.php
-    'Channel'           => 'チャンネル',
-    'Create Schedule'   => '予約作成',
-    'Length (min)'      => '時間 (分)',
-    'Save Schedule'     => '保存',
-    'Schedule Manually' => '',
-    'Start Date'        => '開始日',
-    'Start Time'        => '開始時間',
 // themes/.../settings.php
     'Channels'           => 'チャンネル',
     'Configure'          => '設定',
@@ -367,15 +369,15 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
-    'Show the server logs.' => '',
+    'welcome: backend_log' => '',
 // themes/default/movietimes/welcome.php
-    'Get listings for movies playing at local theatres.' => '',
+    'welcome: movietimes' => '',
 // themes/default/music/welcome.php
-    'Browse your music collection.' => '',
+    'welcome: music' => '',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => '',
+    'welcome: settings' => '',
 // themes/default/status/welcome.php
-    'Show the backend status page.' => '',
+    'welcome: status' => '',
 // themes/default/tv/channel.php
     'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
@@ -385,11 +387,11 @@ $L = array(
 // themes/default/tv/searches.php
     'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'welcome: tv' => '',
 // themes/default/video/welcome.php
-    'Browse your video collection.' => '',
+    'welcome: video' => '',
 // themes/default/weather/welcome.php
-    'Get the local weather forecast.' => ''
+    'welcome: weather' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

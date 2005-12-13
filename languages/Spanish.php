@@ -43,9 +43,11 @@ $L = array(
     'Category'                                            => 'Categoría',
     'Category Legend'                                     => 'Leyenda Categoría',
     'Category Type'                                       => 'Tipo Categoría',
+    'Channel'                                             => 'Canal',
     'Check for duplicates in'                             => 'Buscar duplicados en',
     'Commands'                                            => 'Comandos',
     'Conflicts'                                           => 'Conflictos',
+    'Create Schedule'                                     => 'Crear programación',
     'Current Conditions'                                  => 'Condiciones Actuales',
     'Current recordings'                                  => 'Grabaciones actuales',
     'Currently Browsing:  $1'                             => 'Navegando por:  $1',
@@ -90,6 +92,7 @@ $L = array(
     'Jump to'                                             => 'Saltar a',
     'Last Updated'                                        => 'Útima Actualización',
     'Length'                                              => 'Duración',
+    'Length (min)'                                        => 'Duración (min)',
     'Listings'                                            => 'Listados',
     'Low'                                                 => 'Bajo',
     'Manually Schedule'                                   => 'Programar manualmente',
@@ -127,7 +130,9 @@ $L = array(
     'Rerun'                                               => 'Reejecutar',
     'Saturday'                                            => 'Sáado',
     'Save'                                                => 'Guardar',
+    'Save Schedule'                                       => 'Guardar programaci�',
     'Schedule'                                            => 'Programar',
+    'Schedule Manually'                                   => 'Programar manualmente',
     'Schedule Options'                                    => 'Opciones programación',
     'Schedule Override'                                   => 'Excepciones programación',
     'Schedule normally.'                                  => 'Programar normalmente',
@@ -148,7 +153,9 @@ $L = array(
     'Show'                                                => 'Programa',
     'Show group'                                          => 'Mostrar grupo',
     'Show recordings'                                     => 'Mostrar grabaciones',
+    'Start Date'                                          => 'Fecha comienzo',
     'Start Early'                                         => 'Comenzar antes',
+    'Start Time'                                          => 'Hora comienzo',
     'Subtitle'                                            => 'Subtítulo',
     'Subtitle and Description'                            => 'Subtítulo y Descripción',
     'Sunday'                                              => 'Domingo',
@@ -263,7 +270,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
-    'settings' => '',
+    'MythTV channel info' => '',
+    'MythTV key bindings' => '',
+    'MythWeb settings'    => '',
+    'settings'            => '',
 // modules/status/init.php
     'Status' => '',
 // modules/stream/init.php
@@ -295,14 +305,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Grupos de Perfiles',
     'Recording profiles' => 'Perfiles de Grabaci�',
-// themes/.../schedule_manually.php
-    'Channel'           => 'Canal',
-    'Create Schedule'   => 'Crear programación',
-    'Length (min)'      => 'Duración (min)',
-    'Save Schedule'     => 'Guardar programaci�',
-    'Schedule Manually' => 'Programar manualmente',
-    'Start Date'        => 'Fecha comienzo',
-    'Start Time'        => 'Hora comienzo',
 // themes/.../settings.php
     'Channels'           => 'Canales',
     'Configure'          => 'Configurar',
@@ -367,15 +369,15 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
-    'Show the server logs.' => '',
+    'welcome: backend_log' => '',
 // themes/default/movietimes/welcome.php
-    'Get listings for movies playing at local theatres.' => '',
+    'welcome: movietimes' => '',
 // themes/default/music/welcome.php
-    'Browse your music collection.' => '',
+    'welcome: music' => '',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => '',
+    'welcome: settings' => '',
 // themes/default/status/welcome.php
-    'Show the backend status page.' => '',
+    'welcome: status' => '',
 // themes/default/tv/channel.php
     'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
@@ -385,11 +387,11 @@ $L = array(
 // themes/default/tv/searches.php
     'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'welcome: tv' => '',
 // themes/default/video/welcome.php
-    'Browse your video collection.' => '',
+    'welcome: video' => '',
 // themes/default/weather/welcome.php
-    'Get the local weather forecast.' => ''
+    'welcome: weather' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

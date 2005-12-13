@@ -17,7 +17,7 @@
          '<img src="', skin_url, '/img/weather.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t("Get the local weather forecast."),
+         t('welcome: weather'),
 
 // Next, print a list of possible subsectons
     ####

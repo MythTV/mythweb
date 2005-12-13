@@ -17,7 +17,7 @@
          '<img src="', skin_url, '/img/video.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t("Browse your video collection."),
+         t('welcome: video'),
 
 // Next, print a list of possible subsectons
     ####

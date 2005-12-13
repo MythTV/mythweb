@@ -17,7 +17,7 @@
          '<img src="', skin_url, '/img/backend_log.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t('Show the server logs.'),
+         t('welcome: backend_log'),
 
 // Close the div
          "</div>\n";

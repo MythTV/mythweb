@@ -18,15 +18,14 @@
          '<img src="', skin_url, '/img/tv.png" class="module_icon" />',
 
 // Print a basic overview of what this module does
-         t("See what's on tv, schedule recordings and manage shows that you've "
-          ."already recorded.  Please see the following choices:"),
+         t('welcome: tv'),
 
 // Next, print a list of possible subsectons
          '<ul>';
-     foreach ($Modules['tv']['links'] as $link => $name) {
-         echo '    <li><a href="', root, 'tv/', $link, '">', htmlentities($name), "</a></li>\n";
-     }
-     echo '</ul>',
+    foreach ($Modules['tv']['links'] as $link => $name) {
+        echo '    <li><a href="', root, 'tv/', $link, '">', htmlentities($name), "</a></li>\n";
+    }
+    echo '</ul>',
 
 // Close the div
          "</div>\n";

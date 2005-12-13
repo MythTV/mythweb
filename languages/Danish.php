@@ -43,9 +43,11 @@ $L = array(
     'Category'                                            => 'Kategori',
     'Category Legend'                                     => 'Kategoriforklaring',
     'Category Type'                                       => 'Kategori Type',
+    'Channel'                                             => 'Kanal',
     'Check for duplicates in'                             => 'Kontroller for dubletter i',
     'Commands'                                            => 'Kommandoer',
     'Conflicts'                                           => 'Konflikter',
+    'Create Schedule'                                     => 'Planlæg',
     'Current Conditions'                                  => 'Nuværende forhold',
     'Current recordings'                                  => 'Nuværende optagelser',
     'Currently Browsing:  $1'                             => 'Lige nu vises: $1',
@@ -90,6 +92,7 @@ $L = array(
     'Jump to'                                             => 'Gå til',
     'Last Updated'                                        => 'Sidst opdateret',
     'Length'                                              => 'Længde',
+    'Length (min)'                                        => 'Længde (min)',
     'Listings'                                            => 'Programoversigt',
     'Low'                                                 => 'Lav',
     'Manually Schedule'                                   => 'Planlæg manuelt',
@@ -127,7 +130,9 @@ $L = array(
     'Rerun'                                               => 'Genudsendelse',
     'Saturday'                                            => 'Lørdag',
     'Save'                                                => 'Gem',
+    'Save Schedule'                                       => '',
     'Schedule'                                            => 'Planlæg',
+    'Schedule Manually'                                   => '',
     'Schedule Options'                                    => 'Planlægningsindstillinger',
     'Schedule Override'                                   => 'Planlæg manuelt',
     'Schedule normally.'                                  => 'Planlæg normalt',
@@ -148,7 +153,9 @@ $L = array(
     'Show'                                                => 'Program',
     'Show group'                                          => 'Vis gruppe',
     'Show recordings'                                     => 'Vis optagelser',
+    'Start Date'                                          => 'Startdato',
     'Start Early'                                         => 'Start tidligere (min)',
+    'Start Time'                                          => 'Starttidspunkt',
     'Subtitle'                                            => 'Undertitel',
     'Subtitle and Description'                            => 'Undertitel og beskrivelse',
     'Sunday'                                              => 'Søndag',
@@ -263,7 +270,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => '',
 // modules/settings/init.php
-    'settings' => '',
+    'MythTV channel info' => '',
+    'MythTV key bindings' => '',
+    'MythWeb settings'    => '',
+    'settings'            => '',
 // modules/status/init.php
     'Status' => '',
 // modules/stream/init.php
@@ -295,14 +305,6 @@ $L = array(
 // themes/.../recording_profiles.php
     'Profile Groups'     => 'Profilgrupper',
     'Recording profiles' => 'Optagelsesprofiler',
-// themes/.../schedule_manually.php
-    'Channel'           => 'Kanal',
-    'Create Schedule'   => 'Planlæg',
-    'Length (min)'      => 'Længde (min)',
-    'Save Schedule'     => '',
-    'Schedule Manually' => '',
-    'Start Date'        => 'Startdato',
-    'Start Time'        => 'Starttidspunkt',
 // themes/.../settings.php
     'Channels'           => 'Kanaler',
     'Configure'          => 'Konfigurer',
@@ -367,15 +369,15 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
-    'Show the server logs.' => '',
+    'welcome: backend_log' => '',
 // themes/default/movietimes/welcome.php
-    'Get listings for movies playing at local theatres.' => '',
+    'welcome: movietimes' => '',
 // themes/default/music/welcome.php
-    'Browse your music collection.' => '',
+    'welcome: music' => '',
 // themes/default/settings/welcome.php
-    'Configure MythWeb.' => '',
+    'welcome: settings' => '',
 // themes/default/status/welcome.php
-    'Show the backend status page.' => '',
+    'welcome: status' => '',
 // themes/default/tv/channel.php
     'Channel Detail' => '',
 // themes/default/tv/list_cell_nodata.php
@@ -385,11 +387,11 @@ $L = array(
 // themes/default/tv/searches.php
     'Handy Predefined Searches' => '',
 // themes/default/tv/welcome.php
-    'See what\'s on tv, schedule recordings and manage shows that you\'ve already recorded.  Please see the following choices:' => '',
+    'welcome: tv' => '',
 // themes/default/video/welcome.php
-    'Browse your video collection.' => '',
+    'welcome: video' => '',
 // themes/default/weather/welcome.php
-    'Get the local weather forecast.' => ''
+    'welcome: weather' => ''
 // End of the translation hash ** Do not touch the next line
           );
 
