@@ -31,7 +31,7 @@
     <ul style="list-style-type: circle">
 <?php
     foreach(array_keys($Canned_Searches) as $name ) {
-        echo '        <li><a href="search.php?searchstr='.urlencode('canned:'.$name).'">'
+        echo '        <li><a href="'.root.'tv/search/'.urlencode('canned:'.$name).'">'
             .$name."</a></li>\n";
     }
 ?>
