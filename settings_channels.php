@@ -24,7 +24,7 @@
             }
             else {
             // Not deleting so grab values that can be empty
-                $query = 'UPDATE channel SET freqid='.escape($_POST['freqid_'.$chanid])      .','
+                $query = 'UPDATE channel SET freqid='.escape($_POST['freqid_'.$chanid])  .','
                                      .'finetune='.escape($_POST['finetune_'.$chanid])    .','
                                  .'videofilters='.escape($_POST['videofilters_'.$chanid]).','
                                    .'brightness='.escape($_POST['brightness_'.$chanid])  .','

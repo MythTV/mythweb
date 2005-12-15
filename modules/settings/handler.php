@@ -18,4 +18,8 @@
         $Path[1] = NULL;
 
 // Show the requested section
-    require_once 'modules/settings/'.$Path[1].'.php';
+    if ($Path[1])
+        require_once 'modules/settings/'.$Path[1].'.php';
+
+// Otherwise, just show the settings index page
+    require_once theme_dir.'settings/settings.php';
