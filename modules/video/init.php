@@ -13,8 +13,7 @@
 /**/
 
 // First, we should check to see that MythVideo is configured.
-    $has_video = true;
-
+    $has_video = $db->query_col('SELECT COUNT(*) FROM videometadata');
 
 // If video is enabled, add it to the list.
     if ($has_video)
