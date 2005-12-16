@@ -19,9 +19,9 @@
 // Load all channels
     load_all_channels();
 
-// Path-based search
+// Path-based search (take all of the remaining path)
     if ($Path[2]) {
-        $_GET['searchstr'] = $Path[2];
+        $_GET['searchstr'] = implode('/', array_splice($Path, 2));
     }
 
 // A single search string passed in
