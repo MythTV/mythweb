@@ -1,12 +1,17 @@
 <?php
-/***                                                                        ***\
-    music.php                                Last Updated: 2005.05.15 (xris)
-
-    MythMusic
-\***                                                                        ***/
-
-// Which section are we in?
-    define('section', 'music');
+/**
+ * MythMusic browser
+ *
+ * @url         $URL: svn+ssh://xris@cvs.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/music/init.php $
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ * @subpackage  Music
+ *
+/**/
 
 //
 //  Someday, music.php will let us stream

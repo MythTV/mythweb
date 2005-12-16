@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialization routines for the MythWeb TV module
+ * Initialization routines for the MythWeb Weather module
  *
  * @url         $URL$
  * @date        $Date$
@@ -9,12 +9,12 @@
  * @license     GPL
  *
  * @package     MythWeb
+ * @subpackage  Weather
  *
 /**/
 
 // First, we should check to see that MythWeather is configured.
-    $has_weather = true;
-
+    $has_weather = $db->query_col('SELECT COUNT(data) FROM settings WHERE value="locale"');
 
 // If weather is enabled, add it to the list.
     if ($has_weather)

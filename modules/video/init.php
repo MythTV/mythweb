@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialization routines for the MythWeb TV module
+ * Initialization routines for the MythWeb Video module
  *
  * @url         $URL$
  * @date        $Date$
@@ -9,6 +9,7 @@
  * @license     GPL
  *
  * @package     MythWeb
+ * @subpackage  Video
  *
 /**/
 

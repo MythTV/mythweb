@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialization routines for the MythWeb TV module
+ * Initialization routines for the MythWeb Status module
  *
  * @url         $URL$
  * @date        $Date$

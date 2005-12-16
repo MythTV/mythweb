@@ -9,6 +9,7 @@
  * @license     GPL
  *
  * @package     MythWeb
+ * @subpackage  Weather
  *
 /**/
 
