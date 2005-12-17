@@ -247,40 +247,24 @@ class mythMusic {
     }
 
     function init($maxPerPage) {
+        global $db;
         $this->prepFilter();
-        if($this->filter != "") {
-            $result=mysql_query("select count(*) as cnt from musicmetadata where $this->filter");
-        }
+        if (empty($this->filter))
+            $this->totalCount = $db->query_col('SELECT COUNT(*) FROM musicmetadata');
         else
-            $result=mysql_query("select count(*) as cnt from musicmetadata");
+            $this->totalCount = $db->query_col('SELECT COUNT(*) FROM musicmetadata WHERE '.$this->filter);
 
-        if($result)
-        {
-            $this->totalCount = mysql_result($result,0,"cnt");
-            mysql_free_result($result);
-        }
-        else
-            $this->totalCount = 0;
-
-        if($this->totalCount > 0)
-        {
-            if($this->offset > 0)
-            {
-                $limitText="LIMIT  " . $this->offset . " , " . $maxPerPage . " ";
+        if ($this->totalCount > 0) {
+            if($this->offset > 0) {
+                $limitText='LIMIT ' . $this->offset . ',' . $maxPerPage;
             }
             else
-                $limitText="LIMIT  " . $maxPerPage . " ";
+                $limitText='LIMIT ' . $maxPerPage;
 
-            if($this->filter != "")
-            {
-                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata where $this->filter order by artist,album,tracknum $limitText");
-
-            }
-            else
-            {
+            if (empty($this->filter))
                 $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata order by artist,album,tracknum " . $limitText);
-
-            }
+            else
+                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata where $this->filter order by artist,album,tracknum $limitText");
         }
     }
 }
