@@ -9,10 +9,10 @@
 
 <div id="message">
 
-<h2>Database Error</h2>
+<h2>Error</h2>
 
 <p>
-<?php echo htmlentities($db->error) ?>
+<?php echo htmlentities($Error) ?>
 </p>
 
 </div>

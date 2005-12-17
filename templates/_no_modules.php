@@ -1,8 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title>Down for maintenance</title>
-    <link rel="stylesheet" type="text/css" href="templates/errors.css" />
+    <title>Error</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/default/errors.css" />
 </head>
 
 <body>

@@ -235,8 +235,19 @@
     define('theme_url', root.theme_dir);
 
 // Make sure the image cache path exists
-    if(!is_dir(image_cache) && !mkdir(image_cache, 0755))
-        trigger_error('Error creating path for '.image_cache.': Please check permissions.', FATAL);
+    if (!is_dir(image_cache) && !mkdir(image_cache, 0755)) {
+        $Error = 'Error creating path for '.image_cache.': Please check permissions.';
+        require_once 'templates/_error.php';
+        exit;
+    }
+
+// Make sure the image cache is writable
+    if (!is_writable(image_cache)) {
+        $process_user = posix_getpwuid(posix_geteuid());
+        $Error = image_cache.' directory is not writable by '.$process_user['name'].': Please check permissions.';
+        require_once 'templates/_error.php';
+        exit;
+    }
 
 // Clean out stale thumbnails
     if (is_dir(image_cache)) {

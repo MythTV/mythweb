@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Database Access Denied</title>
-    <link rel="stylesheet" type="text/css" href="templates/errors.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/default/errors.css" />
 </head>
 
 <body>
