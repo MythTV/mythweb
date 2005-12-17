@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Database Setup Error</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/default/errors.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css" />
 </head>
 
 <body>
