@@ -16,9 +16,6 @@
  *
 /**/
 
-// temporary
-    @define('new_code', false);
-
 /**
  * $Path is an array of PATH_INFO passed into the script via mod_rewrite or some
  * other lesser means.  It contains most of the information required for
@@ -193,14 +190,6 @@
 // Connect to the backend and load some more handy utilities
     require_once "includes/mythbackend.php";
 
-// Load in the TV-related classes
-### DEPRECATED -- handled in modules/tv/handler.php
-    if (!new_code) {
-        require_once "includes/channels.php";
-        require_once "includes/programs.php";
-        require_once "includes/recording_schedules.php";
-    }
-
 // The browser is MythPhone.
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
         define('Theme', 'vxml');
@@ -223,10 +212,7 @@
         }
     // Otherwise set the default theme.
         else {
-            if (new_code)
-                define('Theme', 'default');
-            else
-                define('Theme', 'Default');
+            define('Theme', 'default');
         }
     }
 
@@ -247,15 +233,6 @@
     define('skin_url', root.skin_dir);
     define('theme_dir', 'themes/'.Theme.'/');
     define('theme_url', root.theme_dir);
-
-// Ignore in new code
-    if (!new_code) {
-    // Load the theme config
-        require_once 'config/theme_'.Theme.'.php';
-
-    // Load the overall page theme class
-        require_once theme_dir.'/theme.php';
-    }
 
 // Make sure the image cache path exists
     if(!is_dir(image_cache) && !mkdir(image_cache, 0755))

@@ -1,12 +1,17 @@
 <?php
-/***                                                                        ***\
-    channels.php                             Last Updated: 2005.02.28 (xris)
-
-    This file is part of MythWeb, a php-based interface for MythTV.
-    See README and LICENSE for details.
-
-    The Channel object, and a couple of related subroutines.
-\***                                                                        ***/
+/**
+ * The Channel object, and a couple of related subroutines.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythTV
+ * @subpackage  TV
+ *
+/**/
 
 // Make sure the "Programs" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
     require_once 'includes/programs.php';
@@ -15,10 +20,9 @@
     global $Channels;
     $Channels = array();
 
-/*
-    load_all_channels:
-    Loads all of the channels into channel objects, AND returns the global array $Channels
-*/
+/**
+ * Loads all of the channels into channel objects, AND returns the global array $Channels
+/**/
     function load_all_channels() {
         global $Channels;
         $Channels = array();
@@ -48,10 +52,9 @@
         }
     }
 
-/*
-    load_one_channel:
-    Loads the specified into a channel object, AND adds it to the global array $Channels
-*/
+/**
+ * Loads the specified into a channel object, AND adds it to the global array $Channels
+/**/
     function &load_one_channel($chanid) {
         global $Channels;
         if (!is_array($Channels))
@@ -70,10 +73,9 @@
         return $Channels[$chanid];
     }
 
-/*
-    Channel:
-    A class to hold all channel-related data
-*/
+/**
+ * A class to hold all channel-related data
+/**/
 class Channel {
     var $chanid;
     var $channum;
@@ -141,10 +143,7 @@ class Channel {
                 $length = (($program_starts - $start_time) / timeslot_size);
                 if ($length >= 0.5) {
                     $timeslots_used = ceil($length);
-                    if (new_code)
-                        require theme_dir.'/tv/list_cell_nodata.php';
-                    else
-                        $Page->print_nodata($timeslots_used);
+                    require theme_dir.'/tv/list_cell_nodata.php';
                     $start_time += $timeslots_used * timeslot_size;
                     if ($timeslots_left < $timeslots_used)
                         $timeslots_used = $timeslots_left;
@@ -162,20 +161,14 @@ class Channel {
                 $timeslots_used = $timeslots_left;
             $timeslots_left -= $timeslots_used;
             #if ($timeslots_left > 0)
-            if (new_code)
-                require theme_dir.'/tv/list_cell_program.php';
-            else
-                $Page->print_program(&$program, $timeslots_used, $start_time);
+            require theme_dir.'/tv/list_cell_program.php';
         // Cleanup is good
             unset($program);
         }
     // Uh oh, there are leftover timeslots - display a no data message
         if ($timeslots_left > 0) {
             $timeslots_left = $timeslots_used;
-            if (new_code)
-                require theme_dir.'/tv/list_cell_nodata.php';
-            else
-                $Page->print_nodata($timeslots_left);
+            require theme_dir.'/tv/list_cell_nodata.php';
         }
     }
 }

@@ -12,10 +12,6 @@
  *
 /**/
 
-// Set a variable so we know we're in new code
-    define('new_code', true);
-
-
 // Add a custom include path?
     if (!empty($_SERVER['include_path']) && $_SERVER['include_path'] != '.')
         ini_set('include_path', $_SERVER['include_path'].PATH_SEPARATOR.ini_get('include_path'));
