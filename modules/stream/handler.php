@@ -62,18 +62,28 @@
 // How big is the file
     header('Content-Length: '.$size);
 
+// Make sure PHP doesn't time out on big files
+    set_time_limit(0);
+
+// End the session
+    session_write_close();
+
 // Someday we want to pull this straight from mythbackend, but for now,
-// just read out the file itself in 128k increments.
-    $fp = fopen($row[8], 'r');
-    while ($bytes = fread($fp, 131072)) {
-        echo $bytes;
-    // Refresh the time limit
-        set_time_limit(30);
+// just read out the file itself.
+    $t1 = time();
+    $fp = fopen($row[8], 'rb');
+    while (!feof($fp)) {
+    // Read the stream out in 256k chunks
+        echo fread($fp, 262144);
+    // Flush every few seconds
+        $t2 = time();
+        if ($t2 - $t1 > 10) {
+            $t1 = $t2;
+            ob_flush();
+            flush();
+        }
     }
     fclose($fp);
-
-// The file has finished loading, but the transfer still needs to catch up.
-    set_time_limit(0);
 
 // Time to leave
     exit;
