@@ -1,12 +1,19 @@
 <?php
-/***                                                                        ***\
-    music.php                                Last Updated: 2005.05.15 (xris)
+/**
+ * MythMusic browser.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ * @subpackage  Music
+ *
+/**/
 
-    This file defines a theme class for the music section.
-    It must define one method.   documentation will be added someday.
-\***                                                                        ***/
-
-class Theme_music extends Theme {
+class Theme_music {
 
     var $maxPerPage;
     var $totalCount;
@@ -83,20 +90,20 @@ class Theme_music extends Theme {
         printf("<tr class=\"menu\">\n");
         if($this->offset > 0)
         {
-            printf("<td align=\"left\"><a href=\"music.php\" >%s</a>",t('All Music'));
-            printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",0,$this->keepFilters,t('Top'));
+            printf("<td align=\"left\"><a href=\"".root."music\" >%s</a>",t('All Music'));
+            printf("%s<a href=\"".root."music?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",0,$this->keepFilters,t('Top'));
 
             if( ($this->offset - ($this->maxPerPage * 5)) > 0)
-                printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
+                printf("%s<a href=\"".root."music?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
                        $this->offset - (5 * $this->maxPerPage),$this->keepFilters,"-" .  (5 * $this->maxPerPage));
             else
                 printf("%s","&nbsp;|&nbsp;-" . (5 * $this->maxPerPage));
 
-            printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
+            printf("%s<a href=\"".root."music?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
                    $this->offset - $this->maxPerPage,$this->keepFilters, t('Previous'));
 
         } else {
-            printf("<td align=\"left\"><a href=\"music.php\" >%s</a>",t('All Music'));
+            printf("<td align=\"left\"><a href=\"".root."music\" >%s</a>",t('All Music'));
             printf("%s","&nbsp;|&nbsp;" . t('Top'));
             printf("%s","&nbsp;|&nbsp;-" . (5 * $this->maxPerPage));
             printf("%s","&nbsp;|&nbsp;" . t('Previous'));
@@ -105,20 +112,20 @@ class Theme_music extends Theme {
         /**** Print out alphabet links ****/
         printf("</td><td align=\"center\">\n");
         for ($alphacount = 65; $alphacount <= 90; $alphacount++)
-            printf("<a href=\"music.php?alphalink=%s\" >%s</a> \n", chr($alphacount), chr($alphacount));
+            printf('<a href="'.root."music?alphalink=%s\" >%s</a> \n", chr($alphacount), chr($alphacount));
 
         printf("</td>");
 
         if($this->totalCount > ($this->maxPerPage + $this->offset))
         {
-            printf("<td align=\"right\"><a href=\"music.php?offset=%d%s\" >%s</a>",
+            printf("<td align=\"right\"><a href=\"".root."music?offset=%d%s\" >%s</a>",
                    $this->offset + $this->maxPerPage,$this->keepFilters,t('Next'));
             if( (($this->maxPerPage * 5) + $this->offset) < $this->totalCount )
-                printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
+                printf("%s<a href=\"".root."music?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
                        $this->offset + (5 * $this->maxPerPage),$this->keepFilters,"+" . (5 * $this->maxPerPage));
             else
                 printf("%s","&nbsp;|&nbsp;+" . 5 * $this->maxPerPage);
-            printf("%s<a href=\"music.php?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
+            printf("%s<a href=\"".root."music?offset=%d%s\" >%s</a>","&nbsp;|&nbsp;",
                    $this->totalCount - $this->maxPerPage,$this->keepFilters,t('End'));
             printf("</td>");
 
@@ -141,9 +148,9 @@ class Theme_music extends Theme {
         $calcMin=$calcLength/60;
         $calcSec=$calcLength%60;
         printf("<td class=\"musicTime\">%d:%02d</td>\n",$calcMin,$calcSec);
-        printf("<td class=\"musicArtist\"> <a href=\"music.php?filterArtist=%s\" >%s</a></td>\n",urlencode($trackArtist),htmlspecialchars($trackArtist));
-        printf("<td class=\"musicAlbum\"> <a href=\"music.php?&amp;filterAlbum=%s\" >%s</a></td>\n",urlencode($trackAlbum),htmlspecialchars($trackAlbum));
-        printf("<td class=\"musicGenre\"> <a href=\"music.php?filterGenre=%s\" > %s</a></td>\n",urlencode($trackGenre),htmlspecialchars($trackGenre));
+        printf("<td class=\"musicArtist\"> <a href=\"".root."music?filterArtist=%s\" >%s</a></td>\n",urlencode($trackArtist),htmlspecialchars($trackArtist));
+        printf("<td class=\"musicAlbum\"> <a href=\"".root."music?&amp;filterAlbum=%s\" >%s</a></td>\n",urlencode($trackAlbum),htmlspecialchars($trackAlbum));
+        printf("<td class=\"musicGenre\"> <a href=\"".root."music?filterGenre=%s\" > %s</a></td>\n",urlencode($trackGenre),htmlspecialchars($trackGenre));
         printf("</tr>\n");
     }
     function printNoDetail()
@@ -157,8 +164,11 @@ class Theme_music extends Theme {
 
     function print_header($filterPlaylist,$filterArtist,$filterAlbum,$filterGenre) {
         $this->filterPlaylist=$filterPlaylist;
-        parent::print_header("MythWeb - ".t('Music').": ");
-        printf("<form  action=\"music.php\" method=\"GET\" >\n");
+// Set the desired page title
+    $page_title = 'MythWeb - '.t('Music');
+// Print the page header
+    require_once theme_dir.'/header.php';
+        printf("<form  action=\"".root."music\" method=\"GET\" >\n");
         printf("<input type=\"hidden\" name=\"mode\" value=\"music\" />\n");
 
 
@@ -219,7 +229,7 @@ class Theme_music extends Theme {
 
         printf("</form>");
 
-        parent::print_footer();
+        require_once theme_dir.'/footer.php';
     }
 
 }

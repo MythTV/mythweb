@@ -17,8 +17,10 @@
 //  Someday, music.php will let us stream
 //  entire playlists to any spot on planet earth
 //
-require_once "includes/init.php";
-require_once theme_dir."music.php";
+require_once theme_dir.'music/music.php';
+
+$mythmusic = new mythMusic();
+$mythmusic->display();
 
 class mythMusic {
     var $filterPlaylist;
@@ -113,7 +115,7 @@ class mythMusic {
                 $this->rating=$row[6];
                 $this->filename=$row[7];
 
-                $this->urlfilename=music_url;
+                $this->urlfilename=root.music_url;
                 global $musicdir;
                 foreach (preg_split('/\//', substr($this->filename, strlen($musicdir))) as $dir) {
                     if (!$dir) continue;
@@ -283,7 +285,4 @@ class mythMusic {
     }
 }
 
-
-$mythmusic = new mythMusic();
-$mythmusic->display();
 

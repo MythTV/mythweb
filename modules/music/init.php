@@ -14,8 +14,7 @@
 /**/
 
 // First, we should check to see that MythMusic is configured.
-    $has_music = true;
-
+    $has_music = $db->query_col('SELECT COUNT(*) FROM musicmetadata');
 
 // If music is enabled, add it to the list.
     if ($has_music)

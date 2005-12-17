@@ -50,11 +50,11 @@
     define('image_cache', 'cache');
 
 // Local (web-friendly) path to the mythtv video dir (use a symlink to the real one - one will be auto-created if it can be)
-    define('video_dir', 'video_dir');
+    define('video_dir', 'data/recordings');
 
 // Type of url for the links to mythmusic files. Filename will be added to the end.
 // For this to work, create a 'music' symlink in mythweb which points to the path for mythmusic files.
-    define('music_url', 'music');
+    define('music_url', 'data/music');
 
 // Path to the mythvideo "covers" directory
     define('video_img_path', '');
@@ -63,7 +63,7 @@
     define('mythvideo_dir', '/pub/video');
 
 // URL path to the mythvideo files directory (most likely a symlink to mythvideo_dir)
-    define('mythvideo_url', 'mythvideo');
+    define('mythvideo_url', 'data/video');
 
 // video_url is normally determined automatically (a local link to video_dir for
 //   Linux/MacOS, and a myth:// URL for windows machines), but you can override
