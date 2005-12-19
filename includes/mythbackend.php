@@ -226,7 +226,7 @@
 */
     function generate_preview_pixmap($show) {
         $fileurl  = $show->filename;
-        $pngpath  = image_cache . '/' . basename($fileurl) . '.png';
+        $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
         $hostname = chop(`hostname`);
         $host     = $GLOBALS['Master_Host'];
         $port     = $GLOBALS['Master_Port'];

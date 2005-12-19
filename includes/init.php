@@ -261,14 +261,14 @@
     }
 
 // Clean out stale thumbnails
-    if (is_dir(image_cache)) {
-        if ($dir = opendir(image_cache)) {
+    if (is_dir(cache_dir)) {
+        if ($dir = opendir(cache_dir)) {
             while (($file = readdir($dir))) {
-                if (!preg_match('/\\.(png|jpg|gif)$/', $file) || !is_file(image_cache.'/'.$file))
+                if (!preg_match('/\\.(png|jpg|gif)$/', $file) || !is_file(cache_dir.'/'.$file))
                     continue;
             // Delete files older than the last week.
-                if (filemtime(image_cache.'/'.$file) < time() - 7 * 24 * 60 * 60)
-                    unlink(image_cache.'/'.$file);
+                if (filemtime(cache_dir.'/'.$file) < time() - 7 * 24 * 60 * 60)
+                    unlink(cache_dir.'/'.$file);
             }
             closedir($dir);
             clearstatcache();
