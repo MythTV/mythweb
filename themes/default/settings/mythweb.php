@@ -53,7 +53,7 @@
     <td align="right"><?php echo t('Status Bar') ?>:&nbsp;</td>
     <td><input type="text" size="24" name="date_statusbar" value="<?php    echo htmlentities($_SESSION['date_statusbar']) ?>"></td>
 </tr><tr>
-    <td align="right"><?php echo t('Scheduled Recordings') ?>:&nbsp;</td>
+    <td align="right"><?php echo t('Upcoming Recordings') ?>:&nbsp;</td>
     <td><input type="text" size="24" name="date_scheduled" value="<?php    echo htmlentities($_SESSION['date_scheduled']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Scheduled Popup') ?>:&nbsp;</td>

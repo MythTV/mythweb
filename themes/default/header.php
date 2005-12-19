@@ -150,7 +150,7 @@
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/upcoming"><?php echo t('Scheduled Recordings') ?></a>
+                    <a href="<?php echo root ?>tv/upcoming"><?php echo t('Upcoming Recordings') ?></a>
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/recorded"><?php echo t('Recorded Programs') ?></a>
                     &nbsp; | &nbsp;

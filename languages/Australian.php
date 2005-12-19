@@ -74,7 +74,6 @@ $L = array(
     'Schedule Options'                                   => '',
     'Schedule Override'                                  => '',
     'Schedule normally.'                                 => '',
-    'Scheduled Recordings'                               => 'Beerduled beers',
     'Search'                                             => 'Find a beer',
     'Search Results'                                     => 'Located Beers',
     'Settings'                                           => '',

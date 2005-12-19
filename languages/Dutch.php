@@ -73,7 +73,6 @@ $L = array(
     'Schedule Options'                                   => 'Schema Opties',
     'Schedule Override'                                  => 'Aangepast Schema',
     'Schedule normally.'                                 => 'Normaal Schema',
-    'Scheduled Recordings'                               => 'Geprogrammeerde Opnames',
     'Search'                                             => 'Zoeken',
     'Search Results'                                     => 'Zoekresultaten',
     'Settings'                                           => 'Instellingen',

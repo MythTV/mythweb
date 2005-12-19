@@ -31,7 +31,7 @@ class Theme {
     function print_menu_content() {
 ?>
 <p><a href="program_listing.php"><?php echo t('Listings') ?></a></p>
-<p><a href="scheduled_recordings.php"><?php echo t('Scheduled Recordings') ?></a></p>
+<p><a href="scheduled_recordings.php"><?php echo t('Upcoming Recordings') ?></a></p>
 <p><a href="recorded_programs.php"><?php echo t('Recorded Programs') ?></a></p>
 <p><a href="search.php"><?php echo t('Search') ?></a></p>
 <p><a href="<?php echo theme_dir ?>status.php"><?php echo t('Backend Status') ?></a></p>

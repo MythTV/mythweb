@@ -78,7 +78,6 @@ $L = array(
     'Schedule Options'                                   => 'Ajoitusvalinnat',
     'Schedule Override'                                  => 'Ajoituksen Syrjäytys',
     'Schedule normally.'                                 => 'Ajoita normaalisti',
-    'Scheduled Recordings'                               => 'Ajoitetut Nauhoitukset',
     'Search'                                             => 'Etsi',
     'Search Results'                                     => 'Etsinnän Tulokset',
     'Settings'                                           => 'Asetukset',

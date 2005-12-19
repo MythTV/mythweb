@@ -74,7 +74,6 @@ $L = array(
     'Schedule Options'                                   => '',
     'Schedule Override'                                  => '',
     'Schedule normally.'                                 => '',
-    'Scheduled Recordings'                               => '',
     'Search'                                             => '',
     'Search Results'                                     => '',
     'Settings'                                           => '',

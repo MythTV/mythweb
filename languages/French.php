@@ -73,7 +73,6 @@ $L = array(
     'Schedule Options'                                   => 'Prog. Avancée',
     'Schedule Override'                                  => 'Ecraser Prog.',
     'Schedule normally.'                                 => 'Prog. normale',
-    'Scheduled Recordings'                               => 'Enregistrements programm&eacute;s',
     'Search'                                             => 'Recherche',
     'Search Results'                                     => 'R&eacute;sultats de recherche',
     'Settings'                                           => 'param&egrave;tres',

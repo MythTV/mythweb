@@ -12,7 +12,7 @@ class Theme_scheduled_recordings extends Theme {
 
     function print_page() {
     // Print the main page header
-        parent::print_header('MythWeb - Scheduled Recordings');
+        parent::print_header('MythWeb - Upcoming Recordings');
     // Print the page contents
         global $All_Shows;
 

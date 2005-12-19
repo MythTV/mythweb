@@ -73,7 +73,6 @@ $L = array(
     'Schedule Options'                                   => 'Opciones programación',
     'Schedule Override'                                  => 'Excepciones programación',
     'Schedule normally.'                                 => 'Programar normalmente',
-    'Scheduled Recordings'                               => 'Grabaciones programadas',
     'Search'                                             => 'Buscar',
     'Search Results'                                     => 'Resultados bsqueda',
     'Settings'                                           => 'Ajustes',

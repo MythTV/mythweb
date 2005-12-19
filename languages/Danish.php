@@ -73,7 +73,6 @@ $L = array(
     'Schedule Options'                                   => 'Planlægningsindstillinger',
     'Schedule Override'                                  => 'Planlæg manuelt',
     'Schedule normally.'                                 => 'Planlæg normalt',
-    'Scheduled Recordings'                               => 'Planlagte optagelser',
     'Search'                                             => 'Søg',
     'Search Results'                                     => 'Søgeresultater',
     'Settings'                                           => 'Indstillinger',

@@ -73,7 +73,6 @@ $L = array(
     'Schedule Options'                                   => 'Aufnahmemodus',
     'Schedule Override'                                  => 'manuelle Korrektur',
     'Schedule normally.'                                 => 'Sonderoption löschen',
-    'Scheduled Recordings'                               => 'Aufnahmeplan',
     'Search'                                             => 'Suche',
     'Search Results'                                     => 'Suchergebnisse',
     'Settings'                                           => 'Einstellungen',

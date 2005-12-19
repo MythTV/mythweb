@@ -73,7 +73,6 @@ $L = array(
     'Schedule Options'                                   => '予約オプション',
     'Schedule Override'                                  => '予約上書き',
     'Schedule normally.'                                 => '通常の予約',
-    'Scheduled Recordings'                               => 'これからの録画',
     'Search'                                             => '検索',
     'Search Results'                                     => '検索結果',
     'Settings'                                           => '設定',

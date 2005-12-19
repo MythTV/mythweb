@@ -73,7 +73,6 @@ $L = array(
     'Schedule Options'                                   => 'Možnosti planiranja',
     'Schedule Override'                                  => 'Prepiši planiranje',
     'Schedule normally.'                                 => 'Normalno planiranje',
-    'Scheduled Recordings'                               => 'Snemalni plan',
     'Search'                                             => 'Iskanje',
     'Search Results'                                     => 'Rezultati iskanja',
     'Settings'                                           => 'Nastavitve',
