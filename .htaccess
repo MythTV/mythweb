@@ -36,7 +36,7 @@
     # look to connect to the database, the name of the database to connect to, and
     # the authentication info to use to connect.  The defaults will usually work
     # fine unless you've changed mythtv's mysql.txt file, or are running MythWeb on
-    # a different server from your main backend.
+    # a different server from your main backend.  Make sure you have mod_env enabled.
     #
         setenv db_server        "localhost"
         setenv db_name          "mythconverg"
