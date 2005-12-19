@@ -31,10 +31,7 @@
                                 ? $_SERVER['PATH_INFO']
                                 : ($_ENV['PATH_INFO']
                                     ? $_ENV['PATH_INFO']
-                                    : ($_GET['PATH_INFO']
-                                       ? $_GET['PATH_INFO']
-                                       : $_SERVER['REQUEST_URI']
-                                      )
+                                    : $_GET['PATH_INFO']
                                   )
                          ))
                    );
@@ -234,17 +231,31 @@
     define('theme_dir', 'themes/'.Theme.'/');
     define('theme_url', root.theme_dir);
 
-// Make sure the image cache path exists
-    if (!is_dir(image_cache) && !mkdir(image_cache, 0755)) {
-        $Error = 'Error creating path for '.image_cache.': Please check permissions.';
+// Make sure the data directory exists and is writable
+    if (!is_dir('data') && !mkdir('data', 0755)) {
+        $Error = 'Error creating the data directory. Please check permissions.';
+        require_once 'templates/_error.php';
+        exit;
+    }
+    if (!is_writable('data')) {
+        $process_user = posix_getpwuid(posix_geteuid());
+        $Error = 'data directory is not writable by '.$process_user['name'].'. Please check permissions.';
         require_once 'templates/_error.php';
         exit;
     }
 
-// Make sure the image cache is writable
-    if (!is_writable(image_cache)) {
+// New hard-coded cache directory
+    define('cache_dir', 'data/cache');
+
+// Make sure the image cache path exists and is writable
+    if (!is_dir(cache_dir) && !mkdir(cache_dir, 0755)) {
+        $Error = 'Error creating '.cache_dir.': Please check permissions on the data directory.';
+        require_once 'templates/_error.php';
+        exit;
+    }
+    if (!is_writable(cache_dir)) {
         $process_user = posix_getpwuid(posix_geteuid());
-        $Error = image_cache.' directory is not writable by '.$process_user['name'].': Please check permissions.';
+        $Error = cache_dir.' directory is not writable by '.$process_user['name'].'. Please check permissions.';
         require_once 'templates/_error.php';
         exit;
     }

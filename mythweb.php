@@ -23,7 +23,7 @@
     if ($Modules[$Path[0]]) {
         require_once 'modules/'.$Path[0].'/handler.php';
     }
-    elseif (!empty($Path[0])) {
+    elseif (!empty($Path[0]) && preg_match('/\w/', $Path[0])) {
         require_once 'templates/_unknown_module.php';
     }
     else {
