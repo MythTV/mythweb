@@ -54,7 +54,7 @@
     define('music_url', 'data/music');
 
 // Path to the mythvideo "covers" directory
-    define('video_img_path', '');
+    define('video_img_path', 'data/video_covers');
 
 // Where in the local filesystem are the mythvideo files stored
     define('mythvideo_dir', '/pub/video');
