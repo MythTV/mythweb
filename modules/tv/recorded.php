@@ -13,6 +13,46 @@
  *
 /**/
 
+// Make sure the recordings directory exists
+    if (file_exists('data/recordings')) {
+    // File is not a directory or a symlink
+        if (!is_dir('data/recordings') && !is_link('data/recordings')) {
+            $Error = 'An invalid file exists at data/recordings.  Please remove it in'
+                    .' order to use the tv portions of MythWeb.';
+            require_once 'templates/_error.php';
+        }
+    }
+// Create the symlink, if possible.
+//
+// NOTE:  Errors have been disabled because if I turn them on, people hosting
+//        MythWeb on Windows machines will have issues.  I will turn the errors
+//        back on when I find a clean way to do so.
+//
+    else {
+        $dir = $db->query_col('SELECT data
+                                 FROM settings
+                                WHERE value="RecordFilePrefix" AND hostname=?',
+                              hostname
+                             );
+        if ($dir) {
+            $ret = @symlink($dir, 'data/recordings');
+            if (!$ret) {
+                #$Error = "Could not create a symlink to $dir, the local recordings directory"
+                #        .' for this hostname ('.hostname.').  Please create a symlink to your'
+                #        .' recordings directory at data/recordings in order to use the tv'
+                #        .' portions of MythWeb.';
+                #require_once 'templates/_error.php';
+            }
+        }
+        else {
+            #$Error = 'Could not find a value in the database for the recordings directory'
+            #        .' for this hostname ('.hostname.').  Please create a symlink to your'
+            #        .' recordings directory at data/recordings in order to use the tv'
+            #        .' portions of MythWeb.';
+            #require_once 'templates/_error.php';
+        }
+    }
+
 // Load the sorting routines
     require_once "includes/sorting.php";
 
@@ -143,10 +183,6 @@
     list($size_high, $size_low, $used_high, $used_low) = explode(backend_sep, backend_command('QUERY_FREE_SPACE'));
     define(disk_size, (($size_high + ($size_low < 0)) * 4294967296 + $size_low) * 1024);
     define(disk_used, (($used_high + ($used_low < 0)) * 4294967296 + $used_low) * 1024);
-
-// Try to create a symlink to video_dir if it doesn't exist
-    if (!file_exists(preg_replace('#/+$#', '', video_dir)) && $All_Shows[0] && $All_Shows[0]->filename)
-        @symlink(dirname($All_Shows[0]->filename), video_dir);
 
 // Load the class for this page
     require_once theme_dir.'tv/recorded.php';

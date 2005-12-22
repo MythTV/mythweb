@@ -104,7 +104,7 @@ class Channel {
         $this->brightness   = $channel_data['brightness'];
         $this->colour       = $channel_data['colour'];
         $this->visible      = $channel_data['visible'];
-        $this->icon         = root."data/icons/".basename($channel_data['icon']);
+        $this->icon         = root.'data/tv_icons/'.basename($channel_data['icon']);
     // Try to copy over any missing channel icons
         if (!file_exists($this->icon))
             @copy($channel_data['icon'], $this->icon);

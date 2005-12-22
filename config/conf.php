@@ -46,26 +46,13 @@
 // file system encoding, uses music and video file link to local file
     define('fs_encoding', 'ISO-8859-1');
 
-// Local (web-friendly) path to the mythtv video dir (use a symlink to the real one - one will be auto-created if it can be)
-    define('video_dir', 'data/recordings');
-
-// Type of url for the links to mythmusic files. Filename will be added to the end.
-// For this to work, create a 'music' symlink in mythweb which points to the path for mythmusic files.
-    define('music_url', 'data/music');
-
 // Path to the mythvideo "covers" directory
     define('video_img_path', 'data/video_covers');
 
-// Where in the local filesystem are the mythvideo files stored
-    define('mythvideo_dir', '/pub/video');
-
-// URL path to the mythvideo files directory (most likely a symlink to mythvideo_dir)
-    define('mythvideo_url', 'data/video');
-
-// video_url is normally determined automatically (a local link to video_dir for
-//   Linux/MacOS, and a myth:// URL for windows machines), but you can override
+// video_url is normally determined automatically (a local link to data/recordings
+//   for Linux/MacOS, and a myth:// URL for windows machines), but you can override
 //   it here to something else if you really need to.
-#   define('video_url', video_dir);
+#   define('video_url', 'data/recordings');
 #   define('video_url', 'file://machine_name/path_to_videos');
 #   define('video_url', 'myth://slave_backend_ip:6543');
 

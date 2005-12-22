@@ -6,6 +6,9 @@
  * @date        $Date$
  * @version     $Revision$
  * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
  *
 /**/
 
@@ -32,7 +35,7 @@
         trigger_error("MasterServerIP or MasterServerPort not found! You man need to check your settings.php file or re-run setup mythtv's setup", FATAL);
 
 // Make sure we're connected to mythbackend
-    if (backend_command('ANN Playback '.trim(`hostname`).' 0') != 'OK')
+    if (backend_command('ANN Playback '.hostname.' 0') != 'OK')
         trigger_error("Unable to connect to mythbackend, is it running?\n", FATAL);
 
 /*
@@ -227,7 +230,6 @@
     function generate_preview_pixmap($show) {
         $fileurl  = $show->filename;
         $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
-        $hostname = chop(`hostname`);
         $host     = $GLOBALS['Master_Host'];
         $port     = $GLOBALS['Master_Port'];
         $cmd = array('QUERY_PIXMAP_LASTMODIFIED',   // 00 command
@@ -287,7 +289,7 @@
             else {
                 preg_match('#myth://(.+?):(\d+)/(.+)$#', $fileurl, $matches);
                 list($matches, $host, $port, $path) = $matches;
-                $recs = explode(backend_sep, backend_command2(array("ANN FileTransfer $hostname", "$fileurl.png"),
+                $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, "$fileurl.png"),
                                                               $datasocket,
                                                               $host, $port));
                 $generate_pixmap = (0 == $recs[3]) ? true : false;
@@ -307,7 +309,7 @@
 
                 $ret = backend_command($cmd);
 
-                $recs = explode(backend_sep, backend_command2(array("ANN FileTransfer $hostname", "$fileurl.png"),
+                $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, "$fileurl.png"),
                                                               $datasocket,
                                                               $host, $port));
             }
@@ -316,7 +318,7 @@
                 copy("$fileurl.png", $pngpath);
             }
             elseif ($datasocket && $recs[3]) {
-                backend_command("ANN Playback $hostname 0",
+                backend_command('ANN Playback '.hostname.' 0',
                                 $host, $port);
                 backend_command(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
                                 $host, $port);

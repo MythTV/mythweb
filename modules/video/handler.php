@@ -12,6 +12,55 @@
  *
 /**/
 
+/**
+ * This points to the local filesystem path where MythVideo has been told to
+ * look for videos.
+ *
+ * @global  string   $GLOBALS['mythvideo_dir']
+ * @name    $mythvideo_dir
+/**/
+    global $mythvideo_dir;
+    $mythvideo_dir = $db->query_col('SELECT data
+                                       FROM settings
+                                      WHERE value="VideoStartupDir" AND hostname=?',
+                                    hostname
+                                    );
+
+// Make sure the video directory exists
+    if (file_exists('data/video')) {
+    // File is not a directory or a symlink
+        if (!is_dir('data/video') && !is_link('data/video')) {
+            $Error = 'An invalid file exists at data/video.  Please remove it in'
+                    .' order to use the video portions of MythWeb.';
+            require_once 'templates/_error.php';
+        }
+    }
+// Create the symlink, if possible.
+//
+// NOTE:  Errors have been disabled because if I turn them on, people hosting
+//        MythWeb on Windows machines will have issues.  I will turn the errors
+//        back on when I find a clean way to do so.
+//
+    else {
+        if ($mythvideo_dir) {
+            $ret = @symlink($dir, 'data/video');
+            if (!$ret) {
+                #$Error = "Could not create a symlink to $mythvideo_dir, the local MythVideo"
+                #        .' directory for this hostname ('.hostname.').  Please create a
+                #        .' symlink to your MythVideo directory at data/video in order to
+                #        .' use the video portions of MythWeb.';
+                #require_once 'templates/_error.php';
+            }
+        }
+        else {
+            #$Error = 'Could not find a value in the database for the MythVideo directory'
+            #        .' for this hostname ('.hostname.').  Please create a symlink to your'
+            #        .' MythVideo directory at data/video in order to use the video'
+            #        .' portions of MythWeb.';
+            #require_once 'templates/_error.php';
+        }
+    }
+
 // Editing?
     if ($Path[1] == 'edit') {
         require_once 'modules/video/edit.php';
@@ -92,6 +141,7 @@ class Video {
     var $url;
 
     function Video($program_data) {
+        global $mythvideo_dir;
         $this->intid      = $program_data['intid'];
         $this->plot       = $program_data['plot'];
         $this->category   = $program_data['category'];
@@ -108,11 +158,11 @@ class Video {
         $this->childid    = $program_data['childid'];
     // Figure out the URL
         $this->url = '#';
-        if (mythvideo_url != 'mythvideo_url' && file_exists(mythvideo_url)) {
+        if (file_exists('data/video/')) {
             $this->url = root . implode('/', array_map('rawurlencode',
                                              array_map('utf8tolocal',
                                              explode('/',
-                                             mythvideo_url . '/' . preg_replace('#^'.mythvideo_dir.'/?#', '', $this->filename)
+                                             'data/video/' . preg_replace('#^'.$mythvideo_dir.'/?#', '', $this->filename)
                                        ))));
         }
     }

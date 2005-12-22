@@ -48,6 +48,9 @@
 // to cleanly reference things like the /js directory from subpaths.
     define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));;
 
+// Several sections of this program require the current hostname
+    define('hostname', trim(`hostname`));
+
 // Load the user-defined configuration settings
     require_once 'config/conf.php';
 
