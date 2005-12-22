@@ -58,7 +58,7 @@ function newWindow(newContent)
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-<?php   if (show_recorded_pixmap) { ?>
+<?php   if (show_video_covers) { ?>
     <td><?php echo t('cover') ?></td>
 <?php   } ?>
     <td><a href="<?php echo root ?>video?sortby=title"><?php    echo t('title') ?></a></td>
@@ -76,8 +76,8 @@ function newWindow(newContent)
     foreach ($All_Shows as $show) {
     ?><tr class="recorded">
     <td><?php
-        if (show_recorded_pixmaps && file_exists(video_img_path.'/'.basename($show->coverfile)))
-            echo '<a href="'.$show->url.'">.<img id="'.htmlentities($show->filename).'" src="'.video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
+        if (show_video_covers && file_exists(video_img_path.'/'.basename($show->coverfile)))
+            echo '<a href="'.$show->url.'"><img id="'.htmlentities($show->filename).'" src="'.video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
         else
             echo '&nbsp;';
     ?></td>

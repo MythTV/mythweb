@@ -112,6 +112,13 @@
     define('pixmap_width',  160);
     define('pixmap_height', 120);
 
+/*
+
+    The following constants are defined for the videos page
+
+*/
+    define('show_video_covers', true);
+
 // height and width of generated pixmaps for video thumbnails
     define('video_img_width',  94);
     define('video_img_height', 140);
