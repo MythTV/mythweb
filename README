@@ -79,20 +79,20 @@ you should do something like:
 
     cp -r . /wwww/htdocs/myMythWebDirectory
 
-    Next, you need to make sure that your web server can write to the image
-cache directory.  This should be as simple as:  **
+    Next, you need to make sure that your web server can write to the data
+directory.  This should be as simple as:  **
 
-    chgrp -R apache /wwww/htdocs/myMythWebDirectory/cache
-    chmod g+rw /wwww/htdocs/myMythWebDirectory/cache
+    chgrp -R apache /wwww/htdocs/myMythWebDirectory/data
+    chmod g+rw /wwww/htdocs/myMythWebDirectory/data
 
     ** Some distributions run apache as "nobody/nogroup" so please be aware
        that you may need to consult your /etc/httpd/httpd.conf file to verify
        which user/group apache is set to run as.
 
-    Finally, and THIS IS VERY VERY IMPORTANT, you should then edit the file
-config/conf.php (instructions for what to set are included in the file).
-That's it. Point your web browser at http://your_machine_name/your_mythweb_path/
-What could be simpler?
+    Finally, and THIS IS VERY VERY IMPORTANT, you should then edit the files 
+config/conf.php and .htaccess (instructions for what to set are included in
+the file). That's it. Point your web browser at 
+http://your_machine_name/your_mythweb_path/ What could be simpler?
 
     Did you read the THIS IS VERY VERY IMPORTANT note in the previous paragraph?
 People seem to skip over the config file and for some reason assume that
