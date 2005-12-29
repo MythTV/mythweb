@@ -219,14 +219,14 @@
         if (!video_url || video_url == 'video_url') {
         // Mac and Linux just get a link to the direectory
             if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
-                define('video_url', 'data/recordings');
+                define('video_url', root.'data/recordings');
         // Windows likely gets a myth:// url
             else {
                 global $Master_Host, $Master_Port;
             // Is either the browser xor the master in an rfc 1918 zone?
                 if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
                         xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
-                    define('video_url', 'data/recordings');
+                    define('video_url', root.'data/recordings');
                 }
             // Send the myth url
                 else {

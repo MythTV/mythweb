@@ -251,7 +251,7 @@ if ($group_field == "") {
         if (show_recorded_pixmaps) {
             echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
-                echo '<a href="'.root.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
+                echo '<a href="'.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
                     .'<img id="'.$show->filename."\" src=\"".root.cache_dir.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">'
                     .'</a>';
             }
@@ -260,10 +260,10 @@ if ($group_field == "") {
             echo "</td>\n";
         }
     ?>
-    <td><?php echo '<a href="'.root.video_url().'/'.basename($show->filename).'"'
+    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'"'
                     .(show_recorded_pixmaps ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
-    <td><?php echo '<a href="'.root.video_url().'/'.basename($show->filename).'">'
+    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'
                     .$show->subtitle.'</a>' ?></td>
 <?php
         if (!$_SESSION['recorded_descunder'])
