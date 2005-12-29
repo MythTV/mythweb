@@ -38,7 +38,7 @@
         <div id="program_header">
 <?php if ($channel) { ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
-                <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>&time=<?php echo $program->starttime ?>"
+                <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                         onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo $channel->channum.' '.$channel->callsign ?>')"
                         onmouseout="return wstatus('')">
 <?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
