@@ -240,7 +240,7 @@
             echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup', $wstatus);
         else
             echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
-        echo ' href="'.root.'detail/'.$show->chanid.'/'.$show->starttime.'">'
+        echo ' href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
             .$show->title
             .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
             .'</a>';
