@@ -27,9 +27,10 @@
         global $Channels;
         $Channels = array();
         if ($_SESSION['guide_favonly'])
-            $sql = "SELECT channel.* FROM channel, favorites WHERE channel.chanid = favorites.chanid";
+            $sql = 'SELECT channel.* FROM channel, favorites WHERE channel.chanid = favorites.chanid AND';
         else
-            $sql = "SELECT * FROM channel";
+            $sql = 'SELECT * FROM channel';
+        $sql .= ' channel.visible=1';
     // Group and sort
         $sql .= ' GROUP BY channum, callsign ORDER BY '
                 .(prefer_channum ? '' : 'callsign, ')
