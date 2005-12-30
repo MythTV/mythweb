@@ -188,7 +188,7 @@
                 echo t('What else is on at this time?')
             ?></a>
 <?php       } ?>
-            <a href="<?php echo root ?>tv/search/<?php echo urlencode($schedule->title) ?>&search_title=1"><?php
+            <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php
                 if ($_GET['recordid'])
                     echo t('Find showings of this program');
                 else
