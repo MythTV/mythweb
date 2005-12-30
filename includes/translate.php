@@ -32,8 +32,10 @@
     $Languages['Finnish']    = array('Suomi',           'fi_FI');
 
 // Need to detect the language?
-    if (!$_SESSION['language'])
+    if (empty($_SESSION['language']))
         $_SESSION['language'] = get_browser_lang();
+    if (empty($_SESSION['language']))
+        $_SESSION['language'] = 'English';
 
 // Default language file is English
     if (!file_exists('languages/'.$_SESSION['language'].'.php'))
