@@ -41,7 +41,7 @@
                 <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                         onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo $channel->channum.' '.$channel->callsign ?>')"
                         onmouseout="return wstatus('')">
-<?php       if (show_channel_icons === true && is_file($channel->icon)) { ?>
+<?php       if (show_channel_icons === true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30"></a>
 <?php       } ?>
                     <span class="preferred"><?php echo _or(prefer_channum ? $channel->channum : $channel->callsign, '&nbsp') ?></span><br />

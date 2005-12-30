@@ -142,7 +142,7 @@
                                             onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
                                             onmouseout="return wstatus('')"><?php echo prefer_channum ? $channel->channum : $channel->callsign ?></a>&nbsp;</td>
             <td width="50%" align="right"><?php
-                if (is_file($channel->icon)) {
+                if (!empty($channel->icon)) {
                     ?><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $list_starttime ?>"
                         onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
                         onmouseout="return wstatus('')"><img src="<?php echo $channel->icon ?>" height="30" width="30"></a><?php
