@@ -17,8 +17,8 @@
 /**/
 
 // Start the session
+    session_name('mythweb_id');
     if (empty($_SERVER['REMOTE_USER'])) {
-        session_name('mythweb_id');
         session_set_cookie_params(365 * 24 * 60 * 60, '/', server_domain);  // sessions should last for a year
         ini_set('session.gc_maxlifetime', 60 * 60 * 30);                    // 30 day timeout
     }
