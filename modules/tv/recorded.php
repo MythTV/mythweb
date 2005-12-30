@@ -92,17 +92,15 @@
     // WML browser often require a fully qualified URL for redirects to work. Also, set content type
         if ($_SESSION['Theme'] == 'wml') {
             header('Content-type: text/vnd.wap.wml');
-            header('Location: http://'.$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"].'?refresh');
+            redirect_browser('http://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'].'?refresh');
         }
     // Return to the row just prior to the one deleted
     //  (with some fuzz to account for normal screen height
     //   -- remember that rows are numbered starting at zero)
         else {
-            header('Location: recorded_programs.php?refresh'.($prev_row > 0 ? "#$prev_row" : ''));
+            redirect_browser(root.'tv/recorded?refresh'.($prev_row > 0 ? "#$prev_row" : ''));
         }
-    // need at least 1 byte in body
-        echo "\n";
-        exit;
+    // redirect_browser calls exit() on its own
     }
 
 // Queries for a specific program title
