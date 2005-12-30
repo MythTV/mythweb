@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
 
 <br />
 
-<form method="POST" action="<?php echo root ?>video/edit">
+<form method="post" action="<?php echo root ?>video/edit">
 <table width="302" border="0" cellspacing="0" cellpadding="3">
 <tr>
     <td width="99">Title:</td>
@@ -109,14 +109,14 @@ if (isset($_POST['submit'])) {
 </tr><tr>
     <td>Category:</td>
     <td><select name="category">
-        <option <?php if (!(isset($category)) || ($category == 0)) print "selected" ?> value="0">Uncategorized</option>
+        <option <?php if (!isset($category) || $category == 0) echo ' SELECTED' ?> value="0">Uncategorized</option>
         <?php
             $sh = $db->query('SELECT * FROM videocategory');
-            while ($row = $sh->fetch_assoc()) {
-                echo '<option value="'.$cat_data["intid"].'"';
-                if ($category == $cat_data["intid"])
+            while ($cat_data = $sh->fetch_assoc()) {
+                echo '<option value="'.$cat_data['intid'].'"';
+                if ($category == $cat_data['intid'])
                     echo ' SELECTED';
-                echo '>'.htmlentities($cat_data["category"]).'</option>';
+                echo '>'.htmlentities($cat_data['category']).'</option>';
             }
             $sh->finish();
         ?></select></td>
