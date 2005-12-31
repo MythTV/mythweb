@@ -197,9 +197,11 @@ $L = array(
 // themes/default/header.php
     'Category Legend'                            => 'Kategorian Merkit',
     'Category Type'                              => 'Kategorian Tyyppi',
+    'Custom'                                     => '',
     'Edit MythWeb and some MythTV settings.'     => 'Muokkaa MythWeb:in ja MythTV:n asetuksia.',
     'Exact Match'                                => 'Tarkka Vastaavuus',
     'HD Only'                                    => 'Vain Teräväpiirto',
+    'Manual'                                     => '',
     'MythMusic on the web.'                      => 'MythMusic Netissä.',
     'MythVideo on the web.'                      => 'MythVideo Netissä.',
     'MythWeb Weather.'                           => 'MythWeb Sääennuste.',

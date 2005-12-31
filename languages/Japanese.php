@@ -192,9 +192,11 @@ $L = array(
 // themes/default/header.php
     'Category Legend'                            => 'カテゴリー凡例',
     'Category Type'                              => 'カテゴリータイプ',
+    'Custom'                                     => '',
     'Edit MythWeb and some MythTV settings.'     => 'MythWebとMythTVの設定',
     'Exact Match'                                => '正確に一致',
     'HD Only'                                    => 'HDのみ',
+    'Manual'                                     => '',
     'MythMusic on the web.'                      => 'MythMusic オンザウェブ',
     'MythVideo on the web.'                      => 'MythVideo オンザウェブ',
     'MythWeb Weather.'                           => 'MythWeb 天気',

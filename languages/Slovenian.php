@@ -192,9 +192,11 @@ $L = array(
 // themes/default/header.php
     'Category Legend'                            => 'Legenda kategorij',
     'Category Type'                              => 'Tip kategorij',
+    'Custom'                                     => '',
     'Edit MythWeb and some MythTV settings.'     => 'Uredi MythWeb in nekaj MythTV nastavitev.',
     'Exact Match'                                => 'Točen zadetek',
     'HD Only'                                    => 'Samo HD',
+    'Manual'                                     => '',
     'MythMusic on the web.'                      => 'MythMusic na spletu',
     'MythVideo on the web.'                      => 'MythVideo na spletu',
     'MythWeb Weather.'                           => 'MythWeb vreme',

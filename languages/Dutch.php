@@ -192,9 +192,11 @@ $L = array(
 // themes/default/header.php
     'Category Legend'                            => 'Categorie Legende',
     'Category Type'                              => 'Categorie Type',
+    'Custom'                                     => '',
     'Edit MythWeb and some MythTV settings.'     => 'Bewerk MythWeb en enkele MythTV instellingen',
     'Exact Match'                                => 'Exacte Overeenkomst',
     'HD Only'                                    => '',
+    'Manual'                                     => '',
     'MythMusic on the web.'                      => 'Muziek',
     'MythVideo on the web.'                      => 'Video',
     'MythWeb Weather.'                           => 'Weer',
