@@ -153,7 +153,7 @@
     <td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
         <tr>
             <td><div id="command_choices">
-                    <a id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
+                    <a href="<?php echo root ?>" id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
                     <a href="<?php echo root ?>tv/list"><?php echo t('Listings') ?></a>
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
