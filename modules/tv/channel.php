@@ -19,6 +19,8 @@
 // Path-based
     if ($Path[2]) {
         $_GET['chanid'] = $Path[2];
+        if (!$_GET['time'])
+            $_GET['time'] = $Path[3];
     }
 
 // Chanid?
@@ -27,7 +29,7 @@
 
 // No channel found
     if (!$_GET['chanid'] || !$this_channel->chanid) {
-        header('Location: program_listing.php?time='.$_SESSION['list_time']);
+        header('Location: '.root.'tv/list?time='.$_SESSION['list_time']);
         exit;
     }
 

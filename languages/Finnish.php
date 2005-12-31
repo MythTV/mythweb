@@ -297,6 +297,7 @@ $L = array(
     'Guest Starring'                      => 'Vierastähdet',
     'Guide rating'                        => '',
     'Hosted by'                           => 'Isäntänä',
+    'Possible conflicts with this show'   => '',
     'Presented by'                        => 'Esittää',
     'Produced by'                         => 'Tuottajana',
     'Program Detail'                      => 'Ohjelman Lisätietoja',

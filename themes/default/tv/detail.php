@@ -36,7 +36,7 @@
 
     <div id="program_info" class="clearfix">
         <div id="program_header">
-<?php if ($channel) { ?>
+<?php   if ($channel) { ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
                 <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                         onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo $channel->channum.' '.$channel->callsign ?>')"
@@ -48,25 +48,25 @@
                     <?php echo (prefer_channum ? $channel->callsign : $channel->channum)."\n" ?>
                 </a>
             </div>
-<?php } ?>
+<?php   } ?>
             <div id="program_title">
                 <h1>
                     <a href="<?php echo root ?>tv/search/<?php echo urlencode($program->title) ?>&search_title=yes"><?php echo $schedule->title ?></a>
                 </h1>
                 <div id="program_time">
 <?php
-            if ($_GET['recordid'])
-                echo '<span class="bold">';
-            echo strftime('%a, %b %e', $schedule->starttime);
-            if ($program && $program->previouslyshown)
-                echo ' ('.t('Rerun').')';
-            echo '<br />'
-                .t('$1 to $2', strftime('%r', $schedule->starttime), strftime('%r', $schedule->endtime));
-            if ($program)
-                echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
-            if ($_GET['recordid'])
-                echo "</span>";
-            echo "<br />\n";
+        if ($_GET['recordid'])
+            echo '<span class="bold">';
+        echo strftime('%a, %b %e', $schedule->starttime);
+        if ($program && $program->previouslyshown)
+            echo ' ('.t('Rerun').')';
+        echo '<br />'
+            .t('$1 to $2', strftime('%r', $schedule->starttime), strftime('%r', $schedule->endtime));
+        if ($program)
+            echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
+        if ($_GET['recordid'])
+            echo "</span>";
+        echo "<br />\n";
 ?>
                 </div>
                 <div id="external_searches">
@@ -80,46 +80,46 @@
                 </div>
             </div>
         </div>
-<?php       if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
+<?php    if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
         <div id="program_details">
             <dl>
-<?php           if (strlen($schedule->subtitle)) { ?>
+<?php       if (strlen($schedule->subtitle)) { ?>
                 <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Episode') ?>:&nbsp;</dt>
                 <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
-                    echo $schedule->subtitle;
+                echo $schedule->subtitle;
                     ?></dd>
-<?php           }
-                if (strlen($schedule->description)) {
+<?php       }
+            if (strlen($schedule->description)) {
 ?>
                 <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Description') ?>:&nbsp;</dt>
                 <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
                     echo nl2br($schedule->description);
                     ?></dd>
-<?php           }
-                if (!empty($program->recstatus)) {
+<?php       }
+            if (!empty($program->recstatus)) {
 ?>
                 <dt><?php echo t('Notes') ?>:&nbsp;</dt>
                 <dd><?php
                     echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
                     ?></dd>
-<?php           } ?>
+<?php       } ?>
             </dl>
         </div>
-<?php       }
-            if ($program) {
+<?php   }
+        if ($program) {
 ?>
         <div id="program_extra_details">
             <dl>
-<?php           if (strlen($program->category)) { ?>
+<?php       if (strlen($program->category)) { ?>
                 <dt><?php echo t('Category') ?>:&nbsp;</dt>
                 <dd><?php echo $program->category ?></dd>
-<?php           }
-               if (strlen($program->airdate)) {
+<?php       }
+            if (strlen($program->airdate)) {
 ?>
                 <dt><?php echo t('Original Airdate') ?>:&nbsp;</dt>
                 <dd><?php echo $program->airdate ?></dd>
-<?php           }
-                if (strlen($program->rating)) {
+<?php       }
+            if (strlen($program->rating)) {
 ?>
                 <dt><?php
                     if (strlen($program->rater))
@@ -128,55 +128,126 @@
                         echo t('Rating');
                     ?>:&nbsp;</dt>
                 <dd><?php echo $program->rating ?></dd>
-<?php           }
-                if ($program->get_credits('host')) {
+<?php       }
+            if ($program->get_credits('host')) {
 ?>
                 <dt><?php echo t('Hosted by') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('host') ?></dd>
-<?php           }
-                if ($program->get_credits('presenter')) {
+<?php       }
+            if ($program->get_credits('presenter')) {
 ?>
                 <dt><?php echo t('Presented by') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('presenter') ?></dd>
-<?php           }
-                if ($program->get_credits('actor')) {
+<?php       }
+            if ($program->get_credits('actor')) {
 ?>
                 <dt><?php echo t('Cast') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('actor') ?></dd>
-<?php           }
-                if ($program->get_credits('guest_star')) {
+<?php       }
+            if ($program->get_credits('guest_star')) {
 ?>
                 <dt><?php echo t('Guest Starring') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('guest_star') ?></dd>
-<?php           }
-                if ($program->get_credits('director')) {
+<?php       }
+            if ($program->get_credits('director')) {
 ?>
                 <dt><?php echo t('Directed by') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('director') ?></dd>
-<?php           }
-                if ($program->get_credits('producer')) {
+<?php       }
+            if ($program->get_credits('producer')) {
 ?>
                 <dt><?php echo t('Produced by') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('producer') ?></dd>
-<?php           }
-                if ($program->get_credits('executive_producer')) {
+<?php       }
+            if ($program->get_credits('executive_producer')) {
 ?>
                 <dt><?php echo t('Exec. Producer') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('executive_producer') ?></dd>
-<?php           }
-                if ($program->get_credits('writer')) {
+<?php       }
+            if ($program->get_credits('writer')) {
 ?>
                 <dt><?php echo t('Written by') ?>:&nbsp;</dt>
                 <dd><?php echo $program->get_credits('writer') ?></dd>
-<?php           }
-		if (strlen($program->starstring) > 0) {
+<?php       }
+		    if (strlen($program->starstring) > 0) {
 ?>
 		   <dt><?php echo t('Guide rating') ?>:&nbsp;</dt>
 		   <dd><?php echo $program->starstring ?></dd>
-<?php           } ?>
+<?php       } ?>
             </dl>
         </div>
-<?php   } ?>
+<?php
+        }
+        if (count($conflicting_shows)) {
+            echo "    <div id=\"conflicting_shows\" class=\"clearfix\">\n        ",
+                 t('Possible conflicts with this show'),
+                 ":\n        <table>\n        ";
+            foreach ($conflicting_shows as $show) {
+            // Ignore this show
+                if ($show->chanid == $program->chanid && $show->starttime == $program->starttime)
+                    continue;
+            // Set the class to be used to display the recording status character
+                $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));
+            // Set the recording status character, class and any applicable commands for each show
+                switch ($show->recstatus) {
+                    case 'Recording':
+                    case 'WillRecord':
+                    case 'ForceRecord':
+                        $class = 'scheduled';
+                        break;
+                    case 'PreviousRecording':
+                    case 'CurrentRecording':
+                    case 'Repeat':
+                        $class = 'duplicate';
+                        break;
+                    case 'Conflict':
+                    case 'Overlap':
+                        $class = 'conflict';
+                        break;
+                    case 'EarlierShowing':
+                    case 'TooManyRecordings':
+                    case 'Cancelled':
+                    case 'LaterShowing':
+                    case 'LowDiskSpace':
+                    case 'TunerBusy':
+                    case 'ManualOverride':
+                    default:
+                        $class = 'deactivated';
+                        break;
+                }
+
+            // A program id counter for popup info
+                if (show_popup_info) {
+                    $program_id_counter = 0;
+                    $program_id_counter++;
+                }
+
+            // Print the content
+        ?><tr class="<?php echo $class ?>">
+            <td class="<?php echo $show->class ?>"><?php
+            // Window status text, for the mouseover
+                $wstatus = strftime($_SESSION['time_format'], $show->starttime).' - '.strftime($_SESSION['time_format'], $show->endtime).' -- '
+                          .str_replace(array("'", '"'),array("\\'", '&quot;'), $show->title)
+                          .($show->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $show->subtitle)
+                                                  : '');
+            // Print the link to edit this scheduled recording
+                echo '<a';
+                if (show_popup_info)
+                    echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup', $wstatus);
+                else
+                    echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
+                echo ' href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
+                    .$show->title
+                    .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
+                    .'</a>';
+            ?></td>
+                <td><a href="<?php echo root ?>tv/channel/<?php echo $show->channel->chanid, '/', $show->starttime ?>"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></a></td>
+        </tr><?php
+                $row++;
+            }
+            echo "\n        </table>\n    </div>";
+        }
+?>
 
         <div id="local_links">
 <?php       if ($_GET['recordid']) { ?>

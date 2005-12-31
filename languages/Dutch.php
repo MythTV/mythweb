@@ -292,6 +292,7 @@ $L = array(
     'Guest Starring'                      => '',
     'Guide rating'                        => '',
     'Hosted by'                           => '',
+    'Possible conflicts with this show'   => '',
     'Presented by'                        => 'Presentator',
     'Produced by'                         => 'Producent',
     'Program Detail'                      => '',

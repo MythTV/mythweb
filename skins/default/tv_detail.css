@@ -69,6 +69,19 @@
 #program_extra_details {
 }
 
+#conflicting_shows {
+    margin:      20px auto 0px auto;
+    padding:     10px;
+    border:      1px solid #446;
+    text-align:  center !important;
+}
+#conflicting_shows table {
+    margin: auto;
+}
+#conflicting_shows table td {
+    padding: 3px;
+}
+
 #local_links {
     width:       20em;
     margin:      20px auto 0px auto;

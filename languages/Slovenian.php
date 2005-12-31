@@ -292,6 +292,7 @@ $L = array(
     'Guest Starring'                      => 'Igra še',
     'Guide rating'                        => '',
     'Hosted by'                           => 'Gostitelj',
+    'Possible conflicts with this show'   => '',
     'Presented by'                        => 'Predstavlja',
     'Produced by'                         => 'Producent',
     'Program Detail'                      => '',

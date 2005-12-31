@@ -14,6 +14,9 @@
  *
 /**/
 
+// Load the sorting routines
+    require_once "includes/sorting.php";
+
 // Load the program info, unless a schedule was requested
     if ($_GET['recordid'])
         $program = null;
@@ -163,7 +166,39 @@
     else
         $channel =& load_one_channel($schedule->chanid);
 
-// Load the class for this page
+// Parse the list of scheduled recordings for possible conflicts
+    global $Scheduled_Recordings;
+    $conflicting_shows = array();
+    foreach ($Scheduled_Recordings as $chanid => $shows) {
+    // Now the shows in this channel
+        foreach ($shows as $starttime => $show_group) {
+        // Clearly not a match
+            if ($starttime > $program->endtime)
+                continue;
+        // Parse each show group
+            foreach ($show_group as $key => $show) {
+            // Make sure this is a valid show (ie. skip in-progress recordings and other junk)
+                if (!$chanid || $show->length < 1)
+                    continue;
+            // Not a conflict
+                if ($show->endtime < $program->starttime)
+                    continue;
+            // Assign a reference to this show to the various arrays
+                $conflicting_shows[] =& $Scheduled_Recordings[$chanid][$starttime][$key];
+            }
+        }
+    }
+
+// Sort the programs -- but don't use a session variable
+    if (count($conflicting_shows)) {
+        $GLOBALS['user_sort_choice'] = array(array('field' => 'title'),
+                                             array('field' => 'subtitle'),
+                                             array('field' => 'airdate')
+                                            );
+        usort($conflicting_shows, 'by_user_choice');
+    }
+
+// Display the page
     require_once theme_dir.'tv/detail.php';
 
 // Exit

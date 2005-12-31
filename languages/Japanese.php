@@ -292,6 +292,7 @@ $L = array(
     'Guest Starring'                      => 'ゲスト出演',
     'Guide rating'                        => '',
     'Hosted by'                           => '主催',
+    'Possible conflicts with this show'   => '',
     'Presented by'                        => '提供',
     'Produced by'                         => '製作',
     'Program Detail'                      => '',
