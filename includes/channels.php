@@ -107,11 +107,11 @@ class Channel {
         $this->visible      = $channel_data['visible'];
         $this->icon         = 'data/tv_icons/'.basename($channel_data['icon']);
     // Try to copy over any missing channel icons
-        if (!file_exists($this->icon))
+        if ($channel_data['icon'] && !file_exists($this->icon))
             @copy($channel_data['icon'], $this->icon);
     // Now that local filesystem checks are done, add the web root to the icon
     // path, or wipe the icon path completely if it still doesn't exist.
-        if (file_exists($this->icon))
+        if (is_file($this->icon))
             $this->icon = root . $this->icon;
         else
             $this->icon = null;
