@@ -1,6 +1,6 @@
 <?php
 /**
- * Schedule a custom recording by manually specifying starttime and length
+ * Schedule a custom recording by manually specifying various search options
  *
  * @url         $URL$
  * @date        $Date$
@@ -14,10 +14,10 @@
 /**/
 
 // Set the desired page title
-    $page_title = 'MythWeb - '.t('Schedule Manually');
+    $page_title = 'MythWeb - '.t('Custom Schedule');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedules_manual.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedules_custom.css" />';
 
 // Print the page header
     require_once theme_dir.'/header.php';
@@ -25,11 +25,41 @@
 // Print the page contents
 ?>
 
+<script language="JavaScript" type="text/javascript">
+<!--
+
+// Swaps visibility of the standard/power options lists
+    function toggle_options() {
+        if (get_element('searchtype_power').checked) {
+            get_element('standard_options').style.visibility = 'hidden';
+            get_element('standard_options').style.display    = 'none';
+            get_element('power_options').style.visibility    = 'visible';
+            get_element('power_options').style.display       = 'block';
+        }
+        else {
+            get_element('power_options').style.visibility    = 'hidden';
+            get_element('power_options').style.display       = 'none';
+            get_element('standard_options').style.visibility = 'visible';
+            get_element('standard_options').style.display    = 'block';
+        }
+    // Get the search type
+        if (get_element('searchtype_title').checked)
+            get_element('search_type').innerHTML = 'Title';
+        else if (get_element('searchtype_keyword').checked)
+            get_element('search_type').innerHTML = 'Keyword';
+        else if (get_element('searchtype_people').checked)
+            get_element('search_type').innerHTML = 'People';
+        else if (get_element('searchtype_power').checked)
+            get_element('search_type').innerHTML = 'Power';
+    }
+
+// -->
+</script>
+
     <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
-        <form name="schedule_manually" method="post" action="<?php echo root ?>tv/schedules/manual<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
+        <form name="custom_schedule" method="post" action="<?php echo root ?>tv/schedules/custom<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
 
-<?php   if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
         <div id="schedule_options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
 
@@ -38,58 +68,59 @@
                 <li><input type="radio" class="radio" name="record" value="0" id="record_never" />
                     <label for="record_never"><?php echo t('Cancel this schedule.') ?></label></li>
 <?php       } ?>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
-                        echo $schedule->type == rectype_once ? ' CHECKED' : '' ?> />
-                    <label for="record_once"><?php echo t('rectype-long: once') ?></label></li>
-
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
-                        echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?> />
-                    <label for="record_daily"><?php echo t('rectype-long: daily') ?></label></li>
-
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php
-                        echo $schedule->type == rectype_weekly ? ' CHECKED' : '' ?> />
-                    <label for="record_weekly"><?php echo t('rectype-long: weekly') ?></label></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
+                        if ($schedule->type == rectype_always) echo ' CHECKED' ?> />
+                    <label for="record_always"><?php echo t('rectype-long: always') ?></label></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="rectype_findone"<?php
+                        if ($schedule->type == rectype_findone) echo ' CHECKED' ?> />
+                    <label for="rectype_findone"><?php echo t('rectype-long: findone') ?></label></li>
             </ul>
         </div>
-<?php
-        }
-        if ($schedule->recordid) {
-?>
-        <div id="schedule_override">
-            <h3><?php echo t('Schedule Override') ?>:</h3>
+
+        <div id="searchtype_options">
+            <h3><?php echo t('Search Type') ?>:</h3>
 
             <ul>
-<?php       if ($schedule->type == rectype_override || $schedule->type == rectype_dontrec) { ?>
-                <li><input type="radio" class="radio" name="record" value="0" id="schedule_default"<?php
-                        if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) echo ' CHECKED' ?> />
-                    <label for="schedule_default"><?php echo t('Schedule normally.') ?></label></li>
-<?php       } ?>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_override ?>" id="record_override"<?php
-                        if ($schedule->type == rectype_override) echo ' CHECKED' ?> />
-                    <label for="record_override"><?php echo t('rectype-long: override') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_dontrec ?>" id="record_dontrec"<?php
-                        if ($schedule->type == rectype_dontrec) echo ' CHECKED' ?> />
-                    <label for="record_dontrec"><?php echo t('rectype-long: dontrec') ?></label></li>
+                <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_title ?>" id="searchtype_title"<?php
+                        if (empty($schedule->search) || $schedule->search == searchtype_title) echo ' CHECKED'
+                        ?> onclick="toggle_options()" />
+                    <label for="searchtype_title"><?php echo t('Title Search') ?></label></li>
+                <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_keyword ?>" id="searchtype_keyword"<?php
+                        if ($schedule->search == searchtype_keyword) echo ' CHECKED'
+                        ?> onclick="toggle_options()" />
+                    <label for="searchtype_keyword"><?php echo t('Keyword Search') ?></label></li>
+                <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_people ?>" id="searchtype_people"<?php
+                        if ($schedule->search == searchtype_people) echo ' CHECKED'
+                        ?> onclick="toggle_options()" />
+                    <label for="searchtype_people"><?php echo t('People Search') ?></label></li>
+                <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_power ?>" id="searchtype_power"<?php
+                        if ($schedule->search == searchtype_power) echo ' CHECKED'
+                        ?> onclick="toggle_options()" />
+                    <label for="searchtype_power"><?php echo t('Power Search') ?></label></li>
             </ul>
+
         </div>
-<?php      } ?>
 
         <div id="recording_options">
             <h3><?php echo t('Recording Options') ?>:</h3>
 
-            <dl>
-                <dt><?php echo t('Channel') ?>:&nbsp;</dt>
-                <dd><?php channel_select($schedule->chanid) ?></dd>
-                <dt><?php echo t('Start Date') ?>:&nbsp;</dt>
-                <dd><input type="text" name="startdate" size="10" maxlength="10" value="<?php echo date("Y-m-d", $schedule->starttime) ?>"></dd>
-                <dt><?php echo t('Start Time') ?>:&nbsp;</dt>
-                <dd><input type="text" name="starttime" size="10" maxlength="8" value="<?php echo date("H:i:00", $schedule->starttime) ?>"></dd>
-                <dt><?php echo t('Length (min)') ?>:&nbsp;</dt>
-                <dd><input type="text" name="length" value="<?php echo $schedule->length ?>" size="10" maxlength="4"></dd>
+            <dl id="title_options">
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
-                <dd><input type="text" name="title" value="<?php echo $schedule->title ?>" size="30"></dd>
-                <dt><?php echo t('Subtitle') ?>:&nbsp;</dt>
-                <dd><input type="text" name="subtitle" value="<?php echo $schedule->subtitle ?>" size="30"></dd>
+                <dd><input type="text" name="title" value="<?php echo htmlentities($schedule->edit_title) ?>" size="24">
+                    (<span id="search_type"><?php echo $schedule->search_type ?></span> Search)</dd>
+            </dl>
+            <dl id="standard_options"<?php if ($schedule->search == searchtype_power) echo ' class="hidden"' ?>>
+                <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
+                <dd><input type="text" name="search_phrase" value="<?php echo htmlentities($schedule->description) ?>" size="30"></dd>
+            </dl>
+
+            <dl id="power_options"<?php if ($schedule->search != searchtype_power) echo ' class="hidden"' ?>>
+                <dt><?php echo t('Additional Tables') ?>:&nbsp;</dt>
+                <dd><input type="text" name="additional_tables" value="<?php echo htmlentities($schedule->subtitle) ?>" size="30"></dd>
+                <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
+                <dd><textarea name="search_sql" autorows="10" cols="48"><?php echo htmlentities($schedule->description) ?></textarea>
+                    <?php /** @todo would be cool to have sample stuff just like the frontend does */ ?>
+                    </dd>
             </dl>
 
         </div>

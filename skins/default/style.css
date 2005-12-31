@@ -22,6 +22,9 @@ a:active  { color: #990033; text-decoration: none; }
 a:visited { color: #E0E0FF; text-decoration: none; }
 a:hover   { color: #F0F000; text-decoration: underline; }
 
+label       { color: #E0E0FF; text-decoration: none; }
+label:hover { color: #F0F000; text-decoration: underline; }
+
 /* For some reason, the main Body element doesn't always work for text inside of tables */
 .body {
     font-size: 12px;

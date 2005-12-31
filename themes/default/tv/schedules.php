@@ -104,16 +104,15 @@
             echo ' href="'.root.'tv/';
         // Link to different places for different kinds of schedules
             if ($schedule->search) {
-                if ($schedule->search == searchtype_manual)
-                    echo 'schedules/manual';
-                else
-                    echo 'unsupport_search_schedule!!!';
+                echo 'schedules/',
+                     ($schedule->search == searchtype_manual) ? 'manual'
+                                                              : 'custom',
+                     '/', $schedule->recordid;
             }
             else
-                echo 'detail';
+                echo 'detail?recordid='.$schedule->recordid;
         // Finish off the link
-            echo '?recordid='.$schedule->recordid.'"'
-                 .'>'.$schedule->title;
+            echo '">'.$schedule->title;
             if (in_array($schedule->type, array(rectype_once, rectype_override, rectype_dontrec)) && preg_match('/\\w/', $schedule->subtitle))
                 echo ":  $schedule->subtitle";
             echo '</a>';

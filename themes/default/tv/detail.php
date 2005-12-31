@@ -183,9 +183,6 @@
                  t('Possible conflicts with this show'),
                  ":\n        <table>\n        ";
             foreach ($conflicting_shows as $show) {
-            // Ignore this show
-                if ($show->chanid == $program->chanid && $show->starttime == $program->starttime)
-                    continue;
             // Set the class to be used to display the recording status character
                 $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));
             // Set the recording status character, class and any applicable commands for each show
@@ -275,6 +272,11 @@
     </td>
     <td>
 
+<?php
+        if ($schedule_note) {
+            echo '        <div class="error">', $schedule_note, "</div>\n\n";
+        }
+?>
     <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
         <form name="program_detail" method="post" action="<?php echo root ?>tv/detail<?php
@@ -302,7 +304,7 @@
                         echo $schedule->type == rectype_once ? ' CHECKED' : '' ?> />
                     <a onclick="get_element('record_once').checked=true;"><?php echo t('rectype-long: once') ?></a></li>
 
-<?php       if ($schedule->description != 'Manually scheduled') { ?>
+<?php       if (empty($schedule->search)) { ?>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
                         echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?> />
                     <a onclick="get_element('record_daily').checked=true;"><?php echo t('rectype-long: daily') ?></a></li>

@@ -39,6 +39,15 @@
     else
         $schedule = new Schedule(NULL);
 
+// Handle custom search schedules
+    $schedule_note = '';
+    if ($schedule->search && $schedule->search != searchtype_manual) {
+        $schedule_note = t('This program is already scheduled to be recorded via a $1custom search$2.',
+                           '<a href='.root.'tv/schedules/custom/'.$schedule->recordid.'>',
+                           '</a>');
+        unset($schedule);
+    }
+
 // Make sure this is a valid program.  If not, forward the user back to the listings page
     if (!strlen($program->starttime) && !$schedule->recordid) {
         if ($_GET['recordid']) {
@@ -177,6 +186,9 @@
                 continue;
         // Parse each show group
             foreach ($show_group as $key => $show) {
+            // Ignore this show
+                if ($show->chanid == $program->chanid && $show->starttime == $program->starttime)
+                    continue;
             // Make sure this is a valid show (ie. skip in-progress recordings and other junk)
                 if (!$chanid || $show->length < 1)
                     continue;

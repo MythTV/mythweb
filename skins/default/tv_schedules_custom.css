@@ -1,7 +1,7 @@
 #recording_info {
     padding: 10px;
     margin:  20px auto;
-    width:   350px;
+    width:   44em;
 }
 #recording_info h3 {
     margin: 0px;
@@ -15,7 +15,6 @@
 }
 
 #schedule_options {
-    width:  29em;
     margin: 0px auto;
 }
 #schedule_options ul {
@@ -26,8 +25,22 @@
     white-space:     nowrap;
 }
 
+#searchtype_options {
+    margin: 0px auto;
+}
+#searchtype_options ul {
+    padding-left: 1em;
+}
+#searchtype_options li {
+    list-style-type: none;
+    white-space:     nowrap;
+}
+
+#title_options input {
+    width:     24em !important;
+}
+
 #recording_options {
-    width:  29em;
     margin: 0px auto;
 }
 #recording_options dl {
@@ -45,16 +58,11 @@
     padding-top: 3px;
     margin-left: 9.5em;
 }
-#recording_options input {
-    width:     14em;
-}
-#recording_options select {
-    font-size: 9pt;
-    width:     16em;
+#recording_options input, #recording_options textarea {
+    width:     32em;
 }
 
 #advanced_options {
-    width:  29em;
     margin: 0px auto;
 }
 #advanced_options dl {

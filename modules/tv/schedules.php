@@ -14,8 +14,8 @@
 /**/
 
 // Scheduling a manual recording gets its own page
-    if ($Path[2] == 'manual') {
-        require_once 'modules/tv/schedules_manual.php';
+    if ($Path[2] == 'manual' || $Path[2] == 'custom') {
+        require_once 'modules/tv/schedules_'.$Path[2].'.php';
         exit;
     }
 
@@ -28,9 +28,6 @@
 // Parse the recording list
     $the_schedules = array();
     foreach ($Schedules as $key => $schedule) {
-    // Ignore search schedules (except for manual schedules)
-        if ($schedule->search && $schedule->search != searchtype_manual)
-            continue;
     // Ignore overrides
     #    if ($schedule->type == rectype_override)
     #        continue;

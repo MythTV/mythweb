@@ -158,7 +158,9 @@
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/schedules/manual"><?php echo t('Manually Schedule') ?></a>
+                    <a href="<?php echo root ?>tv/schedules/manual"><?php echo t('Schedule Manually') ?></a>
+                    &nbsp; | &nbsp;
+                    <a href="<?php echo root ?>tv/schedules/custom"><?php echo t('Custom Schedule') ?></a>
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
                     &nbsp; | &nbsp;

@@ -1,9 +1,15 @@
 <?php
-/***                                                                        ***\
-    programs.php                             Last Updated: 2005.04.09 (xris)
-
-    This contains the Program class
-\***                                                                        ***/
+/**
+ * This contains the Program class
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ *
+ * @package     MythWeb
+ *
+/**/
 
 // Make sure the "Channels" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
     require_once 'includes/channels.php';
@@ -57,10 +63,9 @@
                                'ForceRecord'        => t('recstatus: force_record'),
                               );
 
-/*
-    load_one_program:
-    a shortcut to load_all_program_data's single-program query
-*/
+/**
+ * a shortcut to load_all_program_data's single-program query
+/**/
     function &load_one_program($start_time, $chanid) {
         $program =& load_all_program_data($start_time, $start_time, $chanid, true);
         if (!is_object($program) || strcasecmp(get_class($program), 'program'))
@@ -68,12 +73,11 @@
         return $program;
     }
 
-/*
-    load_all_program_data:
-    loads all program data for the specified time range into the $Channels array.
-    Set $single_program to true if you only want information about programs that
-    start exactly at $start_time (used by program_detail.php)
-*/
+/**
+ * loads all program data for the specified time range into the $Channels array.
+ * Set $single_program to true if you only want information about programs that
+ * start exactly at $start_time (used by program_detail.php)
+/**/
     function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '') {
         global $Channels;
     // Make a local hash of channel chanid's with references to the actual channel data
@@ -179,9 +183,9 @@
     }
 
 
-//
-//  Programs class
-//
+/**
+ * Program class
+/**/
 class Program {
     var $chanid;
     var $channel;   // this should be a reference to the $Channel array value
@@ -384,10 +388,9 @@ class Program {
 
     }
 
-/*
-    details_list:
-    The "details list" for each program.
-*/
+/**
+ * The "details list" for each program.
+/**/
     function details_list() {
     // Start the list, and print the show airtime and title
         $str = "<dl class=\"details_list\">\n"
@@ -496,9 +499,9 @@ class Program {
  *  The following methods relate to a programs control over its recording options.
  */
 
-/*
- *  Tell mythtv to forget that it already recorded this show.
- */
+/**
+ * Tell mythtv to forget that it already recorded this show.
+/**/
     function rec_forget_old() {
         $result = mysql_query('DELETE FROM oldrecorded WHERE'
                                 .' title='          .escape($this->title)
@@ -509,9 +512,9 @@ class Program {
         backend_notify_changes();
     }
 
-/*
- *  "Never" record this show, by telling mythtv that it was already recorded
- */
+/**
+ * "Never" record this show, by telling mythtv that it was already recorded
+/**/
     function rec_never_record() {
         $result = mysql_query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid,recordid,station,rectype,recstatus,duplicate) VALUES ('
                                 .escape($this->chanid)                    .','
@@ -533,19 +536,19 @@ class Program {
         backend_notify_changes();
     }
 
-/*
- *  Revert a show to its default recording schedule settings
- */
+/**
+ * Revert a show to its default recording schedule settings
+/**/
     function rec_default() {
         $schedule =& $GLOBALS['Schedules'][$this->recordid];
         if ($schedule && ($schedule->type == rectype_override || $schedule->type == rectype_dontrec))
             $schedule->delete();
     }
 
-/*
- *  rec_override:  Add an override or dontrec record to force this show to/not record
- *  pass in rectype_dontrec or rectype_override constants
- */
+/**
+ * Add an override or dontrec record to force this show to/not record pass in
+ * rectype_dontrec or rectype_override constants
+/**/
     function rec_override($rectype) {
         $schedule =& $GLOBALS['Schedules'][$this->recordid];
     // Unknown schedule?
@@ -562,6 +565,7 @@ class Program {
         $schedule->station     = $this->channel->callsign;       // Note that "callsign" becomes "station"
         $schedule->seriesid    = $this->seriesid;
         $schedule->programid   = $this->programid;
+        $schedule->search      = 0;
     // Save the schedule -- it'll know what to do about the override
         $schedule->save($rectype);
     }

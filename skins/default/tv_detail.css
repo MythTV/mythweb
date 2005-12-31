@@ -128,16 +128,16 @@
     margin: 5px 10px;
 }
 #advanced_options dl dt {
-    clear:       left;
-    float:       left;
-    width:       13em;
+    clear:         left;
+    float:         left;
+    width:         13em;
     margin-bottom: 0.25em;
-    text-align:  right;
-    white-space: nowrap;
+    text-align:    right;
+    white-space:   nowrap;
 }
 #advanced_options dl dd {
     margin-bottom: 0.25em;
-    margin-left: 13.5em;
+    margin-left:   13.5em;
 }
 #advanced_options input {
 }

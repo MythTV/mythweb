@@ -15,9 +15,17 @@
 // Populate the $Channels array
     load_all_channels();
 
+// Path-based
+    if ($Path[3])
+        $_GET['recordid'] = $Path[3];
+
 // Load an existing schedule?
-    if ($_GET['recordid'] && $Schedules[$_GET['recordid']])
+    if ($_GET['recordid'] && $Schedules[$_GET['recordid']]) {
         $schedule =& $Schedules[$_GET['recordid']];
+    // Not a manual schedule
+        if (empty($schedule->search) || $schedule->search != searchtype_manual)
+            redirect_browser(root.'tv/schedules');
+    }
 // Create a new, empty schedule
     else
         $schedule = new Schedule(NULL);
@@ -51,8 +59,6 @@
         }
     // Adding a new schedule
         else {
-        // Make sure we have channel info
-            $channel = $Channels[$_POST['channel']];
         // Set things as the user requested
             $schedule->profile      = $_POST['profile'];
             $schedule->recgroup     = $_POST['recgroup'];
@@ -82,6 +88,7 @@
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
             $schedule->transcoder  = $_POST['transcoder'];
         // Figure out the title
+            $channel = $Channels[$_POST['channel']];
             if (strcasecmp($_POST['title'], 'use callsign') == 0) {
                 if (prefer_channum)
                     $schedule->title = $channel->channum.' ('.$channel->callsign.')';
@@ -99,7 +106,7 @@
         // Save the schedule
             $schedule->save($type);
         // Redirect to the new schedule
-            header('Location: '.root.'tv/schedules/manual?recordid='.$schedule->recordid);
+            header('Location: '.root.'tv/schedules/manual/'.$schedule->recordid);
             exit;
         }
     }

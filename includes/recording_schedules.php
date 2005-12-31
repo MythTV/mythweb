@@ -1,9 +1,15 @@
 <?php
-/***                                                                        ***\
-    recording_schedules.php                  Last Updated: 2005.04.09 (xris)
-
-    The Recording object, and a couple of related subroutines.
-\***                                                                        ***/
+/**
+ * The Schedule object and a couple of related subroutines.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ *
+ * @package     MythWeb
+ *
+/**/
 
 // Include our dependencies -- these are probably called elsewhere, but require_once will handle it
     require_once 'includes/mythbackend.php';
@@ -92,9 +98,9 @@
     }
     mysql_free_result($result);
 
-//
-//  Recording Schedule class
-//
+/**
+ * Recording Schedule class
+/**/
 class Schedule {
 
     var $recordid;
@@ -138,6 +144,9 @@ class Schedule {
     var $class;         // css class, based on category and/or category_type
     var $tsdefault;
 
+    /**
+     * constructor
+    /**/
     function Schedule($data) {
     // Schedule object data -- just copy it into place
         if (is_object($data)) {
@@ -178,6 +187,12 @@ class Schedule {
             }
         }
 
+    // Custom power search needs to have fields split out
+        if ($this->search == searchtype_power) {
+            #########
+            /** @todo actually split out the fields! */
+        }
+
     // Add a generic "will record" variable, too
         $this->will_record = ($this->type && $this->type != rectype_dontrec) ? true : false;
 
@@ -194,10 +209,9 @@ class Schedule {
             $this->class = category_class($this);
     }
 
-/*
-    save:
-    save this schedule
-*/
+/**
+ * Save this schedule
+/**/
     function save($new_type) {
     // Make sure that recordid is null if it's empty
         if (empty($this->recordid)) {
@@ -282,10 +296,9 @@ class Schedule {
             backend_notify_changes();
     }
 
-/*
-    delete:
-    Delete this schedule
-*/
+/**
+ * Delete this schedule
+/**/
     function delete() {
     // Delete this schedule from the database
         $result = mysql_query('DELETE FROM record WHERE recordid='.escape($this->recordid))
@@ -297,12 +310,11 @@ class Schedule {
         unset($GLOBALS['Schedules'][$this->recordid]);
     }
 
-/*
-    details_list:
-    The "details list" for recording schedules.  Very similar to that for
-    programs, but with a few extra checks, and some information arranged
-    differently.
-*/
+/**
+ * The "details list" for recording schedules.  Very similar to that for
+ * programs, but with a few extra checks, and some information arranged
+ * differently.
+/**/
     function details_list() {
     // Start the list, and print the title and schedule type
         $str = "<dl class=\"details_list\">\n"
@@ -420,10 +432,9 @@ class Schedule {
 
 }
 
-/*
-    profile_select:
-    prints a <select> of the various recording profiles to choose from
-*/
+/**
+ * prints a <select> of the various recording profiles to choose from
+/**/
     function profile_select($this_profile, $name='profile') {
         echo "<select name=\"$name\">";
         foreach(array('Default', 'Live TV', 'High Quality', 'Low Quality') as $profile) {
@@ -435,10 +446,9 @@ class Schedule {
         echo '</select>';
     }
 
-/*
-    transcoder_select:
-    prints a <select> of the various transcoders to choose from
-*/
+/**
+ * prints a <select> of the various transcoders to choose from
+/**/
     function transcoder_select($this_transcoder, $name='transcoder') {
         global $Transcoders;
         echo "<select name=\"$name\">";
@@ -452,10 +462,9 @@ class Schedule {
         echo '</select>';
     }
 
-/*
-    recgroup_select:
-    prints a <select> of the various recgroups available
-*/
+/**
+ * prints a <select> of the various recgroups available
+/**/
     function recgroup_select($this_group, $name = 'recgroup') {
         static $groups = array();
     // Load the recording groups?
