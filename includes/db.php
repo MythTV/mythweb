@@ -95,10 +95,10 @@ class Database {
  *
  *  @param string $error    The string to set the error message to
 /**/
-    function error($error) {
+    function error($error='') {
         $this->err   = $this->dbh ? mysql_error($this->dbh) : mysql_error();
         $this->errno = $this->dbh ? mysql_errno($this->dbh) : mysql_errno();
-        $this->error = "$error\n\n$this->err [#$this->errno]";
+        $this->error = ($error ? "$error\n\n" : '')."$this->err [#$this->errno]";
     }
 
 /**
@@ -351,7 +351,7 @@ class Database_Query_mysql extends Database_Query {
             if ($this->db->fatal_errors)
                 trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
             else
-                $this->db->error('SQL Error: '.mysql_error().' [#'.mysql_errno().']');
+                $this->db->error();
         }
     }
 
