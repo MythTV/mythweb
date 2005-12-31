@@ -53,15 +53,27 @@
         <a id="tv_link"<?php if ($Path[0] == 'tv') echo ' class="current_section"' ?> href="<?php echo root ?>tv" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_url ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
         </a>
+<?php if ($Modules['music']) { ?>
         <a id="music_link"<?php if ($Path[0] == 'music') echo ' class="current_section"' ?> href="<?php echo root ?>music" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_url ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic" />
         </a>
+<?php
+      }
+      if ($Modules['video']) {
+?>
         <a id="video_link"<?php if ($Path[0] == 'video') echo ' class="current_section"' ?> href="<?php echo root ?>video" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_url ?>img/video.png" width="48" height="48" class="alpha_png" alt="MythVideo" />
         </a>
+<?php
+      }
+      if ($Modules['weather']) {
+?>
         <a id="weather_link"<?php if ($Path[0] == 'weather') echo ' class="current_section"' ?> href="<?php echo root ?>weather" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_url ?>img/weather.png" width="48" height="48" class="alpha_png" alt="MythWeather" />
         </a>
+<?php
+      }
+?>
         <a id="settings_link"<?php if ($Path[0] == 'settings') echo ' class="current_section"' ?> href="<?php echo root ?>settings" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo theme_url ?>img/settings.png" width="48" height="48" class="alpha_png" alt="<?php echo t('Settings') ?>" />
         </a>
@@ -155,8 +167,10 @@
                     <a href="<?php echo root ?>tv/recorded"><?php echo t('Recorded Programs') ?></a>
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>status"><?php echo t('Backend Status') ?></a>
+<?php if ($Modules['backend_log']) { ?>
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>backend_log"><?php echo ('Backend Logs') ?></a>
+<?php } ?>
                 </div></td>
         </tr>
         </table></td>
