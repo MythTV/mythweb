@@ -238,6 +238,7 @@ $L = array(
     'useonairguide'                                                                                                                      => '',
     'videofilters'                                                                                                                       => 'videofilter',
     'visible'                                                                                                                            => 'synlig',
+    'xmltvid'                                                                                                                            => '',
 // themes/default/settings/keys.php
     'Action'                => 'Handling',
     'Configure Keybindings' => 'Konfigurera knappar',

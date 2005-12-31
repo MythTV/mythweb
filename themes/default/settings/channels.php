@@ -28,6 +28,7 @@
 <tr class="menu" align="center">
     <td width="4%"><?php  echo t('delete')        ?></td>
     <td width="4%"><?php  echo t('sourceid')      ?></td>
+    <td width="4%"><?php  echo t('xmltvid')       ?></td>
     <td width="5%"><?php  echo t('channum')       ?></td>
     <td width="12%"><?php echo t('callsign')      ?></td>
     <td width="25%"><?php echo t('name')          ?></td>
@@ -47,17 +48,18 @@
 ?><tr class="settings" align="center">
     <td><input type="checkbox" name="delete_<?php echo $channel['chanid'] ?>" id="delete_<?php echo $channel['chanid'] ?>" value="true" /></td>
     <td><?php echo htmlentities($channel['sourceid']) ?></td>
-    <td><input type="text" size="3"  name="channum_<?php      echo $channel['chanid'] ?>" id="channum_<?php      echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['channum'])      ?>" /></td>
+    <td><input type="text" size="5"  name="xmltvid_<?php      echo $channel['chanid'] ?>" id="xmltvid_<?php      echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['xmltvid'])      ?>" style="text-align: center" /></td>
+    <td><input type="text" size="3"  name="channum_<?php      echo $channel['chanid'] ?>" id="channum_<?php      echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['channum'])      ?>" style="text-align: center" /></td>
     <td><input type="text" size="15" name="callsign_<?php     echo $channel['chanid'] ?>" id="callsign_<?php     echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['callsign'])     ?>" /></td>
     <td><input type="text" size="27" name="name_<?php         echo $channel['chanid'] ?>" id="name_<?php         echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['name'], ENT_COMPAT, 'UTF-8') ?>" /></td>
-    <td><input type="text" size="3"  name="freqid_<?php       echo $channel['chanid'] ?>" id="freqid_<?php       echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['freqid'])       ?>" /></td>
-    <td><input type="text" size="3"  name="finetune_<?php     echo $channel['chanid'] ?>" id="finetune_<?php     echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['finetune'])     ?>" /></td>
-    <td><input type="text" size="3"  name="videofilters_<?php echo $channel['chanid'] ?>" id="videofilters_<?php echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['videofilters']) ?>" /></td>
-    <td><input type="text" size="6"  name="brightness_<?php   echo $channel['chanid'] ?>" id="brightness_<?php   echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['brightness'])   ?>" /></td>
-    <td><input type="text" size="6"  name="contrast_<?php     echo $channel['chanid'] ?>" id="contrast_<?php     echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['contrast'])     ?>" /></td>
-    <td><input type="text" size="6"  name="colour_<?php       echo $channel['chanid'] ?>" id="colour_<?php       echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['colour'])       ?>" /></td>
-    <td><input type="text" size="6"  name="hue_<?php          echo $channel['chanid'] ?>" id="hue_<?php          echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['hue'])          ?>" /></td>
-    <td><input type="text" size="2"  name="recpriority_<?php  echo $channel['chanid'] ?>" id="recpriority_<?php  echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['recpriority'])  ?>" /></td>
+    <td><input type="text" size="4"  name="freqid_<?php       echo $channel['chanid'] ?>" id="freqid_<?php       echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['freqid'])       ?>" style="text-align: center" /></td>
+    <td><input type="text" size="3"  name="finetune_<?php     echo $channel['chanid'] ?>" id="finetune_<?php     echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['finetune'])     ?>" style="text-align: center" /></td>
+    <td><input type="text" size="3"  name="videofilters_<?php echo $channel['chanid'] ?>" id="videofilters_<?php echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['videofilters']) ?>" style="text-align: center" /></td>
+    <td><input type="text" size="6"  name="brightness_<?php   echo $channel['chanid'] ?>" id="brightness_<?php   echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['brightness'])   ?>" style="text-align: center" /></td>
+    <td><input type="text" size="6"  name="contrast_<?php     echo $channel['chanid'] ?>" id="contrast_<?php     echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['contrast'])     ?>" style="text-align: center" /></td>
+    <td><input type="text" size="6"  name="colour_<?php       echo $channel['chanid'] ?>" id="colour_<?php       echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['colour'])       ?>" style="text-align: center" /></td>
+    <td><input type="text" size="6"  name="hue_<?php          echo $channel['chanid'] ?>" id="hue_<?php          echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['hue'])          ?>" style="text-align: center" /></td>
+    <td><input type="text" size="2"  name="recpriority_<?php  echo $channel['chanid'] ?>" id="recpriority_<?php  echo $channel['chanid'] ?>" value="<?php echo htmlentities($channel['recpriority'])  ?>" style="text-align: center" /></td>
     <td><input type="checkbox" name="commfree_<?php           echo $channel['chanid'] ?>" value="1"<?php if (!empty($channel['commfree']))      echo ' CHECKED' ?> /></td>
     <td><input type="checkbox" name="visible_<?php            echo $channel['chanid'] ?>" value="1"<?php if (!empty($channel['visible']))       echo ' CHECKED' ?> /></td>
     <td><input type="checkbox" name="useonairguide_<?php      echo $channel['chanid'] ?>" value="1"<?php if (!empty($channel['useonairguide'])) echo ' CHECKED' ?> /></td>

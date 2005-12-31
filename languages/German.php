@@ -238,6 +238,7 @@ $L = array(
     'useonairguide'                                                                                                                      => '',
     'videofilters'                                                                                                                       => 'Wiedergabefilter',
     'visible'                                                                                                                            => 'Sichtbar',
+    'xmltvid'                                                                                                                            => '',
 // themes/default/settings/keys.php
     'Action'                => 'Aktion',
     'Configure Keybindings' => 'Tastenbelegung konfigurieren',

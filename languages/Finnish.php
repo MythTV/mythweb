@@ -243,6 +243,7 @@ $L = array(
     'useonairguide'                                                                                                                      => 'Käytä Ohjelmavirran Opasta',
     'videofilters'                                                                                                                       => 'Videosuodattimet',
     'visible'                                                                                                                            => 'Näkyvä',
+    'xmltvid'                                                                                                                            => '',
 // themes/default/settings/keys.php
     'Action'                => 'Toiminto',
     'Configure Keybindings' => 'Aseta Näppäinkomennot',

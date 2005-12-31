@@ -27,7 +27,8 @@
             }
             else {
             // Not deleting so grab values that can be empty
-                $query = 'UPDATE channel SET freqid        = ?,
+                $query = 'UPDATE channel SET xmltvid       = ?,
+                                             freqid        = ?,
                                              finetune      = ?,
                                              videofilters  = ?,
                                              brightness    = ?,
@@ -38,6 +39,7 @@
                                              commfree      = ?,
                                              useonairguide = ?,
                                              visible       = ?';
+                $query_params[] = $_POST['xmltvid_'.$chanid];
                 $query_params[] = $_POST['freqid_'.$chanid];
                 $query_params[] = $_POST['finetune_'.$chanid];
                 $query_params[] = $_POST['videofilters_'.$chanid];
