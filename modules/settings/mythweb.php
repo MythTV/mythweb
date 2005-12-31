@@ -25,19 +25,22 @@
         if ($_POST['date_listing_jump'])    $_SESSION['date_listing_jump']    = $_POST['date_listing_jump'];
         if ($_POST['date_channel_jump'])    $_SESSION['date_channel_jump']    = $_POST['date_channel_jump'];
         if ($_POST['time_format'])          $_SESSION['time_format']          = $_POST['time_format'];
-    // Change language?
-        if ($_POST['language'])             $_SESSION['language']             = $_POST['language'];
     // Save the theme
         if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
     // Use SI units?
         if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
     // Save the weather icon set
         if ($_POST['weathericonset'])       $_SESSION['weathericonset']       = $_POST['weathericonset'];
-
     // Recorded Programs
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
     // Guide Settings
         $_SESSION['guide_favonly'] = $_POST['guide_favonly'] ? true : false;
+    // Change language?  Make sure we load the new translation file, too.
+        if ($_POST['language'] && $_POST['language'] != $_SESSION['language']) {
+            $_SESSION['language'] = $_POST['language'];
+            require_once 'languages/'.$_SESSION['language'].'.php';
+        }
+
     }
 
 // Load the class for this page

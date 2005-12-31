@@ -48,10 +48,9 @@
     if (!is_array($L) || !count($L))
         trigger_error('No language strings defined.', FATAL);
 
-/*
-    t:
-    returns $str, translated appropriately
-*/
+/**
+ * Returns $str, translated appropriately
+/**/
     function t($str /* [, arg1, arg2, argN] */ ) {
         global $L;
     // No string?

@@ -65,9 +65,6 @@
     if (substr(phpversion(), 0, 3) < 4.3)
         trigger_error('You must be running at least php 4.3 to use this program.', FATAL);
 
-// Load the translation routines so the modules can translate their descriptions
-    require_once 'includes/translate.php';
-
 // Clean up input data
     fix_crlfxy($_GET);
     fix_crlfxy($_POST);
@@ -144,6 +141,12 @@
 // Make sure the database is up to date
     require_once 'includes/db_update.php';
 
+// Load the session handler routines
+    require_once 'includes/session.php';
+
+// Load the translation routines so the modules can translate their descriptions
+    require_once 'includes/translate.php';
+
 /**
  * Define each module individually in order because it's easier than storing a
  * sort-order setting in each module.
@@ -179,9 +182,6 @@
         require_once 'templates/_no_modules.php';
         exit;
     }
-
-// Load the session handler routines
-    require_once 'includes/session.php';
 
 // Include a few useful functions
     require_once "includes/css.php";
