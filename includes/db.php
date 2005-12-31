@@ -286,9 +286,9 @@ class Database_Query {
  *  @param Database $dbh    The parent Database object
  *  @param string   $query  The query string
 /**/
-    function Database_Query($db, $query) {
+    function Database_Query(&$db, $query) {
         $this->dbh             = $db->dbh;
-        $this->db              = $db;
+        $this->db              =& $db;
         $this->num_args_needed = max(0, substr_count($query, '?') - substr_count($query, '\\?'));
     // Build an optimized version of the query
         if ($this->num_args_needed > 0) {
@@ -347,7 +347,7 @@ class Database_Query_mysql extends Database_Query {
         }
     // Perform the query
         $this->sh = mysql_query($this->last_query, $this->dbh);
-        if ($this->sh===false) {
+        if ($this->sh === false) {
             if ($this->db->fatal_errors)
                 trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
             else
