@@ -33,7 +33,7 @@
         $sql .= ' channel.visible=1';
     // Group and sort
         $sql .= ' GROUP BY channum, callsign ORDER BY '
-                .(prefer_channum ? '' : 'callsign, ')
+                .(sortby_channum ? '' : 'callsign, ')
                 .'(channum + 0), chanid';
     // Query
         $result = mysql_query($sql)

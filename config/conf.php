@@ -72,6 +72,9 @@
 // Prefer channum over callsign?
     define('prefer_channum', true);
 
+// Sort channel list by channel nuber or by callsign?
+    define('sortby_channum', true);
+
 // The number of time slots to display in the channel listing
     define('num_time_slots', 36);
 
