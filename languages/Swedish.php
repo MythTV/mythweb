@@ -157,10 +157,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => 'Filmtider',
 // modules/settings/init.php
-    'MythTV channel info' => '',
-    'MythTV key bindings' => '',
-    'MythWeb settings'    => '',
-    'settings'            => 'inställningar',
+    'MythTV channel info'      => '',
+    'MythTV key bindings'      => '',
+    'MythWeb session settings' => '',
+    'settings'                 => 'inställningar',
 // modules/status/init.php
     'Status' => 'Status',
 // modules/stream/init.php
@@ -248,7 +248,7 @@ $L = array(
     'Key bindings'          => 'Knappbindningar',
     'Keybindings Editor'    => 'Redigera knappar',
     'Set Host'              => 'Sätt värd',
-// themes/default/settings/mythweb.php
+// themes/default/settings/session.php
     'Channel &quot;Jump to&quot;'     => 'Kanal &quot;Gå till&quot;',
     'Date Formats'                    => 'Datumformat',
     'Guide Settings'                  => 'Guideinställningar',

@@ -44,7 +44,7 @@
     }
 
 // Load the class for this page
-    require_once theme_dir.'settings/mythweb.php';
+    require_once theme_dir.'settings/session.php';
 
 // Exit
     exit;

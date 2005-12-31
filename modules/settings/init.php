@@ -19,6 +19,6 @@
                                  'description' => t('settings'),
                                  'links'       => array('channels'  => t('MythTV channel info'),
                                                         'keys'      => t('MythTV key bindings'),
-                                                        'mythweb'   => t('MythWeb settings'),
+                                                        'session'   => t('MythWeb session settings'),
                                                        ),
                                 );

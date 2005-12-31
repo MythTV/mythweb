@@ -162,10 +162,10 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => 'Elokuvahaku',
 // modules/settings/init.php
-    'MythTV channel info' => '',
-    'MythTV key bindings' => '',
-    'MythWeb settings'    => '',
-    'settings'            => 'Asetukset',
+    'MythTV channel info'      => '',
+    'MythTV key bindings'      => '',
+    'MythWeb session settings' => '',
+    'settings'                 => 'Asetukset',
 // modules/status/init.php
     'Status' => 'Systeemin Tila',
 // modules/stream/init.php
@@ -253,7 +253,7 @@ $L = array(
     'Key bindings'          => 'Näppäinkomennot',
     'Keybindings Editor'    => 'Näppäinkomentojen Muokkaus',
     'Set Host'              => 'Aseta Isäntä',
-// themes/default/settings/mythweb.php
+// themes/default/settings/session.php
     'Channel &quot;Jump to&quot;'     => 'Kanavahyppy',
     'Date Formats'                    => 'Päivämäärän Muoto',
     'Guide Settings'                  => 'Ohjelmalistauksen Asetus',

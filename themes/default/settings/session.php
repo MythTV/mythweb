@@ -21,7 +21,7 @@
 
 ?>
 
-<form class="form" method="post" action="<?php echo root ?>settings/mythweb">
+<form class="form" method="post" action="<?php echo root ?>settings/session">
 
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5" style="float: left;margin-left: 20px">
 <tr>
