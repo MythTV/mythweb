@@ -32,7 +32,7 @@
     require_once "includes/recording_schedules.php";
 
 // Unknown section?  Use the default
-    if (!in_array($Path[1], array('detail', 'channel'))
+    if (!in_array($Path[1], array('detail', 'channel', 'search'))
             && empty($Modules['tv']['links'][$Path[1]]))
         $Path[1] = 'list';
 
