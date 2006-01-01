@@ -21,9 +21,11 @@
 .will_record              { border: 1px solid  #00F000; }
 .record_conflicting       { border: 1px solid  #FF0000; }
 .record_duplicate         { border: 2px dashed #90B0A0; }
+.record_old_duplicate     { border: 1px dashed #90B0A0; }
 .record_suppressed        { border: 2px dotted #60B0B0; }
 .record_override_suppress { border: 2px dotted #D03060; }
 .record_override_record   { border: 2px solid  #00FF90; }
+
 
 /* There should be exactly one class in the next section corresponding to
     each possible value of RecStatus_Types as defined in
