@@ -98,9 +98,10 @@
 # Redirect most of the remaining URL requests to the main cooktools script.
 # It will then handle any requests given to it.
     RewriteRule     ^(.+)$                  mythweb.php/$1              [QSA,L]
-    RewriteRule     ^(.*)$                  mythweb.php                 [QSA,L]
 
 # If you're experiencing trouble with the previous line in your copy of apache,
-# you could also use something like:
+# you could instead use something like:
 #    RewriteRule     ^([\w\-]+(/.*)?)?$      mythweb.php?PATH_INFO=/$1   [L,QSA]
 
+# Catch anything else that comes through and send it to mythweb.php with no parameters.
+    RewriteRule     ^(.*)$                  mythweb.php                 [QSA,L]
