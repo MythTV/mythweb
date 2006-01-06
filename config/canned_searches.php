@@ -20,6 +20,10 @@ $Canned_Searches = array(
     "Movies, 3 1/2 Stars or more"
         => "category_type='".movie_word."' AND program.stars > 0.8",
 
+    "Movies, Stinkers (2 Stars or less)"
+        => "category_type='".movie_word."' AND program.stars < 0.5625"
+         . " AND program.stars > 0.0",
+
     "Non-Series HDTV"
         => "hdtv=1 AND category_type != 'series'",
 
