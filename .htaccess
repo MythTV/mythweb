@@ -88,6 +88,11 @@
 # these settings.
 #
 
+# If MythWeb is installed outside of the document root (eg. using Alias) then
+# you will need to set this directive to the base URL that MythWeb is visible
+# from externally.  If you do not, the web server will return 'not found'.  eg.
+#    RewriteBase    /mythweb
+
 # Turn on the rewrite engine
     RewriteEngine  on
 
