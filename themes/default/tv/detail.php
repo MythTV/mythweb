@@ -59,7 +59,7 @@
             echo '<span class="bold">';
         echo strftime('%a, %b %e', $schedule->starttime);
         if ($program && $program->previouslyshown)
-            echo ' ('.t('Rerun').')';
+            echo ' ('.t('Repeat').')';
         echo '<br />'
             .t('$1 to $2', strftime('%r', $schedule->starttime), strftime('%r', $schedule->endtime));
         if ($program)
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-<?php    if (strlen($schedule->subtitle) || strlen($schedule->description) || !empty($program->recstatus)) { ?>
+<?php    if (strlen($schedule->subtitle) || strlen($schedule->fancy_description) || !empty($program->recstatus)) { ?>
         <div id="program_details">
             <dl>
 <?php       if (strlen($schedule->subtitle)) { ?>
@@ -89,16 +89,16 @@
                 echo $schedule->subtitle;
                     ?></dd>
 <?php       }
-            if (strlen($schedule->description)) {
+            if (strlen($schedule->fancy_description)) {
 ?>
                 <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Description') ?>:&nbsp;</dt>
                 <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
-                    echo nl2br($schedule->description);
+                    echo nl2br($schedule->fancy_description);
                     ?></dd>
 <?php       }
             if (!empty($program->recstatus)) {
 ?>
-                <dt><?php echo t('Notes') ?>:&nbsp;</dt>
+                <dt><?php echo t('MythTV Status') ?>:&nbsp;</dt>
                 <dd><?php
                     echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
                     ?></dd>
@@ -114,65 +114,69 @@
                 <dt><?php echo t('Category') ?>:&nbsp;</dt>
                 <dd><?php echo $program->category ?></dd>
 <?php       }
+            if (strlen($program->category_type)) { ?>
+                <dt><?php echo t('Type') ?>:&nbsp;</dt>
+                <dd><?php echo $program->showtype, ' (', $program->seriesid, ')' ?></dd>
+<?php       }
+            if (strlen($program->syndicatedepisodenumber) > 0) {
+?>
+               <dt><?php echo t('Episode Number') ?>:&nbsp;</dt>
+               <dd><?php echo $program->syndicatedepisodenumber ?></dd>
+<?php       }
             if (strlen($program->airdate)) {
 ?>
                 <dt><?php echo t('Original Airdate') ?>:&nbsp;</dt>
                 <dd><?php echo $program->airdate ?></dd>
 <?php       }
-            if (strlen($program->rating)) {
+            if (strlen($program->programid) > 0) {
 ?>
-                <dt><?php
-                    if (strlen($program->rater))
-                        echo t('$1 Rating', $program->rater);
-                    else
-                        echo t('Rating');
-                    ?>:&nbsp;</dt>
-                <dd><?php echo $program->rating ?></dd>
+               <dt><?php echo t('Program ID') ?>:&nbsp;</dt>
+               <dd><?php echo $program->programid ?></dd>
 <?php       }
             if ($program->get_credits('host')) {
 ?>
-                <dt><?php echo t('Hosted by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('host') ?></dd>
+                    <dt><?php echo t('Hosted by') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('host') ?></dd>
 <?php       }
             if ($program->get_credits('presenter')) {
 ?>
-                <dt><?php echo t('Presented by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('presenter') ?></dd>
+                    <dt><?php echo t('Presented by') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('presenter') ?></dd>
 <?php       }
             if ($program->get_credits('actor')) {
 ?>
-                <dt><?php echo t('Cast') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('actor') ?></dd>
+                    <dt><?php echo t('Cast') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('actor') ?></dd>
 <?php       }
             if ($program->get_credits('guest_star')) {
 ?>
-                <dt><?php echo t('Guest Starring') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('guest_star') ?></dd>
+                    <dt><?php echo t('Guest Starring') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('guest_star') ?></dd>
 <?php       }
             if ($program->get_credits('director')) {
 ?>
-                <dt><?php echo t('Directed by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('director') ?></dd>
+                    <dt><?php echo t('Directed by') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('director') ?></dd>
 <?php       }
             if ($program->get_credits('producer')) {
 ?>
-                <dt><?php echo t('Produced by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('producer') ?></dd>
+                    <dt><?php echo t('Produced by') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('producer') ?></dd>
 <?php       }
             if ($program->get_credits('executive_producer')) {
 ?>
-                <dt><?php echo t('Exec. Producer') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('executive_producer') ?></dd>
+                    <dt><?php echo t('Exec. Producer') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('executive_producer') ?></dd>
 <?php       }
             if ($program->get_credits('writer')) {
 ?>
-                <dt><?php echo t('Written by') ?>:&nbsp;</dt>
-                <dd><?php echo $program->get_credits('writer') ?></dd>
+                    <dt><?php echo t('Written by') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->get_credits('writer') ?></dd>
 <?php       }
-		    if (strlen($program->starstring) > 0) {
+            if (strlen($program->starstring) > 0) {
 ?>
-		   <dt><?php echo t('Guide rating') ?>:&nbsp;</dt>
-		   <dd><?php echo $program->starstring ?></dd>
+                    <dt><?php echo t('Guide rating') ?>:&nbsp;</dt>
+                    <dd><?php echo $program->starstring ?></dd>
 <?php       } ?>
             </dl>
         </div>

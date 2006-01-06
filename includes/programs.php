@@ -193,6 +193,7 @@ class Program {
     var $title;
     var $subtitle;
     var $description;
+    var $fancy_description;
     var $category;
     var $category_type;
     var $class;         // css class, based on category and/or category_type
@@ -268,45 +269,45 @@ class Program {
                 }
             }
         // Load the remaining info we got from mythbackend
-            $this->title        = $data[0];                  # program name/title
-            $this->subtitle     = $data[1];                  # episode name
-            $this->description  = $data[2];                  # episode description
-            $this->category     = $data[3];
-            #$chanid            = $data[4];   # Extracted a few lines earlier
-            #$channum           = $data[5];
-            #$callsign          = $data[6];
-            $this->channame     = $data[7];
-            #$pathname          = $data[8];   # Extracted a few lines earlier
-            #$fs_high           = $data[9];   # Extracted a few lines earlier
-            #$fs_low            = $data[10];  # Extracted a few lines earlier
-            #$starttime         = $data[11];  # Extracted a few lines earlier
-            #$endtime           = $data[12];  # Extracted a few lines earlier
-            $this->hostname     = $data[16];
-            #$this->sourceid    = $data[17];
-            $this->cardid      = $data[18];
-            #$this->inputid     = $data[19];
-            $this->recpriority  = $data[20];
-            $this->recstatus    = $data[21];
-            $this->conflicting  = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
-            $this->recording    = ($this->recstatus == 'WillRecord'); # scheduled to record?
-            $this->recordid     = $data[22];
-            $this->rectype      = $data[23];
-            $this->dupin        = $data[24];
-            $this->dupmethod    = $data[25];
-            $this->recstartts   = $data[26];                  # ACTUAL start time
-            $this->recendts     = $data[27];                  # ACTUAL end time
-            $this->repeat       = $data[28];
-            $progflags          = $data[29];
-            $this->recgroup     = $data[30];
-            $this->commfree     = $data[31];
-            $this->outputfilters = $data[32];
-            $this->seriesid      = $data[33];
-            $this->programid     = $data[34];
-            $this->lastmodified  = $data[35];
-            $this->recpriority   = $data[36];
-            #$this->airdate      = $data[37];
-            #$this->hasairdate   = $data[38];
-            $this->timestretch = $program_data[39];
+            $this->title           = $data[0];                  # program name/title
+            $this->subtitle        = $data[1];                  # episode name
+            $this->description     = $data[2];                  # episode description
+            $this->category        = $data[3];
+            #$chanid               = $data[4];   # Extracted a few lines earlier
+            #$channum              = $data[5];
+            #$callsign             = $data[6];
+            $this->channame        = $data[7];
+            #$pathname             = $data[8];   # Extracted a few lines earlier
+            #$fs_high              = $data[9];   # Extracted a few lines earlier
+            #$fs_low               = $data[10];  # Extracted a few lines earlier
+            #$starttime            = $data[11];  # Extracted a few lines earlier
+            #$endtime              = $data[12];  # Extracted a few lines earlier
+            $this->hostname        = $data[16];
+            #$this->sourceid       = $data[17];
+            $this->cardid          = $data[18];
+            #$this->inputid        = $data[19];
+            $this->recpriority     = $data[20];
+            $this->recstatus       = $data[21];
+            $this->conflicting     = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
+            $this->recording       = ($this->recstatus == 'WillRecord'); # scheduled to record?
+            $this->recordid        = $data[22];
+            $this->rectype         = $data[23];
+            $this->dupin           = $data[24];
+            $this->dupmethod       = $data[25];
+            $this->recstartts      = $data[26];     # ACTUAL start time
+            $this->recendts        = $data[27];     # ACTUAL end time
+            $this->previouslyshown = $data[28];     # "repeat" field
+            $progflags             = $data[29];
+            $this->recgroup        = $data[30];
+            $this->commfree        = $data[31];
+            $this->outputfilters   = $data[32];
+            $this->seriesid        = $data[33];
+            $this->programid       = $data[34];
+            $this->lastmodified    = $data[35];
+            $this->recpriority     = $data[36];
+            #$this->airdate        = $data[37];
+            #$this->hasairdate     = $data[38];
+            $this->timestretch     = $program_data[39];
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
             $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02
@@ -386,6 +387,27 @@ class Program {
         if ($this->chanid != '')
             $this->class = category_class($this);
 
+    // Get a nice description with the full details
+        $details = array();
+        if ($this->hdtv)
+            $details[] = t('HDTV');
+        if ($this->parttotal > 1 || $this->partnumber > 1)
+            $details[] = t('Part $1 of $2', $this->partnumber, $this->parttotal);
+        if ($this->rating)
+            $details[] = $this->rating;
+        if ($this->subtitled)
+            $details[] = t('Subtitled');
+        if ($this->closecaptioned)
+            $details[] = t('CC');
+        if ($this->stereo)
+            $details[] = t('Stereo');
+        if ($this->previouslyshown)
+            $details[] = t('Repeat');
+
+        $this->fancy_description = $this->description;
+        if (count($details) > 0)
+            $this->fancy_description .= ' ('.implode(', ', $details).')';
+
     }
 
 /**
@@ -411,15 +433,9 @@ class Program {
                             ."</dd>\n";
         }
     // Description
-        if (preg_match('/\\S/', $this->description)) {
+        if (preg_match('/\\S/', $this->fancy_description)) {
             $str .= "\t<dt>".t('Description').":</dt>\n"
-                   ."\t<dd>".nl2br(htmlentities($this->description, ENT_COMPAT, 'UTF-8'))
-                            ."</dd>\n";
-        }
-    // Rating
-        if (preg_match('/\\S/', $this->rating)) {
-            $str .= "\t<dt>".t('Rating').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->rating, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".nl2br(htmlentities($this->fancy_description, ENT_COMPAT, 'UTF-8'))
                             ."</dd>\n";
         }
     // Original Airdate
@@ -432,12 +448,6 @@ class Program {
         if (preg_match('/\\S/', $this->category)) {
             $str .= "\t<dt>".t('Category').":</dt>\n"
                    ."\t<dd>".htmlentities($this->category, ENT_COMPAT, 'UTF-8')
-                            ."</dd>\n";
-        }
-    // Rerun?
-        if (!empty($this->previouslyshown)) {
-            $str .= "\t<dt>".t('Rerun').":</dt>\n"
-                   ."\t<dd>".t('Yes')
                             ."</dd>\n";
         }
     // Will be recorded at some point in the future?

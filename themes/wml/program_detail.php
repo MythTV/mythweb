@@ -25,7 +25,7 @@ class Theme_program_detail extends Theme {
 <?php echo t('$1 to $2', strftime('%r', $program->starttime), strftime('%r', $program->endtime)).' ('.tn('$1 min', '$1 mins', (int)($program->length/60)).')' ?> <br />
 <?php
         if ($program->previouslyshown) {
-            echo t('Rerun').' ';
+            echo t('Repeat').' ';
         }
         if (strlen($program->subtitle)) {
 ?>

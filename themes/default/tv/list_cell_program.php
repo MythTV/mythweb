@@ -63,7 +63,7 @@
         $parens = '';
     // Finally, print some other information
         if ($program->previouslyshown)
-            $parens = '<i>'.t('Rerun').'</i>';
+            $parens = '<i>'.t('Repeat').'</i>';
         if ($parens)
             echo "<BR>($parens)";
 

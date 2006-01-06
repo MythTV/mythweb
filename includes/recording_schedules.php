@@ -361,7 +361,7 @@ class Schedule {
         }
     // Rerun?
         if (!empty($this->previouslyshown)) {
-            $str .= "\t<dt>".t('Rerun').":</dt>\n"
+            $str .= "\t<dt>".t('Repeat').":</dt>\n"
                    ."\t<dd>".t('Yes')
                             ."</dd>\n";
         }

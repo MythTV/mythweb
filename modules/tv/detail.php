@@ -64,16 +64,17 @@
 
 // If there is a program for this, import its values into the schedule
     if ($program) {
-        $schedule->chanid      = $program->chanid;
-        $schedule->starttime   = $program->starttime;
-        $schedule->endtime     = $program->endtime;
-        $schedule->title       = $program->title;
-        $schedule->subtitle    = $program->subtitle;
-        $schedule->description = $program->description;
-        $schedule->category    = $program->category;
-        $schedule->station     = $program->channel->callsign;       // Note that "callsign" becomes "station"
-        $schedule->seriesid    = $program->seriesid;
-        $schedule->programid   = $program->programid;
+        $schedule->chanid            = $program->chanid;
+        $schedule->starttime         = $program->starttime;
+        $schedule->endtime           = $program->endtime;
+        $schedule->title             = $program->title;
+        $schedule->subtitle          = $program->subtitle;
+        $schedule->description       = $program->description;
+        $schedule->fancy_description = $program->fancy_description;
+        $schedule->category          = $program->category;
+        $schedule->station           = $program->channel->callsign;       // Note that "callsign" becomes "station"
+        $schedule->seriesid          = $program->seriesid;
+        $schedule->programid         = $program->programid;
     }
 
 // The user tried to update the recording settings - update the database and the variable in memory
