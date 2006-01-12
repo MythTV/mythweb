@@ -33,7 +33,7 @@ $L = array(
     'Check for duplicates in'                            => 'Sök dubbletter i',
     'Create Schedule'                                    => 'Schemalägg',
     'Current recordings'                                 => 'Nuvarande inspelningar',
-    'Custom Schedule'                                    => '',
+    'Custom Schedule'                                    => 'Eget schema',
     'Date'                                               => 'Datum',
     'Default'                                            => 'Standard',
     'Description'                                        => 'Beskrivning',
@@ -122,12 +122,12 @@ $L = array(
     'subtitle'                                           => 'undertitel',
     'title'                                              => 'titel',
 // includes/programs.php
-    'CC'                           => '',
-    'HDTV'                         => '',
+    'CC'                           => 'Textning',
+    'HDTV'                         => 'HDTV',
     'Notes'                        => 'Anteckningar',
-    'Part $1 of $2'                => '',
-    'Stereo'                       => '',
-    'Subtitled'                    => '',
+    'Part $1 of $2'                => 'Del $1 av $2',
+    'Stereo'                       => 'Stereo',
+    'Subtitled'                    => 'Textad',
     'recstatus: cancelled'         => 'Denna visning spelades inte in därför att den avbröts manuellt.',
     'recstatus: conflict'          => 'Ett annat program med en högre prioritet kommer att spelas in.',
     'recstatus: currentrecording'  => 'Denna visning kommer inte att spelas in därför att detta avsnitt redan spelats in och fortfarande är tillgängligt i listan över inspelningar.',
@@ -166,25 +166,25 @@ $L = array(
 // modules/movietimes/init.php
     'Movie Times' => 'Filmtider',
 // modules/settings/init.php
-    'MythTV channel info'      => '',
-    'MythTV key bindings'      => '',
-    'MythWeb session settings' => '',
+    'MythTV channel info'      => 'MythTV kanalinfo',
+    'MythTV key bindings'      => 'MythTV tangentbindningar',
+    'MythWeb session settings' => 'MythWeb sessionsinställningar',
     'settings'                 => 'inställningar',
 // modules/status/init.php
     'Status' => 'Status',
 // modules/stream/init.php
-    'Streaming' => '',
+    'Streaming' => 'Strömmande',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => '',
+    'This program is already scheduled to be recorded via a $1custom search$2.' => 'Detta program är redan schemalagt för inspelning via en $1specialsökning$2.',
     'Unknown Program.'                                                          => 'Okänt program.',
     'Unknown Recording Schedule.'                                               => 'Okänt inspelningsschema.',
 // modules/tv/init.php
     'Special Searches' => 'Speciella sökningar',
     'TV'               => 'TV',
 // modules/tv/schedules_custom.php
-    'Any Category'     => '',
-    'Any Channel'      => '',
-    'Any Program Type' => '',
+    'Any Category'     => 'Alla kategorier',
+    'Any Channel'      => 'Alla kanaler',
+    'Any Program Type' => 'Alla programtyper',
 // modules/tv/search.php
     'Please search for something.' => 'Välj något att söka efter.',
 // modules/video/init.php
@@ -192,15 +192,15 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => 'Logg',
 // themes/default/backend_log/welcome.php
-    'welcome: backend_log' => '',
+    'welcome: backend_log' => 'Visa serverloggarna.',
 // themes/default/header.php
     'Category Legend'                            => 'Kategoriförklaring',
     'Category Type'                              => 'Kategorityp',
-    'Custom'                                     => '',
+    'Custom'                                     => 'Egen',
     'Edit MythWeb and some MythTV settings.'     => 'Ändra MythWeb och några MythTV-inställningar',
     'Exact Match'                                => 'Exakt matchning',
     'HD Only'                                    => 'Endast HD',
-    'Manual'                                     => '',
+    'Manual'                                     => 'Manuell',
     'MythMusic on the web.'                      => 'MythMusic på webben',
     'MythVideo on the web.'                      => 'MythVideo på webben',
     'MythWeb Weather.'                           => 'MythWeb väder.',
@@ -214,7 +214,7 @@ $L = array(
     'Searches'                                   => 'Sökningar',
     'TV functions, including recorded programs.' => 'Tv-funktioner, inkl. inspelade program.',
 // themes/default/movietimes/welcome.php
-    'welcome: movietimes' => '',
+    'welcome: movietimes' => 'Hämta listor på filmer som visas på lokala biografer.',
 // themes/default/music/music.php
     'Album'               => 'Album',
     'Album (filtered)'    => 'Album (filtrerat)',
@@ -234,7 +234,7 @@ $L = array(
     'Track Name'          => 'Spårnamn',
     'Unfiltered'          => 'Ofiltrerat',
 // themes/default/music/welcome.php
-    'welcome: music' => '',
+    'welcome: music' => 'Bläddra i din musiksamling.',
 // themes/default/settings/channels.php
     'Configure Channels'                                                                                                                 => 'Konfigurera kanaler',
     'Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality.' => 'OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.',
@@ -271,7 +271,7 @@ $L = array(
     'Language'                        => 'Språk',
     'Listing &quot;Jump to&quot;'     => 'TV-tablå &quot;Gå till&quot;',
     'Listing Time Key'                => 'TV-tablå tid',
-    'MythWeb Session Settings'        => '',
+    'MythWeb Session Settings'        => 'MythWeb sessionsinställningar',
     'MythWeb Theme'                   => 'MythWeb-tema',
     'Only display favourite channels' => 'Visa endast favoritkanaler',
     'Reset'                           => 'Återställ',
@@ -284,9 +284,9 @@ $L = array(
 // themes/default/settings/settings.php
     'settings: overview' => 'Detta är startsidan för inställningarna. Inte helt komplett, men följande finns för närvarande att välja på: ',
 // themes/default/settings/welcome.php
-    'welcome: settings' => '',
+    'welcome: settings' => 'Konfigurera MythWeb och några av MythTVs inställningar.',
 // themes/default/status/welcome.php
-    'welcome: status' => '',
+    'welcome: status' => 'Visa inspelningsserverns statussida.',
 // themes/default/tv/channel.php
     'Channel Detail' => 'Kanaldetaljer',
     'Length'         => 'Längd',
@@ -298,7 +298,7 @@ $L = array(
     'Cast'                                => 'Rollbesättning',
     'Directed by'                         => 'Regi',
     'Don\'t record this program.'         => 'Spela inte in detta program.',
-    'Episode Number'                      => '',
+    'Episode Number'                      => 'Avsnittsnummer',
     'Exec. Producer'                      => 'Producent',
     'Find other showings of this program' => 'Hitta andra visningar av detta program',
     'Find showings of this program'       => 'Hitta visningar av detta program',
@@ -306,12 +306,12 @@ $L = array(
     'Guest Starring'                      => 'Gästspel',
     'Guide rating'                        => 'Betyg',
     'Hosted by'                           => 'Värd',
-    'MythTV Status'                       => '',
-    'Possible conflicts with this show'   => '',
+    'MythTV Status'                       => 'MythTV-status',
+    'Possible conflicts with this show'   => 'Möjliga konflikter med denna visning',
     'Presented by'                        => 'Presenteras av',
     'Produced by'                         => 'Producerad av',
     'Program Detail'                      => 'Programdetaljer',
-    'Program ID'                          => '',
+    'Program ID'                          => 'Program-ID',
     'TV.com'                              => 'TV.com',
     'Time Stretch Default'                => 'Förvalt tempo',
     'What else is on at this time?'       => 'Vad visas mer vid denna tid?',
@@ -349,13 +349,13 @@ $L = array(
     'transcoder'                                => 'omkodare',
     'type'                                      => 'typ',
 // themes/default/tv/schedules_custom.php
-    'Additional Tables' => '',
-    'Keyword Search'    => '',
-    'People Search'     => '',
-    'Power Search'      => '',
-    'Search Phrase'     => '',
-    'Search Type'       => '',
-    'Title Search'      => '',
+    'Additional Tables' => 'Ytterligare tabeller',
+    'Keyword Search'    => 'Sök nyckelord',
+    'People Search'     => 'Sök person',
+    'Power Search'      => 'Avancerad sökning',
+    'Search Phrase'     => 'Sök fras',
+    'Search Type'       => 'Sök typ',
+    'Title Search'      => 'Sök titel',
 // themes/default/tv/schedules_manual.php
     'Channel'      => 'Kanal',
     'Length (min)' => 'Längd (min)',
@@ -366,7 +366,7 @@ $L = array(
     'No matching programs were found.' => 'Inga matchande program hittades.',
     'Search for:  $1'                  => 'Sök efter:  $1',
 // themes/default/tv/searches.php
-    'Handy Predefined Searches' => '',
+    'Handy Predefined Searches' => 'Förberedda sökningar',
     'handy: overview'           => 'Denna sida innehåller förberedda komplexa sökningar av programlistorna.',
 // themes/default/tv/upcoming.php
     'Commands'    => 'Kommando',
@@ -375,7 +375,7 @@ $L = array(
     'Duplicates'  => 'Dubbletter',
     'Scheduled'   => 'Schemalagd',
 // themes/default/tv/welcome.php
-    'welcome: tv' => '',
+    'welcome: tv' => 'Se vad som visas på tv, schemalägg inspelningar och hantera befintliga inspelningar.',
 // themes/default/video/video.php
     'Edit'          => 'Redigera',
     'Reverse Order' => 'Omvänd ordning',
@@ -388,7 +388,7 @@ $L = array(
     'rating'        => 'betyg',
     'year'          => 'år',
 // themes/default/video/welcome.php
-    'welcome: video' => '',
+    'welcome: video' => 'Bläddra i din videosamling.',
 // themes/default/weather/weather.php
     ' at '               => ' vid ',
     'Current Conditions' => 'Nuvarande förhållanden',
@@ -417,7 +417,7 @@ $L = array(
     'Wind'               => 'Vind',
     'Wind Chill'         => 'Vindkyleffekt',
 // themes/default/weather/welcome.php
-    'welcome: weather' => ''
+    'welcome: weather' => 'Hämta lokal väderprognos.'
 // End of the translation hash ** Do not touch the next line
           );
 
