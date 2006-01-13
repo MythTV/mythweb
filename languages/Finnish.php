@@ -38,7 +38,7 @@ $L = array(
     'Check for duplicates in'                            => 'Tarkista kaksoiskappaleet',
     'Create Schedule'                                    => 'Ajoita Nauhoitus',
     'Current recordings'                                 => 'Nykyiset nauhoitukset',
-    'Custom Schedule'                                    => '',
+    'Custom Schedule'                                    => 'Mukautettu Ajastus',
     'Date'                                               => 'Aika',
     'Default'                                            => 'Oletus',
     'Description'                                        => 'Kuvaus',
@@ -81,8 +81,8 @@ $L = array(
     'Schedule Options'                                   => 'Ajoitusvalinnat',
     'Schedule Override'                                  => 'Ajoituksen Syrjäytys',
     'Schedule normally.'                                 => 'Ajoita normaalisti',
-    'Search'                                             => 'Etsi',
-    'Search Results'                                     => 'Etsinnän Tulokset',
+    'Search'                                             => 'Hae',
+    'Search Results'                                     => 'Haun Tulokset',
     'Settings'                                           => 'Asetukset',
     'Start Early'                                        => 'Aloita Aiemmin',
     'Subtitle'                                           => 'Jakson Nimi',
@@ -127,12 +127,12 @@ $L = array(
     'subtitle'                                           => 'Jakson nimi',
     'title'                                              => 'Nimike',
 // includes/programs.php
-    'CC'                           => '',
-    'HDTV'                         => '',
+    'CC'                           => 'Tekstitys',
+    'HDTV'                         => 'Tarkkapiirto',
     'Notes'                        => 'Viesti',
-    'Part $1 of $2'                => '',
-    'Stereo'                       => '',
-    'Subtitled'                    => '',
+    'Part $1 of $2'                => 'Jakso $1/$2',
+    'Stereo'                       => 'Stereo',
+    'Subtitled'                    => 'Tekstitetty',
     'recstatus: cancelled'         => 'Ajoitettu nauhoitus oli manuaalisesti peruttu.',
     'recstatus: conflict'          => 'Toinen korkeamman prioriteetin ohjelma nauhoitetaan tämän sijasta.',
     'recstatus: currentrecording'  => 'Jakso on aikaisemmin nauhoitettu ja katsottavissa.',
@@ -167,56 +167,56 @@ $L = array(
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
 // modules/backend_log/init.php
-    'Logs' => '',
+    'Logs' => 'Lokit',
 // modules/movietimes/init.php
     'Movie Times' => 'Elokuvahaku',
 // modules/settings/init.php
-    'MythTV channel info'      => '',
-    'MythTV key bindings'      => '',
-    'MythWeb session settings' => '',
+    'MythTV channel info'      => 'MythTV kanavatiedot',
+    'MythTV key bindings'      => 'MythTV näppäinkomennot',
+    'MythWeb session settings' => 'MythWeb istuntoasetukset',
     'settings'                 => 'Asetukset',
 // modules/status/init.php
     'Status' => 'Systeemin Tila',
 // modules/stream/init.php
-    'Streaming' => '',
+    'Streaming' => 'Lähetys',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => '',
+    'This program is already scheduled to be recorded via a $1custom search$2.' => 'Tämä ohjelma on jo ajastettu nauhoittamaan käyttäen $1custom search$2.',
     'Unknown Program.'                                                          => 'Tuntematon Ohjelma.',
     'Unknown Recording Schedule.'                                               => 'Tuntematon Ajoitus.',
 // modules/tv/init.php
     'Special Searches' => 'Edistynyt Haku',
-    'TV'               => '',
+    'TV'               => 'Televisio',
 // modules/tv/schedules_custom.php
-    'Any Category'     => '',
-    'Any Channel'      => '',
-    'Any Program Type' => '',
+    'Any Category'     => 'Mikä Tahansa Kategoria',
+    'Any Channel'      => 'Mikä Tahansa Kanava',
+    'Any Program Type' => 'Mikä Tahansa Ohjelmatyyppi',
 // modules/tv/search.php
-    'Please search for something.' => 'Syötä etsimislause.',
+    'Please search for something.' => 'Syötä hakulause.',
 // modules/video/init.php
     'Video' => 'Videot',
 // themes/default/backend_log/backend_log.php
-    'Backend Logs' => '',
+    'Backend Logs' => 'Palvelimen Lokit',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => '',
 // themes/default/header.php
     'Category Legend'                            => 'Kategorian Merkit',
     'Category Type'                              => 'Kategorian Tyyppi',
-    'Custom'                                     => '',
+    'Custom'                                     => 'Mukautettu',
     'Edit MythWeb and some MythTV settings.'     => 'Muokkaa MythWeb:in ja MythTV:n asetuksia.',
     'Exact Match'                                => 'Tarkka Vastaavuus',
     'HD Only'                                    => 'Vain Teräväpiirto',
-    'Manual'                                     => '',
+    'Manual'                                     => 'Manuaalinen',
     'MythMusic on the web.'                      => 'MythMusic Netissä.',
     'MythVideo on the web.'                      => 'MythVideo Netissä.',
     'MythWeb Weather.'                           => 'MythWeb Sääennuste.',
-    'Search fields'                              => 'Etsintäasetukset',
-    'Search help'                                => 'Etsintäapu',
+    'Search fields'                              => 'Hakuasetukset',
+    'Search help'                                => 'Hakuapu',
     'Search help: movie example'                 => '*** 1/2 Seikkailu',
     'Search help: movie search'                  => 'Elokuvan Haku',
     'Search help: regex example'                 => '/^Hyvä Ateria/',
-    'Search help: regex search'                  => 'regex Etsintä',
-    'Search options'                             => 'Etsintävalinnat',
-    'Searches'                                   => 'Etsinnät',
+    'Search help: regex search'                  => 'regex Haku',
+    'Search options'                             => 'Hakuvalinnat',
+    'Searches'                                   => 'Haut',
     'TV functions, including recorded programs.' => 'Nauhoitetut ohjelmat ja muut TV-asetukset.',
 // themes/default/movietimes/welcome.php
     'welcome: movietimes' => '',
@@ -276,7 +276,7 @@ $L = array(
     'Language'                        => 'Kieli',
     'Listing &quot;Jump to&quot;'     => 'Listauksen Hyppy',
     'Listing Time Key'                => 'Listauksen Aikanäppäin',
-    'MythWeb Session Settings'        => '',
+    'MythWeb Session Settings'        => 'MythWeb Istuntoasetukset',
     'MythWeb Theme'                   => 'Teema',
     'Only display favourite channels' => 'Vain Suosikkikanavat',
     'Reset'                           => 'Alustus',
@@ -293,7 +293,7 @@ $L = array(
 // themes/default/status/welcome.php
     'welcome: status' => '',
 // themes/default/tv/channel.php
-    'Channel Detail' => '',
+    'Channel Detail' => 'Kanavatiedot',
     'Length'         => 'Pituus',
     'Show'           => 'Ohjelma',
     'Time'           => 'Aika',
@@ -303,16 +303,16 @@ $L = array(
     'Cast'                                => 'Pääosat',
     'Directed by'                         => 'Ohjaus',
     'Don\'t record this program.'         => 'Älä nauhoita ohjelmaa.',
-    'Episode Number'                      => '',
+    'Episode Number'                      => 'Jakson Numero',
     'Exec. Producer'                      => 'Tuottaja',
     'Find other showings of this program' => 'Etsi muita ohjelman lähetyksiä',
     'Find showings of this program'       => 'Etsi ohjelman lähetyksiä',
     'Google'                              => 'Google',
     'Guest Starring'                      => 'Vierastähdet',
-    'Guide rating'                        => '',
+    'Guide rating'                        => 'Arvostelu',
     'Hosted by'                           => 'Isäntänä',
-    'MythTV Status'                       => '',
-    'Possible conflicts with this show'   => '',
+    'MythTV Status'                       => 'MythTV Tila',
+    'Possible conflicts with this show'   => 'Saattaa olla ristiriidassa tämän ohjelman kanssa',
     'Presented by'                        => 'Esittää',
     'Produced by'                         => 'Tuottajana',
     'Program Detail'                      => 'Ohjelman Lisätietoja',
@@ -354,13 +354,13 @@ $L = array(
     'transcoder'                                => '',
     'type'                                      => 'tyyppi',
 // themes/default/tv/schedules_custom.php
-    'Additional Tables' => '',
-    'Keyword Search'    => '',
-    'People Search'     => '',
-    'Power Search'      => '',
-    'Search Phrase'     => '',
-    'Search Type'       => '',
-    'Title Search'      => '',
+    'Additional Tables' => 'Täydentävät Taulukot',
+    'Keyword Search'    => 'Haku Avainsanalla',
+    'People Search'     => 'Haku Nimellä',
+    'Power Search'      => 'Tehokas Haku',
+    'Search Phrase'     => 'Hakulause',
+    'Search Type'       => 'Haun Tyyppi',
+    'Title Search'      => 'Haku Nimikkeellä',
 // themes/default/tv/schedules_manual.php
     'Channel'      => 'Kanava',
     'Length (min)' => 'Pituus (min)',
@@ -368,11 +368,11 @@ $L = array(
     'Start Time'   => 'Aloitusaika',
 // themes/default/tv/search.php
     'No matches found'                 => 'Ei vastaavuuksia',
-    'No matching programs were found.' => '',
-    'Search for:  $1'                  => 'Etsi:  $1',
+    'No matching programs were found.' => 'Vastaavia ohjelmia ei löytynyt.',
+    'Search for:  $1'                  => 'Hae:  $1',
 // themes/default/tv/searches.php
-    'Handy Predefined Searches' => '',
-    'handy: overview'           => 'Sisältää valmiita edistyneen etsinnän lauseita.',
+    'Handy Predefined Searches' => 'Esitäytetyt Haut',
+    'handy: overview'           => 'Sisältää valmiita edistyneen haun lauseita.',
 // themes/default/tv/upcoming.php
     'Commands'    => 'Komennot',
     'Conflicts'   => 'Ristiriidat',
@@ -447,7 +447,7 @@ $Categories['Crime_Mystery']  = array('Trilleri',  '\\b(?:crim|myster)');
 $Categories['Documentary']    = array('Dokumentti',      '\\b(?:doc)');
 $Categories['Drama']          = array('Draama',            '\\b(?:drama)');
 $Categories['Educational']    = array('Opetus',      '\\b(?:edu|interests)');
-$Categories['Food']           = array('Kokki',             '\\b(?:food|cook|drink)');
+$Categories['Food']           = array('Ruoka',             '\\b(?:food|cook|drink)');
 $Categories['Game']           = array('Pelit',             '\\b(?:game)');
 $Categories['Health_Medical'] = array('Terveys', '\\b(?:health|medic)');
 $Categories['History']        = array('Historia',          '\\b(?:hist)');
