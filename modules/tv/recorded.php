@@ -104,8 +104,10 @@
     }
 
 // Queries for a specific program title
-    isset($_GET['title']) or $_GET['title']  = $_POST['title'];
-    isset($_GET['title']) or $_GET['title']  = isset($_GET['refresh']) ? '' : $_SESSION['recorded_title'];
+    isset($_GET['title'])    or $_GET['title']    = $_POST['title'];
+    isset($_GET['recgroup']) or $_GET['recgroup'] = $_POST['recgroup'];
+    isset($_GET['title'])    or $_GET['title']    = isset($_GET['refresh']) ? '' : $_SESSION['recorded_title'];
+    isset($_GET['recgroup']) or $_GET['recgroup'] = isset($_GET['refresh']) ? '' : $_SESSION['recorded_recgroup'];
 
 // Parse the program list
     $recordings     = get_backend_rows('QUERY_RECORDINGS Delete');
@@ -164,7 +166,8 @@
     ksort($Program_Titles);
 
 // Keep track of the program/title the user wants to view
-    $_SESSION['recorded_title'] = $_GET['title'];
+    $_SESSION['recorded_title']    = $_GET['title'];
+    $_SESSION['recorded_recgroup'] = $_GET['recgroup'];
 
 // The default sorting choice isn't so good for recorded programs, so we'll set our own default
     if (!is_array($_SESSION['recorded_sortby']) || !count($_SESSION['recorded_sortby']))
