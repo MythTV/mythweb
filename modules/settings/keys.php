@@ -36,7 +36,7 @@
             }
             elseif (preg_match('/^key:([\\w_\/]+):(\\w+):(\\w+)$/', $key, $matches)) {
                 list($match, $context, $action, $use_host) = $matches;
-                $db->query('UPDATE jumppoints
+                $db->query('UPDATE keybindings
                                SET keylist=?
                              WHERE context=? AND action=? AND hostname=?',
                            $key_list,
