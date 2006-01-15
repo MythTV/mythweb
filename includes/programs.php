@@ -79,7 +79,7 @@
  * start exactly at $start_time (used by program_detail.php)
 /**/
     function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '') {
-        global $Channels;
+        global $Channels, $db;
     // Make a local hash of channel chanid's with references to the actual channel data
         $channel_hash = array();
     // An array (that later gets converted to a string) containing the id's of channels we want to load
@@ -115,44 +115,49 @@
             trigger_error("load_all_program_data() attempted with an empty \$Channels array", FATAL);
         $these_channels = implode(',', $these_channels);
     // Build the sql query, and execute it
-        $query = 'SELECT program.*,'
-                 .' UNIX_TIMESTAMP(program.starttime) AS starttime_unix,'
-                 .' UNIX_TIMESTAMP(program.endtime) AS endtime_unix,'
-                 .' CONCAT(repeat('.escape(star_character).', program.stars * '.escape(max_stars).'), IF((program.stars * '.escape(max_stars).' * 10) % 10, "&frac12;", "")) AS starstring,'
-                 .' IFNULL(programrating.system, "") AS rater,'
-                 .' IFNULL(programrating.rating, "") AS rating'
-                 .' FROM program LEFT JOIN programrating USING (chanid, starttime)'
-                 .' WHERE';
+        $query = 'SELECT program.*,
+                         UNIX_TIMESTAMP(program.starttime) AS starttime_unix,
+                         UNIX_TIMESTAMP(program.endtime) AS endtime_unix,
+                         CONCAT(repeat(?, program.stars * ?),
+                                IF((program.stars * ? * 10) % 10,
+                                   "&frac12;", "")) AS starstring,
+                         IFNULL(programrating.system, "") AS rater,
+                         IFNULL(programrating.rating, "") AS rating,
+                         oldrecorded.recstatus
+                  FROM program
+                       LEFT JOIN oldrecorded   USING (seriesid, programid)
+                       LEFT JOIN programrating USING (chanid, starttime)
+                 WHERE';
     // Only loading a single channel worth of information
         if ($chanid > 0)
-            $query .= ' program.chanid='.escape($chanid);
+            $query .= ' program.chanid='.$db->escape($chanid);
     // Loading a group of channels (probably all of them)
         else
             $query .= ' program.chanid IN ('.$these_channels.')';
     // Requested start time is the same as the end time - don't bother with fancy calculations
         if ($start_time == $end_time)
-            $query .= ' AND program.starttime = FROM_UNIXTIME(' . escape($start_time) . ')';
+            $query .= ' AND program.starttime = FROM_UNIXTIME('.$db->escape($start_time).')';
     // We're looking at a time range
         else
-            $query .= ' AND (program.endtime > FROM_UNIXTIME(' .escape($start_time).')'
-                     .' AND program.starttime < FROM_UNIXTIME('.escape($end_time)  .')'
+            $query .= ' AND (program.endtime > FROM_UNIXTIME(' .$db->escape($start_time).')'
+                     .' AND program.starttime < FROM_UNIXTIME('.$db->escape($end_time)  .')'
                      .' AND program.starttime != program.endtime)';
     // The extra query, if there is one
         if ($extra_query)
             $query .= ' AND '.$extra_query;
     // Group, sort and query
         $query .= ' GROUP BY program.chanid, program.starttime ORDER BY program.starttime';
-        $result = mysql_query($query)
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+        $sh = $db->query($query,
+                         star_character, max_stars, max_stars);
     // No results
-        if (mysql_num_rows($result) < 1) {
-            mysql_free_result($result);
+        if ($sh->num_rows() < 1) {
+            $sh->finish();
             return NULL;
         }
     // Load in all of the programs (if any?)
         global $Scheduled_Recordings;
         $these_programs = array();
-        while ($data = mysql_fetch_assoc($result)) {
+        while ($data = $sh->fetch_assoc()) {
             if (!$data['chanid'])
                 continue;
         // This program has already been loaded, and is attached to a recording schedule
@@ -170,7 +175,7 @@
             unset($program);
         }
     // Cleanup
-        mysql_free_result($result);
+        $sh->finish();
     // If channel-specific information was requested, return an array of those programs, or just the first/only one
         if ($chanid) {
             if ($single_program)
@@ -314,9 +319,6 @@ class Program {
             $this->auto_expire  = ($progflags & 0x04) ? true : false;    // FL_AUTOEXP   = 0x04
             $this->is_editing   = ($progflags & 0x08) ? true : false;    // FL_EDITING   = 0x08
             $this->bookmark     = ($progflags & 0x10) ? true : false;    // FL_BOOKMARK  = 0x10
-        // Turn recstatus into a word
-            if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
-                $this->recstatus = $GLOBALS['RecStatus_Types'][$this->recstatus];
         // Add a generic "will record" variable, too
             $this->will_record = ($this->rectype && $this->rectype != rectype_dontrec) ? true : false;
         }
@@ -348,6 +350,7 @@ class Program {
             $this->colorcode               = $data['colorcode'];
             $this->syndicatedepisodenumber = $data['syndicatedepisodenumber'];
             $this->title_pronounce         = $data['title_pronounce'];
+            $this->recstatus               = $data['recstatus'];
 
             if ($program_data['tsdefault']) {
                 $this->timestretch = $program_data['tsdefault'];
@@ -355,6 +358,9 @@ class Program {
                 $this->timestretch = 1.0;
             }
         }
+    // Turn recstatus into a word
+        if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
+            $this->recstatus = $GLOBALS['RecStatus_Types'][$this->recstatus];
     // No longer a null column, so check for blank entries
         if ($this->airdate == '0000-00-00')
             $this->airdate = NULL;

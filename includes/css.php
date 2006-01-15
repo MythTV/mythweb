@@ -1,15 +1,20 @@
 <?php
-/***                                                                        ***\
-    css.php                                  Last Updated: 2005.03.21 (xris)
+/**
+ * Various routines that deal with figuring out and/or displaying css.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ *
+ * @package     MythWeb
+ *
+/**/
 
-    various routines that deal with figuring out and/or displaying css.
-\***                                                                        ***/
-
-/*
-    category_class:
-    returns a classname for a Program or a Schedule, based on its recording
-    settings.
-*/
+/**
+ * Returns a classname for a Program or a Schedule, based on its recording
+ * settings.
+/**/
     function category_class(&$item) {
         $class =array();
     // Recording classes?
@@ -41,13 +46,12 @@
         return preg_replace('/ +/', ' ', implode(' ', $class));
     }
 
-/*
-    recstatus_class:
-    Returns a classname for a Program or a Schedule, based on its recording
-    status.
-*/
+/**
+ * Returns a classname for a Program or a Schedule, based on its recording
+ * status.
+/**/
     function recstatus_class(&$item) {
-        if ($item->recordid && !strcasecmp(get_class($item), 'program')) {
+        if ($item->recstatus && !strcasecmp(get_class($item), 'program')) {
             switch ($item->recstatus) {
                 case 'ForceRecord':
                     return 'record_override_record';
@@ -59,6 +63,8 @@
                 case 'PreviousRecording':
                 case 'CurrentRecording':
                     return 'record_duplicate';
+                case 'Recorded':
+                    return 'record_old_duplicate';
                 case 'ManualOverride':
                 case 'Cancelled':
                     return 'record_override_suppress';
