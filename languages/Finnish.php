@@ -186,6 +186,10 @@ $L = array(
 // modules/tv/init.php
     'Special Searches' => 'Edistynyt Haku',
     'TV'               => 'Televisio',
+// modules/tv/recorded.php
+    'No matching programs found.'             => '',
+    'Showing all programs from the $1 group.' => '',
+    'Showing all programs.'                   => '',
 // modules/tv/schedules_custom.php
     'Any Category'     => 'Mikä Tahansa Kategoria',
     'Any Channel'      => 'Mikä Tahansa Kanava',
@@ -331,6 +335,7 @@ $L = array(
     '$1 episodes'                                         => '$1 jaksoa',
     '$1 recording'                                        => '$1 nauhoitus',
     '$1 recordings'                                       => '$1 nauhoitusta',
+    'All groups'                                          => '',
     'Are you sure you want to delete the following show?' => 'Poistetaanko seuraavat ohjelmat?',
     'Delete'                                              => 'Poista',
     'Delete $1'                                           => 'Poista $1',

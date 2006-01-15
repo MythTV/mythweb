@@ -148,6 +148,21 @@
 <form id="program_titles" action="<?php echo root ?>tv/recorded" method="get">
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
+<?php if (count($Groups) > 1) { ?>
+    <td><?php echo t('Show group') ?>:</td>
+    <td><select name="recgroup" onchange="get_element('program_titles').submit()">
+        <option value=""><?php echo t('All groups') ?></option><?php
+        foreach($Groups as $recgroup => $count) {
+            echo '<option id="Group '.htmlspecialchars($recgroup).'" value="'.htmlspecialchars($recgroup).'"';
+            if ($_GET['recgroup'] == $recgroup)
+                echo ' SELECTED';
+            echo '>'.htmlentities($recgroup, ENT_COMPAT, 'UTF-8')
+                .' ('.tn('$1 recording', '$1 recordings', $count)
+                .')</option>';
+        }
+        ?>
+    </select></td>
+<?php } ?>
     <td><?php echo t('Show recordings') ?>:</td>
     <td width="250" align="center"><select name="title" onchange="get_element('program_titles').submit()">
         <option id="All recordings" value=""><?php echo t('All recordings') ?></option><?php
@@ -161,22 +176,6 @@
         }
         ?>
     </select></td>
-<?php
-if (count($Groups) > 1) { ?>
-    <td><?php echo t('Show group') ?>:</td>
-    <td><select name="recgroup" onchange="get_element('program_titles').submit()">
-        <option value=""><?php echo t('All recordings') ?></option><?php
-        foreach($Groups as $recgroup => $count) {
-            echo '<option id="Group '.htmlspecialchars($recgroup).'" value="'.htmlspecialchars($recgroup).'"';
-            if ($_GET['recgroup'] == $recgroup)
-                echo ' SELECTED';
-            echo '>'.htmlentities($recgroup, ENT_COMPAT, 'UTF-8')
-                .' ('.tn('$1 recording', '$1 recordings', $count)
-                .')</option>';
-        }
-        ?>
-    </select></td>
-<?php } ?>
     <td><noscript><input type="submit" value="<?php echo t('Go') ?>"></noscript></td>
 </tr>
 </table>

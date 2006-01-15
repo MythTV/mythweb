@@ -181,6 +181,10 @@ $L = array(
 // modules/tv/init.php
     'Special Searches' => 'Speciella sökningar',
     'TV'               => 'TV',
+// modules/tv/recorded.php
+    'No matching programs found.'             => '',
+    'Showing all programs from the $1 group.' => '',
+    'Showing all programs.'                   => '',
 // modules/tv/schedules_custom.php
     'Any Category'     => 'Alla kategorier',
     'Any Channel'      => 'Alla kanaler',
@@ -326,6 +330,7 @@ $L = array(
     '$1 episodes'                                         => '$1 avsnitt',
     '$1 recording'                                        => '$1 inspelning',
     '$1 recordings'                                       => '$1 inspelningar',
+    'All groups'                                          => '',
     'Are you sure you want to delete the following show?' => 'Är du säker på att du vill ta bort följande inspelning?',
     'Delete'                                              => 'Radera',
     'Delete $1'                                           => 'Radera $1',

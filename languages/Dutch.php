@@ -181,6 +181,10 @@ $L = array(
 // modules/tv/init.php
     'Special Searches' => '',
     'TV'               => '',
+// modules/tv/recorded.php
+    'No matching programs found.'             => '',
+    'Showing all programs from the $1 group.' => '',
+    'Showing all programs.'                   => '',
 // modules/tv/schedules_custom.php
     'Any Category'     => '',
     'Any Channel'      => '',
@@ -326,6 +330,7 @@ $L = array(
     '$1 episodes'                                         => '$1 afleveringen',
     '$1 recording'                                        => '$1 opname',
     '$1 recordings'                                       => '$1 opnames',
+    'All groups'                                          => '',
     'Are you sure you want to delete the following show?' => 'Bent U zeker van het verwijderen van volgend programma?',
     'Delete'                                              => 'Verwijderen',
     'Delete $1'                                           => '',

@@ -110,60 +110,98 @@
     isset($_GET['recgroup']) or $_GET['recgroup'] = isset($_GET['refresh']) ? '' : $_SESSION['recorded_recgroup'];
 
 // Parse the program list
-    $recordings     = get_backend_rows('QUERY_RECORDINGS Delete');
-    $Total_Used     = 0;
-    $Total_Time     = 0;
-    $Total_Programs = 0;
-    $All_Shows      = array();
-    $Programs       = array();
-    $Groups         = array();
+    $warning    = NULL;
+    $recordings = get_backend_rows('QUERY_RECORDINGS Delete');
     while (true) {
+        $Total_Used     = 0;
+        $Total_Time     = 0;
+        $Total_Programs = 0;
+        $Programs       = array();
+        $Groups         = array();
         $Program_Titles = array();
         foreach ($recordings as $key => $record) {
         // Skip the offset
             if ($key === 'offset')  // WHY IN THE WORLD DOES 0 == 'offset'?!?!?  so we use ===
                 continue;
-        // Create a new program object
-            $show = new Program($record);
-        // Make sure this is a valid show
-            if (!$show->chanid || $show->length < 1)
-                continue;
+        // Get the length (27 == recendts; 26 == recstartts)
+            $length = $record[27] - $record[26];
         // Keep track of the total time and disk space used
-            $Total_Time += $show->length;
-            $Total_Used += $show->filesize;
-        // Skip programs the user doesn't want to look at, but keep track of their names and how many episodes we have recorded
+            $Total_Time += $length;
+            $Total_Used += ($record[9] + ($record[10] < 0)) * 4294967296 + $record[10];  // 9 == fs_high; 10 == fs_low;
+        // keep track of their names and how many episodes we have recorded
             $Total_Programs++;
-            $Program_Titles[$record[0]]++;
             $Groups[$record[30]]++;
+        // Hide LiveTV recordings from the title list
+            if (($_GET['recgroup'] && $_GET['recgroup'] == $record[30]) || (!$_GET['recgroup'] && $record[30] != 'LiveTV'))
+                $Program_Titles[$record[0]]++;
+        // Skip files with no chanid, or with zero length
+            if (!$record[4] || $length < 1)
+                continue;
+        // Skip programs the user doesn't want to look at
             if ($_GET['title'] && $_GET['title'] != $record[0])
                 continue;
             if ($_GET['recgroup'] && $_GET['recgroup'] != $record[30])
                 continue;
+        // Hide livetv recordings from the default view
+            if (empty($_GET['recgroup']) && $record[30] == 'LiveTV')
+                continue;
         // Make sure that everything we're dealing with is an array
-            if (!is_array($Programs[$show->title]))
-                $Programs[$show->title] = array();
+            if (!is_array($Programs[$record[0]]))
+                $Programs[$record[0]] = array();
+        // Assign a reference to this show to the various arrays
+            $Programs[$record[0]][] = $record;
+        }
+    // Did we try to view a program that we don't have recorded?  Revert to showing all programs
+        if ($Total_Programs > 0 && !count($Programs) && !isset($_GET['refresh'])) {
+        // Requested the "All" mode, but there are no recordings
+            if (empty($_GET['title']) && empty($_GET['recgroup'])) {
+                if ($Groups['LiveTV'] > 0) {
+                    $warning = t('Showing all programs from the $1 group.', 'LiveTV');
+                    $_GET['recgroup'] = 'LiveTV';
+                    continue;
+                }
+            }
+        // Requested a title that's not in the requested group
+            if ($_GET['recgroup'] && $_GET['title'] && $Groups[$_GET['recgroup']] > 0) {
+                $warning = t('Showing all programs from the $1 group.', $_GET['recgroup']);
+                unset($_GET['title']);
+                continue;
+            }
+        // Catch anything else
+            $_GET['refresh'] = true;
+            $warning         = t('Showing all programs.');
+            unset($_GET['title'], $_GET['recgroup']);
+            continue;
+        }
+    // Did the best we could to find some programs; let's move on.
+        break;
+    }
+
+// Warning?
+    if (!empty($warning))
+        add_warning(t('No matching programs found.')."\n".$warning);
+
+// Now that we've selected only certain shows, load them into objects
+    $All_Shows = array();
+    foreach ($Programs as $title => $shows) {
+        foreach ($shows as $key => $record) {
+        // Create a new program object
+            $show =& new Program($record);
         // Generate any thumbnail images we might need
             if (show_recorded_pixmaps) {
                 generate_preview_pixmap($show);
             }
         // Assign a reference to this show to the various arrays
             $All_Shows[]                         =& $show;
-            $Programs[$show->title][]            =& $show;
+            $Programs[$title][$key]              =& $show;
             $Channels[$show->chanid]->programs[] =& $show;
             unset($show);
         }
-    // Did we try to view a program that we don't have recorded?  Revert to showing all programs
-        if ($_GET['title'] && !count($Programs) && !isset($_GET['refresh'])) {
-            $Warnings[] = 'No matching programs found.  Showing all programs.';
-            unset($_GET['title']);
-        }
-    // Found some programs, let's move on
-        else
-            break;
     }
 
 // Sort the program titles
     ksort($Program_Titles);
+    ksort($Groups);
 
 // Keep track of the program/title the user wants to view
     $_SESSION['recorded_title']    = $_GET['title'];
