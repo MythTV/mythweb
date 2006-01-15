@@ -21,7 +21,7 @@
 
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
-    define('MYTH_PROTO_VERSION', 23);
+    define('MYTH_PROTO_VERSION', 24);
 
 // NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
 // the number of items in a ProgramInfo QStringList group used by
