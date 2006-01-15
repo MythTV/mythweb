@@ -424,9 +424,9 @@ class Program {
         $str = "<dl class=\"details_list\">\n"
             // Airtime
               ."\t<dt>".t('Airtime').":</dt>\n"
-              ."\t<dd>".strftime($_SESSION['time_format'], $this->starttime)
-                       .' to '
-                       .strftime($_SESSION['time_format'], $this->endtime)
+              ."\t<dd>".t('$1 to $2',
+                          strftime($_SESSION['time_format'], $this->starttime),
+                          strftime($_SESSION['time_format'], $this->endtime))
                        ."</dd>\n"
             // Title
               ."\t<dt>".t('Title').":</dt>\n"

@@ -1,19 +1,21 @@
 <?php
-/*
- *  $Date$
- *  $Revision$
- *  $Author$
+/**
+ * Basic routines that allow for language translation.  Please see
+ * languages/translations.txt for information about using the translation
+ * routines in this library, along with some guidelines of good practice.
  *
- *  translate.php
+ * Language detection is also done here.  If no language preference is
+ * present in the session, this library will attempt to detect the
+ * preferred language based on the browser's specifications.
  *
- *    Basic routines that allow for language translation.  Please see
- *    languages/translations.txt for information about using the translation
- *    routines in this library, along with some guidelines of good practice.
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  *
- *    Language detection is also done here.  If no language preference is
- *    present in the session, this library will attempt to detect the
- *    preferred language based on the browser's specifications.
-/*/
+ * @package     MythWeb
+ *
+/**/
 
 // Define the languages that mythweb can translate into.  Each hash entry should
 // point to an array containing first the user-visible name of the language and
@@ -30,6 +32,7 @@
     $Languages['German']     = array('Deutsch',         'de_DE');
     $Languages['Slovenian']  = array('Slovensko',       'sl_SI');
     $Languages['Finnish']    = array('Suomi',           'fi_FI');
+    $Languages['Czech']      = array('Czech',           'cs_CZ.UTF-8');
 
 // Need to detect the language?
     if (empty($_SESSION['language']))
@@ -91,13 +94,12 @@
         return $str;
     }
 
-/*
-    tn:
-    return different translated strings based on the numerical value of int.
-    an optional array of string arguments can be included and will be passed
-    to t() for interpretation.  If no array is passed in, a default will be
-    created using the value of t(int).
-*/
+/**
+ * return different translated strings based on the numerical value of int.
+ * an optional array of string arguments can be included and will be passed
+ * to t() for interpretation.  If no array is passed in, a default will be
+ * created using the value of t(int).
+/**/
     function tn(/* string1, string2, stringN, int [, array-of-args] */) {
         $a   = func_get_args();
     // Array of arguments?
@@ -114,7 +116,7 @@
         return t($a[count($a)-1], $args);
     }
 
-/*
+/**
  * The get_browser_lang function is modified from Wouter Verhelst's source.
  * Relevant documentation from his code is included below.
  *
@@ -152,7 +154,7 @@
  *   And the supplied parameter contains (amongst others) nl_BE.UTF-8
  *   and nl.ISO-8859-15, then nl_BE.UTF-8 will be picked.
  *
- */
+/**/
     function get_browser_lang() {
     // default to "everything is acceptable", as RFC2616 specifies
         $alparts = explode(',', $_SERVER["HTTP_ACCEPT_LANGUAGE"] ? $_SERVER["HTTP_ACCEPT_LANGUAGE"] : '*');
