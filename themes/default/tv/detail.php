@@ -186,6 +186,8 @@
             echo "    <div id=\"conflicting_shows\" class=\"clearfix\">\n        ",
                  t('Possible conflicts with this show'),
                  ":\n        <table>\n        ";
+        // A program id counter for popup info
+            $program_id_counter = 0;
             foreach ($conflicting_shows as $show) {
             // Set the class to be used to display the recording status character
                 $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));
@@ -199,6 +201,7 @@
                     case 'PreviousRecording':
                     case 'CurrentRecording':
                     case 'Repeat':
+                    case 'Recorded':
                         $class = 'duplicate';
                         break;
                     case 'Conflict':
@@ -215,12 +218,6 @@
                     default:
                         $class = 'deactivated';
                         break;
-                }
-
-            // A program id counter for popup info
-                if (show_popup_info) {
-                    $program_id_counter = 0;
-                    $program_id_counter++;
                 }
 
             // Print the content
@@ -244,7 +241,7 @@
             ?></td>
                 <td><a href="<?php echo root ?>tv/channel/<?php echo $show->channel->chanid, '/', $show->starttime ?>"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></a></td>
         </tr><?php
-                $row++;
+                $program_id_counter++;
             }
             echo "\n        </table>\n    </div>";
         }
