@@ -43,6 +43,14 @@
         setenv db_login         "mythtv"
         setenv db_password      "mythtv"
 
+    #
+    # By default, MythWeb uses the hostname program to look up the hostname of the
+    # machine it runs on.  If this reports incorrect data, or you run MythWeb on a
+    # machine without the hostname program, set this to your current hostname.
+    #
+    #   setenv hostname         "my_mythbox"
+    #
+
     # By default, php will always search the current directory for include files,
     # but if you wish to install these directories outside of the current path
     # (eg. for security reasons), set this variable to the directory that

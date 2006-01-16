@@ -49,7 +49,7 @@
     define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));;
 
 // Several sections of this program require the current hostname
-    define('hostname', trim(`hostname`));
+    define('hostname', empty($_SERVER['hostname']) ? trim(`hostname`) : $_SERVER['hostname']);
 
 // Load the user-defined configuration settings
     require_once 'config/conf.php';

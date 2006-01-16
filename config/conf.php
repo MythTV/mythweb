@@ -40,9 +40,6 @@
  *  provided for your convenience.
 /*/
 
-// The hostname of this machine -- so you can override manually as needed
-    define('hostname', chop(`/bin/hostname`));
-
 // file system encoding, uses music and video file link to local file
     define('fs_encoding', 'ISO-8859-1');
 
