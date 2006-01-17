@@ -35,7 +35,7 @@
         trigger_error("MasterServerIP or MasterServerPort not found! You man need to check your settings.php file or re-run setup mythtv's setup", FATAL);
 
 // Make sure we're connected to mythbackend
-    if (backend_command('ANN Playback '.hostname.' 0') != 'OK')
+    if (backend_command('ANN Monitor '.hostname.' 0') != 'OK')
         trigger_error("Unable to connect to mythbackend, is it running?\n", FATAL);
 
 /*
