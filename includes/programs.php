@@ -237,6 +237,7 @@ class Program {
     var $recording      = false;
 
     var $recpriority    = 0;
+    var $recpriority2   = 0;
     var $recstatus      = NULL;
 
     var $rater;
@@ -313,6 +314,7 @@ class Program {
             #$this->airdate        = $data[37];
             #$this->hasairdate     = $data[38];
             $this->timestretch     = $program_data[39];
+            $this->recpriority2    = $data[40];
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
             $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02

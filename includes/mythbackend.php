@@ -21,12 +21,12 @@
 
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
-    define('MYTH_PROTO_VERSION', 24);
+    define('MYTH_PROTO_VERSION', 25);
 
 // NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
 // the number of items in a ProgramInfo QStringList group used by
 // ProgramInfo::ToSringList and ProgramInfo::FromStringList.
-    $NUMPROGRAMLINES = 40;
+    $NUMPROGRAMLINES = 41;
 
 // Keep track of the master backend port/ip
     $Master_Host = get_backend_setting('MasterServerIP');
@@ -272,7 +272,8 @@
                      '0',                           // 37 dummy stars
                      $show->starttime,              // 38 dummy org airdate
                      '',                            // 39 dummy timestretch
-                     '',                            // 40 trailing separator
+                     ' ',                           // 40 recpriority2
+                     '',                            // 41 trailing separator
                     );
         $lastmodified = strtotime(backend_command($cmd));
     // Delete outdated images, but not until the show has finished recording
