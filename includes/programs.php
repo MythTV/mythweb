@@ -125,7 +125,11 @@
                          IFNULL(programrating.rating, "") AS rating,
                          oldrecorded.recstatus
                   FROM program
-                       LEFT JOIN oldrecorded   USING (seriesid, programid)
+                       LEFT JOIN oldrecorded
+                                 ON LENGTH(IFNULL(oldrecorded.seriesid, "")) > 0
+                                    AND LENGTH(IFNULL(oldrecorded.programid, "")) > 0
+                                    AND oldrecorded.programid = program.programid
+                                    AND oldrecorded.seriesid  = program.seriesid
                        LEFT JOIN programrating USING (chanid, starttime)
                  WHERE';
     // Only loading a single channel worth of information
