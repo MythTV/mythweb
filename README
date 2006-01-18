@@ -1,8 +1,8 @@
 This is the README file for the MythWeb package.
-October 19, 2005
+January 17, 2006
 
 Version: .19 pre
-(c) 2002-2005  Thor Sigvaldason <mythtv(a)lamedomainname(o)com>
+(c) 2002-2006  Thor Sigvaldason <mythtv(a)lamedomainname(o)com>
                Isaac Richards   <ijr(a)po(o)cwru(o)edu>
                Chris Petersen   <mythweb(a)forevermore(o)net>
 
@@ -20,7 +20,6 @@ Please see http://www.gnu.org for details and the specific text of the license.
 
 Contents
 ========
-
 
 1.0    About
 2.0    Installation
@@ -41,7 +40,6 @@ network. Then again, it may not.
     Note that MythWeb is totally insecure and makes no pretense of
 including any security mechanisms of any sort. You should really only run it
 on an isolated network or (at the very least) behind a well secured firewall.
-
 
 
 2.0 Installation
@@ -89,9 +87,9 @@ directory.  This should be as simple as:  **
        that you may need to consult your /etc/httpd/httpd.conf file to verify
        which user/group apache is set to run as.
 
-    Finally, and THIS IS VERY VERY IMPORTANT, you should then edit the files 
+    Finally, and THIS IS VERY VERY IMPORTANT, you should then edit the files
 config/conf.php and .htaccess (instructions for what to set are included in
-the file). That's it. Point your web browser at 
+the file). That's it. Point your web browser at
 http://your_machine_name/your_mythweb_path/ What could be simpler?
 
     Did you read the THIS IS VERY VERY IMPORTANT note in the previous paragraph?
@@ -99,14 +97,17 @@ People seem to skip over the config file and for some reason assume that
 mythweb will just work with no configuration.  While I've tried to make it
 as auto-detecting as possible, it often still needs some hand-editing.
 
+
 3.0 FAQs
 ========
 
 Q: Why don't my sessions stick?  (often manifests as sorting issues or settings
     not storing properly)
 A: Make sure that apache's AllowOverride setting is correct, as detailed in
-    INSTRUCTIONS above.  Check config/conf.php to make sure that the
-    server_domain constant is set correctly so that cookies will work properly.
+    INSTRUCTIONS above.  You could also try enabling authentication.  MythWeb
+    now stores special session information for authenticated users so that you
+    always get your own settings when logging in, no matter where you connect
+    from.
 
 Q: Why is my browser trying to display the PHP code instead of the server
     executing it for me?
@@ -118,11 +119,11 @@ A: First, make sure that you have PHP enabled in your webserver settings.  Once
     significantly speeds up page-load times), you can safely re-enable these
     settings in /etc/php.ini.
 
-Q: I want to access mythweb from the rest of the internet.
-    How do I make it more secure?
+Q: I want to access mythweb from the rest of the internet. How do I make it
+    more secure?
 A: The main .htaccess file contains commented-out apache controls for enabling
     htpasswd password authentication.  If you uncomment these, and create
-    /var/www/htpasswd (see `man htpasswd` for details on how to do this), you
+    /var/www/htdigest (see `man htdigest` for details on how to do this), you
     will have some rudimentary password protection.  Combine this with making
     your mythweb connect only via SSL (see your webserver documentation for
     details), and you will have mythweb as secure as you can get without some
@@ -130,7 +131,7 @@ A: The main .htaccess file contains commented-out apache controls for enabling
 
 Q: I've changed my theme to one that doesn't have a "settings" section.  Help!
 A: Access any of the mythweb files and include RESET_THEME=yes among the URL
-    parameters (eg. http://my.mythweb.tld/settings.php?RESET_THEME=yes ).  This
+    parameters (eg. http://my.mythweb.tld/settings?RESET_THEME=yes ).  This
     will reset your theme to Default, where you can readjust your settings as
     needed.
 
@@ -152,6 +153,7 @@ A: First, create your patch against mythweb SVN with `svn diff`, having made
     As long as you follow these instructions, I will at least get back to you
     one way or another -- eventually.
 
+
 4.0 Plan/TODO
 =============
 
@@ -159,17 +161,6 @@ A: First, create your patch against mythweb SVN with `svn diff`, having made
 -Find a way to integrate nuvexport and/or mythtranscode
 -Clean up the inteface.
 
-There are also a couple of feature requests that I don't have the time or
-knowhow to implement.  If you're interested in taking any of these on, please
-contact me so we can work out any necessary details (and by all means
-subscribe to mythtv-dev)
-
-    gettext - Our current translation system is messy and IMHO ugly.  Would
-        be really cool to have gettext support.
-
-    Smarty templates - It's been suggested that we use smarty templates
-        instead of the current custom solution.  I don't mind this idea,
-        as long as themes will be easy to update.
 
 5.0 Submitting Patches
 ======================
