@@ -234,6 +234,12 @@
     define('theme_dir', 'themes/'.Theme.'/');
     define('theme_url', root.theme_dir);
 
+// Load the theme config
+    if (file_exists('config/theme_'.Theme.'.php')) {
+        require_once 'config/theme_'.Theme.'.php';
+    }
+
+
 // Make sure the data directory exists and is writable
     if (!is_dir('data') && !mkdir('data', 0755)) {
         $Error = 'Error creating the data directory. Please check permissions.';

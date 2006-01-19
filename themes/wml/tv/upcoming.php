@@ -1,19 +1,15 @@
 <?php
 /***                                                                        ***\
-    scheduled_recordings.php                    Last Updated: 2004.10.25 (jbuckshin)
+    upcoming.php                    Last Updated: 2004.10.25 (jbuckshin)
 
     This file defines a theme class for the scheduled recordings section.
     It must define one method.   documentation will be added someday.
 
 \***                                                                        ***/
 
-class Theme_scheduled_recordings extends Theme {
-
-    function print_page(&$shows) {
-
         // Print the main page header
-        parent::print_header('MythWeb - '.t('Upcoming Recordings'));
-        parent::print_menu_content();
+        $page_title = 'MythWeb - '.t('Upcoming Recordings');
+        require_once theme_dir.'header.php';
 
         // Print the page contents
 
@@ -43,7 +39,7 @@ class Theme_scheduled_recordings extends Theme {
         $first_group_has_been_shown = 0;
         $has_output = 0;
 
-        foreach ($shows as $show) {
+        foreach ($all_shows as $show) {
 
             $row++;
 
@@ -53,15 +49,15 @@ class Theme_scheduled_recordings extends Theme {
             // Which class does this show fall into?
             if ($show->duplicate == 1) {
                 $class = 'duplicate';
-                $command = '<a href="scheduled_recordings.php?rerecord=yes&title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'">Rerecord</a>';
+                $command = '<a href="'.root.'tv/scheduled?rerecord=yes&title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'">Rerecord</a>';
             }
             elseif ($show->conflicting == 1) {
                 $class   = 'conflict';
-                $command = '<a href="scheduled_recordings.php?record=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Record</a>';
+                $command = '<a href="'.root.'tv/scheduled?record=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Record</a>';
             }
             elseif ($show->recording == 0) {
                 $class   = 'deactivated';
-                $command = '<a href="scheduled_recordings.php?activate=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Activate</a>';
+                $command = '<a href="'.root.'tv/scheduled?activate=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Activate</a>';
             }
             else {
                 $class   = 'scheduled';
@@ -104,13 +100,13 @@ class Theme_scheduled_recordings extends Theme {
 
             if (!(($row < $page_start) || ($row >= $page_end))) {
                 $has_output = 1;
-                $card_data[$group_no].="<p><b>".htmlspecialchars($show->title)."</b> ".htmlspecialchars($show->subtitle)."<br />".$show->recstatus."<br /> ".strftime(t('generic_time'), $show->starttime)."<br /><a href=\"program_detail.php?chanid=".$show->chanid."&amp;starttime=".$show->starttime."\">Details</a><br /></p>\n";
+                $card_data[$group_no].="<p><b>".htmlspecialchars($show->title)."</b> ".htmlspecialchars($show->subtitle)."<br />".$show->recstatus."<br /> ".strftime(t('generic_time'), $show->starttime)."<br /><a href=\"".root."tv/detail/".$show->chanid."/".$show->starttime."\">Details</a><br /></p>\n";
             }
         }
 
         echo "<p>";
-        if ($page != 1) echo '<a href="scheduled_recordings.php?page='.($page - 1).$prev_query.'">&lt; prev</a>';
-        if (($page * $page_size) < count($shows)) echo '<a href="scheduled_recordings.php?page='.($page + 1).$prev_query.'">next &gt;</a>';
+        if ($page != 1) echo '<a href="'.root.'tv/upcoming?page='.($page - 1).$prev_query.'">&lt; prev</a>';
+        if (($page * $page_size) < count($all_shows)) echo '<a href="'.root.'tv/upcoming?page='.($page + 1).$prev_query.'">next &gt;</a>';
 
         // end the main card
         echo "</p></card>";
@@ -129,7 +125,5 @@ class Theme_scheduled_recordings extends Theme {
         }
 
         // Print the main page footer
-        parent::print_footer();
-    }
-}
+        require_once theme_dir.'footer.php';
 

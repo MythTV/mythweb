@@ -1,23 +1,25 @@
 <?php
 /***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2004.10.25 (jbuckshin)
+    recorded.php                    Last Updated: 2004.10.25 (jbuckshin)
 
     This file defines a theme class for the recorded programs section.
     It must define one method.   documentation will be added someday.
 
 \***                                                                        ***/
 
-class Theme_recorded_programs extends Theme {
+    print_page();
 
     function print_page() {
 
         // Print the main page header
-        parent::print_header("MythWeb - ".t('Recorded Programs'));
-        parent::print_menu_content();
+        $page_title = "MythWeb - ".t('Recorded Programs');
+        require_once theme_dir.'header.php';
 
         // Print the page contents
         global $All_Shows, $Total_Time;
         global $disk_size, $disk_used;
+        global $Total_Programs, $Total_Used, $Groups, $Program_Titles;
+
         $page = $_GET['page'];
         $confirm_cards = "";
 ?>
@@ -30,8 +32,8 @@ class Theme_recorded_programs extends Theme {
         $page_start = ($page - 1) * $page_size + 1;
         $page_end = $page_start + $page_size;
 
-        if ($page != 1) echo '<a href="recorded_programs.php?page='.($page - 1).'">&lt; prev</a>';
-        if (($page * $page_size) < count($All_Shows)) echo ' <a href="recorded_programs.php?page='.($page + 1).'">next &gt;</a>';
+        if ($page != 1) echo '<a href="'.root.'tv/recorded?page='.($page - 1).'">&lt; prev</a>';
+        if (($page * $page_size) < count($All_Shows)) echo ' <a href="'.root.'tv/recorded?page='.($page + 1).'">next &gt;</a>';
 
         foreach ($All_Shows as $show) {
 
@@ -63,7 +65,7 @@ class Theme_recorded_programs extends Theme {
 currently recording<br />
 <?php
             } else {
-$confirm_cards .= "<card id=\"card".$row."\" title=\"Confirm\"><p>Confirm Delete?<br /><a href=\"#main\">Cancel</a>&nbsp;<a href=\"recorded_programs.php?delete=yes&amp;file=".$show->filename."\">Delete</a></p></card>\n";
+$confirm_cards .= "<card id=\"card".$row."\" title=\"Confirm\"><p>Confirm Delete?<br /><a href=\"#main\">Cancel</a>&nbsp;<a href=\"".root."tv/recorded?delete=yes&amp;file=".$show->filename."\">Delete</a></p></card>\n";
 ?>
 <b><a href="#card<?php echo $row ?>">Delete</a></b><br />
 <?php
@@ -73,8 +75,8 @@ $confirm_cards .= "<card id=\"card".$row."\" title=\"Confirm\"><p>Confirm Delete
 </p>
 <p>
 <?php
-        if ($page != 1) echo '<a href="recorded_programs.php?page='.($page - 1).'">&lt; prev</a>';
-        if (($page * $page_size) < count($All_Shows)) echo ' <a href="recorded_programs.php?page='.($page + 1).'">next &gt;</a>';
+        if ($page != 1) echo '<a href="'.root.'tv/recorded?page='.($page - 1).'">&lt; prev</a>';
+        if (($page * $page_size) < count($All_Shows)) echo ' <a href="'.root.'tv/recorded?page='.($page + 1).'">next &gt;</a>';
 
         echo "<br />".t('$1 programs, using $2 ($3) out of $4 ($5 free).', t($GLOBALS['Total_Programs']),
                                                     nice_filesize(disk_used),
@@ -87,7 +89,6 @@ $confirm_cards .= "<card id=\"card".$row."\" title=\"Confirm\"><p>Confirm Delete
         echo $confirm_cards;
 
         // Print the main page footer
-        parent::print_footer();
+        require_once theme_dir.'footer.php';
     }
-}
 

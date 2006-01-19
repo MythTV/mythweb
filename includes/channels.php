@@ -128,7 +128,14 @@ class Channel {
             $program_id_counter = 0;
     ## we will eventually need to check for list vs "by channel" display
     #  for now, we only have the main list display
-        $timeslots_left = num_time_slots;
+        if (defined('theme_num_time_slots')) {
+            $timeslots_left = theme_num_time_slots;
+            $timeslot_size = theme_timeslot_size;
+        } else {
+            $timeslots_left = num_time_slots;
+            $timeslot_size = timeslot_size;
+        }
+
         foreach (array_keys($this->programs) as $key) {
         // Leave early?  just in case
             if ($timeslots_left < 1)
@@ -147,7 +154,7 @@ class Channel {
                 $program_ends = $end_time;
         // If there is a gap before the current program, put a NO DATA block in.
             if ($program_starts > $start_time) {
-                $length = (($program_starts - $start_time) / timeslot_size);
+                $length = (($program_starts - $start_time) / $timeslot_size);
                 if ($length >= 0.5) {
                     $timeslots_used = ceil($length);
                     require theme_dir.'/tv/list_cell_nodata.php';
@@ -158,11 +165,11 @@ class Channel {
                 }
             }
         // Calculate the number of time slots this program gets
-            $length = (($program_ends - $program_starts) / timeslot_size);
+            $length = (($program_ends - $program_starts) / $timeslot_size);
             if ($length < .5) continue; // ignore shows that don't take up at least half a timeslot
             $timeslots_used = ceil($length);
         // Increment $start_time so we avoid putting tiny shows (ones smaller than a timeslot) into their own timeslot
-            $start_time += $timeslots_used * timeslot_size;
+            $start_time += $timeslots_used * $timeslot_size;
         // Make sure this doesn't put us over
             if ($timeslots_left < $timeslots_used)
                 $timeslots_used = $timeslots_left;

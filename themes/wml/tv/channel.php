@@ -1,19 +1,19 @@
 <?php
 /***                                                                        ***\
-    channel_detail.php                        Last Updated: 2004.10.25 (jbuckshin)
+    channel.php                        Last Updated: 2004.10.25 (jbuckshin)
 
     This file defines a theme class for the channel detail section.
     It must define one method.   documentation will be added someday.
 
 \***                                                                        ***/
 
-class Theme_channel_detail extends Theme {
+    print_page();
 
     function print_page() {
 
         // Print the main page header
-        parent::print_header('MythWeb - Channel Detail');
-        parent::print_menu_content();
+        $page_title = 'MythWeb - Channel Detail';
+        require_once theme_dir.'header.php';
 
         // Print out some header info about this channel and time
         global $this_channel;
@@ -21,7 +21,7 @@ class Theme_channel_detail extends Theme {
 <p><br />
 <?php
         if (! isset($_GET['jump'])) {
-            echo '<a href="channel_detail.php?chanid='.$_GET['chanid'].'&amp;jump=y">'.t('Jump to')." ".t('Date').'</a><br />';
+            echo '<a href="'.root.'tv/channel?chanid='.$_GET['chanid'].'&amp;jump=y">'.t('Jump to')." ".t('Date').'</a><br />';
         }
         echo "<b>Channel ".$this_channel->channum." ".$this_channel->callsign."</b></p>";
         echo "<p>";
@@ -43,14 +43,14 @@ class Theme_channel_detail extends Theme {
         for ($i=-1;$i<=$max_days;$i++) {
             $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
             $date = date("Ymd", $time);
-            $carddata.="<a href=\"channel_detail.php?chanid=".$_GET['chanid']."&amp;time=".$time."\">".strftime(t('generic_date'), $time)."</a><br />\n";
+            $carddata.="<a href=\"".root."tv/channel?chanid=".$_GET['chanid']."&amp;time=".$time."\">".strftime(t('generic_date'), $time)."</a><br />\n";
         }
 
         // Print the shows for today
-        $this->print_shows($carddata);
+        print_shows($carddata);
 
         // Print the main page footer
-        parent::print_footer();
+        require_once theme_dir.'footer.php';
     }
 
     function print_shows($carddata) {
@@ -68,7 +68,7 @@ class Theme_channel_detail extends Theme {
         } else {
 ?>
 <do type="accept">
-<go href="program_detail.php" method="get">
+<go href="<?php echo root ?>tv/detail" method="get">
 <postfield name="chanid" value="<?php echo $_GET['chanid'] ?>"/>
 <postfield name="starttime" value="$(starttime)"/>
 </go>
@@ -86,5 +86,4 @@ class Theme_channel_detail extends Theme {
             echo '</select></p></card>';
         }
     }
-}
 

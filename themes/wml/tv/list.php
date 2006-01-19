@@ -1,6 +1,6 @@
 <?php
 /***                                                                        ***\
-    program_listing.php                      Last Updated: 2004.10.25 (jbuckshin)
+    list.php                      Last Updated: 2004.10.25 (jbuckshin)
 
     This file defines a theme class for the program listing section.
     It must define several methods, some of which have specific
@@ -8,30 +8,21 @@
 \***                                                                        ***/
 
 
-class Theme_program_listing extends Theme {
-
-    function print_header($start_time, $end_time) {
-
         // Print the main page header
-        parent::print_header('MythWeb - '.t('Listings'));
-        parent::print_menu_content();
-    }
+        $page_title = 'MythWeb - '.t('Listings');
+        require_once theme_dir.'header.php';
 
-    function print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime) {
-
-        // Display the listing page header
-        $this->print_header($list_starttime, $list_endtime);
 
         if ((! isset($_GET['listbytime'])) && (! isset($_GET['listbychannum'])) && (! isset($_GET['listbycallsign']))) {
 ?>
 <p>
 View listings by<br />
-<a href="#card2">Time</a> or <br /><a href="program_listing.php?listbychannum=y">Channel Number</a> or <br /><a href="program_listing.php?listbycallsign">Call Sign</a>
+<a href="#card2">Time</a> or <br /><a href="<?php echo root ?>tv/list?listbychannum=y">Channel Number</a> or <br /><a href="<?php echo root ?>tv/list?listbycallsign">Call Sign</a>
 </p>
 </card>
 <card id="card2" title="By Time">
 <p>
-<a href="program_listing.php?listbytime=y">Listings Now</a><br />
+<a href="<?php echo root ?>tv/list?listbytime=y">Listings Now</a><br />
 <?php
             $seconds_in_day = 60 * 60 * 24;
 
@@ -46,7 +37,7 @@ View listings by<br />
             for ($i=-1;$i<=$max_days;$i++) {
                 $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
                 $date = date("Ymd", $time);
-                echo '<a href="program_listing.php?listbytime=y&amp;date='.$date.'">'.date("D n/j", $time)."</a><br />\n";
+                echo '<a href="'.root.'tv/list?listbytime=y&amp;date='.$date.'">'.date("D n/j", $time)."</a><br />\n";
             }
 ?>
 </p>
@@ -54,7 +45,7 @@ View listings by<br />
 <card id="card3" title="By Channel">
 <p>
 <do type="accept" label="Go">
-<go href="channel_detail.php" method="get">
+<go href="<?php echo root ?>tv/channel" method="get">
 <postfield name="chanid" value="$(chanid)"/>
 <postfield name="time" value="<?php echo $start_time ?>"/>
 </go>
@@ -82,8 +73,8 @@ Enter Channel:<br />
             $page_start = ($page - 1) * $page_size + 1;
             $page_end = $page_start + $page_size;
 
-            if ($page != 1) echo '<a href="program_listing.php?listbychannum=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
-            if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbychannum=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
+            if ($page != 1) echo '<a href="'.root.'tv/list?listbychannum=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
+            if (($page * $page_size) < count($Channels)) echo ' <a href="'.root.'tv/list?listbychannum=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
 
             foreach (array_keys($Channels) as $key) {
 
@@ -99,7 +90,7 @@ Enter Channel:<br />
                     continue;
                 }
 
-                echo "<a href='channel_detail.php?chanid=".$Channels[$key]->chanid."'>".$Channels[$key]->channum."</a> ";
+                echo "<a href='".root."tv/channel/".$Channels[$key]->chanid."'>".$Channels[$key]->channum."</a> ";
                 // Count this channel
                 $channel_count++;
             }
@@ -115,8 +106,8 @@ Enter Channel:<br />
             $page_start = ($page - 1) * $page_size + 1;
             $page_end = $page_start + $page_size;
 
-            if ($page != 1) echo '<a href="program_listing.php?listbycallsign=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
-            if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbycallsign=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
+            if ($page != 1) echo '<a href="'.root.'tv/list?listbycallsign=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
+            if (($page * $page_size) < count($Channels)) echo ' <a href="'.root.'tv/list?listbycallsign=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
             echo "<br />";
 
             foreach (array_keys($Channels) as $key) {
@@ -133,7 +124,7 @@ Enter Channel:<br />
                     continue;
                 }
 
-                echo "<a href='channel_detail.php?chanid=".$Channels[$key]->chanid."'>".$Channels[$key]->callsign."</a><br /> ";
+                echo "<a href='".root."tv/channel/".$Channels[$key]->chanid."'>".$Channels[$key]->callsign."</a><br /> ";
 
                 // Count this channel
                 $channel_count++;
@@ -143,7 +134,7 @@ Enter Channel:<br />
         if (isset($bytime)) {
 ?>
 <do type="accept" label="Go">
-<go href="program_listing.php" method="get">
+<go href="<?php echo root ?>tv/list" method="get">
 <postfield name="listbytime" value="y"/>
 <postfield name="hour" value="$(hour)"/>
 <postfield name="date" value="<?php echo date("Ymd", $list_starttime) ?>"/>
@@ -152,7 +143,9 @@ Enter Channel:<br />
 <?php
             echo "<p>\n";
             if (is_numeric($bytime)) {
-                $list_starttime = mktime($bytime,0,0, date('g', $list_starttime), date('j', $list_starttime), date('Y', $list_starttime));
+                $mylist_starttime = mktime($bytime,0,0, date('g', $list_starttime), date('j', $list_starttime), date('Y', $list_starttime));
+            } else {
+		$mylist_starttime = $list_starttime;
             }
 
             $row=0;
@@ -176,8 +169,8 @@ Enter Channel:<br />
                 }
             }
 
-            if ($page != 1) echo '<a href="program_listing.php?listbytime=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
-            if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbytime=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
+            if ($page != 1) echo '<a href="'.root.'tv/list?listbytime=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
+            if (($page * $page_size) < count($Channels)) echo ' <a href="'.root.'tv/list?listbytime=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
             echo "<br />";
 
             foreach (array_keys($Channels) as $key) {
@@ -202,14 +195,14 @@ Enter Channel:<br />
 
                 // modify the end time so we are only looking at a 1 hour slice,
                 // this is critical to insure minimal data returned.
-                $channel->display_programs($list_starttime, $list_endtime);
+                $channel->display_programs($mylist_starttime, $list_endtime);
 
                 // Cleanup is a good thing
                 unset($channel);
             }
 
-            if ($page != 1) echo '<a href="program_listing.php?listbytime=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
-            if (($page * $page_size) < count($Channels)) echo ' <a href="program_listing.php?listbytime=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
+            if ($page != 1) echo '<a href="'.root.'tv/list?listbytime=y&amp;page='.($page - 1).$prev_query.'">&lt; prev</a>';
+            if (($page * $page_size) < count($Channels)) echo ' <a href="'.root.'tv/list?listbytime=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
 
             echo '<br />'.t('Jump to').' '.t('Hour').':';
             echo '<input type="text" name="hour" format="N*" size="2" emptyok="true"/>';
@@ -218,17 +211,8 @@ Enter Channel:<br />
         echo '</p></card>';
 
         // Display the listing page footer
-        $this->print_footer();
-    }
+        require_once theme_dir.'footer.php';
 
-    /*
-        print_footer:
-        This function prints the footer portion of the page specific to the program listing
-    */
-    function print_footer() {
-        // Print the main page's footer
-        parent::print_footer();
-    }
 
     /*
         print_channel:
@@ -246,13 +230,9 @@ Enter Channel:<br />
 
         echo $program->channel->callsign."  "; //chanid." ";
         echo strftime($_SESSION['time_format'], $program->starttime);
-        echo ' - <a href="program_detail.php?chanid='.$program->chanid.'&amp;starttime='.$program->starttime.'">';
+        echo ' - <a href="'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
         echo htmlspecialchars($program->title);
         echo "</a><br />\n";
 
     }
-
-    function print_nodata($timeslots_left) {
-    }
-}
 

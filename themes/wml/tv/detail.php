@@ -1,24 +1,19 @@
 <?php
 /***                                                                        ***\
-    program_detail.php                       Last Updated: 2004.10.25 (jbuckshin)
+    detail.php                       Last Updated: 2004.10.25 (jbuckshin)
 
     This file defines a theme class for the program details section.
     It must define one method.   documentation will be added someday.
 
 \***                                                                        ***/
 
-#class theme_program_detail extends Theme {
-class Theme_program_detail extends Theme {
-
-    function print_page(&$program, &$schedule, &$channel) {
-
-        parent::print_header("Prog Detail");
-        parent::print_menu_content();
+        $page_title = "Prog Detail";
+        require_once theme_dir.'header.php';
         // Print the page contents
 ?>
 <p>
 <br />
-<a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>" ><?php echo $channel->channum." ".$channel->callsign ?></a><br />
+<a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo $program->starttime ?>" ><?php echo $channel->channum." ".$channel->callsign ?></a><br />
 <b><?php echo htmlspecialchars($program->title) ?></b><br />
 <a href="#cardmodify" ><?php echo t('Recording Options') ?></a><br />
 <?php echo strftime(t('generic_date'), $program->starttime) ?><br />
@@ -52,9 +47,9 @@ class Theme_program_detail extends Theme {
 <?php
     $HREFUrl = "";
     if ($_GET['recordid']) {
-        $HREFUrl = 'program_detail.php?recordid='.urlencode($_GET['recordid']);
+        $HREFUrl = root.'tv/detail?recordid='.urlencode($_GET['recordid']);
     } else {
-        $HREFUrl = 'program_detail.php?chanid='.urlencode($_GET['chanid']).'&amp;starttime='.urlencode($_GET['starttime']);
+        $HREFUrl = root.'tv/detail?chanid='.urlencode($_GET['chanid']).'&amp;starttime='.urlencode($_GET['starttime']);
     }
 ?>
 <do type="accept">
@@ -125,7 +120,5 @@ else
 </p></card>
 <?php
     // Print the main page footer
-    parent::print_footer();
-    }
-}
+        require_once theme_dir.'footer.php';
 

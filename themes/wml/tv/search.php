@@ -7,22 +7,9 @@
 
 \***                                                                        ***/
 
-class Theme_search extends Theme {
-
-    function print_page() {
-
         // Print the main page header
-        parent::print_header('MythWeb - '.t('Search'));
-        parent::print_menu_content();
-
-        // Print any search results
-        $this->print_results();
-
-        // Print the main page footer
-        parent::print_footer();
-    }
-
-    function print_results() {
+        $page_title = 'MythWeb - '.t('Search');
+	require_once theme_dir.'header.php';
 
         global $Results;
 
@@ -33,13 +20,14 @@ class Theme_search extends Theme {
         {
 ?>
 <do type="accept" label="Go">
-<go href="search.php" method="get">
+<go href="<?php echo root ?>tv/search" method="get">
 <postfield name="searchstr" value="$(searchstr)"/>
 </go>
 </do>
 <p><?php echo t('Search') ?>:<input type="text" name="searchstr"/></p>
 </card>
 <?php
+            require_once theme_dir.'footer.php';
             return;
         }
 
@@ -47,7 +35,7 @@ class Theme_search extends Theme {
         if (!count($Results)) {
 ?>
 <do type="accept" label="Go">
-<go href="search.php" method="get">
+<go href="<?php echo root ?>tv/search" method="get">
 <postfield name="searchstr" value="$(searchstr)"/>
 </go>
 </do>
@@ -55,6 +43,7 @@ class Theme_search extends Theme {
 <p><?php echo t('Search') ?>:<input type="text" name="searchstr"/></p>
 </card>
 <?php
+            require_once theme_dir.'footer.php';
             return;
         }
 
@@ -69,7 +58,7 @@ class Theme_search extends Theme {
         // Display the results
 ?>
 <do type="accept" label="Go">
-<go href="search.php" method="get">
+<go href="<?php echo root ?>tv/search" method="get">
 <postfield name="searchstr" value="$(searchstr)"/>
 </go>
 </do>
@@ -101,10 +90,10 @@ class Theme_search extends Theme {
         $page_start = ($page - 1) * $page_size + 1;
         $page_end = $page_start + $page_size;
 
-        if ($page != 1) echo '<a href="search.php?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
+        if ($page != 1) echo '<a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
         echo " (".$page.") ";
         if (($page * $page_size) < count($Results)) {
-            echo ' <a href="search.php?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
+            echo ' <a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
         } else {
             echo '<br />';
         }
@@ -124,7 +113,7 @@ class Theme_search extends Theme {
             }
 
             // Print the content
-            echo '<a href="program_detail.php?chanid='.$show->chanid.'&amp;starttime='.$show->starttime.'">'.htmlspecialchars($show->title).'</a><br />';
+            echo '<a href="'.root.'tv/detail?chanid='.$show->chanid.'&amp;starttime='.$show->starttime.'">'.htmlspecialchars($show->title).'</a><br />';
 
             if(strlen($show->subtitle)) echo htmlspecialchars($show->subtitle).'<br />';
 
@@ -133,10 +122,10 @@ class Theme_search extends Theme {
             echo $show->channel->callsign.' '.$show->channel->channum.' - '.nice_length($show->length)."<br /><br />\n";
         }
 
-        if ($page != 1) echo '<a href="search.php?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
+        if ($page != 1) echo '<a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
         echo " (".$page.") ";
-        if (($page * $page_size) < count($Results)) echo ' <a href="search.php?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
+        if (($page * $page_size) < count($Results)) echo ' <a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
         echo '</p></card>';
-    }
-}
 
+	require_once theme_dir.'footer.php';
+?>

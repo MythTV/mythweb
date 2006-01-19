@@ -6,15 +6,6 @@
     See README and LICENSE for details.
 \***                                                                        ***/
 
-// Initialize the script, database, etc.
-chdir("../..");
-require_once "includes/init.php";
-
-// Get the address/port of the master machine
-$masterhost = get_backend_setting('MasterServerIP');
-$statusport = get_backend_setting('BackendStatusPort');
-
-$file = "http://$masterhost:$statusport/xml";
 $depth = array();
 $JobFlag = 0;
 $SchedDoneFlag = 0;
@@ -90,7 +81,7 @@ function startElement($parser, $name, $attrs)
          $JobFlag = 1;
          break;
       case "STORAGE":
-         $disk.="Total Space:".$attrs['USED']."<br />Spaced Used:".$attrs['USED']."<br />Space Free:".$attrs['FREE']."<br />\n";
+         $disk.="Total Space:".$attrs['TOTAL']."<br />Spaced Used:".$attrs['USED']."<br />Space Free:".$attrs['FREE']."<br />\n";
          break;
       case "LOAD":
          $load.= "1 Minute: ".$attrs['AVG1']."<br />5 Minutes: ".$attrs['AVG2']."<br />15 Minutes: ".$attrs['AVG3']."<br />\n";
@@ -146,17 +137,13 @@ function characterData($parser, $data)
 $xml_parser = xml_parser_create();
 xml_set_element_handler($xml_parser, "startElement", "endElement");
 xml_set_character_data_handler($xml_parser, "characterData");
-if (!($fp = fopen($file, "r"))) {
-   die("could not open XML input");
-}
 
-while ($data = fread($fp, 4096)) {
-   if (!xml_parse($xml_parser, $data, feof($fp))) {
+   if (!xml_parse($xml_parser, $status, TRUE)) {
        die(sprintf("XML error: %s at line %d",
                    xml_error_string(xml_get_error_code($xml_parser)),
                    xml_get_current_line_number($xml_parser)));
    }
-}
+// }
 xml_parser_free($xml_parser);
 
 ?>
