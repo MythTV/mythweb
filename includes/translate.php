@@ -24,6 +24,7 @@
     $Languages['Australian'] = array('Australian',      '');     // Australian is a joke, don't try to detect it
     $Languages['Dutch']      = array('Nederlands',      array('nl_NL', 'nl_BE'));
     $Languages['English']    = array('English',         'en_US.ISO-8859-1');
+    $Languages['English_GB'] = array('English_GB',      'en_GB.ISO-8859-1');
     $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR');
     $Languages['Japanese']   = array('Japanese',        'ja_JP');
     $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES');
