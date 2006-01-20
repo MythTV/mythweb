@@ -182,9 +182,9 @@ $L = array(
     'Special Searches' => 'Speciella sökningar',
     'TV'               => 'TV',
 // modules/tv/recorded.php
-    'No matching programs found.'             => '',
-    'Showing all programs from the $1 group.' => '',
-    'Showing all programs.'                   => '',
+    'No matching programs found.'             => 'Inga matchande program hittades.',
+    'Showing all programs from the $1 group.' => 'Visar alla program i grupp: $1.',
+    'Showing all programs.'                   => 'Visar alla program.',
 // modules/tv/schedules_custom.php
     'Any Category'     => 'Alla kategorier',
     'Any Channel'      => 'Alla kanaler',
@@ -256,7 +256,7 @@ $L = array(
     'useonairguide'                                                                                                                      => '',
     'videofilters'                                                                                                                       => 'videofilter',
     'visible'                                                                                                                            => 'synlig',
-    'xmltvid'                                                                                                                            => '',
+    'xmltvid'                                                                                                                            => 'xmltv-id',
 // themes/default/settings/keys.php
     'Action'                => 'Handling',
     'Configure Keybindings' => 'Konfigurera knappar',
@@ -330,7 +330,7 @@ $L = array(
     '$1 episodes'                                         => '$1 avsnitt',
     '$1 recording'                                        => '$1 inspelning',
     '$1 recordings'                                       => '$1 inspelningar',
-    'All groups'                                          => '',
+    'All groups'                                          => 'Alla grupper',
     'Are you sure you want to delete the following show?' => 'Är du säker på att du vill ta bort följande inspelning?',
     'Delete'                                              => 'Radera',
     'Delete $1'                                           => 'Radera $1',
