@@ -57,7 +57,7 @@ $L = array(
     'Listings'                                           => 'Listaus',
     'Music'                                              => 'Musiikki',
     'Never Record'                                       => 'Älä Koskaan Nauhoita',
-    'No'                                                 => 'N:o',
+    'No'                                                 => 'Ei',
     'No. of recordings to keep'                          => 'N:o nauhoituksia pidettäväksi',
     'None'                                               => 'Ei Mikään',
     'Only New Episodes'                                  => 'Vain Uudet Jaksot',
@@ -89,7 +89,7 @@ $L = array(
     'Subtitle and Description'                           => 'Jakson Kuvaus',
     'The requested recording schedule has been deleted.' => 'Ajoitettu nauhoitus on poistettu',
     'Title'                                              => 'Nimike',
-    'Transcoder'                                         => '',
+    'Transcoder'                                         => 'Jälkikäsittely',
     'Type'                                               => 'Nauhoitustapa',
     'Unknown'                                            => 'Tuntematon',
     'Upcoming Recordings'                                => 'Tulevat Nauhoitukset',
@@ -172,7 +172,7 @@ $L = array(
     'Movie Times' => 'Elokuvahaku',
 // modules/settings/init.php
     'MythTV channel info'      => 'MythTV kanavatiedot',
-    'MythTV key bindings'      => 'MythTV näppäinkomennot',
+    'MythTV key bindings'      => 'MythTV komennot',
     'MythWeb session settings' => 'MythWeb istuntoasetukset',
     'settings'                 => 'Asetukset',
 // modules/status/init.php
@@ -187,9 +187,9 @@ $L = array(
     'Special Searches' => 'Edistynyt Haku',
     'TV'               => 'Televisio',
 // modules/tv/recorded.php
-    'No matching programs found.'             => '',
-    'Showing all programs from the $1 group.' => '',
-    'Showing all programs.'                   => '',
+    'No matching programs found.'             => 'Ei vastaavia ohjelmia.',
+    'Showing all programs from the $1 group.' => 'Näytetään kaikki ohjelmat ryhmästä $1.',
+    'Showing all programs.'                   => 'Näytetään kaikki ohjelmat.',
 // modules/tv/schedules_custom.php
     'Any Category'     => 'Mikä Tahansa Kategoria',
     'Any Channel'      => 'Mikä Tahansa Kanava',
@@ -201,9 +201,9 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => 'Palvelimen Lokit',
 // themes/default/backend_log/welcome.php
-    'welcome: backend_log' => '',
+    'welcome: backend_log' => 'tervetuloa: lokit',
 // themes/default/header.php
-    'Category Legend'                            => 'Kategorian Merkit',
+    'Category Legend'                            => 'Kategorioiden Värit/Merkitys',
     'Category Type'                              => 'Kategorian Tyyppi',
     'Custom'                                     => 'Mukautettu',
     'Edit MythWeb and some MythTV settings.'     => 'Muokkaa MythWeb:in ja MythTV:n asetuksia.',
@@ -223,7 +223,7 @@ $L = array(
     'Searches'                                   => 'Haut',
     'TV functions, including recorded programs.' => 'Nauhoitetut ohjelmat ja muut TV-asetukset.',
 // themes/default/movietimes/welcome.php
-    'welcome: movietimes' => '',
+    'welcome: movietimes' => 'tervetuloa',
 // themes/default/music/music.php
     'Album'               => 'Albumi',
     'Album (filtered)'    => 'Albumi (suodatettu)',
@@ -241,9 +241,9 @@ $L = array(
     'Previous'            => 'Edellinen',
     'Top'                 => 'Ylös',
     'Track Name'          => 'Kappaleen Nimi',
-    'Unfiltered'          => 'Suodattamaton',
+    'Unfiltered'          => 'Suodattamatonta',
 // themes/default/music/welcome.php
-    'welcome: music' => '',
+    'welcome: music' => 'tervetuloa: musiikki',
 // themes/default/settings/channels.php
     'Configure Channels'                                                                                                                 => 'Aseta Kanavat',
     'Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality.' => 'Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.',
@@ -293,9 +293,9 @@ $L = array(
 // themes/default/settings/settings.php
     'settings: overview' => 'MythWeb:in asetussivu...<p>Nykyisellään keskeneräinen. Valitse seuraavista:',
 // themes/default/settings/welcome.php
-    'welcome: settings' => '',
+    'welcome: settings' => 'tervetuloa: asetukset',
 // themes/default/status/welcome.php
-    'welcome: status' => '',
+    'welcome: status' => 'tervetuloa: systeemin tila',
 // themes/default/tv/channel.php
     'Channel Detail' => 'Kanavatiedot',
     'Length'         => 'Pituus',
@@ -335,7 +335,7 @@ $L = array(
     '$1 episodes'                                         => '$1 jaksoa',
     '$1 recording'                                        => '$1 nauhoitus',
     '$1 recordings'                                       => '$1 nauhoitusta',
-    'All groups'                                          => '',
+    'All groups'                                          => 'Kaikki ryhmät',
     'Are you sure you want to delete the following show?' => 'Poistetaanko seuraavat ohjelmat?',
     'Delete'                                              => 'Poista',
     'Delete $1'                                           => 'Poista $1',
@@ -356,7 +356,7 @@ $L = array(
     'No recording schedules have been defined.' => 'Ajoituksia ei määritelty.',
     'channel'                                   => 'kanava',
     'profile'                                   => 'profiili',
-    'transcoder'                                => '',
+    'transcoder'                                => 'jälkikäsittely',
     'type'                                      => 'tyyppi',
 // themes/default/tv/schedules_custom.php
     'Additional Tables' => 'Täydentävät Taulukot',
@@ -385,7 +385,7 @@ $L = array(
     'Duplicates'  => 'Kaksoiskappaleet',
     'Scheduled'   => 'Ajoitettu',
 // themes/default/tv/welcome.php
-    'welcome: tv' => '',
+    'welcome: tv' => 'tervetuloa: televisio',
 // themes/default/video/video.php
     'Edit'          => 'Muokkaa',
     'Reverse Order' => 'Päinvastainen Järjestys',
@@ -398,7 +398,7 @@ $L = array(
     'rating'        => 'arvostelu',
     'year'          => 'vuosi',
 // themes/default/video/welcome.php
-    'welcome: video' => '',
+    'welcome: video' => 'tervetuloa: videot',
 // themes/default/weather/weather.php
     ' at '               => ' ',
     'Current Conditions' => 'Säätila',
@@ -427,7 +427,7 @@ $L = array(
     'Wind'               => 'Tuuli',
     'Wind Chill'         => 'Tuulen Viileys',
 // themes/default/weather/welcome.php
-    'welcome: weather' => ''
+    'welcome: weather' => 'tervetuloa: säätila'
 // End of the translation hash ** Do not touch the next line
           );
 
