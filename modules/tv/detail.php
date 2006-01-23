@@ -52,7 +52,7 @@
     if (!strlen($program->starttime) && !$schedule->recordid) {
         if ($_GET['recordid']) {
             add_warning(t('Unknown Recording Schedule.'));
-            header('Location: '.rot.'tv/schedules');
+            header('Location: '.root.'tv/schedules');
         }
         else {
             add_warning(t('Unknown Program.'));
