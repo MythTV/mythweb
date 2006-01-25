@@ -1,20 +1,69 @@
 /**
- * Functions to show/hide sections of the page (for mouseovers)
+ * Functions to show/hide sections of the page (for mouseovers).
+ * Primarily used for interactive menus
  *
- * @url         $URL$
+ * @url         $URL: svn+ssh://xris@svn.siliconmechanics.com/var/svn/web/trunk/shared_code/js/mouseovers.js $
  * @date        $Date$
  * @version     $Revision$
  * @author      $Author$
  * @license     LGPL
  *
+ * @package     MythWeb
+ * @subpackage  Javascript
+ *
 /**/
 
-/*
-    find_position:
-    returns the page position of any element on the screen
-    thanks to webreference.com for info about tables, etc.
-*/
-    function find_position(element) {
+// Make a reasonable attempt to determine the css position of a particular field.
+    function get_css_position(field) {
+        var e = get_element(field);
+    // Display assigned directly to the element
+        if (e.style.position)
+            return e.style.position;
+    // Unknown display type -- Make a reasonable effort to look it up in the stylesheet rules
+        var classes = e.className.split(/\s+/);
+        var found   = false;
+        for (var i=0;i<document.styleSheets.length;i++) {
+            var sheet = document.styleSheets[i];
+            var rules = (typeof sheet.cssRules != 'undefined') ? sheet.cssRules
+                            : ((typeof sheet.rules != 'undefined') ? sheet.rules : null);
+            if (rules) {
+                for (var j=0;j<rules.length;j++) {
+                    var rule = rules[j];
+                // No display rule given -- skip ahead early
+                    if (!rule || !rule.style || !rule.style.position)
+                        continue;
+                // Grab the selectors and scan through them for id or rudimentary class name matches
+                    var selectors = rule.selectorText.split(/\s*,\s*/);
+                    for (var k=0;k<selectors.length;k++) {
+                        var str = selectors[k];
+                    // See if this is a matching id-based class
+                        var match = new RegExp('^#'+field+'$');
+                        if (str.match(match)) {
+                            return e.style.position = rule.style.position;
+                        }
+                    // Nope -- scan through this field's classnames for a match
+                        else {
+                            for (var l=0;l<classes.length;l++) {
+                                match = new RegExp('^\.'+classes[l]+'$');
+                                if (str.match(match)) {
+                                    return e.style.position = rule.style.position;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    // Return the default
+        return '';
+    }
+
+/**
+ * find_position:
+ *  returns the page position of any element on the screen
+ *  thanks to webreference.com for info about tables, etc.
+/**/
+    function find_position(element, parse_absolute) {
     // Pull off the height/width early
         var w = element.offsetWidth  ? element.offsetWidth  : 0;
         var h = element.offsetHeight ? element.offsetHeight : 0;
@@ -23,9 +72,18 @@
             return {x:element.x, y:element.y, w:w, h:h};
     // Scan backwards through the parents
         var x = 0, y = 0;
-        while (element.offsetParent) {
+        do {
+        // Ignore absolutely-positioned elements
+            if (!parse_absolute && element.style && element.id && get_css_position(element.id) == 'absolute') {
+                x -= parseInt(element.scrollLeft);
+                y -= parseInt(element.scrollTop);
+                continue;
+            }
+        /// I don't know why safari sets an offsetTop on the body element
+            else if (element.tagName == 'BODY')
+                continue;
         // If IE...
-            if (!is_gecko && !is_safari && !is_khtml && !is_opera  && (isIE4 || isIE6)) {
+            if (browser.is_ie) {
                 // If element is not a table or body tag, append the cell border info
                 if (element.tagName != 'TABLE' && element.tagName != 'BODY') {
                     if (element.clientLeft)
@@ -33,7 +91,7 @@
                     if (element.clientTop)
                         y += parseInt(element.clientTop);
                 }
-           }
+            }
         // Gecko?
             else {
             // We need to take the table border into consideration
@@ -56,12 +114,10 @@
                 }
             }
         // Don't forget the actual location of the element
-            x += parseInt(element.offsetLeft);
-            y += parseInt(element.offsetTop);
-        // On to the next parent
-            element = element.offsetParent;
-        }
-        return {x:x, y:y, w:w, h:h};
+            x += parseInt(element.offsetLeft) - parseInt(element.scrollLeft);
+            y += parseInt(element.offsetTop)  - parseInt(element.scrollTop);
+        } while (element = element.offsetParent);
+        return {x:parseInt(x), y:parseInt(y), w:parseInt(w), h:parseInt(h)};
     }
 
 // Keep track of things
@@ -70,6 +126,15 @@
 
 // Popup boxes that disappear when the mouse leaves the parent area
     function popup(id, popup_id, x, y, click, menu) {
+    // Need a popup id?
+        if (!popup_id || popup_id.length < 1)
+            popup_id = id + '_popup';
+    // Add the obligatory _popup suffix
+        else if (!get_element(popup_id))
+            popup_id += '_popup';
+    // No popup id element defined; just return (page probably isn't done loading)
+        if (!get_element(popup_id))
+            return;
     // Popup already showing with this content
         if (popups.length && popups[0].id == id) {
             if (click) {
@@ -122,9 +187,6 @@
             this.popup_id = popup_id;
         else
             this.popup_id = id;
-    // In case were trying to recycle popup id's, look for a _popup field
-        if (get_element(this.popup_id + '_popup'))
-            this.popup_id = this.popup_id + '_popup';
     // Set the mouseout behavior
         var field = get_element(this.id)
         if (!click)
@@ -136,7 +198,7 @@
         if (!click)
             field.onmouseout  = timed_hide_popup;
     // Adjust the z-index of the popup so that it shows on top of the parent menu
-        field.style.zIndex = popups.length + 10;
+        field.style.zIndex = 99 + popups.length + 10;
     }
 
     function show_popup() {
@@ -152,26 +214,30 @@
         var field = get_element(popup.popup_id);
         if (field.style)
             field = field.style;
-    // Make sure it displays on top of everything else
-        field.zIndex  = 20;
+    // Allow the browser to render the popup in context
+        field.display = 'inline';
     // Get the location of the parent element
-        var pos = find_position(get_element(popup.id));
+        var pos = find_position(get_element(popup.id), true);
+    // Grab another copy, since "field" is most likely a "style" now
+        var orig_field = get_element(popup.popup_id);
+        var width      = parseInt(orig_field.offsetWidth);
+        var height     = parseInt(orig_field.offsetHeight);
     // Set the initial position of the hidden element
-        var x = parseInt(pos.x);
-        var y = parseInt(pos.y) + get_element(popup.id).offsetHeight;
+        var x = pos.x;
+        var y = pos.y + parseInt(get_element(popup.id).offsetHeight);
     // Get some window information so we can make sure the box doesn't extend off the edge of the screen
         var window_width = 0, window_height = 0, scroll_left = 0, scroll_top = 0;
-        if (document.body.clientWidth || document.body.clientHeight) {
-            window_width  = document.body.clientWidth;
-            window_height = document.body.clientHeight;
-            scroll_left   = document.body.scrollLeft;
-            scroll_top    = document.body.scrollTop;
-        }
-        else if (document.documentElement.clientWidth) {
+        if (document.documentElement.clientWidth) {
             window_width  = document.documentElement.clientWidth;
             window_height = document.documentElement.clientHeight;
             scroll_left   = document.documentElement.scrollLeft;
             scroll_top    = document.documentElement.scrollTop;
+        }
+        else if (document.body.clientWidth || document.body.clientHeight) {
+            window_width  = document.body.clientWidth;
+            window_height = document.body.clientHeight;
+            scroll_left   = document.body.scrollLeft;
+            scroll_top    = document.body.scrollTop;
         }
         else {
             window_width  = window.innerWidth;
@@ -179,39 +245,23 @@
             scroll_left   = document.body.scrollLeft;
             scroll_top    = document.body.scrollTop;
         }
-    // Do our best to try to keep the popup onscreen and away from the mouse
+    // Do our best to try to keep the popup onscreen and away from the parent
+    // element (plus a screen-edge padding of 3 pixels)
         if (window_width > 0 && window_height > 0) {
-            var orig_field = get_element(popup.popup_id);       // grab another copy, since "field" is most likely a "style" now
-            width  = parseInt(orig_field.offsetWidth);
-            height = parseInt(orig_field.offsetHeight);
         // Adjust the element location?
-            if (x > window_width + scroll_left - width - 3)
-                x = window_width + scroll_left - width - 3;      // subtract a few extra pixels to account for borders
-            if (y > window_height + scroll_top - height - 12)
-                y = window_height + scroll_top - height - 12;    // subtract a few extra pixels to account for borders
-        // Does this now conflict with the parent element?
-            if (y < parseInt(pos.y)) {
-                if (x < parseInt(pos.x))
-                    y = parseInt(pos.y) - height - 10;
-                else
-                    x += get_element(popup.id).offsetWidth + 5 - popup.x;
-            }
+            if (x > window_width + scroll_left - width - 6)
+                x = window_width + scroll_left - width - 6;
+            if (window_height > 200 && y > window_height + scroll_top - height - 6)
+                y -= height + get_element(popup.id).offsetHeight + 6;
         }
-    // Make some minor corrections
-        x += popup.x;
-        y += popup.y;
+    // Don't hide off the left side of the screen
         if (x < 0) x = 0;
         if (y < 0) y = 0;
     // Adjust the element
-        field.left = x + 'px';
-        field.top  = y + 'px';
-        if (isNN4) {
-            field.xpos       = x;
-            field.ypos       = y;
-            field.visibility = 'show';
-        }
-        else
-            field.visibility = 'visible';
+        field.left    = (x + 3) + 'px';
+        field.top     = (y + 3) + 'px';
+    // Finally, make it visible
+        field.visibility = 'visible';
     }
 
 // This sets up a timeout so the popup isn't hidden immediately
@@ -233,7 +283,8 @@
             if (field != null) {
                 if (field.style)
                     field = field.style;
-                field.visibility = isNN4 ? 'hide' : 'hidden';
+                field.visibility = 'hidden';
+                field.display    = 'none';
             }
         }
     }
@@ -258,6 +309,8 @@
 
     on_load.push(init_menus);
     function init_menus() {
+        if(!menus.length)
+            return 0;
         for (var i=0;i<menus.length;i++) {
             var menu = get_element(menus[i]);
             if (!menu)
@@ -266,17 +319,29 @@
             var l = items.length;
             for (var j=0; j<l; j++) {
                 var li = items[j];
-            // Remove any text from inside of a separator
-            //    if (li.className && (new RegExp('\\bsep(arator)?\\b')).test(li.className))
-            //        li.innerHTML = '';
+            // Needs an id?  Make a semi-random one
+                if (!li.id)
+                    li.id = menu.id + '.' + (j + Math.random());
+            // Find the immediate parent menu item, if there is one
+                li.parent = li;
+                while (li.parent) {
+                    li.parent = li.parent.parentNode;
+                    if (li.parent && li.parent.tagName == 'LI')
+                        break;
+                }
+                if (!li.parent || li.parent && li.parent.tagName != 'LI')
+                    li.parent = null;
             // We should probably only interact with the first <ul> we find -- treat it as a submenu
                 var children = li.getElementsByTagName('ul');
                 if (!children || children.length == 0)
                     continue;
                 li.child = children[0];
+            // Child needs an id, too?
+                if (!li.child.id)
+                    li.child.id = li.id + '.' + (10 * Math.random());
             // Set the mouseover/mouseout events
-                li.onmouseover = show_menu;
-                li.onmouseout  = hide_menu;
+                li.onmouseover = show_menu_delayed;
+                li.onmouseout  = hide_menu_delayed;
             // Gather some other info about this menu
                 li.top_menu = (li.parentNode == menu);
                 if (menu.className)
@@ -301,48 +366,141 @@
         }
     }
 
+    var menu_to_show;
+    var menu_to_hide;
+    var menu_show_timeout;
+    var menu_hide_timeout;
+    function show_menu_delayed(e) {
+    // Make sure only ONE event fires
+        if (!e) var e = window.event;
+        e.cancelBubble = true;
+        if (e.stopPropagation)
+            e.stopPropagation();
+    // Show this menu
+        menu_to_show = this;
+    // A menu is set to hide?
+        if (menu_to_hide) {
+        // Hiding this menu?  Cancel the request.
+            if (menu_to_hide == this || menu_to_hide == this.parent)
+                menu_to_hide = null;
+        // Hiding another menu, just do it now
+            else {
+                hide_menu();
+            }
+        }
+    // Show the new menu
+        menu_show_timeout = setTimeout(show_menu, this.top_menu ? 250 : 50);
+    }
+
     function show_menu() {
-        if (!this)
-            return;
-    // Make the menu active
-        add_class(this, 'active');
-        var pos = find_position(this);
-        if (this.top_menu) {
-            pos.x += (this.vertical ? pos.w : -1);
-            pos.y += (this.vertical ? 2 : pos.h - 2);
-        }
-        else {
-            pos.x = this.offsetWidth;
-            pos.y = this.offsetTop + 2;
-        }
-    // Make some corrections
-        if (isNaN(pos.x) || pos.x < 0) pos.x = 0;
-        if (isNaN(pos.y) || pos.y < 0) pos.y = 0;
-    // Get the child field
-        var child = this.child;
-        if (child.style)
-            child = child.style;
-    // Move the menu into its new location
-        child.left = pos.x + 'px';
-        child.top  = pos.y + 'px';
-    // Show the menu
-        if (isNN4) {
-            child.xpos       = pos.x;
-            child.ypos       = pos.y;
-            child.visibility = 'show';
-        }
-        else
+    // Loop to make sure we also show any parent menus that got hidden
+        var this_menu = menu_to_show;
+        while (this_menu) {
+        // Make the menu active
+            add_class(this_menu, 'active');
+            var pos = find_position(this_menu);
+            if (this_menu.top_menu) {
+                pos.x += (this_menu.vertical ? pos.w : -1);
+                pos.y += (this_menu.vertical ? 2     : pos.h - 2);
+            }
+            else {
+                pos.x = this_menu.offsetWidth;
+                pos.y = this_menu.offsetTop + 2;
+            }
+        // Make some corrections
+            if (isNaN(pos.x) || pos.x < 0) pos.x = 0;
+            if (isNaN(pos.y) || pos.y < 0) pos.y = 0;
+        // Get some window information so we can make sure the menu doesn't extend off the edge of the screen
+            var window_width = 0, scroll_left = 0;
+            if (document.documentElement.clientWidth) {
+                window_width  = document.documentElement.clientWidth;
+                scroll_left   = document.documentElement.scrollLeft;
+            }
+            else if (document.body.clientWidth || document.body.clientHeight) {
+                window_width  = document.body.clientWidth;
+                scroll_left   = document.body.scrollLeft;
+            }
+            else {
+                window_width  = window.innerWidth;
+                scroll_left   = document.body.scrollLeft;
+            }
+        // Get the child field
+            var child = this_menu.child;
+            if (child.style)
+                child = child.style;
+        // Allow the browser to render the menu in context
+            child.display = 'inline';
+        // Make sure it doesn't hide beneath other objects
+            child.zIndex  = 99;
+        // Do our best to try to keep the menu onscreen
+            if (window_width > 0) {
+                var width = parseInt(this_menu.child.offsetWidth);
+            // Adjust the element location?  Since it's nested position:absolute,
+            // we need to gets its true location.
+                if (find_position(this_menu).x > window_width + scroll_left - this_menu.offsetWidth - width) {
+                // First level of menus should align with the right edge of the parent object
+                    if (!this_menu.parent)
+                        pos.x -= width - this_menu.offsetWidth;
+                // Because it's nested position:absolute, submenus should subtract
+                // width from zero (plus a few extra pixels to make it look nice)
+                    else
+                        pos.x = 5 - this_menu.offsetWidth;
+                }
+            }
+        // Move the menu into its new location
+            child.left = pos.x + 'px';
+            child.top  = pos.y + 'px';
+        // Show the menu
             child.visibility = 'visible';
+        // Up to the next layer
+            this_menu = this_menu.parent;
+        }
+    }
+
+    function hide_menu_delayed(e) {
+    // Make sure only ONE event fires
+        if (!e) var e = window.event;
+        e.cancelBubble = true;
+        if (e.stopPropagation)
+            e.stopPropagation();
+    // Did we just show this menu?  Don't avoid closing it.
+        if (menu_to_show == this) {
+            menu_to_show = null;
+        }
+    // If the user was moving the mouse quickly, reset the counter so the delay is accurate
+        clearTimeout(menu_hide_timeout);
+    // Hide this menu
+        menu_to_hide = this;
+        menu_hide_timeout = setTimeout(hide_menu, 350);
     }
 
     function hide_menu() {
-        var child = this.child;
-        if (child.style)
-            child = child.style
-        if (isNN4)
-        	child.visibility = 'hide';
-        else
-        	child.visibility = 'hidden';
-    	remove_class(this, 'active');
+    // Process each menu we have to hide
+        var this_menu = menu_to_hide;
+        while (this_menu) {
+        // Look for a common parent, so we only hide as many submenus as needed
+            var found   = false;
+            var submenu = menu_to_show;
+            while (submenu) {
+                if (submenu == this_menu) {
+                    found = true;
+                    break;
+                }
+                submenu = submenu.parent;
+            }
+            if (found)
+                break;
+        // Hide the menu
+            var child = this_menu.child;
+            if (child.style)
+                child = child.style
+            child.display    = 'none';
+            child.visibility = 'hidden';
+            remove_class(this_menu, 'active');
+        // On to the parent menu
+            this_menu = this_menu.parent;
+        }
+    // Don't need to hide this anymore
+        menu_to_hide = null;
     }
 
