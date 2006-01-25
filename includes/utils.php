@@ -160,26 +160,26 @@
  * Converts an sql timestamp into unixtime
 /**/
     function unixtime($sql_timestamp) {
-        return mktime(substr($sql_timestamp, 8, 2),     // hour
+        return mktime(substr($sql_timestamp, 8,  2),    // hour
                       substr($sql_timestamp, 10, 2),    // minute
                       substr($sql_timestamp, 12, 2),    // second
-                      substr($sql_timestamp, 4, 2),     // month
-                      substr($sql_timestamp, 6, 2),     // day
-                      substr($sql_timestamp, 0, 4));    // year
+                      substr($sql_timestamp, 4,  2),    // month
+                      substr($sql_timestamp, 6,  2),    // day
+                      substr($sql_timestamp, 0,  4));   // year
     }
 
-/**  DEPRECATED -- use db.php routines instead!!
- *  escape:
+/**
+ *  DEPRECATED (use the Database object instead)
+ *
  *  For lack of a function that escapes strings AND adds quotes, I wrote one
  *  myself to make the rest of my code read a bit easier.
 /**/
     function escape($string, $allow_null = false) {
     // Null?
         if ($allow_null && is_null($string))
-            return 'NULL';
+            return $string = 'NULL';
     // Just a string
-        $string = mysql_escape_string($string); // Do this beforehand in case someone passes in a reference
-        return "'$string'";
+        return $string = "'".mysql_real_escape_string($string)."'";
     }
 
 /**
@@ -255,21 +255,45 @@
     }
 
 /**
- * Prints out a piece of data
+ * DEBUG:
+ *  prints out a piece of data
 /**/
-    function DEBUG($data, $file = false) {
-    // Catch our data into a string
-        ob_start();
+    function debug($data, $file = false, $force = false) {
+        if(!dev_domain && !$force)
+            return;
+        static $first_run=true;
+        if($first_run) {
+            $first_run=false;
+            echo '<script type="text/javascript" src="/js/debug.js"></script>';
+        }
+    // Put our data into a string
         if (is_array($data) || is_object($data))
-            print_r($data);
+            $str = print_r($data, TRUE);
         elseif (isset($data))
-            echo $data;
+            $str = $data;
+        $search = array("\n", '"');
+        $replace = array("\\n", '\"');
+        $back_trace = debug_backtrace();
+    // If this is a string, int or float
+        if (is_string($str) || is_int($str) || is_float($str)) {
+        // Allow XML/HTML to be treated as normal text
+            $str = htmlspecialchars($str, ENT_NOQUOTES);
+        }
+    // If this is a boolean
+        elseif (is_bool($str))
+            $str = $str ? '<i>**TRUE**</i>' : '<i>**FALSE**</i>';
+    // If this is null
+        elseif (is_null($str))
+            $str = '<i>**NULL**</i>';
+    // If it is not a string, we return a get_type, because it would be hard to generically come up with a way
+    // to display anything
         else
-            echo 'NULL';
-        $str = ob_get_contents();
-        ob_end_clean();
+            $str = '<i>Type : '.gettype($str).'</i>';
+    // Show which line caused the debug message
+        $str = $str."\n<hr>\n".'Line #'.$back_trace[0]['line'].' in file '.$back_trace[0]['file']."\n";
     // Print the message
-        echo '<hr /><pre>'.$str.'</pre><hr />';
+        echo '<script language="javascript">debug_window("'.str_replace($search, $replace, $str).'");</script>';
+        echo '<noscript><pre>'.$str.'</pre></noscript>';
     // Print to a file?
         if ($file) {
             $out = fopen('/tmp/debug.txt', 'a');
