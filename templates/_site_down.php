@@ -12,7 +12,7 @@
 <h2>Database Error</h2>
 
 <p>
-<?php echo htmlentities($db->error) ?>
+<?php echo html_entities($db->error) ?>
 </p>
 
 </div>

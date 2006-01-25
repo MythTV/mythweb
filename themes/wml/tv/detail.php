@@ -85,18 +85,18 @@
 <?php
 
     foreach(array('Default', 'Live TV', 'High Quality', 'Low Quality') as $profile) {
-        echo '<option value="'.htmlentities($profile).'">';
-        echo htmlentities($profile).'</option>';
+        echo '<option value="'.html_entities($profile).'">';
+        echo html_entities($profile).'</option>';
     }
 ?>
 </select>
 <?php echo t('Recording Priority') ?>: <input name="recpriority" type="text" value="<?php echo $program->recpriority ?>" format="N*" size="2"/>
 <br />
-<?php echo t('No. of recordings to keep') ?>:<input type="text" name="maxepisodes" emptyok="true" size="1" format="N" value="<?php echo htmlentities($program->maxepisodes) ?>"/>
+<?php echo t('No. of recordings to keep') ?>:<input type="text" name="maxepisodes" emptyok="true" size="1" format="N" value="<?php echo html_entities($program->maxepisodes) ?>"/>
 <br />
-<?php echo t('Start Early') ?>:<input type="text" name="startoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($program->startoffset) ?>"/>
+<?php echo t('Start Early') ?>:<input type="text" name="startoffset" emptyok="true" size="2" format="NN" value="<?php echo html_entities($program->startoffset) ?>"/>
 <br />
-<?php echo t('End Late') ?>:<input type="text" name="endoffset" emptyok="true" size="2" format="NN" value="<?php echo htmlentities($program->endoffset) ?>"/>
+<?php echo t('End Late') ?>:<input type="text" name="endoffset" emptyok="true" size="2" format="NN" value="<?php echo html_entities($program->endoffset) ?>"/>
 <br />
 <?php echo t('Duplicate Check method') ?>
 <?php

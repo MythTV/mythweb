@@ -12,7 +12,7 @@
 <h2>Error</h2>
 
 <p>
-<?php echo htmlentities($Error) ?>
+<?php echo html_entities($Error) ?>
 </p>
 
 </div>

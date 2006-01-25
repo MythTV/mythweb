@@ -26,7 +26,7 @@
     echo t('settings: overview'),
          '<ul>';
     foreach ($Modules['settings']['links'] as $link => $name) {
-        echo '    <li><a href="', root, 'settings/', $link, '">', htmlentities($name), "</a></li>\n";
+        echo '    <li><a href="', root, 'settings/', $link, '">', html_entities($name), "</a></li>\n";
     }
     echo '</ul>';
 ?>

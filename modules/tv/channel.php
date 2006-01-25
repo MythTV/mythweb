@@ -61,13 +61,13 @@
             if (empty($channel->visible))
                 continue;
         // Print the option
-            echo '<option value="'.htmlentities($channel->chanid).'"';
+            echo '<option value="'.html_entities($channel->chanid).'"';
             if ($channel->chanid == $_GET['chanid'])
                 echo ' SELECTED';
             $name = prefer_channum
                         ? "$channel->channum ($channel->callsign)"
                         : "$channel->callsign ($channel->channum)";
-            echo '>'.htmlentities($name).'</option>';
+            echo '>'.html_entities($name).'</option>';
         }
         echo '</select>';
     }

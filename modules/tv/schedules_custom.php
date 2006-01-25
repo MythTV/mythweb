@@ -235,9 +235,9 @@
         // Print ther est of the content
             echo '>';
             if (prefer_channum)
-                echo $channel->channum.'&nbsp;&nbsp;('.htmlentities($channel->callsign).')';
+                echo $channel->channum.'&nbsp;&nbsp;('.html_entities($channel->callsign).')';
             else
-                echo htmlentities($channel->callsign).'&nbsp;&nbsp;('.$channel->channum.')';
+                echo html_entities($channel->callsign).'&nbsp;&nbsp;('.$channel->channum.')';
             echo '</option>';
         }
         echo '</select>';

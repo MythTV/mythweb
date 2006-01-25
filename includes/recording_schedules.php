@@ -320,11 +320,11 @@ class Schedule {
         $str = "<dl class=\"details_list\">\n"
             // Title
               ."\t<dt>".t('Title').":</dt>\n"
-              ."\t<dd>".htmlentities($this->title, ENT_COMPAT, 'UTF-8')
+              ."\t<dd>".html_entities($this->title)
                        ."</dd>\n"
             // Type
               ."\t<dt>".t('Type').":</dt>\n"
-              ."\t<dd>".htmlentities($this->texttype, ENT_COMPAT, 'UTF-8')
+              ."\t<dd>".html_entities($this->texttype)
                        ."</dd>\n";
     // Only show these fields for recording types where they're relevant
         if (in_array($this->type, array(rectype_once, rectype_daily, rectype_weekly, rectype_override, rectype_dontrec))) {
@@ -337,26 +337,26 @@ class Schedule {
         // Subtitle
             if (preg_match('/\\S/', $this->subtitle)) {
                 $str .= "\t<dt>".t('Subtitle').":</dt>\n"
-                       ."\t<dd>".htmlentities($this->subtitle, ENT_COMPAT, 'UTF-8')
+                       ."\t<dd>".html_entities($this->subtitle)
                                 ."</dd>\n";
             }
         // Description
             if (preg_match('/\\S/', $this->description)) {
                 $str .= "\t<dt>".t('Description').":</dt>\n"
-                       ."\t<dd>".nl2br(htmlentities($this->description, ENT_COMPAT, 'UTF-8'))
+                       ."\t<dd>".nl2br(html_entities($this->description))
                                 ."</dd>\n";
             }
         // Rating
             if (preg_match('/\\S/', $this->rating)) {
                 $str .= "\t<dt>".t('Rating').":</dt>\n"
-                       ."\t<dd>".htmlentities($this->rating, ENT_COMPAT, 'UTF-8')
+                       ."\t<dd>".html_entities($this->rating)
                                 ."</dd>\n";
             }
         }
     // Category
         if (preg_match('/\\S/', $this->category)) {
             $str .= "\t<dt>".t('Category').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->category, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities($this->category)
                             ."</dd>\n";
         }
     // Rerun?
@@ -403,26 +403,26 @@ class Schedule {
     // Recording Priority
         if (preg_match('/\\S/', $this->recpriority)) {
             $str .= "\t<dt>".t('Recording Priority').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->recpriority, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities($this->recpriority)
                             ."</dd>\n";
         }
     // Profile
         if (preg_match('/\\S/', $this->profile)) {
             $str .= "\t<dt>".t('Profile').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->profile, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities($this->profile)
                             ."</dd>\n";
         }
     // Transcoder
         if (preg_match('/\\S/', $this->transcoder)) {
             global $Transcoders;
             $str .= "\t<dt>".t('Transcoder').":</dt>\n"
-                   ."\t<dd>".htmlentities(_or($Transcoders[$this->transcoder], '&nbsp;'), ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities(_or($Transcoders[$this->transcoder], '&nbsp;'))
                             ."</dd>\n";
         }
     // Recording Group
         if (!empty($this->recgroup)) {
             $str .= "\t<dt>".t('Recording Group').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->recgroup, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities($this->recgroup)
                             ."</dd>\n";
         }
     // Finish off the table and return
@@ -438,10 +438,10 @@ class Schedule {
     function profile_select($this_profile, $name='profile') {
         echo "<select name=\"$name\">";
         foreach(array('Default', 'Live TV', 'High Quality', 'Low Quality') as $profile) {
-            echo '<option value="'.htmlentities($profile).'"';
+            echo '<option value="'.html_entities($profile).'"';
             if ($this_profile == $profile)
                 echo ' SELECTED';
-            echo '>'.htmlentities($profile).'</option>';
+            echo '>'.html_entities($profile).'</option>';
         }
         echo '</select>';
     }
@@ -453,11 +453,11 @@ class Schedule {
         global $Transcoders;
         echo "<select name=\"$name\">";
         foreach ($Transcoders as $transcoderid => $transcoder) {
-            echo '<option value="'.htmlentities($transcoderid).'"';
+            echo '<option value="'.html_entities($transcoderid).'"';
             if ($this_transcoder == $transcoderid) {
                 echo ' SELECTED';
             }
-            echo '>'.htmlentities($transcoder).'</option>';
+            echo '>'.html_entities($transcoder).'</option>';
         }
         echo '</select>';
     }
@@ -489,10 +489,10 @@ class Schedule {
     // Print the <select>
         echo "<select name=\"$name\">";
         foreach($groups as $group) {
-            echo '<option value="'.htmlentities($group).'"';
+            echo '<option value="'.html_entities($group).'"';
             if ($this_group == $group)
                 echo ' SELECTED';
-            echo '>'.htmlentities($group).'</option>';
+            echo '>'.html_entities($group).'</option>';
         }
         echo '</select>';
     }

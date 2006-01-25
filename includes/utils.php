@@ -183,6 +183,18 @@
     }
 
 /**
+ * Overloaded version of htmlentities() that requests the UTF-8 entities rather
+ * than the default ISO-9660
+ *
+ * @param string $str   String to convert to html entities
+ *
+ * @return UTF-8 entities for $str
+/**/
+    function html_entities($str) {
+        return htmlentities($str, ENT_COMPAT, 'UTF-8');
+    }
+
+/**
  * Returns a sorted list of files in a directory, minus . and ..
 /**/
     function get_sorted_files($dir = '.', $regex = '', $negate = false) {

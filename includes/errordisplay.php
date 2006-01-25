@@ -33,7 +33,7 @@
         if (empty($Errors) && empty($Warnings)) return;
     // Load the errors
         $js_errstr = implode("\n", array_merge($Errors, $Warnings));
-        $errstr    = str_replace("\n", "<br />\n", htmlentities($js_errstr));
+        $errstr    = str_replace("\n", "<br />\n", html_entities($js_errstr));
     // Clean up the javascript error string
         $js_errstr = str_replace("\n", "\\n",
                         str_replace('"', '\\"',

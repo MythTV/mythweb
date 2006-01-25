@@ -46,7 +46,7 @@ function newWindow(newContent)
         if( $i == $Filter_Category )
             echo ' SELECTED';
         echo '>';
-        echo htmlentities($Category_String[$i])."</option>\n";
+        echo html_entities($Category_String[$i])."</option>\n";
     }
 ?>
     </select>
@@ -77,11 +77,11 @@ function newWindow(newContent)
     ?><tr class="recorded">
     <td><?php
         if (show_video_covers && file_exists(video_img_path.'/'.basename($show->coverfile)))
-            echo '<a href="'.$show->url.'"><img id="'.htmlentities($show->filename).'" src="'.video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
+            echo '<a href="'.$show->url.'"><img id="'.html_entities($show->filename).'" src="'.video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
         else
             echo '&nbsp;';
     ?></td>
-    <td><?php echo '<a href="'.$show->url.'">'.htmlentities($show->title, ENT_COMPAT, 'UTF-8').'</a>' ?></td>
+    <td><?php echo '<a href="'.$show->url.'">'.html_entities($show->title).'</a>' ?></td>
     <td><?php echo $show->director                   ?></td>
     <td><?php echo $show->plot                       ?></td>
     <td><?php echo $Category_String[$show->category] ?></td>

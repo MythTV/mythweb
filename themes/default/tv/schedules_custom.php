@@ -106,19 +106,19 @@
 
             <dl id="title_options">
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
-                <dd><input type="text" name="title" value="<?php echo htmlentities($schedule->edit_title) ?>" size="24">
+                <dd><input type="text" name="title" value="<?php echo html_entities($schedule->edit_title) ?>" size="24">
                     (<span id="search_type"><?php echo $schedule->search_type ?></span> Search)</dd>
             </dl>
             <dl id="standard_options"<?php if ($schedule->search == searchtype_power) echo ' class="hidden"' ?>>
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
-                <dd><input type="text" name="search_phrase" value="<?php echo htmlentities($schedule->description) ?>" size="30"></dd>
+                <dd><input type="text" name="search_phrase" value="<?php echo html_entities($schedule->description) ?>" size="30"></dd>
             </dl>
 
             <dl id="power_options"<?php if ($schedule->search != searchtype_power) echo ' class="hidden"' ?>>
                 <dt><?php echo t('Additional Tables') ?>:&nbsp;</dt>
-                <dd><input type="text" name="additional_tables" value="<?php echo htmlentities($schedule->subtitle) ?>" size="30"></dd>
+                <dd><input type="text" name="additional_tables" value="<?php echo html_entities($schedule->subtitle) ?>" size="30"></dd>
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
-                <dd><textarea name="search_sql" autorows="10" cols="48"><?php echo htmlentities($schedule->description) ?></textarea>
+                <dd><textarea name="search_sql" autorows="10" cols="48"><?php echo html_entities($schedule->description) ?></textarea>
                     <?php /** @todo would be cool to have sample stuff just like the frontend does */ ?>
                     </dd>
             </dl>
@@ -199,12 +199,12 @@
                 <dt><?php echo t('Record new and expire old') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo t('No. of recordings to keep') ?>:</dt>
-                <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" /></dd>
+                <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo html_entities($schedule->maxepisodes) ?>" /></dd>
                 <dt><?php echo t('Start Early') ?>:</dt>
-                <dd><input type="input" class="quantity" name="startoffset" value="<?php echo htmlentities($schedule->startoffset) ?>" />
+                <dd><input type="input" class="quantity" name="startoffset" value="<?php echo html_entities($schedule->startoffset) ?>" />
                     <?php echo t('minutes') ?></dd>
                 <dt><?php echo t('End Late') ?>:</dt>
-                <dd><input type="input" class="quantity" name="endoffset" value="<?php echo htmlentities($schedule->endoffset) ?>" />
+                <dd><input type="input" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>" />
                     <?php echo t('minutes') ?></dd>
             </dl>
 

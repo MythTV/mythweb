@@ -116,7 +116,7 @@ if (isset($_POST['submit'])) {
                 echo '<option value="'.$cat_data['intid'].'"';
                 if ($category == $cat_data['intid'])
                     echo ' SELECTED';
-                echo '>'.htmlentities($cat_data['category']).'</option>';
+                echo '>'.html_entities($cat_data['category']).'</option>';
             }
             $sh->finish();
         ?></select></td>

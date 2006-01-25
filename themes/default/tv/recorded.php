@@ -156,7 +156,7 @@
             echo '<option id="Group '.htmlspecialchars($recgroup).'" value="'.htmlspecialchars($recgroup).'"';
             if ($_GET['recgroup'] == $recgroup)
                 echo ' SELECTED';
-            echo '>'.htmlentities($recgroup, ENT_COMPAT, 'UTF-8')
+            echo '>'.html_entities($recgroup)
                 .' ('.tn('$1 recording', '$1 recordings', $count)
                 .')</option>';
         }
@@ -170,7 +170,7 @@
             echo '<option id="Title '.htmlspecialchars($title).'" value="'.htmlspecialchars($title).'"';
             if ($_GET['title'] == $title)
                 echo ' SELECTED';
-            echo '>'.htmlentities($title, ENT_COMPAT, 'UTF-8')
+            echo '>'.html_entities($title)
                 .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count).')' : "")
                 .'</option>';
         }
@@ -280,7 +280,7 @@ if ($group_field == "") {
         <a id="delete_<?php echo $row ?>"
             href="<?php echo root ?>tv/recorded?delete=yes&file=<?php echo urlencode($show->filename) ?>"
             js_href="javascript:confirm_delete(<?php echo $row ?>, false)";
-            title="<?php echo htmlentities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
+            title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
     </td>
 <?php   }
@@ -305,7 +305,7 @@ if ($group_field == "") {
         <a id="delete_rerecord_<?php echo $row ?>"
             href="<?php echo root ?>tv/recorded?delete=yes&file=<?php echo urlencode($show->filename) ?>&forget_old"
             js_href="javascript:confirm_delete(<?php echo $row ?>, true)";
-            title="<?php echo htmlentities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
+            title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a></td>
     </td>
 </tr><?php

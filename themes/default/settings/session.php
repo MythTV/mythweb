@@ -51,28 +51,28 @@
     <td><div class="small" style="float:right"><a href="http://php.net/manual/en/function.strftime.php" target="_blank"><?php echo t('format help') ?></a></div></td>
 </tr><tr>
     <td align="right"><?php echo t('Status Bar') ?>:&nbsp;</td>
-    <td><input type="text" size="24" name="date_statusbar" value="<?php    echo htmlentities($_SESSION['date_statusbar']) ?>"></td>
+    <td><input type="text" size="24" name="date_statusbar" value="<?php    echo html_entities($_SESSION['date_statusbar']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Upcoming Recordings') ?>:&nbsp;</td>
-    <td><input type="text" size="24" name="date_scheduled" value="<?php    echo htmlentities($_SESSION['date_scheduled']) ?>"></td>
+    <td><input type="text" size="24" name="date_scheduled" value="<?php    echo html_entities($_SESSION['date_scheduled']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Scheduled Popup') ?>:&nbsp;</td>
-    <td><input type="text" size="24" name="date_scheduled_popup" value="<?php echo htmlentities($_SESSION['date_scheduled_popup']) ?>"></td>
+    <td><input type="text" size="24" name="date_scheduled_popup" value="<?php echo html_entities($_SESSION['date_scheduled_popup']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Recorded Programs') ?>:&nbsp;</td>
-    <td><input type="text" size="24" name="date_recorded" value="<?php     echo htmlentities($_SESSION['date_recorded']) ?>"></td>
+    <td><input type="text" size="24" name="date_recorded" value="<?php     echo html_entities($_SESSION['date_recorded']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Search Results') ?>:&nbsp;</td>
-    <td><input type="text" size="24" name="date_search" value="<?php       echo htmlentities($_SESSION['date_search']) ?>"></td>
+    <td><input type="text" size="24" name="date_search" value="<?php       echo html_entities($_SESSION['date_search']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Listing Time Key') ?>:&nbsp;</td>
-    <td><input type="text" size="24" name="date_listing_key" value="<?php  echo htmlentities($_SESSION['date_listing_key']) ?>"></td>
+    <td><input type="text" size="24" name="date_listing_key" value="<?php  echo html_entities($_SESSION['date_listing_key']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Listing &quot;Jump to&quot;') ?>&nbsp;</td>
-    <td><input type="text" size="24" name="date_listing_jump" value="<?php echo htmlentities($_SESSION['date_listing_jump']) ?>"></td>
+    <td><input type="text" size="24" name="date_listing_jump" value="<?php echo html_entities($_SESSION['date_listing_jump']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Channel &quot;Jump to&quot;') ?>&nbsp;</td>
-    <td><input type="text" size="24" name="date_channel_jump" value="<?php echo htmlentities($_SESSION['date_channel_jump']) ?>"></td>
+    <td><input type="text" size="24" name="date_channel_jump" value="<?php echo html_entities($_SESSION['date_channel_jump']) ?>"></td>
 </tr><tr>
     <td align="right"><?php echo t('Hour Format') ?>&nbsp;</td>
     <td><select name="time_format" style="text-align: center"><?php

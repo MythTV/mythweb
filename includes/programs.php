@@ -436,30 +436,30 @@ class Program {
                        ."</dd>\n"
             // Title
               ."\t<dt>".t('Title').":</dt>\n"
-              ."\t<dd>".htmlentities($this->title, ENT_COMPAT, 'UTF-8')
+              ."\t<dd>".html_entities($this->title)
                        ."</dd>\n";
     // Subtitle
         if (preg_match('/\\S/', $this->subtitle)) {
             $str .= "\t<dt>".t('Subtitle').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->subtitle, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities($this->subtitle)
                             ."</dd>\n";
         }
     // Description
         if (preg_match('/\\S/', $this->fancy_description)) {
             $str .= "\t<dt>".t('Description').":</dt>\n"
-                   ."\t<dd>".nl2br(htmlentities($this->fancy_description, ENT_COMPAT, 'UTF-8'))
+                   ."\t<dd>".nl2br(html_entities($this->fancy_description))
                             ."</dd>\n";
         }
     // Original Airdate
         if (!empty($this->airdate)) {
             $str .= "\t<dt>".t('Original Airdate').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->airdate, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities($this->airdate)
                             ."</dd>\n";
         }
     // Category
         if (preg_match('/\\S/', $this->category)) {
             $str .= "\t<dt>".t('Category').":</dt>\n"
-                   ."\t<dd>".htmlentities($this->category, ENT_COMPAT, 'UTF-8')
+                   ."\t<dd>".html_entities($this->category)
                             ."</dd>\n";
         }
     // Will be recorded at some point in the future?

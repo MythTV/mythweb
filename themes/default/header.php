@@ -19,7 +19,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title><?php echo htmlentities($page_title) ?></title>
+    <title><?php echo html_entities($page_title) ?></title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
@@ -92,7 +92,7 @@
         <div id="search" onmouseover="popup('search', 'search_options', 0, 0, false, true); return true;">
             <form action="<?php echo root ?>tv/search" method="post">
                 <div id="simple_search">
-                    <input id="search_text" type="text" name="searchstr" size="15" value="<?php echo htmlentities($_SESSION['search']['searchstr'], ENT_COMPAT, 'UTF-8') ?>">
+                    <input id="search_text" type="text" name="searchstr" size="15" value="<?php echo html_entities($_SESSION['search']['searchstr']) ?>">
                     <input id="search_submit" type="submit" class="submit" value="<?php echo t('Search') ?>">
                 </div>
                 <div id="search_options">
@@ -197,7 +197,7 @@ EOF;
     foreach ($Categories as $cat => $details) {
         if ($count++ % 3 == 0)
             $legend .= "\n\t\t</tr><tr>\n";
-        $legend .= "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".htmlentities($details[0], ENT_COMPAT, 'UTF-8')."</b></td>\n";
+        $legend .= "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".html_entities($details[0])."</b></td>\n";
     }
     $legend .= <<<EOF
         </tr>

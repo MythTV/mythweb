@@ -61,11 +61,11 @@
         // Ignore non-directories
             if (!is_dir("themes/$theme")) continue;
         // Print the option
-            echo '<option value="'.htmlentities($theme).'"';
+            echo '<option value="'.html_entities($theme).'"';
             if ($_SESSION['Theme'] == $theme)
                 echo ' SELECTED';
             $theme = ereg_replace('_', ' ', $theme);
-            echo '>'.htmlentities($theme).'</option>';
+            echo '>'.html_entities($theme).'</option>';
         }
         echo '</select>';
     }
@@ -81,11 +81,11 @@
         // Ignore non-directories
             if (!is_dir("images/weather/$theme")) continue;
         // Print the option
-            echo '<option value="'.htmlentities($theme).'"';
+            echo '<option value="'.html_entities($theme).'"';
             if ($_SESSION['weathericonset'] == $theme)
                 echo ' SELECTED';
             $theme = str_replace('_', ' ', $theme);
-            echo '>'.htmlentities($theme).'</option>';
+            echo '>'.html_entities($theme).'</option>';
         }
         echo '</select>';
     }
@@ -97,7 +97,7 @@
         echo '<select name="language">';
         foreach ($GLOBALS['Languages'] as $lang => $details) {
         // Print the option
-            echo '<option value="'.htmlentities($lang).'"';
+            echo '<option value="'.html_entities($lang).'"';
             if ($_SESSION['language'] == $lang)
                 echo ' SELECTED';
             echo '>'.$details[0].'</option>';

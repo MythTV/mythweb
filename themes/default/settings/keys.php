@@ -71,11 +71,11 @@
 </tr><?php
     foreach ($Jumps as $jumppoint) {
 ?><tr class="settings" align="center">
-    <td><?php echo htmlentities($jumppoint['destination']) ?></td>
-    <td><?php echo htmlentities($jumppoint['description']) ?></td>
+    <td><?php echo html_entities($jumppoint['destination']) ?></td>
+    <td><?php echo html_entities($jumppoint['description']) ?></td>
     <td><input type="text" size="35"
                name="jump:<?php echo $jumppoint['destination'].':'.$use_host ?>"
-               value="<?php echo str_replace('\\\\', '\\', htmlentities($jumppoint['keylist'])) ?>"></td>
+               value="<?php echo str_replace('\\\\', '\\', html_entities($jumppoint['keylist'])) ?>"></td>
 </tr><?php
     }
 ?>
@@ -94,12 +94,12 @@
 </tr><?php
                 foreach ($Keys as $keyb) {
 ?><tr class="settings" align="center">
-        <td><?php echo htmlentities($keyb['context'])     ?></td>
-        <td><?php echo htmlentities($keyb['action'])      ?></td>
-        <td><?php echo htmlentities($keyb['description']) ?></td>
+        <td><?php echo html_entities($keyb['context'])     ?></td>
+        <td><?php echo html_entities($keyb['action'])      ?></td>
+        <td><?php echo html_entities($keyb['description']) ?></td>
         <td><input type="text" size="25"
                    name="key:<?php echo $keyb['context'].':'.$keyb['action'].':'.$use_host ?>"
-                   value="<?php echo str_replace('\\\\', '\\', htmlentities($keyb['keylist'])) ?>"></td>
+                   value="<?php echo str_replace('\\\\', '\\', html_entities($keyb['keylist'])) ?>"></td>
 </tr>
 <?php
                 }

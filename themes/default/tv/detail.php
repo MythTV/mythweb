@@ -464,12 +464,12 @@
                 <dt><?php echo t('Inactive') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo t('No. of recordings to keep') ?>:</dt>
-                <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" /></dd>
+                <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo html_entities($schedule->maxepisodes) ?>" /></dd>
                 <dt><?php echo t('Start Early') ?>:</dt>
-                <dd><input type="input" class="quantity" name="startoffset" value="<?php echo htmlentities($schedule->startoffset) ?>" />
+                <dd><input type="input" class="quantity" name="startoffset" value="<?php echo html_entities($schedule->startoffset) ?>" />
                     <?php echo t('minutes') ?></dd>
                 <dt><?php echo t('End Late') ?>:</dt>
-                <dd><input type="input" class="quantity" name="endoffset" value="<?php echo htmlentities($schedule->endoffset) ?>" />
+                <dd><input type="input" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>" />
                     <?php echo t('minutes') ?></dd>
             </dl>
 
