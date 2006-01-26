@@ -7,16 +7,16 @@
 
 \***                                                                        ***/
 
-class Theme_channel_detail extends Theme {
 
-    function print_page() {
     // Print the main page header
-        parent::print_header('MythWeb - Channel Detail');
+        $page_title = 'MythWeb - Channel Detail';
+        require_once theme_dir.'header.php';
+
     // Print out some header info about this channel and time
         global $this_channel;
 ?>
 <p>
-            <form id="form" action="channel_detail.php?chanid=<?php echo $_GET['chanid'] ?>" method="post">
+            <form id="form" action="<?php echo root ?>tv/channel/<?php echo $_GET['chanid'] ?>" method="post">
             <center>
             Channel <?php echo $this_channel->channum ?> <?php echo $this_channel->callsign ?><br />
             <?php echo date('D m/d/y', $_SESSION['list_time']) ?><br />
@@ -43,10 +43,9 @@ class Theme_channel_detail extends Theme {
 </p>
 <?php
     // Print the shows for today
-        $this->print_shows();
+        print_shows();
     // Print the main page footer
-        parent::print_footer();
-    }
+        require_once theme_dir.'footer.php';
 
     function print_shows() {
         global $this_channel;
@@ -60,7 +59,7 @@ class Theme_channel_detail extends Theme {
     ?>
     <?php echo date('g:i A', $show->starttime) ?> - <?php echo date('g:i A', $show->endtime) ?><br />
 <?php
-        echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'.$show->title.'</a><br />';
+        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
         if(strlen($show->subtitle))
             echo '<b>'.$show->subtitle.'</b><br />';
 //      if(strlen($show->description))
@@ -70,6 +69,4 @@ class Theme_channel_detail extends Theme {
         }
 
     }
-
-}
 

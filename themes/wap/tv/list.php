@@ -9,22 +9,20 @@
 
 
 #class theme_program_listing extends Theme {
-class Theme_program_listing extends Theme {
 
     /*
         print_header:
         This function prints the header portion of the page specific to the program listing
     */
-    function print_header($start_time, $end_time) {
-    // Print the main page header
-        parent::print_header('MythWeb - Program Listing:  '.strftime('%B %e, %Y, %I:%M %p', $start_time));
+$page_title = 'MythWeb - '.t('Listings');
+require_once theme_dir.'header.php';
+
     // Print the header info specific to the program listing
 ?>
 <p>
-    <form class="form" action="program_listing.php" method="get">
+    <form class="form" action="<?php echo root ?>tv/list" method="get">
     <center>
-    Currently Browsing<br /><?php echo date('D m/d/y', $start_time) ?><br />
-    <?php echo date('g:i A', $start_time) ?><br />
+    Currently Browsing<br /><?php echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime)) ?><br />
             Jump to<br />
             <select name="daytime"><?php
 		$day=getdate($start_time);
@@ -57,12 +55,6 @@ class Theme_program_listing extends Theme {
         </form>
         <br /><br />
 <?php
-    }
-
-
-    function print_page(&$Channels, &$Timeslots, $list_starttime, $list_endtime) {
-    // Display the listing page header
-        $this->print_header($list_starttime, $list_endtime);
 
 //      $this->print_timeslots($Timeslots, $list_starttime, $list_endtime, 'first');
 
@@ -77,7 +69,7 @@ class Theme_program_listing extends Theme {
         // Grab the reference
             $channel = &$Channels[$key];
         // Print the data
-            $this->print_channel(&$channel, $list_starttime, $list_endtime);
+            print_channel(&$channel, $list_starttime, $list_endtime);
         // Cleanup is a good thing
             unset($channel);
         // Display the timeslot bar?
@@ -86,18 +78,7 @@ class Theme_program_listing extends Theme {
         }
 
     // Display the listing page footer
-        $this->print_footer();
-    }
-
-
-    /*
-        print_footer:
-        This function prints the footer portion of the page specific to the program listing
-    */
-    function print_footer() {
-    // Print the main page's footer
-        parent::print_footer();
-    }
+        require_once theme_dir.'footer.php';
 
 
     /*
@@ -106,13 +87,11 @@ class Theme_program_listing extends Theme {
     */
     function print_channel($channel, $start_time, $end_time) {
         ?>
-        <a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&time=<?php echo $start_time ?>">
+        <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo $start_time ?>">
         <?php echo prefer_channum ? $channel->channum : $chann->callsign ?>&nbsp;
         <?php echo prefer_channum ? $channel->callsign : $channel->channum ?> </a>
-    	<a href="program_detail.php?chanid=<?php echo $channel->chanid ?>&starttime=<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
+    	<a href="<?php echo root ?>tv/detail/<?php echo $channel->chanid ?>/<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
         <?php
     }
 
-
-}
 

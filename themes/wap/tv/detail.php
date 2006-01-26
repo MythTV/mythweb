@@ -8,14 +8,14 @@
 \***                                                                        ***/
 
 #class theme_program_detail extends Theme {
-class Theme_program_detail extends Theme {
 
-    function print_page(&$program, &$schedule, &$channel) {
     // Print the main page header
-        parent::print_header("MythWeb - Program Detail:  $program->title");
+        $page_title = "Prog Detail";
+        require_once theme_dir.'header.php';
+
     // Print the page contents
 ?>
-<a href="channel_detail.php?chanid=<?php echo $this_channel->chanid ?>" >
+<a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid ?>" >
 <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?> &nbsp;
 <?php echo prefer_channum ? $this_channel->callsign : $this_channel->channum ?></a><br />
 
@@ -50,11 +50,11 @@ class Theme_program_detail extends Theme {
                 ?><br />
         <?php } ?>
 
-        <form name="program_detail" method="post" action="program_detail.php?<?php
+        <form name="program_detail" method="post" action="<?php echo root ?>tv/detail<?php
             if ($_GET['recordid'])
-                echo 'recordid='.urlencode($_GET['recordid']);
+                echo '?recordid='.urlencode($_GET['recordid']);
             else
-                echo 'chanid='.urlencode($_GET['chanid']).'&starttime='.urlencode($_GET['starttime'])
+                echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime'])
             ?>">
         <center>Schedule Options:</center>
                     <input type="radio" class="radio" name="record" value="record_never" id="record_never"<?php echo $schedule->recordid ? '' : ' CHECKED' ?>></input>
@@ -93,12 +93,12 @@ class Theme_program_detail extends Theme {
         <input type="checkbox" class="radio" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1" />
            <a><?php echo t('Inactive') ?></a><br />
         <?php echo t('No. of recordings to keep') ?>:
-        <input type="input" class="quantity" name="maxepisodes" value="<?php echo html_entities($schedule->maxepisodes) ?>" size="2"/><br />
+        <input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" size="2"/><br />
         <?php echo t('Start Early') ?>:
-        <input type="input" class="quantity" name="startoffset" value="<?php echo html_entities($schedule->startoffset) ?>" size="2"/>
+        <input type="input" class="quantity" name="startoffset" value="<?php echo htmlentities($schedule->startoffset) ?>" size="2"/>
         <?php echo t('minutes') ?><br />
         <?php echo t('End Late') ?>:
-        <input type="input" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>" size="2"/>
+        <input type="input" class="quantity" name="endoffset" value="<?php echo htmlentities($schedule->endoffset) ?>" size="2"/>
         <?php echo t('minutes') ?><br />
         <center><input type="submit" class="submit" name="save" value="Update Settings"></center>
         <br />
@@ -107,8 +107,5 @@ class Theme_program_detail extends Theme {
 
 <?php
     // Print the main page footer
-        parent::print_footer();
-    }
-
-}
+        require_once theme_dir.'footer.php';
 

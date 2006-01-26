@@ -13,13 +13,11 @@
  *
 /**/
 
-class Theme_scheduled_recordings extends Theme {
+        $page_title = 'MythWeb - '.t('Upcoming Recordings');
+        require_once theme_dir.'header.php';
 
-    function print_page(&$shows) {
-    // Print the main page header
-        parent::print_header('MythWeb - Upcoming Recordings');
     // Print the page contents
-        global $All_Shows;
+        global $all_shows;
 
     // Row headers
         echo "\n    <hr />\n",
@@ -31,7 +29,7 @@ class Theme_scheduled_recordings extends Theme {
              "    <table>\n";
 
         $row = 0;
-        foreach ($shows as $show) {
+        foreach ($all_shows as $show) {
             $row++;
             // Set the class to be used to display the recording status character
             $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));
@@ -44,12 +42,12 @@ class Theme_scheduled_recordings extends Theme {
                 case 'WillRecord':
                     $rec_char   = $show->cardid;
                     $class      = 'scheduled';
-                    $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     // Offer to suppress any recordings that have enough info to do so.
                     if (preg_match('/\\S/', $show->title)
                             && (preg_match('/\\S/', $show->programid.$show->subtitle.$show->description))) {
-                        $commands[] = '<a href="scheduled_recordings.php?'
+                        $commands[] = '<a href="'.root.'tv/upcoming?'
                                       .'never_record=yes&'.$urlstr.'">'
                                       .t('Never Record').'</a>';
                     }
@@ -57,18 +55,18 @@ class Theme_scheduled_recordings extends Theme {
                 case 'PreviousRecording':
                     $rec_char   = 'P';
                     $class      = 'duplicate';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?'
+                    $commands[] = '<a href="'.root.'tv/upcoming?'
                                   .'forget_old=yes&'.$urlstr.'">'
                                   .t('Forget Old').'</a>';
                     break;
                 case 'CurrentRecording':
                     $rec_char   = 'R';
                     $class      = 'duplicate';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?'
+                    $commands[] = '<a href="'.root.'tv/upcoming?'
                                   .'forget_old=yes&'.$urlstr.'">'
                                   .t('Forget Old').'</a>';
                     break;
@@ -79,9 +77,9 @@ class Theme_scheduled_recordings extends Theme {
                 case 'EarlierShowing':
                     $rec_char = 'E';
                     $class    = 'deactivated';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'TooManyRecordings':
@@ -91,9 +89,9 @@ class Theme_scheduled_recordings extends Theme {
                 case 'Cancelled':
                     $rec_char   = 'N';
                     $class      = 'deactivated';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'Conflict':
@@ -105,17 +103,17 @@ class Theme_scheduled_recordings extends Theme {
                     $rec_class = implode(' ', array(recstatus_class($show),
                                          'conflicting'));
                     $class      = 'conflict';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     break;
                 case 'LaterShowing':
                     $rec_char = 'L';
                     $class    = 'deactivated';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'LowDiskSpace':
@@ -131,34 +129,34 @@ class Theme_scheduled_recordings extends Theme {
                 case 'Overlap':
                     $rec_char   = 'X';
                     $class      = 'conflict';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     break;
                 case 'ManualOverride':
                     $rec_char   = 'X';
                     $class      = 'deactivated';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'ForceRecord':
                     $rec_char   = 'F';
                     $class      = 'scheduled';
-                    $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?default=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 default:
                     $rec_char   = '&nbsp;';
                     $rec_class  = '';
                     $class      = 'deactivated';
-                    $commands[] = '<a href="scheduled_recordings.php?record=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="scheduled_recordings.php?dontrec=yes&'
+                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     break;
             }
@@ -166,7 +164,7 @@ class Theme_scheduled_recordings extends Theme {
     <tr class='<?php echo $class ?>'><td><?php echo $rec_char ?></td><td>
     <?php
         // Print a link to record this show
-            echo '<a id="program_'.$program_id_counter.'_anchor" href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'"'
+            echo '<a id="program_'.$program_id_counter.'_anchor" href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'"'
                  .'>'.$show->title
                  .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
                  .'</a></td></tr>';
@@ -184,8 +182,5 @@ class Theme_scheduled_recordings extends Theme {
       echo "    </table>\n";
 
 // Print the main page footer
-        parent::print_footer();
-    }
-
-}
+      require_once theme_dir.'footer.php';
 

@@ -7,18 +7,15 @@
 
 \***                                                                        ***/
 
-#class theme_program_detail extends Theme {
-class Theme_recorded_programs extends Theme {
+        $page_title = "MythWeb - ".t('Recorded Programs');
+        require_once theme_dir.'header.php';
 
-    function print_page() {
-    // Print the main page header
-        parent::print_header("MythWeb - Recorded Programs");
     // Print the page contents
         global $All_Shows;
 ?>
 
 <p>
-<form class="form" id="program_titles" action="recorded_programs.php" method="get">
+<form class="form" id="program_titles" action="<?php echo root ?>tv/recorded" method="get">
 <center>
     Recordings<br />
     <select name="title">
@@ -52,8 +49,8 @@ class Theme_recorded_programs extends Theme {
         if ($show->endtime > time()) { ?>
             <font color="#FF0000">currently recording - </font>
 <?php   } ?>
-            <b></b><a id="delete_<?php echo $row ?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename) ?>">Delete </a></b>
-            <b></b><a id="delete_<?php echo $row ?>" href="recorded_programs.php?delete=yes&file=<?php echo urlencode($show->filename) ?>&forget_old">Rerecord</a></b><br />
+            <b></b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&file=<?php echo urlencode($show->filename) ?>">Delete </a></b>
+            <b></b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&file=<?php echo urlencode($show->filename) ?>&forget_old">Rerecord</a></b><br />
 <?php
         echo "<br />";
 
@@ -65,8 +62,4 @@ class Theme_recorded_programs extends Theme {
     echo $GLOBALS['Total_Programs'].' programs, using '.nice_filesize(disk_used).' out of '.nice_filesize(disk_size);
 
     // Print the main page footer
-        parent::print_footer();
-    }
-
-}
-
+        require_once theme_dir.'footer.php';

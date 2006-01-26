@@ -7,22 +7,13 @@
 
 \***                                                                        ***/
 
-class Theme_search extends Theme {
+        // Print the main page header
+        $page_title = 'MythWeb - '.t('Search');
+        require_once theme_dir.'header.php';
 
-    function print_page() {
-    // Print the main page header
-        parent::print_header('MythWeb - Search');
+        global $Results;
     // Print the advanced search header
 
-    // Print any search results
-        $this->print_results();
-    // Print the main page footer
-        parent::print_footer();
-    }
-
-    function print_results() {
-        global $Results;
-    // No search was performed, just return
         if (!is_array($Results))
             return;
     // Search, but nothing found - notify the user
@@ -43,7 +34,7 @@ class Theme_search extends Theme {
         foreach ($Results as $show) {
     // Print the content
         echo $show->channel->name.'<br />';
-        echo '<a href="program_detail.php?chanid='.$show->chanid.'&starttime='.$show->starttime.'">'.$show->title.'</a><br />';
+        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
         if(strlen($show->subtitle))
             echo $show->subtitle.'<br />';
     //  echo $show->description.'<br />';
@@ -52,6 +43,4 @@ class Theme_search extends Theme {
 
             $row++;
         }
-    }
-}
-
+        require_once theme_dir.'footer.php';
