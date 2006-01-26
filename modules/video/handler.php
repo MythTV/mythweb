@@ -43,7 +43,7 @@
 //
     else {
         if ($mythvideo_dir) {
-            $ret = @symlink($dir, 'data/video');
+            $ret = @symlink($mythvideo_dir, 'data/video');
             if (!$ret) {
                 #$Error = "Could not create a symlink to $mythvideo_dir, the local MythVideo"
                 #        .' directory for this hostname ('.hostname.').  Please create a
