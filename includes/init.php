@@ -191,11 +191,11 @@
     require_once "includes/mythbackend.php";
 
 // The browser is MythPhone.
-    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
-        define('Theme', 'vxml');
-    }
+#    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
+#        define('Theme', 'vxml');
+#    }
 // Load theme from session if it exists and the user is not resetting the theme.
-    elseif (file_exists('themes/'.$_SESSION['Theme'].'/theme.php')
+    if (file_exists('themes/'.$_SESSION['Theme'].'/theme.php')
             && !$_REQUEST['RESET_THEME']) {
         define('Theme', $_SESSION['Theme']);
     }
