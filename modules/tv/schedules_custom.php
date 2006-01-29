@@ -49,7 +49,7 @@
     // Which type of recording is this?  Make sure an illegal one isn't specified
         switch ($_POST['record']) {
         // Only certain rectypes are allowed
-            case rectype_once:
+            case rectype_findone:
             case rectype_always:
                 break;
         // Everything else gets ignored
