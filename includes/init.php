@@ -27,9 +27,12 @@
     global $Path;
     $Path = explode('/', preg_replace('/^\/+/',   '',    // Remove leading slashes
                          preg_replace('/[\s]+/', ' ',    // Convert extra whitespace
-                             $_SERVER['PATH_INFO']       // Grab the path info from various different places.
+                                                         // Grab the path info from various different places.
+                             array_key_exists('PATH_INFO', $_SERVER)
+                             && $_SERVER['PATH_INFO']
                                 ? $_SERVER['PATH_INFO']
-                                : ($_ENV['PATH_INFO']
+                                : (array_key_exists('PATH_INFO', $_ENV)
+                                   && $_ENV['PATH_INFO']
                                     ? $_ENV['PATH_INFO']
                                     : $_GET['PATH_INFO']
                                   )
