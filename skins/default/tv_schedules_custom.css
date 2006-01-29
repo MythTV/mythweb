@@ -40,6 +40,32 @@
     width:     24em !important;
 }
 
+#find_date_options {
+    margin: 0px auto;
+}
+#find_date_options dl
+{
+    margin: 5px 10px;
+}
+#find_date_options dl dt {
+    clear:         left;
+    float:         left;
+    width:         13em;
+    margin-bottom: 0.25em;
+    text-align:    right;
+    white-space:   nowrap;
+}
+#find_date_options dl dd {
+    margin-bottom: 0.25em;
+    margin-left:   13.5em;
+}
+#find_date_options select {
+    width: 14em;
+}
+#find_date_options input {
+    width: 13.7em;
+}
+
 #recording_options {
     margin: 0px auto;
 }

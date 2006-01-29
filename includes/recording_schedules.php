@@ -216,9 +216,14 @@ class Schedule {
     // Make sure that recordid is null if it's empty
         if (empty($this->recordid)) {
             $this->recordid = NULL;
-            $this->findday = (date("w", $this->starttime) + 1) % 7;
-            $this->findtime = date("G:i:s", $this->starttime);
-            $this->findid = (date("U", $this->starttime)/60/60/24) + 719528;
+            $this->findid   = (date('U', $this->starttime)/60/60/24) + 719528;
+        // Only auto-default these properties if we're not dealing with a
+        // search-based recording rule, otherwise take the values we
+        // received from the custom schedule input form
+            if (!$this->search) {
+                $this->findday  = (date('w', $this->starttime) + 1) % 7;
+                $this->findtime = date('G:i:s', $this->starttime);
+            }
         }
     // Changing the type of recording
         if ($this->recordid && $this->type && $new_type != $this->type) {
@@ -300,12 +305,15 @@ class Schedule {
  * Delete this schedule
 /**/
     function delete() {
+        global $db;
     // Delete this schedule from the database
-        $result = mysql_query('DELETE FROM record WHERE recordid='.escape($this->recordid))
-            or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
+        $sh = $db->query('DELETE FROM record WHERE recordid=',
+                         $this->recordid);
     // Notify the backend of the changes
-        if (mysql_affected_rows())
+        if ($sh->affected_rows())
             backend_notify_changes($this->recordid);
+    // Finish
+        $sh->finish();
     // Remove this from the $Schedules array in memory
         unset($GLOBALS['Schedules'][$this->recordid]);
     }

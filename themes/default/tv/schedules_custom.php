@@ -71,6 +71,12 @@
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
                         if ($schedule->type == rectype_always) echo ' CHECKED' ?> />
                     <label for="record_always"><?php echo t('rectype-long: always') ?></label></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_finddaily ?>" id="rectype_finddaily"<?php
+                        if ($schedule->type == rectype_finddaily) echo ' CHECKED' ?> />
+                    <label for="rectype_finddaily"><?php echo t('rectype-long: finddaily') ?></label></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findweekly ?>" id="rectype_findweekly"<?php
+                        if($schedule->type == rectype_findweekly) echo ' CHECKED' ?> />
+                    <label for="rectype_findweekly"><?php echo t('rectype-long: findweekly') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="rectype_findone"<?php
                         if ($schedule->type == rectype_findone) echo ' CHECKED' ?> />
                     <label for="rectype_findone"><?php echo t('rectype-long: findone') ?></label></li>
@@ -123,6 +129,16 @@
                     </dd>
             </dl>
 
+        </div>
+
+        <div id="find_date_options">
+            <h3><?php echo t('Find Date & Time Options') ?>:</h3>
+            <dl class="clearfix">
+               <dt><?php echo t('Find Day') ?>:</dt>
+               <dd><?php day_select($schedule->findday) ?></dd>
+               <dt><?php echo t('Find Time') ?>:</dt>
+               <dd><input type="text" name="findtime" value="<?php echo htmlentities($schedule->findtime) ?>" /></dd>
+            </dl>
         </div>
 
         <div id="advanced_options">

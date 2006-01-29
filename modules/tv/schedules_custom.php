@@ -51,6 +51,8 @@
         // Only certain rectypes are allowed
             case rectype_findone:
             case rectype_always:
+            case rectype_finddaily:
+            case rectype_findweekly:
                 break;
         // Everything else gets ignored
             default:
@@ -94,10 +96,17 @@
             $schedule->endtime       = time() + 1;
             $schedule->category      = 'Custom recording';
             $schedule->search        = $_POST['searchtype'];
-            $schedule->findday       = date('w',     $schedule->starttime);
-            $schedule->findtime      = date('H:m:s', $schedule->starttime);
+            $schedule->findday       = $_POST['findday'];
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
             $schedule->transcoder    = $_POST['transcoder'];
+        // Parse the findtime
+            $schedule->findtime      = trim($_POST['findtime']);
+            if ($schedule->findtime) {
+                if (!preg_match('/^\d{1,2}:\d{2}:\d{2}$/', $schedule->findtime))
+                    add_error(t('Find Time must be of the format:  HH:MM:SS'));
+            }
+            else
+                $schedule->findtime = date('H:m:s', $schedule->starttime);
         // Build the special description
             if ($schedule->search == searchtype_power) {
             // Remove any trailing semi colons, and any secondary hackish queries
@@ -243,3 +252,21 @@
         echo '</select>';
     }
 
+/**
+ * Prints a <select> of the various weekdays
+/**/
+    function day_select($day, $name='findday') {
+        $days = array(t('Sunday'),    t('Monday'),   t('Tuesday'),
+                             t('Wednesday'), t('Thursday'), t('Friday'),
+                             t('Saturday'));
+    // Print the list
+        echo "<select name=\"$name\">";
+        foreach ($days as $key => $day) {
+            $key++;
+            echo "<option value=\"$key\"";
+            if ($key == $day)
+                echo ' SELECTED';
+            echo '>'.html_entities($day).'</option>';
+        }
+        echo '</select>';
+    }
