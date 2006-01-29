@@ -18,6 +18,7 @@
     $db->disable_fatal_errors();
     $has_music = $db->query_col('SELECT COUNT(*) FROM musicmetadata');
     $db->enable_fatal_errors();
+    $db->error(false);
 
 // If music is enabled, add it to the list.
     if ($has_music)

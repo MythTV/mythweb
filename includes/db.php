@@ -93,12 +93,20 @@ class Database {
 /**
  *  Fill the error variables
  *
- *  @param string $error    The string to set the error message to
+ *  @param string $error    The string to set the error message to.  Set to
+ *                          false if you want to wipe out the existing errors.
 /**/
     function error($error='') {
-        $this->err   = $this->dbh ? mysql_error($this->dbh) : mysql_error();
-        $this->errno = $this->dbh ? mysql_errno($this->dbh) : mysql_errno();
-        $this->error = ($error ? "$error\n\n" : '')."$this->err [#$this->errno]";
+        if ($error === false) {
+            $this->err   = null;
+            $this->errno = null;
+            $this->error = null;
+        }
+        else {
+            $this->err   = $this->dbh ? mysql_error($this->dbh) : mysql_error();
+            $this->errno = $this->dbh ? mysql_errno($this->dbh) : mysql_errno();
+            $this->error = ($error ? "$error\n\n" : '')."$this->err [#$this->errno]";
+        }
     }
 
 /**

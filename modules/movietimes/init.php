@@ -13,9 +13,8 @@
  *
 /**/
 
-// First, we should check to see that MythVideo is configured.
+// First, we should check to see that the movie times plugin is configured.
     $has_movietimes = false;
-
 
 // If video is enabled, add it to the list.
     if ($has_movietimes)

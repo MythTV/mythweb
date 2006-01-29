@@ -18,6 +18,7 @@
     $db->disable_fatal_errors();
     $has_video = $db->query_col('SELECT COUNT(*) FROM videometadata');
     $db->enable_fatal_errors();
+    $db->error(false);
 
 // If video is enabled, add it to the list.
     if ($has_video)
