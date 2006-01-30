@@ -89,7 +89,7 @@
             $schedule->transcoder  = $_POST['transcoder'];
         // Figure out the title
             $channel = $Channels[$_POST['channel']];
-            if (strcasecmp($_POST['title'], 'use callsign') == 0) {
+            if (strcasecmp($_POST['title'], t('Use callsign')) == 0) {
                 if (prefer_channum)
                     $schedule->title = $channel->channum.' ('.$channel->callsign.')';
                 else
@@ -98,7 +98,7 @@
             else
                 $schedule->title = $_POST['title'];
         // Now the subtitle
-            if (strcasecmp($_POST['subtitle'], 'use datetime') == 0)
+            if (strcasecmp($_POST['subtitle'], t('Use date/time')) == 0)
                 $schedule->subtitle = date('Y-m-d H:i:s', $schedule->starttime)
                                      .' ('.tn('$1 min', '$1 mins', $_POST['length']).')';
             else
@@ -114,8 +114,8 @@
     else {
     // Default title/subtitle
         if (!$schedule->title) {
-            $schedule->title    = 'use callsign';
-            $schedule->subtitle = 'use datetime';
+            $schedule->title    = t('Use callsign');
+            $schedule->subtitle = t('Use date/time');
         }
     // Make sure we have a default rectype
         if (!$schedule->type)

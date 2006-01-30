@@ -207,6 +207,9 @@ $L = array(
     'Keyword'                                    => '',
     'People'                                     => '',
     'Power'                                      => '',
+// modules/tv/schedules_manual.php
+    'Use callsign'  => '',
+    'Use date/time' => '',
 // modules/tv/search.php
     'Please search for something.' => 'Syötä hakulause.',
 // modules/video/init.php
