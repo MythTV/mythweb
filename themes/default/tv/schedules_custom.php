@@ -44,13 +44,13 @@
         }
     // Get the search type
         if (get_element('searchtype_title').checked)
-            get_element('search_type').innerHTML = 'Title';
+            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Title'))) ?>';
         else if (get_element('searchtype_keyword').checked)
-            get_element('search_type').innerHTML = 'Keyword';
+            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Keyword'))) ?>';
         else if (get_element('searchtype_people').checked)
-            get_element('search_type').innerHTML = 'People';
+            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('People'))) ?>';
         else if (get_element('searchtype_power').checked)
-            get_element('search_type').innerHTML = 'Power';
+            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Power'))) ?>';
     }
 
 // -->

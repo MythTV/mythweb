@@ -185,9 +185,10 @@
     // Get the searchtype string
         switch ($schedule->search) {
             case searchtype_power:   $schedule->search_type = t('Power');   break;
-            case searchtype_title:   $schedule->search_type = t('Title');   break;
             case searchtype_keyword: $schedule->search_type = t('Keyword'); break;
             case searchtype_people:  $schedule->search_type = t('People');  break;
+            case searchtype_title:
+            default:                 $schedule->search_type = t('Title');   break;
         }
     }
 
