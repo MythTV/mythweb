@@ -307,7 +307,7 @@ class Schedule {
     function delete() {
         global $db;
     // Delete this schedule from the database
-        $sh = $db->query('DELETE FROM record WHERE recordid=',
+        $sh = $db->query('DELETE FROM record WHERE recordid=?',
                          $this->recordid);
     // Notify the backend of the changes
         if ($sh->affected_rows())
