@@ -170,7 +170,7 @@
                     <a href="<?php echo root ?>status"><?php echo t('Backend Status') ?></a>
 <?php if ($Modules['backend_log']) { ?>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>backend_log"><?php echo ('Backend Logs') ?></a>
+                    <a href="<?php echo root ?>backend_log"><?php echo t('Backend Logs') ?></a>
 <?php } ?>
                 </div></td>
         </tr>
