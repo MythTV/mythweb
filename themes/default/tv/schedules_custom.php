@@ -210,7 +210,8 @@
                 <dd><input type="checkbox" class="radio" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo get_backend_setting('UserJobDesc4') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo t('Auto-expire recordings') ?>:</dt>
+                <dt><?php echo t('Inactive') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1" /></dd>                 <dt><?php echo t('Auto-expire recordings') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo t('Record new and expire old') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1" /></dd>

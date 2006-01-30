@@ -82,6 +82,7 @@
             $schedule->autouserjob2  = $_POST['autouserjob2'] ? 1 : 0;
             $schedule->autouserjob3  = $_POST['autouserjob3'] ? 1 : 0;
             $schedule->autouserjob4  = $_POST['autouserjob4'] ? 1 : 0;
+            $schedule->inactive      = $_POST['inactive']     ? 1 : 0;
             $schedule->maxnewest     = $_POST['maxnewest']    ? 1 : 0;
             $schedule->dupin         = _or($_POST['dupin'],    15);
             $schedule->dupmethod     = _or($_POST['dupmethod'], 6);
