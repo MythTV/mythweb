@@ -135,7 +135,7 @@
                 $schedule->subtitle    = '';
             }
         // Figure out the title
-            $schedule->title = _or($_POST['title'], $schedule->description).' ('.$schedule->search_type.' Search)';
+            $schedule->title = _or($_POST['title'], $schedule->description).' ('.t('$1 Search', $schedule->search_type).')';
         // Only save if there are no errors
             if (!errors()) {
             // Save the schedule
@@ -183,10 +183,10 @@
         }
     // Get the searchtype string
         switch ($schedule->search) {
-            case searchtype_power:   $schedule->search_type = 'Power';   break;
-            case searchtype_title:   $schedule->search_type = 'Title';   break;
-            case searchtype_keyword: $schedule->search_type = 'Keyword'; break;
-            case searchtype_people:  $schedule->search_type = 'People';  break;
+            case searchtype_power:   $schedule->search_type = t('Power');   break;
+            case searchtype_title:   $schedule->search_type = t('Title');   break;
+            case searchtype_keyword: $schedule->search_type = t('Keyword'); break;
+            case searchtype_people:  $schedule->search_type = t('People');  break;
         }
     }
 

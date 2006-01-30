@@ -19,6 +19,7 @@ $L = array(
 // Warning, any custom comments will be lost during translation updates.
 //
 // Shared Terms
+    '$1 Search'                                          => '',
     '$1 hr'                                              => '$1 tunti',
     '$1 hrs'                                             => '$1 tuntia',
     '$1 min'                                             => '$1 minuutti',
@@ -203,6 +204,9 @@ $L = array(
     'Any Channel'                                => 'Mikä Tahansa Kanava',
     'Any Program Type'                           => 'Mikä Tahansa Ohjelmatyyppi',
     'Find Time must be of the format:  HH:MM:SS' => '',
+    'Keyword'                                    => '',
+    'People'                                     => '',
+    'Power'                                      => '',
 // modules/tv/search.php
     'Please search for something.' => 'Syötä hakulause.',
 // modules/video/init.php

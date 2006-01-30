@@ -14,6 +14,7 @@ $L = array(
 // Warning, any custom comments will be lost during translation updates.
 //
 // Shared Terms
+    '$1 Search'                                          => '',
     '$1 hr'                                              => '$1h',
     '$1 hrs'                                             => '$1h',
     '$1 min'                                             => '$1 min',
@@ -198,6 +199,9 @@ $L = array(
     'Any Channel'                                => 'Alla kanaler',
     'Any Program Type'                           => 'Alla programtyper',
     'Find Time must be of the format:  HH:MM:SS' => '',
+    'Keyword'                                    => '',
+    'People'                                     => '',
+    'Power'                                      => '',
 // modules/tv/search.php
     'Please search for something.' => 'Välj något att söka efter.',
 // modules/video/init.php

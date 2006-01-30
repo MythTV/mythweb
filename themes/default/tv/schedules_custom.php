@@ -113,7 +113,7 @@
             <dl id="title_options">
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
                 <dd><input type="text" name="title" value="<?php echo html_entities($schedule->edit_title) ?>" size="24">
-                    (<span id="search_type"><?php echo $schedule->search_type ?></span> Search)</dd>
+                    (<span id="search_type"><?php echo t('$1 Search', $schedule->search_type) ?></span>)</dd>
             </dl>
             <dl id="standard_options"<?php if ($schedule->search == searchtype_power) echo ' class="hidden"' ?>>
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
