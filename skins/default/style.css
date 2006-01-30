@@ -75,12 +75,12 @@ label:hover { color: #F0F000; text-decoration: underline; }
 dl.details_list {
     font-size:  9pt;
     margin:     .125em;
-    max-width:  40em;
+    max-width:  41em;
 }
 dl.details_list dt {
     clear:       left;
     float:       left;
-    width:       8em;
+    width:       9em;
     padding-top: 3px;
     text-align:  right;
     color:       #ffe;
@@ -88,7 +88,7 @@ dl.details_list dt {
 }
 dl.details_list dd {
     padding-top: 3px;
-    margin-left: 8.5em;
+    margin-left: 9.5em;
 }
 
 /* a class for the the cells containing settings in the various settings files */
