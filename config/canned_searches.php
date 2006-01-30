@@ -31,13 +31,13 @@ $Canned_Searches = array(
         => "hdtv=1",
 
     "Non-Music Specials"
-        => "showtype='special' AND category NOT LIKE 'music%'",
+        => "showtype='special' AND program.category NOT LIKE 'music%'",
 
     "Music Specials"
-        => "showtype='special' AND category LIKE 'music%'",
+        => "showtype='special' AND program.category LIKE 'music%'",
 
     "Science Fiction Movies"
-        => "category_type='".movie_word."' AND category='science fiction'",
+        => "category_type='".movie_word."' AND program.category='science fiction'",
 
     );
 
