@@ -14,7 +14,7 @@ $L = array(
 // Warning, any custom comments will be lost during translation updates.
 //
 // Shared Terms
-    '$1 Search'                                          => '',
+    '$1 Search'                                          => 'Búsqueda $1',
     '$1 hr'                                              => '$1 hr',
     '$1 hrs'                                             => '$1 hrs',
     '$1 min'                                             => '$1 min',
@@ -52,18 +52,18 @@ $L = array(
     'Inactive'                                           => 'Inactivo',
     'Jump'                                               => 'Saltar',
     'Jump to'                                            => 'Saltar a',
-    'Keyword'                                            => '',
+    'Keyword'                                            => 'Palabra clave',
     'Listings'                                           => 'Listados',
     'Monday'                                             => 'Lunes',
-    'Music'                                              => 'Msica',
+    'Music'                                              => 'Música',
     'Never Record'                                       => 'Nunca grabar',
     'No'                                                 => 'No',
     'No. of recordings to keep'                          => 'Nº de grabaciones a guardar',
     'None'                                               => 'Ninguna',
     'Only New Episodes'                                  => 'Sólo nuevos episodios',
     'Original Airdate'                                   => 'Emisión original',
-    'People'                                             => '',
-    'Power'                                              => '',
+    'People'                                             => 'Gente',
+    'Power'                                              => 'Avanzada',
     'Previous recordings'                                => 'Grabaciones anteriores',
     'Program Listing'                                    => 'Listado Programas',
     'Rating'                                             => 'Puntuación',
@@ -201,10 +201,10 @@ $L = array(
     'Any Category'                               => 'Cualquier Categoría',
     'Any Channel'                                => 'Cualquier Canal',
     'Any Program Type'                           => 'Cualquier Tipo de Programa',
-    'Find Time must be of the format:  HH:MM:SS' => '',
+    'Find Time must be of the format:  HH:MM:SS' => 'Hora Búsqueda debe tener el formato: HH:MM:SS',
 // modules/tv/schedules_manual.php
-    'Use callsign'  => '',
-    'Use date/time' => '',
+    'Use callsign'  => 'Usar nombre canal',
+    'Use date/time' => 'Usar fecha/hora',
 // modules/tv/search.php
     'Please search for something.' => 'Busque algo',
 // modules/video/init.php
@@ -212,7 +212,7 @@ $L = array(
 // themes/default/backend_log/backend_log.php
     'Backend Logs' => 'Logs Backend',
 // themes/default/backend_log/welcome.php
-    'welcome: backend_log' => '',
+    'welcome: backend_log' => 'bienvenido: log backend',
 // themes/default/header.php
     'Category Legend'                            => 'Leyenda Categoría',
     'Category Type'                              => 'Tipo Categoría',
@@ -234,7 +234,7 @@ $L = array(
     'Searches'                                   => 'Búsquedas',
     'TV functions, including recorded programs.' => 'Funciones TV, incluyendo programas grabados',
 // themes/default/movietimes/welcome.php
-    'welcome: movietimes' => '',
+    'welcome: movietimes' => 'bienvenido: movietimes',
 // themes/default/music/music.php
     'Album'               => 'Álbum',
     'Album (filtered)'    => 'Álbum (filtrado)',
@@ -339,7 +339,7 @@ $L = array(
 // themes/default/tv/list.php
     'Jump To' => 'Saltar a',
 // themes/default/tv/list_cell_nodata.php
-    'NO DATA' => '',
+    'NO DATA' => 'SIN DATOS',
 // themes/default/tv/recorded.php
     '$1 episode'                                          => '$1 episodio',
     '$1 episodes'                                         => '$1 episodios',
@@ -370,9 +370,9 @@ $L = array(
     'type'                                      => 'tipo',
 // themes/default/tv/schedules_custom.php
     'Additional Tables'        => 'Tablas adicionales',
-    'Find Date & Time Options' => '',
-    'Find Day'                 => '',
-    'Find Time'                => '',
+    'Find Date & Time Options' => 'Opciones Búsqueda Fecha y Hora',
+    'Find Day'                 => 'Buscar Día',
+    'Find Time'                => 'Buscar Hora',
     'Keyword Search'           => 'Búsqueda palabras',
     'People Search'            => 'Búsqueda gente',
     'Power Search'             => 'Búsqueda avanzada',
