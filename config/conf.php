@@ -98,10 +98,6 @@
 */
     define('show_recorded_pixmaps', true);
 
-// Height and width of generated pixmaps (for now, these are fixed - please do not change these numbers)
-    define('pixmap_width',  160);
-    define('pixmap_height', 120);
-
 /*
 
     The following constants are defined for the videos page

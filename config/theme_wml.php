@@ -47,10 +47,6 @@
 */
     define('theme_show_recorded_pixmaps', false);
 
-// Height and width of generated pixmaps (for now, these are fixed - please do not change these numbers)
-    define('theme_pixmap_width',  160);
-    define('theme_pixmap_height', 120);
-
 // height and width of generated pixmaps for video thumbnails
     define('theme_video_img_width',  94);
     define('theme_video_img_height', 140);

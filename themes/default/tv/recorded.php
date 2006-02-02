@@ -250,8 +250,9 @@ if ($group_field == "") {
         if (show_recorded_pixmaps) {
             echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
+                list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
                 echo '<a href="'.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
-                    .'<img id="'.$show->filename."\" src=\"".root.cache_dir.'/'.basename($show->filename).'.png" width="'.pixmap_width.'" height="'.pixmap_height.'" border="0">'
+                    .'<img id="'.$show->filename."\" src=\"".root.cache_dir.'/'.basename($show->filename).'.png" '.$attr.' border="0">'
                     .'</a>';
             }
             else
