@@ -123,7 +123,8 @@
                                                       ));
             // Run a test query
                 $db->disable_fatal_errors();
-                $sh = $db->query('SELECT NULL FROM program, channel'.$schedule->subtitle.' WHERE '.$schedule->description);
+                $sh = $db->query('SELECT NULL FROM program, channel'.str_replace('?', '\\?', $schedule->subtitle)
+                                .' WHERE '.str_replace('?', '\\?', $schedule->description));
                 $db->enable_fatal_errors();
                 if ($db->error) {
                     add_error("There is an error in your custom SQL query:\n\n"
