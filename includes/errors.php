@@ -1,15 +1,18 @@
 <?php
-/*
- *  $Date$
- *  $Revision$
- *  $Author$
+/**
+ * Alternate constants for user-invoked errors.
+ * Changes error_reporting().
+ * User-defined error handler.
  *
- *  errors.php
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
  *
- *  alternate constants for user-invoked errors
- *  changes error_reporting
- *  user-defined error handler
- */
+ * @package     MythWeb
+ *
+/**/
 
 // Probably already loaded, but it *is* used by this library
     require_once 'includes/errordisplay.php';
@@ -25,18 +28,15 @@
 // Reconfigure the error handler to use our own routine
     set_error_handler('Error_Handler');
 
-/*
-    This user-defined error handler supports the built-in error_reporting()
-    function, and is basically just an expansion of the built-in error-
-    handling routine.  If it receives a fatal error (E_USER_ERROR or E_ERROR),
-    it prints a more reassuring message to the viewer of the page and sends an
-    XML-formatted email message to the address stored in error_email, which
-    is defined in conf.php.
-*/
+/**
+ * This user-defined error handler supports the built-in error_reporting()
+ * function, and is basically just an expansion of the built-in error-
+ * handling routine.  If it receives a fatal error (E_USER_ERROR or E_ERROR),
+ * it prints a more reassuring message to the viewer of the page and sends an
+ * XML-formatted email message to the address stored in error_email, which
+ * is defined in conf.php.
+/**/
     function Error_Handler ($errno, $errstr, $errfile, $errline, $vars) {
-    // Try to auto-repair damaged SQL tables - don't report errors from this query
-        if (preg_match("/Incorrect key file for table: '(\\w+)'/", $errstr, $match))
-            @mysql_query('REPAIR TABLE '.$match[1]);
     // Don't die on so-called fatal regex errors
         if (preg_match("/Got error '(.+?)' from regexp/", $errstr, $match)) {
             add_error('Regular Expression Error:  '.$match[1]);
@@ -50,52 +50,87 @@
                             16  =>  'Core Error',       64   =>  'Compile Error',
                             128 =>  'Compile Warning',  256  =>  'User Error',
                             512 =>  'User Warning',     1024 =>  'User Notice');
+    // Generate an error message that can be emailed to the administrator
+        $err  =  '    datetime:  '.date("Y-m-d H:i:s (T)")."\n"
+                .'    errornum:  '.$errno                 ."\n"
+                .'  error type:  '.$errortype[$errno]     ."\n"
+                .'error string:  '.$errstr                ."\n"
+                .'    filename:  '.$errfile               ."\n"
+                .'  error line:  '.$errline               ."\n";
     // Fatal errors should report considerably more detail
-        if ($errno == E_USER_ERROR || $errno == E_ERROR) {
-        // Generate an xml-based error message that can be emailed to the administrator
-            $err  =  '    datetime:  '.date("Y-m-d H:i:s (T)")."\n"
-                    ."    errornum:  $errno\n"
-                    .'  error type:  '.$errortype[$errno]."\n"
-                    ."error string:  $errstr\n"
-                    ."    filename:  $errfile\n"
-                    ."  error line:  $errline\n\n"
-                    ."VARIABLES:\n\n";
+        if (in_array($errno, array(E_USER_ERROR, E_USER_WARNING, E_USER_NOTICE))) {
         // We need to use an output buffer to capture the value of the variables
-            if (in_array($errno, array(E_USER_ERROR, E_USER_WARNING, E_USER_NOTICE))) {
-                ob_start();
-            // print out some global stuff since we can't print out all of the variables
-                echo "GET:\n";
-                print_r($_GET);
-                echo "POST:\n";
-                print_r($_POST);
-                echo "SESSION:\n";
-                print_r($_SESSION);
-                echo "SERVER:\n";
-                print_r($_SERVER);
-            ### stupid recursive objects break non-cutting-edge versions of php
-                #print_r($vars);
-                $err .= ob_get_contents();
-                ob_end_clean();
+            ob_start();
+        // Print a backtrace
+            echo "\n==========================================================================\n\n";
+            echo "Backtrace: \n\n";
+            $backtrace = debug_backtrace();
+            array_shift($backtrace);
+            foreach ($backtrace as $layer) {
+                foreach (array('file', 'line', 'class', 'function', 'type', 'args') as $key) {
+                    $val = $layer[$key];
+                    echo str_repeat(' ', max(8-strlen($key), 0)), "$key:  ";
+                    if (is_array($val) || is_object($val))
+                        print_r($val);
+                    else
+                        echo "$val\n";
+                }
+                echo "\n";
             }
+        // print out some global stuff since we can't print out all of the variables
+            if (!empty($_GET)) {
+                echo "\n==========================================================================\n\n"
+                    .'$_GET: ';
+                print_r($_GET);
+            }
+            if (!empty($_POST)) {
+                echo "\n==========================================================================\n\n"
+                    .'$_POST: ';
+                print_r($_POST);
+            }
+            if (!empty($_SESSION)) {
+                echo "\n==========================================================================\n\n"
+                    .'$_SESSION: ';
+                print_r($_SESSION);
+            }
+            if (!empty($_SERVER)) {
+                echo "\n==========================================================================\n\n"
+                    .'$_SERVER: ';
+                print_r($_SERVER);
+            }
+        ### stupid recursive objects break non-cutting-edge versions of php
+            #echo "\n==========================================================================\n\n"
+            #    ."vars:\n";
+            #print_r($vars);
+        // Gather the results into a string
+            $err .= ob_get_contents();
+            ob_end_clean();
+        // Cleanup
+            $err = preg_replace('/Array\s+\(\s+\)\n+/', "Array ( )\n", $err);
             $err .= "\n\n";
         // Email the error to the website's error mailbox
-            if (strstr(error_email, '@'))
-                mail(error_email, "FATAL Error in $errfile, line $errline" , $err,
-                     'From:  PHP Error <'.error_email.">\n");
+            if (strstr(error_email, '@')) {
+                mail(error_email,
+                     "FATAL Error in $errfile, line $errline",
+                     $err,
+                     'From:  MythWeb PHP Error <'.error_email.">\n");
+            }
         // Print out a nice error page for the user
-            echo "<hr /><b>Fatal Error</b> at $errfile, line $errline:<BR>$errstr<p>"
-                ."The system administrator has been notified and the problem will be remedied shortly.<hr />";
+            echo "<hr><p><b>Fatal Error</b> at $errfile, line $errline:<br />$errstr</p>\n",
+                 '<p>If you choose to ',
+                 '<a href="https://svn.mythtv.org/trac/newticket" target="_blank">submit a bug report</a>, ',
+                 'please make sure to include a<br />',
+                 'brief description of what you were doing, along with the following<br />',
+                 'backtrace as an attachment (please don\'t paste the whole thing into<br />',
+                 "the ticket).\n",
+                 "<hr>\n",
+                 "<b>Details</b>:<br />\n<pre>", htmlentities($err), '</pre>';
         // Exit
             exit;
         }
     // Otherwise, just report the error
-        echo "<hr /><b>Error</b><p>\n"
-            ."The system administrator has been notified and the problem will be remedied shortly.\n<hr />\n"
-            ."<hr /><b>" . $errortype[$errno] . "</b> at $errfile, line $errline:<BR>$errstr <hr />\n";
-    // Email errors, but not warnings
-        if (strstr(error_email, '@') && ($errno == E_USER_WARNING || $errno == E_WARNING))
-            mail(error_email, "Error in $errfile, line $errline" ,
-                 $errortype[$errno] . " at $errfile, line $errline:\n\n$errstr",
-                 'From:  PHP Error <'.error_email.">\n");
+        echo "<hr><p><b>Error</b> at $errfile, line $errline:<br />$errstr</p>\n",
+             "<hr>\n",
+             "<b>Details</b>:<br />\n<pre>", htmlentities($err), '</pre>';
     }
 
