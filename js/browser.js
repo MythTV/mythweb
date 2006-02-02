@@ -270,8 +270,8 @@
                            '   If has_plugin = true Then Exit Do'       + '\n' +
                            '   plugin_version = plugin_version - 1'     + '\n' +
                            'Loop'                                       + '\n' +
-                           'browser.v_' + var_name + ' = playerversion' + '\n' +
-                           'browser.'   + var_name + ' = has_plugin'    + '\n' +
+                           'browser.v_' + prop + ' = playerversion'     + '\n' +
+                           'browser.'   + prop + ' = has_plugin'        + '\n' +
                            '<\/sc' + 'ript>'
                           );
         }
