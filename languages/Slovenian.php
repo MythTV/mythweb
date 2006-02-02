@@ -28,6 +28,7 @@ $L = array(
     'Auto-expire recordings'                             => 'Snemanja avto-preteka',
     'Auto-flag commercials'                              => 'Avto-označi reklame',
     'Auto-transcode'                                     => '',
+    'Backend Logs'                                       => '',
     'Backend Status'                                     => 'Status Backenda',
     'Cancel this schedule.'                              => 'Prekliči ta plan',
     'Category'                                           => 'Kategorija',
@@ -133,6 +134,16 @@ $L = array(
     'rectype: weekly'                                    => 'tedensko',
     'subtitle'                                           => 'Podnaslov',
     'title'                                              => 'Naslov',
+// config/canned_searches.php
+    'All HDTV'                           => '',
+    'Movies'                             => '',
+    'Movies, 3&frac12; Stars or more'    => '',
+    'Movies, Stinkers (2 Stars or less)' => '',
+    'Music Specials'                     => '',
+    'New Titles, Premieres'              => '',
+    'Non-Music Specials'                 => '',
+    'Non-Series HDTV'                    => '',
+    'Science Fiction Movies'             => '',
 // includes/programs.php
     'CC'                           => '',
     'HDTV'                         => '',
@@ -209,8 +220,6 @@ $L = array(
     'Please search for something.' => 'Prosim poiščite kaj',
 // modules/video/init.php
     'Video' => '',
-// themes/default/backend_log/backend_log.php
-    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => '',
 // themes/default/header.php

@@ -29,6 +29,7 @@ $L = array(
     'Auto-expire recordings'                             => '',
     'Auto-flag commercials'                              => '',
     'Auto-transcode'                                     => '',
+    'Backend Logs'                                       => '',
     'Backend Status'                                     => '',
     'Cancel this schedule.'                              => '',
     'Category'                                           => '',
@@ -134,6 +135,16 @@ $L = array(
     'rectype: weekly'                                    => 'Weekly',
     'subtitle'                                           => '',
     'title'                                              => '',
+// config/canned_searches.php
+    'All HDTV'                           => '',
+    'Movies'                             => '',
+    'Movies, 3&frac12; Stars or more'    => '',
+    'Movies, Stinkers (2 Stars or less)' => '',
+    'Music Specials'                     => '',
+    'New Titles, Premieres'              => '',
+    'Non-Music Specials'                 => '',
+    'Non-Series HDTV'                    => '',
+    'Science Fiction Movies'             => '',
 // includes/programs.php
     'CC'                           => '',
     'HDTV'                         => '',
@@ -210,8 +221,6 @@ $L = array(
     'Please search for something.' => '',
 // modules/video/init.php
     'Video' => '',
-// themes/default/backend_log/backend_log.php
-    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => 'Show the server logs.',
 // themes/default/header.php

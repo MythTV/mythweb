@@ -1,14 +1,16 @@
 <?php
-
-    //
-    //  This file is part of MythWeb,
-    //  a php-based interface into MythTV.
-    //
-    //  (c) 2002 by Thor Sigvaldason and Isaac Richards
-    //  MythWeb is distributed under the
-    //  GNU GENERAL PUBLIC LICENSE version 2
-    //  (see http://www.gnu.org)
-    //
+/**
+ * Configuration options for the MythWeb WML theme
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 /*
 

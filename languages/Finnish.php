@@ -33,6 +33,7 @@ $L = array(
     'Auto-expire recordings'                             => 'Aut. vanheneminen',
     'Auto-flag commercials'                              => 'Aut. mainosten merkkaus',
     'Auto-transcode'                                     => 'Automaattinen jälkikäsittely',
+    'Backend Logs'                                       => 'Palvelimen Lokit',
     'Backend Status'                                     => 'Palvelimen Tila',
     'Cancel this schedule.'                              => 'Peruuta nauhoitus',
     'Category'                                           => 'Kategoria',
@@ -138,6 +139,16 @@ $L = array(
     'rectype: weekly'                                    => 'Viikottain',
     'subtitle'                                           => 'Jakson nimi',
     'title'                                              => 'Nimike',
+// config/canned_searches.php
+    'All HDTV'                           => '',
+    'Movies'                             => '',
+    'Movies, 3&frac12; Stars or more'    => '',
+    'Movies, Stinkers (2 Stars or less)' => '',
+    'Music Specials'                     => '',
+    'New Titles, Premieres'              => '',
+    'Non-Music Specials'                 => '',
+    'Non-Series HDTV'                    => '',
+    'Science Fiction Movies'             => '',
 // includes/programs.php
     'CC'                           => 'Tekstitys',
     'HDTV'                         => 'Tarkkapiirto',
@@ -214,8 +225,6 @@ $L = array(
     'Please search for something.' => 'Syötä hakulause.',
 // modules/video/init.php
     'Video' => 'Videot',
-// themes/default/backend_log/backend_log.php
-    'Backend Logs' => 'Palvelimen Lokit',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => 'tervetuloa: lokit',
 // themes/default/header.php

@@ -28,6 +28,7 @@ $L = array(
     'Auto-expire recordings'                             => 'Auto-udløb optagelser',
     'Auto-flag commercials'                              => 'Marker automatisk reklamer',
     'Auto-transcode'                                     => 'Auto-Transkode',
+    'Backend Logs'                                       => '',
     'Backend Status'                                     => 'System status',
     'Cancel this schedule.'                              => 'Annuller denne optagelse',
     'Category'                                           => 'Kategori',
@@ -133,6 +134,16 @@ $L = array(
     'rectype: weekly'                                    => 'Ugentligt',
     'subtitle'                                           => 'undertitel',
     'title'                                              => 'titel',
+// config/canned_searches.php
+    'All HDTV'                           => '',
+    'Movies'                             => '',
+    'Movies, 3&frac12; Stars or more'    => '',
+    'Movies, Stinkers (2 Stars or less)' => '',
+    'Music Specials'                     => '',
+    'New Titles, Premieres'              => '',
+    'Non-Music Specials'                 => '',
+    'Non-Series HDTV'                    => '',
+    'Science Fiction Movies'             => '',
 // includes/programs.php
     'CC'                           => '',
     'HDTV'                         => '',
@@ -209,8 +220,6 @@ $L = array(
     'Please search for something.' => 'Søg efter noget',
 // modules/video/init.php
     'Video' => 'Video',
-// themes/default/backend_log/backend_log.php
-    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => '',
 // themes/default/header.php

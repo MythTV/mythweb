@@ -28,6 +28,7 @@ $L = array(
     'Auto-expire recordings'                             => 'Automaticky vypršet nahrávky',
     'Auto-flag commercials'                              => 'Automaticky značkovat reklamy',
     'Auto-transcode'                                     => 'Automaticky překódovávat',
+    'Backend Logs'                                       => '',
     'Backend Status'                                     => 'Stav backendu',
     'Cancel this schedule.'                              => 'Zrušit tento rozvrh',
     'Category'                                           => 'Kategorie',
@@ -133,6 +134,16 @@ $L = array(
     'rectype: weekly'                                    => 'Týdně',
     'subtitle'                                           => 'podtitul',
     'title'                                              => 'název',
+// config/canned_searches.php
+    'All HDTV'                           => '',
+    'Movies'                             => '',
+    'Movies, 3&frac12; Stars or more'    => '',
+    'Movies, Stinkers (2 Stars or less)' => '',
+    'Music Specials'                     => '',
+    'New Titles, Premieres'              => '',
+    'Non-Music Specials'                 => '',
+    'Non-Series HDTV'                    => '',
+    'Science Fiction Movies'             => '',
 // includes/programs.php
     'CC'                           => '',
     'HDTV'                         => '',
@@ -209,8 +220,6 @@ $L = array(
     'Please search for something.' => '',
 // modules/video/init.php
     'Video' => '',
-// themes/default/backend_log/backend_log.php
-    'Backend Logs' => '',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => 'Show the server logs.',
 // themes/default/header.php

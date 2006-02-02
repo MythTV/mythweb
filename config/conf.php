@@ -1,17 +1,20 @@
 <?php
-/*
- *  $Date$
- *  $Revision$
- *  $Author$
+/**
+ * Global configuration for MythWeb.
  *
- *  conf.php
+ * All end-user customizations (should?) happen here
+ * Most of this should really by in a MySQL table with
+ * a php interface to change it (someday...)
  *
- *    Global configuration for MythWeb.
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
  *
- *    All end-user customizations (should?) happen here
- *    Most of this should really by in a MySQL table with
- *    a php interface to change it (someday...)
-/*/
+ * @package     MythWeb
+ *
+/**/
 
 // The domain of this webserver, for cookie validation and other things.  This
 //  *should* work automatically as-is, but if cookies don't work, you may need

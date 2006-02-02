@@ -28,6 +28,7 @@ $L = array(
     'Auto-expire recordings'                             => '自動削除',
     'Auto-flag commercials'                              => 'CM自動検知',
     'Auto-transcode'                                     => '自動トランスコード',
+    'Backend Logs'                                       => 'バックエンドログ',
     'Backend Status'                                     => 'バックエンドステータス',
     'Cancel this schedule.'                              => 'この予約をキャンセルする',
     'Category'                                           => 'カテゴリー',
@@ -133,6 +134,16 @@ $L = array(
     'rectype: weekly'                                    => '毎週',
     'subtitle'                                           => 'サブタイトル',
     'title'                                              => 'タイトル',
+// config/canned_searches.php
+    'All HDTV'                           => '',
+    'Movies'                             => '',
+    'Movies, 3&frac12; Stars or more'    => '',
+    'Movies, Stinkers (2 Stars or less)' => '',
+    'Music Specials'                     => '',
+    'New Titles, Premieres'              => '',
+    'Non-Music Specials'                 => '',
+    'Non-Series HDTV'                    => '',
+    'Science Fiction Movies'             => '',
 // includes/programs.php
     'CC'                           => '',
     'HDTV'                         => '',
@@ -209,8 +220,6 @@ $L = array(
     'Please search for something.' => '検索する文字を入力してください。',
 // modules/video/init.php
     'Video' => 'ビデオ',
-// themes/default/backend_log/backend_log.php
-    'Backend Logs' => 'バックエンドログ',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => 'バックエンドログようこそ！',
 // themes/default/header.php

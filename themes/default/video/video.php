@@ -1,6 +1,6 @@
 <?php
 /**
- * Handy predefined searches
+ * Rudimentary interface to MythVideo data
  *
  * @url         $URL$
  * @date        $Date$

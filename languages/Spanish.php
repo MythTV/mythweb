@@ -28,6 +28,7 @@ $L = array(
     'Auto-expire recordings'                             => 'Autoexpirar grabaciones',
     'Auto-flag commercials'                              => 'Automarcar anuncios',
     'Auto-transcode'                                     => 'Auto-recodificar',
+    'Backend Logs'                                       => 'Logs Backend',
     'Backend Status'                                     => 'Estado backend',
     'Cancel this schedule.'                              => 'Cancelar programación',
     'Category'                                           => 'Categoría',
@@ -133,6 +134,16 @@ $L = array(
     'rectype: weekly'                                    => 'rectype: semanal',
     'subtitle'                                           => 'subtítulo',
     'title'                                              => 'título',
+// config/canned_searches.php
+    'All HDTV'                           => '',
+    'Movies'                             => '',
+    'Movies, 3&frac12; Stars or more'    => '',
+    'Movies, Stinkers (2 Stars or less)' => '',
+    'Music Specials'                     => '',
+    'New Titles, Premieres'              => '',
+    'Non-Music Specials'                 => '',
+    'Non-Series HDTV'                    => '',
+    'Science Fiction Movies'             => '',
 // includes/programs.php
     'CC'                           => '',
     'HDTV'                         => 'HDTV',
@@ -209,8 +220,6 @@ $L = array(
     'Please search for something.' => 'Busque algo',
 // modules/video/init.php
     'Video' => 'Vídeo',
-// themes/default/backend_log/backend_log.php
-    'Backend Logs' => 'Logs Backend',
 // themes/default/backend_log/welcome.php
     'welcome: backend_log' => 'bienvenido: log backend',
 // themes/default/header.php
