@@ -1,13 +1,16 @@
 <?php
-/*
- *  $Date$
- *  $Revision$
- *  $Author$
+/**
+ * This file contains a number of error-display related routines.
  *
- *  errordisplay.php
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
  *
- *  This file contains a number of error-display related routines
- */
+ * @package     MythWeb
+ *
+/**/
 
 // These are arrays that will contain error messages
     global $Errors, $Warnings;

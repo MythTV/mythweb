@@ -1,10 +1,17 @@
 <?php
-/***                                                                        ***\
-    mouseovers.php                           Last Updated: 2005.01.21 (xris)
-
-    This allows you to create inline help items - popup tables linked to
-    mouseover events.  It requires the mouseovers.js file
-\***                                                                        ***/
+/**
+ * This allows you to create inline help items - popup tables linked to
+ * mouseover events.  It requires the mouseovers.js file.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 // Enable/Disable help messages
     if ($_GET['show_help'] == 'yes' || $_POST['show_help'] == 'yes')

@@ -1,13 +1,16 @@
 <?php
-/*
- *  $Date$
- *  $Revision$
- *  $Author$
+/**
+ * Make sure the database is at the most recent version
  *
- *  db_update.php
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
  *
- *  Make sure the database is at the most recent version
-/*/
+ * @package     MythWeb
+ *
+/**/
 
 // What *should* the database version be?
     define('WebDBSchemaVer', 1);
@@ -42,3 +45,4 @@
             #    $db_vers++;
         }
     }
+
