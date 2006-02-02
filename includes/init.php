@@ -80,6 +80,14 @@
         fix_magic_quotes($_SERVER);
     }
 
+// No MySQL libraries installed in PHP
+    if (true || !function_exists('mysql_connect')) {
+        $Error = "Please install the MySQL libraries for PHP.\n"
+                .'The package is usually called something like php-mysql.';
+        require_once 'templates/_error.php';
+        exit;
+    }
+
 // No database connection info defined?
     if (empty($_SERVER['db_server']) || empty($_SERVER['db_name']) || empty($_SERVER['db_login'])) {
         require_once 'templates/_db_vars_error.php';

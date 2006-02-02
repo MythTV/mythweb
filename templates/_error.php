@@ -12,7 +12,7 @@
 <h2>Error</h2>
 
 <p>
-<?php echo html_entities($Error) ?>
+<?php echo nl2br(html_entities($Error)) ?>
 </p>
 
 </div>
