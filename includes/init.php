@@ -81,7 +81,7 @@
     }
 
 // No MySQL libraries installed in PHP
-    if (true || !function_exists('mysql_connect')) {
+    if (!function_exists('mysql_connect')) {
         $Error = "Please install the MySQL libraries for PHP.\n"
                 .'The package is usually called something like php-mysql.';
         require_once 'templates/_error.php';
