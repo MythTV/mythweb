@@ -442,7 +442,9 @@ $L = array(
     'Wind'               => 'Viento',
     'Wind Chill'         => 'Sensación',
 // themes/default/weather/welcome.php
-    'welcome: weather' => 'bienvenido: el tiempo'
+    'welcome: weather' => 'bienvenido: el tiempo',
+// themes/default/welcome.php
+    'Visit $1' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

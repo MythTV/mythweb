@@ -442,7 +442,9 @@ $L = array(
     'Wind'               => 'Wind',
     'Wind Chill'         => 'Voeltemp. Wind',
 // themes/default/weather/welcome.php
-    'welcome: weather' => 'Uw lokale weerbericht'
+    'welcome: weather' => 'Uw lokale weerbericht',
+// themes/default/welcome.php
+    'Visit $1' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

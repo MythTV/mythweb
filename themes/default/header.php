@@ -46,7 +46,7 @@
 
 <div id="page_header" class="clearfix">
     <div id="logo_box">
-        <a id="mythtv_logo" href="http://www.mythtv.org">
+        <a id="mythtv_logo" href="<?php echo root ?>">
         <img src="<?php echo theme_url ?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
         </a>
     </div>

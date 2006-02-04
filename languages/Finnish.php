@@ -447,7 +447,9 @@ $L = array(
     'Wind'               => 'Tuuli',
     'Wind Chill'         => 'Tuulen Viileys',
 // themes/default/weather/welcome.php
-    'welcome: weather' => 'tervetuloa: säätila'
+    'welcome: weather' => 'tervetuloa: säätila',
+// themes/default/welcome.php
+    'Visit $1' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

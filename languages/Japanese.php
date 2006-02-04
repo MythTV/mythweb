@@ -442,7 +442,9 @@ $L = array(
     'Wind'               => '風',
     'Wind Chill'         => '体感温度',
 // themes/default/weather/welcome.php
-    'welcome: weather' => '天気へようこそ！'
+    'welcome: weather' => '天気へようこそ！',
+// themes/default/welcome.php
+    'Visit $1' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

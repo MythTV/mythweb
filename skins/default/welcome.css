@@ -53,3 +53,10 @@
     display: block;
     margin: auto;
 }
+
+#mythtv_link {
+    float:          left;
+    width:          14em;
+    text-align:     center;
+    margin-top:     -1.5em;
+}

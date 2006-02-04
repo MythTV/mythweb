@@ -443,7 +443,9 @@ $L = array(
     'Wind'               => '',
     'Wind Chill'         => '',
 // themes/default/weather/welcome.php
-    'welcome: weather' => ''
+    'welcome: weather' => '',
+// themes/default/welcome.php
+    'Visit $1' => ''
 // End of the translation hash ** Do not touch the next line
           );
 

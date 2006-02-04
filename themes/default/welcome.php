@@ -75,8 +75,11 @@
 ?>
     </div>
 
-</div>
+    <div id="mythtv_link">
+        <a href="http://www.mythtv.org/"><?php echo t('Visit $1', 'MythTV.org') ?></a>
+    </div>
 
+</div>
 
 <?php
 // Print the page footer

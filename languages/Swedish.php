@@ -442,7 +442,9 @@ $L = array(
     'Wind'               => 'Vind',
     'Wind Chill'         => 'Vindkyleffekt',
 // themes/default/weather/welcome.php
-    'welcome: weather' => 'Hämta lokal väderprognos.'
+    'welcome: weather' => 'Hämta lokal väderprognos.',
+// themes/default/welcome.php
+    'Visit $1' => ''
 // End of the translation hash ** Do not touch the next line
           );
 
