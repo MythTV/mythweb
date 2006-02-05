@@ -32,9 +32,9 @@
             $sql = 'SELECT * FROM channel WHERE';
         $sql .= ' channel.visible=1';
     // Group and sort
-        $sql .= ' GROUP BY channum, callsign ORDER BY '
-                .(sortby_channum ? '' : 'callsign, ')
-                .'(channum + 0), chanid';
+        $sql .= ' GROUP BY channel.chanid ORDER BY '
+                .(sortby_channum ? '' : 'channel.callsign, ')
+                .'(channel.channum + 0), channel.chanid';
     // Query
         $result = mysql_query($sql)
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
