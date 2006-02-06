@@ -14,7 +14,7 @@ $L = array(
 // Warning, any custom comments will be lost during translation updates.
 //
 // Shared Terms
-    '$1 Search'                                          => '',
+    '$1 Search'                                          => '$1 Suche',
     '$1 hr'                                              => '$1 Std.',
     '$1 hrs'                                             => '$1 Std.',
     '$1 min'                                             => '$1 Min.',
@@ -28,7 +28,7 @@ $L = array(
     'Auto-expire recordings'                             => 'Aufnahmen autom. löschen',
     'Auto-flag commercials'                              => 'Werbung markieren',
     'Auto-transcode'                                     => 'autom. Umwandeln',
-    'Backend Logs'                                       => '',
+    'Backend Logs'                                       => 'Backend Logs',
     'Backend Status'                                     => 'Backend Status',
     'Cancel this schedule.'                              => 'Aufnahme abbrechen',
     'Category'                                           => 'Kategorie',
@@ -36,7 +36,7 @@ $L = array(
     'Create Schedule'                                    => 'Speichern',
     'Current recordings'                                 => 'Aktuelle Aufnahmen',
     'Currently Browsing:  $1'                            => 'Aktuell: $1',
-    'Custom Schedule'                                    => '',
+    'Custom Schedule'                                    => 'Erweiterte Aufnahmeregel',
     'Date'                                               => 'Datum',
     'Default'                                            => 'Standard',
     'Description'                                        => 'Beschreibung',
@@ -53,7 +53,7 @@ $L = array(
     'Inactive'                                           => 'Inaktiv',
     'Jump'                                               => 'Gehe',
     'Jump to'                                            => 'Gehe zu',
-    'Keyword'                                            => '',
+    'Keyword'                                            => 'Schl�sselwort',
     'Listings'                                           => 'TV Programm',
     'Monday'                                             => 'Montag',
     'Music'                                              => 'Musik',
@@ -63,8 +63,8 @@ $L = array(
     'None'                                               => 'Keine',
     'Only New Episodes'                                  => 'Nur neue Folgen',
     'Original Airdate'                                   => 'Produktion',
-    'People'                                             => '',
-    'Power'                                              => '',
+    'People'                                             => 'Leute',
+    'Power'                                              => 'freie Suche',
     'Previous recordings'                                => 'Alte Aufnahmen',
     'Program Listing'                                    => 'TV Programm',
     'Rating'                                             => 'Freigegeben ab',
@@ -99,7 +99,7 @@ $L = array(
     'Tuesday'                                            => 'Dienstag',
     'Type'                                               => 'Typ',
     'Unknown'                                            => 'Unbekannt',
-    'Upcoming Recordings'                                => '',
+    'Upcoming Recordings'                                => 'Aufnahmeplan',
     'Update'                                             => 'Aktualisieren',
     'Update Recording Settings'                          => 'Speichern',
     'Weather'                                            => 'Wetter',
@@ -113,7 +113,7 @@ $L = array(
     'length'                                             => 'Dauer',
     'minutes'                                            => 'Minuten',
     'recgroup'                                           => 'Aufnahmegruppe',
-    'recpriority'                                        => 'Aufnahme- priorität',
+    'recpriority'                                        => 'Aufnahmepriorität',
     'rectype-long: always'                               => 'Jede Ausstrahlung aufnehmen',
     'rectype-long: channel'                              => 'Jede Ausstrahlung auf Sender $1 aufnehmen',
     'rectype-long: daily'                                => 'Täglich aufnehmen',
@@ -135,29 +135,29 @@ $L = array(
     'subtitle'                                           => 'Untertitel',
     'title'                                              => 'Titel',
 // config/canned_searches.php
-    'All HDTV'                           => '',
-    'Movies'                             => '',
-    'Movies, 3&frac12; Stars or more'    => '',
-    'Movies, Stinkers (2 Stars or less)' => '',
-    'Music Specials'                     => '',
-    'New Titles, Premieres'              => '',
+    'All HDTV'                           => 'Sendungen in HDTV',
+    'Movies'                             => 'Spielfilme',
+    'Movies, 3&frac12; Stars or more'    => 'Spielfilme, 3&frac12; und mehr Sterne',
+    'Movies, Stinkers (2 Stars or less)' => 'Spielfilme, Langweiler (2 und weniger Sterne)',
+    'Music Specials'                     => 'Musiksendungen',
+    'New Titles, Premieres'              => 'Neue Sendungen, Erstausstrahlungen',
     'Non-Music Specials'                 => '',
-    'Non-Series HDTV'                    => '',
-    'Science Fiction Movies'             => '',
+    'Non-Series HDTV'                    => 'HDTV, keine Serien',
+    'Science Fiction Movies'             => 'Science-Fiction Filme',
 // includes/programs.php
-    'CC'                           => '',
-    'HDTV'                         => '',
+    'CC'                           => 'CC',
+    'HDTV'                         => 'HDTV',
     'Notes'                        => 'Hinweis',
-    'Part $1 of $2'                => '',
-    'Stereo'                       => '',
-    'Subtitled'                    => '',
+    'Part $1 of $2'                => 'Teil $1 von $2',
+    'Stereo'                       => 'Stereo',
+    'Subtitled'                    => 'mit Untertitel',
     'recstatus: cancelled'         => 'Abgebrochen',
     'recstatus: conflict'          => 'Konflikt',
     'recstatus: currentrecording'  => 'aktuelle Aufnahme',
     'recstatus: deleted'           => 'Gelöscht',
     'recstatus: earliershowing'    => 'frühere Ausstrahlung',
     'recstatus: force_record'      => 'Sonderoption',
-    'recstatus: inactive'          => '',
+    'recstatus: inactive'          => 'Inaktiv',
     'recstatus: latershowing'      => 'spätere Ausstrahlung',
     'recstatus: lowdiskspace'      => 'kein Speicherplatz',
     'recstatus: manualoverride'    => 'manuell blockiert',
@@ -175,7 +175,7 @@ $L = array(
 // includes/recording_schedules.php
     'Dup Method'                   => 'Methode für Wdhgn.',
     'Profile'                      => 'Profil',
-    'Sub and Desc (Empty matches)' => 'Untertitel & Beschr. (leere Ergebnisse)',
+    'Sub and Desc (Empty matches)' => 'Untertitel & Beschr. (kein Ergebnis)',
     'rectype: finddaily'           => 'Suche Täglich',
     'rectype: findweekly'          => 'Suche Wöchentlich',
 // includes/utils.php
@@ -185,16 +185,16 @@ $L = array(
     '$1 MB' => '$1 MB',
     '$1 TB' => '$1 TB',
 // modules/backend_log/init.php
-    'Logs' => '',
+    'Logs' => 'Logs',
 // modules/movietimes/init.php
-    'Movie Times' => '',
+    'Movie Times' => 'Kinoprogramm',
 // modules/settings/init.php
-    'MythTV channel info'      => '',
-    'MythTV key bindings'      => '',
-    'MythWeb session settings' => '',
-    'settings'                 => '',
+    'MythTV channel info'      => 'MythTV Senderinformationen',
+    'MythTV key bindings'      => 'MythTV Tastaturbelegung',
+    'MythWeb session settings' => 'MythWeb Session Einstellungen',
+    'settings'                 => 'Einstellungen',
 // modules/status/init.php
-    'Status' => '',
+    'Status' => 'Status',
 // modules/stream/init.php
     'Streaming' => '',
 // modules/tv/detail.php
@@ -203,33 +203,32 @@ $L = array(
     'Unknown Recording Schedule.'                                               => 'Unbekannter Aufnahmeplan',
 // modules/tv/init.php
     'Special Searches' => '',
-    'TV'               => '',
+    'TV'               => 'TV',
 // modules/tv/recorded.php
-    'No matching programs found.'             => '',
-    'Showing all programs from the $1 group.' => '',
-    'Showing all programs.'                   => '',
+    'No matching programs found.'             => 'Keine passenden Sendungen gefunden.',
+    'Showing all programs from the $1 group.' => 'Zeige alle Sendungen in der $1 Gruppe.',
+    'Showing all programs.'                   => 'Zeige alle Sendungen.',
 // modules/tv/schedules_custom.php
-    'Any Category'                               => '',
-    'Any Channel'                                => '',
-    'Any Program Type'                           => '',
+    'Any Category'                               => 'Jede Kategorie',
+    'Any Channel'                                => 'Jeder Sender',
+    'Any Program Type'                           => 'Jeder Programmtyp',
     'Find Time must be of the format:  HH:MM:SS' => '',
-// modules/tv/schedules_manual.php
-    'Use callsign'  => '',
-    'Use date/time' => '',
+    'Use callsign'  => 'Kurzname verwenden',
+    'Use date/time' => 'Datum/Uhrzeit verwenden',
 // modules/tv/search.php
     'Please search for something.' => 'Bitte suchen Sie nach etwas.',
 // modules/video/init.php
-    'Video' => '',
+    'Video' => 'Video',
 // themes/default/backend_log/welcome.php
-    'welcome: backend_log' => '',
+    'welcome: backend_log' => 'Backend Log',
 // themes/default/header.php
     'Category Legend'                            => 'Kategorien',
     'Category Type'                              => 'Kategorietyp',
-    'Custom'                                     => '',
+    'Custom'                                     => 'freie Planung',
     'Edit MythWeb and some MythTV settings.'     => 'Einstellungen für MythWeb & MythTV ändern',
     'Exact Match'                                => 'Exakte Übereinstimmung',
     'HD Only'                                    => 'nur in HDTV',
-    'Manual'                                     => '',
+    'Manual'                                     => 'Manuell',
     'MythMusic on the web.'                      => 'MythMusic',
     'MythVideo on the web.'                      => 'MythVideo',
     'MythWeb Weather.'                           => 'Wettervorhersage',
@@ -243,7 +242,7 @@ $L = array(
     'Searches'                                   => 'Suchen',
     'TV functions, including recorded programs.' => 'TV Funktionen incl. allen Aufnahmen',
 // themes/default/movietimes/welcome.php
-    'welcome: movietimes' => '',
+    'welcome: movietimes' => 'Kinoprogramm',
 // themes/default/music/music.php
     'Album'               => 'Album',
     'Album (filtered)'    => 'Album (gefiltert)',
@@ -263,7 +262,7 @@ $L = array(
     'Track Name'          => 'Titel',
     'Unfiltered'          => 'ungefiltert',
 // themes/default/music/welcome.php
-    'welcome: music' => '',
+    'welcome: music' => 'Musik',
 // themes/default/settings/channels.php
     'Configure Channels'                                                                                                                 => 'Sender einrichten',
     'Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality.' => 'Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.',
@@ -278,10 +277,10 @@ $L = array(
     'hue'                                                                                                                                => 'Farbton',
     'name'                                                                                                                               => 'Name',
     'sourceid'                                                                                                                           => 'Source ID',
-    'useonairguide'                                                                                                                      => '',
+    'useonairguide'                                                                                                                      => 'DVB-EPG Daten verwenden',
     'videofilters'                                                                                                                       => 'Wiedergabefilter',
     'visible'                                                                                                                            => 'Sichtbar',
-    'xmltvid'                                                                                                                            => '',
+    'xmltvid'                                                                                                                            => 'XMLTV ID',
 // themes/default/settings/keys.php
     'Action'                => 'Aktion',
     'Configure Keybindings' => 'Tastenbelegung konfigurieren',
@@ -300,7 +299,7 @@ $L = array(
     'Language'                        => 'Sprache',
     'Listing &quot;Jump to&quot;'     => 'TV Programm &quot;Gehe zu&quot;',
     'Listing Time Key'                => '',
-    'MythWeb Session Settings'        => '',
+    'MythWeb Session Settings'        => 'MythWeb Session Einstellungen',
     'MythWeb Theme'                   => 'MythWeb Thema',
     'Only display favourite channels' => 'Nur Favoriten anzeigen',
     'Reset'                           => 'Zurücksetzen',
@@ -313,11 +312,11 @@ $L = array(
 // themes/default/settings/settings.php
     'settings: overview' => 'Einstellungen: Übersicht',
 // themes/default/settings/welcome.php
-    'welcome: settings' => '',
+    'welcome: settings' => 'Einstellungen',
 // themes/default/status/welcome.php
-    'welcome: status' => '',
+    'welcome: status' => 'Status',
 // themes/default/tv/channel.php
-    'Channel Detail' => '',
+    'Channel Detail' => 'Details zum Sender',
     'Length'         => 'Dauer',
     'Show'           => 'Sendung',
     'Time'           => 'Zeit',
@@ -327,20 +326,20 @@ $L = array(
     'Cast'                                => 'Besetzung',
     'Directed by'                         => 'Regie',
     'Don\'t record this program.'         => 'Diese Sendung nicht aufnehmen',
-    'Episode Number'                      => '',
+    'Episode Number'                      => 'Folge Nummer',
     'Exec. Producer'                      => 'Produzent',
     'Find other showings of this program' => 'Andere Termine dieser Sendung finden',
     'Find showings of this program'       => 'Termine dieser Sendung finden',
     'Google'                              => 'Google',
     'Guest Starring'                      => 'Gaststar',
-    'Guide rating'                        => '',
+    'Guide rating'                        => 'EPG Bewertung',
     'Hosted by'                           => '',
-    'MythTV Status'                       => '',
-    'Possible conflicts with this show'   => '',
+    'MythTV Status'                       => 'MythTV Status',
+    'Possible conflicts with this show'   => 'Mögliche Konflikte mit dieser Sendung',
     'Presented by'                        => 'Präsentiert von',
     'Produced by'                         => 'Produzent',
     'Program Detail'                      => 'Programmdetails',
-    'Program ID'                          => '',
+    'Program ID'                          => 'Programm ID',
     'TV.com'                              => 'TV.com',
     'Time Stretch Default'                => 'Zeitraffer Vorgabewert',
     'What else is on at this time?'       => 'Was läuft noch zu dieser Zeit?',
@@ -348,13 +347,13 @@ $L = array(
 // themes/default/tv/list.php
     'Jump To' => 'Gehe zu',
 // themes/default/tv/list_cell_nodata.php
-    'NO DATA' => '',
+    'NO DATA' => 'Kein Programm verfügbar',
 // themes/default/tv/recorded.php
     '$1 episode'                                          => '$1 Folge',
     '$1 episodes'                                         => '$1 Folgen',
     '$1 recording'                                        => '$1 Aufnahme',
     '$1 recordings'                                       => '$1 Aufnahmen',
-    'All groups'                                          => '',
+    'All groups'                                          => 'Alle Gruppen',
     'Are you sure you want to delete the following show?' => 'Diese Aufnahme wirklich löschen?',
     'Delete'                                              => 'Löschen',
     'Delete $1'                                           => 'Lösche &quot;$1&quot;',
@@ -378,27 +377,27 @@ $L = array(
     'transcoder'                                => 'Umwandlungsprofil',
     'type'                                      => 'Modus',
 // themes/default/tv/schedules_custom.php
-    'Additional Tables'        => '',
-    'Find Date & Time Options' => '',
-    'Find Day'                 => '',
-    'Find Time'                => '',
-    'Keyword Search'           => '',
-    'People Search'            => '',
-    'Power Search'             => '',
-    'Search Phrase'            => '',
-    'Search Type'              => '',
-    'Title Search'             => '',
+    'Additional Tables'        => 'zus. Tabellen',
+    'Find Date & Time Options' => 'Finde Datum & Zeit Optionen',
+    'Find Day'                 => 'Finde Tag',
+    'Find Time'                => 'Finde Zeit',
+    'Keyword Search'           => 'Suche nach Schlüsselwort',
+    'People Search'            => 'Suche nach Darsteller',
+    'Power Search'             => 'Erweiterte Suche',
+    'Search Phrase'            => 'Suchtext',
+    'Search Type'              => 'Suchtyp',
+    'Title Search'             => 'Titel Suche',
 // themes/default/tv/schedules_manual.php
     'Channel'      => 'Sender',
     'Length (min)' => 'Dauer (Min.)',
     'Start Date'   => 'Datum',
     'Start Time'   => 'Uhrzeit',
 // themes/default/tv/search.php
-    'No matches found'                 => 'Keine Übereinstimmungen gefunden',
-    'No matching programs were found.' => '',
+    'No matches found'                 => 'Nichts gefunden',
+    'No matching programs were found.' => 'Keine passenden Sendungen gefunden.',
     'Search for:  $1'                  => 'Suche nach: $1',
 // themes/default/tv/searches.php
-    'Handy Predefined Searches' => '',
+    'Handy Predefined Searches' => 'Handy: Vordefinierte Suchabfragen',
     'handy: overview'           => 'Handy: Übersicht',
 // themes/default/tv/upcoming.php
     'Commands'    => 'Optionen',
@@ -407,7 +406,7 @@ $L = array(
     'Duplicates'  => 'Wiederholungen',
     'Scheduled'   => 'Geplant',
 // themes/default/tv/welcome.php
-    'welcome: tv' => '',
+    'welcome: tv' => 'TV',
 // themes/default/video/video.php
     'Edit'          => 'Bearbeiten',
     'Reverse Order' => 'Umsortieren',
@@ -420,7 +419,7 @@ $L = array(
     'rating'        => 'Bewertung',
     'year'          => 'Jahr',
 // themes/default/video/welcome.php
-    'welcome: video' => '',
+    'welcome: video' => 'Video',
 // themes/default/weather/weather.php
     ' at '               => ' um ',
     'Current Conditions' => 'Das aktuelle Wetter',
@@ -442,9 +441,9 @@ $L = array(
     'Wind'               => 'Windgeschwindigkeit',
     'Wind Chill'         => 'gefühlte Temperatur',
 // themes/default/weather/welcome.php
-    'welcome: weather' => '',
+    'welcome: weather' => 'Wetter',
 // themes/default/welcome.php
-    'Visit $1' => ''
+    'Visit $1' => 'Besuche $1'
 // End of the translation hash ** Do not touch the next line
           );
 
@@ -462,8 +461,8 @@ $Categories['Action']         = array('Action',             '\\b(?:action|adven|
 $Categories['Adult']          = array('Erwachsene',         '\\b(?:adult|erot)');
 $Categories['Animals']        = array('Tiere',              '\\b(?:animal|tiere)');
 $Categories['Art_Music']      = array('Kunst/Musik',        '\\b(?:art|dance|musi[ck]|kunst|[ck]ultur|rock|volksmusik|jazz|videos)');
-$Categories['Business']       = array('Wirtschaft',         '\\b(?:biz|busine)');
-$Categories['Children']       = array('Kinder',             '\\b(?:child|kin?d|infan|animation|jugend)');
+$Categories['Business']       = array('Wirtschaft',         '\\b(?:wirtschaft|biz|busine)');
+$Categories['Children']       = array('Kinder',             '\\b(?:child|kind|infan|animation|jugend|zeichentrick|puppentrick)');
 $Categories['Comedy']         = array('Comedy',             '\\b(?:comed|entertain|sitcom|ulk)');
 $Categories['Crime_Mystery']  = array('Krimi/Mystery',      '\\b(?:[ck]rim|myster)');
 $Categories['Documentary']    = array('Dokumentation',      '\\b(?:do[ck]|gesellschaft)');
@@ -484,7 +483,7 @@ $Categories['Science_Nature'] = array('Wissenschaft/Natur', '\\b(?:science|natur
 $Categories['Shopping']       = array('Shopping',           '\\b(?:shop)');
 $Categories['Soaps']          = array('Serien',             '\\b(?:soap|reihe|serie)');
 $Categories['Spiritual']      = array('Spiritual',          '\\b(?:spirit|relig)');
-$Categories['Sports']         = array('Sport',              '\\b(?:sport|deportes|futbol|fussball)');
+$Categories['Sports']         = array('Sport',              '\\b(?:sport|fussball|fußball|wm|em)');
 $Categories['Talk']           = array('Talk',               '\\b(?:talk|interview)');
 $Categories['Travel']         = array('Reisen',             '\\b(?:travel|reisen|touris|auto)');
 $Categories['War']            = array('Krieg',              '\\b(?:war|krieg)');
