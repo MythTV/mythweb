@@ -135,15 +135,15 @@ $L = array(
     'subtitle'                                           => 'subtítulo',
     'title'                                              => 'título',
 // config/canned_searches.php
-    'All HDTV'                           => '',
-    'Movies'                             => '',
-    'Movies, 3&frac12; Stars or more'    => '',
-    'Movies, Stinkers (2 Stars or less)' => '',
-    'Music Specials'                     => '',
-    'New Titles, Premieres'              => '',
-    'Non-Music Specials'                 => '',
-    'Non-Series HDTV'                    => '',
-    'Science Fiction Movies'             => '',
+    'All HDTV'                           => 'Todas HDTV',
+    'Movies'                             => 'Películas',
+    'Movies, 3&frac12; Stars or more'    => 'Películas, 3&frac12; estrellas o más',
+    'Movies, Stinkers (2 Stars or less)' => 'Películas, 2 estrellas o menos',
+    'Music Specials'                     => 'Especiales Música',
+    'New Titles, Premieres'              => 'Nuevos Títulos, Estrenos',
+    'Non-Music Specials'                 => 'Especiales No-Música',
+    'Non-Series HDTV'                    => 'No series en HDTV',
+    'Science Fiction Movies'             => 'Películas Ciencia Ficción',
 // includes/programs.php
     'CC'                           => '',
     'HDTV'                         => 'HDTV',
@@ -444,7 +444,7 @@ $L = array(
 // themes/default/weather/welcome.php
     'welcome: weather' => 'bienvenido: el tiempo',
 // themes/default/welcome.php
-    'Visit $1' => ''
+    'Visit $1' => 'Visite $1'
 // End of the translation hash ** Do not touch the next line
           );
 
