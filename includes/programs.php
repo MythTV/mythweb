@@ -124,14 +124,16 @@
                                    "&frac12;", "")) AS starstring,
                          IFNULL(programrating.system, "") AS rater,
                          IFNULL(programrating.rating, "") AS rating,
-                         oldrecorded.recstatus
+                         oldrecorded.recstatus,channel.channum
                   FROM program
                        LEFT JOIN programrating USING (chanid, starttime)
                        LEFT JOIN oldrecorded
-                                 ON LENGTH(IFNULL(oldrecorded.seriesid, "")) > 0
-                                    AND LENGTH(IFNULL(oldrecorded.programid, "")) > 0
-                                    AND oldrecorded.programid = program.programid
-                                    AND oldrecorded.seriesid  = program.seriesid
+                                 ON oldrecorded.programid = program.programid
+                                    AND oldrecorded.seriesid = program.seriesid
+                                    AND (oldrecorded.recstatus = -3
+                                        OR ((LENGTH(IFNULL(oldrecorded.seriesid, "")) > 0
+                                        AND LENGTH(IFNULL(oldrecorded.programid, "")) > 0)))
+                       LEFT JOIN channel ON program.chanid = channel.chanid
                  WHERE';
     // Only loading a single channel worth of information
         if ($chanid > 0)
@@ -166,8 +168,8 @@
             if (!$data['chanid'])
                 continue;
         // This program has already been loaded, and is attached to a recording schedule
-            if ($Scheduled_Recordings[$data['chanid']][$data['starttime_unix']]) {
-                $program =& $Scheduled_Recordings[$data['chanid']][$data['starttime_unix']][0];
+            if ($Scheduled_Recordings[$data['channum']][$data['starttime_unix']]) {
+                $program =& $Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0];
             }
         // Otherwise, create a new instance of the program
             else {
@@ -299,8 +301,6 @@ class Program {
             #$this->inputid        = $data[19];
             $this->recpriority     = $data[20];
             $this->recstatus       = $data[21];
-            $this->conflicting     = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
-            $this->recording       = ($this->recstatus == 'WillRecord'); # scheduled to record?
             $this->recordid        = $data[22];
             $this->rectype         = $data[23];
             $this->dupin           = $data[24];
@@ -366,8 +366,11 @@ class Program {
             }
         }
     // Turn recstatus into a word
-        if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus])
+        if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus]) {
             $this->recstatus = $GLOBALS['RecStatus_Types'][$this->recstatus];
+            $this->conflicting = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
+            $this->recording   = ($this->recstatus == 'WillRecord'); # scheduled to record?
+        }
     // No longer a null column, so check for blank entries
         if ($this->airdate == '0000-00-00')
             $this->airdate = NULL;
