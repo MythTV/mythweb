@@ -230,6 +230,7 @@ $L = array(
     'Edit MythWeb and some MythTV settings.'     => '',
     'Exact Match'                                => '',
     'HD Only'                                    => '',
+    'Fold Showings'                              => '',
     'Manual'                                     => '',
     'MythMusic on the web.'                      => '',
     'MythVideo on the web.'                      => '',

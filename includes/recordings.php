@@ -123,7 +123,7 @@ class Recording {
         // No channel data?  Load it
             global $Channels;
             if (!is_array($Channels) || !count($Channels))
-                load_all_channels($this->chanid);
+                load_all_channels();
         // Now we really should scan the $Channel array and add a link to this recording's channel
             foreach (array_keys($Channels) as $key) {
                 if ($Channels[$key]->chanid == $this->chanid) {

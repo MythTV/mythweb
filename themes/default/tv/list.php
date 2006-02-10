@@ -100,6 +100,7 @@
 
         $timeslot_anchor    = 0;
         $channel_count      = 0;
+        $displayed_channels = array();
 
     // Go through each channel and load/print its info - use references to avoid "copy" overhead
 
@@ -111,6 +112,10 @@
             if ($channel->visible == 0) {
                 continue;
             }
+        // Skip already-displayed channels
+            if ($displayed_channels[$channel->channum])
+                continue;
+            $displayed_channels[$channel->channum] = 1;
         // Display the timeslot bar?
             if ($channel_count % timeslotbar_skip == 0) {
             // Update the timeslot anchor

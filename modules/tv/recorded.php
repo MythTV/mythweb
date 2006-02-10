@@ -13,6 +13,9 @@
  *
 /**/
 
+// Populate the $Channels array
+    load_all_channels();
+
 // Make sure the recordings directory exists
     if (file_exists('data/recordings')) {
     // File is not a directory or a symlink

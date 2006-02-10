@@ -60,10 +60,15 @@ require_once theme_dir.'header.php';
 
         // Go through each channel and load/print its info - use references to avoid "copy" overhead
         $channel_count = 0;
+        $displayed_channels = array();
         foreach (array_keys($Channels) as $key) {
         // Ignore channels with no number
             if (strlen($Channels[$key]->channum) < 1)
                 continue;
+        // Skip already-displayed channels
+            if ($displayed_channels[$Channels[$key]->channum])
+                continue;
+            $displayed_channels[$Channels[$key]->channum] = 1;
         // Count this channel
             $channel_count++;
         // Grab the reference

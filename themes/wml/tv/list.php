@@ -110,6 +110,7 @@ Enter Channel:<br />
             if (($page * $page_size) < count($Channels)) echo ' <a href="'.root.'tv/list?listbycallsign=y&amp;page='.($page + 1).$prev_query.'">next &gt;</a>';
             echo "<br />";
 
+            $displayed_channels = array();
             foreach (array_keys($Channels) as $key) {
 
                 $row++;
@@ -123,6 +124,11 @@ Enter Channel:<br />
                 if (strlen($Channels[$key]->channum) < 1) {
                     continue;
                 }
+
+                // Skip already-displayed channels
+                if ($displayed_channels[$Channels[$key]->channum])
+                    continue;
+                $displayed_channels[$Channels[$key]->channum] = 1;
 
                 echo "<a href='".root."tv/channel/".$Channels[$key]->chanid."'>".$Channels[$key]->callsign."</a><br /> ";
 

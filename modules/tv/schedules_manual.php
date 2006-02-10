@@ -172,10 +172,16 @@
     function channel_select($chanid) {
         global $Channels;
         echo '<select name="channel">';
+        $seen = array();
         foreach ($Channels as $channel) {
         // Ignore invisible channels
             if ($channel->visible == 0)
                 continue;
+        // Group by channum
+            if ($seen[$channel->channum])
+                continue;
+            $seen[$channel->channum] = $channel;
+
         // Print the option
             echo '<option value="'.$channel->chanid.'"';
         // Selected?

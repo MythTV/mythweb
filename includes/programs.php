@@ -124,15 +124,20 @@
                                    "&frac12;", "")) AS starstring,
                          IFNULL(programrating.system, "") AS rater,
                          IFNULL(programrating.rating, "") AS rating,
-                         oldrecorded.recstatus,channel.channum
+                         oldrecorded.recstatus,
+                         channel.channum
                   FROM program
                        LEFT JOIN programrating USING (chanid, starttime)
                        LEFT JOIN oldrecorded
-                                 ON oldrecorded.programid = program.programid
-                                    AND oldrecorded.seriesid = program.seriesid
-                                    AND (oldrecorded.recstatus = -3
-                                        OR ((LENGTH(IFNULL(oldrecorded.seriesid, "")) > 0
-                                        AND LENGTH(IFNULL(oldrecorded.programid, "")) > 0)))
+                                 ON oldrecorded.recstatus IN (-3, 11)
+                                    AND IF(LENGTH(IFNULL(oldrecorded.programid, "")) > 0
+                                             OR LENGTH(IFNULL(oldrecorded.seriesid, "")) > 0,
+                                           oldrecorded.programid = program.programid
+                                             AND oldrecorded.seriesid = program.seriesid,
+                                           oldrecorded.title = program.title
+                                             AND oldrecorded.subtitle = program.subtitle
+                                             AND oldrecorded.description = program.description
+                                          )
                        LEFT JOIN channel ON program.chanid = channel.chanid
                  WHERE';
     // Only loading a single channel worth of information
@@ -379,7 +384,7 @@ class Program {
         // No channel data?  Load it
             global $Channels;
             if (!is_array($Channels) || !count($Channels))
-                load_all_channels($this->chanid);
+                load_all_channels();
         // Now we really should scan the $Channel array and add a link to this program's channel
             foreach (array_keys($Channels) as $key) {
                 if ($Channels[$key]->chanid == $this->chanid) {

@@ -164,15 +164,31 @@
         if (empty($Results))
             $Results = array();
 
+    // Group $Results by channum
+        $seen = array();
+        foreach( $Results as $dex => $row ) {
+            $uniquer = $row->programid . $row->starttime . $row->channel->channum;
+            if( isset($seen[$uniquer]) ) {
+                unset( $Results[$dex] );
+            } else {
+                $seen[$uniquer] = $dex;
+            }
+        }
+
     // Remove dups from the results if requested
         if ($nodups) {
             $seen = array();        // program ids already seen
             foreach( $Results as $dex => $row ) {
-                $uniquer = $row->programid . $row->chanid;
+                $uniquer = $row->programid . $row->channel->channum;
                 if( $seen[$uniquer] ) {
                     // add a new field to the old row
-                    $Results[$seen[$uniquer]]->extra_showings[] =
-                                $row->starttime;
+                    if ($row->starttime != $Results[$seen[$uniquer]]->starttime &&
+                            (!is_array($Results[$seen[$uniquer]]->extra_showings) ||
+                            !in_array($row->starttime,
+                            $Results[$seen[$uniquer]]->extra_showings))) {
+                        $Results[$seen[$uniquer]]->extra_showings[] =
+                            $row->starttime;
+                    }
                     unset( $Results[$dex] );
                 } else {
                     $seen[$uniquer] = $dex;

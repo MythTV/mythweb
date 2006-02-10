@@ -115,7 +115,7 @@
     <td><?php echo $show->description ?></td>
     <td><?php echo $show->channel->channum.' - '.$show->channel->name ?></td>
     <td nowrap><?php
-            echo '<br /><a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
+            echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if( $show->extra_showings )
                 foreach( $show->extra_showings as $showtime )
