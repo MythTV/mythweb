@@ -132,8 +132,8 @@
                             <a onclick="get_element('search_hd').checked=get_element('search_hd').checked ? false : true;"><?php echo t('HD Only') ?></a>
                         </div>
                         <div>
-                            <input type="checkbox" class="radio" id="nodups" name="nodups" value="1"<?php echo $_SESSION['search']['nodups'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('nodups').checked=get_element('nodups').checked ? false : true;"><?php echo t('Fold Showings') ?></a>
+                            <input type="checkbox" class="radio" id="fold_dups" name="fold_dups" value="1"<?php echo $_SESSION['search']['fold_dups'] ? ' CHECKED' : '' ?>>
+                            <a onclick="get_element('fold_dups').checked=get_element('fold_dups').checked ? false : true;"><?php echo t('Fold Showings') ?></a>
                         </div>
                     </div>
 

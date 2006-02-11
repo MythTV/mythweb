@@ -51,9 +51,8 @@
         $_SESSION['search']['search_exact'] = _or($_GET['search_exact'], $_POST['search_exact']);
     if ($_GET['search_hd'] || $_POST['search_hd'])
         $_SESSION['search']['search_hd'] = _or($_GET['search_hd'], $_POST['search_hd']);
-
-// Flags that apply in all cases
-    $nodups = _or($_GET['nodups'], $_POST['nodups']);
+    if ($_GET['fold_dups'] || $_POST['fold_dups'])
+        $_SESSION['search']['fold_dups'] = _or($_GET['fold_dups'], $_POST['fold_dups']);
 
 // Start the query
     $search_name = '';
@@ -76,9 +75,6 @@
     // Find the query
         if ($Canned_Searches[$search_name]) {
             $query = array($Canned_Searches[$search_name]);
-        // default nodups on here, unless explicitly set
-            if (!empty($nodups))
-                $nodups = true;
         }
         else
             add_warning("Unknown canned query: $search_name");
@@ -176,7 +172,7 @@
         }
 
     // Remove dups from the results if requested
-        if ($nodups) {
+        if ($_SESSION['search']['fold_dups']) {
             $seen = array();        // program ids already seen
             foreach( $Results as $dex => $row ) {
                 $uniquer = $row->programid . $row->channel->channum;
