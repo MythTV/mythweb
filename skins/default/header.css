@@ -90,7 +90,6 @@
 }
 #help_text_default {
     position: relative;
-    top:      -3px;
 }
 #help_text {
     display: none;
