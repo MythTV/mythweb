@@ -228,6 +228,7 @@ $L = array(
     'Custom'                                     => 'カスタム',
     'Edit MythWeb and some MythTV settings.'     => 'MythWebとMythTVの設定',
     'Exact Match'                                => '正確に一致',
+    'Fold Duplicates'                            => '',
     'HD Only'                                    => 'HDのみ',
     'Manual'                                     => '手動',
     'MythMusic on the web.'                      => 'MythMusic オンザウェブ',

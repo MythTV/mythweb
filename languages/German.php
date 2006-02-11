@@ -213,6 +213,7 @@ $L = array(
     'Any Channel'                                => 'Jeder Sender',
     'Any Program Type'                           => 'Jeder Programmtyp',
     'Find Time must be of the format:  HH:MM:SS' => '\'Finde Zeit\' muss im Format HH:MM:SS sein',
+// modules/tv/schedules_manual.php
     'Use callsign'  => 'Kurzname verwenden',
     'Use date/time' => 'Datum/Uhrzeit verwenden',
 // modules/tv/search.php
@@ -227,6 +228,7 @@ $L = array(
     'Custom'                                     => 'freie Planung',
     'Edit MythWeb and some MythTV settings.'     => 'Einstellungen für MythWeb & MythTV ändern',
     'Exact Match'                                => 'Exakte Übereinstimmung',
+    'Fold Duplicates'                            => '',
     'HD Only'                                    => 'nur in HDTV',
     'Manual'                                     => 'Manuell',
     'MythMusic on the web.'                      => 'MythMusic',

@@ -228,6 +228,7 @@ $L = array(
     'Custom'                                     => '',
     'Edit MythWeb and some MythTV settings.'     => '',
     'Exact Match'                                => '',
+    'Fold Duplicates'                            => '',
     'HD Only'                                    => '',
     'Manual'                                     => 'Ručně',
     'MythMusic on the web.'                      => 'MythMusic na webu.',

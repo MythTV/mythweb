@@ -133,7 +133,7 @@
                         </div>
                         <div>
                             <input type="checkbox" class="radio" id="fold_dups" name="fold_dups" value="1"<?php echo $_SESSION['search']['fold_dups'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('fold_dups').checked=get_element('fold_dups').checked ? false : true;"><?php echo t('Fold Showings') ?></a>
+                            <a onclick="get_element('fold_dups').checked=get_element('fold_dups').checked ? false : true;"><?php echo t('Fold Duplicates') ?></a>
                         </div>
                     </div>
 

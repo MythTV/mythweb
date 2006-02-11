@@ -233,6 +233,7 @@ $L = array(
     'Custom'                                     => 'Mukautettu',
     'Edit MythWeb and some MythTV settings.'     => 'Muokkaa MythWeb:in ja MythTV:n asetuksia.',
     'Exact Match'                                => 'Tarkka Vastaavuus',
+    'Fold Duplicates'                            => '',
     'HD Only'                                    => 'Vain Teräväpiirto',
     'Manual'                                     => 'Manuaalinen',
     'MythMusic on the web.'                      => 'MythMusic Netissä.',

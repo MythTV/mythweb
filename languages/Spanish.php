@@ -228,6 +228,7 @@ $L = array(
     'Custom'                                     => 'Avanzada',
     'Edit MythWeb and some MythTV settings.'     => 'Editar ajustes de MythWeb y algunos de MythTV',
     'Exact Match'                                => 'Coincidencia exacta',
+    'Fold Duplicates'                            => '',
     'HD Only'                                    => 'Sólo HD',
     'Manual'                                     => 'Manual',
     'MythMusic on the web.'                      => 'MythMusic en el web',
