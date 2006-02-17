@@ -108,7 +108,7 @@
 # or if this is a /css/, /js/ or /cache/ directory request.
     RewriteRule    ^(css|data|images|js|themes|skins|[a-z_]+\.php)(/|$)     -     [L]
 
-# Redirect most of the remaining URL requests to the main cooktools script.
+# Redirect most of the remaining URL requests to the main mythweb script.
 # It will then handle any requests given to it.
     RewriteRule     ^(.+)$                  mythweb.php/$1              [QSA,L]
 
