@@ -26,4 +26,4 @@
 <p><a href="<?php echo root ?>tv/upcoming"><?php echo t('Upcoming Recordings') ?></a></p>
 <p><a href="<?php echo root ?>tv/recorded"><?php echo t('Recorded Programs') ?></a></p>
 <p><a href="<?php echo root ?>tv/search"><?php echo t('Search') ?></a></p>
-<p><a href="<?php echo root ?>status?xml"><?php echo t('Backend Status') ?></a></p>
+<p><a href="<?php echo root ?>status/xml"><?php echo t('Backend Status') ?></a></p>
