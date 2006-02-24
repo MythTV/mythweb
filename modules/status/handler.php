@@ -18,14 +18,17 @@
     $masterhost = get_backend_setting('MasterServerIP');
     $statusport = get_backend_setting('BackendStatusPort');
 
+// XML mode?
+    $xml_param = ($Path[1] == 'xml') ? '/xml' : '';
+
 // Make sure the content is interpreted as UTF-8
     header('Content-Type:  text/html; charset=UTF-8');
 
 // Load the status page
     if (function_exists('file_get_contents'))
-        $status = file_get_contents("http://$masterhost:$statusport");
+        $status = file_get_contents("http://$masterhost:$statusport$xml_param");
     else
-        $status = implode("\n", file("http://$masterhost:$statusport"));
+        $status = implode("\n", file("http://$masterhost:$statusport$xml_param"));
 
 // Extract the page title
     preg_match('#<title>(.+?)</title>#s', $status, $title);
