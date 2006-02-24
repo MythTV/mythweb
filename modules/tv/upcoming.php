@@ -103,8 +103,9 @@
                         continue;
                 }
             // Skip deactivated shows?
-                elseif (!$_SESSION['scheduled_recordings']['disp_deactivated']) {
-                    continue;
+                elseif ($show->recstatus == 'Inactive') {
+                    if (!$_SESSION['scheduled_recordings']['disp_deactivated'])
+                        continue;
                 }
             // Assign a reference to this show to the various arrays
                 $all_shows[] =& $Scheduled_Recordings[$channum][$starttime][$key];
