@@ -16,28 +16,15 @@
  *
 /**/
 
-/**
- * $Path is an array of PATH_INFO passed into the script via mod_rewrite or some
- * other lesser means.  It contains most of the information required for
- * figuring out what functions the user wants to access.
- *
- * @global  array   $GLOBALS['Path']
- * @name    $Path
-/**/
-    global $Path;
-    $Path = explode('/', preg_replace('/^\/+/',   '',    // Remove leading slashes
-                         preg_replace('/[\s]+/', ' ',    // Convert extra whitespace
-                                                         // Grab the path info from various different places.
-                             array_key_exists('PATH_INFO', $_SERVER)
-                             && $_SERVER['PATH_INFO']
-                                ? $_SERVER['PATH_INFO']
-                                : (array_key_exists('PATH_INFO', $_ENV)
-                                   && $_ENV['PATH_INFO']
-                                    ? $_ENV['PATH_INFO']
-                                    : $_GET['PATH_INFO']
-                                  )
-                         ))
-                   );
+// mod_redirect can do some weird things when php is run in cgi mode
+    $keys = preg_grep('/^REDIRECT_/', array_keys($_SERVER));
+    if (!empty($keys)) {
+        foreach ($keys as $key) {
+            $key = substr($key, 9);
+            if (!array_key_exists($_SERVER[$key]))
+                $_SERVER[$key] = $_SERVER["REDIRECT_$key"];
+        }
+    }
 
 // Clean the document root variable and make sure it doesn't have a trailing slash
     $_SERVER['DOCUMENT_ROOT'] = preg_replace('/\/+$/', '', $_SERVER['DOCUMENT_ROOT']);
@@ -93,6 +80,29 @@
         require_once 'templates/_db_vars_error.php';
         exit;
     }
+
+/**
+ * $Path is an array of PATH_INFO passed into the script via mod_rewrite or some
+ * other lesser means.  It contains most of the information required for
+ * figuring out what functions the user wants to access.
+ *
+ * @global  array   $GLOBALS['Path']
+ * @name    $Path
+/**/
+    global $Path;
+    $Path = explode('/', preg_replace('/^\/+/',   '',    // Remove leading slashes
+                         preg_replace('/[\s]+/', ' ',    // Convert extra whitespace
+                                                         // Grab the path info from various different places.
+                             array_key_exists('PATH_INFO', $_SERVER)
+                             && $_SERVER['PATH_INFO']
+                                ? $_SERVER['PATH_INFO']
+                                : (array_key_exists('PATH_INFO', $_ENV)
+                                   && $_ENV['PATH_INFO']
+                                    ? $_ENV['PATH_INFO']
+                                    : $_GET['PATH_INFO']
+                                  )
+                         ))
+                   );
 
 // Load the database connection routines
     require_once 'includes/db.php';
