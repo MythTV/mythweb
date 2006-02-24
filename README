@@ -63,9 +63,21 @@ when building PHP.
 
     In order for the included .htaccess to work properly, you will need to
 set apache's "AllowOverride" setting to "All" (or at least "Options") for
-the root mythweb directory.  This directive lives within <Directory/> tags,
-so make sure you're changing the setting for the correct directory.  You will
-also need to make sure that the following apache modules are enabled:
+the root mythweb directory.  This directive lives within <Directory> tags,
+so make sure you're changing the setting for the correct directory.  Please
+keep in mind that most distros correctly disable everything for <Directory />,
+and then later override those with something like <Directory /var/www/html>.
+The simplest way to do this is to put a file into /etc/httpd/conf.d (or
+whatever your distro calls it) containing something like:
+
+    <Directory /var/www/html/mythweb>
+        Options         FollowSymLinks
+        AllowOverride   All
+    </Directory>
+
+Just make sure that the path points to your MythWeb installation, since that
+will likely differ from system to system.  You will also need to make sure that
+the following apache modules are enabled:
 
     mod_env
     mod_rewrite
