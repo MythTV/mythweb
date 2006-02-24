@@ -130,7 +130,7 @@
                        LEFT JOIN programrating USING (chanid, starttime)
                        LEFT JOIN oldrecorded
                                  ON oldrecorded.recstatus IN (-3, 11)
-                                    AND IF(oldrecorded.programid OR oldrecorded.seriesid,
+                                    AND IF(oldrecorded.programid AND oldrecorded.seriesid,
                                            oldrecorded.programid = program.programid
                                              AND oldrecorded.seriesid = program.seriesid,
                                            oldrecorded.title = program.title
