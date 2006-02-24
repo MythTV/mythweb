@@ -15,11 +15,20 @@
 
 $Canned_Searches = array(
 
-    t('New Titles, Premieres')
-        => 'program.previouslyshown = 0'
-          .' AND (program.category = "Special"'
-          .'      OR program.programid LIKE "EP%0001")'
-          .' AND DAYOFYEAR(program.originalairdate) = DAYOFYEAR(program.starttime)',
+    t('New Titles, Premieres')                              // See proglist.cpp
+        => 'program.manualid = 0'
+         . ' AND ('
+         . '   (program.previouslyshown = 0'
+         . '     AND (program.category = "Special"'
+         . '       OR program.programid LIKE "EP%0001"'
+         . '       OR (program.category_type = "series"'
+         . '         AND program.subtitle = "Pilot"))'
+         . '     AND DAYOFYEAR(program.originalairdate) ='
+         . '         DAYOFYEAR(program.starttime))'
+         . '   OR (program.category_type="movie"'
+         . '     AND program.stars > 0.5'
+         . '     AND program.airdate >= YEAR(NOW()) - 3)'
+         . ' )',
 
     t('Movies')
         => 'category_type="'.movie_word.'"',
