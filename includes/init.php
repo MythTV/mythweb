@@ -21,7 +21,7 @@
     if (!empty($keys)) {
         foreach ($keys as $key) {
             $key = substr($key, 9);
-            if (!array_key_exists($_SERVER[$key]))
+            if (!array_key_exists($key, $_SERVER))
                 $_SERVER[$key] = $_SERVER["REDIRECT_$key"];
         }
     }
