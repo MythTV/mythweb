@@ -103,7 +103,7 @@
                         continue;
                 }
             // Skip deactivated shows?
-                elseif ($show->recstatus == 'Inactive') {
+                elseif ($show->recstatus != 'Recording') {
                     if (!$_SESSION['scheduled_recordings']['disp_deactivated'])
                         continue;
                 }
