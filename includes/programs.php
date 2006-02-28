@@ -133,8 +133,10 @@
                                     AND IF(oldrecorded.programid AND oldrecorded.seriesid,
                                            oldrecorded.programid = program.programid
                                              AND oldrecorded.seriesid = program.seriesid,
-                                           oldrecorded.title = program.title
-                                             AND oldrecorded.subtitle = program.subtitle
+                                           oldrecorded.title AND oldrecorded.subtitle
+                                             AND oldrecorded.description
+                                             AND oldrecorded.title       = program.title
+                                             AND oldrecorded.subtitle    = program.subtitle
                                              AND oldrecorded.description = program.description
                                           )
                        LEFT JOIN channel ON program.chanid = channel.chanid
