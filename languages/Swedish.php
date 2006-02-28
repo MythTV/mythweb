@@ -198,9 +198,8 @@ $L = array(
 // modules/stream/init.php
     'Streaming' => 'Strömmande',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => 'Detta program är redan schemalagt för inspelning via en $1specialsökning$2.',
-    'Unknown Program.'                                                          => 'Okänt program.',
-    'Unknown Recording Schedule.'                                               => 'Okänt inspelningsschema.',
+    'Unknown Program.'            => 'Okänt program.',
+    'Unknown Recording Schedule.' => 'Okänt inspelningsschema.',
 // modules/tv/init.php
     'Special Searches' => 'Speciella sökningar',
     'TV'               => 'TV',
@@ -342,6 +341,7 @@ $L = array(
     'Produced by'                         => 'Producerad av',
     'Program Detail'                      => 'Programdetaljer',
     'Program ID'                          => 'Program-ID',
+    'Schedule via $1.'                    => '',
     'TV.com'                              => 'TV.com',
     'Time Stretch Default'                => 'Förvalt tempo',
     'What else is on at this time?'       => 'Vad visas mer vid denna tid?',

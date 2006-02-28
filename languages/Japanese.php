@@ -198,9 +198,8 @@ $L = array(
 // modules/stream/init.php
     'Streaming' => 'ストリーミング',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => '',
-    'Unknown Program.'                                                          => '不明な番組',
-    'Unknown Recording Schedule.'                                               => '不明な予約',
+    'Unknown Program.'            => '不明な番組',
+    'Unknown Recording Schedule.' => '不明な予約',
 // modules/tv/init.php
     'Special Searches' => 'スペシャル検索',
     'TV'               => '',
@@ -342,6 +341,7 @@ $L = array(
     'Produced by'                         => '製作',
     'Program Detail'                      => '番組詳細',
     'Program ID'                          => '番組ID',
+    'Schedule via $1.'                    => '',
     'TV.com'                              => '',
     'Time Stretch Default'                => 'タイムストレッチ設定',
     'What else is on at this time?'       => 'この時間の番組表',

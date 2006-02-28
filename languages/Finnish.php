@@ -203,9 +203,8 @@ $L = array(
 // modules/stream/init.php
     'Streaming' => 'Lähetys',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => 'Tämä ohjelma on jo ajastettu nauhoittamaan käyttäen $1custom search$2.',
-    'Unknown Program.'                                                          => 'Tuntematon Ohjelma.',
-    'Unknown Recording Schedule.'                                               => 'Tuntematon Ajoitus.',
+    'Unknown Program.'            => 'Tuntematon Ohjelma.',
+    'Unknown Recording Schedule.' => 'Tuntematon Ajoitus.',
 // modules/tv/init.php
     'Special Searches' => 'Edistynyt Haku',
     'TV'               => 'Televisio',
@@ -347,6 +346,7 @@ $L = array(
     'Produced by'                         => 'Tuottajana',
     'Program Detail'                      => 'Ohjelman Lisätietoja',
     'Program ID'                          => '',
+    'Schedule via $1.'                    => '',
     'TV.com'                              => 'TV.com',
     'Time Stretch Default'                => 'Ajan Säädön Oletus',
     'What else is on at this time?'       => 'Mitä muuta on tähän aikaan?',

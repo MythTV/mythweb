@@ -198,9 +198,8 @@ $L = array(
 // modules/stream/init.php
     'Streaming' => 'Stroom aan het doorsturen',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => 'Dit programma is al ingesteld opgenomen te worden via $1custom search$2',
-    'Unknown Program.'                                                          => 'Onbekend Programma.',
-    'Unknown Recording Schedule.'                                               => 'Onbekend Opnameschema',
+    'Unknown Program.'            => 'Onbekend Programma.',
+    'Unknown Recording Schedule.' => 'Onbekend Opnameschema',
 // modules/tv/init.php
     'Special Searches' => 'Speciaal zoeken',
     'TV'               => 'TV',
@@ -342,6 +341,7 @@ $L = array(
     'Produced by'                         => 'Producent',
     'Program Detail'                      => 'Pragrammadetails',
     'Program ID'                          => 'Programma ID',
+    'Schedule via $1.'                    => '',
     'TV.com'                              => 'TV.com',
     'Time Stretch Default'                => 'TimeStretch Standaard',
     'What else is on at this time?'       => 'Wat wordt er nog uitgezonden op dit tijdstip?',

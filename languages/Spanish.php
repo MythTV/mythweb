@@ -198,9 +198,8 @@ $L = array(
 // modules/stream/init.php
     'Streaming' => 'Transmitiendo',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => 'Este programa ya está programado para ser grabado mediante una $1búsqueda avanzada$2',
-    'Unknown Program.'                                                          => 'Programa desconocido',
-    'Unknown Recording Schedule.'                                               => 'Programación desconocida',
+    'Unknown Program.'            => 'Programa desconocido',
+    'Unknown Recording Schedule.' => 'Programación desconocida',
 // modules/tv/init.php
     'Special Searches' => 'Búsquedas especiales',
     'TV'               => 'TV',
@@ -342,6 +341,7 @@ $L = array(
     'Produced by'                         => 'Producido por',
     'Program Detail'                      => 'Detalle programa',
     'Program ID'                          => 'ID programa',
+    'Schedule via $1.'                    => '',
     'TV.com'                              => '',
     'Time Stretch Default'                => 'Ajuste de tiempo por defecto',
     'What else is on at this time?'       => 'Qué más hay a esta hora?',

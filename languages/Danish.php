@@ -198,9 +198,8 @@ $L = array(
 // modules/stream/init.php
     'Streaming' => 'Streaming',
 // modules/tv/detail.php
-    'This program is already scheduled to be recorded via a $1custom search$2.' => '',
-    'Unknown Program.'                                                          => 'Ukendt program',
-    'Unknown Recording Schedule.'                                               => 'Ukendt planlagt optagelse',
+    'Unknown Program.'            => 'Ukendt program',
+    'Unknown Recording Schedule.' => 'Ukendt planlagt optagelse',
 // modules/tv/init.php
     'Special Searches' => 'Specielle søgninger',
     'TV'               => 'Tv',
@@ -342,6 +341,7 @@ $L = array(
     'Produced by'                         => 'Produceret af',
     'Program Detail'                      => 'Program detaljer',
     'Program ID'                          => '',
+    'Schedule via $1.'                    => '',
     'TV.com'                              => '',
     'Time Stretch Default'                => 'Standard Afspilnings hastighed',
     'What else is on at this time?'       => 'Hvad er der ellers i fjernsynet på dette tidspunkt?',

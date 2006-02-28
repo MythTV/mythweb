@@ -39,13 +39,10 @@
     else
         $schedule = new Schedule(NULL);
 
-// Handle custom search schedules
-    $schedule_note = '';
+// Handle custom search schedules.  This will cause the "cancel" or "don't"
+// option to be selected as "schedule via custom search"
     if ($schedule->search && $schedule->search != searchtype_manual) {
-        $schedule_note = t('This program is already scheduled to be recorded via a $1custom search$2.',
-                           '<a href='.root.'tv/schedules/custom/'.$schedule->recordid.'>',
-                           '</a>');
-        unset($schedule);
+        $schedule->type = null;
     }
 
 // Make sure this is a valid program.  If not, forward the user back to the listings page
@@ -64,6 +61,10 @@
 
 // If there is a program for this, import its values into the schedule
     if ($program) {
+    // Back up the search title
+        if ($schedule->search) {
+            $schedule->search_title = $schedule->title;
+        }
         $schedule->chanid            = $program->chanid;
         $schedule->starttime         = $program->starttime;
         $schedule->endtime           = $program->endtime;
@@ -96,7 +97,7 @@
     // Cancelling a schedule?
         if ($type == 0) {
         // Cancel this schedule
-            if ($schedule && $schedule->recordid) {
+            if ($schedule && $schedule->recordid && !$schedule->search) {
             // Delete the schedule
                 $schedule->delete();
             // Deleted a schedule but not editing a specific program?  Redirect back to the schedule list
@@ -107,7 +108,7 @@
                     exit;
                 }
             // Relocate back to the program details page
-                header('Location: '.root.'tv/detail?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
+                redirect_browser(root.'tv/detail?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
             }
         }
     // Modifying an existing schedule, or adding a new one
@@ -132,6 +133,15 @@
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
             $schedule->transcoder    = $_POST['transcoder'];
             $schedule->tsdefault     = $_POST['timestretch'];
+        // Keep track of the parent recording for overrides
+            if ($_POST['record'] == rectype_override) {
+                $schedule->parentid = $schedule->recid;
+            }
+        // Search schedules saved here will create a new schedule
+            if ($schedule->search) {
+                $schedule->recordid = null;
+            }
+            $schedule->search = 0;
         // Back up the program type, and save the schedule
             $schedule->save($type);
         }
