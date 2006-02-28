@@ -16,7 +16,7 @@
 // Where to start searching from
     $_GET['start'] = intVal($_GET['start']);
     if ($_GET['start'] < 1)
-        $_GET['start'] = 1;
+        $_GET['start'] = 0;
 
 // How many entries to show?
     $_GET['show'] = intVal($_GET['show']);
