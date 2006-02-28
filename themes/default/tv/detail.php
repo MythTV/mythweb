@@ -51,7 +51,7 @@
 <?php   } ?>
             <div id="program_title">
                 <h1>
-                    <a href="<?php echo root ?>tv/search/<?php echo urlencode($program->title) ?>&search_title=yes"><?php echo $schedule->title ?></a>
+                    <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php echo $schedule->title ?></a>
                 </h1>
                 <div id="program_time">
 <?php
