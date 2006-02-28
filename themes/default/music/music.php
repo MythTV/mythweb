@@ -164,10 +164,12 @@ class Theme_music {
 
     function print_header($filterPlaylist,$filterArtist,$filterAlbum,$filterGenre) {
         $this->filterPlaylist=$filterPlaylist;
-// Set the desired page title
-    $page_title = 'MythWeb - '.t('Music');
-// Print the page header
-    require_once theme_dir.'/header.php';
+    // Set the desired page title
+        global $page_title, $Modules, $headers;
+        $page_title = 'MythWeb - '.t('Music');
+    // Print the page header
+        require_once theme_dir.'/header.php';
+
         printf("<form  action=\"".root."music\" method=\"GET\" >\n");
         printf("<input type=\"hidden\" name=\"mode\" value=\"music\" />\n");
 
