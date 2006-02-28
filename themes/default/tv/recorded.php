@@ -162,19 +162,23 @@
         }
         ?>
     </select></td>
-<?php } ?>
+<?php   $recgroup_cols = 1;
+    } else {
+        $recgroup_cols = 0;
+    } ?>
     <td><?php echo t('Show recordings') ?>:</td>
     <td width="250" align="center"><select name="title" onchange="get_element('program_titles').submit()">
-        <option id="All recordings" value=""><?php echo t('All recordings') ?></option><?php
+        <option id="All recordings" value=""><?php echo t('All recordings') ?></option>
+<?php
         foreach($Program_Titles as $title => $count) {
             echo '<option id="Title '.htmlspecialchars($title).'" value="'.htmlspecialchars($title).'"';
             if ($_GET['title'] == $title)
                 echo ' SELECTED';
             echo '>'.html_entities($title)
                 .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count).')' : "")
-                .'</option>';
+                ."</option>\n";
         }
-        ?>
+?>
     </select></td>
     <td><noscript><input type="submit" value="<?php echo t('Go') ?>"></noscript></td>
 </tr>
@@ -208,7 +212,10 @@ if ($group_field == "") {
         echo "\t<td>".get_sort_link('description', t('description'))."</td>\n";
 ?>
     <td><?php echo get_sort_link('channum',   t('channum')) ?></td>
-    <td><?php echo get_sort_link('recgroup',  t('recgroup')) ?></td>
+<?php
+    if ($recgroup_cols)
+        echo "\t<td>" . get_sort_link('recgroup', t('recgroup')) . "</td>\n";
+?>
     <td><?php echo get_sort_link('airdate',   t('airdate')) ?></td>
     <td><?php echo get_sort_link('length',    t('length')) ?></td>
     <td><?php echo get_sort_link('file_size', t('file size')) ?></td>
@@ -239,12 +246,15 @@ if ($group_field == "") {
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
             $section++;
-?><tr id="breakrow_<?php echo $section ?>" class="list_separator">
-    <td colspan="10" class="list_separator"><?php echo $cur_group ?></td>
-</tr><?php
+            $colspan = 9 + $recgroup_cols;
+            print <<<EOM
+<tr id="breakrow_$section" class="list_separator">
+    <td colspan="$colspan" class="list_separator">$cur_group</td>
+</tr>
+EOM;
         }
-?><tr id="inforow_<?php echo $row ?>" class="recorded">
-<?php
+
+        echo "<tr id=\"inforow_$row\" class=\"recorded\">\n";
         if ($group_field != "")
             echo "\t<td class=\"list\" rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2)."\">&nbsp;</td>\n";
         if (show_recorded_pixmaps) {
@@ -270,7 +280,10 @@ if ($group_field == "") {
             echo "\t<td>".$show->description."</td>\n";
 ?>
     <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
-    <td nowrap align="center"><?php echo $show->recgroup ?></td>
+<?php
+    if ($recgroup_cols)
+        echo "\t<td nowrap align=\"center\">$show->recgroup</td>\n";
+?>
     <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
     <td nowrap><?php echo nice_length($show->length) ?></td>
     <td nowrap><?php echo nice_filesize($show->filesize) ?></td>
@@ -287,10 +300,10 @@ if ($group_field == "") {
 <?php   }
 
         if ($_SESSION['recorded_descunder'])
-            echo("</tr><tr id=\"descunderrow_".$row."\" class=\"recorded\">\n\t<td colspan=\"7\">".$show->description."</td>\n");
+            echo("</tr><tr id=\"descunderrow_".$row."\" class=\"recorded\">\n\t<td colspan=\"" . (6 + $recgroup_cols) . "\">".$show->description."</td>\n");
 ?>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td nowrap colspan="<?php echo $_SESSION['recorded_descunder'] ? 7 : 8 ?>" align="center">
+    <td nowrap colspan="<?php echo 6 + ($_SESSION['recorded_descunder'] ? 0 : 1) + $recgroup_cols ?>" align="center">
         <span style="padding-right: 25px"><?php echo t('has commflag') ?>:&nbsp;
             <b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></span>
         <span style="padding-right: 25px"><?php echo t('has cutlist') ?>:&nbsp;
