@@ -1,17 +1,11 @@
 This is the README file for the MythWeb package.
-January 17, 2006
+March 6, 2006
 
-Version: .19 pre
-(c) 2002-2006  Thor Sigvaldason <mythtv(a)lamedomainname(o)com>
+Version: .19
+(c) 2002-2006  Chris Petersen   <mythweb(a)forevermore(o)net>
                Isaac Richards   <ijr(a)po(o)cwru(o)edu>
-               Chris Petersen   <mythweb(a)forevermore(o)net>
-
-with contributions from many people including:
-
-Michael Kedl   <kedlm(a)knology(o)net>
-Jonathan Kolb  <jkolb(a)greyshift(o)net
-Ed Wildgoose   <edward(o)wildgoose(a)frmhedge(o)com>
-Kenneth Aafloy <ke-aa(a)frisurf(o)no>
+               Thor Sigvaldason <mythtv(a)lamedomainname(o)com>
+               and others... (see mythtv.org commit logs for details)
 
 MythWeb is distributed under the GNU GENERAL PUBLIC LICENSE version 2, and where
 noted with the @license tag, the LESSER GENERAL PUBLIC LICENSE version 2.
@@ -70,7 +64,7 @@ and then later override those with something like <Directory /var/www/html>.
 The simplest way to do this is to put a file into /etc/httpd/conf.d (or
 whatever your distro calls it) containing something like:
 
-    <Directory /var/www/html/mythweb>
+    <Directory "/var/www/html/mythweb" >
         Options         FollowSymLinks
         AllowOverride   All
     </Directory>
