@@ -327,7 +327,7 @@
         </div>
 <?php
         }
-        if ($schedule && ($schedule->search || $schedule->type)) {
+        if ($schedule && $schedule->type != rectype_once && ($schedule->search || $schedule->type)) {
 ?>
         <div id="schedule_override">
             <h3><?php echo t('Schedule Override') ?>:</h3>
