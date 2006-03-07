@@ -93,13 +93,13 @@
                 $tomorrow = date("m/d/Y", mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")));
 
                 switch($forecast->dayofweek) {
+                    case 0:  $day = t('Sunday');        break;
                     case 1:  $day = t('Monday');        break;
                     case 2:  $day = t('Tuesday');       break;
                     case 3:  $day = t('Wednesday');     break;
                     case 4:  $day = t('Thursday');      break;
                     case 5:  $day = t('Friday');        break;
                     case 6:  $day = t('Saturday');      break;
-                    case 7:  $day = t('Sunday');        break;
                     default: $day = $forecast->date;    break;
                 }
 

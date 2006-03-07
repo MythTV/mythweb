@@ -222,8 +222,10 @@ class WeatherSite {
 
     $data = explode("|", $data);
     for($i = 0;$i<5;$i++) {
-        $forecast = new Forecast($data[5 + $i],$data[$i]);
-        $forecast->dayofweek = $data[$i];
+	# mktime uses 0-6;  msnbc gives us 1-7;  adjust msnbc to match mktime
+	$dayofweek = $data[$i] - 1;
+        $forecast = new Forecast($data[5 + $i],$dayofweek);
+        $forecast->dayofweek = $dayofweek;
         list($forecast->DescImage,$forecast->DescText) = getImageAndDescFromId($data[15 + $i]);
         $forecast->DescImage = (strlen($forecast->DescImage) > 0) ? $forecast->DescImage : "unknown.png";
         $forecast->DescText = (strlen($forecast->DescText) > 0) ? $forecast->DescText : t('Unknown') . " (" . $data[15+$i] . ")";
