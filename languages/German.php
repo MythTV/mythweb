@@ -178,6 +178,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'Untertitel & Beschr. (kein Ergebnis)',
     'rectype: finddaily'           => 'Suche Täglich',
     'rectype: findweekly'          => 'Suche Wöchentlich',
+// includes/sorting.php
+    'regex: articles' => 'D(e[rmn]|ie|as)',
 // includes/utils.php
     '$1 B'  => '$1 B',
     '$1 GB' => '$1 GB',

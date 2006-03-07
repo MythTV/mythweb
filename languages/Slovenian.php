@@ -178,6 +178,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'Podnaslov in opis (prazni zadetki)',
     'rectype: finddaily'           => 'Najdi dnevno',
     'rectype: findweekly'          => 'Najdi tedensko',
+// includes/sorting.php
+    'regex: articles' => 'An?|The',
 // includes/utils.php
     '$1 B'  => '',
     '$1 GB' => '',

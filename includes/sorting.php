@@ -15,10 +15,9 @@
 // A global variable to track the last-used session;
     global $last_sort_session;
 
-/*
-    get_sort_link:
-    returns a formatted link to the specified sort field
-*/
+/**
+ * Returns a formatted link to the specified sort field
+/**/
     function get_sort_link($field, $string) {
         $status = sort_status($field);
         $link = '<a href="'.$_SERVER['PHP_SELF'].'?sortby='.urlencode($field).'">'
@@ -30,10 +29,9 @@
             $link .= ' <span class="large">&uarr;</span>';
         return $link;
     }
-/*
-    sort_status:
-    returns the sort status of
-*/
+/**
+ * Returns the sort status of
+/**/
     function sort_status($field, $session = NULL) {
     // Null session means to load the last sorted session
         if (!$session)
@@ -60,10 +58,9 @@
         return false;
     }
 
-/*
-    sort_programs:
-    sorts a list of programs by the user's session preferences
-*/
+/**
+ * Sorts a list of programs by the user's session preferences
+/**/
     function sort_programs(&$programs, $session) {
         $GLOBALS['last_sort_session'] = $session;
     // First, check for a sort variable passed in by the user
@@ -125,16 +122,25 @@
         }
     }
 
+/**
+ * Sort strings but ignore definite articles.
+/**/
+    function by_no_articles(&$a, &$b) {
+        return strcasecmp(preg_replace('/^(?:'.t('regex: articles').')\s+/i', '', $a),
+                          preg_replace('/^(?:'.t('regex: articles').')\s+/i', '', $b)
+                         );
+    }
+
     function by_title(&$a, &$b) {
-        return strcasecmp($a->title, $b->title);
+        return by_no_articles($a->title, $b->title);
+    }
+
+    function by_subtitle(&$a, &$b) {
+        return by_no_articles($a->subtitle, $b->subtitle);
     }
 
     function by_type(&$a, &$b) {
         return strcasecmp($a->texttype, $b->texttype);
-    }
-
-    function by_subtitle(&$a, &$b) {
-        return strcasecmp($a->subtitle, $b->subtitle);
     }
 
     function by_description(&$a, &$b) {

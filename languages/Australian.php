@@ -179,6 +179,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => '',
     'rectype: finddaily'           => '',
     'rectype: findweekly'          => '',
+// includes/sorting.php
+    'regex: articles' => 'An?|The',
 // includes/utils.php
     '$1 B'  => '$1 shotglass',
     '$1 GB' => '$1 stein',

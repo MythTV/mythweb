@@ -178,6 +178,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'Sub et Desc (Vide correspond)',
     'rectype: finddaily'           => 'Trouver aujourd\'hui',
     'rectype: findweekly'          => 'trouver cette semaine',
+// includes/sorting.php
+    'regex: articles' => 'An?|The',
 // includes/utils.php
     '$1 B'  => '$1 B',
     '$1 GB' => '$1 GB',

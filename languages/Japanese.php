@@ -178,6 +178,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'サブタイトルと内容(エンプティーマッチ)',
     'rectype: finddaily'           => '一日一回',
     'rectype: findweekly'          => '週一回',
+// includes/sorting.php
+    'regex: articles' => 'An?|The',
 // includes/utils.php
     '$1 B'  => '',
     '$1 GB' => '',

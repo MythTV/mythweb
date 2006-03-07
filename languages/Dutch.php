@@ -178,6 +178,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'Dubbels en Beschrijving',
     'rectype: finddaily'           => 'Dagelijkse een uitzending opnemen.',
     'rectype: findweekly'          => 'Wekelijkse een uitzending opnemen.',
+// includes/sorting.php
+    'regex: articles' => 'An?|The',
 // includes/utils.php
     '$1 B'  => '$1 B',
     '$1 GB' => '$1 GB',

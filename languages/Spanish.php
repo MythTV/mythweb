@@ -178,6 +178,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'Sub y Desc (Coincidencias vacías)',
     'rectype: finddaily'           => 'rectype: buscar diario',
     'rectype: findweekly'          => 'rectype: buscar semanal',
+// includes/sorting.php
+    'regex: articles' => 'El|L(?:as?|os)',
 // includes/utils.php
     '$1 B'  => '$1 B',
     '$1 GB' => '$1 GB',

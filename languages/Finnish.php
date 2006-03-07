@@ -183,6 +183,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'Kuvaus ja Nimike (Ei vastaavuuksia)',
     'rectype: finddaily'           => 'Etsi Päivittäinen',
     'rectype: findweekly'          => 'Etsi Viikottainen',
+// includes/sorting.php
+    'regex: articles' => 'An?|The',
 // includes/utils.php
     '$1 B'  => '$1 B',
     '$1 GB' => '$1 GB',

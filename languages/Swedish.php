@@ -178,6 +178,8 @@ $L = array(
     'Sub and Desc (Empty matches)' => 'Undertitel &amp; beskrivning',
     'rectype: finddaily'           => 'En per dag',
     'rectype: findweekly'          => 'En per vecka',
+// includes/sorting.php
+    'regex: articles' => 'An?|The',
 // includes/utils.php
     '$1 B'  => '$1 B',
     '$1 GB' => '$1 GB',

@@ -203,7 +203,7 @@
     }
 
 // Sort the program titles
-    ksort($Program_Titles);
+    uksort($Program_Titles, 'by_no_articles');
     ksort($Groups);
 
 // Keep track of the program/title the user wants to view
