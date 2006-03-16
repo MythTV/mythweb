@@ -32,7 +32,9 @@
     $Master_Host = get_backend_setting('MasterServerIP');
     $Master_Port = get_backend_setting('MasterServerPort');
     if (!$Master_Host || !$Master_Port)
-        trigger_error("MasterServerIP or MasterServerPort not found! You may need to check your settings.php file or re-run setup mythtv's setup", FATAL);
+        trigger_error("MasterServerIP or MasterServerPort not found! You may"
+                      ."need to check your settings.php file or re-run mythtv-setup",
+                      FATAL);
 
 // Make sure we're connected to mythbackend
     if (backend_command('ANN Monitor '.hostname.' 0') != 'OK')
