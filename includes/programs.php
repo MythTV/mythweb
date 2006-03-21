@@ -296,7 +296,7 @@ class Program {
             #$channum              = $data[5];
             #$callsign             = $data[6];
             $this->channame        = $data[7];
-            #$pathname             = $data[8];   # Extracted a few lines earlier
+            #$filename             = $data[8];   # Extracted a few lines earlier
             #$fs_high              = $data[9];   # Extracted a few lines earlier
             #$fs_low               = $data[10];  # Extracted a few lines earlier
             #$starttime            = $data[11];  # Extracted a few lines earlier
