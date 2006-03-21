@@ -289,6 +289,17 @@ class Program {
                     $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
                 }
             }
+        // Ah, a scheduled recording - let's load more information about it, to be parsed in below
+           elseif ($this->chanid) {
+                unset($this->filename);
+            // Kludge to avoid redefining the object, which doesn't work in php5
+                $tmp = @get_object_vars(load_one_program($this->starttime, $this->chanid));
+                if (is_array($tmp) && count($tmp) > 0) {
+                    foreach ($tmp as $key => $value) {
+                        $this->$key = $value;
+                    }
+                }
+           }
         // Load the remaining info we got from mythbackend
             $this->title           = $data[0];                  # program name/title
             $this->subtitle        = $data[1];                  # episode name
