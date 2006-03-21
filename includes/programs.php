@@ -274,17 +274,19 @@ class Program {
             $this->endtime     = $data[12];  # show end-time
         // Is this a previously-recorded program?  Calculate the filesize
             if (!empty($this->filename)) {
-                $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
-            }
-        // Ah, a scheduled recording - let's load more information about it, to be parsed in below
-            elseif ($this->chanid) {
-                unset($this->filename);
-            // Kludge to avoid redefining the object, which doesn't work in php5
-                $tmp = @get_object_vars(load_one_program($this->starttime, $this->chanid));
-                if (is_array($tmp) && count($tmp) > 0) {
-                    foreach ($tmp as $key => $value) {
-                        $this->$key = $value;
-                    }
+                if (function_exists('gmp_add')) {
+                // GMP functions should work better with 64 bit numbers.
+                    $size = gmp_mul('1024',
+                                    gmp_add($fs_low,
+                                            gmp_mul('4294967296',
+                                                    gmp_add($fs_high, $sizefs_low_low < 0 ? '1' : '0'))
+                                           )
+                                   );
+                    $this->filesize = gmp_strval($size);
+                }
+                else {
+                // This is inaccurate, but it's the best we can get without GMP.
+                    $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
                 }
             }
         // Load the remaining info we got from mythbackend
