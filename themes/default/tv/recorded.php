@@ -47,26 +47,36 @@
     foreach ($All_Shows as $show) {
 ?>
     file = new Object();
-    file.title    = '<?php echo addslashes($show->title) ?>';
-    file.subtitle = '<?php echo addslashes($show->subtitle) ?>';
-    file.group    = '<?php echo addslashes(urlencode($show->group)) ?>';
-    file.filename = '<?php echo addslashes(urlencode($show->filename)) ?>';
-    file.size     = '<?php echo addslashes($show->filesize) ?>';
-    file.length   = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
+    file.title     = '<?php echo addslashes($show->title)               ?>';
+    file.subtitle  = '<?php echo addslashes($show->subtitle)            ?>';
+    file.chanid    = '<?php echo addslashes($show->chanid)              ?>';
+    file.starttime = '<?php echo addslashes($show->recstartts)          ?>';
+    file.group     = '<?php echo addslashes(urlencode($show->group))    ?>';
+    file.filename  = '<?php echo addslashes(urlencode($show->filename)) ?>';
+    file.size      = '<?php echo addslashes($show->filesize)            ?>';
+    file.length    = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
     files.push(file);
 
 <?php
     }
 ?>
 
+    function set_autoexpire(id) {
+        var file = files[id];
+        submit_url('<?php echo root ?>tv/recorded?ajax&autoexpire='+
+                   +(get_element('autoexpire_' + file.chanid + '.' + file.starttime).checked ? '1' : '0')
+                   +'&chanid='+file.chanid+'&starttime='+file.starttime);
+    }
+
     function confirm_delete(id, forget_old) {
         var file = files[id];
         if (confirm("<?php echo t('Are you sure you want to delete the following show?') ?>\n\n     "+file.title+": "+file.subtitle)) {
         // Do the actual deletion
             if (programs_shown == 1)
-                location.href = '<?php echo root ?>tv/recorded?delete=yes&file='+file.filename;
+                location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid+'&starttime='+file.starttime;
             else
-                submit_url('<?php echo root ?>tv/recorded?ajax&delete=yes&file='+file.filename, http_success, http_failure, id, file);
+                submit_url('<?php echo root ?>tv/recorded?ajax&delete=yes&chanid='+file.chanid+'&starttime='+file.starttime,
+                           http_success, http_failure, id, file);
         // Debug statements - uncomment to verify that the right file is being deleted
             //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
             //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
@@ -292,7 +302,7 @@ EOM;
 <?php   } else { ?>
     <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 2 : 1 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_<?php echo $row ?>"
-            href="<?php echo root ?>tv/recorded?delete=yes&file=<?php echo urlencode($show->filename) ?>"
+            href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>"
             js_href="javascript:confirm_delete(<?php echo $row ?>, false)";
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
@@ -311,13 +321,16 @@ EOM;
         <span style="padding-right: 25px"><?php echo t('is editing') ?>:&nbsp;
             <b><?php echo $show->is_editing ? t('Yes') : t('No') ?></b></span>
         <span style="padding-right: 25px"><?php echo t('auto-expire') ?>:&nbsp;
-            <b><?php echo $show->auto_expire ? t('Yes') : t('No') ?></b></span>
+            <input type="checkbox" id="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
+             name="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
+             <?php if ($show->auto_expire) echo ' CHECKED' ?> onchange="set_autoexpire(<?php echo $row ?>)" />
+            </span>
         <?php echo t('has bookmark') ?>:&nbsp;
             <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b>
         </td>
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_rerecord_<?php echo $row ?>"
-            href="<?php echo root ?>tv/recorded?delete=yes&file=<?php echo urlencode($show->filename) ?>&forget_old"
+            href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old"
             js_href="javascript:confirm_delete(<?php echo $row ?>, true)";
             title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a></td>

@@ -59,6 +59,20 @@
 // Load the sorting routines
     require_once "includes/sorting.php";
 
+// Auto-expire
+    isset($_GET['autoexpire']) or $_GET['autoexpire'] = $_POST['autoexpire'];
+    if (isset($_GET['autoexpire']) && $_GET['chanid'] && $_GET['starttime']) {
+        $sh = $db->query('UPDATE recorded
+                             SET autoexpire = ?
+                           WHERE chanid = ? AND starttime = FROM_UNIXTIME(?)',
+                         $_GET['autoexpire'] ? 1 : 0,
+                         $_GET['chanid'],
+                         $_GET['starttime']);
+    }
+    else {
+        /** @todo need some sort of handler here for the non-ajax stuff */
+    }
+
 // Delete a program?
     isset($_GET['forget_old']) or $_GET['forget_old'] = $_POST['forget_old'];
     isset($_GET['delete'])     or $_GET['delete']     = $_POST['delete'];
@@ -72,7 +86,7 @@
             if (($_SESSION['recorded_title'] == $row[0]) || ($_SESSION['recorded_title'] == ''))
                 $prev_row++;
         // This row isn't the one we're looking for
-            if ($row[8] != $_GET['file'])
+            if ($row[4] != $_GET['chanid'] || $row[26] != $_GET['starttime'])
                 continue;
         // Forget all knowledge of old recordings
             if (isset($_GET['forget_old'])) {
@@ -128,9 +142,21 @@
                 continue;
         // Get the length (27 == recendts; 26 == recstartts)
             $length = $record[27] - $record[26];
-        // Keep track of the total time and disk space used
+        // Keep track of the total time and disk space used (9 == fs_high; 10 == fs_low)
             $Total_Time += $length;
-            $Total_Used += ($record[9] + ($record[10] < 0)) * 4294967296 + $record[10];  // 9 == fs_high; 10 == fs_low;
+            if (function_exists('gmp_add')) {
+            // GMP functions should work better with 64 bit numbers.
+                $size = gmp_add($record[10],
+                                gmp_mul('4294967296',
+                                        gmp_add($record[9], $record[10] < 0 ? '1' : '0')
+                                       )
+                               );
+                $Total_Used = gmp_strval(gmp_add($Total_Used, $size));
+            }
+            else {
+            // This is inaccurate, but it's the best we can get without GMP.
+                $Total_Used += ($record[9] + ($record[10] < 0)) * 4294967296 + $record[10];  //
+            }
         // keep track of their names and how many episodes we have recorded
             $Total_Programs++;
             $Groups[$record[30]]++;
@@ -224,7 +250,7 @@
 // How much free disk space on the backend machine?
     list($size_high, $size_low, $used_high, $used_low) = explode(backend_sep, backend_command('QUERY_FREE_SPACE'));
     if (function_exists('gmp_add')) {
-    // GMP functions should work better with large numbers.
+    // GMP functions should work better with 64 bit numbers.
         $size = gmp_mul('1024',
                         gmp_add($size_low,
                                 gmp_mul('4294967296',
