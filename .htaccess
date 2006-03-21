@@ -26,7 +26,12 @@
 # MythTV now uses the correct file suffix for mpeg files, so all .nuv files
 # should actually be NuppleVideo.  However, apache probably doesn't know what
 # those are, so we should tell it.
-    AddType video/nuppelvideo .nuv
+    AddType video/nuppelvideo   .nuv
+
+# Specify the MIME type for favicon.ico in case the server configuration
+# doesn't or in case the server configuration uses the IANA-approved MIME type
+# (image/vnd.microsoft.icon)--which most browsers won't recognize.
+    AddType image/x-icon        .ico
 
 # Some special instructions for the PHP files of MythWeb.
     <FilesMatch "\.php$">
