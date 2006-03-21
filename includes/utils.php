@@ -276,7 +276,7 @@
         static $first_run=true;
         if($first_run) {
             $first_run=false;
-            echo '<script type="text/javascript" src="/js/debug.js"></script>';
+            echo '<script type="text/javascript" src="'.root.'js/debug.js"></script>';
         }
     // Put our data into a string
         if (is_array($data) || is_object($data))
