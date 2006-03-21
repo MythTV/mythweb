@@ -223,8 +223,28 @@
 
 // How much free disk space on the backend machine?
     list($size_high, $size_low, $used_high, $used_low) = explode(backend_sep, backend_command('QUERY_FREE_SPACE'));
-    define(disk_size, (($size_high + ($size_low < 0)) * 4294967296 + $size_low) * 1024);
-    define(disk_used, (($used_high + ($used_low < 0)) * 4294967296 + $used_low) * 1024);
+    if (function_exists('gmp_add')) {
+    // GMP functions should work better with large numbers.
+        $size = gmp_mul('1024',
+                        gmp_add($size_low,
+                                gmp_mul('4294967296',
+                                        gmp_add($size_high, $size_low < 0 ? '1' : '0'))
+                               )
+                       );
+        define(disk_size, gmp_strval($size));
+        $size = gmp_mul('1024',
+                        gmp_add($used_low,
+                                gmp_mul('4294967296',
+                                        gmp_add($used_high, $used_low < 0 ? '1' : '0'))
+                               )
+                       );
+        define(disk_used, gmp_strval($size));
+    }
+    else {
+    // This is inaccurate, but it's the best we can get without GMP.
+        define(disk_size, (($size_high + ($size_low < 0)) * 4294967296 + $size_low) * 1024);
+        define(disk_used, (($used_high + ($used_low < 0)) * 4294967296 + $used_low) * 1024);
+    }
 
 // Load the class for this page
     require_once theme_dir.'tv/recorded.php';
