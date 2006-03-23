@@ -188,8 +188,6 @@ $L = array(
     '$1 TB' => '$1 TB',
 // modules/backend_log/init.php
     'Logs' => 'Logs',
-// modules/movietimes/init.php
-    'Movie Times' => 'Kinoprogramm',
 // modules/settings/init.php
     'MythTV channel info'      => 'MythTV Senderinformationen',
     'MythTV key bindings'      => 'MythTV Tastaturbelegung',

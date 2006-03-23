@@ -179,7 +179,6 @@
                      'video'       => null,
                      'music'       => null,
                      'weather'     => null,
-                     'movietimes'  => null,
                      'settings'    => null,
                      'status'      => null,
                      'backend_log' => null,

@@ -193,8 +193,6 @@ $L = array(
     '$1 TB' => '$1 TB',
 // modules/backend_log/init.php
     'Logs' => 'Lokit',
-// modules/movietimes/init.php
-    'Movie Times' => 'Elokuvahaku',
 // modules/settings/init.php
     'MythTV channel info'      => 'MythTV kanavatiedot',
     'MythTV key bindings'      => 'MythTV komennot',

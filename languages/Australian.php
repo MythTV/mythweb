@@ -189,8 +189,6 @@ $L = array(
     '$1 TB' => '$1 yard',
 // modules/backend_log/init.php
     'Logs' => '',
-// modules/movietimes/init.php
-    'Movie Times' => '',
 // modules/settings/init.php
     'MythTV channel info'      => '',
     'MythTV key bindings'      => '',
