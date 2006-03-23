@@ -15,10 +15,6 @@
 // The character string used by the backend to separate records
     define('backend_sep', '[]:[]');
 
-// A couple of global variables to keep duplicate queries to a minimum
-    $Scheduled_Recordings = array();
-    $Recorded_Programs    = array();
-
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
     define('MYTH_PROTO_VERSION', 26);

@@ -81,7 +81,9 @@
 /**/
     function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '') {
         global $Channels, $db;
-    // Make a local hash of channel chanid's with references to the actual channel data
+    // Make a local hash of channel chanid's with references to the actual
+    // channel data (Channels are not indexed by anything in particular, so
+    // that the user can sort by chanid or channum).
         $channel_hash = array();
     // An array (that later gets converted to a string) containing the id's of channels we want to load
         $these_channels = array();
@@ -104,7 +106,7 @@
             load_all_channels();
     // Scan through the channels array and actually assign those references
         foreach (array_keys($Channels) as $key) {
-            $channel_hash[$Channels[$key]->chanid] = &$Channels[$key];
+            $channel_hash[$Channels[$key]->chanid] =& $Channels[$key];
         // Reinitialize the programs array for this channel
             $Channels[$key]->programs = array();
         // Keep track of this channel id in case we're only grabbing info for certain channels - workound included to avoid blank chanid's
@@ -158,8 +160,12 @@
     // The extra query, if there is one
         if ($extra_query)
             $query .= ' AND '.$extra_query;
-    // Group, sort and query
+    // Group and sort
         $query .= ' GROUP BY program.chanid, program.starttime ORDER BY program.starttime';
+    // Limit
+        if ($single_program)
+            $query .= ' LIMIT 1';
+    // Query
         $sh = $db->query($query,
                          star_character, max_stars, max_stars);
     // No results
@@ -190,12 +196,8 @@
     // Cleanup
         $sh->finish();
     // If channel-specific information was requested, return an array of those programs, or just the first/only one
-        if ($chanid) {
-            if ($single_program)
-                return $channel_hash[$chanid]->programs[0];
-            else
-                return $channel_hash[$chanid]->programs;
-        }
+        if ($chanid && $single_program)
+            return $these_programs[0];
     // Just in case, return an array of all programs found
         return $these_programs;
     }
@@ -289,31 +291,20 @@ class Program {
                     $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
                 }
             }
-        // Ah, a scheduled recording - let's load more information about it, to be parsed in below
-           elseif ($this->chanid) {
-                unset($this->filename);
-            // Kludge to avoid redefining the object, which doesn't work in php5
-                $tmp = @get_object_vars(load_one_program($this->starttime, $this->chanid));
-                if (is_array($tmp) && count($tmp) > 0) {
-                    foreach ($tmp as $key => $value) {
-                        $this->$key = $value;
-                    }
-                }
-           }
         // Load the remaining info we got from mythbackend
             $this->title           = $data[0];                  # program name/title
             $this->subtitle        = $data[1];                  # episode name
             $this->description     = $data[2];                  # episode description
             $this->category        = $data[3];
             #$chanid               = $data[4];   # Extracted a few lines earlier
-            #$channum              = $data[5];
-            #$callsign             = $data[6];
+            $this->channum         = $data[5];
+            $this->callsign        = $data[6];
             $this->channame        = $data[7];
             #$pathname             = $data[8];   # Extracted a few lines earlier
             #$fs_high              = $data[9];   # Extracted a few lines earlier
             #$fs_low               = $data[10];  # Extracted a few lines earlier
-            #$starttime            = $data[11];  # Extracted a few lines earlier
-            #$endtime              = $data[12];  # Extracted a few lines earlier
+            #$this->starttime      = $data[11];  # Extracted a few lines earlier
+            #$this->endtime        = $data[12];  # Extracted a few lines earlier
             $this->hostname        = $data[16];
             #$this->sourceid       = $data[17];
             $this->cardid          = $data[18];
@@ -335,9 +326,9 @@ class Program {
             $this->programid       = $data[34];
             $this->lastmodified    = $data[35];
             $this->recpriority     = $data[36];
-            #$this->airdate        = $data[37];
-            #$this->hasairdate     = $data[38];
-            $this->timestretch     = $program_data[39];
+            $this->airdate         = $data[37];
+            $this->hasairdate      = $data[38];
+            $this->timestretch     = $data[39];
             $this->recpriority2    = $data[40];
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
@@ -378,8 +369,8 @@ class Program {
             $this->title_pronounce         = $data['title_pronounce'];
             $this->recstatus               = $data['recstatus'];
 
-            if ($program_data['tsdefault']) {
-                $this->timestretch = $program_data['tsdefault'];
+            if ($data['tsdefault']) {
+                $this->timestretch = $data['tsdefault'];
             } else {
                 $this->timestretch = 1.0;
             }
@@ -402,12 +393,14 @@ class Program {
         // Now we really should scan the $Channel array and add a link to this program's channel
             foreach (array_keys($Channels) as $key) {
                 if ($Channels[$key]->chanid == $this->chanid) {
-                    $this->channel = &$Channels[$key];
+                    $this->channel =& $Channels[$key];
                     break;
                 }
             }
+        // Not found
+            if (!$this->channel)
+                $this->channel =& load_one_channel($this->chanid);
         }
-
     // Calculate the duration
         if ($this->recendts)
             $this->length = $this->recendts - $this->recstartts;

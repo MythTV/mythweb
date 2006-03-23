@@ -68,10 +68,14 @@
 // Cleanup
     mysql_free_result($result);
 
-// Load all of the scheduled recordings.  We will need them at some point, so we
-// might as well get it overwith here.
+// Initialize
     global $Scheduled_Recordings, $Num_Conflicts, $Num_Scheduled;
     $Scheduled_Recordings = array();
+    $Num_Conflicts        = 0;
+    $Num_Scheduled        = 0;
+
+// Load all of the scheduled recordings.  We will need them at some point, so we
+// might as well get it overwith here.
     foreach (get_backend_rows('QUERY_GETALLPENDING', 2) as $key => $program) {
     // The offset entry
         if ($key === 'offset') {
