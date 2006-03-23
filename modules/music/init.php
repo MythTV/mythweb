@@ -23,6 +23,7 @@
 // If music is enabled, add it to the list.
     if ($has_music)
         $Modules['music'] = array('path'        => 'music',
+                                  'sort'        => 2,
                                   'name'        => t('Music'),
                                   'description' => t('')
                                  );

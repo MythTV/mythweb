@@ -19,6 +19,7 @@
 // The TV module is always enabled.
     if ($enabled > 0)
         $Modules['backend_log'] = array('path'        => 'backend_log',
+                                        'sort'        => 501,
                                         'name'        => t('Logs'),
                                        );
 

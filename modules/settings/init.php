@@ -15,6 +15,7 @@
 
 // The settings module is always enabled.
     $Modules['settings'] = array('path'        => 'settings',
+                                 'sort'        => 999,
                                  'name'        => t('Settings'),
                                  'description' => t('settings'),
                                  'links'       => array('channels'  => t('MythTV channel info'),

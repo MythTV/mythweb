@@ -15,6 +15,7 @@
 
 // The TV module is always enabled.
     $Modules['tv'] = array('path'        => 'tv',
+                           'sort'        => 1,
                            'name'        => t('TV'),
                            'links'       => array('list'             => t('Program Listing'),
                                                   'searches'         => t('Special Searches'),

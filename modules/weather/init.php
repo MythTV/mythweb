@@ -19,6 +19,7 @@
 // If weather is enabled, add it to the list.
     if ($has_weather)
         $Modules['weather'] = array('path'        => 'weather',
+                                    'sort'        => 4,
                                     'name'        => t('Weather'),
                                     'description' => t('')
                                    );

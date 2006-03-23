@@ -168,37 +168,35 @@
     require_once 'includes/translate.php';
 
 /**
- * Define each module individually in order because it's easier than storing a
- * sort-order setting in each module.
- *
  * @global  array       $GLOBALS['Modules']
  * @name    $Modules    A list of the available MythWeb modules
 /**/
-    $Modules = array('tv'          => null,
-                     'video'       => null,
-                     'music'       => null,
-                     'weather'     => null,
-                     'settings'    => null,
-                     'status'      => null,
-                     'backend_log' => null,
-                     'stream'      => null,
-                    );
+    $Modules = array();
 
 // Load the various modules (search for the "tv" subdirectory in case it might
 // find some other "modules" directory, too.
     $path = find_in_path('modules/tv/init.php');
     if ($path) {
         $path = dirname(dirname($path));
-        foreach (array_keys($Modules) as $module) {
+        foreach (get_sorted_files($path) as $module) {
+            if (preg_match('/^_/', $module))
+                continue;
             if (!file_exists("$path/$module/init.php"))
                 continue;
             require_once "$path/$module/init.php";
-            if (empty($Modules[$module]))
-                unset($Modules[$module]);
         }
     }
     if (empty($Modules)) {
         tailored_error('no_modules');
+    }
+
+// Sort the modules
+    uasort($Modules, 'by_module_sort');
+    function by_module_sort(&$a, &$b) {
+        if ($a['sort'] == $b['sort']) return strcasecmp($a['name'], $b['name']);
+        if (is_null($a['sort']))      return 99999;
+        if (is_null($b['sort']))      return -99999;
+        return ($a['sort'] > $b['sort']) ? 1 : -1;
     }
 
 // Include a few useful functions
