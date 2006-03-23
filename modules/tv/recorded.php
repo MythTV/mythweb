@@ -141,7 +141,7 @@
             }
             else {
             // This is inaccurate, but it's the best we can get without GMP.
-                $Total_Used += ($record[9] + ($record[10] < 0)) * 4294967296 + $record[10];  //
+                $Total_Used += ($record[9] + ($record[10] < 0)) * 4294967296 + $record[10];
             }
         // keep track of their names and how many episodes we have recorded
             $Total_Programs++;

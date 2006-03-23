@@ -278,11 +278,9 @@ class Program {
             if (!empty($this->filename)) {
                 if (function_exists('gmp_add')) {
                 // GMP functions should work better with 64 bit numbers.
-                    $size = gmp_mul('1024',
-                                    gmp_add($fs_low,
-                                            gmp_mul('4294967296',
-                                                    gmp_add($fs_high, $sizefs_low_low < 0 ? '1' : '0'))
-                                           )
+                    $size = gmp_add($fs_low,
+                                     gmp_mul('4294967296',
+                                             gmp_add($fs_high, $fs_low < 0 ? '1' : '0'))
                                    );
                     $this->filesize = gmp_strval($size);
                 }
