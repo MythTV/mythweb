@@ -242,8 +242,6 @@ $L = array(
     'Search options'                             => 'Možnosti iskanja',
     'Searches'                                   => 'Iskanja',
     'TV functions, including recorded programs.' => 'Funkcije TV, vključno z posnetimi programi.',
-// themes/default/movietimes/welcome.php
-    'welcome: movietimes' => '',
 // themes/default/music/music.php
     'Album'               => '',
     'Album (filtered)'    => '',

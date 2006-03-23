@@ -242,8 +242,6 @@ $L = array(
     'Search options'                             => 'Options de recherche',
     'Searches'                                   => 'Recherches',
     'TV functions, including recorded programs.' => 'Fonctions TV, inclant les enregistrements d&acute;&eacute;missions',
-// themes/default/movietimes/welcome.php
-    'welcome: movietimes' => '',
 // themes/default/music/music.php
     'Album'               => '',
     'Album (filtered)'    => '',

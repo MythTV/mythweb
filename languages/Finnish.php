@@ -247,8 +247,6 @@ $L = array(
     'Search options'                             => 'Hakuvalinnat',
     'Searches'                                   => 'Haut',
     'TV functions, including recorded programs.' => 'Nauhoitetut ohjelmat ja muut TV-asetukset.',
-// themes/default/movietimes/welcome.php
-    'welcome: movietimes' => 'tervetuloa',
 // themes/default/music/music.php
     'Album'               => 'Albumi',
     'Album (filtered)'    => 'Albumi (suodatettu)',

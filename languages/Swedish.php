@@ -242,8 +242,6 @@ $L = array(
     'Search options'                             => 'Sökval',
     'Searches'                                   => 'Sökningar',
     'TV functions, including recorded programs.' => 'Tv-funktioner, inkl. inspelade program.',
-// themes/default/movietimes/welcome.php
-    'welcome: movietimes' => 'Hämta listor på filmer som visas på lokala biografer.',
 // themes/default/music/music.php
     'Album'               => 'Album',
     'Album (filtered)'    => 'Album (filtrerat)',

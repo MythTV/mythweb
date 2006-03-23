@@ -242,8 +242,6 @@ $L = array(
     'Search options'                             => 'Volby vyhledávání',
     'Searches'                                   => 'Vyhledávání',
     'TV functions, including recorded programs.' => 'TV funkce včetně nahradných pořadů',
-// themes/default/movietimes/welcome.php
-    'welcome: movietimes' => 'Get listings for movies playing at local theatres.',
 // themes/default/music/music.php
     'Album'               => '',
     'Album (filtered)'    => '',

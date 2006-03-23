@@ -242,8 +242,6 @@ $L = array(
     'Search options'                             => '検索オプション',
     'Searches'                                   => '検索メニュー',
     'TV functions, including recorded programs.' => 'TV 録画',
-// themes/default/movietimes/welcome.php
-    'welcome: movietimes' => 'ムービータイムスようこそ！',
 // themes/default/music/music.php
     'Album'               => 'アルバム',
     'Album (filtered)'    => 'アルバム（絞込み）',

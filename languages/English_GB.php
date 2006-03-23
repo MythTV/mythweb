@@ -243,8 +243,6 @@ $L = array(
     'Search options'                             => '',
     'Searches'                                   => '',
     'TV functions, including recorded programs.' => 'TV functions, including recorded programmes.',
-// themes/default/movietimes/welcome.php
-    'welcome: movietimes' => 'Get listings for films playing at local cinemas.',
 // themes/default/music/music.php
     'Album'               => '',
     'Album (filtered)'    => '',
