@@ -211,8 +211,7 @@
 #        define('Theme', 'vxml');
 #    }
 // Load theme from session if it exists and the user is not resetting the theme.
-    if (file_exists('themes/'.$_SESSION['Theme'].'/theme.php')
-            && !$_REQUEST['RESET_THEME']) {
+    if (file_exists('themes/'.$_SESSION['Theme'].'/welcome.php') && !$_REQUEST['RESET_THEME']) {
         define('Theme', $_SESSION['Theme']);
     }
 // Now that we've tried a few things, we can load the mobile library
