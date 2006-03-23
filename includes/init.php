@@ -67,17 +67,18 @@
         fix_magic_quotes($_SERVER);
     }
 
+// Init the error module earlier than the others
+    require_once 'modules/_errors/init.php';
+
 // No MySQL libraries installed in PHP
     if (!function_exists('mysql_connect')) {
-        $Error = "Please install the MySQL libraries for PHP.\n"
-                .'The package is usually called something like php-mysql.';
-        require_once 'templates/_error.php';
-        exit;
+        custom_error("Please install the MySQL libraries for PHP.\n"
+                    .'The package is usually called something like php-mysql.');
     }
 
 // No database connection info defined?
     if (empty($_SERVER['db_server']) || empty($_SERVER['db_name']) || empty($_SERVER['db_login'])) {
-        require_once 'templates/_db_vars_error.php';
+        tailored_error('db_vars_error');
         exit;
     }
 
@@ -123,8 +124,7 @@
 
 // Access denied -- probably means that there is no database
     if ($db->errno == 1045) {
-        require_once 'templates/_db_access_denied.php';
-        exit;
+        tailored_error('db_access_denied');
     }
 
 // We don't need these security risks hanging around taking up memory.
@@ -155,8 +155,7 @@
                  $db->error,
                  'From:  PHP Error <php_errors@'.server_domain.">\n");
     // Let the user know in a nice way that something's wrong
-        require_once 'templates/_site_down.php';
-        exit;
+        tailored_error('site_down');
     }
 
 // Make sure the database is up to date
@@ -199,8 +198,7 @@
         }
     }
     if (empty($Modules)) {
-        require_once 'templates/_no_modules.php';
-        exit;
+        tailored_error('no_modules');
     }
 
 // Include a few useful functions
@@ -262,15 +260,11 @@
 
 // Make sure the data directory exists and is writable
     if (!is_dir('data') && !mkdir('data', 0755)) {
-        $Error = 'Error creating the data directory. Please check permissions.';
-        require_once 'templates/_error.php';
-        exit;
+        custom_error('Error creating the data directory. Please check permissions.');
     }
     if (!is_writable('data')) {
         $process_user = posix_getpwuid(posix_geteuid());
-        $Error = 'data directory is not writable by '.$process_user['name'].'. Please check permissions.';
-        require_once 'templates/_error.php';
-        exit;
+        custom_error('data directory is not writable by '.$process_user['name'].'. Please check permissions.');
     }
 
 // New hard-coded cache directory
@@ -278,15 +272,11 @@
 
 // Make sure the image cache path exists and is writable
     if (!is_dir(cache_dir) && !mkdir(cache_dir, 0755)) {
-        $Error = 'Error creating '.cache_dir.': Please check permissions on the data directory.';
-        require_once 'templates/_error.php';
-        exit;
+        custom_error('Error creating '.cache_dir.': Please check permissions on the data directory.');
     }
     if (!is_writable(cache_dir)) {
         $process_user = posix_getpwuid(posix_geteuid());
-        $Error = cache_dir.' directory is not writable by '.$process_user['name'].'. Please check permissions.';
-        require_once 'templates/_error.php';
-        exit;
+        custom_error(cache_dir.' directory is not writable by '.$process_user['name'].'. Please check permissions.');
     }
 
 // Clean out stale thumbnails

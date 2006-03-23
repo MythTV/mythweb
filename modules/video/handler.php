@@ -30,9 +30,8 @@
     if (file_exists('data/video')) {
     // File is not a directory or a symlink
         if (!is_dir('data/video') && !is_link('data/video')) {
-            $Error = 'An invalid file exists at data/video.  Please remove it in'
-                    .' order to use the video portions of MythWeb.';
-            require_once 'templates/_error.php';
+            custom_error('An invalid file exists at data/video.  Please remove it in'
+                        .' order to use the video portions of MythWeb.');
         }
     }
 // Create the symlink, if possible.
@@ -45,19 +44,17 @@
         if ($mythvideo_dir) {
             $ret = @symlink($mythvideo_dir, 'data/video');
             if (!$ret) {
-                #$Error = "Could not create a symlink to $mythvideo_dir, the local MythVideo"
-                #        .' directory for this hostname ('.hostname.').  Please create a
-                #        .' symlink to your MythVideo directory at data/video in order to
-                #        .' use the video portions of MythWeb.';
-                #require_once 'templates/_error.php';
+                #custom_error("Could not create a symlink to $mythvideo_dir, the local MythVideo"
+                #            .' directory for this hostname ('.hostname.').  Please create a
+                #            .' symlink to your MythVideo directory at data/video in order to
+                #            .' use the video portions of MythWeb.');
             }
         }
         else {
-            #$Error = 'Could not find a value in the database for the MythVideo directory'
-            #        .' for this hostname ('.hostname.').  Please create a symlink to your'
-            #        .' MythVideo directory at data/video in order to use the video'
-            #        .' portions of MythWeb.';
-            #require_once 'templates/_error.php';
+            #custom_error('Could not find a value in the database for the MythVideo directory'
+            #            .' for this hostname ('.hostname.').  Please create a symlink to your'
+            #            .' MythVideo directory at data/video in order to use the video'
+            #            .' portions of MythWeb.');
         }
     }
 

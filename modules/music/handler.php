@@ -17,9 +17,8 @@
     if (file_exists('data/music')) {
     // File is not a directory or a symlink
         if (!is_dir('data/music') && !is_link('data/music')) {
-            $Error = 'An invalid file exists at data/music.  Please remove it in'
-                    .' order to use the music portions of MythWeb.';
-            require_once 'templates/_error.php';
+            custom_error('An invalid file exists at data/music.  Please remove it in'
+                        .' order to use the music portions of MythWeb.');
         }
     }
 // Create the symlink, if possible.
@@ -37,19 +36,17 @@
         if ($dir) {
             $ret = @symlink($dir, 'data/music');
             if (!$ret) {
-                #$Error = "Could not create a symlink to $dir, the local MythMusic directory"
-                #        .' for this hostname ('.hostname.').  Please create a symlink to your'
-                #        .' MythMusic directory at data/music in order to use the music'
-                #        .' portions of MythWeb.';
-                #require_once 'templates/_error.php';
+                #custom_error("Could not create a symlink to $dir, the local MythMusic directory"
+                #            .' for this hostname ('.hostname.').  Please create a symlink to your'
+                #            .' MythMusic directory at data/music in order to use the music'
+                #            .' portions of MythWeb.');
             }
         }
         else {
-            #$Error = 'Could not find a value in the database for the MythMusic directory'
-            #        .' for this hostname ('.hostname.').  Please create a symlink to your'
-            #        .' MythMusic directory at data/music in order to use the music'
-            #        .' portions of MythWeb.';
-            #require_once 'templates/_error.php';
+            #custom_error('Could not find a value in the database for the MythMusic directory'
+            #            .' for this hostname ('.hostname.').  Please create a symlink to your'
+            #            .' MythMusic directory at data/music in order to use the music'
+            #            .' portions of MythWeb.');
         }
     }
 

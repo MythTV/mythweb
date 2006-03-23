@@ -24,7 +24,7 @@
         require_once 'modules/'.$Path[0].'/handler.php';
     }
     elseif (!empty($Path[0]) && preg_match('/\w/', $Path[0])) {
-        require_once 'templates/_unknown_module.php';
+        tailored_error('unknown_module');
     }
     else {
         require_once 'modules/welcome.php';

@@ -46,7 +46,7 @@
     #
         setenv db_server        "localhost"
         setenv db_name          "mythconverg"
-        setenv db_login         "mythtv"
+        setenv db_login         "myasdasdthtv"
         setenv db_password      "mythtv"
 
     #

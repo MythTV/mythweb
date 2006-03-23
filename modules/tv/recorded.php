@@ -20,9 +20,8 @@
     if (file_exists('data/recordings')) {
     // File is not a directory or a symlink
         if (!is_dir('data/recordings') && !is_link('data/recordings')) {
-            $Error = 'An invalid file exists at data/recordings.  Please remove it in'
-                    .' order to use the tv portions of MythWeb.';
-            require_once 'templates/_error.php';
+            custom_error('An invalid file exists at data/recordings.  Please remove it in'
+                        .' order to use the tv portions of MythWeb.');
         }
     }
 // Create the symlink, if possible.
@@ -40,19 +39,17 @@
         if ($dir) {
             $ret = @symlink($dir, 'data/recordings');
             if (!$ret) {
-                #$Error = "Could not create a symlink to $dir, the local recordings directory"
-                #        .' for this hostname ('.hostname.').  Please create a symlink to your'
-                #        .' recordings directory at data/recordings in order to use the tv'
-                #        .' portions of MythWeb.';
-                #require_once 'templates/_error.php';
+                #custom_error("Could not create a symlink to $dir, the local recordings directory"
+                #            .' for this hostname ('.hostname.').  Please create a symlink to your'
+                #            .' recordings directory at data/recordings in order to use the tv'
+                #            .' portions of MythWeb.');
             }
         }
         else {
-            #$Error = 'Could not find a value in the database for the recordings directory'
-            #        .' for this hostname ('.hostname.').  Please create a symlink to your'
-            #        .' recordings directory at data/recordings in order to use the tv'
-            #        .' portions of MythWeb.';
-            #require_once 'templates/_error.php';
+            #custom_error('Could not find a value in the database for the recordings directory'
+            #            .' for this hostname ('.hostname.').  Please create a symlink to your'
+            #            .' recordings directory at data/recordings in order to use the tv'
+            #            .' portions of MythWeb.');
         }
     }
 
