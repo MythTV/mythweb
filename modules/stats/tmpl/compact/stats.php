@@ -31,23 +31,27 @@
 	<form id="stats_form" name="stats_form" action="<?php echo root ?>stats">
 
         <div id="query_time_div">
-            <select name="query_time" onchange="submit_form(null, null, 'stats_form');">
+            <select name="query_time">
                 <option <?php if($_GET['query_time']=='All_time') echo 'selected' ?> value="All_time"><?php echo t('All') ?></option>
                 <option <?php if($_GET['query_time']=='year')     echo 'selected' ?> value="year"><?php  echo t('Past Year') ?></option>
                 <option <?php if($_GET['query_time']=='month')    echo 'selected' ?> value="month"><?php echo t('Past Month') ?></option>
                 <option <?php if($_GET['query_time']=='week')     echo 'selected' ?> value="week"><?php  echo t('Past Week') ?></option>
                 <option <?php if($_GET['query_time']=='day')      echo 'selected' ?> value="day"><?php   echo t('Yesterday') ?></option>
             </select>
+            &nbsp;
+            <input type="submit" value="go">
         </div>
 
         <div id="count_div">
-            <select name="count_dropdown" onchange="submit_form(null, null, 'stats_form');">
+            <select name="count_dropdown">
                 <option <?php if($_GET['count_dropdown']=='10')  echo 'selected' ?> value="10"><?php  echo t('Top $1', 10) ?></option>
                 <option <?php if($_GET['count_dropdown']=='25')  echo 'selected' ?> value="25"><?php  echo t('Top $1', 25) ?></option>
                 <option <?php if($_GET['count_dropdown']=='50')  echo 'selected' ?> value="50"><?php  echo t('Top $1', 50) ?></option>
                 <option <?php if($_GET['count_dropdown']=='100') echo 'selected' ?> value="100"><?php echo t('Top $1', 100) ?></option>
                 <option <?php if($_GET['count_dropdown']=='all') echo 'selected' ?> value="all"><?php echo t('All') ?></option>
             </select>
+            &nbsp;
+            <input type="submit" value="go">
         </div>
 
 	</form>
