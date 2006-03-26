@@ -163,38 +163,6 @@
 // Load the translation routines so the modules can translate their descriptions
     require_once 'includes/translate.php';
 
-/**
- * @global  array       $GLOBALS['Modules']
- * @name    $Modules    A list of the available MythWeb modules
-/**/
-    $Modules = array();
-
-// Load the various modules (search for the "tv" subdirectory in case it might
-// find some other "modules" directory, too.
-    $path = find_in_path('modules/tv/init.php');
-    if ($path) {
-        $path = dirname(dirname($path));
-        foreach (get_sorted_files($path) as $module) {
-            if (preg_match('/^_/', $module))
-                continue;
-            if (!file_exists("$path/$module/init.php"))
-                continue;
-            require_once "$path/$module/init.php";
-        }
-    }
-    if (empty($Modules)) {
-        tailored_error('no_modules');
-    }
-
-// Sort the modules
-    uasort($Modules, 'by_module_sort');
-    function by_module_sort(&$a, &$b) {
-        if ($a['sort'] == $b['sort']) return strcasecmp($a['name'], $b['name']);
-        if (is_null($a['sort']))      return 99999;
-        if (is_null($b['sort']))      return -99999;
-        return ($a['sort'] > $b['sort']) ? 1 : -1;
-    }
-
 // Include a few useful functions
     require_once "includes/css.php";
     require_once "includes/mouseovers.php";
@@ -241,12 +209,49 @@
     $_SESSION['skin'] = skin;
 
 // Set up some handy constants
+    define('module',   $Path[0]);
     define('skin_dir', 'skins/'.skin);
     define('skin_url', root.skin_dir.'/');
+    define('tmpl',     $_SESSION['tmpl']);
+    define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');
 
 // Load the template/theme config
     if (file_exists('config/theme_'. $_SESSION['tmpl'].'.php')) {
         require_once 'config/theme_'.$_SESSION['tmpl'].'.php';
+    }
+
+/**
+ * @global  array       $GLOBALS['Modules']
+ * @name    $Modules    A list of the available MythWeb modules
+/**/
+    $Modules = array();
+
+// Load the various modules (search for the "tv" subdirectory in case it might
+// find some other "modules" directory, too.
+    $path = find_in_path('modules/tv/init.php');
+    if ($path) {
+        $path = dirname(dirname($path));
+        foreach (get_sorted_files($path) as $module) {
+            if (preg_match('/^_/', $module))
+                continue;
+            if (!file_exists("$path/$module/init.php"))
+                continue;
+            if (!file_exists("$path/$module/tmpl/".tmpl))
+                continue;
+            require_once "$path/$module/init.php";
+        }
+    }
+    if (empty($Modules)) {
+        tailored_error('no_modules');
+    }
+
+// Sort the modules
+    uasort($Modules, 'by_module_sort');
+    function by_module_sort(&$a, &$b) {
+        if ($a['sort'] == $b['sort']) return strcasecmp($a['name'], $b['name']);
+        if (is_null($a['sort']))      return 99999;
+        if (is_null($b['sort']))      return -99999;
+        return ($a['sort'] > $b['sort']) ? 1 : -1;
     }
 
 // Make sure the data directory exists and is writable
@@ -308,9 +313,4 @@
     if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = t('generic_date');
     if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = t('generic_date');
     if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
-
-// Define some constants so we have easier global access
-    define('module',   $Path[0]);
-    define('tmpl',     $_SESSION['tmpl']);
-    define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');
 
