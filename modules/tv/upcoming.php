@@ -14,7 +14,7 @@
 /**/
 
 // Load the sorting routines
-    require_once "includes/sorting.php";
+    require_once 'includes/sorting.php';
 
 // Make sure we get the form data
     isset($_GET['chanid'])    or $_GET['chanid']    = $_POST['chanid'];
@@ -118,7 +118,7 @@
         sort_programs($all_shows, 'scheduled_sortby');
 
 // Load the class for this page
-    require_once theme_dir.'tv/upcoming.php';
+    require tmpl_dir.'upcoming.php';
 
 // Exit
     exit;

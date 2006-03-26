@@ -20,7 +20,7 @@
     }
 
 // Load the sorting routines
-    require_once "includes/sorting.php";
+    require_once 'includes/sorting.php';
 
 // Load the recordings
     global $Schedules;
@@ -50,7 +50,7 @@
         sort_programs($the_schedules, 'schedules_sortby');
 
 // Load the class for this page
-    require_once theme_dir.'tv/schedules.php';
+    require_once tmpl_dir.'schedules.php';
 
 // Exit
     exit;

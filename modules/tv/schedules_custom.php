@@ -202,7 +202,7 @@
         $schedule->length = 120;
 
 // Load the class for this page
-    require_once theme_dir.'tv/schedules_custom.php';
+    require_once tmpl_dir.'schedules_custom.php';
 
 // Exit
     exit;

@@ -17,7 +17,7 @@
     require_once 'config/canned_searches.php';
 
 // Load the class for this page
-    require_once theme_dir.'tv/searches.php';
+    require_once tmpl_dir.'searches.php';
 
 // Exit
     exit;

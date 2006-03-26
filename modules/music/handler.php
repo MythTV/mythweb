@@ -54,7 +54,7 @@
 //  Someday, music.php will let us stream
 //  entire playlists to any spot on planet earth
 //
-require_once theme_dir.'music/music.php';
+require_once tmpl_dir.'music.php';
 
 $mythmusic = new mythMusic();
 $mythmusic->display();

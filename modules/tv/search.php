@@ -198,7 +198,7 @@
     }
 
 // Load the class for this page
-    require_once theme_dir.'tv/search.php';
+    require_once tmpl_dir.'search.php';
 
 // Exit
     exit;

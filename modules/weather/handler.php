@@ -37,7 +37,7 @@
     $sh->finish();
 
 // Print the weather page template
-    require_once theme_dir.'/weather/weather.php';
+    require_once tmpl_dir.'weather.php';
 
 // Exit
     exit;

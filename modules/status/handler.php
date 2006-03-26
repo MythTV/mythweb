@@ -43,7 +43,7 @@
               );
 
 // Print the status page template
-    require_once theme_dir.'/status/status.php';
+    require_once tmpl_dir.'status.php';
 
 // Yup, that really is it.
     exit;

@@ -270,7 +270,7 @@
     }
 
 // Load the class for this page
-    require_once theme_dir.'tv/recorded.php';
+    require_once tmpl_dir.'recorded.php';
 
 // Exit
     exit;

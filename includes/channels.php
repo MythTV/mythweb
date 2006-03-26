@@ -157,7 +157,7 @@ class Channel {
                 $length = (($program_starts - $start_time) / $timeslot_size);
                 if ($length >= 0.5) {
                     $timeslots_used = ceil($length);
-                    require theme_dir.'/tv/list_cell_nodata.php';
+                    require tmpl_dir.'list_cell_nodata.php';
                     $start_time += $timeslots_used * timeslot_size;
                     if ($timeslots_left < $timeslots_used)
                         $timeslots_used = $timeslots_left;
@@ -175,14 +175,14 @@ class Channel {
                 $timeslots_used = $timeslots_left;
             $timeslots_left -= $timeslots_used;
             #if ($timeslots_left > 0)
-            require theme_dir.'/tv/list_cell_program.php';
+            require tmpl_dir.'list_cell_program.php';
         // Cleanup is good
             unset($program);
         }
     // Uh oh, there are leftover timeslots - display a no data message
         if ($timeslots_left > 0) {
             $timeslots_left = $timeslots_used;
-            require theme_dir.'/tv/list_cell_nodata.php';
+            require tmpl_dir.'list_cell_nodata.php';
         }
     }
 }

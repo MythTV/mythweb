@@ -49,5 +49,5 @@
     load_all_program_data($list_starttime, $list_endtime);
 
 // Load the class for this page
-    require_once theme_dir.'/tv/list.php';
+    require_once tmpl_dir.'list.php';
 

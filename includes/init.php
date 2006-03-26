@@ -206,29 +206,30 @@
 #    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
 #        define('Theme', 'vxml');
 #    }
-// Load theme from session if it exists and the user is not resetting the theme.
-    if (file_exists('themes/'.$_SESSION['Theme'].'/welcome.php') && !$_REQUEST['RESET_THEME']) {
-        define('Theme', $_SESSION['Theme']);
-    }
-// Now that we've tried a few things, we can load the mobile library
-    else {
+
+// Reset the template?
+    if ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
+        $_SESSION['tmpl'] = 'default';
+// If the requested template is missing the welcome file, look for other options
+    else if (!find_in_path('modules/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
     // Detect different types of browsers and set the theme accordingly.
         require_once "includes/mobile.php";
         if (isMobileUser()) {
         // Browser is mobile but does it accept HTML? If not, use the WML theme.
             if (browserAcceptsMediaType(array('text/html', '\*/\*')))
-                define('Theme', 'wap');
+                 $_SESSION['tmpl'] = 'wap';
             else
-                define('Theme', 'wml');
+                 $_SESSION['tmpl'] = 'wml';
+        // Make sure the skin is set to the appropriate phone-template type
+        /** @todo eventually, we'll put all of this in the skins section */
+            $_SESSION['Skin'] = $_SESSION['tmpl'];
+            define('Skin', $_SESSION['Skin']);
         }
     // Otherwise set the default theme.
         else {
-            define('Theme', 'default');
+             $_SESSION['tmpl'] = 'default';
         }
     }
-
-// Update the session variable
-    $_SESSION['Theme'] = Theme;
 
 // Is there a preferred skin?
     if (file_exists('skins/'.$_SESSION['Skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
@@ -241,13 +242,11 @@
 
 // Set up some handy constants
     define('skin_dir', 'skins/'.Skin);
-    define('skin_url', root.skin_dir);
-    define('theme_dir', 'themes/'.Theme.'/');
-    define('theme_url', root.theme_dir);
+    define('skin_url', root.skin_dir.'/');
 
 // Load the theme config
-    if (file_exists('config/theme_'.Theme.'.php')) {
-        require_once 'config/theme_'.Theme.'.php';
+    if (file_exists('config/theme_'. $_SESSION['tmpl'].'.php')) {
+        require_once 'config/theme_'.$_SESSION['tmpl'].'.php';
     }
 
 
@@ -310,4 +309,9 @@
     if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = t('generic_date');
     if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = t('generic_date');
     if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
+
+// Define some constants so we have easier global access
+    define('module',   $Path[0]);
+    define('tmpl',     $_SESSION['tmpl']);
+    define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');
 

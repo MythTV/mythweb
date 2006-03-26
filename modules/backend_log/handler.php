@@ -32,7 +32,7 @@
     $sh->finish();
 
 // Print the status page template
-    require_once theme_dir.'/backend_log/backend_log.php';
+    require_once tmpl_dir.'backend_log.php';
 
 // Yup, that really is it.
     exit;

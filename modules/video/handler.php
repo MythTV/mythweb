@@ -111,7 +111,7 @@
         sort_programs($All_Shows, 'video_sortby');
 
 // Load the class for this page
-    require_once theme_dir.'video/video.php';
+    require_once tmpl_dir.'video.php';
 
 // Exit
     exit;

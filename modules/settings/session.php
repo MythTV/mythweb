@@ -44,7 +44,7 @@
     }
 
 // Load the class for this page
-    require_once theme_dir.'settings/session.php';
+    require_once tmpl_dir.'session.php';
 
 // Exit
     exit;

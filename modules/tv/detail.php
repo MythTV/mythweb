@@ -222,7 +222,7 @@
     }
 
 // Display the page
-    require_once theme_dir.'tv/detail.php';
+    require_once tmpl_dir.'detail.php';
 
 // Exit
     exit;

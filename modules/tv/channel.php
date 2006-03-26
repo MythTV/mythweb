@@ -44,7 +44,7 @@
                                                     $this_channel->chanid);
 
 // Load the class for this page
-    require_once theme_dir.'tv/channel.php';
+    require_once tmpl_dir.'channel.php';
 
 // Exit
     exit;
