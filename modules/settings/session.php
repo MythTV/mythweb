@@ -25,8 +25,10 @@
         if ($_POST['date_listing_jump'])    $_SESSION['date_listing_jump']    = $_POST['date_listing_jump'];
         if ($_POST['date_channel_jump'])    $_SESSION['date_channel_jump']    = $_POST['date_channel_jump'];
         if ($_POST['time_format'])          $_SESSION['time_format']          = $_POST['time_format'];
-    // Save the theme
-        if ($_POST['theme'])                $_SESSION['Theme']                = $_POST['theme'];
+    // Save the template
+        if ($_POST['tmpl'])                 $_SESSION['tmpl']                 = $_POST['tmpl'];
+    // Save the skin
+        if ($_POST['skin'])                 $_SESSION['skin']                 = $_POST['skin'];
     // Use SI units?
         if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
     // Save the weather icon set
@@ -41,6 +43,9 @@
             require_once 'languages/'.$_SESSION['language'].'.php';
         }
 
+    // Skin change requires a redirect because certain constants have already been defined.
+        if ($_SESSION['skin'] != skin)
+            redirect_browser(root.module.'/session');
     }
 
 // Load the class for this page
@@ -49,29 +54,43 @@
 // Exit
     exit;
 
-
 /**
- * displays a <select> of the available themes
+ * Displays a <select> of the available templates
 /**/
-    function theme_select() {
-        echo '<select name="theme">';
-        foreach (get_sorted_files("themes/") as $theme) {
-        // Skip the svn directory and the non-browser themes
-            if (in_array($theme, array('.svn', 'wap', 'wml', 'vxml'))) continue;
-        // Ignore non-directories
-            if (!is_dir("themes/$theme")) continue;
+    function template_select() {
+        echo '<select name="tmpl">';
+        foreach (array('default', 'compact') as $tmpl) {
         // Print the option
-            echo '<option value="'.html_entities($theme).'"';
-            if ($_SESSION['Theme'] == $theme)
+            echo '<option value="'.html_entities($tmpl).'"';
+            if ($_SESSION['tmpl'] == $tmpl)
                 echo ' SELECTED';
-            $theme = ereg_replace('_', ' ', $theme);
-            echo '>'.html_entities($theme).'</option>';
+            echo '>'.html_entities(str_replace('_', ' ', $tmpl)).'</option>';
         }
         echo '</select>';
     }
 
 /**
- * displays a <select> of available weather icon sets
+ * Displays a <select> of the available skins
+/**/
+    function skin_select() {
+        echo '<select name="skin">';
+        foreach (get_sorted_files("skins/") as $skin) {
+        // Skip the svn directory and the non-browser themes
+            if (in_array($skin, array('.svn', 'wap', 'wml', 'vxml'))) continue;
+        // Ignore non-directories
+            if (!is_dir("skins/$skin")) continue;
+        // Print the option
+            echo '<option value="'.html_entities($skin).'"';
+            if ($_SESSION['skin'] == $skin)
+                echo ' SELECTED';
+            echo '>'.html_entities(str_replace('_', ' ', $skin)).'</option>';
+        }
+        echo '</select>';
+    }
+
+
+/**
+ * Displays a <select> of available weather icon sets
 /**/
     function weathericonset_select() {
         echo '<select name="weathericonset">';
@@ -91,7 +110,7 @@
     }
 
 /**
- * displays a <select> of the available languages
+ * Displays a <select> of the available languages
 /**/
     function language_select() {
         echo '<select name="language">';

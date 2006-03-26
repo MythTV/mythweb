@@ -222,8 +222,8 @@
                  $_SESSION['tmpl'] = 'wml';
         // Make sure the skin is set to the appropriate phone-template type
         /** @todo eventually, we'll put all of this in the skins section */
-            $_SESSION['Skin'] = $_SESSION['tmpl'];
-            define('Skin', $_SESSION['Skin']);
+            $_SESSION['skin'] = $_SESSION['tmpl'];
+            define('skin', $_SESSION['skin']);
         }
     // Otherwise set the default theme.
         else {
@@ -232,23 +232,22 @@
     }
 
 // Is there a preferred skin?
-    if (file_exists('skins/'.$_SESSION['Skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
-        define('Skin', $_SESSION['Skin']);
+    if (file_exists('skins/'.$_SESSION['skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
+        define('skin', $_SESSION['skin']);
     }
     else {
-        define('Skin', 'default');
+        define('skin', 'default');
     }
-    $_SESSION['Skin'] = Skin;
+    $_SESSION['skin'] = skin;
 
 // Set up some handy constants
-    define('skin_dir', 'skins/'.Skin);
+    define('skin_dir', 'skins/'.skin);
     define('skin_url', root.skin_dir.'/');
 
-// Load the theme config
+// Load the template/theme config
     if (file_exists('config/theme_'. $_SESSION['tmpl'].'.php')) {
         require_once 'config/theme_'.$_SESSION['tmpl'].'.php';
     }
-
 
 // Make sure the data directory exists and is writable
     if (!is_dir('data') && !mkdir('data', 0755)) {

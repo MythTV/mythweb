@@ -25,8 +25,11 @@
 
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5" style="float: left;margin-left: 20px">
 <tr>
-    <td class="command_border_b" align="right"><?php echo t('MythWeb Theme') ?>:</td>
-    <td class="command_border_b"><?php theme_select() ?></td>
+    <td class="command_border_b" align="right"><?php echo t('MythWeb Template') ?>:</td>
+    <td class="command_border_b"><?php template_select() ?></td>
+</tr><tr>
+    <td class="command_border_b" align="right"><?php echo t('MythWeb Skin') ?>:</td>
+    <td class="command_border_b"><?php skin_select() ?></td>
 </tr><tr>
     <td class="command_border_b" align="right"><?php echo t('Language') ?>:</td>
     <td class="command_border_b"><?php language_select() ?></td>
