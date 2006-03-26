@@ -324,7 +324,7 @@ class Program {
             $this->programid       = $data[34];
             $this->lastmodified    = $data[35];
             $this->recpriority     = $data[36];
-            $this->airdate         = $data[37];
+            $this->airdate         = date('Y-m-d', $data[37]);
             $this->hasairdate      = $data[38];
             $this->timestretch     = $data[39];
             $this->recpriority2    = $data[40];
