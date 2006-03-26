@@ -70,17 +70,6 @@ class WeatherSite {
 
     var $LastUpdated;
 
-    function ChooseThemeImage($theme, $image) {
-        $image = str_replace("\n", "", $image);
-        $image_test=dirname($_SERVER['PATH_TRANSLATED'])."/images/weather/".$theme."/".$image;
-
-        if (file_exists($image_test))
-            $image = "images/weather/".$theme."/".$image;
-        else
-            $image = "images/weather/Default/".$image;
-        return($image);
-    }
-
     function WeatherSite($data, $hostname, $use_metric) {
         $this->acid       = $data;
         $this->host       = $hostname;

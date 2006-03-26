@@ -39,7 +39,7 @@
         <h2><?php echo t('Current Conditions') ?>:</h2>
 
         <div class="overview">
-            <img src="<?php echo $site->ChooseThemeImage($_SESSION['weathericonset'], $site->ConditionImage) ?>" class="alpha_png" />
+            <img src="<?php echo skin_url ?>img/weather/<?php echo $site->ConditionImage ?>" class="alpha_png" />
             <h3><?php echo $site->ConditionText ?></h3>
             <p class="temp">
                 <?php echo $site->Temperature ?>&deg;<sup><?php echo (strcasecmp($site->use_metric, 'YES') == 0) ? 'C' : 'F' ?></sup>
@@ -112,7 +112,7 @@
 
                 ?></h3>
 
-            <img src="<?php echo $site->ChooseThemeImage($_SESSION['weathericonset'], $forecast->DescImage) ?>" class="alpha_png" />
+            <img src="<?php echo skin_url ?>img/weather/<?php echo $forecast->DescImage ?>" class="alpha_png" />
 
             <h3><?php echo $forecast->DescText ?></h3>
 

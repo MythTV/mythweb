@@ -31,8 +31,6 @@
         if ($_POST['skin'])                 $_SESSION['skin']                 = $_POST['skin'];
     // Use SI units?
         if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
-    // Save the weather icon set
-        if ($_POST['weathericonset'])       $_SESSION['weathericonset']       = $_POST['weathericonset'];
     // Recorded Programs
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
     // Guide Settings
@@ -84,27 +82,6 @@
             if ($_SESSION['skin'] == $skin)
                 echo ' SELECTED';
             echo '>'.html_entities(str_replace('_', ' ', $skin)).'</option>';
-        }
-        echo '</select>';
-    }
-
-
-/**
- * Displays a <select> of available weather icon sets
-/**/
-    function weathericonset_select() {
-        echo '<select name="weathericonset">';
-        foreach (get_sorted_files("images/weather/") as $theme) {
-        // Skip the CVS directory and the non-browser themes
-            if (in_array($theme, array('CVS', '.svn'))) continue;
-        // Ignore non-directories
-            if (!is_dir("images/weather/$theme")) continue;
-        // Print the option
-            echo '<option value="'.html_entities($theme).'"';
-            if ($_SESSION['weathericonset'] == $theme)
-                echo ' SELECTED';
-            $theme = str_replace('_', ' ', $theme);
-            echo '>'.html_entities($theme).'</option>';
         }
         echo '</select>';
     }
