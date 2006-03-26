@@ -23,8 +23,8 @@
     my $mythweb_path   = dirname($languages_path);
 
 # Make at least a reasonable attempt to make sure the script is where it's supposed to be
-    die "Please make sure that this script is in the mythweb languages directory.\n"
-        unless ($languages_path =~ /\/languages$/ && -e "$languages_path/English.php");
+    die "Please make sure that this script is in modules/_shared/lang/\n"
+        unless ($languages_path =~ /\/lang$/ && -e "$languages_path/English.php");
 
 # Scan the files
     print "Scanning php files in $mythweb_path\n";

@@ -46,7 +46,7 @@
         $_SESSION['language'] = 'English';
 
 // Load the language file
-    require_once 'languages/'.$_SESSION['language'].'.php';
+    require_once 'modules/_shared/lang/'.$_SESSION['language'].'.php';
 
 // No language array defined?
     if (!is_array($L) || !count($L))
