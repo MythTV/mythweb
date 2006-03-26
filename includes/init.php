@@ -101,6 +101,9 @@
                          ))
                    );
 
+// Handy reference to the current module
+    define('module',   $Path[0]);
+
 // Load the database connection routines
     require_once 'includes/db.php';
 
@@ -209,7 +212,6 @@
     $_SESSION['skin'] = skin;
 
 // Set up some handy constants
-    define('module',   $Path[0]);
     define('skin_dir', 'skins/'.skin);
     define('skin_url', root.skin_dir.'/');
     define('tmpl',     $_SESSION['tmpl']);
