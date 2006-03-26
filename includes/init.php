@@ -67,9 +67,6 @@
         fix_magic_quotes($_SERVER);
     }
 
-// Init the error module earlier than the others
-    require_once 'modules/_errors/init.php';
-
 // No MySQL libraries installed in PHP
     if (!function_exists('mysql_connect')) {
         custom_error("Please install the MySQL libraries for PHP.\n"
@@ -79,7 +76,6 @@
 // No database connection info defined?
     if (empty($_SERVER['db_server']) || empty($_SERVER['db_name']) || empty($_SERVER['db_login'])) {
         tailored_error('db_vars_error');
-        exit;
     }
 
 /**
