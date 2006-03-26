@@ -32,7 +32,9 @@
             echo $site->host;
     ?></p>
     <p class="location"><?php
-            echo "$site->acid: $site->city, $site->subdiv, $site->country";
+            echo "$site->acid: $site->city, ",
+                 ($site->subdiv ? "$site->subdiv, " : ''),
+                 $site->country;
     ?></p>
 
     <div class="current_conditions clearfix">
