@@ -70,6 +70,9 @@
 // Print out the list of modules.  Each theme should include a welcome page for
 // each module.
     foreach ($Modules as $id => $module) {
+    // Hidden module?
+        if ($module['hidden'])
+            continue;
         require "modules/$id/tmpl/".tmpl.'/welcome.php';
     }
 ?>
