@@ -1,17 +1,23 @@
 <?php
-/***                                                                        ***\
-    recorded_programs.php                    Last Updated: 2003.08.20 (xris)
+/**
+ * Recorded programs
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
-    This file defines a theme class for the recorded programs section.
-    It must define one method.   documentation will be added someday.
+// Print the page title and load the header
+    $page_title = "MythWeb - ".t('Recorded Programs');
+    require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-\***                                                                        ***/
-
-        $page_title = "MythWeb - ".t('Recorded Programs');
-        require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
-    // Print the page contents
-        global $All_Shows;
+// Print the page contents
+    global $All_Shows;
 ?>
 
 <p>

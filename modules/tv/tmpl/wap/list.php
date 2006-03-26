@@ -1,23 +1,23 @@
 <?php
-/***                                                                        ***\
-    program_listing.php                      Last Updated: 2003.08.19 (xris)
+/**
+ * Program listing
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
-    This file defines a theme class for the program listing section.
-    It must define several methods, some of which have specific
-    parameters.   documentation will be added someday.
-\***                                                                        ***/
 
+// Print the page title and load the header
+    $page_title = 'MythWeb - '.t('Listings');
+    require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-#class theme_program_listing extends Theme {
-
-    /*
-        print_header:
-        This function prints the header portion of the page specific to the program listing
-    */
-$page_title = 'MythWeb - '.t('Listings');
-require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
-    // Print the header info specific to the program listing
+// Print the header info specific to the program listing
 ?>
 <p>
     <form class="form" action="<?php echo root ?>tv/list" method="get">

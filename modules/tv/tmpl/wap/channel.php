@@ -1,11 +1,16 @@
 <?php
-/***                                                                        ***\
-    channel_detail.php                        Last Updated: 2003.07.23 (xris)
-
-    This file defines a theme class for the channel detail section.
-    It must define one method.   documentation will be added someday.
-
-\***                                                                        ***/
+/**
+ * Channel detail
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
 
     // Print the main page header

@@ -1,19 +1,22 @@
 <?php
-/***                                                                        ***\
-    list.php                      Last Updated: 2004.10.25 (jbuckshin)
+/**
+ * Program listing
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
-    This file defines a theme class for the program listing section.
-    It must define several methods, some of which have specific
-    parameters.   documentation will be added someday.
-\***                                                                        ***/
+// Print the main page header
+    $page_title = 'MythWeb - '.t('Listings');
+    require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-
-        // Print the main page header
-        $page_title = 'MythWeb - '.t('Listings');
-        require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
-
-        if ((! isset($_GET['listbytime'])) && (! isset($_GET['listbychannum'])) && (! isset($_GET['listbycallsign']))) {
+    if ((! isset($_GET['listbytime'])) && (! isset($_GET['listbychannum'])) && (! isset($_GET['listbycallsign']))) {
 ?>
 <p>
 View listings by<br />

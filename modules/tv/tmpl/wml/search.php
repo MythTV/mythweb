@@ -1,23 +1,26 @@
 <?php
-/***                                                                        ***\
-    search.php                    Last Updated: 2004.10.25 (jbuckshin)
+/**
+ * Search
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
-    This file defines a theme class for the search section.
-    It must define one method.   documentation will be added someday.
-
-\***                                                                        ***/
-
-        // Print the main page header
-        $page_title = 'MythWeb - '.t('Search');
+// Print the main page header
+    $page_title = 'MythWeb - '.t('Search');
 	require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-        global $Results;
+// start out with page size of 10
+    $page_size=10;
 
-        $page_size=10; // start out with page size of 10
-
-        // No search was performed, just return
-        if (!is_array($Results))
-        {
+// No search was performed, just return
+    if (!is_array($Results)) {
 ?>
 <do type="accept" label="Go">
 <go href="<?php echo root ?>tv/search" method="get">
@@ -27,12 +30,12 @@
 <p><?php echo t('Search') ?>:<input type="text" name="searchstr"/></p>
 </card>
 <?php
-            require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-            return;
-        }
+        require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
+        return;
+    }
 
-        // Search, but nothing found - notify the user
-        if (!count($Results)) {
+// Search, but nothing found - notify the user
+    if (!count($Results)) {
 ?>
 <do type="accept" label="Go">
 <go href="<?php echo root ?>tv/search" method="get">
@@ -43,19 +46,19 @@
 <p><?php echo t('Search') ?>:<input type="text" name="searchstr"/></p>
 </card>
 <?php
-            require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-            return;
-        }
+        require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
+        return;
+    }
 
-        // Get the url search string so we don't have to recreate it for each sort type
-        $search_str = '&amp;searchstr='.urlencode($_GET['searchstr']);
-        $page = $_GET['page'];
-        if ($_GET['search_title'])         $search_str .= '&amp;search_title=yes';
-        if ($_GET['search_subtitle'])      $search_str .= '&amp;search_subtitle=yes';
-        if ($_GET['search_description'])   $search_str .= '&amp;search_description=yes';
-        if ($_GET['search_category'])      $search_str .= '&amp;search_category=yes';
-        if ($_GET['search_category_type']) $search_str .= '&amp;search_category_type=yes';
-        // Display the results
+// Get the url search string so we don't have to recreate it for each sort type
+    $search_str = '&amp;searchstr='.urlencode($_GET['searchstr']);
+    $page = $_GET['page'];
+    if ($_GET['search_title'])         $search_str .= '&amp;search_title=yes';
+    if ($_GET['search_subtitle'])      $search_str .= '&amp;search_subtitle=yes';
+    if ($_GET['search_description'])   $search_str .= '&amp;search_description=yes';
+    if ($_GET['search_category'])      $search_str .= '&amp;search_category=yes';
+    if ($_GET['search_category_type']) $search_str .= '&amp;search_category_type=yes';
+// Display the results
 ?>
 <do type="accept" label="Go">
 <go href="<?php echo root ?>tv/search" method="get">
@@ -85,47 +88,47 @@
 </do>
 <p>
 <?php
-        $row = 0;
-        if (! isset($page)) $page = 1;
-        $page_start = ($page - 1) * $page_size + 1;
-        $page_end = $page_start + $page_size;
+    $row = 0;
+    if (! isset($page)) $page = 1;
+    $page_start = ($page - 1) * $page_size + 1;
+    $page_end = $page_start + $page_size;
 
-        if ($page != 1) echo '<a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
-        echo " (".$page.") ";
-        if (($page * $page_size) < count($Results)) {
-            echo ' <a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
-        } else {
-            echo '<br />';
+    if ($page != 1) echo '<a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
+    echo " (".$page.") ";
+    if (($page * $page_size) < count($Results)) {
+        echo ' <a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
+    } else {
+        echo '<br />';
+    }
+
+
+    // I'd really like to cache the results in the session
+    // but that requires changes to the underlying search code
+    // and cannot be coded only in the theme.  Maybe this will
+    // change at some later date.
+    foreach ($Results as $show) {
+
+        $row++;
+
+        // pager code
+        if (($row < $page_start) || ($row >= $page_end)) {
+            continue;
         }
 
+        // Print the content
+        echo '<a href="'.root.'tv/detail?chanid='.$show->chanid.'&amp;starttime='.$show->starttime.'">'.htmlspecialchars($show->title).'</a><br />';
 
-        // I'd really like to cache the results in the session
-        // but that requires changes to the underlying search code
-        // and cannot be coded only in the theme.  Maybe this will
-        // change at some later date.
-        foreach ($Results as $show) {
+        if(strlen($show->subtitle)) echo htmlspecialchars($show->subtitle).'<br />';
 
-            $row++;
+        //  echo $show->description.'<br />';
+        echo strftime(t('generic_date')." ".t('generic_time'), $show->starttime).'<br />';
+        echo $show->channel->callsign.' '.$show->channel->channum.' - '.nice_length($show->length)."<br /><br />\n";
+    }
 
-            // pager code
-            if (($row < $page_start) || ($row >= $page_end)) {
-                continue;
-            }
-
-            // Print the content
-            echo '<a href="'.root.'tv/detail?chanid='.$show->chanid.'&amp;starttime='.$show->starttime.'">'.htmlspecialchars($show->title).'</a><br />';
-
-            if(strlen($show->subtitle)) echo htmlspecialchars($show->subtitle).'<br />';
-
-            //  echo $show->description.'<br />';
-            echo strftime(t('generic_date')." ".t('generic_time'), $show->starttime).'<br />';
-            echo $show->channel->callsign.' '.$show->channel->channum.' - '.nice_length($show->length)."<br /><br />\n";
-        }
-
-        if ($page != 1) echo '<a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
-        echo " (".$page.") ";
-        if (($page * $page_size) < count($Results)) echo ' <a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
-        echo '</p></card>';
+    if ($page != 1) echo '<a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page - 1).'">&lt; prev</a>';
+    echo " (".$page.") ";
+    if (($page * $page_size) < count($Results)) echo ' <a href="'.root.'tv/search?'.$search_str.'&amp;page='.($page + 1).'">next &gt;</a><br />';
+    echo '</p></card>';
 
 	require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-?>
+

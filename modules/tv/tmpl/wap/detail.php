@@ -1,19 +1,23 @@
 <?php
-/***                                                                        ***\
-    program_detail.php                       Last Updated: 2003.08.22 (xris)
+/**
+ * Program detail
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
-    This file defines a theme class for the program details section.
-    It must define one method.   documentation will be added someday.
 
-\***                                                                        ***/
+// Print the main page header
+    $page_title = "Prog Detail";
+    require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-#class theme_program_detail extends Theme {
-
-    // Print the main page header
-        $page_title = "Prog Detail";
-        require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
-    // Print the page contents
+// Print the page contents
 ?>
 <a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid ?>" >
 <?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?> &nbsp;
@@ -106,6 +110,6 @@
     </form>
 
 <?php
-    // Print the main page footer
-        require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
+// Print the main page footer
+    require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
 

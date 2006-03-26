@@ -1,15 +1,20 @@
 <?php
-/***                                                                        ***\
-    detail.php                       Last Updated: 2004.10.25 (jbuckshin)
+/**
+ * Program detail
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ *
+/**/
 
-    This file defines a theme class for the program details section.
-    It must define one method.   documentation will be added someday.
-
-\***                                                                        ***/
-
-        $page_title = "Prog Detail";
-        require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
-        // Print the page contents
+    $page_title = "Prog Detail";
+    require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
+// Print the page contents
 ?>
 <p>
 <br />

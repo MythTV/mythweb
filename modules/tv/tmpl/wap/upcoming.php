@@ -1,7 +1,6 @@
 <?php
 /**
- * This file defines a theme class for the scheduled recordings section.
- * It must define one method.   documentation will be added someday.
+ * Upcoming recordings
  *
  * @url         $URL$
  * @date        $Date$
