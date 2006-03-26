@@ -22,7 +22,6 @@
 // point to an array containing first the user-visible name of the language and
 // the matching language and charset codes.
     $Languages = array();
-    $Languages['Australian'] = array('Australian',      '');     // Australian is a joke, don't try to detect it
     $Languages['Dutch']      = array('Nederlands',      array('nl_NL', 'nl_BE'));
     $Languages['English']    = array('English',         'en_US.ISO-8859-1');
     $Languages['English_GB'] = array('English_GB',      'en_GB.ISO-8859-1');
