@@ -140,13 +140,26 @@
             return t('$1 TB', t(round($size / tb, ($size < 10 * tb))));
     }
 
+/**
+ * Convert a unix timestamp into an day/hour/minute string
+ *
+ * @param int $length time to convert.
+ *
+ * @return string Translated hour/minute string.
+/**/
     function nice_length($length) {
-        $mins  = (int) (($length % 3600) / 60);
-        $hours = (int) ($length / 3600);
-        if ($hours)
-            $ret = tn('$1 hr', '$1 hrs', $hours);
+        $days  = intVal($length  / (24 * 3600));
+        $hours = intVal(($length % (24 * 3600)) / 3600);
+        $mins  = intVal(($length % 3600) / 60);
+        if ($days > 0)
+            $ret = tn('$1 day', '$1 days', $days);
         else
             $ret = '';
+        if ($hours > 0) {
+            if ($ret)
+                $ret .= ' ';
+            $ret .= tn('$1 hr', '$1 hrs', $hours);
+        }
         if ($mins > 0) {
             if ($ret)
                 $ret .= ' ';

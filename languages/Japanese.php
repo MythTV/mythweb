@@ -241,7 +241,6 @@ $L = array(
     'Visibility'                                                                                                                         => '視界',
     'Visit $1'                                                                                                                           => '',
     'Weather'                                                                                                                            => '天気',
-    'Weather Icons'                                                                                                                      => '天気アイコン',
     'Wednesday'                                                                                                                          => '水曜日',
     'What else is on at this time?'                                                                                                      => 'この時間の番組表',
     'Wind'                                                                                                                               => '風',
@@ -369,11 +368,13 @@ $L = array(
 // includes/sorting.php
     'regex: articles' => 'An?|The',
 // includes/utils.php
-    '$1 B'  => '',
-    '$1 GB' => '',
-    '$1 KB' => '',
-    '$1 MB' => '',
-    '$1 TB' => '',
+    '$1 B'    => '',
+    '$1 GB'   => '',
+    '$1 KB'   => '',
+    '$1 MB'   => '',
+    '$1 TB'   => '',
+    '$1 day'  => '',
+    '$1 days' => '',
 // modules/_shared/tmpl/default/header.php
     'Category Legend'            => 'カテゴリー凡例',
     'Category Type'              => 'カテゴリータイプ',
@@ -394,6 +395,27 @@ $L = array(
     'MythTV key bindings'      => 'MythTVキーバインド',
     'MythWeb session settings' => 'MythWebセッション設定',
     'settings'                 => '設定',
+// modules/stats/init.php
+    'Statistics' => '',
+// modules/stats/tmpl/default/stats.php
+    '$1 wasted'            => '',
+    'All'                  => '',
+    'Count'                => '',
+    'First recording'      => '',
+    'Last Recorded'        => '',
+    'Last recording'       => '',
+    'Name'                 => '',
+    'Number of epsodes'    => '',
+    'Number of shows'      => '',
+    'Past Month'           => '',
+    'Past Week'            => '',
+    'Past Year'            => '',
+    'Recording Statistics' => '',
+    'Top $1'               => '',
+    'Total Time'           => '',
+    'Yesterday'            => '',
+// modules/stats/tmpl/default/welcome.php
+    'welcome: stats' => '',
 // modules/status/init.php
     'Status' => 'ステータス',
 // modules/stream/init.php

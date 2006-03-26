@@ -241,7 +241,6 @@ $L = array(
     'Visibility'                                                                                                                         => 'Visibilidad',
     'Visit $1'                                                                                                                           => 'Visite $1',
     'Weather'                                                                                                                            => 'Tiempo',
-    'Weather Icons'                                                                                                                      => 'Iconos Tiempo',
     'Wednesday'                                                                                                                          => 'Miércoles',
     'What else is on at this time?'                                                                                                      => 'Qué más hay a esta hora?',
     'Wind'                                                                                                                               => 'Viento',
@@ -369,11 +368,13 @@ $L = array(
 // includes/sorting.php
     'regex: articles' => 'El|L(?:as?|os)',
 // includes/utils.php
-    '$1 B'  => '$1 B',
-    '$1 GB' => '$1 GB',
-    '$1 KB' => '$1 KB',
-    '$1 MB' => '$1 MB',
-    '$1 TB' => '$1 TB',
+    '$1 B'    => '$1 B',
+    '$1 GB'   => '$1 GB',
+    '$1 KB'   => '$1 KB',
+    '$1 MB'   => '$1 MB',
+    '$1 TB'   => '$1 TB',
+    '$1 day'  => '',
+    '$1 days' => '',
 // modules/_shared/tmpl/default/header.php
     'Category Legend'            => 'Leyenda Categoría',
     'Category Type'              => 'Tipo Categoría',
@@ -394,6 +395,27 @@ $L = array(
     'MythTV key bindings'      => 'Vínculos Teclas MythTV',
     'MythWeb session settings' => 'Ajustes sesiones MythWeb',
     'settings'                 => 'ajustes',
+// modules/stats/init.php
+    'Statistics' => '',
+// modules/stats/tmpl/default/stats.php
+    '$1 wasted'            => '',
+    'All'                  => '',
+    'Count'                => '',
+    'First recording'      => '',
+    'Last Recorded'        => '',
+    'Last recording'       => '',
+    'Name'                 => '',
+    'Number of epsodes'    => '',
+    'Number of shows'      => '',
+    'Past Month'           => '',
+    'Past Week'            => '',
+    'Past Year'            => '',
+    'Recording Statistics' => '',
+    'Top $1'               => '',
+    'Total Time'           => '',
+    'Yesterday'            => '',
+// modules/stats/tmpl/default/welcome.php
+    'welcome: stats' => '',
 // modules/status/init.php
     'Status' => 'Estado',
 // modules/stream/init.php

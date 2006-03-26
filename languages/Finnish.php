@@ -246,7 +246,6 @@ $L = array(
     'Visibility'                                                                                                                         => 'Näkyvyys',
     'Visit $1'                                                                                                                           => '',
     'Weather'                                                                                                                            => 'Säätila',
-    'Weather Icons'                                                                                                                      => 'Sääennusteen Ikonit',
     'Wednesday'                                                                                                                          => 'Keskiviikko',
     'What else is on at this time?'                                                                                                      => 'Mitä muuta on tähän aikaan?',
     'Wind'                                                                                                                               => 'Tuuli',
@@ -374,11 +373,13 @@ $L = array(
 // includes/sorting.php
     'regex: articles' => 'An?|The',
 // includes/utils.php
-    '$1 B'  => '$1 B',
-    '$1 GB' => '$1 GB',
-    '$1 KB' => '$1 KB',
-    '$1 MB' => '$1 MB',
-    '$1 TB' => '$1 TB',
+    '$1 B'    => '$1 B',
+    '$1 GB'   => '$1 GB',
+    '$1 KB'   => '$1 KB',
+    '$1 MB'   => '$1 MB',
+    '$1 TB'   => '$1 TB',
+    '$1 day'  => '',
+    '$1 days' => '',
 // modules/_shared/tmpl/default/header.php
     'Category Legend'            => 'Kategorioiden Värit/Merkitys',
     'Category Type'              => 'Kategorian Tyyppi',
@@ -399,6 +400,27 @@ $L = array(
     'MythTV key bindings'      => 'MythTV komennot',
     'MythWeb session settings' => 'MythWeb istuntoasetukset',
     'settings'                 => 'Asetukset',
+// modules/stats/init.php
+    'Statistics' => '',
+// modules/stats/tmpl/default/stats.php
+    '$1 wasted'            => '',
+    'All'                  => '',
+    'Count'                => '',
+    'First recording'      => '',
+    'Last Recorded'        => '',
+    'Last recording'       => '',
+    'Name'                 => '',
+    'Number of epsodes'    => '',
+    'Number of shows'      => '',
+    'Past Month'           => '',
+    'Past Week'            => '',
+    'Past Year'            => '',
+    'Recording Statistics' => '',
+    'Top $1'               => '',
+    'Total Time'           => '',
+    'Yesterday'            => '',
+// modules/stats/tmpl/default/welcome.php
+    'welcome: stats' => '',
 // modules/status/init.php
     'Status' => 'Systeemin Tila',
 // modules/stream/init.php
