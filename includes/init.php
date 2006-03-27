@@ -102,7 +102,7 @@
                    );
 
 // Handy reference to the current module
-    define('module',   $Path[0]);
+    define('module', $Path[0]);
 
 // Load the database connection routines
     require_once 'includes/db.php';

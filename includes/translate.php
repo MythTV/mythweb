@@ -45,8 +45,13 @@
     if (!file_exists('languages/'.$_SESSION['language'].'.php'))
         $_SESSION['language'] = 'English';
 
-// Load the language file
-    require_once 'modules/_shared/lang/'.$_SESSION['language'].'.php';
+// Load the language file, English first in case the other doesn't exist.
+    require_once  'modules/_shared/lang/English.php';
+    @include_once  'modules/'.module.'/lang/English.php';
+    if ($_SESSION['language'] != 'English') {
+        @include_once 'modules/_shared/lang/'.$_SESSION['language'].'.php';
+        @include_once 'modules/'.module.'/lang/'.$_SESSION['language'].'.php';
+    }
 
 // No language array defined?
     if (!is_array($L) || !count($L))
