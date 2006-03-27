@@ -12,21 +12,16 @@ For everyone:
 For translators:
 
     To create new translation files, just copy any existing file (probably
-    English.php since it will have the least amount of information to delete)
-    and fill it in with the appropriate translations.  Mythweb now uses a
-    php-based translation hash, so you will see a line defining the $L array,
-    followed by lines like the following:
+    English.lang since it will have the least amount of information to delete)
+    and fill it in with the appropriate translations.
 
-        'some string in English' => 'some string in another language',
+    Put the translation on the line after the source string, indented with
+    spaces or tabs.  If your translation spans multiple lines, just make sure
+    that you indent with the same characters as the first line. Please look at
+    English.lang for examples.  Some of the translation strings are shorthand,
+    and are even "translated" in English.lang into more verbose sentences.
 
-    If set to a null string ('') the original English will be used.  If set to
-    the value null, or not defined, users will see an error in the html code
-    telling them that there is an untranslated string.  See below for info about
-    untranslated strings.
-
-    Please look at English.php for examples.  Some of the translation strings
-    are shorthand, and are even "translated" in English.php into more verbose
-    sentences.
+    Untranslated strings will merely display the source (English) string.
 
     Don't forget to add your language to the $Languages array in
     includes/translate.php, too.  That way, it will attempt to auto-detect the
@@ -68,8 +63,6 @@ Untranslated strings:
 
     As I mentioned above, there is a script (build_translation.pl) included in
     the languages subdirectory that is designed to keep translations up to date.
-    Running this script will scan all of Mythweb's data files, along with the
-    Default theme (I haven't yet decided if I should scan other themes), and
-    update language files, filling in any undefined strings with '' translations
-    (which will result in English being shown to users until a translation is
-    added).
+    Running this script will scan all of Mythweb's data and template files, and
+    update the language files (which will result in English being shown to users
+    until a translation is added).
