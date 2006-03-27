@@ -1,19 +1,17 @@
 " at "
-     v 
+    v
 "$1 B"
-"$1 GB"
-"$1 KB"
-"$1 MB"
-"$1 Search"
-"$1 TB"
 "$1 day"
 "$1 days"
 "$1 episode"
 "$1 episodes"
+"$1 GB"
 "$1 hr"
     $1 hodina
 "$1 hrs"
     $1 hodin
+"$1 KB"
+"$1 MB"
 "$1 min"
     $1 minuta
 "$1 mins"
@@ -22,6 +20,8 @@
     $1 pořadů, obsazených $2 ($3) z $4 ($5 volných)
 "$1 recording"
 "$1 recordings"
+"$1 Search"
+"$1 TB"
 "$1 to $2"
     $1 do $2
 "$1 wasted"
@@ -31,14 +31,16 @@
 "Additional Tables"
 "Advanced Options"
     Rozšířené volby
+"airdate"
+    datum vysílání
 "Airtime"
     Čas vysílání
 "Album"
 "Album (filtered)"
 "All"
+"All groups"
 "All HDTV"
 "All Music"
-"All groups"
 "All recordings"
     Všechny nahrávky
 "Any"
@@ -48,6 +50,7 @@
 "Are you sure you want to delete the following show?"
 "Artist"
 "Artist (filtered)"
+"auto-expire"
 "Auto-expire recordings"
     Automaticky vypršet nahrávky
 "Auto-flag commercials"
@@ -60,25 +63,35 @@
 "Backend Logs"
 "Backend Status"
     Stav backendu
-"CC"
+"brightness"
+"callsign"
 "Cancel this schedule."
     Zrušit tento rozvrh
 "Cast"
+"category"
 "Category"
     Kategorie
 "Category Legend"
 "Category Type"
+"CC"
 "Channel"
+"channel"
 "Channel &quot;Jump to&quot;"
 "Channel Detail"
+"channum"
+    číslo kanálu
 "Check for duplicates in"
     Zkontrolovat duplicity
+"colour"
 "Commands"
+"commfree"
 "Configure Channels"
 "Configure Keybindings"
 "Conflicts"
 "Context"
+"contrast"
 "Count"
+"cover"
 "Create Schedule"
     Vytvořit rozvrh
 "Current Conditions"
@@ -89,22 +102,26 @@
     Zrovna prohlížíte:  $1
 "Custom"
 "Custom Schedule"
-    Upravený rozvrh 
+    Upravený rozvrh
 "Date"
     Datum
 "Date Formats"
 "Deactivated"
 "Default"
 "Delete"
+"delete"
 "Delete $1"
 "Delete + Rerecord"
 "Delete and rerecord $1"
+"description"
+    popis
 "Description"
     Popis
 "Destination"
 "Details for"
     Detaily o
 "Directed by"
+"director"
 "Display"
     Zobrazení
 "Displaying"
@@ -117,8 +134,8 @@
 "Duplicates"
 "Duration"
 "Edit"
-"Edit MythWeb and some MythTV settings."
 "Edit keybindings on"
+"Edit MythWeb and some MythTV settings."
 "End"
 "End Late"
     Končí pozdě
@@ -127,47 +144,63 @@
 "Episode Number"
 "Exact Match"
 "Exec. Producer"
+"file size"
 "Filtered"
 "Find Date & Time Options"
 "Find Day"
-"Find Time"
-"Find Time must be of the format:  HH:MM:SS"
 "Find other showings of this program"
 "Find showings of this program"
+"Find Time"
+"Find Time must be of the format:  HH:MM:SS"
+"finetune"
 "First recording"
 "Fold Duplicates"
 "Forecast"
     Předpověď počasí
 "Forget Old"
     Zapomeň staré
+"format help"
+"freqid"
 "Friday"
     Pátek
+"generic_date"
+    %a %b %e, %Y
+"generic_time"
+    %I:%M %p
 "Genre"
 "Genre (filtered)"
 "Go"
 "Google"
 "Guest Starring"
-"Guide Settings"
 "Guide rating"
+"Guide Settings"
+"Handy Predefined Searches"
+"handy: overview"
+    This page contains pre-prepared complex searches of the program listings.
+"has bookmark"
+"has commflag"
+"has cutlist"
 "HD Only"
 "HDTV"
-"Handy Predefined Searches"
 "High"
 "Hosted by"
 "Hour"
     Hodina
 "Hour Format"
     Formát hodin
+"hue"
 "Humidity"
     Vlhkost
 "IMDB"
+"imdb rating"
 "Inactive"
     Neaktivní
+"is editing"
 "Jump"
     Skočit
-"Jump To"
-    Skočit na
 "Jump to"
+    Skočit na
+"Jump To"
     Skočit na
 "JumpPoints Editor"
 "Key bindings"
@@ -177,8 +210,10 @@
 "Language"
     Jazyk
 "Last Recorded"
-"Last Updated"
 "Last recording"
+"Last Updated"
+"length"
+    délka
 "Length"
 "Length (min)"
 "Listing &quot;Jump to&quot;"
@@ -189,8 +224,11 @@
 "Low"
 "Manual"
     Ručně
+"minutes"
+    minuty
 "Monday"
     Pondělí
+"movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
 "Movies, Stinkers (2 Stars or less)"
@@ -199,31 +237,32 @@
 "Music Specials"
 "MythMusic on the web."
     MythMusic na webu.
-"MythTV Status"
 "MythTV channel info"
 "MythTV key bindings"
+"MythTV Status"
 "MythVideo on the web."
     MythVideo na webu.
+"MythWeb session settings"
 "MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
     MythWeb Počasí.
-"MythWeb session settings"
-"NO DATA"
 "Name"
+"name"
 "Never Record"
     Nikdy nenahrávat
 "New Titles, Premieres"
 "Next"
 "No"
     Ne
-"No Tracks Available"
+"NO DATA"
 "No matches found"
 "No matching programs found."
 "No matching programs were found."
 "No recording schedules have been defined."
     Žádné rozvrhy nahrávání nebyly definovány.
+"No Tracks Available"
 "No. of recordings to keep"
     Podržet počet nahrávek
 "Non-Music Specials"
@@ -233,9 +272,9 @@
 "Notes"
 "Number of epsodes"
 "Number of shows"
+"Only display favourite channels"
 "Only New Episodes"
     Jen nové díly
-"Only display favourite channels"
 "Original Airdate"
     Původně vysíláno
 "Part $1 of $2"
@@ -247,17 +286,20 @@
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please search for something."
+"plot"
 "Possible conflicts with this show"
 "Power"
 "Power Search"
 "Presented by"
 "Pressure"
     Tlak
+"preview"
 "Previous"
 "Previous recordings"
     Předchozí nahrávky
 "Produced by"
 "Profile"
+"profile"
 "Program Detail"
 "Program ID"
 "Program Listing"
@@ -265,10 +307,12 @@
 "Radar"
 "Rating"
     Hodnocení
-"Record This"
-    Nahrát toto
+"rating"
+"recgroup"
 "Record new and expire old"
     Nahrát nový a vypršet starý
+"Record This"
+    Nahrát toto
 "Recorded Programs"
     Nahrané pořady
 "Recording Group"
@@ -278,173 +322,6 @@
 "Recording Schedules"
     Rozvrhy nahrávání
 "Recording Statistics"
-"Repeat"
-    Opakování
-"Reset"
-"Reverse Order"
-"SI Units?"
-"Saturday"
-    Sobota
-"Save"
-    Uložit
-"Save Schedule"
-    Uložit rozvrh
-"Schedule"
-"Schedule Manually"
-"Schedule Options"
-"Schedule Override"
-"Schedule normally."
-"Schedule via $1."
-"Scheduled"
-"Scheduled Popup"
-"Science Fiction Movies"
-"Search"
-    Vyhledat
-"Search Phrase"
-"Search Results"
-"Search Type"
-"Search fields"
-    Vyhledávací pole
-"Search for:  $1"
-"Search help"
-    Nápověda vyhledávání
-"Search help: movie example"
-    *** 1/2 Adventure
-"Search help: movie search"
-    movie search
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    regex search
-"Search options"
-    Volby vyhledávání
-"Searches"
-    Vyhledávání
-"Set Host"
-"Settings"
-"Show"
-"Show descriptions on new line"
-"Show group"
-"Show recordings"
-"Showing all programs from the $1 group."
-"Showing all programs."
-"Special Searches"
-"Start Date"
-"Start Early"
-"Start Time"
-"Statistics"
-"Status"
-"Status Bar"
-"Stereo"
-"Streaming"
-"Sub and Desc (Empty matches)"
-"Subtitle"
-"Subtitle and Description"
-"Subtitled"
-    Titulky
-"Sunday"
-    Neděle
-"TV"
-"TV functions, including recorded programs."
-    TV funkce včetně nahradných pořadů
-"TV.com"
-"The requested recording schedule has been deleted."
-    Požadovaný rozvrh nahrávání byl vymazán
-"Thursday"
-    Čtvrtek
-"Time"
-"Time Stretch Default"
-"Title"
-    Název
-"Title Search"
-"Today"
-    Dnes
-"Tomorrow"
-    Zítra
-"Top"
-"Top $1"
-"Total Time"
-"Track Name"
-"Transcoder"
-"Tuesday"
-    Úterý
-"Type"
-"UV Extreme"
-"UV High"
-"UV Index"
-"UV Minimal"
-"UV Moderate"
-"Unfiltered"
-"Unknown"
-"Unknown Program."
-"Unknown Recording Schedule."
-    Neznámý rozvrh nahrávání.
-"Unreachable"
-"Upcoming Recordings"
-    Nadcházející nahrávky
-"Update"
-"Update Recording Settings"
-"Use callsign"
-"Use date/time"
-"Video"
-"Videos"
-"Visibility"
-    Viditelnost
-"Visit $1"
-"Weather"
-    Počasí
-"Wednesday"
-    Středa
-"What else is on at this time?"
-"Wind"
-"Wind Chill"
-"Written by"
-"Yes"
-    Ano
-"Yesterday"
-"airdate"
-    datum vysílání
-"auto-expire"
-"brightness"
-"callsign"
-"category"
-"channel"
-"channum"
-    číslo kanálu
-"colour"
-"commfree"
-"contrast"
-"cover"
-"delete"
-"description"
-    popis
-"director"
-"file size"
-"finetune"
-"format help"
-"freqid"
-"generic_date"
-    %a %b %e, %Y
-"generic_time"
-    %I:%M %p
-"handy: overview"
-    This page contains pre-prepared complex searches of the program listings.
-"has bookmark"
-"has commflag"
-"has cutlist"
-"hue"
-"imdb rating"
-"is editing"
-"length"
-    délka
-"minutes"
-    minuty
-"name"
-"plot"
-"preview"
-"profile"
-"rating"
-"recgroup"
 "recpriority"
 "recstatus: cancelled"
     This was scheduled to be recorded but was manually canceled.
@@ -528,19 +405,136 @@
     Týdně
 "regex: articles"
     An?|The
+"Repeat"
+    Opakování
+"Reset"
+"Reverse Order"
+"Saturday"
+    Sobota
+"Save"
+    Uložit
+"Save Schedule"
+    Uložit rozvrh
+"Schedule"
+"Schedule Manually"
+"Schedule normally."
+"Schedule Options"
+"Schedule Override"
+"Schedule via $1."
+"Scheduled"
+"Scheduled Popup"
+"Science Fiction Movies"
+"Search"
+    Vyhledat
+"Search fields"
+    Vyhledávací pole
+"Search for:  $1"
+"Search help"
+    Nápověda vyhledávání
+"Search help: movie example"
+    *** 1/2 Adventure
+"Search help: movie search"
+    movie search
+"Search help: regex example"
+    /^Good Eats/
+"Search help: regex search"
+    regex search
+"Search options"
+    Volby vyhledávání
+"Search Phrase"
+"Search Results"
+"Search Type"
+"Searches"
+    Vyhledávání
+"Set Host"
 "settings"
+"Settings"
 "settings: overview"
     This is the index page for the configuration settings...<p>It's incomplete, and will eventually get some nicer formatting.  For now, you can choose from the following:
+"Show"
+"Show descriptions on new line"
+"Show group"
+"Show recordings"
+"Showing all programs from the $1 group."
+"Showing all programs."
+"SI Units?"
 "sourceid"
+"Special Searches"
+"Start Date"
+"Start Early"
+"Start Time"
+"Statistics"
+"Status"
+"Status Bar"
+"Stereo"
+"Streaming"
+"Sub and Desc (Empty matches)"
+"Subtitle"
 "subtitle"
     podtitul
+"Subtitle and Description"
+"Subtitled"
+    Titulky
+"Sunday"
+    Neděle
+"The requested recording schedule has been deleted."
+    Požadovaný rozvrh nahrávání byl vymazán
+"Thursday"
+    Čtvrtek
+"Time"
+"Time Stretch Default"
 "title"
     název
+"Title"
+    Název
+"Title Search"
+"Today"
+    Dnes
+"Tomorrow"
+    Zítra
+"Top"
+"Top $1"
+"Total Time"
+"Track Name"
 "transcoder"
+"Transcoder"
+"Tuesday"
+    Úterý
+"TV"
+"TV functions, including recorded programs."
+    TV funkce včetně nahradných pořadů
+"TV.com"
 "type"
+"Type"
+"Unfiltered"
+"Unknown"
+"Unknown Program."
+"Unknown Recording Schedule."
+    Neznámý rozvrh nahrávání.
+"Unreachable"
+"Upcoming Recordings"
+    Nadcházející nahrávky
+"Update"
+"Update Recording Settings"
+"Use callsign"
+"Use date/time"
 "useonairguide"
+"UV Extreme"
+"UV High"
+"UV Index"
+"UV Minimal"
+"UV Moderate"
+"Video"
 "videofilters"
+"Videos"
+"Visibility"
+    Viditelnost
 "visible"
+"Visit $1"
+"Weather"
+    Počasí
+"Wednesday"
+    Středa
 "welcome: backend_log"
     Show the server logs.
 "welcome: music"
@@ -556,5 +550,12 @@
     Browse your video collection.
 "welcome: weather"
     Get the local weather forecast.
+"What else is on at this time?"
+"Wind"
+"Wind Chill"
+"Written by"
 "xmltvid"
 "year"
+"Yes"
+    Ano
+"Yesterday"

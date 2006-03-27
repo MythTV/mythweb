@@ -1,27 +1,23 @@
 " at "
-     aan 
+    aan
 "$1 B"
     $1 B
-"$1 GB"
-    $1 GB
-"$1 KB"
-    $1 KB
-"$1 MB"
-    $1 MB
-"$1 Search"
-    $1 Zoeken
-"$1 TB"
-    $1 TB
 "$1 day"
 "$1 days"
 "$1 episode"
     $1 aflevering
 "$1 episodes"
     $1 afleveringen
+"$1 GB"
+    $1 GB
 "$1 hr"
     $1 uur
 "$1 hrs"
     $1 uur
+"$1 KB"
+    $1 KB
+"$1 MB"
+    $1 MB
 "$1 min"
     $1 min
 "$1 mins"
@@ -32,6 +28,10 @@
     $1 opname
 "$1 recordings"
     $1 opnames
+"$1 Search"
+    $1 Zoeken
+"$1 TB"
+    $1 TB
 "$1 to $2"
     $1 tot $2
 "$1 wasted"
@@ -43,6 +43,8 @@
     Aanvullende tabellen
 "Advanced Options"
     Geavanceerde Opties
+"airdate"
+    uitzenddatum
 "Airtime"
     Uitzendtijd
 "Album"
@@ -50,12 +52,12 @@
 "Album (filtered)"
     Album (filter)
 "All"
+"All groups"
+    Alle groepen
 "All HDTV"
     Alle HDTV
 "All Music"
     Alle muziek
-"All groups"
-    Alle groepen
 "All recordings"
     Alle opnames
 "Any"
@@ -72,6 +74,8 @@
     Artiest
 "Artist (filtered)"
     Artiest (filter)
+"auto-expire"
+    automatisch vervallen
 "Auto-expire recordings"
     Opnames Autom. Vervallen
 "Auto-flag commercials"
@@ -86,28 +90,42 @@
     Backend Logboek
 "Backend Status"
     Backend Status
-"CC"
-    OND
+"brightness"
+    helderheid
+"callsign"
+    zender
 "Cancel this schedule."
     Opname annuleren
 "Cast"
     Acteurs
+"category"
+    categorie
 "Category"
     Categorie
 "Category Legend"
     Categorie Legende
 "Category Type"
     Categorie Type
+"CC"
+    OND
 "Channel"
     Zender
+"channel"
+    zender
 "Channel &quot;Jump to&quot;"
     Zender &quot;Ga naar&quot;
 "Channel Detail"
     Zender detail
+"channum"
+    zender
 "Check for duplicates in"
     Op dubbels controleren in
+"colour"
+    kleur
 "Commands"
     Opdrachten
+"commfree"
+    reclamevrij
 "Configure Channels"
     Zenders instellen
 "Configure Keybindings"
@@ -116,7 +134,11 @@
     Conflicten
 "Context"
     Onderdeel
+"contrast"
+    contrast
 "Count"
+"cover"
+    hoes
 "Create Schedule"
     Opname plannen
 "Current Conditions"
@@ -139,12 +161,16 @@
     Standaard
 "Delete"
     Verwijderen
+"delete"
+    verwijderen
 "Delete $1"
     $1 verwijderen
 "Delete + Rerecord"
     Verwijderen en opnieuw opnemen
 "Delete and rerecord $1"
     Verwijderen en $1 opnieuw opnemen
+"description"
+    beschrijving
 "Description"
     Beschrijving
 "Destination"
@@ -153,6 +179,8 @@
     Details
 "Directed by"
     Regisseur
+"director"
+    regisseur
 "Display"
     Tonen
 "Displaying"
@@ -171,10 +199,10 @@
     Lengte
 "Edit"
     Bewerken
-"Edit MythWeb and some MythTV settings."
-    MythWeb en enkele MythTV instellingen bewerken
 "Edit keybindings on"
     Toetsbindingen bewerken op
+"Edit MythWeb and some MythTV settings."
+    MythWeb en enkele MythTV instellingen bewerken
 "End"
     Einde
 "End Late"
@@ -187,28 +215,40 @@
     Exacte Overeenkomst
 "Exec. Producer"
     Uitv. Producent
+"file size"
+    bestandsgrootte
 "Filtered"
     Met filter
 "Find Date & Time Options"
     Datum &amp; tijd zoeken, opties
 "Find Day"
     Dag zoeken
-"Find Time"
-    Tijd zoeken
-"Find Time must be of the format:  HH:MM:SS"
-    Tijd moet in het formaat: HH:MM:SS zijn
 "Find other showings of this program"
     Andere afleveringen van dit programma zoeken
 "Find showings of this program"
     Afleveringen van dit programma zoeken
+"Find Time"
+    Tijd zoeken
+"Find Time must be of the format:  HH:MM:SS"
+    Tijd moet in het formaat: HH:MM:SS zijn
+"finetune"
+    fijn afstemmen
 "First recording"
 "Fold Duplicates"
 "Forecast"
     Voorspelling
 "Forget Old"
     Oude vergeten
+"format help"
+    formaat help
+"freqid"
+    frequentie
 "Friday"
     Vrijdag
+"generic_date"
+    %a %e %b, %Y
+"generic_time"
+    %H:%M
 "Genre"
     Genre
 "Genre (filtered)"
@@ -219,16 +259,24 @@
     Google
 "Guest Starring"
     Gastrol
-"Guide Settings"
-    Gidsinstellingen
 "Guide rating"
     Gids beoordeling
+"Guide Settings"
+    Gidsinstellingen
+"Handy Predefined Searches"
+    Handige voorgeprogrammeerde zoekopdrachten
+"handy: overview"
+    Deze pagina bevat handige voorgeprogrammeerde complexe zoekopdrachten
+"has bookmark"
+    heeft index
+"has commflag"
+    heeft reclamemarkering
+"has cutlist"
+    heeft knippunten
 "HD Only"
     Enkel HD
 "HDTV"
     HDTV
-"Handy Predefined Searches"
-    Handige voorgeprogrammeerde zoekopdrachten
 "High"
     Maximum
 "Hosted by"
@@ -236,17 +284,23 @@
     Uur
 "Hour Format"
     Weergave Tijd
+"hue"
+    verzadiging
 "Humidity"
     Vochtigheid
 "IMDB"
     IMDB
+"imdb rating"
+    imdb beoordeling
 "Inactive"
     Niet actief
+"is editing"
+    wordt bewerkt
 "Jump"
     Ga
-"Jump To"
-    Ga naar
 "Jump to"
+    Ga naar
+"Jump To"
     Ga naar
 "JumpPoints Editor"
     Snelkoppelingen bewerken
@@ -261,9 +315,11 @@
 "Language"
     Taal
 "Last Recorded"
+"Last recording"
 "Last Updated"
     Laatst Vernieuwd
-"Last recording"
+"length"
+    duur
 "Length"
     Duur
 "Length (min)"
@@ -280,8 +336,11 @@
     Minimum
 "Manual"
     Manueel
+"minutes"
+    minuten
 "Monday"
     Maandag
+"movie"
 "Movies"
     Films
 "Movies, 3&frac12; Stars or more"
@@ -294,25 +353,25 @@
     Muziek Specials
 "MythMusic on the web."
     Muziek
-"MythTV Status"
-    MythTV status
 "MythTV channel info"
     MythTV zenderinfo
 "MythTV key bindings"
     MythTV toetsbindingen
+"MythTV Status"
+    MythTV status
 "MythVideo on the web."
     Video
+"MythWeb session settings"
+    MythWeb sessie instellingen
 "MythWeb Session Settings"
     MythWen Sessie Instellingen
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
     Weer
-"MythWeb session settings"
-    MythWeb sessie instellingen
-"NO DATA"
-    GEEN DATA
 "Name"
+"name"
+    naam
 "Never Record"
     Nooit Opnemen
 "New Titles, Premieres"
@@ -321,8 +380,8 @@
     Volgende
 "No"
     Neen
-"No Tracks Available"
-    Geen nummers gevonden
+"NO DATA"
+    GEEN DATA
 "No matches found"
     Geen programma's gevonden
 "No matching programs found."
@@ -331,6 +390,8 @@
     Geen overeenkomende programma's gevonden
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
+"No Tracks Available"
+    Geen nummers gevonden
 "No. of recordings to keep"
     Aantal opnames bewaren
 "Non-Music Specials"
@@ -343,10 +404,10 @@
     Opmerkingen
 "Number of epsodes"
 "Number of shows"
-"Only New Episodes"
-    Enkel Nieuwe Afleveringen
 "Only display favourite channels"
     Enkel favoriete zenders laten zien
+"Only New Episodes"
+    Enkel Nieuwe Afleveringen
 "Original Airdate"
     Oorsp. Datum
 "Part $1 of $2"
@@ -362,6 +423,8 @@
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
 "Please search for something."
     Graag iets zoeken.
+"plot"
+    korte inhoud
 "Possible conflicts with this show"
     Mogelijk conflict met dit programma
 "Power"
@@ -371,6 +434,8 @@
     Presentator
 "Pressure"
     Luchtdruk
+"preview"
+    preview
 "Previous"
     Vorige
 "Previous recordings"
@@ -379,6 +444,8 @@
     Producent
 "Profile"
     Profiel
+"profile"
+    profiel
 "Program Detail"
     Pragrammadetails
 "Program ID"
@@ -389,10 +456,14 @@
     Radar
 "Rating"
     Beoordeling
-"Record This"
-    Dit Opnemen
+"rating"
+    beoordeling
+"recgroup"
+    opnamegroep
 "Record new and expire old"
     Nieuwe opnemen en oude wissen
+"Record This"
+    Dit Opnemen
 "Recorded Programs"
     Opgenomen Programma's
 "Recording Group"
@@ -406,261 +477,6 @@
 "Recording Schedules"
     Opnameschema
 "Recording Statistics"
-"Repeat"
-    Opnieuw Uitvoeren
-"Reset"
-    Herstellen
-"Reverse Order"
-    Volgorde omkeren
-"SI Units?"
-    SI eenheden?
-"Saturday"
-    Zaterdag
-"Save"
-    Opslaan
-"Save Schedule"
-    Schema opslaan
-"Schedule"
-    Programmeren
-"Schedule Manually"
-    Handmatig
-"Schedule Options"
-    Schema Opties
-"Schedule Override"
-    Aangepast Schema
-"Schedule normally."
-    Normaal Schema
-"Schedule via $1."
-"Scheduled"
-    Geprogrammeerd
-"Scheduled Popup"
-    Geprogrammeerde Pop-up
-"Science Fiction Movies"
-    Science Fiction Films
-"Search"
-    Zoeken
-"Search Phrase"
-    Zin zoeken
-"Search Results"
-    Zoekresultaten
-"Search Type"
-    Type zoeken
-"Search fields"
-    Zoek Velden
-"Search for:  $1"
-    Zoeken: $1
-"Search help"
-    Zoek Help
-"Search help: movie example"
-    *** 1/2 Avontuur
-"Search help: movie search"
-    zoek films
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    regex zoeken
-"Search options"
-    Zoeken Opties
-"Searches"
-    Zoekopdrachten
-"Set Host"
-    Host instellen
-"Settings"
-    Instellingen
-"Show"
-    Toon
-"Show descriptions on new line"
-    Beschrijvingen op nieuwe regel
-"Show group"
-    Groep tonen
-"Show recordings"
-    Opnames tonen
-"Showing all programs from the $1 group."
-    Alle programma's uit de $1 groep laten zien
-"Showing all programs."
-    Alle programma's laten zien
-"Special Searches"
-    Speciaal zoeken
-"Start Date"
-    Start Datum
-"Start Early"
-    Eerder beginnen
-"Start Time"
-    Start Tijd
-"Statistics"
-"Status"
-    Status
-"Status Bar"
-    Statusbalk
-"Stereo"
-    Stereo
-"Streaming"
-    Stroom aan het doorsturen
-"Sub and Desc (Empty matches)"
-    Dubbels en Beschrijving
-"Subtitle"
-    Aflevering
-"Subtitle and Description"
-    Aflevering en beschrijving
-"Subtitled"
-    Ondertiteld
-"Sunday"
-    Zondag
-"TV"
-    TV
-"TV functions, including recorded programs."
-    TV functies, inclusief opgenomen programma's
-"TV.com"
-    TV.com
-"The requested recording schedule has been deleted."
-    Het gevraagde opnameschema is verwijderd
-"Thursday"
-    Donderdag
-"Time"
-    Tijd
-"Time Stretch Default"
-    TimeStretch Standaard
-"Title"
-    Titel
-"Title Search"
-    Titel zoeken
-"Today"
-    Vandaag
-"Tomorrow"
-    Morgen
-"Top"
-    Begin
-"Top $1"
-"Total Time"
-"Track Name"
-    Naam
-"Transcoder"
-    Transcoder
-"Tuesday"
-    Dinsdag
-"Type"
-    Type
-"UV Extreme"
-    UV Zeer Hoog
-"UV High"
-    UV Hoog
-"UV Index"
-    UV Index
-"UV Minimal"
-    UV Laag
-"UV Moderate"
-    UV Gemiddeld
-"Unfiltered"
-    Zonder filter
-"Unknown"
-    Onbekend
-"Unknown Program."
-    Onbekend Programma.
-"Unknown Recording Schedule."
-    Onbekend Opnameschema
-"Unreachable"
-"Upcoming Recordings"
-    Geplande Opnames
-"Update"
-    Aanpassen
-"Update Recording Settings"
-    Opname-instellingen Vernieuwen
-"Use callsign"
-    Zender gebruiken
-"Use date/time"
-    Datum/tijd gebruiken
-"Video"
-    Films
-"Videos"
-    Films
-"Visibility"
-    Zichtbaarheid
-"Visit $1"
-"Weather"
-    Weer
-"Wednesday"
-    Woensdag
-"What else is on at this time?"
-    Wat wordt er nog uitgezonden op dit tijdstip?
-"Wind"
-    Wind
-"Wind Chill"
-    Voeltemp. Wind
-"Written by"
-    Auteur
-"Yes"
-    Ja
-"Yesterday"
-"airdate"
-    uitzenddatum
-"auto-expire"
-    automatisch vervallen
-"brightness"
-    helderheid
-"callsign"
-    zender
-"category"
-    categorie
-"channel"
-    zender
-"channum"
-    zender
-"colour"
-    kleur
-"commfree"
-    reclamevrij
-"contrast"
-    contrast
-"cover"
-    hoes
-"delete"
-    verwijderen
-"description"
-    beschrijving
-"director"
-    regisseur
-"file size"
-    bestandsgrootte
-"finetune"
-    fijn afstemmen
-"format help"
-    formaat help
-"freqid"
-    frequentie
-"generic_date"
-    %a %e %b, %Y
-"generic_time"
-    %H:%M
-"handy: overview"
-    Deze pagina bevat handige voorgeprogrammeerde complexe zoekopdrachten
-"has bookmark"
-    heeft index
-"has commflag"
-    heeft reclamemarkering
-"has cutlist"
-    heeft knippunten
-"hue"
-    verzadiging
-"imdb rating"
-    imdb beoordeling
-"is editing"
-    wordt bewerkt
-"length"
-    duur
-"minutes"
-    minuten
-"name"
-    naam
-"plot"
-    korte inhoud
-"preview"
-    preview
-"profile"
-    profiel
-"rating"
-    beoordeling
-"recgroup"
-    opnamegroep
 "recpriority"
     opnameprioriteit
 "recstatus: cancelled"
@@ -747,26 +563,200 @@
     Wekelijks
 "regex: articles"
     An?|The
+"Repeat"
+    Opnieuw Uitvoeren
+"Reset"
+    Herstellen
+"Reverse Order"
+    Volgorde omkeren
+"Saturday"
+    Zaterdag
+"Save"
+    Opslaan
+"Save Schedule"
+    Schema opslaan
+"Schedule"
+    Programmeren
+"Schedule Manually"
+    Handmatig
+"Schedule normally."
+    Normaal Schema
+"Schedule Options"
+    Schema Opties
+"Schedule Override"
+    Aangepast Schema
+"Schedule via $1."
+"Scheduled"
+    Geprogrammeerd
+"Scheduled Popup"
+    Geprogrammeerde Pop-up
+"Science Fiction Movies"
+    Science Fiction Films
+"Search"
+    Zoeken
+"Search fields"
+    Zoek Velden
+"Search for:  $1"
+    Zoeken: $1
+"Search help"
+    Zoek Help
+"Search help: movie example"
+    *** 1/2 Avontuur
+"Search help: movie search"
+    zoek films
+"Search help: regex example"
+    /^Good Eats/
+"Search help: regex search"
+    regex zoeken
+"Search options"
+    Zoeken Opties
+"Search Phrase"
+    Zin zoeken
+"Search Results"
+    Zoekresultaten
+"Search Type"
+    Type zoeken
+"Searches"
+    Zoekopdrachten
+"Set Host"
+    Host instellen
 "settings"
     instellingen
+"Settings"
+    Instellingen
 "settings: overview"
     instellingen: overzicht
+"Show"
+    Toon
+"Show descriptions on new line"
+    Beschrijvingen op nieuwe regel
+"Show group"
+    Groep tonen
+"Show recordings"
+    Opnames tonen
+"Showing all programs from the $1 group."
+    Alle programma's uit de $1 groep laten zien
+"Showing all programs."
+    Alle programma's laten zien
+"SI Units?"
+    SI eenheden?
 "sourceid"
     bron
+"Special Searches"
+    Speciaal zoeken
+"Start Date"
+    Start Datum
+"Start Early"
+    Eerder beginnen
+"Start Time"
+    Start Tijd
+"Statistics"
+"Status"
+    Status
+"Status Bar"
+    Statusbalk
+"Stereo"
+    Stereo
+"Streaming"
+    Stroom aan het doorsturen
+"Sub and Desc (Empty matches)"
+    Dubbels en Beschrijving
+"Subtitle"
+    Aflevering
 "subtitle"
     aflevering
+"Subtitle and Description"
+    Aflevering en beschrijving
+"Subtitled"
+    Ondertiteld
+"Sunday"
+    Zondag
+"The requested recording schedule has been deleted."
+    Het gevraagde opnameschema is verwijderd
+"Thursday"
+    Donderdag
+"Time"
+    Tijd
+"Time Stretch Default"
+    TimeStretch Standaard
 "title"
     titel
+"Title"
+    Titel
+"Title Search"
+    Titel zoeken
+"Today"
+    Vandaag
+"Tomorrow"
+    Morgen
+"Top"
+    Begin
+"Top $1"
+"Total Time"
+"Track Name"
+    Naam
 "transcoder"
     transcoder
+"Transcoder"
+    Transcoder
+"Tuesday"
+    Dinsdag
+"TV"
+    TV
+"TV functions, including recorded programs."
+    TV functies, inclusief opgenomen programma's
+"TV.com"
+    TV.com
 "type"
     type
+"Type"
+    Type
+"Unfiltered"
+    Zonder filter
+"Unknown"
+    Onbekend
+"Unknown Program."
+    Onbekend Programma.
+"Unknown Recording Schedule."
+    Onbekend Opnameschema
+"Unreachable"
+"Upcoming Recordings"
+    Geplande Opnames
+"Update"
+    Aanpassen
+"Update Recording Settings"
+    Opname-instellingen Vernieuwen
+"Use callsign"
+    Zender gebruiken
+"Use date/time"
+    Datum/tijd gebruiken
 "useonairguide"
     gebruikepg
+"UV Extreme"
+    UV Zeer Hoog
+"UV High"
+    UV Hoog
+"UV Index"
+    UV Index
+"UV Minimal"
+    UV Laag
+"UV Moderate"
+    UV Gemiddeld
+"Video"
+    Films
 "videofilters"
     videofilters
+"Videos"
+    Films
+"Visibility"
+    Zichtbaarheid
 "visible"
     zichtbaar
+"Visit $1"
+"Weather"
+    Weer
+"Wednesday"
+    Woensdag
 "welcome: backend_log"
     Logboek laten zien
 "welcome: music"
@@ -782,7 +772,18 @@
     Doorheen uw filmcollectie bladeren.
 "welcome: weather"
     Uw lokale weerbericht
+"What else is on at this time?"
+    Wat wordt er nog uitgezonden op dit tijdstip?
+"Wind"
+    Wind
+"Wind Chill"
+    Voeltemp. Wind
+"Written by"
+    Auteur
 "xmltvid"
     xmltvid
 "year"
     jaar
+"Yes"
+    Ja
+"Yesterday"
