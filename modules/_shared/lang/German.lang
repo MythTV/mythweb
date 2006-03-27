@@ -1,0 +1,785 @@
+" at "
+     um 
+"$1 B"
+    $1 B
+"$1 GB"
+    $1 GB
+"$1 KB"
+    $1 kB
+"$1 MB"
+    $1 MB
+"$1 Search"
+    $1 Suche
+"$1 TB"
+    $1 TB
+"$1 day"
+"$1 days"
+"$1 episode"
+    $1 Folge
+"$1 episodes"
+    $1 Folgen
+"$1 hr"
+    $1 Std.
+"$1 hrs"
+    $1 Std.
+"$1 min"
+    $1 Min.
+"$1 mins"
+    $1 Min.
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 Aufnahmen, belegen $2 ($3) von $4.
+"$1 recording"
+    $1 Aufnahme
+"$1 recordings"
+    $1 Aufnahmen
+"$1 to $2"
+    $1 bis $2
+"$1 wasted"
+"Action"
+    Aktion
+"Activate"
+    Aktivieren
+"Additional Tables"
+    zus. Tabellen
+"Advanced Options"
+    Erweiterte Optionen
+"Airtime"
+    Sendezeit
+"Album"
+    Album
+"Album (filtered)"
+    Album (gefiltert)
+"All"
+"All HDTV"
+    Sendungen in HDTV
+"All Music"
+    Alle Titel
+"All groups"
+    Alle Gruppen
+"All recordings"
+    Alle Aufnahmen
+"Any"
+    Jeder
+"Any Category"
+    Jede Kategorie
+"Any Channel"
+    Jeder Sender
+"Any Program Type"
+    Jeder Programmtyp
+"Are you sure you want to delete the following show?"
+    Diese Aufnahme wirklich löschen?
+"Artist"
+    Interpret
+"Artist (filtered)"
+    Interpret (gefiltert)
+"Auto-expire recordings"
+    Aufnahmen autom. löschen
+"Auto-flag commercials"
+    Werbung markieren
+"Auto-transcode"
+    autom. Umwandeln
+"Back to the program listing"
+    Zurück zum TV Programm
+"Back to the recording schedules"
+    Zurück zum Aufnahmeplan
+"Backend Logs"
+    Backend Logs
+"Backend Status"
+    Backend Status
+"CC"
+    CC
+"Cancel this schedule."
+    Aufnahme abbrechen
+"Cast"
+    Besetzung
+"Category"
+    Kategorie
+"Category Legend"
+    Kategorien
+"Category Type"
+    Kategorietyp
+"Channel"
+    Sender
+"Channel &quot;Jump to&quot;"
+    Sender &quot;Gehe zu&quot;
+"Channel Detail"
+    Details zum Sender
+"Check for duplicates in"
+    Nach Wdhgn. suchen in
+"Commands"
+    Optionen
+"Configure Channels"
+    Sender einrichten
+"Configure Keybindings"
+    Tastenbelegung konfigurieren
+"Conflicts"
+    Überschneidungen
+"Context"
+    Kontext
+"Count"
+"Create Schedule"
+    Speichern
+"Current Conditions"
+    Das aktuelle Wetter
+"Current recordings"
+    Aktuelle Aufnahmen
+"Currently Browsing:  $1"
+    Aktuell: $1
+"Custom"
+    freie Planung
+"Custom Schedule"
+    Erweiterte Aufnahmeregel
+"Date"
+    Datum
+"Date Formats"
+    Datumsformate
+"Deactivated"
+    Deaktiviert
+"Default"
+    Standard
+"Delete"
+    Löschen
+"Delete $1"
+    Lösche &quot;$1&quot;
+"Delete + Rerecord"
+    Löschen und erneut aufnehmen
+"Delete and rerecord $1"
+    Löschen und &quot;$1&quot; erneut aufnehmen
+"Description"
+    Beschreibung
+"Destination"
+    Ziel
+"Details for"
+    Details für
+"Directed by"
+    Regie
+"Display"
+    Anzeigen
+"Displaying"
+    Angezeigt
+"Don't Record"
+    Nicht aufnehmen
+"Don't record this program."
+    Diese Sendung nicht aufnehmen
+"Dup Method"
+    Methode für Wdhgn.
+"Duplicate Check method"
+    Testmethode für Wdhgn.
+"Duplicates"
+    Wiederholungen
+"Duration"
+    Dauer
+"Edit"
+    Bearbeiten
+"Edit MythWeb and some MythTV settings."
+    Einstellungen für MythWeb & MythTV ändern
+"Edit keybindings on"
+    Tastaturbelegung ändern für
+"End"
+    Ende
+"End Late"
+    verspätetes Aufnahmeende
+"Episode"
+    Folge
+"Episode Number"
+    Folge Nummer
+"Exact Match"
+    Exakte Übereinstimmung
+"Exec. Producer"
+    Produzent
+"Filtered"
+    gefiltert
+"Find Date & Time Options"
+    Finde Datum & Zeit Optionen
+"Find Day"
+    Finde Tag
+"Find Time"
+    Finde Zeit
+"Find Time must be of the format:  HH:MM:SS"
+    'Finde Zeit' muss im Format HH:MM:SS sein
+"Find other showings of this program"
+    Andere Termine dieser Sendung finden
+"Find showings of this program"
+    Termine dieser Sendung finden
+"First recording"
+"Fold Duplicates"
+"Forecast"
+    Vorhersage
+"Forget Old"
+    frühere Aufnahmen vergessen
+"Friday"
+    Freitag
+"Genre"
+    Genre
+"Genre (filtered)"
+    Genre (gefiltert)
+"Go"
+    Los
+"Google"
+    Google
+"Guest Starring"
+    Gaststar
+"Guide Settings"
+    EPG Einstellungen
+"Guide rating"
+    EPG Bewertung
+"HD Only"
+    nur in HDTV
+"HDTV"
+    HDTV
+"Handy Predefined Searches"
+    Handy: Vordefinierte Suchabfragen
+"High"
+    Max
+"Hosted by"
+"Hour"
+    Stunde
+"Hour Format"
+    Zeitformat
+"Humidity"
+    Luftfeuchtigkeit
+"IMDB"
+    IMDB
+"Inactive"
+    Inaktiv
+"Jump"
+    Gehe
+"Jump To"
+    Gehe zu
+"Jump to"
+    Gehe zu
+"JumpPoints Editor"
+"Key bindings"
+    Tastenbelegung
+"Keybindings Editor"
+    Tastenbelegung bearbeiten
+"Keyword"
+    Schl�sselwort
+"Keyword Search"
+    Suche nach Schlüsselwort
+"Language"
+    Sprache
+"Last Recorded"
+"Last Updated"
+    zuletzt aktualisiert
+"Last recording"
+"Length"
+    Dauer
+"Length (min)"
+    Dauer (Min.)
+"Listing &quot;Jump to&quot;"
+    TV Programm &quot;Gehe zu&quot;
+"Listing Time Key"
+"Listings"
+    TV Programm
+"Logs"
+    Logs
+"Low"
+    Min
+"Manual"
+    Manuell
+"Monday"
+    Montag
+"Movies"
+    Spielfilme
+"Movies, 3&frac12; Stars or more"
+    Spielfilme, 3&frac12; und mehr Sterne
+"Movies, Stinkers (2 Stars or less)"
+    Spielfilme, Langweiler (2 und weniger Sterne)
+"Music"
+    Musik
+"Music Specials"
+    Musiksendungen
+"MythMusic on the web."
+    MythMusic
+"MythTV Status"
+    MythTV Status
+"MythTV channel info"
+    MythTV Senderinformationen
+"MythTV key bindings"
+    MythTV Tastaturbelegung
+"MythVideo on the web."
+    MythVideo
+"MythWeb Session Settings"
+    MythWeb Session Einstellungen
+"MythWeb Skin"
+"MythWeb Template"
+"MythWeb Weather."
+    Wettervorhersage
+"MythWeb session settings"
+    MythWeb Session Einstellungen
+"NO DATA"
+    Kein Programm verfügbar
+"Name"
+"Never Record"
+    Niemals aufnehmen
+"New Titles, Premieres"
+    Neue Sendungen, Erstausstrahlungen
+"Next"
+    Nächste
+"No"
+    Nein
+"No Tracks Available"
+    Keine Titel verfügbar
+"No matches found"
+    Nichts gefunden
+"No matching programs found."
+    Keine passenden Sendungen gefunden.
+"No matching programs were found."
+    Keine passenden Sendungen gefunden.
+"No recording schedules have been defined."
+    Keine Aufnahmen geplant.
+"No. of recordings to keep"
+    Wieviele Aufnahmen behalten
+"Non-Music Specials"
+"Non-Series HDTV"
+    HDTV, keine Serien
+"None"
+    Keine
+"Notes"
+    Hinweis
+"Number of epsodes"
+"Number of shows"
+"Only New Episodes"
+    Nur neue Folgen
+"Only display favourite channels"
+    Nur Favoriten anzeigen
+"Original Airdate"
+    Produktion
+"Part $1 of $2"
+    Teil $1 von $2
+"Past Month"
+"Past Week"
+"Past Year"
+"People"
+    Leute
+"People Search"
+    Suche nach Darsteller
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
+    Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
+"Please search for something."
+    Bitte suchen Sie nach etwas.
+"Possible conflicts with this show"
+    Mögliche Konflikte mit dieser Sendung
+"Power"
+    freie Suche
+"Power Search"
+    Erweiterte Suche
+"Presented by"
+    Präsentiert von
+"Pressure"
+    Luftdruck
+"Previous"
+    Vorherige
+"Previous recordings"
+    Alte Aufnahmen
+"Produced by"
+    Produzent
+"Profile"
+    Profil
+"Program Detail"
+    Programmdetails
+"Program ID"
+    Programm ID
+"Program Listing"
+    TV Programm
+"Radar"
+    Satellitenbild
+"Rating"
+    Freigegeben ab
+"Record This"
+    Diese Sendung aufnehmen
+"Record new and expire old"
+    Nur neue Folgen aufnehmen
+"Recorded Programs"
+    Aufnahmen
+"Recording Group"
+    Aufnahmegruppe
+"Recording Options"
+    Aufnahmeoptionen
+"Recording Priority"
+    Aufnahmepriorität
+"Recording Profile"
+    Aufnahmeprofil
+"Recording Schedules"
+    Aufnahmemodi
+"Recording Statistics"
+"Repeat"
+    Wiederholung
+"Reset"
+    Zurücksetzen
+"Reverse Order"
+    Umsortieren
+"SI Units?"
+    SI Einheiten?
+"Saturday"
+    Samstag
+"Save"
+    Speichern
+"Save Schedule"
+    Aufnahme speichern
+"Schedule"
+    Modus
+"Schedule Manually"
+    Manuell aufnehmen
+"Schedule Options"
+    Aufnahmemodus
+"Schedule Override"
+    manuelle Korrektur
+"Schedule normally."
+    Sonderoption löschen
+"Schedule via $1."
+"Scheduled"
+    Geplant
+"Scheduled Popup"
+    Aufnahmen Popup
+"Science Fiction Movies"
+    Science-Fiction Filme
+"Search"
+    Suche
+"Search Phrase"
+    Suchtext
+"Search Results"
+    Suchergebnisse
+"Search Type"
+    Suchtyp
+"Search fields"
+    Suchfelder
+"Search for:  $1"
+    Suche nach: $1
+"Search help"
+    Hilfe zur Suche
+"Search help: movie example"
+    *** 1/2 Abenteuer
+"Search help: movie search"
+    Spielfilmsuche
+"Search help: regex example"
+    /^Good Eats/
+"Search help: regex search"
+    reg. Ausdrücke
+"Search options"
+    Suchoptionen
+"Searches"
+    Suchen
+"Set Host"
+    Setze Host
+"Settings"
+    Einstellungen
+"Show"
+    Sendung
+"Show descriptions on new line"
+    Beschreibungen in neuer Zeile anzeigen
+"Show group"
+    Gruppe zeigen
+"Show recordings"
+    Aufnahmen zeigen
+"Showing all programs from the $1 group."
+    Zeige alle Sendungen in der $1 Gruppe.
+"Showing all programs."
+    Zeige alle Sendungen.
+"Special Searches"
+"Start Date"
+    Datum
+"Start Early"
+    vorzeitiger Aufnahmestart
+"Start Time"
+    Uhrzeit
+"Statistics"
+"Status"
+    Status
+"Status Bar"
+    Statuszeile
+"Stereo"
+    Stereo
+"Streaming"
+"Sub and Desc (Empty matches)"
+    Untertitel & Beschr. (kein Ergebnis)
+"Subtitle"
+    Untertitel
+"Subtitle and Description"
+    Untertitel und Beschreibung
+"Subtitled"
+    mit Untertitel
+"Sunday"
+    Sonntag
+"TV"
+    TV
+"TV functions, including recorded programs."
+    TV Funktionen incl. allen Aufnahmen
+"TV.com"
+    TV.com
+"The requested recording schedule has been deleted."
+    Die geplante Aufnahme wurde gelöscht.
+"Thursday"
+    Donnerstag
+"Time"
+    Zeit
+"Time Stretch Default"
+    Zeitraffer Vorgabewert
+"Title"
+    Titel
+"Title Search"
+    Titel Suche
+"Today"
+    Heute
+"Tomorrow"
+    Morgen
+"Top"
+    Anfang
+"Top $1"
+"Total Time"
+"Track Name"
+    Titel
+"Transcoder"
+    Umwandlungsprofil
+"Tuesday"
+    Dienstag
+"Type"
+    Typ
+"UV Extreme"
+    Extrem
+"UV High"
+    Hoch
+"UV Index"
+    UV Index
+"UV Minimal"
+    Minimal
+"UV Moderate"
+    Gemäßigt
+"Unfiltered"
+    ungefiltert
+"Unknown"
+    Unbekannt
+"Unknown Program."
+    Unbekannte Sendung.
+"Unknown Recording Schedule."
+    Unbekannter Aufnahmeplan
+"Unreachable"
+"Upcoming Recordings"
+    Aufnahmeplan
+"Update"
+    Aktualisieren
+"Update Recording Settings"
+    Speichern
+"Use callsign"
+    Kurzname verwenden
+"Use date/time"
+    Datum/Uhrzeit verwenden
+"Video"
+    Video
+"Videos"
+    Videos
+"Visibility"
+    Sichtweite
+"Visit $1"
+    Besuche $1
+"Weather"
+    Wetter
+"Wednesday"
+    Mittwoch
+"What else is on at this time?"
+    Was läuft noch zu dieser Zeit?
+"Wind"
+    Windgeschwindigkeit
+"Wind Chill"
+    gefühlte Temperatur
+"Written by"
+    Geschrieben von
+"Yes"
+    Ja
+"Yesterday"
+"airdate"
+    Sendezeit
+"auto-expire"
+    autom. löschen
+"brightness"
+    Helligkeit
+"callsign"
+    Kurzname
+"category"
+    Kategorie
+"channel"
+    Sender
+"channum"
+    Sender
+"colour"
+    Farbe
+"commfree"
+    Werbefrei
+"contrast"
+    Kontrast
+"cover"
+    Titelbild
+"delete"
+    Löschen
+"description"
+    Beschreibung
+"director"
+    Regisseur
+"file size"
+    Dateigröße
+"finetune"
+    Feinabstimmung
+"format help"
+    Format Hilfe
+"freqid"
+    Kanal
+"generic_date"
+    %e.%m.%Y
+"generic_time"
+    %H:%M
+"handy: overview"
+    Handy: Übersicht
+"has bookmark"
+    Position gesetzt
+"has commflag"
+    Werbung markiert
+"has cutlist"
+    Schnittliste
+"hue"
+    Farbton
+"imdb rating"
+    IMDB Bewertung
+"is editing"
+    wird bearbeitet
+"length"
+    Dauer
+"minutes"
+    Minuten
+"name"
+    Name
+"plot"
+    Handlung
+"preview"
+    Vorschaubild
+"profile"
+    Profil
+"rating"
+    Bewertung
+"recgroup"
+    Aufnahmegruppe
+"recpriority"
+    Aufnahmepriorität
+"recstatus: cancelled"
+    Abgebrochen
+"recstatus: conflict"
+    Konflikt
+"recstatus: currentrecording"
+    aktuelle Aufnahme
+"recstatus: deleted"
+    Gelöscht
+"recstatus: earliershowing"
+    frühere Ausstrahlung
+"recstatus: force_record"
+    Sonderoption
+"recstatus: inactive"
+    Inaktiv
+"recstatus: latershowing"
+    spätere Ausstrahlung
+"recstatus: lowdiskspace"
+    kein Speicherplatz
+"recstatus: manualoverride"
+    manuell blockiert
+"recstatus: neverrecord"
+    niemals aufnehmen
+"recstatus: notlisted"
+    nicht im EPG
+"recstatus: previousrecording"
+    frühere Aufnahme
+"recstatus: recorded"
+    Aufgenommen
+"recstatus: recording"
+    Aufnahme läuft
+"recstatus: repeat"
+    Wiederholung
+"recstatus: stopped"
+    Gestoppt
+"recstatus: toomanyrecordings"
+    zu viele Aufnahmen
+"recstatus: tunerbusy"
+    TV-Karte belegt
+"recstatus: unknown"
+    Unbekannt
+"recstatus: willrecord"
+    wird aufgenommen
+"rectype-long: always"
+    Jede Ausstrahlung aufnehmen
+"rectype-long: channel"
+    Jede Ausstrahlung auf Sender $1 aufnehmen
+"rectype-long: daily"
+    Täglich aufnehmen
+"rectype-long: dontrec"
+    Nicht aufnehmen
+"rectype-long: finddaily"
+    Suche Täglich
+"rectype-long: findone"
+    Suche eine Ausstrahlung
+"rectype-long: findweekly"
+    Suche Wöchentlich
+"rectype-long: once"
+    Einmalig aufnehmen
+"rectype-long: override"
+    Sonderoption
+"rectype-long: weekly"
+    Wöchentlich aufnehmen
+"rectype: always"
+    Immer
+"rectype: channel"
+    Sender
+"rectype: daily"
+    Täglich
+"rectype: dontrec"
+    Blockiert
+"rectype: finddaily"
+    Suche Täglich
+"rectype: findone"
+    Suche Eine
+"rectype: findweekly"
+    Suche Wöchentlich
+"rectype: once"
+    Einmalig
+"rectype: override"
+    Sonderoption
+"rectype: weekly"
+    Wöchentlich
+"regex: articles"
+    D(e[rmn]|ie|as)
+"settings"
+    Einstellungen
+"settings: overview"
+    Einstellungen: Übersicht
+"sourceid"
+    Source ID
+"subtitle"
+    Untertitel
+"title"
+    Titel
+"transcoder"
+    Umwandlungsprofil
+"type"
+    Modus
+"useonairguide"
+    DVB-EPG Daten verwenden
+"videofilters"
+    Wiedergabe- filter
+"visible"
+    Sichtbar
+"welcome: backend_log"
+    Backend Log
+"welcome: music"
+    Musik
+"welcome: settings"
+    Einstellungen
+"welcome: stats"
+"welcome: status"
+    Status
+"welcome: tv"
+    TV
+"welcome: video"
+    Video
+"welcome: weather"
+    Wetter
+"xmltvid"
+    XMLTV ID
+"year"
+    Jahr

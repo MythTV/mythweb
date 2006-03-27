@@ -15,6 +15,7 @@
 
 // Save?
     if ($_POST['save']) {
+        $redirect = false;
     // Save the date formats
         if ($_POST['date_statusbar'])       $_SESSION['date_statusbar']       = $_POST['date_statusbar'];
         if ($_POST['date_scheduled'])       $_SESSION['date_scheduled']       = $_POST['date_scheduled'];
@@ -28,7 +29,10 @@
     // Save the template
         if ($_POST['tmpl'])                 $_SESSION['tmpl']                 = $_POST['tmpl'];
     // Save the skin
-        if ($_POST['skin'])                 $_SESSION['skin']                 = $_POST['skin'];
+        if ($_POST['skin'] && $_POST['skin'] != $_SESSION['skin']) {
+            $_SESSION['skin'] = $_POST['skin'];
+            $redirect = true;
+        }
     // Use SI units?
         if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
     // Recorded Programs
@@ -38,11 +42,11 @@
     // Change language?  Make sure we load the new translation file, too.
         if ($_POST['language'] && $_POST['language'] != $_SESSION['language']) {
             $_SESSION['language'] = $_POST['language'];
-            require_once 'languages/'.$_SESSION['language'].'.php';
+            $redirect = true;
         }
 
     // Skin change requires a redirect because certain constants have already been defined.
-        if ($_SESSION['skin'] != skin)
+        if ($redirect)
             redirect_browser(root.module.'/session');
     }
 

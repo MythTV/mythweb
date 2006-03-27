@@ -18,22 +18,28 @@
  *
 /**/
 
-// Define the languages that mythweb can translate into.  Each hash entry should
-// point to an array containing first the user-visible name of the language and
-// the matching language and charset codes.
+/**
+ * @global  array   $GLOBALS['Languages']
+ * @name    $Languages
+/**/
+    global $Languages;
     $Languages = array();
-    $Languages['Dutch']      = array('Nederlands',      array('nl_NL', 'nl_BE'));
-    $Languages['English']    = array('English',         'en_US.ISO-8859-1');
-    $Languages['English_GB'] = array('English_GB',      'en_GB.ISO-8859-1');
-    $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR');
-    $Languages['Japanese']   = array('Japanese',        'ja_JP');
-    $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES');
-    $Languages['Swedish']    = array('Svenska',         'sv_SE');
-    $Languages['Danish']     = array('Dansk',           'da_DK');
-    $Languages['German']     = array('Deutsch',         'de_DE');
-    $Languages['Slovenian']  = array('Slovensko',       'sl_SI');
-    $Languages['Finnish']    = array('Suomi',           'fi_FI');
-    $Languages['Czech']      = array('Czech',           'cs_CZ.UTF-8');
+
+// Define the languages that mythweb can translate into.  Each hash entry should
+// point to an array containing first the user-visible name of the language, the
+// php locale for printing and finally the matching language and charset codes.
+    $Languages['Dutch']      = array('Nederlands',      'nl_NL',       array('nl_NL', 'nl_BE'));
+    $Languages['English']    = array('English',         'en_US.UTF-8', 'en_US.ISO-8859-1');
+    $Languages['English_GB'] = array('English_GB',      'en_GB.UTF-8', 'en_GB.ISO-8859-1');
+    $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR',       'fr_FR');
+    $Languages['Japanese']   = array('Japanese',        'ja_JP.UTF-8', 'ja_JP');
+    $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES.UTF-8', 'es_ES');
+    $Languages['Swedish']    = array('Svenska',         'sv_SE.UTF-8', 'sv_SE');
+    $Languages['Danish']     = array('Dansk',           'da_DK.UTF-8', 'da_DK');
+    $Languages['German']     = array('Deutsch',         'de_DE',       'de_DE');
+    $Languages['Slovenian']  = array('Slovensko',       'si_SI',       'sl_SI');
+    $Languages['Finnish']    = array('Suomi',           'fi_FI.UTF-8', 'fi_FI');
+    $Languages['Czech']      = array('Czech',           'cs_CZ.UTF-8', 'cs_CZ.UTF-8');
 
 // Need to detect the language?
     if (empty($_SESSION['language']))
@@ -41,21 +47,31 @@
     if (empty($_SESSION['language']))
         $_SESSION['language'] = 'English';
 
-// Default language file is English
-    if (!file_exists('languages/'.$_SESSION['language'].'.php'))
-        $_SESSION['language'] = 'English';
+/**
+ * @global  array   $GLOBALS['L']
+ * @name    $L
+/**/
+    global $L;
+    $L = array();
 
-// Load the language file, English first in case the other doesn't exist.
-    require_once  'modules/_shared/lang/English.php';
-    @include_once  'modules/'.module.'/lang/English.php';
-    if ($_SESSION['language'] != 'English') {
-        @include_once 'modules/_shared/lang/'.$_SESSION['language'].'.php';
-        @include_once 'modules/'.module.'/lang/'.$_SESSION['language'].'.php';
-    }
+// Load the primary language file, or English if the other doesn't exist.
+    if (file_exists(modules_path.'/_shared/lang/'.$_SESSION['language'].'.lang'))
+        load_translation(modules_path.'/_shared/lang/'.$_SESSION['language'].'.lang');
+    else
+        load_translation(modules_path.'/_shared/lang/English.lang');
+
+// Load a module override translation if one exists.
+    if (file_exists(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.lang'))
+        load_translation(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.lang');
+    elseif (file_exists(modules_path.'/'.module.'/lang/English.lang'))
+        load_translation(modules_path.'/'.module.'/lang/English.lang');
 
 // No language array defined?
     if (!is_array($L) || !count($L))
         trigger_error('No language strings defined.', FATAL);
+
+// Set the locale
+    setlocale(LC_ALL, $Languages[$_SESSION['language']][1]);
 
 /**
  * Returns $str, translated appropriately
@@ -120,6 +136,32 @@
         if ($a[$int-1])
             return t($a[$int-1], $args);
         return t($a[count($a)-1], $args);
+    }
+
+/**
+ * Load a translation file into the global translation array
+ *
+ * @param string $path The path to the translation file
+/**/
+    function load_translation($path) {
+        $file = file_get_contents($path);
+    // Error?
+        if ($file === false)
+            trigger_error("Failed to open translation file:  $path", FATAL);
+    // Parse the file
+        global $L;
+        foreach (preg_split('/\n(?=\S)/', $file) as $group) {
+            preg_match('/^([^\n]+?)\s*(?:$|\s*\n(\s+)(.+)$)/s', $group, $match);
+            list($match, $key, $indent, $trans) = $match;
+        // Cleanup
+            $trans = trim(str_replace("\n$indent", "\n", $trans));
+            $key   = trim($key);
+            if (preg_match('/^["\']/', $key))
+                $key = preg_replace('/^(["\'])(.+)\\1$/', '$2', $key);
+        // Store
+            if ($trans || empty($L[$key]))
+                $L[$key] = $trans;
+        }
     }
 
 /**
@@ -208,7 +250,7 @@
         $curcscore = 0;
         $curlang   = null;
         foreach($GLOBALS['Languages'] as $lang => $details) {
-            $encodings = is_array($details[1]) ? $details[1] : array($details[1]);
+            $encodings = is_array($details[2]) ? $details[2] : array($details[2]);
             if (empty($encodings))
                 continue;
             foreach ($encodings as $encoding) {

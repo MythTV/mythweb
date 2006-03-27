@@ -195,26 +195,28 @@
 
 // Create the category legend popup and stick it at the end of the document for now.
     global $Categories, $Footnotes;
-    $legend = <<<EOF
+    if (!empty($Categories)) {
+        $legend = <<<EOF
 <div id="category_legend_popup">
 <table width="400" bgcolor="#003060" border="1" cellpadding="0" cellspacing="0">
 <tr>
     <td><table width="400" bgcolor="#003060" class="small" cellpadding="5" cellspacing="5">
         <tr>
 EOF;
-    $legend .= "\t\t\t<td colspan=\"3\">".t('Category Legend').':</td>';
-    $count = 0;
-    foreach ($Categories as $cat => $details) {
-        if ($count++ % 3 == 0)
-            $legend .= "\n\t\t</tr><tr>\n";
-        $legend .= "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".html_entities($details[0])."</b></td>\n";
-    }
-    $legend .= <<<EOF
+        $legend .= "\t\t\t<td colspan=\"3\">".t('Category Legend').':</td>';
+        $count = 0;
+        foreach ($Categories as $cat => $details) {
+            if ($count++ % 3 == 0)
+                $legend .= "\n\t\t</tr><tr>\n";
+            $legend .= "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".html_entities($details[0])."</b></td>\n";
+        }
+        $legend .= <<<EOF
         </tr>
         </table></td>
 </tr>
 </table>
 </div>
 EOF;
-    $Footnotes[] = $legend;
+        $Footnotes[] = $legend;
+    }
 

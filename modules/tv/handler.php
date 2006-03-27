@@ -24,6 +24,30 @@
         exit;
     }
 
+/**
+ * @global  array   $GLOBALS['Categories']
+ * @name    $Categories
+/**/
+    global $Categories;
+    $Categories = array();
+
+// Load the tv categories
+    if (file_exists(modules_path.'/_shared/lang/'.$_SESSION['language'].'.cat'))
+        load_tv_categories(modules_path.'/_shared/lang/'.$_SESSION['language'].'.cat');
+    else
+        load_tv_categories(modules_path.'/_shared/lang/English.cat');
+#    if (file_exists(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.cat'))
+#        load_tv_categories(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.cat');
+#    else
+#        load_tv_categories(modules_path.'/'.module.'/lang/English.cat');
+
+// Two categories that don't need regex matches, but do need translation
+    $Categories['Unknown'] = array(t('Unknown'));
+    $Categories['movie']   = array(t('movie'));
+
+// Don't forget to sort
+    ksort($Categories);
+
 // Load the tv-related libraries
     require_once "includes/channels.php";
     require_once "includes/programs.php";
@@ -36,3 +60,25 @@
 
 // Show the requested section
     require_once 'modules/tv/'.$Path[1].'.php';
+
+/**
+ * Load translation file for tv category names and regular expressions
+ *
+ * @param string $path The path to the translation file
+/**/
+    function load_tv_categories($path) {
+        $file = file_get_contents($path);
+    // Error?
+        if ($file === false)
+            trigger_error("Failed to open tv category file:  $path", FATAL);
+    // Parse the file
+        global $Categories;
+        foreach (preg_split('/\n(?=\S)/', $file) as $group) {
+            list($key, $trans, $regex) = preg_split('/\s*\n\s*/', $group);
+        // Cleanup
+            if (preg_match('/^["\']/', $key))
+                $key = preg_replace('/^(["\'])(.+)\\1$/', '$2', $key);
+        // Store
+            $Categories[$key] = array($trans, $regex);
+        }
+    }

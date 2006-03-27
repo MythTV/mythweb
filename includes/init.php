@@ -104,6 +104,10 @@
 // Handy reference to the current module
     define('module', $Path[0]);
 
+// Find the modules path
+    $path = dirname(dirname(find_in_path('modules/tv/init.php')));
+    define('modules_path', $path);
+
 // Load the database connection routines
     require_once 'includes/db.php';
 
@@ -182,7 +186,7 @@
     if ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
         $_SESSION['tmpl'] = 'default';
 // If the requested template is missing the welcome file, look for other options
-    else if (!find_in_path('modules/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
+    else if (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
     // Detect different types of browsers and set the theme accordingly.
         require_once "includes/mobile.php";
         if (isMobileUser()) {
@@ -230,17 +234,15 @@
 
 // Load the various modules (search for the "tv" subdirectory in case it might
 // find some other "modules" directory, too.
-    $path = find_in_path('modules/tv/init.php');
-    if ($path) {
-        $path = dirname(dirname($path));
-        foreach (get_sorted_files($path) as $module) {
+    if (modules_path && modules_path != 'modules_path') {
+        foreach (get_sorted_files(modules_path) as $module) {
             if (preg_match('/^_/', $module))
                 continue;
-            if (!file_exists("$path/$module/init.php"))
+            if (!file_exists(modules_path."/$module/init.php"))
                 continue;
-            if (!file_exists("$path/$module/tmpl/".tmpl))
+            if (!file_exists(modules_path."/$module/tmpl/".tmpl))
                 continue;
-            require_once "$path/$module/init.php";
+            require_once modules_path."/$module/init.php";
         }
     }
     if (empty($Modules)) {

@@ -1,0 +1,704 @@
+" at "
+     ved 
+"$1 B"
+"$1 GB"
+"$1 KB"
+"$1 MB"
+"$1 Search"
+"$1 TB"
+"$1 day"
+"$1 days"
+"$1 episode"
+    $1 afsnit
+"$1 episodes"
+    $1 afsnit
+"$1 hr"
+    $1 t
+"$1 hrs"
+    $1 t
+"$1 min"
+    $1 minut
+"$1 mins"
+    $1 minutter
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 programmer, bruger $2 ($3) ud af $4
+"$1 recording"
+    $1 optagelse
+"$1 recordings"
+    $1 optagelser
+"$1 to $2"
+    $1 til $2
+"$1 wasted"
+"Action"
+"Activate"
+    Aktivér
+"Additional Tables"
+"Advanced Options"
+    Avancerede indstillinger
+"Airtime"
+    Visningsdato
+"Album"
+    Album
+"Album (filtered)"
+    Album (filtreret)
+"All"
+"All HDTV"
+"All Music"
+    Al musik
+"All groups"
+"All recordings"
+    Alle optagelser
+"Any"
+    Alle
+"Any Category"
+"Any Channel"
+"Any Program Type"
+"Are you sure you want to delete the following show?"
+    Er du sikker på at du vil slette programmet?
+"Artist"
+    Kunstner
+"Artist (filtered)"
+    Kunstner (filtreret)
+"Auto-expire recordings"
+    Auto-udløb optagelser
+"Auto-flag commercials"
+    Marker automatisk reklamer
+"Auto-transcode"
+    Auto-Transkode
+"Back to the program listing"
+    Tilbage til programoversigten
+"Back to the recording schedules"
+    Tilbage til planlagte optagelser
+"Backend Logs"
+"Backend Status"
+    System status
+"CC"
+"Cancel this schedule."
+    Annuller denne optagelse
+"Cast"
+    Rolleliste
+"Category"
+    Kategori
+"Category Legend"
+    Kategoriforklaring
+"Category Type"
+    Kategori Type
+"Channel"
+    Kanal
+"Channel &quot;Jump to&quot;"
+    Kanal &quot;Gå Til&quot;
+"Channel Detail"
+    Kanal detaljer
+"Check for duplicates in"
+    Kontroller for dubletter i
+"Commands"
+    Kommandoer
+"Configure Channels"
+"Configure Keybindings"
+"Conflicts"
+    Konflikter
+"Context"
+"Count"
+"Create Schedule"
+    Planlæg
+"Current Conditions"
+    Nuværende forhold
+"Current recordings"
+    Nuværende optagelser
+"Currently Browsing:  $1"
+    Lige nu vises: $1
+"Custom"
+"Custom Schedule"
+"Date"
+    Dato
+"Date Formats"
+    Datoformater
+"Deactivated"
+    Deaktiveret
+"Default"
+    Standard
+"Delete"
+    Slet
+"Delete $1"
+    Slet $1
+"Delete + Rerecord"
+    Slet + genoptag
+"Delete and rerecord $1"
+    Slet + genoptag $1
+"Description"
+    Beskrivelse
+"Destination"
+"Details for"
+    Detaljer for
+"Directed by"
+    Instrueret af
+"Display"
+    Vis
+"Displaying"
+    Viser
+"Don't Record"
+    Optag ikke
+"Don't record this program."
+    Optag IKKE dette program
+"Dup Method"
+    Dubletkontrol metode
+"Duplicate Check method"
+    dubletkontrol metode
+"Duplicates"
+    Dubletter
+"Duration"
+    Varighed
+"Edit"
+    Ændre
+"Edit MythWeb and some MythTV settings."
+    Rediger MythWeb- og nogle MythTV-indstillinger
+"Edit keybindings on"
+    Rediger tastaturgenveje for
+"End"
+    Slut
+"End Late"
+    Slut senere (min)
+"Episode"
+    Afsnit
+"Episode Number"
+"Exact Match"
+    Præcis match
+"Exec. Producer"
+    Producer
+"Filtered"
+    Filtreret
+"Find Date & Time Options"
+"Find Day"
+"Find Time"
+"Find Time must be of the format:  HH:MM:SS"
+"Find other showings of this program"
+    Find andre udsendelser af dette program
+"Find showings of this program"
+    Find udsendelser af dette program
+"First recording"
+"Fold Duplicates"
+"Forecast"
+    Prognose
+"Forget Old"
+    Glem gamle
+"Friday"
+    Fredag
+"Genre"
+    Genre
+"Genre (filtered)"
+    Genre (filtreret)
+"Go"
+    Gå
+"Google"
+"Guest Starring"
+    Gæstestjerner
+"Guide Settings"
+    Guide opsætning
+"Guide rating"
+"HD Only"
+    Kun HD
+"HDTV"
+"Handy Predefined Searches"
+"High"
+    Høj
+"Hosted by"
+"Hour"
+    Time
+"Hour Format"
+    Timeformattering
+"Humidity"
+    Luftfugtighed
+"IMDB"
+    IMDB
+"Inactive"
+    Ikke aktiv
+"Jump"
+    Gå
+"Jump To"
+    Gå Til
+"Jump to"
+    Gå til
+"JumpPoints Editor"
+"Key bindings"
+"Keybindings Editor"
+"Keyword"
+"Keyword Search"
+"Language"
+    Sprog
+"Last Recorded"
+"Last Updated"
+    Sidst opdateret
+"Last recording"
+"Length"
+    Længde
+"Length (min)"
+    Længde (min)
+"Listing &quot;Jump to&quot;"
+    Programoversigt &quot;Gå til&quot;
+"Listing Time Key"
+    Programoversigt tid
+"Listings"
+    Programoversigt
+"Logs"
+"Low"
+    Lav
+"Manual"
+"Monday"
+    Mandag
+"Movies"
+"Movies, 3&frac12; Stars or more"
+"Movies, Stinkers (2 Stars or less)"
+"Music"
+    Musik
+"Music Specials"
+"MythMusic on the web."
+    MythMusic på www
+"MythTV Status"
+"MythTV channel info"
+    MythTV kanal info
+"MythTV key bindings"
+    MythTV taste indstillinger
+"MythVideo on the web."
+    MythVideo på www
+"MythWeb Session Settings"
+"MythWeb Skin"
+"MythWeb Template"
+"MythWeb Weather."
+    MythWeb Vejrudsigt
+"MythWeb session settings"
+"NO DATA"
+"Name"
+"Never Record"
+    Optag aldrig
+"New Titles, Premieres"
+"Next"
+    Næste
+"No"
+    Nej
+"No Tracks Available"
+    Ingen spor tilgængelig
+"No matches found"
+    Ingen match fundet
+"No matching programs found."
+"No matching programs were found."
+    Ingen matchende programmer fundet
+"No recording schedules have been defined."
+    Ingen optagelser er planlagt
+"No. of recordings to keep"
+    Gem antal optagelser
+"Non-Music Specials"
+"Non-Series HDTV"
+"None"
+    Ingen
+"Notes"
+    Bemærkninger
+"Number of epsodes"
+"Number of shows"
+"Only New Episodes"
+    Kun Nye Afsnit
+"Only display favourite channels"
+    Vis kun favorit kanaler
+"Original Airdate"
+    Sendt først
+"Part $1 of $2"
+"Past Month"
+"Past Week"
+"Past Year"
+"People"
+"People Search"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
+    Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
+"Please search for something."
+    Søg efter noget
+"Possible conflicts with this show"
+    Mulige konfligter med denne udsendelse
+"Power"
+"Power Search"
+"Presented by"
+    Præsenteret af
+"Pressure"
+    Lufttryk
+"Previous"
+    Forrige
+"Previous recordings"
+    Tidligere optagelser
+"Produced by"
+    Produceret af
+"Profile"
+    Profil
+"Program Detail"
+    Program detaljer
+"Program ID"
+"Program Listing"
+    Program lister
+"Radar"
+    Radar
+"Rating"
+    Karakterer
+"Record This"
+    Optag dette
+"Record new and expire old"
+    Optag nye og udløb gamle
+"Recorded Programs"
+    Optagede programmer
+"Recording Group"
+    Optagelsesgruppe
+"Recording Options"
+    Optageindstillinger
+"Recording Priority"
+    Optageprioritet
+"Recording Profile"
+    Optageprofil
+"Recording Schedules"
+    Optagelsesplanlægning
+"Recording Statistics"
+"Repeat"
+    Genudsendelse
+"Reset"
+    Nulstil
+"Reverse Order"
+    Modsat orden
+"SI Units?"
+    SI enheder?
+"Saturday"
+    Lørdag
+"Save"
+    Gem
+"Save Schedule"
+"Schedule"
+    Planlæg
+"Schedule Manually"
+"Schedule Options"
+    Planlægningsindstillinger
+"Schedule Override"
+    Planlæg manuelt
+"Schedule normally."
+    Planlæg normalt
+"Schedule via $1."
+"Scheduled"
+    Planlagt
+"Scheduled Popup"
+    Planlagt popup
+"Science Fiction Movies"
+"Search"
+    Søg
+"Search Phrase"
+"Search Results"
+    Søgeresultater
+"Search Type"
+"Search fields"
+    Søgefelter
+"Search for:  $1"
+    Søg efter: $1
+"Search help"
+    Søgehjælp
+"Search help: movie example"
+    *** 1/2 Adventure
+"Search help: movie search"
+    movie search
+"Search help: regex example"
+    /^Good Eats/
+"Search help: regex search"
+    regex search
+"Search options"
+    Søge muligheder
+"Searches"
+    Søgninger
+"Set Host"
+"Settings"
+    Indstillinger
+"Show"
+    Program
+"Show descriptions on new line"
+    Vis beskrivelser på ny linie
+"Show group"
+    Vis gruppe
+"Show recordings"
+    Vis optagelser
+"Showing all programs from the $1 group."
+"Showing all programs."
+"Special Searches"
+    Specielle søgninger
+"Start Date"
+    Startdato
+"Start Early"
+    Start tidligere (min)
+"Start Time"
+    Starttidspunkt
+"Statistics"
+"Status"
+    Status
+"Status Bar"
+    Status linie
+"Stereo"
+"Streaming"
+    Streaming
+"Sub and Desc (Empty matches)"
+    Undertitel og beskrivelse
+"Subtitle"
+    Undertitel
+"Subtitle and Description"
+    Undertitel og beskrivelse
+"Subtitled"
+"Sunday"
+    Søndag
+"TV"
+    Tv
+"TV functions, including recorded programs."
+    TV funktioner inkl. optagede programmer
+"TV.com"
+"The requested recording schedule has been deleted."
+    Den planlagte optagelse er blevet slettet
+"Thursday"
+    Torsdag
+"Time"
+    Tidspunkt
+"Time Stretch Default"
+    Standard Afspilnings hastighed
+"Title"
+    Titel
+"Title Search"
+"Today"
+    I dag
+"Tomorrow"
+    I morgen
+"Top"
+    Top
+"Top $1"
+"Total Time"
+"Track Name"
+    Spor navn
+"Transcoder"
+    Trankodning
+"Tuesday"
+    Tirsdag
+"Type"
+    Type
+"UV Extreme"
+    UV-stråling ekstrem
+"UV High"
+    UV-stråling høj
+"UV Index"
+    UV-stråling indeks
+"UV Minimal"
+    UV-stråling minimal
+"UV Moderate"
+    UV-stråling middel
+"Unfiltered"
+    Ikke filtréret
+"Unknown"
+    Ukendt
+"Unknown Program."
+    Ukendt program
+"Unknown Recording Schedule."
+    Ukendt planlagt optagelse
+"Unreachable"
+"Upcoming Recordings"
+    Fremtidige optagelser
+"Update"
+    Opdatér
+"Update Recording Settings"
+    Opdatér optagelsesindstillinger
+"Use callsign"
+"Use date/time"
+"Video"
+    Video
+"Videos"
+    Videoer
+"Visibility"
+    Sigtbarhed
+"Visit $1"
+"Weather"
+    Vejret
+"Wednesday"
+    Onsdag
+"What else is on at this time?"
+    Hvad er der ellers i fjernsynet på dette tidspunkt?
+"Wind"
+    Vind
+"Wind Chill"
+    Vindafkølningseffekt
+"Written by"
+    Skrevet af
+"Yes"
+    Ja
+"Yesterday"
+"airdate"
+    visningsdato
+"auto-expire"
+    auto-udløb
+"brightness"
+    Lys
+"callsign"
+    kortnavn
+"category"
+    kategori
+"channel"
+    kanal
+"channum"
+    kanalnummer
+"colour"
+    Farve
+"commfree"
+    Reklamefri
+"contrast"
+    Kontrast
+"cover"
+    cover
+"delete"
+    Slet
+"description"
+    beskrivelse
+"director"
+    Instruktør
+"file size"
+    filstørrelse
+"finetune"
+"format help"
+    Formatteringshjælp
+"freqid"
+    Frekvens ID
+"generic_date"
+    %a %e %b %Y
+"generic_time"
+    %H:%M
+"handy: overview"
+"has bookmark"
+    har bookmark(s)
+"has commflag"
+    har markeret reklameblokke
+"has cutlist"
+    har klippeliste
+"hue"
+"imdb rating"
+"is editing"
+    er ved at blive redigeret
+"length"
+    længde
+"minutes"
+    minutter
+"name"
+    Navn
+"plot"
+"preview"
+    forhåndsvisning
+"profile"
+    profil
+"rating"
+    rating
+"recgroup"
+    Optagelsesgrupper
+"recpriority"
+    Optagelsesprioritet
+"recstatus: cancelled"
+    Dette var planlagt til at skulle optages, men blev aflyst manuelt.
+"recstatus: conflict"
+    Et andet program med højere optageprioritet bliver optaget.
+"recstatus: currentrecording"
+    Dette afsnit er optaget tidligere og er stadig tilgængeligt i listen af optagede programmer.
+"recstatus: deleted"
+    Denne visning blev optaget, men blev slettet inden optagelsen var færdig.
+"recstatus: earliershowing"
+    Dette afsnit vil blive optaget på et tidligere tidspunkt.
+"recstatus: force_record"
+    Dette program er manuelt sat til at blive optaget.
+"recstatus: inactive"
+    Dette program er ikke aktivt
+"recstatus: latershowing"
+    Dette afsnit vil blive optaget på et senere tidspunkt.
+"recstatus: lowdiskspace"
+    Der var ikke nok diskplads til at optage dette program.
+"recstatus: manualoverride"
+    Denne visning er manuelt sat til ikke at blive optaget.
+"recstatus: neverrecord"
+    Optag aldrig dette program
+"recstatus: notlisted"
+    Dette program er ikke på listen
+"recstatus: previousrecording"
+    Dette afsnit er tidligere optaget jævnfør den duplikeringsindstilling der er valgt for dette program.
+"recstatus: recorded"
+    Denne visning er optaget.
+"recstatus: recording"
+    Optagelse af denne visning er i gang.
+"recstatus: repeat"
+    Denne visning er en gentagelse og vil ikke blive optaget.
+"recstatus: stopped"
+    Denne visning blev optaget, men blev stoppet inden optagelsen var færdig.
+"recstatus: toomanyrecordings"
+    Der findes for mange optagelser af dette program.
+"recstatus: tunerbusy"
+    Tuner-kortet var i brug, da dette program skulle have været optaget.
+"recstatus: unknown"
+    Status for denne visning er ukendt.
+"recstatus: willrecord"
+    Denne visning vil blive optaget.
+"rectype-long: always"
+    Optag når som helst på alle kanaler.
+"rectype-long: channel"
+    Optag når som helst på kanalen $1.
+"rectype-long: daily"
+    Optag dette program på dette tidspunkt hver dag.
+"rectype-long: dontrec"
+    Optag ikke denne specifikke visning.
+"rectype-long: finddaily"
+    Find og optag en visning af dette program hver dag.
+"rectype-long: findone"
+    Find og optag en visning af dette program.
+"rectype-long: findweekly"
+    Find og optag en visning af dette program hver uge.
+"rectype-long: once"
+    Optag kun denne visning.
+"rectype-long: override"
+    Optag denne specifikke visning.
+"rectype-long: weekly"
+    Optag dette program på dette tidspunkt hver uge.
+"rectype: always"
+    Altid
+"rectype: channel"
+    Kanal
+"rectype: daily"
+    Dagligt
+"rectype: dontrec"
+    Optag ikke
+"rectype: finddaily"
+    find 1 dagligt
+"rectype: findone"
+    Find en
+"rectype: findweekly"
+    find 1 ugentligt
+"rectype: once"
+    en enkelt gang
+"rectype: override"
+    Override (record)
+"rectype: weekly"
+    Ugentligt
+"regex: articles"
+    An?|The
+"settings"
+    opsætning
+"settings: overview"
+    Dette er hovedsiden til indstillinger...<p>Den er ikke komplet, og vil senere komme til at se noget pænere ud. Lige nu kan du vælge imellem:
+"sourceid"
+"subtitle"
+    undertitel
+"title"
+    titel
+"transcoder"
+    trankoder
+"type"
+    type
+"useonairguide"
+"videofilters"
+"visible"
+"welcome: backend_log"
+"welcome: music"
+    Velkommen: musik
+"welcome: settings"
+"welcome: stats"
+"welcome: status"
+"welcome: tv"
+"welcome: video"
+"welcome: weather"
+"xmltvid"
+"year"
+    år
