@@ -18,6 +18,19 @@
         $_SESSION['siunits'] = setting('SIUnits');
     }
 
+/**
+ * @global  array   $GLOBALS['Weather_Types']
+ * @name    $Weather_Types
+/**/
+    global $Weather_Types;
+    $Weather_Types = array();
+
+// Load the weather data
+    foreach (file(modules_path.'/'.module.'/weathertypes.dat') as $line) {
+        list($id, $name, $img) = explode(',', $line);
+        $Weather_Types[$id] = array($img, $name);
+    }
+
 // Build a list of the known weather sites
     $WeatherSites = array();
 
@@ -43,6 +56,7 @@
     exit;
 
 class WeatherSite {
+
     var $acid;
     var $host;
 
@@ -233,23 +247,16 @@ class WeatherSite {
     }
 }
 
-function getImageAndDescFromId($myid) {
-    $data = file("config/weathertypes.dat");
-    foreach($data as $line) {
-    list($id, $name, $img) = explode(",", $line);
-    if($id != $myid) continue;
-
-    return array($img, $name);
-    }
+function getImageAndDescFromId($my_id) {
+    global $Weather_Types;
+    return $Weather_Types[$my_id];
 }
 
-function getImageFromName($myname) {
-    $data = file("config/weathertypes.dat");
-    foreach($data as $line) {
-    list($id, $name, $img) = explode(",", $line);
-    if($name != $myname) continue;
-
-    return $img;
+function getImageFromName($my_name) {
+    global $Weather_Types;
+    foreach ($Weather_Types as $pair) {
+        if ($pair[1] == $my_name)
+            return $pair[0];
     }
 }
 
