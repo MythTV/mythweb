@@ -222,8 +222,8 @@
     define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');
 
 // Load the template/theme config
-    if (file_exists('config/theme_'. $_SESSION['tmpl'].'.php')) {
-        require_once 'config/theme_'.$_SESSION['tmpl'].'.php';
+    if (file_exists('config/theme_'. tmpl.'.php')) {
+        require_once 'config/theme_'.tmpl.'.php';
     }
 
 /**
@@ -294,27 +294,5 @@
         }
     }
 
-// Upgrading from an earlier version?  Wipe the session date data
-    if (!strstr($_SESSION['date_statusbar'], '%')) {
-        unset($_SESSION['date_statusbar'],
-              $_SESSION['date_scheduled'],
-              $_SESSION['date_scheduled_popup'],
-              $_SESSION['date_recorded'],
-              $_SESSION['date_search'],
-              $_SESSION['date_listing_key'],
-              $_SESSION['date_listing_jump'],
-              $_SESSION['date_channel_jump'],
-              $_SESSION['time_format']);
-    }
-
-// Load/set default session data
-    if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = t('generic_date') . ', '  . t('generic_time');
-    if (!$_SESSION['date_scheduled'])       $_SESSION['date_scheduled']       = t('generic_date') . ' ('  . t('generic_time') . ')';
-    if (!$_SESSION['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = t('generic_date');
-    if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = t('generic_date') . '<br />('.t('generic_time').')';
-    if (!$_SESSION['date_search'])          $_SESSION['date_search']          = t('generic_date') . ', '  . t('generic_time');
-    if (!$_SESSION['date_listing_key'])     $_SESSION['date_listing_key']     = t('generic_date') . ', '  . t('generic_time');
-    if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = t('generic_date');
-    if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = t('generic_date');
-    if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
-
+// Load the session defaults and other config info
+    require_once 'includes/config.php';

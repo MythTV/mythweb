@@ -40,14 +40,3 @@
     define('max_stars', 4);                 // maximum star rating for movies
     define('star_character', '&diams;');    // the character(s) to represent stars with
 
-/*
-
-    The following constants are defined for the recorded programs page
-
-*/
-    define('show_recorded_pixmaps', false);
-
-// height and width of generated pixmaps for video thumbnails
-    define('video_img_width',  94);
-    define('video_img_height', 140);
-

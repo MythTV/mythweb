@@ -37,6 +37,7 @@
         if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
     // Recorded Programs
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
+        $_SESSION['recorded_pixmaps']   = $_POST['recorded_pixmaps']   ? true : false;
     // Guide Settings
         $_SESSION['guide_favonly'] = $_POST['guide_favonly'] ? true : false;
     // Change language?  Make sure we load the new translation file, too.

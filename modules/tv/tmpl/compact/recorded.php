@@ -82,7 +82,7 @@ if ($group_field == "") {
 <?php
     if ($group_field != "")
         echo "\t<td class=\"list\">&nbsp;</td>\n";
-    if (show_recorded_pixmaps)
+    if ($_SESSION['recorded_pixmaps'])
         echo "\t<td>".t('preview')."</td>\n";
 ?>
     <td><?php echo get_sort_link('title',    t('title')) ?></td>
@@ -137,7 +137,7 @@ EOM;
         echo "<tr id=\"inforow_$row\" class=\"recorded\">\n";
         if ($group_field != "")
             echo "\t<td class=\"list\" rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2)."\">&nbsp;</td>\n";
-        if (show_recorded_pixmaps) {
+        if ($_SESSION['recorded_pixmaps']) {
             echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
@@ -151,7 +151,7 @@ EOM;
         }
     ?>
     <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'"'
-                    .(show_recorded_pixmaps ? '' : " name=\"$row\"")
+                    .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
     <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'
                     .$show->subtitle.'</a>' ?></td>

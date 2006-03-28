@@ -39,8 +39,11 @@
 </tr><tr>
     <td colspan="2"><?php echo t('Recorded Programs') ?>:</td>
 </tr><tr>
-    <td class="command_border_b" align="right"><?php echo t('Show descriptions on new line') ?>:</td>
-    <td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
+    <td align="right"><?php echo t('Show descriptions on new line') ?>:</td>
+    <td><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
+</tr><tr>
+    <td class="command_border_b" align="right"><?php echo t('Show pixmaps') ?>:</td>
+    <td class="command_border_b"><input class="radio" type="checkbox" title="Show recording thumbnails." name="recorded_pixmaps"<?php if ($_SESSION['recorded_pixmaps']) echo ' CHECKED' ?>></td>
 </tr><tr>
     <td colspan="2"><?php echo t('Guide Settings') ?>:</td>
 </tr><tr>

@@ -214,7 +214,7 @@
         // Create a new program object
             $show =& new Program($record);
         // Generate any thumbnail images we might need
-            if (show_recorded_pixmaps) {
+            if ($_SESSION['recorded_pixmaps']) {
                 generate_preview_pixmap($show);
             }
         // Assign a reference to this show to the various arrays
