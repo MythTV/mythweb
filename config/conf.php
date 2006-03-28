@@ -34,10 +34,6 @@
 //
     define('error_email', 'mythweb_errors@'.preg_replace('/.*?\b([\w\-]+\.[\w\-]+)$/', '$1', server_domain));
 
-// For the "movies" search -- set this to the word your listings provider uses to
-//   describe movies/films/peliculas/etc.
-    define('movie_word', 'movie');
-
 /*
  *  You probably don't need to edit anything below here, but the variables are
  *  provided for your convenience.
