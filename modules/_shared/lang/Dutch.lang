@@ -257,6 +257,7 @@
     Doorgaan
 "Google"
     Google
+"Group timeslots every"
 "Guest Starring"
     Gastrol
 "Guide rating"
@@ -336,6 +337,7 @@
     Minimum
 "Manual"
     Manueel
+"Max star rating for movies"
 "minutes"
     minuten
 "Monday"
@@ -404,6 +406,7 @@
     Opmerkingen
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
     Enkel favoriete zenders laten zien
 "Only New Episodes"
@@ -569,6 +572,7 @@
     Herstellen
 "Reverse Order"
     Volgorde omkeren
+"Rows to show between timeslot info"
 "Saturday"
     Zaterdag
 "Save"
@@ -645,6 +649,7 @@
     bron
 "Special Searches"
     Speciaal zoeken
+"Star character"
 "Start Date"
     Start Datum
 "Start Early"
@@ -680,6 +685,7 @@
     Tijd
 "Time Stretch Default"
     TimeStretch Standaard
+"Timeslot size"
 "title"
     titel
 "Title"

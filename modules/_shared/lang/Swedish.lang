@@ -257,6 +257,7 @@
     Gå
 "Google"
     Google
+"Group timeslots every"
 "Guest Starring"
     Gästspel
 "Guide rating"
@@ -337,6 +338,7 @@
     Låg
 "Manual"
     Manuell
+"Max star rating for movies"
 "minutes"
     minuter
 "Monday"
@@ -405,6 +407,7 @@
     Anteckningar
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
     Visa endast favoritkanaler
 "Only New Episodes"
@@ -571,6 +574,7 @@
     Återställ
 "Reverse Order"
     Omvänd ordning
+"Rows to show between timeslot info"
 "Saturday"
     Lördag
 "Save"
@@ -647,6 +651,7 @@
     käll-id
 "Special Searches"
     Speciella sökningar
+"Star character"
 "Start Date"
     Startdatum
 "Start Early"
@@ -682,6 +687,7 @@
     Tid
 "Time Stretch Default"
     Förvalt tempo
+"Timeslot size"
 "title"
     titel
 "Title"

@@ -249,6 +249,7 @@
     Mene
 "Google"
     Google
+"Group timeslots every"
 "Guest Starring"
     Vierastähdet
 "Guide rating"
@@ -328,6 +329,7 @@
     Alin
 "Manual"
     Manuaalinen
+"Max star rating for movies"
 "minutes"
     minuuttia
 "Monday"
@@ -389,6 +391,7 @@
     Viesti
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
     Vain Suosikkikanavat
 "Only New Episodes"
@@ -552,6 +555,7 @@
     Alustus
 "Reverse Order"
     Päinvastainen Järjestys
+"Rows to show between timeslot info"
 "Saturday"
     Lauantai
 "Save"
@@ -626,6 +630,7 @@
 "sourceid"
 "Special Searches"
     Edistynyt Haku
+"Star character"
 "Start Date"
     Päivämäärä
 "Start Early"
@@ -661,6 +666,7 @@
     Aika
 "Time Stretch Default"
     Ajan Säädön Oletus
+"Timeslot size"
 "title"
     Nimike
 "Title"

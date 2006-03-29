@@ -171,6 +171,7 @@
 "Genre (filtered)"
 "Go"
 "Google"
+"Group timeslots every"
 "Guest Starring"
 "Guide rating"
 "Guide Settings"
@@ -224,6 +225,7 @@
 "Low"
 "Manual"
     Ručně
+"Max star rating for movies"
 "minutes"
     minuty
 "Monday"
@@ -272,6 +274,7 @@
 "Notes"
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
 "Only New Episodes"
     Jen nové díly
@@ -409,6 +412,7 @@
     Opakování
 "Reset"
 "Reverse Order"
+"Rows to show between timeslot info"
 "Saturday"
     Sobota
 "Save"
@@ -461,6 +465,7 @@
 "SI Units?"
 "sourceid"
 "Special Searches"
+"Star character"
 "Start Date"
 "Start Early"
 "Start Time"
@@ -484,6 +489,7 @@
     Čtvrtek
 "Time"
 "Time Stretch Default"
+"Timeslot size"
 "title"
     název
 "Title"

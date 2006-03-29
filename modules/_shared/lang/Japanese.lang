@@ -238,6 +238,7 @@
 "Go"
     移動
 "Google"
+"Group timeslots every"
 "Guest Starring"
     ゲスト出演
 "Guide rating"
@@ -314,6 +315,7 @@
     低
 "Manual"
     手動
+"Max star rating for movies"
 "minutes"
     分
 "Monday"
@@ -373,6 +375,7 @@
     備考
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
     お気に入りのチャンネルのみ表示する
 "Only New Episodes"
@@ -537,6 +540,7 @@
     リセット
 "Reverse Order"
     逆順
+"Rows to show between timeslot info"
 "Saturday"
     土曜日
 "Save"
@@ -611,6 +615,7 @@
 "sourceid"
 "Special Searches"
     スペシャル検索
+"Star character"
 "Start Date"
     開始日
 "Start Early"
@@ -645,6 +650,7 @@
     放送時間
 "Time Stretch Default"
     タイムストレッチ設定
+"Timeslot size"
 "title"
     タイトル
 "Title"

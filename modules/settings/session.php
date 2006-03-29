@@ -39,7 +39,13 @@
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
         $_SESSION['recorded_pixmaps']   = $_POST['recorded_pixmaps']   ? true : false;
     // Guide Settings
-        $_SESSION['guide_favonly'] = $_POST['guide_favonly'] ? true : false;
+        $_SESSION['guide_favonly']    = $_POST['guide_favonly'] ? true : false;
+        $_SESSION['timeslot_size']    = max(5, intVal($_POST['timeslot_size'])) * 60;
+        $_SESSION['num_time_slots']   = max(3, intVal($_POST['num_time_slots']));
+        $_SESSION['timeslot_blocks']  = max(1, intVal($_POST['timeslot_blocks']));
+        $_SESSION['timeslotbar_skip'] = max(1, intVal($_POST['timeslotbar_skip']));
+        $_SESSION['max_stars']        = max(3, intVal($_POST['max_stars']));
+        $_SESSION['star_character']   = $_POST['star_character'];
     // Change language?  Make sure we load the new translation file, too.
         if ($_POST['language'] && $_POST['language'] != $_SESSION['language']) {
             $_SESSION['language'] = $_POST['language'];

@@ -38,15 +38,56 @@
     define('video_img_width',  94);
     define('video_img_height', 140);
 
+// Guide settings
+    if (!isset($_SESSION['guide_favonly']))
+        $_SESSION['guide_favonly'] = false;
+
+// The size of timeslots, in seconds (1800 = 30 minutes)
+    if ($_SESSION['timeslot_size'] < 300) {
+        switch (tmpl) {
+            case 'wml': $_SESSION['timeslot_size'] = 3600; break;
+            case 'wap': $_SESSION['timeslot_size'] = 900;  break;
+            default:    $_SESSION['timeslot_size'] = 300;  break;
+        }
+    }
+    define('timeslot_size', $_SESSION['timeslot_size']);
+
+// The number of time slots to display in the channel listing
+    if ($_SESSION['num_time_slots'] < 3) {
+        switch (tmpl) {
+            case 'wml': $_SESSION['num_time_slots'] = 1;  break;
+            case 'wap': $_SESSION['num_time_slots'] = 12; break;
+            default:    $_SESSION['num_time_slots'] = 36; break;
+        }
+    }
+    define('num_time_slots', $_SESSION['num_time_slots']);
+
+// How many timeslots to block together in headers and listing "now" rounds
+    if ($_SESSION['timeslot_blocks'] < 1)
+        $_SESSION['timeslot_blocks'] = 3;
+    define('timeslot_blocks', $_SESSION['timeslot_blocks']);
+
+// How many channels to skip between re-showing the timeslot bar
+    if ($_SESSION['timeslotbar_skip'] < 5)
+        $_SESSION['timeslotbar_skip'] = 20;
+    define('timeslotbar_skip', $_SESSION['timeslotbar_skip']);
+
+// maximum star rating for movies
+    if ($_SESSION['max_stars'] < 3)
+        $_SESSION['max_stars'] = 4;
+    define('max_stars', $_SESSION['max_stars']);
+
+// the character(s) to represent stars with
+    if (empty($_SESSION['star_character']))
+        $_SESSION['star_character'] = '&diams;';
+    define('star_character', $_SESSION['star_character']);
 
 ###############################################################################
 #######  Config below here has not yet been converted to session-configurable
 ###############################################################################
 
 /*
-
     The following constants are used for the program listings page
-
 */
 
 // Show mouseover information about programs?
@@ -61,26 +102,8 @@
 // Sort channel list by channel nuber or by callsign?
     define('sortby_channum', true);
 
-// The number of time slots to display in the channel listing
-    define('num_time_slots', 36);
-
-// How many timeslots to block together in headers and listing "now" rounds
-    define('timeslot_blocks', 3);
-
-// the size of timeslots, in seconds (1800 = 30 minutes)
-    define('timeslot_size', 300);
-
-// How many channels to skip between re-showing the timeslot bar
-    define('timeslotbar_skip', 20);
-
-// Display controls for movie "star" ratings
-    define('max_stars', 4);                 // maximum star rating for movies
-    define('star_character', '&diams;');    // the character(s) to represent stars with
-
 /*
-
     The following constants are defined for the videos page
-
 */
     define('show_video_covers', true);
 

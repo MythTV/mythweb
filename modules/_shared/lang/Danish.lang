@@ -229,6 +229,7 @@
 "Go"
     Gå
 "Google"
+"Group timeslots every"
 "Guest Starring"
     Gæstestjerner
 "Guide rating"
@@ -295,6 +296,7 @@
 "Low"
     Lav
 "Manual"
+"Max star rating for movies"
 "minutes"
     minutter
 "Monday"
@@ -351,6 +353,7 @@
     Bemærkninger
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
     Vis kun favorit kanaler
 "Only New Episodes"
@@ -510,6 +513,7 @@
     Nulstil
 "Reverse Order"
     Modsat orden
+"Rows to show between timeslot info"
 "Saturday"
     Lørdag
 "Save"
@@ -577,6 +581,7 @@
 "sourceid"
 "Special Searches"
     Specielle søgninger
+"Star character"
 "Start Date"
     Startdato
 "Start Early"
@@ -610,6 +615,7 @@
     Tidspunkt
 "Time Stretch Default"
     Standard Afspilnings hastighed
+"Timeslot size"
 "title"
     titel
 "Title"

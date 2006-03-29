@@ -257,6 +257,7 @@
     Los
 "Google"
     Google
+"Group timeslots every"
 "Guest Starring"
     Gaststar
 "Guide rating"
@@ -334,6 +335,7 @@
     Min
 "Manual"
     Manuell
+"Max star rating for movies"
 "minutes"
     Minuten
 "Monday"
@@ -401,6 +403,7 @@
     Hinweis
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
     Nur Favoriten anzeigen
 "Only New Episodes"
@@ -567,6 +570,7 @@
     Zurücksetzen
 "Reverse Order"
     Umsortieren
+"Rows to show between timeslot info"
 "Saturday"
     Samstag
 "Save"
@@ -642,6 +646,7 @@
 "sourceid"
     Source ID
 "Special Searches"
+"Star character"
 "Start Date"
     Datum
 "Start Early"
@@ -676,6 +681,7 @@
     Zeit
 "Time Stretch Default"
     Zeitraffer Vorgabewert
+"Timeslot size"
 "title"
     Titel
 "Title"

@@ -202,6 +202,7 @@
     Pojdi
 "Google"
     Google
+"Group timeslots every"
 "Guest Starring"
     Igra še
 "Guide rating"
@@ -269,6 +270,7 @@
 "Low"
     Nizka
 "Manual"
+"Max star rating for movies"
 "minutes"
     minute
 "Monday"
@@ -318,6 +320,7 @@
     Opombe
 "Number of epsodes"
 "Number of shows"
+"Number of timeslots"
 "Only display favourite channels"
     Prikaži samo priljubljene kanale
 "Only New Episodes"
@@ -465,6 +468,7 @@
 "Reset"
     Resetiraj
 "Reverse Order"
+"Rows to show between timeslot info"
 "Saturday"
     Sobota
 "Save"
@@ -531,6 +535,7 @@
     SI enote
 "sourceid"
 "Special Searches"
+"Star character"
 "Start Date"
     Datum začetka
 "Start Early"
@@ -561,6 +566,7 @@
 "Time"
     Čas
 "Time Stretch Default"
+"Timeslot size"
 "title"
     Naslov
 "Title"
