@@ -16,9 +16,6 @@
     The following constants are used for the program listings page
 */
 
-// Show mouseover information about programs?
-    define('show_popup_info', false);
-
 // show the channel icons?  true/false
     define('show_channel_icons', false);
 

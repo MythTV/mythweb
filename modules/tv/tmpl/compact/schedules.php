@@ -60,11 +60,6 @@
         // If this is an 'always on any channel' or 'find one' recording w/o a channel, set the channel name to 'Any'
             if ($schedule->type == rectype_always || ($schedule->type == rectype_findone && !preg_match('/\\S/', $schedule->channel->channum)))
                 $schedule->channel->name = '[ '.t('Any').' ]';
-        // A program id counter for popup info
-            if (show_popup_info) {
-                static $program_id_counter = 0;
-                $program_id_counter++;
-            }
 
         // Print a dividing row if grouping changes
             if ($group_field == 'type')
@@ -96,12 +91,7 @@
         // Window status text, for the mouseover
             $wstatus = "Details for $schedule->title";
         // Print a link to the program detail for this schedule
-            echo '<a';
-            if (show_popup_info)
-                echo show_popup("program_$program_id_counter", $schedule->details_list(), NULL, 'popup', $wstatus);
-            else
-                echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
-            echo ' href="'.root.'tv/';
+            echo '<a href="'.root.'tv/';
         // Link to different places for different kinds of schedules
             if ($schedule->search) {
                 echo 'schedules/',

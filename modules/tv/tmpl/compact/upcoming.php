@@ -205,12 +205,6 @@
                 break;
         }
 
-    // A program id counter for popup info
-        if (show_popup_info) {
-            static $program_id_counter = 0;
-            $program_id_counter++;
-        }
-
     // Print a dividing row if grouping changes
         if ($group_field == "airdate")
             $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
@@ -235,12 +229,7 @@
                   .($show->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $show->subtitle)
                                           : '');
     // Print the link to edit this scheduled recording
-        echo '<a';
-        if (show_popup_info)
-            echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup', $wstatus);
-        else
-            echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
-        echo ' href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
+        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
             .$show->title
             .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
             .'</a>';
