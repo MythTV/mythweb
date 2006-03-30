@@ -348,6 +348,7 @@
     MythMusic Netissä.
 "MythTV channel info"
     MythTV kanavatiedot
+"MythTV global defaults"
 "MythTV key bindings"
     MythTV komennot
 "MythTV settings table"
@@ -355,6 +356,7 @@
     MythTV Tila
 "MythVideo on the web."
     MythVideo Netissä.
+"MythWeb Global Defaults"
 "MythWeb session settings"
     MythWeb istuntoasetukset
 "MythWeb Session Settings"
@@ -421,6 +423,7 @@
 "Power"
 "Power Search"
     Tehokas Haku
+"Prefer Channum"
 "Presented by"
     Esittää
 "Pressure"

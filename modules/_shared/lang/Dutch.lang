@@ -360,6 +360,7 @@
     Muziek
 "MythTV channel info"
     MythTV zenderinfo
+"MythTV global defaults"
 "MythTV key bindings"
     MythTV toetsbindingen
 "MythTV settings table"
@@ -367,6 +368,7 @@
     MythTV status
 "MythVideo on the web."
     Video
+"MythWeb Global Defaults"
 "MythWeb session settings"
     MythWeb sessie instellingen
 "MythWeb Session Settings"
@@ -437,6 +439,7 @@
 "Power"
 "Power Search"
     Geavanceerd zoeken
+"Prefer Channum"
 "Presented by"
     Presentator
 "Pressure"

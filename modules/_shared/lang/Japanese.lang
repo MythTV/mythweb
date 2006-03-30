@@ -334,6 +334,7 @@
     MythMusic オンザウェブ
 "MythTV channel info"
     MythTVチャンネル情報
+"MythTV global defaults"
 "MythTV key bindings"
     MythTVキーバインド
 "MythTV settings table"
@@ -341,6 +342,7 @@
     MythTVステータス
 "MythVideo on the web."
     MythVideo オンザウェブ
+"MythWeb Global Defaults"
 "MythWeb session settings"
     MythWebセッション設定
 "MythWeb Session Settings"
@@ -406,6 +408,7 @@
     パワー
 "Power Search"
     パワーサーチ
+"Prefer Channum"
 "Presented by"
     提供
 "Pressure"

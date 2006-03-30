@@ -361,6 +361,7 @@
     MythMusic på webben
 "MythTV channel info"
     MythTV kanalinfo
+"MythTV global defaults"
 "MythTV key bindings"
     MythTV tangentbindningar
 "MythTV settings table"
@@ -368,6 +369,7 @@
     MythTV-status
 "MythVideo on the web."
     MythVideo på webben
+"MythWeb Global Defaults"
 "MythWeb session settings"
     MythWeb sessionsinställningar
 "MythWeb Session Settings"
@@ -439,6 +441,7 @@
     Avancerat
 "Power Search"
     Avancerad sökning
+"Prefer Channum"
 "Presented by"
     Presenteras av
 "Pressure"

@@ -19,6 +19,11 @@
  *
 /**/
 
+// Prefer channum over callsign?
+    if (empty($_SESSION['prefer_channum']))
+        $_SESSION['prefer_channum'] = setting('WebPrefer_Channum');
+    define('prefer_channum', $_SESSION['prefer_channum']);
+
 // Load/set default date formats
     if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = t('generic_date').', '.t('generic_time');
     if (!$_SESSION['date_scheduled'])       $_SESSION['date_scheduled']       = t('generic_date').' ('.t('generic_time').')';
@@ -95,9 +100,6 @@
 
 // show the channel icons?  true/false
     define('show_channel_icons', true);
-
-// Prefer channum over callsign?
-    define('prefer_channum', true);
 
 // Sort channel list by channel nuber or by callsign?
     define('sortby_channum', true);

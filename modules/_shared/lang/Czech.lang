@@ -243,11 +243,13 @@
 "MythMusic on the web."
     MythMusic na webu.
 "MythTV channel info"
+"MythTV global defaults"
 "MythTV key bindings"
 "MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
     MythVideo na webu.
+"MythWeb Global Defaults"
 "MythWeb session settings"
 "MythWeb Session Settings"
 "MythWeb Skin"
@@ -297,6 +299,7 @@
 "Possible conflicts with this show"
 "Power"
 "Power Search"
+"Prefer Channum"
 "Presented by"
 "Pressure"
     Tlak

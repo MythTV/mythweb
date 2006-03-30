@@ -315,12 +315,14 @@
     MythMusic på www
 "MythTV channel info"
     MythTV kanal info
+"MythTV global defaults"
 "MythTV key bindings"
     MythTV taste indstillinger
 "MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
     MythVideo på www
+"MythWeb Global Defaults"
 "MythWeb session settings"
 "MythWeb Session Settings"
 "MythWeb Skin"
@@ -379,6 +381,7 @@
     Mulige konfligter med denne udsendelse
 "Power"
 "Power Search"
+"Prefer Channum"
 "Presented by"
     Præsenteret af
 "Pressure"

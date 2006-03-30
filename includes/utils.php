@@ -26,7 +26,9 @@
         static $cache = array();
     // Assigning a new value
         if ($new_value !== "old\0old") {
-            $db->query('REPLACE INTO settings (value, data) VALUES (?,?)',
+            $db->query('DELETE FROM settings WHERE value=? AND hostname IS NULL',
+                       $field);
+            $db->query('INSERT INTO settings (value, data) VALUES (?,?)',
                        $field, $new_value);
             $cache[$field] = $new_value;
         }

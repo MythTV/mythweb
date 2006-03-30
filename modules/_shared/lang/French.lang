@@ -293,11 +293,13 @@
 "MythMusic on the web."
     MythMusic sur le Web
 "MythTV channel info"
+"MythTV global defaults"
 "MythTV key bindings"
 "MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
     Mythvideo sur le Web
+"MythWeb Global Defaults"
 "MythWeb session settings"
 "MythWeb Session Settings"
 "MythWeb Skin"
@@ -351,6 +353,7 @@
 "Possible conflicts with this show"
 "Power"
 "Power Search"
+"Prefer Channum"
 "Presented by"
     Présenté par
 "Pressure"

@@ -224,11 +224,6 @@
     define('tmpl',     $_SESSION['tmpl']);
     define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');
 
-// Load the template/theme config
-    if (file_exists('config/theme_'. tmpl.'.php')) {
-        require_once 'config/theme_'.tmpl.'.php';
-    }
-
 /**
  * @global  array       $GLOBALS['Modules']
  * @name    $Modules    A list of the available MythWeb modules

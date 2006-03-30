@@ -358,6 +358,7 @@
     MythMusic
 "MythTV channel info"
     MythTV Senderinformationen
+"MythTV global defaults"
 "MythTV key bindings"
     MythTV Tastaturbelegung
 "MythTV settings table"
@@ -365,6 +366,7 @@
     MythTV Status
 "MythVideo on the web."
     MythVideo
+"MythWeb Global Defaults"
 "MythWeb session settings"
     MythWeb Session Einstellungen
 "MythWeb Session Settings"
@@ -435,6 +437,7 @@
     freie Suche
 "Power Search"
     Erweiterte Suche
+"Prefer Channum"
 "Presented by"
     Präsentiert von
 "Pressure"
