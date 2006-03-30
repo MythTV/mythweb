@@ -1,6 +1,6 @@
 <?php
 /**
- * Configure MythTV Key Bindings
+ * Configure MythTV Settings table
  *
  * @url         $URL$
  * @date        $Date$
