@@ -64,6 +64,12 @@
     #
     #   setenv include_path      "/usr/share/mythweb"
 
+    # If you want MythWeb to email php/database errors (and a backtrace) to you,
+    # uncomment and set the email address below.
+    #
+    #   setenv error_email       "mythweb_errors@example.com"
+    #
+
     #  These settings are intended for apache 2.x.  If your version of apache
     #  doesn't support php_value, or things like memory_limit aren't working
     #  as expected, then use these settings as examples for your own php.ini

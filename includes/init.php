@@ -41,6 +41,9 @@
 // Several sections of this program require the current hostname
     define('hostname', empty($_SERVER['hostname']) ? trim(`hostname`) : $_SERVER['hostname']);
 
+// Define the error email, or set it to a null string if there isn't a valid one
+    define('error_email', strstr($_SERVER['error_email'], '@') ? $_SERVER['error_email'] : '');
+
 // Load the user-defined configuration settings
     require_once 'config/conf.php';
 
@@ -156,7 +159,7 @@
         if (strstr(error_email, '@'))
             mail(error_email, "Database Connection Error" ,
                  $db->error,
-                 'From:  PHP Error <php_errors@'.server_domain.">\n");
+                 'From:  MythWeb Error <'.error_email.">\n");
     // Let the user know in a nice way that something's wrong
         tailored_error('site_down');
     }
