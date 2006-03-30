@@ -22,4 +22,4 @@
         require_once 'modules/settings/'.$Path[1].'.php';
 
 // Otherwise, just show the settings index page
-    require_once tmpl_dir.'settings.php';
+    require_once tmpl_dir.'overview.php';

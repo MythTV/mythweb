@@ -151,6 +151,7 @@
     Egen
 "Custom Schedule"
     Eget schema
+"Data"
 "Date"
     Datum
 "Date Formats"
@@ -203,6 +204,7 @@
     Editera knappar på
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
+"Edit settings for"
 "End"
     Slut
 "End Late"
@@ -253,6 +255,7 @@
     Genre
 "Genre (filtered)"
     Genre (filtrerad)
+"Global"
 "Go"
     Gå
 "Google"
@@ -360,6 +363,7 @@
     MythTV kanalinfo
 "MythTV key bindings"
     MythTV tangentbindningar
+"MythTV settings table"
 "MythTV Status"
     MythTV-status
 "MythVideo on the web."
@@ -630,6 +634,8 @@
     inställningar
 "Settings"
     Inställningar
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     Detta är startsidan för inställningarna. Inte helt komplett, men följande finns för närvarande att välja på:
 "Show"
@@ -750,6 +756,7 @@
     UV-strålning minimal
 "UV Moderate"
     UV-strålning måttlig
+"Value"
 "Video"
     Video
 "videofilters"

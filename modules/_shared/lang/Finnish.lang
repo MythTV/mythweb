@@ -148,6 +148,7 @@
     Mukautettu
 "Custom Schedule"
     Mukautettu Ajastus
+"Data"
 "Date"
     Aika
 "Date Formats"
@@ -200,6 +201,7 @@
     Muokkaa näppäinkomentoja
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
+"Edit settings for"
 "End"
     Loppu
 "End Late"
@@ -245,6 +247,7 @@
     Laji
 "Genre (filtered)"
     Laji (suodatettu)
+"Global"
 "Go"
     Mene
 "Google"
@@ -347,6 +350,7 @@
     MythTV kanavatiedot
 "MythTV key bindings"
     MythTV komennot
+"MythTV settings table"
 "MythTV Status"
     MythTV Tila
 "MythVideo on the web."
@@ -610,6 +614,8 @@
     Asetukset
 "Settings"
     Asetukset
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     MythWeb:in asetussivu...<p>Nykyisellään keskeneräinen. Valitse seuraavista:
 "Show"
@@ -728,6 +734,7 @@
     Alhainen UV
 "UV Moderate"
     Keskimääräinen UV
+"Value"
 "Video"
     Videot
 "videofilters"

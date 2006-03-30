@@ -151,6 +151,7 @@
     freie Planung
 "Custom Schedule"
     Erweiterte Aufnahmeregel
+"Data"
 "Date"
     Datum
 "Date Formats"
@@ -203,6 +204,7 @@
     Tastaturbelegung ändern für
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
+"Edit settings for"
 "End"
     Ende
 "End Late"
@@ -253,6 +255,7 @@
     Genre
 "Genre (filtered)"
     Genre (gefiltert)
+"Global"
 "Go"
     Los
 "Google"
@@ -357,6 +360,7 @@
     MythTV Senderinformationen
 "MythTV key bindings"
     MythTV Tastaturbelegung
+"MythTV settings table"
 "MythTV Status"
     MythTV Status
 "MythVideo on the web."
@@ -626,6 +630,8 @@
     Einstellungen
 "Settings"
     Einstellungen
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     Einstellungen: Übersicht
 "Show"
@@ -745,6 +751,7 @@
     Minimal
 "UV Moderate"
     Gemäßigt
+"Value"
 "Video"
     Video
 "videofilters"

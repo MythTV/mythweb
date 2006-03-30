@@ -77,6 +77,7 @@
 "Currently Browsing:  $1"
 "Custom"
 "Custom Schedule"
+"Data"
 "Date"
 "Date Formats"
 "Deactivated"
@@ -103,6 +104,7 @@
 "Edit"
 "Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
+"Edit settings for"
 "End"
 "End Late"
 "Episode"
@@ -132,6 +134,7 @@
     %I:%M %p
 "Genre"
 "Genre (filtered)"
+"Global"
 "Go"
 "Google"
 "Group timeslots every"
@@ -190,6 +193,7 @@
 "MythMusic on the web."
 "MythTV channel info"
 "MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
 "MythWeb session settings"
@@ -378,6 +382,8 @@
 "Set Host"
 "settings"
 "Settings"
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     This is the index page for the configuration settings...
     <p>
@@ -446,6 +452,7 @@
 "UV Index"
 "UV Minimal"
 "UV Moderate"
+"Value"
 "Video"
 "videofilters"
 "Videos"

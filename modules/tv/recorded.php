@@ -65,6 +65,11 @@
                          $_GET['autoexpire'] ? 1 : 0,
                          $_GET['chanid'],
                          $_GET['starttime']);
+    // Exit early if we're in AJAX mode.
+        if (isset($_GET['ajax'])) {
+            echo 'success';
+            exit;
+        }
     }
     else {
         /** @todo need some sort of handler here for the non-ajax stuff */

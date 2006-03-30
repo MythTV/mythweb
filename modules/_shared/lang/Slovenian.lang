@@ -117,6 +117,7 @@
     Trenutno brskanje:  $1
 "Custom"
 "Custom Schedule"
+"Data"
 "Date"
     Datum
 "Date Formats"
@@ -159,6 +160,7 @@
     Zamenjaj bližnjico za
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
+"Edit settings for"
 "End"
 "End Late"
     Končaj kasneje
@@ -198,6 +200,7 @@
     %H:%M
 "Genre"
 "Genre (filtered)"
+"Global"
 "Go"
     Pojdi
 "Google"
@@ -285,6 +288,7 @@
     MythMusic na spletu
 "MythTV channel info"
 "MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
     MythVideo na spletu
@@ -518,6 +522,8 @@
 "settings"
 "Settings"
     Nastavitve
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     To je index stran nastavitev...<p>Ni še končana, eventuelno pa bo tudi lepše zgledala.  Trenutno si lahko izberete naslednje:
 "Show"
@@ -618,6 +624,7 @@
     UV minimalni
 "UV Moderate"
     UV srednji
+"Value"
 "Video"
 "videofilters"
 "Videos"

@@ -122,6 +122,7 @@
     Actuellement Affich&eacute;
 "Custom"
 "Custom Schedule"
+"Data"
 "Date"
     Date
 "Date Formats"
@@ -164,6 +165,7 @@
     Editer les touches sur
 "Edit MythWeb and some MythTV settings."
     Editer les param&egrave;tres de Mythweb et certains de MythTV
+"Edit settings for"
 "End"
 "End Late"
     Fin tardive
@@ -203,6 +205,7 @@
     %I:%M %p
 "Genre"
 "Genre (filtered)"
+"Global"
 "Go"
     Go
 "Google"
@@ -291,6 +294,7 @@
     MythMusic sur le Web
 "MythTV channel info"
 "MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
     Mythvideo sur le Web
@@ -526,6 +530,8 @@
 "settings"
 "Settings"
     param&egrave;tres
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     ceci est la page d&acute;index pour les param&eacute;tres de configuration...<p>C&acute;est incomplet et pourrait &ecirc;tre mieux format&eacute;.  Pour le moment vous pouvez choisir parmis:
 "Show"
@@ -626,6 +632,7 @@
     Indice UV minimal
 "UV Moderate"
     Indice UV mod&eacute;r&eacute;
+"Value"
 "Video"
 "videofilters"
 "Videos"

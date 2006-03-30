@@ -151,6 +151,7 @@
     Geavanceerd
 "Custom Schedule"
     Geavanceerde Opname
+"Data"
 "Date"
     Datum
 "Date Formats"
@@ -203,6 +204,7 @@
     Toetsbindingen bewerken op
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
+"Edit settings for"
 "End"
     Einde
 "End Late"
@@ -253,6 +255,7 @@
     Genre
 "Genre (filtered)"
     Genre (filter)
+"Global"
 "Go"
     Doorgaan
 "Google"
@@ -359,6 +362,7 @@
     MythTV zenderinfo
 "MythTV key bindings"
     MythTV toetsbindingen
+"MythTV settings table"
 "MythTV Status"
     MythTV status
 "MythVideo on the web."
@@ -628,6 +632,8 @@
     instellingen
 "Settings"
     Instellingen
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     instellingen: overzicht
 "Show"
@@ -749,6 +755,7 @@
     UV Laag
 "UV Moderate"
     UV Gemiddeld
+"Value"
 "Video"
     Films
 "videofilters"

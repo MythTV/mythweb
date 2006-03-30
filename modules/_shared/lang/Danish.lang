@@ -131,6 +131,7 @@
     Lige nu vises: $1
 "Custom"
 "Custom Schedule"
+"Data"
 "Date"
     Dato
 "Date Formats"
@@ -182,6 +183,7 @@
     Rediger tastaturgenveje for
 "Edit MythWeb and some MythTV settings."
     Rediger MythWeb- og nogle MythTV-indstillinger
+"Edit settings for"
 "End"
     Slut
 "End Late"
@@ -226,6 +228,7 @@
     Genre
 "Genre (filtered)"
     Genre (filtreret)
+"Global"
 "Go"
     Gå
 "Google"
@@ -314,6 +317,7 @@
     MythTV kanal info
 "MythTV key bindings"
     MythTV taste indstillinger
+"MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
     MythVideo på www
@@ -563,6 +567,8 @@
     opsætning
 "Settings"
     Indstillinger
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     Dette er hovedsiden til indstillinger...<p>Den er ikke komplet, og vil senere komme til at se noget pænere ud. Lige nu kan du vælge imellem:
 "Show"
@@ -674,6 +680,7 @@
     UV-stråling minimal
 "UV Moderate"
     UV-stråling middel
+"Value"
 "Video"
     Video
 "videofilters"

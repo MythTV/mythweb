@@ -103,6 +103,7 @@
 "Custom"
 "Custom Schedule"
     Upravený rozvrh
+"Data"
 "Date"
     Datum
 "Date Formats"
@@ -136,6 +137,7 @@
 "Edit"
 "Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
+"Edit settings for"
 "End"
 "End Late"
     Končí pozdě
@@ -169,6 +171,7 @@
     %I:%M %p
 "Genre"
 "Genre (filtered)"
+"Global"
 "Go"
 "Google"
 "Group timeslots every"
@@ -241,6 +244,7 @@
     MythMusic na webu.
 "MythTV channel info"
 "MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
 "MythVideo on the web."
     MythVideo na webu.
@@ -453,6 +457,8 @@
 "Set Host"
 "settings"
 "Settings"
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     This is the index page for the configuration settings...<p>It's incomplete, and will eventually get some nicer formatting.  For now, you can choose from the following:
 "Show"
@@ -531,6 +537,7 @@
 "UV Index"
 "UV Minimal"
 "UV Moderate"
+"Value"
 "Video"
 "videofilters"
 "Videos"

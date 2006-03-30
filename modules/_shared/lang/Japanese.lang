@@ -137,6 +137,7 @@
     カスタム
 "Custom Schedule"
     カスタム録画
+"Data"
 "Date"
     日付
 "Date Formats"
@@ -188,6 +189,7 @@
     キーバインド編集対象
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
+"Edit settings for"
 "End"
     終了
 "End Late"
@@ -235,6 +237,7 @@
     ジャンル
 "Genre (filtered)"
     ジャンル（絞込み）
+"Global"
 "Go"
     移動
 "Google"
@@ -333,6 +336,7 @@
     MythTVチャンネル情報
 "MythTV key bindings"
     MythTVキーバインド
+"MythTV settings table"
 "MythTV Status"
     MythTVステータス
 "MythVideo on the web."
@@ -595,6 +599,8 @@
     設定
 "Settings"
     設定
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     設定概要
 "Show"
@@ -711,6 +717,7 @@
     UV 弱い
 "UV Moderate"
     UV 穏やか
+"Value"
 "Video"
     ビデオ
 "videofilters"

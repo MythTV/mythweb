@@ -18,8 +18,9 @@
                                  'sort'        => 999,
                                  'name'        => t('Settings'),
                                  'description' => t('settings'),
-                                 'links'       => array('channels'  => t('MythTV channel info'),
+                                 'links'       => array('session'   => t('MythWeb session settings'),
+                                                        'channels'  => t('MythTV channel info'),
                                                         'keys'      => t('MythTV key bindings'),
-                                                        'session'   => t('MythWeb session settings'),
+                                                        'settings'  => t('MythTV settings table'),
                                                        ),
                                 );

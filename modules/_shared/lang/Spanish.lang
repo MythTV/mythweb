@@ -149,6 +149,7 @@
     Avanzada
 "Custom Schedule"
     Programación Avanzada
+"Data"
 "Date"
     Fecha
 "Date Formats"
@@ -201,6 +202,7 @@
     Editar Teclas en
 "Edit MythWeb and some MythTV settings."
     Editar ajustes de MythWeb y algunos de MythTV
+"Edit settings for"
 "End"
     Fin
 "End Late"
@@ -251,6 +253,7 @@
     Género
 "Genre (filtered)"
     Género (filtrado)
+"Global"
 "Go"
     Ir
 "Google"
@@ -356,6 +359,7 @@
     Info Canal MythTV
 "MythTV key bindings"
     Vínculos Teclas MythTV
+"MythTV settings table"
 "MythTV Status"
     Estado MythTV
 "MythVideo on the web."
@@ -626,6 +630,8 @@
     ajustes
 "Settings"
     Ajustes
+"Settings Table"
+"Settings Table Editor"
 "settings: overview"
     Ajustes: general
 "Show"
@@ -746,6 +752,7 @@
     UV mínimo
 "UV Moderate"
     UV moderado
+"Value"
 "Video"
     Vídeo
 "videofilters"
