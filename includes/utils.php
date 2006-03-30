@@ -267,15 +267,14 @@
  * @return $str converted UTF-8 to local encoding
 /**/
     function utf8tolocal($str) {
-        if (!defined("fs_encoding") || fs_encoding == '')
+        if (empty($_SERVER['fs_encoding']))
             return $str;
         if (function_exists('mb_convert_encoding'))
-            return mb_convert_encoding($str, fs_encoding, 'UTF-8');
+            return mb_convert_encoding($str, $_SERVER['fs_encoding'], 'UTF-8');
         if (function_exists('iconv'))
-            return iconv($int_encoding, fs_encoding, $str);
+            return iconv('UTF-8', $_SERVER['fs_encoding'], $str);
         if (function_exists('recode_string'))
-            return recode_string("UTF-8.." . fs_encoding, $str);
-
+            return recode_string('UTF-8..' . $_SERVER['fs_encoding'], $str);
         return $str;
     }
 

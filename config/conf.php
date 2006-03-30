@@ -21,9 +21,6 @@
  *  provided for your convenience.
 /*/
 
-// file system encoding, uses music and video file link to local file
-    define('fs_encoding', 'ISO-8859-1');
-
 // Path to the mythvideo "covers" directory
     define('video_img_path', 'data/video_covers');
 

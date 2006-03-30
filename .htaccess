@@ -70,6 +70,12 @@
     #   setenv error_email       "mythweb_errors@example.com"
     #
 
+    # If your local file system is something other than UTF-8, set this variable
+    # so that the music and video portions of MythWeb can provide proper links
+    # to your downloadable files.
+    #
+    #   setenv fs_encoding       "ISO-8859-1"
+
     #  These settings are intended for apache 2.x.  If your version of apache
     #  doesn't support php_value, or things like memory_limit aren't working
     #  as expected, then use these settings as examples for your own php.ini
