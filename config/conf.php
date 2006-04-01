@@ -24,10 +24,3 @@
 // Path to the mythvideo "covers" directory
     define('video_img_path', 'data/video_covers');
 
-// video_url is normally determined automatically (a local link to data/recordings
-//   for Linux/MacOS, and a myth:// URL for windows machines), but you can override
-//   it here to something else if you really need to.
-#   define('video_url', 'data/recordings');
-#   define('video_url', 'file://machine_name/path_to_videos');
-#   define('video_url', 'myth://slave_backend_ip:6543');
-

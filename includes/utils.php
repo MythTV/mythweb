@@ -239,30 +239,39 @@
     }
 
 /**
- * @return video_url constant, or sets it according to the browser type
+ * Someday, we may even be able to pass in a recording and get back a specific
+ * hostname.  For now, you get either the hard-coded global video_url, or one
+ * determined based on the browser.
+ *
+ * @return string URL to access recordings
 /**/
     function video_url() {
-    // Not defined?
-        if (!video_url || video_url == 'video_url') {
-        // Mac and Linux just get a link to the direectory
-            if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
-                define('video_url', root.'data/recordings');
-        // Windows likely gets a myth:// url
-            else {
-                global $Master_Host, $Master_Port;
-            // Is either the browser xor the master in an rfc 1918 zone?
-                if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
-                        xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
-                    define('video_url', root.'data/recordings');
-                }
-            // Send the myth url
+        static $video_url;
+    // Not defined? Try the global config override
+        if (empty($video_url)) {
+            $video_url = setting('WebVideo_URL');
+        // Still empty?
+            if (empty($video_url)) {
+            // Mac and Linux just get a link to the direectory
+                if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
+                    $video_url = root.'data/recordings';
+            // Windows likely gets a myth:// url
                 else {
-                    define('video_url', "myth://$Master_Host:$Master_Port");
+                    global $Master_Host, $Master_Port;
+                // Is either the browser xor the master in an rfc 1918 zone?
+                    if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
+                            xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
+                        $video_url = root.'data/recordings';
+                    }
+                // Send the myth url
+                    else {
+                        $video_url = "myth://$Master_Host:$Master_Port";
+                    }
                 }
             }
         }
     // Return
-        return video_url;
+        return $video_url;
     }
 
 /**
