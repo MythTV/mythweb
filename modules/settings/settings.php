@@ -67,7 +67,7 @@
     if (is_null($_GET['host']))
         $sh = $db->query('SELECT value, data
                             FROM settings
-                           WHERE !hostname OR hostname IS NULL
+                           WHERE hostname IS NULL
                         ORDER BY value');
     else
         $sh = $db->query('SELECT value, data
