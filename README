@@ -107,6 +107,14 @@ as auto-detecting as possible, it often still needs some hand-editing.
 3.0 FAQs
 ========
 
+Q: Why do a bunch of the images have little X's over them when using IE?
+A: The hack used to make IE display transparent PNG's relies on a hard-coded
+    image address in js/pngbehavior.htc.  If your MythWeb installation is
+    anywhere other than the root directory, the default won't work and you will
+    have to hand-edit the file with the correct path.  Look for the line that
+    contains "/skins/default/img/spacer.gif" -- usually adding a /mythweb at the
+    start of the string will solve your problem.
+
 Q: Why don't my sessions stick?  (often manifests as sorting issues or settings
     not storing properly)
 A: Make sure that apache's AllowOverride setting is correct, as detailed in
