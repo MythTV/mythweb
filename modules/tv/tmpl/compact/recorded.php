@@ -24,6 +24,136 @@
            $Groups,    $Program_Titles;
 ?>
 
+<script language="JavaScript" type="text/javascript">
+<!--
+
+// Some initial values for global counters
+    var diskused       = parseInt('<?php echo addslashes(disk_used) ?>');
+    var programcount   = parseInt('<?php echo addslashes($Total_Programs) ?>');
+    var programs_shown = parseInt('<?php echo count($All_Shows) ?>');
+    var totaltime      = parseInt('<?php echo addslashes($Total_Time) ?>');
+
+// Initialize some variables that will get set after the page table is printed
+    var rowcount     = new Array();
+    var rowsection   = new Array();
+    var titles       = new Object;
+    var groups       = new Object;
+
+// Load the known shows
+    var file  = null;
+    var files = new Array();
+
+<?php
+    foreach ($All_Shows as $show) {
+?>
+    file = new Object();
+    file.title     = '<?php echo addslashes($show->title)                  ?>';
+    file.subtitle  = '<?php echo addslashes($show->subtitle)               ?>';
+    file.chanid    = '<?php echo addslashes($show->chanid)                 ?>';
+    file.starttime = '<?php echo addslashes($show->recstartts)             ?>';
+    file.group     = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->group)))    ?>';
+    file.filename  = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->filename))) ?>';
+    file.size      = '<?php echo addslashes($show->filesize)               ?>';
+    file.length    = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
+    files.push(file);
+
+<?php
+    }
+?>
+
+    function set_autoexpire(id) {
+        var file = files[id];
+        submit_url('<?php echo root ?>tv/recorded?ajax&autoexpire='+
+                   +(get_element('autoexpire_' + file.chanid + '.' + file.starttime).checked ? '1' : '0')
+                   +'&chanid='+file.chanid+'&starttime='+file.starttime);
+    }
+
+    function confirm_delete(id, forget_old) {
+        var file = files[id];
+        if (confirm("<?php echo t('Are you sure you want to delete the following show?') ?>\n\n     "+file.title+": "+file.subtitle)) {
+        // Do the actual deletion
+            if (programs_shown == 1)
+                location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid+'&starttime='+file.starttime;
+            else
+                submit_url('<?php echo root ?>tv/recorded?ajax&delete=yes&chanid='+file.chanid+'&starttime='+file.starttime,
+                           http_success, http_failure, id, file);
+        // Debug statements - uncomment to verify that the right file is being deleted
+            //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
+            //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
+        }
+    }
+
+    function http_success(result, args) {
+        var id   = args.shift();
+        var file = args.shift();
+    // Hide the row from view
+        toggle_vis('inforow_' + id,   'display');
+        toggle_vis('statusrow_' + id, 'display');
+        toggle_vis('descunderrow_' + id, 'display');
+    // decrement the number of rows in a section
+        var section   = rowsection[id];
+        rowcount[section]--;
+    // Decrement the number of episodes for this title
+        titles[file.title]--;
+        var episode_count = titles[file.title]
+    // If we just hid the only row in a section, then hide the section break above it as well
+        if (rowcount[section] == 0) {
+            toggle_vis('breakrow_' + section, 'display');
+        }
+    // Change the recordings dropdown menu on the fly
+        if (episode_count == 0) {
+            toggle_vis('Title ' + file.title, 'display');
+        }
+        else {
+            var count_text;
+            count_text = (episode_count > 1) ? ' (' + episode_count + ' episodes)' : '';
+            get_element('Title ' + file.title).innerHTML = file.title + count_text;
+        }
+    // TODO: test changing the groups dropdown on the fly.
+    // I can't test it because I haven't set up any recording groups, and probably never will
+        if (file.group) {
+        // Decrement the number of episodes for this group
+            groups[file.group]--;
+            var group_count = titles[file.title]
+        // Change the groups dropdown menu on the fly
+            if (group_count == 0) {
+                toggle_vis('Group ' + file.group, 'display');
+            }
+            else {
+                var count_text;
+                group_text = (group_count >1) ? ' (' + group_count + ' episodes)' : '';
+                get_element('Group ' + file.group).innerHTML = file.group + group_text;
+            }
+        }
+    // Decrement the total number of shows and update the page
+        programs_shown--;
+        programcount--;
+        get_element('programcount').innerHTML = programcount;
+    // Decrease the total amount of time by the amount of the show
+        totaltime -= file.length;
+        get_element('totaltime').innerHTML = nice_length(totaltime, <?php
+                                                         echo "'", addslashes(t('$1 hr')),   "', ",
+                                                              "'", addslashes(t('$1 hrs')),  "', ",
+                                                              "'", addslashes(t('$1 min')),  "', ",
+                                                              "'", addslashes(t('$1 mins')), "'";
+                                                         ?>);
+    // Decrease the disk usage indicator by the amount of the show
+        diskused -= file.size;
+        get_element('diskused').innerHTML = nice_filesize(diskused);
+    // Adjust the freespace shown
+        get_element('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
+        // Eventually, we should perform the removal-from-the-list here instead
+        // of in confirm_delete()
+    }
+
+    function http_failure(err, errstr, args) {
+        var file = args[0];
+        alert("Can't delete "+file.title+': '+file.subtitle+".\nHTTP Error:  " + errstr + ' (' + err + ')');
+    }
+
+// -->
+</script>
+
 <p>
 <form id="program_titles" action="<?php echo root ?>tv/recorded" method="get">
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
@@ -141,8 +271,8 @@ EOM;
             echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
-                echo '<a href="'.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
-                    .'<img id="'.$show->filename."\" src=\"".root.cache_dir.'/'.basename($show->filename).'.png" '.$attr.' border="0">'
+                echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename)))."\" name=\"$row\">"
+                    .'<img id="'.$show->filename.'" src="'.root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename))).'.png" '.$attr.' border="0">'
                     .'</a>';
             }
             else
@@ -150,10 +280,10 @@ EOM;
             echo "</td>\n";
         }
     ?>
-    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'"'
+    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename)).'"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
-    <td><?php echo '<a href="'.video_url().'/'.basename($show->filename).'">'
+    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename)).'">'
                     .$show->subtitle.'</a>' ?></td>
 <?php
         if (!$_SESSION['recorded_descunder'])
@@ -173,6 +303,7 @@ EOM;
     <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 2 : 1 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_<?php echo $row ?>"
             href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>"
+            js_href="javascript:confirm_delete(<?php echo $row ?>, false)";
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
     </td>
@@ -200,6 +331,7 @@ EOM;
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_rerecord_<?php echo $row ?>"
             href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old"
+            js_href="javascript:confirm_delete(<?php echo $row ?>, true)";
             title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a></td>
     </td>
@@ -215,6 +347,23 @@ EOM;
 ?>
 
 </table>
+
+<script language="JavaScript" type="text/javascript">
+<?php
+    foreach ($row_count as $count) {
+        echo 'rowcount.push(['.escape($count)."]);\n";
+    }
+    foreach ($row_section as $section) {
+        echo 'rowsection.push(['.escape($section)."]);\n";
+    }
+    foreach($Program_Titles as $title => $count) {
+        echo 'titles['.escape($title).'] = '.escape($count).";\n";
+    }
+    foreach($Groups as $recgroup => $count) {
+        echo 'groups['.escape($recgroup).'] = '.escape($count).";\n";
+    }
+?>
+</script>
 
 <?php
     echo '<p align="right" style="padding-right: 75px">'
