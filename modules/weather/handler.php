@@ -38,8 +38,7 @@
     while (list($data, $host) = $sh->fetch_row()) {
     // New data site
         if (empty($WeatherSites[$data])) {
-            $weather_site["use_metric"] = $use_metric;
-            $WeatherSites[$weather_site["data"]] = new WeatherSite($data, $hostname, $_SESSION['siunits']);
+            $WeatherSites[$data] = new WeatherSite($data, $hostname, $_SESSION['siunits']);
         }
     // Add the hostname to sites we've already seen
         else {
