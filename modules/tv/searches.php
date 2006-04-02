@@ -14,7 +14,7 @@
 /**/
 
 // Load the canned searches
-    require_once 'config/canned_searches.php';
+    require_once 'modules/tv/canned_searches.conf.php';
 
 // Load the class for this page
     require_once tmpl_dir.'searches.php';

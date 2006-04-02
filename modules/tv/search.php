@@ -71,7 +71,7 @@
     if (preg_match('/^\s*canned:\s*(.+)\s*$/', $_SESSION['search']['searchstr'], $search_name)) {
         $search_name = $search_name[1];
     // Load the canned searches
-        require_once 'config/canned_searches.php';
+        require_once 'modules/tv/canned_searches.conf.php';
     // Find the query
         if ($Canned_Searches[$search_name]) {
             $query = array($Canned_Searches[$search_name]);
