@@ -215,14 +215,18 @@
     browser.is_css = (document.body  && document.body.style)
     browser.is_w3c = (browser.is_css && browser.getElementById)
 
-// Cookie support
-    var tmp = document.cookie;
-	document.cookie = 'cookies=true';
-	browser.cookies = (document.cookie) ? true : false;
-    document.cookie = tmp;
+// Cookie support -- only create a cookie if there isn't one already.  It seems
+// that doing this can override the exipiration info in existing cookies.
+    browser.cookies = (document.cookie) ? true : false;
+    if (!browser.cookies) {
+        var tmp = document.cookie;
+        document.cookie = 'cookie_test=true';
+        browser.cookies = (document.cookie) ? true : false;
+        document.cookie = tmp;
+    }
 
 // Java support
-	browser.java = navigator.javaEnabled();
+    browser.java = navigator.javaEnabled();
 
 /****************************** Plugin Support ******************************/
 
