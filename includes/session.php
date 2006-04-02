@@ -19,8 +19,8 @@
 
 // Start the session
     session_name('mythweb_id');
-    session_set_cookie_params(60 * 60 * 24 * 30, '/');       // 30 day timeout on cookies
-    ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 30);    // ... and sessions
+    session_set_cookie_params(60 * 60 * 24 * 30 * 365, '/');    // 1 year timeout on cookies
+    ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 30);       // 30 day timeout on sessions
     session_set_save_handler('sess_do_nothing', 'sess_do_nothing', 'sess_read', 'sess_write', 'sess_destroy', 'sess_gc');
     session_start();
 
