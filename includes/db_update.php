@@ -35,11 +35,11 @@
                                 data            BLOB NOT NULL DEFAULT "",
                                 INDEX (modified)
                             )');
-                setting('WebDBSchemaVer', ++$db_vers);
+                setting('WebDBSchemaVer', null, ++$db_vers);
         // Moving settings into the database
             case 1:
-                setting('WebPrefer_Channum', 1);
-                setting('WebDBSchemaVer', ++$db_vers);
+                setting('WebPrefer_Channum', null, 1);
+                setting('WebDBSchemaVer',    null, ++$db_vers);
         // All other numbers should run their changes sequentially
             #case 2:
             #    # do something to upgrade the database here

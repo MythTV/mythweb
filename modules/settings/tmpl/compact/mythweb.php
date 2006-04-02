@@ -30,6 +30,12 @@
 </tr><tr>
     <td align="right"><?php echo t('Video URL') ?>:</td>
     <td><input type="text" size="36" name="video_url" value="<?php echo html_entities(setting('WebVideo_URL'))?>"><br />
+</tr><tr>
+    <td align="right"><?php echo t('MythVideo Dir') ?>:</td>
+    <td><input type="text" size="36" name="mythvideo_dir" value="<?php echo html_entities(setting('VideoStartupDir', hostname))?>"><br />
+</tr><tr>
+    <td align="right"><?php echo t('MythVideo Artwork Dir') ?>:</td>
+    <td><input type="text" size="36" name="video_artwork_dir" value="<?php echo html_entities(setting('VideoArtworkDir', hostname))?>"><br />
 </td>
 </tr><tr>
     <td class="command_border_t" align="center"><input type="reset" value="<?php echo t('Reset') ?>"></td>

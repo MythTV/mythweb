@@ -21,19 +21,7 @@
 // Save?
     if ($_POST['save']) {
         foreach ($_POST['settings'] as $value => $data) {
-            if (is_null($_GET['host']))
-                $sh = $db->query('UPDATE settings SET data=?
-                                   WHERE value=? AND hostname IS NULL',
-                                 $data,
-                                 $value
-                                );
-            else
-                $sh = $db->query('UPDATE settings SET data=?
-                                   WHERE value=? AND hostname=?',
-                                 $data,
-                                 $value,
-                                 $_GET['host']
-                                );
+            setting($value, $_GET['host'], $data);
         }
         foreach ($_POST['delete'] as $value => $data) {
             if (!$data)

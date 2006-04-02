@@ -20,25 +20,49 @@
 
 /**
  * Get or set a database setting.
+ *
+ * @param string $field     The field (settings.value) to retrieve/set.
+ * @param string $hostname  Hostname (or null) associated with $field.
+ * @param string $new_value New value (settings.data) to set.
+ *
+ * @return string The value (settings.data) associated with $field and $hostname.
 /**/
-    function setting($field, $new_value = "old\0old") {
+    function setting($field, $hostname=null, $new_value = "old\0old") {
         global $db;
         static $cache = array();
+    // Best not to have an array index that's null
+        $h = is_null($hostname) ? '-null-' : $hostname;
+        if (!is_array($cache[$h]))
+            $cache[$h] = array();
     // Assigning a new value
         if ($new_value !== "old\0old") {
-            $db->query('DELETE FROM settings WHERE value=? AND hostname IS NULL',
-                       $field);
-            $db->query('INSERT INTO settings (value, data) VALUES (?,?)',
-                       $field, $new_value);
-            $cache[$field] = $new_value;
+            if (is_null($hostname))
+                $db->query('DELETE FROM settings
+                                  WHERE value=? AND hostname IS NULL',
+                           $field);
+            else
+                $db->query('DELETE FROM settings
+                                  WHERE value=? AND hostname=?',
+                           $field, $hostname);
+            $db->query('INSERT INTO settings (value, data, hostname) VALUES (?,?,?)',
+                       $field, $new_value, $hostname);
+            $cache[$h][$field] = $new_value;
         }
     // Not cached?
-        elseif (!array_key_exists($field, $cache)) {
-            $cache[$field] = $db->query_col('SELECT data FROM settings WHERE value=?',
-                                            $field);
+        elseif (!array_key_exists($field, $cache[$h])) {
+            if (is_null($hostname))
+                $cache[$h][$field] = $db->query_col('SELECT data
+                                                       FROM settings
+                                                      WHERE value=? AND hostname IS NULL',
+                                                    $field);
+            else
+                $cache[$h][$field] = $db->query_col('SELECT data
+                                                       FROM settings
+                                                      WHERE value=? AND hostname=?',
+                                                    $field, $hostname);
         }
     // Return the cached value
-        return $cache[$field];
+        return $cache[$h][$field];
     }
 
 /**

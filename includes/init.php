@@ -44,9 +44,6 @@
 // Define the error email, or set it to a null string if there isn't a valid one
     define('error_email', strstr($_SERVER['error_email'], '@') ? $_SERVER['error_email'] : '');
 
-// Load the user-defined configuration settings
-    require_once 'config/conf.php';
-
 // Load the generic utilities so we have access to stuff like DEBUG()
     require_once 'includes/utils.php';
 

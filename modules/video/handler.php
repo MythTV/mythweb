@@ -20,11 +20,7 @@
  * @name    $mythvideo_dir
 /**/
     global $mythvideo_dir;
-    $mythvideo_dir = $db->query_col('SELECT data
-                                       FROM settings
-                                      WHERE value="VideoStartupDir" AND hostname=?',
-                                    hostname
-                                    );
+    $mythvideo_dir = setting('VideoStartupDir', hostname);
 
 // Make sure the video directory exists
     if (file_exists('data/video')) {
@@ -35,15 +31,14 @@
         }
     }
 // Create the symlink, if possible.
-//
-// NOTE:  Errors have been disabled because if I turn them on, people hosting
-//        MythWeb on Windows machines will have issues.  I will turn the errors
-//        back on when I find a clean way to do so.
-//
     else {
         if ($mythvideo_dir) {
             $ret = @symlink($mythvideo_dir, 'data/video');
             if (!$ret) {
+                # NOTE:  This error has been disabled because if I turn it on,
+                #        people hosting MythWeb on Windows machines will have
+                #        issues.  I will turn the error back on when I find a
+                #        clean way to do so.
                 #custom_error("Could not create a symlink to $mythvideo_dir, the local MythVideo"
                 #            .' directory for this hostname ('.hostname.').  Please create a
                 #            .' symlink to your MythVideo directory at data/video in order to
@@ -51,10 +46,42 @@
             }
         }
         else {
-            #custom_error('Could not find a value in the database for the MythVideo directory'
-            #            .' for this hostname ('.hostname.').  Please create a symlink to your'
-            #            .' MythVideo directory at data/video in order to use the video'
-            #            .' portions of MythWeb.');
+            custom_error('Could not find a value in the database for the'
+                        .' MythVideo directory for this hostname ('.hostname.').'
+                        .' Please update your <a href="'.root.'settings/mythweb">settings</a>'
+                        .' to point to the correct location.');
+        }
+    }
+
+// Make sure the video covers directory exists
+    if (file_exists('data/video_covers')) {
+    // File is not a directory or a symlink
+        if (!is_dir('data/video_covers') && !is_link('data/video_covers')) {
+            custom_error('An invalid file exists at data/video_covers.  Please'
+                        .' remove it in order to use the video portions of MythWeb.');
+        }
+    }
+// Create the symlink, if possible.
+    else {
+        $dir = setting('VideoArtworkDir', hostname);
+        if ($dir) {
+            $ret = @symlink($dir, 'data/video_covers');
+            if (!$ret) {
+                # NOTE:  This error has been disabled because if I turn it on,
+                #        people hosting MythWeb on Windows machines will have
+                #        issues.  I will turn the error back on when I find a
+                #        clean way to do so.
+                #custom_error("Could not create a symlink to $mythvideo_dir, the local MythVideo"
+                #            .' directory for this hostname ('.hostname.').  Please create a
+                #            .' symlink to your MythVideo directory at data/video in order to
+                #            .' use the video portions of MythWeb.');
+            }
+        }
+        else {
+            custom_error('Could not find a value in the database for the'
+                        .' MythVideo artwork directory for this hostname ('.hostname.').'
+                        .' Please update your <a href="'.root.'settings/mythweb">settings</a>'
+                        .' to point to the correct location.');
         }
     }
 

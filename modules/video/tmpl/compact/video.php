@@ -76,8 +76,8 @@ function newWindow(newContent)
     foreach ($All_Shows as $show) {
     ?><tr class="recorded">
     <td><?php
-        if (show_video_covers && file_exists(video_img_path.'/'.basename($show->coverfile)))
-            echo '<a href="'.$show->url.'"><img id="'.html_entities($show->filename).'" src="'.video_img_path.'/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
+        if (show_video_covers && file_exists('data/video_covers/'.basename($show->coverfile)))
+            echo '<a href="'.$show->url.'"><img id="'.html_entities($show->filename).'" src="data/video_covers/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
         else
             echo '&nbsp;';
     ?></td>
