@@ -47,13 +47,13 @@
     foreach ($All_Shows as $show) {
 ?>
     file = new Object();
-    file.title     = '<?php echo addslashes($show->title)               ?>';
-    file.subtitle  = '<?php echo addslashes($show->subtitle)            ?>';
-    file.chanid    = '<?php echo addslashes($show->chanid)              ?>';
-    file.starttime = '<?php echo addslashes($show->recstartts)          ?>';
-    file.group     = '<?php echo addslashes(urlencode($show->group))    ?>';
-    file.filename  = '<?php echo addslashes(urlencode($show->filename)) ?>';
-    file.size      = '<?php echo addslashes($show->filesize)            ?>';
+    file.title     = '<?php echo addslashes($show->title)                  ?>';
+    file.subtitle  = '<?php echo addslashes($show->subtitle)               ?>';
+    file.chanid    = '<?php echo addslashes($show->chanid)                 ?>';
+    file.starttime = '<?php echo addslashes($show->recstartts)             ?>';
+    file.group     = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->group)))    ?>';
+    file.filename  = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->filename))) ?>';
+    file.size      = '<?php echo addslashes($show->filesize)               ?>';
     file.length    = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
     files.push(file);
 
@@ -271,8 +271,8 @@ EOM;
             echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
-                echo '<a href="'.video_url().'/'.basename($show->filename)."\" name=\"$row\">"
-                    .'<img id="'.$show->filename."\" src=\"".root.cache_dir.'/'.basename($show->filename).'.png" '.$attr.' border="0">'
+                echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename)))."\" name=\"$row\">"
+                    .'<img id="'.$show->filename.'" src="'.root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename))).'.png" '.$attr.' border="0">'
                     .'</a>';
             }
             else
