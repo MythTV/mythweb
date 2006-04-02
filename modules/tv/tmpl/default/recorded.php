@@ -280,10 +280,10 @@ EOM;
             echo "</td>\n";
         }
     ?>
-    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename)).'"'
+    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename))).'"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
-    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename)).'">'
+    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename))).'">'
                     .$show->subtitle.'</a>' ?></td>
 <?php
         if (!$_SESSION['recorded_descunder'])
