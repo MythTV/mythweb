@@ -264,6 +264,9 @@ class Program {
 
     var $credits = array();
 
+    var $url;
+    var $thumb_url;
+
     function Program($data) {
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
@@ -274,8 +277,9 @@ class Program {
             $fs_low            = $data[10];  # low-word of file size
             $this->starttime   = $data[11];  # show start-time
             $this->endtime     = $data[12];  # show end-time
-        // Is this a previously-recorded program?  Calculate the filesize
+        // Is this a previously-recorded program?
             if (!empty($this->filename)) {
+            // Calculate the filesize
                 if (function_exists('gmp_add')) {
                 // GMP functions should work better with 64 bit numbers.
                     $size = gmp_add($fs_low,
@@ -288,6 +292,9 @@ class Program {
                 // This is inaccurate, but it's the best we can get without GMP.
                     $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
                 }
+            // And get some download info
+                $this->url       = video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($this->filename)));
+                $this->thumb_url = root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($this->filename)));
             }
         // Load the remaining info we got from mythbackend
             $this->title           = $data[0];                  # program name/title
