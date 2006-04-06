@@ -44,7 +44,7 @@
     margin-left:        14em;
     border:             2px solid #000;
     min-width:          314px;
-    min-height:         30em;
+    height:             30em;
     padding:            .5em 1em;
     //-moz-border-radius:     8px;
 }
