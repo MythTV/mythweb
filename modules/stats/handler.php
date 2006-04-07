@@ -21,7 +21,7 @@
  *        AND program.endtime > program.starttime;
  *
 /**/
-    $where = ' WHERE true';
+    $where = ' WHERE 1';
     if ($_REQUEST['query_time'] == 'day')
         $where = ' WHERE UNIX_TIMESTAMP(starttime) > '.(time()-24*60*60);
     if ($_REQUEST['query_time'] == 'week')
