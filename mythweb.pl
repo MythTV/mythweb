@@ -55,14 +55,13 @@
             }
         }
         elsif ($Path[0] =~ /\w/) {
-                print header(),
-                      "Unknown module:  $Path[0]";
+            print header(),
+                  "Unknown module:  $Path[0]";
         }
     }
     else {
         print header(-location => $web_root);
         print "&nbsp;\n";
-        exit;
     }
 
 # Exit nicely
