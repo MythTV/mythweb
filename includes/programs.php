@@ -270,13 +270,45 @@ class Program {
     function Program($data) {
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
-        // Grab some initial data so we can see if extra information is needed
-            $this->chanid      = $data[4];   # mysql chanid
-            $this->filename    = $data[8];   # filename
-            $fs_high           = $data[9];   # high-word of file size
-            $fs_low            = $data[10];  # low-word of file size
-            $this->starttime   = $data[11];  # show start-time
-            $this->endtime     = $data[12];  # show end-time
+        // Load the remaining info we got from mythbackend
+            $this->title           = $data[0];                  # program name/title
+            $this->subtitle        = $data[1];                  # episode name
+            $this->description     = $data[2];                  # episode description
+            $this->category        = $data[3];
+            $this->chanid          = $data[4];   # mysql chanid
+            $this->channum         = $data[5];
+            $this->callsign        = $data[6];
+            $this->channame        = $data[7];
+            $this->filename        = $data[8];
+            $fs_high               = $data[9];   # high-word of file size
+            $fs_low                = $data[10];  # low-word of file size
+            $this->starttime       = $data[11];  # show start-time
+            $this->endtime         = $data[12];  # show end-time
+            $this->hostname        = $data[16];
+            #$this->sourceid       = $data[17];
+            $this->cardid          = $data[18];
+            #$this->inputid        = $data[19];
+            $this->recpriority     = $data[20];
+            $this->recstatus       = $data[21];
+            $this->recordid        = $data[22];
+            $this->rectype         = $data[23];
+            $this->dupin           = $data[24];
+            $this->dupmethod       = $data[25];
+            $this->recstartts      = $data[26];     # ACTUAL start time (also maps to recorded.starttime)
+            $this->recendts        = $data[27];     # ACTUAL end time
+            $this->previouslyshown = $data[28];     # "repeat" field
+            $progflags             = $data[29];
+            $this->recgroup        = $data[30];
+            $this->commfree        = $data[31];
+            $this->outputfilters   = $data[32];
+            $this->seriesid        = $data[33];
+            $this->programid       = $data[34];
+            $this->lastmodified    = $data[35];
+            $this->recpriority     = $data[36];
+            $this->airdate         = date('Y-m-d', $data[37]);
+            $this->hasairdate      = $data[38];
+            $this->timestretch     = $data[39];
+            $this->recpriority2    = $data[40];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
             // Calculate the filesize
@@ -293,48 +325,9 @@ class Program {
                     $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
                 }
             // And get some download info
-                $this->url       = video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($this->filename)));
+                $this->url       = video_url($this);
                 $this->thumb_url = root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($this->filename)));
             }
-        // Load the remaining info we got from mythbackend
-            $this->title           = $data[0];                  # program name/title
-            $this->subtitle        = $data[1];                  # episode name
-            $this->description     = $data[2];                  # episode description
-            $this->category        = $data[3];
-            #$chanid               = $data[4];   # Extracted a few lines earlier
-            $this->channum         = $data[5];
-            $this->callsign        = $data[6];
-            $this->channame        = $data[7];
-            #$filename             = $data[8];   # Extracted a few lines earlier
-            #$fs_high              = $data[9];   # Extracted a few lines earlier
-            #$fs_low               = $data[10];  # Extracted a few lines earlier
-            #$this->starttime      = $data[11];  # Extracted a few lines earlier
-            #$this->endtime        = $data[12];  # Extracted a few lines earlier
-            $this->hostname        = $data[16];
-            #$this->sourceid       = $data[17];
-            $this->cardid          = $data[18];
-            #$this->inputid        = $data[19];
-            $this->recpriority     = $data[20];
-            $this->recstatus       = $data[21];
-            $this->recordid        = $data[22];
-            $this->rectype         = $data[23];
-            $this->dupin           = $data[24];
-            $this->dupmethod       = $data[25];
-            $this->recstartts      = $data[26];     # ACTUAL start time
-            $this->recendts        = $data[27];     # ACTUAL end time
-            $this->previouslyshown = $data[28];     # "repeat" field
-            $progflags             = $data[29];
-            $this->recgroup        = $data[30];
-            $this->commfree        = $data[31];
-            $this->outputfilters   = $data[32];
-            $this->seriesid        = $data[33];
-            $this->programid       = $data[34];
-            $this->lastmodified    = $data[35];
-            $this->recpriority     = $data[36];
-            $this->airdate         = date('Y-m-d', $data[37]);
-            $this->hasairdate      = $data[38];
-            $this->timestretch     = $data[39];
-            $this->recpriority2    = $data[40];
         // Assign the program flags
             $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
             $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02

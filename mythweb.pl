@@ -35,10 +35,14 @@
 
 # Connect to the database
     END { $dbh->disconnect() if ($dbh); }
-    our $dbh = DBI->connect("dbi:mysql:database=$ENV{'db_name'}:host=$ENV{'db_host'}",
-                           $ENV{'db_user'},
-                           $ENV{'db_pass'})
-               or die "Content-type: text/html\n\nCannot connect to database: $!\n\n";
+    our $dbh = DBI->connect("dbi:mysql:database=$ENV{'db_name'}:host=$ENV{'db_server'}",
+                            $ENV{'db_login'},
+                            $ENV{'db_password'});
+    unless ($dbh) {
+        print header(),
+              "Cannot connect to database: $!\n\n";
+        exit;
+    }
 
 # Find the path to the modules directory
     our $modules_dir = dirname(dirname(find_in_path('modules/tv/init.php')));

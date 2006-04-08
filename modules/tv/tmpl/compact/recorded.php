@@ -271,7 +271,7 @@ EOM;
             echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
-                echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename)))."\" name=\"$row\">"
+                echo "<a href=\"$show->url\" name=\"$row\">"
                     .'<img id="'.$show->filename.'" src="'.root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename))).'.png" '.$attr.' border="0">'
                     .'</a>';
             }
@@ -280,10 +280,10 @@ EOM;
             echo "</td>\n";
         }
     ?>
-    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename))).'"'
+    <td><?php echo "<a href=\"$show->url\""
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
-    <td><?php echo '<a href="'.video_url().'/'.str_replace('%2F', '/', rawurlencode(basename($show->filename))).'">'
+    <td><?php echo "<a href=\"$show->url\">"
                     .$show->subtitle.'</a>' ?></td>
 <?php
         if (!$_SESSION['recorded_descunder'])
