@@ -104,9 +104,12 @@
         }
     // Open a connection to the master backend, unless we've already done so
         if (!$fp) {
-            $fp = fsockopen($host, $port, $errno, $errstr, 25);
+            $fp = @fsockopen($host, $port, $errno, $errstr, 25);
             if ($fp)
                 check_proto_version($host, $port);
+            else
+                custom_error("Unable to connect to the master backend at $host:$port.\n"
+                             ."Is it running?");
         }
     // Connection opened, let's do something
         if ($fp) {
