@@ -35,7 +35,7 @@
     AddType image/x-icon        .ico
 
 # Some special instructions for the PHP files of MythWeb.
-    <FilesMatch "\.php$">
+    <Files mythweb.*>
 
     #
     # Use the following environment settings to tell MythWeb where you want it to
@@ -103,7 +103,13 @@
         php_flag output_handler                 "NULL"
         php_flag short_open_tag                 "On"
 
-    </FilesMatch>
+    </Files>
+
+# Execute perl scripts in cgi mode (so we can stream properly)
+    <Files *.pl>
+        SetHandler cgi-script
+        Options    +ExecCGI
+    </Files>
 
 #
 # The settings below relate specifically to mod_rewrite and the rewrite engine
@@ -122,15 +128,19 @@
 
 # Skip out early if we've already been through rewrites,
 # or if this is a /css/, /js/ or /cache/ directory request.
-    RewriteRule    ^(css|data|images|js|themes|skins|[a-z_]+\.php)(/|$)     -     [L]
+    RewriteRule    ^(css|data|images|js|themes|skins|[a-z_]+\.(php|pl))(/|$)     -     [L]
+
+# Redirect /pl/ requests to the perl cgi handler.
+    RewriteRule     ^(pl(/.*)?)$            mythweb.pl/$1               [QSA,L]
 
 # Redirect most of the remaining URL requests to the main mythweb script.
 # It will then handle any requests given to it.
     RewriteRule     ^(.+)$                  mythweb.php/$1              [QSA,L]
 
-# If you're experiencing trouble with the previous line in your copy of apache,
-# you could instead use something like:
-#    RewriteRule     ^([\w\-]+(/.*)?)?$      mythweb.php?PATH_INFO=/$1   [L,QSA]
+# If you're experiencing trouble with the previous two lines in your copy of
+# apache, you could instead use something like:
+#    RewriteRule     ^(pl(/.*)?)$           mythweb.pl?PATH_INFO=/$1    [L,QSA]
+#    RewriteRule     ^(.+)$                 mythweb.php?PATH_INFO=/$1   [L,QSA]
 
 # Catch anything else that comes through and send it to mythweb.php with no parameters.
     RewriteRule     ^(.*)$                  mythweb.php                 [QSA,L]
