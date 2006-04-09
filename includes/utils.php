@@ -270,33 +270,25 @@
  * @return string URL to access recordings
 /**/
     function video_url($show) {
-        static $video_url;
-    // Not defined? Try the global config override
-        if (empty($video_url)) {
-            $video_url = setting('WebVideo_URL');
-        // Still empty?
-            if (empty($video_url)) {
-            // Mac and Linux just get a link to the streaming module
-                if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
-                    $video_url = root."pl/stream/$show->chanid/$show->recstartts";
-            // Windows likely gets a myth:// url
-                else {
-                    global $Master_Host, $Master_Port;
-                // Is either the browser xor the master in an rfc 1918 zone?
-                    if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
-                            xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
-                        $video_url = root."pl/stream/$show->chanid/$show->recstartts";
-                    }
-                // Send the myth url
-                    else {
-                        $video_url = "myth://$Master_Host:$Master_Port"
-                                     .str_replace('%2F', '/', rawurlencode(basename($show->filename)));
-                    }
-                }
-            }
+    // Global override?
+        $video_url = setting('WebVideo_URL');
+        if ($video_url)
+            return $video_url;
+    // Mac and Linux just get a link to the streaming module
+        if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
+            return root."pl/stream/$show->chanid/$show->recstartts";
+    // Windows likely gets a myth:// url -- grab the master host and port
+        global $Master_Host, $Master_Port;
+    // Is either the browser xor the master in an rfc 1918 zone?
+        if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
+                xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
+            return root."pl/stream/$show->chanid/$show->recstartts";
         }
-    // Return
-        return $video_url;
+    // Send the myth url
+        else {
+            $video_url = "myth://$Master_Host:$Master_Port"
+                         .str_replace('%2F', '/', rawurlencode(basename($show->filename)));
+        }
     }
 
 /**
