@@ -23,20 +23,22 @@
         foreach ($_POST['settings'] as $value => $data) {
             setting($value, $_GET['host'], $data);
         }
-        foreach ($_POST['delete'] as $value => $data) {
-            if (!$data)
-                continue;
-            if (is_null($_GET['host']))
-                $sh = $db->query('DELETE FROM settings
-                                        WHERE value=? AND hostname IS NULL',
-                                 $value
-                                );
-            else
-                $sh = $db->query('DELETE FROM settings
-                                        WHERE value=? AND hostname=?',
-                                 $value,
-                                 $_GET['host']
-                                );
+        if (is_array($_POST['delete'])) {
+            foreach ($_POST['delete'] as $value => $data) {
+                if (!$data)
+                    continue;
+                if (is_null($_GET['host']))
+                    $sh = $db->query('DELETE FROM settings
+                                       WHERE value=? AND hostname IS NULL',
+                                     $value
+                                    );
+                else
+                    $sh = $db->query('DELETE FROM settings
+                                       WHERE value=? AND hostname=?',
+                                     $value,
+                                     $_GET['host']
+                                    );
+            }
         }
     }
 
