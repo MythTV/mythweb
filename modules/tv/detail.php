@@ -135,7 +135,7 @@
             $schedule->tsdefault     = $_POST['timestretch'];
         // Keep track of the parent recording for overrides
             if ($_POST['record'] == rectype_override) {
-                $schedule->parentid = $schedule->recid;
+                $schedule->parentid = $schedule->recordid;
             }
         // Search schedules saved here will create a new schedule
             if ($schedule->search) {
