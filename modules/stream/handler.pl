@@ -16,6 +16,7 @@
     if ($Path[1]) {
         $chanid    = $Path[1];
         $starttime = $Path[2];
+        $starttime =~ s/\.\w+$//;
     }
 
 # Get the basename from the database
@@ -71,12 +72,6 @@
         $name .= $suffix;
     }
 
-# Print the header
-    print header(-type                => $type,
-                 -Content_length      => $size,
-                 -Content_disposition => " attachment; filename=\"$name\""
-                );
-
 # Open the file for reading
     unless (open DATA, $filename) {
         print header(),
@@ -84,11 +79,46 @@
         exit;
     }
 
+
+# Requested a range?
+    my $start      = 0;
+    my $end        = $size;
+    my $total_size = $size;
+    if ($ENV{'HTTP_RANGE'}) {
+    # Figure out the size of the requested chunk
+        ($start, $end) = $ENV{'HTTP_RANGE'} =~ /bytes\W+(\d*)-(\d*)\W*$/;
+        $start ||= 0;
+        if ($end < 1 || $end > $size) {
+            $end = $size;
+        }
+        $size = $end - $start;
+    }
+
+# Print the header
+    print header(-type                => $type,
+                 -Content_length      => $size,
+                 -Accept_Ranges       => 'bytes',
+                 -Content_disposition => " attachment; filename=\"$name\"",
+                 -Content_Range       => "bytes $start-$end/$total_size"
+                );
+
+# Seek to the requested position
+    seek DATA, $start, 0;
+
 # Print the content to the browser
     my $buffer;
     while (!eof DATA) {
-        read DATA, $buffer, 262144;
+    # Make sure we don't read more than was requested
+        my $readsize = 262144;
+        my $cur_pos  = tell(DATA);
+        if ($cur_pos + $readsize > $size) {
+            $readsize = $size = $cur_pos;
+        }
+    # Print the data to the browser
+        read DATA, $buffer, $readsize;
         print $buffer;
+    # Time to leave?
+        last if ($cur_pos + $readsize >= $size);
     }
     close DATA;
 
