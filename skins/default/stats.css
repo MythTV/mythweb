@@ -17,7 +17,7 @@ h2 {
 /* The general stats box */
 #general_stats dl {
     font-size:  9pt;
-    max-width:  30em;
+    max-width:  35em;
     margin:     1em auto;
     padding:    .2em .5em .5em .5em;
     border:     1px dotted #9090B0;
@@ -25,13 +25,13 @@ h2 {
 #general_stats dt {
     clear:       left;
     float:       left;
-    width:       10em;
+    width:       15em;
     padding-top: 3px;
     text-align:  right;
 }
 #general_stats dd {
     padding-top: 3px;
-    margin-left: 10.5em;
+    margin-left: 15.5em;
 }
 
 #top_ten_shows {
