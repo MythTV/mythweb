@@ -20,9 +20,12 @@
 #
 #    AuthType           Digest
 #    AuthName           "MythTV"
-#    AuthDigestFile     /var/www/htdigest
+#    AuthUserFile       /var/www/htdigest
 #    Require            valid-user
 #    BrowserMatch       "MSIE"      AuthDigestEnableQueryStringHack=On
+#
+#  * If you're running Apache earlier than 2.2, you will need to use
+#    AuthDigestFile instead of AuthUserFile.
 
 # MythTV now uses the correct file suffix for mpeg files, so all .nuv files
 # should actually be NuppleVideo.  However, apache probably doesn't know what
