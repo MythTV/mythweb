@@ -2,6 +2,15 @@
 /**
  * This file contains a number of error-display related routines.
  *
+ * This file was originally written by Chris Petersen for several different open
+ * source projects.  It is distrubuted under the GNU General Public License.
+ * I (Chris Petersen) have also granted a special LGPL license for this code to
+ * several companies I do work for on the condition that these companies will
+ * release any changes to this back to me and the open source community as GPL,
+ * thus continuing to improve the open source version of the library.  If you
+ * would like to inquire about the status of this arrangement, please contact
+ * me personally.
+ *
  * @url         $URL$
  * @date        $Date$
  * @version     $Revision$
@@ -55,27 +64,34 @@
             unset($_SESSION['WARNINGS']);
         }
     // Nothing to show?
-        if (empty($Errors) && empty($Warnings)) return;
+        if (!errors() && !warnings())
+            return;
     // Load the errors
-        $js_errstr = implode("\n", array_merge($Errors, $Warnings));
-        $errstr    = str_replace("\n", "<br />\n", html_entities($js_errstr));
+        $js_errstr = '';
+        if (is_array($Errors) && count($Errors) > 0)
+            $js_errstr .= "Error:\n".implode("\n", $Errors);
+        if (is_array($Warnings) && count($Warnings) > 0)
+            $js_errstr .= "Warning:\n".implode("\n", $Warnings);
+        $errstr = str_replace("\n", "<br />\n", htmlentities($js_errstr));
     // Clean up the javascript error string
-        $js_errstr = str_replace("\n", "\\n",
-                        str_replace('"', '\\"',
-                        $js_errstr));
+        $js_errstr = str_replace ("\n"     , "\\n",
+                     str_replace ('"'      , '\\"',
+                     preg_replace('/<.*?>/', ''   , $js_errstr)));
     // Print
         echo <<<EOF
 <script language="JavaScript" type="text/javascript">
 <!--
-on_load.push(display_errors);
+add_event(window, 'load', display_errors);
 function display_errors() { alert("$js_errstr"); };
 // -->
 </script>
 <noscript>
 $leading
-<div id="error">
-$errstr
-</div>
+<table border="1" cellspacing="0" cellpadding="8" class="error">
+<tr>
+    <td>$errstr</td>
+</tr>
+</table>
 $trailing
 </noscript>
 EOF;

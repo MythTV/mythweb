@@ -2,19 +2,29 @@
 /**
  * The Database class and associated statement libraries.
  *
- * @url       $URL: svn+ssh://xris@svn.siliconmechanics.com/var/svn/web/trunk/shared_code/includes/db.php $
- * @date      $Date$
- * @version   $Revision$
- * @author    $Author$
- * @license   GPL
+ * This file was originally written by Chris Petersen for several different open
+ * source projects.  It is distrubuted under the GNU General Public License.
+ * I (Chris Petersen) have also granted a special LGPL license for this code to
+ * several companies I do work for on the condition that these companies will
+ * release any changes to this back to me and the open source community as GPL,
+ * thus continuing to improve the open source version of the library.  If you
+ * would like to inquire about the status of this arrangement, please contact
+ * me personally.
  *
- * @package   MythWeb
+ * @url        $URL: svn+ssh://xris@svn.siliconmechanics.com/var/svn/web/trunk/shared_code/includes/objects/Database.php $
+ * @date       $Date$
+ * @version    $Revision$
+ * @author     $Author$
+ * @copyright  Chris Petersen, MythTV Developers
+ * @license    GPL
  *
- * @uses      includes/errors.php
- * @uses      smart_args() from utils.php
+ * @package    SiMech
+ * @subpackage Shared-OSS
+ *
+ * @uses       includes/errors.php
+ * @uses       smart_args() from utils.php
  *
 /**/
-
 
 /**
  *  This should already be loaded by the time db.php is, but we should at least
@@ -93,10 +103,11 @@ class Database {
 /**
  *  Fill the error variables
  *
- *  @param string $error    The string to set the error message to.  Set to
- *                          false if you want to wipe out the existing errors.
+ *  @param string $error     The string to set the error message to.  Set to
+ *                           false if you want to wipe out the existing errors.
+ *  @param bool   $backtrace Include a backtrace along with the error message.
 /**/
-    function error($error='') {
+    function error($error='', $backtrace=true) {
         if ($error === false) {
             $this->err   = null;
             $this->errno = null;
@@ -106,6 +117,8 @@ class Database {
             $this->err   = $this->dbh ? mysql_error($this->dbh) : mysql_error();
             $this->errno = $this->dbh ? mysql_errno($this->dbh) : mysql_errno();
             $this->error = ($error ? "$error\n\n" : '')."$this->err [#$this->errno]";
+            if ($backtrace)
+                $this->error .= "\n\nBacktrace\n".print_r(debug_backtrace(), true);
         }
     }
 
@@ -150,8 +163,8 @@ class Database {
     // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
         $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
-        $args   = array_slice(func_get_args(), 1);
-        $sh     = $this->query($query, $args);
+        $args  = array_slice(func_get_args(), 1);
+        $sh    = $this->query($query, $args);
         if ($sh) {
             $return = $sh->fetch_row();
             $sh->finish();
@@ -173,8 +186,8 @@ class Database {
     // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
         $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
-        $args   = array_slice(func_get_args(), 1);
-        $sh     = $this->query($query, $args);
+        $args  = array_slice(func_get_args(), 1);
+        $sh    = $this->query($query, $args);
         if ($sh) {
             $return = $sh->fetch_assoc();
             $sh->finish();
@@ -194,12 +207,54 @@ class Database {
 /**/
     function query_col($query) {
     // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
-        $query        = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
+        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
-        $args         = array_slice(func_get_args(), 1);
-        $sh           = $this->query($query, $args);
+        $args  = array_slice(func_get_args(), 1);
+        $sh    = $this->query($query, $args);
         if ($sh) {
             list($return) = $sh->fetch_row();
+            $sh->finish();
+            return $return;
+        }
+        return null;
+    }
+
+/**
+ *  Returns the row count from the query and frees the result.
+ *
+ *  @param string $query    The query string
+ *  @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
+ *  @param mixed  ...       Additional arguments
+ *
+ *  @return int   The number of rows affected by the requested query.
+/**/
+    function query_num_rows($query) {
+    // Query and return
+        $args = array_slice(func_get_args(), 1);
+        $sh   = $this->query($query, $args);
+        if ($sh) {
+            $return = $sh->num_rows();
+            $sh->finish();
+            return $return;
+        }
+        return null;
+    }
+
+/**
+ *  Returns the inserted id from the query and frees the result
+ *
+ *  @param string $query    The query string
+ *  @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
+ *  @param mixed  ...       Additional arguments
+ *
+ *  @return int   The insert_id generated by the requested query.
+/**/
+    function query_insert_id($query) {
+    // Query and return
+        $args = array_slice(func_get_args(), 1);
+        $sh   = $this->query($query, $args);
+        if ($sh) {
+            $return = $this->insert_id;
             $sh->finish();
             return $return;
         }
@@ -295,9 +350,9 @@ class Database_Query {
  *  @param string   $query  The query string
 /**/
     function Database_Query(&$db, $query) {
-        $this->dbh             = $db->dbh;
+        $this->dbh             =  $db->dbh;
         $this->db              =& $db;
-        $this->num_args_needed = max(0, substr_count($query, '?') - substr_count($query, '\\?'));
+        $this->num_args_needed =  max(0, substr_count($query, '?') - substr_count($query, '\\?'));
     // Build an optimized version of the query
         if ($this->num_args_needed > 0) {
             $this->query = array();
@@ -354,6 +409,11 @@ class Database_Query_mysql extends Database_Query {
             }
         }
     // Perform the query
+    // If we don't have a valid connection, fataly error out.
+        if ($this->dbh === false) {
+            $this->db->error();
+            trigger_error($this->db->error, FATAL);
+        }
         $this->sh = mysql_query($this->last_query, $this->dbh);
         if ($this->sh === false) {
             if ($this->db->fatal_errors)

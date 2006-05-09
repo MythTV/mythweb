@@ -167,6 +167,13 @@ A: First, create your patch against mythweb SVN with `svn diff`, having made
     As long as you follow these instructions, I will at least get back to you
     one way or another -- eventually.
 
+Q: Why are some of these files licensed as LGPL and others as GPL?
+A: I (Chris Petersen) share a lot of my work between open source projects and
+    my paying job and contracts.  In an effort to keep things straight when
+    porting changes back and forth between libraries, I changed the license
+    on some files (particularly javascript libraries) to LGPL.  There are also
+    a handful of files that are licensed as GPL, but are licensed elsewhere as
+    LGPL (these are documented).
 
 4.0 Plan/TODO
 =============

@@ -2,6 +2,15 @@
 /**
  * Utility routines used throughout mythweb
  *
+ * This file was originally written by Chris Petersen for several different open
+ * source projects.  It is distrubuted under the GNU General Public License.
+ * I (Chris Petersen) have also granted a special LGPL license for *portions* of
+ * this code to several companies I do work for on the condition that these
+ * companies will release any changes to this back to me and the open source
+ * community as GPL, thus continuing to improve the open source version of the
+ * library.  If you would like to inquire about the status of this arrangement,
+ * please contact me personally.
+ *
  * @url         $URL$
  * @date        $Date$
  * @version     $Revision$
@@ -307,8 +316,7 @@
     }
 
 /**
- * DEBUG:
- *  prints out a piece of data
+ * Prints out a piece of data to a popup window.
 /**/
     function debug($data, $file = false, $force = false) {
         if(!dev_domain && !$force)
@@ -316,7 +324,7 @@
         static $first_run=true;
         if($first_run) {
             $first_run=false;
-            echo '<script type="text/javascript" src="'.root.'js/debug.js"></script>';
+            echo '<script type="text/javascript" src="/js/debug.js"></script>';
         }
     // Put our data into a string
         if (is_array($data) || is_object($data))

@@ -8,6 +8,15 @@
  * present in the session, this library will attempt to detect the
  * preferred language based on the browser's specifications.
  *
+ * This file was originally written by Chris Petersen for several different open
+ * source projects.  It is distrubuted under the GNU General Public License.
+ * I (Chris Petersen) have also granted a special LGPL license for this code to
+ * several companies I do work for on the condition that these companies will
+ * release any changes to this back to me and the open source community as GPL,
+ * thus continuing to improve the open source version of the library.  If you
+ * would like to inquire about the status of this arrangement, please contact
+ * me personally.
+ *
  * @url         $URL$
  * @date        $Date$
  * @version     $Revision$
