@@ -126,21 +126,9 @@
                                    "&frac12;", "")) AS starstring,
                          IFNULL(programrating.system, "") AS rater,
                          IFNULL(programrating.rating, "") AS rating,
-                         oldrecorded.recstatus,
                          channel.channum
                   FROM program
                        LEFT JOIN programrating USING (chanid, starttime)
-                       LEFT JOIN oldrecorded
-                                 ON oldrecorded.recstatus IN (-3, 11)
-                                    AND IF(oldrecorded.programid AND oldrecorded.seriesid,
-                                           oldrecorded.programid = program.programid
-                                             AND oldrecorded.seriesid = program.seriesid,
-                                           oldrecorded.title AND oldrecorded.subtitle
-                                             AND oldrecorded.description
-                                             AND oldrecorded.title       = program.title
-                                             AND oldrecorded.subtitle    = program.subtitle
-                                             AND oldrecorded.description = program.description
-                                          )
                        LEFT JOIN channel ON program.chanid = channel.chanid
                  WHERE';
     // Only loading a single channel worth of information
@@ -161,10 +149,10 @@
         if ($extra_query)
             $query .= ' AND '.$extra_query;
     // Group and sort
-        $query .= ' GROUP BY program.chanid, program.starttime ORDER BY program.starttime';
+        $query .= "\nGROUP BY program.chanid, program.starttime ORDER BY program.starttime";
     // Limit
         if ($single_program)
-            $query .= ' LIMIT 1';
+            $query .= "\n LIMIT 1";
     // Query
         $sh = $db->query($query,
                          star_character, max_stars, max_stars);
@@ -173,6 +161,20 @@
             $sh->finish();
             return NULL;
         }
+    // Build two separate queries for optimized selecting of recstatus
+        $sh2 = $db->prepare('SELECT recstatus
+                               FROM oldrecorded
+                              WHERE recstatus IN (-3, 11)
+                                    AND programid = ?
+                                    AND seriesid  = ?
+                             LIMIT 1');
+        $sh3 = $db->prepare('SELECT recstatus
+                               FROM oldrecorded
+                              WHERE recstatus IN (-3, 11)
+                                    AND title       = ?
+                                    AND subtitle    = ?
+                                    AND description = ?
+                             LIMIT 1');
     // Load in all of the programs (if any?)
         global $Scheduled_Recordings;
         $these_programs = array();
@@ -185,6 +187,16 @@
             }
         // Otherwise, create a new instance of the program
             else {
+            // Load the recstatus now that we can use an index
+            #    if ($data['programid'] && $data['seriesid']) {
+            #       $sh2->execute($data['programid'], $data['seriesid']);
+            #       list($data['recstatus']) = $sh2->fetch_row();
+            #    }
+            #    elseif ($data['title'] && $data['subtitle'] && $data['description']) {
+            #       $sh3->execute($data['title'], $data['subtitle'], $data['description']);
+            #       list($data['recstatus']) = $sh3->fetch_row();
+            #    }
+            // Create a new instance
                 $program =& new Program($data);
             }
         // Add this program to the channel hash, etc.
@@ -194,6 +206,8 @@
             unset($program);
         }
     // Cleanup
+        $sh3->finish();
+        $sh2->finish();
         $sh->finish();
     // If channel-specific information was requested, return an array of those programs, or just the first/only one
         if ($chanid && $single_program)
