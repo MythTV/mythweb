@@ -188,14 +188,14 @@
         // Otherwise, create a new instance of the program
             else {
             // Load the recstatus now that we can use an index
-            #    if ($data['programid'] && $data['seriesid']) {
-            #       $sh2->execute($data['programid'], $data['seriesid']);
-            #       list($data['recstatus']) = $sh2->fetch_row();
-            #    }
-            #    elseif ($data['title'] && $data['subtitle'] && $data['description']) {
-            #       $sh3->execute($data['title'], $data['subtitle'], $data['description']);
-            #       list($data['recstatus']) = $sh3->fetch_row();
-            #    }
+                if ($data['programid'] && $data['seriesid']) {
+                   $sh2->execute($data['programid'], $data['seriesid']);
+                   list($data['recstatus']) = $sh2->fetch_row();
+                }
+                elseif ($data['title'] && $data['subtitle'] && $data['description']) {
+                   $sh3->execute($data['title'], $data['subtitle'], $data['description']);
+                   list($data['recstatus']) = $sh3->fetch_row();
+                }
             // Create a new instance
                 $program =& new Program($data);
             }
