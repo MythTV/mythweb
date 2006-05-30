@@ -1,5 +1,8 @@
 /**
  * A small but growing library of generic AJAX routines.
+ *  - Sync and async ajax use.
+ *  - Plaintext responses [non-XML]
+ *  - Browser Support: Safari, Opera, Firefox
  *
  * @url         $URL: svn+ssh://xris@svn.siliconmechanics.com/var/svn/web/trunk/shared_code/js/ajax.js $
  * @date        $Date$
@@ -56,20 +59,19 @@
         }
         shared_success_handler[index] = success_handler;
         shared_failure_handler[index] = failure_handler;
-    // Not ready to accept connections?
-        if (httpobj.readyState != 4)
-            httpobj.abort();
     // If we have no success handler and no failure handler, we assume that we want to do a blocking call rather then async.
         if (success_handler == null && failure_handler == null ) {
         // Set up the query
             httpobj.open('GET', url, false);
+        // Prevent the browser cache from being used [for documents post-1994]
+        // Safari Bug: Safari will mark the satus as 'undefined' instead of 200 if a page is cached [bad]
+            httpobj.setRequestHeader('If-Modified-Since','Wed, 15 Nov 1995 00:00:00 GMT');
         // Submit the query
             httpobj.send(null);
         // Return the data
-            return (httpobj.responseXML ? httpobj.responseXML : httpobj.responseText);
+            return (httpobj.responseText);
         }
         else {
-
         // Set up the query
             httpobj.open('GET', url, true);
         // Set up a response handler
@@ -96,7 +98,7 @@
                 // Custom success handler receives the returned content as a parameter.
                 // There is no default success handler
                     if (success_handler != null) {
-                        success_handler(httpobj.responseXML ? httpobj.responseXML : httpobj.responseText, handler_args);
+                        success_handler(httpobj.responseText, handler_args);
                     }
                 }
             // Failure
