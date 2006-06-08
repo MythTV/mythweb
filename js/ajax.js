@@ -10,7 +10,7 @@
  * @author      $Author$
  * @license     LGPL
  *
- * @package     SiMech
+ * @package     MythWeb
  * @subpackage  Javascript
  *
 /**/
