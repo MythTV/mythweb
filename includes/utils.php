@@ -259,6 +259,41 @@
     }
 
 /**
+ * Start/display a microtime timer
+ *
+ * @param mixed $message The message to echo, or another value (see return)
+ * @param int   $index   The index value of the cache to store the timer.
+ *                       Useful for handling multiple simultaneous timers.
+ *
+ * @return mixed If $message is ommitted or null, the current time is returned.
+ *               If a string, the string is returned after being passed through
+ *               sprintf() with the current time delta (float) as an argument.
+ *               If anything else, the current time differential is returned.
+/**/
+    function timer($message=null, $index=0) {
+        static $cache = array();
+    // Get the current time
+        if (intVal(phpversion()) >= 5) {
+            $time = microtime(true);
+        }
+        else {
+            list($usec, $sec) = explode(' ', microtime());
+            $time = floatVal($usec) + floatVal($sec);
+        }
+    // Print a string
+        if (is_string($message))
+            $ret = sprintf($message, $time - $cache[$index]);
+        elseif (is_null($message))
+            $ret = $time;
+        else
+            $ret = $time - $cache[$index];
+    // Start/update the timer
+        $cache[$index] = $time;
+    // Return
+        return $ret;
+    }
+
+/**
  * returns $this or $or_this
  * if $gt is set to true, $this will only be returned if it's > 0
  * if $gt is set to a number, $this will only be returned if it's > $gt
