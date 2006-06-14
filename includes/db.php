@@ -18,11 +18,10 @@
  * @copyright  Chris Petersen, MythTV Developers
  * @license    GPL
  *
- * @package    SiMech
- * @subpackage Shared-OSS
+ * @package     MythWeb
  *
- * @uses       includes/errors.php
- * @uses       smart_args() from utils.php
+ * @uses        includes/errors.php
+ * @uses        smart_args() from utils.php
  *
 /**/
 
@@ -213,6 +212,144 @@ class Database {
         $sh    = $this->query($query, $args);
         if ($sh) {
             list($return) = $sh->fetch_row();
+            $sh->finish();
+            return $return;
+        }
+        return null;
+    }
+
+/**
+ *  Returns an array of all first colums returned from the specified query.
+ *
+ *  @param string $query    The query string
+ *  @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
+ *  @param mixed  ...       Additional arguments
+ *
+ *  @return array
+/**/
+    function query_list($query) {
+    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
+        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
+    // Query and return
+        $args  = array_slice(func_get_args(), 1);
+        $sh    = $this->query($query, $args);
+        if ($sh) {
+            $return = array();
+            while ($row = $sh->fetch_array()) {
+                $return[] = $row[0];
+            }
+            $sh->finish();
+            return $return;
+        }
+        return null;
+    }
+
+/**
+ *  Returns an array of the results from the specified query.  Each result is
+ *  stored in an array.
+ *
+ *  @param string $query    The query string
+ *  @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
+ *  @param mixed  ...       Additional arguments
+ *
+ *  @return array
+/**/
+    function query_list_array($query) {
+    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
+        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
+    // Query and return
+        $args  = array_slice(func_get_args(), 1);
+        $sh    = $this->query($query, $args);
+        if ($sh) {
+            $return = array();
+            while ($row = $sh->fetch_array()) {
+                $return[] = $row;
+            }
+            $sh->finish();
+            return $return;
+        }
+        return null;
+    }
+
+/**
+ *  Returns an array of the results from the specified query.  Each result is
+ *  stored in an assoc.
+ *
+ *  @param string $query    The query string
+ *  @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
+ *  @param mixed  ...       Additional arguments
+ *
+ *  @return array
+/**/
+    function query_list_assoc($query) {
+    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
+        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
+    // Query and return
+        $args  = array_slice(func_get_args(), 1);
+        $sh    = $this->query($query, $args);
+        if ($sh) {
+            $return = array();
+            while ($row = $sh->fetch_assoc()) {
+                $return[] = $row;
+            }
+            $sh->finish();
+            return $return;
+        }
+        return null;
+    }
+
+/**
+ *  Returns an array of the results from the specified query.  Each result is
+ *  stored in an array.  The array returned will be indexed by the value of the
+ *  column specified by $key.
+ *
+ *  @param string $key      Column to use as the returned list's key
+ *  @param string $query    The query string
+ *  @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
+ *  @param mixed  ...       Additional arguments
+ *
+ *  @return array
+/**/
+    function query_keyed_list_array($key, $query) {
+    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
+        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
+    // Query and return
+        $args  = array_slice(func_get_args(), 2);
+        $sh    = $this->query($query, $args);
+        if ($sh) {
+            $return = array();
+            while ($row = $sh->fetch_array()) {
+                $return[$row[$key]] = $row;
+            }
+            $sh->finish();
+            return $return;
+        }
+        return null;
+    }
+
+/**
+ *  Returns an array of the results from the specified query.  Each result is
+ *  stored in an assoc.  The array returned will be indexed by the value of the
+ *  column specified by $key.
+ *
+ *  @param string $key      Column to use as the returned list's key
+ *  @param string $query    The query string
+ *  @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
+ *  @param mixed  ...       Additional arguments
+ *
+ *  @return array
+/**/
+    function query_keyed_list_assoc($key, $query) {
+    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
+        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
+    // Query and return
+        $args  = array_slice(func_get_args(), 2);
+        $sh    = $this->query($query, $args);
+        if ($sh) {
+            $return = array();
+            while ($row = $sh->fetch_assoc()) {
+                $return[$row[$key]] = $row;
+            }
             $sh->finish();
             return $return;
         }
