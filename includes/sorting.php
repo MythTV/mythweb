@@ -19,16 +19,25 @@
  * Returns a formatted link to the specified sort field
 /**/
     function get_sort_link($field, $string) {
-        $status = sort_status($field);
-        $link = '<a href="'.$_SERVER['PHP_SELF'].'?sortby='.urlencode($field).'">'
-               .$string
-               .'</a>';
-        if ($status == 1)
-            $link .= ' <span class="large">&darr;</span>';
-        elseif ($status == -1)
-            $link .= ' <span class="large">&uarr;</span>';
+    // Get the URL
+        $url = $_SERVER['PATH_INFO'];
+        if (empty($url))
+            $url = str_replace('mythweb.php/', '', $_SERVER['PHP_SELF']);
+    // Build the link
+        $link = '<a href="'.$url.'?sortby='.urlencode($field).'">'
+                .$string
+                .'</a>';
+        switch (sort_status($field)) {
+            case 1:
+                $link .= ' <span class="large">&darr;</span>';
+                break;
+            case -1:
+                $link .= ' <span class="large">&uarr;</span>';
+                break;
+        }
         return $link;
     }
+
 /**
  * Returns the sort status of
 /**/
