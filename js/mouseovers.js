@@ -2,7 +2,7 @@
  * Functions to show/hide sections of the page (for mouseovers).
  * Primarily used for interactive menus
  *
- * @url         $URL: svn+ssh://xris@svn.siliconmechanics.com/var/svn/web/trunk/shared_code/js/mouseovers.js $
+ * @url         $URL$
  * @date        $Date$
  * @version     $Revision$
  * @author      $Author$

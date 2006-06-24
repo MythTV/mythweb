@@ -11,7 +11,7 @@
  * would like to inquire about the status of this arrangement, please contact
  * me personally.
  *
- * @url        $URL: svn+ssh://xris@svn.siliconmechanics.com/var/svn/web/trunk/shared_code/includes/objects/Database.php $
+ * @url        $URL$
  * @date       $Date$
  * @version    $Revision$
  * @author     $Author$

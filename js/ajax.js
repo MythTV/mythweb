@@ -4,7 +4,7 @@
  *  - Plaintext responses [non-XML]
  *  - Browser Support: Safari, Opera, Firefox
  *
- * @url         $URL: svn+ssh://xris@svn.siliconmechanics.com/var/svn/web/trunk/shared_code/js/ajax.js $
+ * @url         $URL$
  * @date        $Date$
  * @version     $Revision$
  * @author      $Author$

@@ -2,7 +2,7 @@
 /**
  * MythMusic browser
  *
- * @url         $URL: svn+ssh://xris@cvs.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/music/init.php $
+ * @url         $URL$
  * @date        $Date$
  * @version     $Revision$
  * @author      $Author$
