@@ -148,6 +148,14 @@
 	}
 
 /**
+ * Strips slashes ONLY before quotes, to get around php adding slashes in
+ * preg_replace //e but not in such a way that stripslashes works properly.
+/*/
+    function strip_quote_slashes($str) {
+        return preg_replace("/\\\\([\"'])/", '$1', $str);
+    }
+
+/**
  * Print a redirect header and exit
 /**/
     function redirect_browser($url) {
