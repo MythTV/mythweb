@@ -31,13 +31,13 @@ $Canned_Searches = array(
          . ' )',
 
     t('Movies')
-        => 'category_type="'.t('movie').'"',
+        => 'category_type="movie"',
 
     t('Movies, 3&frac12; Stars or more')
-        => 'category_type="'.t('movie').'" AND program.stars > 0.8',
+        => 'category_type="movie" AND program.stars > 0.8',
 
     t('Movies, Stinkers (2 Stars or less)')
-        => 'category_type="'.t('movie').'" AND program.stars < 0.5625'
+        => 'category_type="movie" AND program.stars < 0.5625'
           .' AND program.stars > 0.0',
 
     t('Non-Series HDTV')
@@ -53,7 +53,7 @@ $Canned_Searches = array(
         => 'showtype="special" AND program.category LIKE "music%"',
 
     t('Science Fiction Movies')
-        => 'category_type="'.t('movie').'" AND program.category="science fiction"',
+        => 'category_type="movie" AND program.category="science fiction"',
 
     );
 

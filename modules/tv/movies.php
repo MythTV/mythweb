@@ -24,7 +24,7 @@
     }
 
 // Start the query
-    $query       = array('category_type='.$db->escape(t('movie')));
+    $query       = array('category_type="movie"');
     $extra_query = array();
 
 // HDTV only?
