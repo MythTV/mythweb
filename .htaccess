@@ -118,16 +118,16 @@
 # The settings below relate specifically to mod_rewrite and the rewrite engine
 # used to make the MythWeb user experience a little easier to deal with by
 # simplifying the URL's neeced to access the various sections.  Do not touch
-# these settings.
+# these settings unless you really know what you're doing..
 #
+
+# Turn on the rewrite engine
+    RewriteEngine  on
 
 # If MythWeb is installed outside of the document root (eg. using Alias) then
 # you will need to set this directive to the base URL that MythWeb is visible
 # from externally.  If you do not, the web server will return 'not found'.  eg.
 #    RewriteBase    /mythweb
-
-# Turn on the rewrite engine
-    RewriteEngine  on
 
 # Skip out early if we've already been through rewrites,
 # or if this is a /css/, /js/ or /cache/ directory request.
