@@ -165,8 +165,8 @@
         // Hide LiveTV recordings from the title list
             if (($_GET['recgroup'] && $_GET['recgroup'] == $record[30]) || (!$_GET['recgroup'] && $record[30] != 'LiveTV'))
                 $Program_Titles[$record[0]]++;
-        // Skip files with no chanid, or with zero length
-            if (!$record[4] || $length < 1)
+        // Skip files with no chanid
+            if (!$record[4])
                 continue;
         // Skip programs the user doesn't want to look at
             if ($_GET['title'] && $_GET['title'] != $record[0])
