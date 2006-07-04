@@ -394,7 +394,7 @@ class Program {
             $this->recording   = ($this->recstatus == 'WillRecord'); # scheduled to record?
         }
     // No longer a null column, so check for blank entries
-        if ($this->airdate == '0000-00-00')
+        if ($this->airdate == '0000-00-00' || $this->airdate == '0000')
             $this->airdate = NULL;
     // Do we have a chanid?  Load some info about it
         if ($this->chanid && !isset($this->channel)) {
@@ -618,6 +618,38 @@ class Program {
         $schedule->search      = 0;
     // Save the schedule -- it'll know what to do about the override
         $schedule->save($rectype);
+    }
+
+/**
+ * Intended to be called as program::category_types()
+ *
+ * @return array sorted list of category_type fields from the program table
+/**/
+    function category_types() {
+        static $cache = array();
+        if (empty($cache)) {
+            global $db;
+            $cache = $db->query_list('SELECT DISTINCT category_type
+                                        FROM program
+                                    ORDER BY category_type');
+        }
+        return $cache;
+    }
+
+/**
+ * Intended to be called as program::categories()
+ *
+ * @return array sorted list of category fields from the program table
+/**/
+    function categories() {
+        static $cache = array();
+        if (empty($cache)) {
+            global $db;
+            $cache = $db->query_list('SELECT DISTINCT category
+                                        FROM program
+                                    ORDER BY category');
+        }
+        return $cache;
     }
 
 }
