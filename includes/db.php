@@ -228,8 +228,6 @@ class Database {
  *  @return array
 /**/
     function query_list($query) {
-    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
-        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
         $args  = array_slice(func_get_args(), 1);
         $sh    = $this->query($query, $args);
@@ -255,8 +253,6 @@ class Database {
  *  @return array
 /**/
     function query_list_array($query) {
-    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
-        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
         $args  = array_slice(func_get_args(), 1);
         $sh    = $this->query($query, $args);
@@ -282,8 +278,6 @@ class Database {
  *  @return array
 /**/
     function query_list_assoc($query) {
-    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
-        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
         $args  = array_slice(func_get_args(), 1);
         $sh    = $this->query($query, $args);
@@ -311,8 +305,6 @@ class Database {
  *  @return array
 /**/
     function query_keyed_list_array($key, $query) {
-    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
-        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
         $args  = array_slice(func_get_args(), 2);
         $sh    = $this->query($query, $args);
@@ -340,8 +332,6 @@ class Database {
  *  @return array
 /**/
     function query_keyed_list_assoc($key, $query) {
-    // Add a "LIMIT 1" if no limit was specified -- this will speed up queries at least slightly
-        $query = preg_replace($this->limit_regex, $this->limit_regex_replace, $query, 1);
     // Query and return
         $args  = array_slice(func_get_args(), 2);
         $sh    = $this->query($query, $args);
@@ -426,7 +416,6 @@ class Database {
         return $this->last_sh->affected_rows();
     }
 
-
 /**
  *  Escapes a string and returns it with added quotes.
  *  On top of normal escaping, this also escapes ? characters so it's safe to
@@ -439,6 +428,18 @@ class Database {
             return 'NULL';
     // Just a string
         return str_replace('?', '\\?', "'".mysql_real_escape_string($string)."'");
+    }
+
+/**
+ *  Calls $this->escape() on an array of strings.
+ *  @return string
+/**/
+    function escape_array($array) {
+        $new = array();
+        foreach ($array as $string) {
+            $new[] = $this->escape($string);
+        }
+        return $new;
     }
 
 /**
