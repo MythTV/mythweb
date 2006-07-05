@@ -36,7 +36,7 @@ div.content {
     margin-bottom:      30px;
     //-moz-border-radius: 8px 0px 0px 8px;
 }
-#schedule a {
+div.schedule a {
     position:        relative;
     display:         block;
     color:           white;
@@ -45,17 +45,17 @@ div.content {
     border:          thin solid #555;
     width:           340px;
 }
-#schedule a span {
+div.schedule a span {
     display:none;
 }
-#schedule a:hover {
+div.schedule a:hover {
     background-color: #444;
     /*border-top:       thin solid #668;
     border-bottom:    thin solid #668;
     border-left:      thin solid #668;*/
     cursor:           default;
 }
-#schedule a:hover span {
+div.schedule a:hover span {
     display:          block;
     position:         absolute;
     background-color: #444;
