@@ -106,24 +106,20 @@
                     <div class="search_table clearfix">
                         <div class="cell">
                             <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('search_title').checked=get_element('search_title').checked ? false : true;"><?php echo t('Title') ?></a>
+                            <label for="search_title"><?php echo t('Title') ?></label>
                         </div>
                         <div class="cell">
                             <input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('search_subtitle').checked=get_element('search_subtitle').checked ? false : true;"><?php echo t('Subtitle') ?></a>
+                            <label for="search_subtitle"><?php echo t('Subtitle') ?></label>
                         </div>
                         <div>
                             <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('search_description').checked=get_element('search_description').checked ? false : true;"><?php echo t('Description') ?></a>
+                            <label for="search_description"><?php echo t('Description') ?></label>
                         </div>
                         <br />
                         <div class="cell">
                             <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('search_category').checked=get_element('search_category').checked ? false : true;"><?php echo t('Category') ?></a>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="radio" id="search_category_type" name="search_category_type" value="1"<?php echo $_SESSION['search']['search_category_type'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('search_category_type').checked=get_element('search_category_type').checked ? false : true;"><?php echo t('Category Type') ?></a>
+                            <label for="search_category"><?php echo t('Category') ?></label>
                         </div>
                     </div>
                     <hr />
@@ -131,15 +127,15 @@
                     <div class="search_table clearfix">
                         <div class="cell">
                             <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('search_exact').checked=get_element('search_exact').checked ? false : true;"><?php echo t('Exact Match') ?></a>
+                            <label for="get_element('search_exact"><?php echo t('Exact Match') ?></label>
                         </div>
                         <div>
                             <input type="checkbox" class="radio" id="search_hd" name="search_hd" value="1"<?php echo $_SESSION['search']['search_hd'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('search_hd').checked=get_element('search_hd').checked ? false : true;"><?php echo t('HD Only') ?></a>
+                            <label for="get_element('search_hd"><?php echo t('HD Only') ?></label>
                         </div>
                         <div>
                             <input type="checkbox" class="radio" id="fold_dups" name="fold_dups" value="1"<?php echo $_SESSION['search']['fold_dups'] ? ' CHECKED' : '' ?>>
-                            <a onclick="get_element('fold_dups').checked=get_element('fold_dups').checked ? false : true;"><?php echo t('Fold Duplicates') ?></a>
+                            <label for="get_element('fold_dups"><?php echo t('Fold Duplicates') ?></label>
                         </div>
                     </div>
 
