@@ -58,6 +58,7 @@
 // Clean up input data
     fix_crlfxy($_GET);
     fix_crlfxy($_POST);
+    fix_crlfxy($_REQUEST);
     if (get_magic_quotes_gpc()) {
         fix_magic_quotes($_COOKIE);
         fix_magic_quotes($_ENV);
