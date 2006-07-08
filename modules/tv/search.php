@@ -61,13 +61,13 @@
     if (isset($_REQUEST['hd']))
         $_SESSION['search']['hd']            = $_REQUEST['hd'] ? true : false;
     if (isset($_REQUEST['airdate_start']))
-        $_SESSION['search']['airdate_start'] = $_REQUEST['airdate_start'];
+        $_SESSION['search']['airdate_start'] = trim($_REQUEST['airdate_start']);
     if (isset($_REQUEST['airdate_end']))
-        $_SESSION['search']['airdate_end']   = $_REQUEST['airdate_end'];
+        $_SESSION['search']['airdate_end']   = trim($_REQUEST['airdate_end']);
     if (isset($_REQUEST['starttime']))
-        $_SESSION['search']['starttime']     = $_REQUEST['starttime'];
+        $_SESSION['search']['starttime']     = trim($_REQUEST['starttime']);
     if (isset($_REQUEST['endtime']))
-        $_SESSION['search']['endtime']       = $_REQUEST['endtime'];
+        $_SESSION['search']['endtime']       = trim($_REQUEST['endtime']);
 
 // Session defaults
     if (!is_array($_SESSION['search']['ctype']) || empty($_SESSION['search']['ctype']))
@@ -185,7 +185,10 @@
             }
         // Airdate range
             if (preg_match('/\S/', $_SESSION['search']['airdate_start'])) {
-                $tmpdate = strtotime($_SESSION['search']['airdate_start']);
+                $tmpdate = $_SESSION['search']['airdate_start'];
+                if (!preg_match('/\D/', $tmpdate))  // for some reason, strtotime doesn't like dates like 2000
+                    $tmpdate .= '-01-01';
+                $tmpdate = strtotime($tmpdate);
                 if ($tmpdate == false) {
                 }
                 else {
@@ -195,7 +198,10 @@
                 }
             }
             if (preg_match('/\S/', $_SESSION['search']['airdate_end'])) {
-                $tmpdate = strtotime($_SESSION['search']['airdate_end']);
+                $tmpdate = $_SESSION['search']['airdate_end'];
+                if (!preg_match('/\D/', $tmpdate))  // for some reason, strtotime doesn't like dates like 2000
+                    $tmpdate .= '-01-01';
+                $tmpdate = strtotime($tmpdate);
                 if ($tmpdate == false) {
                 }
                 else {
