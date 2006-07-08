@@ -345,18 +345,24 @@
  * @return array
 /**/
     function prep_search($str) {
+    // negative match
+        $neg = '';
+        if (substr($str, 0, 1) == '!') {
+            $neg = 'NOT ';
+            $str = substr($str, 1);
+        }
     // Regex search?
         if (preg_match('#^/(.+)/$#', $str, $match))
-            return array('REGEXP', search_escape($match[1], 'both'));
+            return array($neg.'REGEXP', search_escape($match[1], 'both'));
     // Or figure out where the search should be anchored
         elseif (preg_match('#^\^(.+)\$$#', $str, $match))
-            return array('LIKE', search_escape($match[1], 'both'));
+            return array($neg.'LIKE', search_escape($match[1], 'both'));
         elseif (preg_match('#^\^(.+)#', $str, $match))
-            return array('LIKE', search_escape($match[1], 'start'));
+            return array($neg.'LIKE', search_escape($match[1], 'start'));
         elseif (preg_match('#(.+)\$$#', $str, $match))
-            return array('LIKE', search_escape($match[1], 'end'));
+            return array($neg.'LIKE', search_escape($match[1], 'end'));
     // Default is no anchor
-        return array('LIKE', search_escape($str));
+        return array($neg.'LIKE', search_escape($str));
     }
 
 /**
