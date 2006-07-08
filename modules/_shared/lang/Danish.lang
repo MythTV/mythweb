@@ -32,9 +32,12 @@
 "Action"
 "Activate"
     Aktivér
+"add string"
 "Additional Tables"
+"Advanced"
 "Advanced Options"
     Avancerede indstillinger
+"Advanced Search"
 "airdate"
     visningsdato
 "Airtime"
@@ -90,8 +93,6 @@
     Kategori
 "Category Legend"
     Kategoriforklaring
-"Category Type"
-    Kategori Type
 "CC"
 "Channel"
     Kanal
@@ -191,8 +192,6 @@
 "Episode"
     Afsnit
 "Episode Number"
-"Exact Match"
-    Præcis match
 "Exec. Producer"
     Producer
 "file size"
@@ -209,7 +208,6 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Prognose
 "Forget Old"
@@ -246,8 +244,6 @@
     har markeret reklameblokke
 "has cutlist"
     har klippeliste
-"HD Only"
-    Kun HD
 "HDTV"
 "High"
     Høj
@@ -299,11 +295,13 @@
 "Low"
     Lav
 "Manual"
+"matches"
 "Max star rating for movies"
 "minutes"
     minutter
 "Monday"
     Mandag
+"more"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -345,8 +343,6 @@
 "No matches found"
     Ingen match fundet
 "No matching programs found."
-"No matching programs were found."
-    Ingen matchende programmer fundet
 "No recording schedules have been defined."
     Ingen optagelser er planlagt
 "No Tracks Available"
@@ -364,8 +360,10 @@
 "Number of timeslots"
 "Only display favourite channels"
     Vis kun favorit kanaler
+"Only match HD programs"
 "Only New Episodes"
     Kun Nye Afsnit
+"or"
 "Original Airdate"
     Sendt først
 "Part $1 of $2"
@@ -376,8 +374,6 @@
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
-"Please search for something."
-    Søg efter noget
 "plot"
 "Possible conflicts with this show"
     Mulige konfligter med denne udsendelse
@@ -545,22 +541,8 @@
 "Science Fiction Movies"
 "Search"
     Søg
-"Search fields"
-    Søgefelter
 "Search for:  $1"
     Søg efter: $1
-"Search help"
-    Søgehjælp
-"Search help: movie example"
-    *** 1/2 Adventure
-"Search help: movie search"
-    movie search
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    regex search
-"Search options"
-    Søge muligheder
 "Search Phrase"
 "Search Results"
     Søgeresultater
@@ -605,8 +587,6 @@
 "Status Bar"
     Status linie
 "Stereo"
-"Streaming"
-    Streaming
 "Sub and Desc (Empty matches)"
     Undertitel og beskrivelse
 "Subtitle"

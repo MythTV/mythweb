@@ -121,9 +121,6 @@
         $query = 'SELECT program.*,
                          UNIX_TIMESTAMP(program.starttime) AS starttime_unix,
                          UNIX_TIMESTAMP(program.endtime) AS endtime_unix,
-                         CONCAT(repeat(?, program.stars * ?),
-                                IF((program.stars * ? * 10) % 10,
-                                   "&frac12;", "")) AS starstring,
                          IFNULL(programrating.system, "") AS rater,
                          IFNULL(programrating.rating, "") AS rating,
                          channel.channum
@@ -154,8 +151,7 @@
         if ($single_program)
             $query .= "\n LIMIT 1";
     // Query
-        $sh = $db->query($query,
-                         star_character, max_stars, max_stars);
+        $sh = $db->query($query);
     // No results
         if ($sh->num_rows() < 1) {
             $sh->finish();
@@ -181,6 +177,15 @@
         while ($data = $sh->fetch_assoc()) {
             if (!$data['chanid'])
                 continue;
+        // Generate the star string, since mysql has issues with REPEAT() and decimals
+            $data['starstring'] = str_repeat(star_character, intVal($data['stars'] * max_stars));
+            $frac = ($data['stars'] * max_stars) - intVal($data['stars'] * max_stars);
+            if ($frac >= .75)
+                $data['starstring'] .= '&frac34;';
+            elseif ($frac >= .5)
+                $data['starstring'] .= '&frac12;';
+            elseif ($frac >= .25)
+                $data['starstring'] .= '&frac14;';
         // This program has already been loaded, and is attached to a recording schedule
             if ($Scheduled_Recordings[$data['channum']][$data['starttime_unix']]) {
                 $program =& $Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0];

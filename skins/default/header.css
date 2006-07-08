@@ -110,55 +110,6 @@
 #simple_search {
     padding-top: 1px;
 }
-#search_options {
-    position:           absolute;
-    visibility:         hidden;
-    top:                0px;
-    left:               0px;
-    width:              26em;
-    margin:             -2px 0px 0px 4px;
-    background-color:   #247;
-    border-right:       1px solid #79c;
-    border-bottom:      1px solid #68b;
-    border-left:        1px solid #002;
-    -moz-border-radius: 0px 0px 8px 8px;
-    padding:            10px;
-    font-size:          9pt;
-    white-space:        nowrap;
-}
-#search_options .search_table {
-    font-size: 9pt;
-}
-#search_options .search_table div {
-    float:   left;
-}
-#search_options .search_table div.cell {
-    width:   8em;
-}
-#search_options .search_table br {
-    clear: both;
-}
-#search_options hr {
-    border-top:    1px solid #68b;
-    border-right:  none;
-    border-bottom: 1px solid #013;
-    border-left:   none;
-}
-#search_options dl {
-    margin:  0px;
-    padding: 0px;
-}
-#search_options dl dt {
-    clear:       left;
-    float:       left;
-    width:       9em;
-    text-align:  right;
-    white-space: nowrap;
-}
-#search_options dl dd {
-    margin-left: 9.5em;
-    white-space: nowrap;
-}
 
 
 #search_text {

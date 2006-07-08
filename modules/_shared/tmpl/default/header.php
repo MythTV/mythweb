@@ -95,58 +95,13 @@
                 </div>
             </div>
         </div>
-        <div id="search" onmouseover="popup('search', 'search_options', 0, 0, false, true); return true;">
-            <form action="<?php echo root ?>tv/search" method="post">
+        <div id="search">
+            <form action="<?php echo root ?>tv/search" method="get">
+            <input type="hidden" name="type" value="q">
                 <div id="simple_search">
-                    <input id="search_text" type="text" name="searchstr" size="15" value="<?php echo html_entities($_SESSION['search']['searchstr']) ?>">
-                    <input id="search_submit" type="submit" class="submit" value="<?php echo t('Search') ?>">
-                </div>
-                <div id="search_options">
-                    <?php echo t('Search fields') ?>:<br />
-                    <div class="search_table clearfix">
-                        <div class="cell">
-                            <input type="checkbox" class="radio" id="search_title" name="search_title" value="1"<?php echo $_SESSION['search']['search_title'] ? ' CHECKED' : '' ?>>
-                            <label for="search_title"><?php echo t('Title') ?></label>
-                        </div>
-                        <div class="cell">
-                            <input type="checkbox" class="radio" id="search_subtitle" name="search_subtitle" value="1"<?php echo $_SESSION['search']['search_subtitle'] ? ' CHECKED' : '' ?>>
-                            <label for="search_subtitle"><?php echo t('Subtitle') ?></label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="radio" id="search_description" name="search_description" value="1"<?php echo $_SESSION['search']['search_description'] ? ' CHECKED' : '' ?>>
-                            <label for="search_description"><?php echo t('Description') ?></label>
-                        </div>
-                        <br />
-                        <div class="cell">
-                            <input type="checkbox" class="radio" id="search_category" name="search_category" value="1"<?php echo $_SESSION['search']['search_category'] ? ' CHECKED' : '' ?>>
-                            <label for="search_category"><?php echo t('Category') ?></label>
-                        </div>
-                    </div>
-                    <hr />
-                    <?php echo t('Search options') ?>:<br />
-                    <div class="search_table clearfix">
-                        <div class="cell">
-                            <input type="checkbox" class="radio" id="search_exact" name="search_exact" value="1"<?php echo $_SESSION['search']['search_exact'] ? ' CHECKED' : '' ?>>
-                            <label for="get_element('search_exact"><?php echo t('Exact Match') ?></label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="radio" id="search_hd" name="search_hd" value="1"<?php echo $_SESSION['search']['search_hd'] ? ' CHECKED' : '' ?>>
-                            <label for="get_element('search_hd"><?php echo t('HD Only') ?></label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="radio" id="fold_dups" name="fold_dups" value="1"<?php echo $_SESSION['search']['fold_dups'] ? ' CHECKED' : '' ?>>
-                            <label for="get_element('fold_dups"><?php echo t('Fold Duplicates') ?></label>
-                        </div>
-                    </div>
-
-                    <hr />
-                    <?php echo t('Search help') ?>:
-                    <dl>
-                        <dt><?php echo t('Search help: movie search') ?>:</dt>
-                        <dd><?php echo t('Search help: movie example') ?></dd>
-                        <dt><?php echo t('Search help: regex search') ?>:</dt>
-                        <dd><?php echo t('Search help: regex example') ?></dd>
-                    </dl>
+                    <input id="search_text" type="text" name="s" size="15" value="<?php echo html_entities($_SESSION['search']['s']) ?>">
+                    <input id="search_submit" type="submit" class="submit" name="search" value="<?php echo t('Search') ?>">
+                    (<a href="<?php echo root ?>tv/search"><?php echo t('Advanced') ?></a>)
                 </div>
             </form>
         </div>
@@ -165,9 +120,9 @@
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
+                    <a href="<?php  echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
                     (<a href="<?php echo root ?>tv/schedules/manual"><?php echo t('Manual') ?></a>,
-                    <a href="<?php echo root ?>tv/schedules/custom"><?php echo t('Custom') ?></a>)
+                    <a href="<?php  echo root ?>tv/schedules/custom"><?php echo t('Custom') ?></a>)
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/upcoming"><?php echo t('Upcoming Recordings') ?></a>
                     &nbsp; | &nbsp;

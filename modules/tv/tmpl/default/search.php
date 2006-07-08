@@ -22,37 +22,99 @@
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-// No search was performed, just return
-    if (!is_array($Results)) {
-        echo t('No matching programs were found.');
+// Print the advanced search options
+?>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+    function search_field_change(i) {
     }
-// Print the results list
-    else {
 
+    function add_search_field(i) {
+    // Temporary until we add DOM support
+        submit_form('add_search_field', i, 'search_advanced');
+    }
+
+    function add_search_string() {
+    // Temporary until we add DOM support
+        submit_form('add_search_string', 1, 'search_advanced');
+    }
+
+    function set_search(type) {
+        get_element('type_' + type).checked = true;
+    }
+
+// -->
+</script>
+
+<form class="form" id="search_advanced" action="<?php echo root ?>tv/search" method="get">
+    <input type="hidden" name="type" value="a">
+
+<table align="center" border="1" cellspacing="0" cellpadding="2">
+<tr>
+    <td valign="top"><?php print_advanced_search_strings() ?>
+        </td>
+    <td valign="top"><p style="margin-top: 0">
+        <input type="checkbox" name="hd" id="hd" value="1"<?php
+            if ($_SESSION['search']['hd']) echo ' CHECKED' ?>>
+        <label for="hd"><?php echo t('Only match HD programs') ?></label>
+        </p>
+        <p>
+        Showings between:<br />
+        <input type="text" size="12" name="starttime" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['starttime']) ?>">
+        and
+        <input type="text" size="12" name="endtime"   style="text-align: center" value="<?php echo html_entities($_SESSION['search']['endtime']) ?>">
+        </p>
+        <p>
+        Originally aired between:<br />
+        <input type="text" size="12" name="airdate_start" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_start']) ?>">
+        and
+        <input type="text" size="12" name="airdate_end" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_end']) ?>">
+        </p>
+        </td>
+    <td valign="top">Program Type:<br />
+        <?php echo category_type_list() ?>
+        </td>
+    <td valign="middle">
+        <input type="submit" name="search" value="Search">
+        </td>
+</tr>
+</table>
+
+</form>
+
+<?php
+
+// Print the results list if a search was performed
+    if ($_REQUEST['search']) {
     // Print the search name
-        echo '<p class="normal" align="center">'.t('Search for:  $1', $search_name).'</p>';
-
+        echo '<p class="normal" align="center">',
+             ($_SESSION['search']['type'] == 'a'
+                ? t('Advanced Search')
+                : t('Search for:  $1', $_SESSION['search']['s'])
+             ),
+             '</p>';
     // Search, but nothing found - notify the user
         if (empty($Results)) {
             echo '<hr width="25%"><p class="normal" align="center">'.t('No matches found').'</p>';
             return;
         }
-
     // Setup for grouping by various sort orders
         $group_field = $_SESSION['search_sortby'][0]['field'];
         if ($group_field == '')
-            $group_field = "airdate";
-        elseif ($group_field != "title" && $group_field != "channum" && $group_field != "airdate")
+            $group_field = 'airdate';
+        elseif ($group_field != 'channum' && $group_field != 'airdate')
             $group_field = '';
 
     // Display the results
 ?>
-<p>
+
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <td><?php echo get_sort_link('title',       t('title')) ?></td>
-    <td><?php echo get_sort_link('subtitle',    t('subtitle')) ?></td>
+    <td><?php echo get_sort_link('category',    t('category')) ?></td>
     <td><?php echo get_sort_link('description', t('description')) ?></td>
     <td><?php echo get_sort_link('channum',     t('channum')) ?></td>
     <td><?php echo get_sort_link('airdate',     t('airdate')) ?></td>
@@ -65,62 +127,62 @@
 
         foreach ($Results as $show) {
 
-            // Print a dividing row if grouping changes
-            if ($group_field == "airdate") {
-                $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
-            } elseif ($group_field == "channum") {
-                $cur_group = $show->channel->name;
-            } elseif ($group_field == "title") {
-                $cur_group = $show->title;
+        // Print a dividing row if grouping changes
+            switch ($group_field) {
+                case 'airdate':
+                    $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
+                    break;
+                case 'channum':
+                    $cur_group = $show->channel->name;
+                    break;
+                case 'title':
+                    $cur_group = $show->title;
+                    break;
             }
-
-            if ( ($cur_group != $prev_group) && !empty($group_field) ) { ?>
+            if ($cur_group != $prev_group && !empty($group_field)) { ?>
     <tr class="list_separator">
     <td colspan="9">
         <?php echo $cur_group ?>
         </td>
     </tr><?php
             }
-
-    // Print some additional information for movies
-    $additional = '';
-    if ($show->category_type == 'movie'
-            || $show->category_type == 'Film') {
-        if ($show->airdate > 0)
-                $additional = sprintf('%4d', $show->airdate);
-        if (strlen($show->rating) > 0) {
-            if ($additional)
-                $additional .= ", ";
-            $additional .= "<i>$show->rating</i>";
-        }
-        if (strlen($show->starstring) > 0) {
-            if ($additional)
-                $additional .= ", ";
-            $additional .= $show->starstring;
-        }
-        if ($additional)
-            $additional = ' (' . $additional . ')';
-    }
-
     // Print the content
-    ?><tr class="<?php echo $show->class ?>">
+    ?><tr class="<?php echo $show->class ?>" valign="top">
     <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <td class="<?php echo $show->class ?>"><?php
         if ($show->hdtv)
             echo '<span class="hdtv_icon">HD</span>';
-        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
-             .$show->title . $additional.'</a>';
+        echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+             $show->title, '</a>';
+        if ($show->subtitle)
+            echo ': ', $show->subtitle;
+    // Print some additional information for movies
+        if (strcasecmp($show->category_type, t('movie')) == 0) {
+            $info = array();
+            if ($show->airdate > 0)
+                $info[] = sprintf('%4d', $show->airdate);
+            if (strlen($show->rating) > 0)
+                $info[] = "<i>$show->rating</i>";
+            if (strlen($show->starstring) > 0)
+                $info[] = $show->starstring;
+            if (count($info) > 0)
+                echo '<br />(', implode(', ', $info), ')';
+        }
+
         ?></td>
-    <td><?php echo $show->subtitle ?></td>
+    <td><?php echo $show->category ?></td>
     <td><?php echo $show->description ?></td>
     <td><?php echo $show->channel->channum.' - '.$show->channel->name ?></td>
     <td nowrap><?php
             echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
-            if( $show->extra_showings )
-                foreach( $show->extra_showings as $showtime )
-                    echo '<br /><a href="'.root.'tv/detail/'.$show->chanid.'/'.$showtime.'">'.
-                        strftime($_SESSION['date_search'],$showtime). '</a>';
+            if ($show->extra_showings)
+                foreach ($show->extra_showings as $pair) {
+                    list($chanid, $showtime) = $pair;
+                    echo '<br /><a href="', root, 'tv/detail/', $chanid, '/', $showtime, '">',
+                         strftime($_SESSION['date_search'] ,$showtime),
+                         '</a>';
+                }
                 ?></td>
     <td nowrap><?php echo nice_length($show->length) ?></td>
 </tr><?php

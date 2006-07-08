@@ -1,6 +1,13 @@
 <?php
 /**
- * Searches the database for programs matching a particular query.
+ * Quick and advanced search modes.
+ *
+ * Quick Search prefixes can be applied in the following order:
+ *
+ *   hd:        Only search HD objects
+ *   **1/2      Movie search
+ *
+ *   Use ^ and/or $ to anchor the search, and enclose in // to use regex.
  *
  * @url         $URL$
  * @date        $Date$
@@ -13,189 +20,316 @@
  *
 /**/
 
+
 // Load the sorting routines
-    require_once "includes/sorting.php";
+    require_once 'includes/sorting.php';
 
 // Load all channels
     load_all_channels();
 
-// Path-based search (take all of the remaining path)
+// Path-based search overrides request-based search type.
     if ($Path[2]) {
-        $_GET['searchstr'] = implode('/', array_splice($Path, 2));
+    // Don't forget to take all of the remaining path.
+        $_SESSION['search']['s']    = implode('/', array_splice($Path, 2));
+        $_SESSION['search']['type'] = 'q';
+        $_REQUEST['search']         = true;
     }
 
-// A single search string passed in
-    if ($_GET['searchstr'] || $_POST['searchstr']) {
-        unset($_SESSION['search']);
-        $_SESSION['search']['searchstr']            = _or($_GET['searchstr'],            $_POST['searchstr']);
-        $_SESSION['search']['search_title']         = _or($_GET['search_title'],         $_POST['search_title']);
-        $_SESSION['search']['search_subtitle']      = _or($_GET['search_subtitle'],      $_POST['search_subtitle']);
-        $_SESSION['search']['search_description']   = _or($_GET['search_description'],   $_POST['search_description']);
-        $_SESSION['search']['search_category']      = _or($_GET['search_category'],      $_POST['search_category']);
-        $_SESSION['search']['search_category_type'] = _or($_GET['search_category_type'], $_POST['search_category_type']);
+// Sorting should re-trigger the search
+    if ($_REQUEST['sortby'])
+        $_REQUEST['search'] = true;
+
+// Pull in updates
+    if (isset($_REQUEST['type']))
+        $_SESSION['search']['type']          = $_REQUEST['type'];
+
+    if (isset($_REQUEST['s']))
+        $_SESSION['search']['s']             = trim($_REQUEST['s']);
+
+    if (isset($_REQUEST['as']))
+        $_SESSION['search']['as']            = $_REQUEST['as'];
+    if (isset($_REQUEST['af']))
+        $_SESSION['search']['af']            = $_REQUEST['af'];
+    if (isset($_REQUEST['aj']))
+        $_SESSION['search']['aj']            = $_REQUEST['aj'];
+    if (isset($_REQUEST['ctype']))
+        $_SESSION['search']['ctype']         = $_REQUEST['ctype'];
+    if (isset($_REQUEST['stars_gt']))
+        $_SESSION['search']['stars_gt']      = floatVal($_REQUEST['stars_gt']);
+    if (isset($_REQUEST['stars_lt']))
+        $_SESSION['search']['stars_lt']      = floatVal($_REQUEST['stars_lt']);
+    if (isset($_REQUEST['hd']))
+        $_SESSION['search']['hd']            = $_REQUEST['hd'] ? true : false;
+    if (isset($_REQUEST['airdate_start']))
+        $_SESSION['search']['airdate_start'] = $_REQUEST['airdate_start'];
+    if (isset($_REQUEST['airdate_end']))
+        $_SESSION['search']['airdate_end']   = $_REQUEST['airdate_end'];
+    if (isset($_REQUEST['starttime']))
+        $_SESSION['search']['starttime']     = $_REQUEST['starttime'];
+    if (isset($_REQUEST['endtime']))
+        $_SESSION['search']['endtime']       = $_REQUEST['endtime'];
+
+// Session defaults
+    if (!is_array($_SESSION['search']['ctype']) || empty($_SESSION['search']['ctype']))
+        $_SESSION['search']['ctype'] = program::category_types();
+    if (!isset($_SESSION['search']['stars_gt']) || !isset($_SESSION['search']['stars_lt'])) {
+        $_SESSION['search']['stars_gt'] = 0;
+        $_SESSION['search']['stars_lt'] = 1;
     }
-
-// Individual search strings for different fields
-    elseif ($_GET['title'] || $_GET['subtitle'] || $_GET['description'] || $_GET['category'] || $_GET['category_type'] || $_GET['originalairdate']
-            || $_POST['title'] || $_POST['subtitle'] || $_POST['description'] || $_POST['category'] || $_POST['category_type'] || $_POST['originalairdate'] ) {
-        unset($_SESSION['search']);
-        $_SESSION['search']['title']           = _or($_GET['title'],           $_POST['title']);
-        $_SESSION['search']['subtitle']        = _or($_GET['subtitle'],        $_POST['subtitle']);
-        $_SESSION['search']['description']     = _or($_GET['description'],     $_POST['description']);
-        $_SESSION['search']['category']        = _or($_GET['category'],        $_POST['category']);
-        $_SESSION['search']['category_type']   = _or($_GET['category_type'],   $_POST['category_type']);
-        $_SESSION['search']['originalairdate'] = _or($_GET['originalairdate'], $_POST['originalairdate']);
+    if (!isset($_SESSION['search']['starttime'])) {
+        $_SESSION['search']['starttime'] = 'now';
     }
-// Update some universal search settings
-    if ($_GET['search_exact'] || $_POST['search_exact'])
-        $_SESSION['search']['search_exact'] = _or($_GET['search_exact'], $_POST['search_exact']);
-    if ($_GET['search_hd'] || $_POST['search_hd'])
-        $_SESSION['search']['search_hd'] = _or($_GET['search_hd'], $_POST['search_hd']);
-    if ($_GET['fold_dups'] || $_POST['fold_dups'])
-        $_SESSION['search']['fold_dups'] = _or($_GET['fold_dups'], $_POST['fold_dups']);
-
-// Start the query
-    $search_name = '';
-    $query       = array();
-    $extra_query = array();
-    if ($_SESSION['search']['search_exact'])
-        $compare = ' = ';
-    else
-        $compare = ' LIKE ';
-
-// HDTV only?
-    if ($_SESSION['search']['search_hd'])
-        $extra_query[] = 'hdtv=1';
-
-// Canned search query
-    if (preg_match('/^\s*canned:\s*(.+)\s*$/', $_SESSION['search']['searchstr'], $search_name)) {
-        $search_name = $search_name[1];
-    // Load the canned searches
-        require_once 'modules/tv/canned_searches.conf.php';
-    // Find the query
-        if ($Canned_Searches[$search_name]) {
-            $query = array($Canned_Searches[$search_name]);
-        }
+    if (!isset($_SESSION['search']['endtime'])) {
+        $_SESSION['search']['endtime'] = '+ 2 weeks';
+    }
+    if (!is_array($_SESSION['search']['as']) || empty($_SESSION['search']['as'])) {
+        if (!is_string($_SESSION['search']['as']))
+            $_SESSION['search']['as'] = '';
+        $_SESSION['search']['as'] = array($_SESSION['search']['as']);
+    }
+    if (!is_array($_SESSION['search']['af'])) {
+        if (gettype($_SESSION['search']['af']) == 'string')
+            $_SESSION['search']['af'] = array(array($_SESSION['search']['af']));
         else
-            add_warning("Unknown canned query: $search_name");
+            $_SESSION['search']['af'] = array(array('title'));
     }
-// How do we want to build this query?
-    elseif (preg_match('/\\S/', $_SESSION['search']['searchstr'])) {
-        $search_str  = $_SESSION['search']['searchstr'];
-        $search_name = $search_str;
-    // Normal search is an OR search
-        $joiner = ' OR ';
-    // If it starts with a pair of stars, it's a movie rating query
-        if (preg_match('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*#', $search_str, $stars)) {
-            $starcount = substr_count($stars[1], '*') / 4.0;
-            if (preg_match( "/1\\/2|\\.5|-/", $stars[1]))
-                $starcount += 0.125;
-        // Add this to the query -- convert european decimal to something mysql can understand
-            $extra_query[] = 'program.stars >= '.str_replace(',', '.', $starcount);
-        // Remove the stars from the search string so we can continue looking for other things
-            $search_str = preg_replace('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*#', '', $search_str);
-        }
-    // Regex search?
-        if (preg_match('#^/(.+)/$#', $search_str, $match)) {
-            $compare = ' REGEXP ';
-            $search = escape($match[1]);
-        }
+    if (!is_array($_SESSION['search']['aj'])) {
+        if (gettype($_SESSION['search']['aj']) == 'string')
+            $_SESSION['search']['af'] = array($_SESSION['search']['aj']);
         else
-            $search = search_escape($search_str);
-    // Build the query
-        if ($_SESSION['search']['search_title'])
-            $query[] = "program.title$compare$search";
-        if ($_SESSION['search']['search_subtitle'])
-            $query[] = "program.subtitle$compare$search";
-        if ($_SESSION['search']['search_description'])
-            $query[] = "program.description$compare$search";
-        if ($_SESSION['search']['search_category'])
-            $query[] = "program.category$compare$search";
-        if ($_SESSION['search']['search_category_type'])
-            $query[] = "program.category_type$compare$search";
-    // No query formed - default to quicksearch
-        if (!count($query)) {
-            $query[] = "program.title$compare$search";
-            $query[] = "program.subtitle$compare$search";
-            $_SESSION['search']['search_title']    = true;
-            $_SESSION['search']['search_subtitle'] = true;
-        }
-    }
-    else {
-    // Individual-field search is an AND search
-        $joiner = ' AND ';
-    // Build the query
-        if ($_SESSION['search']['title'])
-            $query[] = "program.title$compare".search_escape($_SESSION['search']['title']);
-        if (isset($_SESSION['search']['subtitle']))
-            $query[] = "program.subtitle$compare".search_escape($_SESSION['search']['subtitle']);
-        if (isset($_SESSION['search']['description']))
-            $query[] = "program.description$compare".search_escape($_SESSION['search']['description']);
-        if (isset($_SESSION['search']['category']))
-            $query[] = "program.category$compare".search_escape($_SESSION['search']['category']);
-        if (isset($_SESSION['search']['category_type']))
-            $query[] = "program.category_type$compare".search_escape($_SESSION['search']['category_type']);
-        if (isset($_SESSION['search']['originalairdate']))
-            $query[] = "program.originalairdate > NOW()";
+            $_SESSION['search']['af'] = array('AND');
     }
 
-// No query?
-    if (count($query) < 1) {
-        $Results = NULL;
-        if (!warnings())
-            add_warning(t('Please search for something.'));
-    }
-// Get ready to perform the query
-    else {
-    // Limit by start and end times?
-        # obviously, we need to do something here
-        # starttime
-        # endtime
-    // Build the query string
-        $query = '('.implode($joiner, $query).')';
-        if (count($extra_query))
-            $query = "($query AND ".implode(' AND ', $extra_query).')';
-    // Perform the query
-        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
-        if (empty($Results))
-            $Results = array();
-
-    // Group $Results by channum
-        $seen = array();
-        foreach( $Results as $dex => $row ) {
-            $uniquer = $row->programid . $row->starttime . $row->channel->channum;
-            if( isset($seen[$uniquer]) ) {
-                unset( $Results[$dex] );
-            } else {
-                $seen[$uniquer] = $dex;
-            }
-        }
-
-    // Remove dups from the results if requested
-        if ($_SESSION['search']['fold_dups']) {
-            $seen = array();        // program ids already seen
-            foreach( $Results as $dex => $row ) {
-                $uniquer = $row->programid . $row->channel->channum;
-                if( $seen[$uniquer] ) {
-                    // add a new field to the old row
-                    if ($row->starttime != $Results[$seen[$uniquer]]->starttime &&
-                            (!is_array($Results[$seen[$uniquer]]->extra_showings) ||
-                            !in_array($row->starttime,
-                            $Results[$seen[$uniquer]]->extra_showings))) {
-                        $Results[$seen[$uniquer]]->extra_showings[] =
-                            $row->starttime;
-                    }
-                    unset( $Results[$dex] );
-                } else {
-                    $seen[$uniquer] = $dex;
+// Compact any empty strings or fields, and make sure the data is in the right format
+    $fixeds = array();
+    $fixedf = array();
+    $fixedj = array();
+    foreach ($_SESSION['search']['as'] as $i => $str) {
+        if ($i > 0 && !preg_match('/\S/', $str))
+            continue;
+    // How is this joined to the previous string?
+        if (empty($_SESSION['search']['aj'][$i]))
+            $fixedj[] = 'AND';
+        else
+            $fixedj[] = $_SESSION['search']['aj'][$i];
+    // Fields for this string
+        $fields = array();
+        if (is_array($_SESSION['search']['af'][$i])) {
+            foreach ($_SESSION['search']['af'][$i] as $j => $field) {
+                if (!preg_match('/\S/', $field)) {
+                    if ($j > 0)
+                        continue;
+                    else
+                        $field = 'title';
                 }
-
+                $fields[] = $field;
             }
         }
-    // Sort the results
-        if (count($Results))
-            sort_programs($Results, 'search_sortby');
+        else
+            $_SESSION['search']['af'][$i] = array('title');
+        $fixeds[] = trim($str);
+        $fixedf[] = $fields;
     }
+    $_SESSION['search']['as'] = $fixeds;
+    $_SESSION['search']['af'] = $fixedf;
+    $_SESSION['search']['aj'] = $fixedj;
+
+// Swap mismatched star restrictions
+    if ($_SESSION['search']['stars_gt'] > $_SESSION['search']['stars_lt']) {
+        $tmp = $_SESSION['search']['stars_gt'];
+        $_SESSION['search']['stars_gt'] = $_SESSION['search']['stars_lt'];
+        $_SESSION['search']['stars_lt'] = $tmp;
+    }
+
+// Actually perform a search?
+    if (isset($_REQUEST['search'])) {
+    // Start the query
+        $query       = array();
+        $extra_query = array();
+
+    // Advanced search?
+        if ($_SESSION['search']['type'] == 'a') {
+        // Which kinds of programs are we searching through?
+            $extra_query[] = 'program.category_type IN ('
+                             .implode(',', $db->escape_array($_SESSION['search']['ctype']))
+                             .')';
+        // Star restrictions only apply to movies
+            if (in_array('movie', $_SESSION['search']['ctype'])) {
+                if (count($_SESSION['search']['ctype']) > 1) {
+                    $extra_query[] = 'IF(program.category_type = "movie",'
+                                    .'     program.stars >= '.$_SESSION['search']['stars_gt']
+                                    .' AND program.stars <= '.$_SESSION['search']['stars_lt']
+                                    .', 1)';
+                }
+                else {
+                    $extra_query[] = '     program.stars >= '.$_SESSION['search']['stars_gt']
+                                    .' AND program.stars <= '.$_SESSION['search']['stars_lt'];
+                }
+            }
+        // Date range
+            if (preg_match('/\S/', $_SESSION['search']['starttime'])) {
+                $tmpdate = strtotime($_SESSION['search']['starttime']);
+                if ($tmpdate == false) {
+                }
+                else {
+                    $extra_query[] = 'program.starttime>='.$db->escape(date('Y-m-d H:i:s', $tmpdate));
+                }
+            }
+            if (preg_match('/\S/', $_SESSION['search']['endtime'])) {
+                $tmpdate = strtotime($_SESSION['search']['endtime']);
+                if ($tmpdate == false) {
+                }
+                else {
+                    $extra_query[] = 'program.endtime<='.$db->escape(date('Y-m-d H:i:s', $tmpdate));
+                }
+            }
+        // Airdate range
+            if (preg_match('/\S/', $_SESSION['search']['airdate_start'])) {
+                $tmpdate = strtotime($_SESSION['search']['airdate_start']);
+                if ($tmpdate == false) {
+                }
+                else {
+                    $extra_query[] = 'IF(program.originalairdate IS NULL,'
+                                    .'program.airdate>='        .$db->escape(date('Y',     $tmpdate)).','
+                                    .'program.originalairdate>='.$db->escape(date('Y-m-d', $tmpdate)).')';
+                }
+            }
+            if (preg_match('/\S/', $_SESSION['search']['airdate_end'])) {
+                $tmpdate = strtotime($_SESSION['search']['airdate_end']);
+                if ($tmpdate == false) {
+                }
+                else {
+                    $extra_query[] = 'IF(program.originalairdate IS NULL,'
+                                    .'program.airdate<='        .$db->escape(date('Y',     $tmpdate)).','
+                                    .'program.originalairdate<='.$db->escape(date('Y-m-d', $tmpdate)).')';
+                }
+            }
+        // HDTV only?
+            if ($_SESSION['search']['hd'])
+                $extra_query[] = 'program.hdtv=1';
+        // Build the actual search query
+            $query = '';
+            foreach ($_SESSION['search']['as'] as $i => $string) {
+            // Joiner
+                if ($i > 0)
+                    $query .= ' '.$_SESSION['search']['aj'][$i];
+            // Match posibilities
+                $query .= '(';
+                list($compare, $search) = prep_search($string);
+                foreach ($_SESSION['search']['af'][$i] as $j => $af) {
+                    if ($j > 0)
+                        $query .= ' OR ';
+                    switch ($af) {
+                        case 'subtitle':
+                            $query .= 'program.subtitle';
+                            break;
+                        case 'description':
+                            $query .= 'program.description';
+                            break;
+                        case 'category':
+                            $query .= 'program.category';
+                            break;
+                        case 'title':
+                        default:
+                            $query .= 'program.title';
+                            break;
+                    }
+                // The actual
+                    $query .= " $compare $search";
+                }
+                $query .= ')';
+            }
+        }
+    // Canned search?
+        elseif (preg_match('/^\s*canned:\s*(.+)\s*$/', $_SESSION['search']['s'], $search_name)) {
+            $search_name = $search_name[1];
+        // Load the canned searches
+            require_once 'modules/tv/canned_searches.conf.php';
+        // Find the query
+            if ($Canned_Searches[$search_name]) {
+                $query = array($Canned_Searches[$search_name]);
+            }
+            else
+                add_warning("Unknown canned query: $search_name");
+        }
+    // Quick search is the default
+        else {
+        // Make a backup so we can edit it without affecting the original
+            $search_str = $_SESSION['search']['s'];
+        // If it starts with hd: it's an hd-only search
+            if (preg_match('/^hd:\s*(.+)$/', $search_str, $match)) {
+                $extra_query[] = 'program.hdtv=1';
+                $search_str    = $match[1];
+            }
+        // If The next thing starts with stars, it's a movie rating query
+            if (preg_match('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*(.*?)$#', $search_str, $match)) {
+                $starcount = substr_count($match[1], '*') / 4;
+                if (preg_match('/1\\/2|\\.5|-/', $match[1]))
+                    $starcount += 0.125;
+            // Add this to the query -- convert european decimal to something mysql can understand
+                $extra_query[] = 'program.stars >= '.str_replace(',', '.', $starcount);
+            // Remove the stars from the search string so we can continue looking for other things
+                $search_str = $match[2];
+            }
+        // Quick search doesn't search the past
+            $extra_query[] = 'program.endtime >= NOW()';
+        // Build the query
+            list($compare, $search) = prep_search($search_str);
+            $query[] = "program.title       $compare $search";
+            $query[] = "program.subtitle    $compare $search";
+            $query[] = "program.description $compare $search";
+            $query[] = "program.category    $compare $search";
+            $query   = implode(' OR ', $query);
+        }
+
+    // Finish the query and add any extra parameters
+        $query = "($query)";
+        if (count($extra_query) > 0)
+            $query .= ' AND ('.implode(' AND ', $extra_query).')';
+
+    // Search!
+        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
+
+    }
+
+// Query cleanup
+    if (empty($Results))
+        $Results = array();
+    else
+        sort_programs($Results, 'search_sortby');
+
+// Build a list of titles for figuring out alternate showings.  Use the same
+// key to make parsing things below a little easier.
+    $titles = array();
+    foreach ($Results as $key => $show) {
+        $titles[$show->title.': '.$show->subtitle][$key] =& $Results[$key];
+    }
+
+// Parse the show list for showings that can be consolidated/folded
+    $seen = array();
+    foreach ($Results as $key => $show) {
+        $tkey = $show->title.': '.$show->subtitle;
+    // Populate extra_showings info for other instances of this show
+        if (count($titles[$tkey]) > 1) {
+            foreach (array_keys($titles[$tkey]) as $key2) {
+                if ($key == $key2)
+                    continue;
+                $Results[$key2]->extra_showings[] = array($show->chanid, $show->starttime);
+            }
+        }
+    // Delete duplicate showings if we're sorting by title or category (genre)
+        if (!in_array($_SESSION['search_sortby'][0]['field'], array('title', 'category'))) {
+            continue;
+        }
+        elseif ($seen[$tkey]) {
+            unset($titles[$tkey][$key]);
+            unset($Results[$key]);
+        }
+        else {
+            $seen[$tkey] = true;
+        }
+    }
+    unset($titles);
 
 // Load the class for this page
     require_once tmpl_dir.'search.php';
@@ -203,12 +337,149 @@
 // Exit
     exit;
 
-// One little function to help us format search queries
-    function search_escape($value) {
-    // If we are asking for an exact match, dont put the '%'s in
-        if ($_SESSION['search']['search_exact'])
-            return escape($value);
-    // Replace whitespace with the % wildcard
-        return escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
+/**
+ * Prep a search string for matching, and return the comparison string
+ *
+ * @param
+ *
+ * @return array
+/**/
+    function prep_search($str) {
+    // Regex search?
+        if (preg_match('#^/(.+)/$#', $str, $match))
+            return array('REGEXP', search_escape($match[1], 'both'));
+    // Or figure out where the search should be anchored
+        elseif (preg_match('#^\^(.+)\$$#', $str, $match))
+            return array('LIKE', search_escape($match[1], 'both'));
+        elseif (preg_match('#^\^(.+)#', $str, $match))
+            return array('LIKE', search_escape($match[1], 'start'));
+        elseif (preg_match('#(.+)\$$#', $str, $match))
+            return array('LIKE', search_escape($match[1], 'end'));
+    // Default is no anchor
+        return array('LIKE', search_escape($str));
     }
 
+/**
+ * Helps format search queries.
+/**/
+    function search_escape($value, $anchor='none') {
+        global $db;
+    // MySQL trims all text fields, so we should do the same
+        $value = trim($value);
+    // Where do we anchor? Replace whitespace with the % wildcard, too.
+        switch ($anchor) {
+            case 'both':
+                return $db->escape($value);
+            case 'start':
+                return $db->escape(preg_replace('/[\\s-_]+/', '%', $value).'%');
+            case 'end':
+                return $db->escape('%'.preg_replace('/[\\s-_]+/', '%', $value));
+            default:
+                return $db->escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
+        }
+    }
+
+/**
+ * Prints out the entire advanced search string content block;
+/**/
+    function print_advanced_search_strings() {
+    // Search fields
+        static $search_fields;
+        if (empty($search_fields)) {
+            $search_fields = array(''            => '',
+                                   'title'       => html_entities(t('Title')),
+                                   'subtitle'    => html_entities(t('Subtitle')),
+                                   'description' => html_entities(t('Description')),
+                                   'category'    => html_entities(t('Category')));
+        }
+    // Adding a new search string, or just compress the existing one(s)
+        if (isset($_REQUEST['add_search_string']))
+            $strings = array_merge($_SESSION['search']['as'], array(''));
+        else
+            $strings = array_merge($_SESSION['search']['as']);
+    // Print each string that we know about
+        foreach ($strings as $i => $string) {
+        // Join the strings how?
+            if ($i != 0) {
+                echo '<p><select name="aj[', $i, ']">';
+                foreach (array('AND', 'OR') as $join) {
+                    echo '<option';
+                    if ($join == $_SESSION['search']['aj'][$i])
+                        echo ' SELECTED';
+                    echo ">$join</option>";
+                }
+                echo "</select></p>\n";
+            }
+        // Adding a new match field, or just compress the existing one(s)
+            if (empty($_SESSION['search']['af'][$i]))
+                $_SESSION['search']['af'][$i] = array('title');
+            if (isset($_REQUEST['add_search_field']) && $_REQUEST['add_search_field'] == $i)
+                $fields = array_merge($_SESSION['search']['af'][$i], array(''));
+            else
+                $fields = array_merge($_SESSION['search']['af'][$i]);
+        // Which fields do we match against?
+            foreach ($fields as $j => $af) {
+                if ($j > 0)
+                    echo ' ', t('or'), ' ';
+                echo '<select name="af[', $i, '][', $j, ']" id="af', $i, '.', $j, '"',
+                     ' onchange="search_field_change(', $i, ')">';
+                foreach ($search_fields as $field => $name) {
+                    if (empty($j) && empty($field))
+                        continue;
+                    echo '<option value="', $field, '"';
+                    if ($af == $field)
+                        echo ' SELECTED';
+                    echo '>', $name, '</option>';
+                }
+                echo '</select>';
+            }
+            echo ' <a id="add_search_field_', $i, '" onclick="add_search_field(', $i, ')">', t('more'), '...</a>',
+                 "<br />\n",
+                 t('matches'), ': <input type="text" size="35" name="as[', $i, ']" id="as', $i, '" value="',
+                 html_entities($string), "\" onchange=\"set_search('a')\">\n";
+        }
+        echo '<a onclick="add_search_string()">', t('add string'), '...</a>';
+    }
+
+/**
+ * Prints out a list of program types, along with checkboxes.
+/**/
+    function category_type_list() {
+        foreach (program::category_types() as $key => $type) {
+            $safe_type = html_entities($type);
+            echo '<input type="checkbox" name="ctype[]" id="ctype_', $key,
+                 '" value="',$safe_type, '"';
+            if (in_array($type, $_SESSION['search']['ctype']))
+                echo ' CHECKED';
+            echo '><label for="ctype_', $key, '">', $safe_type, '</label>';
+            if ($type == 'movie') {
+                echo ': ',
+                     movie_star_select('stars_gt'),
+                     ' to ',
+                     movie_star_select('stars_lt');
+            }
+            echo '<br />';
+        }
+    }
+
+/**
+ * Print a <select> with movie star ratings in it.
+/**/
+    function movie_star_select($name) {
+        echo '<select name="', $name, '">';
+        for ($x=0; $x<=1; $x+=.125) {
+            echo '<option value="', $x, '"';
+            if ($x == $_SESSION['search'][$name])
+                echo ' SELECTED';
+            echo '>', str_repeat(star_character, intVal($x * max_stars));
+            $frac = ($x * max_stars) - intVal($x * max_stars);
+            if ($frac >= .75)
+                echo '&frac34;';
+            elseif ($frac >= .5)
+                echo '&frac12;';
+            elseif ($frac >= .25)
+                echo '&frac14;';
+            echo '</option>';
+        }
+        echo '</select>';
+    }

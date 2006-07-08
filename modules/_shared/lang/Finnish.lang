@@ -37,10 +37,13 @@
     Toiminto
 "Activate"
     Aktivoi
+"add string"
 "Additional Tables"
     Täydentävät Taulukot
+"Advanced"
 "Advanced Options"
     Edistyneet Valinnat
+"Advanced Search"
 "airdate"
     lähetysaika
 "Airtime"
@@ -101,8 +104,6 @@
     Kategoria
 "Category Legend"
     Kategorioiden Värit/Merkitys
-"Category Type"
-    Kategorian Tyyppi
 "CC"
     Tekstitys
 "Channel"
@@ -210,8 +211,6 @@
     Jakso
 "Episode Number"
     Jakson Numero
-"Exact Match"
-    Tarkka Vastaavuus
 "Exec. Producer"
     Tuottaja
 "file size"
@@ -229,7 +228,6 @@
 "finetune"
     Hienosäätö
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Ennuste
 "Forget Old"
@@ -269,8 +267,6 @@
     mainokset merkitty
 "has cutlist"
     on leikattu
-"HD Only"
-    Vain Teräväpiirto
 "HDTV"
     Tarkkapiirto
 "High"
@@ -332,11 +328,13 @@
     Alin
 "Manual"
     Manuaalinen
+"matches"
 "Max star rating for movies"
 "minutes"
     minuuttia
 "Monday"
     Maanantai
+"more"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -383,8 +381,6 @@
     Ei vastaavuuksia
 "No matching programs found."
     Ei vastaavia ohjelmia.
-"No matching programs were found."
-    Vastaavia ohjelmia ei löytynyt.
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
 "No Tracks Available"
@@ -402,8 +398,10 @@
 "Number of timeslots"
 "Only display favourite channels"
     Vain Suosikkikanavat
+"Only match HD programs"
 "Only New Episodes"
     Vain Uudet Jaksot
+"or"
 "Original Airdate"
     Vuosi
 "Part $1 of $2"
@@ -416,8 +414,6 @@
     Haku Nimellä
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
-"Please search for something."
-    Syötä hakulause.
 "plot"
     juoni
 "Possible conflicts with this show"
@@ -589,22 +585,8 @@
 "Science Fiction Movies"
 "Search"
     Hae
-"Search fields"
-    Hakuasetukset
 "Search for:  $1"
     Hae:  $1
-"Search help"
-    Hakuapu
-"Search help: movie example"
-    *** 1/2 Seikkailu
-"Search help: movie search"
-    Elokuvan Haku
-"Search help: regex example"
-    /^Hyvä Ateria/
-"Search help: regex search"
-    regex Haku
-"Search options"
-    Hakuvalinnat
 "Search Phrase"
     Hakulause
 "Search Results"
@@ -655,8 +637,6 @@
     Tilarivi
 "Stereo"
     Stereo
-"Streaming"
-    Lähetys
 "Sub and Desc (Empty matches)"
     Kuvaus ja Nimike (Ei vastaavuuksia)
 "Subtitle"

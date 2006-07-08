@@ -86,10 +86,12 @@
             </div>
         </div>
         <div id="search">
-            <form action="<?php echo root ?>tv/search" method="post">
+            <form action="<?php echo root ?>tv/search" method="get">
+            <input type="hidden" name="type" value="q">
                 <div id="simple_search">
-                    <input id="search_text" type="text" name="searchstr" size="15" value="<?php echo html_entities($_SESSION['search']['searchstr']) ?>">
-                    <input id="search_submit" type="submit" class="submit" value="<?php echo t('Search') ?>">
+                    <input id="search_text" type="text" name="s" size="15" value="<?php echo html_entities($_SESSION['search']['s']) ?>">
+                    <input id="search_submit" type="submit" class="submit" name="search" value="<?php echo t('Search') ?>">
+                    (<a href="<?php echo root ?>tv/search"><?php echo t('Advanced') ?></a>)
                 </div>
             </form>
         </div>

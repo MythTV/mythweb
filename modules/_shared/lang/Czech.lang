@@ -28,9 +28,12 @@
 "Action"
 "Activate"
     Zapnout
+"add string"
 "Additional Tables"
+"Advanced"
 "Advanced Options"
     Rozšířené volby
+"Advanced Search"
 "airdate"
     datum vysílání
 "Airtime"
@@ -72,7 +75,6 @@
 "Category"
     Kategorie
 "Category Legend"
-"Category Type"
 "CC"
 "Channel"
 "channel"
@@ -144,7 +146,6 @@
 "Episode"
     Díl
 "Episode Number"
-"Exact Match"
 "Exec. Producer"
 "file size"
 "Filtered"
@@ -156,7 +157,6 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Předpověď počasí
 "Forget Old"
@@ -184,7 +184,6 @@
 "has bookmark"
 "has commflag"
 "has cutlist"
-"HD Only"
 "HDTV"
 "High"
 "Hosted by"
@@ -228,11 +227,13 @@
 "Low"
 "Manual"
     Ručně
+"matches"
 "Max star rating for movies"
 "minutes"
     minuty
 "Monday"
     Pondělí
+"more"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -269,7 +270,6 @@
 "NO DATA"
 "No matches found"
 "No matching programs found."
-"No matching programs were found."
 "No recording schedules have been defined."
     Žádné rozvrhy nahrávání nebyly definovány.
 "No Tracks Available"
@@ -284,8 +284,10 @@
 "Number of shows"
 "Number of timeslots"
 "Only display favourite channels"
+"Only match HD programs"
 "Only New Episodes"
     Jen nové díly
+"or"
 "Original Airdate"
     Původně vysíláno
 "Part $1 of $2"
@@ -296,7 +298,6 @@
 "People"
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-"Please search for something."
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -439,21 +440,7 @@
 "Science Fiction Movies"
 "Search"
     Vyhledat
-"Search fields"
-    Vyhledávací pole
 "Search for:  $1"
-"Search help"
-    Nápověda vyhledávání
-"Search help: movie example"
-    *** 1/2 Adventure
-"Search help: movie search"
-    movie search
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    regex search
-"Search options"
-    Volby vyhledávání
 "Search Phrase"
 "Search Results"
 "Search Type"
@@ -484,7 +471,6 @@
 "Status"
 "Status Bar"
 "Stereo"
-"Streaming"
 "Sub and Desc (Empty matches)"
 "Subtitle"
 "subtitle"

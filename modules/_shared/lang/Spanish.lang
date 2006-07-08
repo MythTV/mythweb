@@ -39,10 +39,13 @@
     Acción
 "Activate"
     Activar
+"add string"
 "Additional Tables"
     Tablas adicionales
+"Advanced"
 "Advanced Options"
     Opciones Avanzadas
+"Advanced Search"
 "airdate"
     emisión
 "Airtime"
@@ -103,8 +106,6 @@
     Categoría
 "Category Legend"
     Leyenda Categoría
-"Category Type"
-    Tipo Categoría
 "CC"
 "Channel"
     Canal
@@ -211,8 +212,6 @@
     Episodio
 "Episode Number"
     Nº Episodio
-"Exact Match"
-    Coincidencia exacta
 "Exec. Producer"
     Productor ejec.
 "file size"
@@ -234,7 +233,6 @@
 "finetune"
     sintonía fina
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Predicción
 "Forget Old"
@@ -275,8 +273,6 @@
     anuncios marcados
 "has cutlist"
     lista de corte
-"HD Only"
-    Sólo HD
 "HDTV"
     HDTV
 "High"
@@ -337,12 +333,16 @@
     Bajo
 "Manual"
     Manual
+"matches"
 "Max star rating for movies"
 "minutes"
     minutos
 "Monday"
     Lunes
+"more"
+    más
 "movie"
+    Película
 "Movies"
     Películas
 "Movies, 3&frac12; Stars or more"
@@ -393,8 +393,6 @@
     Sin resultados
 "No matching programs found."
     No hay programas coincidentes
-"No matching programs were found."
-    No se han encontrado programas coincidentes
 "No recording schedules have been defined."
     No se han definido programaciones
 "No Tracks Available"
@@ -414,8 +412,11 @@
 "Number of timeslots"
 "Only display favourite channels"
     Mostrar sólo canales favoritos
+"Only match HD programs"
 "Only New Episodes"
     Sólo nuevos episodios
+"or"
+    o
 "Original Airdate"
     Emisión original
 "Part $1 of $2"
@@ -429,8 +430,6 @@
     Búsqueda gente
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
-"Please search for something."
-    Busque algo
 "plot"
     resúmen
 "Possible conflicts with this show"
@@ -605,22 +604,8 @@
     Películas Ciencia Ficción
 "Search"
     Buscar
-"Search fields"
-    Campos búsqueda
 "Search for:  $1"
     Buscar: $1
-"Search help"
-    Ayuda búsqueda
-"Search help: movie example"
-    *** 1/2 Aventura
-"Search help: movie search"
-    buscar película
-"Search help: regex example"
-    /^Buenas maneras/
-"Search help: regex search"
-    búsqueda regex
-"Search options"
-    Opciones búsqueda
 "Search Phrase"
     Buscar frase
 "Search Results"
@@ -672,8 +657,6 @@
     Barra estado
 "Stereo"
     Estéreo
-"Streaming"
-    Transmitiendo
 "Sub and Desc (Empty matches)"
     Sub y Desc (Coincidencias vacías)
 "Subtitle"

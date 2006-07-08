@@ -33,10 +33,13 @@
     アクション
 "Activate"
     有効
+"add string"
 "Additional Tables"
     追加テーブル
+"Advanced"
 "Advanced Options"
     アドバンストオプション
+"Advanced Search"
 "airdate"
     放送日
 "Airtime"
@@ -95,8 +98,6 @@
     カテゴリー
 "Category Legend"
     カテゴリー凡例
-"Category Type"
-    カテゴリータイプ
 "CC"
 "Channel"
     チャンネル
@@ -198,8 +199,6 @@
     サブタイトル
 "Episode Number"
     番組番号
-"Exact Match"
-    正確に一致
 "Exec. Producer"
     製作責任者
 "file size"
@@ -219,7 +218,6 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Fold Duplicates"
 "Forecast"
     予報
 "Forget Old"
@@ -257,8 +255,6 @@
     CMマーク
 "has cutlist"
     カットリスト
-"HD Only"
-    HDのみ
 "HDTV"
 "High"
     高
@@ -318,11 +314,13 @@
     低
 "Manual"
     手動
+"matches"
 "Max star rating for movies"
 "minutes"
     分
 "Monday"
     月曜日
+"more"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -367,8 +365,6 @@
     一致する物がありませんでした
 "No matching programs found."
     該当する番組がありません
-"No matching programs were found."
-    一致する番組がありませんでした
 "No recording schedules have been defined."
     予約が設定されていません
 "No Tracks Available"
@@ -386,8 +382,10 @@
 "Number of timeslots"
 "Only display favourite channels"
     お気に入りのチャンネルのみ表示する
+"Only match HD programs"
 "Only New Episodes"
     新しい番組のみ
+"or"
 "Original Airdate"
     初回放送
 "Part $1 of $2"
@@ -401,8 +399,6 @@
     ピープルサーチ
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
-"Please search for something."
-    検索する文字を入力してください。
 "plot"
     脚本
 "Possible conflicts with this show"
@@ -574,22 +570,8 @@
 "Science Fiction Movies"
 "Search"
     検索
-"Search fields"
-    検索フィールド
 "Search for:  $1"
     $1 の検索結果
-"Search help"
-    検索ヘルプ
-"Search help: movie example"
-    *** 1/2 アドベンチャー
-"Search help: movie search"
-    映画検索
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    正規表現検索
-"Search options"
-    検索オプション
 "Search Phrase"
     サーチフレーズ
 "Search Results"
@@ -640,8 +622,6 @@
     ステータスバー
 "Stereo"
     ステレオ
-"Streaming"
-    ストリーミング
 "Sub and Desc (Empty matches)"
     サブタイトルと内容(エンプティーマッチ)
 "Subtitle"

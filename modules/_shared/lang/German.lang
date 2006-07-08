@@ -39,10 +39,13 @@
     Aktion
 "Activate"
     Aktivieren
+"add string"
 "Additional Tables"
     zus. Tabellen
+"Advanced"
 "Advanced Options"
     Erweiterte Optionen
+"Advanced Search"
 "airdate"
     Sendezeit
 "Airtime"
@@ -104,8 +107,6 @@
     Kategorie
 "Category Legend"
     Kategorien
-"Category Type"
-    Kategorietyp
 "CC"
     CC
 "Channel"
@@ -213,8 +214,6 @@
     Folge
 "Episode Number"
     Folge Nummer
-"Exact Match"
-    Exakte Übereinstimmung
 "Exec. Producer"
     Produzent
 "file size"
@@ -236,7 +235,6 @@
 "finetune"
     Feinabstimmung
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Vorhersage
 "Forget Old"
@@ -277,8 +275,6 @@
     Werbung markiert
 "has cutlist"
     Schnittliste
-"HD Only"
-    nur in HDTV
 "HDTV"
     HDTV
 "High"
@@ -338,11 +334,14 @@
     Min
 "Manual"
     Manuell
+"matches"
 "Max star rating for movies"
 "minutes"
     Minuten
 "Monday"
     Montag
+"more"
+    mehr
 "movie"
 "Movies"
     Spielfilme
@@ -394,8 +393,6 @@
     Nichts gefunden
 "No matching programs found."
     Keine passenden Sendungen gefunden.
-"No matching programs were found."
-    Keine passenden Sendungen gefunden.
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
 "No Tracks Available"
@@ -414,8 +411,11 @@
 "Number of timeslots"
 "Only display favourite channels"
     Nur Favoriten anzeigen
+"Only match HD programs"
 "Only New Episodes"
     Nur neue Folgen
+"or"
+    oder
 "Original Airdate"
     Produktion
 "Part $1 of $2"
@@ -429,8 +429,6 @@
     Suche nach Darsteller
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
-"Please search for something."
-    Bitte suchen Sie nach etwas.
 "plot"
     Handlung
 "Possible conflicts with this show"
@@ -605,22 +603,8 @@
     Science-Fiction Filme
 "Search"
     Suche
-"Search fields"
-    Suchfelder
 "Search for:  $1"
     Suche nach: $1
-"Search help"
-    Hilfe zur Suche
-"Search help: movie example"
-    *** 1/2 Abenteuer
-"Search help: movie search"
-    Spielfilmsuche
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    reg. Ausdrücke
-"Search options"
-    Suchoptionen
 "Search Phrase"
     Suchtext
 "Search Results"
@@ -671,7 +655,6 @@
     Statuszeile
 "Stereo"
     Stereo
-"Streaming"
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)
 "Subtitle"

@@ -39,10 +39,13 @@
     Handling
 "Activate"
     Aktivera
+"add string"
 "Additional Tables"
     Ytterligare tabeller
+"Advanced"
 "Advanced Options"
     Avancerade inställningar
+"Advanced Search"
 "airdate"
     datum
 "Airtime"
@@ -104,8 +107,6 @@
     Kategori
 "Category Legend"
     Kategoriförklaring
-"Category Type"
-    Kategorityp
 "CC"
     Textning
 "Channel"
@@ -213,8 +214,6 @@
     Avsnitt
 "Episode Number"
     Avsnittsnummer
-"Exact Match"
-    Exakt matchning
 "Exec. Producer"
     Producent
 "file size"
@@ -236,7 +235,6 @@
 "finetune"
     finjustera
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Prognos
 "Forget Old"
@@ -277,8 +275,6 @@
     markerad reklam
 "has cutlist"
     klipplista
-"HD Only"
-    Endast HD
 "HDTV"
     HDTV
 "High"
@@ -341,11 +337,13 @@
     Låg
 "Manual"
     Manuell
+"matches"
 "Max star rating for movies"
 "minutes"
     minuter
 "Monday"
     Måndag
+"more"
 "movie"
 "Movies"
     Filmer
@@ -397,8 +395,6 @@
     Inga matchningar funna
 "No matching programs found."
     Inga matchande program hittades.
-"No matching programs were found."
-    Inga matchande program hittades.
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
 "No Tracks Available"
@@ -418,8 +414,10 @@
 "Number of timeslots"
 "Only display favourite channels"
     Visa endast favoritkanaler
+"Only match HD programs"
 "Only New Episodes"
     Endast nya avsnitt
+"or"
 "Original Airdate"
     Sändningsdatum
 "Part $1 of $2"
@@ -433,8 +431,6 @@
     Sök person
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
-"Please search for something."
-    Välj något att söka efter.
 "plot"
     handling
 "Possible conflicts with this show"
@@ -609,22 +605,8 @@
     Science Fiction-filmer
 "Search"
     Sök
-"Search fields"
-    Sökfält
 "Search for:  $1"
     Sök efter:  $1
-"Search help"
-    Sökhjälp
-"Search help: movie example"
-    *** Äventyr
-"Search help: movie search"
-    Filmsökning
-"Search help: regex example"
-    /^Alpint/
-"Search help: regex search"
-    Reguljärt uttryck
-"Search options"
-    Sökval
 "Search Phrase"
     Sök fras
 "Search Results"
@@ -676,8 +658,6 @@
     Statusrad
 "Stereo"
     Stereo
-"Streaming"
-    Strömmande
 "Sub and Desc (Empty matches)"
     Undertitel &amp; beskrivning
 "Subtitle"

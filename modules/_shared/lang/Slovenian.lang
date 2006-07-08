@@ -32,9 +32,12 @@
 "Action"
 "Activate"
     Aktiviraj
+"add string"
 "Additional Tables"
+"Advanced"
 "Advanced Options"
     Dodatne možnosti
+"Advanced Search"
 "airdate"
     datum oddajanja
 "Airtime"
@@ -81,8 +84,6 @@
     Kategorija
 "Category Legend"
     Legenda kategorij
-"Category Type"
-    Tip kategorij
 "CC"
 "Channel"
     Kanal
@@ -167,8 +168,6 @@
 "Episode"
     Oddaja
 "Episode Number"
-"Exact Match"
-    Točen zadetek
 "Exec. Producer"
     Scenarist
 "file size"
@@ -184,7 +183,6 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Napoved
 "Forget Old"
@@ -220,8 +218,6 @@
     ima označene reklame
 "has cutlist"
     ima seznam rezov
-"HD Only"
-    Samo HD
 "HDTV"
 "High"
     Visoka
@@ -273,11 +269,13 @@
 "Low"
     Nizka
 "Manual"
+"matches"
 "Max star rating for movies"
 "minutes"
     minute
 "Monday"
     Ponedeljek
+"more"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -314,7 +312,6 @@
 "No matches found"
     Ni zadetkov
 "No matching programs found."
-"No matching programs were found."
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
 "No Tracks Available"
@@ -331,8 +328,10 @@
 "Number of timeslots"
 "Only display favourite channels"
     Prikaži samo priljubljene kanale
+"Only match HD programs"
 "Only New Episodes"
     Samo eno oddajo
+"or"
 "Original Airdate"
     Izvirni datum predvajanja
 "Part $1 of $2"
@@ -342,8 +341,6 @@
 "People"
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-"Please search for something."
-    Prosim poiščite kaj
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -501,22 +498,8 @@
 "Science Fiction Movies"
 "Search"
     Iskanje
-"Search fields"
-    Iskalna polja
 "Search for:  $1"
     Iskanje:  $1
-"Search help"
-    Pomoč iskanja
-"Search help: movie example"
-    *** 1/2 Adventure
-"Search help: movie search"
-    movie search
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    regex search
-"Search options"
-    Možnosti iskanja
 "Search Phrase"
 "Search Results"
     Rezultati iskanja
@@ -558,7 +541,6 @@
 "Status Bar"
     Statusna vrstica
 "Stereo"
-"Streaming"
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)
 "Subtitle"

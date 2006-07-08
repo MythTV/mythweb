@@ -37,9 +37,12 @@
 "Action"
 "Activate"
     Activer
+"add string"
 "Additional Tables"
+"Advanced"
 "Advanced Options"
     Options avancées
+"Advanced Search"
 "airdate"
     Date de diffusion
 "Airtime"
@@ -86,8 +89,6 @@
     cat&eacute;gorie
 "Category Legend"
     L&eacute;g&eacute;nde de Cat&eacute;gorie
-"Category Type"
-    Type de cat&eacute;gorie
 "CC"
 "Channel"
     Cha&icirc;ne
@@ -172,8 +173,6 @@
 "Episode"
     Episode
 "Episode Number"
-"Exact Match"
-    Correspondance exacte
 "Exec. Producer"
     Producteur
 "file size"
@@ -189,7 +188,6 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Pr&eacute;visions
 "Forget Old"
@@ -225,8 +223,6 @@
     a des marques de pub
 "has cutlist"
     a une liste de coupe
-"HD Only"
-    TVHD seul
 "HDTV"
 "High"
     &eacute;lev&eacute;
@@ -279,11 +275,13 @@
 "Low"
     faible
 "Manual"
+"matches"
 "Max star rating for movies"
 "minutes"
     minutes
 "Monday"
     Lundi
+"more"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -320,7 +318,6 @@
 "No matches found"
     Aucune correspondance
 "No matching programs found."
-"No matching programs were found."
 "No recording schedules have been defined."
     Aucune programmation n'est définie
 "No Tracks Available"
@@ -337,8 +334,10 @@
 "Number of timeslots"
 "Only display favourite channels"
     Afficher seulement vos chaînes favorites
+"Only match HD programs"
 "Only New Episodes"
     Seulement les nouveaux &eacute;pisodes
+"or"
 "Original Airdate"
     Heure de diffusion d&acute;origine
 "Part $1 of $2"
@@ -349,8 +348,6 @@
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
-"Please search for something."
-    Veuillez chercher quelque chose
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -509,22 +506,8 @@
 "Science Fiction Movies"
 "Search"
     Recherche
-"Search fields"
-    Champs de recherche
 "Search for:  $1"
     Chercher:    $1
-"Search help"
-    Aide de la recherche
-"Search help: movie example"
-    *** 1/2 Adventure
-"Search help: movie search"
-    movie search
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    regex search
-"Search options"
-    Options de recherche
 "Search Phrase"
 "Search Results"
     R&eacute;sultats de recherche
@@ -566,7 +549,6 @@
 "Status Bar"
     Barre de statut
 "Stereo"
-"Streaming"
 "Sub and Desc (Empty matches)"
     Sub et Desc (Vide correspond)
 "Subtitle"

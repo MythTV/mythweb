@@ -39,10 +39,13 @@
     Actie
 "Activate"
     Activeren
+"add string"
 "Additional Tables"
     Aanvullende tabellen
+"Advanced"
 "Advanced Options"
     Geavanceerde Opties
+"Advanced Search"
 "airdate"
     uitzenddatum
 "Airtime"
@@ -104,8 +107,6 @@
     Categorie
 "Category Legend"
     Categorie Legende
-"Category Type"
-    Categorie Type
 "CC"
     OND
 "Channel"
@@ -213,8 +214,6 @@
     Aflevering
 "Episode Number"
     Aflevering nr.
-"Exact Match"
-    Exacte Overeenkomst
 "Exec. Producer"
     Uitv. Producent
 "file size"
@@ -236,7 +235,6 @@
 "finetune"
     fijn afstemmen
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Voorspelling
 "Forget Old"
@@ -277,8 +275,6 @@
     heeft reclamemarkering
 "has cutlist"
     heeft knippunten
-"HD Only"
-    Enkel HD
 "HDTV"
     HDTV
 "High"
@@ -340,11 +336,13 @@
     Minimum
 "Manual"
     Manueel
+"matches"
 "Max star rating for movies"
 "minutes"
     minuten
 "Monday"
     Maandag
+"more"
 "movie"
 "Movies"
     Films
@@ -396,8 +394,6 @@
     Geen programma's gevonden
 "No matching programs found."
     Geen overeenkomsten gevonden
-"No matching programs were found."
-    Geen overeenkomende programma's gevonden
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
 "No Tracks Available"
@@ -417,8 +413,10 @@
 "Number of timeslots"
 "Only display favourite channels"
     Enkel favoriete zenders laten zien
+"Only match HD programs"
 "Only New Episodes"
     Enkel Nieuwe Afleveringen
+"or"
 "Original Airdate"
     Oorsp. Datum
 "Part $1 of $2"
@@ -432,8 +430,6 @@
     Personen zoeken
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
-"Please search for something."
-    Graag iets zoeken.
 "plot"
     korte inhoud
 "Possible conflicts with this show"
@@ -607,22 +603,8 @@
     Science Fiction Films
 "Search"
     Zoeken
-"Search fields"
-    Zoek Velden
 "Search for:  $1"
     Zoeken: $1
-"Search help"
-    Zoek Help
-"Search help: movie example"
-    *** 1/2 Avontuur
-"Search help: movie search"
-    zoek films
-"Search help: regex example"
-    /^Good Eats/
-"Search help: regex search"
-    regex zoeken
-"Search options"
-    Zoeken Opties
 "Search Phrase"
     Zin zoeken
 "Search Results"
@@ -674,8 +656,6 @@
     Statusbalk
 "Stereo"
     Stereo
-"Streaming"
-    Stroom aan het doorsturen
 "Sub and Desc (Empty matches)"
     Dubbels en Beschrijving
 "Subtitle"
