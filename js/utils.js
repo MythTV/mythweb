@@ -143,7 +143,7 @@
             var hidden = document.createElement('input');
             hidden.type  = 'hidden';
             hidden.name  = newvar;
-            hidden.value = val ? val : 1;
+            hidden.value = val != null ? val : 1;
             form.appendChild(hidden);
         }
     // Submit
