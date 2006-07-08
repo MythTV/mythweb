@@ -285,19 +285,19 @@ class Program {
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
         // Load the remaining info we got from mythbackend
-            $this->title           = $data[0];                  # program name/title
-            $this->subtitle        = $data[1];                  # episode name
-            $this->description     = $data[2];                  # episode description
+            $this->title           = $data[0];      # program name/title
+            $this->subtitle        = $data[1];      # episode name
+            $this->description     = $data[2];      # episode description
             $this->category        = $data[3];
-            $this->chanid          = $data[4];   # mysql chanid
+            $this->chanid          = $data[4];      # mysql chanid
             $this->channum         = $data[5];
             $this->callsign        = $data[6];
             $this->channame        = $data[7];
             $this->filename        = $data[8];
-            $fs_high               = $data[9];   # high-word of file size
-            $fs_low                = $data[10];  # low-word of file size
-            $this->starttime       = $data[11];  # show start-time
-            $this->endtime         = $data[12];  # show end-time
+            $fs_high               = $data[9];      # high-word of file size
+            $fs_low                = $data[10];     # low-word of file size
+            $this->starttime       = $data[11];     # show start-time
+            $this->endtime         = $data[12];     # show end-time
             $this->hostname        = $data[16];
             #$this->sourceid       = $data[17];
             $this->cardid          = $data[18];
