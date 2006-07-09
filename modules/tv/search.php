@@ -46,28 +46,19 @@
     if (isset($_REQUEST['s']))
         $_SESSION['search']['s']             = trim($_REQUEST['s']);
 
-    if (isset($_REQUEST['as']))
+    if (isset($_REQUEST['as'])) {
         $_SESSION['search']['as']            = $_REQUEST['as'];
-    if (isset($_REQUEST['af']))
         $_SESSION['search']['af']            = $_REQUEST['af'];
-    if (isset($_REQUEST['aj']))
         $_SESSION['search']['aj']            = $_REQUEST['aj'];
-    if (isset($_REQUEST['ctype']))
         $_SESSION['search']['ctype']         = $_REQUEST['ctype'];
-    if (isset($_REQUEST['stars_gt']))
         $_SESSION['search']['stars_gt']      = floatVal($_REQUEST['stars_gt']);
-    if (isset($_REQUEST['stars_lt']))
         $_SESSION['search']['stars_lt']      = floatVal($_REQUEST['stars_lt']);
-    if (isset($_REQUEST['hd']))
         $_SESSION['search']['hd']            = $_REQUEST['hd'] ? true : false;
-    if (isset($_REQUEST['airdate_start']))
         $_SESSION['search']['airdate_start'] = trim($_REQUEST['airdate_start']);
-    if (isset($_REQUEST['airdate_end']))
         $_SESSION['search']['airdate_end']   = trim($_REQUEST['airdate_end']);
-    if (isset($_REQUEST['starttime']))
         $_SESSION['search']['starttime']     = trim($_REQUEST['starttime']);
-    if (isset($_REQUEST['endtime']))
         $_SESSION['search']['endtime']       = trim($_REQUEST['endtime']);
+    }
 
 // Session defaults
     if (!is_array($_SESSION['search']['ctype']) || empty($_SESSION['search']['ctype']))

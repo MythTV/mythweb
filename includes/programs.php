@@ -287,6 +287,7 @@ class Program {
     var $thumb_url;
 
     function Program($data) {
+        debug($data);
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
         // Load the remaining info we got from mythbackend
