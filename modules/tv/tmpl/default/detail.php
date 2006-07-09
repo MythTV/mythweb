@@ -61,7 +61,7 @@
         if ($program && $program->previouslyshown)
             echo ' ('.t('Repeat').')';
         echo '<br />'
-            .t('$1 to $2', strftime('%r', $schedule->starttime), strftime('%r', $schedule->endtime));
+            .t('$1 to $2', strftime($_SESSION['time_format'], $schedule->starttime), strftime($_SESSION['time_format'], $schedule->endtime));
         if ($program)
             echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
         if ($_GET['recordid'])
