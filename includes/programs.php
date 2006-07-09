@@ -189,6 +189,8 @@
         // This program has already been loaded, and is attached to a recording schedule
             if ($Scheduled_Recordings[$data['channum']][$data['starttime_unix']]) {
                 $program =& $Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0];
+            // merge in data fetched from DB
+                $program->merge(new Program($data));
             }
         // Otherwise, create a new instance of the program
             else {
@@ -348,11 +350,17 @@ class Program {
                 $this->thumb_url = root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($this->filename)));
             }
         // Assign the program flags
-            $this->has_commflag = ($progflags & 0x01) ? true : false;    // FL_COMMFLAG  = 0x01
-            $this->has_cutlist  = ($progflags & 0x02) ? true : false;    // FL_CUTLIST   = 0x02
-            $this->auto_expire  = ($progflags & 0x04) ? true : false;    // FL_AUTOEXP   = 0x04
-            $this->is_editing   = ($progflags & 0x08) ? true : false;    // FL_EDITING   = 0x08
-            $this->bookmark     = ($progflags & 0x10) ? true : false;    // FL_BOOKMARK  = 0x10
+            $this->has_commflag   = ($progflags & 0x001) ? true : false;    // FL_COMMFLAG       = 0x001
+            $this->has_cutlist    = ($progflags & 0x002) ? true : false;    // FL_CUTLIST        = 0x002
+            $this->auto_expire    = ($progflags & 0x004) ? true : false;    // FL_AUTOEXP        = 0x004
+            $this->is_editing     = ($progflags & 0x008) ? true : false;    // FL_EDITING        = 0x008
+            $this->bookmark       = ($progflags & 0x010) ? true : false;    // FL_BOOKMARK       = 0x010
+                                                                            // FL_INUSERECORDING = 0x020
+                                                                            // FL_INUSEPLAYING   = 0x040
+            $this->stereo         = ($progflags & 0x080) ? true : false;    // FL_STEREO         = 0x080
+            $this->closecaptioned = ($progflags & 0x100) ? true : false;    // FL_CC             = 0x100
+            $this->hdtv           = ($progflags & 0x200) ? true : false;    // FL_HDTV           = 0x200
+                                                                            // FL_TRANSCODED     = 0x400
         // Add a generic "will record" variable, too
             $this->will_record = ($this->rectype && $this->rectype != rectype_dontrec) ? true : false;
         }
@@ -431,8 +439,22 @@ class Program {
     // Find out which css category this program falls into
         if ($this->chanid != '')
             $this->class = category_class($this);
+    // Create the fancy description
+        $this->update_fancy_desc();
+    }
 
-    // Get a nice description with the full details
+    function merge($prog) {
+        foreach (get_object_vars($prog) as $name => $value) {
+            if ($value && !$this->$name) {
+                $this->$name = $value;
+            }
+        }
+    // update fancy description in case a part of it changed
+        $this->update_fancy_desc();
+    }
+
+    function update_fancy_desc() {
+        // Get a nice description with the full details
         $details = array();
         if ($this->hdtv)
             $details[] = t('HDTV');
@@ -452,7 +474,6 @@ class Program {
         $this->fancy_description = $this->description;
         if (count($details) > 0)
             $this->fancy_description .= ' ('.implode(', ', $details).')';
-
     }
 
 /**
