@@ -111,8 +111,6 @@
     // No sortby, but requested a reversal of the main field
         elseif ($_GET['reverse'])
             $_SESSION[$session][0]['reverse'] = $_SESSION[$session][0]['reverse'] ? false : true;
-        else
-            $_SESSION[$session][0]['reverse'] = false;
     // Once we've processed the information, we should make sure that we're actually sorting an array
         if (!count($programs))
             return;
