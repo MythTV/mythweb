@@ -116,7 +116,9 @@
 <?php       }
             if (strlen($program->category_type)) { ?>
                 <dt><?php echo t('Type') ?>:&nbsp;</dt>
-                <dd><?php echo $program->showtype, ' (', $program->seriesid, ')' ?></dd>
+                <dd><?php echo $program->category_type;
+                          if ($program->seriesid)
+                              echo ' (', $program->seriesid, ')' ?></dd>
 <?php       }
             if (strlen($program->syndicatedepisodenumber) > 0) {
 ?>
