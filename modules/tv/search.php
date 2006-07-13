@@ -240,7 +240,7 @@
             }
         }
     // Canned search?
-        elseif (preg_match('/^\s*canned:\s*(.+)\s*$/', $_SESSION['search']['s'], $search_name)) {
+        elseif (preg_match('/^\s*canned:\s*(.+)\s*$/i', $_SESSION['search']['s'], $search_name)) {
             $search_name = $search_name[1];
         // Load the canned searches
             require_once 'modules/tv/canned_searches.conf.php';
@@ -248,7 +248,7 @@
             if (empty($Canned_Searches[$search_name]))
                 add_warning("Unknown canned query: $search_name");
             else
-                $query = array($Canned_Searches[$search_name]);
+                $query = $Canned_Searches[$search_name];
         }
     // Quick search is the default
         else {
