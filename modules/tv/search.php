@@ -245,11 +245,10 @@
         // Load the canned searches
             require_once 'modules/tv/canned_searches.conf.php';
         // Find the query
-            if ($Canned_Searches[$search_name]) {
-                $query = array($Canned_Searches[$search_name]);
-            }
-            else
+            if (empty($Canned_Searches[$search_name]))
                 add_warning("Unknown canned query: $search_name");
+            else
+                $query = array($Canned_Searches[$search_name]);
         }
     // Quick search is the default
         else {
@@ -291,7 +290,8 @@
         }
 
     // Search!
-        $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
+        if (!empty($query))
+            $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
 
     }
 
