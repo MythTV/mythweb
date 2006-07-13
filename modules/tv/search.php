@@ -86,9 +86,9 @@
     }
     if (!is_array($_SESSION['search']['aj'])) {
         if (gettype($_SESSION['search']['aj']) == 'string')
-            $_SESSION['search']['af'] = array($_SESSION['search']['aj']);
+            $_SESSION['search']['aj'] = array($_SESSION['search']['aj']);
         else
-            $_SESSION['search']['af'] = array('AND');
+            $_SESSION['search']['aj'] = array('AND');
     }
 
 // Compact any empty strings or fields, and make sure the data is in the right format
