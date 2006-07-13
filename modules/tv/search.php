@@ -211,30 +211,32 @@
                 if ($i > 0)
                     $query .= ' '.$_SESSION['search']['aj'][$i];
             // Match posibilities
-                $query .= '(';
-                list($compare, $search) = prep_search($string);
-                foreach ($_SESSION['search']['af'][$i] as $j => $af) {
-                    if ($j > 0)
-                        $query .= ' OR ';
-                    switch ($af) {
-                        case 'subtitle':
-                            $query .= 'program.subtitle';
-                            break;
-                        case 'description':
-                            $query .= 'program.description';
-                            break;
-                        case 'category':
-                            $query .= 'program.category';
-                            break;
-                        case 'title':
-                        default:
-                            $query .= 'program.title';
-                            break;
+                if (!empty($_SESSION['search']['af'][$i])) {
+                    $query .= '(';
+                    list($compare, $search) = prep_search($string);
+                    foreach ($_SESSION['search']['af'][$i] as $j => $af) {
+                        if ($j > 0)
+                            $query .= ' OR ';
+                        switch ($af) {
+                            case 'subtitle':
+                                $query .= 'program.subtitle';
+                                break;
+                            case 'description':
+                                $query .= 'program.description';
+                                break;
+                            case 'category':
+                                $query .= 'program.category';
+                                break;
+                            case 'title':
+                            default:
+                                $query .= 'program.title';
+                                break;
+                        }
+                    // The actual
+                        $query .= " $compare $search";
                     }
-                // The actual
-                    $query .= " $compare $search";
+                    $query .= ')';
                 }
-                $query .= ')';
             }
         }
     // Canned search?
@@ -280,9 +282,13 @@
         }
 
     // Finish the query and add any extra parameters
-        $query = "($query)";
-        if (count($extra_query) > 0)
-            $query .= ' AND ('.implode(' AND ', $extra_query).')';
+        if ($query)
+            $query = "($query)";
+        if (count($extra_query) > 0) {
+            if ($query)
+                $query .= ' AND ';
+            $query .= '('.implode(' AND ', $extra_query).')';
+        }
 
     // Search!
         $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
