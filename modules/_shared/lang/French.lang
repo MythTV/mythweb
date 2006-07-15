@@ -89,7 +89,11 @@
     cat&eacute;gorie
 "Category Legend"
     L&eacute;g&eacute;nde de Cat&eacute;gorie
+"Category Type"
 "CC"
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
 "Channel"
     Cha&icirc;ne
 "channel"
@@ -173,6 +177,7 @@
 "Episode"
     Episode
 "Episode Number"
+"Exact Match"
 "Exec. Producer"
     Producteur
 "file size"
@@ -188,6 +193,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
+"Fold Duplicates"
 "Forecast"
     Pr&eacute;visions
 "Forget Old"
@@ -223,6 +229,7 @@
     a des marques de pub
 "has cutlist"
     a une liste de coupe
+"HD Only"
 "HDTV"
 "High"
     &eacute;lev&eacute;
@@ -282,6 +289,8 @@
 "Monday"
     Lundi
 "more"
+"move guide left"
+"move guide right"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -318,6 +327,7 @@
 "No matches found"
     Aucune correspondance
 "No matching programs found."
+"No matching programs were found."
 "No recording schedules have been defined."
     Aucune programmation n'est définie
 "No Tracks Available"
@@ -348,6 +358,7 @@
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
+"Please search for something."
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -368,6 +379,8 @@
     Profil
 "profile"
     Profil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
 "Program ID"
 "Program Listing"
@@ -506,8 +519,15 @@
 "Science Fiction Movies"
 "Search"
     Recherche
+"Search fields"
 "Search for:  $1"
     Chercher:    $1
+"Search help"
+"Search help: movie example"
+"Search help: movie search"
+"Search help: regex example"
+"Search help: regex search"
+"Search options"
 "Search Phrase"
 "Search Results"
     R&eacute;sultats de recherche
@@ -531,6 +551,7 @@
 "Show pixmaps"
 "Show recordings"
     Monter les enregistrements
+"show/hide advanced options"
 "Showing all programs from the $1 group."
 "Showing all programs."
 "SI Units?"

@@ -227,6 +227,15 @@
                             case 'category':
                                 $query .= 'program.category';
                                 break;
+                            case 'channum':
+                                $query .= 'channel.channum';
+                                break;
+                            case 'channame':
+                                $query .= 'channel.name';
+                                break;
+                            case 'callsign':
+                                $query .= 'channel.callsign';
+                                break;
                             case 'title':
                             default:
                                 $query .= 'program.title';
@@ -399,7 +408,11 @@
                                    'title'       => html_entities(t('Title')),
                                    'subtitle'    => html_entities(t('Subtitle')),
                                    'description' => html_entities(t('Description')),
-                                   'category'    => html_entities(t('Category')));
+                                   'category'    => html_entities(t('Category')),
+                                   'channum'     => html_entities(t('Chan. Number')),
+                                   'channame'    => html_entities(t('Chan. Name')),
+                                   'callsign'    => html_entities(t('Chan. Callsign')),
+                                  );
         }
     // Adding a new search string, or just compress the existing one(s)
         if (isset($_REQUEST['add_search_string']))

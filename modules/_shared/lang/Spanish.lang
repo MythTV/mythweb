@@ -106,7 +106,11 @@
     Categoría
 "Category Legend"
     Leyenda Categoría
+"Category Type"
 "CC"
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
 "Channel"
     Canal
 "channel"
@@ -212,6 +216,7 @@
     Episodio
 "Episode Number"
     Nº Episodio
+"Exact Match"
 "Exec. Producer"
     Productor ejec.
 "file size"
@@ -233,6 +238,7 @@
 "finetune"
     sintonía fina
 "First recording"
+"Fold Duplicates"
 "Forecast"
     Predicción
 "Forget Old"
@@ -273,6 +279,7 @@
     anuncios marcados
 "has cutlist"
     lista de corte
+"HD Only"
 "HDTV"
     HDTV
 "High"
@@ -341,6 +348,8 @@
     Lunes
 "more"
     más
+"move guide left"
+"move guide right"
 "movie"
     Película
 "Movies"
@@ -393,6 +402,7 @@
     Sin resultados
 "No matching programs found."
     No hay programas coincidentes
+"No matching programs were found."
 "No recording schedules have been defined."
     No se han definido programaciones
 "No Tracks Available"
@@ -430,6 +440,7 @@
     Búsqueda gente
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
+"Please search for something."
 "plot"
     resúmen
 "Possible conflicts with this show"
@@ -455,6 +466,8 @@
     Perfil
 "profile"
     perfil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Detalle programa
 "Program ID"
@@ -604,8 +617,15 @@
     Películas Ciencia Ficción
 "Search"
     Buscar
+"Search fields"
 "Search for:  $1"
     Buscar: $1
+"Search help"
+"Search help: movie example"
+"Search help: movie search"
+"Search help: regex example"
+"Search help: regex search"
+"Search options"
 "Search Phrase"
     Buscar frase
 "Search Results"
@@ -633,6 +653,7 @@
 "Show pixmaps"
 "Show recordings"
     Mostrar grabaciones
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Mostrando todos los programas del grupo $1
 "Showing all programs."

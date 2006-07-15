@@ -104,8 +104,12 @@
     Kategoria
 "Category Legend"
     Kategorioiden Värit/Merkitys
+"Category Type"
 "CC"
     Tekstitys
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
 "Channel"
     Kanava
 "channel"
@@ -211,6 +215,7 @@
     Jakso
 "Episode Number"
     Jakson Numero
+"Exact Match"
 "Exec. Producer"
     Tuottaja
 "file size"
@@ -228,6 +233,7 @@
 "finetune"
     Hienosäätö
 "First recording"
+"Fold Duplicates"
 "Forecast"
     Ennuste
 "Forget Old"
@@ -267,6 +273,7 @@
     mainokset merkitty
 "has cutlist"
     on leikattu
+"HD Only"
 "HDTV"
     Tarkkapiirto
 "High"
@@ -335,6 +342,8 @@
 "Monday"
     Maanantai
 "more"
+"move guide left"
+"move guide right"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -381,6 +390,7 @@
     Ei vastaavuuksia
 "No matching programs found."
     Ei vastaavia ohjelmia.
+"No matching programs were found."
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
 "No Tracks Available"
@@ -414,6 +424,7 @@
     Haku Nimellä
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
+"Please search for something."
 "plot"
     juoni
 "Possible conflicts with this show"
@@ -438,6 +449,8 @@
     Profiili
 "profile"
     profiili
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Ohjelman Lisätietoja
 "Program ID"
@@ -585,8 +598,15 @@
 "Science Fiction Movies"
 "Search"
     Hae
+"Search fields"
 "Search for:  $1"
     Hae:  $1
+"Search help"
+"Search help: movie example"
+"Search help: movie search"
+"Search help: regex example"
+"Search help: regex search"
+"Search options"
 "Search Phrase"
     Hakulause
 "Search Results"
@@ -614,6 +634,7 @@
 "Show pixmaps"
 "Show recordings"
     Näytä nauhoitukset
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Näytetään kaikki ohjelmat ryhmästä $1.
 "Showing all programs."

@@ -107,8 +107,12 @@
     Kategorie
 "Category Legend"
     Kategorien
+"Category Type"
 "CC"
     CC
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
 "Channel"
     Sender
 "channel"
@@ -214,6 +218,7 @@
     Folge
 "Episode Number"
     Folge Nummer
+"Exact Match"
 "Exec. Producer"
     Produzent
 "file size"
@@ -235,6 +240,7 @@
 "finetune"
     Feinabstimmung
 "First recording"
+"Fold Duplicates"
 "Forecast"
     Vorhersage
 "Forget Old"
@@ -275,6 +281,7 @@
     Werbung markiert
 "has cutlist"
     Schnittliste
+"HD Only"
 "HDTV"
     HDTV
 "High"
@@ -342,6 +349,8 @@
     Montag
 "more"
     mehr
+"move guide left"
+"move guide right"
 "movie"
 "Movies"
     Spielfilme
@@ -393,6 +402,7 @@
     Nichts gefunden
 "No matching programs found."
     Keine passenden Sendungen gefunden.
+"No matching programs were found."
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
 "No Tracks Available"
@@ -429,6 +439,7 @@
     Suche nach Darsteller
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
+"Please search for something."
 "plot"
     Handlung
 "Possible conflicts with this show"
@@ -454,6 +465,8 @@
     Profil
 "profile"
     Profil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Programmdetails
 "Program ID"
@@ -603,8 +616,15 @@
     Science-Fiction Filme
 "Search"
     Suche
+"Search fields"
 "Search for:  $1"
     Suche nach: $1
+"Search help"
+"Search help: movie example"
+"Search help: movie search"
+"Search help: regex example"
+"Search help: regex search"
+"Search options"
 "Search Phrase"
     Suchtext
 "Search Results"
@@ -632,6 +652,7 @@
 "Show pixmaps"
 "Show recordings"
     Aufnahmen zeigen
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Zeige alle Sendungen in der $1 Gruppe.
 "Showing all programs."

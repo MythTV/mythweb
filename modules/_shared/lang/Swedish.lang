@@ -107,8 +107,12 @@
     Kategori
 "Category Legend"
     Kategoriförklaring
+"Category Type"
 "CC"
     Textning
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
 "Channel"
     Kanal
 "channel"
@@ -214,6 +218,7 @@
     Avsnitt
 "Episode Number"
     Avsnittsnummer
+"Exact Match"
 "Exec. Producer"
     Producent
 "file size"
@@ -235,6 +240,7 @@
 "finetune"
     finjustera
 "First recording"
+"Fold Duplicates"
 "Forecast"
     Prognos
 "Forget Old"
@@ -275,6 +281,7 @@
     markerad reklam
 "has cutlist"
     klipplista
+"HD Only"
 "HDTV"
     HDTV
 "High"
@@ -344,6 +351,8 @@
 "Monday"
     Måndag
 "more"
+"move guide left"
+"move guide right"
 "movie"
 "Movies"
     Filmer
@@ -395,6 +404,7 @@
     Inga matchningar funna
 "No matching programs found."
     Inga matchande program hittades.
+"No matching programs were found."
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
 "No Tracks Available"
@@ -431,6 +441,7 @@
     Sök person
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
+"Please search for something."
 "plot"
     handling
 "Possible conflicts with this show"
@@ -456,6 +467,8 @@
     Profil
 "profile"
     profil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Programdetaljer
 "Program ID"
@@ -605,8 +618,15 @@
     Science Fiction-filmer
 "Search"
     Sök
+"Search fields"
 "Search for:  $1"
     Sök efter:  $1
+"Search help"
+"Search help: movie example"
+"Search help: movie search"
+"Search help: regex example"
+"Search help: regex search"
+"Search options"
 "Search Phrase"
     Sök fras
 "Search Results"
@@ -634,6 +654,7 @@
 "Show pixmaps"
 "Show recordings"
     Visa inspelningar
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Visar alla program i grupp: $1.
 "Showing all programs."
