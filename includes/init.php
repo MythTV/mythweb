@@ -110,7 +110,9 @@
     define('modules_path', $path);
 
 // Load the database connection routines
-    require_once 'includes/db.php';
+    foreach (get_sorted_files('includes/objects/', '/^Database/') as $file) {
+        require_once "includes/objects/$file";
+    }
 
 /**
  * All database connections should now go through this object.
@@ -121,10 +123,13 @@
     global $db;
 
 // Connect to the database
-    $db = new Database($_SERVER['db_name'],
-                       $_SERVER['db_login'],
-                       $_SERVER['db_password'],
-                       $_SERVER['db_server']);
+    if (!is_object($db)) {
+        $db = Database::connect($_SERVER['db_name'],
+                                $_SERVER['db_login'],
+                                $_SERVER['db_password'],
+                                $_SERVER['db_server'],
+                                NULL, 'mysql');
+    }
 
 // Access denied -- probably means that there is no database
     if ($db->errno == 1045) {

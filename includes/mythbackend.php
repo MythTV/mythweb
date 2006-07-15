@@ -36,28 +36,31 @@
     if (backend_command('ANN Monitor '.hostname.' 0') != 'OK')
         trigger_error("Unable to connect to mythbackend, is it running?\n", FATAL);
 
-/*
-    get_backend_setting:
-    queries the database settings table for a particular setting, and returns its value
-*/
+/**
+ * Queries the database settings table for a particular setting, and returns its value
+/**/
     function get_backend_setting($setting, $host = false) {
+        global $db;
         static $cache = array();
+    // Initialize the extra parameter as an empty array so the query doesn't
+    // freak out if $extra_query doesn't get set.
+        $extra_param  = array();
     // Do we have a hostname?
         if ($host) {
         // Do we have a cached value for this host?
             if (isset($cache[$host][$setting]))
                 return $cache[$host][$setting];
         // Nope, continue formatting the query
-            $extra = ' AND hostname='.escape($host);
+            $extra_query = ' AND hostname=?';
+            $extra_param = $host;
         }
     // No hostname, but do we have a cached value?
         elseif (isset($cache['-unknown-'][$setting]))
             return $cache['-unknown-'][$setting];
     // Make the query
-        $result = mysql_query('SELECT data FROM settings WHERE value='.escape($setting).$extra)
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-        list($value) = mysql_fetch_row($result);
-        mysql_free_result($result);
+        $value = $db->query_col('SELECT data FROM settings WHERE value=?'.$extra_query,
+                                $setting,
+                                $extra_param);
     // Cache the result
         if ($host)
             $cache[$host][$setting] = $value;
@@ -67,11 +70,10 @@
         return $value;
     }
 
-/*
-    backend_command:
-    executes the requested command and returns the backend's response string
-    JS: haven't tested UTF-8
-*/
+/**
+ * Executes the requested command and returns the backend's response string
+ * @todo JS: haven't tested UTF-8
+/**/
     function backend_command($command, $host = NULL, $port = NULL) {
         global $Master_Host, $Master_Port;
     // Use a static cache of hosts
@@ -91,7 +93,9 @@
         return backend_command2($command, $cache[$host][$port], $host, $port);
     }
 
-    // A second backend command, so we can allow certain routines to use their own file pointer
+/**
+ * A second backend command, so we can allow certain routines to use their own file pointer
+/**/
     function backend_command2($command, &$fp, $host=NULL, $port=NULL) {
     // Command is an array -- join it
         if (is_array($command))
@@ -142,10 +146,9 @@
         }
     }
 
-/*
-        check_proto_version:
-        Check that we are speaking a version of the protocol that is compatible with the backend
-*/
+/**
+ * Check that we are speaking a version of the protocol that is compatible with the backend
+/**/
     function check_proto_version($host, $port) {
         static $cache;
         if (!$cache)
@@ -167,10 +170,9 @@
         trigger_error("Unexpected response to MYTH_PROTO_VERSION '$cmd': ".$response[0]);
     }
 
-/*
-    get_backend_rows:
-    performs a mythbackend query and splits the response into the appropriate number of rows.
-*/
+/**
+ * Performs a mythbackend query and splits the response into the appropriate number of rows.
+/**/
     function get_backend_rows($query, $offset = 1) {
         global $NUMPROGRAMLINES;
         $rows = array();
@@ -199,13 +201,12 @@
         return $rows;
     }
 
-/*
-    backend_notify_changes:
-    Tell the backend to reschedule a particular record entry.  If the change
-    isn't specific to a single record entry (e.g. channel or record type
-    priorities), then use 0.  I don't think mythweb should need it, but if you
-    need to indicate every record rule is affected, then use -1.
-*/
+/**
+ * Tell the backend to reschedule a particular record entry.  If the change
+ * isn't specific to a single record entry (e.g. channel or record type
+ * priorities), then use 0.  I don't think mythweb should need it, but if you
+ * need to indicate every record rule is affected, then use -1.
+/**/
     function backend_notify_changes($recordid = -1, $sleep = 1) {
     // Tell the master backend that something has changed
         backend_command('RESCHEDULE_RECORDINGS ' . $recordid);
@@ -214,20 +215,18 @@
             sleep($sleep);
     }
 
-/*
-    backend_disconnect:
-    sends the disconnect/DONE command to the backend
-*/
+/**
+ * Sends the disconnect/DONE command to the backend
+/**/
     # This is disabled because it seems to REALLY slow things down....
     #register_shutdown_function('backend_disconnect');
     function backend_disconnect() {
         backend_command('DONE');
     }
 
-/*
-    generate_preview_pixmap:
-    gets a preview image of the requested show
-*/
+/**
+ * Gets a preview image of the requested show
+/**/
     function generate_preview_pixmap($show) {
         $fileurl  = $show->filename;
         $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
@@ -359,40 +358,20 @@
         }
     }
 
-/*
-    myth2unixtime:
-    converts a myth timestamp into a unix timestamp
-    1.0 cvs changed the format to:  2003-06-28T06:30:00
-*/
+/**
+ * Converts a myth timestamp into a unix timestamp
+ * 1.0 cvs changed the format to:  2003-06-28T06:30:00
+/**/
     function myth2unixtime($mythtime) {
         if (strlen($mythtime) < 1)
             return '';
         return strtotime(str_replace('T', ' ', $mythtime));
     }
 
-/*
-    unix2mythtime:
-    converts a unix timestamp into a myth timestamp
-*/
+/**
+ * Converts a unix timestamp into a myth timestamp
+/**/
     function unix2mythtime($time) {
         return date('Y-m-d\TH:i:s', $time);
     }
-
-/*
-
-    The following function is left over from an old incarnation of mythweb, and should be updated or deleted
-
-*/
-function getCardStatus() {
-    // Get the current card status(es)
-    $inputquery = "SELECT distinct cardid, inputname FROM cardinput ORDER BY cardid";
-    $inputresult = mysql_query($inputquery) or die("Couldn't open the channel table in the mythconverg database.");
-    while ($inputline = mysql_fetch_array($inputresult, MYSQL_ASSOC)) {
-        $line = $inputline['cardid'];
-        $recording = backendCommand(array("QUERY_RECORDER $line", 'IS_RECORDING'));
-        $idStatus[$line] = $recording;
-    }
-    mysql_free_result($inputresult);
-    return $idStatus;
-}
 
