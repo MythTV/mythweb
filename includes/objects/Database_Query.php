@@ -31,22 +31,22 @@
 /**
  * Abstract superclass for all database query types.
 /**/
-abstract class Database_Query {
+class Database_Query {
 
 /** @var resource   The related database connection handle */
-    public $dbh = NULL;
+    var $dbh = NULL;
 
 /** @var resource   The current active statement handle */
-    public $sh = NULL;
+    var $sh = NULL;
 
 /** @var array      The query string, (depending on the engine, broken apart where arguments should be inserted) */
-    public $query = array();
+    var $query = array();
 
 /** @var string     The most recent query sent to the server */
-    public $last_query = '';
+    var $last_query = '';
 
 /** @var int        Number of arguments required by $query */
-    public $num_args_needed = 0;
+    var $num_args_needed = 0;
 
 /**
  * Constructor.  Parses $query and splits it at ? characters for later
