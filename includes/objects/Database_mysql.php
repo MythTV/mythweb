@@ -56,7 +56,7 @@ class Database_mysql extends Database {
  * Legacy constructor
 /**/
     function Database_mysql($db_name, $login, $password, $server='localhost') {
-        __construct($db_name, $login, $password, $server);
+        return $this->__construct($db_name, $login, $password, $server);
     }
 
 /**
