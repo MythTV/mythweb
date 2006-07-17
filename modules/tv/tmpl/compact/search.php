@@ -97,7 +97,7 @@
         if ($show->subtitle)
             echo ': ', $show->subtitle;
     // Print some additional information for movies
-        if (strcasecmp($show->category_type, t('movie')) == 0) {
+        if ($show->category_type == 'movie') {
             $info = array();
             if ($show->airdate > 0)
                 $info[] = sprintf('%4d', $show->airdate);
