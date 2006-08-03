@@ -314,7 +314,7 @@
                     <label for="record_findweekly"><?php echo t('rectype-long: findweekly') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_channel ?>" id="record_channel"<?php
                         echo $schedule->type == rectype_channel ? ' CHECKED' : '' ?> />
-                    <label for="record_channel"><?php echo t('rectype-long: channel', prefer_channum ? $channel->channum : $channel->callsign) ?></label></li>
+                    <label for="record_channel"><?php echo t('rectype-long: channel', $channel->callsign) ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
                         echo $schedule->type == rectype_always ? ' CHECKED' : '' ?> />
                     <label for="record_always"><?php echo t('rectype-long: always') ?></label></li>
