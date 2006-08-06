@@ -103,7 +103,7 @@
                 );
 
 # Seek to the requested position
-    seek DATA, $start, 0;
+    sysseek DATA, $start, 0;
 
 # Print the content to the browser
     my $buffer;
@@ -115,7 +115,7 @@
             $readsize = $size = $cur_pos;
         }
     # Print the data to the browser
-        read DATA, $buffer, $readsize;
+        sysread DATA, $buffer, $readsize;
         print $buffer;
     # Time to leave?
         last if ($cur_pos + $readsize >= $size);
