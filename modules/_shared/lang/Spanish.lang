@@ -3,7 +3,9 @@
 "$1 B"
     $1 B
 "$1 day"
+    $1 dia
 "$1 days"
+    $1 dias
 "$1 episode"
     $1 episodio
 "$1 episodes"
@@ -35,17 +37,21 @@
 "$1 to $2"
     $1 a $2
 "$1 wasted"
+    $1 desperdiciado
 "Action"
     Acción
 "Activate"
     Activar
 "add string"
+    añadir cadena
 "Additional Tables"
     Tablas adicionales
 "Advanced"
+    Avanzado
 "Advanced Options"
     Opciones Avanzadas
 "Advanced Search"
+    Búsqueda Avanzada
 "airdate"
     emisión
 "Airtime"
@@ -55,6 +61,7 @@
 "Album (filtered)"
     Álbum (filtrado)
 "All"
+    Todos
 "All groups"
     Todos los grupos
 "All HDTV"
@@ -107,10 +114,15 @@
 "Category Legend"
     Leyenda Categoría
 "Category Type"
+    Tipo Categoría
 "CC"
+    SUB
 "Chan. Callsign"
+    Canal Callsign
 "Chan. Name"
+    Nombre Canal
 "Chan. Number"
+    Número Canal
 "Channel"
     Canal
 "channel"
@@ -140,6 +152,7 @@
 "contrast"
     contraste
 "Count"
+    Contar
 "cover"
     carátula
 "Create Schedule"
@@ -155,6 +168,7 @@
 "Custom Schedule"
     Programación Avanzada
 "Data"
+    Datos
 "Date"
     Fecha
 "Date Formats"
@@ -208,6 +222,7 @@
 "Edit MythWeb and some MythTV settings."
     Editar ajustes de MythWeb y algunos de MythTV
 "Edit settings for"
+    Editar ajustes para
 "End"
     Fin
 "End Late"
@@ -217,6 +232,7 @@
 "Episode Number"
     Nº Episodio
 "Exact Match"
+    Coincidencia Exacta
 "Exec. Producer"
     Productor ejec.
 "file size"
@@ -238,7 +254,9 @@
 "finetune"
     sintonía fina
 "First recording"
+    Primera grabación
 "Fold Duplicates"
+    Plegar Duplicados
 "Forecast"
     Predicción
 "Forget Old"
@@ -258,11 +276,13 @@
 "Genre (filtered)"
     Género (filtrado)
 "Global"
+    Global
 "Go"
     Ir
 "Google"
     Google
 "Group timeslots every"
+    Agrupar horarios cada
 "Guest Starring"
     Estrellas invitadas
 "Guide rating"
@@ -280,6 +300,7 @@
 "has cutlist"
     lista de corte
 "HD Only"
+    Sólo HD
 "HDTV"
     HDTV
 "High"
@@ -320,7 +341,9 @@
 "Language"
     Lengua
 "Last Recorded"
+    Última vez Grabado
 "Last recording"
+    Última Grabación
 "Last Updated"
     Útima Actualización
 "length"
@@ -341,7 +364,9 @@
 "Manual"
     Manual
 "matches"
+    coincidencias
 "Max star rating for movies"
+    Máx. calificación para películas
 "minutes"
     minutos
 "Monday"
@@ -349,7 +374,9 @@
 "more"
     más
 "move guide left"
+    mover guía izquierda
 "move guide right"
+    mover guía derecha
 "movie"
     Película
 "Movies"
@@ -367,25 +394,33 @@
 "MythTV channel info"
     Info Canal MythTV
 "MythTV global defaults"
+    MythTV globales por defecto
 "MythTV key bindings"
     Vínculos Teclas MythTV
 "MythTV settings table"
+    Tabla ajustes MythTV
 "MythTV Status"
     Estado MythTV
 "MythVideo Artwork Dir"
+    Dir Posters MythTV
 "MythVideo Dir"
+    Dir MythVideo
 "MythVideo on the web."
     MythVideo en el web
 "MythWeb Global Defaults"
+    MythWeb globales por defecto
 "MythWeb session settings"
     Ajustes sesiones MythWeb
 "MythWeb Session Settings"
     Ajustes sesiones MythWeb
 "MythWeb Skin"
+    Piel MythWeb
 "MythWeb Template"
+    Plantilla MythWeb
 "MythWeb Weather."
     Tiempo MythWeb
 "Name"
+    Nombre
 "name"
     nombre
 "Never Record"
@@ -403,6 +438,7 @@
 "No matching programs found."
     No hay programas coincidentes
 "No matching programs were found."
+    No se encontraron programas coincidentes
 "No recording schedules have been defined."
     No se han definido programaciones
 "No Tracks Available"
@@ -418,11 +454,15 @@
 "Notes"
     Notas
 "Number of epsodes"
+    Número de episodios
 "Number of shows"
+    Número de programas
 "Number of timeslots"
+    Número de bloques horarios
 "Only display favourite channels"
     Mostrar sólo canales favoritos
 "Only match HD programs"
+    Sólo programas HD
 "Only New Episodes"
     Sólo nuevos episodios
 "or"
@@ -432,8 +472,11 @@
 "Part $1 of $2"
     Parte $1 de $2
 "Past Month"
+    Mes Pasado
 "Past Week"
+    Semana Pasada
 "Past Year"
+    Año Pasado
 "People"
     Gente
 "People Search"
@@ -441,6 +484,7 @@
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
 "Please search for something."
+    Por favor busque algo
 "plot"
     resúmen
 "Possible conflicts with this show"
@@ -450,6 +494,7 @@
 "Power Search"
     Búsqueda avanzada
 "Prefer Channum"
+    Nº Canal Preferido
 "Presented by"
     Presentado por
 "Pressure"
@@ -467,7 +512,9 @@
 "profile"
     perfil
 "program continues to the left"
+    programa continúa a la izquierda
 "program continues to the right"
+    programa continúa a la derecha
 "Program Detail"
     Detalle programa
 "Program ID"
@@ -592,6 +639,7 @@
 "Reverse Order"
     Orden Inverso
 "Rows to show between timeslot info"
+    Filas a mostrar entre info
 "Saturday"
     Sábado
 "Save"
@@ -609,6 +657,7 @@
 "Schedule Override"
     Excepciones programación
 "Schedule via $1."
+    Programar via $1
 "Scheduled"
     Programado
 "Scheduled Popup"
@@ -618,14 +667,21 @@
 "Search"
     Buscar
 "Search fields"
+    Campos búsqueda
 "Search for:  $1"
     Buscar: $1
 "Search help"
+    Ayuda búsqueda
 "Search help: movie example"
+    Ayuda búsqueda: ejemplo película
 "Search help: movie search"
+    Ayuda búsqueda: búsqueda película
 "Search help: regex example"
+    Ayuda búsqueda: ejemplo regex
 "Search help: regex search"
+    Ayuda búsqueda: búsqueda regex
 "Search options"
+    Opciones búsqueda
 "Search Phrase"
     Buscar frase
 "Search Results"
@@ -641,7 +697,9 @@
 "Settings"
     Ajustes
 "Settings Table"
+    Tabla Ajustes
 "Settings Table Editor"
+    Editor Tabla Ajustes
 "settings: overview"
     Ajustes: general
 "Show"
@@ -651,9 +709,11 @@
 "Show group"
     Mostrar grupo
 "Show pixmaps"
+    Mostrar gráficos
 "Show recordings"
     Mostrar grabaciones
 "show/hide advanced options"
+    mostrar/ocultar opciones avanzadas
 "Showing all programs from the $1 group."
     Mostrando todos los programas del grupo $1
 "Showing all programs."
@@ -665,6 +725,7 @@
 "Special Searches"
     Búsquedas especiales
 "Star character"
+    Personaje estrella
 "Start Date"
     Fecha comienzo
 "Start Early"
@@ -672,6 +733,7 @@
 "Start Time"
     Hora comienzo
 "Statistics"
+    Estadísticas
 "Status"
     Estado
 "Status Bar"
@@ -699,6 +761,7 @@
 "Time Stretch Default"
     Ajuste de tiempo por defecto
 "Timeslot size"
+    Tamaño Bloque Tiempo
 "title"
     título
 "Title"
@@ -713,6 +776,7 @@
     Arriba
 "Top $1"
 "Total Time"
+    Tiempo Total
 "Track Name"
     Nombre Pista
 "transcoder"
@@ -739,6 +803,7 @@
 "Unknown Recording Schedule."
     Programación desconocida
 "Unreachable"
+    No alcanzable
 "Upcoming Recordings"
     Grabaciones Próximas
 "Update"
@@ -762,6 +827,7 @@
 "UV Moderate"
     UV moderado
 "Value"
+    Valor
 "Video"
     Vídeo
 "Video URL"
@@ -786,6 +852,7 @@
 "welcome: settings"
     bienvenido: ajustes
 "welcome: stats"
+    bienvenido: estadísticas
 "welcome: status"
     bienvenido: estado
 "welcome: tv"
@@ -808,3 +875,4 @@
 "Yes"
     Sí
 "Yesterday"
+    Ayer
