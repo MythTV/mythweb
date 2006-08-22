@@ -96,11 +96,19 @@ class mythMusic {
 
         /**** If alphalink set, then change offset to new value ****/
         if ($_GET['alphalink']) {
-            $alphalink = $_GET['alphalink'];
-            $result=mysql_query("select count(1) from musicmetadata where upper(artist) < ".escape($alphalink));
-            $alphaoffset=mysql_fetch_row($result);
-            $this->offset=$alphaoffset[0];
-            mysql_free_result($result);
+            $alphalink = mysql_real_escape_string($_GET['alphalink']);
+
+            $result = mysql_query(sprintf("SELECT COUNT(*) FROM music_songs ".
+                                          "LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id ".
+                                          "WHERE UPPER(music_artists.artist_name) < %s ".
+                                          "ORDER BY music_artists.artist_name;",
+                                          escape($_GET['alphalink'])));
+            if ($result)
+			{
+                $alphaoffset=mysql_fetch_row($result);
+                $this->offset=$alphaoffset[0];
+                mysql_free_result($result);
+            }
         }
 
         if($_GET['filterPlaylist'])
@@ -193,31 +201,22 @@ class mythMusic {
 
     function prepFilter()
     {
-        $prevFilter=0;
-        $thisFilter="";
+        $this->filter="1=1"; // A true statement that will always return everything in SQL.
 
         if($this->filterPlaylist != "_All_")
         {
-            $playlistResult = mysql_query("select playlistid,name,songlist,hostname from musicplaylist where playlistid=".escape($this->filterPlaylist));
+            $playlistResult = mysql_query("SELECT playlist_id,playlist_name,playlist_songs,hostname FROM music_playlists WHERE playlist_id=".escape($this->filterPlaylist));
             if($playlistResult)
             {
                 if(mysql_num_rows($playlistResult)==1)
                 {
                     $row=mysql_fetch_row($playlistResult);
-                    if($row)
+                    if($row && !empty($row[2]))
                     {
-
                         $this->filterSonglist=$row[2];
-                        if($prevFilter==1)
-                            $this->filter=$this->filter . "and intid in (" . $this->filterSonglist . ")";
-                        else
-                        {
-                            $this->filter="intid in (" . $this->filterSonglist . ")";
-                            $prevFilter=1;
-                        }
 
-                        $this->keepFilters="&amp;filterPlaylist=" . urlencode($this->filterPlaylist);
-
+                        $this->filter .= " AND song_id IN (" . $this->filterSonglist . ")";
+                        $this->keepFilters .= "&amp;filterPlaylist=" . urlencode($this->filterPlaylist);
                     }
                 }
             }
@@ -225,83 +224,56 @@ class mythMusic {
 
         if($this->filterArtist != "_All_" )
         {
-            if($prevFilter==1)
-                $this->filter=$this->filter . "and artist=".escape($this->filterArtist);
-            else
-            {
-                $this->filter="artist=".escape($this->filterArtist);
-                $prevFilter=1;
-            }
-
-            $this->keepFilters="&amp;filterArtist=" . urlencode($this->filterArtist);
-
+            $this->filter .= " AND artist_name=".escape($this->filterArtist);
+            $this->keepFilters .= "&amp;filterArtist=" . urlencode($this->filterArtist);
         }
+
         if($this->filterAlbum != "_All_")
         {
-            if($prevFilter==1)
-            {
-                $this->filter= $this->filter . "and album=\"" . $this->filterAlbum . "\"";
-            }
-            else
-            {
-                $this->filter="album=\"" . $this->filterAlbum . "\"";
-                $prevFilter=1;
-            }
-            $this->keepFilters =$this->keepFilters . "&amp;filterAlbum=" . urlencode($this->filterAlbum) ;
-
+            $this->filter .= " AND album_name=" . escape($this->filterAlbum);
+            $this->keepFilters .= "&amp;filterAlbum=" . urlencode($this->filterAlbum) ;
         }
+
         if($this->filterGenre != "_All_")
         {
-            if($prevFilter==1)
-            {
-                $this->filter= $this->filter . "and genre=" . $this->filterGenre ;
-            }
-            else
-            {
-                $this->filter="genre=\"" . $this->filterGenre . "\"";
-                $prevFilter=1;
-            }
-            $this->keepFilters =$this->keepFilters . "&amp;filterGenre=" . urlencode($this->filterGenre);
-
+            $this->filter .= " AND genre=" . escape($this->filterGenre);
+            $this->keepFilters .= "&amp;filterGenre=" . urlencode($this->filterGenre);
         }
 
         if($this->filterRank != "_All_")
         {
-            if($prevFilter==1)
-            {
-                $this->filter=$this->filter . "and rank=" . $this->filterRank;
-            }
-            else
-            {
-                $this->filter="rank=" . $this->filterRank;
-                $prevFilter=1;
-            }
-            $this->keepFilters =$this->keepFilters . "&amp;filterRank=" . urlencode($this->filterRank);
+            $this->filter .= " AND rank=" . escape($this->filterRank);
+            $this->keepFilters .= "&amp;filterRank=" . urlencode($this->filterRank);
         }
-
-
-
     }
 
     function init($maxPerPage) {
         global $db;
         $this->prepFilter();
-        if (empty($this->filter))
-            $this->totalCount = $db->query_col('SELECT COUNT(*) FROM musicmetadata');
-        else
-            $this->totalCount = $db->query_col('SELECT COUNT(*) FROM musicmetadata WHERE '.$this->filter);
+        $query_base = ' FROM music_songs'.
+                      ' LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id'.
+                      ' LEFT JOIN music_albums ON music_songs.album_id=music_albums.album_id'.
+                      ' LEFT JOIN music_genres ON music_songs.genre_id=music_genres.genre_id'.
+                      ' WHERE '.$this->filter.
+                      ' ORDER BY artist_name,album_name,track';
+	
+        // Cannot use $db->query_col here as the preg_replace kills PHP when using large filterSongList queries
+        $this->totalCount = 0;
+        $result = mysql_query('SELECT COUNT(*)'.$query_base);
+        if ($result)
+        {
+            $row=mysql_fetch_row($result);
+            $this->totalCount=$row[0];
+            mysql_free_result($result);
+        }
 
         if ($this->totalCount > 0) {
-            if($this->offset > 0) {
-                $limitText='LIMIT ' . $this->offset . ',' . $maxPerPage;
-            }
+            if($this->offset > 0)
+                $query_base .= ' LIMIT ' . $this->offset . ',' . $maxPerPage;
             else
-                $limitText='LIMIT ' . $maxPerPage;
-
-            if (empty($this->filter))
-                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata order by artist,album,tracknum " . $limitText);
-            else
-                $this->result=mysql_query("select intid,artist,album,title,genre,length,rating,filename from musicmetadata where $this->filter order by artist,album,tracknum $limitText");
+                $query_base .= ' LIMIT ' . $maxPerPage;
+	    
+	        $this->result = mysql_query('SELECT music_songs.song_id, music_artists.artist_name, music_albums.album_name, music_songs.name, music_genres.genre, music_songs.length, music_songs.rating, music_songs.filename '.$query_base);
         }
     }
 }
