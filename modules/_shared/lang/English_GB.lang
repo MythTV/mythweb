@@ -193,6 +193,7 @@
 "Manual"
 "matches"
 "Max star rating for movies"
+    Max star rating for films
 "minutes"
 "Monday"
 "more"
@@ -234,6 +235,7 @@
 "No matching programs found."
     No matching programmes found.
 "No matching programs were found."
+    No matching programmes were found.
 "No recording schedules have been defined."
 "No Tracks Available"
 "No. of recordings to keep"
@@ -246,6 +248,7 @@
 "Number of timeslots"
 "Only display favourite channels"
 "Only match HD programs"
+    Only match HD programmes
 "Only New Episodes"
 "or"
 "Original Airdate"
@@ -271,7 +274,9 @@
 "Profile"
 "profile"
 "program continues to the left"
+    programme continues to the left
 "program continues to the right"
+    program continues to the right
 "Program Detail"
     Programme Detail
 "Program ID"
@@ -393,12 +398,15 @@
 "Scheduled"
 "Scheduled Popup"
 "Science Fiction Movies"
+    Science Fiction Films
 "Search"
 "Search fields"
 "Search for:  $1"
 "Search help"
 "Search help: movie example"
+    Search help: film example
 "Search help: movie search"
+    Search help: film search
 "Search help: regex example"
 "Search help: regex search"
 "Search options"
