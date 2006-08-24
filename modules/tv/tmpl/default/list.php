@@ -62,28 +62,11 @@
                 }
                 ?></select></td>
             <td align="right"><?php echo t('Date') ?>:&nbsp;</td>
-            <td style="vertical-align:middle;" nowrap><img src="<?php echo skin_url ?>img/left.gif" onclick="MoveProgramListing(-1)">
-                <select name="date" onchange="get_element('program_listing').submit()"><?php
-            // Find out how many days into the past we should bother checking
-                $result = mysql_query('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program')
-                    or trigger_error('SQL Error: '.mysql_error(), FATAL);
-                list($min_days) = mysql_fetch_row($result);
-                mysql_free_result($result);
-            // Find out how many days into the future we should bother checking
-                $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
-                    or trigger_error('SQL Error: '.mysql_error(), FATAL);
-                list($max_days) = mysql_fetch_row($result);
-                mysql_free_result($result);
-            // Print out the list
-                for ($i=$min_days;$i<=$max_days;$i++) {
-                    $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
-                    $date = date("Ymd", $time);
-                    echo "<option value=\"$date\"";
-                    if ($date == date("Ymd", $list_starttime)) echo " selected";
-                    echo ">".strftime($_SESSION['date_listing_jump'] , $time)."</option>";
-                }
-                ?></select>
-                <img src="<?php echo skin_url ?>img/right.gif" onclick="MoveProgramListing(+1)"></td>
+            <td style="vertical-align:middle;" nowrap>
+                <a onclick="MoveProgramListing(-1)"><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
+                <?php date_select() ?>
+                <a onclick="MoveProgramListing(+1)"><img src="<?php echo skin_url ?>img/right.gif" border="0"></a>
+                </td>
             <td align="center"><noscript><input type="submit" class="submit" value="<?php echo t('Jump') ?>"></noscript></td>
 
 

@@ -30,7 +30,7 @@
     <td width="66%" valign="center" class="huge">
         Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?></td>
     <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <form method="get" id="form" action="<?php echo root ?>tv/channel">
+        <form method="get" id="program_listing" action="<?php echo root ?>tv/channel">
         <table width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td nowrap align="center"><?php echo t('Jump to') ?>:&nbsp;&nbsp;</td>

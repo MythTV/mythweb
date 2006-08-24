@@ -42,8 +42,8 @@
     // Print out the list
     for ($i=-1;$i<=$max_days;$i++) {
         $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
-        $date = date("Ymd", $time);
-        $carddata.="<a href=\"".root."tv/channel?chanid=".$_GET['chanid']."&amp;time=".$time."\">".strftime(t('generic_date'), $time)."</a><br />\n";
+        $date = date('Ymd', $time);
+        $carddata.="<a href=\"".root."tv/channel?chanid=".$_GET['chanid']."&amp;date=".$date."\">".strftime('D n/j', $time)."</a><br />\n";
     }
 
 // Print the shows for today

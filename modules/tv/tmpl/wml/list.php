@@ -39,8 +39,8 @@ View listings by<br />
             // Print out the list
             for ($i=-1;$i<=$max_days;$i++) {
                 $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
-                $date = date("Ymd", $time);
-                echo '<a href="'.root.'tv/list?listbytime=y&amp;date='.$date.'">'.date("D n/j", $time)."</a><br />\n";
+                $date = date('Ymd', $time);
+                echo '<a href="'.root.'tv/list?listbytime=y&amp;date='.$date.'">'.date('D n/j', $time)."</a><br />\n";
             }
 ?>
 </p>

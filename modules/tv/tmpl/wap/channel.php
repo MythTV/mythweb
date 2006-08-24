@@ -21,13 +21,13 @@
         global $this_channel;
 ?>
 <p>
-            <form id="form" action="<?php echo root ?>tv/channel/<?php echo $_GET['chanid'] ?>" method="post">
+            <form id="program_listing" action="<?php echo root ?>tv/channel/<?php echo $_GET['chanid'] ?>" method="post">
             <center>
             Channel <?php echo $this_channel->channum ?> <?php echo $this_channel->callsign ?><br />
             <?php echo date('D m/d/y', $_SESSION['list_time']) ?><br />
 
             Jump to<br />
-            <select name="time""><?php
+            <select name="date"><?php
             // Find out how many days into the future we should bother checking
                 $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
                     or trigger_error('SQL Error: '.mysql_error(), FATAL);

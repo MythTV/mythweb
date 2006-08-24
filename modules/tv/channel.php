@@ -19,8 +19,8 @@
 // Path-based
     if ($Path[2]) {
         $_GET['chanid'] = $Path[2];
-        if (!$_GET['time'])
-            $_GET['time'] = $Path[3];
+        if (!$_GET['date'])
+            $_GET['date'] = $Path[3];
     }
 
 // Chanid?
@@ -33,10 +33,10 @@
         exit;
     }
 
-// New list time?
-    $_GET['time'] or $_GET['time'] = $_POST['time'];
-    if ($_GET['time'])
-        $_SESSION['list_time'] = $_GET['time'];
+// New list date?
+    $_GET['date'] or $_GET['date'] = $_POST['date'];
+    if ($_GET['date'])
+        $_SESSION['list_time'] = unixtime(sprintf('%08d000000', $_GET['date']));
 
 // Load the programs for today
     $this_channel->programs = load_all_program_data(mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']), date('Y', $_SESSION['list_time'])),
@@ -73,23 +73,24 @@
     }
 
 /**
- * Prints a <select> of the available date range
+ * Prints a <select> of the available date range.
+ * reused almost verbatim from modules/tv/list.php
 /**/
     function date_select() {
+        global $db;
     // Get the available date range
-        $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-        list($max_days) = mysql_fetch_row($result);
-        mysql_free_result($result);
+        $min_days = $db->query_col('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program');
+        $max_days = $db->query_col('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program');
     // Print out the list
-        echo '<select name="time" onchange="submit_form()">';
-        for ($i=-1; $i<=$max_days; $i++) {
+        echo '<select name="date" onchange="get_element(\'program_listing\').submit()">';
+        for ($i=$min_days; $i<=$max_days; $i++) {
             $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
             $date = date('Ymd', $time);
-            echo "<option value=\"$time\"";
-            if ($date == date("Ymd", $_SESSION['list_time']))
-                echo " selected";
+            echo "<option value=\"$date\"";
+            if ($date == date('Ymd', $_SESSION['list_time']))
+                echo ' SELECTED';
             echo '>'.strftime($_SESSION['date_channel_jump'] , $time).'</option>';
         }
+        echo '</select>';
     }
 
