@@ -51,7 +51,7 @@
 <form class="form" id="search_advanced" action="<?php echo root ?>tv/search" method="get">
     <input type="hidden" name="type" value="a">
 
-<table align="center" border="1" cellspacing="0" cellpadding="2">
+<table align="center" border="1" cellspacing="0" cellpadding="2" class="command command_border_l command_border_t command_border_b command_border_r">
 <tr>
     <td valign="top"><?php print_advanced_search_strings() ?>
         </td>
@@ -77,7 +77,7 @@
         <?php echo category_type_list() ?>
         </td>
     <td valign="middle">
-        <input type="submit" name="search" value="Search">
+        <input type="submit" name="search" value="Search" style="margin: 10px">
         </td>
 </tr>
 </table>
