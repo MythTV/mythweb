@@ -199,7 +199,7 @@
                    $sh2->execute($data['programid'], $data['seriesid']);
                    list($data['recstatus']) = $sh2->fetch_row();
                 }
-                elseif ($data['title'] && $data['subtitle'] && $data['description']) {
+                elseif ($data['category_type'] == 'movie' || ($data['title'] && $data['subtitle'] && $data['description'])) {
                    $sh3->execute($data['title'], $data['subtitle'], $data['description']);
                    list($data['recstatus']) = $sh3->fetch_row();
                 }
