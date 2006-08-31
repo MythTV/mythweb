@@ -179,9 +179,11 @@
             if ($show->extra_showings)
                 foreach ($show->extra_showings as $pair) {
                     list($chanid, $showtime) = $pair;
-                    echo '<br /><a href="', root, 'tv/detail/', $chanid, '/', $showtime, '">',
-                         strftime($_SESSION['date_search'] ,$showtime),
-                         '</a>';
+                    echo '<br /><a href="', root, 'tv/detail/', $chanid, '/', $showtime, '" class="italic">',
+                         strftime($_SESSION['date_search'] ,$showtime);
+                    if ($chanid != $show->chanid)
+                        echo ' (', $Channels[$chanid]->callsign, ')';
+                    echo '</a>';
                 }
                 ?></td>
     <td nowrap><?php echo nice_length($show->length) ?></td>
