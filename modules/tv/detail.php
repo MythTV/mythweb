@@ -146,6 +146,24 @@
             $schedule->save($type);
         }
     }
+    elseif (isset($_GET['forget_old']) || isset($_POST['forget_old'])) {
+        $program->rec_forget_old();
+    // Wait for a second so the backend can catch up
+        sleep(1);
+
+    // Redirect back to the page again, but without the query string, so reloads are cleaner
+        header('Location: '.root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+        exit;
+    }
+    elseif (isset($_GET['never_record']) || isset($_POST['never_record'])) {
+        $program->rec_never_record();
+    // Wait for a second so the backend can catch up
+        sleep(1);
+
+    // Redirect back to the page again, but without the query string, so reloads are cleaner
+        header('Location: '.root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+        exit;
+    }
 // Load default settings for recpriority, autoexpire etc
     else {
     // auto-commercial-flag

@@ -95,18 +95,37 @@
                 <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
                     echo nl2br($schedule->fancy_description);
                     ?></dd>
-<?php       }
-            if (!empty($program->recstatus)) {
+<?php
+            }
+        // Can we perform an accurate duplicate check?
+            $can_dupcheck = preg_match('/\S/', $program->title)
+                            && preg_match('/\S/', $program->programid.$program->subtitle.$program->description);
+            if ($can_dupcheck || $program->recstatus) {
 ?>
                 <dt><?php echo t('MythTV Status') ?>:&nbsp;</dt>
                 <dd><?php
-                    echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
+                    $commands = array();
+                    if (!empty($program->recstatus)) {
+                        echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
+                        if ($can_dupcheck && in_array($program->recstatus, array('Recorded', 'NeverRecord', 'PreviousRecording'))) {
+                            $commands[] = '<a href="'.root.'tv/detail/'.$program->chanid
+                                          .'/'.$program->starttime.'?forget_old=yes" class="bold">'
+                                          .t('Forget Old').'</a>';
+                        }
+                    }
+                    if ($can_dupcheck && $program->recstatus != 'NeverRecord') {
+                        $commands[] = '<a href="'.root.'tv/detail/'.$program->chanid
+                                     .'/'.$program->starttime.'?never_record=yes" class="bold">'
+                                     .t('Never Record').'</a>';
+                    }
+                    if (!empty($commands))
+                        echo ' (', implode('; ', $commands), ')';
                     ?></dd>
 <?php       } ?>
             </dl>
         </div>
-<?php   }
-        if ($program) {
+<?php    }
+         if ($program) {
 ?>
         <div id="program_extra_details">
             <dl>
@@ -265,6 +284,7 @@
                 else
                     echo t('Find other showings of this program');
             ?></a>
+
             <a href="<?php echo root ?>tv/list?time=<?php echo $_SESSION['list_time'] ?>"><?php
                 echo t('Back to the program listing')
             ?></a>
