@@ -59,6 +59,10 @@
         <input type="checkbox" name="hd" id="hd" value="1"<?php
             if ($_SESSION['search']['hd']) echo ' CHECKED' ?>>
         <label for="hd"><?php echo t('Only match HD programs') ?></label>
+        <br />
+        <input type="checkbox" name="commfree" id="commfree" value="1"<?php
+            if ($_SESSION['search']['commfree']) echo ' CHECKED' ?>>
+        <label for="commfree"><?php echo t('Only match commercial-free channels') ?></label>
         </p>
         <p>
         Showings between:<br />

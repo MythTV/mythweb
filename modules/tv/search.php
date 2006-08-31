@@ -51,9 +51,10 @@
         $_SESSION['search']['af']            = $_REQUEST['af'];
         $_SESSION['search']['aj']            = $_REQUEST['aj'];
         $_SESSION['search']['ctype']         = $_REQUEST['ctype'];
+        $_SESSION['search']['hd']            = $_REQUEST['hd']       ? true : false;
+        $_SESSION['search']['commfree']      = $_REQUEST['commfree'] ? true : false;
         $_SESSION['search']['stars_gt']      = floatVal($_REQUEST['stars_gt']);
         $_SESSION['search']['stars_lt']      = floatVal($_REQUEST['stars_lt']);
-        $_SESSION['search']['hd']            = $_REQUEST['hd'] ? true : false;
         $_SESSION['search']['airdate_start'] = trim($_REQUEST['airdate_start']);
         $_SESSION['search']['airdate_end']   = trim($_REQUEST['airdate_end']);
         $_SESSION['search']['starttime']     = trim($_REQUEST['starttime']);
@@ -204,6 +205,9 @@
         // HDTV only?
             if ($_SESSION['search']['hd'])
                 $extra_query[] = 'program.hdtv=1';
+        // Commercial-free channels only?
+            if ($_SESSION['search']['commfree'])
+                $extra_query[] = 'channel.commfree=1';
         // Build the actual search query
             $query = '';
             foreach ($_SESSION['search']['as'] as $i => $string) {
