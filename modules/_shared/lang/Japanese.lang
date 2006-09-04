@@ -1,7 +1,9 @@
 " at "
 "$1 B"
 "$1 day"
+    $1 日
 "$1 days"
+    $1 日
 "$1 episode"
     $1番組
 "$1 episodes"
@@ -34,12 +36,15 @@
 "Activate"
     有効
 "add string"
+    条件追加
 "Additional Tables"
     追加テーブル
 "Advanced"
+    アドバンスド
 "Advanced Options"
-    アドバンストオプション
+    アドバンスドオプション
 "Advanced Search"
+    アドバンスドサーチ
 "airdate"
     放送日
 "Airtime"
@@ -49,9 +54,11 @@
 "Album (filtered)"
     アルバム（絞込み）
 "All"
+    全て
 "All groups"
     全グループ
 "All HDTV"
+    全てのHDTV
 "All Music"
     全ミュージック
 "All recordings"
@@ -87,7 +94,9 @@
 "Backend Status"
     バックエンドステータス
 "brightness"
+    明るさ
 "callsign"
+    コールサイン
 "Cancel this schedule."
     この予約をキャンセルする
 "Cast"
@@ -99,6 +108,7 @@
 "Category Legend"
     カテゴリー凡例
 "Category Type"
+    カテゴリータイプ
 "CC"
 "Chan. Callsign"
 "Chan. Name"
@@ -116,10 +126,13 @@
 "Check for duplicates in"
     重複チェック対象
 "colour"
+    カラー
 "Commands"
     コマンド
 "commfree"
+    CMカット
 "Configure Channels"
+    チャンネル設定
 "Configure Keybindings"
     キーバンド設定
 "Conflicts"
@@ -127,7 +140,9 @@
 "Context"
     コンテキスト
 "contrast"
+    コントラスト
 "Count"
+    カウント
 "cover"
     カバー
 "Create Schedule"
@@ -154,6 +169,7 @@
 "Delete"
     削除
 "delete"
+    削除
 "Delete $1"
     削除:$1
 "Delete + Rerecord"
@@ -195,6 +211,7 @@
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
 "Edit settings for"
+    設定対象
 "End"
     終了
 "End Late"
@@ -204,6 +221,7 @@
 "Episode Number"
     番組番号
 "Exact Match"
+    完全な一致
 "Exec. Producer"
     製作責任者
 "file size"
@@ -221,8 +239,11 @@
 "Find Time"
     時間検索
 "Find Time must be of the format:  HH:MM:SS"
+    時間検索の書式: HH:MM:SS
 "finetune"
+    ファインチューン
 "First recording"
+    最初の録画
 "Fold Duplicates"
 "Forecast"
     予報
@@ -231,6 +252,7 @@
 "format help"
     書式ヘルプ
 "freqid"
+    周波数ID
 "Friday"
     金曜日
 "generic_date"
@@ -242,10 +264,12 @@
 "Genre (filtered)"
     ジャンル（絞込み）
 "Global"
+    全体
 "Go"
     移動
 "Google"
 "Group timeslots every"
+    タイムスロットグループ数
 "Guest Starring"
     ゲスト出演
 "Guide rating"
@@ -300,7 +324,9 @@
 "Language"
     言語
 "Last Recorded"
+    最後の録画
 "Last recording"
+    最後の録画
 "Last Updated"
     最後の更新
 "length"
@@ -322,16 +348,21 @@
 "Manual"
     手動
 "matches"
+    条件
 "Max star rating for movies"
+    映画の最大格付けスター
 "minutes"
     分
 "Monday"
     月曜日
 "more"
+    追加
 "move guide left"
 "move guide right"
 "movie"
+    映画
 "Movies"
+    映画
 "Movies, 3&frac12; Stars or more"
 "Movies, Stinkers (2 Stars or less)"
 "Music"
@@ -342,26 +373,35 @@
 "MythTV channel info"
     MythTVチャンネル情報
 "MythTV global defaults"
+    MythTV全体設定
 "MythTV key bindings"
     MythTVキーバインド
 "MythTV settings table"
+    MythTV settingsテーブル
 "MythTV Status"
     MythTVステータス
 "MythVideo Artwork Dir"
+    MythVideo画像ディレクトリ
 "MythVideo Dir"
+    MythVideoディレクトリ
 "MythVideo on the web."
     MythVideo オンザウェブ
 "MythWeb Global Defaults"
+    MythWeb全体設定
 "MythWeb session settings"
     MythWebセッション設定
 "MythWeb Session Settings"
     MythWebセッションセッティング
 "MythWeb Skin"
+    MythWebスキン
 "MythWeb Template"
+    MythWebテンプレート
 "MythWeb Weather."
     MythWeb 天気
 "Name"
+    名前
 "name"
+    名前
 "Never Record"
     もう録画しない
 "New Titles, Premieres"
@@ -388,12 +428,16 @@
 "Notes"
     備考
 "Number of epsodes"
+    録画数
 "Number of shows"
+    番組数
 "Number of timeslots"
+    タイムスロット数
 "Only display favourite channels"
     お気に入りのチャンネルのみ表示する
 "Only match commercial-free channels"
 "Only match HD programs"
+    HD番組のみ
 "Only New Episodes"
     新しい番組のみ
 "or"
@@ -402,8 +446,11 @@
 "Part $1 of $2"
     $1/$2
 "Past Month"
+    一ヶ月
 "Past Week"
+    一週間
 "Past Year"
+    一年間
 "People"
     ピープル
 "People Search"
@@ -414,11 +461,13 @@
 "plot"
     脚本
 "Possible conflicts with this show"
+    次の番組と衝突しています
 "Power"
     パワー
 "Power Search"
     パワーサーチ
 "Prefer Channum"
+    チャンネル番号を優先
 "Presented by"
     提供
 "Pressure"
@@ -468,41 +517,43 @@
 "Recording Schedules"
     録画予約
 "Recording Statistics"
+    録画統計
 "recpriority"
     録画優先順位
 "recstatus: cancelled"
-    キャンセルされました
+    キャンセルされました。
 "recstatus: conflict"
-    衝突してます
+    他の優先順位の高い番組が録画されます。
 "recstatus: currentrecording"
-    録画中
+    録画ずみです。
 "recstatus: deleted"
-    削除済み
+    録画開始されましたが終了前に削除されました。
 "recstatus: earliershowing"
-    早い番組が録画されます
+    この番組の代わりに早い番組が録画されます݂
 "recstatus: force_record"
-    強制録画
+    この番組を手動で録画するように設定されています。
 "recstatus: inactive"
-    無効
+    無効に設定されています。
 "recstatus: latershowing"
-    後の番組が録画されます
+    この番組の代わりに後の番組が録画されます
 "recstatus: lowdiskspace"
     ディスクの空きが少ないため録画できません
 "recstatus: manualoverride"
-    手動設定
+    手動で録画を停止されました
 "recstatus: neverrecord"
-    録画しない
+    録画しないようにマークされています。
 "recstatus: notlisted"
+    現在の一覧には一致しません。
 "recstatus: previousrecording"
-    以前に録画されました
+    重複検地で以前に録画されたと判断されました݂。
 "recstatus: recorded"
     録画済
 "recstatus: recording"
     録画中
 "recstatus: repeat"
-    繰り返し
+    再放送のため録画されません
 "recstatus: stopped"
-    停止
+    録画開始されましたが終了前に停止しました。
 "recstatus: toomanyrecordings"
     最大録画数になりました
 "recstatus: tunerbusy"
@@ -583,16 +634,23 @@
     予約ポップアップ
 "Science Fiction Movies"
 "Search"
-    検索
+    サーチ
 "Search fields"
+    サーチフィールド
 "Search for:  $1"
     $1 の検索結果
 "Search help"
+    サーチヘルプ
 "Search help: movie example"
+    サーチヘルプ: 映画例
 "Search help: movie search"
+    サーチヘルプ: 映画検索
 "Search help: regex example"
+    サーチヘルプ: 正規表現例
 "Search help: regex search"
+    サーチヘルプ: 正規表現検索
 "Search options"
+    サーチオプション
 "Search Phrase"
     サーチフレーズ
 "Search Results"
@@ -600,7 +658,7 @@
 "Search Type"
     サーチタイプ
 "Searches"
-    検索メニュー
+    サーチメニュー
 "Set Host"
     ホスト設定
 "settings"
@@ -608,7 +666,9 @@
 "Settings"
     設定
 "Settings Table"
+    Settings テーブル
 "Settings Table Editor"
+    Settings テーブルエディタ
 "settings: overview"
     設定概要
 "Show"
@@ -618,9 +678,11 @@
 "Show group"
     グループ表示
 "Show pixmaps"
+    プレビューイメージを表示する
 "Show recordings"
     番組表示
 "show/hide advanced options"
+    アドバンスドオプションの表示/非表示
 "Showing all programs from the $1 group."
     $1のすべての番組を表示
 "Showing all programs."
@@ -631,6 +693,7 @@
 "Special Searches"
     スペシャル検索
 "Star character"
+    スター文字
 "Start Date"
     開始日
 "Start Early"
@@ -638,6 +701,7 @@
 "Start Time"
     開始時間
 "Statistics"
+    統計
 "Status"
     ステータス
 "Status Bar"
@@ -664,6 +728,7 @@
 "Time Stretch Default"
     タイムストレッチ設定
 "Timeslot size"
+    タイムスロットサイズ
 "title"
     タイトル
 "Title"
@@ -677,7 +742,9 @@
 "Top"
     トップ
 "Top $1"
+    トップ $1
 "Total Time"
+    合計時間
 "Track Name"
     トラック名
 "transcoder"
@@ -728,13 +795,16 @@
 "Video"
     ビデオ
 "Video URL"
+    ビデオURL
 "videofilters"
+    ビデオフィルタ
 "Videos"
     ビデオ
 "Visibility"
     視界
 "visible"
 "Visit $1"
+    $1を訪れる
 "Weather"
     天気
 "Wednesday"
@@ -746,6 +816,7 @@
 "welcome: settings"
     設定へようこそ！
 "welcome: stats"
+    統計へようこそ！
 "welcome: status"
     ステータスへようこそ！
 "welcome: tv"
@@ -768,3 +839,4 @@
 "Yes"
     はい
 "Yesterday"
+    昨日
