@@ -3,7 +3,9 @@
 "$1 B"
     $1 B
 "$1 day"
+    $1 dag
 "$1 days"
+    $1 dagar
 "$1 episode"
     $1 avsnitt
 "$1 episodes"
@@ -35,17 +37,21 @@
 "$1 to $2"
     $1 till $2
 "$1 wasted"
+    $1 bortkastade
 "Action"
     Handling
 "Activate"
     Aktivera
 "add string"
+    lägg till sträng
 "Additional Tables"
     Ytterligare tabeller
 "Advanced"
+    Avancerad
 "Advanced Options"
     Avancerade inställningar
 "Advanced Search"
+    Avancerad sökning
 "airdate"
     datum
 "Airtime"
@@ -55,6 +61,7 @@
 "Album (filtered)"
     Album (filtrerat)
 "All"
+    Alla
 "All groups"
     Alla grupper
 "All HDTV"
@@ -111,8 +118,11 @@
 "CC"
     Textning
 "Chan. Callsign"
+    Kanalkortnamn
 "Chan. Name"
+    Kanalnamn
 "Chan. Number"
+    Kanalnummer
 "Channel"
     Kanal
 "channel"
@@ -142,6 +152,7 @@
 "contrast"
     kontrast
 "Count"
+    Antal
 "cover"
     omslag
 "Create Schedule"
@@ -157,6 +168,7 @@
 "Custom Schedule"
     Eget schema
 "Data"
+    Data
 "Date"
     Datum
 "Date Formats"
@@ -206,10 +218,11 @@
 "Edit"
     Redigera
 "Edit keybindings on"
-    Editera knappar på
+    Ändra knappar på
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
 "Edit settings for"
+    Ändra inställningar för
 "End"
     Slut
 "End Late"
@@ -219,6 +232,7 @@
 "Episode Number"
     Avsnittsnummer
 "Exact Match"
+    Exakt träff
 "Exec. Producer"
     Producent
 "file size"
@@ -240,7 +254,9 @@
 "finetune"
     finjustera
 "First recording"
+    Första inspelning
 "Fold Duplicates"
+    Vik dubbletter
 "Forecast"
     Prognos
 "Forget Old"
@@ -260,11 +276,13 @@
 "Genre (filtered)"
     Genre (filtrerad)
 "Global"
+    Global
 "Go"
     Gå
 "Google"
     Google
 "Group timeslots every"
+    Gruppera tidsluckor varje
 "Guest Starring"
     Gästspel
 "Guide rating"
@@ -323,7 +341,9 @@
 "Language"
     Språk
 "Last Recorded"
+    Senast inspelad
 "Last recording"
+    Senaste inspelning
 "Last Updated"
     Senast uppdaterad
 "length"
@@ -345,15 +365,21 @@
 "Manual"
     Manuell
 "matches"
+    träffar
 "Max star rating for movies"
+    Max stjärnbetyg för filmer
 "minutes"
     minuter
 "Monday"
     Måndag
 "more"
+    mer
 "move guide left"
+    flytta guide åt vänster
 "move guide right"
+    flytta guide åt höger
 "movie"
+    film
 "Movies"
     Filmer
 "Movies, 3&frac12; Stars or more"
@@ -369,25 +395,33 @@
 "MythTV channel info"
     MythTV kanalinfo
 "MythTV global defaults"
+    MythTV globala förval
 "MythTV key bindings"
     MythTV tangentbindningar
 "MythTV settings table"
+    MythTV inställningstabell
 "MythTV Status"
     MythTV-status
 "MythVideo Artwork Dir"
+    MythVideo konstkatalog
 "MythVideo Dir"
+    MythVideo-katalog
 "MythVideo on the web."
     MythVideo på webben
 "MythWeb Global Defaults"
+    MythWeb globala förval
 "MythWeb session settings"
     MythWeb sessionsinställningar
 "MythWeb Session Settings"
     MythWeb sessionsinställningar
 "MythWeb Skin"
+    MythWeb-skinn
 "MythWeb Template"
+    MythWeb-mall
 "MythWeb Weather."
     MythWeb väder.
 "Name"
+    Namn
 "name"
     namn
 "Never Record"
@@ -399,12 +433,13 @@
 "No"
     Nej
 "NO DATA"
-    INGEN DATA
+    INGA DATA
 "No matches found"
-    Inga matchningar funna
+    Inga träffar
 "No matching programs found."
     Inga matchande program hittades.
 "No matching programs were found."
+    Inga matchande program hittades.
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
 "No Tracks Available"
@@ -420,22 +455,31 @@
 "Notes"
     Anteckningar
 "Number of epsodes"
+    Antal avsnitt
 "Number of shows"
+    Antal visningar
 "Number of timeslots"
+    Antal tidsluckor
 "Only display favourite channels"
     Visa endast favoritkanaler
 "Only match commercial-free channels"
+    Matcha endast reklamfria kanaler
 "Only match HD programs"
+    Matcha endast HD-program
 "Only New Episodes"
     Endast nya avsnitt
 "or"
+    eller
 "Original Airdate"
     Sändningsdatum
 "Part $1 of $2"
     Del $1 av $2
 "Past Month"
+    Senaste månaden
 "Past Week"
+    Senaste veckan
 "Past Year"
+    Senaste året
 "People"
     Person
 "People Search"
@@ -452,6 +496,7 @@
 "Power Search"
     Avancerad sökning
 "Prefer Channum"
+    Föredra kanalnummer
 "Presented by"
     Presenteras av
 "Pressure"
@@ -469,7 +514,9 @@
 "profile"
     profil
 "program continues to the left"
+    program fortsätter till vänster
 "program continues to the right"
+    program fortsätter till höger
 "Program Detail"
     Programdetaljer
 "Program ID"
@@ -501,6 +548,7 @@
 "Recording Schedules"
     Inspelningsscheman
 "Recording Statistics"
+    Inspelningsstatistik
 "recpriority"
     inspelningsprioritet
 "recstatus: cancelled"
@@ -594,6 +642,7 @@
 "Reverse Order"
     Omvänd ordning
 "Rows to show between timeslot info"
+    Rader att visa mellan tidsluckeinfo
 "Saturday"
     Lördag
 "Save"
@@ -611,6 +660,7 @@
 "Schedule Override"
     Åsidosätt schemaläggning
 "Schedule via $1."
+    Schemalägg via $1.
 "Scheduled"
     Schemalagd
 "Scheduled Popup"
@@ -620,14 +670,17 @@
 "Search"
     Sök
 "Search fields"
+    Sökfält
 "Search for:  $1"
     Sök efter:  $1
 "Search help"
+    Sökhjälp
 "Search help: movie example"
 "Search help: movie search"
 "Search help: regex example"
 "Search help: regex search"
 "Search options"
+    Sökval
 "Search Phrase"
     Sök fras
 "Search Results"
@@ -643,7 +696,9 @@
 "Settings"
     Inställningar
 "Settings Table"
+    Inställningstabell
 "Settings Table Editor"
+    Inställningstabellredigerare
 "settings: overview"
     Detta är startsidan för inställningarna. Inte helt komplett, men följande finns för närvarande att välja på:
 "Show"
@@ -653,9 +708,11 @@
 "Show group"
     Visa grupp
 "Show pixmaps"
+    Visa pixmaps
 "Show recordings"
     Visa inspelningar
 "show/hide advanced options"
+    visa/dölj avancerade val
 "Showing all programs from the $1 group."
     Visar alla program i grupp: $1.
 "Showing all programs."
@@ -667,6 +724,7 @@
 "Special Searches"
     Speciella sökningar
 "Star character"
+    Huvudperson
 "Start Date"
     Startdatum
 "Start Early"
@@ -674,6 +732,7 @@
 "Start Time"
     Starttid
 "Statistics"
+    Statistik
 "Status"
     Status
 "Status Bar"
@@ -701,6 +760,7 @@
 "Time Stretch Default"
     Förvalt tempo
 "Timeslot size"
+    Tidsluckestorlek
 "title"
     titel
 "Title"
@@ -714,7 +774,9 @@
 "Top"
     Överst
 "Top $1"
+    Topp $1
 "Total Time"
+    Total tid
 "Track Name"
     Spårnamn
 "transcoder"
@@ -764,9 +826,11 @@
 "UV Moderate"
     UV-strålning måttlig
 "Value"
+    Värde
 "Video"
     Video
 "Video URL"
+    Video-URL
 "videofilters"
     videofilter
 "Videos"
@@ -788,6 +852,7 @@
 "welcome: settings"
     Konfigurera MythWeb och några av MythTVs inställningar.
 "welcome: stats"
+    Visa statistik
 "welcome: status"
     Visa inspelningsserverns statussida.
 "welcome: tv"
@@ -811,3 +876,4 @@
 "Yes"
     Ja
 "Yesterday"
+    Igår
