@@ -51,11 +51,11 @@
     if (is_array($this_channel->programs)) {
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
-    <td><a href="<?php echo root ?>tv/upcoming?sortby=airdate"><?php echo t('Time') ?></a></td>
-    <td><a href="<?php echo root ?>tv/upcoming?sortby=title"><?php echo t('Show') ?></a></td>
-    <td><?php echo t('Episode') ?></td>
-    <td><?php t('Description') ?></td>
-    <td><a href="<?php echo root ?>tv/upcoming?sortby=length"><?php echo t('Length') ?></a></td>
+    <td><?php echo t('Time')        ?></td>
+    <td><?php echo t('Show')        ?></td>
+    <td><?php echo t('Episode')     ?></td>
+    <td><?php echo t('Description') ?></td>
+    <td><?php echo t('Length')      ?></td>
 </tr><?php
 
         $row = 0;
