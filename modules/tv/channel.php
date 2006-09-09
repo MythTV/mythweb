@@ -55,7 +55,7 @@
 /**/
     function channel_select() {
         global $Channels;
-        echo '<select name="chanid" onchange="submit_form()">';
+        echo '<select name="chanid" onchange="submit_form(\'\',\'\',\'program_listing\')">';
         foreach ($Channels as $channel) {
         // Not visible?
             if (empty($channel->visible))
