@@ -187,7 +187,7 @@
             elseif ($frac >= .25)
                 $data['starstring'] .= '&frac14;';
         // This program has already been loaded, and is attached to a recording schedule
-            if ($Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0]->title == $data['title']) {
+            if (!empty($data['title']) && $Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0]->title == $data['title']) {
                 $program =& $Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0];
             // merge in data fetched from DB
                 $program->merge(new Program($data));
