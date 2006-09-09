@@ -175,6 +175,10 @@ A: I (Chris Petersen) share a lot of my work between open source projects and
     a handful of files that are licensed as GPL, but are licensed elsewhere as
     LGPL (these are documented).
 
+Q: Where did the config files go?
+A: All configuration was moved either into the .htaccess file or into the
+   settings section of mythweb itself.
+
 4.0 Plan/TODO
 =============
 
