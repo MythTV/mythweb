@@ -81,9 +81,9 @@
         if ($key === 'offset') {
             list($Num_Conflicts, $Num_Scheduled) = $program;
         }
-    // Normal entry:  $Scheduled_Recordings[channum][starttime][]
+    // Normal entry:  $Scheduled_Recordings[callsign][starttime][]
         else {
-            $Scheduled_Recordings[$program[5]][$program[11]][] =& new Program($program);
+            $Scheduled_Recordings[$program[6]][$program[11]][] =& new Program($program);
         }
     }
 

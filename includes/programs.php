@@ -123,6 +123,7 @@
                          UNIX_TIMESTAMP(program.endtime) AS endtime_unix,
                          IFNULL(programrating.system, "") AS rater,
                          IFNULL(programrating.rating, "") AS rating,
+                         channel.callsign,
                          channel.channum
                   FROM program
                        LEFT JOIN programrating USING (chanid, starttime)
@@ -146,7 +147,7 @@
         if ($extra_query)
             $query .= ' AND '.$extra_query;
     // Group and sort
-        $query .= "\nGROUP BY program.chanid, program.starttime ORDER BY program.starttime";
+        $query .= "\nGROUP BY program.chanid, program.starttime, channel.callsign ORDER BY program.starttime";
     // Limit
         if ($single_program)
             $query .= "\n LIMIT 1";
@@ -187,8 +188,8 @@
             elseif ($frac >= .25)
                 $data['starstring'] .= '&frac14;';
         // This program has already been loaded, and is attached to a recording schedule
-            if (!empty($data['title']) && $Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0]->title == $data['title']) {
-                $program =& $Scheduled_Recordings[$data['channum']][$data['starttime_unix']][0];
+            if (!empty($data['title']) && $Scheduled_Recordings[$data['callsign']][$data['starttime_unix']][0]->title == $data['title']) {
+                $program =& $Scheduled_Recordings[$data['callsign']][$data['starttime_unix']][0];
             // merge in data fetched from DB
                 $program->merge(new Program($data));
             }

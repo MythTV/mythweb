@@ -76,7 +76,7 @@
 // Parse the list of scheduled recordings
     global $Scheduled_Recordings;
     $all_shows = array();
-    foreach ($Scheduled_Recordings as $channum => $shows) {
+    foreach ($Scheduled_Recordings as $callsign => $shows) {
     // Now the shows in this channel
         foreach ($shows as $starttime => $show_group) {
         // Parse each show group
@@ -85,7 +85,7 @@
                 if ($starttime <= time() && $show->recstatus != 'Recording')
                     continue;
             // Make sure this is a valid show (ie. skip in-progress recordings and other junk)
-                if (!$channum || $show->length < 1)
+                if (!$callsign || $show->length < 1)
                     continue;
             // Skip scheduled shows?
                 if (in_array($show->recstatus, array('WillRecord', 'ForceRecord'))) {
@@ -108,7 +108,7 @@
                         continue;
                 }
             // Assign a reference to this show to the various arrays
-                $all_shows[] =& $Scheduled_Recordings[$channum][$starttime][$key];
+                $all_shows[] =& $Scheduled_Recordings[$callsign][$starttime][$key];
             }
         }
     }

@@ -21,9 +21,8 @@
     $Channels = array();
 
 // Initialize the callsign hash
-    global $ChanIDs;
-    $ChanIDs = array();
-
+    global $Callsigns;
+    $Callsigns = array();
 
 /**
  * Loads all of the channels into channel objects, AND returns the global array $Channels
@@ -38,14 +37,15 @@
         else
             $sql = 'SELECT * FROM channel WHERE';
         $sql .= ' channel.visible=1';
-    // Sort.
+    // Sort
         $sql .= ' ORDER BY '
                 .(sortby_channum ? '' : 'channel.callsign, ')
                 .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
     // Query
         $sh = $db->query($sql);
         while ($channel_data = $sh->fetch_assoc())  {
-            $Channels[$channel_data['chanid']] = new Channel($channel_data);
+            $Channels[$channel_data['chanid']]    = new Channel($channel_data);
+            $Callsigns[$channel_data['callsign']] = $channel_data['chanid'];
         }
         $sh->finish();
     // No channels returned?
