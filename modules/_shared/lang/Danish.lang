@@ -1,19 +1,25 @@
 " at "
     ved
 "$1 B"
+    $1 B
 "$1 day"
+    $1 dag
 "$1 days"
+    $1 dage
 "$1 episode"
     $1 afsnit
 "$1 episodes"
     $1 afsnit
 "$1 GB"
+    $1 GB
 "$1 hr"
     $1 t
 "$1 hrs"
     $1 t
 "$1 KB"
+    $1 KB
 "$1 MB"
+    $1 MB
 "$1 min"
     $1 minut
 "$1 mins"
@@ -25,16 +31,21 @@
 "$1 recordings"
     $1 optagelser
 "$1 Search"
+    $1 søgning
 "$1 TB"
+    $1 TB
 "$1 to $2"
     $1 til $2
 "$1 wasted"
+    $1 misted
 "Action"
 "Activate"
     Aktivér
 "add string"
+    tilføj streng
 "Additional Tables"
 "Advanced"
+    Advancered
 "Advanced Options"
     Avancerede indstillinger
 "Advanced Search"
@@ -47,8 +58,11 @@
 "Album (filtered)"
     Album (filtreret)
 "All"
+    Alt
 "All groups"
+    Alle grupper
 "All HDTV"
+    Al HDTV
 "All Music"
     Al musik
 "All recordings"
@@ -56,8 +70,11 @@
 "Any"
     Alle
 "Any Category"
+    Alle kategorier
 "Any Channel"
+    Alle kanaler
 "Any Program Type"
+    Alle program typer
 "Are you sure you want to delete the following show?"
     Er du sikker på at du vil slette programmet?
 "Artist"
@@ -77,6 +94,7 @@
 "Back to the recording schedules"
     Tilbage til planlagte optagelser
 "Backend Logs"
+    Backend Logs
 "Backend Status"
     System status
 "brightness"
@@ -94,10 +112,15 @@
 "Category Legend"
     Kategoriforklaring
 "Category Type"
+    Kategori type
 "CC"
+    CC
 "Chan. Callsign"
+    Kanal kaldenavn
 "Chan. Name"
+    Kanal navn
 "Chan. Number"
+    Kanal nummer
 "Channel"
     Kanal
 "channel"
@@ -117,7 +140,9 @@
 "commfree"
     Reklamefri
 "Configure Channels"
+    Konfigurér kanaler
 "Configure Keybindings"
+    Konfigurér tastaturgenveje
 "Conflicts"
     Konflikter
 "Context"
@@ -135,8 +160,11 @@
 "Currently Browsing:  $1"
     Lige nu vises: $1
 "Custom"
+    Valgfri
 "Custom Schedule"
+    Valgfri søgning
 "Data"
+    Data
 "Date"
     Dato
 "Date Formats"
@@ -177,7 +205,7 @@
 "Dup Method"
     Dubletkontrol metode
 "Duplicate Check method"
-    dubletkontrol metode
+    Dubletkontrol metode
 "Duplicates"
     Dubletter
 "Duration"
@@ -189,6 +217,7 @@
 "Edit MythWeb and some MythTV settings."
     Rediger MythWeb- og nogle MythTV-indstillinger
 "Edit settings for"
+    Ændre opsætning for
 "End"
     Slut
 "End Late"
@@ -196,6 +225,7 @@
 "Episode"
     Afsnit
 "Episode Number"
+    Episode nummer
 "Exact Match"
 "Exec. Producer"
     Producer
@@ -204,15 +234,21 @@
 "Filtered"
     Filtreret
 "Find Date & Time Options"
+    Find dato og tid opsætning
 "Find Day"
+    Find dag
 "Find other showings of this program"
     Find andre udsendelser af dette program
 "Find showings of this program"
     Find udsendelser af dette program
 "Find Time"
+    Find tid
 "Find Time must be of the format:  HH:MM:SS"
+    Find tid skal være i TT:MM:SS format
 "finetune"
+    finindstil
 "First recording"
+    Første optagelse
 "Fold Duplicates"
 "Forecast"
     Prognose
@@ -233,6 +269,7 @@
 "Genre (filtered)"
     Genre (filtreret)
 "Global"
+    Globalt
 "Go"
     Gå
 "Google"
@@ -251,14 +288,16 @@
 "has cutlist"
     har klippeliste
 "HD Only"
+    Kun HD
 "HDTV"
+    HDTV
 "High"
     Høj
 "Hosted by"
 "Hour"
     Time
 "Hour Format"
-    Timeformattering
+    Tidsformat
 "hue"
 "Humidity"
     Luftfugtighed
@@ -277,13 +316,19 @@
     Gå Til
 "JumpPoints Editor"
 "Key bindings"
+    Tastgenvej
 "Keybindings Editor"
+    Tastegenveks editor
 "Keyword"
+    Nøgleord
 "Keyword Search"
+    Nøgleords søgning
 "Language"
     Sprog
 "Last Recorded"
+    Sidst optaget
 "Last recording"
+    Sidste optagelse
 "Last Updated"
     Sidst opdateret
 "length"
@@ -302,17 +347,24 @@
 "Low"
     Lav
 "Manual"
+    Manuel
 "matches"
+    passer på
 "Max star rating for movies"
 "minutes"
     minutter
 "Monday"
     Mandag
 "more"
+    mere
 "move guide left"
+    flyt guide til venstre
 "move guide right"
+    flyt guide til højre
 "movie"
+    film
 "Movies"
+    Film
 "Movies, 3&frac12; Stars or more"
 "Movies, Stinkers (2 Stars or less)"
 "Music"
@@ -323,12 +375,16 @@
 "MythTV channel info"
     MythTV kanal info
 "MythTV global defaults"
+    MythTV globale standarder
 "MythTV key bindings"
     MythTV taste indstillinger
 "MythTV settings table"
+    MythTV opsætnings tabel
 "MythTV Status"
+    MythTV Status
 "MythVideo Artwork Dir"
 "MythVideo Dir"
+    MythVideo mappe
 "MythVideo on the web."
     MythVideo på www
 "MythWeb Global Defaults"
@@ -339,19 +395,23 @@
 "MythWeb Weather."
     MythWeb Vejrudsigt
 "Name"
-"name"
     Navn
+"name"
+    navn
 "Never Record"
     Optag aldrig
 "New Titles, Premieres"
+    Nye titler, premierer
 "Next"
     Næste
 "No"
     Nej
 "NO DATA"
+    INGEN DATA
 "No matches found"
     Ingen match fundet
 "No matching programs found."
+    Ingen matchende programmer fundet.
 "No matching programs were found."
 "No recording schedules have been defined."
     Ingen optagelser er planlagt
@@ -366,7 +426,9 @@
 "Notes"
     Bemærkninger
 "Number of epsodes"
+    Antal episoder
 "Number of shows"
+    Antal shows
 "Number of timeslots"
 "Only display favourite channels"
     Vis kun favorit kanaler
@@ -375,22 +437,32 @@
 "Only New Episodes"
     Kun Nye Afsnit
 "or"
+    eller
 "Original Airdate"
     Sendt først
 "Part $1 of $2"
+    Del $1 af $2
 "Past Month"
+    Sidste måned
 "Past Week"
+    Sidste uge
 "Past Year"
+    Sidste år
 "People"
+    Personer
 "People Search"
+    Person søgning
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "Please search for something."
+    Søg venligst efter noget
 "plot"
 "Possible conflicts with this show"
     Mulige konfligter med denne udsendelse
 "Power"
+    Super
 "Power Search"
+    Super søgning
 "Prefer Channum"
 "Presented by"
     Præsenteret af
@@ -440,6 +512,7 @@
 "Recording Schedules"
     Optagelsesplanlægning
 "Recording Statistics"
+    Optagelses statistik
 "recpriority"
     Optagelsesprioritet
 "recstatus: cancelled"
@@ -469,13 +542,13 @@
 "recstatus: previousrecording"
     Dette afsnit er tidligere optaget jævnfør den duplikeringsindstilling der er valgt for dette program.
 "recstatus: recorded"
-    Denne visning er optaget.
+    Denne udsendelse er optaget.
 "recstatus: recording"
-    Optagelse af denne visning er i gang.
+    Optagelse af denne udsendelse er i gang.
 "recstatus: repeat"
-    Denne visning er en gentagelse og vil ikke blive optaget.
+    Denne udsendelse er en genudsendelse og vil ikke blive optaget.
 "recstatus: stopped"
-    Denne visning blev optaget, men blev stoppet inden optagelsen var færdig.
+    Denne udsendelse blev optaget, men blev stoppet inden optagelsen var færdig.
 "recstatus: toomanyrecordings"
     Der findes for mange optagelser af dette program.
 "recstatus: tunerbusy"
@@ -487,21 +560,21 @@
 "rectype-long: always"
     Optag når som helst på alle kanaler.
 "rectype-long: channel"
-    Optag når som helst på kanalen $1.
+    Optag når som helst på kanal $1.
 "rectype-long: daily"
     Optag dette program på dette tidspunkt hver dag.
 "rectype-long: dontrec"
     Optag ikke denne specifikke visning.
 "rectype-long: finddaily"
-    Find og optag en visning af dette program hver dag.
+    Find og optag en udsendelse af dette program hver dag.
 "rectype-long: findone"
-    Find og optag en visning af dette program.
+    Find og optag en udsendelse af dette program.
 "rectype-long: findweekly"
-    Find og optag en visning af dette program hver uge.
+    Find og optag en udsendelse af dette program hver uge.
 "rectype-long: once"
-    Optag kun denne visning.
+    Optag kun denne udsendelse.
 "rectype-long: override"
-    Optag denne specifikke visning.
+    Optag denne specifikke udsendelse.
 "rectype-long: weekly"
     Optag dette program på dette tidspunkt hver uge.
 "rectype: always"
@@ -525,7 +598,6 @@
 "rectype: weekly"
     Ugentligt
 "regex: articles"
-    An?|The
 "Repeat"
     Genudsendelse
 "Reset"
@@ -538,9 +610,11 @@
 "Save"
     Gem
 "Save Schedule"
+    Gem planlægning
 "Schedule"
     Planlæg
 "Schedule Manually"
+    Planlæg manuelt
 "Schedule normally."
     Planlæg normalt
 "Schedule Options"
@@ -548,26 +622,33 @@
 "Schedule Override"
     Planlæg manuelt
 "Schedule via $1."
+    Planlæg via $1.
 "Scheduled"
     Planlagt
 "Scheduled Popup"
     Planlagt popup
 "Science Fiction Movies"
+    Science Fiction Film
 "Search"
     Søg
 "Search fields"
+    Søge felter
 "Search for:  $1"
     Søg efter: $1
 "Search help"
+    Søgnigns hjælp
 "Search help: movie example"
 "Search help: movie search"
 "Search help: regex example"
 "Search help: regex search"
 "Search options"
+    Søge muligheder
 "Search Phrase"
+    Søge ord
 "Search Results"
     Søgeresultater
 "Search Type"
+    Søge type
 "Searches"
     Søgninger
 "Set Host"
@@ -589,8 +670,11 @@
 "Show recordings"
     Vis optagelser
 "show/hide advanced options"
+    vis/skjul advanceret opsætning
 "Showing all programs from the $1 group."
+    Viser alle programmer fra gruppen $1.
 "Showing all programs."
+    Viser alle programmer.
 "SI Units?"
     SI enheder?
 "sourceid"
@@ -604,11 +688,13 @@
 "Start Time"
     Starttidspunkt
 "Statistics"
+    Statistik
 "Status"
     Status
 "Status Bar"
     Status linie
 "Stereo"
+    Steroe
 "Sub and Desc (Empty matches)"
     Undertitel og beskrivelse
 "Subtitle"
@@ -618,22 +704,24 @@
 "Subtitle and Description"
     Undertitel og beskrivelse
 "Subtitled"
+    Tekstet
 "Sunday"
     Søndag
 "The requested recording schedule has been deleted."
-    Den planlagte optagelse er blevet slettet
+    Den planlagte optagelse er blevet slettet.
 "Thursday"
     Torsdag
 "Time"
     Tidspunkt
 "Time Stretch Default"
-    Standard Afspilnings hastighed
+    Afspilnings tempo
 "Timeslot size"
 "title"
     titel
 "Title"
     Titel
 "Title Search"
+    Titel søgning
 "Today"
     I dag
 "Tomorrow"
@@ -641,7 +729,9 @@
 "Top"
     Top
 "Top $1"
+    Top $1
 "Total Time"
+    Total tid
 "Track Name"
     Spor navn
 "transcoder"
@@ -668,6 +758,7 @@
 "Unknown Recording Schedule."
     Ukendt planlagt optagelse
 "Unreachable"
+    Uopnåelig
 "Upcoming Recordings"
     Fremtidige optagelser
 "Update"
@@ -675,8 +766,11 @@
 "Update Recording Settings"
     Opdatér optagelsesindstillinger
 "Use callsign"
+    Brug kaldenavn
 "Use date/time"
+    Brug dato/tid
 "useonairguide"
+    brug onairguide
 "UV Extreme"
     UV-stråling ekstrem
 "UV High"
@@ -688,31 +782,43 @@
 "UV Moderate"
     UV-stråling middel
 "Value"
+    Værdi
 "Video"
     Video
 "Video URL"
+    Video URL
 "videofilters"
+    videofiltre
 "Videos"
     Videoer
 "Visibility"
     Sigtbarhed
 "visible"
+    synlig
 "Visit $1"
+    Besøg $1
 "Weather"
     Vejret
 "Wednesday"
     Onsdag
 "welcome: backend_log"
+    Velkommen: Backend_log
 "welcome: music"
-    Velkommen: musik
+    Velkommen: Musik
 "welcome: settings"
+    Velkommen: Opsætning
 "welcome: stats"
+    Velkommen: Stats
 "welcome: status"
+    Velkommen: Status
 "welcome: tv"
+    Velkommen: Tv
 "welcome: video"
+    Velkommen: Video
 "welcome: weather"
+    Velkommen: Vejret
 "What else is on at this time?"
-    Hvad er der ellers i fjernsynet på dette tidspunkt?
+    Hvad er der i fjernsynet på dette tidspunkt?
 "Wind"
     Vind
 "Wind Chill"
@@ -725,3 +831,4 @@
 "Yes"
     Ja
 "Yesterday"
+    Igår
