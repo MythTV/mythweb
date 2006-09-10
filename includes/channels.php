@@ -20,12 +20,19 @@
     global $Channels;
     $Channels = array();
 
+// Initialize the callsign hash
+    global $ChanIDs;
+    $ChanIDs = array();
+
+
 /**
  * Loads all of the channels into channel objects, AND returns the global array $Channels
 /**/
     function load_all_channels() {
+        global $db;
         global $Channels;
         $Channels = array();
+    // Initialize the query
         if ($_SESSION['guide_favonly'])
             $sql = 'SELECT channel.* FROM channel, favorites WHERE channel.chanid = favorites.chanid AND';
         else
@@ -34,14 +41,13 @@
     // Sort.
         $sql .= ' ORDER BY '
                 .(sortby_channum ? '' : 'channel.callsign, ')
-                .'(channel.channum + 0), channel.chanid';
+                .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
     // Query
-        $result = mysql_query($sql)
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-        while ($channel_data = mysql_fetch_assoc($result))  {
+        $sh = $db->query($sql);
+        while ($channel_data = $sh->fetch_assoc())  {
             $Channels[$channel_data['chanid']] = new Channel($channel_data);
         }
-        mysql_free_result($result);
+        $sh->finish();
     // No channels returned?
         if (empty($Channels)) {
             unset($_SESSION['guide_favonly']);
