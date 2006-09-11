@@ -269,6 +269,7 @@ class Program {
     var $is_editing     = 0;
     var $bookmark       = 0;
     var $auto_expire    = 0;
+    var $is_watched     = 0;
 
     var $conflicting    = false;
     var $recording      = false;
@@ -362,6 +363,7 @@ class Program {
             $this->closecaptioned = ($progflags & 0x100) ? true : false;    // FL_CC             = 0x100
             $this->hdtv           = ($progflags & 0x200) ? true : false;    // FL_HDTV           = 0x200
                                                                             // FL_TRANSCODED     = 0x400
+            $this->is_watched     = ($progflags & 0x800) ? true : false;    // FL_WATCHED        = 0x800
         // Add a generic "will record" variable, too
             $this->will_record = ($this->rectype && $this->rectype != rectype_dontrec) ? true : false;
         }

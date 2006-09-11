@@ -325,8 +325,10 @@ EOM;
              name="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
              <?php if ($show->auto_expire) echo ' CHECKED' ?> onchange="set_autoexpire(<?php echo $row ?>)" />
             </span>
-        <?php echo t('has bookmark') ?>:&nbsp;
-            <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b>
+        <span style="padding-right: 25px"><?php echo t('has bookmark') ?>:&nbsp;
+            <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b></span>
+        <?php echo t('has been watched') ?>:&nbsp;
+            <b><?php echo $show->is_watched ? t('Yes') : t('No') ?></b>
         </td>
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_rerecord_<?php echo $row ?>"
