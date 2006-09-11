@@ -270,9 +270,9 @@ class Schedule {
                          $this->recpriority,
                          $this->category,
                          $this->maxnewest,
-                         $this->inactive,
+                         _or($this->inactive, 0),
                          $this->maxepisodes,
-                         $this->autoexpire,
+                         _or($this->autoexpire, 0),
                          $this->startoffset,
                          $this->endoffset,
                          $this->recgroup,
@@ -281,18 +281,18 @@ class Schedule {
                          $this->station,  // callsign!
                          $this->seriesid,
                          $this->programid,
-                         $this->autocommflag,
+                         _or($this->autocommflag, 0),
                          $this->findday,
                          $this->findtime,
                          $this->findid,
-                         $this->autotranscode,
+                         _or($this->autotranscode, 0),
                          $this->transcoder,
-                         _or($this->parentid, 0),
+                         _or(_or($this->parentid, 0),
                          $this->tsdefault,
-                         $this->autouserjob1,
-                         $this->autouserjob2,
-                         $this->autouserjob3,
-                         $this->autouserjob4
+                         _or($this->autouserjob1, 0),
+                         _or($this->autouserjob2, 0),
+                         _or($this->autouserjob3, 0),
+                         _or($this->autouserjob4, 0)
                         );
     // Get the id that was returned
         $recordid = $sh->insert_id();
