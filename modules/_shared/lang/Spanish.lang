@@ -113,8 +113,6 @@
     Categoría
 "Category Legend"
     Leyenda Categoría
-"Category Type"
-    Tipo Categoría
 "CC"
     SUB
 "Chan. Callsign"
@@ -231,8 +229,6 @@
     Episodio
 "Episode Number"
     Nº Episodio
-"Exact Match"
-    Coincidencia Exacta
 "Exec. Producer"
     Productor ejec.
 "file size"
@@ -255,8 +251,6 @@
     sintonía fina
 "First recording"
     Primera grabación
-"Fold Duplicates"
-    Plegar Duplicados
 "Forecast"
     Predicción
 "Forget Old"
@@ -293,14 +287,13 @@
     Búsquedas Predefinidas Útiles
 "handy: overview"
     útiles: resúmen
+"has been watched"
 "has bookmark"
     tiene marcador
 "has commflag"
     anuncios marcados
 "has cutlist"
     lista de corte
-"HD Only"
-    Sólo HD
 "HDTV"
     HDTV
 "High"
@@ -373,10 +366,6 @@
     Lunes
 "more"
     más
-"move guide left"
-    mover guía izquierda
-"move guide right"
-    mover guía derecha
 "movie"
     Película
 "Movies"
@@ -437,8 +426,6 @@
     Sin resultados
 "No matching programs found."
     No hay programas coincidentes
-"No matching programs were found."
-    No se encontraron programas coincidentes
 "No recording schedules have been defined."
     No se han definido programaciones
 "No Tracks Available"
@@ -484,8 +471,6 @@
     Búsqueda gente
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
-"Please search for something."
-    Por favor busque algo
 "plot"
     resúmen
 "Possible conflicts with this show"
@@ -512,10 +497,6 @@
     Perfil
 "profile"
     perfil
-"program continues to the left"
-    programa continúa a la izquierda
-"program continues to the right"
-    programa continúa a la derecha
 "Program Detail"
     Detalle programa
 "Program ID"
@@ -668,22 +649,8 @@
     Películas Ciencia Ficción
 "Search"
     Buscar
-"Search fields"
-    Campos búsqueda
 "Search for:  $1"
     Buscar: $1
-"Search help"
-    Ayuda búsqueda
-"Search help: movie example"
-    Ayuda búsqueda: ejemplo película
-"Search help: movie search"
-    Ayuda búsqueda: búsqueda película
-"Search help: regex example"
-    Ayuda búsqueda: ejemplo regex
-"Search help: regex search"
-    Ayuda búsqueda: búsqueda regex
-"Search options"
-    Opciones búsqueda
 "Search Phrase"
     Buscar frase
 "Search Results"
@@ -714,8 +681,6 @@
     Mostrar gráficos
 "Show recordings"
     Mostrar grabaciones
-"show/hide advanced options"
-    mostrar/ocultar opciones avanzadas
 "Showing all programs from the $1 group."
     Mostrando todos los programas del grupo $1
 "Showing all programs."

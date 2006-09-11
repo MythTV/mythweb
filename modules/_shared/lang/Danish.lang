@@ -111,8 +111,6 @@
     Kategori
 "Category Legend"
     Kategoriforklaring
-"Category Type"
-    Kategori type
 "CC"
     CC
 "Chan. Callsign"
@@ -226,7 +224,6 @@
     Afsnit
 "Episode Number"
     Episode nummer
-"Exact Match"
 "Exec. Producer"
     Producer
 "file size"
@@ -249,7 +246,6 @@
     finindstil
 "First recording"
     Første optagelse
-"Fold Duplicates"
 "Forecast"
     Prognose
 "Forget Old"
@@ -281,14 +277,13 @@
     Guide opsætning
 "Handy Predefined Searches"
 "handy: overview"
+"has been watched"
 "has bookmark"
     har bookmark(s)
 "has commflag"
     har markeret reklameblokke
 "has cutlist"
     har klippeliste
-"HD Only"
-    Kun HD
 "HDTV"
     HDTV
 "High"
@@ -357,10 +352,6 @@
     Mandag
 "more"
     mere
-"move guide left"
-    flyt guide til venstre
-"move guide right"
-    flyt guide til højre
 "movie"
     film
 "Movies"
@@ -412,7 +403,6 @@
     Ingen match fundet
 "No matching programs found."
     Ingen matchende programmer fundet.
-"No matching programs were found."
 "No recording schedules have been defined."
     Ingen optagelser er planlagt
 "No Tracks Available"
@@ -454,8 +444,6 @@
     Person søgning
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
-"Please search for something."
-    Søg venligst efter noget
 "plot"
 "Possible conflicts with this show"
     Mulige konfligter med denne udsendelse
@@ -480,8 +468,6 @@
     Profil
 "profile"
     profil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Program detaljer
 "Program ID"
@@ -631,18 +617,8 @@
     Science Fiction Film
 "Search"
     Søg
-"Search fields"
-    Søge felter
 "Search for:  $1"
     Søg efter: $1
-"Search help"
-    Søgnigns hjælp
-"Search help: movie example"
-"Search help: movie search"
-"Search help: regex example"
-"Search help: regex search"
-"Search options"
-    Søge muligheder
 "Search Phrase"
     Søge ord
 "Search Results"
@@ -669,8 +645,6 @@
 "Show pixmaps"
 "Show recordings"
     Vis optagelser
-"show/hide advanced options"
-    vis/skjul advanceret opsætning
 "Showing all programs from the $1 group."
     Viser alle programmer fra gruppen $1.
 "Showing all programs."

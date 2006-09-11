@@ -107,7 +107,6 @@
     Categorie
 "Category Legend"
     Categorie Legende
-"Category Type"
 "CC"
     OND
 "Chan. Callsign"
@@ -218,7 +217,6 @@
     Aflevering
 "Episode Number"
     Aflevering nr.
-"Exact Match"
 "Exec. Producer"
     Uitv. Producent
 "file size"
@@ -240,7 +238,6 @@
 "finetune"
     fijn afstemmen
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Voorspelling
 "Forget Old"
@@ -275,13 +272,13 @@
     Handige voorgeprogrammeerde zoekopdrachten
 "handy: overview"
     Deze pagina bevat handige voorgeprogrammeerde complexe zoekopdrachten
+"has been watched"
 "has bookmark"
     heeft index
 "has commflag"
     heeft reclamemarkering
 "has cutlist"
     heeft knippunten
-"HD Only"
 "HDTV"
     HDTV
 "High"
@@ -350,8 +347,6 @@
 "Monday"
     Maandag
 "more"
-"move guide left"
-"move guide right"
 "movie"
 "Movies"
     Films
@@ -403,7 +398,6 @@
     Geen programma's gevonden
 "No matching programs found."
     Geen overeenkomsten gevonden
-"No matching programs were found."
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
 "No Tracks Available"
@@ -441,7 +435,6 @@
     Personen zoeken
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
-"Please search for something."
 "plot"
     korte inhoud
 "Possible conflicts with this show"
@@ -466,8 +459,6 @@
     Profiel
 "profile"
     profiel
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Programmadetails
 "Program ID"
@@ -617,15 +608,8 @@
     Science Fiction Films
 "Search"
     Zoeken
-"Search fields"
 "Search for:  $1"
     Zoeken: $1
-"Search help"
-"Search help: movie example"
-"Search help: movie search"
-"Search help: regex example"
-"Search help: regex search"
-"Search options"
 "Search Phrase"
     Zin zoeken
 "Search Results"
@@ -653,7 +637,6 @@
 "Show pixmaps"
 "Show recordings"
     Opnames tonen
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Alle programma's uit de $1 groep laten zien
 "Showing all programs."

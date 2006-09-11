@@ -107,8 +107,6 @@
     カテゴリー
 "Category Legend"
     カテゴリー凡例
-"Category Type"
-    カテゴリータイプ
 "CC"
 "Chan. Callsign"
 "Chan. Name"
@@ -220,8 +218,6 @@
     サブタイトル
 "Episode Number"
     番組番号
-"Exact Match"
-    完全な一致
 "Exec. Producer"
     製作責任者
 "file size"
@@ -244,7 +240,6 @@
     ファインチューン
 "First recording"
     最初の録画
-"Fold Duplicates"
 "Forecast"
     予報
 "Forget Old"
@@ -279,13 +274,13 @@
     おてがるサーチ
 "handy: overview"
     下のメニューから簡単に検索できます。
+"has been watched"
 "has bookmark"
     ブックマーク
 "has commflag"
     CMマーク
 "has cutlist"
     カットリスト
-"HD Only"
 "HDTV"
 "High"
     高
@@ -357,8 +352,6 @@
     月曜日
 "more"
     追加
-"move guide left"
-"move guide right"
 "movie"
     映画
 "Movies"
@@ -414,7 +407,6 @@
     一致する物がありませんでした
 "No matching programs found."
     該当する番組がありません
-"No matching programs were found."
 "No recording schedules have been defined."
     予約が設定されていません
 "No Tracks Available"
@@ -457,7 +449,6 @@
     ピープルサーチ
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
-"Please search for something."
 "plot"
     脚本
 "Possible conflicts with this show"
@@ -484,8 +475,6 @@
     プロファイル
 "profile"
     プロファイル
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     番組詳細
 "Program ID"
@@ -635,22 +624,8 @@
 "Science Fiction Movies"
 "Search"
     サーチ
-"Search fields"
-    サーチフィールド
 "Search for:  $1"
     $1 の検索結果
-"Search help"
-    サーチヘルプ
-"Search help: movie example"
-    サーチヘルプ: 映画例
-"Search help: movie search"
-    サーチヘルプ: 映画検索
-"Search help: regex example"
-    サーチヘルプ: 正規表現例
-"Search help: regex search"
-    サーチヘルプ: 正規表現検索
-"Search options"
-    サーチオプション
 "Search Phrase"
     サーチフレーズ
 "Search Results"
@@ -681,8 +656,6 @@
     プレビューイメージを表示する
 "Show recordings"
     番組表示
-"show/hide advanced options"
-    アドバンスドオプションの表示/非表示
 "Showing all programs from the $1 group."
     $1のすべての番組を表示
 "Showing all programs."

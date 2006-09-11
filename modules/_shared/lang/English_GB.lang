@@ -59,7 +59,6 @@
 "category"
 "Category"
 "Category Legend"
-"Category Type"
 "CC"
 "Chan. Callsign"
 "Chan. Name"
@@ -119,7 +118,6 @@
 "End Late"
 "Episode"
 "Episode Number"
-"Exact Match"
 "Exec. Producer"
 "file size"
 "Filtered"
@@ -133,7 +131,6 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Fold Duplicates"
 "Forecast"
 "Forget Old"
 "format help"
@@ -155,10 +152,10 @@
 "Handy Predefined Searches"
 "handy: overview"
     This page contains pre-prepared complex searches of the programme listings.
+"has been watched"
 "has bookmark"
 "has commflag"
 "has cutlist"
-"HD Only"
 "HDTV"
 "High"
 "Hosted by"
@@ -197,8 +194,6 @@
 "minutes"
 "Monday"
 "more"
-"move guide left"
-"move guide right"
 "movie"
     Film
 "Movies"
@@ -234,8 +229,6 @@
 "No matches found"
 "No matching programs found."
     No matching programmes found.
-"No matching programs were found."
-    No matching programmes were found.
 "No recording schedules have been defined."
 "No Tracks Available"
 "No. of recordings to keep"
@@ -260,7 +253,6 @@
 "People"
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-"Please search for something."
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -274,10 +266,6 @@
 "Produced by"
 "Profile"
 "profile"
-"program continues to the left"
-    programme continues to the left
-"program continues to the right"
-    program continues to the right
 "Program Detail"
     Programme Detail
 "Program ID"
@@ -401,16 +389,7 @@
 "Science Fiction Movies"
     Science Fiction Films
 "Search"
-"Search fields"
 "Search for:  $1"
-"Search help"
-"Search help: movie example"
-    Search help: film example
-"Search help: movie search"
-    Search help: film search
-"Search help: regex example"
-"Search help: regex search"
-"Search options"
 "Search Phrase"
 "Search Results"
 "Search Type"
@@ -427,7 +406,6 @@
 "Show group"
 "Show pixmaps"
 "Show recordings"
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Showing all programmes from the $1 group.
 "Showing all programs."

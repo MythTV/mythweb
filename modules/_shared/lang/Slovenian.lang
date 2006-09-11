@@ -84,7 +84,6 @@
     Kategorija
 "Category Legend"
     Legenda kategorij
-"Category Type"
 "CC"
 "Chan. Callsign"
 "Chan. Name"
@@ -172,7 +171,6 @@
 "Episode"
     Oddaja
 "Episode Number"
-"Exact Match"
 "Exec. Producer"
     Scenarist
 "file size"
@@ -188,7 +186,6 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Fold Duplicates"
 "Forecast"
     Napoved
 "Forget Old"
@@ -218,13 +215,13 @@
 "Handy Predefined Searches"
 "handy: overview"
     Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.
+"has been watched"
 "has bookmark"
     ima zaznamek
 "has commflag"
     ima označene reklame
 "has cutlist"
     ima seznam rezov
-"HD Only"
 "HDTV"
 "High"
     Visoka
@@ -283,8 +280,6 @@
 "Monday"
     Ponedeljek
 "more"
-"move guide left"
-"move guide right"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -321,7 +316,6 @@
 "No matches found"
     Ni zadetkov
 "No matching programs found."
-"No matching programs were found."
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
 "No Tracks Available"
@@ -352,7 +346,6 @@
 "People"
 "People Search"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-"Please search for something."
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -373,8 +366,6 @@
     Profil
 "profile"
     profil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
 "Program ID"
 "Program Listing"
@@ -512,15 +503,8 @@
 "Science Fiction Movies"
 "Search"
     Iskanje
-"Search fields"
 "Search for:  $1"
     Iskanje:  $1
-"Search help"
-"Search help: movie example"
-"Search help: movie search"
-"Search help: regex example"
-"Search help: regex search"
-"Search options"
 "Search Phrase"
 "Search Results"
     Rezultati iskanja
@@ -544,7 +528,6 @@
 "Show pixmaps"
 "Show recordings"
     Pokaži snemanja
-"show/hide advanced options"
 "Showing all programs from the $1 group."
 "Showing all programs."
 "SI Units?"

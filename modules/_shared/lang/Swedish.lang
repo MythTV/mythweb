@@ -114,7 +114,6 @@
     Kategori
 "Category Legend"
     Kategoriförklaring
-"Category Type"
 "CC"
     Textning
 "Chan. Callsign"
@@ -231,8 +230,6 @@
     Avsnitt
 "Episode Number"
     Avsnittsnummer
-"Exact Match"
-    Exakt träff
 "Exec. Producer"
     Producent
 "file size"
@@ -255,8 +252,6 @@
     finjustera
 "First recording"
     Första inspelning
-"Fold Duplicates"
-    Vik dubbletter
 "Forecast"
     Prognos
 "Forget Old"
@@ -293,13 +288,13 @@
     Förberedda sökningar
 "handy: overview"
     Denna sida innehåller förberedda komplexa sökningar av programlistorna (fungerar för närvarande endast med data från DataDirect, alltså ej i Sverige.).
+"has been watched"
 "has bookmark"
     bokmärke
 "has commflag"
     markerad reklam
 "has cutlist"
     klipplista
-"HD Only"
 "HDTV"
     HDTV
 "High"
@@ -374,10 +369,6 @@
     Måndag
 "more"
     mer
-"move guide left"
-    flytta guide åt vänster
-"move guide right"
-    flytta guide åt höger
 "movie"
     film
 "Movies"
@@ -438,8 +429,6 @@
     Inga träffar
 "No matching programs found."
     Inga matchande program hittades.
-"No matching programs were found."
-    Inga matchande program hittades.
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
 "No Tracks Available"
@@ -486,7 +475,6 @@
     Sök person
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
-"Please search for something."
 "plot"
     handling
 "Possible conflicts with this show"
@@ -513,10 +501,6 @@
     Profil
 "profile"
     profil
-"program continues to the left"
-    program fortsätter till vänster
-"program continues to the right"
-    program fortsätter till höger
 "Program Detail"
     Programdetaljer
 "Program ID"
@@ -669,18 +653,8 @@
     Science Fiction-filmer
 "Search"
     Sök
-"Search fields"
-    Sökfält
 "Search for:  $1"
     Sök efter:  $1
-"Search help"
-    Sökhjälp
-"Search help: movie example"
-"Search help: movie search"
-"Search help: regex example"
-"Search help: regex search"
-"Search options"
-    Sökval
 "Search Phrase"
     Sök fras
 "Search Results"
@@ -711,8 +685,6 @@
     Visa pixmaps
 "Show recordings"
     Visa inspelningar
-"show/hide advanced options"
-    visa/dölj avancerade val
 "Showing all programs from the $1 group."
     Visar alla program i grupp: $1.
 "Showing all programs."
