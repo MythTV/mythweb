@@ -255,7 +255,7 @@ class Schedule {
                                        VALUES (?,?,?,
                                                FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
                                                ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-                         $this->recordid,
+                         _or($this->recordid, 0),
                          $this->type,
                          $this->chanid,
                          $this->starttime,
