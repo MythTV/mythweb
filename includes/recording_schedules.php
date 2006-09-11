@@ -81,9 +81,9 @@
         if ($key === 'offset') {
             list($Num_Conflicts, $Num_Scheduled) = $program;
         }
-    // Normal entry:  $Scheduled_Recordings[channum][starttime][]
+    // Normal entry:  $Scheduled_Recordings[callsign][starttime][]
         else {
-            $Scheduled_Recordings[$program[5]][$program[11]][] =& new Program($program);
+            $Scheduled_Recordings[$program[6]][$program[11]][] =& new Program($program);
         }
     }
 
@@ -150,10 +150,11 @@ class Schedule {
     var $class;         // css class, based on category and/or category_type
     var $tsdefault;
 
-    /**
-     * constructor
-    /**/
+/**
+ * constructor
+/**/
     function Schedule($data) {
+        global $db;
     // Schedule object data -- just copy it into place
         if (is_object($data)) {
         // Not the right type of object?
@@ -176,14 +177,12 @@ class Schedule {
         else {
         // Data is a recordid -- load its contents
             if (!is_array($data) && $data > 0) {
-                $query = 'SELECT *, IF(type='.rectype_always.',-1,chanid) as chanid,'
-                        .' UNIX_TIMESTAMP(startdate)+TIME_TO_SEC(starttime) AS starttime,'
-                        .' UNIX_TIMESTAMP(enddate)+TIME_TO_SEC(endtime) AS endtime'
-                        .' FROM record WHERE recordid='.escape($data);
-                $result = mysql_query($query)
-                    or trigger_error('SQL Error: '.mysql_error(), FATAL);
-                $data = mysql_fetch_assoc($result);
-                mysql_free_result($result);
+                $data = $db->query_assoc('SELECT *, IF(type='.rectype_always.',-1,chanid)         AS chanid,
+                                                 UNIX_TIMESTAMP(startdate)+TIME_TO_SEC(starttime) AS starttime,
+                                                 UNIX_TIMESTAMP(enddate)+TIME_TO_SEC(endtime)     AS endtime
+                                            FROM record
+                                           WHERE recordid=?',
+                                         $data);
             }
         // Array?
             if (is_array($data) && isset($data['recordid'])) {
@@ -219,6 +218,7 @@ class Schedule {
  * Save this schedule
 /**/
     function save($new_type) {
+        global $db;
     // Make sure that recordid is null if it's empty
         if (empty($this->recordid)) {
             $this->recordid = NULL;
@@ -251,56 +251,61 @@ class Schedule {
     // Update the type, in case it changed
         $this->type = $new_type;
     // Update the record
-        $result = mysql_query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid,autotranscode,transcoder,parentid,tsdefault,autouserjob1,autouserjob2,autouserjob3,autouserjob4) values ('
-                                .escape($this->recordid, true)             .','
-                                .escape($this->type)                       .','
-                                .escape($this->chanid)                     .','
-                                .'FROM_UNIXTIME('.escape($this->starttime).'),'
-                                .'FROM_UNIXTIME('.escape($this->starttime).'),'
-                                .'FROM_UNIXTIME('.escape($this->endtime)  .'),'
-                                .'FROM_UNIXTIME('.escape($this->endtime)  .'),'
-                                .escape($this->search)                     .','
-                                .escape($this->title)                      .','
-                                .escape($this->subtitle)                   .','
-                                .escape($this->description)                .','
-                                .escape($this->profile)                    .','
-                                .escape($this->recpriority)                .','
-                                .escape($this->category)                   .','
-                                .escape($this->maxnewest)                  .','
-                                .escape($this->inactive)                   .','
-                                .escape($this->maxepisodes)                .','
-                                .escape($this->autoexpire)                 .','
-                                .escape($this->startoffset)                .','
-                                .escape($this->endoffset)                  .','
-                                .escape($this->recgroup)                   .','
-                                .escape($this->dupmethod)                  .','
-                                .escape($this->dupin)                      .','
-                                .escape($this->station)                    .',' // callsign!
-                                .escape($this->seriesid)                   .','
-                                .escape($this->programid)                  .','
-                                .escape($this->autocommflag)               .','
-                                .escape($this->findday)                    .','
-                                .escape($this->findtime)                   .','
-                                .escape($this->findid)                     .','
-                                .escape($this->autotranscode)              .','
-                                .escape($this->transcoder)                 .','
-                                .escape($this->parentid)                   .','
-                                .escape($this->tsdefault)                  .','
-                                .escape($this->autouserjob1)               .','
-                                .escape($this->autouserjob2)               .','
-                                .escape($this->autouserjob3)               .','
-                                .escape($this->autouserjob4)               .')')
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+        $sh = $db->query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,title,subtitle,description,profile,recpriority,category,maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,findday,findtime,findid,autotranscode,transcoder,parentid,tsdefault,autouserjob1,autouserjob2,autouserjob3,autouserjob4)
+                                       VALUES (?,?,?,
+                                               FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
+                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                         _or($this->recordid, 0),
+                         $this->type,
+                         $this->chanid,
+                         $this->starttime,
+                         $this->starttime,
+                         $this->endtime,
+                         $this->endtime,
+                         $this->search,
+                         $this->title,
+                         $this->subtitle,
+                         $this->description,
+                         $this->profile,
+                         $this->recpriority,
+                         $this->category,
+                         $this->maxnewest,
+                         $this->inactive,
+                         $this->maxepisodes,
+                         $this->autoexpire,
+                         $this->startoffset,
+                         $this->endoffset,
+                         $this->recgroup,
+                         $this->dupmethod,
+                         $this->dupin,
+                         $this->station,  // callsign!
+                         $this->seriesid,
+                         $this->programid,
+                         $this->autocommflag,
+                         $this->findday,
+                         $this->findtime,
+                         $this->findid,
+                         $this->autotranscode,
+                         $this->transcoder,
+                         $this->parentid,
+                         $this->tsdefault,
+                         $this->autouserjob1,
+                         $this->autouserjob2,
+                         $this->autouserjob3,
+                         $this->autouserjob4
+                        );
     // Get the id that was returned
-        $recordid = mysql_insert_id();
+        $recordid = $sh->insert_id();
     // New recordid?
         if (empty($this->recordid))
             $this->recordid = $recordid;
     // Errors?
-        if (mysql_affected_rows() < 1 || $recordid < 1)
+        if ($sh->affected_rows() < 1 || $recordid < 1)
             trigger_error('Error creating recording schedule - no id was returned', FATAL);
         elseif ($program->recordid && $program->recordid != $recordid)
             trigger_error('Error updating recording schedule - different id was returned', FATAL);
+    // Finish
+        $sh->finish();
     // Notify the backend of the changes
         if ($this->recordid)
             backend_notify_changes($this->recordid);
