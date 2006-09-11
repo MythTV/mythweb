@@ -287,7 +287,7 @@ class Schedule {
                          $this->findid,
                          $this->autotranscode,
                          $this->transcoder,
-                         $this->parentid,
+                         _or($this->parentid, 0),
                          $this->tsdefault,
                          $this->autouserjob1,
                          $this->autouserjob2,
