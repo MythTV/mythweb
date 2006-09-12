@@ -338,8 +338,8 @@
         }
     // Send the myth url
         else {
-            $video_url = "myth://$Master_Host:$Master_Port"
-                         .str_replace('%2F', '/', rawurlencode(basename($show->filename)));
+            return "myth://$Master_Host:$Master_Port"
+                   .str_replace('%2F', '/', rawurlencode(basename($show->filename)));
         }
     }
 
