@@ -7,6 +7,9 @@
 # @author    $Author$
 #
 
+# Necessary constants for sysopen
+    use Fcntl;
+
 # Autoflush
     $|++;
 
@@ -73,12 +76,11 @@
     }
 
 # Open the file for reading
-    unless (open DATA, $filename) {
+    unless (sysopen DATA, $filename, O_RDONLY) {
         print header(),
               "Can't read $basname:  $!";
         exit;
     }
-
 
 # Requested a range?
     my $start      = 0;
@@ -107,18 +109,8 @@
 
 # Print the content to the browser
     my $buffer;
-    while (!eof DATA) {
-    # Make sure we don't read more than was requested
-        my $readsize = 262144;
-        my $cur_pos  = tell(DATA);
-        if ($cur_pos + $readsize > $size) {
-            $readsize = $size = $cur_pos;
-        }
-    # Print the data to the browser
-        sysread DATA, $buffer, $readsize;
+    while (sysread DATA, $buffer, 262144) {
         print $buffer;
-    # Time to leave?
-        last if ($cur_pos + $readsize >= $size);
     }
     close DATA;
 
