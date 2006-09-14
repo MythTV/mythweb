@@ -275,7 +275,7 @@ class Schedule {
                          _or($this->autoexpire,    0,          true),
                          _or($this->startoffset,   0,          true),
                          _or($this->endoffset,     0,          true),
-                         _or($this->recgroup,      0,          true),
+                         _or($this->recgroup,      'Default'       ),
                          _or($this->dupmethod,     0,          true),
                          _or($this->dupin,         15,         true),
                          _or($this->station,       ''              ),  // callsign!
