@@ -113,7 +113,8 @@ A: The hack used to make IE display transparent PNG's relies on a hard-coded
     anywhere other than the root directory, the default won't work and you will
     have to hand-edit the file with the correct path.  Look for the line that
     contains "/skins/default/img/spacer.gif" -- usually adding a /mythweb at the
-    start of the string will solve your problem.
+    start of the string will solve your problem.  You will also need to edit
+    the alpha_png class in each of the style.css files in the skin directories.
 
 Q: Why don't my sessions stick?  (often manifests as sorting issues or settings
     not storing properly)
