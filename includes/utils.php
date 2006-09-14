@@ -325,7 +325,7 @@
     // Global override?
         $video_url = setting('WebVideo_URL');
         if ($video_url)
-            return $video_url;
+            return $video_url.str_replace('%2F', '/', rawurlencode(basename($show->filename)));
     // Mac and Linux just get a link to the streaming module
         if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
             return root."pl/stream/$show->chanid/$show->recstartts";
