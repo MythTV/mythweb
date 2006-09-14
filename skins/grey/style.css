@@ -15,7 +15,7 @@ html,body {
     Use the alpha_png class instead.
     img { behavior: url("/js/pngbehavior.htc"); }
 */
-.alpha_png { behavior: url("js/pngbehavior.htc"); }
+.alpha_png { behavior: url("/js/pngbehavior.htc"); }
 
 a, a:link { color: #E0E0FF; text-decoration: none; }
 a:active  { color: #990033; text-decoration: none; }
