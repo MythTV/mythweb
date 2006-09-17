@@ -338,7 +338,7 @@
         }
     // Send the myth url
         else {
-            return "myth://$Master_Host:$Master_Port"
+            return "myth://$Master_Host:$Master_Port/"
                    .str_replace('%2F', '/', rawurlencode(basename($show->filename)));
         }
     }
