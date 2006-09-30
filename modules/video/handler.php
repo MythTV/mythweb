@@ -108,6 +108,18 @@
     $sh->finish();
     $Category_String[0] = 'Uncategorized';
 
+
+// New:  Get the video genres on the system
+    $Genre_String = array();
+    $Total_Genres = 0;
+    $sh = $db->query('SELECT * FROM videogenre');
+    while ($row = $sh->fetch_assoc()) {
+        $Genre_String[$row['intid']] = $row['genre'];
+        $Total_Genres++;
+    }
+    $sh->finish();
+    $Genre_String[0] = 'No Genre';
+
 // Parse the list
 // Filter_Category of -1 means All, 0 mean uncategorized
     $Total_Programs = 0;
@@ -115,13 +127,48 @@
     if( isset($_GET['category']) ) {
         $Filter_Category = $_GET['category'];
         if( $Filter_Category != -1)
-            $where = ' WHERE category='.$db->escape($Filter_Category);
+            #$where = ' WHERE category='.$db->escape($Filter_Category);
+            $where = ' AND category='.$db->escape($Filter_Category);
     }
     else {
         $Filter_Category = -1;
     }
 
-    $sh = $db->query('SELECT * FROM videometadata ' . $where . ' ORDER BY title');
+// New:  sort fields
+    if( isset($_GET['genre']) ) {
+        $Filter_Genre = $_GET['genre'];
+	if( $Filter_Genre != -1)
+            $where .= ' AND idgenre='.$db->escape($Filter_Genre);
+    }
+    else {
+        $Filter_Genre = -1;
+    }
+
+    if( isset($_GET['browse']) ) {
+        $Filter_Browse = $_GET['browse'];
+	if( $Filter_Browse != -1)
+            $where .= ' AND browse='.$db->escape($Filter_Browse);
+    }
+    else {
+        $Filter_Browse = -1;
+    }
+
+    if( isset($_GET['search']) ) {
+        $Filter_Search = $_GET['search'];
+	if( strlen($Filter_Search) != 0)
+            $where .= ' AND title LIKE '.$db->escape("%".$Filter_Search."%");
+    }
+    else {
+        $Filter_Search = "";
+    }
+
+    if ($where) { $where = 'WHERE '.substr($where, 4); }
+
+    #$sh = $db->query('SELECT * FROM videometadata ' . $where . ' ORDER BY title');
+    // Added: New query for added sort fields
+    $sql = 'SELECT * FROM videometadata LEFT JOIN videometadatagenre ON videometadata.intid=videometadatagenre.idvideo ' . $where . ' GROUP BY intid ORDER BY title';
+    $sh = $db->query($sql);
+
     while ($row = $sh->fetch_assoc()) {
     // Create a new show object
         $All_Shows[] = new Video($row);
