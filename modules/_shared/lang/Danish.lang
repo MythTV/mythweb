@@ -1,5 +1,6 @@
 " at "
     ved
+"# Tracks"
 "$1 B"
     $1 B
 "$1 day"
@@ -38,11 +39,19 @@
     $1 til $2
 "$1 wasted"
     $1 misted
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
 "Action"
 "Activate"
     Aktivér
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
 "add string"
     tilføj streng
+"Add this Playlist as a Subplaylist"
 "Additional Tables"
 "Advanced"
     Advancered
@@ -57,8 +66,14 @@
     Album
 "Album (filtered)"
     Album (filtreret)
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
 "All"
     Alt
+"All Albums"
+"All Fields"
 "All groups"
     Alle grupper
 "All HDTV"
@@ -67,6 +82,9 @@
     Al musik
 "All recordings"
     Alle optagelser
+"All Songs"
+"An error occured while adding your playlist."
+"Animated scrolling in program listing"
 "Any"
     Alle
 "Any Category"
@@ -75,12 +93,18 @@
     Alle kanaler
 "Any Program Type"
     Alle program typer
+"Append"
+"Append to Current Playlist"
 "Are you sure you want to delete the following show?"
     Er du sikker på at du vil slette programmet?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist"
     Kunstner
 "Artist (filtered)"
     Kunstner (filtreret)
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
 "auto-expire"
     auto-udløb
 "Auto-expire recordings"
@@ -89,6 +113,7 @@
     Marker automatisk reklamer
 "Auto-transcode"
     Auto-Transkode
+"Back"
 "Back to the program listing"
     Tilbage til programoversigten
 "Back to the recording schedules"
@@ -97,10 +122,18 @@
     Backend Logs
 "Backend Status"
     System status
+"Begin a New Search"
 "brightness"
     Lys
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
 "callsign"
     kortnavn
+"Cancel"
 "Cancel this schedule."
     Annuller denne optagelse
 "Cast"
@@ -131,6 +164,9 @@
     kanalnummer
 "Check for duplicates in"
     Kontroller for dubletter i
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
 "colour"
     Farve
 "Commands"
@@ -149,6 +185,8 @@
 "Count"
 "cover"
     cover
+"Create a New Playlist"
+"Create a Random Mix"
 "Create Schedule"
     Planlæg
 "Current Conditions"
@@ -181,6 +219,7 @@
     Slet + genoptag
 "Delete and rerecord $1"
     Slet + genoptag $1
+"DELETE this Saved Playlist"
 "description"
     beskrivelse
 "Description"
@@ -220,10 +259,14 @@
     Slut
 "End Late"
     Slut senere (min)
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
 "Episode"
     Afsnit
 "Episode Number"
     Episode nummer
+"Everything"
 "Exec. Producer"
     Producer
 "file size"
@@ -252,6 +295,7 @@
     Glem gamle
 "format help"
     Formatteringshjælp
+"Found %s results for '%s'"
 "freqid"
     Frekvens ID
 "Friday"
@@ -264,6 +308,7 @@
     Genre
 "Genre (filtered)"
     Genre (filtreret)
+"Genres"
 "Global"
     Globalt
 "Go"
@@ -318,6 +363,7 @@
     Nøgleord
 "Keyword Search"
     Nøgleords søgning
+"Keywords"
 "Language"
     Sprog
 "Last Recorded"
@@ -338,6 +384,14 @@
     Programoversigt tid
 "Listings"
     Programoversigt
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Loading"
+"Local Server Statistics"
 "Logs"
 "Low"
     Lav
@@ -352,6 +406,10 @@
     Mandag
 "more"
     mere
+"move guide left"
+"move guide right"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
 "movie"
     film
 "Movies"
@@ -389,8 +447,11 @@
     Navn
 "name"
     navn
+"Narrow Your Search"
 "Never Record"
     Optag aldrig
+"New"
+"New Search"
 "New Titles, Premieres"
     Nye titler, premierer
 "Next"
@@ -403,6 +464,7 @@
     Ingen match fundet
 "No matching programs found."
     Ingen matchende programmer fundet.
+"No Public Playlists"
 "No recording schedules have been defined."
     Ingen optagelser er planlagt
 "No Tracks Available"
@@ -419,6 +481,7 @@
     Antal episoder
 "Number of shows"
     Antal shows
+"Number of Songs"
 "Number of timeslots"
 "Only display favourite channels"
     Vis kun favorit kanaler
@@ -442,6 +505,23 @@
     Personer
 "People Search"
     Person søgning
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "plot"
@@ -468,6 +548,8 @@
     Profil
 "profile"
     profil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Program detaljer
 "Program ID"
@@ -475,10 +557,16 @@
     Program lister
 "Radar"
     Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
 "Rating"
     Karakterer
 "rating"
     rating
+"Recently Added Albums"
+"Recently Played Songs"
 "recgroup"
     Optagelsesgrupper
 "Record new and expire old"
@@ -584,10 +672,12 @@
 "rectype: weekly"
     Ugentligt
 "regex: articles"
+"Remove Item from Playlist"
 "Repeat"
     Genudsendelse
 "Reset"
     Nulstil
+"Return to Statistics Page"
 "Reverse Order"
     Modsat orden
 "Rows to show between timeslot info"
@@ -595,8 +685,14 @@
     Lørdag
 "Save"
     Gem
+"Save or Rename the Current Playlist"
 "Save Schedule"
     Gem planlægning
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
 "Schedule"
     Planlæg
 "Schedule Manually"
@@ -619,19 +715,22 @@
     Søg
 "Search for:  $1"
     Søg efter: $1
+"Search Music"
 "Search Phrase"
     Søge ord
 "Search Results"
     Søgeresultater
+"Search the Music Database"
 "Search Type"
     Søge type
 "Searches"
     Søgninger
+"Server Statistics"
 "Set Host"
-"settings"
-    opsætning
 "Settings"
     Indstillinger
+"settings"
+    opsætning
 "Settings Table"
 "Settings Table Editor"
 "settings: overview"
@@ -645,12 +744,17 @@
 "Show pixmaps"
 "Show recordings"
     Vis optagelser
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Viser alle programmer fra gruppen $1.
 "Showing all programs."
     Viser alle programmer.
 "SI Units?"
     SI enheder?
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
 "Special Searches"
     Specielle søgninger
@@ -663,18 +767,21 @@
     Starttidspunkt
 "Statistics"
     Statistik
+"Stats"
 "Status"
     Status
 "Status Bar"
     Status linie
 "Stereo"
     Steroe
+"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Undertitel og beskrivelse
-"Subtitle"
-    Undertitel
+"Submit Search"
 "subtitle"
     undertitel
+"Subtitle"
+    Undertitel
 "Subtitle and Description"
     Undertitel og beskrivelse
 "Subtitled"
@@ -683,6 +790,10 @@
     Søndag
 "The requested recording schedule has been deleted."
     Den planlagte optagelse er blevet slettet.
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Torsdag
 "Time"
@@ -704,8 +815,12 @@
     Top
 "Top $1"
     Top $1
+"Top Played Songs"
+"Total Length"
 "Total Time"
     Total tid
+"Total Time:  %s"
+"Track #%s from the album '%s'"
 "Track Name"
     Spor navn
 "transcoder"
@@ -765,6 +880,10 @@
     videofiltre
 "Videos"
     Videoer
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
 "Visibility"
     Sigtbarhed
 "visible"
@@ -800,6 +919,7 @@
 "Written by"
     Skrevet af
 "xmltvid"
+"Year"
 "year"
     år
 "Yes"

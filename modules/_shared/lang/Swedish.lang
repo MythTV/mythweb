@@ -1,5 +1,6 @@
 " at "
     vid
+"# Tracks"
 "$1 B"
     $1 B
 "$1 day"
@@ -38,12 +39,20 @@
     $1 till $2
 "$1 wasted"
     $1 bortkastade
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
 "Action"
     Handling
 "Activate"
     Aktivera
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
 "add string"
     lägg till sträng
+"Add this Playlist as a Subplaylist"
 "Additional Tables"
     Ytterligare tabeller
 "Advanced"
@@ -60,8 +69,14 @@
     Album
 "Album (filtered)"
     Album (filtrerat)
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
 "All"
     Alla
+"All Albums"
+"All Fields"
 "All groups"
     Alla grupper
 "All HDTV"
@@ -70,6 +85,9 @@
     All musik
 "All recordings"
     Alla inspelningar
+"All Songs"
+"An error occured while adding your playlist."
+"Animated scrolling in program listing"
 "Any"
     Alla
 "Any Category"
@@ -78,12 +96,18 @@
     Alla kanaler
 "Any Program Type"
     Alla programtyper
+"Append"
+"Append to Current Playlist"
 "Are you sure you want to delete the following show?"
     Är du säker på att du vill ta bort följande inspelning?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist"
     Artist
 "Artist (filtered)"
     Artist (filtrerad)
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
 "auto-expire"
     autoradera
 "Auto-expire recordings"
@@ -92,6 +116,7 @@
     Markera reklam automatiskt
 "Auto-transcode"
     Omkoda automatiskt
+"Back"
 "Back to the program listing"
     Tillbaka till programlistan
 "Back to the recording schedules"
@@ -100,10 +125,18 @@
     Logg
 "Backend Status"
     Systemstatus
+"Begin a New Search"
 "brightness"
     ljusstyrka
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
 "callsign"
     kortnamn
+"Cancel"
 "Cancel this schedule."
     Avbryt denna schemaläggning
 "Cast"
@@ -134,6 +167,9 @@
     kanalnummer
 "Check for duplicates in"
     Sök dubbletter i
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
 "colour"
     färg
 "Commands"
@@ -154,6 +190,8 @@
     Antal
 "cover"
     omslag
+"Create a New Playlist"
+"Create a Random Mix"
 "Create Schedule"
     Schemalägg
 "Current Conditions"
@@ -186,6 +224,7 @@
     Radera + Återinspela
 "Delete and rerecord $1"
     Radera och återinspela $1
+"DELETE this Saved Playlist"
 "description"
     beskrivning
 "Description"
@@ -226,10 +265,14 @@
     Slut
 "End Late"
     Sluta senare
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
 "Episode"
     Avsnitt
 "Episode Number"
     Avsnittsnummer
+"Everything"
 "Exec. Producer"
     Producent
 "file size"
@@ -258,6 +301,7 @@
     Glöm gammal
 "format help"
     formathjälp
+"Found %s results for '%s'"
 "freqid"
     frekvens-id
 "Friday"
@@ -270,6 +314,7 @@
     Genre
 "Genre (filtered)"
     Genre (filtrerad)
+"Genres"
 "Global"
     Global
 "Go"
@@ -333,6 +378,7 @@
     Nyckelord
 "Keyword Search"
     Sök nyckelord
+"Keywords"
 "Language"
     Språk
 "Last Recorded"
@@ -353,6 +399,14 @@
     TV-tablå tid
 "Listings"
     TV-tablåer
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Loading"
+"Local Server Statistics"
 "Logs"
     Logg
 "Low"
@@ -369,6 +423,10 @@
     Måndag
 "more"
     mer
+"move guide left"
+"move guide right"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
 "movie"
     film
 "Movies"
@@ -415,8 +473,11 @@
     Namn
 "name"
     namn
+"Narrow Your Search"
 "Never Record"
     Spela aldrig in
+"New"
+"New Search"
 "New Titles, Premieres"
     Nya titlar, premiärer
 "Next"
@@ -429,6 +490,7 @@
     Inga träffar
 "No matching programs found."
     Inga matchande program hittades.
+"No Public Playlists"
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
 "No Tracks Available"
@@ -447,6 +509,7 @@
     Antal avsnitt
 "Number of shows"
     Antal visningar
+"Number of Songs"
 "Number of timeslots"
     Antal tidsluckor
 "Only display favourite channels"
@@ -473,6 +536,23 @@
     Person
 "People Search"
     Sök person
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
 "plot"
@@ -501,6 +581,8 @@
     Profil
 "profile"
     profil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Programdetaljer
 "Program ID"
@@ -509,10 +591,16 @@
     Programlista
 "Radar"
     Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
 "Rating"
     Betyg
 "rating"
     betyg
+"Recently Added Albums"
+"Recently Played Songs"
 "recgroup"
     inspelningsgrupp
 "Record new and expire old"
@@ -619,10 +707,12 @@
     Veckovis
 "regex: articles"
     An?|The
+"Remove Item from Playlist"
 "Repeat"
     Repris
 "Reset"
     Återställ
+"Return to Statistics Page"
 "Reverse Order"
     Omvänd ordning
 "Rows to show between timeslot info"
@@ -631,8 +721,14 @@
     Lördag
 "Save"
     Spara
+"Save or Rename the Current Playlist"
 "Save Schedule"
     Spara schema
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
 "Schedule"
     Schema
 "Schedule Manually"
@@ -655,20 +751,23 @@
     Sök
 "Search for:  $1"
     Sök efter:  $1
+"Search Music"
 "Search Phrase"
     Sök fras
 "Search Results"
     Sökresultat
+"Search the Music Database"
 "Search Type"
     Sök typ
 "Searches"
     Sökningar
+"Server Statistics"
 "Set Host"
     Sätt värd
-"settings"
-    inställningar
 "Settings"
     Inställningar
+"settings"
+    inställningar
 "Settings Table"
     Inställningstabell
 "Settings Table Editor"
@@ -685,12 +784,17 @@
     Visa pixmaps
 "Show recordings"
     Visa inspelningar
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Visar alla program i grupp: $1.
 "Showing all programs."
     Visar alla program.
 "SI Units?"
     SI-enheter?
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
     käll-id
 "Special Searches"
@@ -705,18 +809,21 @@
     Starttid
 "Statistics"
     Statistik
+"Stats"
 "Status"
     Status
 "Status Bar"
     Statusrad
 "Stereo"
     Stereo
+"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Undertitel &amp; beskrivning
-"Subtitle"
-    Undertitel
+"Submit Search"
 "subtitle"
     undertitel
+"Subtitle"
+    Undertitel
 "Subtitle and Description"
     Undertitel och beskrivning
 "Subtitled"
@@ -725,6 +832,10 @@
     Söndag
 "The requested recording schedule has been deleted."
     Det begärda inspelningsschemat har tagits bort.
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Torsdag
 "Time"
@@ -747,8 +858,12 @@
     Överst
 "Top $1"
     Topp $1
+"Top Played Songs"
+"Total Length"
 "Total Time"
     Total tid
+"Total Time:  %s"
+"Track #%s from the album '%s'"
 "Track Name"
     Spårnamn
 "transcoder"
@@ -807,6 +922,10 @@
     videofilter
 "Videos"
     Videor
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
 "Visibility"
     Sikt
 "visible"
@@ -843,6 +962,7 @@
     Skriven av
 "xmltvid"
     xmltv-id
+"Year"
 "year"
     år
 "Yes"

@@ -1,4 +1,5 @@
 " at "
+"# Tracks"
 "$1 B"
 "$1 day"
     $1 日
@@ -31,12 +32,20 @@
 "$1 to $2"
     $1 から $2
 "$1 wasted"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
 "Action"
     アクション
 "Activate"
     有効
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
 "add string"
     条件追加
+"Add this Playlist as a Subplaylist"
 "Additional Tables"
     追加テーブル
 "Advanced"
@@ -53,8 +62,14 @@
     アルバム
 "Album (filtered)"
     アルバム（絞込み）
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
 "All"
     全て
+"All Albums"
+"All Fields"
 "All groups"
     全グループ
 "All HDTV"
@@ -63,6 +78,9 @@
     全ミュージック
 "All recordings"
     全ての録画
+"All Songs"
+"An error occured while adding your playlist."
+"Animated scrolling in program listing"
 "Any"
     全て
 "Any Category"
@@ -71,12 +89,18 @@
     いずれかのチャンネル
 "Any Program Type"
     いずれかのタイプ
+"Append"
+"Append to Current Playlist"
 "Are you sure you want to delete the following show?"
     この録画を削除してよろしいですか？
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist"
     アーティスト
 "Artist (filtered)"
     アーティスト（絞込み）
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
 "auto-expire"
     自動削除
 "Auto-expire recordings"
@@ -85,6 +109,7 @@
     CM自動検知
 "Auto-transcode"
     自動トランスコード
+"Back"
 "Back to the program listing"
     番組一覧に戻る
 "Back to the recording schedules"
@@ -93,10 +118,18 @@
     バックエンドログ
 "Backend Status"
     バックエンドステータス
+"Begin a New Search"
 "brightness"
     明るさ
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
 "callsign"
     コールサイン
+"Cancel"
 "Cancel this schedule."
     この予約をキャンセルする
 "Cast"
@@ -123,6 +156,9 @@
     チャンネル
 "Check for duplicates in"
     重複チェック対象
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
 "colour"
     カラー
 "Commands"
@@ -143,6 +179,8 @@
     カウント
 "cover"
     カバー
+"Create a New Playlist"
+"Create a Random Mix"
 "Create Schedule"
     予約作成
 "Current Conditions"
@@ -174,6 +212,7 @@
     削除+録画
 "Delete and rerecord $1"
     削除と録画 $1
+"DELETE this Saved Playlist"
 "description"
     内容
 "Description"
@@ -214,10 +253,14 @@
     終了
 "End Late"
     録画延長
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
 "Episode"
     サブタイトル
 "Episode Number"
     番組番号
+"Everything"
 "Exec. Producer"
     製作責任者
 "file size"
@@ -246,6 +289,7 @@
     もう一度録画する
 "format help"
     書式ヘルプ
+"Found %s results for '%s'"
 "freqid"
     周波数ID
 "Friday"
@@ -258,6 +302,7 @@
     ジャンル
 "Genre (filtered)"
     ジャンル（絞込み）
+"Genres"
 "Global"
     全体
 "Go"
@@ -316,6 +361,7 @@
     キーワード
 "Keyword Search"
     キーワードサーチ
+"Keywords"
 "Language"
     言語
 "Last Recorded"
@@ -336,6 +382,14 @@
     一覧 タイムキー
 "Listings"
     番組表
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Loading"
+"Local Server Statistics"
 "Logs"
     ログ
 "Low"
@@ -352,6 +406,10 @@
     月曜日
 "more"
     追加
+"move guide left"
+"move guide right"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
 "movie"
     映画
 "Movies"
@@ -395,8 +453,11 @@
     名前
 "name"
     名前
+"Narrow Your Search"
 "Never Record"
     もう録画しない
+"New"
+"New Search"
 "New Titles, Premieres"
 "Next"
     次
@@ -407,6 +468,7 @@
     一致する物がありませんでした
 "No matching programs found."
     該当する番組がありません
+"No Public Playlists"
 "No recording schedules have been defined."
     予約が設定されていません
 "No Tracks Available"
@@ -423,6 +485,7 @@
     録画数
 "Number of shows"
     番組数
+"Number of Songs"
 "Number of timeslots"
     タイムスロット数
 "Only display favourite channels"
@@ -447,6 +510,23 @@
     ピープル
 "People Search"
     ピープルサーチ
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
 "plot"
@@ -475,6 +555,8 @@
     プロファイル
 "profile"
     プロファイル
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     番組詳細
 "Program ID"
@@ -483,10 +565,16 @@
     番組表
 "Radar"
     レーダー
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
 "Rating"
     レーティング
 "rating"
     格付け
+"Recently Added Albums"
+"Recently Played Songs"
 "recgroup"
     グループ
 "Record new and expire old"
@@ -593,10 +681,12 @@
     毎週
 "regex: articles"
     An?|The
+"Remove Item from Playlist"
 "Repeat"
     再開
 "Reset"
     リセット
+"Return to Statistics Page"
 "Reverse Order"
     逆順
 "Rows to show between timeslot info"
@@ -604,8 +694,14 @@
     土曜日
 "Save"
     保存
+"Save or Rename the Current Playlist"
 "Save Schedule"
     保存
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
 "Schedule"
     予約
 "Schedule Manually"
@@ -626,19 +722,22 @@
     サーチ
 "Search for:  $1"
     $1 の検索結果
+"Search Music"
 "Search Phrase"
     サーチフレーズ
 "Search Results"
     検索結果
+"Search the Music Database"
 "Search Type"
     サーチタイプ
 "Searches"
     サーチメニュー
+"Server Statistics"
 "Set Host"
     ホスト設定
-"settings"
-    設定
 "Settings"
+    設定
+"settings"
     設定
 "Settings Table"
     Settings テーブル
@@ -656,12 +755,17 @@
     プレビューイメージを表示する
 "Show recordings"
     番組表示
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     $1のすべての番組を表示
 "Showing all programs."
     すべての番組を表示
 "SI Units?"
     SI単位を使用する
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
 "Special Searches"
     スペシャル検索
@@ -675,17 +779,20 @@
     開始時間
 "Statistics"
     統計
+"Stats"
 "Status"
     ステータス
 "Status Bar"
     ステータスバー
 "Stereo"
     ステレオ
+"Streaming Quality"
 "Sub and Desc (Empty matches)"
     サブタイトルと内容(エンプティーマッチ)
-"Subtitle"
-    サブタイトル
+"Submit Search"
 "subtitle"
+    サブタイトル
+"Subtitle"
     サブタイトル
 "Subtitle and Description"
     サブタイトルと内容
@@ -694,6 +801,10 @@
     日曜日
 "The requested recording schedule has been deleted."
     要求された予約は既に削除されています。
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     木曜日
 "Time"
@@ -716,8 +827,12 @@
     トップ
 "Top $1"
     トップ $1
+"Top Played Songs"
+"Total Length"
 "Total Time"
     合計時間
+"Total Time:  %s"
+"Track #%s from the album '%s'"
 "Track Name"
     トラック名
 "transcoder"
@@ -773,6 +888,10 @@
     ビデオフィルタ
 "Videos"
     ビデオ
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
 "Visibility"
     視界
 "visible"
@@ -807,6 +926,7 @@
 "Written by"
     著者
 "xmltvid"
+"Year"
 "year"
     年
 "Yes"

@@ -1,5 +1,6 @@
 " at "
     aan
+"# Tracks"
 "$1 B"
     $1 B
 "$1 day"
@@ -35,11 +36,19 @@
 "$1 to $2"
     $1 tot $2
 "$1 wasted"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
 "Action"
     Actie
 "Activate"
     Activeren
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
 "add string"
+"Add this Playlist as a Subplaylist"
 "Additional Tables"
     Aanvullende tabellen
 "Advanced"
@@ -54,7 +63,13 @@
     Album
 "Album (filtered)"
     Album (filter)
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
 "All"
+"All Albums"
+"All Fields"
 "All groups"
     Alle groepen
 "All HDTV"
@@ -63,6 +78,9 @@
     Alle muziek
 "All recordings"
     Alle opnames
+"All Songs"
+"An error occured while adding your playlist."
+"Animated scrolling in program listing"
 "Any"
     Alle
 "Any Category"
@@ -71,12 +89,18 @@
     Alle zenders
 "Any Program Type"
     Alle programmatypes
+"Append"
+"Append to Current Playlist"
 "Are you sure you want to delete the following show?"
     Bent U zeker van het verwijderen van volgend programma?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist"
     Artiest
 "Artist (filtered)"
     Artiest (filter)
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
 "auto-expire"
     automatisch vervallen
 "Auto-expire recordings"
@@ -85,6 +109,7 @@
     Reclame Autom. Markeren
 "Auto-transcode"
     Auto-transcode
+"Back"
 "Back to the program listing"
     Terug naar programmagids
 "Back to the recording schedules"
@@ -93,10 +118,18 @@
     Backend Logboek
 "Backend Status"
     Backend Status
+"Begin a New Search"
 "brightness"
     helderheid
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
 "callsign"
     zender
+"Cancel"
 "Cancel this schedule."
     Opname annuleren
 "Cast"
@@ -124,6 +157,9 @@
     zender
 "Check for duplicates in"
     Op dubbels controleren in
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
 "colour"
     kleur
 "Commands"
@@ -143,6 +179,8 @@
 "Count"
 "cover"
     hoes
+"Create a New Playlist"
+"Create a Random Mix"
 "Create Schedule"
     Opname plannen
 "Current Conditions"
@@ -174,6 +212,7 @@
     Verwijderen en opnieuw opnemen
 "Delete and rerecord $1"
     Verwijderen en $1 opnieuw opnemen
+"DELETE this Saved Playlist"
 "description"
     beschrijving
 "Description"
@@ -213,10 +252,14 @@
     Einde
 "End Late"
     Later stoppen
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
 "Episode"
     Aflevering
 "Episode Number"
     Aflevering nr.
+"Everything"
 "Exec. Producer"
     Uitv. Producent
 "file size"
@@ -244,6 +287,7 @@
     Oude vergeten
 "format help"
     formaat help
+"Found %s results for '%s'"
 "freqid"
     frequentie
 "Friday"
@@ -256,6 +300,7 @@
     Genre
 "Genre (filtered)"
     Genre (filter)
+"Genres"
 "Global"
 "Go"
     Doorgaan
@@ -316,6 +361,7 @@
     Kernwoord
 "Keyword Search"
     Kernwoord zoeken
+"Keywords"
 "Language"
     Taal
 "Last Recorded"
@@ -334,6 +380,14 @@
     Weergave Tijd Gids
 "Listings"
     Programmagids
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Loading"
+"Local Server Statistics"
 "Logs"
     Logboek
 "Low"
@@ -347,6 +401,10 @@
 "Monday"
     Maandag
 "more"
+"move guide left"
+"move guide right"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
 "movie"
 "Movies"
     Films
@@ -384,8 +442,11 @@
 "Name"
 "name"
     naam
+"Narrow Your Search"
 "Never Record"
     Nooit Opnemen
+"New"
+"New Search"
 "New Titles, Premieres"
     Nieuwe Titels, Premieres
 "Next"
@@ -398,6 +459,7 @@
     Geen programma's gevonden
 "No matching programs found."
     Geen overeenkomsten gevonden
+"No Public Playlists"
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
 "No Tracks Available"
@@ -414,6 +476,7 @@
     Opmerkingen
 "Number of episodes"
 "Number of shows"
+"Number of Songs"
 "Number of timeslots"
 "Only display favourite channels"
     Enkel favoriete zenders laten zien
@@ -433,6 +496,23 @@
     Personen
 "People Search"
     Personen zoeken
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
 "plot"
@@ -459,6 +539,8 @@
     Profiel
 "profile"
     profiel
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Programmadetails
 "Program ID"
@@ -467,10 +549,16 @@
     Programmalijst
 "Radar"
     Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
 "Rating"
     Beoordeling
 "rating"
     beoordeling
+"Recently Added Albums"
+"Recently Played Songs"
 "recgroup"
     opnamegroep
 "Record new and expire old"
@@ -576,10 +664,12 @@
     Wekelijks
 "regex: articles"
     An?|The
+"Remove Item from Playlist"
 "Repeat"
     Opnieuw Uitvoeren
 "Reset"
     Herstellen
+"Return to Statistics Page"
 "Reverse Order"
     Volgorde omkeren
 "Rows to show between timeslot info"
@@ -587,8 +677,14 @@
     Zaterdag
 "Save"
     Opslaan
+"Save or Rename the Current Playlist"
 "Save Schedule"
     Schema opslaan
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
 "Schedule"
     Programmeren
 "Schedule Manually"
@@ -610,20 +706,23 @@
     Zoeken
 "Search for:  $1"
     Zoeken: $1
+"Search Music"
 "Search Phrase"
     Zin zoeken
 "Search Results"
     Zoekresultaten
+"Search the Music Database"
 "Search Type"
     Type zoeken
 "Searches"
     Zoekopdrachten
+"Server Statistics"
 "Set Host"
     Host instellen
-"settings"
-    instellingen
 "Settings"
     Instellingen
+"settings"
+    instellingen
 "Settings Table"
 "Settings Table Editor"
 "settings: overview"
@@ -637,12 +736,17 @@
 "Show pixmaps"
 "Show recordings"
     Opnames tonen
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Alle programma's uit de $1 groep laten zien
 "Showing all programs."
     Alle programma's laten zien
 "SI Units?"
     SI eenheden?
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
     bron
 "Special Searches"
@@ -655,18 +759,21 @@
 "Start Time"
     Start Tijd
 "Statistics"
+"Stats"
 "Status"
     Status
 "Status Bar"
     Statusbalk
 "Stereo"
     Stereo
+"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Dubbels en Beschrijving
-"Subtitle"
-    Aflevering
+"Submit Search"
 "subtitle"
     aflevering
+"Subtitle"
+    Aflevering
 "Subtitle and Description"
     Aflevering en beschrijving
 "Subtitled"
@@ -675,6 +782,10 @@
     Zondag
 "The requested recording schedule has been deleted."
     Het gevraagde opnameschema is verwijderd
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Donderdag
 "Time"
@@ -695,7 +806,11 @@
 "Top"
     Begin
 "Top $1"
+"Top Played Songs"
+"Total Length"
 "Total Time"
+"Total Time:  %s"
+"Track #%s from the album '%s'"
 "Track Name"
     Naam
 "transcoder"
@@ -753,6 +868,10 @@
     videofilters
 "Videos"
     Films
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
 "Visibility"
     Zichtbaarheid
 "visible"
@@ -787,6 +906,7 @@
     Auteur
 "xmltvid"
     xmltvid
+"Year"
 "year"
     jaar
 "Yes"

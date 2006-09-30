@@ -1,4 +1,5 @@
 " at "
+"# Tracks"
 "$1 B"
     $1 B
 "$1 day"
@@ -33,11 +34,19 @@
 "$1 to $2"
     $1 - $2
 "$1 wasted"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
 "Action"
     Toiminto
 "Activate"
     Aktivoi
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
 "add string"
+"Add this Playlist as a Subplaylist"
 "Additional Tables"
     Täydentävät Taulukot
 "Advanced"
@@ -52,7 +61,13 @@
     Albumi
 "Album (filtered)"
     Albumi (suodatettu)
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
 "All"
+"All Albums"
+"All Fields"
 "All groups"
     Kaikki ryhmät
 "All HDTV"
@@ -60,6 +75,9 @@
     Kaikki Musiikki
 "All recordings"
     Kaikki nauhoitukset
+"All Songs"
+"An error occured while adding your playlist."
+"Animated scrolling in program listing"
 "Any"
     Mikä vain
 "Any Category"
@@ -68,12 +86,18 @@
     Mikä Tahansa Kanava
 "Any Program Type"
     Mikä Tahansa Ohjelmatyyppi
+"Append"
+"Append to Current Playlist"
 "Are you sure you want to delete the following show?"
     Poistetaanko seuraavat ohjelmat?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist"
     Esittäjä
 "Artist (filtered)"
     Esittäjä (suodatettu)
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
 "auto-expire"
     anna vanheta
 "Auto-expire recordings"
@@ -82,6 +106,7 @@
     Aut. mainosten merkkaus
 "Auto-transcode"
     Automaattinen jälkikäsittely
+"Back"
 "Back to the program listing"
     Takaisin ohjelmalistaukseen
 "Back to the recording schedules"
@@ -90,10 +115,18 @@
     Palvelimen Lokit
 "Backend Status"
     Palvelimen Tila
+"Begin a New Search"
 "brightness"
     Kirkkaus
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
 "callsign"
     Kutsumanimi
+"Cancel"
 "Cancel this schedule."
     Peruuta nauhoitus
 "Cast"
@@ -121,6 +154,9 @@
     Kanava
 "Check for duplicates in"
     Tarkista kaksoiskappaleet
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
 "colour"
     Väri
 "Commands"
@@ -140,6 +176,8 @@
 "Count"
 "cover"
     Kuvake
+"Create a New Playlist"
+"Create a Random Mix"
 "Create Schedule"
     Ajoita Nauhoitus
 "Current Conditions"
@@ -171,6 +209,7 @@
     Poista ja Uudelleennauhoita
 "Delete and rerecord $1"
     Poista ja Uudelleennauhoita $1
+"DELETE this Saved Playlist"
 "description"
     kuvaus
 "Description"
@@ -210,10 +249,14 @@
     Loppu
 "End Late"
     Lopeta Myöhemmin
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
 "Episode"
     Jakso
 "Episode Number"
     Jakson Numero
+"Everything"
 "Exec. Producer"
     Tuottaja
 "file size"
@@ -237,6 +280,7 @@
     Unohda Vanha
 "format help"
     apua muotoiluun
+"Found %s results for '%s'"
 "freqid"
 "Friday"
     Perjantai
@@ -248,6 +292,7 @@
     Laji
 "Genre (filtered)"
     Laji (suodatettu)
+"Genres"
 "Global"
 "Go"
     Mene
@@ -308,6 +353,7 @@
 "Keyword"
 "Keyword Search"
     Haku Avainsanalla
+"Keywords"
 "Language"
     Kieli
 "Last Recorded"
@@ -326,6 +372,14 @@
     Listauksen Aikanäppäin
 "Listings"
     Listaus
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Loading"
+"Local Server Statistics"
 "Logs"
     Lokit
 "Low"
@@ -339,6 +393,10 @@
 "Monday"
     Maanantai
 "more"
+"move guide left"
+"move guide right"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -372,8 +430,11 @@
 "Name"
 "name"
     Nimi
+"Narrow Your Search"
 "Never Record"
     Älä Koskaan Nauhoita
+"New"
+"New Search"
 "New Titles, Premieres"
 "Next"
     Seuraava
@@ -385,6 +446,7 @@
     Ei vastaavuuksia
 "No matching programs found."
     Ei vastaavia ohjelmia.
+"No Public Playlists"
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
 "No Tracks Available"
@@ -399,6 +461,7 @@
     Viesti
 "Number of episodes"
 "Number of shows"
+"Number of Songs"
 "Number of timeslots"
 "Only display favourite channels"
     Vain Suosikkikanavat
@@ -417,6 +480,23 @@
 "People"
 "People Search"
     Haku Nimellä
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
 "plot"
@@ -443,6 +523,8 @@
     Profiili
 "profile"
     profiili
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
     Ohjelman Lisätietoja
 "Program ID"
@@ -450,10 +532,16 @@
     Ohjelmalistaus
 "Radar"
     Säätutka
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
 "Rating"
     Arvostelu
 "rating"
     arvostelu
+"Recently Added Albums"
+"Recently Played Songs"
 "recgroup"
     nauh.ryhmä
 "Record new and expire old"
@@ -559,10 +647,12 @@
     Viikottain
 "regex: articles"
     An?|The
+"Remove Item from Playlist"
 "Repeat"
     Tee uudelleen
 "Reset"
     Alustus
+"Return to Statistics Page"
 "Reverse Order"
     Päinvastainen Järjestys
 "Rows to show between timeslot info"
@@ -570,8 +660,14 @@
     Lauantai
 "Save"
     Tallenna?
+"Save or Rename the Current Playlist"
 "Save Schedule"
     Tallenna Ajoitus
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
 "Schedule"
     Ajoitus
 "Schedule Manually"
@@ -592,19 +688,22 @@
     Hae
 "Search for:  $1"
     Hae:  $1
+"Search Music"
 "Search Phrase"
     Hakulause
 "Search Results"
     Haun Tulokset
+"Search the Music Database"
 "Search Type"
     Haun Tyyppi
 "Searches"
     Haut
+"Server Statistics"
 "Set Host"
     Aseta Isäntä
-"settings"
-    Asetukset
 "Settings"
+    Asetukset
+"settings"
     Asetukset
 "Settings Table"
 "Settings Table Editor"
@@ -619,12 +718,17 @@
 "Show pixmaps"
 "Show recordings"
     Näytä nauhoitukset
+"show/hide advanced options"
 "Showing all programs from the $1 group."
     Näytetään kaikki ohjelmat ryhmästä $1.
 "Showing all programs."
     Näytetään kaikki ohjelmat.
 "SI Units?"
     SI-yksiköt
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
 "Special Searches"
     Edistynyt Haku
@@ -636,18 +740,21 @@
 "Start Time"
     Aloitusaika
 "Statistics"
+"Stats"
 "Status"
     Systeemin Tila
 "Status Bar"
     Tilarivi
 "Stereo"
     Stereo
+"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Kuvaus ja Nimike (Ei vastaavuuksia)
-"Subtitle"
-    Jakson Nimi
+"Submit Search"
 "subtitle"
     Jakson nimi
+"Subtitle"
+    Jakson Nimi
 "Subtitle and Description"
     Jakson Kuvaus
 "Subtitled"
@@ -656,6 +763,10 @@
     Sunnuntai
 "The requested recording schedule has been deleted."
     Ajoitettu nauhoitus on poistettu
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Torstai
 "Time"
@@ -676,7 +787,11 @@
 "Top"
     Ylös
 "Top $1"
+"Top Played Songs"
+"Total Length"
 "Total Time"
+"Total Time:  %s"
+"Track #%s from the album '%s'"
 "Track Name"
     Kappaleen Nimi
 "transcoder"
@@ -732,6 +847,10 @@
     Videosuodattimet
 "Videos"
     Videot
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
 "Visibility"
     Näkyvyys
 "visible"
@@ -765,6 +884,7 @@
 "Written by"
     Käsikirjoittaja
 "xmltvid"
+"Year"
 "year"
     vuosi
 "Yes"

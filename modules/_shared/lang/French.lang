@@ -1,5 +1,6 @@
 " at "
     &agrave;
+"# Tracks"
 "$1 B"
     $1 B
 "$1 day"
@@ -34,10 +35,18 @@
 "$1 to $2"
     de $1 &agrave; $2
 "$1 wasted"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
 "Action"
 "Activate"
     Activer
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
 "add string"
+"Add this Playlist as a Subplaylist"
 "Additional Tables"
 "Advanced"
 "Advanced Options"
@@ -49,21 +58,36 @@
     Heure de diffusion
 "Album"
 "Album (filtered)"
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
 "All"
+"All Albums"
+"All Fields"
 "All groups"
 "All HDTV"
 "All Music"
 "All recordings"
     Tous les enregistrements
+"All Songs"
+"An error occured while adding your playlist."
+"Animated scrolling in program listing"
 "Any"
     Tous
 "Any Category"
 "Any Channel"
 "Any Program Type"
+"Append"
+"Append to Current Playlist"
 "Are you sure you want to delete the following show?"
     Etes vous s&ucirc;r d&acute;effacer cette &eacute;mission
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist"
 "Artist (filtered)"
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
 "auto-expire"
     auto-expire
 "Auto-expire recordings"
@@ -71,6 +95,7 @@
 "Auto-flag commercials"
     Marquer les pubs
 "Auto-transcode"
+"Back"
 "Back to the program listing"
     Retourner &agrave; la liste des &eacute;missions
 "Back to the recording schedules"
@@ -78,8 +103,16 @@
 "Backend Logs"
 "Backend Status"
     Statut du Backend
+"Begin a New Search"
 "brightness"
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
 "callsign"
+"Cancel"
 "Cancel this schedule."
     Annuler cette programmation
 "Cast"
@@ -104,6 +137,9 @@
     Chaine
 "Check for duplicates in"
     Cherche les doublons dans
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
 "colour"
 "Commands"
     Commandes
@@ -116,6 +152,8 @@
 "contrast"
 "Count"
 "cover"
+"Create a New Playlist"
+"Create a Random Mix"
 "Create Schedule"
     Creer une programmation
 "Current Conditions"
@@ -141,6 +179,7 @@
 "Delete $1"
 "Delete + Rerecord"
 "Delete and rerecord $1"
+"DELETE this Saved Playlist"
 "description"
     Description
 "Description"
@@ -173,9 +212,13 @@
 "End"
 "End Late"
     Fin tardive
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
 "Episode"
     Episode
 "Episode Number"
+"Everything"
 "Exec. Producer"
     Producteur
 "file size"
@@ -197,6 +240,7 @@
     oublier les anciens
 "format help"
     Format d&acute;aide
+"Found %s results for '%s'"
 "freqid"
 "Friday"
     Vendredi
@@ -206,6 +250,7 @@
     %I:%M %p
 "Genre"
 "Genre (filtered)"
+"Genres"
 "Global"
 "Go"
     Go
@@ -257,6 +302,7 @@
 "Keybindings Editor"
 "Keyword"
 "Keyword Search"
+"Keywords"
 "Language"
     Langue
 "Last Recorded"
@@ -275,6 +321,14 @@
     Lister Touches de temps
 "Listings"
     Liste
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Loading"
+"Local Server Statistics"
 "Logs"
 "Low"
     faible
@@ -286,6 +340,10 @@
 "Monday"
     Lundi
 "more"
+"move guide left"
+"move guide right"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -312,8 +370,11 @@
     M&eacute;t&eacute;o sur le web
 "Name"
 "name"
+"Narrow Your Search"
 "Never Record"
     Ne jamais enregistrer
+"New"
+"New Search"
 "New Titles, Premieres"
 "Next"
 "No"
@@ -322,6 +383,7 @@
 "No matches found"
     Aucune correspondance
 "No matching programs found."
+"No Public Playlists"
 "No recording schedules have been defined."
     Aucune programmation n'est définie
 "No Tracks Available"
@@ -335,6 +397,7 @@
     Notes
 "Number of episodes"
 "Number of shows"
+"Number of Songs"
 "Number of timeslots"
 "Only display favourite channels"
     Afficher seulement vos chaînes favorites
@@ -351,6 +414,23 @@
 "Past Year"
 "People"
 "People Search"
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
     Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
 "plot"
@@ -373,14 +453,22 @@
     Profil
 "profile"
     Profil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
 "Program ID"
 "Program Listing"
 "Radar"
     Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
 "Rating"
     &eacute;valuation
 "rating"
+"Recently Added Albums"
+"Recently Played Songs"
 "recgroup"
     Groupe d&eacute;enr
 "Record new and expire old"
@@ -482,18 +570,26 @@
     hebdomadaire
 "regex: articles"
     An?|The
+"Remove Item from Playlist"
 "Repeat"
     Relancer
 "Reset"
     Reset
+"Return to Statistics Page"
 "Reverse Order"
 "Rows to show between timeslot info"
 "Saturday"
     Samedi
 "Save"
     Sauver
+"Save or Rename the Current Playlist"
 "Save Schedule"
     Sauver une programmation
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
 "Schedule"
     Programmer
 "Schedule Manually"
@@ -513,16 +609,19 @@
     Recherche
 "Search for:  $1"
     Chercher:    $1
+"Search Music"
 "Search Phrase"
 "Search Results"
     R&eacute;sultats de recherche
+"Search the Music Database"
 "Search Type"
 "Searches"
     Recherches
+"Server Statistics"
 "Set Host"
-"settings"
 "Settings"
     param&egrave;tres
+"settings"
 "Settings Table"
 "Settings Table Editor"
 "settings: overview"
@@ -536,10 +635,15 @@
 "Show pixmaps"
 "Show recordings"
     Monter les enregistrements
+"show/hide advanced options"
 "Showing all programs from the $1 group."
 "Showing all programs."
 "SI Units?"
     Unités métriques?
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
 "Special Searches"
 "Star character"
@@ -550,16 +654,19 @@
 "Start Time"
     Heure de d&eacute;but
 "Statistics"
+"Stats"
 "Status"
 "Status Bar"
     Barre de statut
 "Stereo"
+"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub et Desc (Vide correspond)
-"Subtitle"
-    Soustitre
+"Submit Search"
 "subtitle"
     Sous titre
+"Subtitle"
+    Soustitre
 "Subtitle and Description"
     Soustitre et description
 "Subtitled"
@@ -567,6 +674,10 @@
     Dimanche
 "The requested recording schedule has been deleted."
     L'enregistrement demandé a été effacé
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Jeudi
 "Time"
@@ -584,7 +695,11 @@
     Demain
 "Top"
 "Top $1"
+"Top Played Songs"
+"Total Length"
 "Total Time"
+"Total Time:  %s"
+"Track #%s from the album '%s'"
 "Track Name"
 "transcoder"
 "Transcoder"
@@ -629,6 +744,10 @@
 "Video URL"
 "videofilters"
 "Videos"
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
 "Visibility"
     Visibilit&eacute;
 "visible"
@@ -653,6 +772,7 @@
 "Written by"
     Ecrit par
 "xmltvid"
+"Year"
 "year"
 "Yes"
     Oui

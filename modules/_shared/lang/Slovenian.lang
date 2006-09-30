@@ -1,5 +1,6 @@
 " at "
     ob
+"# Tracks"
 "$1 B"
 "$1 day"
 "$1 days"
@@ -29,10 +30,18 @@
 "$1 to $2"
     $1 do $2
 "$1 wasted"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
 "Action"
 "Activate"
     Aktiviraj
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
 "add string"
+"Add this Playlist as a Subplaylist"
 "Additional Tables"
 "Advanced"
 "Advanced Options"
@@ -44,21 +53,36 @@
     Čas predvajanja
 "Album"
 "Album (filtered)"
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
 "All"
+"All Albums"
+"All Fields"
 "All groups"
 "All HDTV"
 "All Music"
 "All recordings"
     Vsa snemanja
+"All Songs"
+"An error occured while adding your playlist."
+"Animated scrolling in program listing"
 "Any"
     Katera koli
 "Any Category"
 "Any Channel"
 "Any Program Type"
+"Append"
+"Append to Current Playlist"
 "Are you sure you want to delete the following show?"
     Ste prepričani, da želite izbrisati to oddajo?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist"
 "Artist (filtered)"
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
 "auto-expire"
     avto-brisanje
 "Auto-expire recordings"
@@ -66,6 +90,7 @@
 "Auto-flag commercials"
     Avto-označi reklame
 "Auto-transcode"
+"Back"
 "Back to the program listing"
     Nazaj na seznam programov
 "Back to the recording schedules"
@@ -73,8 +98,16 @@
 "Backend Logs"
 "Backend Status"
     Status Backenda
+"Begin a New Search"
 "brightness"
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
 "callsign"
+"Cancel"
 "Cancel this schedule."
     Prekliči ta plan
 "Cast"
@@ -99,6 +132,9 @@
     številka kanala
 "Check for duplicates in"
     Preveri za duplikati v
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
 "colour"
 "Commands"
     Ukazi
@@ -111,6 +147,8 @@
 "contrast"
 "Count"
 "cover"
+"Create a New Playlist"
+"Create a Random Mix"
 "Create Schedule"
     Ustvari plan snemanja
 "Current Conditions"
@@ -136,6 +174,7 @@
 "Delete $1"
 "Delete + Rerecord"
 "Delete and rerecord $1"
+"DELETE this Saved Playlist"
 "description"
     opis
 "Description"
@@ -168,9 +207,13 @@
 "End"
 "End Late"
     Končaj kasneje
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
 "Episode"
     Oddaja
 "Episode Number"
+"Everything"
 "Exec. Producer"
     Scenarist
 "file size"
@@ -192,6 +235,7 @@
     Pozabi stare
 "format help"
     format pomoči
+"Found %s results for '%s'"
 "freqid"
 "Friday"
     Petek
@@ -201,6 +245,7 @@
     %H:%M
 "Genre"
 "Genre (filtered)"
+"Genres"
 "Global"
 "Go"
     Pojdi
@@ -251,6 +296,7 @@
 "Keybindings Editor"
 "Keyword"
 "Keyword Search"
+"Keywords"
 "Language"
     Jezik
 "Last Recorded"
@@ -269,6 +315,14 @@
     Seznam
 "Listings"
     Seznam
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Loading"
+"Local Server Statistics"
 "Logs"
 "Low"
     Nizka
@@ -280,6 +334,10 @@
 "Monday"
     Ponedeljek
 "more"
+"move guide left"
+"move guide right"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
 "movie"
 "Movies"
 "Movies, 3&frac12; Stars or more"
@@ -306,8 +364,11 @@
     MythWeb vreme
 "Name"
 "name"
+"Narrow Your Search"
 "Never Record"
     Nikoli ne snemaj
+"New"
+"New Search"
 "New Titles, Premieres"
 "Next"
 "No"
@@ -316,6 +377,7 @@
 "No matches found"
     Ni zadetkov
 "No matching programs found."
+"No Public Playlists"
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
 "No Tracks Available"
@@ -329,6 +391,7 @@
     Opombe
 "Number of episodes"
 "Number of shows"
+"Number of Songs"
 "Number of timeslots"
 "Only display favourite channels"
     Prikaži samo priljubljene kanale
@@ -345,6 +408,23 @@
 "Past Year"
 "People"
 "People Search"
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
 "Possible conflicts with this show"
@@ -366,14 +446,22 @@
     Profil
 "profile"
     profil
+"program continues to the left"
+"program continues to the right"
 "Program Detail"
 "Program ID"
 "Program Listing"
 "Radar"
     Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
 "Rating"
     Ocena
 "rating"
+"Recently Added Albums"
+"Recently Played Songs"
 "recgroup"
     snemalna skupina
 "Record new and expire old"
@@ -474,18 +562,26 @@
     tedensko
 "regex: articles"
     An?|The
+"Remove Item from Playlist"
 "Repeat"
     Ponovno zaženi
 "Reset"
     Resetiraj
+"Return to Statistics Page"
 "Reverse Order"
 "Rows to show between timeslot info"
 "Saturday"
     Sobota
 "Save"
     Shrani
+"Save or Rename the Current Playlist"
 "Save Schedule"
     Shrani snemalni plan
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
 "Schedule"
     Nastavi snemanje
 "Schedule Manually"
@@ -505,16 +601,19 @@
     Iskanje
 "Search for:  $1"
     Iskanje:  $1
+"Search Music"
 "Search Phrase"
 "Search Results"
     Rezultati iskanja
+"Search the Music Database"
 "Search Type"
 "Searches"
     Iskanja
+"Server Statistics"
 "Set Host"
-"settings"
 "Settings"
     Nastavitve
+"settings"
 "Settings Table"
 "Settings Table Editor"
 "settings: overview"
@@ -528,10 +627,15 @@
 "Show pixmaps"
 "Show recordings"
     Pokaži snemanja
+"show/hide advanced options"
 "Showing all programs from the $1 group."
 "Showing all programs."
 "SI Units?"
     SI enote
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
 "Special Searches"
 "Star character"
@@ -542,15 +646,18 @@
 "Start Time"
     Čas začetka
 "Statistics"
+"Stats"
 "Status"
 "Status Bar"
     Statusna vrstica
 "Stereo"
+"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)
-"Subtitle"
-    Podnaslov
+"Submit Search"
 "subtitle"
+    Podnaslov
+"Subtitle"
     Podnaslov
 "Subtitle and Description"
     Podnaslov in opis
@@ -559,6 +666,10 @@
     Nedelja
 "The requested recording schedule has been deleted."
     Zahtevani snemalni plan je bil izbrisan
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Četrtek
 "Time"
@@ -576,7 +687,11 @@
     Jutri
 "Top"
 "Top $1"
+"Top Played Songs"
+"Total Length"
 "Total Time"
+"Total Time:  %s"
+"Track #%s from the album '%s'"
 "Track Name"
 "transcoder"
 "Transcoder"
@@ -621,6 +736,10 @@
 "Video URL"
 "videofilters"
 "Videos"
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
 "Visibility"
     Vidljivost
 "visible"
@@ -645,6 +764,7 @@
 "Written by"
     Napisal
 "xmltvid"
+"Year"
 "year"
 "Yes"
     Da
