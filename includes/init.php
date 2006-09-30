@@ -177,39 +177,36 @@
     require_once 'includes/translate.php';
 
 // Include a few useful functions
-    require_once "includes/css.php";
-    require_once "includes/mouseovers.php";
+    require_once 'includes/css.php';
+    require_once 'includes/mouseovers.php';
 
 // Connect to the backend and load some more handy utilities
-    require_once "includes/mythbackend.php";
+    require_once 'includes/mythbackend.php';
 
-// The browser is MythPhone.
-#    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
-#        define('Theme', 'vxml');
-#    }
+// Detect mobile users
+    require_once 'includes/mobile.php';
 
+// Detect different types of browsers and set the theme accordingly.
+    if (isMobileUser()) {
+    // Browser is mobile but does it accept HTML? If not, use the WML theme.
+        $_SESSION['tmpl'] = browserAcceptsMediaType(array('text/html', '\*/\*'))
+                            ? 'wap'
+                            : 'wml';
+    // Make sure the skin is set to the appropriate phone-template type
+    /** @todo eventually, we'll put all of this in the skins section */
+        $_SESSION['skin'] = $_SESSION['tmpl'];
+        define('skin', $_SESSION['skin']);
+    }
 // Reset the template?
-    if ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
+    elseif ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
         $_SESSION['tmpl'] = 'default';
-// If the requested template is missing the welcome file, look for other options
+// Deal with people who use the same login for mobile and non-mobile
+    elseif (in_array($_SESSION['tmpl'], array('wap', 'wml'))) {
+        $_SESSION['tmpl'] = 'default';
+    }
+// If the requested template is missing the welcome file, use the default template
     else if (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
-    // Detect different types of browsers and set the theme accordingly.
-        require_once "includes/mobile.php";
-        if (isMobileUser()) {
-        // Browser is mobile but does it accept HTML? If not, use the WML theme.
-            if (browserAcceptsMediaType(array('text/html', '\*/\*')))
-                 $_SESSION['tmpl'] = 'wap';
-            else
-                 $_SESSION['tmpl'] = 'wml';
-        // Make sure the skin is set to the appropriate phone-template type
-        /** @todo eventually, we'll put all of this in the skins section */
-            $_SESSION['skin'] = $_SESSION['tmpl'];
-            define('skin', $_SESSION['skin']);
-        }
-    // Otherwise set the default theme.
-        else {
-             $_SESSION['tmpl'] = 'default';
-        }
+         $_SESSION['tmpl'] = 'default';
     }
 
 // Is there a preferred skin?
