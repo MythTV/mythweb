@@ -58,7 +58,7 @@
         <dl>
             <dt><?php echo t('Number of shows') ?>:
             <dd><?php echo $title_count ?></dd>
-            <dt><?php echo t('Number of epsodes') ?>:</dt>
+            <dt><?php echo t('Number of episodes') ?>:</dt>
             <dd><?php echo $show_count ?></dd>
             <dt><?php echo t('First recording') ?>:</dt>
             <dd><?php echo date('l F jS, Y', $first) ?></dd>
