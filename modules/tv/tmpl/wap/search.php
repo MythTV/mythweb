@@ -23,7 +23,7 @@
         return;
     }
 // Get the url search string so we don't have to recreate it for each sort type
-    $search_str = '&searchstr='.urlencode($_GET['searchstr']);
+    $search_str = '&s='.urlencode($_GET['s']);
     if ($_GET['search_title'])         $search_str .= '&search_title=yes';
     if ($_GET['search_subtitle'])      $search_str .= '&search_subtitle=yes';
     if ($_GET['search_description'])   $search_str .= '&search_description=yes';
