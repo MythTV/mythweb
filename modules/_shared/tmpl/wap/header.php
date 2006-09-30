@@ -37,8 +37,8 @@
     </span>
 
 </center><br />
-<form action="<?php echo root ?>tv/search" method="post">
-        <center><input type="text" name="searchstr" value="<?php echo $_GET['searchstr'] ?>"><br />
-        <input type="submit" class="submit" value="search"></center><br />
+<form action="<?php echo root ?>tv/search" method="get">
+        <center><input type="text" name="s" value="<?php echo $_GET['s'] ?>"><br />
+        <input type="submit" class="submit" name="search" value="Search"></center><br />
 </form>
 
