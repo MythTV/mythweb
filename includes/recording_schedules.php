@@ -268,7 +268,7 @@ class Schedule {
                          _or($this->description,   ''              ),
                          _or($this->profile,       'Default'       ),
                          _or($this->recpriority,   0               ),
-                         _or($this->category,      0,              ),
+                         _or($this->category,      0               ),
                          _or($this->maxnewest,     0,          true),
                          _or($this->inactive,      0,          true),
                          _or($this->maxepisodes,   0,          true),
