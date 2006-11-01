@@ -26,12 +26,15 @@ define('MYTH_PLAYLIST_SAVE_TIME', 60*60*24*7);
 ******************************************/
 function pic_dir()
 {
-  return root.'music/';
+  return skin_url.'img/music/';
 }
 
 function music_dir()
 {
-  return root.'music/';
+  $protocoll = "http://";
+  if(isset($_SERVER['HTTPS']))
+    $protocoll = "https://";
+  return $protocoll.$_SERVER["HTTP_HOST"].root.'music/';
 }
 
 
