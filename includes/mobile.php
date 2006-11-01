@@ -81,7 +81,9 @@ function getScreenSize() {
                      'C500'      => array('width'=>176, 'height'=> 220), // SPV C500
                 /* Phones using the Series 90 platform, e.g. Nokia 7710. */
                      'Series 90' => array('width' => 640, 'height' => 320),
-                     'Series90' => array('width' => 640, 'height' => 320),
+                     'Series90'  => array('width' => 640, 'height' => 320),
+                /* HTC Tornado */
+                    '176x220'    => array('width' => 176, 'height' => 220),
                 /* The following strings are added for the Palm browser WebPro
                  * WebPro sometimes supplies the screen dimensions, but sometimes not
                  * but we try to detect the best as possible */
