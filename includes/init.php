@@ -97,7 +97,10 @@
                                 : (array_key_exists('PATH_INFO', $_ENV)
                                    && $_ENV['PATH_INFO']
                                     ? $_ENV['PATH_INFO']
-                                    : $_GET['PATH_INFO']
+                                    : (array_key_exists('PATH_INFO', $_GET)
+                                       ? $_GET['PATH_INFO']
+                                       : ''
+                                      )
                                   )
                          ))
                    );
