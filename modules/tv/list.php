@@ -57,8 +57,8 @@
     function date_select() {
         global $db;
     // Get the available date range
-        $min_days = $db->query_col('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program');
-        $max_days = $db->query_col('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program');
+        $min_days = max(-7, $db->query_col('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program'));
+        $max_days = min(30, $db->query_col('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program'));
     // Print out the list
         echo '<select name="date" onchange="get_element(\'program_listing\').submit()">';
         for ($i=$min_days; $i<=$max_days; $i++) {
