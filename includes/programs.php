@@ -448,7 +448,7 @@ class Program {
 
     function merge($prog) {
         foreach (get_object_vars($prog) as $name => $value) {
-            if ($value && !$this->$name) {
+            if ($value) {
                 $this->$name = $value;
             }
         }
