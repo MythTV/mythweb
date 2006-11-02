@@ -323,7 +323,7 @@ EOM;
         <span style="padding-right: 25px"><?php echo t('auto-expire') ?>:&nbsp;
             <input type="checkbox" id="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
              name="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
-             <?php if ($show->auto_expire) echo ' CHECKED' ?> onchange="set_autoexpire(<?php echo $row ?>)" />
+             <?php if ($show->auto_expire) echo ' CHECKED' ?> onclick="set_autoexpire(<?php echo $row ?>)" />
             </span>
         <span style="padding-right: 25px"><?php echo t('has bookmark') ?>:&nbsp;
             <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b></span>
