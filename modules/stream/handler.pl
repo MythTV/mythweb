@@ -48,6 +48,13 @@
 # File size
     my $size = -s $filename;
 
+# Zero bytes?
+    if ($size < 1) {
+        print header(),
+              "$basename is an empty file.";
+        exit;
+    }
+
 # File type
     my $type   = 'text/html';
     my $suffix = '';
