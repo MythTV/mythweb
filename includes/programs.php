@@ -448,10 +448,12 @@ class Program {
 
     function merge($prog) {
         foreach (get_object_vars($prog) as $name => $value) {
-            if ($value) {
+            if ($value && !$this->$name) {
                 $this->$name = $value;
             }
         }
+    // Special case for the original airdate, which the backend seems to misplace
+        $this->airdate = $prog->airdate;
     // update fancy description in case a part of it changed
         $this->update_fancy_desc();
     }
