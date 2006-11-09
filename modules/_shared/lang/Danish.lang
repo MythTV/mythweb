@@ -239,6 +239,7 @@
     Optag ikke
 "Don't record this program."
     Optag IKKE dette program
+"Download URL override"
 "Dup Method"
     Dubletkontrol metode
 "Duplicate Check method"
@@ -858,6 +859,7 @@
     Brug kaldenavn
 "Use date/time"
     Brug dato/tid
+"Use myth:// URI for Windows"
 "useonairguide"
     brug onairguide
 "UV Extreme"

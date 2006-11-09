@@ -322,12 +322,13 @@
  * @return string URL to access recordings
 /**/
     function video_url($show) {
-    // Global override?
-        $video_url = setting('WebVideo_URL');
-        if ($video_url)
-            return $video_url.str_replace('%2F', '/', rawurlencode(basename($show->filename)));
-    // Mac and Linux just get a link to the streaming module
-        if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT']))
+    // URL override?
+        if ($_SESSION['file_url_override'])
+            return 'file://'.$_SESSION['file_url_override'].str_replace('%2F', '/', rawurlencode(basename($show->filename)));
+    // Mac and Linux just get a link to the streaming module, along with any
+    // session marked to not use the myth:// URI
+        if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT'])
+                || !$_SESSION['use_myth_uri'])
             return root."pl/stream/$show->chanid/$show->recstartts";
     // Windows likely gets a myth:// url -- grab the master host and port
         global $Master_Host, $Master_Port;

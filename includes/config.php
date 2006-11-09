@@ -19,6 +19,9 @@
  *
 /**/
 
+// Wipe out old/unused settings
+    $db->query('DELETE FROM settings WHERE value="WebVideo_URL"');  /** @todo:  Delete this line after 0.21 has been released */
+
 // Prefer channum over callsign?
     if (empty($_SESSION['prefer_channum']))
         $_SESSION['prefer_channum'] = setting('WebPrefer_Channum');
@@ -34,6 +37,9 @@
     if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = t('generic_date');
     if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = t('generic_date');
     if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
+
+// Use myth:// URI for recordings if browsing from a windows box?
+    if (!isset($_SESSION['use_myth_uri']))  $_SESSION['use_myth_uri']  = true;
 
 // Show pixmaps on the recorded programs page?
     if (!isset($_SESSION['recorded_pixmaps'])) {

@@ -23,6 +23,9 @@
 
 <form class="form" method="post" action="<?php echo root ?>settings/session">
 
+<!-- Settings not used in this template, but that need to be here to keep their values -->
+<input type="hidden" name="recorded_pixmaps" value="<?php echo $_SESSION['recorded_pixmaps'] ? 1 : 0 ?>" />
+
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5" style="float: left;margin-left: 20px">
 <tr>
     <td class="command_border_b" align="right"><?php echo t('MythWeb Template') ?>:</td>
@@ -39,8 +42,14 @@
 </tr><tr>
     <td colspan="2"><?php echo t('Recorded Programs') ?>:</td>
 </tr><tr>
-    <td class="command_border_b" align="right"><?php echo t('Show descriptions on new line') ?>:</td>
-    <td class="command_border_b"><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
+    <td align="right"><label for="recorded_descunder"><?php echo t('Show descriptions on new line') ?></label>:</td>
+    <td><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." id="recorded_descunder" name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
+</tr><tr>
+    <td align="right"><?php echo t('Download URL override') ?></label>:</td>
+    <td>file://<input type="text" id="file_url_override" name="file_url_override" value="<?php echo html_entities(trim($_SESSION['file_url_override'])) ?>" title="Instead of streaming downloaded recordings, load from a local file:// path instead."></td>
+</tr><tr>
+    <td class="command_border_b" align="right"><label for="use_myth_uri"><?php echo t('Use myth:// URI for Windows') ?></label>:</td>
+    <td class="command_border_b"><input class="radio" type="checkbox" title="Use myth:// URI to download recordings via Windows browsers?" id="use_myth_uri" name="use_myth_uri"<?php if ($_SESSION['use_myth_uri']) echo ' CHECKED' ?>></td>
 </tr><tr>
     <td colspan="2"><?php echo t('Guide Settings') ?>:</td>
 </tr><tr>

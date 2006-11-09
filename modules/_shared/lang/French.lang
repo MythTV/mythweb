@@ -196,6 +196,7 @@
     Ne pas enregistrer
 "Don't record this program."
     Ne pas enregistrer cette &eacute;mission
+"Download URL override"
 "Dup Method"
     m&eacute;thode de dup
 "Duplicate Check method"
@@ -728,6 +729,7 @@
     Actualiser les param&egrave;tres d&acute;enregistrement
 "Use callsign"
 "Use date/time"
+"Use myth:// URI for Windows"
 "useonairguide"
 "UV Extreme"
     Indice UV Extr&egrave;me

@@ -145,6 +145,7 @@
 "Don't Record"
 "Don't record this program."
     Don't record this programme.
+"Download URL override"
 "Dup Method"
 "Duplicate Check method"
 "Duplicates"
@@ -576,6 +577,7 @@
 "Update Recording Settings"
 "Use callsign"
 "Use date/time"
+"Use myth:// URI for Windows"
 "useonairguide"
 "UV Extreme"
 "UV High"

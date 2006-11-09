@@ -245,6 +245,7 @@
     Spela ej in
 "Don't record this program."
     Spela inte in detta program.
+"Download URL override"
 "Dup Method"
     Dubblettmetod
 "Duplicate Check method"
@@ -901,6 +902,7 @@
     Använd kanalnamn
 "Use date/time"
     Använd datum/tid
+"Use myth:// URI for Windows"
 "useonairguide"
 "UV Extreme"
     UV-strålning extrem

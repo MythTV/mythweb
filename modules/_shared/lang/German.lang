@@ -233,6 +233,7 @@
     Nicht aufnehmen
 "Don't record this program."
     Diese Sendung nicht aufnehmen
+"Download URL override"
 "Dup Method"
     Methode für Wdhgn.
 "Duplicate Check method"
@@ -847,6 +848,7 @@
     Kurzname verwenden
 "Use date/time"
     Datum/Uhrzeit verwenden
+"Use myth:// URI for Windows"
 "useonairguide"
     DVB-EPG Daten verwenden
 "UV Extreme"

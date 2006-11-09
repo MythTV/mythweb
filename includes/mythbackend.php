@@ -232,48 +232,49 @@
         $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
         $host     = $GLOBALS['Master_Host'];
         $port     = $GLOBALS['Master_Port'];
-        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',   // 00 command
-                     ' ',                           // 01 title
-                     ' ',                           // 02 subtitle
-                     ' ',                           // 03 description
-                     ' ',                           // 04 category
-                     $show->chanid,                 // 05 chanid
-                     ' ',                           // 06 chanstr
-                     ' ',                           // 07 chansign
-                     ' ',                           // 08 channame
-                     $show->filename,               // 09 filename
-                     '0',                           // 10 upper 32 bits
-                     '0',                           // 11 lower 32 bits
-                     $show->starttime,              // 12 starttime
-                     $show->endtime,                // 13 endtime
-                     '0',                           // 14 conflicting
-                     '1',                           // 15 recording
-                     '0',                           // 16 duplicate
-                     $show->hostname,               // 17 hostname
-                     '-1',                          // 18 sourceid
-                     '-1',                          // 19 cardid
-                     '-1',                          // 20 inputid
-                     ' ',                           // 21 recpriority
-                     ' ',                           // 22 recstatus
-                     ' ',                           // 23 recordid
-                     ' ',                           // 24 rectype
-                     '15',                          // 25 dupin
-                     '6',                           // 26 dupmethod
-                     $show->recstartts,             // 27 recstarttime
-                     $show->recendts,               // 28 recendtime
-                     ' ',                           // 29 repeat
-                     ' ',                           // 30 program flags
-                     ' ',                           // 31 recgroup
-                     ' ',                           // 32 commfree
-                     ' ',                           // 33 chanoutputfilters
-                     $show->seriesid,               // 34 seriesid
-                     $show->programid,              // 35 programid
-                     $show->starttime,              // 36 dummy lastmodified
-                     '0',                           // 37 dummy stars
-                     $show->starttime,              // 38 dummy org airdate
-                     '',                            // 39 dummy timestretch
+        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',   //    command
+                     ' ',                           // 00 title
+                     ' ',                           // 01 subtitle
+                     ' ',                           // 02 description
+                     ' ',                           // 03 category
+                     $show->chanid,                 // 04 chanid
+                     ' ',                           // 05 chanstr
+                     ' ',                           // 06 chansign
+                     ' ',                           // 07 channame
+                     $show->filename,               // 08 pathname
+                     '0',                           // 09 filesize upper 32 bits
+                     '0',                           // 10 filesize lower 32 bits
+                     $show->starttime,              // 11 startts
+                     $show->endtime,                // 12 endts
+                     '0',                           // 13 duplicate
+                     '1',                           // 14 shareable
+                     '0',                           // 15 findid
+                     $show->hostname,               // 16 hostname
+                     '-1',                          // 17 sourceid
+                     '-1',                          // 18 cardid
+                     '-1',                          // 19 inputid
+                     ' ',                           // 20 recpriority
+                     ' ',                           // 21 recstatus
+                     ' ',                           // 22 recordid
+                     ' ',                           // 23 rectype
+                     '15',                          // 24 dupin
+                     '6',                           // 25 dupmethod
+                     $show->recstartts,             // 26 recstartts
+                     $show->recendts,               // 27 recendts
+                     ' ',                           // 28 repeat
+                     ' ',                           // 29 programflags
+                     ' ',                           // 30 recgroup
+                     ' ',                           // 31 chancommfree
+                     ' ',                           // 32 chanOutputFilters
+                     $show->seriesid,               // 33 seriesid
+                     $show->programid,              // 34 programid
+                     $show->starttime,              // 35 lastmodified
+                     '0',                           // 36 stars
+                     $show->starttime,              // 37 originalAirDate
+                     '',                            // 38 hasAirDate
+                     ' ',                           // 39 playgroup
                      ' ',                           // 40 recpriority2
-                     ' ',                           // 41 parentid
+                     '',                            // 41 parentid
                      '',                            // 42 trailing separator
                     );
         $lastmodified = strtotime(backend_command($cmd));

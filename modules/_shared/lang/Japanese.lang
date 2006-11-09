@@ -233,6 +233,7 @@
     録画停止
 "Don't record this program."
     録画しない
+"Download URL override"
 "Dup Method"
     重複検知
 "Duplicate Check method"
@@ -868,6 +869,7 @@
     コールサインを使用する
 "Use date/time"
     日時を使用する
+"Use myth:// URI for Windows"
 "useonairguide"
 "UV Extreme"
     UV 非常に強い

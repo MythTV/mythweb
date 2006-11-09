@@ -244,6 +244,7 @@
     No grabar
 "Don't record this program."
     No borrar este programa
+"Download URL override"
 "Dup Method"
     Método duplicado
 "Duplicate Check method"
@@ -896,6 +897,7 @@
     Usar nombre canal
 "Use date/time"
     Usar fecha/hora
+"Use myth:// URI for Windows"
 "useonairguide"
     usar guía emitida
 "UV Extreme"

@@ -230,6 +230,7 @@
     Älä Nauhoita
 "Don't record this program."
     Älä nauhoita ohjelmaa.
+"Download URL override"
 "Dup Method"
     Metodi
 "Duplicate Check method"
@@ -827,6 +828,7 @@
     Päivitä Nauhoitusasetukset
 "Use callsign"
 "Use date/time"
+"Use myth:// URI for Windows"
 "useonairguide"
     Käytä Ohjelmavirran Opasta
 "UV Extreme"

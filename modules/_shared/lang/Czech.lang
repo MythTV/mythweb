@@ -173,6 +173,7 @@
 "Don't Record"
     Nenahrávat
 "Don't record this program."
+"Download URL override"
 "Dup Method"
 "Duplicate Check method"
     Metoda kontroly duplicit
@@ -642,6 +643,7 @@
 "Update Recording Settings"
 "Use callsign"
 "Use date/time"
+"Use myth:// URI for Windows"
 "useonairguide"
 "UV Extreme"
 "UV High"

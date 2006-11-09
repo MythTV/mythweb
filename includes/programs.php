@@ -263,6 +263,7 @@ class Program {
     var $max_newest     = 0;
     var $max_episodes   = 0;
     var $group          = '';
+    var $playgroup      = 'Default';
 
     var $has_commflag   = 0;
     var $has_cutlist    = 0;
@@ -330,7 +331,7 @@ class Program {
             $this->recpriority     = $data[36];
             $this->airdate         = date('Y-m-d', $data[37]);
             $this->hasairdate      = $data[38];
-            $this->timestretch     = $data[39];
+            $this->playgroup       = $data[39];
             $this->recpriority2    = $data[40];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {

@@ -17,27 +17,29 @@
     if ($_POST['save']) {
         $redirect = false;
     // Save the date formats
-        if ($_POST['date_statusbar'])       $_SESSION['date_statusbar']       = $_POST['date_statusbar'];
-        if ($_POST['date_scheduled'])       $_SESSION['date_scheduled']       = $_POST['date_scheduled'];
-        if ($_POST['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = $_POST['date_scheduled_popup'];
-        if ($_POST['date_recorded'])        $_SESSION['date_recorded']        = $_POST['date_recorded'];
-        if ($_POST['date_search'])          $_SESSION['date_search']          = $_POST['date_search'];
-        if ($_POST['date_listing_key'])     $_SESSION['date_listing_key']     = $_POST['date_listing_key'];
-        if ($_POST['date_listing_jump'])    $_SESSION['date_listing_jump']    = $_POST['date_listing_jump'];
-        if ($_POST['date_channel_jump'])    $_SESSION['date_channel_jump']    = $_POST['date_channel_jump'];
-        if ($_POST['time_format'])          $_SESSION['time_format']          = $_POST['time_format'];
+        if (isset($_POST['date_statusbar']))       $_SESSION['date_statusbar']       = $_POST['date_statusbar'];
+        if (isset($_POST['date_scheduled']))       $_SESSION['date_scheduled']       = $_POST['date_scheduled'];
+        if (isset($_POST['date_scheduled_popup'])) $_SESSION['date_scheduled_popup'] = $_POST['date_scheduled_popup'];
+        if (isset($_POST['date_recorded']))        $_SESSION['date_recorded']        = $_POST['date_recorded'];
+        if (isset($_POST['date_search']))          $_SESSION['date_search']          = $_POST['date_search'];
+        if (isset($_POST['date_listing_key']))     $_SESSION['date_listing_key']     = $_POST['date_listing_key'];
+        if (isset($_POST['date_listing_jump']))    $_SESSION['date_listing_jump']    = $_POST['date_listing_jump'];
+        if (isset($_POST['date_channel_jump']))    $_SESSION['date_channel_jump']    = $_POST['date_channel_jump'];
+        if (isset($_POST['time_format']))          $_SESSION['time_format']          = $_POST['time_format'];
     // Save the template
-        if ($_POST['tmpl'])                 $_SESSION['tmpl']                 = $_POST['tmpl'];
+        if (isset($_POST['tmpl']))                 $_SESSION['tmpl']                 = $_POST['tmpl'];
     // Save the skin
-        if ($_POST['skin'] && $_POST['skin'] != $_SESSION['skin']) {
+        if (isset($_POST['skin']) && $_POST['skin'] != $_SESSION['skin']) {
             $_SESSION['skin'] = $_POST['skin'];
             $redirect = true;
         }
     // Use SI units?
-        if ($_POST['siunits'])              $_SESSION['siunits']              = $_POST['siunits'];
-    // Recorded Programs
+        if (isset($_POST['siunits']))              $_SESSION['siunits']              = $_POST['siunits'];
+    // Recorded Programs (can't use isset() here because un-checked checkboxes don't show up in the request)
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
         $_SESSION['recorded_pixmaps']   = $_POST['recorded_pixmaps']   ? true : false;
+        $_SESSION['use_myth_uri']       = $_POST['use_myth_uri']       ? true : false;
+        if (isset($_POST['file_url_override']))  $_SESSION['file_url_override']  = trim(preg_replace('#^file://#', '', $_POST['file_url_override']));
     // Guide Settings
         $_SESSION['guide_favonly']    = $_POST['guide_favonly'] ? true : false;
         $_SESSION['timeslot_size']    = max(5, intVal($_POST['timeslot_size'])) * 60;

@@ -233,6 +233,7 @@
     Niet Opnemen
 "Don't record this program."
     Dit programma niet opnemen
+"Download URL override"
 "Dup Method"
     Dubbels Methode
 "Duplicate Check method"
@@ -848,6 +849,7 @@
     Zender gebruiken
 "Use date/time"
     Datum/tijd gebruiken
+"Use myth:// URI for Windows"
 "useonairguide"
     gebruikepg
 "UV Extreme"

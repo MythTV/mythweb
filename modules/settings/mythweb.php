@@ -17,12 +17,6 @@
     if ($_POST['save']) {
     // Some global mythweb settings
         $_SESSION['prefer_channum'] = setting('WebPrefer_Channum', null, $_POST['prefer_channum'] ? 1 : 0);
-    // Video URL needs some special checking
-        $_POST['video_url'] = trim($_POST['video_url']);
-        if (empty($_POST['video_url']) || preg_match('#^\w+://#', $_POST['video_url']))
-            setting('WebVideo_URL', null, $_POST['video_url']);
-        else
-            add_warning('Video URL needs a URI indicator like myth:// or file://');
     // Video artwork directory
         $_POST['video_artwork_dir'] = trim($_POST['video_artwork_dir']);
         if (!empty($_POST['video_artwork_dir'])) {
