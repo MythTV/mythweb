@@ -42,7 +42,9 @@
     define('hostname', empty($_SERVER['hostname']) ? trim(`hostname`) : $_SERVER['hostname']);
 
 // Define the error email, or set it to a null string if there isn't a valid one
-    define('error_email', strstr($_SERVER['error_email'], '@') ? $_SERVER['error_email'] : '');
+    define('error_email', array_key_exists($_SERVER['error_email']) && strstr($_SERVER['error_email'], '@')
+                          ? $_SERVER['error_email']
+                          : '');
 
 // Load the generic utilities so we have access to stuff like DEBUG()
     require_once 'includes/utils.php';
