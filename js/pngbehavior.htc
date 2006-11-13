@@ -1,55 +1,97 @@
+/**
+ * This is a slightly modified version of Eric Advidsson's pngbehavior.htc
+ * script at http://webfx.eae.net/dhtml/pngbehavior/pngbehavior.html
+ *
+ * For usage see license at http://webfx.eae.net/license.html
+ *
+ * It also includes some printing fixes from:
+ * http://www.scss.com.au/family/andrew/webdesign/pngbehavior/
+ *
+ * As well as restricting the versions of IE that it will match, since IE 7 now
+ * deals properly with transparent PNGs.
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ *
+/**/
+
 <public:component>
-<public:attach event="onpropertychange" onevent="propertyChanged()" />
+<public:attach event="onpropertychange"           onevent="propertyChanged()" />
+<public:attach event="onbeforeprint" for="window" onevent="beforePrint()"     />
+<public:attach event="onafterprint"  for="window" onevent="afterPrint()"      />
+
 <script type="text/javascript">
 
-var supported = /MSIE (5\.5)|[6789]/.test(navigator.userAgent) && navigator.platform == "Win32";
-var realSrc;
-var blankSrc = "/skins/default/img/spacer.gif";
+// Set this to the URL of your 1x1 transparent gif
+    var blankSrc = "/skins/default/img/spacer.gif";
 
-if (supported) fixImage();
+// Only interact with valid browsers.  Everything after IE 6 supports
+// transparent PNGs natively (yay!)
+    var supported = /MSIE (5\.5|6)/.test(navigator.userAgent) && navigator.platform == "Win32";
 
-function propertyChanged() {
-    if (!supported) return;
+/******************************************************************************/
 
-    var pName = event.propertyName;
-    if (pName != "src") return;
-// if not set to blank
-    if ( ! new RegExp(blankSrc).test(src))
+    var realSrc;
+
+    if (supported)
         fixImage();
-};
 
-function fixImage() {
-// get src
-    var src = element.src;
-
-// check for real change
-    if (src == realSrc && element.runtimeStyle.filter != "") {
-        element.src = blankSrc;
-        return;
+    function propertyChanged() {
+        if (supported && event.propertyName == 'src') {
+            var i = element.src.lastIndexOf(blankSrc);
+            if (i == -1 || i != element.src.length - blankSrc.length) {
+                fixImage();
+            }
+        }
     }
 
-// backup old src
-    if ( ! new RegExp(blankSrc).test(src))
-        realSrc = src;
-
-// test for png
-    if ( realSrc && /\.png$/.test( realSrc.toLowerCase() ) ) {
-    // Make sure that width and height are preserved
-        var width  = element.width;
-        var height = element.height;
-    // set blank image
-        element.src = blankSrc;
-    // set filter
-        element.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
-                                      + src + "',sizingMethod='scale')";
-    // Restore width and height
-        element.width  = width;
-        element.height = height;
+    function fixImage() {
+        if (!supported) return;
+    // Don't set the image to itself (i.e. catch stupid web designer errors)
+        if (element.src == realSrc && element.runtimeStyle.filter != "") {
+            element.src = blankSrc;
+            return;
+        }
+    // Backup the old src
+        if ( ! new RegExp(blankSrc).test(element.src))
+            realSrc = element.src;
+    // Test for png
+        if ( realSrc && /\.png$/.test( realSrc.toLowerCase() ) ) {
+        // Make sure that width and height are preserved
+            var width  = element.width;
+            var height = element.height;
+        // Set blank image
+            element.src = blankSrc;
+        // Set filter
+            element.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
+                                          + encodeURI(realSrc) + "',sizingMethod='scale')";
+        // Restore width and height
+            element.width  = width;
+            element.height = height;
+        }
+    // Otherwise, remove the filter
+        else
+            element.runtimeStyle.filter = "";
     }
-// remove filter
-    else
-        element.runtimeStyle.filter = "";
-}
+
+    function beforePrint() {
+        if (realSrc) {
+            supported                   = false;
+            element.src                 = realSrc;
+            element.runtimeStyle.filter = '';
+            supported                   = true;
+        }
+    }
+
+    function afterPrint() {
+        if (realSrc) {
+            var rs      = realSrc;
+            realSrc     = null;
+            element.src = rs;
+        }
+    }
 
 </script>
 </public:component>
