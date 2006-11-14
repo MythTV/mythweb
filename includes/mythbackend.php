@@ -226,57 +226,16 @@
 
 /**
  * Gets a preview image of the requested show
+ *
+ * @todo, this should get put into a "recording" class or something like that.
 /**/
     function generate_preview_pixmap($show) {
         $fileurl  = $show->filename;
         $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
         $host     = $GLOBALS['Master_Host'];
         $port     = $GLOBALS['Master_Port'];
-        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',   //    command
-                     ' ',                           // 00 title
-                     ' ',                           // 01 subtitle
-                     ' ',                           // 02 description
-                     ' ',                           // 03 category
-                     $show->chanid,                 // 04 chanid
-                     ' ',                           // 05 chanstr
-                     ' ',                           // 06 chansign
-                     ' ',                           // 07 channame
-                     $show->filename,               // 08 pathname
-                     '0',                           // 09 filesize upper 32 bits
-                     '0',                           // 10 filesize lower 32 bits
-                     $show->starttime,              // 11 startts
-                     $show->endtime,                // 12 endts
-                     '0',                           // 13 duplicate
-                     '1',                           // 14 shareable
-                     '0',                           // 15 findid
-                     $show->hostname,               // 16 hostname
-                     '-1',                          // 17 sourceid
-                     '-1',                          // 18 cardid
-                     '-1',                          // 19 inputid
-                     ' ',                           // 20 recpriority
-                     ' ',                           // 21 recstatus
-                     ' ',                           // 22 recordid
-                     ' ',                           // 23 rectype
-                     '15',                          // 24 dupin
-                     '6',                           // 25 dupmethod
-                     $show->recstartts,             // 26 recstartts
-                     $show->recendts,               // 27 recendts
-                     ' ',                           // 28 repeat
-                     ' ',                           // 29 programflags
-                     ' ',                           // 30 recgroup
-                     ' ',                           // 31 chancommfree
-                     ' ',                           // 32 chanOutputFilters
-                     $show->seriesid,               // 33 seriesid
-                     $show->programid,              // 34 programid
-                     $show->starttime,              // 35 lastmodified
-                     '0',                           // 36 stars
-                     $show->starttime,              // 37 originalAirDate
-                     '',                            // 38 hasAirDate
-                     ' ',                           // 39 playgroup
-                     ' ',                           // 40 recpriority2
-                     '',                            // 41 parentid
-                     '',                            // 42 trailing separator
-                    );
+        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',
+                     $show->backend_row());
         $lastmodified = strtotime(backend_command($cmd));
     // Delete outdated images, but not until the show has finished recording
         if (is_file($pngpath) && $lastmodified < $show->lastmodified && $show->lastmodified >= $show->endtime) {

@@ -90,15 +90,14 @@
         // This row isn't the one we're looking for
             if ($row[4] != $_GET['chanid'] || $row[26] != $_GET['starttime'])
                 continue;
-        // Forget all knowledge of old recordings
+        // Delete the recording
+            backend_command(array('FORCE_DELETE_RECORDING', implode(backend_sep, $row), '0'));
+        // Forget all knowledge of old recordings?
             if (isset($_GET['forget_old'])) {
-                $show = new Program($row);
-                $show->rec_forget_old();
-            // Delay a second so the backend can catch up
+                backend_command(array('FORGET_RECORDING', implode(backend_sep, $row), '0'));
+            // Delay a second so the scheduler can catch up
                 sleep(1);
             }
-        // Delete the recording
-            backend_command(array('DELETE_RECORDING', implode(backend_sep, $row), '0'));
         // Exit early if we're in AJAX mode.
             if (isset($_GET['ajax'])) {
                 echo 'success';

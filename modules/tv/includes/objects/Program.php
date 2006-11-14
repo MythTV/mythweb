@@ -271,6 +271,59 @@ class Program {
     }
 
 /**
+ * Generate a mythproto-compatible row of data for this show.
+/**/
+    function backend_row() {
+        return implode(backend_sep,
+                       array(
+                             ' ',                // 00 title
+                             ' ',                // 01 subtitle
+                             ' ',                // 02 description
+                             ' ',                // 03 category
+                             $this->chanid,      // 04 chanid
+                             ' ',                // 05 chanstr
+                             ' ',                // 06 chansign
+                             ' ',                // 07 channame
+                             $this->filename,    // 08 pathname
+                             '0',                // 09 filesize upper 32 bits
+                             '0',                // 10 filesize lower 32 bits
+                             $this->starttime,   // 11 startts
+                             $this->endtime,     // 12 endts
+                             '0',                // 13 duplicate
+                             '1',                // 14 shareable
+                             '0',                // 15 findid
+                             $this->hostname,    // 16 hostname
+                             '-1',               // 17 sourceid
+                             '-1',               // 18 cardid
+                             '-1',               // 19 inputid
+                             ' ',                // 20 recpriority
+                             ' ',                // 21 recstatus
+                             ' ',                // 22 recordid
+                             ' ',                // 23 rectype
+                             '15',               // 24 dupin
+                             '6',                // 25 dupmethod
+                             $this->recstartts,  // 26 recstartts
+                             $this->recendts,    // 27 recendts
+                             ' ',                // 28 repeat
+                             ' ',                // 29 programflags
+                             ' ',                // 30 recgroup
+                             ' ',                // 31 chancommfree
+                             ' ',                // 32 chanOutputFilters
+                             $this->seriesid,    // 33 seriesid
+                             $this->programid,   // 34 programid
+                             $this->starttime,   // 35 lastmodified
+                             '0',                // 36 stars
+                             $this->starttime,   // 37 originalAirDate
+                             '',                 // 38 hasAirDate
+                             '',                 // 39 playgroup
+                             '',                 // 40 recpriority2
+                             '',                 // 41 parentid
+                             '',                 // 42 trailing separator
+                            )
+                      );
+    }
+
+/**
  * The "details list" for each program.
 /**/
     function details_list() {
@@ -366,20 +419,21 @@ class Program {
     }
 
 /*
- *  The following methods relate to a programs control over its recording options.
+ *  The following methods relate to a program's control over its recording options.
  */
 
 /**
- * Tell mythtv to forget that it already recorded this show.
+ * Forget everything about a previously recorded program
+ *
+ * @todo Eventually, all of this should get separated out of the Program class
+ * and into something more generic, since this backend command is called from
+ * several places depending on if a program or a non-expanded data row is being
+ * used.
 /**/
     function rec_forget_old() {
-        $result = mysql_query('DELETE FROM oldrecorded WHERE'
-                                .' title='          .escape($this->title)
-                                .' AND subtitle='   .escape($this->subtitle)
-                                .' AND description='.escape($this->description))
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-    // Notify the backend of the changes
-        backend_notify_changes();
+        backend_command(array('FORGET_RECORDING', $this->backend_row(), '0'));
+    // Delay a second so the scheduler can catch up
+        sleep(1);
     }
 
 /**
