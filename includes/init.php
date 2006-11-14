@@ -147,16 +147,6 @@
           $_SERVER['db_password'],
           $_SERVER['db_server']);
 
-/**
- * Support legacy database code.  :(
- * @deprecated  deprecated since the use of db.php
- *
- * @global  resource    $GLOBALS['dbh']
- * @name    $dbh
-/**/
-    global $dbh;
-    $dbh = $db->dbh;
-
 //
 //  If there was a database connection error, this will send an email to
 //    the administrator, and then present the user with a static page
@@ -165,7 +155,7 @@
     if ($db->error) {
     // Notify the admin that the database is offline!
         if (strstr(error_email, '@'))
-            mail(error_email, "Database Connection Error" ,
+            mail(error_email, 'Database Connection Error' ,
                  $db->error,
                  'From:  MythWeb Error <'.error_email.">\n");
     // Let the user know in a nice way that something's wrong
@@ -198,7 +188,6 @@
                             ? 'wap'
                             : 'wml';
     // Make sure the skin is set to the appropriate phone-template type
-    /** @todo eventually, we'll put all of this in the skins section */
         $_SESSION['skin'] = $_SESSION['tmpl'];
         define('skin', $_SESSION['skin']);
     }
@@ -299,3 +288,4 @@
 
 // Load the session defaults and other config info
     require_once 'includes/config.php';
+
