@@ -21,7 +21,11 @@
 
 // Standard module?  Pass along the
     if ($Modules[$Path[0]]) {
-        require_once 'modules/'.$Path[0].'/handler.php';
+    // Add the current module directory to our search path, so modules can
+    // define includes, etc.
+        ini_set('include_path', ini_get('include_path').':'.modules_path.'/'.$Path[0]);
+    // Load the module handler
+        require_once 'handler.php';
     }
     elseif (!empty($Path[0]) && preg_match('/\w/', $Path[0])) {
         tailored_error('unknown_module');
