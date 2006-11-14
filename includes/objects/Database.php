@@ -127,8 +127,8 @@ class Database {
         }
     // Do our best to load the requested class
         else {
-            $class = "Database_$engine";
-            $dbh =& new $class($db_name, $login, $password, $server, $port, $options);
+            $css_class = "Database_$engine";
+            $dbh =& new $css_class($db_name, $login, $password, $server, $port, $options);
         }
     // Return
         return $dbh;

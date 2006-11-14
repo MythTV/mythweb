@@ -58,7 +58,7 @@ class Recording {
     var $record_channel = false;
     var $record_always  = false;
 
-    var $class;         // css class, based on category and/or category_type
+    var $css_class;         // css class, based on category and/or category_type
 
     function Recording($recording_data) {
 
@@ -135,7 +135,7 @@ class Recording {
 
     // Find out which css category this recording falls into
         if ($this->chanid != '')
-            $this->class = category_class($this);
+            $this->css_class = category_class($this);
     }
 
 }

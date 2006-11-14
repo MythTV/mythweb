@@ -217,17 +217,17 @@
                     case 'Recording':
                     case 'WillRecord':
                     case 'ForceRecord':
-                        $class = 'scheduled';
+                        $css_class = 'scheduled';
                         break;
                     case 'PreviousRecording':
                     case 'CurrentRecording':
                     case 'Repeat':
                     case 'Recorded':
-                        $class = 'duplicate';
+                        $css_class = 'duplicate';
                         break;
                     case 'Conflict':
                     case 'Overlap':
-                        $class = 'conflict';
+                        $css_class = 'conflict';
                         break;
                     case 'EarlierShowing':
                     case 'TooManyRecordings':
@@ -237,13 +237,13 @@
                     case 'TunerBusy':
                     case 'ManualOverride':
                     default:
-                        $class = 'deactivated';
+                        $css_class = 'deactivated';
                         break;
                 }
 
             // Print the content
-        ?><tr class="<?php echo $class ?>">
-            <td class="<?php echo $show->class ?>"><?php
+        ?><tr class="<?php echo $css_class ?>">
+            <td class="<?php echo $show->css_class ?>"><?php
             // Window status text, for the mouseover
                 $wstatus = strftime($_SESSION['time_format'], $show->starttime).' - '.strftime($_SESSION['time_format'], $show->endtime).' -- '
                           .str_replace(array("'", '"'),array("\\'", '&quot;'), $show->title)

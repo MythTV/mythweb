@@ -2,7 +2,7 @@
     // then, we just display the info
         $percent = intVal($timeslots_used * 96 / num_time_slots);
 ?>
-    <td class="small <?php echo $program->class ?>" colspan="<?php echo $timeslots_used ?>" width="<?php echo $percent ?>%" valign="top"><?php
+    <td class="small <?php echo $program->css_class ?>" colspan="<?php echo $timeslots_used ?>" width="<?php echo $percent ?>%" valign="top"><?php
     // Window status text, for the mouseover
         $wstatus = strftime($_SESSION['time_format'], $program->starttime).' - '.strftime($_SESSION['time_format'], $program->endtime).' -- '
                   .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)

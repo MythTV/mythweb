@@ -17,17 +17,17 @@
  * settings.
 /**/
     function category_class(&$item) {
-        $class =array();
+        $css_class =array();
     // Recording classes?
-        $class[] = recstatus_class($item);
+        $css_class[] = recstatus_class($item);
     // Category type?
         if ($item->category_type && !preg_match('/unknown/i', $item->category_type))
-            $class[] = 'type_'.preg_replace("/[^a-zA-Z0-9\-_]+/", '_', $item->category_type);
+            $css_class[] = 'type_'.preg_replace("/[^a-zA-Z0-9\-_]+/", '_', $item->category_type);
     // Category cache
         $category = strtolower($item->category);    // user lowercase to avoid a little overhead later
         static $cache = array();
         if ($cache[$category])
-            $class[] = $cache[$category];
+            $css_class[] = $cache[$category];
     // Scan the $Categories hash for any matches
         else {
             global $Categories;
@@ -35,16 +35,16 @@
                 if (!$details[1])
                     continue;
                 if (preg_match('/'.$details[1].'/', $category)) {
-                    $class[] = $cache[$category] = 'cat_'.$cat;
+                    $css_class[] = $cache[$category] = 'cat_'.$cat;
                     break;
                 }
             }
         }
     // No category found?
         if (!$cache[$category])
-            $class[] = $cache[$category] = 'cat_Unknown';
+            $css_class[] = $cache[$category] = 'cat_Unknown';
     // Return
-        return preg_replace('/ +/', ' ', implode(' ', $class));
+        return preg_replace('/ +/', ' ', implode(' ', $css_class));
     }
 
 /**

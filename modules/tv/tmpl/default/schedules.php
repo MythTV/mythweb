@@ -56,7 +56,7 @@
         // Reset the command variable to a default URL
             $urlstr = 'recordid='.$schedule->recordid;
 
-            $class = ($schedule->type == rectype_dontrec ? 'deactivated' : 'scheduled');
+            $css_class = ($schedule->type == rectype_dontrec ? 'deactivated' : 'scheduled');
         // If this is an 'always on any channel' or 'find one' recording w/o a channel, set the channel name to 'Any'
             if ($schedule->type == rectype_always || ($schedule->type == rectype_findone && !preg_match('/\\S/', $schedule->channel->channum)))
                 $schedule->channel->name = '[ '.t('Any').' ]';
@@ -78,7 +78,7 @@
         // "none"?
             $cur_group or $cur_group = t('None');
 
-            $style_class = $schedule->class;
+            $style_class = $schedule->css_class;
             if ($schedule->type == rectype_override)
                 $style_class .= ' record_override_record';
             elseif ($schedule->type == rectype_dontrec)
@@ -90,7 +90,7 @@
 </tr><?php
             }
         // Print the content
-    ?><tr class="<?php echo $class ?>">
+    ?><tr class="<?php echo $css_class ?>">
         <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <td class="<?php echo $style_class ?>"><?php
         // Window status text, for the mouseover

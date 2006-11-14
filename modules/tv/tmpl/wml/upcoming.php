@@ -53,19 +53,19 @@
 
         // Which class does this show fall into?
         if ($show->duplicate == 1) {
-            $class = 'duplicate';
+            $css_class = 'duplicate';
             $command = '<a href="'.root.'tv/scheduled?rerecord=yes&title='.urlencode($show->title).'&subtitle='.urlencode($show->subtitle).'&description='.urlencode($show->description).'">Rerecord</a>';
         }
         elseif ($show->conflicting == 1) {
-            $class   = 'conflict';
+            $css_class   = 'conflict';
             $command = '<a href="'.root.'tv/scheduled?record=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Record</a>';
         }
         elseif ($show->recording == 0) {
-            $class   = 'deactivated';
+            $css_class   = 'deactivated';
             $command = '<a href="'.root.'tv/scheduled?activate=yes&chanid='.$show->chanid.'&starttime='.$show->starttime.'&endtime='.$show->endtime.'">Activate</a>';
         }
         else {
-            $class   = 'scheduled';
+            $css_class   = 'scheduled';
             #$command = 'Don\'t&nbsp;Record';
             $command = '';
         }

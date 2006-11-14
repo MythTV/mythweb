@@ -108,9 +108,9 @@
         }
 
     // Print the content
-    ?><tr class="<?php echo $show->class ?>">
+    ?><tr class="<?php echo $show->css_class ?>">
     <td nowrap align="center"><a href="<?php echo root ?>tv/list?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
-    <td class="<?php echo $show->class ?>"><?php
+    <td class="<?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
                echo '<span class="hdtv_icon">HD</span>';
         echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'

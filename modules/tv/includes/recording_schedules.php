@@ -147,7 +147,7 @@ class Schedule {
     var $texttype;
     var $channel;
     var $will_record = false;
-    var $class;         // css class, based on category and/or category_type
+    var $css_class;         // css class, based on category and/or category_type
     var $tsdefault;
 
 /**
@@ -211,7 +211,7 @@ class Schedule {
 
     // Find out which css category this recording falls into
         if ($this->chanid != '')
-            $this->class = category_class($this);
+            $this->css_class = category_class($this);
     }
 
 /**

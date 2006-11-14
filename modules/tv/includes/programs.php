@@ -238,7 +238,7 @@ class Program {
     var $fancy_description;
     var $category;
     var $category_type;
-    var $class;         // css class, based on category and/or category_type
+    var $css_class;         // css class, based on category and/or category_type
     var $airdate;
     var $stars;
     var $previouslyshown;
@@ -442,7 +442,7 @@ class Program {
 
     // Find out which css category this program falls into
         if ($this->chanid != '')
-            $this->class = category_class($this);
+            $this->css_class = category_class($this);
     // Create the fancy description
         $this->update_fancy_desc();
     }

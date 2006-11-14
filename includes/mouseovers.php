@@ -24,10 +24,10 @@
     Returns an id and mouseover code to display a popup over whatever
     element the id resides within.
 */
-    function show_popup($id, $text, $popup_id = NULL, $class = 'popup', $wstatus = '') {
+    function show_popup($id, $text, $popup_id = NULL, $css_class = 'popup', $wstatus = '') {
         global $Footnotes;
         if (!$Footnotes[$popup_id ? $popup_id : $id])
-            $Footnotes[$popup_id ? $popup_id : $id] = '<div id="'.($popup_id ? $popup_id : $id)."_popup\" class=\"$class\">$text</div>";
+            $Footnotes[$popup_id ? $popup_id : $id] = '<div id="'.($popup_id ? $popup_id : $id)."_popup\" class=\"$css_class\">$text</div>";
     // $popup_id allows us to recycle certain info fields - it's ignored if empty
         $ret = " id=\"$id\" onmouseover=\"popup('$id', '$popup_id');";
         # This won't work until we add wstatus stuff to the javascript code, since it rewrites onmouseout
@@ -64,7 +64,7 @@
     generate_popup_menu:
     generates a popup
 */
-    function generate_popup_menu($id, $class, $items, $overload = 0) {
+    function generate_popup_menu($id, $css_class, $items, $overload = 0) {
         if ($overload >= 50) return '';
         if (!count($items))  return '';
         if ($id && $overload == 0) {
@@ -77,8 +77,8 @@
         }
         else
             $text = '<ul';
-        if ($class)
-            $text .= " class=\"$class\"";
+        if ($css_class)
+            $text .= " class=\"$css_class\"";
         $text .= ">\n";
         $sep = false;
         foreach ($items as $item) {

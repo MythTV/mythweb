@@ -85,7 +85,7 @@
             case 'Recording':
             case 'WillRecord':
                 $rec_char   = $show->cardid;
-                $class      = 'scheduled';
+                $css_class  = 'scheduled';
                 $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                               .$urlstr.'">'.t('Don\'t Record').'</a>';
             // Offer to suppress any recordings that have enough info to do so.
@@ -98,7 +98,7 @@
                 break;
             case 'PreviousRecording':
                 $rec_char   = 'P';
-                $class      = 'duplicate';
+                $css_class  = 'duplicate';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?'
@@ -107,7 +107,7 @@
                 break;
             case 'CurrentRecording':
                 $rec_char   = 'R';
-                $class      = 'duplicate';
+                $css_class  = 'duplicate';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?'
@@ -116,11 +116,11 @@
                 break;
             case 'Repeat':
                 $rec_char = 'r';
-                $class    = 'duplicate';
+                $css_class= 'duplicate';
                 break;
             case 'EarlierShowing':
                 $rec_char = 'E';
-                $class    = 'deactivated';
+                $css_class= 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
@@ -128,11 +128,11 @@
                 break;
             case 'TooManyRecordings':
                 $rec_char = 'T';
-                $class    = 'deactivated';
+                $css_class= 'deactivated';
                 break;
             case 'Cancelled':
                 $rec_char   = 'N';
-                $class      = 'deactivated';
+                $css_class  = 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
@@ -146,7 +146,7 @@
             //  need to modify this specific recstatus to avoid a conflict.
                 $rec_class = implode(' ', array(recstatus_class($show),
                                      'conflicting'));
-                $class      = 'conflict';
+                $css_class  = 'conflict';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
@@ -154,7 +154,7 @@
                 break;
             case 'LaterShowing':
                 $rec_char = 'L';
-                $class    = 'deactivated';
+                $css_class= 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
@@ -162,17 +162,17 @@
                 break;
             case 'LowDiskSpace':
                 $rec_char   = 'K';
-                $class      = 'deactivated';
+                $css_class  = 'deactivated';
                 $commands[] = 'Not Enough Disk Space';
                 break;
             case 'TunerBusy':
                 $rec_char   = 'B';
-                $class      = 'deactivated';
+                $css_class  = 'deactivated';
                 $commands[] = 'Tuner is busy';
                 break;
             case 'Overlap':
                 $rec_char   = 'X';
-                $class      = 'conflict';
+                $css_class  = 'conflict';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
@@ -180,7 +180,7 @@
                 break;
             case 'ManualOverride':
                 $rec_char   = 'X';
-                $class      = 'deactivated';
+                $css_class  = 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
@@ -188,7 +188,7 @@
                 break;
             case 'ForceRecord':
                 $rec_char   = 'F';
-                $class      = 'scheduled';
+                $css_class  = 'scheduled';
                 $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                               .$urlstr.'">'.t('Don\'t Record').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
@@ -197,7 +197,7 @@
             default:
                 $rec_char   = '&nbsp;';
                 $rec_class  = '';
-                $class      = 'deactivated';
+                $css_class  = 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
                 $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
@@ -226,9 +226,9 @@
         }
 
     // Print the content
-?><tr class="<?php echo $class ?>">
+?><tr class="<?php echo $css_class ?>">
 <?php if (!empty($group_field)) echo "    <td class=\"rec_class $rec_class\">$rec_char</td>\n" ?>
-    <td class="<?php echo $show->class ?>"><?php
+    <td class="<?php echo $show->css_class ?>"><?php
     // Window status text, for the mouseover
         $wstatus = strftime($_SESSION['time_format'], $show->starttime).' - '.strftime($_SESSION['time_format'], $show->endtime).' -- '
                   .str_replace(array("'", '"'),array("\\'", '&quot;'), $show->title)
