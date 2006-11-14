@@ -36,10 +36,6 @@
         load_tv_categories(modules_path.'/_shared/lang/'.$_SESSION['language'].'.cat');
     else
         load_tv_categories(modules_path.'/_shared/lang/English.cat');
-#    if (file_exists(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.cat'))
-#        load_tv_categories(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.cat');
-#    else
-#        load_tv_categories(modules_path.'/'.module.'/lang/English.cat');
 
 // Two categories that don't need regex matches, but do need translation
     $Categories['Unknown'] = array(t('Unknown'));
@@ -49,9 +45,9 @@
     ksort($Categories);
 
 // Load the tv-related libraries
-    require_once "includes/channels.php";
-    require_once "includes/programs.php";
-    require_once "includes/recording_schedules.php";
+    require_once 'includes/channels.php';
+    require_once 'includes/programs.php';
+    require_once 'includes/recording_schedules.php';
 
 // Unknown section?  Use the default
     if (!in_array($Path[1], array('detail', 'channel', 'search', 'movies'))
@@ -82,3 +78,4 @@
             $Categories[$key] = array($trans, $regex);
         }
     }
+
