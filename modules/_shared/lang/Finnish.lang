@@ -77,7 +77,6 @@
     Kaikki nauhoitukset
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Mikä vain
 "Any Category"
@@ -129,6 +128,7 @@
 "Cancel"
 "Cancel this schedule."
     Peruuta nauhoitus
+"Cancelled"
 "Cast"
     Pääosat
 "category"
@@ -167,6 +167,7 @@
     Aseta Kanavat
 "Configure Keybindings"
     Aseta Näppäinkomennot
+"Conflict"
 "Conflicts"
     Ristiriidat
 "Context"
@@ -233,12 +234,14 @@
 "Download URL override"
 "Dup Method"
     Metodi
+"Duplicate"
 "Duplicate Check method"
     Kaksoiskapp. Tarkistus
 "Duplicates"
     Kaksoiskappaleet
 "Duration"
     Kesto
+"Earlier"
 "Edit"
     Muokkaa
 "Edit keybindings on"
@@ -275,6 +278,7 @@
 "finetune"
     Hienosäätö
 "First recording"
+"Forced"
 "Forecast"
     Ennuste
 "Forget Old"
@@ -361,6 +365,7 @@
 "Last recording"
 "Last Updated"
     Päivitetty Viimeksi
+"Later"
 "length"
     pituus
 "Length"
@@ -379,12 +384,12 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
     Lokit
 "Low"
     Alin
+"Low Space"
 "Manual"
     Manuaalinen
 "matches"
@@ -394,8 +399,6 @@
 "Monday"
     Maanantai
 "more"
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -473,6 +476,7 @@
 "or"
 "Original Airdate"
     Vuosi
+"Override"
 "Part $1 of $2"
     Jakso $1/$2
 "Past Month"
@@ -524,8 +528,6 @@
     Profiili
 "profile"
     profiili
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Ohjelman Lisätietoja
 "Program ID"
@@ -549,6 +551,7 @@
     Nauhoita uusi ja poista vanha
 "Record This"
     Nauhoita Tämä
+"Recorded"
 "Recorded Programs"
     Nauhoitetut Ohjelmat
 "Recording Group"
@@ -666,7 +669,6 @@
     Tallenna Ajoitus
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -719,7 +721,6 @@
 "Show pixmaps"
 "Show recordings"
     Näytä nauhoitukset
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Näytetään kaikki ohjelmat ryhmästä $1.
 "Showing all programs."
@@ -785,6 +786,7 @@
     Tänään
 "Tomorrow"
     Huomenna
+"Too Many"
 "Top"
     Ylös
 "Top $1"
@@ -801,6 +803,7 @@
     Jälkikäsittely
 "Tuesday"
     Tiistai
+"Tuner Busy"
 "TV"
     Televisio
 "TV functions, including recorded programs."
@@ -844,7 +847,6 @@
 "Value"
 "Video"
     Videot
-"Video URL"
 "videofilters"
     Videosuodattimet
 "Videos"

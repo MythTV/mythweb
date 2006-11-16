@@ -72,7 +72,6 @@
     Tous les enregistrements
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Tous
 "Any Category"
@@ -115,6 +114,7 @@
 "Cancel"
 "Cancel this schedule."
     Annuler cette programmation
+"Cancelled"
 "Cast"
     Acteurs
 "category"
@@ -146,6 +146,7 @@
 "commfree"
 "Configure Channels"
 "Configure Keybindings"
+"Conflict"
 "Conflicts"
     entre en conflit
 "Context"
@@ -199,11 +200,13 @@
 "Download URL override"
 "Dup Method"
     m&eacute;thode de dup
+"Duplicate"
 "Duplicate Check method"
     M&eacute;thode de test des doublons
 "Duplicates"
     Doublonner
 "Duration"
+"Earlier"
 "Edit"
 "Edit keybindings on"
     Editer les touches sur
@@ -235,6 +238,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
+"Forced"
 "Forecast"
     Pr&eacute;visions
 "Forget Old"
@@ -310,6 +314,7 @@
 "Last recording"
 "Last Updated"
     Derni&egrave;re mise &agrave; jour
+"Later"
 "length"
     Dur&eacute;e
 "Length"
@@ -328,11 +333,11 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
 "Low"
     faible
+"Low Space"
 "Manual"
 "matches"
 "Max star rating for movies"
@@ -341,8 +346,6 @@
 "Monday"
     Lundi
 "more"
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -409,6 +412,7 @@
 "or"
 "Original Airdate"
     Heure de diffusion d&acute;origine
+"Override"
 "Part $1 of $2"
 "Past Month"
 "Past Week"
@@ -454,8 +458,6 @@
     Profil
 "profile"
     Profil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
 "Program ID"
 "Program Listing"
@@ -476,6 +478,7 @@
     Enregistrer un nouveau et expirer l&acute;ancien
 "Record This"
     Enregistrer Ceci
+"Recorded"
 "Recorded Programs"
     Programmes enregistr&eacute;s
 "Recording Group"
@@ -588,7 +591,6 @@
     Sauver une programmation
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -636,7 +638,6 @@
 "Show pixmaps"
 "Show recordings"
     Monter les enregistrements
-"show/hide advanced options"
 "Showing all programs from the $1 group."
 "Showing all programs."
 "SI Units?"
@@ -694,6 +695,7 @@
     Aujourd&acute;hui
 "Tomorrow"
     Demain
+"Too Many"
 "Top"
 "Top $1"
 "Top Played Songs"
@@ -706,6 +708,7 @@
 "Transcoder"
 "Tuesday"
     Mardi
+"Tuner Busy"
 "TV"
 "TV functions, including recorded programs."
     Fonctions TV, inclant les enregistrements d&acute;&eacute;missions
@@ -743,7 +746,6 @@
     Indice UV mod&eacute;r&eacute;
 "Value"
 "Video"
-"Video URL"
 "videofilters"
 "Videos"
 "View Albums by %s"

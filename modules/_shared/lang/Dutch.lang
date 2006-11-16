@@ -80,7 +80,6 @@
     Alle opnames
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Alle
 "Any Category"
@@ -132,6 +131,7 @@
 "Cancel"
 "Cancel this schedule."
     Opname annuleren
+"Cancelled"
 "Cast"
     Acteurs
 "category"
@@ -170,6 +170,7 @@
     Zenders instellen
 "Configure Keybindings"
     Toetsbindingen instellen
+"Conflict"
 "Conflicts"
     Conflicten
 "Context"
@@ -236,12 +237,14 @@
 "Download URL override"
 "Dup Method"
     Dubbels Methode
+"Duplicate"
 "Duplicate Check method"
     Testmethode herh.
 "Duplicates"
     Dubbels
 "Duration"
     Lengte
+"Earlier"
 "Edit"
     Bewerken
 "Edit keybindings on"
@@ -282,6 +285,7 @@
 "finetune"
     fijn afstemmen
 "First recording"
+"Forced"
 "Forecast"
     Voorspelling
 "Forget Old"
@@ -369,6 +373,7 @@
 "Last recording"
 "Last Updated"
     Laatst Vernieuwd
+"Later"
 "length"
     duur
 "Length"
@@ -387,12 +392,12 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
     Logboek
 "Low"
     Minimum
+"Low Space"
 "Manual"
     Manueel
 "matches"
@@ -402,8 +407,6 @@
 "Monday"
     Maandag
 "more"
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -488,6 +491,7 @@
 "or"
 "Original Airdate"
     Oorsp. Datum
+"Override"
 "Part $1 of $2"
     Deel $1 van $2
 "Past Month"
@@ -540,8 +544,6 @@
     Profiel
 "profile"
     profiel
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Programmadetails
 "Program ID"
@@ -566,6 +568,7 @@
     Nieuwe opnemen en oude wissen
 "Record This"
     Dit Opnemen
+"Recorded"
 "Recorded Programs"
     Opgenomen Programma's
 "Recording Group"
@@ -683,7 +686,6 @@
     Schema opslaan
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -737,7 +739,6 @@
 "Show pixmaps"
 "Show recordings"
     Opnames tonen
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Alle programma's uit de $1 groep laten zien
 "Showing all programs."
@@ -804,6 +805,7 @@
     Vandaag
 "Tomorrow"
     Morgen
+"Too Many"
 "Top"
     Begin
 "Top $1"
@@ -820,6 +822,7 @@
     Transcoder
 "Tuesday"
     Dinsdag
+"Tuner Busy"
 "TV"
     TV
 "TV functions, including recorded programs."
@@ -865,7 +868,6 @@
 "Value"
 "Video"
     Films
-"Video URL"
 "videofilters"
     videofilters
 "Videos"

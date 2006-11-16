@@ -67,7 +67,6 @@
     Vsa snemanja
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Katera koli
 "Any Category"
@@ -110,6 +109,7 @@
 "Cancel"
 "Cancel this schedule."
     Prekliči ta plan
+"Cancelled"
 "Cast"
     Zasedba
 "category"
@@ -141,6 +141,7 @@
 "commfree"
 "Configure Channels"
 "Configure Keybindings"
+"Conflict"
 "Conflicts"
     Konflikti
 "Context"
@@ -194,11 +195,13 @@
 "Download URL override"
 "Dup Method"
     Metoda duplikatov
+"Duplicate"
 "Duplicate Check method"
     Metoda preverjanja duplikatov
 "Duplicates"
     Duplikati
 "Duration"
+"Earlier"
 "Edit"
 "Edit keybindings on"
     Zamenjaj bližnjico za
@@ -230,6 +233,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
+"Forced"
 "Forecast"
     Napoved
 "Forget Old"
@@ -304,6 +308,7 @@
 "Last recording"
 "Last Updated"
     Zadnjič posodobljeno
+"Later"
 "length"
     dolžina
 "Length"
@@ -322,11 +327,11 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
 "Low"
     Nizka
+"Low Space"
 "Manual"
 "matches"
 "Max star rating for movies"
@@ -335,8 +340,6 @@
 "Monday"
     Ponedeljek
 "more"
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -403,6 +406,7 @@
 "or"
 "Original Airdate"
     Izvirni datum predvajanja
+"Override"
 "Part $1 of $2"
 "Past Month"
 "Past Week"
@@ -447,8 +451,6 @@
     Profil
 "profile"
     profil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
 "Program ID"
 "Program Listing"
@@ -469,6 +471,7 @@
     Snemaj novo in briši staro
 "Record This"
     Posnami to
+"Recorded"
 "Recorded Programs"
     Posneti programi
 "Recording Group"
@@ -580,7 +583,6 @@
     Shrani snemalni plan
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -628,7 +630,6 @@
 "Show pixmaps"
 "Show recordings"
     Pokaži snemanja
-"show/hide advanced options"
 "Showing all programs from the $1 group."
 "Showing all programs."
 "SI Units?"
@@ -686,6 +687,7 @@
     Danes
 "Tomorrow"
     Jutri
+"Too Many"
 "Top"
 "Top $1"
 "Top Played Songs"
@@ -698,6 +700,7 @@
 "Transcoder"
 "Tuesday"
     Torek
+"Tuner Busy"
 "TV"
 "TV functions, including recorded programs."
     Funkcije TV, vključno z posnetimi programi.
@@ -735,7 +738,6 @@
     UV srednji
 "Value"
 "Video"
-"Video URL"
 "videofilters"
 "Videos"
 "View Albums by %s"

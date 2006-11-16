@@ -80,7 +80,6 @@
     Alle Aufnahmen
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Jeder
 "Any Category"
@@ -132,6 +131,7 @@
 "Cancel"
 "Cancel this schedule."
     Aufnahme abbrechen
+"Cancelled"
 "Cast"
     Besetzung
 "category"
@@ -170,6 +170,7 @@
     Sender einrichten
 "Configure Keybindings"
     Tastenbelegung konfigurieren
+"Conflict"
 "Conflicts"
     Überschneidungen
 "Context"
@@ -236,12 +237,14 @@
 "Download URL override"
 "Dup Method"
     Methode für Wdhgn.
+"Duplicate"
 "Duplicate Check method"
     Testmethode für Wdhgn.
 "Duplicates"
     Wiederholungen
 "Duration"
     Dauer
+"Earlier"
 "Edit"
     Bearbeiten
 "Edit keybindings on"
@@ -282,6 +285,7 @@
 "finetune"
     Feinabstimmung
 "First recording"
+"Forced"
 "Forecast"
     Vorhersage
 "Forget Old"
@@ -368,6 +372,7 @@
 "Last recording"
 "Last Updated"
     zuletzt aktualisiert
+"Later"
 "length"
     Dauer
 "Length"
@@ -385,12 +390,12 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
     Logs
 "Low"
     Min
+"Low Space"
 "Manual"
     Manuell
 "matches"
@@ -401,8 +406,6 @@
     Montag
 "more"
     mehr
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -487,6 +490,7 @@
     oder
 "Original Airdate"
     Produktion
+"Override"
 "Part $1 of $2"
     Teil $1 von $2
 "Past Month"
@@ -540,8 +544,6 @@
     Profil
 "profile"
     Profil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Programmdetails
 "Program ID"
@@ -566,6 +568,7 @@
     Nur neue Folgen aufnehmen
 "Record This"
     Diese Sendung aufnehmen
+"Recorded"
 "Recorded Programs"
     Aufnahmen
 "Recording Group"
@@ -683,7 +686,6 @@
     Aufnahme speichern
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -737,7 +739,6 @@
 "Show pixmaps"
 "Show recordings"
     Aufnahmen zeigen
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Zeige alle Sendungen in der $1 Gruppe.
 "Showing all programs."
@@ -803,6 +804,7 @@
     Heute
 "Tomorrow"
     Morgen
+"Too Many"
 "Top"
     Anfang
 "Top $1"
@@ -819,6 +821,7 @@
     Umwandlungsprofil
 "Tuesday"
     Dienstag
+"Tuner Busy"
 "TV"
     TV
 "TV functions, including recorded programs."
@@ -864,7 +867,6 @@
 "Value"
 "Video"
     Video
-"Video URL"
 "videofilters"
     Wiedergabe- filter
 "Videos"

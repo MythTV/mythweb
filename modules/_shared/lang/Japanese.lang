@@ -80,7 +80,6 @@
     全ての録画
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     全て
 "Any Category"
@@ -132,6 +131,7 @@
 "Cancel"
 "Cancel this schedule."
     この予約をキャンセルする
+"Cancelled"
 "Cast"
     キャスト
 "category"
@@ -169,6 +169,7 @@
     チャンネル設定
 "Configure Keybindings"
     キーバンド設定
+"Conflict"
 "Conflicts"
     衝突
 "Context"
@@ -236,12 +237,14 @@
 "Download URL override"
 "Dup Method"
     重複検知
+"Duplicate"
 "Duplicate Check method"
     重複チェック方法
 "Duplicates"
     重複
 "Duration"
     時間
+"Earlier"
 "Edit"
     編集
 "Edit keybindings on"
@@ -284,6 +287,7 @@
     ファインチューン
 "First recording"
     最初の録画
+"Forced"
 "Forecast"
     予報
 "Forget Old"
@@ -371,6 +375,7 @@
     最後の録画
 "Last Updated"
     最後の更新
+"Later"
 "length"
     時間
 "Length"
@@ -389,12 +394,12 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
     ログ
 "Low"
     低
+"Low Space"
 "Manual"
     手動
 "matches"
@@ -407,8 +412,6 @@
     月曜日
 "more"
     追加
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -499,6 +502,7 @@
 "or"
 "Original Airdate"
     初回放送
+"Override"
 "Part $1 of $2"
     $1/$2
 "Past Month"
@@ -556,8 +560,6 @@
     プロファイル
 "profile"
     プロファイル
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     番組詳細
 "Program ID"
@@ -582,6 +584,7 @@
     古い物から削除する
 "Record This"
     これを録画する
+"Recorded"
 "Recorded Programs"
     録画済み
 "Recording Group"
@@ -700,7 +703,6 @@
     保存
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -756,7 +758,6 @@
     プレビューイメージを表示する
 "Show recordings"
     番組表示
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     $1のすべての番組を表示
 "Showing all programs."
@@ -824,6 +825,7 @@
     今日
 "Tomorrow"
     明日
+"Too Many"
 "Top"
     トップ
 "Top $1"
@@ -842,6 +844,7 @@
     トランスコーダー
 "Tuesday"
     火曜日
+"Tuner Busy"
 "TV"
 "TV functions, including recorded programs."
     TV 録画
@@ -884,8 +887,6 @@
 "Value"
 "Video"
     ビデオ
-"Video URL"
-    ビデオURL
 "videofilters"
     ビデオフィルタ
 "Videos"

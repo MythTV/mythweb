@@ -44,6 +44,11 @@ class Program {
     var $filesize;
     var $hostname;
 
+    var $sourceid;
+    var $cardid;
+    var $inputid;
+    var $inputname;
+
     var $seriesid;
     var $programid;
 
@@ -80,6 +85,7 @@ class Program {
     var $thumb_url;
 
     function Program($data) {
+        global $db;
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
         // Load the remaining info we got from mythbackend
@@ -97,9 +103,9 @@ class Program {
             $this->starttime       = $data[11];     # show start-time
             $this->endtime         = $data[12];     # show end-time
             $this->hostname        = $data[16];
-            #$this->sourceid       = $data[17];
+            $this->sourceid        = $data[17];
             $this->cardid          = $data[18];
-            #$this->inputid        = $data[19];
+            $this->inputid         = $data[19];
             $this->recpriority     = $data[20];
             $this->recstatus       = $data[21];
             $this->recordid        = $data[22];
@@ -191,6 +197,13 @@ class Program {
             } else {
                 $this->timestretch = 1.0;
             }
+        }
+    // Get the name of the input
+        if ($this->inputid) {
+            $this->inputname = $db->query_col('SELECT displayname
+                                                 FROM cardinput
+                                                WHERE cardinputid=?',
+                                              $this->inputid);
         }
     // Turn recstatus into a word
         if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus]) {

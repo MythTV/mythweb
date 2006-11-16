@@ -13,12 +13,12 @@
 .duplicate   { background-color: #304050; }
 .deactivated { background-color: #508060; }
 
+.will_record              { border: 1px solid  #00F000; }
 .record_weekly            { border: 1px solid  #00F000; }
 .record_timeslot          { border: 1px solid  #00F000; }
 .record_once              { border: 1px solid  #00F000; }
 .record_channel           { border: 1px solid  #00F000; }
 .record_always            { border: 1px solid  #00F000; }
-.will_record              { border: 1px solid  #00F000; }
 .record_conflicting       { border: 1px solid  #FF0000; }
 .record_duplicate         { border: 2px dashed #90B0A0; }
 .record_old_duplicate     { border: 1px dashed #90B0A0; }
@@ -33,22 +33,23 @@
 .rec_class {
     background:  transparent;
     text-align:  center;
-    font-weight: bold;
 }
-.recording                { color: #00F000; }
-.willRecord               { color: #00F000; }
-.previousRecording        { color: #90B0A0; }
-.currentRecording         { color: #00F000; }
-.repeat                   { color: #90B0A0; }
-.earlierShowing           { color: #90B0A0; }
-.laterShowing             { color: #90B0A0; }
-.tooManyRecordings        { color: #60B0B0; }
-.cancelled                { color: #60B0B0; }
-.conflicting              { color: #FF0000; }
-.lowDiskSpace             { color: #60B0B0; }
-.tunerBusy                { color: #60B0B0; }
-.manualOverride           { color: #D03060; }
-.overlap                  { color: #FF0000; }
+.rec_class.WillRecord     { font-weight: bold; }
+.rec_class.Recording      { font-weight: bold; }
+.Recording                { color: #00FF00; border-width: 2px }
+.WillRecord               { color: #00FF00; }
+.PreviousRecording        { color: #90B0A0; }
+.CurrentRecording         { color: #90D0A0; }
+.Repeat                   { color: #90B0A0; }
+.EarlierShowing           { color: #90FFA0; }
+.LaterShowing             { color: #90FFA0; }
+.TooManyRecordings        { color: #60B0B0; }
+.Cancelled                { color: #60B0B0; }
+.Conflicting              { color: #FF0000; }
+.LowDiskSpace             { color: #60B0B0; }
+.TunerBusy                { color: #60B0B0; }
+.ManualOverride           { color: #D03060; }
+.Overlap                  { color: #FF0000; }
 
 .cat_Action         { background-color: #906020; }
 .cat_Adult          { background-color: #702020; }

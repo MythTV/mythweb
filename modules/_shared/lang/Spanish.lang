@@ -87,7 +87,6 @@
     Todas las grabaciones
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Cualquiera
 "Any Category"
@@ -138,6 +137,7 @@
 "Cancel"
 "Cancel this schedule."
     Cancelar programación
+"Cancelled"
 "Cast"
     Reparto
 "category"
@@ -179,6 +179,7 @@
     Configurar canales
 "Configure Keybindings"
     Configurar Teclas
+"Conflict"
 "Conflicts"
     Conflictos
 "Context"
@@ -247,12 +248,14 @@
 "Download URL override"
 "Dup Method"
     Método duplicado
+"Duplicate"
 "Duplicate Check method"
     Método comprobación duplicados
 "Duplicates"
     Duplicados
 "Duration"
     Duración
+"Earlier"
 "Edit"
     Editar
 "Edit keybindings on"
@@ -295,6 +298,7 @@
     sintonía fina
 "First recording"
     Primera grabación
+"Forced"
 "Forecast"
     Predicción
 "Forget Old"
@@ -386,6 +390,7 @@
     Última Grabación
 "Last Updated"
     Útima Actualización
+"Later"
 "length"
     duración
 "Length"
@@ -404,11 +409,11 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
 "Low"
     Bajo
+"Low Space"
 "Manual"
     Manual
 "matches"
@@ -421,8 +426,6 @@
     Lunes
 "more"
     más
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -521,6 +524,7 @@
     o
 "Original Airdate"
     Emisión original
+"Override"
 "Part $1 of $2"
     Parte $1 de $2
 "Past Month"
@@ -578,8 +582,6 @@
     Perfil
 "profile"
     perfil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Detalle programa
 "Program ID"
@@ -604,6 +606,7 @@
     Grabar nuevos y expirar antiguos
 "Record This"
     Grabar
+"Recorded"
 "Recorded Programs"
     Programas grabados
 "Recording Group"
@@ -723,7 +726,6 @@
     Guardar programación
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -781,7 +783,6 @@
     Mostrar gráficos
 "Show recordings"
     Mostrar grabaciones
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Mostrando todos los programas del grupo $1
 "Showing all programs."
@@ -851,6 +852,7 @@
     Hoy
 "Tomorrow"
     Mañana
+"Too Many"
 "Top"
     Arriba
 "Top $1"
@@ -868,6 +870,7 @@
     Recodificador
 "Tuesday"
     Martes
+"Tuner Busy"
 "TV"
     TV
 "TV functions, including recorded programs."
@@ -914,7 +917,6 @@
     Valor
 "Video"
     Vídeo
-"Video URL"
 "videofilters"
     filtros vídeo
 "Videos"

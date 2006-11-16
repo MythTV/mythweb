@@ -84,7 +84,7 @@
         switch ($show->recstatus) {
             case 'Recording':
             case 'WillRecord':
-                $rec_char   = $show->cardid;
+                $rec_char   = $show->inputname;
                 $css_class  = 'scheduled';
                 $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                               .$urlstr.'">'.t('Don\'t Record').'</a>';
@@ -97,7 +97,7 @@
                 }
                 break;
             case 'PreviousRecording':
-                $rec_char   = 'P';
+                $rec_char   = t('Duplicate');
                 $css_class  = 'duplicate';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
@@ -106,7 +106,7 @@
                               .t('Forget Old').'</a>';
                 break;
             case 'CurrentRecording':
-                $rec_char   = 'R';
+                $rec_char   = t('Recorded');
                 $css_class  = 'duplicate';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
@@ -115,11 +115,11 @@
                               .t('Forget Old').'</a>';
                 break;
             case 'Repeat':
-                $rec_char = 'r';
+                $rec_char = 'Rerun';
                 $css_class= 'duplicate';
                 break;
             case 'EarlierShowing':
-                $rec_char = 'E';
+                $rec_char = t('Earlier');
                 $css_class= 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
@@ -127,11 +127,11 @@
                               .$urlstr.'">'.t('Default').'</a>';
                 break;
             case 'TooManyRecordings':
-                $rec_char = 'T';
+                $rec_char = t('Too Many');
                 $css_class= 'deactivated';
                 break;
             case 'Cancelled':
-                $rec_char   = 'N';
+                $rec_char   = t('Cancelled');
                 $css_class  = 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
@@ -139,7 +139,7 @@
                               .$urlstr.'">'.t('Default').'</a>';
                 break;
             case 'Conflict':
-                $rec_char = 'C';
+                $rec_char = t('Conflict');
             // We normally use the recstatus value as the name of the class
             //  used when displaying the recording status character.
             // However, there is already a class named 'conflict' so we
@@ -153,7 +153,7 @@
                               .$urlstr.'">'.t('Don\'t Record').'</a>';
                 break;
             case 'LaterShowing':
-                $rec_char = 'L';
+                $rec_char = t('Later');
                 $css_class= 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
@@ -161,17 +161,17 @@
                               .$urlstr.'">'.t('Default').'</a>';
                 break;
             case 'LowDiskSpace':
-                $rec_char   = 'K';
+                $rec_char   = t('Low Space');
                 $css_class  = 'deactivated';
                 $commands[] = 'Not Enough Disk Space';
                 break;
             case 'TunerBusy':
-                $rec_char   = 'B';
+                $rec_char   = t('Tuner Busy');
                 $css_class  = 'deactivated';
                 $commands[] = 'Tuner is busy';
                 break;
             case 'Overlap':
-                $rec_char   = 'X';
+                $rec_char   = t('Override');
                 $css_class  = 'conflict';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Record This').'</a>';
@@ -179,7 +179,7 @@
                               .$urlstr.'">'.t('Don\'t Record').'</a>';
                 break;
             case 'ManualOverride':
-                $rec_char   = 'X';
+                $rec_char   = t('Override');
                 $css_class  = 'deactivated';
                 $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
                               .$urlstr.'">'.t('Activate').'</a>';
@@ -187,7 +187,7 @@
                               .$urlstr.'">'.t('Default').'</a>';
                 break;
             case 'ForceRecord':
-                $rec_char   = 'F';
+                $rec_char   = $show->inputname ? $show->inputname : t('Forced');
                 $css_class  = 'scheduled';
                 $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
                               .$urlstr.'">'.t('Don\'t Record').'</a>';

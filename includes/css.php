@@ -56,6 +56,7 @@
             switch ($item->recstatus) {
                 case 'ForceRecord':
                     return 'record_override_record';
+                case 'Recording':
                 case 'WillRecord':
                     return 'will_record';
                 case 'Conflict':

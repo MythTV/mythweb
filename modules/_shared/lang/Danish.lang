@@ -84,7 +84,6 @@
     Alle optagelser
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Alle
 "Any Category"
@@ -136,6 +135,7 @@
 "Cancel"
 "Cancel this schedule."
     Annuller denne optagelse
+"Cancelled"
 "Cast"
     Rolleliste
 "category"
@@ -177,6 +177,7 @@
     Konfigurér kanaler
 "Configure Keybindings"
     Konfigurér tastaturgenveje
+"Conflict"
 "Conflicts"
     Konflikter
 "Context"
@@ -242,12 +243,14 @@
 "Download URL override"
 "Dup Method"
     Dubletkontrol metode
+"Duplicate"
 "Duplicate Check method"
     Dubletkontrol metode
 "Duplicates"
     Dubletter
 "Duration"
     Varighed
+"Earlier"
 "Edit"
     Ændre
 "Edit keybindings on"
@@ -290,6 +293,7 @@
     finindstil
 "First recording"
     Første optagelse
+"Forced"
 "Forecast"
     Prognose
 "Forget Old"
@@ -373,6 +377,7 @@
     Sidste optagelse
 "Last Updated"
     Sidst opdateret
+"Later"
 "length"
     længde
 "Length"
@@ -391,11 +396,11 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
 "Low"
     Lav
+"Low Space"
 "Manual"
     Manuel
 "matches"
@@ -407,8 +412,6 @@
     Mandag
 "more"
     mere
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -494,6 +497,7 @@
     eller
 "Original Airdate"
     Sendt først
+"Override"
 "Part $1 of $2"
     Del $1 af $2
 "Past Month"
@@ -549,8 +553,6 @@
     Profil
 "profile"
     profil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Program detaljer
 "Program ID"
@@ -574,6 +576,7 @@
     Optag nye og udløb gamle
 "Record This"
     Optag dette
+"Recorded"
 "Recorded Programs"
     Optagede programmer
 "Recording Group"
@@ -691,7 +694,6 @@
     Gem planlægning
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -745,7 +747,6 @@
 "Show pixmaps"
 "Show recordings"
     Vis optagelser
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Viser alle programmer fra gruppen $1.
 "Showing all programs."
@@ -812,6 +813,7 @@
     I dag
 "Tomorrow"
     I morgen
+"Too Many"
 "Top"
     Top
 "Top $1"
@@ -830,6 +832,7 @@
     Trankodning
 "Tuesday"
     Tirsdag
+"Tuner Busy"
 "TV"
     Tv
 "TV functions, including recorded programs."
@@ -876,8 +879,6 @@
     Værdi
 "Video"
     Video
-"Video URL"
-    Video URL
 "videofilters"
     videofiltre
 "Videos"

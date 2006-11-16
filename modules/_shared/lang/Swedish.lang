@@ -87,7 +87,6 @@
     Alla inspelningar
 "All Songs"
 "An error occured while adding your playlist."
-"Animated scrolling in program listing"
 "Any"
     Alla
 "Any Category"
@@ -139,6 +138,7 @@
 "Cancel"
 "Cancel this schedule."
     Avbryt denna schemaläggning
+"Cancelled"
 "Cast"
     Rollbesättning
 "category"
@@ -180,6 +180,7 @@
     Konfigurera kanaler
 "Configure Keybindings"
     Konfigurera knappar
+"Conflict"
 "Conflicts"
     Konflikter
 "Context"
@@ -248,12 +249,14 @@
 "Download URL override"
 "Dup Method"
     Dubblettmetod
+"Duplicate"
 "Duplicate Check method"
     Dubblettmetod
 "Duplicates"
     Dubbletter
 "Duration"
     Längd
+"Earlier"
 "Edit"
     Redigera
 "Edit keybindings on"
@@ -296,6 +299,7 @@
     finjustera
 "First recording"
     Första inspelning
+"Forced"
 "Forecast"
     Prognos
 "Forget Old"
@@ -388,6 +392,7 @@
     Senaste inspelning
 "Last Updated"
     Senast uppdaterad
+"Later"
 "length"
     längd
 "Length"
@@ -406,12 +411,12 @@
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
-"Loading"
 "Local Server Statistics"
 "Logs"
     Logg
 "Low"
     Låg
+"Low Space"
 "Manual"
     Manuell
 "matches"
@@ -424,8 +429,6 @@
     Måndag
 "more"
     mer
-"move guide left"
-"move guide right"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
@@ -525,6 +528,7 @@
     eller
 "Original Airdate"
     Sändningsdatum
+"Override"
 "Part $1 of $2"
     Del $1 av $2
 "Past Month"
@@ -582,8 +586,6 @@
     Profil
 "profile"
     profil
-"program continues to the left"
-"program continues to the right"
 "Program Detail"
     Programdetaljer
 "Program ID"
@@ -608,6 +610,7 @@
     Spela in nya, radera gamla
 "Record This"
     Spela in
+"Recorded"
 "Recorded Programs"
     Inspelade program
 "Recording Group"
@@ -727,7 +730,6 @@
     Spara schema
 "Save/Rename"
 "Save/Rename Playlist"
-"Saved"
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Schedule"
@@ -785,7 +787,6 @@
     Visa pixmaps
 "Show recordings"
     Visa inspelningar
-"show/hide advanced options"
 "Showing all programs from the $1 group."
     Visar alla program i grupp: $1.
 "Showing all programs."
@@ -855,6 +856,7 @@
     Idag
 "Tomorrow"
     Imorgon
+"Too Many"
 "Top"
     Överst
 "Top $1"
@@ -873,6 +875,7 @@
     Omkodare
 "Tuesday"
     Tisdag
+"Tuner Busy"
 "TV"
     TV
 "TV functions, including recorded programs."
@@ -918,8 +921,6 @@
     Värde
 "Video"
     Video
-"Video URL"
-    Video-URL
 "videofilters"
     videofilter
 "Videos"
