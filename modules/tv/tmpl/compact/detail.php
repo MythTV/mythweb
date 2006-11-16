@@ -429,6 +429,8 @@
                             echo ' SELECTED';
                         echo '>'.t('Subtitle and Description').'</option>';
                    ?></select></dd>
+                <dt><?php echo t('Preferred Input') ?>:</dt>
+                <dd><?php input_select($schedule->prefinput, 'prefinput') ?></dd>
                 <dt><label for="autocommflag"><?php echo t('Auto-flag commercials') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autocommflag" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><label for="autotranscode"><?php echo t('Auto-transcode') ?>:</label></dt>

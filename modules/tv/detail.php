@@ -15,7 +15,7 @@
 /**/
 
 // Load the sorting routines
-    require_once "includes/sorting.php";
+    require_once 'includes/sorting.php';
 
 // Load the program info, unless a schedule was requested
     if ($_GET['recordid'])
@@ -133,6 +133,7 @@
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
             $schedule->transcoder    = $_POST['transcoder'];
             $schedule->tsdefault     = $_POST['timestretch'];
+            $schedule->prefinput     = $_POST['prefinput'];
         // Keep track of the parent recording for overrides
             if ($_POST['record'] == rectype_override) {
                 $schedule->parentid = $schedule->recordid;
@@ -245,3 +246,37 @@
 // Exit
     exit;
 
+/**
+ * Prints a <select> of the available recording inputs
+/**/
+    function input_select($selected, $ename='prefinput') {
+        static $inputs;
+    // Gather the data
+        if (empty($inputs)) {
+            global $db;
+            $sh = $db->query('SELECT cardinputid, displayname
+                                FROM cardinput
+                            ORDER BY displayname');
+            while (list($id, $name) = $sh->fetch_row()) {
+                $inputs[$id] = $name;
+            }
+            $sh->finish();
+        }
+    // Only one input?
+        if (count($inputs) == 1) {
+            list($id, $name) = reset($inputs);
+            echo '<input name="', $ename, '" value="', $id, '" />',
+                 html_entities($name);
+        }
+    // Print the whole <select>
+        else {
+            echo '<select name="', $ename, '">';
+            foreach ($inputs as $id => $name) {
+                echo '<option value="', $id, '"';
+                if ($selected && $id == $selected)
+                    echo ' SELECTED';
+                echo '>', html_entities($name), '</option>';
+            }
+            echo '</select>';
+        }
+    }
