@@ -254,9 +254,13 @@
     // Gather the data
         if (empty($inputs)) {
             global $db;
-            $sh = $db->query('SELECT cardinputid, displayname
+            $sh = $db->query('SELECT cardinputid,
+                                     IF(LENGTH(IFNULL(displayname,"")) > 0,
+                                        displayname,
+                                        CONCAT(cardid, ":", inputname)
+                                       ) AS name
                                 FROM cardinput
-                            ORDER BY displayname');
+                            ORDER BY name');
             while (list($id, $name) = $sh->fetch_row()) {
                 $inputs[$id] = $name;
             }
