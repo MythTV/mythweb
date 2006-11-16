@@ -219,7 +219,7 @@
             $show =& new Program($record);
         // Generate any thumbnail images we might need
             if ($_SESSION['recorded_pixmaps']) {
-                generate_preview_pixmap($show);
+                $show->generate_preview_pixmap();
             }
         // Assign a reference to this show to the various arrays
             $All_Shows[]                         =& $show;
