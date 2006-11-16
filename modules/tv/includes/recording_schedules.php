@@ -308,9 +308,9 @@ class Schedule {
                          _or($this->autouserjob4,  0,          true),
                          _or($this->playgroup,     0,          true),
                          _or($this->prefinput,     0,          true),
-                         $this->next_record,
-                         $this->last_record,
-                         $this->last_delete
+                         _or($this->next_record,   '00:00:00'      ),
+                         _or($this->last_record,   '00:00:00'      ),
+                         _or($this->last_delete,   '00:00:00'      )
                         );
     // Get the id that was returned
         $recordid = $sh->insert_id();
