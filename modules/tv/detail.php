@@ -269,12 +269,13 @@
     // Only one input?
         if (count($inputs) == 1) {
             list($id, $name) = reset($inputs);
-            echo '<input name="', $ename, '" value="', $id, '" />',
-                 html_entities($name);
+            echo '<input name="', $ename, '" value="0" />',
+                 t('Any');
         }
     // Print the whole <select>
         else {
-            echo '<select name="', $ename, '">';
+            echo '<select name="', $ename, '">',
+                 '<option value="0">', t('Any'), '</option>';
             foreach ($inputs as $id => $name) {
                 echo '<option value="', $id, '"';
                 if ($selected && $id == $selected)
