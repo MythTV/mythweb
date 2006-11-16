@@ -302,7 +302,7 @@ class Schedule {
     // Errors?
         if ($sh->affected_rows() < 1 || $recordid < 1)
             trigger_error('Error creating recording schedule - no id was returned', FATAL);
-        elseif ($program->recordid && $program->recordid != $recordid)
+        elseif ($this->recordid && $this->recordid != $recordid)
             trigger_error('Error updating recording schedule - different id was returned', FATAL);
     // Finish
         $sh->finish();
