@@ -11,4 +11,3 @@ QUERY_FREE_SPACE_LIST backend query.  it's a list of hostnames along with their 
 
 
 
-record.prefinput -> cardinput.cardinputid
