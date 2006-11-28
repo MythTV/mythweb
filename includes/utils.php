@@ -327,8 +327,7 @@
             return 'file://'.$_SESSION['file_url_override'].str_replace('%2F', '/', rawurlencode(basename($show->filename)));
     // Mac and Linux just get a link to the streaming module, along with any
     // session marked to not use the myth:// URI
-        if (preg_match('/\b(?:linux|macintosh|mac\s+os\s*x)\b/i', $_SERVER['HTTP_USER_AGENT'])
-                || !$_SESSION['use_myth_uri'])
+        if (!stristr($_SERVER['HTTP_USER_AGENT'], 'windows') || !$_SESSION['use_myth_uri'])
             return root."pl/stream/$show->chanid/$show->recstartts";
     // Windows likely gets a myth:// url -- grab the master host and port
         global $Master_Host, $Master_Port;
