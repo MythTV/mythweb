@@ -17,12 +17,12 @@
 
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
-    define('MYTH_PROTO_VERSION', 31);
+    define('MYTH_PROTO_VERSION', 32);
 
 // NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
 // the number of items in a ProgramInfo QStringList group used by
 // ProgramInfo::ToSringList and ProgramInfo::FromStringList.
-    $NUMPROGRAMLINES = 42;
+    $NUMPROGRAMLINES = 43;
 
 // Keep track of the master backend port/ip
     $Master_Host = get_backend_setting('MasterServerIP');

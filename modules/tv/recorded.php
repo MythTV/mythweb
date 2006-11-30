@@ -249,7 +249,7 @@
         sort_programs($All_Shows, 'recorded_sortby');
 
 // How much free disk space on the backend machine?
-    list($size_high, $size_low, $used_high, $used_low) = explode(backend_sep, backend_command('QUERY_FREE_SPACE'));
+    list($size_high, $size_low, $used_high, $used_low) = explode(backend_sep, backend_command('QUERY_FREE_SPACE_SUMMARY'));
     if (function_exists('gmp_add')) {
     // GMP functions should work better with 64 bit numbers.
         $size = gmp_mul('1024',

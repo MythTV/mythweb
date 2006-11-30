@@ -57,6 +57,7 @@ class Program {
     var $max_episodes   = 0;
     var $group          = '';
     var $playgroup      = 'Default';
+    var $storagegroup   = 'Default';
 
     var $has_commflag   = 0;
     var $has_cutlist    = 0;
@@ -127,6 +128,7 @@ class Program {
             $this->hasairdate      = $data[38];
             $this->playgroup       = $data[39];
             $this->recpriority2    = $data[40];
+            $this->storagegroup    = $data[42];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
             // Calculate the filesize
@@ -331,7 +333,8 @@ class Program {
                              '',                 // 39 playgroup
                              '',                 // 40 recpriority2
                              '',                 // 41 parentid
-                             '',                 // 42 trailing separator
+                             ' ',                // 42 storagegroup
+                             '',                 // 43 trailing separator
                             )
                       );
     }

@@ -33,6 +33,7 @@ class Recording {
     var $category;
     var $profile;
     var $recgroup;
+    var $storagegroup;
     var $recpriority;
     var $autoexpire;
     var $maxepisodes;
@@ -75,6 +76,7 @@ class Recording {
             $this->category    = $recording_data['category'];
             $this->profile     = $recording_data['profile'];
             $this->recgroup    = $recording_data['recgroup'];
+            $this->storagegroup = $recording_data['storagegroup'];
             $this->recpriority = $recording_data['recpriority'];
             $this->autoexpire  = $recording_data['autoexpire'];
             $this->maxepisodes = $recording_data['maxepisodes'];

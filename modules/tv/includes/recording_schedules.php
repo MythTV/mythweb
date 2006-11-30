@@ -126,6 +126,7 @@ class Schedule {
     var $startoffset;
     var $endoffset;
     var $recgroup;
+    var $storagegroup;
     var $dupmethod;
     var $dupin;
     var $station;
@@ -263,11 +264,11 @@ class Schedule {
                                                recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,
                                                findday,findtime,findid,autotranscode,parentid,transcoder,tsdefault,
                                                autouserjob1,autouserjob2,autouserjob3,autouserjob4,
-                                               playgroup,prefinput,
+                                               playgroup,storagegroup,prefinput,
                                                next_record,last_record,last_delete)
                                        VALUES (?,?,?,
                                                FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
-                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                          _or($this->recordid,      0,          true),
                          _or($this->type,          0,          true),
                          $this->chanid,
@@ -307,6 +308,7 @@ class Schedule {
                          _or($this->autouserjob3,  0,          true),
                          _or($this->autouserjob4,  0,          true),
                          _or($this->playgroup,     0,          true),
+                         _or($this->storagegroup,  'Default'       ),
                          _or($this->prefinput,     0,          true),
                          _or($this->next_record,   '00:00:00'      ),
                          _or($this->last_record,   '00:00:00'      ),
@@ -463,6 +465,12 @@ class Schedule {
                    ."\t<dd>".html_entities($this->recgroup)
                             ."</dd>\n";
         }
+    // Storage Group
+        if (!empty($this->storagegroup)) {
+            $str .= "\t<dt>".t('Storage Group').":</dt>\n"
+                   ."\t<dd>".html_entities($this->storagegroup)
+                            ."</dd>\n";
+        }
     // Finish off the table and return
         $str .= "\n</dl>";
         return $str;
@@ -535,4 +543,31 @@ class Schedule {
         echo '</select>';
     }
 
+/**
+ * prints a <select> of the various storagegroups available
+/**/
+    function storagegroup_select($this_group, $name = 'storagegroup') {
+        static $groups = array();
+    // Load the recording groups?
+        if (!count($groups)) {
+        // Default
+            $groups['Default'] = 'Default';
+        // Configured Storage Groups
+            $result = mysql_query('SELECT DISTINCT groupname FROM storagegroup');
+            while (list($group) = mysql_fetch_row($result)) {
+                $group or $group = 'Default';
+                $groups[$group]  = $group;
+            }
+            mysql_free_result($result);
+        }
+    // Print the <select>
+        echo "<select name=\"$name\">";
+        foreach($groups as $group) {
+            echo '<option value="'.html_entities($group).'"';
+            if ($this_group == $group)
+                echo ' SELECTED';
+            echo '>'.html_entities($group).'</option>';
+        }
+        echo '</select>';
+    }
 
