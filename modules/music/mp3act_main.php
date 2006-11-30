@@ -84,7 +84,8 @@ require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 	</div>
 	<div id="loading"><h1><?php echo t("LOADING"); ?>...</h1></div>
 	<div id="left">
-		<h2 id="breadcrumb"></h2>
+		<!--Disable breadcrumbs so info box and playlist align.-->
+		<h2 id="breadcrumb" style="display:none"></h2>
 		<div class="box" id="info">
 		</div>
 	</div>
