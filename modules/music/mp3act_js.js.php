@@ -36,7 +36,7 @@ function music_dir()
     	}
 
     	function setPLTitle(){
-    		document.getElementById("pl_title").innerHTML = " <? echo t("Playlist"); ?> ";
+    		document.getElementById("pl_title").innerHTML = " <?php echo t("Playlist"); ?> ";
     	}
 
     	function viewPlaylist_cb(new_data){
@@ -334,7 +334,7 @@ function music_dir()
 			}
 
 			function searchMusic(form){
-				if(form.searchbox.value == '' || form.searchbox.value == '[<? echo t("enter your search terms"); ?>]'){
+				if(form.searchbox.value == '' || form.searchbox.value == '[<?php echo t("enter your search terms"); ?>]'){
 					setMsgText("You Must Enter Something to Search For");
 				}
 				else{

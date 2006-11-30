@@ -106,6 +106,5 @@ require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 	<div class="clear"></div>
 </div>
 <iframe src="<?php echo root; ?>music/mp3act_hidden.php" frameborder="0" height="0" width="0" id="hidden" name="hidden"></iframe>
-<?
+<?php
 require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-?>
