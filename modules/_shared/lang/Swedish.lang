@@ -163,6 +163,7 @@
     Kanal &quot;Gå till&quot;
 "Channel Detail"
     Kanaldetaljer
+"Channels"
 "channum"
     kanalnummer
 "Check for duplicates in"
@@ -541,6 +542,7 @@
     Person
 "People Search"
     Sök person
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -792,6 +794,7 @@
     Visar alla program i grupp: $1.
 "Showing all programs."
     Visar alla program.
+"Shows"
 "SI Units?"
     SI-enheter?
 "Songs"
@@ -864,6 +867,8 @@
     Topp $1
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
     Total tid
 "Total Time:  %s"

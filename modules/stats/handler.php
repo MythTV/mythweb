@@ -68,17 +68,19 @@
                          .$where.' AND endtime > starttime');
 
 // Get the top ten recorded shows
-    $sh = $db->query('SELECT title, COUNT(programid) AS count, MAX(UNIX_TIMESTAMP(starttime)) AS last_recorded
+    $sh = $db->query('SELECT title,
+                      COUNT(programid)               AS recorded,
+		      MAX(UNIX_TIMESTAMP(starttime)) AS last_recorded
                         FROM oldrecorded '.$where
                  .' GROUP BY title
-                    ORDER BY count DESC, last_recorded, title '
+                    ORDER BY recorded DESC, last_recorded, title '
                     .$limit);
     while($row = $sh->fetch_assoc())
-        $top_ten_shows[] = $row;
+        $shows[] = $row;
     $sh->finish();
 
-// Get the top ten recorded shows
-    $sh = $db->query('SELECT COUNT(oldrecorded.chanid) as count,
+// Get the top recorded channels
+    $sh = $db->query('SELECT COUNT(oldrecorded.chanid) as recorded,
                              channel.name,
                              channel.channum,
                              MAX(UNIX_TIMESTAMP(oldrecorded.starttime)) as last_recorded
@@ -88,10 +90,10 @@
                     '.$where.'
                              AND channel.channum IS NOT NULL
                     GROUP BY oldrecorded.chanid
-                    ORDER BY count DESC, last_recorded, name '
+                    ORDER BY recorded DESC, last_recorded, name '
                     .$limit);
     while($row = $sh->fetch_assoc())
-        $top_ten_chans[] = $row;
+        $channels[] = $row;
     $sh->finish();
 
 // Print the stats page template

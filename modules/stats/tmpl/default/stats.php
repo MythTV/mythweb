@@ -31,6 +31,7 @@
 	<form id="stats_form" name="stats_form" action="<?php echo root ?>stats">
 
         <div id="query_time_div">
+	    Time Span&nbsp;
             <select name="query_time" onchange="submit_form(null, null, 'stats_form');">
                 <option <?php if($_GET['query_time']=='All_time') echo 'selected' ?> value="All_time"><?php echo t('All') ?></option>
                 <option <?php if($_GET['query_time']=='year')     echo 'selected' ?> value="year"><?php  echo t('Past Year') ?></option>
@@ -41,6 +42,7 @@
         </div>
 
         <div id="count_div">
+	    Show&nbsp;
             <select name="count_dropdown" onchange="submit_form(null, null, 'stats_form');">
                 <option <?php if($_GET['count_dropdown']=='10')  echo 'selected' ?> value="10"><?php  echo t('Top $1', 10) ?></option>
                 <option <?php if($_GET['count_dropdown']=='25')  echo 'selected' ?> value="25"><?php  echo t('Top $1', 25) ?></option>
@@ -56,69 +58,82 @@
 
     <div id="general_stats" class="clearfix">
         <dl>
-            <dt><?php echo t('Number of shows') ?>:
-            <dd><?php echo $title_count ?></dd>
-            <dt><?php echo t('Number of episodes') ?>:</dt>
-            <dd><?php echo $show_count ?></dd>
-            <dt><?php echo t('First recording') ?>:</dt>
-            <dd><?php echo date('l F jS, Y', $first) ?></dd>
-            <dt><?php echo t('Last recording') ?>:</dt>
-            <dd><?php echo date('l F jS, Y', $last) ?></dd>
-            <dt><?php echo t('Total Time') ?>:</dt>
-            <dd><?php echo t('$1 wasted', nice_length($time)) ?></dd>
+            <dt><?php echo t('Number of shows'); ?>:
+            <dd><?php echo $title_count; ?></dd>
+            <dt><?php echo t('Number of episodes'); ?>:</dt>
+            <dd><?php echo $show_count; ?></dd>
+            <dt><?php echo t('First recording'); ?>:</dt>
+            <dd><?php echo date('l F jS, Y', $first); ?></dd>
+            <dt><?php echo t('Last recording'); ?>:</dt>
+            <dd><?php echo date('l F jS, Y', $last); ?></dd>
+	    <dt><?php echo t('Total Running Time'); ?>:</dt>
+	    <dd><?php echo nice_length($last - $first); ?></dd>
+            <dt><?php echo t('Total Recorded'); ?>:</dt>
+            <dd><?php echo nice_length($time); ?></dd>
+	    <dt><?php echo t('Percent of time spent recording'); ?>:</dt>
+	    <dd><?php echo intval(($time / ($last - $first)) * 100); ?>%</dd>
         </dl>
     </div>
 
-    <table id="top_ten_shows" style="text-align: left;">
-    <caption>Top <?php echo $_REQUEST['count_dropdown'] ?> recorded shows</caption>
-    <colgroup>
-        <col class="num"></col>
-        <col class="title"></col>
-        <col class="count"></col>
-        <col class="last_recorded"></col>
-    </colgroup>
+    <table id="stats" style="text-align: left;">
+    <tr class="caption">
+     <td colspan="4"><?php echo t('Shows'); ?></td>
+     <td></td>
+     <td colspan="4"><?php echo t('Channels'); ?></td>
+    </tr>
     <tr>
-        <th>#</th>
-        <th><?php echo t('Title') ?></th>
-        <th><?php echo t('Count') ?></th>
-        <th><?php echo t('Last Recorded') ?></th>
-    </tr><?php
-        foreach($top_ten_shows as $num => $row) {
-            echo "<tr>\n",
-                 "        <td>", ($num + 1), "</td>\n",
-                 "        <td>", html_entities($row['title']), "</td>\n",
-                 "        <td>", $row['count'], "</td>\n",
-                 "        <td>".date('F j Y', $row['last_recorded'])."</td>\n",
-                 "    </tr>\n";
-        }
+     <th><?php echo t('Title'); ?></th>
+     <th><?php echo t('Recorded'); ?></th>
+     <th><?php echo t('Last Recorded'); ?></th>
+     <th class="center">#</th>
+     <th><?php echo t('Title'); ?></th>
+     <th><?php echo t('Recorded'); ?></th>
+     <th><?php echo t('Last Recorded'); ?></th>
+    </tr>
+    <?php
+     $maxcount = count($shows);
+     if (count($channels) > $maxcount)
+      $maxcount = count($channels);
+     $padded = false;
+     for ($i=0; $i<$maxcount; $i++) {
+     ?>
+     <tr>
+     <?php
+      if (isset($shows[$i])) {
+      ?>
+       <td><?php echo html_entities($shows[$i]['title']); ?></td>
+       <td class="center"><?php echo $shows[$i]['recorded']; ?></td>
+       <td><?php echo date('F j Y', $shows[$i]['last_recorded']); ?></td>
+      <?php
+      }
+      elseif ($padded == false) {
+       $padded = true;
+      ?>
+       <td colspan="5" rowspan="<?php echo count($shows)-$i; ?>"></td>
+      <?php
+      }
+      ?>
+       <td class="center" style="font-weight: bold;"><?php echo $i+1; ?></td>
+      <?php
+      if (isset($channels[$i])) {
+      ?>
+       <td><?php echo html_entities($channels[$i]['name']); ?></td>
+       <td class="center"><?php echo $channels[$i]['recorded']; ?></td>
+       <td><?php echo date('F j Y', $channels[$i]['last_recorded']); ?></td>
+      <?php
+      }
+      elseif ($padded == false) {
+       $padded = true;
+      ?>
+       <td colspan="5" rowspan="<?php echo count($channels)-$i; ?>"></td>
+      <?php
+      }
+      ?>
+     </tr>
+     <?php
+     }
     ?>
     </table>
-
-    <table id="top_ten_chan" style="text-align: left;">
-    <caption>Top <?php echo $_REQUEST['count_dropdown'] ?> recorded channels</caption>
-    <colgroup>
-        <col class="num"></col>
-        <col class="title"></col>
-        <col class="count"></col>
-        <col class="last_recorded"></col>
-    </colgroup>
-    <tr>
-        <th>#</th>
-        <th><?php echo t('Name') ?></th>
-        <th><?php echo t('Count') ?></th>
-        <th><?php echo t('Last Recorded') ?></th>
-    </tr><?php
-        foreach($top_ten_chans as $num => $row) {
-            echo "<tr>\n",
-                 "        <td>", ($num + 1), "</td>\n",
-                 "        <td>", html_entities($row['name']), "</td>\n",
-                 "        <td>", $row['count'], "</td>\n",
-                 "        <td>".date('F j Y', $row['last_recorded'])."</td>\n",
-                 "    </tr>\n";
-        }
-    ?>
-    </table>
-
 </div>
 <?php
 // Print the page footer

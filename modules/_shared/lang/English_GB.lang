@@ -100,6 +100,7 @@
 "channel"
 "Channel &quot;Jump to&quot;"
 "Channel Detail"
+"Channels"
 "channum"
 "Check for duplicates in"
 "Choose Genre.."
@@ -320,6 +321,7 @@
 "Past Year"
 "People"
 "People Search"
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -513,6 +515,7 @@
     Showing all programmes from the $1 group.
 "Showing all programs."
     Showing all programmes.
+"Shows"
 "SI Units?"
 "Songs"
 "Songs for Genre"
@@ -556,6 +559,8 @@
 "Top $1"
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"

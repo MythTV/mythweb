@@ -128,6 +128,7 @@
 "Channel &quot;Jump to&quot;"
     Kanal &quot;Skoči na&quot;
 "Channel Detail"
+"Channels"
 "channum"
     številka kanala
 "Check for duplicates in"
@@ -413,6 +414,7 @@
 "Past Year"
 "People"
 "People Search"
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -633,6 +635,7 @@
     Pokaži snemanja
 "Showing all programs from the $1 group."
 "Showing all programs."
+"Shows"
 "SI Units?"
     SI enote
 "Songs"
@@ -693,6 +696,8 @@
 "Top $1"
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"

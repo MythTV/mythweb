@@ -153,6 +153,7 @@
     Zender &quot;Ga naar&quot;
 "Channel Detail"
     Zender detail
+"Channels"
 "channum"
     zender
 "Check for duplicates in"
@@ -501,6 +502,7 @@
     Personen
 "People Search"
     Personen zoeken
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -744,6 +746,7 @@
     Alle programma's uit de $1 groep laten zien
 "Showing all programs."
     Alle programma's laten zien
+"Shows"
 "SI Units?"
     SI eenheden?
 "Songs"
@@ -812,6 +815,8 @@
 "Top $1"
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"

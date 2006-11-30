@@ -150,6 +150,7 @@
     Kanavahyppy
 "Channel Detail"
     Kanavatiedot
+"Channels"
 "channum"
     Kanava
 "Check for duplicates in"
@@ -485,6 +486,7 @@
 "People"
 "People Search"
     Haku Nimellä
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -726,6 +728,7 @@
     Näytetään kaikki ohjelmat ryhmästä $1.
 "Showing all programs."
     Näytetään kaikki ohjelmat.
+"Shows"
 "SI Units?"
     SI-yksiköt
 "Songs"
@@ -793,6 +796,8 @@
 "Top $1"
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"

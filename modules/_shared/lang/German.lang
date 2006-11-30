@@ -153,6 +153,7 @@
     Sender &quot;Gehe zu&quot;
 "Channel Detail"
     Details zum Sender
+"Channels"
 "channum"
     Sender
 "Check for duplicates in"
@@ -500,6 +501,7 @@
     Leute
 "People Search"
     Suche nach Darsteller
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -744,6 +746,7 @@
     Zeige alle Sendungen in der $1 Gruppe.
 "Showing all programs."
     Zeige alle Sendungen.
+"Shows"
 "SI Units?"
     SI Einheiten?
 "Songs"
@@ -811,6 +814,8 @@
 "Top $1"
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"

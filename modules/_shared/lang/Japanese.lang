@@ -152,6 +152,7 @@
     チャンネル &quot;移動&quot;
 "Channel Detail"
     チャンネル詳細
+"Channels"
 "channum"
     チャンネル
 "Check for duplicates in"
@@ -515,6 +516,7 @@
     ピープル
 "People Search"
     ピープルサーチ
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -763,6 +765,7 @@
     $1のすべての番組を表示
 "Showing all programs."
     すべての番組を表示
+"Shows"
 "SI Units?"
     SI単位を使用する
 "Songs"
@@ -833,6 +836,8 @@
     トップ $1
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
     合計時間
 "Total Time:  %s"

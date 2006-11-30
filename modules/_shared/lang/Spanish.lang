@@ -162,6 +162,7 @@
     Canal &quot;Saltar a&quot;
 "Channel Detail"
     Detalle Canal
+"Channels"
 "channum"
     nºcanal
 "Check for duplicates in"
@@ -537,6 +538,7 @@
     Gente
 "People Search"
     Búsqueda gente
+"Percent of time spent recording"
 "Play"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -788,6 +790,7 @@
     Mostrando todos los programas del grupo $1
 "Showing all programs."
     Mostrando todos los programas
+"Shows"
 "SI Units?"
     ¿Unidades SI?
 "Songs"
@@ -859,6 +862,8 @@
 "Top $1"
 "Top Played Songs"
 "Total Length"
+"Total Recorded"
+"Total Running Time"
 "Total Time"
     Tiempo Total
 "Total Time:  %s"
