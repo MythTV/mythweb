@@ -227,7 +227,7 @@
         var y = pos.y + parseInt(get_element(popup.id).offsetHeight);
     // Get some window information so we can make sure the box doesn't extend off the edge of the screen
         var window_width = 0, window_height = 0, scroll_left = 0, scroll_top = 0;
-        if (document.documentElement.clientWidth) {
+        if (document.documentElement.clientWidth && document.documentElement.clientHeight < document.body.clientHeight) {
             window_width  = document.documentElement.clientWidth;
             window_height = document.documentElement.clientHeight;
             scroll_left   = document.documentElement.scrollLeft;
