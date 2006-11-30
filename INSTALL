@@ -1,0 +1,237 @@
+This is the INSTALL file for the MythWeb package.  It contains the installation
+requirements and instructions for MythWeb.  Please see README for other
+information.
+
+November 29, 2006
+
+========
+Contents
+========
+
+1.0     Requirements
+2.0     Source
+3.0     Experts
+4.0     Everyone Else
+4.1         Install Overview
+4.2         Permissions
+4.3         Webserver
+5.0     Apache
+5.1         Apache Config
+6.0     Lighttpd
+
+=======
+Summary
+=======
+
+PLEASE, PLEASE read this document. People seem to skip over this, under the
+mistaken assumption that MythWeb will just work with no configuration. While
+I've tried to make it as auto-detecting as possible, it usually still needs
+some hand-editing to account for variances in install preferences, etc.
+
+Please also read the FAQ in the README file, since it answers several common
+post-install questions/concerns.
+
+================
+1.0 Requirements
+================
+
+First of all, you need mythTV, which you should be able to track down at:
+
+    http://www.mythtv.org
+
+In addition to all the various things required to get MythTV up and running
+(which are documented in the main MythTV source), you need apache, perl and php
+up and running on either the same machine as MythTV, or one that is not blocked
+from communication by a firewall:
+
+    http://www.apache.org
+    http://www.php.net
+    http://www.perl.com/
+
+Current versions of these in use by the MythWeb developer(s) are 2.2.x for
+Apache, 5.1.x for php, and 5.8.x for perl. Make sure to build both apache and
+php according to the instructions at the php home site, and be sure to include
+support for MySQL when building PHP.
+
+It is also possible to use MythWeb with Lighttpd (Lighty):
+
+    http://www.lighttpd.net/
+
+==========
+2.0 Source
+==========
+
+There are two official ways to download MythWeb.  You can either download it as
+part of the MythPlugins tarball from http://mythtv.org/ or you can grab it
+directly from a subversion checkout, as described at http://svn.mythtv.org/trac
+
+Regardless of which method you end up choosing, you should be left with a
+directory named mythweb, which contains mythweb.php, mythweb.pl and a handful of
+other files/directories (including this file).
+
+* Note, if you would like to check out ONLY MythWeb, you could do something like
+the following (insert the approprate release as you choose):
+
+    svn co http://svn.mythtv.org/svn/branches/release-##-fixes/mythplugins/mythweb
+
+===========
+3.0 Experts
+===========
+
+If you are not an expert, please skip to section 3.1.  Experts, the following
+commands should be enough for you to figure out what's going on:
+
+    cp /path/to/mythweb/*.* /var/www/html/
+
+    vi /var/www/html/mythweb.conf.apache
+
+    mv /var/www/html/mythweb.conf.apache /etc/httpd/conf.d/
+
+    /etc/init.d/httpd restart
+
+=================
+4.0 Everyone Else
+=================
+
+If you are reading this section, I'm going to assume that you have only minimal
+experience configuring both Linux and a webserver.  For those of you somewhere
+in between novice an expert, I hope that you do not find the following sections
+too boring, but please pay attention in case you overlook something important.
+
+====================
+4.1 Install Overview
+====================
+
+Most people will be running their MythWeb installation on the same system that
+hosts the MythTV backend server, and will not be running any other web services,
+so I will be expecting that you will want to access your machine directly, like:
+
+    http://192.168.0.50/
+
+The second most common situation would look something like this:
+
+    http://192.168.0.51/mythweb/
+
+The differences between these situations are trivial, and if you cannot figure
+out how to do the second location from this guide, please don't hesitate to
+drop into #mythtv-users on irc.freenode.net to ask for help.
+
+For the purpose of this guide, I am generally going to assume that your apache
+document root directory is:
+
+    /var/www/html
+
+This is not the case on every system, and you may find that your chosen
+distribution has placed it somewhere else.  e.g.
+
+    /home/www/htdocs
+    /var/apache
+    /var/www
+    /var/www/htdocs
+
+For the purposes of illustration, I'm going to use the imaginary /wwww/htdocs
+directory to refer to your installation directory.
+
+Once you figure out where your copy of apache is looking for files, copy your
+mythweb files into that directory:
+
+    cd mythplugins/mythweb
+    cp *.* /wwww/htdocs/
+
+===============
+4.2 Permissions
+===============
+
+The next thing you need to do is make sure that your web server can write to
+MythWeb's data directory.  This should be as simple as:
+
+    chgrp -R apache /wwww/htdocs/data
+    chmod g+rw /wwww/htdocs/data
+
+Please note that different distributions use a different userid for apache.  For
+instance, Ubuntu uses www-data.  Please be aware that you may need to consult
+your httpd.conf file to verify which user/group apache is set to run as.
+
+As a last resort, you can make the directory world-writable:
+
+    chmod a+rw /wwww/htdocs/data
+
+However, I strongly discourage this, since it is a slight security concern to
+give write permissions to any arbitrary user on your system.
+
+=============
+4.3 Webserver
+=============
+
+As of 0.21, MythWeb contains configuration files for both Apache and Lighty. You
+will need to chose ONE of these files and install it in your webserver's
+configuration directory.  I will explain this later.
+
+The first thing you must do is find the configuration file for your chosen
+webserver, and then follow the instructions in the appropriate subsection
+
+    mythweb.conf.apache         (See section 5.0)
+    mythweb.conf.lighttpd       (See section 6.0)
+
+Please do not use Lighttpd unless you know what you are doing.
+
+==========
+5.0 Apache
+==========
+
+MythWeb relies on two apache modules that are generally either built in or
+enabled by default:
+
+    mod_env
+    mod_rewrite
+
+If you compiled apache yourself, please make sure that these are enabled.
+
+=================
+5.1 Apache Config
+=================
+
+First, open mythweb.conf.apache in your favorite editor and look for what
+should be the first non-comment line in the file:
+
+    <Directory "/var/www/html" >
+
+You should change that path to match the document root directory you discovered
+in section 4.0, such that it might look something like:
+
+    <Directory "/wwww/htdocs" >
+
+Continue on in the file and find the following lines:
+
+    setenv db_server        "localhost"
+    setenv db_name          "mythconverg"
+    setenv db_login         "mythtv"
+    setenv db_password      "mythtv"
+
+You should update these so that they match the settings required to connect to
+your MythTV master backend.
+
+There are other settings in this file, too, which should be fairly well
+documented.  Please read through the
+
+Finally, you should put this file into apache's "extra config files" directory.
+On Fedora, this is:
+
+    /etc/httpd/conf.d/
+
+Other distributions might use something like:
+
+    /etc/apache/conf.d/
+    /etc/apache2/conf.enabled.d/
+
+You will have to figure out the correct path on your own, but once you do, move
+the MythWeb config file into place like so:
+
+    mv mythweb.conf.apache /etc/apache2/conf.d/
+
+============
+6.0 Lighttpd
+============
+
+Sorry, no documentation here yet...
+
