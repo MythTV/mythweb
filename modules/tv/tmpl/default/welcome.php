@@ -23,7 +23,7 @@
 // Next, print a list of possible subsectons
          '<ul>';
     foreach ($Modules['tv']['links'] as $link => $name) {
-        echo '    <li><a href="', root, 'tv/', $link, '">', html_entities($name), "</a></li>\n";
+        echo '    <li><a href="', root, $Modules['tv']['path'], '/', $link, '">', html_entities($name), "</a></li>\n";
     }
     echo '</ul>',
 

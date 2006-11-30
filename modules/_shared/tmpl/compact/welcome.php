@@ -23,26 +23,6 @@
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
 
-<script language="JavaScript" type="text/javascript">
-<!--
-
-    var visible_module = 'tv';
-    function show_module_info(module) {
-        if (visible_module == module)
-            return;
-    // Change the outline on the list item
-        remove_class('module_' + visible_module, 'selected');
-        add_class('module_'    + module,         'selected');
-    // Show and hide the appropriate info boxes
-        toggle_vis('info_' + visible_module);
-        toggle_vis('info_' + module);
-    // Keep track of what's visible now
-        visible_module = module;
-    }
-
-// -->
-</script>
-
 <div id="modules" class="clearfix">
 
     <div id="module_names">
@@ -55,10 +35,10 @@
             continue;
     // Show this module
         echo '        <li id="module_', $id, '"';
-        if ($id == 'tv')
+        if ($id == $_REQUEST['view_module'])
             echo ' class="selected"';
-        echo ' onmouseover="show_module_info(\''.$id.'\')">',
-             '<a href="', root, $module['path'], '">', $module['name'], '</a>',
+        echo '">',
+             '<a href="', root, '?view_module=', urlencode($id), '">', $module['name'], '</a>',
              "</li>\n";
     }
 ?>
@@ -67,11 +47,8 @@
 
     <div id="module_info">
 <?php
-// Print out the list of modules.  Each theme should include a welcome page for
-// each module.
-    foreach ($Modules as $id => $module) {
-        require "modules/$id/tmpl/".tmpl.'/welcome.php';
-    }
+// Each template should include a welcome page for each module.
+    require 'modules/'.$_REQUEST['view_module'].'/tmpl/'.tmpl.'/welcome.php';
 ?>
     </div>
 
