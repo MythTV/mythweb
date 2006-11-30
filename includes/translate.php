@@ -37,6 +37,7 @@
 // Define the languages that mythweb can translate into.  Each hash entry should
 // point to an array containing first the user-visible name of the language, the
 // php locale for printing and finally the matching language and charset codes.
+    $Languages['Catalan']    = array('Catal&agrave;',   'ca_ES.UTF-8', 'ca_ES');
     $Languages['Dutch']      = array('Nederlands',      'nl_NL',       array('nl_NL', 'nl_BE'));
     $Languages['English']    = array('English',         'en_US.UTF-8', 'en_US.ISO-8859-1');
     $Languages['English_GB'] = array('English_GB',      'en_GB.UTF-8', 'en_GB.ISO-8859-1');

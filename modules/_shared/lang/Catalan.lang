@@ -1,0 +1,978 @@
+" at "
+    a
+"# Tracks"
+"$1 B"
+    $1 B
+"$1 day"
+    $1 dia
+"$1 days"
+    $1 dies
+"$1 episode"
+    $1 episodi
+"$1 episodes"
+    $1 episodis
+"$1 GB"
+    $1 GB
+"$1 hr"
+    $1 hr
+"$1 hrs"
+    $1 hrs
+"$1 KB"
+    $1 KB
+"$1 MB"
+    $1 MB
+"$1 min"
+    $1 min
+"$1 mins"
+    $1 mins
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 programes, emprant $2 ($3) de $4 ($5 lliure))
+"$1 recording"
+    $1 enregistrament
+"$1 recordings"
+    $1 enregistreaments
+"$1 Search"
+    Recerca $1
+"$1 TB"
+    $1 TB
+"$1 to $2"
+    $1 a $2
+"$1 wasted"
+    $1 depreciat
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
+"Action"
+    Acció
+"Activate"
+    Activar
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
+"add string"
+    afegir cadena
+"Add this Playlist as a Subplaylist"
+"Additional Tables"
+    Taules addicionals
+"Advanced"
+    Avançat
+"Advanced Options"
+    Opcions avançades
+"Advanced Search"
+    Recerca avançada
+"airdate"
+    emissió
+"Airtime"
+    Horari
+"Album"
+    Àlbum
+"Album (filtered)"
+    Àlbum (filtrat)
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
+"All"
+    Tot
+"All Albums"
+"All Fields"
+"All groups"
+    Tots els grups
+"All HDTV"
+    Tot HDTV
+"All Music"
+    Tota la música
+"All recordings"
+    Tots els enregistraments
+"All Songs"
+"An error occured while adding your playlist."
+"Any"
+    Qualsevol
+"Any Category"
+    Qualsevol categoria
+"Any Channel"
+    Qualsevol canal
+"Any Program Type"
+    Qualsevol tipus de programa
+"Append"
+"Append to Current Playlist"
+"Are you sure you want to delete the following show?"
+    Està segur d'eliminar el següent programa?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist"
+    Artista
+"Artist (filtered)"
+    Artista (filtrat)
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
+"auto-expire"
+    autoexpirar
+"Auto-expire recordings"
+    Autoexpirar enregistraments
+"Auto-flag commercials"
+    Automarcar anúncis
+"Auto-transcode"
+    Auto-recodificar
+"Back"
+"Back to the program listing"
+    Tornar al llistat de programes
+"Back to the recording schedules"
+    Tornar a la programació
+"Backend Logs"
+    Informes del backend
+"Backend Status"
+    Estat del backend
+"Begin a New Search"
+"brightness"
+    Llum
+"Browse"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
+"callsign"
+"Cancel"
+"Cancel this schedule."
+    Cancel·lar programació
+"Cancelled"
+"Cast"
+    Repertori
+"category"
+    categoria
+"Category"
+    Categoria
+"Category Legend"
+    Títol de la categoria
+"CC"
+    SUB
+"Chan. Callsign"
+    Codi del canal
+"Chan. Name"
+    Nom del canal
+"Chan. Number"
+    Número del canal
+"Channel"
+    Canal
+"channel"
+    canal
+"Channel &quot;Jump to&quot;"
+    Canal &quot;Saltar a&quot;
+"Channel Detail"
+    Detall del canal
+"Channels"
+"channum"
+    nº canal
+"Check for duplicates in"
+    Cercar duplicats a
+"Choose Genre.."
+"Choose Type"
+"Click to View Playlist"
+"colour"
+    color
+"Commands"
+    Comandes
+"commfree"
+    sense anuncis
+"Configure Channels"
+    Configurar canals
+"Configure Keybindings"
+    Configurar tecles
+"Conflict"
+"Conflicts"
+    Conflictes
+"Context"
+    Context
+"contrast"
+    contraste
+"Count"
+    Comptar
+"cover"
+    caràtula
+"Create a New Playlist"
+"Create a Random Mix"
+"Create Schedule"
+    Crear programació
+"Current Conditions"
+    Condiciones actuals
+"Current recordings"
+    Enregistraments actuals
+"Currently Browsing:  $1"
+    Navegant per:  $1
+"Custom"
+    Avançada
+"Custom Schedule"
+    Programació avançada
+"Data"
+    Dades
+"Date"
+    Data
+"Date Formats"
+    Formats de data
+"Deactivated"
+    Desactivat
+"Default"
+    Por defecte
+"Delete"
+    Esborrar
+"delete"
+    esborrar
+"Delete $1"
+    Esborrar $1
+"Delete + Rerecord"
+    Esborrar + reenregistrar
+"Delete and rerecord $1"
+    Esborrar i reenregistrar $1
+"DELETE this Saved Playlist"
+"description"
+    descripció
+"Description"
+    Descripció
+"Destination"
+    Destí
+"Details for"
+    Detalls
+"Directed by"
+    Dirigido por
+"director"
+    director
+"Display"
+    Mostrar
+"Displaying"
+    Mostrant
+"Don't Record"
+    No enregistrat
+"Don't record this program."
+    No esborrar aquest programa
+"Download URL override"
+"Dup Method"
+    Mètode duplicat
+"Duplicate"
+"Duplicate Check method"
+    Mètode de comprovació de duplicats
+"Duplicates"
+    Duplicats
+"Duration"
+    Duració
+"Earlier"
+"Edit"
+    Editar
+"Edit keybindings on"
+    Editar tecles a
+"Edit MythWeb and some MythTV settings."
+    Editar ajustos de MythWeb i alguns de MythTV
+"Edit settings for"
+    Editar ajustos per a
+"End"
+    Fi
+"End Late"
+    Acabar després
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
+"Episode"
+    Episodi
+"Episode Number"
+    Nº episodi
+"Everything"
+"Exec. Producer"
+    Productor exec.
+"file size"
+    mida de l'arxiu
+"Filtered"
+    Filtrat
+"Find Date & Time Options"
+    Opcions de recerca per data i hora
+"Find Day"
+    Cercar data
+"Find other showings of this program"
+    Cercar altres emissions d'aquest programa
+"Find showings of this program"
+    Cerca emisiones d'aquest programa
+"Find Time"
+    Cercar hora
+"Find Time must be of the format:  HH:MM:SS"
+    La recerca d'hora ha de tenir el format: HH:MM:SS
+"finetune"
+    sintoniaa fina
+"First recording"
+    Primer  enregistrament
+"Forced"
+"Forecast"
+    Predicció
+"Forget Old"
+    Oblidar antics
+"format help"
+    ajuda al format
+"Found %s results for '%s'"
+"freqid"
+    id freqüència
+"Friday"
+    Divendres
+"generic_date"
+    %b %e, %Y
+"generic_time"
+    %I:%M %p
+"Genre"
+    Genere
+"Genre (filtered)"
+    Genere (filtrat)
+"Genres"
+"Global"
+    Global
+"Go"
+    Anar
+"Google"
+    Google
+"Group timeslots every"
+    Agrupar caselles horaries cada
+"Guest Starring"
+    Artistes convidats
+"Guide rating"
+    Puntuació guia
+"Guide Settings"
+    Ajustos guia
+"Handy Predefined Searches"
+    Recerques predefinides útils
+"handy: overview"
+    útils: resúm
+"has been watched"
+"has bookmark"
+    té marques
+"has commflag"
+    té anuncis marcats
+"has cutlist"
+    té llista de tall
+"HDTV"
+    HDTV
+"High"
+    Alt
+"Hosted by"
+    Enmagatzemat a
+"Hour"
+    Hora
+"Hour Format"
+    Format hora
+"hue"
+    to
+"Humidity"
+    Humitat
+"IMDB"
+    IMDB
+"imdb rating"
+    puntuació imdb
+"Inactive"
+    Inactiu
+"is editing"
+    s'està editant
+"Jump"
+    Saltar
+"Jump to"
+    Saltar a
+"Jump To"
+    Saltar a
+"JumpPoints Editor"
+    Editor de puntos de aalto
+"Key bindings"
+    Tecles
+"Keybindings Editor"
+    Editor de tecles
+"Keyword"
+    Paraula clau
+"Keyword Search"
+    Recerca de paraules clau
+"Keywords"
+"Language"
+    Llengua
+"Last Recorded"
+    Darrer cop enregistrat
+"Last recording"
+    Darrer enregistrament
+"Last Updated"
+    Darrera actualització
+"Later"
+"length"
+    duració
+"Length"
+    Duració
+"Length (min)"
+    Duració (min)
+"Listing &quot;Jump to&quot;"
+    Llistat &quot;Saltar a&quot;
+"Listing Time Key"
+    Hora lliistado
+"Listings"
+    Llistats
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Local Server Statistics"
+"Logs"
+    Informes
+"Low"
+    Baix
+"Low Space"
+"Manual"
+    Manual
+"matches"
+    coincidenciess
+"Max star rating for movies"
+    Màx. classificació per a pel·lícules
+"minutes"
+    minuts
+"Monday"
+    Dilluns
+"more"
+    més
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
+"movie"
+    Pel·lícula
+"Movies"
+    Pel·lícules
+"Movies, 3&frac12; Stars or more"
+    Pel·lícules, 3&frac12; estrelles o més
+"Movies, Stinkers (2 Stars or less)"
+    Pel·lícules, 2 estrelles o menys
+"Music"
+    Música
+"Music Specials"
+    Especials música
+"MythMusic on the web."
+    MythMusic en el web
+"MythTV channel info"
+    Info Canal MythTV
+"MythTV global defaults"
+    MythTV globals predeterminats
+"MythTV key bindings"
+    Vincles tecles MythTV
+"MythTV settings table"
+    Taula ajustos MythTV
+"MythTV Status"
+    Estat MythTV
+"MythVideo Artwork Dir"
+    Dir posters MythTV
+"MythVideo Dir"
+    Dir MythVideo
+"MythVideo on the web."
+    MythVideo en el web
+"MythWeb Global Defaults"
+    MythWeb globals per defecte
+"MythWeb session settings"
+    Ajustos sesions MythWeb
+"MythWeb Session Settings"
+    Ajustos sesions MythWeb
+"MythWeb Skin"
+    Pell MythWeb
+"MythWeb Template"
+    Plantilla MythWeb
+"MythWeb Weather."
+    Temps MythWeb
+"Name"
+    Nom
+"name"
+    nom
+"Narrow Your Search"
+"Never Record"
+    Mai enregistrar
+"New"
+"New Search"
+"New Titles, Premieres"
+    Nous títols, estrenes
+"Next"
+    Següent
+"No"
+    No
+"NO DATA"
+    SENSE DADES
+"No matches found"
+"No matching programs found."
+    No hi ha programes coincidents
+"No Public Playlists"
+"No recording schedules have been defined."
+    No s'han definit enregistraments programats
+"No Tracks Available"
+    No hi ha pistes disponibles
+"No. of recordings to keep"
+    Nº d'enregistraments a conservar
+"Non-Music Specials"
+    Especials No-Música
+"Non-Series HDTV"
+    No series en HDTV
+"None"
+    Cap
+"Notes"
+    Notes
+"Number of episodes"
+    Nombre d'episodis
+"Number of shows"
+    Nombre de programes
+"Number of Songs"
+"Number of timeslots"
+    Nombre de blocs horaris
+"Only display favourite channels"
+    Mostrar sols canals preferits
+"Only match commercial-free channels"
+    Sols canals lliures de publicitat
+"Only match HD programs"
+    Sols programes HD
+"Only New Episodes"
+    Sols nous episodis
+"or"
+    o
+"Original Airdate"
+    Emisió original
+"Override"
+"Part $1 of $2"
+    Part $1 de $2
+"Past Month"
+    Mes passat
+"Past Week"
+    Setmana passada
+"Past Year"
+    Any passat
+"People"
+    Gent
+"People Search"
+    Cercar persones
+"Percent of time spent recording"
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
+    Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
+"plot"
+    resúm
+"Possible conflicts with this show"
+    Possibles conflictes amb aquest programa
+"Power"
+    Avançat
+"Power Search"
+    Recerca avançada
+"Prefer Channum"
+    Nº Canal preferit
+"Preferred Input"
+"Presented by"
+    Presentat per
+"Pressure"
+    Pressió
+"preview"
+    vista preliminar
+"Previous"
+    Anterior
+"Previous recordings"
+    Enregistraments anteriors
+"Produced by"
+    Produït per
+"Profile"
+    Perfil
+"profile"
+    perfil
+"Program Detail"
+    Informació del programa
+"Program ID"
+    ID programa
+"Program Listing"
+    Llista de programes
+"Radar"
+    Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
+"Rating"
+    Puntuació
+"rating"
+    puntuació
+"Recently Added Albums"
+"Recently Played Songs"
+"recgroup"
+    grup
+"Record new and expire old"
+    Enregistrar nous i eliminar antics
+"Record This"
+    Enregistrar
+"Recorded"
+"Recorded Programs"
+    Programes enregistrats
+"Recording Group"
+    Grup d'enregistrament
+"Recording Options"
+    Opcions d'enregistrament
+"Recording Priority"
+    Prioritat d'enregistrament
+"Recording Profile"
+    Perfil d'enregistramen
+"Recording Schedules"
+    Programacions
+"Recording Statistics"
+    Estadístiques d'enregistraments
+"recpriority"
+    prioritat
+"recstatus: cancelled"
+    estat: cancelado
+"recstatus: conflict"
+    estat: conflicto
+"recstatus: currentrecording"
+    estat: grabando
+"recstatus: deleted"
+    estat: borrado
+"recstatus: earliershowing"
+    estat: programa anterior
+"recstatus: force_record"
+    estat: forzar grabado
+"recstatus: inactive"
+    estat: inactivo
+"recstatus: latershowing"
+    estat: programa despues
+"recstatus: lowdiskspace"
+    estat: casi sin espacio
+"recstatus: manualoverride"
+    estat: excepción manual
+"recstatus: neverrecord"
+    estat: nunca grabar
+"recstatus: notlisted"
+    estat: sin listar
+"recstatus: previousrecording"
+    estat: anterior grabación
+"recstatus: recorded"
+    estat: grabado
+"recstatus: recording"
+    estat: grabando
+"recstatus: repeat"
+    estat: repetir
+"recstatus: stopped"
+    estat: parado
+"recstatus: toomanyrecordings"
+    estat: demasiadas grabaciones
+"recstatus: tunerbusy"
+    estat: sintonizador ocupado
+"recstatus: unknown"
+    estat: desconocido
+"recstatus: willrecord"
+    estat: s'enregistrarà
+"rectype-long: always"
+    rectype-long: sempres
+"rectype-long: channel"
+    rectype-long: canal
+"rectype-long: daily"
+    rectype-long: diari
+"rectype-long: dontrec"
+    rectype-long: no enregistrar
+"rectype-long: finddaily"
+    rectype-long: cercar diari
+"rectype-long: findone"
+    rectype-long: cercar una
+"rectype-long: findweekly"
+    rectype-long: cercar setmanal
+"rectype-long: once"
+    rectype-long: un cop
+"rectype-long: override"
+    rectype-long: excepció
+"rectype-long: weekly"
+    rectype-long: setmanal
+"rectype: always"
+    rectype: sempre
+"rectype: channel"
+    rectype: canal
+"rectype: daily"
+    rectype: diariament
+"rectype: dontrec"
+    rectype: no enregistrar
+"rectype: finddaily"
+    rectype: cercar diari
+"rectype: findone"
+    rectype: cercar un
+"rectype: findweekly"
+    rectype: cercar setmanal
+"rectype: once"
+    rectype: un cop
+"rectype: override"
+    rectype: excepció
+"rectype: weekly"
+    rectype: setmanal
+"regex: articles"
+    El|L(?:as?|os)
+"Remove Item from Playlist"
+"Repeat"
+    Repetir
+"Reset"
+    Reiniciar
+"Return to Statistics Page"
+"Reverse Order"
+    Ordre invers
+"Rows to show between timeslot info"
+    Fileres a mostrar entre informació
+"Saturday"
+    Dissabte
+"Save"
+    Desar
+"Save or Rename the Current Playlist"
+"Save Schedule"
+    Desar programació
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
+"Schedule"
+    Programar
+"Schedule Manually"
+    Programar manualment
+"Schedule normally."
+    Programar normalment
+"Schedule Options"
+    Opcions de programació
+"Schedule Override"
+    Excepcions de programació
+"Schedule via $1."
+    Programar via $1
+"Scheduled"
+    Programat
+"Scheduled Popup"
+    Popup Programat
+"Science Fiction Movies"
+    Pel·lícules ciència ficció
+"Search"
+    Cercar
+"Search for:  $1"
+    Cercar: $1
+"Search Music"
+"Search Phrase"
+    Cercar frase
+"Search Results"
+    Resultats recerca
+"Search the Music Database"
+"Search Type"
+    Cercar tipus
+"Searches"
+    Recerques
+"Server Statistics"
+"Set Host"
+    Ajustar Host
+"Settings"
+    Ajustos
+"settings"
+    ajustos
+"Settings Table"
+    Taula ajustos
+"Settings Table Editor"
+    Editor taula d'ajustes
+"settings: overview"
+    Ajustos: general
+"Show"
+    Programa
+"Show descriptions on new line"
+    Mostrar descripcions en una nova línia
+"Show group"
+    Mostrar grup
+"Show pixmaps"
+    Mostrar gràfics
+"Show recordings"
+    Mostrar enregistraments
+"Showing all programs from the $1 group."
+    Mostrant tots els programes del grup $1
+"Showing all programs."
+    Mostrant tots els programes
+"Shows"
+"SI Units?"
+    ¿Unitats SI?
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
+"sourceid"
+    id origen
+"Special Searches"
+    Recerques especials
+"Star character"
+    Personatge estrella
+"Start Date"
+    Data inici
+"Start Early"
+    Començar abans
+"Start Time"
+    Hora inici
+"Statistics"
+    Estadístiques
+"Stats"
+"Status"
+    Estat
+"Status Bar"
+    Barra d'estat
+"Stereo"
+    Estéreo
+"Streaming Quality"
+"Sub and Desc (Empty matches)"
+    Sub i Desc (Coincidències buides)
+"Submit Search"
+"subtitle"
+    subtitol
+"Subtitle"
+    Subtitol
+"Subtitle and Description"
+    Subtitol y descripció
+"Subtitled"
+    Subtitolat
+"Sunday"
+    Diumenge
+"The requested recording schedule has been deleted."
+    La programació sol·licitat ha estat eliminada.
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Thursday"
+    Dijous
+"Time"
+    Hora
+"Time Stretch Default"
+    Ajust de compressió de temps predeterminat
+"Timeslot size"
+    Mida del bloc de temps
+"title"
+    títol
+"Title"
+    Títol
+"Title Search"
+    Cercar títol
+"Today"
+    Avui
+"Tomorrow"
+    Demà
+"Too Many"
+"Top"
+    Amunt
+"Top $1"
+    Primers $1
+"Top Played Songs"
+"Total Length"
+"Total Recorded"
+"Total Running Time"
+"Total Time"
+    Temps Total
+"Total Time:  %s"
+"Track #%s from the album '%s'"
+"Track Name"
+    Nom de la pista
+"transcoder"
+    recodificador
+"Transcoder"
+    Recodificador
+"Tuesday"
+    Dimarts
+"Tuner Busy"
+"TV"
+    TV
+"TV functions, including recorded programs."
+    Funcions TV, incloent programes enregistrats
+"TV.com"
+"type"
+    tipus
+"Type"
+    Tipus
+"Unfiltered"
+    Sense filtrar
+"Unknown"
+    Desconegut
+"Unknown Program."
+    Programa desconegut
+"Unknown Recording Schedule."
+    Programació desconeguda
+"Unreachable"
+    Inabastable
+"Upcoming Recordings"
+    Propers enregistraments
+"Update"
+    Actualitzar
+"Update Recording Settings"
+    Actualitzar ajustos d'enregistrament
+"Use callsign"
+    Usar nom del canal
+"Use date/time"
+    Usar data/hora
+"Use myth:// URI for Windows"
+"useonairguide"
+    usar guiaa emesa
+"UV Extreme"
+    UV Extremo
+"UV High"
+    UV Alt
+"UV Index"
+    Index UV
+"UV Minimal"
+    UV mínim
+"UV Moderate"
+    UV moderat
+"Value"
+    Valor
+"Video"
+    Vídeo
+"videofilters"
+    filtres vídeo
+"Videos"
+    Vídeos
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
+"Visibility"
+    Visibilitat
+"visible"
+    visible
+"Visit $1"
+    Visite $1
+"Weather"
+    Tiempo
+"Wednesday"
+    Dimecres
+"welcome: backend_log"
+    benvingut: log backend
+"welcome: music"
+    benvingut: música
+"welcome: settings"
+    benvingut: ajustos
+"welcome: stats"
+    benvingut: estadístiques
+"welcome: status"
+    benvingut: estat
+"welcome: tv"
+    benvingut: tv
+"welcome: video"
+    benvingut: vídeo
+"welcome: weather"
+    benvingut: el temps
+"What else is on at this time?"
+    Què més hi ha a aquest hora?
+"Wind"
+    Vient
+"Wind Chill"
+    Sensació
+"Written by"
+    Escrit por
+"xmltvid"
+"Year"
+"year"
+    any
+"Yes"
+    Si
+"Yesterday"
+    Ahir
