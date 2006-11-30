@@ -78,10 +78,10 @@ the following (insert the approprate release as you choose):
 3.0 Experts
 ===========
 
-If you are not an expert, please skip to section 3.1.  Experts, the following
+If you are not an expert, please skip to section 4.0.  Experts, the following
 commands should be enough for you to figure out what's going on:
 
-    cp /path/to/mythweb/*.* /var/www/html/
+    cp mythplugins/mythweb/*.* /var/www/html/
 
     vi /var/www/html/mythweb.conf.apache
 
