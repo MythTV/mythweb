@@ -148,9 +148,10 @@ MythWeb's data directory.  This should be as simple as:
     chgrp -R apache /wwww/htdocs/data
     chmod g+rw /wwww/htdocs/data
 
-Please note that different distributions use a different userid for apache.  For
-instance, Ubuntu uses www-data.  Please be aware that you may need to consult
-your httpd.conf file to verify which user/group apache is set to run as.
+Please note that different distributions use a different userid for apache
+(e.g. Ubuntu uses www-data).  Please be aware that you may need to consult
+apache's httpd.conf (often found at /etc/httpd/httpd.conf) file to verify which
+user/group apache is set to run as.
 
 As a last resort, you can make the directory world-writable:
 
