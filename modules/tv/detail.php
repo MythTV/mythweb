@@ -188,15 +188,12 @@
             $schedule->transcoder = get_backend_setting('DefaultTranscoder');
     // recpriority
         if (!isset($schedule->recpriority)) {
-            $result = mysql_query('SELECT recpriority from channel where chanid='.escape($program->chanid));
-            list($schedule->recpriority) = mysql_fetch_row($result);
-            mysql_free_result($result);
+            $schedule->recpriority = $db->query_col('SELECT recpriority from channel where chanid=?',
+                                                    $program->chanid);
         }
     // autoexpire
         if (!isset($schedule->autoexpire)) {
-            $result = mysql_query("SELECT data from settings where value='AutoExpireDefault'");
-            list($schedule->autoexpire) = mysql_fetch_row($result);
-            mysql_free_result($result);
+            $schedule->transcoder = get_backend_setting('AutoExpireDefault');
         }
     }
 
