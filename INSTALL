@@ -180,13 +180,16 @@ Please do not use Lighttpd unless you know what you are doing.
 5.0 Apache
 ==========
 
-MythWeb relies on two apache modules that are generally either built in or
+MythWeb relies on four apache modules that are generally either built in or
 enabled by default:
 
+    mod_deflate
     mod_env
+    mod_headers
     mod_rewrite
 
-If you compiled apache yourself, please make sure that these are enabled.
+If you compiled apache yourself, or are experiencing server trouble loading
+MythWeb, please make sure that these are enabled.
 
 =================
 5.1 Apache Config
