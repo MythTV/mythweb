@@ -192,9 +192,13 @@
                                                     $program->chanid);
         }
     // autoexpire
-        if (!isset($schedule->autoexpire)) {
+        if (!isset($schedule->autoexpire))
             $schedule->transcoder = get_backend_setting('AutoExpireDefault');
-        }
+    // start early / end late
+        if (!isset($schedule->startoffset))
+            $schedule->startoffset = get_backend_setting('DefaultStartOffset');
+        if (!isset($schedule->endoffset))
+            $schedule->endoffset = get_backend_setting('DefaultEndOffset');
     }
 
 // Load the channel
