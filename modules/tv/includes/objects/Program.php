@@ -340,6 +340,35 @@ class Program {
     }
 
 /**
+ * Get the last modification date of the pixmap that corresponds to this
+ * recording.
+/**/
+    function pixmap_last_mod() {
+        $mod = backend_command('QUERY_PIXMAP_LASTMODIFIED'
+                               .backend_sep
+                               .$this->backend_row()
+                              );
+        if ($mod == 'BAD')
+            return 0;
+        return strtotime($mod);
+    }
+
+/**
+ * Generate a new preview pixmap for this recording.
+/**/
+    function generate_pixmap() {
+        $ret = backend_command('QUERY_GENPIXMAP'
+                               .backend_sep
+                               .$this->backend_row()
+                              );
+        if ($ret == 'BAD') {
+            // echo "Unknown error generating pixmap for $this->chanid:$this->starttime\n";
+            return 0;
+        }
+        return 1;
+    }
+
+/**
  * Gets a preview image of the requested show
  *
  * @todo, this should get put into a "recording" class or something like that.
@@ -349,88 +378,68 @@ class Program {
         $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
         $host     = $GLOBALS['Master_Host'];
         $port     = $GLOBALS['Master_Port'];
-        $cmd = array('QUERY_PIXMAP_LASTMODIFIED',
-                     $this->backend_row());
-        $lastmodified = strtotime(backend_command($cmd));
-    // Delete outdated images, but not until the show has finished recording
-        if (is_file($pngpath) && $lastmodified < $this->lastmodified && $this->lastmodified >= $this->endtime) {
-            unlink($pngpath);
-            clearstatcache();
+    // Make sure the local path exists
+        $path = '';
+        foreach (split('/+', dirname($pngpath)) as $dir) {
+            $path .= $path ? '/' . $dir : $dir;
+            if(!is_dir($path) && !mkdir($path, 0755))
+                trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
         }
-    // Need a new pixmap?
-        if (!is_file($pngpath)) {
-            if (substr($fileurl, 0, 7) != 'myth://') {
-                $generate_pixmap = (is_file("$fileurl.png") && is_readable("$fileurl.png")) ? false : true;
-                $path = $fileurl;
+    // Find out when the pixmap was last modified
+        $png_mod = $this->pixmap_last_mod();
+    // Regenerate the pixmap if the recording has since been updated
+        if ($png_mod < $this->lastmodified) {
+            $png_mod = $this->lastmodified;
+            if (!$this->generate_pixmap()) {
+                return null;
             }
-            else {
-                preg_match('#myth://(.+?):(\d+)/(.+)$#', $fileurl, $matches);
-                list($matches, $host, $port, $path) = $matches;
-                $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, "$fileurl.png"),
-                                                              $datasocket,
-                                                              $host, $port));
-                $generate_pixmap = (0 == $recs[3]) ? true : false;
+        }
+    // Is our target file already up to date?
+        if (is_file($pngpath)) {
+            $mtime = filemtime($pngpath);
+            if ($mtime >= $png_mod) {
+                return 1;
             }
-
-        // Regenerate backend pixmap if outdated
-            $generate_pixmap = ($lastmodified < $this->lastmodified) ? true : false;
-
-            if ($generate_pixmap) {
-                if ($datasocket) {
-                    fclose($datasocket);
-                    $datasocket = NULL;
-                }
-
-            // Replace QUERY_PIXMAP_LASTMODIFIED with QUERY_GENPIXMAP
-                $cmd[0] = 'QUERY_GENPIXMAP';
-
-                $ret = backend_command($cmd);
-
-                $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, "$fileurl.png"),
-                                                              $datasocket,
-                                                              $host, $port));
-            }
-
-            if (substr($fileurl, 0, 7) != 'myth://' && is_file("$fileurl.png") && is_readable("$fileurl.png")) {
-                copy("$fileurl.png", $pngpath);
-            }
-            elseif ($datasocket && $recs[3]) {
-                backend_command('ANN Playback '.hostname.' 0',
-                                $host, $port);
-                backend_command(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
-                                $host, $port);
-
-                $length = $recs[3];
-                $data   = '';
-                while ($length > 0) {
-                    $size = min(8192, $length);
-                    $data = fread($datasocket, $size);
-                    if (strlen($data) < 1)
-                        break; // EOF
-                    $pngdata .= $data;
-                    $length -= strlen($data);
-                }
-
-            // Make sure the local path exists
-                $path = '';
-                foreach (split('/+', dirname($pngpath)) as $dir) {
-                    $path .= $path ? '/' . $dir : $dir;
-                    if(!is_dir($path) && !mkdir($path, 0755))
-                        trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
-                }
-
-                $pngfile = fopen($pngpath, 'wb');
-                if ($pngfile) {
-                    fwrite($pngfile, $pngdata, $recs[3]);
-                    fclose($pngfile);
-                }
-            }
-
-            if ($datasocket) {
-                #backend_command2('DONE', $datasocket, $host, $port);
-                fclose($datasocket);
-                $datasocket = NULL;
-            }
+        }
+    // Local path to the png that we can just copy from?
+    /** This probably won't work anymore now that the backend always sends
+     *  myth:// URIs.  Need to update the Program/Recording object to detect
+     *  file locations and storage groups so we can get local_path working */
+        if (substr($fileurl, 0, 7) != 'myth://' && is_file("$fileurl.png") && is_readable("$fileurl.png")) {
+            copy("$fileurl.png", $pngpath);
+            return 2;
+        }
+    // Transfer the pixmap from the backend
+        $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, "$fileurl.png"),
+                                                      $datasocket,
+                                                      $host, $port));
+    // Error?
+        if ($recs[0] != 'OK') {
+            // echo "Unknown error starting transfer of $fileurl.png\n";
+            return null;
+        }
+    // Open the output file for writing, and make sure it's in binmode
+        $pngfile = fopen($pngpath, 'wb');
+    // Tell the backend to send the data
+        backend_command('ANN Playback '.hostname.' 0',
+                        $host, $port);
+        backend_command(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
+                        $host, $port);
+    // Read the data from the socket and save it into the requested file.
+    // We have to loop here because sometimes the backend can't send data fast
+    // enough, even if we're dealing with small files.
+        $length = $recs[3];
+        while ($length > 0) {
+            $data = fread($datasocket, min(8192, $length));
+            if (strlen($data) < 1)
+                break; // EOF
+            fwrite($pngfile, $data);
+            $length -= strlen($data);
+        }
+    // Close any file pointers that were opened here
+        fclose($pngfile);
+        if ($datasocket) {
+            fclose($datasocket);
         }
     }
 
