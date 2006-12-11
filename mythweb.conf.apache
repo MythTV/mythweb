@@ -148,12 +148,15 @@
     # (image/vnd.microsoft.icon)--which most browsers won't recognize.
         AddType image/x-icon        .ico
 
+    # This is helpful for mod_deflate -- it prevents proxies from changing
+    # the user agent to/from this server.
+        Header append Vary User-Agent env=!dont-vary
+
     # Enable mod_deflate.  This works MUCH more reliably than PHP's built-in
     # gzip/Zlib compressors.
         BrowserMatch ^Mozilla/4 gzip-only-text/html
         BrowserMatch ^Mozilla/4\.0[678] no-gzip
         BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-        Header append Vary User-Agent env=!dont-vary
 
         AddOutputFilterByType DEFLATE text/html
         AddOutputFilterByType DEFLATE text/css
