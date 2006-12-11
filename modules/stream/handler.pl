@@ -89,6 +89,9 @@
         exit;
     }
 
+# Binmode, in case someone is running this from Windows.
+    binmode DATA;
+
 # Requested a range?
     my $start      = 0;
     my $end        = $size;
