@@ -70,7 +70,7 @@ A: First, make sure that you have PHP enabled in your webserver settings.  Once
 
 Q: I want to access mythweb from the rest of the internet. How do I make it
     more secure?
-A: The included mythweb.conf.pache file contains commented-out apache controls
+A: The included mythweb.conf.apache file contains commented-out apache controls
     for enabling htdigest password authentication.  If you uncomment these, and
     create /var/www/htdigest (see `man htdigest` for details on how to do this),
     you will have some rudimentary password protection.  Combine this with

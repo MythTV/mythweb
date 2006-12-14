@@ -35,7 +35,7 @@ post-install questions/concerns.
 1.0 Requirements
 ================
 
-First of all, you need mythTV, which you should be able to track down at:
+First of all, you need MythTV, which you should be able to track down at:
 
     http://www.mythtv.org
 
@@ -81,11 +81,11 @@ the following (insert the approprate release as you choose):
 If you are not an expert, please skip to section 4.0.  Experts, the following
 commands should be enough for you to figure out what's going on:
 
-    cp mythplugins/mythweb/*.* /var/www/html/
+    cp -r mythplugins/mythweb/*.* /var/www/html/
 
     vi /var/www/html/mythweb.conf.apache
 
-    mv /var/www/html/mythweb.conf.apache /etc/httpd/conf.d/
+    mv /var/www/html/mythweb.conf.apache /etc/httpd/conf.d/mythweb.conf
 
     /etc/init.d/httpd restart
 
@@ -231,7 +231,7 @@ Other distributions might use something like:
 You will have to figure out the correct path on your own, but once you do, move
 the MythWeb config file into place like so:
 
-    mv mythweb.conf.apache /etc/apache2/conf.d/
+    mv mythweb.conf.apache /etc/apache2/conf.d/mythweb.conf
 
 ============
 6.0 Lighttpd
