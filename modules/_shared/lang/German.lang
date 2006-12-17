@@ -153,6 +153,7 @@
     Sender &quot;Gehe zu&quot;
 "Channel Detail"
     Details zum Sender
+"Channel Info"
 "Channels"
 "channum"
     Sender
@@ -167,10 +168,6 @@
     Optionen
 "commfree"
     Werbefrei
-"Configure Channels"
-    Sender einrichten
-"Configure Keybindings"
-    Tastenbelegung konfigurieren
 "Conflict"
 "Conflicts"
     Überschneidungen
@@ -358,6 +355,7 @@
 "Jump To"
     Gehe zu
 "JumpPoints Editor"
+"Key Bindings"
 "Key bindings"
     Tastenbelegung
 "Keybindings Editor"
@@ -392,6 +390,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
     Logs
 "Low"
@@ -420,25 +419,19 @@
     Musik
 "Music Specials"
     Musiksendungen
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic
-"MythTV channel info"
-    MythTV Senderinformationen
-"MythTV global defaults"
-"MythTV key bindings"
-    MythTV Tastaturbelegung
-"MythTV settings table"
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
 "MythVideo Dir"
 "MythVideo on the web."
     MythVideo
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
-"MythWeb session settings"
-    MythWeb Session Einstellungen
-"MythWeb Session Settings"
-    MythWeb Session Einstellungen
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -530,6 +523,7 @@
 "Power Search"
     Erweiterte Suche
 "Prefer Channum"
+"Preferences"
 "Preferred Input"
 "Presented by"
     Präsentiert von
@@ -731,8 +725,7 @@
     Einstellungen
 "Settings Table"
 "Settings Table Editor"
-"settings: overview"
-    Einstellungen: Übersicht
+"settings: notice"
 "Show"
     Sendung
 "Show descriptions on new line"

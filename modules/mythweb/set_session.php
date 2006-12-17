@@ -56,14 +56,8 @@
 
     // Skin change requires a redirect because certain constants have already been defined.
         if ($redirect)
-            redirect_browser(root.module.'/session');
+            redirect_browser(root.module.'/'.$Path[1].'/'.$Path[2]);
     }
-
-// Load the class for this page
-    require_once tmpl_dir.'session.php';
-
-// Exit
-    exit;
 
 /**
  * Displays a <select> of the available templates

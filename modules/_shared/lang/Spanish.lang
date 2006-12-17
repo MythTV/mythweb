@@ -162,6 +162,7 @@
     Canal &quot;Saltar a&quot;
 "Channel Detail"
     Detalle Canal
+"Channel Info"
 "Channels"
 "channum"
     nºcanal
@@ -176,10 +177,6 @@
     Comandos
 "commfree"
     sin anuncios
-"Configure Channels"
-    Configurar canales
-"Configure Keybindings"
-    Configurar Teclas
 "Conflict"
 "Conflicts"
     Conflictos
@@ -374,6 +371,7 @@
     Saltar a
 "JumpPoints Editor"
     Editor de Puntos de Salto
+"Key Bindings"
 "Key bindings"
     Teclas
 "Keybindings Editor"
@@ -411,6 +409,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
 "Low"
     Bajo
@@ -441,16 +440,10 @@
     Música
 "Music Specials"
     Especiales Música
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic en el web
-"MythTV channel info"
-    Info Canal MythTV
-"MythTV global defaults"
-    MythTV globales por defecto
-"MythTV key bindings"
-    Vínculos Teclas MythTV
-"MythTV settings table"
-    Tabla ajustes MythTV
 "MythTV Status"
     Estado MythTV
 "MythVideo Artwork Dir"
@@ -459,12 +452,10 @@
     Dir MythVideo
 "MythVideo on the web."
     MythVideo en el web
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb globales por defecto
-"MythWeb session settings"
-    Ajustes sesiones MythWeb
-"MythWeb Session Settings"
-    Ajustes sesiones MythWeb
 "MythWeb Skin"
     Piel MythWeb
 "MythWeb Template"
@@ -568,6 +559,7 @@
     Búsqueda avanzada
 "Prefer Channum"
     Nº Canal Preferido
+"Preferences"
 "Preferred Input"
 "Presented by"
     Presentado por
@@ -774,8 +766,7 @@
     Tabla Ajustes
 "Settings Table Editor"
     Editor Tabla Ajustes
-"settings: overview"
-    Ajustes: general
+"settings: notice"
 "Show"
     Programa
 "Show descriptions on new line"

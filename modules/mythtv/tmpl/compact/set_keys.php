@@ -12,19 +12,25 @@
  * @subpackage  Settings
  *
 /**/
-
-
-// Set the desired page title
-    $page_title = 'MythWeb - '.t('Configure Keybindings');
-
-// Print the page header
-    require 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
 ?>
-<table align="center" width="40%" cellspacing="2" cellpadding="2">
+<div class="error" style="padding: 5px">
+    <ul>
+        <li>This settings page has absolutely no error checking yet. You can easily
+            screw things up if you're not careful.</li>
+        <li>JumpPoints are globally active.  If you set a keybinding for a JumpPoint
+            that is the same as one defined in the Keybindings section, the
+            JumpPoint will override the keybinding.</li>
+        <li>You probably want to use function keys or keys combined with a modifier
+            (alt, control) for JumpPoints, otherwise you may run into some problems.</li>
+        <li>Changes to keybindings/jumppoints requires a restart of the affected
+            mythfrontend for now.  This will change in a future release.</li>
+    </ul>
+</div>
+
+<table align="center" cellspacing="2" cellpadding="2">
 <tr>
     <td width="50%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <form class="form" method="get" action="<?php echo root ?>settings/keys">
+        <form class="form" method="get" action="<?php echo form_action ?>">
         <table width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td nowrap align="center"><?php echo t('Edit keybindings on') ?>:&nbsp;&nbsp;</td>
@@ -45,21 +51,7 @@
 </tr>
 </table>
 
-<div class="error" style="width: 80%; margin: 1em auto; padding: 5px">
-    <ul>
-        <li>This settings page has absolutely no error checking yet. You can easily
-            screw things up if you're not careful.</li>
-        <li>JumpPoints are globally active.  If you set a keybinding for a JumpPoint
-            that is the same as one defined in the Keybindings section, the
-            JumpPoint will override the keybinding.</li>
-        <li>You probably want to use function keys or keys combined with a modifier
-            (alt, control) for JumpPoints, otherwise you may run into some problems.</li>
-        <li>Changes to keybindings/jumppoints requires a restart of the affected
-            mythfrontend for now.  This will change in a future release.</li>
-    </ul>
-</div>
-
-<form class="form" method="post" action="<?php echo root ?>settings/keys">
+<form class="form" method="post" action="<?php echo form_action ?>?host=<?php echo rawurlencode($_GET['host']) ?>">
 
 <table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
@@ -111,8 +103,4 @@
 </p>
 
 </form>
-<?php
-
-// Print the page footer
-    require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
 

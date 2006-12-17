@@ -133,6 +133,7 @@
 "Channel &quot;Jump to&quot;"
     Cha&icirc;ne &quot;Aller &agrave;&quot;
 "Channel Detail"
+"Channel Info"
 "Channels"
 "channum"
     Chaine
@@ -145,8 +146,6 @@
 "Commands"
     Commandes
 "commfree"
-"Configure Channels"
-"Configure Keybindings"
 "Conflict"
 "Conflicts"
     entre en conflit
@@ -304,6 +303,7 @@
 "Jump To"
     Aller &agrave;
 "JumpPoints Editor"
+"Key Bindings"
 "Key bindings"
 "Keybindings Editor"
 "Keyword"
@@ -335,6 +335,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
 "Low"
     faible
@@ -355,20 +356,18 @@
 "Movies, Stinkers (2 Stars or less)"
 "Music"
 "Music Specials"
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic sur le Web
-"MythTV channel info"
-"MythTV global defaults"
-"MythTV key bindings"
-"MythTV settings table"
 "MythTV Status"
 "MythVideo Artwork Dir"
 "MythVideo Dir"
 "MythVideo on the web."
     Mythvideo sur le Web
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
-"MythWeb session settings"
-"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -445,6 +444,7 @@
 "Power"
 "Power Search"
 "Prefer Channum"
+"Preferences"
 "Preferred Input"
 "Presented by"
     Présenté par
@@ -630,8 +630,7 @@
 "settings"
 "Settings Table"
 "Settings Table Editor"
-"settings: overview"
-    ceci est la page d&acute;index pour les param&eacute;tres de configuration...<p>C&acute;est incomplet et pourrait &ecirc;tre mieux format&eacute;.  Pour le moment vous pouvez choisir parmis:
+"settings: notice"
 "Show"
     Diffusion
 "Show descriptions on new line"

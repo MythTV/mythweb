@@ -152,6 +152,7 @@
     チャンネル &quot;移動&quot;
 "Channel Detail"
     チャンネル詳細
+"Channel Info"
 "Channels"
 "channum"
     チャンネル
@@ -166,10 +167,6 @@
     コマンド
 "commfree"
     CMカット
-"Configure Channels"
-    チャンネル設定
-"Configure Keybindings"
-    キーバンド設定
 "Conflict"
 "Conflicts"
     衝突
@@ -359,6 +356,7 @@
     移動
 "JumpPoints Editor"
     ジャンプポイントエディター
+"Key Bindings"
 "Key bindings"
     キーバインド
 "Keybindings Editor"
@@ -396,6 +394,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
     ログ
 "Low"
@@ -424,16 +423,10 @@
 "Music"
     ミュージック
 "Music Specials"
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic オンザウェブ
-"MythTV channel info"
-    MythTVチャンネル情報
-"MythTV global defaults"
-    MythTV全体設定
-"MythTV key bindings"
-    MythTVキーバインド
-"MythTV settings table"
-    MythTV settingsテーブル
 "MythTV Status"
     MythTVステータス
 "MythVideo Artwork Dir"
@@ -442,12 +435,10 @@
     MythVideoディレクトリ
 "MythVideo on the web."
     MythVideo オンザウェブ
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb全体設定
-"MythWeb session settings"
-    MythWebセッション設定
-"MythWeb Session Settings"
-    MythWebセッションセッティング
 "MythWeb Skin"
     MythWebスキン
 "MythWeb Template"
@@ -546,6 +537,7 @@
     パワーサーチ
 "Prefer Channum"
     チャンネル番号を優先
+"Preferences"
 "Preferred Input"
 "Presented by"
     提供
@@ -749,8 +741,7 @@
     Settings テーブル
 "Settings Table Editor"
     Settings テーブルエディタ
-"settings: overview"
-    設定概要
+"settings: notice"
 "Show"
     番組
 "Show descriptions on new line"

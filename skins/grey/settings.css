@@ -1,0 +1,110 @@
+    #settings {
+        margin-top:     1em;
+    }
+
+/* Overview of the settings */
+
+    #settings ._overview {
+        text-align:     center;
+        width:          15em;
+    }
+    #settings ._title {
+        margin:         .5em;
+        font-size:      125%;
+    }
+
+/* The list of modules. */
+
+    #settings ._modules {
+        white-space:    nowrap;
+    }
+    #settings ._modules ul {
+        margin:             1em;
+        list-style-type:    none;
+        padding:            0px;
+    }
+    #settings ._modules li {
+    }
+    #settings ._modules a {
+        display:            block;
+        padding:            .2em 1em;
+        background-color:   #444;
+        border:             1px dotted #999;
+        margin-top:         1px;
+        margin-bottom:      11px;
+    }
+    #settings ._modules a:hover, #settings ._modules a._selected {
+        background-color:   #161616;
+        margin-top:         -1px;
+        margin-bottom:      10px;
+        border-width:       2px;
+        border-color:       #bbb;
+    }
+    #settings ._modules a._selected {
+        border-style:       solid;
+    }
+
+/* The list of sections for the current module. Normally displayed as tabs. */
+
+    #settings ._sections {
+        padding:        0px 1em;
+        border-bottom:  2px solid #999;
+        height:         2.25em;
+        vertical-align: bottom;
+    }
+
+    #settings ._sections ul {
+        display:        inline;
+        list-style:     none;
+        margin:         0;
+        padding:        0;
+    }
+    #settings ._sections a {
+        float:              left;
+        color:              #bbc;
+        background-color:   #444;
+        padding:            2px 6px;
+        margin:             3px 5px 0px 0px;
+        border:             2px solid #999;
+        border-bottom:      0px;
+        white-space:        nowrap;
+        -moz-border-radius-topleft:     8px;
+        -moz-border-radius-topright:    8px;
+    }
+    #settings ._sections a:hover, #settings ._sections a._selected {
+        color:              white;
+        background-color:   #161616;
+        border-color:       #bbb;
+    }
+    #settings ._sections a._selected {
+        border-bottom:      2px solid #161616;
+        margin-bottom:      -2px;
+    }
+
+    #settings ._sections a.active {
+        color:              white;
+        font-weight:        bold;
+        background-color:   #161616;
+        border:             2px solid #eee;
+        border-bottom:      2px solid #161616;
+        margin-bottom:      -2px;
+    }
+
+/* A notification/warning */
+
+    #settings ._notice {
+        margin:             1em;
+        padding:            .5em;
+        text-align:         center;
+        color:              #fbb;
+        background-color:   #360000;
+        border:             1px solid #F03030;
+    }
+
+/* The content of the settings that are being edited */
+
+    #settings ._content {
+        background-color:   #161616;
+        border:             2px solid #999;
+        border-top:         none;
+    }

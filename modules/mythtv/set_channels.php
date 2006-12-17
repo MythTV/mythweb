@@ -81,9 +81,3 @@
     }
     $sh->finish();
 
-// Load the class for this page
-    require_once tmpl_dir.'channels.php';
-
-// Exit
-    exit;
-

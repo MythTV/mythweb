@@ -128,6 +128,7 @@
 "Channel &quot;Jump to&quot;"
     Kanal &quot;Skoči na&quot;
 "Channel Detail"
+"Channel Info"
 "Channels"
 "channum"
     številka kanala
@@ -140,8 +141,6 @@
 "Commands"
     Ukazi
 "commfree"
-"Configure Channels"
-"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Konflikti
@@ -298,6 +297,7 @@
 "Jump To"
     Skoči na
 "JumpPoints Editor"
+"Key Bindings"
 "Key bindings"
 "Keybindings Editor"
 "Keyword"
@@ -329,6 +329,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
 "Low"
     Nizka
@@ -349,20 +350,18 @@
 "Movies, Stinkers (2 Stars or less)"
 "Music"
 "Music Specials"
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic na spletu
-"MythTV channel info"
-"MythTV global defaults"
-"MythTV key bindings"
-"MythTV settings table"
 "MythTV Status"
 "MythVideo Artwork Dir"
 "MythVideo Dir"
 "MythVideo on the web."
     MythVideo na spletu
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
-"MythWeb session settings"
-"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -438,6 +437,7 @@
 "Power"
 "Power Search"
 "Prefer Channum"
+"Preferences"
 "Preferred Input"
 "Presented by"
     Predstavlja
@@ -622,8 +622,7 @@
 "settings"
 "Settings Table"
 "Settings Table Editor"
-"settings: overview"
-    To je index stran nastavitev...<p>Ni še končana, eventuelno pa bo tudi lepše zgledala.  Trenutno si lahko izberete naslednje:
+"settings: notice"
 "Show"
     Oddaja
 "Show descriptions on new line"

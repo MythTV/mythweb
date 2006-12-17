@@ -12,19 +12,11 @@
  * @subpackage  Settings
  *
 /**/
-
-
-// Set the desired page title
-    $page_title = 'MythWeb - '.t('Settings Table');
-
-// Print the page header
-    require 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
 ?>
 <table align="center" width="40%" cellspacing="2" cellpadding="2">
 <tr>
     <td width="50%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <form class="form" method="get" action="<?php echo root ?>settings/settings">
+        <form class="form" method="get" action="<?php echo form_action ?>">
         <table width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td nowrap align="center"><?php echo t('Edit settings for') ?>:&nbsp;&nbsp;</td>
@@ -49,13 +41,7 @@
 </tr>
 </table>
 
-<p class="error" style="width: 32em; margin: 1em auto; padding: 5px; text-align: center">
-    This settings page has very little error checking yet. You can easily<br />
-    screw things up if you're not careful, and short of restoring the<br />
-    database from a backup, there is <b>no</b> way to undo your changes.
-</p>
-
-<form class="form" method="post" action="<?php echo root ?>settings/settings?host=<?php echo rawurlencode($_GET['host']) ?>">
+<form class="form" method="post" action="<?php echo form_action ?>?host=<?php echo rawurlencode($_GET['host']) ?>">
 
 <table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
 <tr class="menu large" align="center">
@@ -80,8 +66,4 @@
 </p>
 
 </form>
-<?php
-
-// Print the page footer
-    require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
 

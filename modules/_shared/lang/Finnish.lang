@@ -150,6 +150,7 @@
     Kanavahyppy
 "Channel Detail"
     Kanavatiedot
+"Channel Info"
 "Channels"
 "channum"
     Kanava
@@ -164,10 +165,6 @@
     Komennot
 "commfree"
     Mainosvapaa
-"Configure Channels"
-    Aseta Kanavat
-"Configure Keybindings"
-    Aseta Näppäinkomennot
 "Conflict"
 "Conflicts"
     Ristiriidat
@@ -352,6 +349,7 @@
     Hyppää
 "JumpPoints Editor"
     Hyppäämisasetukset
+"Key Bindings"
 "Key bindings"
     Näppäinkomennot
 "Keybindings Editor"
@@ -386,6 +384,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
     Lokit
 "Low"
@@ -409,25 +408,19 @@
 "Music"
     Musiikki
 "Music Specials"
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic Netissä.
-"MythTV channel info"
-    MythTV kanavatiedot
-"MythTV global defaults"
-"MythTV key bindings"
-    MythTV komennot
-"MythTV settings table"
 "MythTV Status"
     MythTV Tila
 "MythVideo Artwork Dir"
 "MythVideo Dir"
 "MythVideo on the web."
     MythVideo Netissä.
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
-"MythWeb session settings"
-    MythWeb istuntoasetukset
-"MythWeb Session Settings"
-    MythWeb Istuntoasetukset
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -514,6 +507,7 @@
 "Power Search"
     Tehokas Haku
 "Prefer Channum"
+"Preferences"
 "Preferred Input"
 "Presented by"
     Esittää
@@ -713,8 +707,7 @@
     Asetukset
 "Settings Table"
 "Settings Table Editor"
-"settings: overview"
-    MythWeb:in asetussivu...<p>Nykyisellään keskeneräinen. Valitse seuraavista:
+"settings: notice"
 "Show"
     Ohjelma
 "Show descriptions on new line"

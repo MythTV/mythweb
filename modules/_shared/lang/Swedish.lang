@@ -163,6 +163,7 @@
     Kanal &quot;Gå till&quot;
 "Channel Detail"
     Kanaldetaljer
+"Channel Info"
 "Channels"
 "channum"
     kanalnummer
@@ -177,10 +178,6 @@
     Kommando
 "commfree"
     reklamfri
-"Configure Channels"
-    Konfigurera kanaler
-"Configure Keybindings"
-    Konfigurera knappar
 "Conflict"
 "Conflicts"
     Konflikter
@@ -376,6 +373,7 @@
     Gå till
 "JumpPoints Editor"
     Redigera hoppmarkeringar
+"Key Bindings"
 "Key bindings"
     Knappbindningar
 "Keybindings Editor"
@@ -413,6 +411,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
     Logg
 "Low"
@@ -444,16 +443,10 @@
     Musik
 "Music Specials"
     Musikspecialer
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic på webben
-"MythTV channel info"
-    MythTV kanalinfo
-"MythTV global defaults"
-    MythTV globala förval
-"MythTV key bindings"
-    MythTV tangentbindningar
-"MythTV settings table"
-    MythTV inställningstabell
 "MythTV Status"
     MythTV-status
 "MythVideo Artwork Dir"
@@ -462,12 +455,10 @@
     MythVideo-katalog
 "MythVideo on the web."
     MythVideo på webben
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb globala förval
-"MythWeb session settings"
-    MythWeb sessionsinställningar
-"MythWeb Session Settings"
-    MythWeb sessionsinställningar
 "MythWeb Skin"
     MythWeb-skinn
 "MythWeb Template"
@@ -572,6 +563,7 @@
     Avancerad sökning
 "Prefer Channum"
     Föredra kanalnummer
+"Preferences"
 "Preferred Input"
 "Presented by"
     Presenteras av
@@ -778,8 +770,7 @@
     Inställningstabell
 "Settings Table Editor"
     Inställningstabellredigerare
-"settings: overview"
-    Detta är startsidan för inställningarna. Inte helt komplett, men följande finns för närvarande att välja på:
+"settings: notice"
 "Show"
     Program
 "Show descriptions on new line"

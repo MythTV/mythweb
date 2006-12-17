@@ -153,6 +153,7 @@
     Zender &quot;Ga naar&quot;
 "Channel Detail"
     Zender detail
+"Channel Info"
 "Channels"
 "channum"
     zender
@@ -167,10 +168,6 @@
     Opdrachten
 "commfree"
     reclamevrij
-"Configure Channels"
-    Zenders instellen
-"Configure Keybindings"
-    Toetsbindingen instellen
 "Conflict"
 "Conflicts"
     Conflicten
@@ -359,6 +356,7 @@
     Ga naar
 "JumpPoints Editor"
     Snelkoppelingen bewerken
+"Key Bindings"
 "Key bindings"
     Toetsbindingen
 "Keybindings Editor"
@@ -394,6 +392,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
     Logboek
 "Low"
@@ -421,25 +420,19 @@
     Muziek
 "Music Specials"
     Muziek Specials
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     Muziek
-"MythTV channel info"
-    MythTV zenderinfo
-"MythTV global defaults"
-"MythTV key bindings"
-    MythTV toetsbindingen
-"MythTV settings table"
 "MythTV Status"
     MythTV status
 "MythVideo Artwork Dir"
 "MythVideo Dir"
 "MythVideo on the web."
     Video
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
-"MythWeb session settings"
-    MythWeb sessie instellingen
-"MythWeb Session Settings"
-    MythWen Sessie Instellingen
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -530,6 +523,7 @@
 "Power Search"
     Geavanceerd zoeken
 "Prefer Channum"
+"Preferences"
 "Preferred Input"
 "Presented by"
     Presentator
@@ -731,8 +725,7 @@
     instellingen
 "Settings Table"
 "Settings Table Editor"
-"settings: overview"
-    instellingen: overzicht
+"settings: notice"
 "Show"
     Toon
 "Show descriptions on new line"

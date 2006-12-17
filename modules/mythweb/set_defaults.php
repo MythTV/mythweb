@@ -41,9 +41,3 @@
         }
     }
 
-// Load the class for this page
-    require_once tmpl_dir.'mythweb.php';
-
-// Exit
-    exit;
-

@@ -232,8 +232,6 @@
                 continue;
             if (!file_exists(modules_path."/$module/init.php"))
                 continue;
-            if (!file_exists(modules_path."/$module/tmpl/".tmpl))
-                continue;
             require_once modules_path."/$module/init.php";
         }
     }

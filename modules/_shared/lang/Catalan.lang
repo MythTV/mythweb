@@ -162,6 +162,7 @@
     Canal &quot;Saltar a&quot;
 "Channel Detail"
     Detall del canal
+"Channel Info"
 "Channels"
 "channum"
     nº canal
@@ -176,10 +177,6 @@
     Comandes
 "commfree"
     sense anuncis
-"Configure Channels"
-    Configurar canals
-"Configure Keybindings"
-    Configurar tecles
 "Conflict"
 "Conflicts"
     Conflictes
@@ -375,6 +372,7 @@
     Saltar a
 "JumpPoints Editor"
     Editor de puntos de aalto
+"Key Bindings"
 "Key bindings"
     Tecles
 "Keybindings Editor"
@@ -412,6 +410,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
     Informes
 "Low"
@@ -443,16 +442,10 @@
     Música
 "Music Specials"
     Especials música
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic en el web
-"MythTV channel info"
-    Info Canal MythTV
-"MythTV global defaults"
-    MythTV globals predeterminats
-"MythTV key bindings"
-    Vincles tecles MythTV
-"MythTV settings table"
-    Taula ajustos MythTV
 "MythTV Status"
     Estat MythTV
 "MythVideo Artwork Dir"
@@ -461,12 +454,10 @@
     Dir MythVideo
 "MythVideo on the web."
     MythVideo en el web
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb globals per defecte
-"MythWeb session settings"
-    Ajustos sesions MythWeb
-"MythWeb Session Settings"
-    Ajustos sesions MythWeb
 "MythWeb Skin"
     Pell MythWeb
 "MythWeb Template"
@@ -570,6 +561,7 @@
     Recerca avançada
 "Prefer Channum"
     Nº Canal preferit
+"Preferences"
 "Preferred Input"
 "Presented by"
     Presentat per
@@ -776,8 +768,7 @@
     Taula ajustos
 "Settings Table Editor"
     Editor taula d'ajustes
-"settings: overview"
-    Ajustos: general
+"settings: notice"
 "Show"
     Programa
 "Show descriptions on new line"
@@ -820,6 +811,7 @@
     Barra d'estat
 "Stereo"
     Estéreo
+"Storage Group"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub i Desc (Coincidències buides)

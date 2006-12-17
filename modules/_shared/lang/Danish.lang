@@ -160,6 +160,7 @@
     Kanal &quot;Gå Til&quot;
 "Channel Detail"
     Kanal detaljer
+"Channel Info"
 "Channels"
 "channum"
     kanalnummer
@@ -174,10 +175,6 @@
     Kommandoer
 "commfree"
     Reklamefri
-"Configure Channels"
-    Konfigurér kanaler
-"Configure Keybindings"
-    Konfigurér tastaturgenveje
 "Conflict"
 "Conflicts"
     Konflikter
@@ -361,6 +358,7 @@
 "Jump To"
     Gå Til
 "JumpPoints Editor"
+"Key Bindings"
 "Key bindings"
     Tastgenvej
 "Keybindings Editor"
@@ -398,6 +396,7 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
+"Local weather forecast"
 "Logs"
 "Low"
     Lav
@@ -424,16 +423,10 @@
 "Music"
     Musik
 "Music Specials"
+"My Session"
+"Mythbackend"
 "MythMusic on the web."
     MythMusic på www
-"MythTV channel info"
-    MythTV kanal info
-"MythTV global defaults"
-    MythTV globale standarder
-"MythTV key bindings"
-    MythTV taste indstillinger
-"MythTV settings table"
-    MythTV opsætnings tabel
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
@@ -441,11 +434,10 @@
     MythVideo mappe
 "MythVideo on the web."
     MythVideo på www
+"MythWeb"
+"MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb Globale standarder
-"MythWeb session settings"
-    MythWeb opsætning
-"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -541,6 +533,7 @@
 "Power Search"
     Super søgning
 "Prefer Channum"
+"Preferences"
 "Preferred Input"
 "Presented by"
     Præsenteret af
@@ -741,8 +734,7 @@
     opsætning
 "Settings Table"
 "Settings Table Editor"
-"settings: overview"
-    Dette er hovedsiden til indstillinger...<p>Den er ikke komplet, og vil senere komme til at se noget pænere ud. Lige nu kan du vælge imellem:
+"settings: notice"
 "Show"
     Program
 "Show descriptions on new line"
