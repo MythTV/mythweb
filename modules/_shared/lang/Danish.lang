@@ -524,7 +524,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "plot"
 "Possible conflicts with this show"
     Mulige konfligter med denne udsendelse
@@ -735,6 +734,7 @@
 "Settings Table"
 "Settings Table Editor"
 "settings: notice"
+    Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "Show"
     Program
 "Show descriptions on new line"

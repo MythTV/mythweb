@@ -526,7 +526,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
 "plot"
     脚本
 "Possible conflicts with this show"
@@ -742,6 +741,7 @@
 "Settings Table Editor"
     Settings テーブルエディタ
 "settings: notice"
+    設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
 "Show"
     番組
 "Show descriptions on new line"

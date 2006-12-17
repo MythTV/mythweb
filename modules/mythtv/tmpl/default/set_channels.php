@@ -13,11 +13,6 @@
  *
 /**/
 ?>
-
-<div class="error">
-    <?php echo t('Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality.') ?>
-</div>
-
 <form class="form" method="post" action="<?php echo form_action ?>">
 
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">

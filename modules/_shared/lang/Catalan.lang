@@ -550,7 +550,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
 "plot"
     resúm
 "Possible conflicts with this show"
@@ -769,6 +768,7 @@
 "Settings Table Editor"
     Editor taula d'ajustes
 "settings: notice"
+    Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
 "Show"
     Programa
 "Show descriptions on new line"

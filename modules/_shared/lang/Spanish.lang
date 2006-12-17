@@ -548,7 +548,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
 "plot"
     resúmen
 "Possible conflicts with this show"
@@ -767,6 +766,7 @@
 "Settings Table Editor"
     Editor Tabla Ajustes
 "settings: notice"
+    Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
 "Show"
     Programa
 "Show descriptions on new line"

@@ -438,7 +438,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -631,6 +630,7 @@
 "Settings Table"
 "Settings Table Editor"
 "settings: notice"
+    Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
 "Show"
     Diffusion
 "Show descriptions on new line"

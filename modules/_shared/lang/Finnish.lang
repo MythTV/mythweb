@@ -498,7 +498,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
 "plot"
     juoni
 "Possible conflicts with this show"
@@ -708,6 +707,7 @@
 "Settings Table"
 "Settings Table Editor"
 "settings: notice"
+    Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
 "Show"
     Ohjelma
 "Show descriptions on new line"

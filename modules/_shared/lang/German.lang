@@ -513,7 +513,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "plot"
     Handlung
 "Possible conflicts with this show"
@@ -726,6 +725,7 @@
 "Settings Table"
 "Settings Table Editor"
 "settings: notice"
+    Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Show"
     Sendung
 "Show descriptions on new line"

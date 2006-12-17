@@ -552,7 +552,6 @@
 "Playlist: %s"
 "Playlists"
 "Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
-    OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
 "plot"
     handling
 "Possible conflicts with this show"
@@ -771,6 +770,7 @@
 "Settings Table Editor"
     Inställningstabellredigerare
 "settings: notice"
+    OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
 "Show"
     Program
 "Show descriptions on new line"
