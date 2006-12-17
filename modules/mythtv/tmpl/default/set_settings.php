@@ -51,7 +51,7 @@
     <td><?php echo t('Data') ?></td>
     <td><?php echo t('Delete') ?></td>
 </tr><?php
-    foreach ($Settings as $value => $data) {
+    foreach ($MythSettings as $value => $data) {
 ?><tr class="settings">
     <td align="right"><?php echo html_entities($value) ?></td>
     <td><input type="text" size="64" name="settings[<?php echo html_entities($value) ?>]" value="<?php echo html_entities($data) ?>"></td>

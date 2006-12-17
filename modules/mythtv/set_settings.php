@@ -53,7 +53,7 @@
     $sh->finish();
 
 // Load all of the settings for the requested host
-    $Settings = array();
+    $MythSettings = array();
     if (is_null($_GET['host']))
         $sh = $db->query('SELECT value, data
                             FROM settings
@@ -66,7 +66,7 @@
                         ORDER BY value',
                          $_GET['host']);
     while (list($value, $data) = $sh->fetch_row()) {
-        $Settings[$value] = $data;
+        $MythSettings[$value] = $data;
     }
     $sh->finish();
 
