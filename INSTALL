@@ -183,13 +183,17 @@ Please do not use Lighttpd unless you know what you are doing.
 MythWeb relies on four apache modules that are generally either built in or
 enabled by default:
 
-    mod_deflate
     mod_env
-    mod_headers
     mod_rewrite
 
 If you compiled apache yourself, or are experiencing server trouble loading
 MythWeb, please make sure that these are enabled.
+
+There are also two documented sections in the conf file that are disabled by
+default, but I strongly recommend that you enable.  They require:
+
+    mod_deflate
+    mod_headers
 
 =================
 5.1 Apache Config

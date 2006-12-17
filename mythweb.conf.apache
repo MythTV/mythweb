@@ -1,5 +1,14 @@
 #
-# Apache configuration directives for MythWeb
+# Apache configuration directives for MythWeb.  Please read INSTALL for setup
+# requirements and troubleshooting, along with the comments in this file.
+#
+
+#
+# CHANGE THIS PATH TO MATCH YOUR MYTHWEB INSTALLATION DIRECTORY!  e.g.
+#
+#    /var/www
+#    /home/www/htdocs
+#    /var/www/html/mythweb
 #
     <Directory "/var/www/html" >
 
@@ -148,19 +157,25 @@
     # (image/vnd.microsoft.icon)--which most browsers won't recognize.
         AddType image/x-icon        .ico
 
-    # This is helpful for mod_deflate -- it prevents proxies from changing
-    # the user agent to/from this server.
-        Header append Vary User-Agent env=!dont-vary
-
     # Enable mod_deflate.  This works MUCH more reliably than PHP's built-in
-    # gzip/Zlib compressors.
-        BrowserMatch ^Mozilla/4 gzip-only-text/html
-        BrowserMatch ^Mozilla/4\.0[678] no-gzip
-        BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    # gzip/Zlib compressors.  It is disabled here because many distros seem not
+    # to enable mod_deflate by default, but I strongly recommend that you
+    # enable this section.
+    #
+    #    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    #    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    #    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    #
+    #    AddOutputFilterByType DEFLATE text/html
+    #    AddOutputFilterByType DEFLATE text/css
+    #    AddOutputFilterByType DEFLATE application/x-javascript
 
-        AddOutputFilterByType DEFLATE text/html
-        AddOutputFilterByType DEFLATE text/css
-        AddOutputFilterByType DEFLATE application/x-javascript
+    # This is helpful for mod_deflate -- it prevents proxies from changing
+    # the user agent to/from this server, which can prevent compression from
+    # being enabled.  It is disabled here because many distros seem not to
+    # enable mod_headers by default, but I recommend that you enable it.
+    #
+    #    Header append Vary User-Agent env=!dont-vary
 
     # Execute perl scripts in cgi mode (so we can stream properly)
         <Files *.pl>
