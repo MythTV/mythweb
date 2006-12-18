@@ -180,7 +180,7 @@ Please do not use Lighttpd unless you know what you are doing.
 5.0 Apache
 ==========
 
-MythWeb relies on four apache modules that are generally either built in or
+MythWeb relies on two apache modules that are generally either built in or
 enabled by default:
 
     mod_env
@@ -220,7 +220,9 @@ You should update these so that they match the settings required to connect to
 your MythTV master backend.
 
 There are other settings in this file, too, which should be fairly well
-documented.  Please read through the
+documented.  Please read through the comments in the file itself to see if you
+can benefit from features that are disabled by default, or settings required
+for some of the more exotic installation possibilities.
 
 Finally, you should put this file into apache's "extra config files" directory.
 On Fedora, this is:
