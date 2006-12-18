@@ -117,12 +117,12 @@
             return $str;
     // Otherwise, parse in replacement strings as needed
         foreach ($args as $i => $arg) {
-            $str = preg_replace('/(?<!\\\\)\\$'.($i+1).'/',
-                                str_replace('$', '\\\\\\$', $arg),  // Replace $ with \$ so sub-args don't get reinterpreted
+            $str = preg_replace('/\\$'.($i+1).'\b/',
+                                str_replace('$', '~~$~~', $arg),    // Replace $ with ~~$~~ so sub-args don't get reinterpreted
                                 $str
                                );
         }
-        $str = preg_replace('/\\\\\\$(?=\d\b)/', '$', $str);        // unescape any \$ sequences
+        $str = str_replace('~~$~~', '$', $str);                     // re-convert any ~~$~~ sequences
         return $str;
     }
 

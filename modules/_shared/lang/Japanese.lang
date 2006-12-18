@@ -74,6 +74,7 @@
     全グループ
 "All HDTV"
     全てのHDTV
+"All Hosts"
 "All Music"
     全ミュージック
 "All recordings"
@@ -245,12 +246,9 @@
 "Earlier"
 "Edit"
     編集
-"Edit keybindings on"
-    キーバインド編集対象
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
-"Edit settings for"
-    設定対象
+"Edit settings for: $1"
 "End"
     終了
 "End Late"
@@ -306,8 +304,6 @@
 "Genre (filtered)"
     ジャンル（絞込み）
 "Genres"
-"Global"
-    全体
 "Go"
     移動
 "Google"
@@ -525,7 +521,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
     脚本
 "Possible conflicts with this show"
@@ -738,8 +733,6 @@
     設定
 "Settings Table"
     Settings テーブル
-"Settings Table Editor"
-    Settings テーブルエディタ
 "settings: notice"
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
 "Show"

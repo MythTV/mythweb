@@ -81,6 +81,7 @@
     Alla grupper
 "All HDTV"
     Alla HDTV
+"All Hosts"
 "All Music"
     All musik
 "All recordings"
@@ -257,12 +258,9 @@
 "Earlier"
 "Edit"
     Redigera
-"Edit keybindings on"
-    Ändra knappar på
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
-"Edit settings for"
-    Ändra inställningar för
+"Edit settings for: $1"
 "End"
     Slut
 "End Late"
@@ -318,8 +316,6 @@
 "Genre (filtered)"
     Genre (filtrerad)
 "Genres"
-"Global"
-    Global
 "Go"
     Gå
 "Google"
@@ -551,7 +547,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
     handling
 "Possible conflicts with this show"
@@ -767,8 +762,6 @@
     inställningar
 "Settings Table"
     Inställningstabell
-"Settings Table Editor"
-    Inställningstabellredigerare
 "settings: notice"
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
 "Show"

@@ -74,6 +74,7 @@
     Alle groepen
 "All HDTV"
     Alle HDTV
+"All Hosts"
 "All Music"
     Alle muziek
 "All recordings"
@@ -245,11 +246,9 @@
 "Earlier"
 "Edit"
     Bewerken
-"Edit keybindings on"
-    Toetsbindingen bewerken op
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
-"Edit settings for"
+"Edit settings for: $1"
 "End"
     Einde
 "End Late"
@@ -304,7 +303,6 @@
 "Genre (filtered)"
     Genre (filter)
 "Genres"
-"Global"
 "Go"
     Doorgaan
 "Google"
@@ -513,7 +511,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
     korte inhoud
 "Possible conflicts with this show"
@@ -723,7 +720,6 @@
 "settings"
     instellingen
 "Settings Table"
-"Settings Table Editor"
 "settings: notice"
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
 "Show"

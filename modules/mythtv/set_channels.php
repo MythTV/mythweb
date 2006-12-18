@@ -81,3 +81,6 @@
     }
     $sh->finish();
 
+// These settings affect all of mythtv
+    $Settings_Hosts = t('All Hosts');
+

@@ -74,6 +74,7 @@
     Alle Gruppen
 "All HDTV"
     Sendungen in HDTV
+"All Hosts"
 "All Music"
     Alle Titel
 "All recordings"
@@ -245,11 +246,9 @@
 "Earlier"
 "Edit"
     Bearbeiten
-"Edit keybindings on"
-    Tastaturbelegung ändern für
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
-"Edit settings for"
+"Edit settings for: $1"
 "End"
     Ende
 "End Late"
@@ -304,7 +303,6 @@
 "Genre (filtered)"
     Genre (gefiltert)
 "Genres"
-"Global"
 "Go"
     Los
 "Google"
@@ -512,7 +510,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
     Handlung
 "Possible conflicts with this show"
@@ -723,7 +720,6 @@
 "settings"
     Einstellungen
 "Settings Table"
-"Settings Table Editor"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Show"

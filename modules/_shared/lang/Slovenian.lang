@@ -62,6 +62,7 @@
 "All Fields"
 "All groups"
 "All HDTV"
+"All Hosts"
 "All Music"
 "All recordings"
     Vsa snemanja
@@ -203,11 +204,9 @@
 "Duration"
 "Earlier"
 "Edit"
-"Edit keybindings on"
-    Zamenjaj bližnjico za
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
-"Edit settings for"
+"Edit settings for: $1"
 "End"
 "End Late"
     Končaj kasneje
@@ -251,7 +250,6 @@
 "Genre"
 "Genre (filtered)"
 "Genres"
-"Global"
 "Go"
     Pojdi
 "Google"
@@ -431,7 +429,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -621,7 +618,6 @@
     Nastavitve
 "settings"
 "Settings Table"
-"Settings Table Editor"
 "settings: notice"
 "Show"
     Oddaja

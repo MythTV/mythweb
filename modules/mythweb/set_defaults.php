@@ -41,3 +41,6 @@
         }
     }
 
+// These settings are limited to MythWeb itself
+    $Settings_Hosts = 'MythWeb';
+

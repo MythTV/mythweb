@@ -81,6 +81,7 @@
     Tots els grups
 "All HDTV"
     Tot HDTV
+"All Hosts"
 "All Music"
     Tota la música
 "All recordings"
@@ -256,12 +257,9 @@
 "Earlier"
 "Edit"
     Editar
-"Edit keybindings on"
-    Editar tecles a
 "Edit MythWeb and some MythTV settings."
     Editar ajustos de MythWeb i alguns de MythTV
-"Edit settings for"
-    Editar ajustos per a
+"Edit settings for: $1"
 "End"
     Fi
 "End Late"
@@ -317,8 +315,6 @@
 "Genre (filtered)"
     Genere (filtrat)
 "Genres"
-"Global"
-    Global
 "Go"
     Anar
 "Google"
@@ -549,7 +545,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
     resúm
 "Possible conflicts with this show"
@@ -765,8 +760,6 @@
     ajustos
 "Settings Table"
     Taula ajustos
-"Settings Table Editor"
-    Editor taula d'ajustes
 "settings: notice"
     Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
 "Show"

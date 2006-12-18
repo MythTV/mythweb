@@ -67,6 +67,7 @@
 "All Fields"
 "All groups"
 "All HDTV"
+"All Hosts"
 "All Music"
 "All recordings"
     Tous les enregistrements
@@ -208,11 +209,9 @@
 "Duration"
 "Earlier"
 "Edit"
-"Edit keybindings on"
-    Editer les touches sur
 "Edit MythWeb and some MythTV settings."
     Editer les param&egrave;tres de Mythweb et certains de MythTV
-"Edit settings for"
+"Edit settings for: $1"
 "End"
 "End Late"
     Fin tardive
@@ -256,7 +255,6 @@
 "Genre"
 "Genre (filtered)"
 "Genres"
-"Global"
 "Go"
     Go
 "Google"
@@ -437,7 +435,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
 "Possible conflicts with this show"
 "Power"
@@ -628,7 +625,6 @@
     param&egrave;tres
 "settings"
 "Settings Table"
-"Settings Table Editor"
 "settings: notice"
     Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
 "Show"

@@ -34,6 +34,7 @@
     <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/mouseovers.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/visibility.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/ajax.js"></script>
 
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/style.css" />

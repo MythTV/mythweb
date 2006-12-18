@@ -71,6 +71,7 @@
 "All groups"
     Kaikki ryhmät
 "All HDTV"
+"All Hosts"
 "All Music"
     Kaikki Musiikki
 "All recordings"
@@ -242,11 +243,9 @@
 "Earlier"
 "Edit"
     Muokkaa
-"Edit keybindings on"
-    Muokkaa näppäinkomentoja
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
-"Edit settings for"
+"Edit settings for: $1"
 "End"
     Loppu
 "End Late"
@@ -296,7 +295,6 @@
 "Genre (filtered)"
     Laji (suodatettu)
 "Genres"
-"Global"
 "Go"
     Mene
 "Google"
@@ -497,7 +495,6 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "plot"
     juoni
 "Possible conflicts with this show"
@@ -705,7 +702,6 @@
 "settings"
     Asetukset
 "Settings Table"
-"Settings Table Editor"
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
 "Show"

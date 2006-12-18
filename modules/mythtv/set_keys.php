@@ -20,53 +20,51 @@
 #        backend_notify_changes();
 #    }
 
+
+// Load all of the known mythtv frontend hosts
+    $Settings_Hosts = array();
+    $sh = $db->query('SELECT DISTINCT hostname FROM jumppoints ORDER BY hostname');
+    while (list($host) = $sh->fetch_row()) {
+        if (empty($host))
+            continue;
+        $Settings_Hosts[$host] = $host;
+    }
+    $sh->finish();
+
+// Make sure we have a valid host selected
+    if (!isset($Settings_Hosts[$_SESSION['settings']['host']]))
+        $_SESSION['settings']['host'] = reset($Settings_Hosts);
 // Save?
-    $use_host = "";
-    if ($_POST['save']) {
-        foreach ($_POST as $key => $key_list) {
-            if (preg_match('/^jump:([\\w_\/]+):(\\w+)$/', $key, $matches)) {
-                list($match, $dest, $use_host) = $matches;
-                $db->query('UPDATE jumppoints
-                               SET keylist=?
-                             WHERE destination=? AND hostname=?',
-                           $key_list,
-                           str_replace('_', ' ', $dest),
-                           $use_host
-                          );
-            }
-            elseif (preg_match('/^key:([\\w_\/]+):(\\w+):(\\w+)$/', $key, $matches)) {
-                list($match, $context, $action, $use_host) = $matches;
+    elseif ($_POST['save'] && $_POST['host']) {
+        foreach ($_POST['jump'] as $dest => $key_list) {
+            $db->query('UPDATE jumppoints
+                           SET keylist=?
+                         WHERE destination=? AND hostname=?',
+                       $key_list,
+                       $dest,
+                       $_POST['host']
+                      );
+        }
+        foreach ($_POST['key'] as $context => $data) {
+            foreach ($data as $action => $key_list) {
                 $db->query('UPDATE keybindings
                                SET keylist=?
                              WHERE context=? AND action=? AND hostname=?',
                            $key_list,
-                           str_replace('_', ' ', $context),
+                           $context,
                            $action,
-                           $use_host
+                           $_POST['host']
                           );
             }
         }
+    // Make sure the session host gets updated to the posted one.
+        $_SESSION['settings']['host'] = $_POST['host'];
     }
-
-    if ($_GET['host'])
-        $use_host = $_GET['host'];
-
-// Load all of the known mythtv hosts
-    $Hosts = array();
-    $sh = $db->query('SELECT hostname FROM jumppoints GROUP BY hostname ORDER BY hostname');
-    while ($row = $sh->fetch_assoc()) {
-        if (empty($row['hostname']))
-            continue;
-        $Hosts[] = $row;
-        if (empty($use_host))
-            $use_host = $row['hostname'];
-    }
-    $sh->finish();
 
 // Load all of the jump points from the database
     $Jumps = array();
     $sh = $db->query('SELECT * FROM jumppoints WHERE hostname=?',
-                     $use_host);
+                     $_SESSION['settings']['host']);
     while ($row = $sh->fetch_assoc()) {
         $Jumps[] = $row;
     }
@@ -78,7 +76,7 @@
                         FROM keybindings
                        WHERE hostname = ?
                     ORDER BY (context = "Global") DESC, context',
-                     $use_host);
+                     $_SESSION['settings']['host']);
     while ($row = $sh->fetch_assoc()) {
         $Keys[] = $row;
     }
