@@ -133,12 +133,12 @@
  * created using the value of t(int).
 /**/
     function tn(/* string1, string2, stringN, int [, array-of-args] */) {
-        $a   = func_get_args();
+        $a = func_get_args();
     // Array of arguments?
         if (is_array($a[count($a)-1]))
             $args = array_pop($a);
     // Pull off the int
-        $int = (int)array_pop($a);
+        $int = intVal(array_pop($a));
     // Default parameters to $int
         if (!isset($args))
             $args = array(t($int));
