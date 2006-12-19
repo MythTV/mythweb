@@ -16,7 +16,7 @@
 
 <form class="form" method="post" action="<?php echo form_action ?>">
 
-<table border="0" cellspacing="0" cellpadding="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
 <tr>
     <td class="command_border_b" align="right"><?php echo t('MythWeb Template') ?>:</td>
     <td class="command_border_b"><?php template_select() ?></td>

@@ -57,5 +57,5 @@
         </td>
     <td class="_host"><?php echo t('Edit settings for: $1', host_choices()) ?></td>
 </tr><tr>
-    <td class="_content" colspan="2">
+<td class="_content" colspan="2" valign="top">
 
