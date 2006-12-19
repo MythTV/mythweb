@@ -21,15 +21,13 @@
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-// Print the page contents
-    global $WeatherSites;
-
 // Print Information for each of the known weather sites.
     foreach ($WeatherSites as $accid => $site) {
 ?>
 <div class="weather_site">
     <p class="host"><?php
-            echo $site->host;
+        echo tn('Host', 'Hosts', count($site->hosts)), ': ',
+             implode(', ', $site->hosts);
     ?></p>
     <p class="location"><?php
             echo "$site->acid: $site->city, ",

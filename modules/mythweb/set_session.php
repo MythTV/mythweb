@@ -33,8 +33,6 @@
             $_SESSION['skin'] = $_POST['skin'];
             $redirect = true;
         }
-    // Use SI units?
-        if (isset($_POST['siunits']))              $_SESSION['siunits']              = $_POST['siunits'];
     // Recorded Programs (can't use isset() here because un-checked checkboxes don't show up in the request)
         $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
         $_SESSION['recorded_pixmaps']   = $_POST['recorded_pixmaps']   ? true : false;
@@ -105,20 +103,6 @@
                 echo ' SELECTED';
             echo '>'.$details[0].'</option>';
         }
-        echo '</select>';
-    }
-
-/**
- * displays a <select> for the unit type
-/**/
-    function unit_select() {
-        global $db;
-        echo '<select name="siunits">';
-        if (empty($_SESSION['siunits'])) {
-            $_SESSION['siunits'] = $db->query_col('SELECT data FROM settings WHERE value="SIUnits"');
-        }
-        echo '<option value="YES"'.($_SESSION['siunits'] == 'YES' ? ' SELECTED' : '').'>'.t('Yes')."</option>\n";
-        echo '<option value="NO"' .($_SESSION['siunits'] == 'YES' ? '' : ' SELECTED').'>'.t('No') ."</option>\n";
         echo '</select>';
     }
 

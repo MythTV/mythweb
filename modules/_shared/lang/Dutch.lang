@@ -39,6 +39,8 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
+"&deg;C"
+"&deg;F"
 "Action"
     Actie
 "Activate"
@@ -329,7 +331,9 @@
     HDTV
 "High"
     Maximum
+"Host"
 "Hosted by"
+"Hosts"
 "Hour"
     Uur
 "Hour Format"
@@ -391,6 +395,7 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Locale"
 "Logs"
     Logboek
 "Low"
@@ -431,6 +436,7 @@
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
+"MythWeb Session"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -736,8 +742,8 @@
 "Showing all programs."
     Alle programma's laten zien
 "Shows"
-"SI Units?"
-    SI eenheden?
+"SI Units"
+    SI eenheden
 "Songs"
 "Songs for Genre"
 "Songs Played"

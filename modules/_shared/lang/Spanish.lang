@@ -42,6 +42,8 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
+"&deg;C"
+"&deg;F"
 "Action"
     Acción
 "Activate"
@@ -342,7 +344,9 @@
     HDTV
 "High"
     Alto
+"Host"
 "Hosted by"
+"Hosts"
 "Hour"
     Hora
 "Hour Format"
@@ -406,6 +410,7 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Locale"
 "Logs"
 "Low"
     Bajo
@@ -452,6 +457,7 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb globales por defecto
+"MythWeb Session"
 "MythWeb Skin"
     Piel MythWeb
 "MythWeb Template"
@@ -775,8 +781,8 @@
 "Showing all programs."
     Mostrando todos los programas
 "Shows"
-"SI Units?"
-    ¿Unidades SI?
+"SI Units"
+    Unidades SI
 "Songs"
 "Songs for Genre"
 "Songs Played"

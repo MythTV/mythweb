@@ -42,6 +42,8 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
+"&deg;C"
+"&deg;F"
 "Action"
     Handling
 "Activate"
@@ -343,8 +345,10 @@
     HDTV
 "High"
     Hög
+"Host"
 "Hosted by"
     Värd
+"Hosts"
 "Hour"
     Timme
 "Hour Format"
@@ -408,6 +412,7 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Locale"
 "Logs"
     Logg
 "Low"
@@ -455,6 +460,7 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb globala förval
+"MythWeb Session"
 "MythWeb Skin"
     MythWeb-skinn
 "MythWeb Template"
@@ -779,8 +785,8 @@
 "Showing all programs."
     Visar alla program.
 "Shows"
-"SI Units?"
-    SI-enheter?
+"SI Units"
+    SI-enheter
 "Songs"
 "Songs for Genre"
 "Songs Played"

@@ -25,7 +25,7 @@
 
 // Make sure we have a valid host selected
     if (!isset($Settings_Hosts[$_SESSION['settings']['host']]))
-        $_SESSION['settings']['host'] = reset($Settings_Hosts);
+        $_SESSION['settings']['host'] = reset(array_keys($Settings_Hosts));
 // Save?
     elseif ($_POST['save'] && isset($_POST['host'])) {
         foreach ($_POST['settings'] as $value => $data) {

@@ -42,6 +42,8 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
+"&deg;C"
+"&deg;F"
 "Action"
     Acció
 "Activate"
@@ -342,8 +344,10 @@
     HDTV
 "High"
     Alt
+"Host"
 "Hosted by"
     Enmagatzemat a
+"Hosts"
 "Hour"
     Hora
 "Hour Format"
@@ -407,6 +411,7 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Locale"
 "Logs"
     Informes
 "Low"
@@ -454,6 +459,7 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb globals per defecte
+"MythWeb Session"
 "MythWeb Skin"
     Pell MythWeb
 "MythWeb Template"
@@ -777,8 +783,8 @@
 "Showing all programs."
     Mostrant tots els programes
 "Shows"
-"SI Units?"
-    ¿Unitats SI?
+"SI Units"
+    Unitats SI
 "Songs"
 "Songs for Genre"
 "Songs Played"

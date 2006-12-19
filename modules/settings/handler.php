@@ -39,7 +39,7 @@
  * @name    $Settings_Hosts
 /**/
     global $Settings_Hosts;
-    $Settings_Hosts = t('My Session');
+    $Settings_Hosts = t('MythWeb Session');
 
 // Make sure the settings host is up to date
     if (isset($_REQUEST['settings_host'])) {

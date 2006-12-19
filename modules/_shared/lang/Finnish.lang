@@ -37,6 +37,8 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
+"&deg;C"
+"&deg;F"
 "Action"
     Toiminto
 "Activate"
@@ -321,8 +323,10 @@
     Tarkkapiirto
 "High"
     Korkein
+"Host"
 "Hosted by"
     Isäntänä
+"Hosts"
 "Hour"
     Tunti
 "Hour Format"
@@ -383,6 +387,7 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Locale"
 "Logs"
     Lokit
 "Low"
@@ -419,6 +424,7 @@
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
+"MythWeb Session"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -718,7 +724,7 @@
 "Showing all programs."
     Näytetään kaikki ohjelmat.
 "Shows"
-"SI Units?"
+"SI Units"
     SI-yksiköt
 "Songs"
 "Songs for Genre"

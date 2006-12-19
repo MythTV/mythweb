@@ -27,9 +27,6 @@
     <td class="command_border_b" align="right"><?php echo t('Language') ?>:</td>
     <td class="command_border_b"><?php language_select() ?></td>
 </tr><tr>
-    <td class="command_border_b" align="right"><?php echo t('SI Units?') ?>:</td>
-    <td class="command_border_b"><?php unit_select() ?></td>
-</tr><tr>
     <td colspan="2"><?php echo t('Recorded Programs') ?>:</td>
 </tr><tr>
     <td align="right"><label for="recorded_descunder"><?php echo t('Show descriptions on new line') ?></label>:</td>

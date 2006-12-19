@@ -35,6 +35,8 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
+"&deg;C"
+"&deg;F"
 "Action"
     アクション
 "Activate"
@@ -328,8 +330,10 @@
 "HDTV"
 "High"
     高
+"Host"
 "Hosted by"
     主催
+"Hosts"
 "Hour"
     時
 "Hour Format"
@@ -391,6 +395,7 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Locale"
 "Logs"
     ログ
 "Low"
@@ -435,6 +440,7 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
     MythWeb全体設定
+"MythWeb Session"
 "MythWeb Skin"
     MythWebスキン
 "MythWeb Template"
@@ -750,7 +756,7 @@
 "Showing all programs."
     すべての番組を表示
 "Shows"
-"SI Units?"
+"SI Units"
     SI単位を使用する
 "Songs"
 "Songs for Genre"
