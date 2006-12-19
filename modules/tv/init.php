@@ -13,6 +13,12 @@
  *
 /**/
 
+    $Settings['tv'] = array('name'    => t('TV'),
+                            'choices' => array('session'  => t('My Session'),
+                                              ),
+                            'default' => 'session',
+                           );
+
 // The TV module is always enabled.
     $Modules['tv'] = array('path'        => 'tv',
                            'sort'        => 1,
