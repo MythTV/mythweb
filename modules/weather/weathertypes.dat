@@ -35,6 +35,7 @@
 53,Thunderstorms,thunshowers.png
 55,Sunny/ Windy,sunny.png
 56,AM Thunderstorms,thunshowers.png
+59,AM T-Showers,thunshowers.png
 62,AM Rain,showers.png
 64,Iso T-Storms/ Wind,thunshowers.png
 65,Rain/ Snow,rainsnow.png
@@ -91,6 +92,7 @@
 173,Strong Storms,thunshowers.png
 175,PM Light Snow,flurries.png
 178,AM Drizzle,lshowers.png
+188,AM Rain/ Snow,rainsnow.png
 189,Strong Storms/ Wind,thunshowers.png
 193,PM Drizzle,lshowers.png
 194,Drizzle,lshowers.png
