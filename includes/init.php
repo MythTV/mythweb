@@ -199,7 +199,7 @@
         $_SESSION['tmpl'] = 'default';
     }
 // If the requested template is missing the welcome file, use the default template
-    else if (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
+    elseif (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
          $_SESSION['tmpl'] = 'default';
     }
 
