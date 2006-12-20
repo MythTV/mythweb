@@ -15,6 +15,7 @@
 
     $Settings['tv'] = array('name'    => t('TV'),
                             'choices' => array('session'  => t('My Session'),
+                                               'channels' => t('Channel Info'),
                                               ),
                             'default' => 'session',
                            );
