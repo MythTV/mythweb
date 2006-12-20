@@ -298,7 +298,8 @@ EOM;
     <td nowrap><?php echo nice_length($show->length) ?></td>
     <td nowrap><?php echo nice_filesize($show->filesize) ?></td>
 <?php   if ($show->endtime > time()) { ?>
-    <td width="5%">currently recording</td>
+    <td width="5%" class="activecommand command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo t('currently recording') ?><hr />
+	<?php echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.t('Edit').'</a>' ?></td>
 <?php   } else { ?>
     <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 2 : 1 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_<?php echo $row ?>"

@@ -22,6 +22,8 @@
     $1 minuutti
 "$1 mins"
     $1 minuuttia
+"$1 month"
+"$1 months"
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 ohjelmaa, käyttää $2 ($3) $4:stä ($5 vapaana).
 "$1 recording"
@@ -34,6 +36,8 @@
 "$1 to $2"
     $1 - $2
 "$1 wasted"
+"$1 year"
+"$1 years"
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -188,6 +192,7 @@
     Nykyiset nauhoitukset
 "Currently Browsing:  $1"
     Selataan:  $1
+"currently recording"
 "Custom"
     Mukautettu
 "Custom Schedule"

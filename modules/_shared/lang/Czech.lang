@@ -17,6 +17,8 @@
     $1 minuta
 "$1 mins"
     $1 minut
+"$1 month"
+"$1 months"
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 pořadů, obsazených $2 ($3) z $4 ($5 volných)
 "$1 recording"
@@ -26,6 +28,8 @@
 "$1 to $2"
     $1 do $2
 "$1 wasted"
+"$1 year"
+"$1 years"
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -147,6 +151,7 @@
     Současné nahrávky
 "Currently Browsing:  $1"
     Zrovna prohlížíte:  $1
+"currently recording"
 "Custom"
 "Custom Schedule"
     Upravený rozvrh

@@ -25,6 +25,8 @@
     $1 min
 "$1 mins"
     $1 min
+"$1 month"
+"$1 months"
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 program ($3), som använder $2 av $4
 "$1 recording"
@@ -39,6 +41,8 @@
     $1 till $2
 "$1 wasted"
     $1 bortkastade
+"$1 year"
+"$1 years"
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -202,6 +206,7 @@
     Nuvarande inspelningar
 "Currently Browsing:  $1"
     Just nu visas:  $1
+"currently recording"
 "Custom"
     Egen
 "Custom Schedule"

@@ -25,6 +25,8 @@
     $1 min
 "$1 mins"
     $1 mins
+"$1 month"
+"$1 months"
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 programas, usando $2 ($3) de $4 ($5 libre))
 "$1 recording"
@@ -39,6 +41,8 @@
     $1 a $2
 "$1 wasted"
     $1 desperdiciado
+"$1 year"
+"$1 years"
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -201,6 +205,7 @@
     Grabaciones actuales
 "Currently Browsing:  $1"
     Navegando por:  $1
+"currently recording"
 "Custom"
     Avanzada
 "Custom Schedule"

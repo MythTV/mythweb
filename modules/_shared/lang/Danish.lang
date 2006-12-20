@@ -25,6 +25,8 @@
     $1 minut
 "$1 mins"
     $1 minutter
+"$1 month"
+"$1 months"
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 programmer, bruger $2 ($3) ud af $4
 "$1 recording"
@@ -39,6 +41,8 @@
     $1 til $2
 "$1 wasted"
     $1 misted
+"$1 year"
+"$1 years"
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -197,6 +201,7 @@
     Nuværende optagelser
 "Currently Browsing:  $1"
     Lige nu vises: $1
+"currently recording"
 "Custom"
     Valgfri
 "Custom Schedule"

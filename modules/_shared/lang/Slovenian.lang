@@ -19,6 +19,8 @@
     $1 Min
 "$1 mins"
     $1 Min
+"$1 month"
+"$1 months"
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 programi, uporabljeno $2 ($3) od ($4)
 "$1 recording"
@@ -30,6 +32,8 @@
 "$1 to $2"
     $1 do $2
 "$1 wasted"
+"$1 year"
+"$1 years"
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -161,6 +165,7 @@
     Trenutna snemanja
 "Currently Browsing:  $1"
     Trenutno brskanje:  $1
+"currently recording"
 "Custom"
 "Custom Schedule"
 "Data"

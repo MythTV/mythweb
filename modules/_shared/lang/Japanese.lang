@@ -20,6 +20,8 @@
     $1分
 "$1 mins"
     $1分
+"$1 month"
+"$1 months"
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1番組,  $4 中 $2 ($3) 使用。 ($5 空)
 "$1 recording"
@@ -32,6 +34,8 @@
 "$1 to $2"
     $1 から $2
 "$1 wasted"
+"$1 year"
+"$1 years"
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -191,6 +195,7 @@
     現在の録画
 "Currently Browsing:  $1"
     表示日: $1
+"currently recording"
 "Custom"
     カスタム
 "Custom Schedule"

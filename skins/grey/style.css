@@ -59,6 +59,7 @@ label:hover { color: #F0F000; text-decoration: underline; }
 .command_border_b { border-bottom: 2px solid #000000 }
 .command_border_l { border-left:   2px solid #000000 }
 .command_border_r { border-right:  2px solid #000000 }
+.activecommand    { background-color: #444 }
 
 /* some classes for the list display */
 .list {    background-color: #222222 }
