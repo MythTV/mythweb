@@ -20,10 +20,10 @@
     <td width="4%"><?php  echo t('delete')        ?></td>
     <td width="4%"><?php  echo t('sourceid')      ?></td>
     <td width="4%"><?php  echo t('xmltvid')       ?></td>
-    <td width="5%"><?php  echo t('channum')       ?></td>
-    <td width="12%"><?php echo t('callsign')      ?></td>
-    <td width="25%"><?php echo t('name')          ?></td>
-    <td width="5%"><?php  echo t('freqid')        ?></td>
+    <td width="5%"><a href="<?php echo form_action ?>?sortby=channum"><?php  echo t('channum') ?></a></td>
+    <td width="5%"><a href="<?php echo form_action ?>?sortby=callsign"><?php echo t('callsign') ?></a></td>
+    <td width="5%"><a href="<?php echo form_action ?>?sortby=name"><?php     echo t('name') ?></a></td>
+    <td width="5%"><a href="<?php echo form_action ?>?sortby=freqid"><?php   echo t('freqid') ?></a></td>
     <td width="5%"><?php  echo t('finetune')      ?></td>
     <td width="5%"><?php  echo t('videofilters')  ?></td>
     <td width="7%"><?php  echo t('brightness')    ?></td>

@@ -73,9 +73,25 @@
         }
     }
 
+// Sortby
+    if ($_GET['sortby'])
+        $_SESSION['tv']['set']['chan_sort'] = $_GET['sortby'];
+    switch ($_SESSION['tv']['set']['chan_sort']) {
+        case 'callsign':
+        case 'name':
+            $sortby = $_SESSION['tv']['set']['chan_sort'];
+            break;
+        case 'channum':
+        case 'freqid':
+            $sortby = $_SESSION['tv']['set']['chan_sort'].' + 0, '.$_SESSION['tv']['set']['chan_sort'];
+            break;
+        default:
+            $sortby = 'channum + 0, channum';
+    }
+
 // Load all of the channel data from the database
     $Channels = array();
-    $sh = $db->query('SELECT * FROM channel ORDER BY chanid');
+    $sh = $db->query('SELECT * FROM channel ORDER BY '.$sortby);
     while ($row = $sh->fetch_assoc()) {
         $Channels[] = $row;
     }
