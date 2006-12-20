@@ -62,7 +62,8 @@
         foreach ($this_channel->programs as $show) {
     // Print the content
     ?>
-    <?php echo date('g:i A', $show->starttime) ?> - <?php echo date('g:i A', $show->endtime) ?><br />
+    <?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - 
+    <?php echo strftime($_SESSION['time_format'], $show->endtime) ?><br />
 <?php
         echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
         if(strlen($show->subtitle))

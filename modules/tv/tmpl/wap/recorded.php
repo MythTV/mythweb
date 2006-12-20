@@ -49,7 +49,7 @@
             echo "<b>".$show->subtitle."</b><br />";
         if(strlen($show->description)>1)
             echo $show->description."<br />";
-        echo date('D, M j,Y (g:i A)', $show->starttime)."<br />";
+        echo date('D, M j, Y', $show->starttime).' ('.strftime($_SESSION['time_format'], $show->starttime).")<br />";
         echo nice_length($show->length)." ".nice_filesize($show->filesize)."<br />";
 
         if ($show->endtime > time()) { ?>

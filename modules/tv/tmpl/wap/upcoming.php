@@ -171,7 +171,7 @@
     <tr><td></td><td>
       <?php echo $show->channel->name ?><br />
       <?php echo date('D, M j', $show->starttime) ?>
-      <?php echo date('(g:i A)', $show->starttime) ?> <?php echo nice_length($show->length) ?></td></tr>
+      <?php echo '('.strftime($_SESSION['time_format'], $show->starttime).')' ?> <?php echo nice_length($show->length) ?></td></tr>
       <tr><td></td><td>
 <?php
             echo implode(' | ', $commands);

@@ -25,7 +25,7 @@
 
 <?php echo $program->title ?><BR>
 <?php echo date('D m/d/y', $program->starttime) ?><br />
-<?php echo date('g:i A', $program->starttime) ?> to <?php echo date('g:i A', $program->endtime) ?> (<?php echo (int)($program->length/60) ?> minutes)<BR>
+<?php echo strftime($_SESSION['time_format'], $program->starttime) ?> to <?php echo strftime($_SESSION['time_format'], $program->endtime) ?> (<?php echo (int)($program->length/60) ?> minutes)<BR>
                 <?php
                 if ($program->previouslyshown)
                     echo '(Rerun) ';
