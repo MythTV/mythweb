@@ -191,24 +191,27 @@
  * @return string Translated hour/minute string.
 /**/
     function nice_length($length) {
-        $days  = intVal($length  / (24 * 3600));
-        $hours = intVal(($length % (24 * 3600)) / 3600);
-        $mins  = intVal(($length % 3600) / 60);
+        $years  = intVal( $length / 31556926 );
+	$length = $length - ( $years * 31556926 );
+        $months = intVal( $length / 2629743 );
+	$length = $length - ( $months * 2629743 );
+        $days   = intVal( $length / 86400);
+	$length = $length - ( $days * 86400 );
+        $hours  = intVal( $length / 3600 );
+	$length = $length - ( $hours * 3600 );
+        $mins   = intVal( $length / 60 );
+	$ret = '';
+	if ($years > 0)
+            $ret = tn('$1 year', '$1 years', $years);
+	if ($months > 0)
+	    $ret .= ' '.tn('$1 month', '$1 months', $months);
         if ($days > 0)
-            $ret = tn('$1 day', '$1 days', $days);
-        else
-            $ret = '';
-        if ($hours > 0) {
-            if ($ret)
-                $ret .= ' ';
-            $ret .= tn('$1 hr', '$1 hrs', $hours);
-        }
-        if ($mins > 0) {
-            if ($ret)
-                $ret .= ' ';
-            $ret .= tn('$1 min', '$1 mins', $mins);
-        }
-        return $ret;
+            $ret .= ' '.tn('$1 day', '$1 days', $days);
+        if ($hours > 0)
+            $ret .= ' '.tn('$1 hr', '$1 hrs', $hours);
+        if ($mins > 0)
+            $ret .= ' '.tn('$1 min', '$1 mins', $mins);
+        return trim($ret);
     }
 
 
