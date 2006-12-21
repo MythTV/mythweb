@@ -23,10 +23,23 @@
     #    AuthUserFile       /var/www/htdigest
     #    Require            valid-user
     #    BrowserMatch       "MSIE"      AuthDigestEnableQueryStringHack=On
+    #    Order              allow,deny
+    #    Satisfy            any
     #
     #  * If you're running Apache earlier than 2.2, you will need to use
-    #    AuthDigestFile instead of AuthUserFile.
-
+    #    the AuthDigestFile command instead of AuthUserFile (3rd line above).
+    #
+    # You will probably also want to uncomment the following rules, which
+    # disable authentication for MythWeb's download URLs so you can properly
+    # stream to media players that don't work with authenticated servers.
+    #
+    #    <LocationMatch .*/pl/stream/[0-9]+/[0-9]+>
+    #        Allow from all
+    #    </LocationMatch>
+    #
+    #    <LocationMatch .*/music/mp3act_playstream.php>
+    #        Allow from all
+    #    </LocationMatch>
 
     ############################################################################
     # Some special instructions for the MythWeb controller files

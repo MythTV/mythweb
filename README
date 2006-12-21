@@ -121,6 +121,13 @@ A: First, create your patch against mythweb SVN with `svn diff`, having made
     instructions, I will at least get back to you one way or another --
     eventually.
 
+Q: I'm trying to stream audio/video, but it's not working.
+A: First, make sure that if you have enabled some form of authentication that
+    you also enabled the appropriate <LocationMatch> lines in your mythweb.conf.
+    Many programs do not work with authenticated servers.  Secondly, if your
+    installation of MythWeb runs over https, you may just be out of luck, since
+    many media players simply will not play files from a secure connection.
+
 ======================
 4.0 Submitting Patches
 ======================
