@@ -239,6 +239,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Napoved
@@ -466,6 +467,7 @@
 "Program ID"
 "Program Listing"
 "programid"
+"Protocol"
 "Radar"
     Radar
 "Random"
@@ -630,6 +632,7 @@
     Nastavitve
 "settings"
 "Settings Table"
+"settings/music: protocol"
 "settings: notice"
 "Show"
     Oddaja

@@ -296,6 +296,7 @@
     finindstil
 "First recording"
     Første optagelse
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Prognose
@@ -562,6 +563,7 @@
 "Program Listing"
     Program lister
 "programid"
+"Protocol"
 "Radar"
     Radar
 "Random"
@@ -739,6 +741,7 @@
 "settings"
     opsætning
 "Settings Table"
+"settings/music: protocol"
 "settings: notice"
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "Show"

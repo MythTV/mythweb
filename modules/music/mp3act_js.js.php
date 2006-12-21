@@ -1,10 +1,10 @@
 <?php
 function music_dir()
 {
-  $protocoll = "http://";
-  if(isset($_SERVER['HTTPS']))
-    $protocoll = "https://";
-  return $protocoll.$_SERVER["HTTP_HOST"].root.'music/';
+  $protocol = "http://";
+  if(!$_SESSION['music']['force_http'] && isset($_SERVER['HTTPS']))
+    $protocol = "https://";
+  return $protocol.$_SERVER["HTTP_HOST"].root.'music/';
 }
 ?>
     	window.onload=function(){ init(); };

@@ -290,6 +290,7 @@
     ファインチューン
 "First recording"
     最初の録画
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     予報
@@ -567,6 +568,7 @@
 "Program Listing"
     番組表
 "programid"
+"Protocol"
 "Radar"
     レーダー
 "Random"
@@ -745,6 +747,7 @@
     設定
 "Settings Table"
     Settings テーブル
+"settings/music: protocol"
 "settings: notice"
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
 "Show"

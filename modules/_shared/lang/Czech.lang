@@ -214,6 +214,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Předpověď počasí
@@ -420,6 +421,7 @@
 "Program Listing"
     Výpis pořadů
 "programid"
+"Protocol"
 "Radar"
 "Random"
 "Random Items"
@@ -570,6 +572,7 @@
 "Settings"
 "settings"
 "Settings Table"
+"settings/music: protocol"
 "settings: notice"
 "Show"
 "Show descriptions on new line"

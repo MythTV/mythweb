@@ -289,6 +289,7 @@
 "finetune"
     fijn afstemmen
 "First recording"
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Voorspelling
@@ -555,6 +556,7 @@
 "Program Listing"
     Programmalijst
 "programid"
+"Protocol"
 "Radar"
     Radar
 "Random"
@@ -732,6 +734,7 @@
 "settings"
     instellingen
 "Settings Table"
+"settings/music: protocol"
 "settings: notice"
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
 "Show"

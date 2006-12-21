@@ -127,6 +127,10 @@ A: First, make sure that if you have enabled some form of authentication that
     Many programs do not work with authenticated servers.  Secondly, if your
     installation of MythWeb runs over https, you may just be out of luck, since
     many media players simply will not play files from a secure connection.
+    There is a value in the music settings within MythWeb that will let you
+    force music streaming over http, but keep in mind that this will require you
+    to set up an alternate version of mythweb on the same server, but without
+    ssl enabled.
 
 ======================
 4.0 Submitting Patches

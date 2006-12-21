@@ -282,6 +282,7 @@
 "finetune"
     Hienosäätö
 "First recording"
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Ennuste
@@ -538,6 +539,7 @@
 "Program Listing"
     Ohjelmalistaus
 "programid"
+"Protocol"
 "Radar"
     Säätutka
 "Random"
@@ -714,6 +716,7 @@
 "settings"
     Asetukset
 "Settings Table"
+"settings/music: protocol"
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
 "Show"

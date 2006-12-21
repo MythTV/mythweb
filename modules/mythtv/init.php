@@ -16,7 +16,6 @@
 
     $Settings['mythtv'] = array('name'    => t('MythTV'),
                                 'choices' => array('settings' => t('Settings Table'),
-                                                   'channels' => t('Channel Info'),
                                                    'keys'     => t('Key Bindings'),
                                                   ),
                                 'default' => 'settings',

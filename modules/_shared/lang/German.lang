@@ -289,6 +289,7 @@
 "finetune"
     Feinabstimmung
 "First recording"
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Vorhersage
@@ -555,6 +556,7 @@
 "Program Listing"
     TV Programm
 "programid"
+"Protocol"
 "Radar"
     Satellitenbild
 "Random"
@@ -732,6 +734,7 @@
 "settings"
     Einstellungen
 "Settings Table"
+"settings/music: protocol"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Show"

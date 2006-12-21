@@ -301,6 +301,7 @@
     sintonía fina
 "First recording"
     Primera grabación
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Predicción
@@ -589,6 +590,7 @@
 "Program Listing"
     Listado Programas
 "programid"
+"Protocol"
 "Radar"
     Radar
 "Random"
@@ -770,6 +772,7 @@
     ajustes
 "Settings Table"
     Tabla Ajustes
+"settings/music: protocol"
 "settings: notice"
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
 "Show"

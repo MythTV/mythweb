@@ -302,6 +302,7 @@
     finjustera
 "First recording"
     Första inspelning
+"Force HTTP for music playlists"
 "Forced"
 "Forecast"
     Prognos
@@ -593,6 +594,7 @@
 "Program Listing"
     Programlista
 "programid"
+"Protocol"
 "Radar"
     Radar
 "Random"
@@ -774,6 +776,7 @@
     inställningar
 "Settings Table"
     Inställningstabell
+"settings/music: protocol"
 "settings: notice"
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
 "Show"
