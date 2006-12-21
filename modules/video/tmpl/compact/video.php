@@ -111,7 +111,7 @@ $filters="&category=$Filter_Category&browse=$Filter_Browse&genre=$Filter_Genre&s
     foreach ($All_Shows as $show) {
     ?><tr class="recorded">
     <td><?php
-        if (show_video_covers && file_exists('data/video_covers/'.basename($show->coverfile)))
+        if (show_video_covers && file_exists($show->cover_url))
             echo '<a href="'.$show->url.'"><img id="'.html_entities($show->filename).'" src="data/video_covers/'.basename($show->coverfile).'" width="'.video_img_width.'" height="'.video_img_height.'">';
         else
             echo '&nbsp;';

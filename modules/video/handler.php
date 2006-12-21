@@ -210,6 +210,7 @@ class Video {
     var $coverfile;
     var $childid;
     var $url;
+    var $cover_url;
 
     function Video($program_data) {
         global $mythvideo_dir;
@@ -236,6 +237,11 @@ class Video {
                                              'data/video/' . preg_replace('#^'.$mythvideo_dir.'/?#', '', $this->filename)
                                        ))));
         }
+    // And the artwork URL
+        if ($this->coverfile != 'No Cover') {
+            $this->cover_url = 'data/video_covers/'.substr($this->coverfile, strlen(setting('VideoArtworkDir', hostname)));
+        }
+
     }
 }
 
