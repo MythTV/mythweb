@@ -26,5 +26,9 @@
             require_once 'modules/music/mp3act_playstream.php';
             exit;
         }
+    // Too many messy headers/cookies errors in the main script -- wrapper it
+    // to avoid them.
+        ob_start();
+    // Load the main module
         require_once 'modules/music/mp3act_main.php';
     }

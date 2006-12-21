@@ -952,8 +952,7 @@ function internalUpdatePlaylist($songs, $count, $length)
     $plId = mysql_insert_id();
     if ($plId)
     {
-      if (!headers_sent())
-        setcookie('mp3act_playlist_id', $plId, time()+MYTH_PLAYLIST_SAVE_TIME);
+      setcookie('mp3act_playlist_id', $plId, time()+MYTH_PLAYLIST_SAVE_TIME);
       return $plId;
     }
   }
