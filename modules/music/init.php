@@ -22,12 +22,6 @@
 
 // If music is enabled, add it to the list.
     if ($has_music) {
-        $Settings['music'] = array('name'    => t('Music'),
-                                   'choices' => array('protocol'  => t('Protocol'),
-                                                     ),
-                                   'default' => 'protocol',
-                                  );
-
         $Modules['music'] = array('path'        => 'music',
                                   'sort'        => 2,
                                   'name'        => t('Music'),

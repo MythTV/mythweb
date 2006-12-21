@@ -296,7 +296,7 @@
     finindstil
 "First recording"
     Første optagelse
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Prognose
@@ -741,7 +741,7 @@
 "settings"
     opsætning
 "Settings Table"
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "Show"
@@ -784,6 +784,7 @@
 "Stereo"
     Steroe
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Undertitel og beskrivelse

@@ -16,5 +16,5 @@
 // Save?
     if ($_POST['save']) {
     // Save the protocol choice
-        $_SESSION['music']['force_http'] = $_REQUEST['force_http'] ? true : false;
+        $_SESSION['stream']['force_http'] = $_REQUEST['force_http'] ? true : false;
     }

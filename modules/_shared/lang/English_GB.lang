@@ -185,7 +185,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
 "Forget Old"
@@ -515,7 +515,11 @@
 "Settings"
 "settings"
 "Settings Table"
-"settings/music: protocol"
+"settings/stream: protocol"
+    Many media players are incapable of playing files that are streamed from<br/>
+    https servers.  If you run MythWeb over https, you may want to ALSO create<br/>
+    a non-ssl installation and check this box, which will force all streaming<br/>
+    downloads to go out over http instead.
 "settings: notice"
     Warning:<br /><br />Many settings pages have very little error checking. You can easily screw things up if you're not careful, and short of restoring the database from a backup, there is <b>no</b> way to undo your changes.
 "Show"
@@ -545,6 +549,7 @@
 "Status Bar"
 "Stereo"
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
 "Submit Search"

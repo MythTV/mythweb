@@ -301,7 +301,7 @@
     sintoniaa fina
 "First recording"
     Primer  enregistrament
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Predicció
@@ -774,7 +774,7 @@
     ajustos
 "Settings Table"
     Taula ajustos
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
 "Show"
@@ -820,6 +820,7 @@
 "Stereo"
     Estéreo
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub i Desc (Coincidències buides)

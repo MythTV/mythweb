@@ -244,7 +244,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Pr&eacute;visions
@@ -639,7 +639,7 @@
     param&egrave;tres
 "settings"
 "Settings Table"
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
 "Show"
@@ -676,6 +676,7 @@
     Barre de statut
 "Stereo"
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub et Desc (Vide correspond)

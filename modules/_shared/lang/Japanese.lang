@@ -290,7 +290,7 @@
     ファインチューン
 "First recording"
     最初の録画
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     予報
@@ -747,7 +747,7 @@
     設定
 "Settings Table"
     Settings テーブル
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
 "Show"
@@ -792,6 +792,7 @@
 "Stereo"
     ステレオ
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     サブタイトルと内容(エンプティーマッチ)

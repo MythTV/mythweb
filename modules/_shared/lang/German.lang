@@ -289,7 +289,7 @@
 "finetune"
     Feinabstimmung
 "First recording"
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Vorhersage
@@ -734,7 +734,7 @@
 "settings"
     Einstellungen
 "Settings Table"
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Show"
@@ -776,6 +776,7 @@
 "Stereo"
     Stereo
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)

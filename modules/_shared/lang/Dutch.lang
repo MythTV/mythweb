@@ -289,7 +289,7 @@
 "finetune"
     fijn afstemmen
 "First recording"
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Voorspelling
@@ -734,7 +734,7 @@
 "settings"
     instellingen
 "Settings Table"
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
 "Show"
@@ -777,6 +777,7 @@
 "Stereo"
     Stereo
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Dubbels en Beschrijving

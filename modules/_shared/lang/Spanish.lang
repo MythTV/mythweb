@@ -301,7 +301,7 @@
     sintonía fina
 "First recording"
     Primera grabación
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Predicción
@@ -772,7 +772,7 @@
     ajustes
 "Settings Table"
     Tabla Ajustes
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
 "Show"
@@ -818,6 +818,7 @@
 "Stereo"
     Estéreo
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub y Desc (Coincidencias vacías)

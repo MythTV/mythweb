@@ -2,7 +2,7 @@
 function music_dir()
 {
   $protocol = "http://";
-  if(!$_SESSION['music']['force_http'] && isset($_SERVER['HTTPS']))
+  if(!$_SESSION['stream']['force_http'] && isset($_SERVER['HTTPS']))
     $protocol = "https://";
   return $protocol.$_SERVER["HTTP_HOST"].root.'music/';
 }

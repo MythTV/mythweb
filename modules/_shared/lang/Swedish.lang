@@ -302,7 +302,7 @@
     finjustera
 "First recording"
     Första inspelning
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Prognos
@@ -776,7 +776,7 @@
     inställningar
 "Settings Table"
     Inställningstabell
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
 "Show"
@@ -822,6 +822,7 @@
 "Stereo"
     Stereo
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Undertitel &amp; beskrivning

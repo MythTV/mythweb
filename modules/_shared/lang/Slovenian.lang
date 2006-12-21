@@ -239,7 +239,7 @@
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "First recording"
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Napoved
@@ -632,7 +632,7 @@
     Nastavitve
 "settings"
 "Settings Table"
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
 "Show"
     Oddaja
@@ -668,6 +668,7 @@
     Statusna vrstica
 "Stereo"
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)

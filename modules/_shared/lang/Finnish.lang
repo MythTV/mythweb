@@ -282,7 +282,7 @@
 "finetune"
     Hienosäätö
 "First recording"
-"Force HTTP for music playlists"
+"Force HTTP for streams"
 "Forced"
 "Forecast"
     Ennuste
@@ -716,7 +716,7 @@
 "settings"
     Asetukset
 "Settings Table"
-"settings/music: protocol"
+"settings/stream: protocol"
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
 "Show"
@@ -758,6 +758,7 @@
 "Stereo"
     Stereo
 "Storage Group"
+"Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
     Kuvaus ja Nimike (Ei vastaavuuksia)
