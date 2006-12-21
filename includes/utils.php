@@ -328,16 +328,21 @@
     // URL override?
         if ($_SESSION['file_url_override'])
             return 'file://'.$_SESSION['file_url_override'].str_replace('%2F', '/', rawurlencode(basename($show->filename)));
+    // Which protocol should we use for downloads?
+        $protocol = ($_SESSION['stream']['force_http'] || !isset($_SERVER['HTTPS']))
+                    ? 'http://'
+                    : 'https://';
     // Mac and Linux just get a link to the streaming module, along with any
     // session marked to not use the myth:// URI
-        if (!stristr($_SERVER['HTTP_USER_AGENT'], 'windows') || !$_SESSION['use_myth_uri'])
-            return root."pl/stream/$show->chanid/$show->recstartts";
+        if (!stristr($_SERVER['HTTP_USER_AGENT'], 'windows') || !$_SESSION['use_myth_uri']) {
+            return $protocol.$_SERVER['HTTP_HOST'].root."pl/stream/$show->chanid/$show->recstartts";
+        }
     // Windows likely gets a myth:// url -- grab the master host and port
         global $Master_Host, $Master_Port;
     // Is either the browser xor the master in an rfc 1918 zone?
         if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
                 xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
-            return root."pl/stream/$show->chanid/$show->recstartts";
+            return $protocol.$_SERVER['HTTP_HOST'].root."pl/stream/$show->chanid/$show->recstartts";
         }
     // Send the myth url
         else {
