@@ -210,6 +210,10 @@
         return ($a->profile > $b->profile) ? 1 : -1;
     }
 
+    function by_programid(&$a, &$b) {
+        return strcasecmp($a->programid, $b->programid);
+    }
+
     function by_transcoder(&$a, &$b) {
         if ($a->transcoder == $b->transcoder) return 0;
         return ($a->transcoder > $b->transcoder) ? 1 : -1;

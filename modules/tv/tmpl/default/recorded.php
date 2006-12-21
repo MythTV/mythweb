@@ -221,6 +221,7 @@ if ($group_field == "") {
     if (!$_SESSION['recorded_descunder'])
         echo "\t<td>".get_sort_link('description', t('description'))."</td>\n";
 ?>
+    <td><?php echo get_sort_link('programid', t('programid')) ?></td>
     <td><?php echo get_sort_link('channum',   t('channum')) ?></td>
 <?php
     if ($recgroup_cols)
@@ -256,7 +257,7 @@ if ($group_field == "") {
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
             $section++;
-            $colspan = 9 + $recgroup_cols;
+            $colspan = 10 + $recgroup_cols;
             print <<<EOM
 <tr id="breakrow_$section" class="list_separator">
     <td colspan="$colspan" class="list_separator">$cur_group</td>
@@ -289,6 +290,7 @@ EOM;
         if (!$_SESSION['recorded_descunder'])
             echo "\t<td>".$show->description."</td>\n";
 ?>
+    <td><?php echo $show->programid ?></td>
     <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
 <?php
     if ($recgroup_cols)
@@ -311,10 +313,10 @@ EOM;
 <?php   }
 
         if ($_SESSION['recorded_descunder'])
-            echo("</tr><tr id=\"descunderrow_".$row."\" class=\"recorded\">\n\t<td colspan=\"" . (6 + $recgroup_cols) . "\">".$show->description."</td>\n");
+            echo("</tr><tr id=\"descunderrow_".$row."\" class=\"recorded\">\n\t<td colspan=\"" . (7 + $recgroup_cols) . "\">".$show->description."</td>\n");
 ?>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td nowrap colspan="<?php echo 6 + ($_SESSION['recorded_descunder'] ? 0 : 1) + $recgroup_cols ?>" align="center">
+    <td nowrap colspan="<?php echo 7 + ($_SESSION['recorded_descunder'] ? 0 : 1) + $recgroup_cols ?>" align="center">
         <span style="padding-right: 25px"><?php echo t('has commflag') ?>:&nbsp;
             <b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></span>
         <span style="padding-right: 25px"><?php echo t('has cutlist') ?>:&nbsp;
