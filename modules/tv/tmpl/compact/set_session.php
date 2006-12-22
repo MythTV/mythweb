@@ -20,9 +20,6 @@
 <tr>
     <td colspan="2"><?php echo t('Recorded Programs') ?>:</td>
 </tr><tr>
-    <td align="right"><label for="recorded_descunder"><?php echo t('Show descriptions on new line') ?></label>:</td>
-    <td><input class="radio" type="checkbox" title="Nice for very long descriptions on the recorded screen." id="recorded_descunder" name="recorded_descunder"<?php if ($_SESSION['recorded_descunder']) echo ' CHECKED' ?>></td>
-</tr><tr>
     <td align="right"><label for="recorded_pixmaps"><?php echo t('Show pixmaps') ?></label>:</td>
     <td><input class="radio" type="checkbox" title="Show recording thumbnails." id="recorded_pixmaps" name="recorded_pixmaps"<?php if ($_SESSION['recorded_pixmaps']) echo ' CHECKED' ?>></td>
 </tr><tr>

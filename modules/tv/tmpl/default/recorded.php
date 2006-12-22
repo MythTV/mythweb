@@ -89,7 +89,6 @@
     // Hide the row from view
         toggle_vis('inforow_' + id,   'display');
         toggle_vis('statusrow_' + id, 'display');
-        toggle_vis('descunderrow_' + id, 'display');
     // decrement the number of rows in a section
         var section   = rowsection[id];
         rowcount[section]--;
@@ -190,7 +189,6 @@
         }
 ?>
     </select></td>
-    <td><noscript><input type="submit" value="<?php echo t('Go') ?>"></noscript></td>
 </tr>
 </table>
 </form>
@@ -217,10 +215,6 @@ if ($group_field == "") {
 ?>
     <td><?php echo get_sort_link('title',    t('title')) ?></td>
     <td><?php echo get_sort_link('subtitle', t('subtitle')) ?></td>
-<?php
-    if (!$_SESSION['recorded_descunder'])
-        echo "\t<td>".get_sort_link('description', t('description'))."</td>\n";
-?>
     <td><?php echo get_sort_link('programid', t('programid')) ?></td>
     <td><?php echo get_sort_link('channum',   t('channum')) ?></td>
 <?php
@@ -267,9 +261,9 @@ EOM;
 
         echo "<tr id=\"inforow_$row\" class=\"recorded\">\n";
         if ($group_field != "")
-            echo "\t<td class=\"list\" rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2)."\">&nbsp;</td>\n";
+            echo "\t<td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
         if ($_SESSION['recorded_pixmaps']) {
-            echo "\t<td rowspan=\"".($_SESSION['recorded_descunder'] ? 3 : 2).'">';
+            echo "\t<td rowspan=\"2\">";
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
                 echo "<a href=\"$show->url\" name=\"$row\">"
@@ -286,10 +280,6 @@ EOM;
                     .'>'.$show->title.'</a>' ?></td>
     <td><?php echo "<a href=\"$show->url\">"
                     .$show->subtitle.'</a>' ?></td>
-<?php
-        if (!$_SESSION['recorded_descunder'])
-            echo "\t<td>".$show->description."</td>\n";
-?>
     <td><?php echo $show->programid ?></td>
     <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
 <?php
@@ -303,40 +293,42 @@ EOM;
     <td width="5%" class="activecommand command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo t('currently recording') ?><hr />
 	<?php echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.t('Edit').'</a>' ?></td>
 <?php   } else { ?>
-    <td width="5%" rowspan="<?php echo $_SESSION['recorded_descunder'] ? 2 : 1 ?>" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
+    <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_<?php echo $row ?>"
-            href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>"
-            js_href="javascript:confirm_delete(<?php echo $row ?>, false)";
+            js_href="javascript:confirm_delete(<?php echo $row ?>, false)"
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
     </td>
 <?php   }
-
-        if ($_SESSION['recorded_descunder'])
-            echo("</tr><tr id=\"descunderrow_".$row."\" class=\"recorded\">\n\t<td colspan=\"" . (7 + $recgroup_cols) . "\">".$show->description."</td>\n");
 ?>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td nowrap colspan="<?php echo 7 + ($_SESSION['recorded_descunder'] ? 0 : 1) + $recgroup_cols ?>" align="center">
-        <span style="padding-right: 25px"><?php echo t('has commflag') ?>:&nbsp;
-            <b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></span>
-        <span style="padding-right: 25px"><?php echo t('has cutlist') ?>:&nbsp;
-            <b><?php echo $show->has_cutlist ? t('Yes') : t('No') ?></b></span>
-        <span style="padding-right: 25px"><?php echo t('is editing') ?>:&nbsp;
-            <b><?php echo $show->is_editing ? t('Yes') : t('No') ?></b></span>
-        <span style="padding-right: 25px"><?php echo t('auto-expire') ?>:&nbsp;
-            <input type="checkbox" id="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
-             name="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
-             <?php if ($show->auto_expire) echo ' CHECKED' ?> onclick="set_autoexpire(<?php echo $row ?>)" />
-            </span>
-        <span style="padding-right: 25px"><?php echo t('has bookmark') ?>:&nbsp;
-            <b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b></span>
-        <?php echo t('has been watched') ?>:&nbsp;
-            <b><?php echo $show->is_watched ? t('Yes') : t('No') ?></b>
+    <td colspan="2"><?php echo $show->description ?></td>
+    <td nowrap colspan="<?php echo 5 + $recgroup_cols ?>" align="center">
+<?php /** @todo this table really needs to get its own styling, or better yet, be replaced! */ ?>
+        <table border="0" cellspacing="0" cellpadding="5" class="command_border_l command_border_t command_border_b command_border_r">
+        <tr>
+            <td><?php echo t('has commflag') ?>:</td>
+            <td class="command_border_r"><b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></td>
+            <td><?php echo t('has cutlist') ?>:</td>
+            <td class="command_border_r"><b><?php echo $show->has_cutlist ? t('Yes') : t('No') ?></b></td>
+            <td><?php echo t('has bookmark') ?>:</td>
+            <td><b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b></td>
+        </tr><tr>
+            <td><?php echo t('watched') ?>:</td>
+            <td class="command_border_r"><b><?php echo $show->is_watched ? t('Yes') : t('No') ?></b></td>
+            <td><?php echo t('is editing') ?>:</td>
+            <td class="command_border_r"><b><?php echo $show->is_editing ? t('Yes') : t('No') ?></b></td>
+            <td><?php echo t('auto-expire') ?>:</td>
+            <td><input type="checkbox" id="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
+                     name="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
+                     <?php if ($show->auto_expire) echo ' CHECKED' ?> onclick="set_autoexpire(<?php echo $row ?>)" />
+                 </td>
+        </tr>
+        </table>
         </td>
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_rerecord_<?php echo $row ?>"
-            href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old"
-            js_href="javascript:confirm_delete(<?php echo $row ?>, true)";
+            js_href="javascript:confirm_delete(<?php echo $row ?>, true)"
             title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a></td>
     </td>

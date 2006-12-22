@@ -26,7 +26,6 @@
         if (isset($_POST['date_channel_jump']))    $_SESSION['date_channel_jump']    = $_POST['date_channel_jump'];
         if (isset($_POST['time_format']))          $_SESSION['time_format']          = $_POST['time_format'];
     // Recorded Programs (can't use isset() here because un-checked checkboxes don't show up in the request)
-        $_SESSION['recorded_descunder'] = $_POST['recorded_descunder'] ? true : false;
         $_SESSION['recorded_pixmaps']   = $_POST['recorded_pixmaps']   ? true : false;
         $_SESSION['use_myth_uri']       = $_POST['use_myth_uri']       ? true : false;
         if (isset($_POST['file_url_override']))  $_SESSION['file_url_override']  = trim(preg_replace('#^file://#', '', $_POST['file_url_override']));
