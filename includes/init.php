@@ -200,7 +200,7 @@
     }
 // If the requested template is missing the welcome file, use the default template
     elseif (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
-         $_SESSION['tmpl'] = 'default';
+        $_SESSION['tmpl'] = 'default';
     }
 
 // Is there a preferred skin?
