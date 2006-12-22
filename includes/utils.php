@@ -324,14 +324,18 @@
  *
  * @return string URL to access recordings
 /**/
-    function video_url($show) {
+    function video_url($show, $asx = false) {
     // URL override?
-        if ($_SESSION['file_url_override'])
+        if (!$asx && $_SESSION['file_url_override'])
             return 'file://'.$_SESSION['file_url_override'].str_replace('%2F', '/', rawurlencode(basename($show->filename)));
     // Which protocol should we use for downloads?
         $protocol = ($_SESSION['stream']['force_http'] || !isset($_SERVER['HTTPS']))
                     ? 'http://'
                     : 'https://';
+    // ASX mode gets the streaming module, with a slight addition
+        if ($asx) {
+            return $protocol.$_SERVER['HTTP_HOST'].root."pl/stream/$show->chanid/$show->recstartts.asx";
+        }
     // Mac and Linux just get a link to the streaming module, along with any
     // session marked to not use the myth:// URI
         if (!stristr($_SERVER['HTTP_USER_AGENT'], 'windows') || !$_SESSION['use_myth_uri']) {
