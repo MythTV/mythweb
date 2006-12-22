@@ -107,6 +107,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     automatisch vervallen
 "Auto-expire recordings"
@@ -118,6 +119,7 @@
 "Back"
 "Back to the program listing"
     Terug naar programmagids
+"Back to the recorded programs"
 "Back to the recording schedules"
     Terug naar opnameschema
 "Backend Logs"
@@ -228,6 +230,7 @@
     Bestemming
 "Details for"
     Details
+"Direct Download"
 "Directed by"
     Regisseur
 "director"
@@ -240,6 +243,7 @@
     Niet Opnemen
 "Don't record this program."
     Dit programma niet opnemen
+"Download Choices"
 "Download URL override"
 "Dup Method"
     Dubbels Methode
@@ -578,6 +582,7 @@
 "Recorded"
 "Recorded Programs"
     Opgenomen Programma's
+"Recording Detail: $1"
 "Recording Group"
     Opname Groep
 "Recording Options"
@@ -893,6 +898,7 @@
 "visible"
     zichtbaar
 "Visit $1"
+"watched"
 "Weather"
     Weer
 "Wednesday"

@@ -83,6 +83,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
 "Auto-expire recordings"
     Automaticky vypršet nahrávky
@@ -92,6 +93,7 @@
     Automaticky překódovávat
 "Back"
 "Back to the program listing"
+"Back to the recorded programs"
 "Back to the recording schedules"
     Zpět na rozvrhy nahrávání
 "Backend Logs"
@@ -174,6 +176,7 @@
 "Destination"
 "Details for"
     Detaily o
+"Direct Download"
 "Directed by"
 "director"
 "Display"
@@ -182,6 +185,7 @@
 "Don't Record"
     Nenahrávat
 "Don't record this program."
+"Download Choices"
 "Download URL override"
 "Dup Method"
 "Duplicate"
@@ -440,6 +444,7 @@
 "Recorded"
 "Recorded Programs"
     Nahrané pořady
+"Recording Detail: $1"
 "Recording Group"
 "Recording Options"
 "Recording Priority"
@@ -684,6 +689,7 @@
     Viditelnost
 "visible"
 "Visit $1"
+"watched"
 "Weather"
     Počasí
 "Wednesday"

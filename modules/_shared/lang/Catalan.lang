@@ -114,6 +114,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     autoexpirar
 "Auto-expire recordings"
@@ -125,6 +126,7 @@
 "Back"
 "Back to the program listing"
     Tornar al llistat de programes
+"Back to the recorded programs"
 "Back to the recording schedules"
     Tornar a la programació
 "Backend Logs"
@@ -239,6 +241,7 @@
     Destí
 "Details for"
     Detalls
+"Direct Download"
 "Directed by"
     Dirigido por
 "director"
@@ -251,6 +254,7 @@
     No enregistrat
 "Don't record this program."
     No esborrar aquest programa
+"Download Choices"
 "Download URL override"
 "Dup Method"
     Mètode duplicat
@@ -614,6 +618,7 @@
 "Recorded"
 "Recorded Programs"
     Programes enregistrats
+"Recording Detail: $1"
 "Recording Group"
     Grup d'enregistrament
 "Recording Options"
@@ -941,6 +946,7 @@
     visible
 "Visit $1"
     Visite $1
+"watched"
 "Weather"
     Tiempo
 "Wednesday"

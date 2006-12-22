@@ -111,6 +111,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     auto-udløb
 "Auto-expire recordings"
@@ -122,6 +123,7 @@
 "Back"
 "Back to the program listing"
     Tilbage til programoversigten
+"Back to the recorded programs"
 "Back to the recording schedules"
     Tilbage til planlagte optagelser
 "Backend Logs"
@@ -234,6 +236,7 @@
 "Destination"
 "Details for"
     Detaljer for
+"Direct Download"
 "Directed by"
     Instrueret af
 "director"
@@ -246,6 +249,7 @@
     Optag ikke
 "Don't record this program."
     Optag IKKE dette program
+"Download Choices"
 "Download URL override"
 "Dup Method"
     Dubletkontrol metode
@@ -585,6 +589,7 @@
 "Recorded"
 "Recorded Programs"
     Optagede programmer
+"Recording Detail: $1"
 "Recording Group"
     Optagelsesgruppe
 "Recording Options"
@@ -904,6 +909,7 @@
     synlig
 "Visit $1"
     Besøg $1
+"watched"
 "Weather"
     Vejret
 "Wednesday"

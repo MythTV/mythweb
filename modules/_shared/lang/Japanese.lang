@@ -107,6 +107,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     自動削除
 "Auto-expire recordings"
@@ -118,6 +119,7 @@
 "Back"
 "Back to the program listing"
     番組一覧に戻る
+"Back to the recorded programs"
 "Back to the recording schedules"
     録画予約に戻る
 "Backend Logs"
@@ -228,6 +230,7 @@
     対象
 "Details for"
     詳細
+"Direct Download"
 "Directed by"
     監督
 "director"
@@ -240,6 +243,7 @@
     録画停止
 "Don't record this program."
     録画しない
+"Download Choices"
 "Download URL override"
 "Dup Method"
     重複検知
@@ -590,6 +594,7 @@
 "Recorded"
 "Recorded Programs"
     録画済み
+"Recording Detail: $1"
 "Recording Group"
     録画グループ
 "Recording Options"
@@ -907,6 +912,7 @@
 "visible"
 "Visit $1"
     $1を訪れる
+"watched"
 "Weather"
     天気
 "Wednesday"

@@ -94,6 +94,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     auto-expire
 "Auto-expire recordings"
@@ -104,6 +105,7 @@
 "Back"
 "Back to the program listing"
     Retourner &agrave; la liste des &eacute;missions
+"Back to the recorded programs"
 "Back to the recording schedules"
     Retourner aux programmations programm&eacute;es
 "Backend Logs"
@@ -195,6 +197,7 @@
     Description
 "Destination"
 "Details for"
+"Direct Download"
 "Directed by"
     Mis en scène par
 "director"
@@ -205,6 +208,7 @@
     Ne pas enregistrer
 "Don't record this program."
     Ne pas enregistrer cette &eacute;mission
+"Download Choices"
 "Download URL override"
 "Dup Method"
     m&eacute;thode de dup
@@ -494,6 +498,7 @@
 "Recorded"
 "Recorded Programs"
     Programmes enregistr&eacute;s
+"Recording Detail: $1"
 "Recording Group"
     Groupe d&acute;enregistrement
 "Recording Options"
@@ -774,6 +779,7 @@
     Visibilit&eacute;
 "visible"
 "Visit $1"
+"watched"
 "Weather"
 "Wednesday"
     Mercredi

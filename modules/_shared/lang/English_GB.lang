@@ -73,6 +73,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
 "Auto-expire recordings"
 "Auto-flag commercials"
@@ -80,6 +81,7 @@
 "Back"
 "Back to the program listing"
     Back to the programme listing
+"Back to the recorded programs"
 "Back to the recording schedules"
 "Backend Logs"
 "Backend Status"
@@ -147,6 +149,7 @@
 "Description"
 "Destination"
 "Details for"
+"Direct Download"
 "Directed by"
 "director"
 "Display"
@@ -154,6 +157,7 @@
 "Don't Record"
 "Don't record this program."
     Don't record this programme.
+"Download Choices"
 "Download URL override"
 "Dup Method"
 "Duplicate"
@@ -387,6 +391,7 @@
 "Recorded"
 "Recorded Programs"
     Recorded Programmes
+"Recording Detail: $1"
 "Recording Group"
 "Recording Options"
 "Recording Priority"
@@ -622,6 +627,7 @@
 "Visibility"
 "visible"
 "Visit $1"
+"watched"
 "Weather"
 "Wednesday"
 "welcome: backend_log"

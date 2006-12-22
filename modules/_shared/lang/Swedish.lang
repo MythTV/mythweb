@@ -114,6 +114,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     autoradera
 "Auto-expire recordings"
@@ -125,6 +126,7 @@
 "Back"
 "Back to the program listing"
     Tillbaka till programlistan
+"Back to the recorded programs"
 "Back to the recording schedules"
     Tillbaka till inspelningsschemat
 "Backend Logs"
@@ -240,6 +242,7 @@
     Destination
 "Details for"
     Detaljer för
+"Direct Download"
 "Directed by"
     Regi
 "director"
@@ -252,6 +255,7 @@
     Spela ej in
 "Don't record this program."
     Spela inte in detta program.
+"Download Choices"
 "Download URL override"
 "Dup Method"
     Dubblettmetod
@@ -616,6 +620,7 @@
 "Recorded"
 "Recorded Programs"
     Inspelade program
+"Recording Detail: $1"
 "Recording Group"
     Inspelningsgrupp
 "Recording Options"
@@ -942,6 +947,7 @@
     synlig
 "Visit $1"
     Besök $1
+"watched"
 "Weather"
     Väder
 "Wednesday"

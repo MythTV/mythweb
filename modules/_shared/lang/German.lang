@@ -107,6 +107,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     autom. löschen
 "Auto-expire recordings"
@@ -118,6 +119,7 @@
 "Back"
 "Back to the program listing"
     Zurück zum TV Programm
+"Back to the recorded programs"
 "Back to the recording schedules"
     Zurück zum Aufnahmeplan
 "Backend Logs"
@@ -228,6 +230,7 @@
     Ziel
 "Details for"
     Details für
+"Direct Download"
 "Directed by"
     Regie
 "director"
@@ -240,6 +243,7 @@
     Nicht aufnehmen
 "Don't record this program."
     Diese Sendung nicht aufnehmen
+"Download Choices"
 "Download URL override"
 "Dup Method"
     Methode für Wdhgn.
@@ -578,6 +582,7 @@
 "Recorded"
 "Recorded Programs"
     Aufnahmen
+"Recording Detail: $1"
 "Recording Group"
     Aufnahmegruppe
 "Recording Options"
@@ -893,6 +898,7 @@
     Sichtbar
 "Visit $1"
     Besuche $1
+"watched"
 "Weather"
     Wetter
 "Wednesday"

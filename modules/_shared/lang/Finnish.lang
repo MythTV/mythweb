@@ -104,6 +104,7 @@
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
+"ASX Stream"
 "auto-expire"
     anna vanheta
 "Auto-expire recordings"
@@ -115,6 +116,7 @@
 "Back"
 "Back to the program listing"
     Takaisin ohjelmalistaukseen
+"Back to the recorded programs"
 "Back to the recording schedules"
     Takaisin nauhoituksen ajoitukseen
 "Backend Logs"
@@ -225,6 +227,7 @@
     Kohde
 "Details for"
     Lisätiedot ohjelmalle
+"Direct Download"
 "Directed by"
     Ohjaus
 "director"
@@ -237,6 +240,7 @@
     Älä Nauhoita
 "Don't record this program."
     Älä nauhoita ohjelmaa.
+"Download Choices"
 "Download URL override"
 "Dup Method"
     Metodi
@@ -561,6 +565,7 @@
 "Recorded"
 "Recorded Programs"
     Nauhoitetut Ohjelmat
+"Recording Detail: $1"
 "Recording Group"
     Nauhoitusryhmä
 "Recording Options"
@@ -872,6 +877,7 @@
 "visible"
     Näkyvä
 "Visit $1"
+"watched"
 "Weather"
     Säätila
 "Wednesday"
