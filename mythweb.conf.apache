@@ -9,6 +9,7 @@
 #    /var/www
 #    /home/www/htdocs
 #    /var/www/html/mythweb
+#    /srv/www/htdocs/mythweb
 #
     <Directory "/var/www/html" >
 
