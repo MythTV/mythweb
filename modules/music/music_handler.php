@@ -13,42 +13,6 @@
  *
 /**/
 
-// Make sure the music directory exists
-    if (file_exists('data/music')) {
-    // File is not a directory or a symlink
-        if (!is_dir('data/music') && !is_link('data/music')) {
-            custom_error('An invalid file exists at data/music.  Please remove it in'
-                        .' order to use the music portions of MythWeb.');
-        }
-    }
-// Create the symlink, if possible.
-//
-// NOTE:  Errors have been disabled because if I turn them on, people hosting
-//        MythWeb on Windows machines will have issues.  I will turn the errors
-//        back on when I find a clean way to do so.
-//
-    else {
-        $dir = $db->query_col('SELECT data
-                                 FROM settings
-                                WHERE value="MusicLocation" AND hostname=?',
-                              hostname
-                             );
-        if ($dir) {
-            $ret = @symlink($dir, 'data/music');
-            if (!$ret) {
-                #custom_error("Could not create a symlink to $dir, the local MythMusic directory"
-                #            .' for this hostname ('.hostname.').  Please create a symlink to your'
-                #            .' MythMusic directory at data/music in order to use the music'
-                #            .' portions of MythWeb.');
-            }
-        }
-        else {
-            #custom_error('Could not find a value in the database for the MythMusic directory'
-            #            .' for this hostname ('.hostname.').  Please create a symlink to your'
-            #            .' MythMusic directory at data/music in order to use the music'
-            #            .' portions of MythWeb.');
-        }
-    }
 
 //
 //  Someday, music.php will let us stream
@@ -256,7 +220,7 @@ class mythMusic {
                       ' LEFT JOIN music_genres ON music_songs.genre_id=music_genres.genre_id'.
                       ' WHERE '.$this->filter.
                       ' ORDER BY artist_name,album_name,track';
-	
+
         // Cannot use $db->query_col here as the preg_replace kills PHP when using large filterSongList queries
         $this->totalCount = 0;
         $result = mysql_query('SELECT COUNT(*)'.$query_base);
@@ -272,7 +236,7 @@ class mythMusic {
                 $query_base .= ' LIMIT ' . $this->offset . ',' . $maxPerPage;
             else
                 $query_base .= ' LIMIT ' . $maxPerPage;
-	    
+
 	        $this->result = mysql_query('SELECT music_songs.song_id, music_artists.artist_name, music_albums.album_name, music_songs.name, music_genres.genre, music_songs.length, music_songs.rating, music_songs.filename '.$query_base);
         }
     }
