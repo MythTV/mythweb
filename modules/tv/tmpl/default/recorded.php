@@ -272,29 +272,17 @@ EOM;
         echo "<tr id=\"inforow_$row\" class=\"recorded\">\n";
         if ($group_field != "")
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
-        if ($_SESSION['recorded_pixmaps']) {
-            echo '    <td rowspan="2" class="_pixmap">';
-            if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
-                list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
-                echo "<a href=\"$show->url\" name=\"$row\">"
-                    .'<img src="'.$show->thumb_url.'.png" '.$attr.' border="0">'
-                    .'</a>';
-            }
-            else
-                echo "<a name=\"$row\">&nbsp;</a>";
-            echo "</td>\n";
-        }
-        else {
 ?>
-    <td rowspan="2" class="_download">
-        <ul>
-            <li><a href="<?php echo video_url($show, true) ?>">
-                    <img src="<?php echo skin_url ?>/img/play_sm.png"><?php echo t('ASX Stream') ?></a></li>
-            <li><a href="<?php echo $show->url ?>">
-                    <img src="<?php echo skin_url ?>/img/video_sm.png"><?php echo t('Direct Download') ?></a></li>
-        </ul>
+    <td rowspan="2" class="_pixmap">
+        <a class="_pixmap" href="<?php echo $show->url ?>" title="<?php echo t('Direct Download') ?>"
+            ><img src="<?php echo $show->thumb_url ?>.png"></a>
+        <a class="_download"
+            href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream') ?>"
+            ><img src="<?php echo skin_url ?>/img/play_sm.png"</a>
+        <a class="_download"
+            href="<?php echo $show->url ?>" title="<?php echo t('Direct Download') ?>"
+            ><img src="<?php echo skin_url ?>/img/video_sm.png"></a>
         </td>
-<?php   } ?>
     <td class="_title"><?php echo '<a href="'.$show->url.'"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
@@ -309,21 +297,22 @@ EOM;
 ?>
     <td class="_length"><?php echo nice_length($show->length) ?></td>
     <td class="_filesize"><?php echo nice_filesize($show->filesize) ?></td>
-<?php   if ($show->endtime > time()) { ?>
-    <td width="5%" class="activecommand command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo t('currently recording') ?><hr />
-	<?php echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.t('Edit').'</a>' ?></td>
-<?php   } else { ?>
-    <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <a id="delete_<?php echo $row ?>"
-            js_href="javascript:confirm_delete(<?php echo $row ?>, false)"
+    <td class="_commands" rowspan="2"><?php
+        if ($show->endtime > time()) {
+            echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+                 t('Still Recording: Edit'),
+                 "</a>\n        ";
+        }
+        ?><a onclick="javascript:confirm_delete(<?php echo $row ?>, false)"
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
-    </td>
-<?php   }
-?>
+        <a onclick="javascript:confirm_delete(<?php echo $row ?>, true)"
+            title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
+            ><?php echo t('Delete + Rerecord') ?></a>
+        </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
     <td colspan="2" valign="top"><?php echo $show->description ?></td>
-    <td colspan="<?php echo ($_SESSION['recorded_pixmaps'] ? 3 : 5) + $recgroup_cols ?>" class="_progflags"><?php
+    <td colspan="<?php echo (false && $_SESSION['recorded_pixmaps'] ? 3 : 5) + $recgroup_cols ?>" class="_progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
                  '<img id="autoexpire_', $row, '" src="', skin_url, '/img/flags/';
@@ -348,7 +337,7 @@ EOM;
             if ($show->is_watched)
                 echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
         ?></td>
-<?php   if ($_SESSION['recorded_pixmaps']) { ?>
+<?php   if (false && $_SESSION['recorded_pixmaps']) { ?>
     <td colspan="2" class="_download">
         <ul>
             <li><a href="<?php echo video_url($show, true) ?>">
@@ -358,12 +347,6 @@ EOM;
         </ul>
         </td>
 <?php   } ?>
-    <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <a id="delete_rerecord_<?php echo $row ?>"
-            js_href="javascript:confirm_delete(<?php echo $row ?>, true)"
-            title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
-            ><?php echo t('Delete + Rerecord') ?></a>
-        </td>
 </tr><?php
         $prev_group = $cur_group;
     // Keep track of how many shows are visible in each section
