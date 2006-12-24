@@ -18,6 +18,12 @@
         custom_error('modules/mythweb/init.php is missing, please verify your install.');
     }
 
+// Completely empty path -- retrieve the last one visited
+    if (empty($Path[1])) {
+        $Path[1] = $_SESSION['settings']['module'];
+        $Path[2] = $_SESSION['settings']['section'];
+    }
+
 // Empty or unknown module?
     if (empty($Path[1]) || empty($Settings[$Path[1]])) {
         $Path[1] = 'mythweb';
@@ -27,6 +33,10 @@
     if (empty($Path[2]) || empty($Settings[$Path[1]]['choices'][$Path[2]])) {
         $Path[2] = $Settings[$Path[1]]['default'];
     }
+
+// Keep track of these for later
+    $_SESSION['settings']['module']  = $Path[1];
+    $_SESSION['settings']['section'] = $Path[2];
 
 // Define a constant for settings pages to use as their form action="" target
     define('form_action', root.'settings/'.$Path[1]
