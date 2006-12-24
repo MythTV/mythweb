@@ -16,6 +16,9 @@
 // Set the desired page title
     $page_title = 'MythWeb - '.t('Recorded Programs');
 
+// Custom headers
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/recorded.css" />';
+
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
@@ -117,7 +120,7 @@
         else {
             var count_text;
             count_text = (episode_count > 1) ? ' (' + episode_count + ' episodes)' : '';
-            get_element('Title ' + file.title).innerHTML = file.title + count_text;
+            $('Title ' + file.title).innerHTML = file.title + count_text;
         }
     // TODO: test changing the groups dropdown on the fly.
     // I can't test it because I haven't set up any recording groups, and probably never will
@@ -132,16 +135,16 @@
             else {
                 var count_text;
                 group_text = (group_count >1) ? ' (' + group_count + ' episodes)' : '';
-                get_element('Group ' + file.group).innerHTML = file.group + group_text;
+                $('Group ' + file.group).innerHTML = file.group + group_text;
             }
         }
     // Decrement the total number of shows and update the page
         programs_shown--;
         programcount--;
-        get_element('programcount').innerHTML = programcount;
+        $('programcount').innerHTML = programcount;
     // Decrease the total amount of time by the amount of the show
         totaltime -= file.length;
-        get_element('totaltime').innerHTML = nice_length(totaltime, <?php
+        $('totaltime').innerHTML = nice_length(totaltime, <?php
                                                          echo "'", addslashes(t('$1 hr')),   "', ",
                                                               "'", addslashes(t('$1 hrs')),  "', ",
                                                               "'", addslashes(t('$1 min')),  "', ",
@@ -149,9 +152,9 @@
                                                          ?>);
     // Decrease the disk usage indicator by the amount of the show
         diskused -= file.size;
-        get_element('diskused').innerHTML = nice_filesize(diskused);
+        $('diskused').innerHTML = nice_filesize(diskused);
     // Adjust the freespace shown
-        get_element('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
+        $('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
         // Eventually, we should perform the removal-from-the-list here instead
         // of in confirm_delete()
     }
@@ -164,13 +167,12 @@
 // -->
 </script>
 
-<p>
-<form id="program_titles" action="<?php echo root ?>tv/recorded" method="get">
-<table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
+<form id="change_title" action="<?php echo root ?>tv/recorded" method="get">
+<table id="title_choices" class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
 <?php if (count($Groups) > 1) { ?>
     <td><?php echo t('Show group') ?>:</td>
-    <td><select name="recgroup" onchange="get_element('program_titles').submit()">
+    <td><select name="recgroup" onchange="$('change_title').submit()">
         <option value=""><?php echo t('All groups') ?></option><?php
         foreach($Groups as $recgroup => $count) {
             echo '<option id="Group '.htmlspecialchars($recgroup).'" value="'.htmlspecialchars($recgroup).'"';
@@ -187,7 +189,7 @@
         $recgroup_cols = 0;
     } ?>
     <td><?php echo t('Show recordings') ?>:</td>
-    <td width="250" align="center"><select name="title" onchange="get_element('program_titles').submit()">
+    <td width="250" align="center"><select name="title" onchange="$('change_title').submit()">
         <option id="All recordings" value=""><?php echo t('All recordings') ?></option>
 <?php
         foreach($Program_Titles as $title => $count) {
@@ -203,8 +205,6 @@
 </tr>
 </table>
 </form>
-<br />
-</p>
 
 <?php
 // Setup for grouping by various sort orders
@@ -217,25 +217,23 @@ if ($group_field == "") {
 
 ?>
 
-<table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table id="recorded_list" border="0" cellpadding="0" cellspacing="0" class="list small">
 <tr class="menu">
 <?php
     if ($group_field != "")
-        echo "    <td class=\"list\">&nbsp;</td>\n";
-    if ($_SESSION['recorded_pixmaps'])
-        echo "    <td class=\"list\">&nbsp;</td>\n";
+        echo "    <td class=\"list\" colspan=\"2\">&nbsp;</td>\n";
 ?>
-    <td><?php echo get_sort_link('title',     t('Title')) ?></td>
-    <td><?php echo get_sort_link('subtitle',  t('Subtitle')) ?></td>
-    <td><?php echo get_sort_link('programid', t('Program ID')) ?></td>
-    <td><?php echo get_sort_link('channum',   t('Channel')) ?></td>
-    <td><?php echo get_sort_link('airdate',   t('Airdate')) ?></td>
+    <th class="_title"><?php     echo get_sort_link('title',     t('Title')) ?></td>
+    <th class="_subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle')) ?></td>
+    <th class="_programid"><?php echo get_sort_link('programid', t('Program ID')) ?></td>
+    <th class="_channum"><?php   echo get_sort_link('channum',   t('Channel')) ?></td>
+    <th class="_airdate"><?php   echo get_sort_link('airdate',   t('Airdate')) ?></td>
 <?php
     if ($recgroup_cols)
-        echo "    <td nowrap>" . get_sort_link('recgroup', t('Recording Group')) . "</td>\n";
+        echo '    <th class="_recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
 ?>
-    <td><?php        echo get_sort_link('length',    t('Length')) ?></td>
-    <td nowrap><?php echo get_sort_link('file_size', t('File Size')) ?></td>
+    <th class="_length"><?php        echo get_sort_link('length',    t('Length')) ?></td>
+    <th class="_filesize"><?php echo get_sort_link('file_size', t('File Size')) ?></td>
 </tr><?php
     $row     = 0;
     $section = -1;
@@ -275,32 +273,42 @@ EOM;
         if ($group_field != "")
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
         if ($_SESSION['recorded_pixmaps']) {
-            echo "    <td rowspan=\"2\" align=\"center\" style=\"background-color: black\">";
+            echo '    <td rowspan="2" class="_pixmap">';
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
                 echo "<a href=\"$show->url\" name=\"$row\">"
-                    .'<img id="'.$show->filename.'" src="'.$show->thumb_url.'.png" '.$attr.' border="0">'
+                    .'<img src="'.$show->thumb_url.'.png" '.$attr.' border="0">'
                     .'</a>';
             }
             else
                 echo "<a name=\"$row\">&nbsp;</a>";
             echo "</td>\n";
         }
-    ?>
-    <td><?php echo '<a href="'.$show->url.'"'
+        else {
+?>
+    <td rowspan="2" class="_download">
+        <ul>
+            <li><a href="<?php echo video_url($show, true) ?>">
+                    <img src="<?php echo skin_url ?>/img/play_sm.png"><?php echo t('ASX Stream') ?></a></li>
+            <li><a href="<?php echo $show->url ?>">
+                    <img src="<?php echo skin_url ?>/img/video_sm.png"><?php echo t('Direct Download') ?></a></li>
+        </ul>
+        </td>
+<?php   } ?>
+    <td class="_title"><?php echo '<a href="'.$show->url.'"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
-    <td><?php echo "<a href=\"$show->url\">"
+    <td class="_subtitle"><?php echo "<a href=\"$show->url\">"
                     .$show->subtitle.'</a>' ?></td>
-    <td><?php echo $show->programid ?></td>
-    <td nowrap><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
-    <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
+    <td class="_programid"><?php echo $show->programid ?></td>
+    <td class="_channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+    <td class="_airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
 <?php
     if ($recgroup_cols)
-        echo "    <td nowrap align=\"center\">$show->recgroup</td>\n";
+        echo "    <td class=\"_recgroup\">$show->recgroup</td>\n";
 ?>
-    <td nowrap><?php echo nice_length($show->length) ?></td>
-    <td nowrap><?php echo nice_filesize($show->filesize) ?></td>
+    <td class="_length"><?php echo nice_length($show->length) ?></td>
+    <td class="_filesize"><?php echo nice_filesize($show->filesize) ?></td>
 <?php   if ($show->endtime > time()) { ?>
     <td width="5%" class="activecommand command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo t('currently recording') ?><hr />
 	<?php echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.t('Edit').'</a>' ?></td>
@@ -315,7 +323,7 @@ EOM;
 ?>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
     <td colspan="2" valign="top"><?php echo $show->description ?></td>
-    <td colspan="<?php echo 3 + $recgroup_cols ?>" class="_progflags"><?php
+    <td colspan="<?php echo ($_SESSION['recorded_pixmaps'] ? 3 : 5) + $recgroup_cols ?>" class="_progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
                  '<img id="autoexpire_', $row, '" src="', skin_url, '/img/flags/';
@@ -340,14 +348,16 @@ EOM;
             if ($show->is_watched)
                 echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
         ?></td>
-    <td nowrap colspan="2">
-        <ul class="_download">
+<?php   if ($_SESSION['recorded_pixmaps']) { ?>
+    <td colspan="2" class="_download">
+        <ul>
             <li><a href="<?php echo video_url($show, true) ?>">
                     <img src="<?php echo skin_url ?>/img/play_sm.png"><?php echo t('ASX Stream') ?></a></li>
             <li><a href="<?php echo $show->url ?>">
                     <img src="<?php echo skin_url ?>/img/video_sm.png"><?php echo t('Direct Download') ?></a></li>
         </ul>
         </td>
+<?php   } ?>
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_rerecord_<?php echo $row ?>"
             js_href="javascript:confirm_delete(<?php echo $row ?>, true)"

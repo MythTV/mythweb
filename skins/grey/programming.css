@@ -4,38 +4,6 @@
 
 */
 
-/* a class for the the cells containing recored programs in recorded_programs.php */
-.recorded {    background-color: #444444; } /*#506080*/
-
-.recorded ._progflags img {
-    padding:    .3em;
-}
-
-.recorded a img {
-    border:     1px solid transparent;
-}
-.recorded a:hover img {
-    border:     1px solid #F0F000;
-}
-
-.recorded ul._download {
-    list-style:     none;
-    margin:         0px;
-    padding:        0px;
-}
-.recorded ul._download li {
-    position:       relative;
-    margin:         15px;
-    margin-left:    40px;
-    clear:          left;
-}
-.recorded ul._download img {
-    position:       absolute;
-    top:            50%;
-    margin-top:     -12px;
-    left:           -32px;
-}
-
 /* a class for the the cells containing recorded programs in recorded_programs.php */
 .scheduled   { background-color: #506090; }
 .conflict    { background-color: #806050; }

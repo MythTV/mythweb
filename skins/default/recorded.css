@@ -1,0 +1,92 @@
+/* This table holds the title and recgroup choices */
+
+#title_choices {
+    margin:     1em auto;
+}
+
+/* This is the table that holds the list of recorded shows */
+
+#recorded_list {
+    width:          100%;
+}
+
+#recorded_list td {
+    padding:        4px;
+    border:         1px solid #002650;
+}
+#recorded_list th {
+    padding:        0;
+    border:         1px solid #002650;
+    text-align:     left;
+    font-weight:    normal;
+}
+#recorded_list th a {
+    padding:        2px .5em;
+    display:        block;
+}
+
+#recorded_list td._pixmap {
+    width:              162px;
+    height:             122px;
+    background-color:   black;
+    padding:            0;
+}
+#recorded_list th._title a, #recorded_list td._title {
+}
+#recorded_list th._subtitle a, #recorded_list td._subtitle {
+}
+#recorded_list th._programid a, #recorded_list td._programid {
+}
+#recorded_list th._channum a, #recorded_list td._channum {
+    white-space:    nowrap;
+}
+#recorded_list th._airdate a, #recorded_list td._airdate {
+    text-align:     center;
+    white-space:    nowrap;
+}
+#recorded_list th._recgroup a, #recorded_list td._recgroup {
+}
+#recorded_list th._length a, #recorded_list td._length {
+    white-space:    nowrap;
+    text-align:     center;
+}
+#recorded_list th._filesize a, #recorded_list td._filesize {
+    white-space:    nowrap;
+    text-align:     center;
+}
+
+#recorded_list td._download {
+    padding:        0;
+}
+#recorded_list td._download ul {
+    list-style:     none;
+    margin:         0px auto;
+    padding:        0px;
+    width:          12em;
+}
+#recorded_list td._download ul li {
+    position:       relative;
+    margin:         15px 0px 15px 40px;
+    clear:          left;
+}
+#recorded_list td._download ul img {
+    position:       absolute;
+    top:            50%;
+    margin-top:     -12px;
+    left:           -32px;
+}
+
+/* a class for the the cells containing recored programs in recorded_programs.php */
+.recorded {    background-color: #506080; }
+
+.recorded ._progflags img {
+    padding:    .3em;
+}
+
+.recorded a img {
+    border:     1px solid transparent;
+}
+.recorded a:hover img {
+    border:     1px solid #F0F000;
+}
+
