@@ -194,7 +194,8 @@
 // Reset the template?
     elseif ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
         $_SESSION['tmpl'] = 'default';
-// Deal with people who use the same login for mobile and non-mobile
+// Deal with people who use the same login for mobile and non-mobile, and might
+// have a mobile template cached.
     elseif (in_array($_SESSION['tmpl'], array('wap', 'wml'))) {
         $_SESSION['tmpl'] = 'default';
     }
@@ -203,8 +204,13 @@
         $_SESSION['tmpl'] = 'default';
     }
 
+// Deal with people who use the same login for mobile and non-mobile, and might
+// have a mobile skin cached.
+    if (in_array($_SESSION['skin'], array('wap', 'wml'))) {
+        $_SESSION['skin'] = 'default';
+    }
 // Is there a preferred skin?
-    if (file_exists('skins/'.$_SESSION['skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
+    elseif (file_exists('skins/'.$_SESSION['skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
         define('skin', $_SESSION['skin']);
     }
     else {
