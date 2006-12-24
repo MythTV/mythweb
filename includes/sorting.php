@@ -27,8 +27,7 @@
             $url = str_replace('//', '/', root.$url);
     // Build the link
         $link = '<a href="'.$url.'?sortby='.urlencode($field).'">'
-                .$string
-                .'</a>';
+                .$string;
         switch (sort_status($field)) {
             case 1:
                 $link .= ' <span class="large">&darr;</span>';
@@ -37,7 +36,7 @@
                 $link .= ' <span class="large">&uarr;</span>';
                 break;
         }
-        return $link;
+        return $link.'</a>';
     }
 
 /**
