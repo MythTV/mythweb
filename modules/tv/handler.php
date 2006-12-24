@@ -49,10 +49,17 @@
     require_once 'includes/programs.php';
     require_once 'includes/recording_schedules.php';
 
+// Restore the last used path?
+    if (empty($Path[1]) && is_array($_SESSION['tv']['last']))
+        array_splice($Path, 1, count($Path), $_SESSION['tv']['last']);
+
 // Unknown section?  Use the default
     if (!in_array($Path[1], array('recording_detail', 'detail', 'channel', 'search', 'movies'))
             && empty($Modules['tv']['links'][$Path[1]]))
         $Path[1] = 'list';
+
+// Keep track of this path for the next visit
+    $_SESSION['tv']['last'] = array_slice($Path, 1);
 
 // Show the requested section
     require_once 'modules/tv/'.$Path[1].'.php';
