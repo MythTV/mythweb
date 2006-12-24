@@ -221,21 +221,21 @@ if ($group_field == "") {
 <tr class="menu">
 <?php
     if ($group_field != "")
-        echo "\t<td class=\"list\">&nbsp;</td>\n";
+        echo "    <td class=\"list\">&nbsp;</td>\n";
     if ($_SESSION['recorded_pixmaps'])
-        echo "\t<td>".t('preview')."</td>\n";
+        echo "    <td class=\"list\">&nbsp;</td>\n";
 ?>
-    <td><?php echo get_sort_link('title',     t('title')) ?></td>
-    <td><?php echo get_sort_link('subtitle',  t('subtitle')) ?></td>
-    <td><?php echo get_sort_link('programid', t('programid')) ?></td>
-    <td><?php echo get_sort_link('channum',   t('channum')) ?></td>
-    <td><?php echo get_sort_link('airdate',   t('airdate')) ?></td>
+    <td><?php echo get_sort_link('title',     t('Title')) ?></td>
+    <td><?php echo get_sort_link('subtitle',  t('Subtitle')) ?></td>
+    <td><?php echo get_sort_link('programid', t('Program ID')) ?></td>
+    <td><?php echo get_sort_link('channum',   t('Channel')) ?></td>
+    <td><?php echo get_sort_link('airdate',   t('Airdate')) ?></td>
 <?php
     if ($recgroup_cols)
-        echo "\t<td>" . get_sort_link('recgroup', t('recgroup')) . "</td>\n";
+        echo "    <td nowrap>" . get_sort_link('recgroup', t('Recording Group')) . "</td>\n";
 ?>
-    <td><?php echo get_sort_link('length',    t('length')) ?></td>
-    <td nowrap><?php echo get_sort_link('file_size', t('file size')) ?></td>
+    <td><?php        echo get_sort_link('length',    t('Length')) ?></td>
+    <td nowrap><?php echo get_sort_link('file_size', t('File Size')) ?></td>
 </tr><?php
     $row     = 0;
     $section = -1;
@@ -273,9 +273,9 @@ EOM;
 
         echo "<tr id=\"inforow_$row\" class=\"recorded\">\n";
         if ($group_field != "")
-            echo "\t<td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
+            echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
         if ($_SESSION['recorded_pixmaps']) {
-            echo "\t<td rowspan=\"2\" align=\"center\" style=\"background-color: black\">";
+            echo "    <td rowspan=\"2\" align=\"center\" style=\"background-color: black\">";
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
                 echo "<a href=\"$show->url\" name=\"$row\">"
@@ -297,7 +297,7 @@ EOM;
     <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
 <?php
     if ($recgroup_cols)
-        echo "\t<td nowrap align=\"center\">$show->recgroup</td>\n";
+        echo "    <td nowrap align=\"center\">$show->recgroup</td>\n";
 ?>
     <td nowrap><?php echo nice_length($show->length) ?></td>
     <td nowrap><?php echo nice_filesize($show->filesize) ?></td>

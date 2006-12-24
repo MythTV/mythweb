@@ -54,6 +54,7 @@
     Dodatne možnosti
 "Advanced Search"
 "airdate"
+"Airdate"
     datum oddajanja
 "Airtime"
     Čas predvajanja
@@ -235,7 +236,7 @@
 "Everything"
 "Exec. Producer"
     Scenarist
-"file size"
+"File Size"
     velikost datoteke
 "Filtered"
 "Find Date & Time Options"
@@ -463,8 +464,6 @@
     Predstavlja
 "Pressure"
     Tlak
-"preview"
-    predogled
 "Previous"
 "Previous recordings"
     Že posneto
@@ -477,7 +476,6 @@
 "Program Detail"
 "Program ID"
 "Program Listing"
-"programid"
 "Protocol"
 "Radar"
     Radar
@@ -683,8 +681,6 @@
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)
 "Submit Search"
-"subtitle"
-    Podnaslov
 "Subtitle"
     Podnaslov
 "Subtitle and Description"

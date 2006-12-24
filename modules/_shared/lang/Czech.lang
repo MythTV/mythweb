@@ -50,6 +50,7 @@
     Rozšířené volby
 "Advanced Search"
 "airdate"
+"Airdate"
     datum vysílání
 "Airtime"
     Čas vysílání
@@ -213,7 +214,7 @@
 "Episode Number"
 "Everything"
 "Exec. Producer"
-"file size"
+"File Size"
 "Filtered"
 "Find Date & Time Options"
 "Find Day"
@@ -420,7 +421,6 @@
 "Presented by"
 "Pressure"
     Tlak
-"preview"
 "Previous"
 "Previous recordings"
     Předchozí nahrávky
@@ -431,7 +431,6 @@
 "Program ID"
 "Program Listing"
     Výpis pořadů
-"programid"
 "Protocol"
 "Radar"
 "Random"
@@ -614,8 +613,6 @@
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
 "Submit Search"
-"subtitle"
-    podtitul
 "Subtitle"
 "Subtitle and Description"
 "Subtitled"

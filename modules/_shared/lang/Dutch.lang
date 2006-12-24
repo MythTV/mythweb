@@ -62,6 +62,7 @@
     Geavanceerde Opties
 "Advanced Search"
 "airdate"
+"Airdate"
     uitzenddatum
 "Airtime"
     Uitzendtijd
@@ -279,7 +280,7 @@
 "Everything"
 "Exec. Producer"
     Uitv. Producent
-"file size"
+"File Size"
     bestandsgrootte
 "Filtered"
     Met filter
@@ -548,8 +549,6 @@
     Presentator
 "Pressure"
     Luchtdruk
-"preview"
-    preview
 "Previous"
     Vorige
 "Previous recordings"
@@ -566,7 +565,6 @@
     Programma ID
 "Program Listing"
     Programmalijst
-"programid"
 "Protocol"
 "Radar"
     Radar
@@ -792,8 +790,6 @@
 "Sub and Desc (Empty matches)"
     Dubbels en Beschrijving
 "Submit Search"
-"subtitle"
-    aflevering
 "Subtitle"
     Aflevering
 "Subtitle and Description"

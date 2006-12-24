@@ -68,6 +68,7 @@
 "Advanced Search"
     Búsqueda Avanzada
 "airdate"
+"Airdate"
     emisión
 "Airtime"
     Horario
@@ -290,7 +291,7 @@
 "Everything"
 "Exec. Producer"
     Productor ejec.
-"file size"
+"File Size"
     tamaño fichero
 "Filtered"
     Filtrado
@@ -582,8 +583,6 @@
     Presentado por
 "Pressure"
     Presión
-"preview"
-    vista previa
 "Previous"
     Anterior
 "Previous recordings"
@@ -600,7 +599,6 @@
     ID programa
 "Program Listing"
     Listado Programas
-"programid"
 "Protocol"
 "Radar"
     Radar
@@ -833,8 +831,6 @@
 "Sub and Desc (Empty matches)"
     Sub y Desc (Coincidencias vacías)
 "Submit Search"
-"subtitle"
-    subtítulo
 "Subtitle"
     Subtítulo
 "Subtitle and Description"

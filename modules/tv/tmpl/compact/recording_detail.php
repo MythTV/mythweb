@@ -201,7 +201,7 @@
                     <dd><?php echo $program->is_watched ? t('Yes') : t('No') ?></dd>
                     <dt><?php echo t('Length') ?>:&nbsp;</dt>
                     <dd><?php echo nice_length($program->length) ?></dd>
-                    <dt><?php echo t('file size') ?>:&nbsp;</dt>
+                    <dt><?php echo t('File Size') ?>:&nbsp;</dt>
                     <dd><?php echo nice_filesize($program->filesize) ?></dd>
             </dl>
         </div>

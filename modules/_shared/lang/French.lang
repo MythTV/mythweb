@@ -59,6 +59,7 @@
     Options avancées
 "Advanced Search"
 "airdate"
+"Airdate"
     Date de diffusion
 "Airtime"
     Heure de diffusion
@@ -240,7 +241,7 @@
 "Everything"
 "Exec. Producer"
     Producteur
-"file size"
+"File Size"
     taille de fichier
 "Filtered"
 "Find Date & Time Options"
@@ -469,8 +470,6 @@
     Présenté par
 "Pressure"
     Pression
-"preview"
-    Aper&ccedil;u
 "Previous"
 "Previous recordings"
     Enregistrements pr&eacute;c&eacute;dents
@@ -483,7 +482,6 @@
 "Program Detail"
 "Program ID"
 "Program Listing"
-"programid"
 "Protocol"
 "Radar"
     Radar
@@ -691,8 +689,6 @@
 "Sub and Desc (Empty matches)"
     Sub et Desc (Vide correspond)
 "Submit Search"
-"subtitle"
-    Sous titre
 "Subtitle"
     Soustitre
 "Subtitle and Description"

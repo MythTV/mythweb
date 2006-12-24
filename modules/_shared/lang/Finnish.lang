@@ -60,6 +60,7 @@
     Edistyneet Valinnat
 "Advanced Search"
 "airdate"
+"Airdate"
     lähetysaika
 "Airtime"
     Lähetysaika
@@ -276,7 +277,7 @@
 "Everything"
 "Exec. Producer"
     Tuottaja
-"file size"
+"File Size"
     tiedostokoko
 "Filtered"
     Suodatettu
@@ -532,8 +533,6 @@
     Esittää
 "Pressure"
     Ilmanpaine
-"preview"
-    esikatselu
 "Previous"
     Edellinen
 "Previous recordings"
@@ -549,7 +548,6 @@
 "Program ID"
 "Program Listing"
     Ohjelmalistaus
-"programid"
 "Protocol"
 "Radar"
     Säätutka
@@ -773,8 +771,6 @@
 "Sub and Desc (Empty matches)"
     Kuvaus ja Nimike (Ei vastaavuuksia)
 "Submit Search"
-"subtitle"
-    Jakson nimi
 "Subtitle"
     Jakson Nimi
 "Subtitle and Description"

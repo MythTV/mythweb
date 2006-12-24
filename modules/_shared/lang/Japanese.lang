@@ -61,6 +61,7 @@
 "Advanced Search"
     アドバンスドサーチ
 "airdate"
+"Airdate"
     放送日
 "Airtime"
     放送時間
@@ -279,7 +280,7 @@
 "Everything"
 "Exec. Producer"
     製作責任者
-"file size"
+"File Size"
     ファイルサイズ
 "Filtered"
     抽出
@@ -560,8 +561,6 @@
     提供
 "Pressure"
     気圧
-"preview"
-    プレビュー
 "Previous"
     戻る
 "Previous recordings"
@@ -578,7 +577,6 @@
     番組ID
 "Program Listing"
     番組表
-"programid"
 "Protocol"
 "Radar"
     レーダー
@@ -807,8 +805,6 @@
 "Sub and Desc (Empty matches)"
     サブタイトルと内容(エンプティーマッチ)
 "Submit Search"
-"subtitle"
-    サブタイトル
 "Subtitle"
     サブタイトル
 "Subtitle and Description"

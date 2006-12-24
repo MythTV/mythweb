@@ -65,6 +65,7 @@
     Avancerede indstillinger
 "Advanced Search"
 "airdate"
+"Airdate"
     visningsdato
 "Airtime"
     Visningsdato
@@ -285,7 +286,7 @@
 "Everything"
 "Exec. Producer"
     Producer
-"file size"
+"File Size"
     filstørrelse
 "Filtered"
     Filtreret
@@ -556,8 +557,6 @@
     Præsenteret af
 "Pressure"
     Lufttryk
-"preview"
-    forhåndsvisning
 "Previous"
     Forrige
 "Previous recordings"
@@ -573,7 +572,6 @@
 "Program ID"
 "Program Listing"
     Program lister
-"programid"
 "Protocol"
 "Radar"
     Radar
@@ -799,8 +797,6 @@
 "Sub and Desc (Empty matches)"
     Undertitel og beskrivelse
 "Submit Search"
-"subtitle"
-    undertitel
 "Subtitle"
     Undertitel
 "Subtitle and Description"

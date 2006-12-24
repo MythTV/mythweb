@@ -68,6 +68,7 @@
 "Advanced Search"
     Avancerad sökning
 "airdate"
+"Airdate"
     datum
 "Airtime"
     Sändningstid
@@ -291,7 +292,7 @@
 "Everything"
 "Exec. Producer"
     Producent
-"file size"
+"File Size"
     filstorlek
 "Filtered"
     Filtrerat
@@ -586,8 +587,6 @@
     Presenteras av
 "Pressure"
     Lufttryck
-"preview"
-    förhandsvisning
 "Previous"
     Föregående
 "Previous recordings"
@@ -604,7 +603,6 @@
     Program-ID
 "Program Listing"
     Programlista
-"programid"
 "Protocol"
 "Radar"
     Radar
@@ -837,8 +835,6 @@
 "Sub and Desc (Empty matches)"
     Undertitel &amp; beskrivning
 "Submit Search"
-"subtitle"
-    undertitel
 "Subtitle"
     Undertitel
 "Subtitle and Description"
