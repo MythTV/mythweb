@@ -69,7 +69,7 @@
 
 <?php
 // Setup for grouping by various sort orders
-$group_field = $_GET['sortby'];
+$group_field = $_SESSION['recorded_sortby'][0]['field'];
 if ($group_field == "") {
     $group_field = "airdate";
 } elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) ) {
