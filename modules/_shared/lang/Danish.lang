@@ -112,6 +112,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     auto-udløb
 "Auto-expire recordings"
@@ -177,11 +178,15 @@
     Kontroller for dubletter i
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     Farve
 "Commands"
     Kommandoer
+"Commercials Flagged"
 "commfree"
     Reklamefri
 "Conflict"
@@ -333,13 +338,15 @@
     Guide opsætning
 "Handy Predefined Searches"
 "handy: overview"
-"has been watched"
 "has bookmark"
     har bookmark(s)
+"has Bookmark"
 "has commflag"
     har markeret reklameblokke
+"Has Cutlist"
 "has cutlist"
     har klippeliste
+"HD"
 "HDTV"
     HDTV
 "High"
@@ -751,8 +758,6 @@
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "Show"
     Program
-"Show descriptions on new line"
-    Vis beskrivelser på ny linie
 "Show group"
     Vis gruppe
 "Show pixmaps"
@@ -909,6 +914,7 @@
     synlig
 "Visit $1"
     Besøg $1
+"Watched"
 "watched"
 "Weather"
     Vejret

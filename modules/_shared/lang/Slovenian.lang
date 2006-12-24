@@ -90,6 +90,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     avto-brisanje
 "Auto-expire recordings"
@@ -145,10 +146,14 @@
     Preveri za duplikati v
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
 "Commands"
     Ukazi
+"Commercials Flagged"
 "commfree"
 "Conflict"
 "Conflicts"
@@ -275,13 +280,15 @@
 "Handy Predefined Searches"
 "handy: overview"
     Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.
-"has been watched"
 "has bookmark"
     ima zaznamek
+"has Bookmark"
 "has commflag"
     ima označene reklame
+"Has Cutlist"
 "has cutlist"
     ima seznam rezov
+"HD"
 "HDTV"
 "High"
     Visoka
@@ -641,8 +648,6 @@
 "settings: notice"
 "Show"
     Oddaja
-"Show descriptions on new line"
-    Opis prikaži v novi vrstici
 "Show group"
     Pokaži skupino
 "Show pixmaps"
@@ -771,6 +776,7 @@
     Vidljivost
 "visible"
 "Visit $1"
+"Watched"
 "watched"
 "Weather"
 "Wednesday"

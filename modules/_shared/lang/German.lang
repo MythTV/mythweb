@@ -108,6 +108,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     autom. löschen
 "Auto-expire recordings"
@@ -170,11 +171,15 @@
     Nach Wdhgn. suchen in
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     Farbe
 "Commands"
     Optionen
+"Commercials Flagged"
 "commfree"
     Werbefrei
 "Conflict"
@@ -330,13 +335,15 @@
     Handy: Vordefinierte Suchabfragen
 "handy: overview"
     Handy: Übersicht
-"has been watched"
 "has bookmark"
     Position gesetzt
+"has Bookmark"
 "has commflag"
     Werbung markiert
+"Has Cutlist"
 "has cutlist"
     Schnittliste
+"HD"
 "HDTV"
     HDTV
 "High"
@@ -744,8 +751,6 @@
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Show"
     Sendung
-"Show descriptions on new line"
-    Beschreibungen in neuer Zeile anzeigen
 "Show group"
     Gruppe zeigen
 "Show pixmaps"
@@ -898,6 +903,7 @@
     Sichtbar
 "Visit $1"
     Besuche $1
+"Watched"
 "watched"
 "Weather"
     Wetter

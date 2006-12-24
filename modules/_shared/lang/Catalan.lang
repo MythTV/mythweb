@@ -115,6 +115,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     autoexpirar
 "Auto-expire recordings"
@@ -179,11 +180,15 @@
     Cercar duplicats a
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     color
 "Commands"
     Comandes
+"Commercials Flagged"
 "commfree"
     sense anuncis
 "Conflict"
@@ -343,13 +348,15 @@
     Recerques predefinides útils
 "handy: overview"
     útils: resúm
-"has been watched"
 "has bookmark"
     té marques
+"has Bookmark"
 "has commflag"
     té anuncis marcats
+"Has Cutlist"
 "has cutlist"
     té llista de tall
+"HD"
 "HDTV"
     HDTV
 "High"
@@ -784,8 +791,6 @@
     Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
 "Show"
     Programa
-"Show descriptions on new line"
-    Mostrar descripcions en una nova línia
 "Show group"
     Mostrar grup
 "Show pixmaps"
@@ -946,6 +951,7 @@
     visible
 "Visit $1"
     Visite $1
+"Watched"
 "watched"
 "Weather"
     Tiempo

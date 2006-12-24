@@ -108,6 +108,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     自動削除
 "Auto-expire recordings"
@@ -169,11 +170,15 @@
     重複チェック対象
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     カラー
 "Commands"
     コマンド
+"Commercials Flagged"
 "commfree"
     CMカット
 "Conflict"
@@ -330,13 +335,15 @@
     おてがるサーチ
 "handy: overview"
     下のメニューから簡単に検索できます。
-"has been watched"
 "has bookmark"
     ブックマーク
+"has Bookmark"
 "has commflag"
     CMマーク
+"Has Cutlist"
 "has cutlist"
     カットリスト
+"HD"
 "HDTV"
 "High"
     高
@@ -757,8 +764,6 @@
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
 "Show"
     番組
-"Show descriptions on new line"
-    内容を新しい行で表示する
 "Show group"
     グループ表示
 "Show pixmaps"
@@ -912,6 +917,7 @@
 "visible"
 "Visit $1"
     $1を訪れる
+"Watched"
 "watched"
 "Weather"
     天気

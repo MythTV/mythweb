@@ -47,14 +47,15 @@
     foreach ($All_Shows as $show) {
 ?>
     file = new Object();
-    file.title     = '<?php echo addslashes($show->title)                  ?>';
-    file.subtitle  = '<?php echo addslashes($show->subtitle)               ?>';
-    file.chanid    = '<?php echo addslashes($show->chanid)                 ?>';
-    file.starttime = '<?php echo addslashes($show->recstartts)             ?>';
-    file.group     = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->group)))    ?>';
-    file.filename  = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->filename))) ?>';
-    file.size      = '<?php echo addslashes($show->filesize)               ?>';
-    file.length    = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
+    file.title      = '<?php echo addslashes($show->title)                  ?>';
+    file.subtitle   = '<?php echo addslashes($show->subtitle)               ?>';
+    file.chanid     = '<?php echo addslashes($show->chanid)                 ?>';
+    file.starttime  = '<?php echo addslashes($show->recstartts)             ?>';
+    file.group      = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->group)))    ?>';
+    file.filename   = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->filename))) ?>';
+    file.size       = '<?php echo addslashes($show->filesize)               ?>';
+    file.length     = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
+    file.autoexpire = <?php echo $show->auto_expire ? 1 : 0                 ?>;
     files.push(file);
 
 <?php
@@ -63,9 +64,19 @@
 
     function set_autoexpire(id) {
         var file = files[id];
-        submit_url('<?php echo root ?>tv/recorded?ajax&autoexpire='+
-                   +(get_element('autoexpire_' + file.chanid + '.' + file.starttime).checked ? '1' : '0')
+        file.autoexpire = 1 - file.autoexpire;
+        submit_url('<?php echo root ?>tv/recorded?ajax&autoexpire='
+                   +file.autoexpire
                    +'&chanid='+file.chanid+'&starttime='+file.starttime);
+        $('autoexpire_'+id).src = '<?php echo skin_url, '/img/flags/' ?>'
+                                  + (file.autoexpire
+                                     ? ''
+                                     : 'no_')
+                                  + 'autoexpire.png';
+        if (file.autoexpire)
+            $('autoexpire_'+id).title = '<?php echo addslashes(t('Click to disable Auto Expire')) ?>';
+        else
+            $('autoexpire_'+id).title = '<?php echo addslashes(t('Click to enable Auto Expire')) ?>';
     }
 
     function confirm_delete(id, forget_old) {
@@ -192,6 +203,7 @@
 </tr>
 </table>
 </form>
+<br />
 </p>
 
 <?php
@@ -213,17 +225,17 @@ if ($group_field == "") {
     if ($_SESSION['recorded_pixmaps'])
         echo "\t<td>".t('preview')."</td>\n";
 ?>
-    <td><?php echo get_sort_link('title',    t('title')) ?></td>
-    <td><?php echo get_sort_link('subtitle', t('subtitle')) ?></td>
+    <td><?php echo get_sort_link('title',     t('title')) ?></td>
+    <td><?php echo get_sort_link('subtitle',  t('subtitle')) ?></td>
     <td><?php echo get_sort_link('programid', t('programid')) ?></td>
     <td><?php echo get_sort_link('channum',   t('channum')) ?></td>
+    <td><?php echo get_sort_link('airdate',   t('airdate')) ?></td>
 <?php
     if ($recgroup_cols)
         echo "\t<td>" . get_sort_link('recgroup', t('recgroup')) . "</td>\n";
 ?>
-    <td><?php echo get_sort_link('airdate',   t('airdate')) ?></td>
     <td><?php echo get_sort_link('length',    t('length')) ?></td>
-    <td><?php echo get_sort_link('file_size', t('file size')) ?></td>
+    <td nowrap><?php echo get_sort_link('file_size', t('file size')) ?></td>
 </tr><?php
     $row     = 0;
     $section = -1;
@@ -242,7 +254,7 @@ if ($group_field == "") {
                 $cur_group = $show->recgroup;
                 break;
             case 'channum':
-                $cur_group = $show->channel->name;
+                $cur_group = $show->channel->channum;
                 break;
             case 'title':
                 $cur_group = $show->title;
@@ -263,7 +275,7 @@ EOM;
         if ($group_field != "")
             echo "\t<td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
         if ($_SESSION['recorded_pixmaps']) {
-            echo "\t<td rowspan=\"2\">";
+            echo "\t<td rowspan=\"2\" align=\"center\" style=\"background-color: black\">";
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
                 echo "<a href=\"$show->url\" name=\"$row\">"
@@ -281,12 +293,12 @@ EOM;
     <td><?php echo "<a href=\"$show->url\">"
                     .$show->subtitle.'</a>' ?></td>
     <td><?php echo $show->programid ?></td>
-    <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
+    <td nowrap><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+    <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
 <?php
     if ($recgroup_cols)
         echo "\t<td nowrap align=\"center\">$show->recgroup</td>\n";
 ?>
-    <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
     <td nowrap><?php echo nice_length($show->length) ?></td>
     <td nowrap><?php echo nice_filesize($show->filesize) ?></td>
 <?php   if ($show->endtime > time()) { ?>
@@ -302,36 +314,46 @@ EOM;
 <?php   }
 ?>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td colspan="2"><?php echo $show->description ?></td>
-    <td nowrap colspan="<?php echo 5 + $recgroup_cols ?>" align="center">
-<?php /** @todo this table really needs to get its own styling, or better yet, be replaced! */ ?>
-        <table border="0" cellspacing="0" cellpadding="5" class="command_border_l command_border_t command_border_b command_border_r">
-        <tr>
-            <td><?php echo t('has commflag') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('has cutlist') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->has_cutlist ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('has bookmark') ?>:</td>
-            <td><b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b></td>
-        </tr><tr>
-            <td><?php echo t('watched') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->is_watched ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('is editing') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->is_editing ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('auto-expire') ?>:</td>
-            <td><input type="checkbox" id="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
-                     name="autoexpire_<?php echo $show->chanid, '.', $show->recstartts ?>"
-                     <?php if ($show->auto_expire) echo ' CHECKED' ?> onclick="set_autoexpire(<?php echo $row ?>)" />
-                 </td>
-        </tr>
-        </table>
+    <td colspan="2" valign="top"><?php echo $show->description ?></td>
+    <td colspan="<?php echo 3 + $recgroup_cols ?>" class="_progflags"><?php
+        // Auto expire is interactive
+            echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
+                 '<img id="autoexpire_', $row, '" src="', skin_url, '/img/flags/';
+            if ($show->auto_expire)
+                echo 'autoexpire.png" title="', t('Click to disable Auto Expire'), '"';
+            else
+                echo 'no_autoexpire.png" title="', t('Click to enable Auto Expire'), '"';
+            echo '></a>';
+        // The rest of the flags are just for display
+            if ($show->closecaptioned)
+                echo '<img src="'.skin_url.'/img/flags/cc.png" title="'.t('Closed Captioning').'">';
+            if ($show->stereo)
+                echo '<img src="'.skin_url.'/img/flags/stereo.png" title="'.t('Stereo').'">';
+            if ($show->hdtv)
+                echo '<img src="'.skin_url.'/img/flags/hd.png" title="'.t('HD').'">';
+            if ($show->has_commflag)
+                echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'">';
+            if ($show->has_cutlist)
+                echo '<img src="'.skin_url.'/img/flags/cutlist.png" title="'.t('Has Cutlist').'">';
+            if ($show->bookmark)
+                echo '<img src="'.skin_url.'/img/flags/bookmark.png" title="'.t('has Bookmark').'">';
+            if ($show->is_watched)
+                echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
+        ?></td>
+    <td nowrap colspan="2">
+        <ul class="_download">
+            <li><a href="<?php echo video_url($show, true) ?>">
+                    <img src="<?php echo skin_url ?>/img/play_sm.png"><?php echo t('ASX Stream') ?></a></li>
+            <li><a href="<?php echo $show->url ?>">
+                    <img src="<?php echo skin_url ?>/img/video_sm.png"><?php echo t('Direct Download') ?></a></li>
+        </ul>
         </td>
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_rerecord_<?php echo $row ?>"
             js_href="javascript:confirm_delete(<?php echo $row ?>, true)"
             title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
-            ><?php echo t('Delete + Rerecord') ?></a></td>
-    </td>
+            ><?php echo t('Delete + Rerecord') ?></a>
+        </td>
 </tr><?php
         $prev_group = $cur_group;
     // Keep track of how many shows are visible in each section

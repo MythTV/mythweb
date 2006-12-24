@@ -115,6 +115,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     autoradera
 "Auto-expire recordings"
@@ -180,11 +181,15 @@
     Sök dubbletter i
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     färg
 "Commands"
     Kommando
+"Commercials Flagged"
 "commfree"
     reklamfri
 "Conflict"
@@ -344,13 +349,15 @@
     Förberedda sökningar
 "handy: overview"
     Denna sida innehåller förberedda komplexa sökningar av programlistorna (fungerar för närvarande endast med data från DataDirect, alltså ej i Sverige.).
-"has been watched"
 "has bookmark"
     bokmärke
+"has Bookmark"
 "has commflag"
     markerad reklam
+"Has Cutlist"
 "has cutlist"
     klipplista
+"HD"
 "HDTV"
     HDTV
 "High"
@@ -786,8 +793,6 @@
     OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
 "Show"
     Program
-"Show descriptions on new line"
-    Visa beskrivning på ny rad
 "Show group"
     Visa grupp
 "Show pixmaps"
@@ -947,6 +952,7 @@
     synlig
 "Visit $1"
     Besök $1
+"Watched"
 "watched"
 "Weather"
     Väder

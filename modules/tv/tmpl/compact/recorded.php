@@ -64,6 +64,7 @@
 </tr>
 </table>
 </form>
+<br />
 </p>
 
 <?php
@@ -135,7 +136,7 @@ EOM;
         if ($group_field != "")
             echo "\t<td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
         if ($_SESSION['recorded_pixmaps']) {
-            echo "\t<td rowspan=\"2\">";
+            echo "\t<td rowspan=\"2\" align=\"center\" style=\"background-color: black\">";
             if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
                 list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
                 echo "<a href=\"$show->url\" name=\"$row\">"
@@ -153,7 +154,7 @@ EOM;
     <td><?php echo "<a href=\"$show->url\">"
                     .$show->subtitle.'</a>' ?></td>
     <td><?php echo $show->programid ?></td>
-    <td><?php echo $show->channel->channum, ' - <nobr>', $show->channel->name ?></nobr></td>
+    <td nowrap><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
 <?php
     if ($recgroup_cols)
         echo "\t<td nowrap align=\"center\">$show->recgroup</td>\n";
@@ -175,25 +176,33 @@ EOM;
 ?>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
     <td colspan="2"><?php echo $show->description ?></td>
-    <td nowrap colspan="<?php echo 5 + $recgroup_cols ?>" align="center">
-<?php /** @todo this table really needs to get its own styling, or better yet, be replaced! */ ?>
-        <table border="0" cellspacing="0" cellpadding="5" class="command_border_l command_border_t command_border_b command_border_r">
-        <tr>
-            <td><?php echo t('has commflag') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->has_commflag ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('has cutlist') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->has_cutlist ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('has bookmark') ?>:</td>
-            <td><b><?php echo $show->bookmark ? t('Yes') : t('No') ?></b></td>
-        </tr><tr>
-            <td><?php echo t('watched') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->is_watched ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('is editing') ?>:</td>
-            <td class="command_border_r"><b><?php echo $show->is_editing ? t('Yes') : t('No') ?></b></td>
-            <td><?php echo t('auto-expire') ?>:</td>
-            <td><b><?php echo $show->auto_expire ? t('Yes') : t('No') ?></b></td>
-        </tr>
-        </table>
+    <td colspan="<?php echo 3 + $recgroup_cols ?>" class="_progflags"><?php
+        // Auto expire is not interactive in the compact template
+            if ($show->auto_expire)
+                echo '<img src="', skin_url, '/img/flags/autoexpire.png" title="', t('Auto Expire'), '">';
+        // The rest of the flags are just for display
+            if ($show->closecaptioned)
+                echo '<img src="'.skin_url.'/img/flags/cc.png" title="'.t('Closed Captioning').'">';
+            if ($show->stereo)
+                echo '<img src="'.skin_url.'/img/flags/stereo.png" title="'.t('Stereo').'">';
+            if ($show->hdtv)
+                echo '<img src="'.skin_url.'/img/flags/hd.png" title="'.t('HD').'">';
+            if ($show->has_commflag)
+                echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'">';
+            if ($show->has_cutlist)
+                echo '<img src="'.skin_url.'/img/flags/cutlist.png" title="'.t('Has Cutlist').'">';
+            if ($show->bookmark)
+                echo '<img src="'.skin_url.'/img/flags/bookmark.png" title="'.t('has Bookmark').'">';
+            if ($show->is_watched)
+                echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
+        ?></td>
+    <td nowrap colspan="2">
+        <ul class="_download">
+            <li><a href="<?php echo video_url($show, true) ?>">
+                    <img src="<?php echo skin_url ?>/img/play_sm.png"><?php echo t('ASX Stream') ?></a></li>
+            <li><a href="<?php echo $show->url ?>">
+                    <img src="<?php echo skin_url ?>/img/video_sm.png"><?php echo t('Direct Download') ?></a></li>
+        </ul>
         </td>
     <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
         <a id="delete_rerecord_<?php echo $row ?>"

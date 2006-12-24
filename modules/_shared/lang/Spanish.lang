@@ -115,6 +115,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     autoexpirar
 "Auto-expire recordings"
@@ -179,11 +180,15 @@
     Buscar duplicados en
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     color
 "Commands"
     Comandos
+"Commercials Flagged"
 "commfree"
     sin anuncios
 "Conflict"
@@ -343,13 +348,15 @@
     Búsquedas Predefinidas Útiles
 "handy: overview"
     útiles: resúmen
-"has been watched"
 "has bookmark"
     tiene marcador
+"has Bookmark"
 "has commflag"
     anuncios marcados
+"Has Cutlist"
 "has cutlist"
     lista de corte
+"HD"
 "HDTV"
     HDTV
 "High"
@@ -782,8 +789,6 @@
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
 "Show"
     Programa
-"Show descriptions on new line"
-    Mostrar descripciones en linea nueva
 "Show group"
     Mostrar grupo
 "Show pixmaps"
@@ -943,6 +948,7 @@
     visible
 "Visit $1"
     Visite $1
+"Watched"
 "watched"
 "Weather"
     Tiempo

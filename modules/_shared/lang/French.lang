@@ -95,6 +95,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     auto-expire
 "Auto-expire recordings"
@@ -150,10 +151,14 @@
     Cherche les doublons dans
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
 "Commands"
     Commandes
+"Commercials Flagged"
 "commfree"
 "Conflict"
 "Conflicts"
@@ -280,13 +285,15 @@
 "Handy Predefined Searches"
 "handy: overview"
     Cette page contient des recherches préparées dans le programme TV
-"has been watched"
 "has bookmark"
     a des signets
+"has Bookmark"
 "has commflag"
     a des marques de pub
+"Has Cutlist"
 "has cutlist"
     a une liste de coupe
+"HD"
 "HDTV"
 "High"
     &eacute;lev&eacute;
@@ -649,8 +656,6 @@
     Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
 "Show"
     Diffusion
-"Show descriptions on new line"
-    Afficher la description sur une nouvelle ligne
 "Show group"
     Monter les groupes
 "Show pixmaps"
@@ -779,6 +784,7 @@
     Visibilit&eacute;
 "visible"
 "Visit $1"
+"Watched"
 "watched"
 "Weather"
 "Wednesday"

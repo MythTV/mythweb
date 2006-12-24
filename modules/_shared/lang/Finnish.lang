@@ -105,6 +105,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     anna vanheta
 "Auto-expire recordings"
@@ -167,11 +168,15 @@
     Tarkista kaksoiskappaleet
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     Väri
 "Commands"
     Komennot
+"Commercials Flagged"
 "commfree"
     Mainosvapaa
 "Conflict"
@@ -322,13 +327,15 @@
     Esitäytetyt Haut
 "handy: overview"
     Sisältää valmiita edistyneen haun lauseita.
-"has been watched"
 "has bookmark"
     kirjanmerkitty
+"has Bookmark"
 "has commflag"
     mainokset merkitty
+"Has Cutlist"
 "has cutlist"
     on leikattu
+"HD"
 "HDTV"
     Tarkkapiirto
 "High"
@@ -726,8 +733,6 @@
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
 "Show"
     Ohjelma
-"Show descriptions on new line"
-    Kuvaukset uudella rivillä
 "Show group"
     Näytä ryhmä
 "Show pixmaps"
@@ -877,6 +882,7 @@
 "visible"
     Näkyvä
 "Visit $1"
+"Watched"
 "watched"
 "Weather"
     Säätila

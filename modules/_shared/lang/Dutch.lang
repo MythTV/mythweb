@@ -108,6 +108,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
     automatisch vervallen
 "Auto-expire recordings"
@@ -170,11 +171,15 @@
     Op dubbels controleren in
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
     kleur
 "Commands"
     Opdrachten
+"Commercials Flagged"
 "commfree"
     reclamevrij
 "Conflict"
@@ -330,13 +335,15 @@
     Handige voorgeprogrammeerde zoekopdrachten
 "handy: overview"
     Deze pagina bevat handige voorgeprogrammeerde complexe zoekopdrachten
-"has been watched"
 "has bookmark"
     heeft index
+"has Bookmark"
 "has commflag"
     heeft reclamemarkering
+"Has Cutlist"
 "has cutlist"
     heeft knippunten
+"HD"
 "HDTV"
     HDTV
 "High"
@@ -744,8 +751,6 @@
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
 "Show"
     Toon
-"Show descriptions on new line"
-    Beschrijvingen op nieuwe regel
 "Show group"
     Groep tonen
 "Show pixmaps"
@@ -898,6 +903,7 @@
 "visible"
     zichtbaar
 "Visit $1"
+"Watched"
 "watched"
 "Weather"
     Weer

@@ -84,6 +84,7 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Auto Expire"
 "auto-expire"
 "Auto-expire recordings"
     Automaticky vypršet nahrávky
@@ -133,9 +134,13 @@
     Zkontrolovat duplicity
 "Choose Genre.."
 "Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
 "Click to View Playlist"
+"Closed Captioning"
 "colour"
 "Commands"
+"Commercials Flagged"
 "commfree"
 "Conflict"
 "Conflicts"
@@ -245,10 +250,12 @@
 "Handy Predefined Searches"
 "handy: overview"
     This page contains pre-prepared complex searches of the program listings.
-"has been watched"
 "has bookmark"
+"has Bookmark"
 "has commflag"
+"Has Cutlist"
 "has cutlist"
+"HD"
 "HDTV"
 "High"
 "Host"
@@ -580,7 +587,6 @@
 "settings/stream: protocol"
 "settings: notice"
 "Show"
-"Show descriptions on new line"
 "Show group"
 "Show pixmaps"
 "Show recordings"
@@ -689,6 +695,7 @@
     Viditelnost
 "visible"
 "Visit $1"
+"Watched"
 "watched"
 "Weather"
     Počasí
