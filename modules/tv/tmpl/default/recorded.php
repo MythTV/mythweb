@@ -25,6 +25,23 @@
 // Global variables used here
     global $All_Shows, $Total_Programs, $Total_Time, $Total_Used,
            $Groups,    $Program_Titles;
+
+// Show the recgroup?
+    if (count($Groups) > 1) {
+        $recgroup_cols = 1;
+    }
+    else {
+        $recgroup_cols = 0;
+    }
+
+// Setup for grouping by various sort orders
+    $group_field = $_SESSION['recorded_sortby'][0]['field'];
+    if ($group_field == "") {
+        $group_field = "airdate";
+    } elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) ) {
+        $group_field = "";
+    }
+
 ?>
 
 <script language="JavaScript" type="text/javascript">
@@ -184,10 +201,9 @@
         }
         ?>
     </select></td>
-<?php   $recgroup_cols = 1;
-    } else {
-        $recgroup_cols = 0;
-    } ?>
+<?php
+    }
+?>
     <td><?php echo t('Show recordings') ?>:</td>
     <td width="250" align="center"><select name="title" onchange="$('change_title').submit()">
         <option id="All recordings" value=""><?php echo t('All recordings') ?></option>
@@ -205,17 +221,6 @@
 </tr>
 </table>
 </form>
-
-<?php
-// Setup for grouping by various sort orders
-$group_field = $_SESSION['recorded_sortby'][0]['field'];
-if ($group_field == "") {
-    $group_field = "airdate";
-} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) ) {
-    $group_field = "";
-}
-
-?>
 
 <table id="recorded_list" border="0" cellpadding="0" cellspacing="0" class="list small">
 <tr class="menu">

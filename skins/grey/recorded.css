@@ -12,11 +12,11 @@
 
 #recorded_list td {
     padding:        4px;
-    border:         1px solid #222222;
+    border:         1px solid #222;
 }
 #recorded_list th {
     padding:        0;
-    border:         1px solid #222222;
+    border:         1px solid #222;
     text-align:     left;
     font-weight:    normal;
 }
@@ -26,11 +26,35 @@
 }
 
 #recorded_list td._pixmap {
-    width:              162px;
-    height:             122px;
     background-color:   black;
-    padding:            0;
+    padding:            0 !important;
+    width:              150px;
+    position:           relative;
 }
+#recorded_list td._pixmap a {
+    border:         1px solid transparent;
+}
+#recorded_list td._pixmap a:hover {
+    border:         1px solid #F0F000;
+}
+
+#recorded_list td._pixmap a._pixmap {
+    float:          left;
+    height:         78px;
+}
+#recorded_list td._pixmap a._pixmap img {
+    width:          100px;
+    height:         76px;
+}
+#recorded_list td._pixmap a._download {
+    margin-left:    102px !important;
+    display:        block;
+    padding:        7px;
+    height:         24px;
+    text-align:     center;
+    vertical-align: middle;
+}
+
 #recorded_list th._title a, #recorded_list td._title {
 }
 #recorded_list th._subtitle a, #recorded_list td._subtitle {
@@ -55,29 +79,24 @@
     text-align:     center;
 }
 
-#recorded_list td._download {
-    padding:        0;
+#recorded_list td._commands {
+    padding:            0;
+    width:              5%;
+    white-space:        nowrap;
+    text-align:         center;
+    vertical-align:     top;
+    background-color:   #222;
 }
-#recorded_list td._download ul {
-    list-style:     none;
-    margin:         0px auto;
-    padding:        0px;
-    width:          12em;
-}
-#recorded_list td._download ul li {
-    position:       relative;
-    margin:         15px 0px 15px 40px;
-    clear:          left;
-}
-#recorded_list td._download ul img {
-    position:       absolute;
-    top:            50%;
-    margin-top:     -12px;
-    left:           -32px;
+#recorded_list td._commands a {
+    display:            block;
+    padding:            .5em;
+    margin:             0 0 2px 0;
+    border:             2px solid #000;
+    background-color:   #333;
 }
 
 /* a class for the the cells containing recored programs in recorded_programs.php */
-.recorded {    background-color: #444444; }
+.recorded {    background-color: #444; }
 
 .recorded ._progflags img {
     padding:    .3em;
@@ -86,7 +105,7 @@
 .recorded a img {
     border:     1px solid transparent;
 }
-.recorded a:hover img {
+.recorded ._progflags a:hover img {
     border:     1px solid #F0F000;
 }
 

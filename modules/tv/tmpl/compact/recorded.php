@@ -16,17 +16,36 @@
 // Set the desired page title
     $page_title = 'MythWeb - '.t('Recorded Programs');
 
+// Custom headers
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/recorded.css" />';
+
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
 // Global variables used here
     global $All_Shows, $Total_Programs, $Total_Time, $Total_Used,
            $Groups,    $Program_Titles;
+
+// Show the recgroup?
+    if (count($Groups) > 1) {
+        $recgroup_cols = 1;
+    }
+    else {
+        $recgroup_cols = 0;
+    }
+
+// Setup for grouping by various sort orders
+    $group_field = $_SESSION['recorded_sortby'][0]['field'];
+    if ($group_field == "") {
+        $group_field = "airdate";
+    } elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) ) {
+        $group_field = "";
+    }
+
 ?>
 
-<p>
-<form id="program_titles" action="<?php echo root ?>tv/recorded" method="get">
-<table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
+<form id="change_title" action="<?php echo root ?>tv/recorded" method="get">
+<table id="title_choices" class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
 <?php if (count($Groups) > 1) { ?>
     <td><?php echo t('Show group') ?>:</td>
@@ -42,10 +61,9 @@
         }
         ?>
     </select></td>
-<?php   $recgroup_cols = 1;
-    } else {
-        $recgroup_cols = 0;
-    } ?>
+<?php
+    }
+?>
     <td><?php echo t('Show recordings') ?>:</td>
     <td width="250" align="center"><select name="title">
         <option id="All recordings" value=""><?php echo t('All recordings') ?></option>
@@ -64,39 +82,24 @@
 </tr>
 </table>
 </form>
-<br />
-</p>
 
-<?php
-// Setup for grouping by various sort orders
-$group_field = $_SESSION['recorded_sortby'][0]['field'];
-if ($group_field == "") {
-    $group_field = "airdate";
-} elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) ) {
-    $group_field = "";
-}
-
-?>
-
-<table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table id="recorded_list" border="0" cellpadding="0" cellspacing="0" class="list small">
 <tr class="menu">
 <?php
     if ($group_field != "")
-        echo "    <td class=\"list\">&nbsp;</td>\n";
-    if ($_SESSION['recorded_pixmaps'])
-        echo "    <td>&nbsp;</td>\n";
+        echo "    <td class=\"list\" colspan=\"2\">&nbsp;</td>\n";
 ?>
-    <td><?php echo get_sort_link('title',     t('Title')) ?></td>
-    <td><?php echo get_sort_link('subtitle',  t('Subtitle')) ?></td>
-    <td><?php echo get_sort_link('programid', t('Program ID')) ?></td>
-    <td><?php echo get_sort_link('channum',   t('Channel')) ?></td>
-    <td><?php echo get_sort_link('airdate',   t('Airdate')) ?></td>
+    <th class="_title"><?php     echo get_sort_link('title',     t('Title')) ?></td>
+    <th class="_subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle')) ?></td>
+    <th class="_programid"><?php echo get_sort_link('programid', t('Program ID')) ?></td>
+    <th class="_channum"><?php   echo get_sort_link('channum',   t('Channel')) ?></td>
+    <th class="_airdate"><?php   echo get_sort_link('airdate',   t('Airdate')) ?></td>
 <?php
     if ($recgroup_cols)
-        echo "    <td nowrap>" . get_sort_link('recgroup', t('Recording Group')) . "</td>\n";
+        echo '    <th class="_recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
 ?>
-    <td><?php echo get_sort_link('length',    t('Length')) ?></td>
-    <td nowrap><?php echo get_sort_link('file_size', t('File Size')) ?></td>
+    <th class="_length"><?php        echo get_sort_link('length',    t('Length')) ?></td>
+    <th class="_filesize"><?php echo get_sort_link('file_size', t('File Size')) ?></td>
 </tr><?php
     $row     = 0;
     $section = -1;
@@ -115,7 +118,7 @@ if ($group_field == "") {
                 $cur_group = $show->recgroup;
                 break;
             case 'channum':
-                $cur_group = $show->channel->name;
+                $cur_group = $show->channel->channum;
                 break;
             case 'title':
                 $cur_group = $show->title;
@@ -135,48 +138,47 @@ EOM;
         echo "<tr id=\"inforow_$row\" class=\"recorded\">\n";
         if ($group_field != "")
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
-        if ($_SESSION['recorded_pixmaps']) {
-            echo "    <td rowspan=\"2\" align=\"center\" style=\"background-color: black\">";
-            if (file_exists(cache_dir.'/'.basename($show->filename).'.png')) {
-                list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($show->filename).'.png');
-                echo "<a href=\"$show->url\" name=\"$row\">"
-                    .'<img id="'.$show->filename.'" src="'.$show->thumb_url.'.png" '.$attr.' border="0">'
-                    .'</a>';
-            }
-            else
-                echo "<a name=\"$row\">&nbsp;</a>";
-            echo "</td>\n";
-        }
-    ?>
-    <td><?php echo '<a href="'.$show->url.'"'
+?>
+    <td rowspan="2" class="_pixmap">
+        <a class="_pixmap" href="<?php echo $show->url ?>" title="<?php echo t('Direct Download') ?>"
+            ><img src="<?php echo $show->thumb_url ?>.png"></a>
+        <a class="_download"
+            href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream') ?>"
+            ><img src="<?php echo skin_url ?>/img/play_sm.png"</a>
+        <a class="_download"
+            href="<?php echo $show->url ?>" title="<?php echo t('Direct Download') ?>"
+            ><img src="<?php echo skin_url ?>/img/video_sm.png"></a>
+        </td>
+    <td class="_title"><?php echo '<a href="'.$show->url.'"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .'>'.$show->title.'</a>' ?></td>
-    <td><?php echo "<a href=\"$show->url\">"
+    <td class="_subtitle"><?php echo "<a href=\"$show->url\">"
                     .$show->subtitle.'</a>' ?></td>
-    <td><?php echo $show->programid ?></td>
-    <td nowrap><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
-    <td nowrap align="center"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
+    <td class="_programid"><?php echo $show->programid ?></td>
+    <td class="_channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+    <td class="_airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
 <?php
     if ($recgroup_cols)
-        echo "    <td nowrap align=\"center\">$show->recgroup</td>\n";
+        echo "    <td class=\"_recgroup\">$show->recgroup</td>\n";
 ?>
-    <td nowrap><?php echo nice_length($show->length) ?></td>
-    <td nowrap><?php echo nice_filesize($show->filesize) ?></td>
-<?php   if ($show->endtime > time()) { ?>
-    <td width="5%" class="activecommand command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo t('currently recording') ?><hr />
-	<?php echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.t('Edit').'</a>' ?></td>
-<?php   } else { ?>
-    <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <a id="delete_<?php echo $row ?>"
-            href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>"
+    <td class="_length"><?php echo nice_length($show->length) ?></td>
+    <td class="_filesize"><?php echo nice_filesize($show->filesize) ?></td>
+    <td class="_commands" rowspan="2"><?php
+        if ($show->endtime > time()) {
+            echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+                 t('Still Recording: Edit'),
+                 "</a>\n        ";
+        }
+        ?><a href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>"
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
-    </td>
-<?php   }
-?>
+        <a href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old"
+            title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
+            ><?php echo t('Delete + Rerecord') ?></a>
+        </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td colspan="2"><?php echo $show->description ?></td>
-    <td colspan="<?php echo 3 + $recgroup_cols ?>" class="_progflags"><?php
+    <td colspan="2" valign="top"><?php echo $show->description ?></td>
+    <td colspan="<?php echo (false && $_SESSION['recorded_pixmaps'] ? 3 : 5) + $recgroup_cols ?>" class="_progflags"><?php
         // Auto expire is not interactive in the compact template
             if ($show->auto_expire)
                 echo '<img src="', skin_url, '/img/flags/autoexpire.png" title="', t('Auto Expire'), '">';
@@ -196,20 +198,16 @@ EOM;
             if ($show->is_watched)
                 echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
         ?></td>
-    <td nowrap colspan="2">
-        <ul class="_download">
+<?php   if (false && $_SESSION['recorded_pixmaps']) { ?>
+    <td colspan="2" class="_download">
+        <ul>
             <li><a href="<?php echo video_url($show, true) ?>">
                     <img src="<?php echo skin_url ?>/img/play_sm.png"><?php echo t('ASX Stream') ?></a></li>
             <li><a href="<?php echo $show->url ?>">
                     <img src="<?php echo skin_url ?>/img/video_sm.png"><?php echo t('Direct Download') ?></a></li>
         </ul>
         </td>
-    <td width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <a id="delete_rerecord_<?php echo $row ?>"
-            href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old"
-            title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
-            ><?php echo t('Delete + Rerecord') ?></a></td>
-    </td>
+<?php   } ?>
 </tr><?php
         $prev_group = $cur_group;
     // Keep track of how many shows are visible in each section
@@ -222,23 +220,6 @@ EOM;
 ?>
 
 </table>
-
-<script language="JavaScript" type="text/javascript">
-<?php
-    foreach ($row_count as $count) {
-        echo 'rowcount.push(['.escape($count)."]);\n";
-    }
-    foreach ($row_section as $section) {
-        echo 'rowsection.push(['.escape($section)."]);\n";
-    }
-    foreach($Program_Titles as $title => $count) {
-        echo 'titles['.escape($title).'] = '.escape($count).";\n";
-    }
-    foreach($Groups as $recgroup => $count) {
-        echo 'groups['.escape($recgroup).'] = '.escape($count).";\n";
-    }
-?>
-</script>
 
 <?php
     echo '<p align="right" style="padding-right: 75px">'
@@ -253,5 +234,4 @@ EOM;
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-
 
