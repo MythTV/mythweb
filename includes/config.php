@@ -31,7 +31,7 @@
     if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = t('generic_date').', '.t('generic_time');
     if (!$_SESSION['date_scheduled'])       $_SESSION['date_scheduled']       = t('generic_date').' ('.t('generic_time').')';
     if (!$_SESSION['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = t('generic_date');
-    if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = t('generic_date').'<br />('.t('generic_time').')';
+    if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = t('generic_date').' ('.t('generic_time').')';
     if (!$_SESSION['date_search'])          $_SESSION['date_search']          = t('generic_date').', '.t('generic_time');
     if (!$_SESSION['date_listing_key'])     $_SESSION['date_listing_key']     = t('generic_date').', '.t('generic_time');
     if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = t('generic_date');
