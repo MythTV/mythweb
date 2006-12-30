@@ -13,14 +13,14 @@
 
 <p>
 The database environment variables are not correctly set in the<br />
-included .htaccess file.  Please read through the comments included<br />
-in the file and set up the db_* environment variables correctly.
+webserver conf or .htaccess file.  Please read through the comments<br />
+included in the file and set up the db_* environment variables correctly.
 </p>
 
 <p>
 Some possible solutions are to make sure that mod_env is enabled<br />
 in httpd.conf, as well as having followed the instructions in the<br />
-README about the AllowOverride settings.
+README and INSTALL files.
 </p>
 
 </div>

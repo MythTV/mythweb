@@ -17,7 +17,7 @@ have failed to configure mythweb's database login info.
 </p>
 
 <p>
-Please see .htaccess for instructions.
+Please see INSTALL for instructions.
 </p>
 
 </div>
