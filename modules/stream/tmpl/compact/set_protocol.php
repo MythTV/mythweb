@@ -25,8 +25,8 @@
     <td class="command_border_b" align="right"><label for="force_http"><?php echo t('Force HTTP for streams') ?>:</label></td>
     <td class="command_border_b"><input type="checkbox" id="force_http" name="force_http" value="1"<?php if ($_SESSION['stream']['force_http']) echo ' CHECKED' ?>></td>
 </tr><tr>
-    <td align="center"><input type="reset" value="<?php echo t('Reset') ?>"></td>
-    <td align="center"><input type="submit" name="save" value="<?php echo t('Save') ?>"></td>
+    <td align="center"><input type="reset" class="submit" value="<?php echo t('Reset') ?>"></td>
+    <td align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>"></td>
 </tr>
 </table>
 

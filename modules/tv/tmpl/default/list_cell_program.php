@@ -24,10 +24,10 @@
         echo ' href="'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
-            echo '<img src="'.skin_url.'img/leftwhite.png" border="0" class="left_arrow">';
+            echo '<img src="'.skin_url.'img/left_sm.png" border="0" class="left_arrow">';
     // Does this program 'Continue'?
         if ($program->endtime > $GLOBALS['list_endtime'])
-            echo '<img src="'.skin_url.'img/rightwhite.png" border="0" class="right_arrow">';
+            echo '<img src="'.skin_url.'img/right_sm.png" border="0" class="right_arrow">';
         if ($percent > 5) {
             echo $program->title;
             if (strlen($program->subtitle) > 0) {

@@ -184,7 +184,8 @@
             $seen[$channel->channum] = $channel;
 
         // Print the option
-            echo '<option value="'.$channel->chanid.'"';
+            echo '<option value="', $channel->chanid, '"',
+                 ' title="', html_entities($channel->name), '"';
         // Selected?
             if ($channel->chanid == $chanid)
                 echo ' SELECTED';

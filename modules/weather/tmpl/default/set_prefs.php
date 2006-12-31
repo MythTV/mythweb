@@ -25,8 +25,8 @@
     <td class="command_border_b" align="right"><?php echo t('SI Units') ?>:</td>
     <td class="command_border_b"><?php unit_select() ?></td>
 </tr><tr>
-    <td align="center"><input type="reset" value="<?php echo t('Reset') ?>"></td>
-    <td align="center"><input type="submit" name="save" value="<?php echo t('Save') ?>"></td>
+    <td align="center"><input type="reset" class="submit" value="<?php echo t('Reset') ?>"></td>
+    <td align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>"></td>
 </tr>
 </table>
 

@@ -19,23 +19,16 @@
         $_GET['starttime'] = $Path[3];
     }
 
-// Parse the program list
-    $program = null;
-    foreach (get_backend_rows('QUERY_RECORDINGS Delete') as $key => $record) {
-    // Skip the offset
-        if ($key === 'offset')  // WHY IN THE WORLD DOES 0 == 'offset'?!?!?  so we use ===
-            continue;
-    // Skip unwanted shows
-        if ($_GET['chanid'] != $record[4] || $_GET['starttime'] != $record[26])
-            continue;
-    // Load our program
-        $program =& new Program($record);
-    // Did the best we could to find some programs; let's move on.
-        break;
-    }
+// Just in case
+    $_GET['chanid']    = intVal($_GET['chanid']);
+    $_GET['starttime'] = intVal($_GET['starttime']);
 
+// Pull only this program
+    $record = get_backend_rows('QUERY_RECORDING TIMESLOT '.$_GET['chanid'].' '.unix2mythtime($_GET['starttime']), 1);
+    if (is_array($record[0]) && $_GET['chanid'] == $record[0][4] && $_GET['starttime'] == $record[0][26])
+        $program =& new Program($record[0]);
 // No program found -- back to the recordings list
-    if (empty($program))
+    else
         redirect_browser(root.'tv/recorded');
 
 // Load the class for this page

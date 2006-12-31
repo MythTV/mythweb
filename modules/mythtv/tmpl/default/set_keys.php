@@ -74,7 +74,7 @@
 </table>
 
 <p align="center">
-<input type="submit" name="save" value="<?php echo t('Save') ?>">
+<input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>">
 </p>
 
 </form>

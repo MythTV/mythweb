@@ -203,7 +203,6 @@
     Huidige Opnames
 "Currently Browsing:  $1"
     Tijdstip: $1
-"currently recording"
 "Custom"
     Geavanceerd
 "Custom Schedule"
@@ -236,6 +235,7 @@
     Bestemming
 "Details for"
     Details
+"Details for: $1"
 "Direct Download"
 "Directed by"
     Regisseur
@@ -347,6 +347,7 @@
 "HD"
 "HDTV"
     HDTV
+"Hide"
 "High"
     Maximum
 "Host"
@@ -366,6 +367,9 @@
     imdb beoordeling
 "Inactive"
     Niet actief
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     wordt bewerkt
 "Jump"
@@ -427,6 +431,7 @@
     minuten
 "Monday"
     Maandag
+"More"
 "more"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
@@ -537,6 +542,7 @@
 "Playlists"
 "plot"
     korte inhoud
+"Possible conflicts"
 "Possible conflicts with this show"
     Mogelijk conflict met dit programma
 "Power"
@@ -724,6 +730,7 @@
     Science Fiction Films
 "Search"
     Zoeken
+"Search $1"
 "Search for:  $1"
     Zoeken: $1
 "Search Music"

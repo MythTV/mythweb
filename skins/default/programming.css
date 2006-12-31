@@ -1,8 +1,62 @@
 /*
+ *
+ * The following subclasses are used for list displays that deal with tv
+ * programming.
+ *
+/*/
 
-    The following subclasses are used for list displays
+/* some classes for various list displays */
+    .list {    background-color: #002650 }
+    .list_separator {
+        background-color: #203670;
+        border-top:       4px;
+    }
 
-*/
+/* The category legend, and its associated popup */
+    #command_choices a {
+        white-space: nowrap;
+    }
+
+    #category_legend_popup {
+        position:         absolute;
+        visibility:       hidden;
+        top:              0px;
+        left:             0px;
+        padding:          2px;
+        white-space:      nowrap;
+    }
+    #category_legend_popup table {
+        font-size:        9pt;
+    }
+
+/* A class for the left-cleared <dl> lists used for program details popups */
+    dl.details_list {
+        font-size:  9pt;
+        margin:     .125em;
+        max-width:  41em;
+    }
+    dl.details_list dt {
+        clear:       left;
+        float:       left;
+        width:       9em;
+        padding-top: 3px;
+        text-align:  right;
+        color:       #ffe;
+        white-space: nowrap;
+    }
+    dl.details_list dd {
+        padding-top: 3px;
+        margin-left: 9.5em;
+    }
+
+/* Control the look of the text-based HDTV stamp throughout MythWeb */
+    .hdtv_icon {
+        font-size:   9pt;
+        float:       right;
+        color:       yellow;
+        display:     inline;
+        font-weight: bold;
+    }
 
 /* a class for the the cells containing recorded programs in recorded_programs.php */
 .scheduled   { background-color: #506090; }
@@ -10,18 +64,18 @@
 .duplicate   { background-color: #304050; }
 .deactivated { background-color: #508060; }
 
-.will_record              { border: 1px solid  #00F000; }
-.record_weekly            { border: 1px solid  #00F000; }
-.record_timeslot          { border: 1px solid  #00F000; }
-.record_once              { border: 1px solid  #00F000; }
-.record_channel           { border: 1px solid  #00F000; }
-.record_always            { border: 1px solid  #00F000; }
-.record_conflicting       { border: 1px solid  #FF0000; }
-.record_duplicate         { border: 2px dashed #90B0A0; }
-.record_old_duplicate     { border: 1px dashed #90B0A0; }
-.record_suppressed        { border: 2px dotted #60B0B0; }
-.record_override_suppress { border: 2px dotted #D03060; }
-.record_override_record   { border: 2px solid  #00FF90; }
+.will_record              { border: 1px solid  #00F000 !important; }
+.record_weekly            { border: 1px solid  #00F000 !important; }
+.record_timeslot          { border: 1px solid  #00F000 !important; }
+.record_once              { border: 1px solid  #00F000 !important; }
+.record_channel           { border: 1px solid  #00F000 !important; }
+.record_always            { border: 1px solid  #00F000 !important; }
+.record_conflicting       { border: 1px solid  #FF0000 !important; }
+.record_duplicate         { border: 2px dashed #90B0A0 !important; }
+.record_old_duplicate     { border: 1px dashed #90B0A0 !important; }
+.record_suppressed        { border: 2px dotted #60B0B0 !important; }
+.record_override_suppress { border: 2px dotted #D03060 !important; }
+.record_override_record   { border: 2px solid  #00FF90 !important; }
 
 
 /* There should be exactly one class in the next section corresponding to

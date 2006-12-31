@@ -203,7 +203,6 @@
     現在の録画
 "Currently Browsing:  $1"
     表示日: $1
-"currently recording"
 "Custom"
     カスタム
 "Custom Schedule"
@@ -236,6 +235,7 @@
     対象
 "Details for"
     詳細
+"Details for: $1"
 "Direct Download"
 "Directed by"
     監督
@@ -346,6 +346,7 @@
     カットリスト
 "HD"
 "HDTV"
+"Hide"
 "High"
     高
 "Host"
@@ -364,6 +365,9 @@
     imdb格付け
 "Inactive"
     無効
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     編集
 "Jump"
@@ -429,6 +433,7 @@
     分
 "Monday"
     月曜日
+"More"
 "more"
     追加
 "Move Item Down in Playlist"
@@ -547,6 +552,7 @@
 "Playlists"
 "plot"
     脚本
+"Possible conflicts"
 "Possible conflicts with this show"
     次の番組と衝突しています
 "Power"
@@ -736,6 +742,7 @@
 "Science Fiction Movies"
 "Search"
     サーチ
+"Search $1"
 "Search for:  $1"
     $1 の検索結果
 "Search Music"

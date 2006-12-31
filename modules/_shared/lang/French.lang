@@ -178,7 +178,6 @@
     Enregistrements courant
 "Currently Browsing:  $1"
     Actuellement Affich&eacute;
-"currently recording"
 "Custom"
 "Custom Schedule"
 "Data"
@@ -203,6 +202,7 @@
     Description
 "Destination"
 "Details for"
+"Details for: $1"
 "Direct Download"
 "Directed by"
     Mis en scène par
@@ -296,6 +296,7 @@
     a une liste de coupe
 "HD"
 "HDTV"
+"Hide"
 "High"
     &eacute;lev&eacute;
 "Host"
@@ -314,6 +315,9 @@
 "imdb rating"
 "Inactive"
     Inactif
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     est &eacute;dit&eacute;
 "Jump"
@@ -368,6 +372,7 @@
     minutes
 "Monday"
     Lundi
+"More"
 "more"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
@@ -460,6 +465,7 @@
 "Playlist: %s"
 "Playlists"
 "plot"
+"Possible conflicts"
 "Possible conflicts with this show"
 "Power"
 "Power Search"
@@ -633,6 +639,7 @@
 "Science Fiction Movies"
 "Search"
     Recherche
+"Search $1"
 "Search for:  $1"
     Chercher:    $1
 "Search Music"

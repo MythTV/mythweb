@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Recorded Programs');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/recorded.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_recorded.css" />';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -302,7 +302,7 @@ EOM;
 ?>
     <td class="_length"><?php echo nice_length($show->length) ?></td>
     <td class="_filesize"><?php echo nice_filesize($show->filesize) ?></td>
-    <td class="_commands" rowspan="2"><?php
+    <td class="_commands commands" rowspan="2"><?php
         if ($show->endtime > time()) {
             echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
                  t('Still Recording: Edit'),

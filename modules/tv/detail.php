@@ -14,6 +14,12 @@
  *
 /**/
 
+// Just a quick ajax responder to track show/hide of the advanced options
+    if (isset($_REQUEST['show_advanced_schedule'])) {
+        $_SESSION['tv']['show_advanced_schedule'] = !empty($_REQUEST['show_advanced_schedule']);
+        exit;
+    }
+
 // Load the sorting routines
     require_once 'includes/sorting.php';
 

@@ -16,6 +16,9 @@
 // Set the desired page title
     $page_title = 'MythWeb - ' . t('Program Listing') . ': '.strftime($_SESSION['date_statusbar'], $list_starttime);
 
+// Custom headers
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_list.css" />';
+
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
@@ -122,34 +125,19 @@
             $channel_count++;
         // Print the data
 ?><tr>
-    <td align="center" class="menu" nowrap><?php
-            if (show_channel_icons === true) {
-        ?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
-        <tr>
-            <td width="50%" align="center" nowrap><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', date('Ymd', $list_starttime) ?>" class="huge"
-                                            onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
-                                            onmouseout="return wstatus('')"><?php echo prefer_channum ? $channel->channum : $channel->callsign ?></a>&nbsp;</td>
-            <td width="50%" align="right"><?php
-                if (!empty($channel->icon)) {
-                    ?><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', date('Ymd', $list_starttime) ?>"
-                        onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
-                        onmouseout="return wstatus('')"><img src="<?php echo $channel->icon ?>" height="30" width="30"></a><?php
-                } else {
-                    echo '&nbsp;';
-                } ?></td>
-        </tr><tr>
-            <td colspan="2" align="center" nowrap><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', date('Ymd', $list_starttime) ?>"
-                                            onmouseover="window.status='Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '. $channel->callsign) ?>';return true"
-                                            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a></td>
-        </tr>
-        </table><?php
-            } else {
-        ?><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>" class="huge"
-            onmouseover="window.status='Details for: <?php echo $channel->channum ?> <?php echo $channel->callsign ?>';return true"
-            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->channum : $channel->callsign ?><BR>
-        <?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a><?php
-            }
-        ?></td>
+    <td class="_channel">
+        <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
+                title="<?php
+                    echo t('Details for: $1',
+                           html_entities($channel->name))
+                ?>">
+<?php       if (show_channel_icons === true && !empty($channel->icon)) { ?>
+        <img src="<?php echo $channel->icon ?>" height="30" width="30">
+<?php       } ?>
+        <span class="_preferred"><?php echo (prefer_channum ? $channel->channum : $channel->callsign) ?></span><br />
+            <?php echo (prefer_channum ? $channel->callsign : $channel->channum), "\n" ?>
+        </a>
+        </td>
 <?php
 // Let the channel object figure out how to display its programs
     $channel->display_programs($list_starttime, $list_endtime);

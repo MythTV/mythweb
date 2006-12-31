@@ -203,7 +203,6 @@
     Aktuelle Aufnahmen
 "Currently Browsing:  $1"
     Aktuell: $1
-"currently recording"
 "Custom"
     freie Planung
 "Custom Schedule"
@@ -236,6 +235,7 @@
     Ziel
 "Details for"
     Details für
+"Details for: $1"
 "Direct Download"
 "Directed by"
     Regie
@@ -347,6 +347,7 @@
 "HD"
 "HDTV"
     HDTV
+"Hide"
 "High"
     Max
 "Host"
@@ -366,6 +367,9 @@
     IMDB Bewertung
 "Inactive"
     Inaktiv
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     wird bearbeitet
 "Jump"
@@ -425,6 +429,7 @@
     Minuten
 "Monday"
     Montag
+"More"
 "more"
     mehr
 "Move Item Down in Playlist"
@@ -536,6 +541,7 @@
 "Playlists"
 "plot"
     Handlung
+"Possible conflicts"
 "Possible conflicts with this show"
     Mögliche Konflikte mit dieser Sendung
 "Power"
@@ -724,6 +730,7 @@
     Science-Fiction Filme
 "Search"
     Suche
+"Search $1"
 "Search for:  $1"
     Suche nach: $1
 "Search Music"

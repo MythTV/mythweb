@@ -80,7 +80,7 @@
 }
 
 #recorded_list td._commands {
-    padding:            0;
+    padding:            2px;
     width:              5%;
     white-space:        nowrap;
     text-align:         center;
@@ -89,10 +89,8 @@
 }
 #recorded_list td._commands a {
     display:            block;
-    padding:            .5em;
-    margin:             0 0 2px 0;
-    border:             2px solid #9090B0;
-    background-color:   #1040A0;
+    padding:            .25em .5em;
+    margin:             0 0 3px 0;
 }
 
 /* a class for the the cells containing recored programs in recorded_programs.php */

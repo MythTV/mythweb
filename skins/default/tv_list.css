@@ -1,0 +1,35 @@
+/*
+ *
+ * Styles used in /tv/list
+ *
+/*/
+
+.right_arrow {
+    float: right;
+}
+.left_arrow {
+    float: left;
+}
+
+._channel {
+    width:              8em;
+    padding:            0 !important;
+    vertical-align:     middle;
+    background-color:   #202a49;
+    white-space:        nowrap;
+}
+._channel img {
+    position:           relative;
+    top:                -4px;
+    vertical-align:     middle;
+}
+._channel a {
+    display:            block;
+    text-align:         center;
+    padding:            5px;
+}
+._channel ._preferred {
+    margin-left:        5px;
+    font-size:          200%;
+}
+

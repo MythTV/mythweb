@@ -159,7 +159,6 @@
     Současné nahrávky
 "Currently Browsing:  $1"
     Zrovna prohlížíte:  $1
-"currently recording"
 "Custom"
 "Custom Schedule"
     Upravený rozvrh
@@ -182,6 +181,7 @@
 "Destination"
 "Details for"
     Detaily o
+"Details for: $1"
 "Direct Download"
 "Directed by"
 "director"
@@ -258,6 +258,7 @@
 "has cutlist"
 "HD"
 "HDTV"
+"Hide"
 "High"
 "Host"
 "Hosted by"
@@ -273,6 +274,9 @@
 "imdb rating"
 "Inactive"
     Neaktivní
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
 "Jump"
     Skočit
@@ -321,6 +325,7 @@
     minuty
 "Monday"
     Pondělí
+"More"
 "more"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
@@ -412,6 +417,7 @@
 "Playlist: %s"
 "Playlists"
 "plot"
+"Possible conflicts"
 "Possible conflicts with this show"
 "Power"
 "Power Search"
@@ -570,6 +576,7 @@
 "Science Fiction Movies"
 "Search"
     Vyhledat
+"Search $1"
 "Search for:  $1"
 "Search Music"
 "Search Phrase"

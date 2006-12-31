@@ -173,7 +173,6 @@
     Trenutna snemanja
 "Currently Browsing:  $1"
     Trenutno brskanje:  $1
-"currently recording"
 "Custom"
 "Custom Schedule"
 "Data"
@@ -198,6 +197,7 @@
     Opis
 "Destination"
 "Details for"
+"Details for: $1"
 "Direct Download"
 "Directed by"
     Režiser
@@ -291,6 +291,7 @@
     ima seznam rezov
 "HD"
 "HDTV"
+"Hide"
 "High"
     Visoka
 "Host"
@@ -308,6 +309,9 @@
     IMBD
 "imdb rating"
 "Inactive"
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     se ureja
 "Jump"
@@ -362,6 +366,7 @@
     minute
 "Monday"
     Ponedeljek
+"More"
 "more"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
@@ -454,6 +459,7 @@
 "Playlist: %s"
 "Playlists"
 "plot"
+"Possible conflicts"
 "Possible conflicts with this show"
 "Power"
 "Power Search"
@@ -626,6 +632,7 @@
 "Science Fiction Movies"
 "Search"
     Iskanje
+"Search $1"
 "Search for:  $1"
     Iskanje:  $1
 "Search Music"

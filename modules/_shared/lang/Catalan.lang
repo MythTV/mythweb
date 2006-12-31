@@ -213,7 +213,6 @@
     Enregistraments actuals
 "Currently Browsing:  $1"
     Navegant per:  $1
-"currently recording"
 "Custom"
     Avançada
 "Custom Schedule"
@@ -247,6 +246,7 @@
     Destí
 "Details for"
     Detalls
+"Details for: $1"
 "Direct Download"
 "Directed by"
     Dirigido por
@@ -360,6 +360,7 @@
 "HD"
 "HDTV"
     HDTV
+"Hide"
 "High"
     Alt
 "Host"
@@ -380,6 +381,9 @@
     puntuació imdb
 "Inactive"
     Inactiu
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     s'està editant
 "Jump"
@@ -445,6 +449,7 @@
     minuts
 "Monday"
     Dilluns
+"More"
 "more"
     més
 "Move Item Down in Playlist"
@@ -571,6 +576,7 @@
 "Playlists"
 "plot"
     resúm
+"Possible conflicts"
 "Possible conflicts with this show"
     Possibles conflictes amb aquest programa
 "Power"
@@ -763,6 +769,7 @@
     Pel·lícules ciència ficció
 "Search"
     Cercar
+"Search $1"
 "Search for:  $1"
     Cercar: $1
 "Search Music"

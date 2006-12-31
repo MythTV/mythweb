@@ -34,21 +34,54 @@
  * In its defense, it *is* somewhat tabular.
 /*/
 ?>
-<table id="program_content" border="0" cellspacing="0" cellpadding="0">
+<table id="program_content" border="1" cellspacing="0" cellpadding="0">
 <tr>
 
     <td>
 
-    <div id="program_info" class="clearfix">
-        <div id="program_header">
+    <div id="rprogram_info" class="clearfix">
+        <div id="rprogram_header">
+            <div id="rprogram_title">
+                <h1>
+                    <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($program->title)) ?>?search_title=1"><?php
+                        echo $program->title;
+                        if ($program->subtitle)
+                            echo ':<br />', $program->subtitle;
+                        #echo 'Anthony Bourdain:<br> Malaysia: Into the Jungle';
+                        ?></a>
+                </h1>
+                <div id="program_time">
 <?php
-        if (file_exists(cache_dir.'/'.basename($program->filename).'.png')) {
-            list($width, $height, $type, $attr) = getimagesize(cache_dir.'/'.basename($program->filename).'.png');
-            echo "<a href=\"$program->url\" name=\"$row\" style=\"display: block; margin: 10px; text-align: center\">"
-                .'<img id="'.$program->filename.'" src="'.$program->thumb_url.'.png" '.$attr.' border="0">'
-                .'</a>';
-        }
+        if ($_GET['recordid'])
+            echo '<span class="bold">';
+        echo strftime('%a, %b %e', $program->starttime);
+        echo ', '
+            .t('$1 to $2', strftime($_SESSION['time_format'], $program->starttime), strftime($_SESSION['time_format'], $program->endtime));
+        if ($program)
+            echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
+        if ($_GET['recordid'])
+            echo "</span>";
+        echo "<br />\n";
+?>
+                </div>
+            </div>
 
+        <table class="_pixmap">
+        <tr>
+            <td colspan="2"><a class="_pixmap" href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
+                ><img src="<?php echo $program->thumb_url ?>.png" height="240" width="320"></a></td>
+        </tr><tr align="center">
+            <td><a class="_download"
+                href="<?php echo video_url($program, true) ?>" title="<?php echo t('ASX Stream') ?>"
+                ><img src="<?php echo skin_url ?>/img/play_sm.png">
+                <?php echo t('ASX Stream') ?></a></td>
+            <td><a class="_download"
+                href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
+                ><img src="<?php echo skin_url ?>/img/video_sm.png">
+                <?php echo t('Direct Download') ?></a></td>
+        </tr>
+        </table>
+<?php
         if ($channel) {
 ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
@@ -64,36 +97,6 @@
                 </a>
             </div>
 <?php   } ?>
-            <div id="program_title">
-                <h1>
-                    <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($program->title)) ?>?search_title=1"><?php echo $program->title ?></a>
-                </h1>
-                <div id="program_time">
-<?php
-        if ($_GET['recordid'])
-            echo '<span class="bold">';
-        echo strftime('%a, %b %e', $program->starttime);
-        if ($program && $program->previouslyshown)
-            echo ' ('.t('Repeat').')';
-        echo '<br />'
-            .t('$1 to $2', strftime($_SESSION['time_format'], $program->starttime), strftime($_SESSION['time_format'], $program->endtime));
-        if ($program)
-            echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
-        if ($_GET['recordid'])
-            echo "</span>";
-        echo "<br />\n";
-?>
-                </div>
-                <div id="external_searches">
-                    (<?php echo t('Search') ?>: &nbsp;
-                    <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($program->title) ?>"><?php echo t('IMDB') ?></a>
-                    &nbsp;-&nbsp;
-                    <a href="http://www.tv.com/search.php?type=11&stype=all&qs=<?php echo urlencode($program->title) ?>"><?php echo t('TV.com') ?></a>
-                    &nbsp;-&nbsp;
-                    <a href="http://www.google.com/search?q=<?php echo urlencode($program->title) ?>"><?php echo t('Google') ?></a>
-                    )
-                </div>
-            </div>
         </div>
 <?php    if (strlen($program->subtitle) || strlen($program->fancy_description)) { ?>
         <div id="program_details">

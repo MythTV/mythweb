@@ -209,7 +209,6 @@
     Nuværende optagelser
 "Currently Browsing:  $1"
     Lige nu vises: $1
-"currently recording"
 "Custom"
     Valgfri
 "Custom Schedule"
@@ -242,6 +241,7 @@
 "Destination"
 "Details for"
     Detaljer for
+"Details for: $1"
 "Direct Download"
 "Directed by"
     Instrueret af
@@ -350,6 +350,7 @@
 "HD"
 "HDTV"
     HDTV
+"Hide"
 "High"
     Høj
 "Host"
@@ -367,6 +368,9 @@
 "imdb rating"
 "Inactive"
     Ikke aktiv
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     er ved at blive redigeret
 "Jump"
@@ -429,6 +433,7 @@
     minutter
 "Monday"
     Mandag
+"More"
 "more"
     mere
 "Move Item Down in Playlist"
@@ -544,6 +549,7 @@
 "Playlist: %s"
 "Playlists"
 "plot"
+"Possible conflicts"
 "Possible conflicts with this show"
     Mulige konfligter med denne udsendelse
 "Power"
@@ -732,6 +738,7 @@
     Science Fiction Film
 "Search"
     Søg
+"Search $1"
 "Search for:  $1"
     Søg efter: $1
 "Search Music"

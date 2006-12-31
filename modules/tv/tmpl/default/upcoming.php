@@ -43,19 +43,19 @@
 
     <input type="checkbox" id="disp_scheduled" name="disp_scheduled" class="radio" onclick="submit_form('','','change_display')"<?php
         if ($_SESSION['scheduled_recordings']['disp_scheduled']) echo ' CHECKED' ?>>
-    <a onclick="toggle_checkbox('disp_scheduled');submit_form('','','change_display')"><?php echo t('Scheduled') ?></a>
+    <label for="disp_scheduled" onclick="submit_form('','','change_display')"><?php echo t('Scheduled') ?></label>
     |
     <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="submit_form('','','change_display')" <?php
         if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
-    <a onclick="toggle_checkbox('disp_duplicates');submit_form('','','change_display')"><?php echo t('Duplicates') ?></a>
+    <label for="disp_duplicates" onclick="submit_form('','','change_display')"><?php echo t('Duplicates') ?></label>
     |
     <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="submit_form('','','change_display')" <?php
         if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
-    <a onclick="toggle_checkbox('disp_deactivated');submit_form('','','change_display')"><?php echo t('Deactivated') ?></a>
+    <label for="disp_deactivated" onclick="submit_form('','','change_display')"><?php echo t('Deactivated') ?></label>
     |
     <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="get_element('change_display').submit()" <?php
         if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
-    <a onclick="toggle_checkbox('disp_conflicts');submit_form('','','change_display')"><?php echo t('Conflicts') ?></a>
+    <label for="disp_conflicts" onclick="submit_form('','','change_display')"><?php echo t('Conflicts') ?></label>
 
     <noscript><input type="submit" value="<?php echo t('Update') ?>"></noscript>
     </form>
@@ -249,7 +249,7 @@
     <td nowrap><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
     <td nowrap><?php echo nice_length($show->length) ?></td>
 <?php   foreach ($commands as $command) { ?>
-    <td nowrap width="5%" class="command command_border_l command_border_t command_border_b command_border_r" align="center"><?php echo $command ?></td>
+    <td nowrap width="5%" class="commandbox" align="center"><?php echo $command ?></td>
 <?php   } ?>
 </tr><?php
         $prev_group = $cur_group;

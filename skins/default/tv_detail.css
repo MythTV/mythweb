@@ -1,147 +1,149 @@
-#program_content {
-    margin: 10px auto;
-    min-width: 800px;
-    max-width: 1000px;
-    font-size: 9pt;
+/*
+ * Table around all program info (left column)
+/*/
+
+#_info {
+    float:              left;
+    padding:            0px;
+    min-width:          350px;
+    max-width:          500px;
+    margin:             10px 0px 10px 10px;
+    background-color:   #101a29;
+    color:              #E0E0FF;
+    border:             1px solid #9090B0;
 }
-#program_content td {
+
+/*
+ * This div contains the program overview:
+ * channel/title/subtitle/time/description
+/*/
+
+._channel {
+    width:              8em;
+    padding:            0 !important;
+    vertical-align:     middle;
+    background-color:   #202a49;
+    white-space:        nowrap;
+    border-right:       1px solid #9090B0;
+    border-bottom:      1px solid #9090B0;
+}
+._channel img {
+    position:           relative;
+    top:                -4px;
+    vertical-align:     middle;
+}
+._channel a {
+    display:            block;
+    text-align:         center;
+    padding:            5px;
+}
+._channel ._preferred {
+    margin-left:        5px;
+    font-size:          200%;
+}
+
+#_title {
+    padding:            .2em .5em;
+    border-bottom:      1px solid #9090B0;
+}
+#_title a {
+    font-size:      175% !important;
+    font-weight:    bold;
+}
+
+#_time {
+    margin-top:     .2em;
+    color:          #E0E0FF;
+    white-space:    nowrap;
+}
+#_description {
+    padding:        .5em;
+    border-bottom:  1px solid #9090B0;
+}
+
+#_status {
+    background-color:   #102923;
+}
+
+
+#_status th {
+    vertical-align:     top;
+    font-weight:        normal;
+    text-align:         right;
+    padding:            .25em;
+    white-space:        nowrap;
+    border-top:         1px solid #9090B0;
+}
+#_status td {
+    padding:            .25em;
+    border-top:         1px solid #9090B0;
+}
+#_status td a {
+    float:              left;
+    margin-right:       .5em;
+    font-weight:        bold;
+    border:             1px solid #7b8;
+    padding:            .15em .5em;
+    background-color:   #263;
+}
+#_status td a:hover {
+    border:             1px solid #9da;
+    background-color:   #485;
+}
+
+#_info ._extras {
+}
+#_info ._extras th {
     vertical-align: top;
-    padding:        0px 10px;
+    font-weight:    normal;
+    text-align:     right;
+    padding:        .25em;
+    white-space:    nowrap;
+    border-top:      1px solid #202933;
+}
+#_info ._extras td {
+    padding:        .25em;
+    border-top:      1px solid #202933;
 }
 
-#program_info {
-    min-width: 350px;
-    max-width: 500px;
-    margin:    0px;
+#_conflicts th {
+    vertical-align:     top;
+    font-weight:        normal;
+    text-align:         right;
+    white-space:        nowrap;
+    padding:            .5em .25em;
+    border-top:         1px solid #9090B0;
+}
+#_conflicts td {
+    padding:            .25em;
+    padding-bottom:     0;
+    border-top:         1px solid #9090B0;
+}
+#_conflicts td a {
+    display:            block;
+    padding:            .15em .25em;
+    margin-bottom:      .25em;
+}
+#_conflicts {
 }
 
-#program_header {
-    margin-bottom: 15px;
+#_info ._links th {
+    vertical-align:     top;
+    font-weight:        normal;
+    text-align:         right;
+    white-space:        nowrap;
+    padding:            .4em .25em;
+    border-top:         1px solid #9090B0;
+}
+#_info ._links td {
+    padding:            .25em;
+    padding-bottom:     0;
+    border-top:         1px solid #9090B0;
+}
+#_info ._links td a {
+    display:            block;
+    padding:            .15em .25em;
+    margin-bottom:      .25em;
 }
 
-#channel_info {
-    float:      left;
-    width:      110px;
-    text-align: center;
-    padding:    5px;
-}
-#channel_info span.preferred {
-    position:    relative;
-    top:         -4px;
-    margin-left: 5px;
-    font-size:   32px;
-}
-
-#program_title {
-    margin-left: 135px;
-}
-#program_title h1 {
-    padding: 0px;
-    margin:  0px;
-}
-#program_time {
-    white-space: nowrap;
-}
-#external_searches {
-    white-space: nowrap;
-}
-
-
-#program_details {
-}
-#program_details dl, #program_extra_details dl {
-    margin: 5px 0px;
-}
-#program_details dl dt, #program_extra_details dl dt {
-    clear:       left;
-    float:       left;
-    width:       8em;
-    padding-top: 3px;
-    text-align:  right;
-    color:       #ffe;
-    white-space: nowrap;
-}
-#program_details dl dd, #program_extra_details dl dd {
-    padding-top: 3px;
-    margin-left: 8.5em;
-}
-
-#program_extra_details {
-}
-
-#conflicting_shows {
-    margin:      20px auto 0px auto;
-    padding:     10px;
-    border:      1px solid #446;
-    text-align:  center !important;
-}
-#conflicting_shows table {
-    margin: auto;
-}
-#conflicting_shows table td {
-    padding: 3px;
-}
-
-#local_links {
-    width:       20em;
-    margin:      20px auto 0px auto;
-    padding:     10px;
-    border:      1px solid #446;
-    text-align:  center !important;
-    white-space: nowrap;
-}
-#local_links a {
-    display: block;
-    padding: 5px;
-}
-
-
-
-#recording_info {
-    padding:    10px;
-}
-#recording_info h3 {
-    margin: 0px;
-}
-#recording_info ul {
-    padding-left: 1em;
-}
-#recording_info li {
-    list-style-type: none;
-    white-space:     nowrap;
-}
-
-#schedule_override {
-    width:  29em;
-    margin: 0px auto;
-}
-#schedule_options {
-    width:  29em;
-    margin: 0px auto;
-}
-
-#advanced_options {
-    width:  29em;
-    margin: 0px auto;
-}
-#advanced_options dl {
-    margin: 5px 10px;
-}
-#advanced_options dl dt {
-    clear:         left;
-    float:         left;
-    width:         13em;
-    margin-bottom: 0.25em;
-    text-align:    right;
-    white-space:   nowrap;
-}
-#advanced_options dl dd {
-    margin-bottom: 0.25em;
-    margin-left:   13.5em;
-}
-#advanced_options input {
-}
-#advanced_options select {
-    width: 14em;
-}
 

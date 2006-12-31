@@ -1,3 +1,11 @@
+/* @deprecated
+ * A class for the the cells containing settings in the various settings files
+/*/
+    .settings {
+        background-color: #506080;
+    }
+
+/* The main box surrounding all settings editors */
     #settings {
         margin-top:     1em;
     }
@@ -29,7 +37,7 @@
         display:            block;
         padding:            .2em 1em;
         background-color:   #345;
-        border:             1px dotted #79a;
+        border:             1px dotted #9090B0;
         margin-top:         1px;
         margin-bottom:      11px;
     }
@@ -48,7 +56,7 @@
 
     #settings ._sections {
         padding:        0px 1em;
-        border-bottom:  2px solid #79a;
+        border-bottom:  1px solid #9090B0;
         height:         2.25em;
         vertical-align: bottom;
     }
@@ -61,40 +69,40 @@
     }
     #settings ._sections a {
         float:              left;
-        color:              #bbc;
-        background-color:   #345;
+        color:              #ccd;
+        background-color:   #405953;
         padding:            2px 6px;
         margin:             3px 5px 0px 0px;
-        border:             2px solid #79a;
-        border-bottom:      0px;
+        border:             2px solid #578;
+        border-bottom:      none;
         white-space:        nowrap;
         -moz-border-radius-topleft:     8px;
         -moz-border-radius-topright:    8px;
     }
     #settings ._sections a:hover, #settings ._sections a._selected {
         color:              white;
-        background-color:   #023;
-        border-color:       #abd;
+        background-color:   #102923;
+        border-color:       #9090B0;
     }
     #settings ._sections a._selected {
-        border-bottom:      2px solid #023;
-        margin-bottom:      -2px;
+        border-bottom:      1px solid #102923;
+        margin-bottom:      -1px;
     }
 
     #settings ._sections a.active {
         color:              white;
         font-weight:        bold;
-        background-color:   #023;
-        border:             2px solid #9fd;
-        border-bottom:      2px solid #023;
-        margin-bottom:      -2px;
+        background-color:   #102923;
+        border:             2px solid #9090B0;
+        border-bottom:      1px solid #102923;
+        margin-bottom:      -1px;
     }
 
 /* Select which host to edit the settings for. */
 
     #settings ._host {
         text-align:     right;
-        border-bottom:  2px solid #79a;
+        border-bottom:  1px solid #9090B0;
     }
 
 /* A notification/warning */
@@ -111,7 +119,7 @@
 /* The content of the settings that are being edited */
 
     #settings ._content {
-        background-color:   #023;
-        border:             2px solid #79a;
+        background-color:   #102923;
+        border:             1px solid #9090B0;
         border-top:         none;
     }

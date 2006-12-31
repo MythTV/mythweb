@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Schedule Manually');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedules_manual.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css" />';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -25,12 +25,41 @@
 // Print the page contents
 ?>
 
-    <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
+<script language="JavaScript" type="text/javascript">
+<!--
+
+// Toggle showing of the advanced schedule options
+    function toggle_advanced(show) {
+        if (show) {
+            $('_schedule_advanced').style.display     = 'block';
+            $('_schedule_advanced_off').style.display = 'none';
+            $('_show_advanced').style.display = 'none';
+            $('_hide_advanced').style.display = 'inline';
+        }
+        else {
+            $('_schedule_advanced').style.display     = 'none';
+            $('_schedule_advanced_off').style.display = 'block';
+            $('_show_advanced').style.display = 'inline';
+            $('_hide_advanced').style.display = 'none';
+        }
+    // Toggle the session setting, too.
+        new Ajax.Request('<?php echo root ?>tv/detail?=',
+                         {
+                            parameters: 'show_advanced_schedule='+(show ? 1 : '0'),
+                          asynchronous: true
+                         }
+                        );
+    }
+
+// -->
+</script>
+
+    <div id="schedule">
 
         <form name="schedule_manually" method="post" action="<?php echo root ?>tv/schedules/manual<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
 
 <?php   if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
-        <div id="schedule_options">
+        <div class="_options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
 
             <ul>
@@ -55,7 +84,7 @@
         }
         if ($schedule->recordid) {
 ?>
-        <div id="schedule_override">
+        <div class="_options">
             <h3><?php echo t('Schedule Override') ?>:</h3>
 
             <ul>
@@ -74,7 +103,7 @@
         </div>
 <?php      } ?>
 
-        <div id="recording_options">
+        <div class="_options">
             <h3><?php echo t('Recording Options') ?>:</h3>
 
             <dl>
@@ -94,10 +123,28 @@
 
         </div>
 
-        <div id="advanced_options">
+        <div class="_options">
             <h3><?php echo t('Advanced Options') ?>:</h3>
+            (<?php
+                echo '<a onclick="toggle_advanced(false)" id="_hide_advanced"';
+                if (!$_SESSION['tv']['show_advanced_schedule'])
+                    echo ' style="display: none"';
+                echo '>', t('Hide'), '</a>',
+                     '<a onclick="toggle_advanced(true)"  id="_show_advanced"';
+                if ($_SESSION['tv']['show_advanced_schedule'])
+                    echo ' style="display: none"';
+                echo '>', t('Show'), '</a>';
+            ?>)
 
-            <dl class="clearfix">
+            <div id="_schedule_advanced_off"<?php
+                if ($_SESSION['tv']['show_advanced_schedule']) echo ' style="display: none"'
+                ?>>
+                <?php echo t('info: hidden advanced schedule') ?>
+            </div>
+
+            <dl class="clearfix" id="_schedule_advanced"<?php
+                if (!$_SESSION['tv']['show_advanced_schedule']) echo ' style="display: none"'
+                ?>>
                 <dt><?php echo t('Recording Profile') ?>:</dt>
                 <dd><?php profile_select($schedule->profile) ?></dd>
                 <dt><?php echo t('Transcoder') ?>:</dt>
@@ -179,10 +226,10 @@
                     <?php echo t('minutes') ?></dd>
             </dl>
 
-            <p align="center">
-                <input type="submit" class="submit" name="save" value="<?php echo $schedule->recordid ? t('Save Schedule') : t('Create Schedule') ?>">
-            </p>
+        </div>
 
+        <div id="_schedule_submit">
+            <input type="submit" class="submit" name="save" value="<?php echo $schedule->recordid ? t('Save Schedule') : t('Create Schedule') ?>">
         </div>
 
         </form>

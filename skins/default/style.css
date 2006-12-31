@@ -1,59 +1,47 @@
-html,body {
-    border:           0;
-    margin:           0;
-    padding:          0;
-    font-size:        9pt;
-    font-family:      Arial, Helvetica, sans-serif;
-    background-color: #002650;
-    color:            #dedede;
-}
+/*
+ * Global page handlers.
+/*/
+
+    html,body {
+        border:           0;
+        margin:           0;
+        padding:          0;
+        font-size:        9pt;
+        font-family:      Arial, Helvetica, sans-serif;
+        background-color: #002650;
+        color:            #dedede;
+    }
+
+    /* For some reason, settings for the main body element doesn't always work for
+     * text inside of tables
+    /*/
+    .body {
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
 /*
-    Make transparent png's render properly in IE:
+ * We should try to keep links and labels looking consistent across the app.
+/*/
 
-    Disabled because it conflicts with recording preview thumbnails.
-    Use the alpha_png class instead.
-    img { behavior: url("/js/pngbehavior.htc"); }
-*/
-.alpha_png { behavior: url("/js/pngbehavior.htc"); }
+    a, a:link { color: #E0E0FF; text-decoration: none; }
+    a:active  { color: #990033; text-decoration: none; }
+    a:visited { color: #E0E0FF; text-decoration: none; }
+    a:hover   { color: #F0F000; text-decoration: underline; }
 
-a, a:link { color: #E0E0FF; text-decoration: none; }
-a:active  { color: #990033; text-decoration: none; }
-a:visited { color: #E0E0FF; text-decoration: none; }
-a:hover   { color: #F0F000; text-decoration: underline; }
-
-label       { color: #E0E0FF; text-decoration: none; }
-label:hover { color: #F0F000; text-decoration: underline; }
-
-/* For some reason, the main Body element doesn't always work for text inside of tables */
-.body {
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* font size classes */
-.tiny   { font-size: 9px; }
-.small  { font-size: 9pt; }
-.normal { font-size: 10pt; }
-.large  { font-size: 12pt; }
-.huge   { font-size: 24px; }
-
-/* fony style classes */
-.bold, .bold a, .bold a:link, .bold a:visited, .bold a:active, .bold a:hover {
-    font-weight: bold !important;
-}
-.italic, .italic a, .italic a:link, .italic a:visited, .italic a:active, .italic a:hover {
-    font-style: italic !important;
-}
+    label       { color: #E0E0FF; text-decoration: none; }
+    label:hover { color: #F0F000; text-decoration: underline; }
 
 /* a class for the menu across the top of the page as well as menu headers throughout the page */
-.menu {          background-color: #265990 }
-.menu_border_t { border-top:    2px solid #9090B0 }
-.menu_border_b { border-bottom: 2px solid #9090B0 }
-.menu_border_l { border-left:   2px solid #9090B0 }
-.menu_border_r { border-right:  2px solid #9090B0 }
+    .menu {          background-color: #265990 }
+    .menu_border_t { border-top:    2px solid #9090B0 }
+    .menu_border_b { border-bottom: 2px solid #9090B0 }
+    .menu_border_l { border-left:   2px solid #9090B0 }
+    .menu_border_r { border-right:  2px solid #9090B0 }
 
 /* a class for commands and other user input boxes */
+
+/* @deprecated old classes */
 .command { background-color: #1040A0 }
 .command_border_t { border-top:    2px solid #9090B0 }
 .command_border_b { border-bottom: 2px solid #9090B0 }
@@ -61,154 +49,156 @@ label:hover { color: #F0F000; text-decoration: underline; }
 .command_border_r { border-right:  2px solid #9090B0 }
 .activecommand    { background-color: #108040 }
 
-/* some classes for the list display */
-.list {    background-color: #002650 }
-.list_border_t { border-top:    1px solid #9090B0 }
-.list_border_b { border-bottom: 1px solid #9090B0 }
-.list_border_l { border-left:   1px solid #9090B0 }
-.list_border_r { border-right:  1px solid #9090B0 }
-.list_separator {
-    background-color: #203670;
-    border-top:       4px
-}
+/* New command classes */
 
-/* A class for the left-cleared <dl> lists used for program details popups */
-dl.details_list {
-    font-size:  9pt;
-    margin:     .125em;
-    max-width:  41em;
-}
-dl.details_list dt {
-    clear:       left;
-    float:       left;
-    width:       9em;
-    padding-top: 3px;
-    text-align:  right;
-    color:       #ffe;
-    white-space: nowrap;
-}
-dl.details_list dd {
-    padding-top: 3px;
-    margin-left: 9.5em;
-}
+    /* Box to hold commands */
+    .commandbox {
+        background-color:   #102923;
+        color:              #E0E0FF;
+        border:             1px solid #9090B0;
+    }
 
-/* a class for the the cells containing settings in the various settings files */
-.settings {    background-color: #506080 }
+    /* Commands themselves */
 
-/* Classes for the program listing */
-.hdtv_icon {
-    font-size:   9pt;
-    float:       right;
-    color:       yellow;
-    display:     inline;
-    font-weight: bold;
-}
+    .commands { /* Placeholder for handling sub-elements */ }
 
-.right_arrow {
-    float: right;
-}
-.left_arrow {
-    float: left;
-}
+    .commands input._submit {
+        border:             2px outset #7b8;
+        padding:            0 .5em;
+        height:             2em;
+        background-color:   #263;
+        color:              #E0E0FF;
+    }
+    .commands input._submit:hover {
+        border:             1px outset #9da;
+        background-color:   #485;
+        color:              #F0F000;
+        text-decoration:    underline;
+    }
 
-/* A special class for submit buttons */
-.submit {
-    font-weight:      bold;
-    color:            #001060;
-    background-color: #C0C0D0;
-    font-size:        13px;
-    height:           22px;
-}
-.submit:hover   { text-decoration: underline; }
+    .commands a {
+        font-weight:        bold;
+        border:             1px solid #7b8;
+        padding:            .15em .5em;
+        background-color:   #263;
+    }
+    .commands a:hover {
+        border:             1px solid #9da;
+        background-color:   #485;
+    }
 
-/* A special class for radio buttons and check boxes because some browsers render them weird */
-.radio {
-    height: 14px !important;
-    width:  14px !important;
-}
+/*
+ * The following styles refer to forms and form elements throughout MythWeb
+/*/
 
-/* Default styles for form fields */
-select {
-    font-family:      Arial, Helvetica, sans-serif;
-    color:            #001060;
-    background-color: #C0C0D0;
-    font-size:        9pt;
-}
+    /* Avoid those nasty extra linefeeds in IE </form> tags */
+    form { display: inline; }
 
-input {
-    font-family:      Arial, Helvetica, sans-serif;
-    color:            #001060;
-    background-color: #C0C0D0;
-    font-size:        9pt;
-}
+    /* A special class for submit buttons */
+    .submit {
+        border:             2px outset #7b8;
+        padding:            0 .5em;
+        background-color:   #263;
+        color:              #E0E0FF;
+        font-weight:        bold;
+        height:             2em;
+    }
+    .submit:hover {
+        border:             2px outset #9da;
+        background-color:   #485;
+        color:              #F0F000;
+        text-decoration:    underline;
+    }
 
-textarea {
-    font-family:      terminal, courier, courier-new;
-    color:            #001060;
-    background-color: #C0C0D0;
-    font-size:        9pt;
-}
+    /* A special class for radio buttons and check boxes because some browsers render them weirdly */
+    .radio {
+        height:             14px !important;
+        width:              14px !important;
+        color:              #002000;
+        background-color:   #C0D0C0;
+    }
 
-input.quantity {
-    width:      2em;
-    text-align: center;
-}
+    /* Default styles for form fields */
+    select {
+        font-family:        Arial, Helvetica, sans-serif;
+        color:              #002000;
+        background-color:   #C0D0C0;
+        font-size:          9pt;
+    }
 
-/* Avoid those nasty extra linefeeds in IE </form> tags */
-form { display: inline; }
+    input {
+        padding-left:       .25em;
+        font-family:        Arial, Helvetica, sans-serif;
+        color:              #002000;
+        background-color:   #C0D0C0;
+        font-size:          9pt;
+    }
 
-/* A special class for error stuff */
-.error {
-    color:            #F03030;
-    background-color: #360000;
-    border-color:     #F03030;
-    border:           thin groove #F03030;
-}
-#error {
-    color:            #F03030;
-    background-color: #360000;
-    border-color:     #F03030;
-    border:           thin groove #F03030;
-    padding:          8px;
-}
+    textarea {
+        font-family:        terminal, courier, courier-new;
+        color:              #002000;
+        background-color:   #C0D0C0;
+        font-size:          9pt;
+    }
 
-/* clearfix -- see http://positioniseverything.net/easyclearing.html for details on how/why this works*/
-.clearfix:after {
-    content:    ".";
-    display:    block;
-    height:     0;
-    clear:      both;
-    visibility: hidden;
-}
-.clearfix {display: inline-block;}
-/* Hides from IE-mac \*/
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
-/* End hide from IE-mac */
+    /* Quantity-sized elements look better with the text centered */
+    input.quantity {
+        width:              2em !important;
+        text-align:         center;
+    }
 
+/*
+ * A special class for error stuff, so all page errors look the same.
+/*/
 
-/* for mouseover popup menus */
-.hidden {
-    visibility: hidden;
-    display:    none;
-}
+    #error, .error {
+        color:              #F03030;
+        background-color:   #360000;
+        border-color:       #F03030;
+        border:             thin groove #F03030;
+        padding:            8px;
+    }
 
-.no_padding {
-    padding: 0px 0px 0px 0px;
-}
+/*
+ * The following represent some global classes to accommodate minor but
+ * oft-used manipulations like font sizes.0
+/*/
 
-/* the category legend */
-#command_choices a {
-    white-space: nowrap;
-}
-#category_legend_popup {
-    position:         absolute;
-    visibility:       hidden;
-    top:              0px;
-    left:             0px;
-    padding:          2px;
-    white-space:      nowrap;
-}
-#category_legend_popup table {
-    font-size:        9pt;
-}
+    /* font size classes */
+    .tiny   { font-size: 9px; }
+    .small  { font-size: 9pt; }
+    .normal { font-size: 10pt; }
+    .large  { font-size: 12pt; }
+    .huge   { font-size: 24px; }
+
+    /* fony style classes */
+    .bold, .bold a, .bold a:link, .bold a:visited, .bold a:active, .bold a:hover {
+        font-weight: bold !important;
+    }
+    .italic, .italic a, .italic a:link, .italic a:visited, .italic a:active, .italic a:hover {
+        font-style: italic !important;
+    }
+
+    /* Handy for, well, hiding things..  Also for mouseover popup menus */
+    .hidden {
+        visibility: hidden;
+        display:    none;
+    }
+
+/*
+ * clearfix -- see http://positioniseverything.net/easyclearing.html for details on how/why this works
+/*/
+
+    .clearfix:after {
+        content:    ".";
+        display:    block;
+        height:     0;
+        clear:      both;
+        visibility: hidden;
+    }
+    .clearfix {display: inline-block;}
+    /* Hides from IE-mac \*/
+    * html .clearfix {height: 1%;}
+    .clearfix {display: block;}
+    /* End hide from IE-mac */
+

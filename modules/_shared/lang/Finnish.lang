@@ -200,7 +200,6 @@
     Nykyiset nauhoitukset
 "Currently Browsing:  $1"
     Selataan:  $1
-"currently recording"
 "Custom"
     Mukautettu
 "Custom Schedule"
@@ -233,6 +232,7 @@
     Kohde
 "Details for"
     Lisätiedot ohjelmalle
+"Details for: $1"
 "Direct Download"
 "Directed by"
     Ohjaus
@@ -339,6 +339,7 @@
 "HD"
 "HDTV"
     Tarkkapiirto
+"Hide"
 "High"
     Korkein
 "Host"
@@ -359,6 +360,9 @@
     imbd arvostelu
 "Inactive"
     Ei aktiivinen
+"info: hidden advanced schedule"
+"info:forget old"
+"info:never record"
 "is editing"
     muokataan
 "Jump"
@@ -419,6 +423,7 @@
     minuuttia
 "Monday"
     Maanantai
+"More"
 "more"
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
@@ -521,6 +526,7 @@
 "Playlists"
 "plot"
     juoni
+"Possible conflicts"
 "Possible conflicts with this show"
     Saattaa olla ristiriidassa tämän ohjelman kanssa
 "Power"
@@ -706,6 +712,7 @@
 "Science Fiction Movies"
 "Search"
     Hae
+"Search $1"
 "Search for:  $1"
     Hae:  $1
 "Search Music"

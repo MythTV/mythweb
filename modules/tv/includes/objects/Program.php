@@ -455,6 +455,11 @@ class Program {
                           strftime($_SESSION['time_format'], $this->starttime),
                           strftime($_SESSION['time_format'], $this->endtime))
                        ."</dd>\n"
+        // Channel
+              ."\t<dt>".t('Channel').":</dt>\n"
+              ."\t<dd>".(prefer_channum ? $this->channel->channum : $this->channel->callsign)
+                       .' - '.$this->channel->name
+                       ."</dd>\n"
             // Title
               ."\t<dt>".t('Title').":</dt>\n"
               ."\t<dd>".html_entities($this->title)
