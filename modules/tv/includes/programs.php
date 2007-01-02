@@ -182,15 +182,6 @@
         while ($data = $sh->fetch_assoc()) {
             if (!$data['chanid'])
                 continue;
-        // Generate the star string, since mysql has issues with REPEAT() and decimals
-            $data['starstring'] = str_repeat(star_character, intVal($data['stars'] * max_stars));
-            $frac = ($data['stars'] * max_stars) - intVal($data['stars'] * max_stars);
-            if ($frac >= .75)
-                $data['starstring'] .= '&frac34;';
-            elseif ($frac >= .5)
-                $data['starstring'] .= '&frac12;';
-            elseif ($frac >= .25)
-                $data['starstring'] .= '&frac14;';
         // This program has already been loaded, and is attached to a recording schedule
             if (!empty($data['title']) && $Scheduled_Recordings[$data['callsign']][$data['starttime_unix']][0]->title == $data['title']) {
                 $program =& $Scheduled_Recordings[$data['callsign']][$data['starttime_unix']][0];

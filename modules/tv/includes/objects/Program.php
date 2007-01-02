@@ -17,73 +17,83 @@
  * Program class
 /**/
 class Program {
-    var $chanid;
-    var $channel;   // this should be a reference to the $Channel array value
 
+// The following fields are (in order) the fields returned from the backend on
+// a standard query.
     var $title;
     var $subtitle;
     var $description;
-    var $fancy_description;
     var $category;
-    var $category_type;
-    var $css_class;         // css class, based on category and/or category_type
-    var $airdate;
-    var $stars;
-    var $previouslyshown;
-    var $hdtv;
-
-    var $starttime;
-    var $endtime;
-    var $recstartts;
-    var $recendts;
-    var $length;
-    var $lastmodified;
-
+    var $chanid;
+    var $channum;
+    var $callsign;
     var $channame;
     var $filename;
-    var $filesize;
+    var $fs_high;
+    var $fs_low;
+    var $starttime;
+    var $endtime;
+    var $duplicate;
+    var $shareable;
+    var $findid;
     var $hostname;
-
     var $sourceid;
     var $cardid;
     var $inputid;
-    var $inputname;
-
+    var $recpriority    = 0;
+    var $recstatus;
+    var $recordid;
+    var $rectype;
+    var $dupin;
+    var $dupmethod;
+    var $recstartts;
+    var $recendts;
+    var $previouslyshown;
+    var $progflags;
+    var $recgroup;
+    var $commfree;
+    var $outputfilters;
     var $seriesid;
     var $programid;
-
-    var $profile        = 0;
-    var $max_newest     = 0;
-    var $max_episodes   = 0;
-    var $group          = '';
+    var $lastmodified;
+    var $stars;
+    var $airdate;
+    var $hasairdate;
     var $playgroup      = 'Default';
+    var $recpriority2   = 0;
+    var $parentid;
     var $storagegroup   = 'Default';
 
+// The rest of these variables (which really need to get organized) are
+// calculated or queried separately from the db.
+    var $auto_expire    = 0;
+    var $bookmark       = 0;
+    var $category_type;
+    var $channel;           // this should be a reference to the $Channel array value
+    var $conflicting    = false;
+    var $credits        = array();
+    var $css_class;         // css class, based on category and/or category_type
+    var $fancy_description;
+    var $filesize;
+    var $group          = '';
     var $has_commflag   = 0;
     var $has_cutlist    = 0;
+    var $hdtv;
+    var $inputname;
     var $is_editing     = 0;
-    var $bookmark       = 0;
-    var $auto_expire    = 0;
+    var $is_movie;
     var $is_watched     = 0;
-
-    var $conflicting    = false;
-    var $recording      = false;
-
-    var $recpriority    = 0;
-    var $recpriority2   = 0;
-    var $recstatus      = NULL;
-
+    var $length;
+    var $max_episodes   = 0;
+    var $max_newest     = 0;
+    var $profile        = 0;
     var $rater;
     var $rating;
+    var $recording      = false;
     var $starstring;
-    var $is_movie;
-
-    var $timestretch;
-
-    var $credits = array();
-
-    var $url;
     var $thumb_url;
+    var $timestretch;
+    var $url;
 
     function Program($data) {
         global $db;
@@ -99,10 +109,13 @@ class Program {
             $this->callsign        = $data[6];
             $this->channame        = $data[7];
             $this->filename        = $data[8];
-            $fs_high               = $data[9];      # high-word of file size
-            $fs_low                = $data[10];     # low-word of file size
+            $this->fs_high         = $data[9];      # high-word of file size
+            $this->fs_low          = $data[10];     # low-word of file size
             $this->starttime       = $data[11];     # show start-time
             $this->endtime         = $data[12];     # show end-time
+            $this->duplicate       = $data[13];
+            $this->shareable       = $data[14];
+            $this->findid          = $data[15];
             $this->hostname        = $data[16];
             $this->sourceid        = $data[17];
             $this->cardid          = $data[18];
@@ -116,51 +129,52 @@ class Program {
             $this->recstartts      = $data[26];     # ACTUAL start time (also maps to recorded.starttime)
             $this->recendts        = $data[27];     # ACTUAL end time
             $this->previouslyshown = $data[28];     # "repeat" field
-            $progflags             = $data[29];
+            $this->progflags       = $data[29];
             $this->recgroup        = $data[30];
             $this->commfree        = $data[31];
             $this->outputfilters   = $data[32];
             $this->seriesid        = $data[33];
             $this->programid       = $data[34];
             $this->lastmodified    = $data[35];
-            $this->recpriority     = $data[36];
+            $this->stars           = $data[36];
             $this->airdate         = date('Y-m-d', $data[37]);
             $this->hasairdate      = $data[38];
             $this->playgroup       = $data[39];
             $this->recpriority2    = $data[40];
+            $this->parentid        = $data[41];
             $this->storagegroup    = $data[42];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
             // Calculate the filesize
                 if (function_exists('gmp_add')) {
                 // GMP functions should work better with 64 bit numbers.
-                    $size = gmp_add($fs_low,
+                    $size = gmp_add($this->fs_low,
                                      gmp_mul('4294967296',
-                                             gmp_add($fs_high, $fs_low < 0 ? '1' : '0'))
+                                             gmp_add($this->fs_high, $this->fs_low < 0 ? '1' : '0'))
                                    );
                     $this->filesize = gmp_strval($size);
                 }
                 else {
                 // This is inaccurate, but it's the best we can get without GMP.
-                    $this->filesize = ($fs_high + ($fs_low < 0)) * 4294967296 + $fs_low;
+                    $this->filesize = ($this->fs_high + ($this->fs_low < 0)) * 4294967296 + $this->fs_low;
                 }
             // And get some download info
                 $this->url       = video_url($this);
                 $this->thumb_url = root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($this->filename)));
             }
         // Assign the program flags
-            $this->has_commflag   = ($progflags & 0x001) ? true : false;    // FL_COMMFLAG       = 0x001
-            $this->has_cutlist    = ($progflags & 0x002) ? true : false;    // FL_CUTLIST        = 0x002
-            $this->auto_expire    = ($progflags & 0x004) ? true : false;    // FL_AUTOEXP        = 0x004
-            $this->is_editing     = ($progflags & 0x008) ? true : false;    // FL_EDITING        = 0x008
-            $this->bookmark       = ($progflags & 0x010) ? true : false;    // FL_BOOKMARK       = 0x010
-                                                                            // FL_INUSERECORDING = 0x020
-                                                                            // FL_INUSEPLAYING   = 0x040
-            $this->stereo         = ($progflags & 0x080) ? true : false;    // FL_STEREO         = 0x080
-            $this->closecaptioned = ($progflags & 0x100) ? true : false;    // FL_CC             = 0x100
-            $this->hdtv           = ($progflags & 0x200) ? true : false;    // FL_HDTV           = 0x200
-                                                                            // FL_TRANSCODED     = 0x400
-            $this->is_watched     = ($progflags & 0x800) ? true : false;    // FL_WATCHED        = 0x800
+            $this->has_commflag   = ($this->progflags & 0x001) ? true : false;    // FL_COMMFLAG       = 0x001
+            $this->has_cutlist    = ($this->progflags & 0x002) ? true : false;    // FL_CUTLIST        = 0x002
+            $this->auto_expire    = ($this->progflags & 0x004) ? true : false;    // FL_AUTOEXP        = 0x004
+            $this->is_editing     = ($this->progflags & 0x008) ? true : false;    // FL_EDITING        = 0x008
+            $this->bookmark       = ($this->progflags & 0x010) ? true : false;    // FL_BOOKMARK       = 0x010
+                                                                                  // FL_INUSERECORDING = 0x020
+                                                                                  // FL_INUSEPLAYING   = 0x040
+            $this->stereo         = ($this->progflags & 0x080) ? true : false;    // FL_STEREO         = 0x080
+            $this->closecaptioned = ($this->progflags & 0x100) ? true : false;    // FL_CC             = 0x100
+            $this->hdtv           = ($this->progflags & 0x200) ? true : false;    // FL_HDTV           = 0x200
+                                                                                  // FL_TRANSCODED     = 0x400
+            $this->is_watched     = ($this->progflags & 0x800) ? true : false;    // FL_WATCHED        = 0x800
         // Add a generic "will record" variable, too
             $this->will_record = ($this->rectype && $this->rectype != rectype_dontrec) ? true : false;
         }
@@ -180,7 +194,6 @@ class Program {
             $this->seriesid                = $data['seriesid'];
             $this->showtype                = $data['showtype'];
             $this->stars                   = $data['stars'];
-            $this->starstring              = $data['starstring'];
             $this->starttime               = $data['starttime_unix'];
             $this->subtitle                = $data['subtitle'];
             $this->subtitled               = $data['subtitled'];
@@ -200,6 +213,16 @@ class Program {
                 $this->timestretch = 1.0;
             }
         }
+    // Generate the star string, since mysql has issues with REPEAT() and
+    // decimals, and the backend doesn't do it for us, anyway.
+        $this->starstring = str_repeat(star_character, intVal($this->stars * max_stars));
+        $frac = ($this->stars * max_stars) - intVal($this->stars * max_stars);
+        if ($frac >= .75)
+            $this->starstring .= '&frac34;';
+        elseif ($frac >= .5)
+            $this->starstring .= '&frac12;';
+        elseif ($frac >= .25)
+            $this->starstring .= '&frac14;';
     // Get the name of the input
         if ($this->inputid) {
             $this->inputname = $db->query_col('SELECT displayname
@@ -291,50 +314,50 @@ class Program {
     function backend_row() {
         return implode(backend_sep,
                        array(
-                             $this->title,              // 00 title
-                             $this->subtitle,           // 01 subtitle
-                             $this->description,        // 02 description
-                             $this->category,           // 03 category
-                             $this->chanid,             // 04 chanid
-                             $this->channum ,           // 05 chanstr
-                             $this->callsign,           // 06 chansign
-                             $this->channame,           // 07 channame
-                             $this->filename,           // 08 pathname
-                             '0',                       // 09 filesize upper 32 bits
-                             '0',                       // 10 filesize lower 32 bits
-                             $this->starttime,          // 11 startts
-                             $this->endtime,            // 12 endts
-                             $this->hostname,           // 13 duplicate
-                             $this->sourceid,           // 14 shareable
-                             $this->cardid,             // 15 findid
-                             $this->inputid,            // 16 hostname
-                             $this->recpriority,        // 17 sourceid
-                             $this->recstatus,          // 18 cardid
-                             $this->recordid,           // 19 inputid
-                             $this->rectype,            // 20 recpriority
-                             $this->dupin,              // 21 recstatus
-                             $this->dupmethod,          // 22 recordid
-                             $this->recstartts,         // 23 rectype
-                             $this->recendts,           // 24 dupin
-                             $this->previouslyshown,    // 25 dupmethod
-                             $this->starttime,          // 26 recstartts
-                             $this->endtime,            // 27 recendts
-                             $this->hostname,           // 28 repeat
-                             ' ',                       // 29 programflags
-                             $this->recgroup,           // 30 recgroup
-                             $this->commfree,           // 31 chancommfree
-                             $this->outputfilters,      // 32 chanOutputFilters
-                             $this->seriesid,           // 33 seriesid
-                             $this->programid,          // 34 programid
-                             $this->lastmodified,       // 35 lastmodified
-                             $this->recpriority,        // 36 stars
-                             $this->airdate,            // 37 originalAirDate
-                             $this->hasairdate,         // 38 hasAirDate
-                             $this->playgroup,          // 39 playgroup
-                             $this->recpriority2,       // 40 recpriority2
-                             $this->storagegroup,       // 41 parentid
-                             $this->recgroup,           // 42 storagegroup
-                             '',                 // 43 trailing separator
+                             $this->title          , // 00 title
+                             $this->subtitle       , // 01 subtitle
+                             $this->description    , // 02 description
+                             $this->category       , // 03 category
+                             $this->chanid         , // 04 chanid
+                             $this->channum        , // 05 chanstr
+                             $this->callsign       , // 06 chansign
+                             $this->channame       , // 07 channame
+                             $this->filename       , // 08 pathname
+                             $this->fs_high        , // 09 filesize upper 32 bits
+                             $this->fs_low         , // 10 filesize lower 32 bits
+                             $this->starttime      , // 11 startts
+                             $this->endtime        , // 12 endts
+                             $this->duplicate      , // 13 duplicate
+                             $this->shareable      , // 14 shareable
+                             $this->findid         , // 15 findid
+                             $this->hostname       , // 16 hostname
+                             $this->sourceid       , // 17 sourceid
+                             $this->cardid         , // 18 cardid
+                             $this->inputid        , // 19 inputid
+                             $this->recpriority    , // 20 recpriority
+                             $this->recstatus      , // 21 recstatus
+                             $this->recordid       , // 22 recordid
+                             $this->rectype        , // 23 rectype
+                             $this->dupin          , // 24 dupin
+                             $this->dupmethod      , // 25 dupmethod
+                             $this->recstartts     , // 26 recstartts
+                             $this->recendts       , // 27 recendts
+                             $this->previouslyshown, // 28 repeat
+                             $this->progflags      , // 29 programflags
+                             $this->recgroup       , // 30 recgroup
+                             $this->commfree       , // 31 chancommfree
+                             $this->outputfilters  , // 32 chanOutputFilters
+                             $this->seriesid       , // 33 seriesid
+                             $this->programid      , // 34 programid
+                             $this->lastmodified   , // 35 lastmodified
+                             $this->stars          , // 36 stars
+                             $this->airdate        , // 37 originalAirDate
+                             $this->hasairdate     , // 38 hasAirDate
+                             $this->playgroup      , // 39 playgroup
+                             $this->recpriority2   , // 40 recpriority2
+                             $this->parentid       , // 41 parentid
+                             $this->storagegroup   , // 42 storagegroup
+                             '',                     // 43 trailing separator
                             )
                       );
     }
