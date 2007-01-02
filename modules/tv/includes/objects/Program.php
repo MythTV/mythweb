@@ -376,8 +376,6 @@ class Program {
     function generate_preview_pixmap() {
         $fileurl  = $this->filename;
         $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
-        $host     = $GLOBALS['Master_Host'];
-        $port     = $GLOBALS['Master_Port'];
     // Make sure the local path exists
         $path = '';
         foreach (split('/+', dirname($pngpath)) as $dir) {
@@ -409,6 +407,10 @@ class Program {
             copy("$fileurl.png", $pngpath);
             return 2;
         }
+    // Figure out which host holds the recording
+        $urlparts = parse_url($fileurl);
+        $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
+        $port     = _or($urlparts['port'], $GLOBALS['Master_Port']);
     // Transfer the pixmap from the backend
         $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, "$fileurl.png"),
                                                       $datasocket,
