@@ -291,49 +291,49 @@ class Program {
     function backend_row() {
         return implode(backend_sep,
                        array(
-                             ' ',                // 00 title
-                             ' ',                // 01 subtitle
-                             ' ',                // 02 description
-                             ' ',                // 03 category
-                             $this->chanid,      // 04 chanid
-                             ' ',                // 05 chanstr
-                             ' ',                // 06 chansign
-                             ' ',                // 07 channame
-                             $this->filename,    // 08 pathname
-                             '0',                // 09 filesize upper 32 bits
-                             '0',                // 10 filesize lower 32 bits
-                             $this->starttime,   // 11 startts
-                             $this->endtime,     // 12 endts
-                             '0',                // 13 duplicate
-                             '1',                // 14 shareable
-                             '0',                // 15 findid
-                             $this->hostname,    // 16 hostname
-                             '-1',               // 17 sourceid
-                             '-1',               // 18 cardid
-                             '-1',               // 19 inputid
-                             ' ',                // 20 recpriority
-                             ' ',                // 21 recstatus
-                             ' ',                // 22 recordid
-                             ' ',                // 23 rectype
-                             '15',               // 24 dupin
-                             '6',                // 25 dupmethod
-                             $this->recstartts,  // 26 recstartts
-                             $this->recendts,    // 27 recendts
-                             ' ',                // 28 repeat
-                             ' ',                // 29 programflags
-                             ' ',                // 30 recgroup
-                             ' ',                // 31 chancommfree
-                             ' ',                // 32 chanOutputFilters
-                             $this->seriesid,    // 33 seriesid
-                             $this->programid,   // 34 programid
-                             $this->starttime,   // 35 lastmodified
-                             '0',                // 36 stars
-                             $this->starttime,   // 37 originalAirDate
-                             '',                 // 38 hasAirDate
-                             '',                 // 39 playgroup
-                             '',                 // 40 recpriority2
-                             '',                 // 41 parentid
-                             ' ',                // 42 storagegroup
+                             $this->title,              // 00 title
+                             $this->subtitle,           // 01 subtitle
+                             $this->description,        // 02 description
+                             $this->category,           // 03 category
+                             $this->chanid,             // 04 chanid
+                             $this->channum ,           // 05 chanstr
+                             $this->callsign,           // 06 chansign
+                             $this->channame,           // 07 channame
+                             $this->filename,           // 08 pathname
+                             '0',                       // 09 filesize upper 32 bits
+                             '0',                       // 10 filesize lower 32 bits
+                             $this->starttime,          // 11 startts
+                             $this->endtime,            // 12 endts
+                             $this->hostname,           // 13 duplicate
+                             $this->sourceid,           // 14 shareable
+                             $this->cardid,             // 15 findid
+                             $this->inputid,            // 16 hostname
+                             $this->recpriority,        // 17 sourceid
+                             $this->recstatus,          // 18 cardid
+                             $this->recordid,           // 19 inputid
+                             $this->rectype,            // 20 recpriority
+                             $this->dupin,              // 21 recstatus
+                             $this->dupmethod,          // 22 recordid
+                             $this->recstartts,         // 23 rectype
+                             $this->recendts,           // 24 dupin
+                             $this->previouslyshown,    // 25 dupmethod
+                             $this->starttime,          // 26 recstartts
+                             $this->endtime,            // 27 recendts
+                             $this->hostname,           // 28 repeat
+                             ' ',                       // 29 programflags
+                             $this->recgroup,           // 30 recgroup
+                             $this->commfree,           // 31 chancommfree
+                             $this->outputfilters,      // 32 chanOutputFilters
+                             $this->seriesid,           // 33 seriesid
+                             $this->programid,          // 34 programid
+                             $this->lastmodified,       // 35 lastmodified
+                             $this->recpriority,        // 36 stars
+                             $this->airdate,            // 37 originalAirDate
+                             $this->hasairdate,         // 38 hasAirDate
+                             $this->playgroup,          // 39 playgroup
+                             $this->recpriority2,       // 40 recpriority2
+                             $this->storagegroup,       // 41 parentid
+                             $this->recgroup,           // 42 storagegroup
                              '',                 // 43 trailing separator
                             )
                       );
@@ -558,7 +558,20 @@ class Program {
  * used.
 /**/
     function rec_forget_old() {
-        backend_command(array('FORGET_RECORDING', $this->backend_row(), '0'));
+        global $db;
+    // The FORGET_RECORDING command requires the specific record to be
+    // forgotten, so we have to search for matching rows
+        $sh = $db->query('SELECT *
+                            FROM oldrecorded
+                           WHERE title=? AND subtitle=? AND description=?',
+                         $this->title,
+                         $this->subtitle,
+                         $this->description);
+        while ($row = $sh->fetch_assoc()) {
+            $prog =& new Program($row);
+            backend_command(array('FORGET_RECORDING', $prog->backend_row(), '0'));
+        }
+        $sh->finish();
     // Delay a second so the scheduler can catch up
         sleep(1);
     }
@@ -585,6 +598,8 @@ class Program {
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Notify the backend of the changes
         backend_notify_changes();
+    // Delay a second so the scheduler can catch up
+        sleep(1);
     }
 
 /**
