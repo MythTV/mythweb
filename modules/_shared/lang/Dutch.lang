@@ -358,7 +358,11 @@
     imdb beoordeling
 "Inactive"
     Niet actief
+"info: activate recording"
+"info: default recording"
+"info: dont record"
 "info: hidden advanced schedule"
+"info: record this"
 "info:forget old"
 "info:never record"
 "Jump"

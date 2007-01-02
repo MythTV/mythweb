@@ -61,14 +61,14 @@
     </form>
 </div>
 
-<table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <td><?php echo get_sort_link('title',   t('title')) ?></td>
-    <td><?php echo get_sort_link('channum', t('channum')) ?></td>
-    <td><?php echo get_sort_link('airdate', t('airdate')) ?></td>
-    <td><?php echo get_sort_link('length',  t('length')) ?></td>
-    <td align="center" colspan="2"><?php echo t('Commands') ?></a></td>
+    <th class="_status"><?php  echo t('Status') ?></td>
+    <th class="_title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
+    <th class="_channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
+    <th class="_airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
+    <th class="_length"><?php  echo get_sort_link('length',  t('Length'))  ?></th>
 </tr><?php
     $row = 0;
 
@@ -86,33 +86,24 @@
             case 'WillRecord':
                 $rec_char   = $show->inputname;
                 $css_class  = 'scheduled';
-                $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
-                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                $commands[] = 'dontrec';
             // Offer to suppress any recordings that have enough info to do so.
                 if (preg_match('/\\S/', $show->title)
                         && (preg_match('/\\S/', $show->programid.$show->subtitle.$show->description))) {
-                    $commands[] = '<a href="'.root.'tv/upcoming?'
-                                  .'never_record=yes&'.$urlstr.'">'
-                                  .t('Never Record').'</a>';
+                    $commands[] = 'never_record';
                 }
                 break;
             case 'PreviousRecording':
                 $rec_char   = t('Duplicate');
                 $css_class  = 'duplicate';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Record This').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?'
-                              .'forget_old=yes&'.$urlstr.'">'
-                              .t('Forget Old').'</a>';
+                $commands[] = 'record';
+                $commands[] = 'forget_old';
                 break;
             case 'CurrentRecording':
                 $rec_char   = t('Recorded');
                 $css_class  = 'duplicate';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Record This').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?'
-                              .'forget_old=yes&'.$urlstr.'">'
-                              .t('Forget Old').'</a>';
+                $commands[] = 'record';
+                $commands[] = 'forget_old';
                 break;
             case 'Repeat':
                 $rec_char = 'Rerun';
@@ -121,10 +112,8 @@
             case 'EarlierShowing':
                 $rec_char = t('Earlier');
                 $css_class= 'deactivated';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Activate').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
-                              .$urlstr.'">'.t('Default').'</a>';
+                $commands[] = 'activate';
+                $commands[] = 'default';
                 break;
             case 'TooManyRecordings':
                 $rec_char = t('Too Many');
@@ -133,10 +122,8 @@
             case 'Cancelled':
                 $rec_char   = t('Cancelled');
                 $css_class  = 'deactivated';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Activate').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
-                              .$urlstr.'">'.t('Default').'</a>';
+                $commands[] = 'activate';
+                $commands[] = 'default';
                 break;
             case 'Conflict':
                 $rec_char = t('Conflict');
@@ -147,18 +134,14 @@
                 $rec_class = implode(' ', array(recstatus_class($show),
                                      'conflicting'));
                 $css_class  = 'conflict';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Record This').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
-                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                $commands[] = 'record';
+                $commands[] = 'dontrec';
                 break;
             case 'LaterShowing':
                 $rec_char = t('Later');
                 $css_class= 'deactivated';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Activate').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
-                              .$urlstr.'">'.t('Default').'</a>';
+                $commands[] = 'activate';
+                $commands[] = 'default';
                 break;
             case 'LowDiskSpace':
                 $rec_char   = t('Low Space');
@@ -173,36 +156,63 @@
             case 'Overlap':
                 $rec_char   = t('Override');
                 $css_class  = 'conflict';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Record This').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
-                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                $commands[] = 'record';
+                $commands[] = 'dontrec';
                 break;
             case 'ManualOverride':
                 $rec_char   = t('Override');
                 $css_class  = 'deactivated';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Activate').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
-                              .$urlstr.'">'.t('Default').'</a>';
+                $commands[] = 'activate';
+                $commands[] = 'default';
                 break;
             case 'ForceRecord':
                 $rec_char   = $show->inputname ? $show->inputname : t('Forced');
                 $css_class  = 'scheduled';
-                $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
-                              .$urlstr.'">'.t('Don\'t Record').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
-                              .$urlstr.'">'.t('Default').'</a>';
+                $commands[] = 'dontrec';
+                $commands[] = 'default';
                 break;
             default:
                 $rec_char   = '&nbsp;';
                 $rec_class  = '';
                 $css_class  = 'deactivated';
-                $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
-                              .$urlstr.'">'.t('Activate').'</a>';
-                $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
-                              .$urlstr.'">'.t('Don\'t Record').'</a>';
+                $commands[] = 'activate';
+                $commands[] = 'dontrec';
                 break;
+        }
+    // Now do the necessary replacements for each command
+        foreach ($commands as $key => $val) {
+            switch ($val) {
+                case 'dontrec':
+                    $commands[$key] = '<a href="'.root.'tv/upcoming?dontrec=yes&'.$urlstr.'"'
+                                     .' title="'.html_entities(t('info: dont record')).'">'
+                                     .t('Don\'t Record').'</a>';
+                    break;
+                case 'never_record':
+                    $commands[$key] = '<a href="'.root.'tv/upcoming?never_record=yes&'.$urlstr.'"'
+                                     .' title="'.html_entities(t('info:never record')).'">'
+                                     .t('Never Record').'</a>';
+                    break;
+                case 'record':
+                    $commands[$key] = '<a href="'.root.'tv/upcoming?record=yes&'.$urlstr.'"'
+                                     .' title="'.html_entities(t('info: record this')).'">'
+                                     .t('Record This').'</a>';
+                    break;
+                case 'forget_old':
+                    $commands[$key] = '<a href="'.root.'tv/upcoming?forget_old=yes&'.$urlstr.'"'
+                                     .' title="'.html_entities(t('info:forget old')).'">'
+                                     .t('Forget Old').'</a>';
+                    break;
+                case 'activate':
+                    $commands[$key] = '<a href="'.root.'tv/upcoming?record=yes&'.$urlstr.'"'
+                                     .' title="'.html_entities(t('info: activate recording')).'">'
+                                     .t('Activate').'</a>';
+                    break;
+                case 'default':
+                    $commands[$key] = '<a href="'.root.'tv/upcoming?default=yes&'.$urlstr.'"'
+                             .' title="'.html_entities(t('info: default recording')).'">'
+                             .t('Default').'</a>';
+                    break;
+            }
         }
 
     // A program id counter for popup info
@@ -221,36 +231,41 @@
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="5" class="list_separator"><?php echo $cur_group ?></td>
+    <td colspan="8" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?php
         }
 
     // Print the content
 ?><tr class="<?php echo $css_class ?>">
-<?php if (!empty($group_field)) echo "    <td class=\"rec_class $rec_class\">$rec_char</td>\n" ?>
-    <td class="<?php echo $show->css_class ?>"><?php
-    // Window status text, for the mouseover
-        $wstatus = strftime($_SESSION['time_format'], $show->starttime).' - '.strftime($_SESSION['time_format'], $show->endtime).' -- '
-                  .str_replace(array("'", '"'),array("\\'", '&quot;'), $show->title)
-                  .($show->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $show->subtitle)
-                                          : '');
+<?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n    <td class=\"_status rec_class $rec_class\">$rec_char</td>\n" ?>
+    <td class="_title <?php echo $show->css_class ?>"><?php
     // Print the link to edit this scheduled recording
         echo '<a';
         if (show_popup_info)
-            echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup', $wstatus);
+            echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup');
         else
-            echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
-        echo ' href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
-            .$show->title
-            .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
-            .'</a>';
+            echo ' title="',html_entities(strftime($_SESSION['time_format'], $show->starttime)
+                         .' - '.strftime($_SESSION['time_format'], $show->endtime)
+                         .' -- '
+                         .$show->title
+                         .($show->subtitle
+                             ? ':  '.$show->subtitle
+                             : '')), '"';
+        echo ' href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+             $show->title,
+             ($show->subtitle
+                ? ':  '.$show->subtitle
+                : ''),
+             '</a>';
         ?></td>
-    <td><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
-    <td nowrap><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
-    <td nowrap><?php echo nice_length($show->length) ?></td>
-<?php   foreach ($commands as $command) { ?>
-    <td nowrap width="5%" class="commandbox" align="center"><?php echo $command ?></td>
-<?php   } ?>
+    <td class="_channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+    <td class="_airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
+    <td class="_length"><?php  echo nice_length($show->length) ?></td>
+<?php
+        foreach ($commands as $command) {
+            echo '    <td class="_commands commands">',$command,"</td>\n";
+        }
+?>
 </tr><?php
         $prev_group = $cur_group;
         $row++;

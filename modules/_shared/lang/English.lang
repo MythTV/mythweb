@@ -228,8 +228,16 @@
 "IMDB"
 "imdb rating"
 "Inactive"
+"info: activate recording"
+    Force this specific showing to record.
+"info: default recording"
+    Reset any override requests so that this showing will schedule normally.
+"info: dont record"
+    Do not record this specific showing.
 "info: hidden advanced schedule"
-    The advanced scheduling options are currently hidden
+    The advanced scheduling options are currently hidden.
+"info: record this"
+    Force this specific showing to record.
 "info:forget old"
     Forget about previous recordings of this show, so it can be rerecorded.
 "info:never record"
