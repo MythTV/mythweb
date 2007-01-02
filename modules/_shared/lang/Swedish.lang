@@ -117,8 +117,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    autoradera
 "Auto-expire recordings"
     Autoradera inspelningar
 "Auto-flag commercials"
@@ -261,7 +259,6 @@
     Spela ej in
 "Don't record this program."
     Spela inte in detta program.
-"Download Choices"
 "Download URL override"
 "Dup Method"
     Dubblettmetod
@@ -350,14 +347,8 @@
     Förberedda sökningar
 "handy: overview"
     Denna sida innehåller förberedda komplexa sökningar av programlistorna (fungerar för närvarande endast med data från DataDirect, alltså ej i Sverige.).
-"has bookmark"
-    bokmärke
 "has Bookmark"
-"has commflag"
-    markerad reklam
 "Has Cutlist"
-"has cutlist"
-    klipplista
 "HD"
 "HDTV"
     HDTV
@@ -385,8 +376,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    redigeras
 "Jump"
     Gå
 "Jump to"
@@ -503,8 +492,6 @@
     Nya titlar, premiärer
 "Next"
     Nästa
-"No"
-    Nej
 "NO DATA"
     INGA DATA
 "No matches found"
@@ -631,7 +618,7 @@
 "Recorded"
 "Recorded Programs"
     Inspelade program
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Inspelningsgrupp
 "Recording Options"
@@ -957,7 +944,6 @@
 "Visit $1"
     Besök $1
 "Watched"
-"watched"
 "Weather"
     Väder
 "Wednesday"

@@ -10,6 +10,9 @@
 # Necessary constants for sysopen
     use Fcntl;
 
+# Other includes
+    use Sys::Hostname;
+
 # Autoflush
     $|++;
 
@@ -66,8 +69,15 @@ EOF
         exit;
     }
 
-# Filename on disk
-    my $filename = "data/recordings/$basename";
+# Get the filename on disk
+    $sh = $dbh->prepare('SELECT data
+                           FROM settings
+                          WHERE value="RecordFilePrefix" AND hostname=?');
+    $sh->execute(hostname);
+    my ($filename) = $sh->fetchrow_array();
+    $sh->finish;
+
+    $filename = "$filename/$basename";
 
 # Make sure the file exists
     unless (-e $filename) {

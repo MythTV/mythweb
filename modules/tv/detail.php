@@ -20,20 +20,45 @@
         exit;
     }
 
+// Use the new directory structure?
+    if (!$_GET['chanid'] && !$_GET['starttime']) {
+        $_GET['chanid']    = $Path[2];
+        $_GET['starttime'] = $Path[3];
+    }
+// Just in case
+    $_GET['chanid']    = intVal($_GET['chanid']);
+    $_GET['starttime'] = intVal($_GET['starttime']);
+
+// Auto-expire -- only available for javascript templates
+    if (isset($_REQUEST['autoexpire']) && $_GET['chanid'] && $_GET['starttime']) {
+        $sh = $db->query('UPDATE recorded
+                             SET autoexpire = ?
+                           WHERE chanid = ? AND starttime = FROM_UNIXTIME(?)',
+                         $_REQUEST['autoexpire'] ? 1 : 0,
+                         $_GET['chanid'],
+                         $_GET['starttime']);
+    // Report back, and then exit.
+        if ($sh->affected_rows())
+            echo 'success';
+        exit;
+    }
+
 // Load the sorting routines
     require_once 'includes/sorting.php';
 
 // Load the program info, unless a schedule was requested
-    if ($_GET['recordid'])
-        $program = null;
-    else {
-    // Use the new directory structure?
-        if (!$_GET['chanid'] && !$_GET['starttime']) {
-            $_GET['chanid']    = $Path[2];
-            $_GET['starttime'] = $Path[3];
+    $program = null;
+    if (empty($_GET['recordid'])) {
+    // Starttime in the past -- See if it's a recording
+        if ($_GET['starttime'] < time()) {
+            $record = get_backend_rows('QUERY_RECORDING TIMESLOT '.$_GET['chanid'].' '.unix2mythtime($_GET['starttime']), 1);
+            if (is_array($record[0]) && $_GET['chanid'] == $record[0][4] && $_GET['starttime'] == $record[0][26]) {
+                $program =& new Program($record[0]);
+            }
         }
     // Load the program
-        $program =& load_one_program($_GET['starttime'], $_GET['chanid']);
+        if (empty($program) || !$program->recstartts)
+            $program =& load_one_program($_GET['starttime'], $_GET['chanid']);
     }
 
 // Get the schedule for this recording, if one exists

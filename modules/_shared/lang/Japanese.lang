@@ -110,8 +110,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    自動削除
 "Auto-expire recordings"
     自動削除
 "Auto-flag commercials"
@@ -249,7 +247,6 @@
     録画停止
 "Don't record this program."
     録画しない
-"Download Choices"
 "Download URL override"
 "Dup Method"
     重複検知
@@ -336,14 +333,8 @@
     おてがるサーチ
 "handy: overview"
     下のメニューから簡単に検索できます。
-"has bookmark"
-    ブックマーク
 "has Bookmark"
-"has commflag"
-    CMマーク
 "Has Cutlist"
-"has cutlist"
-    カットリスト
 "HD"
 "HDTV"
 "Hide"
@@ -368,8 +359,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    編集
 "Jump"
     移動
 "Jump to"
@@ -482,8 +471,6 @@
 "New Titles, Premieres"
 "Next"
     次
-"No"
-    いいえ
 "NO DATA"
 "No matches found"
     一致する物がありませんでした
@@ -605,7 +592,7 @@
 "Recorded"
 "Recorded Programs"
     録画済み
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     録画グループ
 "Recording Options"
@@ -922,7 +909,6 @@
 "Visit $1"
     $1を訪れる
 "Watched"
-"watched"
 "Weather"
     天気
 "Wednesday"

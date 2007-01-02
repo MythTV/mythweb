@@ -60,6 +60,19 @@
     padding:        .5em;
     border-bottom:  1px solid #9090B0;
 }
+#_progflags td {
+    padding:        .5em;
+    border-bottom:  1px solid #9090B0;
+}
+#_progflags img {
+    margin-right:   .3em;
+}
+#_progflags a img {
+    border:         1px solid transparent;
+}
+#_progflags a:hover img {
+    border:         1px solid #F0F000;
+}
 
 #_status {
     background-color:   #102923;
@@ -144,6 +157,62 @@
     display:            block;
     padding:            .15em .25em;
     margin-bottom:      .25em;
+}
+
+#_downloads {
+    float:              left;
+    padding:            0px;
+    min-width:          350px;
+    max-width:          500px;
+    margin:             10px 0px 10px 10px;
+    background-color:   #101a29;
+    color:              #E0E0FF;
+    border:             1px solid #9090B0;
+}
+#_downloads img {
+    margin-right:       .3em;
+}
+#_downloads a img {
+    border:             1px solid transparent;
+}
+#_downloads a {
+    border:             1px solid transparent;
+}
+#_downloads a:hover img {
+    border:             1px solid #F0F000;
+}
+#_downloads div._pixmap {
+    padding:            1em 1em 0em 1em;
+    background-color:   black;
+    text-align:         center;
+}
+#_downloads div._pixmap a._pixmap {
+    margin:             .25em auto;
+}
+
+#_downloads div._links {
+    padding:            .5em;
+    background-color:   black;
+    text-align:         center;
+}
+
+#_downloads div._links a {
+    position:           relative;
+    top:                -10px;
+    margin:             0px 1.5em;
+    padding:            .75em;
+}
+#_downloads div._links a img {
+    position:           relative;
+    top:                10px;
+}
+#_downloads div._links a:hover img {
+    border:             1px solid transparent;
+}
+#_downloads div._links a:hover {
+    background-color:   #121;
+    border:             1px solid #F0F000;
+    text-decoration:    none;
 }
 
 

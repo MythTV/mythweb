@@ -114,8 +114,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    auto-udløb
 "Auto-expire recordings"
     Auto-udløb optagelser
 "Auto-flag commercials"
@@ -255,7 +253,6 @@
     Optag ikke
 "Don't record this program."
     Optag IKKE dette program
-"Download Choices"
 "Download URL override"
 "Dup Method"
     Dubletkontrol metode
@@ -339,14 +336,8 @@
     Guide opsætning
 "Handy Predefined Searches"
 "handy: overview"
-"has bookmark"
-    har bookmark(s)
 "has Bookmark"
-"has commflag"
-    har markeret reklameblokke
 "Has Cutlist"
-"has cutlist"
-    har klippeliste
 "HD"
 "HDTV"
     HDTV
@@ -371,8 +362,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    er ved at blive redigeret
 "Jump"
     Gå
 "Jump to"
@@ -480,8 +469,6 @@
     Nye titler, premierer
 "Next"
     Næste
-"No"
-    Nej
 "NO DATA"
     INGEN DATA
 "No matches found"
@@ -600,7 +587,7 @@
 "Recorded"
 "Recorded Programs"
     Optagede programmer
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Optagelsesgruppe
 "Recording Options"
@@ -919,7 +906,6 @@
 "Visit $1"
     Besøg $1
 "Watched"
-"watched"
 "Weather"
     Vejret
 "Wednesday"

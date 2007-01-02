@@ -107,8 +107,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    anna vanheta
 "Auto-expire recordings"
     Aut. vanheneminen
 "Auto-flag commercials"
@@ -246,7 +244,6 @@
     Älä Nauhoita
 "Don't record this program."
     Älä nauhoita ohjelmaa.
-"Download Choices"
 "Download URL override"
 "Dup Method"
     Metodi
@@ -328,14 +325,8 @@
     Esitäytetyt Haut
 "handy: overview"
     Sisältää valmiita edistyneen haun lauseita.
-"has bookmark"
-    kirjanmerkitty
 "has Bookmark"
-"has commflag"
-    mainokset merkitty
 "Has Cutlist"
-"has cutlist"
-    on leikattu
 "HD"
 "HDTV"
     Tarkkapiirto
@@ -363,8 +354,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    muokataan
 "Jump"
     Hyppäys
 "Jump to"
@@ -463,8 +452,6 @@
 "New Titles, Premieres"
 "Next"
     Seuraava
-"No"
-    Ei
 "NO DATA"
     EI DATAA
 "No matches found"
@@ -576,7 +563,7 @@
 "Recorded"
 "Recorded Programs"
     Nauhoitetut Ohjelmat
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Nauhoitusryhmä
 "Recording Options"
@@ -887,7 +874,6 @@
     Näkyvä
 "Visit $1"
 "Watched"
-"watched"
 "Weather"
     Säätila
 "Wednesday"

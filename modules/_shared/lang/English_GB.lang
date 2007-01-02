@@ -76,7 +76,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
 "Auto-expire recordings"
 "Auto-flag commercials"
 "Auto-transcode"
@@ -163,7 +162,6 @@
 "Don't Record"
 "Don't record this program."
     Don't record this programme.
-"Download Choices"
 "Download URL override"
 "Dup Method"
 "Duplicate"
@@ -219,11 +217,8 @@
 "Handy Predefined Searches"
 "handy: overview"
     This page contains pre-prepared complex searches of the programme listings.
-"has bookmark"
 "has Bookmark"
-"has commflag"
 "Has Cutlist"
-"has cutlist"
 "HD"
 "HDTV"
 "Hide"
@@ -244,7 +239,6 @@
     Forget about previous recordings of this show, so it can be rerecorded.
 "info:never record"
     Falsify a previous recording of this show so that it won't record.
-"is editing"
 "Jump"
 "Jump to"
 "Jump To"
@@ -320,7 +314,6 @@
 "New Search"
 "New Titles, Premieres"
 "Next"
-"No"
 "NO DATA"
 "No matches found"
 "No matching programs found."
@@ -406,7 +399,7 @@
 "Recorded"
 "Recorded Programs"
     Recorded Programmes
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
 "Recording Options"
 "Recording Priority"
@@ -643,7 +636,6 @@
 "visible"
 "Visit $1"
 "Watched"
-"watched"
 "Weather"
 "Wednesday"
 "welcome: backend_log"

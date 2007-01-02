@@ -86,7 +86,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
 "Auto-expire recordings"
     Automaticky vypršet nahrávky
 "Auto-flag commercials"
@@ -191,7 +190,6 @@
 "Don't Record"
     Nenahrávat
 "Don't record this program."
-"Download Choices"
 "Download URL override"
 "Dup Method"
 "Duplicate"
@@ -251,11 +249,8 @@
 "Handy Predefined Searches"
 "handy: overview"
     This page contains pre-prepared complex searches of the program listings.
-"has bookmark"
 "has Bookmark"
-"has commflag"
 "Has Cutlist"
-"has cutlist"
 "HD"
 "HDTV"
 "Hide"
@@ -277,7 +272,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
 "Jump"
     Skočit
 "Jump to"
@@ -362,8 +356,6 @@
 "New Search"
 "New Titles, Premieres"
 "Next"
-"No"
-    Ne
 "NO DATA"
 "No matches found"
 "No matching programs found."
@@ -456,7 +448,7 @@
 "Recorded"
 "Recorded Programs"
     Nahrané pořady
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
 "Recording Options"
 "Recording Priority"
@@ -701,7 +693,6 @@
 "visible"
 "Visit $1"
 "Watched"
-"watched"
 "Weather"
     Počasí
 "Wednesday"

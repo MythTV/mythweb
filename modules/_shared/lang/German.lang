@@ -110,8 +110,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    autom. löschen
 "Auto-expire recordings"
     Aufnahmen autom. löschen
 "Auto-flag commercials"
@@ -249,7 +247,6 @@
     Nicht aufnehmen
 "Don't record this program."
     Diese Sendung nicht aufnehmen
-"Download Choices"
 "Download URL override"
 "Dup Method"
     Methode für Wdhgn.
@@ -336,14 +333,8 @@
     Handy: Vordefinierte Suchabfragen
 "handy: overview"
     Handy: Übersicht
-"has bookmark"
-    Position gesetzt
 "has Bookmark"
-"has commflag"
-    Werbung markiert
 "Has Cutlist"
-"has cutlist"
-    Schnittliste
 "HD"
 "HDTV"
     HDTV
@@ -370,8 +361,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    wird bearbeitet
 "Jump"
     Gehe
 "Jump to"
@@ -475,8 +464,6 @@
     Neue Sendungen, Erstausstrahlungen
 "Next"
     Nächste
-"No"
-    Nein
 "NO DATA"
     Kein Programm verfügbar
 "No matches found"
@@ -593,7 +580,7 @@
 "Recorded"
 "Recorded Programs"
     Aufnahmen
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Aufnahmegruppe
 "Recording Options"
@@ -908,7 +895,6 @@
 "Visit $1"
     Besuche $1
 "Watched"
-"watched"
 "Weather"
     Wetter
 "Wednesday"

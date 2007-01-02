@@ -92,8 +92,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    avto-brisanje
 "Auto-expire recordings"
     Snemanja avto-preteka
 "Auto-flag commercials"
@@ -209,7 +207,6 @@
     Ne snemaj
 "Don't record this program."
     Ne snemaj tega programa.
-"Download Choices"
 "Download URL override"
 "Dup Method"
     Metoda duplikatov
@@ -281,14 +278,8 @@
 "Handy Predefined Searches"
 "handy: overview"
     Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.
-"has bookmark"
-    ima zaznamek
 "has Bookmark"
-"has commflag"
-    ima označene reklame
 "Has Cutlist"
-"has cutlist"
-    ima seznam rezov
 "HD"
 "HDTV"
 "Hide"
@@ -312,8 +303,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    se ureja
 "Jump"
     Skoči
 "Jump to"
@@ -402,8 +391,6 @@
 "New Search"
 "New Titles, Premieres"
 "Next"
-"No"
-    Ne
 "NO DATA"
 "No matches found"
     Ni zadetkov
@@ -503,7 +490,7 @@
 "Recorded"
 "Recorded Programs"
     Posneti programi
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Snemalne skupine
 "Recording Options"
@@ -781,7 +768,6 @@
 "visible"
 "Visit $1"
 "Watched"
-"watched"
 "Weather"
 "Wednesday"
     Sreda

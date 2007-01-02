@@ -82,32 +82,47 @@
     }
 ?>
 
+// Set the autoexpire flag
     function set_autoexpire(id) {
         var file = files[id];
-        file.autoexpire = 1 - file.autoexpire;
-        submit_url('<?php echo root ?>tv/recorded?ajax&autoexpire='
-                   +file.autoexpire
-                   +'&chanid='+file.chanid+'&starttime='+file.starttime);
-        $('autoexpire_'+id).src = '<?php echo skin_url, '/img/flags/' ?>'
-                                  + (file.autoexpire
-                                     ? ''
-                                     : 'no_')
-                                  + 'autoexpire.png';
-        if (file.autoexpire)
-            $('autoexpire_'+id).title = '<?php echo addslashes(t('Click to disable Auto Expire')) ?>';
-        else
-            $('autoexpire_'+id).title = '<?php echo addslashes(t('Click to enable Auto Expire')) ?>';
+        var r = new Ajax.Request('<?php echo root ?>tv/detail/' + file.chanid + '/' + file.starttime,
+                                 {
+                                    parameters: 'autoexpire='+(1 - file.autoexpire),
+                                  asynchronous: false
+                                 });
+        if (r.transport.responseText == 'success') {
+        // Update to the new value
+            file.autoexpire = 1 - file.autoexpire;
+        // Fix the images
+            $('autoexpire_'+id).src = '<?php echo skin_url, '/img/flags/' ?>'
+                                      + (file.autoexpire
+                                         ? ''
+                                         : 'no_')
+                                      + 'autoexpire.png';
+            if (file.autoexpire)
+                $('autoexpire_'+id).title = '<?php echo addslashes(t('Click to disable Auto Expire')) ?>';
+            else
+                $('autoexpire_'+id).title = '<?php echo addslashes(t('Click to enable Auto Expire')) ?>';
+        }
+        else if (r.transport.responseText) {
+            alert('Error: '+r.transport.responseText);
+        }
     }
 
     function confirm_delete(id, forget_old) {
         var file = files[id];
-        if (confirm("<?php echo t('Are you sure you want to delete the following show?') ?>\n\n     "+file.title+": "+file.subtitle)) {
+        if (confirm("<?php echo t('Are you sure you want to delete the following show?')
+                    ?>\n\n     "+file.title+": "+file.subtitle)) {
+            var url = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid
+                      +'&starttime='+file.starttime
+                      +(forget_old
+                        ? '&forget_old=yes'
+                        : '');
         // Do the actual deletion
             if (programs_shown == 1)
-                location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid+'&starttime='+file.starttime;
+                location.href = url;
             else
-                submit_url('<?php echo root ?>tv/recorded?ajax&delete=yes&chanid='+file.chanid+'&starttime='+file.starttime,
-                           http_success, http_failure, id, file);
+                submit_url(url, http_success, http_failure, id, file);
         // Debug statements - uncomment to verify that the right file is being deleted
             //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
             //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
@@ -279,7 +294,7 @@ EOM;
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
 ?>
     <td rowspan="2" class="_pixmap">
-        <a class="_pixmap" href="<?php echo $show->url ?>" title="<?php echo t('Direct Download') ?>"
+        <a class="_pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
             ><img src="<?php echo $show->thumb_url ?>.png"></a>
         <a class="_download"
             href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream') ?>"
@@ -288,11 +303,13 @@ EOM;
             href="<?php echo $show->url ?>" title="<?php echo t('Direct Download') ?>"
             ><img src="<?php echo skin_url ?>/img/video_sm.png"></a>
         </td>
-    <td class="_title"><?php echo '<a href="'.$show->url.'"'
+    <td class="_title"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
+                    .' title="', t('Recording Details'), '"'
                     .'>'.$show->title.'</a>' ?></td>
-    <td class="_subtitle"><?php echo "<a href=\"$show->url\">"
-                    .$show->subtitle.'</a>' ?></td>
+    <td class="_subtitle"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
+                    .' title="', t('Recording Details'), '"'
+                    .'>'.$show->subtitle.'</a>' ?></td>
     <td class="_programid"><?php echo $show->programid ?></td>
     <td class="_channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
     <td class="_airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
@@ -304,7 +321,7 @@ EOM;
     <td class="_filesize"><?php echo nice_filesize($show->filesize) ?></td>
     <td class="_commands commands" rowspan="2"><?php
         if ($show->endtime > time()) {
-            echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+            echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '">',
                  t('Still Recording: Edit'),
                  "</a>\n        ";
         }

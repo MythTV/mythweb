@@ -35,6 +35,52 @@
 <script language="JavaScript" type="text/javascript">
 <!--
 
+// Keep track of the autoexpire flag
+    var autoexpire = <?php echo $program->auto_expire ? 1 : 0 ?>;
+
+// Set the autoexpire flag
+    function set_autoexpire() {
+        var r = new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $_GET['chanid'], '/', $_GET['starttime'] ?>',
+                                 {
+                                    parameters: 'autoexpire='+(1 - autoexpire),
+                                  asynchronous: false
+                                 });
+        if (r.transport.responseText == 'success') {
+        // Update to the new value
+            autoexpire = 1 - autoexpire;
+        // Fix the images
+            $('autoexpire').src = '<?php echo skin_url, '/img/flags/' ?>'
+                                  + (autoexpire
+                                     ? ''
+                                     : 'no_')
+                                  + 'autoexpire.png';
+            if (autoexpire)
+                $('autoexpire').title = '<?php echo addslashes(t('Click to disable Auto Expire')) ?>';
+            else
+                $('autoexpire').title = '<?php echo addslashes(t('Click to enable Auto Expire')) ?>';
+        }
+        else if (r.transport.responseText) {
+            alert('Error: '+r.transport.responseText);
+        }
+    }
+
+    function confirm_delete(forget_old) {
+        if (confirm("<?php echo str_replace('"', '\\"',
+                                            t('Are you sure you want to delete the following show?')
+                                            .'\n\n     '
+                                            .$program->title
+                                            .($program->subtitle
+                                              ? ': '.$program->subtitle
+                                              : '')) ?>")) {
+            location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid=<?php
+                            echo $program->chanid
+                            ?>&starttime=<?php echo $program->recstartts ?>'
+                            +(forget_old
+                                ? '&forget_old=yes'
+                                : '');
+        }
+    }
+
 // Toggle showing of the advanced schedule options
     function toggle_advanced(show) {
         if (show) {
@@ -109,6 +155,38 @@
         </tr><?php
         }
         if ($program) {
+        ?><tr id="_progflags">
+            <td colspan="2"><?php
+        // Auto expire is interactive for recordings
+            if ($program->filename) {
+                echo '<a onclick="set_autoexpire()">',
+                     '<img id="autoexpire" src="', skin_url, '/img/flags/';
+                if ($program->auto_expire)
+                    echo 'autoexpire.png" title="', t('Click to disable Auto Expire'), '"';
+                else
+                    echo 'no_autoexpire.png" title="', t('Click to enable Auto Expire'), '"';
+                echo '></a>';
+            }
+            elseif ($program->auto_expire) {
+                echo '<img src="', skin_url, '/img/flags/autoexpire.png" title="', t('Auto Expire'), '">';
+            }
+        // The rest of the flags are just for display
+            if ($program->closecaptioned)
+                echo '<img src="'.skin_url.'/img/flags/cc.png" title="'.t('Closed Captioning').'">';
+            if ($program->stereo)
+                echo '<img src="'.skin_url.'/img/flags/stereo.png" title="'.t('Stereo').'">';
+            if ($program->hdtv)
+                echo '<img src="'.skin_url.'/img/flags/hd.png" title="'.t('HD').'">';
+            if ($program->has_commflag)
+                echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'">';
+            if ($program->has_cutlist)
+                echo '<img src="'.skin_url.'/img/flags/cutlist.png" title="'.t('Has Cutlist').'">';
+            if ($program->bookmark)
+                echo '<img src="'.skin_url.'/img/flags/bookmark.png" title="'.t('has Bookmark').'">';
+            if ($program->is_watched)
+                echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
+            ?></td>
+        </tr><?php
             if (strlen($program->category)) {
         ?><tr class="_extras">
             <th><?php echo t('Category') ?>:</th>
@@ -195,6 +273,16 @@
             <td><?php echo $program->starstring ?></dd>
         </tr><?php
             }
+        ?><tr class="_extras">
+            <th><?php echo t('Length') ?>:</th>
+            <td><?php echo nice_length($program->length) ?></dd>
+        </tr><?php
+            if (strlen($program->filesize) > 0) {
+        ?><tr class="_extras">
+            <th><?php echo t('File Size') ?>:</th>
+            <td><?php echo nice_filesize($program->filesize) ?></dd>
+        </tr><?php
+            }
         }
     // Can we perform an accurate duplicate check?
         $can_dupcheck = preg_match('/\S/', $program->title)
@@ -212,11 +300,29 @@
                             .t('Forget Old').'</a>';
                     }
                 }
-                if ($can_dupcheck && $program->recstatus != 'NeverRecord') {
+                if ($can_dupcheck && !in_array($program->recstatus, array('Recorded', 'NeverRecord'))) {
                     echo '<a href="'.root.'tv/detail/'.$program->chanid
                         .'/'.$program->starttime.'?never_record=yes"'
                         .'title="'.html_entities(t('info:never record')).'">'
                         .t('Never Record').'</a>';
+                }
+                if ($program->filename) {
+                    echo '<a onclick="javascript:confirm_delete(false)"',
+                         ' title="',html_entities(t('Delete $1',
+                                                    $program->title
+                                                    .($show->subtitle
+                                                        ? ': '.$show->subtitle
+                                                        : '')
+                                                 )).'">',
+                         t('Delete'), '</a>',
+                         '<a onclick="javascript:confirm_delete(true)"',
+                         ' title="',html_entities(t('Delete and rerecord $1',
+                                                    $program->title
+                                                    .($show->subtitle
+                                                        ? ': '.$show->subtitle
+                                                        : '')
+                                                 )).'">',
+                         t('Delete + Rerecord'), '</a>';
                 }
                 ?></td>
         </tr><?php
@@ -249,7 +355,7 @@
         ?><tr class="_links">
             <th><?php echo t('More') ?>:</th>
             <td>
-<?php       if ($schedule->title) { ?>
+<?php           if ($schedule->title) { ?>
                 <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'IMDB') ?></a>
                 <a href="http://www.tv.com/search.php?type=11&stype=all&qs=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'TV.com') ?></a>
                 <a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'Google') ?></a>
@@ -259,24 +365,34 @@
                     else
                         echo t('Find other showings of this program');
                 ?></a>
-<?php       }
-            if ($_GET['recordid']) { ?>
-                <a href="<?php echo root ?>tv/schedules"><?php
-                    echo t('Back to the recording schedules')
-                ?></a>
-<?php       } else { ?>
-                <a href="<?php echo root ?>tv/list?time=<?php echo $program->starttime ?>"><?php
-                    echo t('What else is on at this time?')
-                ?></a>
-                <a href="<?php echo root ?>tv/list?time=<?php echo $_SESSION['list_time'] ?>"><?php
-                    echo t('Back to the program listing')
-                ?></a>
-<?php       } ?>
+<?php           }
+                if ($_GET['recordid']) {
+                    echo '<a href="',  root, 'tv/schedules">',
+                         t('Back to the recording schedules'),
+                         '</a>';
+                }
+                else {
+                    if ($program->endtime > time()) {
+                        echo '<a href="', root, 'tv/list?time=', $program->starttime, '">',
+                             t('What else is on at this time?'),
+                             '</a>';
+                    }
+                    if ($program->filename) {
+                        echo '<a href="', root, 'tv/recorded">',
+                             t('Back to the recorded programs'),
+                             '</a>';
+                    }
+                    else {
+                        echo '<a href="', root, 'tv/list?time=', $_SESSION['list_time'], '">',
+                             t('Back to the program listing'),
+                             '</a>';
+                    }
+                } ?>
                 </td>
         </tr>
         </table>
 
-
+<?php if (!$program || !$program->filename || ($program->filename && $program->recendts > time())) { ?>
     <div id="schedule">
         <form name="program_detail" method="post" action="<?php echo root ?>tv/detail<?php
             if ($_GET['recordid'])
@@ -496,6 +612,26 @@
     </div>
 
 <?php
+    }
+    if ($program && $program->filename) { ?>
+
+        <div id="_downloads">
+            <div class="_pixmap">
+                <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
+                    ><img src="<?php echo $program->thumb_url ?>.png" height="240" width="320"></a></td>
+            </div>
+            <div class="_links">
+                <a href="<?php echo video_url($program, true) ?>" title="<?php echo t('ASX Stream') ?>"
+                    ><img src="<?php echo skin_url ?>/img/play_sm.png">
+                    <?php echo t('ASX Stream') ?></a>
+                <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
+                    ><img src="<?php echo skin_url ?>/img/video_sm.png">
+                    <?php echo t('Direct Download') ?></a>
+            </div>
+        </div>
+
+<?php
+    }
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

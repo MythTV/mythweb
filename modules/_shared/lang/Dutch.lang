@@ -110,8 +110,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    automatisch vervallen
 "Auto-expire recordings"
     Opnames Autom. Vervallen
 "Auto-flag commercials"
@@ -249,7 +247,6 @@
     Niet Opnemen
 "Don't record this program."
     Dit programma niet opnemen
-"Download Choices"
 "Download URL override"
 "Dup Method"
     Dubbels Methode
@@ -336,14 +333,8 @@
     Handige voorgeprogrammeerde zoekopdrachten
 "handy: overview"
     Deze pagina bevat handige voorgeprogrammeerde complexe zoekopdrachten
-"has bookmark"
-    heeft index
 "has Bookmark"
-"has commflag"
-    heeft reclamemarkering
 "Has Cutlist"
-"has cutlist"
-    heeft knippunten
 "HD"
 "HDTV"
     HDTV
@@ -370,8 +361,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    wordt bewerkt
 "Jump"
     Ga
 "Jump to"
@@ -476,8 +465,6 @@
     Nieuwe Titels, Premieres
 "Next"
     Volgende
-"No"
-    Neen
 "NO DATA"
     GEEN DATA
 "No matches found"
@@ -593,7 +580,7 @@
 "Recorded"
 "Recorded Programs"
     Opgenomen Programma's
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Opname Groep
 "Recording Options"
@@ -908,7 +895,6 @@
     zichtbaar
 "Visit $1"
 "Watched"
-"watched"
 "Weather"
     Weer
 "Wednesday"

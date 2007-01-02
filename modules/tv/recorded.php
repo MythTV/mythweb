@@ -16,64 +16,8 @@
 // Populate the $Channels array
     load_all_channels();
 
-// Make sure the recordings directory exists
-    if (file_exists('data/recordings')) {
-    // File is not a directory or a symlink
-        if (!is_dir('data/recordings') && !is_link('data/recordings')) {
-            custom_error('An invalid file exists at data/recordings.  Please remove it in'
-                        .' order to use the tv portions of MythWeb.');
-        }
-    }
-// Create the symlink, if possible.
-//
-// NOTE:  Errors have been disabled because if I turn them on, people hosting
-//        MythWeb on Windows machines will have issues.  I will turn the errors
-//        back on when I find a clean way to do so.
-//
-    else {
-        $dir = $db->query_col('SELECT data
-                                 FROM settings
-                                WHERE value="RecordFilePrefix" AND hostname=?',
-                              hostname
-                             );
-        if ($dir) {
-            $ret = @symlink($dir, 'data/recordings');
-            if (!$ret) {
-                #custom_error("Could not create a symlink to $dir, the local recordings directory"
-                #            .' for this hostname ('.hostname.').  Please create a symlink to your'
-                #            .' recordings directory at data/recordings in order to use the tv'
-                #            .' portions of MythWeb.');
-            }
-        }
-        else {
-            #custom_error('Could not find a value in the database for the recordings directory'
-            #            .' for this hostname ('.hostname.').  Please create a symlink to your'
-            #            .' recordings directory at data/recordings in order to use the tv'
-            #            .' portions of MythWeb.');
-        }
-    }
-
 // Load the sorting routines
-    require_once "includes/sorting.php";
-
-// Auto-expire
-    isset($_GET['autoexpire']) or $_GET['autoexpire'] = $_POST['autoexpire'];
-    if (isset($_GET['autoexpire']) && $_GET['chanid'] && $_GET['starttime']) {
-        $sh = $db->query('UPDATE recorded
-                             SET autoexpire = ?
-                           WHERE chanid = ? AND starttime = FROM_UNIXTIME(?)',
-                         $_GET['autoexpire'] ? 1 : 0,
-                         $_GET['chanid'],
-                         $_GET['starttime']);
-    // Exit early if we're in AJAX mode.
-        if (isset($_GET['ajax'])) {
-            echo 'success';
-            exit;
-        }
-    }
-    else {
-        /** @todo need some sort of handler here for the non-ajax stuff */
-    }
+    require_once 'includes/sorting.php';
 
 // Delete a program?
     isset($_GET['forget_old']) or $_GET['forget_old'] = $_POST['forget_old'];

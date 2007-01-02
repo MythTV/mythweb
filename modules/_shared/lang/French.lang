@@ -97,8 +97,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    auto-expire
 "Auto-expire recordings"
     Enregistrements auto-exiprant
 "Auto-flag commercials"
@@ -214,7 +212,6 @@
     Ne pas enregistrer
 "Don't record this program."
     Ne pas enregistrer cette &eacute;mission
-"Download Choices"
 "Download URL override"
 "Dup Method"
     m&eacute;thode de dup
@@ -286,14 +283,8 @@
 "Handy Predefined Searches"
 "handy: overview"
     Cette page contient des recherches préparées dans le programme TV
-"has bookmark"
-    a des signets
 "has Bookmark"
-"has commflag"
-    a des marques de pub
 "Has Cutlist"
-"has cutlist"
-    a une liste de coupe
 "HD"
 "HDTV"
 "Hide"
@@ -318,8 +309,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    est &eacute;dit&eacute;
 "Jump"
     Aller
 "Jump to"
@@ -408,8 +397,6 @@
 "New Search"
 "New Titles, Premieres"
 "Next"
-"No"
-    Non
 "NO DATA"
 "No matches found"
     Aucune correspondance
@@ -509,7 +496,7 @@
 "Recorded"
 "Recorded Programs"
     Programmes enregistr&eacute;s
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Groupe d&acute;enregistrement
 "Recording Options"
@@ -789,7 +776,6 @@
 "visible"
 "Visit $1"
 "Watched"
-"watched"
 "Weather"
 "Wednesday"
     Mercredi

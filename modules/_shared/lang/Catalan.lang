@@ -117,8 +117,6 @@
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
-    autoexpirar
 "Auto-expire recordings"
     Autoexpirar enregistraments
 "Auto-flag commercials"
@@ -260,7 +258,6 @@
     No enregistrat
 "Don't record this program."
     No esborrar aquest programa
-"Download Choices"
 "Download URL override"
 "Dup Method"
     Mètode duplicat
@@ -349,14 +346,8 @@
     Recerques predefinides útils
 "handy: overview"
     útils: resúm
-"has bookmark"
-    té marques
 "has Bookmark"
-"has commflag"
-    té anuncis marcats
 "Has Cutlist"
-"has cutlist"
-    té llista de tall
 "HD"
 "HDTV"
     HDTV
@@ -384,8 +375,6 @@
 "info: hidden advanced schedule"
 "info:forget old"
 "info:never record"
-"is editing"
-    s'està editant
 "Jump"
     Saltar
 "Jump to"
@@ -502,8 +491,6 @@
     Nous títols, estrenes
 "Next"
     Següent
-"No"
-    No
 "NO DATA"
     SENSE DADES
 "No matches found"
@@ -629,7 +616,7 @@
 "Recorded"
 "Recorded Programs"
     Programes enregistrats
-"Recording Detail: $1"
+"Recording Details"
 "Recording Group"
     Grup d'enregistrament
 "Recording Options"
@@ -956,7 +943,6 @@
 "Visit $1"
     Visite $1
 "Watched"
-"watched"
 "Weather"
     Tiempo
 "Wednesday"

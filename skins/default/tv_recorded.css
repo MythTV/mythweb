@@ -35,6 +35,7 @@
     border:         1px solid transparent;
 }
 #recorded_list td._pixmap a:hover {
+    background-color:   #121;
     border:         1px solid #F0F000;
 }
 
