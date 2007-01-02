@@ -243,11 +243,11 @@
     if ($group_field != "")
         echo "    <td class=\"list\" colspan=\"2\">&nbsp;</td>\n";
 ?>
-    <th class="_title"><?php     echo get_sort_link('title',     t('Title')) ?></td>
-    <th class="_subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle')) ?></td>
-    <th class="_programid"><?php echo get_sort_link('programid', t('Program ID')) ?></td>
-    <th class="_channum"><?php   echo get_sort_link('channum',   t('Channel')) ?></td>
-    <th class="_airdate"><?php   echo get_sort_link('airdate',   t('Airdate')) ?></td>
+    <th class="_title"><?php     echo get_sort_link('title',     t('Title'))      ?></th>
+    <th class="_subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle'))   ?></th>
+    <th class="_programid"><?php echo get_sort_link('programid', t('Program ID')) ?></th>
+    <th class="_channum"><?php   echo get_sort_link('channum',   t('Channel'))    ?></th>
+    <th class="_airdate"><?php   echo get_sort_link('airdate',   t('Airdate'))    ?></th>
 <?php
     if ($recgroup_cols)
         echo '    <th class="_recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
