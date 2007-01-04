@@ -91,7 +91,6 @@ class Program {
     var $rating;
     var $recording      = false;
     var $starstring;
-    var $thumb_url;
     var $timestretch;
     var $url;
 
@@ -159,8 +158,7 @@ class Program {
                     $this->filesize = ($this->fs_high + ($this->fs_low < 0)) * 4294967296 + $this->fs_low;
                 }
             // And get some download info
-                $this->url       = video_url($this);
-                $this->thumb_url = root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($this->filename)));
+                $this->url = video_url($this);
             }
         // Assign the program flags
             $this->has_commflag   = ($this->progflags & 0x001) ? true : false;    // FL_COMMFLAG       = 0x001
@@ -392,13 +390,54 @@ class Program {
     }
 
 /**
+ * Generate a thumbnail of the requested size, and return the URL to its cache
+ * location.
+/**/
+    function thumb_url($width=160, $height=120, $secs_in=null) {
+    // Generate the pixmap, just in case
+        $this->generate_preview_pixmap($width, $height, $secs_in);
+    // Calculate the default secs_in
+        static $def_secs_in = null;
+        if (is_null($def_secs_in))
+            $def_secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
+                           + _or(get_backend_setting('RecordPreRoll'), 0);
+    // We have to calulate $secs_in from the db
+        if (is_null($secs_in))
+            $secs_in = $def_secs_in;
+    // Now, figure out the filename
+        if ($width == 160 && $height == 120 && $secs_in == $def_secs_in) {
+            $fileurl .= "$this->filename.png";
+        }
+        else {
+            $fileurl = "$this->filename.{$width}x{$height}x$secs_in.png";
+        }
+        return root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($fileurl)));
+    }
+
+/**
  * Gets a preview image of the requested show
  *
  * @todo, this should get put into a "recording" class or something like that.
 /**/
-    function generate_preview_pixmap() {
-        $fileurl  = $this->filename;
-        $pngpath  = cache_dir . '/' . basename($fileurl) . '.png';
+    function generate_preview_pixmap($width=160, $height=120, $secs_in=null) {
+    // Calculate the default secs_in
+        static $def_secs_in = null;
+        if (is_null($def_secs_in))
+            $def_secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
+                           + _or(get_backend_setting('RecordPreRoll'), 0);
+    // We have to calulate $secs_in from the db
+        if (is_null($secs_in))
+            $secs_in = $def_secs_in;
+    // Now, figure out the filenames
+        if ($width == 160 && $height == 120 && $secs_in == $def_secs_in) {
+            $fileurl    .= "$this->filename.png";
+            $is_default  = true;
+        }
+        else {
+            $fileurl    = "$this->filename.{$width}x{$height}x$secs_in.png";
+            $is_default = false;
+        }
+        $pngpath  = cache_dir . '/' . basename($fileurl);
     // Make sure the local path exists
         $path = '';
         foreach (split('/+', dirname($pngpath)) as $dir) {
@@ -422,49 +461,72 @@ class Program {
                 return 1;
             }
         }
-    // Local path to the png that we can just copy from?
-    /** This probably won't work anymore now that the backend always sends
-     *  myth:// URIs.  Need to update the Program/Recording object to detect
-     *  file locations and storage groups so we can get local_path working */
-        if (substr($fileurl, 0, 7) != 'myth://' && is_file("$fileurl.png") && is_readable("$fileurl.png")) {
-            copy("$fileurl.png", $pngpath);
-            return 2;
+    // Nonstandard dimensions currently require the XML interface
+        if (!$is_default) {
+        // Figure out which host holds the file we need
+            $urlparts = parse_url($fileurl);
+            $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
+            $port     = _or(get_backend_setting('BackendStatusPort', $host),
+                            get_backend_setting('BackendStatusPort'));
+        // Make the request and store the result
+            $pngfile = fopen($pngpath, 'wb');
+            fwrite($pngfile,
+                   file_get_contents("http://$host:$port/getPreviewImage"
+                                    ."?ChanId=$this->chanid"
+                                    .'&StartTime='.unix2mythtime($this->recstartts)
+                                    ."&Height=$height"
+                                    ."&Width=$width"
+                                    ."&SecsIn=$secs_in"
+                                    )
+                  );
+            fclose($pngfile);
         }
-    // Figure out which host holds the recording
-        $urlparts = parse_url($fileurl);
-        $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
-        $port     = _or($urlparts['port'], $GLOBALS['Master_Port']);
-    // Transfer the pixmap from the backend
-        $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, "$fileurl.png"),
-                                                      $datasocket,
-                                                      $host, $port));
-    // Error?
-        if ($recs[0] != 'OK') {
-            // echo "Unknown error starting transfer of $fileurl.png\n";
-            return null;
-        }
-    // Open the output file for writing, and make sure it's in binmode
-        $pngfile = fopen($pngpath, 'wb');
-    // Tell the backend to send the data
-        backend_command('ANN Playback '.hostname.' 0',
-                        $host, $port);
-        backend_command(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
-                        $host, $port);
-    // Read the data from the socket and save it into the requested file.
-    // We have to loop here because sometimes the backend can't send data fast
-    // enough, even if we're dealing with small files.
-        $length = $recs[3];
-        while ($length > 0) {
-            $data = fread($datasocket, min(8192, $length));
-            if (strlen($data) < 1)
-                break; // EOF
-            fwrite($pngfile, $data);
-            $length -= strlen($data);
-        }
-    // Close any file pointers that were opened here
-        fclose($pngfile);
-        if ($datasocket) {
-            fclose($datasocket);
+    // Standard width can be copied locally, or via mythproto
+        else {
+        // Local path to the png that we can just copy from?
+        /** This probably won't work anymore now that the backend always sends
+         *  myth:// URIs.  Need to update the Program/Recording object to detect
+         *  file locations and storage groups so we can get local_path working */
+            if (substr($fileurl, 0, 7) != 'myth://' && is_file($fileurl) && is_readable($fileurl)) {
+                copy($fileurl, $pngpath);
+                return 2;
+            }
+        // Figure out which host holds the recording
+            $urlparts = parse_url($fileurl);
+            $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
+            $port     = _or($urlparts['port'], $GLOBALS['Master_Port']);
+        // Transfer the pixmap from the backend
+            $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, $fileurl),
+                                                          $datasocket,
+                                                          $host, $port));
+        // Error?
+            if ($recs[0] != 'OK') {
+                // echo "Unknown error starting transfer of $fileurl.png\n";
+                return null;
+            }
+        // Open the output file for writing, and make sure it's in binmode
+            $pngfile = fopen($pngpath, 'wb');
+        // Tell the backend to send the data
+            backend_command('ANN Playback '.hostname.' 0',
+                            $host, $port);
+            backend_command(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
+                            $host, $port);
+        // Read the data from the socket and save it into the requested file.
+        // We have to loop here because sometimes the backend can't send data fast
+        // enough, even if we're dealing with small files.
+            $length = $recs[3];
+            while ($length > 0) {
+                $data = fread($datasocket, min(8192, $length));
+                if (strlen($data) < 1)
+                    break; // EOF
+                fwrite($pngfile, $data);
+                $length -= strlen($data);
+            }
+        // Close any file pointers that were opened here
+            fclose($pngfile);
+            if ($datasocket) {
+                fclose($datasocket);
+            }
         }
     }
 

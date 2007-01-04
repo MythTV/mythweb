@@ -295,7 +295,7 @@ EOM;
 ?>
     <td rowspan="2" class="_pixmap">
         <a class="_pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
-            ><img src="<?php echo $show->thumb_url ?>.png"></a>
+            ><img src="<?php echo $show->thumb_url(100,0) ?>"></a>
         <a class="_download"
             href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream') ?>"
             ><img src="<?php echo skin_url ?>/img/play_sm.png"></a>

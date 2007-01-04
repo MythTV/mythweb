@@ -161,10 +161,6 @@
         foreach ($shows as $key => $record) {
         // Create a new program object
             $show =& new Program($record);
-        // Generate any thumbnail images we might need
-            if ($_SESSION['recorded_pixmaps']) {
-                $show->generate_preview_pixmap();
-            }
         // Assign a reference to this show to the various arrays
             $All_Shows[]                         =& $show;
             $Programs[$title][$key]              =& $show;

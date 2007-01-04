@@ -618,7 +618,7 @@
         <div id="_downloads">
             <div class="_pixmap">
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
-                    ><img src="<?php echo $program->thumb_url ?>.png" height="240" width="320"></a></td>
+                    ><img src="<?php echo $program->thumb_url(320,0) ?>" width="320"></a></td>
             </div>
             <div class="_links">
                 <a href="<?php echo video_url($program, true) ?>" title="<?php echo t('ASX Stream') ?>"
