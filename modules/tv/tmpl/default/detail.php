@@ -40,7 +40,7 @@
 
 // Set the autoexpire flag
     function set_autoexpire() {
-        var r = new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $_GET['chanid'], '/', $_GET['starttime'] ?>',
+        var r = new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
                                  {
                                     parameters: 'autoexpire='+(1 - autoexpire),
                                   asynchronous: false
