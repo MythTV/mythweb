@@ -239,10 +239,7 @@
 
 <table id="recorded_list" border="0" cellpadding="0" cellspacing="0" class="list small">
 <tr class="menu">
-<?php
-    if ($group_field != "")
-        echo "    <td class=\"list\" colspan=\"2\">&nbsp;</td>\n";
-?>
+    <td class="list"<?php if ($group_field) echo ' colspan="2"' ?>>&nbsp;</td>
     <th class="_title"><?php     echo get_sort_link('title',     t('Title'))      ?></th>
     <th class="_subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle'))   ?></th>
     <th class="_programid"><?php echo get_sort_link('programid', t('Program ID')) ?></th>
