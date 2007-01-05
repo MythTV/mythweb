@@ -83,6 +83,7 @@
 "Back to the program listing"
     Back to the programme listing
 "Back to the recorded programs"
+    Back to the recorded programmes
 "Back to the recording schedules"
 "Backend Logs"
 "Backend Status"
@@ -291,7 +292,7 @@
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
-    Film
+    film
 "Movies"
     Films
 "Movies, 3&frac12; Stars or more"
