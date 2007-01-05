@@ -35,8 +35,11 @@
 
 // New list date?
     $_GET['date'] or $_GET['date'] = $_POST['date'];
-    if ($_GET['date'])
-        $_SESSION['list_time'] = unixtime(sprintf('%08d000000', $_GET['date']));
+    if ($_GET['date']) {
+        if (strlen($_GET['date']) == 8)
+            $_GET['date'] = unixtime(sprintf('%08d000000', $_GET['date']));
+        $_SESSION['list_time'] = $_GET['date'];
+    }
 
 // Load the programs for today
     $this_channel->programs = load_all_program_data(mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']), date('Y', $_SESSION['list_time'])),
