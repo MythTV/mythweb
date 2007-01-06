@@ -26,15 +26,30 @@
     }
 
 # Get the basename from the database
-    my $sh = $dbh->prepare('SELECT basename, title, subtitle FROM recorded WHERE chanid=? AND starttime=FROM_UNIXTIME(?)');
-    $sh->execute($chanid, $starttime);
-    my ($basename, $title, $subtitle) = $sh->fetchrow_array();
+    my $sh = $dbh->prepare('SELECT recorded.basename,
+                                   recorded.title, recorded.subtitle,
+                                   storagegroup.dirname
+                              FROM recorded, storagegroup
+                             WHERE recorded.storagegroup = storagegroup.groupname
+                                   AND storagegroup.hostname = ?
+                                   AND recorded.chanid       = ?
+                                   AND starttime=FROM_UNIXTIME(?)');
+    $sh->execute(hostname, $chanid, $starttime);
+    my ($basename, $title, $subtitle, $video_dir) = $sh->fetchrow_array();
     $sh->finish;
 
 # No match?
     unless ($basename =~ /\w/) {
         print header(),
               "Unknown recording requested.\n";
+        exit;
+    }
+
+# Make sure the file exists
+    my $filename = "$video_dir/$basename";
+    unless (-e $filename) {
+        print header(),
+              "$basename does not exist in its storage group directory ($video_dir).";
         exit;
     }
 
@@ -66,23 +81,6 @@ EOF
                      -Content_disposition => " attachment; filename=\"$title-$subtitle.asx\"",
                     ),
               $file;
-        exit;
-    }
-
-# Get the filename on disk
-    $sh = $dbh->prepare('SELECT data
-                           FROM settings
-                          WHERE value="RecordFilePrefix" AND hostname=?');
-    $sh->execute(hostname);
-    my ($filename) = $sh->fetchrow_array();
-    $sh->finish;
-
-    $filename = "$filename/$basename";
-
-# Make sure the file exists
-    unless (-e $filename) {
-        print header(),
-              "$basename does not exist in the recordings directory.";
         exit;
     }
 
