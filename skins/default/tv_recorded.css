@@ -31,6 +31,9 @@
     width:              150px;
     position:           relative;
 }
+#recorded_list td._pixmap._noimg {
+    width:              50px;
+}
 #recorded_list td._pixmap a {
     border:         1px solid transparent;
 }
@@ -47,13 +50,17 @@
     width:          100px;
 }
 #recorded_list td._pixmap a._download {
-    margin-left:    102px !important;
+    margin-left:    102px;
     display:        block;
     padding:        7px;
     height:         24px;
     text-align:     center;
     vertical-align: middle;
 }
+#recorded_list td._pixmap._noimg a._download {
+    margin-left:    2px;
+}
+
 
 #recorded_list th._title a, #recorded_list td._title {
 }
@@ -62,7 +69,6 @@
 #recorded_list th._programid a, #recorded_list td._programid {
 }
 #recorded_list th._channum a, #recorded_list td._channum {
-    white-space:    nowrap;
 }
 #recorded_list th._airdate a, #recorded_list td._airdate {
     text-align:     center;

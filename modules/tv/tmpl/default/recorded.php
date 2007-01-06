@@ -243,8 +243,8 @@
     <th class="_title"><?php     echo get_sort_link('title',     t('Title'))      ?></th>
     <th class="_subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle'))   ?></th>
     <th class="_programid"><?php echo get_sort_link('programid', t('Program ID')) ?></th>
-    <th class="_channum"><?php   echo get_sort_link('channum',   t('Channel'))    ?></th>
     <th class="_airdate"><?php   echo get_sort_link('airdate',   t('Airdate'))    ?></th>
+    <th class="_channum"><?php   echo get_sort_link('channum',   t('Channel'))    ?></th>
 <?php
     if ($recgroup_cols)
         echo '    <th class="_recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
@@ -290,9 +290,15 @@ EOM;
         if ($group_field != "")
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
 ?>
-    <td rowspan="2" class="_pixmap">
+    <td rowspan="2" class="_pixmap<?php
+        if ($_SESSION['recorded_pixmaps']) { ?>">
         <a class="_pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
             ><img src="<?php echo $show->thumb_url(100,0) ?>"></a>
+<?php   }
+        else {
+            echo ' _noimg">';
+        }
+?>
         <a class="_download"
             href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream') ?>"
             ><img src="<?php echo skin_url ?>/img/play_sm.png"></a>
@@ -308,8 +314,8 @@ EOM;
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->subtitle.'</a>' ?></td>
     <td class="_programid"><?php echo $show->programid ?></td>
-    <td class="_channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
     <td class="_airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
+    <td class="_channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
 <?php
     if ($recgroup_cols)
         echo "    <td class=\"_recgroup\">$show->recgroup</td>\n";
@@ -330,8 +336,8 @@ EOM;
             ><?php echo t('Delete + Rerecord') ?></a>
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td colspan="2" valign="top"><?php echo $show->description ?></td>
-    <td colspan="<?php echo (false && $_SESSION['recorded_pixmaps'] ? 3 : 5) + $recgroup_cols ?>" class="_progflags"><?php
+    <td colspan="4" valign="top"><?php echo $show->description ?></td>
+    <td colspan="<?php echo 3 + $recgroup_cols ?>" class="_progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
                  '<img id="autoexpire_', $row, '" src="', skin_url, '/img/flags/';
@@ -356,16 +362,6 @@ EOM;
             if ($show->is_watched)
                 echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
         ?></td>
-<?php   if (false && $_SESSION['recorded_pixmaps']) { ?>
-    <td colspan="2" class="_download">
-        <ul>
-            <li><a href="<?php echo video_url($show, true) ?>">
-                    <img src="<?php echo skin_url ?>/img/play_sm.png"><?php echo t('ASX Stream') ?></a></li>
-            <li><a href="<?php echo $show->url ?>">
-                    <img src="<?php echo skin_url ?>/img/video_sm.png"><?php echo t('Direct Download') ?></a></li>
-        </ul>
-        </td>
-<?php   } ?>
 </tr><?php
         $prev_group = $cur_group;
     // Keep track of how many shows are visible in each section
