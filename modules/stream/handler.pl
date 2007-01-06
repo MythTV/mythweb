@@ -26,16 +26,12 @@
     }
 
 # Get the basename from the database
-    my $sh = $dbh->prepare('SELECT recorded.basename,
-                                   recorded.title, recorded.subtitle,
-                                   storagegroup.dirname
-                              FROM recorded, storagegroup
-                             WHERE recorded.storagegroup = storagegroup.groupname
-                                   AND storagegroup.hostname = ?
-                                   AND recorded.chanid       = ?
-                                   AND starttime=FROM_UNIXTIME(?)');
-    $sh->execute(hostname, $chanid, $starttime);
-    my ($basename, $title, $subtitle, $video_dir) = $sh->fetchrow_array();
+    my $sh = $dbh->prepare('SELECT basename, title, subtitle
+                              FROM recorded
+                             WHERE starttime=FROM_UNIXTIME(?)
+                                   AND recorded.chanid   = ?');
+    $sh->execute($starttime, $chanid);
+    my ($basename, $title, $subtitle) = $sh->fetchrow_array();
     $sh->finish;
 
 # No match?
@@ -45,11 +41,22 @@
         exit;
     }
 
-# Make sure the file exists
-    my $filename = "$video_dir/$basename";
-    unless (-e $filename) {
+# Find the local file
+    my $filename;
+    my $sh = $dbh->prepare('SELECT dirname
+                              FROM storagegroup
+                             WHERE hostname = ?');
+    $sh->execute(hostname);
+    while (my ($video_dir) = $sh->fetchrow_array()) {
+        next unless (-e "$video_dir/$basename");
+        $filename = "$video_dir/$basename";
+        last;
+    }
+    $sh->finish;
+
+    unless ($filename) {
         print header(),
-              "$basename does not exist in its storage group directory ($video_dir).";
+              "$basename does not exist in any recognized storage group directories for this host.";
         exit;
     }
 
