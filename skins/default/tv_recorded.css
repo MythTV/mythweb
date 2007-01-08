@@ -25,11 +25,11 @@
 
 #recorded_list td {
     padding:        4px;
-    border:         1px solid #161a2a;
+    border:         1px solid #191c26;
 }
 #recorded_list th {
     padding:        0;
-    border:         1px solid #161a2a;
+    border:         1px solid #191c26;
     text-align:     left;
     font-weight:    normal;
 }
@@ -104,7 +104,7 @@
     white-space:        nowrap;
     text-align:         center;
     vertical-align:     top;
-    background-color:   #161a2a;
+    background-color:   #191c26;
 }
 #recorded_list td._commands a {
     display:            block;
