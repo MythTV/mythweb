@@ -52,15 +52,29 @@
     require_once tmpl_dir.'list.php';
 
 /**
+ * Prints a <select> of the available hour range
+/**/
+    function hour_select($params = '') {
+        echo "<select name=\"hour\" $params>";
+        for ($h=0;$h<24;$h++) {
+            echo "<option value=\"$h\"";
+            if ($h == date('H', $list_starttime))
+                echo ' SELECTED';
+            echo '>'.strftime($_SESSION['time_format'], strtotime("$h:00")).'</option>';
+        }
+        echo '</select>';
+    }
+
+/**
  * Prints a <select> of the available date range
 /**/
-    function date_select() {
+    function date_select($params = '') {
         global $db;
     // Get the available date range
         $min_days = max(-7, $db->query_col('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program'));
         $max_days = min(30, $db->query_col('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program'));
     // Print out the list
-        echo '<select name="date" onchange="get_element(\'program_listing\').submit()">';
+        echo "<select name=\"date\" $params>";
         for ($i=$min_days; $i<=$max_days; $i++) {
             $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
             $date = date('Ymd', $time);

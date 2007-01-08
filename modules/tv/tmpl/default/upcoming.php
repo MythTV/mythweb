@@ -34,30 +34,36 @@
 
 ?>
 
-<div id="display_options" class="command command_border_l command_border_t command_border_b command_border_r">
+<form id="change_display" action="<?php echo root ?>tv/upcoming" method="post">
+<input type="hidden" name="change_display" value="1">
 
-    <form id="change_display" action="<?php echo root ?>tv/upcoming" method="post">
-    <input type="hidden" name="change_display" value="1">
+<table id="display_options" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="_title"><?php echo t('Display') ?>:</td>
+    <td class="_check">
+        <input type="checkbox" id="disp_scheduled" name="disp_scheduled" class="radio" onclick="$('change_display').submit()"<?php
+            if ($_SESSION['scheduled_recordings']['disp_scheduled']) echo ' CHECKED' ?>>
+        <label for="disp_scheduled"><?php echo t('Scheduled') ?></label>
+        </td>
+    <td class="_check">
+        <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="$('change_display').submit()" <?php
+            if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
+        <label for="disp_duplicates"><?php echo t('Duplicates') ?></label>
+        </td>
+    <td class="_check">
+        <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="$('change_display').submit()" <?php
+            if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
+        <label for="disp_deactivated"><?php echo t('Deactivated') ?></label>
+        </td>
+    <td class="_check">
+        <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="$('change_display').submit()" <?php
+            if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
+        <label for="disp_conflicts"><?php echo t('Conflicts') ?></label>
+        </td>
+</tr>
+</table>
 
-    <?php echo t('Display') ?>:
-
-    <input type="checkbox" id="disp_scheduled" name="disp_scheduled" class="radio" onclick="$('change_display').submit()"<?php
-        if ($_SESSION['scheduled_recordings']['disp_scheduled']) echo ' CHECKED' ?>>
-    <label for="disp_scheduled"><?php echo t('Scheduled') ?></label>
-    |
-    <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="$('change_display').submit()" <?php
-        if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
-    <label for="disp_duplicates"><?php echo t('Duplicates') ?></label>
-    |
-    <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="$('change_display').submit()" <?php
-        if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
-    <label for="disp_deactivated"><?php echo t('Deactivated') ?></label>
-    |
-    <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="$('change_display').submit()" <?php
-        if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
-    <label for="disp_conflicts"><?php echo t('Conflicts') ?></label>
-    </form>
-</div>
+</form>
 
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">

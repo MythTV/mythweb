@@ -3,6 +3,19 @@
 #title_choices {
     margin:     1em auto;
 }
+#title_choices td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#title_choices td._group, #title_choices td._recordings {
+    font-size:          110%;
+    font-weight:        bold;
+    border-right:       1px solid #304943;
+}
+#title_choices td._recordings {
+    border-left:        1px solid #304943;
+}
 
 /* This is the table that holds the list of recorded shows */
 

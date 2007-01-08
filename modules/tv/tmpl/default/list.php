@@ -24,61 +24,25 @@
 
 ?>
 
-<script language="JavaScript" type="text/javascript">
-<!--
-
-    function MoveProgramListing(amount) {
-        var length = get_element('program_listing').date.length;
-        var cur = get_element('program_listing').date.selectedIndex;
-        var newPos = cur;
-        if (cur + amount < 0) {
-            newPos = 0;
-        } else if (cur + amount > length - 1) {
-            newPos = length - 1;
-        } else {
-            newPos = cur + amount;
-        }
-        get_element('program_listing').date.selectedIndex = newPos;
-        get_element('program_listing').submit();
-    }
-
-// -->
-</script>
-
-<p>
-<table align="center" width="90%" cellspacing="2" cellpadding="2">
-<tr>
-    <td width="50%" align="center"><?php echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime)) ?></td>
-    <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <form class="form" id="program_listing" action="<?php echo root ?>tv/list" method="get">
-        <table border="0" cellspacing="0" cellpadding="2">
-        <tr>
-
-            <td nowrap align="center"><?php echo t('Jump To') ?>:&nbsp;&nbsp;</td>
-            <td align="right"><?php echo t('Hour') ?>:&nbsp;</td>
-            <td><select name="hour" style="text-align: right" onchange="get_element('program_listing').submit()"><?php
-                for ($h=0;$h<24;$h++) {
-                    echo "<option value=\"$h\"";
-                    if ($h == date('H', $list_starttime))
-                        echo ' SELECTED';
-                    echo '>'.strftime($_SESSION['time_format'], strtotime("$h:00")).'</option>';
-                }
-                ?></select></td>
-            <td align="right"><?php echo t('Date') ?>:&nbsp;</td>
-            <td style="vertical-align:middle;" nowrap>
-                <a onclick="MoveProgramListing(-1)"><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
-                <?php date_select() ?>
-                <a onclick="MoveProgramListing(+1)"><img src="<?php echo skin_url ?>img/right.gif" border="0"></a>
-                </td>
-            <td align="center"><noscript><input type="submit" class="submit" value="<?php echo t('Jump') ?>"></noscript></td>
-
-
-        </tr>
-        </table>
-        </form></td>
-</tr>
-</table>
-</p>
+<div id="list_head" class="clearfix">
+    <form class="form" id="program_listing" action="<?php echo root ?>tv/list" method="get">
+    <div id="_current_time"><?php
+        echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime))
+    ?></div>
+    <table id="_jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="_jumpto"><?php echo t('Jump To') ?>:</td>
+        <td class="_hour"><?php hour_select(' onchange="get_element(\'program_listing\').submit()"') ?></td>
+        <td class="_day"><a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime - (24 * 60 * 60) ?>"
+                ><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
+            <?php date_select('onchange="get_element(\'program_listing\').submit()"') ?>
+            <a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime + (24 * 60 * 60) ?>"
+                    ><img src="<?php echo skin_url ?>img/right.gif" border="0"></a>
+            </td>
+    </tr>
+    </table>
+    </form>
+</div>
 
 <p>
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">

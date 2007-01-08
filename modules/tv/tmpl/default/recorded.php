@@ -200,10 +200,10 @@
 </script>
 
 <form id="change_title" action="<?php echo root ?>tv/recorded" method="get">
-<table id="title_choices" class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
+<table id="title_choices" class="commandbox commands" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
 <?php if (count($Groups) > 1) { ?>
-    <td><?php echo t('Show group') ?>:</td>
+    <td class="_group"><?php echo t('Show group') ?>:</td>
     <td><select name="recgroup" onchange="$('change_title').submit()">
         <option value=""><?php echo t('All groups') ?></option><?php
         foreach($Groups as $recgroup => $count) {
@@ -219,8 +219,8 @@
 <?php
     }
 ?>
-    <td><?php echo t('Show recordings') ?>:</td>
-    <td width="250" align="center"><select name="title" onchange="$('change_title').submit()">
+    <td class="_recordings"><?php echo t('Show recordings') ?>:</td>
+    <td><select name="title" onchange="$('change_title').submit()">
         <option id="All recordings" value=""><?php echo t('All recordings') ?></option>
 <?php
         foreach($Program_Titles as $title => $count) {
