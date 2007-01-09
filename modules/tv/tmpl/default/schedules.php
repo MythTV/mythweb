@@ -25,11 +25,9 @@
 
 // No schedules defined?
     if (!is_array($the_schedules) || !count($the_schedules)) {
-?>
-<div id="no_schedules" class="command command_border_l command_border_t command_border_b command_border_r">
-<?php       echo t('No recording schedules have been defined.') ?>
-</div>
-<?php
+        echo '<div id="no_schedules">',
+             t('No recording schedules have been defined.').
+             '</div>';
         return;
     }
 
@@ -39,16 +37,16 @@
         $group_field = '';
 ?>
 
-<table id="listings" width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <td><?php echo get_sort_link('title',    t('title')) ?></td>
-    <td><?php echo get_sort_link('recpriority', t('recpriority')) ?></td>
-    <td><?php echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('channel')) ?></td>
-    <td><?php echo get_sort_link('profile',  t('profile')) ?></td>
-    <td><?php echo get_sort_link('transcoder',  t('transcoder')) ?></td>
-    <td><?php echo get_sort_link('recgroup', t('recgroup')) ?></td>
-    <td><?php echo get_sort_link('type',     t('type')) ?></td>
+    <th class="_title"><?php      echo get_sort_link('title',                                  t('Title'))              ?></th>
+    <th class="_priority"><?php   echo get_sort_link('recpriority',                            t('Recording Priority')) ?></th>
+    <th class="_channel"><?php    echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('Channel'))            ?></th>
+    <th class="_profile"><?php    echo get_sort_link('profile',                                t('Profile'))            ?></th>
+    <th class="_transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))         ?></th>
+    <th class="_group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))    ?></th>
+    <th class="_type"><?php       echo get_sort_link('type',                                   t('Type'))               ?></td>
 </tr><?php
         $prev_group = '';
         $cur_group  = '';
@@ -92,7 +90,7 @@
         // Print the content
     ?><tr class="<?php echo $css_class ?>">
         <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <td class="<?php echo $style_class ?>"><?php
+    <td class="_title <?php echo $style_class ?>"><?php
         // Window status text, for the mouseover
             $wstatus = "Details for $schedule->title";
         // Print a link to the program detail for this schedule
@@ -117,10 +115,10 @@
                 echo ":  $schedule->subtitle";
             echo '</a>';
         ?></td>
-    <td><?php
+    <td class="_priority"><?php
             echo $schedule->recpriority
         ?></td>
-    <td><?php
+    <td class="_channel"><?php
             if (prefer_channum) {
                 if ($schedule->channel->channum)
                     echo $schedule->channel->channum.' - ';
@@ -131,15 +129,13 @@
             }
             echo $schedule->channel->name;
         ?></td>
-    <td nowrap><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
-    <td nowrap>
-        <?php
+    <td class="_profile"><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
+    <td class="_transcoder"><?php
         global $Transcoders;
         echo _or($Transcoders[$schedule->transcoder],  '&nbsp;')
-        ?>
-    </td>
-    <td nowrap><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
-    <td nowrap><?php echo $schedule->texttype ?></td>
+        ?></td>
+    <td class="_group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
+    <td class="_type"><?php  echo $schedule->texttype ?></td>
 </tr><?php
             $prev_group = $cur_group;
         }

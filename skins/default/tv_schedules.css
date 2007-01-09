@@ -1,6 +1,46 @@
 #no_schedules {
-    width:      400px;
-    margin:     20px auto;
-    padding:    20px;
-    text-align: center;
+    margin:         1em;
+    padding:        1em;
+    font-size:      200%;
+    text-align:     center;
 }
+
+#listings th {
+    font-weight:        normal;
+    text-align:         left;
+    white-space:        nowrap;
+}
+#listings th._title {
+}
+#listings th._priority {
+    text-align:         center;
+}
+#listings th._channel {
+}
+#listings th._profile {
+}
+#listings th._transcoder {
+}
+#listings th._group {
+}
+#listings th._type {
+}
+
+#listings td {
+}
+#listings td._title {
+}
+#listings td._priority {
+    text-align:         center;
+}
+#listings td._channel {
+}
+#listings td._profile {
+}
+#listings td._transcoder {
+}
+#listings td._group {
+}
+#listings td._type {
+}
+
