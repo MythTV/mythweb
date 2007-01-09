@@ -16,20 +16,23 @@
 
 <form class="form" method="post" action="<?php echo form_action ?>">
 
-<table width="100%" border="0" cellspacing="0" cellpadding="5">
+<table border="0" cellspacing="0" cellpadding="0">
 <tr>
-    <td align="right"><?php echo t('Prefer Channum') ?>:</td>
-    <td><input class="radio" type="checkbox" title="Prefer channel number over callsign." name="prefer_channum"<?php if ($_SESSION['prefer_channum']) echo ' CHECKED' ?>></td>
+    <th><?php echo t('Prefer Channum') ?>:</th>
+    <td><input class="radio" type="checkbox" name="prefer_channum"
+         title="Prefer channel number over callsign."
+         <?php if ($_SESSION['prefer_channum']) echo ' CHECKED' ?>></td>
 </tr><tr>
-    <td align="right"><?php echo t('MythVideo Dir') ?>:</td>
-    <td><input type="text" size="36" name="mythvideo_dir" value="<?php echo html_entities(setting('VideoStartupDir', hostname))?>"><br />
+    <th><?php echo t('MythVideo Dir') ?>:</th>
+    <td><input type="text" size="36" name="mythvideo_dir"
+        value="<?php echo html_entities(setting('VideoStartupDir', hostname))?>"></td>
+</tr><tr class="_sep">
+    <th><?php echo t('MythVideo Artwork Dir') ?>:</th>
+    <td><input type="text" size="36" name="video_artwork_dir"
+        value="<?php echo html_entities(setting('VideoArtworkDir', hostname))?>"></td>
 </tr><tr>
-    <td align="right"><?php echo t('MythVideo Artwork Dir') ?>:</td>
-    <td><input type="text" size="36" name="video_artwork_dir" value="<?php echo html_entities(setting('VideoArtworkDir', hostname))?>"><br />
-</td>
-</tr><tr>
-    <td class="command_border_t" align="center"><input type="reset"  class="submit" value="<?php echo t('Reset') ?>"></td>
-    <td class="command_border_t" align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>"></td>
+    <td align="right"><input type="reset"  class="submit" value="<?php echo t('Reset') ?>"></td>
+    <td align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>"></td>
 </tr>
 </table>
 

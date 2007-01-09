@@ -15,7 +15,7 @@
 ?>
 <form class="form" method="post" action="<?php echo form_action ?>">
 
-<table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu" align="center">
     <td width="4%"><?php  echo t('delete')        ?></td>
     <td width="4%"><?php  echo t('sourceid')      ?></td>

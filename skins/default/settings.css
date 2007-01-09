@@ -101,8 +101,8 @@
 /* Select which host to edit the settings for. */
 
     #settings ._host {
-        text-align:     right;
-        border-bottom:  1px solid #9090B0;
+        text-align:         right;
+        border-bottom:      1px solid #9090B0;
     }
 
 /* A notification/warning */
@@ -123,3 +123,21 @@
         border:             1px solid #9090B0;
         border-top:         none;
     }
+
+    #settings ._content table {
+        width:              100%;
+    }
+    #settings ._content table th, #settings ._content table td {
+        padding:            .5em;
+    }
+
+    #settings ._content th {
+        text-align:         right;
+        font-weight:        normal;
+        white-space:        nowrap;
+    }
+
+    #settings ._content tr._sep th, #settings ._content tr._sep td {
+        border-bottom:      1px solid #304943;
+    }
+
