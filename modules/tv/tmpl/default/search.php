@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Search');
 
 // Custom headers
-    #$headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_search.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_search.css" />';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -51,11 +51,12 @@
 <form class="form" id="search_advanced" action="<?php echo root ?>tv/search" method="get">
     <input type="hidden" name="type" value="a">
 
-<table align="center" border="1" cellspacing="0" cellpadding="2" class="command command_border_l command_border_t command_border_b command_border_r">
+<table id="search_options" align="center" border="0" cellspacing="0" cellpadding="0" class="commandbox commands">
 <tr>
-    <td valign="top"><?php print_advanced_search_strings() ?>
-        </td>
-    <td valign="top"><p style="margin-top: 0">
+    <td class="_advanced"><?php
+        print_advanced_search_strings()
+        ?></td>
+    <td class="_timeopts"><p style="margin-top: 0">
         <input type="checkbox" name="hd" id="hd" value="1"<?php
             if ($_SESSION['search']['hd']) echo ' CHECKED' ?>>
         <label for="hd"><?php echo t('Only match HD programs') ?></label>
@@ -77,11 +78,11 @@
         <input type="text" size="12" name="airdate_end" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_end']) ?>">
         </p>
         </td>
-    <td valign="top">Program Type:<br />
+    <td class="_progtype">Program Type:<br />
         <?php echo category_type_list() ?>
         </td>
-    <td valign="middle">
-        <input type="submit" name="search" value="Search" style="margin: 10px">
+    <td class="_submit">
+        <input type="submit" class="submit" name="search" value="Search">
         </td>
 </tr>
 </table>
@@ -93,7 +94,7 @@
 // Print the results list if a search was performed
     if ($_REQUEST['search']) {
     // Print the search name
-        echo '<p class="normal" align="center">',
+        echo '<p id="_search_name">',
              ($_SESSION['search']['type'] == 'a'
                 ? t('Advanced Search')
                 : t('Search for:  $1', $_SESSION['search']['s'])
@@ -114,15 +115,15 @@
     // Display the results
 ?>
 
-<table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table id="search_results" class="list small" width="100%" border="0" cellpadding="4" cellspacing="2">
 <tr class="menu">
     <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <td><?php echo get_sort_link('title',       t('title')) ?></td>
-    <td><?php echo get_sort_link('category',    t('category')) ?></td>
-    <td><?php echo get_sort_link('description', t('description')) ?></td>
-    <td><?php echo get_sort_link('channum',     t('channum')) ?></td>
-    <td><?php echo get_sort_link('airdate',     t('airdate')) ?></td>
-    <td><?php echo get_sort_link('length',      t('length')) ?></td>
+    <th class="_title"><?php       echo get_sort_link('title',       t('Title'))       ?></th>
+    <th class="_category"><?php    echo get_sort_link('category',    t('Category'))    ?></th>
+    <th class="_description"><?php echo get_sort_link('description', t('Description')) ?></th>
+    <th class="_channum"><?php     echo get_sort_link('channum',     t('Channel'))     ?></th>
+    <th class="_airdate"><?php     echo get_sort_link('airdate',     t('Airdate'))     ?></th>
+    <th class="_length"><?php      echo get_sort_link('length',      t('Length'))      ?></th>
 </tr><?php
         $row = 0;
 
@@ -153,7 +154,7 @@
     // Print the content
     ?><tr class="<?php echo $show->css_class ?>" valign="top">
     <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <td class="<?php echo $show->css_class ?>"><?php
+    <td class="_title <?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
             echo '<span class="hdtv_icon">HD</span>';
         echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
@@ -174,10 +175,10 @@
         }
 
         ?></td>
-    <td><?php echo $show->category ?></td>
-    <td><?php echo $show->description ?></td>
-    <td><?php echo $show->channel->channum.' - '.$show->channel->name ?></td>
-    <td nowrap><?php
+    <td class="_category"><?php    echo $show->category ?></td>
+    <td class="_description"><?php echo $show->description ?></td>
+    <td class="_channum"><?php     echo $show->channel->channum.' - '.$show->channel->name ?></td>
+    <td class="_airdate"><?php
             echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if ($show->extra_showings)
@@ -190,7 +191,7 @@
                     echo '</a>';
                 }
                 ?></td>
-    <td nowrap><?php echo nice_length($show->length) ?></td>
+    <td class="_length"><?php echo nice_length($show->length) ?></td>
 </tr><?php
             $prev_group = $cur_group;
             $row++;
