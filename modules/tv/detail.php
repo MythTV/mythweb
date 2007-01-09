@@ -30,11 +30,11 @@
     $_GET['starttime'] = intVal($_GET['starttime']);
 
 // Auto-expire -- only available for javascript templates
-    if (isset($_REQUEST['autoexpire']) && $_GET['chanid'] && $_GET['starttime']) {
+    if (isset($_REQUEST['toggle_autoexpire']) && $_GET['chanid'] && $_GET['starttime']) {
         $sh = $db->query('UPDATE recorded
                              SET autoexpire = ?
                            WHERE chanid = ? AND starttime = FROM_UNIXTIME(?)',
-                         $_REQUEST['autoexpire'] ? 1 : 0,
+                         $_REQUEST['toggle_autoexpire'] ? 1 : 0,
                          $_GET['chanid'],
                          $_GET['starttime']);
     // Report back, and then exit.

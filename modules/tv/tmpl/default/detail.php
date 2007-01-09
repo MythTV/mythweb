@@ -42,7 +42,7 @@
     function set_autoexpire() {
         var r = new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
                                  {
-                                    parameters: 'autoexpire='+(1 - autoexpire),
+                                    parameters: 'toggle_autoexpire='+(1 - autoexpire),
                                   asynchronous: false
                                  });
         if (r.transport.responseText == 'success') {

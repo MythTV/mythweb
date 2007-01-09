@@ -87,7 +87,7 @@
         var file = files[id];
         var r = new Ajax.Request('<?php echo root ?>tv/detail/' + file.chanid + '/' + file.starttime,
                                  {
-                                    parameters: 'autoexpire='+(1 - file.autoexpire),
+                                    parameters: 'toggle_autoexpire='+(1 - file.autoexpire),
                                   asynchronous: false
                                  });
         if (r.transport.responseText == 'success') {
