@@ -1,0 +1,70 @@
+/*
+ *
+ * Styles used in /tv/list
+ *
+/*/
+
+.right_arrow {
+    float: right;
+}
+.left_arrow {
+    float: left;
+}
+
+#list_head {
+    width:              80%;
+    margin:             1em auto;
+}
+
+#_current_time {
+    font-size:          150%;
+    margin-top:         .25em;
+    float:              left;
+}
+#_current_time img {
+    margin-top:         -.25em;
+    float:              left;
+    margin-right:       .5em;
+}
+
+#_jumpto {
+    float:              right;
+}
+#_jumpto td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#_jumpto td._jumpto {
+    font-size:          110%;
+    font-weight:        bold;
+    border-right:       1px solid #304943;
+}
+#_jumpto td._hour {
+    border-right:       1px solid #304943;
+}
+#_jumpto td._hour select {
+    text-align:         right;
+}
+#_jumpto ._day select {
+    text-align:         center;
+}
+
+#_jumpto a img {
+    vertical-align:     middle;
+    height:             16px;
+    width:              16px;
+    margin-top:         -2px;
+}
+#_jumpto a {
+    height:             20px;
+    width:              20px;
+    padding:            2px;
+    border:             1px solid #7b8;
+    background-color:   #263;
+}
+#_jumpto a:hover {
+    border:             1px solid #9da;
+    background-color:   #485;
+}
+

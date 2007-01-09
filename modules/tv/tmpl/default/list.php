@@ -32,10 +32,10 @@
     <table id="_jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td class="_jumpto"><?php echo t('Jump To') ?>:</td>
-        <td class="_hour"><?php hour_select(' onchange="get_element(\'program_listing\').submit()"') ?></td>
+        <td class="_hour"><?php hour_select('onchange="$(\'program_listing\').submit()"') ?></td>
         <td class="_day"><a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime - (24 * 60 * 60) ?>"
                 ><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
-            <?php date_select('onchange="get_element(\'program_listing\').submit()"') ?>
+            <?php date_select('onchange="$(\'program_listing\').submit()"') ?>
             <a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime + (24 * 60 * 60) ?>"
                     ><img src="<?php echo skin_url ?>img/right.gif" border="0"></a>
             </td>

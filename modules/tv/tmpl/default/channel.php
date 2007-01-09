@@ -16,61 +16,38 @@
 // Set the desired page title
     $page_title = 'MythWeb - '.t('Channel Detail');
 
+// Custom headers
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_channel.css" />';
+
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
 // Print out some header info about this channel and time
 ?>
 
-<script language="JavaScript" type="text/javascript">
-<!--
-
-    function MoveProgramListing(amount) {
-        var length = get_element('program_listing').date.length;
-        var cur = get_element('program_listing').date.selectedIndex;
-        var newPos = cur;
-        if (cur + amount < 0) {
-            newPos = 0;
-        } else if (cur + amount > length - 1) {
-            newPos = length - 1;
-        } else {
-            newPos = cur + amount;
-        }
-        get_element('program_listing').date.selectedIndex = newPos;
-        get_element('program_listing').submit();
-    }
-
-// -->
-</script>
-
-<p>
-<table align="center" width="90%" cellspacing="2" cellpadding="2">
-<tr>
+<div id="list_head" class="clearfix">
+    <form method="get" id="program_listing" action="<?php echo root ?>tv/channek">
+    <div id="_current_time">
 <?php   if (show_channel_icons && !empty($this_channel->icon)) { ?>
-    <td align="right"><img src="<?php echo $this_channel->icon ?>" height="30" width="30"></td>
-<?php      } ?>
-    <td width="66%" valign="center" class="huge">
-        Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?></td>
-    <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <form method="get" id="program_listing" action="<?php echo root ?>tv/channel">
-        <table width="100%" border="0" cellspacing="0" cellpadding="2">
-        <tr>
-            <td nowrap align="center"><?php echo t('Jump to') ?>:&nbsp;&nbsp;</td>
-            <td><?php channel_select() ?></td>
-            <td align="right"><?php echo t('Date') ?>:&nbsp;</td>
-            <td style="vertical-align:middle;" nowrap>
-                <a onclick="MoveProgramListing(-1)"><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
-                <?php date_select() ?>
-                <a onclick="MoveProgramListing(+1)"><img src="<?php echo skin_url ?>img/right.gif" border="0"></a>
-                </td>
-            <td align="center"><noscript><input type="submit" class="submit" value="<?php echo t('Jump') ?>"></noscript></td>
-        </tr>
-        </table>
-        </form>
-        </td>
-</tr>
-</table>
-</p>
+        <img src="<?php echo $this_channel->icon ?>" height="30" width="30">
+<?php   } ?>
+        Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?>
+    </div>
+    <table id="_jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="_jumpto"><?php echo t('Jump To') ?>:</td>
+        <td class="_hour"><?php channel_select('onchange="$(\'program_listing\').submit()"') ?></td>
+        <td class="_day"><a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime - (24 * 60 * 60) ?>"
+                ><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
+            <?php date_select('onchange="$(\'program_listing\').submit()"') ?>
+            <a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime + (24 * 60 * 60) ?>"
+                    ><img src="<?php echo skin_url ?>img/right.gif" border="0"></a>
+            </td>
+    </tr>
+    </table>
+    </form>
+</div>
+
 <?php
 
 // Only show the programs if there are some to display

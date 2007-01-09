@@ -56,36 +56,41 @@
 /**
  * Prints a <select> of the available channels
 /**/
-    function channel_select() {
+    function channel_select($params = '') {
         global $Channels;
-        echo '<select name="chanid" onchange="submit_form(\'\',\'\',\'program_listing\')">';
+        echo "<select name=\"chanid\" $params>";
         foreach ($Channels as $channel) {
         // Not visible?
             if (empty($channel->visible))
                 continue;
         // Print the option
-            echo '<option value="'.html_entities($channel->chanid).'"';
+            echo '<option value="', $channel->chanid, '"',
+                 ' title="', html_entities($channel->name), '"';
+        // Selected?
             if ($channel->chanid == $_GET['chanid'])
                 echo ' SELECTED';
-            $name = prefer_channum
-                        ? "$channel->channum ($channel->callsign)"
-                        : "$channel->callsign ($channel->channum)";
-            echo '>'.html_entities($name).'</option>';
+        // Print ther est of the content
+            echo '>';
+            if (prefer_channum)
+                echo $channel->channum.'&nbsp;&nbsp;('.html_entities($channel->callsign).')';
+            else
+                echo html_entities($channel->callsign).'&nbsp;&nbsp;('.$channel->channum.')';
+            echo '</option>';
         }
         echo '</select>';
     }
 
 /**
- * Prints a <select> of the available date range.
- * reused almost verbatim from modules/tv/list.php
+ * Prints a <select> of the available date range
+ * Reused *almost* verbatim from modules/tv/list.php
 /**/
-    function date_select() {
+    function date_select($params = '') {
         global $db;
     // Get the available date range
-        $min_days = $db->query_col('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program');
-        $max_days = $db->query_col('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program');
+        $min_days = max(-7, $db->query_col('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program'));
+        $max_days = min(30, $db->query_col('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program'));
     // Print out the list
-        echo '<select name="date" onchange="get_element(\'program_listing\').submit()">';
+        echo "<select name=\"date\" $params>";
         for ($i=$min_days; $i<=$max_days; $i++) {
             $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
             $date = date('Ymd', $time);
