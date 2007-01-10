@@ -236,6 +236,7 @@
     Episode
 "Episode Number"
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     Producteur
 "File Size"
@@ -263,6 +264,7 @@
 "freqid"
 "Friday"
     Vendredi
+"Generic Episodes"
 "generic_date"
     %e %b, %Y
 "generic_time"
@@ -597,6 +599,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Relancer
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     Reset
 "Return to Statistics Page"

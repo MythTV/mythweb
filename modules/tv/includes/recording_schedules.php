@@ -37,6 +37,16 @@
     define('searchtype_people',   4);
     define('searchtype_manual',   5);
 
+// Methods for determining duplicate recordings (against previous)
+    define('dupsin_recorded',       0x01);
+    define('dupsin_oldrecorded',    0x02);
+    define('dupsin_all',            0x0F);
+
+// More methods for duplicate recordings (restrictions against future showings)
+    define('dupsin_newepisodes',    0x10);
+    define('dupsin_ex_repeats',     0x20);
+    define('dupsin_ex_generic',     0x40);
+
 // Recording types -- enum at the top of libs/libmythtv/recordingtypes.h
     $RecTypes = array(
                       rectype_once       => t('rectype: once'),

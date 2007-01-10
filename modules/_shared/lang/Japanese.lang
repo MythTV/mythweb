@@ -275,6 +275,7 @@
 "Episode Number"
     番組番号
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     製作責任者
 "File Size"
@@ -310,6 +311,7 @@
     周波数ID
 "Friday"
     金曜日
+"Generic Episodes"
 "generic_date"
     %Y %b %e
 "generic_time"
@@ -698,6 +700,8 @@
 "Remove Item from Playlist"
 "Repeat"
     再開
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     リセット
 "Return to Statistics Page"

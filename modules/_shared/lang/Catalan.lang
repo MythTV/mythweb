@@ -286,6 +286,7 @@
 "Episode Number"
     Nº episodi
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     Productor exec.
 "File Size"
@@ -321,6 +322,7 @@
     id freqüència
 "Friday"
     Divendres
+"Generic Episodes"
 "generic_date"
     %b %e, %Y
 "generic_time"
@@ -722,6 +724,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Repetir
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     Reiniciar
 "Return to Statistics Page"

@@ -275,6 +275,7 @@
 "Episode Number"
     Aflevering nr.
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     Uitv. Producent
 "File Size"
@@ -309,6 +310,7 @@
     frequentie
 "Friday"
     Vrijdag
+"Generic Episodes"
 "generic_date"
     %a %e %b, %Y
 "generic_time"
@@ -685,6 +687,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Opnieuw Uitvoeren
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     Herstellen
 "Return to Statistics Page"

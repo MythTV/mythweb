@@ -286,6 +286,7 @@
 "Episode Number"
     Nº Episodio
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     Productor ejec.
 "File Size"
@@ -321,6 +322,7 @@
     id frecuencia
 "Friday"
     Viernes
+"Generic Episodes"
 "generic_date"
     %b %e, %Y
 "generic_time"
@@ -720,6 +722,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Reejecutar
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     Borrar
 "Return to Statistics Page"

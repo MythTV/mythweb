@@ -181,6 +181,7 @@
 "Episode"
 "Episode Number"
 "Everything"
+"Exclude programs"
 "Exec. Producer"
 "File Size"
 "Filtered"
@@ -202,6 +203,7 @@
 "Found %s results for '%s'"
 "freqid"
 "Friday"
+"Generic Episodes"
 "generic_date"
     %a %b %e, %Y
 "generic_time"
@@ -502,6 +504,8 @@
     An?|The
 "Remove Item from Playlist"
 "Repeat"
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
 "Return to Statistics Page"
 "Reverse Order"

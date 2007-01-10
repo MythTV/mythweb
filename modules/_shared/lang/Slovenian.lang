@@ -231,6 +231,7 @@
     Oddaja
 "Episode Number"
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     Scenarist
 "File Size"
@@ -258,6 +259,7 @@
 "freqid"
 "Friday"
     Petek
+"Generic Episodes"
 "generic_date"
     %e.%m.%Y
 "generic_time"
@@ -590,6 +592,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Ponovno zaženi
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     Resetiraj
 "Return to Statistics Page"

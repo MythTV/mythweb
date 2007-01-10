@@ -275,6 +275,7 @@
 "Episode Number"
     Folge Nummer
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     Produzent
 "File Size"
@@ -309,6 +310,7 @@
     Kanal
 "Friday"
     Freitag
+"Generic Episodes"
 "generic_date"
     %e.%m.%Y
 "generic_time"
@@ -685,6 +687,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Wiederholung
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     Zurücksetzen
 "Return to Statistics Page"

@@ -281,6 +281,7 @@
 "Episode Number"
     Episode nummer
 "Everything"
+"Exclude programs"
 "Exec. Producer"
     Producer
 "File Size"
@@ -316,6 +317,7 @@
     Frekvens ID
 "Friday"
     Fredag
+"Generic Episodes"
 "generic_date"
     %a %e %b %Y
 "generic_time"
@@ -692,6 +694,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Genudsendelse
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
     Nulstil
 "Return to Statistics Page"

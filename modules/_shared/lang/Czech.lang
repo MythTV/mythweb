@@ -211,6 +211,7 @@
     Díl
 "Episode Number"
 "Everything"
+"Exclude programs"
 "Exec. Producer"
 "File Size"
 "Filtered"
@@ -233,6 +234,7 @@
 "freqid"
 "Friday"
     Pátek
+"Generic Episodes"
 "generic_date"
     %a %b %e, %Y
 "generic_time"
@@ -546,6 +548,8 @@
 "Remove Item from Playlist"
 "Repeat"
     Opakování
+"Repeat and Generic Episodes"
+"Repeat Episodes"
 "Reset"
 "Return to Statistics Page"
 "Reverse Order"

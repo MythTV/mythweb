@@ -533,25 +533,6 @@
                 ?>
                     </select>
                 </dd>
-                <dt><?php echo t('Check for duplicates in') ?>:</dt>
-                <dd><select name="dupin"><?php
-                        echo '<option value="1"';
-                        if ($schedule->dupin == 1)
-                            echo ' SELECTED';
-                        echo '>' . t('Current recordings') . '</option>';
-                        echo '<option value="2"';
-                        if ($schedule->dupin == 2)
-                            echo ' SELECTED';
-                        echo '>' . t('Previous recordings') . '</option>';
-                        echo '<option value="4"';
-                        if ($schedule->dupin == 4)
-                            echo ' SELECTED';
-                        echo '>' . t('Only New Episodes') . '</option>';
-                        echo '<option value="15"';
-                        if ($schedule->dupin == 15 || $schedule->dupin == 0)
-                            echo ' SELECTED';
-                        echo '>' . t('All recordings') . '</option>';
-                   ?></select></dd>
                 <dt><?php echo t('Duplicate Check method') ?>:</dt>
                 <dd><select name="dupmethod"><?php
                         echo '<option value="1"';
@@ -570,6 +551,40 @@
                         if ($schedule->dupmethod == 6 || $schedule->dupmethod == 0)
                             echo ' SELECTED';
                         echo '>'.t('Subtitle and Description').'</option>';
+                   ?></select></dd>
+                <dt><?php echo t('Check for duplicates in') ?>: </dt>
+                <dd><select name="dupin"><?php
+                        echo '<option value="', dupsin_all, '"';
+                        if ($schedule->dupin & dupsin_all || $schedule->dupin == 0)
+                            echo ' SELECTED';
+                        echo '>' . t('All recordings') . '</option>';
+                        echo '<option value="', dupsin_recorded, '"';
+                        if (!($schedule->dupin & dupsin_all) && $schedule->dupin & dupsin_recorded)
+                            echo ' SELECTED';
+                        echo '>' . t('Current recordings') . '</option>';
+                        echo '<option value="', dupsin_oldrecorded,'"';
+                        if (!($schedule->dupin & dupsin_all) && $schedule->dupin & dupsin_oldrecorded)
+                            echo ' SELECTED';
+                        echo '>' . t('Previous recordings') . '</option>';
+                   ?></select></dd>
+                <dt><?php echo t('Exclude programs')?>:</dt>
+                <dd><select name="dupin2"><?php
+                        echo '<option value="', dupsin_newepisodes, '"';
+                        if ($schedule->dupin & dupsin_newepisodes || $schedule->dupin == 0)
+                            echo ' SELECTED';
+                        echo '>' . t('None') . '</option>';
+                        echo '<option value="', dupsin_ex_repeats,'"';
+                        if ($schedule->dupin & dupsin_ex_repeats && !($schedule->dupin & dupsin_ex_generic))
+                            echo ' SELECTED';
+                        echo '>' . t('Repeat Episodes') . '</option>';
+                        echo '<option value="', dupsin_ex_generic, '"';
+                        if ($schedule->dupin & dupsin_ex_generic && !($schedule->dupin & dupsin_ex_repeats))
+                            echo ' SELECTED';
+                        echo '>' . t('Generic Episodes') . '</option>';
+                        echo '<option value="', dupsin_ex_repeats + dupsin_ex_generic, '"';
+                        if ($schedule->dupin & dupsin_ex_repeats && $schedule->dupin & dupsin_ex_generic)
+                            echo ' SELECTED';
+                        echo '>' . t('Repeat and Generic Episodes') . '</option>';
                    ?></select></dd>
                 <dt><?php echo t('Preferred Input') ?>:</dt>
                 <dd><?php input_select($schedule->prefinput, 'prefinput') ?></dd>
