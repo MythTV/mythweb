@@ -105,6 +105,7 @@
 "All Songs"
 "An error occured while adding your playlist."
 "and"
+    och
 "Any"
     Alla
 "Any Category"
@@ -664,6 +665,7 @@
 "Program Listing"
     Programlista
 "Program Type"
+    Programtyp
 "Protocol"
 "Radar"
     Radar
@@ -873,6 +875,7 @@
 "Showing all programs."
     Visar alla program.
 "Showings between"
+    Visningar mellan
 "Shows"
     Program
 "SI Units"
@@ -1044,7 +1047,7 @@
 "welcome: settings"
     Konfigurera MythWeb och några av MythTVs inställningar.
 "welcome: stats"
-    Visa statistik
+    MythTV inspelningsstatistik.
 "welcome: status"
     Visa inspelningsserverns statussida.
 "welcome: tv"
