@@ -26,7 +26,9 @@
 "$1 mins"
     $1 min
 "$1 month"
+    $1 månad
 "$1 months"
+    $månader
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 program ($3), som använder $2 av $4
 "$1 recording"
@@ -42,17 +44,22 @@
 "$1 wasted"
     $1 bortkastade
 "$1 year"
+    $1 år
 "$1 years"
+    $1 år
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
 "&deg;C"
+    &deg;C
 "&deg;F"
+    &deg;F
 "Action"
     Handling
 "Activate"
     Aktivera
 "Add"
+    Lägg till
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
@@ -68,8 +75,9 @@
 "Advanced Search"
     Avancerad sökning
 "airdate"
-"Airdate"
     datum
+"Airdate"
+    Datum
 "Airtime"
     Sändningstid
 "Album"
@@ -83,6 +91,7 @@
 "All"
     Alla
 "All Albums"
+    Alla album
 "All Fields"
 "All groups"
     Alla grupper
@@ -116,7 +125,9 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+    ASX-ström
 "Auto Expire"
+    Autoradera
 "Auto-expire recordings"
     Autoradera inspelningar
 "Auto-flag commercials"
@@ -124,9 +135,11 @@
 "Auto-transcode"
     Omkoda automatiskt
 "Back"
+    Tillbaka
 "Back to the program listing"
     Tillbaka till programlistan
 "Back to the recorded programs"
+    Tillbaka till inspelade program
 "Back to the recording schedules"
     Tillbaka till inspelningsschemat
 "Backend Logs"
@@ -137,6 +150,7 @@
 "brightness"
     ljusstyrka
 "Browse"
+    Bläddra
 "Browse All Albums"
 "Browse Music"
 "Browse the Music Database"
@@ -145,9 +159,11 @@
 "callsign"
     kortnamn
 "Cancel"
+    Avbryt
 "Cancel this schedule."
     Avbryt denna schemaläggning
 "Cancelled"
+    Avbruten
 "Cast"
     Rollbesättning
 "category"
@@ -173,25 +189,34 @@
 "Channel Detail"
     Kanaldetaljer
 "Channel Info"
+    Kanalinformation
 "Channels"
+    Kanaler
 "channum"
     kanalnummer
 "Check for duplicates in"
     Sök dubbletter i
 "Choose Genre.."
+    Välj genre..
 "Choose Type"
+    Välj typ
 "Click to disable Auto Expire"
+    Klicka för att avaktivera autoradering
 "Click to enable Auto Expire"
+    Klicka för att aktivera autoradering
 "Click to View Playlist"
 "Closed Captioning"
+    Textning
 "colour"
     färg
 "Commands"
     Kommando
 "Commercials Flagged"
+    Reklam markerad
 "commfree"
     reklamfri
 "Conflict"
+    Konflikt
 "Conflicts"
     Konflikter
 "Context"
@@ -203,6 +228,7 @@
 "cover"
     omslag
 "Create a New Playlist"
+    Skapa ny spellista
 "Create a Random Mix"
 "Create Schedule"
     Schemalägg
@@ -246,7 +272,9 @@
 "Details for"
     Detaljer för
 "Details for: $1"
+    Detaljer för: $1
 "Direct Download"
+    Direkt nerladdning
 "Directed by"
     Regi
 "director"
@@ -263,6 +291,7 @@
 "Dup Method"
     Dubblettmetod
 "Duplicate"
+    Dublett
 "Duplicate Check method"
     Dubblettmetod
 "Duplicates"
@@ -270,11 +299,13 @@
 "Duration"
     Längd
 "Earlier"
+    Tidigare
 "Edit"
     Redigera
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
 "Edit settings for: $1"
+    Ändra insällningar för: $1
 "End"
     Slut
 "End Late"
@@ -287,6 +318,7 @@
 "Episode Number"
     Avsnittsnummer
 "Everything"
+    Allt
 "Exclude programs"
 "Exec. Producer"
     Producent
@@ -319,6 +351,7 @@
 "format help"
     formathjälp
 "Found %s results for '%s'"
+    Hittade %s resultat för '%s'
 "freqid"
     frekvens-id
 "Friday"
@@ -350,11 +383,15 @@
 "handy: overview"
     Denna sida innehåller förberedda komplexa sökningar av programlistorna (fungerar för närvarande endast med data från DataDirect, alltså ej i Sverige.).
 "has Bookmark"
+    har bokmärke
 "Has Cutlist"
+    Har klipplista
 "HD"
+    HD
 "HDTV"
     HDTV
 "Hide"
+    Göm
 "High"
     Hög
 "Host"
@@ -376,12 +413,19 @@
 "Inactive"
     Inaktiv
 "info: activate recording"
+    Tvinga denna visning att spela in.
 "info: default recording"
+    Återställ överskuggningar så att denna visning schemaläggs normalt.
 "info: dont record"
+    Spela inte in denna visning.
 "info: hidden advanced schedule"
+    De avancerade inspelningsalternativen är gömda.
 "info: record this"
+    Tvinga denna visning att spela in.
 "info:forget old"
+    Glöm tidigare inspelningar av detta program, så att det kan återinspelas.
 "info:never record"
+    Förfalsa en tidigare inspelning av detta program så att det inte kommer att spelas in.
 "Jump"
     Gå
 "Jump to"
@@ -391,6 +435,7 @@
 "JumpPoints Editor"
     Redigera hoppmarkeringar
 "Key Bindings"
+    Knappbindningar
 "Key bindings"
     Knappbindningar
 "Keybindings Editor"
@@ -400,6 +445,7 @@
 "Keyword Search"
     Sök nyckelord
 "Keywords"
+    Nyckelord
 "Language"
     Språk
 "Last Recorded"
@@ -409,6 +455,7 @@
 "Last Updated"
     Senast uppdaterad
 "Later"
+    Senare
 "length"
     längd
 "Length"
@@ -422,11 +469,13 @@
 "Listings"
     TV-tablåer
 "Load"
+    Ladda
 "Load a Saved Playlist"
 "Load Playlist"
 "Load Saved Playlists"
 "Load this Saved Playlist"
 "LOADING"
+    LADDAR
 "Local Server Statistics"
 "Local weather forecast"
 "Locale"
@@ -446,6 +495,7 @@
 "Monday"
     Måndag
 "More"
+    Mer
 "more"
     mer
 "Move Item Down in Playlist"
@@ -493,7 +543,9 @@
 "Never Record"
     Spela aldrig in
 "New"
+    Ny
 "New Search"
+    Ny sökning
 "New Titles, Premieres"
     Nya titlar, premiärer
 "Next"
@@ -524,6 +576,7 @@
 "Number of shows"
     Antal visningar
 "Number of Songs"
+    Antal låtar
 "Number of timeslots"
     Antal tidsluckor
 "Only display favourite channels"
@@ -539,6 +592,7 @@
 "Original Airdate"
     Sändningsdatum
 "Override"
+    Överskugga
 "Part $1 of $2"
     Del $1 av $2
 "Past Month"
@@ -553,6 +607,7 @@
     Sök person
 "Percent of time spent recording"
 "Play"
+    Spela
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -581,6 +636,7 @@
 "Prefer Channum"
     Föredra kanalnummer
 "Preferences"
+    Inställningar
 "Preferred Input"
 "Presented by"
     Presenteras av
@@ -767,9 +823,11 @@
 "Search"
     Sök
 "Search $1"
+    Sök $1
 "Search for:  $1"
     Sök efter:  $1
 "Search Music"
+    Sök musik
 "Search Phrase"
     Sök fras
 "Search Results"
@@ -790,7 +848,9 @@
     Inställningstabell
 "settings/stream: protocol"
 "settings: notice"
-    OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
+    Varning!<br /><br />
+    Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
+    störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
 "Show"
     Program
 "Show group"
@@ -833,6 +893,7 @@
     Stereo
 "Still Recording: Edit"
 "Storage Group"
+    Lagringsgrupp
 "Streaming"
 "Streaming Quality"
 "Sub and Desc (Empty matches)"
@@ -871,6 +932,7 @@
 "Tomorrow"
     Imorgon
 "Too Many"
+    För många
 "Top"
     Överst
 "Top $1"
@@ -983,6 +1045,7 @@
 "xmltvid"
     xmltv-id
 "Year"
+    År
 "year"
     år
 "Yes"
