@@ -55,6 +55,7 @@
  * Prints a <select> of the available hour range
 /**/
     function hour_select($params = '') {
+        global $list_starttime;
         echo "<select name=\"hour\" $params>";
         for ($h=0;$h<24;$h++) {
             echo "<option value=\"$h\"";
