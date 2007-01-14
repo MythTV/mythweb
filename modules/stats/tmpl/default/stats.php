@@ -42,7 +42,7 @@
         </div>
 
         <div id="count_div">
-	    Show&nbsp;
+	    <?php echo t('Show'); ?>&nbsp;
             <select name="count_dropdown" onchange="submit_form(null, null, 'stats_form');">
                 <option <?php if($_GET['count_dropdown']=='10')  echo 'selected' ?> value="10"><?php  echo t('Top $1', 10) ?></option>
                 <option <?php if($_GET['count_dropdown']=='25')  echo 'selected' ?> value="25"><?php  echo t('Top $1', 25) ?></option>
