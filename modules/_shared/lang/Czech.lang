@@ -71,6 +71,7 @@
     Všechny nahrávky
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
 "Any Category"
 "Any Channel"
@@ -388,6 +389,7 @@
 "or"
 "Original Airdate"
     Původně vysíláno
+"Originally aired between"
 "Override"
 "Part $1 of $2"
     Část $1 z $2
@@ -435,6 +437,7 @@
 "Program ID"
 "Program Listing"
     Výpis pořadů
+"Program Type"
 "Protocol"
 "Radar"
 "Random"
@@ -598,6 +601,7 @@
 "Show recordings"
 "Showing all programs from the $1 group."
 "Showing all programs."
+"Showings between"
 "Shows"
 "SI Units"
 "Songs"

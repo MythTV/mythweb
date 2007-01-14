@@ -95,6 +95,7 @@
     Tots els enregistraments
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
     Qualsevol
 "Any Category"
@@ -536,6 +537,7 @@
     o
 "Original Airdate"
     Emisió original
+"Originally aired between"
 "Override"
 "Part $1 of $2"
     Part $1 de $2
@@ -600,6 +602,7 @@
     ID programa
 "Program Listing"
     Llista de programes
+"Program Type"
 "Protocol"
 "Radar"
     Radar
@@ -801,6 +804,7 @@
     Mostrant tots els programes del grup $1
 "Showing all programs."
     Mostrant tots els programes
+"Showings between"
 "Shows"
 "SI Units"
     Unitats SI

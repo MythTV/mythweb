@@ -88,6 +88,7 @@
     全ての録画
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
     全て
 "Any Category"
@@ -512,6 +513,7 @@
 "or"
 "Original Airdate"
     初回放送
+"Originally aired between"
 "Override"
 "Part $1 of $2"
     $1/$2
@@ -576,6 +578,7 @@
     番組ID
 "Program Listing"
     番組表
+"Program Type"
 "Protocol"
 "Radar"
     レーダー
@@ -774,6 +777,7 @@
     $1のすべての番組を表示
 "Showing all programs."
     すべての番組を表示
+"Showings between"
 "Shows"
 "SI Units"
     SI単位を使用する

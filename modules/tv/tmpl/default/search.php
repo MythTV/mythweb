@@ -66,23 +66,23 @@
         <label for="commfree"><?php echo t('Only match commercial-free channels') ?></label>
         </p>
         <p>
-        Showings between:<br />
+        <?php echo t('Showings between'); ?>:<br />
         <input type="text" size="12" name="starttime" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['starttime']) ?>">
-        and
+        <?php echo t('and'); ?>
         <input type="text" size="12" name="endtime"   style="text-align: center" value="<?php echo html_entities($_SESSION['search']['endtime']) ?>">
         </p>
         <p>
-        Originally aired between:<br />
+        <?php echo t('Originally aired between'); ?>:<br />
         <input type="text" size="12" name="airdate_start" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_start']) ?>">
-        and
+        <?php echo t('and'); ?>
         <input type="text" size="12" name="airdate_end" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_end']) ?>">
         </p>
         </td>
-    <td class="_progtype">Program Type:<br />
+    <td class="_progtype"><?php echo t('Program Type'); ?>:<br />
         <?php echo category_type_list() ?>
         </td>
     <td class="_submit">
-        <input type="submit" class="submit" name="search" value="Search">
+        <input type="submit" class="submit" name="search" value="<?php echo t('Search') ?>">
         </td>
 </tr>
 </table>

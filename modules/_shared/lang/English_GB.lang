@@ -60,6 +60,7 @@
 "All recordings"
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
 "Any Category"
 "Any Channel"
@@ -348,6 +349,7 @@
 "Only New Episodes"
 "or"
 "Original Airdate"
+"Originally aired between"
 "Override"
 "Part $1 of $2"
 "Past Month"
@@ -394,6 +396,7 @@
     Programme ID
 "Program Listing"
     Programme Listing
+"Program Type"
 "Protocol"
 "Radar"
 "Random"
@@ -557,6 +560,7 @@
     Showing all programmes from the $1 group.
 "Showing all programs."
     Showing all programmes.
+"Showings between"
 "Shows"
 "SI Units"
 "Songs"

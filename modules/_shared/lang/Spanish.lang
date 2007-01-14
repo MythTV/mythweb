@@ -95,6 +95,7 @@
     Todas las grabaciones
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
     Cualquiera
 "Any Category"
@@ -534,6 +535,7 @@
     o
 "Original Airdate"
     Emisión original
+"Originally aired between"
 "Override"
 "Part $1 of $2"
     Parte $1 de $2
@@ -598,6 +600,7 @@
     ID programa
 "Program Listing"
     Listado Programas
+"Program Type"
 "Protocol"
 "Radar"
     Radar
@@ -799,6 +802,7 @@
     Mostrando todos los programas del grupo $1
 "Showing all programs."
     Mostrando todos los programas
+"Showings between"
 "Shows"
 "SI Units"
     Unidades SI

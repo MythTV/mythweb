@@ -39,6 +39,6 @@
 </center><br />
 <form action="<?php echo root ?>tv/search" method="get">
         <center><input type="text" name="s" value="<?php echo $_GET['s'] ?>"><br />
-        <input type="submit" class="submit" name="search" value="Search"></center><br />
+        <input type="submit" class="submit" name="search" value="<?php echo t('Search') ?>"></center><br />
 </form>
 

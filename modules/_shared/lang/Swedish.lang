@@ -104,6 +104,7 @@
     Alla inspelningar
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
     Alla
 "Any Category"
@@ -488,7 +489,7 @@
 "Manual"
     Manuell
 "matches"
-    träffar
+    matchar
 "Max star rating for movies"
     Max stjärnbetyg för filmer
 "minutes"
@@ -592,6 +593,7 @@
     eller
 "Original Airdate"
     Sändningsdatum
+"Originally aired between"
 "Override"
     Överskugga
 "Part $1 of $2"
@@ -661,6 +663,7 @@
     Program-ID
 "Program Listing"
     Programlista
+"Program Type"
 "Protocol"
 "Radar"
     Radar
@@ -869,6 +872,7 @@
     Visar alla program i grupp: $1.
 "Showing all programs."
     Visar alla program.
+"Showings between"
 "Shows"
     Program
 "SI Units"

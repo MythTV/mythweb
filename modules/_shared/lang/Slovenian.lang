@@ -75,6 +75,7 @@
     Vsa snemanja
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
     Katera koli
 "Any Category"
@@ -426,6 +427,7 @@
 "or"
 "Original Airdate"
     Izvirni datum predvajanja
+"Originally aired between"
 "Override"
 "Part $1 of $2"
 "Past Month"
@@ -475,6 +477,7 @@
 "Program Detail"
 "Program ID"
 "Program Listing"
+"Program Type"
 "Protocol"
 "Radar"
     Radar
@@ -655,6 +658,7 @@
     Pokaži snemanja
 "Showing all programs from the $1 group."
 "Showing all programs."
+"Showings between"
 "Shows"
 "SI Units"
     SI enote

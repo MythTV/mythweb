@@ -92,6 +92,7 @@
     Alle optagelser
 "All Songs"
 "An error occured while adding your playlist."
+"and"
 "Any"
     Alle
 "Any Category"
@@ -510,6 +511,7 @@
     eller
 "Original Airdate"
     Sendt først
+"Originally aired between"
 "Override"
 "Part $1 of $2"
     Del $1 af $2
@@ -571,6 +573,7 @@
 "Program ID"
 "Program Listing"
     Program lister
+"Program Type"
 "Protocol"
 "Radar"
     Radar
@@ -767,6 +770,7 @@
     Viser alle programmer fra gruppen $1.
 "Showing all programs."
     Viser alle programmer.
+"Showings between"
 "Shows"
 "SI Units"
     SI enheder
