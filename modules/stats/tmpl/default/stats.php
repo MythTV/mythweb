@@ -31,7 +31,7 @@
 	<form id="stats_form" name="stats_form" action="<?php echo root ?>stats">
 
         <div id="query_time_div">
-	    Time Span&nbsp;
+            <?php echo t('Time Span'); ?>&nbsp;
             <select name="query_time" onchange="submit_form(null, null, 'stats_form');">
                 <option <?php if($_GET['query_time']=='All_time') echo 'selected' ?> value="All_time"><?php echo t('All') ?></option>
                 <option <?php if($_GET['query_time']=='year')     echo 'selected' ?> value="year"><?php  echo t('Past Year') ?></option>

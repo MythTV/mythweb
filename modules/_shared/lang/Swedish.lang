@@ -28,7 +28,7 @@
 "$1 month"
     $1 månad
 "$1 months"
-    $månader
+    $1 månader
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 program ($3), som använder $2 av $4
 "$1 recording"
@@ -320,10 +320,11 @@
 "Everything"
     Allt
 "Exclude programs"
+    Uteslut program
 "Exec. Producer"
     Producent
 "File Size"
-    filstorlek
+    Filstorlek
 "Filtered"
     Filtrerat
 "Find Date & Time Options"
@@ -627,6 +628,7 @@
 "plot"
     handling
 "Possible conflicts"
+    Möjliga konflikter
 "Possible conflicts with this show"
     Möjliga konflikter med denna visning
 "Power"
@@ -638,6 +640,7 @@
 "Preferences"
     Inställningar
 "Preferred Input"
+    Föredragen källa
 "Presented by"
     Presenteras av
 "Pressure"
@@ -678,9 +681,11 @@
 "Record This"
     Spela in
 "Recorded"
+    Inspelade
 "Recorded Programs"
     Inspelade program
 "Recording Details"
+    Inspelningsdetaljer
 "Recording Group"
     Inspelningsgrupp
 "Recording Options"
@@ -838,6 +843,7 @@
 "Searches"
     Sökningar
 "Server Statistics"
+    Serverstatistik
 "Set Host"
     Sätt värd
 "Settings"
@@ -852,11 +858,11 @@
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
 "Show"
-    Program
+    Visa
 "Show group"
     Visa grupp
 "Show pixmaps"
-    Visa pixmaps
+    Visa bild
 "Show recordings"
     Visa inspelningar
 "Showing all programs from the $1 group."
@@ -864,6 +870,7 @@
 "Showing all programs."
     Visar alla program.
 "Shows"
+    Program
 "SI Units"
     SI-enheter
 "Songs"
@@ -892,6 +899,7 @@
 "Stereo"
     Stereo
 "Still Recording: Edit"
+    Spelas in: Editera
 "Storage Group"
     Lagringsgrupp
 "Streaming"
@@ -917,6 +925,8 @@
     Torsdag
 "Time"
     Tid
+"Time Span"
+    Tidsperiod
 "Time Stretch Default"
     Förvalt tempo
 "Timeslot size"
@@ -940,10 +950,13 @@
 "Top Played Songs"
 "Total Length"
 "Total Recorded"
+    Totalt inspelat
 "Total Running Time"
+    Total körtid
 "Total Time"
     Total tid
 "Total Time:  %s"
+    Total tid: %s
 "Track #%s from the album '%s'"
 "Track Name"
     Spårnamn
@@ -954,6 +967,7 @@
 "Tuesday"
     Tisdag
 "Tuner Busy"
+    TV-mottagare upptagen
 "TV"
     TV
 "TV functions, including recorded programs."
@@ -1014,6 +1028,7 @@
 "Visit $1"
     Besök $1
 "Watched"
+    Har setts
 "Weather"
     Väder
 "Wednesday"
