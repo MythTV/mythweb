@@ -224,7 +224,7 @@
         }
     // autoexpire
         if (!isset($schedule->autoexpire))
-            $schedule->transcoder = get_backend_setting('AutoExpireDefault');
+            $schedule->autoexpire = get_backend_setting('AutoExpireDefault');
     // start early / end late
         if (!isset($schedule->startoffset))
             $schedule->startoffset = get_backend_setting('DefaultStartOffset');
