@@ -113,7 +113,7 @@
         var file = files[id];
         if (confirm("<?php echo t('Are you sure you want to delete the following show?')
                     ?>\n\n     "+file.title+": "+file.subtitle)) {
-            var url = '<?php echo root ?>tv/recorded?ajax=yes&delete=yes&chanid='+file.chanid
+            var url = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid
                       +'&starttime='+file.starttime
                       +(forget_old
                         ? '&forget_old=yes'
@@ -122,7 +122,7 @@
             if (programs_shown == 1)
                 location.href = url;
             else
-                submit_url(url, http_success, http_failure, id, file);
+                submit_url(url+'&ajax=yes', http_success, http_failure, id, file);
         // Debug statements - uncomment to verify that the right file is being deleted
             //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
             //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
