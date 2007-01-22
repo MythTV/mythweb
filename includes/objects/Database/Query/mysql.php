@@ -1,11 +1,11 @@
 <?php
 /**
  * This file was originally written by Chris Petersen for several different open
- * source projects.  It is distrubuted under the GNU General Public License.
+ * source projects.  It is distrubuted under the GNU General Public License.
  * I (Chris Petersen) have also granted a special LGPL license for this code to
  * several companies I do work for on the condition that these companies will
  * release any changes to this back to me and the open source community as GPL,
- * thus continuing to improve the open source version of the library.  If you
+ * thus continuing to improve the open source version of the library.  If you
  * would like to inquire about the status of this arrangement, please contact
  * me personally.
  *
@@ -18,7 +18,7 @@
  * @version     $Revision$
  * @author      $Author$
  * @copyright   Silicon Mechanics
- * @license     GPL (LGPL for SiMech)
+ * @license     GPL
  *
  * @package     MythWeb
  * @subpackage  Database
@@ -68,6 +68,16 @@ class Database_Query_mysql extends Database_Query {
             trigger_error($this->db->error, E_USER_ERROR);
         }
         $this->sh = mysql_query($this->last_query, $this->dbh);
+
+    // Cache these
+        if (is_bool($this->sh)) {
+            $this->insert_id     = mysql_insert_id($this->dbh);
+            $this->affected_rows = mysql_affected_rows($this->dbh);
+        }
+        else {
+            $this->num_rows      = mysql_num_rows($this->sh);
+        }
+
         if ($this->sh === false) {
             if ($this->db->fatal_errors)
                 trigger_error('SQL Error: '.mysql_error($this->dbh).' [#'.mysql_errno($this->dbh).']', E_USER_ERROR);
@@ -147,7 +157,7 @@ class Database_Query_mysql extends Database_Query {
  * @return int
 /**/
     function num_rows() {
-        return mysql_num_rows($this->sh);
+        return $this->num_rows;
     }
 
 /**
@@ -155,7 +165,7 @@ class Database_Query_mysql extends Database_Query {
  * @return int
 /**/
     function affected_rows() {
-        return mysql_affected_rows($this->dbh);
+        return $this->affected_rows;
     }
 
 /**
@@ -163,7 +173,7 @@ class Database_Query_mysql extends Database_Query {
  * @return int
 /**/
     function insert_id() {
-        return mysql_insert_id($this->dbh);
+        return $this->insert_id;
     }
 
 /**

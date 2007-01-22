@@ -1,11 +1,11 @@
 <?php
 /**
  * This file was originally written by Chris Petersen for several different open
- * source projects.  It is distrubuted under the GNU General Public License.
+ * source projects.  It is distrubuted under the GNU General Public License.
  * I (Chris Petersen) have also granted a special LGPL license for this code to
  * several companies I do work for on the condition that these companies will
  * release any changes to this back to me and the open source community as GPL,
- * thus continuing to improve the open source version of the library.  If you
+ * thus continuing to improve the open source version of the library.  If you
  * would like to inquire about the status of this arrangement, please contact
  * me personally.
  *
@@ -20,13 +20,13 @@
  * @version     $Revision$
  * @author      $Author$
  * @copyright   Silicon Mechanics
- * @license     GPL (LGPL for SiMech)
+ * @license     GPL
  *
  * @package     MythWeb
  * @subpackage  Database
  *
  * @uses        Database.php
- * @uses        Database_mysqli_compat.php
+ * @uses        Database_mysqlicompat.php
  * @uses        Database_Query.php
  *
 /**/
@@ -34,7 +34,7 @@
 /**
  * The basic mysqli database query type.
 /**/
-class Database_Query_mysqli_compat extends Database_Query {
+class Database_Query_mysqlicompat extends Database_Query {
 
 /**
  * Executes the query that was previously passed to the constructor.
@@ -49,7 +49,7 @@ class Database_Query_mysqli_compat extends Database_Query {
         $args = Database::smart_args($args);
     // Were enough arguments passed in?
         if (count($args) != $this->num_args_needed)
-            trigger_error('Database_Query_mysqli_compat called with '.count($args)." arguments, but requires $this->num_args_needed.", E_USER_ERROR);
+            trigger_error('Database_Query_mysqlicompat called with '.count($args)." arguments, but requires $this->num_args_needed.", E_USER_ERROR);
     // Finish any previous statements
         $this->finish();
     // Replace in the arguments
@@ -70,6 +70,33 @@ class Database_Query_mysqli_compat extends Database_Query {
             trigger_error($this->db->error, E_USER_ERROR);
         }
         $this->sh = mysqli_query($this->dbh, $this->last_query);
+
+    // Cache  these so the warning count below doesn't interfere
+        if (is_bool($this->sh)) {
+            $this->insert_id     = mysqli_insert_id($this->dbh);
+            $this->affected_rows = mysqli_affected_rows($this->dbh);
+        }
+        else {
+            $this->num_rows      = mysqli_num_rows($this->sh);
+        }
+
+    // On each execute, we clear the warnings of the statement handle, so it doesn't
+    // store them up
+        $this->warnings = array();
+    // Check the warnings and store them
+        if (mysqli_warning_count($this->dbh)) {
+            if ($sh = mysqli_query($this->dbh, 'SHOW WARNINGS')) {
+                while ($row = mysqli_fetch_row($sh))
+                    $this->warnings[] = array( '#'   => $row[1],
+                                               'MSG' => $row[2] );
+                mysqli_free_result($sh);
+            // This is used in errors.php to output in the backtrace
+                global $_DEBUG;
+                $_DEBUG['Database Warnings'][] = array( 'Query'    => $this->last_query,
+                                                        'Warnings' => $this->warnings );
+            }
+        }
+
         if ($this->sh === false) {
             if ($this->db->fatal_errors)
                 trigger_error('SQL Error: '.mysqli_error($this->dbh).' [#'.mysqli_errno($this->dbh).']', E_USER_ERROR);
@@ -149,7 +176,7 @@ class Database_Query_mysqli_compat extends Database_Query {
  * @return int
 /**/
     function num_rows() {
-        return mysqli_num_rows($this->sh);
+        return $this->num_rows;
     }
 
 /**
@@ -157,7 +184,7 @@ class Database_Query_mysqli_compat extends Database_Query {
  * @return int
 /**/
     function affected_rows() {
-        return mysqli_affected_rows($this->dbh);
+        return $this->affected_rows;
     }
 
 /**
@@ -165,7 +192,7 @@ class Database_Query_mysqli_compat extends Database_Query {
  * @return int
 /**/
     function insert_id() {
-        return mysqli_insert_id($this->dbh);
+        return $this->insert_id;
     }
 
 /**

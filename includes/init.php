@@ -115,9 +115,12 @@
     define('modules_path', $path);
 
 // Load the database connection routines
-    foreach (get_sorted_files('includes/objects/', '/^Database/') as $file) {
-        require_once "includes/objects/$file";
-    }
+    require_once 'includes/objects/Database.php';
+    require_once 'includes/objects/Database/mysql.php';
+    require_once 'includes/objects/Database/mysqlicompat.php';
+    require_once 'includes/objects/Database/Query.php';
+    require_once 'includes/objects/Database/Query/mysql.php';
+    require_once 'includes/objects/Database/Query/mysqlicompat.php';
 
 /**
  * All database connections should now go through this object.

@@ -1,11 +1,11 @@
 <?php
 /**
  * This file was originally written by Chris Petersen for several different open
- * source projects.  It is distrubuted under the GNU General Public License.
+ * source projects.  It is distrubuted under the GNU General Public License.
  * I (Chris Petersen) have also granted a special LGPL license for this code to
  * several companies I do work for on the condition that these companies will
  * release any changes to this back to me and the open source community as GPL,
- * thus continuing to improve the open source version of the library.  If you
+ * thus continuing to improve the open source version of the library.  If you
  * would like to inquire about the status of this arrangement, please contact
  * me personally.
  *
@@ -25,20 +25,20 @@
  * @version     $Revision$
  * @author      $Author$
  * @copyright   Silicon Mechanics
- * @license     GPL (LGPL for SiMech)
+ * @license     GPL
  *
  * @package     MythWeb
  * @subpackage  Database
  *
  * @uses        Database.php
- * @uses        Database_Query_mysqli_compat.php
+ * @uses        Database_Query_mysqlicompat.php
  *
 /**/
 
 /**
  * Database connection class for mysqli, the improved mysql engine.
 /**/
-class Database_mysqli_compat extends Database {
+class Database_mysqlicompat extends Database {
 
 /**
  * Constructor
@@ -50,6 +50,18 @@ class Database_mysqli_compat extends Database {
  * @param string $port      Port or socket address to connect to
 /**/
     function __construct($db_name, $login, $password, $server='localhost', $port=NULL) {
+    // Attempt to make sure the extension is loaded
+        if (!extension_loaded('mysql')) {
+        // This function is deprecated as of php5, so we see if we can use it
+            if (function_exists('dl')) {
+            // Attempt to allow dl to be used
+                ini_set('enable_dl', true);
+                if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
+                    dl('php_mysql.dll');
+                else
+                    dl('mysql.so');
+            }
+        }
     // Connect to the database
         $this->dbh = @mysqli_connect($server, $login, $password, NULL, $port)
             or $this->error("Can't connect to the database server.");
@@ -76,14 +88,14 @@ class Database_mysqli_compat extends Database {
     }
 
 /**
- *  Returns an un-executed Database_Query_mysqli_compat object
+ *  Returns an un-executed Database_Query_mysqlicompat object
  *
  *  @param string $query    The query string
  *
  *  @return Database_Query_mysqli
 /**/
     function &prepare($query) {
-        $new_query = new Database_Query_mysqli_compat($this, $query);
+        $new_query = new Database_Query_mysqlicompat($this, $query);
         return $new_query;
     }
 

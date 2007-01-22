@@ -1,11 +1,11 @@
 <?php
 /**
  * This file was originally written by Chris Petersen for several different open
- * source projects.  It is distrubuted under the GNU General Public License.
+ * source projects.  It is distrubuted under the GNU General Public License.
  * I (Chris Petersen) have also granted a special LGPL license for this code to
  * several companies I do work for on the condition that these companies will
  * release any changes to this back to me and the open source community as GPL,
- * thus continuing to improve the open source version of the library.  If you
+ * thus continuing to improve the open source version of the library.  If you
  * would like to inquire about the status of this arrangement, please contact
  * me personally.
  *
@@ -19,7 +19,7 @@
  * @version     $Revision$
  * @author      $Author$
  * @copyright   Silicon Mechanics
- * @license     GPL (LGPL for SiMech)
+ * @license     GPL
  *
  * @package     MythWeb
  * @subpackage  Database
@@ -31,22 +31,34 @@
 /**
  * Abstract superclass for all database query types.
 /**/
-class Database_Query {
+abstract class Database_Query {
 
 /** @var resource   The related database connection handle */
-    var $dbh = NULL;
+    public $dbh = NULL;
 
 /** @var resource   The current active statement handle */
-    var $sh = NULL;
+    public $sh = NULL;
 
 /** @var array      The query string, (depending on the engine, broken apart where arguments should be inserted) */
-    var $query = array();
+    public $query = array();
 
 /** @var string     The most recent query sent to the server */
-    var $last_query = '';
+    public $last_query = '';
+
+/** @var array      An array of warnings that this query generated */
+    public $warnings = array();
 
 /** @var int        Number of arguments required by $query */
-    var $num_args_needed = 0;
+    public $num_args_needed = 0;
+
+/** @var int        Cache of xxx_num_rows() so multiple queries don't trip over each other */
+    public $num_rows;
+
+/** @var int        Cache of xxx_affected_rows() so multiple queries don't trip over each other */
+    public $affected_rows;
+
+/** @var int        Cache of xxx_insert_id() so multiple queries don't trip over each other */
+    public $insert_id;
 
 /**
  * Constructor.  Parses $query and splits it at ? characters for later
