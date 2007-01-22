@@ -232,11 +232,14 @@
     Oddaja
 "Episode Number"
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Scenarist
 "File Size"
     velikost datoteke
+"Filter"
 "Filtered"
 "Find Date & Time Options"
 "Find Day"
@@ -260,7 +263,6 @@
 "freqid"
 "Friday"
     Petek
-"Generic Episodes"
 "generic_date"
     %e.%m.%Y
 "generic_time"
@@ -395,6 +397,7 @@
 "Never Record"
     Nikoli ne snemaj
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -595,8 +598,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Ponovno zaženi
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Resetiraj
 "Return to Statistics Page"

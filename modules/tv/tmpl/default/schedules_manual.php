@@ -25,35 +25,6 @@
 // Print the page contents
 ?>
 
-<script language="JavaScript" type="text/javascript">
-<!--
-
-// Toggle showing of the advanced schedule options
-    function toggle_advanced(show) {
-        if (show) {
-            $('_schedule_advanced').style.display     = 'block';
-            $('_schedule_advanced_off').style.display = 'none';
-            $('_show_advanced').style.display = 'none';
-            $('_hide_advanced').style.display = 'inline';
-        }
-        else {
-            $('_schedule_advanced').style.display     = 'none';
-            $('_schedule_advanced_off').style.display = 'block';
-            $('_show_advanced').style.display = 'inline';
-            $('_hide_advanced').style.display = 'none';
-        }
-    // Toggle the session setting, too.
-        new Ajax.Request('<?php echo root ?>tv/detail?=',
-                         {
-                            parameters: 'show_advanced_schedule='+(show ? 1 : '0'),
-                          asynchronous: true
-                         }
-                        );
-    }
-
-// -->
-</script>
-
     <div id="schedule">
 
         <form name="schedule_manually" method="post" action="<?php echo root ?>tv/schedules/manual<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
@@ -124,108 +95,7 @@
         </div>
 
         <div class="_options">
-            <h3><?php echo t('Advanced Options') ?>:</h3>
-            (<?php
-                echo '<a onclick="toggle_advanced(false)" id="_hide_advanced"';
-                if (!$_SESSION['tv']['show_advanced_schedule'])
-                    echo ' style="display: none"';
-                echo '>', t('Hide'), '</a>',
-                     '<a onclick="toggle_advanced(true)"  id="_show_advanced"';
-                if ($_SESSION['tv']['show_advanced_schedule'])
-                    echo ' style="display: none"';
-                echo '>', t('Show'), '</a>';
-            ?>)
-
-            <div id="_schedule_advanced_off"<?php
-                if ($_SESSION['tv']['show_advanced_schedule']) echo ' style="display: none"'
-                ?>>
-                <?php echo t('info: hidden advanced schedule') ?>
-            </div>
-
-            <dl class="clearfix" id="_schedule_advanced"<?php
-                if (!$_SESSION['tv']['show_advanced_schedule']) echo ' style="display: none"'
-                ?>>
-                <dt><?php echo t('Recording Profile') ?>:</dt>
-                <dd><?php profile_select($schedule->profile) ?></dd>
-                <dt><?php echo t('Transcoder') ?>:</dt>
-                <dd><?php transcoder_select($schedule->transcoder) ?></dd>
-                <dt><?php echo t('Recording Group') ?>:</dt>
-                <dd><?php recgroup_select($schedule->recgroup) ?></dd>
-                <dt><?php echo t('Storage Group') ?>:</dt>
-                <dd><?php storagegroup_select($schedule->storagegroup) ?></dd>
-                <dt><?php echo t('Recording Priority') ?>:</dt>
-                <dd><select name="recpriority"><?php
-                    for ($i=99; $i>=-99; --$i) {
-                        echo "<option value=\"$i\"";
-                        if ($schedule->recpriority == $i)
-                            echo ' SELECTED';
-                        echo ">$i</option>";
-                    }
-                    ?></select></dd>
-                <dt><?php echo t('Check for duplicates in') ?>:</dt>
-                <dd><select name="dupin"><?php
-                        echo '<option value="1"';
-                        if ($schedule->dupin == 1)
-                            echo ' SELECTED';
-                        echo '>' . t('Current recordings') . '</option>';
-                        echo '<option value="2"';
-                        if ($schedule->dupin == 2)
-                            echo ' SELECTED';
-                        echo '>' . t('Previous recordings') . '</option>';
-                        echo '<option value="4"';
-                        if ($schedule->dupin == 4)
-                            echo ' SELECTED';
-                        echo '>' . t('Only New Episodes') . '</option>';
-                        echo '<option value="15"';
-                        if ($schedule->dupin == 15 || $schedule->dupin == 0)
-                            echo ' SELECTED';
-                        echo '>' . t('All recordings') . '</option>';
-                   ?></select></dd>
-                <dt><?php echo t('Duplicate Check method') ?>:</dt>
-                <dd><select name="dupmethod"><?php
-                        echo '<option value="1"';
-                        if ($schedule->dupmethod == 1)
-                            echo ' SELECTED';
-                        echo '>' . t('None') . '</option>';
-                        echo '<option value="2"';
-                        if ($schedule->dupmethod == 2)
-                            echo ' SELECTED';
-                        echo '>' . t('Subtitle') . '</option>';
-                        echo '<option value="4"';
-                        if ($schedule->dupmethod == 4)
-                            echo ' SELECTED';
-                        echo '>' . t('Description') . '</option>';
-                        echo '<option value="6"';
-                        if ($schedule->dupmethod == 6 || $schedule->dupmethod == 0)
-                            echo ' SELECTED';
-                        echo '>'.t('Subtitle and Description').'</option>';
-                   ?></select></dd>
-                <dt><?php echo t('Auto-flag commercials') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo t('Auto-transcode') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="autotranscode"<?php if ($schedule->autotranscode) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo get_backend_setting('UserJobDesc1') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="autouserjob1"<?php if ($schedule->autouserjob1) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo get_backend_setting('UserJobDesc2') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="autouserjob2"<?php if ($schedule->autouserjob2) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo get_backend_setting('UserJobDesc3') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo get_backend_setting('UserJobDesc4') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo t('Auto-expire recordings') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo t('Record new and expire old') ?>:</dt>
-                <dd><input type="checkbox" class="radio" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1" /></dd>
-                <dt><?php echo t('No. of recordings to keep') ?>:</dt>
-                <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo html_entities($schedule->maxepisodes) ?>" /></dd>
-                <dt><?php echo t('Start Early') ?>:</dt>
-                <dd><input type="input" class="quantity" name="startoffset" value="<?php echo html_entities($schedule->startoffset) ?>" />
-                    <?php echo t('minutes') ?></dd>
-                <dt><?php echo t('End Late') ?>:</dt>
-                <dd><input type="input" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>" />
-                    <?php echo t('minutes') ?></dd>
-            </dl>
-
+<?php    require_once tmpl_dir.'_advanced_options.php' ?>
         </div>
 
         <div id="_schedule_submit">

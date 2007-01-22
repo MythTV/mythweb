@@ -276,11 +276,14 @@
 "Episode Number"
     Aflevering nr.
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Uitv. Producent
 "File Size"
     bestandsgrootte
+"Filter"
 "Filtered"
     Met filter
 "Find Date & Time Options"
@@ -311,7 +314,6 @@
     frequentie
 "Friday"
     Vrijdag
-"Generic Episodes"
 "generic_date"
     %a %e %b, %Y
 "generic_time"
@@ -467,6 +469,7 @@
 "Never Record"
     Nooit Opnemen
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
     Nieuwe Titels, Premieres
@@ -690,8 +693,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Opnieuw Uitvoeren
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Herstellen
 "Return to Statistics Page"

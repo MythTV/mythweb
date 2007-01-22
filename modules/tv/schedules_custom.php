@@ -202,6 +202,9 @@
     if ($schedule->length < 1)
         $schedule->length = 120;
 
+// Load the utility/display functions for scheduling
+    require_once 'includes/schedule_utils.php';
+
 // Load the class for this page
     require_once tmpl_dir.'schedules_custom.php';
 
@@ -240,6 +243,14 @@
             echo ' SELECTED';
         echo '>('.t('Any Channel').')</option>';
         foreach ($Channels as $channel) {
+        // Ignore invisible channels
+            if ($channel->visible == 0)
+                continue;
+        // Group by channum
+            if ($seen[$channel->channum])
+                continue;
+            $seen[$channel->channum] = $channel;
+
         // Print the option
             echo '<option value="', $channel->chanid, '"',
                  ' title="', html_entities($channel->name), '"';

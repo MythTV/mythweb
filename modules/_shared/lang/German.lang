@@ -276,11 +276,14 @@
 "Episode Number"
     Folge Nummer
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Produzent
 "File Size"
     Dateigröße
+"Filter"
 "Filtered"
     gefiltert
 "Find Date & Time Options"
@@ -311,7 +314,6 @@
     Kanal
 "Friday"
     Freitag
-"Generic Episodes"
 "generic_date"
     %e.%m.%Y
 "generic_time"
@@ -466,6 +468,7 @@
 "Never Record"
     Niemals aufnehmen
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
     Neue Sendungen, Erstausstrahlungen
@@ -690,8 +693,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Wiederholung
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Zurücksetzen
 "Return to Statistics Page"

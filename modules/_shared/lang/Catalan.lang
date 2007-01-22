@@ -287,11 +287,14 @@
 "Episode Number"
     Nº episodi
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Productor exec.
 "File Size"
     mida de l'arxiu
+"Filter"
 "Filtered"
     Filtrat
 "Find Date & Time Options"
@@ -323,7 +326,6 @@
     id freqüència
 "Friday"
     Divendres
-"Generic Episodes"
 "generic_date"
     %b %e, %Y
 "generic_time"
@@ -493,6 +495,7 @@
 "Never Record"
     Mai enregistrar
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
     Nous títols, estrenes
@@ -727,8 +730,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Repetir
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Reiniciar
 "Return to Statistics Page"

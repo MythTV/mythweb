@@ -282,11 +282,14 @@
 "Episode Number"
     Episode nummer
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Producer
 "File Size"
     filstørrelse
+"Filter"
 "Filtered"
     Filtreret
 "Find Date & Time Options"
@@ -318,7 +321,6 @@
     Frekvens ID
 "Friday"
     Fredag
-"Generic Episodes"
 "generic_date"
     %a %e %b %Y
 "generic_time"
@@ -471,6 +473,7 @@
 "Never Record"
     Optag aldrig
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
     Nye titler, premierer
@@ -697,8 +700,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Genudsendelse
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Nulstil
 "Return to Statistics Page"

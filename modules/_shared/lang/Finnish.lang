@@ -273,11 +273,14 @@
 "Episode Number"
     Jakson Numero
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Tuottaja
 "File Size"
     tiedostokoko
+"Filter"
 "Filtered"
     Suodatettu
 "Find Date & Time Options"
@@ -303,7 +306,6 @@
 "freqid"
 "Friday"
     Perjantai
-"Generic Episodes"
 "generic_date"
     %a %b %e, %Y
 "generic_time"
@@ -455,6 +457,7 @@
 "Never Record"
     Älä Koskaan Nauhoita
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -673,8 +676,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Tee uudelleen
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Alustus
 "Return to Statistics Page"

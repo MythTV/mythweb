@@ -161,6 +161,9 @@
     if ($schedule->length < 1)
         $schedule->length = 120;
 
+// Load the utility/display functions for scheduling
+    require_once 'includes/schedule_utils.php';
+
 // Load the class for this page
     require_once tmpl_dir.'schedules_manual.php';
 

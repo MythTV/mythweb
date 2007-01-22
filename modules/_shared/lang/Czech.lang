@@ -212,9 +212,12 @@
     Díl
 "Episode Number"
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
 "File Size"
+"Filter"
 "Filtered"
 "Find Date & Time Options"
 "Find Day"
@@ -235,7 +238,6 @@
 "freqid"
 "Friday"
     Pátek
-"Generic Episodes"
 "generic_date"
     %a %b %e, %Y
 "generic_time"
@@ -360,6 +362,7 @@
 "Never Record"
     Nikdy nenahrávat
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -551,8 +554,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Opakování
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
 "Return to Statistics Page"
 "Reverse Order"

@@ -177,9 +177,12 @@
 "Episode"
 "Episode Number"
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
 "File Size"
+"Filter"
 "Filtered"
 "Find Date & Time Options"
     Find Date &amp; Time Options
@@ -198,7 +201,6 @@
 "Found %s results for '%s'"
 "freqid"
 "Friday"
-"Generic Episodes"
 "generic_date"
     %a %b %e, %Y
 "generic_time"
@@ -313,6 +315,7 @@
 "Narrow Your Search"
 "Never Record"
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -492,8 +495,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Rerun
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
 "Return to Statistics Page"
 "Reverse Order"

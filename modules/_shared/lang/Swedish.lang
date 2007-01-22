@@ -321,12 +321,14 @@
     Avsnittsnummer
 "Everything"
     Allt
-"Exclude programs"
-    Uteslut program
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Producent
 "File Size"
     Filstorlek
+"Filter"
 "Filtered"
     Filtrerat
 "Find Date & Time Options"
@@ -359,7 +361,6 @@
     frekvens-id
 "Friday"
     Fredag
-"Generic Episodes"
 "generic_date"
     %Y-%m-%d
 "generic_time"
@@ -547,6 +548,7 @@
     Spela aldrig in
 "New"
     Ny
+"New Episodes Only"
 "New Search"
     Ny sökning
 "New Titles, Premieres"
@@ -792,8 +794,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Repris
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Återställ
 "Return to Statistics Page"

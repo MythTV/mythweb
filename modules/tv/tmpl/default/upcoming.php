@@ -110,8 +110,9 @@
                 $commands[] = 'forget_old';
                 break;
             case 'Repeat':
-                $rec_char = 'Rerun';
-                $css_class= 'duplicate';
+                $rec_char   = 'Rerun';
+                $css_class  = 'duplicate';
+                $commands[] = 'record';
                 break;
             case 'EarlierShowing':
                 $rec_char = t('Earlier');

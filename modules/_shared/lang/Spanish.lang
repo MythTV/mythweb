@@ -287,11 +287,14 @@
 "Episode Number"
     Nº Episodio
 "Everything"
-"Exclude programs"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
 "Exec. Producer"
     Productor ejec.
 "File Size"
     tamaño fichero
+"Filter"
 "Filtered"
     Filtrado
 "Find Date & Time Options"
@@ -323,7 +326,6 @@
     id frecuencia
 "Friday"
     Viernes
-"Generic Episodes"
 "generic_date"
     %b %e, %Y
 "generic_time"
@@ -491,6 +493,7 @@
 "Never Record"
     Nunca grabar
 "New"
+"New Episodes Only"
 "New Search"
 "New Titles, Premieres"
     Nuevos Títulos, Estrenos
@@ -725,8 +728,6 @@
 "Remove Item from Playlist"
 "Repeat"
     Reejecutar
-"Repeat and Generic Episodes"
-"Repeat Episodes"
 "Reset"
     Borrar
 "Return to Statistics Page"
