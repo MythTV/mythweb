@@ -125,7 +125,7 @@ $filters="&category=$Filter_Category&browse=$Filter_Browse&genre=$Filter_Genre&s
     <td nowrap><?php echo nice_length($show->length * 60) ?></td>
     <td nowrap><?php echo $show->userrating ?></td>
     <td nowrap><?php echo $show->year ?></td>
-    <td><a href="javascript:newWindow ('<?php echo root ?>video/edit?intid=<?php echo $show->intid ?>')" ><?php echo t('Edit') ?></a>
+    <td><a href="javascript:newWindow ('<?php echo root ?>video/edit?intid=<?php echo $show->intid ?>')" ><?php echo t('Edit') ?></a></td>
 <?php
         $row++;
     }
