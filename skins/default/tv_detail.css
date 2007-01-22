@@ -5,8 +5,7 @@
 #_info {
     float:              left;
     padding:            0px;
-    min-width:          350px;
-    max-width:          500px;
+    width:              45em;
     margin:             10px 0px 10px 10px;
     background-color:   #101a29;
     color:              #E0E0FF;
