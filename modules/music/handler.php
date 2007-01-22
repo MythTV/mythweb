@@ -50,22 +50,18 @@
         }
     }
 
-// Compact theme uses the old music module
-    if (tmpl == "compact") {
-        require_once("modules/music/music_handler.php");
+// Load the modules we'll need
+    if (in_array($Path[1], array('mp3act_js.js.php', 'mp3act_fat.js', 'mp3act_hidden.php'))) {
+        require_once 'modules/music/'.$Path[1];
+        exit;
     }
-    else {
-        if (in_array($Path[1], array('mp3act_js.js.php', 'mp3act_fat.js', 'mp3act_hidden.php'))) {
-            require_once 'modules/music/'.$Path[1];
-            exit;
-        }
-        if (strstr($Path[1],"mp3act_playstream.php") != false) {
-            require_once 'modules/music/mp3act_playstream.php';
-            exit;
-        }
-    // Too many messy headers/cookies errors in the main script -- wrapper it
-    // to avoid them.
-        ob_start();
-    // Load the main module
-        require_once 'modules/music/mp3act_main.php';
+    if (strstr($Path[1],'mp3act_playstream.php') != false) {
+        require_once 'modules/music/mp3act_playstream.php';
+        exit;
     }
+// Too many messy headers/cookies errors in the main script -- wrapper it
+// to avoid them.
+    ob_start();
+// Load the main module
+    require_once 'modules/music/mp3act_main.php';
+

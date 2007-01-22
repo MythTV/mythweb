@@ -21,7 +21,7 @@
     $db->error(false);
 
 // If music is enabled, add it to the list.
-    if ($has_music) {
+    if ($has_music && tmpl == 'default') {
         $Modules['music'] = array('path'        => 'music',
                                   'sort'        => 2,
                                   'name'        => t('Music'),

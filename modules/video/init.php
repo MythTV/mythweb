@@ -21,10 +21,11 @@
     $db->error(false);
 
 // If video is enabled, add it to the list.
-    if ($has_video)
+    if ($has_video && tmpl == 'default') {
         $Modules['video'] = array('path'        => 'video',
                                   'sort'        => 3,
                                   'name'        => t('Video'),
                                   'description' => t('')
                                  );
+    }
 

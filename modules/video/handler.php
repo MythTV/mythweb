@@ -92,7 +92,7 @@
     }
 
 // Load the sorting routines
-    require_once "includes/sorting.php";
+    require_once 'includes/sorting.php';
 
 // Queries for a specific program title
     isset($_GET['title']) or $_GET['title'] = $_POST['title'];
