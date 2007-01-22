@@ -23,7 +23,7 @@
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
 /**
- * Sorry, no advanced search options in the compact template for now.
+ * Sorry, no advanced search options in the lite template for now.
 /**/
 
 // Print the results list if a search was performed

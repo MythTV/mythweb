@@ -179,7 +179,7 @@ EOM;
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
     <td colspan="2" valign="top"><?php echo $show->description ?></td>
     <td colspan="<?php echo (false && $_SESSION['recorded_pixmaps'] ? 3 : 5) + $recgroup_cols ?>" class="_progflags"><?php
-        // Auto expire is not interactive in the compact template
+        // Auto expire is not interactive in the lite template
             if ($show->auto_expire)
                 echo '<img src="', skin_url, '/img/flags/autoexpire.png" title="', t('Auto Expire'), '">';
         // The rest of the flags are just for display

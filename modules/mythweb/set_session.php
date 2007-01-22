@@ -39,7 +39,7 @@
 /**/
     function template_select() {
         echo '<select name="tmpl">';
-        foreach (array('default', 'compact') as $tmpl) {
+        foreach (array('default', 'lite') as $tmpl) {
         // Print the option
             echo '<option value="'.html_entities($tmpl).'"';
             if ($_SESSION['tmpl'] == $tmpl)
