@@ -34,31 +34,31 @@
 abstract class Database_Query {
 
 /** @var resource   The related database connection handle */
-    public $dbh = NULL;
+     $dbh = NULL;
 
 /** @var resource   The current active statement handle */
-    public $sh = NULL;
+     $sh = NULL;
 
 /** @var array      The query string, (depending on the engine, broken apart where arguments should be inserted) */
-    public $query = array();
+     $query = array();
 
 /** @var string     The most recent query sent to the server */
-    public $last_query = '';
+     $last_query = '';
 
 /** @var array      An array of warnings that this query generated */
-    public $warnings = array();
+     $warnings = array();
 
 /** @var int        Number of arguments required by $query */
-    public $num_args_needed = 0;
+     $num_args_needed = 0;
 
 /** @var int        Cache of xxx_num_rows() so multiple queries don't trip over each other */
-    public $num_rows;
+     $num_rows;
 
 /** @var int        Cache of xxx_affected_rows() so multiple queries don't trip over each other */
-    public $affected_rows;
+     $affected_rows;
 
 /** @var int        Cache of xxx_insert_id() so multiple queries don't trip over each other */
-    public $insert_id;
+     $insert_id;
 
 /**
  * Constructor.  Parses $query and splits it at ? characters for later
