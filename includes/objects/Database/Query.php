@@ -31,7 +31,7 @@
 /**
  * Abstract superclass for all database query types.
 /**/
-abstract class Database_Query {
+class Database_Query {
 
 /** @var resource   The related database connection handle */
      var $dbh = NULL;

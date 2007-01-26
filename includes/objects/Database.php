@@ -41,7 +41,7 @@
  * Database::connect() function that handles creating instances of the
  * appropriate database handle for the requested database engine.
 /**/
-abstract class Database {
+class Database {
 
 /** @var resource   Resource handle for this database connection */
     var $dbh;
