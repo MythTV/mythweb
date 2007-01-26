@@ -57,7 +57,7 @@
         global $db;
         if (!empty($_SERVER['REMOTE_USER']))
             $id = 'user:'.$_SERVER['REMOTE_USER'];
-        $db->query('REPLACE INTO mythweb_sessions (id, modified, data) VALUES(?,NULL,?)',
+        $db->query('REPLACE INTO mythweb_sessions (id, modified, data) VALUES (?,NULL,?)',
                    $id, $data);
         if (!$db->affected_rows())
             return false;
