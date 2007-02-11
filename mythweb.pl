@@ -11,7 +11,15 @@
 # Load some required modules
     use CGI qw/:standard/;
     use DBI;
+    use Cwd 'abs_path';
     use File::Basename;
+
+# pwd is / when running under mod_rewrite, so we should chdir to the script
+# directory for consistency
+    chdir dirname(abs_path($ENV{'SCRIPT_FILENAME'} or $0));
+
+# Don't forget to include the current directory in the search path.
+    substr($ENV{'PATH'}, 0, 0) = '.:';
 
 # Create a cgi object;
     our $cgi = new CGI;

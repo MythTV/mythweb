@@ -191,10 +191,21 @@
     #
     #    Header append Vary User-Agent env=!dont-vary
 
-    # Execute perl scripts in cgi mode (so we can stream properly)
+    # Set up the perl handler so we can stream properly.
+    #
+    # IMPORTANT!!  Please see the note in INSTALL section 5.1 that explains why
+    # this may not always properly detect mod_perl.
+    #
         <Files *.pl>
-            SetHandler cgi-script
-            Options    +ExecCGI
+            <IfModule mod_perl.c>
+                SetHandler perl-script
+                PerlResponseHandler ModPerl::Registry
+                PerlOptions +ParseHeaders
+            </IfModule>
+            <IfModule !mod_perl.c>
+                SetHandler cgi-script
+            </IfModule>
+            Options +ExecCGI
         </Files>
 
     </Directory>

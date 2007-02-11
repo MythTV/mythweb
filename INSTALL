@@ -195,6 +195,10 @@ default, but I strongly recommend that you enable.  They require:
     mod_deflate
     mod_headers
 
+You could also benefit somewhat from:
+
+    mod_perl
+
 =================
 5.1 Apache Config
 =================
@@ -238,6 +242,17 @@ You will have to figure out the correct path on your own, but once you do, move
 the MythWeb config file into place like so:
 
     mv mythweb.conf.apache /etc/apache2/conf.d/mythweb.conf
+
+IMPORTANT:  The included mythweb.conf file will only detect mod_perl if it has
+already been loaded by apache.  If your distro uses the conf.d directory to load
+a perl.conf file (or similar), please remember that the files are loaded
+alphabetically and that "m" comes before "p".  This means that the mod_perl
+setup will load after mythweb.conf, leaving you in cgi mode instead of the
+slightly-faster mod_perl handler.  A simple workaround for this is to just use a
+prefix that causes the file to sort after "perl.conf":
+
+    mv mythweb.conf.apache /etc/apache2/conf.d/zzz.mythweb.conf
+
 
 ============
 6.0 Lighttpd
