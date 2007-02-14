@@ -53,6 +53,13 @@
     if (empty($Path[1]) && is_array($_SESSION['tv']['last']))
         array_splice($Path, 1, count($Path), $_SESSION['tv']['last']);
 
+// Flash player?
+    if ($Path[1] == 'flvplayer.swf') {
+        header('Content-Type: application/x-shockwave-flash');
+        readfile('modules/tv/flvplayer.swf');
+        exit;
+    }
+
 // Unknown section?  Use the default
     if (!in_array($Path[1], array('recording_detail', 'detail', 'channel', 'search', 'movies'))
             && empty($Modules['tv']['links'][$Path[1]]))

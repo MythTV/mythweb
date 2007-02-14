@@ -16,6 +16,13 @@
 # Autoflush
     $|++;
 
+    our $ffmpeg_pid;
+# Shutdown cleanup
+    END {
+        kill(9, $ffmpeg_pid) if ($ffmpeg_pid);
+        usleep(100000) while (wait > 0);
+    }
+
 # Which show are we streaming?
     our $chanid    = url_param('chanid');
     our $starttime = url_param('starttime');
@@ -88,6 +95,48 @@ EOF
                      -Content_disposition => " attachment; filename=\"$title-$subtitle.asx\"",
                     ),
               $file;
+        exit;
+    }
+
+# Flash?
+
+    elsif ($ENV{'REQUEST_URI'} =~ /\.flvp$/i) {
+    # URI back to this file?  We just need to take the current URI and strip
+    # off the .flvp suffix.
+        my $uri = ($ENV{'HTTPS'} || $ENV{'SERVER_PORT'} == 443)
+                   ? 'https'
+                   : 'http';
+        $uri .= '://'.($ENV{'SERVER_NAME'} or $ENV{'SERVER_ADDR'}).':'.$ENV{'SERVER_PORT'}
+               .$ENV{'REQUEST_URI'};
+        $uri =~ s/\.flvp$/\.flv/i;
+    # Print a page to hold the player
+        print header();
+        print <<EOF;
+<html>
+<head>
+</head>
+<body>
+<embed src="${web_root}tv/flvplayer.swf" width="320" height="260" bgcolor="#FFFFFF"
+type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+flashvars="file=$uri&autoStart=true" />
+</body>
+EOF
+        exit;
+    }
+    elsif ($ENV{'REQUEST_URI'} =! /\.flv$/i) {
+    # Print the movie
+        $ffmpeg_pid = open(DATA, "/usr/bin/ffmpeg -y -i $filename -s 320x240 -f flv -ar 11025 /dev/stdout |");
+        unless ($ffmpeg_pid) {
+            print header(),
+                  "Can't do ffmpeg:  $!";
+            exit;
+        }
+        print header(-type => 'video/x-flv');
+        my $buffer;
+        while (read DATA, $buffer, 262144) {
+            print $buffer;
+        }
+        close DATA;
         exit;
     }
 
