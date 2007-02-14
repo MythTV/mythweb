@@ -18,6 +18,7 @@
 
     our $ffmpeg_pid;
 # Shutdown cleanup
+# NOTE:  This doesn't actually seem to work.
     END {
         kill(9, $ffmpeg_pid) if ($ffmpeg_pid);
         usleep(100000) while (wait > 0);
@@ -99,6 +100,19 @@ EOF
     }
 
 # Flash?
+#
+# This currently relies on the "open" but not GPL-compatible flvplayer.swf from:
+#
+#   http://www.jeroenwijering.com/?item=Flash_Video_Player
+#
+# You will have to download it yourself and install it at:
+#
+#   modules/tv/flvplayer.swf
+#
+# I am currently looking for someone who would be interested in developing a
+# legally-compatible flv player to include in MythWeb, so please contact me if
+# you are interested.
+#
 
     elsif ($ENV{'REQUEST_URI'} =~ /\.flvp$/i) {
     # URI back to this file?  We just need to take the current URI and strip
