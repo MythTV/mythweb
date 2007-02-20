@@ -22,7 +22,7 @@
 ?>
 
 <div id="ajax_working" class="hidden">
- <?php echo t('<span id=\'ajax_num_requests\'>0</span> requests pending.'); ?>
+ <?php echo t('$1 requests pending.', '<span id="ajax_num_requests">0</span>'); ?>
 </div>
 
 </body>

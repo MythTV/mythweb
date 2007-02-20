@@ -30,6 +30,7 @@
     $1 nauhoitus
 "$1 recordings"
     $1 nauhoitusta
+"$1 requests pending."
 "$1 Search"
 "$1 TB"
     $1 TB
@@ -43,7 +44,6 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
-"<span id='ajax_num_requests'>0</span> requests pending."
 "Action"
     Toiminto
 "Activate"
