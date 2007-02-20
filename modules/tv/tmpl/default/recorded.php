@@ -121,8 +121,10 @@
         // Do the actual deletion
             if (programs_shown == 1)
                 location.href = url;
-            else
+            else {
+                ajax_add_request();
                 submit_url(url+'&ajax=yes', http_success, http_failure, id, file);
+            }
         // Debug statements - uncomment to verify that the right file is being deleted
             //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
             //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
@@ -189,11 +191,13 @@
         $('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
         // Eventually, we should perform the removal-from-the-list here instead
         // of in confirm_delete()
+        ajax_remove_request();
     }
 
     function http_failure(err, errstr, args) {
         var file = args[0];
         alert("Can't delete "+file.title+': '+file.subtitle+".\nHTTP Error:  " + errstr + ' (' + err + ')');
+        ajax_remove_request();
     }
 
 // -->

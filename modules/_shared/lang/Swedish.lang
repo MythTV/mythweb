@@ -54,6 +54,7 @@
     &deg;C
 "&deg;F"
     &deg;F
+"<span id='ajax_num_requests'>0</span> requests pending."
 "Action"
     Handling
 "Activate"

@@ -36,6 +36,7 @@
     <script type="text/javascript" src="<?php echo root ?>js/visibility.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/ajax.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/ajax_utils.js"></script>
 
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/header.css" />
