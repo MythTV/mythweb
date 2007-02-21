@@ -162,7 +162,6 @@
 "Context"
 "contrast"
 "Count"
-"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -175,6 +174,7 @@
     Trenutno brskanje:  $1
 "Custom"
 "Custom Schedule"
+"Custom Search"
 "Data"
 "Date"
     Datum
@@ -201,7 +201,6 @@
 "Direct Download"
 "Directed by"
     Režiser
-"director"
 "Display"
     Prikaz
 "Displaying"
@@ -304,7 +303,6 @@
     Vlažnost
 "IMDB"
     IMBD
-"imdb rating"
 "Inactive"
 "info: activate recording"
 "info: default recording"
@@ -457,7 +455,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
 "Power"
@@ -491,7 +490,6 @@
 "Random Type"
 "Rating"
     Ocena
-"rating"
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -602,7 +600,6 @@
 "Reset"
     Resetiraj
 "Return to Statistics Page"
-"Reverse Order"
 "Rows to show between timeslot info"
 "Saturday"
     Sobota
@@ -772,6 +769,8 @@
     UV srednji
 "Value"
 "Video"
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
 "Videos"
 "View Albums by %s"
@@ -804,7 +803,6 @@
     Napisal
 "xmltvid"
 "Year"
-"year"
 "Yes"
     Da
 "Yesterday"

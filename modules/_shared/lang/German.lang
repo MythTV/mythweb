@@ -191,8 +191,6 @@
 "contrast"
     Kontrast
 "Count"
-"cover"
-    Titelbild
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -207,6 +205,7 @@
     freie Planung
 "Custom Schedule"
     Erweiterte Aufnahmeregel
+"Custom Search"
 "Data"
 "Date"
     Datum
@@ -239,8 +238,6 @@
 "Direct Download"
 "Directed by"
     Regie
-"director"
-    Regisseur
 "Display"
     Anzeigen
 "Displaying"
@@ -360,8 +357,6 @@
     Luftfeuchtigkeit
 "IMDB"
     IMDB
-"imdb rating"
-    IMDB Bewertung
 "Inactive"
     Inaktiv
 "info: activate recording"
@@ -538,8 +533,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
-    Handlung
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mögliche Konflikte mit dieser Sendung
@@ -580,8 +575,6 @@
 "Random Type"
 "Rating"
     Freigegeben ab
-"rating"
-    Bewertung
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -697,8 +690,6 @@
 "Reset"
     Zurücksetzen
 "Return to Statistics Page"
-"Reverse Order"
-    Umsortieren
 "Rows to show between timeslot info"
 "Saturday"
     Samstag
@@ -895,6 +886,8 @@
 "Value"
 "Video"
     Video
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
     Wiedergabe- filter
 "Videos"
@@ -940,8 +933,6 @@
 "xmltvid"
     XMLTV ID
 "Year"
-"year"
-    Jahr
 "Yes"
     Ja
 "Yesterday"

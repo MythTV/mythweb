@@ -1,0 +1,45 @@
+    .video {
+        position:           relative;
+        padding:            1em;
+        float:              left;
+        background-color:   darkblue;
+        margin-top:         1em;
+        margin-left:        1em;
+        width:              200px;
+        height:             160px;
+        border:             1px solid black;
+    }
+
+    .video .title {
+        font-weight:        bold;
+        margin-bottom:      .5em;
+    }
+
+    .video img {
+        float:              left;
+        padding-right:      1em;
+    }
+
+    .video .command {
+        position:           absolute;
+        bottom:             1em;
+        right:              1em;
+    }
+
+    #window {
+        position:           fixed;
+        left:               40%;
+        top:                35%;
+        background-color:   green;
+        width:              20%;
+        padding:            1em;
+        z-index:            10;
+        border:             2px solid grey;
+    }
+
+    #window_title {
+        position:           absolute;
+        top:                1px;
+        left:               1em;
+        font-weight:        bold;
+    }

@@ -191,8 +191,6 @@
 "contrast"
     contrast
 "Count"
-"cover"
-    hoes
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -207,6 +205,7 @@
     Geavanceerd
 "Custom Schedule"
     Geavanceerde Opname
+"Custom Search"
 "Data"
 "Date"
     Datum
@@ -239,8 +238,6 @@
 "Direct Download"
 "Directed by"
     Regisseur
-"director"
-    regisseur
 "Display"
     Tonen
 "Displaying"
@@ -360,8 +357,6 @@
     Vochtigheid
 "IMDB"
     IMDB
-"imdb rating"
-    imdb beoordeling
 "Inactive"
     Niet actief
 "info: activate recording"
@@ -539,8 +534,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
-    korte inhoud
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mogelijk conflict met dit programma
@@ -580,8 +575,6 @@
 "Random Type"
 "Rating"
     Beoordeling
-"rating"
-    beoordeling
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -697,8 +690,6 @@
 "Reset"
     Herstellen
 "Return to Statistics Page"
-"Reverse Order"
-    Volgorde omkeren
 "Rows to show between timeslot info"
 "Saturday"
     Zaterdag
@@ -896,6 +887,8 @@
 "Value"
 "Video"
     Films
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
     videofilters
 "Videos"
@@ -940,8 +933,6 @@
 "xmltvid"
     xmltvid
 "Year"
-"year"
-    jaar
 "Yes"
     Ja
 "Yesterday"

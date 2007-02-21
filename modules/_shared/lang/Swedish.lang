@@ -228,8 +228,6 @@
     kontrast
 "Count"
     Antal
-"cover"
-    omslag
 "Create a New Playlist"
     Skapa ny spellista
 "Create a Random Mix"
@@ -245,6 +243,7 @@
     Egen
 "Custom Schedule"
     Eget schema
+"Custom Search"
 "Data"
     Data
 "Date"
@@ -280,8 +279,6 @@
     Direkt nerladdning
 "Directed by"
     Regi
-"director"
-    regissör
 "Display"
     Visning
 "Displaying"
@@ -413,8 +410,6 @@
     Luftfuktighet
 "IMDB"
     IMDB
-"imdb rating"
-    imdb-betyg
 "Inactive"
     Inaktiv
 "info: activate recording"
@@ -631,8 +626,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
-    handling
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
     Möjliga konflikter
 "Possible conflicts with this show"
@@ -678,8 +673,6 @@
 "Random Type"
 "Rating"
     Betyg
-"rating"
-    betyg
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -798,8 +791,6 @@
 "Reset"
     Återställ
 "Return to Statistics Page"
-"Reverse Order"
-    Omvänd ordning
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo
 "Saturday"
@@ -1021,6 +1012,8 @@
     Värde
 "Video"
     Video
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
     videofilter
 "Videos"
@@ -1069,8 +1062,6 @@
     xmltv-id
 "Year"
     År
-"year"
-    år
 "Yes"
     Ja
 "Yesterday"

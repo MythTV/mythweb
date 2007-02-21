@@ -167,7 +167,6 @@
 "Context"
 "contrast"
 "Count"
-"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -180,6 +179,7 @@
     Actuellement Affich&eacute;
 "Custom"
 "Custom Schedule"
+"Custom Search"
 "Data"
 "Date"
     Date
@@ -206,7 +206,6 @@
 "Direct Download"
 "Directed by"
     Mis en scène par
-"director"
 "Display"
     Afficher
 "Displaying"
@@ -309,7 +308,6 @@
     Humidit&eacute;
 "IMDB"
     Allocin&eacute;
-"imdb rating"
 "Inactive"
     Inactif
 "info: activate recording"
@@ -463,7 +461,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
 "Power"
@@ -497,7 +496,6 @@
 "Random Type"
 "Rating"
     &eacute;valuation
-"rating"
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -609,7 +607,6 @@
 "Reset"
     Reset
 "Return to Statistics Page"
-"Reverse Order"
 "Rows to show between timeslot info"
 "Saturday"
     Samedi
@@ -780,6 +777,8 @@
     Indice UV mod&eacute;r&eacute;
 "Value"
 "Video"
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
 "Videos"
 "View Albums by %s"
@@ -812,7 +811,6 @@
     Ecrit par
 "xmltvid"
 "Year"
-"year"
 "Yes"
     Oui
 "Yesterday"

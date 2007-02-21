@@ -201,8 +201,6 @@
     contraste
 "Count"
     Comptar
-"cover"
-    caràtula
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -217,6 +215,7 @@
     Avançada
 "Custom Schedule"
     Programació avançada
+"Custom Search"
 "Data"
     Dades
 "Date"
@@ -250,8 +249,6 @@
 "Direct Download"
 "Directed by"
     Dirigido por
-"director"
-    director
 "Display"
     Mostrar
 "Displaying"
@@ -374,8 +371,6 @@
     Humitat
 "IMDB"
     IMDB
-"imdb rating"
-    puntuació imdb
 "Inactive"
     Inactiu
 "info: activate recording"
@@ -573,8 +568,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
-    resúm
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
     Possibles conflictes amb aquest programa
@@ -616,8 +611,6 @@
 "Random Type"
 "Rating"
     Puntuació
-"rating"
-    puntuació
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -734,8 +727,6 @@
 "Reset"
     Reiniciar
 "Return to Statistics Page"
-"Reverse Order"
-    Ordre invers
 "Rows to show between timeslot info"
     Fileres a mostrar entre informació
 "Saturday"
@@ -943,6 +934,8 @@
     Valor
 "Video"
     Vídeo
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
     filtres vídeo
 "Videos"
@@ -988,8 +981,6 @@
     Escrit por
 "xmltvid"
 "Year"
-"year"
-    any
 "Yes"
     Si
 "Yesterday"

@@ -191,8 +191,6 @@
     コントラスト
 "Count"
     カウント
-"cover"
-    カバー
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -207,6 +205,7 @@
     カスタム
 "Custom Schedule"
     カスタム録画
+"Custom Search"
 "Data"
 "Date"
     日付
@@ -238,8 +237,6 @@
 "Details for: $1"
 "Direct Download"
 "Directed by"
-    監督
-"director"
     監督
 "Display"
     表示
@@ -358,8 +355,6 @@
 "Humidity"
     湿度
 "IMDB"
-"imdb rating"
-    imdb格付け
 "Inactive"
     無効
 "info: activate recording"
@@ -549,8 +544,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
-    脚本
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
     次の番組と衝突しています
@@ -592,8 +587,6 @@
 "Random Type"
 "Rating"
     レーティング
-"rating"
-    格付け
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -710,8 +703,6 @@
 "Reset"
     リセット
 "Return to Statistics Page"
-"Reverse Order"
-    逆順
 "Rows to show between timeslot info"
 "Saturday"
     土曜日
@@ -910,6 +901,8 @@
 "Value"
 "Video"
     ビデオ
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
     ビデオフィルタ
 "Videos"
@@ -954,8 +947,6 @@
     著者
 "xmltvid"
 "Year"
-"year"
-    年
 "Yes"
     はい
 "Yesterday"

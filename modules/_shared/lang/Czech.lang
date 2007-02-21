@@ -149,7 +149,6 @@
 "Context"
 "contrast"
 "Count"
-"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -163,6 +162,7 @@
 "Custom"
 "Custom Schedule"
     Upravený rozvrh
+"Custom Search"
 "Data"
 "Date"
     Datum
@@ -185,7 +185,6 @@
 "Details for: $1"
 "Direct Download"
 "Directed by"
-"director"
 "Display"
     Zobrazení
 "Displaying"
@@ -272,7 +271,6 @@
 "Humidity"
     Vlhkost
 "IMDB"
-"imdb rating"
 "Inactive"
     Neaktivní
 "info: activate recording"
@@ -420,7 +418,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
 "Power"
@@ -450,7 +449,6 @@
 "Random Type"
 "Rating"
     Hodnocení
-"rating"
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -557,7 +555,6 @@
     Opakování
 "Reset"
 "Return to Statistics Page"
-"Reverse Order"
 "Rows to show between timeslot info"
 "Saturday"
     Sobota
@@ -697,6 +694,8 @@
 "UV Moderate"
 "Value"
 "Video"
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
 "Videos"
 "View Albums by %s"
@@ -733,7 +732,6 @@
 "Written by"
 "xmltvid"
 "Year"
-"year"
 "Yes"
     Ano
 "Yesterday"

@@ -188,8 +188,6 @@
 "contrast"
     Kontrasti
 "Count"
-"cover"
-    Kuvake
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -204,6 +202,7 @@
     Mukautettu
 "Custom Schedule"
     Mukautettu Ajastus
+"Custom Search"
 "Data"
 "Date"
     Aika
@@ -236,8 +235,6 @@
 "Direct Download"
 "Directed by"
     Ohjaus
-"director"
-    Ohjaaja
 "Display"
     Tulosta
 "Displaying"
@@ -353,8 +350,6 @@
     Ilmankosteus
 "IMDB"
     Internet MDB
-"imdb rating"
-    imbd arvostelu
 "Inactive"
     Ei aktiivinen
 "info: activate recording"
@@ -523,8 +518,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
-    juoni
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
     Saattaa olla ristiriidassa tämän ohjelman kanssa
@@ -563,8 +558,6 @@
 "Random Type"
 "Rating"
     Arvostelu
-"rating"
-    arvostelu
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -680,8 +673,6 @@
 "Reset"
     Alustus
 "Return to Statistics Page"
-"Reverse Order"
-    Päinvastainen Järjestys
 "Rows to show between timeslot info"
 "Saturday"
     Lauantai
@@ -875,6 +866,8 @@
 "Value"
 "Video"
     Videot
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
     Videosuodattimet
 "Videos"
@@ -918,8 +911,6 @@
     Käsikirjoittaja
 "xmltvid"
 "Year"
-"year"
-    vuosi
 "Yes"
     Kyllä
 "Yesterday"

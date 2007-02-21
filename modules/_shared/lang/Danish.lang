@@ -197,8 +197,6 @@
 "contrast"
     Kontrast
 "Count"
-"cover"
-    cover
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -213,6 +211,7 @@
     Valgfri
 "Custom Schedule"
     Valgfri søgning
+"Custom Search"
 "Data"
     Data
 "Date"
@@ -245,8 +244,6 @@
 "Direct Download"
 "Directed by"
     Instrueret af
-"director"
-    Instruktør
 "Display"
     Vis
 "Displaying"
@@ -362,7 +359,6 @@
     Luftfugtighed
 "IMDB"
     IMDB
-"imdb rating"
 "Inactive"
     Ikke aktiv
 "info: activate recording"
@@ -547,7 +543,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"plot"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mulige konfligter med denne udsendelse
@@ -587,8 +584,6 @@
 "Random Type"
 "Rating"
     Karakterer
-"rating"
-    rating
 "Recently Added Albums"
 "Recently Played Songs"
 "recgroup"
@@ -704,8 +699,6 @@
 "Reset"
     Nulstil
 "Return to Statistics Page"
-"Reverse Order"
-    Modsat orden
 "Rows to show between timeslot info"
 "Saturday"
     Lørdag
@@ -906,6 +899,8 @@
     Værdi
 "Video"
     Video
+"Video: Error: Artwork"
+"Video: Error: IMDB"
 "videofilters"
     videofiltre
 "Videos"
@@ -951,8 +946,6 @@
     Skrevet af
 "xmltvid"
 "Year"
-"year"
-    år
 "Yes"
     Ja
 "Yesterday"
