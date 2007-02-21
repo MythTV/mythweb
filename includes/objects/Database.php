@@ -139,8 +139,11 @@ class Database {
             return array($args);
     // Loop
         foreach ($args as $arg) {
-            foreach (Database::smart_args($arg) as $arg2) {
-                $new_args[] = $arg2;
+            if (is_array($arg)) {
+                $new_args += Database::smart_args($arg);
+            }
+            else {
+                $new_args[] = $arg;
             }
         }
     // Return
@@ -201,8 +204,6 @@ class Database {
     function &query($query) {
     // Hack to get query_row and query_assoc working correctly
         $args = array_slice(func_get_args(), 1);
-    // Split out sub-arrays, etc..
-        $args = Database::smart_args($args);
     // Create and return a database query
         $start_time = microtime(true);
         $this->last_sh =& $this->prepare($query);
