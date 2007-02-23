@@ -423,6 +423,7 @@
 "Max star rating for movies"
 "minutes"
     minuten
+"Missing Cover"
 "Monday"
     Maandag
 "More"
@@ -887,8 +888,13 @@
 "Value"
 "Video"
     Films
-"Video: Error: Artwork"
 "Video: Error: IMDB"
+"Video: Error: IMDB: Not Found"
+"Video: Error: Missing ID"
+"Video: IMDB: No Matches"
+"Video: IMDB: Window Title"
+"Video: Warning: Artwork"
+"Video: Warning: fopen"
 "videofilters"
     videofilters
 "Videos"

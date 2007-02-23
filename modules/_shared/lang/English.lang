@@ -283,6 +283,7 @@
 "matches"
 "Max star rating for movies"
 "minutes"
+"Missing Cover"
 "Monday"
 "More"
 "more"
@@ -626,10 +627,20 @@
 "UV Moderate"
 "Value"
 "Video"
-"Video: Error: Artwork"
-    Updating the video artwork failed. Check the permissions on your Video Artwork Directory for this host
 "Video: Error: IMDB"
-    I'm sorry, but there was a failure getting the imdb data. Please check your imdb number if you entered it by hand.
+    Fatal Error, I am sorry, but there was a failure getting the imdb data. Please check your imdb number if you entered it by hand.
+"Video: Error: IMDB: Not Found"
+    Fatal Error, I can not seem to find imdb.pl, is it installed?
+"Video: Error: Missing ID"
+    Fatal Error, For some reason the id was not sent to the imdb script. Bailing out.
+"Video: IMDB: No Matches"
+    There are not any matches for this title, please use the custom search to enter in a imdb number or a different title to search again.
+"Video: IMDB: Window Title"
+    IMDB Matches
+"Video: Warning: Artwork"
+    Warning, Updating the video artwork failed. Please check the permissions on your Video Artwork Directory for this host
+"Video: Warning: fopen"
+    Warning, Your php.ini file has allow_url_fopen set to Off. To download the file, it is required to be On. Artwork will not be updated.
 "videofilters"
 "Videos"
 "View Albums by %s"

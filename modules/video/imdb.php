@@ -21,12 +21,16 @@
 // this *should* work well enough...
     else
         $imdb = `locate imdb.pl | head -n 1`;
-    if (is_null($imdb))
+    if (is_null($imdb)) {
+        echo 'Error: '.t('Video: Error: IMDB: Not Found')."\n";
         return;
+    }
 
 // We need the id always set, so enforce that here
-    if (!isset($_REQUEST['id']))
+    if (!isset($_REQUEST['id'])) {
+        echo 'Error: '.t('Video: Error: Missing ID')."\n";
         return;
+    }
 
     switch($_REQUEST['action'])
     {
@@ -53,15 +57,16 @@
         if (strlen($output) == 0) {
             $output = shell_exec($imdb.' -M tv=both\;type=fuzzy "'.$title.'"');
             if (strlen($output) == 0) {
-                echo "-2";
+                echo 'No Matches'."\n";
                 return;
             }
         }
         if (substr_count($output, "\n") == 1) {
             grab($_REQUEST['id'], substr($output, 0, 7));
+            echo 'Update: '.$_REQUEST['id']."\n";
             return;
         }
-        echo $output;
+        echo 'Matches: '.str_replace("\n", '|', trim($output))."\n";
     }
 
     function grab($id, $imdbnum)
@@ -72,16 +77,24 @@
         $output = shell_exec($imdb.' -D '.$imdbnum);
     // save the poster
         $posterurl = trim(shell_exec($imdb.' -P '.$imdbnum));
-        $artworkdir = $db->query_col('SELECT data
-                                        FROM settings
-                                       WHERE     value    = "VideoArtworkDir"
-                                             AND hostname = "'.hostname.'"' );
-        if (!is_writable($artworkdir))
-            $return = '-1';
+        $artworkdir = 'data/video_covers/';
+        if (!is_writable($artworkdir)) {
+            echo 'Warning: '.t('Video: Warning: Artwork')."\n";
+        }
         else {
-            $posterjpg = $artworkdir.'/'.$imdbnum.'.jpg';
-            @file_put_contents( $posterjpg, @file_get_contents($posterurl));
-            $return = '1';
+            $posterfile = $artworkdir.'/'.$imdbnum.'.jpg';
+            if (!ini_get('allow_url_fopen'))
+                echo 'Warning: '.t('Video: Warning: fopen')."\n";
+            else {
+                $posterjpg = @file_get_contents($posterurl);
+                if ($posterjpg === FALSE)
+                    echo 'Warning: '.t('Video: Warning: Artwork')."\n";
+                else {
+                    @file_put_contents( $posterfile, $posterjpg);
+                    if (!file_exists($posterfile))
+                        echo 'Warning: '.t('Video: Warning: Artwork')."\n";
+                }
+            }
         }
     // Get the imdb data
         $data = array();
@@ -93,8 +106,10 @@
             if (strlen($data[strtolower($key)]) > 0)
                 $valid = TRUE;
         }
-        if (!$valid)
-            return -3;
+        if (!$valid) {
+            echo 'Error: '.t('Video: Error: IMDB')."\n";
+            return;
+        }
         $sh = $db->query('UPDATE videometadata
                              SET title        = ?,
                                  director     = ?,
@@ -114,10 +129,10 @@
                          $data['year'],
                          $data['userrating'],
                          $data['runtime'],
-                         ( filesize($posterjpg) > 0 ? $posterjpg : 'No Cover' ),
+                         ( filesize($posterfile) > 0 ? $posterfile : 'No Cover' ),
                          $id
                          );
-        echo $return;
+        echo 'Update: '.$id."\n";
     }
 
     function metadata($id)

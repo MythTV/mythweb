@@ -367,6 +367,7 @@
 "Max star rating for movies"
 "minutes"
     minutes
+"Missing Cover"
 "Monday"
     Lundi
 "More"
@@ -777,8 +778,13 @@
     Indice UV mod&eacute;r&eacute;
 "Value"
 "Video"
-"Video: Error: Artwork"
 "Video: Error: IMDB"
+"Video: Error: IMDB: Not Found"
+"Video: Error: Missing ID"
+"Video: IMDB: No Matches"
+"Video: IMDB: Window Title"
+"Video: Warning: Artwork"
+"Video: Warning: fopen"
 "videofilters"
 "Videos"
 "View Albums by %s"

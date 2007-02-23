@@ -47,49 +47,62 @@
 
     function imdb_handler(response) {
         ajax_remove_request();
-        var result = response.responseText;
-        if (result == '-1') {
-            alert ('<?php echo t('Video: Error: Artwork'); ?>');
-            return;
+        var results = response.responseText.split('\n');
+        var result_index = 0;
+        while (result_index < results.length) {
+            var result = results[result_index];
+        // There really should only be one error message at at time.
+        // We really need to impliment a much better php/js error handler
+            if (result.match(/^Error: /) != null) {
+                var message = result.split('Error: ');
+                alert(message[1]);
+                return;
+            }
+            if (result.match(/^Warning: /) != null) {
+                var message = result.split('Warning: ');
+                alert(message[1]);
+            }
+            if (result.match(/^Update: /) != null) {
+                var ids = result.split('Update: ');
+                update_video(ids[1]);
+            }
+            if (result.match(/^Matches: /) != null) {
+                get_element('window_title').innerHTML = '<?php echo t('Video: IMDB: Window Title'); ?>';
+                var content = get_element('window_content');
+                content.innerHTML = '';
+                var stuff = result.split('Matches: ');
+                var matches = stuff[1].split('|');
+                var matches_index = 0;
+                while (matches_index < matches.length ) {
+                    var line = matches[matches_index].split(':');
+                    if (typeof(line[1]) != 'undefined')
+                        content.innerHTML += '<br /><a href="http://www.imdb.com/Title?'+line[0]+'" style="float: right; margin-left: 1em;">(IMDB)<\/a> <a href="javascript:imdb_select(\''+line[0]+'\')">'+line[1]+'<\/a>';
+                    matches_index += 1;
+                }
+                content.innerHTML += '<br /><a href="javascript: imdb_prompt();"><?php echo t('Custom Search'); ?><\/a>';
+                remove_class('window', 'hidden');
+            }
+            if (result == 'No Matches') {
+                get_element('window_title').innerHTML = '<?php echo t('Video: IMDB: Window Title'); ?>';
+                var content = get_element('window_content');
+                content.innerHTML = '<?php echo t('Video: IMDB: No Matches'); ?>';
+                content.innerHTML += '<br /><br /><br /><a href="javascript: imdb_prompt();"><?php echo t('Custom Search'); ?><\/a>';
+                remove_class('window', 'hidden');
+            }
+            result_index += 1;
         }
-        if (result == '-2') {
-            imdb_prompt();
-            return;
-        }
-        if (result == '-3') {
-            alert("<?php echo t('Video: Error: IMDB'); ?>");
-            return;
-        }
-        if (result == '1') {
-            update_video(get_element('window_video_id').innerHTML);
-            return;
-        }
-        get_element('window_title').innerHTML = 'IMDB Matches';
-        var content = get_element('window_content')
-        content.innerHTML = '';
 
-        var matches = result.split('\n');
-        var line;
-        var index = 0;
-        while (index < matches.length ) {
-            line = matches[index].split(':');
-            if (typeof(line[1]) != 'undefined')
-                content.innerHTML += '<br /><a href="http://www.imdb.com/Title?'+line[0]+'" style="float: right; margin-left: 1em;">(IMDB)<\/a> <a href="javascript:imdb_select(\''+line[0]+'\')">'+line[1]+'<\/a>';
-            index += 1;
-        }
-        content.innerHTML += '<br /><a href="javascript: imdb_prompt();"><?php echo t('Custom Search'); ?><\/a>';
-        remove_class('window', 'hidden');
     }
 
     function imdb_select(number) {
         ajax_add_request();
         add_class('window', 'hidden');
         var myAjax = new Ajax.Request('<?php echo root; ?>video/imdb',
-    	                                 {
-    	                                 	method:     'get',
-    	                                 	parameters: 'action=grab&id='+get_element('window_video_id').innerHTML+'&number='+number,
-    	                                 	onComplete: imdb_handler
-    	                                 });
+    	                              {
+    	                              	method:     'get',
+    	                              	parameters: 'action=grab&id='+get_element('window_video_id').innerHTML+'&number='+number,
+    	                              	onComplete: imdb_handler
+    	                              });
     }
 
     function imdb_prompt() {
@@ -98,6 +111,7 @@
             return;
         if (number.length == 0)
             return;
+        add_class('window', 'hidden');
         if (number.match(/^(\d*)$/))
             imdb_select(number);
         else
@@ -245,7 +259,7 @@
 ?>
     <div id="video_<?php echo $show->intid; ?>" class="video">
         <div id="video_<?php echo $show->intid; ?>_title" class="title"><a href="<?php echo $show->url; ?>"><?php echo htmlentities($show->title); ?></a></div>
-        <div id="video_<?php echo $show->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($show->cover_url)) echo 'src="data/video_covers/'.basename($show->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="Missing Cover"></div>
+        <div id="video_<?php echo $show->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($show->cover_url)) echo 'src="data/video_covers/'.basename($show->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
         <div id="video_<?php echo $show->intid; ?>_category">           <?php echo $Category_String[$show->category]; ?></div>
         <div id="video_<?php echo $show->intid; ?>_playtime">           <?php echo nice_length($show->length * 60); ?></div>
         <div id="video_<?php echo $show->intid; ?>_imdb">               <?php if ($show->inetref != '00000000') { ?><a href="http://www.imdb.com/Title?<?php echo $show->inetref; ?>"><?php echo $show->inetref ?></a><?php } ?></div>

@@ -415,6 +415,7 @@
 "Max star rating for movies"
 "minutes"
     minuuttia
+"Missing Cover"
 "Monday"
     Maanantai
 "More"
@@ -866,8 +867,13 @@
 "Value"
 "Video"
     Videot
-"Video: Error: Artwork"
 "Video: Error: IMDB"
+"Video: Error: IMDB: Not Found"
+"Video: Error: Missing ID"
+"Video: IMDB: No Matches"
+"Video: IMDB: Window Title"
+"Video: Warning: Artwork"
+"Video: Warning: fopen"
 "videofilters"
     Videosuodattimet
 "Videos"

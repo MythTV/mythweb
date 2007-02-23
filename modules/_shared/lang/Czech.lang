@@ -325,6 +325,7 @@
 "Max star rating for movies"
 "minutes"
     minuty
+"Missing Cover"
 "Monday"
     Pondělí
 "More"
@@ -694,8 +695,13 @@
 "UV Moderate"
 "Value"
 "Video"
-"Video: Error: Artwork"
 "Video: Error: IMDB"
+"Video: Error: IMDB: Not Found"
+"Video: Error: Missing ID"
+"Video: IMDB: No Matches"
+"Video: IMDB: Window Title"
+"Video: Warning: Artwork"
+"Video: Warning: fopen"
 "videofilters"
 "Videos"
 "View Albums by %s"
