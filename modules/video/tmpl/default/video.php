@@ -37,6 +37,8 @@
         }
         ajax_add_request();
         get_element('window_video_id').innerHTML = id;
+    // Clean up the title string
+        title = title.replace('&', '%26');
         var myAjax = new Ajax.Request('<?php echo root ?>video/imdb',
     	                                 {
     	                                 	method:     'get',
