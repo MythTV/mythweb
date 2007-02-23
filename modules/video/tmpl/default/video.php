@@ -51,32 +51,38 @@
         var result_index = 0;
         while (result_index < results.length) {
             var result = results[result_index];
+            var result_split = result.split('~:~');
+            var result_code =  result_split[0];
+            var result_string = result_split[1];
         // There really should only be one error message at at time.
         // We really need to impliment a much better php/js error handler
-            if (result.match(/^Error: /) != null) {
-                var message = result.split('Error: ');
-                alert(message[1]);
+            if (result_code == 'Error') {
+                alert(result_string);
                 return;
             }
-            if (result.match(/^Warning: /) != null) {
-                var message = result.split('Warning: ');
-                alert(message[1]);
+            if (result_code == 'Warning') {
+                alert(result_string);
             }
-            if (result.match(/^Update: /) != null) {
-                var ids = result.split('Update: ');
-                update_video(ids[1]);
+            if (result_code == 'Update') {
+                update_video(result_string);
             }
-            if (result.match(/^Matches: /) != null) {
+            if (result_code == 'Matches') {
                 get_element('window_title').innerHTML = '<?php echo t('Video: IMDB: Window Title'); ?>';
                 var content = get_element('window_content');
                 content.innerHTML = '';
-                var stuff = result.split('Matches: ');
-                var matches = stuff[1].split('|');
+                var matches = result_string.split('|');
                 var matches_index = 0;
                 while (matches_index < matches.length ) {
                     var line = matches[matches_index].split(':');
-                    if (typeof(line[1]) != 'undefined')
-                        content.innerHTML += '<br /><a href="http://www.imdb.com/Title?'+line[0]+'" style="float: right; margin-left: 1em;">(IMDB)<\/a> <a href="javascript:imdb_select(\''+line[0]+'\')">'+line[1]+'<\/a>';
+                    var id = line[0].replace(/^\s+/, '');
+                    var title = '';
+                    var title_index = 1;
+                    while (title_index < line.length) {
+                        title += line[title_index];
+                        title_index += 1;
+                    }
+                    if (title.length > 0)
+                        content.innerHTML += '<br /><a href="http://www.imdb.com/Title?'+id+'" style="float: right; margin-left: 1em;">(IMDB)<\/a> <a href="javascript:imdb_select(\''+id+'\')">'+title+'<\/a>';
                     matches_index += 1;
                 }
                 content.innerHTML += '<br /><a href="javascript: imdb_prompt();"><?php echo t('Custom Search'); ?><\/a>';
@@ -265,7 +271,7 @@
         <div id="video_<?php echo $show->intid; ?>_imdb">               <?php if ($show->inetref != '00000000') { ?><a href="http://www.imdb.com/Title?<?php echo $show->inetref; ?>"><?php echo $show->inetref ?></a><?php } ?></div>
         <div class="command">
             <span class="commands"><a href="javascript:newWindow('<?php echo root ?>video/edit?intid=<?php echo $show->intid ?>')" ><?php echo t('Edit') ?></a></span>
-            <span class="commands"><a href="javascript:imdb_lookup('<?php echo $show->intid ?>','<?php echo urlencode($show->title); ?>')">IMDB</a></span>
+            <span class="commands"><a href="javascript:imdb_lookup('<?php echo $show->intid ?>','<?php echo addslashes($show->title); ?>')">IMDB</a></span>
         </div>
     </div>
 <?php
