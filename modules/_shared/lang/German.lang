@@ -77,7 +77,9 @@
 "Albums with songs by %s"
 "All"
 "All Albums"
+"All Categories"
 "All Fields"
+"All Genres"
 "All groups"
     Alle Gruppen
 "All HDTV"
@@ -132,6 +134,9 @@
 "brightness"
     Helligkeit
 "Browse"
+"Browse = no"
+"Browse = yes"
+"Browse all"
 "Browse All Albums"
 "Browse Music"
 "Browse the Music Database"
@@ -816,6 +821,7 @@
     Titel
 "Title"
     Titel
+"Title search"
 "Title Search"
     Titel Suche
 "Today"
@@ -893,6 +899,7 @@
 "Video: IMDB: No Matches"
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
+"Video: Warning: Artwork: Download"
 "Video: Warning: fopen"
 "videofilters"
     Wiedergabe- filter

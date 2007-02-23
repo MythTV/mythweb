@@ -84,7 +84,9 @@
 "All"
     Tot
 "All Albums"
+"All Categories"
 "All Fields"
+"All Genres"
 "All groups"
     Tots els grups
 "All HDTV"
@@ -139,6 +141,9 @@
 "brightness"
     Llum
 "Browse"
+"Browse = no"
+"Browse = yes"
+"Browse all"
 "Browse All Albums"
 "Browse Music"
 "Browse the Music Database"
@@ -861,6 +866,7 @@
     títol
 "Title"
     Títol
+"Title search"
 "Title Search"
     Cercar títol
 "Today"
@@ -941,6 +947,7 @@
 "Video: IMDB: No Matches"
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
+"Video: Warning: Artwork: Download"
 "Video: Warning: fopen"
 "videofilters"
     filtres vídeo

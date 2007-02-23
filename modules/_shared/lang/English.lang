@@ -52,7 +52,9 @@
 "Albums with songs by %s"
 "All"
 "All Albums"
+"All Categories"
 "All Fields"
+"All Genres"
 "All groups"
 "All HDTV"
 "All Hosts"
@@ -88,6 +90,9 @@
 "Begin a New Search"
 "brightness"
 "Browse"
+"Browse = no"
+"Browse = yes"
+"Browse all"
 "Browse All Albums"
 "Browse Music"
 "Browse the Music Database"
@@ -585,6 +590,7 @@
 "Timeslot size"
 "title"
 "Title"
+"Title search"
 "Title Search"
 "Today"
 "Tomorrow"
@@ -639,6 +645,8 @@
     IMDB Matches
 "Video: Warning: Artwork"
     Warning, Updating the video artwork failed. Please check the permissions on your Video Artwork Directory for this host
+"Video: Warning: Artwork: Download"
+    Downloading the artwork from imdb failed.
 "Video: Warning: fopen"
     Warning, Your php.ini file has allow_url_fopen set to Off. To download the file, it is required to be On. Artwork will not be updated.
 "videofilters"

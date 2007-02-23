@@ -77,7 +77,9 @@
 "All"
     全て
 "All Albums"
+"All Categories"
 "All Fields"
+"All Genres"
 "All groups"
     全グループ
 "All HDTV"
@@ -132,6 +134,9 @@
 "brightness"
     明るさ
 "Browse"
+"Browse = no"
+"Browse = yes"
+"Browse all"
 "Browse All Albums"
 "Browse Music"
 "Browse the Music Database"
@@ -832,6 +837,7 @@
     タイトル
 "Title"
     タイトル
+"Title search"
 "Title Search"
     タイトルサーチ
 "Today"
@@ -908,6 +914,7 @@
 "Video: IMDB: No Matches"
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
+"Video: Warning: Artwork: Download"
 "Video: Warning: fopen"
 "videofilters"
     ビデオフィルタ

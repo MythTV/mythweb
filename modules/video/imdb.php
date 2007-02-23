@@ -35,7 +35,7 @@
     switch($_REQUEST['action'])
     {
         case 'lookup':
-            lookup($_REQUEST['title']);
+            lookup($_REQUEST['id'], $_REQUEST['title']);
             break;
         case 'grab':
             grab($_REQUEST['id'], $_REQUEST['number']);
@@ -48,7 +48,7 @@
             break;
     }
 
-    function lookup($title)
+    function lookup($id, $title)
     {
         global $imdb;
     // First try non-fuzzy
@@ -57,16 +57,11 @@
         if (strlen($output) == 0) {
             $output = shell_exec($imdb.' -M tv=both\;type=fuzzy "'.$title.'"');
             if (strlen($output) == 0) {
-                echo 'No Matches'."\n";
+                echo 'No Matches~:~ '.$id."\n";
                 return;
             }
         }
-        if (substr_count($output, "\n") == 1) {
-            grab($_REQUEST['id'], substr($output, 0, 7));
-            echo 'Update~:~ '.$_REQUEST['id']."\n";
-            return;
-        }
-        echo 'Matches~:~ '.str_replace("\n", '|', trim($output))."\n";
+        echo 'Matches~:~ id: '.$id.'|'.str_replace("\n", '|', trim($output))."\n";
     }
 
     function grab($id, $imdbnum)
@@ -85,10 +80,10 @@
             $posterfile = $artworkdir.'/'.$imdbnum.'.jpg';
             if (!ini_get('allow_url_fopen'))
                 echo 'Warning~:~ '.t('Video: Warning: fopen')."\n";
-            else {
+            elseif(strlen($posterurl) > 0) {
                 $posterjpg = @file_get_contents($posterurl);
                 if ($posterjpg === FALSE)
-                    echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
+                    echo 'Warning~:~ '.t('Video: Warning: Artwork: Download')."\n";
                 else {
                     @file_put_contents( $posterfile, $posterjpg);
                     if (!file_exists($posterfile))
@@ -139,10 +134,4 @@
     {
         $video = new Video($id);
         echo $video->metadata();
-    }
-
-    function extendedmetadata($id)
-    {
-        $video = new Video($id);
-        echo $video->metadata(TRUE);
     }

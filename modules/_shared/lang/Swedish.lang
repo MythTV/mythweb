@@ -93,7 +93,9 @@
     Alla
 "All Albums"
     Alla album
+"All Categories"
 "All Fields"
+"All Genres"
 "All groups"
     Alla grupper
 "All HDTV"
@@ -154,6 +156,9 @@
     ljusstyrka
 "Browse"
     Bläddra
+"Browse = no"
+"Browse = yes"
+"Browse all"
 "Browse All Albums"
 "Browse Music"
 "Browse the Music Database"
@@ -935,6 +940,7 @@
     titel
 "Title"
     Titel
+"Title search"
 "Title Search"
     Sök titel
 "Today"
@@ -1019,6 +1025,7 @@
 "Video: IMDB: No Matches"
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
+"Video: Warning: Artwork: Download"
 "Video: Warning: fopen"
 "videofilters"
     videofilter
