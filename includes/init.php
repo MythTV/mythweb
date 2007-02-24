@@ -46,6 +46,10 @@
                           ? $_SERVER['error_email']
                           : '');
 
+// If we're using php5 or newer, include some php5 only functions
+    if (version_compare(phpversion(), '5.0.0') < 0)
+        require_once 'includes/php5_compat.php';
+
 // Load the generic utilities so we have access to stuff like DEBUG()
     require_once 'includes/utils.php';
 

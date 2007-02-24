@@ -80,10 +80,13 @@
     {
         global $imdb;
         global $db;
-        $return = '';
-        $output = shell_exec($imdb.' -D '.$imdbnum);
+        global $DEBUG;
     // save the poster
-        $posterurl = trim(shell_exec($imdb.' -P '.$imdbnum));
+        $cmd = "$imdb -P $imdbnum";
+        exec($cmd, $output, $retval);
+        if ($retval == 255 | $DEBUG)
+            echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
+        $posterurl = trim($output[0]);
         $artworkdir = 'data/video_covers/';
         if (!is_writable($artworkdir)) {
             echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
@@ -109,7 +112,10 @@
         }
     // Get the imdb data
         $data = array();
-        $lines = explode("\n", $output);
+        $cmd = "$imdb -D $imdbnum";
+        exec($cmd, $lines, $retval);
+        if ($retval == 255 | $DEBUG)
+            echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
         $valid = FALSE;
         foreach ($lines as $line) {
             list ($key, $value) = explode(':', $line, 2);
@@ -140,7 +146,7 @@
                          $data['year'],
                          $data['userrating'],
                          $data['runtime'],
-                         ( filesize($posterfile) > 0 ? $posterfile : 'No Cover' ),
+                         ( @filesize($posterfile) > 0 ? $posterfile : 'No Cover' ),
                          $id
                          );
         echo 'Update~:~ '.$id."\n";
