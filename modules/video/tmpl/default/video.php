@@ -81,6 +81,8 @@
                     var title = '';
                     var title_index = 1;
                     while (title_index < line.length) {
+                        if (title_index > 1)
+                            title += ':';
                         title += line[title_index];
                         title_index += 1;
                     }
@@ -116,7 +118,8 @@
     }
 
     function imdb_prompt(id) {
-        var number = prompt('<?php echo t('Please enter an imdb number or a title to do another search'); ?>');
+        var title = $('video_'+id+'_title').childNodes[0].innerHTML;
+        var number = prompt('<?php echo t('Please enter an imdb number or a title to do another search'); ?>', title);
         if (typeof(number) != 'string')
             return;
         if (number.length == 0)
@@ -168,7 +171,12 @@
     function filter() {
         if (filter_timeout != null)
             window.clearTimeout(filter_timeout);
-        filter_timeout = window.setTimeout('filter_action()', 500);
+        filter_timeout = window.setTimeout('filter_show()', 1000);
+    }
+
+    function filter_show() {
+        ajax_add_request();
+        window.setTimeout('filter_action()', 50);
     }
 
     function filter_action() {
@@ -196,7 +204,9 @@
             else
                 remove_class(id, 'hidden');
         }
+        ajax_remove_request();
     }
+
 // We use a global var here to keep track of any pending requests so we don't keep repeat them.
     var popup_divs = new Array;
 

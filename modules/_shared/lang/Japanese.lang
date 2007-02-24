@@ -915,6 +915,8 @@
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
+"Video: Warning: file_get_contents"
+"Video: Warning: file_put_contents"
 "Video: Warning: fopen"
 "videofilters"
     ビデオフィルタ

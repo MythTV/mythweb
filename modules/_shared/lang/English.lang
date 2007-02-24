@@ -647,6 +647,10 @@
     Warning, Updating the video artwork failed. Please check the permissions on your Video Artwork Directory for this host
 "Video: Warning: Artwork: Download"
     Downloading the artwork from imdb failed.
+"Video: Warning: file_get_contents"
+    Warning, it seems like your version of php does not support file_get_contents. Video artwork grabbing is disabled.
+"Video: Warning: file_put_contents"
+    Warning, it seems like your version of php does not support file_put_contents. Video artwork grabbing is disabled.
 "Video: Warning: fopen"
     Warning, Your php.ini file has allow_url_fopen set to Off. To download the file, it is required to be On. Artwork will not be updated.
 "videofilters"

@@ -12,6 +12,8 @@
  *
 /**/
 
+    $DEBUG = FALSE;
+
 // We need to search for the imdb.pl script.
     $imdb = NULL;
     if (file_exists('/usr/share/mythtv/mythvideo/scripts/imdb.pl'))
@@ -51,17 +53,27 @@
     function lookup($id, $title)
     {
         global $imdb;
-    // First try non-fuzzy
-        $output = shell_exec($imdb.' -M tv=both "'.$title.'"');
-    // else try fuzzy
-        if (strlen($output) == 0) {
-            $output = shell_exec($imdb.' -M tv=both\;type=fuzzy "'.$title.'"');
-            if (strlen($output) == 0) {
-                echo 'No Matches~:~ '.$id."\n";
+        global $DEBUG;
+    // Escape any extra " in the title string
+        $title = str_replace('"', '\"', $title);
+    // Setup the option list
+        $options = array( 'tv=both',
+                          'tv=both\;type=fuzzy'
+                        );
+        foreach ($options as $option) {
+            $cmd = "$imdb -M $option \"$title\"";
+            exec($cmd, $output, $retval);
+            if ($retval == 255 | $DEBUG)
+                echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
+            if (count($output)) {
+                echo 'Matches~:~ id: '.$id;
+                foreach ($output as $line)
+                    echo '|'.$line;
+                echo "\n";
                 return;
             }
         }
-        echo 'Matches~:~ id: '.$id.'|'.str_replace("\n", '|', trim($output))."\n";
+        echo 'No Matches~:~ '.$id."\n";
     }
 
     function grab($id, $imdbnum)
@@ -80,6 +92,10 @@
             $posterfile = $artworkdir.'/'.$imdbnum.'.jpg';
             if (!ini_get('allow_url_fopen'))
                 echo 'Warning~:~ '.t('Video: Warning: fopen')."\n";
+            elseif (!function_exists('file_get_contents'))
+                echo 'Warning~:~ '.t('Video: Warning: file_get_contents')."\n";
+            elseif (!function_exists('file_put_contents'))
+                echo 'Warning~:~ '.t('Video: Warning: file_put_contents')."\n";
             elseif(strlen($posterurl) > 0) {
                 $posterjpg = @file_get_contents($posterurl);
                 if ($posterjpg === FALSE)
