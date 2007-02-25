@@ -111,72 +111,74 @@
 
 // The user tried to update the recording settings - update the database and the variable in memory
     if (isset($_POST['save'])) {
-    // Which type of recording is this?  Make sure an illegal one isn't specified
-        switch ($_POST['record']) {
-            case rectype_once:        $type = rectype_once;        break;
-            case rectype_daily:       $type = rectype_daily;       break;
-            case rectype_channel:     $type = rectype_channel;     break;
-            case rectype_always:      $type = rectype_always;      break;
-            case rectype_weekly:      $type = rectype_weekly;      break;
-            case rectype_findone:     $type = rectype_findone;     break;
-            case rectype_finddaily:   $type = rectype_finddaily;   break;
-            case rectype_findweekly:  $type = rectype_findweekly;  break;
-            case rectype_override:    $type = rectype_override;    break;
-            case rectype_dontrec:     $type = rectype_dontrec;     break;
-            default:                  $type = 0;
-        }
-    // Cancelling a schedule?
-        if ($type == 0) {
-        // Cancel this schedule
-            if ($schedule && $schedule->recordid && !$schedule->search) {
-            // Delete the schedule
-                $schedule->delete();
-            // Deleted a schedule but not editing a specific program?  Redirect back to the schedule list
-                if (!$program) {
-                    add_warning(t('The requested recording schedule has been deleted.'));
-                    save_session_errors();
-                    header('Location: '.root.'tv/schedules');
-                    exit;
+        if ($schedule) {
+        // Which type of recording is this?  Make sure an illegal one isn't specified
+            switch ($_POST['record']) {
+                case rectype_once:        $type = rectype_once;        break;
+                case rectype_daily:       $type = rectype_daily;       break;
+                case rectype_channel:     $type = rectype_channel;     break;
+                case rectype_always:      $type = rectype_always;      break;
+                case rectype_weekly:      $type = rectype_weekly;      break;
+                case rectype_findone:     $type = rectype_findone;     break;
+                case rectype_finddaily:   $type = rectype_finddaily;   break;
+                case rectype_findweekly:  $type = rectype_findweekly;  break;
+                case rectype_override:    $type = rectype_override;    break;
+                case rectype_dontrec:     $type = rectype_dontrec;     break;
+                default:                  $type = 0;
+            }
+        // Cancelling a schedule?
+            if ($type == 0) {
+            // Cancel this schedule
+                if ($schedule && $schedule->recordid && !$schedule->search) {
+                // Delete the schedule
+                    $schedule->delete();
+                // Deleted a schedule but not editing a specific program?  Redirect back to the schedule list
+                    if (!$program) {
+                        add_warning(t('The requested recording schedule has been deleted.'));
+                        save_session_errors();
+                        header('Location: '.root.'tv/schedules');
+                        exit;
+                    }
+                // Relocate back to the program details page
+                    redirect_browser(root.'tv/detail?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
                 }
-            // Relocate back to the program details page
-                redirect_browser(root.'tv/detail?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
             }
-        }
-    // Modifying an existing schedule, or adding a new one
-        else {
-        // Set things as the user requested
-            $schedule->profile       = $_POST['profile'];
-            $schedule->recgroup      = $_POST['recgroup'];
-            $schedule->storagegroup  = $_POST['storagegroup'];
-            $schedule->autoexpire    = $_POST['autoexpire']   ? 1 : 0;
-            $schedule->autocommflag  = $_POST['autocommflag'] ? 1 : 0;
-            $schedule->autouserjob1  = $_POST['autouserjob1'] ? 1 : 0;
-            $schedule->autouserjob2  = $_POST['autouserjob2'] ? 1 : 0;
-            $schedule->autouserjob3  = $_POST['autouserjob3'] ? 1 : 0;
-            $schedule->autouserjob4  = $_POST['autouserjob4'] ? 1 : 0;
-            $schedule->maxnewest     = $_POST['maxnewest']    ? 1 : 0;
-            $schedule->inactive      = $_POST['inactive']     ? 1 : 0;
-            $schedule->dupin         = _or($_POST['dupin'] + $_POST['dupin2'], dupsin_all);
-            $schedule->dupmethod     = _or($_POST['dupmethod'], 6);
-            $schedule->recpriority   = intval($_POST['recpriority']);
-            $schedule->maxepisodes   = intval($_POST['maxepisodes']);
-            $schedule->startoffset   = intval($_POST['startoffset']);
-            $schedule->endoffset     = intval($_POST['endoffset']);
-            $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
-            $schedule->transcoder    = $_POST['transcoder'];
-            $schedule->tsdefault     = $_POST['timestretch'];
-            $schedule->prefinput     = $_POST['prefinput'];
-        // Keep track of the parent recording for overrides
-            if ($_POST['record'] == rectype_override) {
-                $schedule->parentid = $schedule->recordid;
+        // Modifying an existing schedule, or adding a new one
+            else {
+            // Set things as the user requested
+                $schedule->profile       = $_POST['profile'];
+                $schedule->recgroup      = $_POST['recgroup'];
+                $schedule->storagegroup  = $_POST['storagegroup'];
+                $schedule->autoexpire    = $_POST['autoexpire']   ? 1 : 0;
+                $schedule->autocommflag  = $_POST['autocommflag'] ? 1 : 0;
+                $schedule->autouserjob1  = $_POST['autouserjob1'] ? 1 : 0;
+                $schedule->autouserjob2  = $_POST['autouserjob2'] ? 1 : 0;
+                $schedule->autouserjob3  = $_POST['autouserjob3'] ? 1 : 0;
+                $schedule->autouserjob4  = $_POST['autouserjob4'] ? 1 : 0;
+                $schedule->maxnewest     = $_POST['maxnewest']    ? 1 : 0;
+                $schedule->inactive      = $_POST['inactive']     ? 1 : 0;
+                $schedule->dupin         = _or($_POST['dupin'] + $_POST['dupin2'], dupsin_all);
+                $schedule->dupmethod     = _or($_POST['dupmethod'], 6);
+                $schedule->recpriority   = intval($_POST['recpriority']);
+                $schedule->maxepisodes   = intval($_POST['maxepisodes']);
+                $schedule->startoffset   = intval($_POST['startoffset']);
+                $schedule->endoffset     = intval($_POST['endoffset']);
+                $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
+                $schedule->transcoder    = $_POST['transcoder'];
+                $schedule->tsdefault     = $_POST['timestretch'];
+                $schedule->prefinput     = $_POST['prefinput'];
+            // Keep track of the parent recording for overrides
+                if ($_POST['record'] == rectype_override) {
+                    $schedule->parentid = $schedule->recordid;
+                }
+            // Search schedules saved here will create a new schedule
+                if ($schedule->search) {
+                    $schedule->recordid = null;
+                }
+                $schedule->search = 0;
+            // Back up the program type, and save the schedule
+                $schedule->save($type);
             }
-        // Search schedules saved here will create a new schedule
-            if ($schedule->search) {
-                $schedule->recordid = null;
-            }
-            $schedule->search = 0;
-        // Back up the program type, and save the schedule
-            $schedule->save($type);
         }
     }
     elseif (isset($_GET['forget_old']) || isset($_POST['forget_old'])) {
