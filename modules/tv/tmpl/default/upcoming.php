@@ -41,24 +41,28 @@
 <tr>
     <td class="_title"><?php echo t('Display') ?>:</td>
     <td class="_check">
+        <label for="disp_scheduled">
         <input type="checkbox" id="disp_scheduled" name="disp_scheduled" class="radio" onclick="$('change_display').submit()"<?php
             if ($_SESSION['scheduled_recordings']['disp_scheduled']) echo ' CHECKED' ?>>
-        <label for="disp_scheduled"><?php echo t('Scheduled') ?></label>
+        <?php echo t('Scheduled') ?></label>
         </td>
     <td class="_check">
+        <label for="disp_duplicates">
         <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
-        <label for="disp_duplicates"><?php echo t('Duplicates') ?></label>
+        <?php echo t('Duplicates') ?></label>
         </td>
     <td class="_check">
+        <label for="disp_deactivated">
         <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
-        <label for="disp_deactivated"><?php echo t('Deactivated') ?></label>
+        <?php echo t('Deactivated') ?></label>
         </td>
     <td class="_check">
+        <label for="disp_conflicts">
         <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
-        <label for="disp_conflicts"><?php echo t('Conflicts') ?></label>
+        <?php echo t('Conflicts') ?></label>
         </td>
 </tr>
 </table>

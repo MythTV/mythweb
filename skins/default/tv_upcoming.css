@@ -16,18 +16,27 @@
     height:             2em;
 }
 #display_options td._check label {
-    display:            block;
-    padding:            .35em .5em .35em 2em;
     border:             1px solid #7b8;
     background-color:   #263;
+    padding-top:        .15em;
+    padding-bottom:     .15em;
+    padding-left:       .5em;
+    padding-right:      .35em;
+    margin-top:         .5em;
+    margin-bottom:      .5em;
+    margin-left:        0em;
+    margin-right:       0em;
 }
 #display_options td._check label:hover {
     border:             1px solid #9da;
     background-color:   #485;
 }
 #display_options td._check input {
-    float:              left;
-    margin:             .4em .5em;
+    float:              none;
+    padding:            0px;
+    margin:             0px;
+    margin-right:       5px;
+    margin-top:         -1px;
 }
 
 #listings {
