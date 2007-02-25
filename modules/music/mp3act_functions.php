@@ -411,7 +411,7 @@ function musicLookup($type, $itemid)
 
     case 'genre':
       $output = '<div class="head">
-        <h2 class="music">'.t('Songs for Genre')." '".$itemid."'</h2></div>
+        <h2 class="music">'.t('Songs for Genre')." '".utf8_encode($itemid)."'</h2></div>
         <p><strong>".t('Songs').'</strong></p>
         <ul class="music">';
 
@@ -419,7 +419,7 @@ function musicLookup($type, $itemid)
         'FROM music_songs '.
         'LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id '.
         'LEFT JOIN music_genres ON music_songs.genre_id=music_genres.genre_id '.
-        'WHERE genre='.$sql_itemid.';';
+        'WHERE genre='.utf8_encode($sql_itemid).';';
 
       $result = mysql_query($query);
       if (!$result)
