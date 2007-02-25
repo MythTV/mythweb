@@ -78,6 +78,11 @@ class Program {
     var $group          = '';
     var $has_commflag   = 0;
     var $has_cutlist    = 0;
+    var $is_recording;
+    var $is_playing;
+    var $stereo;
+    var $closecaptioned;
+    var $can_delete     = false;
     var $hdtv;
     var $inputname;
     var $is_editing     = 0;
@@ -166,13 +171,15 @@ class Program {
             $this->auto_expire    = ($this->progflags & 0x004) ? true : false;    // FL_AUTOEXP        = 0x004
             $this->is_editing     = ($this->progflags & 0x008) ? true : false;    // FL_EDITING        = 0x008
             $this->bookmark       = ($this->progflags & 0x010) ? true : false;    // FL_BOOKMARK       = 0x010
-                                                                                  // FL_INUSERECORDING = 0x020
-                                                                                  // FL_INUSEPLAYING   = 0x040
+            $this->is_recording   = ($this->progflags & 0x020) ? true : false;    // FL_INUSERECORDING = 0x020
+            $this->is_playing     = ($this->progflags & 0x040) ? true : false;    // FL_INUSEPLAYING   = 0x040
             $this->stereo         = ($this->progflags & 0x080) ? true : false;    // FL_STEREO         = 0x080
             $this->closecaptioned = ($this->progflags & 0x100) ? true : false;    // FL_CC             = 0x100
             $this->hdtv           = ($this->progflags & 0x200) ? true : false;    // FL_HDTV           = 0x200
                                                                                   // FL_TRANSCODED     = 0x400
             $this->is_watched     = ($this->progflags & 0x800) ? true : false;    // FL_WATCHED        = 0x800
+        // Can be deleted?
+            $this->can_delete     = (!$this->is_recording && !$this->is_playing) || $this->recgroup != 'LiveTV';
         // Add a generic "will record" variable, too
             $this->will_record = ($this->rectype && $this->rectype != rectype_dontrec) ? true : false;
         }

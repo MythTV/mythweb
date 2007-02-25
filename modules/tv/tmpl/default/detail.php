@@ -283,7 +283,7 @@
                         .'title="'.html_entities(t('info:never record')).'">'
                         .t('Never Record').'</a>';
                 }
-                if ($program->filename) {
+                if ($program->filename && $program->can_delete) {
                     echo '<a onclick="javascript:confirm_delete(false)"',
                          ' title="',html_entities(t('Delete $1',
                                                     $program->title

@@ -327,17 +327,19 @@ EOM;
     <td class="_length"><?php echo nice_length($show->length) ?></td>
     <td class="_filesize"><?php echo nice_filesize($show->filesize) ?></td>
     <td class="_commands commands" rowspan="2"><?php
-        if ($show->endtime > time()) {
+        if ($show->is_recording) {
             echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '">',
                  t('Still Recording: Edit'),
                  "</a>\n        ";
         }
+        if ($show->can_delete) {
         ?><a onclick="javascript:confirm_delete(<?php echo $row ?>, false)"
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
         <a onclick="javascript:confirm_delete(<?php echo $row ?>, true)"
             title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a>
+<?php   } ?>
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
     <td colspan="4" valign="top"><?php echo $show->description ?></td>
