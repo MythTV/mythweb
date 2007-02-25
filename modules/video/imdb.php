@@ -22,7 +22,7 @@
         $imdb = '/usr/local/share/mythtv/mythvideo/scripts/imdb.pl';
 // this *should* work well enough...
     else
-        $imdb = `locate imdb.pl | head -n 1`;
+        $imdb = trim(`locate imdb.pl | head -n 1`);
     if (is_null($imdb)) {
         echo 'Error~:~ '.t('Video: Error: IMDB: Not Found')."\n";
         return;
@@ -87,7 +87,7 @@
         if ($retval == 255 | $DEBUG)
             echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
         $posterurl = trim($output[0]);
-        $artworkdir = 'data/video_covers/';
+        $artworkdir = setting('VideoArtworkDir', hostname);
         if (!is_writable($artworkdir)) {
             echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
         }
