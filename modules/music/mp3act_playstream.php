@@ -21,9 +21,10 @@ function updateNumPlays($num)
 
 function streamPlay($id)
 {
-  $query = 'SELECT mt.artist_name, ms.name, ms.filename '.
+  $query = 'SELECT mt.artist_name, ms.name, md.path, ms.filename '.
     'FROM music_songs AS ms '.
     'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
+    'LEFT JOIN music_directories AS md ON ms.directory_id=md.directory_id '.
     'WHERE ms.song_id='.mysql_real_escape_string($id);
 
   $result = mysql_query($query);
@@ -40,7 +41,7 @@ function streamPlay($id)
     exit;
   }
 
-  $filename = 'data/music/'.$row['filename'];
+  $filename = 'data/music/'.$row['path'].'/'.$row['filename'];
 
   switch (substr($filename, -3))
   {
