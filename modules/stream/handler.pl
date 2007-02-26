@@ -137,7 +137,7 @@ flashvars="file=$uri&autoStart=true" />
 EOF
         exit;
     }
-    elsif ($ENV{'REQUEST_URI'} =! /\.flv$/i) {
+    elsif ($ENV{'REQUEST_URI'} =~ /\.flv$/i) {
     # Print the movie
         $ffmpeg_pid = open(DATA, "/usr/bin/ffmpeg -y -i $filename -s 320x240 -f flv -ar 11025 /dev/stdout |");
         unless ($ffmpeg_pid) {
