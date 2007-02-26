@@ -322,9 +322,9 @@ function musicLookup($type, $itemid)
     case 'album':
       // Get some statistics about the album
       $query = 'SELECT COUNT(*), SEC_TO_TIME(SUM(music_songs.length)/1000) '.
-        'FROM music_songs '.
-        'WHERE music_songs.album_id='.$sql_itemid.' '.
-        'GROUP BY music_songs.album_id;';
+               'FROM music_songs '.
+               'WHERE music_songs.album_id='.$sql_itemid.' '.
+               'GROUP BY music_songs.album_id;';
       $result = mysql_query($query);
       if (!$result)
         break;
@@ -336,9 +336,10 @@ function musicLookup($type, $itemid)
 
       // Attempt to find some album art.
       $query='SELECT * '.
-        'FROM music_songs '.
-        'WHERE album_id='.$sql_itemid.' '.
-        'LIMIT 1;';
+             'FROM music_songs '.
+             'LEFT JOIN music_directories ON music_songs.directory_id=music_directories.directory_id '.
+             'WHERE album_id='.$sql_itemid.' '.
+             'LIMIT 1;';
       $result = mysql_query($query);
       if (!$result)
         break;
@@ -347,7 +348,7 @@ function musicLookup($type, $itemid)
       mysql_free_result($result);
 
       $album_art_arr = array();
-      $path = $_SERVER['DOCUMENT_ROOT'].root.'data/music/'.dirname($row['filename']);
+      $path = $_SERVER['DOCUMENT_ROOT'].root.'data/music/'.$row['path'];
       $dir = @dir($path);
       if ($dir)
       {
@@ -370,7 +371,7 @@ function musicLookup($type, $itemid)
         srand(microtime()*1000000);
         $index = mt_rand(1, count($album_art_arr)) - 1;
 
-        $album_art = root.'data/music/'.dirname($row['filename']).'/'.$album_art_arr[$index];
+        $album_art = root.'data/music/'.$row['path'].'/'.$album_art_arr[$index];
       }
 
       $output = '<div class="head">
@@ -1441,9 +1442,9 @@ function play($type, $id, $quality = 'high')
   else
   {
     $query = 'SELECT ms.song_id, artist_name, ms.name, (ms.length/1000) AS length '.
-      'FROM music_songs AS ms '.
-      'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
-      'WHERE ';
+             'FROM music_songs AS ms '.
+             'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
+             'WHERE ';
 
     $sql_id = mysql_real_escape_string($id);
     switch ($type)
@@ -1480,5 +1481,3 @@ function play($type, $id, $quality = 'high')
   return "#EXTM3U\n".$tmp;
 }
 
-
-?>
