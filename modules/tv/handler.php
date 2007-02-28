@@ -54,9 +54,9 @@
         array_splice($Path, 1, count($Path), $_SESSION['tv']['last']);
 
 // Flash player?
-    if ($Path[1] == 'flvplayer.swf') {
+    if (preg_match('/\.swf/', $Path[1])) {
         header('Content-Type: application/x-shockwave-flash');
-        readfile('modules/tv/flvplayer.swf');
+        readfile('modules/tv/'.$Path[1]);
         exit;
     }
 
