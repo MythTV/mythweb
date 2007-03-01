@@ -141,7 +141,7 @@ class Program {
             $this->programid       = $data[34];
             $this->lastmodified    = $data[35];
             $this->stars           = $data[36];
-            $this->airdate         = date('Y-m-d', $data[37]);
+            $this->airdate         = $data[37];
             $this->hasairdate      = $data[38];
             $this->playgroup       = $data[39];
             $this->recpriority2    = $data[40];
