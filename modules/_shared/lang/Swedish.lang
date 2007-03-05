@@ -36,6 +36,7 @@
 "$1 recordings"
     $1 inspelningar
 "$1 requests pending."
+    $1 anrop pågår.
 "$1 Search"
     Sök $1
 "$1 TB"
@@ -49,8 +50,11 @@
 "$1 years"
     $1 år
 "%s Song (%s)"
+    %s sång (%s)
 "%s Songs"
+    %s sånger
 "%s Songs (%s)"
+    %s sånger (%s)
 "&deg;C"
     &deg;C
 "&deg;F"
@@ -62,11 +66,15 @@
 "Add"
     Lägg till
 "Add Album to Current Playlist"
+    Lägg till album till aktuell spellista
 "Add Mix"
+    Lägg till mix
 "Add Song to Current Playlist"
+    Lägg till sång till aktuell spellista
 "add string"
     lägg till sträng
 "Add this Playlist as a Subplaylist"
+    Lägg till denna spellista som en underspellista
 "Additional Tables"
     Ytterligare tabeller
 "Advanced"
@@ -86,27 +94,37 @@
 "Album (filtered)"
     Album (filtrerat)
 "Album Listing"
+    Albumlistning
 "Album Tracks"
+    Albumspår
 "Albums"
+    Album
 "Albums with songs by %s"
+    Album med sånger av %s
 "All"
     Alla
 "All Albums"
     Alla album
 "All Categories"
+    Alla kategorier
 "All Fields"
+    Alla fält
 "All Genres"
+    Alla genrer
 "All groups"
     Alla grupper
 "All HDTV"
     Alla HDTV
 "All Hosts"
+    Alla värdar
 "All Music"
     All musik
 "All recordings"
     Alla inspelningar
 "All Songs"
+    Alla sånger
 "An error occured while adding your playlist."
+    Ett fel uppstod vid tillägg av din spellista.
 "and"
     och
 "Any"
@@ -118,17 +136,23 @@
 "Any Program Type"
     Alla programtyper
 "Append"
+    Lägg till slutet
 "Append to Current Playlist"
+    Lägg till slutet av aktuell spellista
 "Are you sure you want to delete the following show?"
     Är du säker på att du vill ta bort följande inspelning?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+    Är du säker på att du vill TA BORT DENNA SPARADE SPELLISTA?
 "Artist"
     Artist
 "Artist (filtered)"
     Artist (filtrerad)
 "Artist Listing"
+    Artistlistning
 "Artists"
+    Artister
 "Artists Beginning with %s"
+    Artister som börjar på %s
 "ASX Stream"
     ASX-ström
 "Auto Expire"
@@ -152,18 +176,27 @@
 "Backend Status"
     Systemstatus
 "Begin a New Search"
+    Starta en ny sökning
 "brightness"
     ljusstyrka
 "Browse"
     Bläddra
 "Browse = no"
+    Bläddra = nej
 "Browse = yes"
+    Bläddra = ja
 "Browse all"
+    Bläddra alla
 "Browse All Albums"
+    Bläddra alla album
 "Browse Music"
+    Bläddra musik
 "Browse the Music Database"
+    Bläddra i musikdatabasen
 "By Artist Beginning With"
+    Efter artist som börjar på
 "By Genre"
+    Efter genre
 "callsign"
     kortnamn
 "Cancel"
@@ -214,6 +247,7 @@
 "Click to enable Auto Expire"
     Klicka för att aktivera autoradering
 "Click to View Playlist"
+    Klicka för att visa spellista
 "Closed Captioning"
     Textning
 "colour"
@@ -237,6 +271,7 @@
 "Create a New Playlist"
     Skapa ny spellista
 "Create a Random Mix"
+    Skapa slumpvis mix
 "Create Schedule"
     Schemalägg
 "Current Conditions"
@@ -250,6 +285,7 @@
 "Custom Schedule"
     Eget schema
 "Custom Search"
+    Egen sökning
 "Data"
     Data
 "Date"
@@ -271,6 +307,7 @@
 "Delete and rerecord $1"
     Radera och återinspela $1
 "DELETE this Saved Playlist"
+    RADERA denna sparade spellista
 "description"
     beskrivning
 "Description"
@@ -294,6 +331,7 @@
 "Don't record this program."
     Spela inte in detta program.
 "Download URL override"
+    Nedladdnings-URL-åsidosättning
 "Dup Method"
     Dubblettmetod
 "Duplicate"
@@ -317,8 +355,11 @@
 "End Late"
     Sluta senare
 "Enter a new name for your playlist"
+    Ange ett namn för din spellista
 "Enter your search terms"
+    Ange dina söktermer
 "enter your search terms"
+    ange dina söktermer
 "Episode"
     Avsnitt
 "Episode Number"
@@ -326,8 +367,11 @@
 "Everything"
     Allt
 "Exclude Generic Episodes"
+    Exkludera generiska avsnitt
 "Exclude Repeat and Generic Episodes"
+    Exkludera upprepade och generiska avsnitt
 "Exclude Repeat Episodes"
+    Exkludera upprepade avsnitt
 "Exec. Producer"
     Producent
 "File Size"
@@ -352,7 +396,9 @@
 "First recording"
     Första inspelning
 "Force HTTP for streams"
+    Tvinga HTTP för strömmar
 "Forced"
+    Tvingad
 "Forecast"
     Prognos
 "Forget Old"
@@ -374,6 +420,7 @@
 "Genre (filtered)"
     Genre (filtrerad)
 "Genres"
+    Genrer
 "Go"
     Gå
 "Google"
@@ -403,9 +450,11 @@
 "High"
     Hög
 "Host"
+    Värd
 "Hosted by"
     Värd
 "Hosts"
+    Värdar
 "Hour"
     Timme
 "Hour Format"
@@ -477,19 +526,26 @@
 "Load"
     Ladda
 "Load a Saved Playlist"
+    Ladda en sparad spellista
 "Load Playlist"
+    Ladda en spellista
 "Load Saved Playlists"
+    Ladda sparade spellistor
 "Load this Saved Playlist"
+    Ladda denna sparade spellista
 "LOADING"
     LADDAR
 "Local Server Statistics"
+    Lokal serverstatistik
 "Local weather forecast"
+    Lokal väderprognos
 "Locale"
 "Logs"
     Logg
 "Low"
     Låg
 "Low Space"
+    Lite utrymme
 "Manual"
     Manuell
 "matches"
@@ -499,6 +555,7 @@
 "minutes"
     minuter
 "Missing Cover"
+    Saknar omslag
 "Monday"
     Måndag
 "More"
@@ -506,7 +563,9 @@
 "more"
     mer
 "Move Item Down in Playlist"
+    Flytta post nedåt i spellista
 "Move Item Up in Playlist"
+    Flytta post uppåt i spellista
 "movie"
     film
 "Movies"
@@ -520,6 +579,7 @@
 "Music Specials"
     Musikspecialer
 "My Session"
+    Min session
 "MythMusic on the web."
     MythMusic på webben
 "MythTV"
@@ -533,9 +593,11 @@
     MythVideo på webben
 "MythWeb"
 "MythWeb Defaults"
+    MythWeb-förval
 "MythWeb Global Defaults"
     MythWeb globala förval
 "MythWeb Session"
+    MythWeb-session
 "MythWeb Skin"
     MythWeb-skinn
 "MythWeb Template"
@@ -547,11 +609,13 @@
 "name"
     namn
 "Narrow Your Search"
+    Begränsa din sökning
 "Never Record"
     Spela aldrig in
 "New"
     Ny
 "New Episodes Only"
+    Endast nya avsnitt
 "New Search"
     Ny sökning
 "New Titles, Premieres"
@@ -565,6 +629,7 @@
 "No matching programs found."
     Inga matchande program hittades.
 "No Public Playlists"
+    Inga publika spellistor
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
 "No Tracks Available"
@@ -600,6 +665,7 @@
 "Original Airdate"
     Sändningsdatum
 "Originally aired between"
+    Visades ursprungligen mellan
 "Override"
     Överskugga
 "Part $1 of $2"
@@ -615,26 +681,45 @@
 "People Search"
     Sök person
 "Percent of time spent recording"
+    Procent av tid i inspelningsläge
 "Play"
     Spela
 "Play this Album Now"
+    Spela detta album nu
 "Play This Playlist Now"
+    Spela denna spellista nu
 "Play this Playlist Now"
+    Spela denna spellista nu
 "Play this Song Now"
+    Spela denna sång nu
 "Play Time"
+    Speltid
 "Played %s times"
+    Spelad %s gånger 
 "Played once"
+    Spela en gång
 "Playlist"
+    Spellista
 "Playlist Info"
+    Info för spellista
 "Playlist is empty"
+    Spellistan är tom
 "Playlist Items"
+    Spellistposter
 "Playlist Name"
+    Namn på spellista
 "Playlist renamed successfully"
+    Namnbyte på spellista lyckades
 "Playlist saved successfully"
+    Spellista sparad
 "Playlist: %s"
+    Spellista: %s
 "Playlists"
+    Spellistor
 "Please enter an imdb number or a title to do another search"
+    Ange ett imdb-nummer och en titel för att göra en ny sökning
 "Please wait for the pending ajax request"
+    Vänta på den pågående ajax-begäran
 "Possible conflicts"
     Möjliga konflikter
 "Possible conflicts with this show"
@@ -672,16 +757,23 @@
 "Program Type"
     Programtyp
 "Protocol"
+    Protokoll
 "Radar"
     Radar
 "Random"
+    Slumpvis
 "Random Items"
+    Slumpvisa poster
 "Random Mix Maker"
+    Slumpmixskapare
 "Random Type"
+    Slumptyp
 "Rating"
     Betyg
 "Recently Added Albums"
+    Nyligen tillagda album
 "Recently Played Songs"
+    Nyligen spelade sånger
 "recgroup"
     inspelningsgrupp
 "Record new and expire old"
@@ -793,11 +885,13 @@
 "regex: articles"
     An?|The
 "Remove Item from Playlist"
+    Ta bort post från spellista
 "Repeat"
     Repris
 "Reset"
     Återställ
 "Return to Statistics Page"
+    Återvänd till statistiksida
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo
 "Saturday"
@@ -805,12 +899,17 @@
 "Save"
     Spara
 "Save or Rename the Current Playlist"
+    Spara eller byt namn på aktuell spellista
 "Save Schedule"
     Spara schema
 "Save/Rename"
+    Spara/Byt namn
 "Save/Rename Playlist"
+    Spara/But namn på spellista
 "Saved Playlist Successfully Deleted"
+    Sparad spellista togs bort
 "Saved Playlists"
+    Sparade spellistor
 "Schedule"
     Schema
 "Schedule Manually"
@@ -880,9 +979,13 @@
 "SI Units"
     SI-enheter
 "Songs"
+    Sånger
 "Songs for Genre"
+    Sånger för genre
 "Songs Played"
+    Sånger spelade
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
+    Tyvärr, du kan inte byta namn på denna spellista eftersom det skulle skapa ett cirkulärt beroende.
 "sourceid"
     käll-id
 "Special Searches"
@@ -909,10 +1012,13 @@
 "Storage Group"
     Lagringsgrupp
 "Streaming"
+    Strömmande
 "Streaming Quality"
+    Strömningskvalité
 "Sub and Desc (Empty matches)"
     Undertitel &amp; beskrivning
 "Submit Search"
+    Sök
 "Subtitle"
     Undertitel
 "Subtitle and Description"
@@ -924,9 +1030,13 @@
 "The requested recording schedule has been deleted."
     Det begärda inspelningsschemat har tagits bort.
 "There are no items in this Playlist!"
+    Det finns inte poster i denna spellista!
 "There was a problem saving your playlist"
+    Det uppstod ett problem med att spara din spellista
 "This playlist is already loaded!"
+    Denna spellista har redan laddats!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+    Detta skriver över din nuvarande, osparade spellista. Är du säker på att du vill fortsätta?
 "Thursday"
     Torsdag
 "Time"
@@ -942,6 +1052,7 @@
 "Title"
     Titel
 "Title search"
+    Sök titel
 "Title Search"
     Sök titel
 "Today"
@@ -955,7 +1066,9 @@
 "Top $1"
     Topp $1
 "Top Played Songs"
+    Mest spelade sånger
 "Total Length"
+    Total längd
 "Total Recorded"
     Totalt inspelat
 "Total Running Time"
@@ -965,6 +1078,7 @@
 "Total Time:  %s"
     Total tid: %s
 "Track #%s from the album '%s'"
+    Spår nr %s fråm albumet '%s'
 "Track Name"
     Spårnamn
 "transcoder"
@@ -994,6 +1108,7 @@
 "Unknown Recording Schedule."
     Okänt inspelningsschema.
 "Unreachable"
+    Oåtkomlig
 "Upcoming Recordings"
     Kommande inspelningar
 "Update"
@@ -1005,6 +1120,7 @@
 "Use date/time"
     Använd datum/tid
 "Use myth:// URI for Windows"
+    Använd myth:// URI för Windows
 "useonairguide"
 "UV Extreme"
     UV-strålning extrem
@@ -1035,9 +1151,13 @@
 "Videos"
     Videor
 "View Albums by %s"
+    Visa album efter %s
 "View Details of %s"
+    Visa detaljer för %s
 "View Saved Playlist"
+    Visa sparad spellista
 "View Server Statistics"
+    Visa serverstatistik
 "Visibility"
     Sikt
 "visible"
