@@ -51,17 +51,19 @@ class Channel {
         // Otherwise, grab it from the backend
             else {
             // Get the info we need about the master backend
-                $host     = $GLOBALS['Master_Host'];
-                $port     = _or(get_backend_setting('BackendStatusPort', $GLOBALS['Master_Host']),
-                                get_backend_setting('BackendStatusPort'));
+                $host = $GLOBALS['Master_Host'];
+                $port = _or(get_backend_setting('BackendStatusPort', $GLOBALS['Master_Host']),
+                            get_backend_setting('BackendStatusPort'));
             // Make the request and store the result
-                $iconfile = fopen($this->icon, 'wb');
-                fwrite($iconfile,
-                       file_get_contents("http://$host:$port/getChannelIcon"
-                                        ."?ChanId=$this->chanid"
-                                        )
-                      );
-                fclose($iconfile);
+                $data = @file_get_contents("http://$host:$port/getChannelIcon"
+                                          .'?ChanId='.$this->chanid
+                                          );
+                if ($data) {
+                    $iconfile = fopen($this->icon, 'wb');
+                    fwrite($iconfile, $data);
+                    fclose($iconfile);
+                }
+                unset($data);
             }
         }
     // Now that local filesystem checks are done, add the web root to the icon
