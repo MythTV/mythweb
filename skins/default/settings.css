@@ -12,28 +12,28 @@
 
 /* Overview of the settings */
 
-    #settings ._overview {
+    #settings .-overview {
         text-align:     center;
         width:          15em;
     }
-    #settings ._title {
+    #settings .-title {
         margin:         .5em;
         font-size:      125%;
     }
 
 /* The list of modules. */
 
-    #settings ._modules {
+    #settings .-modules {
         white-space:    nowrap;
     }
-    #settings ._modules ul {
+    #settings .-modules ul {
         margin:             1em;
         list-style-type:    none;
         padding:            0px;
     }
-    #settings ._modules li {
+    #settings .-modules li {
     }
-    #settings ._modules a {
+    #settings .-modules a {
         display:            block;
         padding:            .2em 1em;
         background-color:   #345;
@@ -41,33 +41,33 @@
         margin-top:         1px;
         margin-bottom:      11px;
     }
-    #settings ._modules a:hover, #settings ._modules a._selected {
+    #settings .-modules a:hover, #settings .-modules a.-selected {
         background-color:   #023;
         margin-top:         -1px;
         margin-bottom:      10px;
         border-width:       2px;
         border-color:       #abd;
     }
-    #settings ._modules a._selected {
+    #settings .-modules a.-selected {
         border-style:       solid;
     }
 
 /* The list of sections for the current module. Normally displayed as tabs. */
 
-    #settings ._sections {
+    #settings .-sections {
         padding:        0px 1em;
         border-bottom:  1px solid #9090B0;
         height:         2.25em;
         vertical-align: bottom;
     }
 
-    #settings ._sections ul {
+    #settings .-sections ul {
         display:        inline;
         list-style:     none;
         margin:         0;
         padding:        0;
     }
-    #settings ._sections a {
+    #settings .-sections a {
         float:              left;
         color:              #ccd;
         background-color:   #405953;
@@ -79,17 +79,17 @@
         -moz-border-radius-topleft:     8px;
         -moz-border-radius-topright:    8px;
     }
-    #settings ._sections a:hover, #settings ._sections a._selected {
+    #settings .-sections a:hover, #settings .-sections a.-selected {
         color:              white;
         background-color:   #102923;
         border-color:       #9090B0;
     }
-    #settings ._sections a._selected {
+    #settings .-sections a.-selected {
         border-bottom:      1px solid #102923;
         margin-bottom:      -1px;
     }
 
-    #settings ._sections a.active {
+    #settings .-sections a.active {
         color:              white;
         font-weight:        bold;
         background-color:   #102923;
@@ -100,14 +100,14 @@
 
 /* Select which host to edit the settings for. */
 
-    #settings ._host {
+    #settings .-host {
         text-align:         right;
         border-bottom:      1px solid #9090B0;
     }
 
 /* A notification/warning */
 
-    #settings ._notice {
+    #settings .-notice {
         margin:             1em;
         padding:            .5em;
         text-align:         center;
@@ -118,26 +118,26 @@
 
 /* The content of the settings that are being edited */
 
-    #settings ._content {
+    #settings .-content {
         background-color:   #102923;
         border:             1px solid #9090B0;
         border-top:         none;
     }
 
-    #settings ._content table {
+    #settings .-content table {
         width:              100%;
     }
-    #settings ._content table th, #settings ._content table td {
+    #settings .-content table th, #settings .-content table td {
         padding:            .5em;
     }
 
-    #settings ._content th {
+    #settings .-content th {
         text-align:         right;
         font-weight:        normal;
         white-space:        nowrap;
     }
 
-    #settings ._content tr._sep th, #settings ._content tr._sep td {
+    #settings .-content tr.-sep th, #settings .-content tr.-sep td {
         border-bottom:      1px solid #304943;
     }
 

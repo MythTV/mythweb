@@ -25,37 +25,37 @@
 
 <table id="settings" border="0" cellpadding="0" cellspacing="0">
 <tr>
-    <td class="_overview" rowspan="2" valign="top">
-        <div class="_title">
+    <td class="-overview" rowspan="2" valign="top">
+        <div class="-title">
             <?php echo t('Settings') ?>:
         </div>
-        <div class="_modules">
+        <div class="-modules">
             <ul><?php
                 foreach ($Settings as $module => $set) {
                     echo '<li><a href="', root, 'settings/', $module;
                     if ($module == $Path[1])
-                        echo '" class="_selected';
+                        echo '" class="-selected';
                     echo '">', html_entities($set['name']), '</a></li>';
                 }
                 ?></ul>
         </div>
-        <div class="_notice">
+        <div class="-notice">
             <?php echo t('settings: notice') ?>
         </div>
         </td>
-    <td class="_sections">
+    <td class="-sections">
         <ul><?php
             foreach ($Settings[$Path[1]]['choices'] as $path => $name) {
                 echo '<li><a href="', root, 'settings/', $Path[1];
                 if ($path == $Path[2])
-                    echo '" class="_selected';
+                    echo '" class="-selected';
                 else
                     echo '/'.$path;
                 echo '">', html_entities($name), '</a></li>';
             }
         ?></ul>
         </td>
-    <td class="_host"><?php echo t('Edit settings for: $1', host_choices()) ?></td>
+    <td class="-host"><?php echo t('Edit settings for: $1', host_choices()) ?></td>
 </tr><tr>
-<td class="_content" colspan="2" valign="top">
+<td class="-content" colspan="2" valign="top">
 

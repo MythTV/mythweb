@@ -88,7 +88,7 @@
         <table id="_info" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
 <?php   if ($channel) { ?>
-            <td class="_channel">
+            <td class="-channel">
                 <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                         title="<?php
                             echo t('Details for: $1',
@@ -97,12 +97,12 @@
 <?php       if (show_channel_icons === true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30">
 <?php       } ?>
-                <span class="_preferred"><?php echo (prefer_channum ? $channel->channum : $channel->callsign) ?></span><br />
+                <span class="-preferred"><?php echo (prefer_channum ? $channel->channum : $channel->callsign) ?></span><br />
                     <?php echo (prefer_channum ? $channel->callsign : $channel->channum), "\n" ?>
                 </a>
             </td>
 <?php   } ?>
-            <td id="_title"<?php
+            <td id="-title"<?php
                     if (!$channel)
                         echo ' colspan="2"';
                     if ($program && $program->css_class)
@@ -126,13 +126,13 @@
         </tr><?php
         if (!empty($schedule->fancy_description)) {
         ?><tr>
-            <td id="_description" colspan="2">
+            <td id="-description" colspan="2">
                 <?php echo nl2br($schedule->fancy_description) ?>
             </td>
         </tr><?php
         }
         if ($program) {
-        ?><tr id="_progflags">
+        ?><tr id="-progflags">
             <td colspan="2"><?php
         // Auto expire is interactive for recordings
             if ($program->filename) {
@@ -165,13 +165,13 @@
             ?></td>
         </tr><?php
             if (strlen($program->category)) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Category') ?>:</th>
             <td><?php echo $program->category ?></td>
         </tr><?php
             }
             if (strlen($program->category_type)) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Type') ?>:</th>
             <td><?php echo $program->category_type;
                           if ($program->seriesid)
@@ -179,83 +179,83 @@
         </tr><?php
             }
             if (strlen($program->syndicatedepisodenumber) > 0) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Episode Number') ?>:</th>
             <td><?php echo $program->syndicatedepisodenumber ?></dd>
         </tr><?php
             }
             if (strlen($program->airdate)) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Original Airdate') ?>:</th>
             <td><?php echo $program->airdate ?></dd>
         </tr><?php
             }
             if (strlen($program->programid) > 0) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Program ID') ?>:</th>
             <td><?php echo $program->programid ?></dd>
         </tr><?php
             }
             if ($program->get_credits('host')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Hosted by') ?>:</th>
             <td><?php echo $program->get_credits('host') ?></dd>
         </tr><?php
             }
             if ($program->get_credits('presenter')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Presented by') ?>:</th>
             <td><?php echo $program->get_credits('presenter') ?></dd>
         </tr><?php
             }
             if ($program->get_credits('actor')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Cast') ?>:</th>
             <td><?php echo $program->get_credits('actor') ?></dd>
         </tr><?php
             }
             if ($program->get_credits('guest_star')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Guest Starring') ?>:</th>
             <td><?php echo $program->get_credits('guest_star') ?></dd>
         </tr><?php
             }
             if ($program->get_credits('director')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Directed by') ?>:</th>
             <td><?php echo $program->get_credits('director') ?></dd>
         </tr><?php
             }
             if ($program->get_credits('producer')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Produced by') ?>:</th>
             <td><?php echo $program->get_credits('producer') ?></dd>
         </tr><?php
             }
             if ($program->get_credits('executive_producer')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Exec. Producer') ?>:</th>
             <td><?php echo $program->get_credits('executive_producer') ?></dd>
         </tr><?php
             }
             if ($program->get_credits('writer')) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Written by') ?>:</th>
             <td><?php echo $program->get_credits('writer') ?></dd>
         </tr><?php
             }
             if (strlen($program->starstring) > 0) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Guide rating') ?>:</th>
             <td><?php echo $program->starstring ?></dd>
         </tr><?php
             }
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('Length') ?>:</th>
             <td><?php echo nice_length($program->length) ?></dd>
         </tr><?php
             if (strlen($program->filesize) > 0) {
-        ?><tr class="_extras">
+        ?><tr class="-extras">
             <th><?php echo t('File Size') ?>:</th>
             <td><?php echo nice_filesize($program->filesize) ?></dd>
         </tr><?php
@@ -265,7 +265,7 @@
         $can_dupcheck = preg_match('/\S/', $program->title)
                         && preg_match('/\S/', $program->programid.$program->subtitle.$program->description);
         if (!empty($program->recstatus) || $can_dupcheck) {
-        ?><tr id="_status">
+        ?><tr id="-status">
             <th><?php echo t('MythTV Status') ?>:</th>
             <td><?php
                 if (!empty($program->recstatus)) {
@@ -329,7 +329,7 @@
             ?></td>
         </tr><?php
         }
-        ?><tr class="_links">
+        ?><tr class="-links">
             <th><?php echo t('More') ?>:</th>
             <td>
 <?php           if ($schedule->title) { ?>
@@ -379,7 +379,7 @@
             ?>">
 
 <?php   if (!$schedule || $schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
-        <div class="_options">
+        <div class="-options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
             <ul>
                 <li><input type="radio" class="radio" name="record" value="0" id="record_never"<?php
@@ -424,7 +424,7 @@
         }
         if ($schedule && $schedule->type != rectype_once && ($schedule->search || $schedule->type)) {
 ?>
-        <div class="_options">
+        <div class="-options">
             <h3><?php echo t('Schedule Override') ?>:</h3>
             <ul>
 <?php       if ($schedule->type == rectype_override || $schedule->type == rectype_dontrec) { ?>
@@ -446,7 +446,7 @@
         </div>
 <?php      } ?>
 
-        <div class="_options">
+        <div class="-options">
 <?php    require_once tmpl_dir.'_advanced_options.php' ?>
         </div>
 
@@ -463,11 +463,11 @@
     if ($program && $program->filename) { ?>
 
         <div id="_downloads">
-            <div class="_pixmap">
+            <div class="-pixmap">
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo $program->thumb_url(320,0) ?>" width="320"></a></td>
             </div>
-            <div class="_links">
+            <div class="-links">
                 <a href="<?php echo video_url($program, true) ?>" title="<?php echo t('ASX Stream') ?>"
                     ><img src="<?php echo skin_url ?>/img/play_sm.png">
                     <?php echo t('ASX Stream') ?></a>

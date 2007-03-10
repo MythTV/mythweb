@@ -11,24 +11,24 @@
     float: left;
 }
 
-._channel {
+.-channel {
     width:              8em;
     padding:            0 !important;
     vertical-align:     middle;
     background-color:   #202a49;
     white-space:        nowrap;
 }
-._channel img {
+.-channel img {
     position:           relative;
     top:                -4px;
     vertical-align:     middle;
 }
-._channel a {
+.-channel a {
     display:            block;
     text-align:         center;
     padding:            5px;
 }
-._channel ._preferred {
+.-channel .-preferred {
     margin-left:        5px;
     font-size:          200%;
 }
@@ -45,43 +45,43 @@
     float:              left;
 }
 
-#_jumpto {
+#-jumpto {
     float:              right;
 }
-#_jumpto td {
+#-jumpto td {
     padding:            .35em 1em;
     vertical-align:     middle;
     white-space:        nowrap;
 }
-#_jumpto td._jumpto {
+#-jumpto td.-jumpto {
     font-size:          110%;
     font-weight:        bold;
     border-right:       1px solid #304943;
 }
-#_jumpto td._hour {
+#-jumpto td.-hour {
     border-right:       1px solid #304943;
 }
-#_jumpto td._hour select {
+#-jumpto td.-hour select {
     text-align:         right;
 }
-#_jumpto ._day select {
+#-jumpto .-day select {
     text-align:         center;
 }
 
-#_jumpto a img {
+#-jumpto a img {
     vertical-align:     middle;
     height:             16px;
     width:              16px;
     margin-top:         -2px;
 }
-#_jumpto a {
+#-jumpto a {
     height:             20px;
     width:              20px;
     padding:            2px;
     border:             1px solid #7b8;
     background-color:   #263;
 }
-#_jumpto a:hover {
+#-jumpto a:hover {
     border:             1px solid #9da;
     background-color:   #485;
 }

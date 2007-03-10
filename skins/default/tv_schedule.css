@@ -22,20 +22,20 @@
     white-space:     nowrap;
 }
 
-#schedule ._options {
+#schedule .-options {
     border-bottom:      1px solid #304943;
     padding:            .5em 1em;
     margin:             .5em 0 .5em 0;
 }
-#schedule ._options ul {
+#schedule .-options ul {
     margin-top:         .5em;
     margin-bottom:      .5em;
 }
-#schedule ._options dl {
+#schedule .-options dl {
     margin-top:         .5em;
     margin-bottom:      .5em;
 }
-#schedule ._options dl dt {   /* remember that the vertical margins of dt and dd *must* line up */
+#schedule .-options dl dt {   /* remember that the vertical margins of dt and dd *must* line up */
     clear:          both;
     float:          left;
     width:          13em;
@@ -44,20 +44,20 @@
     white-space:    nowrap;
     position:       relative; /*IEWin hack*/
 }
-#schedule ._options dl dd {
+#schedule .-options dl dd {
     clear:          right;
     margin-left:    13.5em;
     margin-bottom:  0.5em;
 }
-#schedule ._options input {
+#schedule .-options input {
     width:     18em;
 }
-#schedule ._options select {
+#schedule .-options select {
     width:     18em;
 }
 
 /* A special subclass for options with extra-long input fields */
-#schedule ._options dl._long input, ._options dl._long textarea {
+#schedule .-options dl.-long input, .-options dl.-long textarea {
     width:     32em;
 }
 

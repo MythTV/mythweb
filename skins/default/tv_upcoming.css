@@ -6,16 +6,16 @@
     vertical-align:     middle;
     white-space:        nowrap;
 }
-#display_options td._title {
+#display_options td.-title {
     font-size:          110%;
     font-weight:        bold;
 }
-#display_options td._check {
+#display_options td.-check {
     padding:            .35em .5em;
     border-left:        1px solid #304943;
     height:             2em;
 }
-#display_options td._check label {
+#display_options td.-check label {
     border:             1px solid #7b8;
     background-color:   #263;
     padding-top:        .15em;
@@ -27,11 +27,11 @@
     margin-left:        0em;
     margin-right:       0em;
 }
-#display_options td._check label:hover {
+#display_options td.-check label:hover {
     border:             1px solid #9da;
     background-color:   #485;
 }
-#display_options td._check input {
+#display_options td.-check input {
     float:              none;
     padding:            0px;
     margin:             0px;
@@ -47,38 +47,38 @@
     text-align:     left;
 }
 
-#listings th._status {
+#listings th.-status {
     text-align:         center;
 }
-#listings th._title {
+#listings th.-title {
 }
-#listings th._channum {
+#listings th.-channum {
 }
-#listings th._airdate {
+#listings th.-airdate {
 }
-#listings th._length {
+#listings th.-length {
 }
 
-#listings td._status {
+#listings td.-status {
     text-align:         center;
 }
-#listings td._title {
+#listings td.-title {
 }
-#listings td._channum {
+#listings td.-channum {
 }
-#listings td._airdate {
+#listings td.-airdate {
     white-space:        nowrap;
 }
-#listings td._length {
+#listings td.-length {
     white-space:        nowrap;
 }
-#listings td._commands {
+#listings td.-commands {
     padding:            2px;
     text-align:         center;
     white-space:        nowrap;
     background-color:   #191c26;
 }
-#listings td._commands a {
+#listings td.-commands a {
     display:            block;
     padding:            .25em .5em;
     margin:             0;

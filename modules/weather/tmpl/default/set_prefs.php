@@ -18,10 +18,10 @@
 <input type="hidden" name="host" value="<?php echo html_entities($_SESSION['settings']['host']) ?>" />
 
 <table border="0" cellspacing="0" cellpadding="0">
-<tr class="_sep">
+<tr class="-sep">
     <th><?php echo t('Locale') ?>:</th>
     <td><?php locale_select() ?></td>
-</tr><tr class="_sep">
+</tr><tr class="-sep">
     <th><?php echo t('SI Units') ?>:</th>
     <td><?php unit_select() ?></td>
 </tr><tr>

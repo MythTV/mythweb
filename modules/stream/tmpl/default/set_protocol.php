@@ -21,7 +21,7 @@
 </div>
 
 <table border="0" cellspacing="0" cellpadding="0">
-<tr class="_sep">
+<tr class="-sep">
     <th><label for="force_http"><?php echo t('Force HTTP for streams') ?>:</label></th>
     <td><input type="checkbox" id="force_http" name="force_http" value="1"<?php if ($_SESSION['stream']['force_http']) echo ' CHECKED' ?>></td>
 </tr><tr>

@@ -8,12 +8,12 @@
     vertical-align:     middle;
     white-space:        nowrap;
 }
-#title_choices td._group, #title_choices td._recordings {
+#title_choices td.-group, #title_choices td.-recordings {
     font-size:          110%;
     font-weight:        bold;
     border-right:       1px solid #304943;
 }
-#title_choices td._recordings {
+#title_choices td.-recordings {
     border-left:        1px solid #304943;
 }
 
@@ -38,31 +38,31 @@
     display:        block;
 }
 
-#recorded_list td._pixmap {
+#recorded_list td.-pixmap {
     background-color:   black;
     padding:            0 !important;
     width:              150px;
     position:           relative;
 }
-#recorded_list td._pixmap._noimg {
+#recorded_list td.-pixmap.-noimg {
     width:              50px;
 }
-#recorded_list td._pixmap a {
+#recorded_list td.-pixmap a {
     border:         1px solid transparent;
 }
-#recorded_list td._pixmap a:hover {
+#recorded_list td.-pixmap a:hover {
     background-color:   #121;
     border:         1px solid #F0F000;
 }
 
-#recorded_list td._pixmap a._pixmap {
+#recorded_list td.-pixmap a.-pixmap {
     float:          left;
     height:         78px;
 }
-#recorded_list td._pixmap a._pixmap img {
+#recorded_list td.-pixmap a.-pixmap img {
     width:          100px;
 }
-#recorded_list td._pixmap a._download {
+#recorded_list td.-pixmap a.-download {
     margin-left:    102px;
     display:        block;
     padding:        7px;
@@ -70,35 +70,35 @@
     text-align:     center;
     vertical-align: middle;
 }
-#recorded_list td._pixmap._noimg a._download {
+#recorded_list td.-pixmap.-noimg a.-download {
     margin-left:    2px;
 }
 
 
-#recorded_list th._title a, #recorded_list td._title {
+#recorded_list th.-title a, #recorded_list td.-title {
 }
-#recorded_list th._subtitle a, #recorded_list td._subtitle {
+#recorded_list th.-subtitle a, #recorded_list td.-subtitle {
 }
-#recorded_list th._programid a, #recorded_list td._programid {
+#recorded_list th.-programid a, #recorded_list td.-programid {
 }
-#recorded_list th._channum a, #recorded_list td._channum {
+#recorded_list th.-channum a, #recorded_list td.-channum {
 }
-#recorded_list th._airdate a, #recorded_list td._airdate {
+#recorded_list th.-airdate a, #recorded_list td.-airdate {
     text-align:     center;
     white-space:    nowrap;
 }
-#recorded_list th._recgroup a, #recorded_list td._recgroup {
+#recorded_list th.-recgroup a, #recorded_list td.-recgroup {
 }
-#recorded_list th._length a, #recorded_list td._length {
+#recorded_list th.-length a, #recorded_list td.-length {
     white-space:    nowrap;
     text-align:     center;
 }
-#recorded_list th._filesize a, #recorded_list td._filesize {
+#recorded_list th.-filesize a, #recorded_list td.-filesize {
     white-space:    nowrap;
     text-align:     center;
 }
 
-#recorded_list td._commands {
+#recorded_list td.-commands {
     padding:            2px;
     width:              5%;
     white-space:        nowrap;
@@ -106,7 +106,7 @@
     vertical-align:     top;
     background-color:   #191c26;
 }
-#recorded_list td._commands a {
+#recorded_list td.-commands a {
     display:            block;
     padding:            .25em .5em;
     margin:             0 0 3px 0;
@@ -115,14 +115,14 @@
 /* a class for the the cells containing recored programs in recorded_programs.php */
 .recorded {    background-color: #506080; }
 
-.recorded ._progflags img {
+.recorded .-progflags img {
     padding:    .3em;
 }
 
 .recorded a img {
     border:     1px solid transparent;
 }
-.recorded ._progflags a:hover img {
+.recorded .-progflags a:hover img {
     border:     1px solid #F0F000;
 }
 

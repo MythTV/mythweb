@@ -118,7 +118,7 @@
     }
 
     function imdb_prompt(id) {
-        var title = $('video_'+id+'_title').childNodes[0].innerHTML;
+        var title = $('video_'+id+'-title').childNodes[0].innerHTML;
         var number = prompt('<?php echo t('Please enter an imdb number or a title to do another search'); ?>', title);
         if (typeof(number) != 'string')
             return;
@@ -197,7 +197,7 @@
                 hide = true;
             if (browse != -1 & $(id+'_browse').innerHTML != browse)
                 hide = true;
-            if ( title.length > 0 & $(id+'_title').childNodes[0].innerHTML.toLowerCase().match(title) == null )
+            if ( title.length > 0 & $(id+'-title').childNodes[0].innerHTML.toLowerCase().match(title) == null )
                 hide = true;
             if (hide)
                 add_class(id, 'hidden');
@@ -308,9 +308,9 @@
         <div id="video_<?php echo $show->intid; ?>_categoryid" class="hidden"><?php echo $show->category; ?></div>
         <div id="video_<?php echo $show->intid; ?>_genre" class="hidden"><?php if (count($show->genres)) foreach ($show->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="video_<?php echo $show->intid; ?>_browse" class="hidden"><?php echo $show->browse; ?></div>
-        <div id="video_<?php echo $show->intid; ?>_title" class="title"><a href="<?php echo $show->url; ?>"><?php echo htmlentities($show->title); ?></a></div>
+        <div id="video_<?php echo $show->intid; ?>-title" class="title"><a href="<?php echo $show->url; ?>"><?php echo htmlentities($show->title); ?></a></div>
         <div id="video_<?php echo $show->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($show->cover_url)) echo 'src="data/video_covers/'.basename($show->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
-        <div id="video_<?php echo $show->intid; ?>_category">           <?php echo $Category_String[$show->category]; ?></div>
+        <div id="video_<?php echo $show->intid; ?>-category">           <?php echo $Category_String[$show->category]; ?></div>
         <div id="video_<?php echo $show->intid; ?>_playtime">           <?php echo nice_length($show->length * 60); ?></div>
         <div id="video_<?php echo $show->intid; ?>_imdb">               <?php if ($show->inetref != '00000000') { ?><a href="http://www.imdb.com/Title?<?php echo $show->inetref; ?>"><?php echo $show->inetref ?></a><?php } ?></div>
         <div class="command">

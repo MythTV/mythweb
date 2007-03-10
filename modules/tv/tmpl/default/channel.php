@@ -33,11 +33,11 @@
 <?php   } ?>
         Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?>
     </div>
-    <table id="_jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
+    <table id="-jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
     <tr>
-        <td class="_jumpto"><?php echo t('Jump To') ?>:</td>
-        <td class="_hour"><?php channel_select('onchange="$(\'program_listing\').submit()"') ?></td>
-        <td class="_day"><a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] - (24 * 60 * 60) ?>"
+        <td class="-jumpto"><?php echo t('Jump To') ?>:</td>
+        <td class="-hour"><?php channel_select('onchange="$(\'program_listing\').submit()"') ?></td>
+        <td class="-day"><a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] - (24 * 60 * 60) ?>"
                 ><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
             <?php date_select('onchange="$(\'program_listing\').submit()"') ?>
             <a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] + (24 * 60 * 60) ?>"

@@ -39,26 +39,26 @@
 
 <table id="display_options" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
 <tr>
-    <td class="_title"><?php echo t('Display') ?>:</td>
-    <td class="_check">
+    <td class="-title"><?php echo t('Display') ?>:</td>
+    <td class="-check">
         <label for="disp_scheduled">
         <input type="checkbox" id="disp_scheduled" name="disp_scheduled" class="radio" onclick="$('change_display').submit()"<?php
             if ($_SESSION['scheduled_recordings']['disp_scheduled']) echo ' CHECKED' ?>>
         <?php echo t('Scheduled') ?></label>
         </td>
-    <td class="_check">
+    <td class="-check">
         <label for="disp_duplicates">
         <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
         <?php echo t('Duplicates') ?></label>
         </td>
-    <td class="_check">
+    <td class="-check">
         <label for="disp_deactivated">
         <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
         <?php echo t('Deactivated') ?></label>
         </td>
-    <td class="_check">
+    <td class="-check">
         <label for="disp_conflicts">
         <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
@@ -72,11 +72,11 @@
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="_status"><?php  echo t('Status') ?></td>
-    <th class="_title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
-    <th class="_channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
-    <th class="_airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
-    <th class="_length"><?php  echo get_sort_link('length',  t('Length'))  ?></th>
+    <th class="-status"><?php  echo t('Status') ?></td>
+    <th class="-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
+    <th class="-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
+    <th class="-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
+    <th class="-length"><?php  echo get_sort_link('length',  t('Length'))  ?></th>
 </tr><?php
     $row = 0;
 
@@ -246,8 +246,8 @@
 
     // Print the content
 ?><tr class="<?php echo $css_class ?>">
-<?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n    <td class=\"_status rec_class $rec_class\">$rec_char</td>\n" ?>
-    <td class="_title <?php echo $show->css_class ?>"><?php
+<?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n    <td class=\"-status rec_class $rec_class\">$rec_char</td>\n" ?>
+    <td class="-title <?php echo $show->css_class ?>"><?php
     // Print the link to edit this scheduled recording
         echo '<a';
         if (show_popup_info)
@@ -267,12 +267,12 @@
                 : ''),
              '</a>';
         ?></td>
-    <td class="_channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
-    <td class="_airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
-    <td class="_length"><?php  echo nice_length($show->length) ?></td>
+    <td class="-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+    <td class="-airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
+    <td class="-length"><?php  echo nice_length($show->length) ?></td>
 <?php
         foreach ($commands as $command) {
-            echo '    <td class="_commands commands">',$command,"</td>\n";
+            echo '    <td class="-commands commands">',$command,"</td>\n";
         }
 ?>
 </tr><?php

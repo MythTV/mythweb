@@ -29,11 +29,11 @@
     <div id="_current_time"><?php
         echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime))
     ?></div>
-    <table id="_jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
+    <table id="-jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
     <tr>
-        <td class="_jumpto"><?php echo t('Jump To') ?>:</td>
-        <td class="_hour"><?php hour_select('onchange="$(\'program_listing\').submit()"') ?></td>
-        <td class="_day"><a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime - (24 * 60 * 60) ?>"
+        <td class="-jumpto"><?php echo t('Jump To') ?>:</td>
+        <td class="-hour"><?php hour_select('onchange="$(\'program_listing\').submit()"') ?></td>
+        <td class="-day"><a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime - (24 * 60 * 60) ?>"
                 ><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
             <?php date_select('onchange="$(\'program_listing\').submit()"') ?>
             <a href="<?php echo root ?>tv/list?time=<?php echo $list_starttime + (24 * 60 * 60) ?>"
@@ -89,7 +89,7 @@
             $channel_count++;
         // Print the data
 ?><tr>
-    <td class="_channel">
+    <td class="-channel">
         <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                 title="<?php
                     echo t('Details for: $1',
@@ -98,7 +98,7 @@
 <?php       if (show_channel_icons === true && !empty($channel->icon)) { ?>
         <img src="<?php echo $channel->icon ?>" height="30" width="30">
 <?php       } ?>
-        <span class="_preferred"><?php echo (prefer_channum ? $channel->channum : $channel->callsign) ?></span><br />
+        <span class="-preferred"><?php echo (prefer_channum ? $channel->channum : $channel->callsign) ?></span><br />
             <?php echo (prefer_channum ? $channel->callsign : $channel->channum), "\n" ?>
         </a>
         </td>

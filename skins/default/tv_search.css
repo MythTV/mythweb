@@ -6,16 +6,16 @@
     vertical-align:     top;
     white-space:        nowrap;
 }
-#search_options td._advanced {
+#search_options td.-advanced {
     border-right:       1px solid #304943;
 }
-#search_options td._timeopts {
+#search_options td.-timeopts {
     border-right:       1px solid #304943;
 }
-#search_options td._progtype {
+#search_options td.-progtype {
     border-right:       1px solid #304943;
 }
-#search_options td._submit {
+#search_options td.-submit {
     vertical-align:     middle;
     padding:            1.5em;
 }
@@ -31,33 +31,33 @@
     text-align:         left;
     white-space:        nowrap;
 }
-#search_results th._title {
+#search_results th.-title {
 }
-#search_results th._category {
+#search_results th.-category {
 }
-#search_results th._description {
+#search_results th.-description {
 }
-#search_results th._channum {
+#search_results th.-channum {
 }
-#search_results th._airdate {
+#search_results th.-airdate {
 }
-#search_results th._length {
+#search_results th.-length {
 }
 
 #search_results td {
 }
-#search_results td._title {
+#search_results td.-title {
 }
-#search_results td._category {
+#search_results td.-category {
 }
-#search_results td._description {
+#search_results td.-description {
 }
-#search_results td._channum {
+#search_results td.-channum {
 }
-#search_results td._airdate {
+#search_results td.-airdate {
     white-space:        nowrap;
 }
-#search_results td._length {
+#search_results td.-length {
     white-space:        nowrap;
 }
 

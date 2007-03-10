@@ -10,37 +10,37 @@
     text-align:         left;
     white-space:        nowrap;
 }
-#listings th._title {
+#listings th.-title {
 }
-#listings th._priority {
+#listings th.-priority {
     text-align:         center;
 }
-#listings th._channel {
+#listings th.-channel {
 }
-#listings th._profile {
+#listings th.-profile {
 }
-#listings th._transcoder {
+#listings th.-transcoder {
 }
-#listings th._group {
+#listings th.-group {
 }
-#listings th._type {
+#listings th.-type {
 }
 
 #listings td {
 }
-#listings td._title {
+#listings td.-title {
 }
-#listings td._priority {
+#listings td.-priority {
     text-align:         center;
 }
-#listings td._channel {
+#listings td.-channel {
 }
-#listings td._profile {
+#listings td.-profile {
 }
-#listings td._transcoder {
+#listings td.-transcoder {
 }
-#listings td._group {
+#listings td.-group {
 }
-#listings td._type {
+#listings td.-type {
 }
 

@@ -26,7 +26,7 @@
     <th><?php echo t('MythVideo Dir') ?>:</th>
     <td><input type="text" size="36" name="mythvideo_dir"
         value="<?php echo html_entities(setting('VideoStartupDir', hostname))?>"></td>
-</tr><tr class="_sep">
+</tr><tr class="-sep">
     <th><?php echo t('MythVideo Artwork Dir') ?>:</th>
     <td><input type="text" size="36" name="video_artwork_dir"
         value="<?php echo html_entities(setting('VideoArtworkDir', hostname))?>"></td>
