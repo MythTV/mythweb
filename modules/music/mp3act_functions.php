@@ -1329,7 +1329,7 @@ function randAdd($type,$num=0,$items='')
 {
   $output = array(0 => 1);
   // Check to see if $items matches our REGEXP.
-  if (!preg_match('/^[0-9]+(,[0-9]+)*$/', $items))
+  if ($type != 'all' && !preg_match('/^[0-9]+(,[0-9]+)*$/', $items))
   {
     return $output;
   }
@@ -1471,6 +1471,10 @@ function play($type, $id, $quality = 'high')
       mysql_free_result($result);
     }
   }
+
+  if($tmp == '')
+    return '';
+
   session_cache_limiter('nocache');
   header('Content-Type: audio/mpegurl;');
   header('Content-Disposition: inline; filename="playlist.m3u"');
