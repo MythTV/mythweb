@@ -13,6 +13,7 @@
  *
 /**/
 
+
 require_once('modules/music/mp3act_html_functions.php');
 
 define('MYTH_WEB_PLAYLIST_NAME', 'MythWeb Temporary Playlist');
@@ -1418,7 +1419,7 @@ function getPlaylistM3u($id, $quality, $depth = 0)
     if ($song_id > 0)
     {
       $row = $song_info[$song_id];
-      $tmp .= '#EXTINF:'.intval($row['length']).','.$row['artist_name'].' - '.$row['name']."\n";
+      $tmp .= '#EXTINF:'.intval($row['length']).','.utf8_decode($row['artist_name']).' - '.utf8_decode($row['name'])."\n";
       $tmp .= music_dir().'mp3act_playstream.php?i='.$row['song_id'].'&q='.$quality."\n";
     }
     else if ($song_id < 1)
@@ -1465,7 +1466,7 @@ function play($type, $id, $quality = 'high')
     {
       while ($row = mysql_fetch_array($result))
       {
-        $tmp .= '#EXTINF:'.intval($row['length']).','.$row['artist_name'].' - '.$row['name']."\n";
+        $tmp .= '#EXTINF:'.intval($row['length']).','.utf8_decode($row['artist_name']).' - '.utf8_decode($row['name'])."\n";
         $tmp .= music_dir().'mp3act_playstream.php?i='.$row['song_id'].'&q='.$quality."\n";
       }
       mysql_free_result($result);
