@@ -1,3 +1,4 @@
+""
 " at "
 "# Tracks"
 "$1 B"
@@ -218,6 +219,7 @@
     Pois päältä
 "Default"
     Oletus
+"Default MythVideo View"
 "Delete"
     Poista
 "delete"
@@ -445,6 +447,9 @@
 "MythVideo Dir"
 "MythVideo on the web."
     MythVideo Netissä.
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
@@ -881,13 +886,26 @@
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
-"Video: Warning: file_get_contents"
-"Video: Warning: file_put_contents"
 "Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
 "videofilters"
     Videosuodattimet
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
 "Videos"
     Videot
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
@@ -900,6 +918,7 @@
 "Watched"
 "Weather"
     Säätila
+"web_video_imdb_path"
 "Wednesday"
     Keskiviikko
 "welcome: backend_log"

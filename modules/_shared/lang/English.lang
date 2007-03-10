@@ -1,3 +1,4 @@
+""
 " at "
 "# Tracks"
 "$1 B"
@@ -148,6 +149,7 @@
 "Date Formats"
 "Deactivated"
 "Default"
+"Default MythVideo View"
 "Delete"
 "delete"
 "Delete $1"
@@ -309,6 +311,9 @@
 "MythVideo Artwork Dir"
 "MythVideo Dir"
 "MythVideo on the web."
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
@@ -637,7 +642,7 @@
 "Video: Error: IMDB"
     Fatal Error, I am sorry, but there was a failure getting the imdb data. Please check your imdb number if you entered it by hand.
 "Video: Error: IMDB: Not Found"
-    Fatal Error, I can not seem to find imdb.pl, is it installed?
+    Fatal Error, IMDB was not set in the settings table, please set it via the settings tab.
 "Video: Error: Missing ID"
     Fatal Error, For some reason the id was not sent to the imdb script. Bailing out.
 "Video: IMDB: No Matches"
@@ -648,14 +653,25 @@
     Warning, Updating the video artwork failed. Please check the permissions on your Video Artwork Directory for this host
 "Video: Warning: Artwork: Download"
     Downloading the artwork from imdb failed.
-"Video: Warning: file_get_contents"
-    Warning, it seems like your version of php does not support file_get_contents. Video artwork grabbing is disabled.
-"Video: Warning: file_put_contents"
-    Warning, it seems like your version of php does not support file_put_contents. Video artwork grabbing is disabled.
 "Video: Warning: fopen"
-    Warning, Your php.ini file has allow_url_fopen set to Off. To download the file, it is required to be On. Artwork will not be updated.
+    Warning, Your php.ini file has allow_url_fopen set to Off. To download the artwork, it is required to be On. Artwork will not be updated.
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
 "videofilters"
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
 "Videos"
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
@@ -665,6 +681,8 @@
 "Visit $1"
 "Watched"
 "Weather"
+"web_video_imdb_path"
+    Path to imdb.pl on this webserver
 "Wednesday"
 "welcome: backend_log"
     Show the server logs.

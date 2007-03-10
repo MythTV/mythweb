@@ -1,3 +1,4 @@
+""
 " at "
 "# Tracks"
 "$1 B"
@@ -221,6 +222,7 @@
     無効
 "Default"
     通常設定
+"Default MythVideo View"
 "Delete"
     削除
 "delete"
@@ -460,6 +462,9 @@
     MythVideoディレクトリ
 "MythVideo on the web."
     MythVideo オンザウェブ
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
@@ -916,13 +921,26 @@
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
-"Video: Warning: file_get_contents"
-"Video: Warning: file_put_contents"
 "Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
 "videofilters"
     ビデオフィルタ
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
 "Videos"
     ビデオ
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
@@ -935,6 +953,7 @@
 "Watched"
 "Weather"
     天気
+"web_video_imdb_path"
 "Wednesday"
     水曜日
 "welcome: backend_log"

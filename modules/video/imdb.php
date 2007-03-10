@@ -12,25 +12,16 @@
  *
 /**/
 
-    $DEBUG = FALSE;
-
-// We need to search for the imdb.pl script.
-    $imdb = NULL;
-    if (file_exists('/usr/share/mythtv/mythvideo/scripts/imdb.pl'))
-        $imdb = '/usr/share/mythtv/mythvideo/scripts/imdb.pl';
-    elseif (file_exists('/usr/local/share/mythtv/mythvideo/scripts/imdb.pl'))
-        $imdb = '/usr/local/share/mythtv/mythvideo/scripts/imdb.pl';
-// this *should* work well enough...
-    else
-        $imdb = trim(`locate imdb.pl | head -n 1`);
-    if (is_null($imdb)) {
-        echo 'Error~:~ '.t('Video: Error: IMDB: Not Found')."\n";
-        return;
-    }
-
 // We need the id always set, so enforce that here
     if (!isset($_REQUEST['id'])) {
         echo 'Error~:~ '.t('Video: Error: Missing ID')."\n";
+        return;
+    }
+
+    $imdb = setting('web_video_imdb_path', hostname);
+
+    if (is_null($imdb)) {
+        echo 'Error~:~ '.t('Video: Error: IMDB: Not Found')."\n";
         return;
     }
 
@@ -53,7 +44,6 @@
     function lookup($id, $title)
     {
         global $imdb;
-        global $DEBUG;
     // Escape any extra " in the title string
         $title = str_replace('"', '\"', $title);
     // Setup the option list
@@ -63,7 +53,7 @@
         foreach ($options as $option) {
             $cmd = "$imdb -M $option \"$title\"";
             exec($cmd, $output, $retval);
-            if ($retval == 255 | $DEBUG)
+            if ($retval == 255)
                 echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
             if (count($output)) {
                 echo 'Matches~:~ id: '.$id;
@@ -80,11 +70,10 @@
     {
         global $imdb;
         global $db;
-        global $DEBUG;
     // save the poster
         $cmd = "$imdb -P $imdbnum";
         exec($cmd, $output, $retval);
-        if ($retval == 255 | $DEBUG)
+        if ($retval == 255)
             echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
         $posterurl = trim($output[0]);
         $artworkdir = setting('VideoArtworkDir', hostname);
@@ -95,10 +84,6 @@
             $posterfile = $artworkdir.'/'.$imdbnum.'.jpg';
             if (!ini_get('allow_url_fopen'))
                 echo 'Warning~:~ '.t('Video: Warning: fopen')."\n";
-            elseif (!function_exists('file_get_contents'))
-                echo 'Warning~:~ '.t('Video: Warning: file_get_contents')."\n";
-            elseif (!function_exists('file_put_contents'))
-                echo 'Warning~:~ '.t('Video: Warning: file_put_contents')."\n";
             elseif(strlen($posterurl) > 0) {
                 $posterjpg = @file_get_contents($posterurl);
                 if ($posterjpg === FALSE)

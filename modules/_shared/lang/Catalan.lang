@@ -1,3 +1,4 @@
+""
 " at "
     a
 "# Tracks"
@@ -232,6 +233,7 @@
     Desactivat
 "Default"
     Por defecte
+"Default MythVideo View"
 "Delete"
     Esborrar
 "delete"
@@ -479,6 +481,9 @@
     Dir MythVideo
 "MythVideo on the web."
     MythVideo en el web
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
@@ -949,13 +954,26 @@
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
-"Video: Warning: file_get_contents"
-"Video: Warning: file_put_contents"
 "Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
 "videofilters"
     filtres vídeo
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
 "Videos"
     Vídeos
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
@@ -969,6 +987,7 @@
 "Watched"
 "Weather"
     Tiempo
+"web_video_imdb_path"
 "Wednesday"
     Dimecres
 "welcome: backend_log"

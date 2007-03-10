@@ -1,3 +1,4 @@
+""
 " at "
     ob
 "# Tracks"
@@ -190,6 +191,7 @@
     Deaktiviran
 "Default"
     Privzet
+"Default MythVideo View"
 "Delete"
     Briši
 "delete"
@@ -389,6 +391,9 @@
 "MythVideo Dir"
 "MythVideo on the web."
     MythVideo na spletu
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
@@ -784,11 +789,24 @@
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
-"Video: Warning: file_get_contents"
-"Video: Warning: file_put_contents"
 "Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
 "videofilters"
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
 "Videos"
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
@@ -799,6 +817,7 @@
 "Visit $1"
 "Watched"
 "Weather"
+"web_video_imdb_path"
 "Wednesday"
     Sreda
 "welcome: backend_log"

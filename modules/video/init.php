@@ -22,10 +22,16 @@
 
 // If video is enabled, add it to the list.
     if ($has_video && tmpl == 'default') {
-        $Modules['video'] = array('path'        => 'video',
-                                  'sort'        => 3,
-                                  'name'        => t('Video'),
-                                  'description' => t('')
-                                 );
+        $Modules['video']  = array('path'        => 'video',
+                                   'sort'        => 3,
+                                   'name'        => t('Video'),
+                                   'description' => t('')
+                                  );
+        $Settings['video'] = array('name'    => t('Video'),
+                                   'choices' => array('settings' => t('Settings'),
+                                                     ),
+                                   'default' => 'settings',
+                                  );
+
     }
 

@@ -1,3 +1,4 @@
+""
 " at "
     vid
 "# Tracks"
@@ -296,6 +297,7 @@
     Avaktiverad
 "Default"
     Standard
+"Default MythVideo View"
 "Delete"
     Radera
 "delete"
@@ -591,6 +593,9 @@
     MythVideo-katalog
 "MythVideo on the web."
     MythVideo på webben
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
     MythWeb-förval
@@ -695,7 +700,7 @@
 "Play Time"
     Speltid
 "Played %s times"
-    Spelad %s gånger 
+    Spelad %s gånger
 "Played once"
     Spela en gång
 "Playlist"
@@ -1143,13 +1148,26 @@
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
-"Video: Warning: file_get_contents"
-"Video: Warning: file_put_contents"
 "Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
 "videofilters"
     videofilter
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
 "Videos"
     Videor
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
 "View Albums by %s"
     Visa album efter %s
 "View Details of %s"
@@ -1168,6 +1186,7 @@
     Har setts
 "Weather"
     Väder
+"web_video_imdb_path"
 "Wednesday"
     Onsdag
 "welcome: backend_log"

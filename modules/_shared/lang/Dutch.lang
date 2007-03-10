@@ -1,3 +1,4 @@
+""
 " at "
     aan
 "# Tracks"
@@ -221,6 +222,7 @@
     Gedeactiveerd
 "Default"
     Standaard
+"Default MythVideo View"
 "Delete"
     Verwijderen
 "delete"
@@ -457,6 +459,9 @@
 "MythVideo Dir"
 "MythVideo on the web."
     Video
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
@@ -902,13 +907,26 @@
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
-"Video: Warning: file_get_contents"
-"Video: Warning: file_put_contents"
 "Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
 "videofilters"
     videofilters
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
 "Videos"
     Films
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
@@ -921,6 +939,7 @@
 "Watched"
 "Weather"
     Weer
+"web_video_imdb_path"
 "Wednesday"
     Woensdag
 "welcome: backend_log"
