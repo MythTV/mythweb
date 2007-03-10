@@ -58,4 +58,5 @@
     <td class="-host"><?php echo t('Edit settings for: $1', host_choices()) ?></td>
 </tr><tr>
 <td class="-content" colspan="2" valign="top">
+<?php display_errors() ?>
 

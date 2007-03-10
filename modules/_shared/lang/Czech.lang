@@ -208,6 +208,7 @@
 "Duration"
 "Earlier"
 "Edit"
+"Edit existing group"
 "Edit MythWeb and some MythTV settings."
 "Edit settings for: $1"
 "End"
@@ -219,6 +220,7 @@
 "Episode"
     Díl
 "Episode Number"
+"error: playgroup $1 exists"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -374,6 +376,7 @@
     Nikdy nenahrávat
 "New"
 "New Episodes Only"
+"New Group"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -419,6 +422,8 @@
 "Play this Playlist Now"
 "Play this Song Now"
 "Play Time"
+"Playback Group"
+"Playback Groups"
 "Played %s times"
 "Played once"
 "Playlist"
@@ -615,6 +620,8 @@
 "Showings between"
 "Shows"
 "SI Units"
+"Skip Ahead"
+"Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -652,12 +659,14 @@
     Čtvrtek
 "Time"
 "Time Span"
+"Time Stretch"
 "Time Stretch Default"
 "Timeslot size"
 "title"
     název
 "Title"
     Název
+"Title Match"
 "Title search"
 "Title Search"
 "Today"

@@ -317,7 +317,7 @@ class Schedule {
                          _or($this->autouserjob2,  0,          true),
                          _or($this->autouserjob3,  0,          true),
                          _or($this->autouserjob4,  0,          true),
-                         _or($this->playgroup,     0,          true),
+                         _or($this->playgroup,     'Default'       ),
                          _or($this->storagegroup,  'Default'       ),
                          _or($this->prefinput,     0,          true),
                          _or($this->next_record,   '00:00:00'      ),
@@ -487,6 +487,36 @@ class Schedule {
     }
 
 }
+
+/**
+ * prints a <select> of the various playback groups available
+/**/
+    function playgroup_select($this_playgroup, $name = 'playgroup', $id = NULL, $js = NULL)     {
+    // Make sure we have some data
+        static $playgroups = array();
+        if (!count($playgroups)) {
+            global $db;
+            $sh = $db->query('SELECT name FROM playgroup ORDER BY name');
+            while (list($group) = $sh->fetch_row()) {
+                $playgroups[] = $group;
+            }
+            $sh->finish();
+        }
+    // Print the actual select
+        echo "<select name=\"$name\"";
+        if ($id)
+            echo ' id="'.$id.'"';
+        if (!empty($js))
+            echo ' onchange="'.$js.'"';
+        echo ">";
+        foreach($playgroups as $group) {
+            echo '<option';
+            if ($this_playgroup == $group)
+                echo ' SELECTED';
+            echo '>', html_entities($group), '</option>';
+        }
+        echo '</select>';
+    }
 
 /**
  * prints a <select> of the various recording profiles to choose from

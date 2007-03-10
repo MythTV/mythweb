@@ -56,6 +56,8 @@
                 <dd><?php recgroup_select($schedule->recgroup) ?></dd>
                 <dt><?php echo t('Storage Group') ?>:</dt>
                 <dd><?php storagegroup_select($schedule->storagegroup) ?></dd>
+                <dt><?php echo t('Playback Group') ?>:</dt>
+                <dd><?php playgroup_select($schedule->playgroup, 'playgroup') ?></dd>
                 <dt><?php echo t('Recording Priority') ?>:</dt>
                 <dd><select name="recpriority"><?php
                     for ($i=99; $i>=-99; --$i) {

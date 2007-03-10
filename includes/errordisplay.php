@@ -81,7 +81,7 @@
         echo <<<EOF
 <script language="JavaScript" type="text/javascript">
 <!--
-add_event(window, 'load', display_errors);
+Event.observe(window, 'load', display_errors);
 function display_errors() { alert("$js_errstr"); };
 // -->
 </script>

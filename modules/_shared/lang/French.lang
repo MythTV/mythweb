@@ -232,6 +232,7 @@
 "Duration"
 "Earlier"
 "Edit"
+"Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Editer les param&egrave;tres de Mythweb et certains de MythTV
 "Edit settings for: $1"
@@ -244,6 +245,7 @@
 "Episode"
     Episode
 "Episode Number"
+"error: playgroup $1 exists"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -415,6 +417,7 @@
     Ne jamais enregistrer
 "New"
 "New Episodes Only"
+"New Group"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -462,6 +465,8 @@
 "Play this Playlist Now"
 "Play this Song Now"
 "Play Time"
+"Playback Group"
+"Playback Groups"
 "Played %s times"
 "Played once"
 "Playlist"
@@ -681,6 +686,8 @@
 "Shows"
 "SI Units"
     Unités métriques
+"Skip Ahead"
+"Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -725,12 +732,14 @@
 "Time"
     Heure
 "Time Span"
+"Time Stretch"
 "Time Stretch Default"
 "Timeslot size"
 "title"
     Titre
 "Title"
     Titre
+"Title Match"
 "Title search"
 "Title Search"
 "Today"

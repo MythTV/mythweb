@@ -60,34 +60,35 @@
     // Adding a new schedule
         else {
         // Set things as the user requested
-            $schedule->profile      = $_POST['profile'];
-            $schedule->recgroup     = $_POST['recgroup'];
-            $schedule->storagegroup = $_POST['storagegroup'];
-            $schedule->autoexpire   = $_POST['autoexpire']   ? 1 : 0;
-            $schedule->autocommflag = $_POST['autocommflag'] ? 1 : 0;
-            $schedule->autouserjob1 = $_POST['autouserjob1'] ? 1 : 0;
-            $schedule->autouserjob2 = $_POST['autouserjob2'] ? 1 : 0;
-            $schedule->autouserjob3 = $_POST['autouserjob3'] ? 1 : 0;
-            $schedule->autouserjob4 = $_POST['autouserjob4'] ? 1 : 0;
-            $schedule->maxnewest    = $_POST['maxnewest']    ? 1 : 0;
-            $schedule->dupin        = _or($_POST['dupin'],    15);
-            $schedule->dupmethod    = _or($_POST['dupmethod'], 6);
-            $schedule->recpriority  = intval($_POST['recpriority']);
-            $schedule->maxepisodes  = intval($_POST['maxepisodes']);
-            $schedule->startoffset  = intval($_POST['startoffset']);
-            $schedule->endoffset    = intval($_POST['endoffset']);
+            $schedule->profile       = $_POST['profile'];
+            $schedule->recgroup      = $_POST['recgroup'];
+            $schedule->storagegroup  = $_POST['storagegroup'];
+            $schedule->playgroup     = $_POST['playgroup'];
+            $schedule->autoexpire    = $_POST['autoexpire']   ? 1 : 0;
+            $schedule->autocommflag  = $_POST['autocommflag'] ? 1 : 0;
+            $schedule->autouserjob1  = $_POST['autouserjob1'] ? 1 : 0;
+            $schedule->autouserjob2  = $_POST['autouserjob2'] ? 1 : 0;
+            $schedule->autouserjob3  = $_POST['autouserjob3'] ? 1 : 0;
+            $schedule->autouserjob4  = $_POST['autouserjob4'] ? 1 : 0;
+            $schedule->maxnewest     = $_POST['maxnewest']    ? 1 : 0;
+            $schedule->dupin         = _or($_POST['dupin'],    15);
+            $schedule->dupmethod     = _or($_POST['dupmethod'], 6);
+            $schedule->recpriority   = intval($_POST['recpriority']);
+            $schedule->maxepisodes   = intval($_POST['maxepisodes']);
+            $schedule->startoffset   = intval($_POST['startoffset']);
+            $schedule->endoffset     = intval($_POST['endoffset']);
         // Some settings specific to manual recordings (since we have no program to match against)
-            $schedule->chanid      = $_POST['channel'];
-            $schedule->station     = $Channels[$schedule->chanid]->callsign;
-            $schedule->starttime   = strtotime($_POST['startdate'].' '.$_POST['starttime']);
-            $schedule->endtime     = $schedule->starttime + ($_POST['length'] * 60);
-            $schedule->description = 'Manually scheduled';
-            $schedule->category    = 'Manual recording';
-            $schedule->search      = searchtype_manual;
-            $schedule->findday     = date('w',     $schedule->starttime);
-            $schedule->findtime    = date('H:m:s', $schedule->starttime);
+            $schedule->chanid        = $_POST['channel'];
+            $schedule->station       = $Channels[$schedule->chanid]->callsign;
+            $schedule->starttime     = strtotime($_POST['startdate'].' '.$_POST['starttime']);
+            $schedule->endtime       = $schedule->starttime + ($_POST['length'] * 60);
+            $schedule->description   = 'Manually scheduled';
+            $schedule->category      = 'Manual recording';
+            $schedule->search        = searchtype_manual;
+            $schedule->findday       = date('w',     $schedule->starttime);
+            $schedule->findtime      = date('H:m:s', $schedule->starttime);
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
-            $schedule->transcoder  = $_POST['transcoder'];
+            $schedule->transcoder    = $_POST['transcoder'];
         // Figure out the title
             $channel = $Channels[$_POST['channel']];
             if (strcasecmp($_POST['title'], t('Use callsign')) == 0) {

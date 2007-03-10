@@ -126,10 +126,17 @@
                 case rectype_dontrec:     $type = rectype_dontrec;     break;
                 default:                  $type = 0;
             }
-        // Cancelling a schedule?
+        // Probably cancelling a schedule?
             if ($type == 0) {
+            // Changing something about the currently selected search schedule?
+            /** @todo Search schedules go a little funny here.  If we try to save them,
+             *  the search settings will be overwritten by the program's info
+             *  subtitle, etc). */
+                if ($schedule->search) {
+                    add_warning('Modifications to search schedules cannot yet be made from this page.');
+                }
             // Cancel this schedule
-                if ($schedule && $schedule->recordid && !$schedule->search) {
+                elseif ($schedule && $schedule->recordid) {
                 // Delete the schedule
                     $schedule->delete();
                 // Deleted a schedule but not editing a specific program?  Redirect back to the schedule list
@@ -149,6 +156,7 @@
                 $schedule->profile       = $_POST['profile'];
                 $schedule->recgroup      = $_POST['recgroup'];
                 $schedule->storagegroup  = $_POST['storagegroup'];
+                $schedule->playgroup     = $_POST['playgroup'];
                 $schedule->autoexpire    = $_POST['autoexpire']   ? 1 : 0;
                 $schedule->autocommflag  = $_POST['autocommflag'] ? 1 : 0;
                 $schedule->autouserjob1  = $_POST['autouserjob1'] ? 1 : 0;
@@ -171,7 +179,8 @@
                 if ($_POST['record'] == rectype_override) {
                     $schedule->parentid = $schedule->recordid;
                 }
-            // Search schedules saved here will create a new schedule
+            // Search schedules saved here will create a new standard schedule,
+            // so we should wipe out the old search-type data.
                 if ($schedule->search) {
                     $schedule->recordid = null;
                 }

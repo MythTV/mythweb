@@ -278,6 +278,7 @@
 "Earlier"
 "Edit"
     Editar
+"Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Editar ajustos de MythWeb i alguns de MythTV
 "Edit settings for: $1"
@@ -292,6 +293,7 @@
     Episodi
 "Episode Number"
     Nº episodi
+"error: playgroup $1 exists"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -504,6 +506,7 @@
     Mai enregistrar
 "New"
 "New Episodes Only"
+"New Group"
 "New Search"
 "New Titles, Premieres"
     Nous títols, estrenes
@@ -569,6 +572,8 @@
 "Play this Playlist Now"
 "Play this Song Now"
 "Play Time"
+"Playback Group"
+"Playback Groups"
 "Played %s times"
 "Played once"
 "Playlist"
@@ -813,6 +818,8 @@
 "Shows"
 "SI Units"
     Unitats SI
+"Skip Ahead"
+"Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -864,6 +871,7 @@
 "Time"
     Hora
 "Time Span"
+"Time Stretch"
 "Time Stretch Default"
     Ajust de compressió de temps predeterminat
 "Timeslot size"
@@ -872,6 +880,7 @@
     títol
 "Title"
     Títol
+"Title Match"
 "Title search"
 "Title Search"
     Cercar títol

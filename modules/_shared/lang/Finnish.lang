@@ -264,6 +264,7 @@
 "Earlier"
 "Edit"
     Muokkaa
+"Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
 "Edit settings for: $1"
@@ -278,6 +279,7 @@
     Jakso
 "Episode Number"
     Jakson Numero
+"error: playgroup $1 exists"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -466,6 +468,7 @@
     Älä Koskaan Nauhoita
 "New"
 "New Episodes Only"
+"New Group"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -519,6 +522,8 @@
 "Play this Playlist Now"
 "Play this Song Now"
 "Play Time"
+"Playback Group"
+"Playback Groups"
 "Played %s times"
 "Played once"
 "Playlist"
@@ -754,6 +759,8 @@
 "Shows"
 "SI Units"
     SI-yksiköt
+"Skip Ahead"
+"Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -802,6 +809,7 @@
 "Time"
     Aika
 "Time Span"
+"Time Stretch"
 "Time Stretch Default"
     Ajan Säädön Oletus
 "Timeslot size"
@@ -809,6 +817,7 @@
     Nimike
 "Title"
     Nimike
+"Title Match"
 "Title search"
 "Title Search"
     Haku Nimikkeellä

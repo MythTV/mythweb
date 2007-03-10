@@ -267,6 +267,7 @@
 "Earlier"
 "Edit"
     Bewerken
+"Edit existing group"
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
 "Edit settings for: $1"
@@ -281,6 +282,7 @@
     Aflevering
 "Episode Number"
     Aflevering nr.
+"error: playgroup $1 exists"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -478,6 +480,7 @@
     Nooit Opnemen
 "New"
 "New Episodes Only"
+"New Group"
 "New Search"
 "New Titles, Premieres"
     Nieuwe Titels, Premieres
@@ -535,6 +538,8 @@
 "Play this Playlist Now"
 "Play this Song Now"
 "Play Time"
+"Playback Group"
+"Playback Groups"
 "Played %s times"
 "Played once"
 "Playlist"
@@ -772,6 +777,8 @@
 "Shows"
 "SI Units"
     SI eenheden
+"Skip Ahead"
+"Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -821,6 +828,7 @@
 "Time"
     Tijd
 "Time Span"
+"Time Stretch"
 "Time Stretch Default"
     TimeStretch Standaard
 "Timeslot size"
@@ -828,6 +836,7 @@
     titel
 "Title"
     Titel
+"Title Match"
 "Title search"
 "Title Search"
     Titel zoeken

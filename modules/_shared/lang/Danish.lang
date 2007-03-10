@@ -273,6 +273,7 @@
 "Earlier"
 "Edit"
     Ændre
+"Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Rediger MythWeb- og nogle MythTV-indstillinger
 "Edit settings for: $1"
@@ -287,6 +288,7 @@
     Afsnit
 "Episode Number"
     Episode nummer
+"error: playgroup $1 exists"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -483,6 +485,7 @@
     Optag aldrig
 "New"
 "New Episodes Only"
+"New Group"
 "New Search"
 "New Titles, Premieres"
     Nye titler, premierer
@@ -544,6 +547,8 @@
 "Play this Playlist Now"
 "Play this Song Now"
 "Play Time"
+"Playback Group"
+"Playback Groups"
 "Played %s times"
 "Played once"
 "Playlist"
@@ -781,6 +786,8 @@
 "Shows"
 "SI Units"
     SI enheder
+"Skip Ahead"
+"Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -830,6 +837,7 @@
 "Time"
     Tidspunkt
 "Time Span"
+"Time Stretch"
 "Time Stretch Default"
     Afspilnings tempo
 "Timeslot size"
@@ -837,6 +845,7 @@
     titel
 "Title"
     Titel
+"Title Match"
 "Title search"
 "Title Search"
     Titel søgning

@@ -77,6 +77,7 @@
             $schedule->profile       = $_POST['profile'];
             $schedule->recgroup      = $_POST['recgroup'];
             $schedule->storagegroup  = $_POST['storagegroup'];
+            $schedule->playgroup     = $_POST['playgroup'];
             $schedule->autoexpire    = $_POST['autoexpire']   ? 1 : 0;
             $schedule->autocommflag  = $_POST['autocommflag'] ? 1 : 0;
             $schedule->autouserjob1  = $_POST['autouserjob1'] ? 1 : 0;

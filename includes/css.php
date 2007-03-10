@@ -31,12 +31,14 @@
     // Scan the $Categories hash for any matches
         else {
             global $Categories;
-            foreach ($Categories as $cat => $details) {
-                if (!$details[1])
-                    continue;
-                if (preg_match('/'.$details[1].'/', $category)) {
-                    $css_class[] = $cache[$category] = 'cat_'.$cat;
-                    break;
+            if (!empty($Categories)) {
+                foreach ($Categories as $cat => $details) {
+                    if (!$details[1])
+                        continue;
+                    if (preg_match('/'.$details[1].'/', $category)) {
+                        $css_class[] = $cache[$category] = 'cat_'.$cat;
+                        break;
+                    }
                 }
             }
         }

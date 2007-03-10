@@ -267,6 +267,7 @@
 "Earlier"
 "Edit"
     編集
+"Edit existing group"
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
 "Edit settings for: $1"
@@ -281,6 +282,7 @@
     サブタイトル
 "Episode Number"
     番組番号
+"error: playgroup $1 exists"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -485,6 +487,7 @@
     もう録画しない
 "New"
 "New Episodes Only"
+"New Group"
 "New Search"
 "New Titles, Premieres"
 "Next"
@@ -545,6 +548,8 @@
 "Play this Playlist Now"
 "Play this Song Now"
 "Play Time"
+"Playback Group"
+"Playback Groups"
 "Played %s times"
 "Played once"
 "Playlist"
@@ -786,6 +791,8 @@
 "Shows"
 "SI Units"
     SI単位を使用する
+"Skip Ahead"
+"Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -835,6 +842,7 @@
 "Time"
     放送時間
 "Time Span"
+"Time Stretch"
 "Time Stretch Default"
     タイムストレッチ設定
 "Timeslot size"
@@ -843,6 +851,7 @@
     タイトル
 "Title"
     タイトル
+"Title Match"
 "Title search"
 "Title Search"
     タイトルサーチ

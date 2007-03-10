@@ -260,6 +260,12 @@
             <td><?php echo nice_filesize($program->filesize) ?></dd>
         </tr><?php
             }
+            if (strlen($program->playgroup)) {
+        ?><tr class="-extras">
+            <th><?php echo t('Playback Group') ?>:</th>
+            <td><?php echo $program->playgroup ?></dd>
+        </tr><?php
+            }
         }
     // Can we perform an accurate duplicate check?
         $can_dupcheck = preg_match('/\S/', $program->title)
