@@ -44,8 +44,26 @@ class Channel {
         $this->visible      = $channel_data['visible'];
         $this->icon         = 'data/tv_icons/'.basename($channel_data['icon']);
     // Try to copy over any missing channel icons
-        if ($channel_data['icon'] && !file_exists($this->icon))
-            @copy($channel_data['icon'], $this->icon);
+        if ($channel_data['icon'] && !file_exists($this->icon)) {
+        // Local file?
+            if (file_exists($channel_data['icon']))
+                copy($channel_data['icon'], $this->icon);
+        // Otherwise, grab it from the backend
+            else {
+            // Get the info we need about the master backend
+                $host     = $GLOBALS['Master_Host'];
+                $port     = _or(get_backend_setting('BackendStatusPort', $GLOBALS['Master_Host']),
+                                get_backend_setting('BackendStatusPort'));
+            // Make the request and store the result
+                $iconfile = fopen($this->icon, 'wb');
+                fwrite($iconfile,
+                       file_get_contents("http://$host:$port/getChannelIcon"
+                                        ."?ChanId=$this->chanid"
+                                        )
+                      );
+                fclose($iconfile);
+            }
+        }
     // Now that local filesystem checks are done, add the web root to the icon
     // path, or wipe the icon path completely if it still doesn't exist.
         if (is_file($this->icon))
