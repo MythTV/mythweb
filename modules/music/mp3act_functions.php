@@ -507,11 +507,13 @@ function musicLookup($type, $itemid)
         <form onsubmit="return randAdd(this)" method="get" action="">
         <strong>'.t('Number of Songs').'</strong><br />
         <select name="random_count">
+        <option>5</option>
         <option>10</option>
         <option>20</option>
         <option>30</option>
         <option>40</option>
         <option>50</option>
+        <option>100</option>
         </select><br />
         <strong>'.t('Random Type').'</strong><br />
         <select name="random_type" onchange="getRandItems(this.options[selectedIndex].value); return false;">
