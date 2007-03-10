@@ -70,7 +70,7 @@ function getplaylistnames()
 
 function genreform()
 {
-  $query = "SELECT * FROM music_genres ORDER BY genre";
+  $query = "SELECT genre FROM music_genres ORDER BY genre";
   $result = mysql_query($query);
 
   if (!$result)
@@ -301,7 +301,7 @@ function musicLookup($type, $itemid)
         <strong>'.t('Album Listing').'</strong></p>
         <ul class="music">';
       $start = $itemid;
-      $query  = 'SELECT ma.*,mt.artist_name '.
+      $query  = 'SELECT ma.album_id, ma.album_name, mt.artist_name '.
         'FROM music_albums AS ma '.
         'LEFT JOIN music_artists AS mt ON ma.artist_id=mt.artist_id '.
         'ORDER BY album_name, artist_name';
@@ -336,11 +336,12 @@ function musicLookup($type, $itemid)
       $length = $row[1];
 
       // Attempt to find some album art.
-      $query='SELECT * '.
-             'FROM music_songs '.
-             'LEFT JOIN music_directories ON music_songs.directory_id=music_directories.directory_id '.
-             'WHERE album_id='.$sql_itemid.' '.
-             'LIMIT 1;';
+      $query='SELECT music_songs.*
+                FROM music_songs
+                     LEFT JOIN music_directories
+                            ON music_songs.directory_id=music_directories.directory_id
+               WHERE album_id='.$sql_itemid.'
+               LIMIT 1';
       $result = mysql_query($query);
       if (!$result)
         break;
@@ -392,11 +393,12 @@ function musicLookup($type, $itemid)
         <strong>'.t('Album Tracks').'</strong>
         <ul class="music">';
 
-      $query = 'SELECT music_songs.*, SEC_TO_TIME(music_songs.length/1000) AS length, artist_name '.
-        'FROM music_songs '.
-        'LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id '.
-        'WHERE album_id='.$sql_itemid.' '.
-        'ORDER BY track';
+      $query = 'SELECT ms.song_id, ms.track, ms.name, ms.length, ms.numplays, '.
+               'SEC_TO_TIME(ms.length/1000) AS length, artist_name '.
+               'FROM music_songs AS ms '.
+               'LEFT JOIN music_artists ON ms.artist_id=music_artists.artist_id '.
+               'WHERE ms.album_id='.$sql_itemid.' '.
+               'ORDER BY ms.track';
       $result = mysql_query($query);
       if (!$result)
         break;
@@ -418,10 +420,10 @@ function musicLookup($type, $itemid)
         <ul class="music">';
 
       $query = 'SELECT music_songs.*, music_artists.artist_name, music_genres.genre '.
-        'FROM music_songs '.
-        'LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id '.
-        'LEFT JOIN music_genres ON music_songs.genre_id=music_genres.genre_id '.
-        'WHERE genre='.utf8_encode($sql_itemid).';';
+               'FROM music_songs '.
+               'LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id '.
+               'LEFT JOIN music_genres ON music_songs.genre_id=music_genres.genre_id '.
+               'WHERE genre='.utf8_encode($sql_itemid);
 
       $result = mysql_query($query);
       if (!$result)
@@ -454,11 +456,12 @@ function musicLookup($type, $itemid)
         <p><strong>'.t('Songs').'</strong></p>
         <ul class="music">';
 
-      $query = 'SELECT music_songs.*, SEC_TO_TIME(music_songs.length/1000) AS length, music_artists.artist_name, track, music_albums.album_name '.
-        'FROM music_songs '.
-        'LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id '.
-        'LEFT JOIN music_albums ON music_songs.album_id=music_albums.album_id '.
-        'WHERE music_songs.artist_id='.$sql_itemid.';';
+      $query = 'SELECT ms.song_id, ms.track, ms.name, ms.length, ms.numplays, '.
+	'SEC_TO_TIME(ms.length/1000) AS length, music_artists.artist_name, track, music_albums.album_name '.
+        'FROM music_songs AS ms '.
+        'LEFT JOIN music_artists ON ms.artist_id=music_artists.artist_id '.
+        'LEFT JOIN music_albums ON ms.album_id=music_albums.album_id '.
+        'WHERE ms.artist_id='.$sql_itemid.';';
       $result = mysql_query($query);
       if (!$result)
         break;
