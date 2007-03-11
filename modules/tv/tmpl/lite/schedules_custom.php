@@ -196,9 +196,13 @@
                             echo ' SELECTED';
                         echo '>' . t('Description') . '</option>';
                         echo '<option value="6"';
-                        if ($schedule->dupmethod == 6 || $schedule->dupmethod == 0)
+                        if ($schedule->dupmethod == 6)
                             echo ' SELECTED';
                         echo '>'.t('Subtitle and Description').'</option>';
+                        echo '<option value="8"';
+                        if ($schedule->dupmethod == 8 || $schedule->dupmethod == 0)
+                            echo ' SELECTED';
+                        echo '>'.t('Subtitle then Description').'</option>';
                    ?></select></dd>
                 <dt><?php echo t('Auto-flag commercials') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>

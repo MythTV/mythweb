@@ -446,6 +446,7 @@ class Schedule {
                 case 2:  $str .= t('Subtitle');                     break;
                 case 4:  $str .= t('Description');                  break;
                 case 6:  $str .= t('Subtitle and Description');     break;
+                case 8:  $str .= t('Subtitle then Description');    break;
                 case 22: $str .= t('Sub and Desc (Empty matches)'); break;
             }
             $str .= "</dd>\n";
