@@ -246,7 +246,8 @@
 
     // Print the content
 ?><tr class="<?php echo $css_class ?>">
-<?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n    <td class=\"-status rec_class $rec_class\">$rec_char</td>\n" ?>
+<?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n" ?>
+    <td class="-status rec_class <?php echo $rec_class ?>"><?php echo $rec_char ?></td>
     <td class="-title <?php echo $show->css_class ?>"><?php
     // Print the link to edit this scheduled recording
         echo '<a';
