@@ -50,6 +50,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
 "Activate"
     Aktivér
@@ -260,6 +262,7 @@
     Optag ikke
 "Don't record this program."
     Optag IKKE dette program
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     Dubletkontrol metode
@@ -289,6 +292,8 @@
 "Episode Number"
     Episode nummer
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -314,8 +319,10 @@
     Find tid skal være i TT:MM:SS format
 "finetune"
     finindstil
+"Finished"
 "First recording"
     Første optagelse
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -536,6 +543,8 @@
     Sidste uge
 "Past Year"
     Sidste år
+"Paused"
+"Pending"
 "People"
     Personer
 "People Search"
@@ -593,6 +602,9 @@
     Program lister
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Radar
 "Random"
@@ -602,6 +614,7 @@
 "Rating"
     Karakterer
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     Optagelsesgrupper
@@ -715,8 +728,10 @@
     Genudsendelse
 "Reset"
     Nulstil
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
+"Running"
 "Saturday"
     Lørdag
 "Save"
@@ -802,6 +817,7 @@
     Start tidligere (min)
 "Start Time"
     Starttidspunkt
+"Starting"
 "Statistics"
     Statistik
 "Stats"
@@ -812,6 +828,7 @@
 "Stereo"
     Steroe
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -868,6 +885,7 @@
 "Track #%s from the album '%s'"
 "Track Name"
     Spor navn
+"Transcode"
 "transcoder"
     trankoder
 "Transcoder"

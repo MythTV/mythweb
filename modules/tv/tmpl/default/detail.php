@@ -85,7 +85,7 @@
 </script>
 
 
-        <table id="_info" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table id="-info" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
 <?php   if ($channel) { ?>
             <td class="-channel">
@@ -113,7 +113,7 @@
                     if ($schedule->subtitle)
                         echo ':<br />', $schedule->subtitle;
                     ?></a>
-                <div id="_time"><?php
+                <div id="-time"><?php
                 echo strftime('%a, %b %e', $schedule->starttime);
                 echo ', '
                     .t('$1 to $2', strftime($_SESSION['time_format'], $schedule->starttime),
@@ -311,7 +311,7 @@
         </tr><?php
         }
         if (count($conflicting_shows)) {
-        ?><tr id="_conflicts">
+        ?><tr id="-conflicts">
             <th><?php echo t('Possible conflicts') ?>:</th>
             <td><?php
         // A program id counter for popup info
@@ -456,7 +456,7 @@
 <?php    require_once tmpl_dir.'_advanced_options.php' ?>
         </div>
 
-        <div id="_schedule_submit">
+        <div id="-schedule_submit">
             <input type="submit" class="submit" name="save" value="<?php echo t('Update Recording Settings') ?>">
         </div>
 
@@ -468,7 +468,7 @@
     }
     if ($program && $program->filename) { ?>
 
-        <div id="_downloads">
+        <div id="-downloads">
             <div class="-pixmap">
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo $program->thumb_url(320,0) ?>" width="320"></a></td>
@@ -480,6 +480,50 @@
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo skin_url ?>/img/video_sm.png">
                     <?php echo t('Direct Download') ?></a>
+            </div>
+            <div class="-jobs">
+<?php
+        if (count($program->jobs_possible)) {
+            echo t('Queue a job'), ':',
+                 '            <ul class="-queue">';
+            foreach ($program->jobs_possible as $id => $job) {
+                echo '                <li>',
+                     '<a href="',
+                     root, 'tv/detail/', $program->chanid, '/', $program->recstartts,
+                     '?job=', $id,
+                     '">', $job, "</a></li>";
+            }
+            echo '            </ul>';
+        }
+        if (count($program->jobs['queue'])) {
+            echo t('Queued jobs'), ':',
+                 '            <ul class="-queued">';
+            foreach ($program->jobs['queue'] as $job) {
+                echo '                <li>',
+                     $Jobs[$job['type']],
+                     ' (', $Job_Status[$job['status']],
+                     ':  ', strftime($_SESSION['date_listing_key'], $job['statustime']),
+                     ')<br />',
+                     html_entities($job['comment']),
+                     '</li>';
+            }
+            echo '            </ul>';
+        }
+        if (count($program->jobs['done'])) {
+            echo t('Recently completed jobs'), ':',
+                 '            <ul class="-done">';
+            foreach ($program->jobs['done'] as $job) {
+                echo '                <li>',
+                     $Jobs[$job['type']],
+                     ' (', $Job_Status[$job['status']],
+                     ':  ', strftime($_SESSION['date_listing_key'], $job['statustime']),
+                     ')<br />',
+                     html_entities($job['comment']),
+                     '</li>';
+            }
+            echo '            </ul>';
+        }
+?>
             </div>
         </div>
 

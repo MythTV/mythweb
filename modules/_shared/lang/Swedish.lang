@@ -60,6 +60,8 @@
     &deg;C
 "&deg;F"
     &deg;F
+"Aborted"
+"Aborting"
 "Action"
     Handling
 "Activate"
@@ -332,6 +334,7 @@
     Spela ej in
 "Don't record this program."
     Spela inte in detta program.
+"Done, Unknown Status"
 "Download URL override"
     Nedladdnings-URL-åsidosättning
 "Dup Method"
@@ -368,6 +371,8 @@
 "Episode Number"
     Avsnittsnummer
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
     Allt
 "Exclude Generic Episodes"
@@ -397,8 +402,10 @@
     Hitta tid måste vara i formatet: HH:MM:SS
 "finetune"
     finjustera
+"Finished"
 "First recording"
     Första inspelning
+"Flag Commercials"
 "Force HTTP for streams"
     Tvinga HTTP för strömmar
 "Forced"
@@ -684,6 +691,8 @@
     Senaste veckan
 "Past Year"
     Senaste året
+"Paused"
+"Pending"
 "People"
     Person
 "People Search"
@@ -768,6 +777,9 @@
     Programtyp
 "Protocol"
     Protokoll
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Radar
 "Random"
@@ -782,6 +794,7 @@
     Betyg
 "Recently Added Albums"
     Nyligen tillagda album
+"Recently completed jobs"
 "Recently Played Songs"
     Nyligen spelade sånger
 "recgroup"
@@ -900,10 +913,12 @@
     Repris
 "Reset"
     Återställ
+"Retry"
 "Return to Statistics Page"
     Återvänd till statistiksida
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo
+"Running"
 "Saturday"
     Lördag
 "Save"
@@ -1010,6 +1025,7 @@
     Börja tidigare
 "Start Time"
     Starttid
+"Starting"
 "Statistics"
     Statistik
 "Stats"
@@ -1021,6 +1037,7 @@
     Stereo
 "Still Recording: Edit"
     Spelas in: Editera
+"Stopping"
 "Storage Group"
     Lagringsgrupp
 "Streaming"
@@ -1095,6 +1112,7 @@
     Spår nr %s fråm albumet '%s'
 "Track Name"
     Spårnamn
+"Transcode"
 "transcoder"
     omkodare
 "Transcoder"

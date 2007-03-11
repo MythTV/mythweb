@@ -43,6 +43,9 @@
         exit;
     }
 
+// Load the jobqueue info
+    require_once 'includes/jobqueue.php';
+
 // Load the sorting routines
     require_once 'includes/sorting.php';
 
@@ -109,6 +112,32 @@
         $schedule->programid         = $program->programid;
     }
 
+// Queue a job?
+    if ($program && $program->filename && $_REQUEST['job']) {
+        $db->query('INSERT INTO jobqueue
+                       SET chanid     = ?,
+                           starttime  = FROM_UNIXTIME(?),
+                           inserttime = NOW(),
+                           type       = ?,
+                           hostname   = ?,
+                           args       = "",
+                           status     = ?,
+                           statustime = NOW(),
+                           comment    = "Queued via MythWeb",
+                           flags      = ?',
+                   $program->chanid,
+                   $program->recstartts,
+                   $_REQUEST['job'],
+                   $program->hostname,
+                   JOB_QUEUED,
+                   JOB_USE_CUTLIST
+                  );
+        backend_notify_changes();
+    // Redirect back to the page again, but without the query string, so the
+    // user doesn't accidentally repost this request on a page reload.
+        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+    }
+
 // The user tried to update the recording settings - update the database and the variable in memory
     if (isset($_POST['save'])) {
         if ($schedule) {
@@ -147,7 +176,7 @@
                         exit;
                     }
                 // Relocate back to the program details page
-                    redirect_browser(root.'tv/detail?chanid='.$schedule->chanid.'&starttime='.$schedule->starttime);
+                    redirect_browser(root.'tv/detail/'.$schedule->chanid.'/'.$schedule->starttime);
                 }
             }
         // Modifying an existing schedule, or adding a new one
@@ -196,8 +225,7 @@
         sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        header('Location: '.root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
-        exit;
+        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
     elseif (isset($_GET['never_record']) || isset($_POST['never_record'])) {
         $program->rec_never_record();
@@ -205,8 +233,7 @@
         sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        header('Location: '.root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
-        exit;
+        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
 // Load default settings for recpriority, autoexpire etc
     else {
@@ -283,6 +310,9 @@
                                             );
         usort($conflicting_shows, 'by_user_choice');
     }
+
+// Load the jobqueue info before displaying
+    $program->load_jobs();
 
 // Load the utility/display functions for scheduling
     require_once 'includes/schedule_utils.php';

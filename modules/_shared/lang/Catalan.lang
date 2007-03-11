@@ -50,6 +50,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
     Acció
 "Activate"
@@ -265,6 +267,7 @@
     No enregistrat
 "Don't record this program."
     No esborrar aquest programa
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     Mètode duplicat
@@ -294,6 +297,8 @@
 "Episode Number"
     Nº episodi
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -319,8 +324,10 @@
     La recerca d'hora ha de tenir el format: HH:MM:SS
 "finetune"
     sintoniaa fina
+"Finished"
 "First recording"
     Primer  enregistrament
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -561,6 +568,8 @@
     Setmana passada
 "Past Year"
     Any passat
+"Paused"
+"Pending"
 "People"
     Gent
 "People Search"
@@ -620,6 +629,9 @@
     Llista de programes
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Radar
 "Random"
@@ -629,6 +641,7 @@
 "Rating"
     Puntuació
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     grup
@@ -743,9 +756,11 @@
     Repetir
 "Reset"
     Reiniciar
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
     Fileres a mostrar entre informació
+"Running"
 "Saturday"
     Dissabte
 "Save"
@@ -836,6 +851,7 @@
     Començar abans
 "Start Time"
     Hora inici
+"Starting"
 "Statistics"
     Estadístiques
 "Stats"
@@ -846,6 +862,7 @@
 "Stereo"
     Estéreo
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -903,6 +920,7 @@
 "Track #%s from the album '%s'"
 "Track Name"
     Nom de la pista
+"Transcode"
 "transcoder"
     recodificador
 "Transcoder"

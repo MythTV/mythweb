@@ -43,6 +43,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
     アクション
 "Activate"
@@ -254,6 +256,7 @@
     録画停止
 "Don't record this program."
     録画しない
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     重複検知
@@ -283,6 +286,8 @@
 "Episode Number"
     番組番号
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -308,8 +313,10 @@
     時間検索の書式: HH:MM:SS
 "finetune"
     ファインチューン
+"Finished"
 "First recording"
     最初の録画
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -537,6 +544,8 @@
     一週間
 "Past Year"
     一年間
+"Paused"
+"Pending"
 "People"
     ピープル
 "People Search"
@@ -596,6 +605,9 @@
     番組表
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     レーダー
 "Random"
@@ -605,6 +617,7 @@
 "Rating"
     レーティング
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     グループ
@@ -719,8 +732,10 @@
     再開
 "Reset"
     リセット
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
+"Running"
 "Saturday"
     土曜日
 "Save"
@@ -808,6 +823,7 @@
     早めの録画
 "Start Time"
     開始時間
+"Starting"
 "Statistics"
     統計
 "Stats"
@@ -818,6 +834,7 @@
 "Stereo"
     ステレオ
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -874,6 +891,7 @@
 "Track #%s from the album '%s'"
 "Track Name"
     トラック名
+"Transcode"
 "transcoder"
     トランスコーダー
 "Transcoder"

@@ -36,6 +36,7 @@
     if (!$_SESSION['date_listing_key'])     $_SESSION['date_listing_key']     = t('generic_date').', '.t('generic_time');
     if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = t('generic_date');
     if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = t('generic_date');
+    if (!$_SESSION['date_job_status'])      $_SESSION['date_job_status']      = t('generic_date').', '.t('generic_time');
     if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
 
 // Use myth:// URI for recordings if browsing from a windows box?

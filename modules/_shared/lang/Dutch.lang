@@ -47,6 +47,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
     Actie
 "Activate"
@@ -254,6 +256,7 @@
     Niet Opnemen
 "Don't record this program."
     Dit programma niet opnemen
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     Dubbels Methode
@@ -283,6 +286,8 @@
 "Episode Number"
     Aflevering nr.
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -308,7 +313,9 @@
     Tijd moet in het formaat: HH:MM:SS zijn
 "finetune"
     fijn afstemmen
+"Finished"
 "First recording"
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -527,6 +534,8 @@
 "Past Month"
 "Past Week"
 "Past Year"
+"Paused"
+"Pending"
 "People"
     Personen
 "People Search"
@@ -584,6 +593,9 @@
     Programmalijst
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Radar
 "Random"
@@ -593,6 +605,7 @@
 "Rating"
     Beoordeling
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     opnamegroep
@@ -706,8 +719,10 @@
     Opnieuw Uitvoeren
 "Reset"
     Herstellen
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
+"Running"
 "Saturday"
     Zaterdag
 "Save"
@@ -794,6 +809,7 @@
     Eerder beginnen
 "Start Time"
     Start Tijd
+"Starting"
 "Statistics"
 "Stats"
 "Status"
@@ -803,6 +819,7 @@
 "Stereo"
     Stereo
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -857,6 +874,7 @@
 "Track #%s from the album '%s'"
 "Track Name"
     Naam
+"Transcode"
 "transcoder"
     transcoder
 "Transcoder"

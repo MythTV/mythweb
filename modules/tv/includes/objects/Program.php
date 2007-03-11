@@ -99,6 +99,9 @@ class Program {
     var $timestretch;
     var $url;
 
+    var $jobs          = array();   // recent/pending jobqueue entries
+    var $jobs_possible = array();   // Jobs this program can be assigned to
+
     function Program($data) {
         global $db;
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
@@ -311,6 +314,41 @@ class Program {
         $this->fancy_description = $this->description;
         if (count($details) > 0)
             $this->fancy_description .= ' ('.implode(', ', $details).')';
+    }
+
+/**
+ * Load info about any queued or recently finished jobs
+/**/
+    function load_jobs() {
+        if (empty($this->filename))
+            return;
+    // Make sure the jobqueue constants are defined
+        require_once 'includes/jobqueue.php';
+    // Keep track of which jobs are possible to be started (due to not already
+    // being in the queue).
+        global $Jobs;
+        $this->jobs_possible = $Jobs;
+    // Load the info
+        global $db;
+        $sh = $db->query('SELECT *,
+                                 UNIX_TIMESTAMP(statustime) AS statustime
+                            FROM jobqueue
+                           WHERE starttime  = FROM_UNIXTIME(?)
+                                 AND chanid = ?
+                        ORDER BY statustime DESC',
+                         $this->recstartts,
+                         $this->chanid);
+        $this->jobs      = array();
+        while ($row = $sh->fetch_assoc()) {
+            if ($row['status'] & JOB_DONE)
+                $this->jobs['done'][] = $row;
+            else {
+                $this->jobs['queue'][] = $row;
+                unset($this->jobs_possible[$row['type']]);
+            }
+        }
+        $sh->finish();
+
     }
 
 /**

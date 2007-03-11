@@ -47,6 +47,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
     Aktion
 "Activate"
@@ -254,6 +256,7 @@
     Nicht aufnehmen
 "Don't record this program."
     Diese Sendung nicht aufnehmen
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     Methode für Wdhgn.
@@ -283,6 +286,8 @@
 "Episode Number"
     Folge Nummer
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -308,7 +313,9 @@
     'Finde Zeit' muss im Format HH:MM:SS sein
 "finetune"
     Feinabstimmung
+"Finished"
 "First recording"
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -526,6 +533,8 @@
 "Past Month"
 "Past Week"
 "Past Year"
+"Paused"
+"Pending"
 "People"
     Leute
 "People Search"
@@ -584,6 +593,9 @@
     TV Programm
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Satellitenbild
 "Random"
@@ -593,6 +605,7 @@
 "Rating"
     Freigegeben ab
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     Aufnahmegruppe
@@ -706,8 +719,10 @@
     Wiederholung
 "Reset"
     Zurücksetzen
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
+"Running"
 "Saturday"
     Samstag
 "Save"
@@ -793,6 +808,7 @@
     vorzeitiger Aufnahmestart
 "Start Time"
     Uhrzeit
+"Starting"
 "Statistics"
 "Stats"
 "Status"
@@ -802,6 +818,7 @@
 "Stereo"
     Stereo
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -856,6 +873,7 @@
 "Track #%s from the album '%s'"
 "Track Name"
     Titel
+"Transcode"
 "transcoder"
     Umwandlungsprofil
 "Transcoder"

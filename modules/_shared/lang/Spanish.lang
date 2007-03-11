@@ -50,6 +50,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
     Acción
 "Activate"
@@ -265,6 +267,7 @@
     No grabar
 "Don't record this program."
     No borrar este programa
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     Método duplicado
@@ -294,6 +297,8 @@
 "Episode Number"
     Nº Episodio
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -319,8 +324,10 @@
     Hora Búsqueda debe tener el formato: HH:MM:SS
 "finetune"
     sintonía fina
+"Finished"
 "First recording"
     Primera grabación
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -559,6 +566,8 @@
     Semana Pasada
 "Past Year"
     Año Pasado
+"Paused"
+"Pending"
 "People"
     Gente
 "People Search"
@@ -618,6 +627,9 @@
     Listado Programas
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Radar
 "Random"
@@ -627,6 +639,7 @@
 "Rating"
     Puntuación
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     grupo
@@ -741,9 +754,11 @@
     Reejecutar
 "Reset"
     Borrar
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
     Filas a mostrar entre info
+"Running"
 "Saturday"
     Sábado
 "Save"
@@ -834,6 +849,7 @@
     Comenzar antes
 "Start Time"
     Hora comienzo
+"Starting"
 "Statistics"
     Estadísticas
 "Stats"
@@ -844,6 +860,7 @@
 "Stereo"
     Estéreo
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -900,6 +917,7 @@
 "Track #%s from the album '%s'"
 "Track Name"
     Nombre Pista
+"Transcode"
 "transcoder"
     recodificador
 "Transcoder"

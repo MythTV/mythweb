@@ -46,6 +46,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
 "Activate"
     Activer
@@ -221,6 +223,7 @@
     Ne pas enregistrer
 "Don't record this program."
     Ne pas enregistrer cette &eacute;mission
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     m&eacute;thode de dup
@@ -246,6 +249,8 @@
     Episode
 "Episode Number"
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -265,7 +270,9 @@
 "Find Time"
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
+"Finished"
 "First recording"
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -456,6 +463,8 @@
 "Past Month"
 "Past Week"
 "Past Year"
+"Paused"
+"Pending"
 "People"
 "People Search"
 "Percent of time spent recording"
@@ -505,6 +514,9 @@
 "Program Listing"
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Radar
 "Random"
@@ -514,6 +526,7 @@
 "Rating"
     &eacute;valuation
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     Groupe d&eacute;enr
@@ -623,8 +636,10 @@
     Relancer
 "Reset"
     Reset
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
+"Running"
 "Saturday"
     Samedi
 "Save"
@@ -701,6 +716,7 @@
     D&eacute;marrer plus tot
 "Start Time"
     Heure de d&eacute;but
+"Starting"
 "Statistics"
 "Stats"
 "Status"
@@ -708,6 +724,7 @@
     Barre de statut
 "Stereo"
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -757,6 +774,7 @@
 "Total Time:  %s"
 "Track #%s from the album '%s'"
 "Track Name"
+"Transcode"
 "transcoder"
 "Transcoder"
 "Tuesday"

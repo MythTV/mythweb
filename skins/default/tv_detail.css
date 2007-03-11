@@ -2,7 +2,7 @@
  * Table around all program info (left column)
 /*/
 
-#_info {
+#-info {
     float:              left;
     padding:            0px;
     width:              45em;
@@ -50,7 +50,7 @@
     font-weight:    bold;
 }
 
-#_time {
+#-time {
     margin-top:     .2em;
     color:          #E0E0FF;
     white-space:    nowrap;
@@ -103,9 +103,9 @@
     background-color:   #485;
 }
 
-#_info .-extras {
+#-info .-extras {
 }
-#_info .-extras th {
+#-info .-extras th {
     vertical-align: top;
     font-weight:    normal;
     text-align:     right;
@@ -113,12 +113,12 @@
     white-space:    nowrap;
     border-top:      1px solid #202933;
 }
-#_info .-extras td {
+#-info .-extras td {
     padding:        .25em;
     border-top:      1px solid #202933;
 }
 
-#_conflicts th {
+#-conflicts th {
     vertical-align:     top;
     font-weight:        normal;
     text-align:         right;
@@ -126,20 +126,20 @@
     padding:            .5em .25em;
     border-top:         1px solid #9090B0;
 }
-#_conflicts td {
+#-conflicts td {
     padding:            .25em;
     padding-bottom:     0;
     border-top:         1px solid #9090B0;
 }
-#_conflicts td a {
+#-conflicts td a {
     display:            block;
     padding:            .15em .25em;
     margin-bottom:      .25em;
 }
-#_conflicts {
+#-conflicts {
 }
 
-#_info .-links th {
+#-info .-links th {
     vertical-align:     top;
     font-weight:        normal;
     text-align:         right;
@@ -147,18 +147,18 @@
     padding:            .4em .25em;
     border-top:         1px solid #9090B0;
 }
-#_info .-links td {
+#-info .-links td {
     padding:            .25em;
     padding-bottom:     0;
     border-top:         1px solid #9090B0;
 }
-#_info .-links td a {
+#-info .-links td a {
     display:            block;
     padding:            .15em .25em;
     margin-bottom:      .25em;
 }
 
-#_downloads {
+#-downloads {
     float:              left;
     padding:            0px;
     min-width:          350px;
@@ -168,50 +168,78 @@
     color:              #E0E0FF;
     border:             1px solid #9090B0;
 }
-#_downloads img {
+#-downloads img {
     margin-right:       .3em;
 }
-#_downloads a img {
+#-downloads a img {
     border:             1px solid transparent;
 }
-#_downloads a {
+#-downloads a {
     border:             1px solid transparent;
 }
-#_downloads a:hover img {
+#-downloads a:hover img {
     border:             1px solid #F0F000;
 }
-#_downloads div.-pixmap {
+#-downloads div.-pixmap {
     padding:            1em 1em 0em 1em;
     background-color:   black;
     text-align:         center;
 }
-#_downloads div.-pixmap a.-pixmap {
+#-downloads div.-pixmap a.-pixmap {
     margin:             .25em auto;
 }
 
-#_downloads div.-links {
+#-downloads div.-links {
     padding:            .5em;
     background-color:   black;
     text-align:         center;
 }
 
-#_downloads div.-links a {
+#-downloads div.-links a {
     position:           relative;
     top:                -10px;
     margin:             0px 1.5em;
     padding:            .75em;
 }
-#_downloads div.-links a img {
+#-downloads div.-links a img {
     position:           relative;
     top:                10px;
 }
-#_downloads div.-links a:hover img {
+#-downloads div.-links a:hover img {
     border:             1px solid transparent;
 }
-#_downloads div.-links a:hover {
+#-downloads div.-links a:hover {
     background-color:   #121;
     border:             1px solid #F0F000;
     text-decoration:    none;
 }
+#-downloads div.-jobs {
+    border-top:         1px solid #9090B0;
+    padding:            .5em;
+}
+
+#-downloads div.-jobs a {
+    margin-right:       .5em;
+    font-weight:        bold;
+    border:             1px solid #7b8;
+    padding:            .15em .5em;
+    background-color:   #263;
+}
+#-downloads div.-jobs a:hover {
+    border:             1px solid #9da;
+    background-color:   #485;
+}
+
+#-downloads div.-jobs ul {
+    padding:            0px 0px 0px 1.5em;
+}
+#-downloads div.-jobs li {
+    padding-bottom:     .25em;
+}
+
+#-downloads div.-jobs ul.-queue li {
+    padding-bottom:     .75em;
+}
+
 
 

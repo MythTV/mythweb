@@ -41,6 +41,8 @@
 "%s Songs (%s)"
 "&deg;C"
 "&deg;F"
+"Aborted"
+"Aborting"
 "Action"
 "Activate"
     Aktiviraj
@@ -216,6 +218,7 @@
     Ne snemaj
 "Don't record this program."
     Ne snemaj tega programa.
+"Done, Unknown Status"
 "Download URL override"
 "Dup Method"
     Metoda duplikatov
@@ -241,6 +244,8 @@
     Oddaja
 "Episode Number"
 "error: playgroup $1 exists"
+"Errored"
+"Erroring"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -260,7 +265,9 @@
 "Find Time"
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
+"Finished"
 "First recording"
+"Flag Commercials"
 "Force HTTP for streams"
 "Forced"
 "Forecast"
@@ -450,6 +457,8 @@
 "Past Month"
 "Past Week"
 "Past Year"
+"Paused"
+"Pending"
 "People"
 "People Search"
 "Percent of time spent recording"
@@ -499,6 +508,9 @@
 "Program Listing"
 "Program Type"
 "Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
 "Radar"
     Radar
 "Random"
@@ -508,6 +520,7 @@
 "Rating"
     Ocena
 "Recently Added Albums"
+"Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
     snemalna skupina
@@ -616,8 +629,10 @@
     Ponovno zaženi
 "Reset"
     Resetiraj
+"Retry"
 "Return to Statistics Page"
 "Rows to show between timeslot info"
+"Running"
 "Saturday"
     Sobota
 "Save"
@@ -693,6 +708,7 @@
     Začni prej
 "Start Time"
     Čas začetka
+"Starting"
 "Statistics"
 "Stats"
 "Status"
@@ -700,6 +716,7 @@
     Statusna vrstica
 "Stereo"
 "Still Recording: Edit"
+"Stopping"
 "Storage Group"
 "Streaming"
 "Streaming Quality"
@@ -749,6 +766,7 @@
 "Total Time:  %s"
 "Track #%s from the album '%s'"
 "Track Name"
+"Transcode"
 "transcoder"
 "Transcoder"
 "Tuesday"
