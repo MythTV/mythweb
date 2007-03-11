@@ -36,9 +36,6 @@
         case 'metadata':
             metadata($_REQUEST['id']);
             break;
-        case 'extendedmetadata':
-            extendedmetadata($_REQUEST['id']);
-            break;
     }
 
     function lookup($id, $title)

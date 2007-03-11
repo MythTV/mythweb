@@ -28,11 +28,11 @@ class Video {
     function __construct($intid) {
         global $db;
         global $mythvideo_dir;
-        $video = $db->query_assoc('SELECT *
-                                         FROM videometadata
-                                        WHERE intid = ?',
-                                       $intid
-                                       );
+        $video = $db->query_assoc('SELECT videometadata.*
+                                   FROM videometadata
+                                  WHERE videometadata.intid = ?',
+                                 $intid
+                                 );
         $this->intid        = $intid;
         $this->plot         = $video['plot'];
         $this->category     = $video['category'];
@@ -101,7 +101,49 @@ class Video {
         return $string;
     }
 
-    function popup() {
-        return $string;
+    function save() {
+        global $db;
+        $db->query('UPDATE videometadata
+                       SET videometadata.plot         = ?,
+                           videometadata.category     = ?,
+                           videometadata.rating       = ?,
+                           videometadata.title        = ?,
+                           videometadata.director     = ?,
+                           videometadata.inetref      = ?,
+                           videometadata.year         = ?,
+                           videometadata.userrating   = ?,
+                           videometadata.length       = ?,
+                           videometadata.showlevel    = ?,
+                           videometadata.filename     = ?,
+                           videometadata.coverfile    = ?,
+                           videometadata.browse       = ?
+                     WHERE videometadata.intid        = ?',
+                    $this->plot,
+                    $this->category,
+                    $this->rating,
+                    $this->title,
+                    $this->director,
+                    $this->inetref,
+                    $this->year,
+                    $this->userrating,
+                    $this->length,
+                    $this->showlevel,
+                    $this->filename,
+                    ( @filesize($this->coverfile) > 0 ? $this->coverfile : 'No Cover' ),
+                    $this->browse,
+                    $this->intid
+                    );
+
+        $db->query('DELETE FROM videometadatagenre
+                          WHERE videometadatagenre.idvideo = ?',
+                    $this->intid
+                    );
+        foreach ($this->genres as $genre)
+            $db->query('INSERT INTO videometadatagenre ( idvideo, idgenre )
+                                                VALUES (       ?,       ? )',
+                       $this->intid,
+                       $genre
+                       );
+
     }
 }

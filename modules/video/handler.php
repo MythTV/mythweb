@@ -70,10 +70,10 @@
             if (strtoupper(substr(php_uname('s'), 0, 3)) != 'WIN') {
                 $ret = @symlink($dir, 'data/video_covers');
                 if (!$ret) {
-                    custom_error("Could not create a symlink to $mythvideo_dir, the local MythVideo"
+                    custom_error("Could not create a symlink to $dir, the local MythVideo artwork"
                                 .' directory for this hostname ('.hostname.').  Please create a'
-                                .' symlink to your MythVideo directory at data/video in order to'
-                                .' use the video portions of MythWeb.');
+                                .' symlink to your MythVideo directory at data/video_covers in order to'
+                                .' use the video artwork portions of MythWeb.');
                 }
             }
         }
@@ -99,9 +99,6 @@
 
 // Load the sorting routines
     require_once "includes/sorting.php";
-
-// Queries for a specific program title
-    isset($_GET['title']) or $_GET['title'] = $_POST['title'];
 
 // Get the video categories on the system
     $Category_String = array();
