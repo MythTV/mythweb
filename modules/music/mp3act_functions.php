@@ -336,10 +336,10 @@ function musicLookup($type, $itemid)
       $length = $row[1];
 
       // Attempt to find some album art.
-      $query='SELECT music_songs.*
-                FROM music_songs
-                     LEFT JOIN music_directories
-                            ON music_songs.directory_id=music_directories.directory_id
+      $query='SELECT ms.filename, ms.album_id, md.path
+                FROM music_songs AS ms
+                     LEFT JOIN music_directories AS md
+                            ON ms.directory_id=md.directory_id
                WHERE album_id='.$sql_itemid.'
                LIMIT 1';
       $result = mysql_query($query);
@@ -419,10 +419,10 @@ function musicLookup($type, $itemid)
         <p><strong>".t('Songs').'</strong></p>
         <ul class="music">';
 
-      $query = 'SELECT music_songs.*, music_artists.artist_name, music_genres.genre '.
-               'FROM music_songs '.
-               'LEFT JOIN music_artists ON music_songs.artist_id=music_artists.artist_id '.
-               'LEFT JOIN music_genres ON music_songs.genre_id=music_genres.genre_id '.
+      $query = 'SELECT ms.song_id, ms.name, ms.length, ms.numplays, ma.artist_name, mg.genre '.
+               'FROM music_songs AS ms '.
+               'LEFT JOIN music_artists AS ma ON ms.artist_id=ma.artist_id '.
+               'LEFT JOIN music_genres AS mg ON ms.genre_id=mg.genre_id '.
                'WHERE genre='.utf8_encode($sql_itemid);
 
       $result = mysql_query($query);
