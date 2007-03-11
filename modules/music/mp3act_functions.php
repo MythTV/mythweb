@@ -453,27 +453,6 @@ function musicLookup($type, $itemid)
 
       $output = '<div class="head">
         <h2 class="music">'.$artist.'</h2></div>
-        <p><strong>'.t('Songs').'</strong></p>
-        <ul class="music">';
-
-      $query = 'SELECT ms.song_id, ms.track, ms.name, ms.length, ms.numplays, '.
-    'SEC_TO_TIME(ms.length/1000) AS length, music_artists.artist_name, track, music_albums.album_name '.
-        'FROM music_songs AS ms '.
-        'LEFT JOIN music_artists ON ms.artist_id=music_artists.artist_id '.
-        'LEFT JOIN music_albums ON ms.album_id=music_albums.album_id '.
-        'WHERE ms.artist_id='.$sql_itemid.';';
-      $result = mysql_query($query);
-      if (!$result)
-        break;
-
-      while ($row = mysql_fetch_array($result))
-      {
-        $output .= getHtmlSong($row['song_id'], '',
-          $row['album_name'], $row['track'], $row['name'],
-          $row['length'], $row['numplays']);
-      }
-      mysql_free_result($result);
-      $output .= '</ul><br />
         <p><strong>'.sprintf(t('Albums with songs by %s'),'<i>'.$artist.'</i>').'</strong></p>
         <ul class="music">';
 
@@ -496,6 +475,27 @@ function musicLookup($type, $itemid)
 
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $artist, $row['year'], $row['num_tracks'], $row['length']);
+      }
+      mysql_free_result($result);
+        
+      $output .='</ul><p><strong>'.t('Songs').'</strong></p>
+        <ul class="music">';
+
+      $query = 'SELECT ms.song_id, ms.track, ms.name, ms.length, ms.numplays, '.
+        'SEC_TO_TIME(ms.length/1000) AS length, music_artists.artist_name, track, music_albums.album_name '.
+        'FROM music_songs AS ms '.
+        'LEFT JOIN music_artists ON ms.artist_id=music_artists.artist_id '.
+        'LEFT JOIN music_albums ON ms.album_id=music_albums.album_id '.
+        'WHERE ms.artist_id='.$sql_itemid.';';
+      $result = mysql_query($query);
+      if (!$result)
+        break;
+
+      while ($row = mysql_fetch_array($result))
+      {
+        $output .= getHtmlSong($row['song_id'], '',
+          $row['album_name'], $row['track'], $row['name'],
+          $row['length'], $row['numplays']);
       }
       mysql_free_result($result);
       $output .= '</ul>';
