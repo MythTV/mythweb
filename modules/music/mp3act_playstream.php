@@ -63,6 +63,3 @@ function streamPlay($id)
   fclose($fp);
   exit;
 }
-
-
-?>

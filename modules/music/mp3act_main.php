@@ -27,18 +27,18 @@ require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
 <link rel="Stylesheet" href="<?php echo skin_url ?>music.css" type="text/css" />
 
-	<script type="text/javascript">
-			var page = 'search';
-			var mode = '<?php echo $_SESSION['sess_playmode']; ?>';
-			var bc_parenttype = '';
-			var bc_parentitem = '';
-			var bc_childtype = '';
-			var bc_childitem = '';
-			var prevpage = '';
-			var currentpage = 'search';
-			var nowplaying = 0;
-			var isplaying = 0;
-			var clearbc = 1;
+    <script type="text/javascript">
+            var page = 'search';
+            var mode = '<?php echo $_SESSION['sess_playmode']; ?>';
+            var bc_parenttype = '';
+            var bc_parentitem = '';
+            var bc_childtype = '';
+            var bc_childitem = '';
+            var prevpage = '';
+            var currentpage = 'search';
+            var nowplaying = 0;
+            var isplaying = 0;
+            var clearbc = 1;
 
   function getCookie( cookieName ) {
       var cookies = document.cookie;
@@ -62,48 +62,48 @@ require 'modules/_shared/tmpl/'.tmpl.'/header.php';
     }
     return true;
   }
-	<?php sajax_show_javascript(); ?></script>
-	<script type="text/javascript" src="<?php echo root; ?>music/mp3act_js.js.php"></script>
-	<script type="text/javascript" src="<?php echo root; ?>music/mp3act_fat.js"></script>
+    <?php sajax_show_javascript(); ?></script>
+    <script type="text/javascript" src="<?php echo root; ?>music/mp3act_js.js.php"></script>
+    <script type="text/javascript" src="<?php echo root; ?>music/mp3act_fat.js"></script>
 
 <div id="wrap">
-	<div id="header">
-		<div id="controls">
+    <div id="header">
+        <div id="controls">
 
-		</div>
-		<h1 id="pagetitle"></h1>
-		<ul class="music" id="nav">
-			<li><a href="#" id="search_music" onclick="switchPage('search'); return false;" title="<?php echo t('Search the Music Database'); ?>"><?php echo t('Search'); ?></a></li>
-			<li><a href="#" id="browse" onclick="switchPage('browse'); return false;"  title="<?php echo t('Browse the Music Database'); ?>" class="c"><?php echo t('Browse'); ?></a></li>
-			<li><a href="#" id="random" onclick="switchPage('random'); return false;" title="Create Random Mixes"><?php echo t('Random'); ?></a></li>
-			<li><a href="#" id="playlists" onclick="switchPage('playlists'); return false;" title="<?php echo t('Load Saved Playlists'); ?>"><?php echo t('Playlists'); ?></a></li>
-			<li><a href="#" id="stats" onclick="switchPage('stats'); return false;" title="<?php echo t('View Server Statistics'); ?>"><?php echo t('Stats'); ?></a></li>
+        </div>
+        <h1 id="pagetitle"></h1>
+        <ul class="music" id="nav">
+            <li><a href="#" id="search_music" onclick="switchPage('search'); return false;" title="<?php echo t('Search the Music Database'); ?>"><?php echo t('Search'); ?></a></li>
+            <li><a href="#" id="browse" onclick="switchPage('browse'); return false;"  title="<?php echo t('Browse the Music Database'); ?>" class="c"><?php echo t('Browse'); ?></a></li>
+            <li><a href="#" id="random" onclick="switchPage('random'); return false;" title="Create Random Mixes"><?php echo t('Random'); ?></a></li>
+            <li><a href="#" id="playlists" onclick="switchPage('playlists'); return false;" title="<?php echo t('Load Saved Playlists'); ?>"><?php echo t('Playlists'); ?></a></li>
+            <li><a href="#" id="stats" onclick="switchPage('stats'); return false;" title="<?php echo t('View Server Statistics'); ?>"><?php echo t('Stats'); ?></a></li>
             <!-- <li><?php echo t('Streaming Quality'); ?>: <select id="stream_quality"><option value="high"><?php echo t('High'); ?></option></select></li> -->
-		</ul>
+        </ul>
 
-	</div>
-	<div id="loading"><h1><?php echo t("LOADING"); ?>...</h1></div>
-	<div id="left">
-		<!--Disable breadcrumbs so info box and playlist align.-->
-		<h2 id="breadcrumb" style="display:none"></h2>
-		<div class="box" id="info">
-		</div>
-	</div>
+    </div>
+    <div id="loading"><h1><?php echo t("LOADING"); ?>...</h1></div>
+    <div id="left">
+        <!--Disable breadcrumbs so info box and playlist align.-->
+        <h2 id="breadcrumb" style="display:none"></h2>
+        <div class="box" id="info">
+        </div>
+    </div>
 
-	<div id="right">
-			<div class="box">
-				<div class="head">
-					<div class="right"><a href="#" onclick="play('pl',0); return false;" title="<?php echo t('Play This Playlist Now'); ?>"><?php echo t('Play'); ?></a> <a href="#" onclick="savePL('open',0); return false;" title="<?php echo t('Save or Rename the Current Playlist'); ?>"><?php echo t('Save/Rename'); ?></a> <a href="#" onclick="plclear(); return false;" class="red" title="<?php echo t('Create a New Playlist'); ?>"><?php echo t('New'); ?></a></div>
-					<h2 id="pl_title"></h2><span id="pl_info"></span>
-				</div>
-			<ul class="music" id="playlist">
+    <div id="right">
+            <div class="box">
+                <div class="head">
+                    <div class="right"><a href="#" onclick="play('pl',0); return false;" title="<?php echo t('Play This Playlist Now'); ?>"><?php echo t('Play'); ?></a> <a href="#" onclick="savePL('open',0); return false;" title="<?php echo t('Save or Rename the Current Playlist'); ?>"><?php echo t('Save/Rename'); ?></a> <a href="#" onclick="plclear(); return false;" class="red" title="<?php echo t('Create a New Playlist'); ?>"><?php echo t('New'); ?></a></div>
+                    <h2 id="pl_title"></h2><span id="pl_info"></span>
+                </div>
+            <ul class="music" id="playlist">
 
-			</ul>
+            </ul>
 
-			<div id="box_extra"> </div>
-			</div>
-	</div>
-	<div class="clear"></div>
+            <div id="box_extra"> </div>
+            </div>
+    </div>
+    <div class="clear"></div>
 </div>
 <iframe src="<?php echo root; ?>music/mp3act_hidden.php" frameborder="0" height="0" width="0" id="hidden" name="hidden"></iframe>
 <?php

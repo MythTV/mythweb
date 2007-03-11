@@ -457,7 +457,7 @@ function musicLookup($type, $itemid)
         <ul class="music">';
 
       $query = 'SELECT ms.song_id, ms.track, ms.name, ms.length, ms.numplays, '.
-	'SEC_TO_TIME(ms.length/1000) AS length, music_artists.artist_name, track, music_albums.album_name '.
+    'SEC_TO_TIME(ms.length/1000) AS length, music_artists.artist_name, track, music_albums.album_name '.
         'FROM music_songs AS ms '.
         'LEFT JOIN music_artists ON ms.artist_id=music_artists.artist_id '.
         'LEFT JOIN music_albums ON ms.album_id=music_albums.album_id '.
