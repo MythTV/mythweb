@@ -24,7 +24,7 @@
 
 /** @todo FIXME:  pull this out of the theme page! */
 // Which field are we grouping by?
-    $group_field = $_GET['sortby'];
+    $group_field = $_SESSION['scheduled_sortby'][0]['field'];
     if (empty($group_field)) {
         $group_field = "airdate";
     }
