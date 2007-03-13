@@ -90,11 +90,11 @@
                  );
 
 // Load up any defined user jobs
-    $sh = $db->query('SELECT SUBSTR(j.value, 8,1) AS jnum,
+    $sh = $db->query('SELECT SUBSTRING(j.value, 8,1) AS jnum,
                              d.data               AS name
                         FROM settings AS j,
                              settings AS d
-                       WHERE d.value = CONCAT("UserJobDesc", SUBSTR(j.value, 8,1))
+                       WHERE d.value = CONCAT("UserJobDesc", SUBSTRING(j.value, 8,1))
                              AND LENGTH(IFNULL(j.data, "")) > 0
                              AND j.value LIKE "UserJob_"
                     ORDER BY jnum');
