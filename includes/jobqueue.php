@@ -99,7 +99,7 @@
                              AND j.value LIKE "UserJob_"
                     ORDER BY jnum');
     while ($row = $sh->fetch_assoc()) {
-        $Jobs[constant('UserJob'.$row['jnum'])] = $row['name'];
+        $Jobs[constant('JOB_USERJOB'.$row['jnum'])] = $row['name'];
     }
     $sh->finish();
 
