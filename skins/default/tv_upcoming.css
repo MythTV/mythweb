@@ -83,3 +83,7 @@
     padding:            .25em .5em;
     margin:             0;
 }
+#listings td.-recording a {
+    border:             1px solid #0f0;
+}
+

@@ -91,6 +91,9 @@
     // Set the recording status character, class and any applicable commands for each show
         switch ($show->recstatus) {
             case 'Recording':
+                $rec_char   = $show->inputname;
+                $css_class  = 'scheduled';
+                break;
             case 'WillRecord':
                 $rec_char   = $show->inputname;
                 $css_class  = 'scheduled';
@@ -272,8 +275,15 @@
     <td class="-airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
     <td class="-length"><?php  echo nice_length($show->length) ?></td>
 <?php
-        foreach ($commands as $command) {
-            echo '    <td class="-commands commands">',$command,"</td>\n";
+        if ($show->recstatus == 'Recording') {
+            echo '    <td class="-commands commands -recording" colspan="2">',
+                 '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+                 t('Currently Recording:  Edit'),"</a></td>\n";
+        }
+        else {
+            foreach ($commands as $command) {
+                echo '    <td class="-commands commands">',$command,"</td>\n";
+            }
         }
 ?>
 </tr><?php
