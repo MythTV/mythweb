@@ -234,7 +234,7 @@
         if ($group_field == "airdate")
             $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
         elseif ($group_field == "channum")
-            $cur_group = $show->channel->name;
+            $cur_group = $show->channel->channum.' - '.$show->channel->name;
         elseif ($group_field == "title")
             $cur_group = $show->title;
 

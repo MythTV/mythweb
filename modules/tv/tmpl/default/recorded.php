@@ -273,7 +273,7 @@
                 $cur_group = $show->recgroup;
                 break;
             case 'channum':
-                $cur_group = $show->channel->channum;
+                $cur_group = $show->channel->channum.' - '.$show->channel->name;
                 break;
             case 'title':
                 $cur_group = $show->title;
