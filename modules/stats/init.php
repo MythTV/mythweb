@@ -13,9 +13,11 @@
  *
 /**/
 
-// The stats module is always enabled.
-    $Modules['stats'] = array('path' => 'stats',
-                              'sort' => 501,
-                              'name' => t('Statistics'),
-                             );
+    $enabled = $db->query_col('SELECT COUNT(*) FROM oldrecorded');
 
+    if($enabled) {
+        $Modules['stats'] = array('path' => 'stats',
+                                  'sort' => 501,
+                                  'name' => t('Statistics'),
+                                 );
+    }
