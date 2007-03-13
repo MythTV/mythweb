@@ -14,6 +14,8 @@
 
 /** @todo FIXME: this file needs to be rewritten to split out content/display */
 
+header("Content-Type: text/html; charset=utf-8");
+
 //check to see if the form has been submitted
 if (isset($_POST['submit'])) {
 
@@ -44,6 +46,7 @@ if (isset($_POST['submit'])) {
 ?>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script language="JavaScript">
 <!--
     function refreshParent() {
@@ -76,7 +79,7 @@ if (isset($_POST['submit'])) {
 <html>
 <head>
     <title>Edit Video Info</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style type="text/css">
     <!--
         td,body {
