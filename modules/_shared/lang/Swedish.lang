@@ -126,6 +126,7 @@
     Alla inspelningar
 "All Songs"
     Alla sånger
+"ALLOCINETYPE"
 "An error occured while adding your playlist."
     Ett fel uppstod vid tillägg av din spellista.
 "and"
@@ -477,6 +478,7 @@
     Luftfuktighet
 "IMDB"
     IMDB
+"IMDBTYPE"
 "Inactive"
     Inaktiv
 "info: activate recording"
@@ -1216,6 +1218,7 @@
 "Weather"
     Väder
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     Onsdag
 "welcome: backend_log"

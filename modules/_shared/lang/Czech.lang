@@ -76,6 +76,7 @@
 "All recordings"
     Všechny nahrávky
 "All Songs"
+"ALLOCINETYPE"
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -289,6 +290,7 @@
 "Humidity"
     Vlhkost
 "IMDB"
+"IMDBTYPE"
 "Inactive"
     Neaktivní
 "info: activate recording"
@@ -773,6 +775,7 @@
 "Weather"
     Počasí
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     Středa
 "welcome: backend_log"

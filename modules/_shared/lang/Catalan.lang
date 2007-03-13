@@ -100,6 +100,7 @@
 "All recordings"
     Tots els enregistraments
 "All Songs"
+"ALLOCINETYPE"
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -389,6 +390,7 @@
     Humitat
 "IMDB"
     IMDB
+"IMDBTYPE"
 "Inactive"
     Inactiu
 "info: activate recording"
@@ -1017,6 +1019,7 @@
 "Weather"
     Tiempo
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     Dimecres
 "welcome: backend_log"

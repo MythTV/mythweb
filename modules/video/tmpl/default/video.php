@@ -86,8 +86,11 @@
                         title += line[title_index];
                         title_index += 1;
                     }
-                    if (title.length > 0)
-                        content.innerHTML += '<br /><a href="http://www.imdb.com/Title?'+num+'" style="float: right; margin-left: 1em;">(IMDB)<\/a> <a href="javascript:imdb_select(\''+id+'\',\''+num+'\')">'+title+'<\/a>';
+                    if (title.length > 0) {
+                        content.innerHTML += '<br />';
+                        content.innerHTML += '<a href="'+makeImdbWebUrl(num)+'" style="float: right; margin-left: 1em;">(IMDB)</a>';
+                        content.innerHTML += '<a href="javascript:imdb_select(\''+id+'\',\''+num+'\')">'+title+'</a>';
+                    }
                     matches_index += 1;
                 }
                 content.innerHTML += '<br /><a href="javascript: imdb_prompt(\''+id+'\');"><?php echo t('Custom Search'); ?><\/a>';
@@ -104,6 +107,13 @@
             result_index += 1;
         }
 
+    }
+
+    function makeImdbWebUrl(num) {
+        var imdb = "<?php echo setting('web_video_imdb_type', hostname); ?>";
+        if (imdb == 'ALLOCINE')
+            return "http://www.allocine.fr/film/fichefilm_gen_cfilm="+num+".html";
+        return "http://www.imdb.com/Title?"+num;
     }
 
     function imdb_select(id, number) {
@@ -309,10 +319,10 @@
         <div id="video_<?php echo $show->intid; ?>_genre" class="hidden"><?php if (count($show->genres)) foreach ($show->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="video_<?php echo $show->intid; ?>_browse" class="hidden"><?php echo $show->browse; ?></div>
         <div id="video_<?php echo $show->intid; ?>-title" class="title"><a href="<?php echo $show->url; ?>"><?php echo htmlentities($show->title); ?></a></div>
-        <div id="video_<?php echo $show->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($show->cover_url)) echo 'src="data/video_covers/'.basename($show->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
+        <div id="video_<?php echo $show->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($show->coverfile)) echo 'src="data/video_covers/'.basename($show->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
         <div id="video_<?php echo $show->intid; ?>-category">           <?php echo $Category_String[$show->category]; ?></div>
         <div id="video_<?php echo $show->intid; ?>_playtime">           <?php echo nice_length($show->length * 60); ?></div>
-        <div id="video_<?php echo $show->intid; ?>_imdb">               <?php if ($show->inetref != '00000000') { ?><a href="http://www.imdb.com/Title?<?php echo $show->inetref; ?>"><?php echo $show->inetref ?></a><?php } ?></div>
+        <div id="video_<?php echo $show->intid; ?>_imdb">               <?php if ($show->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($show->inetref); ?>"><?php echo $show->inetref ?></a><?php } ?></div>
         <div class="command">
             <span class="commands"><a href="javascript:newWindow('<?php echo root ?>video/edit?intid=<?php echo $show->intid ?>')" ><?php echo t('Edit') ?></a></span>
             <span class="commands"><a href="javascript:imdb_lookup('<?php echo $show->intid ?>','<?php echo addslashes($show->title); ?>')">IMDB</a></span>

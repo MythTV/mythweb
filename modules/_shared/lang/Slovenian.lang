@@ -80,6 +80,7 @@
 "All recordings"
     Vsa snemanja
 "All Songs"
+"ALLOCINETYPE"
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -321,6 +322,7 @@
     Vlažnost
 "IMDB"
     IMBD
+"IMDBTYPE"
 "Inactive"
 "info: activate recording"
 "info: default recording"
@@ -847,6 +849,7 @@
 "Watched"
 "Weather"
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     Sreda
 "welcome: backend_log"

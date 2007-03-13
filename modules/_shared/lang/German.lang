@@ -93,6 +93,7 @@
 "All recordings"
     Alle Aufnahmen
 "All Songs"
+"ALLOCINETYPE"
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -375,6 +376,7 @@
     Luftfeuchtigkeit
 "IMDB"
     IMDB
+"IMDBTYPE"
 "Inactive"
     Inaktiv
 "info: activate recording"
@@ -969,6 +971,7 @@
 "Weather"
     Wetter
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     Mittwoch
 "welcome: backend_log"

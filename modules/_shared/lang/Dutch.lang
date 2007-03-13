@@ -93,6 +93,7 @@
 "All recordings"
     Alle opnames
 "All Songs"
+"ALLOCINETYPE"
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -375,6 +376,7 @@
     Vochtigheid
 "IMDB"
     IMDB
+"IMDBTYPE"
 "Inactive"
     Niet actief
 "info: activate recording"
@@ -969,6 +971,7 @@
 "Weather"
     Weer
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     Woensdag
 "welcome: backend_log"

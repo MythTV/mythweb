@@ -93,6 +93,7 @@
 "All recordings"
     全ての録画
 "All Songs"
+"ALLOCINETYPE"
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -373,6 +374,7 @@
 "Humidity"
     湿度
 "IMDB"
+"IMDBTYPE"
 "Inactive"
     無効
 "info: activate recording"
@@ -983,6 +985,7 @@
 "Weather"
     天気
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     水曜日
 "welcome: backend_log"

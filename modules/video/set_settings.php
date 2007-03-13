@@ -33,6 +33,7 @@
 
     if ($_POST['save']) {
         setting('web_video_imdb_path',          $_SESSION['settings']['host'], $_POST['web_video_imdb_path']);
+        setting('web_video_imdb_type',          $_SESSION['settings']['host'], $_POST['web_video_imdb_type']);
         setting('VideoAggressivePC',            $_SESSION['settings']['host'], $_POST['VideoAggressivePC']);
         setting('VideoArtworkDir',              $_SESSION['settings']['host'], $_POST['VideoArtworkDir']);
         setting('VideoBrowserNoDB',             $_SESSION['settings']['host'], $_POST['VideoBrowserNoDB']);

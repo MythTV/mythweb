@@ -85,6 +85,8 @@
 "All recordings"
     Tous les enregistrements
 "All Songs"
+"ALLOCINETYPE"
+    Allo Cin&eacute;
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -326,6 +328,8 @@
     Humidit&eacute;
 "IMDB"
     Allocin&eacute;
+"IMDBTYPE"
+    Imdb
 "Inactive"
     Inactif
 "info: activate recording"
@@ -855,6 +859,7 @@
 "Watched"
 "Weather"
 "web_video_imdb_path"
+"web_video_imdb_type"
 "Wednesday"
     Mercredi
 "welcome: backend_log"

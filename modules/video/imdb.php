@@ -18,9 +18,7 @@
         return;
     }
 
-    $imdb = setting('web_video_imdb_path', hostname);
-
-    if (is_null($imdb)) {
+    if (is_null(setting('web_video_imdb_path', hostname))) {
         echo 'Error~:~ '.t('Video: Error: IMDB: Not Found')."\n";
         return;
     }
@@ -40,15 +38,17 @@
 
     function lookup($id, $title)
     {
-        global $imdb;
+        $imdb = setting('web_video_imdb_path', hostname);
+        $imdbwebtype = setting('web_video_imdb_type', hostname);
     // Escape any extra " in the title string
         $title = str_replace('"', '\"', $title);
     // Setup the option list
-        $options = array( 'tv=both',
-                          'tv=both\;type=fuzzy'
+        $options = array('IMDB'     => array( ' -M tv=both "%%TITLE%%"',
+                                              ' -M tv=both\;type=fuzzy "%%TITLE%%"'),
+                         'ALLOCINE' => array( ' -M "%%TITLE%%"')
                         );
-        foreach ($options as $option) {
-            $cmd = "$imdb -M $option \"$title\"";
+        foreach ($options[$imdbwebtype] as $option) {
+            $cmd = $imdb.str_replace('%%TITLE%%', $title, $option);
             exec($cmd, $output, $retval);
             if ($retval == 255)
                 echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
@@ -65,10 +65,15 @@
 
     function grab($id, $imdbnum)
     {
-        global $imdb;
         global $db;
+        $imdb = setting('web_video_imdb_path', hostname);
+        $imdbwebtype = setting('web_video_imdb_type', hostname);
+    // Setup the option list
+        $options = array('IMDB'     => array( ' -P %%NUMBER%%'),
+                         'ALLOCINE' => array( ' -P %%NUMBER%%')
+                        );
     // save the poster
-        $cmd = "$imdb -P $imdbnum";
+        $cmd = $imdb.str_replace('%%NUMBER%%', $imdbnum, $options[$imdbwebtype]);
         exec($cmd, $output, $retval);
         if ($retval == 255)
             echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";

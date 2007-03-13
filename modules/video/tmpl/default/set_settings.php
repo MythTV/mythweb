@@ -19,6 +19,18 @@
 
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
+    <?php
+      $imdbType=setting('web_video_imdb_type', $_SESSION['settings']['host']);
+    ?>
+
+    <td><?php echo t('web_video_imdb_type'); ?>:</td>
+    <td><select name="web_video_imdb_type">
+	   <option value="IMDB"  <?php if ($imdbType == "IMDB") echo 'SELECTED'; ?> ><?php echo t('IMDBTYPE'); ?></option>
+	   <option value="ALLOCINE" <?php if ($imdbType == "ALLOCINE") echo 'SELECTED'; ?> ><?php echo t('ALLOCINETYPE'); ?></option>
+	</select>
+    </td>
+</tr>
+<tr>
     <td><?php echo t('web_video_imdb_path'); ?>:</td>
     <td><input type="text" name="web_video_imdb_path" size="60" value="<?php echo $imdb_path; ?>"></td>
 </tr>

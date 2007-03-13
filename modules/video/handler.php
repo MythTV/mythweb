@@ -24,6 +24,15 @@
 
     require_once 'includes/objects/Video.php';
 
+// a extra function
+    function makeImdbWebUrl($num) {
+ 	    $imdbwebtype = setting('web_video_imdb_type', hostname);
+        switch ($imdbwebtype) {
+            case 'ALLOCINE':    return "http://www.allocine.fr/film/fichefilm_gen_cfilm=".$num.".html";
+            default:            return "http://www.imdb.com/Title?".$num;
+        }
+ 	}
+
 // Make sure the video directory exists
     if (file_exists('data/video')) {
     // File is not a directory or a symlink

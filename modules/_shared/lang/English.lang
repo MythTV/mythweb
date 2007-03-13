@@ -64,6 +64,8 @@
 "All Music"
 "All recordings"
 "All Songs"
+"ALLOCINETYPE"
+    Allo Cin&eacute;
 "An error occured while adding your playlist."
 "and"
 "Any"
@@ -249,6 +251,8 @@
 "hue"
 "Humidity"
 "IMDB"
+"IMDBTYPE"
+    Imdb
 "Inactive"
 "info: activate recording"
     Force this specific showing to record.
@@ -712,6 +716,7 @@
 "Weather"
 "web_video_imdb_path"
     Path to imdb.pl on this webserver
+"web_video_imdb_type"
 "Wednesday"
 "welcome: backend_log"
     Show the server logs.
