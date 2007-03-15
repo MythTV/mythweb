@@ -28,6 +28,8 @@
                                              $_GET['a']);
     // Set the XML transfer command
         $xml_command = 'GetAlbumArt';
+    // Set the XML transfer file id
+        $xml_id = $_GET['a'];
     }
 
 // Music?
@@ -46,6 +48,8 @@
                    $_GET['i']);
     // Set the XML transfer command
         $xml_command = 'GetMusic';
+    // Set the XML transfer file id
+        $xml_id = $_GET['i'];
     }
 
 // Unknown request or empty file?
@@ -95,7 +99,7 @@
         global $Master_Host;
         $port = _or(get_backend_setting('BackendStatusPort', $Master_Host),
                     get_backend_setting('BackendStatusPort'));
-        readfile("http://$Master_Host:$port/Myth/$xml_command?Id=".$_GET['i']);
+        readfile("http://$Master_Host:$port/Myth/$xml_command?Id=".$xml_id);
     }
 
 // Nothing else to do
