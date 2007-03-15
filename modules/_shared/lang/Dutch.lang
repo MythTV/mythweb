@@ -70,10 +70,6 @@
     uitzenddatum
 "Airtime"
     Uitzendtijd
-"Album"
-    Album
-"Album (filtered)"
-    Album (filter)
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -88,8 +84,6 @@
 "All HDTV"
     Alle HDTV
 "All Hosts"
-"All Music"
-    Alle muziek
 "All recordings"
     Alle opnames
 "All Songs"
@@ -109,10 +103,6 @@
 "Are you sure you want to delete the following show?"
     Bent U zeker van het verwijderen van volgend programma?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-    Artiest
-"Artist (filtered)"
-    Artiest (filter)
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -252,8 +242,6 @@
     Regisseur
 "Display"
     Tonen
-"Displaying"
-    Zichtbaar
 "Don't Record"
     Niet Opnemen
 "Don't record this program."
@@ -267,8 +255,6 @@
     Testmethode herh.
 "Duplicates"
     Dubbels
-"Duration"
-    Lengte
 "Earlier"
 "Edit"
     Bewerken
@@ -276,8 +262,6 @@
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
 "Edit settings for: $1"
-"End"
-    Einde
 "End Late"
     Later stoppen
 "Enter a new name for your playlist"
@@ -299,8 +283,6 @@
 "File Size"
     bestandsgrootte
 "Filter"
-"Filtered"
-    Met filter
 "Find Date & Time Options"
     Datum &amp; tijd zoeken, opties
 "Find Day"
@@ -337,8 +319,6 @@
     %H:%M
 "Genre"
     Genre
-"Genre (filtered)"
-    Genre (filter)
 "Genres"
 "Go"
     Doorgaan
@@ -494,8 +474,6 @@
 "New Search"
 "New Titles, Premieres"
     Nieuwe Titels, Premieres
-"Next"
-    Volgende
 "NO DATA"
     GEEN DATA
 "No matches found"
@@ -505,8 +483,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
-"No Tracks Available"
-    Geen nummers gevonden
 "No. of recordings to keep"
     Aantal opnames bewaren
 "Non-Music Specials"
@@ -578,8 +554,6 @@
     Presentator
 "Pressure"
     Luchtdruk
-"Previous"
-    Vorige
 "Previous recordings"
     Eerdere opnames
 "Produced by"
@@ -825,7 +799,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Dubbels en Beschrijving
 "Submit Search"
@@ -866,8 +839,6 @@
 "Tomorrow"
     Morgen
 "Too Many"
-"Top"
-    Begin
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -876,8 +847,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
-    Naam
 "Transcode"
 "transcoder"
     transcoder
@@ -896,8 +865,6 @@
     type
 "Type"
     Type
-"Unfiltered"
-    Zonder filter
 "Unknown"
     Onbekend
 "Unknown Program."

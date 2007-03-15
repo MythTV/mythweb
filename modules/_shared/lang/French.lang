@@ -67,8 +67,6 @@
     Date de diffusion
 "Airtime"
     Heure de diffusion
-"Album"
-"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -81,7 +79,6 @@
 "All groups"
 "All HDTV"
 "All Hosts"
-"All Music"
 "All recordings"
     Tous les enregistrements
 "All Songs"
@@ -99,8 +96,6 @@
 "Are you sure you want to delete the following show?"
     Etes vous s&ucirc;r d&acute;effacer cette &eacute;mission
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -221,7 +216,6 @@
     Mis en scène par
 "Display"
     Afficher
-"Displaying"
 "Don't Record"
     Ne pas enregistrer
 "Don't record this program."
@@ -235,14 +229,12 @@
     M&eacute;thode de test des doublons
 "Duplicates"
     Doublonner
-"Duration"
 "Earlier"
 "Edit"
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Editer les param&egrave;tres de Mythweb et certains de MythTV
 "Edit settings for: $1"
-"End"
 "End Late"
     Fin tardive
 "Enter a new name for your playlist"
@@ -263,7 +255,6 @@
 "File Size"
     taille de fichier
 "Filter"
-"Filtered"
 "Find Date & Time Options"
 "Find Day"
 "Find other showings of this program"
@@ -293,7 +284,6 @@
 "generic_time"
     %I:%M %p
 "Genre"
-"Genre (filtered)"
 "Genres"
 "Go"
     Go
@@ -432,7 +422,6 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
 "NO DATA"
 "No matches found"
     Aucune correspondance
@@ -440,7 +429,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Aucune programmation n'est définie
-"No Tracks Available"
 "No. of recordings to keep"
     Nombre d&acute;enregistrements &agrave; garder
 "Non-Music Specials"
@@ -505,7 +493,6 @@
     Présenté par
 "Pressure"
     Pression
-"Previous"
 "Previous recordings"
     Enregistrements pr&eacute;c&eacute;dents
 "Produced by"
@@ -732,7 +719,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub et Desc (Vide correspond)
 "Submit Search"
@@ -770,7 +756,6 @@
 "Tomorrow"
     Demain
 "Too Many"
-"Top"
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -779,7 +764,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
 "Transcode"
 "transcoder"
 "Transcoder"
@@ -794,7 +778,6 @@
     Type
 "Type"
     Type
-"Unfiltered"
 "Unknown"
     Inconnu
 "Unknown Program."

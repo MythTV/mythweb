@@ -76,10 +76,6 @@
     emissió
 "Airtime"
     Horari
-"Album"
-    Àlbum
-"Album (filtered)"
-    Àlbum (filtrat)
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -95,8 +91,6 @@
 "All HDTV"
     Tot HDTV
 "All Hosts"
-"All Music"
-    Tota la música
 "All recordings"
     Tots els enregistraments
 "All Songs"
@@ -116,10 +110,6 @@
 "Are you sure you want to delete the following show?"
     Està segur d'eliminar el següent programa?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-    Artista
-"Artist (filtered)"
-    Artista (filtrat)
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -263,8 +253,6 @@
     Dirigido por
 "Display"
     Mostrar
-"Displaying"
-    Mostrant
 "Don't Record"
     No enregistrat
 "Don't record this program."
@@ -278,8 +266,6 @@
     Mètode de comprovació de duplicats
 "Duplicates"
     Duplicats
-"Duration"
-    Duració
 "Earlier"
 "Edit"
     Editar
@@ -287,8 +273,6 @@
 "Edit MythWeb and some MythTV settings."
     Editar ajustos de MythWeb i alguns de MythTV
 "Edit settings for: $1"
-"End"
-    Fi
 "End Late"
     Acabar després
 "Enter a new name for your playlist"
@@ -310,8 +294,6 @@
 "File Size"
     mida de l'arxiu
 "Filter"
-"Filtered"
-    Filtrat
 "Find Date & Time Options"
     Opcions de recerca per data i hora
 "Find Day"
@@ -349,8 +331,6 @@
     %I:%M %p
 "Genre"
     Genere
-"Genre (filtered)"
-    Genere (filtrat)
 "Genres"
 "Go"
     Anar
@@ -520,8 +500,6 @@
 "New Search"
 "New Titles, Premieres"
     Nous títols, estrenes
-"Next"
-    Següent
 "NO DATA"
     SENSE DADES
 "No matches found"
@@ -530,8 +508,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     No s'han definit enregistraments programats
-"No Tracks Available"
-    No hi ha pistes disponibles
 "No. of recordings to keep"
     Nº d'enregistraments a conservar
 "Non-Music Specials"
@@ -614,8 +590,6 @@
     Presentat per
 "Pressure"
     Pressió
-"Previous"
-    Anterior
 "Previous recordings"
     Enregistraments anteriors
 "Produced by"
@@ -868,7 +842,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub i Desc (Coincidències buides)
 "Submit Search"
@@ -910,8 +883,6 @@
 "Tomorrow"
     Demà
 "Too Many"
-"Top"
-    Amunt
 "Top $1"
     Primers $1
 "Top Played Songs"
@@ -922,8 +893,6 @@
     Temps Total
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
-    Nom de la pista
 "Transcode"
 "transcoder"
     recodificador
@@ -941,8 +910,6 @@
     tipus
 "Type"
     Tipus
-"Unfiltered"
-    Sense filtrar
 "Unknown"
     Desconegut
 "Unknown Program."

@@ -78,7 +78,6 @@ require 'modules/_shared/tmpl/'.tmpl.'/header.php';
             <li><a href="#" id="random" onclick="switchPage('random'); return false;" title="Create Random Mixes"><?php echo t('Random'); ?></a></li>
             <li><a href="#" id="playlists" onclick="switchPage('playlists'); return false;" title="<?php echo t('Load Saved Playlists'); ?>"><?php echo t('Playlists'); ?></a></li>
             <li><a href="#" id="stats" onclick="switchPage('stats'); return false;" title="<?php echo t('View Server Statistics'); ?>"><?php echo t('Stats'); ?></a></li>
-            <!-- <li><?php echo t('Streaming Quality'); ?>: <select id="stream_quality"><option value="high"><?php echo t('High'); ?></option></select></li> -->
         </ul>
 
     </div>

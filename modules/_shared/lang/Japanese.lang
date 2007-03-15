@@ -69,10 +69,6 @@
     放送日
 "Airtime"
     放送時間
-"Album"
-    アルバム
-"Album (filtered)"
-    アルバム（絞込み）
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -88,8 +84,6 @@
 "All HDTV"
     全てのHDTV
 "All Hosts"
-"All Music"
-    全ミュージック
 "All recordings"
     全ての録画
 "All Songs"
@@ -109,10 +103,6 @@
 "Are you sure you want to delete the following show?"
     この録画を削除してよろしいですか？
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-    アーティスト
-"Artist (filtered)"
-    アーティスト（絞込み）
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -252,8 +242,6 @@
     監督
 "Display"
     表示
-"Displaying"
-    表示
 "Don't Record"
     録画停止
 "Don't record this program."
@@ -267,8 +255,6 @@
     重複チェック方法
 "Duplicates"
     重複
-"Duration"
-    時間
 "Earlier"
 "Edit"
     編集
@@ -276,8 +262,6 @@
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
 "Edit settings for: $1"
-"End"
-    終了
 "End Late"
     録画延長
 "Enter a new name for your playlist"
@@ -299,8 +283,6 @@
 "File Size"
     ファイルサイズ
 "Filter"
-"Filtered"
-    抽出
 "Find Date & Time Options"
     日時オプション
 "Find Day"
@@ -338,8 +320,6 @@
     %I:%M %p
 "Genre"
     ジャンル
-"Genre (filtered)"
-    ジャンル（絞込み）
 "Genres"
 "Go"
     移動
@@ -500,8 +480,6 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
-    次
 "NO DATA"
 "No matches found"
     一致する物がありませんでした
@@ -510,8 +488,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     予約が設定されていません
-"No Tracks Available"
-    トラックがありません
 "No. of recordings to keep"
     録画番組保存数
 "Non-Music Specials"
@@ -590,8 +566,6 @@
     提供
 "Pressure"
     気圧
-"Previous"
-    戻る
 "Previous recordings"
     以前の録画
 "Produced by"
@@ -840,7 +814,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     サブタイトルと内容(エンプティーマッチ)
 "Submit Search"
@@ -881,8 +854,6 @@
 "Tomorrow"
     明日
 "Too Many"
-"Top"
-    トップ
 "Top $1"
     トップ $1
 "Top Played Songs"
@@ -893,8 +864,6 @@
     合計時間
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
-    トラック名
 "Transcode"
 "transcoder"
     トランスコーダー
@@ -911,8 +880,6 @@
     タイプ
 "Type"
     タイプ
-"Unfiltered"
-    絞り込みなし
 "Unknown"
     不明
 "Unknown Program."

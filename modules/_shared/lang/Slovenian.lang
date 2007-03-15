@@ -62,8 +62,6 @@
     datum oddajanja
 "Airtime"
     Čas predvajanja
-"Album"
-"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -76,7 +74,6 @@
 "All groups"
 "All HDTV"
 "All Hosts"
-"All Music"
 "All recordings"
     Vsa snemanja
 "All Songs"
@@ -93,8 +90,6 @@
 "Are you sure you want to delete the following show?"
     Ste prepričani, da želite izbrisati to oddajo?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -215,7 +210,6 @@
     Režiser
 "Display"
     Prikaz
-"Displaying"
 "Don't Record"
     Ne snemaj
 "Don't record this program."
@@ -229,14 +223,12 @@
     Metoda preverjanja duplikatov
 "Duplicates"
     Duplikati
-"Duration"
 "Earlier"
 "Edit"
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
 "Edit settings for: $1"
-"End"
 "End Late"
     Končaj kasneje
 "Enter a new name for your playlist"
@@ -257,7 +249,6 @@
 "File Size"
     velikost datoteke
 "Filter"
-"Filtered"
 "Find Date & Time Options"
 "Find Day"
 "Find other showings of this program"
@@ -287,7 +278,6 @@
 "generic_time"
     %H:%M
 "Genre"
-"Genre (filtered)"
 "Genres"
 "Go"
     Pojdi
@@ -424,7 +414,6 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
 "NO DATA"
 "No matches found"
     Ni zadetkov
@@ -432,7 +421,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
-"No Tracks Available"
 "No. of recordings to keep"
     Št. ohranjenih snemanj
 "Non-Music Specials"
@@ -497,7 +485,6 @@
     Predstavlja
 "Pressure"
     Tlak
-"Previous"
 "Previous recordings"
     Že posneto
 "Produced by"
@@ -722,7 +709,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)
 "Submit Search"
@@ -760,7 +746,6 @@
 "Tomorrow"
     Jutri
 "Too Many"
-"Top"
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -769,7 +754,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
 "Transcode"
 "transcoder"
 "Transcoder"
@@ -784,7 +768,6 @@
     tip
 "Type"
     Tip
-"Unfiltered"
 "Unknown"
     Neznano
 "Unknown Program."

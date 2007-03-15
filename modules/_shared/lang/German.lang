@@ -70,10 +70,6 @@
     Sendezeit
 "Airtime"
     Sendezeit
-"Album"
-    Album
-"Album (filtered)"
-    Album (gefiltert)
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -88,8 +84,6 @@
 "All HDTV"
     Sendungen in HDTV
 "All Hosts"
-"All Music"
-    Alle Titel
 "All recordings"
     Alle Aufnahmen
 "All Songs"
@@ -109,10 +103,6 @@
 "Are you sure you want to delete the following show?"
     Diese Aufnahme wirklich löschen?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-    Interpret
-"Artist (filtered)"
-    Interpret (gefiltert)
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -252,8 +242,6 @@
     Regie
 "Display"
     Anzeigen
-"Displaying"
-    Angezeigt
 "Don't Record"
     Nicht aufnehmen
 "Don't record this program."
@@ -267,8 +255,6 @@
     Testmethode für Wdhgn.
 "Duplicates"
     Wiederholungen
-"Duration"
-    Dauer
 "Earlier"
 "Edit"
     Bearbeiten
@@ -276,8 +262,6 @@
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
 "Edit settings for: $1"
-"End"
-    Ende
 "End Late"
     verspätetes Aufnahmeende
 "Enter a new name for your playlist"
@@ -299,8 +283,6 @@
 "File Size"
     Dateigröße
 "Filter"
-"Filtered"
-    gefiltert
 "Find Date & Time Options"
     Finde Datum & Zeit Optionen
 "Find Day"
@@ -337,8 +319,6 @@
     %H:%M
 "Genre"
     Genre
-"Genre (filtered)"
-    Genre (gefiltert)
 "Genres"
 "Go"
     Los
@@ -493,8 +473,6 @@
 "New Search"
 "New Titles, Premieres"
     Neue Sendungen, Erstausstrahlungen
-"Next"
-    Nächste
 "NO DATA"
     Kein Programm verfügbar
 "No matches found"
@@ -504,8 +482,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
-"No Tracks Available"
-    Keine Titel verfügbar
 "No. of recordings to keep"
     Wieviele Aufnahmen behalten
 "Non-Music Specials"
@@ -578,8 +554,6 @@
     Präsentiert von
 "Pressure"
     Luftdruck
-"Previous"
-    Vorherige
 "Previous recordings"
     Alte Aufnahmen
 "Produced by"
@@ -824,7 +798,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)
 "Submit Search"
@@ -865,8 +838,6 @@
 "Tomorrow"
     Morgen
 "Too Many"
-"Top"
-    Anfang
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -875,8 +846,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
-    Titel
 "Transcode"
 "transcoder"
     Umwandlungsprofil
@@ -895,8 +864,6 @@
     Modus
 "Type"
     Typ
-"Unfiltered"
-    ungefiltert
 "Unknown"
     Unbekannt
 "Unknown Program."

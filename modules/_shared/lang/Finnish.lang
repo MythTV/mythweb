@@ -68,10 +68,6 @@
     lähetysaika
 "Airtime"
     Lähetysaika
-"Album"
-    Albumi
-"Album (filtered)"
-    Albumi (suodatettu)
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -85,8 +81,6 @@
     Kaikki ryhmät
 "All HDTV"
 "All Hosts"
-"All Music"
-    Kaikki Musiikki
 "All recordings"
     Kaikki nauhoitukset
 "All Songs"
@@ -106,10 +100,6 @@
 "Are you sure you want to delete the following show?"
     Poistetaanko seuraavat ohjelmat?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-    Esittäjä
-"Artist (filtered)"
-    Esittäjä (suodatettu)
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -249,8 +239,6 @@
     Ohjaus
 "Display"
     Tulosta
-"Displaying"
-    Näytetään
 "Don't Record"
     Älä Nauhoita
 "Don't record this program."
@@ -264,8 +252,6 @@
     Kaksoiskapp. Tarkistus
 "Duplicates"
     Kaksoiskappaleet
-"Duration"
-    Kesto
 "Earlier"
 "Edit"
     Muokkaa
@@ -273,8 +259,6 @@
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
 "Edit settings for: $1"
-"End"
-    Loppu
 "End Late"
     Lopeta Myöhemmin
 "Enter a new name for your playlist"
@@ -296,8 +280,6 @@
 "File Size"
     tiedostokoko
 "Filter"
-"Filtered"
-    Suodatettu
 "Find Date & Time Options"
 "Find Day"
 "Find other showings of this program"
@@ -329,8 +311,6 @@
     %I:%M %p
 "Genre"
     Laji
-"Genre (filtered)"
-    Laji (suodatettu)
 "Genres"
 "Go"
     Mene
@@ -481,8 +461,6 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
-    Seuraava
 "NO DATA"
     EI DATAA
 "No matches found"
@@ -492,8 +470,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
-"No Tracks Available"
-    Kappaleita Ei Saatavilla
 "No. of recordings to keep"
     N:o nauhoituksia pidettäväksi
 "Non-Music Specials"
@@ -562,8 +538,6 @@
     Esittää
 "Pressure"
     Ilmanpaine
-"Previous"
-    Edellinen
 "Previous recordings"
     Aiemmat nauhoitukset
 "Produced by"
@@ -806,7 +780,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Kuvaus ja Nimike (Ei vastaavuuksia)
 "Submit Search"
@@ -847,8 +820,6 @@
 "Tomorrow"
     Huomenna
 "Too Many"
-"Top"
-    Ylös
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -857,8 +828,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
-    Kappaleen Nimi
 "Transcode"
 "transcoder"
     jälkikäsittely
@@ -877,8 +846,6 @@
     tyyppi
 "Type"
     Nauhoitustapa
-"Unfiltered"
-    Suodattamatonta
 "Unknown"
     Tuntematon
 "Unknown Program."

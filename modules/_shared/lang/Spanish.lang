@@ -76,10 +76,6 @@
     emisión
 "Airtime"
     Horario
-"Album"
-    Álbum
-"Album (filtered)"
-    Álbum (filtrado)
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -95,8 +91,6 @@
 "All HDTV"
     Todas HDTV
 "All Hosts"
-"All Music"
-    Toda la msica
 "All recordings"
     Todas las grabaciones
 "All Songs"
@@ -116,10 +110,6 @@
 "Are you sure you want to delete the following show?"
     ¿Está seguro de borrar el siguiente programa?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-    Artista
-"Artist (filtered)"
-    Artista (filtrado)
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -263,8 +253,6 @@
     Dirigido por
 "Display"
     Mostrar
-"Displaying"
-    Mostrando
 "Don't Record"
     No grabar
 "Don't record this program."
@@ -278,8 +266,6 @@
     Método comprobación duplicados
 "Duplicates"
     Duplicados
-"Duration"
-    Duración
 "Earlier"
 "Edit"
     Editar
@@ -287,8 +273,6 @@
 "Edit MythWeb and some MythTV settings."
     Editar ajustes de MythWeb y algunos de MythTV
 "Edit settings for: $1"
-"End"
-    Fin
 "End Late"
     Terminar más tarde
 "Enter a new name for your playlist"
@@ -310,8 +294,6 @@
 "File Size"
     tamaño fichero
 "Filter"
-"Filtered"
-    Filtrado
 "Find Date & Time Options"
     Opciones Búsqueda Fecha y Hora
 "Find Day"
@@ -349,8 +331,6 @@
     %I:%M %p
 "Genre"
     Género
-"Genre (filtered)"
-    Género (filtrado)
 "Genres"
 "Go"
     Ir
@@ -518,8 +498,6 @@
 "New Search"
 "New Titles, Premieres"
     Nuevos Títulos, Estrenos
-"Next"
-    Siguiente
 "NO DATA"
     SIN DATOS
 "No matches found"
@@ -529,8 +507,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     No se han definido programaciones
-"No Tracks Available"
-    No hay pistas disponibles
 "No. of recordings to keep"
     Nº de grabaciones a guardar
 "Non-Music Specials"
@@ -612,8 +588,6 @@
     Presentado por
 "Pressure"
     Presión
-"Previous"
-    Anterior
 "Previous recordings"
     Grabaciones anteriores
 "Produced by"
@@ -866,7 +840,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
     Sub y Desc (Coincidencias vacías)
 "Submit Search"
@@ -908,8 +881,6 @@
 "Tomorrow"
     Mañana
 "Too Many"
-"Top"
-    Arriba
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -919,8 +890,6 @@
     Tiempo Total
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
-    Nombre Pista
 "Transcode"
 "transcoder"
     recodificador
@@ -938,8 +907,6 @@
     tipo
 "Type"
     Tipo
-"Unfiltered"
-    Sin filtrar
 "Unknown"
     Desconocido
 "Unknown Program."

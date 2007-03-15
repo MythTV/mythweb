@@ -58,8 +58,6 @@
     datum vysílání
 "Airtime"
     Čas vysílání
-"Album"
-"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -72,7 +70,6 @@
 "All groups"
 "All HDTV"
 "All Hosts"
-"All Music"
 "All recordings"
     Všechny nahrávky
 "All Songs"
@@ -87,8 +84,6 @@
 "Append to Current Playlist"
 "Are you sure you want to delete the following show?"
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -199,7 +194,6 @@
 "Directed by"
 "Display"
     Zobrazení
-"Displaying"
 "Don't Record"
     Nenahrávat
 "Don't record this program."
@@ -210,13 +204,11 @@
 "Duplicate Check method"
     Metoda kontroly duplicit
 "Duplicates"
-"Duration"
 "Earlier"
 "Edit"
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
 "Edit settings for: $1"
-"End"
 "End Late"
     Končí pozdě
 "Enter a new name for your playlist"
@@ -235,7 +227,6 @@
 "Exec. Producer"
 "File Size"
 "Filter"
-"Filtered"
 "Find Date & Time Options"
 "Find Day"
 "Find other showings of this program"
@@ -262,7 +253,6 @@
 "generic_time"
     %I:%M %p
 "Genre"
-"Genre (filtered)"
 "Genres"
 "Go"
 "Google"
@@ -389,14 +379,12 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
 "NO DATA"
 "No matches found"
 "No matching programs found."
 "No Public Playlists"
 "No recording schedules have been defined."
     Žádné rozvrhy nahrávání nebyly definovány.
-"No Tracks Available"
 "No. of recordings to keep"
     Podržet počet nahrávek
 "Non-Music Specials"
@@ -459,7 +447,6 @@
 "Presented by"
 "Pressure"
     Tlak
-"Previous"
 "Previous recordings"
     Předchozí nahrávky
 "Produced by"
@@ -660,7 +647,6 @@
 "Stopping"
 "Storage Group"
 "Streaming"
-"Streaming Quality"
 "Sub and Desc (Empty matches)"
 "Submit Search"
 "Subtitle"
@@ -695,7 +681,6 @@
 "Tomorrow"
     Zítra
 "Too Many"
-"Top"
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -704,7 +689,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
 "Transcode"
 "transcoder"
 "Transcoder"
@@ -717,7 +701,6 @@
 "TV.com"
 "type"
 "Type"
-"Unfiltered"
 "Unknown"
 "Unknown Program."
 "Unknown Recording Schedule."

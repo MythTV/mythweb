@@ -92,10 +92,6 @@
     Datum
 "Airtime"
     Sändningstid
-"Album"
-    Album
-"Album (filtered)"
-    Album (filtrerat)
 "Album Listing"
     Albumlistning
 "Album Tracks"
@@ -120,8 +116,6 @@
     Alla HDTV
 "All Hosts"
     Alla värdar
-"All Music"
-    All musik
 "All recordings"
     Alla inspelningar
 "All Songs"
@@ -147,10 +141,6 @@
     Är du säker på att du vill ta bort följande inspelning?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Är du säker på att du vill TA BORT DENNA SPARADE SPELLISTA?
-"Artist"
-    Artist
-"Artist (filtered)"
-    Artist (filtrerad)
 "Artist Listing"
     Artistlistning
 "Artists"
@@ -330,8 +320,6 @@
     Regi
 "Display"
     Visning
-"Displaying"
-    Visar
 "Don't Record"
     Spela ej in
 "Don't record this program."
@@ -347,8 +335,6 @@
     Dubblettmetod
 "Duplicates"
     Dubbletter
-"Duration"
-    Längd
 "Earlier"
     Tidigare
 "Edit"
@@ -358,8 +344,6 @@
     Ändra MythWeb och några MythTV-inställningar
 "Edit settings for: $1"
     Ändra insällningar för: $1
-"End"
-    Slut
 "End Late"
     Sluta senare
 "Enter a new name for your playlist"
@@ -388,8 +372,6 @@
 "File Size"
     Filstorlek
 "Filter"
-"Filtered"
-    Filtrerat
 "Find Date & Time Options"
     Hitta dag &amp; tid
 "Find Day"
@@ -430,8 +412,6 @@
     %H:%M
 "Genre"
     Genre
-"Genre (filtered)"
-    Genre (filtrerad)
 "Genres"
     Genrer
 "Go"
@@ -638,8 +618,6 @@
     Ny sökning
 "New Titles, Premieres"
     Nya titlar, premiärer
-"Next"
-    Nästa
 "NO DATA"
     INGA DATA
 "No matches found"
@@ -650,8 +628,6 @@
     Inga publika spellistor
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
-"No Tracks Available"
-    Inga spår tillgängliga
 "No. of recordings to keep"
     Inspelningar att behålla
 "Non-Music Specials"
@@ -760,8 +736,6 @@
     Presenteras av
 "Pressure"
     Lufttryck
-"Previous"
-    Föregående
 "Previous recordings"
     Tidigare inspelningar
 "Produced by"
@@ -1045,8 +1019,6 @@
     Lagringsgrupp
 "Streaming"
     Strömmande
-"Streaming Quality"
-    Strömningskvalité
 "Sub and Desc (Empty matches)"
     Undertitel &amp; beskrivning
 "Submit Search"
@@ -1096,8 +1068,6 @@
     Imorgon
 "Too Many"
     För många
-"Top"
-    Överst
 "Top $1"
     Topp $1
 "Top Played Songs"
@@ -1114,8 +1084,6 @@
     Total tid: %s
 "Track #%s from the album '%s'"
     Spår nr %s fråm albumet '%s'
-"Track Name"
-    Spårnamn
 "Transcode"
 "transcoder"
     omkodare
@@ -1135,8 +1103,6 @@
     typ
 "Type"
     Typ
-"Unfiltered"
-    Ofiltrerat
 "Unknown"
     Okänd
 "Unknown Program."

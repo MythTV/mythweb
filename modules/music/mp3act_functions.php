@@ -30,15 +30,6 @@ function pic_dir()
   return skin_url.'img/music/';
 }
 
-function music_dir()
-{
-  $protocol = "http://";
-  if(!$_SESSION['stream']['force_http'] && isset($_SERVER['HTTPS']))
-    $protocol = "https://";
-  return $protocol.$_SERVER["HTTP_HOST"].root.'music/';
-}
-
-
 function GarbageCollector()
 {
     // Run this occasionally to tidy up.
@@ -224,6 +215,7 @@ function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
 
 function musicLookup($type, $itemid)
 {
+    global $db;
   $sql_itemid = "'".mysql_real_escape_string($itemid)."'";
   switch($type)
   {
@@ -342,11 +334,11 @@ function musicLookup($type, $itemid)
       $length = $row[1];
 
       // Attempt to find some album art.
-      $query='SELECT ms.filename, ms.album_id, md.path, ma.artist_name, ma.artist_id
+      $query='SELECT ms.filename, ms.album_id, md.path, ma.artist_name, ma.artist_id, ms.directory_id
                 FROM music_songs AS ms
                      LEFT JOIN music_directories AS md
                             ON ms.directory_id=md.directory_id
-                     LEFT JOIN music_artists AS ma 
+                     LEFT JOIN music_artists AS ma
                             ON ms.artist_id=ma.artist_id
                WHERE album_id='.$sql_itemid.'
                LIMIT 1';
@@ -357,32 +349,18 @@ function musicLookup($type, $itemid)
       $row = mysql_fetch_array($result);
       mysql_free_result($result);
 
-      $album_art_arr = array();
-      $path = $_SERVER['DOCUMENT_ROOT'].root.'data/music/'.$row['path'];
-      $dir = @dir($path);
-      if ($dir)
-      {
-        while ($file = $dir->read())
-        {
-          $end = strtolower(substr($file, -3));
-          switch ($end)
-          {
-            case 'jpg':
-            case 'gif':
-            case 'png':
-              $album_art_arr[] = $file;
-          }
-        }
-        $dir->close();
-      }
-
-      if (!empty($album_art_arr))
-      {
-        srand(microtime()*1000000);
-        $index = mt_rand(1, count($album_art_arr)) - 1;
-
-        $album_art = root.'data/music/'.$row['path'].'/'.$album_art_arr[$index];
-      }
+    // Load album art
+        $art_id = $db->query_col('SELECT ma.albumart_id
+                                    FROM music_albumart AS ma
+                                         LEFT JOIN music_directories AS md
+                                                ON ma.directory_id=md.directory_id
+                                   WHERE ma.directory_id = ?
+                                ORDER BY ma.filename LIKE "front%" DESC,
+                                         ma.filename LIKE "cover%" DESC,
+                                         ma.filename NOT LIKE "%rear%",
+                                         ma.filename NOT LIKE "%back%"
+                                   LIMIT 1',
+                                 $row['directory_id']);
 
       $output = '<div class="head">
         <div class="right">
@@ -397,7 +375,7 @@ function musicLookup($type, $itemid)
         </div>
         <h2 class="music">'.$row['album_name'].'</h2>
         </div>'.
-        (!empty($album_art) ? '<center><img width="200" src="'.$album_art.'" /></center><br />' : '').
+        (!empty($art_id) ? '<center><img width="200" src="'.stream_url().'stream?a='.$art_id.'" /></center><br />' : '').
         '<strong>'.t('Play Time').':</strong> '.$length.
         '<br /><br />
         <strong>'.t('Album Tracks').'</strong>
@@ -495,7 +473,7 @@ function musicLookup($type, $itemid)
           $artist, $row['year'], $row['num_tracks'], $row['length']);
       }
       mysql_free_result($result);
-        
+
       $output .='</ul><p><strong>'.t('Songs').'</strong></p>
         <ul class="music">';
 
@@ -1443,7 +1421,7 @@ function getPlaylistM3u($id, $quality, $depth = 0)
     {
       $row = $song_info[$song_id];
       $tmp .= '#EXTINF:'.intval($row['length']).','.utf8_decode($row['artist_name']).' - '.utf8_decode($row['name'])."\n";
-      $tmp .= music_dir().'mp3act_playstream.php?i='.$row['song_id'].'&q='.$quality."\n";
+      $tmp .= stream_url().'stream?i='.$row['song_id']."\n";
     }
     else if ($song_id < 1)
     {
@@ -1490,7 +1468,7 @@ function play($type, $id, $quality = 'high')
       while ($row = mysql_fetch_array($result))
       {
         $tmp .= '#EXTINF:'.intval($row['length']).','.utf8_decode($row['artist_name']).' - '.utf8_decode($row['name'])."\n";
-        $tmp .= music_dir().'mp3act_playstream.php?i='.$row['song_id'].'&q='.$quality."\n";
+        $tmp .= stream_url().'stream?i='.$row['song_id']."\n";
       }
       mysql_free_result($result);
     }

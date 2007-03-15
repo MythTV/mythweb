@@ -1,12 +1,3 @@
-<?php
-function music_dir()
-{
-  $protocol = "http://";
-  if(!$_SESSION['stream']['force_http'] && isset($_SERVER['HTTPS']))
-    $protocol = "https://";
-  return $protocol.$_SERVER["HTTP_HOST"].root.'music/';
-}
-?>
         window.onload=function(){ init(); };
 
         function init(){
@@ -290,7 +281,7 @@ function music_dir()
 
             function play(type,id){
                     document.getElementById('hidden').src = null;
-                    document.getElementById("hidden").src = "<?php echo music_dir(); ?>mp3act_hidden.php?type="+type+"&id="+id+"&quality=high";
+                    document.getElementById("hidden").src = "<?php echo stream_url(); ?>mp3act_hidden.php?type="+type+"&id="+id;
             }
 
             function randAdd(data){
