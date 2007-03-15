@@ -276,6 +276,9 @@ function musicLookup($type, $itemid)
         break;
 
       $output = '<div class="head">
+        <div class="right">
+        <a class="music" href="#" onclick="updateBox(\'browse\',0); return false;"
+         title="'.t('Browse').'">'.t('Back').'</a></div>
         <h2 class="music">'.sprintf(t('Artists Beginning with %s'), "'".strtoupper($itemid)."'").'</h2></div>
         <p>
         <strong>'.t('Artist Listing').'</strong></p>
@@ -296,6 +299,9 @@ function musicLookup($type, $itemid)
 
     case 'all':
       $output = '<div class="head">
+        <div class="right">
+        <a class="music" href="#" onclick="updateBox(\'browse\',0); return false;"
+         title="'.t('Browse').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('All Albums').'</h2></div>
         <p>
         <strong>'.t('Album Listing').'</strong></p>
@@ -336,10 +342,12 @@ function musicLookup($type, $itemid)
       $length = $row[1];
 
       // Attempt to find some album art.
-      $query='SELECT ms.filename, ms.album_id, md.path
+      $query='SELECT ms.filename, ms.album_id, md.path, ma.artist_name, ma.artist_id
                 FROM music_songs AS ms
                      LEFT JOIN music_directories AS md
                             ON ms.directory_id=md.directory_id
+                     LEFT JOIN music_artists AS ma 
+                            ON ms.artist_id=ma.artist_id
                WHERE album_id='.$sql_itemid.'
                LIMIT 1';
       $result = mysql_query($query);
@@ -384,6 +392,8 @@ function musicLookup($type, $itemid)
         <a class="music" href="#"
          onclick="pladd(\'album\','.$row['album_id'].'); return false;"
          title="'.t('Add Album to Current Playlist').'">'.t('Add').'</a>
+        <a class="music" href="#" onclick="updateBox(\'artist\','.$row['artist_id'].'); return false;"
+         title="'.$row['artist_name'].'">'.t('Back').'</a>
         </div>
         <h2 class="music">'.$row['album_name'].'</h2>
         </div>'.
@@ -415,6 +425,9 @@ function musicLookup($type, $itemid)
 
     case 'genre':
       $output = '<div class="head">
+        <div class="right">
+        <a class="music" href="#" onclick="updateBox(\'browse\',0); return false;"
+         title="'.t('Browse').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Songs for Genre')." '".utf8_encode($itemid)."'</h2></div>
         <p><strong>".t('Songs').'</strong></p>
         <ul class="music">';
@@ -451,7 +464,12 @@ function musicLookup($type, $itemid)
       mysql_free_result($result);
       $artist = $row['artist_name'];
 
+      $letter = (!preg_match('/^[0-9]/', $artist) ? strtoupper($artist{0}) : '#');
+
       $output = '<div class="head">
+        <div class="right">
+        <a class="music" href="#" onclick="updateBox(\'letter\',\''.$letter.'\'); return false;"
+         title="'.sprintf(t('Artists Beginning with %s'), "'".$letter."'").'">'.t('Back').'</a></div>
         <h2 class="music">'.$artist.'</h2></div>
         <p><strong>'.sprintf(t('Albums with songs by %s'),'<i>'.$artist.'</i>').'</strong></p>
         <ul class="music">';
