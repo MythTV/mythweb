@@ -312,7 +312,9 @@
     }
 
 // Load the jobqueue info before displaying
-    $program->load_jobs();
+    if ($program && $program->filename) {
+        $program->load_jobs();
+    }
 
 // Load the utility/display functions for scheduling
     require_once 'includes/schedule_utils.php';
