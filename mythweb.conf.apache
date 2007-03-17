@@ -38,7 +38,7 @@
     #        Allow from all
     #    </LocationMatch>
     #
-    #    <LocationMatch .*/music/mp3act_playstream.php>
+    #    <LocationMatch .*/music/stream.php>
     #        Allow from all
     #    </LocationMatch>
 
