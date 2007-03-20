@@ -40,7 +40,7 @@
     <td><input type="checkbox" name="delete_<?php echo $channel['chanid'] ?>" id="delete_<?php echo $channel['chanid'] ?>" value="true" /></td>
     <td><?php echo html_entities($channel['sourceid']) ?></td>
     <td><input type="text" size="5"  name="xmltvid_<?php      echo $channel['chanid'] ?>" id="xmltvid_<?php      echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['xmltvid'])      ?>" style="text-align: center" /></td>
-    <td><input type="text" size="3"  name="channum_<?php      echo $channel['chanid'] ?>" id="channum_<?php      echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['channum'])      ?>" style="text-align: center" /></td>
+    <td><input type="text" size="5"  name="channum_<?php      echo $channel['chanid'] ?>" id="channum_<?php      echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['channum'])      ?>" style="text-align: center" /></td>
     <td><input type="text" size="10" name="callsign_<?php     echo $channel['chanid'] ?>" id="callsign_<?php     echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['callsign'])     ?>" /></td>
     <td><input type="text" size="27" name="name_<?php         echo $channel['chanid'] ?>" id="name_<?php         echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['name']) ?>" /></td>
     <td><input type="text" size="3"  name="freqid_<?php       echo $channel['chanid'] ?>" id="freqid_<?php       echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['freqid'])       ?>" style="text-align: center" /></td>
