@@ -24,11 +24,13 @@
     }
 // Get the url search string so we don't have to recreate it for each sort type
     $search_str = '&s='.urlencode($_GET['s']);
-    if ($_GET['search_title'])         $search_str .= '&search_title=yes';
-    if ($_GET['search_subtitle'])      $search_str .= '&search_subtitle=yes';
-    if ($_GET['search_description'])   $search_str .= '&search_description=yes';
-    if ($_GET['search_category'])      $search_str .= '&search_category=yes';
-    if ($_GET['search_category_type']) $search_str .= '&search_category_type=yes';
+    $fields = array();
+    if (preg_match('/\btitle/i', $_REQUEST['field'])) $fields[] = 'title';
+    if (stristr($_REQUEST['field'], 'subtitle'))      $fields[] = 'subtitle';
+    if (stristr($_REQUEST['field'], 'desc'))          $fields[] = 'description';
+    if (stristr($_REQUEST['field'], 'cat'))           $fields[] = 'category';
+    if ($fields)
+        $search_str .= '&amp;fields='.implode(',', $fields);
 // Display the results
 
     $row = 0;

@@ -272,7 +272,7 @@
                 $extra_query[] = 'program.hdtv=1';
                 $search_str    = $match[1];
             }
-        // If The next thing starts with stars, it's a movie rating query
+        // If the next thing starts with stars, it's a movie rating query
             if (preg_match('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*(.*?)$#', $search_str, $match)) {
                 $starcount = substr_count($match[1], '*') / 4;
                 if (preg_match('/1\\/2|\\.5|-/', $match[1]))
@@ -286,10 +286,14 @@
             $extra_query[] = 'program.endtime >= NOW()';
         // Build the query
             list($compare, $search) = prep_search($search_str);
-            $query[] = "program.title       $compare $search";
-            $query[] = "program.subtitle    $compare $search";
-            $query[] = "program.description $compare $search";
-            $query[] = "program.category    $compare $search";
+            if (empty($_REQUEST['field']) || preg_match('/\btitle/i', $_REQUEST['field']))
+                $query[] = "program.title       $compare $search";
+            if (empty($_REQUEST['field']) || stristr($_REQUEST['field'], 'subtitle'))
+                $query[] = "program.subtitle    $compare $search";
+            if (empty($_REQUEST['field']) || stristr($_REQUEST['field'], 'desc'))
+                $query[] = "program.description $compare $search";
+            if (empty($_REQUEST['field']) || stristr($_REQUEST['field'], 'cat'))
+                $query[] = "program.category    $compare $search";
             $query   = implode(' OR ', $query);
         }
 

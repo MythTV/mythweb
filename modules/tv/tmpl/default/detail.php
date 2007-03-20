@@ -108,7 +108,7 @@
                     if ($program && $program->css_class)
                         echo ' class="', $program->css_class, '"';
                     ?>>
-                <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php
+                <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     echo $schedule->title;
                     if ($schedule->subtitle)
                         echo ':<br />', $schedule->subtitle;
@@ -342,7 +342,7 @@
                 <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'IMDB') ?></a>
                 <a href="http://www.tv.com/search.php?type=11&stype=all&qs=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'TV.com') ?></a>
                 <a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'Google') ?></a>
-                <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php
+                <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     if ($_GET['recordid'])
                         echo t('Find showings of this program');
                     else
