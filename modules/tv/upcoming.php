@@ -16,40 +16,46 @@
 // Load the sorting routines
     require_once 'includes/sorting.php';
 
-// Make sure we get the form data
-    isset($_GET['chanid'])    or $_GET['chanid']    = $_POST['chanid'];
-    isset($_GET['starttime']) or $_GET['starttime'] = $_POST['starttime'];
+// Use the new directory structure?
+    if (!$_REQUEST['chanid'] && !$_REQUEST['starttime']) {
+        $_REQUEST['chanid']    = $Path[2];
+        $_REQUEST['starttime'] = $Path[3];
+        $_REQUEST['manualid']  = $Path[4];
+    }
+// Just in case
+    $_GET['chanid']    = intVal($_REQUEST['chanid']);
+    $_GET['starttime'] = intVal($_REQUEST['starttime']);
+    $_GET['manualid']  = intVal($_REQUEST['manualid']);
 
 // Doing something to a program?  Load its detailed info
     if ($_GET['chanid'] && $_GET['starttime']) {
-        $program = load_one_program($_GET['starttime'], $_GET['chanid']);
+        $program = load_one_program($_GET['starttime'], $_GET['chanid'], $_GET['manualid']);
 
     // Forget all knowledge of old recordings
-        if ($_GET['forget_old'] || $_POST['forget_old']) {
+        if ($_REQUEST['forget_old']) {
             $program->rec_forget_old();
         }
     // Fake an old recording so that this show won't record again
-        elseif ($_GET['never_record'] || $_POST['never_record']) {
+        elseif ($_REQUEST['never_record']) {
             $program->rec_never_record();
         }
     // Revert to default recording rules
-        elseif ($_GET['default'] || $_POST['default']) {
+        elseif ($_REQUEST['default']) {
             $program->rec_default();
         }
     // Suppress something that shouldn't be recorded
-        elseif ($_GET['dontrec'] || $_POST['dontrec']) {
+        elseif ($_REQUEST['dontrec']) {
             $program->rec_override(rectype_dontrec);
         }
     // Record a show that wouldn't otherwise record (various reasons, read below)
-        elseif ($_GET['record'] || $_POST['record']) {
+        elseif ($_REQUEST['record']) {
             $program->rec_override(rectype_override);
         }
     // Wait for a second so the backend can catch up
         sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        header('Location: '.root.'tv/upcoming');
-        exit;
+        redirect_browser(root.'tv/upcoming');
     }
 
 // Ignore certain shows?

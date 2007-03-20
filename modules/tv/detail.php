@@ -21,13 +21,15 @@
     }
 
 // Use the new directory structure?
-    if (!$_GET['chanid'] && !$_GET['starttime']) {
-        $_GET['chanid']    = $Path[2];
-        $_GET['starttime'] = $Path[3];
+    if (!$_REQUEST['chanid'] && !$_REQUEST['starttime']) {
+        $_REQUEST['chanid']    = $Path[2];
+        $_REQUEST['starttime'] = $Path[3];
+        $_REQUEST['manualid']  = $Path[4];
     }
 // Just in case
-    $_GET['chanid']    = intVal($_GET['chanid']);
-    $_GET['starttime'] = intVal($_GET['starttime']);
+    $_GET['chanid']    = intVal($_REQUEST['chanid']);
+    $_GET['starttime'] = intVal($_REQUEST['starttime']);
+    $_GET['manualid']  = intVal($_REQUEST['manualid']);
 
 // Auto-expire -- only available for javascript templates
     if (isset($_REQUEST['toggle_autoexpire']) && $_GET['chanid'] && $_GET['starttime']) {
@@ -61,7 +63,7 @@
         }
     // Load the program
         if (empty($program) || !$program->recstartts)
-            $program =& load_one_program($_GET['starttime'], $_GET['chanid']);
+            $program =& load_one_program($_GET['starttime'], $_GET['chanid'], $_GET['manualid']);
     }
 
 // Get the schedule for this recording, if one exists

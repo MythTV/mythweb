@@ -71,8 +71,11 @@
 /**
  * a shortcut to load_all_program_data's single-program query
 /**/
-    function &load_one_program($start_time, $chanid) {
-        $program =& load_all_program_data($start_time, $start_time, $chanid, true);
+    function &load_one_program($start_time, $chanid, $manualid) {
+        if ($manualid)
+            $program =& load_all_program_data($start_time, $start_time, $chanid, true, 'program.manualid='.intval($manualid));
+        else
+            $program =& load_all_program_data($start_time, $start_time, $chanid, true);
         if (!is_object($program) || strcasecmp(get_class($program), 'program'))
             return NULL;
         return $program;

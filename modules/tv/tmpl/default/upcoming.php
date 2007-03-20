@@ -87,7 +87,9 @@
         $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));
     // Reset the command variable to a default URL
         $commands = array();
-        $urlstr = 'chanid='.$show->chanid.'&starttime='.$show->starttime;
+        $urlstr = $show->chanid.'/'.$show->starttime;
+        if ($Schedules[$show->recordid]->search == searchtype_manual)
+            $urlstr .= '/'.$show->recordid;
     // Set the recording status character, class and any applicable commands for each show
         switch ($show->recstatus) {
             case 'Recording':
@@ -195,32 +197,32 @@
         foreach ($commands as $key => $val) {
             switch ($val) {
                 case 'dontrec':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming?dontrec=yes&'.$urlstr.'"'
+                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?dontrec=yes"'
                                      .' title="'.html_entities(t('info: dont record')).'">'
                                      .t('Don\'t Record').'</a>';
                     break;
                 case 'never_record':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming?never_record=yes&'.$urlstr.'"'
+                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?never_record=yes"'
                                      .' title="'.html_entities(t('info:never record')).'">'
                                      .t('Never Record').'</a>';
                     break;
                 case 'record':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming?record=yes&'.$urlstr.'"'
+                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?record=yes"'
                                      .' title="'.html_entities(t('info: record this')).'">'
                                      .t('Record This').'</a>';
                     break;
                 case 'forget_old':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming?forget_old=yes&'.$urlstr.'"'
+                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?forget_old=yes"'
                                      .' title="'.html_entities(t('info:forget old')).'">'
                                      .t('Forget Old').'</a>';
                     break;
                 case 'activate':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming?record=yes&'.$urlstr.'"'
+                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?record=yes"'
                                      .' title="'.html_entities(t('info: activate recording')).'">'
                                      .t('Activate').'</a>';
                     break;
                 case 'default':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming?default=yes&'.$urlstr.'"'
+                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?default=yes"'
                              .' title="'.html_entities(t('info: default recording')).'">'
                              .t('Default').'</a>';
                     break;
@@ -264,7 +266,7 @@
                          .($show->subtitle
                              ? ':  '.$show->subtitle
                              : '')), '"';
-        echo ' href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+        echo ' href="', root, 'tv/detail/', $urlstr, '">',
              $show->title,
              ($show->subtitle
                 ? ':  '.$show->subtitle
