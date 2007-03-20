@@ -67,6 +67,9 @@ class Database {
 /** @var float      Total time spent waiting for a query to run. */
     var $query_time = 0;
 
+/** @var array      Collection of functions and parameters to be called on object destruction */
+    var $destruct_handlers = array();
+
 /******************************************************************************/
 
 /**
@@ -164,6 +167,32 @@ class Database {
     }
 
 /******************************************************************************/
+
+/**
+ * Execute any destruct handler functions.
+/**/
+    function __destruct() {
+        if (is_array($this->destruct_handlers)) {
+            foreach ($this->destruct_handlers as $call) {
+                if (is_array($call['p']))
+                    call_user_func_array($call['f'], $call['p']);
+                else
+                    call_user_func($call['f']);
+            }
+        }
+    }
+
+/**
+ * Because of changes in PHP that make it destroy objects before saving session
+ * data, this function was added to make sure that certain code (like
+ * session_write_close) gets executed before in time.
+ *
+ * @link http://us2.php.net/session_set_save_handler
+/**/
+    function register_destruct_handler($func, $params=null) {
+        $this->destruct_handlers[] = array('f' => $func,
+                                           'p' => $params);
+    }
 
 /**
  *  Fill the error variables

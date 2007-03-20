@@ -24,6 +24,12 @@
     session_set_save_handler('sess_do_nothing', 'sess_do_nothing', 'sess_read', 'sess_write', 'sess_destroy', 'sess_gc');
     session_start();
 
+// Register a destruction handler for the db object, since the guys who write
+// PHP are smoking something and think objects should be destroyed before the
+// sessions get written:  http://us2.php.net/session_set_save_handler
+    global $db;
+    $db->register_destruct_handler('session_write_close');
+
 /*
  *  The functions defined below are referenced above in session_set_save_handler()
 /*/
@@ -55,6 +61,8 @@
 /**/
     function sess_write($id, $data) {
         global $db;
+        if (empty($db))
+            return;
         if (!empty($_SERVER['REMOTE_USER']))
             $id = 'user:'.$_SERVER['REMOTE_USER'];
         $db->query('REPLACE INTO mythweb_sessions (id, modified, data) VALUES (?,NULL,?)',
