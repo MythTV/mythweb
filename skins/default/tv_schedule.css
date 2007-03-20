@@ -62,13 +62,13 @@
 }
 
 
-#_schedule_advanced_off {
+#-schedule_advanced_off {
     margin:         .5em 1em;
     font-style:     italic;
     font-size:      90%;
 }
 
-#_schedule_submit {
+#-schedule_submit {
     text-align:     center;
     padding:        .5em 0 1em 0;
 }
