@@ -41,7 +41,7 @@
     $Languages['Dutch']      = array('Nederlands',      'nl_NL',       array('nl_NL', 'nl_BE'));
     $Languages['English']    = array('English',         'en_US.UTF-8', 'en_US.ISO-8859-1');
     $Languages['English_GB'] = array('English_GB',      'en_GB.UTF-8', 'en_GB.ISO-8859-1');
-    $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR',       'fr_FR');
+    $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR.UTF-8', 'fr_FR');
     $Languages['Japanese']   = array('Japanese',        'ja_JP.UTF-8', 'ja_JP');
     $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES.UTF-8', 'es_ES');
     $Languages['Swedish']    = array('Svenska',         'sv_SE.UTF-8', 'sv_SE');
