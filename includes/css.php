@@ -33,6 +33,10 @@
             global $Categories;
             if (!empty($Categories)) {
                 foreach ($Categories as $cat => $details) {
+                    if ($category == strtolower($details[0])) {
+                        $css_class[] = $cache[$category] = 'cat_'.$cat;
+                        break;
+                    }
                     if (!$details[1])
                         continue;
                     if (preg_match('/'.$details[1].'/', $category)) {
