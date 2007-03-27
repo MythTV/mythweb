@@ -154,7 +154,7 @@
         if ($extra_query)
             $query .= ' AND '.$extra_query;
     // Group and sort
-        $query .= "\nGROUP BY program.chanid, program.starttime, channel.callsign ORDER BY program.starttime";
+        $query .= "\nGROUP BY channel.callsign, program.chanid, program.starttime ORDER BY program.starttime";
     // Limit
         if ($single_program)
             $query .= "\n LIMIT 1";
