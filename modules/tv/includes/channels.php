@@ -34,6 +34,7 @@
     function load_all_channels() {
         global $db;
         global $Channels;
+        global $Callsigns;
         $Channels = array();
     // Initialize the query
         if ($_SESSION['guide_favonly'])
@@ -48,8 +49,9 @@
     // Query
         $sh = $db->query($sql);
         while ($channel_data = $sh->fetch_assoc())  {
-            $Channels[$channel_data['chanid']]    = new Channel($channel_data);
-            $Callsigns[$channel_data['callsign']] = $channel_data['chanid'];
+            $Channels[$channel_data['chanid']] = new Channel($channel_data);
+            if (empty($Callsigns[$channel_data['callsign']]))
+                $Callsigns[$channel_data['callsign']] = $channel_data['chanid'];
         }
         $sh->finish();
     // No channels returned?
