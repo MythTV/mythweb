@@ -382,9 +382,10 @@ function musicLookup($type, $itemid)
         <ul class="music">';
 
       $query = 'SELECT ms.song_id, ms.track, ms.name, ms.length, ms.numplays, '.
-               'SEC_TO_TIME(ms.length/1000) AS length, artist_name '.
+               'SEC_TO_TIME(ms.length/1000) AS length, artist_name, genre '.
                'FROM music_songs AS ms '.
                'LEFT JOIN music_artists ON ms.artist_id=music_artists.artist_id '.
+               'LEFT JOIN music_genres ON ms.genre_id=music_genres.genre_id '.
                'WHERE ms.album_id='.$sql_itemid.' '.
                'ORDER BY ms.track';
       $result = mysql_query($query);
@@ -395,7 +396,7 @@ function musicLookup($type, $itemid)
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', $row['track'], $row['name'],
-          $row['length'], $row['numplays']);
+          $row['length'], $row['numplays'], $row['genre']);
       }
       mysql_free_result($result);
       $output .= '</ul>';
@@ -424,7 +425,7 @@ function musicLookup($type, $itemid)
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'],
-          $row['length'], $row['numplays']);
+          $row['length'], $row['numplays'], ''); 
       }
       mysql_free_result($result);
       $output .= '</ul>';
@@ -478,10 +479,12 @@ function musicLookup($type, $itemid)
         <ul class="music">';
 
       $query = 'SELECT ms.song_id, ms.track, ms.name, ms.length, ms.numplays, '.
-        'SEC_TO_TIME(ms.length/1000) AS length, music_artists.artist_name, track, music_albums.album_name '.
+        'SEC_TO_TIME(ms.length/1000) AS length, music_artists.artist_name, track, '.
+        'music_albums.album_name, genre '.
         'FROM music_songs AS ms '.
         'LEFT JOIN music_artists ON ms.artist_id=music_artists.artist_id '.
         'LEFT JOIN music_albums ON ms.album_id=music_albums.album_id '.
+        'LEFT JOIN music_genres ON ms.genre_id=music_genres.genre_id '.
         'WHERE ms.artist_id='.$sql_itemid.';';
       $result = mysql_query($query);
       if (!$result)
@@ -491,7 +494,7 @@ function musicLookup($type, $itemid)
       {
         $output .= getHtmlSong($row['song_id'], '',
           $row['album_name'], $row['track'], $row['name'],
-          $row['length'], $row['numplays']);
+          $row['length'], $row['numplays'], $row['genre']);
       }
       mysql_free_result($result);
       $output .= '</ul>';
@@ -653,7 +656,7 @@ function musicLookup($type, $itemid)
             $row = $song_info[$song_id];
             $output .= getHtmlSong($row['song_id'], $row['artist_name'],
               '', '', $row['name'],
-              $row['length'], $row['numplays']);
+              $row['length'], $row['numplays'], '');
           }
           else if ($song_id < 0)
           {
@@ -760,8 +763,7 @@ function musicLookup($type, $itemid)
       while ($row = mysql_fetch_array($result))
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
-          '', '', $row['name'],
-          '', '');
+          '', '', $row['name'], '', '', '');
       }
       mysql_free_result($result);
       $output .= '</ul>';
@@ -787,8 +789,7 @@ function musicLookup($type, $itemid)
       while ($row = mysql_fetch_array($result))
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
-          '', '', $row['name'],
-          '', '');
+          '', '', $row['name'], '', '', '');
       }
       $output .= '</ul>';
       break;
@@ -835,10 +836,11 @@ function getRandItems($type)
 function searchMusic($terms, $option)
 {
   $sql_terms = "'%".mysql_real_escape_string($terms)."%'";
-  $query = 'SELECT ms.song_id, ma.album_name, ms.track, mt.artist_name, ms.name, SEC_TO_TIME(ms.length/1000) AS length '.
+  $query = 'SELECT ms.song_id, ma.album_name, ms.track, mt.artist_name, ms.name, SEC_TO_TIME(ms.length/1000) AS length, genre '.
     'FROM music_songs AS ms '.
     'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
     'LEFT JOIN music_albums AS ma ON ms.album_id=ma.album_id '.
+    'LEFT JOIN music_genres AS mg ON ms.genre_id=mg.genre_id '.
     'WHERE 1 AND ';
 
   if ($option == 'all')
@@ -881,7 +883,7 @@ function searchMusic($terms, $option)
     {
       $output .= getHtmlSong($row['song_id'], $row['artist_name'],
         $row['album_name'], $row['track'], $row['name'],
-        $row['length'], '');
+        $row['length'], '', $row['genre']);
     }
     $output .= '</ul>';
   }

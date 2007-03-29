@@ -1,6 +1,6 @@
 <?php
 
-function getHtmlSong($id, $artistName, $albumName, $trackNum, $trackName, $trackLength, $numPlays)
+function getHtmlSong($id, $artistName, $albumName, $trackNum, $trackName, $trackLength, $numPlays, $genre)
 {
   static $alt = true;
   $alt = !$alt;
@@ -35,6 +35,9 @@ function getHtmlSong($id, $artistName, $albumName, $trackNum, $trackName, $track
 
   if (!empty($trackLength))
     '<em>'.$trackLength.'</em>';
+
+  if(!empty($genre))
+    $sub_output .= t('Genre').': '.$genre.'<br />';
 
   if (!empty($sub_output))
   {
