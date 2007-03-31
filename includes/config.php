@@ -46,9 +46,6 @@
     if (!isset($_SESSION['recorded_pixmaps'])) {
          $_SESSION['recorded_pixmaps'] = (tmpl == 'default') ? true : false;
     }
-// height and width of generated pixmaps for recording thumbnails
-    define('video_img_width',  94);
-    define('video_img_height', 140);
 
 // Guide settings
     if (!isset($_SESSION['guide_favonly']))

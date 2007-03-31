@@ -53,6 +53,8 @@
         setting('mythvideo.sort_ignores_case',  $_SESSION['settings']['host'], $_POST['mythvideosort_ignores_case']);
         setting('mythvideo.db_folder_view',     $_SESSION['settings']['host'], $_POST['mythvideodb_folder_view']);
         setting('mythvideo.ImageCacheSize',     $_SESSION['settings']['host'], $_POST['mythvideoImageCacheSize']);
+        setting('web_video_thumbnail_height',   $_SESSION['settings']['host'], $_POST['web_video_thumbnail_height']);
+        setting('web_video_thumbnail_width',    $_SESSION['settings']['host'], $_POST['web_video_thumbnail_width']);
     }
 
     $imdb_path = setting('web_video_imdb_path', $_SESSION['settings']['host']);

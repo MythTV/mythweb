@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Videos');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/video.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root.'dcss/video.css.php" />';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -312,8 +312,8 @@
 <div id="videos">
 
 <div id="path">
- <b>Directory Structure</b><br />
- <a href="<?php echo root; ?>video?path=/">/</a>
+ <b>Directory Structure</b><hr />
+ <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root; ?>video?path=/">All Videos</a><br />
  <?php output_path_picker($PATH_TREE); ?>
 </div>
 

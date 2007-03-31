@@ -1,18 +1,20 @@
+<?php header("Content-type: text/css"); ?>
     .video {
         position:           relative;
         padding:            1em;
         float:              left;
-        background-color:   darkblue;
+        background-color:   #003366;
         margin-top:         1em;
         margin-left:        1em;
-        width:              200px;
-        height:             160px;
+        width:              <?php echo (_or(setting('web_video_thumbnail_width',  hostname),  96)+106); ?>px;
+        height:             <?php echo (_or(setting('web_video_thumbnail_height', hostname), 140)+28 ); ?>px;
         border:             1px solid black;
     }
 
     .video .title {
         font-weight:        bold;
         margin-bottom:      .5em;
+        height:             2em;
     }
 
     .video img {
@@ -30,10 +32,14 @@
         position:           relative;
         padding:            1em;
         float:              left;
-        background-color:   darkblue;
+        background-color:   #102923;
         margin-top:         1em;
         margin-left:        1em;
         border:             1px solid black;
+    }
+
+    #path .active {
+        color:              yellow;
     }
 
     #window {
@@ -44,7 +50,7 @@
         width:              20%;
         padding:            1em;
         z-index:            10;
-        border:             2px solid grey;
+        border:             2px solid gray;
     }
 
     #window_title {

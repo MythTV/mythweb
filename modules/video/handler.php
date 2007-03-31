@@ -94,6 +94,9 @@
         }
     }
 
+    define('video_img_height',  _or(setting('web_video_thumbnail_height', hostname), 140));
+    define('video_img_width',   _or(setting('web_video_thumbnail_width', hostname),   94));
+
 // Editing?
     if ($Path[1] == 'edit') {
         require_once 'modules/video/edit.php';
@@ -126,13 +129,15 @@
             }
             $PATH = &$PATH['subs'][$path];
         }
+        unset($PATH);
     }
     $sh->finish();
 
-    function output_path_picker($path, $padding=1) {
+    function output_path_picker($path, $padding=0) {
         for ($i = 0; $i < $padding; $i++)
             echo '&nbsp;';
-        echo '<a href="'.root.'video?path='.urlencode($path['path']).'">'.$path['display'].'</a><br>';
+        if (strlen($path['path']) > 0)
+            echo '<a class="'.($_SESSION['video']['path'] == $path['path']?'active':'').'" href="'.root.'video?path='.urlencode($path['path']).'">'.$path['display'].'</a><br>'."\n";
         if (count($path['subs']))
             foreach ($path['subs'] AS $p)
                 output_path_picker($p, $padding+1);
@@ -162,8 +167,8 @@
 // Filter_Category of -1 means All, 0 mean uncategorized
     $Total_Programs = 0;
     $All_Shows      = array();
-    if( isset($_GET['category']) ) {
-        $Filter_Category = $_GET['category'];
+    if( isset($_REQUEST['category']) ) {
+        $Filter_Category = $_REQUEST['category'];
         if( $Filter_Category != -1)
             $where = ' AND videometadata.category='.$db->escape($Filter_Category);
     }
@@ -171,24 +176,24 @@
         $Filter_Category = -1;
 
 // New:  sort fields
-    if( isset($_GET['genre']) ) {
-        $Filter_Genre = $_GET['genre'];
+    if( isset($_REQUEST['genre']) ) {
+        $Filter_Genre = $_REQUEST['genre'];
 	if( $Filter_Genre != -1)
             $where .= ' AND videometadatagenre.idgenre='.$db->escape($Filter_Genre);
     }
     else
         $Filter_Genre = -1;
 
-    if( isset($_GET['browse']) ) {
-        $Filter_Browse = $_GET['browse'];
+    if( isset($_REQUEST['browse']) ) {
+        $Filter_Browse = $_REQUEST['browse'];
 	if( $Filter_Browse != -1)
             $where .= ' AND videometadata.browse='.$db->escape($Filter_Browse);
     }
     else
         $Filter_Browse = -1;
 
-    if( isset($_GET['search']) ) {
-        $Filter_Search = $_GET['search'];
+    if( isset($_REQUEST['search']) ) {
+        $Filter_Search = $_REQUEST['search'];
 	if( strlen($Filter_Search) != 0)
             $where .= ' AND videometadata.title LIKE '.$db->escape("%".$Filter_Search."%");
     }
@@ -196,7 +201,10 @@
         $Filter_Search = "";
 
     if (isset($_REQUEST['path']))
-        $where .= ' AND videometadata.filename LIKE '.$db->escape('%'.$_REQUEST['path'].'%');
+        $_SESSION['video']['path'] = $_REQUEST['path'];
+
+    if (isset($_SESSION['video']['path']))
+        $where .= ' AND videometadata.filename LIKE '.$db->escape('%'.$_SESSION['video']['path'].'%');
 
     if ($where)
         $where = 'WHERE '.substr($where, 4);

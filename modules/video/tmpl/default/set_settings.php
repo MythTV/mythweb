@@ -35,6 +35,15 @@
     <td><input type="text" name="web_video_imdb_path" size="60" value="<?php echo $imdb_path; ?>"></td>
 </tr>
 <tr>
+    <td><?php echo t('web_video_thumbnail_width'); ?>:</td>
+    <td><input type="text" name="web_video_thumbnail_width" size="60" value="<?php echo _or(setting('web_video_thumbnail_width', $_SESSION['settings']['host']), 94); ?>"></td>
+</tr>
+<tr>
+    <td><?php echo t('web_video_thumbnail_height'); ?>:</td>
+    <td><input type="text" name="web_video_thumbnail_height" size="60" value="<?php echo _or(setting('web_video_thumbnail_height', $_SESSION['settings']['host']), 140); ?>"></td>
+</tr>
+
+<tr>
     <td><?php echo t('Default MythVideo View'); ?>:</td>
     <td><input type="text" name="DefaultMythVideoView" size="60" value="<?php echo setting('Default MythVideo View', $_SESSION['settings']['host']); ?>"></td>
 </tr>
