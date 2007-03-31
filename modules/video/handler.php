@@ -106,6 +106,38 @@
         exit;
     }
 
+// Get the filesystem layout
+    $PATH_TREE = array();
+    $sh = $db->query('SELECT DISTINCT videometadata.filename
+                        FROM videometadata');
+    while ($file = $sh->fetch_col()) {
+        $paths = explode('/', dirname($file));
+        $PATH = &$PATH_TREE;
+        foreach($paths AS $id => $path) {
+            if (empty($path))
+                continue;
+            if (!isset($PATH['subs'][$path])) {
+                $p = '';
+                for ($i=1; $i<=$id;$i++)
+                    $p .='/'.$paths[$i];
+                $PATH['subs'][$path] = array('display' => $path,
+                                             'path'    => $p,
+                                             'subs'    => array());
+            }
+            $PATH = &$PATH['subs'][$path];
+        }
+    }
+    $sh->finish();
+
+    function output_path_picker($path, $padding=1) {
+        for ($i = 0; $i < $padding; $i++)
+            echo '&nbsp;';
+        echo '<a href="'.root.'video?path='.urlencode($path['path']).'">'.$path['display'].'</a><br>';
+        if (count($path['subs']))
+            foreach ($path['subs'] AS $p)
+                output_path_picker($p, $padding+1);
+    }
+
 // Load the sorting routines
     require_once "includes/sorting.php";
 
@@ -162,6 +194,9 @@
     }
     else
         $Filter_Search = "";
+
+    if (isset($_REQUEST['path']))
+        $where .= ' AND videometadata.filename LIKE '.$db->escape('%'.$_REQUEST['path'].'%');
 
     if ($where)
         $where = 'WHERE '.substr($where, 4);

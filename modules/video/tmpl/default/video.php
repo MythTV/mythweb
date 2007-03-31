@@ -311,6 +311,12 @@
 
 <div id="videos">
 
+<div id="path">
+ <b>Directory Structure</b><br />
+ <a href="<?php echo root; ?>video?path=/">/</a>
+ <?php output_path_picker($PATH_TREE); ?>
+</div>
+
 <?php
     foreach ($All_Shows as $show) {
 ?>

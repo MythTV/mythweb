@@ -26,6 +26,16 @@
         right:              1em;
     }
 
+    #path {
+        position:           relative;
+        padding:            1em;
+        float:              left;
+        background-color:   darkblue;
+        margin-top:         1em;
+        margin-left:        1em;
+        border:             1px solid black;
+    }
+
     #window {
         position:           fixed;
         left:               40%;
