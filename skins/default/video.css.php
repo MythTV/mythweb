@@ -14,7 +14,8 @@
     .video .title {
         font-weight:        bold;
         margin-bottom:      .5em;
-        height:             2em;
+        height:             2.25em;
+        overflow:           hidden;
     }
 
     .video img {
