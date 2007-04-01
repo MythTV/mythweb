@@ -315,7 +315,7 @@
 <div id="path">
  <b>Directory Structure</b><hr />
  <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root; ?>video?path=/">All Videos</a><br />
- <?php output_path_picker($PATH_TREE); ?>
+ <?php foreach ($PATH_TREE as $path) output_path_picker($path); ?>
 </div>
 
 <?php

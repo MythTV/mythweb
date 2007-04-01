@@ -111,12 +111,25 @@
 
 // Get the filesystem layout
     $PATH_TREE = array();
+    $dirs = explode(':', setting('VideoStartupDir', hostname));
     $sh = $db->query('SELECT DISTINCT videometadata.filename
                         FROM videometadata');
     while ($file = $sh->fetch_col()) {
-        $paths = explode('/', dirname($file));
-        $PATH = &$PATH_TREE;
-        foreach($paths AS $id => $path) {
+        $file = dirname($file);
+    // Figure out the base...
+        foreach ($dirs as $dir) {
+            if(strpos($file, $dir) !== false) {
+                if (!isset($PATH_TREE[$dir]))
+                    $PATH_TREE[$dir] = array('display' => $dir,
+                                             'path'    => $dir,
+                                             'subs'    => array());
+                $PATH = &$PATH_TREE[$dir];
+                $file = str_replace($dir, '', $file);
+                break;
+            }
+        }
+        $paths = explode('/', $file);
+        foreach ($paths AS $id => $path) {
             if (empty($path))
                 continue;
             if (!isset($PATH['subs'][$path])) {
@@ -124,7 +137,7 @@
                 for ($i=1; $i<=$id;$i++)
                     $p .='/'.$paths[$i];
                 $PATH['subs'][$path] = array('display' => $path,
-                                             'path'    => $p,
+                                             'path'    => $dir.$p,
                                              'subs'    => array());
             }
             $PATH = &$PATH['subs'][$path];
