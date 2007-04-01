@@ -97,16 +97,14 @@
     define('video_img_height',  _or(setting('web_video_thumbnail_height', hostname), 140));
     define('video_img_width',   _or(setting('web_video_thumbnail_width', hostname),   94));
 
-// Editing?
-    if ($Path[1] == 'edit') {
-        require_once 'modules/video/edit.php';
-        exit;
-    }
-
-// IMDB lookup?
-    if ($Path[1] == 'imdb') {
-        require_once 'modules/video/imdb.php';
-        exit;
+// Load a custom page
+    switch ($Path[1]) {
+        case 'edit':
+            require_once 'modules/video/edit.php';
+            exit;
+        case 'imdb':
+            require_once 'modules/video/imdb.php';
+            exit;
     }
 
 // Get the filesystem layout
@@ -179,7 +177,7 @@
 // Parse the list
 // Filter_Category of -1 means All, 0 mean uncategorized
     $Total_Programs = 0;
-    $All_Shows      = array();
+    $All_Videos     = array();
     if( isset($_REQUEST['category']) ) {
         $Filter_Category = $_REQUEST['category'];
         if( $Filter_Category != -1)
@@ -237,7 +235,7 @@
                     ORDER BY title');
 
     while ($intid = $sh->fetch_col())
-        $All_Shows[] = new Video($intid);
+        $All_Videos[] = new Video($intid);
     $sh->finish();
 
 // Set sorting
@@ -246,8 +244,8 @@
                                                 'reverse' => false));
 
 // Sort the programs
-    if (count($All_Shows))
-        sort_programs($All_Shows, 'video_sortby');
+    if (count($All_Videos))
+        sort_programs($All_Videos, 'video_sortby');
 
 // Load the class for this page
     require_once tmpl_dir.'video.php';

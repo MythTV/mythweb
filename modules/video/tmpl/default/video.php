@@ -198,7 +198,8 @@
         var id;
         for ( node in container.childNodes ) {
             id = container.childNodes[node].id;
-            if (typeof(id) == 'undefined')
+        // We need to skip path, as it's a special box that doesn't get filtered.
+            if (typeof(id) == 'undefined' || id.length == 0 || id == 'undefined' || id == 'path')
                 continue;
             var hide = false;
             if (category != -1 & $(id+'_categoryid').innerHTML != category)
@@ -305,7 +306,7 @@
  </form>
 </td>
 <td style="text-align: right;">
- <?php echo count($All_Shows).' videos'; ?>
+ <?php echo count($All_Videos).' videos'; ?>
 </td>
 </tr>
 </table>
@@ -319,20 +320,20 @@
 </div>
 
 <?php
-    foreach ($All_Shows as $show) {
+    foreach ($All_Videos as $video) {
 ?>
-    <div id="video_<?php echo $show->intid; ?>" class="video">
-        <div id="video_<?php echo $show->intid; ?>_categoryid" class="hidden"><?php echo $show->category; ?></div>
-        <div id="video_<?php echo $show->intid; ?>_genre" class="hidden"><?php if (count($show->genres)) foreach ($show->genres as $genre) echo ' '.$genre.' ';?></div>
-        <div id="video_<?php echo $show->intid; ?>_browse" class="hidden"><?php echo $show->browse; ?></div>
-        <div id="video_<?php echo $show->intid; ?>-title" class="title"><a href="<?php echo $show->url; ?>"><?php echo htmlentities($show->title); ?></a></div>
-        <div id="video_<?php echo $show->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($show->coverfile)) echo 'src="data/video_covers/'.basename($show->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
-        <div id="video_<?php echo $show->intid; ?>-category">           <?php echo $Category_String[$show->category]; ?></div>
-        <div id="video_<?php echo $show->intid; ?>_playtime">           <?php echo nice_length($show->length * 60); ?></div>
-        <div id="video_<?php echo $show->intid; ?>_imdb">               <?php if ($show->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($show->inetref); ?>"><?php echo $show->inetref ?></a><?php } ?></div>
+    <div id="video_<?php echo $video->intid; ?>" class="video">
+        <div id="video_<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
+        <div id="video_<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
+        <div id="video_<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
+        <div id="video_<?php echo $video->intid; ?>-title" class="title"><a href="<?php echo $video->url; ?>"><?php echo htmlentities($video->title); ?></a></div>
+        <div id="video_<?php echo $video->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($video->coverfile)) echo 'src="data/video_covers/'.basename($video->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
+        <div id="video_<?php echo $video->intid; ?>-category">           <?php echo $Category_String[$video->category]; ?></div>
+        <div id="video_<?php echo $video->intid; ?>_playtime">           <?php echo nice_length($video->length * 60); ?></div>
+        <div id="video_<?php echo $video->intid; ?>_imdb">               <?php if ($video->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($video->inetref); ?>"><?php echo $video->inetref ?></a><?php } ?></div>
         <div class="command">
-            <span class="commands"><a href="javascript:newWindow('<?php echo root ?>video/edit?intid=<?php echo $show->intid ?>')" ><?php echo t('Edit') ?></a></span>
-            <span class="commands"><a href="javascript:imdb_lookup('<?php echo $show->intid ?>','<?php echo addslashes($show->title); ?>')">IMDB</a></span>
+            <span class="commands"><a href="javascript:newWindow('<?php echo root ?>video/edit?intid=<?php echo $video->intid ?>')" ><?php echo t('Edit') ?></a></span>
+            <span class="commands"><a href="javascript:imdb_lookup('<?php echo $video->intid ?>','<?php echo addslashes($video->title); ?>')">IMDB</a></span>
         </div>
     </div>
 <?php
