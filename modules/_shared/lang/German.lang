@@ -61,6 +61,7 @@
 "Add this Playlist as a Subplaylist"
 "Additional Tables"
     zus. Tabellen
+"Admin Key"
 "Advanced"
 "Advanced Options"
     Erweiterte Optionen
@@ -939,6 +940,8 @@
     Wetter
 "web_video_imdb_path"
 "web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
 "Wednesday"
     Mittwoch
 "welcome: backend_log"

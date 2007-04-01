@@ -58,6 +58,7 @@
 "Add this Playlist as a Subplaylist"
 "Additional Tables"
     追加テーブル
+"Admin Key"
 "Advanced"
     アドバンスド
 "Advanced Options"
@@ -953,6 +954,8 @@
     天気
 "web_video_imdb_path"
 "web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
 "Wednesday"
     水曜日
 "welcome: backend_log"

@@ -65,6 +65,7 @@
 "Add this Playlist as a Subplaylist"
 "Additional Tables"
     Tablas adicionales
+"Admin Key"
 "Advanced"
     Avanzado
 "Advanced Options"
@@ -984,6 +985,8 @@
     Tiempo
 "web_video_imdb_path"
 "web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
 "Wednesday"
     Miércoles
 "welcome: backend_log"

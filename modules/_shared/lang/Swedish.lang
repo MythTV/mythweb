@@ -80,6 +80,7 @@
     Lägg till denna spellista som en underspellista
 "Additional Tables"
     Ytterligare tabeller
+"Admin Key"
 "Advanced"
     Avancerad
 "Advanced Options"
@@ -1185,6 +1186,8 @@
     Väder
 "web_video_imdb_path"
 "web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
 "Wednesday"
     Onsdag
 "welcome: backend_log"

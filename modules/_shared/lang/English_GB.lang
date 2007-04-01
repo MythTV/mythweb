@@ -42,6 +42,7 @@
 "add string"
 "Add this Playlist as a Subplaylist"
 "Additional Tables"
+"Admin Key"
 "Advanced"
 "Advanced Options"
 "Advanced Search"
@@ -707,6 +708,8 @@
 "Weather"
 "web_video_imdb_path"
 "web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
 "Wednesday"
 "welcome: backend_log"
     Show the server logs.

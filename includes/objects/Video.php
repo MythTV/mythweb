@@ -75,9 +75,9 @@ class Video {
         $string  = '';
         $string .= 'intid|'.$this->intid            ."\n";
         if (show_video_covers && file_exists($this->cover_url))
-            $string .= 'img|<img width="'.video_img_width.'" height="'.video_img_height.'" src="'.root.'data/video_covers/'.basename($this->coverfile).'">'."\n";
+            $string .= 'img|<img width="'.video_img_width.'" height="'.video_img_height.'" src="'.root.'data/video_covers/'.basename($this->coverfile).'" alt="'.t('Missing Cover').'">'."\n";
         else
-            $string .= 'img|<img width="'.video_img_width.'" height="'.video_img_height.'">'."\n";
+            $string .= 'img|<img width="'.video_img_width.'" height="'.video_img_height.'" alt="'.t('Missing Cover').'">'."\n";
         $string .= 'title|<a href="'.$this->url.'">'.$this->title.'</a>'."\n".
                    'playtime|'.nice_length($this->length * 60)."\n";
 
