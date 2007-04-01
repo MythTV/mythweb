@@ -205,6 +205,12 @@
 
     if (isset($_SESSION['video']['path']))
         $where .= ' AND videometadata.filename LIKE '.$db->escape('%'.$_SESSION['video']['path'].'%');
+// Deal with the parental locks
+    if (isset($_REQUEST['VideoAdminPassword']))
+        $_SESSION['video']['VideoAdminPassword'] = $_REQUEST['VideoAdminPassword'];
+
+    if ($_SESSION['video']['VideoAdminPassword'] != setting('VideoAdminPassword', hostname))
+        $where .= ' AND videometadata.showlevel <= '.$db->escape(setting('VideoDefaultParentalLevel', hostname));
 
     if ($where)
         $where = 'WHERE '.substr($where, 4);

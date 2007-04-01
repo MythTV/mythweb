@@ -300,6 +300,7 @@
    <option value="0"  <?php if ($Filter_Browse ==  0) echo 'SELECTED'; ?>><?php echo t('Browse = no'); ?></option>
   </select>&nbsp;&nbsp;
   <?php echo t('Title search'); ?>: <input id="filter_box" name="search" value="<?php echo $Filter_Search; ?>" onchange="filter();" onkeyup="filter();">
+  <?php echo t('Admin Key'); ?>: <input type="password" name="VideoAdminPassword" value="<?php echo $_SESSION['video']['VideoAdminPassword']; ?>" size="5">
   <input type="submit" value="<?php echo t('Update') ?>">
  </form>
 </td>
