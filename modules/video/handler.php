@@ -132,8 +132,8 @@
                 continue;
             if (!isset($PATH['subs'][$path])) {
                 $p = '';
-                for ($i=1; $i<=$id;$i++)
-                    $p .='/'.$paths[$i];
+                for ($i=0; $i<=$id;$i++)
+                    $p .=$paths[$i].'/';
                 $PATH['subs'][$path] = array('display' => $path,
                                              'path'    => $dir.$p,
                                              'subs'    => array());
