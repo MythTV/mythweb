@@ -139,6 +139,12 @@
                 $commands[] = 'activate';
                 $commands[] = 'default';
                 break;
+            case 'DontRecord':
+                $rec_char   = t('Don\'t Record');
+                $css_class  = 'deactivated';
+                $commands[] = 'activate';
+                $commands[] = 'default';
+                break;
             case 'Conflict':
                 $rec_char = t('Conflict');
             // We normally use the recstatus value as the name of the class

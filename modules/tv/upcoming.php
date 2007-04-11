@@ -104,7 +104,7 @@
                         continue;
                 }
             // Skip duplicate shows?
-                elseif (in_array($show->recstatus, array('PreviousRecording', 'CurrentRecording', 'EarlierShowing', 'LaterShowing'))) {
+                elseif (in_array($show->recstatus, array('PreviousRecording', 'CurrentRecording'))) {
                     if (!$_SESSION['scheduled_recordings']['disp_duplicates'])
                         continue;
                 }
