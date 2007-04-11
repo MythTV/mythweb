@@ -17,9 +17,13 @@
     $|++;
 
     our $ffmpeg_pid;
-# Shutdown cleanup
-# NOTE:  This doesn't actually seem to work.
+
+# Shutdown cleanup, of various types
+    $SIG{'TERM'} = \&shutdown_handler;
     END {
+        shutdown_handler();
+    }
+    sub shutdown_handler {
         kill(9, $ffmpeg_pid) if ($ffmpeg_pid);
         usleep(100000) while (wait > 0);
     }
