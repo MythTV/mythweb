@@ -14,6 +14,7 @@
     $1 ura
 "$1 hrs"
     $1 ure
+"$1 is not responding."
 "$1 KB"
 "$1 MB"
 "$1 min"
@@ -102,6 +103,7 @@
     Avto-označi reklame
 "Auto-transcode"
 "Back"
+"Back Tab"
 "Back to the program listing"
     Nazaj na seznam programov
 "Back to the recorded programs"
@@ -110,6 +112,7 @@
 "Backend Logs"
 "Backend Status"
     Status Backenda
+"Backspace"
 "Begin a New Search"
 "brightness"
 "Browse"
@@ -126,6 +129,7 @@
 "Cancel this schedule."
     Prekliči ta plan
 "Cancelled"
+"Caps Lock"
 "Cast"
     Zasedba
 "category"
@@ -197,6 +201,7 @@
 "delete"
 "Delete $1"
 "Delete + Rerecord"
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
 "DELETE this Saved Playlist"
 "description"
@@ -216,6 +221,7 @@
 "Don't record this program."
     Ne snemaj tega programa.
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
     Metoda duplikatov
@@ -230,8 +236,10 @@
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
 "Edit settings for: $1"
+"End"
 "End Late"
     Končaj kasneje
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -241,6 +249,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -274,6 +283,7 @@
 "freqid"
 "Friday"
     Petek
+"Frontends"
 "generic_date"
     %e.%m.%Y
 "generic_time"
@@ -300,6 +310,7 @@
 "Hide"
 "High"
     Visoka
+"Home"
 "Host"
 "Hosted by"
     Gostitelj
@@ -322,8 +333,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     Skoči
+"Jump Points"
 "Jump to"
     Skoči na
 "Jump To"
@@ -331,6 +344,7 @@
 "JumpPoints Editor"
 "Key Bindings"
 "Key bindings"
+"Key Controls"
 "Keybindings Editor"
 "Keyword"
 "Keyword Search"
@@ -342,6 +356,7 @@
 "Last Updated"
     Zadnjič posodobljeno
 "Later"
+"Left"
 "length"
     dolžina
 "Length"
@@ -445,6 +460,8 @@
     Izvirni datum predvajanja
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
 "Past Month"
 "Past Week"
@@ -615,6 +632,7 @@
     tedensko
 "regex: articles"
     An?|The
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     Ponovno zaženi
@@ -622,6 +640,7 @@
     Resetiraj
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -671,6 +690,7 @@
 "Settings Table"
 "settings/stream: protocol"
 "settings: notice"
+"Shift"
 "Show"
     Oddaja
 "Show group"
@@ -691,6 +711,7 @@
 "Songs Played"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
+"Space"
 "Special Searches"
 "Star character"
 "Start Date"
@@ -721,6 +742,7 @@
 "Subtitled"
 "Sunday"
     Nedelja
+"Tab"
 "The requested recording schedule has been deleted."
     Zahtevani snemalni plan je bil izbrisan
 "There are no items in this Playlist!"
@@ -775,7 +797,7 @@
     Neznani program
 "Unknown Recording Schedule."
     Neznani plan snemanja
-"Unreachable"
+"Up"
 "Upcoming Recordings"
 "Update"
     Posodobi
@@ -840,6 +862,7 @@
     Sreda
 "welcome: backend_log"
 "welcome: music"
+"welcome: remote"
 "welcome: settings"
 "welcome: stats"
 "welcome: status"

@@ -16,6 +16,7 @@
     $1 uur
 "$1 hrs"
     $1 uur
+"$1 is not responding."
 "$1 KB"
     $1 KB
 "$1 MB"
@@ -116,6 +117,7 @@
 "Auto-transcode"
     Auto-transcode
 "Back"
+"Back Tab"
 "Back to the program listing"
     Terug naar programmagids
 "Back to the recorded programs"
@@ -125,6 +127,7 @@
     Backend Logboek
 "Backend Status"
     Backend Status
+"Backspace"
 "Begin a New Search"
 "brightness"
     helderheid
@@ -143,6 +146,7 @@
 "Cancel this schedule."
     Opname annuleren
 "Cancelled"
+"Caps Lock"
 "Cast"
     Acteurs
 "category"
@@ -226,6 +230,7 @@
     $1 verwijderen
 "Delete + Rerecord"
     Verwijderen en opnieuw opnemen
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
     Verwijderen en $1 opnieuw opnemen
 "DELETE this Saved Playlist"
@@ -248,6 +253,7 @@
 "Don't record this program."
     Dit programma niet opnemen
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
     Dubbels Methode
@@ -263,8 +269,10 @@
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
 "Edit settings for: $1"
+"End"
 "End Late"
     Later stoppen
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -275,6 +283,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -314,6 +323,7 @@
     frequentie
 "Friday"
     Vrijdag
+"Frontends"
 "generic_date"
     %a %e %b, %Y
 "generic_time"
@@ -344,6 +354,7 @@
 "Hide"
 "High"
     Maximum
+"Home"
 "Host"
 "Hosted by"
 "Hosts"
@@ -367,8 +378,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     Ga
+"Jump Points"
 "Jump to"
     Ga naar
 "Jump To"
@@ -378,6 +391,7 @@
 "Key Bindings"
 "Key bindings"
     Toetsbindingen
+"Key Controls"
 "Keybindings Editor"
     Toetsbindingen bewerken
 "Keyword"
@@ -392,6 +406,7 @@
 "Last Updated"
     Laatst Vernieuwd
 "Later"
+"Left"
 "length"
     duur
 "Length"
@@ -509,6 +524,8 @@
     Oorsp. Datum
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     Deel $1 van $2
 "Past Month"
@@ -692,6 +709,7 @@
     Wekelijks
 "regex: articles"
     An?|The
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     Opnieuw Uitvoeren
@@ -699,6 +717,7 @@
     Herstellen
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -755,6 +774,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
+"Shift"
 "Show"
     Toon
 "Show group"
@@ -778,6 +798,7 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
     bron
+"Space"
 "Special Searches"
     Speciaal zoeken
 "Star character"
@@ -812,6 +833,7 @@
     Ondertiteld
 "Sunday"
     Zondag
+"Tab"
 "The requested recording schedule has been deleted."
     Het gevraagde opnameschema is verwijderd
 "There are no items in this Playlist!"
@@ -872,7 +894,7 @@
     Onbekend Programma.
 "Unknown Recording Schedule."
     Onbekend Opnameschema
-"Unreachable"
+"Up"
 "Upcoming Recordings"
     Geplande Opnames
 "Update"
@@ -948,6 +970,7 @@
     Logboek laten zien
 "welcome: music"
     Doorheen uw muziekcollectie bladeren
+"welcome: remote"
 "welcome: settings"
     MythWeb en enkele MythTV instellingen bewerken
 "welcome: stats"

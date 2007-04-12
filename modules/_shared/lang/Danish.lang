@@ -18,6 +18,7 @@
     $1 t
 "$1 hrs"
     $1 t
+"$1 is not responding."
 "$1 KB"
     $1 KB
 "$1 MB"
@@ -120,6 +121,7 @@
 "Auto-transcode"
     Auto-Transkode
 "Back"
+"Back Tab"
 "Back to the program listing"
     Tilbage til programoversigten
 "Back to the recorded programs"
@@ -129,6 +131,7 @@
     Backend Logs
 "Backend Status"
     System status
+"Backspace"
 "Begin a New Search"
 "brightness"
     Lys
@@ -147,6 +150,7 @@
 "Cancel this schedule."
     Annuller denne optagelse
 "Cancelled"
+"Caps Lock"
 "Cast"
     Rolleliste
 "category"
@@ -233,6 +237,7 @@
     Slet $1
 "Delete + Rerecord"
     Slet + genoptag
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
     Slet + genoptag $1
 "DELETE this Saved Playlist"
@@ -254,6 +259,7 @@
 "Don't record this program."
     Optag IKKE dette program
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
     Dubletkontrol metode
@@ -269,8 +275,10 @@
 "Edit MythWeb and some MythTV settings."
     Rediger MythWeb- og nogle MythTV-indstillinger
 "Edit settings for: $1"
+"End"
 "End Late"
     Slut senere (min)
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -281,6 +289,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -321,6 +330,7 @@
     Frekvens ID
 "Friday"
     Fredag
+"Frontends"
 "generic_date"
     %a %e %b %Y
 "generic_time"
@@ -347,6 +357,7 @@
 "Hide"
 "High"
     Høj
+"Home"
 "Host"
 "Hosted by"
 "Hosts"
@@ -369,8 +380,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     Gå
+"Jump Points"
 "Jump to"
     Gå til
 "Jump To"
@@ -379,6 +392,7 @@
 "Key Bindings"
 "Key bindings"
     Tastgenvej
+"Key Controls"
 "Keybindings Editor"
     Tastegenveks editor
 "Keyword"
@@ -395,6 +409,7 @@
 "Last Updated"
     Sidst opdateret
 "Later"
+"Left"
 "length"
     længde
 "Length"
@@ -515,6 +530,8 @@
     Sendt først
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     Del $1 af $2
 "Past Month"
@@ -701,6 +718,7 @@
 "rectype: weekly"
     Ugentligt
 "regex: articles"
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     Genudsendelse
@@ -708,6 +726,7 @@
     Nulstil
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -764,6 +783,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
+"Shift"
 "Show"
     Program
 "Show group"
@@ -786,6 +806,7 @@
 "Songs Played"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
+"Space"
 "Special Searches"
     Specielle søgninger
 "Star character"
@@ -821,6 +842,7 @@
     Tekstet
 "Sunday"
     Søndag
+"Tab"
 "The requested recording schedule has been deleted."
     Den planlagte optagelse er blevet slettet.
 "There are no items in this Playlist!"
@@ -882,8 +904,7 @@
     Ukendt program
 "Unknown Recording Schedule."
     Ukendt planlagt optagelse
-"Unreachable"
-    Uopnåelig
+"Up"
 "Upcoming Recordings"
     Fremtidige optagelser
 "Update"
@@ -961,6 +982,7 @@
     Velkommen: Backend_log
 "welcome: music"
     Velkommen: Musik
+"welcome: remote"
 "welcome: settings"
     Velkommen: Opsætning
 "welcome: stats"

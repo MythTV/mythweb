@@ -18,6 +18,7 @@
     $1 hr
 "$1 hrs"
     $1 hrs
+"$1 is not responding."
 "$1 KB"
     $1 KB
 "$1 MB"
@@ -123,6 +124,7 @@
 "Auto-transcode"
     Auto-recodificar
 "Back"
+"Back Tab"
 "Back to the program listing"
     Volver al listado de programas
 "Back to the recorded programs"
@@ -132,6 +134,7 @@
     Logs Backend
 "Backend Status"
     Estado backend
+"Backspace"
 "Begin a New Search"
 "brightness"
     brillo
@@ -149,6 +152,7 @@
 "Cancel this schedule."
     Cancelar programación
 "Cancelled"
+"Caps Lock"
 "Cast"
     Reparto
 "category"
@@ -237,6 +241,7 @@
     Borrar $1
 "Delete + Rerecord"
     Borrar y regrabar
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
     Borrar y regrabar $1
 "DELETE this Saved Playlist"
@@ -259,6 +264,7 @@
 "Don't record this program."
     No borrar este programa
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
     Método duplicado
@@ -274,8 +280,10 @@
 "Edit MythWeb and some MythTV settings."
     Editar ajustes de MythWeb y algunos de MythTV
 "Edit settings for: $1"
+"End"
 "End Late"
     Terminar más tarde
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -286,6 +294,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -326,6 +335,7 @@
     id frecuencia
 "Friday"
     Viernes
+"Frontends"
 "generic_date"
     %b %e, %Y
 "generic_time"
@@ -357,6 +367,7 @@
 "Hide"
 "High"
     Alto
+"Home"
 "Host"
 "Hosted by"
 "Hosts"
@@ -380,8 +391,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     Saltar
+"Jump Points"
 "Jump to"
     Saltar a
 "Jump To"
@@ -391,6 +404,7 @@
 "Key Bindings"
 "Key bindings"
     Teclas
+"Key Controls"
 "Keybindings Editor"
     Editor Teclas
 "Keyword"
@@ -407,6 +421,7 @@
 "Last Updated"
     Útima Actualización
 "Later"
+"Left"
 "length"
     duración
 "Length"
@@ -538,6 +553,8 @@
     Emisión original
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     Parte $1 de $2
 "Past Month"
@@ -727,6 +744,7 @@
     rectype: semanal
 "regex: articles"
     El|L(?:as?|os)
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     Reejecutar
@@ -734,6 +752,7 @@
     Borrar
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
     Filas a mostrar entre info
 "Running"
@@ -793,6 +812,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
+"Shift"
 "Show"
     Programa
 "Show group"
@@ -817,6 +837,7 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
     id fuente
+"Space"
 "Special Searches"
     Búsquedas especiales
 "Star character"
@@ -853,6 +874,7 @@
     Subtitulado
 "Sunday"
     Domingo
+"Tab"
 "The requested recording schedule has been deleted."
     La programación pedida ha sido borrada.
 "There are no items in this Playlist!"
@@ -914,8 +936,7 @@
     Programa desconocido
 "Unknown Recording Schedule."
     Programación desconocida
-"Unreachable"
-    No alcanzable
+"Up"
 "Upcoming Recordings"
     Grabaciones Próximas
 "Update"
@@ -993,6 +1014,7 @@
     bienvenido: log backend
 "welcome: music"
     bienvenido: música
+"welcome: remote"
 "welcome: settings"
     bienvenido: ajustes
 "welcome: stats"

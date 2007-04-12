@@ -15,6 +15,7 @@
     $1 時間
 "$1 hrs"
     $1 時間
+"$1 is not responding."
 "$1 KB"
 "$1 MB"
 "$1 min"
@@ -116,6 +117,7 @@
 "Auto-transcode"
     自動トランスコード
 "Back"
+"Back Tab"
 "Back to the program listing"
     番組一覧に戻る
 "Back to the recorded programs"
@@ -125,6 +127,7 @@
     バックエンドログ
 "Backend Status"
     バックエンドステータス
+"Backspace"
 "Begin a New Search"
 "brightness"
     明るさ
@@ -143,6 +146,7 @@
 "Cancel this schedule."
     この予約をキャンセルする
 "Cancelled"
+"Caps Lock"
 "Cast"
     キャスト
 "category"
@@ -226,6 +230,7 @@
     削除:$1
 "Delete + Rerecord"
     削除+録画
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
     削除と録画 $1
 "DELETE this Saved Playlist"
@@ -248,6 +253,7 @@
 "Don't record this program."
     録画しない
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
     重複検知
@@ -263,8 +269,10 @@
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
 "Edit settings for: $1"
+"End"
 "End Late"
     録画延長
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -275,6 +283,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -315,6 +324,7 @@
     周波数ID
 "Friday"
     金曜日
+"Frontends"
 "generic_date"
     %Y %b %e
 "generic_time"
@@ -343,6 +353,7 @@
 "Hide"
 "High"
     高
+"Home"
 "Host"
 "Hosted by"
     主催
@@ -365,8 +376,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     移動
+"Jump Points"
 "Jump to"
     移動
 "Jump To"
@@ -376,6 +389,7 @@
 "Key Bindings"
 "Key bindings"
     キーバインド
+"Key Controls"
 "Keybindings Editor"
     キーバインドエディター
 "Keyword"
@@ -392,6 +406,7 @@
 "Last Updated"
     最後の更新
 "Later"
+"Left"
 "length"
     時間
 "Length"
@@ -516,6 +531,8 @@
     初回放送
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     $1/$2
 "Past Month"
@@ -705,6 +722,7 @@
     毎週
 "regex: articles"
     An?|The
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     再開
@@ -712,6 +730,7 @@
     リセット
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -768,6 +787,7 @@
 "settings/stream: protocol"
 "settings: notice"
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
+"Shift"
 "Show"
     番組
 "Show group"
@@ -791,6 +811,7 @@
 "Songs Played"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
+"Space"
 "Special Searches"
     スペシャル検索
 "Star character"
@@ -826,6 +847,7 @@
 "Subtitled"
 "Sunday"
     日曜日
+"Tab"
 "The requested recording schedule has been deleted."
     要求された予約は既に削除されています。
 "There are no items in this Playlist!"
@@ -887,7 +909,7 @@
     不明な番組
 "Unknown Recording Schedule."
     不明な予約
-"Unreachable"
+"Up"
 "Upcoming Recordings"
     これからの録画
 "Update"
@@ -962,6 +984,7 @@
     バックエンドログようこそ！
 "welcome: music"
     ミュージックようこそ！
+"welcome: remote"
 "welcome: settings"
     設定へようこそ！
 "welcome: stats"

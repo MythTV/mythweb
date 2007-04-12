@@ -1,7 +1,6 @@
 <?php
 /**
- * The display code for the main welcome page that lists the available mythweb
- * sections.
+ * The display code for the status module.
  *
  * @url         $URL$
  * @date        $Date$
@@ -10,6 +9,7 @@
  * @license     GPL
  *
  * @package     MythWeb
+ * @subpackage  Status
  *
 /**/
 

@@ -12,6 +12,7 @@
     $1 hodina
 "$1 hrs"
     $1 hodin
+"$1 is not responding."
 "$1 KB"
 "$1 MB"
 "$1 min"
@@ -97,6 +98,7 @@
 "Auto-transcode"
     Automaticky překódovávat
 "Back"
+"Back Tab"
 "Back to the program listing"
 "Back to the recorded programs"
 "Back to the recording schedules"
@@ -104,6 +106,7 @@
 "Backend Logs"
 "Backend Status"
     Stav backendu
+"Backspace"
 "Begin a New Search"
 "brightness"
 "Browse"
@@ -120,6 +123,7 @@
 "Cancel this schedule."
     Zrušit tento rozvrh
 "Cancelled"
+"Caps Lock"
 "Cast"
 "category"
 "Category"
@@ -181,6 +185,7 @@
 "delete"
 "Delete $1"
 "Delete + Rerecord"
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
 "DELETE this Saved Playlist"
 "description"
@@ -199,6 +204,7 @@
     Nenahrávat
 "Don't record this program."
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
 "Duplicate"
@@ -210,8 +216,10 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
 "Edit settings for: $1"
+"End"
 "End Late"
     Končí pozdě
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -221,6 +229,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -249,6 +258,7 @@
 "freqid"
 "Friday"
     Pátek
+"Frontends"
 "generic_date"
     %a %b %e, %Y
 "generic_time"
@@ -270,6 +280,7 @@
 "HDTV"
 "Hide"
 "High"
+"Home"
 "Host"
 "Hosted by"
 "Hosts"
@@ -291,8 +302,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     Skočit
+"Jump Points"
 "Jump to"
     Skočit na
 "Jump To"
@@ -300,6 +313,7 @@
 "JumpPoints Editor"
 "Key Bindings"
 "Key bindings"
+"Key Controls"
 "Keybindings Editor"
 "Keyword"
 "Keyword Search"
@@ -310,6 +324,7 @@
 "Last recording"
 "Last Updated"
 "Later"
+"Left"
 "length"
     délka
 "Length"
@@ -407,6 +422,8 @@
     Původně vysíláno
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     Část $1 z $2
 "Past Month"
@@ -571,12 +588,14 @@
     Týdně
 "regex: articles"
     An?|The
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     Opakování
 "Reset"
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -617,6 +636,7 @@
 "Settings Table"
 "settings/stream: protocol"
 "settings: notice"
+"Shift"
 "Show"
 "Show group"
 "Show pixmaps"
@@ -633,6 +653,7 @@
 "Songs Played"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
+"Space"
 "Special Searches"
 "Star character"
 "Start Date"
@@ -657,6 +678,7 @@
     Titulky
 "Sunday"
     Neděle
+"Tab"
 "The requested recording schedule has been deleted."
     Požadovaný rozvrh nahrávání byl vymazán
 "There are no items in this Playlist!"
@@ -706,7 +728,7 @@
 "Unknown Program."
 "Unknown Recording Schedule."
     Neznámý rozvrh nahrávání.
-"Unreachable"
+"Up"
 "Upcoming Recordings"
     Nadcházející nahrávky
 "Update"
@@ -768,6 +790,7 @@
     Show the server logs.
 "welcome: music"
     Browse your music collection.
+"welcome: remote"
 "welcome: settings"
     Configure MythWeb and some of the MythTV settings.
 "welcome: stats"

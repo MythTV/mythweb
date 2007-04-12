@@ -15,6 +15,7 @@
     $1 tunti
 "$1 hrs"
     $1 tuntia
+"$1 is not responding."
 "$1 KB"
     $1 KB
 "$1 MB"
@@ -113,6 +114,7 @@
 "Auto-transcode"
     Automaattinen jälkikäsittely
 "Back"
+"Back Tab"
 "Back to the program listing"
     Takaisin ohjelmalistaukseen
 "Back to the recorded programs"
@@ -122,6 +124,7 @@
     Palvelimen Lokit
 "Backend Status"
     Palvelimen Tila
+"Backspace"
 "Begin a New Search"
 "brightness"
     Kirkkaus
@@ -140,6 +143,7 @@
 "Cancel this schedule."
     Peruuta nauhoitus
 "Cancelled"
+"Caps Lock"
 "Cast"
     Pääosat
 "category"
@@ -223,6 +227,7 @@
     Poista $1
 "Delete + Rerecord"
     Poista ja Uudelleennauhoita
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
     Poista ja Uudelleennauhoita $1
 "DELETE this Saved Playlist"
@@ -245,6 +250,7 @@
 "Don't record this program."
     Älä nauhoita ohjelmaa.
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
     Metodi
@@ -260,8 +266,10 @@
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
 "Edit settings for: $1"
+"End"
 "End Late"
     Lopeta Myöhemmin
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -272,6 +280,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -306,6 +315,7 @@
 "freqid"
 "Friday"
     Perjantai
+"Frontends"
 "generic_date"
     %a %b %e, %Y
 "generic_time"
@@ -336,6 +346,7 @@
 "Hide"
 "High"
     Korkein
+"Home"
 "Host"
 "Hosted by"
     Isäntänä
@@ -360,8 +371,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     Hyppäys
+"Jump Points"
 "Jump to"
     Hyppää
 "Jump To"
@@ -371,6 +384,7 @@
 "Key Bindings"
 "Key bindings"
     Näppäinkomennot
+"Key Controls"
 "Keybindings Editor"
     Näppäinkomentojen Muokkaus
 "Keyword"
@@ -384,6 +398,7 @@
 "Last Updated"
     Päivitetty Viimeksi
 "Later"
+"Left"
 "length"
     pituus
 "Length"
@@ -494,6 +509,8 @@
     Vuosi
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     Jakso $1/$2
 "Past Month"
@@ -675,6 +692,7 @@
     Viikottain
 "regex: articles"
     An?|The
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     Tee uudelleen
@@ -682,6 +700,7 @@
     Alustus
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -737,6 +756,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
+"Shift"
 "Show"
     Ohjelma
 "Show group"
@@ -759,6 +779,7 @@
 "Songs Played"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
+"Space"
 "Special Searches"
     Edistynyt Haku
 "Star character"
@@ -793,6 +814,7 @@
     Tekstitetty
 "Sunday"
     Sunnuntai
+"Tab"
 "The requested recording schedule has been deleted."
     Ajoitettu nauhoitus on poistettu
 "There are no items in this Playlist!"
@@ -853,7 +875,7 @@
     Tuntematon Ohjelma.
 "Unknown Recording Schedule."
     Tuntematon Ajoitus.
-"Unreachable"
+"Up"
 "Upcoming Recordings"
     Tulevat Nauhoitukset
 "Update"
@@ -927,6 +949,7 @@
     tervetuloa: lokit
 "welcome: music"
     tervetuloa: musiikki
+"welcome: remote"
 "welcome: settings"
     tervetuloa: asetukset
 "welcome: stats"

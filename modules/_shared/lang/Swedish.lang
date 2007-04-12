@@ -18,6 +18,7 @@
     $1 h
 "$1 hrs"
     $1 h
+"$1 is not responding."
 "$1 KB"
     $1 KB
 "$1 MB"
@@ -160,6 +161,7 @@
     Omkoda automatiskt
 "Back"
     Tillbaka
+"Back Tab"
 "Back to the program listing"
     Tillbaka till programlistan
 "Back to the recorded programs"
@@ -170,6 +172,7 @@
     Logg
 "Backend Status"
     Systemstatus
+"Backspace"
 "Begin a New Search"
     Starta en ny sökning
 "brightness"
@@ -200,6 +203,7 @@
     Avbryt denna schemaläggning
 "Cancelled"
     Avbruten
+"Caps Lock"
 "Cast"
     Rollbesättning
 "category"
@@ -301,6 +305,7 @@
     Radera $1
 "Delete + Rerecord"
     Radera + Återinspela
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
     Radera och återinspela $1
 "DELETE this Saved Playlist"
@@ -326,6 +331,7 @@
 "Don't record this program."
     Spela inte in detta program.
 "Done, Unknown Status"
+"Down"
 "Download URL override"
     Nedladdnings-URL-åsidosättning
 "Dup Method"
@@ -345,8 +351,10 @@
     Ändra MythWeb och några MythTV-inställningar
 "Edit settings for: $1"
     Ändra insällningar för: $1
+"End"
 "End Late"
     Sluta senare
+"Enter"
 "Enter a new name for your playlist"
     Ange ett namn för din spellista
 "Enter your search terms"
@@ -360,6 +368,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
     Allt
 "Exclude Generic Episodes"
@@ -407,6 +416,7 @@
     frekvens-id
 "Friday"
     Fredag
+"Frontends"
 "generic_date"
     %Y-%m-%d
 "generic_time"
@@ -443,6 +453,7 @@
     Göm
 "High"
     Hög
+"Home"
 "Host"
     Värd
 "Hosted by"
@@ -476,8 +487,10 @@
     Glöm tidigare inspelningar av detta program, så att det kan återinspelas.
 "info:never record"
     Förfalsa en tidigare inspelning av detta program så att det inte kommer att spelas in.
+"Insert"
 "Jump"
     Gå
+"Jump Points"
 "Jump to"
     Gå till
 "Jump To"
@@ -488,6 +501,7 @@
     Knappbindningar
 "Key bindings"
     Knappbindningar
+"Key Controls"
 "Keybindings Editor"
     Redigera knappar
 "Keyword"
@@ -506,6 +520,7 @@
     Senast uppdaterad
 "Later"
     Senare
+"Left"
 "length"
     längd
 "Length"
@@ -663,6 +678,8 @@
     Visades ursprungligen mellan
 "Override"
     Överskugga
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     Del $1 av $2
 "Past Month"
@@ -885,6 +902,7 @@
     Veckovis
 "regex: articles"
     An?|The
+"Remote"
 "Remove Item from Playlist"
     Ta bort post från spellista
 "Repeat"
@@ -894,6 +912,7 @@
 "Retry"
 "Return to Statistics Page"
     Återvänd till statistiksida
+"Right"
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo
 "Running"
@@ -963,6 +982,7 @@
     Varning!<br /><br />
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
+"Shift"
 "Show"
     Visa
 "Show group"
@@ -993,6 +1013,7 @@
     Tyvärr, du kan inte byta namn på denna spellista eftersom det skulle skapa ett cirkulärt beroende.
 "sourceid"
     käll-id
+"Space"
 "Special Searches"
     Speciella sökningar
 "Star character"
@@ -1033,6 +1054,7 @@
     Textad
 "Sunday"
     Söndag
+"Tab"
 "The requested recording schedule has been deleted."
     Det begärda inspelningsschemat har tagits bort.
 "There are no items in this Playlist!"
@@ -1110,8 +1132,7 @@
     Okänt program.
 "Unknown Recording Schedule."
     Okänt inspelningsschema.
-"Unreachable"
-    Oåtkomlig
+"Up"
 "Upcoming Recordings"
     Kommande inspelningar
 "Update"
@@ -1194,6 +1215,7 @@
     Visa serverloggarna.
 "welcome: music"
     Bläddra i din musiksamling.
+"welcome: remote"
 "welcome: settings"
     Konfigurera MythWeb och några av MythTVs inställningar.
 "welcome: stats"

@@ -18,6 +18,7 @@
     $1 hr
 "$1 hrs"
     $1 hrs
+"$1 is not responding."
 "$1 KB"
     $1 KB
 "$1 MB"
@@ -123,6 +124,7 @@
 "Auto-transcode"
     Auto-recodificar
 "Back"
+"Back Tab"
 "Back to the program listing"
     Tornar al llistat de programes
 "Back to the recorded programs"
@@ -132,6 +134,7 @@
     Informes del backend
 "Backend Status"
     Estat del backend
+"Backspace"
 "Begin a New Search"
 "brightness"
     Llum
@@ -149,6 +152,7 @@
 "Cancel this schedule."
     Cancel·lar programació
 "Cancelled"
+"Caps Lock"
 "Cast"
     Repertori
 "category"
@@ -237,6 +241,7 @@
     Esborrar $1
 "Delete + Rerecord"
     Esborrar + reenregistrar
+"Delete and allow rerecord: $1"
 "Delete and rerecord $1"
     Esborrar i reenregistrar $1
 "DELETE this Saved Playlist"
@@ -259,6 +264,7 @@
 "Don't record this program."
     No esborrar aquest programa
 "Done, Unknown Status"
+"Down"
 "Download URL override"
 "Dup Method"
     Mètode duplicat
@@ -274,8 +280,10 @@
 "Edit MythWeb and some MythTV settings."
     Editar ajustos de MythWeb i alguns de MythTV
 "Edit settings for: $1"
+"End"
 "End Late"
     Acabar després
+"Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
 "enter your search terms"
@@ -286,6 +294,7 @@
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
+"Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
@@ -326,6 +335,7 @@
     id freqüència
 "Friday"
     Divendres
+"Frontends"
 "generic_date"
     %b %e, %Y
 "generic_time"
@@ -357,6 +367,7 @@
 "Hide"
 "High"
     Alt
+"Home"
 "Host"
 "Hosted by"
     Enmagatzemat a
@@ -381,8 +392,10 @@
 "info: record this"
 "info:forget old"
 "info:never record"
+"Insert"
 "Jump"
     Saltar
+"Jump Points"
 "Jump to"
     Saltar a
 "Jump To"
@@ -392,6 +405,7 @@
 "Key Bindings"
 "Key bindings"
     Tecles
+"Key Controls"
 "Keybindings Editor"
     Editor de tecles
 "Keyword"
@@ -408,6 +422,7 @@
 "Last Updated"
     Darrera actualització
 "Later"
+"Left"
 "length"
     duració
 "Length"
@@ -540,6 +555,8 @@
     Emisió original
 "Originally aired between"
 "Override"
+"Page Down"
+"Page Up"
 "Part $1 of $2"
     Part $1 de $2
 "Past Month"
@@ -729,6 +746,7 @@
     rectype: setmanal
 "regex: articles"
     El|L(?:as?|os)
+"Remote"
 "Remove Item from Playlist"
 "Repeat"
     Repetir
@@ -736,6 +754,7 @@
     Reiniciar
 "Retry"
 "Return to Statistics Page"
+"Right"
 "Rows to show between timeslot info"
     Fileres a mostrar entre informació
 "Running"
@@ -795,6 +814,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
+"Shift"
 "Show"
     Programa
 "Show group"
@@ -819,6 +839,7 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
     id origen
+"Space"
 "Special Searches"
     Recerques especials
 "Star character"
@@ -855,6 +876,7 @@
     Subtitolat
 "Sunday"
     Diumenge
+"Tab"
 "The requested recording schedule has been deleted."
     La programació sol·licitat ha estat eliminada.
 "There are no items in this Playlist!"
@@ -917,8 +939,7 @@
     Programa desconegut
 "Unknown Recording Schedule."
     Programació desconeguda
-"Unreachable"
-    Inabastable
+"Up"
 "Upcoming Recordings"
     Propers enregistraments
 "Update"
@@ -996,6 +1017,7 @@
     benvingut: log backend
 "welcome: music"
     benvingut: música
+"welcome: remote"
 "welcome: settings"
     benvingut: ajustos
 "welcome: stats"
