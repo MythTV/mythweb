@@ -56,6 +56,8 @@
             $db->query('INSERT INTO settings (value, data, hostname) VALUES (?,?,?)',
                        $field, $new_value, $hostname);
             $cache[$h][$field] = $new_value;
+        // Alert the rest of the MythTV network
+            backend_command('CLEAR_SETTINGS_CACHE');
         }
     // Not cached?
         elseif (!array_key_exists($field, $cache[$h])) {
