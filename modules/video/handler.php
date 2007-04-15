@@ -218,7 +218,7 @@
         $_SESSION['video']['path'] = $_REQUEST['path'];
 
     if (isset($_SESSION['video']['path']))
-        $where .= ' AND videometadata.filename LIKE '.$db->escape('%'.$_SESSION['video']['path'].'%');
+        $where .= ' AND videometadata.filename RLIKE '.$db->escape($_SESSION['video']['path'].'[/]*[^/]*$');
 // Deal with the parental locks
     if (isset($_REQUEST['VideoAdminPassword']))
         $_SESSION['video']['VideoAdminPassword'] = $_REQUEST['VideoAdminPassword'];
