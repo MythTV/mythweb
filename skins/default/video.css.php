@@ -37,6 +37,8 @@
         margin-top:         1em;
         margin-left:        1em;
         border:             1px solid black;
+        min-width:          <?php echo (_or(setting('web_video_thumbnail_width',  hostname),  96)+106); ?>px;
+        min-height:         <?php echo (_or(setting('web_video_thumbnail_height', hostname), 140)+28 ); ?>px;
     }
 
     #path .active {

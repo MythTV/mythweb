@@ -258,6 +258,18 @@
         popup('video_'+id, '');
     }
 
+    function scan() {
+        var myAjax = new Ajax.Request('<?php echo root; ?>video/scan',
+    	                             {
+    	                             	method:     'get',
+    	                             	onComplete: reload
+    	                             });
+    }
+
+    function reload() {
+        location.reload(true);
+    }
+
 //Stop hiding script from old browsers -->
 </SCRIPT>
 
@@ -271,6 +283,7 @@
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 <td>
+ <span style="float: right"><input type="button" value="<?php echo t('Scan Collection'); ?>" class="submit" onclick="scan()"></span>
  <form action="<?php echo root; ?>video" method="GET">
   <?php echo t('Display'); ?>:
   <select name="category" id="category" onchange="filter();">
@@ -302,7 +315,7 @@
   </select>&nbsp;&nbsp;
   <?php echo t('Title search'); ?>: <input id="filter_box" name="search" value="<?php echo $Filter_Search; ?>" onchange="filter();" onkeyup="filter();">
   <?php echo t('Admin Key'); ?>: <input type="password" name="VideoAdminPassword" value="<?php echo $_SESSION['video']['VideoAdminPassword']; ?>" size="5">
-  <input type="submit" value="<?php echo t('Update') ?>">
+  <input type="submit" class="submit" value="<?php echo t('Update') ?>">
  </form>
 </td>
 <td style="text-align: right;">

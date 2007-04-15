@@ -105,6 +105,9 @@
         case 'imdb':
             require_once 'modules/video/imdb.php';
             exit;
+        case 'scan':
+            require_once 'modules/video/scan.php';
+            exit;
     }
 
 // Get the filesystem layout
