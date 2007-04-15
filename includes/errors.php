@@ -101,7 +101,7 @@
             if ($errno != E_ASSERT_ERROR) {
                 echo "<hr><p><b>Fatal Error</b> at $errfile, line $errline:<br />$errstr</p>\n",
                      '<p>If you choose to ',
-                     '<b><u><a href="https://svn.mythtv.org/trac/newticket" target="_blank">submit a bug report</a></u></b>, ',
+                     '<b><u><a href="http://svn.mythtv.org/trac/newticket" target="_blank">submit a bug report</a></u></b>, ',
                      'please make sure to include a<br />',
                      'brief description of what you were doing, along with the following<br />',
                      'backtrace as an attachment (please don\'t paste the whole thing into<br />',
