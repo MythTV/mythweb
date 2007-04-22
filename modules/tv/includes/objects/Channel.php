@@ -55,7 +55,7 @@ class Channel {
                 $port = _or(get_backend_setting('BackendStatusPort', $GLOBALS['Master_Host']),
                             get_backend_setting('BackendStatusPort'));
             // Make the request and store the result
-                $data = @file_get_contents("http://$host:$port/getChannelIcon"
+                $data = @file_get_contents("http://$host:$port/Myth/GetChannelIcon"
                                           .'?ChanId='.$this->chanid
                                           );
                 if ($data) {
