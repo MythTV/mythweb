@@ -69,31 +69,33 @@
         $imdb = setting('web_video_imdb_path', hostname);
         $imdbwebtype = setting('web_video_imdb_type', hostname);
     // Setup the option list
-        $options = array('IMDB'     => array( ' -P %%NUMBER%%'),
-                         'ALLOCINE' => array( ' -P %%NUMBER%%')
+        $options = array('IMDB'     => array( 'artwork' => ' -P %%NUMBER%%'),
+                         'ALLOCINE' => array( 'artwork' => ' -P %%NUMBER%%')
                         );
-    // save the poster
-        $cmd = $imdb.str_replace('%%NUMBER%%', $imdbnum, $options[$imdbwebtype]);
-        exec($cmd, $output, $retval);
-        if ($retval == 255)
-            echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
-        $posterurl = trim($output[0]);
         $artworkdir = setting('VideoArtworkDir', hostname);
-        if (!is_writable($artworkdir)) {
-            echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
-        }
-        else {
-            $posterfile = $artworkdir.'/'.$imdbnum.'.jpg';
-            if (!ini_get('allow_url_fopen'))
-                echo 'Warning~:~ '.t('Video: Warning: fopen')."\n";
-            elseif(strlen($posterurl) > 0) {
-                $posterjpg = @file_get_contents($posterurl);
-                if ($posterjpg === FALSE)
-                    echo 'Warning~:~ '.t('Video: Warning: Artwork: Download')."\n";
-                else {
-                    @file_put_contents( $posterfile, $posterjpg);
+        $posterfile = $artworkdir.'/'.$imdbnum.'.jpg';
+    // If the file already exists, use it, don't bother regrabbing
+        if (!file_exists($posterfile)) {
+    // save the poster
+            $cmd = $imdb.str_replace('%%NUMBER%%', $imdbnum, $options[$imdbwebtype]['artwork']);
+            exec($cmd, $output, $retval);
+            if ($retval == 255)
+                echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
+            $posterurl = trim($output[0]);
+            if (!is_writable($artworkdir))
+                echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
+            else {
+                if (!ini_get('allow_url_fopen'))
+                    echo 'Warning~:~ '.t('Video: Warning: fopen')."\n";
+                elseif(strlen($posterurl) > 0) {
+                    $posterjpg = @file_get_contents($posterurl);
+                    if ($posterjpg === FALSE)
+                        echo 'Warning~:~ '.t('Video: Warning: Artwork: Download')."\n";
+                    else {
+                        @file_put_contents( $posterfile, $posterjpg);
                     if (!file_exists($posterfile))
                         echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
+                    }
                 }
             }
         }

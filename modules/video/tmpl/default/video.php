@@ -88,7 +88,7 @@
                     }
                     if (title.length > 0) {
                         content.innerHTML += '<br />';
-                        content.innerHTML += '<a href="'+makeImdbWebUrl(num)+'" style="float: right; margin-left: 1em;">(IMDB)</a>';
+                        content.innerHTML += '<a href="'+makeImdbWebUrl(num)+'" style="float: right; margin-left: 1em;" target="_blank">(IMDB)</a>';
                         content.innerHTML += '<a href="javascript:imdb_select(\''+id+'\',\''+num+'\')">'+title+'</a>';
                     }
                     matches_index += 1;
