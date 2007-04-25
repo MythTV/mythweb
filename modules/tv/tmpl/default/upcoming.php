@@ -124,14 +124,20 @@
                 $commands[] = 'record';
                 break;
             case 'EarlierShowing':
-                $rec_char = t('Earlier');
-                $css_class= 'deactivated';
+                $rec_char   = t('Earlier');
+                $css_class  = 'deactivated';
                 $commands[] = 'activate';
                 $commands[] = 'default';
                 break;
             case 'TooManyRecordings':
-                $rec_char = t('Too Many');
-                $css_class= 'deactivated';
+                $rec_char   = t('Too Many');
+                $css_class  = 'deactivated';
+                break;
+            case 'NeverRecord':
+                $rec_char   = t('Never Record');
+                $css_class  = 'deactivated';
+                $commands[] = 'activate';
+                $commands[] = 'forget_old';
                 break;
             case 'Cancelled':
                 $rec_char   = t('Cancelled');
@@ -158,8 +164,8 @@
                 $commands[] = 'dontrec';
                 break;
             case 'LaterShowing':
-                $rec_char = t('Later');
-                $css_class= 'deactivated';
+                $rec_char   = t('Later');
+                $css_class  = 'deactivated';
                 $commands[] = 'activate';
                 $commands[] = 'default';
                 break;
@@ -193,6 +199,7 @@
                 break;
             default:
                 $rec_char   = '&nbsp;';
+                #$rec_char   = $show->recstatus;
                 $rec_class  = '';
                 $css_class  = 'deactivated';
                 $commands[] = 'activate';
