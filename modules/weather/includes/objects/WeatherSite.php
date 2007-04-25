@@ -53,7 +53,9 @@ class WeatherSite {
 
     function getData() {
         global $Weather_Types;
-        $data = file('http://www.msnbc.com/m/chnk/d/weather_d_src.asp?acid=' . $this->acid);
+        $data = @file('http://www.msnbc.com/m/chnk/d/weather_d_src.asp?acid=' . $this->acid);
+        if ($data === FALSE)
+            return;
 
         foreach($data as $line) {
             if(strpos($line, 'this.sw') === false)
