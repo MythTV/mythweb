@@ -22,9 +22,11 @@
 // NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
 // the number of items in a ProgramInfo QStringList group used by
 // ProgramInfo::ToSringList and ProgramInfo::FromStringList.
+    global $NUMPROGRAMLINES;
     $NUMPROGRAMLINES = 43;
 
 // Keep track of the master backend port/ip
+    global $Master_Host, $Master_Port;
     $Master_Host = get_backend_setting('MasterServerIP');
     $Master_Port = get_backend_setting('MasterServerPort');
     if (!$Master_Host || !$Master_Port)
