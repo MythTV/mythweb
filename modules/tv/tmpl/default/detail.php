@@ -470,16 +470,27 @@
 
         <div id="-downloads">
             <div class="-pixmap">
+                <?php if (file_exists('modules/tv/flvplayer.swf')) { ?>
+                    <embed src="<?php echo root; ?>tv/flvplayer.swf" width="320" height="260" bgcolor="#FFFFFF"
+                           type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                           flashvars="file=<?php echo video_url($program, 'flv'); ?>&image=<?php echo $program->thumb_url(320,0); ?>&showicons=false" />
+                <?php } else { ?>
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
-                    ><img src="<?php echo $program->thumb_url(320,0) ?>" width="320"></a></td>
+                    ><img src="<?php echo $program->thumb_url(320,0) ?>" width="320"></a>
+                <?php } ?></td>
             </div>
             <div class="-links">
-                <a href="<?php echo video_url($program, true) ?>" title="<?php echo t('ASX Stream') ?>"
+                <a href="<?php echo video_url($program, 'asx') ?>" title="<?php echo t('ASX Stream') ?>"
                     ><img src="<?php echo skin_url ?>/img/play_sm.png">
                     <?php echo t('ASX Stream') ?></a>
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo skin_url ?>/img/video_sm.png">
                     <?php echo t('Direct Download') ?></a>
+                <?php if (file_exists('modules/tv/flvplayer.swf')) { ?>
+                <a href="<?php echo video_url($program, 'flvp') ?>" title="<?php echo t('Flash Video') ?>"
+                    ><img src="<?php echo skin_url ?>/img/flash_flv_icon.png">
+                    <?php echo t('Flash Video') ?></a>
+                <?php } ?>
             </div>
             <div class="-jobs">
 <?php

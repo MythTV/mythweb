@@ -331,29 +331,32 @@
  *
  * @return string URL to access recordings
 /**/
-    function video_url($show, $asx = false) {
+    function video_url($show, $ext = false) {
     // URL override?
-        if (!$asx && $_SESSION['file_url_override'])
+        if (!$ext && $_SESSION['file_url_override'])
             return 'file://'.$_SESSION['file_url_override'].str_replace('%2F', '/', rawurlencode(basename($show->filename)));
     // Which protocol should we use for downloads?
-        $protocol = ($_SESSION['stream']['force_http'] || !isset($_SERVER['HTTPS']))
-                    ? 'http://'
-                    : 'https://';
-    // ASX mode gets the streaming module, with a slight addition
-        if ($asx) {
-            return $protocol.$_SERVER['HTTP_HOST'].root."pl/stream/$show->chanid/$show->recstartts.asx";
+        $url = (($_SESSION['stream']['force_http'] || !isset($_SERVER['HTTPS']))
+                ? 'http://'.$_SERVER['HTTP_HOST']
+                : 'https://'.$_SERVER['HTTP_HOST'].':'._or($_SESSION['stream']['force_http_port'], '80')).root."pl/stream/$show->chanid/$show->recstartts";
+
+        switch ($ext) {
+        // ASX mode gets the streaming module, with a slight addition
+            case 'asx' : return "$url.asx";
+            case 'flvp': return "$url.flvp";
+            case 'flv' : return "$url.flv";
         }
     // Mac and Linux just get a link to the streaming module, along with any
     // session marked to not use the myth:// URI
         if (!stristr($_SERVER['HTTP_USER_AGENT'], 'windows') || !$_SESSION['use_myth_uri']) {
-            return $protocol.$_SERVER['HTTP_HOST'].root."pl/stream/$show->chanid/$show->recstartts";
+            return $url;
         }
     // Windows likely gets a myth:// url -- grab the master host and port
         global $Master_Host, $Master_Port;
     // Is either the browser xor the master in an rfc 1918 zone?
         if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
                 xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
-            return $protocol.$_SERVER['HTTP_HOST'].root."pl/stream/$show->chanid/$show->recstartts";
+            return $url;
         }
     // Send the myth url
         else {

@@ -228,7 +228,7 @@
             var myAjax = new Ajax.Request('<?php echo root; ?>video/imdb',
     	                                 {
     	                                 	method:     'get',
-    	                                 	parameters: 'action=extendedmetadata&id='+id,
+    	                                 	parameters: 'action=metadata&id='+id,
     	                                 	onComplete: video_create_popup
     	                                 });
         }
@@ -255,6 +255,8 @@
         }
         popup_div.innerHTML += '</dl>';
         document.body.appendChild(popup_div);
+        addClassName('video_'+id+'_popup', 'popup');
+        addClassName('video_'+id+'_popup', 'vpopup');
         popup('video_'+id, '');
     }
 
@@ -335,7 +337,7 @@
 <?php
     foreach ($All_Videos as $video) {
 ?>
-    <div id="video_<?php echo $video->intid; ?>" class="video">
+    <div id="video_<?php echo $video->intid; ?>" class="video" onclick="video_popup(this.id)">
         <div id="video_<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
         <div id="video_<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="video_<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
