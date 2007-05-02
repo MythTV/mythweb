@@ -167,9 +167,9 @@
     <td><a onclick="send_key('Q')" class="reqshift -hidden">Q</a>
         <a onclick="send_key('q')" class="noshift">q</a></td>
     <td><a onclick="send_key('W')" class="reqshift -hidden">W</a>
-        <a onclick="send_key('w')" class="noshift">q</a></td>
+        <a onclick="send_key('w')" class="noshift">w</a></td>
     <td><a onclick="send_key('E')" class="reqshift -hidden">E</a>
-        <a onclick="send_key('e')" class="noshift">q</a></td>
+        <a onclick="send_key('e')" class="noshift">e</a></td>
     <td><a onclick="send_key('R')" class="reqshift -hidden">R</a>
         <a onclick="send_key('r')" class="noshift">r</a></td>
     <td><a onclick="send_key('T')" class="reqshift -hidden">T</a>
