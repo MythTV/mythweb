@@ -245,7 +245,7 @@ class Program {
             $this->recording   = ($this->recstatus == 'WillRecord'); # scheduled to record?
         }
     // No longer a null column, so check for blank entries
-        if ($this->airdate == '0000-00-00' || $this->airdate == '0000')
+        if (!$this->has_airdate || in_array($this->airdate, array('0000-00-00', '0000', '1900-01-01')))
             $this->airdate = NULL;
     // Do we have a chanid?  Load some info about it
         if ($this->chanid && !isset($this->channel)) {
