@@ -90,7 +90,7 @@
         // Print the data
 ?><tr>
     <td class="-channel">
-        <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
+        <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $list_starttime ?>"
                 title="<?php
                     echo t('Details for: $1',
                            html_entities($channel->name))

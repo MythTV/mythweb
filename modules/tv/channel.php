@@ -18,33 +18,35 @@
 
 // Path-based
     if ($Path[2]) {
-        $_GET['chanid'] = $Path[2];
-        if (!$_GET['date'])
-            $_GET['date'] = $Path[3];
+        $_REQUEST['chanid'] = $Path[2];
+        if (!$_REQUEST['date'])
+            $_REQUEST['date'] = $Path[3];
     }
 
 // Chanid?
-    $_GET['chanid'] or $_GET['chanid'] = $_POST['chanid'];
-    $this_channel =& load_one_channel($_GET['chanid']);
-
-// No channel found
-    if (!$_GET['chanid'] || !$this_channel->chanid) {
-        header('Location: '.root.'tv/list?time='.$_SESSION['list_time']);
-        exit;
-    }
+    $this_channel =& load_one_channel($_REQUEST['chanid']);
 
 // New list date?
-    $_GET['date'] or $_GET['date'] = $_POST['date'];
-    if ($_GET['date']) {
-        if (strlen($_GET['date']) == 8)
-            $_GET['date'] = unixtime(sprintf('%08d000000', $_GET['date']));
-        $_SESSION['list_time'] = $_GET['date'];
+    if ($_REQUEST['date']) {
+        if (strlen($_REQUEST['date']) == 8)
+            $_REQUEST['date'] = unixtime(sprintf('%08d000000', $_REQUEST['date']));
+        $_SESSION['list_time'] = $_REQUEST['date'];
+    }
+
+// No channel found
+    if (!$_REQUEST['chanid'] || !$this_channel->chanid) {
+        redirect_browser(root.'tv/list');
     }
 
 // Load the programs for today
     $this_channel->programs = load_all_program_data(mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']), date('Y', $_SESSION['list_time'])),
                                                     mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']) + 1, date('Y', $_SESSION['list_time'])),
                                                     $this_channel->chanid);
+
+// No data?  Assume today.
+    if (count($this_channel->programs) < 1) {
+        redirect_browser(root.'tv/channel/'.$this_channel->chanid.'/'.time());
+    }
 
 // Load the class for this page
     require_once tmpl_dir.'channel.php';
