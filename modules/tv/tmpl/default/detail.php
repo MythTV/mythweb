@@ -470,10 +470,101 @@
 
         <div id="-downloads">
             <div class="-pixmap">
-                <?php if (file_exists('modules/tv/flvplayer.swf')) { ?>
-                    <embed src="<?php echo root; ?>tv/flvplayer.swf" width="320" height="260" bgcolor="#FFFFFF"
-                           type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
-                           flashvars="file=<?php echo video_url($program, 'flv'); ?>&image=<?php echo $program->thumb_url(320,0); ?>&showicons=false" />
+                <?php if (file_exists('modules/tv/MFPlayer.swf')) { ?>
+                    <script language="JavaScript" type="text/javascript">
+                    <!--
+                    // Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
+                    var hasProductInstall = DetectFlashVer(6, 0, 65);
+
+                    // Version check based upon the values defined in globals
+                    var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+
+
+                    // Check to see if a player with Flash Product Install is available and the version does not meet the requirements for playback
+                    if ( hasProductInstall && !hasRequestedVersion ) {
+                    	// MMdoctitle is the stored document.title value used by the installation process to close the window that started the process
+                    	// This is necessary in order to close browser windows that are still utilizing the older version of the player after installation has completed
+                    	// DO NOT MODIFY THE FOLLOWING FOUR LINES
+                    	// Location visited after installation is complete if installation is required
+                    	var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
+                    	var MMredirectURL = window.location;
+                        document.title = document.title.slice(0, 47) + " - Flash Player Installation";
+                        var MMdoctitle = document.title;
+
+                        AC_FL_RunContent(
+                            "src", "playerProductInstall",
+                            "FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle,
+                            "width", "320",
+                            "height", "260",
+                            "align", "middle",
+                            "id", "MFPlayer",
+                            "quality", "high",
+                            "bgcolor", "#869ca7",
+                            "name", "MFPlayer",
+                            "allowScriptAccess","sameDomain",
+							"movie","<?php echo root; ?>tv/playerProductInstall",
+                            "type", "application/x-shockwave-flash",
+                            "pluginspage", "http://www.adobe.com/go/getflashplayer"
+                        );
+                    } else if (hasRequestedVersion) {
+                        // if we've detected an acceptable version
+                        // embed the Flash Content SWF when all tests are passed
+                        AC_FL_RunContent(
+                                "src", "MFPlayer",
+                                "width", "320",
+                                "height", "260",
+                                "align", "middle",
+                                "id", "MFPlayer",
+                                "quality", "high",
+                                "bgcolor", "#869ca7",
+                                "name", "MFPlayer",
+                                "flashvars",'file=<?php     echo video_url($program, 'flv');
+                                         ?>&still=<?php     echo $program->thumb_url(320,0);
+                                         ?>&totalTime=<?php echo $program->length;
+                                         ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf',
+                                "allowScriptAccess","sameDomain",
+								"allowFullScreen","true",
+								"movie","<?php echo root; ?>tv/MFPlayer",
+                                "type", "application/x-shockwave-flash",
+                                "pluginspage", "http://www.adobe.com/go/getflashplayer"
+                        );
+                    } else {  // flash is too old or we can't detect the plugin
+                        document.write('<img src="<?php echo $program->thumb_url(320,0) ?>" width="320"><br />'
+                                      +'Web-based video playback requires the '
+                                      +'<a href=http://www.adobe.com/go/getflash/>Adobe Flash Player</a>.'
+                                      );
+                    }
+                    // -->
+                    </script>
+                    <noscript>
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                        id="MFPlayer" width="320" height="260"
+                        codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+                        <param name="movie" value="<?php echo root; ?>tv/MFPlayer.swf" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#869ca7" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="true" />
+                        <param name="FlashVars" value="file=<?php     echo video_url($program, 'flv');
+                                                   ?>&still=<?php     echo $program->thumb_url(320,0);
+                                                   ?>&totalTime=<?php echo $program->length;
+                                                   ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf">
+                        <embed src="<?php echo root; ?>tv/MFPlayer.swf" quality="high" bgcolor="#869ca7"
+                            width="320" height="260" name="MFPlayer" align="middle"
+                            play="true"
+                            loop="false"
+                            quality="high"
+                            allowScriptAccess="sameDomain"
+                            allowFullScreen="true"
+                            FlashVars="file=<?php     echo video_url($program, 'flv');
+                                   ?>&still=<?php     echo $program->thumb_url(320,0);
+                                   ?>&totalTime=<?php echo $program->length;
+                                   ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf"
+                            type="application/x-shockwave-flash"
+                            pluginspage="http://www.adobe.com/go/getflashplayer">
+                        </embed>
+                    </object>
+                    </noscript>
                 <?php } else { ?>
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo $program->thumb_url(320,0) ?>" width="320"></a>
@@ -486,11 +577,6 @@
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo skin_url ?>/img/video_sm.png">
                     <?php echo t('Direct Download') ?></a>
-                <?php if (file_exists('modules/tv/flvplayer.swf')) { ?>
-                <a href="<?php echo video_url($program, 'flvp') ?>" title="<?php echo t('Flash Video') ?>"
-                    ><img src="<?php echo skin_url ?>/img/flash_flv_icon.png">
-                    <?php echo t('Flash Video') ?></a>
-                <?php } ?>
             </div>
             <div class="-jobs">
 <?php

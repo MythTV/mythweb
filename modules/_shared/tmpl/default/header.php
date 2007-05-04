@@ -37,6 +37,20 @@
     <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/ajax.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/ajax_utils.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/AC_OETags.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        <!--
+        // -----------------------------------------------------------------------------
+        // Globals
+        // Major version of Flash required
+        var requiredMajorVersion = 9;
+        // Minor version of Flash required
+        var requiredMinorVersion = 0;
+        // Minor version of Flash required
+        var requiredRevision = 0;
+        // -----------------------------------------------------------------------------
+        // -->
+    </script>
 
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/header.css" />
