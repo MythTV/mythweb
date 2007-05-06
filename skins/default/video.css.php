@@ -63,9 +63,6 @@
         font-weight:        bold;
     }
 
-    .vpopup {
-        position:           absolute;
-        bottom:             0px;
-        right:              0px;
-        background-color:   green;
+    .popup {
+        width:              30%;
     }

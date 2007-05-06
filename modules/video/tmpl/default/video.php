@@ -128,7 +128,7 @@
     }
 
     function imdb_prompt(id) {
-        var title = $('video_'+id+'-title').childNodes[0].innerHTML;
+        var title = $(id+'-title').childNodes[0].innerHTML;
         var number = prompt('<?php echo t('Please enter an imdb number or a title to do another search'); ?>', title);
         if (typeof(number) != 'string')
             return;
@@ -162,7 +162,7 @@
                 if (data == 'intid')
                     var id = value;
                 if (data.length > 0) {
-                    var elementid = 'video_'+id+'_'+data;
+                    var elementid = id+'_'+data;
                     var element = $(elementid);
                     if (element != null & typeof(element) != 'undefined')
                         element.innerHTML = value;
@@ -222,7 +222,7 @@
     var popup_divs = new Array;
 
     function video_popup(id) {
-        var popup_div = $('video_'+id+'_popup');
+        var popup_div = $(id+'_popup');
         if (popup_div == null & popup_divs[id] != true) {
             popup_divs[id] = true;
             var myAjax = new Ajax.Request('<?php echo root; ?>video/imdb',
@@ -233,7 +233,7 @@
     	                                 });
         }
         else {
-            popup('video_'+id, '');
+            popup(id, '');
         }
     }
 
@@ -243,21 +243,34 @@
         var id          = line[1];
         var index       = 1;
         var popup_div   = document.createElement('div');
-        popup_div.id    = 'video_'+id+'_popup';
-        popup_div.class = 'popup';
+        popup_div.id    = id+'_popup';
+        popup_div.className = 'popup';
         popup_div.innerHTML = '<dl class="details_list">';
         while (index < lines.length) {
             line = lines[index].split('|');
-            if (typeof(line[0]) == 'string' & typeof(line[1]) == 'string') {
-                popup_div.innerHTML += '<dt>'+line[0]+'<\/dt><dd>'+line[1]+'<\/dd>';
+            if (   line[0] == 'img'
+                || line[0] == 'title'
+                || line[0] == 'playtime'
+                || line[0] == 'category'
+                || line[0] == 'imdb'
+                || line[0] == 'inetref'
+                || line[0] == 'userrating'
+                || line[0] == 'length'
+                || line[0] == 'showlevel'
+               )
+            {
+                ;
+            }
+            else {
+                if (typeof(line[0]) == 'string' && typeof(line[1]) == 'string' && line[1].length > 0 ) {
+                    popup_div.innerHTML += '<dt>'+line[0].substring(0,1).toUpperCase()+line[0].substring(1)+'<\/dt><dd>'+line[1]+'<\/dd>';
+                }
             }
             index += 1;
         }
         popup_div.innerHTML += '</dl>';
         document.body.appendChild(popup_div);
-        addClassName('video_'+id+'_popup', 'popup');
-        addClassName('video_'+id+'_popup', 'vpopup');
-        popup('video_'+id, '');
+        popup(id, '');
     }
 
     function scan() {
@@ -337,15 +350,15 @@
 <?php
     foreach ($All_Videos as $video) {
 ?>
-    <div id="video_<?php echo $video->intid; ?>" class="video" onclick="video_popup(this.id)">
-        <div id="video_<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
-        <div id="video_<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
-        <div id="video_<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
-        <div id="video_<?php echo $video->intid; ?>-title" class="title"><a href="<?php echo $video->url; ?>"><?php echo htmlentities($video->title); ?></a></div>
-        <div id="video_<?php echo $video->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($video->coverfile)) echo 'src="data/video_covers/'.basename($video->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
-        <div id="video_<?php echo $video->intid; ?>-category">           <?php echo $Category_String[$video->category]; ?></div>
-        <div id="video_<?php echo $video->intid; ?>_playtime">           <?php echo nice_length($video->length * 60); ?></div>
-        <div id="video_<?php echo $video->intid; ?>_imdb">               <?php if ($video->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($video->inetref); ?>"><?php echo $video->inetref ?></a><?php } ?></div>
+    <div id="<?php echo $video->intid; ?>" class="video" onmouseover="video_popup(this.id)">
+        <div id="<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
+        <div id="<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
+        <div id="<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
+        <div id="<?php echo $video->intid; ?>-title" class="title"><a href="<?php echo $video->url; ?>"><?php echo htmlentities($video->title); ?></a></div>
+        <div id="<?php echo $video->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($video->coverfile)) echo 'src="data/video_covers/'.basename($video->coverfile).'"'; echo ' width="'.video_img_width.'" height="'.video_img_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
+        <div id="<?php echo $video->intid; ?>-category">           <?php echo $Category_String[$video->category]; ?></div>
+        <div id="<?php echo $video->intid; ?>_playtime">           <?php echo nice_length($video->length * 60); ?></div>
+        <div id="<?php echo $video->intid; ?>_imdb">               <?php if ($video->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($video->inetref); ?>"><?php echo $video->inetref ?></a><?php } ?></div>
         <div class="command">
             <span class="commands"><a href="javascript:newWindow('<?php echo root ?>video/edit?intid=<?php echo $video->intid ?>')" ><?php echo t('Edit') ?></a></span>
             <span class="commands"><a href="javascript:imdb_lookup('<?php echo $video->intid ?>','<?php echo addslashes($video->title); ?>')">IMDB</a></span>
