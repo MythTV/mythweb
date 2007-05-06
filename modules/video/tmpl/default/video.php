@@ -170,6 +170,8 @@
             }
             matches_index += 1;
         }
+        document.body.removeChild($(id+'_popup'));
+        popup_divs[id] = false;
         ajax_remove_request();
     }
 
@@ -273,6 +275,7 @@
         popup(id, '');
     }
 
+// We currently do require a reload after a scan event
     function scan() {
         var myAjax = new Ajax.Request('<?php echo root; ?>video/scan',
     	                             {

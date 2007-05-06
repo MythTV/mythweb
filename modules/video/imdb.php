@@ -44,7 +44,9 @@
         $title = str_replace('"', '\"', $title);
     // Setup the option list
         $options = array('IMDB'     => array( ' -M tv=both "%%TITLE%%"',
-                                              ' -M tv=both\;type=fuzzy "%%TITLE%%"'),
+                                              ' -M tv=both\;type=fuzzy "%%TITLE%%"',
+                                              ' -M s=tt\;ttype=ep "%%TITLE%%"'
+                                              ),
                          'ALLOCINE' => array( ' -M "%%TITLE%%"')
                         );
         foreach ($options[$imdbwebtype] as $option) {
