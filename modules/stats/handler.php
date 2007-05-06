@@ -89,7 +89,7 @@
                                     ON channel.chanid = oldrecorded.chanid
                     '.$where.'
                              AND channel.channum IS NOT NULL
-                    GROUP BY oldrecorded.chanid
+                    GROUP BY channel.callsign
                     ORDER BY recorded DESC, last_recorded, name '
                     .$limit);
     while($row = $sh->fetch_assoc())
