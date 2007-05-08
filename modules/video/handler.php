@@ -119,14 +119,16 @@
         $file = dirname($file);
     // Figure out the base...
         foreach ($dirs as $dir) {
-            if(strpos($file, $dir) !== false) {
-                if (!isset($PATH_TREE[$dir]))
-                    $PATH_TREE[$dir] = array('display' => $dir,
-                                             'path'    => $dir,
-                                             'subs'    => array());
-                $PATH = &$PATH_TREE[$dir];
-                $file = str_replace($dir, '', $file);
-                break;
+            if ($dir) {
+                if(strpos($file, $dir) !== false) {
+                    if (!isset($PATH_TREE[$dir]))
+                        $PATH_TREE[$dir] = array('display' => $dir,
+                                                 'path'    => $dir,
+                                                 'subs'    => array());
+                    $PATH = &$PATH_TREE[$dir];
+                    $file = str_replace($dir, '', $file);
+                    break;
+                }
             }
         }
         $paths = explode('/', $file);

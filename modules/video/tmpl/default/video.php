@@ -154,16 +154,29 @@
     function update_video_result(result) {
         var matches = result.responseText.split('\n');
         var matches_index = 0;
+        var id = 0;
+    // Get the id of the video
+        while (matches_index < matches.length) {
+            var line = matches[matches_index].split('|');
+            var data = line[0];
+            var value = line[1];
+            if (data == 'intid') {
+                id = value;
+                break;
+            }
+            matches_index += 1;
+        }
+        matches_index = 0;
+    // Update the videos
         while (matches_index < matches.length) {
             if (matches[matches_index].length > 0) {
                 var line = matches[matches_index].split('|');
                 var data = line[0];
                 var value = line[1];
-                if (data == 'intid')
-                    var id = value;
                 if (data.length > 0) {
-                    var elementid = id+'_'+data;
-                    var element = $(elementid);
+                    if (data == 'title')
+                        $(id+'-'+data).childNodes[0].innerHTML = value;
+                    var element = $(id+'_'+data);
                     if (element != null & typeof(element) != 'undefined')
                         element.innerHTML = value;
                 }
