@@ -44,12 +44,15 @@
 // Now scan for any new ones
     $paths = explode(':', setting('VideoStartupDir', hostname));
     foreach ($paths as $path) {
-        exec("find $path -readable -type f", $files, $retval);
+        exec("find $path -type f", $files, $retval);
         foreach ($files as $file) {
         // If we want to restrict to videos or not
             if (setting('VideoListUnknownFiletypes', hostname) == 0)
                 if (strpos(`file -ib $file`, 'video') === FALSE)
                     continue;
+        // Check readable status
+            if (!is_readable($file))
+                continue;
             if ($db->query_col('SELECT COUNT(1)
                                   FROM videometadata
                                  WHERE videometadata.filename = ?', $file) == 0) {
