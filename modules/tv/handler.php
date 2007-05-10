@@ -42,7 +42,10 @@
     $Categories['movie']   = array(t('movie'));
 
 // Don't forget to sort
-    ksort($Categories);
+    function category_name_sort($a, $b) {
+        return strnatcasecmp($a[0], $b[0]);
+    }
+    uasort($Categories, 'category_name_sort');
 
 // Load the tv-related libraries
     require_once 'includes/channels.php';
