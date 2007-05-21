@@ -12,6 +12,9 @@
  *
 /**/
 
+// List of valid video extentions
+$Known_Exts = array('ogm');
+
 // First delete any videos that do not exist anymore
     $sh = $db->query('SELECT videometadata.intid,
                              videometadata.filename,
@@ -47,9 +50,11 @@
         exec("find $path -type f", $files, $retval);
         foreach ($files as $file) {
         // If we want to restrict to videos or not
-            if (setting('VideoListUnknownFiletypes', hostname) == 0)
-                if (strpos(`file -ib $file`, 'video') === FALSE)
+            if (setting('VideoListUnknownFiletypes', hostname) == 0) {
+                if ( in_array($Known_Exts, strtolower(pathinfo($file, PATHINFO_EXTENSION))) === FALSE
+                     && strpos(`file -ib $file`, 'video')                                   === FALSE )
                     continue;
+            }
         // Check readable status
             if (!is_readable($file))
                 continue;
