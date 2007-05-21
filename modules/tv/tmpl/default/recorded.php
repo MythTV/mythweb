@@ -71,8 +71,8 @@
     file.subtitle   = '<?php echo addslashes($show->subtitle)               ?>';
     file.chanid     = '<?php echo addslashes($show->chanid)                 ?>';
     file.starttime  = '<?php echo addslashes($show->recstartts)             ?>';
-    file.group      = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->group)))    ?>';
-    file.filename   = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->filename))) ?>';
+    file.recgroup   = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->recgroup)))    ?>';
+    file.filename   = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->filename)))    ?>';
     file.size       = '<?php echo addslashes($show->filesize)               ?>';
     file.length     = '<?php echo addslashes($show->recendts - $show->recstartts) ?>';
     file.autoexpire = <?php echo $show->auto_expire ? 1 : 0                 ?>;
@@ -147,6 +147,21 @@
         if (rowcount[section] == 0) {
             toggle_vis('breakrow_' + section, 'display');
         }
+    // Change the recording groups dropdown on the fly.
+        if (file.recgroup) {
+        // Decrement the number of episodes for this group
+            groups[file.recgroup]--;
+            var group_count = groups[file.recgroup]
+        // Change the groups dropdown menu on the fly
+            if (group_count == 0) {
+                toggle_vis('Group ' + file.recgroup, 'display');
+            }
+            else {
+                var group_text;
+                group_text = (group_count > 1) ? ' (' + group_count + ' episodes)' : '';
+                $('Group ' + file.recgroup).innerHTML = file.recgroup + group_text;
+            }
+        }
     // Change the recordings dropdown menu on the fly
         if (episode_count == 0) {
             toggle_vis('Title ' + file.title, 'display');
@@ -155,22 +170,6 @@
             var count_text;
             count_text = (episode_count > 1) ? ' (' + episode_count + ' episodes)' : '';
             $('Title ' + file.title).innerHTML = file.title + count_text;
-        }
-    // TODO: test changing the groups dropdown on the fly.
-    // I can't test it because I haven't set up any recording groups, and probably never will
-        if (file.group) {
-        // Decrement the number of episodes for this group
-            groups[file.group]--;
-            var group_count = titles[file.title]
-        // Change the groups dropdown menu on the fly
-            if (group_count == 0) {
-                toggle_vis('Group ' + file.group, 'display');
-            }
-            else {
-                var count_text;
-                group_text = (group_count >1) ? ' (' + group_count + ' episodes)' : '';
-                $('Group ' + file.group).innerHTML = file.group + group_text;
-            }
         }
     // Decrement the total number of shows and update the page
         programs_shown--;
