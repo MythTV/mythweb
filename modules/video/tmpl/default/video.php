@@ -278,7 +278,7 @@
             }
             else {
                 if (typeof(line[0]) == 'string' && typeof(line[1]) == 'string' && line[1].length > 0 ) {
-                    popup_div.innerHTML += '<dt>'+line[0].substring(0,1).toUpperCase()+line[0].substring(1)+'<\/dt><dd>'+line[1]+'<\/dd>';
+                    popup_div.innerHTML += '<dt>'+line[0].substring(0,1).toUpperCase()+line[0].substring(1)+':<\/dt><dd>'+line[1]+'<\/dd>';
                 }
             }
             index += 1;

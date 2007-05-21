@@ -65,4 +65,20 @@
 
     .popup {
         width:              30%;
+        font-size:          9pt;
+    }
+
+    .popup dt {
+        clear:              left;
+        float:              left;
+        padding-top:        3px;
+        white-space:        nowrap;
+        width:              4em;
+        font-weight:        bold;
+        text-align:         right;
+    }
+
+    .popup  dd {
+        margin-left:        4.5em;
+        padding-top:        3px;
     }
