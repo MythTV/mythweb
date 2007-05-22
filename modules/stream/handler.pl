@@ -55,7 +55,7 @@
 
 # Find the local file
     my $filename;
-    my $sh = $dbh->prepare('SELECT dirname
+       $sh = $dbh->prepare('SELECT dirname
                               FROM storagegroup
                              WHERE hostname = ?');
     $sh->execute(hostname);
@@ -129,7 +129,7 @@ EOF
     }
     elsif ($ENV{'REQUEST_URI'} =~ /\.flv$/i) {
     # Print the movie
-        $ffmpeg_pid = open(DATA, "/usr/bin/ffmpeg -y -i $filename -s 320x240 -r 24 -f flv -ac 2 -ar 11025 -ab 64k -b 256k /dev/stdout |");
+        $ffmpeg_pid = open(DATA, "/usr/bin/ffmpeg -y -i $filename -s 320x240 -r 24 -f flv -ac 2 -ar 11025 -ab 64k -b 256k /dev/stdout 2>/dev/null |");
         unless ($ffmpeg_pid) {
             print header(),
                   "Can't do ffmpeg:  $!";
@@ -141,7 +141,7 @@ EOF
             print $buffer;
         }
         close DATA;
-        exit;
+        CORE::exit;
     }
 
 # File size
