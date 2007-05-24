@@ -74,8 +74,17 @@ class Video {
         global $Category_String;
         $string  = '';
         $string .= 'intid|'.$this->intid            ."\n";
-        if (show_video_covers && file_exists($this->cover_url))
-            $string .= 'img|<img width="'.video_img_width.'" height="'.video_img_height.'" src="'.root.'data/video_covers/'.basename($this->coverfile).'" alt="'.t('Missing Cover').'">'."\n";
+        if (show_video_covers && file_exists($this->cover_url)) {
+            list($width, $height) = getimagesize($this->coverfile);
+            $hscale = $height / video_img_height;
+            $wscale = $width  / video_img_width;
+            $scale = 1;
+            if (($hscale > 1) || ($wscale > 1))
+                $scale = ($hscale > $wscale) ? $hscale : $wscale;
+            $width  = floor($width / $scale);
+            $height = floor($height / $scale);
+            $string .= 'img|<img width="'.$width.'" height="'.$height.'" src="'.root.'data/video_covers/'.basename($this->coverfile).'" alt="'.t('Missing Cover').'">'."\n";
+        }
         else
             $string .= 'img|<img width="'.video_img_width.'" height="'.video_img_height.'" alt="'.t('Missing Cover').'">'."\n";
         $string .= 'title|<a href="'.$this->url.'">'.$this->title.'</a>'."\n".
