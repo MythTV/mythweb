@@ -14,10 +14,12 @@ class Video {
     var $length;
     var $showlevel;
     var $filename;
-    var $coverfile;
+    var $cover_file;
+    var $cover_url;
+    var $cover_scaled_width;
+    var $cover_scaled_height;
     var $childid;
     var $url;
-    var $cover_url;
     var $browse;
     var $genres;
 
@@ -45,11 +47,22 @@ class Video {
         $this->length       = $video['length'];
         $this->showlevel    = $video['showlevel'];
         $this->filename     = $video['filename'];
-        $this->coverfile    = $video['coverfile'];
+        $this->cover_file   = $video['coverfile'];
         $this->browse       = $video['browse'];
     // And the artwork URL
-        if ($this->coverfile != 'No Cover')
-            $this->cover_url = 'data/video_covers/'.substr($this->coverfile, strlen(setting('VideoArtworkDir', hostname)));
+        if ($this->cover_file != 'No Cover') {
+            $this->cover_url = 'data/video_covers/'.substr($this->cover_file, strlen(setting('VideoArtworkDir', hostname)));
+            list($width, $height) = getimagesize($this->cover_file);
+            $wscale = video_img_width / $width;
+            $hscale = video_img_height / $height;
+            $scale = $wscale < $hscale ? $wscale : $hscale;
+            $this->cover_scaled_width  = floor($width * $scale);
+            $this->cover_scaled_height = floor($height * $scale);
+        }
+        else {
+            $this->cover_scaled_height = video_img_height;
+            $this->cover_scaled_width  = video_img_width;
+        }
         $this->childid      = $video['childid'];
     // Figure out the URL
         $this->url = '#';
@@ -74,27 +87,16 @@ class Video {
         global $Category_String;
         $string  = '';
         $string .= 'intid|'.$this->intid            ."\n";
-        if (show_video_covers && file_exists($this->cover_url)) {
-            list($width, $height) = getimagesize($this->coverfile);
-            $hscale = $height / video_img_height;
-            $wscale = $width  / video_img_width;
-            $scale = 1;
-            if (($hscale > 1) || ($wscale > 1))
-                $scale = ($hscale > $wscale) ? $hscale : $wscale;
-            $width  = floor($width / $scale);
-            $height = floor($height / $scale);
-            $string .= 'img|<img width="'.$width.'" height="'.$height.'" src="'.root.'data/video_covers/'.basename($this->coverfile).'" alt="'.t('Missing Cover').'">'."\n";
-        }
-        else
-            $string .= 'img|<img width="'.video_img_width.'" height="'.video_img_height.'" alt="'.t('Missing Cover').'">'."\n";
+        $string .= 'img|<img width="'.$this->cover_scaled_width.'" height="'.$this->cover_scaled_height.'" alt="'.t('Missing Cover');
+        if (show_video_covers && file_exists($this->cover_url))
+            $string .= ' src="'.root.'data/video_covers/'.basename($this->cover_file).'"';
+        $string .= '>'."\n";
         $string .= 'title|<a href="'.$this->url.'">'.$this->title.'</a>'."\n".
                    'playtime|'.nice_length($this->length * 60)."\n";
-
         if (strlen($Category_String[$this->category]))
             $string .= 'category|'.$Category_String[$this->category]."\n";
         else
             $string .= 'category|Uncategorized'."\n";
-
         if ($this->inetref != '00000000')
             $string .= 'imdb|<a href="http://www.imdb.com/Title?'.$this->inetref.'">'.$this->inetref.'</a>'."\n";
         else
@@ -124,7 +126,7 @@ class Video {
                            videometadata.length       = ?,
                            videometadata.showlevel    = ?,
                            videometadata.filename     = ?,
-                           videometadata.coverfile    = ?,
+                           videometadata.cover_file    = ?,
                            videometadata.browse       = ?
                      WHERE videometadata.intid        = ?',
                     $this->plot,
@@ -138,7 +140,7 @@ class Video {
                     $this->length,
                     $this->showlevel,
                     $this->filename,
-                    ( @filesize($this->coverfile) > 0 ? $this->coverfile : 'No Cover' ),
+                    ( @filesize($this->cover_file) > 0 ? $this->cover_file : 'No Cover' ),
                     $this->browse,
                     $this->intid
                     );
