@@ -31,10 +31,10 @@ class Video {
         global $db;
         global $mythvideo_dir;
         $video = $db->query_assoc('SELECT videometadata.*
-                                   FROM videometadata
-                                  WHERE videometadata.intid = ?',
-                                 $intid
-                                 );
+                                     FROM videometadata
+                                    WHERE videometadata.intid = ?',
+                                  $intid
+                                  );
         $this->intid        = $intid;
         $this->plot         = $video['plot'];
         $this->category     = $video['category'];
@@ -50,7 +50,7 @@ class Video {
         $this->cover_file   = $video['coverfile'];
         $this->browse       = $video['browse'];
     // And the artwork URL
-        if ($this->cover_file != 'No Cover') {
+        if ($this->cover_file != 'No Cover' && file_exists($this->cover_file) ) {
             $this->cover_url = 'data/video_covers/'.substr($this->cover_file, strlen(setting('VideoArtworkDir', hostname)));
             list($width, $height) = getimagesize($this->cover_file);
             $wscale = video_img_width / $width;
