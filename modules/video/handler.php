@@ -114,7 +114,8 @@
     $PATH_TREE = array();
     $dirs = explode(':', setting('VideoStartupDir', hostname));
     $sh = $db->query('SELECT DISTINCT videometadata.filename
-                        FROM videometadata');
+                        FROM videometadata
+                    ORDER BY videometadata.filename');
     while ($file = $sh->fetch_col()) {
         $file = dirname($file);
     // Figure out the base...
