@@ -75,6 +75,8 @@
     visningsdato
 "Airtime"
     Visningsdato
+"Album"
+"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -90,6 +92,7 @@
 "All HDTV"
     Al HDTV
 "All Hosts"
+"All Music"
 "All recordings"
     Alle optagelser
 "All Songs"
@@ -109,11 +112,14 @@
 "Are you sure you want to delete the following show?"
     Er du sikker på at du vil slette programmet?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist"
+"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
+"auto-expire"
 "Auto-expire recordings"
     Auto-udløb optagelser
 "Auto-flag commercials"
@@ -195,6 +201,8 @@
 "Commercials Flagged"
 "commfree"
     Reklamefri
+"Configure Channels"
+"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Konflikter
@@ -202,6 +210,7 @@
 "contrast"
     Kontrast
 "Count"
+"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -252,8 +261,10 @@
 "Direct Download"
 "Directed by"
     Instrueret af
+"director"
 "Display"
     Vis
+"Displaying"
 "Don't Record"
     Optag ikke
 "Don't record this program."
@@ -268,12 +279,15 @@
     Dubletkontrol metode
 "Duplicates"
     Dubletter
+"Duration"
 "Earlier"
 "Edit"
     Ændre
 "Edit existing group"
+"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Rediger MythWeb- og nogle MythTV-indstillinger
+"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "End"
@@ -299,7 +313,9 @@
     Producer
 "File Size"
     filstørrelse
+"file size"
 "Filter"
+"Filtered"
 "Find Date & Time Options"
     Find dato og tid opsætning
 "Find Day"
@@ -339,7 +355,9 @@
     %H:%M
 "Genre"
     Genre
+"Genre (filtered)"
 "Genres"
+"Global"
 "Go"
     Gå
 "Google"
@@ -351,8 +369,11 @@
     Guide opsætning
 "Handy Predefined Searches"
 "handy: overview"
+"has bookmark"
 "has Bookmark"
+"has commflag"
 "Has Cutlist"
+"has cutlist"
 "HD"
 "HDTV"
     HDTV
@@ -372,6 +393,7 @@
     Luftfugtighed
 "IMDB"
     IMDB
+"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Ikke aktiv
@@ -383,6 +405,7 @@
 "info:forget old"
 "info:never record"
 "Insert"
+"is editing"
 "Jump"
     Gå
 "Jump Points"
@@ -465,6 +488,10 @@
 "MythMusic on the web."
     MythMusic på www
 "MythTV"
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
@@ -480,6 +507,8 @@
 "MythWeb Global Defaults"
     MythWeb Globale standarder
 "MythWeb Session"
+"MythWeb session settings"
+"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -497,8 +526,11 @@
 "New Search"
 "New Titles, Premieres"
     Nye titler, premierer
+"Next"
+"No"
 "NO DATA"
     INGEN DATA
+"No Frontends allow remote control."
 "No matches found"
     Ingen match fundet
 "No matching programs found."
@@ -506,6 +538,7 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Ingen optagelser er planlagt
+"No Tracks Available"
 "No. of recordings to keep"
     Gem antal optagelser
 "Non-Music Specials"
@@ -568,8 +601,10 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mulige konfligter med denne udsendelse
@@ -584,6 +619,8 @@
     Præsenteret af
 "Pressure"
     Lufttryk
+"preview"
+"Previous"
 "Previous recordings"
     Tidligere optagelser
 "Produced by"
@@ -610,6 +647,7 @@
 "Random Type"
 "Rating"
     Karakterer
+"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -728,6 +766,7 @@
     Nulstil
 "Retry"
 "Return to Statistics Page"
+"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -783,12 +822,15 @@
 "settings"
     opsætning
 "Settings Table"
+"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
+"settings: overview"
 "Shift"
 "Show"
     Program
+"Show descriptions on new line"
 "Show group"
     Vis gruppe
 "Show pixmaps"
@@ -802,6 +844,7 @@
 "Shows"
 "SI Units"
     SI enheder
+"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -836,6 +879,7 @@
 "Sub and Desc (Empty matches)"
     Undertitel og beskrivelse
 "Submit Search"
+"subtitle"
 "Subtitle"
     Undertitel
 "Subtitle and Description"
@@ -874,6 +918,7 @@
 "Tomorrow"
     I morgen
 "Too Many"
+"Top"
 "Top $1"
     Top $1
 "Top Played Songs"
@@ -884,6 +929,7 @@
     Total tid
 "Total Time:  %s"
 "Track #%s from the album '%s'"
+"Track Name"
 "Transcode"
 "transcoder"
     trankoder
@@ -901,12 +947,14 @@
     type
 "Type"
     Type
+"Unfiltered"
 "Unknown"
     Ukendt
 "Unknown Program."
     Ukendt program
 "Unknown Recording Schedule."
     Ukendt planlagt optagelse
+"Unreachable"
 "Up"
 "Upcoming Recordings"
     Fremtidige optagelser
@@ -935,6 +983,7 @@
     Værdi
 "Video"
     Video
+"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1008,6 +1057,7 @@
     Skrevet af
 "xmltvid"
 "Year"
+"year"
 "Yes"
     Ja
 "Yesterday"

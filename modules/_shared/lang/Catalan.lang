@@ -78,6 +78,8 @@
     emissió
 "Airtime"
     Horari
+"Album"
+"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -93,6 +95,7 @@
 "All HDTV"
     Tot HDTV
 "All Hosts"
+"All Music"
 "All recordings"
     Tots els enregistraments
 "All Songs"
@@ -112,11 +115,14 @@
 "Are you sure you want to delete the following show?"
     Està segur d'eliminar el següent programa?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist"
+"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
+"auto-expire"
 "Auto-expire recordings"
     Autoexpirar enregistraments
 "Auto-flag commercials"
@@ -197,6 +203,8 @@
 "Commercials Flagged"
 "commfree"
     sense anuncis
+"Configure Channels"
+"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Conflictes
@@ -206,6 +214,7 @@
     contraste
 "Count"
     Comptar
+"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -257,8 +266,10 @@
 "Direct Download"
 "Directed by"
     Dirigido por
+"director"
 "Display"
     Mostrar
+"Displaying"
 "Don't Record"
     No enregistrat
 "Don't record this program."
@@ -273,12 +284,15 @@
     Mètode de comprovació de duplicats
 "Duplicates"
     Duplicats
+"Duration"
 "Earlier"
 "Edit"
     Editar
 "Edit existing group"
+"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Editar ajustos de MythWeb i alguns de MythTV
+"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "End"
@@ -304,7 +318,9 @@
     Productor exec.
 "File Size"
     mida de l'arxiu
+"file size"
 "Filter"
+"Filtered"
 "Find Date & Time Options"
     Opcions de recerca per data i hora
 "Find Day"
@@ -344,7 +360,9 @@
     %I:%M %p
 "Genre"
     Genere
+"Genre (filtered)"
 "Genres"
+"Global"
 "Go"
     Anar
 "Google"
@@ -361,8 +379,11 @@
     Recerques predefinides útils
 "handy: overview"
     útils: resúm
+"has bookmark"
 "has Bookmark"
+"has commflag"
 "Has Cutlist"
+"has cutlist"
 "HD"
 "HDTV"
     HDTV
@@ -384,6 +405,7 @@
     Humitat
 "IMDB"
     IMDB
+"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Inactiu
@@ -395,6 +417,7 @@
 "info:forget old"
 "info:never record"
 "Insert"
+"is editing"
 "Jump"
     Saltar
 "Jump Points"
@@ -483,6 +506,10 @@
 "MythMusic on the web."
     MythMusic en el web
 "MythTV"
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
     Estat MythTV
 "MythVideo Artwork Dir"
@@ -499,6 +526,8 @@
 "MythWeb Global Defaults"
     MythWeb globals per defecte
 "MythWeb Session"
+"MythWeb session settings"
+"MythWeb Session Settings"
 "MythWeb Skin"
     Pell MythWeb
 "MythWeb Template"
@@ -518,14 +547,18 @@
 "New Search"
 "New Titles, Premieres"
     Nous títols, estrenes
+"Next"
+"No"
 "NO DATA"
     SENSE DADES
+"No Frontends allow remote control."
 "No matches found"
 "No matching programs found."
     No hi ha programes coincidents
 "No Public Playlists"
 "No recording schedules have been defined."
     No s'han definit enregistraments programats
+"No Tracks Available"
 "No. of recordings to keep"
     Nº d'enregistraments a conservar
 "Non-Music Specials"
@@ -593,8 +626,10 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     Possibles conflictes amb aquest programa
@@ -610,6 +645,8 @@
     Presentat per
 "Pressure"
     Pressió
+"preview"
+"Previous"
 "Previous recordings"
     Enregistraments anteriors
 "Produced by"
@@ -637,6 +674,7 @@
 "Random Type"
 "Rating"
     Puntuació
+"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -756,6 +794,7 @@
     Reiniciar
 "Retry"
 "Return to Statistics Page"
+"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
     Fileres a mostrar entre informació
@@ -814,12 +853,15 @@
     ajustos
 "Settings Table"
     Taula ajustos
+"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
+"settings: overview"
 "Shift"
 "Show"
     Programa
+"Show descriptions on new line"
 "Show group"
     Mostrar grup
 "Show pixmaps"
@@ -834,6 +876,7 @@
 "Shows"
 "SI Units"
     Unitats SI
+"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -870,6 +913,7 @@
 "Sub and Desc (Empty matches)"
     Sub i Desc (Coincidències buides)
 "Submit Search"
+"subtitle"
 "Subtitle"
     Subtitol
 "Subtitle and Description"
@@ -909,6 +953,7 @@
 "Tomorrow"
     Demà
 "Too Many"
+"Top"
 "Top $1"
     Primers $1
 "Top Played Songs"
@@ -919,6 +964,7 @@
     Temps Total
 "Total Time:  %s"
 "Track #%s from the album '%s'"
+"Track Name"
 "Transcode"
 "transcoder"
     recodificador
@@ -936,12 +982,14 @@
     tipus
 "Type"
     Tipus
+"Unfiltered"
 "Unknown"
     Desconegut
 "Unknown Program."
     Programa desconegut
 "Unknown Recording Schedule."
     Programació desconeguda
+"Unreachable"
 "Up"
 "Upcoming Recordings"
     Propers enregistraments
@@ -970,6 +1018,7 @@
     Valor
 "Video"
     Vídeo
+"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1043,6 +1092,7 @@
     Escrit por
 "xmltvid"
 "Year"
+"year"
 "Yes"
     Si
 "Yesterday"

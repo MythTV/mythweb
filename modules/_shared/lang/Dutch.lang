@@ -72,6 +72,8 @@
     uitzenddatum
 "Airtime"
     Uitzendtijd
+"Album"
+"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -86,6 +88,7 @@
 "All HDTV"
     Alle HDTV
 "All Hosts"
+"All Music"
 "All recordings"
     Alle opnames
 "All Songs"
@@ -105,11 +108,14 @@
 "Are you sure you want to delete the following show?"
     Bent U zeker van het verwijderen van volgend programma?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist"
+"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
+"auto-expire"
 "Auto-expire recordings"
     Opnames Autom. Vervallen
 "Auto-flag commercials"
@@ -188,6 +194,8 @@
 "Commercials Flagged"
 "commfree"
     reclamevrij
+"Configure Channels"
+"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Conflicten
@@ -196,6 +204,7 @@
 "contrast"
     contrast
 "Count"
+"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -246,8 +255,10 @@
 "Direct Download"
 "Directed by"
     Regisseur
+"director"
 "Display"
     Tonen
+"Displaying"
 "Don't Record"
     Niet Opnemen
 "Don't record this program."
@@ -262,12 +273,15 @@
     Testmethode herh.
 "Duplicates"
     Dubbels
+"Duration"
 "Earlier"
 "Edit"
     Bewerken
 "Edit existing group"
+"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
+"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "End"
@@ -293,7 +307,9 @@
     Uitv. Producent
 "File Size"
     bestandsgrootte
+"file size"
 "Filter"
+"Filtered"
 "Find Date & Time Options"
     Datum &amp; tijd zoeken, opties
 "Find Day"
@@ -332,7 +348,9 @@
     %H:%M
 "Genre"
     Genre
+"Genre (filtered)"
 "Genres"
+"Global"
 "Go"
     Doorgaan
 "Google"
@@ -348,8 +366,11 @@
     Handige voorgeprogrammeerde zoekopdrachten
 "handy: overview"
     Deze pagina bevat handige voorgeprogrammeerde complexe zoekopdrachten
+"has bookmark"
 "has Bookmark"
+"has commflag"
 "Has Cutlist"
+"has cutlist"
 "HD"
 "HDTV"
     HDTV
@@ -370,6 +391,7 @@
     Vochtigheid
 "IMDB"
     IMDB
+"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Niet actief
@@ -381,6 +403,7 @@
 "info:forget old"
 "info:never record"
 "Insert"
+"is editing"
 "Jump"
     Ga
 "Jump Points"
@@ -463,6 +486,10 @@
 "MythMusic on the web."
     Muziek
 "MythTV"
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
     MythTV status
 "MythVideo Artwork Dir"
@@ -476,6 +503,8 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Session"
+"MythWeb session settings"
+"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -492,8 +521,11 @@
 "New Search"
 "New Titles, Premieres"
     Nieuwe Titels, Premieres
+"Next"
+"No"
 "NO DATA"
     GEEN DATA
+"No Frontends allow remote control."
 "No matches found"
     Geen programma's gevonden
 "No matching programs found."
@@ -501,6 +533,7 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
+"No Tracks Available"
 "No. of recordings to keep"
     Aantal opnames bewaren
 "Non-Music Specials"
@@ -559,8 +592,10 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mogelijk conflict met dit programma
@@ -574,6 +609,8 @@
     Presentator
 "Pressure"
     Luchtdruk
+"preview"
+"Previous"
 "Previous recordings"
     Eerdere opnames
 "Produced by"
@@ -601,6 +638,7 @@
 "Random Type"
 "Rating"
     Beoordeling
+"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -719,6 +757,7 @@
     Herstellen
 "Retry"
 "Return to Statistics Page"
+"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -774,12 +813,15 @@
 "settings"
     instellingen
 "Settings Table"
+"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
+"settings: overview"
 "Shift"
 "Show"
     Toon
+"Show descriptions on new line"
 "Show group"
     Groep tonen
 "Show pixmaps"
@@ -793,6 +835,7 @@
 "Shows"
 "SI Units"
     SI eenheden
+"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -827,6 +870,7 @@
 "Sub and Desc (Empty matches)"
     Dubbels en Beschrijving
 "Submit Search"
+"subtitle"
 "Subtitle"
     Aflevering
 "Subtitle and Description"
@@ -865,6 +909,7 @@
 "Tomorrow"
     Morgen
 "Too Many"
+"Top"
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -873,6 +918,7 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
+"Track Name"
 "Transcode"
 "transcoder"
     transcoder
@@ -891,12 +937,14 @@
     type
 "Type"
     Type
+"Unfiltered"
 "Unknown"
     Onbekend
 "Unknown Program."
     Onbekend Programma.
 "Unknown Recording Schedule."
     Onbekend Opnameschema
+"Unreachable"
 "Up"
 "Upcoming Recordings"
     Geplande Opnames
@@ -924,6 +972,7 @@
 "Value"
 "Video"
     Films
+"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -996,6 +1045,7 @@
 "xmltvid"
     xmltvid
 "Year"
+"year"
 "Yes"
     Ja
 "Yesterday"

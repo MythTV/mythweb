@@ -94,6 +94,12 @@
         <div class="-title">
             <?php echo t('Frontends') ?>:
         </div>
+<?php
+        if (empty($Frontends)) {
+            echo t('No Frontends allow remote control.');
+        }
+        else {
+?>
         <div class="-modules">
             <ul><?php
                 foreach (array_keys($Frontends) as $host) {
@@ -105,6 +111,9 @@
                 }
                 ?></ul>
         </div>
+<?php
+        }
+?>
         </td>
     <td class="-sections">
         <ul><?php
