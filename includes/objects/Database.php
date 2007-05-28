@@ -172,6 +172,8 @@ class Database {
  * Execute any destruct handler functions.
 /**/
     function __destruct() {
+        global $db;
+        $db = $this;
         if (is_array($this->destruct_handlers)) {
             foreach ($this->destruct_handlers as $call) {
                 if (is_array($call['p']))
