@@ -26,8 +26,10 @@
 <SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT">
 <!--Hide script from old browsers
 
-    function newWindow(newContent) {
-        winContent = window.open(newContent, 'nextWin', 'right=0, top=20,width=350,height=440, toolbar=no,scrollbars=no, resizable=yes');
+    function newWindow(id) {
+        $('window_title').innerHTML = '<?php echo t('Editing '); ?> ' + $(id+'-title').childNodes[0].innerHTML;
+        $('window_content').innerHTML = '<iframe src="<?php echo root ?>video/edit?intid='+id+'">';
+        remove_class('window', 'hidden');
     }
 
     function imdb_lookup(id, title) {
@@ -376,7 +378,7 @@
         <div id="<?php echo $video->intid; ?>_playtime">           <?php echo nice_length($video->length * 60); ?></div>
         <div id="<?php echo $video->intid; ?>_imdb">               <?php if ($video->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($video->inetref); ?>"><?php echo $video->inetref ?></a><?php } ?></div>
         <div class="command">
-            <span class="commands"><a href="javascript:newWindow('<?php echo root ?>video/edit?intid=<?php echo $video->intid ?>')" ><?php echo t('Edit') ?></a></span>
+            <span class="commands"><a href="javascript:newWindow('<?php echo $video->intid ?>')" ><?php echo t('Edit') ?></a></span>
             <span class="commands"><a href="javascript:imdb_lookup('<?php echo $video->intid ?>','<?php echo addslashes($video->title); ?>')">IMDB</a></span>
         </div>
     </div>

@@ -47,13 +47,24 @@
 
     #window {
         position:           fixed;
-        left:               40%;
+        left:               35%;
+        right:              35%;
+        width:              30%;
         top:                35%;
         background-color:   green;
-        width:              20%;
-        padding:            1em;
+        padding-top:        1em;
         z-index:            10;
         border:             2px solid gray;
+    }
+
+    #window_content a {
+        padding-right:      1em;
+        padding-left:       1em;
+    }
+
+    #window iframe {
+        width:              100%;
+        border:             0px;
     }
 
     #window_title {

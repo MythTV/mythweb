@@ -87,7 +87,7 @@ class Video {
         global $Category_String;
         $string  = '';
         $string .= 'intid|'.$this->intid            ."\n";
-        $string .= 'img|<img width="'.$this->cover_scaled_width.'" height="'.$this->cover_scaled_height.'" alt="'.t('Missing Cover');
+        $string .= 'img|<img width="'.$this->cover_scaled_width.'" height="'.$this->cover_scaled_height.'" alt="'.t('Missing Cover').'"';
         if (show_video_covers && file_exists($this->cover_url))
             $string .= ' src="'.root.'data/video_covers/'.basename($this->cover_file).'"';
         $string .= '>'."\n";
@@ -126,7 +126,7 @@ class Video {
                            videometadata.length       = ?,
                            videometadata.showlevel    = ?,
                            videometadata.filename     = ?,
-                           videometadata.cover_file    = ?,
+                           videometadata.coverfile    = ?,
                            videometadata.browse       = ?
                      WHERE videometadata.intid        = ?',
                     $this->plot,
@@ -149,12 +149,13 @@ class Video {
                           WHERE videometadatagenre.idvideo = ?',
                     $this->intid
                     );
-        foreach ($this->genres as $genre)
-            $db->query('INSERT INTO videometadatagenre ( idvideo, idgenre )
-                                                VALUES (       ?,       ? )',
-                       $this->intid,
-                       $genre
-                       );
+        if (count($this->genres) > 0)
+            foreach ($this->genres as $genre)
+                $db->query('INSERT INTO videometadatagenre ( idvideo, idgenre )
+                                                    VALUES (       ?,       ? )',
+                           $this->intid,
+                           $genre
+                           );
 
     }
 }
