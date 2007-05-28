@@ -42,7 +42,9 @@
     define('hostname', empty($_SERVER['hostname']) ? trim(`hostname`) : $_SERVER['hostname']);
 
 // Define the error email, or set it to a null string if there isn't a valid one
-    define('error_email', strstr($_SERVER['error_email'], '@') ? $_SERVER['error_email'] : '');
+    define('error_email', array_key_exists('error_email', $_SERVER) && strstr($_SERVER['error_email'], '@')
+                          ? $_SERVER['error_email']
+                          : '');
 
 // Load the generic utilities so we have access to stuff like DEBUG()
     require_once 'includes/utils.php';
@@ -97,7 +99,10 @@
                                 : (array_key_exists('PATH_INFO', $_ENV)
                                    && $_ENV['PATH_INFO']
                                     ? $_ENV['PATH_INFO']
-                                    : $_GET['PATH_INFO']
+                                    : (array_key_exists('PATH_INFO', $_GET)
+                                       ? $_GET['PATH_INFO']
+                                       : ''
+                                      )
                                   )
                          ))
                    );
@@ -183,37 +188,39 @@
 // Connect to the backend and load some more handy utilities
     require_once "includes/mythbackend.php";
 
-// The browser is MythPhone.
-#    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MythPhone') !== false) {
-#        define('Theme', 'vxml');
-#    }
+// Detect mobile users
+    require_once 'includes/mobile.php';
 
+// Detect different types of browsers and set the theme accordingly.
+    if (isMobileUser()) {
+    // Browser is mobile but does it accept HTML? If not, use the WML theme.
+        $_SESSION['tmpl'] = browserAcceptsMediaType(array('text/html', '\*/\*'))
+                            ? 'wap'
+                            : 'wml';
+    // Make sure the skin is set to the appropriate phone-template type
+        $_SESSION['skin'] = $_SESSION['tmpl'];
+        define('skin', $_SESSION['skin']);
+    }
 // Reset the template?
-    if ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
+    elseif ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
         $_SESSION['tmpl'] = 'default';
-// If the requested template is missing the welcome file, look for other options
-    else if (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
-    // Detect different types of browsers and set the theme accordingly.
-        require_once "includes/mobile.php";
-        if (isMobileUser()) {
-        // Browser is mobile but does it accept HTML? If not, use the WML theme.
-            if (browserAcceptsMediaType(array('text/html', '\*/\*')))
-                 $_SESSION['tmpl'] = 'wap';
-            else
-                 $_SESSION['tmpl'] = 'wml';
-        // Make sure the skin is set to the appropriate phone-template type
-        /** @todo eventually, we'll put all of this in the skins section */
-            $_SESSION['skin'] = $_SESSION['tmpl'];
-            define('skin', $_SESSION['skin']);
-        }
-    // Otherwise set the default theme.
-        else {
-             $_SESSION['tmpl'] = 'default';
-        }
+// Deal with people who use the same login for mobile and non-mobile, and might
+// have a mobile template cached.
+    elseif (in_array($_SESSION['tmpl'], array('wap', 'wml'))) {
+        $_SESSION['tmpl'] = 'default';
+    }
+// If the requested template is missing the welcome file, use the default template
+    elseif (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
+        $_SESSION['tmpl'] = 'default';
     }
 
+// Deal with people who use the same login for mobile and non-mobile, and might
+// have a mobile skin cached.
+    if (in_array($_SESSION['skin'], array('wap', 'wml'))) {
+        $_SESSION['skin'] = 'default';
+    }
 // Is there a preferred skin?
-    if (file_exists('skins/'.$_SESSION['skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
+    elseif (file_exists('skins/'.$_SESSION['skin'].'/img/') && !$_REQUEST['RESET_SKIN']) {
         define('skin', $_SESSION['skin']);
     }
     else {
