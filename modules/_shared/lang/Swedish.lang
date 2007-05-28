@@ -351,6 +351,7 @@
     Ändra MythWeb och några MythTV-inställningar
 "Edit settings for: $1"
     Ändra insällningar för: $1
+"Editing "
 "End"
 "End Late"
     Sluta senare
@@ -400,7 +401,6 @@
 "First recording"
     Första inspelning
 "Flag Commercials"
-"Flash Video"
 "Force HTTP for streams"
     Tvinga HTTP för strömmar
 "Force HTTP port for streams"

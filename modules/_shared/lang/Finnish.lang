@@ -266,6 +266,7 @@
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
 "Edit settings for: $1"
+"Editing "
 "End"
 "End Late"
     Lopeta Myöhemmin
@@ -303,7 +304,6 @@
 "Finished"
 "First recording"
 "Flag Commercials"
-"Flash Video"
 "Force HTTP for streams"
 "Force HTTP port for streams"
 "Forced"

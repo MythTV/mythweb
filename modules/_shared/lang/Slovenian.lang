@@ -236,6 +236,7 @@
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
 "Edit settings for: $1"
+"Editing "
 "End"
 "End Late"
     Končaj kasneje
@@ -271,7 +272,6 @@
 "Finished"
 "First recording"
 "Flag Commercials"
-"Flash Video"
 "Force HTTP for streams"
 "Force HTTP port for streams"
 "Forced"

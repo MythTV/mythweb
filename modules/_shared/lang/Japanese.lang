@@ -269,6 +269,7 @@
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
 "Edit settings for: $1"
+"Editing "
 "End"
 "End Late"
     録画延長
@@ -311,7 +312,6 @@
 "First recording"
     最初の録画
 "Flag Commercials"
-"Flash Video"
 "Force HTTP for streams"
 "Force HTTP port for streams"
 "Forced"

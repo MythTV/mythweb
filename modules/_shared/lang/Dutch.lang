@@ -269,6 +269,7 @@
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
 "Edit settings for: $1"
+"Editing "
 "End"
 "End Late"
     Later stoppen
@@ -310,7 +311,6 @@
 "Finished"
 "First recording"
 "Flag Commercials"
-"Flash Video"
 "Force HTTP for streams"
 "Force HTTP port for streams"
 "Forced"

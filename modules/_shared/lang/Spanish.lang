@@ -280,6 +280,7 @@
 "Edit MythWeb and some MythTV settings."
     Editar ajustes de MythWeb y algunos de MythTV
 "Edit settings for: $1"
+"Editing "
 "End"
 "End Late"
     Terminar más tarde
@@ -322,7 +323,6 @@
 "First recording"
     Primera grabación
 "Flag Commercials"
-"Flash Video"
 "Force HTTP for streams"
 "Force HTTP port for streams"
 "Forced"
