@@ -53,11 +53,19 @@ header("Content-Type: text/html; charset=utf-8");
         $Video->year        = $_REQUEST['year'];
         $Video->userrating  = $_REQUEST['userrating'];
         $Video->length      = $_REQUEST['length'];
+        $Video->showlevel   = $_REQUEST['showlevel'];
+        $Video->browse      = $_REQUEST['browse'];
+        if (is_uploaded_file($_FILES['coverfile']['tmp_name'])) {
+            $filename = setting('VideoArtworkDir', hostname).'/id-'.$_REQUEST['intid'].'.jpg';
+            move_uploaded_file($_FILES['coverfile']['tmp_name'], $filename);
+            $Video->cover_file = $filename;
+        }
         $Video->save();
         ?>
         <SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT">
         <!--Hide script from old browsers
             parent.update_video('<?php echo $_REQUEST['intid']; ?>');
+            parent.add_class('window', 'hidden');
         //Stop hiding script from old browsers -->
         </SCRIPT>
         <?php
@@ -68,7 +76,7 @@ header("Content-Type: text/html; charset=utf-8");
 </head>
 <body>
 
-<form method="post" action="<?php echo root ?>video/edit">
+<form method="post" action="<?php echo root ?>video/edit" enctype="multipart/form-data">
 Title<br />
 <input name="title" type="text" value="<?php echo $Video->title; ?>"><br /><br />
 Director<br />
@@ -77,7 +85,7 @@ Plot<br />
 <textarea name="plot" rows="5" cols="30" wrap="VIRTUAL"><?php echo $Video->plot; ?></textarea><br /><br />
 Category<br />
 <select name="category">
-<option <?php if ($Video->category == 0) echo ' SELECTED' ?> value="0">Uncategorized</option>
+<option <?php if ($Video->category == 0) echo ' SELECTED'; ?> value="0">Uncategorized</option>
 <?php
     $sh = $db->query('SELECT * FROM videocategory');
     while ($cat_data = $sh->fetch_assoc()) {
@@ -93,12 +101,26 @@ Rating<br />
 IMDB<br />
 <input name="inetref" type="text" value="<?php echo $Video->inetref; ?>"><br /><br />
 Year<br />
-<input name="year" type="text" size=4 value="<?php echo $Video->year; ?>"><br /><br />
-Userrating<br />
-<input name="userrating" type="text" size=3 value="<?php echo $Video->userrating; ?>"><br /><br />
+<input name="year" type="text" size="4" value="<?php echo $Video->year; ?>"><br /><br />
+User Rating<br />
+<input name="userrating" type="text" size="3" value="<?php echo $Video->userrating; ?>"><br /><br />
 Length in minutes<br />
-<input name="length" type="text" size=3 value="<?php echo $Video->length; ?>"><br />
-<input type="hidden" name="intid" value="<?php echo $_REQUEST['intid']; ?>"><br />
+<input name="length" type="text" size="3" value="<?php echo $Video->length; ?>"><br /><br />
+Browsable<br />
+<select name="browse">
+ <option value="0" <?php if ($Video->browse == 0) echo ' SELECTED'; ?>>No</option>
+ <option value="1" <?php if ($Video->browse == 1) echo ' SELECTED'; ?>>Yes</option>
+</select><br /><br />
+Parental Level<br />
+<select name-"showlevel">
+ <option value="1" <?php if ($Video->showlevel == 1) echo ' SELECTED'; ?>>1 - Lowest</option>
+ <option value="2" <?php if ($Video->showlevel == 2) echo ' SELECTED'; ?>>2</option>
+ <option value="3" <?php if ($Video->showlevel == 3) echo ' SELECTED'; ?>>3</option>
+ <option value="4" <?php if ($Video->showlevel == 4) echo ' SELECTED'; ?>>4 - Highest</option>
+</select><br /><br />
+Cover Image<br />
+<input type="file" name="coverfile"><br /><br />
+<input type="hidden" name="intid" value="<?php echo $_REQUEST['intid']; ?>">
 <input class="submit" type="submit" name="submit" value="submit">
 
 </form>

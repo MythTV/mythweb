@@ -65,6 +65,7 @@
     #window iframe {
         width:              100%;
         border:             0px;
+        height:             250px;
     }
 
     #window_title {
