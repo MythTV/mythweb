@@ -147,6 +147,8 @@
         if (rowcount[section] == 0) {
             toggle_vis('breakrow_' + section, 'display');
         }
+// UGLY! but works well enough...
+    <?php if (count($Groups) > 1) { ?>
     // Change the recording groups dropdown on the fly.
         if (file.recgroup) {
         // Decrement the number of episodes for this group
@@ -162,6 +164,7 @@
                 $('Group ' + file.recgroup).innerHTML = file.recgroup + group_text;
             }
         }
+    <?php } ?>
     // Change the recordings dropdown menu on the fly
         if (episode_count == 0) {
             toggle_vis('Title ' + file.title, 'display');
