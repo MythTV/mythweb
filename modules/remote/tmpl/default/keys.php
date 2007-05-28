@@ -88,8 +88,11 @@
                                   asynchronous: false
                                  });
     // Handle the response
-        //alert(r.transport.responseText);
-        //var results = r.transport.responseText.split("\n");
+        var results = r.transport.responseText.split("\n");
+        if (results[0].match(/^err:/)) {
+            alert(results[0].substr(4));
+            return;
+        }
     // Reset "shift" to off
         if (shift)
             handle_shift();

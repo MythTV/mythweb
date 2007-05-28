@@ -87,6 +87,9 @@
                     unset($_SESSION['remote']['frontends'][$host]);
             }
         }
+        else {
+            echo "err:No frontends have been selected.\n";
+        }
         exit;
     }
 
