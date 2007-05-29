@@ -47,25 +47,22 @@ $Known_Exts = array('ogm');
 // Now scan for any new ones
     $paths = explode(':', setting('VideoStartupDir', hostname));
     foreach ($paths as $path) {
-        exec("find $path -type f", $files, $retval);
+        exec("find -L $path -type f", $files, $retval);
         foreach ($files as $file) {
-        // If we want to restrict to videos or not
-            if (setting('VideoListUnknownFiletypes', hostname) == 0) {
-                if ( in_array($Known_Exts, strtolower(pathinfo($file, PATHINFO_EXTENSION))) === FALSE
-                     && strpos(`file -ib $file`, 'video')                                   === FALSE )
-                    continue;
-            }
+            if ( in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $Known_Exts) === FALSE
+                 && strpos(`file -ib $file`, 'video')                                   === FALSE )
+                continue;
         // Check readable status
             if (!is_readable($file))
                 continue;
             if ($db->query_col('SELECT COUNT(1)
                                   FROM videometadata
                                  WHERE videometadata.filename = ?', $file) == 0) {
-                $title = basename($file);
-                $title = substr($title, 0, stripos($title, '.'));
+                $filename   = basename($file);
+                $title      = substr($filename, 0, stripos($filename, '.'));
                 $db->query('INSERT INTO videometadata ( title, filename, showlevel, browse )
                                                VALUES (     ?,        ?,         1,      ? )',
-                           $title,
+                           strlen($title) > 0 ? $title : $filename,
                            $file,
                            setting('VideoNewBrowsable', hostname)
                            );

@@ -292,6 +292,7 @@
 
 // We currently do require a reload after a scan event
     function scan() {
+        ajax_add_request();
         var myAjax = new Ajax.Request('<?php echo root; ?>video/scan',
     	                             {
     	                             	method:     'get',
