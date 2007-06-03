@@ -20,12 +20,12 @@
 
 # Shutdown cleanup, of various types
     $SIG{'TERM'} = \&shutdown_handler;
+    $SIG{'PIPE'} = \&shutdown_handler;
     END {
         shutdown_handler();
     }
     sub shutdown_handler {
-        kill(9, $ffmpeg_pid) if ($ffmpeg_pid);
-        usleep(100000) while (wait > 0);
+        kill(1, $ffmpeg_pid) if ($ffmpeg_pid);
     }
 
 # Which show are we streaming?
