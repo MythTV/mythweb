@@ -188,7 +188,10 @@ class Program {
         }
     // SQL data
         else {
-            $this->airdate                 = _or($data['originalairdate'], $data['airdate']);
+            if (in_array($data['airdate'], array('0000-00-00', '0000', '1900-01-01')))
+                $this->airdate = $data['originalairdate'];
+            else
+                $this->airdate = $data['airdate'];
             $this->category                = _or($data['category'],        t('Unknown'));
             $this->category_type           = _or($data['category_type'],   t('Unknown'));
             $this->chanid                  = $data['chanid'];
@@ -245,7 +248,7 @@ class Program {
             $this->recording   = ($this->recstatus == 'WillRecord'); # scheduled to record?
         }
     // No longer a null column, so check for blank entries
-        if (!$this->has_airdate || in_array($this->airdate, array('0000-00-00', '0000', '1900-01-01')))
+        if (in_array($this->airdate, array('0000-00-00', '0000', '1900-01-01')))
             $this->airdate = NULL;
     // Do we have a chanid?  Load some info about it
         if ($this->chanid && !isset($this->channel)) {
@@ -288,7 +291,8 @@ class Program {
             }
         }
     // Special case for the original airdate, which the backend seems to misplace
-        $this->airdate = $prog->airdate;
+        if ($prog->has_airdate || !in_array($prog->airdate, array('0000-00-00', '0000', '1900-01-01')))
+            $this->airdate = $prog->airdate;
     // update fancy description in case a part of it changed
         $this->update_fancy_desc();
     }
