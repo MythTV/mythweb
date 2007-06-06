@@ -55,10 +55,9 @@
 
 # Find the local file
     my $filename;
-       $sh = $dbh->prepare('SELECT dirname
-                              FROM storagegroup
-                             WHERE hostname = ?');
-    $sh->execute(hostname);
+       $sh = $dbh->prepare('SELECT DISTINCT dirname
+                              FROM storagegroup');
+    $sh->execute();
     while (my ($video_dir) = $sh->fetchrow_array()) {
         next unless (-e "$video_dir/$basename");
         $filename = "$video_dir/$basename";
