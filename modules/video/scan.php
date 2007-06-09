@@ -50,7 +50,7 @@ $Known_Exts = array('ogm');
         exec("find -L $path -type f", $files, $retval);
         foreach ($files as $file) {
             if ( in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $Known_Exts) === FALSE
-                 && strpos(`file -ib $file`, 'video')                                   === FALSE )
+                 && strpos(`file -ib "$file"`, 'video')                                 === FALSE )
                 continue;
         // Check readable status
             if (!is_readable($file))
