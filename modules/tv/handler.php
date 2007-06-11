@@ -38,8 +38,8 @@
         load_tv_categories(modules_path.'/_shared/lang/English.cat');
 
 // Two categories that don't need regex matches, but do need translation
-    $Categories['Unknown'] = array(t('Unknown'));
-    $Categories['movie']   = array(t('movie'));
+//    $Categories['Unknown'] = array(t('Unknown'));
+//    $Categories['movie']   = array(t('movie'));
 
 // Don't forget to sort
     function category_name_sort($a, $b) {
