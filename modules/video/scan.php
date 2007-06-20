@@ -59,7 +59,7 @@ $Known_Exts = array('ogm');
                                   FROM videometadata
                                  WHERE videometadata.filename = ?', $file) == 0) {
                 $filename   = basename($file);
-                $title      = substr($filename, 0, stripos($filename, '.'));
+                $title      = filenametotitle($filename);
                 $db->query('INSERT INTO videometadata ( title, filename, showlevel, browse )
                                                VALUES (     ?,        ?,         1,      ? )',
                            strlen($title) > 0 ? $title : $filename,
@@ -69,3 +69,45 @@ $Known_Exts = array('ogm');
             }
         }
     }
+
+    // Converts the filename to the title and cleans it up a little
+    // This is a direct port of the C++ code from mythvideo
+    function filenametotitle($filename) {
+
+        $title = substr($filename, 0, strripos($filename, '.'));
+
+        $title = str_replace('_', ' ', $title);
+        $title = str_replace('%20', ' ', $title);
+        $title = str_replace('.', ' ', $title);
+
+        $title = eatbraces($title, '[', ']');
+        $title = eatbraces($title, '(', ')');
+        $title = eatbraces($title, '{', '}');
+
+        return trim($title);
+    }
+
+    // Strips out braces and the text inside the braces.
+    // This is a direct port of the C++ code from mythvideo
+    function eatbraces($str, $left_brace, $right_brace) {
+        $keep_checking = TRUE;
+
+        while ($keep_checking) {
+            $left_position = stripos($str, $left_brace);
+            $right_position = stripos($str, $right_brace);
+
+            // No matching pairs left
+            if ($left_position === FALSE || $right_position === FALSE)
+                $keep_checking = FALSE;
+
+            // Matching set: ()
+            elseif ($left_position < $right_position)
+                $str = substr($str, 0, $left_postion) + substr($str, $right_position);
+
+            // Matching set: )(
+            elseif ($left_position > $right_position)
+                $str = substr($str, 0, $right_postion) + substr($str, $left_position);
+        }
+        return $str;
+    }
+
