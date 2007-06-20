@@ -13,7 +13,7 @@
 /**/
 
 // List of valid video extentions
-$Known_Exts = array('ogm');
+$Known_Exts = $db->query_list('SELECT extension FROM videotypes WHERE f_ignore = 0');
 
 // First delete any videos that do not exist anymore
     $sh = $db->query('SELECT videometadata.intid,
