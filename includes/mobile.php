@@ -76,57 +76,65 @@ function getScreenSize() {
      */
     $mobiles = array(
                 /* Phones using the Series 60 platform, e.g. Nokia 3650 and 6600. */
-                     'Series 60' => array('width' => 176, 'height' => 208),
-                     'Series60'  => array('width' => 176, 'height' => 208),
-                     'C500'      => array('width'=>176, 'height'=> 220), // SPV C500
+                    'Series 60'  => array('width' => 176, 'height' => 208),
+                    'Series60'   => array('width' => 176, 'height' => 208),
+                    'C500'       => array('width'=>176, 'height'=> 220), // SPV C500
                 /* Phones using the Series 90 platform, e.g. Nokia 7710. */
-                     'Series 90' => array('width' => 640, 'height' => 320),
-                     'Series90'  => array('width' => 640, 'height' => 320),
+                    'Series 90'  => array('width' => 640, 'height' => 320),
+                    'Series90'   => array('width' => 640, 'height' => 320),
                 /* HTC Tornado */
                     '176x220'    => array('width' => 176, 'height' => 220),
                 /* The following strings are added for the Palm browser WebPro
                  * WebPro sometimes supplies the screen dimensions, but sometimes not
                 /* but we try to detect the best as possible */
-                     '240x320'    => array('width' => 240, 'height' => 320), // PocketPC IE
-                     '320x320'    => array('width' => 320, 'height' => 320), // For all Palm Tungsten models
-                     '320x480'    => array('width' => 320, 'height' => 480), // For Palm Tungsten T
-                     '480x320'    => array('width' => 480, 'height' => 320), // For Palm Tungsten T
-                     '320x480x16' => array('width' => 320, 'height' => 480), // For Palm Tungsten T
-                     '480x320x16' => array('width' => 480, 'height' => 320), // For Palm Tungsten T
-                     '320x320x16' => array('width' => 320, 'height' => 320),
-                     'WebPro'     => array('width' => 320, 'height' => 320), // For all Palm Tungsten models
+                    '240x320'    => array('width' => 240, 'height' => 320), // PocketPC IE
+                    '320x320'    => array('width' => 320, 'height' => 320), // For all Palm Tungsten models
+                    '320x480'    => array('width' => 320, 'height' => 480), // For Palm Tungsten T
+                    '480x320'    => array('width' => 480, 'height' => 320), // For Palm Tungsten T
+                    '320x480x16' => array('width' => 320, 'height' => 480), // For Palm Tungsten T
+                    '480x320x16' => array('width' => 480, 'height' => 320), // For Palm Tungsten T
+                    '320x320x16' => array('width' => 320, 'height' => 320),
+                    'WebPro'     => array('width' => 320, 'height' => 320), // For all Palm Tungsten models
 
                 /* Opera for mobile devices. */
-                     'Opera Mini' => array(),
+                    'Opera Mini' => array(),
+
+                /* Minimo - Mozilla Firefox mobile browser */
+                    'Minimo'     => array(),
 
                 /* A generic mobile phone using Symbian OS. All Symbian phones don't
                  * necessarily have the same screen size so if you want to include
                 /* some specific Symbian phones then place them above this line. */
-                     'Symbian' => array('width' => 176, 'height' => 208),
+                    'Symbian'    => array('width' => 176, 'height' => 208),
+
+                /* A generic entry for Windows Mobile 5 and possible other
+                 * Windows Mobile and CE versions.  Several browsers all sent this
+                /* in their connection strings. */
+                    'Windows CE' => array(),
 
                 /* Lots of other random mobile browsers */
-                     'Nokia' => array(), // Nokia phones and emulators
-                     'Eric'  => array(), // Ericsson WAP phones and emulators
-                     'WapI'  => array(), // Ericsson WapIDE 2.0
-                     'MC21'  => array(), // Ericsson MC218
-                     'AUR '  => array(), // Ericsson R320
-                     'R380'  => array(), // Ericsson R380
-                     'UP.B'  => array(), // UP.Browser
-                     'WinW'  => array(), // WinWAP browser
-                     'UPG1'  => array(), // UP.SDK 4.0
-                     'upsi'  => array(), // another kind of UP.Browser ??
-                     'QWAP'  => array(), // unknown QWAPPER browser
-                     'Jigs'  => array(), // unknown JigSaw browser
-                     'Java'  => array(), // unknown Java based browser
-                     'Alca'  => array(), // unknown Alcatel-BE3 browser (UP based?)
-                     'MITS'  => array(), // unknown Mitsubishi browser
-                     'MOT-'  => array(), // unknown browser (UP based?)
-                     'My S'  => array(), // unknown Ericsson devkit browser ?
-                     'WAPJ'  => array(), // Virtual WAPJAG www.wapjag.de
-                     'fetc'  => array(), // fetchpage.cgi Perl script from www.wapcab.de
-                     'ALAV'  => array(), // yet another unknown UP based browser ?
-                     'Wapa'  => array(), // another unknown browser (Web based "Wapalyzer"?)
-                     'LGE-'  => array(), // LG phones
+                    'Nokia' => array(), // Nokia phones and emulators
+                    'Eric'  => array(), // Ericsson WAP phones and emulators
+                    'WapI'  => array(), // Ericsson WapIDE 2.0
+                    'MC21'  => array(), // Ericsson MC218
+                    'AUR '  => array(), // Ericsson R320
+                    'R380'  => array(), // Ericsson R380
+                    'UP.B'  => array(), // UP.Browser
+                    'WinW'  => array(), // WinWAP browser
+                    'UPG1'  => array(), // UP.SDK 4.0
+                    'upsi'  => array(), // another kind of UP.Browser ??
+                    'QWAP'  => array(), // unknown QWAPPER browser
+                    'Jigs'  => array(), // unknown JigSaw browser
+                    'Java'  => array(), // unknown Java based browser
+                    'Alca'  => array(), // unknown Alcatel-BE3 browser (UP based?)
+                    'MITS'  => array(), // unknown Mitsubishi browser
+                    'MOT-'  => array(), // unknown browser (UP based?)
+                    'My S'  => array(), // unknown Ericsson devkit browser ?
+                    'WAPJ'  => array(), // Virtual WAPJAG www.wapjag.de
+                    'fetc'  => array(), // fetchpage.cgi Perl script from www.wapcab.de
+                    'ALAV'  => array(), // yet another unknown UP based browser ?
+                    'Wapa'  => array(), // another unknown browser (Web based "Wapalyzer"?)
+                    'LGE-'  => array(), // LG phones
 
                  /* For debugging: you can try out the mobile mode without a mobile phone.
                   * Replace 'Opera' with your browser. Comment out for release version. */
