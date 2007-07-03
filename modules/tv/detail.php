@@ -136,7 +136,7 @@
         backend_notify_changes();
     // Redirect back to the page again, but without the query string, so the
     // user doesn't accidentally repost this request on a page reload.
-        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->recstartts);
     }
 
 // The user tried to update the recording settings - update the database and the variable in memory
