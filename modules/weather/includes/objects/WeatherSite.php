@@ -116,13 +116,13 @@ class WeatherSite {
     }
 
     function getRadarURL() {
-        @$data = file('http://w3.weather.com/weather/map/' . $this->acid . '?from=LAPmaps&setcookie=1');
+        @$data = file('http://www.weather.com/weather/map/' . $this->acid . '?from=LAPmaps&setcookie=1');
         if (is_array($data) && count($data)) {
             foreach($data as $line) {
                 if(substr(trim($line), 0, 29) != 'if (isMinNS4) var mapNURL = "') continue;
 
                 $url1 = substr(trim($line), 30);
-                $url1 = 'http://w3.weather.com/' . substr($url1, 0, strlen($url1) - 2);
+                $url1 = 'http://www.weather.com/' . substr($url1, 0, strlen($url1) - 2);
 
                 break;
             }
