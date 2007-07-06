@@ -354,11 +354,8 @@ function musicLookup($type, $itemid)
                                     FROM music_albumart AS ma
                                          LEFT JOIN music_directories AS md
                                                 ON ma.directory_id=md.directory_id
-                                   WHERE ma.directory_id = ?
-                                ORDER BY ma.filename LIKE "front%" DESC,
-                                         ma.filename LIKE "cover%" DESC,
-                                         ma.filename NOT LIKE "%rear%",
-                                         ma.filename NOT LIKE "%back%"
+                                   WHERE ma.directory_id = ? 
+                                   AND ma.imagetype = 1
                                    LIMIT 1',
                                  $row['directory_id']);
 
