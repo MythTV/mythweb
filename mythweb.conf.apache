@@ -16,7 +16,7 @@
     ############################################################################
     # I *strongly* urge you to turn on authentication for MythWeb.  It is disabled
     # by default because it requires you to set up your own password file.  Please
-    # see the man page for htdigest and then configure the folowing four directives
+    # see the man page for htdigest and then configure the following four directives
     # to suit your authentication needs.
     #
     #    AuthType           Digest
