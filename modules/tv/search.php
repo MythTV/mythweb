@@ -204,7 +204,7 @@
             }
         // HDTV only?
             if ($_SESSION['search']['hd'])
-                $extra_query[] = 'program.hdtv=1';
+                $extra_query[] = 'program.hdtv & 1';
         // Commercial-free channels only?
             if ($_SESSION['search']['commfree'])
                 $extra_query[] = 'channel.commfree=1';
@@ -269,7 +269,7 @@
             $search_str = $_SESSION['search']['s'];
         // If it starts with hd: it's an hd-only search
             if (preg_match('/^hd:\s*(.+)$/', $search_str, $match)) {
-                $extra_query[] = 'program.hdtv=1';
+                $extra_query[] = 'program.hdtv & 1';
                 $search_str    = $match[1];
             }
         // If the next thing starts with stars, it's a movie rating query

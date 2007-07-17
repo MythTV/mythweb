@@ -355,11 +355,11 @@ EOM;
                 echo 'no_autoexpire.png" title="', t('Click to enable Auto Expire'), '"';
             echo '></a>';
         // The rest of the flags are just for display
-            if ($show->closecaptioned == 1)
+            if ($show->subtitletype & 0x01)
                 echo '<img src="'.skin_url.'/img/flags/cc.png" title="'.t('Closed Captioning').'">';
-            if ($show->stereo == 1)
+            if ($show->audioproperties & 0x01)
                 echo '<img src="'.skin_url.'/img/flags/stereo.png" title="'.t('Stereo').'">';
-            if ($show->hdtv == 1)
+            if ($show->videoproperties & 0x01)
                 echo '<img src="'.skin_url.'/img/flags/hd.png" title="'.t('HD').'">';
             if ($show->has_commflag)
                 echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'">';

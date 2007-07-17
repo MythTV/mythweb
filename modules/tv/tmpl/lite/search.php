@@ -90,7 +90,7 @@
     ?><tr class="<?php echo $show->css_class ?>" valign="top">
     <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <td class="<?php echo $show->css_class ?>"><?php
-        if ($show->hdtv == 1)
+        if ($show->videoproperties & 0x01)
             echo '<span class="hdtv_icon">HD</span>';
         echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
              $show->title, '</a>';

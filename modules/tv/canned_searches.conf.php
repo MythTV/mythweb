@@ -44,10 +44,10 @@ $Canned_Searches = array(
  	    => 'category="children" AND category_type="movie"',
 
     t('Non-Series HDTV')
-        => 'hdtv=1 AND category_type != "series"',
+        => 'hdtv & 1 AND category_type != "series"',
 
     t('All HDTV')
-        => 'hdtv=1',
+        => 'hdtv & 1',
 
     t('Non-Music Specials')
         => 'showtype="special" AND program.category NOT LIKE "music%"',

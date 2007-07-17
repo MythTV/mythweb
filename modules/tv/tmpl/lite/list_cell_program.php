@@ -9,7 +9,7 @@
                   .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
                                           : '');
     // hdtv?
-        if ($program->hdtv == 1 && $percent > 5)
+        if (($program->videoproperties & 0x01) && $percent > 5)
             echo '<span class="hdtv_icon">HD</span>';
     // Start printing the link to record this show
         echo '<a href="'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';

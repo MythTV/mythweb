@@ -83,10 +83,7 @@ class Program {
     var $has_cutlist    = 0;
     var $is_recording;
     var $is_playing;
-    var $stereo;
-    var $closecaptioned;
     var $can_delete     = false;
-    var $hdtv;
     var $inputname;
     var $is_editing     = 0;
     var $is_movie;
@@ -156,6 +153,7 @@ class Program {
             $this->audioproperties = $data[43];
             $this->videoproperties = $data[44];
             $this->subtitletype    = $data[45];
+
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
             // Calculate the filesize
@@ -200,7 +198,6 @@ class Program {
             $this->chanid                  = $data['chanid'];
             $this->description             = $data['description'];
             $this->endtime                 = $data['endtime_unix'];
-            $this->hdtv                    = $data['hdtv'];
             $this->previouslyshown         = $data['previouslyshown'];
             $this->programid               = $data['programid'];
             $this->rater                   = $data['rater'];
@@ -214,12 +211,13 @@ class Program {
             $this->title                   = $data['title'];
             $this->partnumber              = $data['partnumber'];
             $this->parttotal               = $data['parttotal'];
-            $this->stereo                  = $data['stereo'];
-            $this->closecaptioned          = $data['closecaptioned'];
             $this->colorcode               = $data['colorcode'];
             $this->syndicatedepisodenumber = $data['syndicatedepisodenumber'];
             $this->title_pronounce         = $data['title_pronounce'];
             $this->recstatus               = $data['recstatus'];
+            $this->audioproperties         = $data['stereo'];
+            $this->videoproperties         = $data['hdtv'];
+            $this->subtitletype            = $data['closecaptioned'];
 
             if ($data['tsdefault']) {
                 $this->timestretch = $data['tsdefault'];
@@ -303,18 +301,29 @@ class Program {
     function update_fancy_desc() {
         // Get a nice description with the full details
         $details = array();
-        if ($this->hdtv == 1)
+
+        if ($this->videoproperties & 0x01)
             $details[] = t('HDTV');
+        if ($this->videoproperties & 0x02)
+            $details[] = t('Widescreen');
         if ($this->parttotal > 1 || $this->partnumber > 1)
             $details[] = t('Part $1 of $2', $this->partnumber, $this->parttotal);
         if ($this->rating)
             $details[] = $this->rating;
-        if ($this->subtitled)
-            $details[] = t('Subtitled');
-        if ($this->closecaptioned == 1)
+        if ($this->subtitletype & 0x01)
             $details[] = t('CC');
-        if ($this->stereo == 1)
+        if ($this->subtitletype & 0x02)
+            $details[] = t('Subtitles Available');
+        if ($this->subtitletype & 0x04)
+            $details[] = t('Subtitled');
+        if ($this->audioproperties & 0x01)
             $details[] = t('Stereo');
+        if ($this->audioproperties & 0x02)
+            $details[] = t('Mono');
+        if ($this->audioproperties & 0x04)
+            $details[] = t('Surround');
+        if ($this->audioproperties & 0x08)
+            $details[] = t('Dolby');
         if ($this->previouslyshown)
             $details[] = t('Repeat');
 
