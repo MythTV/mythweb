@@ -23,7 +23,7 @@
 // the number of items in a ProgramInfo QStringList group used by
 // ProgramInfo::ToSringList and ProgramInfo::FromStringList.
     global $NUMPROGRAMLINES;
-    $NUMPROGRAMLINES = 43;
+    $NUMPROGRAMLINES = 46;
 
 // Keep track of the master backend port/ip
     global $Master_Host, $Master_Port;

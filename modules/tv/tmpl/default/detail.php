@@ -148,11 +148,11 @@
                 echo '<img src="', skin_url, '/img/flags/autoexpire.png" title="', t('Auto Expire'), '">';
             }
         // The rest of the flags are just for display
-            if ($program->closecaptioned)
+            if ($program->closecaptioned == 1)
                 echo '<img src="'.skin_url.'/img/flags/cc.png" title="'.t('Closed Captioning').'">';
-            if ($program->stereo)
+            if ($program->stereo == 1)
                 echo '<img src="'.skin_url.'/img/flags/stereo.png" title="'.t('Stereo').'">';
-            if ($program->hdtv)
+            if ($program->hdtv == 1)
                 echo '<img src="'.skin_url.'/img/flags/hd.png" title="'.t('HD').'">';
             if ($program->has_commflag)
                 echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'">';

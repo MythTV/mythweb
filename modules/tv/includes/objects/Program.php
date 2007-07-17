@@ -63,6 +63,9 @@ class Program {
     var $recpriority2   = 0;
     var $parentid;
     var $storagegroup   = 'Default';
+    var $audioproperties = 0;
+    var $videoproperties = 0;
+    var $subtitletype    = 0;
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
@@ -150,6 +153,9 @@ class Program {
             $this->recpriority2    = $data[40];
             $this->parentid        = $data[41];
             $this->storagegroup    = $data[42];
+            $this->audioproperties = $data[43];
+            $this->videoproperties = $data[44];
+            $this->subtitletype    = $data[45];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
             // Calculate the filesize
@@ -176,9 +182,6 @@ class Program {
             $this->bookmark       = ($this->progflags & 0x010) ? true : false;    // FL_BOOKMARK       = 0x010
             $this->is_recording   = ($this->progflags & 0x020) ? true : false;    // FL_INUSERECORDING = 0x020
             $this->is_playing     = ($this->progflags & 0x040) ? true : false;    // FL_INUSEPLAYING   = 0x040
-            $this->stereo         = ($this->progflags & 0x080) ? true : false;    // FL_STEREO         = 0x080
-            $this->closecaptioned = ($this->progflags & 0x100) ? true : false;    // FL_CC             = 0x100
-            $this->hdtv           = ($this->progflags & 0x200) ? true : false;    // FL_HDTV           = 0x200
                                                                                   // FL_TRANSCODED     = 0x400
             $this->is_watched     = ($this->progflags & 0x800) ? true : false;    // FL_WATCHED        = 0x800
         // Can be deleted?
@@ -300,7 +303,7 @@ class Program {
     function update_fancy_desc() {
         // Get a nice description with the full details
         $details = array();
-        if ($this->hdtv)
+        if ($this->hdtv == 1)
             $details[] = t('HDTV');
         if ($this->parttotal > 1 || $this->partnumber > 1)
             $details[] = t('Part $1 of $2', $this->partnumber, $this->parttotal);
@@ -308,9 +311,9 @@ class Program {
             $details[] = $this->rating;
         if ($this->subtitled)
             $details[] = t('Subtitled');
-        if ($this->closecaptioned)
+        if ($this->closecaptioned == 1)
             $details[] = t('CC');
-        if ($this->stereo)
+        if ($this->stereo == 1)
             $details[] = t('Stereo');
         if ($this->previouslyshown)
             $details[] = t('Repeat');
@@ -404,7 +407,10 @@ class Program {
                              $this->recpriority2   , // 40 recpriority2
                              $this->parentid       , // 41 parentid
                              $this->storagegroup   , // 42 storagegroup
-                             '',                     // 43 trailing separator
+                             $this->audioproperties, // 43 audioprop
+                             $this->videoproperties, // 44 videoprop
+                             $this->subtitletype,    // 45 subtitletype
+                             '',                     // 46 trailing separator
                             )
                       );
     }
