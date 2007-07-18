@@ -63,9 +63,20 @@ class Program {
     var $recpriority2   = 0;
     var $parentid;
     var $storagegroup   = 'Default';
+
+// Audio and Video properties
     var $audioproperties = 0;
     var $videoproperties = 0;
     var $subtitletype    = 0;
+    var $stereo          = 0;
+    var $mono            = 0;
+    var $surround        = 0;
+    var $dolby           = 0;
+    var $hdtv            = 0;
+    var $widescreen      = 0;
+    var $closecaptioned  = 0;
+    var $has_subtitles   = 0;
+    var $subtitled       = 0;
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
@@ -153,7 +164,6 @@ class Program {
             $this->audioproperties = $data[43];
             $this->videoproperties = $data[44];
             $this->subtitletype    = $data[45];
-
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
             // Calculate the filesize
@@ -215,6 +225,8 @@ class Program {
             $this->syndicatedepisodenumber = $data['syndicatedepisodenumber'];
             $this->title_pronounce         = $data['title_pronounce'];
             $this->recstatus               = $data['recstatus'];
+
+        // These db fields should really get renamed...
             $this->audioproperties         = $data['stereo'];
             $this->videoproperties         = $data['hdtv'];
             $this->subtitletype            = $data['closecaptioned'];
@@ -225,6 +237,16 @@ class Program {
                 $this->timestretch = 1.0;
             }
         }
+    // Assign shortcut names to the new audio/video/subtitle property flags
+        $this->stereo         = $this->audioproperties & 0x01;
+        $this->mono           = $this->audioproperties & 0x02;
+        $this->surround       = $this->audioproperties & 0x04;
+        $this->dolby          = $this->audioproperties & 0x08;
+        $this->hdtv           = $this->videoproperties & 0x01;
+        $this->widescreen     = $this->videoproperties & 0x02;
+        $this->closecaptioned = $this->subtitletype    & 0x01;
+        $this->has_subtitles  = $this->subtitletype    & 0x02;
+        $this->subtitled      = $this->subtitletype    & 0x04;
     // Generate the star string, since mysql has issues with REPEAT() and
     // decimals, and the backend doesn't do it for us, anyway.
         $this->starstring = str_repeat(star_character, intVal($this->stars * max_stars));
@@ -301,29 +323,28 @@ class Program {
     function update_fancy_desc() {
         // Get a nice description with the full details
         $details = array();
-
-        if ($this->videoproperties & 0x01)
+        if ($this->hdtv)
             $details[] = t('HDTV');
-        if ($this->videoproperties & 0x02)
+        if ($this->widescreen)
             $details[] = t('Widescreen');
         if ($this->parttotal > 1 || $this->partnumber > 1)
             $details[] = t('Part $1 of $2', $this->partnumber, $this->parttotal);
         if ($this->rating)
             $details[] = $this->rating;
-        if ($this->subtitletype & 0x01)
+        if ($this->closecaptioned)
             $details[] = t('CC');
-        if ($this->subtitletype & 0x02)
+        if ($this->has_subtitles)
             $details[] = t('Subtitles Available');
-        if ($this->subtitletype & 0x04)
+        if ($this->subtitled)
             $details[] = t('Subtitled');
-        if ($this->audioproperties & 0x01)
+        if ($this->stereo)
             $details[] = t('Stereo');
-        if ($this->audioproperties & 0x02)
+        if ($this->mono)
             $details[] = t('Mono');
-        if ($this->audioproperties & 0x04)
-            $details[] = t('Surround');
-        if ($this->audioproperties & 0x08)
-            $details[] = t('Dolby');
+        if ($this->surround)
+            $details[] = t('Surround Sound');
+        if ($this->dolby)
+            $details[] = t('Dolby Surround');
         if ($this->previouslyshown)
             $details[] = t('Repeat');
 
