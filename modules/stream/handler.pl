@@ -37,6 +37,19 @@
         $starttime =~ s/\.\w+$//;
     }
 
+# Find ffmpeg
+    $ffmpeg = '';
+    foreach my $path (split(/:/, $ENV{'PATH'}.':/usr/bin:/usr/local/bin'), '.') {
+        if (-e "$path/ffmpeg") {
+            $ffmpeg = "$path/ffmpeg";
+            last;
+        }
+        elsif ($^O eq 'darwin' && -e "$path/ffmpeg.app") {
+            $ffmpeg = "$path/ffmpeg.app";
+            last;
+        }
+    }
+
 # Get the basename from the database
     my $sh = $dbh->prepare('SELECT basename, title, subtitle
                               FROM recorded
@@ -128,7 +141,7 @@ EOF
     }
     elsif ($ENV{'REQUEST_URI'} =~ /\.flv$/i) {
     # Print the movie
-        $ffmpeg_pid = open(DATA, "/usr/bin/ffmpeg -y -i $filename -s 320x240 -r 24 -f flv -ac 2 -ar 11025 -ab 64k -b 256k /dev/stdout 2>/dev/null |");
+        $ffmpeg_pid = open(DATA, "$ffmpeg -y -i $filename -s 320x240 -r 24 -f flv -ac 2 -ar 11025 -ab 64k -b 256k /dev/stdout 2>/dev/null |");
         unless ($ffmpeg_pid) {
             print header(),
                   "Can't do ffmpeg:  $!";
