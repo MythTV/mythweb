@@ -25,8 +25,8 @@
     <th><label for="force_http"><?php echo t('Force HTTP for streams') ?>:</label></th>
     <td><input type="checkbox" id="force_http" name="force_http" value="1"<?php if ($_SESSION['stream']['force_http']) echo ' CHECKED' ?>></td>
 </tr><tr class="-sep">
-    <th><label for="force_http_port"><?php echo t('Force HTTP port for streams'); ?>:</label></th>
-    <td><input type="textbox" id="force_http_port" name="force_http_port" value="<?php echo _or($_SESSION['stream']['force_http_port'], '80'); ?>"></td>
+    <th><label for="force_http_port"><?php echo t('Force HTTP/HTTPS port for streams'); ?>:</label></th>
+    <td><input type="textbox" id="force_http_port" name="force_http_port" value="<?php echo $_SESSION['stream']['force_http_port'] ?>"></td>
 </tr><tr>
     <td align="center"><input type="reset" class="submit" value="<?php echo t('Reset') ?>"></td>
     <td align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>"></td>
