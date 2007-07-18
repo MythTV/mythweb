@@ -285,10 +285,16 @@
                 <li><input type="radio" class="radio" name="record" value="0" id="record_never"<?php
                         if (!$schedule->recordid || $schedule->search) echo ' CHECKED' ?> />
                     <label for="record_never"><?php
-                        if ($schedule->search)
+                        if ($schedule->search) {
                             echo t('Schedule via $1.',
-                                   '<a href='.root.'tv/schedules/custom/'.$schedule->recordid.'>'
+                                   '<a href='.root.'tv/schedules/'
+                                   .($schedule->search == searchtype_manual
+                                        ? 'manual'
+                                        : 'custom'
+                                    )
+                                   .'/'.$schedule->recordid.'>'
                                    .$schedule->search_title.'</a>');
+                        }
                         elseif ($schedule->recordid)
                             echo t('Cancel this schedule.');
                         else
