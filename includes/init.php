@@ -141,6 +141,7 @@
                                 $_SERVER['db_password'],
                                 $_SERVER['db_server'],
                                 NULL, 'mysql');
+        $db->register_global_name('db');
     }
 
 // Access denied -- probably means that there is no database

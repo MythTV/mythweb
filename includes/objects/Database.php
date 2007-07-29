@@ -67,6 +67,9 @@ class Database {
 /** @var float      Total time spent waiting for a query to run. */
     var $query_time = 0;
 
+/** @var string     The registered global name of this object instance. */
+    var $global_name = '';
+
 /** @var array      Collection of functions and parameters to be called on object destruction */
     var $destruct_handlers = array();
 
@@ -172,8 +175,10 @@ class Database {
  * Execute any destruct handler functions.
 /**/
     function __destruct() {
-        global $db;
-        $db = $this;
+    // Globals already destroyed?
+        if ($this->global_name && empty($_GLOBALS[$this->global_name]))
+            $_GLOBALS[$this->global_name] =& $this;
+    // Process any destruct handlers
         if (is_array($this->destruct_handlers)) {
             foreach ($this->destruct_handlers as $call) {
                 if (is_array($call['p']))
@@ -182,6 +187,21 @@ class Database {
                     call_user_func($call['f']);
             }
         }
+    }
+
+/**
+ * PHP 5.2 destroys the global variable name space before calling destruct
+ * handlers, so we'll need to keep track of the name if any destruct handlers
+ * might need to use it.
+ *
+ * @param string $name The global name this instance is registered as.
+/**/
+    function register_global_name($name) {
+        if ($_GLOBALS[$name] == $this) {
+            $this->global_name = $name;
+            return true;
+        }
+        return false;
     }
 
 /**
