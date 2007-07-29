@@ -176,8 +176,8 @@ class Database {
 /**/
     function __destruct() {
     // Globals already destroyed?
-        if ($this->global_name && empty($_GLOBALS[$this->global_name]))
-            $_GLOBALS[$this->global_name] =& $this;
+        if ($this->global_name && empty($GLOBALS[$this->global_name]))
+            $GLOBALS[$this->global_name] =& $this;
     // Process any destruct handlers
         if (is_array($this->destruct_handlers)) {
             foreach ($this->destruct_handlers as $call) {
@@ -197,7 +197,7 @@ class Database {
  * @param string $name The global name this instance is registered as.
 /**/
     function register_global_name($name) {
-        if ($_GLOBALS[$name] == $this) {
+        if ($GLOBALS[$name] == $this) {
             $this->global_name = $name;
             return true;
         }
