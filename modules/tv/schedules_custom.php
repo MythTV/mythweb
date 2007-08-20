@@ -180,11 +180,13 @@
             mysql_free_result($result);
         }
     // autoexpire
-        if (!isset($schedule->autoexpire)) {
-            $result = mysql_query('SELECT data from settings where value="AutoExpireDefault"');
-            list($schedule->autoexpire) = mysql_fetch_row($result);
-            mysql_free_result($result);
-        }
+        if (!isset($schedule->autoexpire))
+            $schedule->autoexpire = get_backend_setting('AutoExpireDefault');
+    // start early / end late
+        if (!isset($schedule->startoffset))
+            $schedule->startoffset = get_backend_setting('DefaultStartOffset');
+        if (!isset($schedule->endoffset))
+            $schedule->endoffset = get_backend_setting('DefaultEndOffset');
     // Get the searchtype string
         switch ($schedule->search) {
             case searchtype_power:   $schedule->search_type = t('Power');   break;
