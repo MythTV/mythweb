@@ -73,6 +73,12 @@ class Database {
                            )
                            \s*$/xe';
 
+/** @var string     The registered global name of this object instance. */
+    var $global_name = '';
+
+/** @var array      Collection of functions and parameters to be called on object destruction */
+    var $destruct_handlers = array();
+
 /**
  * @var string      The regular expression used to add a LIMIT statement to
  *                  queries that will benefit from one.
@@ -173,6 +179,50 @@ class Database {
     }
 
 /******************************************************************************/
+
+/**
+ * Execute any destruct handler functions.
+/**/
+    function __destruct() {
+    // Globals already destroyed?
+        if ($this->global_name && empty($GLOBALS[$this->global_name]))
+            $GLOBALS[$this->global_name] =& $this;
+    // Process any destruct handlers
+        if (is_array($this->destruct_handlers)) {
+            foreach ($this->destruct_handlers as $call) {
+                if (is_array($call['p']))
+                    call_user_func_array($call['f'], $call['p']);
+                else
+                    call_user_func($call['f']);
+            }
+        }
+    }
+
+/**
+ * PHP 5.2 destroys the global variable name space before calling destruct
+ * handlers, so we'll need to keep track of the name if any destruct handlers
+ * might need to use it.
+ *
+ * @param string $name The global name this instance is registered as.
+/**/    function register_global_name($name) {
+        if ($GLOBALS[$name] == $this) {
+            $this->global_name = $name;
+            return true;
+        }
+        return false;
+    }
+
+/**
+ * Because of changes in PHP that make it destroy objects before saving session
+ * data, this function was added to make sure that certain code (like
+ * session_write_close) gets executed before in time.
+ *
+ * @link http://us2.php.net/session_set_save_handler
+/**/
+    function register_destruct_handler($func, $params=null) {
+        $this->destruct_handlers[] = array('f' => $func,
+                                           'p' => $params);
+    }
 
 /**
  *  Fill the error variables
