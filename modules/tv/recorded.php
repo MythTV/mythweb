@@ -19,11 +19,15 @@
 // Load the sorting routines
     require_once 'includes/sorting.php';
 
-// Delete a program?
+// Delete or undelete a program?
     isset($_GET['forget_old']) or $_GET['forget_old'] = $_POST['forget_old'];
     isset($_GET['delete'])     or $_GET['delete']     = $_POST['delete'];
     isset($_GET['file'])       or $_GET['file']       = $_POST['file'];
-    if ($_GET['delete']) {
+    if ($_GET['delete'] || $_GET['undelete']) {
+        if ($_GET['delete'])
+          $backendstr = 'DELETE_RECORDING';
+        else 
+          $backendstr = 'UNDELETE_RECORDING';
     // Keep a previous-row counter to return to after deleting
         $prev_row = -2;
     // We need to scan through the available recordings to get at the additional information required by the DELETE_RECORDING query
@@ -35,7 +39,7 @@
             if ($row[4] != $_GET['chanid'] || $row[26] != $_GET['starttime'])
                 continue;
         // Delete the recording
-            backend_command(array('FORCE_DELETE_RECORDING', implode(backend_sep, $row), '0'));
+            backend_command(array($backendstr, implode(backend_sep, $row), '0'));
         // Forget all knowledge of old recordings?
             if (isset($_GET['forget_old'])) {
                 backend_command(array('FORGET_RECORDING', implode(backend_sep, $row), '0'));
@@ -105,8 +109,8 @@
         // keep track of their names and how many episodes we have recorded
             $Total_Programs++;
             $Groups[$record[30]]++;
-        // Hide LiveTV recordings from the title list
-            if (($_GET['recgroup'] && $_GET['recgroup'] == $record[30]) || (!$_GET['recgroup'] && $record[30] != 'LiveTV'))
+        // Hide LiveTV  and Deleted recordings from the title list
+            if (($_GET['recgroup'] && $_GET['recgroup'] == $record[30]) || (!$_GET['recgroup'] && $record[30] != 'LiveTV' && $record[30] != 'Deleted'))
                 $Program_Titles[$record[0]]++;
         // Skip files with no chanid
             if (!$record[4])
@@ -116,8 +120,8 @@
                 continue;
             if ($_GET['recgroup'] && $_GET['recgroup'] != $record[30])
                 continue;
-        // Hide livetv recordings from the default view
-            if (empty($_GET['recgroup']) && $record[30] == 'LiveTV')
+        // Hide LiveTV recordings from the default view
+            if (empty($_GET['recgroup']) && ($record[30] == 'LiveTV' || $record[30] == 'Deleted'))
                 continue;
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$record[0]]))

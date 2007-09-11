@@ -337,10 +337,22 @@ EOM;
         if ($show->can_delete) {
         ?><a onclick="javascript:confirm_delete(<?php echo $row ?>, false)"
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
-            ><?php echo t('Delete') ?></a>
+            ><?php if (get_backend_setting('AutoExpireInsteadOfDelete') > 0 &&
+                       $show->recgroup == 'Deleted')
+                        echo t('Delete Forever');
+                    else
+                        echo t('Delete');
+              ?></a>
         <a onclick="javascript:confirm_delete(<?php echo $row ?>, true)"
             title="<?php echo html_entities(t('Delete and allow rerecord: $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a>
+
+<?php       if ($show->recgroup == 'Deleted') {
+                echo '<a href="', root, 'tv/recorded?undelete=yes&chanid=', $show->chanid,
+                    '&starttime=', $show->starttime, '" ' ?>
+                title="<?php echo html_entities(t('Undelete: $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
+                <?php echo '>' , t('Undelete') ?></a>
+<?php       } ?>
 <?php   } ?>
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
