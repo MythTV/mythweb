@@ -3,6 +3,21 @@
 # requirements and troubleshooting, along with the comments in this file.
 #
 
+############################################################################
+# If you intend to use authentication for MythWeb (see below), you will
+# probably also want to uncomment the following rules, which disable
+# authentication for MythWeb's download URLs so you can properly stream
+# to media players that don't work with authenticated servers.
+#
+#    <LocationMatch .*/pl/stream/[0-9]+/[0-9]+>
+#        Allow from all
+#    </LocationMatch>
+#
+#    <LocationMatch .*/music/stream.php>
+#        Allow from all
+#    </LocationMatch>
+
+
 #
 # CHANGE THIS PATH TO MATCH YOUR MYTHWEB INSTALLATION DIRECTORY!  e.g.
 #
@@ -30,18 +45,6 @@
     #  * If you're running Apache earlier than 2.2, you will need to use
     #    the AuthDigestFile command instead of AuthUserFile (3rd line above).
     #
-    # You will probably also want to uncomment the following rules, which
-    # disable authentication for MythWeb's download URLs so you can properly
-    # stream to media players that don't work with authenticated servers.
-    #
-    #    <LocationMatch .*/pl/stream/[0-9]+/[0-9]+>
-    #        Allow from all
-    #    </LocationMatch>
-    #
-    #    <LocationMatch .*/music/stream.php>
-    #        Allow from all
-    #    </LocationMatch>
-
     ############################################################################
     # Some special instructions for the MythWeb controller files
     #
