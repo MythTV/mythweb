@@ -679,6 +679,8 @@ class Program {
             }
             $str .= "</dd>\n";
         }
+    // Recording Priority
+	$str .= "\t<dt>".t('Recording Priority')."</dt><dd>".$this->recpriority."</dd>\n";
     // Recording status
         if (!empty($this->recstatus)) {
             $str .= "\t<dt>".t('Notes').":</dt>\n"
