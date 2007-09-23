@@ -71,8 +71,6 @@
     放送日
 "Airtime"
     放送時間
-"Album"
-"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -88,7 +86,6 @@
 "All HDTV"
     全てのHDTV
 "All Hosts"
-"All Music"
 "All recordings"
     全ての録画
 "All Songs"
@@ -108,14 +105,11 @@
 "Are you sure you want to delete the following show?"
     この録画を削除してよろしいですか？
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
 "Auto-expire recordings"
     自動削除
 "Auto-flag commercials"
@@ -193,8 +187,6 @@
 "Commercials Flagged"
 "commfree"
     CMカット
-"Configure Channels"
-"Configure Keybindings"
 "Conflict"
 "Conflicts"
     衝突
@@ -204,13 +196,13 @@
     コントラスト
 "Count"
     カウント
-"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
     予約作成
 "Current Conditions"
     現在の状況
+"Current Recording"
 "Current recordings"
     現在の録画
 "Currently Browsing:  $1"
@@ -255,10 +247,8 @@
 "Direct Download"
 "Directed by"
     監督
-"director"
 "Display"
     表示
-"Displaying"
 "Dolby Surround"
 "Don't Record"
     録画停止
@@ -274,15 +264,13 @@
     重複チェック方法
 "Duplicates"
     重複
-"Duration"
 "Earlier"
+"Earlier Showing"
 "Edit"
     編集
 "Edit existing group"
-"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
-"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "End"
@@ -308,9 +296,8 @@
     製作責任者
 "File Size"
     ファイルサイズ
-"file size"
 "Filter"
-"Filtered"
+"Filters"
 "Find Date & Time Options"
     日時オプション
 "Find Day"
@@ -350,9 +337,7 @@
     %I:%M %p
 "Genre"
     ジャンル
-"Genre (filtered)"
 "Genres"
-"Global"
 "Go"
     移動
 "Google"
@@ -367,11 +352,8 @@
     おてがるサーチ
 "handy: overview"
     下のメニューから簡単に検索できます。
-"has bookmark"
 "has Bookmark"
-"has commflag"
 "Has Cutlist"
-"has cutlist"
 "HD"
 "HDTV"
 "Hide"
@@ -390,7 +372,6 @@
 "Humidity"
     湿度
 "IMDB"
-"imdb rating"
 "IMDBTYPE"
 "Inactive"
     無効
@@ -402,7 +383,6 @@
 "info:forget old"
 "info:never record"
 "Insert"
-"is editing"
 "Jump"
     移動
 "Jump Points"
@@ -489,10 +469,6 @@
 "MythMusic on the web."
     MythMusic オンザウェブ
 "MythTV"
-"MythTV channel info"
-"MythTV global defaults"
-"MythTV key bindings"
-"MythTV settings table"
 "MythTV Status"
     MythTVステータス
 "MythVideo Artwork Dir"
@@ -509,8 +485,6 @@
 "MythWeb Global Defaults"
     MythWeb全体設定
 "MythWeb Session"
-"MythWeb session settings"
-"MythWeb Session Settings"
 "MythWeb Skin"
     MythWebスキン
 "MythWeb Template"
@@ -529,8 +503,6 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
-"No"
 "NO DATA"
 "No Frontends allow remote control."
 "No matches found"
@@ -540,7 +512,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     予約が設定されていません
-"No Tracks Available"
 "No. of recordings to keep"
     録画番組保存数
 "Non-Music Specials"
@@ -604,10 +575,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
-"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     次の番組と衝突しています
@@ -623,8 +592,7 @@
     提供
 "Pressure"
     気圧
-"preview"
-"Previous"
+"Previous Recording"
 "Previous recordings"
     以前の録画
 "Produced by"
@@ -652,7 +620,6 @@
 "Random Type"
 "Rating"
     レーティング
-"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -772,7 +739,6 @@
     リセット
 "Retry"
 "Return to Statistics Page"
-"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -828,15 +794,12 @@
     設定
 "Settings Table"
     Settings テーブル
-"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
-"settings: overview"
 "Shift"
 "Show"
     番組
-"Show descriptions on new line"
 "Show group"
     グループ表示
 "Show pixmaps"
@@ -851,7 +814,6 @@
 "Shows"
 "SI Units"
     SI単位を使用する
-"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -887,7 +849,6 @@
 "Sub and Desc (Empty matches)"
     サブタイトルと内容(エンプティーマッチ)
 "Submit Search"
-"subtitle"
 "Subtitle"
     サブタイトル
 "Subtitle and Description"
@@ -928,7 +889,6 @@
 "Tomorrow"
     明日
 "Too Many"
-"Top"
 "Top $1"
     トップ $1
 "Top Played Songs"
@@ -939,7 +899,6 @@
     合計時間
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
 "Transcode"
 "transcoder"
     トランスコーダー
@@ -956,14 +915,12 @@
     タイプ
 "Type"
     タイプ
-"Unfiltered"
 "Unknown"
     不明
 "Unknown Program."
     不明な番組
 "Unknown Recording Schedule."
     不明な予約
-"Unreachable"
 "Up"
 "Upcoming Recordings"
     これからの録画
@@ -990,7 +947,6 @@
 "Value"
 "Video"
     ビデオ
-"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1056,6 +1012,7 @@
 "What else is on at this time?"
     この時間の番組表
 "Widescreen"
+"Will Record"
 "Wind"
     風
 "Wind Chill"
@@ -1064,7 +1021,6 @@
     著者
 "xmltvid"
 "Year"
-"year"
 "Yes"
     はい
 "Yesterday"

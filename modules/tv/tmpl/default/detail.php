@@ -312,11 +312,33 @@
         }
         if (count($conflicting_shows)) {
         ?><tr id="-conflicts">
-            <th><?php echo t('Possible conflicts') ?>:</th>
+            <th><?php echo t('Possible conflicts') ?>:<br /><br />
+	    <div style="text-align: left;">
+                <?php echo t('Filters'); ?><br />
+	        <form id="change_display" name="change_display" action="<?php echo root; ?>tv/detail<?php if ($_GET['recordid'])
+                             echo '?recordid='.urlencode($_GET['recordid']);
+	                  else
+	                     echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime']) ?>" method="post">
+	        <input type="hidden" name="change_display" value="1">
+
+                <label for="CurrentRecording"><input type="checkbox" id="CurrentRecording" name="CurrentRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_CurrentRecording']) echo "CHECKED"; ?>> <?php echo t('Current Recording'); ?><br />
+
+                <label for="EarlierShowing"><input type="checkbox" id="EarlierShowing" name="EarlierShowing" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_EarlierShowing']) echo "CHECKED"; ?>> <?php echo t('Earlier Showing'); ?><br />
+
+                <label for="PreviousRecording"><input type="checkbox" id="PreviousRecording" name="PreviousRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_PreviousRecording']) echo "CHECKED"; ?>> <?php echo t('Previous Recording'); ?><br />
+
+                <label for="WillRecord"><input type="checkbox" id="WillRecord" name="WillRecord" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_WillRecord']) echo "CHECKED"; ?>> <?php echo t('Will Record'); ?><br />
+
+                <label for="Conflict"><input type="checkbox" id="Conflict" name="Conflict" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_Conflict']) echo "CHECKED"; ?>> <?php echo t('Conflicts'); ?><br />
+                </div>
+		</form>
+	    </th>
             <td><?php
         // A program id counter for popup info
             $program_id_counter = 0;
             foreach ($conflicting_shows as $show) {
+	    	if (!$_SESSION['recording_details']['show_'.$show->recstatus])
+		    continue;
                 $program_id_counter++;
             // Print the link to edit this scheduled recording
                 echo '<a class="', $show->css_class,

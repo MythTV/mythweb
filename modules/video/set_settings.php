@@ -16,8 +16,7 @@
     $Settings_Hosts = array();
     $sh = $db->query('SELECT DISTINCT hostname
                         FROM settings
-                       WHERE     value = "locale"
-                             AND LENGTH(hostname) > 0
+                       WHERE LENGTH(hostname) > 0
                     ORDER BY hostname');
     while (list($host) = $sh->fetch_row())
         $Settings_Hosts[$host] = $host;

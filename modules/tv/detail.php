@@ -31,6 +31,23 @@
     $_GET['starttime'] = intVal($_REQUEST['starttime']);
     $_GET['manualid']  = intVal($_REQUEST['manualid']);
 
+// Set to defaults
+    if ( !isset($_SESSION['recording_details'] )) {
+        $_SESSION['recording_details']['show_Conflict'] = true;
+	$_SESSION['recording_details']['show_PreviousRecording'] = true;
+	$_SESSION['recording_details']['show_EarlierShowing'] = true;
+	$_SESSION['recording_details']['show_CurrentRecording'] = true;
+	$_SESSION['recording_details']['show_WillRecord'] = true;
+    }
+
+    if ( isset($_POST['change_display'])) {
+        $_SESSION['recording_details']['show_Conflict']          = $_POST['Conflict'];
+        $_SESSION['recording_details']['show_PreviousRecording'] = $_POST['PreviousRecording'];
+        $_SESSION['recording_details']['show_EarlierShowing']    = $_POST['EarlierShowing'];
+        $_SESSION['recording_details']['show_CurrentRecording']  = $_POST['CurrentRecording'];
+        $_SESSION['recording_details']['show_WillRecord']        = $_POST['WillRecord'];
+    }
+
 // Auto-expire -- only available for javascript templates
     if (isset($_REQUEST['toggle_autoexpire']) && $_GET['chanid'] && $_GET['starttime']) {
         $sh = $db->query('UPDATE recorded

@@ -72,8 +72,6 @@
     Sendezeit
 "Airtime"
     Sendezeit
-"Album"
-"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -88,7 +86,6 @@
 "All HDTV"
     Sendungen in HDTV
 "All Hosts"
-"All Music"
 "All recordings"
     Alle Aufnahmen
 "All Songs"
@@ -108,14 +105,11 @@
 "Are you sure you want to delete the following show?"
     Diese Aufnahme wirklich löschen?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
 "Auto-expire recordings"
     Aufnahmen autom. löschen
 "Auto-flag commercials"
@@ -194,8 +188,6 @@
 "Commercials Flagged"
 "commfree"
     Werbefrei
-"Configure Channels"
-"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Überschneidungen
@@ -204,13 +196,13 @@
 "contrast"
     Kontrast
 "Count"
-"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
     Speichern
 "Current Conditions"
     Das aktuelle Wetter
+"Current Recording"
 "Current recordings"
     Aktuelle Aufnahmen
 "Currently Browsing:  $1"
@@ -255,10 +247,8 @@
 "Direct Download"
 "Directed by"
     Regie
-"director"
 "Display"
     Anzeigen
-"Displaying"
 "Dolby Surround"
 "Don't Record"
     Nicht aufnehmen
@@ -274,15 +264,13 @@
     Testmethode für Wdhgn.
 "Duplicates"
     Wiederholungen
-"Duration"
 "Earlier"
+"Earlier Showing"
 "Edit"
     Bearbeiten
 "Edit existing group"
-"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
-"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "End"
@@ -308,9 +296,8 @@
     Produzent
 "File Size"
     Dateigröße
-"file size"
 "Filter"
-"Filtered"
+"Filters"
 "Find Date & Time Options"
     Finde Datum & Zeit Optionen
 "Find Day"
@@ -349,9 +336,7 @@
     %H:%M
 "Genre"
     Genre
-"Genre (filtered)"
 "Genres"
-"Global"
 "Go"
     Los
 "Google"
@@ -367,11 +352,8 @@
     Handy: Vordefinierte Suchabfragen
 "handy: overview"
     Handy: Übersicht
-"has bookmark"
 "has Bookmark"
-"has commflag"
 "Has Cutlist"
-"has cutlist"
 "HD"
 "HDTV"
     HDTV
@@ -392,7 +374,6 @@
     Luftfeuchtigkeit
 "IMDB"
     IMDB
-"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Inaktiv
@@ -404,7 +385,6 @@
 "info:forget old"
 "info:never record"
 "Insert"
-"is editing"
 "Jump"
     Gehe
 "Jump Points"
@@ -487,10 +467,6 @@
 "MythMusic on the web."
     MythMusic
 "MythTV"
-"MythTV channel info"
-"MythTV global defaults"
-"MythTV key bindings"
-"MythTV settings table"
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
@@ -504,8 +480,6 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Session"
-"MythWeb session settings"
-"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -522,8 +496,6 @@
 "New Search"
 "New Titles, Premieres"
     Neue Sendungen, Erstausstrahlungen
-"Next"
-"No"
 "NO DATA"
     Kein Programm verfügbar
 "No Frontends allow remote control."
@@ -534,7 +506,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
-"No Tracks Available"
 "No. of recordings to keep"
     Wieviele Aufnahmen behalten
 "Non-Music Specials"
@@ -593,10 +564,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
-"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mögliche Konflikte mit dieser Sendung
@@ -611,8 +580,7 @@
     Präsentiert von
 "Pressure"
     Luftdruck
-"preview"
-"Previous"
+"Previous Recording"
 "Previous recordings"
     Alte Aufnahmen
 "Produced by"
@@ -640,7 +608,6 @@
 "Random Type"
 "Rating"
     Freigegeben ab
-"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -759,7 +726,6 @@
     Zurücksetzen
 "Retry"
 "Return to Statistics Page"
-"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -815,15 +781,12 @@
 "settings"
     Einstellungen
 "Settings Table"
-"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
-"settings: overview"
 "Shift"
 "Show"
     Sendung
-"Show descriptions on new line"
 "Show group"
     Gruppe zeigen
 "Show pixmaps"
@@ -837,7 +800,6 @@
 "Shows"
 "SI Units"
     SI Einheiten
-"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -871,7 +833,6 @@
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)
 "Submit Search"
-"subtitle"
 "Subtitle"
     Untertitel
 "Subtitle and Description"
@@ -912,7 +873,6 @@
 "Tomorrow"
     Morgen
 "Too Many"
-"Top"
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -921,7 +881,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
 "Transcode"
 "transcoder"
     Umwandlungsprofil
@@ -940,14 +899,12 @@
     Modus
 "Type"
     Typ
-"Unfiltered"
 "Unknown"
     Unbekannt
 "Unknown Program."
     Unbekannte Sendung.
 "Unknown Recording Schedule."
     Unbekannter Aufnahmeplan
-"Unreachable"
 "Up"
 "Upcoming Recordings"
     Aufnahmeplan
@@ -975,7 +932,6 @@
 "Value"
 "Video"
     Video
-"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1041,6 +997,7 @@
 "What else is on at this time?"
     Was läuft noch zu dieser Zeit?
 "Widescreen"
+"Will Record"
 "Wind"
     Windgeschwindigkeit
 "Wind Chill"
@@ -1050,7 +1007,6 @@
 "xmltvid"
     XMLTV ID
 "Year"
-"year"
 "Yes"
     Ja
 "Yesterday"
