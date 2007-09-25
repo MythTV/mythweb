@@ -78,11 +78,11 @@ header("Content-Type: text/html; charset=utf-8");
 
 <form method="post" action="<?php echo root ?>video/edit" enctype="multipart/form-data">
 Title<br />
-<input name="title" type="text" value="<?php echo $Video->title; ?>"><br /><br />
+<input name="title" type="text" value="<?php echo htmlspecialchars($Video->title, ENT_QUOTES ); ?>"><br /><br />
 Director<br />
-<input name="director" type="text" value="<?php echo $Video->director; ?>"><br /><br />
+<input name="director" type="text" value="<?php echo htmlspecialchars($Video->director, ENT_QUOTES ); ?>"><br /><br />
 Plot<br />
-<textarea name="plot" rows="5" cols="30" wrap="VIRTUAL"><?php echo $Video->plot; ?></textarea><br /><br />
+<textarea name="plot" rows="5" cols="30" wrap="VIRTUAL"><?php echo htmlspecialchars($Video->plot, ENT_QUOTES ); ?></textarea><br /><br />
 Category<br />
 <select name="category">
 <option <?php if ($Video->category == 0) echo ' SELECTED'; ?> value="0">Uncategorized</option>
@@ -97,15 +97,15 @@ Category<br />
     $sh->finish();
 ?></select><br /><br />
 Rating<br />
-<input name="rating" type="text" value="<?php echo $Video->rating; ?>"><br /><br />
+<input name="rating" type="text" value="<?php echo htmlspecialchars($Video->rating, ENT_QUOTES); ?>"><br /><br />
 IMDB<br />
-<input name="inetref" type="text" value="<?php echo $Video->inetref; ?>"><br /><br />
+<input name="inetref" type="text" value="<?php echo htmlspecialchars($Video->inetref, ENT_QUOTES); ?>"><br /><br />
 Year<br />
-<input name="year" type="text" size="4" value="<?php echo $Video->year; ?>"><br /><br />
+<input name="year" type="text" size="4" value="<?php echo htmlspecialchars($Video->year, ENT_QUOTES); ?>"><br /><br />
 User Rating<br />
-<input name="userrating" type="text" size="3" value="<?php echo $Video->userrating; ?>"><br /><br />
+<input name="userrating" type="text" size="3" value="<?php echo htmlspecialchars($Video->userrating, ENT_QUOTES); ?>"><br /><br />
 Length in minutes<br />
-<input name="length" type="text" size="3" value="<?php echo $Video->length; ?>"><br /><br />
+<input name="length" type="text" size="3" value="<?php echo htmlspecialchars($Video->length, ENT_QUOTES); ?>"><br /><br />
 Browsable<br />
 <select name="browse">
  <option value="0" <?php if ($Video->browse == 0) echo ' SELECTED'; ?>>No</option>
