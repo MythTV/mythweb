@@ -69,6 +69,8 @@
     Date de diffusion
 "Airtime"
     Heure de diffusion
+"Album"
+"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -81,6 +83,7 @@
 "All groups"
 "All HDTV"
 "All Hosts"
+"All Music"
 "All recordings"
     Tous les enregistrements
 "All Songs"
@@ -98,11 +101,14 @@
 "Are you sure you want to delete the following show?"
     Etes vous s&ucirc;r d&acute;effacer cette &eacute;mission
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist"
+"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
+"auto-expire"
 "Auto-expire recordings"
     Enregistrements auto-exiprant
 "Auto-flag commercials"
@@ -172,12 +178,15 @@
     Commandes
 "Commercials Flagged"
 "commfree"
+"Configure Channels"
+"Configure Keybindings"
 "Conflict"
 "Conflicts"
     entre en conflit
 "Context"
 "contrast"
 "Count"
+"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -210,6 +219,7 @@
 "Delete + Rerecord"
 "Delete and allow rerecord: $1"
 "Delete and rerecord $1"
+"Delete Forever"
 "DELETE this Saved Playlist"
 "description"
     Description
@@ -221,8 +231,10 @@
 "Direct Download"
 "Directed by"
     Mis en scène par
+"director"
 "Display"
     Afficher
+"Displaying"
 "Dolby Surround"
 "Don't Record"
     Ne pas enregistrer
@@ -238,12 +250,15 @@
     M&eacute;thode de test des doublons
 "Duplicates"
     Doublonner
+"Duration"
 "Earlier"
 "Earlier Showing"
 "Edit"
 "Edit existing group"
+"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Editer les param&egrave;tres de Mythweb et certains de MythTV
+"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "End"
@@ -268,7 +283,9 @@
     Producteur
 "File Size"
     taille de fichier
+"file size"
 "Filter"
+"Filtered"
 "Filters"
 "Find Date & Time Options"
 "Find Day"
@@ -301,7 +318,9 @@
 "generic_time"
     %I:%M %p
 "Genre"
+"Genre (filtered)"
 "Genres"
+"Global"
 "Go"
     Go
 "Google"
@@ -315,8 +334,11 @@
 "Handy Predefined Searches"
 "handy: overview"
     Cette page contient des recherches préparées dans le programme TV
+"has bookmark"
 "has Bookmark"
+"has commflag"
 "Has Cutlist"
+"has cutlist"
 "HD"
 "HDTV"
 "Hide"
@@ -336,6 +358,7 @@
     Humidit&eacute;
 "IMDB"
     Allocin&eacute;
+"imdb rating"
 "IMDBTYPE"
     Imdb
 "Inactive"
@@ -348,6 +371,7 @@
 "info:forget old"
 "info:never record"
 "Insert"
+"is editing"
 "Jump"
     Aller
 "Jump Points"
@@ -419,6 +443,10 @@
 "MythMusic on the web."
     MythMusic sur le Web
 "MythTV"
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
 "MythVideo Artwork Dir"
 "MythVideo Dir"
@@ -431,6 +459,8 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Session"
+"MythWeb session settings"
+"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -445,6 +475,8 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
+"Next"
+"No"
 "NO DATA"
 "No Frontends allow remote control."
 "No matches found"
@@ -453,6 +485,7 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Aucune programmation n'est définie
+"No Tracks Available"
 "No. of recordings to keep"
     Nombre d&acute;enregistrements &agrave; garder
 "Non-Music Specials"
@@ -506,8 +539,10 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
 "Power"
@@ -519,6 +554,8 @@
     Présenté par
 "Pressure"
     Pression
+"preview"
+"Previous"
 "Previous Recording"
 "Previous recordings"
     Enregistrements pr&eacute;c&eacute;dents
@@ -544,6 +581,7 @@
 "Random Type"
 "Rating"
     &eacute;valuation
+"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -658,6 +696,7 @@
     Reset
 "Retry"
 "Return to Statistics Page"
+"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -707,12 +746,15 @@
     param&egrave;tres
 "settings"
 "Settings Table"
+"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Nous vous pr&eacute;venons que modifier les touches sans savoir ce que vous fa&icirc;tes peut s&eacute;rieusement endomager le fonctionnement de MythTV
+"settings: overview"
 "Shift"
 "Show"
     Diffusion
+"Show descriptions on new line"
 "Show group"
     Monter les groupes
 "Show pixmaps"
@@ -724,6 +766,7 @@
 "Shows"
 "SI Units"
     Unités métriques
+"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -754,6 +797,7 @@
 "Sub and Desc (Empty matches)"
     Sub et Desc (Vide correspond)
 "Submit Search"
+"subtitle"
 "Subtitle"
     Soustitre
 "Subtitle and Description"
@@ -791,6 +835,7 @@
 "Tomorrow"
     Demain
 "Too Many"
+"Top"
 "Top $1"
 "Top Played Songs"
 "Total Length"
@@ -799,6 +844,7 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
+"Track Name"
 "Transcode"
 "transcoder"
 "Transcoder"
@@ -813,12 +859,16 @@
     Type
 "Type"
     Type
+"Undelete"
+"Undelete: $1"
+"Unfiltered"
 "Unknown"
     Inconnu
 "Unknown Program."
     Programme inconnu
 "Unknown Recording Schedule."
     Programmation inconnue
+"Unreachable"
 "Up"
 "Upcoming Recordings"
 "Update"
@@ -841,6 +891,7 @@
     Indice UV mod&eacute;r&eacute;
 "Value"
 "Video"
+"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -903,6 +954,7 @@
     Ecrit par
 "xmltvid"
 "Year"
+"year"
 "Yes"
     Oui
 "Yesterday"
