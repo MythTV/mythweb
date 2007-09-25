@@ -58,7 +58,7 @@
 /**
  * Prints a <select> of the available channels
 /**/
-    function channel_select($params = '') {
+    function channel_select($params = '', $selected='') {
         global $Channels;
         echo "<select name=\"chanid\" $params>";
         foreach ($Channels as $channel) {
@@ -69,7 +69,8 @@
             echo '<option value="', $channel->chanid, '"',
                  ' title="', html_entities($channel->name), '"';
         // Selected?
-            if ($channel->chanid == $_GET['chanid'])
+            if (($channel->chanid == $selected) ||
+                ($channel->chanid == $_GET['chanid']))
                 echo ' SELECTED';
         // Print ther est of the content
             echo '>';
