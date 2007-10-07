@@ -572,14 +572,21 @@ class Schedule {
                 $groups[$group]  = $group;
             }
             mysql_free_result($result);
+        // Ignore LiveTV and Deleted
+            unset($groups['LiveTV']);
+            unset($groups['Deleted']);
         }
     // Print the <select>
         echo "<select name=\"$name\">";
         foreach($groups as $group) {
-            echo '<option value="'.html_entities($group).'"';
+            echo '<option value="', html_entities($group), '"';
             if ($this_group == $group)
                 echo ' SELECTED';
-            echo '>'.html_entities($group).'</option>';
+            echo '>', html_entities($group), '</option>';
+        }
+        if (!$groups[$this_group]) {
+            echo '<option value="', html_entities($this_group), '" SELECTED',
+                 '>', html_entities($group), '</option>';
         }
         echo '</select>';
     }
@@ -604,10 +611,10 @@ class Schedule {
     // Print the <select>
         echo "<select name=\"$name\">";
         foreach($groups as $group) {
-            echo '<option value="'.html_entities($group).'"';
+            echo '<option value="', html_entities($group), '"';
             if ($this_group == $group)
                 echo ' SELECTED';
-            echo '>'.html_entities($group).'</option>';
+            echo '>', html_entities($group), '</option>';
         }
         echo '</select>';
     }
