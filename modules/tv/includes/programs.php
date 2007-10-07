@@ -88,6 +88,11 @@
 /**/
     function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '') {
         global $Channels, $db;
+    // Don't allow negative timestamps; it confuses MySQL
+        if ($start_time < 0)
+            $start_time = 0;
+        if ($end_time < 0)
+            $end_time = 0;
     // Make a local hash of channel chanid's with references to the actual
     // channel data (Channels are not indexed by anything in particular, so
     // that the user can sort by chanid or channum).
