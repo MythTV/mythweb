@@ -804,6 +804,7 @@ class Program {
         $schedule->seriesid    = $this->seriesid;
         $schedule->programid   = $this->programid;
         $schedule->search      = 0;
+        $schedule->inactive    = 0;
     // Save the schedule -- it'll know what to do about the override
         $schedule->save($rectype);
     }
