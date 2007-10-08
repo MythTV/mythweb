@@ -50,8 +50,8 @@
         $sh = $db->query($sql);
         while ($channel_data = $sh->fetch_assoc())  {
             $Channels[$channel_data['chanid']] = new Channel($channel_data);
-            if (empty($Callsigns[$channel_data['callsign']]))
-                $Callsigns[$channel_data['callsign']] = $channel_data['chanid'];
+            if (empty($Callsigns[$channel_data['channum'].':'.$channel_data['callsign']]))
+                $Callsigns[$channel_data['channum'].':'.$channel_data['callsign']] = $channel_data['chanid'];
         }
         $sh->finish();
     // No channels returned?
