@@ -42,6 +42,7 @@
         else
             $sql = 'SELECT * FROM channel WHERE';
         $sql .= ' channel.visible=1';
+        $sql .= ' GROUP BY channel.channum, channel.callsign';    
     // Sort
         $sql .= ' ORDER BY '
                 .(sortby_channum ? '' : 'channel.callsign, ')
