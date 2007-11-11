@@ -152,6 +152,9 @@
  * Check that we are speaking a version of the protocol that is compatible with the backend
 /**/
     function check_proto_version($host, $port) {
+    // Allow overriding this check
+        if ($_SERVER['ignore_proto'] == true )
+            return;
         static $cache;
         if (!$cache)
             $cache = array();
