@@ -321,14 +321,23 @@
 // Build a list of titles for figuring out alternate showings.  Use the same
 // key to make parsing things below a little easier.
     $titles = array();
+    $seen = array();
     foreach ($Results as $key => $show) {
-        $titles[$show->title.': '.$show->subtitle][$key] =& $Results[$key];
+        $tkey = md5($show->title.': '.$show->subtitle.': '.$show->description);
+        $skey = $show->channel->name.$show->starttime.$tkey;
+        if($seen[$skey]){
+            unset($Results[$key]);
+            continue;
+        }else{
+            $titles[$tkey][$key] =& $Results[$key];
+            $seen[$skey] = true;
+        }
     }
 
 // Parse the show list for showings that can be consolidated/folded
     $seen = array();
     foreach ($Results as $key => $show) {
-        $tkey = $show->title.': '.$show->subtitle;
+        $tkey = md5($show->title.': '.$show->subtitle.': '.$show->description);
     // Populate extra_showings info for other instances of this show
         if (count($titles[$tkey]) > 1) {
             foreach (array_keys($titles[$tkey]) as $key2) {
