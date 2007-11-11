@@ -13,7 +13,7 @@
 /**/
 
 // Load the frontend class
-    require_once 'includes/objects/MythFrontend.php';
+    require_once 'objects/MythFrontend.php';
 
 /**
  * @global  array $GLOBALS['Frontends']

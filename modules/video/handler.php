@@ -22,7 +22,7 @@
     global $mythvideo_dir;
     $mythvideo_dir = setting('VideoStartupDir', hostname);
 
-    require_once 'includes/objects/Video.php';
+    require_once 'objects/Video.php';
 
 // a extra function
     function makeImdbWebUrl($num) {
