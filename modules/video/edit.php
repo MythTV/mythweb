@@ -112,7 +112,7 @@ Browsable<br />
  <option value="1" <?php if ($Video->browse == 1) echo ' SELECTED'; ?>>Yes</option>
 </select><br /><br />
 Parental Level<br />
-<select name-"showlevel">
+<select name="showlevel">
  <option value="1" <?php if ($Video->showlevel == 1) echo ' SELECTED'; ?>>1 - Lowest</option>
  <option value="2" <?php if ($Video->showlevel == 2) echo ' SELECTED'; ?>>2</option>
  <option value="3" <?php if ($Video->showlevel == 3) echo ' SELECTED'; ?>>3</option>
