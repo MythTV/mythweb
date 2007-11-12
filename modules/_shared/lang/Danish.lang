@@ -221,6 +221,8 @@
 "Custom Search"
 "Data"
     Data
+"Database"
+"Database Health"
 "Date"
     Dato
 "Date Formats"
@@ -302,6 +304,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Producer
+"Extended Check"
 "File Size"
     filstørrelse
 "Filter"
@@ -534,6 +537,7 @@
 "Only match HD programs"
 "Only New Episodes"
     Kun Nye Afsnit
+"Optimize Tables"
 "or"
     eller
 "Original Airdate"
@@ -731,6 +735,7 @@
 "regex: articles"
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Genudsendelse
 "Reset"

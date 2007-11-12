@@ -214,6 +214,8 @@
     Erweiterte Aufnahmeregel
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
     Datum
 "Date Formats"
@@ -296,6 +298,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Produzent
+"Extended Check"
 "File Size"
     Dateigröße
 "Filter"
@@ -527,6 +530,7 @@
 "Only match HD programs"
 "Only New Episodes"
     Nur neue Folgen
+"Optimize Tables"
 "or"
     oder
 "Original Airdate"
@@ -722,6 +726,7 @@
     D(e[rmn]|ie|as)
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Wiederholung
 "Reset"

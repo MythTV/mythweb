@@ -176,6 +176,8 @@
     Upravený rozvrh
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
     Datum
 "Date Formats"
@@ -241,6 +243,7 @@
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
 "Exec. Producer"
+"Extended Check"
 "File Size"
 "Filter"
 "Filters"
@@ -427,6 +430,7 @@
 "Only match HD programs"
 "Only New Episodes"
     Jen nové díly
+"Optimize Tables"
 "or"
 "Original Airdate"
     Původně vysíláno
@@ -601,6 +605,7 @@
     An?|The
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Opakování
 "Reset"

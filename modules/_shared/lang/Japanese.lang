@@ -214,6 +214,8 @@
     カスタム録画
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
     日付
 "Date Formats"
@@ -296,6 +298,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     製作責任者
+"Extended Check"
 "File Size"
     ファイルサイズ
 "Filter"
@@ -536,6 +539,7 @@
     HD番組のみ
 "Only New Episodes"
     新しい番組のみ
+"Optimize Tables"
 "or"
 "Original Airdate"
     初回放送
@@ -735,6 +739,7 @@
     An?|The
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     再開
 "Reset"

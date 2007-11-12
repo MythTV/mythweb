@@ -194,6 +194,8 @@
 "Custom Schedule"
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
     Date
 "Date Formats"
@@ -268,6 +270,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Producteur
+"Extended Check"
 "File Size"
     taille de fichier
 "Filter"
@@ -473,6 +476,7 @@
 "Only match HD programs"
 "Only New Episodes"
     Seulement les nouveaux &eacute;pisodes
+"Optimize Tables"
 "or"
 "Original Airdate"
     Heure de diffusion d&acute;origine
@@ -654,6 +658,7 @@
     An?|The
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Relancer
 "Reset"

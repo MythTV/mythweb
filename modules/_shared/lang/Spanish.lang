@@ -225,6 +225,8 @@
 "Custom Search"
 "Data"
     Datos
+"Database"
+"Database Health"
 "Date"
     Fecha
 "Date Formats"
@@ -307,6 +309,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Productor ejec.
+"Extended Check"
 "File Size"
     tamaño fichero
 "Filter"
@@ -557,6 +560,7 @@
     Sólo programas HD
 "Only New Episodes"
     Sólo nuevos episodios
+"Optimize Tables"
 "or"
     o
 "Original Airdate"
@@ -757,6 +761,7 @@
     El|L(?:as?|os)
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Reejecutar
 "Reset"

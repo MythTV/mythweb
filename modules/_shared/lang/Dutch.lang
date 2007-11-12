@@ -214,6 +214,8 @@
     Geavanceerde Opname
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
     Datum
 "Date Formats"
@@ -296,6 +298,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Uitv. Producent
+"Extended Check"
 "File Size"
     bestandsgrootte
 "Filter"
@@ -529,6 +532,7 @@
 "Only match HD programs"
 "Only New Episodes"
     Enkel Nieuwe Afleveringen
+"Optimize Tables"
 "or"
 "Original Airdate"
     Oorsp. Datum
@@ -722,6 +726,7 @@
     An?|The
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Opnieuw Uitvoeren
 "Reset"

@@ -211,6 +211,8 @@
     Mukautettu Ajastus
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
     Aika
 "Date Formats"
@@ -293,6 +295,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Tuottaja
+"Extended Check"
 "File Size"
     tiedostokoko
 "Filter"
@@ -514,6 +517,7 @@
 "Only match HD programs"
 "Only New Episodes"
     Vain Uudet Jaksot
+"Optimize Tables"
 "or"
 "Original Airdate"
     Vuosi
@@ -705,6 +709,7 @@
     An?|The
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Tee uudelleen
 "Reset"

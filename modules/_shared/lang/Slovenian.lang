@@ -188,6 +188,8 @@
 "Custom Schedule"
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
     Datum
 "Date Formats"
@@ -262,6 +264,7 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Scenarist
+"Extended Check"
 "File Size"
     velikost datoteke
 "Filter"
@@ -465,6 +468,7 @@
 "Only match HD programs"
 "Only New Episodes"
     Samo eno oddajo
+"Optimize Tables"
 "or"
 "Original Airdate"
     Izvirni datum predvajanja
@@ -645,6 +649,7 @@
     An?|The
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Ponovno zaženi
 "Reset"

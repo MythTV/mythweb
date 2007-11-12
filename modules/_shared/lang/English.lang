@@ -151,6 +151,8 @@
 "Custom Schedule"
 "Custom Search"
 "Data"
+"Database"
+"Database Health"
 "Date"
 "Date Formats"
 "Deactivated"
@@ -208,6 +210,7 @@
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
 "Exec. Producer"
+"Extended Check"
 "File Size"
 "Filter"
 "Filters"
@@ -379,6 +382,7 @@
 "Only match commercial-free channels"
 "Only match HD programs"
 "Only New Episodes"
+"Optimize Tables"
 "or"
 "Original Airdate"
 "Originally aired between"
@@ -545,6 +549,7 @@
     An?|The
 "Remote"
 "Remove Item from Playlist"
+"Repair Tables"
 "Repeat"
     Rerun
 "Reset"

@@ -289,6 +289,8 @@
     Egen sökning
 "Data"
     Data
+"Database"
+"Database Health"
 "Date"
     Datum
 "Date Formats"
@@ -385,6 +387,7 @@
     Exkludera upprepade avsnitt
 "Exec. Producer"
     Producent
+"Extended Check"
 "File Size"
     Filstorlek
 "Filter"
@@ -680,6 +683,7 @@
     Matcha endast HD-program
 "Only New Episodes"
     Endast nya avsnitt
+"Optimize Tables"
 "or"
     eller
 "Original Airdate"
@@ -916,6 +920,7 @@
 "Remote"
 "Remove Item from Playlist"
     Ta bort post från spellista
+"Repair Tables"
 "Repeat"
     Repris
 "Reset"
