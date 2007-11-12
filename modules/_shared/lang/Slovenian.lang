@@ -64,8 +64,6 @@
     datum oddajanja
 "Airtime"
     Čas predvajanja
-"Album"
-"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -78,7 +76,6 @@
 "All groups"
 "All HDTV"
 "All Hosts"
-"All Music"
 "All recordings"
     Vsa snemanja
 "All Songs"
@@ -95,14 +92,11 @@
 "Are you sure you want to delete the following show?"
     Ste prepričani, da želite izbrisati to oddajo?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
 "Auto Expire"
-"auto-expire"
 "Auto-expire recordings"
     Snemanja avto-preteka
 "Auto-flag commercials"
@@ -172,15 +166,12 @@
     Ukazi
 "Commercials Flagged"
 "commfree"
-"Configure Channels"
-"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Konflikti
 "Context"
 "contrast"
 "Count"
-"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -203,6 +194,7 @@
     Format datuma
 "Deactivated"
     Deaktiviran
+"Deaf Signed"
 "Default"
     Privzet
 "Default MythVideo View"
@@ -225,10 +217,8 @@
 "Direct Download"
 "Directed by"
     Režiser
-"director"
 "Display"
     Prikaz
-"Displaying"
 "Dolby Surround"
 "Don't Record"
     Ne snemaj
@@ -244,15 +234,12 @@
     Metoda preverjanja duplikatov
 "Duplicates"
     Duplikati
-"Duration"
 "Earlier"
 "Earlier Showing"
 "Edit"
 "Edit existing group"
-"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
-"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "End"
@@ -277,9 +264,7 @@
     Scenarist
 "File Size"
     velikost datoteke
-"file size"
 "Filter"
-"Filtered"
 "Filters"
 "Find Date & Time Options"
 "Find Day"
@@ -312,9 +297,7 @@
 "generic_time"
     %H:%M
 "Genre"
-"Genre (filtered)"
 "Genres"
-"Global"
 "Go"
     Pojdi
 "Google"
@@ -328,11 +311,8 @@
 "Handy Predefined Searches"
 "handy: overview"
     Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.
-"has bookmark"
 "has Bookmark"
-"has commflag"
 "Has Cutlist"
-"has cutlist"
 "HD"
 "HDTV"
 "Hide"
@@ -352,7 +332,6 @@
     Vlažnost
 "IMDB"
     IMBD
-"imdb rating"
 "IMDBTYPE"
 "Inactive"
 "info: activate recording"
@@ -363,7 +342,6 @@
 "info:forget old"
 "info:never record"
 "Insert"
-"is editing"
 "Jump"
     Skoči
 "Jump Points"
@@ -435,10 +413,6 @@
 "MythMusic on the web."
     MythMusic na spletu
 "MythTV"
-"MythTV channel info"
-"MythTV global defaults"
-"MythTV key bindings"
-"MythTV settings table"
 "MythTV Status"
 "MythVideo Artwork Dir"
 "MythVideo Dir"
@@ -451,8 +425,6 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Session"
-"MythWeb session settings"
-"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -467,8 +439,6 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
-"No"
 "NO DATA"
 "No Frontends allow remote control."
 "No matches found"
@@ -477,7 +447,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
-"No Tracks Available"
 "No. of recordings to keep"
     Št. ohranjenih snemanj
 "Non-Music Specials"
@@ -531,10 +500,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
-"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
 "Power"
@@ -546,8 +513,6 @@
     Predstavlja
 "Pressure"
     Tlak
-"preview"
-"Previous"
 "Previous Recording"
 "Previous recordings"
     Že posneto
@@ -573,7 +538,6 @@
 "Random Type"
 "Rating"
     Ocena
-"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -687,7 +651,6 @@
     Resetiraj
 "Retry"
 "Return to Statistics Page"
-"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -737,14 +700,11 @@
     Nastavitve
 "settings"
 "Settings Table"
-"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
-"settings: overview"
 "Shift"
 "Show"
     Oddaja
-"Show descriptions on new line"
 "Show group"
     Pokaži skupino
 "Show pixmaps"
@@ -756,12 +716,12 @@
 "Shows"
 "SI Units"
     SI enote
-"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
 "Songs for Genre"
 "Songs Played"
+"Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sourceid"
 "Space"
@@ -787,7 +747,6 @@
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)
 "Submit Search"
-"subtitle"
 "Subtitle"
     Podnaslov
 "Subtitle and Description"
@@ -825,16 +784,15 @@
 "Tomorrow"
     Jutri
 "Too Many"
-"Top"
 "Top $1"
 "Top Played Songs"
+"Top Rated Songs"
 "Total Length"
 "Total Recorded"
 "Total Running Time"
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
 "Transcode"
 "transcoder"
 "Transcoder"
@@ -851,14 +809,12 @@
     Tip
 "Undelete"
 "Undelete: $1"
-"Unfiltered"
 "Unknown"
     Neznano
 "Unknown Program."
     Neznani program
 "Unknown Recording Schedule."
     Neznani plan snemanja
-"Unreachable"
 "Up"
 "Upcoming Recordings"
 "Update"
@@ -881,7 +837,6 @@
     UV srednji
 "Value"
 "Video"
-"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -944,7 +899,6 @@
     Napisal
 "xmltvid"
 "Year"
-"year"
 "Yes"
     Da
 "Yesterday"
