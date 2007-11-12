@@ -231,6 +231,9 @@
                             case 'category':
                                 $query .= 'program.category';
                                 break;
+                            case 'people':
+                                $query .= 'people.name';
+                                break;
                             case 'channum':
                                 $query .= 'channel.channum';
                                 break;
@@ -294,6 +297,8 @@
                 $query[] = "program.description $compare $search";
             if (empty($_REQUEST['field']) || stristr($_REQUEST['field'], 'cat'))
                 $query[] = "program.category    $compare $search";
+            if (empty($_REQUEST['field']) || stristr($_REQUEST['field'], 'people'))
+                $query[] = "people.name         $compare $search";
             $query   = implode(' OR ', $query);
         }
 
@@ -426,6 +431,7 @@
                                    'subtitle'    => html_entities(t('Subtitle')),
                                    'description' => html_entities(t('Description')),
                                    'category'    => html_entities(t('Category')),
+                                   'people'      => html_entities(t('People')),
                                    'channum'     => html_entities(t('Chan. Number')),
                                    'channame'    => html_entities(t('Chan. Name')),
                                    'callsign'    => html_entities(t('Chan. Callsign')),

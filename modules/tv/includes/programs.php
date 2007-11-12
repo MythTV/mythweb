@@ -140,6 +140,8 @@
                   FROM program
                        LEFT JOIN programrating USING (chanid, starttime)
                        LEFT JOIN channel ON program.chanid = channel.chanid
+                       LEFT JOIN credits ON (program.chanid = credits.chanid AND program.starttime = credits.starttime)
+                       LEFT JOIN people ON (credits.person = people.person)
                  WHERE';
     // Only loading a single channel worth of information
         if ($chanid > 0)
