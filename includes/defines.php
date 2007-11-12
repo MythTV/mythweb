@@ -18,7 +18,9 @@
     define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));
 
 // Several sections of this program require the current hostname
-    define('hostname', empty($_SERVER['hostname']) ? trim(`hostname`) : $_SERVER['hostname']);
+    $uname=posix_uname();
+    define('hostname', empty($_SERVER['hostname']) ? trim($uname['nodename']) : $_SERVER['hostname']);
+    unset($uname);
 
 // Define the error email, or set it to a null string if there isn't a valid one
     define('error_email', array_key_exists('error_email', $_SERVER) && strstr($_SERVER['error_email'], '@')
