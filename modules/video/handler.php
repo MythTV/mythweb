@@ -165,7 +165,7 @@
 
 // Get the video categories on the system
     $Category_String = array();
-    $sh = $db->query('SELECT * FROM videocategory');
+    $sh = $db->query('SELECT * FROM videocategory ORDER BY category');
     while ($row = $sh->fetch_assoc())
         $Category_String[$row['intid']] = $row['category'];
     $sh->finish();
@@ -174,7 +174,7 @@
 
 // New:  Get the video genres on the system
     $Genre_String = array();
-    $sh = $db->query('SELECT * FROM videogenre');
+    $sh = $db->query('SELECT * FROM videogenre ORDER BY genre');
     while ($row = $sh->fetch_assoc())
         $Genre_String[$row['intid']] = $row['genre'];
     $sh->finish();
