@@ -77,6 +77,7 @@ class Program {
     var $closecaptioned  = 0;
     var $has_subtitles   = 0;
     var $subtitled       = 0;
+    var $deaf_signed     = 0;
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
@@ -247,6 +248,7 @@ class Program {
         $this->closecaptioned = $this->subtitletype    & 0x01;
         $this->has_subtitles  = $this->subtitletype    & 0x02;
         $this->subtitled      = $this->subtitletype    & 0x04;
+        $this->deaf_signed    = $this->subtitletype    & 0x08;
     // Generate the star string, since mysql has issues with REPEAT() and
     // decimals, and the backend doesn't do it for us, anyway.
         $this->starstring = str_repeat(star_character, intVal($this->stars * max_stars));
@@ -337,6 +339,8 @@ class Program {
             $details[] = t('Subtitles Available');
         if ($this->subtitled)
             $details[] = t('Subtitled');
+        if ($this->deaf_signed)
+            $details[] = t('Deaf Signed');
         if ($this->stereo)
             $details[] = t('Stereo');
         if ($this->mono)
