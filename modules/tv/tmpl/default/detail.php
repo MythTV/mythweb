@@ -260,6 +260,12 @@
             <td><?php echo nice_filesize($program->filesize) ?></dd>
         </tr><?php
             }
+            if (strlen($program->recgroup)) {
+        ?><tr class="-extras">
+            <th><?php echo t('Recording Group') ?>:</th>
+            <td><?php echo $program->recgroup ?></dd>
+        </tr><?php
+            }
             if (strlen($program->playgroup)) {
         ?><tr class="-extras">
             <th><?php echo t('Playback Group') ?>:</th>
