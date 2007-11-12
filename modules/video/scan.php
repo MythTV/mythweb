@@ -73,7 +73,6 @@ $Known_Exts = $db->query_list('SELECT extension FROM videotypes WHERE f_ignore =
     // Converts the filename to the title and cleans it up a little
     // This is a direct port of the C++ code from mythvideo
     function filenametotitle($filename) {
-
         $title = substr($filename, 0, strripos($filename, '.'));
 
         $title = str_replace('_', ' ', $title);
@@ -88,26 +87,20 @@ $Known_Exts = $db->query_list('SELECT extension FROM videotypes WHERE f_ignore =
     }
 
     // Strips out braces and the text inside the braces.
-    // This is a direct port of the C++ code from mythvideo
-    function eatbraces($str, $left_brace, $right_brace) {
-        $keep_checking = TRUE;
+    function eatbraces($str, $lb, $rb) {
+        $lb_pos = stripos($str, $lb);
+        $rb_pos = stripos($str, $rb);
 
-        while ($keep_checking) {
-            $left_position = stripos($str, $left_brace);
-            $right_position = stripos($str, $right_brace);
+        if (!is_numeric($lb_pos))
+            return $str;
 
-            // No matching pairs left
-            if ($left_position === FALSE || $right_position === FALSE)
-                $keep_checking = FALSE;
+        $part1 = substr($str, 0, $lb_pos);
+        $part2 = substr($str, strpos($str, $rb)+1);
 
-            // Matching set: ()
-            elseif ($left_position < $right_position)
-                $str = substr($str, 0, $left_postion) + substr($str, $right_position);
+        $output = $part1.$part2;
 
-            // Matching set: )(
-            elseif ($left_position > $right_position)
-                $str = substr($str, 0, $right_postion) + substr($str, $left_position);
-        }
-        return $str;
+        if (strpos($output, $lb) && strpos($str, $rb))
+            return eatbraces($output, $lb, $rb);
+
+        return $output;
     }
-
