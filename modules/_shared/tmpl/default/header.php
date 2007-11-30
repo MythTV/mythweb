@@ -27,6 +27,8 @@
     <link rel="icon"          href="<?php echo skin_url ?>img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="<?php echo skin_url ?>img/favicon.ico" type="image/x-icon" />
 
+    <link type="application/opensearchdescription+xml" rel="search" href="<?php echo root ?>tv/opensearch?type=xml" title="MythTV">
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
     <script type="text/javascript" src="<?php echo root ?>js/init.js"></script>

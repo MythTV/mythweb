@@ -24,6 +24,12 @@
         exit;
     }
 
+// Call the opensearch module early, before loading all kinds of stuff it
+// doesn't need.  Plus, it's not "enabled" like other modules, so we skip that
+// check, too.
+    if ($Path[1] == 'opensearch')
+        require_once 'modules/tv/opensearch.php';
+
 /**
  * @global  array   $GLOBALS['Categories']
  * @name    $Categories
@@ -65,8 +71,9 @@
 
 // Unknown section?  Use the default
     if (!in_array($Path[1], array('recording_detail', 'detail', 'channel', 'search', 'movies'))
-            && empty($Modules['tv']['links'][$Path[1]]))
+            && empty($Modules['tv']['links'][$Path[1]])) {
         $Path[1] = 'list';
+    }
 
 // Keep track of this path for the next visit
     $_SESSION['tv']['last'] = array_slice($Path, 1);
