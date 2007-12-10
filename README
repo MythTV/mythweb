@@ -132,6 +132,13 @@ A: First, make sure that if you have enabled some form of authentication that
     to set up an alternate version of mythweb on the same server, but without
     ssl enabled.
 
+Q: I get a "500 server error" (or some other number) when trying to view
+    MythWeb.
+A: Check your apache logs for details about what caused the error.  Usually,
+    it means that you didn't set up a required module.  Read the 
+    mythweb.conf.apache file in more detail to make sure you didn't miss
+    an important setup file.
+
 ======================
 4.0 Submitting Patches
 ======================
