@@ -3,10 +3,10 @@
  * This file is part of MythWeb, a php-based interface for MythTV.
  * See http://www.mythtv.org/ for details.
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/includes/init.php $
- * @date        $Date: 2007-07-28 21:46:51 -0700 (Sat, 28 Jul 2007) $
- * @version     $Revision: 14075 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

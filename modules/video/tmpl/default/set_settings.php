@@ -2,10 +2,10 @@
 /**
  * Display/save MythVideo settings
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/weather/tmpl/default/set_prefs.php $
- * @date        $Date: 2007-01-08 22:37:34 -0800 (Mon, 08 Jan 2007) $
- * @version     $Revision: 12460 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

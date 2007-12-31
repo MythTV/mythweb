@@ -2,10 +2,10 @@
 /**
  * Video settings
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/weather/set_prefs.php $
- * @date        $Date: 2006-12-19 00:17:33 -0800 (Tue, 19 Dec 2006) $
- * @version     $Revision: 12295 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

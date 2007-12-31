@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/mythtv/tmpl/default/set_settings.php $
- * @date        $Date: 2006-12-31 02:41:16 -0800 (Sun, 31 Dec 2006) $
- * @version     $Revision: 12359 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

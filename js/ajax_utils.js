@@ -1,10 +1,10 @@
 /**
  * The routines to allow a small ajax request counter
  *
- * @url         $URL: http://svn.mythtv.org/svn/trunk/mythplugins/mythweb/js/utils.js $
- * @date        $Date: 2006-07-07 23:05:05 -0700 (Fri, 07 Jul 2006) $
- * @version     $Revision: 10427 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     LGPL
  *
 /**/

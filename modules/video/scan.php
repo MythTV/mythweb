@@ -2,10 +2,10 @@
 /**
  * Video scanner
  *
- * @url         $URL: http://svn.mythtv.org/svn/trunk/mythplugins/mythweb/modules/video/edit.php $
- * @date        $Date: 2006-06-24 12:03:10 -0700 (Sat, 24 Jun 2006) $
- * @version     $Revision: 10290 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  Video
