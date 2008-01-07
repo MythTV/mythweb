@@ -106,6 +106,8 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Audio for Hearing Impaired"
+"Audio for Visually Impaired"
 "Auto Expire"
 "Auto-expire recordings"
     Aut. vanheneminen
@@ -113,6 +115,7 @@
     Aut. mainosten merkkaus
 "Auto-transcode"
     Automaattinen jälkikäsittely
+"AVC/H.264"
 "Back"
 "Back Tab"
 "Back to the program listing"

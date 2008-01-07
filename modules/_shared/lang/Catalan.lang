@@ -116,6 +116,8 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Audio for Hearing Impaired"
+"Audio for Visually Impaired"
 "Auto Expire"
 "Auto-expire recordings"
     Autoexpirar enregistraments
@@ -123,6 +125,7 @@
     Automarcar anúncis
 "Auto-transcode"
     Auto-recodificar
+"AVC/H.264"
 "Back"
 "Back Tab"
 "Back to the program listing"

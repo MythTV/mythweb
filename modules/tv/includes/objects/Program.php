@@ -72,8 +72,11 @@ class Program {
     var $mono            = 0;
     var $surround        = 0;
     var $dolby           = 0;
+    var $audiohardhear   = 0;
+    var $audiovisimpair  = 0;
     var $hdtv            = 0;
     var $widescreen      = 0;
+    var $avc             = 0;
     var $closecaptioned  = 0;
     var $has_subtitles   = 0;
     var $subtitled       = 0;
@@ -243,8 +246,11 @@ class Program {
         $this->mono           = $this->audioproperties & 0x02;
         $this->surround       = $this->audioproperties & 0x04;
         $this->dolby          = $this->audioproperties & 0x08;
+        $this->audiohardhear  = $this->audioproperties & 0x10;
+        $this->audiovisimpair = $this->audioproperties & 0x20;
         $this->hdtv           = $this->videoproperties & 0x01;
         $this->widescreen     = $this->videoproperties & 0x02;
+        $this->avc            = $this->videoproperties & 0x04;
         $this->closecaptioned = $this->subtitletype    & 0x01;
         $this->has_subtitles  = $this->subtitletype    & 0x02;
         $this->subtitled      = $this->subtitletype    & 0x04;
@@ -329,6 +335,8 @@ class Program {
             $details[] = t('HDTV');
         if ($this->widescreen)
             $details[] = t('Widescreen');
+        if ($this->avc)
+            $details[] = t('AVC/H.264');
         if ($this->parttotal > 1 || $this->partnumber > 1)
             $details[] = t('Part $1 of $2', $this->partnumber, $this->parttotal);
         if ($this->rating)
@@ -349,6 +357,11 @@ class Program {
             $details[] = t('Surround Sound');
         if ($this->dolby)
             $details[] = t('Dolby Surround');
+        if ($this->audiohardhear)
+            $details[] = t('Audio for Hearing Impaired');
+        if ($this->audiovisimpair)
+            $details[] = t('Audio for Visually Impaired');
+
         if ($this->previouslyshown)
             $details[] = t('Repeat');
 

@@ -151,6 +151,8 @@
     Artister som börjar på %s
 "ASX Stream"
     ASX-ström
+"Audio for Hearing Impaired"
+"Audio for Visually Impaired"
 "Auto Expire"
     Autoradera
 "Auto-expire recordings"
@@ -159,6 +161,7 @@
     Markera reklam automatiskt
 "Auto-transcode"
     Omkoda automatiskt
+"AVC/H.264"
 "Back"
     Tillbaka
 "Back Tab"

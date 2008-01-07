@@ -109,6 +109,8 @@
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Audio for Hearing Impaired"
+"Audio for Visually Impaired"
 "Auto Expire"
 "Auto-expire recordings"
     Opnames Autom. Vervallen
@@ -116,6 +118,7 @@
     Reclame Autom. Markeren
 "Auto-transcode"
     Auto-transcode
+"AVC/H.264"
 "Back"
 "Back Tab"
 "Back to the program listing"
