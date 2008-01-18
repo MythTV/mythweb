@@ -72,6 +72,8 @@
     Sendezeit
 "Airtime"
     Sendezeit
+"Album"
+"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -86,6 +88,7 @@
 "All HDTV"
     Sendungen in HDTV
 "All Hosts"
+"All Music"
 "All recordings"
     Alle Aufnahmen
 "All Songs"
@@ -105,13 +108,17 @@
 "Are you sure you want to delete the following show?"
     Diese Aufnahme wirklich löschen?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist"
+"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Audio Bitrate"
 "Audio for Hearing Impaired"
 "Audio for Visually Impaired"
 "Auto Expire"
+"auto-expire"
 "Auto-expire recordings"
     Aufnahmen autom. löschen
 "Auto-flag commercials"
@@ -191,6 +198,8 @@
 "Commercials Flagged"
 "commfree"
     Werbefrei
+"Configure Channels"
+"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Überschneidungen
@@ -199,6 +208,7 @@
 "contrast"
     Kontrast
 "Count"
+"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -254,8 +264,10 @@
 "Direct Download"
 "Directed by"
     Regie
+"director"
 "Display"
     Anzeigen
+"Displaying"
 "Dolby Surround"
 "Don't Record"
     Nicht aufnehmen
@@ -271,15 +283,19 @@
     Testmethode für Wdhgn.
 "Duplicates"
     Wiederholungen
+"Duration"
 "Earlier"
 "Earlier Showing"
 "Edit"
     Bearbeiten
 "Edit existing group"
+"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
+"Edit settings for"
 "Edit settings for: $1"
 "Editing "
+"Enable Video Playback"
 "End"
 "End Late"
     verspätetes Aufnahmeende
@@ -304,7 +320,9 @@
 "Extended Check"
 "File Size"
     Dateigröße
+"file size"
 "Filter"
+"Filtered"
 "Filters"
 "Find Date & Time Options"
     Finde Datum & Zeit Optionen
@@ -344,7 +362,9 @@
     %H:%M
 "Genre"
     Genre
+"Genre (filtered)"
 "Genres"
+"Global"
 "Go"
     Los
 "Google"
@@ -360,11 +380,15 @@
     Handy: Vordefinierte Suchabfragen
 "handy: overview"
     Handy: Übersicht
+"has bookmark"
 "has Bookmark"
+"has commflag"
 "Has Cutlist"
+"has cutlist"
 "HD"
 "HDTV"
     HDTV
+"Height"
 "Hide"
 "High"
     Max
@@ -382,17 +406,35 @@
     Luftfeuchtigkeit
 "IMDB"
     IMDB
+"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Inaktiv
 "info: activate recording"
 "info: default recording"
 "info: dont record"
+"info: flvplayer"
+    <p>
+    Flash video playback is currently only a proof-of-concept and should be
+    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
+    default.
+    </p>
+    <p>
+    It currently expects that ffmpeg is installed and compiled with mp3
+    support, and that the recordings files are accessible to your webserver
+    userid.  It probably won't work with Nupplevideo files, and in the end,
+    it may just not work at all (or maybe even worse).
+    </p>
+    <p>
+    Enable this feature at your own risk, and don't expect too much
+    official help until it has left the experimental phase.
+    </p>
 "info: hidden advanced schedule"
 "info: record this"
 "info:forget old"
 "info:never record"
 "Insert"
+"is editing"
 "Jump"
     Gehe
 "Jump Points"
@@ -475,6 +517,10 @@
 "MythMusic on the web."
     MythMusic
 "MythTV"
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
@@ -488,6 +534,8 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Session"
+"MythWeb session settings"
+"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -504,6 +552,8 @@
 "New Search"
 "New Titles, Premieres"
     Neue Sendungen, Erstausstrahlungen
+"Next"
+"No"
 "NO DATA"
     Kein Programm verfügbar
 "No Frontends allow remote control."
@@ -514,6 +564,7 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
+"No Tracks Available"
 "No. of recordings to keep"
     Wieviele Aufnahmen behalten
 "Non-Music Specials"
@@ -573,8 +624,10 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mögliche Konflikte mit dieser Sendung
@@ -589,6 +642,8 @@
     Präsentiert von
 "Pressure"
     Luftdruck
+"preview"
+"Previous"
 "Previous Recording"
 "Previous recordings"
     Alte Aufnahmen
@@ -617,6 +672,7 @@
 "Random Type"
 "Rating"
     Freigegeben ab
+"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -736,6 +792,7 @@
     Zurücksetzen
 "Retry"
 "Return to Statistics Page"
+"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -791,12 +848,15 @@
 "settings"
     Einstellungen
 "Settings Table"
+"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
+"settings: overview"
 "Shift"
 "Show"
     Sendung
+"Show descriptions on new line"
 "Show group"
     Gruppe zeigen
 "Show pixmaps"
@@ -810,6 +870,7 @@
 "Shows"
 "SI Units"
     SI Einheiten
+"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -844,6 +905,7 @@
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)
 "Submit Search"
+"subtitle"
 "Subtitle"
     Untertitel
 "Subtitle and Description"
@@ -884,6 +946,7 @@
 "Tomorrow"
     Morgen
 "Too Many"
+"Top"
 "Top $1"
 "Top Played Songs"
 "Top Rated Songs"
@@ -893,6 +956,7 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
+"Track Name"
 "Transcode"
 "transcoder"
     Umwandlungsprofil
@@ -913,12 +977,14 @@
     Typ
 "Undelete"
 "Undelete: $1"
+"Unfiltered"
 "Unknown"
     Unbekannt
 "Unknown Program."
     Unbekannte Sendung.
 "Unknown Recording Schedule."
     Unbekannter Aufnahmeplan
+"Unreachable"
 "Up"
 "Upcoming Recordings"
     Aufnahmeplan
@@ -946,6 +1012,9 @@
 "Value"
 "Video"
     Video
+"Video Bitrate"
+"Video Playback"
+"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1011,6 +1080,7 @@
 "What else is on at this time?"
     Was läuft noch zu dieser Zeit?
 "Widescreen"
+"Width"
 "Will Record"
 "Wind"
     Windgeschwindigkeit
@@ -1021,6 +1091,7 @@
 "xmltvid"
     XMLTV ID
 "Year"
+"year"
 "Yes"
     Ja
 "Yesterday"

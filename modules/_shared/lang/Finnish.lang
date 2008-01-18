@@ -70,6 +70,8 @@
     lähetysaika
 "Airtime"
     Lähetysaika
+"Album"
+"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -83,6 +85,7 @@
     Kaikki ryhmät
 "All HDTV"
 "All Hosts"
+"All Music"
 "All recordings"
     Kaikki nauhoitukset
 "All Songs"
@@ -102,13 +105,17 @@
 "Are you sure you want to delete the following show?"
     Poistetaanko seuraavat ohjelmat?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist"
+"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
 "ASX Stream"
+"Audio Bitrate"
 "Audio for Hearing Impaired"
 "Audio for Visually Impaired"
 "Auto Expire"
+"auto-expire"
 "Auto-expire recordings"
     Aut. vanheneminen
 "Auto-flag commercials"
@@ -188,6 +195,8 @@
 "Commercials Flagged"
 "commfree"
     Mainosvapaa
+"Configure Channels"
+"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Ristiriidat
@@ -196,6 +205,7 @@
 "contrast"
     Kontrasti
 "Count"
+"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -251,8 +261,10 @@
 "Direct Download"
 "Directed by"
     Ohjaus
+"director"
 "Display"
     Tulosta
+"Displaying"
 "Dolby Surround"
 "Don't Record"
     Älä Nauhoita
@@ -268,15 +280,19 @@
     Kaksoiskapp. Tarkistus
 "Duplicates"
     Kaksoiskappaleet
+"Duration"
 "Earlier"
 "Earlier Showing"
 "Edit"
     Muokkaa
 "Edit existing group"
+"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
+"Edit settings for"
 "Edit settings for: $1"
 "Editing "
+"Enable Video Playback"
 "End"
 "End Late"
     Lopeta Myöhemmin
@@ -301,7 +317,9 @@
 "Extended Check"
 "File Size"
     tiedostokoko
+"file size"
 "Filter"
+"Filtered"
 "Filters"
 "Find Date & Time Options"
 "Find Day"
@@ -336,7 +354,9 @@
     %I:%M %p
 "Genre"
     Laji
+"Genre (filtered)"
 "Genres"
+"Global"
 "Go"
     Mene
 "Google"
@@ -352,11 +372,15 @@
     Esitäytetyt Haut
 "handy: overview"
     Sisältää valmiita edistyneen haun lauseita.
+"has bookmark"
 "has Bookmark"
+"has commflag"
 "Has Cutlist"
+"has cutlist"
 "HD"
 "HDTV"
     Tarkkapiirto
+"Height"
 "Hide"
 "High"
     Korkein
@@ -375,17 +399,35 @@
     Ilmankosteus
 "IMDB"
     Internet MDB
+"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Ei aktiivinen
 "info: activate recording"
 "info: default recording"
 "info: dont record"
+"info: flvplayer"
+    <p>
+    Flash video playback is currently only a proof-of-concept and should be
+    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
+    default.
+    </p>
+    <p>
+    It currently expects that ffmpeg is installed and compiled with mp3
+    support, and that the recordings files are accessible to your webserver
+    userid.  It probably won't work with Nupplevideo files, and in the end,
+    it may just not work at all (or maybe even worse).
+    </p>
+    <p>
+    Enable this feature at your own risk, and don't expect too much
+    official help until it has left the experimental phase.
+    </p>
 "info: hidden advanced schedule"
 "info: record this"
 "info:forget old"
 "info:never record"
 "Insert"
+"is editing"
 "Jump"
     Hyppäys
 "Jump Points"
@@ -464,6 +506,10 @@
 "MythMusic on the web."
     MythMusic Netissä.
 "MythTV"
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
     MythTV Tila
 "MythVideo Artwork Dir"
@@ -477,6 +523,8 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Session"
+"MythWeb session settings"
+"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -492,6 +540,8 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
+"Next"
+"No"
 "NO DATA"
     EI DATAA
 "No Frontends allow remote control."
@@ -502,6 +552,7 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
+"No Tracks Available"
 "No. of recordings to keep"
     N:o nauhoituksia pidettäväksi
 "Non-Music Specials"
@@ -558,8 +609,10 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     Saattaa olla ristiriidassa tämän ohjelman kanssa
@@ -573,6 +626,8 @@
     Esittää
 "Pressure"
     Ilmanpaine
+"preview"
+"Previous"
 "Previous Recording"
 "Previous recordings"
     Aiemmat nauhoitukset
@@ -600,6 +655,7 @@
 "Random Type"
 "Rating"
     Arvostelu
+"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -719,6 +775,7 @@
     Alustus
 "Retry"
 "Return to Statistics Page"
+"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -773,12 +830,15 @@
 "settings"
     Asetukset
 "Settings Table"
+"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
+"settings: overview"
 "Shift"
 "Show"
     Ohjelma
+"Show descriptions on new line"
 "Show group"
     Näytä ryhmä
 "Show pixmaps"
@@ -792,6 +852,7 @@
 "Shows"
 "SI Units"
     SI-yksiköt
+"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -826,6 +887,7 @@
 "Sub and Desc (Empty matches)"
     Kuvaus ja Nimike (Ei vastaavuuksia)
 "Submit Search"
+"subtitle"
 "Subtitle"
     Jakson Nimi
 "Subtitle and Description"
@@ -866,6 +928,7 @@
 "Tomorrow"
     Huomenna
 "Too Many"
+"Top"
 "Top $1"
 "Top Played Songs"
 "Top Rated Songs"
@@ -875,6 +938,7 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
+"Track Name"
 "Transcode"
 "transcoder"
     jälkikäsittely
@@ -895,12 +959,14 @@
     Nauhoitustapa
 "Undelete"
 "Undelete: $1"
+"Unfiltered"
 "Unknown"
     Tuntematon
 "Unknown Program."
     Tuntematon Ohjelma.
 "Unknown Recording Schedule."
     Tuntematon Ajoitus.
+"Unreachable"
 "Up"
 "Upcoming Recordings"
     Tulevat Nauhoitukset
@@ -926,6 +992,9 @@
 "Value"
 "Video"
     Videot
+"Video Bitrate"
+"Video Playback"
+"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -990,6 +1059,7 @@
 "What else is on at this time?"
     Mitä muuta on tähän aikaan?
 "Widescreen"
+"Width"
 "Will Record"
 "Wind"
     Tuuli
@@ -999,6 +1069,7 @@
     Käsikirjoittaja
 "xmltvid"
 "Year"
+"year"
 "Yes"
     Kyllä
 "Yesterday"

@@ -94,6 +94,8 @@
     Datum
 "Airtime"
     Sändningstid
+"Album"
+"Album (filtered)"
 "Album Listing"
     Albumlistning
 "Album Tracks"
@@ -118,6 +120,7 @@
     Alla HDTV
 "All Hosts"
     Alla värdar
+"All Music"
 "All recordings"
     Alla inspelningar
 "All Songs"
@@ -143,6 +146,8 @@
     Är du säker på att du vill ta bort följande inspelning?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Är du säker på att du vill TA BORT DENNA SPARADE SPELLISTA?
+"Artist"
+"Artist (filtered)"
 "Artist Listing"
     Artistlistning
 "Artists"
@@ -151,10 +156,12 @@
     Artister som börjar på %s
 "ASX Stream"
     ASX-ström
+"Audio Bitrate"
 "Audio for Hearing Impaired"
 "Audio for Visually Impaired"
 "Auto Expire"
     Autoradera
+"auto-expire"
 "Auto-expire recordings"
     Autoradera inspelningar
 "Auto-flag commercials"
@@ -260,6 +267,8 @@
     Reklam markerad
 "commfree"
     reklamfri
+"Configure Channels"
+"Configure Keybindings"
 "Conflict"
     Konflikt
 "Conflicts"
@@ -270,6 +279,7 @@
     kontrast
 "Count"
     Antal
+"cover"
 "Create a New Playlist"
     Skapa ny spellista
 "Create a Random Mix"
@@ -332,8 +342,10 @@
     Direkt nerladdning
 "Directed by"
     Regi
+"director"
 "Display"
     Visning
+"Displaying"
 "Dolby Surround"
 "Don't Record"
     Spela ej in
@@ -351,17 +363,21 @@
     Dubblettmetod
 "Duplicates"
     Dubbletter
+"Duration"
 "Earlier"
     Tidigare
 "Earlier Showing"
 "Edit"
     Redigera
 "Edit existing group"
+"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
+"Edit settings for"
 "Edit settings for: $1"
     Ändra insällningar för: $1
 "Editing "
+"Enable Video Playback"
 "End"
 "End Late"
     Sluta senare
@@ -393,7 +409,9 @@
 "Extended Check"
 "File Size"
     Filstorlek
+"file size"
 "Filter"
+"Filtered"
 "Filters"
 "Find Date & Time Options"
     Hitta dag &amp; tid
@@ -437,8 +455,10 @@
     %H:%M
 "Genre"
     Genre
+"Genre (filtered)"
 "Genres"
     Genrer
+"Global"
 "Go"
     Gå
 "Google"
@@ -455,14 +475,18 @@
     Förberedda sökningar
 "handy: overview"
     Denna sida innehåller förberedda komplexa sökningar av programlistorna (fungerar för närvarande endast med data från DataDirect, alltså ej i Sverige.).
+"has bookmark"
 "has Bookmark"
     har bokmärke
+"has commflag"
 "Has Cutlist"
     Har klipplista
+"has cutlist"
 "HD"
     HD
 "HDTV"
     HDTV
+"Height"
 "Hide"
     Göm
 "High"
@@ -484,6 +508,7 @@
     Luftfuktighet
 "IMDB"
     IMDB
+"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Inaktiv
@@ -493,6 +518,22 @@
     Återställ överskuggningar så att denna visning schemaläggs normalt.
 "info: dont record"
     Spela inte in denna visning.
+"info: flvplayer"
+    <p>
+    Flash video playback is currently only a proof-of-concept and should be
+    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
+    default.
+    </p>
+    <p>
+    It currently expects that ffmpeg is installed and compiled with mp3
+    support, and that the recordings files are accessible to your webserver
+    userid.  It probably won't work with Nupplevideo files, and in the end,
+    it may just not work at all (or maybe even worse).
+    </p>
+    <p>
+    Enable this feature at your own risk, and don't expect too much
+    official help until it has left the experimental phase.
+    </p>
 "info: hidden advanced schedule"
     De avancerade inspelningsalternativen är gömda.
 "info: record this"
@@ -502,6 +543,7 @@
 "info:never record"
     Förfalsa en tidigare inspelning av detta program så att det inte kommer att spelas in.
 "Insert"
+"is editing"
 "Jump"
     Gå
 "Jump Points"
@@ -608,6 +650,10 @@
 "MythMusic on the web."
     MythMusic på webben
 "MythTV"
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
 "MythTV Status"
     MythTV-status
 "MythVideo Artwork Dir"
@@ -626,6 +672,8 @@
     MythWeb globala förval
 "MythWeb Session"
     MythWeb-session
+"MythWeb session settings"
+"MythWeb Session Settings"
 "MythWeb Skin"
     MythWeb-skinn
 "MythWeb Template"
@@ -649,6 +697,8 @@
     Ny sökning
 "New Titles, Premieres"
     Nya titlar, premiärer
+"Next"
+"No"
 "NO DATA"
     INGA DATA
 "No Frontends allow remote control."
@@ -660,6 +710,7 @@
     Inga publika spellistor
 "No recording schedules have been defined."
     Inga schemalagda inspelningar
+"No Tracks Available"
 "No. of recordings to keep"
     Inspelningar att behålla
 "Non-Music Specials"
@@ -749,10 +800,12 @@
     Spellista: %s
 "Playlists"
     Spellistor
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
     Ange ett imdb-nummer och en titel för att göra en ny sökning
 "Please wait for the pending ajax request"
     Vänta på den pågående ajax-begäran
+"plot"
 "Possible conflicts"
     Möjliga konflikter
 "Possible conflicts with this show"
@@ -771,6 +824,8 @@
     Presenteras av
 "Pressure"
     Lufttryck
+"preview"
+"Previous"
 "Previous Recording"
 "Previous recordings"
     Tidigare inspelningar
@@ -805,6 +860,7 @@
     Slumptyp
 "Rating"
     Betyg
+"rating"
 "Recently Added Albums"
     Nyligen tillagda album
 "Recently completed jobs"
@@ -931,6 +987,7 @@
 "Retry"
 "Return to Statistics Page"
     Återvänd till statistiksida
+"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo
@@ -997,14 +1054,17 @@
     inställningar
 "Settings Table"
     Inställningstabell
+"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Varning!<br /><br />
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
+"settings: overview"
 "Shift"
 "Show"
     Visa
+"Show descriptions on new line"
 "Show group"
     Visa grupp
 "Show pixmaps"
@@ -1021,6 +1081,7 @@
     Program
 "SI Units"
     SI-enheter
+"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -1066,6 +1127,7 @@
     Undertitel &amp; beskrivning
 "Submit Search"
     Sök
+"subtitle"
 "Subtitle"
     Undertitel
 "Subtitle and Description"
@@ -1114,6 +1176,7 @@
     Imorgon
 "Too Many"
     För många
+"Top"
 "Top $1"
     Topp $1
 "Top Played Songs"
@@ -1131,6 +1194,7 @@
     Total tid: %s
 "Track #%s from the album '%s'"
     Spår nr %s fråm albumet '%s'
+"Track Name"
 "Transcode"
 "transcoder"
     omkodare
@@ -1152,12 +1216,14 @@
     Typ
 "Undelete"
 "Undelete: $1"
+"Unfiltered"
 "Unknown"
     Okänd
 "Unknown Program."
     Okänt program.
 "Unknown Recording Schedule."
     Okänt inspelningsschema.
+"Unreachable"
 "Up"
 "Upcoming Recordings"
     Kommande inspelningar
@@ -1186,6 +1252,9 @@
     Värde
 "Video"
     Video
+"Video Bitrate"
+"Video Playback"
+"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1257,6 +1326,7 @@
 "What else is on at this time?"
     Vad visas mer vid denna tid?
 "Widescreen"
+"Width"
 "Will Record"
 "Wind"
     Vind
@@ -1268,6 +1338,7 @@
     xmltv-id
 "Year"
     År
+"year"
 "Yes"
     Ja
 "Yesterday"

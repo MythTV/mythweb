@@ -15,8 +15,9 @@
 /**/
 
     $Settings['mythweb'] = array('name'    => t('MythWeb'),
-                                 'choices' => array('session'  => t('My Session'),
-                                                    'defaults' => t('MythWeb Defaults'),
+                                 'choices' => array('session'   => t('My Session'),
+                                                    'defaults'  => t('MythWeb Defaults'),
+                                                    'flvplayer' => t('Video Playback'),
                                                    ),
                                  'default' => 'session',
                                 );

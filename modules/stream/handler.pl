@@ -1,4 +1,3 @@
-#
 # MythWeb Streaming/Download module
 #
 # @url       $URL$
@@ -39,7 +38,7 @@
 
 # Find ffmpeg
     $ffmpeg = '';
-    foreach my $path (split(/:/, $ENV{'PATH'}.':/usr/bin:/usr/local/bin'), '.') {
+    foreach my $path (split(/:/, $ENV{'PATH'}.':/usr/local/bin:/usr/bin'), '.') {
         if (-e "$path/ffmpeg") {
             $ffmpeg = "$path/ffmpeg";
             last;
@@ -83,6 +82,22 @@
               "$basename does not exist in any recognized storage group directories for this host.";
         CORE::exit;
     }
+
+# Load some conversion settings from the database
+    $sh = $dbh->prepare('SELECT data FROM settings WHERE value=? AND hostname IS NULL');
+    $sh->execute('WebFLV_w');
+    my ($width)    = $sh->fetchrow_array;
+    $sh->execute('WebFLV_h');
+    my ($height)   = $sh->fetchrow_array;
+    $sh->execute('WebFLV_vb');
+    my ($vbitrate) = $sh->fetchrow_array;
+    $sh->execute('WebFLV_ab');
+    my ($abitrate) = $sh->fetchrow_array;
+
+    $width    = 320 if ($width < 1);
+    $height   = 240 if ($height < 1);
+    $vbitrate = 256 if ($vbitrate < 1);
+    $abitrate = 64  if ($abitrate < 1);
 
 # ASX mode?
     if ($ENV{'REQUEST_URI'} =~ /\.asx$/i) {
@@ -141,7 +156,7 @@ EOF
     }
     elsif ($ENV{'REQUEST_URI'} =~ /\.flv$/i) {
     # Print the movie
-        $ffmpeg_pid = open(DATA, "$ffmpeg -y -i $filename -s 320x240 -r 24 -f flv -ac 2 -ar 11025 -ab 64k -b 256k /dev/stdout 2>/dev/null |");
+    $ffmpeg_pid = open(DATA, "$ffmpeg -y -i $filename -s ${width}x$height -r 24 -f flv -ac 2 -ar 11025 -ab ${abitrate}k -b ${vbitrate}k /dev/stdout 2>/dev/null |");
         unless ($ffmpeg_pid) {
             print header(),
                   "Can't do ffmpeg:  $!";
