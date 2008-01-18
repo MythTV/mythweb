@@ -44,6 +44,7 @@
 
     // Print some additional information for movies
         if (strcasecmp($program->category_type, t('movie')) == 0) {
+            $parens = '';
             if ($program->airdate > 0)
                 $parens = sprintf('%4d', $program->airdate);
             if (strlen($program->rating) > 0) {
