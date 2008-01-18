@@ -356,8 +356,8 @@ EOM;
 <?php   } ?>
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td colspan="4" valign="top"><?php echo $show->description ?></td>
-    <td colspan="<?php echo 3 + $recgroup_cols ?>" class="-progflags"><?php
+    <td colspan="5" valign="top"><?php echo $show->description ?></td>
+    <td colspan="<?php echo 2 + $recgroup_cols ?>" class="-progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
                  '<img id="autoexpire_', $row, '" src="', skin_url, '/img/flags/';
