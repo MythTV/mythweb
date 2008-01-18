@@ -554,21 +554,23 @@ class Schedule {
 /**/
     function recgroup_select($this_group, $name = 'recgroup') {
         static $groups = array();
+        if (empty($this_group))
+            $this_group = 'Default';
     // Load the recording groups?
         if (!count($groups)) {
         // Default
-            $groups['Default'] = 'Default';
+            $groups['Default'] = t('Default');
         // Current recgroups
             $result = mysql_query('SELECT DISTINCT recgroup FROM record');
             while (list($group) = mysql_fetch_row($result)) {
-                $group or $group = 'Default';
+                $group or $group = t('Default');
                 $groups[$group]  = $group;
             }
             mysql_free_result($result);
         // recgroups from current recordings
             $result = mysql_query('SELECT DISTINCT recgroup FROM recorded');
             while (list($group) = mysql_fetch_row($result)) {
-                $group or $group = 'Default';
+                $group or $group = t('Default');
                 $groups[$group]  = $group;
             }
             mysql_free_result($result);
@@ -578,15 +580,15 @@ class Schedule {
         }
     // Print the <select>
         echo "<select name=\"$name\">";
-        foreach($groups as $group) {
+        foreach($groups as $group => $group_name) {
             echo '<option value="', html_entities($group), '"';
             if ($this_group == $group)
                 echo ' SELECTED';
-            echo '>', html_entities($group), '</option>';
+            echo '>', html_entities($group_name), '</option>';
         }
         if (!$groups[$this_group]) {
             echo '<option value="', html_entities($this_group), '" SELECTED',
-                 '>', html_entities($group), '</option>';
+                 '>', html_entities($this_group), '</option>';
         }
         echo '</select>';
     }
