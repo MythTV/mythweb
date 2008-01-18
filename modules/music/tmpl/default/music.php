@@ -41,7 +41,7 @@ class Theme_music {
 
     function playListSelector()
     {
-        $query="SELECT playlistid, name from musicplaylist order by name";
+        $query="SELECT playlist_id,playlist_name from music_playlists order by playlist_name";
         $queryResults=mysql_query($query);
 
         if($queryResults)
