@@ -106,8 +106,10 @@
         my $uri = ($ENV{'HTTPS'} || $ENV{'SERVER_PORT'} == 443)
                    ? 'https'
                    : 'http';
-        $uri .= '://'.($ENV{'SERVER_NAME'} or $ENV{'SERVER_ADDR'}).':'.$ENV{'SERVER_PORT'}
+        my $serverAddr = $ENV{'HTTP_X_FORWARDED_HOST'} || $ENV{'SERVER_NAME'} || $ENV{'SERVER_ADDR'};
+        $uri .= '://'.$serverAddr.':'.$ENV{'SERVER_PORT'}
                .$ENV{'REQUEST_URI'};
+
         $uri =~ s/\.asx$//i;
     # Build the ASX file so we can know how long it is
         my $file = <<EOF;

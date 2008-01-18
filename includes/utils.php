@@ -330,9 +330,10 @@
         if (!$ext && $_SESSION['file_url_override'])
             return 'file://'.$_SESSION['file_url_override'].str_replace('%2F', '/', rawurlencode(basename($show->filename)));
     // Which protocol should we use for downloads?
+
         $url = (($_SESSION['stream']['force_http'] || !isset($_SERVER['HTTPS']))
-                 ? 'http://' .$_SERVER['HTTP_HOST'].':'._or($_SESSION['stream']['force_http_port'], '80')
-                 : 'https://'.$_SERVER['HTTP_HOST'].':'._or($_SESSION['stream']['force_http_port'], '443')
+                 ? 'http://' . http_host .':'._or($_SESSION['stream']['force_http_port'], '80')
+                 : 'https://'. http_host .':'._or($_SESSION['stream']['force_http_port'], '443')
                )
                .root."pl/stream/$show->chanid/$show->recstartts";
     // Handle specific file extension modes
@@ -350,8 +351,11 @@
     // Windows likely gets a myth:// url -- grab the master host and port
         global $Master_Host, $Master_Port;
     // Is either the browser xor the master in an rfc 1918 zone?
+        $remoteaddr = $_SERVER['REMOTE_ADDR'];
+	if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+	    $remoteaddr = $_SERVER['HTTP_X_FORWARDED_FOR'];
         if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
-                xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $_SERVER['REMOTE_ADDR'])) {
+                xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $remoteaddr)) {
             return $url;
         }
     // Send the myth url

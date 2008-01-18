@@ -64,3 +64,8 @@
     define('mb', 1024 * kb);    // Megabyte
     define('gb', 1024 * mb);    // Gigabyte
     define('tb', 1024 * gb);    // Terabyte
+
+// Define the http host used for access
+
+    define('http_host', isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']);
+
