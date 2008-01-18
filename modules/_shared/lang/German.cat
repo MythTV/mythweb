@@ -9,13 +9,13 @@
     \b(?:animal|tiere)
 "Art_Music"
     Kunst/Musik
-    \b(?:art|dance|musi[ck]|kunst|[ck]ultur|rock|volksmusik|jazz|videos|kino)
+    \b(?:art|dance|musi[ck]|kunst|rock|volksmusik|jazz|videos|kino)
 "Business"
-    Wirtschaft
-    \b(?:wirtschaft|biz|busine|finanz)
+    Wirtschaft/Politik
+    \b(?:wirtschaft|politik|biz|busine|finanz)
 "Children"
     Kinder
-    \b(?:child|kid|kind|infan|animation|jugend|zeichentrick|puppentrick|cartoon)
+    \b(?:child|kid|kind|infan|animation|jugend|zeichentrick|puppentrick|cartoon|trickfilm)
 "Comedy"
     Comedy
     \b(?:comed|entertain|sitcom|ulk|\w*kom)
@@ -35,29 +35,29 @@
     Essen
     \b(?:food|cook|essen|[dt]rink|koch)
 "Game"
-    Spiele
-    \b(?:game|spiel|quiz)
+    Unterhaltung/Spiele
+    \b(?:game|spielshow|unterhaltung|quiz)
 "Health_Medical"
     Gesundheit/Medizin
     \b(?:health|medi[cz]|gesundheit|fitness)
 "History"
-    Geschichte
-    \b(?:hist|geschicht)
+    Kultur/Geschichte
+    \b(?:hist|geschicht|[ck]ultur)
 "Horror"
     Horror
-    \b(?:horror)
+    \b(?:horror|\w*thriller)
 "HowTo"
-    HowTo
-    \b(?:how|home|house|garden|ratgeber|\w*tipp)
+    Lifestyle/Heimwerk
+    \b(?:how|lifestyle|home|house|garden|ratgeber|\w*tipp)
 "Misc"
     Versch.
-    \b(?:special|variety|info|collect)
+    \b(?:special|variety|info|collect|boulevard)
 "News"
     Nachrichten
     \b(?:news|nachrichten|current|\w*magazin|bericht|wetter)
 "Reality"
     Reality
-    \b(?:reality)
+    \b(?:real|casting)
 "Romance"
     Romantik
     \b(?:romance|lieb|\w*romanze)
@@ -96,4 +96,4 @@
     \b(?:west)
 "movie"
     Film
-    \b(?:movie|film|\w*thriller)
+    \b(?:movie|\w*film)
