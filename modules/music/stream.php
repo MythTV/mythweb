@@ -43,7 +43,7 @@
                                              $_GET['i']);
     // Update the play count
         $db->query('UPDATE music_songs
-                       SET numplays = numplays + 1
+                       SET numplays = numplays + 1, lastplay = NOW()
                      WHERE song_id = ?',
                    $_GET['i']);
     // Set the XML transfer command
