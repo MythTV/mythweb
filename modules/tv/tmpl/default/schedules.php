@@ -47,6 +47,7 @@
     <th class="-transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))         ?></th>
     <th class="-group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))    ?></th>
     <th class="-type"><?php       echo get_sort_link('type',                                   t('Type'))               ?></td>
+    <th class="-sgroup"><?php     echo get_sort_link('storagegroup',                           t('Storage Group'))      ?></th>
 </tr><?php
         $prev_group = '';
         $cur_group  = '';
@@ -73,6 +74,8 @@
                 $cur_group = $schedule->profile;
             elseif ($group_field == 'recgroup')
                 $cur_group = $schedule->recgroup;
+            elseif ($group_field == 'storagegroup')
+                $cur_group = $schedule->storagegroup;
         // "none"?
             $cur_group or $cur_group = t('None');
 
@@ -136,6 +139,7 @@
         ?></td>
     <td class="-group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
     <td class="-type"><?php  echo $schedule->texttype ?></td>
+    <td class="-group"><?php echo _or($schedule->storagegroup, '&nbsp;') ?></td>
 </tr><?php
             $prev_group = $cur_group;
         }
