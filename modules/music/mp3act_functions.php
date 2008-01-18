@@ -141,7 +141,7 @@ function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
         ' onclick="updateBox(\'artist\','.$row['artist_id'].'); return false;">'.
         $row['artist_name'].'</a>'.
         '<ul class="music">'.$albums.'</ul></span> &#187; '.
-        htmlentities($row['album_name']);
+        html_entities($row['album_name']);
       break;
 
     case 'artist':

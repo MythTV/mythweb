@@ -97,12 +97,12 @@
         <input type="checkbox" class="radio" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1" />
            <a><?php echo t('Inactive') ?></a><br />
         <?php echo t('No. of recordings to keep') ?>:
-        <input type="input" class="quantity" name="maxepisodes" value="<?php echo htmlentities($schedule->maxepisodes) ?>" size="2"/><br />
+        <input type="input" class="quantity" name="maxepisodes" value="<?php echo html_entities($schedule->maxepisodes) ?>" size="2"/><br />
         <?php echo t('Start Early') ?>:
-        <input type="input" class="quantity" name="startoffset" value="<?php echo htmlentities($schedule->startoffset) ?>" size="2"/>
+        <input type="input" class="quantity" name="startoffset" value="<?php echo html_entities($schedule->startoffset) ?>" size="2"/>
         <?php echo t('minutes') ?><br />
         <?php echo t('End Late') ?>:
-        <input type="input" class="quantity" name="endoffset" value="<?php echo htmlentities($schedule->endoffset) ?>" size="2"/>
+        <input type="input" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>" size="2"/>
         <?php echo t('minutes') ?><br />
         <center><input type="submit" class="submit" name="save" value="Update Settings"></center>
         <br />

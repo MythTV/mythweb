@@ -136,7 +136,7 @@
                <dt><?php echo t('Find Day') ?>:</dt>
                <dd><?php day_select($schedule->findday) ?></dd>
                <dt><?php echo t('Find Time') ?>:</dt>
-               <dd><input type="text" name="findtime" value="<?php echo htmlentities($schedule->findtime) ?>" /></dd>
+               <dd><input type="text" name="findtime" value="<?php echo html_entities($schedule->findtime) ?>" /></dd>
             </dl>
         </div>
 

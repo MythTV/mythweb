@@ -373,7 +373,7 @@
         <div id="<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
         <div id="<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
-        <div id="<?php echo $video->intid; ?>-title" class="title"><a href="<?php echo $video->url; ?>"><?php echo htmlentities($video->title); ?></a></div>
+        <div id="<?php echo $video->intid; ?>-title" class="title"><a href="<?php echo $video->url; ?>"><?php echo html_entities($video->title); ?></a></div>
         <div id="<?php echo $video->intid; ?>_img">                <img <?php if (show_video_covers && file_exists($video->cover_file)) echo 'src="data/video_covers/'.basename($video->cover_file).'"'; echo ' width="'.$video->cover_scaled_width.'" height="'.$video->cover_scaled_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
         <div id="<?php echo $video->intid; ?>-category">           <?php echo $Category_String[$video->category]; ?></div>
         <div id="<?php echo $video->intid; ?>_playtime">           <?php echo nice_length($video->length * 60); ?></div>

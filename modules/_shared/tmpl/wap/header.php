@@ -20,7 +20,7 @@
 <html>
 
 <head>
-    <title><?php echo htmlentities($page_title) ?></title>
+    <title><?php echo html_entities($page_title) ?></title>
     <Link Rel="stylesheet" HRef="<?php echo skin_url ?>style.css" Type="text/css" Media="screen">
     <Link Rel="stylesheet" HRef="<?php echo skin_url ?>handheld.css" Type="text/css" Media="handheld">
 </head>
