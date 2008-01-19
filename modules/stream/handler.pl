@@ -87,17 +87,17 @@
     $sh = $dbh->prepare('SELECT data FROM settings WHERE value=? AND hostname IS NULL');
     $sh->execute('WebFLV_w');
     my ($width)    = $sh->fetchrow_array;
-    $sh->execute('WebFLV_h');
-    my ($height)   = $sh->fetchrow_array;
     $sh->execute('WebFLV_vb');
     my ($vbitrate) = $sh->fetchrow_array;
     $sh->execute('WebFLV_ab');
     my ($abitrate) = $sh->fetchrow_array;
 
-    $width    = 320 if ($width < 1);
-    $height   = 240 if ($height < 1);
+    $width    = 320 if ($width    < 1);
     $vbitrate = 256 if ($vbitrate < 1);
     $abitrate = 64  if ($abitrate < 1);
+
+# Someday, we can auto-detect height based on aspect ratio
+    my $height = int($width * 3/4);
 
 # ASX mode?
     if ($ENV{'REQUEST_URI'} =~ /\.asx$/i) {

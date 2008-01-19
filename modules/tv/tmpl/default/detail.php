@@ -319,13 +319,13 @@
         if (count($conflicting_shows)) {
         ?><tr id="-conflicts">
             <th><?php echo t('Possible conflicts') ?>:<br /><br />
-	    <div style="text-align: left;">
+        <div style="text-align: left;">
                 <?php echo t('Filters'); ?><br />
-	        <form id="change_display" name="change_display" action="<?php echo root; ?>tv/detail<?php if ($_GET['recordid'])
+            <form id="change_display" name="change_display" action="<?php echo root; ?>tv/detail<?php if ($_GET['recordid'])
                              echo '?recordid='.urlencode($_GET['recordid']);
-	                  else
-	                     echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime']) ?>" method="post">
-	        <input type="hidden" name="change_display" value="1">
+                      else
+                         echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime']) ?>" method="post">
+            <input type="hidden" name="change_display" value="1">
 
                 <label for="CurrentRecording"><input type="checkbox" id="CurrentRecording" name="CurrentRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_CurrentRecording']) echo "CHECKED"; ?>> <?php echo t('Current Recording'); ?><br />
 
@@ -337,14 +337,14 @@
 
                 <label for="Conflict"><input type="checkbox" id="Conflict" name="Conflict" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_Conflict']) echo "CHECKED"; ?>> <?php echo t('Conflicts'); ?><br />
                 </div>
-		</form>
-	    </th>
+        </form>
+        </th>
             <td><?php
         // A program id counter for popup info
             $program_id_counter = 0;
             foreach ($conflicting_shows as $show) {
-	    	if (!$_SESSION['recording_details']['show_'.$show->recstatus])
-		    continue;
+            if (!$_SESSION['recording_details']['show_'.$show->recstatus])
+            continue;
                 $program_id_counter++;
             // Print the link to edit this scheduled recording
                 echo '<a class="', $show->css_class,
@@ -502,7 +502,7 @@
     }
     if ($program && $program->filename) {
         $flv_w = setting('WebFLV_w');
-        $flv_h = setting('WebFLV_h');
+        $flv_h = intVal($flv_w * 3/4) + 20;  // +20px for the playback controls
 ?>
 
         <div id="-downloads">
@@ -516,55 +516,65 @@
                     // Version check based upon the values defined in globals
                     var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
 
-
                     // Check to see if a player with Flash Product Install is available and the version does not meet the requirements for playback
                     if ( hasProductInstall && !hasRequestedVersion ) {
-                    	// MMdoctitle is the stored document.title value used by the installation process to close the window that started the process
-                    	// This is necessary in order to close browser windows that are still utilizing the older version of the player after installation has completed
-                    	// DO NOT MODIFY THE FOLLOWING FOUR LINES
-                    	// Location visited after installation is complete if installation is required
-                    	var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
-                    	var MMredirectURL = window.location;
-                        document.title = document.title.slice(0, 47) + " - Flash Player Installation";
-                        var MMdoctitle = document.title;
+                        // MMdoctitle is the stored document.title value used by
+                        // the installation process to close the window that
+                        // started the process.   This is necessary in order to
+                        // close browser windows that are still utilizing the
+                        // older version of the player after installation has
+                        // completed
+
+                        // DO NOT MODIFY THE FOLLOWING FOUR LINES
+                        // Location visited after installation is complete if
+                        // installation is required
+                        var MMPlayerType  = (isIE == true) ? "ActiveX" : "PlugIn";
+                        var MMredirectURL = window.location;
+                        var MMdoctitle    = document.title;
+                        document.title    = document.title.slice(0, 47)
+                                            +" - Flash Player Installation";
 
                         AC_FL_RunContent(
-                            "src", "playerProductInstall",
-                            "FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle,
-                            "width", "<?php  echo $flv_w ?>",
-                            "height", "<?php echo $flv_h + 20 ?>",
-                            "align", "middle",
-                            "id", "MFPlayer",
-                            "quality", "high",
-                            "bgcolor", "#869ca7",
-                            "name", "MFPlayer",
-                            "allowScriptAccess","sameDomain",
-							"movie","<?php echo root; ?>tv/playerProductInstall",
-                            "type", "application/x-shockwave-flash",
-                            "pluginspage", "http://www.adobe.com/go/getflashplayer"
-                        );
+                                "src",              "playerProductInstall",
+                                "FlashVars",        "MMredirectURL="+MMredirectURL
+                                                    +'&MMplayerType='+MMPlayerType
+                                                    +'&MMdoctitle='+MMdoctitle,
+                                "width",            "<?php echo $flv_w ?>",
+                                "height",           "<?php echo $flv_h ?>",
+                                "align",            "middle",
+                                "id",               "MFPlayer",
+                                "quality",          "high",
+                                "bgcolor",          "#869ca7",
+                                "name",             "MFPlayer",
+                                "allowScriptAccess","sameDomain",
+                                "movie",            "<?php echo root; ?>tv/playerProductInstall",
+                                "type",             "application/x-shockwave-flash",
+                                "pluginspage",      "http://www.adobe.com/go/getflashplayer"
+                            );
                     } else if (hasRequestedVersion) {
-                        // if we've detected an acceptable version
-                        // embed the Flash Content SWF when all tests are passed
+                        // If we've detected an acceptable version, embed
+                        // the Flash Content SWF when all tests are passed
                         AC_FL_RunContent(
-                                "src", "MFPlayer",
-                                "width", "<?php  echo $flv_w ?>",
-                                "height", "<?php echo $flv_h + 20 ?>",
-                                "align", "middle",
-                                "id", "MFPlayer",
-                                "quality", "high",
-                                "bgcolor", "#869ca7",
-                                "name", "MFPlayer",
+                                "src",              "MFPlayer",
+                                "width",            "<?php echo $flv_w ?>",
+                                "height",           "<?php echo $flv_h ?>",
+                                "align",            "middle",
+                                "id",               "MFPlayer",
+                                "quality",          "high",
+                                "bgcolor",          "#869ca7",
+                                "name",             "MFPlayer",
                                 "flashvars",'file=<?php     echo video_url($program, 'flv');
                                          ?>&still=<?php     echo $program->thumb_url($flv_w,$flv_h);
                                          ?>&totalTime=<?php echo $program->length;
+                                         ?>&width=<?php     echo $flv_w;
+                                         ?>&height=<?php    echo $flv_h;
                                          ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf',
                                 "allowScriptAccess","sameDomain",
-								"allowFullScreen","true",
-								"movie","<?php echo root; ?>tv/MFPlayer",
-                                "type", "application/x-shockwave-flash",
-                                "pluginspage", "http://www.adobe.com/go/getflashplayer"
-                        );
+                                "allowFullScreen",  "true",
+                                "movie",            "<?php echo root; ?>tv/MFPlayer",
+                                "type",             "application/x-shockwave-flash",
+                                "pluginspage",      "http://www.adobe.com/go/getflashplayer"
+                            );
                     } else {  // flash is too old or we can't detect the plugin
                         document.write('<img src="<?php echo $program->thumb_url($flv_w,0) ?>"'
                                       +' width="<?php echo $flv_w ?>"><br />'
@@ -576,7 +586,7 @@
                     </script>
                     <noscript>
                     <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-                        id="MFPlayer" width="<?php echo $flv_w ?>" height="<?php echo $flv_h + 20 ?>"
+                        id="MFPlayer" width="<?php echo $flv_w ?>" height="<?php echo $flv_h ?>"
                         codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
                         <param name="movie" value="<?php echo root; ?>tv/MFPlayer.swf" />
                         <param name="quality" value="high" />
@@ -586,9 +596,12 @@
                         <param name="FlashVars" value="file=<?php     echo video_url($program, 'flv');
                                                    ?>&still=<?php     echo $program->thumb_url($flv_w,$flv_h);
                                                    ?>&totalTime=<?php echo $program->length;
-                                                   ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf">
+                                                   ?>&width=<?php     echo $flv_w;
+                                                   ?>&height=<?php    echo $flv_h;
+                                                   ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf"
+                                                   >
                         <embed src="<?php echo root; ?>tv/MFPlayer.swf" quality="high" bgcolor="#869ca7"
-                            width="<?php echo $flv_w ?>" height="<?php echo $flv_h + 20 ?>" name="MFPlayer" align="middle"
+                            width="<?php echo $flv_w ?>" height="<?php echo $flv_h ?>" name="MFPlayer" align="middle"
                             play="true"
                             loop="false"
                             quality="high"
@@ -597,6 +610,8 @@
                             FlashVars="file=<?php     echo video_url($program, 'flv');
                                    ?>&still=<?php     echo $program->thumb_url($flv_w,0);
                                    ?>&totalTime=<?php echo $program->length;
+                                   ?>&width=<?php     echo $flv_w;
+                                   ?>&height=<?php    echo $flv_h;
                                    ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf"
                             type="application/x-shockwave-flash"
                             pluginspage="http://www.adobe.com/go/getflashplayer">

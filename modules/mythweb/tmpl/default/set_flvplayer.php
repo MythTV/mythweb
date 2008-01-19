@@ -27,17 +27,15 @@
          title="Enable Flash Video player for recordings."
          <?php if (setting('WebFLV_on')) echo ' CHECKED' ?>></td>
 </tr><tr>
-<? /*  The SWF player can't handle different sizes yet, so don't turn these on
-    <th><?php echo t('Width') ?>:</th>
+    <th valign="top"><?php echo t('Width') ?>:</th>
     <td><input type="text" name="width"
          size="5" title="FLV Width"
-         value="<?php echo html_entities(_or(setting('WebFLV_w'), 320)) ?>" /></td>
-</tr><tr>
-    <th><?php echo t('Height') ?>:</th>
-    <td><input type="text" name="height"
-         size="5" title="FLV Height"
-         value="<?php echo html_entities(_or(setting('WebFLV_h'), 240)) ?>" /></td>
-*/ ?>
+         value="<?php echo intVal(_or(setting('WebFLV_w'), 320)) ?>" />
+         x
+         <?php echo intVal(_or(setting('WebFLV_w'), 320) * 3/4) ?>
+         <br />
+         (hard-coded at 4:3 until we can detect recording aspect)
+         </td>
 </tr><tr>
     <th><?php echo t('Video Bitrate') ?>:</th>
     <td><input type="text" name="vbitrate"
