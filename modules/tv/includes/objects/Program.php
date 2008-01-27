@@ -709,25 +709,31 @@ class Program {
         return $str;
     }
 
-    function get_credits($role) {
+    function get_credits($role, $add_search_links = FALSE) {
+        global $db;
     // Not enough info in this object
         if (!$this->chanid || !$this->starttime)
             return '';
     // No cached value -- load it
         if (!isset($this->credits[$role])) {
         // Get the credits for the requested role
-            $query  = 'SELECT people.name FROM credits, people'
-                     .' WHERE credits.person=people.person'
-                     .' AND credits.role='.escape($role)
-                     .' AND credits.chanid='.escape($this->chanid)
-                     .' AND credits.starttime=FROM_UNIXTIME('.escape($this->starttime).')';
-            $result = mysql_query($query)
-                or trigger_error('SQL Error: '.mysql_error(), FATAL);
+            $result = $db->query('SELECT people.name
+                                     FROM credits, people
+                                    WHERE credits.person    = people.person
+                                      AND credits.role      = ?
+                                      AND credits.chanid    = ?
+                                      AND credits.starttime = FROM_UNIXTIME(?)',
+                                   $role,
+                                   $this->chanid,
+                                   $this->starttime
+                                   );
             $people = array();
-            while (list($name) = mysql_fetch_row($result)) {
-                $people[] = $name;
+            while ($name = $result->fetch_col()) {
+                if (!$add_search_links)
+                    $people[] = $name;
+                else
+                    $people[] = '<a href="'.root.'tv/search/'.str_replace('%2F', '/', rawurlencode('^'.$name.'$')).'?field=people">'.$name.'</a>';
             }
-            mysql_free_result($result);
         // Cache it
             $this->credits[$role] = trim(implode(', ', $people));
         }

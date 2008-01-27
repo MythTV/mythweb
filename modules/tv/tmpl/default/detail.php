@@ -196,52 +196,52 @@
             <td><?php echo $program->programid ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('host')) {
+            if ($program->get_credits('host', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Hosted by') ?>:</th>
-            <td><?php echo $program->get_credits('host') ?></dd>
+            <td><?php echo $program->get_credits('host', TRUE) ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('presenter')) {
+            if ($program->get_credits('presenter', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Presented by') ?>:</th>
-            <td><?php echo $program->get_credits('presenter') ?></dd>
+            <td><?php echo $program->get_credits('presenter', TRUE) ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('actor')) {
+            if ($program->get_credits('actor', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Cast') ?>:</th>
-            <td><?php echo $program->get_credits('actor') ?></dd>
+            <td><?php echo $program->get_credits('actor', TRUE) ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('guest_star')) {
+            if ($program->get_credits('guest_star', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Guest Starring') ?>:</th>
-            <td><?php echo $program->get_credits('guest_star') ?></dd>
+            <td><?php echo $program->get_credits('guest_star', TRUE) ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('director')) {
+            if ($program->get_credits('director', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Directed by') ?>:</th>
-            <td><?php echo $program->get_credits('director') ?></dd>
+            <td><?php echo $program->get_credits('director', TRUE) ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('producer')) {
+            if ($program->get_credits('producer', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Produced by') ?>:</th>
-            <td><?php echo $program->get_credits('producer') ?></dd>
+            <td><?php echo $program->get_credits('producer', TRUE) ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('executive_producer')) {
+            if ($program->get_credits('executive_producer', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Exec. Producer') ?>:</th>
-            <td><?php echo $program->get_credits('executive_producer') ?></dd>
+            <td><?php echo $program->get_credits('executive_producer', TRUE) ?></dd>
         </tr><?php
             }
-            if ($program->get_credits('writer')) {
+            if ($program->get_credits('writer', TRUE)) {
         ?><tr class="-extras">
             <th><?php echo t('Written by') ?>:</th>
-            <td><?php echo $program->get_credits('writer') ?></dd>
+            <td><?php echo $program->get_credits('writer', TRUE) ?></dd>
         </tr><?php
             }
             if (strlen($program->starstring) > 0) {
