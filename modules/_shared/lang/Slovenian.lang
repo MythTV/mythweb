@@ -2,9 +2,12 @@
 " at "
     ob
 "# Tracks"
+    # Skladb
 "$1 B"
 "$1 day"
+    $1 dan
 "$1 days"
+    $1 dni
 "$1 episode"
     $1 serija
 "$1 episodes"
@@ -13,144 +16,220 @@
 "$1 hr"
     $1 ura
 "$1 hrs"
-    $1 ure
+    $1 ur
 "$1 is not responding."
+    $1 se ne odziva.
 "$1 KB"
 "$1 MB"
 "$1 min"
-    $1 Min
 "$1 mins"
-    $1 Min
+    $1 min
 "$1 month"
+    $1 mesec
 "$1 months"
+    $1 mesecev
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
-    $1 programi, uporabljeno $2 ($3) od ($4)
+    $1 posnetkov zaseda $2 ($3) od (skupaj $4).
 "$1 recording"
     $1 snemanje
 "$1 recordings"
     $1 snemanja
 "$1 requests pending."
+    $1 zahtev v teku.
 "$1 Search"
+    $1 Iskanje
 "$1 TB"
 "$1 to $2"
     $1 do $2
 "$1 wasted"
+    $1 posneto
 "$1 year"
+    $1 leto
 "$1 years"
+    $1 let
 "%s Song (%s)"
+    %s Pesem (%s)
 "%s Songs"
+    %s Pesmi
 "%s Songs (%s)"
+    %s Pesmi (%s)
 "&deg;C"
 "&deg;F"
 "Aborted"
+    Preklicano
 "Aborting"
+    Preklicujem
 "Action"
+    Akcija
 "Activate"
     Aktiviraj
 "Add"
+    Dodaj
 "Add Album to Current Playlist"
+    Dodaj album v trenutni seznam predvajanja
 "Add Mix"
+    Dodaj Mix
 "Add Song to Current Playlist"
+    Dodaj skladbo v trenutni seznam predvajanja
 "add string"
+    dodaj povezavo
 "Add this Playlist as a Subplaylist"
+    Dodaj ta seznam kot podseznam 
 "Additional Tables"
+    Dodatne tabele
 "Admin Key"
+    Admin ključ
 "Advanced"
+    Napredno
 "Advanced Options"
     Dodatne možnosti
 "Advanced Search"
+    Napredno iskanje
 "airdate"
+    datum predvajanja
 "Airdate"
-    datum oddajanja
+    Datum predvajanja
 "Airtime"
     Čas predvajanja
 "Album"
 "Album (filtered)"
 "Album Listing"
+    Seznam albumov
 "Album Tracks"
+    Pesmi v albumu
 "Albums"
+    Albumi
 "Albums with songs by %s"
+    Albumi s skladbo z %s
 "All"
+    Vsi
 "All Albums"
+    Vsi albumi
 "All Categories"
+    Vse kategorije
 "All Fields"
+    Vsa polja
 "All Genres"
+    Vsi žanri
 "All groups"
+    Vse skupine
 "All HDTV"
+    Vsi HDTV
 "All Hosts"
+    Vsi gostitelji
 "All Music"
 "All recordings"
     Vsa snemanja
 "All Songs"
+    Vsa glasba
 "ALLOCINETYPE"
 "An error occured while adding your playlist."
+    Med dodajanje predvajalenga seznama je prišlo do napake.
 "and"
+    in
 "Any"
-    Katera koli
+    Katerakoli
 "Any Category"
+    Katerakoli kategorija
 "Any Channel"
+    Katerikoli kanal
 "Any Program Type"
+    Katerikoli tip programa
 "Append"
+    Dodaj
 "Append to Current Playlist"
+    Dodaj k trenutnemu predvajalnemu seznamu
 "Are you sure you want to delete the following show?"
     Ste prepričani, da želite izbrisati to oddajo?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+    Ste prepričani da želite IZBRISATI TA PREDVAJALNI SEZNAM?
 "Artist"
+    Izvajalec
 "Artist (filtered)"
 "Artist Listing"
+    Seznam izvajalcev
 "Artists"
+    Izvajalci
 "Artists Beginning with %s"
+    Izvajalci ki se začnejo z %s
 "ASX Stream"
+    ASX predvajanje
 "Audio Bitrate"
 "Audio for Hearing Impaired"
+    Zvok za ljudi s prizadetim sluhom
 "Audio for Visually Impaired"
+    Zvok za ljudi s prizadetim vidom
 "Auto Expire"
+    Avto-Brisanje
 "auto-expire"
 "Auto-expire recordings"
-    Snemanja avto-preteka
+    Snemanja avto-brisanja
 "Auto-flag commercials"
     Avto-označi reklame
 "Auto-transcode"
+    Avto-transkodiranje
 "AVC/H.264"
 "Back"
+    Nazaj
 "Back Tab"
+    Zavihek nazaj
 "Back to the program listing"
-    Nazaj na seznam programov
+    Nazaj na TV spored
 "Back to the recorded programs"
+    Nazaj na posnete programe
 "Back to the recording schedules"
     Nazaj na planiranje snemanj
 "Backend Logs"
+    Backend dnevniki
 "Backend Status"
     Status Backenda
 "Backspace"
 "Begin a New Search"
+    Začni novo iskanje
 "brightness"
+    svetilnost
 "Browse"
+    Brskanje
 "Browse = no"
+    Brskanje = ne
 "Browse = yes"
+    Brskanje = da
 "Browse all"
+    Prebrskaj vse
 "Browse All Albums"
+    Prebrskaj vse albume
 "Browse Music"
+    Prebrskaj glasbo
 "Browse the Music Database"
+    Prebrskaj glasbeno bazo
 "By Artist Beginning With"
+    Po izvajalcu, ki se začne z
 "By Genre"
+    Po zvrsti
 "callsign"
+    oznaka
 "Cancel"
+    Prekliči
 "Cancel this schedule."
-    Prekliči ta plan
+    Prekliči ta plan.
 "Cancelled"
+    Preklicano
 "Caps Lock"
 "Cast"
     Zasedba
 "category"
+    kategorija
 "Category"
     Kategorija
 "Category Legend"
     Legenda kategorij
 "CC"
 "Chan. Callsign"
+    Oznaka kanala
 "Chan. Name"
+    Ime kanala
 "Chan. Number"
+    Številka kanala
 "Channel"
     Kanal
 "channel"
@@ -158,80 +237,120 @@
 "Channel &quot;Jump to&quot;"
     Kanal &quot;Skoči na&quot;
 "Channel Detail"
+    Opis kanala
 "Channel Info"
+    Info o kanalu
 "Channels"
+    Kanali
 "channum"
     številka kanala
 "Check for duplicates in"
     Preveri za duplikati v
 "Childrens Movies"
+    Otroški filmi
 "Choose Genre.."
+    Izberi zvrst..
 "Choose Type"
+    Izberi tip
 "Click to disable Auto Expire"
+    Klik za preklic Avto-brisanja
 "Click to enable Auto Expire"
+    Klik za vklop Avto-brisanja
 "Click to View Playlist"
+    klik za pregled predvajalnega seznama
 "Closed Captioning"
+    Zaprti zajem
 "colour"
+    brava
 "Commands"
     Ukazi
 "Commercials Flagged"
+    Reklame označene
 "commfree"
+    brez reklam
 "Configure Channels"
 "Configure Keybindings"
 "Conflict"
+    Konflikt
 "Conflicts"
     Konflikti
 "Context"
+    Zveza
 "contrast"
+    kontrast
 "Count"
+    Število
 "cover"
 "Create a New Playlist"
+    Ustvari nov seznam predvajanja
 "Create a Random Mix"
+    Ustvari naključni mix
 "Create Schedule"
     Ustvari plan snemanja
 "Current Conditions"
     Trenutni pogoji
 "Current Recording"
+    Trenutni posnetek
 "Current recordings"
-    Trenutna snemanja
+    Trenutni posnetki
 "Currently Browsing:  $1"
     Trenutno brskanje:  $1
 "Currently Recording:  Edit"
+    Trenutni posnetek: Uredi
 "Custom"
+    Poljubno
 "Custom Schedule"
+    Poljubne ponovitve
 "Custom Search"
+    Poljubno iskanje
 "Data"
+    Podatki
 "Database"
+    Baza
 "Database Health"
+    Konsistentnost baze
 "Date"
     Datum
 "Date Formats"
     Format datuma
 "Deactivated"
-    Deaktiviran
+    Neaktivni
 "Deaf Signed"
+    Za gluhoneme
 "Default"
-    Privzet
+    Privzeti
 "Default MythVideo View"
+    Privzeti prikaz MythVidea
 "Delete"
-    Briši
+    Odstrani
 "delete"
+    odstrani
 "Delete $1"
+    Odstrani $1
 "Delete + Rerecord"
+    Odstrani + Ponovno snemaj
 "Delete and allow rerecord: $1"
+    Odstrani in dopusti ponovno snemanje: $1
 "Delete and rerecord $1"
+    Odstrani + ponovno posnami $1
 "Delete Forever"
+    Dokončno odstrani
 "DELETE this Saved Playlist"
+    ODSTRANI ta seznam predvajanja
 "description"
     opis
 "Description"
     Opis
 "Destination"
+    Cilj
 "Details for"
+    Podatki za
 "Details for: $1"
+    Podatki za: $1
 "Direct Download"
+    Neposredni download
 "Directed by"
-    Režiser
+    Režija
 "director"
 "Display"
     Prikaz
@@ -242,132 +361,186 @@
 "Don't record this program."
     Ne snemaj tega programa.
 "Done, Unknown Status"
+    Narejeno, neznan status
 "Down"
+    Dol
 "Download URL override"
+    Prepis URL-ja za prenos
 "Dup Method"
     Metoda duplikatov
 "Duplicate"
+    Duplikat
 "Duplicate Check method"
     Metoda preverjanja duplikatov
 "Duplicates"
     Duplikati
 "Duration"
 "Earlier"
+    Prejšnje
 "Earlier Showing"
+    Prejšnje oddaje
 "Edit"
+    Uredi
 "Edit existing group"
+    Uredi obstoječo skupino
 "Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
 "Edit settings for"
 "Edit settings for: $1"
+    Uredi nastavitve za: $1
 "Editing "
+    Urejanje
 "Enable Video Playback"
 "End"
+    Konec
 "End Late"
     Končaj kasneje
 "Enter"
 "Enter a new name for your playlist"
+    Vnesi novo ime za sznam predvajanja
 "Enter your search terms"
+    Vnesi ključne besede za iskanje
 "enter your search terms"
+    vnesi ključne besede za iskanje
 "Episode"
     Oddaja
 "Episode Number"
+    Številka oddaje
 "error: playgroup $1 exists"
+    napaka: predvajalna skupina $1 že obstaja
 "Errored"
+    Napake
 "Erroring"
+    Napake
 "Escape"
 "Everything"
+    Vse
 "Exclude Generic Episodes"
+    Izključi splošne oddaje
 "Exclude Repeat and Generic Episodes"
+    Izključi ponovitve in splošne oddaje
 "Exclude Repeat Episodes"
+    Izključi ponovitve oddaj
 "Exec. Producer"
     Scenarist
 "Extended Check"
+    Podrobni pregled
 "File Size"
-    velikost datoteke
+    Velikost datoteke
 "file size"
 "Filter"
+    Sito
 "Filtered"
 "Filters"
+    Sita
 "Find Date & Time Options"
+    Možnosti iskanja po datumu & času
 "Find Day"
+    Išči po dnevu
 "Find other showings of this program"
     Najdi drugo predvajanje tega programa
 "Find showings of this program"
     Najdi predvajanje tega programa
 "Find Time"
+    Išči po času
 "Find Time must be of the format:  HH:MM:SS"
+    Iskanje po času mora biti v formatu: HH:MM:SS
 "finetune"
+    fina nastavitev
 "Finished"
+    Končano
 "First recording"
+    Prvo snemanje
 "Flag Commercials"
+    Označi reklame
 "Force HTTP for streams"
+    Za predvajanje vsili HTTP
 "Force HTTP/HTTPS port for streams"
+    Za predvajanje vsili HTTP/HTTPS vrata
 "Forced"
+    Vsiljeno
 "Forecast"
     Napoved
 "Forget Old"
     Pozabi stare
 "format help"
-    format pomoči
+    pomoč
 "Found %s results for '%s'"
+    Najdenih %s zadetkov za '%s'
 "freqid"
+    id frekvence
 "Friday"
     Petek
 "Frontends"
+    Frontendi
 "generic_date"
     %e.%m.%Y
 "generic_time"
     %H:%M
 "Genre"
+    Žanr
 "Genre (filtered)"
 "Genres"
+    Žanri
 "Global"
 "Go"
     Pojdi
 "Google"
-    Google
 "Group timeslots every"
+    Strni po času vsakih
 "Guest Starring"
     Igra še
 "Guide rating"
+    Ocene vodiča
 "Guide Settings"
     Nastavitve vodiča
 "Handy Predefined Searches"
+    Priročna pripravljena iskanja
 "handy: overview"
-    Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.
+    Ta stran vsebuje v naprej pripravljena kompleksna iskanja po TV sporedu.
 "has bookmark"
 "has Bookmark"
+    ima zaznamek
 "has commflag"
 "Has Cutlist"
+    Ima Seznam Rezov
 "has cutlist"
 "HD"
 "HDTV"
 "Height"
 "Hide"
+    Skrij
 "High"
     Visoka
 "Home"
+    Domov
 "Host"
+    Gostitelj
 "Hosted by"
     Gostitelj
 "Hosts"
+    Gostitelji
 "Hour"
     Ura
 "Hour Format"
-    Format ure
+    Format časa
 "hue"
+    nasičenost
 "Humidity"
     Vlažnost
 "IMDB"
-    IMBD
 "imdb rating"
 "IMDBTYPE"
+    IMDB tip
 "Inactive"
+    Neaktiven
 "info: activate recording"
+    Vsili snemanje te oddaje.
 "info: default recording"
+    Ponastavi vse parametre, tako da se bo lahko ta oddja normalno posnela.
 "info: dont record"
+    Ne posnami te oddaje.
 "info: flvplayer"
     <p>
     Flash video playback is currently only a proof-of-concept and should be
@@ -385,197 +558,314 @@
     official help until it has left the experimental phase.
     </p>
 "info: hidden advanced schedule"
+    Napredne nastavitve za snemanje so trenutno skrite.
 "info: record this"
+    Vsili snemanje te oddaje.
 "info:forget old"
+    Pozabi na prejšnja snemanja te oddaje, tako da se bo lahko spet posnela.
 "info:never record"
+    Prikaži prejšnje posnetke te oddaje tako, da se ne bo več posnela.
 "Insert"
+    Vstavi
 "is editing"
 "Jump"
     Skoči
 "Jump Points"
+    Točke preskoka
 "Jump to"
     Skoči na
 "Jump To"
     Skoči na
 "JumpPoints Editor"
+    Urejevalnik točk preskokov
 "Key Bindings"
+    Bližnjice
 "Key bindings"
+    Bližnjice
 "Key Controls"
+    Kontrole tipk
 "Keybindings Editor"
+    Urejevalnik bližnjic
 "Keyword"
+    Klj. bes.
 "Keyword Search"
+    Iskanje po ključnih besedah
 "Keywords"
+    Ključne besede
 "Language"
     Jezik
 "Last Recorded"
+    Nazadnje posneto
 "Last recording"
+    Zadnje snemanje
 "Last Updated"
     Zadnjič posodobljeno
 "Later"
+    Kasneje
 "Left"
+    Levo
 "length"
-    dolžina
+    trajanje
 "Length"
     Trajanje
 "Length (min)"
-    Dolžina (min)
+    Trajanje (min)
 "Listing &quot;Jump to&quot;"
-    Seznam &quot;Skoči na&quot;
+    TV spored &quot;Skoči na&quot;
 "Listing Time Key"
-    Seznam
+    Časovni seznam
 "Listings"
-    Seznam
+    TV spored
 "Load"
+    Naloži
 "Load a Saved Playlist"
+    Naloži shranjen seznam predvajanja
 "Load Playlist"
+    Naloži seznam predvajanja
 "Load Saved Playlists"
+    Naloži shranjene sezname predvajanja
 "Load this Saved Playlist"
+    Naloži ta shranjen seznam predvajanja
 "LOADING"
+    NALAGANJE
 "Local Server Statistics"
+    Statistike domačega strežnika
 "Local weather forecast"
+    Domača vremenska napoved
 "Locale"
+    Lokalno
 "Logs"
+    Dnevniki
 "Low"
     Nizka
 "Low Space"
+    Malo prostega diska
 "Manual"
+    Ročno
 "matches"
+    zadetki
 "Max star rating for movies"
+    Največja ocena za filme
 "minutes"
-    minute
+    minut
 "Missing Cover"
+    Manjka ovitek
 "Monday"
     Ponedeljek
 "Mono"
 "More"
+    Več
 "more"
+    več
 "Move Item Down in Playlist"
+    Prestavi v seznamu dol
 "Move Item Up in Playlist"
+    Prestavi v seznamu dor
 "movie"
+    film
 "Movies"
+    Filmi
 "Movies, 3&frac12; Stars or more"
+    Filmi z 3&frac12; zvezdicami ali več
 "Movies, Stinkers (2 Stars or less)"
+    Filmi (2 zvezdici ali manj)
 "Music"
+    Glasba
 "Music Specials"
+    Priljubljena glasba
 "My Session"
+    Moja seja
 "MythMusic on the web."
-    MythMusic na spletu
+    MythMusic na spletu.
 "MythTV"
+    MythTV
 "MythTV channel info"
 "MythTV global defaults"
 "MythTV key bindings"
 "MythTV settings table"
 "MythTV Status"
+    MythTV Status
 "MythVideo Artwork Dir"
+    MythVideo Artwork mapa
 "MythVideo Dir"
+    MythVideo mapa
 "MythVideo on the web."
-    MythVideo na spletu
+    MythVideo na spletu.
 "mythvideo.db_folder_view"
+    MythVideo pogled map
 "mythvideo.ImageCacheSize"
+    MythVideo velikost slike
 "mythvideo.sort_ignores_case"
+    MythVideo urejanje ignorira velike začetnice
 "MythWeb"
 "MythWeb Defaults"
+    MythWeb privzete nastavitve
 "MythWeb Global Defaults"
+    MythWeb splošne privzete vrednosti
 "MythWeb Session"
+    MythWeb seja
 "MythWeb session settings"
 "MythWeb Session Settings"
 "MythWeb Skin"
+    MythWeb preobleka
 "MythWeb Template"
+    MythWeb vzgled
 "MythWeb Weather."
-    MythWeb vreme
+    MythWeb vreme.
 "Name"
+    Ime
 "name"
+    ime
 "Narrow Your Search"
+    Zožite vaše iskanje
 "Never Record"
     Nikoli ne snemaj
 "New"
+    Novo
 "New Episodes Only"
+    Samo nove oddaje
 "New Group"
+    Nova skupina
 "New Search"
+    Novo iskanje
 "New Titles, Premieres"
-"Next"
-"No"
+    Novi filmi, premiere
 "NO DATA"
+    NI PODATKOV
 "No Frontends allow remote control."
+    Noben frontend ne dovoli oddaljenega nadzora 
 "No matches found"
     Ni zadetkov
 "No matching programs found."
+    Ni zadetkov.
 "No Public Playlists"
+    Ni seznamov predvajanja
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
 "No Tracks Available"
 "No. of recordings to keep"
-    Št. ohranjenih snemanj
+    Št. posnetkov za arhiv
 "Non-Music Specials"
+    Ne-glasbene priljubljene
 "Non-Series HDTV"
+    Ne HDTV oddaje
 "None"
     Nobeno
 "Notes"
     Opombe
 "Number of episodes"
+    Število epizod
 "Number of shows"
+    Število oddaj
 "Number of Songs"
+    Število pesmi
 "Number of timeslots"
+    Število ponavljanj
 "Only display favourite channels"
     Prikaži samo priljubljene kanale
 "Only match commercial-free channels"
+    Išči le kanale označene kot brez reklam
 "Only match HD programs"
+    Išči le HD programe
 "Only New Episodes"
-    Samo eno oddajo
+    Samo nove oddaje
 "Optimize Tables"
+    Optimizacija tabel
 "or"
+    ali
 "Original Airdate"
-    Izvirni datum predvajanja
+    Leto
 "Originally aired between"
+    Predvajano med
 "Override"
+    Prepiši
 "Page Down"
+    Stran dol
 "Page Up"
+    Stran gor
 "Part $1 of $2"
+    Del $1 od $2
 "Past Month"
+    Prejšnji mesec
 "Past Week"
+    Prejšnji teden
 "Past Year"
+    Prejšnje leto
 "Paused"
+    Pavzirano
 "Pending"
+    V teku
 "People"
+    Igralci
 "People Search"
+    Iskanje po igralski zasedbi
 "Percent of time spent recording"
+    Čas, v procentih, uporabljen za snemanje
 "Play"
+    Predvajaj
 "Play this Album Now"
+    Predvajaj ta album
 "Play This Playlist Now"
+    Predvajaj ta seznam
 "Play this Playlist Now"
+    Predvajaj ta seznam
 "Play this Song Now"
+    Predvajaj to pesem
 "Play Time"
+    Čas predvajanja
 "Playback Group"
+    Predvajalna skupina
 "Playback Groups"
+    Predvajalne skupine
 "Played %s times"
+    Predvajano %s krat
 "Played once"
+    Predvajano enkrat
 "Playlist"
+    Seznam predvajanja
 "Playlist Info"
+    Info o seznamu predvajanja
 "Playlist is empty"
+    Seznam predvajanja je prazen
 "Playlist Items"
+    Vsebina seznama predvajanja
 "Playlist Name"
+    Ime seznama predvajanja
 "Playlist renamed successfully"
+    Seznam predvajanja uspečno preimenovan
 "Playlist saved successfully"
+    Seznam predvajanja uspešno shranjen
 "Playlist: %s"
+    Seznam predvajanja: %s
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
+    Seznami predvajanja
 "Please enter an imdb number or a title to do another search"
+    Za ponovno iskanje vnesite IMDB številko ali naslov
 "Please wait for the pending ajax request"
-"plot"
+    Prosim počakajte na tekočo ajax zahtevo
 "Possible conflicts"
+    Možni konflikti
 "Possible conflicts with this show"
+    S to oddajo so možni konflikti
 "Power"
+    Napr.
 "Power Search"
+    Napredno iskanje
 "Prefer Channum"
+    Priljubljena številka kanala
 "Preferences"
+    Preference
 "Preferred Input"
+    Priljubljen vhod
 "Presented by"
     Predstavlja
 "Pressure"
     Tlak
 "preview"
 "Previous"
+    Pritisk
 "Previous Recording"
+    Že posneta
 "Previous recordings"
     Že posneto
 "Produced by"
@@ -585,35 +875,51 @@
 "profile"
     profil
 "Program Detail"
+    Opis programa
 "Program ID"
+    ID programa
 "Program Listing"
+    TV spored
 "Program Type"
+    Tip programa
 "Protocol"
+    Protokol
 "Queue a job"
+    Opravilo v čakalno vrsto
 "Queued"
+    V čakalni vrsti
 "Queued jobs"
+    Opravila v čakalni vrsti
 "Radar"
     Radar
 "Random"
+    Naključno
 "Random Items"
+    Naključne skladbe
 "Random Mix Maker"
+    Urejevalnik nalkjučnega mix-a
 "Random Type"
+    Tip naključnega predvajanja
 "Rating"
     Ocena
 "rating"
 "Recently Added Albums"
+    Pred kratkim dodani albumi
 "Recently completed jobs"
+    Pred kratkim končana opravila
 "Recently Played Songs"
+    Pred kratkim predvajanje skladbe
 "recgroup"
     snemalna skupina
 "Record new and expire old"
     Snemaj novo in briši staro
 "Record This"
-    Posnami to
+    Posnami
 "Recorded"
 "Recorded Programs"
     Posneti programi
 "Recording Details"
+    Podrobnosti o snemanju
 "Recording Group"
     Snemalne skupine
 "Recording Options"
@@ -625,11 +931,13 @@
 "Recording Schedules"
     Snemalni plani
 "Recording Statistics"
+    Statistike snemanja
 "recpriority"
+    snemalna prioriteta
 "recstatus: cancelled"
     Bilo je planirano za snemanje, ampak je bilo ročno preklicano.
 "recstatus: conflict"
-    Sneman bo drugi program z višjo prioriteto.
+    Posnela se bo druga oddaja z višjo prioriteto.
 "recstatus: currentrecording"
     Ta oddaja je že bila posneta in je še vedno na voljo v seznamu snemanj.
 "recstatus: deleted"
@@ -639,6 +947,7 @@
 "recstatus: force_record"
     Ta oddaja je bila ta trenutek ročno nastavljena za snemanje.
 "recstatus: inactive"
+    Ta snemalni plan je nekativen
 "recstatus: latershowing"
     Ta oddaja se bo posnela prej (koliko je nastavljeno).
 "recstatus: lowdiskspace"
@@ -646,7 +955,9 @@
 "recstatus: manualoverride"
     Ta oddaja je bila ročno nastavljena, naj se ne posname.
 "recstatus: neverrecord"
+    Ta oddaja je bila ročno nastavljena naj se nikoli ne posname.
 "recstatus: notlisted"
+    Te oddaje ni bilo na sporedu.
 "recstatus: previousrecording"
     Glede na rezultate duplikatov, je bila ta oddaja že posneta.
 "recstatus: recorded"
@@ -658,32 +969,33 @@
 "recstatus: stopped"
     Ta oddaja je že bila posneta, ampak je bil snemanje preklicano.
 "recstatus: toomanyrecordings"
-    Posnelo se je že preveč posnetkov tega progama.
+    Posnelo se je že preveč posnetkov te oddaje.
 "recstatus: tunerbusy"
-    Kartica za zajem je že bila v uporabi, kadar bi se naj izvedel ta snemalni plan.
+    Kartica za zajem je že bila v uporabi, ko bi se naj izvedel ta snemalni plan.
 "recstatus: unknown"
     Status te oddaje je neznan.
 "recstatus: willrecord"
     Ta oddaja se bo posnela.
 "rectype-long: always"
+    Vedno posnami na kateremkoli kanalu
 "rectype-long: channel"
-    Snemaj kadarkoli na kanalu $1.
+    Snemaj kadarkoli na kanalu $1
 "rectype-long: daily"
-    Snemaj ta program v tem času vsak dan.
+    Posnami v tem času vsak dan
 "rectype-long: dontrec"
-    Ne snemaj te oddaje.
+    Ne snemaj te oddaje
 "rectype-long: finddaily"
-    Najdi in snemaj to oddajo vsak dan.
+    Najdi in posnami to oddajo vsak dan
 "rectype-long: findone"
-    Najdi in snemaj to oddajo.
+    Najdi in posnami to oddajo
 "rectype-long: findweekly"
-    Najdi in snemaj to oddajo vsak teden.
+    Najdi in posnami to oddajo vsak teden
 "rectype-long: once"
-    Snemaj samo to oddajo.
+    Posnami samo to oddajo
 "rectype-long: override"
-    Snemaj to posebno oddajo.
+    Posnami to posebno oddajo
 "rectype-long: weekly"
-    Snemaj ta program v tem času vsak teden.
+    Posnami to oddajo v tem času vsak teden
 "rectype: always"
     Vedno
 "rectype: channel"
@@ -699,41 +1011,56 @@
 "rectype: findweekly"
     Najdi tedensko
 "rectype: once"
-    Enkrat
+    Najdi enkrat
 "rectype: override"
     Prepiši (snemanje)
 "rectype: weekly"
     tedensko
 "regex: articles"
-    An?|The
+    Članki
 "Remote"
+    Oddaljeno
 "Remove Item from Playlist"
+    Odstrani pesem iz seznama predvajanja
 "Repair Tables"
+    Popravljanje tabel
 "Repeat"
-    Ponovno zaženi
+    Ponovitev
 "Reset"
     Resetiraj
 "Retry"
+    Ponovno poizkusi
 "Return to Statistics Page"
+    Vrni se na na stran s statistikami
 "Reverse Order"
 "Right"
+    Desno
 "Rows to show between timeslot info"
+    Št. vrstic med časovno linijo
 "Running"
+    Teče
 "Saturday"
     Sobota
 "Save"
     Shrani
 "Save or Rename the Current Playlist"
+    Shrani ali preimenuje trenutni seznam predvajanja
 "Save Schedule"
     Shrani snemalni plan
 "Save/Rename"
+    Shrani/Preimenuj
 "Save/Rename Playlist"
+    Shrani/Preimenuj seznam predvajanja
 "Saved Playlist Successfully Deleted"
+    Shranjen seznam predvajanja uspešno odstranjen
 "Saved Playlists"
+    Shranjeni seznami predvajanja
 "Scan Collection"
+    Prebrskaj kolekcijo
 "Schedule"
     Nastavi snemanje
 "Schedule Manually"
+    Ročno planiranje
 "Schedule normally."
     Normalno planiranje
 "Schedule Options"
@@ -741,61 +1068,93 @@
 "Schedule Override"
     Prepiši planiranje
 "Schedule via $1."
+    Planiranje z $1.
 "Scheduled"
     Splanirano
 "Scheduled Popup"
-    Nastavljeni pop-up
+    Pop-upi
 "Science Fiction Movies"
+    Znanstveno-fantastični filmi
 "Search"
     Iskanje
 "Search $1"
+    Iskanje $1
 "Search for:  $1"
     Iskanje:  $1
 "Search Music"
+    Iskanje glasbe
 "Search Phrase"
+    Iskanje po ključni besedi
 "Search Results"
     Rezultati iskanja
 "Search the Music Database"
+    Preišči glasbeno bazo
 "Search Type"
+    Tip iskanja
 "Searches"
     Iskanja
 "Server Statistics"
+    Stratistike strežnika
 "Set Host"
+    Nastavi gostitelja
 "Settings"
     Nastavitve
 "settings"
+    nastavitve
 "Settings Table"
+    Tabela nastavitev
 "Settings Table Editor"
 "settings/stream: protocol"
+    Veliko predvajalnikov ne zmore predvajati datotek, ki se predvajanjo iz<br/>
+    https strežnikov. Če poganjate MythWeb preko https, je priporočjlivo, da si ustvarite<br/>
+    ne-ssl namestitev in obkljukate to okence, ki bo vsililo vsa predvajanja<br/>
+    preko http.
 "settings: notice"
+    Opozorilo:<br/><br/>
+    Na večini nastavitvenih strani, se napake pogosto ne preverjajo. Če niste pazljivi, lahko kaj hitro zmešate stvari (predvsem glede baze). Tukaj <b>NI</b> mogoče razveljaviti vaših dejanj.
 "settings: overview"
 "Shift"
 "Show"
-    Oddaja
+    Prikaži
 "Show descriptions on new line"
 "Show group"
-    Pokaži skupino
+    Prikaži skupino
 "Show pixmaps"
+    Prikaži pixmaps
 "Show recordings"
-    Pokaži snemanja
+    Prikaži snemanja
 "Showing all programs from the $1 group."
+    Prikaži vse programe iz $1 skupine.
 "Showing all programs."
+    Prikaz vseh programov.
 "Showings between"
+    Oddaje med
 "Shows"
+    Oddaje
 "SI Units"
     SI enote
 "SI Units?"
 "Skip Ahead"
+    Izpusti naprej
 "Skip Back"
+    Izpusti nazaj
 "Songs"
+    Pesem
 "Songs for Genre"
+    Pesmi za zvrst
 "Songs Played"
+    Predvajane pesmi
 "Songs Rated"
+    Ocenjene pesmi
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
+    Oprostite, tega seznama predvajanja ne morete dodati, ker bo povzročil ciklanje."
 "sourceid"
+    ID vira
 "Space"
 "Special Searches"
+    Specialna iskanja
 "Star character"
+    Znak za oceno
 "Start Date"
     Datum začetka
 "Start Early"
@@ -803,74 +1162,109 @@
 "Start Time"
     Čas začetka
 "Starting"
+    Začenjam
 "Statistics"
+    Statistike
 "Stats"
+    Statis
 "Status"
 "Status Bar"
     Statusna vrstica
 "Stereo"
 "Still Recording: Edit"
+    Še vedno snemam: Uredi
 "Stopping"
+    Ustavljanje
 "Storage Group"
+    Skupina za shranjevanje
 "Streaming"
+    Predvajanje (stream)
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)
 "Submit Search"
+    Začni iskati
 "subtitle"
 "Subtitle"
     Podnaslov
 "Subtitle and Description"
     Podnaslov in opis
 "Subtitle then Description"
+    Prvo podnaslov potem opis
 "Subtitled"
+    Podnaslovljeno
 "Subtitles Available"
+    Podnapisi na voljo
 "Sunday"
     Nedelja
 "Surround Sound"
+    Prostorski zvok
 "Tab"
 "The requested recording schedule has been deleted."
-    Zahtevani snemalni plan je bil izbrisan
+    Zahtevani snemalni plan je bil izbrisan.
 "There are no items in this Playlist!"
+    V tem seznamu predvajanja ni skladb!
 "There was a problem saving your playlist"
+    Pri shranjevanju seznama predvajanja je prišlo do napake
 "This playlist is already loaded!"
+    Ta seznam predvajanja je že naložen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+    To bo prepisalo vaš trenutno še ne shranjen seznam predvajanja. Ali ste prepričani, da želite nadaljevati?
 "Thursday"
     Četrtek
 "Time"
     Čas
 "Time Span"
+    Časovni razpon
 "Time Stretch"
+    Časovni razteg
 "Time Stretch Default"
+    Privzeti časovni razteg
 "Timeslot size"
+    Velikost časovnega razpona
 "title"
-    Naslov
+    naslov
 "Title"
     Naslov
 "Title Match"
+    Zadetki po naslovnih
 "Title search"
+    Iskanje po naslovih
 "Title Search"
+    Iskanje po naslovih
 "Today"
     Danes
 "Tomorrow"
     Jutri
 "Too Many"
-"Top"
+    Preveč
 "Top $1"
+    Naj $1
 "Top Played Songs"
+    Najbolj predvajane skladbe
 "Top Rated Songs"
+    Pesmi z najvišjo oceno
 "Total Length"
+    Skupna dolžina
 "Total Recorded"
+    Skupaj posnetkov
 "Total Running Time"
+    Skupni čas delovanja
 "Total Time"
+    Skupni čas
 "Total Time:  %s"
+    Skupni čas: %s
 "Track #%s from the album '%s'"
-"Track Name"
+    Skladbe #%s iz albuma '%s'
 "Transcode"
+    Kodiraj
 "transcoder"
+    kodirnik
 "Transcoder"
+    Kodirnik
 "Tuesday"
     Torek
 "Tuner Busy"
+    Tuner zaseden
 "TV"
 "TV functions, including recorded programs."
     Funkcije TV, vključno z posnetimi programi.
@@ -880,27 +1274,35 @@
 "Type"
     Tip
 "Undelete"
+    Obnovi
 "Undelete: $1"
+    Obnovi: $1
 "Unfiltered"
 "Unknown"
     Neznano
 "Unknown Program."
-    Neznani program
+    Neznan program.
 "Unknown Recording Schedule."
-    Neznani plan snemanja
+    Neznan plan snemanja.
 "Unreachable"
 "Up"
+    Gor
 "Upcoming Recordings"
+    Prihajajoča snemanja
 "Update"
     Posodobi
 "Update Recording Settings"
     Posodobi snemalne nastavitve
 "Use callsign"
+    Uporabi kratico
 "Use date/time"
+    Uporabi datum/čas
 "Use myth:// URI for Windows"
+    Za Windows uporabi myth:// URL 
 "useonairguide"
+    uporabi vodiča po zraku
 "UV Extreme"
-    UV ektremen
+    UV ekstremen
 "UV High"
     UV visok
 "UV Index"
@@ -910,65 +1312,115 @@
 "UV Moderate"
     UV srednji
 "Value"
+    Vrednost
 "Video"
+    Video
 "Video Bitrate"
 "Video Playback"
 "Video URL"
 "Video: Error: IMDB"
+    Žal mi je, ampak prišlo je do napake, pri pridobivanju IMDB podatkov. Če ste imdb številko vnesli ročno, jo prosim preverite.
 "Video: Error: IMDB: Not Found"
+    Napaka. V tabeli nastavitev, IMDB ni nastavljen. Prosim nastavite ga v nastavitvah.
 "Video: Error: Missing ID"
+    Napaka. Zaradi neznanega razloga, ni bilo mogoče poslati ID-ja IMDB-ju. Končujem.
 "Video: IMDB: No Matches"
+    Za ta naslov ni bilo zadetkov. Prosim vnesite drug IMDB ID, ali pa uporabite drug naslov.
 "Video: IMDB: Window Title"
+    IMDB zadetki
 "Video: Warning: Artwork"
+    Opozorilo. Nadgradnja ovitka za ta film ni uspela. Prosim preverite pravice na Artwork mapi.
 "Video: Warning: Artwork: Download"
+    Snetje ovitka iz IMDB-ja ni uspelo.
 "Video: Warning: fopen"
+    Opozorilo. Vaš php.ini ima nastavljen parameter allow_url_fopen na off. Za snetje ovitka mora biti na on. Ovitek se ne bo posodobil.
 "VideoAggressivePC"
+    Video agresiven PC
 "VideoArtworkDir"
+    Artwork mapa
 "VideoBrowserNoDB"
+    Ni baze
 "VideoDefaultParentalLevel"
+    Nivo nadzora
 "VideoDefaultPlayer"
+    Privzeti predvajalnik
 "videofilters"
+    video filtri
 "VideoGalleryAspectRatio"
+    Razmerje slike
 "VideoGalleryColsPerPage"
+    Kolon na stran
 "VideoGalleryNoDB"
+    Ni baze
 "VideoGalleryRowsPerPage"
+    Vrstic na stran
 "VideoGallerySubtitle"
+    Podnaslov galerije
 "VideoListUnknownFiletypes"
+    Neznani tipi datotek
 "VideoNewBrowsable"
+    Vidljivost novih
 "Videos"
+    Filmi
 "VideoStartupDir"
+    Zagonska mapa
 "VideoTreeLoadMetaData"
+    Meta podatki
 "VideoTreeNoDB"
+    Ni baze
 "View Albums by %s"
+    Prikaži albume z %s
 "View Details of %s"
+    Prikaži podrobnosti od %s
 "View Saved Playlist"
+    Prikaži shranjen seznam predvajanja
 "View Server Statistics"
+    Prikaži statistike strežnika
 "Visibility"
     Vidljivost
 "visible"
+    viden
 "Visit $1"
+    Obišči $1
 "Watched"
+    Pogledano
 "Weather"
+    Vreme
 "web_video_imdb_path"
+    Mesto imdb.pl datoteke na tem strežniku
 "web_video_imdb_type"
+    IMDB tip
 "web_video_thumbnail_height"
+    Višina slike
 "web_video_thumbnail_width"
+    Širina slike
 "Wednesday"
     Sreda
 "welcome: backend_log"
+    Backend dnevniki
 "welcome: music"
+    Glasba
 "welcome: remote"
+    Oddaljeno
 "welcome: settings"
+    Nastavitve
 "welcome: stats"
+    Statistike
 "welcome: status"
+    Status backenda
 "welcome: tv"
+    TV
 "welcome: video"
+    Filmi
 "welcome: weather"
+    Vreme
 "What else is on at this time?"
     Kaj je še ob tem času?
 "Widescreen"
+    Široki zaslon
 "Width"
 "Will Record"
+    Se bo posnelo
 "Wind"
     Veter
 "Wind Chill"
@@ -977,7 +1429,10 @@
     Napisal
 "xmltvid"
 "Year"
+    Leto
 "year"
+    leto
 "Yes"
     Da
 "Yesterday"
+    Včeraj
