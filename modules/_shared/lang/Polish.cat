@@ -1,0 +1,99 @@
+"Action"
+    Akcja
+    \b(?:action|adven)
+"Adult"
+    Dla dorosłych
+    \b(?:adult|erot)
+"Animals"
+    Zwierzęta
+    \b(?:animal|tiere)
+"Art_Music"
+    Art_Music
+    \b(?:art|dance|music|cultur)
+"Business"
+    Biznes
+    \b(?:biz|busine)
+"Children"
+    Dzieci
+    \b(?:child|infan|animation)
+"Comedy"
+    Komedia
+    \b(?:comed|entertain|sitcom)
+"Crime_Mystery"
+    Przestępstwo / Tajemnica
+    \b(?:crim|myster)
+"Documentary"
+    Dokumentalne
+    \b(?:doc)
+"Drama"
+    Dramat
+    \b(?:drama)
+"Educational"
+    Edukacyjne
+    \b(?:edu|interests)
+"Food"
+    Kulinarne
+    \b(?:food|cook|drink)
+"Game"
+    Gry
+    \b(?:game)
+"Health_Medical"
+    Health / Medical
+    \b(?:health|medic)
+"History"
+    Historia
+    \b(?:hist)
+"Horror"
+    Horror
+    \b(?:horror)
+"HowTo"
+    HowTo
+    \b(?:how|home|house|garden)
+"Misc"
+    Różne
+    \b(?:special|variety|info|collect)
+"News"
+    Nowości
+    \b(?:news|current)
+"Reality"
+    Reality
+    \b(?:reality)
+"Romance"
+    Romantyka
+    \b(?:romance)
+"SciFi_Fantasy"
+    Fantastyka
+    \b(?:fantasy|sci\w*\W*fi)
+"Science_Nature"
+    Science / Nature
+    \b(?:science|nature|environment)
+"Shopping"
+    Sklepy
+    \b(?:shop)
+"Soaps"
+    Soaps
+    \b(?:soaps)
+"Spiritual"
+    Religijny
+    \b(?:spirit|relig)
+"Sports"
+    Sporty
+    \b(?:sport)
+"Talk"
+    Rozmowy
+    \b(?:talk)
+"Travel"
+    Podróże
+    \b(?:travel)
+"Unknown"
+    Nieznany
+    
+"War"
+    Wojna
+    \b(?:war)
+"Western"
+    Western
+    \b(?:west)
+"movie"
+    Film
+    
