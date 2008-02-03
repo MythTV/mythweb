@@ -24,11 +24,11 @@
         <td class="-jumpto"><?php echo t('Jump To') ?>:</td>
         <td class="-hour"><?php hour_select('id="hour_select" onchange="list_update($(\'hour_select\')[$(\'hour_select\').selectedIndex].value);"') ?></td>
         <td class="-day">
-            <a onclick="list_update(<?php echo $list_starttime - (24 * 60 * 60); ?>);">
+            <a class="link" onclick="list_update(<?php echo $list_starttime - (24 * 60 * 60); ?>);">
                 <img src="<?php echo skin_url ?>img/left.gif" border="0">
             </a>
             <?php date_select('id="date_select" onchange="list_update($(\'date_select\')[$(\'date_select\').selectedIndex].value);"') ?>
-            <a onclick="list_update(<?php echo $list_starttime + (24 * 60 * 60); ?>);">
+            <a class="link" onclick="list_update(<?php echo $list_starttime + (24 * 60 * 60); ?>);">
                 <img src="<?php echo skin_url ?>img/right.gif" border="0">
             </a>
         </td>
@@ -64,18 +64,18 @@
             // Update the timeslot anchor
                 $timeslot_anchor++;
 ?><tr>
-    <td class="menu" width="4%" align="right"><a onclick="list_update(<?php echo $list_starttime - (timeslot_size * num_time_slots); ?>);" name="anchor<?php echo $timeslot_anchor ?>"><img src="<?php echo skin_url ?>img/left.gif" border="0" alt="left"></a></td>
+    <td class="menu" width="4%" align="right"><a class="link" onclick="list_update(<?php echo $list_starttime - (timeslot_size * num_time_slots); ?>);" name="anchor<?php echo $timeslot_anchor ?>"><img src="<?php echo skin_url ?>img/left.gif" border="0" alt="left"></a></td>
 <?php
                 $block_count = 0;
                 foreach ($Timeslots as $time) {
                     if ($block_count++ % timeslot_blocks)
                         continue;
 ?>
-    <td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo intVal(timeslot_blocks * 94 / num_time_slots) ?>%" align="center"><a onclick="list_update(<?php echo $time; ?>);"><?php echo strftime($_SESSION['time_format'], $time) ?></a></td>
+    <td nowrap class="menu" colspan="<?php echo timeslot_blocks ?>" width="<?php echo intVal(timeslot_blocks * 94 / num_time_slots) ?>%" align="center"><a class="link" onclick="list_update(<?php echo $time; ?>);"><?php echo strftime($_SESSION['time_format'], $time) ?></a></td>
 <?php
                 }
 ?>
-    <td nowrap class="menu" width="2%"><a onclick="list_update(<?php echo $list_starttime + (timeslot_size * num_time_slots); ?>);"><img src="<?php echo skin_url ?>img/right.gif" border="0" alt="right"></a></td>
+    <td nowrap class="menu" width="2%"><a class="link" onclick="list_update(<?php echo $list_starttime + (timeslot_size * num_time_slots); ?>);"><img src="<?php echo skin_url ?>img/right.gif" border="0" alt="right"></a></td>
 </tr><?php
             }
         // Count this channel

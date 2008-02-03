@@ -204,11 +204,15 @@
 
     /* Ajax little popup request thing style */
     #ajax_working {
-        position: fixed;
-        background-color: green;
-        bottom: 0px;
-        left: 1em;
-        padding: 1em;
-        width: 10em;
-        text-align: center;
+        position:           fixed;
+        background-color:   green;
+        bottom:             0px;
+        left:               1em;
+        padding:            1em;
+        width:              10em;
+        text-align:         center;
+    }
+
+    .link {
+        cursor:             pointer;
     }
