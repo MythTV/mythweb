@@ -74,6 +74,7 @@
 /**/
     function date_select($params = '') {
         global $db;
+        global $list_starttime;
     // Get the available date range
         $min_days = max(-7, $db->query_col('SELECT TO_DAYS(min(starttime)) - TO_DAYS(NOW()) FROM program'));
         $max_days = min(30, $db->query_col('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program'));
@@ -82,7 +83,7 @@
         for ($i=$min_days; $i<=$max_days; $i++) {
             $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
             echo "<option value=\"$time\"";
-            if ($date == date('Ymd', $_SESSION['list_time']))
+            if ( date('Ymd', $time) == date('Ymd', $list_starttime))
                 echo ' SELECTED';
             echo '>'.strftime($_SESSION['date_listing_jump'] , $time).'</option>';
         }
