@@ -17,13 +17,13 @@
 /**/
 
 // Were we passed a timestamp?  This is going to be the most common occurrence
-    if ($_GET['time'])
-        $list_starttime = intVal($_GET['time']);
-    elseif(isset($_GET['daytime']))
-        $list_starttime = unixtime(sprintf('%08d%04d00', $_GET['date'], $_GET['daytime']));
+    if ($_REQUEST['time'])
+        $list_starttime = intVal($_REQUEST['time']);
+    elseif(isset($_REQUEST['daytime']))
+        $list_starttime = unixtime(sprintf('%08d%04d00', $_REQUEST['date'], $_REQUEST['daytime']));
 // Did we get passed a date (and probably an hour, too)?
-    elseif(isset($_GET['date']))
-        $list_starttime = unixtime(sprintf('%08d%02d0000', $_GET['date'], $_GET['hour']));
+    elseif(isset($_REQUEST['date']))
+        $list_starttime = unixtime(sprintf('%08d%02d0000', $_REQUEST['date'], $_REQUEST['hour']));
 // Default value - just use the current time
     else
         $list_starttime = time();
@@ -48,8 +48,11 @@
 // Load all relevant program information for all channels
     load_all_program_data($list_starttime, $list_endtime);
 
-// Load the class for this page
-    require_once tmpl_dir.'list.php';
+// Are we an ajax request?
+    if ($_REQUEST['ajax'])
+        require_once tmpl_dir.'list_data.php';
+    else
+        require_once tmpl_dir.'list.php';
 
 /**
  * Prints a <select> of the available hour range
@@ -58,7 +61,7 @@
         global $list_starttime;
         echo "<select name=\"hour\" $params>";
         for ($h=0;$h<24;$h++) {
-            echo "<option value=\"$h\"";
+            echo '<option value="'.mktime($h,0,0, date('m', $list_starttime), date('d', $list_starttime), date('Y', $list_starttime)).'"';
             if ($h == date('H', $list_starttime))
                 echo ' SELECTED';
             echo '>'.strftime($_SESSION['time_format'], strtotime("$h:00")).'</option>';
@@ -78,12 +81,10 @@
         echo "<select name=\"date\" $params>";
         for ($i=$min_days; $i<=$max_days; $i++) {
             $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
-            $date = date('Ymd', $time);
-            echo "<option value=\"$date\"";
+            echo "<option value=\"$time\"";
             if ($date == date('Ymd', $_SESSION['list_time']))
                 echo ' SELECTED';
             echo '>'.strftime($_SESSION['date_listing_jump'] , $time).'</option>';
         }
         echo '</select>';
     }
-
