@@ -6,22 +6,14 @@
         $percent = intVal($timeslots_used * 96 / num_time_slots);
 ?>
     <td class="small <?php echo $program->css_class ?>" colspan="<?php echo $timeslots_used ?>" width="<?php echo $percent ?>%" valign="top"><?php
-    // Window status text, for the mouseover
-        $wstatus = strftime($_SESSION['time_format'], $program->starttime).' - '.strftime($_SESSION['time_format'], $program->endtime).' -- '
-                  .str_replace(array("'", '"'),array("\\'", '&quot;'), $program->title)
-                  .($program->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $program->subtitle)
-                                          : '');
     // hdtv?
         if ($program->hdtv && $percent > 5)
             echo '<span class="hdtv_icon">HD</span>';
     // Start printing the link to record this show
-        echo '<a';
-        if (show_popup_info)
-            echo show_popup("program_$program_id_counter", $program->details_list(), NULL, 'popup', $wstatus);
-        else
-            echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
-
-        echo ' href="'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
+        echo '<a id          = "program-'.$program->chanid.'-'.$program->starttime.'"
+                 class       = "program"
+                 onmouseover = "load_tool_tip(\'program-'.$program->chanid.'-'.$program->starttime.'\',\''.$program->chanid.'\',\''.$program->starttime.'\');"
+                 href        = "'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
             echo '<img src="'.skin_url.'img/left_sm.png" border="0" class="left_arrow">';
@@ -68,4 +60,3 @@
             echo "<BR>($parens)";
 
     ?></td>
-

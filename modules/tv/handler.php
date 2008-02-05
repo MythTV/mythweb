@@ -70,7 +70,7 @@
     }
 
 // Unknown section?  Use the default
-    if (!in_array($Path[1], array('recording_detail', 'detail', 'channel', 'search', 'movies'))
+    if (!in_array($Path[1], array('recording_detail', 'detail', 'channel', 'search', 'movies', 'get_show_details'))
             && empty($Modules['tv']['links'][$Path[1]])) {
         $Path[1] = 'list';
     }
@@ -102,4 +102,3 @@
             $Categories[$key] = array($trans, $regex);
         }
     }
-

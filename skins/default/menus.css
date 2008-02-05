@@ -1,9 +1,6 @@
 /* popup and menu classes */
 .popup {
     position:         absolute;
-    visibility:       hidden;
-    top:              0px;
-    left:             0px;
     color:            #dedede;
     background-color: #265990;
     border:           2px ridge #127;
@@ -218,4 +215,3 @@ ul.popup_menu ul li.active {
 }
 
 */
-

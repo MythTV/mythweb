@@ -33,9 +33,61 @@
                                             ajax: true,
                                             time: timestamp
                                         },
-                            onComplete: ajax_remove_request
+                            onComplete: list_update_finished
                          }
                         );
+    }
+
+    function list_update_finished() {
+        programs_to_load_popups = $$('a.program');
+        programs_to_load_popups.reverse();
+        ajax_remove_request();
+    }
+
+    var programs_to_load_popups;
+    function load_popups_automagically() {
+        console.profile();
+        programs_to_load_popups = $$('a.program');
+        programs_to_load_popups.reverse();
+        console.profileEnd();
+        new PeriodicalExecuter(load_popup_automagically, 1);
+    }
+    Event.observe(window, 'load', load_popups_automagically);
+
+    function load_popup_automagically(pe) {
+        if (pending_ajax_requests != 0)
+            return;
+        if (programs_to_load_popups.length == 0)
+            return;
+        var program = programs_to_load_popups.pop();
+        var info = program.id.split('-');
+        load_tool_tip(program.id, info[1], info[2]);
+    }
+
+
+    function load_tool_tip(element_id, channel_id, start_time) {
+        var element = $(element_id);
+        if (Tips.hasTip(element) == false) {
+            ajax_add_request();
+            new Ajax.Request('<?php echo root; ?>tv/get_show_details',
+                             {
+                                parameters: {
+                                                chanid:     channel_id,
+                                                starttime:  start_time,
+                                                ajax:       true
+                                            },
+                                onSuccess: add_tool_tip,
+                                method:    'get'
+                             });
+        }
+    }
+
+    function add_tool_tip(content) {
+        var id = content.responseText.split("\n", 1);
+        var details = content.responseText.substr((id[0].length+1));
+        if (Tips.hasTip($(id[0])) == false)
+            new Tip(id[0], details, { className: 'popup' });
+        ajax_remove_request();
     }
 </script>
 

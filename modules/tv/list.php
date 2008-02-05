@@ -81,7 +81,7 @@
     // Print out the list
         echo "<select name=\"date\" $params>";
         for ($i=$min_days; $i<=$max_days; $i++) {
-            $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
+            $time = mktime(date('G', $list_starttime),0,0, date('m'), date('d') + $i, date('Y'));
             echo "<option value=\"$time\"";
             if ( date('Ymd', $time) == date('Ymd', $list_starttime))
                 echo ' SELECTED';
