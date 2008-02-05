@@ -36,6 +36,9 @@
                             onComplete: list_update_finished
                          }
                         );
+    // We need to prevent hemorrhaging memory...
+    // We don't use Tips.removeAll() as we are destroying the fields they are hooked into, so we don't need to mess with the DOM...
+        Tips.tips.clear();
     }
 
     function list_update_finished() {
@@ -86,6 +89,9 @@
         if (Tips.hasTip($(id[0])) == false)
             new Tip(id[0], details, { className: 'popup' });
         ajax_remove_request();
+    // Try to skip ahead in the timeout queue...
+        if (pending_ajax_requests == 0)
+            load_popup_automagically();
     }
 </script>
 
