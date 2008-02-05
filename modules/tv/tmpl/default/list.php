@@ -46,10 +46,8 @@
 
     var programs_to_load_popups;
     function load_popups_automagically() {
-        console.profile();
         programs_to_load_popups = $$('a.program');
         programs_to_load_popups.reverse();
-        console.profileEnd();
         new PeriodicalExecuter(load_popup_automagically, 1);
     }
     Event.observe(window, 'load', load_popups_automagically);
