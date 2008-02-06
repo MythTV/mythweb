@@ -561,22 +561,17 @@ class Schedule {
         // Default
             $groups['Default'] = t('Default');
         // Current recgroups
-            $result = mysql_query('SELECT DISTINCT recgroup FROM record');
+            $result = mysql_query('SELECT DISTINCT recgroup FROM recorded '.
+                'WHERE recgroup != "LiveTV" AND recgroup != "Deleted" UNION '.
+                'SELECT DISTINCT recgroup FROM record '.
+                'WHERE recgroup != "LiveTV" AND recgroup != "Deleted" '.
+                'ORDER BY recgroup;');
+            
             while (list($group) = mysql_fetch_row($result)) {
                 $group or $group = t('Default');
                 $groups[$group]  = $group;
             }
             mysql_free_result($result);
-        // recgroups from current recordings
-            $result = mysql_query('SELECT DISTINCT recgroup FROM recorded');
-            while (list($group) = mysql_fetch_row($result)) {
-                $group or $group = t('Default');
-                $groups[$group]  = $group;
-            }
-            mysql_free_result($result);
-        // Ignore LiveTV and Deleted
-            unset($groups['LiveTV']);
-            unset($groups['Deleted']);
         }
     // Print the <select>
         echo "<select name=\"$name\">";
