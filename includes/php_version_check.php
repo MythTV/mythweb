@@ -20,3 +20,6 @@
 // If we're not using php 5.0.0 or newer, setup some compatability functions
     if (version_compare(phpversion(), '5.0.0') < 0)
         require_once 'includes/php5_compat.php';
+
+// For now, use the pear version of JSON until we can only support php 5.2 and thus use the builtin-json object...
+    require_once 'includes/JSON.php';

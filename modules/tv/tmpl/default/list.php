@@ -84,10 +84,9 @@
     }
 
     function add_tool_tip(content) {
-        var id = content.responseText.split("\n", 1);
-        var details = content.responseText.substr((id[0].length+1));
-        if (Tips.hasTip($(id[0])) == false)
-            new Tip(id[0], details, { className: 'popup' });
+        var info = content.responseJSON;
+        if (Tips.hasTip($(info['id'])) == false)
+            new Tip(info['id'], info['info'], { className: 'popup' });
         ajax_remove_request();
     // Try to skip ahead in the timeout queue...
         if (pending_ajax_requests == 0)
