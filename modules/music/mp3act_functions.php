@@ -781,6 +781,7 @@ function musicLookup($type, $itemid)
       $query = 'SELECT ms.name, ms.song_id, mt.artist_name, UNIX_TIMESTAMP(ms.lastplay) AS playdate '.
         'FROM music_songs AS ms '.
         'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
+        'WHERE ms.numplays > 0 '.
         'ORDER BY ms.lastplay DESC '.
         'LIMIT 40';
       $result = mysql_query($query);
