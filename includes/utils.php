@@ -343,26 +343,8 @@
             case 'flvp': return "$url.flvp";
             case 'flv' : return "$url.flv";
         }
-    // Mac and Linux just get a link to the streaming module, along with any
-    // session marked to not use the myth:// URI
-        if (!stristr($_SERVER['HTTP_USER_AGENT'], 'windows') || !$_SESSION['use_myth_uri']) {
-            return $url;
-        }
-    // Windows likely gets a myth:// url -- grab the master host and port
-        global $Master_Host, $Master_Port;
-    // Is either the browser xor the master in an rfc 1918 zone?
-        $remoteaddr = $_SERVER['REMOTE_ADDR'];
-	if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-	    $remoteaddr = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        if (preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $Master_Host)
-                xor preg_match('/^(?:10|192\.168|172\.(?:1[6-9]|2[0-9]|3[0-6]))\./', $remoteaddr)) {
-            return $url;
-        }
-    // Send the myth url
-        else {
-            return "myth://$Master_Host:$Master_Port/"
-                   .str_replace('%2F', '/', rawurlencode(basename($show->filename)));
-        }
+    // No more dsmyth filters, so return the URL no matter what the browser is.
+        return $url;
     }
 
 /**

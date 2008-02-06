@@ -26,9 +26,6 @@
     <td align="right"><?php echo t('Download URL override') ?></label>:</td>
     <td>file://<input type="text" id="file_url_override" name="file_url_override" value="<?php echo html_entities(trim($_SESSION['file_url_override'])) ?>" title="Instead of streaming downloaded recordings, load from a local file:// path instead."></td>
 </tr><tr>
-    <td class="command_border_b" align="right"><label for="use_myth_uri"><?php echo t('Use myth:// URI for Windows') ?></label>:</td>
-    <td class="command_border_b"><input class="radio" type="checkbox" title="Use myth:// URI to download recordings via Windows browsers?" id="use_myth_uri" name="use_myth_uri"<?php if ($_SESSION['use_myth_uri']) echo ' CHECKED' ?>></td>
-</tr><tr>
     <td colspan="2"><?php echo t('Guide Settings') ?>:</td>
 </tr><tr>
     <td align="right"><?php echo t('Only display favourite channels') ?>:</td>

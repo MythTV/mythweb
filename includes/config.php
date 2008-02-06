@@ -39,9 +39,6 @@
     if (!$_SESSION['date_job_status'])      $_SESSION['date_job_status']      = t('generic_date').', '.t('generic_time');
     if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
 
-// Use myth:// URI for recordings if browsing from a windows box?
-    if (!isset($_SESSION['use_myth_uri']))  $_SESSION['use_myth_uri']  = true;
-
 // Show pixmaps on the recorded programs page?
     if (!isset($_SESSION['recorded_pixmaps'])) {
          $_SESSION['recorded_pixmaps'] = (tmpl == 'default') ? true : false;
