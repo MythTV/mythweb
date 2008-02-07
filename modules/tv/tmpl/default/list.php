@@ -73,9 +73,10 @@
             new Ajax.Request('<?php echo root; ?>tv/get_show_details',
                              {
                                 parameters: {
-                                                chanid:     channel_id,
-                                                starttime:  start_time,
-                                                ajax:       true
+                                                chanid:             channel_id,
+                                                starttime:          start_time,
+                                                ajax:               true,
+                                                backend_connect:    false
                                             },
                                 onSuccess: add_tool_tip,
                                 method:    'get'
