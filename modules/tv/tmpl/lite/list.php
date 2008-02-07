@@ -96,7 +96,7 @@
         // Print the data
 ?><tr>
     <td align="center" class="menu" nowrap><?php
-            if ($_SESSION["show_channel_icons"] === true) {
+            if ($_SESSION["show_channel_icons"] == true) {
         ?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td width="50%" align="center" nowrap><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', date('Ymd', $list_starttime) ?>" class="huge"
