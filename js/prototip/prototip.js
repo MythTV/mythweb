@@ -109,6 +109,20 @@ var Tips = {
     return false;
   },
 
+  showTip: function(element) {
+    var tip = this.tips.find(function(t){ return t.element == $(element); });
+    if (tip) {
+      tip.position();
+      tip.show();
+    }
+  },
+
+  hideTip: function(element) {
+    var tip = this.tips.find(function(t){ return t.element == $(element); });
+    if (tip)
+      tip.hide();
+  },
+
   remove: function(element) {
     var tip = this.tips.find(function(t){ return t.element == $(element); });
     if (tip) {
@@ -351,12 +365,12 @@ var Tip = Class.create({
   },
 
   show: function() {
+    if (!this.tooltip) this.build();
     if (this.wrapper.visible() && this.options.effect != 'appear') return;
 
     if (Tips.fixIE) this.iframeShim.show();
     Tips.addVisibile(this.wrapper);
     this.wrapper.show();
-
     if (!this.options.effect) this.tooltip.show();
     else {
       if (this.activeEffect) Effect.Queues.get(this.queue.scope).remove(this.activeEffect);
@@ -407,8 +421,12 @@ var Tip = Class.create({
     var offset = {left: this.options.offset.x, top: this.options.offset.y};
     var targetPosition = Position.cumulativeOffset(this.target);
     var tipd = this.wrapper.getDimensions();
-    var pos = { left: (this.options.fixed) ? targetPosition[0] : Event.pointerX(event),
-      top: (this.options.fixed) ? targetPosition[1] : Event.pointerY(event) };
+
+    if (event)
+        var pos = { left: (this.options.fixed) ? targetPosition[0] : Event.pointerX(event),
+          top: (this.options.fixed) ? targetPosition[1] : Event.pointerY(event) };
+    else
+        var pos = { left: targetPosition[0], top: targetPosition[1] };
 
     // add offsets
     pos.left += offset.left;
@@ -452,8 +470,8 @@ var Tip = Class.create({
       pos.top += -1*(hooks.tip[1] - hooks.target[1]);
     }
 
-    // move tooltip when there is a different target
-    if (!this.options.fixed && this.element !== this.target) {
+    // move tooltip when there is a different target or when we don't have a event to position to
+    if ((!this.options.fixed && this.element !== this.target) || !event) {
       var elementPosition = Position.cumulativeOffset(this.element);
       pos.left += -1*(elementPosition[0] - targetPosition[0]);
       pos.top += -1*(elementPosition[1] - targetPosition[1]);
