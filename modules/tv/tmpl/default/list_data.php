@@ -12,6 +12,9 @@
  * @subpackage  TV
  *
 /**/
+
+// UTF-8 content
+    @header("Content-Type: text/html; charset=utf-8");
 ?>
 
 <div id="list_head" class="clearfix">
