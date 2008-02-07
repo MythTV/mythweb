@@ -45,7 +45,7 @@
         $sql .= ' GROUP BY channel.channum, channel.callsign';    
     // Sort
         $sql .= ' ORDER BY '
-                .(sortby_channum ? '' : 'channel.callsign, ')
+                .($_SESSION["sortby_channum"] ? '' : 'channel.callsign, ')
                 .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
     // Query
         $sh = $db->query($sql);

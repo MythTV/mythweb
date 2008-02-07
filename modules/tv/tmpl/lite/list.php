@@ -96,12 +96,12 @@
         // Print the data
 ?><tr>
     <td align="center" class="menu" nowrap><?php
-            if (show_channel_icons === true) {
+            if ($_SESSION["show_channel_icons"] === true) {
         ?><table class="small" width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td width="50%" align="center" nowrap><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', date('Ymd', $list_starttime) ?>" class="huge"
                                             onmouseover="return wstatus('Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '.$channel->callsign) ?>')"
-                                            onmouseout="return wstatus('')"><?php echo prefer_channum ? $channel->channum : $channel->callsign ?></a>&nbsp;</td>
+                                            onmouseout="return wstatus('')"><?php echo $_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign ?></a>&nbsp;</td>
             <td width="50%" align="right"><?php
                 if (!empty($channel->icon)) {
                     ?><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', date('Ymd', $list_starttime) ?>"
@@ -113,14 +113,14 @@
         </tr><tr>
             <td colspan="2" align="center" nowrap><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', date('Ymd', $list_starttime) ?>"
                                             onmouseover="window.status='Details for: <?php echo preg_replace("/([\"'])/", '\\\$1', $channel->channum.' '. $channel->callsign) ?>';return true"
-                                            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a></td>
+                                            onmouseout="window.status='';return true"><?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?></a></td>
         </tr>
         </table><?php
             } else {
         ?><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>" class="huge"
             onmouseover="window.status='Details for: <?php echo $channel->channum ?> <?php echo $channel->callsign ?>';return true"
-            onmouseout="window.status='';return true"><?php echo prefer_channum ? $channel->channum : $channel->callsign ?><BR>
-        <?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a><?php
+            onmouseout="window.status='';return true"><?php echo $_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign ?><BR>
+        <?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?></a><?php
             }
         ?></td>
 <?php

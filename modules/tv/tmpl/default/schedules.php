@@ -42,7 +42,7 @@
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <th class="-title"><?php      echo get_sort_link('title',                                  t('Title'))              ?></th>
     <th class="-priority"><?php   echo get_sort_link('recpriority',                            t('Recording Priority')) ?></th>
-    <th class="-channel"><?php    echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('Channel'))            ?></th>
+    <th class="-channel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('Channel'))            ?></th>
     <th class="-profile"><?php    echo get_sort_link('profile',                                t('Profile'))            ?></th>
     <th class="-transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))         ?></th>
     <th class="-group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))    ?></th>
@@ -60,7 +60,7 @@
             if ($schedule->type == rectype_always || ($schedule->type == rectype_findone && !preg_match('/\\S/', $schedule->channel->channum)))
                 $schedule->channel->name = '[ '.t('Any').' ]';
         // A program id counter for popup info
-            if (show_popup_info) {
+            if ($_SESSION["show_popup_info"]) {
                 static $program_id_counter = 0;
                 $program_id_counter++;
             }
@@ -98,7 +98,7 @@
             $wstatus = "Details for $schedule->title";
         // Print a link to the program detail for this schedule
             echo '<a';
-            if (show_popup_info)
+            if ($_SESSION["show_popup_info"])
                 echo show_popup("program_$program_id_counter", $schedule->details_list(), NULL, 'popup', $wstatus);
             else
                 echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
@@ -122,7 +122,7 @@
             echo $schedule->recpriority
         ?></td>
     <td class="-channel"><?php
-            if (prefer_channum) {
+            if ($_SESSION["prefer_channum"]) {
                 if ($schedule->channel->channum)
                     echo $schedule->channel->channum.' - ';
             }

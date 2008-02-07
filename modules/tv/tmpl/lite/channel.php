@@ -24,7 +24,7 @@
 <p>
 <table align="center" width="90%" cellspacing="2" cellpadding="2">
 <tr>
-<?php   if (show_channel_icons && !empty($this_channel->icon)) { ?>
+<?php   if ($_SESSION["show_channel_icons"] && !empty($this_channel->icon)) { ?>
     <td align="right"><img src="<?php echo $this_channel->icon ?>" height="30" width="30"></td>
 <?php      } ?>
     <td width="66%" valign="center" class="huge">

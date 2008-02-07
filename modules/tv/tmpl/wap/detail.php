@@ -20,8 +20,8 @@
 // Print the page contents
 ?>
 <a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid ?>" >
-<?php echo prefer_channum ? $this_channel->channum : $this_channel->callsign ?> &nbsp;
-<?php echo prefer_channum ? $this_channel->callsign : $this_channel->channum ?></a><br />
+<?php echo $_SESSION["prefer_channum"] ? $this_channel->channum : $this_channel->callsign ?> &nbsp;
+<?php echo $_SESSION["prefer_channum"] ? $this_channel->callsign : $this_channel->channum ?></a><br />
 
 <?php echo $program->title ?><BR>
 <?php echo date('D m/d/y', $program->starttime) ?><br />

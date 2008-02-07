@@ -94,11 +94,11 @@
                             echo t('Details for: $1',
                                    html_entities($channel->name))
                         ?>">
-<?php       if (show_channel_icons === true && !empty($channel->icon)) { ?>
+<?php       if ($_SESSION["show_channel_icons"] === true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30">
 <?php       } ?>
-                <span class="-preferred"><?php echo (prefer_channum ? $channel->channum : $channel->callsign) ?></span><br />
-                    <?php echo (prefer_channum ? $channel->callsign : $channel->channum), "\n" ?>
+                <span class="-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br />
+                    <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), "\n" ?>
                 </a>
             </td>
 <?php   } ?>
@@ -351,9 +351,9 @@
                      '" title="', html_entities(t('$1 to $2',
                                                   strftime($_SESSION['time_format'], $show->starttime),
                                                   strftime($_SESSION['time_format'], $show->endtime))
-                                                .', '.(prefer_channum ? $show->channel->channum : $show->channel->callsign)
+                                                .', '.($_SESSION["prefer_channum"] ? $show->channel->channum : $show->channel->callsign)
                                                 .' - '.$show->channel->name).'"';
-                if (show_popup_info)
+                if ($_SESSION["show_popup_info"])
                     echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup');
                 echo ' href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
                     .$show->title

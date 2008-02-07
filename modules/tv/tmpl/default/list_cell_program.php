@@ -1,6 +1,6 @@
 <?php
     // A program id counter for popup info
-        if (show_popup_info)
+        if ($_SESSION["show_popup_info"])
             $program_id_counter++;
     // then, we just display the info
         $percent = intVal($timeslots_used * 96 / num_time_slots);

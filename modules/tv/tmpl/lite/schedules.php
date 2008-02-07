@@ -44,7 +44,7 @@
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <td><?php echo get_sort_link('title',    t('title')) ?></td>
     <td><?php echo get_sort_link('recpriority', t('recpriority')) ?></td>
-    <td><?php echo get_sort_link(prefer_channum ? 'channum' : 'callsign',  t('channel')) ?></td>
+    <td><?php echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('channel')) ?></td>
     <td><?php echo get_sort_link('profile',  t('profile')) ?></td>
     <td><?php echo get_sort_link('transcoder',  t('transcoder')) ?></td>
     <td><?php echo get_sort_link('recgroup', t('recgroup')) ?></td>
@@ -111,7 +111,7 @@
             echo $schedule->recpriority
         ?></td>
     <td><?php
-            if (prefer_channum) {
+            if ($_SESSION["prefer_channum"]) {
                 if ($schedule->channel->channum)
                     echo $schedule->channel->channum.' - ';
             }

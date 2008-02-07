@@ -92,7 +92,7 @@
         // Figure out the title
             $channel = $Channels[$_POST['channel']];
             if (strcasecmp($_POST['title'], t('Use callsign')) == 0) {
-                if (prefer_channum)
+                if ($_SESSION["prefer_channum"])
                     $schedule->title = $channel->channum.' ('.$channel->callsign.')';
                 else
                     $schedule->title = $channel->callsign.' ('.$channel->channum.')';
@@ -195,7 +195,7 @@
                 echo ' SELECTED';
         // Print ther est of the content
             echo '>';
-            if (prefer_channum)
+            if ($_SESSION["prefer_channum"])
                 echo $channel->channum.'&nbsp;&nbsp;('.html_entities($channel->callsign).')';
             else
                 echo html_entities($channel->callsign).'&nbsp;&nbsp;('.$channel->channum.')';

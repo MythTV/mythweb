@@ -93,8 +93,8 @@
     function print_channel($channel, $start_time, $end_time) {
         ?>
         <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo date('Ymd', $start_time) ?>">
-        <?php echo prefer_channum ? $channel->channum : $chann->callsign ?>&nbsp;
-        <?php echo prefer_channum ? $channel->callsign : $channel->channum ?> </a>
+        <?php echo $_SESSION["prefer_channum"] ? $channel->channum : $chann->callsign ?>&nbsp;
+        <?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?> </a>
     	<a href="<?php echo root ?>tv/detail/<?php echo $channel->chanid ?>/<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
         <?php
     }

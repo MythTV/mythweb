@@ -70,8 +70,6 @@
     lähetysaika
 "Airtime"
     Lähetysaika
-"Album"
-"Album (filtered)"
 "Album Listing"
 "Album Tracks"
 "Albums"
@@ -85,7 +83,6 @@
     Kaikki ryhmät
 "All HDTV"
 "All Hosts"
-"All Music"
 "All recordings"
     Kaikki nauhoitukset
 "All Songs"
@@ -105,8 +102,6 @@
 "Are you sure you want to delete the following show?"
     Poistetaanko seuraavat ohjelmat?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Artist"
-"Artist (filtered)"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -115,7 +110,6 @@
 "Audio for Hearing Impaired"
 "Audio for Visually Impaired"
 "Auto Expire"
-"auto-expire"
 "Auto-expire recordings"
     Aut. vanheneminen
 "Auto-flag commercials"
@@ -195,8 +189,6 @@
 "Commercials Flagged"
 "commfree"
     Mainosvapaa
-"Configure Channels"
-"Configure Keybindings"
 "Conflict"
 "Conflicts"
     Ristiriidat
@@ -205,7 +197,6 @@
 "contrast"
     Kontrasti
 "Count"
-"cover"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -261,10 +252,8 @@
 "Direct Download"
 "Directed by"
     Ohjaus
-"director"
 "Display"
     Tulosta
-"Displaying"
 "Dolby Surround"
 "Don't Record"
     Älä Nauhoita
@@ -280,16 +269,13 @@
     Kaksoiskapp. Tarkistus
 "Duplicates"
     Kaksoiskappaleet
-"Duration"
 "Earlier"
 "Earlier Showing"
 "Edit"
     Muokkaa
 "Edit existing group"
-"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
-"Edit settings for"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -317,9 +303,7 @@
 "Extended Check"
 "File Size"
     tiedostokoko
-"file size"
 "Filter"
-"Filtered"
 "Filters"
 "Find Date & Time Options"
 "Find Day"
@@ -354,9 +338,7 @@
     %I:%M %p
 "Genre"
     Laji
-"Genre (filtered)"
 "Genres"
-"Global"
 "Go"
     Mene
 "Google"
@@ -372,11 +354,8 @@
     Esitäytetyt Haut
 "handy: overview"
     Sisältää valmiita edistyneen haun lauseita.
-"has bookmark"
 "has Bookmark"
-"has commflag"
 "Has Cutlist"
-"has cutlist"
 "HD"
 "HDTV"
     Tarkkapiirto
@@ -399,7 +378,6 @@
     Ilmankosteus
 "IMDB"
     Internet MDB
-"imdb rating"
 "IMDBTYPE"
 "Inactive"
     Ei aktiivinen
@@ -427,7 +405,6 @@
 "info:forget old"
 "info:never record"
 "Insert"
-"is editing"
 "Jump"
     Hyppäys
 "Jump Points"
@@ -506,10 +483,6 @@
 "MythMusic on the web."
     MythMusic Netissä.
 "MythTV"
-"MythTV channel info"
-"MythTV global defaults"
-"MythTV key bindings"
-"MythTV settings table"
 "MythTV Status"
     MythTV Tila
 "MythVideo Artwork Dir"
@@ -523,8 +496,6 @@
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Session"
-"MythWeb session settings"
-"MythWeb Session Settings"
 "MythWeb Skin"
 "MythWeb Template"
 "MythWeb Weather."
@@ -540,8 +511,6 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
-"Next"
-"No"
 "NO DATA"
     EI DATAA
 "No Frontends allow remote control."
@@ -552,7 +521,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
-"No Tracks Available"
 "No. of recordings to keep"
     N:o nauhoituksia pidettäväksi
 "Non-Music Specials"
@@ -609,10 +577,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
-"plot"
 "Possible conflicts"
 "Possible conflicts with this show"
     Saattaa olla ristiriidassa tämän ohjelman kanssa
@@ -620,14 +586,13 @@
 "Power Search"
     Tehokas Haku
 "Prefer Channum"
+"prefer_channum"
 "Preferences"
 "Preferred Input"
 "Presented by"
     Esittää
 "Pressure"
     Ilmanpaine
-"preview"
-"Previous"
 "Previous Recording"
 "Previous recordings"
     Aiemmat nauhoitukset
@@ -655,7 +620,6 @@
 "Random Type"
 "Rating"
     Arvostelu
-"rating"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -775,7 +739,6 @@
     Alustus
 "Retry"
 "Return to Statistics Page"
-"Reverse Order"
 "Right"
 "Rows to show between timeslot info"
 "Running"
@@ -830,20 +793,20 @@
 "settings"
     Asetukset
 "Settings Table"
-"Settings Table Editor"
 "settings/stream: protocol"
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
-"settings: overview"
 "Shift"
 "Show"
     Ohjelma
-"Show descriptions on new line"
 "Show group"
     Näytä ryhmä
 "Show pixmaps"
 "Show recordings"
     Näytä nauhoitukset
+"show_channel_icons"
+"show_popup_info"
+"show_video_covers"
 "Showing all programs from the $1 group."
     Näytetään kaikki ohjelmat ryhmästä $1.
 "Showing all programs."
@@ -852,7 +815,6 @@
 "Shows"
 "SI Units"
     SI-yksiköt
-"SI Units?"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -860,6 +822,7 @@
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
+"sortby_channum"
 "sourceid"
 "Space"
 "Special Searches"
@@ -887,7 +850,6 @@
 "Sub and Desc (Empty matches)"
     Kuvaus ja Nimike (Ei vastaavuuksia)
 "Submit Search"
-"subtitle"
 "Subtitle"
     Jakson Nimi
 "Subtitle and Description"
@@ -928,7 +890,6 @@
 "Tomorrow"
     Huomenna
 "Too Many"
-"Top"
 "Top $1"
 "Top Played Songs"
 "Top Rated Songs"
@@ -938,7 +899,6 @@
 "Total Time"
 "Total Time:  %s"
 "Track #%s from the album '%s'"
-"Track Name"
 "Transcode"
 "transcoder"
     jälkikäsittely
@@ -959,14 +919,12 @@
     Nauhoitustapa
 "Undelete"
 "Undelete: $1"
-"Unfiltered"
 "Unknown"
     Tuntematon
 "Unknown Program."
     Tuntematon Ohjelma.
 "Unknown Recording Schedule."
     Tuntematon Ajoitus.
-"Unreachable"
 "Up"
 "Upcoming Recordings"
     Tulevat Nauhoitukset
@@ -976,7 +934,6 @@
     Päivitä Nauhoitusasetukset
 "Use callsign"
 "Use date/time"
-"Use myth:// URI for Windows"
 "useonairguide"
     Käytä Ohjelmavirran Opasta
 "UV Extreme"
@@ -994,7 +951,6 @@
     Videot
 "Video Bitrate"
 "Video Playback"
-"Video URL"
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1069,7 +1025,6 @@
     Käsikirjoittaja
 "xmltvid"
 "Year"
-"year"
 "Yes"
     Kyllä
 "Yesterday"

@@ -230,8 +230,8 @@ Enter Channel:<br />
     function print_channel($channel, $start_time, $end_time) {
 ?>
 <a href="channel_detail.php?chanid=<?php echo $channel->chanid ?>&amp;time=<?php echo $start_time ?>">
-<?php echo prefer_channum ? $channel->channum : $channel->callsign ?>&nbsp;
-<?php echo prefer_channum ? $channel->callsign : $channel->channum ?></a><br />
+<?php echo $_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign ?>&nbsp;
+<?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?></a><br />
 <?php
     }
 

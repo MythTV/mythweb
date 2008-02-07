@@ -41,11 +41,11 @@
                 <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                         onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo $channel->channum.' '.$channel->callsign ?>')"
                         onmouseout="return wstatus('')">
-<?php       if (show_channel_icons === true && !empty($channel->icon)) { ?>
+<?php       if ($_SESSION["show_channel_icons"] === true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30"></a>
 <?php       } ?>
-                    <span class="preferred"><?php echo _or(prefer_channum ? $channel->channum : $channel->callsign, '&nbsp') ?></span><br />
-                    <?php echo (prefer_channum ? $channel->callsign : $channel->channum)."\n" ?>
+                    <span class="preferred"><?php echo _or($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign, '&nbsp') ?></span><br />
+                    <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum)."\n" ?>
                 </a>
             </div>
 <?php   } ?>

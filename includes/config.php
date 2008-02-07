@@ -92,22 +92,19 @@
 #######  Config below here has not yet been converted to session-configurable
 ###############################################################################
 
-/*
-    The following constants are used for the program listings page
-*/
+//  The following constants are used for the program listings page
 
-// Show mouseover information about programs?
-    define('show_popup_info', true);
+if (!isset($_SESSION['show_popup_info']))
+    $_SESSION['show_popup_info'] = 1;
 
-// show the channel icons?  true/false
-    define('show_channel_icons', true);
+if (!isset($_SESSION['show_channel_icons']))
+    $_SESSION['show_channel_icons'] = 1;
 
-// Sort channel list by channel nuber or by callsign?
-    define('sortby_channum', true);
+if (!isset($_SESSION['sortby_channum']))
+    $_SESSION['sortby_channum'] = 1;
 
-/*
-    The following constants are defined for the videos page
-*/
-    define('show_video_covers', true);
+// The following constants are defined for the videos page
 
+if (!isset($_SESSION['show_video_covers']))
+    $_SESSION['show_video_covers'] = 1;
 

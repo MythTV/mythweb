@@ -28,7 +28,7 @@
 <div id="list_head" class="clearfix">
     <form method="get" id="program_listing" action="<?php echo root ?>tv/channel">
     <div id="_current_time">
-<?php   if (show_channel_icons && !empty($this_channel->icon)) { ?>
+<?php   if ($_SESSION["show_channel_icons"] && !empty($this_channel->icon)) { ?>
         <img src="<?php echo $this_channel->icon ?>" height="30" width="30">
 <?php   } ?>
         Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?>

@@ -74,7 +74,7 @@
 "add string"
     dodaj povezavo
 "Add this Playlist as a Subplaylist"
-    Dodaj ta seznam kot podseznam 
+    Dodaj ta seznam kot podseznam
 "Additional Tables"
     Dodatne tabele
 "Admin Key"
@@ -91,8 +91,6 @@
     Datum predvajanja
 "Airtime"
     Čas predvajanja
-"Album"
-"Album (filtered)"
 "Album Listing"
     Seznam albumov
 "Album Tracks"
@@ -117,7 +115,6 @@
     Vsi HDTV
 "All Hosts"
     Vsi gostitelji
-"All Music"
 "All recordings"
     Vsa snemanja
 "All Songs"
@@ -143,9 +140,6 @@
     Ste prepričani, da želite izbrisati to oddajo?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Ste prepričani da želite IZBRISATI TA PREDVAJALNI SEZNAM?
-"Artist"
-    Izvajalec
-"Artist (filtered)"
 "Artist Listing"
     Seznam izvajalcev
 "Artists"
@@ -161,7 +155,6 @@
     Zvok za ljudi s prizadetim vidom
 "Auto Expire"
     Avto-Brisanje
-"auto-expire"
 "Auto-expire recordings"
     Snemanja avto-brisanja
 "Auto-flag commercials"
@@ -268,8 +261,6 @@
     Reklame označene
 "commfree"
     brez reklam
-"Configure Channels"
-"Configure Keybindings"
 "Conflict"
     Konflikt
 "Conflicts"
@@ -280,7 +271,6 @@
     kontrast
 "Count"
     Število
-"cover"
 "Create a New Playlist"
     Ustvari nov seznam predvajanja
 "Create a Random Mix"
@@ -351,10 +341,8 @@
     Neposredni download
 "Directed by"
     Režija
-"director"
 "Display"
     Prikaz
-"Displaying"
 "Dolby Surround"
 "Don't Record"
     Ne snemaj
@@ -374,7 +362,6 @@
     Metoda preverjanja duplikatov
 "Duplicates"
     Duplikati
-"Duration"
 "Earlier"
     Prejšnje
 "Earlier Showing"
@@ -383,10 +370,8 @@
     Uredi
 "Edit existing group"
     Uredi obstoječo skupino
-"Edit keybindings on"
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
-"Edit settings for"
 "Edit settings for: $1"
     Uredi nastavitve za: $1
 "Editing "
@@ -428,10 +413,8 @@
     Podrobni pregled
 "File Size"
     Velikost datoteke
-"file size"
 "Filter"
     Sito
-"Filtered"
 "Filters"
     Sita
 "Find Date & Time Options"
@@ -480,10 +463,8 @@
     %H:%M
 "Genre"
     Žanr
-"Genre (filtered)"
 "Genres"
     Žanri
-"Global"
 "Go"
     Pojdi
 "Google"
@@ -499,13 +480,10 @@
     Priročna pripravljena iskanja
 "handy: overview"
     Ta stran vsebuje v naprej pripravljena kompleksna iskanja po TV sporedu.
-"has bookmark"
 "has Bookmark"
     ima zaznamek
-"has commflag"
 "Has Cutlist"
     Ima Seznam Rezov
-"has cutlist"
 "HD"
 "HDTV"
 "Height"
@@ -530,7 +508,6 @@
 "Humidity"
     Vlažnost
 "IMDB"
-"imdb rating"
 "IMDBTYPE"
     IMDB tip
 "Inactive"
@@ -567,7 +544,6 @@
     Prikaži prejšnje posnetke te oddaje tako, da se ne bo več posnela.
 "Insert"
     Vstavi
-"is editing"
 "Jump"
     Skoči
 "Jump Points"
@@ -679,10 +655,6 @@
     MythMusic na spletu.
 "MythTV"
     MythTV
-"MythTV channel info"
-"MythTV global defaults"
-"MythTV key bindings"
-"MythTV settings table"
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
@@ -704,8 +676,6 @@
     MythWeb splošne privzete vrednosti
 "MythWeb Session"
     MythWeb seja
-"MythWeb session settings"
-"MythWeb Session Settings"
 "MythWeb Skin"
     MythWeb preobleka
 "MythWeb Template"
@@ -733,7 +703,7 @@
 "NO DATA"
     NI PODATKOV
 "No Frontends allow remote control."
-    Noben frontend ne dovoli oddaljenega nadzora 
+    Noben frontend ne dovoli oddaljenega nadzora
 "No matches found"
     Ni zadetkov
 "No matching programs found."
@@ -742,7 +712,6 @@
     Ni seznamov predvajanja
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
-"No Tracks Available"
 "No. of recordings to keep"
     Št. posnetkov za arhiv
 "Non-Music Specials"
@@ -853,6 +822,7 @@
     Napredno iskanje
 "Prefer Channum"
     Priljubljena številka kanala
+"prefer_channum"
 "Preferences"
     Preference
 "Preferred Input"
@@ -861,9 +831,6 @@
     Predstavlja
 "Pressure"
     Tlak
-"preview"
-"Previous"
-    Pritisk
 "Previous Recording"
     Že posneta
 "Previous recordings"
@@ -902,7 +869,6 @@
     Tip naključnega predvajanja
 "Rating"
     Ocena
-"rating"
 "Recently Added Albums"
     Pred kratkim dodani albumi
 "Recently completed jobs"
@@ -1032,7 +998,6 @@
     Ponovno poizkusi
 "Return to Statistics Page"
     Vrni se na na stran s statistikami
-"Reverse Order"
 "Right"
     Desno
 "Rows to show between timeslot info"
@@ -1103,7 +1068,6 @@
     nastavitve
 "Settings Table"
     Tabela nastavitev
-"Settings Table Editor"
 "settings/stream: protocol"
     Veliko predvajalnikov ne zmore predvajati datotek, ki se predvajanjo iz<br/>
     https strežnikov. Če poganjate MythWeb preko https, je priporočjlivo, da si ustvarite<br/>
@@ -1112,17 +1076,18 @@
 "settings: notice"
     Opozorilo:<br/><br/>
     Na večini nastavitvenih strani, se napake pogosto ne preverjajo. Če niste pazljivi, lahko kaj hitro zmešate stvari (predvsem glede baze). Tukaj <b>NI</b> mogoče razveljaviti vaših dejanj.
-"settings: overview"
 "Shift"
 "Show"
     Prikaži
-"Show descriptions on new line"
 "Show group"
     Prikaži skupino
 "Show pixmaps"
     Prikaži pixmaps
 "Show recordings"
     Prikaži snemanja
+"show_channel_icons"
+"show_popup_info"
+"show_video_covers"
 "Showing all programs from the $1 group."
     Prikaži vse programe iz $1 skupine.
 "Showing all programs."
@@ -1133,7 +1098,6 @@
     Oddaje
 "SI Units"
     SI enote
-"SI Units?"
 "Skip Ahead"
     Izpusti naprej
 "Skip Back"
@@ -1148,6 +1112,7 @@
     Ocenjene pesmi
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
     Oprostite, tega seznama predvajanja ne morete dodati, ker bo povzročil ciklanje."
+"sortby_channum"
 "sourceid"
     ID vira
 "Space"
@@ -1183,7 +1148,6 @@
     Podnaslov in opis (prazni zadetki)
 "Submit Search"
     Začni iskati
-"subtitle"
 "Subtitle"
     Podnaslov
 "Subtitle and Description"
@@ -1277,14 +1241,12 @@
     Obnovi
 "Undelete: $1"
     Obnovi: $1
-"Unfiltered"
 "Unknown"
     Neznano
 "Unknown Program."
     Neznan program.
 "Unknown Recording Schedule."
     Neznan plan snemanja.
-"Unreachable"
 "Up"
     Gor
 "Upcoming Recordings"
@@ -1297,8 +1259,6 @@
     Uporabi kratico
 "Use date/time"
     Uporabi datum/čas
-"Use myth:// URI for Windows"
-    Za Windows uporabi myth:// URL 
 "useonairguide"
     uporabi vodiča po zraku
 "UV Extreme"
@@ -1317,7 +1277,6 @@
     Video
 "Video Bitrate"
 "Video Playback"
-"Video URL"
 "Video: Error: IMDB"
     Žal mi je, ampak prišlo je do napake, pri pridobivanju IMDB podatkov. Če ste imdb številko vnesli ročno, jo prosim preverite.
 "Video: Error: IMDB: Not Found"
@@ -1430,8 +1389,6 @@
 "xmltvid"
 "Year"
     Leto
-"year"
-    leto
 "Yes"
     Da
 "Yesterday"

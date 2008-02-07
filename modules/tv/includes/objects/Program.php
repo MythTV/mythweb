@@ -646,7 +646,7 @@ class Program {
                        ."</dd>\n"
         // Channel
               ."\t<dt>".t('Channel').":</dt>\n"
-              ."\t<dd>".(prefer_channum ? $this->channel->channum : $this->channel->callsign)
+              ."\t<dd>".($_SESSION["prefer_channum"] ? $this->channel->channum : $this->channel->callsign)
                        .' - '.$this->channel->name
                        ."</dd>\n"
             // Title
@@ -684,7 +684,7 @@ class Program {
             switch ($this->rectype) {
                 case rectype_once:       $str .= t('rectype-long: once');       break;
                 case rectype_daily:      $str .= t('rectype-long: daily');      break;
-                case rectype_channel:    $str .= t('rectype-long: channel', prefer_channum ? $this->channel->channum : $this->channel->callsign);    break;
+                case rectype_channel:    $str .= t('rectype-long: channel', $_SESSION["prefer_channum"] ? $this->channel->channum : $this->channel->callsign);    break;
                 case rectype_always:     $str .= t('rectype-long: always');     break;
                 case rectype_weekly:     $str .= t('rectype-long: weekly');     break;
                 case rectype_findone:    $str .= t('rectype-long: findone');    break;

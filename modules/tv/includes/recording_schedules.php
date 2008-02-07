@@ -424,7 +424,7 @@ class Schedule {
                 case rectype_daily:      $str .= t('rectype-long: daily');      break;
                 case rectype_channel:
                     $channel =& load_one_channel($this->chanid);
-                    $str     .= t('rectype-long: channel', prefer_channum ? $channel->channum : $channel->callsign);
+                    $str     .= t('rectype-long: channel', $_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign);
                     break;
                 case rectype_always:     $str .= t('rectype-long: always');     break;
                 case rectype_weekly:     $str .= t('rectype-long: weekly');     break;

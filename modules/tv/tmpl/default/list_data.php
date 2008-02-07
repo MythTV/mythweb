@@ -88,11 +88,11 @@
                     echo t('Details for: $1',
                            html_entities($channel->name))
                 ?>">
-<?php       if (show_channel_icons === true && !empty($channel->icon)) { ?>
+<?php       if ($_SESSION["show_channel_icons"] === true && !empty($channel->icon)) { ?>
         <img src="<?php echo $channel->icon ?>" height="30" width="30">
 <?php       } ?>
-        <span class="-preferred"><?php echo (prefer_channum ? $channel->channum : $channel->callsign) ?></span><br />
-            <?php echo (prefer_channum ? $channel->callsign : $channel->channum), "\n" ?>
+        <span class="-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br />
+            <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), "\n" ?>
         </a>
         </td>
 <?php

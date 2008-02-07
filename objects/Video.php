@@ -88,7 +88,7 @@ class Video {
         $string  = '';
         $string .= 'intid|'.$this->intid            ."\n";
         $string .= 'img|<img width="'.$this->cover_scaled_width.'" height="'.$this->cover_scaled_height.'" alt="'.t('Missing Cover').'"';
-        if (show_video_covers && file_exists($this->cover_url))
+        if ($_SESSION["show_video_covers"] && file_exists($this->cover_url))
             $string .= ' src="'.root.'data/video_covers/'.basename($this->cover_file).'"';
         $string .= '>'."\n";
         $string .= 'title|<a href="'.$this->url.'">'.$this->title.'</a>'."\n".

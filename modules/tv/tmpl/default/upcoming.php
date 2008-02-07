@@ -243,7 +243,7 @@
         }
 
     // A program id counter for popup info
-        if (show_popup_info) {
+        if ($_SESSION["show_popup_info"]) {
             static $program_id_counter = 0;
             $program_id_counter++;
         }
@@ -269,7 +269,7 @@
     <td class="-title <?php echo $show->css_class ?>"><?php
     // Print the link to edit this scheduled recording
         echo '<a';
-        if (show_popup_info)
+        if ($_SESSION["show_popup_info"])
             echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup');
         else
             echo ' title="',html_entities(strftime($_SESSION['time_format'], $show->starttime)
