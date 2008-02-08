@@ -23,7 +23,7 @@
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
 
-<script type="application/x-javascript">
+<script type="text/javascript">
     function list_update(timestamp) {
         ajax_add_request();
         new Ajax.Updater($('list_content'),
