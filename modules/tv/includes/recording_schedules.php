@@ -64,19 +64,15 @@
 // Global lists of recording schedules and scheduled recordings
     global $Schedules;
     $Schedules = array();
-// Build the sql query, and execute it
-    $query = 'SELECT *, IF(type='.rectype_always.',-1,chanid) as chanid,'
-            .' UNIX_TIMESTAMP(startdate)+TIME_TO_SEC(starttime) AS starttime,'
-            .' UNIX_TIMESTAMP(enddate)+TIME_TO_SEC(endtime) AS endtime'
-            .' FROM record ';
-    $result = mysql_query($query)
-        or trigger_error('SQL Error: '.mysql_error(), FATAL);
-// Load in all of the recordings (if any?)
-    while ($row = mysql_fetch_assoc($result)) {
+
+    $result = $db->query('SELECT record.*,
+                                 IF(record.type='.rectype_always.',-1,record.chanid)            AS chanid,
+                                 UNIX_TIMESTAMP(record.startdate)+TIME_TO_SEC(record.starttime) AS starttime,
+                                 UNIX_TIMESTAMP(record.enddate)+TIME_TO_SEC(record.endtime)     AS endtime
+                            FROM record');
+
+    while ($row = $result->fetch_assoc())
         $Schedules[$row['recordid']] =& new Schedule($row);
-    }
-// Cleanup
-    mysql_free_result($result);
 
 // Initialize
     global $Scheduled_Recordings, $Num_Conflicts, $Num_Scheduled;
@@ -87,31 +83,28 @@
 // Load all of the scheduled recordings.  We will need them at some point, so we
 // might as well get it overwith here.
     foreach (get_backend_rows('QUERY_GETALLPENDING', 2) as $key => $program) {
-    // The offset entry
-        if ($key === 'offset') {
+        if ($key === 'offset')
             list($Num_Conflicts, $Num_Scheduled) = $program;
-        }
     // Normal entry:  $Scheduled_Recordings[callsign][starttime][]
-        else {
+        else
             $Scheduled_Recordings[$program[6]][$program[11]][] =& new Program($program);
-        }
     }
 
 // Transcoder names
     global $Transcoders;
     $Transcoders = array();
     $Transcoders[0] = 'Autodetect';
-    $result = mysql_query('SELECT r.id, r.name'
-                    .' FROM recordingprofiles AS r, profilegroups AS p'
-                    .' WHERE cardtype = "TRANSCODE"'
-                    .'   AND r.profilegroup = p.id')
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
-    while ($row = mysql_fetch_assoc($result)) {
-        if ($row['name'] != "RTjpeg/MPEG4" && $row['name'] != "MPEG2") {
-            $Transcoders[$row['id']] = $row['name'];
-        }
-    }
-    mysql_free_result($result);
+    $result = $db->query('SELECT recordingprofiles.id,
+                                 recordingprofiles.name
+                            FROM recordingprofiles
+                            JOIN profilegroups
+                              ON recordingprofiles.profilegroup  = profilegroups.id
+                           WHERE cardtype                        = "TRANSCODE"
+                             AND recordingprofiles.name         != "RTjpeg/MPEG4"
+                             AND recordingprofiles.name         != "MPEG2"
+                           ');
+    while ($row = $result->fetch_assoc())
+        $Transcoders[$row['id']] = $row['name'];
 
 /**
  * Recording Schedule class
@@ -566,7 +559,7 @@ class Schedule {
                 'SELECT DISTINCT recgroup FROM record '.
                 'WHERE recgroup != "LiveTV" AND recgroup != "Deleted" '.
                 'ORDER BY recgroup;');
-            
+
             while (list($group) = mysql_fetch_row($result)) {
                 $group or $group = t('Default');
                 $groups[$group]  = $group;
@@ -615,4 +608,3 @@ class Schedule {
         }
         echo '</select>';
     }
-

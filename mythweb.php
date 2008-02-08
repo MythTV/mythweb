@@ -27,16 +27,9 @@
     // Load the module handler
         require_once 'handler.php';
     }
-    elseif ($Path[0] == 'dcss') {
+    elseif ($Path[0] == 'dcss')
         include_once 'skins/default/'.$Path[1];
-    }
-    elseif (!empty($Path[0]) && preg_match('/\w/', $Path[0])) {
+    elseif (!empty($Path[0]) && preg_match('/\w/', $Path[0]))
         tailored_error('unknown_module');
-    }
-    else {
+    else
         require_once 'modules/welcome.php';
-    }
-
-// Exit gracefully
-    exit;
-
