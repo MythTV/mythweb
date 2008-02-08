@@ -306,8 +306,8 @@
     function register_menu(id) {
         menus.push(id);
     }
-
-    on_load.push(init_menus);
+    
+    Event.observe(window,'load',init_menus);
     function init_menus() {
         if(!menus.length)
             return 0;

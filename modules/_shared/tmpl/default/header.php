@@ -31,12 +31,11 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    <script type="text/javascript" src="<?php echo root ?>js/init.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/browser.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/mouseovers.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/visibility.js"></script>
-    <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/ajax.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/ajax_utils.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/AC_OETags.js"></script>

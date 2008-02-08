@@ -52,9 +52,9 @@
     }
 
 // Overwrite the href attribute of all <a> tags with a js_href attribute
-    on_load.push(add_js_attributes);
+    Event.observe(window, 'load', add_js_attributes);
     function add_js_attributes(w) {
-        if (!w)
+        if (!w.document)
             w = window;
     // Get all links in this form
         var links = w.document.getElementsByTagName('a');
