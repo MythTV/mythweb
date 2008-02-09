@@ -191,8 +191,8 @@
         get_element('help_text').innerHTML = text;
         wstatus(text);
     // Toggle the regions
-        toggle_vis('help_text_default');
-        toggle_vis('help_text');
+        $('help_text_default').toggle();
+        $('help_text').toggle();
     // Return true so wstatus works
         return true;
     }

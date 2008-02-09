@@ -34,8 +34,8 @@
         remove_class('module_' + visible_module, 'selected');
         add_class('module_'    + module,         'selected');
     // Show and hide the appropriate info boxes
-        toggle_vis('info_' + visible_module);
-        toggle_vis('info_' + module);
+        $('info_' + visible_module).toggle();
+        $('info_' + module).toggle();
     // Keep track of what's visible now
         visible_module = module;
     }

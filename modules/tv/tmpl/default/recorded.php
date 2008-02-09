@@ -135,8 +135,8 @@
         var id   = args.shift();
         var file = args.shift();
     // Hide the row from view
-        toggle_vis('inforow_' + id,   'display');
-        toggle_vis('statusrow_' + id, 'display');
+        $('inforow_' + id).toggle();
+        $('statusrow_' + id).toggle();
     // decrement the number of rows in a section
         var section   = rowsection[id];
         rowcount[section]--;
@@ -145,7 +145,7 @@
         var episode_count = titles[file.title]
     // If we just hid the only row in a section, then hide the section break above it as well
         if (rowcount[section] == 0) {
-            toggle_vis('breakrow_' + section, 'display');
+            $('breakrow_' + section).toggle();
         }
 // UGLY! but works well enough...
     <?php if (count($Groups) > 1) { ?>
@@ -156,7 +156,7 @@
             var group_count = groups[file.recgroup]
         // Change the groups dropdown menu on the fly
             if (group_count == 0) {
-                toggle_vis('Group ' + file.recgroup, 'display');
+                $('Group ' + file.recgroup).toggle();
             }
             else {
                 var group_text;
@@ -167,7 +167,7 @@
     <?php } ?>
     // Change the recordings dropdown menu on the fly
         if (episode_count == 0) {
-            toggle_vis('Title ' + file.title, 'display');
+            $('Title ' + file.title).toggle();
         }
         else {
             var count_text;
