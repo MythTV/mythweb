@@ -120,7 +120,7 @@
                 <dt><?php echo t('Additional Tables') ?>:&nbsp;</dt>
                 <dd><input type="text" name="additional_tables" value="<?php echo html_entities($schedule->subtitle) ?>" size="30"></dd>
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
-                <dd><textarea name="search_sql" autorows="10" cols="48"><?php echo html_entities($schedule->description) ?></textarea>
+                <dd><textarea name="search_sql" rows="10" cols="48"><?php echo html_entities($schedule->description) ?></textarea>
                     <?php /** @todo would be cool to have sample stuff just like the frontend does */ ?>
                     </dd>
             </dl>

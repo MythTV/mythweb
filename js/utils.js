@@ -17,17 +17,12 @@
 
 // Pass in value to change, otherwise it returns the value of the "e" element
     function value(e, new_value) {
-        if (typeof e == 'string')
-            var e = $(e);
-        if (!e) return '';
+        e = $(e);
+        if (!e)
+            return '';
     // A <select>
-        if (e.options) {
-            if (new_value != null) {
-            // This would scan the options and choose the one that matches
-            // new_value.  Not used anywhere yet, so no need to hook it up.
-            }
+        if (e.options)
             return value(e.options[e.selectedIndex]);
-        }
     // Just an html element?  (or in IE, an option element with no value="" specified)
         else if (e.value == null || e.tagName.toLowerCase() == 'option' && e.value == '') {
             if (new_value != null)
@@ -35,59 +30,21 @@
             return e.innerHTML;
         }
     // Form field
-        if (new_value != null) {
+        if (new_value != null)
             e.value = new_value;
-        }
         return e.value;
     }
 
 // Overwrite the href attribute of all <a> tags with a js_href attribute
     Event.observe(window, 'load', add_js_attributes);
-    function add_js_attributes(w) {
-        if (!w.document)
-            w = window;
+    function add_js_attributes() {
     // Get all links in this form
-        var links = w.document.getElementsByTagName('a');
+        var links = $$('a');
         for (var i=0; i<links.length; i++) {
         // js_href
             var js_href = links[i].getAttribute('js_href');
             if (js_href && js_href.length)
                 links[i].href = js_href;
-        // show the link title in the status bar
-            if (!links[i].onmouseover && !links[i].onmouseout) {
-                var title = links[i].getAttribute('title');
-                if (title && title.length) {
-                    links[i].onmouseover = function () {
-                                               window.status = this.getAttribute('title');
-                                               return true;
-                                           }
-                    links[i].onmouseout = function () {
-                                              window.status = '';
-                                              return true;
-                                          }
-                }
-            }
-        }
-    // Process textareas, too
-        var text = w.document.getElementsByTagName('textarea');
-        for (var i=0; i<text.length; i++) {
-            var auto = text[i].getAttribute('autorows');
-            if (auto && auto.length) {
-                if (parseInt(auto) < 1)
-                    auto = null;
-            // First, run textarea_autorows on the field as it stands now
-                textarea_autorows(text[i], auto);
-            // Then, populate the event code
-                text[i].onkeyup = function () {
-                                      textarea_autorows(this, this.getAttribute('autorows'));
-                                  }
-            }
-        }
-    // Handle any subframes
-        if (w && w.frames) {
-            for(var i=0; i<w.frames.length; i++){
-                add_js_attributes(w.frames[i]);
-            }
         }
     }
 
@@ -164,41 +121,8 @@
     // Toggle the regions
         $('help_text_default').toggle();
         $('help_text').toggle();
-    // Return true so wstatus works
-        return true;
     }
 
-// Resize a the specified <textarea>
-    function resize_textarea(id, rows, cols) {
-        var text = $(id);
-        text.rows = rows != null ? rows : value(id + '_rows');
-        text.cols = cols != null ? cols : value(id + '_cols');
-    }
-
-// Adjust the number of rows in textarea id to match the number of lines it has
-    function textarea_autorows(element, max) {
-        if (typeof element != 'object')
-            element = $(element);
-        var text = element.value;
-    // First, scan for newlines
-        var list = text.match(/\n/g);
-        var rows = parseInt((list && list.length) ? list.length + 1 : 0);
-    // Next, scan for extra-long lines that may have wrapped (not perfect, but close enough)
-        var re = new RegExp('(\\S [^\n]{'+(parseInt(element.cols)-2)+',})(?!\n)', 'g');
-        list   = text.match(re);
-        if (list && list.length) {
-            for (line in list) {
-                rows += parseInt(list[line].length / element.cols) + 1;
-            }
-        }
-    // Apply
-        if (rows < 1)
-            rows = 1;
-        if (max != null && max < rows)
-            rows = max;
-        if (element.rows != rows)
-            element.rows = rows;
-    }
 
 // Return a time in hours and minutes
     function nice_length(mylength, rx_hr, rx_hrs, rx_min, rx_mins) {
