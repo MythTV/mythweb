@@ -32,7 +32,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
     <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
-    <script type="text/javascript" src="<?php echo root ?>js/json2.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/prototip/prototip.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo root; ?>js/prototip/prototip.css" />
 

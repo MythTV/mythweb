@@ -129,7 +129,7 @@
                                                   starttime:  file.starttime,
                                                   forget_old: (forget_old ? 'yes' : 'no'),
                                                   id:         id,
-                                                  file:       JSON.stringify(file)
+                                                  file:       Object.toJSON(file)
                                                 }
                                 });
             }
@@ -141,7 +141,7 @@
 
     function http_success(result) {
         var id   = result.responseJSON['id'];
-        var file = JSON.parse(result.responseJSON['file']);
+        var file = result.responseJSON['file'].evalJSON();
     // Hide the row from view
         $('inforow_' + id).toggle();
         $('statusrow_' + id).toggle();
@@ -205,7 +205,7 @@
     }
 
     function http_failure(err, errstr) {
-        var file = JSON.parse(result.responseJSON['file']);
+        var file = result.responseJSON['file'].evalJSON();
         alert("Can't delete "+file.title+': '+file.subtitle+".\nHTTP Error:  " + errstr + ' (' + err + ')');
         ajax_remove_request();
     }
