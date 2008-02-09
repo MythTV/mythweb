@@ -18,8 +18,8 @@
 <table border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu" align="center">
     <td width="4%"><?php  echo t('delete')        ?></td>
-    <td width="4%"><?php  echo t('sourceid')      ?></td>
-    <td width="4%"><?php  echo t('xmltvid')       ?></td>
+    <td width="4%"><a href="<?php echo form_action ?>?sortby=sourceid"><?php  echo t('sourceid') ?></a></td>
+    <td width="4%"><a href="<?php echo form_action ?>?sortby=xmltvid"><?php  echo t('xmltvid') ?></a></td>
     <td width="5%"><a href="<?php echo form_action ?>?sortby=channum"><?php  echo t('channum') ?></a></td>
     <td width="5%"><a href="<?php echo form_action ?>?sortby=callsign"><?php echo t('callsign') ?></a></td>
     <td width="5%"><a href="<?php echo form_action ?>?sortby=name"><?php     echo t('name') ?></a></td>

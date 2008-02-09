@@ -82,8 +82,12 @@
             $sortby = $_SESSION['tv']['set']['chan_sort'];
             break;
         case 'channum':
+        case 'xmltvid':
         case 'freqid':
             $sortby = $_SESSION['tv']['set']['chan_sort'].' + 0, '.$_SESSION['tv']['set']['chan_sort'];
+            break;
+        case 'sourceid':
+            $sortby = $_SESSION['tv']['set']['chan_sort'].', channum';
             break;
         default:
             $sortby = 'channum + 0, channum';
