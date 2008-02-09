@@ -201,8 +201,13 @@
     else
         $Filter_Genre = -1;
 
-    if( isset($_REQUEST['browse']) ) {
-        $Filter_Browse = $_REQUEST['browse'];
+
+
+    if( isset($_REQUEST['browse']) )
+        $_SESSION['video']['browse'] = $_REQUEST['browse'];
+
+    if( isset($_SESSION['video']['browse']) ) { 
+        $Filter_Browse = $_SESSION['video']['browse'];
 	if( $Filter_Browse != -1)
             $where .= ' AND videometadata.browse='.$db->escape($Filter_Browse);
     }
