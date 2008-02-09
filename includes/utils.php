@@ -363,16 +363,9 @@
     }
 
 /**
- * Prints out a piece of data to a popup window.
+ * Prints out a piece of data to the firebug console.
 /**/
-    function debug($data, $file = false, $force = false) {
-        if(!dev_domain && !$force)
-            return;
-        static $first_run=true;
-        if($first_run) {
-            $first_run=false;
-            echo '<script type="text/javascript" src="/js/debug.js"></script>';
-        }
+    function debug($data, $file = false) {
     // Put our data into a string
         if (is_array($data) || is_object($data))
             $str = print_r($data, TRUE);
@@ -399,7 +392,7 @@
     // Show which line caused the debug message
         $str = $str."\n<hr>\n".'Line #'.$back_trace[0]['line'].' in file '.$back_trace[0]['file']."\n";
     // Print the message
-        echo '<script language="javascript">debug_window("'.str_replace($search, $replace, $str).'");</script>';
+        echo '<script language="javascript">console.log("'.str_replace($search, $replace, $str).'");</script>';
         echo '<noscript><pre>'.$str.'</pre></noscript>';
     // Print to a file?
         if ($file) {
@@ -414,4 +407,3 @@
         $epsilon = 1e-3;
         return abs($lhs - $rhs) <= $epsilon * abs($lhs);
     }
-
