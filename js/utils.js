@@ -113,12 +113,6 @@
         img.src=img_off[which].src;
     }
 
-// Window status changer
-    function wstatus(str) {
-        window.status = str ? str : '';
-        return true;
-    }
-
 // Submit a form
     function submit_form(newvar, val, form, confirm_str) {
     // Confirm?
@@ -142,26 +136,14 @@
 
 // Add a css class to a specified element
     function add_class(id, classname) {
-        var field = $(id);
-    // No field
-        if (!field)
-            return;
-    // Field already has this class, don't bother to add it again
-        if (field.className && (new RegExp('\\b'+classname+'\\b')).test(field.className))
-            return;
-    // Add the class
-        if (field.className)
-            field.className = field.className + ' ' + classname;
-        else
-            field.className = classname;
+        console.log('FIXME: add_class');
+        $(id).addClassName(classname);
     }
 
 // Remove a css class from a particular element
     function remove_class(id, classname) {
-        var field = $(id);
-        if (!field)
-            return;
-        field.className = field.className.replace(RegExp('\\b'+classname+'\\s*\\b|\\b\\s*'+classname+'\\b', 'g'), '') ;
+        console.log('FIXME: remove_class');
+        $(id).removeClassName(classname);
     }
 
 // Check/uncheck a checkbox
@@ -179,7 +161,6 @@
     function help_text(text) {
     // Set the text
         $('help_text').innerHTML = text;
-        wstatus(text);
     // Toggle the regions
         $('help_text_default').toggle();
         $('help_text').toggle();

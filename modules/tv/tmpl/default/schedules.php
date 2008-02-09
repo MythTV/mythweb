@@ -100,8 +100,6 @@
             echo '<a';
             if ($_SESSION["show_popup_info"])
                 echo show_popup("program_$program_id_counter", $schedule->details_list(), NULL, 'popup', $wstatus);
-            else
-                echo " onmouseover=\"wstatus('".str_replace('\'', '\\\'', $wstatus)."');return true\" onmouseout=\"wstatus('');return true\"";
             echo ' href="'.root.'tv/';
         // Link to different places for different kinds of schedules
             if ($schedule->search) {
@@ -150,4 +148,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

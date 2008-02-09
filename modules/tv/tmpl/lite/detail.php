@@ -38,9 +38,7 @@
         <div id="program_header">
 <?php   if ($channel) { ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
-                <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
-                        onmouseover="return wstatus('<?php echo t('Details for') ?>: <?php echo $channel->channum.' '.$channel->callsign ?>')"
-                        onmouseout="return wstatus('')">
+                <a href="<?php echo root; ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime; ?>">
 <?php       if ($_SESSION["show_channel_icons"] == true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30"></a>
 <?php       } ?>
@@ -490,4 +488,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-
