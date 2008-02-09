@@ -31,11 +31,13 @@
         if (visible_module == module)
             return;
     // Change the outline on the list item
-        remove_class('module_' + visible_module, 'selected');
-        add_class('module_'    + module,         'selected');
+        $('module_'+ visible_module).removeClassName('selected');
+        $('module_'+ module).addClassName('selected');
     // Show and hide the appropriate info boxes
-        $('info_' + visible_module).toggle();
-        $('info_' + module).toggle();
+        $('info_' + visible_module).hide();
+        $('info_' + visible_module).addClassName('hidden');
+        $('info_' + module).show();
+        $('info_' + module).removeClassName('hidden');
     // Keep track of what's visible now
         visible_module = module;
     }
@@ -87,4 +89,3 @@
 <?php
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-
