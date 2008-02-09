@@ -9,16 +9,6 @@
  *
 /**/
 
-// Wrapper for various "get element id" functions
-    function get_element(id) {
-        if (typeof id != 'string') return id;
-        if (document.getElementById)
-            return document.getElementById(id);
-        if (document.all)
-            return document.all[id];
-        return null;
-    }
-
 // For some reason, calling "value" from within onclick doesn't work
 // Seems to be a name conflict somewhere, but I can't find it.
     function set_field(id, val) {
@@ -28,7 +18,7 @@
 // Pass in value to change, otherwise it returns the value of the "e" element
     function value(e, new_value) {
         if (typeof e == 'string')
-            var e = get_element(e);
+            var e = $(e);
         if (!e) return '';
     // A <select>
         if (e.options) {
@@ -115,11 +105,11 @@
 
 // Functions to swap on/off states of images
     function on(which) {
-        var img = get_element(which);
+        var img = $(which);
         img.src=img_on[which].src;
     }
     function off(which) {
-        var img = get_element(which);
+        var img = $(which);
         img.src=img_off[which].src;
     }
 
@@ -135,7 +125,7 @@
         if (confirm_str && !confirm(confirm_str))
             return;
     // Find the form we want to submit
-        form = get_element(form ? form : 'form');
+        form = $(form ? form : 'form');
         if (!form)
             form = document.form ? document.form : document.forms[0];
     // Create a new variable?
@@ -152,7 +142,7 @@
 
 // Add a css class to a specified element
     function add_class(id, classname) {
-        var field = get_element(id);
+        var field = $(id);
     // No field
         if (!field)
             return;
@@ -168,7 +158,7 @@
 
 // Remove a css class from a particular element
     function remove_class(id, classname) {
-        var field = get_element(id);
+        var field = $(id);
         if (!field)
             return;
         field.className = field.className.replace(RegExp('\\b'+classname+'\\s*\\b|\\b\\s*'+classname+'\\b', 'g'), '') ;
@@ -176,7 +166,7 @@
 
 // Check/uncheck a checkbox
     function toggle_checkbox(id, check) {
-        var e = get_element(id);
+        var e = $(id);
         if (check)
             e.checked = true;
         else if (check != null)
@@ -188,7 +178,7 @@
 // Change the help text
     function help_text(text) {
     // Set the text
-        get_element('help_text').innerHTML = text;
+        $('help_text').innerHTML = text;
         wstatus(text);
     // Toggle the regions
         $('help_text_default').toggle();
@@ -199,7 +189,7 @@
 
 // Resize a the specified <textarea>
     function resize_textarea(id, rows, cols) {
-        var text = get_element(id);
+        var text = $(id);
         text.rows = rows != null ? rows : value(id + '_rows');
         text.cols = cols != null ? cols : value(id + '_cols');
     }
@@ -207,7 +197,7 @@
 // Adjust the number of rows in textarea id to match the number of lines it has
     function textarea_autorows(element, max) {
         if (typeof element != 'object')
-            element = get_element(element);
+            element = $(element);
         var text = element.value;
     // First, scan for newlines
         var list = text.match(/\n/g);

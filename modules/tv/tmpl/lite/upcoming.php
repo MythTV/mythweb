@@ -53,7 +53,7 @@
         if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
     <a onclick="toggle_checkbox('disp_deactivated');submit_form('','','change_display')"><?php echo t('Deactivated') ?></a>
     |
-    <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="get_element('change_display').submit()" <?php
+    <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="$('change_display').submit()" <?php
         if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
     <a onclick="toggle_checkbox('disp_conflicts');submit_form('','','change_display')"><?php echo t('Conflicts') ?></a>
 
@@ -251,4 +251,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

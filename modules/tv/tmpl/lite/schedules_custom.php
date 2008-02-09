@@ -30,27 +30,23 @@
 
 // Swaps visibility of the standard/power options lists
     function toggle_options() {
-        if (get_element('searchtype_power').checked) {
-            get_element('standard_options').style.visibility = 'hidden';
-            get_element('standard_options').style.display    = 'none';
-            get_element('power_options').style.visibility    = 'visible';
-            get_element('power_options').style.display       = 'block';
+        if ($('searchtype_power').checked) {
+            $('standard_options').hide();
+            $('power_options').show();
         }
         else {
-            get_element('power_options').style.visibility    = 'hidden';
-            get_element('power_options').style.display       = 'none';
-            get_element('standard_options').style.visibility = 'visible';
-            get_element('standard_options').style.display    = 'block';
+            $('power_options').hide();
+            $('standard_options').show();
         }
     // Get the search type
-        if (get_element('searchtype_title').checked)
-            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Title'))) ?>';
-        else if (get_element('searchtype_keyword').checked)
-            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Keyword'))) ?>';
-        else if (get_element('searchtype_people').checked)
-            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('People'))) ?>';
-        else if (get_element('searchtype_power').checked)
-            get_element('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Power'))) ?>';
+        if ($('searchtype_title').checked)
+            $('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Title'))) ?>';
+        else if ($('searchtype_keyword').checked)
+            $('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Keyword'))) ?>';
+        else if ($('searchtype_people').checked)
+            $('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('People'))) ?>';
+        else if ($('searchtype_power').checked)
+            $('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Power'))) ?>';
     }
 
 // -->
@@ -246,4 +242,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

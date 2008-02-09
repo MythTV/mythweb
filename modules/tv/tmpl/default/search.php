@@ -42,7 +42,7 @@
     }
 
     function set_search(type) {
-        get_element('type_' + type).checked = true;
+        $('type_' + type).checked = true;
     }
 
 // -->
@@ -205,4 +205,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-
