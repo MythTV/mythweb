@@ -573,7 +573,7 @@ class Program {
         // Make the request and store the result
             $pngfile = fopen($pngpath, 'wb');
             fwrite($pngfile,
-                   file_get_contents("http://$host:$port/Myth/GetPreviewImage"
+                   @file_get_contents("http://$host:$port/Myth/GetPreviewImage"
                                     ."?ChanId=$this->chanid"
                                     .'&StartTime='.unix2mythtime($this->recstartts)
                                     ."&Height=$height"
