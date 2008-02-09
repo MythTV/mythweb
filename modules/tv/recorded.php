@@ -20,13 +20,10 @@
     require_once 'includes/sorting.php';
 
 // Delete or undelete a program?
-    isset($_GET['forget_old']) or $_GET['forget_old'] = $_POST['forget_old'];
-    isset($_GET['delete'])     or $_GET['delete']     = $_POST['delete'];
-    isset($_GET['file'])       or $_GET['file']       = $_POST['file'];
-    if ($_GET['delete'] || $_GET['undelete']) {
-        if ($_GET['delete'])
+    if ($_REQUEST['delete'] || $_REQUEST['undelete']) {
+        if ($_REQUEST['delete'])
           $backendstr = 'DELETE_RECORDING';
-        else 
+        else
           $backendstr = 'UNDELETE_RECORDING';
     // Keep a previous-row counter to return to after deleting
         $prev_row = -2;
@@ -36,19 +33,22 @@
             if (($_SESSION['recorded_title'] == $row[0]) || ($_SESSION['recorded_title'] == ''))
                 $prev_row++;
         // This row isn't the one we're looking for
-            if ($row[4] != $_GET['chanid'] || $row[26] != $_GET['starttime'])
+            if ($row[4] != $_REQUEST['chanid'] || $row[26] != $_REQUEST['starttime'])
                 continue;
         // Delete the recording
             backend_command(array($backendstr, implode(backend_sep, $row), '0'));
         // Forget all knowledge of old recordings?
-            if (isset($_GET['forget_old'])) {
+            if (isset($_REQUEST['forget_old'])) {
                 backend_command(array('FORGET_RECORDING', implode(backend_sep, $row), '0'));
             // Delay a second so the scheduler can catch up
                 sleep(1);
             }
         // Exit early if we're in AJAX mode.
-            if (isset($_GET['ajax'])) {
-                echo 'success';
+            if (isset($_REQUEST['ajax'])) {
+                header('Content-Type: application/json');
+                $JSON = new Services_JSON();
+                echo $JSON->encode(array('id'   => $_REQUEST['id'],
+                                         'file' => $_REQUEST['file']));
                 exit;
             }
         // No need to scan the rest of the items, so leave early
@@ -70,10 +70,8 @@
     }
 
 // Queries for a specific program title
-    isset($_GET['title'])    or $_GET['title']    = $_POST['title'];
-    isset($_GET['recgroup']) or $_GET['recgroup'] = $_POST['recgroup'];
-    isset($_GET['title'])    or $_GET['title']    = isset($_GET['refresh']) ? '' : $_SESSION['recorded_title'];
-    isset($_GET['recgroup']) or $_GET['recgroup'] = isset($_GET['refresh']) ? '' : $_SESSION['recorded_recgroup'];
+    isset($_REQUEST['title'])    or $_REQUEST['title']    = isset($_REQUEST['refresh']) ? '' : $_SESSION['recorded_title'];
+    isset($_REQUEST['recgroup']) or $_REQUEST['recgroup'] = isset($_REQUEST['refresh']) ? '' : $_SESSION['recorded_recgroup'];
 
 // Parse the program list
     $warning    = NULL;
@@ -110,18 +108,18 @@
             $Total_Programs++;
             $Groups[$record[30]]++;
         // Hide LiveTV  and Deleted recordings from the title list
-            if (($_GET['recgroup'] && $_GET['recgroup'] == $record[30]) || (!$_GET['recgroup'] && $record[30] != 'LiveTV' && $record[30] != 'Deleted'))
+            if (($_REQUEST['recgroup'] && $_REQUEST['recgroup'] == $record[30]) || (!$_REQUEST['recgroup'] && $record[30] != 'LiveTV' && $record[30] != 'Deleted'))
                 $Program_Titles[$record[0]]++;
         // Skip files with no chanid
             if (!$record[4])
                 continue;
         // Skip programs the user doesn't want to look at
-            if ($_GET['title'] && $_GET['title'] != $record[0])
+            if ($_REQUEST['title'] && $_REQUEST['title'] != $record[0])
                 continue;
-            if ($_GET['recgroup'] && $_GET['recgroup'] != $record[30])
+            if ($_REQUEST['recgroup'] && $_REQUEST['recgroup'] != $record[30])
                 continue;
         // Hide LiveTV recordings from the default view
-            if (empty($_GET['recgroup']) && ($record[30] == 'LiveTV' || $record[30] == 'Deleted'))
+            if (empty($_REQUEST['recgroup']) && ($record[30] == 'LiveTV' || $record[30] == 'Deleted'))
                 continue;
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$record[0]]))
@@ -130,25 +128,25 @@
             $Programs[$record[0]][] = $record;
         }
     // Did we try to view a program that we don't have recorded?  Revert to showing all programs
-        if ($Total_Programs > 0 && !count($Programs) && !isset($_GET['refresh'])) {
+        if ($Total_Programs > 0 && !count($Programs) && !isset($_REQUEST['refresh'])) {
         // Requested the "All" mode, but there are no recordings
-            if (empty($_GET['title']) && empty($_GET['recgroup'])) {
+            if (empty($_REQUEST['title']) && empty($_REQUEST['recgroup'])) {
                 if ($Groups['LiveTV'] > 0) {
                     $warning = t('Showing all programs from the $1 group.', 'LiveTV');
-                    $_GET['recgroup'] = 'LiveTV';
+                    $_REQUEST['recgroup'] = 'LiveTV';
                     continue;
                 }
             }
         // Requested a title that's not in the requested group
-            if ($_GET['recgroup'] && $_GET['title'] && $Groups[$_GET['recgroup']] > 0) {
-                $warning = t('Showing all programs from the $1 group.', $_GET['recgroup']);
-                unset($_GET['title']);
+            if ($_REQUEST['recgroup'] && $_REQUEST['title'] && $Groups[$_REQUEST['recgroup']] > 0) {
+                $warning = t('Showing all programs from the $1 group.', $_REQUEST['recgroup']);
+                unset($_REQUEST['title']);
                 continue;
             }
         // Catch anything else
-            $_GET['refresh'] = true;
+            $_REQUEST['refresh'] = true;
             $warning         = t('Showing all programs.');
-            unset($_GET['title'], $_GET['recgroup']);
+            unset($_REQUEST['title'], $_REQUEST['recgroup']);
             continue;
         }
     // Did the best we could to find some programs; let's move on.
@@ -178,8 +176,8 @@
     ksort($Groups);
 
 // Keep track of the program/title the user wants to view
-    $_SESSION['recorded_title']    = $_GET['title'];
-    $_SESSION['recorded_recgroup'] = $_GET['recgroup'];
+    $_SESSION['recorded_title']    = $_REQUEST['title'];
+    $_SESSION['recorded_recgroup'] = $_REQUEST['recgroup'];
 
 // The default sorting choice isn't so good for recorded programs, so we'll set our own default
     if (!is_array($_SESSION['recorded_sortby']) || !count($_SESSION['recorded_sortby']))
@@ -222,4 +220,3 @@
 
 // Exit
     exit;
-

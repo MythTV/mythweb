@@ -112,28 +112,36 @@
     function confirm_delete(id, forget_old) {
         var file = files[id];
         if (confirm("<?php echo t('Are you sure you want to delete the following show?')
-                    ?>\n\n     "+file.title + ((file.subtitle == '') ? "" : ": " +file.subtitle))) { 
-            var url = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid
-                      +'&starttime='+file.starttime
-                      +(forget_old
-                        ? '&forget_old=yes'
-                        : '');
+                    ?>\n\n     "+file.title + ((file.subtitle == '') ? "" : ": " +file.subtitle))) {
         // Do the actual deletion
             if (programs_shown == 1)
                 location.href = url;
             else {
                 ajax_add_request();
-                submit_url(url+'&ajax=yes', http_success, http_failure, id, file);
+                new Ajax.Request('<?php echo root; ?>tv/recorded',
+                                 {
+                                    method: 'post',
+                                    onSuccess: http_success,
+                                    onFailue: http_failure,
+                                    parameters: { ajax:       'yes',
+                                                  delete:     'yes',
+                                                  chanid:     file.chanid,
+                                                  starttime:  file.starttime,
+                                                  forget_old: (forget_old ? 'yes' : 'no'),
+                                                  id:         id,
+                                                  file:       JSON.stringify(file)
+                                                }
+                                });
             }
-        // Debug statements - uncomment to verify that the right file is being deleted
-            //alert('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
-            //alert('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
+        // Debug statements - uncomment to verify that the right file is being deleted. Now with firebug goodness
+            //console.log('row number ' + id + ' belonged to section ' + section + ' which now has ' + rowcount[section] + ' elements');
+            //console.log('just deleted an episode of "' + title + '" which now has ' + episode_count + ' episodes left');
         }
     }
 
-    function http_success(result, args) {
-        var id   = args.shift();
-        var file = args.shift();
+    function http_success(result) {
+        var id   = result.responseJSON['id'];
+        var file = JSON.parse(result.responseJSON['file']);
     // Hide the row from view
         $('inforow_' + id).toggle();
         $('statusrow_' + id).toggle();
@@ -190,14 +198,14 @@
         diskused -= file.size;
         $('diskused').innerHTML = nice_filesize(diskused);
     // Adjust the freespace shown
-        $('diskfree').innerHTML = nice_filesize(<?php echo disk_size ?> - diskused);
+        $('diskfree').innerHTML = nice_filesize(<?php echo disk_size; ?> - diskused);
         // Eventually, we should perform the removal-from-the-list here instead
         // of in confirm_delete()
         ajax_remove_request();
     }
 
-    function http_failure(err, errstr, args) {
-        var file = args[0];
+    function http_failure(err, errstr) {
+        var file = JSON.parse(result.responseJSON['file']);
         alert("Can't delete "+file.title+': '+file.subtitle+".\nHTTP Error:  " + errstr + ' (' + err + ')');
         ajax_remove_request();
     }
@@ -425,5 +433,3 @@ EOM;
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-
-
