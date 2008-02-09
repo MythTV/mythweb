@@ -115,7 +115,7 @@
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
                 <dd><input type="text" name="search_phrase" value="<?php echo html_entities($schedule->description) ?>" size="30"></dd>
             </dl>
-            <dl id="power_options" class="-long<?php if ($schedule->search != searchtype_power) echo ' hidden' ?>">
+            <dl id="power_options" class="-long" <?php if ($schedule->search != searchtype_power) echo ' style="display: none;"'; ?>>
                 <dt><?php echo t('Additional Tables') ?>:&nbsp;</dt>
                 <dd><input type="text" name="additional_tables" value="<?php echo html_entities($schedule->subtitle) ?>" size="30"></dd>
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
