@@ -14,9 +14,9 @@
 /**/
 
 // Enable/Disable help messages
-    if ($_GET['show_help'] == 'yes' || $_POST['show_help'] == 'yes')
+    if ($_REQUEST['show_help'] == 'yes')
         $_SESSION['show help'] = true;
-    elseif ($_GET['show_help'] == 'no' || $_POST['show_help'] == 'no')
+    elseif ($_REQUEST['show_help'] == 'no')
         $_SESSION['show help'] = false;
 
 /*
@@ -26,17 +26,8 @@
 */
     function show_popup($id, $text, $popup_id = NULL, $css_class = 'popup', $wstatus = '') {
         global $Footnotes;
-        if (!$Footnotes[$popup_id ? $popup_id : $id])
-            $Footnotes[$popup_id ? $popup_id : $id] = '<div id="'.($popup_id ? $popup_id : $id)."_popup\" class=\"$css_class\">$text</div>";
-    // $popup_id allows us to recycle certain info fields - it's ignored if empty
-        $ret = " id=\"$id\" onmouseover=\"popup('$id', '$popup_id');";
-        # This won't work until we add wstatus stuff to the javascript code, since it rewrites onmouseout
-        #if ($wstatus) {
-        #    $ret .= "wstatus('".str_replace('\'', '\\\'', $wstatus)
-        #           ."');return true\" onmouseout=\"wstatus('foo');";
-        #}
-        $ret .= "return true\"";
-        return $ret;
+        $Footnotes[] = "\n".'<script type="text/javascript">new Tip($("'.$id.'"), "'.str_replace(array("\n", '"'),array('', "'"),$text).'", { className: "popup" });</script>';
+        return ' id="'.$id.'"';
     }
 
 /*
@@ -110,4 +101,3 @@
         }
         return $text.str_repeat('  ', $overload)."</ul>\n";
     }
-
