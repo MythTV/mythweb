@@ -62,12 +62,12 @@ header("Content-Type: text/html; charset=utf-8");
         }
         $Video->save();
         ?>
-        <SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT">
+        <script type="text/javascript">
         <!--Hide script from old browsers
             parent.update_video('<?php echo $_REQUEST['intid']; ?>');
-            parent.add_class('window', 'hidden');
+            parent.$('window').hide();
         //Stop hiding script from old browsers -->
-        </SCRIPT>
+        </script>
         <?php
     }
 

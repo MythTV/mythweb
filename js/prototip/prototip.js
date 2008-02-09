@@ -123,6 +123,10 @@ var Tips = {
       tip.hide();
   },
 
+  hideAll: function() {
+    this.tips.each(function(tip) { tip.hide(); }.bind(this));
+  },
+
   remove: function(element) {
     var tip = this.tips.find(function(t){ return t.element == $(element); });
     if (tip) {

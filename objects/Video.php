@@ -85,31 +85,23 @@ class Video {
 // This function returns metadata preped for 'ajax' requests to update
     function metadata() {
         global $Category_String;
-        $string  = '';
-        $string .= 'intid|'.$this->intid            ."\n";
-        $string .= 'img|<img width="'.$this->cover_scaled_width.'" height="'.$this->cover_scaled_height.'" alt="'.t('Missing Cover').'"';
-        if ($_SESSION["show_video_covers"] && file_exists($this->cover_url))
-            $string .= ' src="'.root.'data/video_covers/'.basename($this->cover_file).'"';
-        $string .= '>'."\n";
-        $string .= 'title|<a href="'.$this->url.'">'.$this->title.'</a>'."\n".
-                   'playtime|'.nice_length($this->length * 60)."\n";
-        if (strlen($Category_String[$this->category]))
-            $string .= 'category|'.$Category_String[$this->category]."\n";
-        else
-            $string .= 'category|Uncategorized'."\n";
-        if ($this->inetref != '00000000')
-            $string .= 'imdb|<a href="http://www.imdb.com/Title?'.$this->inetref.'">'.$this->inetref.'</a>'."\n";
-        else
-            $string .= 'imdb|'."\n";
-        $string .= 'plot|'.$this->plot              ."\n";
-        $string .= 'rating|'.$this->rating          ."\n";
-        $string .= 'director|'.$this->director      ."\n";
-        $string .= 'inetref|'.$this->inetref        ."\n";
-        $string .= 'year|'.$this->year              ."\n";
-        $string .= 'userrating|'.$this->userrating  ."\n";
-        $string .= 'length|'.$this->length          ."\n";
-        $string .= 'showlevel|'.$this->showlevel    ."\n";
-        return $string;
+        return array( 'intid'       => $this->intid,
+                      'img'         => '<img width="'.$this->cover_scaled_width.'" height="'.$this->cover_scaled_height.'" alt="'.t('Missing Cover').'"'
+                                       .(($_SESSION["show_video_covers"] && file_exists($this->cover_url)) ? ' src="'.root.'data/video_covers/'.basename($this->cover_file).'"' : '')
+                                       .'>',
+                      'title'       => '<a href="'.$this->url.'">'.$this->title.'</a>',
+                      'playtime'    => nice_length($this->length * 60),
+                      'category'    => strlen($Category_String[$this->category]) ? $Category_String[$this->category] : 'Uncategorized',
+                      'imdb'        => ($this->inetref != '00000000') ? '<a href="http://www.imdb.com/Title?'.$this->inetref.'">'.$this->inetref.'</a>' : '',
+                      'plot'        => $this->plot,
+                      'rating'      => $this->rating,
+                      'director'    => $this->director,
+                      'inetref'     => $this->inetref,
+                      'year'        => $this->year,
+                      'userrating'  => $this->userrating,
+                      'length'      => $this->length,
+                      'showlevel'   => $this->showlevel
+                    );
     }
 
     function save() {

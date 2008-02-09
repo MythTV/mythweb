@@ -12,16 +12,16 @@
  *
 /**/
 
-// We need the id always set, so enforce that here
-    if (!isset($_REQUEST['id'])) {
-        echo 'Error~:~ '.t('Video: Error: Missing ID')."\n";
-        return;
-    }
+    header('Content-Type: application/json');
+    $JSON = new Services_JSON();
+    $return = array();
 
-    if (is_null(setting('web_video_imdb_path', hostname))) {
-        echo 'Error~:~ '.t('Video: Error: IMDB: Not Found')."\n";
-        return;
-    }
+// We need the id always set, so enforce that here
+    if (!isset($_REQUEST['id']))
+        $return['error'][] = t('Video: Error: Missing ID');
+
+    if (is_null(setting('web_video_imdb_path', hostname)))
+        $return['error'][] = t('Video: Error: IMDB: Not Found');
 
     switch($_REQUEST['action'])
     {
@@ -36,67 +36,74 @@
             break;
     }
 
+    echo $JSON->encode($return);
+
     function lookup($id, $title)
     {
-        $imdb = setting('web_video_imdb_path', hostname);
-        $imdbwebtype = setting('web_video_imdb_type', hostname);
+        global $return;
+        $return['id']     = $id;
+        $return['action'] = 'lookup';
+        $imdb             = setting('web_video_imdb_path', hostname);
+        $imdbwebtype      = setting('web_video_imdb_type', hostname);
     // Escape any extra " in the title string
-        $title = str_replace('"', '\"', $title);
+        $title            = str_replace('"', '\"', $title);
     // Setup the option list
-        $options = array('IMDB'     => array( ' -M tv=both "%%TITLE%%"',
-                                              ' -M tv=both\;type=fuzzy "%%TITLE%%"',
-                                              ' -M s=tt\;ttype=ep "%%TITLE%%"'
-                                              ),
-                         'ALLOCINE' => array( ' -M "%%TITLE%%"')
-                        );
+        $options          = array('IMDB'     => array( ' -M tv=both "%%TITLE%%"',
+                                                       ' -M tv=both\;type=fuzzy "%%TITLE%%"',
+                                                       ' -M s=tt\;ttype=ep "%%TITLE%%"'
+                                                     ),
+                                  'ALLOCINE' => array( ' -M "%%TITLE%%"')
+                                 );
+
         foreach ($options[$imdbwebtype] as $option) {
             $cmd = $imdb.str_replace('%%TITLE%%', $title, $option);
             exec($cmd, $output, $retval);
             if ($retval == 255)
-                echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
-            if (count($output)) {
-                echo 'Matches~:~ id: '.$id;
-                foreach ($output as $line)
-                    echo '|'.$line;
-                echo "\n";
-                return;
+                $return['warning'][] = "IMDB Command $cmd exited with return value $retval";
+            if (!count($output))
+                continue;
+            foreach ($output as $line) {
+                list($imdbid, $title) = explode(':', $line, 2);
+                $return['matches'][] = array('imdbid' => $imdbid,
+                                             'title'  => $title);
             }
         }
-        echo 'No Matches~:~ '.$id."\n";
     }
 
     function grab($id, $imdbnum)
     {
         global $db;
-        $imdb = setting('web_video_imdb_path', hostname);
-        $imdbwebtype = setting('web_video_imdb_type', hostname);
+        global $return;
+        $return['action'] = 'grab';
+        $imdb             = setting('web_video_imdb_path', hostname);
+        $imdbwebtype      = setting('web_video_imdb_type', hostname);
     // Setup the option list
-        $options = array('IMDB'     => array( 'artwork' => ' -P %%NUMBER%%'),
-                         'ALLOCINE' => array( 'artwork' => ' -P %%NUMBER%%')
-                        );
-        $artworkdir = setting('VideoArtworkDir', hostname);
-        $posterfile = $artworkdir.'/'.$imdbnum.'.jpg';
+        $options          = array('IMDB'     => array( 'artwork' => ' -P %%NUMBER%%'),
+                                  'ALLOCINE' => array( 'artwork' => ' -P %%NUMBER%%')
+                                 );
+        $artworkdir       = setting('VideoArtworkDir', hostname);
+        $posterfile       = $artworkdir.'/'.$imdbnum.'.jpg';
     // If the file already exists, use it, don't bother regrabbing
         if (!file_exists($posterfile)) {
     // save the poster
             $cmd = $imdb.str_replace('%%NUMBER%%', $imdbnum, $options[$imdbwebtype]['artwork']);
             exec($cmd, $output, $retval);
             if ($retval == 255)
-                echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
+                $return['warning'][] = "IMDB Command $cmd exited with return value $retval";
             $posterurl = trim($output[0]);
             if (!is_writable($artworkdir))
-                echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
+                $return['warning'][] = t('Video: Warning: Artwork');
             else {
                 if (!ini_get('allow_url_fopen'))
-                    echo 'Warning~:~ '.t('Video: Warning: fopen')."\n";
+                    $return['warning'][] = t('Video: Warning: fopen');
                 elseif(strlen($posterurl) > 0) {
                     $posterjpg = @file_get_contents($posterurl);
                     if ($posterjpg === FALSE)
-                        echo 'Warning~:~ '.t('Video: Warning: Artwork: Download')."\n";
+                        $return['warning'][] = t('Video: Warning: Artwork: Download');
                     else {
                         @file_put_contents( $posterfile, $posterjpg);
                     if (!file_exists($posterfile))
-                        echo 'Warning~:~ '.t('Video: Warning: Artwork')."\n";
+                        $return['warning'][] = t('Video: Warning: Artwork');
                     }
                 }
             }
@@ -106,7 +113,7 @@
         $cmd = "$imdb -D $imdbnum";
         exec($cmd, $lines, $retval);
         if ($retval == 255 | $DEBUG)
-            echo "Warning~:~ IMDB Command $cmd exited with return value $retval\n";
+            $return['warning'][] = "IMDB Command $cmd exited with return value $retval";
         $valid = FALSE;
         foreach ($lines as $line) {
             list ($key, $value) = explode(':', $line, 2);
@@ -115,7 +122,7 @@
                 $valid = TRUE;
         }
         if (!$valid) {
-            echo 'Error~:~ '.t('Video: Error: IMDB')."\n";
+            $return['error'][] = t('Video: Error: IMDB');
             return;
         }
         $sh = $db->query('UPDATE videometadata
@@ -140,11 +147,13 @@
                          ( @filesize($posterfile) > 0 ? $posterfile : 'No Cover' ),
                          $id
                          );
-        echo 'Update~:~ '.$id."\n";
+        $return['update'][] = $id;
     }
 
     function metadata($id)
     {
-        $video = new Video($id);
-        echo $video->metadata();
+        global $return;
+        $return['action']   = 'metadata';
+        $video              = new Video($id);
+        $return['metadata'] = $video->metadata();
     }

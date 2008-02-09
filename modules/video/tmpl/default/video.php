@@ -23,13 +23,13 @@
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
 
-<SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT">
-<!--Hide script from old browsers
+<script type="text/javascript">
 
     function newWindow(id) {
-        $('window_title').innerHTML = '<?php echo t('Editing '); ?> ' + $(id+'-title').childNodes[0].innerHTML;
-        $('window_content').innerHTML = '<iframe src="<?php echo root ?>video/edit?intid='+id+'">';
-        remove_class('window', 'hidden');
+        $('window_title').innerHTML   = '<?php echo t('Editing '); ?> ' + $(id+'-title').childNodes[0].innerHTML;
+        $('window_content').innerHTML = '<iframe src="<?php echo root; ?>video/edit?intid='+id+'">';
+        $('window').show();
+        Tips.hideAll();
     }
 
     function imdb_lookup(id, title) {
@@ -40,75 +40,53 @@
         ajax_add_request();
     // Clean up the title string
         title = title.replace('&', '%26');
-        var myAjax = new Ajax.Request('<?php echo root ?>video/imdb',
-    	                                 {
-    	                                 	method:     'get',
-    	                                 	parameters: 'action=lookup&id='+id+'&title='+title,
-    	                                 	onComplete: imdb_handler
-    	                                 });
+        new Ajax.Request('<?php echo root ?>video/imdb',
+    	                 {
+                            method:     'get',
+    	                    parameters: {
+                                            action: 'lookup',
+                                            id:     id,
+                                            title:  title
+                                        },
+    	                    onSuccess:  imdb_handler
+    	                 });
     }
 
     function imdb_handler(response) {
         ajax_remove_request();
-        var results = response.responseText.split('\n');
-        var result_index = 0;
-        while (result_index < results.length) {
-            var result = results[result_index];
-            var result_split = result.split('~:~');
-            var result_code =  result_split[0];
-            var result_string = result_split[1];
-        // There really should only be one error message at at time.
-        // We really need to impliment a much better php/js error handler
-            if (result_code == 'Error') {
-                alert(result_string);
-                return;
-            }
-            if (result_code == 'Warning') {
-                alert(result_string);
-            }
-            if (result_code == 'Update') {
-                update_video(result_string.replace(/^\s+/, ''));
-            }
-            if (result_code == 'Matches') {
-                $('window_title').innerHTML = '<?php echo t('Video: IMDB: Window Title'); ?>';
-                var content = $('window_content');
-                content.innerHTML = '';
-                var matches = result_string.split('|');
-                var matches_index = 1;
-                var line = matches[0].split(':');
-                var id = line[1].replace(/^\s+/, '');
-                while (matches_index < matches.length ) {
-                    var line = matches[matches_index].split(':');
-                    var num = line[0].replace(/^\s+/, '');
-                    var title = '';
-                    var title_index = 1;
-                    while (title_index < line.length) {
-                        if (title_index > 1)
-                            title += ':';
-                        title += line[title_index];
-                        title_index += 1;
-                    }
-                    if (title.length > 0) {
-                        content.innerHTML += '<br />';
-                        content.innerHTML += '<a href="'+makeImdbWebUrl(num)+'" style="float: right; margin-left: 1em;" target="_blank">(IMDB)</a>';
-                        content.innerHTML += '<a href="javascript:imdb_select(\''+id+'\',\''+num+'\')">'+title+'</a>';
-                    }
-                    matches_index += 1;
-                }
-                content.innerHTML += '<br /><a href="javascript: imdb_prompt(\''+id+'\');"><?php echo t('Custom Search'); ?><\/a>';
-                remove_class('window', 'hidden');
-            }
-            if (result_code == 'No Matches') {
-                var id = result_string.replace(/^\s+/, '');
-                $('window_title').innerHTML = '<?php echo t('Video: IMDB: Window Title'); ?>';
-                var content = $('window_content');
-                content.innerHTML = '<?php echo t('Video: IMDB: No Matches'); ?>';
-                content.innerHTML += '<br /><br /><br /><a href="javascript: imdb_prompt(\''+id+'\');"><?php echo t('Custom Search'); ?><\/a>';
-                remove_class('window', 'hidden');
-            }
-            result_index += 1;
-        }
+        var result  = response.responseJSON;
 
+        if (result['error'])
+            for (var key in result['error'])
+                console.error(result['error'][key]);
+        if (result['warning'])
+            for (var key in result['warning'])
+                console.warn(result['warning'][key]);
+
+        for (var key in result['update'])
+            update_video(result['update'][key]);
+
+        if (result['action'] == 'lookup') {
+            if (result['matches']) {
+                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?>';
+                $('window_content').innerHTML = '';
+                for (var key in result['matches'])
+                    if (result['matches'][key]['title'])
+                    $('window_content').innerHTML += '<br />'
+                                                  +  '<a href="'+makeImdbWebUrl(result['matches'][key]['imdbid'])+'" style="float: right; margin-left: 1em;" target="_blank">(IMDB)</a>'
+                                                  +  '<a href="javascript:imdb_select(\''+result['id']+'\',\''+result['matches'][key]['imdbid']+'\')">'+result['matches'][key]['title']+'</a>';
+
+                $('window_content').innerHTML += '<br /><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
+            }
+            else {
+                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?>';
+                $('window_content').innerHTML = '<?php echo t('Video: IMDB: No Matches');   ?>'
+                                              + '<br /><br /><br /><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
+
+            }
+            $('window').show();
+            Tips.hideAll();
+        }
     }
 
     function makeImdbWebUrl(num) {
@@ -120,23 +98,25 @@
 
     function imdb_select(id, number) {
         ajax_add_request();
-        add_class('window', 'hidden');
-        var myAjax = new Ajax.Request('<?php echo root; ?>video/imdb',
-    	                              {
-    	                              	method:     'get',
-    	                              	parameters: 'action=grab&id='+id+'&number='+number,
-    	                              	onComplete: imdb_handler
-    	                              });
+        $('window').hide();
+        new Ajax.Request('<?php echo root; ?>video/imdb',
+    	                 {
+    	                 	method:     'get',
+    	                 	parameters: {
+                                                action: 'grab',
+                                                id:     id,
+                                                number: number
+                                            },
+    	                 	onSuccess:  imdb_handler
+    	                 });
     }
 
     function imdb_prompt(id) {
-        var title = $(id+'-title').childNodes[0].innerHTML;
+        var title  = $(id+'-title').childNodes[0].innerHTML;
         var number = prompt('<?php echo t('Please enter an imdb number or a title to do another search'); ?>', title);
-        if (typeof(number) != 'string')
+        if (typeof(number) != 'string' || number.length == 0)
             return;
-        if (number.length == 0)
-            return;
-        add_class('window', 'hidden');
+        $('window').hide();
         if (number.match(/^(\d*)$/))
             imdb_select(id, number);
         else
@@ -144,49 +124,31 @@
     }
 
     function update_video(id) {
+        if (!id.match(/^(\d*)$/))
+            return;
         ajax_add_request();
-        var myAjax = new Ajax.Request('<?php echo root; ?>video/imdb',
-    	                                 {
-    	                                 	method:     'get',
-    	                                 	parameters: 'action=metadata&id='+id,
-    	                                 	onComplete: update_video_result
-    	                                 });
+        new Ajax.Request('<?php echo root; ?>video/imdb',
+    	                    {
+    	                    	method:     'get',
+    	                    	parameters: {
+                                                action: 'metadata',
+                                                id:     id
+                                            },
+    	                    	onSuccess:  update_video_result
+    	                    });
     }
 
     function update_video_result(result) {
-        var matches = result.responseText.split('\n');
-        var matches_index = 0;
-        var id = 0;
-    // Get the id of the video
-        while (matches_index < matches.length) {
-            var line = matches[matches_index].split('|');
-            var data = line[0];
-            var value = line[1];
-            if (data == 'intid') {
-                id = value;
-                break;
-            }
-            matches_index += 1;
+        var video    = result.responseJSON.metadata;
+    // Update the video
+        for (var key in video) {
+            if (key == 'title')
+                $(video['intid']+'-'+key).childNodes[0].innerHTML = video[key];
+            var element = $(video['intid']+'_'+key);
+                if (element != null & typeof(element) != 'undefined')
+                    element.innerHTML = video[key];
         }
-        matches_index = 0;
-    // Update the videos
-        while (matches_index < matches.length) {
-            if (matches[matches_index].length > 0) {
-                var line = matches[matches_index].split('|');
-                var data = line[0];
-                var value = line[1];
-                if (data.length > 0) {
-                    if (data == 'title')
-                        $(id+'-'+data).childNodes[0].innerHTML = value;
-                    var element = $(id+'_'+data);
-                    if (element != null & typeof(element) != 'undefined')
-                        element.innerHTML = value;
-                }
-            }
-            matches_index += 1;
-        }
-        document.body.removeChild($(id+'_popup'));
-        popup_divs[id] = false;
+        Tips.remove(video['intid']);
         ajax_remove_request();
     }
 
@@ -198,117 +160,88 @@
     function filter() {
         if (filter_timeout != null)
             window.clearTimeout(filter_timeout);
-        filter_timeout = window.setTimeout('filter_show()', 1000);
-    }
-
-    function filter_show() {
-        ajax_add_request();
-        window.setTimeout('filter_action()', 50);
+        filter_timeout = window.setTimeout('filter_action()', 1050);
     }
 
     function filter_action() {
-        var title = $('filter_box').value.toLowerCase();
+        ajax_add_request();
+        var title    = $('filter_box').value.toLowerCase();
         var category = $('category').value;
-        var genre = $('genre').value;
-        var browse = $('browse').value;
-        var container = $('videos');
-        var id;
-        for ( node in container.childNodes ) {
-            id = container.childNodes[node].id;
-        // We need to skip path, as it's a special box that doesn't get filtered.
-            if (typeof(id) == 'undefined' || id.length == 0 || id == 'undefined' || id == 'path')
+        var genre    = $('genre').value;
+        var browse   = $('browse').value;
+
+        for (key in $$('#videos div.video') ) {
+            var video = $$('#videos div.video')[key];
+            if (!video.id)
                 continue;
             var hide = false;
-            if (category != -1 & $(id+'_categoryid').innerHTML != category)
+            if (category    != -1 &  $(video.id+'_categoryid').innerHTML != category)
                 hide = true;
-            if (genre != -1 & !$(id+'_genre').innerHTML.match(' '+id+' '))
+            if (genre       != -1 & !$(video.id+'_genre').innerHTML.match(' '+video.id+' '))
                 hide = true;
-            if (browse != -1 & $(id+'_browse').innerHTML != browse)
+            if (browse      != -1 &  $(video.id+'_browse').innerHTML != browse)
                 hide = true;
-            if ( title.length > 0 & $(id+'-title').childNodes[0].innerHTML.toLowerCase().match(title) == null )
+            if (title.length  > 0 &  $(video.id+'-title').childNodes[0].innerHTML.toLowerCase().match(title) == null )
                 hide = true;
             if (hide)
-                add_class(id, 'hidden');
+                $(video.id).hide();
             else
-                remove_class(id, 'hidden');
+                $(video.id).show();
         }
         ajax_remove_request();
     }
 
-// We use a global var here to keep track of any pending requests so we don't keep repeat them.
-    var popup_divs = new Array;
+    var hovering_video_id = null;
+    var loading_popups    = new Array();
 
     function video_popup(id) {
-        var popup_div = $(id+'_popup');
-        if (popup_div == null & popup_divs[id] != true) {
-            popup_divs[id] = true;
-            var myAjax = new Ajax.Request('<?php echo root; ?>video/imdb',
-    	                                 {
-    	                                 	method:     'get',
-    	                                 	parameters: 'action=metadata&id='+id,
-    	                                 	onComplete: video_create_popup
-    	                                 });
-        }
-        else {
-            popup(id, '');
+        hovering_video_id = id;
+        if (!Tips.hasTip(id) && loading_popups[id] != true ) {
+            loading_popups[id] = true;
+            new Ajax.Request('<?php echo root; ?>video/imdb',
+    	                    {
+    	                    	method:     'get',
+    	                    	parameters: {
+                                                action: 'metadata',
+                                                id:     id
+                                            },
+    	                    	onSuccess:  video_create_popup
+    	                    });
         }
     }
 
     function video_create_popup(result) {
-        var lines       = result.responseText.split('\n');
-        var line        = lines[0].split('|');
-        var id          = line[1];
-        var index       = 1;
-        var popup_div   = document.createElement('div');
-        popup_div.id    = id+'_popup';
-        popup_div.className = 'popup';
-        popup_div.innerHTML = '<dl class="details_list">';
-        while (index < lines.length) {
-            line = lines[index].split('|');
-            if (   line[0] == 'img'
-                || line[0] == 'title'
-                || line[0] == 'playtime'
-                || line[0] == 'category'
-                || line[0] == 'imdb'
-                || line[0] == 'inetref'
-                || line[0] == 'userrating'
-                || line[0] == 'length'
-                || line[0] == 'showlevel'
-               )
-            {
-                ;
-            }
-            else {
-                if (typeof(line[0]) == 'string' && typeof(line[1]) == 'string' && line[1].length > 0 ) {
-                    popup_div.innerHTML += '<dt>'+line[0].substring(0,1).toUpperCase()+line[0].substring(1)+':<\/dt><dd>'+line[1]+'<\/dd>';
-                }
-            }
-            index += 1;
-        }
-        popup_div.innerHTML += '</dl>';
-        document.body.appendChild(popup_div);
-        popup(id, '');
+        var video    = result.responseJSON['metadata'];
+        var content  = '<dl class="details_list">'
+                     + '<dt>Plot:</dt>     <dd>'+video['plot']+'</dd>'
+                     + '<dt>Rating:</dt>   <dd>'+video['rating']+'</dd>'
+                     + '<dt>Director:</dt> <dd>'+video['director']+'</dd>'
+                     + '<dt>Year:</dt>     <dd>'+video['year']+'</dd>';
+                     + '</dl>';
+        new Tip(video['intid'], content, { className: 'popup' });
+        loading_popups[video['intid']] = false;
+        if (video['intid'] == hovering_video_id)
+            Tips.showTip(video['intid']);
     }
 
 // We currently do require a reload after a scan event
     function scan() {
         ajax_add_request();
-        var myAjax = new Ajax.Request('<?php echo root; ?>video/scan',
-    	                             {
-    	                             	method:     'get',
-    	                             	onComplete: reload
-    	                             });
+        new Ajax.Request('<?php echo root; ?>video/scan',
+    	                {
+    	                	method:    'get',
+    	                	onSuccess: reload
+    	                });
     }
 
     function reload() {
         location.reload(true);
     }
 
-//Stop hiding script from old browsers -->
-</SCRIPT>
+</script>
 
-<div id="window" class="hidden">
- <a style="position: absolute; right: 1px; top: 1px;" href="javascript:add_class('window','hidden')">[X]</a>
+<div id="window" style="display: none">
+ <a style="position: absolute; right: 1px; top: 1px;" href="" onclick="('window').hide()">[X]</a>
  <span id="window_video_title" class="hidden"></span>
  <span id="window_title"></span><br />
  <div id="window_content"></div>
@@ -369,7 +302,7 @@
 <?php
     foreach ($All_Videos as $video) {
 ?>
-    <div id="<?php echo $video->intid; ?>" class="video" onmouseover="video_popup(this.id)">
+    <div id="<?php echo $video->intid; ?>" class="video" onmouseover="video_popup(this.id)" onmouseout="hovering_video_id = null;">
         <div id="<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
         <div id="<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
