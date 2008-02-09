@@ -38,7 +38,6 @@
 
     <script type="text/javascript" src="<?php echo root ?>js/browser.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
-    <script type="text/javascript" src="<?php echo root ?>js/mouseovers.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/ajax_utils.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/AC_OETags.js"></script>
 
