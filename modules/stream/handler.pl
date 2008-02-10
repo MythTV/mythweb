@@ -92,9 +92,9 @@
     $sh->execute('WebFLV_ab');
     my ($abitrate) = $sh->fetchrow_array;
 
-    $width    = 320 if ($width    < 1);
-    $vbitrate = 256 if ($vbitrate < 1);
-    $abitrate = 64  if ($abitrate < 1);
+    $width    = 320 unless ($width    && $width    > 1);
+    $vbitrate = 256 unless ($vbitrate && $vbitrate > 1);
+    $abitrate = 64  unless ($abitrate && $abitrate > 1);
 
 # Someday, we can auto-detect height based on aspect ratio
     my $height = int($width * 3/4);
