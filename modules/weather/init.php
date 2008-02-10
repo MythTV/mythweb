@@ -13,21 +13,17 @@
  *
 /**/
 
-// Settings options
-    $Settings['weather'] = array('name'    => t('Weather'),
-                                 'choices' => array('prefs'  => t('Preferences'),
-                                                   ),
-                                 'default' => 'prefs',
-                                );
-
-// First, we should check to see that MythWeather is configured.
-    $has_weather = $_SESSION['locale']
-                    ? true
-                    : $db->query_col('SELECT COUNT(data)
-                                        FROM settings
-                                       WHERE value="locale"');
-
-
+// First, we check if the table exists...
+    if(tmpl == 'default' && $db->query_num_rows('SHOW TABLES LIKE "weatherscreens"')) {
+    // Settings options
+        $Settings['weather'] = array('name'    => t('Weather'),
+                                     'choices' => array('screen' => 'Screen Settings'),
+                                     'default' => 'screen',
+                                    );
+    // we should check to see that MythWeather is configured.
+        $has_weather = $db->query_col('SELECT COUNT(screen_id)
+                                         FROM weatherscreens');
+    }
 
 // If weather is enabled, add it to the list.
     if ($has_weather) {
