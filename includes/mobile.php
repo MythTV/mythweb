@@ -150,9 +150,9 @@ function getScreenSize() {
       }
     }
 
-    /* If the user agent was not in our list, check if the terminal accepts WML. */
+// If the user agent was not in our list, check if the terminal accepts WAP.
     if ($screen === false) {
-      if (browserAcceptsMediaType(array('WAP', 'WML'))) {
+      if (browserAcceptsMediaType(array('WAP'))) {
         $screen = array();
       }
     }

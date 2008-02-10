@@ -15,10 +15,9 @@
 
 // Detect different types of browsers and set the theme accordingly.
     if (isMobileUser()) {
-    // Browser is mobile but does it accept HTML? If not, use the WML theme.
-        $_SESSION['tmpl'] = browserAcceptsMediaType(array('text/html', '\*/\*'))
-                            ? 'wap'
-                            : 'wml';
+    // Browser is mobile but does it accept HTML?
+    // @TODO Need to fail more gracefully...
+        $_SESSION['tmpl'] = 'wap';
     // Make sure the skin is set to the appropriate phone-template type
         $_SESSION['skin'] = $_SESSION['tmpl'];
         define('skin', $_SESSION['skin']);
@@ -26,11 +25,6 @@
 // Reset the template?
     elseif ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
         $_SESSION['tmpl'] = 'default';
-// Deal with people who use the same login for mobile and non-mobile, and might
-// have a mobile template cached.
-    elseif (in_array($_SESSION['tmpl'], array('wap', 'wml'))) {
-        $_SESSION['tmpl'] = 'default';
-    }
 // If the requested template is missing the welcome file, use the default template
     elseif (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php')) {
         $_SESSION['tmpl'] = 'default';
@@ -38,7 +32,7 @@
 
 // Deal with people who use the same login for mobile and non-mobile, and might
 // have a mobile skin cached.
-    if (in_array($_SESSION['skin'], array('wap', 'wml'))) {
+    if (in_array($_SESSION['skin'], array('wap'))) {
         $_SESSION['skin'] = 'default';
     }
 // Is there a preferred skin?

@@ -55,11 +55,6 @@
             break;
         }
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-    // WML browser often require a fully qualified URL for redirects to work. Also, set content type
-        if ($_SESSION['Theme'] == 'wml') {
-            header('Content-type: text/vnd.wap.wml');
-            redirect_browser('http://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'].'?refresh');
-        }
     // Return to the row just prior to the one deleted
     //  (with some fuzz to account for normal screen height
     //   -- remember that rows are numbered starting at zero)

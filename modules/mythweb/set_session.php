@@ -56,7 +56,8 @@
         echo '<select name="skin">';
         foreach (get_sorted_files("skins/") as $skin) {
         // Skip the svn directory and the non-browser themes
-            if (in_array($skin, array('.svn', 'wap', 'wml', 'vxml'))) continue;
+            if (in_array($skin, array('.svn', 'wap', )))
+                continue;
         // Ignore non-directories
             if (!is_dir("skins/$skin")) continue;
         // Print the option
