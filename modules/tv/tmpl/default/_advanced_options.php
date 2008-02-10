@@ -4,16 +4,16 @@
 // Toggle showing of the advanced schedule options
     function toggle_advanced(show) {
         if (show) {
-            $('_schedule_advanced').style.display     = 'block';
-            $('_schedule_advanced_off').style.display = 'none';
-            $('_show_advanced').style.display = 'none';
-            $('_hide_advanced').style.display = 'inline';
+            $('schedule_advanced').style.display     = 'block';
+            $('schedule_advanced_off').style.display = 'none';
+            $('show_advanced').style.display         = 'none';
+            $('hide_advanced').style.display         = 'inline';
         }
         else {
-            $('_schedule_advanced').style.display     = 'none';
-            $('_schedule_advanced_off').style.display = 'block';
-            $('_show_advanced').style.display = 'inline';
-            $('_hide_advanced').style.display = 'none';
+            $('schedule_advanced').style.display     = 'none';
+            $('schedule_advanced_off').style.display = 'block';
+            $('show_advanced').style.display         = 'inline';
+            $('hide_advanced').style.display         = 'none';
         }
     // Toggle the session setting, too.
         new Ajax.Request('<?php echo root ?>tv/detail?=',
@@ -29,23 +29,23 @@
 
             <h3><?php echo t('Advanced Options') ?>:</h3>
             (<?php
-                echo '<a onclick="toggle_advanced(false)" id="_hide_advanced"';
+                echo '<a onclick="toggle_advanced(false)" id="hide_advanced"';
                 if (!$_SESSION['tv']['show_advanced_schedule'])
                     echo ' style="display: none"';
                 echo '>', t('Hide'), '</a>',
-                     '<a onclick="toggle_advanced(true)"  id="_show_advanced"';
+                     '<a onclick="toggle_advanced(true)"  id="show_advanced"';
                 if ($_SESSION['tv']['show_advanced_schedule'])
                     echo ' style="display: none"';
                 echo '>', t('Show'), '</a>';
             ?>)
 
-            <div id="_schedule_advanced_off"<?php
+            <div id="schedule_advanced_off"<?php
                 if ($_SESSION['tv']['show_advanced_schedule']) echo ' style="display: none"'
                 ?>>
                 <?php echo t('info: hidden advanced schedule') ?>
             </div>
 
-            <dl class="clearfix" id="_schedule_advanced"<?php
+            <dl class="clearfix" id="schedule_advanced"<?php
                 if (!$_SESSION['tv']['show_advanced_schedule']) echo ' style="display: none"'
                 ?>>
                 <dt><?php echo t('Recording Profile') ?>:</dt>
@@ -175,11 +175,11 @@
                 <dt><label for="maxnewest"><?php echo t('Record new and expire old') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="maxnewest" name="maxnewest"<?php if ($schedule->maxnewest) echo ' CHECKED' ?> value="1"></dd>
                 <dt><?php echo t('No. of recordings to keep') ?>:</dt>
-                <dd><input type="input" class="quantity" name="maxepisodes" value="<?php echo html_entities($schedule->maxepisodes) ?>"></dd>
+                <dd><input type="text" class="quantity" name="maxepisodes" value="<?php echo html_entities($schedule->maxepisodes) ?>"></dd>
                 <dt><?php echo t('Start Early') ?>:</dt>
-                <dd><input type="input" class="quantity" name="startoffset" value="<?php echo html_entities($schedule->startoffset) ?>">
+                <dd><input type="text" class="quantity" name="startoffset" value="<?php echo html_entities($schedule->startoffset) ?>">
                     <?php echo t('minutes') ?></dd>
                 <dt><?php echo t('End Late') ?>:</dt>
-                <dd><input type="input" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>">
+                <dd><input type="text" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>">
                     <?php echo t('minutes') ?></dd>
             </dl>

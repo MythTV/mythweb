@@ -40,14 +40,14 @@
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="-title"><?php      echo get_sort_link('title',                                  t('Title'))              ?></th>
-    <th class="-priority"><?php   echo get_sort_link('recpriority',                            t('Recording Priority')) ?></th>
-    <th class="-channel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('Channel'))            ?></th>
-    <th class="-profile"><?php    echo get_sort_link('profile',                                t('Profile'))            ?></th>
-    <th class="-transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))         ?></th>
-    <th class="-group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))    ?></th>
-    <th class="-type"><?php       echo get_sort_link('type',                                   t('Type'))               ?></td>
-    <th class="-sgroup"><?php     echo get_sort_link('storagegroup',                           t('Storage Group'))      ?></th>
+    <th class="-title"><?php      echo get_sort_link('title',                                  t('Title'))                  ?></th>
+    <th class="-priority"><?php   echo get_sort_link('recpriority',                            t('Recording Priority'))     ?></th>
+    <th class="-channel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('Channel'))   ?></th>
+    <th class="-profile"><?php    echo get_sort_link('profile',                                t('Profile'))                ?></th>
+    <th class="-transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))             ?></th>
+    <th class="-group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))        ?></th>
+    <th class="-type"><?php       echo get_sort_link('type',                                   t('Type'))                   ?></th>
+    <th class="-sgroup"><?php     echo get_sort_link('storagegroup',                           t('Storage Group'))          ?></th>
 </tr><?php
         $prev_group = '';
         $cur_group  = '';

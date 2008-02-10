@@ -58,9 +58,7 @@
     // Return to the row just prior to the one deleted
     //  (with some fuzz to account for normal screen height
     //   -- remember that rows are numbered starting at zero)
-        else {
-            redirect_browser(root.'tv/recorded?refresh'.($prev_row > 0 ? "#$prev_row" : ''));
-        }
+        redirect_browser(root.'tv/recorded?refresh'.($prev_row > 0 ? "#$prev_row" : ''));
     // redirect_browser calls exit() on its own
     }
 

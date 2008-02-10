@@ -37,7 +37,7 @@
     // Only one input?
         if (count($inputs) == 1) {
             list($id, $name) = reset($inputs);
-            echo '<input type="hidden" name="', $ename, '" value="0"/>',
+            echo '<input type="hidden" name="', $ename, '" value="0">',
                  t('Any');
         }
     // Print the whole <select>
@@ -53,5 +53,3 @@
             echo '</select>';
         }
     }
-
-

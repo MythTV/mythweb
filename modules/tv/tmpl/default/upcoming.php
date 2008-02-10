@@ -35,7 +35,7 @@
 ?>
 
 <form id="change_display" action="<?php echo root ?>tv/upcoming" method="post">
-<input type="hidden" name="change_display" value="1">
+<div><input type="hidden" name="change_display" value="1"></div>
 
 <table id="display_options" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
 <tr>
@@ -72,7 +72,7 @@
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="-status"><?php  echo t('Status') ?></td>
+    <th class="-status"><?php  echo t('Status') ?></th>
     <th class="-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
     <th class="-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
     <th class="-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>

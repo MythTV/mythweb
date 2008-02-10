@@ -98,7 +98,7 @@
 <?php    require_once tmpl_dir.'_advanced_options.php' ?>
         </div>
 
-        <div id="_schedule_submit">
+        <div id="schedule_submit">
             <input type="submit" class="submit" name="save" value="<?php echo $schedule->recordid ? t('Save Schedule') : t('Create Schedule') ?>">
         </div>
 
