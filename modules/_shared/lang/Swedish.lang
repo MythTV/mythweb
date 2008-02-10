@@ -67,6 +67,7 @@
     Handling
 "Activate"
     Aktivera
+"Active Screens"
 "Add"
     Lägg till
 "Add Album to Current Playlist"
@@ -79,6 +80,7 @@
     lägg till sträng
 "Add this Playlist as a Subplaylist"
     Lägg till denna spellista som en underspellista
+"Add To Active Screens"
 "Additional Tables"
     Ytterligare tabeller
 "Admin Key"
@@ -325,8 +327,6 @@
     Beskrivning
 "Destination"
     Destination
-"Details for"
-    Detaljer för
 "Details for: $1"
     Detaljer för: $1
 "Direct Download"
@@ -360,6 +360,7 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
+"Edit Screen"
 "Edit settings for: $1"
     Ändra insällningar för: $1
 "Editing "
@@ -475,8 +476,6 @@
     Värd
 "Hosted by"
     Värd
-"Hosts"
-    Värdar
 "Hour"
     Timme
 "Hour Format"
@@ -490,6 +489,7 @@
 "IMDBTYPE"
 "Inactive"
     Inaktiv
+"Inactive Screens"
 "info: activate recording"
     Tvinga denna visning att spela in.
 "info: default recording"
@@ -553,7 +553,9 @@
     Senast uppdaterad
 "Later"
     Senare
+"left"
 "Left"
+"leftl"
 "length"
     längd
 "Length"
@@ -783,8 +785,6 @@
 "Prefer Channum"
     Föredra kanalnummer
 "prefer_channum"
-"Preferences"
-    Inställningar
 "Preferred Input"
     Föredragen källa
 "Presented by"
@@ -951,6 +951,7 @@
 "Retry"
 "Return to Statistics Page"
     Återvänd till statistiksida
+"right"
 "Right"
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo

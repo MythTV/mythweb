@@ -57,6 +57,7 @@
     Acción
 "Activate"
     Activar
+"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
@@ -64,6 +65,7 @@
 "add string"
     añadir cadena
 "Add this Playlist as a Subplaylist"
+"Add To Active Screens"
 "Additional Tables"
     Tablas adicionales
 "Admin Key"
@@ -260,8 +262,6 @@
     Descripción
 "Destination"
     Destino
-"Details for"
-    Detalles
 "Details for: $1"
 "Direct Download"
 "Directed by"
@@ -290,6 +290,7 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Editar ajustes de MythWeb y algunos de MythTV
+"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -387,7 +388,6 @@
 "Home"
 "Host"
 "Hosted by"
-"Hosts"
 "Hour"
     Hora
 "Hour Format"
@@ -401,6 +401,7 @@
 "IMDBTYPE"
 "Inactive"
     Inactivo
+"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -454,7 +455,9 @@
 "Last Updated"
     Útima Actualización
 "Later"
+"left"
 "Left"
+"leftl"
 "length"
     duración
 "Length"
@@ -637,7 +640,6 @@
 "Prefer Channum"
     Nº Canal Preferido
 "prefer_channum"
-"Preferences"
 "Preferred Input"
 "Presented by"
     Presentado por
@@ -791,6 +793,7 @@
     Borrar
 "Retry"
 "Return to Statistics Page"
+"right"
 "Right"
 "Rows to show between timeslot info"
     Filas a mostrar entre info

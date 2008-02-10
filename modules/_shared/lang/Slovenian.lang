@@ -63,6 +63,7 @@
     Akcija
 "Activate"
     Aktiviraj
+"Active Screens"
 "Add"
     Dodaj
 "Add Album to Current Playlist"
@@ -75,6 +76,7 @@
     dodaj povezavo
 "Add this Playlist as a Subplaylist"
     Dodaj ta seznam kot podseznam
+"Add To Active Screens"
 "Additional Tables"
     Dodatne tabele
 "Admin Key"
@@ -333,8 +335,6 @@
     Opis
 "Destination"
     Cilj
-"Details for"
-    Podatki za
 "Details for: $1"
     Podatki za: $1
 "Direct Download"
@@ -372,6 +372,7 @@
     Uredi obstoječo skupino
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
+"Edit Screen"
 "Edit settings for: $1"
     Uredi nastavitve za: $1
 "Editing "
@@ -497,8 +498,6 @@
     Gostitelj
 "Hosted by"
     Gostitelj
-"Hosts"
-    Gostitelji
 "Hour"
     Ura
 "Hour Format"
@@ -512,6 +511,7 @@
     IMDB tip
 "Inactive"
     Neaktiven
+"Inactive Screens"
 "info: activate recording"
     Vsili snemanje te oddaje.
 "info: default recording"
@@ -578,8 +578,10 @@
     Zadnjič posodobljeno
 "Later"
     Kasneje
+"left"
 "Left"
     Levo
+"leftl"
 "length"
     trajanje
 "Length"
@@ -823,8 +825,6 @@
 "Prefer Channum"
     Priljubljena številka kanala
 "prefer_channum"
-"Preferences"
-    Preference
 "Preferred Input"
     Priljubljen vhod
 "Presented by"
@@ -998,6 +998,7 @@
     Ponovno poizkusi
 "Return to Statistics Page"
     Vrni se na na stran s statistikami
+"right"
 "Right"
     Desno
 "Rows to show between timeslot info"

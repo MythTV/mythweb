@@ -52,12 +52,14 @@
     Toiminto
 "Activate"
     Aktivoi
+"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
 "add string"
 "Add this Playlist as a Subplaylist"
+"Add To Active Screens"
 "Additional Tables"
     Täydentävät Taulukot
 "Admin Key"
@@ -246,8 +248,6 @@
     Kuvaus
 "Destination"
     Kohde
-"Details for"
-    Lisätiedot ohjelmalle
 "Details for: $1"
 "Direct Download"
 "Directed by"
@@ -276,6 +276,7 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
+"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -367,7 +368,6 @@
 "Host"
 "Hosted by"
     Isäntänä
-"Hosts"
 "Hour"
     Tunti
 "Hour Format"
@@ -381,6 +381,7 @@
 "IMDBTYPE"
 "Inactive"
     Ei aktiivinen
+"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -431,7 +432,9 @@
 "Last Updated"
     Päivitetty Viimeksi
 "Later"
+"left"
 "Left"
+"leftl"
 "length"
     pituus
 "Length"
@@ -587,7 +590,6 @@
     Tehokas Haku
 "Prefer Channum"
 "prefer_channum"
-"Preferences"
 "Preferred Input"
 "Presented by"
     Esittää
@@ -739,6 +741,7 @@
     Alustus
 "Retry"
 "Return to Statistics Page"
+"right"
 "Right"
 "Rows to show between timeslot info"
 "Running"

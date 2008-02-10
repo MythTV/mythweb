@@ -54,12 +54,14 @@
     Actie
 "Activate"
     Activeren
+"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
 "add string"
 "Add this Playlist as a Subplaylist"
+"Add To Active Screens"
 "Additional Tables"
     Aanvullende tabellen
 "Admin Key"
@@ -249,8 +251,6 @@
     Beschrijving
 "Destination"
     Bestemming
-"Details for"
-    Details
 "Details for: $1"
 "Direct Download"
 "Directed by"
@@ -279,6 +279,7 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
+"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -374,7 +375,6 @@
 "Home"
 "Host"
 "Hosted by"
-"Hosts"
 "Hour"
     Uur
 "Hour Format"
@@ -388,6 +388,7 @@
 "IMDBTYPE"
 "Inactive"
     Niet actief
+"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -439,7 +440,9 @@
 "Last Updated"
     Laatst Vernieuwd
 "Later"
+"left"
 "Left"
+"leftl"
 "length"
     duur
 "Length"
@@ -603,7 +606,6 @@
     Geavanceerd zoeken
 "Prefer Channum"
 "prefer_channum"
-"Preferences"
 "Preferred Input"
 "Presented by"
     Presentator
@@ -756,6 +758,7 @@
     Herstellen
 "Retry"
 "Return to Statistics Page"
+"right"
 "Right"
 "Rows to show between timeslot info"
 "Running"

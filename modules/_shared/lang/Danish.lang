@@ -56,6 +56,7 @@
 "Action"
 "Activate"
     Aktivér
+"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
@@ -63,6 +64,7 @@
 "add string"
     tilføj streng
 "Add this Playlist as a Subplaylist"
+"Add To Active Screens"
 "Additional Tables"
 "Admin Key"
 "Advanced"
@@ -255,8 +257,6 @@
 "Description"
     Beskrivelse
 "Destination"
-"Details for"
-    Detaljer for
 "Details for: $1"
 "Direct Download"
 "Directed by"
@@ -285,6 +285,7 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Rediger MythWeb- og nogle MythTV-indstillinger
+"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -377,7 +378,6 @@
 "Home"
 "Host"
 "Hosted by"
-"Hosts"
 "Hour"
     Time
 "Hour Format"
@@ -390,6 +390,7 @@
 "IMDBTYPE"
 "Inactive"
     Ikke aktiv
+"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -442,7 +443,9 @@
 "Last Updated"
     Sidst opdateret
 "Later"
+"left"
 "Left"
+"leftl"
 "length"
     længde
 "Length"
@@ -613,7 +616,6 @@
     Super søgning
 "Prefer Channum"
 "prefer_channum"
-"Preferences"
 "Preferred Input"
 "Presented by"
     Præsenteret af
@@ -765,6 +767,7 @@
     Nulstil
 "Retry"
 "Return to Statistics Page"
+"right"
 "Right"
 "Rows to show between timeslot info"
 "Running"

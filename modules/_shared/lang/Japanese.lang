@@ -50,6 +50,7 @@
     アクション
 "Activate"
     有効
+"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
@@ -57,6 +58,7 @@
 "add string"
     条件追加
 "Add this Playlist as a Subplaylist"
+"Add To Active Screens"
 "Additional Tables"
     追加テーブル
 "Admin Key"
@@ -249,8 +251,6 @@
     内容
 "Destination"
     対象
-"Details for"
-    詳細
 "Details for: $1"
 "Direct Download"
 "Directed by"
@@ -279,6 +279,7 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     MythWebとMythTVの設定
+"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -374,7 +375,6 @@
 "Host"
 "Hosted by"
     主催
-"Hosts"
 "Hour"
     時
 "Hour Format"
@@ -386,6 +386,7 @@
 "IMDBTYPE"
 "Inactive"
     無効
+"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -439,7 +440,9 @@
 "Last Updated"
     最後の更新
 "Later"
+"left"
 "Left"
+"leftl"
 "length"
     時間
 "Length"
@@ -615,7 +618,6 @@
 "Prefer Channum"
     チャンネル番号を優先
 "prefer_channum"
-"Preferences"
 "Preferred Input"
 "Presented by"
     提供
@@ -769,6 +771,7 @@
     リセット
 "Retry"
 "Return to Statistics Page"
+"right"
 "Right"
 "Rows to show between timeslot info"
 "Running"

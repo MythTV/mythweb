@@ -49,12 +49,14 @@
     Akcja
 "Activate"
     Uaktywnij
+"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
 "add string"
 "Add this Playlist as a Subplaylist"
+"Add To Active Screens"
 "Additional Tables"
 "Admin Key"
 "Advanced"
@@ -241,7 +243,6 @@
     Opis
 "Destination"
     Cel
-"Details for"
 "Details for: $1"
 "Direct Download"
 "Directed by"
@@ -265,6 +266,7 @@
     Edycja
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
+"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -344,7 +346,6 @@
 "Host"
 "Hosted by"
     Udostępniony przez
-"Hosts"
 "Hour"
     Godzina
 "Hour Format"
@@ -356,6 +357,7 @@
 "IMDBTYPE"
 "Inactive"
     Bezczynny
+"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -388,7 +390,9 @@
 "Last Updated"
     Ostatio Uaktualniany
 "Later"
+"left"
 "Left"
+"leftl"
 "length"
     długość
 "Length"
@@ -533,7 +537,6 @@
 "Power Search"
 "Prefer Channum"
 "prefer_channum"
-"Preferences"
 "Preferred Input"
 "Presented by"
 "Pressure"
@@ -678,6 +681,7 @@
 "Reset"
 "Retry"
 "Return to Statistics Page"
+"right"
 "Right"
 "Rows to show between timeslot info"
 "Running"

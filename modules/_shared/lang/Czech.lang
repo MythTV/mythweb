@@ -43,12 +43,14 @@
 "Action"
 "Activate"
     Zapnout
+"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
 "add string"
 "Add this Playlist as a Subplaylist"
+"Add To Active Screens"
 "Additional Tables"
 "Admin Key"
 "Advanced"
@@ -202,8 +204,6 @@
 "Description"
     Popis
 "Destination"
-"Details for"
-    Detaily o
 "Details for: $1"
 "Direct Download"
 "Directed by"
@@ -226,6 +226,7 @@
 "Edit"
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
+"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Enable Video Playback"
@@ -300,7 +301,6 @@
 "Home"
 "Host"
 "Hosted by"
-"Hosts"
 "Hour"
     Hodina
 "Hour Format"
@@ -312,6 +312,7 @@
 "IMDBTYPE"
 "Inactive"
     Neaktivní
+"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -357,7 +358,9 @@
 "Last recording"
 "Last Updated"
 "Later"
+"left"
 "Left"
+"leftl"
 "length"
     délka
 "Length"
@@ -497,7 +500,6 @@
 "Power Search"
 "Prefer Channum"
 "prefer_channum"
-"Preferences"
 "Preferred Input"
 "Presented by"
 "Pressure"
@@ -634,6 +636,7 @@
 "Reset"
 "Retry"
 "Return to Statistics Page"
+"right"
 "Right"
 "Rows to show between timeslot info"
 "Running"
