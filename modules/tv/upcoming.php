@@ -72,10 +72,10 @@
              || $_SESSION['scheduled_recordings']['disp_duplicates']
              || $_SESSION['scheduled_recordings']['disp_deactivated']
              || $_SESSION['scheduled_recordings']['disp_conflicts'])) {
-        $_SESSION['scheduled_recordings'] = array('disp_scheduled'   => true,
-                                                  'disp_duplicates'  => true,
-                                                  'disp_deactivated' => true,
-                                                  'disp_conflicts'   => true
+        $_SESSION['scheduled_recordings'] = array('disp_scheduled'   => TRUE,
+                                                  'disp_duplicates'  => FALSE,
+                                                  'disp_deactivated' => FALSE,
+                                                  'disp_conflicts'   => TRUE
                                                  );
     }
 
