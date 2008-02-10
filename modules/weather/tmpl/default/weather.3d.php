@@ -29,7 +29,7 @@
 
         <div class="daily_forecast">
             <h3><?php echo $screen->data["date-$i"] ?></h3>
-            <img src="<?php echo skin_url ?>img/weather/<?php echo $screen->data["icon-$i"] ?>" class="alpha_png" />
+            <img src="<?php echo skin_url ?>img/weather/<?php echo $screen->data["icon-$i"] ?>" class="alpha_png" alt="">
 
             <div class="temps">
                 <div class="low">
@@ -49,4 +49,3 @@
         </div>
         <?php } ?>
     </div>
-

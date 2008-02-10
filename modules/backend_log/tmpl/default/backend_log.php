@@ -17,7 +17,7 @@
     $page_title = 'MythTV - '.t('Backend Logs');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/backend_log.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/backend_log.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -47,4 +47,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

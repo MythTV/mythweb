@@ -214,7 +214,7 @@
 </script>
 
 <form id="change_title" action="<?php echo root ?>tv/recorded" method="get">
-<table id="title_choices" class="commandbox commands" border="0" cellspacing="0" cellpadding="4" align="center">
+<table id="title_choices" class="commandbox commands" border="0" cellspacing="0" cellpadding="4">
 <tr>
 <?php if (count($Groups) > 1) { ?>
     <td class="-group"><?php echo t('Show group') ?>:</td>
@@ -263,8 +263,8 @@
     if ($recgroup_cols)
         echo '    <th class="-recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
 ?>
-    <th class="-length"><?php        echo get_sort_link('length',    t('Length')) ?></td>
-    <th class="-filesize"><?php echo get_sort_link('file_size', t('File Size')) ?></td>
+    <th class="-length"><?php   echo get_sort_link('length',    t('Length'));    ?></th>
+    <th class="-filesize"><?php echo get_sort_link('file_size', t('File Size')); ?></th>
 </tr><?php
     $row     = 0;
     $section = -1;
@@ -314,11 +314,11 @@ EOM;
         }
 ?>
         <a class="-download"
-            href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream') ?>"
-            ><img src="<?php echo skin_url ?>/img/play_sm.png"></a>
+            href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream'); ?>"
+            ><img src="<?php echo skin_url ?>/img/play_sm.png" alt="<?php echo t('ASX Stream'); ?>"></a>
         <a class="-download"
-            href="<?php echo $show->url ?>" title="<?php echo t('Direct Download') ?>"
-            ><img src="<?php echo skin_url ?>/img/video_sm.png"></a>
+            href="<?php echo $show->url ?>" title="<?php echo t('Direct Download'); ?>"
+            ><img src="<?php echo skin_url ?>/img/video_sm.png" alt="<?php echo t('Direct Download'); ?>"></a>
         </td>
     <td class="-title"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
@@ -373,22 +373,22 @@ EOM;
                 echo 'autoexpire.png" title="', t('Click to disable Auto Expire'), '"';
             else
                 echo 'no_autoexpire.png" title="', t('Click to enable Auto Expire'), '"';
-            echo '></a>';
+            echo ' alt=""></a>';
         // The rest of the flags are just for display
             if ($show->closecaptioned)
-                echo '<img src="'.skin_url.'/img/flags/cc.png" title="'.t('Closed Captioning').'">';
+                echo '<img src="'.skin_url.'/img/flags/cc.png"          title="'.t('Closed Captioning').'"   alt="">';
             if ($show->stereo)
-                echo '<img src="'.skin_url.'/img/flags/stereo.png" title="'.t('Stereo').'">';
+                echo '<img src="'.skin_url.'/img/flags/stereo.png"      title="'.t('Stereo').'"              alt="">';
             if ($show->hdtv)
-                echo '<img src="'.skin_url.'/img/flags/hd.png" title="'.t('HD').'">';
+                echo '<img src="'.skin_url.'/img/flags/hd.png"          title="'.t('HD').'"                  alt="">';
             if ($show->has_commflag)
-                echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'">';
+                echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'" alt="">';
             if ($show->has_cutlist)
-                echo '<img src="'.skin_url.'/img/flags/cutlist.png" title="'.t('Has Cutlist').'">';
+                echo '<img src="'.skin_url.'/img/flags/cutlist.png"     title="'.t('Has Cutlist').'"         alt="">';
             if ($show->bookmark)
-                echo '<img src="'.skin_url.'/img/flags/bookmark.png" title="'.t('has Bookmark').'">';
+                echo '<img src="'.skin_url.'/img/flags/bookmark.png"    title="'.t('has Bookmark').'"        alt="">';
             if ($show->is_watched)
-                echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
+                echo '<img src="'.skin_url.'/img/flags/watched.png"     title="'.t('Watched').'"             alt="">';
         ?></td>
 </tr><?php
         $prev_group = $cur_group;
@@ -403,7 +403,7 @@ EOM;
 
 </table>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 <?php
     foreach ($row_count as $count) {
         echo 'rowcount.push(['.escape($count)."]);\n";
@@ -421,7 +421,7 @@ EOM;
 </script>
 
 <?php
-    echo '<p align="right" style="padding-right: 75px">'
+    echo '<p style="padding-right: 75px; text-align: right;">'
         .t('$1 programs, using $2 ($3) out of $4 ($5 free).',
            '<span id="programcount">'.t($Total_Programs).'</span>',
            '<span id="diskused">'.nice_filesize($Total_Used).'</span>',

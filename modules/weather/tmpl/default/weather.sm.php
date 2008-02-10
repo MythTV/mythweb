@@ -14,8 +14,8 @@
 /**/
 ?>
 
-<?php 
-    $image = array_pop(split('/', $screen->data['map'])); 
+<?php
+    $image = array_pop(split('/', $screen->data['map']));
     $matches = array();
     preg_match('/(.*)-\d*x\d*/', $image, $matches);
 ?>
@@ -27,8 +27,7 @@
 
         <div class="radar_image">
             <center>
-                <img name="static_map" src="<?php echo '/'. cache_dir .'/'. $matches[1] ?>" alt="Static Map" />
+                <img name="static_map" src="<?php echo '/'. cache_dir .'/'. $matches[1] ?>" alt="Static Map">
             </center>
         </div>
     </div>
-

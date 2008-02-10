@@ -18,17 +18,17 @@
 
         <div class="radar_image"><center>
         <script type='text/javascript'>
-        <!-- 
+        <!--
 
         images  = new Array();
         imageNum = 0;
         speed = 3;
         delay = 300;
-<?php 
+<?php
             $matches = array();
             $image = array_pop(split('/', $screen->data["animatedimage"]));
             preg_match("/(.*)-\%1-(\d*)-(\d*)x(\d*)/", $image, $matches);
-       
+
             echo "imageTotal = ". $matches[2] .";\n";
             for ($i=0; $i<$matches[2]; $i++)  {
                 echo "images[$i] = new Image();\n";
@@ -41,7 +41,7 @@
             if (imageNum >= imageTotal) {
                 imageNum = 0;
             }
-    
+
             imageCurrent = imageNum;
             document.animation.src = images[imageCurrent].src;
         }
@@ -68,7 +68,7 @@
 ?>
 
         output += ' <b>Faster</b><br>'
-        output += '<img name="animation" src="<?php echo "/". cache_dir ."/". $matches[1] ."-0" ?>" alt="Animation" onload="setTimeout(\'animate()\', delay)" />'
+        output += '<img name="animation" src="<?php echo "/". cache_dir ."/". $matches[1] ."-0" ?>" alt="Animation" onload="setTimeout(\'animate()\', delay)">'
         output += '</form>'
         document.write(output);
 
@@ -77,4 +77,3 @@
         </center>
         </div>
     </div>
-

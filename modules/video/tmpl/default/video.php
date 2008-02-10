@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Videos');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root.'dcss/video.css.php" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root.'dcss/video.css.php">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';

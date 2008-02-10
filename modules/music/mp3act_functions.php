@@ -226,7 +226,7 @@ function musicLookup($type, $itemid)
         <strong>'.t('By Artist Beginning With').'</strong><br/>'.letters().'<br/></p>
         <p><strong>'.t('By Genre').'</strong><br/>
         '.genreForm().'<br/><br/>
-        <input type="button" value="'.t('Browse All Albums').'" onclick="updateBox(\'all\',\'All\'); return false;" class="btn2" />
+        <input type="button" value="'.t('Browse All Albums').'" onclick="updateBox(\'all\',\'All\'); return false;" class="btn2">
         </p>';
       break;
 
@@ -236,7 +236,7 @@ function musicLookup($type, $itemid)
         <form onsubmit="return searchMusic(this)" method="get" action="">
         <p>
         <strong>'.t('Keywords').'</strong><br/>
-        <input type="text" onfocus="this.select()" name="searchbox" size="35" id="searchbox" value="['.t('Enter your search terms').']" />
+        <input type="text" onfocus="this.select()" name="searchbox" size="35" id="searchbox" value="['.t('Enter your search terms').']">
         <br/><br/>
         <strong>'.t('Narrow Your Search').'</strong>
         <br/>
@@ -246,7 +246,7 @@ function musicLookup($type, $itemid)
           <option value="albums">'.t('Albums').'</option>
           <option value="songs">'.t('Songs').'</option>
         </select><br/><br/>
-        <input type="submit" value="'.t('Submit Search').'" class="btn" /></form>
+        <input type="submit" value="'.t('Submit Search').'" class="btn"></form>
         </p>';
       break;
 
@@ -522,7 +522,7 @@ function musicLookup($type, $itemid)
         <strong>'.t('Random Items').'</strong>
         <span id="rand_items"></span>
         <br><br>
-        <input type="submit" value="'.t('Add Mix').'" class="btn" />
+        <input type="submit" value="'.t('Add Mix').'" class="btn">
         </form>';
       break;
 

@@ -11,21 +11,21 @@
 *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 *************************************************************************/
 
-require_once("modules/music/mp3act_functions.php");
-require_once("modules/music/mp3act_sajax.php");
+    require_once("modules/music/mp3act_functions.php");
+    require_once("modules/music/mp3act_sajax.php");
 
-GarbageCollector();
+    GarbageCollector();
 
-$sajax_remote_uri   = root.'music/';
-$sajax_request_type = 'POST';
-sajax_init();
-sajax_export("getplaylistnames","musicLookup","playlist_rem","playlist_add","playlistInfo","clearPlaylist","buildBreadcrumb","play","playlist_move","searchMusic","viewPlaylist","getDropDown","savePlaylist","getRandItems","randAdd","deletePlaylist");
-sajax_handle_client_request();
+    $sajax_remote_uri   = root.'music/';
+    $sajax_request_type = 'POST';
+    sajax_init();
+    sajax_export("getplaylistnames","musicLookup","playlist_rem","playlist_add","playlistInfo","clearPlaylist","buildBreadcrumb","play","playlist_move","searchMusic","viewPlaylist","getDropDown","savePlaylist","getRandItems","randAdd","deletePlaylist");
+    sajax_handle_client_request();
+    
+    $headers[] = '<link rel="Stylesheet" href="'.skin_url.'music.css" type="text/css">';
 
-require 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
+    require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
-<link rel="Stylesheet" href="<?php echo skin_url ?>music.css" type="text/css" />
 
     <script type="text/javascript">
             var page = 'search';

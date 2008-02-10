@@ -14,7 +14,7 @@
 /**/
 ?>
 
-<?php 
+<?php
 
 // Edit screen ------------------------------------------------------------
 if (isset($_SESSION['weather']['edit'])) {
@@ -26,7 +26,7 @@ if (isset($_SESSION['weather']['edit'])) {
 ?>
 
 <form class="form" method="post" action="<?php echo form_action ?>">
-<input type="hidden" name="host" value="<?php echo html_entities($_SESSION['settings']['host']) ?>" />
+<input type="hidden" name="host" value="<?php echo html_entities($_SESSION['settings']['host']) ?>">
 <input type="hidden" name="edit" value="<?php echo $screen->screen_id ?>" />
 
 <table border="0" cellspacing="0" cellpadding="0">
@@ -52,7 +52,7 @@ if (isset($_SESSION['weather']['edit'])) {
 <tr>
     <th>Search Results</th>
     <?php if (count($screen->search)) { ?>
-    <td><select name="weather_location" size="1"><?php 
+    <td><select name="weather_location" size="1"><?php
         foreach($screen->search as $key => $value) {
             foreach ($value as $location => $description) {
                 echo '<option value="(('. $key .'))'. $location .'">('. $screen->getSource($key) .") ". htmlentities($description) ."</option>\n";
@@ -92,8 +92,8 @@ if (isset($_SESSION['weather']['edit'])) {
 
 </form>
 
-<?php // Define screens ---------------------------------------------------------- 
-} else { 
+<?php // Define screens ----------------------------------------------------------
+} else {
 ?>
 
 <form class="form" method="post" action="<?php echo form_action ?>">
@@ -117,7 +117,7 @@ if (isset($_SESSION['weather']['edit'])) {
 </tr>
 <tr>
     <td><?php display_active_screens() ?></th>
-    <td> 
+    <td>
         <table border="0" cellspacing="0" cellpadding="0">
             <tr><td><input type="submit" class="submit" name="move_u" value="<?php echo t('Up') ?>"></td></tr>
             <tr><td><input type="submit" class="submit" name="move_d" value="<?php echo t('Down') ?>"></td></tr>
@@ -130,4 +130,3 @@ if (isset($_SESSION['weather']['edit'])) {
 
 </form>
 <?php }
-

@@ -24,7 +24,7 @@
         <h2><?php echo $screen->container ?></h2>
 
         <div class="overview">
-            <img src="<?php echo skin_url ?>img/weather/<?php echo $screen->data["weather_icon"] ?>" class="alpha_png" />
+            <img src="<?php echo skin_url ?>img/weather/<?php echo $screen->data["weather_icon"] ?>" class="alpha_png" alt="">
             <h3><?php echo $screen->data["weather"] ?></h3>
             <p class="temp">
                 <?php echo $screen->data["temp"] ?>&deg;<sup><?php echo $screen->units == 0 ? 'C' : 'F' ?></sup>
@@ -52,4 +52,3 @@
         </tr>
         </table>
     </div>
-
