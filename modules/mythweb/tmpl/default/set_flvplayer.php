@@ -33,7 +33,7 @@
          value="<?php echo intVal(_or(setting('WebFLV_w'), 320)) ?>" />
          x
          <?php echo intVal(_or(setting('WebFLV_w'), 320) * 3/4) ?>
-         <br />
+         <br>
          (hard-coded at 4:3 until we can detect recording aspect)
          </td>
 </tr><tr>
@@ -55,4 +55,3 @@
 </table>
 
 </form>
-

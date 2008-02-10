@@ -79,7 +79,7 @@
                      preg_replace('/<.*?>/', ''   , $js_errstr)));
     // Print
         echo <<<EOF
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 <!--
 Event.observe(window, 'load', display_errors);
 function display_errors() { alert("$js_errstr"); };
@@ -198,4 +198,3 @@ EOF;
         require_once 'modules/_shared/tmpl/_errors/error.php';
         exit;
     }
-

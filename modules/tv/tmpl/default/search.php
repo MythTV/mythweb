@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Search');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_search.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_search.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -25,7 +25,7 @@
 // Print the advanced search options
 ?>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 <!--
 
     function search_field_change(i) {
@@ -49,9 +49,9 @@
 </script>
 
 <form class="form" id="search_advanced" action="<?php echo root ?>tv/search" method="get">
-    <input type="hidden" name="type" value="a">
+    <div><input type="hidden" name="type" value="a"></div>
 
-<table id="search_options" align="center" border="0" cellspacing="0" cellpadding="0" class="commandbox commands">
+<table id="search_options" border="0" cellspacing="0" cellpadding="0" class="commandbox commands">
 <tr>
     <td class="-advanced"><?php
         print_advanced_search_strings()
@@ -60,25 +60,25 @@
         <input type="checkbox" name="hd" id="hd" value="1"<?php
             if ($_SESSION['search']['hd']) echo ' CHECKED' ?>>
         <label for="hd"><?php echo t('Only match HD programs') ?></label>
-        <br />
+        <br>
         <input type="checkbox" name="commfree" id="commfree" value="1"<?php
             if ($_SESSION['search']['commfree']) echo ' CHECKED' ?>>
         <label for="commfree"><?php echo t('Only match commercial-free channels') ?></label>
         </p>
         <p>
-        <?php echo t('Showings between'); ?>:<br />
+        <?php echo t('Showings between'); ?>:<br>
         <input type="text" size="12" name="starttime" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['starttime']) ?>">
         <?php echo t('and'); ?>
         <input type="text" size="12" name="endtime"   style="text-align: center" value="<?php echo html_entities($_SESSION['search']['endtime']) ?>">
         </p>
         <p>
-        <?php echo t('Originally aired between'); ?>:<br />
+        <?php echo t('Originally aired between'); ?>:<br>
         <input type="text" size="12" name="airdate_start" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_start']) ?>">
         <?php echo t('and'); ?>
         <input type="text" size="12" name="airdate_end" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_end']) ?>">
         </p>
         </td>
-    <td class="-progtype"><?php echo t('Program Type'); ?>:<br />
+    <td class="-progtype"><?php echo t('Program Type'); ?>:<br>
         <?php echo category_type_list() ?>
         </td>
     <td class="-submit">
@@ -94,7 +94,7 @@
 // Print the results list if a search was performed
     if ($_REQUEST['search']) {
     // Print the search name
-        echo '<p id="_search_name">',
+        echo '<p id="x_search_name">',
              ($_SESSION['search']['type'] == 'a'
                 ? t('Advanced Search')
                 : t('Search for:  $1', $_SESSION['search']['s'])
@@ -171,7 +171,7 @@
             if (strlen($show->starstring) > 0)
                 $info[] = $show->starstring;
             if (count($info) > 0)
-                echo '<br />(', implode(', ', $info), ')';
+                echo '<br>(', implode(', ', $info), ')';
         }
 
         ?></td>
@@ -184,7 +184,7 @@
             if ($show->extra_showings)
                 foreach ($show->extra_showings as $pair) {
                     list($chanid, $showtime) = $pair;
-                    echo '<br /><a href="', root, 'tv/detail/', $chanid, '/', $showtime, '" class="italic">',
+                    echo '<br><a href="', root, 'tv/detail/', $chanid, '/', $showtime, '" class="italic">',
                          strftime($_SESSION['date_search'] ,$showtime);
                     if ($chanid != $show->chanid)
                         echo ' (', $Channels[$chanid]->callsign, ')';
@@ -199,7 +199,7 @@
 ?>
 
 </table>
-</p>
+
 <?php
     }
 

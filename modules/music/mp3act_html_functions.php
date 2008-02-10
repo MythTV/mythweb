@@ -23,24 +23,24 @@ function getHtmlSong($id, $artistName, $albumName, $trackNum, $trackName, $track
   $sub_output = '';
 
   if (!empty($albumName))
-    $sub_output .= sprintf(t('Track #%s from the album \'%s\''), $trackNum, $albumName).'<br />';
+    $sub_output .= sprintf(t('Track #%s from the album \'%s\''), $trackNum, $albumName).'<br>';
 
   if (!empty($numPlays))
   {
     if (1 == $numPlays)
-      $sub_output .= t('Played once').'<br />';
+      $sub_output .= t('Played once').'<br>';
     else
-      $sub_output .= sprintf(t('Played %s times'), $numPlays).'<br />';
+      $sub_output .= sprintf(t('Played %s times'), $numPlays).'<br>';
   }
 
   if (!empty($trackLength))
-    $sub_output .= $trackLength.'<br />';
+    $sub_output .= $trackLength.'<br>';
 
   if(!empty($genre))
-    $sub_output .= t('Genre').': '.$genre.'<br />';
+    $sub_output .= t('Genre').': '.$genre.'<br>';
 
   if(!empty($rating))
-    $sub_output .= t('Rating').': '.$rating.'<br />';
+    $sub_output .= t('Rating').': '.$rating.'<br>';
 
   if (!empty($sub_output))
   {
@@ -82,13 +82,13 @@ function getHtmlAlbum($id, $albumName, $artistName='', $year='', $numTracks='', 
   $sub_output = '';
 
   if (!empty($year))
-    $sub_output .= t('Year').': '.$year.'<br />';
+    $sub_output .= t('Year').': '.$year.'<br>';
 
   if (!empty($numTracks))
-    $sub_output .= t('# Tracks').': '.$numTracks.'<br />';
+    $sub_output .= t('# Tracks').': '.$numTracks.'<br>';
 
   if (!empty($length))
-    $sub_output .= t('Total Length').': '.$length.'<br />';
+    $sub_output .= t('Total Length').': '.$length.'<br>';
 
   if (!empty($sub_output))
     $output .= '<p>'.$sub_output.'</p>';
@@ -152,7 +152,7 @@ function getHtmlPlaylistEntrySong($id, $artistName, $albumName, $trackNum, $trac
   return getHtmlPlaylistEntry($id,
     '<em>'.$artistName.'</em> - '.$trackName.
     '<p>'.sprintf(t('Track #%s from the album \'%s\''), $trackNum, $albumName).
-    '<br />'.$trackLength.'</p>');
+    '<br>'.$trackLength.'</p>');
 }
 
 function getHtmlPlaylistEntryPlaylist($id, $playlistName, $playlistSongCount, $playlistTotalTime)
@@ -160,7 +160,7 @@ function getHtmlPlaylistEntryPlaylist($id, $playlistName, $playlistSongCount, $p
   return getHtmlPlaylistEntry($id,
     sprintf(t('Playlist: %s'), '<em>'.$playlistName.'</em>').
     '<p>'.sprintf(t('%s Songs'), $playlistSongCount).
-    '<br />'.sprintf(t('Total Time:  %s'), $playlistTotalTime).'</p>');
+    '<br>'.sprintf(t('Total Time:  %s'), $playlistTotalTime).'</p>');
 }
 
 ?>

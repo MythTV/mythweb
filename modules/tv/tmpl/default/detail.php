@@ -18,8 +18,8 @@
     $page_title = 'MythWeb - '.t('Program Detail').":  $program->title";
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css" />';
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -32,7 +32,7 @@
 /*/
 ?>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 <!--
 
 // Keep track of the autoexpire flag
@@ -97,7 +97,7 @@
 <?php       if ($_SESSION["show_channel_icons"] == true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30">
 <?php       } ?>
-                <span class="-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br />
+                <span class="-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br>
                     <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), "\n" ?>
                 </a>
             </td>
@@ -111,7 +111,7 @@
                 <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     echo $schedule->title;
                     if ($schedule->subtitle)
-                        echo ':<br />', $schedule->subtitle;
+                        echo ':<br>', $schedule->subtitle;
                     ?></a>
                 <div id="-time"><?php
                 echo strftime('%a, %b %e', $schedule->starttime);
@@ -120,7 +120,7 @@
                                    strftime($_SESSION['time_format'], $schedule->endtime));
                 if ($program)
                     echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
-                echo "<br />\n";
+                echo "<br>\n";
                 ?></div>
                 </td>
         </tr><?php
@@ -318,24 +318,24 @@
         }
         if (count($conflicting_shows)) {
         ?><tr id="-conflicts">
-            <th><?php echo t('Possible conflicts') ?>:<br /><br />
+            <th><?php echo t('Possible conflicts') ?>:<br><br>
         <div style="text-align: left;">
-                <?php echo t('Filters'); ?><br />
+                <?php echo t('Filters'); ?><br>
             <form id="change_display" name="change_display" action="<?php echo root; ?>tv/detail<?php if ($_GET['recordid'])
                              echo '?recordid='.urlencode($_GET['recordid']);
                       else
                          echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime']) ?>" method="post">
             <input type="hidden" name="change_display" value="1">
 
-                <label for="CurrentRecording"><input type="checkbox" id="CurrentRecording" name="CurrentRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_CurrentRecording']) echo "CHECKED"; ?>> <?php echo t('Current Recording'); ?><br />
+                <label for="CurrentRecording"><input type="checkbox" id="CurrentRecording" name="CurrentRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_CurrentRecording']) echo "CHECKED"; ?>> <?php echo t('Current Recording'); ?><br>
 
-                <label for="EarlierShowing"><input type="checkbox" id="EarlierShowing" name="EarlierShowing" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_EarlierShowing']) echo "CHECKED"; ?>> <?php echo t('Earlier Showing'); ?><br />
+                <label for="EarlierShowing"><input type="checkbox" id="EarlierShowing" name="EarlierShowing" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_EarlierShowing']) echo "CHECKED"; ?>> <?php echo t('Earlier Showing'); ?><br>
 
-                <label for="PreviousRecording"><input type="checkbox" id="PreviousRecording" name="PreviousRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_PreviousRecording']) echo "CHECKED"; ?>> <?php echo t('Previous Recording'); ?><br />
+                <label for="PreviousRecording"><input type="checkbox" id="PreviousRecording" name="PreviousRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_PreviousRecording']) echo "CHECKED"; ?>> <?php echo t('Previous Recording'); ?><br>
 
-                <label for="WillRecord"><input type="checkbox" id="WillRecord" name="WillRecord" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_WillRecord']) echo "CHECKED"; ?>> <?php echo t('Will Record'); ?><br />
+                <label for="WillRecord"><input type="checkbox" id="WillRecord" name="WillRecord" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_WillRecord']) echo "CHECKED"; ?>> <?php echo t('Will Record'); ?><br>
 
-                <label for="Conflict"><input type="checkbox" id="Conflict" name="Conflict" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_Conflict']) echo "CHECKED"; ?>> <?php echo t('Conflicts'); ?><br />
+                <label for="Conflict"><input type="checkbox" id="Conflict" name="Conflict" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_Conflict']) echo "CHECKED"; ?>> <?php echo t('Conflicts'); ?><br>
                 </div>
         </form>
         </th>
@@ -577,7 +577,7 @@
                             );
                     } else {  // flash is too old or we can't detect the plugin
                         document.write('<img src="<?php echo $program->thumb_url($flv_w,0) ?>"'
-                                      +' width="<?php echo $flv_w ?>"><br />'
+                                      +' width="<?php echo $flv_w ?>"><br>'
                                       +'Web-based video playback requires the '
                                       +'<a href=http://www.adobe.com/go/getflash/>Adobe Flash Player</a>.'
                                       );
@@ -653,7 +653,7 @@
                      $Jobs[$job['type']],
                      ' (', $Job_Status[$job['status']],
                      ':  ', strftime($_SESSION['date_listing_key'], $job['statustime']),
-                     ')<br />',
+                     ')<br>',
                      html_entities($job['comment']),
                      '</li>';
             }
@@ -667,7 +667,7 @@
                      $Jobs[$job['type']],
                      ' (', $Job_Status[$job['status']],
                      ':  ', strftime($_SESSION['date_listing_key'], $job['statustime']),
-                     ')<br />',
+                     ')<br>',
                      html_entities($job['comment']),
                      '</li>';
             }
@@ -682,4 +682,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

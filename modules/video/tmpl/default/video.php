@@ -72,16 +72,16 @@
                 $('window_content').innerHTML = '';
                 for (var key in result['matches'])
                     if (result['matches'][key]['title'])
-                    $('window_content').innerHTML += '<br />'
+                    $('window_content').innerHTML += '<br>'
                                                   +  '<a href="'+makeImdbWebUrl(result['matches'][key]['imdbid'])+'" style="float: right; margin-left: 1em;" target="_blank">(IMDB)</a>'
                                                   +  '<a href="javascript:imdb_select(\''+result['id']+'\',\''+result['matches'][key]['imdbid']+'\')">'+result['matches'][key]['title']+'</a>';
 
-                $('window_content').innerHTML += '<br /><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
+                $('window_content').innerHTML += '<br><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
             }
             else {
                 $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?>';
                 $('window_content').innerHTML = '<?php echo t('Video: IMDB: No Matches');   ?>'
-                                              + '<br /><br /><br /><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
+                                              + '<br><br><br><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
 
             }
             $('window').show();
@@ -243,7 +243,7 @@
 <div id="window" style="display: none">
  <a style="position: absolute; right: 1px; top: 1px;" href="" onclick="('window').hide()">[X]</a>
  <span id="window_video_title" class="hidden"></span>
- <span id="window_title"></span><br />
+ <span id="window_title"></span><br>
  <div id="window_content"></div>
 </div>
 
@@ -294,8 +294,8 @@
 <div id="videos">
 
 <div id="path">
- <b>Directory Structure</b><hr />
- <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root; ?>video?path=/">All Videos</a><br />
+ <b>Directory Structure</b><hr>
+ <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root; ?>video?path=/">All Videos</a><br>
  <?php foreach ($PATH_TREE as $path) output_path_picker($path); ?>
 </div>
 

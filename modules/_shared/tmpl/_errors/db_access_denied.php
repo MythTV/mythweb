@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Database Access Denied</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css">
 </head>
 
 <body>
@@ -12,7 +12,7 @@
 <h2>Database Access Denied</h2>
 
 <p>
-You are most likely receiving this message because you<br />
+You are most likely receiving this message because you<br>
 have failed to configure mythweb's database login info.
 </p>
 

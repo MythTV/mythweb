@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Database Setup Error</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css">
 </head>
 
 <body>
@@ -12,14 +12,14 @@
 <h2>Database Setup Error</h2>
 
 <p>
-The database environment variables are not correctly set in the<br />
-webserver conf or .htaccess file.  Please read through the comments<br />
+The database environment variables are not correctly set in the<br>
+webserver conf or .htaccess file.  Please read through the comments<br>
 included in the file and set up the db_* environment variables correctly.
 </p>
 
 <p>
-Some possible solutions are to make sure that mod_env is enabled<br />
-in httpd.conf, as well as having followed the instructions in the<br />
+Some possible solutions are to make sure that mod_env is enabled<br>
+in httpd.conf, as well as having followed the instructions in the<br>
 README and INSTALL files.
 </p>
 

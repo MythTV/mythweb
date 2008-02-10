@@ -16,55 +16,54 @@
     margin:             1em auto;
 }
 
-#_current_time {
+#x_current_time {
     font-size:          150%;
     margin-top:         .25em;
     float:              left;
 }
-#_current_time img {
+#x_current_time img {
     margin-top:         -.25em;
     float:              left;
     margin-right:       .5em;
 }
 
-#-jumpto {
+#x-jumpto {
     float:              right;
 }
-#-jumpto td {
+#x-jumpto td {
     padding:            .35em 1em;
     vertical-align:     middle;
     white-space:        nowrap;
 }
-#-jumpto td.-jumpto {
+#x-jumpto td.-jumpto {
     font-size:          110%;
     font-weight:        bold;
     border-right:       1px solid #304943;
 }
-#-jumpto td.-hour {
+#x-jumpto td.-hour {
     border-right:       1px solid #304943;
 }
-#-jumpto td.-hour select {
+#x-jumpto td.-hour select {
     text-align:         right;
 }
-#-jumpto .-day select {
+#x-jumpto .-day select {
     text-align:         center;
 }
 
-#-jumpto a img {
+#x-jumpto a img {
     vertical-align:     middle;
     height:             16px;
     width:              16px;
     margin-top:         -2px;
 }
-#-jumpto a {
+#x-jumpto a {
     height:             20px;
     width:              20px;
     padding:            2px;
     border:             1px solid #7b8;
     background-color:   #263;
 }
-#-jumpto a:hover {
+#x-jumpto a:hover {
     border:             1px solid #9da;
     background-color:   #485;
 }
-

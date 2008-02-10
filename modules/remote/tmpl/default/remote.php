@@ -17,7 +17,7 @@
     $page_title = 'MythFrontend Remote Control';
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/remote.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/remote.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -25,7 +25,7 @@
 // Print the content itself
 ?>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 <!--
 
 // List of enabled frontends
@@ -137,4 +137,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

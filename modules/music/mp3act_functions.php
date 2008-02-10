@@ -354,7 +354,7 @@ function musicLookup($type, $itemid)
                                     FROM music_albumart AS ma
                                          LEFT JOIN music_directories AS md
                                                 ON ma.directory_id=md.directory_id
-                                   WHERE ma.directory_id = ? 
+                                   WHERE ma.directory_id = ?
                                    AND ma.imagetype = 1
                                    LIMIT 1',
                                  $row['directory_id']);
@@ -372,9 +372,9 @@ function musicLookup($type, $itemid)
         </div>
         <h2 class="music">'.$row['album_name'].'</h2>
         </div>'.
-        (!empty($art_id) ? '<center><img width="200" src="'.stream_url().'stream?a='.$art_id.'" /></center><br />' : '').
+        (!empty($art_id) ? '<center><img width="200" src="'.stream_url().'stream?a='.$art_id.'" /></center><br>' : '').
         '<strong>'.t('Play Time').':</strong> '.$length.
-        '<br /><br />
+        '<br><br>
         <strong>'.t('Album Tracks').'</strong>
         <ul class="music">';
 
@@ -422,7 +422,7 @@ function musicLookup($type, $itemid)
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'],
-          $row['length'], $row['numplays'], '', $row['rating']); 
+          $row['length'], $row['numplays'], '', $row['rating']);
       }
       mysql_free_result($result);
       $output .= '</ul>';
@@ -501,7 +501,7 @@ function musicLookup($type, $itemid)
       $output = '<div class="head">
         <h2 class="music">'.t('Random Mix Maker').'</h2></div>
         <form onsubmit="return randAdd(this)" method="get" action="">
-        <strong>'.t('Number of Songs').'</strong><br />
+        <strong>'.t('Number of Songs').'</strong><br>
         <select name="random_count">
         <option>5</option>
         <option>10</option>
@@ -510,18 +510,18 @@ function musicLookup($type, $itemid)
         <option>40</option>
         <option>50</option>
         <option>100</option>
-        </select><br />
-        <strong>'.t('Random Type').'</strong><br />
+        </select><br>
+        <strong>'.t('Random Type').'</strong><br>
         <select name="random_type" onchange="getRandItems(this.options[selectedIndex].value); return false;">
         <option value="">'.t('Choose Type').'...</option>
         <option value="artists">'.t('Artists').'</option>
         <option value="genre">'.t('Genre').'</option>
         <option value="albums">'.t('Albums').'</option>
         <option value="all">'.t('Everything').'</option>
-        </select><br />
+        </select><br>
         <strong>'.t('Random Items').'</strong>
         <span id="rand_items"></span>
-        <br /><br />
+        <br><br>
         <input type="submit" value="'.t('Add Mix').'" class="btn" />
         </form>';
       break;
@@ -535,7 +535,7 @@ function musicLookup($type, $itemid)
         break;
 
       $output = '<div class="head">
-        <h2 class="music">'.t('Saved Playlists').'</h2></div><br />';
+        <h2 class="music">'.t('Saved Playlists').'</h2></div><br>';
 
       if (mysql_num_rows($result) == 0)
       {
@@ -598,8 +598,8 @@ function musicLookup($type, $itemid)
         '</a>
         </div>
         <h2 class="music">'.t('View Saved Playlist').'</h2></div>
-        <p><strong>'.t('Playlist Info').'</strong><br />'.
-        sprintf('%s Songs', $row['songcount']).'<br />'.$row['length'].'</p>
+        <p><strong>'.t('Playlist Info').'</strong><br>'.
+        sprintf('%s Songs', $row['songcount']).'<br>'.$row['length'].'</p>
         <p><strong>'.t('Playlist Items').'</strong></p>';
 
 
@@ -686,13 +686,13 @@ function musicLookup($type, $itemid)
       $output = '<div class="head">
         <h2 class="music">'.t('Server Statistics').'</h2></div>
         <p><a class="music" href="#" onclick="updateBox(\'recentadd\',0); return false;">'.
-        t('Recently Added Albums').'</a><br />
+        t('Recently Added Albums').'</a><br>
         <a class="music" href="#" onclick="updateBox(\'recentplay\',0); return false;">'.
-        t('Recently Played Songs').'</a><br />
+        t('Recently Played Songs').'</a><br>
         <a class="music" href="#" onclick="updateBox(\'topplay\',0); return false;">'.
-        t('Top Played Songs').'</a><br />
+        t('Top Played Songs').'</a><br>
         <a class="music" href="#" onclick="updateBox(\'toprated\',0); return false;">'.
-        t('Top Rated Songs').'</a><br />
+        t('Top Rated Songs').'</a><br>
         </p>
         <h3>'.t('Local Server Statistics').'</h3>
         <p>';
@@ -707,18 +707,18 @@ function musicLookup($type, $itemid)
           continue;
         $count = mysql_fetch_array($result);
         mysql_free_result($result);
-        $output .= '<strong>'.$title.':</strong> '.$count[0].'<br />';
+        $output .= '<strong>'.$title.':</strong> '.$count[0].'<br>';
       }
-      $output .= '<br /><strong>'.t('Songs Played').':</strong> '.$row2['songs'].'<br />';
-      
+      $output .= '<br><strong>'.t('Songs Played').':</strong> '.$row2['songs'].'<br>';
+
       $result = mysql_query('SELECT COUNT(*) AS songs FROM music_songs WHERE rating > 0;');
       if(!$result)
         break;
 
       $row3 = mysql_fetch_array($result);
       mysql_free_result($result);
-      $output .= '<strong>'.t('Songs Rated').':</strong> '.$row3['songs'].'<br /></p>';
-      
+      $output .= '<strong>'.t('Songs Rated').':</strong> '.$row3['songs'].'<br></p>';
+
       break;
 
     case 'recentadd':
@@ -802,17 +802,17 @@ function musicLookup($type, $itemid)
       }
       $output .= '</ul>';
       break;
-  
+
       case 'toprated':
-        $query = 'SELECT ms.name, ms.song_id, ms.rating, mt.artist_name '. 
-          'FROM music_songs AS ms '. 
+        $query = 'SELECT ms.name, ms.song_id, ms.rating, mt.artist_name '.
+          'FROM music_songs AS ms '.
           'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
-          'ORDER BY ms.rating DESC '. 
+          'ORDER BY ms.rating DESC '.
           'LIMIT 40';
         $result = mysql_query($query);
         if(!result)
           break;
-      
+
         $output = '<div class="head">
           <div class="right">
             <a class="music" href="#"
@@ -847,7 +847,7 @@ function getRandItems($type)
       $query = 'SELECT album_id, album_name FROM music_albums ORDER BY album_name';
       break;
     default:
-      return '<br />'.t('All Songs');
+      return '<br>'.t('All Songs');
   }
 
   $result = mysql_query($query);
@@ -1523,4 +1523,3 @@ function play($type, $id, $quality = 'high')
 
   return "#EXTM3U\n".$tmp;
 }
-

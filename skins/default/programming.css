@@ -142,9 +142,9 @@
 /* deprecated show categories that need to be integreted into the above list via regex, or have new categories created for them */
 .tv_Cine           { background-color: blue;            }
 .tv_Classic        { background-color: gray;            }
-.tv_Collectibles   { background-color: slategray;       }
-.tv_Magazine       { background-color: mediumturquoise; }
+.tv_Collectibles   { background-color: #708090;         }
+.tv_Magazine       { background-color: #48D1CC;         }
 .tv_Movies         { background-color: blue;            }
-.tv_Serie          { background-color: darkorchid;      }
-.tv_SHOW           { background-color: sienna;          }
+.tv_Serie          { background-color: #9932CC;         }
+.tv_SHOW           { background-color: #A0522D;         }
 .tv_Tiempo         { background-color: #33ff99;         }

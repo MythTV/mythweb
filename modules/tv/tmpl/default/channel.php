@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Channel Detail');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_channel.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_channel.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -27,21 +27,21 @@
 
 <div id="list_head" class="clearfix">
     <form method="get" id="program_listing" action="<?php echo root ?>tv/channel">
-    <div id="_current_time">
+    <div id="x_current_time">
 <?php   if ($_SESSION["show_channel_icons"] && !empty($this_channel->icon)) { ?>
         <img src="<?php echo $this_channel->icon ?>" height="30" width="30">
 <?php   } ?>
         Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?>
     </div>
-    <table id="-jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
+    <table id="x-jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td class="-jumpto"><?php echo t('Jump To') ?>:</td>
         <td class="-hour"><?php channel_select('onchange="$(\'program_listing\').submit()"', $this_channel->chanid) ?></td>
         <td class="-day"><a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] - (24 * 60 * 60) ?>"
-                ><img src="<?php echo skin_url ?>img/left.gif" border="0"></a>
+                ><img src="<?php echo skin_url ?>img/left.gif" alt="<?php echo t('leftl'); ?>"></a>
             <?php date_select('onchange="$(\'program_listing\').submit()"') ?>
             <a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] + (24 * 60 * 60) ?>"
-                    ><img src="<?php echo skin_url ?>img/right.gif" border="0"></a>
+                    ><img src="<?php echo skin_url ?>img/right.gif" alt="<?php echo t('right'); ?>"></a>
             </td>
     </tr>
     </table>
@@ -86,7 +86,7 @@
 
     // Print the content
     ?><tr class="<?php echo $show->css_class ?>">
-    <td nowrap align="center"><a href="<?php echo root ?>tv/list?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
+    <td class="nowrap" align="center"><a href="<?php echo root ?>tv/list?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
     <td class="<?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
                echo '<span class="hdtv_icon">HD</span>';
@@ -95,7 +95,7 @@
         ?></td>
     <td><?php echo $show->subtitle ?></td>
     <td><?php echo $show->description ?></td>
-    <td nowrap><?php echo nice_length($show->length) ?></td>
+    <td class="nowrap"><?php echo nice_length($show->length) ?></td>
 </tr><?php
             $row++;
         }
@@ -107,4 +107,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

@@ -216,3 +216,12 @@
     .link {
         cursor:             pointer;
     }
+
+/* I don't think we have a single image with a border in the default template, so disable it */
+    a img {
+        border:             0px;
+    }
+
+    .nowrap {
+        white-space:        nowrap;
+    }

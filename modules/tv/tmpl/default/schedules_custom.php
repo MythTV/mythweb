@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Custom Schedule');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -25,7 +25,7 @@
 // Print the page contents
 ?>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 <!--
 
 // Swaps visibility of the standard/power options lists
@@ -61,20 +61,20 @@
 
             <ul>
 <?php       if ($schedule->recordid) { ?>
-                <li><input type="radio" class="radio" name="record" value="0" id="record_never" />
+                <li><input type="radio" class="radio" name="record" value="0" id="record_never">
                     <label for="record_never"><?php echo t('Cancel this schedule.') ?></label></li>
 <?php       } ?>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
-                        if ($schedule->type == rectype_always) echo ' CHECKED' ?> />
+                        if ($schedule->type == rectype_always) echo ' CHECKED' ?>>
                     <label for="record_always"><?php echo t('rectype-long: always') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_finddaily ?>" id="rectype_finddaily"<?php
-                        if ($schedule->type == rectype_finddaily) echo ' CHECKED' ?> />
+                        if ($schedule->type == rectype_finddaily) echo ' CHECKED' ?>>
                     <label for="rectype_finddaily"><?php echo t('rectype-long: finddaily') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findweekly ?>" id="rectype_findweekly"<?php
-                        if($schedule->type == rectype_findweekly) echo ' CHECKED' ?> />
+                        if($schedule->type == rectype_findweekly) echo ' CHECKED' ?>>
                     <label for="rectype_findweekly"><?php echo t('rectype-long: findweekly') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="rectype_findone"<?php
-                        if ($schedule->type == rectype_findone) echo ' CHECKED' ?> />
+                        if ($schedule->type == rectype_findone) echo ' CHECKED' ?>>
                     <label for="rectype_findone"><?php echo t('rectype-long: findone') ?></label></li>
             </ul>
         </div>
@@ -85,19 +85,19 @@
             <ul>
                 <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_title ?>" id="searchtype_title"<?php
                         if (empty($schedule->search) || $schedule->search == searchtype_title) echo ' CHECKED'
-                        ?> onclick="toggle_options()" />
+                        ?> onclick="toggle_options()">
                     <label for="searchtype_title"><?php echo t('Title Search') ?></label></li>
                 <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_keyword ?>" id="searchtype_keyword"<?php
                         if ($schedule->search == searchtype_keyword) echo ' CHECKED'
-                        ?> onclick="toggle_options()" />
+                        ?> onclick="toggle_options()">
                     <label for="searchtype_keyword"><?php echo t('Keyword Search') ?></label></li>
                 <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_people ?>" id="searchtype_people"<?php
                         if ($schedule->search == searchtype_people) echo ' CHECKED'
-                        ?> onclick="toggle_options()" />
+                        ?> onclick="toggle_options()">
                     <label for="searchtype_people"><?php echo t('People Search') ?></label></li>
                 <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_power ?>" id="searchtype_power"<?php
                         if ($schedule->search == searchtype_power) echo ' CHECKED'
-                        ?> onclick="toggle_options()" />
+                        ?> onclick="toggle_options()">
                     <label for="searchtype_power"><?php echo t('Power Search') ?></label></li>
             </ul>
 

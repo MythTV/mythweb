@@ -620,7 +620,7 @@
     a non-ssl installation and check this box, which will force all streaming<br/>
     downloads to go out over http instead.
 "settings: notice"
-    Warning:<br /><br />
+    Warning:<br><br>
     Many settings pages have very little error checking. You can easily screw
     things up if you're not careful, and short of restoring the database from
     a backup, there is <b>no</b> way to undo your changes.

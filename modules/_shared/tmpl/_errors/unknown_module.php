@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Error</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css">
 </head>
 
 <body>

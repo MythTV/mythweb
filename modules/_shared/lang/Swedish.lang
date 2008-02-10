@@ -1019,7 +1019,7 @@
     Inställningstabell
 "settings/stream: protocol"
 "settings: notice"
-    Varning!<br /><br />
+    Varning!<br><br>
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
 "Shift"

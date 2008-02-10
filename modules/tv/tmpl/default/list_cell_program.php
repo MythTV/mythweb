@@ -5,7 +5,7 @@
     // then, we just display the info
         $percent = intVal($timeslots_used * 96 / num_time_slots);
 ?>
-    <td class="small <?php echo $program->css_class ?>" colspan="<?php echo $timeslots_used ?>" width="<?php echo $percent ?>%" valign="top"><?php
+    <td class="small <?php echo $program->css_class; ?>" colspan="<?php echo $timeslots_used ?>" style="width: <?php echo $percent; ?>%" valign="top"><?php
     // hdtv?
         if ($program->hdtv && $percent > 5)
             echo '<span class="hdtv_icon">HD</span>';
@@ -17,15 +17,15 @@
                  href        = "'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
-            echo '<img src="'.skin_url.'img/left_sm.png" border="0" class="left_arrow">';
+            echo '<img src="'.skin_url.'img/left_sm.png" class="left_arrow" alt="'.t('left').'">';
     // Does this program 'Continue'?
         if ($program->endtime > $GLOBALS['list_endtime'])
-            echo '<img src="'.skin_url.'img/right_sm.png" border="0" class="right_arrow">';
+            echo '<img src="'.skin_url.'img/right_sm.png" class="right_arrow" alt="'.t('right').'">';
         if ($percent > 5) {
             echo $program->title;
             if (strlen($program->subtitle) > 0) {
                 if ($percent > 8)
-                    echo ":<br />$program->subtitle";
+                    echo ":<br>$program->subtitle";
                 else
                     echo ': ...';
             }

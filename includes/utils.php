@@ -392,7 +392,7 @@
     // Show which line caused the debug message
         $str = $str."\n<hr>\n".'Line #'.$back_trace[0]['line'].' in file '.$back_trace[0]['file']."\n";
     // Print the message
-        echo '<script language="javascript">console.log("'.str_replace($search, $replace, $str).'");</script>';
+        echo '<script type="text/javascript">console.log("'.str_replace($search, $replace, $str).'");</script>';
         echo '<noscript><pre>'.$str.'</pre></noscript>';
     // Print to a file?
         if ($file) {

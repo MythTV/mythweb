@@ -479,7 +479,7 @@
                 echo '</select>';
             }
             echo ' <a id="add_search_field_', $i, '" onclick="add_search_field(', $i, ')">', t('more'), '...</a>',
-                 "<br />\n",
+                 "<br>\n",
                  t('matches'), ': <input type="text" size="35" name="as[', $i, ']" id="as', $i, '" value="',
                  html_entities($string), "\" onchange=\"set_search('a')\">\n";
         }
@@ -503,7 +503,7 @@
                      ' to ',
                      movie_star_select('stars_lt');
             }
-            echo '<br />';
+            echo '<br>';
         }
     }
 

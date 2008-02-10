@@ -17,13 +17,13 @@
     $page_title = 'Welcome to MythWeb!';
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/welcome.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/welcome.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 <!--
 
     var visible_module = 'tv';

@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Schedule Manually');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css" />';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -35,19 +35,19 @@
 
             <ul>
 <?php       if ($schedule->recordid) { ?>
-                <li><input type="radio" class="radio" name="record" value="0" id="record_never" />
+                <li><input type="radio" class="radio" name="record" value="0" id="record_never">
                     <label for="record_never"><?php echo t('Cancel this schedule.') ?></label></li>
 <?php       } ?>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
-                        echo $schedule->type == rectype_once ? ' CHECKED' : '' ?> />
+                        echo $schedule->type == rectype_once ? ' CHECKED' : '' ?>>
                     <label for="record_once"><?php echo t('rectype-long: once') ?></label></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
-                        echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?> />
+                        echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?>>
                     <label for="record_daily"><?php echo t('rectype-long: daily') ?></label></li>
 
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php
-                        echo $schedule->type == rectype_weekly ? ' CHECKED' : '' ?> />
+                        echo $schedule->type == rectype_weekly ? ' CHECKED' : '' ?>>
                     <label for="record_weekly"><?php echo t('rectype-long: weekly') ?></label></li>
             </ul>
         </div>
@@ -61,14 +61,14 @@
             <ul>
 <?php       if ($schedule->type == rectype_override || $schedule->type == rectype_dontrec) { ?>
                 <li><input type="radio" class="radio" name="record" value="0" id="schedule_default"<?php
-                        if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) echo ' CHECKED' ?> />
+                        if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) echo ' CHECKED' ?>>
                     <label for="schedule_default"><?php echo t('Schedule normally.') ?></label></li>
 <?php       } ?>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_override ?>" id="record_override"<?php
-                        if ($schedule->type == rectype_override) echo ' CHECKED' ?> />
+                        if ($schedule->type == rectype_override) echo ' CHECKED' ?>>
                     <label for="record_override"><?php echo t('rectype-long: override') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_dontrec ?>" id="record_dontrec"<?php
-                        if ($schedule->type == rectype_dontrec) echo ' CHECKED' ?> />
+                        if ($schedule->type == rectype_dontrec) echo ' CHECKED' ?>>
                     <label for="record_dontrec"><?php echo t('rectype-long: dontrec') ?></label></li>
             </ul>
         </div>
@@ -110,4 +110,3 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

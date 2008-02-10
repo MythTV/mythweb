@@ -2,7 +2,7 @@
 <html>
 <head>
     <title><?php echo htmlentities($title, ENT_COMPAT, 'UTF-8') ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css">
 </head>
 
 <body>

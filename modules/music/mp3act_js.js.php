@@ -64,11 +64,11 @@
                 var save_form = '<h2><?php echo t('Save/Rename Playlist'); ?></h2>' +
           '<form onsubmit="return savePL(\'save\',this)" method="get" action="">' +
           '<strong><?php echo t('Playlist Name'); ?></strong><br/>' +
-          '<?php echo t('Enter a new name for your playlist'); ?><br /><br />' +
+          '<?php echo t('Enter a new name for your playlist'); ?><br><br>' +
           '<input type="text" name="save_pl_name" id="save_pl_name" size="25" />' +
           '<input style="left: 350px; position: absolute;" type="submit" value="<?php echo t('Save/Rename'); ?>" />' +
           '</form>' +
-          '<br /><hr /><br />' +
+          '<br><hr><br>' +
           '<input style="left: 350px; position: absolute;" type="button"' +
           ' onclick="savePL(\'close\',0); return false;" value="<?php echo t('Cancel'); ?>" />';
             document.getElementById("box_extra").innerHTML = save_form;
@@ -334,4 +334,3 @@
                 }
                 return false;
             }
-
