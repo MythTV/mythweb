@@ -2,10 +2,10 @@
 /**
  * Print the program list data only
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/tv/tmpl/default/list.php $
- * @date        $Date: 2007-12-31 12:38:38 -0800 (Mon, 31 Dec 2007) $
- * @version     $Revision: 15274 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb
