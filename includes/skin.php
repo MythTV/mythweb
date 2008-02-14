@@ -22,6 +22,9 @@
         $_SESSION['skin'] = $_SESSION['tmpl'];
         define('skin', $_SESSION['skin']);
     }
+// Force the "lite" template
+    elseif ($_REQUEST['RESET_TMPL'] == 'lite' || preg_match('/^(Lynx|ELinks)/i', $_SERVER['HTTP_USER_AGENT']))
+        $_SESSION['tmpl'] = 'lite';
 // Reset the template?
     elseif ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
         $_SESSION['tmpl'] = 'default';
