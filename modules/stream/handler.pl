@@ -217,7 +217,7 @@ EOF
 # Open the file for reading
     unless (sysopen DATA, $filename, O_RDONLY) {
         print header(),
-              "Can't read $basname:  $!";
+              "Can't read $basename:  $!";
         CORE::exit;
     }
 
