@@ -1,0 +1,80 @@
+#recording_info {
+    padding: 10px;
+    margin:  20px auto;
+    width:   32em;
+}
+#recording_info h3 {
+    margin: 0px;
+}
+#recording_info ul {
+    padding-left: 1em;
+}
+#recording_info li {
+    list-style-type: none;
+    white-space:     nowrap;
+}
+
+#schedule_options {
+    width:  29em;
+    margin: 0px auto;
+}
+#schedule_options ul {
+    padding-left: 1em;
+}
+#schedule_options li {
+    list-style-type: none;
+    white-space:     nowrap;
+}
+
+#recording_options {
+    width:  29em;
+    margin: 0px auto;
+}
+#recording_options dl {
+    margin: 5px 10px;
+}
+#recording_options dl dt {
+    clear:       left;
+    float:       left;
+    width:       9em;
+    padding-top: 8px;
+    text-align:  right;
+    white-space: nowrap;
+}
+#recording_options dl dd {
+    padding-top: 3px;
+    margin-left: 9.5em;
+}
+#recording_options input {
+    width:     14em;
+}
+#recording_options select {
+    font-size: 9pt;
+    width:     16em;
+}
+
+#advanced_options {
+    width:  29em;
+    margin: 0px auto;
+}
+#advanced_options dl {
+    margin: 5px 10px;
+}
+#advanced_options dl dt {
+    clear:         left;
+    float:         left;
+    width:         13em;
+    margin-bottom: 0.25em;
+    text-align:    right;
+    white-space:   nowrap;
+}
+#advanced_options dl dd {
+    margin-bottom: 0.25em;
+    margin-left:   13.5em;
+}
+#advanced_options input {
+}
+#advanced_options select {
+    width: 14em;
+}
+

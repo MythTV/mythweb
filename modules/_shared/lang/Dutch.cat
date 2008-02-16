@@ -1,0 +1,99 @@
+"Action"
+    Actie
+    \b(?:action|avon|actie)
+"Adult"
+    Erotisch
+    \b(?:adult|erot|sex)
+"Animals"
+    Dieren
+    \b(?:animal|dier)
+"Art_Music"
+    Kunst_Muziek
+    \b(?:art|kunst|dans|musi[ck]|muziek|kunst|[ck]ultur)
+"Business"
+    Zakelijk
+    \b(?:biz|busine|zake)
+"Children"
+    Kinderen
+    \b(?:child|jeugd|animatie|kin?d|infan)
+"Comedy"
+    Komisch
+    \b(?:comed|entertain|sitcom|serie)
+"Crime_Mystery"
+    Misdaad_Crimi
+    \b(?:[ck]rim|myster|misdaad)
+"Documentary"
+    Documentaire
+    \b(?:informatief|docu)
+"Drama"
+    Drama
+    \b(?:drama)
+"Educational"
+    Educatie
+    \b(?:edu|interes)
+"Food"
+    Eten
+    \b(?:food|cook|[dt]rink|kook|eten|kok)
+"Game"
+    Spel
+    \b(?:game|spel|quiz)
+"Health_Medical"
+    Gezondheid_Medisch
+    \b(?:medisch|gezond)
+"History"
+    Geschiedenis
+    \b(?:hist|geschied)
+"Horror"
+    Horror
+    \b(?:horror)
+"HowTo"
+    Hulp
+    \b(?:how|home|house|garden|huis|tuin|woning)
+"Misc"
+    Divers
+    \b(?:special|variety|info|collect)
+"News"
+    Nieuws
+    \b(?:news|current|nieuws|duiding|actua)
+"Reality"
+    Reality
+    \b(?:reality|leven)
+"Romance"
+    Romantiek
+    \b(?:romance|lief)
+"SciFi_Fantasy"
+    Wetenschap_Natuur
+    \b(?:fantasy|sci\w*\W*fi|natuur|wetenschap)
+"Science_Nature"
+    SciFi_Fantasy
+    \b(?:science|natuur|environment|wetenschap)
+"Shopping"
+    Shopping
+    \b(?:shop|koop)
+"Soaps"
+    Soaps
+    \b(?:soap)
+"Spiritual"
+    Religie
+    \b(?:spirit|relig)
+"Sports"
+    Sport
+    \b(?:sport|deportes|voetbal|tennis)
+"Talk"
+    Praat
+    \b(?:talk|praat)
+"Travel"
+    Reis
+    \b(?:travel|reis)
+"Unknown"
+    Onbekend
+    
+"War"
+    Oorlog
+    \b(?:war|oorlog)
+"Western"
+    Films
+    \b(?:west|film)
+"movie"
+    Films
+    

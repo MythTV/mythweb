@@ -1,0 +1,650 @@
+" at "
+    ob
+"$1 B"
+"$1 day"
+"$1 days"
+"$1 episode"
+    $1 serija
+"$1 episodes"
+    $1 serije
+"$1 GB"
+"$1 hr"
+    $1 ura
+"$1 hrs"
+    $1 ure
+"$1 KB"
+"$1 MB"
+"$1 min"
+    $1 Min
+"$1 mins"
+    $1 Min
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 programi, uporabljeno $2 ($3) od ($4)
+"$1 recording"
+    $1 snemanje
+"$1 recordings"
+    $1 snemanja
+"$1 Search"
+"$1 TB"
+"$1 to $2"
+    $1 do $2
+"$1 wasted"
+"Action"
+"Activate"
+    Aktiviraj
+"add string"
+"Additional Tables"
+"Advanced"
+"Advanced Options"
+    Dodatne možnosti
+"Advanced Search"
+"airdate"
+    datum oddajanja
+"Airtime"
+    Čas predvajanja
+"Album"
+"Album (filtered)"
+"All"
+"All groups"
+"All HDTV"
+"All Music"
+"All recordings"
+    Vsa snemanja
+"Any"
+    Katera koli
+"Any Category"
+"Any Channel"
+"Any Program Type"
+"Are you sure you want to delete the following show?"
+    Ste prepričani, da želite izbrisati to oddajo?
+"Artist"
+"Artist (filtered)"
+"auto-expire"
+    avto-brisanje
+"Auto-expire recordings"
+    Snemanja avto-preteka
+"Auto-flag commercials"
+    Avto-označi reklame
+"Auto-transcode"
+"Back to the program listing"
+    Nazaj na seznam programov
+"Back to the recording schedules"
+    Nazaj na planiranje snemanj
+"Backend Logs"
+"Backend Status"
+    Status Backenda
+"brightness"
+"callsign"
+"Cancel this schedule."
+    Prekliči ta plan
+"Cast"
+    Zasedba
+"category"
+"Category"
+    Kategorija
+"Category Legend"
+    Legenda kategorij
+"CC"
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
+"Channel"
+    Kanal
+"channel"
+    kanal
+"Channel &quot;Jump to&quot;"
+    Kanal &quot;Skoči na&quot;
+"Channel Detail"
+"channum"
+    številka kanala
+"Check for duplicates in"
+    Preveri za duplikati v
+"colour"
+"Commands"
+    Ukazi
+"commfree"
+"Configure Channels"
+"Configure Keybindings"
+"Conflicts"
+    Konflikti
+"Context"
+"contrast"
+"Count"
+"cover"
+"Create Schedule"
+    Ustvari plan snemanja
+"Current Conditions"
+    Trenutni pogoji
+"Current recordings"
+    Trenutna snemanja
+"Currently Browsing:  $1"
+    Trenutno brskanje:  $1
+"Custom"
+"Custom Schedule"
+"Data"
+"Date"
+    Datum
+"Date Formats"
+    Format datuma
+"Deactivated"
+    Deaktiviran
+"Default"
+    Privzet
+"Delete"
+    Briši
+"delete"
+"Delete $1"
+"Delete + Rerecord"
+"Delete and rerecord $1"
+"description"
+    opis
+"Description"
+    Opis
+"Destination"
+"Details for"
+"Directed by"
+    Režiser
+"director"
+"Display"
+    Prikaz
+"Displaying"
+"Don't Record"
+    Ne snemaj
+"Don't record this program."
+    Ne snemaj tega programa.
+"Dup Method"
+    Metoda duplikatov
+"Duplicate Check method"
+    Metoda preverjanja duplikatov
+"Duplicates"
+    Duplikati
+"Duration"
+"Edit"
+"Edit keybindings on"
+    Zamenjaj bližnjico za
+"Edit MythWeb and some MythTV settings."
+    Uredi MythWeb in nekaj MythTV nastavitev.
+"Edit settings for"
+"End"
+"End Late"
+    Končaj kasneje
+"Episode"
+    Oddaja
+"Episode Number"
+"Exec. Producer"
+    Scenarist
+"file size"
+    velikost datoteke
+"Filtered"
+"Find Date & Time Options"
+"Find Day"
+"Find other showings of this program"
+    Najdi drugo predvajanje tega programa
+"Find showings of this program"
+    Najdi predvajanje tega programa
+"Find Time"
+"Find Time must be of the format:  HH:MM:SS"
+"finetune"
+"First recording"
+"Forecast"
+    Napoved
+"Forget Old"
+    Pozabi stare
+"format help"
+    format pomoči
+"freqid"
+"Friday"
+    Petek
+"generic_date"
+    %e.%m.%Y
+"generic_time"
+    %H:%M
+"Genre"
+"Genre (filtered)"
+"Global"
+"Go"
+    Pojdi
+"Google"
+    Google
+"Group timeslots every"
+"Guest Starring"
+    Igra še
+"Guide rating"
+"Guide Settings"
+    Nastavitve vodiča
+"Handy Predefined Searches"
+"handy: overview"
+    Ta stran vsebuje v naprej pripravljena kompleksna iskanja seznamov programov.
+"has bookmark"
+    ima zaznamek
+"has commflag"
+    ima označene reklame
+"has cutlist"
+    ima seznam rezov
+"HDTV"
+"High"
+    Visoka
+"Hosted by"
+    Gostitelj
+"Hour"
+    Ura
+"Hour Format"
+    Format ure
+"hue"
+"Humidity"
+    Vlažnost
+"IMDB"
+    IMBD
+"imdb rating"
+"Inactive"
+"is editing"
+    se ureja
+"Jump"
+    Skoči
+"Jump to"
+    Skoči na
+"Jump To"
+    Skoči na
+"JumpPoints Editor"
+"Key bindings"
+"Keybindings Editor"
+"Keyword"
+"Keyword Search"
+"Language"
+    Jezik
+"Last Recorded"
+"Last recording"
+"Last Updated"
+    Zadnjič posodobljeno
+"length"
+    dolžina
+"Length"
+    Trajanje
+"Length (min)"
+    Dolžina (min)
+"Listing &quot;Jump to&quot;"
+    Seznam &quot;Skoči na&quot;
+"Listing Time Key"
+    Seznam
+"Listings"
+    Seznam
+"Logs"
+"Low"
+    Nizka
+"Manual"
+"matches"
+"Max star rating for movies"
+"minutes"
+    minute
+"Monday"
+    Ponedeljek
+"more"
+"movie"
+"Movies"
+"Movies, 3&frac12; Stars or more"
+"Movies, Stinkers (2 Stars or less)"
+"Music"
+"Music Specials"
+"MythMusic on the web."
+    MythMusic na spletu
+"MythTV channel info"
+"MythTV global defaults"
+"MythTV key bindings"
+"MythTV settings table"
+"MythTV Status"
+"MythVideo Artwork Dir"
+"MythVideo Dir"
+"MythVideo on the web."
+    MythVideo na spletu
+"MythWeb Global Defaults"
+"MythWeb session settings"
+"MythWeb Session Settings"
+"MythWeb Skin"
+"MythWeb Template"
+"MythWeb Weather."
+    MythWeb vreme
+"Name"
+"name"
+"Never Record"
+    Nikoli ne snemaj
+"New Titles, Premieres"
+"Next"
+"No"
+    Ne
+"NO DATA"
+"No matches found"
+    Ni zadetkov
+"No matching programs found."
+"No recording schedules have been defined."
+    Definiran ni bil noben snemalni plan.
+"No Tracks Available"
+"No. of recordings to keep"
+    Št. ohranjenih snemanj
+"Non-Music Specials"
+"Non-Series HDTV"
+"None"
+    Nobeno
+"Notes"
+    Opombe
+"Number of episodes"
+"Number of shows"
+"Number of timeslots"
+"Only display favourite channels"
+    Prikaži samo priljubljene kanale
+"Only match commercial-free channels"
+"Only match HD programs"
+"Only New Episodes"
+    Samo eno oddajo
+"or"
+"Original Airdate"
+    Izvirni datum predvajanja
+"Part $1 of $2"
+"Past Month"
+"Past Week"
+"Past Year"
+"People"
+"People Search"
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
+"plot"
+"Possible conflicts with this show"
+"Power"
+"Power Search"
+"Prefer Channum"
+"Presented by"
+    Predstavlja
+"Pressure"
+    Tlak
+"preview"
+    predogled
+"Previous"
+"Previous recordings"
+    Že posneto
+"Produced by"
+    Producent
+"Profile"
+    Profil
+"profile"
+    profil
+"Program Detail"
+"Program ID"
+"Program Listing"
+"Radar"
+    Radar
+"Rating"
+    Ocena
+"rating"
+"recgroup"
+    snemalna skupina
+"Record new and expire old"
+    Snemaj novo in briši staro
+"Record This"
+    Posnami to
+"Recorded Programs"
+    Posneti programi
+"Recording Group"
+    Snemalne skupine
+"Recording Options"
+    Snemalne možnosti
+"Recording Priority"
+    Snemalne prioritete
+"Recording Profile"
+    Snemalni profili
+"Recording Schedules"
+    Snemalni plani
+"Recording Statistics"
+"recpriority"
+"recstatus: cancelled"
+    Bilo je planirano za snemanje, ampak je bilo ročno preklicano.
+"recstatus: conflict"
+    Sneman bo drugi program z višjo prioriteto.
+"recstatus: currentrecording"
+    Ta oddaja je že bila posneta in je še vedno na voljo v seznamu snemanj.
+"recstatus: deleted"
+    Ta oddaja je že bila posneta, ampak je bila izbrisana pred koncem snemanja.
+"recstatus: earliershowing"
+    Ta oddaja se bo posnela prej (koliko je nastavljeno).
+"recstatus: force_record"
+    Ta oddaja je bila ta trenutek ročno nastavljena za snemanje.
+"recstatus: inactive"
+"recstatus: latershowing"
+    Ta oddaja se bo posnela prej (koliko je nastavljeno).
+"recstatus: lowdiskspace"
+    Za snemanje te oddaje ni bilo na voljo zadostne količine prostega diska.
+"recstatus: manualoverride"
+    Ta oddaja je bila ročno nastavljena, naj se ne posname.
+"recstatus: neverrecord"
+"recstatus: notlisted"
+"recstatus: previousrecording"
+    Glede na rezultate duplikatov, je bila ta oddaja že posneta.
+"recstatus: recorded"
+    Ta oddaja se je posnela.
+"recstatus: recording"
+    Ta oddaja se snema.
+"recstatus: repeat"
+    Ta oddaja je posnetek in se ne bo posnela.
+"recstatus: stopped"
+    Ta oddaja je že bila posneta, ampak je bil snemanje preklicano.
+"recstatus: toomanyrecordings"
+    Posnelo se je že preveč posnetkov tega progama.
+"recstatus: tunerbusy"
+    Kartica za zajem je že bila v uporabi, kadar bi se naj izvedel ta snemalni plan.
+"recstatus: unknown"
+    Status te oddaje je neznan.
+"recstatus: willrecord"
+    Ta oddaja se bo posnela.
+"rectype-long: always"
+"rectype-long: channel"
+    Snemaj kadarkoli na kanalu $1.
+"rectype-long: daily"
+    Snemaj ta program v tem času vsak dan.
+"rectype-long: dontrec"
+    Ne snemaj te oddaje.
+"rectype-long: finddaily"
+    Najdi in snemaj to oddajo vsak dan.
+"rectype-long: findone"
+    Najdi in snemaj to oddajo.
+"rectype-long: findweekly"
+    Najdi in snemaj to oddajo vsak teden.
+"rectype-long: once"
+    Snemaj samo to oddajo.
+"rectype-long: override"
+    Snemaj to posebno oddajo.
+"rectype-long: weekly"
+    Snemaj ta program v tem času vsak teden.
+"rectype: always"
+    Vedno
+"rectype: channel"
+    Kanal
+"rectype: daily"
+    Dnevno
+"rectype: dontrec"
+    Ne snemaj
+"rectype: finddaily"
+    Najdi dnevno
+"rectype: findone"
+    Najdi enkrat
+"rectype: findweekly"
+    Najdi tedensko
+"rectype: once"
+    Enkrat
+"rectype: override"
+    Prepiši (snemanje)
+"rectype: weekly"
+    tedensko
+"regex: articles"
+    An?|The
+"Repeat"
+    Ponovno zaženi
+"Reset"
+    Resetiraj
+"Reverse Order"
+"Rows to show between timeslot info"
+"Saturday"
+    Sobota
+"Save"
+    Shrani
+"Save Schedule"
+    Shrani snemalni plan
+"Schedule"
+    Nastavi snemanje
+"Schedule Manually"
+"Schedule normally."
+    Normalno planiranje
+"Schedule Options"
+    Možnosti planiranja
+"Schedule Override"
+    Prepiši planiranje
+"Schedule via $1."
+"Scheduled"
+    Splanirano
+"Scheduled Popup"
+    Nastavljeni pop-up
+"Science Fiction Movies"
+"Search"
+    Iskanje
+"Search for:  $1"
+    Iskanje:  $1
+"Search Phrase"
+"Search Results"
+    Rezultati iskanja
+"Search Type"
+"Searches"
+    Iskanja
+"Set Host"
+"settings"
+"Settings"
+    Nastavitve
+"Settings Table"
+"Settings Table Editor"
+"settings: overview"
+    To je index stran nastavitev...<p>Ni še končana, eventuelno pa bo tudi lepše zgledala.  Trenutno si lahko izberete naslednje:
+"Show"
+    Oddaja
+"Show descriptions on new line"
+    Opis prikaži v novi vrstici
+"Show group"
+    Pokaži skupino
+"Show pixmaps"
+"Show recordings"
+    Pokaži snemanja
+"Showing all programs from the $1 group."
+"Showing all programs."
+"SI Units?"
+    SI enote
+"sourceid"
+"Special Searches"
+"Star character"
+"Start Date"
+    Datum začetka
+"Start Early"
+    Začni prej
+"Start Time"
+    Čas začetka
+"Statistics"
+"Status"
+"Status Bar"
+    Statusna vrstica
+"Stereo"
+"Sub and Desc (Empty matches)"
+    Podnaslov in opis (prazni zadetki)
+"Subtitle"
+    Podnaslov
+"subtitle"
+    Podnaslov
+"Subtitle and Description"
+    Podnaslov in opis
+"Subtitled"
+"Sunday"
+    Nedelja
+"The requested recording schedule has been deleted."
+    Zahtevani snemalni plan je bil izbrisan
+"Thursday"
+    Četrtek
+"Time"
+    Čas
+"Time Stretch Default"
+"Timeslot size"
+"title"
+    Naslov
+"Title"
+    Naslov
+"Title Search"
+"Today"
+    Danes
+"Tomorrow"
+    Jutri
+"Top"
+"Top $1"
+"Total Time"
+"Track Name"
+"transcoder"
+"Transcoder"
+"Tuesday"
+    Torek
+"TV"
+"TV functions, including recorded programs."
+    Funkcije TV, vključno z posnetimi programi.
+"TV.com"
+"type"
+    tip
+"Type"
+    Tip
+"Unfiltered"
+"Unknown"
+    Neznano
+"Unknown Program."
+    Neznani program
+"Unknown Recording Schedule."
+    Neznani plan snemanja
+"Unreachable"
+"Upcoming Recordings"
+"Update"
+    Posodobi
+"Update Recording Settings"
+    Posodobi snemalne nastavitve
+"Use callsign"
+"Use date/time"
+"useonairguide"
+"UV Extreme"
+    UV ektremen
+"UV High"
+    UV visok
+"UV Index"
+    UV index
+"UV Minimal"
+    UV minimalni
+"UV Moderate"
+    UV srednji
+"Value"
+"Video"
+"Video URL"
+"videofilters"
+"Videos"
+"Visibility"
+    Vidljivost
+"visible"
+"Visit $1"
+"Weather"
+"Wednesday"
+    Sreda
+"welcome: backend_log"
+"welcome: music"
+"welcome: settings"
+"welcome: stats"
+"welcome: status"
+"welcome: tv"
+"welcome: video"
+"welcome: weather"
+"What else is on at this time?"
+    Kaj je še ob tem času?
+"Wind"
+    Veter
+"Wind Chill"
+    Temperatura zraka
+"Written by"
+    Napisal
+"xmltvid"
+"year"
+"Yes"
+    Da
+"Yesterday"

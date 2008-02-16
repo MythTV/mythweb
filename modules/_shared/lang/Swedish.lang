@@ -1,0 +1,850 @@
+" at "
+    vid
+"$1 B"
+    $1 B
+"$1 day"
+    $1 dag
+"$1 days"
+    $1 dagar
+"$1 episode"
+    $1 avsnitt
+"$1 episodes"
+    $1 avsnitt
+"$1 GB"
+    $1 GB
+"$1 hr"
+    $1h
+"$1 hrs"
+    $1h
+"$1 KB"
+    $1 KB
+"$1 MB"
+    $1 MB
+"$1 min"
+    $1 min
+"$1 mins"
+    $1 min
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 program ($3), som använder $2 av $4
+"$1 recording"
+    $1 inspelning
+"$1 recordings"
+    $1 inspelningar
+"$1 Search"
+    Sök $1
+"$1 TB"
+    $1 TB
+"$1 to $2"
+    $1 till $2
+"$1 wasted"
+    $1 bortkastade
+"Action"
+    Handling
+"Activate"
+    Aktivera
+"add string"
+    lägg till sträng
+"Additional Tables"
+    Ytterligare tabeller
+"Advanced"
+    Avancerad
+"Advanced Options"
+    Avancerade inställningar
+"Advanced Search"
+    Avancerad sökning
+"airdate"
+    datum
+"Airtime"
+    Sändningstid
+"Album"
+    Album
+"Album (filtered)"
+    Album (filtrerat)
+"All"
+    Alla
+"All groups"
+    Alla grupper
+"All HDTV"
+    Alla HDTV
+"All Music"
+    All musik
+"All recordings"
+    Alla inspelningar
+"Any"
+    Alla
+"Any Category"
+    Alla kategorier
+"Any Channel"
+    Alla kanaler
+"Any Program Type"
+    Alla programtyper
+"Are you sure you want to delete the following show?"
+    Är du säker på att du vill ta bort följande inspelning?
+"Artist"
+    Artist
+"Artist (filtered)"
+    Artist (filtrerad)
+"auto-expire"
+    autoradera
+"Auto-expire recordings"
+    Autoradera inspelningar
+"Auto-flag commercials"
+    Markera reklam automatiskt
+"Auto-transcode"
+    Omkoda automatiskt
+"Back to the program listing"
+    Tillbaka till programlistan
+"Back to the recording schedules"
+    Tillbaka till inspelningsschemat
+"Backend Logs"
+    Logg
+"Backend Status"
+    Systemstatus
+"brightness"
+    ljusstyrka
+"callsign"
+    kortnamn
+"Cancel this schedule."
+    Avbryt denna schemaläggning
+"Cast"
+    Rollbesättning
+"category"
+    kategori
+"Category"
+    Kategori
+"Category Legend"
+    Kategoriförklaring
+"CC"
+    Textning
+"Chan. Callsign"
+    Kanalkortnamn
+"Chan. Name"
+    Kanalnamn
+"Chan. Number"
+    Kanalnummer
+"Channel"
+    Kanal
+"channel"
+    kanal
+"Channel &quot;Jump to&quot;"
+    Kanal &quot;Gå till&quot;
+"Channel Detail"
+    Kanaldetaljer
+"channum"
+    kanalnummer
+"Check for duplicates in"
+    Sök dubbletter i
+"colour"
+    färg
+"Commands"
+    Kommando
+"commfree"
+    reklamfri
+"Configure Channels"
+    Konfigurera kanaler
+"Configure Keybindings"
+    Konfigurera knappar
+"Conflicts"
+    Konflikter
+"Context"
+    Sammanhang
+"contrast"
+    kontrast
+"Count"
+    Antal
+"cover"
+    omslag
+"Create Schedule"
+    Schemalägg
+"Current Conditions"
+    Nuvarande förhållanden
+"Current recordings"
+    Nuvarande inspelningar
+"Currently Browsing:  $1"
+    Just nu visas:  $1
+"Custom"
+    Egen
+"Custom Schedule"
+    Eget schema
+"Data"
+    Data
+"Date"
+    Datum
+"Date Formats"
+    Datumformat
+"Deactivated"
+    Avaktiverad
+"Default"
+    Standard
+"Delete"
+    Radera
+"delete"
+    radera
+"Delete $1"
+    Radera $1
+"Delete + Rerecord"
+    Radera + Återinspela
+"Delete and rerecord $1"
+    Radera och återinspela $1
+"description"
+    beskrivning
+"Description"
+    Beskrivning
+"Destination"
+    Destination
+"Details for"
+    Detaljer för
+"Directed by"
+    Regi
+"director"
+    regissör
+"Display"
+    Visning
+"Displaying"
+    Visar
+"Don't Record"
+    Spela ej in
+"Don't record this program."
+    Spela inte in detta program.
+"Dup Method"
+    Dubblettmetod
+"Duplicate Check method"
+    Dubblettmetod
+"Duplicates"
+    Dubbletter
+"Duration"
+    Längd
+"Edit"
+    Redigera
+"Edit keybindings on"
+    Ändra knappar på
+"Edit MythWeb and some MythTV settings."
+    Ändra MythWeb och några MythTV-inställningar
+"Edit settings for"
+    Ändra inställningar för
+"End"
+    Slut
+"End Late"
+    Sluta senare
+"Episode"
+    Avsnitt
+"Episode Number"
+    Avsnittsnummer
+"Exec. Producer"
+    Producent
+"file size"
+    filstorlek
+"Filtered"
+    Filtrerat
+"Find Date & Time Options"
+    Hitta dag &amp; tid
+"Find Day"
+    Hitta dag
+"Find other showings of this program"
+    Hitta andra visningar av detta program
+"Find showings of this program"
+    Hitta visningar av detta program
+"Find Time"
+    Hitta tid
+"Find Time must be of the format:  HH:MM:SS"
+    Hitta tid måste vara i formatet: HH:MM:SS
+"finetune"
+    finjustera
+"First recording"
+    Första inspelning
+"Forecast"
+    Prognos
+"Forget Old"
+    Glöm gammal
+"format help"
+    formathjälp
+"freqid"
+    frekvens-id
+"Friday"
+    Fredag
+"generic_date"
+    %Y-%m-%d
+"generic_time"
+    %H:%M
+"Genre"
+    Genre
+"Genre (filtered)"
+    Genre (filtrerad)
+"Global"
+    Global
+"Go"
+    Gå
+"Google"
+    Google
+"Group timeslots every"
+    Gruppera tidsluckor varje
+"Guest Starring"
+    Gästspel
+"Guide rating"
+    Betyg
+"Guide Settings"
+    Guideinställningar
+"Handy Predefined Searches"
+    Förberedda sökningar
+"handy: overview"
+    Denna sida innehåller förberedda komplexa sökningar av programlistorna (fungerar för närvarande endast med data från DataDirect, alltså ej i Sverige.).
+"has bookmark"
+    bokmärke
+"has commflag"
+    markerad reklam
+"has cutlist"
+    klipplista
+"HDTV"
+    HDTV
+"High"
+    Hög
+"Hosted by"
+    Värd
+"Hour"
+    Timme
+"Hour Format"
+    Timformat
+"hue"
+    färgton
+"Humidity"
+    Luftfuktighet
+"IMDB"
+    IMDB
+"imdb rating"
+    imdb-betyg
+"Inactive"
+    Inaktiv
+"is editing"
+    redigeras
+"Jump"
+    Gå
+"Jump to"
+    Gå till
+"Jump To"
+    Gå till
+"JumpPoints Editor"
+    Redigera hoppmarkeringar
+"Key bindings"
+    Knappbindningar
+"Keybindings Editor"
+    Redigera knappar
+"Keyword"
+    Nyckelord
+"Keyword Search"
+    Sök nyckelord
+"Language"
+    Språk
+"Last Recorded"
+    Senast inspelad
+"Last recording"
+    Senaste inspelning
+"Last Updated"
+    Senast uppdaterad
+"length"
+    längd
+"Length"
+    Längd
+"Length (min)"
+    Längd (min)
+"Listing &quot;Jump to&quot;"
+    TV-tablå &quot;Gå till&quot;
+"Listing Time Key"
+    TV-tablå tid
+"Listings"
+    TV-tablåer
+"Logs"
+    Logg
+"Low"
+    Låg
+"Manual"
+    Manuell
+"matches"
+    träffar
+"Max star rating for movies"
+    Max stjärnbetyg för filmer
+"minutes"
+    minuter
+"Monday"
+    Måndag
+"more"
+    mer
+"movie"
+    film
+"Movies"
+    Filmer
+"Movies, 3&frac12; Stars or more"
+    Filmer, 3&frac12; stjärnor eller mer
+"Movies, Stinkers (2 Stars or less)"
+    B-filmer (2 stjärnor eller mindre)
+"Music"
+    Musik
+"Music Specials"
+    Musikspecialer
+"MythMusic on the web."
+    MythMusic på webben
+"MythTV channel info"
+    MythTV kanalinfo
+"MythTV global defaults"
+    MythTV globala förval
+"MythTV key bindings"
+    MythTV tangentbindningar
+"MythTV settings table"
+    MythTV inställningstabell
+"MythTV Status"
+    MythTV-status
+"MythVideo Artwork Dir"
+    MythVideo konstkatalog
+"MythVideo Dir"
+    MythVideo-katalog
+"MythVideo on the web."
+    MythVideo på webben
+"MythWeb Global Defaults"
+    MythWeb globala förval
+"MythWeb session settings"
+    MythWeb sessionsinställningar
+"MythWeb Session Settings"
+    MythWeb sessionsinställningar
+"MythWeb Skin"
+    MythWeb-skinn
+"MythWeb Template"
+    MythWeb-mall
+"MythWeb Weather."
+    MythWeb väder.
+"Name"
+    Namn
+"name"
+    namn
+"Never Record"
+    Spela aldrig in
+"New Titles, Premieres"
+    Nya titlar, premiärer
+"Next"
+    Nästa
+"No"
+    Nej
+"NO DATA"
+    INGA DATA
+"No matches found"
+    Inga träffar
+"No matching programs found."
+    Inga matchande program hittades.
+"No recording schedules have been defined."
+    Inga schemalagda inspelningar
+"No Tracks Available"
+    Inga spår tillgängliga
+"No. of recordings to keep"
+    Inspelningar att behålla
+"Non-Music Specials"
+    Icke-musikspecialer
+"Non-Series HDTV"
+    Icke-serier HDTV
+"None"
+    Ingen
+"Notes"
+    Anteckningar
+"Number of episodes"
+    Antal avsnitt
+"Number of shows"
+    Antal visningar
+"Number of timeslots"
+    Antal tidsluckor
+"Only display favourite channels"
+    Visa endast favoritkanaler
+"Only match commercial-free channels"
+    Matcha endast reklamfria kanaler
+"Only match HD programs"
+    Matcha endast HD-program
+"Only New Episodes"
+    Endast nya avsnitt
+"or"
+    eller
+"Original Airdate"
+    Sändningsdatum
+"Part $1 of $2"
+    Del $1 av $2
+"Past Month"
+    Senaste månaden
+"Past Week"
+    Senaste veckan
+"Past Year"
+    Senaste året
+"People"
+    Person
+"People Search"
+    Sök person
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
+    OBS! Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt störa MythTVs funktionalitet.
+"plot"
+    handling
+"Possible conflicts with this show"
+    Möjliga konflikter med denna visning
+"Power"
+    Avancerat
+"Power Search"
+    Avancerad sökning
+"Prefer Channum"
+    Föredra kanalnummer
+"Presented by"
+    Presenteras av
+"Pressure"
+    Lufttryck
+"preview"
+    förhandsvisning
+"Previous"
+    Föregående
+"Previous recordings"
+    Tidigare inspelningar
+"Produced by"
+    Producerad av
+"Profile"
+    Profil
+"profile"
+    profil
+"Program Detail"
+    Programdetaljer
+"Program ID"
+    Program-ID
+"Program Listing"
+    Programlista
+"Radar"
+    Radar
+"Rating"
+    Betyg
+"rating"
+    betyg
+"recgroup"
+    inspelningsgrupp
+"Record new and expire old"
+    Spela in nya, radera gamla
+"Record This"
+    Spela in
+"Recorded Programs"
+    Inspelade program
+"Recording Group"
+    Inspelningsgrupp
+"Recording Options"
+    Inspelningsinställningar
+"Recording Priority"
+    Inspelningsprioritet
+"Recording Profile"
+    Inspelningsprofil
+"Recording Schedules"
+    Inspelningsscheman
+"Recording Statistics"
+    Inspelningsstatistik
+"recpriority"
+    inspelningsprioritet
+"recstatus: cancelled"
+    Denna visning spelades inte in därför att den avbröts manuellt.
+"recstatus: conflict"
+    Ett annat program med en högre prioritet kommer att spelas in.
+"recstatus: currentrecording"
+    Denna visning kommer inte att spelas in därför att detta avsnitt redan spelats in och fortfarande är tillgängligt i listan över inspelningar.
+"recstatus: deleted"
+    Denna visning spelades in men togs bort innan inspelningen var slutförd.
+"recstatus: earliershowing"
+    Detta avsnitt kommer att spelas in vid en tidigare tidpunkt istället.
+"recstatus: force_record"
+    Denna visning sattes manuellt att spela in.
+"recstatus: inactive"
+    Detta inspelningsschema är inaktivt.
+"recstatus: latershowing"
+    Detta avsnitt kommer att spelas in vid en senare tidpunkt istället.
+"recstatus: lowdiskspace"
+    Denna visning spelades inte in därför att det inte fanns tillräckligt med ledigt diskutrymme.
+"recstatus: manualoverride"
+    Denna visning sattes manuellt till att inte spela in.
+"recstatus: neverrecord"
+    Spela aldrig in
+"recstatus: notlisted"
+    Ej listad
+"recstatus: previousrecording"
+    Detta avsnitt har redan spelats in enligt dubblettkontrollen vald för detta program.
+"recstatus: recorded"
+    Denna visning spelades in.
+"recstatus: recording"
+    Denna visning spelas in.
+"recstatus: repeat"
+    Denna visning är en repris och kommer inte att spelas in.
+"recstatus: stopped"
+    Denna visning spelades in men stoppades innan den var färdiginspelad.
+"recstatus: toomanyrecordings"
+    För många inspelningar av detta program finns redan.
+"recstatus: tunerbusy"
+    Denna visning spelades inte in därför att TV-kortet redan användes.
+"recstatus: unknown"
+    Statusen för denna visning är okänd.
+"recstatus: willrecord"
+    Denna visning kommer att spelas in.
+"rectype-long: always"
+    Spela in vilken tid som helst på alla kanaler.
+"rectype-long: channel"
+    Spela in vilken tid som helst på kanal $1.
+"rectype-long: daily"
+    Spela in denna tid varje dag.
+"rectype-long: dontrec"
+    Spela inte in denna specifika visning.
+"rectype-long: finddaily"
+    Spela in en visning av detta program varje dag.
+"rectype-long: findone"
+    Spela in en visning av detta program.
+"rectype-long: findweekly"
+    Spela in en visning av detta program varje vecka.
+"rectype-long: once"
+    Spela endast in denna visning.
+"rectype-long: override"
+    Spela in denna specifika visning.
+"rectype-long: weekly"
+    Spela in denna tid varje vecka.
+"rectype: always"
+    Alltid
+"rectype: channel"
+    Kanal
+"rectype: daily"
+    Daglig
+"rectype: dontrec"
+    Spela ej in
+"rectype: finddaily"
+    En per dag
+"rectype: findone"
+    Hitta en
+"rectype: findweekly"
+    En per vecka
+"rectype: once"
+    Enstaka
+"rectype: override"
+    Överskugga
+"rectype: weekly"
+    Veckovis
+"regex: articles"
+    An?|The
+"Repeat"
+    Repris
+"Reset"
+    Återställ
+"Reverse Order"
+    Omvänd ordning
+"Rows to show between timeslot info"
+    Rader att visa mellan tidsluckeinfo
+"Saturday"
+    Lördag
+"Save"
+    Spara
+"Save Schedule"
+    Spara schema
+"Schedule"
+    Schema
+"Schedule Manually"
+    Schemalägg manuellt
+"Schedule normally."
+    Schemalägg normalt
+"Schedule Options"
+    Schemaläggningsval
+"Schedule Override"
+    Åsidosätt schemaläggning
+"Schedule via $1."
+    Schemalägg via $1.
+"Scheduled"
+    Schemalagd
+"Scheduled Popup"
+    Schemalagd popup
+"Science Fiction Movies"
+    Science Fiction-filmer
+"Search"
+    Sök
+"Search for:  $1"
+    Sök efter:  $1
+"Search Phrase"
+    Sök fras
+"Search Results"
+    Sökresultat
+"Search Type"
+    Sök typ
+"Searches"
+    Sökningar
+"Set Host"
+    Sätt värd
+"settings"
+    inställningar
+"Settings"
+    Inställningar
+"Settings Table"
+    Inställningstabell
+"Settings Table Editor"
+    Inställningstabellredigerare
+"settings: overview"
+    Detta är startsidan för inställningarna. Inte helt komplett, men följande finns för närvarande att välja på:
+"Show"
+    Program
+"Show descriptions on new line"
+    Visa beskrivning på ny rad
+"Show group"
+    Visa grupp
+"Show pixmaps"
+    Visa pixmaps
+"Show recordings"
+    Visa inspelningar
+"Showing all programs from the $1 group."
+    Visar alla program i grupp: $1.
+"Showing all programs."
+    Visar alla program.
+"SI Units?"
+    SI-enheter?
+"sourceid"
+    käll-id
+"Special Searches"
+    Speciella sökningar
+"Star character"
+    Huvudperson
+"Start Date"
+    Startdatum
+"Start Early"
+    Börja tidigare
+"Start Time"
+    Starttid
+"Statistics"
+    Statistik
+"Status"
+    Status
+"Status Bar"
+    Statusrad
+"Stereo"
+    Stereo
+"Sub and Desc (Empty matches)"
+    Undertitel &amp; beskrivning
+"Subtitle"
+    Undertitel
+"subtitle"
+    undertitel
+"Subtitle and Description"
+    Undertitel och beskrivning
+"Subtitled"
+    Textad
+"Sunday"
+    Söndag
+"The requested recording schedule has been deleted."
+    Det begärda inspelningsschemat har tagits bort.
+"Thursday"
+    Torsdag
+"Time"
+    Tid
+"Time Stretch Default"
+    Förvalt tempo
+"Timeslot size"
+    Tidsluckestorlek
+"title"
+    titel
+"Title"
+    Titel
+"Title Search"
+    Sök titel
+"Today"
+    Idag
+"Tomorrow"
+    Imorgon
+"Top"
+    Överst
+"Top $1"
+    Topp $1
+"Total Time"
+    Total tid
+"Track Name"
+    Spårnamn
+"transcoder"
+    omkodare
+"Transcoder"
+    Omkodare
+"Tuesday"
+    Tisdag
+"TV"
+    TV
+"TV functions, including recorded programs."
+    Tv-funktioner, inkl. inspelade program.
+"TV.com"
+    TV.com
+"type"
+    typ
+"Type"
+    Typ
+"Unfiltered"
+    Ofiltrerat
+"Unknown"
+    Okänd
+"Unknown Program."
+    Okänt program.
+"Unknown Recording Schedule."
+    Okänt inspelningsschema.
+"Unreachable"
+"Upcoming Recordings"
+    Kommande inspelningar
+"Update"
+    Uppdatera
+"Update Recording Settings"
+    Uppdatera inspelningsinställningar
+"Use callsign"
+    Använd kanalnamn
+"Use date/time"
+    Använd datum/tid
+"useonairguide"
+"UV Extreme"
+    UV-strålning extrem
+"UV High"
+    UV-strålning hög
+"UV Index"
+    UV-strålning
+"UV Minimal"
+    UV-strålning minimal
+"UV Moderate"
+    UV-strålning måttlig
+"Value"
+    Värde
+"Video"
+    Video
+"Video URL"
+    Video-URL
+"videofilters"
+    videofilter
+"Videos"
+    Videor
+"Visibility"
+    Sikt
+"visible"
+    synlig
+"Visit $1"
+    Besök $1
+"Weather"
+    Väder
+"Wednesday"
+    Onsdag
+"welcome: backend_log"
+    Visa serverloggarna.
+"welcome: music"
+    Bläddra i din musiksamling.
+"welcome: settings"
+    Konfigurera MythWeb och några av MythTVs inställningar.
+"welcome: stats"
+    Visa statistik
+"welcome: status"
+    Visa inspelningsserverns statussida.
+"welcome: tv"
+    Se vad som visas på tv, schemalägg inspelningar och hantera befintliga inspelningar.
+"welcome: video"
+    Bläddra i din videosamling.
+"welcome: weather"
+    Hämta lokal väderprognos.
+"What else is on at this time?"
+    Vad visas mer vid denna tid?
+"Wind"
+    Vind
+"Wind Chill"
+    Vindkyleffekt
+"Written by"
+    Skriven av
+"xmltvid"
+    xmltv-id
+"year"
+    år
+"Yes"
+    Ja
+"Yesterday"
+    Igår

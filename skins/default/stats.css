@@ -1,0 +1,81 @@
+#content_wrapper {
+    width:  80%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+#count_div {
+    float: left;
+}
+#query_time_div {
+    float: right;
+}
+
+/* The general stats box */
+#general_stats dl {
+    font-size:  9pt;
+    max-width:  35em;
+    margin:     1em auto;
+    padding:    .2em .5em .5em .5em;
+    border:     1px dotted #9090B0;
+}
+#general_stats dt {
+    clear:       left;
+    float:       left;
+    width:       15em;
+    padding-top: 3px;
+    text-align:  right;
+}
+#general_stats dd {
+    padding-top: 3px;
+    margin-left: 15.5em;
+}
+
+#top_ten_shows {
+    float:              left;
+    border:             1px solid #9090B0;
+    border-collapse:    collapse;
+}
+#top_ten_shows col.count, #top_ten_shows td+td+td, #top_ten_shows th+th+th {
+    text-align: center;
+}
+#top_ten_shows caption {
+    border:             1px dotted #9090B0;
+    font-weight:        bold;
+}
+#top_ten_shows td {
+    border:             1px dotted #9090B0;
+    padding:            0px .5em;
+}
+#top_ten_shows th {
+    border:             1px solid  #9090B0;
+    border-right:       1px dotted #9090B0;
+    border-left:        1px dotted #9090B0;
+    padding:            0px .5em;
+}
+
+#top_ten_chan {
+    float:              right;
+    border:             1px solid #9090B0;
+    border-collapse:    collapse;
+}
+#top_ten_chan col.count, #top_ten_chan td+td+td, #top_ten_chan th+th+th {
+    text-align: center;
+}
+#top_ten_chan caption {
+    border:             1px dotted #9090B0;
+    font-weight:        bold;
+}
+#top_ten_chan td {
+    border:             1px dotted #9090B0;
+    padding:            0px .5em;
+}
+#top_ten_chan th {
+    border:             1px solid  #9090B0;
+    border-right:       1px dotted #9090B0;
+    border-left:        1px dotted #9090B0;
+    padding:            0px .5em;
+}

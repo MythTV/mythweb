@@ -1,0 +1,99 @@
+"Action"
+    Acción
+    \b(?:action|adven)
+"Adult"
+    Adultos
+    \b(?:adult|erot)
+"Animals"
+    Animales
+    \b(?:animal|tiere)
+"Art_Music"
+    Arte / Música
+    \b(?:art|dance|musi[ck]|kunst|[ck]ultur)
+"Business"
+    Profesional
+    \b(?:biz|busine|negoc|econ)
+"Children"
+    Infantil
+    \b(?:child|kin?d|infan|animation|niñ)
+"Comedy"
+    Comedia
+    \b(?:comed|entertain|sitcom|humor)
+"Crime_Mystery"
+    Misterio / Crímen
+    \b(?:[ck]rim|m[yi]ster)
+"Documentary"
+    Documental
+    \b(?:do[ck])
+"Drama"
+    Drama
+    \b(?:drama)
+"Educational"
+    Educativo
+    \b(?:edu|interests)
+"Food"
+    Alimentación
+    \b(?:food|cook|comida)
+"Game"
+    Juegos
+    \b(?:game|spiele|juego)
+"Health_Medical"
+    Salud / Medicina
+    \b(?:health|medic|salud)
+"History"
+    Historia
+    \b(?:hist)
+"Horror"
+    Terror
+    \b(?:horror|terror)
+"HowTo"
+    Cómo...
+    \b(?:how|home|house|garden|como|casa|jardin)
+"Misc"
+    Varios
+    \b(?:[e]special|variedad|info|collect)
+"News"
+    Noticias
+    \b(?:news|noticias)
+"Reality"
+    Reality Shows
+    \b(?:reality)
+"Romance"
+    Romance
+    \b(?:romance|lieb)
+"SciFi_Fantasy"
+    Ciencias Naturales
+    \b(?:sciencia|natur|ciencia)
+"Science_Nature"
+    Ciencia Ficción
+    \b(?:fantasy|sci\w*\W*fi|fantasia)
+"Shopping"
+    Compras
+    \b(?:shop|tienda)
+"Soaps"
+    Soaps?
+    \b(?:soaps)
+"Spiritual"
+    Espiritual
+    \b(?:spirit|relig)
+"Sports"
+    Deportes
+    \b(?:sport|deportes|futbol)
+"Talk"
+    Debates
+    \b(?:talk|debate)
+"Travel"
+    Viajar
+    \b(?:travel|reisen|viaj)
+"Unknown"
+    Desconocido
+    
+"War"
+    Guerras
+    \b(?:war|guerra)
+"Western"
+    Western
+    \b(?:west|oeste)
+"movie"
+    Películas
+    

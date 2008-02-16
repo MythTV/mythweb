@@ -1,0 +1,771 @@
+" at "
+"$1 B"
+    $1 B
+"$1 day"
+"$1 days"
+"$1 episode"
+    $1 jakso
+"$1 episodes"
+    $1 jaksoa
+"$1 GB"
+    $1 GB
+"$1 hr"
+    $1 tunti
+"$1 hrs"
+    $1 tuntia
+"$1 KB"
+    $1 KB
+"$1 MB"
+    $1 MB
+"$1 min"
+    $1 minuutti
+"$1 mins"
+    $1 minuuttia
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 ohjelmaa, käyttää $2 ($3) $4:stä ($5 vapaana).
+"$1 recording"
+    $1 nauhoitus
+"$1 recordings"
+    $1 nauhoitusta
+"$1 Search"
+"$1 TB"
+    $1 TB
+"$1 to $2"
+    $1 - $2
+"$1 wasted"
+"Action"
+    Toiminto
+"Activate"
+    Aktivoi
+"add string"
+"Additional Tables"
+    Täydentävät Taulukot
+"Advanced"
+"Advanced Options"
+    Edistyneet Valinnat
+"Advanced Search"
+"airdate"
+    lähetysaika
+"Airtime"
+    Lähetysaika
+"Album"
+    Albumi
+"Album (filtered)"
+    Albumi (suodatettu)
+"All"
+"All groups"
+    Kaikki ryhmät
+"All HDTV"
+"All Music"
+    Kaikki Musiikki
+"All recordings"
+    Kaikki nauhoitukset
+"Any"
+    Mikä vain
+"Any Category"
+    Mikä Tahansa Kategoria
+"Any Channel"
+    Mikä Tahansa Kanava
+"Any Program Type"
+    Mikä Tahansa Ohjelmatyyppi
+"Are you sure you want to delete the following show?"
+    Poistetaanko seuraavat ohjelmat?
+"Artist"
+    Esittäjä
+"Artist (filtered)"
+    Esittäjä (suodatettu)
+"auto-expire"
+    anna vanheta
+"Auto-expire recordings"
+    Aut. vanheneminen
+"Auto-flag commercials"
+    Aut. mainosten merkkaus
+"Auto-transcode"
+    Automaattinen jälkikäsittely
+"Back to the program listing"
+    Takaisin ohjelmalistaukseen
+"Back to the recording schedules"
+    Takaisin nauhoituksen ajoitukseen
+"Backend Logs"
+    Palvelimen Lokit
+"Backend Status"
+    Palvelimen Tila
+"brightness"
+    Kirkkaus
+"callsign"
+    Kutsumanimi
+"Cancel this schedule."
+    Peruuta nauhoitus
+"Cast"
+    Pääosat
+"category"
+    Kategoria
+"Category"
+    Kategoria
+"Category Legend"
+    Kategorioiden Värit/Merkitys
+"CC"
+    Tekstitys
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
+"Channel"
+    Kanava
+"channel"
+    kanava
+"Channel &quot;Jump to&quot;"
+    Kanavahyppy
+"Channel Detail"
+    Kanavatiedot
+"channum"
+    Kanava
+"Check for duplicates in"
+    Tarkista kaksoiskappaleet
+"colour"
+    Väri
+"Commands"
+    Komennot
+"commfree"
+    Mainosvapaa
+"Configure Channels"
+    Aseta Kanavat
+"Configure Keybindings"
+    Aseta Näppäinkomennot
+"Conflicts"
+    Ristiriidat
+"Context"
+    Konteksti
+"contrast"
+    Kontrasti
+"Count"
+"cover"
+    Kuvake
+"Create Schedule"
+    Ajoita Nauhoitus
+"Current Conditions"
+    Säätila
+"Current recordings"
+    Nykyiset nauhoitukset
+"Currently Browsing:  $1"
+    Selataan:  $1
+"Custom"
+    Mukautettu
+"Custom Schedule"
+    Mukautettu Ajastus
+"Data"
+"Date"
+    Aika
+"Date Formats"
+    Päivämäärän Muoto
+"Deactivated"
+    Pois päältä
+"Default"
+    Oletus
+"Delete"
+    Poista
+"delete"
+    Poista
+"Delete $1"
+    Poista $1
+"Delete + Rerecord"
+    Poista ja Uudelleennauhoita
+"Delete and rerecord $1"
+    Poista ja Uudelleennauhoita $1
+"description"
+    kuvaus
+"Description"
+    Kuvaus
+"Destination"
+    Kohde
+"Details for"
+    Lisätiedot ohjelmalle
+"Directed by"
+    Ohjaus
+"director"
+    Ohjaaja
+"Display"
+    Tulosta
+"Displaying"
+    Näytetään
+"Don't Record"
+    Älä Nauhoita
+"Don't record this program."
+    Älä nauhoita ohjelmaa.
+"Dup Method"
+    Metodi
+"Duplicate Check method"
+    Kaksoiskapp. Tarkistus
+"Duplicates"
+    Kaksoiskappaleet
+"Duration"
+    Kesto
+"Edit"
+    Muokkaa
+"Edit keybindings on"
+    Muokkaa näppäinkomentoja
+"Edit MythWeb and some MythTV settings."
+    Muokkaa MythWeb:in ja MythTV:n asetuksia.
+"Edit settings for"
+"End"
+    Loppu
+"End Late"
+    Lopeta Myöhemmin
+"Episode"
+    Jakso
+"Episode Number"
+    Jakson Numero
+"Exec. Producer"
+    Tuottaja
+"file size"
+    tiedostokoko
+"Filtered"
+    Suodatettu
+"Find Date & Time Options"
+"Find Day"
+"Find other showings of this program"
+    Etsi muita ohjelman lähetyksiä
+"Find showings of this program"
+    Etsi ohjelman lähetyksiä
+"Find Time"
+"Find Time must be of the format:  HH:MM:SS"
+"finetune"
+    Hienosäätö
+"First recording"
+"Forecast"
+    Ennuste
+"Forget Old"
+    Unohda Vanha
+"format help"
+    apua muotoiluun
+"freqid"
+"Friday"
+    Perjantai
+"generic_date"
+    %a %b %e, %Y
+"generic_time"
+    %I:%M %p
+"Genre"
+    Laji
+"Genre (filtered)"
+    Laji (suodatettu)
+"Global"
+"Go"
+    Mene
+"Google"
+    Google
+"Group timeslots every"
+"Guest Starring"
+    Vierastähdet
+"Guide rating"
+    Arvostelu
+"Guide Settings"
+    Ohjelmalistauksen Asetus
+"Handy Predefined Searches"
+    Esitäytetyt Haut
+"handy: overview"
+    Sisältää valmiita edistyneen haun lauseita.
+"has bookmark"
+    kirjanmerkitty
+"has commflag"
+    mainokset merkitty
+"has cutlist"
+    on leikattu
+"HDTV"
+    Tarkkapiirto
+"High"
+    Korkein
+"Hosted by"
+    Isäntänä
+"Hour"
+    Tunti
+"Hour Format"
+    Ajan Muoto
+"hue"
+    Värikylläisyys
+"Humidity"
+    Ilmankosteus
+"IMDB"
+    Internet MDB
+"imdb rating"
+    imbd arvostelu
+"Inactive"
+    Ei aktiivinen
+"is editing"
+    muokataan
+"Jump"
+    Hyppäys
+"Jump to"
+    Hyppää
+"Jump To"
+    Hyppää
+"JumpPoints Editor"
+    Hyppäämisasetukset
+"Key bindings"
+    Näppäinkomennot
+"Keybindings Editor"
+    Näppäinkomentojen Muokkaus
+"Keyword"
+"Keyword Search"
+    Haku Avainsanalla
+"Language"
+    Kieli
+"Last Recorded"
+"Last recording"
+"Last Updated"
+    Päivitetty Viimeksi
+"length"
+    pituus
+"Length"
+    Pituus
+"Length (min)"
+    Pituus (min)
+"Listing &quot;Jump to&quot;"
+    Listauksen Hyppy
+"Listing Time Key"
+    Listauksen Aikanäppäin
+"Listings"
+    Listaus
+"Logs"
+    Lokit
+"Low"
+    Alin
+"Manual"
+    Manuaalinen
+"matches"
+"Max star rating for movies"
+"minutes"
+    minuuttia
+"Monday"
+    Maanantai
+"more"
+"movie"
+"Movies"
+"Movies, 3&frac12; Stars or more"
+"Movies, Stinkers (2 Stars or less)"
+"Music"
+    Musiikki
+"Music Specials"
+"MythMusic on the web."
+    MythMusic Netissä.
+"MythTV channel info"
+    MythTV kanavatiedot
+"MythTV global defaults"
+"MythTV key bindings"
+    MythTV komennot
+"MythTV settings table"
+"MythTV Status"
+    MythTV Tila
+"MythVideo Artwork Dir"
+"MythVideo Dir"
+"MythVideo on the web."
+    MythVideo Netissä.
+"MythWeb Global Defaults"
+"MythWeb session settings"
+    MythWeb istuntoasetukset
+"MythWeb Session Settings"
+    MythWeb Istuntoasetukset
+"MythWeb Skin"
+"MythWeb Template"
+"MythWeb Weather."
+    MythWeb Sääennuste.
+"Name"
+"name"
+    Nimi
+"Never Record"
+    Älä Koskaan Nauhoita
+"New Titles, Premieres"
+"Next"
+    Seuraava
+"No"
+    Ei
+"NO DATA"
+    EI DATAA
+"No matches found"
+    Ei vastaavuuksia
+"No matching programs found."
+    Ei vastaavia ohjelmia.
+"No recording schedules have been defined."
+    Ajoituksia ei määritelty.
+"No Tracks Available"
+    Kappaleita Ei Saatavilla
+"No. of recordings to keep"
+    N:o nauhoituksia pidettäväksi
+"Non-Music Specials"
+"Non-Series HDTV"
+"None"
+    Ei Mikään
+"Notes"
+    Viesti
+"Number of episodes"
+"Number of shows"
+"Number of timeslots"
+"Only display favourite channels"
+    Vain Suosikkikanavat
+"Only match commercial-free channels"
+"Only match HD programs"
+"Only New Episodes"
+    Vain Uudet Jaksot
+"or"
+"Original Airdate"
+    Vuosi
+"Part $1 of $2"
+    Jakso $1/$2
+"Past Month"
+"Past Week"
+"Past Year"
+"People"
+"People Search"
+    Haku Nimellä
+"Please be warned that by altering this table without knowing what you are doing, you could seriously disrupt mythtv functionality."
+    Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
+"plot"
+    juoni
+"Possible conflicts with this show"
+    Saattaa olla ristiriidassa tämän ohjelman kanssa
+"Power"
+"Power Search"
+    Tehokas Haku
+"Prefer Channum"
+"Presented by"
+    Esittää
+"Pressure"
+    Ilmanpaine
+"preview"
+    esikatselu
+"Previous"
+    Edellinen
+"Previous recordings"
+    Aiemmat nauhoitukset
+"Produced by"
+    Tuottajana
+"Profile"
+    Profiili
+"profile"
+    profiili
+"Program Detail"
+    Ohjelman Lisätietoja
+"Program ID"
+"Program Listing"
+    Ohjelmalistaus
+"Radar"
+    Säätutka
+"Rating"
+    Arvostelu
+"rating"
+    arvostelu
+"recgroup"
+    nauh.ryhmä
+"Record new and expire old"
+    Nauhoita uusi ja poista vanha
+"Record This"
+    Nauhoita Tämä
+"Recorded Programs"
+    Nauhoitetut Ohjelmat
+"Recording Group"
+    Nauhoitusryhmä
+"Recording Options"
+    Nauhoitusvalinnat
+"Recording Priority"
+    Nauhoituksen Prioriteetti
+"Recording Profile"
+    Nauhoitusprofiili
+"Recording Schedules"
+    Tulevat Nauhoitukset
+"Recording Statistics"
+"recpriority"
+    Nauhoitusprioriteetti
+"recstatus: cancelled"
+    Ajoitettu nauhoitus oli manuaalisesti peruttu.
+"recstatus: conflict"
+    Toinen korkeamman prioriteetin ohjelma nauhoitetaan tämän sijasta.
+"recstatus: currentrecording"
+    Jakso on aikaisemmin nauhoitettu ja katsottavissa.
+"recstatus: deleted"
+    Jaksoa nauhoitettiin, mutta nauhoitus poistettiin sen aikana.
+"recstatus: earliershowing"
+    Jakso tullaan nauhoittamaan aikaisemmin.
+"recstatus: force_record"
+    Ohjelman nauhoitus ajoitettiin käsin tälle ajankohdalle.
+"recstatus: inactive"
+    Nauhoitus on poistettu käytöstä tälle ohjelmalle.
+"recstatus: latershowing"
+    Jakso tullaan nauhoittamaan myöhemmin.
+"recstatus: lowdiskspace"
+    Levytilaa ei ollut tarpeeksi tämän ohjelman nauhoittamiseen.
+"recstatus: manualoverride"
+    Ohjelman nauhoitus peruttiin manuaalisesti.
+"recstatus: neverrecord"
+    Ohjelmaa ei tulla koskaan nauhoittamaan
+"recstatus: notlisted"
+    Ohjelmaa ei löydetty oppaasta
+"recstatus: previousrecording"
+    Jakso on nauhoitettu aikaisemmin, sen mukaisesti mitä ajastuksen kaksoiskappaleiden asetukset määräävät.
+"recstatus: recorded"
+    Ohjelma on nauhoitettu.
+"recstatus: recording"
+    Ohjelmaa nauhoitetaan.
+"recstatus: repeat"
+    Ohjelma on uudelleenesitys, joten sitä ei nauhoiteta.
+"recstatus: stopped"
+    Ohjelman nauhoitus lopetettiin ennen sen loppumista.
+"recstatus: toomanyrecordings"
+    Liian monta nauhoitusta tälle ohjelmalle.
+"recstatus: tunerbusy"
+    Viritinkortti oli käytössä tämän ohjelman aikana.
+"recstatus: unknown"
+    Ohjelman tilaa ei voida määritellä.
+"recstatus: willrecord"
+    Ohjelma tullaan nauhoittamaan.
+"rectype-long: always"
+    Nauhoita mihin aikaan tahansa millä kanavalla tahansa.
+"rectype-long: channel"
+    Nauhoita mihin aikaan tahansa kanavalla $1.
+"rectype-long: daily"
+    Nauhoita ohjelma tähän aikaan joka päivä.
+"rectype-long: dontrec"
+    Älä nauhoita tätä lähetystä.
+"rectype-long: finddaily"
+    Etsi yksi nauhoitus tästä lähetyksestä joka päivä.
+"rectype-long: findone"
+    Etsi yksi nauhoitus tästä lähetyksestä.
+"rectype-long: findweekly"
+    Etsi yksi nauhoitus tästä lähetyksestä joka viikko.
+"rectype-long: once"
+    Nauhoita vain tämä lähetys.
+"rectype-long: override"
+    Nauhoita tämä tietty lähetys.
+"rectype-long: weekly"
+    Nauhoita ohjelma tähän aikaan joka viikko.
+"rectype: always"
+    Aina
+"rectype: channel"
+    Kanavakohtainen
+"rectype: daily"
+    Päivittäin
+"rectype: dontrec"
+    Ei Nauhoitusta
+"rectype: finddaily"
+    Etsi Päivittäinen
+"rectype: findone"
+    Etsi Yksi
+"rectype: findweekly"
+    Etsi Viikottainen
+"rectype: once"
+    Kerran
+"rectype: override"
+    Syrjäytys (nauhoita)
+"rectype: weekly"
+    Viikottain
+"regex: articles"
+    An?|The
+"Repeat"
+    Tee uudelleen
+"Reset"
+    Alustus
+"Reverse Order"
+    Päinvastainen Järjestys
+"Rows to show between timeslot info"
+"Saturday"
+    Lauantai
+"Save"
+    Tallenna?
+"Save Schedule"
+    Tallenna Ajoitus
+"Schedule"
+    Ajoitus
+"Schedule Manually"
+    Ajoita Manuaalisesti
+"Schedule normally."
+    Ajoita normaalisti
+"Schedule Options"
+    Ajoitusvalinnat
+"Schedule Override"
+    Ajoituksen Syrjäytys
+"Schedule via $1."
+"Scheduled"
+    Ajoitettu
+"Scheduled Popup"
+    Ajoitusten Ikkunointi
+"Science Fiction Movies"
+"Search"
+    Hae
+"Search for:  $1"
+    Hae:  $1
+"Search Phrase"
+    Hakulause
+"Search Results"
+    Haun Tulokset
+"Search Type"
+    Haun Tyyppi
+"Searches"
+    Haut
+"Set Host"
+    Aseta Isäntä
+"settings"
+    Asetukset
+"Settings"
+    Asetukset
+"Settings Table"
+"Settings Table Editor"
+"settings: overview"
+    MythWeb:in asetussivu...<p>Nykyisellään keskeneräinen. Valitse seuraavista:
+"Show"
+    Ohjelma
+"Show descriptions on new line"
+    Kuvaukset uudella rivillä
+"Show group"
+    Näytä ryhmä
+"Show pixmaps"
+"Show recordings"
+    Näytä nauhoitukset
+"Showing all programs from the $1 group."
+    Näytetään kaikki ohjelmat ryhmästä $1.
+"Showing all programs."
+    Näytetään kaikki ohjelmat.
+"SI Units?"
+    SI-yksiköt
+"sourceid"
+"Special Searches"
+    Edistynyt Haku
+"Star character"
+"Start Date"
+    Päivämäärä
+"Start Early"
+    Aloita Aiemmin
+"Start Time"
+    Aloitusaika
+"Statistics"
+"Status"
+    Systeemin Tila
+"Status Bar"
+    Tilarivi
+"Stereo"
+    Stereo
+"Sub and Desc (Empty matches)"
+    Kuvaus ja Nimike (Ei vastaavuuksia)
+"Subtitle"
+    Jakson Nimi
+"subtitle"
+    Jakson nimi
+"Subtitle and Description"
+    Jakson Kuvaus
+"Subtitled"
+    Tekstitetty
+"Sunday"
+    Sunnuntai
+"The requested recording schedule has been deleted."
+    Ajoitettu nauhoitus on poistettu
+"Thursday"
+    Torstai
+"Time"
+    Aika
+"Time Stretch Default"
+    Ajan Säädön Oletus
+"Timeslot size"
+"title"
+    Nimike
+"Title"
+    Nimike
+"Title Search"
+    Haku Nimikkeellä
+"Today"
+    Tänään
+"Tomorrow"
+    Huomenna
+"Top"
+    Ylös
+"Top $1"
+"Total Time"
+"Track Name"
+    Kappaleen Nimi
+"transcoder"
+    jälkikäsittely
+"Transcoder"
+    Jälkikäsittely
+"Tuesday"
+    Tiistai
+"TV"
+    Televisio
+"TV functions, including recorded programs."
+    Nauhoitetut ohjelmat ja muut TV-asetukset.
+"TV.com"
+    TV.com
+"type"
+    tyyppi
+"Type"
+    Nauhoitustapa
+"Unfiltered"
+    Suodattamatonta
+"Unknown"
+    Tuntematon
+"Unknown Program."
+    Tuntematon Ohjelma.
+"Unknown Recording Schedule."
+    Tuntematon Ajoitus.
+"Unreachable"
+"Upcoming Recordings"
+    Tulevat Nauhoitukset
+"Update"
+    Päivitä
+"Update Recording Settings"
+    Päivitä Nauhoitusasetukset
+"Use callsign"
+"Use date/time"
+"useonairguide"
+    Käytä Ohjelmavirran Opasta
+"UV Extreme"
+    Erittäin korkea UV
+"UV High"
+    Korkea UV
+"UV Index"
+    UV-indeksi
+"UV Minimal"
+    Alhainen UV
+"UV Moderate"
+    Keskimääräinen UV
+"Value"
+"Video"
+    Videot
+"Video URL"
+"videofilters"
+    Videosuodattimet
+"Videos"
+    Videot
+"Visibility"
+    Näkyvyys
+"visible"
+    Näkyvä
+"Visit $1"
+"Weather"
+    Säätila
+"Wednesday"
+    Keskiviikko
+"welcome: backend_log"
+    tervetuloa: lokit
+"welcome: music"
+    tervetuloa: musiikki
+"welcome: settings"
+    tervetuloa: asetukset
+"welcome: stats"
+"welcome: status"
+    tervetuloa: systeemin tila
+"welcome: tv"
+    tervetuloa: televisio
+"welcome: video"
+    tervetuloa: videot
+"welcome: weather"
+    tervetuloa: säätila
+"What else is on at this time?"
+    Mitä muuta on tähän aikaan?
+"Wind"
+    Tuuli
+"Wind Chill"
+    Tuulen Viileys
+"Written by"
+    Käsikirjoittaja
+"xmltvid"
+"year"
+    vuosi
+"Yes"
+    Kyllä
+"Yesterday"
