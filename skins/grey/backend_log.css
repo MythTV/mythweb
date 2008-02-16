@@ -1,0 +1,32 @@
+#backend_logs {
+    margin:             10px auto;
+    border:             1px solid #48f;
+    border-right:       2px solid #48f;
+    border-collapse:    collapse;
+    color:              white;
+}
+
+#backend_logs td {
+    padding:        2px;
+    border:         1px solid #000;
+    border-right:   1px solid #000;
+}
+#backend_logs th {
+    padding:        2px 5px;
+    border:         1px solid #000;
+    border-right:   1px solid #000;
+    text-align:     left;
+}
+
+#backend_logs tr.header {
+    background-color:   #134;
+    color:              #ffb;
+}
+
+#backend_logs tr.odd {
+    background-color:   #475;
+}
+
+#backend_logs tr.even {
+    background-color:   #355;
+}

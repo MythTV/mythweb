@@ -1,0 +1,221 @@
+/* popup and menu classes */
+.popup {
+    position:         absolute;
+    visibility:       hidden;
+    top:              0px;
+    left:             0px;
+    color:            #cccccc;
+    background-color: #333333;
+    border:           2px ridge #000;
+    padding:          5px;
+    font-size:        9pt;
+}
+.popup table {
+    font-size:        9pt;
+}
+
+/*
+
+    This other stuff isn't used quite yet, but is here as a placeholder so I don't lose the necessary styles
+
+div.popup_menu {
+    position:         absolute;
+    visibility:       hidden;
+    top:              0px;
+    left:             0px;
+    color:            #000036;
+    background-color: #40A0B0;
+    border-right:     2px groove #289;
+    border-bottom:    2px groove #289;
+    border-left:      1px solid #289;
+    border-top:       1px solid #289;
+    padding:          10px;
+    font-size:        13px;
+}
+div.popup_menu A, div.popup_menu A:link, div.popup_menu A:visited {
+    color: #000036;
+    text-decoration: none;
+}
+div.popup_menu A:hover, div.popup_menu_hover {
+    color: #000036;
+    text-decoration: underline;
+}
+div.popup_menu_item, div.popup_menu_item A, div.popup_menu_item A:link, div.popup_menu_item A:visited {
+    font-size: 13px;
+    color: #003040;
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+}
+div.popup_menu_item A:hover, div.popup_menu_item A:active {
+    background-color: #70D0F0;
+    text-decoration: underline;
+}
+div.popup_menu_sep {
+    border-bottom:  1px ridge #208090;
+}
+
+ul.tree_item_menu {
+    width:              20px;
+    height:             20px;
+}
+
+ul.popup_menu {
+    display:            block;
+    list-style-type:    none;
+    margin:             0px;
+    padding:            0px;
+    font-size:          10pt;
+}
+ul.popup_menu li {
+    font-weight:        bold;
+    color:              #cce;
+    padding:            3px 0px 0px 4px;
+    margin:             -3px 0px 0px 0px;
+    cursor:             default;
+    white-space:        nowrap;
+    list-style-type:    none;
+    height:             20px;
+}
+ul.popup_menu.vertical li {
+    width:              20px;
+    list-style-type:    none;
+}
+
+ul.popup_menu li.active {
+    background-color: #607090;
+}
+ul.popup_menu li a {
+    text-decoration:    none;
+    color:              #cde !important;
+}
+ul.popup_menu ul {
+    position:           absolute;
+    visibility:         hidden;
+    text-align:         left;
+    background-color:   #304060;
+    border:             1px solid #020;
+    width:              11em;
+    margin:             2px 0px 0px 0px;
+    padding:            0px;
+}
+ul.popup_menu ul li.sep {
+    border-top:         1px solid #6090d0;
+}
+ul.popup_menu ul li, ul.popup_menu.vertical ul li, ul.popup_menu.horizontal ul li {
+    margin:             0px;
+    padding:            3px 0px 0px 0px;
+    border-bottom:      1px solid #00191a;
+    border-right:       none;
+    white-space:        normal;
+    width:              11em;
+    height:             18px;
+}
+ul.popup_menu ul li a {
+    margin-top:         -3px !important;
+    display:            block;
+    width:              9em;
+    color:              #cde;
+    text-decoration:    none;
+    padding:            3px 1em;
+}
+ul.popup_menu ul li a:hover {
+    color:              #def;
+    background-color:   #205980;
+}
+
+ul.popup_menu ul li.active {
+    background-color:   #105053;
+    color:              white;
+}
+
+#menu {
+    display:            block;
+    list-style-type:    none;
+    margin:             0px 220px 0px 0px;
+    padding:            0em 0em;
+    font-size:          10pt;
+    background-color:   #103949;
+    height:             20px;
+    border-bottom:      1px solid black;
+}
+#menu li {
+    font-weight:        bold;
+    color:              #cce;
+    padding:            0em 1em;
+    margin:             0em;
+    cursor:             default;
+    white-space:        nowrap;
+    list-style-type:    none;
+    height:             18px;
+    padding-top:        3px;
+}
+#menu li span.subtext {
+    font-weight:        normal;
+}
+#menu.horizontal li {
+    float:              left;
+    border-right:       1px solid #002;
+}
+
+#menu.vertical {
+    width:              8em;
+    border-right:       1px solid #600;
+    border-top:         1px solid #600;
+}
+#menu.vertical li {
+    width:              7em;
+    border-bottom:      1px solid #600;
+    list-style-type:    none;
+}
+
+#menu li.active {
+    background-color: #205060;
+}
+#menu li a {
+    text-decoration:    none;
+    color:              #cce;
+}
+#menu ul {
+    position:           absolute;
+    visibility:         hidden;
+    text-align:         left;
+    background-color:   #103A39;
+    border:             1px solid #020;
+    width:              13em;
+    margin:             0px;
+    padding:            0px;
+}
+#menu ul li.sep {
+    border-top:         1px solid #609A99;
+}
+#menu ul li, #menu.vertical ul li, #menu.horizontal ul li {
+    border-right:       none;
+    padding:            0;
+    white-space:        normal;
+    margin: 0px;
+    border-bottom:      1px solid #001A19;
+    padding-top:        3px;
+    height:             18px;
+    width:              13em;
+}
+#menu ul li a {
+    margin-top: -3px !important;
+    display:            block;
+    width:              11em;
+    color:              #cce;
+    text-decoration:    none;
+    padding:            3px 1em;
+}
+#menu ul li a:hover {
+    color:              #DDF;
+    background-color:   #206A59;
+}
+
+#menu ul li.active {
+    background-color:   #105350;
+    color:              white;
+}
+
+*/
+

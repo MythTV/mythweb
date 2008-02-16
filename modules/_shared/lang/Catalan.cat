@@ -1,0 +1,129 @@
+"Action"
+    Acció
+    \b(?:action|adven)
+"Adult"
+    Adults
+    \b(?:adult|erot)
+"Animals"
+    Animals
+    \b(?:animal|tiere)
+"Art_Music"
+    Arte / Música
+    \b(?:art|dance|musi[ck]|kunst|[ck]ultur)
+"Business"
+    Professional
+    \b(?:biz|busine|negoc|econ)
+"Children"
+    Infantil
+    \b(?:child|kin?d|infan|animation|niñ)
+"Comedy"
+    Comèdia
+    \b(?:comed|entertain|sitcom|humor)
+"Crime_Mystery"
+    Misterio / Crímen
+    \b(?:[ck]rim|m[yi]ster)
+"Documentary"
+    Documental
+    \b(?:do[ck])
+"Drama"
+    Drama
+    \b(?:drama)
+"Action"
+    Acció
+    \b(?:action|adven)
+"Adult"
+    Adults
+    \b(?:adult|erot)
+"Animals"
+    Animals
+    \b(?:animal|tiere)
+"Art_Music"
+    Art / Música
+    \b(?:art|dance|musi[ck]|kunst|[ck]ultur)
+"Business"
+    Professional
+    \b(?:biz|busine|negoc|econ)
+"Children"
+    Infantil
+    \b(?:child|kin?d|infan|animation|niñ)
+"Comedy"
+    Comèdia
+    \b(?:comed|entertain|sitcom|humor)
+"Crime_Mystery"
+    Misteri / Críms
+    \b(?:[ck]rim|m[yi]ster)
+"Documentary"
+    Documental
+    \b(?:do[ck])
+"Drama"
+    Drama
+    \b(?:drama)
+"Educational"
+    Educatiu
+    \b(?:edu|interests)
+"Food"
+    Alimentació
+    \b(?:food|cook|comida)
+"Game"
+    Jocs
+    \b(?:game|spiele|juego)
+"Health_Medical"
+    Salut / Medicina
+    \b(?:health|medic|salud)
+"History"
+    Història
+    \b(?:hist)
+"Horror"
+    Terror
+    \b(?:horror|terror)
+"HowTo"
+    Com fer...
+    \b(?:how|home|house|garden|como|casa|jardin)
+"Misc"
+    Diversos
+    \b(?:[e]special|variedad|info|collect)
+"News"
+    Noticies
+    \b(?:news|noticias)
+"Reality"
+    Reality Shows
+    \b(?:reality)
+"Romance"
+    Romantiques
+    \b(?:romance|lieb)
+"SciFi_Fantasy"
+    Ciencies naturals
+    \b(?:sciencia|natur|ciencia)
+"Science_Nature"
+    Ciencia Ficció
+    \b(?:fantasy|sci\w*\W*fi|fantasia)
+"Shopping"
+    Compres
+    \b(?:shop|tienda)
+"Soaps"
+    Culebrots
+    \b(?:soaps)
+"Spiritual"
+    Espiritual
+    \b(?:spirit|relig)
+"Sports"
+    Esports
+    \b(?:sport|deportes|futbol)
+"Talk"
+    Debats
+    \b(?:talk|debate)
+"Travel"
+    Viatjar
+    \b(?:travel|reisen|viaj)
+"Unknown"
+    Desconegut
+    
+"War"
+    Guerra
+    \b(?:war|guerra)
+"Western"
+    Western
+    \b(?:west|oeste)
+"movie"
+    Películes
+    

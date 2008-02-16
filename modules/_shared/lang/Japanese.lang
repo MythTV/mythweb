@@ -1,0 +1,1070 @@
+""
+" at "
+"# Tracks"
+"$1 B"
+"$1 day"
+    $1 日
+"$1 days"
+    $1 日
+"$1 episode"
+    $1番組
+"$1 episodes"
+    $1番組
+"$1 GB"
+"$1 hr"
+    $1 時間
+"$1 hrs"
+    $1 時間
+"$1 is not responding."
+"$1 KB"
+"$1 MB"
+"$1 min"
+    $1分
+"$1 mins"
+    $1分
+"$1 month"
+"$1 months"
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1番組,  $4 中 $2 ($3) 使用。 ($5 空)
+"$1 recording"
+    $1録画
+"$1 recordings"
+    $1録画
+"$1 requests pending."
+"$1 Search"
+    $1 検索
+"$1 TB"
+"$1 to $2"
+    $1 から $2
+"$1 wasted"
+"$1 year"
+"$1 years"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
+"&deg;C"
+"&deg;F"
+"Aborted"
+"Aborting"
+"Action"
+    アクション
+"Activate"
+    有効
+"Active Screens"
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
+"add string"
+    条件追加
+"Add this Playlist as a Subplaylist"
+"Add To Active Screens"
+"Additional Tables"
+    追加テーブル
+"Admin Key"
+"Advanced"
+    アドバンスド
+"Advanced Options"
+    アドバンスドオプション
+"Advanced Search"
+    アドバンスドサーチ
+"airdate"
+"Airdate"
+    放送日
+"Airtime"
+    放送時間
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
+"All"
+    全て
+"All Albums"
+"All Categories"
+"All Fields"
+"All Genres"
+"All groups"
+    全グループ
+"All HDTV"
+    全てのHDTV
+"All Hosts"
+"All recordings"
+    全ての録画
+"All Songs"
+"ALLOCINETYPE"
+"An error occured while adding your playlist."
+"and"
+"Any"
+    全て
+"Any Category"
+    いずれかのカテゴリー
+"Any Channel"
+    いずれかのチャンネル
+"Any Program Type"
+    いずれかのタイプ
+"Append"
+"Append to Current Playlist"
+"Are you sure you want to delete the following show?"
+    この録画を削除してよろしいですか？
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
+"ASX Stream"
+"Audio Bitrate"
+"Audio for Hearing Impaired"
+"Audio for Visually Impaired"
+"Auto Expire"
+"Auto-expire recordings"
+    自動削除
+"Auto-flag commercials"
+    CM自動検知
+"Auto-transcode"
+    自動トランスコード
+"AVC/H.264"
+"Back"
+"Back Tab"
+"Back to the program listing"
+    番組一覧に戻る
+"Back to the recorded programs"
+"Back to the recording schedules"
+    録画予約に戻る
+"Backend Logs"
+    バックエンドログ
+"Backend Status"
+    バックエンドステータス
+"Backspace"
+"Begin a New Search"
+"brightness"
+    明るさ
+"Browse"
+"Browse = no"
+"Browse = yes"
+"Browse all"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
+"callsign"
+    コールサイン
+"Cancel"
+"Cancel this schedule."
+    この予約をキャンセルする
+"Cancelled"
+"Caps Lock"
+"Cast"
+    キャスト
+"category"
+    カテゴリー
+"Category"
+    カテゴリー
+"Category Legend"
+    カテゴリー凡例
+"CC"
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
+"Channel"
+    チャンネル
+"channel"
+    チャンネル
+"Channel &quot;Jump to&quot;"
+    チャンネル &quot;移動&quot;
+"Channel Detail"
+    チャンネル詳細
+"Channel Info"
+"Channels"
+"channum"
+    チャンネル
+"Check for duplicates in"
+    重複チェック対象
+"Childrens Movies"
+"Choose Genre.."
+"Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
+"Click to View Playlist"
+"Closed Captioning"
+"colour"
+    カラー
+"Commands"
+    コマンド
+"Commercials Flagged"
+"commfree"
+    CMカット
+"Conflict"
+"Conflicts"
+    衝突
+"Context"
+    コンテキスト
+"contrast"
+    コントラスト
+"Count"
+    カウント
+"Create a New Playlist"
+"Create a Random Mix"
+"Create Schedule"
+    予約作成
+"Current Conditions"
+    現在の状況
+"Current Recording"
+"Current recordings"
+    現在の録画
+"Currently Browsing:  $1"
+    表示日: $1
+"Currently Recording:  Edit"
+"Custom"
+    カスタム
+"Custom Schedule"
+    カスタム録画
+"Custom Search"
+"Data"
+"Database"
+"Database Health"
+"Date"
+    日付
+"Date Formats"
+    日付書式
+"Deactivated"
+    無効
+"Deaf Signed"
+"Default"
+    通常設定
+"Default MythVideo View"
+"Delete"
+    削除
+"delete"
+    削除
+"Delete $1"
+    削除:$1
+"Delete + Rerecord"
+    削除+録画
+"Delete and allow rerecord: $1"
+"Delete and rerecord $1"
+    削除と録画 $1
+"Delete Forever"
+"DELETE this Saved Playlist"
+"description"
+    内容
+"Description"
+    内容
+"Destination"
+    対象
+"Details for: $1"
+"Direct Download"
+"Directed by"
+    監督
+"Display"
+    表示
+"Dolby Surround"
+"Don't Record"
+    録画停止
+"Don't record this program."
+    録画しない
+"Done, Unknown Status"
+"Down"
+"Download URL override"
+"Dup Method"
+    重複検知
+"Duplicate"
+"Duplicate Check method"
+    重複チェック方法
+"Duplicates"
+    重複
+"Earlier"
+"Earlier Showing"
+"Edit"
+    編集
+"Edit existing group"
+"Edit MythWeb and some MythTV settings."
+    MythWebとMythTVの設定
+"Edit Screen"
+"Edit settings for: $1"
+"Editing "
+"Enable Video Playback"
+"End"
+"End Late"
+    録画延長
+"Enter"
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
+"Episode"
+    サブタイトル
+"Episode Number"
+    番組番号
+"error: playgroup $1 exists"
+"Errored"
+"Erroring"
+"Escape"
+"Everything"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
+"Exec. Producer"
+    製作責任者
+"Extended Check"
+"File Size"
+    ファイルサイズ
+"Filter"
+"Filters"
+"Find Date & Time Options"
+    日時オプション
+"Find Day"
+    曜日指定
+"Find other showings of this program"
+    この番組のほかの放送を見つける
+"Find showings of this program"
+    この番組を検索する
+"Find Time"
+    時間検索
+"Find Time must be of the format:  HH:MM:SS"
+    時間検索の書式: HH:MM:SS
+"finetune"
+    ファインチューン
+"Finished"
+"First recording"
+    最初の録画
+"Flag Commercials"
+"Force HTTP for streams"
+"Force HTTP/HTTPS port for streams"
+"Forced"
+"Forecast"
+    予報
+"Forget Old"
+    もう一度録画する
+"format help"
+    書式ヘルプ
+"Found %s results for '%s'"
+"freqid"
+    周波数ID
+"Friday"
+    金曜日
+"Frontends"
+"generic_date"
+    %Y %b %e
+"generic_time"
+    %I:%M %p
+"Genre"
+    ジャンル
+"Genres"
+"Go"
+    移動
+"Google"
+"Group timeslots every"
+    タイムスロットグループ数
+"Guest Starring"
+    ゲスト出演
+"Guide rating"
+"Guide Settings"
+    ガイド設定
+"Handy Predefined Searches"
+    おてがるサーチ
+"handy: overview"
+    下のメニューから簡単に検索できます。
+"has Bookmark"
+"Has Cutlist"
+"HD"
+"HDTV"
+"Height"
+"Hide"
+"High"
+    高
+"Home"
+"Host"
+"Hosted by"
+    主催
+"Hour"
+    時
+"Hour Format"
+    時間書式
+"hue"
+"Humidity"
+    湿度
+"IMDB"
+"IMDBTYPE"
+"Inactive"
+    無効
+"Inactive Screens"
+"info: activate recording"
+"info: default recording"
+"info: dont record"
+"info: flvplayer"
+    <p>
+    Flash video playback is currently only a proof-of-concept and should be
+    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
+    default.
+    </p>
+    <p>
+    It currently expects that ffmpeg is installed and compiled with mp3
+    support, and that the recordings files are accessible to your webserver
+    userid.  It probably won't work with Nupplevideo files, and in the end,
+    it may just not work at all (or maybe even worse).
+    </p>
+    <p>
+    Enable this feature at your own risk, and don't expect too much
+    official help until it has left the experimental phase.
+    </p>
+"info: hidden advanced schedule"
+"info: record this"
+"info:forget old"
+"info:never record"
+"Insert"
+"Jump"
+    移動
+"Jump Points"
+"Jump to"
+    移動
+"Jump To"
+    移動
+"JumpPoints Editor"
+    ジャンプポイントエディター
+"Key Bindings"
+"Key bindings"
+    キーバインド
+"Key Controls"
+"Keybindings Editor"
+    キーバインドエディター
+"Keyword"
+    キーワード
+"Keyword Search"
+    キーワードサーチ
+"Keywords"
+"Language"
+    言語
+"Last Recorded"
+    最後の録画
+"Last recording"
+    最後の録画
+"Last Updated"
+    最後の更新
+"Later"
+"left"
+"Left"
+"leftl"
+"length"
+    時間
+"Length"
+    時間
+"Length (min)"
+    時間 (分)
+"Listing &quot;Jump to&quot;"
+    一覧 &quot;移動&quot;
+"Listing Time Key"
+    一覧 タイムキー
+"Listings"
+    番組表
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Local Server Statistics"
+"Local weather forecast"
+"Locale"
+"Logs"
+    ログ
+"Low"
+    低
+"Low Space"
+"Manual"
+    手動
+"matches"
+    条件
+"Max star rating for movies"
+    映画の最大格付けスター
+"minutes"
+    分
+"Missing Cover"
+"Monday"
+    月曜日
+"Mono"
+"More"
+"more"
+    追加
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
+"movie"
+    映画
+"Movies"
+    映画
+"Movies, 3&frac12; Stars or more"
+"Movies, Stinkers (2 Stars or less)"
+"Music"
+    ミュージック
+"Music Specials"
+"My Session"
+"MythMusic on the web."
+    MythMusic オンザウェブ
+"MythTV"
+"MythTV Status"
+    MythTVステータス
+"MythVideo Artwork Dir"
+    MythVideo画像ディレクトリ
+"MythVideo Dir"
+    MythVideoディレクトリ
+"MythVideo on the web."
+    MythVideo オンザウェブ
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
+"MythWeb"
+"MythWeb Defaults"
+"MythWeb Global Defaults"
+    MythWeb全体設定
+"MythWeb Session"
+"MythWeb Skin"
+    MythWebスキン
+"MythWeb Template"
+    MythWebテンプレート
+"MythWeb Weather."
+    MythWeb 天気
+"Name"
+    名前
+"name"
+    名前
+"Narrow Your Search"
+"Never Record"
+    もう録画しない
+"New"
+"New Episodes Only"
+"New Group"
+"New Search"
+"New Titles, Premieres"
+"NO DATA"
+"No Frontends allow remote control."
+"No matches found"
+    一致する物がありませんでした
+"No matching programs found."
+    該当する番組がありません
+"No Public Playlists"
+"No recording schedules have been defined."
+    予約が設定されていません
+"No. of recordings to keep"
+    録画番組保存数
+"Non-Music Specials"
+"Non-Series HDTV"
+"None"
+    無し
+"Notes"
+    備考
+"Number of episodes"
+    録画数
+"Number of shows"
+    番組数
+"Number of Songs"
+"Number of timeslots"
+    タイムスロット数
+"Only display favourite channels"
+    お気に入りのチャンネルのみ表示する
+"Only match commercial-free channels"
+"Only match HD programs"
+    HD番組のみ
+"Only New Episodes"
+    新しい番組のみ
+"Optimize Tables"
+"or"
+"Original Airdate"
+    初回放送
+"Originally aired between"
+"Override"
+"Page Down"
+"Page Up"
+"Part $1 of $2"
+    $1/$2
+"Past Month"
+    一ヶ月
+"Past Week"
+    一週間
+"Past Year"
+    一年間
+"Paused"
+"Pending"
+"People"
+    ピープル
+"People Search"
+    ピープルサーチ
+"Percent of time spent recording"
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Playback Group"
+"Playback Groups"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
+"Possible conflicts"
+"Possible conflicts with this show"
+    次の番組と衝突しています
+"Power"
+    パワー
+"Power Search"
+    パワーサーチ
+"Prefer Channum"
+    チャンネル番号を優先
+"prefer_channum"
+"Preferred Input"
+"Presented by"
+    提供
+"Pressure"
+    気圧
+"Previous Recording"
+"Previous recordings"
+    以前の録画
+"Produced by"
+    製作
+"Profile"
+    プロファイル
+"profile"
+    プロファイル
+"Program Detail"
+    番組詳細
+"Program ID"
+    番組ID
+"Program Listing"
+    番組表
+"Program Type"
+"Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
+"Radar"
+    レーダー
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
+"Rating"
+    レーティング
+"Recently Added Albums"
+"Recently completed jobs"
+"Recently Played Songs"
+"recgroup"
+    グループ
+"Record new and expire old"
+    古い物から削除する
+"Record This"
+    これを録画する
+"Recorded"
+"Recorded Programs"
+    録画済み
+"Recording Details"
+"Recording Group"
+    録画グループ
+"Recording Options"
+    録画オプション
+"Recording Priority"
+    録画優先順位
+"Recording Profile"
+    録画プロファイル
+"Recording Schedules"
+    録画予約
+"Recording Statistics"
+    録画統計
+"recpriority"
+    録画優先順位
+"recstatus: cancelled"
+    キャンセルされました。
+"recstatus: conflict"
+    他の優先順位の高い番組が録画されます。
+"recstatus: currentrecording"
+    録画ずみです。
+"recstatus: deleted"
+    録画開始されましたが終了前に削除されました。
+"recstatus: earliershowing"
+    この番組の代わりに早い番組が録画されます݂
+"recstatus: force_record"
+    この番組を手動で録画するように設定されています。
+"recstatus: inactive"
+    無効に設定されています。
+"recstatus: latershowing"
+    この番組の代わりに後の番組が録画されます
+"recstatus: lowdiskspace"
+    ディスクの空きが少ないため録画できません
+"recstatus: manualoverride"
+    手動で録画を停止されました
+"recstatus: neverrecord"
+    録画しないようにマークされています。
+"recstatus: notlisted"
+    現在の一覧には一致しません。
+"recstatus: previousrecording"
+    重複検地で以前に録画されたと判断されました݂。
+"recstatus: recorded"
+    録画済
+"recstatus: recording"
+    録画中
+"recstatus: repeat"
+    再放送のため録画されません
+"recstatus: stopped"
+    録画開始されましたが終了前に停止しました。
+"recstatus: toomanyrecordings"
+    最大録画数になりました
+"recstatus: tunerbusy"
+    チューナーが使用中です
+"recstatus: unknown"
+    不明
+"recstatus: willrecord"
+    録画されます
+"rectype-long: always"
+    この番組をどのチャンネルでも録画する
+"rectype-long: channel"
+    この番組をこのチャンネルで録画する
+"rectype-long: daily"
+    この番組を毎日この時間帯に録画する
+"rectype-long: dontrec"
+    この番組を録画しない
+"rectype-long: finddaily"
+    この番組を一日一回録画する
+"rectype-long: findone"
+    この番組を一回だけ録画する
+"rectype-long: findweekly"
+    この番組を毎週一回録画する
+"rectype-long: once"
+    この放送のみ録画する
+"rectype-long: override"
+    この番組を上書きで録画する
+"rectype-long: weekly"
+    この番組を毎週この時間帯に録画する
+"rectype: always"
+    常時
+"rectype: channel"
+    チャンネル
+"rectype: daily"
+    毎日
+"rectype: dontrec"
+    録画しない
+"rectype: finddaily"
+    一日一回
+"rectype: findone"
+    検索
+"rectype: findweekly"
+    週一回
+"rectype: once"
+    1回
+"rectype: override"
+    上書き
+"rectype: weekly"
+    毎週
+"regex: articles"
+    An?|The
+"Remote"
+"Remove Item from Playlist"
+"Repair Tables"
+"Repeat"
+    再開
+"Reset"
+    リセット
+"Retry"
+"Return to Statistics Page"
+"right"
+"Right"
+"Rows to show between timeslot info"
+"Running"
+"Saturday"
+    土曜日
+"Save"
+    保存
+"Save or Rename the Current Playlist"
+"Save Schedule"
+    保存
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
+"Scan Collection"
+"Schedule"
+    予約
+"Schedule Manually"
+    手動予約
+"Schedule normally."
+    通常の予約
+"Schedule Options"
+    予約オプション
+"Schedule Override"
+    予約上書き
+"Schedule via $1."
+"Scheduled"
+    予約
+"Scheduled Popup"
+    予約ポップアップ
+"Science Fiction Movies"
+"Search"
+    サーチ
+"Search $1"
+"Search for:  $1"
+    $1 の検索結果
+"Search Music"
+"Search Phrase"
+    サーチフレーズ
+"Search Results"
+    検索結果
+"Search the Music Database"
+"Search Type"
+    サーチタイプ
+"Searches"
+    サーチメニュー
+"Server Statistics"
+"Set Host"
+    ホスト設定
+"Settings"
+    設定
+"settings"
+    設定
+"Settings Table"
+    Settings テーブル
+"settings/stream: protocol"
+"settings: notice"
+    設定項目の意味がわからないときは変更しないでください。MythTVが正常に動作しなくなります。
+"Shift"
+"Show"
+    番組
+"Show group"
+    グループ表示
+"Show pixmaps"
+    プレビューイメージを表示する
+"Show recordings"
+    番組表示
+"show_channel_icons"
+"show_popup_info"
+"show_video_covers"
+"Showing all programs from the $1 group."
+    $1のすべての番組を表示
+"Showing all programs."
+    すべての番組を表示
+"Showings between"
+"Shows"
+"SI Units"
+    SI単位を使用する
+"Skip Ahead"
+"Skip Back"
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Songs Rated"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
+"sortby_channum"
+"sourceid"
+"Space"
+"Special Searches"
+    スペシャル検索
+"Star character"
+    スター文字
+"Start Date"
+    開始日
+"Start Early"
+    早めの録画
+"Start Time"
+    開始時間
+"Starting"
+"Statistics"
+    統計
+"Stats"
+"Status"
+    ステータス
+"Status Bar"
+    ステータスバー
+"Stereo"
+    ステレオ
+"Still Recording: Edit"
+"Stopping"
+"Storage Group"
+"Streaming"
+"Sub and Desc (Empty matches)"
+    サブタイトルと内容(エンプティーマッチ)
+"Submit Search"
+"Subtitle"
+    サブタイトル
+"Subtitle and Description"
+    サブタイトルと内容
+"Subtitle then Description"
+"Subtitled"
+"Subtitles Available"
+"Sunday"
+    日曜日
+"Surround Sound"
+"Tab"
+"The requested recording schedule has been deleted."
+    要求された予約は既に削除されています。
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Thursday"
+    木曜日
+"Time"
+    放送時間
+"Time Span"
+"Time Stretch"
+"Time Stretch Default"
+    タイムストレッチ設定
+"Timeslot size"
+    タイムスロットサイズ
+"title"
+    タイトル
+"Title"
+    タイトル
+"Title Match"
+"Title search"
+"Title Search"
+    タイトルサーチ
+"Today"
+    今日
+"Tomorrow"
+    明日
+"Too Many"
+"Top $1"
+    トップ $1
+"Top Played Songs"
+"Top Rated Songs"
+"Total Length"
+"Total Recorded"
+"Total Running Time"
+"Total Time"
+    合計時間
+"Total Time:  %s"
+"Track #%s from the album '%s'"
+"Transcode"
+"transcoder"
+    トランスコーダー
+"Transcoder"
+    トランスコーダー
+"Tuesday"
+    火曜日
+"Tuner Busy"
+"TV"
+"TV functions, including recorded programs."
+    TV 録画
+"TV.com"
+"type"
+    タイプ
+"Type"
+    タイプ
+"Undelete"
+"Undelete: $1"
+"Unknown"
+    不明
+"Unknown Program."
+    不明な番組
+"Unknown Recording Schedule."
+    不明な予約
+"Up"
+"Upcoming Recordings"
+    これからの録画
+"Update"
+    更新
+"Update Recording Settings"
+    録画設定を保存
+"Use callsign"
+    コールサインを使用する
+"Use date/time"
+    日時を使用する
+"useonairguide"
+"UV Extreme"
+    UV 非常に強い
+"UV High"
+    UV 強い
+"UV Index"
+    UV 指数
+"UV Minimal"
+    UV 弱い
+"UV Moderate"
+    UV 穏やか
+"Value"
+"Video"
+    ビデオ
+"Video Bitrate"
+"Video Playback"
+"Video: Error: IMDB"
+"Video: Error: IMDB: Not Found"
+"Video: Error: Missing ID"
+"Video: IMDB: No Matches"
+"Video: IMDB: Window Title"
+"Video: Warning: Artwork"
+"Video: Warning: Artwork: Download"
+"Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
+"videofilters"
+    ビデオフィルタ
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
+"Videos"
+    ビデオ
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
+"Visibility"
+    視界
+"visible"
+"Visit $1"
+    $1を訪れる
+"Watched"
+"Weather"
+    天気
+"web_video_imdb_path"
+"web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
+"Wednesday"
+    水曜日
+"welcome: backend_log"
+    バックエンドログようこそ！
+"welcome: music"
+    ミュージックようこそ！
+"welcome: remote"
+"welcome: settings"
+    設定へようこそ！
+"welcome: stats"
+    統計へようこそ！
+"welcome: status"
+    ステータスへようこそ！
+"welcome: tv"
+    テレビへようこそ！
+"welcome: video"
+    ビデオにようこそ！
+"welcome: weather"
+    天気へようこそ！
+"What else is on at this time?"
+    この時間の番組表
+"Widescreen"
+"Width"
+"Will Record"
+"Wind"
+    風
+"Wind Chill"
+    体感温度
+"Written by"
+    著者
+"xmltvid"
+"Year"
+"Yes"
+    はい
+"Yesterday"
+    昨日

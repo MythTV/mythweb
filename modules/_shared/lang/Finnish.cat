@@ -1,0 +1,99 @@
+"Action"
+    Toiminta
+    \b(?:action|adven)
+"Adult"
+    Seksi
+    \b(?:adult|erot)
+"Animals"
+    Eläimet
+    \b(?:animal|tiere)
+"Art_Music"
+    Kulttuuri
+    \b(?:art|dance|music|cultur)
+"Business"
+    Kauppa
+    \b(?:biz|busine)
+"Children"
+    Lasten
+    \b(?:child|infan|animation)
+"Comedy"
+    Komedia
+    \b(?:comed|entertain|sitcom)
+"Crime_Mystery"
+    Trilleri
+    \b(?:crim|myster)
+"Documentary"
+    Dokumentti
+    \b(?:doc)
+"Drama"
+    Draama
+    \b(?:drama)
+"Educational"
+    Opetus
+    \b(?:edu|interests)
+"Food"
+    Ruoka
+    \b(?:food|cook|drink)
+"Game"
+    Pelit
+    \b(?:game)
+"Health_Medical"
+    Terveys
+    \b(?:health|medic)
+"History"
+    Historia
+    \b(?:hist)
+"Horror"
+    Kauhu
+    \b(?:horror)
+"HowTo"
+    TeeSeItse
+    \b(?:how|home|house|garden)
+"Misc"
+    Muu
+    \b(?:special|variety|info|collect)
+"News"
+    Uutiset
+    \b(?:news|current)
+"Reality"
+    Tositv
+    \b(?:reality)
+"Romance"
+    Romanssi
+    \b(?:romance)
+"SciFi_Fantasy"
+    Tieteisjännitys
+    \b(?:fantasy|sci\w*\W*fi)
+"Science_Nature"
+    Luonto
+    \b(?:science|nature|environment)
+"Shopping"
+    Ostaminen
+    \b(?:shop)
+"Soaps"
+    Saippua
+    \b(?:soaps)
+"Spiritual"
+    Uskonnollinen
+    \b(?:spirit|relig)
+"Sports"
+    Urheilu
+    \b(?:sport)
+"Talk"
+    Keskustelu
+    \b(?:talk)
+"Travel"
+    Matkailu
+    \b(?:travel)
+"Unknown"
+    Tuntematon
+    
+"War"
+    Sota
+    \b(?:war)
+"Western"
+    Lännen
+    \b(?:west)
+"movie"
+    Elokuva
+    
