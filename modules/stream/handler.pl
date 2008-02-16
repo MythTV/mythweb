@@ -158,7 +158,11 @@ EOF
     }
     elsif ($ENV{'REQUEST_URI'} =~ /\.flv$/i) {
     # Print the movie
-    $ffmpeg_pid = open(DATA, "$ffmpeg -y -i $filename -s ${width}x$height -r 24 -f flv -ac 2 -ar 11025 -ab ${abitrate}k -b ${vbitrate}k /dev/stdout 2>/dev/null |");
+        $ffmpeg_pid = open(DATA,
+            "|-", $ffmpeg, "-y", "-i", $filename, "-s", "${width}x$height",
+            "-r", "24", "-f", "flv", "-ac", "2", "-ar", "11025",
+            "-ab", "${abitrate}k", "-b", "${vbitrate}k",
+            "/dev/stdout", '2>/dev/null');
         unless ($ffmpeg_pid) {
             print header(),
                   "Can't do ffmpeg:  $!";
