@@ -561,8 +561,9 @@ class Schedule {
                 'ORDER BY recgroup;');
 
             while (list($group) = mysql_fetch_row($result)) {
-                $group or $group = t('Default');
-                $groups[$group]  = $group;
+                if (empty($group) || $group == 'Default')
+                    continue;
+                $groups[$group] = $group;
             }
             mysql_free_result($result);
         }
