@@ -227,7 +227,7 @@
         <option value=""><?php echo t('All groups') ?></option><?php
         foreach($Groups as $recgroup => $count) {
             echo '<option id="Group '.htmlspecialchars($recgroup).'" value="'.htmlspecialchars($recgroup).'"';
-            if ($_GET['recgroup'] == $recgroup)
+            if ($_REQUEST['recgroup'] == $recgroup)
                 echo ' SELECTED';
             echo '>'.html_entities($recgroup)
                 .' ('.tn('$1 recording', '$1 recordings', $count)
@@ -244,7 +244,7 @@
 <?php
         foreach($Program_Titles as $title => $count) {
             echo '<option id="Title '.htmlspecialchars($title).'" value="'.htmlspecialchars($title).'"';
-            if ($_GET['title'] == $title)
+            if ($_REQUEST['title'] == $title)
                 echo ' SELECTED';
             echo '>'.html_entities($title)
                 .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count).')' : "")
