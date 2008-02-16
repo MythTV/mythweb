@@ -304,7 +304,8 @@ EOM;
         if ($group_field != "")
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
 ?>
-    <td rowspan="2" class="-pixmap<?php if ($_SESSION['recorded_pixmaps']) { ?>">
+    <td rowspan="2" class="x-pixmap<?php
+        if ($_SESSION['recorded_pixmaps']) { ?>">
         <a class="x-pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
             ><img src="<?php echo $show->thumb_url(100,0) ?>"></a>
 <?php   }

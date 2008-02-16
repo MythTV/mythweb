@@ -106,7 +106,7 @@
                     if (!$channel)
                         echo ' colspan="2"';
                     if ($program && $program->css_class)
-                        echo ' class="', $program->css_class,'"';
+                        echo ' class="', $program->css_class, '"';
                     ?>>
                 <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     echo $schedule->title;
@@ -347,7 +347,8 @@
             continue;
                 $program_id_counter++;
             // Print the link to edit this scheduled recording
-                echo '<a class="', $show->css_class,'" title="', html_entities(t('$1 to $2',
+                echo '<a class="', $show->css_class,
+                     '" title="', html_entities(t('$1 to $2',
                                                   strftime($_SESSION['time_format'], $show->starttime),
                                                   strftime($_SESSION['time_format'], $show->endtime))
                                                 .', '.($_SESSION["prefer_channum"] ? $show->channel->channum : $show->channel->callsign)

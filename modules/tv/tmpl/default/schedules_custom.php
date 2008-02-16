@@ -111,7 +111,7 @@
                 <dd><input type="text" name="title" value="<?php echo html_entities($schedule->edit_title) ?>" size="24">
                     (<span id="search_type"><?php echo t('$1 Search', $schedule->search_type) ?></span>)</dd>
             </dl>
-            <dl id="standard_options" class="-long<?php if ($schedule->search == searchtype_power) echo' hidden' ?>">
+            <dl id="standard_options" class="x-long<?php if ($schedule->search == searchtype_power) echo ' hidden' ?>">
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
                 <dd><input type="text" name="search_phrase" value="<?php echo html_entities($schedule->description) ?>" size="30"></dd>
             </dl>
