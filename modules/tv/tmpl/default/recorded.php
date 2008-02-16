@@ -23,24 +23,20 @@
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
 // Global variables used here
-    global $All_Shows, $Total_Programs, $Total_Time, $Total_Used,
-           $Groups,    $Program_Titles;
+    global $All_Shows, $Total_Programs, $Total_Time, $Total_Used, $Groups, $Program_Titles;
 
 // Show the recgroup?
-    if (count($Groups) > 1) {
+    if (count($Groups) > 1)
         $recgroup_cols = 1;
-    }
-    else {
+    else
         $recgroup_cols = 0;
-    }
 
 // Setup for grouping by various sort orders
     $group_field = $_SESSION['recorded_sortby'][0]['field'];
-    if ($group_field == "") {
+    if ($group_field == "")
         $group_field = "airdate";
-    } elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) ) {
+    elseif ( ! (($group_field == "title") || ($group_field == "channum") || ($group_field == "airdate") || ($group_field == "recgroup")) )
         $group_field = "";
-    }
 
 ?>
 
@@ -115,7 +111,12 @@
                     ?>\n\n     "+file.title + ((file.subtitle == '') ? "" : ": " +file.subtitle))) {
         // Do the actual deletion
             if (programs_shown == 1)
-                location.href = url;
+                location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid
+                                +'&starttime='+file.starttime
+                                +(forget_old
+                                    ? '&forget_old=yes'
+                                    : ''
+                                 );
             else {
                 ajax_add_request();
                 new Ajax.Request('<?php echo root; ?>tv/recorded',
@@ -124,7 +125,7 @@
                                     onSuccess: http_success,
                                     onFailue: http_failure,
                                     parameters: { ajax:       'yes',
-                                                  delete:     'yes',
+                                                  'delete':   'yes',
                                                   chanid:     file.chanid,
                                                   starttime:  file.starttime,
                                                   forget_old: (forget_old ? 'yes' : 'no'),
@@ -222,7 +223,7 @@
         <option value=""><?php echo t('All groups') ?></option><?php
         foreach($Groups as $recgroup => $count) {
             echo '<option id="Group '.htmlspecialchars($recgroup).'" value="'.htmlspecialchars($recgroup).'"';
-            if ($_GET['recgroup'] == $recgroup)
+            if ($_REQUEST['recgroup'] == $recgroup)
                 echo ' SELECTED';
             echo '>'.html_entities($recgroup)
                 .' ('.tn('$1 recording', '$1 recordings', $count)
@@ -239,7 +240,7 @@
 <?php
         foreach($Program_Titles as $title => $count) {
             echo '<option id="Title '.htmlspecialchars($title).'" value="'.htmlspecialchars($title).'"';
-            if ($_GET['title'] == $title)
+            if ($_REQUEST['title'] == $title)
                 echo ' SELECTED';
             echo '>'.html_entities($title)
                 .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count).')' : "")
@@ -405,18 +406,17 @@ EOM;
 
 <script type="text/javascript">
 <?php
-    foreach ($row_count as $count) {
+    foreach ($row_count as $count)
         echo 'rowcount.push(['.escape($count)."]);\n";
-    }
-    foreach ($row_section as $section) {
+
+    foreach ($row_section as $section)
         echo 'rowsection.push(['.escape($section)."]);\n";
-    }
-    foreach($Program_Titles as $title => $count) {
+
+    foreach($Program_Titles as $title => $count)
         echo 'titles['.escape($title).'] = '.escape($count).";\n";
-    }
-    foreach($Groups as $recgroup => $count) {
+
+    foreach($Groups as $recgroup => $count)
         echo 'groups['.escape($recgroup).'] = '.escape($count).";\n";
-    }
 ?>
 </script>
 
