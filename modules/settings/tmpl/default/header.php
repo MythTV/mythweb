@@ -34,7 +34,8 @@
                 foreach ($Settings as $module => $set) {
                     echo '<li><a href="', root, 'settings/', $module;
                     if ($module == $Path[1])
-                        echo '" class="x-selected'; echo '">', html_entities($set['name']), '</a></li>';
+                        echo '" class="x-selected';
+                    echo '">', html_entities($set['name']), '</a></li>';
                 }
                 ?></ul>
         </div>
@@ -47,7 +48,10 @@
             foreach ($Settings[$Path[1]]['choices'] as $path => $name) {
                 echo '<li><a href="', root, 'settings/', $Path[1];
                 if ($path == $Path[2])
-                    echo '" class="x-selected'; else echo '/'.$path; echo '">', html_entities($name), '</a></li>';
+                    echo '" class="x-selected';
+                else
+                    echo '/'.$path;
+                echo '">', html_entities($name), '</a></li>';
             }
         ?></ul>
         </td>
