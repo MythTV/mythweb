@@ -14,10 +14,12 @@
 /**/
 
 // Enable/Disable help messages
-    if ($_REQUEST['show_help'] == 'yes')
-        $_SESSION['show help'] = true;
-    elseif ($_REQUEST['show_help'] == 'no')
-        $_SESSION['show help'] = false;
+    if (isset($_REQUEST['show_help'])) {
+        if ($_REQUEST['show_help'] == 'yes')
+            $_SESSION['show help'] = true;
+        elseif ($_REQUEST['show_help'] == 'no')
+            $_SESSION['show help'] = false;
+    }
 
 /*
     show_popup:
@@ -26,7 +28,7 @@
 */
     function show_popup($id, $text, $popup_id = NULL, $css_class = 'popup', $wstatus = '') {
         global $Footnotes;
-        $Footnotes[] = "\n".'<script type="text/javascript">new Tip($("'.$id.'"), "'.str_replace(array("\n", '"'),array('', "'"),$text).'", { className: "popup" });</script>';
+        $Footnotes[] = "\n".'<script type="text/javascript">new Tip($("'.$id.'"), "'.str_replace(array("\n","\r",'"'),array('','',"'"),$text).'", { className: "popup" });</script>';
         return ' id="'.$id.'"';
     }
 
