@@ -115,7 +115,12 @@
                     ?>\n\n     "+file.title + ((file.subtitle == '') ? "" : ": " +file.subtitle))) {
         // Do the actual deletion
             if (programs_shown == 1)
-                location.href = url;
+                location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid
+                                +'&starttime='+file.starttime
+                                +(forget_old
+                                    ? '&forget_old=yes'
+                                    : ''
+                                 );
             else {
                 ajax_add_request();
                 new Ajax.Request('<?php echo root; ?>tv/recorded',
