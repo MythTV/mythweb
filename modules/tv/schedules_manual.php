@@ -71,7 +71,7 @@
             $schedule->autouserjob3  = $_POST['autouserjob3'] ? 1 : 0;
             $schedule->autouserjob4  = $_POST['autouserjob4'] ? 1 : 0;
             $schedule->maxnewest     = $_POST['maxnewest']    ? 1 : 0;
-            $schedule->dupin         = _or($_POST['dupin'],    15);
+            $schedule->dupin         = _or($_POST['dupin'] + $_POST['dupin2'], dupsin_all);
             $schedule->dupmethod     = _or($_POST['dupmethod'], 6);
             $schedule->recpriority   = intval($_POST['recpriority']);
             $schedule->maxepisodes   = intval($_POST['maxepisodes']);
