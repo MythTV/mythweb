@@ -103,7 +103,7 @@ if (isset($_SESSION['weather']['edit'])) {
 <tr>
     <td colspan="2"><?php echo t('Inactive Screens') ?></td>
 </tr>
-<tr class="-sep">
+<tr class="x-sep">
     <td> <?php display_inactive_screens() ?> </td>
     <?php if (count($_SESSION['weather']['inactive']) > 0) { ?>
     <td><input type="submit" class="submit" name="add" value="<?php echo t('Add To Active Screens') ?>"></td>

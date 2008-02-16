@@ -12,28 +12,28 @@
 
 /* Overview of the settings */
 
-    #settings .-overview {
+    #settings .x-overview {
         text-align:     center;
         width:          15em;
     }
-    #settings .-title {
+    #settings .x-title {
         margin:         .5em;
         font-size:      125%;
     }
 
 /* The list of modules. */
 
-    #settings .-modules {
+    #settings .x-modules {
         white-space:    nowrap;
     }
-    #settings .-modules ul {
+    #settings .x-modules ul {
         margin:             1em;
         list-style-type:    none;
         padding:            0px;
     }
-    #settings .-modules li {
+    #settings .x-modules li {
     }
-    #settings .-modules a {
+    #settings .x-modules a {
         display:            block;
         padding:            .2em 1em;
         background-color:   #345;
@@ -41,33 +41,33 @@
         margin-top:         1px;
         margin-bottom:      11px;
     }
-    #settings .-modules a:hover, #settings .-modules a.-selected {
+    #settings .x-modules a:hover, #settings .x-modules a.x-selected {
         background-color:   #023;
         margin-top:         -1px;
         margin-bottom:      10px;
         border-width:       2px;
         border-color:       #abd;
     }
-    #settings .-modules a.-selected {
+    #settings .x-modules a.x-selected {
         border-style:       solid;
     }
 
 /* The list of sections for the current module. Normally displayed as tabs. */
 
-    #settings .-sections {
+    #settings .x-sections {
         padding:        0px 1em;
         border-bottom:  1px solid #9090B0;
         height:         2.25em;
         vertical-align: bottom;
     }
 
-    #settings .-sections ul {
+    #settings .x-sections ul {
         display:        inline;
         list-style:     none;
         margin:         0;
         padding:        0;
     }
-    #settings .-sections a {
+    #settings .x-sections a {
         float:              left;
         color:              #ccd;
         background-color:   #405953;
@@ -79,17 +79,17 @@
         -moz-border-radius-topleft:     8px;
         -moz-border-radius-topright:    8px;
     }
-    #settings .-sections a:hover, #settings .-sections a.-selected {
+    #settings .x-sections a:hover, #settings .x-sections a.x-selected {
         color:              white;
         background-color:   #102923;
         border-color:       #9090B0;
     }
-    #settings .-sections a.-selected {
+    #settings .x-sections a.x-selected {
         border-bottom:      1px solid #102923;
         margin-bottom:      -1px;
     }
 
-    #settings .-sections a.active {
+    #settings .x-sections a.active {
         color:              white;
         font-weight:        bold;
         background-color:   #102923;
@@ -100,14 +100,14 @@
 
 /* Select which host to edit the settings for. */
 
-    #settings .-host {
+    #settings .x-host {
         text-align:         right;
         border-bottom:      1px solid #9090B0;
     }
 
 /* A notification/warning */
 
-    #settings .-notice {
+    #settings .x-notice {
         margin:             1em;
         padding:            .5em;
         text-align:         center;
@@ -118,26 +118,26 @@
 
 /* The content of the settings that are being edited */
 
-    #settings .-content {
+    #settings .x-content {
         background-color:   #102923;
         border:             1px solid #9090B0;
         border-top:         none;
     }
 
-    #settings .-content table {
+    #settings .x-content table {
         width:              100%;
     }
-    #settings .-content table th, #settings .-content table td {
+    #settings .x-content table th, #settings .x-content table td {
         padding:            .5em;
     }
 
-    #settings .-content th {
+    #settings .x-content th {
         text-align:         right;
         font-weight:        normal;
         white-space:        nowrap;
     }
 
-    #settings .-content tr.-sep th, #settings .-content tr.-sep td {
+    #settings .x-content tr.x-sep th, #settings .x-content tr.x-sep td {
         border-bottom:      1px solid #304943;
     }
 

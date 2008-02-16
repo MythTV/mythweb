@@ -16,7 +16,7 @@
 
 <form class="form" method="post" action="<?php echo form_action ?>">
 
-<div class="-notice" style="width: 45em; text-align: left">
+<div class="x-notice" style="width: 45em; text-align: left">
 <?php echo t('info: flvplayer') ?>
 </div>
 

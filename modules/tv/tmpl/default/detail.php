@@ -85,10 +85,10 @@
 </script>
 
 
-        <table id="-info" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table id="x-info" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
 <?php   if ($channel) { ?>
-            <td class="-channel">
+            <td class="x-channel">
                 <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                         title="<?php
                             echo t('Details for: $1',
@@ -97,23 +97,23 @@
 <?php       if ($_SESSION["show_channel_icons"] == true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30">
 <?php       } ?>
-                <span class="-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br>
+                <span class="x-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br>
                     <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), "\n" ?>
                 </a>
             </td>
 <?php   } ?>
-            <td id="-title"<?php
+            <td id="x-title"<?php
                     if (!$channel)
                         echo ' colspan="2"';
                     if ($program && $program->css_class)
-                        echo ' class="', $program->css_class, '"';
+                        echo ' class="', $program->css_class,'"';
                     ?>>
                 <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     echo $schedule->title;
                     if ($schedule->subtitle)
                         echo ':<br>', $schedule->subtitle;
                     ?></a>
-                <div id="-time"><?php
+                <div id="x-time"><?php
                 echo strftime('%a, %b %e', $schedule->starttime);
                 echo ', '
                     .t('$1 to $2', strftime($_SESSION['time_format'], $schedule->starttime),
@@ -126,13 +126,13 @@
         </tr><?php
         if (!empty($schedule->fancy_description)) {
         ?><tr>
-            <td id="-description" colspan="2">
+            <td id="x-description" colspan="2">
                 <?php echo nl2br($schedule->fancy_description) ?>
             </td>
         </tr><?php
         }
         if ($program) {
-        ?><tr id="-progflags">
+        ?><tr id="x-progflags">
             <td colspan="2"><?php
         // Auto expire is interactive for recordings
             if ($program->filename) {
@@ -165,13 +165,13 @@
             ?></td>
         </tr><?php
             if (strlen($program->category)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Category') ?>:</th>
             <td><?php echo $program->category ?></td>
         </tr><?php
             }
             if (strlen($program->category_type)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Type') ?>:</th>
             <td><?php echo $program->category_type;
                           if ($program->seriesid)
@@ -179,95 +179,95 @@
         </tr><?php
             }
             if (strlen($program->syndicatedepisodenumber) > 0) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Episode Number') ?>:</th>
             <td><?php echo $program->syndicatedepisodenumber ?></dd>
         </tr><?php
             }
             if (strlen($program->airdate)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Original Airdate') ?>:</th>
             <td><?php echo $program->airdate ?></dd>
         </tr><?php
             }
             if (strlen($program->programid) > 0) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Program ID') ?>:</th>
             <td><?php echo $program->programid ?></dd>
         </tr><?php
             }
             if ($program->get_credits('host', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Hosted by') ?>:</th>
             <td><?php echo $program->get_credits('host', TRUE) ?></dd>
         </tr><?php
             }
             if ($program->get_credits('presenter', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Presented by') ?>:</th>
             <td><?php echo $program->get_credits('presenter', TRUE) ?></dd>
         </tr><?php
             }
             if ($program->get_credits('actor', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Cast') ?>:</th>
             <td><?php echo $program->get_credits('actor', TRUE) ?></dd>
         </tr><?php
             }
             if ($program->get_credits('guest_star', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Guest Starring') ?>:</th>
             <td><?php echo $program->get_credits('guest_star', TRUE) ?></dd>
         </tr><?php
             }
             if ($program->get_credits('director', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Directed by') ?>:</th>
             <td><?php echo $program->get_credits('director', TRUE) ?></dd>
         </tr><?php
             }
             if ($program->get_credits('producer', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Produced by') ?>:</th>
             <td><?php echo $program->get_credits('producer', TRUE) ?></dd>
         </tr><?php
             }
             if ($program->get_credits('executive_producer', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Exec. Producer') ?>:</th>
             <td><?php echo $program->get_credits('executive_producer', TRUE) ?></dd>
         </tr><?php
             }
             if ($program->get_credits('writer', TRUE)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Written by') ?>:</th>
             <td><?php echo $program->get_credits('writer', TRUE) ?></dd>
         </tr><?php
             }
             if (strlen($program->starstring) > 0) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Guide rating') ?>:</th>
             <td><?php echo $program->starstring ?></dd>
         </tr><?php
             }
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Length') ?>:</th>
             <td><?php echo nice_length($program->length) ?></dd>
         </tr><?php
             if (strlen($program->filesize) > 0) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('File Size') ?>:</th>
             <td><?php echo nice_filesize($program->filesize) ?></dd>
         </tr><?php
             }
             if (strlen($program->recgroup)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Recording Group') ?>:</th>
             <td><?php echo $program->recgroup ?></dd>
         </tr><?php
             }
             if (strlen($program->playgroup)) {
-        ?><tr class="-extras">
+        ?><tr class="x-extras">
             <th><?php echo t('Playback Group') ?>:</th>
             <td><?php echo $program->playgroup ?></dd>
         </tr><?php
@@ -277,7 +277,7 @@
         $can_dupcheck = preg_match('/\S/', $program->title)
                         && preg_match('/\S/', $program->programid.$program->subtitle.$program->description);
         if (!empty($program->recstatus) || $can_dupcheck) {
-        ?><tr id="-status">
+        ?><tr id="x-status">
             <th><?php echo t('MythTV Status') ?>:</th>
             <td><?php
                 if (!empty($program->recstatus)) {
@@ -317,7 +317,7 @@
         </tr><?php
         }
         if (count($conflicting_shows)) {
-        ?><tr id="-conflicts">
+        ?><tr id="x-conflicts">
             <th><?php echo t('Possible conflicts') ?>:<br><br>
         <div style="text-align: left;">
                 <?php echo t('Filters'); ?><br>
@@ -347,8 +347,7 @@
             continue;
                 $program_id_counter++;
             // Print the link to edit this scheduled recording
-                echo '<a class="', $show->css_class,
-                     '" title="', html_entities(t('$1 to $2',
+                echo '<a class="', $show->css_class,'" title="', html_entities(t('$1 to $2',
                                                   strftime($_SESSION['time_format'], $show->starttime),
                                                   strftime($_SESSION['time_format'], $show->endtime))
                                                 .', '.($_SESSION["prefer_channum"] ? $show->channel->channum : $show->channel->callsign)
@@ -363,7 +362,7 @@
             ?></td>
         </tr><?php
         }
-        ?><tr class="-links">
+        ?><tr class="x-links">
             <th><?php echo t('More') ?>:</th>
             <td>
 <?php           if ($schedule->title) { ?>
@@ -413,7 +412,7 @@
             ?>">
 
 <?php   if (!$schedule || $schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
             <ul>
                 <li><input type="radio" class="radio" name="record" value="0" id="record_never"<?php
@@ -464,7 +463,7 @@
         }
         if ($schedule && $schedule->type != rectype_once && ($schedule->search || $schedule->type)) {
 ?>
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Schedule Override') ?>:</h3>
             <ul>
 <?php       if ($schedule->type == rectype_override || $schedule->type == rectype_dontrec) { ?>
@@ -486,11 +485,11 @@
         </div>
 <?php      } ?>
 
-        <div class="-options">
+        <div class="x-options">
 <?php    require_once tmpl_dir.'_advanced_options.php' ?>
         </div>
 
-        <div id="-schedule_submit">
+        <div id="x-schedule_submit">
             <input type="submit" class="submit" name="save" value="<?php echo t('Update Recording Settings') ?>">
         </div>
 
@@ -505,8 +504,8 @@
         $flv_h = intVal($flv_w * 3/4) + 20;  // +20px for the playback controls
 ?>
 
-        <div id="-downloads">
-            <div class="-pixmap">
+        <div id="x-downloads">
+            <div class="x-pixmap">
                 <?php if (setting('WebFLV_on') && file_exists('modules/tv/MFPlayer.swf')) { ?>
                     <script langfuage="JavaScript" type="text/javascript">
                     <!--
@@ -623,7 +622,7 @@
                     ><img src="<?php echo $program->thumb_url($flv_w,0) ?>" width="<?php echo $flv_w ?>"></a>
                 <?php } ?></td>
             </div>
-            <div class="-links">
+            <div class="x-links">
                 <a href="<?php echo video_url($program, 'asx') ?>" title="<?php echo t('ASX Stream') ?>"
                     ><img src="<?php echo skin_url ?>/img/play_sm.png">
                     <?php echo t('ASX Stream') ?></a>
@@ -631,11 +630,11 @@
                     ><img src="<?php echo skin_url ?>/img/video_sm.png">
                     <?php echo t('Direct Download') ?></a>
             </div>
-            <div class="-jobs">
+            <div class="x-jobs">
 <?php
         if (count($program->jobs_possible)) {
             echo t('Queue a job'), ':',
-                 '            <ul class="-queue">';
+                 '            <ul class="x-queue">';
             foreach ($program->jobs_possible as $id => $job) {
                 echo '                <li>',
                      '<a href="',

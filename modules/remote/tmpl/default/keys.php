@@ -107,56 +107,56 @@
 <tr>
     <td colspan="2">
         <a onclick="send_key('escape')"><?php echo t('Escape') ?></a></td>
-    <td><a onclick="send_key('f13')" class="reqshift -hidden">F13</a>
+    <td><a onclick="send_key('f13')" class="reqshift x-hidden">F13</a>
         <a onclick="send_key('f1')"  class="noshift">F1</a></td>
-    <td><a onclick="send_key('f14')" class="reqshift -hidden">F14</a>
+    <td><a onclick="send_key('f14')" class="reqshift x-hidden">F14</a>
         <a onclick="send_key('f2')"  class="noshift">F2</a></td>
-    <td><a onclick="send_key('f15')" class="reqshift -hidden">F15</a>
+    <td><a onclick="send_key('f15')" class="reqshift x-hidden">F15</a>
         <a onclick="send_key('f3')"  class="noshift">F3</a></td>
-    <td><a onclick="send_key('f16')" class="reqshift -hidden">F16</a>
+    <td><a onclick="send_key('f16')" class="reqshift x-hidden">F16</a>
         <a onclick="send_key('f4')"  class="noshift">F4</a></td>
-    <td><a onclick="send_key('f17')" class="reqshift -hidden">F17</a>
+    <td><a onclick="send_key('f17')" class="reqshift x-hidden">F17</a>
         <a onclick="send_key('f5')"  class="noshift">F5</a></td>
-    <td><a onclick="send_key('f18')" class="reqshift -hidden">F18</a>
+    <td><a onclick="send_key('f18')" class="reqshift x-hidden">F18</a>
         <a onclick="send_key('f6')"  class="noshift">F6</a></td>
-    <td><a onclick="send_key('f19')" class="reqshift -hidden">F19</a>
+    <td><a onclick="send_key('f19')" class="reqshift x-hidden">F19</a>
         <a onclick="send_key('f7')"  class="noshift">F7</a></td>
-    <td><a onclick="send_key('f20')" class="reqshift -hidden">F20</a>
+    <td><a onclick="send_key('f20')" class="reqshift x-hidden">F20</a>
         <a onclick="send_key('f8')"  class="noshift">F8</a></td>
-    <td><a onclick="send_key('f21')" class="reqshift -hidden">F21</a>
+    <td><a onclick="send_key('f21')" class="reqshift x-hidden">F21</a>
         <a onclick="send_key('f9')"  class="noshift">F9</a></td>
-    <td><a onclick="send_key('f22')" class="reqshift -hidden">F22</a>
+    <td><a onclick="send_key('f22')" class="reqshift x-hidden">F22</a>
         <a onclick="send_key('f10')" class="noshift">F10</a></td>
-    <td><a onclick="send_key('f23')" class="reqshift -hidden">F23</a>
+    <td><a onclick="send_key('f23')" class="reqshift x-hidden">F23</a>
         <a onclick="send_key('f11')" class="noshift">F11</a></td>
-    <td><a onclick="send_key('f24')" class="reqshift -hidden">F24</a>
+    <td><a onclick="send_key('f24')" class="reqshift x-hidden">F24</a>
         <a onclick="send_key('f12')" class="noshift">F12</a></td>
 </tr><tr>
-    <td><a onclick="send_key('~')" class="reqshift -hidden">~</a>
+    <td><a onclick="send_key('~')" class="reqshift x-hidden">~</a>
         <a onclick="send_key('`')" class="noshift">`</a></td>
-    <td><a onclick="send_key('!')" class="reqshift -hidden">!</a>
+    <td><a onclick="send_key('!')" class="reqshift x-hidden">!</a>
         <a onclick="send_key('1')" class="noshift">1</a></td>
-    <td><a onclick="send_key('@')" class="reqshift -hidden">@</a>
+    <td><a onclick="send_key('@')" class="reqshift x-hidden">@</a>
         <a onclick="send_key('2')" class="noshift">2</a></td>
-    <td><a onclick="send_key('#')" class="reqshift -hidden">#</a>
+    <td><a onclick="send_key('#')" class="reqshift x-hidden">#</a>
         <a onclick="send_key('3')" class="noshift">3</a></td>
-    <td><a onclick="send_key('$')" class="reqshift -hidden">$</a>
+    <td><a onclick="send_key('$')" class="reqshift x-hidden">$</a>
         <a onclick="send_key('4')" class="noshift">4</a></td>
-    <td><a onclick="send_key('%')" class="reqshift -hidden">%</a>
+    <td><a onclick="send_key('%')" class="reqshift x-hidden">%</a>
         <a onclick="send_key('5')" class="noshift">5</a></td>
-    <td><a onclick="send_key('^')" class="reqshift -hidden">^</a>
+    <td><a onclick="send_key('^')" class="reqshift x-hidden">^</a>
         <a onclick="send_key('6')" class="noshift">6</a></td>
-    <td><a onclick="send_key('&')" class="reqshift -hidden">&amp;</a>
+    <td><a onclick="send_key('&')" class="reqshift x-hidden">&amp;</a>
         <a onclick="send_key('7')" class="noshift">7</a></td>
-    <td><a onclick="send_key('*')" class="reqshift -hidden">*</a>
+    <td><a onclick="send_key('*')" class="reqshift x-hidden">*</a>
         <a onclick="send_key('8')" class="noshift">8</a></td>
-    <td><a onclick="send_key('(')" class="reqshift -hidden">(</a>
+    <td><a onclick="send_key('(')" class="reqshift x-hidden">(</a>
         <a onclick="send_key('9')" class="noshift">9</a></td>
-    <td><a onclick="send_key(')')" class="reqshift -hidden">)</a>
+    <td><a onclick="send_key(')')" class="reqshift x-hidden">)</a>
         <a onclick="send_key('0')" class="noshift">0</a></td>
-    <td><a onclick="send_key('_')" class="reqshift -hidden">_</a>
+    <td><a onclick="send_key('_')" class="reqshift x-hidden">_</a>
         <a onclick="send_key('-')" class="noshift">&ndash;</a></td>
-    <td><a onclick="send_key('+')" class="reqshift -hidden">+</a>
+    <td><a onclick="send_key('+')" class="reqshift x-hidden">+</a>
         <a onclick="send_key('=')" class="noshift">=</a></td>
     <td colspan="2"><a onclick="send_key('backspace')"><?php echo t('Backspace') ?></a></td>
     <td>&nbsp;</td>
@@ -165,33 +165,33 @@
     <td><a onclick="send_key('pageup')"><?php echo t('Page Up') ?></a></td>
 </tr><tr>
     <td colspan="2">
-        <a onclick="send_key('backtab')" class="reqshift -hidden"><?php echo t('Back Tab') ?></a>
+        <a onclick="send_key('backtab')" class="reqshift x-hidden"><?php echo t('Back Tab') ?></a>
         <a onclick="send_key('tab')"     class="noshift"><?php echo t('Tab') ?></a></td>
-    <td><a onclick="send_key('Q')" class="reqshift -hidden">Q</a>
+    <td><a onclick="send_key('Q')" class="reqshift x-hidden">Q</a>
         <a onclick="send_key('q')" class="noshift">q</a></td>
-    <td><a onclick="send_key('W')" class="reqshift -hidden">W</a>
+    <td><a onclick="send_key('W')" class="reqshift x-hidden">W</a>
         <a onclick="send_key('w')" class="noshift">w</a></td>
-    <td><a onclick="send_key('E')" class="reqshift -hidden">E</a>
+    <td><a onclick="send_key('E')" class="reqshift x-hidden">E</a>
         <a onclick="send_key('e')" class="noshift">e</a></td>
-    <td><a onclick="send_key('R')" class="reqshift -hidden">R</a>
+    <td><a onclick="send_key('R')" class="reqshift x-hidden">R</a>
         <a onclick="send_key('r')" class="noshift">r</a></td>
-    <td><a onclick="send_key('T')" class="reqshift -hidden">T</a>
+    <td><a onclick="send_key('T')" class="reqshift x-hidden">T</a>
         <a onclick="send_key('t')" class="noshift">t</a></td>
-    <td><a onclick="send_key('Y')" class="reqshift -hidden">Y</a>
+    <td><a onclick="send_key('Y')" class="reqshift x-hidden">Y</a>
         <a onclick="send_key('y')" class="noshift">y</a></td>
-    <td><a onclick="send_key('U')" class="reqshift -hidden">U</a>
+    <td><a onclick="send_key('U')" class="reqshift x-hidden">U</a>
         <a onclick="send_key('u')" class="noshift">u</a></td>
-    <td><a onclick="send_key('I')" class="reqshift -hidden">I</a>
+    <td><a onclick="send_key('I')" class="reqshift x-hidden">I</a>
         <a onclick="send_key('i')" class="noshift">i</a></td>
-    <td><a onclick="send_key('O')" class="reqshift -hidden">O</a>
+    <td><a onclick="send_key('O')" class="reqshift x-hidden">O</a>
         <a onclick="send_key('o')" class="noshift">o</a></td>
-    <td><a onclick="send_key('P')" class="reqshift -hidden">P</a>
+    <td><a onclick="send_key('P')" class="reqshift x-hidden">P</a>
         <a onclick="send_key('p')" class="noshift">p</a></td>
-    <td><a onclick="send_key('{')" class="reqshift -hidden">{</a>
+    <td><a onclick="send_key('{')" class="reqshift x-hidden">{</a>
         <a onclick="send_key('[')" class="noshift">[</a></td>
-    <td><a onclick="send_key('}')" class="reqshift -hidden">}</a>
+    <td><a onclick="send_key('}')" class="reqshift x-hidden">}</a>
         <a onclick="send_key(']')" class="noshift">]</a></td>
-    <td><a onclick="send_key('|')" class="reqshift -hidden">|</a>
+    <td><a onclick="send_key('|')" class="reqshift x-hidden">|</a>
         <a onclick="send_key('\\')" class="noshift">\</a></td>
     <td>&nbsp;</td>
     <td><a onclick="send_key('delete')"><?php echo t('Delete') ?></a></td>
@@ -200,50 +200,50 @@
 </tr><tr>
     <td colspan="2">
         <a id="capslock" onclick="handle_capslock()"><?php echo t('Caps Lock') ?></a></td>
-    <td><a onclick="send_key('A')" class="reqshift -hidden">A</a>
+    <td><a onclick="send_key('A')" class="reqshift x-hidden">A</a>
         <a onclick="send_key('a')" class="noshift">a</a></td>
-    <td><a onclick="send_key('S')" class="reqshift -hidden">S</a>
+    <td><a onclick="send_key('S')" class="reqshift x-hidden">S</a>
         <a onclick="send_key('s')" class="noshift">s</a></td>
-    <td><a onclick="send_key('D')" class="reqshift -hidden">D</a>
+    <td><a onclick="send_key('D')" class="reqshift x-hidden">D</a>
         <a onclick="send_key('d')" class="noshift">d</a></td>
-    <td><a onclick="send_key('F')" class="reqshift -hidden">F</a>
+    <td><a onclick="send_key('F')" class="reqshift x-hidden">F</a>
         <a onclick="send_key('f')" class="noshift">f</a></td>
-    <td><a onclick="send_key('G')" class="reqshift -hidden">G</a>
+    <td><a onclick="send_key('G')" class="reqshift x-hidden">G</a>
         <a onclick="send_key('g')" class="noshift">g</a></td>
-    <td><a onclick="send_key('H')" class="reqshift -hidden">H</a>
+    <td><a onclick="send_key('H')" class="reqshift x-hidden">H</a>
         <a onclick="send_key('h')" class="noshift">h</a></td>
-    <td><a onclick="send_key('J')" class="reqshift -hidden">J</a>
+    <td><a onclick="send_key('J')" class="reqshift x-hidden">J</a>
         <a onclick="send_key('j')" class="noshift">j</a></td>
-    <td><a onclick="send_key('K')" class="reqshift -hidden">K</a>
+    <td><a onclick="send_key('K')" class="reqshift x-hidden">K</a>
         <a onclick="send_key('k')" class="noshift">k</a></td>
-    <td><a onclick="send_key('L')" class="reqshift -hidden">L</a>
+    <td><a onclick="send_key('L')" class="reqshift x-hidden">L</a>
         <a onclick="send_key('l')" class="noshift">l</a></td>
-    <td><a onclick="send_key(':')" class="reqshift -hidden">:</a>
+    <td><a onclick="send_key(':')" class="reqshift x-hidden">:</a>
         <a onclick="send_key(';')" class="noshift">;</a></td>
-    <td><a onclick="send_key('%22')" class="reqshift -hidden">&quot;</a>
+    <td><a onclick="send_key('%22')" class="reqshift x-hidden">&quot;</a>
         <a onclick="send_key('%27')" class="noshift">'</a></td>
     <td colspan="2"><a onclick="send_key('enter')"><?php echo t('Enter') ?></a></td>
 </tr><tr>
     <td colspan="2"><a id="leftshift" onclick="handle_shift()"><?php echo t('Shift') ?></a></td>
-    <td><a onclick="send_key('Z')" class="reqshift -hidden">Z</a>
+    <td><a onclick="send_key('Z')" class="reqshift x-hidden">Z</a>
         <a onclick="send_key('z')" class="noshift">z</a></td>
-    <td><a onclick="send_key('X')" class="reqshift -hidden">X</a>
+    <td><a onclick="send_key('X')" class="reqshift x-hidden">X</a>
         <a onclick="send_key('x')" class="noshift">x</a></td>
-    <td><a onclick="send_key('C')" class="reqshift -hidden">C</a>
+    <td><a onclick="send_key('C')" class="reqshift x-hidden">C</a>
         <a onclick="send_key('c')" class="noshift">c</a></td>
-    <td><a onclick="send_key('V')" class="reqshift -hidden">V</a>
+    <td><a onclick="send_key('V')" class="reqshift x-hidden">V</a>
         <a onclick="send_key('v')" class="noshift">v</a></td>
-    <td><a onclick="send_key('B')" class="reqshift -hidden">B</a>
+    <td><a onclick="send_key('B')" class="reqshift x-hidden">B</a>
         <a onclick="send_key('b')" class="noshift">b</a></td>
-    <td><a onclick="send_key('N')" class="reqshift -hidden">N</a>
+    <td><a onclick="send_key('N')" class="reqshift x-hidden">N</a>
         <a onclick="send_key('n')" class="noshift">n</a></td>
-    <td><a onclick="send_key('M')" class="reqshift -hidden">M</a>
+    <td><a onclick="send_key('M')" class="reqshift x-hidden">M</a>
         <a onclick="send_key('m')" class="noshift">m</a></td>
-    <td><a onclick="send_key('%3C')" class="reqshift -hidden">&lt;</a>
+    <td><a onclick="send_key('%3C')" class="reqshift x-hidden">&lt;</a>
         <a onclick="send_key(',')" class="noshift">,</a></td>
-    <td><a onclick="send_key('%3E')" class="reqshift -hidden">&gt;</a>
+    <td><a onclick="send_key('%3E')" class="reqshift x-hidden">&gt;</a>
         <a onclick="send_key('.')" class="noshift">.</a></td>
-    <td><a onclick="send_key('%3F')" class="reqshift -hidden">?</a>
+    <td><a onclick="send_key('%3F')" class="reqshift x-hidden">?</a>
         <a onclick="send_key('/')" class="noshift">/</a></td>
     <td colspan="3">
         <a id="rightshift" onclick="handle_shift()"><?php echo t('Shift') ?></a></td>

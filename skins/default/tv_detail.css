@@ -2,7 +2,7 @@
  * Table around all program info (left column)
 /*/
 
-#-info {
+#x-info {
     float:              left;
     padding:            0px;
     width:              45em;
@@ -17,7 +17,7 @@
  * channel/title/subtitle/time/description
 /*/
 
-.-channel {
+.x-channel {
     width:              8em;
     padding:            0 !important;
     vertical-align:     middle;
@@ -26,59 +26,59 @@
     border-right:       1px solid #9090B0;
     border-bottom:      1px solid #9090B0;
 }
-.-channel img {
+.x-channel img {
     position:           relative;
     top:                -4px;
     vertical-align:     middle;
 }
-.-channel a {
+.x-channel a {
     display:            block;
     text-align:         center;
     padding:            5px;
 }
-.-channel .-preferred {
+.x-channel .x-preferred {
     margin-left:        5px;
     font-size:          200%;
 }
 
-#-title {
+#x-title {
     padding:            .2em .5em;
     border-bottom:      1px solid #9090B0;
 }
-#-title a {
+#x-title a {
     font-size:      175% !important;
     font-weight:    bold;
 }
 
-#-time {
+#x-time {
     margin-top:     .2em;
     color:          #E0E0FF;
     white-space:    nowrap;
 }
-#-description {
+#x-description {
     padding:        .5em;
     border-bottom:  1px solid #9090B0;
 }
-#-progflags td {
+#x-progflags td {
     padding:        .5em;
     border-bottom:  1px solid #9090B0;
 }
-#-progflags img {
+#x-progflags img {
     margin-right:   .3em;
 }
-#-progflags a img {
+#x-progflags a img {
     border:         1px solid transparent;
 }
-#-progflags a:hover img {
+#x-progflags a:hover img {
     border:         1px solid #F0F000;
 }
 
-#-status {
+#x-status {
     background-color:   #102923;
 }
 
 
-#-status th {
+#x-status th {
     vertical-align:     top;
     font-weight:        normal;
     text-align:         right;
@@ -86,11 +86,11 @@
     white-space:        nowrap;
     border-top:         1px solid #9090B0;
 }
-#-status td {
+#x-status td {
     padding:            .25em;
     border-top:         1px solid #9090B0;
 }
-#-status td a {
+#x-status td a {
     float:              left;
     margin-right:       .5em;
     font-weight:        bold;
@@ -98,14 +98,14 @@
     padding:            .15em .5em;
     background-color:   #263;
 }
-#-status td a:hover {
+#x-status td a:hover {
     border:             1px solid #9da;
     background-color:   #485;
 }
 
-#-info .-extras {
+#x-info .x-extras {
 }
-#-info .-extras th {
+#x-info .x-extras th {
     vertical-align: top;
     font-weight:    normal;
     text-align:     right;
@@ -113,12 +113,12 @@
     white-space:    nowrap;
     border-top:      1px solid #202933;
 }
-#-info .-extras td {
+#x-info .x-extras td {
     padding:        .25em;
     border-top:      1px solid #202933;
 }
 
-#-conflicts th {
+#x-conflicts th {
     vertical-align:     top;
     font-weight:        normal;
     text-align:         right;
@@ -126,20 +126,20 @@
     padding:            .5em .25em;
     border-top:         1px solid #9090B0;
 }
-#-conflicts td {
+#x-conflicts td {
     padding:            .25em;
     padding-bottom:     0;
     border-top:         1px solid #9090B0;
 }
-#-conflicts td a {
+#x-conflicts td a {
     display:            block;
     padding:            .15em .25em;
     margin-bottom:      .25em;
 }
-#-conflicts {
+#x-conflicts {
 }
 
-#-info .-links th {
+#x-info .x-links th {
     vertical-align:     top;
     font-weight:        normal;
     text-align:         right;
@@ -147,18 +147,18 @@
     padding:            .4em .25em;
     border-top:         1px solid #9090B0;
 }
-#-info .-links td {
+#x-info .x-links td {
     padding:            .25em;
     padding-bottom:     0;
     border-top:         1px solid #9090B0;
 }
-#-info .-links td a {
+#x-info .x-links td a {
     display:            block;
     padding:            .15em .25em;
     margin-bottom:      .25em;
 }
 
-#-downloads {
+#x-downloads {
     float:              left;
     padding:            0px;
     min-width:          350px;
@@ -168,76 +168,76 @@
     color:              #E0E0FF;
     border:             1px solid #9090B0;
 }
-#-downloads img {
+#x-downloads img {
     margin-right:       .3em;
 }
-#-downloads a img {
+#x-downloads a img {
     border:             1px solid transparent;
 }
-#-downloads a {
+#x-downloads a {
     border:             1px solid transparent;
 }
-#-downloads a:hover img {
+#x-downloads a:hover img {
     border:             1px solid #F0F000;
 }
-#-downloads div.-pixmap {
+#x-downloads div.x-pixmap {
     padding:            1em 1em 0em 1em;
     background-color:   black;
     text-align:         center;
 }
-#-downloads div.-pixmap a.-pixmap {
+#x-downloads div.x-pixmap a.x-pixmap {
     margin:             .25em auto;
 }
 
-#-downloads div.-links {
+#x-downloads div.x-links {
     padding:            .5em;
     background-color:   black;
     text-align:         center;
 }
 
-#-downloads div.-links a {
+#x-downloads div.x-links a {
     position:           relative;
     top:                -10px;
     margin:             0px 1.5em;
     padding:            .75em;
 }
-#-downloads div.-links a img {
+#x-downloads div.x-links a img {
     position:           relative;
     top:                10px;
 }
-#-downloads div.-links a:hover img {
+#x-downloads div.x-links a:hover img {
     border:             1px solid transparent;
 }
-#-downloads div.-links a:hover {
+#x-downloads div.x-links a:hover {
     background-color:   #121;
     border:             1px solid #F0F000;
     text-decoration:    none;
 }
-#-downloads div.-jobs {
+#x-downloads div.x-jobs {
     border-top:         1px solid #9090B0;
     padding:            .5em;
 }
 
-#-downloads div.-jobs a {
+#x-downloads div.x-jobs a {
     margin-right:       .5em;
     font-weight:        bold;
     border:             1px solid #7b8;
     padding:            .15em .5em;
     background-color:   #263;
 }
-#-downloads div.-jobs a:hover {
+#x-downloads div.x-jobs a:hover {
     border:             1px solid #9da;
     background-color:   #485;
 }
 
-#-downloads div.-jobs ul {
+#x-downloads div.x-jobs ul {
     padding:            0px 0px 0px 1.5em;
 }
-#-downloads div.-jobs li {
+#x-downloads div.x-jobs li {
     padding-bottom:     .25em;
 }
 
-#-downloads div.-jobs ul.-queue li {
+#x-downloads div.x-jobs ul.x-queue li {
     padding-bottom:     .75em;
 }
 

@@ -39,26 +39,26 @@
 
 <table id="display_options" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
 <tr>
-    <td class="-title"><?php echo t('Display') ?>:</td>
-    <td class="-check">
+    <td class="x-title"><?php echo t('Display') ?>:</td>
+    <td class="x-check">
         <label for="disp_scheduled">
         <input type="checkbox" id="disp_scheduled" name="disp_scheduled" class="radio" onclick="$('change_display').submit()"<?php
             if ($_SESSION['scheduled_recordings']['disp_scheduled']) echo ' CHECKED' ?>>
         <?php echo t('Scheduled') ?></label>
         </td>
-    <td class="-check">
+    <td class="x-check">
         <label for="disp_duplicates">
         <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
         <?php echo t('Duplicates') ?></label>
         </td>
-    <td class="-check">
+    <td class="x-check">
         <label for="disp_deactivated">
         <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>
         <?php echo t('Deactivated') ?></label>
         </td>
-    <td class="-check">
+    <td class="x-check">
         <label for="disp_conflicts">
         <input type="checkbox" id="disp_conflicts" name="disp_conflicts" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_conflicts']) echo ' CHECKED' ?>>
@@ -72,11 +72,11 @@
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="-status"><?php  echo t('Status') ?></th>
-    <th class="-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
-    <th class="-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
-    <th class="-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
-    <th class="-length"><?php  echo get_sort_link('length',  t('Length'))  ?></th>
+    <th class="x-status"><?php  echo t('Status') ?></th>
+    <th class="x-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
+    <th class="x-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
+    <th class="x-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
+    <th class="x-length"><?php  echo get_sort_link('length',  t('Length'))  ?></th>
 </tr><?php
     $row = 0;
 
@@ -265,8 +265,8 @@
     // Print the content
 ?><tr class="<?php echo $css_class ?>">
 <?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n" ?>
-    <td class="-status rec_class <?php echo $rec_class ?>"><?php echo $rec_char ?></td>
-    <td class="-title <?php echo $show->css_class ?>"><?php
+    <td class="x-status rec_class <?php echo $rec_class ?>"><?php echo $rec_char ?></td>
+    <td class="x-title <?php echo $show->css_class ?>"><?php
     // Print the link to edit this scheduled recording
         echo '<a';
         if ($_SESSION["show_popup_info"])
@@ -286,18 +286,18 @@
                 : ''),
              '</a>';
         ?></td>
-    <td class="-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
-    <td class="-airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
-    <td class="-length"><?php  echo nice_length($show->length) ?></td>
+    <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+    <td class="x-airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
+    <td class="x-length"><?php  echo nice_length($show->length) ?></td>
 <?php
         if ($show->recstatus == 'Recording') {
-            echo '    <td class="-commands commands -recording" colspan="2">',
+            echo '    <td class="x-commands commands x-recording" colspan="2">',
                  '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
                  t('Currently Recording:  Edit'),"</a></td>\n";
         }
         else {
             foreach ($commands as $command) {
-                echo '    <td class="-commands commands">',$command,"</td>\n";
+                echo '    <td class="x-commands commands">',$command,"</td>\n";
             }
         }
 ?>

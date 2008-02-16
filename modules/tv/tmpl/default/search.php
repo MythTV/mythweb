@@ -53,10 +53,10 @@
 
 <table id="search_options" border="0" cellspacing="0" cellpadding="0" class="commandbox commands">
 <tr>
-    <td class="-advanced"><?php
+    <td class="x-advanced"><?php
         print_advanced_search_strings()
         ?></td>
-    <td class="-timeopts"><p style="margin-top: 0">
+    <td class="x-timeopts"><p style="margin-top: 0">
         <input type="checkbox" name="hd" id="hd" value="1"<?php
             if ($_SESSION['search']['hd']) echo ' CHECKED' ?>>
         <label for="hd"><?php echo t('Only match HD programs') ?></label>
@@ -78,10 +78,10 @@
         <input type="text" size="12" name="airdate_end" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_end']) ?>">
         </p>
         </td>
-    <td class="-progtype"><?php echo t('Program Type'); ?>:<br>
+    <td class="x-progtype"><?php echo t('Program Type'); ?>:<br>
         <?php echo category_type_list() ?>
         </td>
-    <td class="-submit">
+    <td class="x-submit">
         <input type="submit" class="submit" name="search" value="<?php echo t('Search') ?>">
         </td>
 </tr>
@@ -118,12 +118,12 @@
 <table id="search_results" class="list small" width="100%" border="0" cellpadding="4" cellspacing="2">
 <tr class="menu">
     <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="-title"><?php       echo get_sort_link('title',       t('Title'))       ?></th>
-    <th class="-category"><?php    echo get_sort_link('category',    t('Category'))    ?></th>
-    <th class="-description"><?php echo get_sort_link('description', t('Description')) ?></th>
-    <th class="-channum"><?php     echo get_sort_link('channum',     t('Channel'))     ?></th>
-    <th class="-airdate"><?php     echo get_sort_link('airdate',     t('Airdate'))     ?></th>
-    <th class="-length"><?php      echo get_sort_link('length',      t('Length'))      ?></th>
+    <th class="x-title"><?php       echo get_sort_link('title',       t('Title'))       ?></th>
+    <th class="x-category"><?php    echo get_sort_link('category',    t('Category'))    ?></th>
+    <th class="x-description"><?php echo get_sort_link('description', t('Description')) ?></th>
+    <th class="x-channum"><?php     echo get_sort_link('channum',     t('Channel'))     ?></th>
+    <th class="x-airdate"><?php     echo get_sort_link('airdate',     t('Airdate'))     ?></th>
+    <th class="x-length"><?php      echo get_sort_link('length',      t('Length'))      ?></th>
 </tr><?php
         $row = 0;
 
@@ -154,7 +154,7 @@
     // Print the content
     ?><tr class="<?php echo $show->css_class ?>" valign="top">
     <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <td class="-title <?php echo $show->css_class ?>"><?php
+    <td class="x-title <?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
             echo '<span class="hdtv_icon">HD</span>';
         echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
@@ -175,10 +175,10 @@
         }
 
         ?></td>
-    <td class="-category"><?php    echo $show->category ?></td>
-    <td class="-description"><?php echo $show->description ?></td>
-    <td class="-channum"><?php     echo $show->channel->channum.' - '.$show->channel->name ?></td>
-    <td class="-airdate"><?php
+    <td class="x-category"><?php    echo $show->category ?></td>
+    <td class="x-description"><?php echo $show->description ?></td>
+    <td class="x-channum"><?php     echo $show->channel->channum.' - '.$show->channel->name ?></td>
+    <td class="x-airdate"><?php
             echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if ($show->extra_showings)
@@ -191,7 +191,7 @@
                     echo '</a>';
                 }
                 ?></td>
-    <td class="-length"><?php echo nice_length($show->length) ?></td>
+    <td class="x-length"><?php echo nice_length($show->length) ?></td>
 </tr><?php
             $prev_group = $cur_group;
             $row++;

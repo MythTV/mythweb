@@ -24,9 +24,9 @@
     ?></div>
     <table id="x-jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
     <tr>
-        <td class="-jumpto"><?php echo t('Jump To') ?>:</td>
-        <td class="-hour"><?php hour_select('id="hour_select" onchange="list_update($(\'hour_select\')[$(\'hour_select\').selectedIndex].value);"') ?></td>
-        <td class="-day">
+        <td class="x-jumpto"><?php echo t('Jump To') ?>:</td>
+        <td class="x-hour"><?php hour_select('id="hour_select" onchange="list_update($(\'hour_select\')[$(\'hour_select\').selectedIndex].value);"') ?></td>
+        <td class="x-day">
             <a class="link" onclick="list_update(<?php echo $list_starttime - (24 * 60 * 60); ?>);">
                 <img src="<?php echo skin_url ?>img/left.gif" alt="<?php echo t('left'); ?>">
             </a>
@@ -84,7 +84,7 @@
             $channel_count++;
         // Print the data
 ?><tr>
-    <td class="-channel">
+    <td class="x-channel">
         <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $list_starttime ?>"
                 title="<?php
                     echo t('Details for: $1',
@@ -93,7 +93,7 @@
 <?php       if ($_SESSION["show_channel_icons"] == true && !empty($channel->icon)) { ?>
         <img src="<?php echo $channel->icon ?>" height="30" width="30">
 <?php       } ?>
-        <span class="-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br>
+        <span class="x-preferred"><?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign) ?></span><br>
             <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), "\n" ?>
         </a>
         </td>

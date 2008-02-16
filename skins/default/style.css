@@ -62,14 +62,14 @@
 
     .commands { /* Placeholder for handling sub-elements */ }
 
-    .commands input.-submit {
+    .commands input.x-submit {
         border:             2px outset #7b8;
         padding:            0 .5em;
         height:             2em;
         background-color:   #263;
         color:              #E0E0FF;
     }
-    .commands input.-submit:hover {
+    .commands input.x-submit:hover {
         border:             1px outset #9da;
         background-color:   #485;
         color:              #F0F000;

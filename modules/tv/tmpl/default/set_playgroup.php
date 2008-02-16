@@ -17,7 +17,7 @@
 <form id="chg_grp_form" class="form" method="post" action="<?php echo form_action ?>">
 
 <table border="0" cellspacing="0" cellpadding="0">
-<tr class="-sep">
+<tr class="x-sep">
     <th><?php echo t('Edit existing group') ?>:</th>
     <td><?php playgroup_select($group['name'], 'playgroup', NULL, '$(\'chg_grp_form\').submit()') ?>
         <noscript><input type="submit" class="submit" value="<?php echo t('Edit') ?>"></noscript></td>
@@ -51,7 +51,7 @@
 </tr><tr>
     <th><?php echo t('Time Stretch') ?>:</th>
     <td colspan="2"><input type="text" name="timestretch" class="quantity" value="<?php echo html_entities($group['timestretch']) ?>" /></td>
-</tr><tr class="-sep">
+</tr><tr class="x-sep">
     <th><?php echo t('Jump') ?>:</th>
     <td colspan="2"><input type="text" name="jump"        class="quantity" value="<?php echo html_entities($group['jump'])        ?>" /></td>
 </tr><tr align="center">

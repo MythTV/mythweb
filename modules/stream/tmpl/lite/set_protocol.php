@@ -21,10 +21,10 @@
 </div>
 
 <table border="0" cellspacing="0" cellpadding="0">
-<tr class="-sep">
+<tr class="x-sep">
     <th><label for="force_http"><?php echo t('Force HTTP for streams') ?>:</label></th>
     <td><input type="checkbox" id="force_http" name="force_http" value="1"<?php if ($_SESSION['stream']['force_http']) echo ' CHECKED' ?>></td>
-</tr><tr class="-sep">
+</tr><tr class="x-sep">
     <th><label for="force_http_port"><?php echo t('Force HTTP/HTTPS port for streams'); ?>:</label></th>
     <td><input type="textbox" id="force_http_port" name="force_http_port" value="<?php echo $_SESSION['stream']['force_http_port'] ?>"></td>
 </tr><tr>
