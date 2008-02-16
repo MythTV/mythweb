@@ -1,0 +1,48 @@
+#no_schedules {
+    margin:         1em;
+    padding:        1em;
+    font-size:      200%;
+    text-align:     center;
+}
+
+#listings th {
+    font-weight:        normal;
+    text-align:         left;
+    white-space:        nowrap;
+}
+#listings th.x-title {
+}
+#listings th.x-priority {
+    text-align:         center;
+}
+#listings th.x-channel {
+}
+#listings th.x-profile {
+}
+#listings th.x-transcoder {
+}
+#listings th.x-group {
+}
+#listings th.x-type {
+}
+
+#listings td {
+}
+#listings td.x-title {
+}
+#listings td.x-priority {
+    text-align:         center;
+}
+#listings td.x-channel {
+}
+#listings td.x-profile {
+}
+#listings td.x-transcoder {
+}
+#listings td.x-group {
+}
+#listings td.x-type {
+}
+#listings td.x-sgroup {
+}
+

@@ -1,0 +1,1100 @@
+""
+" at "
+    a
+"# Tracks"
+"$1 B"
+    $1 B
+"$1 day"
+    $1 dia
+"$1 days"
+    $1 dias
+"$1 episode"
+    $1 episodio
+"$1 episodes"
+    $1 episodios
+"$1 GB"
+    $1 GB
+"$1 hr"
+    $1 hr
+"$1 hrs"
+    $1 hrs
+"$1 is not responding."
+"$1 KB"
+    $1 KB
+"$1 MB"
+    $1 MB
+"$1 min"
+    $1 min
+"$1 mins"
+    $1 mins
+"$1 month"
+"$1 months"
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 programas, usando $2 ($3) de $4 ($5 libre))
+"$1 recording"
+    $1 grabación
+"$1 recordings"
+    $1 grabaciones
+"$1 requests pending."
+"$1 Search"
+    Búsqueda $1
+"$1 TB"
+    $1 TB
+"$1 to $2"
+    $1 a $2
+"$1 wasted"
+    $1 desperdiciado
+"$1 year"
+"$1 years"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
+"&deg;C"
+"&deg;F"
+"Aborted"
+"Aborting"
+"Action"
+    Acción
+"Activate"
+    Activar
+"Active Screens"
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
+"add string"
+    añadir cadena
+"Add this Playlist as a Subplaylist"
+"Add To Active Screens"
+"Additional Tables"
+    Tablas adicionales
+"Admin Key"
+"Advanced"
+    Avanzado
+"Advanced Options"
+    Opciones Avanzadas
+"Advanced Search"
+    Búsqueda Avanzada
+"airdate"
+"Airdate"
+    emisión
+"Airtime"
+    Horario
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
+"All"
+    Todos
+"All Albums"
+"All Categories"
+"All Fields"
+"All Genres"
+"All groups"
+    Todos los grupos
+"All HDTV"
+    Todas HDTV
+"All Hosts"
+"All recordings"
+    Todas las grabaciones
+"All Songs"
+"ALLOCINETYPE"
+"An error occured while adding your playlist."
+"and"
+"Any"
+    Cualquiera
+"Any Category"
+    Cualquier Categoría
+"Any Channel"
+    Cualquier Canal
+"Any Program Type"
+    Cualquier Tipo de Programa
+"Append"
+"Append to Current Playlist"
+"Are you sure you want to delete the following show?"
+    ¿Está seguro de borrar el siguiente programa?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
+"ASX Stream"
+"Audio Bitrate"
+"Audio for Hearing Impaired"
+"Audio for Visually Impaired"
+"Auto Expire"
+"Auto-expire recordings"
+    Autoexpirar grabaciones
+"Auto-flag commercials"
+    Automarcar anuncios
+"Auto-transcode"
+    Auto-recodificar
+"AVC/H.264"
+"Back"
+"Back Tab"
+"Back to the program listing"
+    Volver al listado de programas
+"Back to the recorded programs"
+"Back to the recording schedules"
+    Volver a la programación
+"Backend Logs"
+    Logs Backend
+"Backend Status"
+    Estado backend
+"Backspace"
+"Begin a New Search"
+"brightness"
+    brillo
+"Browse"
+"Browse = no"
+"Browse = yes"
+"Browse all"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
+"callsign"
+"Cancel"
+"Cancel this schedule."
+    Cancelar programación
+"Cancelled"
+"Caps Lock"
+"Cast"
+    Reparto
+"category"
+    categoría
+"Category"
+    Categoría
+"Category Legend"
+    Leyenda Categoría
+"CC"
+    SUB
+"Chan. Callsign"
+    Canal Callsign
+"Chan. Name"
+    Nombre Canal
+"Chan. Number"
+    Número Canal
+"Channel"
+    Canal
+"channel"
+    canal
+"Channel &quot;Jump to&quot;"
+    Canal &quot;Saltar a&quot;
+"Channel Detail"
+    Detalle Canal
+"Channel Info"
+"Channels"
+"channum"
+    nºcanal
+"Check for duplicates in"
+    Buscar duplicados en
+"Childrens Movies"
+"Choose Genre.."
+"Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
+"Click to View Playlist"
+"Closed Captioning"
+"colour"
+    color
+"Commands"
+    Comandos
+"Commercials Flagged"
+"commfree"
+    sin anuncios
+"Conflict"
+"Conflicts"
+    Conflictos
+"Context"
+    Contexto
+"contrast"
+    contraste
+"Count"
+    Contar
+"Create a New Playlist"
+"Create a Random Mix"
+"Create Schedule"
+    Crear programación
+"Current Conditions"
+    Condiciones Actuales
+"Current Recording"
+"Current recordings"
+    Grabaciones actuales
+"Currently Browsing:  $1"
+    Navegando por:  $1
+"Currently Recording:  Edit"
+"Custom"
+    Avanzada
+"Custom Schedule"
+    Programación Avanzada
+"Custom Search"
+"Data"
+    Datos
+"Database"
+"Database Health"
+"Date"
+    Fecha
+"Date Formats"
+    Formatos Fecha
+"Deactivated"
+    Desactivado
+"Deaf Signed"
+"Default"
+    Por defecto
+"Default MythVideo View"
+"Delete"
+    Borrar
+"delete"
+    borrar
+"Delete $1"
+    Borrar $1
+"Delete + Rerecord"
+    Borrar y regrabar
+"Delete and allow rerecord: $1"
+"Delete and rerecord $1"
+    Borrar y regrabar $1
+"Delete Forever"
+"DELETE this Saved Playlist"
+"description"
+    descripción
+"Description"
+    Descripción
+"Destination"
+    Destino
+"Details for: $1"
+"Direct Download"
+"Directed by"
+    Dirigido por
+"Display"
+    Mostrar
+"Dolby Surround"
+"Don't Record"
+    No grabar
+"Don't record this program."
+    No borrar este programa
+"Done, Unknown Status"
+"Down"
+"Download URL override"
+"Dup Method"
+    Método duplicado
+"Duplicate"
+"Duplicate Check method"
+    Método comprobación duplicados
+"Duplicates"
+    Duplicados
+"Earlier"
+"Earlier Showing"
+"Edit"
+    Editar
+"Edit existing group"
+"Edit MythWeb and some MythTV settings."
+    Editar ajustes de MythWeb y algunos de MythTV
+"Edit Screen"
+"Edit settings for: $1"
+"Editing "
+"Enable Video Playback"
+"End"
+"End Late"
+    Terminar más tarde
+"Enter"
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
+"Episode"
+    Episodio
+"Episode Number"
+    Nº Episodio
+"error: playgroup $1 exists"
+"Errored"
+"Erroring"
+"Escape"
+"Everything"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
+"Exec. Producer"
+    Productor ejec.
+"Extended Check"
+"File Size"
+    tamaño fichero
+"Filter"
+"Filters"
+"Find Date & Time Options"
+    Opciones Búsqueda Fecha y Hora
+"Find Day"
+    Buscar Día
+"Find other showings of this program"
+    Buscar otras emisiones de este programa
+"Find showings of this program"
+    Buscar emisiones de este programa
+"Find Time"
+    Buscar Hora
+"Find Time must be of the format:  HH:MM:SS"
+    Hora Búsqueda debe tener el formato: HH:MM:SS
+"finetune"
+    sintonía fina
+"Finished"
+"First recording"
+    Primera grabación
+"Flag Commercials"
+"Force HTTP for streams"
+"Force HTTP/HTTPS port for streams"
+"Forced"
+"Forecast"
+    Predicción
+"Forget Old"
+    Olvidar antiguos
+"format help"
+    ayuda formato
+"Found %s results for '%s'"
+"freqid"
+    id frecuencia
+"Friday"
+    Viernes
+"Frontends"
+"generic_date"
+    %b %e, %Y
+"generic_time"
+    %I:%M %p
+"Genre"
+    Género
+"Genres"
+"Go"
+    Ir
+"Google"
+    Google
+"Group timeslots every"
+    Agrupar horarios cada
+"Guest Starring"
+    Estrellas invitadas
+"Guide rating"
+    Puntuación Guía
+"Guide Settings"
+    Ajustes Guía
+"Handy Predefined Searches"
+    Búsquedas Predefinidas Útiles
+"handy: overview"
+    útiles: resúmen
+"has Bookmark"
+"Has Cutlist"
+"HD"
+"HDTV"
+    HDTV
+"Height"
+"Hide"
+"High"
+    Alto
+"Home"
+"Host"
+"Hosted by"
+"Hour"
+    Hora
+"Hour Format"
+    Formato Hora
+"hue"
+    tono
+"Humidity"
+    Humedad
+"IMDB"
+    IMDB
+"IMDBTYPE"
+"Inactive"
+    Inactivo
+"Inactive Screens"
+"info: activate recording"
+"info: default recording"
+"info: dont record"
+"info: flvplayer"
+    <p>
+    Flash video playback is currently only a proof-of-concept and should be
+    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
+    default.
+    </p>
+    <p>
+    It currently expects that ffmpeg is installed and compiled with mp3
+    support, and that the recordings files are accessible to your webserver
+    userid.  It probably won't work with Nupplevideo files, and in the end,
+    it may just not work at all (or maybe even worse).
+    </p>
+    <p>
+    Enable this feature at your own risk, and don't expect too much
+    official help until it has left the experimental phase.
+    </p>
+"info: hidden advanced schedule"
+"info: record this"
+"info:forget old"
+"info:never record"
+"Insert"
+"Jump"
+    Saltar
+"Jump Points"
+"Jump to"
+    Saltar a
+"Jump To"
+    Saltar a
+"JumpPoints Editor"
+    Editor de Puntos de Salto
+"Key Bindings"
+"Key bindings"
+    Teclas
+"Key Controls"
+"Keybindings Editor"
+    Editor Teclas
+"Keyword"
+    Palabra clave
+"Keyword Search"
+    Búsqueda palabras
+"Keywords"
+"Language"
+    Lengua
+"Last Recorded"
+    Última vez Grabado
+"Last recording"
+    Última Grabación
+"Last Updated"
+    Útima Actualización
+"Later"
+"left"
+"Left"
+"leftl"
+"length"
+    duración
+"Length"
+    Duración
+"Length (min)"
+    Duración (min)
+"Listing &quot;Jump to&quot;"
+    Listado &quot;Saltar a&quot;
+"Listing Time Key"
+    Hora Listado
+"Listings"
+    Listados
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Local Server Statistics"
+"Local weather forecast"
+"Locale"
+"Logs"
+"Low"
+    Bajo
+"Low Space"
+"Manual"
+    Manual
+"matches"
+    coincidencias
+"Max star rating for movies"
+    Máx. calificación para películas
+"minutes"
+    minutos
+"Missing Cover"
+"Monday"
+    Lunes
+"Mono"
+"More"
+"more"
+    más
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
+"movie"
+    Película
+"Movies"
+    Películas
+"Movies, 3&frac12; Stars or more"
+    Películas, 3&frac12; estrellas o más
+"Movies, Stinkers (2 Stars or less)"
+    Películas, 2 estrellas o menos
+"Music"
+    Música
+"Music Specials"
+    Especiales Música
+"My Session"
+"MythMusic on the web."
+    MythMusic en el web
+"MythTV"
+"MythTV Status"
+    Estado MythTV
+"MythVideo Artwork Dir"
+    Dir Posters MythTV
+"MythVideo Dir"
+    Dir MythVideo
+"MythVideo on the web."
+    MythVideo en el web
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
+"MythWeb"
+"MythWeb Defaults"
+"MythWeb Global Defaults"
+    MythWeb globales por defecto
+"MythWeb Session"
+"MythWeb Skin"
+    Piel MythWeb
+"MythWeb Template"
+    Plantilla MythWeb
+"MythWeb Weather."
+    Tiempo MythWeb
+"Name"
+    Nombre
+"name"
+    nombre
+"Narrow Your Search"
+"Never Record"
+    Nunca grabar
+"New"
+"New Episodes Only"
+"New Group"
+"New Search"
+"New Titles, Premieres"
+    Nuevos Títulos, Estrenos
+"NO DATA"
+    SIN DATOS
+"No Frontends allow remote control."
+"No matches found"
+    Sin resultados
+"No matching programs found."
+    No hay programas coincidentes
+"No Public Playlists"
+"No recording schedules have been defined."
+    No se han definido programaciones
+"No. of recordings to keep"
+    Nº de grabaciones a guardar
+"Non-Music Specials"
+    Especiales No-Música
+"Non-Series HDTV"
+    No series en HDTV
+"None"
+    Ninguna
+"Notes"
+    Notas
+"Number of episodes"
+    Número de episodios
+"Number of shows"
+    Número de programas
+"Number of Songs"
+"Number of timeslots"
+    Número de bloques horarios
+"Only display favourite channels"
+    Mostrar sólo canales favoritos
+"Only match commercial-free channels"
+"Only match HD programs"
+    Sólo programas HD
+"Only New Episodes"
+    Sólo nuevos episodios
+"Optimize Tables"
+"or"
+    o
+"Original Airdate"
+    Emisión original
+"Originally aired between"
+"Override"
+"Page Down"
+"Page Up"
+"Part $1 of $2"
+    Parte $1 de $2
+"Past Month"
+    Mes Pasado
+"Past Week"
+    Semana Pasada
+"Past Year"
+    Año Pasado
+"Paused"
+"Pending"
+"People"
+    Gente
+"People Search"
+    Búsqueda gente
+"Percent of time spent recording"
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Playback Group"
+"Playback Groups"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
+"Possible conflicts"
+"Possible conflicts with this show"
+    Posibles conflictos con este programa
+"Power"
+    Avanzada
+"Power Search"
+    Búsqueda avanzada
+"Prefer Channum"
+    Nº Canal Preferido
+"prefer_channum"
+"Preferred Input"
+"Presented by"
+    Presentado por
+"Pressure"
+    Presión
+"Previous Recording"
+"Previous recordings"
+    Grabaciones anteriores
+"Produced by"
+    Producido por
+"Profile"
+    Perfil
+"profile"
+    perfil
+"Program Detail"
+    Detalle programa
+"Program ID"
+    ID programa
+"Program Listing"
+    Listado Programas
+"Program Type"
+"Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
+"Radar"
+    Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
+"Rating"
+    Puntuación
+"Recently Added Albums"
+"Recently completed jobs"
+"Recently Played Songs"
+"recgroup"
+    grupo
+"Record new and expire old"
+    Grabar nuevos y expirar antiguos
+"Record This"
+    Grabar
+"Recorded"
+"Recorded Programs"
+    Programas grabados
+"Recording Details"
+"Recording Group"
+    Grupo grabación
+"Recording Options"
+    Opciones grabación
+"Recording Priority"
+    Prioridad grabación
+"Recording Profile"
+    Perfil grabación
+"Recording Schedules"
+    Programaciones
+"Recording Statistics"
+    Estadísticas Grabaciones
+"recpriority"
+    prioridad
+"recstatus: cancelled"
+    estado: cancelado
+"recstatus: conflict"
+    estado: conflicto
+"recstatus: currentrecording"
+    estado: grabando
+"recstatus: deleted"
+    estado: borrado
+"recstatus: earliershowing"
+    estado: programa anterior
+"recstatus: force_record"
+    estado: forzar grabado
+"recstatus: inactive"
+    estado: inactivo
+"recstatus: latershowing"
+    estado: programa despues
+"recstatus: lowdiskspace"
+    estado: casi sin espacio
+"recstatus: manualoverride"
+    estado: excepción manual
+"recstatus: neverrecord"
+    estado: nunca grabar
+"recstatus: notlisted"
+    estado: sin listar
+"recstatus: previousrecording"
+    estado: anterior grabación
+"recstatus: recorded"
+    estado: grabado
+"recstatus: recording"
+    estado: grabando
+"recstatus: repeat"
+    estado: repetir
+"recstatus: stopped"
+    estado: parado
+"recstatus: toomanyrecordings"
+    estado: demasiadas grabaciones
+"recstatus: tunerbusy"
+    estado: sintonizador ocupado
+"recstatus: unknown"
+    estado: desconocido
+"recstatus: willrecord"
+    estado: se grabará
+"rectype-long: always"
+    rectype-long: siempre
+"rectype-long: channel"
+    rectype-long: canal
+"rectype-long: daily"
+    rectype-long: diario
+"rectype-long: dontrec"
+    rectype-long: no grabar
+"rectype-long: finddaily"
+    rectype-long: buscar diario
+"rectype-long: findone"
+    rectype-long: buscar uno
+"rectype-long: findweekly"
+    rectype-long: buscar semana
+"rectype-long: once"
+    rectype-long: una vez
+"rectype-long: override"
+    rectype-long: excepción
+"rectype-long: weekly"
+    rectype-long: semanal
+"rectype: always"
+    rectype: siempre
+"rectype: channel"
+    rectype: canal
+"rectype: daily"
+    rectype: diariamente
+"rectype: dontrec"
+    rectype: no grabar
+"rectype: finddaily"
+    rectype: buscar diario
+"rectype: findone"
+    rectype: buscar uno
+"rectype: findweekly"
+    rectype: buscar semanal
+"rectype: once"
+    rectype: una vez
+"rectype: override"
+    rectype: excepción
+"rectype: weekly"
+    rectype: semanal
+"regex: articles"
+    El|L(?:as?|os)
+"Remote"
+"Remove Item from Playlist"
+"Repair Tables"
+"Repeat"
+    Reejecutar
+"Reset"
+    Borrar
+"Retry"
+"Return to Statistics Page"
+"right"
+"Right"
+"Rows to show between timeslot info"
+    Filas a mostrar entre info
+"Running"
+"Saturday"
+    Sábado
+"Save"
+    Guardar
+"Save or Rename the Current Playlist"
+"Save Schedule"
+    Guardar programación
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
+"Scan Collection"
+"Schedule"
+    Programar
+"Schedule Manually"
+    Programar manualmente
+"Schedule normally."
+    Programar normalmente
+"Schedule Options"
+    Opciones programación
+"Schedule Override"
+    Excepciones programación
+"Schedule via $1."
+    Programar via $1
+"Scheduled"
+    Programado
+"Scheduled Popup"
+    Popup Programado
+"Science Fiction Movies"
+    Películas Ciencia Ficción
+"Search"
+    Buscar
+"Search $1"
+"Search for:  $1"
+    Buscar: $1
+"Search Music"
+"Search Phrase"
+    Buscar frase
+"Search Results"
+    Resultados bsqueda
+"Search the Music Database"
+"Search Type"
+    Buscar tipo
+"Searches"
+    Búsquedas
+"Server Statistics"
+"Set Host"
+    Ajustar Host
+"Settings"
+    Ajustes
+"settings"
+    ajustes
+"Settings Table"
+    Tabla Ajustes
+"settings/stream: protocol"
+"settings: notice"
+    Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
+"Shift"
+"Show"
+    Programa
+"Show group"
+    Mostrar grupo
+"Show pixmaps"
+    Mostrar gráficos
+"Show recordings"
+    Mostrar grabaciones
+"show_channel_icons"
+"show_popup_info"
+"show_video_covers"
+"Showing all programs from the $1 group."
+    Mostrando todos los programas del grupo $1
+"Showing all programs."
+    Mostrando todos los programas
+"Showings between"
+"Shows"
+"SI Units"
+    Unidades SI
+"Skip Ahead"
+"Skip Back"
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Songs Rated"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
+"sortby_channum"
+"sourceid"
+    id fuente
+"Space"
+"Special Searches"
+    Búsquedas especiales
+"Star character"
+    Personaje estrella
+"Start Date"
+    Fecha comienzo
+"Start Early"
+    Comenzar antes
+"Start Time"
+    Hora comienzo
+"Starting"
+"Statistics"
+    Estadísticas
+"Stats"
+"Status"
+    Estado
+"Status Bar"
+    Barra estado
+"Stereo"
+    Estéreo
+"Still Recording: Edit"
+"Stopping"
+"Storage Group"
+"Streaming"
+"Sub and Desc (Empty matches)"
+    Sub y Desc (Coincidencias vacías)
+"Submit Search"
+"Subtitle"
+    Subtítulo
+"Subtitle and Description"
+    Subtítulo y Descripción
+"Subtitle then Description"
+"Subtitled"
+    Subtitulado
+"Subtitles Available"
+"Sunday"
+    Domingo
+"Surround Sound"
+"Tab"
+"The requested recording schedule has been deleted."
+    La programación pedida ha sido borrada.
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Thursday"
+    Jueves
+"Time"
+    Hora
+"Time Span"
+"Time Stretch"
+"Time Stretch Default"
+    Ajuste de tiempo por defecto
+"Timeslot size"
+    Tamaño Bloque Tiempo
+"title"
+    título
+"Title"
+    Título
+"Title Match"
+"Title search"
+"Title Search"
+    Buscar título
+"Today"
+    Hoy
+"Tomorrow"
+    Mañana
+"Too Many"
+"Top $1"
+"Top Played Songs"
+"Top Rated Songs"
+"Total Length"
+"Total Recorded"
+"Total Running Time"
+"Total Time"
+    Tiempo Total
+"Total Time:  %s"
+"Track #%s from the album '%s'"
+"Transcode"
+"transcoder"
+    recodificador
+"Transcoder"
+    Recodificador
+"Tuesday"
+    Martes
+"Tuner Busy"
+"TV"
+    TV
+"TV functions, including recorded programs."
+    Funciones TV, incluyendo programas grabados
+"TV.com"
+"type"
+    tipo
+"Type"
+    Tipo
+"Undelete"
+"Undelete: $1"
+"Unknown"
+    Desconocido
+"Unknown Program."
+    Programa desconocido
+"Unknown Recording Schedule."
+    Programación desconocida
+"Up"
+"Upcoming Recordings"
+    Grabaciones Próximas
+"Update"
+    Actualizar
+"Update Recording Settings"
+    Actualizar Ajustes Grabación
+"Use callsign"
+    Usar nombre canal
+"Use date/time"
+    Usar fecha/hora
+"useonairguide"
+    usar guía emitida
+"UV Extreme"
+    UV Extremo
+"UV High"
+    UV Alto
+"UV Index"
+    Índice UV
+"UV Minimal"
+    UV mínimo
+"UV Moderate"
+    UV moderado
+"Value"
+    Valor
+"Video"
+    Vídeo
+"Video Bitrate"
+"Video Playback"
+"Video: Error: IMDB"
+"Video: Error: IMDB: Not Found"
+"Video: Error: Missing ID"
+"Video: IMDB: No Matches"
+"Video: IMDB: Window Title"
+"Video: Warning: Artwork"
+"Video: Warning: Artwork: Download"
+"Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
+"videofilters"
+    filtros vídeo
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
+"Videos"
+    Vídeos
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
+"Visibility"
+    Visibilidad
+"visible"
+    visible
+"Visit $1"
+    Visite $1
+"Watched"
+"Weather"
+    Tiempo
+"web_video_imdb_path"
+"web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
+"Wednesday"
+    Miércoles
+"welcome: backend_log"
+    bienvenido: log backend
+"welcome: music"
+    bienvenido: música
+"welcome: remote"
+"welcome: settings"
+    bienvenido: ajustes
+"welcome: stats"
+    bienvenido: estadísticas
+"welcome: status"
+    bienvenido: estado
+"welcome: tv"
+    bienvenido: tv
+"welcome: video"
+    bienvenido: video
+"welcome: weather"
+    bienvenido: el tiempo
+"What else is on at this time?"
+    Qué más hay a esta hora?
+"Widescreen"
+"Width"
+"Will Record"
+"Wind"
+    Viento
+"Wind Chill"
+    Sensación
+"Written by"
+    Escrito por
+"xmltvid"
+"Year"
+"Yes"
+    Sí
+"Yesterday"
+    Ayer

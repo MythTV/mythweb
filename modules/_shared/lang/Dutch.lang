@@ -1,0 +1,1055 @@
+""
+" at "
+    aan
+"# Tracks"
+"$1 B"
+    $1 B
+"$1 day"
+"$1 days"
+"$1 episode"
+    $1 aflevering
+"$1 episodes"
+    $1 afleveringen
+"$1 GB"
+    $1 GB
+"$1 hr"
+    $1 uur
+"$1 hrs"
+    $1 uur
+"$1 is not responding."
+"$1 KB"
+    $1 KB
+"$1 MB"
+    $1 MB
+"$1 min"
+    $1 min
+"$1 mins"
+    $1 min
+"$1 month"
+"$1 months"
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 programma's, U gebruikt $2 ($3) van $4.
+"$1 recording"
+    $1 opname
+"$1 recordings"
+    $1 opnames
+"$1 requests pending."
+"$1 Search"
+    $1 Zoeken
+"$1 TB"
+    $1 TB
+"$1 to $2"
+    $1 tot $2
+"$1 wasted"
+"$1 year"
+"$1 years"
+"%s Song (%s)"
+"%s Songs"
+"%s Songs (%s)"
+"&deg;C"
+"&deg;F"
+"Aborted"
+"Aborting"
+"Action"
+    Actie
+"Activate"
+    Activeren
+"Active Screens"
+"Add"
+"Add Album to Current Playlist"
+"Add Mix"
+"Add Song to Current Playlist"
+"add string"
+"Add this Playlist as a Subplaylist"
+"Add To Active Screens"
+"Additional Tables"
+    Aanvullende tabellen
+"Admin Key"
+"Advanced"
+"Advanced Options"
+    Geavanceerde Opties
+"Advanced Search"
+"airdate"
+"Airdate"
+    uitzenddatum
+"Airtime"
+    Uitzendtijd
+"Album Listing"
+"Album Tracks"
+"Albums"
+"Albums with songs by %s"
+"All"
+"All Albums"
+"All Categories"
+"All Fields"
+"All Genres"
+"All groups"
+    Alle groepen
+"All HDTV"
+    Alle HDTV
+"All Hosts"
+"All recordings"
+    Alle opnames
+"All Songs"
+"ALLOCINETYPE"
+"An error occured while adding your playlist."
+"and"
+"Any"
+    Alle
+"Any Category"
+    Alle categorien
+"Any Channel"
+    Alle zenders
+"Any Program Type"
+    Alle programmatypes
+"Append"
+"Append to Current Playlist"
+"Are you sure you want to delete the following show?"
+    Bent U zeker van het verwijderen van volgend programma?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Artist Listing"
+"Artists"
+"Artists Beginning with %s"
+"ASX Stream"
+"Audio Bitrate"
+"Audio for Hearing Impaired"
+"Audio for Visually Impaired"
+"Auto Expire"
+"Auto-expire recordings"
+    Opnames Autom. Vervallen
+"Auto-flag commercials"
+    Reclame Autom. Markeren
+"Auto-transcode"
+    Auto-transcode
+"AVC/H.264"
+"Back"
+"Back Tab"
+"Back to the program listing"
+    Terug naar programmagids
+"Back to the recorded programs"
+"Back to the recording schedules"
+    Terug naar opnameschema
+"Backend Logs"
+    Backend Logboek
+"Backend Status"
+    Backend Status
+"Backspace"
+"Begin a New Search"
+"brightness"
+    helderheid
+"Browse"
+"Browse = no"
+"Browse = yes"
+"Browse all"
+"Browse All Albums"
+"Browse Music"
+"Browse the Music Database"
+"By Artist Beginning With"
+"By Genre"
+"callsign"
+    zender
+"Cancel"
+"Cancel this schedule."
+    Opname annuleren
+"Cancelled"
+"Caps Lock"
+"Cast"
+    Acteurs
+"category"
+    categorie
+"Category"
+    Categorie
+"Category Legend"
+    Categorie Legende
+"CC"
+    OND
+"Chan. Callsign"
+"Chan. Name"
+"Chan. Number"
+"Channel"
+    Zender
+"channel"
+    zender
+"Channel &quot;Jump to&quot;"
+    Zender &quot;Ga naar&quot;
+"Channel Detail"
+    Zender detail
+"Channel Info"
+"Channels"
+"channum"
+    zender
+"Check for duplicates in"
+    Op dubbels controleren in
+"Childrens Movies"
+"Choose Genre.."
+"Choose Type"
+"Click to disable Auto Expire"
+"Click to enable Auto Expire"
+"Click to View Playlist"
+"Closed Captioning"
+"colour"
+    kleur
+"Commands"
+    Opdrachten
+"Commercials Flagged"
+"commfree"
+    reclamevrij
+"Conflict"
+"Conflicts"
+    Conflicten
+"Context"
+    Onderdeel
+"contrast"
+    contrast
+"Count"
+"Create a New Playlist"
+"Create a Random Mix"
+"Create Schedule"
+    Opname plannen
+"Current Conditions"
+    Huidige Waarnemingen
+"Current Recording"
+"Current recordings"
+    Huidige Opnames
+"Currently Browsing:  $1"
+    Tijdstip: $1
+"Currently Recording:  Edit"
+"Custom"
+    Geavanceerd
+"Custom Schedule"
+    Geavanceerde Opname
+"Custom Search"
+"Data"
+"Database"
+"Database Health"
+"Date"
+    Datum
+"Date Formats"
+    Weergave Datum
+"Deactivated"
+    Gedeactiveerd
+"Deaf Signed"
+"Default"
+    Standaard
+"Default MythVideo View"
+"Delete"
+    Verwijderen
+"delete"
+    verwijderen
+"Delete $1"
+    $1 verwijderen
+"Delete + Rerecord"
+    Verwijderen en opnieuw opnemen
+"Delete and allow rerecord: $1"
+"Delete and rerecord $1"
+    Verwijderen en $1 opnieuw opnemen
+"Delete Forever"
+"DELETE this Saved Playlist"
+"description"
+    beschrijving
+"Description"
+    Beschrijving
+"Destination"
+    Bestemming
+"Details for: $1"
+"Direct Download"
+"Directed by"
+    Regisseur
+"Display"
+    Tonen
+"Dolby Surround"
+"Don't Record"
+    Niet Opnemen
+"Don't record this program."
+    Dit programma niet opnemen
+"Done, Unknown Status"
+"Down"
+"Download URL override"
+"Dup Method"
+    Dubbels Methode
+"Duplicate"
+"Duplicate Check method"
+    Testmethode herh.
+"Duplicates"
+    Dubbels
+"Earlier"
+"Earlier Showing"
+"Edit"
+    Bewerken
+"Edit existing group"
+"Edit MythWeb and some MythTV settings."
+    MythWeb en enkele MythTV instellingen bewerken
+"Edit Screen"
+"Edit settings for: $1"
+"Editing "
+"Enable Video Playback"
+"End"
+"End Late"
+    Later stoppen
+"Enter"
+"Enter a new name for your playlist"
+"Enter your search terms"
+"enter your search terms"
+"Episode"
+    Aflevering
+"Episode Number"
+    Aflevering nr.
+"error: playgroup $1 exists"
+"Errored"
+"Erroring"
+"Escape"
+"Everything"
+"Exclude Generic Episodes"
+"Exclude Repeat and Generic Episodes"
+"Exclude Repeat Episodes"
+"Exec. Producer"
+    Uitv. Producent
+"Extended Check"
+"File Size"
+    bestandsgrootte
+"Filter"
+"Filters"
+"Find Date & Time Options"
+    Datum &amp; tijd zoeken, opties
+"Find Day"
+    Dag zoeken
+"Find other showings of this program"
+    Andere afleveringen van dit programma zoeken
+"Find showings of this program"
+    Afleveringen van dit programma zoeken
+"Find Time"
+    Tijd zoeken
+"Find Time must be of the format:  HH:MM:SS"
+    Tijd moet in het formaat: HH:MM:SS zijn
+"finetune"
+    fijn afstemmen
+"Finished"
+"First recording"
+"Flag Commercials"
+"Force HTTP for streams"
+"Force HTTP/HTTPS port for streams"
+"Forced"
+"Forecast"
+    Voorspelling
+"Forget Old"
+    Oude vergeten
+"format help"
+    formaat help
+"Found %s results for '%s'"
+"freqid"
+    frequentie
+"Friday"
+    Vrijdag
+"Frontends"
+"generic_date"
+    %a %e %b, %Y
+"generic_time"
+    %H:%M
+"Genre"
+    Genre
+"Genres"
+"Go"
+    Doorgaan
+"Google"
+    Google
+"Group timeslots every"
+"Guest Starring"
+    Gastrol
+"Guide rating"
+    Gids beoordeling
+"Guide Settings"
+    Gidsinstellingen
+"Handy Predefined Searches"
+    Handige voorgeprogrammeerde zoekopdrachten
+"handy: overview"
+    Deze pagina bevat handige voorgeprogrammeerde complexe zoekopdrachten
+"has Bookmark"
+"Has Cutlist"
+"HD"
+"HDTV"
+    HDTV
+"Height"
+"Hide"
+"High"
+    Maximum
+"Home"
+"Host"
+"Hosted by"
+"Hour"
+    Uur
+"Hour Format"
+    Weergave Tijd
+"hue"
+    verzadiging
+"Humidity"
+    Vochtigheid
+"IMDB"
+    IMDB
+"IMDBTYPE"
+"Inactive"
+    Niet actief
+"Inactive Screens"
+"info: activate recording"
+"info: default recording"
+"info: dont record"
+"info: flvplayer"
+    <p>
+    Flash video playback is currently only a proof-of-concept and should be
+    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
+    default.
+    </p>
+    <p>
+    It currently expects that ffmpeg is installed and compiled with mp3
+    support, and that the recordings files are accessible to your webserver
+    userid.  It probably won't work with Nupplevideo files, and in the end,
+    it may just not work at all (or maybe even worse).
+    </p>
+    <p>
+    Enable this feature at your own risk, and don't expect too much
+    official help until it has left the experimental phase.
+    </p>
+"info: hidden advanced schedule"
+"info: record this"
+"info:forget old"
+"info:never record"
+"Insert"
+"Jump"
+    Ga
+"Jump Points"
+"Jump to"
+    Ga naar
+"Jump To"
+    Ga naar
+"JumpPoints Editor"
+    Snelkoppelingen bewerken
+"Key Bindings"
+"Key bindings"
+    Toetsbindingen
+"Key Controls"
+"Keybindings Editor"
+    Toetsbindingen bewerken
+"Keyword"
+    Kernwoord
+"Keyword Search"
+    Kernwoord zoeken
+"Keywords"
+"Language"
+    Taal
+"Last Recorded"
+"Last recording"
+"Last Updated"
+    Laatst Vernieuwd
+"Later"
+"left"
+"Left"
+"leftl"
+"length"
+    duur
+"Length"
+    Duur
+"Length (min)"
+    Duur (min)
+"Listing &quot;Jump to&quot;"
+    Gids &quot;Ga naar&quot;
+"Listing Time Key"
+    Weergave Tijd Gids
+"Listings"
+    Programmagids
+"Load"
+"Load a Saved Playlist"
+"Load Playlist"
+"Load Saved Playlists"
+"Load this Saved Playlist"
+"LOADING"
+"Local Server Statistics"
+"Local weather forecast"
+"Locale"
+"Logs"
+    Logboek
+"Low"
+    Minimum
+"Low Space"
+"Manual"
+    Manueel
+"matches"
+"Max star rating for movies"
+"minutes"
+    minuten
+"Missing Cover"
+"Monday"
+    Maandag
+"Mono"
+"More"
+"more"
+"Move Item Down in Playlist"
+"Move Item Up in Playlist"
+"movie"
+"Movies"
+    Films
+"Movies, 3&frac12; Stars or more"
+    Films, 3&frac12; sterren of meer
+"Movies, Stinkers (2 Stars or less)"
+    Films, Stinkers (2 sterren of minder)
+"Music"
+    Muziek
+"Music Specials"
+    Muziek Specials
+"My Session"
+"MythMusic on the web."
+    Muziek
+"MythTV"
+"MythTV Status"
+    MythTV status
+"MythVideo Artwork Dir"
+"MythVideo Dir"
+"MythVideo on the web."
+    Video
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
+"MythWeb"
+"MythWeb Defaults"
+"MythWeb Global Defaults"
+"MythWeb Session"
+"MythWeb Skin"
+"MythWeb Template"
+"MythWeb Weather."
+    Weer
+"Name"
+"name"
+    naam
+"Narrow Your Search"
+"Never Record"
+    Nooit Opnemen
+"New"
+"New Episodes Only"
+"New Group"
+"New Search"
+"New Titles, Premieres"
+    Nieuwe Titels, Premieres
+"NO DATA"
+    GEEN DATA
+"No Frontends allow remote control."
+"No matches found"
+    Geen programma's gevonden
+"No matching programs found."
+    Geen overeenkomsten gevonden
+"No Public Playlists"
+"No recording schedules have been defined."
+    Er zijn geen opnameschema's gevonden.
+"No. of recordings to keep"
+    Aantal opnames bewaren
+"Non-Music Specials"
+    Niet-Muziek Specials
+"Non-Series HDTV"
+    HDTV, geen series
+"None"
+    Geen
+"Notes"
+    Opmerkingen
+"Number of episodes"
+"Number of shows"
+"Number of Songs"
+"Number of timeslots"
+"Only display favourite channels"
+    Enkel favoriete zenders laten zien
+"Only match commercial-free channels"
+"Only match HD programs"
+"Only New Episodes"
+    Enkel Nieuwe Afleveringen
+"Optimize Tables"
+"or"
+"Original Airdate"
+    Oorsp. Datum
+"Originally aired between"
+"Override"
+"Page Down"
+"Page Up"
+"Part $1 of $2"
+    Deel $1 van $2
+"Past Month"
+"Past Week"
+"Past Year"
+"Paused"
+"Pending"
+"People"
+    Personen
+"People Search"
+    Personen zoeken
+"Percent of time spent recording"
+"Play"
+"Play this Album Now"
+"Play This Playlist Now"
+"Play this Playlist Now"
+"Play this Song Now"
+"Play Time"
+"Playback Group"
+"Playback Groups"
+"Played %s times"
+"Played once"
+"Playlist"
+"Playlist Info"
+"Playlist is empty"
+"Playlist Items"
+"Playlist Name"
+"Playlist renamed successfully"
+"Playlist saved successfully"
+"Playlist: %s"
+"Playlists"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
+"Possible conflicts"
+"Possible conflicts with this show"
+    Mogelijk conflict met dit programma
+"Power"
+"Power Search"
+    Geavanceerd zoeken
+"Prefer Channum"
+"prefer_channum"
+"Preferred Input"
+"Presented by"
+    Presentator
+"Pressure"
+    Luchtdruk
+"Previous Recording"
+"Previous recordings"
+    Eerdere opnames
+"Produced by"
+    Producent
+"Profile"
+    Profiel
+"profile"
+    profiel
+"Program Detail"
+    Programmadetails
+"Program ID"
+    Programma ID
+"Program Listing"
+    Programmalijst
+"Program Type"
+"Protocol"
+"Queue a job"
+"Queued"
+"Queued jobs"
+"Radar"
+    Radar
+"Random"
+"Random Items"
+"Random Mix Maker"
+"Random Type"
+"Rating"
+    Beoordeling
+"Recently Added Albums"
+"Recently completed jobs"
+"Recently Played Songs"
+"recgroup"
+    opnamegroep
+"Record new and expire old"
+    Nieuwe opnemen en oude wissen
+"Record This"
+    Dit Opnemen
+"Recorded"
+"Recorded Programs"
+    Opgenomen Programma's
+"Recording Details"
+"Recording Group"
+    Opname Groep
+"Recording Options"
+    Opname Opties
+"Recording Priority"
+    Opname Prioriteit
+"Recording Profile"
+    Opname Profiel
+"Recording Schedules"
+    Opnameschema
+"Recording Statistics"
+"recpriority"
+    opnameprioriteit
+"recstatus: cancelled"
+    Dit programma zou opgenomen worden maar werd handmatig geannuleerd
+"recstatus: conflict"
+    Een ander programma met hogere prioriteit zal opgenomen worden
+"recstatus: currentrecording"
+    Dit programma werd eerder opgenomen en bevindt zich nog in de lijst met opgenomen programma's
+"recstatus: deleted"
+    Dit programma werd opgenomen maar werd al verwijderd voor de opname afgelopen was.
+"recstatus: earliershowing"
+    Dit programma wordt op een vroegere tijd opgenomen.
+"recstatus: force_record"
+    Dit programma werd handmatig ingesteld op deze manier opgenomen te worden.
+"recstatus: inactive"
+    Dit opnameschema is niet actief
+"recstatus: latershowing"
+    Dit programma zal op een later tijdstip opgenomen worden.
+"recstatus: lowdiskspace"
+    Er was niet voldoende schijfruimte aanwezig om dit programma op te nemen.
+"recstatus: manualoverride"
+    Dit werd handmatig ingesteld niet opgenomen te worden.
+"recstatus: neverrecord"
+    Dit programma werd ingesteld nooit opgenomen te wordem
+"recstatus: notlisted"
+    Dit programa komt niet overeen met de programmagids
+"recstatus: previousrecording"
+    Dit programma werd eerder opgenomen volgens de regels die gekozen werden voor het detecteren van dubbels.
+"recstatus: recorded"
+    Dit programma werd opgenomen.
+"recstatus: recording"
+    Dit programma wordt nu opgenomen.
+"recstatus: repeat"
+    Dit programma is een herhaling en wordt niet opgenomen.
+"recstatus: stopped"
+    Dit programma werd opgenomen maar de opname werd gestopt voor het programma eindigde.
+"recstatus: toomanyrecordings"
+    Er werden al te veel afleveringen van dit programma opgenomen.
+"recstatus: tunerbusy"
+    De tuner was al in gebruik toen dit programma geprogrammeerd werd.
+"recstatus: unknown"
+    De status van dit programma is onbekend.
+"recstatus: willrecord"
+    Dit programma zal opgenomen worden.
+"rectype-long: always"
+    Altijd op elke zender opnemen.
+"rectype-long: channel"
+    Altijd op deze zender opnemen.
+"rectype-long: daily"
+    Dagelijks in dit tijdsslot opnemen.
+"rectype-long: dontrec"
+    Niet opnemen
+"rectype-long: finddaily"
+    Dagelijks een uitzending opnemen
+"rectype-long: findone"
+    1 uitzending opnemen
+"rectype-long: findweekly"
+    Wekelijks een uitzending opnemen
+"rectype-long: once"
+    Deze uitzending opnemen.
+"rectype-long: override"
+    Aangepaste opties
+"rectype-long: weekly"
+    Wekelijks in dit tijdsslot opnemen.
+"rectype: always"
+    Altijd
+"rectype: channel"
+    Zender
+"rectype: daily"
+    Dagelijks
+"rectype: dontrec"
+    Niet Opnemen
+"rectype: finddaily"
+    Dagelijkse een uitzending opnemen.
+"rectype: findone"
+    1 Opnemen
+"rectype: findweekly"
+    Wekelijkse een uitzending opnemen.
+"rectype: once"
+    Deze
+"rectype: override"
+    Aangepast (opname)
+"rectype: weekly"
+    Wekelijks
+"regex: articles"
+    An?|The
+"Remote"
+"Remove Item from Playlist"
+"Repair Tables"
+"Repeat"
+    Opnieuw Uitvoeren
+"Reset"
+    Herstellen
+"Retry"
+"Return to Statistics Page"
+"right"
+"Right"
+"Rows to show between timeslot info"
+"Running"
+"Saturday"
+    Zaterdag
+"Save"
+    Opslaan
+"Save or Rename the Current Playlist"
+"Save Schedule"
+    Schema opslaan
+"Save/Rename"
+"Save/Rename Playlist"
+"Saved Playlist Successfully Deleted"
+"Saved Playlists"
+"Scan Collection"
+"Schedule"
+    Programmeren
+"Schedule Manually"
+    Handmatig
+"Schedule normally."
+    Normaal Schema
+"Schedule Options"
+    Schema Opties
+"Schedule Override"
+    Aangepast Schema
+"Schedule via $1."
+"Scheduled"
+    Geprogrammeerd
+"Scheduled Popup"
+    Geprogrammeerde Pop-up
+"Science Fiction Movies"
+    Science Fiction Films
+"Search"
+    Zoeken
+"Search $1"
+"Search for:  $1"
+    Zoeken: $1
+"Search Music"
+"Search Phrase"
+    Zin zoeken
+"Search Results"
+    Zoekresultaten
+"Search the Music Database"
+"Search Type"
+    Type zoeken
+"Searches"
+    Zoekopdrachten
+"Server Statistics"
+"Set Host"
+    Host instellen
+"Settings"
+    Instellingen
+"settings"
+    instellingen
+"Settings Table"
+"settings/stream: protocol"
+"settings: notice"
+    Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
+"Shift"
+"Show"
+    Toon
+"Show group"
+    Groep tonen
+"Show pixmaps"
+"Show recordings"
+    Opnames tonen
+"show_channel_icons"
+"show_popup_info"
+"show_video_covers"
+"Showing all programs from the $1 group."
+    Alle programma's uit de $1 groep laten zien
+"Showing all programs."
+    Alle programma's laten zien
+"Showings between"
+"Shows"
+"SI Units"
+    SI eenheden
+"Skip Ahead"
+"Skip Back"
+"Songs"
+"Songs for Genre"
+"Songs Played"
+"Songs Rated"
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
+"sortby_channum"
+"sourceid"
+    bron
+"Space"
+"Special Searches"
+    Speciaal zoeken
+"Star character"
+"Start Date"
+    Start Datum
+"Start Early"
+    Eerder beginnen
+"Start Time"
+    Start Tijd
+"Starting"
+"Statistics"
+"Stats"
+"Status"
+    Status
+"Status Bar"
+    Statusbalk
+"Stereo"
+    Stereo
+"Still Recording: Edit"
+"Stopping"
+"Storage Group"
+"Streaming"
+"Sub and Desc (Empty matches)"
+    Dubbels en Beschrijving
+"Submit Search"
+"Subtitle"
+    Aflevering
+"Subtitle and Description"
+    Aflevering en beschrijving
+"Subtitle then Description"
+"Subtitled"
+    Ondertiteld
+"Subtitles Available"
+"Sunday"
+    Zondag
+"Surround Sound"
+"Tab"
+"The requested recording schedule has been deleted."
+    Het gevraagde opnameschema is verwijderd
+"There are no items in this Playlist!"
+"There was a problem saving your playlist"
+"This playlist is already loaded!"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Thursday"
+    Donderdag
+"Time"
+    Tijd
+"Time Span"
+"Time Stretch"
+"Time Stretch Default"
+    TimeStretch Standaard
+"Timeslot size"
+"title"
+    titel
+"Title"
+    Titel
+"Title Match"
+"Title search"
+"Title Search"
+    Titel zoeken
+"Today"
+    Vandaag
+"Tomorrow"
+    Morgen
+"Too Many"
+"Top $1"
+"Top Played Songs"
+"Top Rated Songs"
+"Total Length"
+"Total Recorded"
+"Total Running Time"
+"Total Time"
+"Total Time:  %s"
+"Track #%s from the album '%s'"
+"Transcode"
+"transcoder"
+    transcoder
+"Transcoder"
+    Transcoder
+"Tuesday"
+    Dinsdag
+"Tuner Busy"
+"TV"
+    TV
+"TV functions, including recorded programs."
+    TV functies, inclusief opgenomen programma's
+"TV.com"
+    TV.com
+"type"
+    type
+"Type"
+    Type
+"Undelete"
+"Undelete: $1"
+"Unknown"
+    Onbekend
+"Unknown Program."
+    Onbekend Programma.
+"Unknown Recording Schedule."
+    Onbekend Opnameschema
+"Up"
+"Upcoming Recordings"
+    Geplande Opnames
+"Update"
+    Aanpassen
+"Update Recording Settings"
+    Opname-instellingen Vernieuwen
+"Use callsign"
+    Zender gebruiken
+"Use date/time"
+    Datum/tijd gebruiken
+"useonairguide"
+    gebruikepg
+"UV Extreme"
+    UV Zeer Hoog
+"UV High"
+    UV Hoog
+"UV Index"
+    UV Index
+"UV Minimal"
+    UV Laag
+"UV Moderate"
+    UV Gemiddeld
+"Value"
+"Video"
+    Films
+"Video Bitrate"
+"Video Playback"
+"Video: Error: IMDB"
+"Video: Error: IMDB: Not Found"
+"Video: Error: Missing ID"
+"Video: IMDB: No Matches"
+"Video: IMDB: Window Title"
+"Video: Warning: Artwork"
+"Video: Warning: Artwork: Download"
+"Video: Warning: fopen"
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
+"videofilters"
+    videofilters
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
+"Videos"
+    Films
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
+"View Albums by %s"
+"View Details of %s"
+"View Saved Playlist"
+"View Server Statistics"
+"Visibility"
+    Zichtbaarheid
+"visible"
+    zichtbaar
+"Visit $1"
+"Watched"
+"Weather"
+    Weer
+"web_video_imdb_path"
+"web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
+"Wednesday"
+    Woensdag
+"welcome: backend_log"
+    Logboek laten zien
+"welcome: music"
+    Doorheen uw muziekcollectie bladeren
+"welcome: remote"
+"welcome: settings"
+    MythWeb en enkele MythTV instellingen bewerken
+"welcome: stats"
+"welcome: status"
+    MythTV Logboek
+"welcome: tv"
+    Laten zien wat er op TV is, opnames plannen en opgenomen programma's beheren. Keuze uit de volgende items:
+"welcome: video"
+    Doorheen uw filmcollectie bladeren.
+"welcome: weather"
+    Uw lokale weerbericht
+"What else is on at this time?"
+    Wat wordt er nog uitgezonden op dit tijdstip?
+"Widescreen"
+"Width"
+"Will Record"
+"Wind"
+    Wind
+"Wind Chill"
+    Voeltemp. Wind
+"Written by"
+    Auteur
+"xmltvid"
+    xmltvid
+"Year"
+"Yes"
+    Ja
+"Yesterday"

@@ -1,0 +1,99 @@
+"Action"
+    Akcija
+    \b(?:akcija|adven)
+"Adult"
+    Odrasli
+    \b(?:adult|erotika)
+"Animals"
+    Živali
+    \b(?:živali|tiere)
+"Art_Music"
+    Umetnost_Glasba
+    \b(?:art|dance|music|cultur|glasba|kultura|ples|umetnost)
+"Business"
+    Poslovno
+    \b(?:biz|busine|poslo)
+"Children"
+    Otroška
+    \b(?:child|infan|animation|otrok)
+"Comedy"
+    Komedja
+    \b(?:comed|entertain|sitcom|komedija)
+"Crime_Mystery"
+    Kriminalka/Grozljivka
+    \b(?:crim|myster|krimi|grozl)
+"Documentary"
+    Dokumentarec
+    \b(?:doc|dok)
+"Drama"
+    Drama
+    \b(?:drama)
+"Educational"
+    Izobraževanje
+    \b(?:edu|interests|izobraž)
+"Food"
+    Hrana
+    \b(?:food|cook|drink|pijača|hrana)
+"Game"
+    Igre
+    \b(?:game|igr)
+"Health_Medical"
+    Zdravje/Medicina
+    \b(?:health|medic|medicina)
+"History"
+    Zgodovina
+    \b(?:hist|zgodovin)
+"Horror"
+    Grozljivka
+    \b(?:horror|grozlj)
+"HowTo"
+    Kako
+    \b(?:how|home|house|garden|kako|hiša|vrt|dom)
+"Misc"
+    Drugo
+    \b(?:special|variety|info|collect)
+"News"
+    Poročila
+    \b(?:news|current|trenutno|poročila)
+"Reality"
+    Realno
+    \b(?:realit)
+"Romance"
+    Romanca
+    \b(?:romanc)
+"SciFi_Fantasy"
+    ZnanFant/Fantastika
+    \b(?:fantasy|sci\w*\W*fi)
+"Science_Nature"
+    Znanost/Narava
+    \b(?:science|nature|environment|narava|okolje|znanost)
+"Shopping"
+    Prodaja
+    \b(?:shop|prodaja)
+"Soaps"
+    Telenovela
+    \b(?:soaps|španske|tele)
+"Spiritual"
+    Duhovno
+    \b(?:spirit|relig|religija)
+"Sports"
+    Šport
+    \b(?:sport)
+"Talk"
+    Debate
+    \b(?:talk|govor|debat)
+"Travel"
+    Potovanja
+    \b(?:travel|potovanja)
+"Unknown"
+    Neznano
+    
+"War"
+    Vojna
+    \b(?:war|vojna)
+"Western"
+    Vestern
+    \b(?:west|zahod)
+"movie"
+    Film
+    

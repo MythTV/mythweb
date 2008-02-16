@@ -1,0 +1,178 @@
+/* @deprecated
+ * A class for the the cells containing settings in the various settings files
+/*/
+    .settings {
+        background-color: #506080;
+    }
+
+/* The main box surrounding all settings editors */
+    #remote {
+        margin-top:     1em;
+    }
+
+/* Overview of the settings */
+
+    #remote .x-overview {
+        text-align:     center;
+        width:          15em;
+    }
+    #remote .x-title {
+        margin:         .5em;
+        font-size:      125%;
+    }
+
+/* The list of modules. */
+
+    #remote .x-modules {
+        white-space:    nowrap;
+    }
+    #remote .x-modules ul {
+        margin:             1em;
+        list-style-type:    none;
+        padding:            0px;
+    }
+    #remote .x-modules li {
+    }
+    #remote .x-modules a {
+        display:            block;
+        padding:            .2em 1em;
+        background-color:   #345;
+        border:             1px dotted #9090B0;
+        margin-top:         1px;
+        margin-bottom:      11px;
+    }
+    #remote .x-modules a:hover, #remote .x-modules a.x-selected {
+        background-color:   #023;
+        margin-top:         -1px;
+        margin-bottom:      10px;
+        border-width:       2px;
+        border-color:       #abd;
+    }
+    #remote .x-modules a.x-selected {
+        border-style:       solid;
+    }
+
+/* The list of sections for the current module. Normally displayed as tabs. */
+
+    #remote .x-sections {
+        padding:        0px 1em;
+        border-bottom:  1px solid #9090B0;
+        height:         2.25em;
+        vertical-align: bottom;
+    }
+
+    #remote .x-sections ul {
+        display:        inline;
+        list-style:     none;
+        margin:         0;
+        padding:        0;
+    }
+    #remote .x-sections a {
+        float:              left;
+        color:              #ccd;
+        background-color:   #405953;
+        padding:            2px 6px;
+        margin:             3px 5px 0px 0px;
+        border:             2px solid #578;
+        border-bottom:      none;
+        white-space:        nowrap;
+        -moz-border-radius-topleft:     8px;
+        -moz-border-radius-topright:    8px;
+    }
+    #remote .x-sections a:hover, #remote .x-sections a.x-selected {
+        color:              white;
+        background-color:   #102923;
+        border-color:       #9090B0;
+    }
+    #remote .x-sections a.x-selected {
+        border-bottom:      1px solid #102923;
+        margin-bottom:      -1px;
+    }
+
+    #remote .x-sections a.active {
+        color:              white;
+        font-weight:        bold;
+        background-color:   #102923;
+        border:             2px solid #9090B0;
+        border-bottom:      1px solid #102923;
+        margin-bottom:      -1px;
+    }
+
+/* Select which host to edit the settings for. */
+
+    #remote .x-host {
+        text-align:         right;
+        border-bottom:      1px solid #9090B0;
+    }
+
+/* A notification/warning */
+
+    #remote .x-notice {
+        margin:             1em;
+        padding:            .5em;
+        text-align:         center;
+        color:              #fbb;
+        background-color:   #360000;
+        border:             1px solid #F03030;
+    }
+
+/* The content of the settings that are being edited */
+
+    #remote .x-content {
+        background-color:   #102923;
+        border:             1px solid #9090B0;
+        border-top:         none;
+        padding:            .5em;
+    }
+
+    #remote .x-content table {
+        width:              100%;
+    }
+    #remote .x-content table th, #remote .x-content table td {
+        padding:            .5em;
+    }
+
+    #remote .x-content th {
+        text-align:         right;
+        font-weight:        normal;
+        white-space:        nowrap;
+    }
+
+    #remote .x-content tr.x-sep th, #remote .x-content tr.x-sep td {
+        border-bottom:      1px solid #304943;
+    }
+
+/* Key controls */
+
+    #remote_keys table td {
+        text-align:         center;
+        padding:            2px !important;
+    }
+    #remote_keys table a {
+        display:            block;
+        min-width:          2em;
+        padding:            .25em .5em;
+        font-weight:        bold;
+        border:             1px solid #7b8;
+        background-color:   #263;
+    }
+    #remote_keys table a:hover {
+        border:             1px solid #9da;
+        background-color:   #485;
+        text-decoration:    none;
+    }
+    #remote_keys table a.pressed {
+        border:             1px solid #9da;
+        background-color:   #685;
+    }
+    #remote_keys table a.pressed:hover {
+        background-color:   #8a7;
+    }
+    #remote_keys table a.noshift {
+    }
+    #remote_keys table a.reqshift {
+    }
+    #remote_keys table a.x-hidden {
+        display:            none;
+    }
+
