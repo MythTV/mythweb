@@ -217,7 +217,7 @@
 <table id="title_choices" class="commandbox commands" border="0" cellspacing="0" cellpadding="4">
 <tr>
 <?php if (count($Groups) > 1) { ?>
-    <td class="-group"><?php echo t('Show group') ?>:</td>
+    <td class="x-group"><?php echo t('Show group') ?>:</td>
     <td><select name="recgroup" onchange="$('change_title').submit()">
         <option value=""><?php echo t('All groups') ?></option><?php
         foreach($Groups as $recgroup => $count) {
@@ -233,7 +233,7 @@
 <?php
     }
 ?>
-    <td class="-recordings"><?php echo t('Show recordings') ?>:</td>
+    <td class="x-recordings"><?php echo t('Show recordings') ?>:</td>
     <td><select name="title" onchange="$('change_title').submit()">
         <option id="All recordings" value=""><?php echo t('All recordings') ?></option>
 <?php
@@ -254,17 +254,17 @@
 <table id="recorded_list" border="0" cellpadding="0" cellspacing="0" class="list small">
 <tr class="menu">
     <td class="list"<?php if ($group_field) echo ' colspan="2"' ?>>&nbsp;</td>
-    <th class="-title"><?php     echo get_sort_link('title',     t('Title'))      ?></th>
-    <th class="-subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle'))   ?></th>
-    <th class="-programid"><?php echo get_sort_link('programid', t('Program ID')) ?></th>
-    <th class="-airdate"><?php   echo get_sort_link('airdate',   t('Airdate'))    ?></th>
-    <th class="-channum"><?php   echo get_sort_link('channum',   t('Channel'))    ?></th>
+    <th class="x-title"><?php     echo get_sort_link('title',     t('Title'))      ?></th>
+    <th class="x-subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle'))   ?></th>
+    <th class="x-programid"><?php echo get_sort_link('programid', t('Program ID')) ?></th>
+    <th class="x-airdate"><?php   echo get_sort_link('airdate',   t('Airdate'))    ?></th>
+    <th class="x-channum"><?php   echo get_sort_link('channum',   t('Channel'))    ?></th>
 <?php
     if ($recgroup_cols)
-        echo '    <th class="-recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
+        echo '    <th class="x-recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
 ?>
-    <th class="-length"><?php   echo get_sort_link('length',    t('Length'));    ?></th>
-    <th class="-filesize"><?php echo get_sort_link('file_size', t('File Size')); ?></th>
+    <th class="x-length"><?php   echo get_sort_link('length',    t('Length'));    ?></th>
+    <th class="x-filesize"><?php echo get_sort_link('file_size', t('File Size')); ?></th>
 </tr><?php
     $row     = 0;
     $section = -1;
@@ -304,39 +304,38 @@ EOM;
         if ($group_field != "")
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
 ?>
-    <td rowspan="2" class="-pixmap<?php
-        if ($_SESSION['recorded_pixmaps']) { ?>">
-        <a class="-pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
+    <td rowspan="2" class="-pixmap<?php if ($_SESSION['recorded_pixmaps']) { ?>">
+        <a class="x-pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
             ><img src="<?php echo $show->thumb_url(100,0) ?>"></a>
 <?php   }
         else {
             echo ' -noimg">';
         }
 ?>
-        <a class="-download"
+        <a class="x-download"
             href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream'); ?>"
             ><img src="<?php echo skin_url ?>/img/play_sm.png" alt="<?php echo t('ASX Stream'); ?>"></a>
-        <a class="-download"
+        <a class="x-download"
             href="<?php echo $show->url ?>" title="<?php echo t('Direct Download'); ?>"
             ><img src="<?php echo skin_url ?>/img/video_sm.png" alt="<?php echo t('Direct Download'); ?>"></a>
         </td>
-    <td class="-title"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
+    <td class="x-title"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->title.'</a>' ?></td>
-    <td class="-subtitle"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
+    <td class="x-subtitle"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->subtitle.'</a>' ?></td>
-    <td class="-programid"><?php echo $show->programid ?></td>
-    <td class="-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
-    <td class="-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+    <td class="x-programid"><?php echo $show->programid ?></td>
+    <td class="x-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
+    <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
 <?php
     if ($recgroup_cols)
         echo "    <td class=\"-recgroup\">$show->recgroup</td>\n";
 ?>
-    <td class="-length"><?php echo nice_length($show->length) ?></td>
-    <td class="-filesize"><?php echo nice_filesize($show->filesize) ?></td>
-    <td class="-commands commands" rowspan="2"><?php
+    <td class="x-length"><?php echo nice_length($show->length) ?></td>
+    <td class="x-filesize"><?php echo nice_filesize($show->filesize) ?></td>
+    <td class="x-commands commands" rowspan="2"><?php
         if ($show->is_recording) {
             echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '">',
                  t('Still Recording: Edit'),
@@ -365,7 +364,7 @@ EOM;
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
     <td colspan="5" valign="top"><?php echo $show->description ?></td>
-    <td colspan="<?php echo 2 + $recgroup_cols ?>" class="-progflags"><?php
+    <td colspan="<?php echo 2 + $recgroup_cols ?>" class="x-progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
                  '<img id="autoexpire_', $row, '" src="', skin_url, '/img/flags/';

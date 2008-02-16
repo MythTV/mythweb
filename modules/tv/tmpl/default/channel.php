@@ -35,9 +35,9 @@
     </div>
     <table id="x-jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
     <tr>
-        <td class="-jumpto"><?php echo t('Jump To') ?>:</td>
-        <td class="-hour"><?php channel_select('onchange="$(\'program_listing\').submit()"', $this_channel->chanid) ?></td>
-        <td class="-day"><a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] - (24 * 60 * 60) ?>"
+        <td class="x-jumpto"><?php echo t('Jump To') ?>:</td>
+        <td class="x-hour"><?php channel_select('onchange="$(\'program_listing\').submit()"', $this_channel->chanid) ?></td>
+        <td class="x-day"><a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] - (24 * 60 * 60) ?>"
                 ><img src="<?php echo skin_url ?>img/left.gif" alt="<?php echo t('leftl'); ?>"></a>
             <?php date_select('onchange="$(\'program_listing\').submit()"') ?>
             <a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] + (24 * 60 * 60) ?>"

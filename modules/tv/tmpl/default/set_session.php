@@ -25,7 +25,7 @@
 </tr><tr>
     <th><?php echo t('Download URL override') ?></label>:</th>
     <td>file://<input type="text" id="file_url_override" name="file_url_override" value="<?php echo html_entities(trim($_SESSION['file_url_override'])) ?>" title="Instead of streaming downloaded recordings, load from a local file:// path instead."></td>
-</tr><tr class="-sep">
+</tr><tr class="x-sep">
     <td colspan="2"><?php echo t('Guide Settings') ?>:</th>
 </tr><tr>
     <th><?php echo t('Only display favourite channels') ?>:</th>
@@ -45,7 +45,7 @@
 </tr><tr>
     <th><?php echo t('Group timeslots every') ?>:</th>
     <td><input type="text" size="5" name="timeslot_blocks" value="<?php echo intVal($_SESSION['timeslot_blocks']) ?>"></td>
-</tr><tr class="-sep">
+</tr><tr class="x-sep">
     <th><?php echo t('Rows to show between timeslot info') ?>:</th>
     <td><input type="text" size="5" name="timeslotbar_skip" value="<?php echo intVal($_SESSION['timeslotbar_skip']) ?>"></td>
 </tr><tr>
@@ -75,7 +75,7 @@
 </tr><tr>
     <th><?php echo t('Channel &quot;Jump to&quot;') ?>&nbsp;</td>
     <td><input type="text" size="24" name="date_channel_jump" value="<?php echo html_entities($_SESSION['date_channel_jump']) ?>"></td>
-</tr><tr class="-sep">
+</tr><tr class="x-sep">
     <th><?php echo t('Hour Format') ?>&nbsp;</td>
     <td><select name="time_format" style="text-align: center"><?php
         foreach (array('%I:%M %p', '%H:%M') as $code) {

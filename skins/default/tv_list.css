@@ -11,24 +11,24 @@
     float: left;
 }
 
-.-channel {
+.x-channel {
     width:              8em;
     padding:            0 !important;
     vertical-align:     middle;
     background-color:   #202a49;
     white-space:        nowrap;
 }
-.-channel img {
+.x-channel img {
     position:           relative;
     top:                -4px;
     vertical-align:     middle;
 }
-.-channel a {
+.x-channel a {
     display:            block;
     text-align:         center;
     padding:            5px;
 }
-.-channel .-preferred {
+.x-channel .x-preferred {
     margin-left:        5px;
     font-size:          200%;
 }
@@ -53,18 +53,18 @@
     vertical-align:     middle;
     white-space:        nowrap;
 }
-#x-jumpto td.-jumpto {
+#x-jumpto td.x-jumpto {
     font-size:          110%;
     font-weight:        bold;
     border-right:       1px solid #304943;
 }
-#x-jumpto td.-hour {
+#x-jumpto td.x-hour {
     border-right:       1px solid #304943;
 }
-#x-jumpto td.-hour select {
+#x-jumpto td.x-hour select {
     text-align:         right;
 }
-#x-jumpto .-day select {
+#x-jumpto .x-day select {
     text-align:         center;
 }
 

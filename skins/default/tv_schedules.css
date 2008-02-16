@@ -10,39 +10,39 @@
     text-align:         left;
     white-space:        nowrap;
 }
-#listings th.-title {
+#listings th.x-title {
 }
-#listings th.-priority {
+#listings th.x-priority {
     text-align:         center;
 }
-#listings th.-channel {
+#listings th.x-channel {
 }
-#listings th.-profile {
+#listings th.x-profile {
 }
-#listings th.-transcoder {
+#listings th.x-transcoder {
 }
-#listings th.-group {
+#listings th.x-group {
 }
-#listings th.-type {
+#listings th.x-type {
 }
 
 #listings td {
 }
-#listings td.-title {
+#listings td.x-title {
 }
-#listings td.-priority {
+#listings td.x-priority {
     text-align:         center;
 }
-#listings td.-channel {
+#listings td.x-channel {
 }
-#listings td.-profile {
+#listings td.x-profile {
 }
-#listings td.-transcoder {
+#listings td.x-transcoder {
 }
-#listings td.-group {
+#listings td.x-group {
 }
-#listings td.-type {
+#listings td.x-type {
 }
-#listings td.-sgroup {
+#listings td.x-sgroup {
 }
 

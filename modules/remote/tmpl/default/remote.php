@@ -90,8 +90,8 @@
 
 <table id="remote" border="0" cellpadding="0" cellspacing="0">
 <tr>
-    <td class="-overview" rowspan="2" valign="top">
-        <div class="-title">
+    <td class="x-overview" rowspan="2" valign="top">
+        <div class="x-title">
             <?php echo t('Frontends') ?>:
         </div>
 <?php
@@ -100,13 +100,13 @@
         }
         else {
 ?>
-        <div class="-modules">
+        <div class="x-modules">
             <ul><?php
                 foreach (array_keys($Frontends) as $host) {
                     echo '<li><a id="host_', $host, '"',
                          ' onclick="handle_frontend(\'', $host, '\')"';
                     if ($_SESSION['remote']['frontends'][$host])
-                        echo ' class="-selected"';
+                        echo ' class="x-selected"';
                     echo '>', html_entities($host), '</a></li>';
                 }
                 ?></ul>
@@ -115,18 +115,18 @@
         }
 ?>
         </td>
-    <td class="-sections">
+    <td class="x-sections">
         <ul><?php
             foreach ($Modules['remote']['links'] as $link => $name) {
                 echo '<li><a href="', root, $Modules['remote']['path'], '/', $link, '"';
                 if ($link == $_REQUEST['type'])
-                    echo ' class="-selected"';
+                    echo ' class="x-selected"';
                 echo '>', html_entities($name), '</a></li>';
             }
         ?></ul>
         </td>
 </tr><tr>
-<td class="-content" colspan="2" valign="top">
+<td class="x-content" colspan="2" valign="top">
 <?php
     require_once tmpl_dir.'/'.$_REQUEST['type'].'.php';
 ?>

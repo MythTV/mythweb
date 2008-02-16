@@ -56,7 +56,7 @@
 
         <form name="custom_schedule" method="post" action="<?php echo root ?>tv/schedules/custom<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
 
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
 
             <ul>
@@ -79,7 +79,7 @@
             </ul>
         </div>
 
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Search Type') ?>:</h3>
 
             <ul>
@@ -103,19 +103,19 @@
 
         </div>
 
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Recording Options') ?>:</h3>
 
-            <dl id="title_options" class="-long">
+            <dl id="title_options" class="x-long">
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
                 <dd><input type="text" name="title" value="<?php echo html_entities($schedule->edit_title) ?>" size="24">
                     (<span id="search_type"><?php echo t('$1 Search', $schedule->search_type) ?></span>)</dd>
             </dl>
-            <dl id="standard_options" class="-long<?php if ($schedule->search == searchtype_power) echo ' hidden' ?>">
+            <dl id="standard_options" class="-long<?php if ($schedule->search == searchtype_power) echo' hidden' ?>">
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
                 <dd><input type="text" name="search_phrase" value="<?php echo html_entities($schedule->description) ?>" size="30"></dd>
             </dl>
-            <dl id="power_options" class="-long" <?php if ($schedule->search != searchtype_power) echo ' style="display: none;"'; ?>>
+            <dl id="power_options" class="x-long" <?php if ($schedule->search != searchtype_power) echo ' style="display: none;"'; ?>>
                 <dt><?php echo t('Additional Tables') ?>:&nbsp;</dt>
                 <dd><input type="text" name="additional_tables" value="<?php echo html_entities($schedule->subtitle) ?>" size="30"></dd>
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
@@ -126,7 +126,7 @@
 
         </div>
 
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Find Date & Time Options') ?>:</h3>
             <dl class="clearfix">
                <dt><?php echo t('Find Day') ?>:</dt>
@@ -136,7 +136,7 @@
             </dl>
         </div>
 
-        <div class="-options">
+        <div class="x-options">
 <?php    require_once tmpl_dir.'_advanced_options.php' ?>
         </div>
 

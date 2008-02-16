@@ -35,18 +35,18 @@
     vertical-align:     middle;
     white-space:        nowrap;
 }
-#x-jumpto td.-jumpto {
+#x-jumpto td.x-jumpto {
     font-size:          110%;
     font-weight:        bold;
     border-right:       1px solid #304943;
 }
-#x-jumpto td.-hour {
+#x-jumpto td.x-hour {
     border-right:       1px solid #304943;
 }
-#x-jumpto td.-hour select {
+#x-jumpto td.x-hour select {
     text-align:         right;
 }
-#x-jumpto .-day select {
+#x-jumpto .x-day select {
     text-align:         center;
 }
 

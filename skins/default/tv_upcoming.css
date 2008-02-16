@@ -6,16 +6,16 @@
     vertical-align:     middle;
     white-space:        nowrap;
 }
-#display_options td.-title {
+#display_options td.x-title {
     font-size:          110%;
     font-weight:        bold;
 }
-#display_options td.-check {
+#display_options td.x-check {
     padding:            .35em .5em;
     border-left:        1px solid #304943;
     height:             2em;
 }
-#display_options td.-check label {
+#display_options td.x-check label {
     border:             1px solid #7b8;
     background-color:   #263;
     padding-top:        .15em;
@@ -27,11 +27,11 @@
     margin-left:        0em;
     margin-right:       0em;
 }
-#display_options td.-check label:hover {
+#display_options td.x-check label:hover {
     border:             1px solid #9da;
     background-color:   #485;
 }
-#display_options td.-check input {
+#display_options td.x-check input {
     float:              none;
     padding:            0px;
     margin:             0px;
@@ -47,43 +47,43 @@
     text-align:     left;
 }
 
-#listings th.-status {
+#listings th.x-status {
     text-align:         center;
 }
-#listings th.-title {
+#listings th.x-title {
 }
-#listings th.-channum {
+#listings th.x-channum {
 }
-#listings th.-airdate {
+#listings th.x-airdate {
 }
-#listings th.-length {
+#listings th.x-length {
 }
 
-#listings td.-status {
+#listings td.x-status {
     text-align:         center;
 }
-#listings td.-title {
+#listings td.x-title {
 }
-#listings td.-channum {
+#listings td.x-channum {
 }
-#listings td.-airdate {
+#listings td.x-airdate {
     white-space:        nowrap;
 }
-#listings td.-length {
+#listings td.x-length {
     white-space:        nowrap;
 }
-#listings td.-commands {
+#listings td.x-commands {
     padding:            2px;
     text-align:         center;
     white-space:        nowrap;
     background-color:   #191c26;
 }
-#listings td.-commands a {
+#listings td.x-commands a {
     display:            block;
     padding:            .25em .5em;
     margin:             0;
 }
-#listings td.-recording a {
+#listings td.x-recording a {
     border:             1px solid #0f0;
 }
 

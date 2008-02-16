@@ -30,7 +30,7 @@
         <form name="schedule_manually" method="post" action="<?php echo root ?>tv/schedules/manual<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
 
 <?php   if ($schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
 
             <ul>
@@ -55,7 +55,7 @@
         }
         if ($schedule->recordid) {
 ?>
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Schedule Override') ?>:</h3>
 
             <ul>
@@ -74,7 +74,7 @@
         </div>
 <?php      } ?>
 
-        <div class="-options">
+        <div class="x-options">
             <h3><?php echo t('Recording Options') ?>:</h3>
 
             <dl>
@@ -94,7 +94,7 @@
 
         </div>
 
-        <div class="-options">
+        <div class="x-options">
 <?php    require_once tmpl_dir.'_advanced_options.php' ?>
         </div>
 

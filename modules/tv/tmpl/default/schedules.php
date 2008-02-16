@@ -40,14 +40,14 @@
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="-title"><?php      echo get_sort_link('title',                                  t('Title'))                  ?></th>
-    <th class="-priority"><?php   echo get_sort_link('recpriority',                            t('Recording Priority'))     ?></th>
-    <th class="-channel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('Channel'))   ?></th>
-    <th class="-profile"><?php    echo get_sort_link('profile',                                t('Profile'))                ?></th>
-    <th class="-transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))             ?></th>
-    <th class="-group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))        ?></th>
-    <th class="-type"><?php       echo get_sort_link('type',                                   t('Type'))                   ?></th>
-    <th class="-sgroup"><?php     echo get_sort_link('storagegroup',                           t('Storage Group'))          ?></th>
+    <th class="x-title"><?php      echo get_sort_link('title',                                  t('Title'))                  ?></th>
+    <th class="x-priority"><?php   echo get_sort_link('recpriority',                            t('Recording Priority'))     ?></th>
+    <th class="x-channel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('Channel'))   ?></th>
+    <th class="x-profile"><?php    echo get_sort_link('profile',                                t('Profile'))                ?></th>
+    <th class="x-transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))             ?></th>
+    <th class="x-group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))        ?></th>
+    <th class="x-type"><?php       echo get_sort_link('type',                                   t('Type'))                   ?></th>
+    <th class="x-sgroup"><?php     echo get_sort_link('storagegroup',                           t('Storage Group'))          ?></th>
 </tr><?php
         $prev_group = '';
         $cur_group  = '';
@@ -93,7 +93,7 @@
         // Print the content
     ?><tr class="<?php echo $css_class ?>">
         <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <td class="-title <?php echo $style_class ?>"><?php
+    <td class="x-title <?php echo $style_class ?>"><?php
         // Window status text, for the mouseover
             $wstatus = "Details for $schedule->title";
         // Print a link to the program detail for this schedule
@@ -116,10 +116,10 @@
                 echo ":  $schedule->subtitle";
             echo '</a>';
         ?></td>
-    <td class="-priority"><?php
+    <td class="x-priority"><?php
             echo $schedule->recpriority
         ?></td>
-    <td class="-channel"><?php
+    <td class="x-channel"><?php
             if ($_SESSION["prefer_channum"]) {
                 if ($schedule->channel->channum)
                     echo $schedule->channel->channum.' - ';
@@ -130,14 +130,14 @@
             }
             echo $schedule->channel->name;
         ?></td>
-    <td class="-profile"><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
-    <td class="-transcoder"><?php
+    <td class="x-profile"><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
+    <td class="x-transcoder"><?php
         global $Transcoders;
         echo _or($Transcoders[$schedule->transcoder],  '&nbsp;')
         ?></td>
-    <td class="-group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
-    <td class="-type"><?php  echo $schedule->texttype ?></td>
-    <td class="-group"><?php echo _or($schedule->storagegroup, '&nbsp;') ?></td>
+    <td class="x-group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
+    <td class="x-type"><?php  echo $schedule->texttype ?></td>
+    <td class="x-group"><?php echo _or($schedule->storagegroup, '&nbsp;') ?></td>
 </tr><?php
             $prev_group = $cur_group;
         }
