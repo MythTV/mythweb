@@ -62,7 +62,7 @@
     unless ($basename =~ /\w/) {
         print header(),
               "Unknown recording requested.\n";
-        CORE::exit;
+        exit;
     }
 
 # Find the local file
@@ -80,7 +80,7 @@
     unless ($filename) {
         print header(),
               "$basename does not exist in any recognized storage group directories for this host.";
-        CORE::exit;
+        exit;
     }
 
 # Load some conversion settings from the database
@@ -129,7 +129,7 @@ EOF
                      -Content_disposition => " attachment; filename=\"$title-$subtitle.asx\"",
                     ),
               $file;
-        CORE::exit;
+        exit;
     }
 
 # Flash?
@@ -154,7 +154,7 @@ type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/g
 flashvars="file=$uri&autoStart=true" />
 </body>
 EOF
-        CORE::exit;
+        exit;
     }
     elsif ($ENV{'REQUEST_URI'} =~ /\.flv$/i) {
     # Print the movie
@@ -166,7 +166,7 @@ EOF
         unless ($ffmpeg_pid) {
             print header(),
                   "Can't do ffmpeg:  $!";
-            CORE::exit;
+            exit;
         }
         print header(-type => 'video/x-flv');
         my $buffer;
@@ -174,7 +174,7 @@ EOF
             print $buffer;
         }
         close DATA;
-        CORE::exit;
+        exit;
     }
 
 # File size
@@ -184,7 +184,7 @@ EOF
     if ($size < 1) {
         print header(),
               "$basename is an empty file.";
-        CORE::exit;
+        exit;
     }
 
 # File type
@@ -201,7 +201,7 @@ EOF
     else {
         print header(),
               "Unknown video type requested:  $basename\n";
-        CORE::exit;
+        exit;
     }
 
 # Download filename
@@ -218,7 +218,7 @@ EOF
     unless (sysopen DATA, $filename, O_RDONLY) {
         print header(),
               "Can't read $basename:  $!";
-        CORE::exit;
+        exit;
     }
 
 # Binmode, in case someone is running this from Windows.

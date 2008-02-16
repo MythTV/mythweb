@@ -194,20 +194,12 @@
     #
     #    Header append Vary User-Agent env=!dont-vary
 
-    # Set up the perl handler so we can stream properly.
-    #
-    # IMPORTANT!!  Please see the note in INSTALL section 5.1 that explains why
-    # this may not always properly detect mod_perl.
+    # Set up the perl handler so we can stream properly.  Do not use mod_perl
+    # because it has a tendency to hold onto child processes, which causes
+    # problems if the browser closes on an in-progress stream.
     #
         <Files *.pl>
-            <IfModule mod_perl.c>
-                SetHandler perl-script
-                PerlResponseHandler ModPerl::Registry
-                PerlOptions +ParseHeaders
-            </IfModule>
-            <IfModule !mod_perl.c>
-                SetHandler cgi-script
-            </IfModule>
+            SetHandler cgi-script
             Options +ExecCGI
         </Files>
 
