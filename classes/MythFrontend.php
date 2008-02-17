@@ -18,18 +18,18 @@
 class MythFrontend {
 
 /** @var resource   File pointer to the socket connection. */
-    var $fp;
+    private $fp;
 
 /** @var bool       Connected?. */
-    var $connected = false;
+    private $connected = false;
 
 /** @var string     Hostname to connect to. */
-    var $host;
+    private $host;
 /** @var string     Hostname to connect to. */
-    var $port;
+    private $port;
 
 /** @var array      List of jump points available on this host. */
-    var $jump_points = array();
+    private $jump_points = array();
 
 /**
  * Object constructor
@@ -37,26 +37,16 @@ class MythFrontend {
  * @param string $host Hostname or IP for this frontend.
  * @param int    $port TCP port to connect to.
 /**/
-    function __construct($host, $port) {
+    public function __construct($host, $port) {
         $this->host = $host;
         $this->port = $port;
-    }
-
-/**
- * Placeholder constructor for php4 compatibility
- *
- * @param string $host Hostname or IP for this frontend.
- * @param int    $port TCP port to connect to.
-/**/
-    function &MythFrontend($host, $port) {
-        return $this->__construct($host, $port);
     }
 
 /**
  * Disconnect when destroying the object.
 /**/
     function __destruct() {
-       $this->_disconnect();
+       $this->disconnect();
    }
 
 /**
@@ -66,7 +56,7 @@ class MythFrontend {
  * @param int $timeout Connection timeout, set low in case the host isn't
  *                     actually on.
 /**/
-    function connect($timeout = 5) {
+    public function connect($timeout = 5) {
         if ($this->fp)
             return true;
     // Connect.
@@ -74,17 +64,17 @@ class MythFrontend {
         if ($this->fp === false)
             return false;
     // Read the waiting data.
-        $data = $this->_get_response(null, true);
+        $data = $this->get_response(null, true);
         if (strstr($data, '#'))
             return $this->connected = true;
     // Something went wrong (returns false)
-        return $this->_disconnect();
+        return $this->disconnect();
     }
 
 /**
  * Disconnect from this frontend
 /**/
-    function _disconnect() {
+    private function disconnect() {
         if ($this->fp) {
             fclose($this->fp);
             $this->fp = null;
@@ -100,7 +90,7 @@ class MythFrontend {
  *
  * @return string The response to $query
 /**/
-    function _get_response($query, $keep_hash=false) {
+    private function get_response($query, $keep_hash=false) {
         if (!$this->connect())
             return null;
     // Write some data?
@@ -127,8 +117,8 @@ class MythFrontend {
  *
  * @return array The response to $query, broken into an array
 /**/
-    function _get_rows($query, $sep="\n") {
-        $r = $this->_get_response($query);
+    private function get_rows($query, $sep="\n") {
+        $r = $this->get_response($query);
         return $r ? explode($sep, $r) : $r;
     }
 
@@ -137,7 +127,7 @@ class MythFrontend {
  *
  * @return array The jump points available for this frontend
 /**/
-    function get_jump_points() {
+    public function get_jump_points() {
         if (empty($this->jump_points) || !is_array($this->jump_points)) {
             $this->jump_points = array();
             foreach ($this->_get_rows('help jump') as $line) {
@@ -154,8 +144,8 @@ class MythFrontend {
  *
  * @return string Location of the frontend.
 /**/
-    function query_location() {
-        $ret = $this->_get_response('query location');
+    public function query_location() {
+        $ret = $this->get_response('query location');
         if (empty($ret))
             return 'OFFLINE';
         return $ret;
@@ -166,8 +156,8 @@ class MythFrontend {
  *
  * @param string $query The key to send.
 /**/
-    function query($query) {
-        $lines = $this->_get_rows("query $query");
+    public function query($query) {
+        $lines = $this->get_rows("query $query");
         return $lines;
     }
 
@@ -176,8 +166,8 @@ class MythFrontend {
  *
  * @param string $jump_point The key to send.
 /**/
-    function send_key($key) {
-        $lines = $this->_get_rows("key $key");
+    public function send_key($key) {
+        $lines = $this->get_rows("key $key");
         if (trim($lines[0]) == 'OK')
             return true;
         return false;
@@ -188,8 +178,8 @@ class MythFrontend {
  *
  * @param string $jump_point The jump point to send.
 /**/
-    function send_jump($jump_point) {
-        $lines = $this->_get_rows("jump $jump_point");
+    public function send_jump($jump_point) {
+        $lines = $this->get_rows("jump $jump_point");
         if (trim($lines[0]) == 'OK')
             return true;
         return false;
@@ -200,13 +190,10 @@ class MythFrontend {
  *
  * @param string $options The playback parameters to pass in.
 /**/
-    function send_play($options) {
-        $lines = $this->_get_rows("play $options");
+    public function send_play($options) {
+        $lines = $this->get_rows("play $options");
         if (trim($lines[0]) == 'OK')
             return true;
         return false;
     }
-
-
 }
-
