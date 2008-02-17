@@ -475,7 +475,7 @@ class Program {
                               );
         if ($mod == 'BAD')
             return 0;
-        return strtotime($mod);
+        return $mod;
     }
 
 /**
