@@ -50,8 +50,7 @@
                                 parameters: {
                                                 chanid:             channel_id,
                                                 starttime:          start_time,
-                                                ajax:               true,
-                                                backend_connect:    false
+                                                ajax:               true
                                             },
                                 onSuccess: add_tool_tip,
                                 method:    'get'
@@ -65,7 +64,6 @@
         if (Tips.hasTip($(info['id'])) == false) {
             new Tip(info['id'], info['info'], { className: 'popup' });
             attempt_to_show_tip(info['id']);
-            //setTimeout("attempt_to_show_tip('"+info['id']+"');", 5000);
         }
     }
 

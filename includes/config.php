@@ -19,9 +19,6 @@
  *
 /**/
 
-// Wipe out old/unused settings
-    $db->query('DELETE FROM settings WHERE value="WebVideo_URL"');  /** @todo:  Delete this line after 0.21 has been released */
-
 // Prefer channum over callsign?
     if (empty($_SESSION['prefer_channum']))
         $_SESSION['prefer_channum'] = setting('WebPrefer_Channum');
@@ -86,10 +83,6 @@
         $_SESSION['star_character'] = '&diams;';
     define('star_character', $_SESSION['star_character']);
 
-###############################################################################
-#######  Config below here has not yet been converted to session-configurable
-###############################################################################
-
 //  The following constants are used for the program listings page
 
 if (!isset($_SESSION['show_popup_info']))
@@ -105,4 +98,3 @@ if (!isset($_SESSION['sortby_channum']))
 
 if (!isset($_SESSION['show_video_covers']))
     $_SESSION['show_video_covers'] = 1;
-

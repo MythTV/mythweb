@@ -78,7 +78,7 @@ class Database {
 /**
  * Legacy constructor to catch things that the abstract classification won't
 /**/
-    function Database() {
+    function __construct() {
         trigger_error('The Database class should never be created as an object.  Use Database::connect() instead.', E_USER_ERROR);
     }
 
@@ -103,26 +103,26 @@ class Database {
  *
  * @return object           Database subclass based on requested $engine
 /**/
-    function &connect($db_name, $login, $password, $server='localhost', $port=NULL, $engine='mysql_detect', $options=array()) {
+    static function &connect($db_name, $login, $password, $server='localhost', $port=NULL, $engine='mysql_detect', $options=array()) {
     // For consistency, engine names are all lower case.
         $engine = strtolower($engine);
     // There are two versions of the mysql driver in php.  We have special
     // consideration here for people who want auto-detection.
         if ($engine == 'mysql_detect') {
-            $dbh =& new Database_mysql($db_name, $login, $password, $server, $port);
+            $dbh = new Database_mysql($db_name, $login, $password, $server, $port);
         // MySQL gets some extra smarts to try to use mysqli if it's available
             if ($dbh && function_exists('mysqli_connect')) {
                 $version = preg_replace('/^(\d+\.\d).*$/', '$1', $dbh->server_info());
                 if ($version >= 4.1) {
                     $dbh->close();
-                    $dbh =& new Database_mysqlicompat($db_name, $login, $password, $server, $port);
+                    $dbh = new Database_mysqlicompat($db_name, $login, $password, $server, $port);
                 }
             }
         }
     // Do our best to load the requested class
         else {
             $class = "Database_$engine";
-            $dbh =& new $class($db_name, $login, $password, $server, $port, $options);
+            $dbh = new $class($db_name, $login, $password, $server, $port, $options);
         }
     // Return
         return $dbh;
@@ -138,7 +138,7 @@ class Database {
  *
  * @return array      Single array comprised of all scalars present in $args.
 /**/
-    function smart_args($args) {
+    static function smart_args($args) {
         $new_args = array();
     // Not an array
         if (!is_array($args))
@@ -531,4 +531,3 @@ class Database {
     }
 
 }
-

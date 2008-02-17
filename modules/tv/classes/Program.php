@@ -81,6 +81,8 @@ class Program {
     var $has_subtitles   = 0;
     var $subtitled       = 0;
     var $deaf_signed     = 0;
+    var $parttotal          = 1;
+    var $partnumber         = 1;
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
@@ -117,7 +119,7 @@ class Program {
     var $jobs          = array();   // recent/pending jobqueue entries
     var $jobs_possible = array();   // Jobs this program can be assigned to
 
-    function Program($data) {
+    function __construct($data) {
         global $db;
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
@@ -329,8 +331,9 @@ class Program {
     }
 
     function update_fancy_desc() {
-        // Get a nice description with the full details
+    // Get a nice description with the full details
         $details = array();
+
         if ($this->hdtv)
             $details[] = t('HDTV');
         if ($this->widescreen)
@@ -361,7 +364,6 @@ class Program {
             $details[] = t('Audio for Hearing Impaired');
         if ($this->audiovisimpair)
             $details[] = t('Audio for Visually Impaired');
-
         if ($this->previouslyshown)
             $details[] = t('Repeat');
 
@@ -507,12 +509,11 @@ class Program {
         if (is_null($secs_in))
             $secs_in = $def_secs_in;
     // Now, figure out the filename
-        if ($width == 160 && $height == 120 && $secs_in == $def_secs_in) {
+        if ($width == 160 && $height == 120 && $secs_in == $def_secs_in)
             $fileurl .= "$this->filename.png";
-        }
-        else {
+        else
             $fileurl = "$this->filename.{$width}x{$height}x$secs_in.png";
-        }
+
         return root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($fileurl)));
     }
 
@@ -552,16 +553,14 @@ class Program {
     // Regenerate the pixmap if the recording has since been updated
         if ($png_mod < $this->lastmodified) {
             $png_mod = $this->lastmodified;
-            if (!$this->generate_pixmap()) {
+            if (!$this->generate_pixmap())
                 return null;
-            }
         }
     // Is our target file already up to date?
-        if (is_file($pngpath)) {
+        if (is_file($pngpath) && filesize($pngpath) > 0) {
             $mtime = filemtime($pngpath);
-            if ($mtime >= $png_mod) {
+            if ($mtime >= $png_mod)
                 return 1;
-            }
         }
     // Nonstandard dimensions currently require the XML interface
         if (!$is_default) {
@@ -570,18 +569,21 @@ class Program {
             $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
             $port     = _or(get_backend_setting('BackendStatusPort', $host),
                             get_backend_setting('BackendStatusPort'));
-        // Make the request and store the result
-            $pngfile = fopen($pngpath, 'wb');
-            fwrite($pngfile,
-                   @file_get_contents("http://$host:$port/Myth/GetPreviewImage"
-                                    ."?ChanId=$this->chanid"
-                                    .'&StartTime='.unix2mythtime($this->recstartts)
-                                    ."&Height=$height"
-                                    ."&Width=$width"
-                                    ."&SecsIn=$secs_in"
-                                    )
-                  );
-            fclose($pngfile);
+        // Make the request
+            $pngdata  = @file_get_contents("http://$host:$port/Myth/GetPreviewImage"
+                                          ."?ChanId=$this->chanid"
+                                          .'&StartTime='.unix2mythtime($this->recstartts)
+                                          ."&Height=$height"
+                                          ."&Width=$width"
+                                          ."&SecsIn=$secs_in"
+                                          );
+
+        // Store the result
+            if (strlen($pngdata) > 0) {
+                $pngfile = fopen($pngpath, 'wb');
+                fwrite($pngfile, $pngdata);
+                fclose($pngfile);
+            }
         }
     // Standard width can be copied locally, or via mythproto
         else {
@@ -602,10 +604,9 @@ class Program {
                                                           $datasocket,
                                                           $host, $port));
         // Error?
-            if ($recs[0] != 'OK') {
-                // echo "Unknown error starting transfer of $fileurl.png\n";
+            if ($recs[0] != 'OK')
                 return null;
-            }
+
         // Open the output file for writing, and make sure it's in binmode
             $pngfile = fopen($pngpath, 'wb');
         // Tell the backend to send the data
@@ -626,9 +627,8 @@ class Program {
             }
         // Close any file pointers that were opened here
             fclose($pngfile);
-            if ($datasocket) {
+            if ($datasocket)
                 fclose($datasocket);
-            }
         }
     }
 
@@ -865,4 +865,3 @@ class Program {
     }
 
 }
-

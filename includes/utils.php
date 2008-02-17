@@ -35,7 +35,7 @@
         static $cache = array();
     // Best not to have an array index that's null
         $h = is_null($hostname) ? '-null-' : $hostname;
-        if (!is_array($cache[$h]))
+        if (!isset($cache[$h]) || !is_array($cache[$h]))
             $cache[$h] = array();
     // Assigning a new value
         if ($new_value !== "old\0old") {

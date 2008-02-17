@@ -78,7 +78,7 @@ function getScreenSize() {
                 /* Phones using the Series 60 platform, e.g. Nokia 3650 and 6600. */
                     'Series 60'  => array('width' => 176, 'height' => 208),
                     'Series60'   => array('width' => 176, 'height' => 208),
-                    'C500'       => array('width'=>176, 'height'=> 220), // SPV C500
+                    'C500'       => array('width' => 176, 'height' => 220), // SPV C500
                 /* Phones using the Series 90 platform, e.g. Nokia 7710. */
                     'Series 90'  => array('width' => 640, 'height' => 320),
                     'Series90'   => array('width' => 640, 'height' => 320),
@@ -203,4 +203,3 @@ function getScreenHeight() {
   $screen = getScreenSize();
   return isset($screen['height']) ? $screen['height'] : null;
 }
-

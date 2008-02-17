@@ -25,12 +25,12 @@
     }
 
 // Load the database connection routines
-    require_once 'objects/Database.php';
-    require_once 'objects/Database/mysql.php';
-    require_once 'objects/Database/mysqlicompat.php';
-    require_once 'objects/Database/Query.php';
-    require_once 'objects/Database/Query/mysql.php';
-    require_once 'objects/Database/Query/mysqlicompat.php';
+    require_once 'classes/Database.php';
+    require_once 'classes/Database/mysql.php';
+    require_once 'classes/Database/mysqlicompat.php';
+    require_once 'classes/Database/Query.php';
+    require_once 'classes/Database/Query/mysql.php';
+    require_once 'classes/Database/Query/mysqlicompat.php';
 
 /**
  * All database connections should now go through this object.

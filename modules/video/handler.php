@@ -22,8 +22,6 @@
     global $mythvideo_dir;
     $mythvideo_dir = setting('VideoStartupDir', hostname);
 
-    require_once 'objects/Video.php';
-
 // a extra function
     function makeImdbWebUrl($num) {
  	    $imdbwebtype = setting('web_video_imdb_type', hostname);

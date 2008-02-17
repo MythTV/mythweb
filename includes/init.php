@@ -16,6 +16,9 @@
  *
 /**/
 
+// Lazy load the classes...
+    require_once 'includes/class_autoload.php';
+
 // Load the generic utilities so we have access to stuff like DEBUG()
     require_once 'includes/utils.php';
 
@@ -24,9 +27,6 @@
 
 // Define some common stuff
     require_once 'includes/defines.php';
-
-// Check out the php version info
-    require_once 'includes/php_version_check.php';
 
 // Load the error trapping and display routines
     require_once 'includes/errors.php';
@@ -65,4 +65,3 @@
 
 // Load the session defaults and other config info
     require_once 'includes/config.php';
-

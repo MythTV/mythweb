@@ -91,18 +91,6 @@
         form.submit();
     }
 
-// Add a css class to a specified element
-    function add_class(id, classname) {
-        console.log('FIXME: add_class');
-        $(id).addClassName(classname);
-    }
-
-// Remove a css class from a particular element
-    function remove_class(id, classname) {
-        console.log('FIXME: remove_class');
-        $(id).removeClassName(classname);
-    }
-
 // Check/uncheck a checkbox
     function toggle_checkbox(id, check) {
         var e = $(id);

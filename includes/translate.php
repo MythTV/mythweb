@@ -163,7 +163,12 @@
         global $L;
         foreach (preg_split('/\n(?=\S)/', $file) as $group) {
             preg_match('/^([^\n]+?)\s*(?:$|\s*\n(\s+)(.+)$)/s', $group, $match);
-            list($match, $key, $indent, $trans) = $match;
+            $indent = '';
+            $trans  = '';
+            if (count($match) == 2)
+                list($match, $key) = $match;
+            else
+                list($match, $key, $indent, $trans) = $match;
         // Cleanup
             $trans = trim(str_replace("\n$indent", "\n", $trans));
             $key   = trim($key);
@@ -299,4 +304,3 @@
     // Return the language we found
         return $curlang;
     }
-

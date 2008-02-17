@@ -65,13 +65,6 @@ class Database_mysql extends Database {
     }
 
 /**
- * Legacy constructor
-/**/
-    function Database_mysql($db_name, $login, $password, $server='localhost') {
-        return $this->__construct($db_name, $login, $password, $server);
-    }
-
-/**
  * Escapes a string and returns it with added quotes. On top of normal escaping,
  * this also escapes ? characters so it's safe to use in other db queries.
  *
@@ -128,4 +121,3 @@ class Database_mysql extends Database {
     }
 
 }
-

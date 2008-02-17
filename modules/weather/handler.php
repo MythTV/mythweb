@@ -13,8 +13,6 @@
  *
 /**/
 
-// Load the weather classes
-    require_once 'includes/objects/WeatherScreen.php';
     $WeatherScreens = array();
 
 // Get configured WeatherScreens from the database

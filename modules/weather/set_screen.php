@@ -13,8 +13,6 @@
  *
 /**/
 
-    require_once 'includes/objects/WeatherScreen.php';
-
 // Load all of the known mythtv frontend hosts
     $Settings_Hosts = array();
     $sh = $db->query('SELECT DISTINCT hostname

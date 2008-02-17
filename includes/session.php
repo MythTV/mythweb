@@ -48,9 +48,11 @@
         global $db;
         if (!empty($_SERVER['REMOTE_USER']))
             $id = 'user:'.$_SERVER['REMOTE_USER'];
-        $sh = $db->query('SELECT data FROM mythweb_sessions WHERE id=?', $id);
-        list($data) = $sh->fetch_row($result);
-        $sh->finish();
+        $data = $db->query_col('SELECT data
+                                  FROM mythweb_sessions
+                                 WHERE id = ?',
+                               $id
+                               );
         if ($data)
             return $data;
         return '';
@@ -95,4 +97,3 @@
                    $maxlifetime);
         return true;
     }
-

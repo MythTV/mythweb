@@ -47,6 +47,7 @@
     // Initialize the extra parameter as an empty array so the query doesn't
     // freak out if $extra_query doesn't get set.
         $extra_param  = array();
+        $extra_query  = '';
     // Do we have a hostname?
         if ($host) {
         // Do we have a cached value for this host?
@@ -77,28 +78,14 @@
  * @todo JS: haven't tested UTF-8
 /**/
     function backend_command($command, $host = NULL, $port = NULL) {
-        global $Master_Host, $Master_Port;
-    // Use a static cache of hosts
-        static $cache;
-        if (!$cache)
-            $cache = array($Master_Host => array($Master_Port => $fp));
-    // Default values
-        if (!$host || !$port) {
-            $host = $Master_Host;
-            $port = $Master_Port;
-        }
-    // Need a new file pointer?
-        if (!$cache[$host][$port]) {
-            $cache[$host][$port] = NULL;
-        }
-    // Execute the command
-        return backend_command2($command, $cache[$host][$port], $host, $port);
+        $fp = NULL;
+        return backend_command2($command, $fp, $host, $port);
     }
 
 /**
  * A second backend command, so we can allow certain routines to use their own file pointer
 /**/
-    function backend_command2($command, &$fp, $host=NULL, $port=NULL) {
+    function backend_command2($command, &$fp = NULL, $host = NULL, $port = NULL) {
     // Command is an array -- join it
         if (is_array($command))
             $command = implode(backend_sep, $command);
@@ -109,13 +96,20 @@
             $port = $Master_Port;
         }
     // Open a connection to the master backend, unless we've already done so
-        if (!$fp) {
-            $fp = @fsockopen($host, $port, $errno, $errstr, 25);
-            if ($fp)
-                check_proto_version($host, $port);
-            else
-                custom_error("Unable to connect to the master backend at $host:$port.\n"
-                             ."Is it running?");
+        if (!$fp || is_null($fp)) {
+            static $cache;
+            if (isset($cache[$host][$port])) {
+                $fp = $cache[$host][$port];
+            }
+            else {
+                $fp = @fsockopen($host, $port, $errno, $errstr, 25);
+                $cache[$host][$port] = &$fp;
+                if ($fp)
+                    check_proto_version($host, $port);
+                else
+                    custom_error("Unable to connect to the master backend at $host:$port.\n"
+                                 ."Is it running?");
+            }
         }
     // Connection opened, let's do something
         if ($fp) {
@@ -186,7 +180,8 @@
     // Parse the records, starting at the offset point
         $row = 0;
         $col = 0;
-        for($i = $offset; $i < count($recs); $i++) {
+        $count = count($recs);
+        for($i = $offset; $i < $count; $i++) {
             $rows[$row][$col] = $recs[$i];
         // Every $NUMPROGRAMLINES fields (0 through ($NUMPROGRAMLINES-1)) means
         // a new row.  Please note that this changes between myth versions
@@ -245,4 +240,3 @@
     function unix2mythtime($time) {
         return date('Y-m-d\TH:i:s', $time);
     }
-

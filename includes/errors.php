@@ -60,12 +60,13 @@
  * @return string     Human-readable name for error number $errno.
 /**/
     function error_type($errno) {
-        static $types = array(1    => 'Error',            2    => 'Warning',
-                              4    => 'Parsing Error',    8    => 'Notice',
-                              16   => 'Core Error',       64   => 'Compile Error',
-                              128  => 'Compile Warning',  256  => 'User Error',
-                              512  => 'User Warning',     1024 => 'User Notice',
-                              4096 => 'Assertion Error');
+        static $types = array(1    => 'Error',            2     => 'Warning',
+                              4    => 'Parsing Error',    8     => 'Notice',
+                              16   => 'Core Error',       64    => 'Compile Error',
+                              128  => 'Compile Warning',  256   => 'User Error',
+                              512  => 'User Warning',     1024  => 'User Notice',
+                              2048 => 'Strict',           4096  => 'Assert',
+                              8191 => 'All');
         return $types[$errno];
     }
 
@@ -207,4 +208,3 @@
              $backtrace,
              'From:  MythWeb PHP Error <'.error_email.">\r\n");
     }
-

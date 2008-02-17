@@ -13,9 +13,6 @@
  *
 /**/
 
-// Load the Program object
-    require_once 'includes/objects/Program.php';
-
 // Make sure the "Channels" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
     require_once 'includes/channels.php';
 

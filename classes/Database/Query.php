@@ -90,13 +90,4 @@ class Database_Query {
         else
             $this->query = array($query);
     }
-
-/**
- * Legacy constructor.
-/**/
-    function Database_Query(&$db, $query) {
-        return $this->__construct(&$db, $query);
-    }
-
 }
-

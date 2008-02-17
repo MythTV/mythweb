@@ -12,9 +12,6 @@
  *
 /**/
 
-// Load the frontend class
-    require_once 'objects/MythFrontend.php';
-
 /**
  * @global  array $GLOBALS['Frontends']
  * @name    $Frontends

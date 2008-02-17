@@ -18,7 +18,7 @@
     define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));
 
 // Several sections of this program require the current hostname
-    $uname=posix_uname();
+    $uname = posix_uname();
     define('hostname', empty($_SERVER['hostname']) ? trim($uname['nodename']) : $_SERVER['hostname']);
     unset($uname);
 
@@ -68,4 +68,3 @@
 // Define the http host used for access
 
     define('http_host', isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']);
-

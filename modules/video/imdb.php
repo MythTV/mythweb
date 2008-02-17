@@ -13,7 +13,6 @@
 /**/
 
     header('Content-Type: application/json');
-    $JSON = new Services_JSON();
     $return = array();
 
 // We need the id always set, so enforce that here
@@ -36,7 +35,7 @@
             break;
     }
 
-    echo $JSON->encode($return);
+    echo JSON::encode($return);
 
     function lookup($id, $title)
     {

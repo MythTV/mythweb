@@ -46,9 +46,8 @@
         // Exit early if we're in AJAX mode.
             if (isset($_REQUEST['ajax'])) {
                 header('Content-Type: application/json');
-                $JSON = new Services_JSON();
-                echo $JSON->encode(array('id'   => $_REQUEST['id'],
-                                         'file' => $_REQUEST['file']));
+                echo JSON::encode(array('id'   => $_REQUEST['id'],
+                                        'file' => $_REQUEST['file']));
                 exit;
             }
         // No need to scan the rest of the items, so leave early

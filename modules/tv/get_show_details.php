@@ -14,7 +14,6 @@
                                             $_REQUEST['chanid'],
                                             $_REQUEST['starttime']
                                             ));
-    $JSON = new Services_JSON();
-    echo $JSON->encode(array( 'id'      => 'program-'.$_REQUEST['chanid'].'-'.$_REQUEST['starttime'],
-                              'info'    => $program->details_list()
-                            ));
+    echo JSON::encode(array( 'id'      => 'program-'.$_REQUEST['chanid'].'-'.$_REQUEST['starttime'],
+                             'info'    => $program->details_list()
+                           ));
