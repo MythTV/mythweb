@@ -135,7 +135,7 @@
 
     # Skip out early if we've already been through rewrites,
     # or if this is a /css/, /js/ or /cache/ directory request.
-        RewriteRule    ^(css|data|images|js|themes|skins|[a-z_]+\.(php|pl))(/|$)     -     [L]
+        RewriteRule    ^(css|data|images|js|themes|skins|README|INSTALL|[a-z_]+\.(php|pl))(/|$)     -     [L]
 
     # Redirect /pl/ requests to the perl cgi handler.
         RewriteRule     ^(pl(/.*)?)$            mythweb.pl/$1               [QSA,L]
