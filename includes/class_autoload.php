@@ -16,6 +16,11 @@
 // Sometimes a function will use if class_exists, and thus we shouldn't fail if we can't find it.
 
     function __autoload($className) {
-        @include_once "classes/$className.php";
-        @include_once modules_path.'/'.module."/classes/$className.php";
+        global $Path;
+        if (file_exists("classes/$className.php"))
+            @include_once "classes/$className.php";
+        elseif (file_exists(modules_path.'/'.module."/classes/$className.php"))
+            @include_once modules_path.'/'.module."/classes/$className.php";
+        elseif (file_exists(modules_path.'/'.$Path[1]."/classes/$className.php"))
+            @include_once modules_path.'/'.$Path[1]."/classes/$className.php";
     }
