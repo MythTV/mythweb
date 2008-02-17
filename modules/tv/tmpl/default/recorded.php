@@ -310,9 +310,8 @@ EOM;
         <a class="x-pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
             ><img src="<?php echo $show->thumb_url(100,0) ?>"></a>
 <?php   }
-        else {
+        else
             echo ' -noimg">';
-        }
 ?>
         <a class="x-download"
             href="<?php echo video_url($show, true) ?>" title="<?php echo t('ASX Stream'); ?>"

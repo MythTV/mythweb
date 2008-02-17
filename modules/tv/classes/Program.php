@@ -557,7 +557,7 @@ class Program {
                 return null;
         }
     // Is our target file already up to date?
-        if (is_file($pngpath) && filesize($pngpath) > 0) {
+        if (is_file($pngpath)) {
             $mtime = filemtime($pngpath);
             if ($mtime >= $png_mod)
                 return 1;
