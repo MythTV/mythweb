@@ -41,6 +41,12 @@
         $ENV{'PATH'} .= ':'.$ENV{'include_path'};
     }
 
+# Work around a lighttpd bug:  http://trac.lighttpd.net/trac/ticket/420
+    foreach my $key (keys %ENV) {
+        next if ($key eq uc($key));
+        $ENV{$key} ||= $ENV{uc($key)};
+    }
+
 # Connect to the database
     END { $dbh->disconnect() if ($dbh); }
     our $dbh = DBI->connect("dbi:mysql:database=$ENV{'db_name'}:host=$ENV{'db_server'}",
