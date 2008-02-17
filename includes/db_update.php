@@ -13,19 +13,19 @@
 /**/
 
 // What *should* the database version be?
-    define('WebDBSchemaVer', 1);
+    define('WebDBSchemaVer', 2);
 
 // What version does the database think it is?
     $db_vers = setting('WebDBSchemaVer');
 
 // The database is too new
-    if ($db_vers > db_version)
+    if ($db_vers > WebDBSchemaVer)
         trigger_error("Current database version of $db_vers is newer than"
-                      ." the code base version ".db_version,
+                      ." the code base version ".WebDBSchemaVer,
                       FATAL);
 
 // Older database that needs to be upgraded
-    if ($db_vers < db_version) {
+    if ($db_vers < WebDBSchemaVer) {
         switch ($db_vers) {
         // No version, no database
             case 0:
@@ -46,4 +46,3 @@
             #    $db_vers++;
         }
     }
-
