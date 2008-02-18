@@ -287,6 +287,11 @@ class WeatherScreen {
         $cwd          = getcwd();
         $output_array = array();
 
+    // Make sure the script exists
+        if (!file_exists($script)) {
+            custom_error("Could not find '$script'.\nThis most likely means that MythWeather is not installed on this host.");
+        }
+
     // Separate path and filename of script
         $scratch      = explode('/', $script);
         $script       = array_pop($scratch);
