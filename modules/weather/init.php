@@ -23,6 +23,19 @@
     // we should check to see that MythWeather is configured.
         $has_weather = $db->query_col('SELECT COUNT(screen_id)
                                          FROM weatherscreens');
+    // And also check that the weather scripts exist on this host
+        if ($has_weather) {
+            $paths = $db->query_list('SELECT path
+                                      FROM   weathersourcesettings
+                                      WHERE  hostname=?',
+                                     hostname);
+            foreach ($paths as $path ) {
+                if (!file_exists($path)) {
+                    $has_weather = false;
+                    break;
+                }
+            }
+        }
     }
 
 // If weather is enabled, add it to the list.
