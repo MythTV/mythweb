@@ -37,18 +37,21 @@
         $group_field = '';
 ?>
 
-<table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
+<table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small" sortable="true">
+<thead>
 <tr class="menu">
-    <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="x-title"><?php      echo get_sort_link('title',                                  t('Title'))                  ?></th>
-    <th class="x-priority"><?php   echo get_sort_link('recpriority',                            t('Recording Priority'))     ?></th>
-    <th class="x-channel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('Channel'))   ?></th>
-    <th class="x-profile"><?php    echo get_sort_link('profile',                                t('Profile'))                ?></th>
-    <th class="x-transcoder"><?php echo get_sort_link('transcoder',                             t('Transcoder'))             ?></th>
-    <th class="x-group"><?php      echo get_sort_link('recgroup',                               t('Recording Group'))        ?></th>
-    <th class="x-type"><?php       echo get_sort_link('type',                                   t('Type'))                   ?></th>
-    <th class="x-sgroup"><?php     echo get_sort_link('storagegroup',                           t('Storage Group'))          ?></th>
-</tr><?php
+    <?php if ($group_field != '') echo "<th class=\"list\">&nbsp;</th>\n"; ?>
+    <th class="x-title"><?php      echo t('Title' );              ?></th>
+    <th class="x-priority"><?php   echo t('Recording Priority' ); ?></th>
+    <th class="x-channel" sort_hint="sortMythwebChannel"><?php    echo t('Channel' );            ?></th>
+    <th class="x-profile"><?php    echo t('Profile' );            ?></th>
+    <th class="x-transcoder"><?php echo t('Transcoder');          ?></th>
+    <th class="x-group"><?php      echo t('Recording Group');     ?></th>
+    <th class="x-type"><?php       echo t('Type');                ?></th>
+    <th class="x-sgroup"><?php     echo t('Storage Group');       ?></th>
+</tr>
+</thead>
+<?php
         $prev_group = '';
         $cur_group  = '';
         foreach ($the_schedules as $schedule) {

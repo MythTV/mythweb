@@ -24,7 +24,7 @@
  * We should try to keep links and labels looking consistent across the app.
 /*/
 
-    a, a:link { color: #E0E0FF; text-decoration: none; }
+    a, a:link, .link { color: #E0E0FF; text-decoration: none; cursor: pointer;}
     a:active  { color: #990033; text-decoration: none; }
     a:visited { color: #E0E0FF; text-decoration: none; }
     a:hover   { color: #F0F000; text-decoration: underline; }

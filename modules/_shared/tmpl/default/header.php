@@ -31,12 +31,13 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
-    <script type="text/javascript" src="<?php echo root ?>js/prototip/prototip.js"></script>
+    <script type="text/javascript" src="<?php echo root; ?>js/prototype.js"></script>
+    <script type="text/javascript" src="<?php echo root; ?>js/prototip/prototip.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo root; ?>js/prototip/prototip.css">
 
-    <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
-    <script type="text/javascript" src="<?php echo root ?>js/AC_OETags.js"></script>
+    <script type="text/javascript" src="<?php echo root; ?>js/utils.js"></script>
+    <script type="text/javascript" src="<?php echo root; ?>js/AC_OETags.js"></script>
+    <script type="text/javascript" src="<?php echo root; ?>js/table_sort.js"></script>
 
     <script type="text/javascript">
         <!--
