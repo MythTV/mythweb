@@ -24,11 +24,14 @@
 
 <h3>Status</h3>
 
-<table border="0" cellpadding="4" cellspacing="2" class="list small" align="center">
-<tr class="menu" align="center">
-    <td><?php echo t('Name'); ?></td>
-    <td><?php echo t('Status'); ?></td>
-</tr><?php
+<table id="database" border="0" cellpadding="4" cellspacing="2" sortable="true">
+<thead>
+<tr class="menu">
+    <th style="text-align: center;"><?php echo t('Name'); ?></th>
+    <th style="text-align: center;"><?php echo t('Status'); ?></th>
+</tr>
+</thead>
+<?php
     foreach ($Tables as $table_name => $table ) {
 ?><tr class="settings">
     <td><?php echo $table_name; ?></td>
