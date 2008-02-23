@@ -21,18 +21,18 @@
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
-
-// No logs?
-    if (empty($Logs)) {
-    }
-
-    else {
-// Print the table header
-        echo "<table id=\"backend_logs\">\n<tr class=\"header\">\n  <th>row</th>\n";
-        foreach (array_keys($Logs[0]) as $key) {
-            echo "  <th>$key</th>\n";
-        }
-        echo '</tr>';
+?>
+<table id="backend_logs" sortable="true">
+    <thead>
+        <tr class="header">
+            <th>row</th>
+            <?php
+                foreach (array_keys($Logs[0]) as $key)
+                    echo "<th>$key</th>\n";
+            ?>
+        </tr>
+    </thead>
+    <?php
         foreach ($Logs as $i => $log) {
             echo '<tr class="',
                  ($i % 2 ? 'even' : 'odd'),
@@ -42,8 +42,9 @@
             }
             echo '</tr>';
         }
-        echo "\n</table>";
-    }
+    ?>
+</table>
 
+<?php
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
