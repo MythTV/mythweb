@@ -115,19 +115,16 @@
     // Display the results
 ?>
 
-<table id="search_results" class="list small" width="100%" border="0" cellpadding="4" cellspacing="2" sortable="true">
-<thead>
+<table id="search_results" class="list small" width="100%" border="0" cellpadding="4" cellspacing="2">
 <tr class="menu">
-    <?php if (!empty($group_field)) echo "<th class=\"list\">&nbsp;</th>\n" ?>
-    <th class="x-title"><?php       echo t('Title');       ?></th>
-    <th class="x-category"><?php    echo t('Category');    ?></th>
-    <th class="x-description"><?php echo t('Description'); ?></th>
-    <th class="x-channum" sort_hint="sortMythwebChannel" ><?php     echo t('Channel');     ?></th>
-    <th class="x-airdate"><?php     echo t('Airdate');     ?></th>
-    <th class="x-length"  sort_hint="sortMythwebPlayTime"><?php      echo t('Length');      ?></th>
-</tr>
-</thead>
-<?php
+    <?php if (!empty($group_field)) echo "<td class=\"list\">&nbsp;</td>\n" ?>
+    <th class="x-title"><?php       echo get_sort_link('title',       t('Title'))       ?></th>
+    <th class="x-category"><?php    echo get_sort_link('category',    t('Category'))    ?></th>
+    <th class="x-description"><?php echo get_sort_link('description', t('Description')) ?></th>
+    <th class="x-channum"><?php     echo get_sort_link('channum',     t('Channel'))     ?></th>
+    <th class="x-airdate"><?php     echo get_sort_link('airdate',     t('Airdate'))     ?></th>
+    <th class="x-length"><?php      echo get_sort_link('length',      t('Length'))      ?></th>
+</tr><?php
         $row = 0;
 
         $prev_group = '';
@@ -181,7 +178,7 @@
     <td class="x-category"><?php    echo $show->category ?></td>
     <td class="x-description"><?php echo $show->description ?></td>
     <td class="x-channum"><?php     echo $show->channel->channum.' - '.$show->channel->name ?></td>
-    <td class="x-airdate" sort_value="<?php echo $show->starttime; ?>"><?php
+    <td class="x-airdate"><?php
             echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if ($show->extra_showings)
