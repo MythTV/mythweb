@@ -85,6 +85,7 @@ var SortableTable = Class.create({
         this.cache_sorted_index     = null;
         this.cache_previous_sorts   = new Array();
         this.cache_sort_hash        = new Array();
+        this.cache_sort_direction   = false;
 
         this.multisort              = false;
         this.zebra_stripe           = false;
@@ -175,8 +176,8 @@ var SortableTable = Class.create({
         this.sort_cell_index   = this.cache_sort_hash[header_index]
 
     // Spawn into an array
-        var row_length  = this.rows.length;
-        var rows = new Array();
+        var row_length = this.rows.length;
+        var rows       = new Array();
         for (var i=0; i<row_length; i++)
             rows.push(this.rows[i]);
 
@@ -232,7 +233,7 @@ var SortableTable = Class.create({
         return comparison;
     },
 
-    doHeaderArrows:          function () {
+    doHeaderArrows:             function () {
     // Remove any current span arrows
         $$('#'+this.table.id+' thead span.sortArrow').each(function (span) {span.update('&nbsp;&nbsp;&nbsp;');});
         var arrow_span = this.header.cells[this.sort_header_index].select('span.sortArrow').reduce();
@@ -240,10 +241,14 @@ var SortableTable = Class.create({
             arrow_span = new Element('span', { 'class': 'sortArrow'});
             this.header.cells[this.sort_header_index].insert(arrow_span);
         }
-        if (this.cache_previous_sorts.last() == this.sort_cell_index)
+        if (this.cache_previous_sorts.last() == this.sort_cell_index && this.cache_sort_direction) {
             arrow_span.update('&nbsp;&nbsp;&uarr;');
-        else
+            this.cache_sort_direction = false;
+        }
+        else {
             arrow_span.update('&nbsp;&nbsp;&darr;');
+            this.cache_sort_direction = true;
+        }
     },
 
     fixZebraStripes:            function () {
