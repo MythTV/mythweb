@@ -74,13 +74,6 @@ class Channel {
             $this->icon = null;
     }
 
-/**
- * Legacy constructor
-/**/
-    /** @deprecated */ function Channel($channel_data) {
-        return $this->__construct($channel_data);
-    }
-
 /** @deprecated FIXME:  this routine should get split out on its own, accepting
  *                      $channel as a parameter, and put into modules/tv/list.php
  */
