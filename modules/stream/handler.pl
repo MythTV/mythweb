@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+#
 # MythWeb Streaming/Download module
 #
 # @url       $URL$
