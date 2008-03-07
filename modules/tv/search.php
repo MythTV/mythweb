@@ -328,7 +328,7 @@
     $titles = array();
     $seen = array();
     foreach ($Results as $key => $show) {
-        $tkey = md5($show->title.': '.$show->subtitle.': '.$show->description);
+        $tkey = md5($show->channel->channum.':'.$show->channel->callsign.':'.$show->title.':'.$show->subtitle.':'.$show->description);
         $skey = $show->channel->name.$show->starttime.$tkey;
         if($seen[$skey]){
             unset($Results[$key]);
@@ -342,7 +342,7 @@
 // Parse the show list for showings that can be consolidated/folded
     $seen = array();
     foreach ($Results as $key => $show) {
-        $tkey = md5($show->title.': '.$show->subtitle.': '.$show->description);
+        $tkey = md5($show->channel->channum.':'.$show->channel->callsign.':'.$show->title.':'.$show->subtitle.':'.$show->description);
     // Populate extra_showings info for other instances of this show
         if (count($titles[$tkey]) > 1) {
             foreach (array_keys($titles[$tkey]) as $key2) {
