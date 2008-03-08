@@ -76,7 +76,8 @@
     }
 
 // Keep track of this path for the next visit
-    $_SESSION['tv']['last'] = array_slice($Path, 1);
+    if ($Path[1] != 'get_show_details')
+        $_SESSION['tv']['last'] = array_slice($Path, 1);
 
 // Show the requested section
     require_once 'modules/tv/'.$Path[1].'.php';
