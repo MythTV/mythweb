@@ -18,6 +18,30 @@
 // Globals
     global $Modules, $headers, $page_title;
 
+// Create the category legend popup and stick it at the end of the document for now.
+    global $Categories;
+    if (!empty($Categories)) {
+        $legend = <<<EOF
+<table width="400" style="background-color: #003060;" border="1" cellpadding="0" cellspacing="0">
+<tr>
+    <td><table width="400" style="background-color: #003060;" class="small" cellpadding="5" cellspacing="5">
+        <tr>
+EOF;
+        $legend .= "\t\t\t<td colspan=\"3\">".t('Category Legend').':</td>';
+        $count = 0;
+        foreach ($Categories as $cat => $details) {
+            if ($count++ % 3 == 0)
+                $legend .= "\n\t\t</tr><tr>\n";
+            $legend .= "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".html_entities($details[0])."</b></td>\n";
+        }
+        $legend .= <<<EOF
+        </tr>
+        </table></td>
+</tr>
+</table>
+EOF;
+    }
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -132,7 +156,9 @@
     <td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
         <tr>
             <td><div id="command_choices">
-                    <a href="<?php echo root ?>" id="category_legend" onmouseover="popup('category_legend'); return true;">MythTV:</a> &nbsp; &nbsp;
+                    <a href="<?php echo root ?>" <?php
+                        echo show_popup('category_legend',$legend)
+                        ?>>MythTV:</a> &nbsp; &nbsp;
                     <a href="<?php echo root ?>tv/list"><?php echo t('Listings') ?></a>
                     &nbsp; | &nbsp;
                     <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
@@ -160,30 +186,3 @@
 <?php
 // Errors go here
     display_errors();
-
-// Create the category legend popup and stick it at the end of the document for now.
-    global $Categories, $Footnotes;
-    if (!empty($Categories)) {
-        $legend = <<<EOF
-<div id="category_legend_popup">
-<table width="400" style="background-color: #003060;" border="1" cellpadding="0" cellspacing="0">
-<tr>
-    <td><table width="400" style="background-color: #003060;" class="small" cellpadding="5" cellspacing="5">
-        <tr>
-EOF;
-        $legend .= "\t\t\t<td colspan=\"3\">".t('Category Legend').':</td>';
-        $count = 0;
-        foreach ($Categories as $cat => $details) {
-            if ($count++ % 3 == 0)
-                $legend .= "\n\t\t</tr><tr>\n";
-            $legend .= "\t\t\t<td class=\"cat_$cat\" align=\"center\"><b>".html_entities($details[0])."</b></td>\n";
-        }
-        $legend .= <<<EOF
-        </tr>
-        </table></td>
-</tr>
-</table>
-</div>
-EOF;
-        $Footnotes[] = $legend;
-    }

@@ -28,7 +28,11 @@
 */
     function show_popup($id, $text, $popup_id = NULL, $css_class = 'popup', $wstatus = '') {
         global $Footnotes;
-        $Footnotes[] = "\n".'<script type="text/javascript">new Tip($("'.$id.'"), "'.str_replace(array("\n","\r",'"'),array('','',"'"),$text).'", { className: "popup" });</script>';
+        $Footnotes[] =
+            "\n"
+           .'<script type="text/javascript">new Tip($("'.$id.'"), "'
+           .str_replace(array("\n","\r",'"'),array('','',"'"),$text)
+           .'", { className: "'.$css_class.'" });</script>';
         return ' id="'.$id.'"';
     }
 
