@@ -27,6 +27,8 @@
 
 // Define some common stuff
     require_once 'includes/defines.php';
+// Check out the php version info 
+    require_once 'includes/php_version_check.php';
 
 // Load the error trapping and display routines
     require_once 'includes/errors.php';
