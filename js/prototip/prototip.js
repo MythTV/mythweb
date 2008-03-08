@@ -112,8 +112,8 @@ var Tips = {
   showTip: function(element) {
     var tip = this.tips.find(function(t){ return t.element == $(element); });
     if (tip) {
-      tip.position();
       tip.show();
+      tip.position();
     }
   },
 
