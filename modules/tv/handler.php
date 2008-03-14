@@ -13,22 +13,6 @@
  *
 /**/
 
-// Lets do some caching if we can!
-$scheduler_last_run = $db->query_col('SELECT UNIX_TIMESTAMP(mythlog.logdate)
-                                        FROM mythlog
-                                       WHERE mythlog.message = "Scheduled Items"
-                                    ORDER BY mythlog.logdate
-                                       LIMIT 1;');
-header('Last-Modified: '.date('r', $scheduler_last_run));
-header('Cache-Control: max-age=3600');
-header('Pragma: ');
-
-if (   $scheduler_last_run < time()
-    && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $scheduler_last_run ) {
-    header('HTTP/1.1 304 Not Modified');
-    exit;
-}
-
 // Make sure the image cache path exists and is writable
     if (!is_dir('data/tv_icons') && !mkdir('data/tv_icons', 0755)) {
         custom_error('Error creating data/tv_icons: Please check permissions on the data directory.');
