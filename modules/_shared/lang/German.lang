@@ -17,6 +17,7 @@
 "$1 hrs"
     $1 Std.
 "$1 is not responding."
+    $1 antwortet nicht
 "$1 KB"
     $1 kB
 "$1 MB"
@@ -34,6 +35,7 @@
 "$1 recordings"
     $1 Aufnahmen
 "$1 requests pending."
+    $1 Anfragen zu bearbeiten
 "$1 Search"
     $1 Suche
 "$1 TB"
@@ -41,8 +43,10 @@
 "$1 to $2"
     $1 bis $2
 "$1 wasted"
+    $1 verschwendet
 "$1 year"
 "$1 years"
+    $1 Jahre
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
@@ -66,6 +70,7 @@
     zus. Tabellen
 "Admin Key"
 "Advanced"
+    erweitert
 "Advanced Options"
     Erweiterte Optionen
 "Advanced Search"
@@ -175,7 +180,9 @@
 "Channel Detail"
     Details zum Sender
 "Channel Info"
+    Senderinformationen
 "Channels"
+    Sender
 "channum"
     Sender
 "Check for duplicates in"
@@ -209,19 +216,25 @@
 "Current Conditions"
     Das aktuelle Wetter
 "Current Recording"
+    Aktuelle Aufnahmen
 "Current recordings"
     Aktuelle Aufnahmen
 "Currently Browsing:  $1"
     Aktuell: $1
 "Currently Recording:  Edit"
+    nehme grade auf: bearbeiten
 "Custom"
     freie Planung
 "Custom Schedule"
     Erweiterte Aufnahmeregel
 "Custom Search"
+    freie Suche
 "Data"
+    Daten
 "Database"
+    Datenbank
 "Database Health"
+    Datenbankgesundheit
 "Date"
     Datum
 "Date Formats"
@@ -273,7 +286,9 @@
 "Duplicates"
     Wiederholungen
 "Earlier"
+    früher
 "Earlier Showing"
+    frühere Austrahlung
 "Edit"
     Bearbeiten
 "Edit existing group"
@@ -364,12 +379,16 @@
 "handy: overview"
     Handy: Übersicht
 "has Bookmark"
+    Lesezeichen
 "Has Cutlist"
+    Schnittliste
 "HD"
 "HDTV"
     HDTV
 "Height"
+    Höhe
 "Hide"
+    verstecken
 "High"
     Max
 "Home"
@@ -409,6 +428,7 @@
     official help until it has left the experimental phase.
     </p>
 "info: hidden advanced schedule"
+    info: erweiterte Optionen versteckt
 "info: record this"
 "info:forget old"
 "info:never record"
@@ -422,9 +442,11 @@
     Gehe zu
 "JumpPoints Editor"
 "Key Bindings"
+    Tastenbelegung
 "Key bindings"
     Tastenbelegung
 "Key Controls"
+    Tastenbelegung
 "Keybindings Editor"
     Tastenbelegung bearbeiten
 "Keyword"
@@ -494,6 +516,7 @@
 "Music Specials"
     Musiksendungen
 "My Session"
+    Meine Sitzung
 "MythMusic on the web."
     MythMusic
 "MythTV"
@@ -539,6 +562,7 @@
 "No. of recordings to keep"
     Wieviele Aufnahmen behalten
 "Non-Music Specials"
+    Nicht-Musik Spezial
 "Non-Series HDTV"
     HDTV, keine Serien
 "None"
@@ -583,12 +607,19 @@
 "Play this Song Now"
 "Play Time"
 "Playback Group"
+    Wiedergabegruppe
 "Playback Groups"
+    Wiedergabegruppen
 "Played %s times"
+    %s mal abgespielt
 "Played once"
+    1 mal abgespielt
 "Playlist"
+    Wiedergabeliste
 "Playlist Info"
+    Wiedergabelisteninfo
 "Playlist is empty"
+    Wiedergabeliste ist leer
 "Playlist Items"
 "Playlist Name"
 "Playlist renamed successfully"
@@ -605,15 +636,19 @@
 "Power Search"
     Erweiterte Suche
 "Prefer Channum"
+    bevorzuge Sendernummer
 "prefer_channum"
+    bevorzuge Sendernummer
 "Preferred Input"
+    bevorzugte Quelle
 "Presented by"
     Präsentiert von
 "Pressure"
     Luftdruck
 "Previous Recording"
+    alte Aufnahme
 "Previous recordings"
-    Alte Aufnahmen
+    alte Aufnahmen
 "Produced by"
     Produzent
 "Profile"
@@ -785,6 +820,7 @@
 "Schedule Override"
     manuelle Korrektur
 "Schedule via $1."
+    Plane via $1
 "Scheduled"
     Geplant
 "Scheduled Popup"
@@ -794,6 +830,7 @@
 "Search"
     Suche
 "Search $1"
+    Suche bei $1
 "Search for:  $1"
     Suche nach: $1
 "Search Music"
@@ -814,6 +851,7 @@
 "settings"
     Einstellungen
 "Settings Table"
+    Einstellungen
 "settings/stream: protocol"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
@@ -848,6 +886,7 @@
     Source ID
 "Space"
 "Special Searches"
+    Spezielle Suchanfragen
 "Star character"
 "Start Date"
     Datum
@@ -857,7 +896,9 @@
     Uhrzeit
 "Starting"
 "Statistics"
+    Statistiken
 "Stats"
+    Statistiken
 "Status"
     Status
 "Status Bar"
@@ -865,8 +906,10 @@
 "Stereo"
     Stereo
 "Still Recording: Edit"
+    nehme immer noch auf: bearbeiten
 "Stopping"
 "Storage Group"
+    Archivgruppe
 "Streaming"
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)
@@ -1028,6 +1071,7 @@
 "welcome: settings"
     Einstellungen
 "welcome: stats"
+    Statistiken
 "welcome: status"
     Status
 "welcome: tv"
@@ -1040,7 +1084,9 @@
     Was läuft noch zu dieser Zeit?
 "Widescreen"
 "Width"
+    Breite
 "Will Record"
+    geplante Aufnahme
 "Wind"
     Windgeschwindigkeit
 "Wind Chill"
@@ -1050,6 +1096,8 @@
 "xmltvid"
     XMLTV ID
 "Year"
+    Jahr
 "Yes"
     Ja
 "Yesterday"
+    gestern
