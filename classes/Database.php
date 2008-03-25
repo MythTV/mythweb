@@ -124,6 +124,8 @@ class Database {
             $class = "Database_$engine";
             $dbh = new $class($db_name, $login, $password, $server, $port, $options);
         }
+    // Set database connection to utf8
+        $dbh->query('SET NAMES utf8;');
     // Return
         return $dbh;
     }
