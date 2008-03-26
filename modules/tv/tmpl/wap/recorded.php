@@ -56,7 +56,7 @@
             <font color="#FF0000">currently recording - </font>
 <?php   } ?>
             <b></b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>">Delete </a></b> 
-                <b></b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old">Rerecord</a></b><br /> 
+                <b></b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old=yes">Rerecord</a></b><br /> 
 <?php
         echo "<br />";
 
