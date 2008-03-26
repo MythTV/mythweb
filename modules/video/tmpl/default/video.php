@@ -213,10 +213,10 @@
     function video_create_popup(result) {
         var video    = result.responseJSON['metadata'];
         var content  = '<dl class="details_list">'
-                     + '<dt>Plot:</dt>     <dd>'+video['plot']+'</dd>'
-                     + '<dt>Rating:</dt>   <dd>'+video['rating']+'</dd>'
-                     + '<dt>Director:</dt> <dd>'+video['director']+'</dd>'
-                     + '<dt>Year:</dt>     <dd>'+video['year']+'</dd>';
+                     + '<dt>Plot:</dt>     <dd>'+(video['plot'] ? video['plot'] : '&nbsp;')+'</dd>'
+                     + '<dt>Rating:</dt>   <dd>'+(video['rating'] ? video['rating'] : '&nbsp;')+'</dd>'
+                     + '<dt>Director:</dt> <dd>'+(video['director'] ? video['director'] : '&nbsp;')+'</dd>'
+                     + '<dt>Year:</dt>     <dd>'+(video['year'] ? video['year'] : '&nbsp;')+'</dd>';
                      + '</dl>';
         new Tip(video['intid'], content, { className: 'popup' });
         loading_popups[video['intid']] = false;
