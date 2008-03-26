@@ -237,7 +237,7 @@
             }
         }
     }
-    elseif (isset($_GET['forget_old']) || isset($_POST['forget_old'])) {
+    elseif ($_REQUEST['forget_old']) {
         $program->rec_forget_old();
     // Wait for a second so the backend can catch up
         sleep(1);

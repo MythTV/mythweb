@@ -38,7 +38,7 @@
         // Delete the recording
             backend_command(array($backendstr, implode(backend_sep, $row), '0'));
         // Forget all knowledge of old recordings?
-            if (isset($_REQUEST['forget_old'])) {
+            if ($_REQUEST['forget_old']) {
                 backend_command(array('FORGET_RECORDING', implode(backend_sep, $row), '0'));
             // Delay a second so the scheduler can catch up
                 sleep(1);

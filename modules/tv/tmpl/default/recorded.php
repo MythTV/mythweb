@@ -128,7 +128,7 @@
                                                   'delete':   'yes',
                                                   chanid:     file.chanid,
                                                   starttime:  file.starttime,
-                                                  forget_old: (forget_old ? 'yes' : 'no'),
+                                                  forget_old: (forget_old ? 'yes' : ''),
                                                   id:         id,
                                                   file:       Object.toJSON(file)
                                                 }
@@ -357,7 +357,7 @@ EOM;
 
 <?php       if ($show->recgroup == 'Deleted') {
                 echo '<a href="', root, 'tv/recorded?undelete=yes&chanid=', $show->chanid,
-                    '&starttime=', $show->starttime, '" ' ?>
+                    '&starttime=', $show->recstartts, '" ' ?>
                 title="<?php echo html_entities(t('Undelete: $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
                 <?php echo '>' , t('Undelete') ?></a>
 <?php       } ?>
