@@ -54,6 +54,7 @@
                                   'ALLOCINE' => array( ' -M "%%TITLE%%"')
                                  );
 
+        $dupe = array();
         foreach ($options[$imdbwebtype] as $option) {
             $cmd = $imdb.str_replace('%%TITLE%%', $title, $option);
             exec($cmd, $output, $retval);
@@ -63,6 +64,9 @@
                 continue;
             foreach ($output as $line) {
                 list($imdbid, $title) = explode(':', $line, 2);
+                if ($dupe[$imdbid])
+                    continue;
+                $dupe[$imdbid] = true;
                 $return['matches'][] = array('imdbid' => $imdbid,
                                              'title'  => $title);
             }
