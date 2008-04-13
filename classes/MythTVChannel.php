@@ -54,10 +54,10 @@ class MythTVChannel {
 
     function __construct(&$MythTV, $ChanID = NULL) {
         if (get_class($MythTV) != 'MythTV')
-            die 'MythTVChannel requires class MythTV to be passed';
+            die('MythTVChannel requires class MythTV to be passed');
         $this->MythTV = &$MythTV;
         if (is_null($ChanID))
-            die '$ChanID can not be NULL';
+            die('$ChanID can not be NULL');
         $channel = $this->MythTV->DB->query_assoc('SELECT channel.*,
                                                           dtv_multiplex.bandwidth         AS dtv_bandwidth,
                                                           dtv_multiplex.constellation     AS dtv_constellation,

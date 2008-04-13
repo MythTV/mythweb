@@ -1,17 +1,9 @@
 <?php
 
 class MythTV {
-    var $VERSION            = '.21svn';
-# MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
-# and should be the current MythTV protocol version.
-    var $PROTO_VER          = 33;
-# NUMPROGRAMLINES is defined in mythtv/libs/libmythtv/programinfo.h and is
-# the number of items in a ProgramInfo QStringList group used by
-# ProgramInfo::ToSringList and ProgramInfo::FromStringList.
-    var $NUMPROGRAMLINES    = 43;
-    var $BACKEND_SEP        = '[]:[]';
+    public $VERSION            = '.22';
 
-    var $RecordingTypes     = array(    1  => 'Once',
+    public $RecordingTypes     = array( 1  => 'Once',
                                         2  => 'Daily',
                                         3  => 'Channel',
                                         4  => 'Always',
@@ -22,14 +14,14 @@ class MythTV {
                                         9  => 'Find Daily',
                                         10 => 'Find Weekly' );
 
-    var $Searches           = array(    1  => 'Power',
+    public $Searches           = array( 1  => 'Power',
                                         2  => 'Title',
                                         3  => 'Keyword',
                                         4  => 'People',
                                         5  => 'Manual' );
 
 # Reasons a recording wouldn't be happening (from libs/libmythtv/programinfo.h)
-    var $RecordingStatus     = array(   -8 => 'TunerBusy',
+    public $RecordingStatus     = array(-8 => 'TunerBusy',
                                         -7 => 'LowDiskSpace',
                                         -6 => 'Cancelled',
                                         -5 => 'Deleted',
@@ -37,43 +29,49 @@ class MythTV {
                                         -3 => 'Recorded',
                                         -2 => 'Recording',
                                         -1 => 'WillRecord',
-                                        0  => 'Unknown',
-                                        1  => 'DontRecord',
-                                        2  => 'PreviousRecording',
-                                        3  => 'CurrentRecording',
-                                        4  => 'EarlierShowing',
-                                        5  => 'TooManyRecordings',
-                                        6  => 'NotListed',
-                                        7  => 'Conflict',
-                                        8  => 'LaterShowing',
-                                        9  => 'Repeat',
+                                         0 => 'Unknown',
+                                         1 => 'DontRecord',
+                                         2 => 'PreviousRecording',
+                                         3 => 'CurrentRecording',
+                                         4 => 'EarlierShowing',
+                                         5 => 'TooManyRecordings',
+                                         6 => 'NotListed',
+                                         7 => 'Conflict',
+                                         8 => 'LaterShowing',
+                                         9 => 'Repeat',
                                         10 => 'Inactive',
                                         11 => 'NeverRecord' );
 
 // List of the default locations of the config files and the one we are using
-    var $ConfigFiles        = array(    '/usr/local/share/mythtv/mysql.txt',
+    public $ConfigFiles        = array( '/usr/local/share/mythtv/mysql.txt',
                                         '/usr/share/mythtv/mysql.txt',
                                         '/usr/local/etc/mythtv/mysql.txt',
                                         '/etc/mythtv/mysql.txt',
                                         '~/.mythtv/mysql.txt',
                                         'mysql.txt' );
-   var  $ConfigFile         = NULL;
-// This stores all the config file vars
-    var $Config             = array();
+    public $ConfigFile         = NULL;
+// This stores all the config file publics
+    public $Config             = array();
 // Database Object
-    var $DB                 = NULL;
+    public $DB                 = NULL;
 // Open Sockets
-    var $SOCKETS            = array();
+    public $SOCKETS            = array();
 //
-    var $Channels           = array();
-    var $Scheduled          = array();
-    var $Recorded           = array();
+    public $Channels           = array();
+    public $Scheduled          = array();
+    public $Recorded           = array();
 
-    function MythTV() {
-        $this->__construct();
-    }
+    public $Host                = NULL;
 
-    function __construct() {
+    private $MythProto          = NULL;
+
+    public function __construct($host = NULL) {
+        if (is_null($host))
+            $this->Host = $this->Setting('master_host');
+        else
+            $this->Host = $host;
+        $this->MythProto = new MythProto($this);
+
         if (isset($_ENV['MYTHCONFDIR']))
             $this->ConfigFiles[] = $_ENV['MYTHCONFDIR'];
     // look for config files
@@ -100,21 +98,21 @@ class MythTV {
         unset($this->Config['DBPassword']);
     }
 
-// We use the $this->ConfigFile var to load from
-    function LoadConfig() {
+// We use the $this->ConfigFile public to load from
+    private function LoadConfig() {
         $file = fopen($this->ConfigFile, 'r');
         while (!feof($file)) {
             $line = trim(fgets($file));
         // skip comments and empty lines!
             if (strlen($line) === 0 || strpos($line, '#') === 0)
                 continue;
-            list ($var, $value) = explode('=', $line, 2);
-            $this->Config[$var] = $value;
+            list ($public, $value) = explode('=', $line, 2);
+            $this->Config[$public] = $value;
         }
         fclose($file);
     }
 
-    function Setting($name, $hostname = NULL, $value = "old\0old") {
+    public function Setting($name, $hostname = NULL, $value = "old\0old") {
         static $CACHE;
         if ($value !== "old\0old") {
             if (is_null($hostname))
@@ -133,13 +131,13 @@ class MythTV {
         return $CACHE[$hostname][$name];
     }
 
-    function Command($command, $host = NULL, $port = NULL, $sendonly = FALSE) {
+    public function Command($command, $host = NULL, $port = NULL, $sendonly = FALSE) {
         $this->Send($command, $host, $port);
         if (!$sendonly)
             return $this->Receive($host);
     }
 
-    function Send($command, $host, $port) {
+    public function Send($command, $host, $port) {
         if (is_null($host))
             $host = $this->Setting('master_host');
         if (is_null($port))
@@ -154,7 +152,7 @@ class MythTV {
         $this->SendData($this->SOCKETS[$host], $command);
     }
 
-    function SendData($socket, $data = NULL) {
+    public function SendData($socket, $data = NULL) {
         if (is_null($data))
             return FALSE;
         if (is_array($data))
@@ -163,7 +161,7 @@ class MythTV {
             die("Failure sending $data\n");
     }
 
-    function CreateSocket($host, $port, $data = NULL) {
+    public function CreateSocket($host, $port, $data = NULL) {
         $trys = 5;
         do {
             $socket = fsockopen( $host,
@@ -178,7 +176,7 @@ class MythTV {
         return $socket;
     }
 
-    function Receive($host) {
+    public function Receive($host) {
         $data = '';
         $length = intval(fread($this->SOCKETS[$host], 8));
         do {
@@ -187,7 +185,7 @@ class MythTV {
         return $data;
     }
 
-    function StreamBackendFile($basename, $fh, $local_path = NULL, $host = NULL, $port = NULL, $seek = 0) {
+    public function StreamBackendFile($basename, $fh, $local_path = NULL, $host = NULL, $port = NULL, $seek = 0) {
         if (is_null($host))
             $host = $this->Setting('master_host');
         if (is_null($port))
@@ -214,7 +212,7 @@ class MythTV {
         return FALSE;
     }
 
-    function BackendRows($command, $offset = 0) {
+    public function BackendRows($command, $offset = 0) {
         $data = explode($this->BACKEND_SEP, $this->Command($command));
         $rows = array();
         $row  = 0;
@@ -233,7 +231,7 @@ class MythTV {
         return $rows;
     }
 
-    function StatusCommand($path = '', $params = array(), $host = NULL, $port = NULL) {
+    public function StatusCommand($path = '', $params = array(), $host = NULL, $port = NULL) {
         if (is_null($host))
             $host = $this->Setting('master_host');
         if (is_null($port))
@@ -261,13 +259,13 @@ class MythTV {
         return $result;
     }
 
-    function Channel($ChanID) {
+    public function Channel($ChanID) {
         if (!isset($this->Channels[$ChanID]))
             $this->LoadChannels();
         return $this->Channels[$ChanID];
     }
 
-    function LoadChannels() {
+    public function LoadChannels() {
         $channelids = $sh->query('SELECT channel.chanid
                                     FROM channel');
         while ($chanid = $channelids->fetch_col())
@@ -275,21 +273,21 @@ class MythTV {
                 $this->Channels[$chanid] = new MythTVChannel($this, $chanid);
     }
 
-    function UnixToMyth($timestamp) {
+    public function UnixToMyth($timestamp) {
         if (!is_numeric($timestamp))
             $timestamp = strtotime($timestamp);
         return date('Y-m-d H:i:s', $timestamp);
     }
 
-    function MythToUnix($time) {
+    public function MythToUnix($time) {
         return strtotime($time);
     }
 
-    function Recording($chanid = NULL, $starttime = NULL, $basename = NULL) {
+    public function Recording($chanid = NULL, $starttime = NULL, $basename = NULL) {
         return FALSE;
     }
 
-    function GetRecordingDirs() {
+    public function GetRecordingDirs() {
         $dirs = array();
         $sh = $this->DB->query('SELECT DISTINCT storagegroup.dirname
                                            FROM storagegroup');
@@ -298,7 +296,7 @@ class MythTV {
         return $dirs;
     }
 
-    function GetLocalHostname() {
+    public function GetLocalHostname() {
         static $hostname = NULL;
         if (!is_null($hostname))
             $hostname = `hostname`;
