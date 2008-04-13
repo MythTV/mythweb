@@ -76,7 +76,7 @@
             $mime = 'audio/mpeg';
             break;
         case 'ogg':
-            $mine = 'application/ogg';
+            $mime = 'application/ogg';
             break;
         default:
             $mime = 'application/octet-stream';
