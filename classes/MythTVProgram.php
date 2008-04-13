@@ -2,70 +2,83 @@
 
 class MythTVProgram {
 
-    var $MythTV;
+    public $MythTV;
 
-    var $title          = 'Untitled';
-    var $subtitle       = 'Untitled';
-    var $description    = 'No Description';
-    var $category;
-    var $chanid;
-    var $channum;
-    var $callsign;
-    var $channame;
-    var $filename;
-    var $fs_high;
-    var $fs_low;
-    var $starttime;
-    var $endtime;
-    var $duplicate;
-    var $shareable;
-    var $findid;
-    var $hostname;
-    var $sourceid;
-    var $cardid;
-    var $inputid;
-    var $recpriority;
-    var $recstatus;
-    var $recordid;
-    var $rectype;
-    var $dupin;
-    var $dupmethod;
-    var $recstartts;
-    var $recendts;
-    var $previouslyshown;
-    var $progflags;
-    var $recgroup;
-    var $commfree;
-    var $outputfilters;
-    var $seriesid;
-    var $programid;
-    var $lastmodified;
-    var $stars;
-    var $airdate;
-    var $hasairdate;
-    var $playgroup;
-    var $recpriority2;
-    var $parentid;
-    var $storagegroup;
+    public $title          = 'Untitled';
+    public $subtitle       = 'Untitled';
+    public $description    = 'No Description';
+    public $category;
+    public $chanid;
+    public $channum;
+    public $callsign;
+    public $channame;
+    public $filename;
+    public $fs_high;
+    public $fs_low;
+    public $starttime;
+    public $endtime;
+    public $duplicate;
+    public $shareable;
+    public $findid;
+    public $hostname;
+    public $sourceid;
+    public $cardid;
+    public $inputid;
+    public $recpriority;
+    public $recstatus;
+    public $recordid;
+    public $rectype;
+    public $dupin;
+    public $dupmethod;
+    public $recstartts;
+    public $recendts;
+    public $previouslyshown;
+    public $progflags;
+    public $recgroup;
+    public $commfree;
+    public $outputfilters;
+    public $seriesid;
+    public $programid;
+    public $lastmodified;
+    public $stars;
+    public $airdate;
+    public $hasairdate;
+    public $playgroup;
+    public $recpriority2;
+    public $parentid;
+    public $storagegroup;
 
-    var $has_commflag;
-    var $has_cutlist;
-    var $auto_expire;
-    var $is_editing;
-    var $bookmark;
-    var $stereo;
-    var $closecaptioned;
-    var $hdtv;
-    var $is_watched;
-    var $will_record;
+    public $has_commflag;
+    public $has_cutlist;
+    public $auto_expire;
+    public $is_editing;
+    public $bookmark;
+    public $stereo;
+    public $closecaptioned;
+    public $hdtv;
+    public $is_watched;
+    public $will_record;
 
-    function __construct(&$MythTV, $ProgramID = NULL) {
+    public function __construct(&$MythTV, $ChanID = NULL, $StartTime = NULL) {
         if (get_class($MythTV) != 'MythTV')
-            die 'MythTVChannel requires class MythTV to be passed';
-        $this->MythTV = &$MythTV;
-        if (is_null($ProgramID))
-            die '$ProgramID can not be NULL';
-        $program = $this->MythTV->DB->query_assoc('SELECT ');
+            die('MythTVChannel requires class MythTV to be passed');
+        $this->MythTV       = &$MythTV;
+        $this->chanid       = $ChanID;
+        $this->starttime    = $StartTime;
+        $this->load();
+    }
+
+    private function load() {
+        $this->load_database();
+    }
+
+    private function load_database() {
+        $program = $this->MythTV->DB->query_assoc('SELECT program.*
+                                                     FROM program
+                                                    WHERE program.chanid    = ?
+                                                      AND program.starttime = ?',
+                                                  $this->chanid,
+                                                  $this->starttime);
         foreach ($program as $key => $value)
             $this->$key = $value;
     }

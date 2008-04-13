@@ -68,7 +68,7 @@
 
         if (result['action'] == 'lookup') {
             if (result['matches']) {
-                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?>';
+                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?> (<a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>)';
                 $('window_content').innerHTML = '';
                 for (var key in result['matches'])
                     if (result['matches'][key]['title'])
@@ -76,12 +76,10 @@
                                                   +  '<a href="'+makeImdbWebUrl(result['matches'][key]['imdbid'])+'" style="float: right; margin-left: 1em;" target="_blank">(IMDB)</a>'
                                                   +  '<a href="javascript:imdb_select(\''+result['id']+'\',\''+result['matches'][key]['imdbid']+'\')">'+result['matches'][key]['title']+'</a>';
 
-                $('window_content').innerHTML += '<br><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
             }
             else {
-                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?>';
-                $('window_content').innerHTML = '<?php echo t('Video: IMDB: No Matches');   ?>'
-                                              + '<br><br><br><a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>';
+                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?> (<a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>)';
+                $('window_content').innerHTML = '<?php echo t('Video: IMDB: No Matches');   ?>';
 
             }
             $('window').show();
