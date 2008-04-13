@@ -25,7 +25,28 @@
     <th><?php echo t('Enable Video Playback') ?>:</th>
     <td><input class="radio" type="checkbox" name="flvplayer"
          title="Enable Flash Video player for recordings."
-         <?php if (setting('WebFLV_on')) echo ' CHECKED' ?>></td>
+        <?php
+            $ffmpeg = '';
+            foreach (split (':', getenv ('PATH').':/usr/local/bin:/usr/bin') as $path) {
+                if (file_exists ($path."/ffmpeg")) {
+                    $ffmpeg = $path."/ffmpeg";
+                    break;
+                }
+                elseif (php_uname ('s') == 'Darwin' && file_exists ($path."/ffmpeg.app")) {
+                    $ffmpeg = $path."/ffmpeg".app;
+                    break;
+                }
+            }
+            $ffmpeg_output = shell_exec ("$ffmpeg --help 2>&1");
+            $has_mp3_support = strpos ($ffmpeg_output, "mp3");
+            if (!$has_mp3_support)
+                echo ' DISABLED';
+            if (setting('WebFLV_on'))
+                echo ' CHECKED';
+            echo '>';
+            if (!$has_mp3_support)
+                echo ' ffmpeg with MP3 support not detected';
+            ?></td>
 </tr><tr>
     <th valign="top"><?php echo t('Width') ?>:</th>
     <td><input type="text" name="width"
