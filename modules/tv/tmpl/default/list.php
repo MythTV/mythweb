@@ -68,6 +68,7 @@
     }
 
     var currently_hovered_id = null;
+    var details_delay_timer_id = null;
 
     function attempt_to_show_tip(element) {
         if (element == currently_hovered_id)
