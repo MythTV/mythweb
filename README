@@ -79,8 +79,8 @@ A: The included mythweb.conf.apache file contains commented-out apache controls
     some fancy firewall rules.
 
 Q: I've changed my theme to one that doesn't have a "settings" section.  Help!
-A: Access any of the mythweb files and include RESET_THEME=yes among the URL
-    parameters (eg. http://my.mythweb.tld/settings?RESET_THEME=yes ).  This
+A: Access any of the mythweb files and include RESET_TMPL=yes among the URL
+    parameters (eg. http://my.mythweb.tld/settings?RESET_TMPL=yes ).  This
     will reset your theme to Default, where you can readjust your settings as
     needed.
 
