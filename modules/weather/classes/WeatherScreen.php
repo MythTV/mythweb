@@ -110,9 +110,10 @@ class WeatherScreen {
                                     $hostname
                                     );
 
-        $draworder = 0;
         if (strlen($draworder) > 0 && $draworder >= 0)
             $draworder++;
+        else
+            $draworder = 0;
 
     // Insert screen
         $db->query('INSERT INTO weatherscreens
