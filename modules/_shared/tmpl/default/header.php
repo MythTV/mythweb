@@ -129,10 +129,10 @@ EOF;
     <div id="extra_header">
         <div id="help_wrapper">
             <div id="help_box">
-                <div id="help_text_default">
+                <div id="help_text_default" style="position:relative;">
                 MythWeb: <?php echo strftime($_SESSION['date_statusbar'], time()) ?>
                 </div>
-                <div id="help_text">
+                <div id="help_text" style="display:none;">
                 </div>
             </div>
         </div>

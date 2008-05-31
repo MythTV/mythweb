@@ -74,12 +74,6 @@
     overflow:           hidden;
     white-space:        nowrap;
 }
-#help_text_default {
-    position: relative;
-}
-#help_text {
-    display: none;
-}
 #search {
     margin-top:         2px;
     padding:            3px 5px;
