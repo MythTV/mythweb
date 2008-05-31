@@ -33,20 +33,18 @@
     $where .= ' AND oldrecorded.recstatus = -3';
 
     $limit = 'LIMIT 10';
-    if($_REQUEST['count_dropdown'] == 25)
-    	$limit = 'LIMIT 25';
-    if($_REQUEST['count_dropdown'] == 50)
-    	$limit = 'LIMIT 50';
-    if($_REQUEST['count_dropdown'] == 100)
-        $limit = 'LIMIT 100';
-    if($_REQUEST['count_dropdown'] == 'all')
+    if (is_int($_REQUEST['count_dropdown']))
+    	$limit = 'LIMIT '.$_REQUEST['count_dropdown'];
+    if ($_REQUEST['count_dropdown'] == 'all')
     	$limit = '';
 
+// How many tuners are tehre?
+    $tuners = $db->query_col('SELECT COUNT(*)
+                                FROM capturecard');
 
 // Get how many show titles their are
-    $sh = $db->query('SELECT DISTINCT title FROM oldrecorded'.$where);
-    $title_count = $sh->num_rows();
-    $sh->finish();
+    $title_count = $db->query_num_rows('SELECT DISTINCT title
+                                          FROM oldrecorded'.$where);
 
 // Get how many shows ever recorded
     $show_count = $db->query_col('SELECT COUNT(title)
@@ -69,12 +67,12 @@
 
 // Get the top ten recorded shows
     $sh = $db->query('SELECT title,
-                      COUNT(programid)               AS recorded,
-		      MAX(UNIX_TIMESTAMP(starttime)) AS last_recorded
-                        FROM oldrecorded '.$where
-                 .' GROUP BY title
-                    ORDER BY recorded DESC, last_recorded, title '
-                    .$limit);
+                             COUNT(programid)               AS recorded,
+		                     MAX(UNIX_TIMESTAMP(starttime)) AS last_recorded
+                        FROM oldrecorded '.$where.'
+                    GROUP BY title
+                    ORDER BY recorded DESC, last_recorded, title
+                    '.$limit);
     while($row = $sh->fetch_assoc())
         $shows[] = $row;
     $sh->finish();
@@ -83,7 +81,7 @@
     $sh = $db->query('SELECT COUNT(oldrecorded.chanid) as recorded,
                              channel.name,
                              channel.channum,
-                             MAX(UNIX_TIMESTAMP(oldrecorded.starttime)) as last_recorded
+                             MAX(UNIX_TIMESTAMP(oldrecorded.starttime)) AS last_recorded
                         FROM oldrecorded
                              LEFT JOIN channel
                                     ON channel.chanid = oldrecorded.chanid
