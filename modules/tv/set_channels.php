@@ -36,7 +36,7 @@
                                              colour        = ?,
                                              hue           = ?,
                                              recpriority   = ?,
-                                             commfree      = ?,
+                                             commmethod    = ?,
                                              useonairguide = ?,
                                              visible       = ?';
                 $query_params[] = $_POST['xmltvid_'.$chanid];
@@ -48,7 +48,7 @@
                 $query_params[] = $_POST['colour_'.$chanid];
                 $query_params[] = $_POST['hue_'.$chanid];
                 $query_params[] = $_POST['recpriority_'.$chanid];
-                $query_params[] = empty($_POST['commfree_'.$chanid])      ? 0 : 1;
+                $query_params[] = empty($_POST['commfree_'.$chanid])      ? -1 : -2;
                 $query_params[] = empty($_POST['useonairguide_'.$chanid]) ? 0 : 1;
                 $query_params[] = empty($_POST['visible_'.$chanid])       ? 0 : 1;
             // next, the fields that need to have a value, so we won't change them if they were emptied

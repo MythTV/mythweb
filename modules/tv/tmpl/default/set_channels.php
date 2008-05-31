@@ -51,7 +51,7 @@
     <td><input type="text" size="5"  name="colour_<?php       echo $channel['chanid'] ?>" id="colour_<?php       echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['colour'])       ?>" style="text-align: center" /></td>
     <td><input type="text" size="5"  name="hue_<?php          echo $channel['chanid'] ?>" id="hue_<?php          echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['hue'])          ?>" style="text-align: center" /></td>
     <td><input type="text" size="2"  name="recpriority_<?php  echo $channel['chanid'] ?>" id="recpriority_<?php  echo $channel['chanid'] ?>" value="<?php echo html_entities($channel['recpriority'])  ?>" style="text-align: center" /></td>
-    <td><input type="checkbox" name="commfree_<?php           echo $channel['chanid'] ?>" value="1"<?php if (!empty($channel['commfree']))      echo ' CHECKED' ?> /></td>
+    <td><input type="checkbox" name="commfree_<?php           echo $channel['chanid'] ?>" value="1"<?php if (!empty($channel['commmethod']) && $channel['commmethod'] == -2)      echo ' CHECKED' ?> /></td>
     <td><input type="checkbox" name="visible_<?php            echo $channel['chanid'] ?>" value="1"<?php if (!empty($channel['visible']))       echo ' CHECKED' ?> /></td>
     <td><input type="checkbox" name="useonairguide_<?php      echo $channel['chanid'] ?>" value="1"<?php if (!empty($channel['useonairguide'])) echo ' CHECKED' ?> /></td>
 </tr><?php

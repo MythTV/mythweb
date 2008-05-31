@@ -207,7 +207,7 @@
                 $extra_query[] = 'program.hdtv & 1';
         // Commercial-free channels only?
             if ($_SESSION['search']['commfree'])
-                $extra_query[] = 'channel.commfree=1';
+                $extra_query[] = 'channel.commmethod=-2';
         // Build the actual search query
             $query = '';
             foreach ($_SESSION['search']['as'] as $i => $string) {
