@@ -40,7 +40,7 @@ class Program {
     var $sourceid;
     var $cardid;
     var $inputid;
-    var $recpriority    = 0;
+    var $recpriority        = null;
     var $recstatus;
     var $recordid;
     var $rectype;
@@ -59,65 +59,68 @@ class Program {
     var $stars;
     var $airdate;
     var $hasairdate;
-    var $playgroup      = 'Default';
-    var $recpriority2   = 0;
+    var $playgroup          = 'Default';
+    var $recpriority2       = 0;
     var $parentid;
-    var $storagegroup   = 'Default';
+    var $storagegroup       = 'Default';
 
 // Audio and Video properties
-    var $audioproperties = 0;
-    var $videoproperties = 0;
-    var $subtitletype    = 0;
-    var $stereo          = 0;
-    var $mono            = 0;
-    var $surround        = 0;
-    var $dolby           = 0;
-    var $audiohardhear   = 0;
-    var $audiovisimpair  = 0;
-    var $hdtv            = 0;
-    var $widescreen      = 0;
-    var $avc             = 0;
-    var $closecaptioned  = 0;
-    var $has_subtitles   = 0;
-    var $subtitled       = 0;
-    var $deaf_signed     = 0;
+    var $audioproperties    = 0;
+    var $videoproperties    = 0;
+    var $subtitletype       = 0;
+    var $stereo             = 0;
+    var $mono               = 0;
+    var $surround           = 0;
+    var $dolby              = 0;
+    var $audiohardhear      = 0;
+    var $audiovisimpair     = 0;
+    var $hdtv               = 0;
+    var $widescreen         = 0;
+    var $avc                = 0;
+    var $closecaptioned     = 0;
+    var $has_subtitles      = 0;
+    var $subtitled          = 0;
+    var $deaf_signed        = 0;
     var $parttotal          = 1;
     var $partnumber         = 1;
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
-    var $auto_expire    = 0;
-    var $bookmark       = 0;
+    var $auto_expire        = 0;
+    var $bookmark           = 0;
     var $category_type;
-    var $channel;           // this should be a reference to the $Channel array value
-    var $conflicting    = false;
-    var $credits        = array();
-    var $css_class;         // css class, based on category and/or category_type
+// this should be a reference to the $Channel array value
+    var $channel;
+    var $conflicting        = false;
+    var $credits            = array();
+// css class, based on category and/or category_type
+    var $css_class;
     var $fancy_description;
     var $filesize;
-    var $group          = '';
-    var $has_commflag   = 0;
-    var $has_cutlist    = 0;
+    var $group              = '';
+    var $has_commflag       = 0;
+    var $has_cutlist        = 0;
     var $is_recording;
     var $is_playing;
-    var $can_delete     = false;
+    var $can_delete         = false;
     var $inputname;
-    var $is_editing     = 0;
+    var $is_editing         = 0;
     var $is_movie;
-    var $is_watched     = 0;
+    var $is_watched         = 0;
     var $length;
-    var $max_episodes   = 0;
-    var $max_newest     = 0;
-    var $profile        = 0;
+    var $max_episodes       = 0;
+    var $max_newest         = 0;
+    var $profile            = 0;
     var $rater;
     var $rating;
-    var $recording      = false;
+    var $recording          = false;
     var $starstring;
-    var $timestretch;
+    var $timestretch        = 1.0;
     var $url;
-
-    var $jobs          = array();   // recent/pending jobqueue entries
-    var $jobs_possible = array();   // Jobs this program can be assigned to
+// recent/pending jobqueue entries
+    var $jobs               = array();
+// Jobs this program can be assigned to
+    var $jobs_possible      = array();
 
     function __construct($data) {
         global $db;
@@ -206,57 +209,54 @@ class Program {
     // SQL data
         else {
             if (in_array($data['airdate'], array('0000-00-00', '0000', '1900-01-01')))
-                $this->airdate = $data['originalairdate'];
+                $this->airdate              = $data['originalairdate'];
             else
-                $this->airdate = $data['airdate'];
-            $this->category                = _or($data['category'],        t('Unknown'));
-            $this->category_type           = _or($data['category_type'],   t('Unknown'));
-            $this->chanid                  = $data['chanid'];
-            $this->description             = $data['description'];
-            $this->endtime                 = $data['endtime_unix'];
-            $this->previouslyshown         = $data['previouslyshown'];
-            $this->programid               = $data['programid'];
-            $this->rater                   = $data['rater'];
-            $this->rating                  = $data['rating'];
-            $this->seriesid                = $data['seriesid'];
-            $this->showtype                = $data['showtype'];
-            $this->stars                   = $data['stars'];
-            $this->starttime               = $data['starttime_unix'];
-            $this->subtitle                = $data['subtitle'];
-            $this->subtitled               = $data['subtitled'];
-            $this->title                   = $data['title'];
-            $this->partnumber              = $data['partnumber'];
-            $this->parttotal               = $data['parttotal'];
-            $this->colorcode               = $data['colorcode'];
-            $this->syndicatedepisodenumber = $data['syndicatedepisodenumber'];
-            $this->title_pronounce         = $data['title_pronounce'];
-            $this->recstatus               = $data['recstatus'];
+                $this->airdate              = $data['airdate'];
+            $this->category                 = _or($data['category'],        t('Unknown'));
+            $this->category_type            = _or($data['category_type'],   t('Unknown'));
+            $this->chanid                   = $data['chanid'];
+            $this->description              = $data['description'];
+            $this->endtime                  = $data['endtime_unix'];
+            $this->previouslyshown          = $data['previouslyshown'];
+            $this->programid                = $data['programid'];
+            $this->rater                    = $data['rater'];
+            $this->rating                   = $data['rating'];
+            $this->seriesid                 = $data['seriesid'];
+            $this->showtype                 = $data['showtype'];
+            $this->stars                    = $data['stars'];
+            $this->starttime                = $data['starttime_unix'];
+            $this->subtitle                 = $data['subtitle'];
+            $this->subtitled                = $data['subtitled'];
+            $this->title                    = $data['title'];
+            $this->partnumber               = $data['partnumber'];
+            $this->parttotal                = $data['parttotal'];
+            $this->colorcode                = $data['colorcode'];
+            $this->syndicatedepisodenumber  = $data['syndicatedepisodenumber'];
+            $this->title_pronounce          = $data['title_pronounce'];
+            $this->recstatus                = $data['recstatus'];
 
         // These db fields should really get renamed...
-            $this->audioproperties         = $data['stereo'];
-            $this->videoproperties         = $data['hdtv'];
-            $this->subtitletype            = $data['closecaptioned'];
+            $this->audioproperties          = $data['stereo'];
+            $this->videoproperties          = $data['hdtv'];
+            $this->subtitletype             = $data['closecaptioned'];
 
-            if ($data['tsdefault']) {
-                $this->timestretch = $data['tsdefault'];
-            } else {
-                $this->timestretch = 1.0;
-            }
+            if ($data['tsdefault'])
+                $this->timestretch          = $data['tsdefault'];
         }
     // Assign shortcut names to the new audio/video/subtitle property flags
-        $this->stereo         = $this->audioproperties & 0x01;
-        $this->mono           = $this->audioproperties & 0x02;
-        $this->surround       = $this->audioproperties & 0x04;
-        $this->dolby          = $this->audioproperties & 0x08;
-        $this->audiohardhear  = $this->audioproperties & 0x10;
-        $this->audiovisimpair = $this->audioproperties & 0x20;
-        $this->hdtv           = $this->videoproperties & 0x01;
-        $this->widescreen     = $this->videoproperties & 0x02;
-        $this->avc            = $this->videoproperties & 0x04;
-        $this->closecaptioned = $this->subtitletype    & 0x01;
-        $this->has_subtitles  = $this->subtitletype    & 0x02;
-        $this->subtitled      = $this->subtitletype    & 0x04;
-        $this->deaf_signed    = $this->subtitletype    & 0x08;
+        $this->stereo                       = $this->audioproperties & 0x01;
+        $this->mono                         = $this->audioproperties & 0x02;
+        $this->surround                     = $this->audioproperties & 0x04;
+        $this->dolby                        = $this->audioproperties & 0x08;
+        $this->audiohardhear                = $this->audioproperties & 0x10;
+        $this->audiovisimpair               = $this->audioproperties & 0x20;
+        $this->hdtv                         = $this->videoproperties & 0x01;
+        $this->widescreen                   = $this->videoproperties & 0x02;
+        $this->avc                          = $this->videoproperties & 0x04;
+        $this->closecaptioned               = $this->subtitletype    & 0x01;
+        $this->has_subtitles                = $this->subtitletype    & 0x02;
+        $this->subtitled                    = $this->subtitletype    & 0x04;
+        $this->deaf_signed                  = $this->subtitletype    & 0x08;
     // Generate the star string, since mysql has issues with REPEAT() and
     // decimals, and the backend doesn't do it for us, anyway.
         $this->starstring = str_repeat(star_character, intVal($this->stars * max_stars));
@@ -276,9 +276,10 @@ class Program {
         }
     // Turn recstatus into a word
         if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus]) {
-            $this->recstatus = $GLOBALS['RecStatus_Types'][$this->recstatus];
-            $this->conflicting = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
-            $this->recording   = ($this->recstatus == 'WillRecord'); # scheduled to record?
+            $this->recstatus_orig   = $this->recstatus;
+            $this->recstatus        = $GLOBALS['RecStatus_Types'][$this->recstatus];
+            $this->conflicting      = ($this->recstatus == 'Conflict');   # conflicts with another scheduled recording?
+            $this->recording        = ($this->recstatus == 'WillRecord'); # scheduled to record?
         }
     // No longer a null column, so check for blank entries
         if (in_array($this->airdate, array('0000-00-00', '0000', '1900-01-01')))
@@ -304,7 +305,7 @@ class Program {
         if ($this->recendts)
             $this->length = $this->recendts - $this->recstartts;
         else
-            $this->length = $this->endtime - $this->starttime;
+            $this->length = $this->endtime  - $this->starttime;
 
     // A special recstatus for shows that this was manually set to record
         if ($this->rectype == rectype_override)
@@ -697,7 +698,8 @@ class Program {
             $str .= "</dd>\n";
         }
     // Recording Priority
-	$str .= "\t<dt>".t('Recording Priority')."</dt><dd>".$this->recpriority."</dd>\n";
+        if ($this->recpriority != null)
+            $str .= "\t<dt>".t('Recording Priority')."</dt><dd>".$this->recpriority."</dd>\n";
     // Recording status
         if (!empty($this->recstatus)) {
             $str .= "\t<dt>".t('Notes').":</dt>\n"
