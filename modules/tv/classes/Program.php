@@ -20,109 +20,109 @@ class Program {
 
 // The following fields are (in order) the fields returned from the backend on
 // a standard query.
-    var $title;
-    var $subtitle;
-    var $description;
-    var $category;
-    var $chanid;
-    var $channum;
-    var $callsign;
-    var $channame;
-    var $filename;
-    var $fs_high;
-    var $fs_low;
-    var $starttime;
-    var $endtime;
-    var $duplicate;
-    var $shareable;
-    var $findid;
-    var $hostname;
-    var $sourceid;
-    var $cardid;
-    var $inputid;
-    var $recpriority        = null;
-    var $recstatus;
-    var $recordid;
-    var $rectype;
-    var $dupin;
-    var $dupmethod;
-    var $recstartts;
-    var $recendts;
-    var $previouslyshown;
-    var $progflags;
-    var $recgroup;
-    var $commfree;
-    var $outputfilters;
-    var $seriesid;
-    var $programid;
-    var $lastmodified;
-    var $stars;
-    var $airdate;
-    var $hasairdate;
-    var $playgroup          = 'Default';
-    var $recpriority2       = 0;
-    var $parentid;
-    var $storagegroup       = 'Default';
+    public $title;
+    public $subtitle;
+    public $description;
+    public $category;
+    public $chanid;
+    public $channum;
+    public $callsign;
+    public $channame;
+    public $filename;
+    public $fs_high;
+    public $fs_low;
+    public $starttime;
+    public $endtime;
+    public $duplicate;
+    public $shareable;
+    public $findid;
+    public $hostname;
+    public $sourceid;
+    public $cardid;
+    public $inputid;
+    public $recpriority        = null;
+    public $recstatus;
+    public $recordid;
+    public $rectype;
+    public $dupin;
+    public $dupmethod;
+    public $recstartts;
+    public $recendts;
+    public $previouslyshown;
+    public $progflags;
+    public $recgroup;
+    public $commfree;
+    public $outputfilters;
+    public $seriesid;
+    public $programid;
+    public $lastmodified;
+    public $stars;
+    public $airdate;
+    public $hasairdate;
+    public $playgroup          = 'Default';
+    public $recpriority2       = 0;
+    public $parentid;
+    public $storagegroup       = 'Default';
 
 // Audio and Video properties
-    var $audioproperties    = 0;
-    var $videoproperties    = 0;
-    var $subtitletype       = 0;
-    var $stereo             = 0;
-    var $mono               = 0;
-    var $surround           = 0;
-    var $dolby              = 0;
-    var $audiohardhear      = 0;
-    var $audiovisimpair     = 0;
-    var $hdtv               = 0;
-    var $widescreen         = 0;
-    var $avc                = 0;
-    var $closecaptioned     = 0;
-    var $has_subtitles      = 0;
-    var $subtitled          = 0;
-    var $deaf_signed        = 0;
-    var $parttotal          = 1;
-    var $partnumber         = 1;
+    public $audioproperties    = 0;
+    public $videoproperties    = 0;
+    public $subtitletype       = 0;
+    public $stereo             = 0;
+    public $mono               = 0;
+    public $surround           = 0;
+    public $dolby              = 0;
+    public $audiohardhear      = 0;
+    public $audiovisimpair     = 0;
+    public $hdtv               = 0;
+    public $widescreen         = 0;
+    public $avc                = 0;
+    public $closecaptioned     = 0;
+    public $has_subtitles      = 0;
+    public $subtitled          = 0;
+    public $deaf_signed        = 0;
+    public $parttotal          = 1;
+    public $partnumber         = 1;
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
-    var $auto_expire        = 0;
-    var $bookmark           = 0;
-    var $category_type;
+    public $auto_expire        = 0;
+    public $bookmark           = 0;
+    public $category_type;
 // this should be a reference to the $Channel array value
-    var $channel;
-    var $conflicting        = false;
-    var $credits            = array();
+    public $channel;
+    public $conflicting        = false;
+    public $credits            = array();
 // css class, based on category and/or category_type
-    var $css_class;
-    var $fancy_description;
-    var $filesize;
-    var $group              = '';
-    var $has_commflag       = 0;
-    var $has_cutlist        = 0;
-    var $is_recording;
-    var $is_playing;
-    var $can_delete         = false;
-    var $inputname;
-    var $is_editing         = 0;
-    var $is_movie;
-    var $is_watched         = 0;
-    var $length;
-    var $max_episodes       = 0;
-    var $max_newest         = 0;
-    var $profile            = 0;
-    var $rater;
-    var $rating;
-    var $recording          = false;
-    var $starstring;
-    var $timestretch        = 1.0;
-    var $url;
+    public $css_class;
+    public $fancy_description;
+    public $filesize;
+    public $group              = '';
+    public $has_commflag       = 0;
+    public $has_cutlist        = 0;
+    public $is_recording;
+    public $is_playing;
+    public $can_delete         = false;
+    public $inputname;
+    public $is_editing         = 0;
+    public $is_movie;
+    public $is_watched         = 0;
+    public $length;
+    public $max_episodes       = 0;
+    public $max_newest         = 0;
+    public $profile            = 0;
+    public $rater;
+    public $rating;
+    public $recording          = false;
+    public $starstring;
+    public $timestretch        = 1.0;
+    public $url;
 // recent/pending jobqueue entries
-    var $jobs               = array();
+    public $jobs               = array();
 // Jobs this program can be assigned to
-    var $jobs_possible      = array();
+    public $jobs_possible      = array();
 
-    function __construct($data) {
+    public function __construct($data) {
         global $db;
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
@@ -177,7 +177,7 @@ class Program {
             if (!empty($this->filename)) {
             // Calculate the filesize
                 if (function_exists('gmp_add')) {
-                // GMP functions should work better with 64 bit numbers.
+                // GMP public functions should work better with 64 bit numbers.
                     $size = gmp_add($this->fs_low,
                                      gmp_mul('4294967296',
                                              gmp_add($this->fs_high, $this->fs_low < 0 ? '1' : '0'))
@@ -318,7 +318,7 @@ class Program {
         $this->update_fancy_desc();
     }
 
-    function merge($prog) {
+    public function merge($prog) {
         foreach (get_object_vars($prog) as $name => $value) {
             if ($value && !$this->$name) {
                 $this->$name = $value;
@@ -331,7 +331,7 @@ class Program {
         $this->update_fancy_desc();
     }
 
-    function update_fancy_desc() {
+    public function update_fancy_desc() {
     // Get a nice description with the full details
         $details = array();
 
@@ -376,7 +376,7 @@ class Program {
 /**
  * Load info about any queued or recently finished jobs
 /**/
-    function load_jobs() {
+    public function load_jobs() {
         if (empty($this->filename))
             return;
     // Make sure the jobqueue constants are defined
@@ -411,7 +411,7 @@ class Program {
 /**
  * Generate a mythproto-compatible row of data for this show.
 /**/
-    function backend_row() {
+    public function backend_row() {
         return implode(backend_sep,
                        array(
                              $this->title          , // 00 title
@@ -469,7 +469,7 @@ class Program {
  * Get the last modification date of the pixmap that corresponds to this
  * recording.
 /**/
-    function pixmap_last_mod() {
+    public function pixmap_last_mod() {
         $mod = backend_command('QUERY_PIXMAP_LASTMODIFIED'
                                .backend_sep
                                .$this->backend_row()
@@ -482,7 +482,7 @@ class Program {
 /**
  * Generate a new preview pixmap for this recording.
 /**/
-    function generate_pixmap() {
+    public function generate_pixmap() {
         $ret = backend_command('QUERY_GENPIXMAP'
                                .backend_sep
                                .$this->backend_row()
@@ -498,7 +498,7 @@ class Program {
  * Generate a thumbnail of the requested size, and return the URL to its cache
  * location.
 /**/
-    function thumb_url($width=160, $height=120, $secs_in=null) {
+    public function thumb_url($width=160, $height=120, $secs_in=null) {
     // Generate the pixmap, just in case
         $this->generate_preview_pixmap($width, $height, $secs_in);
     // Calculate the default secs_in
@@ -523,7 +523,7 @@ class Program {
  *
  * @todo, this should get put into a "recording" class or something like that.
 /**/
-    function generate_preview_pixmap($width=160, $height=120, $secs_in=null) {
+    public function generate_preview_pixmap($width=160, $height=120, $secs_in=null) {
     // Calculate the default secs_in
         static $def_secs_in = null;
         if (is_null($def_secs_in))
@@ -636,7 +636,7 @@ class Program {
 /**
  * The "details list" for each program.
 /**/
-    function details_list() {
+    public function details_list() {
     // Start the list, and print the show airtime and title
         $str = "<dl class=\"details_list\">\n"
             // Airtime
@@ -711,7 +711,7 @@ class Program {
         return $str;
     }
 
-    function get_credits($role, $add_search_links = FALSE) {
+    public function get_credits($role, $add_search_links = FALSE) {
         global $db;
     // Not enough info in this object
         if (!$this->chanid || !$this->starttime)
@@ -754,7 +754,7 @@ class Program {
  * several places depending on if a program or a non-expanded data row is being
  * used.
 /**/
-    function rec_forget_old() {
+    public function rec_forget_old() {
         global $db;
     // The FORGET_RECORDING command requires the specific record to be
     // forgotten, so we have to search for matching rows
@@ -776,7 +776,7 @@ class Program {
 /**
  * "Never" record this show, by telling mythtv that it was already recorded
 /**/
-    function rec_never_record() {
+    public function rec_never_record() {
         $result = mysql_query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid,recordid,station,rectype,recstatus,duplicate) VALUES ('
                                 .escape($this->chanid)                    .','
                                 .'NOW()'                                  .','
@@ -802,7 +802,7 @@ class Program {
 /**
  * Revert a show to its default recording schedule settings
 /**/
-    function rec_default() {
+    public function rec_default() {
         $schedule =& $GLOBALS['Schedules'][$this->recordid];
         if ($schedule && ($schedule->type == rectype_override || $schedule->type == rectype_dontrec))
             $schedule->delete();
@@ -812,7 +812,7 @@ class Program {
  * Add an override or dontrec record to force this show to/not record pass in
  * rectype_dontrec or rectype_override constants
 /**/
-    function rec_override($rectype) {
+    public function rec_override($rectype) {
         $schedule =& $GLOBALS['Schedules'][$this->recordid];
     // Unknown schedule?
         if (!$schedule)
@@ -839,7 +839,7 @@ class Program {
  *
  * @return array sorted list of category_type fields from the program table
 /**/
-    function category_types() {
+    public function category_types() {
         static $cache = array();
         if (empty($cache)) {
             global $db;
@@ -855,7 +855,7 @@ class Program {
  *
  * @return array sorted list of category fields from the program table
 /**/
-    function categories() {
+    public function categories() {
         static $cache = array();
         if (empty($cache)) {
             global $db;
