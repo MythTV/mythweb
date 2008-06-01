@@ -199,7 +199,7 @@ class Database {
  * @param string $name The global name this instance is registered as.
 /**/
     function register_global_name($name) {
-        if ($GLOBALS[$name] == $this) {
+        if ($GLOBALS[$name] === $this) {
             $this->global_name = $name;
             return true;
         }
