@@ -53,8 +53,6 @@
     %s Pesmi
 "%s Songs (%s)"
     %s Pesmi (%s)
-"&deg;C"
-"&deg;F"
 "Aborted"
     Preklicano
 "Aborting"
@@ -279,8 +277,6 @@
     Ustvari naključni mix
 "Create Schedule"
     Ustvari plan snemanja
-"Current Conditions"
-    Trenutni pogoji
 "Current Recording"
     Trenutni posnetek
 "Current recordings"
@@ -444,8 +440,6 @@
     Za predvajanje vsili HTTP/HTTPS vrata
 "Forced"
     Vsiljeno
-"Forecast"
-    Napoved
 "Forget Old"
     Pozabi stare
 "format help"
@@ -574,8 +568,6 @@
     Nazadnje posneto
 "Last recording"
     Zadnje snemanje
-"Last Updated"
-    Zadnjič posodobljeno
 "Later"
     Kasneje
 "left"
@@ -610,8 +602,6 @@
     Statistike domačega strežnika
 "Local weather forecast"
     Domača vremenska napoved
-"Locale"
-    Lokalno
 "Logs"
     Dnevniki
 "Low"
@@ -738,6 +728,7 @@
     Išči le kanale označene kot brez reklam
 "Only match HD programs"
     Išči le HD programe
+"Only match non-recorded shows"
 "Only New Episodes"
     Samo nove oddaje
 "Optimize Tables"
@@ -857,8 +848,6 @@
     V čakalni vrsti
 "Queued jobs"
     Opravila v čakalni vrsti
-"Radar"
-    Radar
 "Random"
     Naključno
 "Random Items"
@@ -1097,8 +1086,6 @@
     Oddaje med
 "Shows"
     Oddaje
-"SI Units"
-    SI enote
 "Skip Ahead"
     Izpusti naprej
 "Skip Back"
@@ -1196,10 +1183,6 @@
     Iskanje po naslovih
 "Title Search"
     Iskanje po naslovih
-"Today"
-    Danes
-"Tomorrow"
-    Jutri
 "Too Many"
     Preveč
 "Top $1"
@@ -1262,16 +1245,6 @@
     Uporabi datum/čas
 "useonairguide"
     uporabi vodiča po zraku
-"UV Extreme"
-    UV ekstremen
-"UV High"
-    UV visok
-"UV Index"
-    UV index
-"UV Minimal"
-    UV minimalni
-"UV Moderate"
-    UV srednji
 "Value"
     Vrednost
 "Video"

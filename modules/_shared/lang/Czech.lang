@@ -36,8 +36,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -169,8 +167,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Vytvořit rozvrh
-"Current Conditions"
-    Současné podmínky
 "Current Recording"
 "Current recordings"
     Současné nahrávky
@@ -266,8 +262,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Předpověď počasí
 "Forget Old"
     Zapomeň staré
 "format help"
@@ -356,7 +350,6 @@
     Jazyk
 "Last Recorded"
 "Last recording"
-"Last Updated"
 "Later"
 "left"
 "Left"
@@ -377,7 +370,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
 "Low"
 "Low Space"
@@ -453,6 +445,7 @@
 "Only display favourite channels"
 "Only match commercial-free channels"
 "Only match HD programs"
+"Only match non-recorded shows"
 "Only New Episodes"
     Jen nové díly
 "Optimize Tables"
@@ -519,7 +512,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -691,7 +683,6 @@
 "Showing all programs."
 "Showings between"
 "Shows"
-"SI Units"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -749,10 +740,6 @@
 "Title Match"
 "Title search"
 "Title Search"
-"Today"
-    Dnes
-"Tomorrow"
-    Zítra
 "Too Many"
 "Top $1"
 "Top Played Songs"
@@ -789,11 +776,6 @@
 "Use callsign"
 "Use date/time"
 "useonairguide"
-"UV Extreme"
-"UV High"
-"UV Index"
-"UV Minimal"
-"UV Moderate"
 "Value"
 "Video"
 "Video Bitrate"

@@ -44,8 +44,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -203,8 +201,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Ajoita Nauhoitus
-"Current Conditions"
-    Säätila
 "Current Recording"
 "Current recordings"
     Nykyiset nauhoitukset
@@ -322,8 +318,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Ennuste
 "Forget Old"
     Unohda Vanha
 "format help"
@@ -429,8 +423,6 @@
     Kieli
 "Last Recorded"
 "Last recording"
-"Last Updated"
-    Päivitetty Viimeksi
 "Later"
 "left"
 "Left"
@@ -455,7 +447,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
     Lokit
 "Low"
@@ -540,6 +531,7 @@
     Vain Suosikkikanavat
 "Only match commercial-free channels"
 "Only match HD programs"
+"Only match non-recorded shows"
 "Only New Episodes"
     Vain Uudet Jaksot
 "Optimize Tables"
@@ -614,8 +606,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Säätutka
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -816,8 +806,6 @@
     Näytetään kaikki ohjelmat.
 "Showings between"
 "Shows"
-"SI Units"
-    SI-yksiköt
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -888,10 +876,6 @@
 "Title search"
 "Title Search"
     Haku Nimikkeellä
-"Today"
-    Tänään
-"Tomorrow"
-    Huomenna
 "Too Many"
 "Top $1"
 "Top Played Songs"
@@ -939,16 +923,6 @@
 "Use date/time"
 "useonairguide"
     Käytä Ohjelmavirran Opasta
-"UV Extreme"
-    Erittäin korkea UV
-"UV High"
-    Korkea UV
-"UV Index"
-    UV-indeksi
-"UV Minimal"
-    Alhainen UV
-"UV Moderate"
-    Keskimääräinen UV
 "Value"
 "Video"
     Videot

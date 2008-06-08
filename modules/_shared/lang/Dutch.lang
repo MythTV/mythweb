@@ -46,8 +46,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -206,8 +204,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Opname plannen
-"Current Conditions"
-    Huidige Waarnemingen
 "Current Recording"
 "Current recordings"
     Huidige Opnames
@@ -329,8 +325,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Voorspelling
 "Forget Old"
     Oude vergeten
 "format help"
@@ -437,8 +431,6 @@
     Taal
 "Last Recorded"
 "Last recording"
-"Last Updated"
-    Laatst Vernieuwd
 "Later"
 "left"
 "Left"
@@ -463,7 +455,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
     Logboek
 "Low"
@@ -555,6 +546,7 @@
     Enkel favoriete zenders laten zien
 "Only match commercial-free channels"
 "Only match HD programs"
+"Only match non-recorded shows"
 "Only New Episodes"
     Enkel Nieuwe Afleveringen
 "Optimize Tables"
@@ -631,8 +623,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Radar
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -834,8 +824,6 @@
     Alle programma's laten zien
 "Showings between"
 "Shows"
-"SI Units"
-    SI eenheden
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -907,10 +895,6 @@
 "Title search"
 "Title Search"
     Titel zoeken
-"Today"
-    Vandaag
-"Tomorrow"
-    Morgen
 "Too Many"
 "Top $1"
 "Top Played Songs"
@@ -960,16 +944,6 @@
     Datum/tijd gebruiken
 "useonairguide"
     gebruikepg
-"UV Extreme"
-    UV Zeer Hoog
-"UV High"
-    UV Hoog
-"UV Index"
-    UV Index
-"UV Minimal"
-    UV Laag
-"UV Moderate"
-    UV Gemiddeld
 "Value"
 "Video"
     Films

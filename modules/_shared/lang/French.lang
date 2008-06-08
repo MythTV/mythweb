@@ -45,8 +45,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -188,8 +186,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Creer une programmation
-"Current Conditions"
-    Conditions courantes
 "Current Recording"
 "Current recordings"
     Enregistrements courant
@@ -297,8 +293,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Pr&eacute;visions
 "Forget Old"
     oublier les anciens
 "format help"
@@ -396,8 +390,6 @@
     Langue
 "Last Recorded"
 "Last recording"
-"Last Updated"
-    Derni&egrave;re mise &agrave; jour
 "Later"
 "left"
 "Left"
@@ -422,7 +414,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
 "Low"
     faible
@@ -500,6 +491,7 @@
     Afficher seulement vos chaînes favorites
 "Only match commercial-free channels"
 "Only match HD programs"
+"Only match non-recorded shows"
 "Only New Episodes"
     Seulement les nouveaux &eacute;pisodes
 "Optimize Tables"
@@ -568,8 +560,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Radar
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -759,8 +749,6 @@
 "Showing all programs."
 "Showings between"
 "Shows"
-"SI Units"
-    Unités métriques
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -825,10 +813,6 @@
 "Title Match"
 "Title search"
 "Title Search"
-"Today"
-    Aujourd&acute;hui
-"Tomorrow"
-    Demain
 "Too Many"
 "Top $1"
 "Top Played Songs"
@@ -870,16 +854,6 @@
 "Use callsign"
 "Use date/time"
 "useonairguide"
-"UV Extreme"
-    Indice UV Extr&egrave;me
-"UV High"
-    Indice UV &eacute;lev&eacute;
-"UV Index"
-    Index UV
-"UV Minimal"
-    Indice UV minimal
-"UV Moderate"
-    Indice UV mod&eacute;r&eacute;
 "Value"
 "Video"
 "Video Bitrate"

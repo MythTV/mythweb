@@ -57,10 +57,6 @@
     %s sånger
 "%s Songs (%s)"
     %s sånger (%s)
-"&deg;C"
-    &deg;C
-"&deg;F"
-    &deg;F
 "Aborted"
 "Aborting"
 "Action"
@@ -279,8 +275,6 @@
     Skapa slumpvis mix
 "Create Schedule"
     Schemalägg
-"Current Conditions"
-    Nuvarande förhållanden
 "Current Recording"
 "Current recordings"
     Nuvarande inspelningar
@@ -421,8 +415,6 @@
 "Force HTTP/HTTPS port for streams"
 "Forced"
     Tvingad
-"Forecast"
-    Prognos
 "Forget Old"
     Glöm gammal
 "format help"
@@ -549,8 +541,6 @@
     Senast inspelad
 "Last recording"
     Senaste inspelning
-"Last Updated"
-    Senast uppdaterad
 "Later"
     Senare
 "left"
@@ -584,7 +574,6 @@
     Lokal serverstatistik
 "Local weather forecast"
     Lokal väderprognos
-"Locale"
 "Logs"
     Logg
 "Low"
@@ -705,6 +694,7 @@
     Matcha endast reklamfria kanaler
 "Only match HD programs"
     Matcha endast HD-program
+"Only match non-recorded shows"
 "Only New Episodes"
     Endast nya avsnitt
 "Optimize Tables"
@@ -813,8 +803,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Radar
 "Random"
     Slumpvis
 "Random Items"
@@ -1043,8 +1031,6 @@
     Visningar mellan
 "Shows"
     Program
-"SI Units"
-    SI-enheter
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -1133,10 +1119,6 @@
     Sök titel
 "Title Search"
     Sök titel
-"Today"
-    Idag
-"Tomorrow"
-    Imorgon
 "Too Many"
     För många
 "Top $1"
@@ -1195,16 +1177,6 @@
 "Use date/time"
     Använd datum/tid
 "useonairguide"
-"UV Extreme"
-    UV-strålning extrem
-"UV High"
-    UV-strålning hög
-"UV Index"
-    UV-strålning
-"UV Minimal"
-    UV-strålning minimal
-"UV Moderate"
-    UV-strålning måttlig
 "Value"
     Värde
 "Video"

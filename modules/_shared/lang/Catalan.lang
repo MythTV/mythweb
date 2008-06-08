@@ -49,8 +49,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -216,8 +214,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Crear programació
-"Current Conditions"
-    Condiciones actuals
 "Current Recording"
 "Current recordings"
     Enregistraments actuals
@@ -341,8 +337,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Predicció
 "Forget Old"
     Oblidar antics
 "format help"
@@ -453,8 +447,6 @@
     Darrer cop enregistrat
 "Last recording"
     Darrer enregistrament
-"Last Updated"
-    Darrera actualització
 "Later"
 "left"
 "Left"
@@ -479,7 +471,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
     Informes
 "Low"
@@ -585,6 +576,7 @@
     Sols canals lliures de publicitat
 "Only match HD programs"
     Sols programes HD
+"Only match non-recorded shows"
 "Only New Episodes"
     Sols nous episodis
 "Optimize Tables"
@@ -667,8 +659,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Radar
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -875,8 +865,6 @@
     Mostrant tots els programes
 "Showings between"
 "Shows"
-"SI Units"
-    Unitats SI
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -951,10 +939,6 @@
 "Title search"
 "Title Search"
     Cercar títol
-"Today"
-    Avui
-"Tomorrow"
-    Demà
 "Too Many"
 "Top $1"
     Primers $1
@@ -1005,16 +989,6 @@
     Usar data/hora
 "useonairguide"
     usar guiaa emesa
-"UV Extreme"
-    UV Extremo
-"UV High"
-    UV Alt
-"UV Index"
-    Index UV
-"UV Minimal"
-    UV mínim
-"UV Moderate"
-    UV moderat
 "Value"
     Valor
 "Video"

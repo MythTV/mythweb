@@ -49,8 +49,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -216,8 +214,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Crear programación
-"Current Conditions"
-    Condiciones Actuales
 "Current Recording"
 "Current recordings"
     Grabaciones actuales
@@ -341,8 +337,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Predicción
 "Forget Old"
     Olvidar antiguos
 "format help"
@@ -452,8 +446,6 @@
     Última vez Grabado
 "Last recording"
     Última Grabación
-"Last Updated"
-    Útima Actualización
 "Later"
 "left"
 "Left"
@@ -478,7 +470,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
 "Low"
     Bajo
@@ -583,6 +574,7 @@
 "Only match commercial-free channels"
 "Only match HD programs"
     Sólo programas HD
+"Only match non-recorded shows"
 "Only New Episodes"
     Sólo nuevos episodios
 "Optimize Tables"
@@ -665,8 +657,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Radar
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -873,8 +863,6 @@
     Mostrando todos los programas
 "Showings between"
 "Shows"
-"SI Units"
-    Unidades SI
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -949,10 +937,6 @@
 "Title search"
 "Title Search"
     Buscar título
-"Today"
-    Hoy
-"Tomorrow"
-    Mañana
 "Too Many"
 "Top $1"
 "Top Played Songs"
@@ -1002,16 +986,6 @@
     Usar fecha/hora
 "useonairguide"
     usar guía emitida
-"UV Extreme"
-    UV Extremo
-"UV High"
-    UV Alto
-"UV Index"
-    Índice UV
-"UV Minimal"
-    UV mínimo
-"UV Moderate"
-    UV moderado
 "Value"
     Valor
 "Video"

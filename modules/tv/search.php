@@ -51,8 +51,9 @@
         $_SESSION['search']['af']            = $_REQUEST['af'];
         $_SESSION['search']['aj']            = $_REQUEST['aj'];
         $_SESSION['search']['ctype']         = $_REQUEST['ctype'];
-        $_SESSION['search']['hd']            = $_REQUEST['hd']       ? true : false;
-        $_SESSION['search']['commfree']      = $_REQUEST['commfree'] ? true : false;
+        $_SESSION['search']['hd']            = $_REQUEST['hd']        ? true : false;
+        $_SESSION['search']['commfree']      = $_REQUEST['commfree']  ? true : false;
+        $_SESSION['search']['unwatched']     = $_REQUEST['unwatched'] ? true: false;
         $_SESSION['search']['stars_gt']      = floatVal($_REQUEST['stars_gt']);
         $_SESSION['search']['stars_lt']      = floatVal($_REQUEST['stars_lt']);
         $_SESSION['search']['airdate_start'] = trim($_REQUEST['airdate_start']);
@@ -322,6 +323,19 @@
         $Results = array();
     else
         sort_programs($Results, 'search_sortby');
+
+// Only show unwatched shows?
+    if ($_SESSION['search']['unwatched']) {
+        foreach ($Results as $key => $show) {
+            switch($show->recstatus) {
+                case 'PreviousRecording':
+                case 'CurrentRecording':
+                case 'Recorded':
+                    unset($Results[$key]);
+                    continue;
+            }
+        }
+    }
 
 // Build a list of titles for figuring out alternate showings.  Use the same
 // key to make parsing things below a little easier.

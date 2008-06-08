@@ -49,8 +49,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -212,8 +210,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Planlæg
-"Current Conditions"
-    Nuværende forhold
 "Current Recording"
 "Current recordings"
     Nuværende optagelser
@@ -336,8 +332,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Prognose
 "Forget Old"
     Glem gamle
 "format help"
@@ -440,8 +434,6 @@
     Sidst optaget
 "Last recording"
     Sidste optagelse
-"Last Updated"
-    Sidst opdateret
 "Later"
 "left"
 "Left"
@@ -466,7 +458,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
 "Low"
     Lav
@@ -560,6 +551,7 @@
     Vis kun favorit kanaler
 "Only match commercial-free channels"
 "Only match HD programs"
+"Only match non-recorded shows"
 "Only New Episodes"
     Kun Nye Afsnit
 "Optimize Tables"
@@ -640,8 +632,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Radar
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -843,8 +833,6 @@
     Viser alle programmer.
 "Showings between"
 "Shows"
-"SI Units"
-    SI enheder
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -916,10 +904,6 @@
 "Title search"
 "Title Search"
     Titel søgning
-"Today"
-    I dag
-"Tomorrow"
-    I morgen
 "Too Many"
 "Top $1"
     Top $1
@@ -970,16 +954,6 @@
     Brug dato/tid
 "useonairguide"
     brug onairguide
-"UV Extreme"
-    UV-stråling ekstrem
-"UV High"
-    UV-stråling høj
-"UV Index"
-    UV-stråling indeks
-"UV Minimal"
-    UV-stråling minimal
-"UV Moderate"
-    UV-stråling middel
 "Value"
     Værdi
 "Video"

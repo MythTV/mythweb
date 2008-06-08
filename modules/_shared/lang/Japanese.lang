@@ -42,8 +42,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -206,8 +204,6 @@
 "Create a Random Mix"
 "Create Schedule"
     予約作成
-"Current Conditions"
-    現在の状況
 "Current Recording"
 "Current recordings"
     現在の録画
@@ -330,8 +326,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    予報
 "Forget Old"
     もう一度録画する
 "format help"
@@ -437,8 +431,6 @@
     最後の録画
 "Last recording"
     最後の録画
-"Last Updated"
-    最後の更新
 "Later"
 "left"
 "Left"
@@ -463,7 +455,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
     ログ
 "Low"
@@ -562,6 +553,7 @@
 "Only match commercial-free channels"
 "Only match HD programs"
     HD番組のみ
+"Only match non-recorded shows"
 "Only New Episodes"
     新しい番組のみ
 "Optimize Tables"
@@ -643,8 +635,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    レーダー
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -848,8 +838,6 @@
     すべての番組を表示
 "Showings between"
 "Shows"
-"SI Units"
-    SI単位を使用する
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -922,10 +910,6 @@
 "Title search"
 "Title Search"
     タイトルサーチ
-"Today"
-    今日
-"Tomorrow"
-    明日
 "Too Many"
 "Top $1"
     トップ $1
@@ -974,16 +958,6 @@
 "Use date/time"
     日時を使用する
 "useonairguide"
-"UV Extreme"
-    UV 非常に強い
-"UV High"
-    UV 強い
-"UV Index"
-    UV 指数
-"UV Minimal"
-    UV 弱い
-"UV Moderate"
-    UV 穏やか
 "Value"
 "Video"
     ビデオ

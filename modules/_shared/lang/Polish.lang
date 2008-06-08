@@ -41,8 +41,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -199,8 +197,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Utwórz zadanie
-"Current Conditions"
-    Bieżące Warunki
 "Current Recording"
 "Current recordings"
     Bieżące Nagrania
@@ -310,7 +306,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
 "Forget Old"
 "format help"
 "Found %s results for '%s'"
@@ -387,8 +382,6 @@
 "Last Recorded"
     Ostatnio Nagrane
 "Last recording"
-"Last Updated"
-    Ostatio Uaktualniany
 "Later"
 "left"
 "Left"
@@ -411,7 +404,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
     Logi
 "Low"
@@ -491,6 +483,7 @@
 "Only display favourite channels"
 "Only match commercial-free channels"
 "Only match HD programs"
+"Only match non-recorded shows"
 "Only New Episodes"
 "Optimize Tables"
 "or"
@@ -557,7 +550,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -748,7 +740,6 @@
 "Showing all programs."
 "Showings between"
 "Shows"
-"SI Units"
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -811,10 +802,6 @@
 "Title search"
 "Title Search"
     Szukanie Tytułu
-"Today"
-    Dzisiaj
-"Tomorrow"
-    Jutro
 "Too Many"
 "Top $1"
     Szczyt $1
@@ -860,11 +847,6 @@
 "Use date/time"
     Użyj Data/Czas
 "useonairguide"
-"UV Extreme"
-"UV High"
-"UV Index"
-"UV Minimal"
-"UV Moderate"
 "Value"
     Wartość
 "Video"

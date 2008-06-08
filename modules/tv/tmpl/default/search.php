@@ -57,6 +57,7 @@
         print_advanced_search_strings()
         ?></td>
     <td class="x-timeopts"><p style="margin-top: 0">
+        <p>
         <input type="checkbox" name="hd" id="hd" value="1"<?php
             if ($_SESSION['search']['hd']) echo ' CHECKED' ?>>
         <label for="hd"><?php echo t('Only match HD programs') ?></label>
@@ -64,6 +65,10 @@
         <input type="checkbox" name="commfree" id="commfree" value="1"<?php
             if ($_SESSION['search']['commfree']) echo ' CHECKED' ?>>
         <label for="commfree"><?php echo t('Only match commercial-free channels') ?></label>
+        <br>
+        <input type="checkbox" name="unwatched" id="unwatched" value="1"<?php
+            if ($_SESSION['search']['unwatched']) echo ' CHECKED' ?>>
+        <label for="unwatched"><?php echo t('Only match non-recorded shows') ?></label>
         </p>
         <p>
         <?php echo t('Showings between'); ?>:<br>

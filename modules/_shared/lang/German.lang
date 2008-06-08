@@ -50,8 +50,6 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
-"&deg;C"
-"&deg;F"
 "Aborted"
 "Aborting"
 "Action"
@@ -213,8 +211,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Speichern
-"Current Conditions"
-    Das aktuelle Wetter
 "Current Recording"
     Aktuelle Aufnahmen
 "Current recordings"
@@ -344,8 +340,6 @@
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
-"Forecast"
-    Vorhersage
 "Forget Old"
     frühere Aufnahmen vergessen
 "format help"
@@ -458,8 +452,6 @@
     Sprache
 "Last Recorded"
 "Last recording"
-"Last Updated"
-    zuletzt aktualisiert
 "Later"
 "left"
 "Left"
@@ -483,7 +475,6 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
-"Locale"
 "Logs"
     Logs
 "Low"
@@ -577,6 +568,7 @@
     Nur Favoriten anzeigen
 "Only match commercial-free channels"
 "Only match HD programs"
+"Only match non-recorded shows"
 "Only New Episodes"
     Nur neue Folgen
 "Optimize Tables"
@@ -666,8 +658,6 @@
 "Queue a job"
 "Queued"
 "Queued jobs"
-"Radar"
-    Satellitenbild
 "Random"
 "Random Items"
 "Random Mix Maker"
@@ -872,8 +862,6 @@
     Zeige alle Sendungen.
 "Showings between"
 "Shows"
-"SI Units"
-    SI Einheiten
 "Skip Ahead"
 "Skip Back"
 "Songs"
@@ -949,10 +937,6 @@
 "Title search"
 "Title Search"
     Titel Suche
-"Today"
-    Heute
-"Tomorrow"
-    Morgen
 "Too Many"
 "Top $1"
 "Top Played Songs"
@@ -1002,16 +986,6 @@
     Datum/Uhrzeit verwenden
 "useonairguide"
     DVB-EPG Daten verwenden
-"UV Extreme"
-    Extrem
-"UV High"
-    Hoch
-"UV Index"
-    UV Index
-"UV Minimal"
-    Minimal
-"UV Moderate"
-    Gemäßigt
 "Value"
 "Video"
     Video
