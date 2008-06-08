@@ -13,7 +13,9 @@
 /**/
 
 // List of valid video extentions
-$Known_Exts = $db->query_list('SELECT extension FROM videotypes WHERE f_ignore = 0');
+    $Known_Exts = $db->query_list('SELECT extension
+                                     FROM videotypes
+                                    WHERE f_ignore = 0');
 
 // First delete any videos that do not exist anymore
     $sh = $db->query('SELECT videometadata.intid,
@@ -21,7 +23,7 @@ $Known_Exts = $db->query_list('SELECT extension FROM videotypes WHERE f_ignore =
                              videometadata.coverfile
                         FROM videometadata');
     while (list($id, $filename, $cover) = $sh->fetch_row()) {
-        if (!file_exists($filename)) {
+        if ( !file_exists($filename) && is_executable(dirname($filename)) ) {
             $db->query('DELETE FROM videometadata
                               WHERE videometadata.intid = ?',
                        $id
@@ -49,8 +51,7 @@ $Known_Exts = $db->query_list('SELECT extension FROM videotypes WHERE f_ignore =
     foreach ($paths as $path) {
         exec("find -L $path -type f", $files, $retval);
         foreach ($files as $file) {
-            if ( in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $Known_Exts) === FALSE
-                 && strpos(`file -ib "$file"`, 'video')                                 === FALSE )
+            if ( in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $Known_Exts) === FALSE )
                 continue;
         // Check readable status
             if (!is_readable($file))
@@ -70,37 +71,15 @@ $Known_Exts = $db->query_list('SELECT extension FROM videotypes WHERE f_ignore =
         }
     }
 
-    // Converts the filename to the title and cleans it up a little
-    // This is a direct port of the C++ code from mythvideo
+// Converts the filename to the title and cleans it up a little
+// This is a direct port of the C++ code from mythvideo
     function filenametotitle($filename) {
         $title = substr($filename, 0, strripos($filename, '.'));
-
-        $title = str_replace('_', ' ', $title);
-        $title = str_replace('%20', ' ', $title);
-        $title = str_replace('.', ' ', $title);
-
-        $title = eatbraces($title, '[', ']');
-        $title = eatbraces($title, '(', ')');
-        $title = eatbraces($title, '{', '}');
+        $title = str_replace(array('_', '%20', '.'), ' ', $title);
+        $title = preg_replace(array('/\[[^\]]*\]/',
+                                    '/\([^\)]*\)/',
+                                    '/\{[^\}]*\}/'
+                                    ), '', $title);
 
         return trim($title);
-    }
-
-    // Strips out braces and the text inside the braces.
-    function eatbraces($str, $lb, $rb) {
-        $lb_pos = stripos($str, $lb);
-        $rb_pos = stripos($str, $rb);
-
-        if (!is_numeric($lb_pos))
-            return $str;
-
-        $part1 = substr($str, 0, $lb_pos);
-        $part2 = substr($str, strpos($str, $rb)+1);
-
-        $output = $part1.$part2;
-
-        if (strpos($output, $lb) && strpos($str, $rb))
-            return eatbraces($output, $lb, $rb);
-
-        return $output;
     }
