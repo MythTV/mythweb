@@ -102,7 +102,7 @@
         echo '<p id="x_search_name">',
              ($_SESSION['search']['type'] == 'a'
                 ? t('Advanced Search')
-                : t('Search for:  $1', $_SESSION['search']['s'])
+                : t('Search for:  $1', htmlentities($_SESSION['search']['s']))
              ),
              '</p>';
     // Search, but nothing found - notify the user
