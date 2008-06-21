@@ -54,13 +54,12 @@
             if (strlen($channel->channum) < 1)
                 continue;
         // Ignore invisible channels
-            if ($channel->visible == 0) {
+            if ($channel->visible == 0)
                 continue;
-            }
         // Skip already-displayed channels
-            if ($displayed_channels[$channel->channum])
+            if ($displayed_channels[$channel->channum][$channel->callsign])
                 continue;
-            $displayed_channels[$channel->channum] = 1;
+            $displayed_channels[$channel->channum][$channel->callsign] = 1;
         // Display the timeslot bar?
             if ($channel_count % timeslotbar_skip == 0) {
             // Update the timeslot anchor
