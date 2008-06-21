@@ -57,6 +57,8 @@
 
 // Find the modules path
     $path = dirname(dirname(find_in_path('modules/tv/init.php')));
+    if ($path == '')
+       $path = dirname(find_in_path('modules/welcome.php'));
     define('modules_path', $path);
 
 // Set up some constants used by nice_filesystem()
