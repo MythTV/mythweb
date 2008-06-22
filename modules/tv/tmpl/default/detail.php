@@ -15,7 +15,7 @@
 /**/
 
 // Set the desired page title
-    $page_title = 'MythWeb - '.t('Program Detail').":  $program->title";
+    $page_title = 'MythWeb - '.t('Program Detail').":  $schedule->title";
 
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
