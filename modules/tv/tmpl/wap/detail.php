@@ -23,7 +23,13 @@
 <?php echo $_SESSION["prefer_channum"] ? $this_channel->channum : $this_channel->callsign ?> &nbsp;
 <?php echo $_SESSION["prefer_channum"] ? $this_channel->callsign : $this_channel->channum ?></a><br />
 
-<?php echo $program->title ?><BR>
+
+<?php 
+  if (strlen($program->subtitle)) 
+    echo $program->title;
+  else
+    echo "<b>".$program->title."</b>";  
+?><BR>
 <?php echo date('D m/d/y', $program->starttime) ?><br />
 <?php echo strftime($_SESSION['time_format'], $program->starttime) ?> to <?php echo strftime($_SESSION['time_format'], $program->endtime) ?> (<?php echo (int)($program->length/60) ?> minutes)<BR>
                 <?php
@@ -38,10 +44,10 @@
             Episode: <b><?php echo $program->subtitle ?></b><br />
         <?php }
            if (strlen($program->description)) { ?>
-                Description: <?php echo $program->description ?><br />
+                <?php echo t('Description').": ".$program->description ?><br />
         <?php } ?>
         <?php if (strlen($program->category)) { ?>
-                Category: <?php echo $program->category ?><br />
+                <?php echo t('Category').": ".$program->category ?><br />
         <?php }
            if (strlen($program->airdate)) { ?>
                 Orig. Airdate: <?php echo $program->airdate ?><br />
@@ -60,7 +66,7 @@
             else
                 echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime'])
             ?>">
-        <center>Schedule Options:</center>
+        <center><?php echo t('Schedule Options') ?>:</center>
                     <input type="radio" class="radio" name="record" value="record_never" id="record_never"<?php echo $schedule->recordid ? '' : ' CHECKED' ?>></input>
         <a><?php
         if ($schedule->recordid)
@@ -86,7 +92,7 @@
         <input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php echo $schedule->type == rectype_always ? ' CHECKED' : '' ?>></input>
             <a>Always record on any channel</a><br />
             <br />
-            Recording Profile<br />
+            <?php echo t('Recording Profile') ?><br />
             <?php profile_select($schedule->profile) ?><br />
         <input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" />
            <a><?php echo t('Auto-flag commercials') ?></a><br />
@@ -104,7 +110,7 @@
         <?php echo t('End Late') ?>:
         <input type="input" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>" size="2"/>
         <?php echo t('minutes') ?><br />
-        <center><input type="submit" class="submit" name="save" value="Update Settings"></center>
+        <center><input type="submit" class="submit" name="save" value="<?php echo t('Update Recording Settings') ?>"></center>
         <br />
 
     </form>

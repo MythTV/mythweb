@@ -43,7 +43,10 @@
 <?php
     $row = 0;
     foreach ($All_Shows as $show) {
-        echo $show->title."<br />";
+        if(strlen($show->subtitle)>1)
+            echo $show->title."<br />";
+        else
+            echo "<b>".$show->title."</b><br />";
         echo $show->channame."<br />";
         if(strlen($show->subtitle)>1)
             echo "<b>".$show->subtitle."</b><br />";
@@ -55,8 +58,8 @@
         if ($show->endtime > time()) { ?>
             <font color="#FF0000">currently recording - </font>
 <?php   } ?>
-            <b></b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>">Delete </a></b> 
-                <b></b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old=yes">Rerecord</a></b><br /> 
+            <b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->starttime ?>">Delete </a></b>
+            <b><a id="delete_<?php echo $row ?>" href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->starttime ?>&forget_old=yes">Rerecord</a></b><br />
 <?php
         echo "<br />";
 

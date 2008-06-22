@@ -23,10 +23,10 @@
 <p>
             <form id="program_listing" action="<?php echo root ?>tv/channel/<?php echo $_GET['chanid'] ?>" method="post">
             <center>
-            Channel <?php echo $this_channel->channum ?> <?php echo $this_channel->callsign ?><br />
+            <?php echo t('Channel') ?> <?php $this_channel->channum ?> <b><?php echo $this_channel->callsign ?></b><br />
             <?php echo date('D m/d/y', $_SESSION['list_time']) ?><br />
 
-            Jump to<br />
+            <?php echo t('Jump to') ?><br />
             <select name="date"><?php
             // Find out how many days into the future we should bother checking
                 $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
@@ -42,7 +42,7 @@
                     echo ">".date("D m/d/y" , $time)."</option>";
                 }
                 ?></select><br />
-                <input type="submit" class="submit" value="Jump"><br /><br />
+                <input type="submit" class="submit" value="<?php echo t('Jump') ?>"><br /><br />
             </center>
             </form>
 </p>
@@ -60,12 +60,20 @@
     // Display the results
         $row = 0;
         foreach ($this_channel->programs as $show) {
+
+        if(strlen($show->title) <= 0 && strlen($show->subtitle) <= 0)
+            continue;
+
     // Print the content
     ?>
     <?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - 
     <?php echo strftime($_SESSION['time_format'], $show->endtime) ?><br />
 <?php
-        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
+        if(strlen($show->subtitle) <= 0)
+            echo '<b><a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a></b><br />';
+        else
+            echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
+
         if(strlen($show->subtitle))
             echo '<b>'.$show->subtitle.'</b><br />';
 //      if(strlen($show->description))

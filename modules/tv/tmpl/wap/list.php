@@ -22,8 +22,8 @@
 <p>
     <form class="form" action="<?php echo root ?>tv/list" method="get">
     <center>
-    Currently Browsing<br /><?php echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime)) ?><br />
-            Jump to<br />
+        <br /><?php echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime)) ?><br />
+            <?php echo t('Jump to') ?><br />
             <select name="daytime"><?php
 		$day=getdate($start_time);
 		$start=$start_time - $day['hours'] * 60 * 60 - $day['minutes'] * 60;
@@ -50,7 +50,7 @@
                     echo ">".date("D m/d/y" , $time)."</option>";
                 }
                 ?></select><br />
-            <input type="submit" class="submit" value="Jump">
+            <input type="submit" class="submit" value="<?php echo t('Jump') ?>">
             </center>
         </form>
         <br /><br />
@@ -92,11 +92,9 @@
     */
     function print_channel($channel, $start_time, $end_time) {
         ?>
-        <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo date('Ymd', $start_time) ?>">
+        <b><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo date('Ymd', $start_time) ?>">
         <?php echo $_SESSION["prefer_channum"] ? $channel->channum : $chann->callsign ?>&nbsp;
-        <?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?> </a>
+        <?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?> </a></b>
     	<a href="<?php echo root ?>tv/detail/<?php echo $channel->chanid ?>/<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
         <?php
     }
-
-

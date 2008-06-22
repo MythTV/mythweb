@@ -37,12 +37,12 @@
     foreach ($Results as $show) {
 // Print the content
     echo $show->channel->name.'<br />';
-    echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
+    echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'"><b>'.$show->title.'</b></a><br />';
     if(strlen($show->subtitle))
         echo $show->subtitle.'<br />';
 //  echo $show->description.'<br />';
-    echo date('D m/d/y', $show->starttime).'<br />';
-    echo date('(g:i A)', $show->starttime).' '.nice_length($show->length).'<br /><br />';
+    echo strftime($_SESSION['date_search'], $show->starttime).'<br />';
+    echo nice_length($show->length).'<br /><br />';
 
         $row++;
     }
