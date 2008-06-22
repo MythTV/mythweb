@@ -547,6 +547,7 @@
     Antal shows
 "Number of Songs"
 "Number of timeslots"
+"Off"
 "Only display favourite channels"
     Vis kun favorit kanaler
 "Only match commercial-free channels"
@@ -562,6 +563,7 @@
 "Originally aired between"
 "Override"
 "Page Down"
+"Page recorded programs"
 "Page Up"
 "Part $1 of $2"
     Del $1 af $2

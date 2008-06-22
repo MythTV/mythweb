@@ -548,6 +548,7 @@
 "Number of Songs"
 "Number of timeslots"
     タイムスロット数
+"Off"
 "Only display favourite channels"
     お気に入りのチャンネルのみ表示する
 "Only match commercial-free channels"
@@ -563,6 +564,7 @@
 "Originally aired between"
 "Override"
 "Page Down"
+"Page recorded programs"
 "Page Up"
 "Part $1 of $2"
     $1/$2

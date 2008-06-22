@@ -37,9 +37,8 @@
     if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
 
 // Show pixmaps on the recorded programs page?
-    if (!isset($_SESSION['recorded_pixmaps'])) {
+    if (!isset($_SESSION['recorded_pixmaps']))
          $_SESSION['recorded_pixmaps'] = (tmpl == 'default') ? true : false;
-    }
 
 // Guide settings
     if (!isset($_SESSION['guide_favonly']))
@@ -93,6 +92,9 @@ if (!isset($_SESSION['show_channel_icons']))
 
 if (!isset($_SESSION['sortby_channum']))
     $_SESSION['sortby_channum'] = 1;
+
+if (!isset($_SESSION['recorded_paging']))
+    $_SESSION['recorded_paging'] = null;
 
 // The following constants are defined for the videos page
 

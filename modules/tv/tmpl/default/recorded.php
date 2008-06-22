@@ -273,7 +273,13 @@
     $prev_group = '';
     $cur_group  = '';
 
+    $offset = $_REQUEST['offset'];
+
     foreach ($All_Shows as $show) {
+        if ($_SESSION['recorded_paging'] > 0 && $offset > 0) {
+            $offset--;
+            continue;
+        }
 
     // Print a dividing row if grouping changes
         switch ($group_field) {
@@ -398,10 +404,35 @@ EOM;
         $row_section[$row] = $section;
     // Increment row last
         $row++;
+    // Only display as many as requested
+        if ($_SESSION['recorded_paging'] > 0 && $row >= $_SESSION['recorded_paging'])
+            break;
     }
 ?>
 
 </table>
+
+<div id="recorded_pager">
+<?php
+    if ($_SESSION['recorded_paging'] > 0) {
+        echo 'Pages - ';
+        $total_pages = ceil(count($All_Shows)/$_SESSION['recorded_paging']);
+        $current_page = $_REQUEST['offset'] / $_SESSION['recorded_paging'];
+        for ($i = 1; $i <= $total_pages; $i++) {
+            $query = '';
+            foreach($_GET as $key => $value) {
+                if ($key == 'offset')
+                    continue;
+                $query .= urlencode($key).'='.urlencode($value).'&';
+            }
+            $query .= 'offset='.(($i-1)*$_SESSION['recorded_paging']);
+            if ($i != 1)
+                echo ' | ';
+            echo '<a href="'.root.'/tv/recorded?'.$query.'">'.$i.'</a>';
+        }
+    }
+?>
+</div>
 
 <script type="text/javascript">
 <?php

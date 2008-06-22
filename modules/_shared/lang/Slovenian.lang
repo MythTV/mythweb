@@ -722,6 +722,7 @@
     Število pesmi
 "Number of timeslots"
     Število ponavljanj
+"Off"
 "Only display favourite channels"
     Prikaži samo priljubljene kanale
 "Only match commercial-free channels"
@@ -743,6 +744,7 @@
     Prepiši
 "Page Down"
     Stran dol
+"Page recorded programs"
 "Page Up"
     Stran gor
 "Part $1 of $2"

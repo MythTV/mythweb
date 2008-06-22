@@ -25,6 +25,20 @@
 </tr><tr>
     <th><?php echo t('Download URL override') ?></label>:</th>
     <td>file://<input type="text" id="file_url_override" name="file_url_override" value="<?php echo html_entities(trim($_SESSION['file_url_override'])) ?>" title="Instead of streaming downloaded recordings, load from a local file:// path instead."></td>
+</tr><tr>
+    <th><?php echo t('Page recorded programs') ?></label>:</th>
+    <td><select name="recorded_paging">
+    <?php
+        foreach(array('null', 10, 25, 50, 100) as $value) {
+            echo '<option value="'.$value.'" ';
+            if ($value == $_SESSION['recorded_paging'])
+                echo ' SELECTED ';
+            if ($value == 'null')
+                $value = t('Off');
+            echo '>'.$value.'</option>';
+        }
+    ?>
+    </select></td>
 </tr><tr class="x-sep">
     <td colspan="2"><?php echo t('Guide Settings') ?>:</th>
 </tr><tr>
@@ -92,4 +106,3 @@
 </table>
 
 </form>
-

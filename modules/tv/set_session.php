@@ -36,5 +36,5 @@
         $_SESSION['timeslotbar_skip'] = max(1, intVal($_POST['timeslotbar_skip']));
         $_SESSION['max_stars']        = max(3, intVal($_POST['max_stars']));
         $_SESSION['star_character']   = $_POST['star_character'];
+        $_SESSION['recorded_paging']  = $_POST['recorded_paging'];
     }
-

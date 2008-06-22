@@ -688,6 +688,7 @@
     Antal låtar
 "Number of timeslots"
     Antal tidsluckor
+"Off"
 "Only display favourite channels"
     Visa endast favoritkanaler
 "Only match commercial-free channels"
@@ -707,6 +708,7 @@
 "Override"
     Överskugga
 "Page Down"
+"Page recorded programs"
 "Page Up"
 "Part $1 of $2"
     Del $1 av $2
