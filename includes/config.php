@@ -80,7 +80,7 @@
 
 // the character(s) to represent stars with
     if (empty($_SESSION['star_character']))
-        $_SESSION['star_character'] = '&diams;';
+        $_SESSION['star_character'] = '&#9733;';
     define('star_character', $_SESSION['star_character']);
 
 //  The following constants are used for the program listings page
