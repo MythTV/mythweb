@@ -837,6 +837,22 @@ class Program {
     }
 
 /**
+ * Activate a program to record, even if it's in progress
+/**/
+    public function activate() {
+        global $db;
+    // If we have already started recording, allow the reactivate to happen, re #4814
+        $db->query('UPDATE oldrecord
+                       SET oldrecord.reactivate = 1
+                     WHERE oldrecord.starttime  = ?
+                       AND oldrecord.chanid     = ?',
+                    $this->starttime,
+                    $this->chanid
+                  );
+        $this->rec_override(rectype_override);
+    }
+
+/**
  * Intended to be called as program::category_types()
  *
  * @return array sorted list of category_type fields from the program table

@@ -32,25 +32,22 @@
         $program = load_one_program($_GET['starttime'], $_GET['chanid'], $_GET['manualid']);
 
     // Forget all knowledge of old recordings
-        if ($_REQUEST['forget_old']) {
+        if ($_REQUEST['forget_old'])
             $program->rec_forget_old();
-        }
     // Fake an old recording so that this show won't record again
-        elseif ($_REQUEST['never_record']) {
+        elseif ($_REQUEST['never_record'])
             $program->rec_never_record();
-        }
     // Revert to default recording rules
-        elseif ($_REQUEST['default']) {
+        elseif ($_REQUEST['default'])
             $program->rec_default();
-        }
     // Suppress something that shouldn't be recorded
-        elseif ($_REQUEST['dontrec']) {
+        elseif ($_REQUEST['dontrec'])
             $program->rec_override(rectype_dontrec);
-        }
     // Record a show that wouldn't otherwise record (various reasons, read below)
-        elseif ($_REQUEST['record']) {
+        elseif ($_REQUEST['record'])
             $program->rec_override(rectype_override);
-        }
+        elseif ($_REQUEST['activate'])
+            $program->activate();
     // Wait for a second so the backend can catch up
         sleep(1);
 
@@ -128,4 +125,3 @@
 
 // Exit
     exit;
-

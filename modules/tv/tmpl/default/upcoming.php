@@ -266,7 +266,7 @@
                                      .t('Forget Old').'</a>';
                     break;
                 case 'activate':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?record=yes"'
+                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?activate=yes"'
                                      .' title="'.html_entities(t('info: activate recording')).'">'
                                      .t('Activate').'</a>';
                     break;
