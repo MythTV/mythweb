@@ -127,19 +127,19 @@ class Program {
     // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
         // Load the remaining info we got from mythbackend
-            $this->title           = $data[0];      # program name/title
-            $this->subtitle        = $data[1];      # episode name
-            $this->description     = $data[2];      # episode description
+            $this->title           = trim($data[0]);    # program name/title
+            $this->subtitle        = $data[1];          # episode name
+            $this->description     = $data[2];          # episode description
             $this->category        = $data[3];
-            $this->chanid          = $data[4];      # mysql chanid
+            $this->chanid          = $data[4];          # mysql chanid
             $this->channum         = $data[5];
             $this->callsign        = $data[6];
             $this->channame        = $data[7];
             $this->filename        = $data[8];
-            $this->fs_high         = $data[9];      # high-word of file size
-            $this->fs_low          = $data[10];     # low-word of file size
-            $this->starttime       = $data[11];     # show start-time
-            $this->endtime         = $data[12];     # show end-time
+            $this->fs_high         = $data[9];          # high-word of file size
+            $this->fs_low          = $data[10];         # low-word of file size
+            $this->starttime       = $data[11];         # show start-time
+            $this->endtime         = $data[12];         # show end-time
             $this->duplicate       = $data[13];
             $this->shareable       = $data[14];
             $this->findid          = $data[15];
@@ -153,9 +153,9 @@ class Program {
             $this->rectype         = $data[23];
             $this->dupin           = $data[24];
             $this->dupmethod       = $data[25];
-            $this->recstartts      = $data[26];     # ACTUAL start time (also maps to recorded.starttime)
-            $this->recendts        = $data[27];     # ACTUAL end time
-            $this->previouslyshown = $data[28];     # "repeat" field
+            $this->recstartts      = $data[26];         # ACTUAL start time (also maps to recorded.starttime)
+            $this->recendts        = $data[27];         # ACTUAL end time
+            $this->previouslyshown = $data[28];         # "repeat" field
             $this->progflags       = $data[29];
             $this->recgroup        = $data[30];
             $this->commfree        = $data[31];
