@@ -38,6 +38,8 @@
                         );
     // We need to prevent hemorrhaging memory...
     // We don't use Tips.removeAll() as we are destroying the fields they are hooked into, so we don't need to mess with the DOM...
+    // And we need to hide them all so they don't hang around
+        Tips.hideAll();
         Tips.tips.clear();
     }
 
