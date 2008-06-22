@@ -60,7 +60,7 @@ class Program {
     public $airdate;
     public $hasairdate;
     public $playgroup          = 'Default';
-    public $recpriority2       = 0;
+    public $recpriority2       = null;
     public $parentid;
     public $storagegroup       = 'Default';
 
@@ -700,6 +700,8 @@ class Program {
     // Recording Priority
         if ($this->recpriority != null)
             $str .= "\t<dt>".t('Recording Priority')."</dt><dd>".$this->recpriority."</dd>\n";
+        elseif ($this->recpriority2 != null)
+            $str .= "\t<dt>".t('Recording Priority')."</dt><dd>".$this->recpriority2."</dd>\n";
     // Recording status
         if (!empty($this->recstatus)) {
             $str .= "\t<dt>".t('Notes').":</dt>\n"
