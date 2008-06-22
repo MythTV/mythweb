@@ -84,6 +84,7 @@
     <th class="x-group"><?php      echo t('Recording Group');     ?></th>
     <th class="x-type"><?php       echo t('Type');                ?></th>
     <th class="x-sgroup"><?php     echo t('Storage Group');       ?></th>
+    <th class="x-lastrec"><?php    echo t('Last Recorded');       ?></th>
 </tr>
 </thead>
 <?php
@@ -178,6 +179,7 @@
     <td class="x-group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
     <td class="x-type"><?php  echo $schedule->texttype ?></td>
     <td class="x-group"><?php echo _or($schedule->storagegroup, '&nbsp;') ?></td>
+    <td class="x-lastrec"><?php echo _or($schedule->last_record, '&nbsp;') ?></td>
 </tr><?php
             $prev_group = $cur_group;
         }
