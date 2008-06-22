@@ -197,7 +197,7 @@
                                      'conflicting'));
                 $css_class  = 'conflict';
                 $commands[] = 'record';
-                $commands[] = 'dontrec';
+                $commands[] = 'never_record';
                 break;
             case 'LaterShowing':
                 $rec_char   = t('Later');
