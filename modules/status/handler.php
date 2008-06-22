@@ -25,7 +25,13 @@
     header('Content-Type:  text/html; charset=UTF-8');
 
 // Load the status page
-    if (function_exists('file_get_contents'))
+    if (function_exists('curl_exec')) {
+        $ch = curl_init("http://$masterhost:$statusport$xml_param");
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        $status = curl_exec($ch);
+        curl_close($ch);
+    } else if (function_exists('file_get_contents'))
         $status = file_get_contents("http://$masterhost:$statusport$xml_param");
     else
         $status = implode("\n", file("http://$masterhost:$statusport$xml_param"));
