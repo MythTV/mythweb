@@ -44,7 +44,7 @@
 # Work around a lighttpd bug:  http://trac.lighttpd.net/trac/ticket/420
     foreach my $key (keys %ENV) {
         next if ($key eq uc($key));
-        $ENV{$key} ||= $ENV{uc($key)};
+        $ENV{$key} ||= $ENV{lc($key)};
     }
 
 # Connect to the database
@@ -99,4 +99,3 @@
         }
         return undef;
     }
-
