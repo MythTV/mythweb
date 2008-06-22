@@ -343,8 +343,8 @@
         // A program id counter for popup info
             $program_id_counter = 0;
             foreach ($conflicting_shows as $show) {
-            if (!$_SESSION['recording_details']['show_'.$show->recstatus])
-            continue;
+                if (!isset($_SESSION['recording_details']['show_'.$show->recstatus]))
+                    continue;
                 $program_id_counter++;
             // Print the link to edit this scheduled recording
                 echo '<a class="', $show->css_class,
