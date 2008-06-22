@@ -33,8 +33,17 @@
 
             <div class="temps">
                 <div class="high">
+                    <p><?php echo t('Temp') ?></p>
                     <p class="temp">
                         <?php echo $screen->data["temp-$i"] == 'NA' ? '' : $screen->data["temp-$i"] ?>&deg;<sup><?php echo $screen->units == 0 ? 'C' : 'F' ?></sup>
+                    </p>
+                </div>
+            </div>
+            <div class="temps">
+                <div class="low">
+                    <p><?php echo t('Precip') ?></p>
+                    <p class="temp">
+                        <?php echo $screen->data["pop-$i"] == 'NA' ? '' : $screen->data["pop-$i"] ?>
                     </p>
                 </div>
             </div>
