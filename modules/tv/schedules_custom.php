@@ -123,6 +123,8 @@
                                           preg_replace('/\W+$/', '',
                                                        $_POST['additional_tables']
                                                       ));
+            // Quick fix for LEFT JOINs to be syntaxly correct
+                $schedule->subtitle = str_replace(', LEFT JOIN', ' LEFT JOIN', $schedule->subtitle);
             // Run a test query
                 $db->disable_fatal_errors();
                 $sh = $db->query('SELECT NULL FROM program, channel'.str_replace('?', '\\?', $schedule->subtitle)
