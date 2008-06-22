@@ -629,6 +629,7 @@
     Avanzada
 "Power Search"
     Búsqueda avanzada
+"Precip"
 "Prefer Channum"
     Nº Canal Preferido
 "prefer_channum"
@@ -913,6 +914,7 @@
     Domingo
 "Surround Sound"
 "Tab"
+"Temp"
 "The requested recording schedule has been deleted."
     La programación pedida ha sido borrada.
 "There are no items in this Playlist!"

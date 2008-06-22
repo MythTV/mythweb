@@ -607,6 +607,7 @@
     パワー
 "Power Search"
     パワーサーチ
+"Precip"
 "Prefer Channum"
     チャンネル番号を優先
 "prefer_channum"
@@ -886,6 +887,7 @@
     日曜日
 "Surround Sound"
 "Tab"
+"Temp"
 "The requested recording schedule has been deleted."
     要求された予約は既に削除されています。
 "There are no items in this Playlist!"

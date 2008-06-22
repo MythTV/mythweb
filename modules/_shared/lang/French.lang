@@ -536,6 +536,7 @@
 "Possible conflicts with this show"
 "Power"
 "Power Search"
+"Precip"
 "Prefer Channum"
 "prefer_channum"
 "Preferred Input"
@@ -792,6 +793,7 @@
     Dimanche
 "Surround Sound"
 "Tab"
+"Temp"
 "The requested recording schedule has been deleted."
     L'enregistrement demandé a été effacé
 "There are no items in this Playlist!"

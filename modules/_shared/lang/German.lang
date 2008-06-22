@@ -627,6 +627,7 @@
     freie Suche
 "Power Search"
     Erweiterte Suche
+"Precip"
 "Prefer Channum"
     bevorzuge Sendernummer
 "prefer_channum"
@@ -914,6 +915,7 @@
     Sonntag
 "Surround Sound"
 "Tab"
+"Temp"
 "The requested recording schedule has been deleted."
     Die geplante Aufnahme wurde gelöscht.
 "There are no items in this Playlist!"

@@ -606,6 +606,7 @@
     Super
 "Power Search"
     Super søgning
+"Precip"
 "Prefer Channum"
 "prefer_channum"
 "Preferred Input"
@@ -881,6 +882,7 @@
     Søndag
 "Surround Sound"
 "Tab"
+"Temp"
 "The requested recording schedule has been deleted."
     Den planlagte optagelse er blevet slettet.
 "There are no items in this Playlist!"

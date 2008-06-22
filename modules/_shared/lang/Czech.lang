@@ -491,6 +491,7 @@
 "Possible conflicts with this show"
 "Power"
 "Power Search"
+"Precip"
 "Prefer Channum"
 "prefer_channum"
 "Preferred Input"
@@ -720,6 +721,7 @@
     Neděle
 "Surround Sound"
 "Tab"
+"Temp"
 "The requested recording schedule has been deleted."
     Požadovaný rozvrh nahrávání byl vymazán
 "There are no items in this Playlist!"

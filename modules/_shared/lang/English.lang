@@ -444,6 +444,7 @@
 "Possible conflicts with this show"
 "Power"
 "Power Search"
+"Precip"
 "Prefer Channum"
 "prefer_channum"
     Prefer channel number over callsign
@@ -673,6 +674,7 @@
 "Sunday"
 "Surround Sound"
 "Tab"
+"Temp"
 "The requested recording schedule has been deleted."
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
