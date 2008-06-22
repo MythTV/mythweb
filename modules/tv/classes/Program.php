@@ -817,8 +817,10 @@ class Program {
     public function rec_override($rectype) {
         $schedule =& $GLOBALS['Schedules'][$this->recordid];
     // Unknown schedule?
-        if (!$schedule)
-            trigger_error('Unknown schedule for this program\'s recordid:  '.$this->recordid, FATAL);
+        if (!$schedule) {
+            add_error('Unknown schedule for this program\'s recordid:  '.$this->recordid);
+            return;
+        }
     // Update the schedule with the new program info
         $schedule->chanid      = $this->chanid;
         $schedule->starttime   = $this->starttime;
