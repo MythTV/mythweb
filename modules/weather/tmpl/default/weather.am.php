@@ -32,7 +32,7 @@
             echo "imageTotal = ". $matches[2] .";\n";
             for ($i=0; $i<$matches[2]; $i++)  {
                 echo "images[$i] = new Image();\n";
-                echo "images[$i].src = \"/". cache_dir ."/". $matches[1] ."-$i\";\n";
+                echo "images[$i].src = \"". cache_url . $matches[1] ."-$i\";\n";
             }
 ?>
         function nextFrame (inc) {
@@ -68,7 +68,7 @@
 ?>
 
         output += ' <b>Faster</b><br>'
-        output += '<img name="animation" src="<?php echo "/". cache_dir ."/". $matches[1] ."-0" ?>" alt="Animation" onload="setTimeout(\'animate()\', delay)">'
+        output += '<img name="animation" src="<?php echo cache_url . $matches[1] ."-0" ?>" alt="Animation" onload="setTimeout(\'animate()\', delay)">'
         output += '</form>'
         document.write(output);
 

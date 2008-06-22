@@ -24,6 +24,7 @@
 
 // New hard-coded cache directory
     define('cache_dir', 'data/cache');
+    define('cache_url', root.cache_dir.'/');
 
 // Make sure the image cache path exists and is writable
     if (!is_dir(cache_dir) && !mkdir(cache_dir, 0755)) {
