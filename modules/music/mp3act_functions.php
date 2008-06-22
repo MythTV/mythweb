@@ -512,8 +512,30 @@ function musicLookup($type, $itemid)
         <option>40</option>
         <option>50</option>
         <option>100</option>
-        </select><br>
-        <strong>'.t('Random Type').'</strong><br>
+        </select><br />
+        
+        <strong>'.t('Rating').'</strong><br />
+        <select name="rating">
+        <option value="all">All</option>
+        <option value=">">></option>
+        <option value="=">=</option>
+        <option value="<"><</option>
+        </select>
+         
+        <select name="rating_value">
+        <option value="9">9</option>
+        <option value="8">8</option>
+        <option value="7">7</option>
+        <option value="6">6</option>
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+        </select><br />
+        
+        <strong>'.t('Random Type').'</strong><br />
+
         <select name="random_type" onchange="getRandItems(this.options[selectedIndex].value); return false;">
         <option value="">'.t('Choose Type').'...</option>
         <option value="artists">'.t('Artists').'</option>
@@ -1366,7 +1388,7 @@ function playlist_add($type, $itemid)
   return $output;
 }
 
-function randAdd($type,$num=0,$items='')
+function randAdd($type,$num=0,$items='',$rating='')
 {
   $output = array(0 => 1);
   // Check to see if $items matches our REGEXP.
@@ -1390,7 +1412,14 @@ function randAdd($type,$num=0,$items='')
       $query .= 'WHERE album_id IN ('.$sql_items.') ';
       break;
   }
-  $query .= 'ORDER BY RAND()+0 '.
+  if($rating != '') {
+    if($type == 'all')
+      $query .= 'WHERE rating '.$rating.' ';
+    else
+      $query .= 'AND rating '.$rating.' ';
+  }
+  
+  $query .= 'GROUP BY name ORDER BY RAND()+0 '.
     'LIMIT '.mysql_real_escape_string(intval($num));
   $result = mysql_query($query);
 

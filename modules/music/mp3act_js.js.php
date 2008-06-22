@@ -303,9 +303,16 @@
                       setMsgText("You must choose at least one random item");
                       return false;
                     }
-          items = items.substring(1);
+                    items = items.substring(1);
                 }
-                x_randAdd(type,num,items,randadd_cb);
+                if(data.rating.value == 'all'){
+                    x_randAdd(type,num,items,randadd_cb);
+                }
+                else{
+                    var filter = data.rating.value + ' ' + data.rating_value.value;
+                    x_randAdd(type,num,items,filter,randadd_cb);
+                }
+
                 return false;
 
             }
