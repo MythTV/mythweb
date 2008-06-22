@@ -70,13 +70,14 @@
     }
 
 // Unknown section?  Use the default
-    if (!in_array($Path[1], array('recording_detail', 'detail', 'channel', 'search', 'movies', 'get_show_details'))
+    if (!in_array($Path[1], array('recording_detail', 'detail', 'channel', 'search', 'movies', 'get_show_details', 'get_schedule_details'))
             && empty($Modules['tv']['links'][$Path[1]])) {
         $Path[1] = 'list';
     }
 
 // Keep track of this path for the next visit
-    if ($Path[1] != 'get_show_details')
+    if (   $Path[1] != 'get_show_details'
+        || $Path[1] != 'get_schedule_details')
         $_SESSION['tv']['last'] = array_slice($Path, 1);
 
 // Show the requested section

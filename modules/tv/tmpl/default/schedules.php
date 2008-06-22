@@ -37,6 +37,41 @@
         $group_field = '';
 ?>
 
+<script type="text/javascript">
+    function load_tool_tip(element_id, recordid) {
+        var element = $(element_id);
+        if (Tips.hasTip(element) == false) {
+            ajax_add_request();
+            new Ajax.Request('<?php echo root; ?>tv/get_schedule_details',
+                             {
+                                parameters: {
+                                                recordid:           recordid,
+                                                ajax:               true
+                                            },
+                                onSuccess: add_tool_tip,
+                                method:    'get'
+                             });
+        }
+    }
+
+    function add_tool_tip(content) {
+        ajax_remove_request();
+        var info = content.responseJSON;
+        if (Tips.hasTip($(info['id'])) == false) {
+            new Tip(info['id'], info['info'], { className: 'popup' });
+            attempt_to_show_tip(info['id']);
+        }
+    }
+
+    var currently_hovered_id = null;
+    var details_delay_timer_id = null;
+
+    function attempt_to_show_tip(element) {
+        if (element == currently_hovered_id)
+            Tips.showTip(element);
+    }
+</script>
+
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small" sortable="true">
 <thead>
 <tr class="menu">
@@ -100,9 +135,11 @@
         // Window status text, for the mouseover
             $wstatus = "Details for $schedule->title";
         // Print a link to the program detail for this schedule
-            echo '<a';
-            if ($_SESSION["show_popup_info"])
-                echo show_popup("program_$program_id_counter", $schedule->details_list(), NULL, 'popup', $wstatus);
+            echo '<a id="schedule-'.$schedule->recordid.'"';
+            if ($_SESSION["show_popup_info"]) {
+                echo ' onmouseover = "currently_hovered_id = this.id; details_delay_timer_id = setTimeout(function () {load_tool_tip(\'schedule-'.$schedule->recordid.'\',\''.$schedule->recordid.'\');}, 250);"';
+                echo ' onmouseout  = "currently_hovered_id = null; clearTimeout( details_delay_timer_id ); details_delay_timer_id = null;"';
+            }
             echo ' href="'.root.'tv/';
         // Link to different places for different kinds of schedules
             if ($schedule->search) {
