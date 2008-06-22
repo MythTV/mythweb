@@ -337,6 +337,10 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"LOCKDOWN_NOTICE"
+    MythWeb has detected a bot accessing this install. We have locked down the install to prevent any issues with bots deleting all your recordings or allowing other people from accessing your mythweb install without your permission. Please secure your install (read the INSTALL and README files) and remove
+"LOCKDOWN_NOTICE_2"
+    to unlock this install. To disable this feature, read the README file.
 "Logs"
 "Low"
 "Low Space"

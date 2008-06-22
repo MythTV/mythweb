@@ -135,9 +135,25 @@ A: First, make sure that if you have enabled some form of authentication that
 Q: I get a "500 server error" (or some other number) when trying to view
     MythWeb.
 A: Check your apache logs for details about what caused the error.  Usually,
-    it means that you didn't set up a required module.  Read the 
+    it means that you didn't set up a required module.  Read the
     mythweb.conf.apache file in more detail to make sure you didn't miss
     an important setup file.
+
+Q: Why is my MythWeb install locked?
+A: Given the absolutely huge number of open mythweb installs, we have added in
+    a automatic lockdown feature when we detect a bot or the like. This is to
+    prevent your install from being indexed, and having all your recordings
+    deleted or someone finding it and setting it to record opera 24x7.
+
+Q: So... how do I unlock the install?
+A: You can unlock the install by removing the file the message screen gives
+    you, but you should secure the install before you do that (read INSTALL)
+
+Q: I don't like you protecting my data... I want the world to mess with my
+    MythTV install!
+A: If you want to disable this feature, set the apache envirnment var
+    MYTHWEB_LOCKDOWN_DISABLE to true and remove the lockdown file, and
+    we will no longer try to protect you.
 
 ======================
 4.0 Submitting Patches
@@ -150,5 +166,3 @@ Please create patches against the most recent version of SVN.  I can deal with
 other "diff -u" patches, but if there have been any major changes in SVN (there
 occasionally are), I won't put much effort into trying to make your patch work,
 so please just use SVN.
-
-

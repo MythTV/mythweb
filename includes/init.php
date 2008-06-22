@@ -27,7 +27,7 @@
 
 // Define some common stuff
     require_once 'includes/defines.php';
-// Check out the php version info 
+// Check out the php version info
     require_once 'includes/php_version_check.php';
 
 // Load the error trapping and display routines
@@ -45,6 +45,9 @@
 
 // Load the translation routines so the modules can translate their descriptions
     require_once 'includes/translate.php';
+
+// Protect the users!
+    require_once 'includes/lockdown.php';
 
 // Include a few useful functions
     require_once 'includes/css.php';
