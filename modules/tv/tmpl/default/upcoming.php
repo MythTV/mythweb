@@ -34,6 +34,42 @@
 
 ?>
 
+<script type="text/javascript">
+    function load_tool_tip(element_id, channel_id, start_time) {
+        var element = $(element_id);
+        if (Tips.hasTip(element) == false) {
+            ajax_add_request();
+            new Ajax.Request('<?php echo root; ?>tv/get_show_details',
+                             {
+                                parameters: {
+                                                chanid:             channel_id,
+                                                starttime:          start_time,
+                                                ajax:               true
+                                            },
+                                onSuccess: add_tool_tip,
+                                method:    'get'
+                             });
+        }
+    }
+
+    function add_tool_tip(content) {
+        ajax_remove_request();
+        var info = content.responseJSON;
+        if (Tips.hasTip($(info['id'])) == false) {
+            new Tip(info['id'], info['info'], { className: 'popup' });
+            attempt_to_show_tip(info['id']);
+        }
+    }
+
+    var currently_hovered_id = null;
+    var details_delay_timer_id = null;
+
+    function attempt_to_show_tip(element) {
+        if (element == currently_hovered_id)
+            Tips.showTip(element);
+    }
+</script>
+
 <form id="change_display" action="<?php echo root ?>tv/upcoming" method="post">
 <div><input type="hidden" name="change_display" value="1"></div>
 
@@ -268,9 +304,11 @@
     <td class="x-status rec_class <?php echo $rec_class ?>"><?php echo $rec_char ?></td>
     <td class="x-title <?php echo $show->css_class ?>"><?php
     // Print the link to edit this scheduled recording
-        echo '<a';
-        if ($_SESSION["show_popup_info"])
-            echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup');
+        echo '<a id="program-'.$show->chanid.'-'.$show->starttime.'"';
+        if ($_SESSION["show_popup_info"]) {
+            echo ' onmouseover = "currently_hovered_id = this.id; details_delay_timer_id = setTimeout(function () {load_tool_tip(\'program-'.$show->chanid.'-'.$show->starttime.'\',\''.$show->chanid.'\',\''.$show->starttime.'\');}, 250);"';
+            echo ' onmouseout  = "currently_hovered_id = null; clearTimeout( details_delay_timer_id ); details_delay_timer_id = null;"';
+        }
         else
             echo ' title="',html_entities(strftime($_SESSION['time_format'], $show->starttime)
                          .' - '.strftime($_SESSION['time_format'], $show->endtime)
