@@ -5,10 +5,7 @@
  * @date        $Date$
  * @version     $Revision$
  * @author      $Author$
- * @license     MIT
- *
- * @package     SiMech
- * @subpackage  Javascript
+ * @license     LGPL
  *
 /**/
 
