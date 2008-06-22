@@ -31,25 +31,29 @@
     if ($_GET['chanid'] && $_GET['starttime']) {
         $program = load_one_program($_GET['starttime'], $_GET['chanid'], $_GET['manualid']);
 
-    // Forget all knowledge of old recordings
-        if ($_REQUEST['forget_old'])
-            $program->rec_forget_old();
-    // Fake an old recording so that this show won't record again
-        elseif ($_REQUEST['never_record'])
-            $program->rec_never_record();
-    // Revert to default recording rules
-        elseif ($_REQUEST['default'])
-            $program->rec_default();
-    // Suppress something that shouldn't be recorded
-        elseif ($_REQUEST['dontrec'])
-            $program->rec_override(rectype_dontrec);
-    // Record a show that wouldn't otherwise record (various reasons, read below)
-        elseif ($_REQUEST['record'])
-            $program->rec_override(rectype_override);
-        elseif ($_REQUEST['activate'])
-            $program->activate();
-    // Wait for a second so the backend can catch up
-        sleep(1);
+        if (is_object($program)) {
+        // Forget all knowledge of old recordings
+            if ($_REQUEST['forget_old'])
+                $program->rec_forget_old();
+        // Fake an old recording so that this show won't record again
+            elseif ($_REQUEST['never_record'])
+                $program->rec_never_record();
+        // Revert to default recording rules
+            elseif ($_REQUEST['default'])
+                $program->rec_default();
+        // Suppress something that shouldn't be recorded
+            elseif ($_REQUEST['dontrec'])
+                $program->rec_override(rectype_dontrec);
+        // Record a show that wouldn't otherwise record (various reasons, read below)
+            elseif ($_REQUEST['record'])
+                $program->rec_override(rectype_override);
+            elseif ($_REQUEST['activate'])
+                $program->activate();
+        // Wait for a second so the backend can catch up
+            sleep(1);
+        }
+        else
+            add_warning('Unknown program.');
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         redirect_browser(root.'tv/upcoming');
