@@ -5,10 +5,10 @@
  *
  * You can disable this feature with the apache env var of MYTHWEB_LOCKDOWN_DISABLE being set to true
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/includes/lockdown.php $
- * @date        $Date: 2008-03-07 16:21:55 -0800 (Fri, 07 Mar 2008) $
- * @version     $Revision: 16436 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb
