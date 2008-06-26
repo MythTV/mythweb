@@ -225,6 +225,7 @@
 "Custom Schedule"
     Programación Avanzada
 "Custom Search"
+"Customize Screens"
 "Data"
     Datos
 "Database"
@@ -674,6 +675,8 @@
 "Recently Played Songs"
 "recgroup"
     grupo
+"Record Date"
+"Record Length"
 "Record new and expire old"
     Grabar nuevos y expirar antiguos
 "Record This"

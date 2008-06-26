@@ -287,6 +287,7 @@
     Eget schema
 "Custom Search"
     Egen sökning
+"Customize Screens"
 "Data"
     Data
 "Database"
@@ -826,6 +827,8 @@
     Nyligen spelade sånger
 "recgroup"
     inspelningsgrupp
+"Record Date"
+"Record Length"
 "Record new and expire old"
     Spela in nya, radera gamla
 "Record This"

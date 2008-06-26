@@ -14,9 +14,10 @@
 /**/
 
     $Settings['tv'] = array('name'    => t('TV'),
-                            'choices' => array('session'   => t('My Session'),
-                                               'channels'  => t('Channel Info'),
-                                               'playgroup' => t('Playback Groups'),
+                            'choices' => array('session'    => t('My Session'),
+                                               'channels'   => t('Channel Info'),
+                                               'playgroup'  => t('Playback Groups'),
+                                               'screens'    => t('Customize Screens'),
                                               ),
                             'default' => 'session',
                            );
@@ -34,4 +35,3 @@
                                                   'recorded'         => t('Recorded Programs'),
                                                  ),
                           );
-

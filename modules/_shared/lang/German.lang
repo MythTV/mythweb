@@ -225,6 +225,7 @@
     Erweiterte Aufnahmeregel
 "Custom Search"
     freie Suche
+"Customize Screens"
 "Data"
     Daten
 "Database"
@@ -675,6 +676,8 @@
 "Recently Played Songs"
 "recgroup"
     Aufnahmegruppe
+"Record Date"
+"Record Length"
 "Record new and expire old"
     Nur neue Folgen aufnehmen
 "Record This"

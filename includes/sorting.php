@@ -166,6 +166,11 @@
         return ($a->starttime > $b->starttime) ? 1 : -1;
     }
 
+    function by_recdate(&$a, &$b) {
+        if ($a->recstartts == $b->recstartts) return 0;
+        return ($a->recstartts > $b->recstartts) ? 1 : -1;
+    }
+
     function by_recgroup(&$a, &$b) {
         if ($a->recgroup == $b->recgroup) return 0;
         return ($a->recgroup > $b->recgroup) ? 1 : -1;
@@ -217,4 +222,3 @@
         if ($a->transcoder == $b->transcoder) return 0;
         return ($a->transcoder > $b->transcoder) ? 1 : -1;
     }
-

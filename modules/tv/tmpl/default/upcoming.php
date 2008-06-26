@@ -25,12 +25,10 @@
 /** @todo FIXME:  pull this out of the theme page! */
 // Which field are we grouping by?
     $group_field = $_SESSION['scheduled_sortby'][0]['field'];
-    if (empty($group_field)) {
-        $group_field = "airdate";
-    }
-    elseif (!in_array($group_field, array('title', 'channum', 'airdate'))) {
+    if (empty($group_field))
+        $group_field = 'recdate';
+    elseif (!in_array($group_field, array('title', 'channum', 'airdate', 'recdate')))
         $group_field = '';
-    }
 
 ?>
 
@@ -108,17 +106,25 @@
 <table id="listings" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
-    <th class="x-status"><?php  echo t('Status') ?></th>
-    <th class="x-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
-    <th class="x-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
-    <th class="x-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
-    <th class="x-length"><?php  echo get_sort_link('length',  t('Length'))  ?></th>
+        <th class="x-status"><?php  echo t('Status') ?></th>
+    <?php if ($_SESSION['tv']['settings']['screens']['upcoming']['title'] == 'on') { ?>
+        <th class="x-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
+    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['channel'] == 'on') { ?>
+        <th class="x-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
+    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['airdate'] == 'on') { ?>
+        <th class="x-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
+    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['record date'] == 'on') { ?>
+        <th class="x-recdate"><?php  echo get_sort_link('recdate',  t('Record Date'))  ?></th>
+    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['length'] == 'on') { ?>
+        <th class="x-length"><?php  echo get_sort_link('length',  t('Record Length'))  ?></th>
+    <?php } ?>
 </tr><?php
     $row = 0;
 
     $prev_group = '';
     $cur_group  = '';
     foreach ($all_shows as $show) {
+
     // Set the class to be used to display the recording status character
         $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));
     // Reset the command variable to a default URL
@@ -287,6 +293,8 @@
     // Print a dividing row if grouping changes
         if ($group_field == "airdate")
             $cur_group = strftime($_SESSION['date_listing_jump'], $show->starttime);
+        elseif ($group_field == "recdate")
+            $cur_group = strftime($_SESSION['date_listing_jump'], $show->recstartts);
         elseif ($group_field == "channum")
             $cur_group = $show->channel->channum.' - '.$show->channel->name;
         elseif ($group_field == "title")
@@ -294,7 +302,7 @@
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="8" class="list_separator"><?php echo $cur_group ?></td>
+    <td colspan="10" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?php
         }
 
@@ -302,32 +310,54 @@
 ?><tr class="<?php echo $css_class ?>">
 <?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n" ?>
     <td class="x-status rec_class <?php echo $rec_class ?>"><?php echo $rec_char ?></td>
-    <td class="x-title <?php echo $show->css_class ?>"><?php
-    // Print the link to edit this scheduled recording
-        echo '<a id="program-'.$show->chanid.'-'.$show->starttime.'"';
-        if ($_SESSION["show_popup_info"]) {
-            echo ' onmouseover = "currently_hovered_id = this.id; details_delay_timer_id = setTimeout(function () {load_tool_tip(\'program-'.$show->chanid.'-'.$show->starttime.'\',\''.$show->chanid.'\',\''.$show->starttime.'\');}, 250);"';
-            echo ' onmouseout  = "currently_hovered_id = null; clearTimeout( details_delay_timer_id ); details_delay_timer_id = null;"';
+    <?php
+        if ($_SESSION['tv']['settings']['screens']['upcoming']['title'] == 'on') {
+            ?>
+                <td class="x-title <?php echo $show->css_class ?>"><?php
+                // Print the link to edit this scheduled recording
+                    echo '<a id="program-'.$show->chanid.'-'.$show->starttime.'"';
+                    if ($_SESSION["show_popup_info"]) {
+                        echo ' onmouseover = "currently_hovered_id = this.id; details_delay_timer_id = setTimeout(function () {load_tool_tip(\'program-'.$show->chanid.'-'.$show->starttime.'\',\''.$show->chanid.'\',\''.$show->starttime.'\');}, 250);"';
+                        echo ' onmouseout  = "currently_hovered_id = null; clearTimeout( details_delay_timer_id ); details_delay_timer_id = null;"';
+                    }
+                    else
+                        echo ' title="',html_entities(strftime($_SESSION['time_format'], $show->starttime)
+                                     .' - '.strftime($_SESSION['time_format'], $show->endtime)
+                                     .' -- '
+                                     .$show->title
+                                     .($show->subtitle
+                                         ? ':  '.$show->subtitle
+                                         : '')), '"';
+                    echo ' href="', root, 'tv/detail/', $urlstr, '">',
+                         $show->title,
+                         ($show->subtitle
+                            ? ':  '.$show->subtitle
+                            : ''),
+                         '</a>';
+                    ?>
+                </td>
+            <?php
         }
-        else
-            echo ' title="',html_entities(strftime($_SESSION['time_format'], $show->starttime)
-                         .' - '.strftime($_SESSION['time_format'], $show->endtime)
-                         .' -- '
-                         .$show->title
-                         .($show->subtitle
-                             ? ':  '.$show->subtitle
-                             : '')), '"';
-        echo ' href="', root, 'tv/detail/', $urlstr, '">',
-             $show->title,
-             ($show->subtitle
-                ? ':  '.$show->subtitle
-                : ''),
-             '</a>';
-        ?></td>
-    <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
-    <td class="x-airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
-    <td class="x-length"><?php  echo nice_length($show->length) ?></td>
-<?php
+        if ($_SESSION['tv']['settings']['screens']['upcoming']['channel'] == 'on') {
+            ?>
+                <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+            <?php
+        }
+        if ($_SESSION['tv']['settings']['screens']['upcoming']['airdate'] == 'on') {
+            ?>
+                <td class="x-airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
+            <?php
+        }
+        if ($_SESSION['tv']['settings']['screens']['upcoming']['record date'] == 'on') {
+            ?>
+                <td class="x-recdate"><?php echo strftime($_SESSION['date_scheduled'], $show->recstartts) ?></td>
+            <?php
+        }
+        if ($_SESSION['tv']['settings']['screens']['upcoming']['length'] == 'on') {
+            ?>
+                <td class="x-length"><?php  echo nice_length($show->length) ?></td>
+            <?php
+        }
         if ($show->recstatus == 'Recording') {
             echo '    <td class="x-commands commands x-recording" colspan="2">',
                  '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',

@@ -221,6 +221,7 @@
 "Custom Schedule"
     Valgfri søgning
 "Custom Search"
+"Customize Screens"
 "Data"
     Data
 "Database"
@@ -649,6 +650,8 @@
 "Recently Played Songs"
 "recgroup"
     Optagelsesgrupper
+"Record Date"
+"Record Length"
 "Record new and expire old"
     Optag nye og udløb gamle
 "Record This"

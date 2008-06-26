@@ -80,6 +80,9 @@
                                                  );
     }
 
+    if (!is_array($_SESSION['tv']['settings']['screens']['upcoming']))
+        $_SESSION['tv']['settings']['screens']['upcoming'] = array('title' => 'on', 'channel' => 'on', 'recdate' => 'on', 'length' => 'on');
+
 // Parse the list of scheduled recordings
     global $Scheduled_Recordings;
     $all_shows = array();

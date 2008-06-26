@@ -195,6 +195,7 @@
 "Custom"
 "Custom Schedule"
 "Custom Search"
+"Customize Screens"
 "Data"
 "Database"
 "Database Health"
@@ -577,6 +578,8 @@
 "Recently Played Songs"
 "recgroup"
     Groupe d&eacute;enr
+"Record Date"
+"Record Length"
 "Record new and expire old"
     Enregistrer un nouveau et expirer l&acute;ancien
 "Record This"
