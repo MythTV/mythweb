@@ -53,7 +53,10 @@
                    );
 
 // Handy reference to the current module
-    define('module', $Path[0]);
+    if ($Path[0] != 'rss')
+        define('module', $Path[0]);
+    else
+        define('module', $Path[1]);
 
 // Find the modules path
     $path = dirname(dirname(find_in_path('modules/tv/init.php')));
@@ -70,3 +73,5 @@
 // Define the http host used for access
 
     define('http_host', isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']);
+
+    define('root_url', ($_SERVER['HTTPS'] == 'on' ? 'https://' : 'http://' ).http_host.':'.$_SERVER['SERVER_PORT'].root);

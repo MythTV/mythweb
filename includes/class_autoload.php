@@ -23,4 +23,6 @@
             @include_once modules_path.'/'.module."/classes/$className.php";
         elseif (file_exists(modules_path.'/'.$Path[1]."/classes/$className.php"))
             @include_once modules_path.'/'.$Path[1]."/classes/$className.php";
+        elseif (file_exists(modules_path.'/'.$Path[0]."/classes/$className.php"))
+            @include_once modules_path.'/'.$Path[0]."/classes/$className.php";
     }
