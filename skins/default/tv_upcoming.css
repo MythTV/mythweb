@@ -52,7 +52,13 @@
 }
 #listings th.x-title {
 }
+#listings th.x-originalairdate {
+}
+#listings th.x-episodenumber {
+}
 #listings th.x-channum {
+}
+#listings th.x-recgroup {
 }
 #listings th.x-airdate {
 }
@@ -64,7 +70,13 @@
 }
 #listings td.x-title {
 }
+#listings td.x-originalairdate {
+}
+#listings td.x-episodenumber {
+}
 #listings td.x-channum {
+}
+#listings td.x-recgroup {
 }
 #listings td.x-airdate {
     white-space:        nowrap;

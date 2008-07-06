@@ -161,6 +161,14 @@
         return strnatcasecmp($a->channel->channum, $b->channel->channum);
     }
 
+    function by_originalairdate(&$a, &$b) {
+        return strnatcasecmp($a->airdate, $b->airdate);
+    }
+
+    function by_episodenumber(&$a, &$b) {
+        return strnatcasecmp($a->syndicatedepisodenumber, $b->syndicatedepisodenumber);
+    }
+
     function by_airdate(&$a, &$b) {
         if ($a->starttime == $b->starttime) return 0;
         return ($a->starttime > $b->starttime) ? 1 : -1;

@@ -335,6 +335,17 @@ class Program {
     // Get a nice description with the full details
         $details = array();
 
+        if (!isset($this->syndicatedepisodenumber)) {
+        // Get some data from SQL that the backend doesn't provide
+            $query  = 'SELECT partnumber, parttotal, syndicatedepisodenumber FROM program'
+                     .' WHERE chanid='.escape($this->chanid)
+                     .' AND starttime=FROM_UNIXTIME('.escape($this->starttime).')';
+            $result = mysql_query($query)
+                or trigger_error('SQL Error: '.mysql_error(), FATAL);
+            list($this->partnumber, $this->parttotal, $this->syndicatedepisodenumber) = mysql_fetch_row($result);
+            mysql_free_result($result);
+        }
+
         if ($this->hdtv)
             $details[] = t('HDTV');
         if ($this->widescreen)

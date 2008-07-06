@@ -99,6 +99,40 @@
         <?php echo t('Conflicts') ?></label>
         </td>
 </tr>
+<tr>
+    <td colspan="5">
+<?php if (count($Groups) > 1) { ?>
+    <select name="disp_recgroup" onchange="$('change_display').submit()">
+        <option id="All groups" value=""><?php echo t('All groups') ?></option><?php
+        foreach($Groups as $recgroup => $count) {
+            echo '<option id="Group '.htmlspecialchars($recgroup).'" value="'.htmlspecialchars($recgroup).'"';
+            if ($_SESSION['scheduled_recordings']['disp_recgroup'] == $recgroup)
+                echo ' SELECTED';
+            echo '>'.html_entities($recgroup)
+                .' ('.tn('$1 episode', '$1 episodes', $count)
+                .')</option>';
+        }
+        ?>
+    </select>
+<?php
+    }
+?>
+    <select name="disp_title" onchange="$('change_display').submit()">
+        <option id="All titles" value="">All titles</option>
+<?php
+        foreach($Program_Titles as $title => $count) {
+            echo '<option id="Title '.htmlspecialchars($title).'" value="'.htmlspecialchars($title).'"';
+            if ($_SESSION['scheduled_recordings']['disp_title'] == $title)
+                echo ' SELECTED';
+            echo '>'.html_entities($title)
+                .($count > 1 ? ' ('.tn('$1 episode', '$1 episodes', $count).')' : "")
+                ."</option>\n";
+        }
+?>
+    </select>
+    </td>
+</tr>
+
 </table>
 
 </form>
@@ -109,8 +143,14 @@
         <th class="x-status"><?php  echo t('Status') ?></th>
     <?php if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['title'] == 'on') { ?>
         <th class="x-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
+    <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['original airdate'] == 'on') { ?>
+        <th class="x-originalairdate"><?php echo get_sort_link('originalairdate', t('Original Airdate')) ?></th>
+    <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['episode number'] == 'on') { ?>
+        <th class="x-episodenumber"><?php echo get_sort_link('episodenumber', t('Episode Number')) ?></th>
     <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['channel'] == 'on') { ?>
         <th class="x-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
+    <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['recording group'] == 'on') { ?>
+        <th class="x-recgroup"><?php echo get_sort_link('recgroup', t('Recording Group')) ?></th>
     <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['airdate'] == 'on') { ?>
         <th class="x-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
     <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['record date'] == 'on') { ?>
@@ -302,7 +342,7 @@
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="10" class="list_separator"><?php echo $cur_group ?></td>
+    <td colspan="<?php echo 4 + count($_SESSION['tv']['settings']['screens']['upcoming']) ?>" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?php
         }
 
@@ -314,6 +354,10 @@
         if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['title'] == 'on') {
             ?>
                 <td class="x-title <?php echo $show->css_class ?>"><?php
+                    if ($show->hdtv)
+                        echo '<span class="hdtv_icon">HD</span>';
+                    if ($show->starstring)
+                        echo '<span class="starstring" style="float: right">'.$show->starstring.'</span>';
                 // Print the link to edit this scheduled recording
                     echo '<a id="program-'.$show->chanid.'-'.$show->starttime.'"';
                     if ($_SESSION["show_popup_info"]) {
@@ -338,9 +382,24 @@
                 </td>
             <?php
         }
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['original airdate'] == 'on') {
+            ?>
+                <td class="x-originalairdate"><?php echo $show->airdate ?></td>
+            <?php
+        }
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['episode number'] == 'on') {
+            ?>
+                <td class="x-episodenumber"><?php echo $show->syndicatedepisodenumber ?></td>
+            <?php
+        }
         if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['channel'] == 'on') {
             ?>
                 <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+            <?php
+        }
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['recording group'] == 'on') {
+            ?>
+                <td class="x-recgroup"><?php echo $show->recgroup ?></td>
             <?php
         }
         if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['airdate'] == 'on') {

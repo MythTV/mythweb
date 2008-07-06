@@ -65,6 +65,8 @@
         $_SESSION['scheduled_recordings']['disp_duplicates']  = $_POST['disp_duplicates']  ? true : false;
         $_SESSION['scheduled_recordings']['disp_deactivated'] = $_POST['disp_deactivated'] ? true : false;
         $_SESSION['scheduled_recordings']['disp_conflicts']   = $_POST['disp_conflicts']   ? true : false;
+        $_SESSION['scheduled_recordings']['disp_recgroup']    = $_POST['disp_recgroup'];
+        $_SESSION['scheduled_recordings']['disp_title']       = $_POST['disp_title'];
     }
 
 // Defaults
@@ -88,12 +90,14 @@
         foreach ($shows as $starttime => $show_group) {
         // Parse each show group
             foreach ($show_group as $key => $show) {
+                $Groups[$show->recgroup]++;
             // Skip things we've already recorded (or missed)
                 if ($starttime <= time() && $show->recstatus != 'Recording')
                     continue;
             // Make sure this is a valid show (ie. skip in-progress recordings and other junk)
                 if (!$callsign || $show->length < 1)
                     continue;
+                $Program_Titles[$show->title]++;
             // Skip scheduled shows?
                 if (in_array($show->recstatus, array('WillRecord', 'ForceRecord'))) {
                     if (!$_SESSION['scheduled_recordings']['disp_scheduled'])
@@ -114,6 +118,12 @@
                     if (!$_SESSION['scheduled_recordings']['disp_deactivated'])
                         continue;
                 }
+            // Show specific recgroup only
+                if ($_SESSION['scheduled_recordings']['disp_recgroup'] && $show->recgroup != $_SESSION['scheduled_recordings']['disp_recgroup'])
+                    continue;
+            // Show specific title only
+                if ($_SESSION['scheduled_recordings']['disp_title'] && $show->title != $_SESSION['scheduled_recordings']['disp_title'])
+                    continue;
             // Assign a reference to this show to the various arrays
                 $all_shows[] =& $Scheduled_Recordings[$callsign][$starttime][$key];
             }
@@ -123,6 +133,9 @@
 // Sort the programs
     if (count($all_shows))
         sort_programs($all_shows, 'scheduled_sortby');
+
+    uksort($Groups, 'by_no_articles');
+    uksort($Program_Titles, 'by_no_articles');
 
 // Load the class for this page
     require tmpl_dir.'upcoming.php';

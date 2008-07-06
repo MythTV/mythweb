@@ -13,7 +13,7 @@
  *
 /**/
 
-    $Screens = array('upcoming recordings'  => array('title', 'channel', 'airdate', 'record date', 'length'),
+    $Screens = array('upcoming recordings'  => array('title', 'original airdate', 'episode number', 'channel', 'recording group', 'airdate', 'record date', 'length'),
                     );
 
 // Save?

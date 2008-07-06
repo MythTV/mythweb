@@ -103,4 +103,4 @@ if (!isset($_SESSION['show_video_covers']))
 
 // Screens
     if (!is_array($_SESSION['settings']['screens']['tv']['upcoming recordings']))
-        $_SESSION['settings']['screens']['tv']['upcoming recordings']   = array('title' => 'on', 'channel' => 'on', 'recdate' => 'on', 'length' => 'on');
+        $_SESSION['settings']['screens']['tv']['upcoming recordings']   = array('title' => 'on', 'channel' => 'on', 'record date' => 'on', 'length' => 'on');
