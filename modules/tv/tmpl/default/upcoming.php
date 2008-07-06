@@ -107,16 +107,16 @@
 <tr class="menu">
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
         <th class="x-status"><?php  echo t('Status') ?></th>
-    <?php if ($_SESSION['tv']['settings']['screens']['upcoming']['title'] == 'on') { ?>
+    <?php if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['title'] == 'on') { ?>
         <th class="x-title"><?php   echo get_sort_link('title',   t('Title'))   ?></th>
-    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['channel'] == 'on') { ?>
+    <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['channel'] == 'on') { ?>
         <th class="x-channum"><?php echo get_sort_link('channum', t('Channel')) ?></th>
-    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['airdate'] == 'on') { ?>
+    <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['airdate'] == 'on') { ?>
         <th class="x-airdate"><?php echo get_sort_link('airdate', t('Airdate')) ?></th>
-    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['record date'] == 'on') { ?>
+    <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['record date'] == 'on') { ?>
         <th class="x-recdate"><?php  echo get_sort_link('recdate',  t('Record Date'))  ?></th>
-    <?php } if ($_SESSION['tv']['settings']['screens']['upcoming']['length'] == 'on') { ?>
-        <th class="x-length"><?php  echo get_sort_link('length',  t('Record Length'))  ?></th>
+    <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['length'] == 'on') { ?>
+        <th class="x-length" nowrap><?php  echo get_sort_link('length',  t('Record Length'))  ?></th>
     <?php } ?>
 </tr><?php
     $row = 0;
@@ -311,7 +311,7 @@
 <?php if (!empty($group_field)) echo "    <td class=\"list\">&nbsp;</td>\n" ?>
     <td class="x-status rec_class <?php echo $rec_class ?>"><?php echo $rec_char ?></td>
     <?php
-        if ($_SESSION['tv']['settings']['screens']['upcoming']['title'] == 'on') {
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['title'] == 'on') {
             ?>
                 <td class="x-title <?php echo $show->css_class ?>"><?php
                 // Print the link to edit this scheduled recording
@@ -338,22 +338,22 @@
                 </td>
             <?php
         }
-        if ($_SESSION['tv']['settings']['screens']['upcoming']['channel'] == 'on') {
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['channel'] == 'on') {
             ?>
                 <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
             <?php
         }
-        if ($_SESSION['tv']['settings']['screens']['upcoming']['airdate'] == 'on') {
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['airdate'] == 'on') {
             ?>
-                <td class="x-airdate"><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
+                <td class="x-airdate" nowrap><?php echo strftime($_SESSION['date_scheduled'], $show->starttime) ?></td>
             <?php
         }
-        if ($_SESSION['tv']['settings']['screens']['upcoming']['record date'] == 'on') {
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['record date'] == 'on') {
             ?>
-                <td class="x-recdate"><?php echo strftime($_SESSION['date_scheduled'], $show->recstartts) ?></td>
+                <td class="x-recdate" nowrap><?php echo strftime($_SESSION['date_scheduled'], $show->recstartts) ?></td>
             <?php
         }
-        if ($_SESSION['tv']['settings']['screens']['upcoming']['length'] == 'on') {
+        if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['length'] == 'on') {
             ?>
                 <td class="x-length"><?php  echo nice_length($show->length) ?></td>
             <?php

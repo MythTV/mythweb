@@ -100,3 +100,7 @@ if (!isset($_SESSION['recorded_paging']))
 
 if (!isset($_SESSION['show_video_covers']))
     $_SESSION['show_video_covers'] = 1;
+
+// Screens
+    if (!is_array($_SESSION['settings']['screens']['tv']['upcoming recordings']))
+        $_SESSION['settings']['screens']['tv']['upcoming recordings']   = array('title' => 'on', 'channel' => 'on', 'recdate' => 'on', 'length' => 'on');

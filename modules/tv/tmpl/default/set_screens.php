@@ -15,25 +15,28 @@
 ?>
 
 <form class="form" method="post" action="<?php echo form_action ?>">
-
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-    <fieldset>
-        <legend><?php echo t('Upcoming Recordings'); ?></legend>
-        <?php
-            foreach (array('title', 'channel', 'airdate', 'record date', 'length') as $option) {
-                echo '<input type="checkbox" name="upcoming['.$option.']" id="upcoming['.$option.']" ';
-                if ($_SESSION['tv']['settings']['screens']['upcoming'][$option] == 'on')
-                    echo 'checked';
-                echo '> <label for="upcoming['.$option.']">'.t(ucwords($option)).'</label><br />';
-            }
+    <?php
+        foreach ($Screens as $screen => $options) {
             ?>
-    </fieldset>
-</tr>
-<tr>
-    <td align="center"><input type="reset" value="<?php echo t('Reset') ?>"></td>
-    <td align="center"><input type="submit" name="save" value="<?php echo t('Save') ?>"></td>
-</tr>
-</table>
+                <fieldset style="margin: 1em;">
+                    <legend><?php echo t(ucwords($screen)); ?></legend>
+                    <?php
+                        foreach($options as $option) {
+                            echo '<input type="checkbox" name="'.$screen.'['.$option.']" id="'.$screen.'['.$option.']" ';
+                            if ($_SESSION['settings']['screens']['tv'][$screen][$option] == 'on')
+                                echo 'checked';
+                            echo '> <label for="'.$screen.'['.$option.']">'.t(ucwords($option)).'</label><br />';
+                        }
+                    ?>
+                </fieldset>
+            <?php
+        }
+    ?>
+
+    <div style="width: 100%; padding-top: 2em; clear: both; text-align: center;">
+        <input class="submit" type="reset" value="<?php echo t('Reset') ?>">
+        &nbsp;
+        <input class="submit" type="submit" name="save" value="<?php echo t('Save') ?>">
+    </div>
 
 </form>

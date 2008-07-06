@@ -13,7 +13,11 @@
  *
 /**/
 
+    $Screens = array('upcoming recordings'  => array('title', 'channel', 'airdate', 'record date', 'length'),
+                    );
+
 // Save?
     if ($_POST['save']) {
-        $_SESSION['tv']['settings']['screens']['upcoming'] = $_POST['upcoming'];
+        foreach(array_keys($Screens) as $key)
+            $_SESSION['settings']['screens']['tv'][$key] = $_POST[str_replace(' ', '_', $key)];
     }
