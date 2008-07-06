@@ -19,6 +19,10 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_recorded.css">';
 
+// Rss links
+    $rss_url = str_replace(root, root.'rss/', $_SERVER['REQUEST_URI']);
+    $headers[] = '<link rel="alternate" type="application/rss+xml" href="'.$rss_url.'">';
+
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
