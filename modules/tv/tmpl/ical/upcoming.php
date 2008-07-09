@@ -1,6 +1,6 @@
 <?php
 /**
- * Create a ical for the upcomming recordings
+ * Create a ical for the upcoming recordings
  *
  * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/tv/tmpl/default/recorded.php $
  * @date        $Date: 2008-06-22 11:32:51 -0700 (Sun, 22 Jun 2008) $
