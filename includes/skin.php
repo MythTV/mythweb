@@ -46,8 +46,11 @@
 // Set up some handy constants
     define('skin_dir', 'skins/'.skin);
     define('skin_url', root.skin_dir.'/');
+// We override the template for some templates we never want in the session
     if ($Path[0] == 'rss')
         define('tmpl',     'rss');
+    elseif ($Path[0] == 'ical')
+        define('tmpl',     'ical');
     else
         define('tmpl',     $_SESSION['tmpl']);
 

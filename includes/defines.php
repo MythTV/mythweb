@@ -52,17 +52,19 @@
                          ))
                    );
 
-// Handy reference to the current module
-    if ($Path[0] != 'rss')
-        define('module', $Path[0]);
-    else
-        define('module', $Path[1]);
-
 // Find the modules path
     $path = dirname(dirname(find_in_path('modules/tv/init.php')));
     if ($path == '')
        $path = dirname(find_in_path('modules/welcome.php'));
     define('modules_path', $path);
+
+// Handy reference to the current module
+    foreach ($Path as $path) {
+        if (is_dir(modules_path.'/'.$path)) {
+            define('module', $path);
+            break;
+        }
+    }
 
 // Set up some constants used by nice_filesystem()
     define('kb', 1024);         // Kilobyte

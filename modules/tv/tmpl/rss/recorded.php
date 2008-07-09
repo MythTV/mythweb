@@ -1,6 +1,6 @@
 <?php
 /**
- * Show recorded programs.
+ * Create a rss of the recorded programs.
  *
  * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/tv/tmpl/default/recorded.php $
  * @date        $Date: 2008-06-22 11:32:51 -0700 (Sun, 22 Jun 2008) $
@@ -13,6 +13,7 @@
  *
 /**/
 
+    $Feed = new FeedWriter(RSS2);
     $Feed->setTitle('MythWeb - '.t('Recorded Programs'));
     $Feed->setLink(root_url);
     $Feed->setDescription('MythWeb - '.t('Recorded Programs'));

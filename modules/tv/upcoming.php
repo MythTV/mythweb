@@ -100,29 +100,31 @@
                 $Program_Titles[$show->title]++;
             // Skip scheduled shows?
                 if (in_array($show->recstatus, array('WillRecord', 'ForceRecord'))) {
-                    if (!$_SESSION['scheduled_recordings']['disp_scheduled'])
+                    if (!$_SESSION['scheduled_recordings']['disp_scheduled'] || $_GET['skip_scheduled'])
                         continue;
                 }
             // Skip conflicting shows?
                 elseif (in_array($show->recstatus, array('Conflict', 'Overlap'))) {
-                    if (!$_SESSION['scheduled_recordings']['disp_conflicts'])
+                    if (!$_SESSION['scheduled_recordings']['disp_conflicts'] || $_GET['skip_conflicts'])
                         continue;
                 }
             // Skip duplicate shows?
                 elseif (in_array($show->recstatus, array('PreviousRecording', 'CurrentRecording'))) {
-                    if (!$_SESSION['scheduled_recordings']['disp_duplicates'])
+                    if (!$_SESSION['scheduled_recordings']['disp_duplicates'] || $_GET['skip_duplicates'])
                         continue;
                 }
             // Skip deactivated shows?
                 elseif ($show->recstatus != 'Recording') {
-                    if (!$_SESSION['scheduled_recordings']['disp_deactivated'])
+                    if (!$_SESSION['scheduled_recordings']['disp_deactivated'] || $_GET['skip_deactivated'])
                         continue;
                 }
             // Show specific recgroup only
-                if ($_SESSION['scheduled_recordings']['disp_recgroup'] && $show->recgroup != $_SESSION['scheduled_recordings']['disp_recgroup'])
+                if (($_SESSION['scheduled_recordings']['disp_recgroup'] && $show->recgroup != $_SESSION['scheduled_recordings']['disp_recgroup'])
+                    || ($_GET['recgroup'] && $show->recgroup != $_GET['recgroup']))
                     continue;
             // Show specific title only
-                if ($_SESSION['scheduled_recordings']['disp_title'] && $show->title != $_SESSION['scheduled_recordings']['disp_title'])
+                if (($_SESSION['scheduled_recordings']['disp_title'] && $show->title != $_SESSION['scheduled_recordings']['disp_title'])
+                    || ($_GET['title'] && $show->title != $_GET['title']))
                     continue;
             // Assign a reference to this show to the various arrays
                 $all_shows[] =& $Scheduled_Recordings[$callsign][$starttime][$key];

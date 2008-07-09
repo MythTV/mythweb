@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Upcoming Recordings');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_upcoming.css">';
+    $headers[] = '<link rel="stylesheet" type="text/css"      href="'.skin_url.'/tv_upcoming.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -436,6 +436,20 @@
 
 </table>
 <?php
+    $ical_href = str_replace(root, root.'ical/', $_SERVER['REQUEST_URI']).'?';
+    if (!$_SESSION['scheduled_recordings']['disp_scheduled'])
+        $ical_href .='skip_scheduled&';
+    if (!$_SESSION['scheduled_recordings']['disp_conflicts'])
+        $ical_href .='skip_conflicts&';
+    if (!$_SESSION['scheduled_recordings']['disp_duplicates'])
+        $ical_href .='skip_duplicates&';
+    if (!$_SESSION['scheduled_recordings']['disp_deactivated'])
+        $ical_href .='skip_deactivated&';
+    if ($_SESSION['scheduled_recordings']['disp_recgroup'])
+        $ical_href .= 'recgroup='.urlencode($_SESSION['scheduled_recordings']['disp_recgroup']).'&';
+    if ($_SESSION['scheduled_recordings']['disp_title'])
+        $ical_href .= 'title='.urlencode($_SESSION['scheduled_recordings']['disp_title']).'&';
+    echo '<div id="ical_button"><a href="'.$ical_href.'"><img src="'.skin_url.'/img/iCal2.0.png"></a></div>';
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

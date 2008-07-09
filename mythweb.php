@@ -20,17 +20,11 @@
     require_once 'includes/init.php';
 
 // Handle Feed requests
-    if ($Path[0] == 'rss') {
-        $Feed = new FeedWriter(RSS2);
+    if (   $Path[0] == 'rss'
+        || $Path[0] == 'ical') {
         unset($Path[0]);
         $Path = array_values($Path);
-        $old_tmpl = $_SESSION['tmpl'];
-        $_SESSION['tmpl'] = rss;
     }
-
-// Reset the template if we are a rss request...
-    if (isset($old_tmpl))
-        $_SESSION['tmpl'] = $old_tmpl;
 
 // Standard module?  Pass along the
     if (isset($Modules[$Path[0]])) {
