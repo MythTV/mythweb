@@ -77,7 +77,7 @@
 
 // Keep track of this path for the next visit
     if (   $Path[1] != 'get_show_details'
-        || $Path[1] != 'get_schedule_details')
+        && $Path[1] != 'get_schedule_details')
         $_SESSION['tv']['last'] = array_slice($Path, 1);
 
 // Show the requested section
