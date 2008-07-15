@@ -855,10 +855,10 @@ class Program {
     public function activate() {
         global $db;
     // If we have already started recording, allow the reactivate to happen, re #4814
-        $db->query('UPDATE oldrecord
-                       SET oldrecord.reactivate = 1
-                     WHERE oldrecord.starttime  = ?
-                       AND oldrecord.chanid     = ?',
+        $db->query('UPDATE oldrecorded
+                       SET oldrecorded.reactivate = 1
+                     WHERE oldrecorded.starttime  = ?
+                       AND oldrecorded.chanid     = ?',
                     $this->starttime,
                     $this->chanid
                   );
