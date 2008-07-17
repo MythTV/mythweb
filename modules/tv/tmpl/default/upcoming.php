@@ -449,7 +449,7 @@
         $ical_href .= 'recgroup='.urlencode($_SESSION['scheduled_recordings']['disp_recgroup']).'&';
     if ($_SESSION['scheduled_recordings']['disp_title'])
         $ical_href .= 'title='.urlencode($_SESSION['scheduled_recordings']['disp_title']).'&';
-    echo '<div id="ical_button"><a href="'.$ical_href.'"><img src="'.skin_url.'/img/iCal2.0.png"></a></div>';
+    echo '<div id="feed_buttons"><a href="'.$ical_href.'"><img src="'.skin_url.'/img/iCal2.0.png"></a></div>';
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

@@ -225,3 +225,13 @@
     .nowrap {
         white-space:        nowrap;
     }
+
+#feed_buttons {
+    padding-top:        1em;
+    padding-bottom:     1em;
+    padding-left:       1.35em;
+}
+
+#feed_buttons a {
+    padding-right:      1em;
+}

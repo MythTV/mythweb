@@ -454,7 +454,8 @@ EOM;
 </script>
 
 <?php
-    echo '<p style="padding-right: 75px; text-align: right;">'
+
+    echo '<div style="padding-right: 75px; text-align: right; float: right; padding-top: 1em;">'
         .t('$1 programs, using $2 ($3) out of $4 ($5 free).',
            '<span id="programcount">'.t($Total_Programs).'</span>',
            '<span id="diskused">'.nice_filesize($Total_Used).'</span>',
@@ -462,7 +463,9 @@ EOM;
            '<span id="disksize">'.nice_filesize(disk_size).'</span>',
            '<span id="diskfree">'.nice_filesize(disk_size - disk_used).'</span>'
           )
-        .'</p>';
+        .'</div>';
+
+    echo '<div id="feed_buttons"><a href="'.str_replace(root, root.'rss/', $_SERVER['REQUEST_URI']).'"><img src="'.skin_url.'/img/rss2.0.gif"></a></div>';
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
