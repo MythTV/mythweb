@@ -25,7 +25,7 @@ Summary
 
 PLEASE, PLEASE read this document. People seem to skip over this, under the
 mistaken assumption that MythWeb will just work with no configuration. While
-I've tried to make it as auto-detecting as possible, it usually still needs
+we've tried to make it as auto-detecting as possible, it usually still needs
 some hand-editing to account for variances in install preferences, etc.
 
 Please also read the FAQ in the README file, since it answers several common
@@ -66,13 +66,16 @@ part of the MythPlugins tarball from http://mythtv.org/ or you can grab it
 directly from a subversion checkout, as described at http://svn.mythtv.org/trac
 
 Regardless of which method you end up choosing, you should be left with a
-directory named mythweb, which contains mythweb.php, mythweb.pl and a handful of
-other files/directories (including this file).
+directory named mythweb, which contains mythweb.php, mythweb.pl and a handful
+of other files/directories (including this file).
 
-* Note, if you would like to check out ONLY MythWeb, you could do something like
-the following (insert the approprate release as you choose):
+* Note, if you would like to check out ONLY MythWeb, you could do something
+like the following:
 
     svn co http://svn.mythtv.org/svn/branches/release-##-fixes/mythplugins/mythweb
+
+Where ## is replaced with the version you want. For instance for the 0.21
+release, replace it with "0-21".
 
 ===========
 3.0 Experts
@@ -81,7 +84,7 @@ the following (insert the approprate release as you choose):
 If you are not an expert, please skip to section 4.0.  Experts, the following
 commands should be enough for you to figure out what's going on:
 
-    cp -r mythplugins/mythweb/*.* /var/www/html/
+    cp -r mythplugins/mythweb/* /var/www/html/
 
     vi /var/www/html/mythweb.conf.apache
 
@@ -93,10 +96,11 @@ commands should be enough for you to figure out what's going on:
 4.0 Everyone Else
 =================
 
-If you are reading this section, I'm going to assume that you have only minimal
-experience configuring both Linux and a webserver.  For those of you somewhere
-in between novice an expert, I hope that you do not find the following sections
-too boring, but please pay attention in case you overlook something important.
+If you are reading this section, we're going to assume that you have only
+minimal experience configuring both Linux and a webserver.  For those of
+you somewhere in between novice an expert, we hope that you do not find
+the following sections too boring, but please pay attention in case you
+overlook something important.
 
 ====================
 4.1 Install Overview
@@ -104,7 +108,8 @@ too boring, but please pay attention in case you overlook something important.
 
 Most people will be running their MythWeb installation on the same system that
 hosts the MythTV backend server, and will not be running any other web services,
-so I will be expecting that you will want to access your machine directly, like:
+so we will be expecting that you will want to access your machine directly,
+like:
 
     http://192.168.0.50/
 
@@ -116,7 +121,7 @@ The differences between these situations are trivial, and if you cannot figure
 out how to do the second location from this guide, please don't hesitate to
 drop into #mythtv-users on irc.freenode.net to ask for help.
 
-For the purpose of this guide, I am generally going to assume that your apache
+For the purpose of this guide, we will generally assume that your apache
 document root directory is:
 
     /var/www/html
@@ -129,14 +134,14 @@ distribution has placed it somewhere else.  e.g.
     /var/www
     /var/www/htdocs
 
-For the purposes of illustration, I'm going to use the imaginary /wwww/htdocs
+For the purposes of illustration, we're going to use the imaginary /web/htdocs
 directory to refer to your installation directory.
 
 Once you figure out where your copy of apache is looking for files, copy your
 mythweb files into that directory:
 
     cd mythplugins/mythweb
-    cp *.* /wwww/htdocs/
+    cp -R * /web/htdocs/
 
 ===============
 4.2 Permissions
@@ -145,8 +150,8 @@ mythweb files into that directory:
 The next thing you need to do is make sure that your web server can write to
 MythWeb's data directory.  This should be as simple as:
 
-    chgrp -R apache /wwww/htdocs/data
-    chmod g+rw /wwww/htdocs/data
+    chgrp -R apache /web/htdocs/data
+    chmod g+rw /web/htdocs/data
 
 Please note that different distributions use a different userid for apache
 (e.g. Ubuntu uses www-data).  Please be aware that you may need to consult
@@ -155,7 +160,7 @@ user/group apache is set to run as.
 
 As a last resort, you can make the directory world-writable:
 
-    chmod a+rw /wwww/htdocs/data
+    chmod a+rw /web/htdocs/data
 
 However, I strongly discourage this, since it is a slight security concern to
 give write permissions to any arbitrary user on your system.
@@ -180,7 +185,7 @@ Please do not use Lighttpd unless you know what you are doing.
 5.0 Apache
 ==========
 
-MythWeb relies on two apache modules that are generally either built in or
+MythWeb relies on two apache modules that are sometimes built in or
 enabled by default:
 
     mod_env
@@ -189,15 +194,29 @@ enabled by default:
 If you compiled apache yourself, or are experiencing server trouble loading
 MythWeb, please make sure that these are enabled.
 
-There are also two documented sections in the conf file that are disabled by
+There are also three documented sections in the conf file that are disabled by
 default, but I strongly recommend that you enable.  They require:
 
     mod_deflate
     mod_headers
+    mod_auth_digest
+
+To enable these on most systems "a2enmod" will work, for instance on
+Ubuntu you need to type these commands before MythWeb will work:
+    a2enmod rewrite
+    a2enmod deflate
+    a2enmod headers
+    a2enmod auth_digest
 
 =================
 5.1 Apache Config
 =================
+
+The directions below will have you set up MythWeb without any authentication
+at first, make sure you disconnect the machine from the network for these
+steps. For most this will work:
+  ifdown eth0
+But you can also just unplug the network cable temporarily.
 
 First, open mythweb.conf.apache in your favorite editor and look for what
 should be the first non-comment line in the file:
@@ -207,7 +226,7 @@ should be the first non-comment line in the file:
 You should change that path to match the document root directory you discovered
 in section 4.0, such that it might look something like:
 
-    <Directory "/wwww/htdocs" >
+    <Directory "/web/htdocs" >
 
 Continue on in the file and find the following lines:
 
@@ -234,10 +253,74 @@ Other distributions might use something like:
     /etc/apache/conf.d/
     /etc/apache2/conf.enabled.d/
 
+Generally if there /etc/apache2/sites-available or similar directory you
+want to place this there and then run:
+
+    a2ensite mythweb.conf
+
 You will have to figure out the correct path on your own, but once you do, move
 the MythWeb config file into place like so:
 
     mv mythweb.conf.apache /etc/apache2/conf.d/mythweb.conf
+
+Then start/restart apache:
+  /etc/init.d/apache2 stop
+  /etc/init.d/apache2 start
+Or similar, this depends on the distribution.
+
+Now you should be able to load mythweb. If you do not please review the
+mythweb.conf file and this document for any potential mistakes you may
+have made. Please read the next section before re-enabling the network.
+If you still can't get it to work, disable apache, using something like:
+
+  /etc/init.d/apache2 stop
+
+Then re-enable the network using:
+
+  ifup eth0
+
+Or, plugging the network cable back in, depending on how you disabled it
+earlier. Now google for the error message you see at the end of:
+
+  tail /var/log/apache2/error.log
+
+or similarly named error log for apache. Chances are someone else has
+had the same problem before and found a solution.
+
+
+==========================
+5.2 Apache Security Config
+==========================
+
+The next step is to make sure everyone in the world can't take over your
+machine and that web crawlers don't automatically delete all your recordings.
+
+In the mythweb.conf file there is an authentication section. For this
+to work you will need to run this for the first user:
+
+  htdigest -c /etc/mythweb.password.digest MythTV username
+
+And this for each additional user:
+  htdigest /etc/mythweb.password.digest MythTV username
+
+Uncomment all the directives in this section of the file and change
+/var/www/htdigest to /etc/mythweb.password.digest or whatever else
+you want to call the password file. Do not place the file anywhere
+below /var/www or it will be world accessible. /var/www/htdigest
+would be the absolute worst name to use, since it appears in the
+mythweb documentation which the bad guys read for easy breakins.
+
+The next step is to reload apache so it can use the new configuration:
+  /etc/init.d/apache2 stop
+  /etc/init.d/apache2 start
+Or similar, this depends on the distribution.
+
+Now when you access the mythweb pages it should prompt you for a username
+and password. Type these in and make sure things work.
+
+Ok, if you reached this step you are almost done! Just plug in the
+network cable or type "ifup eth0" if you used "ifdown eth0" to disable
+the network earlier.
 
 ============
 6.0 Lighttpd
