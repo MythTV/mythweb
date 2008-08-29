@@ -195,7 +195,7 @@ EOF
 # File type
     my $type   = 'text/html';
     my $suffix = '';
-    if ($basename =~ /\.mpe?g$/) {
+    if ($basename =~ /\.mpe?g2?$/) {
         $type   = 'video/mpeg';
         $suffix = '.mpg';
     }
