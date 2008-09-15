@@ -2,10 +2,13 @@
 " at "
     um
 "# Tracks"
+    # Lieder
 "$1 B"
     $1 B
 "$1 day"
+    $1 Tag
 "$1 days"
+    $1 Tage
 "$1 episode"
     $1 Folge
 "$1 episodes"
@@ -27,7 +30,9 @@
 "$1 mins"
     $1 Min.
 "$1 month"
+    $1 Monat
 "$1 months"
+    $1 Monate
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 Aufnahmen, belegen $2 ($3) von $4.
 "$1 recording"
@@ -45,34 +50,41 @@
 "$1 wasted"
     $1 verschwendet
 "$1 year"
+    $1 Jahr
 "$1 years"
     $1 Jahre
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
 "Aborted"
+    abgebrochen
 "Aborting"
+    breche ab...
 "Action"
     Aktion
 "Activate"
     Aktivieren
 "Active Screens"
 "Add"
+    Hinzufügen
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
 "add string"
+    weitere
 "Add this Playlist as a Subplaylist"
 "Add To Active Screens"
 "Additional Tables"
-    zus. Tabellen
+    zusätzl. Tabellen
 "Admin Key"
 "Advanced"
     erweitert
 "Advanced Options"
     Erweiterte Optionen
 "Advanced Search"
+    Erweiterte Suche
 "airdate"
+    Sendezeit
 "Airdate"
     Sendezeit
 "Airtime"
@@ -97,6 +109,7 @@
 "ALLOCINETYPE"
 "An error occured while adding your playlist."
 "and"
+    und
 "Any"
     Jeder
 "Any Category"
@@ -130,6 +143,7 @@
 "Back to the program listing"
     Zurück zum TV Programm
 "Back to the recorded programs"
+    Zurück zu den Aufnahmen
 "Back to the recording schedules"
     Zurück zum Aufnahmeplan
 "Backend Logs"
@@ -138,6 +152,7 @@
     Backend Status
 "Backspace"
 "Begin a New Search"
+    neue Suche
 "brightness"
     Helligkeit
 "Browse"
@@ -200,6 +215,7 @@
 "commfree"
     Werbefrei
 "Conflict"
+    Überschneidung
 "Conflicts"
     Überschneidungen
 "Context"
@@ -226,6 +242,7 @@
 "Custom Search"
     freie Suche
 "Customize Screens"
+    Anzeigen verändern
 "Data"
     Daten
 "Database"
@@ -263,6 +280,7 @@
     Ziel
 "Details for: $1"
 "Direct Download"
+    Herunterladen
 "Directed by"
     Regie
 "Display"
@@ -275,9 +293,11 @@
 "Done, Unknown Status"
 "Down"
 "Download URL override"
+    Download URL überschreiben
 "Dup Method"
     Methode für Wdhgn.
 "Duplicate"
+    Wiederholung
 "Duplicate Check method"
     Testmethode für Wdhgn.
 "Duplicates"
@@ -289,13 +309,19 @@
 "Edit"
     Bearbeiten
 "Edit existing group"
+    bestehende Gruppe bearbeiten
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
 "Edit Screen"
+    Bearbeiten
 "Edit settings for: $1"
+    Einstellungen für: $1
 "Editing "
+    bearbeite...
 "Enable Video Playback"
+    Aktivieren
 "End"
+    Ende
 "End Late"
     verspätetes Aufnahmeende
 "Enter"
@@ -308,20 +334,27 @@
     Folge Nummer
 "error: playgroup $1 exists"
 "Errored"
+    Fehler
 "Erroring"
+    Fehler
 "Escape"
 "Everything"
+    alles
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
+    keine Wiederholungen
 "Exec. Producer"
     Produzent
 "Extended Check"
+    erweiterte Prüfung
 "File Size"
     Dateigröße
 "film"
+    Film
 "Filter"
 "Filters"
+    Filter
 "Find Date & Time Options"
     Finde Datum & Zeit Optionen
 "Find Day"
@@ -337,16 +370,22 @@
 "finetune"
     Feinabstimmung
 "Finished"
+    Fertig
 "First recording"
 "Flag Commercials"
+    Werbung markieren
 "Force HTTP for streams"
+    http erzwingen
 "Force HTTP/HTTPS port for streams"
+    http/https Port erzwingen
 "Forced"
+    erzwungen
 "Forget Old"
     frühere Aufnahmen vergessen
 "format help"
     Format Hilfe
 "Found %s results for '%s'"
+    %s Treffer für '%s'
 "freqid"
     Kanal
 "Friday"
@@ -364,6 +403,7 @@
 "Google"
     Google
 "Group timeslots every"
+    Zeitfenster gruppieren
 "Guest Starring"
     Gaststar
 "Guide rating"
@@ -371,14 +411,15 @@
 "Guide Settings"
     EPG Einstellungen
 "Handy Predefined Searches"
-    Handy: Vordefinierte Suchabfragen
+    Vordefinierte Suchabfragen
 "handy: overview"
-    Handy: Übersicht
+    Übersicht
 "has Bookmark"
     Lesezeichen
 "Has Cutlist"
     Schnittliste
 "HD"
+    HD
 "HDTV"
     HDTV
 "Height"
@@ -409,19 +450,18 @@
 "info: dont record"
 "info: flvplayer"
     <p>
-    Flash video playback is currently only a proof-of-concept and should be
-    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
-    default.
+    Die Flashvideointegration ist im Moment noch als <b>SEHR</b> experimentell anzusehen, darum ist sie standardmäßig deaktiviert.
     </p>
     <p>
-    It currently expects that ffmpeg is installed and compiled with mp3
-    support, and that the recordings files are accessible to your webserver
-    userid.  It probably won't work with Nupplevideo files, and in the end,
-    it may just not work at all (or maybe even worse).
+    - ffmpeg mit mp3 Unterstützung muss installiert sein<br>
+    - Die Aufnahmen müssen für den Webserver/Apache-User zugänglich sein<br>
+    - funktioniert wahrscheinlich nicht mit Nupplevideodateien<br>
+    - funktioniert eventuell auch gar nicht<br>
+    - oder noch schlimmer :)
     </p>
     <p>
-    Enable this feature at your own risk, and don't expect too much
-    official help until it has left the experimental phase.
+    Benutzung auf eigene Gefahr!<br>
+    Erwarte (noch) nicht all zu viel Hilfe :)<br>
     </p>
 "info: hidden advanced schedule"
     info: erweiterte Optionen versteckt
@@ -429,6 +469,7 @@
 "info:forget old"
 "info:never record"
 "Insert"
+    einfügen
 "Jump"
     Gehe
 "Jump Points"
@@ -446,15 +487,19 @@
 "Keybindings Editor"
     Tastenbelegung bearbeiten
 "Keyword"
-    Schl�sselwort
+    Schlüsselwort
 "Keyword Search"
     Suche nach Schlüsselwort
 "Keywords"
+    Schlüsselwörter
 "Language"
     Sprache
 "Last Recorded"
+    zuletzt aufgenommen
 "Last recording"
+    letzte Aufnahme
 "Later"
+    später
 "left"
 "Left"
 "leftl"
@@ -467,6 +512,7 @@
 "Listing &quot;Jump to&quot;"
     TV Programm &quot;Gehe zu&quot;
 "Listing Time Key"
+    TV Programm
 "Listings"
     TV Programm
 "Load"
@@ -484,10 +530,13 @@
 "Low"
     Min
 "Low Space"
+    wenig Speicherplatz
 "Manual"
     Manuell
 "matches"
+    enthält  
 "Max star rating for movies"
+    Höchstwertung für Filme
 "minutes"
     Minuten
 "Missing Cover"
@@ -495,11 +544,13 @@
     Montag
 "Mono"
 "More"
+    mehr
 "more"
     mehr
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
+    Spielfilm
 "Movies"
     Spielfilme
 "Movies, 3&frac12; Stars or more"
@@ -518,7 +569,9 @@
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
+    MythVideo Artwork-Verzeichnis
 "MythVideo Dir"
+    MythVideo Verzeichnis
 "MythVideo on the web."
     MythVideo
 "mythvideo.db_folder_view"
@@ -526,27 +579,37 @@
 "mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
+    MythWeb Standardwerte
 "MythWeb Global Defaults"
+    MythWeb glob. Standardwerte
 "MythWeb Session"
+    MythWeb Sitzung
 "MythWeb Skin"
 "MythWeb Template"
+    MythWeb Vorlage
 "MythWeb Weather."
     Wettervorhersage
 "Name"
 "name"
     Name
 "Narrow Your Search"
+    Suche verfeinern
 "Never Record"
     Niemals aufnehmen
 "New"
+    Neu
 "New Episodes Only"
+    nur neue Folgen
 "New Group"
+    Neue Gruppe
 "New Search"
+    Neue Suche
 "New Titles, Premieres"
     Neue Sendungen, Erstausstrahlungen
 "NO DATA"
     Kein Programm verfügbar
 "No Frontends allow remote control."
+    Kein Frontend erlaubt Fernsteuerung.
 "No matches found"
     Nichts gefunden
 "No matching programs found."
@@ -565,34 +628,48 @@
 "Notes"
     Hinweis
 "Number of episodes"
+    Anzahl Folgen
 "Number of shows"
+    Anzahl Sendungen
 "Number of Songs"
 "Number of timeslots"
+    Anzahl der Zeitfenster
 "Off"
 "Only display favourite channels"
-    Nur Favoriten anzeigen
+    nur Favoriten anzeigen
 "Only match commercial-free channels"
+    nur werbefrei
 "Only match HD programs"
+    nur HD
 "Only match non-recorded shows"
+    keine bereits aufgenommenen
 "Only New Episodes"
     Nur neue Folgen
 "Optimize Tables"
+    Tabellen optimieren
 "or"
     oder
 "Original Airdate"
     Produktion
 "Originally aired between"
+    Produziert zwischen
 "Override"
+    Überschreiben
 "Page Down"
 "Page recorded programs"
 "Page Up"
 "Part $1 of $2"
     Teil $1 von $2
 "Past Month"
+    letzter Monat
 "Past Week"
+    letzte Woche
 "Past Year"
+    letztes Jahr
 "Paused"
+    Pause
 "Pending"
+    ausstehend
 "People"
     Leute
 "People Search"
@@ -627,6 +704,7 @@
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
 "Possible conflicts"
+    Mögliche Konflikte
 "Possible conflicts with this show"
     Mögliche Konflikte mit dieser Sendung
 "Power"
@@ -661,11 +739,15 @@
 "Program Listing"
     TV Programm
 "Program Type"
+    Sparte
 "Protocol"
 "Queue a job"
+    verfügbare Aufträge
 "Queued"
 "Queued jobs"
+    Aufträge
 "Random"
+    zufällig
 "Random Items"
 "Random Mix Maker"
 "Random Type"
@@ -673,19 +755,24 @@
     Freigegeben ab
 "Recently Added Albums"
 "Recently completed jobs"
+    Zuletzt durchgeführte Aufträge
 "Recently Played Songs"
 "recgroup"
     Aufnahmegruppe
 "Record Date"
+    Sendezeit
 "Record Length"
+    Dauer
 "Record new and expire old"
     Nur neue Folgen aufnehmen
 "Record This"
     Diese Sendung aufnehmen
 "Recorded"
+    Aufgenommen
 "Recorded Programs"
     Aufnahmen
 "Recording Details"
+    Details
 "Recording Group"
     Aufnahmegruppe
 "Recording Options"
@@ -697,6 +784,7 @@
 "Recording Schedules"
     Aufnahmemodi
 "Recording Statistics"
+    Statistik
 "recpriority"
     Aufnahmepriorität
 "recstatus: cancelled"
@@ -784,8 +872,10 @@
 "regex: articles"
     D(e[rmn]|ie|as)
 "Remote"
+    Fernsteuerung
 "Remove Item from Playlist"
 "Repair Tables"
+    Tabellen reparieren
 "Repeat"
     Wiederholung
 "Reset"
@@ -795,6 +885,7 @@
 "right"
 "Right"
 "Rows to show between timeslot info"
+    Reihen nach denen die Zeitleiste wiederholt wird
 "Running"
 "Saturday"
     Samstag
@@ -843,6 +934,7 @@
 "Searches"
     Suchen
 "Server Statistics"
+    Statistik
 "Set Host"
     Setze Host
 "Settings"
@@ -852,6 +944,7 @@
 "Settings Table"
     Einstellungen
 "settings/stream: protocol"
+    Streamprotokoll
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Shift"
@@ -860,31 +953,40 @@
 "Show group"
     Gruppe zeigen
 "Show pixmaps"
+    Vorschaubilder
 "Show recordings"
     Aufnahmen zeigen
 "show_channel_icons"
+    Senderlogos zeigen
 "show_popup_info"
+    Popup-Info zeigen
 "show_video_covers"
+    Cover zeigen
 "Showing all programs from the $1 group."
     Zeige alle Sendungen in der $1 Gruppe.
 "Showing all programs."
     Zeige alle Sendungen.
 "Showings between"
+    zwischen
 "Shows"
 "Skip Ahead"
+    springe vor
 "Skip Back"
+    springe zurück
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
+    Nach Sendernummer sortieren
 "sourceid"
     Source ID
 "Space"
 "Special Searches"
     Spezielle Suchanfragen
 "Star character"
+    Wertungszeichen
 "Start Date"
     Datum
 "Start Early"
@@ -939,15 +1041,19 @@
 "Time Stretch Default"
     Zeitraffer Vorgabewert
 "Timeslot size"
+    Zeitfenstergröße
 "title"
     Titel
 "Title"
     Titel
 "Title Match"
+    Titel enthält
 "Title search"
+    Titelsuche
 "Title Search"
-    Titel Suche
+    Titelsuche
 "Too Many"
+    zu viele
 "Top $1"
 "Top Played Songs"
 "Top Rated Songs"
@@ -958,6 +1064,7 @@
 "Total Time:  %s"
 "Track #%s from the album '%s'"
 "Transcode"
+    Umwandeln
 "transcoder"
     Umwandlungsprofil
 "Transcoder"
@@ -1001,6 +1108,7 @@
     Video
 "Video Bitrate"
 "Video Playback"
+    Video Wiedergabe
 "Video: Error: IMDB"
 "Video: Error: IMDB: Not Found"
 "Video: Error: Missing ID"
@@ -1052,6 +1160,7 @@
 "welcome: music"
     Musik
 "welcome: remote"
+    Fernsteuerung
 "welcome: settings"
     Einstellungen
 "welcome: stats"
