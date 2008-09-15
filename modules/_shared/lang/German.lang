@@ -2,10 +2,13 @@
 " at "
     um
 "# Tracks"
+    # Lieder
 "$1 B"
     $1 B
 "$1 day"
+    $1 Tag
 "$1 days"
+    $1 Tage
 "$1 episode"
     $1 Folge
 "$1 episodes"
@@ -27,7 +30,9 @@
 "$1 mins"
     $1 Min.
 "$1 month"
+    $1 Monat
 "$1 months"
+    $1 Monate
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 Aufnahmen, belegen $2 ($3) von $4.
 "$1 recording"
@@ -45,6 +50,7 @@
 "$1 wasted"
     $1 verschwendet
 "$1 year"
+    $1 Jahr
 "$1 years"
     $1 Jahre
 "%s Song (%s)"
@@ -65,7 +71,7 @@
     Aktivieren
 "Active Screens"
 "Add"
-    hinzufügen
+    Hinzufügen
 "Add Album to Current Playlist"
     zur Wiedergabelsite hinzufügen
 "Add Mix"
@@ -73,11 +79,11 @@
 "Add Song to Current Playlist"
     Lied hinzufügen
 "add string"
-    hinzufügen
+    weitere
 "Add this Playlist as a Subplaylist"
 "Add To Active Screens"
 "Additional Tables"
-    zus. Tabellen
+    zusätzl. Tabellen
 "Admin Key"
 "Advanced"
     erweitert
@@ -155,6 +161,7 @@
 "Back to the program listing"
     Zurück zum TV Programm
 "Back to the recorded programs"
+    Zurück zu den Aufnahmen
 "Back to the recording schedules"
     Zurück zum Aufnahmeplan
 "Backend Logs"
@@ -325,9 +332,11 @@
 "Down"
     runter
 "Download URL override"
+    Download URL überschreiben
 "Dup Method"
     Methode für Wdhgn.
 "Duplicate"
+    Wiederholung
 "Duplicate Check method"
     Testmethode für Wdhgn.
 "Duplicates"
@@ -339,12 +348,15 @@
 "Edit"
     Bearbeiten
 "Edit existing group"
+    bestehende Gruppe bearbeiten
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
 "Edit Screen"
+    Bearbeiten
 "Edit settings for: $1"
     Einstellungen für $1 bearbeiten
 "Editing "
+    bearbeite...
 "Enable Video Playback"
     Aktiviere Videowiedergabe
 "End"
@@ -366,7 +378,9 @@
 "error: playgroup $1 exists"
     Fehler: Wiedergabeliste $1 schon vorhanden
 "Errored"
+    Fehler
 "Erroring"
+    Fehler
 "Escape"
     ESC
 "Everything"
@@ -374,6 +388,7 @@
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
+    keine Wiederholungen
 "Exec. Producer"
     Produzent
 "Extended Check"
@@ -483,19 +498,18 @@
 "info: dont record"
 "info: flvplayer"
     <p>
-    Flash video playback is currently only a proof-of-concept and should be
-    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
-    default.
+    Die Flashvideointegration ist im Moment noch als <b>SEHR</b> experimentell anzusehen, darum ist sie standardmäßig deaktiviert.
     </p>
     <p>
-    It currently expects that ffmpeg is installed and compiled with mp3
-    support, and that the recordings files are accessible to your webserver
-    userid.  It probably won't work with Nupplevideo files, and in the end,
-    it may just not work at all (or maybe even worse).
+    - ffmpeg mit mp3 Unterstützung muss installiert sein<br>
+    - Die Aufnahmen müssen für den Webserver/Apache-User zugänglich sein<br>
+    - funktioniert wahrscheinlich nicht mit Nupplevideodateien<br>
+    - funktioniert eventuell auch gar nicht<br>
+    - oder noch schlimmer :)
     </p>
     <p>
-    Enable this feature at your own risk, and don't expect too much
-    official help until it has left the experimental phase.
+    Benutzung auf eigene Gefahr!<br>
+    Erwarte (noch) nicht all zu viel Hilfe :)<br>
     </p>
 "info: hidden advanced schedule"
     info: erweiterte Optionen versteckt
@@ -530,12 +544,13 @@
 "Language"
     Sprache
 "Last Recorded"
-    zuletzt
+    zuletzt aufgenommen
 "Last recording"
     letzte Aufnahme
 "Last Updated"
     zuletzt aktualisiert
 "Later"
+    später
 "left"
     links
 "Left"
@@ -618,7 +633,9 @@
 "MythTV Status"
     MythTV Status
 "MythVideo Artwork Dir"
+    MythVideo Artwork-Verzeichnis
 "MythVideo Dir"
+    MythVideo Verzeichnis
 "MythVideo on the web."
     MythVideo
 "mythvideo.db_folder_view"
@@ -628,20 +645,20 @@
 "MythWeb Defaults"
     MythWeb Standardwerte
 "MythWeb Global Defaults"
-    MythWeb Globale Standards
+    MythWeb glob. Standardwerte
 "MythWeb Session"
     MythWeb Sitzung
 "MythWeb Skin"
     MythWeb Aussehen
 "MythWeb Template"
-    MythWeb Schema
+    MythWeb Vorlage
 "MythWeb Weather."
     Wettervorhersage
 "Name"
 "name"
     Name
 "Narrow Your Search"
-    Verfeinerung
+    Suche verfeinern
 "Never Record"
     Niemals aufnehmen
 "New"
@@ -657,7 +674,7 @@
 "NO DATA"
     Kein Programm verfügbar
 "No Frontends allow remote control."
-    Kein Frontend erlaubt Fernsteuerung
+    Kein Frontend erlaubt Fernsteuerung.
 "No matches found"
     Nichts gefunden
 "No matching programs found."
@@ -677,13 +694,13 @@
 "Notes"
     Hinweis
 "Number of episodes"
-    Folgen
+    Anzahl Folgen
 "Number of shows"
-    Sendungen
+    Anzahl Sendungen
 "Number of Songs"
     Lieder
 "Number of timeslots"
-    Anzahl Zeitleistenabschnitte
+    Anzahl der Zeitfenster
 "Only display favourite channels"
     Nur Favoriten anzeigen
 "Only match commercial-free channels"
@@ -699,8 +716,9 @@
 "Original Airdate"
     Produktion
 "Originally aired between"
-    Erstaustrahlung
+    Produziert zwischen
 "Override"
+    Überschreiben
 "Page Down"
     Bild runter
 "Page Up"
@@ -1017,6 +1035,7 @@
 "Settings Table"
     Einstellungen
 "settings/stream: protocol"
+    Streamprotokoll
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Shift"
@@ -1158,6 +1177,7 @@
 "Track #%s from the album '%s'"
     %s. Lied auf '%s'
 "Transcode"
+    Umwandeln
 "transcoder"
     Umwandlungsprofil
 "Transcoder"
