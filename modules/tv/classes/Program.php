@@ -173,6 +173,7 @@ class Program {
             $this->audioproperties = $data[43];
             $this->videoproperties = $data[44];
             $this->subtitletype    = $data[45];
+            $this->year            = $data[46];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
             // Calculate the filesize
