@@ -19,13 +19,16 @@
 
 
 #
-# CHANGE THIS PATH TO MATCH YOUR MYTHWEB INSTALLATION DIRECTORY!  e.g.
+# CHANGE THESE PATHS TO MATCH YOUR MYTHWEB INSTALLATION DIRECTORY!  e.g.
 #
 #    /var/www
 #    /home/www/htdocs
 #    /var/www/html/mythweb
 #    /srv/www/htdocs/mythweb
 #
+    <Directory "/var/www/html/data">
+        Options -All +FollowSymLinks +IncludesNoExec
+    </Directory>
     <Directory "/var/www/html" >
 
     ############################################################################
@@ -204,4 +207,3 @@
         </Files>
 
     </Directory>
-

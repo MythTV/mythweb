@@ -1,4 +1,0 @@
-# Allow the webserver to follow symlinks in the data directory, but not to
-# execute any commands, browse directory indexes, etc.
-    Options -All +FollowSymLinks +IncludesNoExec
-
