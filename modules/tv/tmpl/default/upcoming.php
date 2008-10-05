@@ -342,7 +342,7 @@
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
 ?><tr class="list_separator">
-    <td colspan="<?php echo 4 + count($_SESSION['tv']['settings']['screens']['upcoming']) ?>" class="list_separator"><?php echo $cur_group ?></td>
+    <td colspan="<?php echo 4 + count($_SESSION['settings']['screens']['tv']['upcoming recordings']) ?>" class="list_separator"><?php echo $cur_group ?></td>
 </tr><?php
         }
 
