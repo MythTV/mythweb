@@ -381,6 +381,8 @@
 "hue"
 "Humidity"
     Luftfugtighed
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
     IMDB
 "IMDBTYPE"

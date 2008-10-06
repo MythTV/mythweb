@@ -393,6 +393,8 @@
     to
 "Humidity"
     Humitat
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
     IMDB
 "IMDBTYPE"

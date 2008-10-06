@@ -392,6 +392,8 @@
     tono
 "Humidity"
     Humedad
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
     IMDB
 "IMDBTYPE"

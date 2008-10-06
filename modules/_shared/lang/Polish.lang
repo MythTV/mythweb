@@ -350,6 +350,8 @@
 "hue"
     kolor
 "Humidity"
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
 "IMDBTYPE"
 "Inactive"

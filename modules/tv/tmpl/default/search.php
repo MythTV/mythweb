@@ -69,6 +69,14 @@
         <input type="checkbox" name="unwatched" id="unwatched" value="1"<?php
             if ($_SESSION['search']['unwatched']) echo ' CHECKED' ?>>
         <label for="unwatched"><?php echo t('Only match non-recorded shows') ?></label>
+        <br>
+        <input type="checkbox" name="scheduled" id="scheduled" value="1"<?php
+            if ($_SESSION['search']['scheduled']) echo ' CHECKED' ?>>
+        <label for="unwatched"><?php echo t('Ignore scheduled shows') ?></label>
+        <br>
+        <input type="checkbox" name="generic" id="generic" value="1"<?php
+            if ($_SESSION['search']['generic']) echo ' CHECKED' ?>>
+        <label for="unwatched"><?php echo t('Ignore generic shows') ?></label>
         </p>
         <p>
         <?php echo t('Showings between'); ?>:<br>

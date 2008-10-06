@@ -304,6 +304,8 @@
 "hue"
 "Humidity"
     Vlhkost
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
 "IMDBTYPE"
 "Inactive"

@@ -378,6 +378,8 @@
 "hue"
 "Humidity"
     湿度
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
 "IMDBTYPE"
 "Inactive"

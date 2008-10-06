@@ -53,7 +53,9 @@
         $_SESSION['search']['ctype']         = $_REQUEST['ctype'];
         $_SESSION['search']['hd']            = $_REQUEST['hd']        ? true : false;
         $_SESSION['search']['commfree']      = $_REQUEST['commfree']  ? true : false;
-        $_SESSION['search']['unwatched']     = $_REQUEST['unwatched'] ? true: false;
+        $_SESSION['search']['unwatched']     = $_REQUEST['unwatched'] ? true : false;
+        $_SESSION['search']['scheduled']     = $_REQUEST['scheduled'] ? true : false;
+        $_SESSION['search']['generic']       = $_REQUEST['generic']   ? true : false;
         $_SESSION['search']['stars_gt']      = floatVal($_REQUEST['stars_gt']);
         $_SESSION['search']['stars_lt']      = floatVal($_REQUEST['stars_lt']);
         $_SESSION['search']['airdate_start'] = trim($_REQUEST['airdate_start']);
@@ -206,6 +208,8 @@
         // HDTV only?
             if ($_SESSION['search']['hd'])
                 $extra_query[] = 'program.hdtv & 1';
+            if ($_SESSION['search']['generic'])
+                $extra_query[] = 'program.generic = 0';
         // Commercial-free channels only?
             if ($_SESSION['search']['commfree'])
                 $extra_query[] = 'channel.commmethod=-2';
@@ -318,14 +322,8 @@
 
     }
 
-// Query cleanup
-    if (empty($Results))
-        $Results = array();
-    else
-        sort_programs($Results, 'search_sortby');
-
 // Only show unwatched shows?
-    if ($_SESSION['search']['unwatched']) {
+    if ($_SESSION['search']['unwatched'] && count($Results)) {
         foreach ($Results as $key => $show) {
             switch($show->recstatus) {
                 case 'PreviousRecording':
@@ -336,6 +334,26 @@
             }
         }
     }
+
+// Ignore will record shows?
+    if ($_SESSION['search']['scheduled'] && count($Results)) {
+        foreach ($Results as $key => $show) {
+            switch($show->recstatus) {
+                case 'WillRecord':
+                case 'Conflict':
+                case 'EarlierShowing':
+                case 'LaterShowing':
+                    unset($Results[$key]);
+                    continue;
+            }
+        }
+    }
+
+// Query cleanup
+    if (empty($Results))
+        $Results = array();
+    else
+        sort_programs($Results, 'search_sortby');
 
 // Build a list of titles for figuring out alternate showings.  Use the same
 // key to make parsing things below a little easier.

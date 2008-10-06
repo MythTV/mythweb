@@ -478,6 +478,8 @@
     färgton
 "Humidity"
     Luftfuktighet
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
     IMDB
 "IMDBTYPE"

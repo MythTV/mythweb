@@ -372,6 +372,8 @@
     Värikylläisyys
 "Humidity"
     Ilmankosteus
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
     Internet MDB
 "IMDBTYPE"

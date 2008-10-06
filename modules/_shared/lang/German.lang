@@ -439,6 +439,8 @@
     Farbton
 "Humidity"
     Luftfeuchtigkeit
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
     IMDB
 "IMDBTYPE"

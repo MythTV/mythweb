@@ -502,6 +502,8 @@
     nasičenost
 "Humidity"
     Vlažnost
+"Ignore generic shows"
+"Ignore scheduled shows"
 "IMDB"
 "IMDBTYPE"
     IMDB tip
