@@ -141,7 +141,7 @@
     // Otherwise, just report the error
         else {
             echo "<hr><p><b>", error_type($errno), "</b>",
-                "at $errfile, line $errline:<br />$errstr</p>\n",
+                " at $errfile, line $errline:<br />$errstr</p>\n",
                 "<hr>\n";
         }
     }
@@ -252,9 +252,16 @@
             $errfile = $bt[1]['file'];
             $errline = $bt[1]['line'];
         }
+    // A tag for better filing of live vs dev errors
+        if (error_tag && error_tag != 'error_tag')
+            $error_tag = error_tag;
+        else
+            $error_tag = 'unknown_pike';
+        $error_tag .= '.'.host_type;
     // Email the error to the website's error mailbox
         mail(error_email,
-             "Mythweb:  $serial | $subject:  $errfile, line $errline",
+             "$error_tag:  $serial | $subject:  $errfile, line $errline",
              $backtrace,
-             'From:  MythWeb PHP Error <'.error_email.">\r\n");
+             'From:  Pike PHP Error <'.error_email.">\r\n");
     }
+
