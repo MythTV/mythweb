@@ -195,6 +195,10 @@ default, but I strongly recommend that you enable.  They require:
     mod_deflate
     mod_headers
 
+In Suse 10.3 and above, you'll need to add "rewrite" in the file
+/etc/sysconfig/apache2 on the "APACHE_MODULES" line if it's not already
+there.
+
 =================
 5.1 Apache Config
 =================
