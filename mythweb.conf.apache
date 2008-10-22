@@ -105,9 +105,6 @@
         #  as expected, then use these settings as examples for your own php.ini
         #  files.
             php_value safe_mode                     0
-
-            php_value memory_limit                  32M
-
             php_value register_globals              0
             php_value magic_quotes_gpc              0
             php_value file_uploads                  0
@@ -115,6 +112,10 @@
 
             php_value zlib.output_handler           Off
             php_value output_handler                NULL
+
+        # If you have a large number of channels, you may need to increase this
+        # value to prevent PHP from running out of memory.
+            php_value memory_limit                  64M
 
         # Note: php_flag does not work in older versions of php
             php_flag output_handler                 "NULL"
