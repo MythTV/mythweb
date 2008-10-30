@@ -258,11 +258,12 @@
 <table id="recorded_list" border="0" cellpadding="0" cellspacing="0" class="list small">
 <tr class="menu">
     <td class="list"<?php if ($group_field) echo ' colspan="2"' ?>>&nbsp;</td>
-    <th class="x-title"><?php     echo get_sort_link('title',     t('Title'))      ?></th>
-    <th class="x-subtitle"><?php  echo get_sort_link('subtitle',  t('Subtitle'))   ?></th>
-    <th class="x-programid"><?php echo get_sort_link('programid', t('Program ID')) ?></th>
-    <th class="x-airdate"><?php   echo get_sort_link('airdate',   t('Airdate'))    ?></th>
-    <th class="x-channum"><?php   echo get_sort_link('channum',   t('Channel'))    ?></th>
+    <th class="x-title"><?php             echo get_sort_link('title',           t('Title'))            ?></th>
+    <th class="x-subtitle"><?php          echo get_sort_link('subtitle',        t('Subtitle'))         ?></th>
+    <th class="x-programid"><?php         echo get_sort_link('programid',       t('Program ID'))       ?></th>
+    <th class="x-originalairdate"><?php   echo get_sort_link('originalairdate', t('Original Airdate')) ?></th>
+    <th class="x-airdate"><?php           echo get_sort_link('airdate',         t('Airdate'))          ?></th>
+    <th class="x-channum"><?php           echo get_sort_link('channum',         t('Channel'))          ?></th>
 <?php
     if ($recgroup_cols)
         echo '    <th class="x-recgroup">', get_sort_link('recgroup', t('Recording Group')), "</td>\n";
@@ -337,6 +338,7 @@ EOM;
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->subtitle.'</a>' ?></td>
     <td class="x-programid"><?php echo $show->programid ?></td>
+    <td class="x-originalairdate"><?php echo $show->airdate ?></td>
     <td class="x-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td>
     <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
 <?php
