@@ -303,7 +303,7 @@
 
         if ( $cur_group != $prev_group && $group_field != '' ) {
             $section++;
-            $colspan = 10 + $recgroup_cols;
+            $colspan = 11 + $recgroup_cols;
             print <<<EOM
 <tr id="breakrow_$section" class="list_separator">
     <td colspan="$colspan" class="list_separator">$cur_group</td>
@@ -375,7 +375,7 @@ EOM;
 <?php   } ?>
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
-    <td colspan="5" valign="top"><?php echo $show->description ?></td>
+    <td colspan="6" valign="top"><?php echo $show->description ?></td>
     <td colspan="<?php echo 2 + $recgroup_cols ?>" class="x-progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
