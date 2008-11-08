@@ -139,6 +139,13 @@ A: Check your apache logs for details about what caused the error.  Usually,
     mythweb.conf.apache file in more detail to make sure you didn't miss
     an important setup file.
 
+Q: I can't see any thumbnail images of the recordings on my CIFS/SMB share.
+A: There is a bug in the Linux CIFS driver that is triggered by Apache when 
+    it uses 'sendfile' to send an image. To work around it, add the following 
+    line to your Apache configuration (httpd.conf) file...
+        EnableSendfile Off
+    See http://httpd.apache.org/docs/2.2/mod/core.html#enablesendfile for info.
+
 Q: Why is my MythWeb install locked?
 A: Given the absolutely huge number of open mythweb installs, we have added in
     a automatic lockdown feature when we detect a bot or the like. This is to
