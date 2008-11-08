@@ -43,8 +43,7 @@
 
 # Work around a lighttpd bug:  http://trac.lighttpd.net/trac/ticket/420
     foreach my $key (keys %ENV) {
-        next if ($key eq uc($key));
-        $ENV{$key} ||= $ENV{lc($key)};
+        $ENV{lc($key)} = $ENV{$key} if ($key =~ m/DB_/);
     }
 
 # Connect to the database
