@@ -602,7 +602,7 @@
 "Manual"
     Manuell
 "matches"
-    enthält  
+    enthält
 "Max star rating for movies"
     Höchstwertung für Filme
 "minutes"
@@ -633,6 +633,7 @@
     Meine Sitzung
 "MythMusic on the web."
     MythMusic
+"MythMusic_Prefixes_To_Ignore"
 "MythTV"
 "MythTV Status"
     MythTV Status

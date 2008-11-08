@@ -252,7 +252,7 @@ function musicLookup($type, $itemid)
 
     case 'letter':
       // Define the list of prefixes we wish to ignore (perhaps define them as database item(s) somewhere so users can extend them)
-      $prefixes = array ('a', 'an', 'the');
+      $prefixes = explode(' ', t('MythMusic_Prefixes_To_Ignore'));
 
       if($itemid == "#")
       {
@@ -531,7 +531,7 @@ function musicLookup($type, $itemid)
         <option>50</option>
         <option>100</option>
         </select><br />
-        
+
         <strong>'.t('Rating').'</strong><br />
         <select name="rating">
         <option value="all">All</option>
@@ -539,7 +539,7 @@ function musicLookup($type, $itemid)
         <option value="=">=</option>
         <option value="<"><</option>
         </select>
-         
+
         <select name="rating_value">
         <option value="9">9</option>
         <option value="8">8</option>
@@ -551,7 +551,7 @@ function musicLookup($type, $itemid)
         <option value="2">2</option>
         <option value="1">1</option>
         </select><br />
-        
+
         <strong>'.t('Random Type').'</strong><br />
 
         <select name="random_type" onchange="getRandItems(this.options[selectedIndex].value); return false;">
@@ -1436,7 +1436,7 @@ function randAdd($type,$num=0,$items='',$rating='')
     else
       $query .= 'AND rating '.$rating.' ';
   }
-  
+
   $query .= 'GROUP BY name ORDER BY RAND()+0 '.
     'LIMIT '.mysql_real_escape_string(intval($num));
   $result = mysql_query($query);
