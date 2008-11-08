@@ -85,6 +85,9 @@
 // Parse the list of scheduled recordings
     global $Scheduled_Recordings;
     $all_shows = array();
+    $Groups = array();
+    $Program_Titles = array();
+
     foreach ($Scheduled_Recordings as $callsign => $shows) {
     // Now the shows in this channel
         foreach ($shows as $starttime => $show_group) {
