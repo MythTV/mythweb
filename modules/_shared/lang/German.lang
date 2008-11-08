@@ -54,12 +54,15 @@
 "$1 years"
     $1 Jahre
 "%s Song (%s)"
+    %s Lied (%s)
 "%s Songs"
+    %s Lieder
 "%s Songs (%s)"
+    %s Lieder (%s)
 "Aborted"
-    abgebrochen
+    Abgebrochen
 "Aborting"
-    breche ab...
+    Abgebrochen
 "Action"
     Aktion
 "Activate"
@@ -68,17 +71,19 @@
 "Add"
     Hinzufügen
 "Add Album to Current Playlist"
+    Album der aktuellen Wiedergabeliste hinzufügen
 "Add Mix"
 "Add Song to Current Playlist"
+    Lied zur aktuellen Wiedergabeliste hinzufügen
 "add string"
     weitere
 "Add this Playlist as a Subplaylist"
 "Add To Active Screens"
 "Additional Tables"
-    zusätzl. Tabellen
+    zus. Tabellen
 "Admin Key"
 "Advanced"
-    erweitert
+    Erweitert
 "Advanced Options"
     Erweiterte Optionen
 "Advanced Search"
@@ -90,24 +95,35 @@
 "Airtime"
     Sendezeit
 "Album Listing"
+    Nach Alben
 "Album Tracks"
 "Albums"
+    Alben
 "Albums with songs by %s"
+    Alben mit Liedern von %s
 "All"
+    Alle
 "All Albums"
+    Alle Alben
 "All Categories"
+    Alle Kategorien
 "All Fields"
+    Alle Felder
 "All Genres"
+    Alle Genre
 "All groups"
     Alle Gruppen
 "All HDTV"
     Sendungen in HDTV
 "All Hosts"
+    Alle Rechner
 "All recordings"
     Alle Aufnahmen
 "All Songs"
+    Alle Lieder
 "ALLOCINETYPE"
 "An error occured while adding your playlist."
+    Beim Hinzufügen zur Wiedergabeliste trat ein Fehler auf.
 "and"
     und
 "Any"
@@ -119,29 +135,39 @@
 "Any Program Type"
     Jeder Programmtyp
 "Append"
+    Hinzufügen
 "Append to Current Playlist"
+    Der aktuellen Wiedergabeliste hinzufügen
 "Are you sure you want to delete the following show?"
     Diese Aufnahme wirklich löschen?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
 "Artist Listing"
+    Nach Interpreten
 "Artists"
+    Interpreten
 "Artists Beginning with %s"
+    Interpreten die mit %s beginnen
 "ASX Stream"
 "Audio Bitrate"
+    Audio Bitrate
 "Audio for Hearing Impaired"
+    Ton für Hörgeschädigte
 "Audio for Visually Impaired"
+    Ton für Sehgeschädigte
 "Auto Expire"
+    Automatisch Löschen
 "Auto-expire recordings"
     Aufnahmen autom. löschen
 "Auto-flag commercials"
-    Werbung markieren
+    Werbung autom. markieren
 "Auto-transcode"
     autom. Umwandeln
 "AVC/H.264"
 "Back"
+    Zurück
 "Back Tab"
 "Back to the program listing"
-    Zurück zum TV Programm
+    Zurück zum TV-Programm
 "Back to the recorded programs"
     Zurück zu den Aufnahmen
 "Back to the recording schedules"
@@ -162,14 +188,19 @@
 "Browse All Albums"
 "Browse Music"
 "Browse the Music Database"
+    In der Musikdatenbank stöbern
 "By Artist Beginning With"
+    Nach Künstler beginnend mit
 "By Genre"
+    Nach Genre
 "callsign"
     Kurzname
 "Cancel"
+    Abbrechen
 "Cancel this schedule."
     Aufnahme abbrechen
 "Cancelled"
+    Abgebrochen
 "Caps Lock"
 "Cast"
     Besetzung
@@ -182,8 +213,11 @@
 "CC"
     CC
 "Chan. Callsign"
+    Kurzname
 "Chan. Name"
+    Sendername
 "Chan. Number"
+    Senderplatz
 "Channel"
     Sender
 "channel"
@@ -201,17 +235,25 @@
 "Check for duplicates in"
     Nach Wdhgn. suchen in
 "Childrens Movies"
+    Kinderfilme
 "Choose Genre.."
+    Genre wählen..
 "Choose Type"
+    Typ wählen
 "Click to disable Auto Expire"
+    autom. Löschen deaktivieren
 "Click to enable Auto Expire"
+    autom. Löschen aktivieren
 "Click to View Playlist"
+    Wiedergabeliste ansehen
 "Closed Captioning"
+    Untertitel
 "colour"
     Farbe
 "Commands"
     Optionen
 "Commercials Flagged"
+    Werbung markiert
 "commfree"
     Werbefrei
 "Conflict"
@@ -223,7 +265,9 @@
 "contrast"
     Kontrast
 "Count"
+    Gesamt
 "Create a New Playlist"
+    Neue Wiedergabeliste anlegen
 "Create a Random Mix"
 "Create Schedule"
     Speichern
@@ -234,7 +278,7 @@
 "Currently Browsing:  $1"
     Aktuell: $1
 "Currently Recording:  Edit"
-    nehme grade auf: bearbeiten
+    nehme gerade auf: Bearbeiten
 "Custom"
     freie Planung
 "Custom Schedule"
@@ -248,7 +292,7 @@
 "Database"
     Datenbank
 "Database Health"
-    Datenbankgesundheit
+    Datenbankzustand
 "Date"
     Datum
 "Date Formats"
@@ -256,9 +300,11 @@
 "Deactivated"
     Deaktiviert
 "Deaf Signed"
+    Gebärdensprache
 "Default"
     Standard
 "Default MythVideo View"
+    Standard MythVideo Ansicht
 "Delete"
     Löschen
 "delete"
@@ -268,10 +314,12 @@
 "Delete + Rerecord"
     Löschen und erneut aufnehmen
 "Delete and allow rerecord: $1"
+    Löschen und &quot;$1&quot; erneut aufnehmen
 "Delete and rerecord $1"
     Löschen und &quot;$1&quot; erneut aufnehmen
 "Delete Forever"
 "DELETE this Saved Playlist"
+    Gespeicherte Wiedergabeliste löschen
 "description"
     Beschreibung
 "Description"
@@ -291,9 +339,10 @@
 "Don't record this program."
     Diese Sendung nicht aufnehmen
 "Done, Unknown Status"
+    Fertig. Status unbekannt
 "Down"
+    Ab
 "Download URL override"
-    Download URL überschreiben
 "Dup Method"
     Methode für Wdhgn.
 "Duplicate"
@@ -317,29 +366,33 @@
 "Edit settings for: $1"
     Einstellungen für: $1
 "Editing "
-    bearbeite...
+    Bearbeite 
 "Enable Video Playback"
-    Aktivieren
+    Videowiedergabe aktivieren
 "End"
     Ende
 "End Late"
     verspätetes Aufnahmeende
 "Enter"
 "Enter a new name for your playlist"
+    Bitte einen neuen Namen für Ihre Wiedergabeliste eingeben
 "Enter your search terms"
+    Suchtext eingeben
 "enter your search terms"
+    Suchtext eingeben
 "Episode"
     Folge
 "Episode Number"
     Folge Nummer
 "error: playgroup $1 exists"
+    Fehler: Wiedergabegruppe $1 exisitiert
 "Errored"
-    Fehler
+    Fehlerhaft
 "Erroring"
-    Fehler
+    Fehlerhaft
 "Escape"
 "Everything"
-    alles
+    Alles
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
@@ -347,12 +400,13 @@
 "Exec. Producer"
     Produzent
 "Extended Check"
-    erweiterte Prüfung
+    Erweiterte Prüfung
 "File Size"
     Dateigröße
 "film"
     Film
 "Filter"
+    Filter
 "Filters"
     Filter
 "Find Date & Time Options"
@@ -375,11 +429,10 @@
 "Flag Commercials"
     Werbung markieren
 "Force HTTP for streams"
-    http erzwingen
+    HTTP Protokoll erzwingen
 "Force HTTP/HTTPS port for streams"
-    http/https Port erzwingen
+    HTTP/HTTPS Port erzwingen
 "Forced"
-    erzwungen
 "Forget Old"
     frühere Aufnahmen vergessen
 "format help"
@@ -398,6 +451,7 @@
 "Genre"
     Genre
 "Genres"
+    Genre
 "Go"
     Los
 "Google"
@@ -407,13 +461,13 @@
 "Guest Starring"
     Gaststar
 "Guide rating"
-    EPG Bewertung
+    EPG-Bewertung
 "Guide Settings"
-    EPG Einstellungen
+    EPG-Einstellungen
 "Handy Predefined Searches"
-    Vordefinierte Suchabfragen
+    Handy: Vordefinierte Suchabfragen
 "handy: overview"
-    Übersicht
+    Handy: Übersicht
 "has Bookmark"
     Lesezeichen
 "Has Cutlist"
@@ -430,7 +484,9 @@
     Max
 "Home"
 "Host"
+    Moderator
 "Hosted by"
+    Präsentiert von
 "Hour"
     Stunde
 "Hour Format"
@@ -441,6 +497,7 @@
     Luftfeuchtigkeit
 "Ignore generic shows"
 "Ignore scheduled shows"
+    geplante Aufnahmen ignorieren
 "IMDB"
     IMDB
 "IMDBTYPE"
@@ -452,10 +509,11 @@
 "info: dont record"
 "info: flvplayer"
     <p>
-    Die Flashvideointegration ist im Moment noch als <b>SEHR</b> experimentell anzusehen, darum ist sie standardmäßig deaktiviert.
+    Die Flashvideointegration ist im Moment noch als <b>SEHR</b> experimentell
+    anzusehen, darum ist sie standardmäßig deaktiviert.
     </p>
     <p>
-    - ffmpeg mit mp3 Unterstützung muss installiert sein<br>
+    - ffmpeg mit MP3 Unterstützung muss installiert sein<br>
     - Die Aufnahmen müssen für den Webserver/Apache-User zugänglich sein<br>
     - funktioniert wahrscheinlich nicht mit Nupplevideodateien<br>
     - funktioniert eventuell auch gar nicht<br>
@@ -471,9 +529,9 @@
 "info:forget old"
 "info:never record"
 "Insert"
-    einfügen
+    Einfügen
 "Jump"
-    Gehe
+    Springen
 "Jump Points"
 "Jump to"
     Gehe zu
@@ -512,19 +570,27 @@
 "Length (min)"
     Dauer (Min.)
 "Listing &quot;Jump to&quot;"
-    TV Programm &quot;Gehe zu&quot;
+    TV-Programm &quot;Gehe zu&quot;
 "Listing Time Key"
-    TV Programm
+    TV-Programm
 "Listings"
-    TV Programm
+    TV-Programm
 "Load"
+    Laden
 "Load a Saved Playlist"
+    Eine gespeicherte Wiedergabeliste laden
 "Load Playlist"
+    Wiedergabeliste laden
 "Load Saved Playlists"
+    gespeicherte Wiedergabeliste laden
 "Load this Saved Playlist"
+    Diese gespeicherte Wiedergabeliste laden
 "LOADING"
+    LADE
 "Local Server Statistics"
+    lokale Serverstatistik
 "Local weather forecast"
+    lokale Wettervorhersage
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -542,11 +608,11 @@
 "minutes"
     Minuten
 "Missing Cover"
+    fehlendes Titelbild
 "Monday"
     Montag
 "Mono"
 "More"
-    mehr
 "more"
     mehr
 "Move Item Down in Playlist"
@@ -581,9 +647,9 @@
 "mythvideo.sort_ignores_case"
 "MythWeb"
 "MythWeb Defaults"
-    MythWeb Standardwerte
+    MythWeb Standardeinstellungen
 "MythWeb Global Defaults"
-    MythWeb glob. Standardwerte
+    MythWeb globale Standardeinstellungen
 "MythWeb Session"
     MythWeb Sitzung
 "MythWeb Skin"
@@ -592,6 +658,7 @@
 "MythWeb Weather."
     Wettervorhersage
 "Name"
+    Name
 "name"
     Name
 "Narrow Your Search"
@@ -617,6 +684,7 @@
 "No matching programs found."
     Keine passenden Sendungen gefunden.
 "No Public Playlists"
+    Keine öffentlichen Wiedergabelisten
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
 "No. of recordings to keep"
@@ -634,17 +702,17 @@
 "Number of shows"
     Anzahl Sendungen
 "Number of Songs"
+    Anzahl Lieder
 "Number of timeslots"
     Anzahl der Zeitfenster
 "Off"
 "Only display favourite channels"
-    nur Favoriten anzeigen
+    Nur Favoriten anzeigen
 "Only match commercial-free channels"
-    nur werbefrei
+    nur werbefreie Sender
 "Only match HD programs"
-    nur HD
+    nur Sendungen in HD
 "Only match non-recorded shows"
-    keine bereits aufgenommenen
 "Only New Episodes"
     Nur neue Folgen
 "Optimize Tables"
@@ -656,18 +724,19 @@
 "Originally aired between"
     Produziert zwischen
 "Override"
-    Überschreiben
 "Page Down"
+    Seite nach unten
 "Page recorded programs"
 "Page Up"
+    Seite nach oben
 "Part $1 of $2"
     Teil $1 von $2
 "Past Month"
-    letzter Monat
+    Letzten Monat
 "Past Week"
-    letzte Woche
+    Letzte Woche
 "Past Year"
-    letztes Jahr
+    Letztes Jahr
 "Paused"
     Pause
 "Pending"
@@ -678,11 +747,17 @@
     Suche nach Darsteller
 "Percent of time spent recording"
 "Play"
+    Abspielen
 "Play this Album Now"
+    Dieses Album abspielen
 "Play This Playlist Now"
+    Diese Wiedergabeliste abspielen
 "Play this Playlist Now"
+    Diese Wiedergabeliste abspielen
 "Play this Song Now"
+    Diese Lied spielen
 "Play Time"
+    Laufzeit
 "Playback Group"
     Wiedergabegruppe
 "Playback Groups"
@@ -698,17 +773,23 @@
 "Playlist is empty"
     Wiedergabeliste ist leer
 "Playlist Items"
+    Wiedergabeliste Einträge
 "Playlist Name"
+    Name der Wiedergabeliste
 "Playlist renamed successfully"
+    Playlist umbenannt
 "Playlist saved successfully"
+    Playlist gespeichert
 "Playlist: %s"
+    Playlist: %s
 "Playlists"
+    Playlists
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
 "Possible conflicts"
-    Mögliche Konflikte
+    Mögliche Überschneidungen
 "Possible conflicts with this show"
-    Mögliche Konflikte mit dieser Sendung
+    Mögliche Überschneidungen mit dieser Sendung
 "Power"
     freie Suche
 "Power Search"
@@ -739,26 +820,29 @@
 "Program ID"
     Programm ID
 "Program Listing"
-    TV Programm
+    TV-Programm
 "Program Type"
-    Sparte
 "Protocol"
+    Protokoll
 "Queue a job"
-    verfügbare Aufträge
+    Der Auftragsliste hinzufügen
 "Queued"
+    Der Auftragsliste hinzugefügt
 "Queued jobs"
     Aufträge
 "Random"
-    zufällig
+    Zufall
 "Random Items"
 "Random Mix Maker"
 "Random Type"
 "Rating"
     Freigegeben ab
 "Recently Added Albums"
+    Neueste Alben
 "Recently completed jobs"
-    Zuletzt durchgeführte Aufträge
+    Zuletzt fertiggestellte Aufträge
 "Recently Played Songs"
+    Zuletzt gespielte Lieder
 "recgroup"
     Aufnahmegruppe
 "Record Date"
@@ -766,7 +850,7 @@
 "Record Length"
     Dauer
 "Record new and expire old"
-    Nur neue Folgen aufnehmen
+    Neue Folgen aufnehmen und alte löschen
 "Record This"
     Diese Sendung aufnehmen
 "Recorded"
@@ -774,7 +858,7 @@
 "Recorded Programs"
     Aufnahmen
 "Recording Details"
-    Details
+    Aufnahmedetails
 "Recording Group"
     Aufnahmegruppe
 "Recording Options"
@@ -786,7 +870,7 @@
 "Recording Schedules"
     Aufnahmemodi
 "Recording Statistics"
-    Statistik
+    Aufnahmestatistiken
 "recpriority"
     Aufnahmepriorität
 "recstatus: cancelled"
@@ -883,23 +967,31 @@
 "Reset"
     Zurücksetzen
 "Retry"
+    Wiederholen
 "Return to Statistics Page"
+    Zurück zur Statistikseite
 "right"
 "Right"
 "Rows to show between timeslot info"
     Reihen nach denen die Zeitleiste wiederholt wird
 "Running"
+    Läuft
 "Saturday"
     Samstag
 "Save"
     Speichern
 "Save or Rename the Current Playlist"
+    Wiedergabeliste speichern oder umbenennen
 "Save Schedule"
     Aufnahme speichern
 "Save/Rename"
+    Speichern/Umbenennen
 "Save/Rename Playlist"
+    Wiedergabeliste speichern/umbenennen
 "Saved Playlist Successfully Deleted"
+    Wiedergabeliste wurde gelöscht
 "Saved Playlists"
+    Gespeicherte Wiedergabelisten
 "Scan Collection"
 "Schedule"
     Modus
@@ -936,7 +1028,7 @@
 "Searches"
     Suchen
 "Server Statistics"
-    Statistik
+    Serverstatistik
 "Set Host"
     Setze Host
 "Settings"
@@ -946,7 +1038,6 @@
 "Settings Table"
     Einstellungen
 "settings/stream: protocol"
-    Streamprotokoll
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
 "Shift"
@@ -971,14 +1062,19 @@
 "Showings between"
     zwischen
 "Shows"
+    Sendungen
 "Skip Ahead"
     springe vor
 "Skip Back"
     springe zurück
 "Songs"
+    Lieder
 "Songs for Genre"
+    Lieder mit Genre
 "Songs Played"
+    Lieder gespielt
 "Songs Rated"
+    Lieder bewertet
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
     Nach Sendernummer sortieren
@@ -988,7 +1084,7 @@
 "Special Searches"
     Spezielle Suchanfragen
 "Star character"
-    Wertungszeichen
+    Bewertungszeichen
 "Start Date"
     Datum
 "Start Early"
@@ -1010,7 +1106,7 @@
     nehme immer noch auf: bearbeiten
 "Stopping"
 "Storage Group"
-    Archivgruppe
+    Speichergruppe
 "Streaming"
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)
@@ -1020,26 +1116,34 @@
 "Subtitle and Description"
     Untertitel und Beschreibung
 "Subtitle then Description"
+    Untertitel dann Beschreibung
 "Subtitled"
     mit Untertitel
 "Subtitles Available"
+    mit Untertitel
 "Sunday"
     Sonntag
 "Surround Sound"
+    Surround Ton
 "Tab"
 "Temp"
 "The requested recording schedule has been deleted."
     Die geplante Aufnahme wurde gelöscht.
 "There are no items in this Playlist!"
+    Wiedergabeliste ist leer!
 "There was a problem saving your playlist"
+    Wiedergabeliste konnte nicht gespeichert werden
 "This playlist is already loaded!"
+    Wiedergabeliste bereits geladen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Donnerstag
 "Time"
     Zeit
 "Time Span"
+    Zeitspanne
 "Time Stretch"
+    Zeitraffer
 "Time Stretch Default"
     Zeitraffer Vorgabewert
 "Timeslot size"
@@ -1053,18 +1157,24 @@
 "Title search"
     Titelsuche
 "Title Search"
-    Titelsuche
+    Titel Suche
 "Too Many"
     zu viele
 "Top $1"
 "Top Played Songs"
 "Top Rated Songs"
 "Total Length"
+    Gesamtdauer
 "Total Recorded"
+    Insgesamt aufgenommen
 "Total Running Time"
+    Laufzeit insgesamt
 "Total Time"
+    Gesamtzeit
 "Total Time:  %s"
+    Gesamtzeit: %s
 "Track #%s from the album '%s'"
+    Lied #%s des Albums &quot;%s&quot;  
 "Transcode"
     Umwandeln
 "transcoder"
@@ -1074,10 +1184,11 @@
 "Tuesday"
     Dienstag
 "Tuner Busy"
+    Tuner belegt
 "TV"
     TV
 "TV functions, including recorded programs."
-    TV Funktionen incl. allen Aufnahmen
+    TV-Funktionen incl. allen Aufnahmen
 "TV.com"
     TV.com
 "type"
@@ -1085,7 +1196,9 @@
 "Type"
     Typ
 "Undelete"
+    Wiederherstellen
 "Undelete: $1"
+    Wiederherstellen: $1
 "Unknown"
     Unbekannt
 "Unknown Program."
@@ -1093,6 +1206,7 @@
 "Unknown Recording Schedule."
     Unbekannter Aufnahmeplan
 "Up"
+    Auf
 "Upcoming Recordings"
     Aufnahmeplan
 "Update"
@@ -1106,9 +1220,11 @@
 "useonairguide"
     DVB-EPG Daten verwenden
 "Value"
+    Wert
 "Video"
     Video
 "Video Bitrate"
+    Video Bitrate
 "Video Playback"
     Video Wiedergabe
 "Video: Error: IMDB"
@@ -1125,7 +1241,7 @@
 "VideoDefaultParentalLevel"
 "VideoDefaultPlayer"
 "videofilters"
-    Wiedergabe- filter
+    Wiedergabefilter
 "VideoGalleryAspectRatio"
 "VideoGalleryColsPerPage"
 "VideoGalleryNoDB"
@@ -1139,8 +1255,11 @@
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
 "View Albums by %s"
+    Zeige Alben von %s
 "View Details of %s"
+    Zeige Details zu %s
 "View Saved Playlist"
+    Gespeicherte Wiedergabeliste anzeigen
 "View Server Statistics"
 "Visibility"
     Sichtweite
@@ -1149,6 +1268,7 @@
 "Visit $1"
     Besuche $1
 "Watched"
+    Gesehen
 "Weather"
     Wetter
 "web_video_imdb_path"
@@ -1178,6 +1298,7 @@
 "What else is on at this time?"
     Was läuft noch zu dieser Zeit?
 "Widescreen"
+    Breitbild
 "Width"
     Breite
 "Will Record"
