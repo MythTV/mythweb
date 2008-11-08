@@ -38,6 +38,8 @@
     if (backend_command('ANN Monitor '.hostname.' 0') != 'OK')
         trigger_error("Unable to connect to mythbackend, is it running?\n", FATAL);
 
+    set_php_timezone_from_backend($Master_Host, $Master_Port);
+
 /**
  * Queries the database settings table for a particular setting, and returns its value
 /**/
@@ -104,11 +106,10 @@
             else {
                 $fp = @fsockopen($host, $port, $errno, $errstr, 25);
                 $cache[$host][$port] = &$fp;
-                if ($fp)
-                    check_proto_version($host, $port);
-                else
+                if (!$fp)
                     custom_error("Unable to connect to the master backend at $host:$port.\n"
                                  ."Is it running?");
+                check_proto_version($host, $port);
             }
         }
     // Connection opened, let's do something
@@ -167,6 +168,12 @@
             return;
         }
         trigger_error("Unexpected response to MYTH_PROTO_VERSION '$cmd': ".$response[0]);
+    }
+
+    function set_php_timezone_from_backend($host, $port) {
+        $response = explode(backend_sep, backend_command('QUERY_TIME_ZONE', $host, $port));
+        if (!date_default_timezone_set($response[0]))
+            trigger_error('Failed to set php timezone to '.$response[0]);
     }
 
 /**
