@@ -1,0 +1,154 @@
+/* This table holds the title and recgroup choices */
+
+#title_choices {
+    margin:     1em auto;
+}
+#title_choices td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#title_choices td.x-group, #title_choices td.x-recordings {
+    font-weight:        bold;
+}
+#title_choices td.x-recordings {
+    border-left:        2px solid #BBBBBB;
+}
+
+/* This is the table that holds the list of recorded shows */
+
+#recorded_list {
+    width:          100%;
+}
+
+#recorded_list td {
+    padding:        4px;
+    border:         1px solid #FFFFFF;
+}
+#recorded_list th {
+    padding:        0;
+    border:         1px solid #FFFFFF;
+    text-align:     left;
+    font-weight:    normal;
+}
+#recorded_list th a {
+    padding:        2px .5em;
+    display:        block;
+}
+
+#recorded_list td.x-pixmap {
+    background-color:   #EEEEEE;
+    padding:            0 !important;
+    width:              150px;
+    position:           relative;
+    vertical-align: top;
+    background-image: url(img/background-gradient.png);
+    background-repeat: repeat-x;
+}
+#recorded_list td.x-pixmap.x-noimg {
+    width:              50px;
+}
+#recorded_list td.x-pixmap a {
+    border:         1px solid transparent;
+}
+#recorded_list td.x-pixmap a:hover {
+    background-color:   #FF9933;
+    border:         1px solid #FFCC00;
+}
+
+#recorded_list td.x-pixmap a.x-pixmap {
+    float:          left;
+    height:         78px;
+}
+#recorded_list td.x-pixmap a.x-pixmap img {
+    width:          100px;
+}
+#recorded_list td.x-pixmap a.x-download {
+    margin-left:    102px;
+    display:        block;
+    padding:        7px;
+    height:         24px;
+    text-align:     center;
+    vertical-align: top;
+}
+#recorded_list td.x-pixmap.x-noimg a.x-download {
+    margin-left:    2px;
+}
+
+
+#recorded_list th.x-title a {}
+
+
+#recorded_list td.x-title {
+
+    background-color: #AAAAAA;
+}
+
+#recorded_list td.x-title a {
+    font-size:          110%;
+    font-weight:        bold;
+    color: #FFFFFF;
+}
+
+#recorded_list th.x-subtitle a, #recorded_list td.x-subtitle {
+}
+#recorded_list th.x-programid a, #recorded_list td.x-programid {
+}
+#recorded_list th.x-channum a, #recorded_list td.x-channum {
+}
+#recorded_list th.x-airdate a {
+    text-align:     center;
+    white-space:    nowrap;
+}
+
+#recorded_list td.x-airdate {
+    text-align:     center;
+}
+#recorded_list th.x-recgroup a, #recorded_list td.x-recgroup {
+}
+#recorded_list th.x-length a {
+    white-space:    nowrap;
+    text-align:     center;
+}
+
+#recorded_list td.x-length {
+    text-align:     center;
+}
+#recorded_list th.x-filesize a, #recorded_list td.x-filesize {
+    white-space:    nowrap;
+    text-align:     center;
+}
+
+#recorded_list td.x-commands {
+    padding:            2px;
+    width:              5%;
+    text-align:         center;
+    vertical-align:     top;
+    background-color:   #EEEEEE;
+    background-image: url(img/background-gradient.png);
+    background-repeat: repeat-x;
+}
+#recorded_list td.x-commands a {
+    display:            block;
+    padding:            .25em .5em;
+    margin:             0 0 3px 0;
+}
+
+/* a class for the the cells containing recored programs in recorded_programs.php */
+.recorded {    background-color: #DDDDDD; }
+
+.recorded .x-progflags {
+    vertical-align: top;
+}
+
+.recorded .x-progflags img {
+    padding:    .3em;
+}
+
+.recorded a img {
+    border:     1px solid transparent;
+}
+.recorded a:hover img {
+    background-color: #FF9933; 
+    border:     1px solid #FF9933;
+}

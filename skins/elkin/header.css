@@ -1,0 +1,112 @@
+#page_header {
+    margin: 5px;
+}
+
+#logo_box {
+}
+#mythtv_logo {
+    margin:     0px 5px;
+    padding:    5px;
+    height:     32px;
+    width:      115px;
+    float:      left;
+    text-align: center;
+}
+
+#sections {
+    white-space: nowrap;
+}
+#sections a {
+    float:              left;
+    margin:             0px 5px;
+    padding:            5px;
+    background-color:   #DDDDDD;
+    border:             1px solid #999999;
+    -moz-border-radius: 8px;
+    text-align:         center;
+    height:             32px;
+    width:              32px;
+}
+#sections a:hover {
+    background-color:   #FF9933;
+}
+#sections a img {
+    border:  none;
+    display: inline !important;
+}
+
+#sections a.current_section {
+    background-color:   #555555;
+    border:         3px solid #BBBBBB;
+}
+#sections a.current_section:hover {
+    background-color:   #FF9933;
+}
+
+#tv_link {
+}
+#music_link {
+}
+#video_link {
+}
+#weather_link {
+}
+#settings_link {
+}
+
+#extra_header {
+    margin-left: 410px;
+    padding:     0px 2px;
+}
+
+/*
+ * IE sucks:  true-height is supposed to be height+padding+margin+border, but IE
+ * doesn't add in padding, so we have to create a wrapper container and use
+ * margin instead of padding to make the "padding" that we need.
+ */
+#help_wrapper {
+    height:             21px;
+    margin-bottom:      3px;
+    background-color:   #DDDDDD;
+    border:             1px solid #999999;
+    -moz-border-radius: 6px;
+    min-width:          225px;
+}
+#help_box {
+    margin:             4px 5px 2px 5px;
+    height:             15px;
+    overflow:           hidden;
+    white-space:        nowrap;
+}
+#help_text_default {
+    position: relative;
+}
+#help_text {
+    display: none;
+}
+#search {
+    padding:            2px 5px;
+    height:             22px;
+    background-color:   #DDDDDD;
+    border:             1px solid #999999;
+    -moz-border-radius: 8px;
+    min-width:          225px;
+    white-space:        nowrap;
+}
+#simple_search {
+    padding-top: 1px;
+}
+
+#search_text {
+    position:     relative;
+    width:        60%;
+    margin-right: 5px;
+    padding:      0px 3px;
+    font-size:    9pt;
+}
+#search_submit {
+    position:  relative;
+    width:     auto;
+    font-size: 9pt;
+}
+

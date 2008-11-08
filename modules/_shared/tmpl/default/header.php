@@ -94,36 +94,36 @@ EOF;
 <div id="page_header" class="clearfix">
     <div id="logo_box">
         <a id="mythtv_logo" href="<?php echo root ?>">
-        <img src="<?php echo skin_url ?>img/mythtv-logo.png" width="174" height="48" alt="MythTV" class="alpha_png">
+        <img src="<?php echo skin_url ?>img/mythtv-logo.png" alt="MythTV" class="alpha_png">
         </a>
     </div>
     <div id="sections">
         <a id="tv_link"<?php if ($Path[0] == 'tv') echo ' class="current_section"' ?> href="<?php echo root ?>tv" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo skin_url ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV">
+            <img src="<?php echo skin_url ?>img/tv.png" class="alpha_png" alt="MythTV">
         </a>
 <?php if ($Modules['music']) { ?>
         <a id="music_link"<?php if ($Path[0] == 'music') echo ' class="current_section"' ?> href="<?php echo root ?>music" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo skin_url ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic">
+            <img src="<?php echo skin_url ?>img/music.png" class="alpha_png" alt="MythMusic">
         </a>
 <?php
       }
       if ($Modules['video']) {
 ?>
         <a id="video_link"<?php if ($Path[0] == 'video') echo ' class="current_section"' ?> href="<?php echo root ?>video" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo skin_url ?>img/video.png" width="48" height="48" class="alpha_png" alt="MythVideo">
+            <img src="<?php echo skin_url ?>img/video.png" class="alpha_png" alt="MythVideo">
         </a>
 <?php
       }
       if ($Modules['weather']) {
 ?>
         <a id="weather_link"<?php if ($Path[0] == 'weather') echo ' class="current_section"' ?> href="<?php echo root ?>weather" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo skin_url ?>img/weather.png" width="48" height="48" class="alpha_png" alt="MythWeather">
+            <img src="<?php echo skin_url ?>img/weather.png" class="alpha_png" alt="MythWeather">
         </a>
 <?php
       }
 ?>
         <a id="settings_link"<?php if ($Path[0] == 'settings') echo ' class="current_section"' ?> href="<?php echo root ?>settings" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
-            <img src="<?php echo skin_url ?>img/settings.png" width="48" height="48" class="alpha_png" alt="<?php echo t('Settings') ?>">
+            <img src="<?php echo skin_url ?>img/settings.png" class="alpha_png" alt="<?php echo t('Settings') ?>">
         </a>
     </div>
     <div id="extra_header">

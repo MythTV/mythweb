@@ -1,0 +1,247 @@
+/*
+ * Global page handlers.
+/*/
+
+    html,body {
+        border:           0;
+        margin:           0;
+        padding:          0;
+        font-size:        9pt;
+        font-family:      Arial, Helvetica, sans-serif;
+        background-color: #ffffff;
+        color:            #888888;
+        background-image: url(img/background-gradient.png);
+        background-repeat: repeat-x;
+    }
+
+    /* For some reason, settings for the main body element doesn't always work for
+     * text inside of tables
+    /*/
+    .body {
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+/*
+ * We should try to keep links and labels looking consistent across the app.
+/*/
+
+    a, a:link { color: #777777; text-decoration: none; }
+    a:active  { color: #CC0000; text-decoration: none; }
+    a:visited { color: #777777; text-decoration: none; }
+    a:hover   { color: #FF9933; text-decoration: underline; }
+
+    label       { color: #E0E0FF; text-decoration: none; }
+    label:hover { color: #F0F000; text-decoration: underline; }
+
+/* a class for the menu across the top of the page as well as menu headers throughout the page */
+    .menu {          background-color: #CCCCCC }
+    .menu_border_t { border-top:    2px solid #BBBBBB }
+    .menu_border_b { border-bottom: 2px solid #BBBBBB }
+    .menu_border_l { border-left:   2px solid #BBBBBB }
+    .menu_border_r { border-right:  2px solid #BBBBBB }
+
+/* a class for commands and other user input boxes */
+
+/* @deprecated old classes */
+.command { background-color: #FFFFFF }
+.command_border_t { border-top:    2px solid #BBBBBB }
+.command_border_b { border-bottom: 2px solid #BBBBBB }
+.command_border_l { border-left:   2px solid #BBBBBB }
+.command_border_r { border-right:  2px solid #BBBBBB }
+.activecommand    { background-color: #BBBBBB }
+
+/* New command classes */
+
+    /* Box to hold commands */
+    .commandbox {
+        background-color:   #CCCCCC;
+        color:              #888888;
+        border:             2px solid #BBBBBB;
+    }
+
+    /* Commands themselves */
+
+    .commands { /* Placeholder for handling sub-elements */ }
+
+    .commands input.x-submit {
+        border:             2px outset #BBBBBB;
+        padding:            0 .5em;
+        height:             2em;
+        background-color:   #FFFFFF;
+        color:              #FFFFFF;
+    }
+    .commands input.x-submit:hover {
+        border:             1px outset #BBBBBB;
+        background-color:   #FFFFFF;
+        color:              #FF9933;
+        text-decoration:    underline;
+    }
+
+    .commands a {
+        font-weight:        bold;
+        border:             1px solid #BBBBBB;
+        padding:            .15em .5em;
+        background-color:   #FFFFFF;
+    }
+    .commands a:hover {
+        border:             1px solid #FF9933;
+        background-color:   #FFFFFF;
+    }
+
+/*
+ * The following styles refer to forms and form elements throughout MythWeb
+/*/
+
+    /* Avoid those nasty extra linefeeds in IE </form> tags */
+    form { display: inline; }
+
+    /* A special class for submit buttons */
+    .submit {
+        border:             2px outset #BBBBBB;
+        background-color:   #CCCCCC;
+        color:              #666666;
+        font-weight:        bold;
+    }
+    .submit:hover {
+        border:             2px outset #FF9933;
+        background-color:   #FFFFFF;
+        color:              #FF9933;
+    }
+
+    /* A special class for radio buttons and check boxes because some browsers render them weirdly */
+    .radio {
+        height:             14px !important;
+        width:              14px !important;
+        color:              #002000;
+        background-color:   #C0D0C0;
+    }
+
+    /* Default styles for form fields */
+    select {
+        font-family:        Arial, Helvetica, sans-serif;
+        color:              #FFFFFF;
+        background-color:   #999999;
+        font-size:          9pt;
+        border:             1px solid;
+    }
+
+    input {
+        font-family:        Arial, Helvetica, sans-serif;
+        color:              #FFFFFF;
+        background-color:   #999999;
+        font-size:          10pt;
+        border:             1px solid;
+    }
+
+    textarea {
+        font-family:        terminal, courier, courier-new;
+        color:              #FFFFFF;
+        background-color:   #999999;
+        font-size:          10pt;
+    }
+
+    /* Quantity-sized elements look better with the text centered */
+    input.quantity {
+        width:              2em !important;
+        text-align:         center;
+    }
+
+/*
+ * A special class for error stuff, so all page errors look the same.
+/*/
+
+    #error, .error {
+        color:              #F03030;
+        background-color:   #360000;
+        border-color:       #F03030;
+        border:             thin groove #F03030;
+        padding:            8px;
+    }
+
+/*
+ * The following represent some global classes to accommodate minor but
+ * oft-used manipulations like font sizes.0
+/*/
+
+    /* font size classes */
+    .tiny   { font-size: 9px; }
+    .small  { font-size: 9pt; }
+    .normal { font-size: 10pt; }
+    .large  { font-size: 12pt; }
+    .huge   { font-size: 24px; }
+
+    /* fony style classes */
+    .bold, .bold a, .bold a:link, .bold a:visited, .bold a:active, .bold a:hover {
+        font-weight: bold !important;
+    }
+    .italic, .italic a, .italic a:link, .italic a:visited, .italic a:active, .italic a:hover {
+        font-style: italic !important;
+    }
+
+    /* Handy for, well, hiding things..  Also for mouseover popup menus */
+    .hidden {
+        visibility: hidden;
+        display:    none;
+    }
+
+/*
+ * clearfix -- see http://positioniseverything.net/easyclearing.html for details on how/why this works
+/*/
+
+    .clearfix:after {
+        content:    ".";
+        display:    block;
+        height:     0;
+        clear:      both;
+        visibility: hidden;
+    }
+    .clearfix {display: inline-block;}
+    /* Hides from IE-mac \*/
+    * html .clearfix {height: 1%;}
+    .clearfix {display: block;}
+    /* End hide from IE-mac */
+
+    /* Ajax little popup request thing style */
+    #ajax_working {
+        position:           fixed;
+        background-color:   #FF9933;
+        bottom:             10px;
+        left:               1em;
+        padding:            1em;
+        width:              10em;
+        text-align:         center;
+        color:              #FFFFFF;
+    }
+
+    .link {
+        cursor:             pointer;
+    }
+
+/* I don't think we have a single image with a border in the default template, so disable it */
+    a img {
+        border:             0px;
+    }
+
+    .nowrap {
+        white-space:        nowrap;
+    }
+
+#content_wrapper .content{
+    text-decoration: none;
+        background-color: #AAAAAA; 
+        color: #DDDDDD;
+        border:      1px;
+}
+
+#content_wrapper h1{
+    text-decoration: none;
+        letter-spacing: 0.0em;
+        color: #222222;
+}
+
+#content_wrapper .content h2{
+    text-decoration: none;
+        color: #FFFFFF; 
+        letter-spacing: 0.0em;
+}

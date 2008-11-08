@@ -1,0 +1,66 @@
+#search_options {
+    margin:     1em auto;
+    font-size:  9pt;
+    color:      #000000;
+}
+#search_options td {
+    padding:            .5em 1em;
+    vertical-align:     top;
+    white-space:        nowrap;
+}
+#search_options td.x-advanced {
+    border-right:       2px solid #BBBBBB;
+}
+
+#search_options td.x-timeopts {
+    border-right:       2px solid #BBBBBB;
+}
+#search_options td.x-progtype {
+    border-right:       2px solid #BBBBBB;
+}
+#search_options td.x-submit {
+    vertical-align:     middle;
+    padding:            1.5em;
+}
+
+
+#x_search_name {
+    font-size:          150%;
+    text-align:         center;
+}
+
+#search_results th {
+    font-weight:        normal;
+    text-align:         left;
+    white-space:        nowrap;
+}
+#search_results th.x-title {
+}
+#search_results th.x-category {
+}
+#search_results th.x-description {
+}
+#search_results th.x-channum {
+}
+#search_results th.x-airdate {
+}
+#search_results th.x-length {
+}
+
+#search_results td {
+}
+#search_results td.x-title {
+}
+#search_results td.x-category {
+}
+#search_results td.x-description {
+}
+#search_results td.x-channum {
+}
+#search_results td.x-airdate {
+    white-space:        nowrap;
+}
+#search_results td.x-length {
+    white-space:        nowrap;
+}
+

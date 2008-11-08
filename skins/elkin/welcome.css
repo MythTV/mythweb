@@ -1,0 +1,61 @@
+#modules {
+    width:              600px;
+    margin:             100px auto;
+}
+
+#module_names {
+    margin:             0px;
+    padding:            0px;
+    float:              left;
+    width:              7em;
+    font-size:          2em;
+    min-height:         15em;
+}
+
+#module_names ul {
+    margin:             0px;
+    padding:            0px;
+    list-style-type:    none;
+    text-align:         right;
+}
+
+#module_names li {
+    position:           relative;
+    z-index:            2;
+    margin:             0px -5px 0px 0px;
+    padding:            0px .5em .15em 0px;
+    border:             2px solid transparent;
+    white-space:        nowrap;
+}
+#module_names li.selected {
+    background-color:   #FFFFFF;
+    border-top:         2px solid #DDDDDD;
+    border-bottom:      2px solid #DDDDDD;
+    border-left:        2px solid #DDDDDD;
+    -moz-border-radius: 8px;
+}
+#module_names li.selected a {
+    display:            block;
+}
+
+#module_info {
+    background-color:   #FFFFFF;
+    margin-left:        14em;
+    border:             2px solid #DDDDDD;
+    min-width:          314px;
+    height:             30em;
+    padding:            .5em 1em;
+    -moz-border-radius:     8px;
+}
+
+.module_icon {
+    display: block;
+    margin: auto;
+}
+
+#mythtv_link {
+    float:          left;
+    width:          14em;
+    text-align:     center;
+    margin-top:     -1.5em;
+}

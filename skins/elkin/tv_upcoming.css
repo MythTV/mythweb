@@ -1,0 +1,87 @@
+#display_options {
+    margin:     1em auto;
+}
+#display_options td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#display_options td.x-title {
+    font-size:          110%;
+    font-weight:        bold;
+}
+#display_options td.x-check {
+    padding:            .35em .5em;
+    height:             2em;
+}
+#display_options td.x-check label {
+    color: #444444;
+    padding-top:        .15em;
+    padding-bottom:     .15em;
+    padding-left:       .5em;
+    padding-right:      .35em;
+    margin-top:         .5em;
+    margin-bottom:      .5em;
+    margin-left:        0em;
+    margin-right:       0em;
+}
+#display_options td.x-check label:hover {
+    border:             1px solid FFCC00;
+    background-color:   #FF9933;
+}
+#display_options td.x-check input {
+    float:              none;
+    padding:            0px;
+    margin:             0px;
+    margin-right:       5px;
+    margin-top:         -1px;
+}
+
+#listings {
+    width: 100%;
+}
+#listings th {
+    font-weight:    normal;
+    text-align:     left;
+}
+
+#listings th.x-status {
+    text-align:         center;
+}
+#listings th.x-title {
+}
+#listings th.x-channum {
+}
+#listings th.x-airdate {
+}
+#listings th.x-length {
+}
+
+#listings td.x-status {
+    text-align:         center;
+}
+#listings td.x-title {
+}
+#listings td.x-channum {
+}
+#listings td.x-airdate {
+    white-space:        nowrap;
+}
+#listings td.x-length {
+    white-space:        nowrap;
+}
+#listings td.x-commands {
+    padding:            2px;
+    text-align:         center;
+    white-space:        nowrap;
+
+}
+#listings td.x-commands a {
+    display:            block;
+    padding:            .25em .5em;
+    margin:             0;
+}
+#listings td.x-recording a {
+    border:             1px solid #0f0;
+}
+

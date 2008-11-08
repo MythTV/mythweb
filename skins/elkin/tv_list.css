@@ -1,0 +1,86 @@
+/*
+ *
+ * Styles used in /tv/list
+ *
+/*/
+
+.right_arrow {
+    float: right;
+}
+.left_arrow {
+    float: left;
+}
+
+.x-channel {
+    width:              8em;
+    padding:            0 !important;
+    vertical-align:     middle;
+    background-color:   #EEEEEE;
+    white-space:        nowrap;
+}
+.x-channel img {
+    position:           relative;
+    top:                -4px;
+    vertical-align:     middle;
+}
+.x-channel a {
+    display:            block;
+    text-align:         center;
+    padding:            5px;
+}
+.x-channel .x-preferred {
+    margin-left:        5px;
+    font-size:          200%;
+}
+
+#list_head {
+    width:              80%;
+    margin:             1em auto;
+}
+
+
+#x_current_time {
+    font-size:          150%;
+    margin-top:         .25em;
+    float:              left;
+}
+
+#x-jumpto {
+    float:              right;
+}
+#x-jumpto td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#x-jumpto td.x-jumpto {
+    font-size:          110%;
+    font-weight:        bold;
+
+}
+#x-jumpto td.x-hour {
+}
+#x-jumpto td.x-hour select {
+    text-align:         right;
+}
+#x-jumpto .x-day select {
+    text-align:         center;
+}
+
+#x-jumpto a img {
+    vertical-align:     middle;
+    height:             16px;
+    width:              16px;
+    margin-top:         -2px;
+}
+#x-jumpto a {
+    height:             20px;
+    width:              20px;
+    padding:            2px;
+    border:             1px solid #FFFFFF;
+    background-color:   #CCCCCC;
+}
+#x-jumpto a:hover {
+    border:             1px solid #FF9900;
+    background-color:   #FF9933;
+}

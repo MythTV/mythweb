@@ -1,0 +1,75 @@
+/*
+ * This div contains all of the scheduling options.  It's shared by the program
+ * details page, as well as the manual and custom schedule pages.
+/*/
+
+#schedule {
+    float:              left;
+    margin:             10px;
+    background-color:   #AAAAAA;
+    color:              #FFFFFF;
+    border:             1px solid #DDDDDD;
+}
+#schedule h3 {
+    margin: 0px;
+    display:    inline;
+}
+#schedule ul {
+    padding-left: 1em;
+}
+#schedule li {
+    list-style-type: none;
+    white-space:     nowrap;
+}
+
+#schedule .x-options {
+    border-bottom:      2px solid #DDDDDD;
+    padding:            .5em 1em;
+    margin:             .5em 0 .5em 0;
+}
+#schedule .x-options ul {
+    margin-top:         .5em;
+    margin-bottom:      .5em;
+}
+#schedule .x-options dl {
+    margin-top:         .5em;
+    margin-bottom:      .5em;
+}
+#schedule .x-options dl dt {   /* remember that the vertical margins of dt and dd *must* line up */
+    clear:          both;
+    float:          left;
+    width:          13em;
+    margin:         0.25em 0;
+    text-align:     right;
+    white-space:    nowrap;
+    position:       relative; /*IEWin hack*/
+}
+#schedule .x-options dl dd {
+    clear:          right;
+    margin-left:    13.5em;
+    margin-bottom:  0.5em;
+}
+#schedule .x-options input {
+    width:     18em;
+}
+#schedule .x-options select {
+    width:     18em;
+}
+
+/* A special subclass for options with extra-long input fields */
+#schedule .x-options dl.x-long input, .x-options dl.x-long textarea {
+    width:     32em;
+}
+
+
+#x-schedule_advanced_off {
+    margin:         .5em 1em;
+    font-style:     italic;
+    font-size:      90%;
+}
+
+#x-schedule_submit {
+    text-align:     center;
+    padding:        .5em 0 1em 0;
+}
+

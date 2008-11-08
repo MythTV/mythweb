@@ -1,0 +1,95 @@
+    .video {
+        position:           relative;
+        padding:            1em;
+        float:              left;
+        background-color:   #EEEEEE;
+        margin-top:         1em;
+        margin-left:        1em;
+        width:              202px;
+        height:             168px;
+        border:             1px solid #AAAAAA;
+    }
+
+    .video .title {
+        font-weight:        bold;
+        margin-bottom:      .5em;
+        height:             2.25em;
+        overflow:           hidden;
+    }
+
+    .video img {
+        float:              left;
+        padding-right:      1em;
+    }
+
+    .video .command {
+        position:           absolute;
+        bottom:             1em;
+        right:              1em;
+    }
+
+    #path {
+        position:           relative;
+        padding:            1em;
+        float:              left;
+        background-color:   #DDDDDD;
+        margin-top:         1em;
+        margin-left:        1em;
+        border:             1px solid #AAAAAA;
+        min-width:          202px;
+        min-height:         168px;
+    }
+
+    #path .active {
+        color:              yellow;
+    }
+
+    #window {
+        position:           fixed;
+        left:               35%;
+        right:              35%;
+        width:              30%;
+        top:                35%;
+        background-color:   #AAAAAA;
+        padding-top:        1em;
+        z-index:            10;
+        border:             2px solid gray;
+    }
+
+    #window_content a {
+        padding-right:      1em;
+        padding-left:       1em;
+    }
+
+    #window iframe {
+        width:              100%;
+        border:             0px;
+        height:             250px;
+    }
+
+    #window_title {
+        position:           absolute;
+        top:                1px;
+        left:               1em;
+        font-weight:        bold;
+    }
+
+    .popup {
+        width:              30%;
+        font-size:          9pt;
+    }
+
+    .popup dt {
+        clear:              left;
+        float:              left;
+        padding-top:        3px;
+        white-space:        nowrap;
+        width:              6em;
+        font-weight:        bold;
+        text-align:         right;
+    }
+
+    .popup  dd {
+        margin-left:        6.5em;
+        padding-top:        3px;
+    }
