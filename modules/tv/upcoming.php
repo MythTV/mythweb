@@ -134,10 +134,12 @@
 
 // Sort the programs
     if (count($all_shows))
+    {
         sort_programs($all_shows, 'scheduled_sortby');
 
-    uksort($Groups, 'by_no_articles');
-    uksort($Program_Titles, 'by_no_articles');
+        uksort($Groups, 'by_no_articles');
+        uksort($Program_Titles, 'by_no_articles');
+    }
 
 // Load the class for this page
     require tmpl_dir.'upcoming.php';
