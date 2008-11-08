@@ -19,6 +19,7 @@
 "$1 hrs"
     $1 hrs
 "$1 is not responding."
+    $1 no está respondiendo.
 "$1 KB"
     $1 KB
 "$1 MB"
@@ -28,7 +29,9 @@
 "$1 mins"
     $1 mins
 "$1 month"
+    $1 mes
 "$1 months"
+    $1 meses
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 programas, usando $2 ($3) de $4 ($5 libre))
 "$1 recording"
@@ -36,6 +39,7 @@
 "$1 recordings"
     $1 grabaciones
 "$1 requests pending."
+    $1 solicitudes pendientes.
 "$1 Search"
     Búsqueda $1
 "$1 TB"
@@ -45,25 +49,38 @@
 "$1 wasted"
     $1 desperdiciado
 "$1 year"
+    $1 año
 "$1 years"
+    $1 años
 "%s Song (%s)"
+    %s Canción (%s)
 "%s Songs"
+    %s Canciones
 "%s Songs (%s)"
+    %s Canciones (%s)
 "Aborted"
+    Cancelado
 "Aborting"
+    Cancelando
 "Action"
     Acción
 "Activate"
     Activar
 "Active Screens"
+    Pantallas Activas
 "Add"
+    Agregar
 "Add Album to Current Playlist"
+    Agregar Album a Lista de Reproducción Actual
 "Add Mix"
 "Add Song to Current Playlist"
+    Agregar Canción a Lista de Reproducción Actual
 "add string"
     añadir cadena
 "Add this Playlist as a Subplaylist"
+    Agregar esta Lista de Reproducción como una Sublista
 "Add To Active Screens"
+    Agregar a Pantallas Activas
 "Additional Tables"
     Tablas adicionales
 "Admin Key"
@@ -74,31 +91,44 @@
 "Advanced Search"
     Búsqueda Avanzada
 "airdate"
-"Airdate"
     emisión
+"Airdate"
+    Emisión
 "Airtime"
     Horario
 "Album Listing"
+    Listado de álbumes
 "Album Tracks"
+    Pistas del Álbum
 "Albums"
+    Albumes
 "Albums with songs by %s"
+    Albumes con canciones de %s
 "All"
     Todos
 "All Albums"
+    Todos los Álbumes
 "All Categories"
+    Todas las Categorías
 "All Fields"
+    Todos los Campos
 "All Genres"
+    Todos los Estilos
 "All groups"
     Todos los grupos
 "All HDTV"
     Todas HDTV
 "All Hosts"
+    Todos los Hosts
 "All recordings"
     Todas las grabaciones
 "All Songs"
+    Todas las Canciones
 "ALLOCINETYPE"
 "An error occured while adding your playlist."
+    Un error ocurrió al intentar agregar su lista de reproducción
 "and"
+    y
 "Any"
     Cualquiera
 "Any Category"
@@ -108,18 +138,26 @@
 "Any Program Type"
     Cualquier Tipo de Programa
 "Append"
+    Agregar
 "Append to Current Playlist"
+    Agregar a Esta Lista de Reproducción
 "Are you sure you want to delete the following show?"
     ¿Está seguro de borrar el siguiente programa?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+    ¿Está seguro de querer BORRAR ESTA LISTA DE REPRODUCCIÓN GUARDADA?
 "Artist Listing"
+    Listado de Artistas
 "Artists"
+    Artistas
 "Artists Beginning with %s"
+    Artistas que comienzan con %s
 "ASX Stream"
 "Audio Bitrate"
+    Bitrate de Audio
 "Audio for Hearing Impaired"
 "Audio for Visually Impaired"
 "Auto Expire"
+    Auto Expirar
 "Auto-expire recordings"
     Autoexpirar grabaciones
 "Auto-flag commercials"
@@ -128,34 +166,48 @@
     Auto-recodificar
 "AVC/H.264"
 "Back"
+    Volver
 "Back Tab"
 "Back to the program listing"
     Volver al listado de programas
 "Back to the recorded programs"
+    Volver a los programas grabados
 "Back to the recording schedules"
     Volver a la programación
 "Backend Logs"
-    Logs Backend
+    Logs del Backend
 "Backend Status"
-    Estado backend
+    Estado del backend
 "Backspace"
 "Begin a New Search"
+    Comenzar una Nueva Búsqueda
 "brightness"
     brillo
 "Browse"
+    Buscar
 "Browse = no"
+    Buscar = no
 "Browse = yes"
+    Buscar = si
 "Browse all"
+    Buscar todos
 "Browse All Albums"
+    Buscar en todos los Albumes
 "Browse Music"
+     Buscar Música
 "Browse the Music Database"
+    Buscar la Base de Datos de Música
 "By Artist Beginning With"
+    Por Artista Que Comience En
 "By Genre"
+    Por Género
 "callsign"
 "Cancel"
+    Cancelar
 "Cancel this schedule."
     Cancelar programación
 "Cancelled"
+    Cancellado
 "Caps Lock"
 "Cast"
     Reparto
@@ -182,26 +234,35 @@
 "Channel Detail"
     Detalle Canal
 "Channel Info"
+    Información Canal
 "Channels"
+    Canales
 "channum"
     nºcanal
 "Check for duplicates in"
     Buscar duplicados en
 "Childrens Movies"
 "Choose Genre.."
+    Elegir Género
 "Choose Type"
+    Elegir Tipo
 "Click to disable Auto Expire"
+    Click para deshabilitar Auto Expiración
 "Click to enable Auto Expire"
+    Click para habilitar Auto Expiración
 "Click to View Playlist"
+    Click Para Ver Lista de Reproducción
 "Closed Captioning"
 "colour"
     color
 "Commands"
     Comandos
 "Commercials Flagged"
+    Comerciales Marcados
 "commfree"
     sin anuncios
 "Conflict"
+    Conflicto
 "Conflicts"
     Conflictos
 "Context"
@@ -211,7 +272,9 @@
 "Count"
     Contar
 "Create a New Playlist"
+    Crear una Nueva Lista de Reproducción
 "Create a Random Mix"
+    Crear una Mezcla Aleatoria
 "Create Schedule"
     Crear programación
 "Current Recording"
@@ -229,6 +292,7 @@
 "Data"
     Datos
 "Database"
+    Base de Datos
 "Database Health"
 "Date"
     Fecha
@@ -252,7 +316,9 @@
 "Delete and rerecord $1"
     Borrar y regrabar $1
 "Delete Forever"
+    Borrar para Siempre
 "DELETE this Saved Playlist"
+    BORRAR esta Lista de Reproducción Guardada
 "description"
     descripción
 "Description"
@@ -260,7 +326,9 @@
 "Destination"
     Destino
 "Details for: $1"
+    Detalles para: $1
 "Direct Download"
+    Descarga Directa
 "Directed by"
     Dirigido por
 "Display"
@@ -271,25 +339,30 @@
 "Don't record this program."
     No borrar este programa
 "Done, Unknown Status"
+    Terminado, Estado Desconocido
 "Down"
 "Download URL override"
 "Dup Method"
     Método duplicado
 "Duplicate"
+    Duplicado
 "Duplicate Check method"
     Método comprobación duplicados
 "Duplicates"
     Duplicados
 "Earlier"
+    Más Temprano
 "Earlier Showing"
 "Edit"
     Editar
 "Edit existing group"
+    Editar grupo existente
 "Edit MythWeb and some MythTV settings."
     Editar ajustes de MythWeb y algunos de MythTV
 "Edit Screen"
 "Edit settings for: $1"
 "Editing "
+    Editando 
 "Enable Video Playback"
 "End"
 "End Late"
