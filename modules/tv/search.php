@@ -66,7 +66,7 @@
 
 // Session defaults
     if (!is_array($_SESSION['search']['ctype']) || empty($_SESSION['search']['ctype']))
-        $_SESSION['search']['ctype'] = program::category_types();
+        $_SESSION['search']['ctype'] = Program::category_types();
     if (!isset($_SESSION['search']['stars_gt']) || !isset($_SESSION['search']['stars_lt'])) {
         $_SESSION['search']['stars_gt'] = 0;
         $_SESSION['search']['stars_lt'] = 1;
