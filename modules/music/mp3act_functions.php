@@ -251,17 +251,35 @@ function musicLookup($type, $itemid)
       break;
 
     case 'letter':
+      // Define the list of prefixes we wish to ignore (perhaps define them as database item(s) somewhere so users can extend them)
+      $prefixes = array ('a', 'an', 'the');
+
       if($itemid == "#")
       {
-        $query = 'SELECT * FROM music_artists '.
-          "WHERE artist_name REGEXP '^[0-9].*' ".
-          'ORDER BY artist_name';
+          $query = "SELECT artist_id, artist_name, " .
+                   "LOWER(CASE WHEN SUBSTRING_INDEX(artist_name, ' ', 1) IN ('" . implode("', '", $prefixes) . "') " .
+                   "THEN " .
+                   "CONCAT( SUBSTRING(artist_name, INSTR(artist_name , ' ') + 1), ' (', SUBSTRING_INDEX(artist_name, ' ', 1), ')' ) " .
+                   "ELSE artist_name END) " .
+                   "AS artist_name_sort " .
+                   "FROM music_artists " .
+                   "GROUP BY artist_name_sort " .
+                   "HAVING artist_name REGEXP '^[0-9].*' " .
+                   "ORDER BY artist_name_sort";
       }
       else
       {
-        $query = 'SELECT * FROM music_artists '.
-          'WHERE artist_name LIKE \''.mysql_real_escape_string($itemid.'%').'\' '.
-          'ORDER BY artist_name';
+          $query = "SELECT artist_id, artist_name, " .
+                   "LOWER(CASE WHEN SUBSTRING_INDEX(artist_name, ' ', 1) IN ('" . implode("', '", $prefixes) . "') " .
+                   "THEN " .
+                   "CONCAT( SUBSTRING(artist_name, INSTR(artist_name , ' ') + 1), ' (', SUBSTRING_INDEX(artist_name, ' ', 1), ')' ) " .
+                   "ELSE artist_name END) " .
+                   "AS artist_name_sort " .
+                   "FROM music_artists " .
+                   "GROUP BY artist_name_sort " .
+                   "HAVING artist_name_sort " .
+                   "LIKE '" . mysql_real_escape_string($itemid.'%') . "' " .
+                   "ORDER BY artist_name_sort";
       }
       $result = mysql_query($query);
       if (!$result)
