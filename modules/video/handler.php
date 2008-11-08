@@ -225,7 +225,7 @@
 
     if (isset($_SESSION['video']['path'])) {
         $escaped_path = str_replace('(', '\\(',$_SESSION['video']['path']);
-	$escaped_path = str_replace(')', '\\)',$_SESSION['video']['path']);
+    	$escaped_path = str_replace(')', '\\)', $escaped_path);
         $where .= ' AND videometadata.filename RLIKE '.$db->escape($escaped_path.'[/]*[^/]*$');
     }
 // Deal with the parental locks
