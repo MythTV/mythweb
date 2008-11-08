@@ -29,14 +29,14 @@
 
             <h3><?php echo t('Advanced Options') ?>:</h3>
             (<?php
-                echo '<a onclick="toggle_advanced(false)" id="hide_advanced"';
+                echo '<a href="#" onclick="toggle_advanced(false)" id="hide_advanced"';
                 if (!$_SESSION['tv']['show_advanced_schedule'])
                     echo ' style="display: none"';
                 echo '>', t('Hide'), '</a>',
                      '<a onclick="toggle_advanced(true)"  id="show_advanced"';
                 if ($_SESSION['tv']['show_advanced_schedule'])
                     echo ' style="display: none"';
-                echo '>', t('Show'), '</a>';
+                echo '>', t('Display'), '</a>';
             ?>)
 
             <div id="schedule_advanced_off"<?php
