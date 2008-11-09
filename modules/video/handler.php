@@ -204,7 +204,7 @@
     if( isset($_REQUEST['browse']) )
         $_SESSION['video']['browse'] = $_REQUEST['browse'];
 
-    if( isset($_SESSION['video']['browse']) ) { 
+    if( isset($_SESSION['video']['browse']) ) {
         $Filter_Browse = $_SESSION['video']['browse'];
 	if( $Filter_Browse != -1)
             $where .= ' AND videometadata.browse='.$db->escape($Filter_Browse);
@@ -226,7 +226,7 @@
     if (isset($_SESSION['video']['path'])) {
         $escaped_path = str_replace('(', '\\(',$_SESSION['video']['path']);
     	$escaped_path = str_replace(')', '\\)', $escaped_path);
-        $where .= ' AND videometadata.filename RLIKE '.$db->escape($escaped_path.'[/]*[^/]*$');
+        $where .= ' AND videometadata.filename RLIKE '.$db->escape($db->escape_regex($escaped_path).'[/]*[^/]*$');
     }
 // Deal with the parental locks
     if (isset($_REQUEST['VideoAdminPassword']))

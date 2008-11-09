@@ -88,6 +88,24 @@ class Database_mysqlicompat extends Database {
     }
 
 /**
+ * Changes the regexp-special square brackets used for character class/range
+ * operations to the "match any single character" operator, '.'.  This function
+ * does not do database-special character escapes.
+ *
+ * @param string $string    string to escape
+ *
+ * @return string           escaped string
+/**/
+    function escape_regex($string) {
+    // Null?
+        if (is_null($string))
+            return 'NULL';
+    // Just a string
+        $escaped_string = str_replace('[', '.', $string);
+        return str_replace(']', '.', $escaped_string);
+    }
+
+/**
  *  Returns an un-executed Database_Query_mysqlicompat object
  *
  *  @param string $query    The query string
