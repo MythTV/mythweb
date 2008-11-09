@@ -214,6 +214,7 @@
 "Create a Random Mix"
 "Create Schedule"
     Crear programació
+"Current MythWeb Template"
 "Current Recording"
 "Current recordings"
     Enregistraments actuals
@@ -240,6 +241,7 @@
 "Default"
     Por defecte
 "Default MythVideo View"
+"Default MythWeb Template"
 "Delete"
     Esborrar
 "delete"
@@ -534,8 +536,6 @@
 "MythWeb Session"
 "MythWeb Skin"
     Pell MythWeb
-"MythWeb Template"
-    Plantilla MythWeb
 "MythWeb Weather."
     Temps MythWeb
 "Name"

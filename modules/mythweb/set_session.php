@@ -15,34 +15,33 @@
 
 // Save?
     if ($_POST['save']) {
-        $redirect = false;
     // Save the template
-        if (isset($_POST['tmpl']))                 $_SESSION['tmpl']                 = $_POST['tmpl'];
-    // Save the skin
-        if (isset($_POST['skin']) && $_POST['skin'] != $_SESSION['skin']) {
-            $_SESSION['skin'] = $_POST['skin'];
-            $redirect = true;
-        }
-    // Change language?  Make sure we load the new translation file, too.
-        if ($_POST['language'] && $_POST['language'] != $_SESSION['language']) {
-            $_SESSION['language'] = $_POST['language'];
-            $redirect = true;
-        }
+        if (isset($_POST['tmpl']))
+            setcookie('mythweb_tmpl', $_POST['tmpl'], 2147483647, root);
 
-    // Skin change requires a redirect because certain constants have already been defined.
-        if ($redirect)
-            redirect_browser(root.module.'/'.$Path[1].'/'.$Path[2]);
+        if (isset($_POST['tmpl_default']))
+            $_SESSION['tmpl'] = $_POST['tmpl_default'];
+
+    // Save the skin
+        if (isset($_POST['skin']) && $_POST['skin'] != $_SESSION['skin'])
+            $_SESSION['skin'] = $_POST['skin'];
+
+    // Change language?  Make sure we load the new translation file, too.
+        if ($_POST['language'] && $_POST['language'] != $_SESSION['language'])
+            $_SESSION['language'] = $_POST['language'];
+
+        redirect_browser(root.module.'/'.$Path[1].'/'.$Path[2]);
     }
 
 /**
  * Displays a <select> of the available templates
 /**/
-    function template_select() {
-        echo '<select name="tmpl">';
+    function template_select($name = 'tmpl', $selected = null) {
+        echo '<select name="'.$name.'">';
         foreach (array('default', 'lite') as $tmpl) {
         // Print the option
             echo '<option value="'.html_entities($tmpl).'"';
-            if ($_SESSION['tmpl'] == $tmpl)
+            if ($selected == $tmpl)
                 echo ' SELECTED';
             echo '>'.html_entities(str_replace('_', ' ', $tmpl)).'</option>';
         }
@@ -83,4 +82,3 @@
         }
         echo '</select>';
     }
-

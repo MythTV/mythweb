@@ -210,6 +210,7 @@
 "Create a Random Mix"
 "Create Schedule"
     Planlæg
+"Current MythWeb Template"
 "Current Recording"
 "Current recordings"
     Nuværende optagelser
@@ -236,6 +237,7 @@
 "Default"
     Standard
 "Default MythVideo View"
+"Default MythWeb Template"
 "Delete"
     Slet
 "delete"
@@ -514,7 +516,6 @@
     MythWeb Globale standarder
 "MythWeb Session"
 "MythWeb Skin"
-"MythWeb Template"
 "MythWeb Weather."
     MythWeb Vejrudsigt.
 "Name"

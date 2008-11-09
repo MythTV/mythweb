@@ -277,6 +277,7 @@
     Ustvari naključni mix
 "Create Schedule"
     Ustvari plan snemanja
+"Current MythWeb Template"
 "Current Recording"
     Trenutni posnetek
 "Current recordings"
@@ -310,6 +311,7 @@
     Privzeti
 "Default MythVideo View"
     Privzeti prikaz MythVidea
+"Default MythWeb Template"
 "Delete"
     Odstrani
 "delete"
@@ -677,8 +679,6 @@
     MythWeb seja
 "MythWeb Skin"
     MythWeb preobleka
-"MythWeb Template"
-    MythWeb vzgled
 "MythWeb Weather."
     MythWeb vreme.
 "Name"

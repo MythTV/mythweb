@@ -194,7 +194,7 @@
 "Browse All Albums"
     Buscar en todos los Albumes
 "Browse Music"
-     Buscar Música
+    Buscar Música
 "Browse the Music Database"
     Buscar la Base de Datos de Música
 "By Artist Beginning With"
@@ -277,6 +277,7 @@
     Crear una Mezcla Aleatoria
 "Create Schedule"
     Crear programación
+"Current MythWeb Template"
 "Current Recording"
 "Current recordings"
     Grabaciones actuales
@@ -304,6 +305,7 @@
 "Default"
     Por defecto
 "Default MythVideo View"
+"Default MythWeb Template"
 "Delete"
     Borrar
 "delete"
@@ -362,7 +364,7 @@
 "Edit Screen"
 "Edit settings for: $1"
 "Editing "
-    Editando 
+    Editando
 "Enable Video Playback"
 "End"
 "End Late"
@@ -605,8 +607,6 @@
 "MythWeb Session"
 "MythWeb Skin"
     Piel MythWeb
-"MythWeb Template"
-    Plantilla MythWeb
 "MythWeb Weather."
     Tiempo MythWeb
 "Name"

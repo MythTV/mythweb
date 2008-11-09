@@ -197,6 +197,7 @@
 "Create a Random Mix"
 "Create Schedule"
     Utwórz zadanie
+"Current MythWeb Template"
 "Current Recording"
 "Current recordings"
     Bieżące Nagrania
@@ -221,6 +222,7 @@
 "Default"
     Domyślny
 "Default MythVideo View"
+"Default MythWeb Template"
 "Delete"
     Usuń
 "delete"
@@ -456,7 +458,6 @@
 "MythWeb Session"
 "MythWeb Skin"
     Wygląd MythWeb
-"MythWeb Template"
 "MythWeb Weather."
 "Name"
     Nazwa

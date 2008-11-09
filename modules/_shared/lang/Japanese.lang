@@ -204,6 +204,7 @@
 "Create a Random Mix"
 "Create Schedule"
     予約作成
+"Current MythWeb Template"
 "Current Recording"
 "Current recordings"
     現在の録画
@@ -229,6 +230,7 @@
 "Default"
     通常設定
 "Default MythVideo View"
+"Default MythWeb Template"
 "Delete"
     削除
 "delete"
@@ -515,8 +517,6 @@
 "MythWeb Session"
 "MythWeb Skin"
     MythWebスキン
-"MythWeb Template"
-    MythWebテンプレート
 "MythWeb Weather."
     MythWeb 天気
 "Name"

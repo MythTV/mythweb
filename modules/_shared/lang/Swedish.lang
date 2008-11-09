@@ -275,6 +275,7 @@
     Skapa slumpvis mix
 "Create Schedule"
     Schemalägg
+"Current MythWeb Template"
 "Current Recording"
 "Current recordings"
     Nuvarande inspelningar
@@ -302,6 +303,7 @@
 "Default"
     Standard
 "Default MythVideo View"
+"Default MythWeb Template"
 "Delete"
     Radera
 "delete"
@@ -645,8 +647,6 @@
     MythWeb-session
 "MythWeb Skin"
     MythWeb-skinn
-"MythWeb Template"
-    MythWeb-mall
 "MythWeb Weather."
     MythWeb väder.
 "Name"

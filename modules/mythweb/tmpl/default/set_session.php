@@ -18,8 +18,11 @@
 
 <table border="0" cellspacing="0" cellpadding="0">
 <tr class="x-sep">
-    <th><?php echo t('MythWeb Template') ?>:</th>
-    <td><?php template_select() ?></td>
+    <th><?php echo t('Default MythWeb Template') ?>:</th>
+    <td><?php template_select('tmpl_default', $_SESSION['tmpl']) ?></td>
+</tr><tr class="x-sep">
+    <th><?php echo t('Current MythWeb Template') ?>:</th>
+    <td><?php template_select('tmpl', tmpl) ?></td>
 </tr><tr class="x-sep">
     <th><?php echo t('MythWeb Skin') ?>:</th>
     <td><?php skin_select() ?></td>
@@ -33,4 +36,3 @@
 </table>
 
 </form>
-

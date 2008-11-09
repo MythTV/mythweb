@@ -13,45 +13,52 @@
  *
 /**/
 
-// Detect different types of browsers and set the theme accordingly.
-    if (isMobileUser()) {
-    // Browser is mobile but does it accept HTML?
-    // @TODO Need to fail more gracefully...
-        $_SESSION['tmpl'] = 'wap';
-    // Make sure the skin is set to the appropriate phone-template type
-        $_SESSION['skin'] = $_SESSION['tmpl'];
-        define('skin', $_SESSION['skin']);
+/*  So the order we do things is the following:
+   If the user is attempting to reset the template, use that value
+   Else the cookie is set, use it's value
+   Else try to auto-detect mobile or non-js/image browser
+   If that fails, use the stored session default
+*/
+
+    $tmpl = $_SESSION['tmpl'];
+    $skin = $_SESSION['skin'];
+
+    if (isset($_REQUEST['RESET_TMPL']))
+        $tmpl = _or($_REQUEST['RESET_TMPL'], 'default');
+    elseif (isset($_REQUEST['RESET_TEMPLATE']))
+        $tmpl = _or($_REQUEST['RESET_TEMPLATE'], 'default');
+    elseif (isset($_COOKIE['mythweb_tmpl']))
+        $tmpl = $_COOKIE['mythweb_tmpl'];
+    elseif (isMobileUser()) {
+        $tmpl = 'wap';
+        $skin = 'wap';
     }
-// Force the "lite" template
-    elseif ($_REQUEST['RESET_TMPL'] == 'lite' || preg_match('/^(Lynx|ELinks)/i', $_SERVER['HTTP_USER_AGENT']))
-        $_SESSION['tmpl'] = 'lite';
-// Reset the template?
-    elseif ($_SESSION['tmpl'] == 'wap' || $_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
-        $_SESSION['tmpl'] = 'default';
-// If the requested template is missing the welcome file, use the default template
-    elseif (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php'))
-        $_SESSION['tmpl'] = 'default';
+    elseif (preg_match('/^(Lynx|ELinks)/i', $_SERVER['HTTP_USER_AGENT']))
+        $tmpl = 'lite';
 
-// Deal with people who use the same login for mobile and non-mobile, and might
-// have a mobile skin cached.
-    if (in_array($_SESSION['skin'], array('wap')))
-        $_SESSION['skin'] = 'default';
-// Is there a preferred skin?
-    elseif (file_exists('skins/'.$_SESSION['skin'].'/img/') && !$_REQUEST['RESET_SKIN'])
-        define('skin', $_SESSION['skin']);
-    else
-        define('skin', 'default');
-    $_SESSION['skin'] = skin;
+    if (isset($_REQUEST['RESET_SKIN']))
+        $skin = _or($_REQUEST['RESET_SKIN'], 'default');
 
-// Set up some handy constants
+// Verify that the paths are valid
+    if (!file_exists(modules_path.'/_shared/tmpl/'.$tmpl.'/welcome.php'))
+        $tmpl = 'default';
+
+    if (!file_exists('skins/'.$skin.'/img/'))
+        $skin = 'default';
+
+// Store the template in a cookie
+    setcookie('mythweb_tmpl', $tmpl, 2147483647, root);
+
+// We do want to over-ride the template for some paths.
+// We do this after setting because certain templates
+// Should never be stored as the normal end-user view
+    if ($Path[0] == 'rss' || $Path[0] == 'ical')
+        $tmpl = $Path[0];
+
+// And now we define the paths
+    define('skin', $skin);
     define('skin_dir', 'skins/'.skin);
     define('skin_url', root.skin_dir.'/');
-// We override the template for some templates we never want in the session
-    if ($Path[0] == 'rss')
-        define('tmpl',     'rss');
-    elseif ($Path[0] == 'ical')
-        define('tmpl',     'ical');
-    else
-        define('tmpl',     $_SESSION['tmpl']);
 
+    define('tmpl', $tmpl);
     define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');

@@ -163,7 +163,7 @@
 "Auto Expire"
     Automaattinen vanheneminen
 "Auto-expire recordings"
-    Nauhoitusten aut. vanheneminen 
+    Nauhoitusten aut. vanheneminen
 "Auto-flag commercials"
     Aut. mainosten merkkaus
 "Auto-transcode"
@@ -245,7 +245,7 @@
 "Channel Info"
     Kanavatiedot
 "Channels"
-   Kanavat
+    Kanavat
 "channum"
     Kanava
 "Check for duplicates in"
@@ -288,6 +288,7 @@
     Luo uusi Satunnainen miksaus
 "Create Schedule"
     Ajoita nauhoitus
+"Current MythWeb Template"
 "Current Recording"
     Nykyinen nauhoitus
 "Current recordings"
@@ -322,6 +323,7 @@
     Oletus
 "Default MythVideo View"
     MythVideon oletusnäkymä
+"Default MythWeb Template"
 "Delete"
     Poista
 "delete"
@@ -429,15 +431,15 @@
 "File Size"
     Tiedostokoko
 "film"
-   elokuva
+    elokuva
 "Filter"
-   Filtteri
+    Filtteri
 "Filters"
-   Filtterit
+    Filtterit
 "Find Date & Time Options"
-   Etsi pävämäärä- ja aikavalinnat
+    Etsi pävämäärä- ja aikavalinnat
 "Find Day"
-   Etsi päivä
+    Etsi päivä
 "Find other showings of this program"
     Etsi muita ohjelman lähetyksiä
 "Find showings of this program"
@@ -501,7 +503,7 @@
 "Has Cutlist"
     Sisältää leikkauslistan
 "HD"
-   HD
+    HD
 "HDTV"
     Tarkkapiirto
 "Height"
@@ -543,22 +545,21 @@
 "info: dont record"
     Älä nauhoita
 "info: flvplayer"
-        <p>
-        Flash videon toisto on tällä hetkellä konseptinkokeiluvaiheessa ja tulisi
-        pitää <b>ERITTÄIN-</b> kokeilullisena , jonka takia se on oletuksena pois
-        päältä.
-        </p>
-        <p>
-        Ohjelmisto tällä hetkellä olettaa, että ffmpeg on asennettu ja koostettu
-        mp3 -tuen kanssa, ja, että webserverin userid:llä on pääsy 
-        nauhoitustiedostoihin. Se luultavasti ei toimi Nupplevideo -tiedostojen kanssa
-        ja loppujan lopuksi, se ei mahdollisesti toimi ollenkaan (tai pahempaa).
-        </p>
-        <p>
-        Mahdollista tämä valinta omalla vastuullasi ja äläkä odota kovin paljon
-        virallista apua ennen kuin ohjelmisto siirtyy pois kokeiluasteelta
-        </p>
-        
+    <p>
+    Flash videon toisto on tällä hetkellä konseptinkokeiluvaiheessa ja tulisi
+    pitää <b>ERITTÄIN-</b> kokeilullisena , jonka takia se on oletuksena pois
+    päältä.
+    </p>
+    <p>
+    Ohjelmisto tällä hetkellä olettaa, että ffmpeg on asennettu ja koostettu
+    mp3 -tuen kanssa, ja, että webserverin userid:llä on pääsy 
+    nauhoitustiedostoihin. Se luultavasti ei toimi Nupplevideo -tiedostojen kanssa
+    ja loppujan lopuksi, se ei mahdollisesti toimi ollenkaan (tai pahempaa).
+    </p>
+    <p>
+    Mahdollista tämä valinta omalla vastuullasi ja äläkä odota kovin paljon
+    virallista apua ennen kuin ohjelmisto siirtyy pois kokeiluasteelta
+    </p>
 "info: hidden advanced schedule"
     Edistyneet valinnat ovat tällä hetkellä piilotettu
 "info: record this"
@@ -651,8 +652,7 @@
     Maksimi tähtiluokitus elokuville
 "minutes"
     minuuttia
-"Missing Cover"'
-    Kansikuva puuttuu
+"Missing Cover"
 "Monday"
     Maanantai
 "Mono"
@@ -660,19 +660,19 @@
 "More"
     Lisää
 "more"
-   lisää
+    lisää
 "Move Item Down in Playlist"
-   Siirrä kohde alaspäin soittolistassa
+    Siirrä kohde alaspäin soittolistassa
 "Move Item Up in Playlist"
-   Siirrä kohde ylöspäin Soittolistassa
+    Siirrä kohde ylöspäin Soittolistassa
 "movie"
-   elokuva
+    elokuva
 "Movies"
-   Elokuvat
+    Elokuvat
 "Movies, 3&frac12; Stars or more"
-   Elokuvat, 3&frac12; Tähteä tai enemmän
+    Elokuvat, 3&frac12; Tähteä tai enemmän
 "Movies, Stinkers (2 Stars or less)"
-   Elokuvat, Surkeat (2 tähteaä tai vähemmän)
+    Elokuvat, Surkeat (2 tähteaä tai vähemmän)
 "Music"
     Musiikki
 "Music Specials"
@@ -708,8 +708,6 @@
     MythWeb istunto
 "MythWeb Skin"
     MythWebin kuoret
-"MythWeb Template"
-    MythWeb templatet
 "MythWeb Weather."
     MythWeb Sääennuste.
 "Name"
@@ -733,7 +731,7 @@
 "NO DATA"
     EI DATAA
 "No Frontends allow remote control."
-   Yksikään käyttöliittymä ei salli etäkäyttöä
+    Yksikään käyttöliittymä ei salli etäkäyttöä
 "No matches found"
     Ei vastaavuuksia
 "No matching programs found."
@@ -743,11 +741,11 @@
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
 "No. of recordings to keep"
-   Säilytettävien nauhoitusten lkm
+    Säilytettävien nauhoitusten lkm
 "Non-Music Specials"
-   Ei-musiikilliset erikoiset
+    Ei-musiikilliset erikoiset
 "Non-Series HDTV"
-   Ei-sarja HDTV
+    Ei-sarja HDTV
 "None"
     Ei mikään
 "Notes"
@@ -1388,8 +1386,7 @@
 "welcome: status"
     Näyttää järjestelmän tila -sivun.
 "welcome: tv"
-    Katso mitä televisiosta tulee, ajasta nauhoituksia ja hallitse jo 
-tallennettuja nauhoituksia. Ole hyvä ja tutustu seuraaviin valintoihin:
+    Katso mitä televisiosta tulee, ajasta nauhoituksia ja hallitse jo
 "welcome: video"
     Hallitse videokokoelmaasi.
 "welcome: weather"
