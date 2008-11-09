@@ -33,7 +33,7 @@
     $where .= ' AND oldrecorded.recstatus = -3';
 
     $limit = 'LIMIT 10';
-    if (is_int($_REQUEST['count_dropdown']))
+    if (is_numeric($_REQUEST['count_dropdown']))
     	$limit = 'LIMIT '.$_REQUEST['count_dropdown'];
     if ($_REQUEST['count_dropdown'] == 'all')
     	$limit = '';
