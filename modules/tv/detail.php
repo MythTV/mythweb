@@ -236,6 +236,8 @@
                 $schedule->save($type);
             }
         }
+    // Redirect back to the page again, but without the query string, so reloads are cleaner
+        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
     elseif ($_REQUEST['forget_old']) {
         $program->rec_forget_old();
@@ -342,4 +344,3 @@
 
 // Exit
     exit;
-
