@@ -118,16 +118,17 @@
                    ?></select></dd>
                 <dt><?php echo t('Check for duplicates in') ?>: </dt>
                 <dd><select name="dupin"><?php
+			$allOn = ($schedule->dupin & dupsin_all )== dupsin_all;
                         echo '<option value="', dupsin_all, '"';
-                        if ($schedule->dupin & dupsin_all || $schedule->dupin == 0)
+                        if ($allOn || $schedule->dupin == 0)
                             echo ' SELECTED';
                         echo '>' . t('All recordings') . '</option>';
                         echo '<option value="', dupsin_recorded, '"';
-                        if (!($schedule->dupin & dupsin_all) && $schedule->dupin & dupsin_recorded)
+                        if (!($allOn) && $schedule->dupin & dupsin_recorded)
                             echo ' SELECTED';
                         echo '>' . t('Current recordings') . '</option>';
                         echo '<option value="', dupsin_oldrecorded,'"';
-                        if (!($schedule->dupin & dupsin_all) && $schedule->dupin & dupsin_oldrecorded)
+                        if (!($allOn) && $schedule->dupin & dupsin_oldrecorded)
                             echo ' SELECTED';
                         echo '>' . t('Previous recordings') . '</option>';
                    ?></select></dd>
