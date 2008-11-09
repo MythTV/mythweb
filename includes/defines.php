@@ -15,7 +15,10 @@
 
 // Figure out the root path for this mythweb installation.  We need this in order
 // to cleanly reference things like the /js directory from subpaths.
-    define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));
+    if (isset($_SERVER['ORIG_SCRIPT_NAME']))
+        define('root', str_replace('//', '/', dirname($_SERVER['ORIG_SCRIPT_NAME']).'/'));
+    else
+        define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));
 
 // Several sections of this program require the current hostname
     $uname = posix_uname();
@@ -35,22 +38,24 @@
  * @global  array   $GLOBALS['Path']
  * @name    $Path
 /**/
-    $Path = explode('/', preg_replace('/^\/+/',   '',    // Remove leading slashes
-                         preg_replace('/[\s]+/', ' ',    // Convert extra whitespace
-                                                         // Grab the path info from various different places.
-                             array_key_exists('PATH_INFO', $_SERVER)
-                             && $_SERVER['PATH_INFO']
-                                ? $_SERVER['PATH_INFO']
-                                : (array_key_exists('PATH_INFO', $_ENV)
-                                   && $_ENV['PATH_INFO']
-                                    ? $_ENV['PATH_INFO']
-                                    : (array_key_exists('PATH_INFO', $_GET)
-                                       ? $_GET['PATH_INFO']
-                                       : ''
-                                      )
-                                  )
-                         ))
-                   );
+    $Path = '';
+
+    if (isset($_SERVER['ORIG_PATH_INFO']))
+        $Path = $_SERVER['ORIG_PATH_INFO'];
+    elseif (isset($_SERVER['PATH_INFO']))
+        $Path = $_SERVER['PATH_INFO'];
+    elseif (isset($_ENV['PATH_INFO']))
+        $Path = $_ENV['PATH_INFO'];
+    elseif (isset($_GET['PATH_INFO']))
+        $Path = $_GET['PATH_INFO'];
+
+// Convert extra whitespace
+    $Path = preg_replace('/[\s]+/', ' ', $Path);
+
+// Remove leading slashes
+    $Path = preg_replace('/^\/+/', '', $Path);
+
+    $Path = explode('/', $Path);
 
 // Find the modules path
     $path = dirname(dirname(find_in_path('modules/tv/init.php')));
