@@ -76,4 +76,4 @@
 
     define('http_host', isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']);
 
-    define('root_url', ($_SERVER['HTTPS'] == 'on' ? 'https://' : 'http://' ).http_host.':'.$_SERVER['SERVER_PORT'].root);
+    define('root_url', ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://' ).http_host.':'.$_SERVER['SERVER_PORT'].root);
