@@ -26,7 +26,7 @@
     elseif ($_REQUEST['RESET_TMPL'] == 'lite' || preg_match('/^(Lynx|ELinks)/i', $_SERVER['HTTP_USER_AGENT']))
         $_SESSION['tmpl'] = 'lite';
 // Reset the template?
-    elseif ($_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
+    elseif ($_SESSION['tmpl'] == 'wap' || $_REQUEST['RESET_TMPL'] || $_REQUEST['RESET_TEMPLATE'])
         $_SESSION['tmpl'] = 'default';
 // If the requested template is missing the welcome file, use the default template
     elseif (!file_exists(modules_path.'/_shared/tmpl/'.$_SESSION['tmpl'].'/welcome.php'))
