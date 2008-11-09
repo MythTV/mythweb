@@ -318,7 +318,12 @@
 
     // Search!
         if (!empty($query))
+            $tmpdate = strtotime($_SESSION['search']['starttime']);
+	    if ($tmpdate == false) {
             $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
+	    } else {
+              $Results =& load_all_program_data($tmpdate, strtotime('+1 month'), NULL, false, $query);
+	    }
 
     }
 
