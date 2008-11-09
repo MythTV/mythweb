@@ -898,4 +898,16 @@ class Program {
         return $cache;
     }
 
+/**
+ * Stop recording the program is we are currently recording...
+ *
+ * @return bool did we actually stop recording?
+/**/
+    public function stopRecording() {
+        if ($this->recstatus != 'Recording')
+            return false;
+        backend_command(array('STOP_RECORDING', $prog->backend_row(), '0'));
+        return true;
+    }
+
 }

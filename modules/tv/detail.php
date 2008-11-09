@@ -186,6 +186,9 @@
                 elseif ($schedule && $schedule->recordid) {
                 // Delete the schedule
                     $schedule->delete();
+                // Try to cancel the currently recording program if we can
+                    if ($program)
+                        $program->stopRecording();
                 // Deleted a schedule but not editing a specific program?  Redirect back to the schedule list
                     if (!$program) {
                         add_warning(t('The requested recording schedule has been deleted.'));
