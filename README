@@ -146,6 +146,12 @@ A: There is a bug in the Linux CIFS driver that is triggered by Apache when
         EnableSendfile Off
     See http://httpd.apache.org/docs/2.2/mod/core.html#enablesendfile for info.
 
+Q: MythWeb complains about "Warning: Unknown Programme" after Daylight Savings
+    Time has started/finished.
+A: PHP may not have determined your local timezone correctly. Read the PHP 
+    section of MythWeb's INSTALL file to find out how to correctly configure 
+    your timezone in PHP.
+
 Q: Why is my MythWeb install locked?
 A: Given the absolutely huge number of open mythweb installs, we have added in
     a automatic lockdown feature when we detect a bot or the like. This is to
