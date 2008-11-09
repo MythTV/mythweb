@@ -172,7 +172,8 @@
 
     function set_php_timezone_from_backend($host, $port) {
         $response = explode(backend_sep, backend_command('QUERY_TIME_ZONE', $host, $port));
-        if (!date_default_timezone_set($response[0]))
+        $timezone = str_replace(' ', '_', $response[0]);
+        if (!@date_default_timezone_set($timezone))
             trigger_error('Failed to set php timezone to '.$response[0]);
     }
 
