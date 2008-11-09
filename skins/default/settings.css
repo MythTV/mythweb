@@ -59,6 +59,7 @@
         border-bottom:  1px solid #9090B0;
         height:         2.25em;
         vertical-align: bottom;
+        min-width:      60%;
     }
 
     #settings .x-sections ul {
@@ -140,4 +141,3 @@
     #settings .x-content tr.x-sep th, #settings .x-content tr.x-sep td {
         border-bottom:      1px solid #304943;
     }
-
