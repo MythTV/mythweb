@@ -33,6 +33,11 @@
     elsif ($ENV{'REQUEST_URI'} =~ /\.flv$/i) {
         require "modules/$Path[0]/stream_flv.pl";
     }
+# Mpeg4?
+    elsif ($ENV{'REQUEST_URI'} =~ /\.mp4$/i) {
+        require "modules/$Path[0]/stream_mp4.pl";
+    }
+# Raw file?
     else {
         require "modules/$Path[0]/stream_raw.pl";
     }
