@@ -159,6 +159,7 @@
 "Caps Lock"
 "Cast"
     Repertori
+"Cast Information"
 "category"
     categoria
 "Category"
@@ -314,7 +315,9 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Productor exec.
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
     mida de l'arxiu
 "film"
@@ -463,6 +466,7 @@
     Duració
 "Length (min)"
     Duració (min)
+"Links"
 "Listing &quot;Jump to&quot;"
     Llistat &quot;Saltar a&quot;
 "Listing Time Key"
@@ -613,6 +617,7 @@
     Cercar persones
 "Percent of time spent recording"
 "Play"
+"Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -660,8 +665,10 @@
     perfil
 "Program Detail"
     Informació del programa
+"Program Flags"
 "Program ID"
     ID programa
+"Program Information"
 "Program Listing"
     Llista de programes
 "Program Type"
@@ -692,6 +699,7 @@
 "Recording Details"
 "Recording Group"
     Grup d'enregistrament
+"Recording Groups"
 "Recording Options"
     Opcions d'enregistrament
 "Recording Priority"
@@ -702,6 +710,7 @@
     Programacions
 "Recording Statistics"
     Estadístiques d'enregistraments
+"Recording Titles"
 "recpriority"
     prioritat
 "recstatus: cancelled"
@@ -847,6 +856,7 @@
     Cercar tipus
 "Searches"
     Recerques
+"Series ID"
 "Server Statistics"
 "Set Host"
     Ajustar Host
@@ -976,6 +986,7 @@
     TV
 "TV functions, including recorded programs."
     Funcions TV, incloent programes enregistrats
+"TV Submenu"
 "TV.com"
 "type"
     tipus
@@ -1045,6 +1056,7 @@
     visible
 "Visit $1"
     Visite $1
+"Watch on iPod/iPhone"
 "Watched"
 "Weather"
     Tiempo

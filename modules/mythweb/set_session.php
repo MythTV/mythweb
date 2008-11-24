@@ -38,7 +38,7 @@
 /**/
     function template_select($name = 'tmpl', $selected = null) {
         echo '<select name="'.$name.'">';
-        foreach (array('default', 'lite') as $tmpl) {
+        foreach (array('default', 'lite', 'iPod') as $tmpl) {
         // Print the option
             echo '<option value="'.html_entities($tmpl).'"';
             if ($selected == $tmpl)

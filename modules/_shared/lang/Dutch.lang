@@ -153,6 +153,7 @@
 "Caps Lock"
 "Cast"
     Acteurs
+"Cast Information"
 "category"
     categorie
 "Category"
@@ -303,7 +304,9 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Uitv. Producent
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
     bestandsgrootte
 "film"
@@ -447,6 +450,7 @@
     Duur
 "Length (min)"
     Duur (min)
+"Links"
 "Listing &quot;Jump to&quot;"
     Gids &quot;Ga naar&quot;
 "Listing Time Key"
@@ -580,6 +584,7 @@
     Personen zoeken
 "Percent of time spent recording"
 "Play"
+"Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -625,8 +630,10 @@
     profiel
 "Program Detail"
     Programmadetails
+"Program Flags"
 "Program ID"
     Programma ID
+"Program Information"
 "Program Listing"
     Programmalijst
 "Program Type"
@@ -657,6 +664,7 @@
 "Recording Details"
 "Recording Group"
     Opname Groep
+"Recording Groups"
 "Recording Options"
     Opname Opties
 "Recording Priority"
@@ -666,6 +674,7 @@
 "Recording Schedules"
     Opnameschema
 "Recording Statistics"
+"Recording Titles"
 "recpriority"
     opnameprioriteit
 "recstatus: cancelled"
@@ -809,6 +818,7 @@
     Type zoeken
 "Searches"
     Zoekopdrachten
+"Series ID"
 "Server Statistics"
 "Set Host"
     Host instellen
@@ -931,6 +941,7 @@
     TV
 "TV functions, including recorded programs."
     TV functies, inclusief opgenomen programma's
+"TV Submenu"
 "TV.com"
     TV.com
 "type"
@@ -999,6 +1010,7 @@
 "visible"
     zichtbaar
 "Visit $1"
+"Watch on iPod/iPhone"
 "Watched"
 "Weather"
     Weer

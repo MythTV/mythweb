@@ -153,6 +153,7 @@
 "Caps Lock"
 "Cast"
     キャスト
+"Cast Information"
 "category"
     カテゴリー
 "Category"
@@ -303,7 +304,9 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     製作責任者
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
     ファイルサイズ
 "film"
@@ -447,6 +450,7 @@
     時間
 "Length (min)"
     時間 (分)
+"Links"
 "Listing &quot;Jump to&quot;"
     一覧 &quot;移動&quot;
 "Listing Time Key"
@@ -589,6 +593,7 @@
     ピープルサーチ
 "Percent of time spent recording"
 "Play"
+"Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -636,8 +641,10 @@
     プロファイル
 "Program Detail"
     番組詳細
+"Program Flags"
 "Program ID"
     番組ID
+"Program Information"
 "Program Listing"
     番組表
 "Program Type"
@@ -668,6 +675,7 @@
 "Recording Details"
 "Recording Group"
     録画グループ
+"Recording Groups"
 "Recording Options"
     録画オプション
 "Recording Priority"
@@ -678,6 +686,7 @@
     録画予約
 "Recording Statistics"
     録画統計
+"Recording Titles"
 "recpriority"
     録画優先順位
 "recstatus: cancelled"
@@ -820,6 +829,7 @@
     サーチタイプ
 "Searches"
     サーチメニュー
+"Series ID"
 "Server Statistics"
 "Set Host"
     ホスト設定
@@ -946,6 +956,7 @@
 "TV"
 "TV functions, including recorded programs."
     TV 録画
+"TV Submenu"
 "TV.com"
 "type"
     タイプ
@@ -1012,6 +1023,7 @@
 "visible"
 "Visit $1"
     $1を訪れる
+"Watch on iPod/iPhone"
 "Watched"
 "Weather"
     天気

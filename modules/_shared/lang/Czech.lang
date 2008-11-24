@@ -129,6 +129,7 @@
 "Cancelled"
 "Caps Lock"
 "Cast"
+"Cast Information"
 "category"
 "Category"
     Kategorie
@@ -248,7 +249,9 @@
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
 "Exec. Producer"
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
 "film"
 "Filter"
@@ -364,6 +367,7 @@
     délka
 "Length"
 "Length (min)"
+"Links"
 "Listing &quot;Jump to&quot;"
 "Listing Time Key"
 "Listings"
@@ -477,6 +481,7 @@
 "People Search"
 "Percent of time spent recording"
 "Play"
+"Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -515,7 +520,9 @@
 "Profile"
 "profile"
 "Program Detail"
+"Program Flags"
 "Program ID"
+"Program Information"
 "Program Listing"
     Výpis pořadů
 "Program Type"
@@ -544,12 +551,14 @@
     Nahrané pořady
 "Recording Details"
 "Recording Group"
+"Recording Groups"
 "Recording Options"
 "Recording Priority"
 "Recording Profile"
 "Recording Schedules"
     Rozvrhy nahrávání
 "Recording Statistics"
+"Recording Titles"
 "recpriority"
 "recstatus: cancelled"
     This was scheduled to be recorded but was manually canceled.
@@ -677,6 +686,7 @@
 "Search Type"
 "Searches"
     Vyhledávání
+"Series ID"
 "Server Statistics"
 "Set Host"
 "Settings"
@@ -773,6 +783,7 @@
 "TV"
 "TV functions, including recorded programs."
     TV funkce včetně nahradných pořadů
+"TV Submenu"
 "TV.com"
 "type"
 "Type"
@@ -827,6 +838,7 @@
     Viditelnost
 "visible"
 "Visit $1"
+"Watch on iPod/iPhone"
 "Watched"
 "Weather"
     Počasí

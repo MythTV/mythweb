@@ -142,6 +142,7 @@
 "Caps Lock"
 "Cast"
     Acteurs
+"Cast Information"
 "category"
 "Category"
     cat&eacute;gorie
@@ -276,7 +277,9 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Producteur
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
     taille de fichier
 "film"
@@ -406,6 +409,7 @@
     Dur&eacute;e
 "Length (min)"
     Dur&eacute;e (min)
+"Links"
 "Listing &quot;Jump to&quot;"
     Lister &quot;Aller &agrave;&quot;
 "Listing Time Key"
@@ -522,6 +526,7 @@
 "People Search"
 "Percent of time spent recording"
 "Play"
+"Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -564,7 +569,9 @@
 "profile"
     Profil
 "Program Detail"
+"Program Flags"
 "Program ID"
+"Program Information"
 "Program Listing"
 "Program Type"
 "Protocol"
@@ -594,6 +601,7 @@
 "Recording Details"
 "Recording Group"
     Groupe d&acute;enregistrement
+"Recording Groups"
 "Recording Options"
     Options d&acute;enregistrement
 "Recording Priority"
@@ -603,6 +611,7 @@
 "Recording Schedules"
     Programmation des enregistrements
 "Recording Statistics"
+"Recording Titles"
 "recpriority"
 "recstatus: cancelled"
     Enregistrement pr&eacute;vu mais annul&eacute;
@@ -738,6 +747,7 @@
 "Search Type"
 "Searches"
     Recherches
+"Series ID"
 "Server Statistics"
 "Set Host"
 "Settings"
@@ -846,6 +856,7 @@
 "TV"
 "TV functions, including recorded programs."
     Fonctions TV, inclant les enregistrements d&acute;&eacute;missions
+"TV Submenu"
 "TV.com"
 "type"
     Type
@@ -905,6 +916,7 @@
     Visibilit&eacute;
 "visible"
 "Visit $1"
+"Watch on iPod/iPhone"
 "Watched"
 "Weather"
 "web_video_imdb_path"

@@ -146,6 +146,7 @@
 "Caps Lock"
 "Cast"
     Obsada
+"Cast Information"
 "category"
     kategoria
 "Category"
@@ -288,7 +289,9 @@
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
 "Exec. Producer"
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
 "film"
 "Filter"
@@ -398,6 +401,7 @@
     Długość
 "Length (min)"
     Czas trwania (minut):
+"Links"
 "Listing &quot;Jump to&quot;"
 "Listing Time Key"
 "Listings"
@@ -514,6 +518,7 @@
     Szukaj Ludzi
 "Percent of time spent recording"
 "Play"
+"Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -554,7 +559,9 @@
     profil
 "Program Detail"
     Szczegóły Programu
+"Program Flags"
 "Program ID"
+"Program Information"
 "Program Listing"
 "Program Type"
 "Protocol"
@@ -582,6 +589,7 @@
 "Recording Details"
 "Recording Group"
     Grupy Nagrywania
+"Recording Groups"
 "Recording Options"
     Opcje Nagrywania
 "Recording Priority"
@@ -592,6 +600,7 @@
     Zadania Nagrywania
 "Recording Statistics"
     Statystyki Nagrywania
+"Recording Titles"
 "recpriority"
     priorytet nagrania
 "recstatus: cancelled"
@@ -728,6 +737,7 @@
     Szukaj typu
 "Searches"
     Poszukiwania
+"Series ID"
 "Server Statistics"
 "Set Host"
 "Settings"
@@ -836,6 +846,7 @@
 "Tuner Busy"
 "TV"
 "TV functions, including recorded programs."
+"TV Submenu"
 "TV.com"
 "type"
     typ
@@ -902,6 +913,7 @@
 "visible"
     Widoczny
 "Visit $1"
+"Watch on iPod/iPhone"
 "Watched"
 "Weather"
 "web_video_imdb_path"

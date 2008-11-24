@@ -208,6 +208,7 @@
 "Caps Lock"
 "Cast"
     Rollbesättning
+"Cast Information"
 "category"
     kategori
 "Category"
@@ -390,7 +391,9 @@
     Exkludera upprepade avsnitt
 "Exec. Producer"
     Producent
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
     Filstorlek
 "film"
@@ -558,6 +561,7 @@
     Längd
 "Length (min)"
     Längd (min)
+"Links"
 "Listing &quot;Jump to&quot;"
     TV-tablå &quot;Gå till&quot;
 "Listing Time Key"
@@ -735,6 +739,7 @@
     Procent av tid i inspelningsläge
 "Play"
     Spela
+"Play Recording on Frontend"
 "Play this Album Now"
     Spela detta album nu
 "Play This Playlist Now"
@@ -802,8 +807,10 @@
     profil
 "Program Detail"
     Programdetaljer
+"Program Flags"
 "Program ID"
     Program-ID
+"Program Information"
 "Program Listing"
     Programlista
 "Program Type"
@@ -844,6 +851,7 @@
     Inspelningsdetaljer
 "Recording Group"
     Inspelningsgrupp
+"Recording Groups"
 "Recording Options"
     Inspelningsinställningar
 "Recording Priority"
@@ -854,6 +862,7 @@
     Inspelningsscheman
 "Recording Statistics"
     Inspelningsstatistik
+"Recording Titles"
 "recpriority"
     inspelningsprioritet
 "recstatus: cancelled"
@@ -1008,6 +1017,7 @@
     Sök typ
 "Searches"
     Sökningar
+"Series ID"
 "Server Statistics"
     Serverstatistik
 "Set Host"
@@ -1164,6 +1174,7 @@
     TV
 "TV functions, including recorded programs."
     Tv-funktioner, inkl. inspelade program.
+"TV Submenu"
 "TV.com"
     TV.com
 "type"
@@ -1237,6 +1248,7 @@
     synlig
 "Visit $1"
     Besök $1
+"Watch on iPod/iPhone"
 "Watched"
     Har setts
 "Weather"

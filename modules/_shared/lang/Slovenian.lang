@@ -210,6 +210,7 @@
 "Caps Lock"
 "Cast"
     Zasedba
+"Cast Information"
 "category"
     kategorija
 "Category"
@@ -409,8 +410,10 @@
     Izključi ponovitve oddaj
 "Exec. Producer"
     Scenarist
+"Executive Producer"
 "Extended Check"
     Podrobni pregled
+"Extra Information"
 "File Size"
     Velikost datoteke
 "film"
@@ -586,6 +589,7 @@
     Trajanje
 "Length (min)"
     Trajanje (min)
+"Links"
 "Listing &quot;Jump to&quot;"
     TV spored &quot;Skoči na&quot;
 "Listing Time Key"
@@ -774,6 +778,7 @@
     Čas, v procentih, uporabljen za snemanje
 "Play"
     Predvajaj
+"Play Recording on Frontend"
 "Play this Album Now"
     Predvajaj ta album
 "Play This Playlist Now"
@@ -844,8 +849,10 @@
     profil
 "Program Detail"
     Opis programa
+"Program Flags"
 "Program ID"
     ID programa
+"Program Information"
 "Program Listing"
     TV spored
 "Program Type"
@@ -889,6 +896,7 @@
     Podrobnosti o snemanju
 "Recording Group"
     Snemalne skupine
+"Recording Groups"
 "Recording Options"
     Snemalne možnosti
 "Recording Priority"
@@ -899,6 +907,7 @@
     Snemalni plani
 "Recording Statistics"
     Statistike snemanja
+"Recording Titles"
 "recpriority"
     snemalna prioriteta
 "recstatus: cancelled"
@@ -1060,6 +1069,7 @@
     Tip iskanja
 "Searches"
     Iskanja
+"Series ID"
 "Server Statistics"
     Stratistike strežnika
 "Set Host"
@@ -1229,6 +1239,7 @@
 "TV"
 "TV functions, including recorded programs."
     Funkcije TV, vključno z posnetimi programi.
+"TV Submenu"
 "TV.com"
 "type"
     tip
@@ -1328,6 +1339,7 @@
     viden
 "Visit $1"
     Obišči $1
+"Watch on iPod/iPhone"
 "Watched"
     Pogledano
 "Weather"

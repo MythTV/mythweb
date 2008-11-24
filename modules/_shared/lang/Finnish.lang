@@ -220,6 +220,7 @@
     Caps Lock
 "Cast"
     Pääosat
+"Cast Information"
 "category"
     Kategoria
 "Category"
@@ -426,8 +427,10 @@
     Sulje toistetut jaksot ulos
 "Exec. Producer"
     Tuottaja
+"Executive Producer"
 "Extended Check"
     Pidennetty tarkistus
+"Extra Information"
 "File Size"
     Tiedostokoko
 "film"
@@ -614,6 +617,7 @@
     Pituus
 "Length (min)"
     Pituus (min)
+"Links"
 "Listing &quot;Jump to&quot;"
     Listauksen hyppy
 "Listing Time Key"
@@ -806,6 +810,7 @@
     Nauhoitukseen käytetty aika prosentteina
 "Play"
     Toista
+"Play Recording on Frontend"
 "Play this Album Now"
     Toista tämä albumi nyt
 "Play This Playlist Now"
@@ -878,8 +883,10 @@
     profiili
 "Program Detail"
     Ohjelman Lisätietoja
+"Program Flags"
 "Program ID"
     Ohjelman tunnus
+"Program Information"
 "Program Listing"
     Ohjelmalistaus
 "Program Type"
@@ -925,6 +932,7 @@
     Nauhoituksen yksityiskohdat
 "Recording Group"
     Nauhoitusryhmä
+"Recording Groups"
 "Recording Options"
     Nauhoitusvalinnat
 "Recording Priority"
@@ -935,6 +943,7 @@
     Tulevat nauhoitukset
 "Recording Statistics"
     Nauhoituksen statistiikat
+"Recording Titles"
 "recpriority"
     Nauhoitusprioriteetti
 "recstatus: cancelled"
@@ -1097,6 +1106,7 @@
     Haun tyyppi
 "Searches"
     Haut
+"Series ID"
 "Server Statistics"
     Serverin statistiikkaa
 "Set Host"
@@ -1276,6 +1286,7 @@
     Televisio
 "TV functions, including recorded programs."
     Nauhoitetut ohjelmat ja muut TV-asetukset.
+"TV Submenu"
 "TV.com"
     TV.com
 "type"
@@ -1363,6 +1374,7 @@
     Näkyvä
 "Visit $1"
     Vieraile $1
+"Watch on iPod/iPhone"
 "Watched"
     Katsottu
 "Weather"

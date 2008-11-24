@@ -731,7 +731,7 @@ class Program {
         if (!$this->chanid || !$this->starttime)
             return '';
     // No cached value -- load it
-        if (!isset($this->credits[$role])) {
+        if (!isset($this->credits[$role][$add_search_links])) {
         // Get the credits for the requested role
             $result = $db->query('SELECT people.name
                                      FROM credits, people
@@ -751,9 +751,9 @@ class Program {
                     $people[] = '<a href="'.root.'tv/search/'.str_replace('%2F', '/', rawurlencode('^'.$name.'$')).'?field=people">'.$name.'</a>';
             }
         // Cache it
-            $this->credits[$role] = trim(implode(', ', $people));
+            $this->credits[$role][$add_search_links] = trim(implode(', ', $people));
         }
-        return $this->credits[$role];
+        return $this->credits[$role][$add_search_links];
     }
 
 /*
@@ -908,6 +908,25 @@ class Program {
             return false;
         backend_command(array('STOP_RECORDING', $prog->backend_row(), '0'));
         return true;
+    }
+
+    public function findDiskPath() {
+        global $db;
+        $dirs = $db->query('SELECT DISTINCT storagegroup.dirname
+                              FROM storagegroup
+                             WHERE storagegroup.groupname = ?',
+                             $this->recgroup
+                             );
+        while ($dir = $dirs->fetch_col()) {
+            if (file_exists($dir.$this->filename))
+                return $dir.$this->filename;
+        }
+        return false;
+    }
+
+    public function hasAlternativeFormat($format = 'mp4') {
+        $path = preg_replace('/\.([a-zA-Z0-9])$/', '.'.$format, $this->findDiskPath());
+        return file_exists($path);
     }
 
 }

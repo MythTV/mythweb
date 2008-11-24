@@ -342,6 +342,11 @@
 // Load the utility/display functions for scheduling
     require_once 'includes/schedule_utils.php';
 
+// Setup some vars for the ipod template
+    $Page_Previous_Location = root.'/tv/list_shows_in_title_and_group?group='.urlencode($program->recgroup).'&title='.urlencode($program->title);
+    $Page_Previous_Location_Name = $program->title;
+    $Page_Title_Short = 'Details';
+
 // Display the page
     require_once tmpl_dir.'detail.php';
 

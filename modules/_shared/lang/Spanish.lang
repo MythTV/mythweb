@@ -211,6 +211,7 @@
 "Caps Lock"
 "Cast"
     Reparto
+"Cast Information"
 "category"
     categoría
 "Category"
@@ -387,7 +388,9 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
     Productor ejec.
+"Executive Producer"
 "Extended Check"
+"Extra Information"
 "File Size"
     tamaño fichero
 "film"
@@ -535,6 +538,7 @@
     Duración
 "Length (min)"
     Duración (min)
+"Links"
 "Listing &quot;Jump to&quot;"
     Listado &quot;Saltar a&quot;
 "Listing Time Key"
@@ -684,6 +688,7 @@
     Búsqueda gente
 "Percent of time spent recording"
 "Play"
+"Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
 "Play this Playlist Now"
@@ -731,8 +736,10 @@
     perfil
 "Program Detail"
     Detalle programa
+"Program Flags"
 "Program ID"
     ID programa
+"Program Information"
 "Program Listing"
     Listado Programas
 "Program Type"
@@ -763,6 +770,7 @@
 "Recording Details"
 "Recording Group"
     Grupo grabación
+"Recording Groups"
 "Recording Options"
     Opciones grabación
 "Recording Priority"
@@ -773,6 +781,7 @@
     Programaciones
 "Recording Statistics"
     Estadísticas Grabaciones
+"Recording Titles"
 "recpriority"
     prioridad
 "recstatus: cancelled"
@@ -918,6 +927,7 @@
     Buscar tipo
 "Searches"
     Búsquedas
+"Series ID"
 "Server Statistics"
 "Set Host"
     Ajustar Host
@@ -1046,6 +1056,7 @@
     TV
 "TV functions, including recorded programs."
     Funciones TV, incluyendo programas grabados
+"TV Submenu"
 "TV.com"
 "type"
     tipo
@@ -1115,6 +1126,7 @@
     visible
 "Visit $1"
     Visite $1
+"Watch on iPod/iPhone"
 "Watched"
 "Weather"
     Tiempo
