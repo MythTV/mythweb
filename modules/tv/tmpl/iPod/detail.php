@@ -19,6 +19,32 @@
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
 
+<script type="text/javascript">
+// Keep track of the autoexpire flag
+    var autoexpire = <?php echo $program->auto_expire ? 1 : 0 ?>;
+
+// Set the autoexpire flag
+    function set_autoexpire() {
+        var r = new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
+                                 {
+                                    parameters: 'toggle_autoexpire='+(1 - autoexpire),
+                                  asynchronous: false
+                                 });
+        if (r.transport.responseText == 'success') {
+        // Update to the new value
+            autoexpire = 1 - autoexpire;
+        // Fix the images
+            if (autoexpire)
+                $('autoexpire').src = $('autoexpire').src.replace(/off/, "on");
+            else
+                $('autoexpire').src = $('autoexpire').src.replace(/on/, "off");
+        }
+        else if (r.transport.responseText) {
+            alert('Error: '+r.transport.responseText);
+        }
+    }
+</script>
+
 <h3><?php echo t('Program Information'); ?></h3>
 
 <ul class="ListPanel">
@@ -63,7 +89,7 @@
 <h3><?php echo t('Program Flags'); ?></h3>
 
 <ul class="ListPanel">
-    <li class=""><a href="#" class="nochevron">Auto Expire<span class="right"><img src="<?php echo skin_url.'/img/'.($program->auto_expire ? 'on' : 'off').'.png'; ?>"></span></a>
+    <li class=""><a href="#" class="nochevron" onclick="set_autoexpire()">Auto Expire<span class="right"><img id="autoexpire" src="<?php echo skin_url.'/img/'.($program->auto_expire ? 'on' : 'off').'.png'; ?>"></span></a>
         <?php
             if ($program->closecaptioned)
                 echo '<li class="text small">Has Closed Captions';
