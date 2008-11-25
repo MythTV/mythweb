@@ -925,7 +925,7 @@ class Program {
     }
 
     public function hasAlternativeFormat($format = 'mp4') {
-        $path = preg_replace('/\.([a-zA-Z0-9])$/', '.'.$format, $this->findDiskPath());
+        $path = preg_replace('/\.[a-z0-9]+$/i', '.'.$format, $this->findDiskPath());
         return file_exists($path);
     }
 
