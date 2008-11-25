@@ -109,6 +109,42 @@
     ?>
 </ul>
 
+<?php
+    if (count($program->jobs_possible)) {
+        ?>
+            <h3><?php echo t('Queue a job'); ?></h3>
+            <ul class="ListPanel">
+            <?php
+                foreach ($program->jobs_possible as $id => $job)
+                    echo '<li class="small"><a href="'.root.'tv/detail/'.$program->chanid.'/'.$program->recstartts.'?job='.$id.'">'.$job.'</a>';
+            ?>
+            </ul>
+        <?php
+    }
+    if (count($program->jobs['queue'])) {
+        ?>
+            <h3><?php echo t('Queued jobs'); ?></h3>
+            <ul class="ListPanel">
+            <?php
+                foreach ($program->jobs['queue'] as $job)
+                    echo "<li class='small text'>{$Jobs[$job['type']]} ({$Job_Status[$job['status']]}:  ".strftime($_SESSION['date_listing_key'], $job['statustime']).') '.html_entities($job['comment']);
+            ?>
+            </ul>
+        <?php
+    }
+    if (count($program->jobs['done'])) {
+        ?>
+            <h3><?php echo t('Recently completed jobs'); ?></h3>
+            <ul class="ListPanel">
+            <?php
+                foreach ($program->jobs['done'] as $job)
+                    echo "<li class='small text'>{$Jobs[$job['type']]} ({$Job_Status[$job['status']]}:  ".strftime($_SESSION['date_listing_key'], $job['statustime']).') '.html_entities($job['comment']);
+            ?>
+            </ul>
+        <?php
+    }
+?>
+
 <h3><?php echo t('Links'); ?></h3>
 
 <ul class="ListPanel">
