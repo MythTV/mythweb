@@ -43,6 +43,23 @@
             alert('Error: '+r.transport.responseText);
         }
     }
+
+    function delete_recording() {
+        if (confirm("<?php echo t('Are you sure you want to delete this show?'); ?>")) {
+            location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid=<?php
+                            echo $program->chanid
+                            ?>&starttime=<?php echo $program->recstartts ?>'
+                            ;
+        }
+    }
+
+    function delete_rerecord() {
+        location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid=<?php
+                        echo $program->chanid
+                        ?>&starttime=<?php echo $program->recstartts ?>'
+                        +'&forget_old=yes'
+                        ;
+    }
 </script>
 
 <h3><?php echo t('Program Information'); ?></h3>
@@ -89,7 +106,7 @@
 <h3><?php echo t('Program Flags'); ?></h3>
 
 <ul class="ListPanel">
-    <li class=""><a href="#" class="nochevron" onclick="set_autoexpire()">Auto Expire<span class="right"><img id="autoexpire" src="<?php echo skin_url.'/img/'.($program->auto_expire ? 'on' : 'off').'.png'; ?>"></span></a>
+    <li class=""><a class="nochevron" onclick="set_autoexpire()">Auto Expire<span class="right"><img id="autoexpire" src="<?php echo skin_url.'/img/'.($program->auto_expire ? 'on' : 'off').'.png'; ?>"></span></a>
         <?php
             if ($program->closecaptioned)
                 echo '<li class="text small">Has Closed Captions';
@@ -134,6 +151,19 @@
             echo '<li class="text small">'.t('Playback Group').': <span class="right">'.$program->playgroup.'</span>';
     ?>
 </ul>
+
+<?php
+    if ($program->filename && $program->can_delete) {
+        ?>
+            <h3><?php echo t('Actions'); ?></h3>
+            <ul class="ListPanel">
+                <li><a onclick="delete_recording()"><?php echo t('Delete'); ?></a>
+                <li><a onclick="delete_rerecord()"><?php echo t('Delete and rerecord'); ?></a>
+            </ul>
+        <?php
+    }
+?>
+
 
 <?php
     if (count($program->jobs_possible)) {
