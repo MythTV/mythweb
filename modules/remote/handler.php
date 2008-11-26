@@ -98,6 +98,6 @@
 
 // Display the page
     if (isset($Path[1]))
-        require_once tmpl_dir.'/'.$Path[1].'.php';
+        require_once $Path[1].'.php';
     else
         require_once tmpl_dir.'/'.$Path[0].'.php';

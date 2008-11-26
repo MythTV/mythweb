@@ -53,6 +53,7 @@
 "Aborting"
 "Action"
     Acció
+"Actions"
 "Activate"
     Activar
 "Active Screens"
@@ -112,6 +113,7 @@
 "Are you sure you want to delete the following show?"
     Està segur d'eliminar el següent programa?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Are you sure you want to delete this show?"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -252,6 +254,7 @@
 "Delete + Rerecord"
     Esborrar + reenregistrar
 "Delete and allow rerecord: $1"
+"Delete and rerecord"
 "Delete and rerecord $1"
     Esborrar i reenregistrar $1
 "Delete Forever"
@@ -1056,6 +1059,7 @@
     visible
 "Visit $1"
     Visite $1
+"Watch on frontend"
 "Watch on iPod/iPhone"
 "Watched"
 "Weather"

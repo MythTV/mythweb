@@ -59,6 +59,7 @@
     Preklicujem
 "Action"
     Akcija
+"Actions"
 "Activate"
     Aktiviraj
 "Active Screens"
@@ -140,6 +141,7 @@
     Ste prepričani, da želite izbrisati to oddajo?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Ste prepričani da želite IZBRISATI TA PREDVAJALNI SEZNAM?
+"Are you sure you want to delete this show?"
 "Artist Listing"
     Seznam izvajalcev
 "Artists"
@@ -323,6 +325,7 @@
     Odstrani + Ponovno snemaj
 "Delete and allow rerecord: $1"
     Odstrani in dopusti ponovno snemanje: $1
+"Delete and rerecord"
 "Delete and rerecord $1"
     Odstrani + ponovno posnami $1
 "Delete Forever"
@@ -1339,6 +1342,7 @@
     viden
 "Visit $1"
     Obišči $1
+"Watch on frontend"
 "Watch on iPod/iPhone"
 "Watched"
     Pogledano

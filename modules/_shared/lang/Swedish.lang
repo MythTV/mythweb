@@ -61,6 +61,7 @@
 "Aborting"
 "Action"
     Handling
+"Actions"
 "Activate"
     Aktivera
 "Active Screens"
@@ -141,6 +142,7 @@
     Är du säker på att du vill ta bort följande inspelning?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Är du säker på att du vill TA BORT DENNA SPARADE SPELLISTA?
+"Are you sure you want to delete this show?"
 "Artist Listing"
     Artistlistning
 "Artists"
@@ -314,6 +316,7 @@
 "Delete + Rerecord"
     Radera + Återinspela
 "Delete and allow rerecord: $1"
+"Delete and rerecord"
 "Delete and rerecord $1"
     Radera och återinspela $1
 "Delete Forever"
@@ -1248,6 +1251,7 @@
     synlig
 "Visit $1"
     Besök $1
+"Watch on frontend"
 "Watch on iPod/iPhone"
 "Watched"
     Har setts

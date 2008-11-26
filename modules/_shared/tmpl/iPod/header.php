@@ -81,5 +81,5 @@
                 <?php
             }
             ?>
-<!--        <a id="Search" class="button" href="<?php echo root ?>tv/search">Search</a> -->
+        <a id="Search" class="button" href="<?php echo root ?>tv/search">Search</a>
     </div>

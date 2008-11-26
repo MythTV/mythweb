@@ -50,6 +50,7 @@
 "Aborting"
 "Action"
     Actie
+"Actions"
 "Activate"
     Activeren
 "Active Screens"
@@ -105,6 +106,7 @@
 "Are you sure you want to delete the following show?"
     Bent U zeker van het verwijderen van volgend programma?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Are you sure you want to delete this show?"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -241,6 +243,7 @@
 "Delete + Rerecord"
     Verwijderen en opnieuw opnemen
 "Delete and allow rerecord: $1"
+"Delete and rerecord"
 "Delete and rerecord $1"
     Verwijderen en $1 opnieuw opnemen
 "Delete Forever"
@@ -1010,6 +1013,7 @@
 "visible"
     zichtbaar
 "Visit $1"
+"Watch on frontend"
 "Watch on iPod/iPhone"
 "Watched"
 "Weather"

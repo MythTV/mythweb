@@ -65,6 +65,7 @@
     Abgebrochen
 "Action"
     Aktion
+"Actions"
 "Activate"
     Aktivieren
 "Active Screens"
@@ -141,6 +142,7 @@
 "Are you sure you want to delete the following show?"
     Diese Aufnahme wirklich löschen?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Are you sure you want to delete this show?"
 "Artist Listing"
     Nach Interpreten
 "Artists"
@@ -318,6 +320,7 @@
     Löschen und erneut aufnehmen
 "Delete and allow rerecord: $1"
     Löschen und &quot;$1&quot; erneut aufnehmen
+"Delete and rerecord"
 "Delete and rerecord $1"
     Löschen und &quot;$1&quot; erneut aufnehmen
 "Delete Forever"
@@ -1279,6 +1282,7 @@
     Sichtbar
 "Visit $1"
     Besuche $1
+"Watch on frontend"
 "Watch on iPod/iPhone"
 "Watched"
     Gesehen

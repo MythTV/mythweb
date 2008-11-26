@@ -74,6 +74,7 @@
                             echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
                         echo "<br>\n"; ?>
     <li class="text long"><?php echo $schedule->fancy_description; ?>
+    <li class="small"><a href="<?php echo root.'/remote/play_program_on_frontend?chanid='.$program->chanid.'&starttime='.$program->recstartts; ?>"><?php echo t('Watch on frontend'); ?></a>
     <?php
         if ($program->hasAlternativeFormat('mp4'))
             echo '<li class="small"><a href="'.root.'/pl/stream/'.$program->chanid.'/'.$program->recstartts.'.mp4">'.t('Watch on iPod/iPhone').'</a>';

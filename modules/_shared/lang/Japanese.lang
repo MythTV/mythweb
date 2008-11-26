@@ -46,6 +46,7 @@
 "Aborting"
 "Action"
     アクション
+"Actions"
 "Activate"
     有効
 "Active Screens"
@@ -105,6 +106,7 @@
 "Are you sure you want to delete the following show?"
     この録画を削除してよろしいですか？
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+"Are you sure you want to delete this show?"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -241,6 +243,7 @@
 "Delete + Rerecord"
     削除+録画
 "Delete and allow rerecord: $1"
+"Delete and rerecord"
 "Delete and rerecord $1"
     削除と録画 $1
 "Delete Forever"
@@ -1023,6 +1026,7 @@
 "visible"
 "Visit $1"
     $1を訪れる
+"Watch on frontend"
 "Watch on iPod/iPhone"
 "Watched"
 "Weather"

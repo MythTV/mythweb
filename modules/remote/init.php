@@ -13,7 +13,7 @@
  *
 /**/
 
-    if (tmpl == 'default') {
+    if (tmpl == 'default' || tmpl == 'iPod') {
     // Load the list of known frontends, since other areas of MythWeb might
     // want to use them, too.
         require_once 'includes/mythfrontend.php';
