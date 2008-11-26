@@ -42,6 +42,27 @@ class MythFrontend {
         $this->port = $port;
     }
 
+    public static function findFrontends() {
+        global $db;
+        $frontends = array();
+        $frontends_sh = $db->query('SELECT DISTINCT settings.hostname,
+                                                    settings.data
+                                     FROM settings
+                                    WHERE settings.hostname IS NOT NULL
+                                      AND settings.value = "NetworkControlPort"
+                                      AND settings.data  > 0');
+        while ( $row = $frontends_sh->fetch_row()) {
+            list($host, $port) = $row;
+            $frontend = new MythFrontend($host, $port);
+            $frontend->connect(2);
+            if ($frontend->query_location() == 'OFFLINE')
+                continue;
+            $frontend->disconnect();
+            $frontends[$host] = $frontend;
+        }
+        return $frontends;
+    }
+
 /**
  * Disconnect when destroying the object.
 /**/
@@ -76,10 +97,15 @@ class MythFrontend {
 /**/
     private function disconnect() {
         if ($this->fp) {
+            $this->get_response("exit\n");
             fclose($this->fp);
             $this->fp = null;
         }
         return $this->connected = false;
+    }
+
+    public function getHost() {
+        return $this->host;
     }
 
 /**
@@ -195,5 +221,10 @@ class MythFrontend {
         if (trim($lines[0]) == 'OK')
             return true;
         return false;
+    }
+
+    public function play_program($chanid, $starttime) {
+        $starttime = date('Y-m-d\TH:i:s', $starttime);
+        return $this->send_play("program $chanid $starttime resume");
     }
 }
