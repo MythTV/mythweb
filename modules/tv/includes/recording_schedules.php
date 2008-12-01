@@ -13,7 +13,6 @@
 /**/
 
 // Include our dependencies -- these are probably called elsewhere, but require_once will handle it
-    require_once 'includes/mythbackend.php';
     require_once 'includes/channels.php';
     require_once 'includes/programs.php';
     require_once 'includes/css.php';
