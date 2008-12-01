@@ -53,9 +53,6 @@
     require_once 'includes/css.php';
     require_once 'includes/mouseovers.php';
 
-// Connect to the backend and load some more handy utilities
-    require_once 'includes/mythbackend.php';
-
 // Detect mobile users
     require_once 'includes/mobile.php';
 
@@ -70,3 +67,6 @@
 
 // Load the session defaults and other config info
     require_once 'includes/config.php';
+
+// And do some quick setup...
+    MythBackend::find()->setTimezone();

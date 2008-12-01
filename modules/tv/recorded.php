@@ -28,7 +28,7 @@
     // Keep a previous-row counter to return to after deleting
         $prev_row = -2;
     // We need to scan through the available recordings to get at the additional information required by the DELETE_RECORDING query
-        foreach (get_backend_rows('QUERY_RECORDINGS Delete') as $row) {
+        foreach (MythBackend::find()->queryProgramRows('QUERY_RECORDINGS Delete') as $row) {
         // increment if row has the same title as the show we're deleting or if viewing 'all recordings'
             if (($_SESSION['recorded_title'] == $row[0]) || ($_SESSION['recorded_title'] == ''))
                 $prev_row++;
@@ -36,10 +36,10 @@
             if ($row[4] != $_REQUEST['chanid'] || $row[26] != $_REQUEST['starttime'])
                 continue;
         // Delete the recording
-            backend_command(array($backendstr, implode(backend_sep, $row), '0'));
+            MythBackend::find()->sendCommand(array($backendstr, implode(MythBackend::$backend_separator, $row), '0'));
         // Forget all knowledge of old recordings?
             if ($_REQUEST['forget_old']) {
-                backend_command(array('FORGET_RECORDING', implode(backend_sep, $row), '0'));
+                MythBackend::find()->sendCommand(array('FORGET_RECORDING', implode(MythBackend::$backend_separator, $row), '0'));
             // Delay a second so the scheduler can catch up
                 sleep(1);
             }
@@ -70,7 +70,7 @@
 
 // Parse the program list
     $warning    = NULL;
-    $recordings = get_backend_rows('QUERY_RECORDINGS Delete');
+    $recordings = MythBackend::find()->queryProgramRows('QUERY_RECORDINGS Delete');
     while (true) {
         $Total_Used     = 0;
         $Total_Time     = 0;
@@ -186,7 +186,7 @@
         sort_programs($All_Shows, 'recorded_sortby');
 
 // How much free disk space on the backend machine?
-    list($size_high, $size_low, $used_high, $used_low) = explode(backend_sep, backend_command('QUERY_FREE_SPACE_SUMMARY'));
+    list($size_high, $size_low, $used_high, $used_low) = MythBackend::find()->sendCommand('QUERY_FREE_SPACE_SUMMARY');
     if (function_exists('gmp_add')) {
     // GMP functions should work better with 64 bit numbers.
         $size = gmp_mul('1024',

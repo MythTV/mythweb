@@ -73,7 +73,7 @@
     if (empty($_GET['recordid'])) {
     // Starttime in the past -- See if it's a recording
         if ($_GET['starttime'] < time()) {
-            $record = get_backend_rows('QUERY_RECORDING TIMESLOT '.$_GET['chanid'].' '.unix2mythtime($_GET['starttime']), 1);
+            $record = MythBackend::find()->queryProgramRows('QUERY_RECORDING TIMESLOT '.$_GET['chanid'].' '.unix2mythtime($_GET['starttime']), 1);
             if (is_array($record[0]) && $_GET['chanid'] == $record[0][4] && $_GET['starttime'] == $record[0][26]) {
                 $program =& new Program($record[0]);
             }
@@ -150,7 +150,7 @@
                    JOB_QUEUED,
                    JOB_USE_CUTLIST
                   );
-        backend_notify_changes();
+        MythBackend::find()->rescheduleRecording();
     // Redirect back to the page again, but without the query string, so the
     // user doesn't accidentally repost this request on a page reload.
         redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->recstartts);

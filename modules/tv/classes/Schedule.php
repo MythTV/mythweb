@@ -234,9 +234,9 @@ class Schedule {
         $sh->finish();
     // Notify the backend of the changes
         if ($this->recordid)
-            backend_notify_changes($this->recordid);
+            MythBackend::find()->rescheduleRecording($this->recordid);
         else
-            backend_notify_changes();
+            MythBackend::find()->rescheduleRecording();
     }
 
 /**
@@ -249,7 +249,7 @@ class Schedule {
                          $this->recordid);
     // Notify the backend of the changes
         if ($sh->affected_rows())
-            backend_notify_changes($this->recordid);
+            MythBackend::find()->rescheduleRecording($this->recordid);
     // Finish
         $sh->finish();
     // Remove this from the $Schedules array in memory

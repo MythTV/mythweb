@@ -16,8 +16,8 @@ class Video {
     var $filename;
     var $cover_file;
     var $cover_url;
-    var $cover_scaled_width;
-    var $cover_scaled_height;
+    var $cover_scaled_width     = video_img_width;
+    var $cover_scaled_height    = video_img_height;
     var $childid;
     var $url;
     var $browse;
@@ -52,17 +52,16 @@ class Video {
     // And the artwork URL
         if ($this->cover_file != 'No Cover' && file_exists($this->cover_file) ) {
             $this->cover_url = 'data/video_covers/'.substr($this->cover_file, strlen(setting('VideoArtworkDir', hostname)));
-            list($width, $height) = getimagesize($this->cover_file);
-            $wscale = video_img_width / $width;
-            $hscale = video_img_height / $height;
-            $scale = $wscale < $hscale ? $wscale : $hscale;
-            $this->cover_scaled_width  = floor($width * $scale);
-            $this->cover_scaled_height = floor($height * $scale);
+            list($width, $height) = @getimagesize($this->cover_file);
+            if ($width > 0 && $height > 0) {
+                $wscale = video_img_width / $width;
+                $hscale = video_img_height / $height;
+                $scale = $wscale < $hscale ? $wscale : $hscale;
+                $this->cover_scaled_width  = floor($width * $scale);
+                $this->cover_scaled_height = floor($height * $scale);
+            }
         }
-        else {
-            $this->cover_scaled_height = video_img_height;
-            $this->cover_scaled_width  = video_img_width;
-        }
+
         $this->childid      = $video['childid'];
     // Figure out the URL
         $this->url = '#';

@@ -73,7 +73,10 @@
                         if ($program)
                             echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
                         echo "<br>\n"; ?>
-    <li class="text long"><?php echo $schedule->fancy_description; ?>
+    <?php
+        if (strlen($schedule->fancy_description))
+            echo '<li class="text long">'.$schedule->fancy_description;
+    ?>
     <li class="small"><a href="<?php echo root.'/remote/play_program_on_frontend?chanid='.$program->chanid.'&starttime='.$program->recstartts; ?>"><?php echo t('Watch on frontend'); ?></a>
     <?php
         if ($program->hasAlternativeFormat('mp4'))
@@ -81,28 +84,34 @@
     ?>
 </ul>
 
-<h3><?php echo t('Cast Information'); ?></h3>
+<?php
+    if ($program->has_credits()) {
+        ?>
+            <h3><?php echo t('Cast Information'); ?></h3>
 
-<ul class="ListPanel">
-    <?php
-        if ($program->get_credits('host', false))
-            echo '<li class="text small">'.t('Hosted by').': '.$program->get_credits('host', false);
-        if ($program->get_credits('presenter', false))
-            echo '<li class="text small">'.t('Presented by').': '.$program->get_credits('presenter', false);
-        if ($program->get_credits('actor', false))
-            echo '<li class="text small">'.t('Cast').': '.$program->get_credits('actor', false);
-        if ($program->get_credits('guest_star', false))
-            echo '<li class="text small">'.t('Guest Starring').': '.$program->get_credits('guest_star', false);
-        if ($program->get_credits('director', false))
-            echo '<li class="text small">'.t('Directed by').': '.$program->get_credits('director', false);
-        if ($program->get_credits('producer', false))
-            echo '<li class="text small">'.t('Produced by').': '.$program->get_credits('producer', false);
-        if ($program->get_credits('executive_producer', false))
-            echo '<li class="text small">'.t('Executive Producer').': '.$program->get_credits('executive_producer', false);
-        if ($program->get_credits('writer', false))
-            echo '<li class="text small">'.t('Written by').': '.$program->get_credits('writer', false);
-    ?>
-</ul>
+            <ul class="ListPanel">
+                <?php
+                    if ($program->get_credits('host', false))
+                        echo '<li class="text small">'.t('Hosted by').': '.$program->get_credits('host', false);
+                    if ($program->get_credits('presenter', false))
+                        echo '<li class="text small">'.t('Presented by').': '.$program->get_credits('presenter', false);
+                    if ($program->get_credits('actor', false))
+                        echo '<li class="text small">'.t('Cast').': '.$program->get_credits('actor', false);
+                    if ($program->get_credits('guest_star', false))
+                        echo '<li class="text small">'.t('Guest Starring').': '.$program->get_credits('guest_star', false);
+                    if ($program->get_credits('director', false))
+                        echo '<li class="text small">'.t('Directed by').': '.$program->get_credits('director', false);
+                    if ($program->get_credits('producer', false))
+                        echo '<li class="text small">'.t('Produced by').': '.$program->get_credits('producer', false);
+                    if ($program->get_credits('executive_producer', false))
+                        echo '<li class="text small">'.t('Executive Producer').': '.$program->get_credits('executive_producer', false);
+                    if ($program->get_credits('writer', false))
+                        echo '<li class="text small">'.t('Written by').': '.$program->get_credits('writer', false);
+                ?>
+            </ul>
+        <?php
+    }
+?>
 
 <h3><?php echo t('Program Flags'); ?></h3>
 

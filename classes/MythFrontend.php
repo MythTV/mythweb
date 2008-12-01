@@ -45,19 +45,22 @@ class MythFrontend {
     public static function findFrontends() {
         global $db;
         $frontends = array();
-        $frontends_sh = $db->query('SELECT DISTINCT settings.hostname,
-                                                    settings.data
-                                     FROM settings
-                                    WHERE settings.hostname IS NOT NULL
-                                      AND settings.value = "NetworkControlPort"
-                                      AND settings.data  > 0');
-        while ( $row = $frontends_sh->fetch_row()) {
-            list($host, $port) = $row;
+        $frontends_sh = $db->query('SELECT DISTINCT settings.hostname
+                                      FROM settings
+                                     WHERE settings.hostname IS NOT NULL
+                                       AND settings.value = "NetworkControlEnabled"
+                                       AND settings.data  = 1');
+        while ( $host = $frontends_sh->fetch_col()) {
+
+        // Remove some characters that should never be here, anyway, and might
+        // confuse javascript/html
+            $host = preg_replace('/["\']+/', '', $host);
+
+            $port = setting('NetworkControlPort', $host);
             $frontend = new MythFrontend($host, $port);
             $frontend->connect(2);
             if ($frontend->query_location() == 'OFFLINE')
                 continue;
-            $frontend->disconnect();
             $frontends[$host] = $frontend;
         }
         return $frontends;

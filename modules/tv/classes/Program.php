@@ -424,7 +424,7 @@ class Program {
  * Generate a mythproto-compatible row of data for this show.
 /**/
     public function backend_row() {
-        return implode(backend_sep,
+        return implode(MythBackend::$backend_separator,
                        array(
                              $this->title          , // 00 title
                              $this->subtitle       , // 01 subtitle
@@ -482,10 +482,7 @@ class Program {
  * recording.
 /**/
     public function pixmap_last_mod() {
-        $mod = backend_command('QUERY_PIXMAP_LASTMODIFIED'
-                               .backend_sep
-                               .$this->backend_row()
-                              );
+        $mod = MythBackend::find()->sendCommand(array('QUERY_PIXMAP_LASTMODIFIED', $this->backend_row()));
         if ($mod == 'BAD')
             return 0;
         return $mod;
@@ -495,12 +492,8 @@ class Program {
  * Generate a new preview pixmap for this recording.
 /**/
     public function generate_pixmap() {
-        $ret = backend_command('QUERY_GENPIXMAP'
-                               .backend_sep
-                               .$this->backend_row()
-                              );
+        $ret = MythBackend::find()->sendCommand(array('QUERY_GENPIXMAP', $this->backend_row()));
         if ($ret == 'BAD') {
-            // echo "Unknown error generating pixmap for $this->chanid:$this->starttime\n";
             return 0;
         }
         return 1;
@@ -613,9 +606,9 @@ class Program {
             $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
             $port     = _or($urlparts['port'], $GLOBALS['Master_Port']);
         // Transfer the pixmap from the backend
-            $recs = explode(backend_sep, backend_command2(array('ANN FileTransfer '.hostname, $fileurl),
+            $recs = MythBackend::find()->sendCommand(array('ANN FileTransfer '.hostname, $fileurl),
                                                           $datasocket,
-                                                          $host, $port));
+                                                          $host, $port);
         // Error?
             if ($recs[0] != 'OK')
                 return null;
@@ -623,9 +616,9 @@ class Program {
         // Open the output file for writing, and make sure it's in binmode
             $pngfile = fopen($pngpath, 'wb');
         // Tell the backend to send the data
-            backend_command('ANN Playback '.hostname.' 0',
+            MythBackend::find()->sendCommand('ANN Playback '.hostname.' 0',
                             $host, $port);
-            backend_command(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
+            MythBackend::find()->sendCommand(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
                             $host, $port);
         // Read the data from the socket and save it into the requested file.
         // We have to loop here because sometimes the backend can't send data fast
@@ -725,6 +718,18 @@ class Program {
         return $str;
     }
 
+    public function has_credits() {
+        global $db;
+        return $db->query_col('SELECT COUNT(people.name)
+                                 FROM credits, people
+                                WHERE credits.person    = people.person
+                                  AND credits.chanid    = ?
+                                  AND credits.starttime = FROM_UNIXTIME(?)',
+                              $this->chanid,
+                              $this->starttime
+                              );
+    }
+
     public function get_credits($role, $add_search_links = FALSE) {
         global $db;
     // Not enough info in this object
@@ -780,7 +785,7 @@ class Program {
                          $this->description);
         while ($row = $sh->fetch_assoc()) {
             $prog =& new Program($row);
-            backend_command(array('FORGET_RECORDING', $prog->backend_row(), '0'));
+            MythBackend::find()->sendCommand(array('FORGET_RECORDING', $prog->backend_row(), '0'));
         }
         $sh->finish();
     // Delay a second so the scheduler can catch up
@@ -808,7 +813,7 @@ class Program {
                                 .'1'                                      .')')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Notify the backend of the changes
-        backend_notify_changes();
+        MythBackend::find()->rescheduleRecording();
     // Delay a second so the scheduler can catch up
         sleep(1);
     }
@@ -906,7 +911,7 @@ class Program {
     public function stopRecording() {
         if ($this->recstatus != 'Recording')
             return false;
-        backend_command(array('STOP_RECORDING', $prog->backend_row(), '0'));
+        MythBackend::find()->sendCommand(array('STOP_RECORDING', $prog->backend_row(), '0'));
         return true;
     }
 

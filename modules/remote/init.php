@@ -14,9 +14,6 @@
 /**/
 
     if (tmpl == 'default' || tmpl == 'iPod') {
-    // Load the list of known frontends, since other areas of MythWeb might
-    // want to use them, too.
-        require_once 'includes/mythfrontend.php';
     // Add the module
         $Modules['remote'] = array('path'        => 'remote',
                                    'sort'        => 6,

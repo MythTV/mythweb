@@ -82,7 +82,7 @@
 
 // Load all of the scheduled recordings.  We will need them at some point, so we
 // might as well get it overwith here.
-    foreach (get_backend_rows('QUERY_GETALLPENDING', 2) as $key => $program) {
+    foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
         if ($key === 'offset')
             list($Num_Conflicts, $Num_Scheduled) = $program;
     // Normal entry:  $Scheduled_Recordings[callsign][starttime][]

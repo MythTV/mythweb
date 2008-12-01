@@ -54,9 +54,7 @@
         // occasional times where setting() gets called before we're actually
         // connected to the backend, the only known instance is in db_update.php
         // and those settings don't affect anything but MythWeb.
-            if (function_exists('backend_command')) {
-                backend_command('CLEAR_SETTINGS_CACHE');
-            }
+            MythBackend::find()->sendCommand('CLEAR_SETTINGS_CACHE');
         }
     // Not cached?
         elseif (!array_key_exists($field, $cache[$h])) {
@@ -68,11 +66,20 @@
             else
                 $cache[$h][$field] = $db->query_col('SELECT data
                                                        FROM settings
-                                                      WHERE value=? AND hostname=?',
+                                                      WHERE value=? AND hostname LIKE ?',
                                                     $field, $hostname);
         }
     // Return the cached value
         return $cache[$h][$field];
+    }
+
+/**
+ * Queries the database settings table for a particular setting, and returns its value
+/**/
+    function get_backend_setting($setting, $host = null) {
+        if (is_null($host))
+            $host = '%';
+        return setting($setting, $host);
     }
 
 /**
@@ -91,69 +98,6 @@
                 return $full_path;
         }
         return null;
-    }
-
-/**
- *  I like how in perl, you can pass variables into functions in lists or
- *  arrays, and they all show up to the function as one giant list.  This takes
- *  an array containing scalars and arrays of scalars, and returns one clean
- *  array of all values.
-/**/
-    function smart_args($args) {
-        $new_args = array();
-    // Not an array
-        if (!is_array($args))
-            return array($args);
-    // Loop
-        foreach ($args as $arg) {
-            foreach (smart_args($arg) as $arg2) {
-                $new_args[] = $arg2;
-            }
-        }
-    // Return
-        return $new_args;
-    }
-
-/**
- * Recursively fixes silly \r\n stuff that some browsers send.
- * Also adds a generic entry for fiends ending in _x or _y to better deal
- * with image inputs.
-/**/
-    function &fix_crlfxy(&$array) {
-        foreach ($array as $key => $val) {
-			if (is_array($val))
-				fix_crlfxy($array[$key]);
-            elseif (is_string($val)) {
-                $array[$key] = str_replace("\r\n", "\n", $val);
-            // Process any imagemap submissions to make sure we also get the name itself
-                if ($key != ($new_key = preg_replace('/_[xy]$/', '', $key))) {
-                    if (!array_key_exists($new_key, $array))
-                        $array[$new_key] = true;
-                }
-            }
-        }
-        return $array;
-    }
-
-/**
- * Recursively strip slashes from an array (eg. $_GET).
-/**/
-	function &fix_magic_quotes(&$array) {
-		foreach ($array as $key => $val) {
-			if (is_array($val))
-				fix_magic_quotes($array[$key]);
-			else
-				$array[$key] = stripslashes($val);
-		}
-		return $array;
-	}
-
-/**
- * Strips slashes ONLY before quotes, to get around php adding slashes in
- * preg_replace //e but not in such a way that stripslashes works properly.
-/*/
-    function strip_quote_slashes($str) {
-        return preg_replace("/\\\\([\"'])/", '$1', $str);
     }
 
 /**
@@ -235,11 +179,8 @@
  *  myself to make the rest of my code read a bit easier.
 /**/
     function escape($string, $allow_null = false) {
-    // Null?
-        if ($allow_null && is_null($string))
-            return $string = 'NULL';
-    // Just a string
-        return $string = "'".mysql_real_escape_string($string)."'";
+        global $db;
+        return $db->escape($string);
     }
 
 /**
@@ -268,41 +209,6 @@
         closedir($handle);
         sort($list);
         return $list;
-    }
-
-/**
- * Start/display a microtime timer
- *
- * @param mixed $message The message to echo, or another value (see return)
- * @param int   $index   The index value of the cache to store the timer.
- *                       Useful for handling multiple simultaneous timers.
- *
- * @return mixed If $message is ommitted or null, the current time is returned.
- *               If a string, the string is returned after being passed through
- *               sprintf() with the current time delta (float) as an argument.
- *               If anything else, the current time differential is returned.
-/**/
-    function timer($message=null, $index=0) {
-        static $cache = array();
-    // Get the current time
-        if (intVal(phpversion()) >= 5) {
-            $time = microtime(true);
-        }
-        else {
-            list($usec, $sec) = explode(' ', microtime());
-            $time = floatVal($usec) + floatVal($sec);
-        }
-    // Print a string
-        if (is_string($message))
-            $ret = sprintf($message, $time - $cache[$index]);
-        elseif (is_null($message))
-            $ret = $time;
-        else
-            $ret = $time - $cache[$index];
-    // Start/update the timer
-        $cache[$index] = $time;
-    // Return
-        return $ret;
     }
 
 /**
@@ -342,6 +248,7 @@
             case 'asx' : return "$url.asx";
             case 'flvp': return "$url.flvp";
             case 'flv' : return "$url.flv";
+            case 'mp4' : return "$url.mp4";
         }
     // No more dsmyth filters, so return the URL no matter what the browser is.
         return $url;
@@ -406,4 +313,21 @@
     function fequals($lhs, $rhs) {
         $epsilon = 1e-3;
         return abs($lhs - $rhs) <= $epsilon * abs($lhs);
+    }
+
+/**
+ * Converts a myth timestamp into a unix timestamp
+ * 1.0 cvs changed the format to:  2003-06-28T06:30:00
+/**/
+    function myth2unixtime($mythtime) {
+        if (strlen($mythtime) < 1)
+            return '';
+        return strtotime(str_replace('T', ' ', $mythtime));
+    }
+
+/**
+ * Converts a unix timestamp into a myth timestamp
+/**/
+    function unix2mythtime($time) {
+        return date('Y-m-d\TH:i:s', $time);
     }

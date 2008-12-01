@@ -17,7 +17,7 @@
 #    if ($_GET['RESET_KEYS']) {
 #        $result = mysql_query('DELETE FROM keybindings')
 #            or trigger_error('SQL Error: '.mysql_error().' [#'.mysql_errno().']', FATAL);
-#        backend_notify_changes();
+#        MythBackend::find()->rescheduleRecording();
 #    }
 
 
@@ -81,4 +81,3 @@
         $Keys[] = $row;
     }
     $sh->finish();
-

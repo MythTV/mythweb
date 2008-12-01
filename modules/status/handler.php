@@ -15,8 +15,8 @@
 /**/
 
 // Get the address/port of the master machine
-    $masterhost = get_backend_setting('MasterServerIP');
-    $statusport = get_backend_setting('BackendStatusPort');
+    $masterhost = setting('MasterServerIP');
+    $statusport = setting('BackendStatusPort', '%');
 
 // XML mode?
     $xml_param = ($Path[1] == 'xml') ? '/xml' : '';
