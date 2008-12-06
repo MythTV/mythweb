@@ -14,7 +14,10 @@
                 ? 'https'
                 : 'http';
     my $serverAddr = $ENV{'HTTP_X_FORWARDED_HOST'} || $ENV{'SERVER_NAME'} || $ENV{'SERVER_ADDR'};
-    $uri .= '://'.$serverAddr.':'.$ENV{'SERVER_PORT'}
+# Attempt to remove the port out of the serverAddr if it's in there
+    $serverAddr =~ tr/:[0-9]+//;
+    my $serverPort = $ENV{'HTTP_X_FORWARDED_PORT'} || $ENV{'SERVER_PORT'};
+    $uri .= '://'.$serverAddr.':'.$serverPort
             .$ENV{'REQUEST_URI'};
 
     $uri =~ s/\.asx$//i;
