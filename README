@@ -135,9 +135,15 @@ A: First, make sure that if you have enabled some form of authentication that
 Q: I get a "500 server error" (or some other number) when trying to view
     MythWeb.
 A: Check your apache logs for details about what caused the error.  Usually,
-    it means that you didn't set up a required module.  Read the 
+    it means that you didn't set up a required module.  Read the
     mythweb.conf.apache file in more detail to make sure you didn't miss
     an important setup file.
+
+Q: MythWeb complains about "Warning: Unknown Programme" after Daylight Savings
+    Time has started/finished.
+A: PHP may not have determined your local timezone correctly. Read the PHP
+    section of MythWeb's INSTALL file to find out how to correctly configure
+    your timezone in PHP.
 
 ======================
 4.0 Submitting Patches
@@ -150,5 +156,3 @@ Please create patches against the most recent version of SVN.  I can deal with
 other "diff -u" patches, but if there have been any major changes in SVN (there
 occasionally are), I won't put much effort into trying to make your patch work,
 so please just use SVN.
-
-
