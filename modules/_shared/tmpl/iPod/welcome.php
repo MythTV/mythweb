@@ -47,6 +47,8 @@
     ?>
 </div>
 
+<a id="reset" href="<?php echo root; ?>?RESET_SKIN&RESET_TMPL"><?php echo t('Reset template and skin to defaults'); ?></a>
+
 <?php
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
