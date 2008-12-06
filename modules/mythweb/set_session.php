@@ -30,8 +30,19 @@
             $_SESSION['skin'] = $_POST['skin_default'];
 
     // Change language?  Make sure we load the new translation file, too.
-        if ($_POST['language'] && $_POST['language'] != $_SESSION['language'])
+        if ($_POST['language'] && $_POST['language'] != $_SESSION['language']){
             $_SESSION['language'] = $_POST['language'];
+        // Force the session to regenerate the date formats on language changes
+            unset($_SESSION['date_statusbar']);
+            unset($_SESSION['date_scheduled']);
+            unset($_SESSION['date_scheduled_popup']);
+            unset($_SESSION['date_recorded']);
+            unset($_SESSION['date_search']);
+            unset($_SESSION['date_listing_key']);
+            unset($_SESSION['date_listing_jump']);
+            unset($_SESSION['date_channel_jump']);
+            unset($_SESSION['date_job_status']);
+        }
 
         redirect_browser(root.module.'/'.$Path[1].'/'.$Path[2]);
     }
