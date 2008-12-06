@@ -23,8 +23,11 @@
             $_SESSION['tmpl'] = $_POST['tmpl_default'];
 
     // Save the skin
-        if (isset($_POST['skin']) && $_POST['skin'] != $_SESSION['skin'])
-            $_SESSION['skin'] = $_POST['skin'];
+        if (isset($_POST['skin']))
+            setcookie('mythweb_skin', $_POST['skin'], 2147483647, root);
+
+        if (isset($_POST['skin_default']))
+            $_SESSION['skin'] = $_POST['skin_default'];
 
     // Change language?  Make sure we load the new translation file, too.
         if ($_POST['language'] && $_POST['language'] != $_SESSION['language'])
@@ -51,17 +54,18 @@
 /**
  * Displays a <select> of the available skins
 /**/
-    function skin_select() {
-        echo '<select name="skin">';
+    function skin_select($name = 'skin', $selected = null) {
+        echo '<select name="'.$name.'">';
         foreach (get_sorted_files("skins/") as $skin) {
-        // Skip the svn directory and the non-browser themes
-            if (in_array($skin, array('.svn', 'wap', )))
+        // Skip the svn directory
+            if (in_array($skin, array('.svn')))
                 continue;
         // Ignore non-directories
-            if (!is_dir("skins/$skin")) continue;
+            if (!is_dir("skins/$skin"))
+                continue;
         // Print the option
             echo '<option value="'.html_entities($skin).'"';
-            if ($_SESSION['skin'] == $skin)
+            if ($selected == $skin)
                 echo ' SELECTED';
             echo '>'.html_entities(str_replace('_', ' ', $skin)).'</option>';
         }
