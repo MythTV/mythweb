@@ -260,7 +260,7 @@ class Program {
         $this->deaf_signed                  = $this->subtitletype    & 0x08;
     // Generate the star string, since mysql has issues with REPEAT() and
     // decimals, and the backend doesn't do it for us, anyway.
-        $this->starstring = str_repeat(star_character, intVal($this->stars * max_stars));
+        $this->starstring = @str_repeat(star_character, intVal($this->stars * max_stars));
         $frac = ($this->stars * max_stars) - intVal($this->stars * max_stars);
         if ($frac >= .75)
             $this->starstring .= '&frac34;';
