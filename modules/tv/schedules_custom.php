@@ -200,7 +200,7 @@
     }
 
 // Create an edit-friendly title
-    $schedule->edit_title = preg_replace('/\s*\(\w+\s*search\)\s*$/i', '', $schedule->title);
+    $schedule->edit_title = preg_replace('/\s*\(\w+\s*'.t('Search').'\)\s*$/i', '', $schedule->title);
 
 // Calculate the length
     $schedule->length = intval(($schedule->endtime - $schedule->starttime) / 60);
