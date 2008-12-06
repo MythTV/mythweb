@@ -50,7 +50,7 @@
     $Languages['Slovenian']  = array('Slovensko',       'si_SI',       'sl_SI');
     $Languages['Finnish']    = array('Suomi',           'fi_FI.UTF-8', 'fi_FI');
     $Languages['Czech']      = array('Czech',           'cs_CZ.UTF-8', 'cs_CZ.UTF-8');
-    $Languages['Polski']     = array('Polish',          'pl_PL.UTF-8', 'pl_PL');
+    $Languages['Polish']     = array('Polski',          'pl_PL.UTF-8', 'pl_PL');
 
 // Need to detect the language?
     if (empty($_SESSION['language']))
