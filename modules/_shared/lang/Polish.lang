@@ -139,6 +139,7 @@
 "Browse the Music Database"
 "By Artist Beginning With"
 "By Genre"
+"Cache Engine"
 "callsign"
     ??callsign??
 "Cancel"
@@ -297,6 +298,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"Failure to autoload class !"
 "File Size"
 "film"
 "Filter"

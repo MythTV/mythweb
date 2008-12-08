@@ -201,6 +201,7 @@
     Po izvajalcu, ki se začne z
 "By Genre"
     Po zvrsti
+"Cache Engine"
 "callsign"
     oznaka
 "Cancel"
@@ -419,6 +420,7 @@
 "Extended Check"
     Podrobni pregled
 "Extra Information"
+"Failure to autoload class !"
 "File Size"
     Velikost datoteke
 "film"

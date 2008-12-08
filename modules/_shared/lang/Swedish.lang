@@ -199,6 +199,7 @@
     Efter artist som börjar på
 "By Genre"
     Efter genre
+"Cache Engine"
 "callsign"
     kortnamn
 "Cancel"
@@ -399,6 +400,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"Failure to autoload class !"
 "File Size"
     Filstorlek
 "film"

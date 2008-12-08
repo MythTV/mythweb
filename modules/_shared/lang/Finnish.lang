@@ -210,6 +210,7 @@
     Selaa artisteja, jotka alkavat"
 "By Genre"
     Lajityypin mukaan
+"Cache Engine"
 "callsign"
     Kutsumanimi
 "Cancel"
@@ -436,6 +437,7 @@
 "Extended Check"
     Pidennetty tarkistus
 "Extra Information"
+"Failure to autoload class !"
 "File Size"
     Tiedostokoko
 "film"

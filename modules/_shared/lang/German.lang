@@ -195,6 +195,7 @@
     Nach Künstler beginnend mit
 "By Genre"
     Nach Genre
+"Cache Engine"
 "callsign"
     Kurzname
 "Cancel"
@@ -411,6 +412,7 @@
 "Extended Check"
     Erweiterte Prüfung
 "Extra Information"
+"Failure to autoload class !"
 "File Size"
     Dateigröße
 "film"

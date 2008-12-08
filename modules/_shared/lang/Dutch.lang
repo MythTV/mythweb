@@ -146,6 +146,7 @@
 "Browse the Music Database"
 "By Artist Beginning With"
 "By Genre"
+"Cache Engine"
 "callsign"
     zender
 "Cancel"
@@ -312,6 +313,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"Failure to autoload class !"
 "File Size"
     bestandsgrootte
 "film"
