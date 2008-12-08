@@ -50,19 +50,10 @@ class Channel {
                 copy($channel_data['icon'], $this->icon);
         // Otherwise, grab it from the backend
             else {
-            // Get the info we need about the master backend
-                $host = $GLOBALS['Master_Host'];
-                $port = _or(get_backend_setting('BackendStatusPort', $GLOBALS['Master_Host']),
-                            get_backend_setting('BackendStatusPort'));
             // Make the request and store the result
-                $data = @file_get_contents("http://$host:$port/Myth/GetChannelIcon"
-                                          .'?ChanId='.$this->chanid
-                                          );
-                if ($data) {
-                    $iconfile = fopen($this->icon, 'wb');
-                    fwrite($iconfile, $data);
-                    fclose($iconfile);
-                }
+                $data = MythBackend::find()->httpRequest('GetChannelIcon', array('ChanID' => $this->chanid));
+                if ($data)
+                    file_put_contents($this->icon, $data);
                 unset($data);
             }
         }
@@ -144,4 +135,3 @@ class Channel {
     }
 
 }
-

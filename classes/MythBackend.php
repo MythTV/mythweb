@@ -27,8 +27,9 @@ class MythBackend {
 
     private $fp                     = null;
     private $connected              = false;
-    private $host                   = null;
-    private $port                   = null;
+    private $host                   = '127.0.0.1';
+    private $port                   = 6543;
+    private $port_http              = 6544;
 
     static function find($host = null, $port = 6543) {
         static $Backends = array();
@@ -51,6 +52,7 @@ class MythBackend {
     function __construct($host, $port) {
         $this->host = $host;
         $this->port = $port;
+        $this->port_http = _or(setting('BackendStatusPort', $this->host), setting('BackendStatusPort'));
     }
 
     function __destruct() {
@@ -180,5 +182,12 @@ class MythBackend {
 /**/
     public function rescheduleRecording($recordid = -1) {
         $this->sendCommand('RESCHEDULE_RECORDINGS '.$recordid);
+    }
+
+    public function httpRequest($path, $args = array()) {
+        $url = "http://{$this->host}:{$this->port_http}/myth/{$path}?";
+        foreach ($args as $key => $value)
+            $url .= $key.'='.urlencode($value).'&';
+        return @file_get_contents($url);
     }
 }
