@@ -18,7 +18,7 @@
     $Groups[] = 'All';
     $Groups[] = 'iPod viewable';
 
-    $Page_Previous_Location = root.'/tv/submenu';
+    $Page_Previous_Location = root.'tv/submenu';
     $Page_Previous_Location_Name = 'Television';
     $Page_Title_Short = 'Rec Groups';
 

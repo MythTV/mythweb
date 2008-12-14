@@ -16,7 +16,7 @@
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/ListPanel.css">';
 
     // Setup some vars for the ipod template
-    $Page_Previous_Location = root.'/tv/submenu';
+    $Page_Previous_Location = root.'tv/submenu';
     $Page_Previous_Location_Name = 'Television';
     $Page_Title_Short = 'Upcoming';
 

@@ -13,4 +13,4 @@
 
 $Module_Name = 'Television';
 $Module_Icon = skin_url.'img/Icons/tv';
-$Module_URL  = root.'/tv/submenu';
+$Module_URL  = root.'tv/submenu';
