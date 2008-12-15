@@ -807,7 +807,7 @@ class Program {
                                 .escape($this->seriesid)                  .','
                                 .escape($this->programid)                 .','
                                 .escape($this->recordid)                  .','
-                                .escape($this->station)                   .','
+                                .escape($this->channel->callsign)         .','
                                 .escape($this->rectype)                   .','
                                 .'11'                                     .','
                                 .'1'                                      .')')
