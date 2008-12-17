@@ -77,7 +77,7 @@ var Prototip = {
 
 var Tips = {
   // Configuration
-  closeButtons: false,
+  closeButtons: true,
   zIndex: 1200,
 
   tips : [],

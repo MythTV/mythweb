@@ -13,6 +13,7 @@
 .prototip .content { clear: both; }
 .prototip .toolbar a.close {
 	position: relative;
+	top: 15px;
 	text-decoration: none;
 	float: right;
 	width: 15px;
