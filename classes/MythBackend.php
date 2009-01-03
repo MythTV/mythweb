@@ -110,14 +110,17 @@ class MythBackend {
 
     public function setTimezone() {
         if (!is_string($_SESSION['backend']['timezone']['value']) || $_SESSION['backend']['timezone']['last_check_time'] - time() > 60*60*24) {
-            $timezone = $this->sendCommand('QUERY_TIME_ZONE');
-            $timezone = str_replace(' ', '_', $timezone[0]);
+            $response = $this->sendCommand('QUERY_TIME_ZONE');
+            $timezone = str_replace(' ', '_', $response[0]);
             $_SESSION['backend']['timezone']['value']           = $timezone;
             $_SESSION['backend']['timezone']['last_check_time'] = time();
         }
 
-        if (!@date_default_timezone_set($_SESSION['backend']['timezone']['value']))
-            trigger_error('Failed to set php timezone to '.$_SESSION['backend']['timezone']['value']);
+        if (!@date_default_timezone_set($_SESSION['backend']['timezone']['value'])) {
+            $attempted_value = $_SESSION['backend']['timezone']['value'];
+            unset($_SESSION['backend']['timezone']);
+            trigger_error('Failed to set php timezone to '.$attempted_value.(is_array($response) ? ' Response from backend was '.print_r($response, true) : ''));
+        }
     }
 
     public function sendCommand($command = null) {
