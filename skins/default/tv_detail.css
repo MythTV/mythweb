@@ -241,5 +241,30 @@
     padding-bottom:     .75em;
 }
 
+#x-downloads div.x-frontends {
+    padding:            0.5em;
+}
 
+#x-downloads div.x-frontends ul {
+    padding:            0px 0px 0px 1.5em;
+}
+#x-downloads div.x-frontends li {
+    padding-bottom:     .25em;
+}
 
+#x-downloads div.x-frontends ul li {
+    padding-bottom:     .75em;
+}
+
+#x-downloads div.x-frontends ul li a {
+    background-color:   #226633;
+    border:             1px solid #77BB88;
+    font-weight:        bold;
+    margin-right:       0.5em;
+    padding:            0.15em 0.5em;
+}
+
+#x-downloads div.x-frontends ul li a:hover {
+    color:              #F0F000;
+    text-decoration:    underline;
+}
