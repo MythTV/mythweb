@@ -72,6 +72,7 @@
     define('skin', $skin);
     define('skin_dir', 'skins/'.skin);
     define('skin_url', root.skin_dir.'/');
+    define('skin_img_url', root.skin_dir.'/img/');
 
     define('tmpl', $tmpl);
     define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');
