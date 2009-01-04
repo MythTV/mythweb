@@ -31,17 +31,6 @@ class MythFrontend {
 /** @var array      List of jump points available on this host. */
     private $jump_points = array();
 
-/**
- * Object constructor
- *
- * @param string $host Hostname or IP for this frontend.
- * @param int    $port TCP port to connect to.
-/**/
-    public function __construct($host, $port) {
-        $this->host = $host;
-        $this->port = $port;
-    }
-
     public static function findFrontends() {
         global $db;
         $frontends = array();
@@ -64,6 +53,17 @@ class MythFrontend {
             $frontends[$host] = $frontend;
         }
         return $frontends;
+    }
+
+/**
+ * Object constructor
+ *
+ * @param string $host Hostname or IP for this frontend.
+ * @param int    $port TCP port to connect to.
+/**/
+    public function __construct($host, $port) {
+        $this->host = $host;
+        $this->port = $port;
     }
 
 /**
