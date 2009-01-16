@@ -318,7 +318,7 @@ EOM;
     <td rowspan="2" class="x-pixmap<?php
         if ($_SESSION['recorded_pixmaps']) { ?>">
         <a class="x-pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
-            ><img src="<?php echo $show->thumb_url(100,0) ?>"></a>
+            ><img src="<?php echo $show->thumb_url(100,0) ?>" width="100" height="<?php echo floor(100 / $show->getAspect()); ?>"></a>
 <?php   }
         else
             echo ' -noimg">';
