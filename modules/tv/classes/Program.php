@@ -554,6 +554,11 @@ class Program {
             if(!is_dir($path) && !mkdir($path, 0755))
                 trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
         }
+        /*
+         TODO:
+         This is commended out because it takes a major amount of time for little gain, This should be replaced with a button
+         on the recording details page to regenerate there by hand, or at least a setting to toggle...
+         
     // Find out when the pixmap was last modified
         $png_mod = $this->pixmap_last_mod();
     // Regenerate the pixmap if the recording has since been updated
@@ -562,6 +567,7 @@ class Program {
             if (!$this->generate_pixmap())
                 return null;
         }
+        */
     // Is our target file already up to date?
         if (is_file($pngpath)) {
             $mtime = filemtime($pngpath);
