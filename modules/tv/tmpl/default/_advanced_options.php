@@ -161,13 +161,13 @@
                 <dd><input type="checkbox" class="radio" id="autocommflag" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autotranscode"><?php echo t('Auto-transcode') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autotranscode" name="autotranscode"<?php if ($schedule->autotranscode) echo ' CHECKED' ?> value="1"></dd>
-                <dt><label for="autouserjob1"><?php echo get_backend_setting('UserJobDesc1') ?>:</label></dt>
+                <dt><label for="autouserjob1"><?php echo setting('UserJobDesc1') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autouserjob1" name="autouserjob1"<?php if ($schedule->autouserjob1) echo ' CHECKED' ?> value="1"></dd>
-                <dt><label for="autouserjob2"><?php echo get_backend_setting('UserJobDesc2') ?>:</label></dt>
+                <dt><label for="autouserjob2"><?php echo setting('UserJobDesc2') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autouserjob2" name="autouserjob2"<?php if ($schedule->autouserjob2) echo ' CHECKED' ?> value="1"></dd>
-                <dt><label for="autouserjob3"><?php echo get_backend_setting('UserJobDesc3') ?>:</label></dt>
+                <dt><label for="autouserjob3"><?php echo setting('UserJobDesc3') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autouserjob3" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1"></dd>
-                <dt><label for="autouserjob4"><?php echo get_backend_setting('UserJobDesc4') ?>:</label></dt>
+                <dt><label for="autouserjob4"><?php echo setting('UserJobDesc4') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autouserjob4" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="inactive"><?php echo t('Inactive') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="inactive" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1"></dd>
