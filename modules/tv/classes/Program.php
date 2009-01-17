@@ -834,7 +834,7 @@ class Program {
 
     public function getAspect() {
         global $db;
-        $aspect = $db->query_col('SELECT IFNULL(recordedmarkup.data, 11)
+        $aspect = $db->query_col('SELECT IFNULL(recordedmarkup.type, 11)
                                     FROM recordedmarkup
                                    WHERE recordedmarkup.chanid    = ?
                                      AND recordedmarkup.starttime = ?
