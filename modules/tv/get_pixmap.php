@@ -31,7 +31,7 @@
         header('Pragma: public', true);
         header('Content-Type: image/png');
         header("Content-Length: ".strlen($data));
-        header("Cache-Control: maxage=".(7*24*60*60*60).", public, auth-cache");
+        header("Cache-Control: max-age=".(7*24*60*60*60).", public");
         header("Last-Modified: ".gmdate("D, d M Y H:i:s", $starttime)." GMT");
         header("Expires: ".gmdate("D, d M Y H:i:s", $starttime + (7*24*60*60*60))." GMT");
 
