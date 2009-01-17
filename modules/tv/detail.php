@@ -288,9 +288,9 @@
             $schedule->autoexpire = get_backend_setting('AutoExpireDefault');
     // start early / end late
         if (!isset($schedule->startoffset))
-            $schedule->startoffset = get_backend_setting('DefaultStartOffset');
+            $schedule->startoffset = setting('DefaultStartOffset');
         if (!isset($schedule->endoffset))
-            $schedule->endoffset = get_backend_setting('DefaultEndOffset');
+            $schedule->endoffset = setting('DefaultEndOffset');
     }
 
 // Load the channel
