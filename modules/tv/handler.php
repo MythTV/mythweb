@@ -30,6 +30,9 @@
     if ($Path[1] == 'opensearch')
         require_once 'modules/tv/opensearch.php';
 
+    if ($Path[1] == 'get_pixmap')
+        require_once 'modules/tv/get_pixmap.php';
+
 /**
  * @global  array   $GLOBALS['Categories']
  * @name    $Categories
@@ -76,6 +79,7 @@
 // Keep track of this path for the next visit
     if (   $Path[1] != 'get_show_details'
         && $Path[1] != 'get_schedule_details'
+        && $Path[1] != 'get_pixmap'
         )
         $_SESSION['tv']['last'] = array_slice($Path, 1);
 

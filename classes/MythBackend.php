@@ -52,7 +52,7 @@ class MythBackend {
     function __construct($host, $port) {
         $this->host = $host;
         $this->port = $port;
-        $this->port_http = _or(setting('BackendStatusPort', $this->host), setting('BackendStatusPort'));
+        $this->port_http = _or(setting('BackendStatusPort', $this->host), _or(setting('BackendStatusPort'), 6544));
     }
 
     function __destruct() {
@@ -188,7 +188,7 @@ class MythBackend {
     }
 
     public function httpRequest($path, $args = array()) {
-        $url = "http://{$this->host}:{$this->port_http}/myth/{$path}?";
+        $url = "http://{$this->host}:{$this->port_http}/Myth/{$path}?";
         foreach ($args as $key => $value)
             $url .= $key.'='.urlencode($value).'&';
         return @file_get_contents($url);

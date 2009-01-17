@@ -504,23 +504,18 @@ class Program {
  * location.
 /**/
     public function thumb_url($width=160, $height=120, $secs_in=null) {
-    // Generate the pixmap, just in case
-        $this->generate_preview_pixmap($width, $height, $secs_in);
-    // Calculate the default secs_in
-        static $def_secs_in = null;
-        if (is_null($def_secs_in))
-            $def_secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
-                           + _or(get_backend_setting('RecordPreRoll'), 0);
+
     // We have to calulate $secs_in from the db
         if (is_null($secs_in))
-            $secs_in = $def_secs_in;
-    // Now, figure out the filename
-        if ($width == 160 && $height == 120 && $secs_in == $def_secs_in)
-            $fileurl .= "$this->filename.png";
-        else
-            $fileurl = "$this->filename.{$width}x{$height}x$secs_in.png";
+            $secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
+                       + _or(get_backend_setting('RecordPreRoll'), 0);
+        $filename = explode('/', $this->filename);
+        $filename = array_pop($filename);
 
-        return root.cache_dir.'/'.str_replace('%2F', '/', rawurlencode(basename($fileurl)));
+        if ($height == 0)
+            $height = floor($width / $this->getAspect());
+
+        return root."tv/get_pixmap/{$this->chanid}/{$this->recstartts}/$width/$height/$secs_in/$filename.{$width}x{$height}x$secs_in.png";
     }
 
 /**
@@ -528,120 +523,17 @@ class Program {
  *
  * @todo, this should get put into a "recording" class or something like that.
 /**/
-    public function generate_preview_pixmap($width=160, $height=120, $secs_in=null) {
-    // Calculate the default secs_in
-        static $def_secs_in = null;
-        if (is_null($def_secs_in))
-            $def_secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
-                           + _or(get_backend_setting('RecordPreRoll'), 0);
+    public static function get_preview_pixmap($chanid, $starttime, $width=160, $height=120, $secs_in=null) {
     // We have to calulate $secs_in from the db
         if (is_null($secs_in))
-            $secs_in = $def_secs_in;
-    // Now, figure out the filenames
-        if ($width == 160 && $height == 120 && $secs_in == $def_secs_in) {
-            $fileurl    .= "$this->filename.png";
-            $is_default  = true;
-        }
-        else {
-            $fileurl    = "$this->filename.{$width}x{$height}x$secs_in.png";
-            $is_default = false;
-        }
-        $pngpath  = cache_dir . '/' . basename($fileurl);
-    // Make sure the local path exists
-        $path = '';
-        foreach (split('/+', dirname($pngpath)) as $dir) {
-            $path .= $path ? '/' . $dir : $dir;
-            if(!is_dir($path) && !mkdir($path, 0755))
-                trigger_error('Error creating path for '.$path.': Please check permissions.', FATAL);
-        }
-        /*
-         TODO:
-         This is commended out because it takes a major amount of time for little gain, This should be replaced with a button
-         on the recording details page to regenerate there by hand, or at least a setting to toggle...
-         
-    // Find out when the pixmap was last modified
-        $png_mod = $this->pixmap_last_mod();
-    // Regenerate the pixmap if the recording has since been updated
-        if ($png_mod < $this->lastmodified) {
-            $png_mod = $this->lastmodified;
-            if (!$this->generate_pixmap())
-                return null;
-        }
-        */
-    // Is our target file already up to date?
-        if (is_file($pngpath)) {
-            $mtime = filemtime($pngpath);
-            if ($mtime >= $png_mod)
-                return 1;
-        }
-    // Nonstandard dimensions currently require the XML interface
-        if (!$is_default) {
-        // Figure out which host holds the file we need
-            $urlparts = parse_url($fileurl);
-            $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
-            $port     = _or(get_backend_setting('BackendStatusPort', $host),
-                            get_backend_setting('BackendStatusPort'));
-        // Make the request
-            $pngdata  = @file_get_contents("http://$host:$port/Myth/GetPreviewImage"
-                                          ."?ChanId=$this->chanid"
-                                          .'&StartTime='.unix2mythtime($this->recstartts)
-                                          ."&Height=$height"
-                                          ."&Width=$width"
-                                          ."&SecsIn=$secs_in"
-                                          );
+            $secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
+                       + _or(get_backend_setting('RecordPreRoll'), 0);
 
-        // Store the result
-            if (strlen($pngdata) > 0) {
-                $pngfile = fopen($pngpath, 'wb');
-                fwrite($pngfile, $pngdata);
-                fclose($pngfile);
-            }
-        }
-    // Standard width can be copied locally, or via mythproto
-        else {
-        // Local path to the png that we can just copy from?
-        /** This probably won't work anymore now that the backend always sends
-         *  myth:// URIs.  Need to update the Program/Recording object to detect
-         *  file locations and storage groups so we can get local_path working */
-            if (substr($fileurl, 0, 7) != 'myth://' && is_file($fileurl) && is_readable($fileurl)) {
-                copy($fileurl, $pngpath);
-                return 2;
-            }
-        // Figure out which host holds the recording
-            $urlparts = parse_url($fileurl);
-            $host     = _or($urlparts['host'], $GLOBALS['Master_Host']);
-            $port     = _or($urlparts['port'], $GLOBALS['Master_Port']);
-        // Transfer the pixmap from the backend
-            $recs = MythBackend::find()->sendCommand(array('ANN FileTransfer '.hostname, $fileurl),
-                                                          $datasocket,
-                                                          $host, $port);
-        // Error?
-            if ($recs[0] != 'OK')
-                return null;
-
-        // Open the output file for writing, and make sure it's in binmode
-            $pngfile = fopen($pngpath, 'wb');
-        // Tell the backend to send the data
-            MythBackend::find()->sendCommand('ANN Playback '.hostname.' 0',
-                            $host, $port);
-            MythBackend::find()->sendCommand(array('QUERY_FILETRANSFER '.$recs[1], 'REQUEST_BLOCK', $recs[3]),
-                            $host, $port);
-        // Read the data from the socket and save it into the requested file.
-        // We have to loop here because sometimes the backend can't send data fast
-        // enough, even if we're dealing with small files.
-            $length = $recs[3];
-            while ($length > 0) {
-                $data = fread($datasocket, min(8192, $length));
-                if (strlen($data) < 1)
-                    break; // EOF
-                fwrite($pngfile, $data);
-                $length -= strlen($data);
-            }
-        // Close any file pointers that were opened here
-            fclose($pngfile);
-            if ($datasocket)
-                fclose($datasocket);
-        }
+        return MythBackend::find()->httpRequest('GetPreviewImage', array('ChanId'      => $chanid,
+                                                                         'StartTime'   => unix2mythtime($starttime),
+                                                                         'Height'      => $height,
+                                                                         'Width'       => $width,
+                                                                         'SecsIn'      => $secs_in));
     }
 
 /**
