@@ -834,14 +834,15 @@ class Program {
 
     public function getAspect() {
         global $db;
-        $aspect = $db->query_col('SELECT IFNULL(recordedmarkup.type, 11)
+        $aspect = $db->query_col('SELECT recordedmarkup.type
                                     FROM recordedmarkup
                                    WHERE recordedmarkup.chanid    = ?
-                                     AND recordedmarkup.starttime = ?
+                                     AND recordedmarkup.starttime = FROM_UNIXTIME(?)
                                      AND recordedmarkup.type      IN (10, 11, 12, 13, 14)
- 	                            GROUP BY recordedmarkup.data
+ 	                            GROUP BY recordedmarkup.type
                                 ORDER BY SUM((SELECT IFNULL(rm.mark, recordedmarkup.mark)
- 	                                            FROM recordedmarkup AS rm WHERE rm.chanid = recordedmarkup.chanid
+ 	                                            FROM recordedmarkup AS rm
+                                               WHERE rm.chanid = recordedmarkup.chanid
  	                                             AND rm.starttime = recordedmarkup.starttime
                                                  AND rm.type IN (10, 11, 12, 13, 14)
                                                  AND rm.mark > recordedmarkup.mark
