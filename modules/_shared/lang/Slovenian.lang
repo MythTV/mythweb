@@ -201,7 +201,6 @@
     Po izvajalcu, ki se začne z
 "By Genre"
     Po zvrsti
-"Cache Engine"
 "callsign"
     oznaka
 "Cancel"
@@ -1259,6 +1258,8 @@
     Obnovi: $1
 "Unknown"
     Neznano
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     Neznan program.
 "Unknown Recording Schedule."

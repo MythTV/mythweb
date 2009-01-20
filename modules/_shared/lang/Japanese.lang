@@ -146,7 +146,6 @@
 "Browse the Music Database"
 "By Artist Beginning With"
 "By Genre"
-"Cache Engine"
 "callsign"
     コールサイン
 "Cancel"
@@ -974,6 +973,8 @@
 "Undelete: $1"
 "Unknown"
     不明
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     不明な番組
 "Unknown Recording Schedule."

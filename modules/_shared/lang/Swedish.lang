@@ -199,7 +199,6 @@
     Efter artist som börjar på
 "By Genre"
     Efter genre
-"Cache Engine"
 "callsign"
     kortnamn
 "Cancel"
@@ -1193,6 +1192,8 @@
 "Undelete: $1"
 "Unknown"
     Okänd
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     Okänt program.
 "Unknown Recording Schedule."

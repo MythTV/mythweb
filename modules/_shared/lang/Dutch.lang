@@ -146,7 +146,6 @@
 "Browse the Music Database"
 "By Artist Beginning With"
 "By Genre"
-"Cache Engine"
 "callsign"
     zender
 "Cancel"
@@ -960,6 +959,8 @@
 "Undelete: $1"
 "Unknown"
     Onbekend
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     Onbekend Programma.
 "Unknown Recording Schedule."

@@ -136,7 +136,6 @@
 "Browse the Music Database"
 "By Artist Beginning With"
 "By Genre"
-"Cache Engine"
 "callsign"
 "Cancel"
 "Cancel this schedule."
@@ -874,6 +873,8 @@
 "Undelete: $1"
 "Unknown"
     Inconnu
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     Programme inconnu
 "Unknown Recording Schedule."

@@ -203,7 +203,6 @@
     Por Artista Que Comience En
 "By Genre"
     Por Género
-"Cache Engine"
 "callsign"
 "Cancel"
     Cancelar
@@ -1074,6 +1073,8 @@
 "Undelete: $1"
 "Unknown"
     Desconocido
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     Programa desconocido
 "Unknown Recording Schedule."

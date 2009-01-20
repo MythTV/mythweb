@@ -150,7 +150,6 @@
 "Browse the Music Database"
 "By Artist Beginning With"
 "By Genre"
-"Cache Engine"
 "callsign"
     kortnavn
 "Cancel"
@@ -970,6 +969,8 @@
 "Undelete: $1"
 "Unknown"
     Ukendt
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     Ukendt program
 "Unknown Recording Schedule."

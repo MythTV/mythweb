@@ -15,7 +15,7 @@
 
 // Find the frontends
     $Frontends = MythFrontend::findFrontends();
-
+    
 // Make sure this is an array
     if (!is_array($_SESSION['remote']['frontends']))
         $_SESSION['remote']['frontends'] = array();

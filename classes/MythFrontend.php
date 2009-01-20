@@ -159,7 +159,7 @@ class MythFrontend {
     public function get_jump_points() {
         if (empty($this->jump_points) || !is_array($this->jump_points)) {
             $this->jump_points = array();
-            foreach ($this->_get_rows('help jump') as $line) {
+            foreach ($this->get_rows('help jump') as $line) {
                 if (preg_match('/(\w+)\s+- (.*)/', $line, $matches)) {
                     $this->jump_points[$matches[1]] = $matches[2];
                 }

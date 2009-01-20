@@ -195,7 +195,6 @@
     Nach Künstler beginnend mit
 "By Genre"
     Nach Genre
-"Cache Engine"
 "callsign"
     Kurzname
 "Cancel"
@@ -1221,6 +1220,8 @@
     Wiederherstellen: $1
 "Unknown"
     Unbekannt
+"Unknown action"
+"Unknown frontend"
 "Unknown Program."
     Unbekannte Sendung.
 "Unknown Recording Schedule."
