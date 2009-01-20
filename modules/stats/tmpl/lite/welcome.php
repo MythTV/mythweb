@@ -16,9 +16,9 @@
 // Open with a div and an image
     echo '<div id="info_stats">',
          '<p>',
-         '<a href="', root, $Modules['stats']['path'], '">',
+         '<a href="', root, Modules::getModuleProperity('stats', 'path'), '">',
          '<img src="', skin_url, '/img/stats.png" class="module_icon" border="0" />',
-         '<h2>', $Modules['stats']['name'], '</h2></a>',
+         '<h2>', Modules::getModuleProperity('stats', 'name'), '</h2></a>',
          '</p>',
 
 // Print a basic overview of what this module does

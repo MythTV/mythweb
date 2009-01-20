@@ -27,7 +27,7 @@
     }
 
 // Standard module?  Pass along the
-    if (isset($Modules[$Path[0]])) {
+    if (Modules::getModule($Path[0])) {
     // Add the current module directory to our search path, so modules can
     // define includes, etc.
         ini_set('include_path', ini_get('include_path').':'.modules_path.'/'.$Path[0]);

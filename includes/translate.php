@@ -58,29 +58,6 @@
     if (empty($_SESSION['language']))
         $_SESSION['language'] = 'English';
 
-/**
- * @global  array   $GLOBALS['L']
- * @name    $L
-/**/
-    global $L;
-    $L = array();
-
-// Load the primary language file, or English if the other doesn't exist.
-    if (file_exists(modules_path.'/_shared/lang/'.$_SESSION['language'].'.lang'))
-        load_translation(modules_path.'/_shared/lang/'.$_SESSION['language'].'.lang');
-    else
-        load_translation(modules_path.'/_shared/lang/English.lang');
-
-// Load a module override translation if one exists.
-    if (file_exists(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.lang'))
-        load_translation(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.lang');
-    elseif (file_exists(modules_path.'/'.module.'/lang/English.lang'))
-        load_translation(modules_path.'/'.module.'/lang/English.lang');
-
-// No language array defined?
-    if (!is_array($L) || !count($L))
-        trigger_error('No language strings defined.', FATAL);
-
 // Set the locale
     setlocale(LC_ALL, $Languages[$_SESSION['language']][1]);
 
@@ -88,6 +65,7 @@
  * Returns $str, translated appropriately
 /**/
     function t($str /* [, arg1, arg2, argN] */ ) {
+        load_translation();
         global $L;
     // No string?
         if (!$str)
@@ -134,6 +112,7 @@
  * created using the value of t(int).
 /**/
     function tn(/* string1, string2, stringN, int [, array-of-args] */) {
+        load_translation();
         $a = func_get_args();
     // Array of arguments?
         if (is_array($a[count($a)-1]))
@@ -154,13 +133,33 @@
  *
  * @param string $path The path to the translation file
 /**/
-    function load_translation($path) {
+    function load_translation() {
+        global $L;
+
+    // Already loaded?
+        if (is_array($L) && count($L))
+            return;
+        $L = array();
+
+    // Load the primary language file, or English if the other doesn't exist.
+        if (file_exists(modules_path.'/_shared/lang/'.$_SESSION['language'].'.lang'))
+            $path = modules_path.'/_shared/lang/'.$_SESSION['language'].'.lang';
+        else
+            $path = modules_path.'/_shared/lang/English.lang';
+
+    // Load a module override translation if one exists.
+        if (file_exists(modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.lang'))
+            $path = modules_path.'/'.module.'/lang/'.$_SESSION['language'].'.lang';
+        elseif (file_exists(modules_path.'/'.module.'/lang/English.lang'))
+            $path = modules_path.'/'.module.'/lang/English.lang';
+
         $file = file_get_contents($path);
+
     // Error?
         if ($file === false)
             trigger_error("Failed to open translation file:  $path", FATAL);
+
     // Parse the file
-        global $L;
         foreach (preg_split('/\n(?=\S)/', $file) as $group) {
             preg_match('/^([^\n]+?)\s*(?:$|\s*\n(\s+)(.+)$)/s', $group, $match);
             $indent = '';
@@ -169,15 +168,21 @@
                 list($match, $key) = $match;
             else
                 list($match, $key, $indent, $trans) = $match;
+
         // Cleanup
             $trans = trim(str_replace("\n$indent", "\n", $trans));
             $key   = trim($key);
             if (preg_match('/^["\']/', $key))
                 $key = preg_replace('/^(["\'])(.+)\\1$/', '$2', $key);
+
         // Store
             if ($trans || empty($L[$key]))
                 $L[$key] = $trans;
         }
+
+    // No language array defined?
+        if (!is_array($L) || !count($L))
+            trigger_error('No language strings defined.', FATAL);
     }
 
 /**

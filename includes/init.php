@@ -59,9 +59,6 @@
 // Setup the skins and themes
     require_once 'includes/skin.php';
 
-// Setup the modules
-    require_once 'includes/modules.php';
-
 // Setup the data_dir
     require_once 'includes/data_dir.php';
 

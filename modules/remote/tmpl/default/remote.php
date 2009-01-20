@@ -117,8 +117,8 @@
         </td>
     <td class="x-sections">
         <ul><?php
-            foreach ($Modules['remote']['links'] as $link => $name) {
-                echo '<li><a href="', root, $Modules['remote']['path'], '/', $link, '"';
+            foreach (Modules::getModuleProperity('remote', 'links') as $link => $name) {
+                echo '<li><a href="', root, Modules::getModuleProperity('remote', 'path'), '/', $link, '"';
                 if ($link == $_REQUEST['type'])
                     echo ' class="x-selected"';
                 echo '>', html_entities($name), '</a></li>';

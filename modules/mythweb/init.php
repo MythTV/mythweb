@@ -21,4 +21,3 @@
                                                    ),
                                  'default' => 'session',
                                 );
-

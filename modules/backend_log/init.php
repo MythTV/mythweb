@@ -13,6 +13,8 @@
  *
 /**/
 
+    global $db;
+
 // Check to see if database logging has been enabled
     $enabled = $db->query_col('SELECT SUM(data) FROM settings WHERE value="LogEnabled"');
 
@@ -22,4 +24,3 @@
                                         'sort'        => 550,
                                         'name'        => t('Logs'),
                                        );
-

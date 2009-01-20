@@ -51,7 +51,7 @@
     <ul>
 <?php
 // Print out the list of modules
-    foreach ($Modules as $id => $module) {
+    foreach (Modules::getModules() as $id => $module) {
     // Hidden module?
         if ($module['hidden'])
             continue;
@@ -71,7 +71,7 @@
 <?php
 // Print out the list of modules.  Each theme should include a welcome page for
 // each module.
-    foreach ($Modules as $id => $module) {
+    foreach (Modules::getModules() as $id => $module) {
     // Hidden module?
         if ($module['hidden'])
             continue;

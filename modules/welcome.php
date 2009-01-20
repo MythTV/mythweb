@@ -13,7 +13,7 @@
 /**/
 
 // Default requested view
-    if (empty($_REQUEST['view_module']) || !$Modules[$_REQUEST['view_module']])
+    if (empty($_REQUEST['view_module']) || !Modules::getModule($_REQUEST['view_module']))
         $_REQUEST['view_module'] = 'tv';
 
 // Not really much to do here but print the list of modules
