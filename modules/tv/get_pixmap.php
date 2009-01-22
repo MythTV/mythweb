@@ -2,10 +2,10 @@
 /**
  * Get a pixmap
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/tv/recorded.php $
- * @date        $Date: 2008-11-30 19:40:35 -0800 (Sun, 30 Nov 2008) $
- * @version     $Revision: 19189 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

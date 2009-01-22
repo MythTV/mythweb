@@ -1,10 +1,10 @@
 <?php
 /**
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/classes/MythFrontend.php $
- * @date        $Date: 2008-11-25 22:47:35 -0800 (Tue, 25 Nov 2008) $
- * @version     $Revision: 19160 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythTV

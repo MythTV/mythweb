@@ -1,9 +1,9 @@
 <?php
 /**
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/tv/tmpl/default/list.php $
- * @date        $Date: 2008-06-21 17:31:37 -0700 (Sat, 21 Jun 2008) $
- * @version     $Revision: 17555 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

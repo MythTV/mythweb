@@ -1,9 +1,9 @@
 <?php
 /**
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/tv/recorded.php $
- * @date        $Date: 2008-03-26 12:46:06 -0700 (Wed, 26 Mar 2008) $
- * @version     $Revision: 16806 $
- * @author      $Author: xris $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

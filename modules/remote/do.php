@@ -2,10 +2,10 @@
 /**
  * Run a command on a frontend
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/remote/handler.php $
- * @date        $Date: 2009-01-19 22:42:03 -0800 (Mon, 19 Jan 2009) $
- * @version     $Revision: 19752 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  Remote

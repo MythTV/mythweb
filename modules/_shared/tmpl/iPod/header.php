@@ -2,10 +2,10 @@
 /**
  * This header file is shared by all MythWeb modules.
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/_shared/tmpl/default/header.php $
- * @date        $Date: 2008-11-08 15:54:51 -0800 (Sat, 08 Nov 2008) $
- * @version     $Revision: 19013 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb
