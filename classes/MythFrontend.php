@@ -31,8 +31,14 @@ class MythFrontend {
 /** @var array      List of jump points available on this host. */
     private $jump_points = array();
 
+    private static $frontends;
+
     public static function findFrontends() {
         global $db;
+
+        if (is_array(self::$frontends) && count(self::$frontends))
+            return self::$frontends;
+
         $frontends = array();
         $frontends_sh = $db->query('SELECT DISTINCT settings.hostname
                                       FROM settings
@@ -40,19 +46,25 @@ class MythFrontend {
                                        AND settings.value = "NetworkControlEnabled"
                                        AND settings.data  = 1');
         while ( $host = $frontends_sh->fetch_col()) {
-
-        // Remove some characters that should never be here, anyway, and might
-        // confuse javascript/html
-            $host = preg_replace('/["\']+/', '', $host);
-
-            $port = setting('NetworkControlPort', $host);
-            $frontend = new MythFrontend($host, $port);
-            $frontend->connect(2);
-            if ($frontend->query_location() == 'OFFLINE')
-                continue;
-            $frontends[$host] = $frontend;
+            $frontend = MythFrontend::find($host);
+            if ($frontend)
+                $frontends[$host] = $frontend;
         }
+        self::$frontends = $frontends;
         return $frontends;
+    }
+
+    public static function find($host, $port = null) {
+    // Remove some characters that should never be here, anyway, and might
+    // confuse javascript/html
+        $host = preg_replace('/["\']+/', '', $host);
+        if (is_null($port))
+            $port = setting('NetworkControlPort', $host);
+        $frontend = new MythFrontend($host, $port);
+        $frontend->connect(2);
+        if ($frontend->query_location() == 'OFFLINE')
+            return false;
+        return $frontend;
     }
 
 /**
