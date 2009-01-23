@@ -283,6 +283,7 @@
     Dubletkontrol metode
 "Duplicates"
     Dubletter
+"Duplicates/Ignored"
 "Earlier"
 "Earlier Showing"
 "Edit"
@@ -526,6 +527,7 @@
     MythWeb Globale standarder
 "MythWeb Session"
 "MythWeb Skin"
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb Vejrudsigt.
 "Name"

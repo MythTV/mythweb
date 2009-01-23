@@ -277,6 +277,7 @@
     重複チェック方法
 "Duplicates"
     重複
+"Duplicates/Ignored"
 "Earlier"
 "Earlier Showing"
 "Edit"
@@ -527,6 +528,7 @@
 "MythWeb Session"
 "MythWeb Skin"
     MythWebスキン
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb 天気
 "Name"

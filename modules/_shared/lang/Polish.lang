@@ -265,6 +265,7 @@
     Metoda szukania duplikatu
 "Duplicates"
     Duplikaty
+"Duplicates/Ignored"
 "Earlier"
 "Earlier Showing"
 "Edit"
@@ -468,6 +469,7 @@
 "MythWeb Session"
 "MythWeb Skin"
     Wygląd MythWeb
+"MythWeb Template"
 "MythWeb Weather."
 "Name"
     Nazwa

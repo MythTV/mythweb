@@ -111,8 +111,8 @@
                     if (!$_SESSION['scheduled_recordings']['disp_conflicts'] || $_GET['skip_conflicts'])
                         continue;
                 }
-            // Skip duplicate shows?
-                elseif (in_array($show->recstatus, array('PreviousRecording', 'CurrentRecording'))) {
+            // Skip duplicate or ignored shows?
+                elseif (in_array($show->recstatus, array('NeverRecord', 'PreviousRecording', 'CurrentRecording'))) {
                     if (!$_SESSION['scheduled_recordings']['disp_duplicates'] || $_GET['skip_duplicates'])
                         continue;
                 }

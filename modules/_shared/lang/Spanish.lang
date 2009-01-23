@@ -358,6 +358,7 @@
     Método comprobación duplicados
 "Duplicates"
     Duplicados
+"Duplicates/Ignored"
 "Earlier"
     Más Temprano
 "Earlier Showing"
@@ -617,6 +618,7 @@
 "MythWeb Session"
 "MythWeb Skin"
     Piel MythWeb
+"MythWeb Template"
 "MythWeb Weather."
     Tiempo MythWeb
 "Name"

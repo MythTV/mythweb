@@ -380,6 +380,7 @@
     Kaksoiskapp. tarkistus
 "Duplicates"
     Kaksoiskappaleet
+"Duplicates/Ignored"
 "Earlier"
     Aiemmat
 "Earlier Showing"
@@ -718,6 +719,7 @@
     MythWeb istunto
 "MythWeb Skin"
     MythWebin kuoret
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb Sääennuste.
 "Name"

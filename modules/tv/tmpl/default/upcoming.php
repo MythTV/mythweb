@@ -84,7 +84,7 @@
         <label for="disp_duplicates">
         <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="$('change_display').submit()" <?php
             if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
-        <?php echo t('Duplicates') ?></label>
+        <?php echo t('Duplicates/Ignored') ?></label>
         </td>
     <td class="x-check">
         <label for="disp_deactivated">

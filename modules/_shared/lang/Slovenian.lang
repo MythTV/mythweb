@@ -367,6 +367,7 @@
     Metoda preverjanja duplikatov
 "Duplicates"
     Duplikati
+"Duplicates/Ignored"
 "Earlier"
     Prejšnje
 "Earlier Showing"
@@ -689,6 +690,7 @@
     MythWeb seja
 "MythWeb Skin"
     MythWeb preobleka
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb vreme.
 "Name"

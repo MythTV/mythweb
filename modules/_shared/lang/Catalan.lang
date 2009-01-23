@@ -288,6 +288,7 @@
     Mètode de comprovació de duplicats
 "Duplicates"
     Duplicats
+"Duplicates/Ignored"
 "Earlier"
 "Earlier Showing"
 "Edit"
@@ -546,6 +547,7 @@
 "MythWeb Session"
 "MythWeb Skin"
     Pell MythWeb
+"MythWeb Template"
 "MythWeb Weather."
     Temps MythWeb
 "Name"

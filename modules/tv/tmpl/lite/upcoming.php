@@ -47,7 +47,7 @@
     |
     <input type="checkbox" id="disp_duplicates" name="disp_duplicates" class="radio" onclick="submit_form('','','change_display')" <?php
         if ($_SESSION['scheduled_recordings']['disp_duplicates']) echo ' CHECKED' ?>>
-    <a onclick="toggle_checkbox('disp_duplicates');submit_form('','','change_display')"><?php echo t('Duplicates') ?></a>
+    <a onclick="toggle_checkbox('disp_duplicates');submit_form('','','change_display')"><?php echo t('Duplicates/Ignored') ?></a>
     |
     <input type="checkbox" id="disp_deactivated" name="disp_deactivated" class="radio" onclick="submit_form('','','change_display')" <?php
         if ($_SESSION['scheduled_recordings']['disp_deactivated']) echo ' CHECKED' ?>>

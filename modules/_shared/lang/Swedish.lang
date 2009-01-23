@@ -355,6 +355,7 @@
     Dubblettmetod
 "Duplicates"
     Dubbletter
+"Duplicates/Ignored"
 "Earlier"
     Tidigare
 "Earlier Showing"
@@ -657,6 +658,7 @@
     MythWeb-session
 "MythWeb Skin"
     MythWeb-skinn
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb väder.
 "Name"
