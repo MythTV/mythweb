@@ -2,10 +2,10 @@
 #
 # MythWeb Streaming/Download module
 #
-# @url       $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/stream/handler.pl $
-# @date      $Date: 2008-08-28 18:51:49 -0700 (Thu, 28 Aug 2008) $
-# @version   $Revision: 18224 $
-# @author    $Author: nigel $
+# @url       $URL$
+# @date      $Date$
+# @version   $Revision$
+# @author    $Author$
 #
 
 # File size

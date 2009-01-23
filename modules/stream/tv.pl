@@ -2,10 +2,10 @@
 #
 # MythWeb Streaming/Download module
 #
-# @url       $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/stream/handler.pl $
-# @date      $Date: 2008-11-08 13:07:48 -0800 (Sat, 08 Nov 2008) $
-# @version   $Revision: 19003 $
-# @author    $Author: kormoc $
+# @url       $URL$
+# @date      $Date$
+# @version   $Revision$
+# @author    $Author$
 #
 
     use Sys::Hostname;
