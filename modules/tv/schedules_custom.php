@@ -137,7 +137,7 @@
                 }
             }
             else {
-                $schedule->description = $_POST['search_phrase'];
+                $schedule->description = _or($_POST['search_phrase'], $_POST['title']);
                 $schedule->subtitle    = '';
             }
         // Figure out the title
