@@ -60,7 +60,7 @@
     if ( $ENV{'HTTP_IF_MODIFIED_SINCE'}) {
         my $check_time = str2time($ENV{'HTTP_IF_MODIFIED_SINCE'});
         if ($mtime <= $check_time) {
-            print header(-Content_type           => 'video/mp4',
+            print header(-Content_type           => $type,
                          -status                 => "304 Not Modified"
                         );
             exit;
@@ -87,7 +87,7 @@
                  );
     }
     else {
-        print header(-type                   => $type,
+        print header(-type                  => $type,
                     -Content_length         => $size,
                     -Accept_Ranges          => 'bytes',
                     -Last_Modified          => time2str($mtime)
