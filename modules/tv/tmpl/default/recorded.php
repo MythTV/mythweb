@@ -278,10 +278,11 @@
     $cur_group  = '';
 
     $offset = $_REQUEST['offset'];
+    $rows = $offset;
 
     foreach ($All_Shows as $show) {
-        if ($_SESSION['recorded_paging'] > 0 && $offset > 0) {
-            $offset--;
+        if ($_SESSION['recorded_paging'] > 0 && $rows > 0) {
+            $rows--;
             continue;
         }
 
@@ -354,7 +355,7 @@ EOM;
                  "</a>\n        ";
         }
         if ($show->can_delete) {
-        ?><a onclick="javascript:confirm_delete(<?php echo $row ?>, false)"
+        ?><a onclick="javascript:confirm_delete(<?php echo $row+$offset ?>, false)"
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php if (get_backend_setting('AutoExpireInsteadOfDelete') > 0 &&
                        $show->recgroup == 'Deleted')
@@ -362,7 +363,7 @@ EOM;
                     else
                         echo t('Delete');
               ?></a>
-        <a onclick="javascript:confirm_delete(<?php echo $row ?>, true)"
+        <a onclick="javascript:confirm_delete(<?php echo $row+$offset ?>, true)"
             title="<?php echo html_entities(t('Delete and allow rerecord: $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a>
 
