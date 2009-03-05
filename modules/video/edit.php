@@ -58,6 +58,7 @@ header("Content-Type: text/html; charset=utf-8");
         if (is_uploaded_file($_FILES['coverfile']['tmp_name'])) {
             $filename = setting('VideoArtworkDir', hostname).'/id-'.$_REQUEST['intid'].'.jpg';
             move_uploaded_file($_FILES['coverfile']['tmp_name'], $filename);
+            chmod($filename, 0644); // make cover file readable by other users
             $Video->cover_file = $filename;
         }
         $Video->save();
