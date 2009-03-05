@@ -21,7 +21,13 @@
         define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));
 
 // Several sections of this program require the current hostname
-    $uname = posix_uname();
+    if (function_exists('posix_uname'))
+        $uname = posix_uname();
+    elseif (function_exists('php_uname'))
+        $uname = php_uname('n');
+    else
+        throw new Exception('Failed to get server hostname!');
+    
     define('hostname', empty($_SERVER['hostname']) ? trim($uname['nodename']) : $_SERVER['hostname']);
     unset($uname);
 
