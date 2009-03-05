@@ -41,9 +41,17 @@
     my ($vbitrate) = $sh->fetchrow_array;
     $sh->execute('WebFLV_ab');
     my ($abitrate) = $sh->fetchrow_array;
-# Someday, we can auto-detect height based on aspect ratio
-    my $height = int($width * 3/4);
-
+    $sh->finish();
+# auto-detect height based on aspect ratio
+    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND data IS NOT NULL ORDER BY data DESC');
+    $sh->execute($chanid,$starttime); 
+    $x = $sh->fetchrow_array;
+    $y = $sh->fetchrow_array if ($x);
+    if ($x && $y) {
+        $height = int($width * ($y/$x));
+    } else {
+        $height = int($width * 3/4);
+    }
     $sh->finish();
 
     $width    = 320 unless ($width    && $width    > 1);

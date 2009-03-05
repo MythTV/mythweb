@@ -52,10 +52,8 @@
     <td><input type="text" name="width"
          size="5" title="FLV Width"
          value="<?php echo intVal(_or(setting('WebFLV_w'), 320)) ?>" />
-         x
-         <?php echo intVal(_or(setting('WebFLV_w'), 320) * 3/4) ?>
          <br>
-         (hard-coded at 4:3 until we can detect recording aspect)
+         (height is calculated automatically from the recording aspect ratio)
          </td>
 </tr><tr>
     <th><?php echo t('Video Bitrate') ?>:</th>
