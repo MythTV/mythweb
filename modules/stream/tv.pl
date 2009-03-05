@@ -11,9 +11,7 @@
     use Sys::Hostname;
 
 # Attempt to use the perl bindings to prevent the backend from shutting down during streaming
-    eval {
-        use MythTV;
-    };
+    eval 'use MythTV;';
 
     if (!$@) {
         our $mythbackend = new MythTV();
