@@ -378,8 +378,6 @@
     Kaksoiskappale
 "Duplicate Check method"
     Kaksoiskapp. tarkistus
-"Duplicates"
-    Kaksoiskappaleet
 "Duplicates/Ignored"
 "Earlier"
     Aiemmat
@@ -719,7 +717,6 @@
     MythWeb istunto
 "MythWeb Skin"
     MythWebin kuoret
-"MythWeb Template"
 "MythWeb Weather."
     MythWeb Sääennuste.
 "Name"
@@ -859,6 +856,7 @@
     Ole hyvä ja syötä imbd numero tai nimike, jolla tehdä uusi haku
 "Please wait for the pending ajax request"
     Ole hyvä ja odota AJAX -kyselyä
+"Pop-out player"
 "Possible conflicts"
     Mahdolliset ristiriidat
 "Possible conflicts with this show"

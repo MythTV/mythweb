@@ -365,8 +365,6 @@
     Duplikat
 "Duplicate Check method"
     Metoda preverjanja duplikatov
-"Duplicates"
-    Duplikati
 "Duplicates/Ignored"
 "Earlier"
     Prejšnje
@@ -690,7 +688,6 @@
     MythWeb seja
 "MythWeb Skin"
     MythWeb preobleka
-"MythWeb Template"
 "MythWeb Weather."
     MythWeb vreme.
 "Name"
@@ -827,6 +824,7 @@
     Za ponovno iskanje vnesite IMDB številko ali naslov
 "Please wait for the pending ajax request"
     Prosim počakajte na tekočo ajax zahtevo
+"Pop-out player"
 "Possible conflicts"
     Možni konflikti
 "Possible conflicts with this show"

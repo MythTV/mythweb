@@ -275,8 +275,6 @@
 "Duplicate"
 "Duplicate Check method"
     Testmethode herh.
-"Duplicates"
-    Dubbels
 "Duplicates/Ignored"
 "Earlier"
 "Earlier Showing"
@@ -523,7 +521,6 @@
 "MythWeb Global Defaults"
 "MythWeb Session"
 "MythWeb Skin"
-"MythWeb Template"
 "MythWeb Weather."
     Weer
 "Name"
@@ -613,6 +610,7 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
     Mogelijk conflict met dit programma

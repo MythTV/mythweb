@@ -357,8 +357,6 @@
     Wiederholung
 "Duplicate Check method"
     Testmethode für Wdhgn.
-"Duplicates"
-    Wiederholungen
 "Duplicates/Ignored"
 "Earlier"
     früher
@@ -667,7 +665,6 @@
 "MythWeb Session"
     MythWeb Sitzung
 "MythWeb Skin"
-"MythWeb Template"
 "MythWeb Weather."
     Wettervorhersage
 "Name"
@@ -800,6 +797,7 @@
     Playlists
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Pop-out player"
 "Possible conflicts"
     Mögliche Überschneidungen
 "Possible conflicts with this show"

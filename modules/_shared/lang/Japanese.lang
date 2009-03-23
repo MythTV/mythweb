@@ -275,8 +275,6 @@
 "Duplicate"
 "Duplicate Check method"
     重複チェック方法
-"Duplicates"
-    重複
 "Duplicates/Ignored"
 "Earlier"
 "Earlier Showing"
@@ -528,7 +526,6 @@
 "MythWeb Session"
 "MythWeb Skin"
     MythWebスキン
-"MythWeb Template"
 "MythWeb Weather."
     MythWeb 天気
 "Name"
@@ -622,6 +619,7 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
     次の番組と衝突しています

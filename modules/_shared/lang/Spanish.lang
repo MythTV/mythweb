@@ -356,8 +356,6 @@
     Duplicado
 "Duplicate Check method"
     Método comprobación duplicados
-"Duplicates"
-    Duplicados
 "Duplicates/Ignored"
 "Earlier"
     Más Temprano
@@ -618,7 +616,6 @@
 "MythWeb Session"
 "MythWeb Skin"
     Piel MythWeb
-"MythWeb Template"
 "MythWeb Weather."
     Tiempo MythWeb
 "Name"
@@ -717,6 +714,7 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
     Posibles conflictos con este programa

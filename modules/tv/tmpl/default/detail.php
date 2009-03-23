@@ -24,6 +24,10 @@
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
+    if ($program && $program->filename) {
+        $flv_w = setting('WebFLV_w');
+        $flv_h = intVal($flv_w * 3/4) + 20;  // +20px for the playback controls
+
 /*
  * Print the page contents:
  * I really hate tables, but this layout just doesn't work right with pure-css,
@@ -79,6 +83,11 @@
                                 ? '&forget_old=yes'
                                 : '');
         }
+    }
+
+    function openFlashPlayerInNewWindow() {
+        player = window.open('', 'Flash Player', 'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,width=<?php echo $flv_w; ?>,height=<?php echo $flv_h; ?>,left=20,top=20');
+        player.document.write('<html><body style="background-color: black; margin: 0px; padding: 0px;">'+$$('.x-pixmap')[0].textContent+'</body></html>');
     }
 
 // -->
@@ -500,9 +509,6 @@
 
 <?php
     }
-    if ($program && $program->filename) {
-        $flv_w = setting('WebFLV_w');
-        $flv_h = intVal($flv_w * 3/4) + 20;  // +20px for the playback controls
 ?>
 
         <div id="x-downloads">
@@ -630,6 +636,11 @@
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo skin_url ?>/img/video_sm.png">
                     <?php echo t('Direct Download') ?></a>
+                <?php if (setting('WebFLV_on') && file_exists('modules/tv/MFPlayer.swf')) { ?>
+                    <a onclick="openFlashPlayerInNewWindow(); return false;" title="<?php echo t('Pop-out player'); ?>">
+                        <?php echo t('Pop-out player'); ?>
+                    </a>
+                <?php } ?>
             </div>
             <div class="x-jobs">
 <?php

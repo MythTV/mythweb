@@ -353,8 +353,6 @@
     Dublett
 "Duplicate Check method"
     Dubblettmetod
-"Duplicates"
-    Dubbletter
 "Duplicates/Ignored"
 "Earlier"
     Tidigare
@@ -658,7 +656,6 @@
     MythWeb-session
 "MythWeb Skin"
     MythWeb-skinn
-"MythWeb Template"
 "MythWeb Weather."
     MythWeb väder.
 "Name"
@@ -786,6 +783,7 @@
     Ange ett imdb-nummer och en titel för att göra en ny sökning
 "Please wait for the pending ajax request"
     Vänta på den pågående ajax-begäran
+"Pop-out player"
 "Possible conflicts"
     Möjliga konflikter
 "Possible conflicts with this show"

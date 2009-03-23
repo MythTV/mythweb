@@ -250,8 +250,6 @@
 "Duplicate"
 "Duplicate Check method"
     M&eacute;thode de test des doublons
-"Duplicates"
-    Doublonner
 "Duplicates/Ignored"
 "Earlier"
 "Earlier Showing"
@@ -474,7 +472,6 @@
 "MythWeb Global Defaults"
 "MythWeb Session"
 "MythWeb Skin"
-"MythWeb Template"
 "MythWeb Weather."
     M&eacute;t&eacute;o sur le web
 "Name"
@@ -555,6 +552,7 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
 "Power"
