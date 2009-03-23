@@ -12,8 +12,8 @@
     // Start printing the link to record this show
         echo '<a id          = "program-'.$program->chanid.'-'.$program->starttime.'"
                  class       = "program"
-                 onmouseover = "currently_hovered_id = this.id; load_tool_tip(\'program-'.$program->chanid.'-'.$program->starttime.'\',\''.$program->chanid.'\',\''.$program->starttime.'\');"
-                 onmouseout  = "currently_hovered_id = null;"
+                 onmouseover = "currently_hovered_id = this.id; details_delay_timer_id = setTimeout(function () {load_tool_tip(\'program-'.$program->chanid.'-'.$program->starttime.'\',\''.$program->chanid.'\',\''.$program->starttime.'\');}, 250);"
+                 onmouseout  = "currently_hovered_id = null; clearTimeout( details_delay_timer_id ); details_delay_timer_id = null;"
                  href        = "'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
