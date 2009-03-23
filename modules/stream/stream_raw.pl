@@ -98,14 +98,16 @@
                      -Content_length        => $size,
                      -Accept_Ranges         => 'bytes',
                      -Content_Range         => "bytes $start-$end/$total_size",
-                     -Last_Modified         => time2str($mtime)
+                     -Last_Modified         => time2str($mtime),
+                     -Content_disposition => " attachment; filename=\"$name.$suffix\""
                  );
     }
     else {
         print header(-type                  => $type,
                     -Content_length         => $size,
                     -Accept_Ranges          => 'bytes',
-                    -Last_Modified          => time2str($mtime)
+                    -Last_Modified          => time2str($mtime),
+                    -Content_disposition => " attachment; filename=\"$name.$suffix\""
                  );
     }
 

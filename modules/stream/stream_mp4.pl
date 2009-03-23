@@ -28,18 +28,6 @@
     my $type   = 'video/mp4';
     my $suffix = '.mp4';
 
-# Download filename
-    my $name = $basename;
-    if ($name =~ /^\d+_\d+\.\w+$/) {
-        if ($title =~ /\w/) {
-            $name = $title;
-            if ($subtitle =~ /\w/) {
-                $name .= " - $subtitle";
-            }
-        }
-        $name .= $suffix;
-    }
-
 # Open the file for reading
     unless (sysopen DATA, $filename, O_RDONLY) {
         print header(),
