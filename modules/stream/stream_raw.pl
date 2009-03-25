@@ -12,9 +12,6 @@
 
     use HTTP::Date;
 
-    $filename =~ s/mpg$/mp4/g;
-    $basename =~ s/mpg$/mp4/g;
-
 # File size
     my $size = -s $filename;
 
