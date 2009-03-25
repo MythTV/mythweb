@@ -27,6 +27,7 @@
     if ($program && $program->filename) {
         $flv_w = setting('WebFLV_w');
         $flv_h = intVal($flv_w * 3/4) + 20;  // +20px for the playback controls
+    }
 
 /*
  * Print the page contents:
@@ -509,6 +510,7 @@
 
 <?php
     }
+    if ($program && $program->filename) {
 ?>
 
         <div id="x-downloads">
