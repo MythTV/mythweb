@@ -17,10 +17,10 @@
 
 // We need the id always set, so enforce that here
     if (!isset($_REQUEST['id']))
-        $return['error'][] = t('Video: Error: Missing ID');
+        die(JSON::encode(array('error' => array(t('Video: Error: Missing ID')))));
 
     if (is_null(setting('web_video_imdb_path', hostname)))
-        $return['error'][] = t('Video: Error: IMDB: Not Found');
+        die(JSON::encode(array('error' => array(t('Video: Error: IMDB: Not Found')))));
 
     switch($_REQUEST['action'])
     {
