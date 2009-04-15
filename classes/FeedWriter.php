@@ -249,7 +249,7 @@ class FeedWriter {
 				$nodeText .= $this->makeNode($key, $value);
 		}
 		else
-			$nodeText .= (in_array($tagName, $this->CDATAEncoding))? $tagContent : htmlentities($tagContent);
+			$nodeText .= $tagContent;
 
 		$nodeText .= (in_array($tagName, $this->CDATAEncoding))? "]]></$tagName>" : "</$tagName>";
 

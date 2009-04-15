@@ -32,7 +32,7 @@
  */
 	public function addElement($elementName, $content, $attributes = null) {
 		$this->elements[$elementName]['name']       = $elementName;
-		$this->elements[$elementName]['content']    = urldecode(utf8_decode($content));
+		$this->elements[$elementName]['content']    = $content;
 		$this->elements[$elementName]['attributes'] = $attributes;
 	}
 
