@@ -49,7 +49,7 @@
 // Now scan for any new ones
     $paths = explode(':', setting('VideoStartupDir', hostname));
     foreach ($paths as $path) {
-        exec("find -L $path -type f", $files, $retval);
+        exec("find -L $path -name '.*' -prune -o -type f -print", $files, $retval);
         foreach ($files as $file) {
             if ( in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $Known_Exts) === FALSE )
                 continue;
