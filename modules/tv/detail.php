@@ -240,7 +240,12 @@
             }
         }
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+        if ($schedule->recordid) {
+            redirect_browser(root.'tv/detail?recordid='.$schedule->recordid);
+        }
+        else {
+            redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+        }
     }
     elseif ($_REQUEST['forget_old']) {
         $program->rec_forget_old();
