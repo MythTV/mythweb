@@ -16,17 +16,17 @@
                          );
 */
     $SubModules[] = array('Name'    => 'Upcoming',
-                          'URL'     => root.'/tv/upcoming',
+                          'URL'     => root.'tv/upcoming',
                           'Icon'    => skin_url.'img/Icons/clock'
                          );
 /*
     $SubModules[] = array('Name'    => 'Schedules',
-                          'URL'     => root.'/tv/schedules',
+                          'URL'     => root.'tv/schedules',
                           'Icon'    => skin_url.'img/Icons/cal'
                          );
 */
     $SubModules[] = array('Name'    => 'Recorded',
-                          'URL'     => root.'/tv/list_recording_groups/',
+                          'URL'     => root.'tv/list_recording_groups/',
                           'Icon'    => skin_url.'img/Icons/video'
                          );
 

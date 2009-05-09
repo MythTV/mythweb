@@ -33,7 +33,7 @@
         $tmpl = 'wap';
     elseif (preg_match('/^(Lynx|ELinks)/i', $_SERVER['HTTP_USER_AGENT']))
         $tmpl = 'lite';
-    elseif (preg_match('/(ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
+    elseif (preg_match('/(mobile\s+safari|ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
         $tmpl = 'iPod';
     else
         $tmpl = 'default';
@@ -52,7 +52,7 @@
         $skin = $_COOKIE['mythweb_skin'];
     elseif (isMobileUser())
         $skin = 'wap';
-    elseif (preg_match('/(ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
+    elseif (preg_match('/(mobile\s+safari|ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
         $skin = 'iPod-default';
     else
         $skin = 'default';
