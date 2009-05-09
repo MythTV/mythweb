@@ -52,6 +52,7 @@
                     document.body.removeClassName('landscape');
                     break;
 
+                case 1: // android (G1)
                 case 90:
                 case -90:
                     document.body.addClassName('landscape');
@@ -59,16 +60,11 @@
             }
         }
 
-        // Hide safari's location bar by default;
-            setTimeout(function(){ window.scrollTo(0, 1);} , 100);
-        // Handle G1 resize events
-            Event.observe(document.onresize ? document : window,
-                          "resize", function() {
-                            if (document.documentElement.clientHeight > document.documentElement.clientWidth)
-                                document.body.removeClassName('landscape');
-                            else
-                                document.body.addClassName('landscape');
-                        });  
+    // Hide safari's location bar by default;
+        setTimeout(function(){ window.scrollTo(0, 1);} , 100);
+    // Handle resize/rotate events
+        Event.observe(document.onresize ? document : window,
+                      "resize", updateOrientation);
     </script>
 
 </head>
