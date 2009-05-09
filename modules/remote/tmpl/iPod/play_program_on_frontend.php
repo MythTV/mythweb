@@ -14,7 +14,7 @@
 // Set the desired page title
     $page_title = 'MythWeb - ' . t('Play Recording on Frontend');
 
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/ListPanel.css">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'ListPanel.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';

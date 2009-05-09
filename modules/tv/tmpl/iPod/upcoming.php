@@ -13,7 +13,7 @@
 // Set the desired page title
     $page_title = 'MythWeb - ' . t('Upcoming Recordings');
 
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/ListPanel.css">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'ListPanel.css">';
 
     // Setup some vars for the ipod template
     $Page_Previous_Location = root.'tv/submenu';

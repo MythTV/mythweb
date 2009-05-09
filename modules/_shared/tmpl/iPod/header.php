@@ -24,20 +24,20 @@
 <head>
     <title><?php echo html_entities($page_title) ?></title>
 
-    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
+    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" />
 
     <link rel="icon"          href="<?php echo skin_url ?>img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo skin_url ?>img/favicon.ico" type="image/x-icon">
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <script type="text/javascript" src="<?php echo root; ?>js/prototype.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
 
-    <script type="text/javascript" src="<?php echo root; ?>js/utils.js"></script>
-    <script type="text/javascript" src="<?php echo root; ?>js/table_sort.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
+    <script type="text/javascript" src="<?php echo root ?>js/table_sort.js"></script>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo skin_url ?>/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/header.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo skin_url ?>style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>header.css">
 
     <?php
         if (!empty($headers) && is_array($headers))
@@ -77,11 +77,11 @@
     </script>
 
     <div id="Header">
-        <div id="PageTitle"><?php echo _or($Page_Title_Short, 'MythWeb'); ?></div>
+        <div id="PageTitle"><?php echo _or($Page_Title_Short, 'MythWeb') ?></div>
         <?php
             if (isset($Page_Previous_Location) && isset($Page_Previous_Location_Name)) {
                 ?>
-                <a id="homeButton" class="button" href="<?php echo $Page_Previous_Location; ?>"><?php echo $Page_Previous_Location_Name; ?></a>
+                <a id="homeButton" class="button" href="<?php echo $Page_Previous_Location ?>"><?php echo $Page_Previous_Location_Name ?></a>
                 <?php
             }
             ?>
