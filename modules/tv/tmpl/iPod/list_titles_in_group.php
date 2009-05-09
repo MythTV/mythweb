@@ -23,7 +23,7 @@
     <?php
         if (is_array($Titles)) {
             foreach ($Titles as $title) {
-                echo '<li><a href="'.root.'/tv/list_shows_in_title_and_group/?group='.urlencode($group).'&title='.urlencode($title[0]).'">'.$title[0].($title[1] > 1 ? " ({$title[1]})" : '')."\n";
+                echo '<li><a href="'.root.'tv/list_shows_in_title_and_group/?group='.urlencode($group).'&title='.urlencode($title[0]).'">'.$title[0].($title[1] > 1 ? " ({$title[1]})" : '')."\n";
             }
         }
     ?>

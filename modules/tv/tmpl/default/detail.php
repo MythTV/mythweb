@@ -694,7 +694,7 @@
             if (is_array($frontends)) {
                 echo '<div class="x-frontends">'.t('Play Recording on Frontend').':<ul>';
                     foreach ($frontends as $frontend)
-                        echo '<li><a href="'.root.'/remote/play_program_on_frontend?host='.urlencode($frontend->getHost()).'&chanid='.urlencode($program->chanid).'&starttime='.urlencode($program->starttime).'">'.$frontend->getHost().'</a><br>';
+                        echo '<li><a href="'.root.'remote/play_program_on_frontend?host='.urlencode($frontend->getHost()).'&chanid='.urlencode($program->chanid).'&starttime='.urlencode($program->starttime).'">'.$frontend->getHost().'</a><br>';
                 echo '</ul></div>';
             }
         ?>

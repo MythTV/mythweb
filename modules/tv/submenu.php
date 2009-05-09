@@ -11,7 +11,7 @@
 /**/
 /*
     $SubModules[] = array('Name'    => 'Listings',
-                          'URL'     => root.'/tv/list',
+                          'URL'     => root.'tv/list',
                           'Icon'    => skin_url.'img/Icons/logs'
                          );
 */

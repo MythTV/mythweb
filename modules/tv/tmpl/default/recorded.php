@@ -439,7 +439,7 @@ EOM;
             $query .= 'offset='.(($i-1)*$_SESSION['recorded_paging']);
             if ($i != 1)
                 echo ' | ';
-            echo '<a href="'.root.'/tv/recorded?'.$query.'">'.$i.'</a>';
+            echo '<a href="'.root.'tv/recorded?'.$query.'">'.$i.'</a>';
         }
     }
 ?>

@@ -31,7 +31,7 @@
     while ($subtitles = $sh->fetch_row())
         $SubTitles[] = $subtitles;
 
-    $Page_Previous_Location = root.'/tv/list_titles_in_group?group='.htmlentities($group);
+    $Page_Previous_Location = root.'tv/list_titles_in_group?group='.htmlentities($group);
     $Page_Previous_Location_Name = $group;
     $Page_Title_Short = $_REQUEST['title'];
 

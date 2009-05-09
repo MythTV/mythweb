@@ -77,10 +77,10 @@
         if (strlen($schedule->fancy_description))
             echo '<li class="text long">'.$schedule->fancy_description;
     ?>
-    <li class="small"><a href="<?php echo root.'/remote/play_program_on_frontend?chanid='.$program->chanid.'&starttime='.$program->recstartts; ?>"><?php echo t('Watch on frontend'); ?></a>
+    <li class="small"><a href="<?php echo root.'remote/play_program_on_frontend?chanid='.$program->chanid.'&starttime='.$program->recstartts; ?>"><?php echo t('Watch on frontend'); ?></a>
     <?php
         if ($program->hasAlternativeFormat('mp4'))
-            echo '<li class="small"><a href="'.root.'/pl/stream/'.$program->chanid.'/'.$program->recstartts.'.mp4">'.t('Watch on iPod/iPhone').'</a>';
+            echo '<li class="small"><a href="'.root.'pl/stream/'.$program->chanid.'/'.$program->recstartts.'.mp4">'.t('Watch on iPod/iPhone').'</a>';
     ?>
 </ul>
 

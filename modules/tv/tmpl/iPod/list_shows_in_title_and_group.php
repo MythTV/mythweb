@@ -23,7 +23,7 @@
     <?php
         if (is_array($SubTitles)) {
             foreach ($SubTitles as $subtitle) {
-                echo '<li><a href="'.root.'/tv/detail/'.urlencode($subtitle[1]).'/'.urlencode($subtitle[2]).'">'.$subtitle[0]."\n";
+                echo '<li><a href="'.root.'tv/detail/'.urlencode($subtitle[1]).'/'.urlencode($subtitle[2]).'">'.$subtitle[0]."\n";
             }
         }
     ?>

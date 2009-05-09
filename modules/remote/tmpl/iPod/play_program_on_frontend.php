@@ -23,7 +23,7 @@
 <ul class="ListPanel">
     <?php
         foreach (MythFrontend::findFrontends() as $frontend)
-            echo '<li><a href="'.root.'/remote/play_program_on_frontend?host='.urlencode($frontend->getHost()).'&chanid='.urlencode($chanid).'&starttime='.urlencode($starttime).'">'.$frontend->getHost().'</a>';
+            echo '<li><a href="'.root.'remote/play_program_on_frontend?host='.urlencode($frontend->getHost()).'&chanid='.urlencode($chanid).'&starttime='.urlencode($starttime).'">'.$frontend->getHost().'</a>';
     ?>
 </ul>
 

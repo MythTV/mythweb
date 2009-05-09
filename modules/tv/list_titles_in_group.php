@@ -26,7 +26,7 @@
     while ($title = $sh->fetch_row())
         $Titles[] = $title;
 
-    $Page_Previous_Location = root.'/tv/list_recording_groups';
+    $Page_Previous_Location = root.'tv/list_recording_groups';
     $Page_Previous_Location_Name = 'Rec Groups';
     $Page_Title_Short = 'Titles ('.$group.')';
 

@@ -23,7 +23,7 @@
     <?php
         if (is_array($Groups)) {
             foreach ($Groups as $group) {
-                echo '<li><a href="'.root.'/tv/list_titles_in_group/?group='.urlencode($group).'">'.$group."\n";
+                echo '<li><a href="'.root.'tv/list_titles_in_group/?group='.urlencode($group).'">'.$group."\n";
             }
         }
     ?>
