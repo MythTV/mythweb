@@ -59,8 +59,8 @@
     // Report back, and then exit.
         if ($sh->affected_rows())
             echo 'success';
-		else
-			echo "Failed to update the database for chanid {$_GET['chanid']} at {$_GET['starttime']}!";
+        else
+            echo "Failed to update the database for chanid {$_GET['chanid']} at {$_GET['starttime']}!";
         exit;
     }
 
