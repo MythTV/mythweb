@@ -61,6 +61,14 @@
 
         // Hide safari's location bar by default;
             setTimeout(function(){ window.scrollTo(0, 1);} , 100);
+        // Handle G1 resize events
+            Event.observe(document.onresize ? document : window,
+                          "resize", function() {
+                            if (document.documentElement.clientHeight > document.documentElement.clientWidth)
+                                document.body.removeClassName('landscape');
+                            else
+                                document.body.addClassName('landscape');
+                        });  
     </script>
 
 </head>
