@@ -25,11 +25,14 @@
 
 // Set the autoexpire flag
     function set_autoexpire() {
-        var r = new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
+        new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
                                  {
                                     parameters: 'toggle_autoexpire='+(1 - autoexpire),
-                                  asynchronous: false
+                                     onSuccess:  autoexpire_handler
                                  });
+    }
+
+    function autoexpire_handler(r) {
         if (r.transport.responseText == 'success') {
         // Update to the new value
             autoexpire = 1 - autoexpire;
