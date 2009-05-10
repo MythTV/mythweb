@@ -2,7 +2,7 @@
     Action
     \b(?:action|adven)
 "Adult"
-    Adult
+    Vuxen
     \b(?:adult|erot)
 "Animals"
     Djur
@@ -71,7 +71,7 @@
     Shopping
     \b(?:shop)
 "Soaps"
-    Såpopera
+    Såpoperor
     \b(?:soaps|såpopera)
 "Spiritual"
     Andligt

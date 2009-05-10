@@ -2,6 +2,7 @@
 " at "
     vid
 "# Tracks"
+    # Låtar
 "$1 B"
     $1 B
 "$1 day"
@@ -15,24 +16,25 @@
 "$1 GB"
     $1 GB
 "$1 hr"
-    $1 h
+    $1 timme
 "$1 hrs"
-    $1 h
+    $1 timmar
 "$1 is not responding."
+    $1 svarar inte.
 "$1 KB"
     $1 KB
 "$1 MB"
     $1 MB
 "$1 min"
-    $1 min
+    $1 minut
 "$1 mins"
-    $1 min
+    $1 minuter
 "$1 month"
     $1 månad
 "$1 months"
     $1 månader
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
-    $1 program ($3), som använder $2 av $4
+    $1 program ($3), som använder $2 av $4 ($5 fri).
 "$1 recording"
     $1 inspelning
 "$1 recordings"
@@ -58,13 +60,17 @@
 "%s Songs (%s)"
     %s sånger (%s)
 "Aborted"
+    Avbröt
 "Aborting"
+    Avbryter
 "Action"
     Handling
 "Actions"
+    Handlingar
 "Activate"
     Aktivera
 "Active Screens"
+    Aktiva skärmar
 "Add"
     Lägg till
 "Add Album to Current Playlist"
@@ -78,9 +84,11 @@
 "Add this Playlist as a Subplaylist"
     Lägg till denna spellista som en underspellista
 "Add To Active Screens"
+    Lägg till aktiva skärmar
 "Additional Tables"
     Ytterligare tabeller
 "Admin Key"
+    Administrations nyckel
 "Advanced"
     Avancerad
 "Advanced Options"
@@ -143,6 +151,7 @@
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Är du säker på att du vill TA BORT DENNA SPARADE SPELLISTA?
 "Are you sure you want to delete this show?"
+    Är du säker på du vill radera denhär showen?
 "Artist Listing"
     Artistlistning
 "Artists"
@@ -152,8 +161,11 @@
 "ASX Stream"
     ASX-ström
 "Audio Bitrate"
+    Ljud bitrate
 "Audio for Hearing Impaired"
+    Ljud för hörselskada
 "Audio for Visually Impaired"
+    Ljud för visuell skada
 "Auto Expire"
     Autoradera
 "Auto-expire recordings"
@@ -163,9 +175,11 @@
 "Auto-transcode"
     Omkoda automatiskt
 "AVC/H.264"
+    AVC/H.264
 "Back"
     Tillbaka
 "Back Tab"
+    Tillbaka tab
 "Back to the program listing"
     Tillbaka till programlistan
 "Back to the recorded programs"
@@ -177,6 +191,7 @@
 "Backend Status"
     Systemstatus
 "Backspace"
+    Baksteg
 "Begin a New Search"
     Starta en ny sökning
 "brightness"
@@ -208,9 +223,11 @@
 "Cancelled"
     Avbruten
 "Caps Lock"
+    Caps lock
 "Cast"
     Rollbesättning
 "Cast Information"
+    Rollbesättning information
 "category"
     kategori
 "Category"
@@ -242,6 +259,7 @@
 "Check for duplicates in"
     Sök dubbletter i
 "Childrens Movies"
+    Barnfilmer
 "Choose Genre.."
     Välj genre..
 "Choose Type"
@@ -257,7 +275,7 @@
 "colour"
     färg
 "Commands"
-    Kommando
+    Kommandon
 "Commercials Flagged"
     Reklam markerad
 "commfree"
@@ -279,13 +297,17 @@
 "Create Schedule"
     Schemalägg
 "Current MythWeb Skin"
+    Nuvarande MythWeb tema
 "Current MythWeb Template"
+    Nuvarande MythWeb mall
 "Current Recording"
+    Nuvarande inspelning
 "Current recordings"
     Nuvarande inspelningar
 "Currently Browsing:  $1"
     Just nu visas:  $1
 "Currently Recording:  Edit"
+    Nuvarande inspelning: Redigera
 "Custom"
     Egen
 "Custom Schedule"
@@ -293,10 +315,13 @@
 "Custom Search"
     Egen sökning
 "Customize Screens"
+    Skräddarsy skärmar
 "Data"
     Data
 "Database"
+    Databas
 "Database Health"
+    Databasens hälsa
 "Date"
     Datum
 "Date Formats"
@@ -304,11 +329,15 @@
 "Deactivated"
     Avaktiverad
 "Deaf Signed"
+    Teckenspråk
 "Default"
     Standard
 "Default MythVideo View"
+    Standard MythVideo vy
 "Default MythWeb Skin"
+    Standard MythWeb tema
 "Default MythWeb Template"
+    Standard MyhtWeb mall
 "Delete"
     Radera
 "delete"
@@ -318,10 +347,13 @@
 "Delete + Rerecord"
     Radera + Återinspela
 "Delete and allow rerecord: $1"
+    Radera och tillåt återinspelning: $1
 "Delete and rerecord"
+    Radera och återinspela
 "Delete and rerecord $1"
     Radera och återinspela $1
 "Delete Forever"
+    Radera För alltid
 "DELETE this Saved Playlist"
     RADERA denna sparade spellista
 "description"
@@ -335,16 +367,19 @@
 "Direct Download"
     Direkt nerladdning
 "Directed by"
-    Regi
+    Regisserad av
 "Display"
     Visning
 "Dolby Surround"
+    Dolby sorround
 "Don't Record"
     Spela ej in
 "Don't record this program."
     Spela inte in detta program.
 "Done, Unknown Status"
+    Avslutad, Okänt status
 "Down"
+    Ner
 "Download URL override"
     Nedladdnings-URL-åsidosättning
 "Dup Method"
@@ -382,9 +417,13 @@
 "Episode Number"
     Avsnittsnummer
 "error: playgroup $1 exists"
+    misslyckades: spelgrupp $1 existerar
 "Errored"
+    Misslyckades
 "Erroring"
+    Misslyckas
 "Escape"
+    Undgå
 "Everything"
     Allt
 "Exclude Generic Episodes"
@@ -396,16 +435,23 @@
 "Exec. Producer"
     Producent
 "Executive Producer"
+    Verkställande Producer
 "Extended Check"
+    Utbredd kontroll
 "Extra Information"
+    Extra information
 "Failure to autoload class !"
+    Brist att autoloada klass!
 "File Size"
     Filstorlek
 "film"
+    film
 "Filter"
+    Filter
 "Filters"
+    Filter
 "Find Date & Time Options"
-    Hitta dag &amp; tid
+    Hitta dag & tid Inställningar
 "Find Day"
     Hitta dag
 "Find other showings of this program"
@@ -419,12 +465,15 @@
 "finetune"
     finjustera
 "Finished"
+    Färdig
 "First recording"
     Första inspelning
 "Flag Commercials"
+    Flagga reklam
 "Force HTTP for streams"
     Tvinga HTTP för strömmar
 "Force HTTP/HTTPS port for streams"
+    Tvinga HTTP/HTTPS port för strömmar
 "Forced"
     Tvingad
 "Forget Old"
@@ -438,6 +487,7 @@
 "Friday"
     Fredag
 "Frontends"
+    Frontend
 "generic_date"
     %Y-%m-%d
 "generic_time"
@@ -471,11 +521,13 @@
 "HDTV"
     HDTV
 "Height"
+    Höjd
 "Hide"
     Göm
 "High"
     Hög
 "Home"
+    Hem
 "Host"
     Värd
 "Hosted by"
@@ -489,17 +541,20 @@
 "Humidity"
     Luftfuktighet
 "Ignore generic shows"
+    Ignorera allmänna shower
 "Ignore scheduled shows"
 "IMDB"
     IMDB
 "IMDBTYPE"
+    IMDBTYP
 "Inactive"
     Inaktiv
 "Inactive Screens"
+    Inaktiva skärmar
 "info: activate recording"
-    Tvinga denna visning att spela in.
+    aktivera inspelning
 "info: default recording"
-    Återställ överskuggningar så att denna visning schemaläggs normalt.
+    standard inspelning
 "info: dont record"
     Spela inte in denna visning.
 "info: flvplayer"
@@ -521,15 +576,17 @@
 "info: hidden advanced schedule"
     De avancerade inspelningsalternativen är gömda.
 "info: record this"
-    Tvinga denna visning att spela in.
+    spela in dethär.
 "info:forget old"
     Glöm tidigare inspelningar av detta program, så att det kan återinspelas.
 "info:never record"
-    Förfalsa en tidigare inspelning av detta program så att det inte kommer att spelas in.
+    Spela aldrig in
 "Insert"
+    Sätta in
 "Jump"
     Gå
 "Jump Points"
+    Hoppmarkeringar
 "Jump to"
     Gå till
 "Jump To"
@@ -541,6 +598,7 @@
 "Key bindings"
     Knappbindningar
 "Key Controls"
+    Nyckelkontroller
 "Keybindings Editor"
     Redigera knappar
 "Keyword"
@@ -558,8 +616,11 @@
 "Later"
     Senare
 "left"
+    vänster
 "Left"
+    Vänster
 "leftl"
+    vänsterl
 "length"
     längd
 "Length"
@@ -567,6 +628,7 @@
 "Length (min)"
     Längd (min)
 "Links"
+    Länkar
 "Listing &quot;Jump to&quot;"
     TV-tablå &quot;Gå till&quot;
 "Listing Time Key"
@@ -590,7 +652,9 @@
 "Local weather forecast"
     Lokal väderprognos
 "LOCKDOWN_NOTICE"
+    LÅSNER_FÖRVARNING
 "LOCKDOWN_NOTICE_2"
+    LÅSNER_FÖRVARNING_2
 "Logs"
     Logg
 "Low"
@@ -600,7 +664,7 @@
 "Manual"
     Manuell
 "matches"
-    matchar
+    Träffar
 "Max star rating for movies"
     Max stjärnbetyg för filmer
 "minutes"
@@ -610,6 +674,7 @@
 "Monday"
     Måndag
 "Mono"
+    Mono
 "More"
     Mer
 "more"
@@ -623,7 +688,7 @@
 "Movies"
     Filmer
 "Movies, 3&frac12; Stars or more"
-    Filmer, 3&frac12; stjärnor eller mer
+    Filmer, 3&frac12; Stjärnor eller mer
 "Movies, Stinkers (2 Stars or less)"
     B-filmer (2 stjärnor eller mindre)
 "Music"
@@ -635,7 +700,9 @@
 "MythMusic on the web."
     MythMusic på webben
 "MythMusic_Prefixes_To_Ignore"
+    MythMusik_Förstavelser_Att_Ignorera
 "MythTV"
+    MythTV
 "MythTV Status"
     MythTV-status
 "MythVideo Artwork Dir"
@@ -645,9 +712,13 @@
 "MythVideo on the web."
     MythVideo på webben
 "mythvideo.db_folder_view"
+    mythvideo.db_katalog_vy
 "mythvideo.ImageCacheSize"
+    mythvideo.BildCacheStorlek
 "mythvideo.sort_ignores_case"
+    Mythvideo.typ_ignorera_fack
 "MythWeb"
+    MythWeb
 "MythWeb Defaults"
     MythWeb-förval
 "MythWeb Global Defaults"
@@ -671,6 +742,7 @@
 "New Episodes Only"
     Endast nya avsnitt
 "New Group"
+    Ny grupp
 "New Search"
     Ny sökning
 "New Titles, Premieres"
@@ -678,6 +750,7 @@
 "NO DATA"
     INGA DATA
 "No Frontends allow remote control."
+    Inga Frontends tillåter fjärrkontroll.
 "No matches found"
     Inga träffar
 "No matching programs found."
@@ -685,7 +758,7 @@
 "No Public Playlists"
     Inga publika spellistor
 "No recording schedules have been defined."
-    Inga schemalagda inspelningar
+    Inga schemalagda inspelningar har definierats.
 "No. of recordings to keep"
     Inspelningar att behålla
 "Non-Music Specials"
@@ -705,6 +778,7 @@
 "Number of timeslots"
     Antal tidsluckor
 "Off"
+    Av
 "Only display favourite channels"
     Visa endast favoritkanaler
 "Only match commercial-free channels"
@@ -712,20 +786,25 @@
 "Only match HD programs"
     Matcha endast HD-program
 "Only match non-recorded shows"
+    Matcha endast icke-inspelade shower
 "Only New Episodes"
     Endast nya avsnitt
 "Optimize Tables"
+    Optimera tabeller
 "or"
     eller
 "Original Airdate"
-    Sändningsdatum
+    Original Sändningsdatum
 "Originally aired between"
     Visades ursprungligen mellan
 "Override"
     Överskugga
 "Page Down"
+    Bläddra Ner
 "Page recorded programs"
+    Bläddra inspelade program
 "Page Up"
+    Bläddra upp
 "Part $1 of $2"
     Del $1 av $2
 "Past Month"
@@ -735,7 +814,9 @@
 "Past Year"
     Senaste året
 "Paused"
+    Pausad
 "Pending"
+    Pendlar
 "People"
     Person
 "People Search"
@@ -745,6 +826,7 @@
 "Play"
     Spela
 "Play Recording on Frontend"
+    Spela inspelning på Frontend
 "Play this Album Now"
     Spela detta album nu
 "Play This Playlist Now"
@@ -756,7 +838,9 @@
 "Play Time"
     Speltid
 "Playback Group"
+    Uppspelning Grupp
 "Playback Groups"
+    Uppspelning Grupper
 "Played %s times"
     Spelad %s gånger
 "Played once"
@@ -793,9 +877,11 @@
 "Power Search"
     Avancerad sökning
 "Precip"
+    Förhastat handlande
 "Prefer Channum"
     Föredra kanalnummer
 "prefer_channum"
+    föredra kanalnummer
 "Preferred Input"
     Föredragen källa
 "Presented by"
@@ -803,6 +889,7 @@
 "Pressure"
     Lufttryck
 "Previous Recording"
+    Föregående Inspelning
 "Previous recordings"
     Tidigare inspelningar
 "Produced by"
@@ -812,11 +899,13 @@
 "profile"
     profil
 "Program Detail"
-    Programdetaljer
+    Programdetalj
 "Program Flags"
+    Programflaggningar
 "Program ID"
     Program-ID
 "Program Information"
+    Program Information
 "Program Listing"
     Programlista
 "Program Type"
@@ -824,8 +913,11 @@
 "Protocol"
     Protokoll
 "Queue a job"
+    Köa ett jobb
 "Queued"
+    Köad
 "Queued jobs"
+    Köade jobb
 "Random"
     Slumpvis
 "Random Items"
@@ -839,14 +931,17 @@
 "Recently Added Albums"
     Nyligen tillagda album
 "Recently completed jobs"
+    Nyligen färdiga jobb
 "Recently Played Songs"
     Nyligen spelade sånger
 "recgroup"
     inspelningsgrupp
 "Record Date"
+    Inspelningsdatum
 "Record Length"
+    Inspelningslängd
 "Record new and expire old"
-    Spela in nya, radera gamla
+    Spela in nya och radera gamla
 "Record This"
     Spela in
 "Recorded"
@@ -858,6 +953,7 @@
 "Recording Group"
     Inspelningsgrupp
 "Recording Groups"
+    Inspelningsgrupper
 "Recording Options"
     Inspelningsinställningar
 "Recording Priority"
@@ -869,6 +965,7 @@
 "Recording Statistics"
     Inspelningsstatistik
 "Recording Titles"
+    Inspelningstitlar
 "recpriority"
     inspelningsprioritet
 "recstatus: cancelled"
@@ -942,36 +1039,43 @@
 "rectype: dontrec"
     Spela ej in
 "rectype: finddaily"
-    En per dag
+    hitta dagligen
 "rectype: findone"
-    Hitta en
+    hitta en
 "rectype: findweekly"
-    En per vecka
+    hitta veckovis
 "rectype: once"
     Enstaka
 "rectype: override"
     Överskugga
 "rectype: weekly"
-    Veckovis
+    veckovis
 "regex: articles"
-    An?|The
+    artiklar
 "Remote"
+    Otillgänglig
 "Remove Item from Playlist"
     Ta bort post från spellista
 "Repair Tables"
+    Reparera tabeller
 "Repeat"
-    Repris
+    Repetera
 "Reset"
     Återställ
 "Reset template and skin to defaults"
+    Återställ modell och tema till standard
 "Retry"
+    Försök igen
 "Return to Statistics Page"
     Återvänd till statistiksida
 "right"
+    höger
 "Right"
+    Höger
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo
 "Running"
+    Kör
 "Saturday"
     Lördag
 "Save"
@@ -983,12 +1087,13 @@
 "Save/Rename"
     Spara/Byt namn
 "Save/Rename Playlist"
-    Spara/But namn på spellista
+    Spara/Byt namn på spellista
 "Saved Playlist Successfully Deleted"
     Sparad spellista togs bort
 "Saved Playlists"
     Sparade spellistor
 "Scan Collection"
+    Scanna samling
 "Schedule"
     Schema
 "Schedule Manually"
@@ -1012,7 +1117,7 @@
 "Search $1"
     Sök $1
 "Search for:  $1"
-    Sök efter:  $1
+    Sök efter: $1
 "Search Music"
     Sök musik
 "Search Phrase"
@@ -1020,11 +1125,13 @@
 "Search Results"
     Sökresultat
 "Search the Music Database"
+    Sök Musik Databasen
 "Search Type"
     Sök typ
 "Searches"
     Sökningar
 "Series ID"
+    Serie ID
 "Server Statistics"
     Serverstatistik
 "Set Host"
@@ -1036,11 +1143,13 @@
 "Settings Table"
     Inställningstabell
 "settings/stream: protocol"
+    inställningar/ström: protokoll
 "settings: notice"
     Varning!<br><br>
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
 "Shift"
+    Shift
 "Show"
     Visa
 "Show group"
@@ -1050,8 +1159,11 @@
 "Show recordings"
     Visa inspelningar
 "show_channel_icons"
+    visa_kanal_ikoner
 "show_popup_info"
+    visa_popup_info
 "show_video_covers"
+    visa_video_omslag
 "Showing all programs from the $1 group."
     Visar alla program i grupp: $1.
 "Showing all programs."
@@ -1061,7 +1173,9 @@
 "Shows"
     Program
 "Skip Ahead"
+    Hoppa Framåt
 "Skip Back"
+    Hoppa Bakåt
 "Songs"
     Sånger
 "Songs for Genre"
@@ -1069,12 +1183,15 @@
 "Songs Played"
     Sånger spelade
 "Songs Rated"
+    Sånger rankning
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
     Tyvärr, du kan inte byta namn på denna spellista eftersom det skulle skapa ett cirkulärt beroende.
 "sortby_channum"
+    sortera_kanalnummer
 "sourceid"
     käll-id
 "Space"
+    Space
 "Special Searches"
     Speciella sökningar
 "Star character"
@@ -1089,6 +1206,7 @@
 "Statistics"
     Statistik
 "Stats"
+    Status
 "Status"
     Status
 "Status Bar"
@@ -1096,29 +1214,35 @@
 "Stereo"
     Stereo
 "Still Recording: Edit"
-    Spelas in: Editera
+    Spelas in: Redigera
 "Stopping"
+    Stoppar
 "Storage Group"
     Lagringsgrupp
 "Streaming"
     Strömmande
 "Sub and Desc (Empty matches)"
-    Undertitel &amp; beskrivning
+    Textning och Beskrivning (Tomma träffar)
 "Submit Search"
     Sök
 "Subtitle"
-    Undertitel
+    Textning
 "Subtitle and Description"
-    Undertitel och beskrivning
+    Textning och Beskrivning
 "Subtitle then Description"
+    Textning sen Beskrivning
 "Subtitled"
     Textad
 "Subtitles Available"
+    Textning tillgänglig
 "Sunday"
     Söndag
 "Surround Sound"
+    Omgivande ljud
 "Tab"
+    Flik
 "Temp"
+    Tillfälligt
 "The requested recording schedule has been deleted."
     Det begärda inspelningsschemat har tagits bort.
 "There are no items in this Playlist!"
@@ -1136,8 +1260,9 @@
 "Time Span"
     Tidsperiod
 "Time Stretch"
+    Tidssträcka
 "Time Stretch Default"
-    Förvalt tempo
+    Förvalt Tidssträcka
 "Timeslot size"
     Tidsluckestorlek
 "title"
@@ -1145,6 +1270,7 @@
 "Title"
     Titel
 "Title Match"
+    Titel Träffar
 "Title search"
     Sök titel
 "Title Search"
@@ -1156,6 +1282,7 @@
 "Top Played Songs"
     Mest spelade sånger
 "Top Rated Songs"
+    Topp värderade sånger
 "Total Length"
     Total längd
 "Total Recorded"
@@ -1169,6 +1296,7 @@
 "Track #%s from the album '%s'"
     Spår nr %s fråm albumet '%s'
 "Transcode"
+    Omkoda
 "transcoder"
     omkodare
 "Transcoder"
@@ -1182,6 +1310,7 @@
 "TV functions, including recorded programs."
     Tv-funktioner, inkl. inspelade program.
 "TV Submenu"
+    Tv Textningmeny
 "TV.com"
     TV.com
 "type"
@@ -1189,16 +1318,21 @@
 "Type"
     Typ
 "Undelete"
+    Oraderat
 "Undelete: $1"
+    Oraderat: $1
 "Unknown"
     Okänd
 "Unknown action"
+    Okänd händelse
 "Unknown frontend"
+    Okänd frontend
 "Unknown Program."
     Okänt program.
 "Unknown Recording Schedule."
     Okänt inspelningsschema.
 "Up"
+    Upp
 "Upcoming Recordings"
     Kommande inspelningar
 "Update"
@@ -1210,39 +1344,65 @@
 "Use date/time"
     Använd datum/tid
 "useonairguide"
+    Användar guide information från tv sändnigen.
 "Value"
     Värde
 "Video"
     Video
 "Video Bitrate"
+    Video Bitrate
 "Video Playback"
+    Video Återuppspelning
 "Video: Error: IMDB"
+    Video: Fel: IMDB
 "Video: Error: IMDB: Not Found"
+    Video: Fel: IMDB: Hittas inte
 "Video: Error: Missing ID"
+    Video: Fel: Saknar ID
 "Video: IMDB: No Matches"
+    Video: IMDB: Inga träffar
 "Video: IMDB: Window Title"
+    Video: IMDB: Fönster Titel
 "Video: Warning: Artwork"
+    Video: Varning: Fotografi
 "Video: Warning: Artwork: Download"
+    Video: Varning: Fotografi: Ladda ner
 "Video: Warning: fopen"
+    Video: Varning: föppna
 "VideoAggressivePC"
+    VideoaggresivPC
 "VideoArtworkDir"
+    VideoFotografiKatalog
 "VideoBrowserNoDB"
+    VideoBläddringIngenDB
 "VideoDefaultParentalLevel"
+    VideoStandardBarnlåsLäge
 "VideoDefaultPlayer"
+    VideoStandardSpelare
 "videofilters"
     videofilter
 "VideoGalleryAspectRatio"
+    VideoGalleriAspektProportion
 "VideoGalleryColsPerPage"
+    VideoGalleriKolimnerPerSida
 "VideoGalleryNoDB"
+    VideoGalleriIngenDB
 "VideoGalleryRowsPerPage"
+    VideoGalleriRaderPerSida
 "VideoGallerySubtitle"
+    VideoGalleriTextning
 "VideoListUnknownFiletypes"
+    VideoListaOkändaFiltyper
 "VideoNewBrowsable"
+    VideoNyBläddringsbar
 "Videos"
     Videor
 "VideoStartupDir"
+    VideoStartaUppKatalog
 "VideoTreeLoadMetaData"
+    VideoTrädLaddaMetaData
 "VideoTreeNoDB"
+    VideoTrädIngenDB
 "View Albums by %s"
     Visa album efter %s
 "View Details of %s"
@@ -1258,39 +1418,49 @@
 "Visit $1"
     Besök $1
 "Watch on frontend"
+    Titta på frontend
 "Watch on iPod/iPhone"
+    Titta på iPod/iPhone
 "Watched"
     Har setts
 "Weather"
     Väder
 "web_video_imdb_path"
+    webb_video_imdb_sökväg
 "web_video_imdb_type"
+    webb_video_imdb_typ
 "web_video_thumbnail_height"
+    webb_video_miniatyrbild_höjd
 "web_video_thumbnail_width"
+    webb_video_miniatyrbild_bredd
 "Wednesday"
     Onsdag
 "welcome: backend_log"
     Visa serverloggarna.
 "welcome: music"
-    Bläddra i din musiksamling.
+    välkommen: musik
 "welcome: remote"
+    välkommen: fjärrkontrollen
 "welcome: settings"
-    Konfigurera MythWeb och några av MythTVs inställningar.
+    välkomemn: inställningar
 "welcome: stats"
-    MythTV inspelningsstatistik.
+    välkommen: status
 "welcome: status"
-    Visa inspelningsserverns statussida.
+    välkommen: status
 "welcome: tv"
-    Se vad som visas på tv, schemalägg inspelningar och hantera befintliga inspelningar.
+    välkommen: tv
 "welcome: video"
-    Bläddra i din videosamling.
+    välkommen: video
 "welcome: weather"
-    Hämta lokal väderprognos.
+    välkommen:  väder
 "What else is on at this time?"
     Vad visas mer vid denna tid?
 "Widescreen"
+    Bredbild
 "Width"
+    Bredd
 "Will Record"
+    Kommer att spelas in
 "Wind"
     Vind
 "Wind Chill"
