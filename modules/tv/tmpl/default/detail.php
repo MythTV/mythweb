@@ -20,13 +20,14 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
+    $headers[] = '<script type="text/javascript" src="'.root.'js/flowplayer-3.1.1.min.js"></script>';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
     if ($program && $program->filename) {
         $flv_w = setting('WebFLV_w');
-        $flv_h = intVal($flv_w * 3/4) + 20;  // +20px for the playback controls
+        $flv_h = intVal($flv_w / $program->getAspect()) + 20;  // +20px for the playback controls
     }
 
 /*
@@ -291,7 +292,7 @@
             <th><?php echo t('MythTV Status') ?>:</th>
             <td><?php
                 if (!empty($program->recstatus)) {
-                    echo $GLOBALS['RecStatus_Reasons'][$program->recstatus];
+                    echo $GLOBALS['RecStatus_Reasons'][$program->recstatus], '<br>';
                     if ($can_dupcheck && in_array($program->recstatus, array('Recorded', 'NeverRecord', 'PreviousRecording'))) {
                         echo '<a href="'.root.'tv/detail/'.$program->chanid
                             .'/'.$program->starttime.'?forget_old=yes"'
@@ -514,8 +515,42 @@
 ?>
 
         <div id="x-downloads">
+
             <div class="x-pixmap">
-                <?php if (setting('WebFLV_on') && file_exists('modules/tv/MFPlayer.swf')) { ?>
+<?php   if (setting('WebFLV_on')) { ?>
+<?php       if (file_exists('modules/tv/flowplayer-3.1.1.swf')) { ?>
+
+
+          <!-- this A tag is where your Flowplayer will be placed. it can be anywhere -->
+            <a href=""
+                style="display:block;width:<?php echo $flv_w ?>px;height:<?php echo $flv_h ?>px"
+                id="player">
+            </a>
+
+            <!-- this will install flowplayer inside previous A- tag. -->
+            <script>
+                flowplayer(
+                    "player",
+                    "<?php echo root ?>tv/flowplayer-3.1.1.swf", {
+                    playlist: [
+                        // this first PNG clip works as a splash image
+                        {
+                            url: '<?php echo $program->thumb_url($flv_w,0) ?>',
+                            scaling: 'orig'
+                            },
+                        // Then we have the video
+                        {
+                            url: "<?php echo video_url($program, 'flv'); ?>",
+                            duration: <?php echo $program->length ?>,
+                            autoPlay: false,
+                            // Would be nice to auto-buffer, but we don't want to
+                            // waste bandwidth and CPU on the remote machine.
+                            autoBuffering: false
+                            }
+                        ]}
+                    );
+            </script>
+<?php       } elseif (file_exists('modules/tv/MFPlayer.swf')) { ?>
                     <script langfuage="JavaScript" type="text/javascript">
                     <!--
                     // Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
@@ -626,10 +661,11 @@
                         </embed>
                     </object>
                     </noscript>
-                <?php } else { ?>
+<?php       } ?>
+<?php   } else { ?>
                 <a href="<?php echo $program->url ?>" title="<?php echo t('Direct Download') ?>"
                     ><img src="<?php echo $program->thumb_url($flv_w,0) ?>" width="<?php echo $flv_w ?>"></a>
-                <?php } ?></td>
+<?php   } ?></td>
             </div>
             <div class="x-links">
                 <a href="<?php echo video_url($program, 'asx') ?>" title="<?php echo t('ASX Stream') ?>"
