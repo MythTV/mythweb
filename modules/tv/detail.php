@@ -269,22 +269,22 @@
     else {
     // auto-commercial-flag
         if (!isset($schedule->autocommflag))
-            $schedule->autocommflag = get_backend_setting('AutoCommercialFlag');
+            $schedule->autocommflag = setting('AutoCommercialFlag');
     // auto-user-jobs
         if (!isset($schedule->autouserjob1))
-            $schedule->autouserjob1 = get_backend_setting('AutoRunUserJob1');
+            $schedule->autouserjob1 = setting('AutoRunUserJob1');
         if (!isset($schedule->autouserjob2))
-            $schedule->autouserjob2 = get_backend_setting('AutoRunUserJob2');
+            $schedule->autouserjob2 = setting('AutoRunUserJob2');
         if (!isset($schedule->autouserjob3))
-            $schedule->autouserjob3 = get_backend_setting('AutoRunUserJob3');
+            $schedule->autouserjob3 = setting('AutoRunUserJob3');
         if (!isset($schedule->autouserjob4))
-            $schedule->autouserjob4 = get_backend_setting('AutoRunUserJob4');
+            $schedule->autouserjob4 = setting('AutoRunUserJob4');
     // auto-transcode
         if (!isset($schedule->autotranscode))
-            $schedule->autotranscode = get_backend_setting('AutoTranscode');
+            $schedule->autotranscode = setting('AutoTranscode');
     // transcoder
         if (!isset($schedule->transcoder))
-            $schedule->transcoder = get_backend_setting('DefaultTranscoder');
+            $schedule->transcoder = setting('DefaultTranscoder');
     // recpriority
         if (!isset($schedule->recpriority)) {
             $schedule->recpriority = $db->query_col('SELECT recpriority from channel where chanid=?',
@@ -292,7 +292,7 @@
         }
     // autoexpire
         if (!isset($schedule->autoexpire))
-            $schedule->autoexpire = get_backend_setting('AutoExpireDefault');
+            $schedule->autoexpire = setting('AutoExpireDefault');
     // start early / end late
         if (!isset($schedule->startoffset))
             $schedule->startoffset = setting('DefaultStartOffset');
