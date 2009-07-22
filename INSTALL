@@ -52,7 +52,7 @@ from communication by a firewall:
 Current versions of these in use by the MythWeb developer(s) are 2.2.x for
 Apache, 5.1.x for php, and 5.8.x for perl. Make sure to build both apache and
 php according to the instructions at the php home site, and be sure to include
-support for MySQL when building PHP.
+support for session, MySQL, pcre, posix and json when building PHP.
 
 It is also possible to use MythWeb with Lighttpd (Lighty):
 
