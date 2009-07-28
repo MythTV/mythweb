@@ -515,7 +515,7 @@ class Program {
         if ($height == 0)
             $height = floor($width / $this->getAspect());
 
-        return root."tv/get_pixmap/{$this->chanid}/{$this->recstartts}/$width/$height/$secs_in/$filename.{$width}x{$height}x$secs_in.png";
+        return root."tv/get_pixmap/{$this->hostname}/{$this->chanid}/{$this->recstartts}/$width/$height/$secs_in/$filename.{$width}x{$height}x$secs_in.png";
     }
 
 /**
@@ -523,13 +523,13 @@ class Program {
  *
  * @todo, this should get put into a "recording" class or something like that.
 /**/
-    public static function get_preview_pixmap($chanid, $starttime, $width=160, $height=120, $secs_in=null) {
+    public static function get_preview_pixmap($hostname, $chanid, $starttime, $width=160, $height=120, $secs_in=null) {
     // We have to calulate $secs_in from the db
         if (is_null($secs_in))
             $secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
                        + _or(get_backend_setting('RecordPreRoll'), 0);
 
-        return MythBackend::find()->httpRequest('GetPreviewImage', array('ChanId'      => $chanid,
+        return MythBackend::find($hostname)->httpRequest('GetPreviewImage', array('ChanId'      => $chanid,
                                                                          'StartTime'   => unix2mythtime($starttime),
                                                                          'Height'      => $height,
                                                                          'Width'       => $width,

@@ -13,11 +13,12 @@
  *
 /**/
 
-    $chanid     = $Path[2];
-    $starttime  = $Path[3];
-    $width      = $Path[4];
-    $height     = $Path[5];
-    $seconds_in = $Path[6];
+    $hostname   = $Path[2];
+    $chanid     = $Path[3];
+    $starttime  = $Path[4];
+    $width      = $Path[5];
+    $height     = $Path[6];
+    $seconds_in = $Path[7];
 
     if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
         if (strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $starttime) {
@@ -26,7 +27,7 @@
         }
     }
 
-    $data = Program::get_preview_pixmap($chanid, $starttime, $width, $height, $seconds_in);
+    $data = Program::get_preview_pixmap($hostname, $chanid, $starttime, $width, $height, $seconds_in);
     if (strlen($data)) {
         header('Pragma: public', true);
         header('Content-Type: image/png');
