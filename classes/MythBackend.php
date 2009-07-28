@@ -28,10 +28,11 @@ class MythBackend {
     private $fp                     = null;
     private $connected              = false;
     private $host                   = '127.0.0.1';
-    private $port                   = 6543;
-    private $port_http              = 6544;
+    private $ip                     = '127.0.0.1';
+    private $port                   = null;
+    private $port_http              = null;
 
-    static function find($host = null, $port = 6543) {
+    static function find($host = null, $port = null) {
         static $Backends = array();
 
     // Looking for the master backend?
@@ -49,9 +50,10 @@ class MythBackend {
         return $Backend[$host][$port];
     }
 
-    function __construct($host, $port) {
+    function __construct($host, $port = null) {
         $this->host = $host;
-        $this->port = $port;
+        $this->ip = _or(setting('BackendServerIP', $this->host), $host);
+        $this->port = _or($port, _or(setting('BackendServerPort', $this->host), 6543));
         $this->port_http = _or(setting('BackendStatusPort', $this->host), _or(setting('BackendStatusPort'), 6544));
     }
 
@@ -62,9 +64,9 @@ class MythBackend {
     private function connect() {
         if ($this->connected)
             return;
-        $this->fp = @fsockopen($this->host, $this->port, $errno, $errstr, 25);
+        $this->fp = @fsockopen($this->ip, $this->port, $errno, $errstr, 25);
         if (!$this->fp)
-            custom_error("Unable to connect to the master backend at {$this->host}:{$this->port}.\nIs it running?");
+            custom_error("Unable to connect to the master backend at {$this->ip}:{$this->port}".(($this->host == $this->ip)?'':" (hostname: {$this->host})").".\nIs it running?");
         $this->connected = true;
         socket_set_timeout($this->fp, 20);
         $this->checkProtocolVersion();
@@ -188,7 +190,7 @@ class MythBackend {
     }
 
     public function httpRequest($path, $args = array()) {
-        $url = "http://{$this->host}:{$this->port_http}/Myth/{$path}?";
+        $url = "http://{$this->ip}:{$this->port_http}/Myth/{$path}?";
         foreach ($args as $key => $value)
             $url .= $key.'='.urlencode($value).'&';
         return @file_get_contents($url);
