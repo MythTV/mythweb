@@ -65,6 +65,7 @@
                         .' -s '.shell_escape("${width}x${height}")
                         .' -r 24'
                         .' -f flv'
+                        .' -deinterlace'
                         .' -ac 2'
                         .' -ar 11025'
                         .' -ab '.shell_escape("${abitrate}k")
