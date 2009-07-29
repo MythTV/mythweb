@@ -25,6 +25,8 @@
     margin-top:         -.25em;
     float:              left;
     margin-right:       .5em;
+    max-width:          160px;
+    max-height:         70px;
 }
 
 #x-jumpto {

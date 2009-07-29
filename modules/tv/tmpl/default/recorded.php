@@ -344,7 +344,7 @@ EOM;
         if ($_SESSION["show_channel_icons"] == true && !empty($show->channel->icon)) {
                 ?><td><a href="<?php echo root ?>tv/channel/<?php echo $show->channel->chanid, '/', $list_starttime ?>"
                     title="<?php echo t('Details for: $1', html_entities($show->channel->name)) ?>">
-                    <img src="<?php echo $show->channel->icon ?>" width="42"></a></td><?php
+                    <img class="channelicon" src="<?php echo $show->channel->icon ?>" width=70></a></td><?php
         } else {?>
 	    <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td><?php
         }

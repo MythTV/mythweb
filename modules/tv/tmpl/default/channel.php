@@ -29,7 +29,7 @@
     <form method="get" id="program_listing" action="<?php echo root ?>tv/channel">
     <div id="x_current_time">
 <?php   if ($_SESSION["show_channel_icons"] && !empty($this_channel->icon)) { ?>
-        <img src="<?php echo $this_channel->icon ?>" height="30" width="30">
+            <img src="<?php echo $this_channel->icon ?>">
 <?php   } ?>
         Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?>
     </div>
