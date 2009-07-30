@@ -74,7 +74,9 @@
 <h2>No TV Configured</h1>
 <p>
 MythTV is intended to run with TV settings configured.  Your installation does
-not appear to have been fully configured for TV viewing.
+not appear to have been fully configured for TV viewing (there are no channels).
+If you intend to use MythTV's TV functionality, please finish configuration
+via mythtv-setup before using MythWeb.
 </p>
 <p>
 MythWeb is capable of functioning without TV settings, but so much of its
