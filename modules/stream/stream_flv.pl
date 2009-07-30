@@ -63,6 +63,7 @@
                         .' -y'
                         .' -i '.shell_escape($filename)
                         .' -s '.shell_escape("${width}x${height}")
+                        .' -g 30'
                         .' -r 24'
                         .' -f flv'
                         .' -deinterlace'

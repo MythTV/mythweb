@@ -61,8 +61,8 @@
 /**/
     function assert_handler($file, $line, $code) {
         $subject = 'ASSERT';
-        list($err, $serial) = build_backtrace(-1, $code, $file, $line);
-        email_backtrace($err, $serial, $file, $line, $subject);
+        $err = build_backtrace(-1, $code, $file, $line);
+        email_backtrace($err, $file, $line, $subject);
     }
 
 /**
@@ -123,18 +123,23 @@
         // What type of error?
             $subject = 'FATAL Error';
         // Email a backtrace
-            list($err,$serial) = build_backtrace($errno, $errstr, $errfile, $errline, $vars);
-            email_backtrace($err, $serial, $errfile, $errline, $subject);
+            $err = build_backtrace($errno, $errstr, $errfile, $errline, $vars);
+            email_backtrace($err, $errfile, $errline, $subject);
         // Print something to the user, too.
-            echo "<hr><p><b>Fatal Error</b> at $errfile, line $errline:<br />$errstr</p>\n",
-                 '<p>If you choose to ',
-                 '<b><u><a href="http://svn.mythtv.org/trac/newticket" target="_blank">submit a bug report</a></u></b>, ',
-                 'please make sure to include a<br />',
-                 'brief description of what you were doing, along with the following<br />',
-                 'backtrace as an attachment (please don\'t paste the whole thing into<br />',
-                 "the ticket).\n",
-                 "<hr>\n",
-                 "<b>Backtrace</b>:<br />\n<pre>", htmlentities($err), '</pre>';
+            if (file_exists('modules/_shared/tmpl/_errors/fatal.php')) {
+                require_once 'modules/_shared/tmpl/_errors/fatal.php';
+            }
+            else {
+                echo "<hr><p><b>Fatal Error</b> at $errfile, line $errline:<br />$errstr</p>\n",
+                     '<p>If you choose to ',
+                     '<b><u><a href="http://svn.mythtv.org/trac/newticket" target="_blank">submit a bug report</a></u></b>, ',
+                     'please make sure to include a<br />',
+                     'brief description of what you were doing, along with the following<br />',
+                     'backtrace as an attachment (please don\'t paste the whole thing into<br />',
+                     "the ticket).\n",
+                     "<hr>\n",
+                     "<b>Backtrace</b>:<br />\n<pre>", htmlentities($err), '</pre>';
+            }
         // Fatal error means that we exit.
             exit;
         }
@@ -149,22 +154,12 @@
 /**
  * Build and return a human-readable backtrace message
  *
- * @return array containing the backtrace and an error serial
+ * @return string containing the backtrace
 /**/
     function build_backtrace($errno=null, $errstr=null, $errfile=null, $errline=null, $vars=null) {
         global $_DEBUG;
-    // Define a serial so we can keep track of this backtrace
-        if (intVal(phpversion()) >= 5) {
-            $serial = microtime(true);
-        }
-        else {
-            list($usec, $sec) = explode(' ', microtime());
-            $serial = floatVal($usec) + floatVal($sec);
-        }
-        $serial = substr(round($serial, 5), 4);
     // Generate an error message that can be emailed to the administrator
-        $bt = 'error serial:  '.$serial                ."\n"
-             .'    datetime:  '.date('Y-m-d H:i:s (T)')."\n";
+        $bt = '    datetime:  '.date('Y-m-d H:i:s (T)')."\n";
         if ($errno) {
             $bt .= '    errornum:  '.$errno                 ."\n"
                   .'  error type:  '.error_type($errno)     ."\n"
@@ -227,25 +222,24 @@
         $bt  = preg_replace('/Array\s+\(\s+\)\n+/', "Array ( )\n", $bt);
         $bt .= "\n\n";
     // Return
-        return array($bt, $serial);
+        return $bt;
     }
 
 /**
  * Email a backtrace.
  *
  * @param string $backtrace The text of the backtrace (or generate a new one).
- * @param string $serial    Serial number for this backtrace (or generate a new one).
  * @param string $errfile   File the backtrace should reference.
  * @param int    $errline   Line in $errfile that the backtrace should reference.
  * @param string $subject   Email subject tagline.
 /**/
-    function email_backtrace($backtrace=null, $serial=null, $errfile=null, $errline=null, $subject="Backtrace") {
+    function email_backtrace($backtrace=null, $errfile=null, $errline=null, $subject="Backtrace") {
     // No email, just return
         if (!strstr(error_email, '@'))
             return;
     // Generate and email a backtrace
-        if (empty($backtrace) || empty($serial))
-            list($backtrace, $serial) = build_backtrace();
+        if (empty($backtrace))
+            $backtrace = build_backtrace();
     // Need to figure out where this was called from?
         if (empty($errfile) || empty($errline)) {
             $bt = debug_backtrace();
@@ -254,7 +248,7 @@
         }
     // Email the error to the website's error mailbox
         mail(error_email,
-             "Mythweb:  $serial | $subject:  $errfile, line $errline",
+             "Mythweb:  $subject:  $errfile, line $errline",
              $backtrace,
              'From:  MythWeb PHP Error <'.error_email.">\r\n");
     }
