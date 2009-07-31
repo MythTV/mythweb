@@ -54,6 +54,7 @@ EOF;
     <link type="application/opensearchdescription+xml" rel="search" href="<?php echo root ?>tv/opensearch?type=xml" title="MythTV">
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex, nofollow">
 
     <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
     <script type="text/javascript" src="<?php echo root ?>js/prototip/prototip.js"></script>
