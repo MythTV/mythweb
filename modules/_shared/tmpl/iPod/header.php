@@ -30,6 +30,7 @@
     <link rel="shortcut icon" href="<?php echo skin_url ?>img/favicon.ico" type="image/x-icon">
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex, nofollow">
 
     <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
 

@@ -23,6 +23,7 @@
     <title><?php echo html_entities($page_title) ?></title>
     <Link Rel="stylesheet" HRef="<?php echo skin_url ?>style.css" Type="text/css" Media="screen">
     <Link Rel="stylesheet" HRef="<?php echo skin_url ?>handheld.css" Type="text/css" Media="handheld">
+    <meta name="robots" content="noindex, nofollow">
 </head>
 
 <body bgcolor="#003060" text="#DEDEDE" link="#3181B4" alink="#CC0000" vlink="#3181B4">
