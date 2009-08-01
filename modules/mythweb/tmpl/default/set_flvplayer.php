@@ -37,8 +37,8 @@
                     break;
                 }
             }
-            $ffmpeg_output = shell_exec ("$ffmpeg --help 2>&1");
-            $has_mp3_support = strpos ($ffmpeg_output, "mp3");
+            $ffmpeg_output = shell_exec ("$ffmpeg -formats 2>&1");
+            $has_mp3_support = preg_match('/E\s+mp3/', $ffmpeg_output);
             if (!$has_mp3_support)
                 echo ' DISABLED';
             if (setting('WebFLV_on'))
