@@ -86,20 +86,22 @@ class MythBackend {
         if ($_SERVER['ignore_proto'] == true )
             return true;
 
-        if ($_SESSION['backend']['proto_version']['last_check_time'] - time() < 60*60*24)
+        if (   $_SESSION['backend']['proto_version']['last_check_time'] - time() < 60*60*2
+            && $_SESSION['backend']['proto_version']['last_check_version'] == MythBackend::$protocol_version )
             return true;
 
         $response = $this->sendCommand('MYTH_PROTO_VERSION '.MythBackend::$protocol_version);
+        $_SESSION['backend']['proto_version']['last_check_version'] = @$response[1];
 
-        if ($response == 'ACCEPT') {
+        if ($response[0] == 'ACCEPT') {
             $_SESSION['backend']['proto_version']['last_check_time'] = time();
             return true;
         }
 
-        if ($response == 'REJECT')
-            trigger_error("Incompatible protocol version (mythweb=" . MythBackend::$protocol_version . ", backend=" . $response . ")");
+        if ($response[0] == 'REJECT')
+            trigger_error("Incompatible protocol version (mythweb=" . MythBackend::$protocol_version . ", backend=" . @$response[1] . ")");
         else
-            trigger_error("Unexpected response to MYTH_PROTO_VERSION '".MythBackend::$protocol_version."': ".$response);
+            trigger_error("Unexpected response to MYTH_PROTO_VERSION '".MythBackend::$protocol_version."': ".print_r($response, true));
         return false;
     }
 
