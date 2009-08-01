@@ -440,8 +440,7 @@
     Utbredd kontroll
 "Extra Information"
     Extra information
-"Failure to autoload class !"
-    Brist att autoloada klass!
+"Failure to autoload class $1!"
 "File Size"
     Filstorlek
 "film"
