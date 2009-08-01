@@ -279,6 +279,11 @@
                 $commands[] = 'dontrec';
                 $commands[] = 'default';
                 break;
+            case 'NotListed':
+                $rec_char   = t('Not Listed');
+                $css_class  = 'deactivated';
+                $commands[] = 'Not airing in timeslot this day';
+                break;
             default:
                 $rec_char   = '&nbsp;';
                 #$rec_char   = $show->recstatus;
@@ -372,8 +377,12 @@
                                      .($show->subtitle
                                          ? ':  '.$show->subtitle
                                          : '')), '"';
-                    echo ' href="', root, 'tv/detail/', $urlstr, '">',
-                         $show->title,
+                    if ($show->recstatus == 'NotListed')
+                        echo ' href="', root, 'tv/schedules#schedule-',
+                             $show->recordid;
+                    else
+                        echo ' href="', root, 'tv/detail/', $urlstr;
+                    echo '">', $show->title,
                          ($show->subtitle
                             ? ':  '.$show->subtitle
                             : ''),
