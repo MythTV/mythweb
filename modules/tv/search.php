@@ -334,6 +334,7 @@
                 case 'PreviousRecording':
                 case 'CurrentRecording':
                 case 'Recorded':
+                case 'NeverRecord':
                     unset($Results[$key]);
                     continue;
             }
