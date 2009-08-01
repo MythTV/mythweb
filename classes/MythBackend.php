@@ -86,7 +86,7 @@ class MythBackend {
         if ($_SERVER['ignore_proto'] == true )
             return true;
 
-        if (   $_SESSION['backend'][$this->host]['proto_version']['last_check_time'] - time() < 60*60*2
+        if (   time() - $_SESSION['backend'][$this->host]['proto_version']['last_check_time'] < 60*60*2
             && $_SESSION['backend'][$this->host]['proto_version']['last_check_version'] == MythBackend::$protocol_version )
             return true;
 
