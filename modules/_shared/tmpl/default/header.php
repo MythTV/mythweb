@@ -143,6 +143,7 @@ EOF;
                 </div>
             </div>
         </div>
+        <?php if (Modules::getModule('tv')) { ?>
         <div id="search">
             <form action="<?php echo root ?>tv/search" method="get">
                 <div id="simple_search">
@@ -153,6 +154,7 @@ EOF;
                 </div>
             </form>
         </div>
+        <?php } ?>
     </div>
 </div>
 
