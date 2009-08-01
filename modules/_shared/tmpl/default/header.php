@@ -99,10 +99,16 @@ EOF;
         </a>
     </div>
     <div id="sections">
+<?php
+    if (Modules::getModule('tv')) {
+?>
         <a id="tv_link"<?php if ($Path[0] == 'tv') echo ' class="current_section"' ?> href="<?php echo root ?>tv" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/tv.png" class="alpha_png" alt="MythTV">
         </a>
-<?php if (Modules::getModule('music')) { ?>
+<?php
+    }
+    if (Modules::getModule('music')) {
+?>
         <a id="music_link"<?php if ($Path[0] == 'music') echo ' class="current_section"' ?> href="<?php echo root ?>music" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/music.png" class="alpha_png" alt="MythMusic">
         </a>
@@ -160,18 +166,20 @@ EOF;
                     <a href="<?php echo root ?>" <?php
                         echo show_popup('category_legend',$legend)
                         ?>>MythTV:</a> &nbsp; &nbsp;
-                    <a href="<?php echo root ?>tv/list"><?php echo t('Listings') ?></a>
-                    &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
-                    &nbsp; | &nbsp;
-                    <a href="<?php  echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
-                    (<a href="<?php echo root ?>tv/schedules/manual"><?php echo t('Manual') ?></a>,
-                    <a href="<?php  echo root ?>tv/schedules/custom"><?php echo t('Custom') ?></a>)
-                    &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/upcoming"><?php echo t('Upcoming Recordings') ?></a>
-                    &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/recorded"><?php echo t('Recorded Programs') ?></a>
-                    &nbsp; | &nbsp;
+                    <?php if (Modules::getModule('tv')) { ?>
+                        <a href="<?php echo root ?>tv/list"><?php echo t('Listings') ?></a>
+                        &nbsp; | &nbsp;
+                        <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
+                        &nbsp; | &nbsp;
+                        <a href="<?php  echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
+                        (<a href="<?php echo root ?>tv/schedules/manual"><?php echo t('Manual') ?></a>,
+                        <a href="<?php  echo root ?>tv/schedules/custom"><?php echo t('Custom') ?></a>)
+                        &nbsp; | &nbsp;
+                        <a href="<?php echo root ?>tv/upcoming"><?php echo t('Upcoming Recordings') ?></a>
+                        &nbsp; | &nbsp;
+                        <a href="<?php echo root ?>tv/recorded"><?php echo t('Recorded Programs') ?></a>
+                        &nbsp; | &nbsp;
+                    <?php } ?>
                     <a href="<?php echo root ?>status"><?php echo t('Backend Status') ?></a>
 <?php if (Modules::getModule('backend_log')) { ?>
                     &nbsp; | &nbsp;
