@@ -69,7 +69,11 @@
                 </div>
                 <div id="external_searches">
                     (<?php echo t('Search') ?>: &nbsp;
+                    <a href="http://www.themoviedb.org/search/movies?search%5btext%5d=<?php echo urlencode($schedule->title) ?>"><?php echo t('themoviedb') ?></a>
+                    &nbsp;-&nbsp;
                     <a href="http://www.imdb.com/Find?select=Titles&for=<?php echo urlencode($schedule->title) ?>"><?php echo t('IMDB') ?></a>
+                    &nbsp;-&nbsp;
+                    <a href="http://www.thetvdb.com/?string=<?php echo urlencode($schedule->title) ?>&searchseriesid=&tab=listseries&function=Search"><?php echo t('TheTVDB') ?></a>
                     &nbsp;-&nbsp;
                     <a href="http://www.tv.com/search.php?type=11&stype=all&qs=<?php echo urlencode($schedule->title) ?>"><?php echo t('TV.com') ?></a>
                     &nbsp;-&nbsp;

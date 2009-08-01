@@ -36,9 +36,9 @@
                 if ($program->previouslyshown)
                     echo '(Rerun) ';
 //              if ($program->category_type == 'movie')
-//                  echo " (<a href=\"http://www.imdb.com/Find?select=Titles&for=" . urlencode($program->title) . "\">Search IMDB</a>)";
+//                  echo " (<a href='http://www.themoviedb.org/search/movies?search%5btext%5d=".urlencode($schedule->title).echo "'>".echo t('Search $1', 'themoviedb').echo "</a>";
 //              else
-//                  echo " (<a href=\"http://www.google.com/search?q=" . urlencode($program->title) . "\">Search Google</a>)";
+//                  echo " (<a href='http://www.thetvdb.com/?string=".urlencode($schedule->title).echo "&searchseriesid=&tab=listseries&function=Search'>".echo t('Search $1', 'TheTVDB').echo "</a>)";
                 ?>
         <?php if (strlen($program->subtitle)) { ?>
             Episode: <b><?php echo $program->subtitle ?></b><br />
