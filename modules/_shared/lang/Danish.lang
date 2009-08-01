@@ -360,6 +360,7 @@
     %H:%M
 "Genre"
     Genre
+"genre_colors"
 "Genres"
 "Go"
     Gå
@@ -915,8 +916,10 @@
 "Temp"
 "The requested recording schedule has been deleted."
     Den planlagte optagelse er blevet slettet.
+"themoviedb"
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
+"TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

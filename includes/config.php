@@ -96,6 +96,9 @@ if (!isset($_SESSION['sortby_channum']))
 if (!isset($_SESSION['recorded_paging']))
     $_SESSION['recorded_paging'] = null;
 
+if (!isset($_SESSION['genre_colors']))
+    $_SESSION['genre_colors'] = 1;
+
 // The following constants are defined for the videos page
 
 if (!isset($_SESSION['show_video_covers']))

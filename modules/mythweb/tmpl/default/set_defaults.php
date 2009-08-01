@@ -42,6 +42,12 @@
                <?php if ($_SESSION['sortby_channum']) echo ' CHECKED'; ?>></td>
 </tr>
 <tr>
+    <th><?php echo t('genre_colors'); ?>:</th>
+    <td><input class=radio" type="checkbox" name="genre_colors"
+               title="<?php echo t('genre_colors'); ?>"
+               <?php if ($_SESSION['genre_colors']) echo ' CHECKED'; ?>></td>
+</tr>
+<tr>
     <th><?php echo t('show_video_covers'); ?>:</th>
     <td><input class=radio" type="checkbox" name="show_video_covers"
                title="<?php echo t('show_video_covers'); ?>"

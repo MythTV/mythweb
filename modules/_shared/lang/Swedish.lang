@@ -494,6 +494,7 @@
     %H:%M
 "Genre"
     Genre
+"genre_colors"
 "Genres"
     Genrer
 "Go"
@@ -1246,10 +1247,12 @@
     Tillfälligt
 "The requested recording schedule has been deleted."
     Det begärda inspelningsschemat har tagits bort.
+"themoviedb"
 "There are no items in this Playlist!"
     Det finns inte poster i denna spellista!
 "There was a problem saving your playlist"
     Det uppstod ett problem med att spara din spellista
+"TheTVDB"
 "This playlist is already loaded!"
     Denna spellista har redan laddats!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

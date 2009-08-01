@@ -18,6 +18,12 @@
 /**/
     function category_class(&$item) {
         $css_class =array();
+    // Disable categories colorization
+        if (isset($_SESSION['genre_colors'])
+                  && $_SESSION['genre_colors'] == 0) {
+            $css_class[] = $cache[$category] = 'cat_Unknown';
+            return $css_class[0];
+        }
     // Recording classes?
         $css_class[] = recstatus_class($item);
     // Category type?

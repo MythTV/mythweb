@@ -365,6 +365,7 @@
     %I:%M %p
 "Genre"
     Genere
+"genre_colors"
 "Genres"
 "Go"
     Anar
@@ -948,8 +949,10 @@
 "Temp"
 "The requested recording schedule has been deleted."
     La programació sol·licitat ha estat eliminada.
+"themoviedb"
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
+"TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

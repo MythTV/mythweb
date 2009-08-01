@@ -460,6 +460,7 @@
     %H:%M
 "Genre"
     Genre
+"genre_colors"
 "Genres"
     Genre
 "Go"
@@ -1148,10 +1149,12 @@
 "Temp"
 "The requested recording schedule has been deleted."
     Die geplante Aufnahme wurde gelöscht.
+"themoviedb"
 "There are no items in this Playlist!"
     Wiedergabeliste ist leer!
 "There was a problem saving your playlist"
     Wiedergabeliste konnte nicht gespeichert werden
+"TheTVDB"
 "This playlist is already loaded!"
     Wiedergabeliste bereits geladen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

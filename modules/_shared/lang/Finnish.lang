@@ -488,6 +488,7 @@
     %I:%M %p
 "Genre"
     Lajityyppi
+"genre_colors"
 "Genres"
     Lajityypit
 "Go"
@@ -1230,10 +1231,12 @@
     Väliaikainen
 "The requested recording schedule has been deleted."
     Ajoitettu nauhoitus on poistettu
+"themoviedb"
 "There are no items in this Playlist!"
     Tässä soittolistassa ei ole kohteita!
 "There was a problem saving your playlist"
     Soittolistasi tallennuksessa ilmeni ongelma
+"TheTVDB"
 "This playlist is already loaded!"
     Tämä Soittolista on jo ladattu!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

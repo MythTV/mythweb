@@ -354,6 +354,7 @@
     %I:%M %p
 "Genre"
     ジャンル
+"genre_colors"
 "Genres"
 "Go"
     移動
@@ -919,8 +920,10 @@
 "Temp"
 "The requested recording schedule has been deleted."
     要求された予約は既に削除されています。
+"themoviedb"
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
+"TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

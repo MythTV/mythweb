@@ -330,6 +330,8 @@
 "generic_time"
     %H:%M %p
 "Genre"
+"genre_colors"
+    Wyróżniaj gatunki kolorami
 "Genres"
 "Go"
     Idź
@@ -767,6 +769,7 @@
 "show_channel_icons"
 "show_popup_info"
 "show_video_covers"
+    Pokazuj okładki filmów
 "Showing all programs from the $1 group."
 "Showing all programs."
 "Showings between"
@@ -814,8 +817,10 @@
 "Tab"
 "Temp"
 "The requested recording schedule has been deleted."
+"themoviedb"
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
+"TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

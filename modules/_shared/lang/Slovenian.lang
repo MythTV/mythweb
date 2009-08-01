@@ -470,6 +470,7 @@
     %H:%M
 "Genre"
     Žanr
+"genre_colors"
 "Genres"
     Žanri
 "Go"
@@ -1184,10 +1185,12 @@
 "Temp"
 "The requested recording schedule has been deleted."
     Zahtevani snemalni plan je bil izbrisan.
+"themoviedb"
 "There are no items in this Playlist!"
     V tem seznamu predvajanja ni skladb!
 "There was a problem saving your playlist"
     Pri shranjevanju seznama predvajanja je prišlo do napake
+"TheTVDB"
 "This playlist is already loaded!"
     Ta seznam predvajanja je že naložen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
