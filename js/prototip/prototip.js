@@ -492,6 +492,11 @@ var Tip = Class.create({
       }
     }
 
+    // Ensure that the tooltip does not render off screen left edge
+    if ( pos.left < 0 ) {
+      pos.left = 0;
+    }
+
     var setPos = { left: pos.left + 'px', top: pos.top + 'px' };
     this.wrapper.setStyle(setPos);
     if (Tips.fixIE) this.iframeShim.setStyle(setPos);
