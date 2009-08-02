@@ -66,7 +66,7 @@ class Video {
     // Figure out the URL
         $this->url = '#';
         if (file_exists('data/video/'))
-            $this->url = root . implode('/', array_map('rawurlencode',
+            $this->url = implode('/', array_map('rawurlencode',
                                              array_map('utf8tolocal',
                                              explode('/',
                                              'data/video/' . preg_replace('#^'.$mythvideo_dir.'/?#', '', $this->filename)
@@ -86,7 +86,7 @@ class Video {
         global $Category_String;
         return array( 'intid'       => $this->intid,
                       'img'         => '<img width="'.$this->cover_scaled_width.'" height="'.$this->cover_scaled_height.'" alt="'.t('Missing Cover').'"'
-                                       .(($_SESSION["show_video_covers"] && file_exists($this->cover_url)) ? ' src="'.root.'data/video_covers/'.basename($this->cover_file).'"' : '')
+                                       .(($_SESSION["show_video_covers"] && file_exists($this->cover_url)) ? ' src="data/video_covers/'.basename($this->cover_file).'"' : '')
                                        .'>',
                       'title'       => '<a href="'.$this->url.'">'.$this->title.'</a>',
                       'playtime'    => nice_length($this->length * 60),

@@ -26,7 +26,7 @@
         $schedule =& $Schedules[$_GET['recordid']];
     // Not a custom search schedule
         if (empty($schedule->search) || $schedule->search == searchtype_manual)
-            redirect_browser(root.'tv/schedules');
+            redirect_browser(root_url.'tv/schedules');
     }
 // Create a new, empty schedule
     else
@@ -67,7 +67,7 @@
             // Redirect back to the schedule list
                 add_warning(t('The requested recording schedule has been deleted.'));
                 save_session_errors();
-                header('Location: '.root.'tv/schedules');
+                header('Location: '.root_url.'tv/schedules');
                 exit;
             }
         }
@@ -147,7 +147,7 @@
             // Save the schedule
                 $schedule->save($_POST['record']);
             // Redirect to the new schedule
-                header('Location: '.root.'tv/schedules/custom/'.$schedule->recordid);
+                header('Location: '.root_url.'tv/schedules/custom/'.$schedule->recordid);
                 exit;
             }
         }

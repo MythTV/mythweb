@@ -20,7 +20,7 @@
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_recorded.css">';
 
 // Rss links
-    $headers[] = '<link rel="alternate" type="application/rss+xml" href="'.str_replace(root, root.'rss/', $_SERVER['REQUEST_URI']).'">';
+    $headers[] = '<link rel="alternate" type="application/rss+xml" href="'.str_replace(root_url, root_url.'rss/', $_SERVER['REQUEST_URI']).'">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -84,7 +84,7 @@
 // Set the autoexpire flag
     function set_autoexpire(id) {
         var file = files[id];
-        var r = new Ajax.Request('<?php echo root ?>tv/detail/' + file.chanid + '/' + file.starttime,
+        var r = new Ajax.Request('<?php echo root_url ?>tv/detail/' + file.chanid + '/' + file.starttime,
                                  {
                                     parameters: 'toggle_autoexpire='+(1 - file.autoexpire),
                                   asynchronous: false
@@ -114,7 +114,7 @@
                     ?>\n\n     "+file.title + ((file.subtitle == '') ? "" : ": " +file.subtitle))) {
         // Do the actual deletion
             if (programs_shown == 1)
-                location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid='+file.chanid
+                location.href = '<?php echo root_url ?>tv/recorded?delete=yes&chanid='+file.chanid
                                 +'&starttime='+file.starttime
                                 +(forget_old
                                     ? '&forget_old=yes'
@@ -122,7 +122,7 @@
                                  );
             else {
                 ajax_add_request();
-                new Ajax.Request('<?php echo root; ?>tv/recorded',
+                new Ajax.Request('<?php echo root_url; ?>tv/recorded',
                                  {
                                     method: 'post',
                                     onSuccess: http_success,
@@ -217,7 +217,7 @@
 // -->
 </script>
 
-<form id="change_title" action="<?php echo root ?>tv/recorded" method="get">
+<form id="change_title" action="<?php echo root_url ?>tv/recorded" method="get">
 <table id="title_choices" class="commandbox commands" border="0" cellspacing="0" cellpadding="4">
 <tr>
 <?php if (count($Groups) > 1) { ?>
@@ -318,7 +318,7 @@ EOM;
 ?>
     <td rowspan="2" class="x-pixmap<?php
         if ($_SESSION['recorded_pixmaps']) { ?>">
-        <a class="x-pixmap" href="<?php echo root ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
+        <a class="x-pixmap" href="<?php echo root_url ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
             ><img src="<?php echo $show->thumb_url(100,0) ?>" width="100" height="<?php echo floor(100 / $show->getAspect()); ?>"></a>
 <?php   }
         else
@@ -331,18 +331,18 @@ EOM;
             href="<?php echo $show->url ?>" title="<?php echo t('Direct Download'); ?>"
             ><img height="24" width="24" src="<?php echo skin_url ?>/img/video_sm.png" alt="<?php echo t('Direct Download'); ?>"></a>
         </td>
-    <td class="x-title"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
+    <td class="x-title"><?php echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .($_SESSION['recorded_pixmaps'] ? '' : " name=\"$row\"")
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->title.'</a>' ?></td>
-    <td class="x-subtitle"><?php echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
+    <td class="x-subtitle"><?php echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->subtitle.'</a>' ?></td>
     <td class="x-programid"><?php echo $show->programid ?></td>
     <td class="x-originalairdate"><?php echo $show->airdate ?></td>
     <td class="x-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td><?php
         if ($_SESSION["show_channel_icons"] == true && !empty($show->channel->icon)) {
-                ?><td><a href="<?php echo root ?>tv/channel/<?php echo $show->channel->chanid, '/', $list_starttime ?>"
+                ?><td><a href="<?php echo root_url ?>tv/channel/<?php echo $show->channel->chanid, '/', $list_starttime ?>"
                     title="<?php echo t('Details for: $1', html_entities($show->channel->name)) ?>">
                     <img class="channelicon" src="<?php echo $show->channel->icon ?>" width=70></a></td><?php
         } else {?>
@@ -355,7 +355,7 @@ EOM;
     <td class="x-filesize"><?php echo nice_filesize($show->filesize) ?></td>
     <td class="x-commands commands" rowspan="2"><?php
         if ($show->is_recording) {
-            echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->recstartts, '">',
+            echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->recstartts, '">',
                  t('Still Recording: Edit'),
                  "</a>\n        ";
         }
@@ -373,7 +373,7 @@ EOM;
             ><?php echo t('Delete + Rerecord') ?></a>
 
 <?php       if ($show->recgroup == 'Deleted') {
-                echo '<a href="', root, 'tv/recorded?undelete=yes&chanid=', $show->chanid,
+                echo '<a href="', root_url, 'tv/recorded?undelete=yes&chanid=', $show->chanid,
                     '&starttime=', $show->recstartts, '" ' ?>
                 title="<?php echo html_entities(t('Undelete: $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
                 <?php echo '>' , t('Undelete') ?></a>
@@ -439,7 +439,7 @@ EOM;
             $query .= 'offset='.(($i-1)*$_SESSION['recorded_paging']);
             if ($i != 1)
                 echo ' | ';
-            echo '<a href="'.root.'tv/recorded?'.$query.'">'.$i.'</a>';
+            echo '<a href="'.root_url.'tv/recorded?'.$query.'">'.$i.'</a>';
         }
     }
 ?>
@@ -473,7 +473,7 @@ EOM;
           )
         .'</div>';
 
-    echo '<div id="feed_buttons"><a href="'.str_replace(root, root.'rss/', $_SERVER['REQUEST_URI']).'"><img src="'.skin_url.'/img/rss2.0.gif"></a></div>';
+    echo '<div id="feed_buttons"><a href="rss'.$_SERVER['REQUEST_URI'].'"><img src="'.skin_url.'/img/rss2.0.gif"></a></div>';
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

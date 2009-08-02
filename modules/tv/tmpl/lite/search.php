@@ -92,7 +92,7 @@
     <td class="<?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
             echo '<span class="hdtv_icon">HD</span>';
-        echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+        echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
              $show->title, '</a>';
         if ($show->subtitle)
             echo ': ', $show->subtitle;
@@ -114,12 +114,12 @@
     <td><?php echo $show->description ?></td>
     <td><?php echo $show->channel->channum.' - '.$show->channel->name ?></td>
     <td nowrap><?php
-            echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
+            echo '<a href="'.root_url.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if ($show->extra_showings)
                 foreach ($show->extra_showings as $pair) {
                     list($chanid, $showtime) = $pair;
-                    echo '<br /><a href="', root, 'tv/detail/', $chanid, '/', $showtime, '">',
+                    echo '<br /><a href="', root_url, 'tv/detail/', $chanid, '/', $showtime, '">',
                          strftime($_SESSION['date_search'] ,$showtime),
                          '</a>';
                 }

@@ -15,7 +15,7 @@
 // Open with a div and an image
     echo '<div id="info_backend_log">',
          '<p>',
-         '<a href="', root, Modules::getModuleProperity('backend_log', 'path'), '">',
+         '<a href="', root_url, Modules::getModuleProperity('backend_log', 'path'), '">',
          '<img src="', skin_url, '/img/backend_log.png" class="module_icon" border="0" />',
          '<h2>', Modules::getModuleProperity('backend_log', 'name'), '</h2></a>',
          '</p>',

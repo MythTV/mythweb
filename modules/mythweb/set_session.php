@@ -44,7 +44,7 @@
             unset($_SESSION['date_job_status']);
         }
 
-        redirect_browser(root.module.'/'.$Path[1].'/'.$Path[2]);
+        redirect_browser(module.'/'.$Path[1].'/'.$Path[2]);
     }
 
 /**

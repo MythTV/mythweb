@@ -123,6 +123,7 @@
 "ALLOCINETYPE"
 "An error occured while adding your playlist."
     Med dodajanje predvajalenga seznama je prišlo do napake.
+"An unknown module was specified"
 "and"
     in
 "Any"
@@ -301,8 +302,11 @@
     Podatki
 "Database"
     Baza
+"Database Access Denied"
+"Database Error"
 "Database Health"
     Konsistentnost baze
+"Database Setup Error"
 "Date"
     Datum
 "Date Formats"
@@ -397,6 +401,7 @@
     Oddaja
 "Episode Number"
     Številka oddaje
+"Error"
 "error: playgroup $1 exists"
     napaka: predvajalna skupina $1 že obstaja
 "Errored"
@@ -419,6 +424,7 @@
     Podrobni pregled
 "Extra Information"
 "Failure to autoload class $1!"
+"Fatal Error"
 "File Size"
     Velikost datoteke
 "film"
@@ -513,6 +519,8 @@
     nasičenost
 "Humidity"
     Vlažnost
+"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
+                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -685,6 +693,7 @@
     MythWeb privzete nastavitve
 "MythWeb Global Defaults"
     MythWeb splošne privzete vrednosti
+"MythWeb Locked"
 "MythWeb Session"
     MythWeb seja
 "MythWeb Skin"
@@ -717,6 +726,8 @@
     Ni zadetkov
 "No matching programs found."
     Ni zadetkov.
+"No Modules"
+"No modules were found."
 "No Public Playlists"
     Ni seznamov predvajanja
 "No recording schedules have been defined."
@@ -824,6 +835,7 @@
     Seznami predvajanja
 "Please enter an imdb number or a title to do another search"
     Za ponovno iskanje vnesite IMDB številko ali naslov
+"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
     Prosim počakajte na tekočo ajax zahtevo
 "Pop-out player"
@@ -1121,6 +1133,9 @@
     Izpusti naprej
 "Skip Back"
     Izpusti nazaj
+"Some possible solutions are to make sure that mod_env
+                 is enabled in httpd.conf, as well as having followed
+                 the instructions in the README and INSTALL files."
 "Songs"
     Pesem
 "Songs for Genre"
@@ -1183,6 +1198,10 @@
     Prostorski zvok
 "Tab"
 "Temp"
+"The database environment variables are not correctly
+                 set in the webserver conf or .htaccess file.
+                 Please read through the comments included in the file
+                 and set up the db_* environment variables correctly."
 "The requested recording schedule has been deleted."
     Zahtevani snemalni plan je bil izbrisan.
 "themoviedb"
@@ -1406,3 +1425,4 @@
     Da
 "Yesterday"
     Včeraj
+"You are most likely receiving this message because you have failed to configure mythweb's database login info."

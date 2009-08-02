@@ -20,7 +20,7 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
-    $headers[] = '<script type="text/javascript" src="'.root.'js/flowplayer-3.1.1.min.js"></script>';
+    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.1.1.min.js"></script>';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -46,7 +46,7 @@
 
 // Set the autoexpire flag
     function set_autoexpire() {
-        var r = new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
+        var r = new Ajax.Request('<?php echo root_url ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
                                  {
                                     parameters: 'toggle_autoexpire='+(1 - autoexpire),
                                   asynchronous: false
@@ -78,7 +78,7 @@
                                             .($program->subtitle
                                               ? ': '.$program->subtitle
                                               : '')) ?>")) {
-            location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid=<?php
+            location.href = '<?php echo root_url ?>tv/recorded?delete=yes&chanid=<?php
                             echo $program->chanid
                             ?>&starttime=<?php echo $program->recstartts ?>'
                             +(forget_old
@@ -100,7 +100,7 @@
         <tr>
 <?php   if ($channel) { ?>
             <td class="x-channel">
-                <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
+                <a href="<?php echo root_url ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime ?>"
                         title="<?php
                             echo t('Details for: $1',
                                    html_entities($channel->name))
@@ -119,7 +119,7 @@
                     if ($program && $program->css_class)
                         echo ' class="', $program->css_class, '"';
                     ?>>
-                <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
+                <a href="<?php echo root_url ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     echo $schedule->title;
                     if ($schedule->subtitle)
                         echo ':<br>', $schedule->subtitle;
@@ -294,14 +294,14 @@
                 if (!empty($program->recstatus)) {
                     echo $GLOBALS['RecStatus_Reasons'][$program->recstatus], '<br>';
                     if ($can_dupcheck && in_array($program->recstatus, array('Recorded', 'NeverRecord', 'PreviousRecording'))) {
-                        echo '<a href="'.root.'tv/detail/'.$program->chanid
+                        echo '<a href="'.root_url.'tv/detail/'.$program->chanid
                             .'/'.$program->starttime.'?forget_old=yes"'
                             .'title="'.html_entities(t('info:forget old')).'">'
                             .t('Forget Old').'</a>';
                     }
                 }
                 if ($can_dupcheck && !in_array($program->recstatus, array('Recorded', 'NeverRecord'))) {
-                    echo '<a href="'.root.'tv/detail/'.$program->chanid
+                    echo '<a href="'.root_url.'tv/detail/'.$program->chanid
                         .'/'.$program->starttime.'?never_record=yes"'
                         .'title="'.html_entities(t('info:never record')).'">'
                         .t('Never Record').'</a>';
@@ -332,7 +332,7 @@
             <th><?php echo t('Possible conflicts') ?>:<br><br>
         <div style="text-align: left;">
                 <?php echo t('Filters'); ?><br>
-            <form id="change_display" name="change_display" action="<?php echo root; ?>tv/detail<?php if ($_GET['recordid'])
+            <form id="change_display" name="change_display" action="<?php echo root_url; ?>tv/detail<?php if ($_GET['recordid'])
                              echo '?recordid='.urlencode($_GET['recordid']);
                       else
                          echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime']) ?>" method="post">
@@ -366,7 +366,7 @@
                                                 .' - '.$show->channel->name).'"';
                 if ($_SESSION["show_popup_info"])
                     echo show_popup("program_$program_id_counter", $show->details_list(), NULL, 'popup');
-                echo ' href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
+                echo ' href="'.root_url.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
                     .$show->title
                     .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
                     .'</a>';
@@ -383,7 +383,7 @@
                 <a href="http://www.thetvdb.com/?string=<?php echo urlencode($schedule->title) ?>&searchseriesid=&tab=listseries&function=Search"><?php echo t('Search $1', 'TheTVDB') ?></a>
                 <a href="http://www.tv.com/search.php?type=11&stype=all&qs=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'TV.com') ?></a>
                 <a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'Google') ?></a>
-                <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
+                <a href="<?php echo root_url ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     if ($_GET['recordid'])
                         echo t('Find showings of this program');
                     else
@@ -391,23 +391,23 @@
                 ?></a>
 <?php           }
                 if ($_GET['recordid']) {
-                    echo '<a href="',  root, 'tv/schedules">',
+                    echo '<a href="',  root_url, 'tv/schedules">',
                          t('Back to the recording schedules'),
                          '</a>';
                 }
                 else {
                     if ($program->endtime > time()) {
-                        echo '<a href="', root, 'tv/list?time=', $program->starttime, '">',
+                        echo '<a href="', root_url, 'tv/list?time=', $program->starttime, '">',
                              t('What else is on at this time?'),
                              '</a>';
                     }
                     if ($program->filename) {
-                        echo '<a href="', root, 'tv/recorded">',
+                        echo '<a href="', root_url, 'tv/recorded">',
                              t('Back to the recorded programs'),
                              '</a>';
                     }
                     else {
-                        echo '<a href="', root, 'tv/list?time=', $_SESSION['list_time'], '">',
+                        echo '<a href="', root_url, 'tv/list?time=', $_SESSION['list_time'], '">',
                              t('Back to the program listing'),
                              '</a>';
                     }
@@ -418,7 +418,7 @@
 
 <?php if (!$program || !$program->filename || ($program->filename && $program->recendts > time())) { ?>
     <div id="schedule">
-        <form name="program_detail" method="post" action="<?php echo root ?>tv/detail<?php
+        <form name="program_detail" method="post" action="<?php echo root_url ?>tv/detail<?php
             if ($_GET['recordid'])
                 echo '?recordid='.urlencode($_GET['recordid']);
             else
@@ -434,7 +434,7 @@
                     <label for="record_never"><?php
                         if ($schedule->search) {
                             echo t('Schedule via $1.',
-                                   '<a href='.root.'tv/schedules/'
+                                   '<a href='.root_url.'tv/schedules/'
                                    .($schedule->search == searchtype_manual
                                         ? 'manual'
                                         : 'custom'
@@ -533,7 +533,7 @@
             <script>
                 flowplayer(
                     "player",
-                    "<?php echo root ?>tv/flowplayer-3.1.1.swf", {
+                    "<?php echo root_url ?>tv/flowplayer-3.1.1.swf", {
                     playlist: [
                         // this first PNG clip works as a splash image
                         {
@@ -592,7 +592,7 @@
                                 "bgcolor",          "#869ca7",
                                 "name",             "MFPlayer",
                                 "allowScriptAccess","sameDomain",
-                                "movie",            "<?php echo root; ?>tv/playerProductInstall",
+                                "movie",            "<?php echo root_url; ?>tv/playerProductInstall",
                                 "type",             "application/x-shockwave-flash",
                                 "pluginspage",      "http://www.adobe.com/go/getflashplayer"
                             );
@@ -613,10 +613,10 @@
                                          ?>&totalTime=<?php echo $program->length;
                                          ?>&width=<?php     echo $flv_w;
                                          ?>&height=<?php    echo $flv_h;
-                                         ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf',
+                                         ?>&styles=<?php    echo root_url ?>tv/MFPlayer_styles.swf',
                                 "allowScriptAccess","sameDomain",
                                 "allowFullScreen",  "true",
-                                "movie",            "<?php echo root; ?>tv/MFPlayer",
+                                "movie",            "<?php echo root_url; ?>tv/MFPlayer",
                                 "type",             "application/x-shockwave-flash",
                                 "pluginspage",      "http://www.adobe.com/go/getflashplayer"
                             );
@@ -633,7 +633,7 @@
                     <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
                         id="MFPlayer" width="<?php echo $flv_w ?>" height="<?php echo $flv_h ?>"
                         codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
-                        <param name="movie" value="<?php echo root; ?>tv/MFPlayer.swf" />
+                        <param name="movie" value="<?php echo root_url; ?>tv/MFPlayer.swf" />
                         <param name="quality" value="high" />
                         <param name="bgcolor" value="#869ca7" />
                         <param name="allowScriptAccess" value="sameDomain" />
@@ -643,9 +643,9 @@
                                                    ?>&totalTime=<?php echo $program->length;
                                                    ?>&width=<?php     echo $flv_w;
                                                    ?>&height=<?php    echo $flv_h;
-                                                   ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf"
+                                                   ?>&styles=<?php    echo root_url ?>tv/MFPlayer_styles.swf"
                                                    >
-                        <embed src="<?php echo root; ?>tv/MFPlayer.swf" quality="high" bgcolor="#869ca7"
+                        <embed src="<?php echo root_url; ?>tv/MFPlayer.swf" quality="high" bgcolor="#869ca7"
                             width="<?php echo $flv_w ?>" height="<?php echo $flv_h ?>" name="MFPlayer" align="middle"
                             play="true"
                             loop="false"
@@ -657,7 +657,7 @@
                                    ?>&totalTime=<?php echo $program->length;
                                    ?>&width=<?php     echo $flv_w;
                                    ?>&height=<?php    echo $flv_h;
-                                   ?>&styles=<?php    echo root ?>tv/MFPlayer_styles.swf"
+                                   ?>&styles=<?php    echo root_url ?>tv/MFPlayer_styles.swf"
                             type="application/x-shockwave-flash"
                             pluginspage="http://www.adobe.com/go/getflashplayer">
                         </embed>
@@ -690,7 +690,7 @@
             foreach ($program->jobs_possible as $id => $job) {
                 echo '                <li>',
                      '<a href="',
-                     root, 'tv/detail/', $program->chanid, '/', $program->recstartts,
+                     root_url, 'tv/detail/', $program->chanid, '/', $program->recstartts,
                      '?job=', $id,
                      '">', $job, "</a></li>";
             }
@@ -732,7 +732,7 @@
             if (is_array($frontends)) {
                 echo '<div class="x-frontends">'.t('Play Recording on Frontend').':<ul>';
                     foreach ($frontends as $frontend)
-                        echo '<li><a href="'.root.'remote/play_program_on_frontend?host='.urlencode($frontend->getHost()).'&chanid='.urlencode($program->chanid).'&starttime='.urlencode($program->starttime).'">'.$frontend->getHost().'</a><br>';
+                        echo '<li><a href="'.root_url.'remote/play_program_on_frontend?host='.urlencode($frontend->getHost()).'&chanid='.urlencode($program->chanid).'&starttime='.urlencode($program->starttime).'">'.$frontend->getHost().'</a><br>';
                 echo '</ul></div>';
             }
         ?>

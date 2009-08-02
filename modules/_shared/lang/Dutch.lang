@@ -92,6 +92,7 @@
 "All Songs"
 "ALLOCINETYPE"
 "An error occured while adding your playlist."
+"An unknown module was specified"
 "and"
 "Any"
     Alle
@@ -223,7 +224,10 @@
 "Customize Screens"
 "Data"
 "Database"
+"Database Access Denied"
+"Database Error"
 "Database Health"
+"Database Setup Error"
 "Date"
     Datum
 "Date Formats"
@@ -298,6 +302,7 @@
     Aflevering
 "Episode Number"
     Aflevering nr.
+"Error"
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
@@ -312,6 +317,7 @@
 "Extended Check"
 "Extra Information"
 "Failure to autoload class $1!"
+"Fatal Error"
 "File Size"
     bestandsgrootte
 "film"
@@ -390,6 +396,8 @@
     verzadiging
 "Humidity"
     Vochtigheid
+"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
+                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -520,6 +528,7 @@
 "MythWeb"
 "MythWeb Defaults"
 "MythWeb Global Defaults"
+"MythWeb Locked"
 "MythWeb Session"
 "MythWeb Skin"
 "MythWeb Weather."
@@ -543,6 +552,8 @@
     Geen programma's gevonden
 "No matching programs found."
     Geen overeenkomsten gevonden
+"No Modules"
+"No modules were found."
 "No Public Playlists"
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
@@ -611,6 +622,7 @@
 "Playlist: %s"
 "Playlists"
 "Please enter an imdb number or a title to do another search"
+"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
 "Pop-out player"
 "Possible conflicts"
@@ -858,6 +870,9 @@
 "Shows"
 "Skip Ahead"
 "Skip Back"
+"Some possible solutions are to make sure that mod_env
+                 is enabled in httpd.conf, as well as having followed
+                 the instructions in the README and INSTALL files."
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -905,6 +920,10 @@
 "Surround Sound"
 "Tab"
 "Temp"
+"The database environment variables are not correctly
+                 set in the webserver conf or .htaccess file.
+                 Please read through the comments included in the file
+                 and set up the db_* environment variables correctly."
 "The requested recording schedule has been deleted."
     Het gevraagde opnameschema is verwijderd
 "themoviedb"
@@ -1067,3 +1086,4 @@
 "Yes"
     Ja
 "Yesterday"
+"You are most likely receiving this message because you have failed to configure mythweb's database login info."

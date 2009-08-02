@@ -104,11 +104,11 @@
     if (!strlen($program->starttime) && !$schedule->recordid) {
         if ($_GET['recordid']) {
             add_warning(t('Unknown Recording Schedule.'));
-            header('Location: '.root.'tv/schedules');
+            header('Location: '.root_url.'tv/schedules');
         }
         else {
             add_warning(t('Unknown Program.'));
-            header('Location: '.root.'tv/list?time='.$_SESSION['list_time']);
+            header('Location: '.root_url.'tv/list?time='.$_SESSION['list_time']);
         }
         save_session_errors();
         exit;
@@ -155,7 +155,7 @@
         MythBackend::find()->rescheduleRecording();
     // Redirect back to the page again, but without the query string, so the
     // user doesn't accidentally repost this request on a page reload.
-        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->recstartts);
+        redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->recstartts);
     }
 
 // The user tried to update the recording settings - update the database and the variable in memory
@@ -195,11 +195,11 @@
                     if (!$program) {
                         add_warning(t('The requested recording schedule has been deleted.'));
                         save_session_errors();
-                        header('Location: '.root.'tv/schedules');
+                        header('Location: '.root_url.'tv/schedules');
                         exit;
                     }
                 // Relocate back to the program details page
-                    redirect_browser(root.'tv/detail/'.$schedule->chanid.'/'.$schedule->starttime);
+                    redirect_browser(root_url.'tv/detail/'.$schedule->chanid.'/'.$schedule->starttime);
                 }
             }
         // Modifying an existing schedule, or adding a new one
@@ -243,10 +243,10 @@
         }
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         if ($schedule->recordid) {
-            redirect_browser(root.'tv/detail?recordid='.$schedule->recordid);
+            redirect_browser(root_url.'tv/detail?recordid='.$schedule->recordid);
         }
         else {
-            redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+            redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);
         }
     }
     elseif ($_REQUEST['forget_old']) {
@@ -255,7 +255,7 @@
         sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+        redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
     elseif (isset($_GET['never_record']) || isset($_POST['never_record'])) {
         $program->rec_never_record();
@@ -263,7 +263,7 @@
         sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        redirect_browser(root.'tv/detail/'.$program->chanid.'/'.$program->starttime);
+        redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
 // Load default settings for recpriority, autoexpire etc
     else {
@@ -350,7 +350,7 @@
     require_once 'includes/schedule_utils.php';
 
 // Setup some vars for the ipod template
-    $Page_Previous_Location = root.'tv/list_shows_in_title_and_group?group='.urlencode($program->recgroup).'&title='.urlencode($program->title);
+    $Page_Previous_Location = root_url.'tv/list_shows_in_title_and_group?group='.urlencode($program->recgroup).'&title='.urlencode($program->title);
     $Page_Previous_Location_Name = $program->title;
     $Page_Title_Short = 'Details';
 

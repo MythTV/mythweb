@@ -41,12 +41,12 @@
                 case 'WillRecord':
                     $rec_char   = $show->cardid;
                     $css_class  = 'scheduled';
-                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
+                    $commands[] = '<a href="tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     // Offer to suppress any recordings that have enough info to do so.
                     if (preg_match('/\\S/', $show->title)
                             && (preg_match('/\\S/', $show->programid.$show->subtitle.$show->description))) {
-                        $commands[] = '<a href="'.root.'tv/upcoming?'
+                        $commands[] = '<a href="tv/upcoming?'
                                       .'never_record=yes&'.$urlstr.'">'
                                       .t('Never Record').'</a>';
                     }
@@ -54,18 +54,18 @@
                 case 'PreviousRecording':
                     $rec_char   = 'P';
                     $css_class  = 'duplicate';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?'
+                    $commands[] = '<a href="tv/upcoming?'
                                   .'forget_old=yes&'.$urlstr.'">'
                                   .t('Forget Old').'</a>';
                     break;
                 case 'CurrentRecording':
                     $rec_char   = 'R';
                     $css_class  = 'duplicate';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?'
+                    $commands[] = '<a href="tv/upcoming?'
                                   .'forget_old=yes&'.$urlstr.'">'
                                   .t('Forget Old').'</a>';
                     break;
@@ -76,9 +76,9 @@
                 case 'EarlierShowing':
                     $rec_char = 'E';
                     $css_class= 'deactivated';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
+                    $commands[] = '<a href="tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'TooManyRecordings':
@@ -88,9 +88,9 @@
                 case 'Cancelled':
                     $rec_char   = 'N';
                     $css_class  = 'deactivated';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
+                    $commands[] = '<a href="tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'Conflict':
@@ -102,17 +102,17 @@
                     $rec_class = implode(' ', array(recstatus_class($show),
                                          'conflicting'));
                     $css_class  = 'conflict';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
+                    $commands[] = '<a href="tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     break;
                 case 'LaterShowing':
                     $rec_char = 'L';
                     $css_class= 'deactivated';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
+                    $commands[] = '<a href="tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'LowDiskSpace':
@@ -128,34 +128,34 @@
                 case 'Overlap':
                     $rec_char   = 'X';
                     $css_class  = 'conflict';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Record This').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
+                    $commands[] = '<a href="tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     break;
                 case 'ManualOverride':
                     $rec_char   = 'X';
                     $css_class  = 'deactivated';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
+                    $commands[] = '<a href="tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 case 'ForceRecord':
                     $rec_char   = 'F';
                     $css_class  = 'scheduled';
-                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
+                    $commands[] = '<a href="tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?default=yes&'
+                    $commands[] = '<a href="tv/upcoming?default=yes&'
                                   .$urlstr.'">'.t('Default').'</a>';
                     break;
                 default:
                     $rec_char   = '&nbsp;';
                     $rec_class  = '';
                     $css_class  = 'deactivated';
-                    $commands[] = '<a href="'.root.'tv/upcoming?record=yes&'
+                    $commands[] = '<a href="tv/upcoming?record=yes&'
                                   .$urlstr.'">'.t('Activate').'</a>';
-                    $commands[] = '<a href="'.root.'tv/upcoming?dontrec=yes&'
+                    $commands[] = '<a href="tv/upcoming?dontrec=yes&'
                                   .$urlstr.'">'.t('Don\'t Record').'</a>';
                     break;
             }
@@ -163,7 +163,7 @@
     <tr class='<?php echo $css_class ?>'><td><?php echo $rec_char ?></td><td>
     <?php
         // Print a link to record this show
-            echo '<a id="program_'.$program_id_counter.'_anchor" href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'"'
+            echo '<a id="program_'.$program_id_counter.'_anchor" href="tv/detail/'.$show->chanid.'/'.$show->starttime.'"'
                  .'>'.$show->title
                  .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
                  .'</a></td></tr>';
@@ -182,4 +182,3 @@
 
 // Print the main page footer
       require_once 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

@@ -21,7 +21,7 @@
         global $this_channel;
 ?>
 <p>
-            <form id="program_listing" action="<?php echo root ?>tv/channel/<?php echo $_GET['chanid'] ?>" method="post">
+            <form id="program_listing" action="tv/channel/<?php echo $_GET['chanid'] ?>" method="post">
             <center>
             <?php echo t('Channel') ?> <?php $this_channel->channum ?> <b><?php echo $this_channel->callsign ?></b><br />
             <?php echo date('D m/d/y', $_SESSION['list_time']) ?><br />
@@ -66,13 +66,13 @@
 
     // Print the content
     ?>
-    <?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - 
+    <?php echo strftime($_SESSION['time_format'], $show->starttime) ?> -
     <?php echo strftime($_SESSION['time_format'], $show->endtime) ?><br />
 <?php
         if(strlen($show->subtitle) <= 0)
-            echo '<b><a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a></b><br />';
+            echo '<b><a href="tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a></b><br />';
         else
-            echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
+            echo '<a href="tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.$show->title.'</a><br />';
 
         if(strlen($show->subtitle))
             echo '<b>'.$show->subtitle.'</b><br />';
@@ -83,4 +83,3 @@
         }
 
     }
-

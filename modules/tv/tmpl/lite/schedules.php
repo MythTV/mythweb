@@ -91,7 +91,7 @@
         // Window status text, for the mouseover
             $wstatus = "Details for $schedule->title";
         // Print a link to the program detail for this schedule
-            echo '<a href="'.root.'tv/';
+            echo '<a href="'.root_url.'tv/';
         // Link to different places for different kinds of schedules
             if ($schedule->search) {
                 echo 'schedules/',

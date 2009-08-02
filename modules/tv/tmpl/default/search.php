@@ -48,7 +48,7 @@
 // -->
 </script>
 
-<form class="form" id="search_advanced" action="<?php echo root ?>tv/search" method="get">
+<form class="form" id="search_advanced" action="<?php echo root_url ?>tv/search" method="get">
     <div><input type="hidden" name="type" value="a"></div>
 
 <table id="search_options" border="0" cellspacing="0" cellpadding="0" class="commandbox commands">
@@ -170,7 +170,7 @@
     <td class="x-title <?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
             echo '<span class="hdtv_icon">HD</span>';
-        echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+        echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
              $show->title, '</a>';
         if ($show->subtitle)
             echo ': ', $show->subtitle;
@@ -192,12 +192,12 @@
     <td class="x-description"><?php echo $show->description ?></td>
     <td class="x-channum"><?php     echo $show->channel->channum.' - '.$show->channel->name ?></td>
     <td class="x-airdate"><?php
-            echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
+            echo '<a href="'.root_url.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'.
                 strftime($_SESSION['date_search'], $show->starttime) . '</a>';
             if ($show->extra_showings)
                 foreach ($show->extra_showings as $pair) {
                     list($chanid, $showtime) = $pair;
-                    echo '<br><a href="', root, 'tv/detail/', $chanid, '/', $showtime, '" class="italic">',
+                    echo '<br><a href="', root_url, 'tv/detail/', $chanid, '/', $showtime, '" class="italic">',
                          strftime($_SESSION['date_search'] ,$showtime);
                     if ($chanid != $show->chanid)
                         echo ' (', $Channels[$chanid]->callsign, ')';

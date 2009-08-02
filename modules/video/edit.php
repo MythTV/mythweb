@@ -21,7 +21,7 @@ header("Content-Type: text/html; charset=utf-8");
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="<?php echo root; ?>dcss/style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo root_url; ?>dcss/style.css" />
     <style type="text/css">
     <!--
         body {
@@ -77,7 +77,7 @@ header("Content-Type: text/html; charset=utf-8");
 </head>
 <body>
 
-<form method="post" action="<?php echo root ?>video/edit" enctype="multipart/form-data">
+<form method="post" action="<?php echo root_url ?>video/edit" enctype="multipart/form-data">
 Title<br>
 <input name="title" type="text" value="<?php echo htmlspecialchars($Video->title, ENT_QUOTES ); ?>"><br><br>
 Director<br>

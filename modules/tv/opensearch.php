@@ -23,13 +23,13 @@
     <Description>Search MythTV</Description>
     <Url type="application/x-suggestions+json"
          method="GET"
-         template="http://<?php echo $_SERVER['SERVER_NAME'], root?>tv/opensearch?type=suggest&amp;search={searchTerms}">
+         template="<?php echo root_url ?>tv/opensearch?type=suggest&amp;search={searchTerms}">
     </Url>
     <Url type="text/html"
          method="GET"
-         template="http://<?php echo $_SERVER['SERVER_NAME'], root?>tv/search/?type=q&amp;search=Search&amp;s={searchTerms}">
+         template="<?php echo root_url ?>tv/search/?type=q&amp;search=Search&amp;s={searchTerms}">
     </Url>
-    <Image height="16" width="16" type="image/png">http://<?php echo $_SERVER['SERVER_NAME'], skin_url ?>img/favicon.ico</Image>
+    <Image height="16" width="16" type="image/png"><?php echo skin_url ?>img/favicon.ico</Image>
 </OpenSearchDescription>
 <?php
     }
@@ -63,4 +63,3 @@
 
 // Done
     exit;
-

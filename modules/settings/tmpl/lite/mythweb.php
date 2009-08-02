@@ -21,7 +21,7 @@
 
 ?>
 
-<form class="form" method="post" action="<?php echo root ?>settings/mythweb">
+<form class="form" method="post" action="<?php echo root_url ?>settings/mythweb">
 
 <table class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="5" style="margin: 1em auto">
 <tr>

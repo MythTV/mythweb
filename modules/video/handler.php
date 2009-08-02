@@ -56,7 +56,7 @@
         else {
             custom_error('Could not find a value in the database for the'
                         .' MythVideo directory for this hostname ('.hostname.').'
-                        .' Please update your <a href="'.root.'settings/mythweb">settings</a>'
+                        .' Please update your <a href="'.root_url.'settings/mythweb">settings</a>'
                         .' to point to the correct location.');
         }
     }
@@ -87,7 +87,7 @@
         else {
             custom_error('Could not find a value in the database for the'
                         .' MythVideo artwork directory for this hostname ('.hostname.').'
-                        .' Please update your <a href="'.root.'settings/mythweb">settings</a>'
+                        .' Please update your <a href="'.root_url.'settings/mythweb">settings</a>'
                         .' to point to the correct location.');
         }
     }
@@ -152,7 +152,7 @@
         for ($i = 0; $i < $padding; $i++)
             echo '&nbsp;';
         if (strlen($path['path']) > 0)
-            echo '<a class="'.($_SESSION['video']['path'] == $path['path']?'active':'').'" href="'.root.'video?path='.urlencode($path['path']).'">'.$path['display'].'</a><br>'."\n";
+            echo '<a class="'.($_SESSION['video']['path'] == $path['path']?'active':'').'" href="'.root_url.'video?path='.urlencode($path['path']).'">'.$path['display'].'</a><br>'."\n";
         if (count($path['subs']))
             foreach ($path['subs'] AS $p)
                 output_path_picker($p, $padding+1);

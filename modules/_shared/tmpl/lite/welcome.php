@@ -38,7 +38,7 @@
         if ($id == $_REQUEST['view_module'])
             echo ' class="selected"';
         echo '">',
-             '<a href="', root, '?view_module=', urlencode($id), '">', $module['name'], '</a>',
+             '<a href="', root_url, '?view_module=', urlencode($id), '">', $module['name'], '</a>',
              "</li>\n";
     }
 ?>
@@ -58,7 +58,7 @@
 
 </div>
 
-<a id="reset" href="<?php echo root; ?>?RESET_SKIN&RESET_TMPL"><?php echo t('Reset template and skin to defaults'); ?></a>
+<a id="reset" href="<?php echo root_url; ?>?RESET_SKIN&RESET_TMPL"><?php echo t('Reset template and skin to defaults'); ?></a>
 
 <?php
 // Print the page footer

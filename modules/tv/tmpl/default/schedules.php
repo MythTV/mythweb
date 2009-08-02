@@ -42,7 +42,7 @@
         var element = $(element_id);
         if (Tips.hasTip(element) == false) {
             ajax_add_request();
-            new Ajax.Request('<?php echo root; ?>tv/get_schedule_details',
+            new Ajax.Request('<?php echo root_url; ?>tv/get_schedule_details',
                              {
                                 parameters: {
                                                 recordid:           recordid,
@@ -141,7 +141,7 @@
                 echo ' onmouseover = "currently_hovered_id = this.id; details_delay_timer_id = setTimeout(function () {load_tool_tip(\'schedule-'.$schedule->recordid.'\',\''.$schedule->recordid.'\');}, 250);"';
                 echo ' onmouseout  = "currently_hovered_id = null; clearTimeout( details_delay_timer_id ); details_delay_timer_id = null;"';
             }
-            echo ' href="'.root.'tv/';
+            echo ' href="'.root_url.'tv/';
         // Link to different places for different kinds of schedules
             if ($schedule->search) {
                 echo 'schedules/',

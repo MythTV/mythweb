@@ -22,6 +22,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+    <base href="<?php echo root_url; ?>">
     <title><?php echo html_entities($page_title) ?></title>
 
     <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" />
@@ -32,10 +33,10 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="robots" content="noindex, nofollow">
 
-    <script type="text/javascript" src="<?php echo root ?>js/prototype.js"></script>
+    <script type="text/javascript" src="js/prototype.js"></script>
 
-    <script type="text/javascript" src="<?php echo root ?>js/utils.js"></script>
-    <script type="text/javascript" src="<?php echo root ?>js/table_sort.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/table_sort.js"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo skin_url ?>style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>header.css">
@@ -86,5 +87,5 @@
                 <?php
             }
             ?>
-        <a id="Search" class="button" href="<?php echo root ?>tv/search">Search</a>
+        <a id="Search" class="button" href="tv/search">Search</a>
     </div>

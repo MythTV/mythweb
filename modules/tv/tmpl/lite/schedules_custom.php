@@ -54,7 +54,7 @@
 
     <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
-        <form name="custom_schedule" method="post" action="<?php echo root ?>tv/schedules/custom<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
+        <form name="custom_schedule" method="post" action="<?php echo root_url ?>tv/schedules/custom<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
 
         <div id="schedule_options">
             <h3><?php echo t('Schedule Options') ?>:</h3>

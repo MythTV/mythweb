@@ -11,26 +11,26 @@
 /**/
 /*
     $SubModules[] = array('Name'    => 'Listings',
-                          'URL'     => root.'tv/list',
+                          'URL'     => 'tv/list',
                           'Icon'    => skin_url.'img/Icons/logs'
                          );
 */
     $SubModules[] = array('Name'    => 'Upcoming',
-                          'URL'     => root.'tv/upcoming',
+                          'URL'     => 'tv/upcoming',
                           'Icon'    => skin_url.'img/Icons/clock'
                          );
 /*
     $SubModules[] = array('Name'    => 'Schedules',
-                          'URL'     => root.'tv/schedules',
+                          'URL'     => 'tv/schedules',
                           'Icon'    => skin_url.'img/Icons/cal'
                          );
 */
     $SubModules[] = array('Name'    => 'Recorded',
-                          'URL'     => root.'tv/list_recording_groups/',
+                          'URL'     => 'tv/list_recording_groups/',
                           'Icon'    => skin_url.'img/Icons/video'
                          );
 
-    $Page_Previous_Location = root;
+    $Page_Previous_Location = root_url;
     $Page_Previous_Location_Name = 'MythWeb';
     $Page_Title_Short = 'Tv';
 

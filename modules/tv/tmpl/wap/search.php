@@ -37,7 +37,7 @@
     foreach ($Results as $show) {
 // Print the content
     echo $show->channel->name.'<br />';
-    echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'"><b>'.$show->title.'</b></a><br />';
+    echo '<a href="'.root_url.'tv/detail/'.$show->chanid.'/'.$show->starttime.'"><b>'.$show->title.'</b></a><br />';
     if(strlen($show->subtitle))
         echo $show->subtitle.'<br />';
 //  echo $show->description.'<br />';

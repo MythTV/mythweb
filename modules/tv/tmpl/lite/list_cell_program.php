@@ -12,7 +12,7 @@
         if ($program->hdtv && $percent > 5)
             echo '<span class="hdtv_icon">HD</span>';
     // Start printing the link to record this show
-        echo '<a href="'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
+        echo '<a href="'.root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
             echo '<img src="'.skin_url.'img/left_sm.png" border="0" class="left_arrow">';

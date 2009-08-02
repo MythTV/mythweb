@@ -25,7 +25,7 @@
 
 // Set the autoexpire flag
     function set_autoexpire() {
-        new Ajax.Request('<?php echo root ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
+        new Ajax.Request('<?php echo root_url ?>tv/detail/<?php echo $program->chanid, '/', $program->recstartts ?>',
                                  {
                                     parameters: 'toggle_autoexpire='+(1 - autoexpire),
                                      onSuccess:  autoexpire_handler
@@ -49,7 +49,7 @@
 
     function delete_recording() {
         if (confirm("<?php echo t('Are you sure you want to delete this show?'); ?>")) {
-            location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid=<?php
+            location.href = '<?php echo root_url ?>tv/recorded?delete=yes&chanid=<?php
                             echo $program->chanid
                             ?>&starttime=<?php echo $program->recstartts ?>'
                             ;
@@ -57,7 +57,7 @@
     }
 
     function delete_rerecord() {
-        location.href = '<?php echo root ?>tv/recorded?delete=yes&chanid=<?php
+        location.href = '<?php echo root_url ?>tv/recorded?delete=yes&chanid=<?php
                         echo $program->chanid
                         ?>&starttime=<?php echo $program->recstartts ?>'
                         +'&forget_old=yes'
@@ -80,10 +80,10 @@
         if (strlen($schedule->fancy_description))
             echo '<li class="text long">'.$schedule->fancy_description;
     ?>
-    <li class="small"><a href="<?php echo root.'remote/play_program_on_frontend?chanid='.$program->chanid.'&starttime='.$program->recstartts; ?>"><?php echo t('Watch on frontend'); ?></a>
+    <li class="small"><a href="<?php echo root_url.'remote/play_program_on_frontend?chanid='.$program->chanid.'&starttime='.$program->recstartts; ?>"><?php echo t('Watch on frontend'); ?></a>
     <?php
         if ($program->hasAlternativeFormat('mp4'))
-            echo '<li class="small"><a href="'.root.'pl/stream/'.$program->chanid.'/'.$program->recstartts.'.mp4">'.t('Watch on iPod/iPhone').'</a>';
+            echo '<li class="small"><a href="'.root_url.'pl/stream/'.$program->chanid.'/'.$program->recstartts.'.mp4">'.t('Watch on iPod/iPhone').'</a>';
     ?>
 </ul>
 
@@ -185,7 +185,7 @@
             <ul class="ListPanel">
             <?php
                 foreach ($program->jobs_possible as $id => $job)
-                    echo '<li class="small"><a href="'.root.'tv/detail/'.$program->chanid.'/'.$program->recstartts.'?job='.$id.'">'.$job.'</a>';
+                    echo '<li class="small"><a href="'.root_url.'tv/detail/'.$program->chanid.'/'.$program->recstartts.'?job='.$id.'">'.$job.'</a>';
             ?>
             </ul>
         <?php
@@ -222,7 +222,7 @@
     <li class="small"><a href="http://www.thetvdb.com/?string=<?php echo urlencode($schedule->title) ?>&searchseriesid=&tab=listseries&function=Search"><?php echo t('Search $1', 'TheTVDB') ?></a>
     <li class="small"><a href="http://www.tv.com/search.php?type=11&stype=all&qs=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'TV.com') ?></a>
     <li class="small"><a href="http://www.google.com/search?q=<?php echo urlencode($schedule->title) ?>"><?php echo t('Search $1', 'Google') ?></a>
-    <li class="small"><a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
+    <li class="small"><a href="<?php echo root_url ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode('^'.$schedule->title.'$')) ?>?field=title"><?php
                     if ($_GET['recordid'])
                         echo t('Find showings of this program');
                     else

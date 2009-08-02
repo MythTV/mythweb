@@ -42,9 +42,5 @@
  * couple of different files called above.
 /**/
     function stream_url() {
-        $protocol = "http://";
-        if (!$_SESSION['stream']['force_http'] && isset($_SERVER['HTTPS']))
-            $protocol = "https://";
-        return $protocol. http_host .root.'music/';
+        return 'music/';
     }
-

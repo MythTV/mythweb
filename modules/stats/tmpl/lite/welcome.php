@@ -16,7 +16,7 @@
 // Open with a div and an image
     echo '<div id="info_stats">',
          '<p>',
-         '<a href="', root, Modules::getModuleProperity('stats', 'path'), '">',
+         '<a href="', Modules::getModuleProperity('stats', 'path'), '">',
          '<img src="', skin_url, '/img/stats.png" class="module_icon" border="0" />',
          '<h2>', Modules::getModuleProperity('stats', 'name'), '</h2></a>',
          '</p>',

@@ -32,7 +32,7 @@
         <div class="x-modules">
             <ul><?php
                 foreach ($Settings as $module => $set) {
-                    echo '<li><a href="', root, 'settings/', $module;
+                    echo '<li><a href="', root_url, 'settings/', $module;
                     if ($module == $Path[1])
                         echo '" class="x-selected';
                     echo '">', html_entities($set['name']), '</a></li>';
@@ -46,7 +46,7 @@
     <td class="x-sections">
         <ul><?php
             foreach ($Settings[$Path[1]]['choices'] as $path => $name) {
-                echo '<li><a href="', root, 'settings/', $Path[1];
+                echo '<li><a href="', root_url, 'settings/', $Path[1];
                 if ($path == $Path[2])
                     echo '" class="x-selected';
                 else

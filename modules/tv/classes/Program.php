@@ -515,7 +515,7 @@ class Program {
         if ($height == 0)
             $height = floor($width / $this->getAspect());
 
-        return root."tv/get_pixmap/{$this->hostname}/{$this->chanid}/{$this->recstartts}/$width/$height/$secs_in/$filename.{$width}x{$height}x$secs_in.png";
+        return root_url."tv/get_pixmap/{$this->hostname}/{$this->chanid}/{$this->recstartts}/$width/$height/$secs_in/$filename.{$width}x{$height}x$secs_in.png";
     }
 
 /**
@@ -651,7 +651,7 @@ class Program {
                 if (!$add_search_links)
                     $people[] = $name;
                 else
-                    $people[] = '<a href="'.root.'tv/search/'.str_replace('%2F', '/', rawurlencode('^'.$name.'$')).'?field=people">'.$name.'</a>';
+                    $people[] = '<a href="'.root_url.'tv/search/'.str_replace('%2F', '/', rawurlencode('^'.$name.'$')).'?field=people">'.$name.'</a>';
             }
         // Cache it
             $this->credits[$role][$add_search_links] = trim(implode(', ', $people));

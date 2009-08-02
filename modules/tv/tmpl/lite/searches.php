@@ -32,7 +32,7 @@
 <?php
     foreach(array_keys($Canned_Searches) as $name ) {
     // We have to clean the link like this or it results in 404 errors from mod_rewrite
-        echo '        <li><a href="'.root.'tv/search/'.str_replace('%2F', '/', rawurlencode('canned:'.$name)).'">'
+        echo '        <li><a href="'.root_url.'tv/search/'.str_replace('%2F', '/', rawurlencode('canned:'.$name)).'">'
             .$name."</a></li>\n";
     }
 ?>

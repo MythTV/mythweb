@@ -57,11 +57,8 @@ class Channel {
                 unset($data);
             }
         }
-    // Now that local filesystem checks are done, add the web root to the icon
-    // path, or wipe the icon path completely if it still doesn't exist.
-        if (is_file($this->icon))
-            $this->icon = root . $this->icon;
-        else
+    // Wipe the icon path completely if it doesn't exist.
+        if (!is_file($this->icon))
             $this->icon = null;
     }
 

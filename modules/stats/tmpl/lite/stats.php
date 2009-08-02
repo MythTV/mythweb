@@ -28,7 +28,7 @@
 
 <div id="content_wrapper">
 
-	<form id="stats_form" name="stats_form" action="<?php echo root ?>stats">
+	<form id="stats_form" name="stats_form" action="stats">
 
         <div id="query_time_div">
             <select name="query_time">
@@ -127,4 +127,3 @@
 <?php
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
-

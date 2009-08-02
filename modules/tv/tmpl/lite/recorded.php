@@ -44,7 +44,7 @@
 
 ?>
 
-<form id="change_title" action="<?php echo root ?>tv/recorded" method="get">
+<form id="change_title" action="<?php echo root_url ?>tv/recorded" method="get">
 <table id="title_choices" class="command command_border_l command_border_t command_border_b command_border_r" border="0" cellspacing="0" cellpadding="4" align="center">
 <tr>
 <?php if (count($Groups) > 1) { ?>
@@ -165,14 +165,14 @@ EOM;
     <td class="x-filesize"><?php echo nice_filesize($show->filesize) ?></td>
     <td class="x-commands" rowspan="2"><?php
         if ($show->endtime > time()) {
-            echo '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+            echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
                  t('Still Recording: Edit'),
                  "</a>\n        ";
         }
-        ?><a href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>"
+        ?><a href="<?php echo root_url ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>"
             title="<?php echo html_entities(t('Delete $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete') ?></a>
-        <a href="<?php echo root ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old=yes"
+        <a href="<?php echo root_url ?>tv/recorded?delete=yes&chanid=<?php echo $show->chanid ?>&starttime=<?php echo $show->recstartts ?>&forget_old=yes"
             title="<?php echo html_entities(t('Delete and rerecord $1', preg_replace('/: $/', '', $show->title.': '.$show->subtitle))) ?>"
             ><?php echo t('Delete + Rerecord') ?></a>
         </td>

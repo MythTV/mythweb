@@ -1,15 +1,31 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-    <title>Error</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo root ?>skins/errors.css">
-</head>
+<?php
+/**
+ *
+ *
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
+ * @license     GPL
+ *
+ * @package     MythWeb
+ * @subpackage
+ *
+/**/
 
-<body>
+// Set the desired page title
+    $page_title = 'MythWeb - '.t('Error');
+
+// Custom headers
+    $headers[] = '<link rel="stylesheet" type="text/css" href="skins/errors.css">';
+
+// Print the page header
+    require 'modules/_shared/tmpl/'.tmpl.'/header.php';
+?>
 
 <div id="message">
 
-<h2>An unknown module was specified</h2>
+<h2><?php echo t('An unknown module was specified'); ?></h2>
 
 <p>
 <?php echo $Path[0] ?>
@@ -17,5 +33,6 @@
 
 </div>
 
-</body>
-</html>
+<?php
+// Print the page footer
+    require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

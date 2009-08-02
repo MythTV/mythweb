@@ -28,7 +28,7 @@
 
 <div id="content_wrapper">
 
-	<form id="stats_form" name="stats_form" action="<?php echo root ?>stats">
+	<form id="stats_form" name="stats_form" action="stats">
 
         <div id="query_time_div">
             <?php echo t('Time Span'); ?>&nbsp;

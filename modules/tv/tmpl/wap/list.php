@@ -20,7 +20,7 @@
 // Print the header info specific to the program listing
 ?>
 <p>
-    <form class="form" action="<?php echo root ?>tv/list" method="get">
+    <form class="form" action="<?php echo root_url ?>tv/list" method="get">
     <center>
         <br /><?php echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime)) ?><br />
             <?php echo t('Jump to') ?><br />
@@ -92,9 +92,9 @@
     */
     function print_channel($channel, $start_time, $end_time) {
         ?>
-        <b><a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo date('Ymd', $start_time) ?>">
+        <b><a href="<?php echo root_url ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo date('Ymd', $start_time) ?>">
         <?php echo $_SESSION["prefer_channum"] ? $channel->channum : $chann->callsign ?>&nbsp;
         <?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?> </a></b>
-    	<a href="<?php echo root ?>tv/detail/<?php echo $channel->chanid ?>/<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
+    	<a href="<?php echo root_url ?>tv/detail/<?php echo $channel->chanid ?>/<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
         <?php
     }

@@ -14,7 +14,7 @@
                  class       = "program"
                  onmouseover = "currently_hovered_id = this.id; details_delay_timer_id = setTimeout(function () {load_tool_tip(\'program-'.$program->chanid.'-'.$program->starttime.'\',\''.$program->chanid.'\',\''.$program->starttime.'\');}, 250);"
                  onmouseout  = "currently_hovered_id = null; clearTimeout( details_delay_timer_id ); details_delay_timer_id = null;"
-                 href        = "'.root.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
+                 href        = "'.root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime.'">';
     // Is this program 'Already in Progress'?
         if ($program->starttime < $GLOBALS['list_starttime'])
             echo '<img src="'.skin_url.'img/left_sm.png" class="left_arrow" alt="'.t('left').'">';

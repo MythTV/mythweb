@@ -16,7 +16,7 @@
             $('hide_advanced').style.display         = 'none';
         }
     // Toggle the session setting, too.
-        new Ajax.Request('<?php echo root ?>tv/detail?=',
+        new Ajax.Request('<?php echo root_url ?>tv/detail?=',
                          {
                             parameters: 'show_advanced_schedule='+(show ? 1 : '0'),
                           asynchronous: true

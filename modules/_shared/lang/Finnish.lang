@@ -129,6 +129,7 @@
     ALLOCINETYPE
 "An error occured while adding your playlist."
     Tapahtui virhe lisätessä soittolistaasi
+"An unknown module was specified"
 "and"
     ja
 "Any"
@@ -313,8 +314,11 @@
     Tieto
 "Database"
     Tietokanta
+"Database Access Denied"
+"Database Error"
 "Database Health"
     Tietokannan kunto
+"Database Setup Error"
 "Date"
     Aika
 "Date Formats"
@@ -413,6 +417,7 @@
     Jakso
 "Episode Number"
     Jakson numero
+"Error"
 "error: playgroup $1 exists"
     Virhe: soittoryhmä $1 on jo olemassa
 "Errored"
@@ -436,6 +441,7 @@
     Pidennetty tarkistus
 "Extra Information"
 "Failure to autoload class $1!"
+"Fatal Error"
 "File Size"
     Tiedostokoko
 "film"
@@ -535,6 +541,8 @@
     Värikylläisyys
 "Humidity"
     Ilmankosteus
+"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
+                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
     Ohita yleiset ohjelmat
 "Ignore scheduled shows"
@@ -714,6 +722,7 @@
     MythWeb oletukset
 "MythWeb Global Defaults"
     MythWeb yleiset oletukset
+"MythWeb Locked"
 "MythWeb Session"
     MythWeb istunto
 "MythWeb Skin"
@@ -746,6 +755,8 @@
     Ei vastaavuuksia
 "No matching programs found."
     Ei vastaavia ohjelmia.
+"No Modules"
+"No modules were found."
 "No Public Playlists"
     Ei yleisiä Soittolistoja
 "No recording schedules have been defined."
@@ -856,6 +867,7 @@
     Soittolistat
 "Please enter an imdb number or a title to do another search"
     Ole hyvä ja syötä imbd numero tai nimike, jolla tehdä uusi haku
+"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
     Ole hyvä ja odota AJAX -kyselyä
 "Pop-out player"
@@ -1161,6 +1173,9 @@
     Hyppää eteenpäin
 "Skip Back"
     Hyppää taaksepäin
+"Some possible solutions are to make sure that mod_env
+                 is enabled in httpd.conf, as well as having followed
+                 the instructions in the README and INSTALL files."
 "Songs"
     Kappaleet
 "Songs for Genre"
@@ -1229,6 +1244,10 @@
     Välilehti
 "Temp"
     Väliaikainen
+"The database environment variables are not correctly
+                 set in the webserver conf or .htaccess file.
+                 Please read through the comments included in the file
+                 and set up the db_* environment variables correctly."
 "The requested recording schedule has been deleted."
     Ajoitettu nauhoitus on poistettu
 "themoviedb"
@@ -1439,3 +1458,4 @@
     Kyllä
 "Yesterday"
     Eilen
+"You are most likely receiving this message because you have failed to configure mythweb's database login info."

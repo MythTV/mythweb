@@ -42,7 +42,7 @@
     function verify_frontends() {
         for (var i=0;i<frontends.length;i++) {
             var host = frontends[i];
-            var r = new Ajax.Request('<?php echo root ?>remote/',
+            var r = new Ajax.Request('remote/',
                                      {
                                         parameters: 'ping='+encodeURIComponent(host),
                                       asynchronous: false
@@ -60,7 +60,7 @@
         var i = frontends.indexOf(host);
     // Turn a host on (assuming it is alive)
         if (i == -1) {
-            var r = new Ajax.Request('<?php echo root ?>remote/',
+            var r = new Ajax.Request('remote/',
                                      {
                                         parameters: 'ping='+encodeURIComponent(host),
                                       asynchronous: false
@@ -77,7 +77,7 @@
         else {
             frontends.splice(i, 1);
             $('host_'+host).removeClassName('-selected');
-            new Ajax.Request('<?php echo root ?>remote/',
+            new Ajax.Request('remote/',
                              {
                                 parameters: 'unping='+encodeURIComponent(host),
                               asynchronous: true
@@ -118,7 +118,7 @@
     <td class="x-sections">
         <ul><?php
             foreach (Modules::getModuleProperity('remote', 'links') as $link => $name) {
-                echo '<li><a href="', root, Modules::getModuleProperity('remote', 'path'), '/', $link, '"';
+                echo '<li><a href="', Modules::getModuleProperity('remote', 'path'), '/', $link, '"';
                 if ($link == $_REQUEST['type'])
                     echo ' class="x-selected"';
                 echo '>', html_entities($name), '</a></li>';

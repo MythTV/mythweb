@@ -35,7 +35,7 @@
 
 // No channel found
     if (!$_REQUEST['chanid'] || !$this_channel->chanid) {
-        redirect_browser(root.'tv/list');
+        redirect_browser(root_url.'tv/list');
     }
 
 // Load the programs for today
@@ -45,7 +45,7 @@
 
 // No data?  Assume today.
     if (count($this_channel->programs) < 1) {
-        redirect_browser(root.'tv/channel/'.$this_channel->chanid.'/'.time());
+        redirect_browser(root_url.'tv/channel/'.$this_channel->chanid.'/'.time());
     }
 
 // Load the class for this page

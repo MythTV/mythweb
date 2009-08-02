@@ -36,7 +36,7 @@
     $_SESSION['settings']['last'] = array_slice($Path, 1);
 
 // Define a constant for settings pages to use as their form action="" target
-    define('form_action', root.'settings/'.$Path[1]
+    define('form_action', root_url.'settings/'.$Path[1]
                           .($Path[2] == $Settings[$Path[1]]['default']
                                 ? ''
                                 : '/'.$Path[2]));

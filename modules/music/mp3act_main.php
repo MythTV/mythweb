@@ -16,12 +16,12 @@
 
     GarbageCollector();
 
-    $sajax_remote_uri   = root.'music/';
+    $sajax_remote_uri   = 'music/';
     $sajax_request_type = 'POST';
     sajax_init();
     sajax_export("getplaylistnames","musicLookup","playlist_rem","playlist_add","playlistInfo","clearPlaylist","buildBreadcrumb","play","playlist_move","searchMusic","viewPlaylist","getDropDown","savePlaylist","getRandItems","randAdd","deletePlaylist");
     sajax_handle_client_request();
-    
+
     $headers[] = '<link rel="Stylesheet" href="'.skin_url.'music.css" type="text/css">';
 
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -63,8 +63,8 @@
     return true;
   }
     <?php sajax_show_javascript(); ?></script>
-    <script type="text/javascript" src="<?php echo root; ?>music/mp3act_js.js.php"></script>
-    <script type="text/javascript" src="<?php echo root; ?>music/mp3act_fat.js"></script>
+    <script type="text/javascript" src="music/mp3act_js.js.php"></script>
+    <script type="text/javascript" src="music/mp3act_fat.js"></script>
 
 <div id="wrap">
     <div id="header">
@@ -104,6 +104,6 @@
     </div>
     <div class="clear"></div>
 </div>
-<iframe src="<?php echo root; ?>music/mp3act_hidden.php" frameborder="0" height="0" width="0" id="hidden" name="hidden"></iframe>
+<iframe src="music/mp3act_hidden.php" frameborder="0" height="0" width="0" id="hidden" name="hidden"></iframe>
 <?php
 require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

@@ -19,6 +19,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+    <base href="<?php echo root_url; ?>">
     <title><?php echo html_entities($page_title) ?></title>
 
     <link rel="icon"          href="<?php echo skin_url ?>/img/favicon.ico" type="image/x-icon" />
@@ -43,36 +44,36 @@
 
 <div id="page_header" class="clearfix">
     <div id="logo_box">
-        <a id="mythtv_logo" href="<?php echo root ?>">
+        <a id="mythtv_logo" href="<?php echo root_url; ?>">
         <img src="<?php echo skin_url ?>img/mythtv-logo.png" width="174" height="48" border="0" alt="MythTV" class="alpha_png">
         </a>
     </div>
     <div id="sections">
-        <a id="tv_link"<?php if ($Path[0] == 'tv') echo ' class="current_section"' ?> href="<?php echo root ?>tv" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
+        <a id="tv_link"<?php if ($Path[0] == 'tv') echo ' class="current_section"' ?> href="tv" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/tv.png" width="48" height="48" class="alpha_png" alt="MythTV"/>
         </a>
 <?php if (Modules::getModule('music')) { ?>
-        <a id="music_link"<?php if ($Path[0] == 'music') echo ' class="current_section"' ?> href="<?php echo root ?>music" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
+        <a id="music_link"<?php if ($Path[0] == 'music') echo ' class="current_section"' ?> href="music" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/music.png" width="48" height="48" class="alpha_png" alt="MythMusic" />
         </a>
 <?php
       }
       if (Modules::getModule('video')) {
 ?>
-        <a id="video_link"<?php if ($Path[0] == 'video') echo ' class="current_section"' ?> href="<?php echo root ?>video" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
+        <a id="video_link"<?php if ($Path[0] == 'video') echo ' class="current_section"' ?> href="video" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/video.png" width="48" height="48" class="alpha_png" alt="MythVideo" />
         </a>
 <?php
       }
       if (Modules::getModule('weather')) {
 ?>
-        <a id="weather_link"<?php if ($Path[0] == 'weather') echo ' class="current_section"' ?> href="<?php echo root ?>weather" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
+        <a id="weather_link"<?php if ($Path[0] == 'weather') echo ' class="current_section"' ?> href="weather" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/weather.png" width="48" height="48" class="alpha_png" alt="MythWeather" />
         </a>
 <?php
       }
 ?>
-        <a id="settings_link"<?php if ($Path[0] == 'settings') echo ' class="current_section"' ?> href="<?php echo root ?>settings" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
+        <a id="settings_link"<?php if ($Path[0] == 'settings') echo ' class="current_section"' ?> href="settings" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/settings.png" width="48" height="48" class="alpha_png" alt="<?php echo t('Settings') ?>" />
         </a>
     </div>
@@ -87,12 +88,12 @@
             </div>
         </div>
         <div id="search">
-            <form action="<?php echo root ?>tv/search" method="get">
+            <form action="tv/search" method="get">
             <input type="hidden" name="type" value="q">
                 <div id="simple_search">
                     <input id="search_text" type="text" name="s" size="15" value="<?php echo html_entities($_SESSION['search']['s']) ?>">
                     <input id="search_submit" type="submit" class="submit" name="search" value="<?php echo t('Search') ?>">
-                    (<a href="<?php echo root ?>tv/search"><?php echo t('Advanced') ?></a>)
+                    (<a href="tv/search"><?php echo t('Advanced') ?></a>)
                 </div>
             </form>
         </div>
@@ -106,23 +107,23 @@
     <td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
         <tr>
             <td><div id="command_choices">
-                    <a href="<?php echo root ?>">MythTV:</a> &nbsp; &nbsp;
-                    <a href="<?php echo root ?>tv/list"><?php echo t('Listings') ?></a>
+                    <a href="">MythTV:</a> &nbsp; &nbsp;
+                    <a href="tv/list"><?php echo t('Listings') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/searches"><?php echo t('Searches') ?></a>
+                    <a href="tv/searches"><?php echo t('Searches') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/schedules"><?php echo t('Recording Schedules') ?></a>
-                    (<a href="<?php echo root ?>tv/schedules/manual"><?php echo t('Manual') ?></a>,
-                    <a href="<?php echo root ?>tv/schedules/custom"><?php echo t('Custom') ?></a>)
+                    <a href="tv/schedules"><?php echo t('Recording Schedules') ?></a>
+                    (<a href="tv/schedules/manual"><?php echo t('Manual') ?></a>,
+                    <a href="tv/schedules/custom"><?php echo t('Custom') ?></a>)
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/upcoming"><?php echo t('Upcoming Recordings') ?></a>
+                    <a href="tv/upcoming"><?php echo t('Upcoming Recordings') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>tv/recorded"><?php echo t('Recorded Programs') ?></a>
+                    <a href="tv/recorded"><?php echo t('Recorded Programs') ?></a>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>status"><?php echo t('Backend Status') ?></a>
+                    <a href="status"><?php echo t('Backend Status') ?></a>
 <?php if (Modules::getModule('backend_log')) { ?>
                     &nbsp; | &nbsp;
-                    <a href="<?php echo root ?>backend_log"><?php echo t('Backend Logs') ?></a>
+                    <a href="backend_log"><?php echo t('Backend Logs') ?></a>
 <?php } ?>
                 </div></td>
         </tr>

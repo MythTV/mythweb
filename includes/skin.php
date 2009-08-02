@@ -69,10 +69,9 @@
         $tmpl = $Path[0];
 
 // And now we define the paths
-    define('skin', $skin);
-    define('skin_dir', 'skins/'.skin);
-    define('skin_url', root.skin_dir.'/');
-    define('skin_img_url', root.skin_dir.'/img/');
+    define('skin',          $skin );
+    define('skin_url',      root_url.'skins/'.skin.'/' );
+    define('skin_img_url',  skin_url.'img/' );
 
-    define('tmpl', $tmpl);
-    define('tmpl_dir', 'modules/'.module.'/tmpl/'.tmpl.'/');
+    define('tmpl',          $tmpl );
+    define('tmpl_dir',      'modules/'.module.'/tmpl/'.tmpl.'/' );

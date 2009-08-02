@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Weather');
 
 // Load this page's custom stylesheet
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_dir.'/weather.css">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/weather.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';

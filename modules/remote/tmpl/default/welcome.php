@@ -23,7 +23,7 @@
 // Next, print a list of possible frontends
          '<ul>';
     foreach (Modules::getModuleProperity('remote', 'links') as $link => $name) {
-        echo '    <li><a href="', root, Modules::getModuleProperity('remote', 'path'), '/', $link, '">', html_entities($name), "</a></li>\n";
+        echo '    <li><a href="', Modules::getModuleProperity('remote', 'path'), '/', $link, '">', html_entities($name), "</a></li>\n";
     }
     echo '</ul>',
 

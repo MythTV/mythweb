@@ -17,7 +17,7 @@
     $page_title = 'MythWeb - '.t('Videos');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root.'dcss/video.css.php">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root_url.'dcss/video.css.php">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -27,7 +27,7 @@
 
     function newWindow(id) {
         $('window_title').innerHTML   = '<?php echo t('Editing '); ?> ' + $(id+'-title').childNodes[0].innerHTML;
-        $('window_content').innerHTML = '<iframe src="<?php echo root; ?>video/edit?intid='+id+'">';
+        $('window_content').innerHTML = '<iframe src="<?php echo root_url; ?>video/edit?intid='+id+'">';
         $('window').show();
         Tips.hideAll();
     }
@@ -40,7 +40,7 @@
         ajax_add_request();
     // Clean up the title string
         title = title.replace('&', '%26');
-        new Ajax.Request('<?php echo root ?>video/imdb',
+        new Ajax.Request('<?php echo root_url ?>video/imdb',
     	                 {
                             method:     'get',
     	                    parameters: {
@@ -97,7 +97,7 @@
     function imdb_select(id, number) {
         ajax_add_request();
         $('window').hide();
-        new Ajax.Request('<?php echo root; ?>video/imdb',
+        new Ajax.Request('<?php echo root_url; ?>video/imdb',
     	                 {
     	                 	method:     'get',
     	                 	parameters: {
@@ -125,7 +125,7 @@
         if (!id.match(/^(\d*)$/))
             return;
         ajax_add_request();
-        new Ajax.Request('<?php echo root; ?>video/imdb',
+        new Ajax.Request('<?php echo root_url; ?>video/imdb',
     	                    {
     	                    	method:     'get',
     	                    	parameters: {
@@ -196,7 +196,7 @@
         hovering_video_id = id;
         if (!Tips.hasTip(id) && loading_popups[id] != true ) {
             loading_popups[id] = true;
-            new Ajax.Request('<?php echo root; ?>video/imdb',
+            new Ajax.Request('<?php echo root_url; ?>video/imdb',
     	                    {
     	                    	method:     'get',
     	                    	parameters: {
@@ -225,7 +225,7 @@
 // We currently do require a reload after a scan event
     function scan() {
         ajax_add_request();
-        new Ajax.Request('<?php echo root; ?>video/scan',
+        new Ajax.Request('<?php echo root_url; ?>video/scan',
     	                {
     	                	method:    'get',
     	                	onSuccess: reload
@@ -249,7 +249,7 @@
 <tr class="menu">
 <td>
  <span style="float: right"><input type="button" value="<?php echo t('Scan Collection'); ?>" class="submit" onclick="scan()"></span>
- <form action="<?php echo root; ?>video" method="GET">
+ <form action="<?php echo root_url; ?>video" method="GET">
   <?php echo t('Display'); ?>:
   <select name="category" id="category" onchange="filter();">
    <option value="-1" <?php if($Filter_Category == -1) echo 'SELECTED'; ?>><?php echo t('All Categories'); ?></option>
@@ -293,7 +293,7 @@
 
 <div id="path">
  <b>Directory Structure</b><hr>
- <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root; ?>video?path=/">All Videos</a><br>
+ <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root_url; ?>video?path=/">All Videos</a><br>
  <?php foreach ($PATH_TREE as $path) output_path_picker($path); ?>
 </div>
 

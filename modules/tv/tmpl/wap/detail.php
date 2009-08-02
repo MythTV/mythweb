@@ -19,7 +19,7 @@
 
 // Print the page contents
 ?>
-<a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid ?>" >
+<a href="<?php echo root_url ?>tv/channel/<?php echo $this_channel->chanid ?>" >
 <?php echo $_SESSION["prefer_channum"] ? $this_channel->channum : $this_channel->callsign ?> &nbsp;
 <?php echo $_SESSION["prefer_channum"] ? $this_channel->callsign : $this_channel->channum ?></a><br />
 
@@ -60,7 +60,7 @@
                 ?><br />
         <?php } ?>
 
-        <form name="program_detail" method="post" action="<?php echo root ?>tv/detail<?php
+        <form name="program_detail" method="post" action="<?php echo root_url ?>tv/detail<?php
             if ($_GET['recordid'])
                 echo '?recordid='.urlencode($_GET['recordid']);
             else

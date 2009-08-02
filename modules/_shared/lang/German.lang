@@ -125,6 +125,7 @@
 "ALLOCINETYPE"
 "An error occured while adding your playlist."
     Beim Hinzufügen zur Wiedergabeliste trat ein Fehler auf.
+"An unknown module was specified"
 "and"
     und
 "Any"
@@ -296,8 +297,11 @@
     Daten
 "Database"
     Datenbank
+"Database Access Denied"
+"Database Error"
 "Database Health"
     Datenbankzustand
+"Database Setup Error"
 "Date"
     Datum
 "Date Formats"
@@ -391,6 +395,7 @@
     Folge
 "Episode Number"
     Folge Nummer
+"Error"
 "error: playgroup $1 exists"
     Fehler: Wiedergabegruppe $1 exisitiert
 "Errored"
@@ -411,6 +416,7 @@
     Erweiterte Prüfung
 "Extra Information"
 "Failure to autoload class $1!"
+"Fatal Error"
 "File Size"
     Dateigröße
 "film"
@@ -506,6 +512,8 @@
     Farbton
 "Humidity"
     Luftfeuchtigkeit
+"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
+                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
 "Ignore scheduled shows"
     geplante Aufnahmen ignorieren
@@ -663,6 +671,7 @@
     MythWeb Standardeinstellungen
 "MythWeb Global Defaults"
     MythWeb globale Standardeinstellungen
+"MythWeb Locked"
 "MythWeb Session"
     MythWeb Sitzung
 "MythWeb Skin"
@@ -694,6 +703,8 @@
     Nichts gefunden
 "No matching programs found."
     Keine passenden Sendungen gefunden.
+"No Modules"
+"No modules were found."
 "No Public Playlists"
     Keine öffentlichen Wiedergabelisten
 "No recording schedules have been defined."
@@ -798,6 +809,7 @@
 "Playlists"
     Playlists
 "Please enter an imdb number or a title to do another search"
+"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
 "Pop-out player"
 "Possible conflicts"
@@ -1087,6 +1099,9 @@
     springe vor
 "Skip Back"
     springe zurück
+"Some possible solutions are to make sure that mod_env
+                 is enabled in httpd.conf, as well as having followed
+                 the instructions in the README and INSTALL files."
 "Songs"
     Lieder
 "Songs for Genre"
@@ -1147,6 +1162,10 @@
     Surround Ton
 "Tab"
 "Temp"
+"The database environment variables are not correctly
+                 set in the webserver conf or .htaccess file.
+                 Please read through the comments included in the file
+                 and set up the db_* environment variables correctly."
 "The requested recording schedule has been deleted."
     Die geplante Aufnahme wurde gelöscht.
 "themoviedb"
@@ -1344,3 +1363,4 @@
     Ja
 "Yesterday"
     gestern
+"You are most likely receiving this message because you have failed to configure mythweb's database login info."

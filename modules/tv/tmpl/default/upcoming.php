@@ -37,7 +37,7 @@
         var element = $(element_id);
         if (Tips.hasTip(element) == false) {
             ajax_add_request();
-            new Ajax.Request('<?php echo root; ?>tv/get_show_details',
+            new Ajax.Request('<?php echo root_url; ?>tv/get_show_details',
                              {
                                 parameters: {
                                                 chanid:             channel_id,
@@ -68,7 +68,7 @@
     }
 </script>
 
-<form id="change_display" action="<?php echo root ?>tv/upcoming" method="post">
+<form id="change_display" action="<?php echo root_url ?>tv/upcoming" method="post">
 <div><input type="hidden" name="change_display" value="1"></div>
 
 <table id="display_options" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
@@ -297,32 +297,32 @@
         foreach ($commands as $key => $val) {
             switch ($val) {
                 case 'dontrec':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?dontrec=yes"'
+                    $commands[$key] = '<a href="'.root_url.'tv/upcoming/'.$urlstr.'?dontrec=yes"'
                                      .' title="'.html_entities(t('info: dont record')).'">'
                                      .t('Don\'t Record').'</a>';
                     break;
                 case 'never_record':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?never_record=yes"'
+                    $commands[$key] = '<a href="'.root_url.'tv/upcoming/'.$urlstr.'?never_record=yes"'
                                      .' title="'.html_entities(t('info:never record')).'">'
                                      .t('Never Record').'</a>';
                     break;
                 case 'record':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?record=yes"'
+                    $commands[$key] = '<a href="'.root_url.'tv/upcoming/'.$urlstr.'?record=yes"'
                                      .' title="'.html_entities(t('info: record this')).'">'
                                      .t('Record This').'</a>';
                     break;
                 case 'forget_old':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?forget_old=yes"'
+                    $commands[$key] = '<a href="'.root_url.'tv/upcoming/'.$urlstr.'?forget_old=yes"'
                                      .' title="'.html_entities(t('info:forget old')).'">'
                                      .t('Forget Old').'</a>';
                     break;
                 case 'activate':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?activate=yes"'
+                    $commands[$key] = '<a href="'.root_url.'tv/upcoming/'.$urlstr.'?activate=yes"'
                                      .' title="'.html_entities(t('info: activate recording')).'">'
                                      .t('Activate').'</a>';
                     break;
                 case 'default':
-                    $commands[$key] = '<a href="'.root.'tv/upcoming/'.$urlstr.'?default=yes"'
+                    $commands[$key] = '<a href="'.root_url.'tv/upcoming/'.$urlstr.'?default=yes"'
                              .' title="'.html_entities(t('info: default recording')).'">'
                              .t('Default').'</a>';
                     break;
@@ -378,10 +378,10 @@
                                          ? ':  '.$show->subtitle
                                          : '')), '"';
                     if ($show->recstatus == 'NotListed')
-                        echo ' href="', root, 'tv/schedules#schedule-',
+                        echo ' href="', root_url, 'tv/schedules#schedule-',
                              $show->recordid;
                     else
-                        echo ' href="', root, 'tv/detail/', $urlstr;
+                        echo ' href="', root_url, 'tv/detail/', $urlstr;
                     echo '">', $show->title,
                          ($show->subtitle
                             ? ':  '.$show->subtitle
@@ -428,7 +428,7 @@
         }
         if ($show->recstatus == 'Recording') {
             echo '    <td class="x-commands commands x-recording" colspan="2">',
-                 '<a href="', root, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
+                 '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->starttime, '">',
                  t('Currently Recording:  Edit'),"</a></td>\n";
         }
         else {
@@ -445,7 +445,7 @@
 
 </table>
 <?php
-    $ical_href = str_replace(root, root.'ical/', $_SERVER['REQUEST_URI']).'?';
+    $ical_href = "ical{$_SERVER['REQUEST_URI']}?";
     if (!$_SESSION['scheduled_recordings']['disp_scheduled'])
         $ical_href .='skip_scheduled&';
     if (!$_SESSION['scheduled_recordings']['disp_conflicts'])

@@ -24,7 +24,7 @@
         if (empty($url))
             $url = str_replace('mythweb.php/', '', $_SERVER['PHP_SELF']);
         else
-            $url = str_replace('//', '/', root.$url);
+            $url = str_replace('//', '/', "$url");
     // Build the link
         $link = '<a href="'.$url.'?sortby='.urlencode($field).'">'
                 .$string;

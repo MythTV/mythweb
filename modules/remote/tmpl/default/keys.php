@@ -82,7 +82,7 @@
 
 // Send a key
     function send_key(key) {
-        var r = new Ajax.Request('<?php echo root ?>remote/keys',
+        var r = new Ajax.Request('remote/keys',
                                  {
                                     parameters: 'command='+key,
                                   asynchronous: false

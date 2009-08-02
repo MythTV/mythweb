@@ -27,7 +27,7 @@
     function list_update(timestamp) {
         ajax_add_request();
         new Ajax.Updater($('list_content'),
-                         '<?php echo root ?>tv/list',
+                         '<?php echo root_url ?>tv/list',
                          {
                             parameters: {
                                             ajax: true,
@@ -47,7 +47,7 @@
         var element = $(element_id);
         if (Tips.hasTip(element) == false) {
             ajax_add_request();
-            new Ajax.Request('<?php echo root; ?>tv/get_show_details',
+            new Ajax.Request('<?php echo root_url; ?>tv/get_show_details',
                              {
                                 parameters: {
                                                 chanid:             channel_id,

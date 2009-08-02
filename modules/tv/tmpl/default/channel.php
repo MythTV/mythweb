@@ -26,7 +26,7 @@
 ?>
 
 <div id="list_head" class="clearfix">
-    <form method="get" id="program_listing" action="<?php echo root ?>tv/channel">
+    <form method="get" id="program_listing" action="<?php echo root_url ?>tv/channel">
     <div id="x_current_time">
 <?php   if ($_SESSION["show_channel_icons"] && !empty($this_channel->icon)) { ?>
             <img src="<?php echo $this_channel->icon ?>">
@@ -37,10 +37,10 @@
     <tr>
         <td class="x-jumpto"><?php echo t('Jump To') ?>:</td>
         <td class="x-hour"><?php channel_select('onchange="$(\'program_listing\').submit()"', $this_channel->chanid) ?></td>
-        <td class="x-day"><a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] - (24 * 60 * 60) ?>"
+        <td class="x-day"><a href="<?php echo root_url ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] - (24 * 60 * 60) ?>"
                 ><img src="<?php echo skin_url ?>img/left.gif" alt="<?php echo t('leftl'); ?>"></a>
             <?php date_select('onchange="$(\'program_listing\').submit()"') ?>
-            <a href="<?php echo root ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] + (24 * 60 * 60) ?>"
+            <a href="<?php echo root_url ?>tv/channel/<?php echo $this_channel->chanid, '/', $_SESSION['list_time'] + (24 * 60 * 60) ?>"
                     ><img src="<?php echo skin_url ?>img/right.gif" alt="<?php echo t('right'); ?>"></a>
             </td>
     </tr>
@@ -86,11 +86,11 @@
 
     // Print the content
     ?><tr class="<?php echo $show->css_class ?>">
-    <td class="nowrap" align="center"><a href="<?php echo root ?>tv/list?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
+    <td class="nowrap" align="center"><a href="<?php echo root_url ?>tv/list?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
     <td class="<?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
                echo '<span class="hdtv_icon">HD</span>';
-        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
+        echo '<a href="'.root_url.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
              .$show->title.$additional.'</a>';
         ?></td>
     <td><?php echo $show->subtitle ?></td>

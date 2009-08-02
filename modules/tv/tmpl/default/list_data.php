@@ -18,7 +18,7 @@
 ?>
 
 <div id="list_head" class="clearfix">
-    <form class="form" id="program_listing" action="<?php echo root ?>tv/list" method="get">
+    <form class="form" id="program_listing" action="<?php echo root_url ?>tv/list" method="get">
     <div id="x_current_time"><?php
         echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime))
     ?></div>
@@ -84,7 +84,7 @@
         // Print the data
 ?><tr>
     <td class="x-channel">
-        <a href="<?php echo root ?>tv/channel/<?php echo $channel->chanid, '/', $list_starttime ?>"
+        <a href="<?php echo root_url ?>tv/channel/<?php echo $channel->chanid, '/', $list_starttime ?>"
                 title="<?php
                     echo t('Details for: $1',
                            html_entities($channel->name))

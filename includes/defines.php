@@ -27,7 +27,7 @@
         $uname = php_uname('n');
     else
         throw new Exception('Failed to get server hostname!');
-    
+
     define('hostname', empty($_SERVER['hostname']) ? trim($uname['nodename']) : $_SERVER['hostname']);
     unset($uname);
 
@@ -87,4 +87,21 @@
 
     define('http_host', isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']);
 
-    define('root_url', ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://' ).http_host.':'.$_SERVER['SERVER_PORT'].root);
+    list($host, $port) = explode(':', http_host);
+
+    $_SERVER['HTTP_HOST'] = $host;
+    $_SERVER['HTTP_PORT'] = $port;
+
+    define('root_url',   ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://' ).http_host.root);
+
+    $stream_url = 'http';
+    if (@$_SERVER['HTTPS'] == 'on' && !@$_SESSION['stream']['force_http'])
+        $stream_url .='s';
+    $stream_url .= '://'.$_SERVER['HTTP_HOST'];
+    if (@$_SESSION['stream']['force_http'] && @$_SESSION['stream']['force_http_port'] > 0)
+        $stream_url .= ":{$_SESSION['stream']['force_http_port']}";
+    elseif ($_SERVER['HTTP_PORT'] > 0)
+        $stream_url .= ":{$_SERVER['HTTP_PORT']}";
+    $stream_url .= '/';
+
+    define('stream_url', $stream_url);

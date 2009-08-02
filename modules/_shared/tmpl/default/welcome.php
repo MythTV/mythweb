@@ -60,7 +60,7 @@
         if ($id == 'tv')
             echo ' class="selected"';
         echo ' onmouseover="show_module_info(\''.$id.'\')">',
-             '<a href="', root, $module['path'], '">', $module['name'], '</a>',
+             '<a href="', root_url, $module['path'], '">', $module['name'], '</a>',
              "</li>\n";
     }
 ?>
@@ -103,7 +103,7 @@ surprised to find &quot;unknown module&quot; messages when you follow links.
 
 </div>
 
-<a id="reset" href="<?php echo root; ?>?RESET_SKIN&RESET_TMPL"><?php echo t('Reset template and skin to defaults'); ?></a>
+<a id="reset" href="<?php echo root_url; ?>?RESET_SKIN&RESET_TMPL"><?php echo t('Reset template and skin to defaults'); ?></a>
 
 <?php
 // Print the page footer

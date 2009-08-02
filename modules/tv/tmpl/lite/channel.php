@@ -30,7 +30,7 @@
     <td width="66%" valign="center" class="huge">
         Channel <?php echo $this_channel->channum ?>:  <?php echo $this_channel->callsign ?> on <?php echo strftime('%B %e, %Y', $_SESSION['list_time']) ?></td>
     <td class="command command_border_l command_border_t command_border_b command_border_r" align="center">
-        <form method="get" id="program_listing" action="<?php echo root ?>tv/channel">
+        <form method="get" id="program_listing" action="<?php echo root_url ?>tv/channel">
         <table width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr>
             <td nowrap align="center"><?php echo t('Jump to') ?>:&nbsp;&nbsp;</td>
@@ -83,11 +83,11 @@
 
     // Print the content
     ?><tr class="<?php echo $show->css_class ?>">
-    <td nowrap align="center"><a href="<?php echo root ?>tv/list?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
+    <td nowrap align="center"><a href="<?php echo root_url ?>tv/list?time=<?php echo $show->starttime ?>"><?php echo strftime($_SESSION['time_format'], $show->starttime) ?> - <?php echo strftime($_SESSION['time_format'], $show->endtime) ?></a></td>
     <td class="<?php echo $show->css_class ?>"><?php
         if ($show->hdtv)
                echo '<span class="hdtv_icon">HD</span>';
-        echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
+        echo '<a href="'.root_url.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
              .$show->title.$additional.'</a>';
         ?></td>
     <td><?php echo $show->subtitle ?></td>

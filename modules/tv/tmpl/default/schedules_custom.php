@@ -54,7 +54,7 @@
 
     <div id="schedule">
 
-        <form name="custom_schedule" method="post" action="<?php echo root ?>tv/schedules/custom<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
+        <form name="custom_schedule" method="post" action="<?php echo root_url ?>tv/schedules/custom<?php if ($schedule->recordid) echo '/'.urlencode($schedule->recordid) ?>">
 
         <div class="x-options">
             <h3><?php echo t('Schedule Options') ?>:</h3>

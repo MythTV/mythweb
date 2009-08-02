@@ -56,7 +56,7 @@
             add_warning('Unknown program.');
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-        redirect_browser(root.'tv/upcoming');
+        redirect_browser(root_url.'tv/upcoming');
     }
 
 // Ignore certain shows?

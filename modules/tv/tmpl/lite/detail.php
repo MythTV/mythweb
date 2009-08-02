@@ -38,7 +38,7 @@
         <div id="program_header">
 <?php   if ($channel) { ?>
             <div id="channel_info" class="menu menu_border_t menu_border_b menu_border_l menu_border_r">
-                <a href="<?php echo root; ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime; ?>">
+                <a href="<?php echo root_url; ?>tv/channel/<?php echo $channel->chanid, '/', $program->starttime; ?>">
 <?php       if ($_SESSION["show_channel_icons"] == true && !empty($channel->icon)) { ?>
                     <img src="<?php echo $channel->icon ?>" height="30" width="30"></a>
 <?php       } ?>
@@ -49,7 +49,7 @@
 <?php   } ?>
             <div id="program_title">
                 <h1>
-                    <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php echo $schedule->title ?></a>
+                    <a href="<?php echo root_url ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php echo $schedule->title ?></a>
                 </h1>
                 <div id="program_time">
 <?php
@@ -231,12 +231,12 @@
                           .($show->subtitle ? ':  '.str_replace(array("'", '"'),array("\\'", '&quot;'), $show->subtitle)
                                                   : '');
             // Print the link to edit this scheduled recording
-                echo '<a href="'.root.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
+                echo '<a href="'.root_url.'tv/detail/'.$show->chanid.'/'.$show->starttime.'">'
                     .$show->title
                     .(preg_match('/\\w/', $show->subtitle) ? ":  $show->subtitle" : '')
                     .'</a>';
             ?></td>
-                <td><a href="<?php echo root ?>tv/channel/<?php echo $show->channel->chanid, '/', $show->starttime ?>"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></a></td>
+                <td><a href="<?php echo root_url ?>tv/channel/<?php echo $show->channel->chanid, '/', $show->starttime ?>"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></a></td>
         </tr><?php
                 $program_id_counter++;
             }
@@ -246,21 +246,21 @@
 
         <div id="local_links">
 <?php       if ($_GET['recordid']) { ?>
-            <a href="<?php echo root ?>tv/schedules"><?php
+            <a href="<?php echo root_url ?>tv/schedules"><?php
                 echo t('Back to the recording schedules')
             ?></a>
 <?php       } else { ?>
-            <a href="<?php echo root ?>tv/list?time=<?php echo $program->starttime ?>"><?php
+            <a href="<?php echo root_url ?>tv/list?time=<?php echo $program->starttime ?>"><?php
                 echo t('What else is on at this time?')
             ?></a>
 <?php       } ?>
-            <a href="<?php echo root ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php
+            <a href="<?php echo root_url ?>tv/search/<?php echo str_replace('%2F', '/', rawurlencode($schedule->title)) ?>?search_title=1"><?php
                 if ($_GET['recordid'])
                     echo t('Find showings of this program');
                 else
                     echo t('Find other showings of this program');
             ?></a>
-            <a href="<?php echo root ?>tv/list?time=<?php echo $_SESSION['list_time'] ?>"><?php
+            <a href="<?php echo root_url ?>tv/list?time=<?php echo $_SESSION['list_time'] ?>"><?php
                 echo t('Back to the program listing')
             ?></a>
         </div>
@@ -272,7 +272,7 @@
 
     <div id="recording_info" class="command command_border_l command_border_t command_border_b command_border_r clearfix">
 
-        <form name="program_detail" method="post" action="<?php echo root ?>tv/detail<?php
+        <form name="program_detail" method="post" action="<?php echo root_url ?>tv/detail<?php
             if ($_GET['recordid'])
                 echo '?recordid='.urlencode($_GET['recordid']);
             else
@@ -289,7 +289,7 @@
                     <label for="record_never"><?php
                         if ($schedule->search) {
                             echo t('Schedule via $1.',
-                                   '<a href='.root.'tv/schedules/'
+                                   '<a href='.root_url.'tv/schedules/'
                                    .($schedule->search == searchtype_manual
                                         ? 'manual'
                                         : 'custom'
