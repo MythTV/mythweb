@@ -26,6 +26,8 @@
                 echo '<li><a href="'.root_url.'tv/list_shows_in_title_and_group/?group='.urlencode($group).'&title='.urlencode($title[0]).'">'.$title[0].($title[1] > 1 ? " ({$title[1]})" : '')."\n";
             }
         }
+        else
+            echo '<li>'.t('No recordings in group $1', $group).'</li>';
     ?>
 </ul>
 

@@ -751,6 +751,7 @@
     EI DATAA
 "No Frontends allow remote control."
     Yksikään käyttöliittymä ei salli etäkäyttöä
+"No frontends found!"
 "No matches found"
     Ei vastaavuuksia
 "No matching programs found."
@@ -761,6 +762,8 @@
     Ei yleisiä Soittolistoja
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
+"No recordings in group $1"
+"No scheduled recordings"
 "No. of recordings to keep"
     Säilytettävien nauhoitusten lkm
 "Non-Music Specials"
@@ -826,6 +829,7 @@
     Haku nimellä
 "Percent of time spent recording"
     Nauhoitukseen käytetty aika prosentteina
+"Pick a frontend"
 "Play"
     Toista
 "Play Recording on Frontend"

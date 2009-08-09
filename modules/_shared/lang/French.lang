@@ -496,6 +496,7 @@
 "New Titles, Premieres"
 "NO DATA"
 "No Frontends allow remote control."
+"No frontends found!"
 "No matches found"
     Aucune correspondance
 "No matching programs found."
@@ -504,6 +505,8 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Aucune programmation n'est définie
+"No recordings in group $1"
+"No scheduled recordings"
 "No. of recordings to keep"
     Nombre d&acute;enregistrements &agrave; garder
 "Non-Music Specials"
@@ -543,6 +546,7 @@
 "People"
 "People Search"
 "Percent of time spent recording"
+"Pick a frontend"
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"

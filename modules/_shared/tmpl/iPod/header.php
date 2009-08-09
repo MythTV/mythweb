@@ -34,12 +34,16 @@
     <meta name="robots" content="noindex, nofollow">
 
     <script type="text/javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" src="js/scriptaculous/scriptaculous.js"></script>
 
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/table_sort.js"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo skin_url ?>style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>ListPanel.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>AppPanel.css">
+
 
     <?php
         if (!empty($headers) && is_array($headers))
@@ -63,15 +67,54 @@
         }
 
     // Hide safari's location bar by default;
-        setTimeout(function(){ window.scrollTo(0, 1);} , 100);
+        function hideLocationBar() {
+            setTimeout(function(){ window.scrollTo(0, 1);} , 100);
+        }
+
+        hideLocationBar();
+
     // Handle resize/rotate events
         Event.observe(document.onresize ? document : window,
                       "resize", updateOrientation);
+
+    // Do some cool display crap to be more iphoneish
+        function ajaxclick(e) {
+            Event.stop(e);
+            $('ajaxFrame').onload = ajaxFrameLoaded;
+            var url = e.currentTarget.href;
+            if (url.indexOf('?') == -1) {
+                url += '?';
+            }
+            url += '&iframe=true';
+            $('ajaxFrame').src = url;
+            return false;
+        }
+
+        function ajaxFrameLoaded() {
+            $$('#ajaxFrame')[0].contentWindow.stop();
+            //$$('title')[0].innerHTML = $$('#ajaxFrame')[0].contentDocument.querySelector('title').innerHTML;
+            $('Header').innerHTML    = $$('#ajaxFrame')[0].contentDocument.querySelector('#Header').innerHTML;
+            $('Content').innerHTML   = $$('#ajaxFrame')[0].contentDocument.querySelector('#Content').innerHTML;
+            ajaxfyLinks();
+            hideLocationBar();
+        }
+
+        function ajaxfyLinks() {
+            var elements = $$('a');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].href.length > 0) {
+                    elements[i].observe('click', ajaxclick);
+                }
+            }
+        }
+
+        document.observe("dom:loaded", ajaxfyLinks);
     </script>
 
 </head>
 
-<body onorientationchange="updateOrientation();">
+<body onorientationchange="updateOrientation();" id="body">
+    <iframe style="display: none" id="ajaxFrame"></iframe>
 
     <script type="text/javascript" language="javascript">
     // We need this here to get the Orientation as soon as the body tag is rendered to the dom.
@@ -89,3 +132,5 @@
             ?>
         <a id="Search" class="button" href="tv/search">Search</a>
     </div>
+
+    <div id="Content">
