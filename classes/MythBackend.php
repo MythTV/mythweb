@@ -51,10 +51,10 @@ class MythBackend {
     }
 
     function __construct($host, $port = null) {
-        $this->host = $host;
-        $this->ip = _or(setting('BackendServerIP', $this->host), $host);
-        $this->port = _or($port, _or(setting('BackendServerPort', $this->host), 6543));
-        $this->port_http = _or(setting('BackendStatusPort', $this->host), _or(setting('BackendStatusPort'), 6544));
+        $this->host         = $host;
+        $this->ip           = _or(setting('BackendServerIP', $this->host), $host);
+        $this->port         = _or($port, _or(setting('BackendServerPort', $this->host), 6543));
+        $this->port_http    = _or(setting('BackendStatusPort', $this->host), _or(setting('BackendStatusPort'), 6544));
     }
 
     function __destruct() {
@@ -62,23 +62,21 @@ class MythBackend {
     }
 
     private function connect() {
-        if ($this->connected)
+        if ($this->fp)
             return;
         $this->fp = @fsockopen($this->ip, $this->port, $errno, $errstr, 25);
         if (!$this->fp)
             custom_error("Unable to connect to the master backend at {$this->ip}:{$this->port}".(($this->host == $this->ip)?'':" (hostname: {$this->host})").".\nIs it running?");
-        $this->connected = true;
-        socket_set_timeout($this->fp, 20);
+        socket_set_timeout($this->fp, 30);
         $this->checkProtocolVersion();
         $this->announce();
     }
 
     private function disconnect() {
-        if (!$this->connected)
+        if (!$this->fp)
             return;
         $this->sendCommand('DONE');
         fclose($this->fp);
-        $this->connected = false;
     }
 
     private function checkProtocolVersion() {
@@ -106,7 +104,7 @@ class MythBackend {
     }
 
     private function announce() {
-        $response = $this->sendCommand('ANN Monitor '.hostname.' 0');
+        $response = $this->sendCommand('ANN Monitor '.hostname.' 1' );
         if ($response == 'OK')
             return true;
         return false;
@@ -134,6 +132,12 @@ class MythBackend {
     // The format should be <length + whitespace to 8 total bytes><data>
         $command = strlen($command) . str_repeat(' ', 8 - strlen(strlen($command))) . $command;
         fputs($this->fp, $command);
+        return $this->receiveData();
+    }
+
+    public function receiveData($timeout = 30) {
+        $this->connect();
+        stream_set_timeout($this->fp, $timeout);
 
     // Read the response header to find out how much data we'll be grabbing
         $length = rtrim(fread($this->fp, 8));
@@ -153,6 +157,16 @@ class MythBackend {
         if (count($response) == 0)
             return false;
         return $response;
+    }
+
+    public function listenForEvent($event, $timeout = 120) {
+        $endtime = time() + $timeout;
+        do {
+            $response = $this->receiveData();
+        } while ($response[1] != $event && $endtime < time());
+        if ($response[1] == $event)
+            return $response;
+        return false;
     }
 
     public function queryProgramRows($query = null, $offset = 1) {
@@ -189,6 +203,9 @@ class MythBackend {
 /**/
     public function rescheduleRecording($recordid = -1) {
         $this->sendCommand('RESCHEDULE_RECORDINGS '.$recordid);
+        if ($this->listenForEvent('SCHEDULE_CHANGE'))
+            return true;
+        return false;
     }
 
     public function httpRequest($path, $args = array()) {
