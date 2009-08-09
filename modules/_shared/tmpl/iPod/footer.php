@@ -12,7 +12,6 @@
  *
 /**/
 ?>
-    </div>
 
     <script type="text/javascript" language="javascript">
     // Images to preload!

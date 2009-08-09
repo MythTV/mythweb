@@ -52,9 +52,6 @@
             echo '</div>';
     }
 
-    if (count($all_shows) == 0)
-        echo '<ul class="ListPanel"><li>'.t('No scheduled recordings').'</li>';
-
     echo '</ul>';
 
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

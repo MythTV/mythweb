@@ -16,6 +16,7 @@
         $Groups[] = $group;
 
     $Groups[] = 'All';
+    $Groups[] = 'iPod viewable';
 
     $Page_Previous_Location = root_url.'tv/submenu';
     $Page_Previous_Location_Name = 'Television';

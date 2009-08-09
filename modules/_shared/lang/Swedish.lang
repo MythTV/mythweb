@@ -760,7 +760,6 @@
     INGA DATA
 "No Frontends allow remote control."
     Inga Frontends tillåter fjärrkontroll.
-"No frontends found!"
 "No matches found"
     Inga träffar
 "No matching programs found."
@@ -771,8 +770,6 @@
     Inga publika spellistor
 "No recording schedules have been defined."
     Inga schemalagda inspelningar har definierats.
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
     Inspelningar att behålla
 "Non-Music Specials"
@@ -838,7 +835,6 @@
     Sök person
 "Percent of time spent recording"
     Procent av tid i inspelningsläge
-"Pick a frontend"
 "Play"
     Spela
 "Play Recording on Frontend"

@@ -552,7 +552,6 @@
 "New Titles, Premieres"
 "NO DATA"
 "No Frontends allow remote control."
-"No frontends found!"
 "No matches found"
     一致する物がありませんでした
 "No matching programs found."
@@ -562,8 +561,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     予約が設定されていません
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
     録画番組保存数
 "Non-Music Specials"
@@ -613,7 +610,6 @@
 "People Search"
     ピープルサーチ
 "Percent of time spent recording"
-"Pick a frontend"
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"

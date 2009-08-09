@@ -699,7 +699,6 @@
     Kein Programm verfügbar
 "No Frontends allow remote control."
     Kein Frontend erlaubt Fernsteuerung.
-"No frontends found!"
 "No matches found"
     Nichts gefunden
 "No matching programs found."
@@ -710,8 +709,6 @@
     Keine öffentlichen Wiedergabelisten
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
     Wieviele Aufnahmen behalten
 "Non-Music Specials"
@@ -772,7 +769,6 @@
 "People Search"
     Suche nach Darsteller
 "Percent of time spent recording"
-"Pick a frontend"
 "Play"
     Abspielen
 "Play Recording on Frontend"
