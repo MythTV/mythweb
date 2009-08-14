@@ -87,7 +87,7 @@
         <a href="<?php echo root_url ?>tv/channel/<?php echo $channel->chanid, '/', $list_starttime ?>"
                 title="<?php
                     echo t('Details for: $1',
-                           html_entities($channel->name))
+                           html_entities($channel->name).'; '.$channel->channum)
                 ?>">
 <?php       if ($_SESSION["show_channel_icons"] == true && !empty($channel->icon)) { ?>
     <center><img src="<?php echo $channel->icon ?>" style="padding:5px;">
