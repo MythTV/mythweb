@@ -90,10 +90,9 @@
                            html_entities($channel->name).'; '.$channel->channum)
                 ?>">
 <?php       if ($_SESSION["show_channel_icons"] == true && !empty($channel->icon)) { ?>
-    <center><img src="<?php echo $channel->icon ?>" style="padding:5px;">
+        <img src="<?php echo $channel->icon ?>" style="padding:5px;"><br>
 <?php       } ?>
-        <br>
-            <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), "\n" ?></center>
+        <?php echo ($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), "\n" ?>
         </a>
         </td>
 <?php
