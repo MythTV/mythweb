@@ -88,6 +88,68 @@
             handle_shift();
     }
 
+    function handle_keypress(event) {
+        switch (event.keyCode) {
+            case Event.KEY_BACKSPACE:
+                send_key('backspace');
+                break;
+            case Event.KEY_TAB:
+                send_key('tab');
+                break;
+            case Event.KEY_RETURN:
+                send_key('enter');
+                break;
+            case Event.KEY_ESC:
+                send_key('escape');
+                break;
+            case Event.KEY_LEFT:
+                send_key('left');
+                break;
+            case Event.KEY_UP:
+                send_key('up');
+                break;
+            case Event.KEY_RIGHT:
+                send_key('right');
+                break;
+            case Event.KEY_DOWN:
+                send_key('down');
+                break;
+            case Event.KEY_DELETE:
+                send_key('delete');
+                break;
+            case Event.KEY_HOME:
+                send_key('home');
+                break;
+            case Event.KEY_END:
+                send_key('end');
+                break;
+            case Event.KEY_PAGEUP:
+                send_key('pageup');
+                break;
+            case Event.KEY_PAGEDOWN:
+                send_key('pagedown');
+                break;
+            default:
+                send_key(String.fromCharCode(event.charCode));
+                break;
+
+        }
+        Event.stop(event)
+    }
+
+    var keypress = false;
+    function toggle_keypress() {
+        if (keypress) {
+            Event.stopObserving(document, 'keypress', handle_keypress);
+            $('keypress').removeClassName('pressed');
+        }
+        else {
+            Event.observe(document, 'keypress', handle_keypress);
+            $('keypress').addClassName('pressed');
+        }
+        keypress = !keypress;
+    }
+
 // -->
 </script>
 
@@ -121,6 +183,9 @@
         <a onclick="send_key('f11')" class="noshift">F11</a></td>
     <td><a onclick="send_key('f24')" class="reqshift">F24</a>
         <a onclick="send_key('f12')" class="noshift">F12</a></td>
+    <td></td>
+    <td></td>
+    <td colspan="3"><a id="keypress" onclick="toggle_keypress()">Toggle Interactive Mode</a></td>
 </tr><tr>
     <td><a onclick="send_key('~')" class="reqshift">~</a>
         <a onclick="send_key('`')" class="noshift">`</a></td>
