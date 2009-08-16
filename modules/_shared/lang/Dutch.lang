@@ -486,6 +486,7 @@
 "Low"
     Minimum
 "Low Space"
+"Main"
 "Manual"
     Manueel
 "matches"
@@ -548,6 +549,7 @@
 "NO DATA"
     GEEN DATA
 "No Frontends allow remote control."
+"No frontends found!"
 "No matches found"
     Geen programma's gevonden
 "No matching programs found."
@@ -557,6 +559,8 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
+"No recordings in group $1"
+"No scheduled recordings"
 "No. of recordings to keep"
     Aantal opnames bewaren
 "Non-Music Specials"
@@ -601,6 +605,8 @@
 "People Search"
     Personen zoeken
 "Percent of time spent recording"
+"Pick a frontend"
+"Pick Frontend"
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"
@@ -782,6 +788,7 @@
 "regex: articles"
     An?|The
 "Remote"
+"Remote Control"
 "Remove Item from Playlist"
 "Repair Tables"
 "Repeat"

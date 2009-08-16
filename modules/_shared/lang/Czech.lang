@@ -400,6 +400,7 @@
 "Logs"
 "Low"
 "Low Space"
+"Main"
 "Manual"
     Ručně
 "matches"
@@ -454,6 +455,7 @@
 "New Titles, Premieres"
 "NO DATA"
 "No Frontends allow remote control."
+"No frontends found!"
 "No matches found"
 "No matching programs found."
 "No Modules"
@@ -461,6 +463,8 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Žádné rozvrhy nahrávání nebyly definovány.
+"No recordings in group $1"
+"No scheduled recordings"
 "No. of recordings to keep"
     Podržet počet nahrávek
 "Non-Music Specials"
@@ -499,6 +503,8 @@
 "People"
 "People Search"
 "Percent of time spent recording"
+"Pick a frontend"
+"Pick Frontend"
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"
@@ -664,6 +670,7 @@
 "regex: articles"
     An?|The
 "Remote"
+"Remote Control"
 "Remove Item from Playlist"
 "Repair Tables"
 "Repeat"
