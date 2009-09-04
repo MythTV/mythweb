@@ -251,16 +251,11 @@
     }
     elseif ($_REQUEST['forget_old']) {
         $program->rec_forget_old();
-    // Wait for a second so the backend can catch up
-        sleep(1);
-
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
     elseif (isset($_GET['never_record']) || isset($_POST['never_record'])) {
         $program->rec_never_record();
-    // Wait for a second so the backend can catch up
-        sleep(1);
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);

@@ -40,8 +40,7 @@
         // Forget all knowledge of old recordings?
             if ($_REQUEST['forget_old']) {
                 MythBackend::find()->sendCommand(array('FORGET_RECORDING', implode(MythBackend::$backend_separator, $row), '0'));
-            // Delay a second so the scheduler can catch up
-                sleep(1);
+                MythBackend::find()->listenForEvent('SCHEDULE_CHANGE');
             }
         // Exit early if we're in AJAX mode.
             if (isset($_REQUEST['ajax'])) {

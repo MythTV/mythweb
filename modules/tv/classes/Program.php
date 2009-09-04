@@ -686,8 +686,7 @@ class Program {
             MythBackend::find()->sendCommand(array('FORGET_RECORDING', $prog->backend_row(), '0'));
         }
         $sh->finish();
-    // Delay a second so the scheduler can catch up
-        sleep(1);
+        MythBackend::find()->listenForEvent('SCHEDULE_CHANGE');
     }
 
 /**
@@ -712,8 +711,6 @@ class Program {
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
     // Notify the backend of the changes
         MythBackend::find()->rescheduleRecording();
-    // Delay a second so the scheduler can catch up
-        sleep(1);
     }
 
 /**

@@ -49,8 +49,6 @@
                 $program->rec_override(rectype_override);
             elseif ($_REQUEST['activate'])
                 $program->activate();
-        // Wait for a second so the backend can catch up
-            sleep(1);
         }
         else
             add_warning('Unknown program.');
