@@ -212,6 +212,6 @@ class MythBackend {
         $url = "http://{$this->ip}:{$this->port_http}/Myth/{$path}?";
         foreach ($args as $key => $value)
             $url .= $key.'='.urlencode($value).'&';
-        return @file_get_contents($url);
+        return file_get_contents($url);
     }
 }
