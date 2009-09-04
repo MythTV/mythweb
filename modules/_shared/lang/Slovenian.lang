@@ -634,7 +634,6 @@
     Nizka
 "Low Space"
     Malo prostega diska
-"Main"
 "Manual"
     Ročno
 "matches"
@@ -723,7 +722,6 @@
     NI PODATKOV
 "No Frontends allow remote control."
     Noben frontend ne dovoli oddaljenega nadzora
-"No frontends found!"
 "No matches found"
     Ni zadetkov
 "No matching programs found."
@@ -734,8 +732,6 @@
     Ni seznamov predvajanja
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
     Št. posnetkov za arhiv
 "Non-Music Specials"
@@ -798,8 +794,6 @@
     Iskanje po igralski zasedbi
 "Percent of time spent recording"
     Čas, v procentih, uporabljen za snemanje
-"Pick a frontend"
-"Pick Frontend"
 "Play"
     Predvajaj
 "Play Recording on Frontend"
@@ -873,6 +867,7 @@
     Profil
 "profile"
     profil
+"Program Categories"
 "Program Detail"
     Opis programa
 "Program Flags"
@@ -1022,7 +1017,6 @@
     Članki
 "Remote"
     Oddaljeno
-"Remote Control"
 "Remove Item from Playlist"
     Odstrani pesem iz seznama predvajanja
 "Repair Tables"

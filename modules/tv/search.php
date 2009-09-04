@@ -51,6 +51,7 @@
         $_SESSION['search']['af']            = $_REQUEST['af'];
         $_SESSION['search']['aj']            = $_REQUEST['aj'];
         $_SESSION['search']['ctype']         = $_REQUEST['ctype'];
+        $_SESSION['search']['categories']    = $_REQUEST['categories'];
         $_SESSION['search']['hd']            = $_REQUEST['hd']        ? true : false;
         $_SESSION['search']['commfree']      = $_REQUEST['commfree']  ? true : false;
         $_SESSION['search']['unwatched']     = $_REQUEST['unwatched'] ? true : false;
@@ -67,6 +68,10 @@
 // Session defaults
     if (!is_array($_SESSION['search']['ctype']) || empty($_SESSION['search']['ctype']))
         $_SESSION['search']['ctype'] = Program::category_types();
+
+    if (!is_array($_SESSION['search']['categories']) || empty($_SESSION['search']['categories']))
+        $_SESSION['search']['categories'] = array();
+
     if (!isset($_SESSION['search']['stars_gt']) || !isset($_SESSION['search']['stars_lt'])) {
         $_SESSION['search']['stars_gt'] = 0;
         $_SESSION['search']['stars_lt'] = 1;
@@ -148,6 +153,11 @@
             $extra_query[] = 'program.category_type IN ('
                              .implode(',', $db->escape_array($_SESSION['search']['ctype']))
                              .')';
+            if (count($_SESSION['search']['categories']) && !in_array(t('All'), $_SESSION['search']['categories'])) {
+                $extra_query[] = 'program.category IN ('
+                             .implode(',', $db->escape_array($_SESSION['search']['categories']))
+                             .')';
+            }
         // Star restrictions only apply to movies
             if (in_array('movie', $_SESSION['search']['ctype'])) {
                 if (count($_SESSION['search']['ctype']) > 1) {
@@ -547,6 +557,19 @@
             echo '<br>';
         }
     }
+
+/**
+ * Prints out a list of program types, along with checkboxes.
+/**/
+    function category_list() {
+        echo "<select multiple name='categories[]' size='5'>";
+        echo "<option ".(in_array(t('All'), $_SESSION['search']['categories']) ? 'selected' : '' ).">".t('All')."</option>";
+        foreach (program::categories() as $category) {
+            echo "<option ".(in_array($category, $_SESSION['search']['categories']) ? 'selected' : '' ).">$category</option>";
+        }
+        echo "</select>";
+    }
+
 
 /**
  * Print a <select> with movie star ratings in it.

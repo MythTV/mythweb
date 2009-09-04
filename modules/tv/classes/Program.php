@@ -792,8 +792,10 @@ class Program {
         if (empty($cache)) {
             global $db;
             $cache = $db->query_list('SELECT DISTINCT category
-                                        FROM program
-                                    ORDER BY category');
+                                                 FROM program
+                                                WHERE LENGTH(category) > 0
+                                             ORDER BY category ASC'
+                                    );
         }
         return $cache;
     }

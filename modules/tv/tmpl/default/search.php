@@ -91,10 +91,13 @@
         <input type="text" size="12" name="airdate_end" style="text-align: center" value="<?php echo html_entities($_SESSION['search']['airdate_end']) ?>">
         </p>
         </td>
-    <td class="x-progtype"><?php echo t('Program Type'); ?>:<br>
-        <?php echo category_type_list() ?>
+        <td class="x-progtype">
+            <?php echo t('Program Type'); ?>:<br>
+            <?php echo category_type_list() ?><br><br>
+            <?php echo t('Program Categories'); ?>:<br>
+            <?php echo category_list() ?>
         </td>
-    <td class="x-submit">
+        <td class="x-submit">
         <input type="submit" class="submit" name="search" value="<?php echo t('Search') ?>">
         </td>
 </tr>

@@ -488,7 +488,6 @@
 "Low"
     Lav
 "Low Space"
-"Main"
 "Manual"
     Manuel
 "matches"
@@ -554,7 +553,6 @@
 "NO DATA"
     INGEN DATA
 "No Frontends allow remote control."
-"No frontends found!"
 "No matches found"
     Ingen match fundet
 "No matching programs found."
@@ -564,8 +562,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Ingen optagelser er planlagt
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
     Gem antal optagelser
 "Non-Music Specials"
@@ -614,8 +610,6 @@
 "People Search"
     Person søgning
 "Percent of time spent recording"
-"Pick a frontend"
-"Pick Frontend"
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"
@@ -664,6 +658,7 @@
     Profil
 "profile"
     profil
+"Program Categories"
 "Program Detail"
     Program detaljer
 "Program Flags"
@@ -797,7 +792,6 @@
     Ugentligt
 "regex: articles"
 "Remote"
-"Remote Control"
 "Remove Item from Playlist"
 "Repair Tables"
 "Repeat"

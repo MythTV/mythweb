@@ -502,7 +502,6 @@
 "Low"
     Baix
 "Low Space"
-"Main"
 "Manual"
     Manual
 "matches"
@@ -574,7 +573,6 @@
 "NO DATA"
     SENSE DADES
 "No Frontends allow remote control."
-"No frontends found!"
 "No matches found"
 "No matching programs found."
     No hi ha programes coincidents
@@ -583,8 +581,6 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     No s'han definit enregistraments programats
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
     Nº d'enregistraments a conservar
 "Non-Music Specials"
@@ -638,8 +634,6 @@
 "People Search"
     Cercar persones
 "Percent of time spent recording"
-"Pick a frontend"
-"Pick Frontend"
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"
@@ -689,6 +683,7 @@
     Perfil
 "profile"
     perfil
+"Program Categories"
 "Program Detail"
     Informació del programa
 "Program Flags"
@@ -824,7 +819,6 @@
 "regex: articles"
     El|L(?:as?|os)
 "Remote"
-"Remote Control"
 "Remove Item from Playlist"
 "Repair Tables"
 "Repeat"

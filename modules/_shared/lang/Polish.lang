@@ -436,7 +436,6 @@
 "Low"
     Niski
 "Low Space"
-"Main"
 "Manual"
     Ręczny
 "matches"
@@ -495,15 +494,12 @@
     Nowe tytuły, premiery
 "NO DATA"
 "No Frontends allow remote control."
-"No frontends found!"
 "No matches found"
 "No matching programs found."
 "No Modules"
 "No modules were found."
 "No Public Playlists"
 "No recording schedules have been defined."
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
 "Non-Music Specials"
 "Non-Series HDTV"
@@ -540,8 +536,6 @@
 "People Search"
     Szukaj Ludzi
 "Percent of time spent recording"
-"Pick a frontend"
-"Pick Frontend"
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"
@@ -584,6 +578,7 @@
     Profil
 "profile"
     profil
+"Program Categories"
 "Program Detail"
     Szczegóły Programu
 "Program Flags"
@@ -715,7 +710,6 @@
 "regex: articles"
     An?|The
 "Remote"
-"Remote Control"
 "Remove Item from Playlist"
 "Repair Tables"
 "Repeat"

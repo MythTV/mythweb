@@ -669,7 +669,6 @@
     Låg
 "Low Space"
     Lite utrymme
-"Main"
 "Manual"
     Manuell
 "matches"
@@ -761,7 +760,6 @@
     INGA DATA
 "No Frontends allow remote control."
     Inga Frontends tillåter fjärrkontroll.
-"No frontends found!"
 "No matches found"
     Inga träffar
 "No matching programs found."
@@ -772,8 +770,6 @@
     Inga publika spellistor
 "No recording schedules have been defined."
     Inga schemalagda inspelningar har definierats.
-"No recordings in group $1"
-"No scheduled recordings"
 "No. of recordings to keep"
     Inspelningar att behålla
 "Non-Music Specials"
@@ -839,8 +835,6 @@
     Sök person
 "Percent of time spent recording"
     Procent av tid i inspelningsläge
-"Pick a frontend"
-"Pick Frontend"
 "Play"
     Spela
 "Play Recording on Frontend"
@@ -917,6 +911,7 @@
     Profil
 "profile"
     profil
+"Program Categories"
 "Program Detail"
     Programdetalj
 "Program Flags"
@@ -1073,7 +1068,6 @@
     artiklar
 "Remote"
     Otillgänglig
-"Remote Control"
 "Remove Item from Playlist"
     Ta bort post från spellista
 "Repair Tables"

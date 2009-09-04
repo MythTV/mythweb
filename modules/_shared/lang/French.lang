@@ -927,6 +927,7 @@
     Profil
 "profile"
     profil
+"Program Categories"
 "Program Detail"
     Détail de l'émission
 "Program Flags"
@@ -1211,7 +1212,6 @@
 "Some possible solutions are to make sure that mod_env
                  is enabled in httpd.conf, as well as having followed
                  the instructions in the README and INSTALL files."
-    Certaines des solutions possibles sont de s'assurer que mod_env est activé dans httpd.conf et de suivre les instructions dans les fichier README et INSTALL.                 
 "Songs"
     Chansons
 "Songs for Genre"
