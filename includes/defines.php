@@ -87,7 +87,11 @@
 
     define('http_host', isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']);
 
-    list($host, $port) = explode(':', http_host);
+    $host = http_host;
+    $port = $_SERVER['SERVER_PORT'];
+
+    if (strpos(http_host, ':') !== false)
+        list($host, $port) = explode(':', http_host);
 
     $_SERVER['HTTP_HOST'] = $host;
     $_SERVER['HTTP_PORT'] = $port;
