@@ -42,5 +42,5 @@
  * couple of different files called above.
 /**/
     function stream_url() {
-        return 'music/';
+        return root_url.'music/';
     }
