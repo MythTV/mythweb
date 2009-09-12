@@ -239,7 +239,7 @@
 </script>
 
 <div id="window" style="display: none">
- <a style="position: absolute; right: 1px; top: 1px;" href="" onclick="('window').hide()">[X]</a>
+ <a style="position: absolute; right: 1px; top: 1px;" onclick="$('window').hide()">[X]</a>
  <span id="window_video_title" class="hidden"></span>
  <span id="window_title"></span><br>
  <div id="window_content"></div>
