@@ -32,7 +32,7 @@
                 $db->query('CREATE TABLE mythweb_sessions (
                                 id              VARCHAR(128) PRIMARY KEY NOT NULL DEFAULT "",
                                 modified        TIMESTAMP,
-                                data            BLOB NOT NULL DEFAULT "",
+                                data            BLOB NOT NULL,
                                 INDEX (modified)
                             )');
                 setting('WebDBSchemaVer', null, ++$db_vers);
