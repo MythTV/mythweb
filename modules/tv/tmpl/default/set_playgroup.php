@@ -19,7 +19,7 @@
 <table border="0" cellspacing="0" cellpadding="0">
 <tr class="x-sep">
     <th><?php echo t('Edit existing group') ?>:</th>
-    <td><?php playgroup_select($group['name'], 'playgroup', NULL, '$(\'chg_grp_form\').submit()') ?>
+    <td><?php playgroup_select($group['name'], 'playgroup', NULL, NULL, '$(\'chg_grp_form\').submit()') ?>
         <noscript><input type="submit" class="submit" value="<?php echo t('Edit') ?>"></noscript></td>
     <td><input type="submit" class="submit" name="new_group" value="<?php echo t('New Group') ?>"></td>
 </tr>

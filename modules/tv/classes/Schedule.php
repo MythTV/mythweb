@@ -388,17 +388,30 @@ class Schedule {
 /**
  * prints a <select> of the various playback groups available
 /**/
-    function playgroup_select($this_playgroup, $name = 'playgroup', $id = NULL, $js = NULL)     {
+    function playgroup_select($this_playgroup, $name = 'playgroup', &$schedule = NULL, $id = NULL, $js = NULL) {
     // Make sure we have some data
         static $playgroups = array();
         if (!count($playgroups)) {
             global $db;
-            $sh = $db->query('SELECT name FROM playgroup ORDER BY name');
+            $sh = $db->query('SELECT name FROM playgroup ORDER BY name = "Default" DESC, name');
             while (list($group) = $sh->fetch_row()) {
                 $playgroups[] = $group;
             }
             $sh->finish();
         }
+    // Do PlayGroup titlematch
+        if (count($playgroups) > 1 && empty($this_playgroup) && is_object($schedule)) {
+            $this_playgroup =& $schedule->this_playgroup;
+            $sh = $db->query('SELECT DISTINCT name FROM playgroup
+                              WHERE name = ? OR name = ? OR (titlematch <> "" AND ? REGEXP titlematch)
+                              ORDER BY titlematch DESC',
+                             $schedule->title, $schedule->category, $schedule->title);
+            if (list($grp) = $sh->fetch_row())
+                $this_playgroup = $grp;
+            $sh->finish();
+        }
+        if (empty($this_playgroup))
+            $this_playgroup = 'Default';
     // Print the actual select
         echo "<select name=\"$name\"";
         if ($id)
