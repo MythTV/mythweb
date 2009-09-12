@@ -461,10 +461,9 @@ class Schedule {
 /**
  * prints a <select> of the various recgroups available
 /**/
-    function recgroup_select($this_group, $name = 'recgroup') {
+    function recgroup_select(&$schedule, $name = 'recgroup') {
+        $this_group =& $schedule->recgroup;
         static $groups = array();
-        if (empty($this_group))
-            $this_group = 'Default';
     // Load the recording groups?
         if (!count($groups)) {
         // Default
@@ -483,6 +482,19 @@ class Schedule {
             }
             mysql_free_result($result);
         }
+    // Guess at default. Try category match etc..
+        if (count($groups) > 1 && empty($this_group)) {
+            global $db;
+            $program = load_one_program($schedule->starttime, $schedule->chanid, $schedule->manualid);
+            $sh = $db->query('SELECT DISTINCT recgroup FROM record
+                             WHERE recgroup REGEXP ? OR recgroup REGEXP ? OR recgroup REGEXP ?',
+                             $schedule->category, $program->category_type, $schedule->station);
+            if (list($grp) = $sh->fetch_row())
+                $this_group = $grp;
+            $sh->finish();
+        }
+        if (empty($this_group))
+            $this_group = 'Default';
     // Print the <select>
         echo "<select name=\"$name\">";
         foreach($groups as $group => $group_name) {
