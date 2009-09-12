@@ -182,6 +182,7 @@
     Transcodage automatique
 "AVC/H.264"
     AVC/H.264
+"Avoid poor signal quality"
 "Back"
     Retour
 "Back Tab"
@@ -276,6 +277,7 @@
     Cliquer pour activer l'auto-expiration
 "Click to View Playlist"
     Cliquer pour afficher la liste d'écoute
+"Close Captioned priority"
 "Closed Captioning"
     Sous-titré codé
 "colour"
@@ -494,6 +496,7 @@
     Complété
 "First recording"
     Premier enregistrement
+"First showing of each episode"
 "Flag Commercials"
     Baliser les annonces publicitaires
 "For more information on the Power Search please go to:"
@@ -645,6 +648,7 @@
     Dernière fois enregistré
 "Last recording"
     Dernier enregistrement
+"Last showing of each episode"
 "Later"
     Plus tard
 "left"
@@ -695,6 +699,7 @@
     Espace faible
 "Manual"
     Manuel
+"Match related callsigns"
 "matches"
     contient
 "Max star rating for movies"
@@ -703,6 +708,12 @@
     minutes
 "Missing Cover"
     Couverture manquante
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
 "Monday"
     Lundi
 "Mono"
@@ -769,6 +780,7 @@
     Ne jamais enregistrer
 "New"
     Nouveau
+"New episodes only"
 "New Episodes Only"
     Nouveaux épisodes seulement
 "New Group"
@@ -814,6 +826,9 @@
     Nombre de cases horaires
 "Off"
     Désactivé
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
 "Only display favourite channels"
     Seulement vos chaînes favorites
 "Only match commercial-free channels"
@@ -824,6 +839,8 @@
     Seulement les émissions non-enregistrées
 "Only New Episodes"
     Seulement les nouveaux épisodes
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
 "Optimize Tables"
     Optimiser les tables
 "or"
@@ -917,8 +934,11 @@
 "Power Search:"
 "Precip"
     Précip.
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
 "Prefer Channum"
     Préférer le numéro de chaîne à l'indicatif
+"Prefer movies when shown at night"
 "prefer_channum"
     Préférer le numéro de chaîne à l'indicatif
 "Preferred Input"
@@ -931,6 +951,13 @@
     Enregistrement précédent
 "Previous recordings"
     Enregistrements précédents
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
 "Produced by"
     Produit par
 "Profile"

@@ -172,6 +172,7 @@
 "Auto-transcode"
     Auto-recodificar
 "AVC/H.264"
+"Avoid poor signal quality"
 "Back"
     Volver
 "Back Tab"
@@ -260,6 +261,7 @@
     Click para habilitar Auto Expiración
 "Click to View Playlist"
     Click Para Ver Lista de Reproducción
+"Close Captioned priority"
 "Closed Captioning"
 "colour"
     color
@@ -430,6 +432,7 @@
 "Finished"
 "First recording"
     Primera grabación
+"First showing of each episode"
 "Flag Commercials"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
@@ -550,6 +553,7 @@
     Última vez Grabado
 "Last recording"
     Última Grabación
+"Last showing of each episode"
 "Later"
 "left"
 "Left"
@@ -583,6 +587,7 @@
 "Low Space"
 "Manual"
     Manual
+"Match related callsigns"
 "matches"
     coincidencias
 "Max star rating for movies"
@@ -590,6 +595,12 @@
 "minutes"
     minutos
 "Missing Cover"
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
 "Monday"
     Lunes
 "Mono"
@@ -644,6 +655,7 @@
 "Never Record"
     Nunca grabar
 "New"
+"New episodes only"
 "New Episodes Only"
 "New Group"
 "New Search"
@@ -680,6 +692,9 @@
 "Number of timeslots"
     Número de bloques horarios
 "Off"
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
 "Only display favourite channels"
     Mostrar sólo canales favoritos
 "Only match commercial-free channels"
@@ -688,6 +703,8 @@
 "Only match non-recorded shows"
 "Only New Episodes"
     Sólo nuevos episodios
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
 "Optimize Tables"
 "or"
     o
@@ -747,8 +764,11 @@
     Búsqueda avanzada
 "Power Search:"
 "Precip"
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
 "Prefer Channum"
     Nº Canal Preferido
+"Prefer movies when shown at night"
 "prefer_channum"
 "Preferred Input"
 "Presented by"
@@ -758,6 +778,13 @@
 "Previous Recording"
 "Previous recordings"
     Grabaciones anteriores
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
 "Produced by"
     Producido por
 "Profile"

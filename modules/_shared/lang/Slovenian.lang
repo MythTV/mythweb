@@ -169,6 +169,7 @@
 "Auto-transcode"
     Avto-transkodiranje
 "AVC/H.264"
+"Avoid poor signal quality"
 "Back"
     Nazaj
 "Back Tab"
@@ -259,6 +260,7 @@
     Klik za vklop Avto-brisanja
 "Click to View Playlist"
     klik za pregled predvajalnega seznama
+"Close Captioned priority"
 "Closed Captioning"
     Zaprti zajem
 "colour"
@@ -456,6 +458,7 @@
     Končano
 "First recording"
     Prvo snemanje
+"First showing of each episode"
 "Flag Commercials"
     Označi reklame
 "For more information on the Power Search please go to:"
@@ -599,6 +602,7 @@
     Nazadnje posneto
 "Last recording"
     Zadnje snemanje
+"Last showing of each episode"
 "Later"
     Kasneje
 "left"
@@ -644,6 +648,7 @@
     Malo prostega diska
 "Manual"
     Ročno
+"Match related callsigns"
 "matches"
     zadetki
 "Max star rating for movies"
@@ -652,6 +657,12 @@
     minut
 "Missing Cover"
     Manjka ovitek
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
 "Monday"
     Ponedeljek
 "Mono"
@@ -718,6 +729,7 @@
     Nikoli ne snemaj
 "New"
     Novo
+"New episodes only"
 "New Episodes Only"
     Samo nove oddaje
 "New Group"
@@ -760,6 +772,9 @@
 "Number of timeslots"
     Število ponavljanj
 "Off"
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
 "Only display favourite channels"
     Prikaži samo priljubljene kanale
 "Only match commercial-free channels"
@@ -769,6 +784,8 @@
 "Only match non-recorded shows"
 "Only New Episodes"
     Samo nove oddaje
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
 "Optimize Tables"
     Optimizacija tabel
 "or"
@@ -858,8 +875,11 @@
     Napredno iskanje
 "Power Search:"
 "Precip"
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
 "Prefer Channum"
     Priljubljena številka kanala
+"Prefer movies when shown at night"
 "prefer_channum"
 "Preferred Input"
     Priljubljen vhod
@@ -871,6 +891,13 @@
     Že posneta
 "Previous recordings"
     Že posneto
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
 "Produced by"
     Producent
 "Profile"

@@ -131,6 +131,7 @@
 "Auto-transcode"
     Auto-Transkode
 "AVC/H.264"
+"Avoid poor signal quality"
 "Back"
 "Back Tab"
 "Back to the program listing"
@@ -199,6 +200,7 @@
 "Click to disable Auto Expire"
 "Click to enable Auto Expire"
 "Click to View Playlist"
+"Close Captioned priority"
 "Closed Captioning"
 "colour"
     Farve
@@ -352,6 +354,7 @@
 "Finished"
 "First recording"
     Første optagelse
+"First showing of each episode"
 "Flag Commercials"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
@@ -465,6 +468,7 @@
     Sidst optaget
 "Last recording"
     Sidste optagelse
+"Last showing of each episode"
 "Later"
 "left"
 "Left"
@@ -498,12 +502,19 @@
 "Low Space"
 "Manual"
     Manuel
+"Match related callsigns"
 "matches"
     passer på
 "Max star rating for movies"
 "minutes"
     minutter
 "Missing Cover"
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
 "Monday"
     Mandag
 "Mono"
@@ -553,6 +564,7 @@
 "Never Record"
     Optag aldrig
 "New"
+"New episodes only"
 "New Episodes Only"
 "New Group"
 "New Search"
@@ -586,6 +598,9 @@
 "Number of Songs"
 "Number of timeslots"
 "Off"
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
 "Only display favourite channels"
     Vis kun favorit kanaler
 "Only match commercial-free channels"
@@ -593,6 +608,8 @@
 "Only match non-recorded shows"
 "Only New Episodes"
     Kun Nye Afsnit
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
 "Optimize Tables"
 "or"
     eller
@@ -652,7 +669,10 @@
     Super søgning
 "Power Search:"
 "Precip"
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
 "Prefer Channum"
+"Prefer movies when shown at night"
 "prefer_channum"
 "Preferred Input"
 "Presented by"
@@ -662,6 +682,13 @@
 "Previous Recording"
 "Previous recordings"
     Tidligere optagelser
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
 "Produced by"
     Produceret af
 "Profile"

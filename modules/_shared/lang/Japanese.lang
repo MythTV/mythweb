@@ -127,6 +127,7 @@
 "Auto-transcode"
     自動トランスコード
 "AVC/H.264"
+"Avoid poor signal quality"
 "Back"
 "Back Tab"
 "Back to the program listing"
@@ -191,6 +192,7 @@
 "Click to disable Auto Expire"
 "Click to enable Auto Expire"
 "Click to View Playlist"
+"Close Captioned priority"
 "Closed Captioning"
 "colour"
     カラー
@@ -346,6 +348,7 @@
 "Finished"
 "First recording"
     最初の録画
+"First showing of each episode"
 "Flag Commercials"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
@@ -462,6 +465,7 @@
     最後の録画
 "Last recording"
     最後の録画
+"Last showing of each episode"
 "Later"
 "left"
 "Left"
@@ -496,6 +500,7 @@
 "Low Space"
 "Manual"
     手動
+"Match related callsigns"
 "matches"
     条件
 "Max star rating for movies"
@@ -503,6 +508,12 @@
 "minutes"
     分
 "Missing Cover"
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
 "Monday"
     月曜日
 "Mono"
@@ -554,6 +565,7 @@
 "Never Record"
     もう録画しない
 "New"
+"New episodes only"
 "New Episodes Only"
 "New Group"
 "New Search"
@@ -586,6 +598,9 @@
 "Number of timeslots"
     タイムスロット数
 "Off"
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
 "Only display favourite channels"
     お気に入りのチャンネルのみ表示する
 "Only match commercial-free channels"
@@ -594,6 +609,8 @@
 "Only match non-recorded shows"
 "Only New Episodes"
     新しい番組のみ
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
 "Optimize Tables"
 "or"
 "Original Airdate"
@@ -652,8 +669,11 @@
     パワーサーチ
 "Power Search:"
 "Precip"
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
 "Prefer Channum"
     チャンネル番号を優先
+"Prefer movies when shown at night"
 "prefer_channum"
 "Preferred Input"
 "Presented by"
@@ -663,6 +683,13 @@
 "Previous Recording"
 "Previous recordings"
     以前の録画
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
 "Produced by"
     製作
 "Profile"

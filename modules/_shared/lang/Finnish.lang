@@ -177,6 +177,7 @@
     Automaattinen jälkikäsittely
 "AVC/H.264"
     AVC/H.264
+"Avoid poor signal quality"
 "Back"
     Takaisin
 "Back Tab"
@@ -270,6 +271,7 @@
     Klikkaa mahdollistaakseski Automaattinen vanhentuminen
 "Click to View Playlist"
     Klikkaa katsoaksesi soittolistaa
+"Close Captioned priority"
 "Closed Captioning"
     Tekstitykset
 "colour"
@@ -474,6 +476,7 @@
     Valmis
 "First recording"
     Ensimmäinen nauhoitus
+"First showing of each episode"
 "Flag Commercials"
     Merkitse mainokset
 "For more information on the Power Search please go to:"
@@ -625,6 +628,7 @@
     Viimeksi tallennettu
 "Last recording"
     Viimeisin tallennus
+"Last showing of each episode"
 "Later"
     Myöhemmin
 "left"
@@ -672,6 +676,7 @@
     Alhainen kovalevytila
 "Manual"
     Manuaalinen
+"Match related callsigns"
 "matches"
     vastaavuudet
 "Max star rating for movies"
@@ -679,6 +684,12 @@
 "minutes"
     minuuttia
 "Missing Cover"
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
 "Monday"
     Maanantai
 "Mono"
@@ -747,6 +758,7 @@
     Älä nauhoita koskaan
 "New"
     Uusi
+"New episodes only"
 "New Episodes Only"
     Vain uudet jaksot
 "New Group"
@@ -790,6 +802,9 @@
     Aikalokeroiden lukumäärä
 "Off"
     Pois päältä
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
 "Only display favourite channels"
     Vain Suosikkikanavat
 "Only match commercial-free channels"
@@ -800,6 +815,8 @@
     Vain ei-nauhoitetut ohjelmat
 "Only New Episodes"
     Vain uudet jaksot
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
 "Optimize Tables"
     Optimoi taulukot
 "or"
@@ -891,8 +908,11 @@
 "Power Search:"
 "Precip"
     Syvyys
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
 "Prefer Channum"
     Suosi kanavanumeroa
+"Prefer movies when shown at night"
 "prefer_channum"
     Suosi kanavan numeroa lempinimen sijaan:
 "Preferred Input"
@@ -905,6 +925,13 @@
     Aiempi nauhoitus
 "Previous recordings"
     Aiemmat nauhoitukset
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
 "Produced by"
     Tuottajana
 "Profile"

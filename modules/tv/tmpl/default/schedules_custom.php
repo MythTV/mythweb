@@ -121,7 +121,6 @@ EOF;
         else if ($('searchtype_power').checked)
             $('search_type').innerHTML = '<?php echo str_replace("'", "\\'", t('$1 Search', t('Power'))) ?>';
     }
-
 // -->
 </script>
 
@@ -191,10 +190,60 @@ EOF;
             <dl id="power_options" class="x-long" <?php if ($schedule->search != searchtype_power) echo ' style="display: none;"'; ?>>
                 <dt><?php echo t('Additional Tables') ?>:&nbsp;</dt>
                 <dd><input type="text" name="additional_tables" value="<?php echo html_entities($schedule->subtitle) ?>" size="30"></dd>
+
+
                 <dt><?php echo t('Search Phrase') ?>:&nbsp;</dt>
-                <dd><textarea name="search_sql" rows="10" cols="48"><?php echo html_entities($schedule->description) ?></textarea>
-                    <?php /** @todo would be cool to have sample stuff just like the frontend does */ ?>
-                    </dd>
+                <dd><textarea name="search_sql" rows="10" cols="48"><?php echo html_entities($schedule->description) ?></textarea></dd>
+
+                <dd>
+                <SELECT style="width: 335px;"name="sqlcommands">
+                    <OPTION value="cardinput.cardinputid = 1"><?php echo t('Modify priority for an input (Input priority)') ?>
+                    <OPTION value="cardinput.cardid = 2"><?php echo t('Modify priority for all inputs on a card') ?>
+                    <OPTION value="capturecard.hostname = 'mythbox'"><?php echo t('Modify priority for every card on a host') ?>
+                    <OPTION value="channel.chanid = '1003'"><?php echo t('Only one specific channel ID (Channel priority)') ?>
+                    <OPTION value="channel.channum = '3'"><?php echo t('Only a certain channel number') ?>
+                    <OPTION value="channel.callsign = 'ESPN'"><?php echo t('Only channels that carry a specific station') ?>
+                    <OPTION value="channel.callsign LIKE 'HBO%'"><?php echo t('Match related callsigns') ?>
+                    <OPTION value="channel.commmethod = %1"><?php echo t('Only channels marked as commercial free') ?>
+                    <OPTION value="channel.callsign = 'ESPN' AND cardinput.cardinputid = 2"><?php echo t('Modify priority for a station on an input') ?>
+                    <OPTION value="program.title LIKE 'CSI: %'"><?php echo t('Priority for all matching titles') ?>
+                    <OPTION SELECTED value="program.hdtv > 0"><?php echo t('Only shows marked as HDTV') ?>
+                    <OPTION value="program.closecaptioned > 0"><?php echo t('Close Captioned priority') ?>
+                    <OPTION value="program.previouslyshown = 0"><?php echo t('New episodes only') ?>
+                    <OPTION value="program.generic = 0"><?php echo t('Modify unidentified episodes') ?>
+                    <OPTION value="program.first > 0"><?php echo t('First showing of each episode') ?>
+                    <OPTION value="program.last > 0"><?php echo t('Last showing of each episode') ?>
+                    <OPTION value="RECTABLE.endoffset > 0"><?php echo t('Priority for any show with End Late time') ?>
+                    <OPTION value="program.category = 'Reality'"><?php echo t('Priority for a category') ?>
+                    <OPTION value="program.category_type = 'sports'"><?php echo t('Priority for a category type') ?>
+                    <OPTION value="program.stars >= 0.75"><?php echo t('Modify priority by star rating (0.0 to 1.0 for movies only)') ?>
+                    <OPTION value="program.first > 0 AND program.last > 0"><?php echo t('Priority when shown once') ?>
+                    <OPTION value="RECTABLE.storagegroup = 'Archive' AND capturecard.hostname = 'mythbox'"><?php echo t('Prefer a host for a storage group') ?>
+                    <OPTION value="program.hdtv > 0 AND program.starttime > DATE_SUB(program.endtime, INTERVAL 2 HOUR)"><?php echo t('Priority for HD shows under two hours') ?>
+                    <OPTION value="program.category_type = 'movie' AND program.airdate >= 2006"><?php echo t('Priority for movies by the year of release') ?>
+                    <OPTION value="program.category_type = 'movie' AND HOUR(program.starttime) < 6"><?php echo t('Prefer movies when shown at night') ?>
+                    <OPTION value="RECTABLE.endoffset > 0 AND program.category = 'Sports event' AND capturecard.hostname = 'mythbox'"><?php echo t('Prefer a host for live sports with overtime') ?>
+                    <OPTION value="cardinput.cardinputid = 1 AND channel.channum IN (3, 5, 39, 66)"><?php echo t('Avoid poor signal quality') ?>
+                </SELECT>
+
+                <script language="Javascript">
+                <!--
+                function checkName(displayObj) {
+                    if ( displayObj.value.length < 1 ) {
+                        SQLquery = document.custom_schedule.sqlcommands.options[document.custom_schedule.sqlcommands.selectedIndex].value;
+                        displayObj.value= SQLquery;
+                        document.custom_schedule.sqlcommands.options.remove[document.custom_schedule.sqlcommands.selectedIndex]
+                    }
+                    else {
+                        SQLquery = document.custom_schedule.sqlcommands.options[document.custom_schedule.sqlcommands.selectedIndex].value;
+                        displayObj.value= displayObj.value + " AND " + SQLquery; 
+                    }
+                }
+
+                // -->
+                </script>
+                <input type="button" style="width: 50px;"size="5" value="<?php echo t('Add') ?>" OnClick="checkName(search_sql);">
+                </dd>
             </dl>
 
         </div>

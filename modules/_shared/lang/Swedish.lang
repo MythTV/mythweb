@@ -181,6 +181,7 @@
     Omkoda automatiskt
 "AVC/H.264"
     AVC/H.264
+"Avoid poor signal quality"
 "Back"
     Tillbaka
 "Back Tab"
@@ -275,6 +276,7 @@
     Klicka för att aktivera autoradering
 "Click to View Playlist"
     Klicka för att visa spellista
+"Close Captioned priority"
 "Closed Captioning"
     Textning
 "colour"
@@ -479,6 +481,7 @@
     Färdig
 "First recording"
     Första inspelning
+"First showing of each episode"
 "Flag Commercials"
     Flagga reklam
 "For more information on the Power Search please go to:"
@@ -629,6 +632,7 @@
     Senast inspelad
 "Last recording"
     Senaste inspelning
+"Last showing of each episode"
 "Later"
     Senare
 "left"
@@ -679,6 +683,7 @@
     Lite utrymme
 "Manual"
     Manuell
+"Match related callsigns"
 "matches"
     Träffar
 "Max star rating for movies"
@@ -687,6 +692,12 @@
     minuter
 "Missing Cover"
     Saknar omslag
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
 "Monday"
     Måndag
 "Mono"
@@ -756,6 +767,7 @@
     Spela aldrig in
 "New"
     Ny
+"New episodes only"
 "New Episodes Only"
     Endast nya avsnitt
 "New Group"
@@ -799,6 +811,9 @@
     Antal tidsluckor
 "Off"
     Av
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
 "Only display favourite channels"
     Visa endast favoritkanaler
 "Only match commercial-free channels"
@@ -809,6 +824,8 @@
     Matcha endast icke-inspelade shower
 "Only New Episodes"
     Endast nya avsnitt
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
 "Optimize Tables"
     Optimera tabeller
 "or"
@@ -901,8 +918,11 @@
 "Power Search:"
 "Precip"
     Förhastat handlande
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
 "Prefer Channum"
     Föredra kanalnummer
+"Prefer movies when shown at night"
 "prefer_channum"
     föredra kanalnummer
 "Preferred Input"
@@ -915,6 +935,13 @@
     Föregående Inspelning
 "Previous recordings"
     Tidigare inspelningar
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
 "Produced by"
     Producerad av
 "Profile"
