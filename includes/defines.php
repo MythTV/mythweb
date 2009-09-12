@@ -106,6 +106,6 @@
         $stream_url .= ":{$_SESSION['stream']['force_http_port']}";
     elseif ($_SERVER['HTTP_PORT'] > 0)
         $stream_url .= ":{$_SERVER['HTTP_PORT']}";
-    $stream_url .= '/';
+    $stream_url .= '/'.root;
 
     define('stream_url', $stream_url);
