@@ -1,6 +1,6 @@
 #content_wrapper {
-    width:  660px;
-    margin: 0px auto
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 h1 {
@@ -9,7 +9,7 @@ h1 {
     color:          #ccc;
     letter-spacing: 0.5em;
     margin-bottom:  30px;
-    width:          650px;
+    width:          70%;
     text-align:     center;
 }
 h2 {
@@ -26,7 +26,7 @@ hr {
     display:none;
 }
 div.content {
-    width:              650px;
+    width:              90%;
     /*border-top:         1px  solid #88a;
     border-right:       1px  solid #88a;
     border-bottom:      1px  solid #88a;
@@ -42,8 +42,8 @@ div.schedule a {
     color:           white;
     text-decoration: none;
     padding:         .2em .8em;
-    border:          thin solid #555;
-    width:           340px;
+    /*border:          thin solid #555;
+    width:           340px;*/
 }
 div.schedule a span {
     display:none;
@@ -60,19 +60,19 @@ div.schedule a:hover span {
     position:         absolute;
     background-color: #444;
     color:            #fff;
-    left:             358px;
+    right:            1px;
     margin-top:       -20px;
     width:            280px;
     padding:          5px;
     border:           thin dashed black;
 }
 div.diskstatus {
-    width:  325px;
+    //width:  325px;
     height: 7em;
     float:  left;
 }
 div.loadstatus {
-    width:  325px;
+    //width:  325px;
     height: 7em;
     float:  right;
 }
