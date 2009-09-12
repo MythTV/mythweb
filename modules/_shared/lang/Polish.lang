@@ -57,6 +57,7 @@
 "Add this Playlist as a Subplaylist"
 "Add To Active Screens"
 "Additional Tables"
+"Additional tables:"
 "Admin Key"
 "Advanced"
     Zaawansowany
@@ -85,6 +86,9 @@
     Wszystkie nagrania
 "All Songs"
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "An unknown module was specified"
 "and"
@@ -186,6 +190,7 @@
     kolor
 "Commands"
     Komendy
+"Commands:"
 "Commercials Flagged"
 "commfree"
     bez reklam
@@ -246,6 +251,7 @@
     Usuń i nagraj ponownie $1
 "Delete Forever"
 "DELETE this Saved Playlist"
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     opis
 "Description"
@@ -321,6 +327,7 @@
 "Finished"
 "First recording"
 "Flag Commercials"
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
@@ -400,6 +407,7 @@
 "Keybindings Editor"
 "Keyword"
 "Keyword Search"
+"Keyword Search:"
 "Keywords"
 "Language"
     Język
@@ -535,6 +543,7 @@
     Ludzie
 "People Search"
     Szukaj Ludzi
+"People Search:"
 "Percent of time spent recording"
 "Play"
 "Play Recording on Frontend"
@@ -564,6 +573,7 @@
 "Possible conflicts with this show"
 "Power"
 "Power Search"
+"Power Search:"
 "Precip"
 "Prefer Channum"
 "prefer_channum"
@@ -614,6 +624,7 @@
 "Recording Groups"
 "Recording Options"
     Opcje Nagrywania
+"Recording Options Help"
 "Recording Priority"
     Priorytet Nagrywania
 "Recording Profile"
@@ -748,18 +759,25 @@
 "Search"
     Szukaj
 "Search $1"
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Szukaj: $1
 "Search Music"
 "Search Phrase"
     Szukaj zwrotu
+"Search Phrase:"
 "Search Results"
     Szukaj wyniku
 "Search the Music Database"
 "Search Type"
     Szukaj typu
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Poszukiwania
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -859,6 +877,8 @@
 "Title search"
 "Title Search"
     Szukanie Tytułu
+"Title Search:"
+"Title:"
 "Too Many"
 "Top $1"
     Szczyt $1

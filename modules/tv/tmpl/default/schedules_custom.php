@@ -22,6 +22,79 @@
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
+// Create the help Popups
+    global $Categories;
+//    Search Type Help
+    if (!empty($Categories)) {
+
+        $SearchTypeTitle = t('Search Type Help');
+        $TitleSearchTitle = t('Title Search:');
+        $TitleSearch = t('Search all program titles containing the Title text below');
+        $KeywordSearchTitle = t('Keyword Search:');
+        $KeywordSearch = t('Search all program keywords for a match against search phrase below');
+        $PeopleSearchTitle = t('People Search:');
+        $PeopleSearch = t('Search for all actors contained in a recording for a match against search phrase below');
+        $PowerSearchTitle = t('Power Search:');
+        $PowerSearch = t('Search will perform complex SQL queries against the database as per the search phrase below');
+
+        $SearchTypeHelp = <<<EOF
+<table width=\"400\" style=\"background-color: #003060;\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">
+<tr>
+    <td><table width=\"400\" style=\"background-color: #003060;\" class=\"small\" cellpadding=\"5\" cellspacing=\"5\">
+        <tr>
+            <h3>$SearchTypeTitle</h3>
+            <b>$TitleSearchTitle</b> <br>$TitleSearch<br>
+            <b>$KeywordSearchTitle</b> <br>$KeywordSearch<br>
+            <b>$PeopleSearchTitle</b> <br>$PeopleSearch<br>
+            <b>$PowerSearchTitle</b> <br>$PowerSearch
+        </tr>
+    </td>
+</tr>
+</table>
+EOF;
+}
+
+//    Recording Options Help
+
+    if (!empty($Categories)) {
+
+        $RecordingOptionsTitle = t('Recording Options Help');
+        $TitleSearchTitle = t('Title:');
+        $TitleSearch = t('Searches will be performed against the title of all TV shows');
+        $SearchPhraseTitle = t('Search Phrase:');
+        $SearchPhrase = t('Depending on the Search type this is where you enter actual main search commands');
+        $AdditionalTablesTitle = t('Additional tables:');
+        $AdditionalTables = t('Allows you to search through other database tables when using a power search');
+        $CommandsTitle = t('Commands:');
+        $Commands1 = t('Allows you to match any string of any length (including zero length)');
+        $Commands2 = t('Allows you to match on a single character');
+
+        $MoreInfo = t('For more information on the Power Search please go to:');
+
+        $RecordingOptionsHelp = <<<EOF
+<table width="400" style="background-color: #003060;" border="1" cellpadding="0" cellspacing="0">
+<tr>
+    <td><table width="400" style="background-color: #003060;" class="small" cellpadding="5" cellspacing="5">
+        <tr>
+            <h3>$RecordingOptionsTitle</h3>
+            <b>$TitleSearchTitle</b> <br>$TitleSearch<br>
+            <b>$SearchPhraseTitle</b> <br>$SearchPhrase<br>
+            <b>$AdditionalTablesTitle</b> <br>$AdditionalTables<br>
+            <b>$CommandsTitle</b>
+            <ul>
+                <li><b>%: </b>$Commands1</li>
+                <li><b>_: </b>$Commands2</li>
+            </ul>
+
+            $MoreInfo
+            http://www.mythtv.org/wiki/Custom_Recording
+        </tr>
+    </td>
+</tr>
+</table>
+EOF;
+}
+
 // Print the page contents
 ?>
 
@@ -80,7 +153,7 @@
         </div>
 
         <div class="x-options">
-            <h3><?php echo t('Search Type') ?>:</h3>
+            <h3><a <?php echo show_popup('SearchTypeHelp',$SearchTypeHelp) ?>>Search Type:</a></h3>
 
             <ul>
                 <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_title ?>" id="searchtype_title"<?php
@@ -104,7 +177,7 @@
         </div>
 
         <div class="x-options">
-            <h3><?php echo t('Recording Options') ?>:</h3>
+            <h3><a <?php echo show_popup('RecordingOptionsHelp',$RecordingOptionsHelp) ?>>Recording Options:</a></h3>
 
             <dl id="title_options" class="x-long">
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>

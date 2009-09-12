@@ -67,6 +67,7 @@
 "Add To Active Screens"
 "Additional Tables"
     Taules addicionals
+"Additional tables:"
 "Admin Key"
 "Advanced"
     Avançat
@@ -98,6 +99,9 @@
     Tots els enregistraments
 "All Songs"
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "An unknown module was specified"
 "and"
@@ -202,6 +206,7 @@
     color
 "Commands"
     Comandes
+"Commands:"
 "Commercials Flagged"
 "commfree"
     sense anuncis
@@ -265,6 +270,7 @@
     Esborrar i reenregistrar $1
 "Delete Forever"
 "DELETE this Saved Playlist"
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     descripció
 "Description"
@@ -352,6 +358,7 @@
 "First recording"
     Primer  enregistrament
 "Flag Commercials"
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
@@ -463,6 +470,7 @@
     Paraula clau
 "Keyword Search"
     Recerca de paraules clau
+"Keyword Search:"
 "Keywords"
 "Language"
     Llengua
@@ -633,6 +641,7 @@
     Gent
 "People Search"
     Cercar persones
+"People Search:"
 "Percent of time spent recording"
 "Play"
 "Play Recording on Frontend"
@@ -665,6 +674,7 @@
     Avançat
 "Power Search"
     Recerca avançada
+"Power Search:"
 "Precip"
 "Prefer Channum"
     Nº Canal preferit
@@ -723,6 +733,7 @@
 "Recording Groups"
 "Recording Options"
     Opcions d'enregistrament
+"Recording Options Help"
 "Recording Priority"
     Prioritat d'enregistrament
 "Recording Profile"
@@ -866,18 +877,25 @@
 "Search"
     Cercar
 "Search $1"
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Cercar: $1
 "Search Music"
 "Search Phrase"
     Cercar frase
+"Search Phrase:"
 "Search Results"
     Resultats recerca
 "Search the Music Database"
 "Search Type"
     Cercar tipus
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Recerques
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -993,6 +1011,8 @@
 "Title search"
 "Title Search"
     Cercar títol
+"Title Search:"
+"Title:"
 "Too Many"
 "Top $1"
     Primers $1

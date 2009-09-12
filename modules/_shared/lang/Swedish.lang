@@ -87,6 +87,7 @@
     Lägg till aktiva skärmar
 "Additional Tables"
     Ytterligare tabeller
+"Additional tables:"
 "Admin Key"
     Administrations nyckel
 "Advanced"
@@ -130,6 +131,9 @@
 "All Songs"
     Alla sånger
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Ett fel uppstod vid tillägg av din spellista.
 "An unknown module was specified"
@@ -277,6 +281,7 @@
     färg
 "Commands"
     Kommandon
+"Commands:"
 "Commercials Flagged"
     Reklam markerad
 "commfree"
@@ -360,6 +365,7 @@
     Radera För alltid
 "DELETE this Saved Playlist"
     RADERA denna sparade spellista
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     beskrivning
 "Description"
@@ -475,6 +481,7 @@
     Första inspelning
 "Flag Commercials"
     Flagga reklam
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
     Tvinga HTTP för strömmar
 "Force HTTP/HTTPS port for streams"
@@ -613,6 +620,7 @@
     Nyckelord
 "Keyword Search"
     Sök nyckelord
+"Keyword Search:"
 "Keywords"
     Nyckelord
 "Language"
@@ -833,6 +841,7 @@
     Person
 "People Search"
     Sök person
+"People Search:"
 "Percent of time spent recording"
     Procent av tid i inspelningsläge
 "Play"
@@ -889,6 +898,7 @@
     Avancerat
 "Power Search"
     Avancerad sökning
+"Power Search:"
 "Precip"
     Förhastat handlande
 "Prefer Channum"
@@ -970,6 +980,7 @@
     Inspelningsgrupper
 "Recording Options"
     Inspelningsinställningar
+"Recording Options Help"
 "Recording Priority"
     Inspelningsprioritet
 "Recording Profile"
@@ -1130,20 +1141,27 @@
     Sök
 "Search $1"
     Sök $1
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Sök efter: $1
 "Search Music"
     Sök musik
 "Search Phrase"
     Sök fras
+"Search Phrase:"
 "Search Results"
     Sökresultat
 "Search the Music Database"
     Sök Musik Databasen
 "Search Type"
     Sök typ
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Sökningar
+"Searches will be performed against the title of all TV shows"
 "Series ID"
     Serie ID
 "Server Statistics"
@@ -1298,6 +1316,8 @@
     Sök titel
 "Title Search"
     Sök titel
+"Title Search:"
+"Title:"
 "Too Many"
     För många
 "Top $1"

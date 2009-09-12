@@ -83,6 +83,7 @@
     Lisää aktiivisiin näyttöihin
 "Additional Tables"
     Täydentävät taulukot
+"Additional tables:"
 "Admin Key"
     Ylläpitäjän avain
 "Advanced"
@@ -127,6 +128,9 @@
     Kaikki kappaleet
 "ALLOCINETYPE"
     ALLOCINETYPE
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Tapahtui virhe lisätessä soittolistaasi
 "An unknown module was specified"
@@ -272,6 +276,7 @@
     Väri
 "Commands"
     Komennot
+"Commands:"
 "Commercials Flagged"
     Merkityt mainokset
 "commfree"
@@ -350,6 +355,7 @@
     Poista ikuisesti
 "DELETE this Saved Playlist"
     POISTA tämä tallennettu Soittolista
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     kuvaus
 "Description"
@@ -470,6 +476,7 @@
     Ensimmäinen nauhoitus
 "Flag Commercials"
     Merkitse mainokset
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
     Pakota HTTP virtauksille
 "Force HTTP/HTTPS port for streams"
@@ -609,6 +616,7 @@
     Avainsana
 "Keyword Search"
     Haku avainsanalla
+"Keyword Search:"
 "Keywords"
     Avainsanat
 "Language"
@@ -824,6 +832,7 @@
     Ihmiset
 "People Search"
     Haku nimellä
+"People Search:"
 "Percent of time spent recording"
     Nauhoitukseen käytetty aika prosentteina
 "Play"
@@ -879,6 +888,7 @@
     Virta
 "Power Search"
     Tehokas Haku
+"Power Search:"
 "Precip"
     Syvyys
 "Prefer Channum"
@@ -956,6 +966,7 @@
 "Recording Groups"
 "Recording Options"
     Nauhoitusvalinnat
+"Recording Options Help"
 "Recording Priority"
     Nauhoituksen prioriteetti
 "Recording Profile"
@@ -1114,20 +1125,27 @@
     Hae
 "Search $1"
     Hae $1
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Hae:  $1
 "Search Music"
     Hae musiikkia
 "Search Phrase"
     Hakulause
+"Search Phrase:"
 "Search Results"
     Haun tulokset
 "Search the Music Database"
     Hae musiikkitietokannasta
 "Search Type"
     Haun tyyppi
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Haut
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
     Serverin statistiikkaa
@@ -1283,6 +1301,8 @@
     Nimikkeen haku
 "Title Search"
     Haku Nimikkeellä
+"Title Search:"
+"Title:"
 "Too Many"
     Liian monta
 "Top $1"

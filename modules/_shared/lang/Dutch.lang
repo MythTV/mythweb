@@ -63,6 +63,7 @@
 "Add To Active Screens"
 "Additional Tables"
     Aanvullende tabellen
+"Additional tables:"
 "Admin Key"
 "Advanced"
 "Advanced Options"
@@ -91,6 +92,9 @@
     Alle opnames
 "All Songs"
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "An unknown module was specified"
 "and"
@@ -193,6 +197,7 @@
     kleur
 "Commands"
     Opdrachten
+"Commands:"
 "Commercials Flagged"
 "commfree"
     reclamevrij
@@ -254,6 +259,7 @@
     Verwijderen en $1 opnieuw opnemen
 "Delete Forever"
 "DELETE this Saved Playlist"
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     beschrijving
 "Description"
@@ -340,6 +346,7 @@
 "Finished"
 "First recording"
 "Flag Commercials"
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
@@ -449,6 +456,7 @@
     Kernwoord
 "Keyword Search"
     Kernwoord zoeken
+"Keyword Search:"
 "Keywords"
 "Language"
     Taal
@@ -600,6 +608,7 @@
     Personen
 "People Search"
     Personen zoeken
+"People Search:"
 "Percent of time spent recording"
 "Play"
 "Play Recording on Frontend"
@@ -631,6 +640,7 @@
 "Power"
 "Power Search"
     Geavanceerd zoeken
+"Power Search:"
 "Precip"
 "Prefer Channum"
 "prefer_channum"
@@ -688,6 +698,7 @@
 "Recording Groups"
 "Recording Options"
     Opname Opties
+"Recording Options Help"
 "Recording Priority"
     Opname Prioriteit
 "Recording Profile"
@@ -828,18 +839,25 @@
 "Search"
     Zoeken
 "Search $1"
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Zoeken: $1
 "Search Music"
 "Search Phrase"
     Zin zoeken
+"Search Phrase:"
 "Search Results"
     Zoekresultaten
 "Search the Music Database"
 "Search Type"
     Type zoeken
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Zoekopdrachten
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -950,6 +968,8 @@
 "Title search"
 "Title Search"
     Titel zoeken
+"Title Search:"
+"Title:"
 "Too Many"
 "Top $1"
 "Top Played Songs"

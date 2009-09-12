@@ -87,6 +87,7 @@
     Ajouter aux écrans actifs
 "Additional Tables"
     Tables additionnelles
+"Additional tables:"
 "Admin Key"
     Clé d'admin
 "Advanced"
@@ -131,6 +132,9 @@
     Toutes les chansons
 "ALLOCINETYPE"
     Allo Ciné
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Une erreur est survenue lors de l'ajout de votre liste d'écoute.
 "An unknown module was specified"
@@ -278,6 +282,7 @@
     couleur
 "Commands"
     Commandes
+"Commands:"
 "Commercials Flagged"
     Annonces publicitaires balisées
 "commfree"
@@ -364,6 +369,7 @@
     Effaçage permanent
 "DELETE this Saved Playlist"
     EFFACER cette liste d'écoute sauvegardée
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     description
 "Description"
@@ -490,6 +496,7 @@
     Premier enregistrement
 "Flag Commercials"
     Baliser les annonces publicitaires
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
     Force le HTTP pour les flux
 "Force HTTP/HTTPS port for streams"
@@ -629,6 +636,7 @@
     Mot clé
 "Keyword Search"
     Recherche par mot clé
+"Keyword Search:"
 "Keywords"
     Mots clés
 "Language"
@@ -848,6 +856,7 @@
     Personne
 "People Search"
     Recherche de personnes
+"People Search:"
 "Percent of time spent recording"
     Pourcentage passé à enregistrer
 "Play"
@@ -905,6 +914,7 @@
     Évoluée
 "Power Search"
     Recherche évoluée
+"Power Search:"
 "Precip"
     Précip.
 "Prefer Channum"
@@ -986,6 +996,7 @@
     Groupes d'enregistrements
 "Recording Options"
     Options d'enregistrement
+"Recording Options Help"
 "Recording Priority"
     Priorité d'enregistrement
 "Recording Profile"
@@ -1145,20 +1156,27 @@
     Recherche
 "Search $1"
     Recherche $1
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Recherche pour :  $1
 "Search Music"
     Recherche la musique
 "Search Phrase"
     Recherche la phrase
+"Search Phrase:"
 "Search Results"
     Résultats de recherche
 "Search the Music Database"
     Rechercher dans la base de donnée musicale
 "Search Type"
     Type de recherche
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Recherches
+"Searches will be performed against the title of all TV shows"
 "Series ID"
     Identifiant de la série
 "Server Statistics"
@@ -1318,6 +1336,8 @@
     Recherche par titre
 "Title Search"
     Recherche par titre
+"Title Search:"
+"Title:"
 "Too Many"
     Trop d'entrées
 "Top $1"

@@ -78,6 +78,7 @@
 "Add To Active Screens"
 "Additional Tables"
     Dodatne tabele
+"Additional tables:"
 "Admin Key"
     Admin ključ
 "Advanced"
@@ -121,6 +122,9 @@
 "All Songs"
     Vsa glasba
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Med dodajanje predvajalenga seznama je prišlo do napake.
 "An unknown module was specified"
@@ -261,6 +265,7 @@
     brava
 "Commands"
     Ukazi
+"Commands:"
 "Commercials Flagged"
     Reklame označene
 "commfree"
@@ -338,6 +343,7 @@
     Dokončno odstrani
 "DELETE this Saved Playlist"
     ODSTRANI ta seznam predvajanja
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     opis
 "Description"
@@ -452,6 +458,7 @@
     Prvo snemanje
 "Flag Commercials"
     Označi reklame
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
     Za predvajanje vsili HTTP
 "Force HTTP/HTTPS port for streams"
@@ -583,6 +590,7 @@
     Klj. bes.
 "Keyword Search"
     Iskanje po ključnih besedah
+"Keyword Search:"
 "Keywords"
     Ključne besede
 "Language"
@@ -792,6 +800,7 @@
     Igralci
 "People Search"
     Iskanje po igralski zasedbi
+"People Search:"
 "Percent of time spent recording"
     Čas, v procentih, uporabljen za snemanje
 "Play"
@@ -847,6 +856,7 @@
     Napr.
 "Power Search"
     Napredno iskanje
+"Power Search:"
 "Precip"
 "Prefer Channum"
     Priljubljena številka kanala
@@ -920,6 +930,7 @@
 "Recording Groups"
 "Recording Options"
     Snemalne možnosti
+"Recording Options Help"
 "Recording Priority"
     Snemalne prioritete
 "Recording Profile"
@@ -1077,20 +1088,27 @@
     Iskanje
 "Search $1"
     Iskanje $1
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Iskanje:  $1
 "Search Music"
     Iskanje glasbe
 "Search Phrase"
     Iskanje po ključni besedi
+"Search Phrase:"
 "Search Results"
     Rezultati iskanja
 "Search the Music Database"
     Preišči glasbeno bazo
 "Search Type"
     Tip iskanja
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Iskanja
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
     Stratistike strežnika
@@ -1237,6 +1255,8 @@
     Iskanje po naslovih
 "Title Search"
     Iskanje po naslovih
+"Title Search:"
+"Title:"
 "Too Many"
     Preveč
 "Top $1"

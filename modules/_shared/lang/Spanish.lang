@@ -84,6 +84,7 @@
     Agregar a Pantallas Activas
 "Additional Tables"
     Tablas adicionales
+"Additional tables:"
 "Admin Key"
 "Advanced"
     Avanzado
@@ -126,6 +127,9 @@
 "All Songs"
     Todas las Canciones
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Un error ocurrió al intentar agregar su lista de reproducción
 "An unknown module was specified"
@@ -261,6 +265,7 @@
     color
 "Commands"
     Comandos
+"Commands:"
 "Commercials Flagged"
     Comerciales Marcados
 "commfree"
@@ -331,6 +336,7 @@
     Borrar para Siempre
 "DELETE this Saved Playlist"
     BORRAR esta Lista de Reproducción Guardada
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     descripción
 "Description"
@@ -425,6 +431,7 @@
 "First recording"
     Primera grabación
 "Flag Commercials"
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
@@ -535,6 +542,7 @@
     Palabra clave
 "Keyword Search"
     Búsqueda palabras
+"Keyword Search:"
 "Keywords"
 "Language"
     Lengua
@@ -704,6 +712,7 @@
     Gente
 "People Search"
     Búsqueda gente
+"People Search:"
 "Percent of time spent recording"
 "Play"
 "Play Recording on Frontend"
@@ -736,6 +745,7 @@
     Avanzada
 "Power Search"
     Búsqueda avanzada
+"Power Search:"
 "Precip"
 "Prefer Channum"
     Nº Canal Preferido
@@ -794,6 +804,7 @@
 "Recording Groups"
 "Recording Options"
     Opciones grabación
+"Recording Options Help"
 "Recording Priority"
     Prioridad grabación
 "Recording Profile"
@@ -937,18 +948,25 @@
 "Search"
     Buscar
 "Search $1"
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Buscar: $1
 "Search Music"
 "Search Phrase"
     Buscar frase
+"Search Phrase:"
 "Search Results"
     Resultados bsqueda
 "Search the Music Database"
 "Search Type"
     Buscar tipo
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Búsquedas
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -1064,6 +1082,8 @@
 "Title search"
 "Title Search"
     Buscar título
+"Title Search:"
+"Title:"
 "Too Many"
 "Top $1"
 "Top Played Songs"

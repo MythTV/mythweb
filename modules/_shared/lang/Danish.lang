@@ -65,6 +65,7 @@
 "Add this Playlist as a Subplaylist"
 "Add To Active Screens"
 "Additional Tables"
+"Additional tables:"
 "Admin Key"
 "Advanced"
     Advanceret
@@ -95,6 +96,9 @@
     Alle optagelser
 "All Songs"
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "An unknown module was specified"
 "and"
@@ -200,6 +204,7 @@
     Farve
 "Commands"
     Kommandoer
+"Commands:"
 "Commercials Flagged"
 "commfree"
     Reklamefri
@@ -261,6 +266,7 @@
     Slet + genoptag $1
 "Delete Forever"
 "DELETE this Saved Playlist"
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     beskrivelse
 "Description"
@@ -347,6 +353,7 @@
 "First recording"
     Første optagelse
 "Flag Commercials"
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
@@ -450,6 +457,7 @@
     Nøgleord
 "Keyword Search"
     Nøgleords søgning
+"Keyword Search:"
 "Keywords"
 "Language"
     Sprog
@@ -609,6 +617,7 @@
     Personer
 "People Search"
     Person søgning
+"People Search:"
 "Percent of time spent recording"
 "Play"
 "Play Recording on Frontend"
@@ -641,6 +650,7 @@
     Super
 "Power Search"
     Super søgning
+"Power Search:"
 "Precip"
 "Prefer Channum"
 "prefer_channum"
@@ -697,6 +707,7 @@
 "Recording Groups"
 "Recording Options"
     Optageindstillinger
+"Recording Options Help"
 "Recording Priority"
     Optageprioritet
 "Recording Profile"
@@ -838,18 +849,25 @@
 "Search"
     Søg
 "Search $1"
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     Søg efter: $1
 "Search Music"
 "Search Phrase"
     Søge ord
+"Search Phrase:"
 "Search Results"
     Søgeresultater
 "Search the Music Database"
 "Search Type"
     Søge type
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Søgninger
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -959,6 +977,8 @@
 "Title search"
 "Title Search"
     Titel søgning
+"Title Search:"
+"Title:"
 "Too Many"
 "Top $1"
     Top $1

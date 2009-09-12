@@ -60,6 +60,7 @@
 "Add To Active Screens"
 "Additional Tables"
     追加テーブル
+"Additional tables:"
 "Admin Key"
 "Advanced"
     アドバンスド
@@ -91,6 +92,9 @@
     全ての録画
 "All Songs"
 "ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "An unknown module was specified"
 "and"
@@ -192,6 +196,7 @@
     カラー
 "Commands"
     コマンド
+"Commands:"
 "Commercials Flagged"
 "commfree"
     CMカット
@@ -254,6 +259,7 @@
     削除と録画 $1
 "Delete Forever"
 "DELETE this Saved Playlist"
+"Depending on the Search type this is where you enter actual main search commands"
 "description"
     内容
 "Description"
@@ -341,6 +347,7 @@
 "First recording"
     最初の録画
 "Flag Commercials"
+"For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
@@ -447,6 +454,7 @@
     キーワード
 "Keyword Search"
     キーワードサーチ
+"Keyword Search:"
 "Keywords"
 "Language"
     言語
@@ -609,6 +617,7 @@
     ピープル
 "People Search"
     ピープルサーチ
+"People Search:"
 "Percent of time spent recording"
 "Play"
 "Play Recording on Frontend"
@@ -641,6 +650,7 @@
     パワー
 "Power Search"
     パワーサーチ
+"Power Search:"
 "Precip"
 "Prefer Channum"
     チャンネル番号を優先
@@ -699,6 +709,7 @@
 "Recording Groups"
 "Recording Options"
     録画オプション
+"Recording Options Help"
 "Recording Priority"
     録画優先順位
 "Recording Profile"
@@ -839,18 +850,25 @@
 "Search"
     サーチ
 "Search $1"
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
     $1 の検索結果
 "Search Music"
 "Search Phrase"
     サーチフレーズ
+"Search Phrase:"
 "Search Results"
     検索結果
 "Search the Music Database"
 "Search Type"
     サーチタイプ
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     サーチメニュー
+"Searches will be performed against the title of all TV shows"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -964,6 +982,8 @@
 "Title search"
 "Title Search"
     タイトルサーチ
+"Title Search:"
+"Title:"
 "Too Many"
 "Top $1"
     トップ $1
