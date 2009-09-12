@@ -1,0 +1,240 @@
+body {
+    border:           0;
+    margin:           0;
+    padding:          0;
+    font-size:        9pt;
+    font-family:      Arial, Helvetica, sans-serif;
+    background-color: #000000;
+    color:            #dedede;
+}
+
+/*
+    Make transparent png's render properly in IE:
+
+    Disabled because it conflicts with recording preview thumbnails.
+    Use the alpha_png class instead.
+    img { behavior: url("/js/pngbehavior.htc"); }
+*/
+.alpha_png { behavior: url("/js/pngbehavior.htc"); }
+
+img { 
+    behavior: url("/js/pngbehavior.htc"); 
+    border: 0px;
+}
+
+a, a:link { color: #E0E0FF; text-decoration: none; }
+a:active  { color: #990033; text-decoration: none; }
+a:visited { color: #E0E0FF; text-decoration: none; }
+a:hover   { color: #00E000; text-decoration: underline; }
+
+label       { color: #E0E0FF; text-decoration: none; }
+label:hover { color: #00E000; text-decoration: underline; }
+
+/* For some reason, the main Body element doesn't always work for text inside of tables */
+.body {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* font size classes */
+.tiny   { font-size: 9px; }
+.small  { font-size: 9pt; }
+.normal { font-size: 10pt; }
+.large  { font-size: 12pt; }
+.huge   { font-size: 24px; }
+
+/* fony style classes */
+.bold, .bold a, .bold a:link, .bold a:visited, .bold a:active, .bold a:hover {
+    font-weight: bold !important;
+}
+.italic, .italic a, .italic a:link, .italic a:visited, .italic a:active, .italic a:hover {
+    font-style: italic !important;
+}
+
+/* a class for the menu across the top of the page as well as menu headers throughout the page */
+.menu {          background-color: #666666 }
+.menu_border_t { border-top:    2px solid #000000 }
+.menu_border_b { border-bottom: 2px solid #000000 }
+.menu_border_l { border-left:   2px solid #000000 }
+.menu_border_r { border-right:  2px solid #000000 }
+
+/* a class for commands and other user input boxes */
+.command { background-color: #333333 }
+.command_border_t { border-top:    2px solid #888888 }
+.command_border_b { border-bottom: 2px solid #888888 }
+.command_border_l { border-left:   2px solid #888888 }
+.command_border_r { border-right:  2px solid #888888 }
+
+/* some classes for the list display */
+.list {    background-color: #000000 }
+.list_border_t { border-top:    1px solid #000 }
+.list_border_b { border-bottom: 1px solid #000 }
+.list_border_l { border-left:   1px solid #000 }
+.list_border_r { border-right:  1px solid #000 }
+.list_separator {
+    background-color: #000000; /*datum hintergrund bei den aufnahmen*/
+    border-top:       4px
+}
+
+/* A class for the left-cleared <dl> lists used for program details popups */
+dl.details_list {
+    font-size:  9pt;
+    margin:     .125em;
+    max-width:  41em;
+}
+dl.details_list dt {
+    clear:       left;
+    float:       left;
+    width:       9em;
+    padding-top: 3px;
+    text-align:  right;
+    color:       #fff;
+    white-space: nowrap;
+}
+dl.details_list dd {
+    padding-top: 3px;
+    margin-left: 9.5em;
+}
+
+/* a class for the the cells containing settings in the various settings files */
+.settings {    background-color: #333333 }
+
+/* Classes for the program listing */
+.hdtv_icon {
+    font-size:   9pt;
+    float:       right;
+    color:       yellow;
+    display:     inline;
+    font-weight: bold;
+}
+
+.right_arrow {
+    float: right;
+}
+.left_arrow {
+    float: left;
+}
+
+/* A special class for submit buttons */
+.submit {
+    font-weight:      bold;
+    color:            #000000;
+    background-color: #C0C0C0;
+    font-size:        13px;
+    height:           22px;
+}
+.submit:hover   { text-decoration: underline; }
+
+/* A special class for radio buttons and check boxes because some browsers render them weird */
+.radio {
+    height: 14px !important;
+    width:  14px !important;
+}
+
+/* Default styles for form fields */
+select {
+    font-family:      Arial, Helvetica, sans-serif;
+    color:               #c0c0c0;
+    background-color:    #333333;
+    font-size:           9pt;
+    border:              #cccccc;
+    border-style:        solid; 
+    border-top-width:    1px; 
+    border-right-width:  1px; 
+    border-bottom-width: 1px; 
+    border-left-width:   1px;
+}
+
+input {
+    font-family:      Arial, Helvetica, sans-serif;
+    color:               #c0c0c0;
+    background-color:    #222222;
+    font-size:           9pt;
+    border:              #cccccc;
+    border-style:        solid;
+    border-top-width:    1px;
+    border-right-width:  1px;
+    border-bottom-width: 1px;
+    border-left-width:   1px;
+
+}
+
+textarea {
+    font-family:      terminal, courier, courier-new;
+    color:               #c0c0c0;
+    background-color:    #222222;
+    font-size:           9pt;
+    border:              #cccccc;
+    border-style:        solid;
+    border-top-width:    1px;
+    border-right-width:  1px;
+    border-bottom-width: 1px;
+    border-left-width:   1px;
+
+}
+
+input.quantity {
+    width:      2em;
+    text-align: center;
+}
+
+/* Avoid those nasty extra linefeeds in IE </form> tags */
+form { display: inline; }
+
+/* A special class for error stuff */
+.error {
+    color:            #F03030;
+    background-color: #360000;
+    border-color:     #F03030;
+    border:           thin groove #F03030;
+}
+#error {
+    color:            #F03030;
+    background-color: #360000;
+    border-color:     #F03030;
+    border:           thin groove #F03030;
+    padding:          8px;
+}
+
+/* clearfix -- see http://positioniseverything.net/easyclearing.html for details on how/why this works*/
+.clearfix:after {
+    content:    ".";
+    display:    block;
+    height:     0;
+    clear:      both;
+    visibility: hidden;
+}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+/* for mouseover popup menus */
+.hidden {
+    visibility: hidden;
+    display:    none;
+}
+
+.no_padding {
+    padding: 0px 0px 0px 0px;
+}
+
+/* the category legend */
+#command_choices a {
+    white-space: nowrap;
+}
+#category_legend_popup {
+    position:         absolute;
+    visibility:       hidden;
+    top:              0px;
+    left:             0px;
+    padding:          2px;
+    white-space:      nowrap;
+    background-color: #000000;
+}
+#category_legend_popup table {
+    font-size:        9pt;
+    background-color: #000000;
+}

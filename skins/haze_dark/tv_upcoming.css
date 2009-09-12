@@ -1,0 +1,9 @@
+#display_options {
+    width:      40em;
+    margin:     10px auto;
+    padding:    5px;
+    text-align: center;
+}
+#display_options input {
+    vertical-align: middle;
+}
