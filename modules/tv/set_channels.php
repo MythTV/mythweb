@@ -71,6 +71,8 @@
                        $chanid
                       );
         }
+    // Do a reschedule to refresh scheduled recordings;
+        MythBackend::find()->rescheduleRecording();
     }
 
 // Sortby
@@ -103,4 +105,3 @@
 
 // These settings affect all of mythtv
     $Settings_Hosts = t('All Hosts');
-
