@@ -268,7 +268,7 @@ class WeatherScreen {
 
     // Generate args and run the script
         $units = $this->units == 0 ? 'SI' : 'ENG';
-        $output_array = $this->runScript($script, '-u '. $units .' -d '. getcwd() .'/'. cache_dir ." $location");
+        $output_array = $this->runScript($script, '-u '. $units .' -d '. getcwd() .'/'. data ." $location");
 
     // Query db data items
         $sh = $db->query('SELECT weatherdatalayout.dataitem
