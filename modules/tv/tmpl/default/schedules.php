@@ -84,6 +84,8 @@
     <th class="x-group"><?php      echo t('Recording Group');     ?></th>
     <th class="x-type"><?php       echo t('Type');                ?></th>
     <th class="x-sgroup"><?php     echo t('Storage Group');       ?></th>
+    <th class="x-startoffset"><?php echo t('Start Early');        ?></th>
+    <th class="x-endoffset"><?php  echo t('End Late');            ?></th>
     <th class="x-lastrec"><?php    echo t('Last Recorded');       ?></th>
 </tr>
 </thead>
@@ -179,6 +181,8 @@
     <td class="x-group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
     <td class="x-type"><?php  echo $schedule->texttype ?></td>
     <td class="x-group"><?php echo _or($schedule->storagegroup, '&nbsp;') ?></td>
+    <td class="x-startoffset"><?php echo _or($schedule->startoffset, '&nbsp;') ?></td>
+    <td class="x-endoffset"><?php echo _or($schedule->endoffset, '&nbsp;') ?></td>
     <td class="x-lastrec"><?php echo _or($schedule->last_record, '&nbsp;') ?></td>
 </tr><?php
             $prev_group = $cur_group;
