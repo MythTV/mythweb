@@ -27,7 +27,7 @@
         elseif (file_exists(modules_path.'/'.$Path[0]."/classes/$className.php"))
             include_once modules_path.'/'.$Path[0]."/classes/$className.php";
         else
-            trigger_error(t('Failure to autoload class $1!', $className), E_USER_ERROR);
+            return false;
     }
 
     spl_autoload_register('autoload');
