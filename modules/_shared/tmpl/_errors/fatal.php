@@ -40,7 +40,7 @@
                      '</a></u></b>'); ?>
     </p>
 
-    <textarea><?php echo htmlentities($err) ?></textarea>
+    <textarea cols=100 rows=100><?php echo htmlentities($err) ?></textarea>
 
 </div>
 
