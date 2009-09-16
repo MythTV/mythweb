@@ -92,7 +92,8 @@
 <?php
         $prev_group = '';
         $cur_group  = '';
-        foreach ($the_schedules as $schedule) {
+        foreach ($the_schedules as $recordId) {
+            $schedule = new Schedule($recordId);
         // Reset the command variable to a default URL
             $urlstr = 'recordid='.$schedule->recordid;
 
@@ -175,8 +176,7 @@
         ?></td>
     <td class="x-profile"><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
     <td class="x-transcoder"><?php
-        global $Transcoders;
-        echo _or($Transcoders[$schedule->transcoder],  '&nbsp;')
+        echo Transcoder::find($schedule->transcoder)
         ?></td>
     <td class="x-group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
     <td class="x-type"><?php  echo $schedule->texttype ?></td>

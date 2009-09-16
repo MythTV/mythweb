@@ -184,14 +184,13 @@
                                     AND description = ?
                              LIMIT 1');
     // Load in all of the programs (if any?)
-        global $Scheduled_Recordings;
         $these_programs = array();
         while ($data = $sh->fetch_assoc()) {
             if (!$data['chanid'])
                 continue;
         // This program has already been loaded, and is attached to a recording schedule
-            if (!empty($data['title']) && $Scheduled_Recordings[$data['callsign']][$data['starttime_unix']][0]->title == $data['title']) {
-                $program =& $Scheduled_Recordings[$data['callsign']][$data['starttime_unix']][0];
+            if (!empty($data['title']) && Program::getScheduled($data['callsign'], $data['starttime_unix'])->title == $data['title']) {
+                $program =& Program::getScheduled($data['callsign'], $data['starttime_unix']);
             // merge in data fetched from DB
                 $program->merge(new Program($data));
             }
@@ -225,6 +224,3 @@
     // Just in case, return an array of all programs found
         return $these_programs;
     }
-
-
-

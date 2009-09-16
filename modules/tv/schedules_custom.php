@@ -22,8 +22,8 @@
         $_GET['recordid'] = $Path[3];
 
 // Load an existing schedule?
-    if ($_GET['recordid'] && $Schedules[$_GET['recordid']]) {
-        $schedule =& $Schedules[$_GET['recordid']];
+    if ($_GET['recordid']) {
+        $schedule =& Schedule::find($_GET['recordid']);
     // Not a custom search schedule
         if (empty($schedule->search) || $schedule->search == searchtype_manual)
             redirect_browser(root_url.'tv/schedules');

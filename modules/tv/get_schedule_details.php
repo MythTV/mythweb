@@ -5,8 +5,6 @@
     header('Expires: '.date('D, d M Y H:i:s e', $_REQUEST['starttime'] + 604800));
     header('Content-Type: application/json');
 
-    global $Schedules;
-
     echo JSON::encode(array( 'id'               => 'schedule-'.$_REQUEST['recordid'],
-                             'info'             => $Schedules[$_REQUEST['recordid']]->details_list()
+                             'info'             => Schedule::find($_REQUEST['recordid'])->details_list()
                            ));

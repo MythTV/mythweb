@@ -95,7 +95,7 @@ class Program {
     public $credits            = array();
 // css class, based on category and/or category_type
     public $css_class;
-    public $fancy_description;
+    public $fancy_description = null;
     public $filesize;
     public $group              = '';
     public $has_commflag       = 0;
@@ -121,6 +121,44 @@ class Program {
     public $jobs               = array();
 // Jobs this program can be assigned to
     public $jobs_possible      = array();
+
+    public static $Scheduled    = null;
+    public static $numConflicts = 0;
+    public static $numScheduled = 0;
+
+    public function getScheduled($callsign = null, $starttime = null, $endtime = null, $chanid = null) {
+        if (is_null(self::$Scheduled)) {
+            $pending = MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2);
+            foreach ( $pending as $key => $program) {
+                if ($key === 'offset')
+                    list(self::$numConflicts, self::$numScheduled) = $program;
+            // Normal entry:  self::$Scheduled[callsign][starttime][]
+                else
+                    self::$Scheduled[$program[6]][$program[11]][] =& new Program($program);
+            }
+        }
+        if (!is_null($callsign) && !is_null($starttime))
+            return self::$Scheduled[$callsign][$starttime][0];
+        if (!is_null($callsign))
+            return self::$Scheduled[$callsign];
+        if (!is_null($starttime) && !is_null($endtime)) {
+            $return = array();
+            foreach (self::$Scheduled AS $callsign => &$shows) {
+                if (!$callsign)
+                    continue;
+                foreach ($shows AS $starttime => &$show) {
+                    if (   $show->endtime < $starttime
+                        || $show->starttime > $endtime
+                        || $show->length < 1
+                        || ($show->chanid == $chanid && $show->starttime == $starttime) )
+                        continue;
+                    $return[] = &$show;
+                }
+            }
+            return $return;
+        }
+        return self::$Scheduled;
+    }
 
     public function __construct($data) {
         global $db;
@@ -332,19 +370,32 @@ class Program {
         $this->update_fancy_desc();
     }
 
+    public function getFancyDescription() {
+        if (is_null($this->fancy_description))
+            $this->update_fancy_desc();
+        return $this->fancy_description;
+    }
+
     public function update_fancy_desc() {
+        if (!is_null($this->fancy_description))
+            return;
     // Get a nice description with the full details
         $details = array();
 
         if (!isset($this->syndicatedepisodenumber)) {
         // Get some data from SQL that the backend doesn't provide
-            $query  = 'SELECT partnumber, parttotal, syndicatedepisodenumber FROM program'
-                     .' WHERE chanid='.escape($this->chanid)
-                     .' AND starttime=FROM_UNIXTIME('.escape($this->starttime).')';
-            $result = mysql_query($query)
-                or trigger_error('SQL Error: '.mysql_error(), FATAL);
-            list($this->partnumber, $this->parttotal, $this->syndicatedepisodenumber) = mysql_fetch_row($result);
-            mysql_free_result($result);
+            global $db;
+            list($this->partnumber,
+                 $this->parttotal,
+                 $this->syndicatedepisodenumber) = $db->query_row('SELECT partnumber,
+                                                                          parttotal,
+                                                                          syndicatedepisodenumber
+                                                                     FROM program
+                                                                    WHERE program.chanid = ?
+                                                                      AND program.starttime = FROM_UNIXTIME(?)',
+                                                                  $this->chanid,
+                                                                  $this->starttime
+                                                                  );
         }
 
         if ($this->hdtv)

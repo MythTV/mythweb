@@ -13,60 +13,93 @@
 /**/
 
 class Schedule {
+    public static $instances = array();
 
-    var $recordid;
-    var $type;
-    var $chanid;
-    var $starttime;
-    var $endtime;
-    var $title;
-    var $subtitle;
-    var $description;
-    var $profile;
-    var $recpriority;
-    var $category;
-    var $maxnewest;
-    var $inactive;
-    var $maxepisodes;
-    var $autoexpire;
-    var $startoffset;
-    var $endoffset;
-    var $recgroup;
-    var $storagegroup;
-    var $dupmethod;
-    var $dupin;
-    var $station;
-    var $seriesid;
-    var $programid;
-    var $search;
-    var $autotranscode;
-    var $autocommflag;
-    var $autouserjob1;
-    var $autouserjob2;
-    var $autouserjob3;
-    var $autouserjob4;
-    var $findday;
-    var $findtime;
-    var $findid;
-    var $transcoder;
-    var $parentid;
+    public $recordid;
+    public $type;
+    public $chanid;
+    public $starttime;
+    public $endtime;
+    public $title;
+    public $subtitle;
+    public $description;
+    public $profile;
+    public $recpriority;
+    public $category;
+    public $maxnewest;
+    public $inactive;
+    public $maxepisodes;
+    public $autoexpire;
+    public $startoffset;
+    public $endoffset;
+    public $recgroup;
+    public $storagegroup;
+    public $dupmethod;
+    public $dupin;
+    public $station;
+    public $seriesid;
+    public $programid;
+    public $search;
+    public $autotranscode;
+    public $autocommflag;
+    public $autouserjob1;
+    public $autouserjob2;
+    public $autouserjob3;
+    public $autouserjob4;
+    public $findday;
+    public $findtime;
+    public $findid;
+    public $transcoder;
+    public $parentid;
 
-    var $playgroup;
-    var $prefinput;
-    var $next_record;
-    var $last_record;
-    var $last_delete;
+    public $playgroup;
+    public $prefinput;
+    public $next_record;
+    public $last_record;
+    public $last_delete;
 
-    var $texttype;
-    var $channel;
-    var $will_record = false;
-    var $css_class;         // css class, based on category and/or category_type
-    var $tsdefault;
+    public $texttype;
+    public $channel;
+    public $will_record = false;
+    public $css_class;         // css class, based on category and/or category_type
+    public $tsdefault;
+
+/**
+ * Multiton style!
+ **/
+    public function &find($recordid) {
+        if (!isset(self::$instances[$recordid]))
+            self::$instances[$recordid] = new self($recordid);
+        return self::$instances[$recordid];
+    }
+
+    public function &findAll($sort = true) {
+        global $db;
+        $orderby = '';
+        if (count($_SESSION['schedules_sortby'])) {
+            $orderby = 'ORDER BY ';
+            foreach ($_SESSION['schedules_sortby'] AS $key => $sort) {
+                if ($key > 0)
+                    $orderby .= ', ';
+                switch ($sort['field']) {
+                    case 'airdate':
+                        $orderby .= 'starttime';
+                        break;
+                    default:
+                        $orderby .= $sort['field'];
+                        break;
+                }
+                $orderby .= ($sort['reverse'] ? ' DESC' : ' ASC');
+            }
+        }
+        $recordIds = $db->query("SELECT recordid FROM record $orderby")->fetch_cols();
+        return $recordIds;
+    }
 
 /**
  * constructor
 /**/
-    function Schedule($data) {
+    public function Schedule($data) {
         global $db;
     // Schedule object data -- just copy it into place
         if (is_object($data)) {
@@ -125,12 +158,21 @@ class Schedule {
     // Find out which css category this recording falls into
         if ($this->chanid != '')
             $this->css_class = category_class($this);
+
+        if ($this->type == rectype_dontrec) {
+            $this->profile  = '';
+            $this->recgroup = '';
+        }
+    }
+
+    public function getFancyDescription() {
+        return $this->fancy_description;
     }
 
 /**
  * Save this schedule
 /**/
-    function save($new_type) {
+    public function save($new_type) {
         global $db;
     // Make sure that recordid is null if it's empty
         if (empty($this->recordid)) {
@@ -242,7 +284,7 @@ class Schedule {
 /**
  * Delete this schedule
 /**/
-    function delete() {
+    public function delete() {
         global $db;
     // Delete this schedule from the database
         $sh = $db->query('DELETE FROM record WHERE recordid=?',
@@ -252,8 +294,8 @@ class Schedule {
             MythBackend::find()->rescheduleRecording($this->recordid);
     // Finish
         $sh->finish();
-    // Remove this from the $Schedules array in memory
-        unset($GLOBALS['Schedules'][$this->recordid]);
+    // Remove this from the instance array in memory
+        unset(self::$instances[$this->recordid]);
     }
 
 /**
@@ -261,7 +303,7 @@ class Schedule {
  * programs, but with a few extra checks, and some information arranged
  * differently.
 /**/
-    function details_list() {
+    public function details_list() {
     // Start the list, and print the title and schedule type
         $str = "<dl class=\"details_list\">\n"
             // Title
@@ -361,9 +403,8 @@ class Schedule {
         }
     // Transcoder
         if (preg_match('/\\S/', $this->transcoder)) {
-            global $Transcoders;
             $str .= "\t<dt>".t('Transcoder').":</dt>\n"
-                   ."\t<dd>".html_entities(_or($Transcoders[$this->transcoder], '&nbsp;'))
+                   ."\t<dd>".html_entities(Transcoder::find($this->transcoder))
                             ."</dd>\n";
         }
     // Recording Group
@@ -446,14 +487,13 @@ class Schedule {
  * prints a <select> of the various transcoders to choose from
 /**/
     function transcoder_select($this_transcoder, $name='transcoder') {
-        global $Transcoders;
         echo "<select name=\"$name\">";
-        foreach ($Transcoders as $transcoderid => $transcoder) {
+        foreach (Transcoder::findAll() as $transcoderid) {
             echo '<option value="'.html_entities($transcoderid).'"';
             if ($this_transcoder == $transcoderid) {
                 echo ' SELECTED';
             }
-            echo '>'.html_entities($transcoder).'</option>';
+            echo '>'.html_entities(Transcoder::find($transcoderid)).'</option>';
         }
         echo '</select>';
     }
