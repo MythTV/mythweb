@@ -14,7 +14,7 @@
 /**/
 
 // Set the desired page title
-    $page_title = 'MythWeb - '.t('Error');
+    $page_title = 'MythWeb - Error';
 
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="skins/errors.css">';

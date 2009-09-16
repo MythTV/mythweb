@@ -14,7 +14,7 @@
 /**/
 
 // Set the desired page title
-    $page_title = 'MythWeb - '.t('Error').' - '.t('Database Access Denied');
+    $page_title = 'MythWeb - Error - Database Access Denied';
 
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="skins/errors.css">';
@@ -25,15 +25,11 @@
 
 <div id="message">
 
-<h2><?php echo t('Database Access Denied'); ?></h2>
+<h2>Database Access Denied</h2>
 
-<p>
-    <?php echo t('You are most likely receiving this message because you have failed to configure mythweb\'s database login info.'); ?>
-</p>
+<p>You are most likely receiving this message because you have failed to configure mythweb\'s database login info.</p>
 
-<p>
-    <?php echo t('Please see INSTALL for instructions.'); ?>
-</p>
+<p>Please see INSTALL for instructions.</p>
 
 </div>
 

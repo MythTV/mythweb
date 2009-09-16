@@ -14,7 +14,7 @@
 /**/
 
 // Set the desired page title
-    $page_title = 'MythWeb - '.t('Error');
+    $page_title = 'MythWeb - Error';
 
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="skins/errors.css">';
@@ -25,7 +25,7 @@
 
 <div id="message">
 
-<h2><?php echo t('An unknown module was specified'); ?></h2>
+<h2><An unknown module was specified</h2>
 
 <p>
 <?php echo $Path[0] ?>
