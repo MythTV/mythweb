@@ -4,6 +4,7 @@ class Cache {
     private static $Instance = null;
 
     public static $Engines = array('Null',
+                                   'SHM',
                                    'Static',
                                    'Memcache',
                                    'StaticMemcache'
