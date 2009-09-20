@@ -541,7 +541,7 @@
  * Prints out a list of program types, along with checkboxes.
 /**/
     function category_type_list() {
-        foreach (program::category_types() as $key => $type) {
+        foreach (Program::category_types() as $key => $type) {
             $safe_type = html_entities($type);
             echo '<input type="checkbox" name="ctype[]" id="ctype_', $key,
                  '" value="',$safe_type, '"';
