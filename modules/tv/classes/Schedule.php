@@ -92,7 +92,11 @@ class Schedule {
                 $orderby .= ($sort['reverse'] ? ' DESC' : ' ASC');
             }
         }
-        $recordIds = $db->query("SELECT recordid FROM record $orderby")->fetch_cols();
+        $recordIds = $db->query("SELECT recordid
+								   FROM record
+							  LEFT JOIN channel
+							         ON channel.chanid = record.chanid
+							   $orderby")->fetch_cols();
         return $recordIds;
     }
 
