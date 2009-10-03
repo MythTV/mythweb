@@ -51,6 +51,7 @@
     $Languages['Finnish']    = array('Suomi',           'fi_FI.UTF-8', 'fi_FI');
     $Languages['Czech']      = array('Czech',           'cs_CZ.UTF-8', 'cs_CZ.UTF-8');
     $Languages['Polish']     = array('Polski',          'pl_PL.UTF-8', 'pl_PL');
+    $Languages['Hungarian']     = array('Magyar',          'hu_HU.UTF-8', 'hu_HU');
 
 // Need to detect the language?
     if (empty($_SESSION['language']))

@@ -1,0 +1,198 @@
+"Action"
+    Akció
+    \b(?:action|adven)
+"Adult"
+    Felnőtt
+    \b(?:adult|erot)
+"Animals"
+    Állatok
+    \b(?:animal|tiere)
+"Art_Music"
+    Komolyzene
+    \b(?:art|dance|music|cultur)
+"Business"
+    Üzleti
+    \b(?:biz|busine)
+"Children"
+    Gyermek
+    \b(?:child|infan|animation)
+"Comedy"
+    Kabaré
+    \b(?:comed|entertain|sitcom)
+"Crime_Mystery"
+    Krimi
+    \b(?:crim|myster)
+"Documentary"
+    Dokumentum
+    \b(?:doc)
+"Drama"
+    Dráma
+    \b(?:drama)
+"Educational"
+    Ismeretterjesztő
+    \b(?:edu|interests)
+"Food"
+    Étel
+    \b(?:food|cook|drink)
+"Game"
+    Játék
+    \b(?:game)
+"Health_Medical"
+    Egészség / Orvosi
+    \b(?:health|medic)
+"History"
+    Történelem
+    \b(?:hist)
+"Horror"
+    Horror
+    \b(?:horror)
+"HowTo"
+    Hogyan
+    \b(?:how|home|house|garden)
+"Misc"
+    Egyéb
+    \b(?:special|variety|info|collect)
+"News"
+    Hír
+    \b(?:news|current)
+"Reality"
+    Valóság
+    \b(?:reality)
+"Romance"
+    Romantikus
+    \b(?:romance)
+"SciFi_Fantasy"
+    SciFi / Fantasztikus
+    \b(?:fantasy|sci\w*\W*fi)
+"Science_Nature"
+    Természet
+    \b(?:science|nature|environment)
+"Shopping"
+    Vásárlás
+    \b(?:shop)
+"Soaps"
+    Szappanopera
+    \b(?:soaps)
+"Spiritual"
+    Spirituális
+    \b(?:spirit|relig)
+"Sports"
+    Sport
+    \b(?:sport)
+"Talk"
+    Beszélgető
+    \b(?:talk)
+"Travel"
+    Utazás
+    \b(?:travel)
+"Unknown"
+    Ismeretlen
+
+"War"
+    Háborús
+    \b(?:war)
+"Western"
+    Western
+    \b(?:west)
+"movie"
+    Film
+    
+"Action"
+    Akció
+    \b(?:action|adven)
+"Adult"
+    Felnőtt
+    \b(?:adult|erot)
+"Animals"
+    Állatok
+    \b(?:animal|tiere)
+"Art_Music"
+    Komolyzene
+    \b(?:art|dance|music|cultur)
+"Business"
+    Üzleti
+    \b(?:biz|busine)
+"Children"
+    Gyermek
+    \b(?:child|infan|animation)
+"Comedy"
+    Kabaré
+    \b(?:comed|entertain|sitcom)
+"Crime_Mystery"
+    Krimi
+    \b(?:crim|myster)
+"Documentary"
+    Dokumentum
+    \b(?:doc)
+"Drama"
+    Dráma
+    \b(?:drama)
+"Educational"
+    Közigazgatás
+    \b(?:edu|interests)
+"Food"
+    Étel
+    \b(?:food|cook|drink)
+"Game"
+    Játék
+    \b(?:game)
+"Health_Medical"
+    Egészség / Orvosi
+    \b(?:health|medic)
+"History"
+    Történelem
+    \b(?:hist)
+"Horror"
+    Horror
+    \b(?:horror)
+"HowTo"
+    Hogyan
+    \b(?:how|home|house|garden)
+"Misc"
+    Egyéb
+    \b(?:special|variety|info|collect)
+"News"
+    Hír
+    \b(?:news|current)
+"Reality"
+    Valóság
+    \b(?:reality)
+"Romance"
+    Romantikus
+    \b(?:romance)
+"SciFi_Fantasy"
+    SciFi / Fantasztikus
+    \b(?:fantasy|sci\w*\W*fi)
+"Science_Nature"
+    Természet
+    \b(?:science|nature|environment)
+"Shopping"
+    Vásárlás
+    \b(?:shop)
+"Soaps"
+    Szappanopera
+    \b(?:soaps)
+"Spiritual"
+    Spirituális
+    \b(?:spirit|relig)
+"Sports"
+    Sport
+    \b(?:sport)
+"Talk"
+    Beszélgető
+    \b(?:talk)
+"Travel"
+    Utazás
+    \b(?:travel)
+"Unknown"
+    Ismeretlen
+
+"War"
+    Háborús
+    \b(?:war)
+"Western"
+    Vadnyugat
+    \b(?:west)
+"movie"
+    Mozifilm
+    

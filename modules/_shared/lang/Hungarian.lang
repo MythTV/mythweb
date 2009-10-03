@@ -1,0 +1,1554 @@
+""
+" at "
+"# Tracks"
+    # Sáv
+"$1 B"
+    $1 B
+"$1 day"
+    $1 nap
+"$1 days"
+    $1 nap
+"$1 episode"
+    $1 rész
+"$1 episodes"
+    $1 rész
+"$1 GB"
+    $1 GB
+"$1 hr"
+    $1 óra
+"$1 hrs"
+    $1 óra
+"$1 is not responding."
+    $1 nem válaszol.
+"$1 KB"
+    $1 KB
+"$1 MB"
+    $1 MB
+"$1 min"
+    $1 perc
+"$1 mins"
+    $1 perc
+"$1 month"
+    $1 hónap
+"$1 months"
+    $1 hónap
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $4 tárhelyből $5 szabad és $2 foglalt. Összesen van $1 felvétel $3 lejátszási idővel
+"$1 recording"
+    $1 felvétel alatt
+"$1 recordings"
+    $1 felvételek
+"$1 requests pending."
+    $1 kérés függőben.
+"$1 Search"
+    $1 keresése
+"$1 TB"
+    $1 TB
+"$1 to $2"
+    $1-től $2-ig
+"$1 wasted"
+    $1 hulladék
+"$1 year"
+    $1 év
+"$1 years"
+    $1 év
+"%s Song (%s)"
+    %s Dal (%s)
+"%s Songs"
+    %s Dal
+"%s Songs (%s)"
+    %s Dal (%s)
+"Aborted"
+    Megszakít
+"Aborting"
+    Megszakítás
+"Action"
+    Művelet
+"Actions"
+    Műveletek
+"Activate"
+    Aktíválás
+"Active Screens"
+    Aktív képernyő
+"Add"
+    Hozzáad
+"Add Album to Current Playlist"
+    Album hozzáadása a lejátszási listához
+"Add Mix"
+    Mix hozzáadása
+"Add Song to Current Playlist"
+    Zeneszám hozzáadása a lejátszó listához
+"add string"
+    Szöveg hozzáadása
+"Add this Playlist as a Subplaylist"
+    Add hozzá ezt a lejátszsi listát, mint al-lejátszási listát
+"Add To Active Screens"
+    Hozzáadás az aktív képernyőhöz
+"Additional Tables"
+    További táblák
+"Additional tables:"
+"Admin Key"
+    Rendszergazda kulcs
+"Advanced"
+    Részletes keresés
+"Advanced Options"
+    Részletes beállítások
+"Advanced Search"
+    Részletes kereső
+"airdate"
+    adás dátuma
+"Airdate"
+    Adás dátuma
+"Airtime"
+    Adás ideje
+"Album Listing"
+    Album lista
+"Album Tracks"
+    Album számok
+"Albums"
+    Albumok
+"Albums with songs by %s"
+    Albumok a %s dalokkal
+"All"
+    Összes
+"All Albums"
+    Összes album
+"All Categories"
+    Összes kategória
+"All Fields"
+    Összes mező
+"All Genres"
+    Összes műfaj
+"All groups"
+    Összes csoport
+"All HDTV"
+    Minden, ami HDTV
+"All Hosts"
+    Összes gép
+"All recordings"
+    Összes felvétel
+"All Songs"
+    Összes zeneszám
+"ALLOCINETYPE"
+    Allo Cin&eacute;
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
+"An error occured while adding your playlist."
+    Hiba történt a lejátszási lista hozzáadásakor
+"An unknown module was specified"
+"and"
+    és
+"Any"
+    Bármely
+"Any Category"
+    Bármely kategória
+"Any Channel"
+    Bármely csatorna
+"Any Program Type"
+    Bármely program tipus
+"Append"
+    Hozzáfűz
+"Append to Current Playlist"
+    Hozzáfűzi a lejátszási listához
+"Are you sure you want to delete the following show?"
+    Valóban törlöd a következő műsort?
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+    Valóban törlöd ezt az elmentett lejátszási listát?
+"Are you sure you want to delete this show?"
+"Artist Listing"
+    Előadók listája
+"Artists"
+    Előadók
+"Artists Beginning with %s"
+    Előadók %s-től kezdve
+"ASX Stream"
+    ASX sugárzás
+"Audio Bitrate"
+    Audio bitráta
+"Audio for Hearing Impaired"
+    Audio a páratlan hangzásnak
+"Audio for Visually Impaired"
+    Audio a páratlan látványnak
+"Auto Expire"
+    Auto lejárat
+"Auto-expire recordings"
+    Auto-lejáratú felvételek
+"Auto-flag commercials"
+    Auto reklámjelölés
+"Auto-transcode"
+    Auto-átkodolás
+"AVC/H.264"
+    AVC/H.264
+"Avoid poor signal quality"
+"Back"
+    Vissza
+"Back Tab"
+    Back Tab
+"Back to the program listing"
+    Vissza a programlistához
+"Back to the recorded programs"
+    Vissza a felvett műsorokhoz
+"Back to the recording schedules"
+    Vissza a felvételi szabályokhoz
+"Backend Logs"
+    Háttér napló
+"Backend Status"
+    Háttérszerver állapot
+"Backspace"
+    Visszatörlés
+"Begin a New Search"
+    Új keresés indítása
+"brightness"
+    fényesség
+"Browse"
+    Böngészés
+"Browse = no"
+    Böngészés = nem
+"Browse = yes"
+    Böngészés = igen
+"Browse all"
+    Mindet böngészi
+"Browse All Albums"
+    Összes album böngészése
+"Browse Music"
+    Zene böngészése
+"Browse the Music Database"
+    Böngészés a zenei adatbázisban
+"By Artist Beginning With"
+    Előadó kezdőbetűje szerint
+"By Genre"
+    Műfaj szerint
+"callsign"
+    Hívójel
+"Cancel"
+    Mégse
+"Cancel this schedule."
+    Mégsem kell ez a program.
+"Cancelled"
+    Eldobva
+"Caps Lock"
+    Caps Lock
+"Cast"
+    Válogatás
+"Cast Information"
+    Válogatás info
+"category"
+    kategória
+"Category"
+    Kategória
+"Category Legend"
+    Kategória történet
+"CC"
+    CC
+"Chan. Callsign"
+    Csat. hívójel
+"Chan. Name"
+    Csat. név
+"Chan. Number"
+    Csat. szám
+"Channel"
+    Csatorna
+"channel"
+    csatorna
+"Channel &quot;Jump to&quot;"
+    Csatorna &quot;Ugrás a(z) &quot-ra;
+"Channel Detail"
+    Csatorna részletei
+"Channel Info"
+    Csatorna információ
+"Channels"
+    Csatornák
+"channum"
+    csatornaszám
+"Check for duplicates in"
+    Kettőzések ellenőrzése ebben
+"Childrens Movies"
+    Gyermekfilmek
+"Choose Genre.."
+    Műfaj választás...
+"Choose Type"
+    Tipus választás
+"Click to disable Auto Expire"
+    Kattints az automatikus lejárat letiltásához
+"Click to enable Auto Expire"
+    Kattints az automatikus lejárat engedélyezéséhez
+"Click to View Playlist"
+    Kattints a lejátszólista megtekintéséhez
+"Close Captioned priority"
+"Closed Captioning"
+    Zárt feliratozás
+"colour"
+    szín
+"Commands"
+    Parancsok
+"Commands:"
+"Commercials Flagged"
+    Reklámok bejelölve
+"commfree"
+    Reklámmentes
+"Conflict"
+    Ütközés
+"Conflicts"
+    Ütközések
+"Context"
+    Összetevő
+"contrast"
+    kontraszt
+"Count"
+    Számláló
+"Create a New Playlist"
+    Új lejátszólista készítése
+"Create a Random Mix"
+    Véletlen mix készítése
+"Create Schedule"
+    Program előállítása
+"Current MythWeb Skin"
+    Jelenlegi MythWeb kinézet
+"Current MythWeb Template"
+    Jelenlegi MythWeb sablon
+"Current Recording"
+    Jelenleg rögzítés alatt
+"Current recordings"
+    Jelenleg rögzítés alatt
+"Currently Browsing:  $1"
+    Megjelenítve:  $1
+"Currently Recording:  Edit"
+    Jelenlegi felvétel:  Szerkeszt
+"Custom"
+    Egyéni
+"Custom Schedule"
+    Egyéni fevételi szabály
+"Custom Search"
+    Egyéni keresés
+"Customize Screens"
+    Képernyő testre szabása
+"Data"
+    Adat
+"Database"
+    Adatbázis
+"Database Access Denied"
+"Database Error"
+"Database Health"
+    Adatbázis épsége
+"Database Setup Error"
+"Date"
+    Dátum
+"Date Formats"
+    Dáum formátum
+"Deactivated"
+    Inaktíválva
+"Deaf Signed"
+    Deaf Signed
+"Default"
+    Alapértelmezett
+"Default MythVideo View"
+    Alapértelmezett MythVideo Nézet
+"Default MythWeb Skin"
+    Alapértelmezett MythWeb kinézet
+"Default MythWeb Template"
+    Alapértelmezett MythWeb sablon
+"Delete"
+    Törlés
+"delete"
+    törlés
+"Delete $1"
+    Törölni a(z) $1-t
+"Delete + Rerecord"
+    Törlés + Újravesz
+"Delete and allow rerecord: $1"
+    Töröl és megengedi az újravételt: $1
+"Delete and rerecord"
+    Töröl és újravesz
+"Delete and rerecord $1"
+    Töröl és újravesz: $1
+"Delete Forever"
+    Véglegesen töröl
+"DELETE this Saved Playlist"
+    Törli ezt a mentett lejátszólistát
+"Depending on the Search type this is where you enter actual main search commands"
+"description"
+    leírás
+"Description"
+    Leírás
+"Destination"
+    Cél
+"Details for: $1"
+    $1 részletesen
+"Direct Download"
+    Közvetlen letöltés
+"Directed by"
+    Rendezte
+"Display"
+    Mutat
+"Dolby Surround"
+    Dolby Surround
+"Don't Record"
+    Ezt ne rögzítse
+"Don't record this program."
+    Ne rögzítse ezt a műsort.
+"Done, Unknown Status"
+    Kész, ismeretlen állapot
+"Down"
+    Le
+"Download URL override"
+    Letöltési hivatkozás felülbírálása
+"Dup Method"
+    Kettőzési eljárás
+"Duplicate"
+    Megkettőz
+"Duplicate Check method"
+    Kettőzés ellenőrzési eljárás
+"Duplicates/Ignored"
+    Duplikációk/Kihagyások
+"Earlier"
+    Korábbi
+"Earlier Showing"
+    Korábbi műsor
+"Edit"
+    Szerkeszt
+"Edit existing group"
+    Létező csoport szerkesztése
+"Edit MythWeb and some MythTV settings."
+    A Mythweb és néhány MythTV beállítás.
+"Edit Screen"
+    Szerkesztő kép
+"Edit settings for: $1"
+    Beállítások szerkesztése ehhez: $1
+"Editing "
+    Szerkeszés
+"Enable Video Playback"
+    Videolejátszás engedélyezése
+"End"
+    Vége
+"End Late"
+    Ráhagyás a végére
+"Enter"
+    Bevitel
+"Enter a new name for your playlist"
+    Írd be a lejátszólista nevét
+"Enter your search terms"
+    Írd be a keresett kulcsszót
+"enter your search terms"
+    írd be a keresett kulcsszót
+"Episode"
+    Rész
+"Episode Number"
+    Rész száma
+"Error"
+"error: playgroup $1 exists"
+    hiba: $1 lejátszócsoport megnyitható
+"Errored"
+    Elhibázva
+"Erroring"
+    Hibázás
+"Escape"
+    Kilép
+"Everything"
+    Minden
+"Exclude Generic Episodes"
+    Általános részek kivételével
+"Exclude Repeat and Generic Episodes"
+    Az általános és az ismételt részek kivételével
+"Exclude Repeat Episodes"
+    Ismétlések kivételével
+"Exec. Producer"
+    Külső támogató
+"Executive Producer"
+    Vezető Producer
+"Extended Check"
+    Részletes vizsgálat
+"Extra Information"
+    Extra Információ
+"Fatal Error"
+"File Size"
+    Fájlméret
+"film"
+    film
+"Filter"
+    Sorozatszűrő
+"Filters"
+    Szűrők
+"Find Date & Time Options"
+    Find Date &amp; Time Options
+"Find Day"
+    Nap keresése
+"Find other showings of this program"
+    Más műsor keresése ebben a programban
+"Find showings of this program"
+    Műsor keresése ebben a programban
+"Find Time"
+    Időpont keresése
+"Find Time must be of the format:  HH:MM:SS"
+    A keresési idó formátuma kötelezően:  HH:MM:SS
+"finetune"
+    finomhangolás
+"Finished"
+    Végzett
+"First recording"
+    Első felvétel
+"First showing of each episode"
+"Flag Commercials"
+    Reklámok jelölése
+"For more information on the Power Search please go to:"
+"Force HTTP for streams"
+    HTTP kényszerítése az adatfolyamokhoz
+"Force HTTP/HTTPS port for streams"
+    HTTP/HTTPS port kényszerítése az adatfolyamokhoz
+"Forced"
+    Kényszerítve
+"Forget Old"
+    Felejtse el a régit
+"format help"
+    formátum súgó
+"Found %s results for '%s'"
+    %s találat a '%s' kulcsszó alapján
+"freqid"
+    freqid
+"Friday"
+    Péntek
+"Frontends"
+    Lejátszók
+"generic_date"
+    %a %b %e, %Y
+"generic_time"
+    %I:%M %p
+"Genre"
+    Műfaj
+"genre_colors"
+"Genres"
+    Műfajok
+"Go"
+    Gyerünk
+"Google"
+    Google
+"Group timeslots every"
+    Csoport időtartomány minden
+"Guest Starring"
+    Vendégszereplők
+"Guide rating"
+    Műsorújság értékelés
+"Guide Settings"
+    Műsorújság beállításai
+"Handy Predefined Searches"
+    Kényelmes előredefiniált keresések
+"handy: overview"
+    könnyen kezelhető: bemutató
+"has Bookmark"
+    Könyvjelzőzve
+"Has Cutlist"
+    Vágólistázva
+"HD"
+    HD
+"HDTV"
+    HDTV
+"Height"
+    Magasság
+"Hide"
+    Elrejt
+"High"
+    Magas
+"Home"
+    Otthon
+"Host"
+    Gép
+"Hosted by"
+    Kiszolgája
+"Hour"
+    Óra
+"Hour Format"
+    Óra formátum
+"hue"
+    szinárnyalat
+"Humidity"
+    Páratartalom
+"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
+                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
+"Ignore generic shows"
+    Kihagyja az általános műsorokat
+"Ignore scheduled shows"
+    Kihagyja az időzített műsorokat
+"IMDB"
+    IMDB
+"IMDBTYPE"
+    Imdb
+"Inactive"
+    Inkaktív
+"Inactive Screens"
+    Inaktív képernyők
+"info: activate recording"
+    Ezen műsor rögzítésének kényszerítése.
+"info: default recording"
+    Visszaállít bármely felülírási kérelmet, így azt a műsor rndesen fel lesz programozva.
+"info: dont record"
+    Ne rögzítse ezt az egy műsort.
+"info: flvplayer"
+    <p>
+    A flash video lejátszás még csak kísérleti stádiumban van, 
+    és ez az amiért alapértelmezésben ki van kapcsolva.
+    </p>
+    <p>
+    Jelenlegi kisérletben az ffmpeg telepítve van és mp3 támogatással
+    van lefordítva. A felvételi fájlok elérhetőek a webszerveren
+    felhasználói ID-n keresztül. Előfordulhat, hogy a nem fog működni a
+    Nupplevideo fájlokkal és végén az egész működésképtelen lesz
+    (vagy talán még rosszabb).
+    </p>
+    <p>
+    Ezt a lehetőséget csak saját felelősségre engedélyehető, és
+    semmilyen továábi hivatalos támogatást nem  nyújtható hozzá,
+    amíg a kísérleti fázison túl nem jut.
+    </p>
+"info: hidden advanced schedule"
+    A részletes felvételi beállítások jelenleg el vannak rejtve.
+"info: record this"
+    Kényszerítés ennek a műsornak a felvételére.
+"info:forget old"
+    Elfelejti ezen műsor korábbi felvételeit, így újrafelvételre kerülhet.
+"info:never record"
+    Meghamisítja ezen műsor korábbi felvételeit, igy nem lesz rögzítve.
+"Insert"
+    Beszúrás
+"Jump"
+    Ugrás
+"Jump Points"
+    Ugrás pontra
+"Jump to"
+    Ugrás ide
+"Jump To"
+    Ugrás ide
+"JumpPoints Editor"
+    Ugráspont szerkesztő
+"Key Bindings"
+    Gomb Hozzárendelések
+"Key bindings"
+    Gomb Hozzárendelések
+"Key Controls"
+    Gomb Vezérlések
+"Keybindings Editor"
+    Gomb Hozzárendelés Szerkesztő
+"Keyword"
+    Kulcsszó
+"Keyword Search"
+    Kulcsszó keresés
+"Keyword Search:"
+"Keywords"
+    Kulcsszó
+"Language"
+    Nyelv
+"Last Recorded"
+    Utoljára rögzítve
+"Last recording"
+    Utoljára rögzített
+"Last showing of each episode"
+"Later"
+    Később
+"left"
+    Bal
+"Left"
+    Bal
+"leftl"
+    balh
+"length"
+    hossz
+"Length"
+    Hossz
+"Length (min)"
+    Hossz (perc)
+"Links"
+    Hivatkozások
+"Listing &quot;Jump to&quot;"
+    &quot;Ugrás&quot Listázás;
+"Listing Time Key"
+    Idő Kulcs Listázás
+"Listings"
+    Műsorújság
+"Load"
+    Betölt
+"Load a Saved Playlist"
+    Egy Elmentett lejátszási lista betöltése
+"Load Playlist"
+    Lejtszási Lista Betöltése
+"Load Saved Playlists"
+    Mentett lejátszási lista betöltése
+"Load this Saved Playlist"
+    Ezen lejátszási lista betöltése
+"LOADING"
+    BETÖLTÉS
+"Local Server Statistics"
+    Helyi szerver statisztikák
+"Local weather forecast"
+    Helyi időjárás-jelentés
+"LOCKDOWN_NOTICE"
+"LOCKDOWN_NOTICE_2"
+"Logs"
+    Naplók
+"Low"
+    Alacsony
+"Low Space"
+    Kevés hely
+"Manual"
+    Kézi
+"Match related callsigns"
+"matches"
+    egyeztetés
+"Max star rating for movies"
+    Legnagyobb szereplői értékelés a filmekhez
+"minutes"
+    perc
+"Missing Cover"
+    Nincs borító
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
+"Monday"
+    Hétfő
+"Mono"
+    Mono
+"More"
+    Több
+"more"
+    több
+"Move Item Down in Playlist"
+    Bejegyzés mozgatása lefelé a lejátszólistában
+"Move Item Up in Playlist"
+    Bejegyzés mozgatása felfelé a lejátszólistában
+"movie"
+    Movie
+"Movies"
+    Filmek
+"Movies, 3&frac12; Stars or more"
+    Filmek (3 vagy több főszereplő)
+"Movies, Stinkers (2 Stars or less)"
+    Filmek (1-2 főszereplő)
+"Music"
+    Zene
+"Music Specials"
+    Zenei specialitás
+"My Session"
+    Saját rész
+"MythMusic on the web."
+    MythMusic az interneten
+"MythMusic_Prefixes_To_Ignore"
+"MythTV"
+    MythTV
+"MythTV Status"
+    MythTV állapot
+"MythVideo Artwork Dir"
+    MythVideo Munkaköyvtár
+"MythVideo Dir"
+    MythVideo Könyvtár
+"MythVideo on the web."
+    MythVideo az Interneten
+"mythvideo.db_folder_view"
+    mythvideo.db_könyvtár_nézet
+"mythvideo.ImageCacheSize"
+    mythvideo.KépGyorstárMéret
+"mythvideo.sort_ignores_case"
+"MythWeb"
+    MythWeb
+"MythWeb Defaults"
+    A Mythweb alapértelmezései
+"MythWeb Global Defaults"
+    A Mythweb globális alapértelmezései
+"MythWeb Locked"
+"MythWeb Session"
+    Mythweb szakasz
+"MythWeb Skin"
+    Mythweb kinézet
+"MythWeb Weather."
+    Mythweb időjárás
+"Name"
+    Név
+"name"
+    név
+"Narrow Your Search"
+    Szűk keresés
+"Never Record"
+    Soha ne rögítse
+"New"
+    Új
+"New episodes only"
+"New Episodes Only"
+    Csak az új részeket
+"New Group"
+    Új csoport
+"New Search"
+    Új keresés
+"New Titles, Premieres"
+    Újdonságok, Bemutatók
+"NO DATA"
+    NINCS ADAT
+"No Frontends allow remote control."
+    A lejátszók nem engedik a távoli vezérlést.
+"No matches found"
+    A lista üres
+"No matching programs found."
+    Nem találtam egyező programot.
+"No Modules"
+"No modules were found."
+"No Public Playlists"
+    Nincs nyilvános lejátszólista
+"No recording schedules have been defined."
+    A felvételi szabálytábla üres.
+"No. of recordings to keep"
+    Megtartandó felvételek száma
+"Non-Music Specials"
+    Nem zenei specialitás
+"Non-Series HDTV"
+    HDTV nem sorozat
+"None"
+    Nincs szűrés
+"Not Listed"
+"Notes"
+    Megjegyzés
+"Number of episodes"
+    Részek száma
+"Number of shows"
+    Műsorok száma
+"Number of Songs"
+    Zeneszámok száma
+"Number of timeslots"
+    Időkeretek száma
+"Off"
+    Ki
+"Only a certain channel number"
+"Only channels marked as commercial free"
+"Only channels that carry a specific station"
+"Only display favourite channels"
+    Csak a kedven csatornák látszanak
+"Only match commercial-free channels"
+    Csak a reklámmentes adók között
+"Only match HD programs"
+    Csak a HD adások között
+"Only match non-recorded shows"
+    Csak a nem rögzíŧett műsorok egyeztetése
+"Only New Episodes"
+    Csak az új részeket
+"Only one specific channel ID (Channel priority)"
+"Only shows marked as HDTV"
+"Optimize Tables"
+    Tábla optimalizálása
+"or"
+    vagy
+"Original Airdate"
+    Sugárzás eredeti dátuma
+"Originally aired between"
+    Eredetileg ezen időkeretben sugározták
+"Override"
+    Felülírás
+"Page Down"
+    Lapozás lefelé
+"Page recorded programs"
+    Rögzített műsorok lapja
+"Page Up"
+    Lapozás felfelé
+"Part $1 of $2"
+    A $2 $1-ik része
+"Past Month"
+    Múlt hónap
+"Past Week"
+    Múlt hét
+"Past Year"
+    Tavaly
+"Paused"
+    Szüneteltetve
+"Pending"
+    Függőben
+"People"
+    Szereplők
+"People Search"
+    Szereplő keresés
+"People Search:"
+"Percent of time spent recording"
+    A felvételből eltelt idő százalékosan
+"Play"
+    Lejátszás
+"Play Recording on Frontend"
+    Felvétel lejátszása a Frontenden
+"Play this Album Now"
+    Játsza le ezt az albumot most
+"Play This Playlist Now"
+    Játsza le ezt a lejátszó listát most
+"Play this Playlist Now"
+    Játsza le ezt a lejátszó listát most
+"Play this Song Now"
+    Játsza le ezt a zeneszámot most
+"Play Time"
+    Lejátszási idő
+"Playback Group"
+    Visszajátszási csoport
+"Playback Groups"
+    Visszajátszási csoportok
+"Played %s times"
+    Lejátszva %s alkalommal
+"Played once"
+    Lejátszva egyszer
+"Playlist"
+    Lejátszó lista
+"Playlist Info"
+    Lejátszó liszta info
+"Playlist is empty"
+    A lejátszó lista üres
+"Playlist Items"
+    A lejátszólista elemei
+"Playlist Name"
+    A lejátszó lista neve
+"Playlist renamed successfully"
+    A lejátszó lista sikeresen átnevezeve
+"Playlist saved successfully"
+    A lejátszó lista sikeresen elmentve
+"Playlist: %s"
+    Lejátszó lista: %s
+"Playlists"
+    Lejátszó listák
+"Please enter an imdb number or a title to do another search"
+    Gépelj be egy imdb számot vagy számcímet más kereséshez.
+"Please see INSTALL for instructions."
+"Please wait for the pending ajax request"
+    Várj, amíg az ajax kérés teljesül
+"Pop-out player"
+"Possible conflicts"
+    Leheséges ütközések
+"Possible conflicts with this show"
+    Lehetséges ütközések ebben a műsorban
+"Power"
+    Energia
+"Power Search"
+    Erős keresés
+"Power Search:"
+"Precip"
+"Prefer a host for a storage group"
+"Prefer a host for live sports with overtime"
+"Prefer Channum"
+    Kedvelt csatornaszám
+"Prefer movies when shown at night"
+"prefer_channum"
+    Kedvelt csatorna száma a hívójelen kívül
+"Preferred Input"
+    Felvételi bemenet
+"Presented by"
+    Készítette
+"Pressure"
+    Nyomás
+"Previous Recording"
+    Korábbi felvétel
+"Previous recordings"
+    Korábbi felvételek
+"Priority for a category"
+"Priority for a category type"
+"Priority for all matching titles"
+"Priority for any show with End Late time"
+"Priority for HD shows under two hours"
+"Priority for movies by the year of release"
+"Priority when shown once"
+"Produced by"
+    Rendezte
+"Profile"
+    Profil
+"profile"
+    profil
+"Program Categories"
+"Program Detail"
+    Program részletei
+"Program Flags"
+    Műsorjelzők
+"Program ID"
+    Műsor ID
+"Program Information"
+    Műsor Információ
+"Program Listing"
+    Program listázás
+"Program Type"
+    program tipus
+"Protocol"
+    Protokol
+"Queue a job"
+    Feladat ütemezése
+"Queued"
+    Ütemezve
+"Queued jobs"
+    Ütemezett feladatok
+"Random"
+    Véletlen
+"Random Items"
+    Véletlen elemek
+"Random Mix Maker"
+    Véletlen mix készítő
+"Random Type"
+    Véletlen tipus
+"Rating"
+    Értékelés
+"Recently Added Albums"
+    Nemrég hozzáadott album
+"Recently completed jobs"
+    Nemrég befejezett munkák
+"Recently Played Songs"
+    Nemrég lejátszott dalok
+"recgroup"
+    felvételi csoport
+"Record Date"
+    Felvétel Dátuma
+"Record Length"
+    Felvétel Hossza
+"Record new and expire old"
+    Rögzítse az újat és törölje le a régit
+"Record This"
+    Ezt rögzítse
+"Recorded"
+    Rögzítve
+"Recorded Programs"
+    Felvételek
+"Recording Details"
+    A felvétel részletei
+"Recording Group"
+    Felvételi csoport
+"Recording Groups"
+    Felvételi Csoportok
+"Recording Options"
+    A felvétel opciói
+"Recording Options Help"
+"Recording Priority"
+    Felvételi elsőbbség
+"Recording Profile"
+    Felvételi profil
+"Recording Schedules"
+    Felvételi szabálytábla
+"Recording Statistics"
+    Felvételi statisztika
+"Recording Titles"
+    Felvételek Címei
+"recpriority"
+    felvelsőbbség
+"recstatus: cancelled"
+    Ez a műsor be lett programozva, de kézi vezérléssel el lett dobva.
+"recstatus: conflict"
+    Egy másik műsor magasabb prioritással lesz rögzítve.
+"recstatus: currentrecording"
+    Ez a rész korábban már rögzítve lett és még elérhető a felvételek listájában.
+"recstatus: deleted"
+    Ez a műsor rögzítés közben törölve lett, mielőtt véget ért volna.
+"recstatus: earliershowing"
+    Ez a rész egy korábbi időpontban lesz rögzítve.
+"recstatus: force_record"
+    Ennek a műsornak a rögzítése kézileg lett beálltva.
+"recstatus: inactive"
+    Ez a felvételi program inaktív.
+"recstatus: latershowing"
+    Ez a rész egy későbbi időpontban lesz rögzítve.
+"recstatus: lowdiskspace"
+    Ennek a műsornak a rögzítéséhez nincs elég szabad hely a lemezen.
+"recstatus: manualoverride"
+    Ez a műsor kézileg lett átállítva nem rögzítendőnek.
+"recstatus: neverrecord"
+    Ez a műsor sosem rögzítendőnek lett jelölve.
+"recstatus: notlisted"
+    Ez a műsor nem található a jelenlegi műsorújságban.
+"recstatus: previousrecording"
+    This episode was previously recorded according to the duplicate policy chosen for this title.
+"recstatus: recorded"
+    Ez a műsor rögzítve lett.
+"recstatus: recording"
+    Ez a műsor rögzítés alatt áll.
+"recstatus: repeat"
+    Ez a műsor egy ismétlés, nem lesz rögzítve.
+"recstatus: stopped"
+    Ez a műsor rögzítve lett, de a vége előtt meg lett állítva a felvétel.
+"recstatus: toomanyrecordings"
+    Túl sok felvétel lett már rögzítve ebből a műsorból.
+"recstatus: tunerbusy"
+    A tuner kártya használatban volt, mikor ez a műsor felvételre lett programozva.
+"recstatus: unknown"
+    The status of this showing is unknown.
+"recstatus: willrecord"
+    Ez a műsor rögzítve lesz.
+"rectype-long: always"
+    Felvétel bármikor, bármelyik csatornáről.
+"rectype-long: channel"
+    Felvétel bármikor a(z) $1 csatornáról.
+"rectype-long: daily"
+    Rögzítse ezt a műsort ebben az időkeretben minden nap.
+"rectype-long: dontrec"
+    Ne rögzítse ezt az egy műsort.
+"rectype-long: finddaily"
+    Keresse meg és rögzítse a műsort a címe alapján minden nap.
+"rectype-long: findone"
+    Keresse meg és rögzítsen egy műsort a címe alapján.
+"rectype-long: findweekly"
+    Keresse meg és rögzítse a műsort a cime alapján minden héten.
+"rectype-long: once"
+    Csak ezt a műsort rögzítse.
+"rectype-long: override"
+    Rögzítse ezt az egy műsort.
+"rectype-long: weekly"
+    Rögzítse ezt a műsort ebben az időkeretben minden héten.
+"rectype: always"
+    Mindíg
+"rectype: channel"
+    Csatorna
+"rectype: daily"
+    Napi
+"rectype: dontrec"
+    Nem rögzít
+"rectype: finddaily"
+    Napi keresés
+"rectype: findone"
+    Egyszer keres
+"rectype: findweekly"
+    Heti keresés
+"rectype: once"
+    Egyszer
+"rectype: override"
+    Felülír (rögzít)
+"rectype: weekly"
+    Heti
+"regex: articles"
+    An?|The
+"Remote"
+    Távoli
+"Remove Item from Playlist"
+    Bejegyzés törlése a lejátszólistából
+"Repair Tables"
+    Táblák javítása
+"Repeat"
+    Rerun
+"Reset"
+    Reset
+"Reset template and skin to defaults"
+    A sablon és a kinézet alaphelyzetbe állítása
+"Retry"
+    Újra
+"Return to Statistics Page"
+    Vissza a statisztikai oldalra
+"right"
+    jobb
+"Right"
+    Jobb
+"Rows to show between timeslot info"
+    Sorok az időkeret információk megjelenítéséhez
+"Running"
+    Fut
+"Saturday"
+    Szombat
+"Save"
+    Mentés
+"Save or Rename the Current Playlist"
+    Menti vagy átnevezi a jelenelegi lejátszási listát
+"Save Schedule"
+    Programtábla mentése
+"Save/Rename"
+    Mentés/Átnevezés
+"Save/Rename Playlist"
+    Mentés/Lejátszólista átnevezése
+"Saved Playlist Successfully Deleted"
+    A mentett lejátszólista sikeresen törölve
+"Saved Playlists"
+    Elmentett lejátszólista
+"Scan Collection"
+    Gyűjtemény átnézése
+"Schedule"
+    Időzített program
+"Schedule Manually"
+    Időzítés kézileg
+"Schedule normally."
+    Időzítés normál módban
+"Schedule Options"
+    Időzítési opciók
+"Schedule Override"
+    Időzítés felülírása
+"Schedule via $1."
+    $1 által időzítve
+"Scheduled"
+    Programozott
+"Scheduled Popup"
+    Programozott popup
+"Science Fiction Movies"
+    Fantasztikus filmek
+"Search"
+    Keres
+"Search $1"
+    $1 keresése
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
+"Search for:  $1"
+    $1 keresése
+"Search Music"
+    Zeneszám keresése
+"Search Phrase"
+    Keresési kifejezés
+"Search Phrase:"
+"Search Results"
+    Keresés eredménye
+"Search the Music Database"
+    Zenei adatbázis keresése
+"Search Type"
+    Keresés tipusa
+"Search Type Help"
+"Search will perform complex SQL queries against the database as per the search phrase below"
+"Searches"
+    Keresőprofilok
+"Searches will be performed against the title of all TV shows"
+"Series ID"
+    Sorozat ID
+"Server Statistics"
+    Szerver statisztikák
+"Set Host"
+    Gép beállítása
+"Settings"
+    Beállítások
+"settings"
+    Beállítások
+"Settings Table"
+    Beállítási tábla
+"settings/stream: protocol"
+    Sok médialejátszó nem képes a HTTPS szerver által sugárzott fájlok lejátszására<br/>
+    Ezért ha a Mythwebet HTTPS-en keresztül futtatod, akkor készítened kell egy nem-ssl<br/>
+    telepítést és ellenőrizni kell ezt a szövegdobozt, mely minden sugárzásletöltéset<br/>
+    HTTP-n keresztül old meg.
+"settings: notice"
+    Figyelem:<br><br>
+    Néhány beállítási lapnak nagyon kevés a hibaellenőrzése. Könnyen belebonyolódhatsz, ha
+    nem vagy kellően körültekintő. Az adatbásis egyszerű helyreállításával <b>nem</b>
+    lehetséges a változtatások visszaállítása.
+"Shift"
+    Léptet
+"Show"
+    Mutat
+"Show group"
+    Műsor csoport
+"Show pixmaps"
+    Pixmap mutatása
+"Show recordings"
+    Felvételek megjelenítése
+"show_channel_icons"
+    Csatorna ikon mutatása
+"show_popup_info"
+    Mutatja az egér feletti információt a prograsmokról
+    Show mouseover information about programs
+"show_video_covers"
+    Mutassa a video borítókat a video felületen
+"Showing all programs from the $1 group."
+    Mutatja a(z) $1 csoport összes műsorát
+"Showing all programs."
+    Az összes műsort mutatja
+"Showings between"
+    Műsorok ezek között
+"Shows"
+    Műsorok
+"Skip Ahead"
+    Léptetés Előre
+"Skip Back"
+    Léptetés Vissza
+"Some possible solutions are to make sure that mod_env
+                 is enabled in httpd.conf, as well as having followed
+                 the instructions in the README and INSTALL files."
+"Songs"
+    Dalok
+"Songs for Genre"
+    Dalok Műfajai
+"Songs Played"
+    Dalok Lejátszva
+"Songs Rated"
+    Dal értéelve
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
+    Sajnálom, de nem tudom hozzáadni ezt a lejátszó listát, mivel egymásra utalás történne.
+"sortby_channum"
+    Csatornalisták sorbarendezése a csatronaszámok alapján (kipipálva) vagy hívójel alapján (nincs pipa)
+"sourceid"
+    forrás id
+"Space"
+    Hely
+"Special Searches"
+    Speciális keresés
+"Star character"
+    Csillag karakter
+"Start Date"
+    Kezdés dátuma
+"Start Early"
+    Kezdési ráhagyás
+"Start Time"
+    Kezdési idő
+"Starting"
+    Kezdés
+"Statistics"
+    Statisztikák
+"Stats"
+    Statisztikák
+"Status"
+    Státusz
+"Status Bar"
+    Státusz vonal
+"Stereo"
+    Sztereo
+"Still Recording: Edit"
+    Felvétel alatt: Szerkesztés
+"Stopping"
+    Megállítás
+"Storage Group"
+    Tároló csoport
+"Streaming"
+    Sugárzás
+"Sub and Desc (Empty matches)"
+    (Üres egyezések)
+"Submit Search"
+    Keresés jóváhagyása
+"Subtitle"
+    Felirat
+"Subtitle and Description"
+    Felirat és leírás
+"Subtitle then Description"
+    Felirat és azután leírás
+"Subtitled"
+    Feliratozva
+"Subtitles Available"
+    Felirat elérhető
+"Sunday"
+    Vasárnap
+"Surround Sound"
+    Térbeli hangzás
+"Tab"
+    Tab
+"Temp"
+    Átmeneti
+"The database environment variables are not correctly
+                 set in the webserver conf or .htaccess file.
+                 Please read through the comments included in the file
+                 and set up the db_* environment variables correctly."
+    Az adatbázis környezeti változói nincsenek rendesen beállítva a
+    webszerver conf vagy .htaccess fájlban. Kérem olvassa át a
+    megjegyzéseket az adatbázis beállításával kapcsolatban és álltisa be
+    a db_* környezeti változókat helyesen.
+"The requested recording schedule has been deleted."
+    A kért felvételi bejegyzés törölve lett.
+"themoviedb"
+"There are no items in this Playlist!"
+    Nincs bejegyzés ebben a lejátszási listában
+"There was a problem saving your playlist"
+    Hibát találtam, a lejátszólistát mentem
+"TheTVDB"
+"This playlist is already loaded!"
+    Ez a lejétszólista már be van töltve!
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+    Ez felül fogja írni a jelenleg még nem mentett lejátszólistát. Szeretnéd folytatni?
+"Thursday"
+    Csütörtök
+"Time"
+    Idő
+"Time Span"
+    Időáthidalás
+"Time Stretch"
+    Időszéthúzás
+"Time Stretch Default"
+    Időszéthúzás alapértelmezése
+"Timeslot size"
+    Időkeret mérete
+"title"
+    cím
+"Title"
+    Cím
+"Title Match"
+    Cím egyeztetés
+"Title search"
+    Cím keresése
+"Title Search"
+    Cím keresése
+"Title Search:"
+"Title:"
+"Too Many"
+    Túl sok
+"Top $1"
+    $1 Teteje
+"Top Played Songs"
+    Legtöbbször lejátszott dalok
+"Top Rated Songs"
+    Leginkább értékelt dalok
+"Total Length"
+    Teljes hossz
+"Total Recorded"
+    Összesen rögzítve
+"Total Running Time"
+    Teljes futási idő
+"Total Time"
+    Összes idő
+"Total Time:  %s"
+    Összes idő: %s
+"Track #%s from the album '%s'"
+    '%s' albumról a #%s sáv
+"Transcode"
+    Átkódolás
+"transcoder"
+    átkódoló
+"Transcoder"
+    Átkódolás
+"Tuesday"
+    Kedd
+"Tuner Busy"
+    A tuner foglalt
+"TV"
+    TV
+"TV functions, including recorded programs."
+    A TV funkciói felvételekkel
+"TV Submenu"
+    TV almenü
+"TV.com"
+    TV.com
+"type"
+    tipus
+"Type"
+    Típus
+"Undelete"
+    Visszaállit
+"Undelete: $1"
+    Visszaállit: $1
+"Unknown"
+    Ismeretlen
+"Unknown action"
+    Ismeretlen művelet
+"Unknown frontend"
+    Ismeretlen frontend
+"Unknown Program."
+    Ismeretlen progra,
+"Unknown Recording Schedule."
+    Ismeretlen felvételi bejegyzés.
+"Up"
+    Fel
+"Upcoming Recordings"
+    Felvételre jelölt műsorok
+"Update"
+    Frissítés
+"Update Recording Settings"
+    Felvételi beállítások frissítése
+"Use callsign"
+    Hívójel használata
+"Use date/time"
+    Használja a dátumot/időt
+"useonairguide"
+    használja a sugárzott műsorújságot
+"Value"
+    Érték
+"Video"
+    Video
+"Video Bitrate"
+    Video bitráta
+"Video Playback"
+    Video visszajátszás
+"Video: Error: IMDB"
+    Végzetes hiba, Sajnálom, de meghiúsult az imdb adatok fogadása. Ellenőrizd az imdb számodat, amennyiben kézzel vitted be.
+"Video: Error: IMDB: Not Found"
+    Végzetes hiba, Az IMDB nem lett beállítva a beállítások táblázatába. Állítsd be a beállítások lapon.
+"Video: Error: Missing ID"
+    Végzeted hiba, Hiányzó ID. Valamiért nem lett az id elküldve az imdb szkriptnek.
+"Video: IMDB: No Matches"
+    Nem lett eredménye a keresésnek ezen cím alapján. Használd az egyéni keresőt az imdb szám bevitelére vagy válsszon másik címet az ismételt kereséshez.
+"Video: IMDB: Window Title"
+    IMDB találatok
+"Video: Warning: Artwork"
+    Figyelem, A video stáblista frissítése meghíúsult. Ellenőrizd az engedélyeket a Video stáblista könyvtárban, ezen a gépen
+"Video: Warning: Artwork: Download"
+    A stáblista letöltése az imdb-ről meghiúsult.
+"Video: Warning: fopen"
+    Figyelem, A php.ini fájlodban az allow_url_fopen ki van kapcsolva. Ahhoz, hogy le lehesen tölteni, engedélyezni kell azt. A stáblista nem lesz frissítve.
+"VideoAggressivePC"
+"VideoArtworkDir"
+    Video stáblista könyvtár
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+    Alapértelmezett video szülői felügyeleti szint
+"VideoDefaultPlayer"
+    Alapértelmezett videolejátszó
+"videofilters"
+    Videószűrők
+"VideoGalleryAspectRatio"
+    Video galéria képarány
+"VideoGalleryColsPerPage"
+    Video galéria oszlopok száma képernyőnként
+"VideoGalleryNoDB"
+    Video galéria nincs adatbázis
+"VideoGalleryRowsPerPage"
+    Video galéria sorok száma képernyőnként
+"VideoGallerySubtitle"
+    Video galária feliratozás
+"VideoListUnknownFiletypes"
+    Video lista ismeretlen fájltipus
+"VideoNewBrowsable"
+    Video új böngészés
+"Videos"
+    Videók
+"VideoStartupDir"
+    Video indítási könyvtár
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
+"View Albums by %s"
+    Album nézet ezzel: %s
+"View Details of %s"
+    A(z) %s részleteinek megtekintése
+"View Saved Playlist"
+    Elmentett lejátszólisták megtekintése
+"View Server Statistics"
+    Szerver statisztikák megtekintése
+"Visibility"
+    Láthatóság
+"visible"
+    Látható
+"Visit $1"
+    A(z) $1 látogatása
+"Watch on frontend"
+"Watch on iPod/iPhone"
+"Watched"
+    Megtekintve
+"Weather"
+    Időjárás
+"web_video_imdb_path"
+    Path to imdb.pl on this webserver
+"web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
+"Wednesday"
+    Szerda
+"welcome: backend_log"
+    Mutatja a szervernaplót.
+"welcome: music"
+    Zenei gyűjetmény tallózása.
+"welcome: remote"
+    Távoli
+"welcome: settings"
+    Konfigurálja a Mythweb és pár más MytvTV beállítást.
+"welcome: stats"
+    MythTV felvételi statisztikák.
+"welcome: status"
+    Mutatja a háttérszerver státuszlapot.
+"welcome: tv"
+    Megnézheted a programozott felvételeket vagy hogy mi megy éppen a TV-ben, valamint
+    kezelheted a már rögzített műsorokat. Íme a választék:
+"welcome: video"
+    Saját videogyűjtemény böngészése.
+"welcome: weather"
+    Helyi időjárás jelentés.
+"What else is on at this time?"
+    Mi más van még ebben az időpontban?
+"Widescreen"
+    Széles képernyő
+"Width"
+    Szélesség
+"Will Record"
+    Rögzítve lesz
+"Wind"
+    Szél
+"Wind Chill"
+    Hűvös szél
+"Written by"
+    Írta
+"xmltvid"
+    xmltvid
+"Year"
+    Év
+"Yes"
+    Igen
+"Yesterday"
+    Tegnap
+"You are most likely receiving this message because you have failed to configure mythweb's database login info."
+    Ehhez hasonló üzenetet kell, hogy kapjál, mivel meghiúsult a mythweb adatabázis bejelentkezési információ beállítása
