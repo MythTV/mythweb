@@ -85,6 +85,9 @@
     $Groups = array();
     $Program_Titles = array();
     $scheduled = Program::getScheduled();
+    if (empty($scheduled)) {
+        $scheduled = array();
+    }
 
     foreach ($scheduled as $callsign => &$shows) {
     // Now the shows in this channel
