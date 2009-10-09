@@ -282,6 +282,24 @@ class WeatherScreen {
     // Populate data array
         while($dataitem = $sh->fetch_col())
             $this->data[$dataitem] = $output_array[$dataitem];
+
+    // Convert day numbers to text, if necessary
+        foreach (array_keys($this->data) as $key) {
+            if (strpos($key, 'date-') !== false) {
+                if (is_numeric($this->data[$key])) {
+                    switch ($this->data[$key]) {
+                        case 0: $this->data[$key] = t('Sunday');    break;
+                        case 1: $this->data[$key] = t('Monday');    break;
+                        case 2: $this->data[$key] = t('Tuesday');   break;
+                        case 3: $this->data[$key] = t('Wednesday'); break;
+                        case 4: $this->data[$key] = t('Thursday');  break;
+                        case 5: $this->data[$key] = t('Friday');    break;
+                        case 6: $this->data[$key] = t('Saturday');  break;
+                    }
+                }
+            }
+        }
+    
     }
 
     function runScript( $script, $args ) {
