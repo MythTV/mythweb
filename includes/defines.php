@@ -96,6 +96,9 @@
     $_SERVER['HTTP_HOST'] = $host;
     $_SERVER['HTTP_PORT'] = $port;
 
+    if ($_SERVER['HTTP_PORT'] == '443' || $_SERVER['HTTP_PORT'] == '8443')
+        $_SERVER['HTTPS'] = 'on';
+
     define('root_url',   ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://' ).http_host.root);
 
     $stream_url = 'http';
