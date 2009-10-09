@@ -71,7 +71,6 @@
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
-"An unknown module was specified"
 "and"
 "Any"
 "Any Category"
@@ -172,10 +171,7 @@
 "Customize Screens"
 "Data"
 "Database"
-"Database Access Denied"
-"Database Error"
 "Database Health"
-"Database Setup Error"
 "Date"
 "Date Formats"
 "Deactivated"
@@ -243,8 +239,6 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
-"Failure to autoload class $1!"
-"Fatal Error"
 "File Size"
 "film"
 "Filter"
@@ -302,8 +296,6 @@
 "Hour Format"
 "hue"
 "Humidity"
-"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
-                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -444,8 +436,6 @@
 "No matches found"
 "No matching programs found."
     No matching programmes found.
-"No Modules"
-"No modules were found."
 "No Public Playlists"
 "No recording schedules have been defined."
 "No. of recordings to keep"
@@ -509,7 +499,6 @@
 "Playlist: %s"
 "Playlists"
 "Please enter an imdb number or a title to do another search"
-"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
 "Pop-out player"
 "Possible conflicts"
@@ -740,9 +729,6 @@
 "Shows"
 "Skip Ahead"
 "Skip Back"
-"Some possible solutions are to make sure that mod_env
-                 is enabled in httpd.conf, as well as having followed
-                 the instructions in the README and INSTALL files."
 "Songs"
 "Songs for Genre"
 "Songs Played"
@@ -777,10 +763,6 @@
 "Surround Sound"
 "Tab"
 "Temp"
-"The database environment variables are not correctly
-                 set in the webserver conf or .htaccess file.
-                 Please read through the comments included in the file
-                 and set up the db_* environment variables correctly."
 "The requested recording schedule has been deleted."
 "themoviedb"
 "There are no items in this Playlist!"
@@ -910,4 +892,3 @@
 "Year"
 "Yes"
 "Yesterday"
-"You are most likely receiving this message because you have failed to configure mythweb's database login info."

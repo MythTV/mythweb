@@ -136,7 +136,6 @@
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Hiba történt a lejátszási lista hozzáadásakor
-"An unknown module was specified"
 "and"
     és
 "Any"
@@ -327,11 +326,8 @@
     Adat
 "Database"
     Adatbázis
-"Database Access Denied"
-"Database Error"
 "Database Health"
     Adatbázis épsége
-"Database Setup Error"
 "Date"
     Dátum
 "Date Formats"
@@ -460,7 +456,6 @@
     Részletes vizsgálat
 "Extra Information"
     Extra Információ
-"Fatal Error"
 "File Size"
     Fájlméret
 "film"
@@ -562,8 +557,6 @@
     szinárnyalat
 "Humidity"
     Páratartalom
-"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
-                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
     Kihagyja az általános műsorokat
 "Ignore scheduled shows"
@@ -788,8 +781,6 @@
     A lista üres
 "No matching programs found."
     Nem találtam egyező programot.
-"No Modules"
-"No modules were found."
 "No Public Playlists"
     Nincs nyilvános lejátszólista
 "No recording schedules have been defined."
@@ -907,7 +898,6 @@
     Lejátszó listák
 "Please enter an imdb number or a title to do another search"
     Gépelj be egy imdb számot vagy számcímet más kereséshez.
-"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
     Várj, amíg az ajax kérés teljesül
 "Pop-out player"
@@ -1243,9 +1233,6 @@
     Léptetés Előre
 "Skip Back"
     Léptetés Vissza
-"Some possible solutions are to make sure that mod_env
-                 is enabled in httpd.conf, as well as having followed
-                 the instructions in the README and INSTALL files."
 "Songs"
     Dalok
 "Songs for Genre"
@@ -1314,14 +1301,6 @@
     Tab
 "Temp"
     Átmeneti
-"The database environment variables are not correctly
-                 set in the webserver conf or .htaccess file.
-                 Please read through the comments included in the file
-                 and set up the db_* environment variables correctly."
-    Az adatbázis környezeti változói nincsenek rendesen beállítva a
-    webszerver conf vagy .htaccess fájlban. Kérem olvassa át a
-    megjegyzéseket az adatbázis beállításával kapcsolatban és álltisa be
-    a db_* környezeti változókat helyesen.
 "The requested recording schedule has been deleted."
     A kért felvételi bejegyzés törölve lett.
 "themoviedb"
@@ -1550,5 +1529,3 @@
     Igen
 "Yesterday"
     Tegnap
-"You are most likely receiving this message because you have failed to configure mythweb's database login info."
-    Ehhez hasonló üzenetet kell, hogy kapjál, mivel meghiúsult a mythweb adatabázis bejelentkezési információ beállítása

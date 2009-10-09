@@ -136,7 +136,6 @@
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Ett fel uppstod vid tillägg av din spellista.
-"An unknown module was specified"
 "and"
     och
 "Any"
@@ -328,11 +327,8 @@
     Data
 "Database"
     Databas
-"Database Access Denied"
-"Database Error"
 "Database Health"
     Databasens hälsa
-"Database Setup Error"
 "Date"
     Datum
 "Date Formats"
@@ -453,8 +449,6 @@
     Utbredd kontroll
 "Extra Information"
     Extra information
-"Failure to autoload class $1!"
-"Fatal Error"
 "File Size"
     Filstorlek
 "film"
@@ -556,8 +550,6 @@
     färgton
 "Humidity"
     Luftfuktighet
-"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
-                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
     Ignorera allmänna shower
 "Ignore scheduled shows"
@@ -784,8 +776,6 @@
     Inga träffar
 "No matching programs found."
     Inga matchande program hittades.
-"No Modules"
-"No modules were found."
 "No Public Playlists"
     Inga publika spellistor
 "No recording schedules have been defined."
@@ -903,7 +893,6 @@
     Spellistor
 "Please enter an imdb number or a title to do another search"
     Ange ett imdb-nummer och en titel för att göra en ny sökning
-"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
     Vänta på den pågående ajax-begäran
 "Pop-out player"
@@ -1235,9 +1224,6 @@
     Hoppa Framåt
 "Skip Back"
     Hoppa Bakåt
-"Some possible solutions are to make sure that mod_env
-                 is enabled in httpd.conf, as well as having followed
-                 the instructions in the README and INSTALL files."
 "Songs"
     Sånger
 "Songs for Genre"
@@ -1305,10 +1291,6 @@
     Flik
 "Temp"
     Tillfälligt
-"The database environment variables are not correctly
-                 set in the webserver conf or .htaccess file.
-                 Please read through the comments included in the file
-                 and set up the db_* environment variables correctly."
 "The requested recording schedule has been deleted."
     Det begärda inspelningsschemat har tagits bort.
 "themoviedb"
@@ -1545,4 +1527,3 @@
     Ja
 "Yesterday"
     Igår
-"You are most likely receiving this message because you have failed to configure mythweb's database login info."

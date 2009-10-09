@@ -137,7 +137,6 @@
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
     Une erreur est survenue lors de l'ajout de votre liste d'écoute.
-"An unknown module was specified"
 "and"
     et
 "Any"
@@ -329,14 +328,8 @@
     Données
 "Database"
     Base de donnée
-"Database Access Denied"
-    Accès à la base de donnée refusé
-"Database Error"
-    Erreur de base de donnée
 "Database Health"
     Santé de la base de donnée
-"Database Setup Error"
-    Erreur de configuration de la base de donnée
 "Date"
     Date
 "Date Formats"
@@ -466,10 +459,6 @@
     Contrôle étendu
 "Extra Information"
     Information additionelle
-"Failure to autoload class $1!"
-    Echec du chargement automatique de la classe $1!
-"Fatal Error"
-    Erreur fatale
 "File Size"
     Taille du fichier
 "film"
@@ -571,8 +560,6 @@
     teinte
 "Humidity"
     Humidité
-"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
-                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
 "Ignore generic shows"
     Ignorer les émissions génériques
 "Ignore scheduled shows"
@@ -797,10 +784,6 @@
     Aucune correspondance
 "No matching programs found."
     Aucune émission correspondante trouvée.
-"No Modules"
-    Pase de modules
-"No modules were found."
-    Aucun module n'a été trouvé.
 "No Public Playlists"
     Pas de liste d'écoute publiques
 "No recording schedules have been defined."
@@ -918,7 +901,6 @@
     Listes d'écoute
 "Please enter an imdb number or a title to do another search"
     SVP saisir un numéro imdb ou un titre pour faire une autre recherche
-"Please see INSTALL for instructions."
 "Please wait for the pending ajax request"
     SVP attendez pour la requête ajax
 "Pop-out player"
@@ -1254,9 +1236,6 @@
     Saut avant
 "Skip Back"
     Saut arrière
-"Some possible solutions are to make sure that mod_env
-                 is enabled in httpd.conf, as well as having followed
-                 the instructions in the README and INSTALL files."
 "Songs"
     Chansons
 "Songs for Genre"
@@ -1325,10 +1304,6 @@
     Tab
 "Temp"
     Temp.
-"The database environment variables are not correctly
-                 set in the webserver conf or .htaccess file.
-                 Please read through the comments included in the file
-                 and set up the db_* environment variables correctly."
 "The requested recording schedule has been deleted."
     La programmation d'enregistrement demandé a été effacé.
 "themoviedb"
@@ -1546,5 +1521,3 @@
     Oui
 "Yesterday"
     Hier
-"You are most likely receiving this message because you have failed to configure mythweb's database login info."
-    Vous recevez probablement ce message parce que vous n'avez pas configuré l'information de connection à la base de donnée de mythweb.
