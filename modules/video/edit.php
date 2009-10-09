@@ -45,6 +45,9 @@ header("Content-Type: text/html; charset=utf-8");
 //check to see if the form has been submitted
     if (isset($_REQUEST['submit'])) {
         $Video->title       = $_REQUEST['title'];
+        $Video->subtitle    = $_REQUEST['subtitle'];
+        $Video->season      = $_REQUEST['season'];
+        $Video->episode     = $_REQUEST['episode'];
         $Video->director    = $_REQUEST['director'];
         $Video->plot        = $_REQUEST['plot'];
         $Video->category    = $_REQUEST['category'];
@@ -80,6 +83,12 @@ header("Content-Type: text/html; charset=utf-8");
 <form method="post" action="<?php echo root_url ?>video/edit" enctype="multipart/form-data">
 Title<br>
 <input name="title" type="text" value="<?php echo htmlspecialchars($Video->title, ENT_QUOTES ); ?>"><br><br>
+Subtitle<br>
+<input name="subtitle" type="text" value="<?php echo htmlspecialchars($Video->subtitle, ENT_QUOTES ); ?>"><br><br>
+Season:<br>
+<input name="season" type="text" size="3" value="<?php echo intval($Video->season); ?>"><br><br>
+Episode:<br>
+<input name="episode" type="text" size="3" value="<?php echo intval($Video->episode); ?>"><br><br>
 Director<br>
 <input name="director" type="text" value="<?php echo htmlspecialchars($Video->director, ENT_QUOTES ); ?>"><br><br>
 Plot<br>

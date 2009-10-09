@@ -304,7 +304,13 @@
         <div id="<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
         <div id="<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
-        <div id="<?php echo $video->intid; ?>-title" class="title"><a href="<?php echo $video->url; ?>"><?php echo html_entities($video->title); ?></a></div>
+        <div id="<?php echo $video->intid; ?>-title" class="title">
+            <a href="<?php echo $video->url; ?>"><?php echo html_entities($video->title); ?></a><?php 
+                  if (($video->season > 0) && ($video->episode >= 0)) 
+                      printf('(S%02d E%02d)', $video->season, $video->episode); 
+                  if (strlen($video->subtitle) > 0) 
+                      echo '<br>' . html_entities($video->subtitle); 
+            ?></div>
         <div id="<?php echo $video->intid; ?>_img">                <img <?php if ($_SESSION["show_video_covers"] && file_exists($video->cover_file)) echo 'src="'.$video->cover_url.'"'; echo ' width="'.$video->cover_scaled_width.'" height="'.$video->cover_scaled_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
         <div id="<?php echo $video->intid; ?>-category">           <?php echo $Category_String[$video->category]; ?></div>
         <div id="<?php echo $video->intid; ?>_playtime">           <?php echo nice_length($video->length * 60); ?></div>

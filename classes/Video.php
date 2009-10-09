@@ -7,6 +7,9 @@ class Video {
     var $category;
     var $rating;
     var $title;
+    var $subtitle;
+    var $season;
+    var $episode;
     var $director;
     var $inetref;
     var $year;
@@ -40,6 +43,9 @@ class Video {
         $this->category     = $video['category'];
         $this->rating       = $video['rating'];
         $this->title        = $video['title'];
+        $this->subtitle     = $video['subtitle'];
+        $this->season       = $video['season'];
+        $this->episode      = $video['episode'];
         $this->director     = $video['director'];
         $this->inetref      = $video['inetref'];
         $this->year         = $video['year'] ? $video['year'] : 'Unknown';
@@ -89,6 +95,9 @@ class Video {
                                        .(($_SESSION["show_video_covers"] && file_exists($this->cover_url)) ? ' src="data/video_covers/'.basename($this->cover_file).'"' : '')
                                        .'>',
                       'title'       => '<a href="'.$this->url.'">'.$this->title.'</a>',
+                      'subtitle'    => $this->subtitle,
+                      'season'      => $this->season,
+                      'episode'     => $this->episode,
                       'playtime'    => nice_length($this->length * 60),
                       'category'    => strlen($Category_String[$this->category]) ? $Category_String[$this->category] : 'Uncategorized',
                       'imdb'        => ($this->inetref != '00000000') ? '<a href="http://www.imdb.com/Title?'.$this->inetref.'">'.$this->inetref.'</a>' : '',
@@ -110,6 +119,9 @@ class Video {
                            videometadata.category     = ?,
                            videometadata.rating       = ?,
                            videometadata.title        = ?,
+                           videometadata.subtitle     = ?,
+                           videometadata.season       = ?,
+                           videometadata.episode      = ?,
                            videometadata.director     = ?,
                            videometadata.inetref      = ?,
                            videometadata.year         = ?,
@@ -124,6 +136,9 @@ class Video {
                     $this->category,
                     $this->rating,
                     $this->title,
+                    $this->subtitle,
+                    $this->season,
+                    $this->episode,
                     $this->director,
                     $this->inetref,
                     $this->year,
