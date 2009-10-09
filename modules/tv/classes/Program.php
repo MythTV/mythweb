@@ -848,7 +848,7 @@ class Program {
                                             ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC
                                    LIMIT 1',
                                    $this->chanid,
-                                   $this->starttime
+                                   $this->recstartts
                                    );
         switch($aspect) {
             case 10:
