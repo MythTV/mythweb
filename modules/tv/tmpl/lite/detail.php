@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-<?php    if (strlen($schedule->subtitle) || strlen($schedule->getFancyDescription()) || !empty($program->recstatus)) { ?>
+<?php    if (strlen($schedule->subtitle) || strlen($schedule->fancy_description) || !empty($program->recstatus)) { ?>
         <div id="program_details">
             <dl>
 <?php       if (strlen($schedule->subtitle)) { ?>
@@ -91,11 +91,11 @@
                 echo $schedule->subtitle;
                     ?></dd>
 <?php       }
-            if (strlen($schedule->getFancyDescription())) {
+            if (strlen($schedule->fancy_description)) {
 ?>
                 <dt<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php echo t('Description') ?>:&nbsp;</dt>
                 <dd<?php if ($_GET['recordid']) echo ' class="bold"' ?>><?php
-                    echo nl2br($schedule->getFancyDescription());
+                    echo nl2br($schedule->fancy_description);
                     ?></dd>
 <?php       }
             if (!empty($program->recstatus)) {

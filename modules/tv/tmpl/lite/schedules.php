@@ -124,7 +124,8 @@
     <td nowrap><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
     <td nowrap>
         <?php
-        echo Transcoder::find($schedule->transcoder)
+        global $Transcoders;
+        echo _or($Transcoders[$schedule->transcoder],  '&nbsp;')
         ?>
     </td>
     <td nowrap><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
@@ -139,3 +140,4 @@
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
+

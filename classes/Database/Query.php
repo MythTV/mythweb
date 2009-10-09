@@ -90,11 +90,4 @@ class Database_Query {
         else
             $this->query = array($query);
     }
-
-    function fetch_cols() {
-        $return = array();
-        while (($col = $this->fetch_col()) !== null)
-            $return[] = $col;
-        return $return;
-    }
 }

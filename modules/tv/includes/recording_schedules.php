@@ -59,3 +59,48 @@
                       rectype_finddaily  => t('rectype: finddaily'),
                       rectype_findweekly => t('rectype: findweekly'),
                      );
+
+// Global lists of recording schedules and scheduled recordings
+    global $Schedules;
+    $Schedules = array();
+
+    $result = $db->query('SELECT record.*,
+                                 IF(record.type='.rectype_always.',-1,record.chanid)            AS chanid,
+                                 UNIX_TIMESTAMP(record.startdate)+TIME_TO_SEC(record.starttime) AS starttime,
+                                 UNIX_TIMESTAMP(record.enddate)+TIME_TO_SEC(record.endtime)     AS endtime
+                            FROM record');
+
+    while ($row = $result->fetch_assoc())
+        $Schedules[$row['recordid']] =& new Schedule($row);
+
+// Initialize
+    global $Scheduled_Recordings, $Num_Conflicts, $Num_Scheduled;
+    $Scheduled_Recordings = array();
+    $Num_Conflicts        = 0;
+    $Num_Scheduled        = 0;
+
+// Load all of the scheduled recordings.  We will need them at some point, so we
+// might as well get it overwith here.
+    foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
+        if ($key === 'offset')
+            list($Num_Conflicts, $Num_Scheduled) = $program;
+    // Normal entry:  $Scheduled_Recordings[callsign][starttime][]
+        else
+            $Scheduled_Recordings[$program[6]][$program[11]][] =& new Program($program);
+    }
+
+// Transcoder names
+    global $Transcoders;
+    $Transcoders = array();
+    $Transcoders[0] = 'Autodetect';
+    $result = $db->query('SELECT recordingprofiles.id,
+                                 recordingprofiles.name
+                            FROM recordingprofiles
+                            JOIN profilegroups
+                              ON recordingprofiles.profilegroup  = profilegroups.id
+                           WHERE cardtype                        = "TRANSCODE"
+                             AND recordingprofiles.name         != "RTjpeg/MPEG4"
+                             AND recordingprofiles.name         != "MPEG2"
+                           ');
+    while ($row = $result->fetch_assoc())
+        $Transcoders[$row['id']] = $row['name'];

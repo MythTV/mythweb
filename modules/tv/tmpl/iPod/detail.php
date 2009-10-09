@@ -77,8 +77,8 @@
                             echo ' ('.tn('$1 min', '$1 mins', intval($program->length/60)).')';
                         echo "<br>\n"; ?>
     <?php
-        if (strlen($schedule->getFancyDescription()))
-            echo '<li class="text long">'.$schedule->getFancyDescription();
+        if (strlen($schedule->fancy_description))
+            echo '<li class="text long">'.$schedule->fancy_description;
     ?>
     <li class="small"><a href="<?php echo root_url.'remote/play_program_on_frontend?chanid='.$program->chanid.'&starttime='.$program->recstartts; ?>"><?php echo t('Watch on frontend'); ?></a>
     <?php

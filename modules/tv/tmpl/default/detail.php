@@ -135,10 +135,10 @@
                 ?></div>
                 </td>
         </tr><?php
-        if (strlen($schedule->getFancyDescription())) {
+        if (!empty($schedule->fancy_description)) {
         ?><tr>
             <td id="x-description" colspan="2">
-                <?php echo nl2br($schedule->getFancyDescription()) ?>
+                <?php echo nl2br($schedule->fancy_description) ?>
             </td>
         </tr><?php
         }

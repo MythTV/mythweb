@@ -170,7 +170,7 @@
     // Reset the command variable to a default URL
         $commands = array();
         $urlstr = $show->chanid.'/'.$show->starttime;
-        if (Schedule::find($show->recordid)->search == searchtype_manual)
+        if ($Schedules[$show->recordid]->search == searchtype_manual)
             $urlstr .= '/'.$show->recordid;
     // Set the recording status character, class and any applicable commands for each show
         switch ($show->recstatus) {

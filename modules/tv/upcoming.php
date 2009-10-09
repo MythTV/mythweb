@@ -81,19 +81,19 @@
     }
 
 // Parse the list of scheduled recordings
+    global $Scheduled_Recordings;
     $all_shows = array();
     $Groups = array();
     $Program_Titles = array();
-    $scheduled = Program::getScheduled();
     if (empty($scheduled)) {
         $scheduled = array();
     }
 
-    foreach ($scheduled as $callsign => &$shows) {
+    foreach ($Scheduled_Recordings as $callsign => $shows) {
     // Now the shows in this channel
-        foreach ($shows as $starttime => &$show_group) {
+        foreach ($shows as $starttime => $show_group) {
         // Parse each show group
-            foreach ($show_group as $key => &$show) {
+            foreach ($show_group as $key => $show) {
                 $Groups[$show->recgroup]++;
             // Skip things we've already recorded (or missed)
                 if ($starttime <= time() && $show->recstatus != 'Recording')
@@ -131,7 +131,7 @@
                     || ($_GET['title'] && $show->title != $_GET['title']))
                     continue;
             // Assign a reference to this show to the various arrays
-                $all_shows[] = &$show;
+                $all_shows[] =& $Scheduled_Recordings[$callsign][$starttime][$key];
             }
         }
     }
