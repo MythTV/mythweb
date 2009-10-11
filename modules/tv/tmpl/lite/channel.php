@@ -52,7 +52,7 @@
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <td><?php echo t('Time')        ?></td>
-    <td><?php echo t('Show')        ?></td>
+    <td><?php echo t('Title')       ?></td>
     <td><?php echo t('Episode')     ?></td>
     <td><?php echo t('Description') ?></td>
     <td><?php echo t('Length')      ?></td>
