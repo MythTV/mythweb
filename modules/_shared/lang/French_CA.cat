@@ -1,0 +1,99 @@
+"Action"
+    Action
+    \b(?:action|a(|d)ven)
+"Adult"
+    Adulte
+    \b(?:adult|erot|sex)
+"Animals"
+    Animaux
+    \b(?:anima(ux|l)|tiere)
+"Art_Music"
+    Arts / Musique
+    \b(?:art|danse|spectacle|musi(que|c)|cultur)
+"Business"
+    Économie
+    \b(?:conomie|biz|busine|financial)
+"Children"
+    Jeunesse
+    \b(?:jeunesse|dessin anim|child|infan|animat)
+"Comedy"
+    Divertissement/Comédie
+    \b(?:spectacle|com.*d(ie|y)|divertissement|entertain|sitcom)
+"Crime_Mystery"
+    Policier
+    \b(?:crim|policier|myster|antholog)
+"Documentary"
+    Documentaire
+    \b(?:mag|doc)
+"Drama"
+    Drame/Théâtre
+    \b(?:th.*tre|drama)
+"Educational"
+    Éducatif
+    \b(?:cours|edu|interests)
+"Food"
+    Cuisine
+    \b(?:gastro|cuisine|food|cook|drink)
+"Game"
+    Jeux
+    \b(?:jeu|game|poker)
+"Health_Medical"
+    Santé
+    \b(?:medic|sant|health)
+"History"
+    Histoire
+    \b(?:hist)
+"Horror"
+    Horreur
+    \b(?:horr(or|eur))
+"HowTo"
+    Thématique
+    \b(?:th.*matique|how|home|house|garden)
+"Misc"
+    Variété
+    \b(?:vari|sp.*cial|info|collect|awards|fundraiser|holiday|politi)
+"movie"
+    Film
+    \b(?:film|movie|french)
+"News"
+    Information
+    \b(?:news|info|journal|current)
+"Reality"
+    Téléréalité
+    \b(?:realit.*)
+"Romance"
+    Téléfilm / Romance
+    \b(?:t.*l.*film|romance)
+"SciFi_Fantasy"
+    Fantastique / Science-Fiction
+    \b(?:fantas(tique|y)|sci\w*\W*fi)
+"Science_Nature"
+    Nature / Sciences
+    \b(?:science|nature|environ(|ne)ment|agriculture|outdoors)
+"Shopping"
+    Téléachat
+    \b(?:shop|achat|consumer|fashion)
+"Soaps"
+    Série
+    \b(?:s.*rie|soap|feuilleton|miniseries)
+"Spiritual"
+    Spirituel
+    \b(?:spirit|relig)
+"Sports"
+    Sport
+    \b(?:sport|hockey|foot|baseball|soccer|tennis|bi(cycle|king)|golf|racing|equestr|exerci|kayak|rowing|martial arts|olymp|motorcycle)
+"Talk"
+    Débat
+    \b(?:talk|d.*bat|interview)
+"Travel"
+    Voyage
+    \b(?:voyage|travel)
+"Unknown"
+    Inconnu
+    
+"War"
+    Guerre
+    \b(?:guerre|war)
+"Western"
+    Western
+    \b(?:west)

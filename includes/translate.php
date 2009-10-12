@@ -37,21 +37,22 @@
 // Define the languages that mythweb can translate into.  Each hash entry should
 // point to an array containing first the user-visible name of the language, the
 // php locale for printing and finally the matching language and charset codes.
-    $Languages['Catalan']    = array('Catal&agrave;',   'ca_ES.UTF-8', 'ca_ES');
-    $Languages['Dutch']      = array('Nederlands',      'nl_NL',       array('nl_NL', 'nl_BE'));
-    $Languages['English']    = array('English',         'en_US.UTF-8', 'en_US.ISO-8859-1');
-    $Languages['English_GB'] = array('English_GB',      'en_GB.UTF-8', 'en_GB.ISO-8859-1');
-    $Languages['French']     = array('Fran&ccedil;ais', 'fr_FR.UTF-8', 'fr_FR');
-    $Languages['Japanese']   = array('Japanese',        'ja_JP.UTF-8', 'ja_JP');
-    $Languages['Spanish']    = array('Espa&ntilde;ol',  'es_ES.UTF-8', 'es_ES');
-    $Languages['Swedish']    = array('Svenska',         'sv_SE.UTF-8', 'sv_SE');
-    $Languages['Danish']     = array('Dansk',           'da_DK.UTF-8', 'da_DK');
-    $Languages['German']     = array('Deutsch',         'de_DE',       'de_DE');
-    $Languages['Slovenian']  = array('Slovensko',       'si_SI',       'sl_SI');
-    $Languages['Finnish']    = array('Suomi',           'fi_FI.UTF-8', 'fi_FI');
-    $Languages['Czech']      = array('Czech',           'cs_CZ.UTF-8', 'cs_CZ.UTF-8');
-    $Languages['Polish']     = array('Polski',          'pl_PL.UTF-8', 'pl_PL');
-    $Languages['Hungarian']     = array('Magyar',          'hu_HU.UTF-8', 'hu_HU');
+    $Languages['Catalan']    = array('Catal&agrave;',      'ca_ES.UTF-8', 'ca_ES');
+    $Languages['Dutch']      = array('Nederlands',         'nl_NL',       array('nl_NL', 'nl_BE'));
+    $Languages['English']    = array('English',            'en_US.UTF-8', 'en_US.ISO-8859-1');
+    $Languages['English_GB'] = array('English_GB',         'en_GB.UTF-8', 'en_GB.ISO-8859-1');
+    $Languages['French']     = array('Fran&ccedil;ais',    'fr_FR.UTF-8', 'fr_FR');
+    $Languages['French_CA']  = array('Fran&ccedil;ais_CA', 'fr_CA.UTF-8', 'fr_CA');
+    $Languages['Japanese']   = array('Japanese',           'ja_JP.UTF-8', 'ja_JP');
+    $Languages['Spanish']    = array('Espa&ntilde;ol',     'es_ES.UTF-8', 'es_ES');
+    $Languages['Swedish']    = array('Svenska',            'sv_SE.UTF-8', 'sv_SE');
+    $Languages['Danish']     = array('Dansk',              'da_DK.UTF-8', 'da_DK');
+    $Languages['German']     = array('Deutsch',            'de_DE',       'de_DE');
+    $Languages['Slovenian']  = array('Slovensko',          'si_SI',       'sl_SI');
+    $Languages['Finnish']    = array('Suomi',              'fi_FI.UTF-8', 'fi_FI');
+    $Languages['Czech']      = array('Czech',              'cs_CZ.UTF-8', 'cs_CZ.UTF-8');
+    $Languages['Polish']     = array('Polski',             'pl_PL.UTF-8', 'pl_PL');
+    $Languages['Hungarian']  = array('Magyar',             'hu_HU.UTF-8', 'hu_HU');
 
 // Need to detect the language?
     if (empty($_SESSION['language']))
