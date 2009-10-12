@@ -83,6 +83,7 @@
 "Additional Tables"
     zus. Tabellen
 "Additional tables:"
+    zus. Tabellen:
 "Admin Key"
 "Advanced"
     Erweitert
@@ -99,6 +100,7 @@
 "Album Listing"
     Nach Alben
 "Album Tracks"
+    Albumtitel
 "Albums"
     Alben
 "Albums with songs by %s"
@@ -146,7 +148,9 @@
 "Are you sure you want to delete the following show?"
     Diese Aufnahme wirklich löschen?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+    Sind Sie sicher, daß Sie diese gespeicherte Wiedergabeliste löschen wollen?
 "Are you sure you want to delete this show?"
+    Sind Sie sicher, daß Sie diese Sendung löschen wollen?
 "Artist Listing"
     Nach Interpreten
 "Artists"
@@ -169,7 +173,9 @@
 "Auto-transcode"
     autom. Umwandeln
 "AVC/H.264"
+    AVC/H.264
 "Avoid poor signal quality"
+    schlechte Signalqualität vermeiden
 "Back"
     Zurück
 "Back Tab"
@@ -189,11 +195,17 @@
 "brightness"
     Helligkeit
 "Browse"
+    Stöbern
 "Browse = no"
+    Stöbern = nein
 "Browse = yes"
+    Stöbern = ja
 "Browse all"
+    Stöbern
 "Browse All Albums"
+    In allen Alben stöbern
 "Browse Music"
+    In der Musik stöbern
 "Browse the Music Database"
     In der Musikdatenbank stöbern
 "By Artist Beginning With"
@@ -212,6 +224,7 @@
 "Cast"
     Besetzung
 "Cast Information"
+    Besetzung
 "category"
     Kategorie
 "Category"
@@ -255,6 +268,7 @@
 "Click to View Playlist"
     Wiedergabeliste ansehen
 "Close Captioned priority"
+    Priorität bei Untertitel
 "Closed Captioning"
     Untertitel
 "colour"
@@ -262,6 +276,7 @@
 "Commands"
     Optionen
 "Commands:"
+    Befehle:
 "Commercials Flagged"
     Werbung markiert
 "commfree"
@@ -330,9 +345,11 @@
 "Delete and allow rerecord: $1"
     Löschen und &quot;$1&quot; erneut aufnehmen
 "Delete and rerecord"
+    Löschen und erneut aufnehmen
 "Delete and rerecord $1"
     Löschen und &quot;$1&quot; erneut aufnehmen
 "Delete Forever"
+    Für immer löschen
 "DELETE this Saved Playlist"
     Gespeicherte Wiedergabeliste löschen
 "DeleteKey"
@@ -344,6 +361,7 @@
 "Destination"
     Ziel
 "Details for: $1"
+    Einzelheiten zu: $1
 "Direct Download"
     Herunterladen
 "Directed by"
@@ -351,6 +369,7 @@
 "Display"
     Anzeigen
 "Dolby Surround"
+    Dolby-Surround
 "Don't Record"
     Nicht aufnehmen
 "Don't record this program."
@@ -367,6 +386,7 @@
 "Duplicate Check method"
     Testmethode für Wdhgn.
 "Duplicates/Ignored"
+    Wdhgn/Ignoriert
 "Earlier"
     früher
 "Earlier Showing"
@@ -401,6 +421,7 @@
 "Episode Number"
     Folge Nummer
 "Error"
+    Fehler
 "error: playgroup $1 exists"
     Fehler: Wiedergabegruppe $1 exisitiert
 "Errored"
@@ -417,9 +438,11 @@
 "Exec. Producer"
     Produzent
 "Executive Producer"
+    Ausführender Produzent
 "Extended Check"
     Erweiterte Prüfung
 "Extra Information"
+    Weitere Informationen
 "File Size"
     Dateigröße
 "film"
@@ -446,6 +469,7 @@
     Fertig
 "First recording"
 "First showing of each episode"
+    Erste Ausstrahlung jeder Folge
 "Flag Commercials"
     Werbung markieren
 "For more information on the Power Search please go to:"
@@ -573,6 +597,7 @@
 "Keyword Search"
     Suche nach Schlüsselwort
 "Keyword Search:"
+    Schlüsselwort Suche:
 "Keywords"
     Schlüsselwörter
 "Language"
@@ -627,6 +652,7 @@
 "Manual"
     Manuell
 "Match related callsigns"
+    Auf bestimmte Sender begrenzen
 "matches"
     enthält
 "Max star rating for movies"
@@ -636,11 +662,17 @@
 "Missing Cover"
     fehlendes Titelbild
 "Modify priority by star rating (0.0 to 1.0 for movies only)"
+    Priorität bei Sternchenbewertung ändern (0,0 - 1,0 - nur für Filme)
 "Modify priority for a station on an input"
+    Priorität eines Senders von einem best. Eingang ändern
 "Modify priority for all inputs on a card"
+    Priorität aller Eingänge einer Karte ändern
 "Modify priority for an input (Input priority)"
+    Priorität eines Eingangs ändern (Eingangspriorität)
 "Modify priority for every card on a host"
+    Priorität aller Karten eines Rechners ändern
 "Modify unidentified episodes"
+    Unbekannte Folgen
 "Monday"
     Montag
 "Mono"
@@ -666,6 +698,7 @@
 "MythMusic on the web."
     MythMusic
 "MythMusic_Prefixes_To_Ignore"
+    a an the die
 "MythTV"
 "MythTV Status"
     MythTV Status
@@ -700,6 +733,7 @@
 "New"
     Neu
 "New episodes only"
+    nur neue Folgen
 "New Episodes Only"
     nur neue Folgen
 "New Group"
@@ -729,8 +763,9 @@
 "None"
     Keine
 "Not Listed"
+    Nicht im TV-Programm
 "Notes"
-    Hinweis
+    Hinweise
 "Number of episodes"
     Anzahl Folgen
 "Number of shows"
@@ -740,8 +775,11 @@
 "Number of timeslots"
     Anzahl der Zeitfenster
 "Off"
+    Aus
 "Only a certain channel number"
+    Nur ein bestimmter Senderplatz
 "Only channels marked as commercial free"
+    Nur werbefreie Sender
 "Only channels that carry a specific station"
 "Only display favourite channels"
     Nur Favoriten anzeigen
@@ -750,10 +788,13 @@
 "Only match HD programs"
     nur Sendungen in HD
 "Only match non-recorded shows"
+    nur noch nicht aufgenommene Sendungen
 "Only New Episodes"
     Nur neue Folgen
 "Only one specific channel ID (Channel priority)"
+    Nur ein bestimmter Sender (Senderpriorität)
 "Only shows marked as HDTV"
+    nur Sendungen in HDTV
 "Optimize Tables"
     Tabellen optimieren
 "or"
@@ -781,14 +822,16 @@
 "Pending"
     ausstehend
 "People"
-    Leute
+    Personen
 "People Search"
     Suche nach Darsteller
 "People Search:"
+    Suche nach Darsteller:
 "Percent of time spent recording"
 "Play"
     Abspielen
 "Play Recording on Frontend"
+    die Aufnahme im Frontend abspielen
 "Play this Album Now"
     Dieses Album abspielen
 "Play This Playlist Now"
@@ -918,9 +961,11 @@
 "Recording Group"
     Aufnahmegruppe
 "Recording Groups"
+    Aufnahmegruppen
 "Recording Options"
     Aufnahmeoptionen
 "Recording Options Help"
+    Aufnahmeoptionen Hilfe
 "Recording Priority"
     Aufnahmepriorität
 "Recording Profile"
@@ -1019,6 +1064,7 @@
 "Remote"
     Fernsteuerung
 "Remove Item from Playlist"
+    Eintrag aus der Wiedergabeliste entfernen
 "Repair Tables"
     Tabellen reparieren
 "Repeat"
@@ -1031,7 +1077,9 @@
 "Return to Statistics Page"
     Zurück zur Statistikseite
 "right"
+    rechts
 "Right"
+    Rechts
 "Rows to show between timeslot info"
     Reihen nach denen die Zeitleiste wiederholt wird
 "Running"
@@ -1081,12 +1129,15 @@
 "Search for:  $1"
     Suche nach: $1
 "Search Music"
+    Musik suchen
 "Search Phrase"
     Suchtext
 "Search Phrase:"
+    Suchtext:
 "Search Results"
     Suchergebnisse
 "Search the Music Database"
+    In der Musikdatenbank suchen
 "Search Type"
     Suchtyp
 "Search Type Help"
@@ -1149,6 +1200,7 @@
 "sourceid"
     Source ID
 "Space"
+    Platz
 "Special Searches"
     Spezielle Suchanfragen
 "Star character"
@@ -1160,6 +1212,7 @@
 "Start Time"
     Uhrzeit
 "Starting"
+    Beginnt
 "Statistics"
     Statistiken
 "Stats"
@@ -1171,8 +1224,9 @@
 "Stereo"
     Stereo
 "Still Recording: Edit"
-    nehme immer noch auf: bearbeiten
+    Aufnahme läuft noch: Bearbeiten
 "Stopping"
+    Stoppe
 "Storage Group"
     Speichergruppe
 "Streaming"
@@ -1192,7 +1246,7 @@
 "Sunday"
     Sonntag
 "Surround Sound"
-    Surround Ton
+    Surround-Ton
 "Tab"
 "Temp"
 "The requested recording schedule has been deleted."
@@ -1206,6 +1260,7 @@
 "This playlist is already loaded!"
     Wiedergabeliste bereits geladen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+    Dies wird die aktuelle, noch nicht gespeicherte Wiedergabeliste überschreiben. Möchten Sie wirklich fortsetzen?
 "Thursday"
     Donnerstag
 "Time"
@@ -1229,12 +1284,17 @@
 "Title Search"
     Titel Suche
 "Title Search:"
+    Titel Suche:
 "Title:"
+    Titel:
 "Too Many"
     zu viele
 "Top $1"
+    Top $1
 "Top Played Songs"
+    Meistgespielte Lieder
 "Top Rated Songs"
+    Bestbewertete Lieder
 "Total Length"
     Gesamtdauer
 "Total Recorded"
@@ -1260,8 +1320,9 @@
 "TV"
     TV
 "TV functions, including recorded programs."
-    TV-Funktionen incl. allen Aufnahmen
+    TV-Funktionen inkl. allen Aufnahmen
 "TV Submenu"
+    TV-Untermenü
 "TV.com"
     TV.com
 "type"
@@ -1275,7 +1336,9 @@
 "Unknown"
     Unbekannt
 "Unknown action"
+    Unbekannte Funktion
 "Unknown frontend"
+    Unbekanntes Frontend
 "Unknown Program."
     Unbekannte Sendung.
 "Unknown Recording Schedule."
@@ -1303,13 +1366,21 @@
 "Video Playback"
     Video Wiedergabe
 "Video: Error: IMDB"
+    Video Fehler: IMDB
 "Video: Error: IMDB: Not Found"
+    Video Fehler: IMDB: Nicht gefunden
 "Video: Error: Missing ID"
+    Video Fehler: fehlende ID
 "Video: IMDB: No Matches"
+    Video IMDB: keine Treffer
 "Video: IMDB: Window Title"
+    Video IMDB: Fenstertitel
 "Video: Warning: Artwork"
+    Video Achtung: Artwork
 "Video: Warning: Artwork: Download"
+    Video Achtung: Artwork: Download
 "Video: Warning: fopen"
+    Video Achtung: fopen
 "VideoAggressivePC"
 "VideoArtworkDir"
 "VideoBrowserNoDB"
