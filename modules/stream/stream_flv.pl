@@ -8,6 +8,8 @@
 # @author    $Author$
 #
 
+    use Math::Round qw(round_even);
+
     our $ffmpeg_pid;
 
 # Shutdown cleanup, of various types
@@ -44,13 +46,14 @@
     $sh->finish();
 # auto-detect height based on aspect ratio
     $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND data IS NOT NULL ORDER BY data DESC');
-    $sh->execute($chanid,$starttime); 
+    $sh->execute($chanid,$starttime);
     $x = $sh->fetchrow_array;
     $y = $sh->fetchrow_array if ($x);
+    $width = round_even(width);
     if ($x && $y) {
-        $height = int($width * ($y/$x));
+        $height = round_even($width * ($y/$x));
     } else {
-        $height = int($width * 3/4);
+        $height = round_even($width * 3/4);
     }
     $sh->finish();
 
