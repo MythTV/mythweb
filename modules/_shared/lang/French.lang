@@ -3,7 +3,6 @@
     &nbsp;à&nbsp;
 "# Tracks"
     n° Pistes
-
 "$1 B"
     $1 o
 "$1 day"
@@ -142,8 +141,6 @@
     Vous permet de rechercher d'autres tables de la base de données lors d'une recherche avancée
 "An error occured while adding your playlist."
     Une erreur est survenue lors de l'ajout de votre liste de lecture.
-"An unknown module was specified"
-    Un module inconnu a été indiqué
 "and"
     et
 "Any"
@@ -338,14 +335,8 @@
     Données
 "Database"
     Base de données
-"Database Access Denied"
-    Accès à la base de données refusé
-"Database Error"
-    Erreur de base de données
 "Database Health"
     Santé de la base de données
-"Database Setup Error"
-    Erreur de configuration de la base de données
 "Date"
     Date
 "Date Formats"
@@ -380,6 +371,7 @@
     Supprimer définitivement
 "DELETE this Saved Playlist"
     SUPPRIMER cette liste de lecture sauvegardée
+"DeleteKey"
 "Depending on the Search type this is where you enter actual main search commands"
     C'est ici que vous entrez vos principales commandes de recherche en fonction du type de celle-ci
 "description"
@@ -476,10 +468,6 @@
     Contrôle étendu
 "Extra Information"
     Informations supplémentaires
-"Failure to autoload class $1!"
-    Échec du chargement automatique de la classe $1 !
-"Fatal Error"
-    Erreur fatale
 "File Size"
     Taille du fichier
 "film"
@@ -584,9 +572,6 @@
     teinte
 "Humidity"
     Humidité
-"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
-                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
-    Si vous choisissez de soumettre $1 un rapport d'anomalie veuillez $2 vous assurer d'inclure une brève description de ce que vous faîtes, avec la backtrace suivante en attachement <i> (veuillez ne pas passer le tout tel quel dans un ticket)<i>.
 "Ignore generic shows"
     Ignorer les émissions génériques
 "Ignore scheduled shows"
@@ -822,10 +807,6 @@
     Aucune correspondance
 "No matching programs found."
     Aucun programme correspondant trouvé.
-"No Modules"
-    Aucun module
-"No modules were found."
-    Aucun module n'a été trouvé.
 "No Public Playlists"
     Aucune liste de lecture publique
 "No recording schedules have been defined."
@@ -950,8 +931,6 @@
     Listes de lecture
 "Please enter an imdb number or a title to do another search"
     Veuillez saisir un numéro imdb ou un titre pour faire une autre recherche
-"Please see INSTALL for instructions."
-    Veuillez consulter INSTALL pour les instructions.
 "Please wait for the pending ajax request"
     Veuillez attendre la requête ajax en cours
 "Pop-out player"
@@ -1308,10 +1287,6 @@
     Saut avant
 "Skip Back"
     Saut arrière
-"Some possible solutions are to make sure that mod_env
-                 is enabled in httpd.conf, as well as having followed
-                 the instructions in the README and INSTALL files."
-    Une solution potentielle est de s'assurer que mod_env est activé dans httpd.conf et de suivre les instructions des fichiers README et INSTALL.
 "Songs"
     Morceaux
 "Songs for Genre"
@@ -1380,14 +1355,6 @@
     Tab
 "Temp"
     Temp.
-"The database environment variables are not correctly
-                 set in the webserver conf or .htaccess file.
-                 Please read through the comments included in the file
-                 and set up the db_* environment variables correctly."
-    Les variables d'environnement de la base de données ne sont pas correctement
-    initialisées dans le fichier de configuration ou .htaccess du serveur web.
-    Veuillez consulter les commentaires inclus dans le fichier et configurer
-    les variables d'environnement db_* correctement.
 "The requested recording schedule has been deleted."
     La programmation d'enregistrement demandée a été supprimée.
 "themoviedb"
@@ -1610,5 +1577,3 @@
     Oui
 "Yesterday"
     Hier
-"You are most likely receiving this message because you have failed to configure mythweb's database login info."
-    Vous recevez probablement ce message parce que vous n'avez pas configuré les informations de connexion à la base de données de mythweb.

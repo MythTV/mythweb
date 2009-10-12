@@ -264,6 +264,7 @@
     Slet + genoptag $1
 "Delete Forever"
 "DELETE this Saved Playlist"
+"DeleteKey"
 "Depending on the Search type this is where you enter actual main search commands"
 "description"
     beskrivelse

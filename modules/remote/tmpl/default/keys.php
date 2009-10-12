@@ -249,7 +249,7 @@
     <td><a onclick="send_key('|')" class="reqshift">|</a>
         <a onclick="send_key('\\')" class="noshift">\</a></td>
     <td>&nbsp;</td>
-    <td><a onclick="send_key('delete')"><?php echo t('Delete') ?></a></td>
+    <td><a onclick="send_key('delete')"><?php echo t('DeleteKey') ?></a></td>
     <td><a onclick="send_key('end')"><?php echo t('End') ?></a></td>
     <td><a onclick="send_key('pagedown')"><?php echo t('Page Down') ?></a></td>
 </tr><tr>

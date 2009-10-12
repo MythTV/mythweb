@@ -353,6 +353,7 @@
     Poista ikuisesti
 "DELETE this Saved Playlist"
     POISTA tämä tallennettu Soittolista
+"DeleteKey"
 "Depending on the Search type this is where you enter actual main search commands"
 "description"
     kuvaus
