@@ -1,96 +1,96 @@
 "Action"
     Action
-    \b(?:action|adven)
+    \b(?:action|aven)
 "Adult"
     Adulte
     \b(?:adult|erot|sex)
 "Animals"
-    Animals
-    \b(?:animal|tiere)
+    Animaux
+    \b(?:animaux)
 "Art_Music"
-    Musique
-    \b(?:art|dance|musi[ck]|spectacle|musique|kunst|[ck]ultur|culture)
+    Arts / Musique
+    \b(?:art|danse|spectacle|musique|culture)
 "Business"
-    Divertissement
-    \b(?:divertissement)
+    Économie
+    \b(?:conomie)
 "Children"
     Jeunesse
-    \b(?:child|kin?d|infan|jeunesse|animation)
+    \b(?:jeunesse|dessin anim)
 "Comedy"
-    Spectacle
-    \b(?:comed|entertain|spectacle|sitcom)
+    Divertissement
+    \b(?:spectacle|sitcom|divertissement)
 "Crime_Mystery"
-    Surprise
-    \b(?:[ck]rim|myster|surprise)
+    Policier
+    \b(?:crim|policier)
 "Documentary"
     Documentaire
-    \b(?:do[ck])|mag
+    \b(?:mag|doc)
 "Drama"
-    Court-m&eacute;trage
-    \b(?:court)
+    Théâtre
+    \b(?:th.*tre)
 "Educational"
-    Educatif
-    \b(?:cours|edu|bildung|interests)
+    Éducatif
+    \b(?:cours|edu)
 "Food"
     Cuisine
-    \b(?:food|cook|essen|gastro|cuisine|[dt]rink)
+    \b(?:gastro|cuisine)
 "Game"
-    Jeu
-    \b(?:game|spiele|jeu)
+    Jeux
+    \b(?:jeu)
 "Health_Medical"
-    Sant&eacute;
-    \b(?:health|medic|gesundheit|sant)
+    Santé
+    \b(?:medic|sant)
 "History"
-    Magazine
-    \b(?:hist|geschichte)
+    Histoire
+    \b(?:hist)
 "Horror"
     Horreur
     \b(?:horreur)
 "HowTo"
-    Th&eacute;matique
+    Thématique
     \b(?:th.*matique)
 "Misc"
-    Divers
-    \b(?:special|variety|collect)
+    Variété
+    \b(?:vari)
 "News"
     Information
-    \b(?:news|nachrichten|info|current)
+    \b(?:news|info|journal)
 "Reality"
-    T&eacute;l&eacute;-r&eacute;alit&eacute;
-    \b(?:reality|realit.*)
+    Téléréalité
+    \b(?:realit.*)
 "Romance"
-    T&eacute;l&eacute;film
-    \b(?:t.*l.*film|romance|lieb)
+    Téléfilm / Romance
+    \b(?:t.*l.*film|romance)
 "SciFi_Fantasy"
-    Nature
-    \b(?:science|nature|environment|wissenschaft)
+    Fantastique / Science-Fiction
+    \b(?:fantastique|sci\w*\W*fi)
 "Science_Nature"
-    Fantastique
-    \b(?:fantasy|fantastique|sci\w*\W*fi)
+    Nature / Sciences
+    \b(?:science|nature|environnement)
 "Shopping"
-    T&eacute;l&eacute;-Shopping
-    \b(?:shop)
+    Téléachat
+    \b(?:shop|achat)
 "Soaps"
-    S&eacute;rie
-    \b(?:s.*rie|soap|t.*l.*film|feuilleton)
+    Série
+    \b(?:s.*rie|soap|feuilleton)
 "Spiritual"
     Spirituel
     \b(?:spirit|relig)
 "Sports"
     Sport
-    \b(?:sport|foot|deportes|futbol)
+    \b(?:sport|foot)
 "Talk"
-    D&eacute;bat
-    \b(?:talk|D.*bat)
+    Débat
+    \b(?:talk|d.*bat)
 "Travel"
     Voyage
-    \b(?:travel|reisen|voyage)
+    \b(?:voyage)
 "Unknown"
     Inconnu
     
 "War"
     Guerre
-    \b(?:war|krieg|guerre)
+    \b(?:guerre)
 "Western"
     Western
     \b(?:west)

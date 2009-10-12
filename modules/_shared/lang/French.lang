@@ -2,9 +2,10 @@
 " at "
     &nbsp;à&nbsp;
 "# Tracks"
-    # Pistes
+    n° Pistes
+
 "$1 B"
-    $1 B
+    $1 o
 "$1 day"
     $1 jour
 "$1 days"
@@ -14,7 +15,7 @@
 "$1 episodes"
     $1 épisodes
 "$1 GB"
-    $1 GB
+    $1 Go
 "$1 hr"
     $1 h
 "$1 hrs"
@@ -22,9 +23,9 @@
 "$1 is not responding."
     $1 ne répond pas.
 "$1 KB"
-    $1 KB
+    $1 Ko
 "$1 MB"
-    $1 MB
+    $1 Mo
 "$1 min"
     $1 min
 "$1 mins"
@@ -34,7 +35,7 @@
 "$1 months"
     $1 mois
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
-    $1 émission(s), utilisant $2 ($3) sur $4 ($5 libre).
+    $1 programme(s), utilisant $2 ($3) sur $4 ($5 libre).
 "$1 recording"
     $1 enregistrement
 "$1 recordings"
@@ -42,23 +43,23 @@
 "$1 requests pending."
     $1 requêtes en attente.
 "$1 Search"
-    Recherche : $1
+    Recherche $1
 "$1 TB"
-    $1 TB
+    $1 To
 "$1 to $2"
     de $1 à $2
 "$1 wasted"
-    $1 perdu
+    $1 perdus
 "$1 year"
     $1 an
 "$1 years"
     $1 ans
 "%s Song (%s)"
-    %s Chanson (%s)
+    %s morceau (%s)
 "%s Songs"
-    %s Chansons
+    %s morceaux
 "%s Songs (%s)"
-    %s Chansons (%s)
+    %s morceaux (%s)
 "Aborted"
     Interrompu
 "Aborting"
@@ -74,22 +75,23 @@
 "Add"
     Ajouter
 "Add Album to Current Playlist"
-    Ajouter l'album à la liste d'écoute courante
+    Ajouter l'album à la liste de lecture actuelle
 "Add Mix"
     Ajouter mélange
 "Add Song to Current Playlist"
-    Ajoute la chanson à la liste d'écoute courante
+    Ajoute le morceau à la liste de lecture actuelle
 "add string"
     Ajouter condition
 "Add this Playlist as a Subplaylist"
-    Ajouter cette liste d'écoute comme sous-liste
+    Ajouter cette liste de lecture comme sous-liste
 "Add To Active Screens"
     Ajouter aux écrans actifs
 "Additional Tables"
-    Tables additionnelles
+    Tables supplémentaires
 "Additional tables:"
+    Tables supplémentaires :
 "Admin Key"
-    Clé d'admin
+    Code contrôle parental
 "Advanced"
     Avancée
 "Advanced Options"
@@ -123,20 +125,25 @@
 "All groups"
     Tous les groupes
 "All HDTV"
-    Toutes les diffusions en TVHD
+    Toutes les diffusions HD
 "All Hosts"
     Tous les hôtes
 "All recordings"
     Tous les enregistrements
 "All Songs"
-    Toutes les chansons
+    Tous les morceaux
 "ALLOCINETYPE"
-    Allo Ciné
+    AlloCiné
 "Allows you to match any string of any length (including zero length)"
+    Vous permet de rechercher des chaînes de toute longueur (y compris de longueur nulle)
 "Allows you to match on a single character"
+    Vous permet de rechercher un seul caractère
 "Allows you to search through other database tables when using a power search"
+    Vous permet de rechercher d'autres tables de la base de données lors d'une recherche avancée
 "An error occured while adding your playlist."
-    Une erreur est survenue lors de l'ajout de votre liste d'écoute.
+    Une erreur est survenue lors de l'ajout de votre liste de lecture.
+"An unknown module was specified"
+    Un module inconnu a été indiqué
 "and"
     et
 "Any"
@@ -146,23 +153,23 @@
 "Any Channel"
     Toute chaîne
 "Any Program Type"
-    Tout type d'émission
+    Tout type de programme
 "Append"
     Ajouter
 "Append to Current Playlist"
-    Ajouter à la liste d'écoute courante
+    Ajouter à la liste de lecture actuelle
 "Are you sure you want to delete the following show?"
-    Etes vous sûr de vouloir effacer cette émission?
+    Êtes-vous sûr de vouloir supprimer cette émission ?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-    Êtes-vous sur de vouloir EFFACER CETTE LISTE D'ÉCOUTE SAUVEGARDÉE?
+    Êtes-vous sur de vouloir SUPPRIMER CETTE LISTE DE LECTURE SAUVEGARDÉE ?
 "Are you sure you want to delete this show?"
-    Etes vous sûr de vouloir effacer cette émission?
+    Êtes-vous sûr de vouloir supprimer cette émission ?
 "Artist Listing"
     Liste des artistes
 "Artists"
     Artistes
 "Artists Beginning with %s"
-    Artistes commençants par %s
+    Artistes commençant par %s
 "ASX Stream"
     Flux ASX
 "Audio Bitrate"
@@ -170,7 +177,7 @@
 "Audio for Hearing Impaired"
     Audio pour malentendant
 "Audio for Visually Impaired"
-    Audio pour handicapé visuel
+    Audio pour malvoyant
 "Auto Expire"
     Expiration automatique
 "Auto-expire recordings"
@@ -182,20 +189,21 @@
 "AVC/H.264"
     AVC/H.264
 "Avoid poor signal quality"
+    Évitez les signaux de faible qualité
 "Back"
     Retour
 "Back Tab"
     Tabulation arrière
 "Back to the program listing"
-    Retourner &agrave; la liste des &eacute;missions
+    Retour à la liste des programmes
 "Back to the recorded programs"
-    Retourner aux émissions enregistrées
+    Retour aux programmes enregistrés
 "Back to the recording schedules"
-    Retourner aux enregistrements programmés
+    Retour aux enregistrements programmés
 "Backend Logs"
-    Journaux du "backend"
+    Journaux du backend
 "Backend Status"
-    Statut du "backend"
+    État du backend
 "Backspace"
     <- Effac. Arr.
 "Begin a New Search"
@@ -209,13 +217,13 @@
 "Browse = yes"
     Parcourir = oui
 "Browse all"
-    Parcourir tout
+    Tout parcourir
 "Browse All Albums"
     Parcourir tous les albums
 "Browse Music"
     Parcourir la musique
 "Browse the Music Database"
-    Parcourir la base de donnée de musique
+    Parcourir la bibliothèque musicale
 "By Artist Beginning With"
     Par artiste commençant par
 "By Genre"
@@ -225,15 +233,15 @@
 "Cancel"
     Annuler
 "Cancel this schedule."
-    Annuler cette programmation
+    Annuler cette programmation.
 "Cancelled"
     Annulé
 "Caps Lock"
     Verr. maj.
 "Cast"
-    Acteurs/Actrices
+    Distribution
 "Cast Information"
-    Information sur les acteurs/actrices
+    Information sur la distribution
 "category"
     catégorie
 "Category"
@@ -243,19 +251,19 @@
 "CC"
     STC
 "Chan. Callsign"
-    Indicatif (station)
+    Indicatif de chaîne
 "Chan. Name"
     Nom de chaîne
 "Chan. Number"
-    No de chaîne
+    N° de chaîne
 "Channel"
     Chaîne
 "channel"
     chaîne
 "Channel &quot;Jump to&quot;"
-    Cha&icirc;ne &quot;Aller &agrave;&quot;
+    Chaîne &quot;Aller à&quot;
 "Channel Detail"
-    Détail sur la chaîne
+    Détails de la chaîne
 "Channel Info"
     Information sur les chaînes
 "Channels"
@@ -263,11 +271,11 @@
 "channum"
     numéro du canal
 "Check for duplicates in"
-    Cherche les doublons dans
+    Chercher les doublons dans
 "Childrens Movies"
-    Films d'enfants
+    Films pour enfants
 "Choose Genre.."
-    Choisir le genre..
+    Choisir le genre...
 "Choose Type"
     Choisir le type
 "Click to disable Auto Expire"
@@ -275,19 +283,21 @@
 "Click to enable Auto Expire"
     Cliquer pour activer l'auto-expiration
 "Click to View Playlist"
-    Cliquer pour afficher la liste d'écoute
+    Cliquer pour afficher la liste de lecture
 "Close Captioned priority"
+    Priorité du sous-titrage codé
 "Closed Captioning"
-    Sous-titré codé
+    Sous-titrage codé
 "colour"
     couleur
 "Commands"
     Commandes
 "Commands:"
+    Commandes :
 "Commercials Flagged"
-    Annonces publicitaires balisées
+    Publicités balisées
 "commfree"
-    sans annonces publicitaires
+    sans publicité
 "Conflict"
     Conflit
 "Conflicts"
@@ -299,23 +309,23 @@
 "Count"
     Compte
 "Create a New Playlist"
-    Créer une nouvelle liste d'écoute
+    Créer une nouvelle liste de lecture
 "Create a Random Mix"
     Créer un mélange aléatoire
 "Create Schedule"
     Créer une programmation
 "Current MythWeb Skin"
-    Habillage MythWeb courant
+    Habillage MythWeb actuel
 "Current MythWeb Template"
-    Modèle MythWeb courant
+    Modèle MythWeb actuel
 "Current Recording"
-    Enregistrement courant
+    Enregistrement actuel
 "Current recordings"
-    Enregistrements courants
+    Enregistrements actuels
 "Currently Browsing:  $1"
-    Présentement affiché :  $1
+    Actuellement affiché :  $1
 "Currently Recording:  Edit"
-    Enregistre présentement :  Editer
+    Enregistrement en cours :  Éditer
 "Custom"
     Personnalisé
 "Custom Schedule"
@@ -323,13 +333,19 @@
 "Custom Search"
     Recherche personnalisée
 "Customize Screens"
-    Personaliser les écrans
+    Personnaliser les écrans
 "Data"
     Données
 "Database"
-    Base de donnée
+    Base de données
+"Database Access Denied"
+    Accès à la base de données refusé
+"Database Error"
+    Erreur de base de données
 "Database Health"
-    Santé de la base de donnée
+    Santé de la base de données
+"Database Setup Error"
+    Erreur de configuration de la base de données
 "Date"
     Date
 "Date Formats"
@@ -349,22 +365,23 @@
 "Delete"
     Suppr.
 "delete"
-    effacer
+    supprimer
 "Delete $1"
-    Effacer $1
+    Supprimer $1
 "Delete + Rerecord"
-    Effacer et réenregistrer
+    Supprimer et réenregistrer
 "Delete and allow rerecord: $1"
-    Effacer et permettre le réenregistrement : $1
+    Supprimer et autoriser le réenregistrement : $1
 "Delete and rerecord"
-    Effacer et réenregistrer
+    Supprimer et réenregistrer
 "Delete and rerecord $1"
-    Effacer et réenregistrer $1
+    Supprimer et réenregistrer $1
 "Delete Forever"
-    Effaçage permanent
+    Supprimer définitivement
 "DELETE this Saved Playlist"
-    EFFACER cette liste d'écoute sauvegardée
+    SUPPRIMER cette liste de lecture sauvegardée
 "Depending on the Search type this is where you enter actual main search commands"
+    C'est ici que vous entrez vos principales commandes de recherche en fonction du type de celle-ci
 "description"
     description
 "Description"
@@ -374,9 +391,9 @@
 "Details for: $1"
     Détails pour : $1
 "Direct Download"
-    Téléchargment direct
+    Téléchargement direct
 "Directed by"
-    Mis en scène par
+    Réalisé par
 "Display"
     Afficher
 "Dolby Surround"
@@ -384,35 +401,35 @@
 "Don't Record"
     Ne pas enregistrer
 "Don't record this program."
-    Ne pas enregistrer cette émission.
+    Ne pas enregistrer ce programme.
 "Done, Unknown Status"
-    Complété, état inconnu
+    Effectué, état inconnu
 "Down"
     Bas
 "Download URL override"
-    Altérer URL de téléchargement
+    Forcer l'URL de téléchargement
 "Dup Method"
     Méthode de doublon
 "Duplicate"
     Doublon
 "Duplicate Check method"
-    Méthode de contrôle des doublons
+    Méthode de détection des doublons
 "Duplicates/Ignored"
     Doublons/Ignorés
 "Earlier"
     Antérieur
 "Earlier Showing"
-    Présentation antérieure
+    Diffusion antérieure
 "Edit"
     Éditer
 "Edit existing group"
     Éditer groupe existant
 "Edit MythWeb and some MythTV settings."
-    Éditer les réglages de Mythweb et certains de MythTV
+    Éditer les paramètres de Mythweb et certains de MythTV
 "Edit Screen"
     Écran d'édition
 "Edit settings for: $1"
-    Éditer les réglages pour : $1
+    Éditer les paramètres pour : $1
 "Editing "
     En édition
 "Enable Video Playback"
@@ -420,15 +437,15 @@
 "End"
     Fin
 "End Late"
-    Fin tardive
+    Arrêt en retard
 "Enter"
     <-+ Entrée
 "Enter a new name for your playlist"
-    Saisissez a nouveau nom pour votre liste d'écoute
+    Saisissez un nouveau nom pour votre liste de lecture
 "Enter your search terms"
-    Saisissez votre termes de recherche
+    Saisissez vos termes de recherche
 "enter your search terms"
-    saisissez votre termes de recherche
+    saisissez vos termes de recherche
 "Episode"
     Épisode
 "Episode Number"
@@ -442,15 +459,15 @@
 "Erroring"
     En erreur
 "Escape"
-    Échapp.
+    Échap
 "Everything"
     Tout
 "Exclude Generic Episodes"
     Exclure les épisodes génériques
 "Exclude Repeat and Generic Episodes"
-    Exclure les reprises et les épisodes génériques
+    Exclure les rediffusions et les épisodes génériques
 "Exclude Repeat Episodes"
-    Exclure les reprises
+    Exclure les rediffusions
 "Exec. Producer"
     Producteur exécutif
 "Executive Producer"
@@ -458,7 +475,11 @@
 "Extended Check"
     Contrôle étendu
 "Extra Information"
-    Information additionelle
+    Informations supplémentaires
+"Failure to autoload class $1!"
+    Échec du chargement automatique de la classe $1 !
+"Fatal Error"
+    Erreur fatale
 "File Size"
     Taille du fichier
 "film"
@@ -472,23 +493,25 @@
 "Find Day"
     Jour
 "Find other showings of this program"
-    Trouver d'autres retransmissions de cette émission
+    Trouver d'autres diffusions de ce programme
 "Find showings of this program"
-    Trouver les retransmissions de cette émission
+    Trouver les diffusions de ce programme
 "Find Time"
     Heure
 "Find Time must be of the format:  HH:MM:SS"
-    L'heure de recherche doit être du format :  HH:MM:SS
+    L'heure de recherche doit être au format :  HH:MM:SS
 "finetune"
     syntonisation fine
 "Finished"
-    Complété
+    Terminé
 "First recording"
     Premier enregistrement
 "First showing of each episode"
+    Première diffusion de chaque épisode
 "Flag Commercials"
-    Baliser les annonces publicitaires
+    Baliser les publicités
 "For more information on the Power Search please go to:"
+    Pour plus d'informations sur la Recherche avancée veuillez vous rendre à :
 "Force HTTP for streams"
     Force le HTTP pour les flux
 "Force HTTP/HTTPS port for streams"
@@ -498,44 +521,45 @@
 "Forget Old"
     Oublier les anciens
 "format help"
-    Aide sur les formats
+    aide sur les formats
 "Found %s results for '%s'"
     Trouvé %s résultats pour '%s'
 "freqid"
-    identifiant de fréquence
+    freqid
 "Friday"
     Vendredi
 "Frontends"
-    "Frontends"
+    Frontaux
 "generic_date"
-    %e %b, %Y
+    %e %b %Y
 "generic_time"
     %I:%M %p
 "Genre"
     Genre
 "genre_colors"
+    Couleurs de genres
 "Genres"
     Genres
 "Go"
-    Go
+    Aller
 "Google"
     Google
 "Group timeslots every"
-    Afficher les cases horaires par groupe de
+    Grouper les tranches horaires par
 "Guest Starring"
     Invité d'honneur
 "Guide rating"
     Classification du guide
 "Guide Settings"
-    Réglages du Guide
+    Paramètres du Guide
 "Handy Predefined Searches"
     Recherches pratiques prédéfinies
 "handy: overview"
-    Cette page contient des recherches complexes prédéfinies dans la grille horaire.
+    Cette page contient des recherches complexes prédéfinies de la grille des programmes.
 "has Bookmark"
-    Contient des signets
+    possède un signet
 "Has Cutlist"
-    Contient une liste de montage
+    possède une liste de coupes
 "HD"
     HD
 "HDTV"
@@ -545,13 +569,13 @@
 "Hide"
     Cacher
 "High"
-    Maximum
+    Max.
 "Home"
-    Début
+    Accueil
 "Host"
     Hôte
 "Hosted by"
-    Animé par
+    Hébergé par
 "Hour"
     Heure
 "Hour Format"
@@ -560,6 +584,9 @@
     teinte
 "Humidity"
     Humidité
+"If you choose to $1 submit a bug report $2 please make sure to include a brief description of what you were doing,
+                        along with the following backtrace as an attachment <i>(please don't just paste the whole thing into the ticket)</i>."
+    Si vous choisissez de soumettre $1 un rapport d'anomalie veuillez $2 vous assurer d'inclure une brève description de ce que vous faîtes, avec la backtrace suivante en attachement <i> (veuillez ne pas passer le tout tel quel dans un ticket)<i>.
 "Ignore generic shows"
     Ignorer les émissions génériques
 "Ignore scheduled shows"
@@ -573,20 +600,20 @@
 "Inactive Screens"
     Écrans inactifs
 "info: activate recording"
-    Force l'enregistrement de cette retransmission.
+    Forcer l'enregistrement de cette diffusion.
 "info: default recording"
-    Réinitialise l'enregistrement pour qu'il soit programmé normalement.
+    Annuler les exceptions pour que cette diffusion soit programmée normalement.
 "info: dont record"
-    Ne pas enregistrer cette retransmission.
+    Ne pas enregistrer cette diffusion.
 "info: flvplayer"
     <p>
-    La lecture de vidéo Flash est présentement une preuve de concept et doit être
+    La lecture de vidéo Flash est actuellement une preuve de concept et doit être
     considerée <b>EXTRÈMEMENT</b> expérimentale, elle a donc été désactivée par
     défaut.
     </p>
     <p>
-    On s'attend présentement à ce que ffmpeg soit installé et compilé avec le
-    support mp3 et que les enregistrements soit accessibles par l'usager de votre
+    On s'attend actuellement à ce que ffmpeg soit installé et compilé avec le
+    support mp3 et que les enregistrements soit accessibles par l'utilisateur du
     serveur web.  Elle ne fonctionnera probablement pas avec des fichiers Nupplevideo
     et pourrait même ne pas fonctionner (ou même pire).
     </p>
@@ -595,25 +622,25 @@
     une aide officielle jusqu'à ce qu'elle ait quittée la phase expérimentale.
     </p>
 "info: hidden advanced schedule"
-    Les fonctions avancées de programmation sont présentement cachées.
+    Les options avancées de programmation sont actuellement cachées.
 "info: record this"
-    Force l'enregistrement de cette retransmission.
+    Forcer l'enregistrement de cette diffusion.
 "info:forget old"
-    Oublie les enregistrements précédents de cette retransmission pour qu'elle puisse être réenregistrée.
+    Oublie les enregistrements précédents de cette émission pour qu'elle puisse être réenregistrée.
 "info:never record"
-    Simule un enregistrement précédent de cette retransmission pour qu'elle ne soit pas enregistrée.
+    Simule un enregistrement précédent de cette émission pour qu'elle ne soit pas enregistrée.
 "Insert"
-    Insert.
+    Inser
 "Jump"
-    Saut
+    Aller
 "Jump Points"
-    Points de saut
+    Raccourcis menu
 "Jump to"
-    Sauter vers
-"Jump To"
     Aller à
+"Jump To"
+    Aller À
 "JumpPoints Editor"
-    Éditeur de points de saut
+    Éditeur de raccourcis menu
 "Key Bindings"
     Assignation des touches
 "Key bindings"
@@ -621,14 +648,15 @@
 "Key Controls"
     Contrôles des touches
 "Keybindings Editor"
-    Editeur d'assignation des touches
+    Éditeur d'assignation des touches
 "Keyword"
-    Mot clé
+    Mot-clé
 "Keyword Search"
-    Recherche par mot clé
+    Recherche par mot-clé
 "Keyword Search:"
+    Recherche par mot-clé :
 "Keywords"
-    Mots clés
+    Mots-clés
 "Language"
     Langue
 "Last Recorded"
@@ -636,6 +664,7 @@
 "Last recording"
     Dernier enregistrement
 "Last showing of each episode"
+    Dernière diffusion de chaque épisode
 "Later"
     Plus tard
 "left"
@@ -653,40 +682,41 @@
 "Links"
     Liens
 "Listing &quot;Jump to&quot;"
-    Lister "Aller à"
+    Grille : "Aller à"
 "Listing Time Key"
-    Lister touches de temps
+    Grille : Touches de temps
 "Listings"
     Grille horaire
 "Load"
-    Charge
+    Charger
 "Load a Saved Playlist"
-    Charge une liste d'écoute sauvegardée
+    Charger une liste de lecture sauvegardée
 "Load Playlist"
-    Charge la liste d'écoute
+    Charger une liste de lecture
 "Load Saved Playlists"
-    Charge les listes d'écoute
+    Charger les listes de lecture sauvegardées
 "Load this Saved Playlist"
-    Charge cette liste d'écoute sauvegardée
+    Charger cette liste de lecture sauvegardée
 "LOADING"
-    CHARGEMENT
+    CHARGEMENT EN COURS
 "Local Server Statistics"
     Statistiques du serveur local
 "Local weather forecast"
-    Prévisions métérologiques locales
+    Prévisions météo locales
 "LOCKDOWN_NOTICE"
-    MythWeb a detecté qu'un robot accède à cet installation. Nous avons désactivé cette installation pour empêcher que des robots effacent tout vos enregistrementso ou permette à d'autres personnes d'accèder à votre installation de mythweb sans votre permission. SVP sécuriser votre installation
+    MythWeb a detecté qu'un robot accède à cette installation. Nous avons désactivé cette installation pour empêcher que des robots effacent tous vos enregistrements ou permettent à d'autres personnes d'accéder à votre installation de mythweb sans votre permission. Veuillez sécurisez votre installation
 "LOCKDOWN_NOTICE_2"
-    (lire les fichiers INSTALL et README) et effacer pour débarrer cette installation. Pour désactiver cette fonctionnalité, lisez le fichier README.
+    (lire les fichiers INSTALL et README) et supprimer pour activer cette installation. Pour désactiver cette fonctionnalité, lisez le fichier README.
 "Logs"
     Journaux
 "Low"
-    Minimum
+    Min.
 "Low Space"
     Espace faible
 "Manual"
     Manuel
 "Match related callsigns"
+    Associer les indicatifs apparentés
 "matches"
     contient
 "Max star rating for movies"
@@ -694,13 +724,19 @@
 "minutes"
     minutes
 "Missing Cover"
-    Couverture manquante
+    Affiche manquante
 "Modify priority by star rating (0.0 to 1.0 for movies only)"
+    Modifier la priorité par nombre d'étoiles (0.0 à 1.0 pour les films seulement)
 "Modify priority for a station on an input"
+    Modifier la priorité pour une station sur une entrée
 "Modify priority for all inputs on a card"
+    Modifier la priorité pour toutes les entrées d'une carte
 "Modify priority for an input (Input priority)"
+    Modifier la priorité pour une entrée (priorité d'entrée)
 "Modify priority for every card on a host"
+    Modifier la priorité pour toutes les cartes de cet ordinateur
 "Modify unidentified episodes"
+    Modifier les épisodes non identifiés
 "Monday"
     Lundi
 "Mono"
@@ -710,17 +746,17 @@
 "more"
     plus
 "Move Item Down in Playlist"
-    Descendre l'item dans la liste d'écoute
+    Déplacer l'élément vers le bas de la liste de lecture
 "Move Item Up in Playlist"
-    Monter l'item dans la liste d'écoute
+    Déplacer l'élément vers le haut de la liste de lecture
 "movie"
     film
 "Movies"
     Films
 "Movies, 3&frac12; Stars or more"
-    Films, 3&frac12; &eacute;toiles ou plus
+    Films, 3&frac12; étoiles ou plus
 "Movies, Stinkers (2 Stars or less)"
-    Films, navets (2 &eacute;toiles ou moins)
+    Films, navets (2 étoiles ou moins)
 "Music"
     Musique
 "Music Specials"
@@ -730,11 +766,11 @@
 "MythMusic on the web."
     MythMusic sur le web.
 "MythMusic_Prefixes_To_Ignore"
-    un une la le
+    un une la le les
 "MythTV"
     MythTV
 "MythTV Status"
-    Statut de MythTV
+    État de MythTV
 "MythVideo Artwork Dir"
     Répertoire d'illustrations MythVideo
 "MythVideo Dir"
@@ -747,56 +783,63 @@
 "MythWeb"
     MythWeb
 "MythWeb Defaults"
-    Réglages par défaut de MythWeb
+    Paramètres par défaut de MythWeb
 "MythWeb Global Defaults"
-    Réglages par défaut globaux de MythWeb
+    Paramètres par défaut globaux de MythWeb
 "MythWeb Locked"
+    MythWeb verrouillé
 "MythWeb Session"
     Session MythWeb
 "MythWeb Skin"
     Habillage de MythWeb
 "MythWeb Weather."
-    Météo sur le web.
+    Météo MythWeb.
 "Name"
     Nom
 "name"
     nom
 "Narrow Your Search"
-    Préciseer votre recherche
+    Préciser votre recherche
 "Never Record"
     Ne jamais enregistrer
 "New"
     Nouveau
 "New episodes only"
+    Seulement les nouveaux épisodes
 "New Episodes Only"
-    Nouveaux épisodes seulement
+    Seulement les nouveaux épisodes
 "New Group"
     Nouveau groupe
 "New Search"
     Nouvelle recherche
 "New Titles, Premieres"
-    Nouveaux titres, Premières
+    Nouveaux titres, Inédits
 "NO DATA"
     PAS DE DONNÉES
 "No Frontends allow remote control."
-    Aucun "frontend" ne permet le contrôle à distance
+    Aucun frontal ne permet le contrôle à distance
 "No matches found"
     Aucune correspondance
 "No matching programs found."
-    Aucune émission correspondante trouvée.
+    Aucun programme correspondant trouvé.
+"No Modules"
+    Aucun module
+"No modules were found."
+    Aucun module n'a été trouvé.
 "No Public Playlists"
-    Pas de liste d'écoute publiques
+    Aucune liste de lecture publique
 "No recording schedules have been defined."
-    Aucune programmation n'est définie
+    Aucune programmation d'enregistrement n'a été définie
 "No. of recordings to keep"
-    Nombre d'enreg. à garder
+    Nombre d'enreg. à conserver
 "Non-Music Specials"
-    Spéciaux non-musicaux
+    Spéciaux non musicaux
 "Non-Series HDTV"
-    TVHD hors-séries
+    TVHD hors séries
 "None"
     Aucun
 "Not Listed"
+    Non affiché
 "Notes"
     Notes
 "Number of episodes"
@@ -804,26 +847,31 @@
 "Number of shows"
     Nombre d'émissions
 "Number of Songs"
-    Nombre de chansons
+    Nombre de morceaux
 "Number of timeslots"
-    Nombre de cases horaires
+    Nombre de tranches horaires
 "Off"
     Désactivé
 "Only a certain channel number"
+    Seulement un numéro de chaîne spécifique
 "Only channels marked as commercial free"
-"Only channels that carry a specific station"
-"Only display favourite channels"
-    Seulement vos chaînes favorites
-"Only match commercial-free channels"
     Seulement les chaînes sans publicités
+"Only channels that carry a specific station"
+    Seulement les chaînes d'une station spécifique
+"Only display favourite channels"
+    Seulement les chaînes favorites
+"Only match commercial-free channels"
+    Seulement les chaînes sans publicité
 "Only match HD programs"
-    Seulement les émissions en HD
+    Seulement les programmes HD
 "Only match non-recorded shows"
-    Seulement les émissions non-enregistrées
+    Seulement les émissions non enregistrées
 "Only New Episodes"
     Seulement les nouveaux épisodes
 "Only one specific channel ID (Channel priority)"
+    Seulement une chaîne spécifique (priorité de chaîne)
 "Only shows marked as HDTV"
+    Seulement les émissions HD
 "Optimize Tables"
     Optimiser les tables
 "or"
@@ -833,44 +881,45 @@
 "Originally aired between"
     Originalement diffusé entre
 "Override"
-    Déroge
+    Forcer
 "Page Down"
     Page suiv.
 "Page recorded programs"
-    Paginer les émissions enregistrées
+    Changer de page tous les N programmes enregistrés
 "Page Up"
     Page préc.
 "Part $1 of $2"
     Partie $1 de $2
 "Past Month"
-    Dernier mois
+    Mois dernier
 "Past Week"
-    Dernière semaine
+    Semaine dernière
 "Past Year"
-    Dernière Année
+    Année dernière
 "Paused"
-    Pausé
+    En pause
 "Pending"
     En attente
 "People"
-    Personne
+    Personnes
 "People Search"
     Recherche de personnes
 "People Search:"
+    Recherche de personnes :
 "Percent of time spent recording"
-    Pourcentage passé à enregistrer
+    Pourcentage de temps passé à enregistrer
 "Play"
-    Écouter
+    Lecture
 "Play Recording on Frontend"
-    Écouter l'enregistrement sur le "frontend"
+    Lire l'enregistrement sur le frontal
 "Play this Album Now"
     Écouter cet album maintenant
 "Play This Playlist Now"
-    Écouter cette liste d'écoute maintenant
+    Écouter cette liste de lecture maintenant
 "Play this Playlist Now"
-    Écouter cette liste d'écoute maintenant
+    Écouter cette liste de lecture maintenant
 "Play this Song Now"
-    Écouter cette chanson maintenant
+    Écouter ce morceau maintenant
 "Play Time"
     Durée
 "Playback Group"
@@ -878,49 +927,55 @@
 "Playback Groups"
     Groupes de lecture
 "Played %s times"
-    Écoutée %s fois
+    Écouté %s fois
 "Played once"
-    Écoutée une seule fois
+    Écouté une seule fois
 "Playlist"
-    Liste d'écoute
+    Liste de lecture
 "Playlist Info"
-    Information sur la liste d'écoute
+    Information sur la liste de lecture
 "Playlist is empty"
-    La liste d'écoute est vide
+    La liste de lecture est vide
 "Playlist Items"
-    Items de la liste d'écoute
+    Éléments de la liste de lecture
 "Playlist Name"
-    Nom de la liste d'écoute
+    Nom de la liste de lecture
 "Playlist renamed successfully"
-    Liste d'écoute renommé avec succès
+    Liste de lecture renommée avec succès
 "Playlist saved successfully"
-    Liste d'écoute sauvegardée avec succès
+    Liste de lecture sauvegardée avec succès
 "Playlist: %s"
-    Liste d'écoute : %s
+    Liste de lecture : %s
 "Playlists"
-    Listes d'écoute
+    Listes de lecture
 "Please enter an imdb number or a title to do another search"
-    SVP saisir un numéro imdb ou un titre pour faire une autre recherche
+    Veuillez saisir un numéro imdb ou un titre pour faire une autre recherche
+"Please see INSTALL for instructions."
+    Veuillez consulter INSTALL pour les instructions.
 "Please wait for the pending ajax request"
-    SVP attendez pour la requête ajax
+    Veuillez attendre la requête ajax en cours
 "Pop-out player"
     Lecteur externe
 "Possible conflicts"
     Conflits potentiels
 "Possible conflicts with this show"
-    Conflits potentiels avec cette retransmission
+    Conflits potentiels avec cette émission
 "Power"
-    Évoluée
+    Avancée
 "Power Search"
-    Recherche évoluée
+    Recherche avancée
 "Power Search:"
+    Recherche avancée :
 "Precip"
     Précip.
 "Prefer a host for a storage group"
+    Préférer un ordinateur pour un groupe de stockage
 "Prefer a host for live sports with overtime"
+    Préférer un ordinateur pour les émissions sportives en direct avec prolongations
 "Prefer Channum"
-    Préférer le numéro de chaîne à l'indicatif
+    Préférer le numéro de chaîne
 "Prefer movies when shown at night"
+    Préférer les films diffusés la nuit
 "prefer_channum"
     Préférer le numéro de chaîne à l'indicatif
 "Preferred Input"
@@ -934,12 +989,19 @@
 "Previous recordings"
     Enregistrements précédents
 "Priority for a category"
+    Priorité d'une catégorie
 "Priority for a category type"
+    Priorité d'un type de catégorie
 "Priority for all matching titles"
+    Priorité de tous les titres correspondants
 "Priority for any show with End Late time"
+    Priorité de toute émission avec une heure d'Arrêt en retard
 "Priority for HD shows under two hours"
+    Priorité pour les émissions HD de moins de deux heures
 "Priority for movies by the year of release"
+    Priorité pour les films par année de sortie
 "Priority when shown once"
+    Priorité pour diffusion unique
 "Produced by"
     Produit par
 "Profile"
@@ -947,32 +1009,33 @@
 "profile"
     profil
 "Program Categories"
+    Catégories de programme
 "Program Detail"
-    Détail de l'émission
+    Détails du programme
 "Program Flags"
-    Caractéristiques de l'émission
+    Fanions du programme
 "Program ID"
-    Identifiant de l'émission
+    Identifiant du programme
 "Program Information"
-    Information sur l'émission
+    Informations sur le programme
 "Program Listing"
-    Grille horaire
+    Grille des programmes
 "Program Type"
-    Type d'émission
+    Type de programme
 "Protocol"
     Protocole
 "Queue a job"
-    Mettre en file un travail
+    Placer une tâche en file d'attente
 "Queued"
-    Mis en file
+    En file d'attente
 "Queued jobs"
-    Travaux mis en file
+    Tâches en attente
 "Random"
     Aléatoire
 "Random Items"
-    Items aléatoires
+    Éléments aléatoires
 "Random Mix Maker"
-    Créateur de mélange aléatoire
+    Créateur de liste aléatoire
 "Random Type"
     Type aléatoire
 "Rating"
@@ -980,32 +1043,33 @@
 "Recently Added Albums"
     Albums récemment ajoutés
 "Recently completed jobs"
-    Travaux récemment complétés
+    Tâches récemment complétées
 "Recently Played Songs"
-    Chansons récemment écoutées
+    Morceaux récemment écoutés
 "recgroup"
     Groupe d'enr.
 "Record Date"
     Date d'enregistrement
 "Record Length"
-    Longueur d'enregistrement
+    Durée de l'enregistrement
 "Record new and expire old"
-    Enreg. nouveau/expire ancien
+    Enreg. nouveau et expirer ancien
 "Record This"
-    Enregistrer ceci
+    L'enregistrer
 "Recorded"
     Enregistré
 "Recorded Programs"
-    Émissions enregistrées
+    Programmes enregistrés
 "Recording Details"
     Détails de l'enregistrement
 "Recording Group"
-    Groupe d&acute;enregistrement
+    Groupe d'enregistrements
 "Recording Groups"
     Groupes d'enregistrements
 "Recording Options"
     Options d'enregistrement
 "Recording Options Help"
+    Aide pour les options d'enregistrement
 "Recording Priority"
     Priorité d'enregistrement
 "Recording Profile"
@@ -1019,67 +1083,67 @@
 "recpriority"
     priorité d'enregistrement
 "recstatus: cancelled"
-    Enregistrement pr&eacute;vu mais annul&eacute;
+    Enregistrement prévu mais annulé
 "recstatus: conflict"
-    Une autre programme plus prioritaire sera enregistr&eacute;
+    Un autre programme plus prioritaire sera enregistré
 "recstatus: currentrecording"
-    Cet épisode à déja été enregistré et est encore disponible pour relecture.
+    Cet épisode à déja été enregistré et est encore disponible dans la liste des enregistrements.
 "recstatus: deleted"
-    Cette &eacute;mission a &eacute;t&eacute; enregistr&eacute;e et annul&eacute; avant la fin d&acute;enregistrement
+    Cette émission a été enregistrée mais a été supprimée avant la fin de l'enregistrement.
 "recstatus: earliershowing"
-    Cette émission sera enregistrée plus tôt à la place.
+    Cet épisode sera enregistré plus tôt.
 "recstatus: force_record"
-    Cette retransmission a été manuellement enregistrée à cette heure.
+    L'enregistrement de cette diffusion de l'émission a été forcé manuellement.
 "recstatus: inactive"
     Cette programmation d'enregistrement est inactive.
 "recstatus: latershowing"
-    Cette émission sera enregistrée plus tard à la place.
+    Cet épisode sera enregistré plus tard.
 "recstatus: lowdiskspace"
-    Il n'y a pas assez de place sur le disque pour l'enregistrement.
+    Il n'y a pas assez de place sur le disque pour enregistrer ce programme.
 "recstatus: manualoverride"
-    D&eacute;j&agrave; forc&eacute; &agrave; la main &agrave; pas d&acute;enregistrement
+    Cette diffusion a été forcée manuellement pour ne pas s'enregistrer.
 "recstatus: neverrecord"
-    Cette retransmission ne sera jamais enregistrée.
+    Cette émission a été marquée pour ne jamais être enregistrée.
 "recstatus: notlisted"
-    Cette retransmission ne correspond pas aux listes de programmation courantes.
+    Cette émission n'apparaît pas dans la liste des programmes actuels.
 "recstatus: previousrecording"
-    Cette épisode a déjà été enregistré en raison de la gestion des doublons choisie pour ce titre.
+    Cet épisode a déjà été enregistré conformément à la politique des doublons choisie pour ce titre.
 "recstatus: recorded"
-    Cette retransmission a été enregistrée.
+    Cette diffusion a été enregistrée.
 "recstatus: recording"
-    Cette retransmission est en cours d'enregistrement.
+    Cette diffusion est en cours d'enregistrement.
 "recstatus: repeat"
     Cette rediffusion ne sera pas enregistrée.
 "recstatus: stopped"
-    Cette retransmission a été enregistrée et arrêtée avant la fin de l'enregistrement.
+    L'enregistrement de cette diffusion a été interrompu avant la fin.
 "recstatus: toomanyrecordings"
     Trop d'enregistrements de cette émission ont été effectués.
 "recstatus: tunerbusy"
-    La carte syntoniseur était déjà en cours d'utilisation quand cet enregistrement devait être effectué.
+    La carte tuner était occupée au moment prévu de l'enregistrement de cette émission.
 "recstatus: unknown"
-    Le statut de cette retransmission est inconnu.
+    L'état de cette diffusion est inconnu.
 "recstatus: willrecord"
-    Cet retransmission sera enregistrée.
+    Cette diffusion sera enregistrée.
 "rectype-long: always"
-    Enregistrer peut importe le temps quelque soit la chaîne.
+    Enregistrer à n'importe quelle heure sur n'importe quelle chaîne.
 "rectype-long: channel"
-    Enregistrer peut importe le temps sur la chaîne $1.
+    Enregistrer à n'importe quelle heure sur la chaîne $1.
 "rectype-long: daily"
-    Enregistrer cette émission à cette heure à chaque jour.
+    Enregistrer ce programme dans cette tranche horaire chaque jour.
 "rectype-long: dontrec"
-    Ne pas enregistrer cette retransmission.
+    Ne pas enregistrer cette diffusion.
 "rectype-long: finddaily"
-    Trouver une retransmission avec ce titre aujourd'hui et l'enregistrer.
+    Trouver et enregistrer une diffusion de ce titre chaque jour.
 "rectype-long: findone"
-    Trouver une retransmission avec ce titre et l'enregistrer.
+    Trouver et enregistrer une diffusion de ce titre.
 "rectype-long: findweekly"
-    Trouver une retransmission avec ce titre cette semaine et l'enregistrer.
+    Trouver et enregistrer une diffusion de ce titre chaque semaine.
 "rectype-long: once"
-    Enregistrer seulement cette retransmission.
+    Enregistrer seulement cette diffusion.
 "rectype-long: override"
     Enregistrer cette diffusion.
 "rectype-long: weekly"
-    Enregistrer cette émission à cette heure chaque semaine.
+    Enregistrer ce programme dans cette tranche horaire chaque semaine.
 "rectype: always"
     Toujours
 "rectype: channel"
@@ -1089,32 +1153,33 @@
 "rectype: dontrec"
     Ne pas enregistrer
 "rectype: finddaily"
-    Trouver aujourd'hui
+    Trouver Une Quotidien
 "rectype: findone"
-    Trouver une fois
+    Trouver Unique
 "rectype: findweekly"
-    Trouver cette semaine
+    Trouver Un Hebdomadaire
 "rectype: once"
     Unique
 "rectype: override"
-    Réenregistrer
+    Exception (enregistrer)
 "rectype: weekly"
     Hebdomadaire
 "regex: articles"
-    An?|The
+    Un?|Le|La|Les
 "Remote"
     Télécommande
 "Remove Item from Playlist"
-    Enlever l'item de la liste d'écoute
+    Supprimer l'élément de la liste de lecture
 "Repair Tables"
     Réparer les tables
 "Repeat"
-    Reprise
+    Rediffusion
 "Reset"
     Réinitialiser
 "Reset template and skin to defaults"
+    Revenir au modèle et à l'habillage par défaut
 "Retry"
-    Relancer
+    Réessayer
 "Return to Statistics Page"
     Retourner à la page des statistiques
 "right"
@@ -1122,7 +1187,7 @@
 "Right"
     Droite
 "Rows to show between timeslot info"
-    Lignes à afficher entre les informations de case horaire
+    Lignes entre les infos de tranche horaire
 "Running"
     En cours d'exécution
 "Saturday"
@@ -1130,62 +1195,69 @@
 "Save"
     Sauvegarder
 "Save or Rename the Current Playlist"
-    Sauvegarder ou renommber la liste d'écoute courante
+    Sauvegarder ou renommer la liste de lecture actuelle
 "Save Schedule"
     Sauvegarder une programmation
 "Save/Rename"
     Sauvegarder/Renommer
 "Save/Rename Playlist"
-    Sauvegarder/Renommber la liste d'écoute
+    Sauvegarder/Renommer la liste de lecture
 "Saved Playlist Successfully Deleted"
-    Liste d'écoute sauvegardée effacée avec succès
+    Liste de lecture sauvegardée effacée avec succès
 "Saved Playlists"
-    Listes d'écoute sauvegardées
+    Listes de lecture sauvegardées
 "Scan Collection"
     Balayer la collection
 "Schedule"
     Programmation
 "Schedule Manually"
-    Programmation manuelle
+    Programmer manuellement
 "Schedule normally."
-    Programmer normalement
+    Programmer normalement.
 "Schedule Options"
-    Programmation avancée
+    Options de programmation
 "Schedule Override"
-    Altérer programmation
+    Exceptions de programmation
 "Schedule via $1."
     Programmer via $1.
 "Scheduled"
     Programmés
 "Scheduled Popup"
-    Boite de programmation
+    Popup Programmés
 "Science Fiction Movies"
-    Films de Science fiction
+    Films de science-fiction
 "Search"
     Recherche
 "Search $1"
-    Recherche $1
+    Rechercher dans $1
 "Search all program keywords for a match against search phrase below"
+    Rechercher tous les mots-clé de programme associés à la locution de recherche ci-dessous
 "Search all program titles containing the Title text below"
+    Rechercher tous les titres de programme contenant le texte ci-dessous
 "Search for all actors contained in a recording for a match against search phrase below"
+    Rechercher tous les acteurs présents dans un enregistrement associé à la locaution de recherche ci-dessous
 "Search for:  $1"
-    Recherche pour :  $1
+    Chercher :  $1
 "Search Music"
-    Recherche la musique
+    Chercher la musique
 "Search Phrase"
-    Recherche la phrase
+    Locution de recherche
 "Search Phrase:"
+    Locution de recherche :
 "Search Results"
     Résultats de recherche
 "Search the Music Database"
-    Rechercher dans la base de donnée musicale
+    Rechercher dans la bibliothèque musicale
 "Search Type"
     Type de recherche
 "Search Type Help"
+    Aide pour le type de recherche
 "Search will perform complex SQL queries against the database as per the search phrase below"
+    La recherche effectuera des requêtes SQL complexes sur la base de données correspondant à la locution de recherche ci-dessous
 "Searches"
     Recherches
 "Searches will be performed against the title of all TV shows"
+    Les recherches seront effectuées sur le titre de toutes les émissions TV
 "Series ID"
     Identifiant de la série
 "Server Statistics"
@@ -1193,21 +1265,21 @@
 "Set Host"
     Choisir l'hôte
 "Settings"
-    Réglages
+    Paramètres
 "settings"
-    réglages
+    paramètres
 "Settings Table"
-    Table de réglages
+    Table de paramètres
 "settings/stream: protocol"
     Plusieurs lecteurs multimédia sont incapables de lire des fichiers dont les flux<br/>
     proviennent de serveurs https.  Si vous utilisez MythWeb sous https, vous pouvez<br/>
-    vouloir créer une installation additionnelle non-ssl et cocher cette boîte ce qui<br/>
-    forcera toutes les diffusions en flux à utiliser http à la place.
+    vouloir créer une installation supplémentaire non-ssl et cocher cette boîte ce qui<br/>
+    forcera toutes les diffusions de flux à utiliser http à la place.
 "settings: notice"
     Attention :<br><br>
-    Plusieures de ces pages de réglages ont peu de validation d'erreur, vous pouvez donc facilement
-    ruiner votre configuration si vous ne faites pas assez attention. La seule manière d'annuler vos
-    changements dans ce cas serait de restaurer d'une copie de sauvegarde.
+    Plusieurs de ces pages de paramètres ont peu de validation d'erreur, vous pouvez donc facilement
+    détruire votre configuration si vous ne faites pas assez attention. La seule manière d'annuler vos
+    modifications dans ce cas serait de restaurer la base de données à partir d'une copie de sauvegarde.
 "Shift"
     ^ Maj.
 "Show"
@@ -1215,41 +1287,45 @@
 "Show group"
     Afficher le groupe
 "Show pixmaps"
-    Afficher les vignettes
+    Afficher les images
 "Show recordings"
     Afficher les enregistrements
 "show_channel_icons"
     Afficher les icônes des chaînes
 "show_popup_info"
-    Show mouseover information about programs
+    Afficher les fenêtres d'information au passage sur les programmes
 "show_video_covers"
-    Afficher les couvertures vidéos sur l'interface vidéo
+    Afficher les affiches des vidéos sur l'interface vidéo
 "Showing all programs from the $1 group."
-    Montre les émissions du groupe $1.
+    Afficher tous les programmes du groupe $1.
 "Showing all programs."
-    Montre toutes les émissions.
+    Afficher tous les programmes.
 "Showings between"
-    Retransmissions entre
+    Diffusions entre
 "Shows"
     Émissions
 "Skip Ahead"
     Saut avant
 "Skip Back"
     Saut arrière
+"Some possible solutions are to make sure that mod_env
+                 is enabled in httpd.conf, as well as having followed
+                 the instructions in the README and INSTALL files."
+    Une solution potentielle est de s'assurer que mod_env est activé dans httpd.conf et de suivre les instructions des fichiers README et INSTALL.
 "Songs"
-    Chansons
+    Morceaux
 "Songs for Genre"
-    Chansons de ce genre
+    Morceaux du genre
 "Songs Played"
-    Chansons jouées
+    Morceaux joués
 "Songs Rated"
-    Chansons évaluées
+    Morceaux évalués
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
-    Désolé mais vous ne pouvez pas ajouter cette liste d'écoute car cela créerait une dépendance circulaire.
+    Désolé, vous ne pouvez pas ajouter cette liste de lecture car cela créerait une dépendance circulaire.
 "sortby_channum"
-    Classer la liste des chaînes par numéro de chaîne (coché) ou par indicatif (décoché)
+    Classer les chaînes par numéro de chaîne (coché) ou par indicatif (décoché)
 "sourceid"
-    identifiant de source
+    sourceid
 "Space"
     Espace
 "Special Searches"
@@ -1263,59 +1339,67 @@
 "Start Time"
     Heure de début
 "Starting"
-    Débutant
+    Démarrage en cours
 "Statistics"
     Statistiques
 "Stats"
     Statistiques
 "Status"
-    Statut
+    État
 "Status Bar"
-    Barre de statut
+    Barre d'état
 "Stereo"
     Stéréo
 "Still Recording: Edit"
     En cours d'enregistrement : Éditer
 "Stopping"
-    En cours d'arr
+    Arrêt en cours
 "Storage Group"
     Groupe de stockage
 "Streaming"
     Diffusion en flux
 "Sub and Desc (Empty matches)"
-    Sub et Desc (Vide correspond)
+    Sous-titre et desc. (vides)
 "Submit Search"
-    Soumettre la recherche
+    Lancer la recherche
 "Subtitle"
     Sous-titre
 "Subtitle and Description"
     Sous-titre et description
 "Subtitle then Description"
-    Sous-titre ensuite description
+    Sous-titre puis description
 "Subtitled"
     Sous-titré
 "Subtitles Available"
-    Sous-titres disponibles
+    Sous-titrages disponibles
 "Sunday"
     Dimanche
 "Surround Sound"
-    Son ambiophonique
+    Son Surround
 "Tab"
     Tab
 "Temp"
     Temp.
+"The database environment variables are not correctly
+                 set in the webserver conf or .htaccess file.
+                 Please read through the comments included in the file
+                 and set up the db_* environment variables correctly."
+    Les variables d'environnement de la base de données ne sont pas correctement
+    initialisées dans le fichier de configuration ou .htaccess du serveur web.
+    Veuillez consulter les commentaires inclus dans le fichier et configurer
+    les variables d'environnement db_* correctement.
 "The requested recording schedule has been deleted."
-    La programmation d'enregistrement demandé a été effacé.
+    La programmation d'enregistrement demandée a été supprimée.
 "themoviedb"
 "There are no items in this Playlist!"
-    Il n'y a pas d'items dans cette liste d'écoute!
+    Il n'y a aucun élément dans cette liste de lecture !
 "There was a problem saving your playlist"
-    Il y a eu un problème lors de la sauvegarde de votre liste d'écoute
+    Il y a eu un problème lors de la sauvegarde de votre liste de lecture
 "TheTVDB"
 "This playlist is already loaded!"
-    Cette liste d'écoute est déjà chargée!
+    Cette liste de lecture est déjà chargée !
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
-    Cela va remplacer votre liste d'écoute courante et non-sauvegardée. Êtes-vous sur de vouloir continuer?
+    Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
 "Thursday"
     Jeudi
 "Time"
@@ -1323,13 +1407,13 @@
 "Time Span"
     Plage de temps
 "Time Stretch"
-    Étirement du temps
+    Vitesse de lecture
 "Time Stretch Default"
-    Défaut de l'étirement du temps
+    Vitesse de lecture par défaut
 "Timeslot size"
-    Grandeur des cases horaires
+    Durée de tranche horaire
 "title"
-    Titre
+    titre
 "Title"
     Titre
 "Title Match"
@@ -1339,27 +1423,29 @@
 "Title Search"
     Recherche par titre
 "Title Search:"
+    Recherche par titre :
 "Title:"
+    Titre :
 "Too Many"
     Trop d'entrées
 "Top $1"
-    Premiers $1
+    $1 premiers
 "Top Played Songs"
-    Chansons les plus écoutées
+    Morceaux les plus écoutés
 "Top Rated Songs"
-    Chansons les mieux évaluées
+    Morceaux les mieux évalués
 "Total Length"
-    Longueur totale
+    Durée totale
 "Total Recorded"
-    Total enregistré
+    Durée totale enregistrée
 "Total Running Time"
-    Durée de diffusion totale
+    Temps écoulé total
 "Total Time"
     Temps total
 "Total Time:  %s"
     Temps total :  %s
 "Track #%s from the album '%s'"
-    Piste #%s de l'album '%s'
+    Piste n°%s de l'album '%s'
 "Transcode"
     Transcoder
 "transcoder"
@@ -1369,29 +1455,29 @@
 "Tuesday"
     Mardi
 "Tuner Busy"
-    Syntoniseur occupé
+    Tuner occupé
 "TV"
     TV
 "TV functions, including recorded programs."
-    Fonctions TV, inclant les enregistrements d&acute;&eacute;missions
+    Fonctions TV, incluant les programmes enregistrés.
 "TV Submenu"
     Sous-menu TV
 "TV.com"
     TV.com
 "type"
-    Type
+    type
 "Type"
     Type
 "Undelete"
-    Restaurer
+    Récupérer
 "Undelete: $1"
-    Restaurer : $1
+    Récupérer : $1
 "Unknown"
     Inconnu
 "Unknown action"
     Action inconnue
 "Unknown frontend"
-    "Frontend" inconnu
+    Frontal inconnu
 "Unknown Program."
     Programme inconnu.
 "Unknown Recording Schedule."
@@ -1399,17 +1485,17 @@
 "Up"
     Haut
 "Upcoming Recordings"
-    Enregistrements futurs
+    Prochains enregistrements
 "Update"
     Rafraîchir
 "Update Recording Settings"
-    Actualiser les réglages d&acute;enregistrement
+    Actualiser les paramètres d'enregistrement
 "Use callsign"
-    Utiliser indicatif
+    Utiliser l'indicatif
 "Use date/time"
     Utiliser date/heure
 "useonairguide"
-    utiliser le guide de programme électronique
+    utiliser le guide des programmes électronique
 "Value"
     Valeur
 "Video"
@@ -1419,28 +1505,28 @@
 "Video Playback"
     Lecture vidéo
 "Video: Error: IMDB"
-    Erreur fatale! Je suis désolé mais il y a eu un problème pour obtenir l'information d'imdb. SVP vérifiez votre numéro imdb si vous l'avez saisi manuellement.
+    Erreur fatale ! Désolé, mais il y a eu un problème en récupérant les données IMDB. Vérifiez votre numéro IMDB si vous l'avez entré manuellement.
 "Video: Error: IMDB: Not Found"
-    Erreur fatale! IMDB n'a pas été configuré dans les options, SVP le configurer dans l'onglet options.
+    Erreur fatale ! IMDB n'a pas été configuré dans la table des paramètres, veuillez le faire via l'onglet paramètres.
 "Video: Error: Missing ID"
-    Erreur fatale! Pour une raison inconnue l'identifiant n'a pas été fourni au script imdb. Traitement abandonné.
+    Erreur fatale ! Pour une raison inconnue l'identifiant n'a pas été fourni au script imdb. Traitement abandonné.
 "Video: IMDB: No Matches"
-    Il n'y a pas de correspondance pour ce titre. SVP utilisez la recherche personnalisé pour fournir un numéro imdb number ou un titre différent pour refaire la recherche.
+    Il n'y a pas de correspondance pour ce titre. Veuillez utiliser la recherche personnalisée pour fournir un numéro IMDB ou un titre différent, et refaire la recherche.
 "Video: IMDB: Window Title"
     Correspondances IMDB
 "Video: Warning: Artwork"
-    Attention! La mise à jour de l'illustration a échoué. SVP validez les permissions de votre répertoire d'illustration de vidéos sur cet hôte.
+    Attention ! La mise à jour de l'illustration de la vidéo a échoué. Veuillez valider les permissions de votre répertoire d'affiches de vidéos sur cet hôte.
 "Video: Warning: Artwork: Download"
-    Le téléchargement de l'illustration d'imdb a échoué.
+    Le téléchargement de l'affiche par IMDB a échoué.
 "Video: Warning: fopen"
-    Attention! Votre fichier php.ini a allow_url_fopen à "Off". Pour télécharger l'illustration, il doit être à "On". L'illustration ne sera pas mise à jour.
+    Attention, votre fichier php.ini contient allow_url_fopen à off. Pour télécharger l'affiche, il faut qu'il soit à on. L'affiche ne sera pas mise à jour.
 "VideoAggressivePC"
 "VideoArtworkDir"
 "VideoBrowserNoDB"
 "VideoDefaultParentalLevel"
 "VideoDefaultPlayer"
 "videofilters"
-    filtres vidéos
+    filtres vidéo
 "VideoGalleryAspectRatio"
 "VideoGalleryColsPerPage"
 "VideoGalleryNoDB"
@@ -1453,11 +1539,11 @@
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
 "View Albums by %s"
-    Afficher albums par %s
+    Afficher les albums par %s
 "View Details of %s"
-    Afficher détail de %s
+    Afficher les détails de %s
 "View Saved Playlist"
-    Voir liste d'écoute sauvegardée
+    Afficher liste de lecture sauvegardée
 "View Server Statistics"
     Afficher les statistiques du serveur
 "Visibility"
@@ -1467,18 +1553,21 @@
 "Visit $1"
     Visitez $1
 "Watch on frontend"
-    Visionner sur le "frontend"
+    Regarder sur le frontal
 "Watch on iPod/iPhone"
-    Visionner sur iPod/iPhone
+    Regarder sur iPod/iPhone
 "Watched"
-    Visionné
+    Vu
 "Weather"
     Météo
 "web_video_imdb_path"
-    Chemin de imdb.pl sur ce serveur web
+    Chemin vers le serveur de métadonnées web
 "web_video_imdb_type"
+    Serveur de métadonnées web
 "web_video_thumbnail_height"
+    Hauteur des miniatures d'affiche vidéo web
 "web_video_thumbnail_width"
+    Largeur des miniatures d'affiche vidéo web
 "Wednesday"
     Mercredi
 "welcome: backend_log"
@@ -1488,11 +1577,11 @@
 "welcome: remote"
     bienvenue : télécommande
 "welcome: settings"
-    bienvenue : réglages
+    bienvenue : paramètres
 "welcome: stats"
     bienvenue : statistiques
 "welcome: status"
-    bienvenue : statut
+    bienvenue : état
 "welcome: tv"
     bienvenue : télévision
 "welcome: video"
@@ -1500,13 +1589,13 @@
 "welcome: weather"
     bienvenue : météo
 "What else is on at this time?"
-    Quoi d'autre à cette heure?
+    Quoi d'autre à cette heure ?
 "Widescreen"
-    Panoramique
+    Écran 16/9e
 "Width"
     Largeur
 "Will Record"
-    Va enregistrer
+    Sera enregistré
 "Wind"
     Vent
 "Wind Chill"
@@ -1514,10 +1603,12 @@
 "Written by"
     Écrit par
 "xmltvid"
-    identifiant xmltv
+    xmltvid
 "Year"
     Année
 "Yes"
     Oui
 "Yesterday"
     Hier
+"You are most likely receiving this message because you have failed to configure mythweb's database login info."
+    Vous recevez probablement ce message parce que vous n'avez pas configuré les informations de connexion à la base de données de mythweb.
