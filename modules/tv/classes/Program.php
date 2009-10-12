@@ -817,7 +817,7 @@ class Program {
         $dirs = $db->query('SELECT DISTINCT storagegroup.dirname
                               FROM storagegroup
                              WHERE storagegroup.groupname = ?',
-                             $this->recgroup
+                             $this->storagegroup
                              );
         while ($dir = $dirs->fetch_col()) {
             if (file_exists($dir.$this->filename))
