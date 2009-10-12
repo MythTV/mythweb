@@ -152,7 +152,7 @@ EOF;
         </div>
 
         <div class="x-options">
-            <h3><a <?php echo show_popup('SearchTypeHelp',$SearchTypeHelp) ?>>Search Type:</a></h3>
+            <h3><a <?php echo show_popup('SearchTypeHelp',$SearchTypeHelp) ?>><?php echo t('Search Type') ?>:</a></h3>
 
             <ul>
                 <li><input type="radio" class="radio" name="searchtype" value="<?php echo searchtype_title ?>" id="searchtype_title"<?php
@@ -176,7 +176,7 @@ EOF;
         </div>
 
         <div class="x-options">
-            <h3><a <?php echo show_popup('RecordingOptionsHelp',$RecordingOptionsHelp) ?>>Recording Options:</a></h3>
+            <h3><a <?php echo show_popup('RecordingOptionsHelp',$RecordingOptionsHelp) ?>><?php echo t('Recording Options') ?>:</a></h3>
 
             <dl id="title_options" class="x-long">
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
