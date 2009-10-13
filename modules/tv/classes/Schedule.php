@@ -84,6 +84,9 @@ class Schedule {
                     case 'airdate':
                         $orderby .= 'starttime';
                         break;
+                    case 'recpriority':
+                        $orderby .= 'record.recpriority';
+                        break;
                     default:
                         $orderby .= $sort['field'];
                         break;
