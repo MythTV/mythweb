@@ -49,6 +49,7 @@
 "%s Song (%s)"
 "%s Songs"
 "%s Songs (%s)"
+"(height is calculated automatically from the recording aspect ratio)"
 "Aborted"
 "Aborting"
 "Action"
@@ -306,6 +307,7 @@
 "Edit Screen"
 "Edit settings for: $1"
 "Editing "
+"Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
 "End Late"
@@ -332,6 +334,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"ffmpeg with MP3 support not detected"
 "File Size"
     mida de l'arxiu
 "film"
@@ -356,6 +359,7 @@
     Primer  enregistrament
 "First showing of each episode"
 "Flag Commercials"
+"FLV Width"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
@@ -1023,6 +1027,7 @@
     Cercar títol
 "Title Search:"
 "Title:"
+"Toggle Interactive Mode"
 "Too Many"
 "Top $1"
     Primers $1

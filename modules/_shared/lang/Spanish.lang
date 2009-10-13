@@ -58,6 +58,7 @@
     %s Canciones
 "%s Songs (%s)"
     %s Canciones (%s)
+"(height is calculated automatically from the recording aspect ratio)"
 "Aborted"
     Cancelado
 "Aborting"
@@ -379,6 +380,7 @@
 "Edit settings for: $1"
 "Editing "
     Editando
+"Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
 "End Late"
@@ -405,6 +407,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"ffmpeg with MP3 support not detected"
 "File Size"
     tamaño fichero
 "film"
@@ -429,6 +432,7 @@
     Primera grabación
 "First showing of each episode"
 "Flag Commercials"
+"FLV Width"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
@@ -1094,6 +1098,7 @@
     Buscar título
 "Title Search:"
 "Title:"
+"Toggle Interactive Mode"
 "Too Many"
 "Top $1"
 "Top Played Songs"

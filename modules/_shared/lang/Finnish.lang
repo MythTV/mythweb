@@ -56,6 +56,7 @@
     %s kappaletta
 "%s Songs (%s)"
     %s kappaletta (%s)
+"(height is calculated automatically from the recording aspect ratio)"
 "Aborted"
     Keskeytetty
 "Aborting"
@@ -404,6 +405,7 @@
     Muokkaa asetuksia: $1
 "Editing "
     Muokkaa
+"Enable Flash Video player for recordings."
 "Enable Video Playback"
     Mahdollista videon toisto
 "End"
@@ -445,6 +447,7 @@
 "Extended Check"
     Pidennetty tarkistus
 "Extra Information"
+"ffmpeg with MP3 support not detected"
 "File Size"
     Tiedostokoko
 "film"
@@ -474,6 +477,7 @@
 "First showing of each episode"
 "Flag Commercials"
     Merkitse mainokset
+"FLV Width"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
     Pakota HTTP virtauksille
@@ -1313,6 +1317,7 @@
     Haku Nimikkeellä
 "Title Search:"
 "Title:"
+"Toggle Interactive Mode"
 "Too Many"
     Liian monta
 "Top $1"

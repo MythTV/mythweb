@@ -185,7 +185,7 @@
         <a onclick="send_key('f12')" class="noshift">F12</a></td>
     <td></td>
     <td></td>
-    <td colspan="3"><a id="keypress" onclick="toggle_keypress()">Toggle Interactive Mode</a></td>
+    <td colspan="3"><a id="keypress" onclick="toggle_keypress()"><?php echo t('Toggle Interactive Mode') ?></a></td>
 </tr><tr>
     <td><a onclick="send_key('~')" class="reqshift">~</a>
         <a onclick="send_key('`')" class="noshift">`</a></td>

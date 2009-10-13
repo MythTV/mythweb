@@ -59,6 +59,7 @@
     %s sånger
 "%s Songs (%s)"
     %s sånger (%s)
+"(height is calculated automatically from the recording aspect ratio)"
 "Aborted"
     Avbröt
 "Aborting"
@@ -410,6 +411,7 @@
 "Edit settings for: $1"
     Ändra insällningar för: $1
 "Editing "
+"Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
 "End Late"
@@ -450,6 +452,7 @@
     Utbredd kontroll
 "Extra Information"
     Extra information
+"ffmpeg with MP3 support not detected"
 "File Size"
     Filstorlek
 "film"
@@ -479,6 +482,7 @@
 "First showing of each episode"
 "Flag Commercials"
     Flagga reklam
+"FLV Width"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
     Tvinga HTTP för strömmar
@@ -1328,6 +1332,7 @@
     Sök titel
 "Title Search:"
 "Title:"
+"Toggle Interactive Mode"
 "Too Many"
     För många
 "Top $1"

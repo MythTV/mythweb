@@ -58,6 +58,7 @@
     %s Dal
 "%s Songs (%s)"
     %s Dal (%s)
+"(height is calculated automatically from the recording aspect ratio)"
 "Aborted"
     Megszakít
 "Aborting"
@@ -414,6 +415,7 @@
     Beállítások szerkesztése ehhez: $1
 "Editing "
     Szerkeszés
+"Enable Flash Video player for recordings."
 "Enable Video Playback"
     Videolejátszás engedélyezése
 "End"
@@ -457,6 +459,7 @@
     Részletes vizsgálat
 "Extra Information"
     Extra Információ
+"ffmpeg with MP3 support not detected"
 "File Size"
     Fájlméret
 "film"
@@ -486,6 +489,7 @@
 "First showing of each episode"
 "Flag Commercials"
     Reklámok jelölése
+"FLV Width"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
     HTTP kényszerítése az adatfolyamokhoz
@@ -1338,6 +1342,7 @@
     Cím keresése
 "Title Search:"
 "Title:"
+"Toggle Interactive Mode"
 "Too Many"
     Túl sok
 "Top $1"

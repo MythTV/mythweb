@@ -53,6 +53,7 @@
     %s Pesmi
 "%s Songs (%s)"
     %s Pesmi (%s)
+"(height is calculated automatically from the recording aspect ratio)"
 "Aborted"
     Preklicano
 "Aborting"
@@ -390,6 +391,7 @@
     Uredi nastavitve za: $1
 "Editing "
     Urejanje
+"Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
     Konec
@@ -428,6 +430,7 @@
 "Extended Check"
     Podrobni pregled
 "Extra Information"
+"ffmpeg with MP3 support not detected"
 "File Size"
     Velikost datoteke
 "film"
@@ -456,6 +459,7 @@
 "First showing of each episode"
 "Flag Commercials"
     Označi reklame
+"FLV Width"
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
     Za predvajanje vsili HTTP
@@ -1267,6 +1271,7 @@
     Iskanje po naslovih
 "Title Search:"
 "Title:"
+"Toggle Interactive Mode"
 "Too Many"
     Preveč
 "Top $1"

@@ -24,7 +24,7 @@
 <tr>
     <th><?php echo t('Enable Video Playback') ?>:</th>
     <td><input class="radio" type="checkbox" name="flvplayer"
-         title="Enable Flash Video player for recordings."
+         title="<?php echo t('Enable Flash Video player for recordings.') ?>"
         <?php
             $ffmpeg = '';
             foreach (split (':', getenv ('PATH').':/usr/local/bin:/usr/bin') as $path) {
@@ -45,26 +45,26 @@
                 echo ' CHECKED';
             echo '>';
             if (!$has_mp3_support)
-                echo ' ffmpeg with MP3 support not detected';
+                echo ' '.t('ffmpeg with MP3 support not detected');
             ?></td>
 </tr><tr>
     <th valign="top"><?php echo t('Width') ?>:</th>
     <td><input type="text" name="width"
-         size="5" title="FLV Width"
+         size="5" title="<?php echo t('FLV Width') ?>"
          value="<?php echo intVal(_or(setting('WebFLV_w'), 320)) ?>" />
          <br>
-         (height is calculated automatically from the recording aspect ratio)
+         <?php echo t('(height is calculated automatically from the recording aspect ratio)') ?>
          </td>
 </tr><tr>
     <th><?php echo t('Video Bitrate') ?>:</th>
     <td><input type="text" name="vbitrate"
-         size="5" title="Video Bitrate"
+         size="5" title="<?php echo t('Video Bitrate') ?>"
          value="<?php echo html_entities(_or(setting('WebFLV_vb'), 256)) ?>" />
          kbps</td>
 </tr><tr>
     <th><?php echo t('Audio Bitrate') ?>:</th>
     <td><input type="text" name="abitrate"
-         size="5" title="Audio Bitrate"
+         size="5" title="<?php echo t('Audio Bitrate') ?>"
          value="<?php echo html_entities(_or(setting('WebFLV_ab'), 64)) ?>" />
          kbps</td>
 </tr><tr>

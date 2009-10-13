@@ -59,6 +59,7 @@
     %s morceaux
 "%s Songs (%s)"
     %s morceaux (%s)
+"(height is calculated automatically from the recording aspect ratio)"
 "Aborted"
     Interrompu
 "Aborting"
@@ -424,6 +425,7 @@
     Éditer les paramètres pour : $1
 "Editing "
     En édition
+"Enable Flash Video player for recordings."
 "Enable Video Playback"
     Permettre la lecture vidéo
 "End"
@@ -468,6 +470,7 @@
     Contrôle étendu
 "Extra Information"
     Informations supplémentaires
+"ffmpeg with MP3 support not detected"
 "File Size"
     Taille du fichier
 "film"
@@ -498,6 +501,7 @@
     Première diffusion de chaque épisode
 "Flag Commercials"
     Baliser les publicités
+"FLV Width"
 "For more information on the Power Search please go to:"
     Pour plus d'informations sur la Recherche avancée veuillez vous rendre à :
 "Force HTTP for streams"
@@ -1393,6 +1397,7 @@
     Recherche par titre :
 "Title:"
     Titre :
+"Toggle Interactive Mode"
 "Too Many"
     Trop d'entrées
 "Top $1"
