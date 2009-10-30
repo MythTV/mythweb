@@ -49,7 +49,7 @@
     $sh->execute($chanid,$starttime);
     $x = $sh->fetchrow_array;
     $y = $sh->fetchrow_array if ($x);
-    $width = round_even(width);
+    $width = round_even($width);
     if ($x && $y) {
         $height = round_even($width * ($y/$x));
     } else {
