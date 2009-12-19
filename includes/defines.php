@@ -21,15 +21,16 @@
         define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));
 
 // Several sections of this program require the current hostname
-    if (function_exists('posix_uname'))
+    if (!empty($_SERVER['hostname']))
+        define('hostname', $_SERVER['hostname']);
+    elseif (function_exists('posix_uname')) {
         $uname = posix_uname();
+        define('hostname', trim($uname['nodename']));
+    }
     elseif (function_exists('php_uname'))
-        $uname = php_uname('n');
+        define('hostname', php_uname('n'));
     else
         throw new Exception('Failed to get server hostname!');
-
-    define('hostname', empty($_SERVER['hostname']) ? trim($uname['nodename']) : $_SERVER['hostname']);
-    unset($uname);
 
 // Define the error email, or set it to a null string if there isn't a valid one
     define('error_email', array_key_exists('error_email', $_SERVER) && strstr($_SERVER['error_email'], '@')
