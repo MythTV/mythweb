@@ -33,11 +33,11 @@ class Video {
     function __construct($intid) {
         global $db;
         global $mythvideo_dir;
-        $video = $db->query_assoc('SELECT videometadata.*
-                                     FROM videometadata
-                                    WHERE videometadata.intid = ?',
-                                  $intid
-                                  );
+        $video = $db->query_assoc('
+            SELECT  *
+            FROM    videometadata
+            WHERE   intid = ?',
+            $intid);
         $this->intid        = $intid;
         $this->plot         = $video['plot'];
         $this->category     = $video['category'];
@@ -67,8 +67,7 @@ class Video {
                 $this->cover_scaled_height = floor($height * $scale);
             }
         }
-
-        $this->childid      = $video['childid'];
+        $this->childid = $video['childid'];
     // Figure out the URL
         $this->url = '#';
         if (file_exists('data/video/'))
@@ -77,13 +76,14 @@ class Video {
                                              explode('/',
                                              'data/video/' . preg_replace('#^'.$mythvideo_dir.'/?#', '', $this->filename)
                                        ))));
-        $genre = $db->query('SELECT videometadatagenre.idgenre
+        $genre = $db->query('SELECT idgenre
                                FROM videometadatagenre
-                              WHERE videometadatagenre.idvideo = ?',
+                              WHERE idvideo = ?',
                             $this->intid
                             );
-        while( $id = $genre->fetch_col())
+        while( $id = $genre->fetch_col()) {
             $this->genres[] = $id;
+        }
         $genre->finish();
     }
 
