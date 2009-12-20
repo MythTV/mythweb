@@ -56,15 +56,22 @@
         ajax_remove_request();
         var result  = response.responseJSON;
 
-        if (result['error'])
-            for (var key in result['error'])
+        if (result['error']) {
+            for (var key in result['error']) {
                 console.error(result['error'][key]);
-        if (result['warning'])
-            for (var key in result['warning'])
+            }
+            return;
+        }
+        if (result['warning']) {
+            for (var key in result['warning']) {
                 console.warn(result['warning'][key]);
+            }
+            return
+        }
 
-        for (var key in result['update'])
+        for (var key in result['update']) {
             update_video(result['update'][key]);
+        }
 
         if (result['action'] == 'lookup') {
             if (result['matches']) {
@@ -110,7 +117,7 @@
     }
 
     function imdb_prompt(id) {
-        var title  = $(id+'-title').childNodes[0].innerHTML;
+        var title  = $(id+'-title').childNodes[1].innerHTML;
         var number = prompt('<?php echo t('Please enter an imdb number or a title to do another search'); ?>', title);
         if (typeof(number) != 'string' || number.length == 0)
             return;
@@ -292,9 +299,9 @@
 <div id="videos">
 
 <div id="path">
- <b>Directory Structure</b><hr>
- <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root_url; ?>video?path=/">All Videos</a><br>
- <?php foreach ($PATH_TREE as $path) output_path_picker($path); ?>
+  <b>Directory Structure</b><hr>
+  <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root_url; ?>video?path=/">Root Directory</a><br><br>
+  <?php foreach ($PATH_TREE as $path) { output_path_picker($path); } ?>
 </div>
 
 <?php
@@ -305,11 +312,11 @@
         <div id="<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
         <div id="<?php echo $video->intid; ?>-title" class="title">
-            <a href="<?php echo $video->url; ?>"><?php echo html_entities($video->title); ?></a><?php 
-                  if (($video->season > 0) && ($video->episode >= 0)) 
-                      printf('(S%02d E%02d)', $video->season, $video->episode); 
-                  if (strlen($video->subtitle) > 0) 
-                      echo '<br>' . html_entities($video->subtitle); 
+            <a href="<?php echo $video->url; ?>"><?php echo html_entities($video->title); ?></a><?php
+                  if (($video->season > 0) && ($video->episode >= 0))
+                      printf('(S%02d E%02d)', $video->season, $video->episode);
+                  if (strlen($video->subtitle) > 0)
+                      echo '<br>' . html_entities($video->subtitle);
             ?></div>
         <div id="<?php echo $video->intid; ?>_img">                <img <?php if ($_SESSION["show_video_covers"] && file_exists($video->cover_file)) echo 'src="'.$video->cover_url.'"'; echo ' width="'.$video->cover_scaled_width.'" height="'.$video->cover_scaled_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
         <div id="<?php echo $video->intid; ?>-category">           <?php echo $Category_String[$video->category]; ?></div>

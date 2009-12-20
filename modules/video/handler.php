@@ -22,14 +22,24 @@
     global $mythvideo_dir;
     $mythvideo_dir = setting('VideoStartupDir', hostname);
 
+// Load the video storage directories
+    $video_dirs = $db->query_list('
+        SELECT  dirname
+        FROM    storagegroup
+        WHERE   groupname="Videos"
+        ');
+    if (empty($video_dirs)) {
+        custom_error('MythWeb now requires use of the Videos Storage Group.');
+    }
+
 // a extra function
     function makeImdbWebUrl($num) {
- 	    $imdbwebtype = setting('web_video_imdb_type', hostname);
+        $imdbwebtype = setting('web_video_imdb_type', hostname);
         switch ($imdbwebtype) {
             case 'ALLOCINE':    return "http://www.allocine.fr/film/fichefilm_gen_cfilm=".$num.".html";
             default:            return "http://www.imdb.com/Title?".$num;
         }
- 	}
+    }
 
 // Make sure the video directory exists
     if (file_exists('data/video')) {
@@ -110,56 +120,63 @@
 
 // Get the filesystem layout
     $PATH_TREE = array();
-    $dirs = explode(':', setting('VideoStartupDir', hostname));
-    $sh = $db->query('SELECT DISTINCT videometadata.filename
-                        FROM videometadata
-                    ORDER BY videometadata.filename');
-    while ($file = $sh->fetch_col()) {
-        $file = dirname($file);
-    // Figure out the base...
-        foreach ($dirs as $dir) {
-            if ($dir) {
-                if(strpos($file, $dir) !== false) {
-                    if (!isset($PATH_TREE[$dir]))
-                        $PATH_TREE[$dir] = array('display' => $dir,
-                                                 'path'    => $dir,
-                                                 'subs'    => array());
-                    $PATH = &$PATH_TREE[$dir];
-                    $file = str_replace($dir, '', $file);
-                    break;
-                }
-            }
+    $sh = $db->query('
+        SELECT      DISTINCT IF(INSTR(filename,"/"), LEFT(filename, LENGTH(filename) - LOCATE("/", REVERSE(filename))), "/") AS dirname
+        FROM        videometadata
+        ORDER BY    dirname');
+    while ($dirname = $sh->fetch_col()) {
+    // Skip the root path, which we already know exists
+        if ($dirname == '/')
+            continue;
+    // Split up the path into individual directories
+        $paths = explode('/', $dirname);
+    // Process the basename
+        $dir = array_shift($paths);
+        if (empty($PATH_TREE[$dir])) {
+            $PATH_TREE[$dir] = array(
+                'display' => $dir,
+                'path'    => "/$dir",
+                'subs'    => array()
+                );
         }
-        $paths = explode('/', $file);
-        foreach ($paths AS $id => $path) {
-            if (empty($path))
-                continue;
-            if (!isset($PATH['subs'][$path])) {
-                $p = '';
-                for ($i=0; $i<=$id;$i++)
-                    $p .=$paths[$i].'/';
-                $PATH['subs'][$path] = array('display' => $path,
-                                             'path'    => $dir.$p,
-                                             'subs'    => array());
+        $PATH = &$PATH_TREE[$dir];
+    // And any subdirectories
+        if (!empty($paths)) {
+            foreach ($paths AS $key => $path) {
+                if (empty($path))
+                    continue;
+                if (!isset($PATH['subs'][$path])) {
+                    $p = '';
+                    for ($i=0; $i<=$key;$i++) {
+                        $p .=$paths[$i];
+                    }
+                    $PATH['subs'][$path] = array('display' => $path,
+                                                 'path'    => "/$dir/$p",
+                                                 'subs'    => array());
+                }
+                $PATH = &$PATH['subs'][$path];
             }
-            $PATH = &$PATH['subs'][$path];
         }
         unset($PATH);
     }
     $sh->finish();
 
     function output_path_picker($path, $padding=0) {
-        for ($i = 0; $i < $padding; $i++)
-            echo '&nbsp;';
-        if (strlen($path['path']) > 0)
-            echo '<a class="'.($_SESSION['video']['path'] == $path['path']?'active':'').'" href="'.root_url.'video?path='.urlencode($path['path']).'">'.$path['display'].'</a><br>'."\n";
-        if (count($path['subs']))
-            foreach ($path['subs'] AS $p)
+        for ($i = 0; $i < $padding; $i++) {
+            echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+        }
+        if (strlen($path['path']) > 0) {
+            echo '<a class="'.($_SESSION['video']['path'] == $path['path']?'active':'').'" href="'.root_url.'video?path='.urlencode($path['path']).'">'.$path['display']."</a><br>\n";
+        }
+        if (count($path['subs'])) {
+            foreach ($path['subs'] AS $p) {
                 output_path_picker($p, $padding+1);
+            }
+        }
     }
 
 // Load the sorting routines
-    require_once "includes/sorting.php";
+    require_once 'includes/sorting.php';
 
 // Get the video categories on the system
     $Category_String = array();
@@ -168,7 +185,6 @@
         $Category_String[$row['intid']] = $row['category'];
     $sh->finish();
     $Category_String[0] = 'Uncategorized';
-
 
 // New:  Get the video genres on the system
     $Genre_String = array();
@@ -182,51 +198,52 @@
 // Filter_Category of -1 means All, 0 mean uncategorized
     $Total_Programs = 0;
     $All_Videos     = array();
-    if( isset($_REQUEST['category']) ) {
+    if (isset($_REQUEST['category']) ) {
         $Filter_Category = $_REQUEST['category'];
-        if( $Filter_Category != -1)
+        if ($Filter_Category != -1) {
             $where = ' AND videometadata.category='.$db->escape($Filter_Category);
+        }
     }
     else
         $Filter_Category = -1;
 
 // New:  sort fields
-    if( isset($_REQUEST['genre']) ) {
+    if (isset($_REQUEST['genre']) ) {
         $Filter_Genre = $_REQUEST['genre'];
-	if( $Filter_Genre != -1)
+        if ($Filter_Genre != -1) {
             $where .= ' AND videometadatagenre.idgenre='.$db->escape($Filter_Genre);
+        }
     }
-    else
+    else {
         $Filter_Genre = -1;
+    }
 
-
-
-    if( isset($_REQUEST['browse']) )
+    if (isset($_REQUEST['browse']))
         $_SESSION['video']['browse'] = $_REQUEST['browse'];
 
-    if( isset($_SESSION['video']['browse']) ) {
+    if (isset($_SESSION['video']['browse']) ) {
         $Filter_Browse = $_SESSION['video']['browse'];
-	if( $Filter_Browse != -1)
+        if ($Filter_Browse != -1) {
             $where .= ' AND videometadata.browse='.$db->escape($Filter_Browse);
+        }
     }
-    else
+    else {
         $Filter_Browse = -1;
+    }
 
-    if( isset($_REQUEST['search']) ) {
+    if (isset($_REQUEST['search']) ) {
         $Filter_Search = $_REQUEST['search'];
-	if( strlen($Filter_Search) != 0)
+        if (strlen($Filter_Search) != 0)
             $where .= ' AND videometadata.title LIKE '.$db->escape("%".$Filter_Search."%");
     }
     else
         $Filter_Search = "";
 
     if (isset($_REQUEST['path']))
-        $_SESSION['video']['path'] = $_REQUEST['path'];
+        $_SESSION['video']['path'] = preg_replace('#^/*#', '/', preg_replace('#/+$#', '', $_REQUEST['path']));
 
     if (isset($_SESSION['video']['path'])) {
-        $escaped_path = str_replace('(', '\\(',$_SESSION['video']['path']);
-    	$escaped_path = str_replace(')', '\\)', $escaped_path);
-        $where .= ' AND videometadata.filename RLIKE '.$db->escape($db->escape_regex($escaped_path).'[/]*[^/]*$');
+        $where .= ' AND CONCAT("/", IF(INSTR(filename,"/"), LEFT(filename, LENGTH(filename) - LOCATE("/", REVERSE(filename))), "")) = '.$db->escape($_SESSION['video']['path']);
     }
 // Deal with the parental locks
     if (isset($_REQUEST['VideoAdminPassword']))
@@ -238,16 +255,17 @@
     if ($where)
         $where = 'WHERE '.substr($where, 4);
 
-    $sh = $db->query('SELECT videometadata.intid
-                        FROM videometadata
-                             LEFT JOIN videometadatagenre
-                                    ON videometadata.intid = videometadatagenre.idvideo
-                  ' . $where . '
-                    GROUP BY intid
-                    ORDER BY title');
-
-    while ($intid = $sh->fetch_col())
+    $sh = $db->query('
+        SELECT      videometadata.intid
+        FROM        videometadata
+        LEFT JOIN   videometadatagenre
+                 ON videometadata.intid = videometadatagenre.idvideo
+        ' . $where . '
+        GROUP BY    intid
+        ORDER BY    title');
+    while ($intid = $sh->fetch_col()) {
         $All_Videos[] = new Video($intid);
+    }
     $sh->finish();
 
 // Set sorting

@@ -80,20 +80,30 @@
         $return['action'] = 'grab';
         $imdb             = setting('web_video_imdb_path', hostname);
         $imdbwebtype      = setting('web_video_imdb_type', hostname);
-    // Setup the option list
-        $options          = array('IMDB'     => array( 'artwork' => ' -P %%NUMBER%%'),
-                                  'ALLOCINE' => array( 'artwork' => ' -P %%NUMBER%%')
-                                 );
         $artworkdir       = setting('VideoArtworkDir', hostname);
         $posterfile       = $artworkdir.'/'.$imdbnum.'.jpg';
+    // Get the imdb data
+        $data = array();
+        $cmd = "$imdb -D $imdbnum";
+        exec($cmd, $lines, $retval);
+        if ($retval == 255 || $DEBUG) {
+            $return['warning'][] = "IMDB Command $cmd exited with return value $retval";
+        }
+        $valid = FALSE;
+        foreach ($lines as $line) {
+            list ($key, $value) = explode(':', $line, 2);
+            $data[strtolower($key)] = trim($value);
+            if (strlen($data[strtolower($key)]) > 0) {
+                $valid = TRUE;
+            }
+        }
+        if (!$valid) {
+            $return['error'][] = t('Video: Error: IMDB');
+            return;
+        }
     // If the file already exists, use it, don't bother regrabbing
         if (!file_exists($posterfile)) {
-    // save the poster
-            $cmd = $imdb.str_replace('%%NUMBER%%', $imdbnum, $options[$imdbwebtype]['artwork']);
-            exec($cmd, $output, $retval);
-            if ($retval == 255)
-                $return['warning'][] = "IMDB Command $cmd exited with return value $retval";
-            $posterurl = trim($output[0]);
+            $posterurl = $data['coverart'];
             if (!is_writable($artworkdir))
                 $return['warning'][] = t('Video: Warning: Artwork');
             else {
@@ -105,29 +115,13 @@
                         $return['warning'][] = t('Video: Warning: Artwork: Download');
                     else {
                         @file_put_contents( $posterfile, $posterjpg);
-                    if (!file_exists($posterfile))
-                        $return['warning'][] = t('Video: Warning: Artwork');
+                        if (!file_exists($posterfile))
+                            $return['warning'][] = t('Video: Warning: Artwork');
                     }
                 }
             }
         }
-    // Get the imdb data
-        $data = array();
-        $cmd = "$imdb -D $imdbnum";
-        exec($cmd, $lines, $retval);
-        if ($retval == 255 | $DEBUG)
-            $return['warning'][] = "IMDB Command $cmd exited with return value $retval";
-        $valid = FALSE;
-        foreach ($lines as $line) {
-            list ($key, $value) = explode(':', $line, 2);
-            $data[strtolower($key)] = trim($value);
-            if (strlen($data[strtolower($key)]) > 0)
-                $valid = TRUE;
-        }
-        if (!$valid) {
-            $return['error'][] = t('Video: Error: IMDB');
-            return;
-        }
+    // Update the database
         $sh = $db->query('UPDATE videometadata
                              SET title        = ?,
                                  director     = ?,
