@@ -17,13 +17,28 @@
                                      FROM videotypes
                                     WHERE f_ignore = 0');
 
+// Video storage directories
+    $video_dirs = $db->query_list('
+        SELECT  dirname
+        FROM    storagegroup
+        WHERE   groupname="Videos"
+        ');
+
 // First delete any videos that do not exist anymore
     $sh = $db->query('SELECT videometadata.intid,
                              videometadata.filename,
                              videometadata.coverfile
                         FROM videometadata');
     while (list($id, $filename, $cover) = $sh->fetch_row()) {
-        if ( !file_exists($filename) && is_executable(dirname($filename)) ) {
+        $exists = false;
+        foreach ($video_dirs as $dir) {
+            $path = preg_replace('#/+#', '/', "$dir/$filename");
+            if (file_exists($path) && is_executable(dirname($path))) {
+                $exists = true;
+                break;
+            }
+        }
+        if ( !$exists ) {
             $db->query('DELETE FROM videometadata
                               WHERE videometadata.intid = ?',
                        $id
@@ -41,14 +56,17 @@
                                   FROM videometadata
                                  WHERE videometadata.coverfile = ?',
                                $cover
-                               ) == 0)
-                unlink($cover);
+                               ) == 0) {
+                if ($cover != 'No Cover') {
+                    @unlink($cover);
+                }
+            }
         }
     }
 
 // Now scan for any new ones
-    $paths = explode(':', setting('VideoStartupDir', hostname));
-    foreach ($paths as $path) {
+    foreach ($video_dirs as $path) {
+        $files = array();
         exec("find -L $path -name '.*' -prune -o -type f -print", $files, $retval);
         foreach ($files as $file) {
             if ( in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $Known_Exts) === FALSE )
@@ -56,18 +74,26 @@
         // Check readable status
             if (!is_readable($file))
                 continue;
-            if ($db->query_col('SELECT COUNT(1)
-                                  FROM videometadata
-                                 WHERE videometadata.filename = ?', $file) == 0) {
-                $filename   = basename($file);
-                $title      = filenametotitle($filename);
-                $db->query('INSERT INTO videometadata ( title, filename, showlevel, browse )
-                                               VALUES (     ?,        ?,         1,      ? )',
-                           strlen($title) > 0 ? $title : $filename,
-                           $file,
-                           setting('VideoNewBrowsable', hostname)
-                           );
+        // Strip the directory off of the filename
+            $file = preg_replace('#^'.preg_quote($path).'/*#', '', $file);
+        // Already exists?
+            $exists = $db->query_col('
+                SELECT  COUNT(1)
+                FROM    videometadata
+                WHERE   filename = ?',
+                $file);
+            if ($exists != 0) {
+                continue;
             }
+        // Add to the database
+            $filename   = basename($file);
+            $title      = filenametotitle($filename);
+            $db->query('INSERT INTO videometadata ( title, filename, showlevel, browse )
+                                           VALUES (     ?,        ?,         1,      ? )',
+                       strlen($title) > 0 ? $title : $filename,
+                       $file,
+                       setting('VideoNewBrowsable', hostname)
+                       );
         }
     }
 
