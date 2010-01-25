@@ -21,14 +21,16 @@
     $video_dirs = $db->query_list('
         SELECT  dirname
         FROM    storagegroup
-        WHERE   groupname="Videos"
-        ');
+        WHERE   groupname = "Videos"
+            AND hostname  = ?
+        ', hostname);
 
 // First delete any videos that do not exist anymore
     $sh = $db->query('SELECT videometadata.intid,
                              videometadata.filename,
                              videometadata.coverfile
-                        FROM videometadata');
+                      FROM   videometadata
+                      WHERE  host = ?', hostname);
     while (list($id, $filename, $cover) = $sh->fetch_row()) {
         $exists = false;
         foreach ($video_dirs as $dir) {
@@ -88,10 +90,11 @@
         // Add to the database
             $filename   = basename($file);
             $title      = filenametotitle($filename);
-            $db->query('INSERT INTO videometadata ( title, filename, showlevel, browse )
-                                           VALUES (     ?,        ?,         1,      ? )',
+            $db->query('INSERT INTO videometadata ( title, filename, host, showlevel, browse )
+                                           VALUES (     ?,        ?,     ?,        1,      ? )',
                        strlen($title) > 0 ? $title : $filename,
                        $file,
+                       hostname,
                        setting('VideoNewBrowsable', hostname)
                        );
         }
