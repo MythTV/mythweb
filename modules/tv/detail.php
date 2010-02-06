@@ -264,7 +264,7 @@
     else {
     // auto-commercial-flag
         if (!isset($schedule->autocommflag))
-            $schedule->autocommflag = setting('AutoCommercialFlag');
+            $schedule->autocommflag = setting('AutoCommercialFlag', hostname);
     // auto-user-jobs
         if (!isset($schedule->autouserjob1))
             $schedule->autouserjob1 = setting('AutoRunUserJob1');
