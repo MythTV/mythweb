@@ -127,9 +127,13 @@ class MythBackend {
 
     public function sendCommand($command = null) {
         $this->connect();
+    // Flush the input buffer to clear out any unwanted events that might have shown up
+    // @todo:  should really just be checking for SYSTEM_EVENT in receiveData
+    //         and handling things accordingly there.
+        $this->receiveData(1);
+    // The format should be <length + whitespace to 8 total bytes><data>
         if (is_array($command))
             $command = implode(MythBackend::$backend_separator, $command);
-    // The format should be <length + whitespace to 8 total bytes><data>
         $command = strlen($command) . str_repeat(' ', 8 - strlen(strlen($command))) . $command;
         fputs($this->fp, $command);
         return $this->receiveData();
