@@ -703,9 +703,9 @@ class Program {
                                 .escape($this->category)                  .','
                                 .escape($this->seriesid)                  .','
                                 .escape($this->programid)                 .','
-                                .escape($this->recordid)                  .','
+                                .escape(isset($this->recordid) ? $this->recordid : 0)                  .','
                                 .escape($this->channel->callsign)         .','
-                                .escape($this->rectype)                   .','
+                                .escape(isset($this->rectype) ? $this->rectype : 0)                   .','
                                 .'11'                                     .','
                                 .'1'                                      .')')
             or trigger_error('SQL Error: '.mysql_error(), FATAL);
