@@ -104,7 +104,7 @@ class MythBackend {
     }
 
     private function announce() {
-        $response = $this->sendCommand('ANN Monitor '.hostname.' 1' );
+        $response = $this->sendCommand('ANN Monitor '.hostname.' 2' );
         if ($response == 'OK')
             return true;
         return false;
@@ -127,10 +127,6 @@ class MythBackend {
 
     public function sendCommand($command = null) {
         $this->connect();
-    // Flush the input buffer to clear out any unwanted events that might have shown up
-    // @todo:  should really just be checking for SYSTEM_EVENT in receiveData
-    //         and handling things accordingly there.
-        $this->receiveData(1);
     // The format should be <length + whitespace to 8 total bytes><data>
         if (is_array($command))
             $command = implode(MythBackend::$backend_separator, $command);
