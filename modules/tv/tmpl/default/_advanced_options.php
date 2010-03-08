@@ -29,7 +29,7 @@
 
             <h3><?php echo t('Advanced Options') ?>:</h3>
             (<?php
-                echo '<a href="#" onclick="toggle_advanced(false)" id="hide_advanced"';
+                echo '<a href="#" onclick="toggle_advanced(false); return false;" id="hide_advanced"';
                 if (!$_SESSION['tv']['show_advanced_schedule'])
                     echo ' style="display: none"';
                 echo '>', t('Hide'), '</a>',
