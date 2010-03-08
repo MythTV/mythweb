@@ -427,7 +427,7 @@ class Schedule {
 /**
  * prints a <select> of the various playback groups available
 /**/
-    function playgroup_select($this_playgroup, $name = 'playgroup', &$schedule = NULL, $id = NULL, $js = NULL) {
+    function playgroup_select($this_playgroup, $name = 'playgroup', $schedule = NULL, $id = NULL, $js = NULL) {
     // Make sure we have some data
         static $playgroups = array();
         if (!count($playgroups)) {
