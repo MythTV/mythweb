@@ -107,6 +107,7 @@ class Program {
     public $is_editing         = 0;
     public $is_movie;
     public $is_watched         = 0;
+    public $is_transcoded      = 0;
     public $length;
     public $max_episodes       = 0;
     public $max_newest         = 0;
@@ -200,7 +201,7 @@ class Program {
             $this->bookmark       = ($this->progflags & 0x010) ? true : false;    // FL_BOOKMARK       = 0x010
             $this->is_recording   = ($this->progflags & 0x020) ? true : false;    // FL_INUSERECORDING = 0x020
             $this->is_playing     = ($this->progflags & 0x040) ? true : false;    // FL_INUSEPLAYING   = 0x040
-                                                                                  // FL_TRANSCODED     = 0x400
+            $this->is_transcoded  = ($this->progflags & 0x400) ? true : false;    // FL_TRANSCODED     = 0x400
             $this->is_watched     = ($this->progflags & 0x800) ? true : false;    // FL_WATCHED        = 0x800
         // Can be deleted?
             $this->can_delete     = (!$this->is_recording && !$this->is_playing) || $this->recgroup != 'LiveTV';

@@ -173,6 +173,12 @@
                 echo '<img src="'.skin_url.'/img/flags/bookmark.png" title="'.t('has Bookmark').'">';
             if ($program->is_watched)
                 echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
+
+            // Report transcoded status for recordings 
+            if ($program->filename) { 
+                if ($program->is_transcoded) 
+                	echo t(' TRANSCODED'); 
+            } 
             ?></td>
         </tr><?php
             if (strlen($program->category)) {
