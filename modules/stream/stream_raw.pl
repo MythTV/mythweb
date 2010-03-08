@@ -96,7 +96,7 @@
                      -Accept_Ranges         => 'bytes',
                      -Content_Range         => "bytes $start-$end/$total_size",
                      -Last_Modified         => time2str($mtime),
-                     -Content_disposition => " attachment; filename=\"$name.$suffix\""
+                     -Content_disposition => " attachment; filename=\"$name\""
                  );
     }
     else {
