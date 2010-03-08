@@ -33,6 +33,14 @@ class Video {
     function __construct($intid) {
         global $db;
         global $mythvideo_dir;
+
+// Video storage directories
+        $video_dirs = $db->query_list('
+            SELECT  dirname
+            FROM    storagegroup
+            WHERE   groupname="Coverart"
+        ');
+
         $video = $db->query_assoc('
             SELECT  *
             FROM    videometadata
@@ -56,15 +64,27 @@ class Video {
         $this->cover_file   = $video['coverfile'];
         $this->browse       = $video['browse'];
     // And the artwork URL
-        if ($this->cover_file != 'No Cover' && file_exists($this->cover_file) ) {
-            $this->cover_url = 'data/video_covers/'.substr($this->cover_file, strlen(setting('VideoArtworkDir', hostname)));
-            list($width, $height) = @getimagesize($this->cover_file);
-            if ($width > 0 && $height > 0) {
-                $wscale = video_img_width / $width;
-                $hscale = video_img_height / $height;
-                $scale = $wscale < $hscale ? $wscale : $hscale;
-                $this->cover_scaled_width  = floor($width * $scale);
-                $this->cover_scaled_height = floor($height * $scale);
+        $this->cover_url = '';
+        if ($this->cover_file != 'No Cover') {
+            $exists = false;
+            foreach ($video_dirs as $dir) {
+                $path = preg_replace('#/+#', '/', "$dir/$this->cover_file");
+                if (file_exists($path) && is_executable(dirname($path))) {
+                    $exists = true;
+                    break;
+                }
+            }
+            if ($exists) {
+                $this->cover_url = 'pl/coverart/'.$this->cover_file;
+                $this->cover_file = path;
+                list($width, $height) = @getimagesize($this->cover_file);
+                if ($width > 0 && $height > 0) {
+                    $wscale = video_img_width / $width;
+                    $hscale = video_img_height / $height;
+                    $scale = $wscale < $hscale ? $wscale : $hscale;
+                    $this->cover_scaled_width  = floor($width * $scale);
+                    $this->cover_scaled_height = floor($height * $scale);
+                }
             }
         }
         $this->childid = $video['childid'];
@@ -165,3 +185,4 @@ class Video {
 
     }
 }
+?>

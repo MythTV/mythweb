@@ -318,7 +318,7 @@
                   if (strlen($video->subtitle) > 0)
                       echo '<br>' . html_entities($video->subtitle);
             ?></div>
-        <div id="<?php echo $video->intid; ?>_img">                <img <?php if ($_SESSION["show_video_covers"] && file_exists($video->cover_file)) echo 'src="'.$video->cover_url.'"'; echo ' width="'.$video->cover_scaled_width.'" height="'.$video->cover_scaled_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
+        <div id="<?php echo $video->intid; ?>_img">                <img <?php if ($_SESSION["show_video_covers"] && (strcmp($video->cover_url, '') != 0)) echo 'src="'.$video->cover_url.'"'; echo ' width="'.$video->cover_scaled_width.'" height="'.$video->cover_scaled_height.'"'; ?> alt="<?php echo t('Missing Cover'); ?>"></div>
         <div id="<?php echo $video->intid; ?>-category">           <?php echo $Category_String[$video->category]; ?></div>
         <div id="<?php echo $video->intid; ?>_playtime">           <?php echo nice_length($video->length * 60); ?></div>
         <div id="<?php echo $video->intid; ?>_imdb">               <?php if ($video->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($video->inetref); ?>"><?php echo $video->inetref ?></a><?php } ?></div>
