@@ -59,6 +59,8 @@
 "%s Songs (%s)"
     %s Dal (%s)
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
     Megszakít
 "Aborting"
@@ -201,6 +203,7 @@
     Új keresés indítása
 "brightness"
     fényesség
+"Browsable"
 "Browse"
     Böngészés
 "Browse = no"
@@ -297,6 +300,7 @@
     kontraszt
 "Count"
     Számláló
+"Cover Image"
 "Create a New Playlist"
     Új lejátszólista készítése
 "Create a Random Mix"
@@ -377,6 +381,9 @@
     Közvetlen letöltés
 "Directed by"
     Rendezte
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
     Mutat
 "Dolby Surround"
@@ -653,6 +660,7 @@
     Hossz
 "Length (min)"
     Hossz (perc)
+"Length in minutes"
 "Links"
     Hivatkozások
 "Listing &quot;Jump to&quot;"
@@ -778,10 +786,12 @@
     Új keresés
 "New Titles, Premieres"
     Újdonságok, Bemutatók
+"No"
 "NO DATA"
     NINCS ADAT
 "No Frontends allow remote control."
     A lejátszók nem engedik a távoli vezérlést.
+"No Genre"
 "No matches found"
     A lista üres
 "No matching programs found."
@@ -842,6 +852,7 @@
     Rögzített műsorok lapja
 "Page Up"
     Lapozás felfelé
+"Parental Level"
 "Part $1 of $2"
     A $2 $1-ik része
 "Past Month"
@@ -905,6 +916,8 @@
     Gépelj be egy imdb számot vagy számcímet más kereséshez.
 "Please wait for the pending ajax request"
     Várj, amíg az ajax kérés teljesül
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
     Leheséges ütközések
@@ -977,6 +990,7 @@
     Véletlen tipus
 "Rating"
     Értékelés
+"Rating:"
 "Recently Added Albums"
     Nemrég hozzáadott album
 "Recently completed jobs"
@@ -1122,6 +1136,7 @@
     jobb
 "Right"
     Jobb
+"Root Directory"
 "Rows to show between timeslot info"
     Sorok az időkeret információk megjelenítéséhez
 "Running"
@@ -1187,6 +1202,7 @@
 "Searches"
     Keresőprofilok
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
     Sorozat ID
 "Server Statistics"
@@ -1286,6 +1302,7 @@
     Sugárzás
 "Sub and Desc (Empty matches)"
     (Üres egyezések)
+"Submit"
 "Submit Search"
     Keresés jóváhagyása
 "Subtitle"
@@ -1385,6 +1402,7 @@
     tipus
 "Type"
     Típus
+"Uncategorized"
 "Undelete"
     Visszaállit
 "Undelete: $1"
@@ -1413,6 +1431,7 @@
     Használja a dátumot/időt
 "useonairguide"
     használja a sugárzott műsorújságot
+"User Rating"
 "Value"
     Érték
 "Video"
@@ -1531,6 +1550,7 @@
     xmltvid
 "Year"
     Év
+"Year:"
 "Yes"
     Igen
 "Yesterday"

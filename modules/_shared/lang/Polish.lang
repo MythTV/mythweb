@@ -42,6 +42,8 @@
 "%s Songs"
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
 "Aborting"
 "Action"
@@ -136,6 +138,7 @@
 "Begin a New Search"
 "brightness"
     jasność
+"Browsable"
 "Browse"
 "Browse = no"
 "Browse = yes"
@@ -204,6 +207,7 @@
 "contrast"
     kontrast
 "Count"
+"Cover Image"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -261,6 +265,9 @@
 "Details for: $1"
 "Direct Download"
 "Directed by"
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
 "Dolby Surround"
 "Don't Record"
@@ -425,6 +432,7 @@
     Długość
 "Length (min)"
     Czas trwania (minut):
+"Length in minutes"
 "Links"
 "Listing &quot;Jump to&quot;"
 "Listing Time Key"
@@ -509,8 +517,10 @@
 "New Search"
 "New Titles, Premieres"
     Nowe tytuły, premiery
+"No"
 "NO DATA"
 "No Frontends allow remote control."
+"No Genre"
 "No matches found"
 "No matching programs found."
 "No Public Playlists"
@@ -545,6 +555,7 @@
 "Page Down"
 "Page recorded programs"
 "Page Up"
+"Parental Level"
 "Part $1 of $2"
 "Past Month"
 "Past Week"
@@ -579,6 +590,8 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
@@ -626,6 +639,7 @@
 "Random Mix Maker"
 "Random Type"
 "Rating"
+"Rating:"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -752,6 +766,7 @@
 "Return to Statistics Page"
 "right"
 "Right"
+"Root Directory"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -799,6 +814,7 @@
 "Searches"
     Poszukiwania
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -855,6 +871,7 @@
 "Storage Group"
 "Streaming"
 "Sub and Desc (Empty matches)"
+"Submit"
 "Submit Search"
 "Subtitle"
     Tytuł
@@ -920,6 +937,7 @@
     typ
 "Type"
     Typ
+"Uncategorized"
 "Undelete"
 "Undelete: $1"
 "Unknown"
@@ -942,6 +960,7 @@
 "Use date/time"
     Użyj Data/Czas
 "useonairguide"
+"User Rating"
 "Value"
     Wartość
 "Video"
@@ -1021,6 +1040,7 @@
     Napisany przez
 "xmltvid"
 "Year"
+"Year:"
 "Yes"
     Tak
 "Yesterday"

@@ -43,6 +43,8 @@
 "%s Songs"
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
 "Aborting"
 "Action"
@@ -143,6 +145,7 @@
 "Begin a New Search"
 "brightness"
     明るさ
+"Browsable"
 "Browse"
 "Browse = no"
 "Browse = yes"
@@ -211,6 +214,7 @@
     コントラスト
 "Count"
     カウント
+"Cover Image"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -270,6 +274,9 @@
 "Direct Download"
 "Directed by"
     監督
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
     表示
 "Dolby Surround"
@@ -473,6 +480,7 @@
     時間
 "Length (min)"
     時間 (分)
+"Length in minutes"
 "Links"
 "Listing &quot;Jump to&quot;"
     一覧 &quot;移動&quot;
@@ -567,8 +575,10 @@
 "New Group"
 "New Search"
 "New Titles, Premieres"
+"No"
 "NO DATA"
 "No Frontends allow remote control."
+"No Genre"
 "No matches found"
     一致する物がありませんでした
 "No matching programs found."
@@ -615,6 +625,7 @@
 "Page Down"
 "Page recorded programs"
 "Page Up"
+"Parental Level"
 "Part $1 of $2"
     $1/$2
 "Past Month"
@@ -653,6 +664,8 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
@@ -710,6 +723,7 @@
 "Random Type"
 "Rating"
     レーティング
+"Rating:"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -838,6 +852,7 @@
 "Return to Statistics Page"
 "right"
 "Right"
+"Root Directory"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -890,6 +905,7 @@
 "Searches"
     サーチメニュー
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -957,6 +973,7 @@
 "Streaming"
 "Sub and Desc (Empty matches)"
     サブタイトルと内容(エンプティーマッチ)
+"Submit"
 "Submit Search"
 "Subtitle"
     サブタイトル
@@ -1028,6 +1045,7 @@
     タイプ
 "Type"
     タイプ
+"Uncategorized"
 "Undelete"
 "Undelete: $1"
 "Unknown"
@@ -1050,6 +1068,7 @@
 "Use date/time"
     日時を使用する
 "useonairguide"
+"User Rating"
 "Value"
 "Video"
     ビデオ
@@ -1132,6 +1151,7 @@
     著者
 "xmltvid"
 "Year"
+"Year:"
 "Yes"
     はい
 "Yesterday"

@@ -81,21 +81,21 @@ header("Content-Type: text/html; charset=utf-8");
 <body>
 
 <form method="post" action="<?php echo root_url ?>video/edit" enctype="multipart/form-data">
-Title<br>
+<?php echo t('Title'); ?><br>
 <input name="title" type="text" value="<?php echo htmlspecialchars($Video->title, ENT_QUOTES ); ?>"><br><br>
-Subtitle<br>
+<?php echo t('Subtitle'); ?><br>
 <input name="subtitle" type="text" value="<?php echo htmlspecialchars($Video->subtitle, ENT_QUOTES ); ?>"><br><br>
-Season:<br>
+<?php echo t('Season'); ?><br>
 <input name="season" type="text" size="3" value="<?php echo intval($Video->season); ?>"><br><br>
-Episode:<br>
+<?php echo t('Episode'); ?><br>
 <input name="episode" type="text" size="3" value="<?php echo intval($Video->episode); ?>"><br><br>
-Director<br>
+<?php echo t('Director'); ?><br>
 <input name="director" type="text" value="<?php echo htmlspecialchars($Video->director, ENT_QUOTES ); ?>"><br><br>
-Plot<br>
+<?php echo t('Plot'); ?><br>
 <textarea name="plot" rows="5" cols="30" wrap="VIRTUAL"><?php echo htmlspecialchars($Video->plot, ENT_QUOTES ); ?></textarea><br><br>
-Category<br>
+<?php echo t('Category'); ?><br>
 <select name="category">
-<option <?php if ($Video->category == 0) echo ' SELECTED'; ?> value="0">Uncategorized</option>
+<option <?php if ($Video->category == 0) echo ' SELECTED'; ?> value="0"><?php echo t('Uncategorized'); ?></option>
 <?php
     $sh = $db->query('SELECT * FROM videocategory');
     while ($cat_data = $sh->fetch_assoc()) {
@@ -106,32 +106,32 @@ Category<br>
     }
     $sh->finish();
 ?></select><br><br>
-Rating<br>
+<?php echo t('Rating'); ?><br>
 <input name="rating" type="text" value="<?php echo htmlspecialchars($Video->rating, ENT_QUOTES); ?>"><br><br>
-IMDB<br>
+<?php echo t('IMDB'); ?><br>
 <input name="inetref" type="text" value="<?php echo htmlspecialchars($Video->inetref, ENT_QUOTES); ?>"><br><br>
-Year<br>
+<?php echo t('Year'); ?><br>
 <input name="year" type="text" size="4" value="<?php echo htmlspecialchars($Video->year, ENT_QUOTES); ?>"><br><br>
-User Rating<br>
+<?php echo t('User Rating'); ?><br>
 <input name="userrating" type="text" size="3" value="<?php echo htmlspecialchars($Video->userrating, ENT_QUOTES); ?>"><br><br>
-Length in minutes<br>
+<?php echo t('Length in minutes'); ?><br>
 <input name="length" type="text" size="3" value="<?php echo htmlspecialchars($Video->length, ENT_QUOTES); ?>"><br><br>
-Browsable<br>
+<?php echo t('Browsable'); ?><br>
 <select name="browse">
- <option value="0" <?php if ($Video->browse == 0) echo ' SELECTED'; ?>>No</option>
- <option value="1" <?php if ($Video->browse == 1) echo ' SELECTED'; ?>>Yes</option>
+ <option value="0" <?php if ($Video->browse == 0) echo ' SELECTED'; ?>><?php echo t('No'); ?></option>
+ <option value="1" <?php if ($Video->browse == 1) echo ' SELECTED'; ?>><?php echo t('Yes'); ?></option>
 </select><br><br>
-Parental Level<br>
+<?php echo t('Parental Level'); ?><br>
 <select name="showlevel">
- <option value="1" <?php if ($Video->showlevel == 1) echo ' SELECTED'; ?>>1 - Lowest</option>
+ <option value="1" <?php if ($Video->showlevel == 1) echo ' SELECTED'; ?>><?php echo t('1 - Lowest'); ?></option>
  <option value="2" <?php if ($Video->showlevel == 2) echo ' SELECTED'; ?>>2</option>
  <option value="3" <?php if ($Video->showlevel == 3) echo ' SELECTED'; ?>>3</option>
- <option value="4" <?php if ($Video->showlevel == 4) echo ' SELECTED'; ?>>4 - Highest</option>
+ <option value="4" <?php if ($Video->showlevel == 4) echo ' SELECTED'; ?>><?php echo t('4 - Highest'); ?></option>
 </select><br><br>
-Cover Image<br>
+<?php echo t('Cover Image'); ?><br>
 <input type="file" name="coverfile"><br><br>
 <input type="hidden" name="intid" value="<?php echo $_REQUEST['intid']; ?>">
-<input class="submit" type="submit" name="submit" value="submit">
+<input class="submit" type="submit" name="submit" value="<?php echo t('Submit'); ?>">
 
 </form>
 

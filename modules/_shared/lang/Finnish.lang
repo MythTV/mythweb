@@ -57,6 +57,8 @@
 "%s Songs (%s)"
     %s kappaletta (%s)
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
     Keskeytetty
 "Aborting"
@@ -198,6 +200,7 @@
     Aloita uusi haku
 "brightness"
     Kirkkaus
+"Browsable"
 "Browse"
     Selaa
 "Browse = no"
@@ -293,6 +296,7 @@
     Kontrasti
 "Count"
     Lukumäärä
+"Cover Image"
 "Create a New Playlist"
     Luo uusi soittolista
 "Create a Random Mix"
@@ -368,6 +372,9 @@
     Suora lataus
 "Directed by"
     Ohjaus
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
     Tulosta
 "Dolby Surround"
@@ -640,6 +647,7 @@
     Pituus
 "Length (min)"
     Pituus (min)
+"Length in minutes"
 "Links"
 "Listing &quot;Jump to&quot;"
     Listauksen hyppy
@@ -764,10 +772,12 @@
     Uusi haku
 "New Titles, Premieres"
     Uudet nimikkeet, ensi-illat
+"No"
 "NO DATA"
     EI DATAA
 "No Frontends allow remote control."
     Yksikään käyttöliittymä ei salli etäkäyttöä
+"No Genre"
 "No matches found"
     Ei vastaavuuksia
 "No matching programs found."
@@ -828,6 +838,7 @@
     Sivuta nauhoitetut ohjelmat
 "Page Up"
     Sivu ylös
+"Parental Level"
 "Part $1 of $2"
     Jakso $1/$2
 "Past Month"
@@ -890,6 +901,8 @@
     Ole hyvä ja syötä imbd numero tai nimike, jolla tehdä uusi haku
 "Please wait for the pending ajax request"
     Ole hyvä ja odota AJAX -kyselyä
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
     Mahdolliset ristiriidat
@@ -961,6 +974,7 @@
     Satunnainen tyyppi
 "Rating"
     Arvostelu
+"Rating:"
 "Recently Added Albums"
     Äskettäin lisätyt albumit
 "Recently completed jobs"
@@ -1102,6 +1116,7 @@
     oikein
 "Right"
     oikea
+"Root Directory"
 "Rows to show between timeslot info"
     Näytettävien rivien lkumuäärä aikalokerotietojen välissä
 "Running"
@@ -1167,6 +1182,7 @@
 "Searches"
     Haut
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
 "Server Statistics"
     Serverin statistiikkaa
@@ -1261,6 +1277,7 @@
     Virtaa
 "Sub and Desc (Empty matches)"
     Kuvaus ja nimike (Ei vastaavuuksia)
+"Submit"
 "Submit Search"
     Anna haku
 "Subtitle"
@@ -1359,6 +1376,7 @@
     tyyppi
 "Type"
     Nauhoitustapa
+"Uncategorized"
 "Undelete"
     Poista poisto
 "Undelete: $1"
@@ -1385,6 +1403,7 @@
     Käytä päivämäärää/aikaa
 "useonairguide"
     Käytä Ohjelmavirran opasta
+"User Rating"
 "Value"
     Arvo
 "Video"
@@ -1490,6 +1509,7 @@
     xmltvid
 "Year"
     Vuosi
+"Year:"
 "Yes"
     Kyllä
 "Yesterday"

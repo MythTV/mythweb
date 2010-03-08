@@ -26,7 +26,7 @@
 <script type="text/javascript">
 
     function newWindow(id) {
-        $('window_title').innerHTML   = '<?php echo t('Editing '); ?> ' + $(id+'-title').childNodes[0].innerHTML;
+        $('window_title').innerHTML   = '<?php echo addslashes(t('Editing ')); ?> ' + $(id+'-title').childNodes[1].innerHTML;
         $('window_content').innerHTML = '<iframe src="<?php echo root_url; ?>video/edit?intid='+id+'">';
         $('window').show();
         Tips.hideAll();
@@ -34,7 +34,7 @@
 
     function imdb_lookup(id, title) {
         if (pending_ajax_requests > 0) {
-            alert('<?php echo t('Please wait for the pending ajax request'); ?>');
+            alert('<?php echo addslashes(t('Please wait for the pending ajax request')); ?>');
             return;
         }
         ajax_add_request();
@@ -75,7 +75,7 @@
 
         if (result['action'] == 'lookup') {
             if (result['matches']) {
-                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?> (<a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>)';
+                $('window_title').innerHTML   = '<?php echo addslashes(t('Video: IMDB: Window Title')); ?> (<a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo addslashes(t('Custom Search')); ?><\/a>)';
                 $('window_content').innerHTML = '';
                 for (var key in result['matches'])
                     if (result['matches'][key]['title'])
@@ -85,8 +85,8 @@
 
             }
             else {
-                $('window_title').innerHTML   = '<?php echo t('Video: IMDB: Window Title'); ?> (<a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo t('Custom Search'); ?><\/a>)';
-                $('window_content').innerHTML = '<?php echo t('Video: IMDB: No Matches');   ?>';
+                $('window_title').innerHTML   = '<?php echo addslashes(t('Video: IMDB: Window Title')); ?> (<a href="javascript: imdb_prompt(\''+result['id']+'\');"><?php echo addslashes(t('Custom Search')); ?><\/a>)';
+                $('window_content').innerHTML = '<?php echo addslashes(t('Video: IMDB: No Matches'));   ?>';
 
             }
             $('window').show();
@@ -118,7 +118,7 @@
 
     function imdb_prompt(id) {
         var title  = $(id+'-title').childNodes[1].innerHTML;
-        var number = prompt('<?php echo t('Please enter an imdb number or a title to do another search'); ?>', title);
+        var number = prompt('<?php echo addslashes(t('Please enter an imdb number or a title to do another search')); ?>', title);
         if (typeof(number) != 'string' || number.length == 0)
             return;
         $('window').hide();
@@ -218,10 +218,10 @@
     function video_create_popup(result) {
         var video    = result.responseJSON['metadata'];
         var content  = '<dl class="details_list">'
-                     + '<dt>Plot:</dt>     <dd>'+(video['plot'] ? video['plot'] : '&nbsp;')+'</dd>'
-                     + '<dt>Rating:</dt>   <dd>'+(video['rating'] ? video['rating'] : '&nbsp;')+'</dd>'
-                     + '<dt>Director:</dt> <dd>'+(video['director'] ? video['director'] : '&nbsp;')+'</dd>'
-                     + '<dt>Year:</dt>     <dd>'+(video['year'] ? video['year'] : '&nbsp;')+'</dd>';
+                     + '<dt><?php echo addslashes(t('Plot:')); ?></dt>     <dd>' + (video['plot'] ? video['plot'] : '&nbsp;')+'</dd>'
+                     + '<dt><?php echo addslashes(t('Rating:')); ?></dt>   <dd>' + (video['rating'] ? video['rating'] : '&nbsp;')+'</dd>'
+                     + '<dt><?php echo addslashes(t('Director:')); ?></dt> <dd>' + (video['director'] ? video['director'] : '&nbsp;')+'</dd>'
+                     + '<dt><?php echo addslashes(t('Year:')); ?></dt>     <dd>' + (video['year'] ? video['year'] : '&nbsp;')+'</dd>';
                      + '</dl>';
         new Tip(video['intid'], content, { className: 'popup' });
         loading_popups[video['intid']] = false;
@@ -299,8 +299,8 @@
 <div id="videos">
 
 <div id="path">
-  <b>Directory Structure</b><hr>
-  <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root_url; ?>video?path=/">Root Directory</a><br><br>
+  <b><?php echo t('Directory Structure'); ?></b><hr>
+  <a class="<?php if (!isset($_SESSION['video']['path']) || $_SESSION['video']['path'] == '/') echo 'active'; ?>" href="<?php echo root_url; ?>video?path=/"><?php echo t('Root Directory'); ?></a><br><br>
   <?php foreach ($PATH_TREE as $path) { output_path_picker($path); } ?>
 </div>
 
@@ -324,7 +324,7 @@
         <div id="<?php echo $video->intid; ?>_imdb">               <?php if ($video->inetref != '00000000') { ?><a href="<?php echo makeImdbWebUrl($video->inetref); ?>"><?php echo $video->inetref ?></a><?php } ?></div>
         <div class="command">
             <span class="commands"><a href="javascript:newWindow('<?php echo $video->intid ?>')" ><?php echo t('Edit') ?></a></span>
-            <span class="commands"><a href="javascript:imdb_lookup('<?php echo $video->intid ?>','<?php echo addslashes($video->title); ?>')">IMDB</a></span>
+            <span class="commands"><a href="javascript:imdb_lookup('<?php echo $video->intid ?>','<?php echo addslashes($video->title); ?>')"><?php echo t('IMDB') ?></a></span>
         </div>
     </div>
 <?php

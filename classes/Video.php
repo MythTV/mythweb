@@ -48,8 +48,8 @@ class Video {
         $this->episode      = $video['episode'];
         $this->director     = $video['director'];
         $this->inetref      = $video['inetref'];
-        $this->year         = $video['year'] ? $video['year'] : 'Unknown';
-        $this->userrating   = $video['userrating'] ? $video['userrating'] : 'Unknown';
+        $this->year         = $video['year'] ? $video['year'] : t('Unknown');
+        $this->userrating   = $video['userrating'] ? $video['userrating'] : t('Unknown');
         $this->length       = $video['length'];
         $this->showlevel    = $video['showlevel'];
         $this->filename     = $video['filename'];
@@ -99,7 +99,7 @@ class Video {
                       'season'      => $this->season,
                       'episode'     => $this->episode,
                       'playtime'    => nice_length($this->length * 60),
-                      'category'    => strlen($Category_String[$this->category]) ? $Category_String[$this->category] : 'Uncategorized',
+                      'category'    => strlen($Category_String[$this->category]) ? $Category_String[$this->category] : t('Uncategorized'),
                       'imdb'        => ($this->inetref != '00000000') ? '<a href="http://www.imdb.com/Title?'.$this->inetref.'">'.$this->inetref.'</a>' : '',
                       'plot'        => $this->plot,
                       'rating'      => $this->rating,

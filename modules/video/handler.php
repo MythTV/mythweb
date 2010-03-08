@@ -184,7 +184,7 @@
     while ($row = $sh->fetch_assoc())
         $Category_String[$row['intid']] = $row['category'];
     $sh->finish();
-    $Category_String[0] = 'Uncategorized';
+    $Category_String[0] = t('Uncategorized');
 
 // New:  Get the video genres on the system
     $Genre_String = array();
@@ -192,7 +192,7 @@
     while ($row = $sh->fetch_assoc())
         $Genre_String[$row['intid']] = $row['genre'];
     $sh->finish();
-    $Genre_String[0] = 'No Genre';
+    $Genre_String[0] = t('No Genre');
 
 // Parse the list
 // Filter_Category of -1 means All, 0 mean uncategorized

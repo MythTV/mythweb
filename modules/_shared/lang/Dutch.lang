@@ -47,6 +47,8 @@
 "%s Songs"
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
 "Aborting"
 "Action"
@@ -143,6 +145,7 @@
 "Begin a New Search"
 "brightness"
     helderheid
+"Browsable"
 "Browse"
 "Browse = no"
 "Browse = yes"
@@ -211,6 +214,7 @@
 "contrast"
     contrast
 "Count"
+"Cover Image"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -270,6 +274,9 @@
 "Direct Download"
 "Directed by"
     Regisseur
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
     Tonen
 "Dolby Surround"
@@ -473,6 +480,7 @@
     Duur
 "Length (min)"
     Duur (min)
+"Length in minutes"
 "Links"
 "Listing &quot;Jump to&quot;"
     Gids &quot;Ga naar&quot;
@@ -562,9 +570,11 @@
 "New Search"
 "New Titles, Premieres"
     Nieuwe Titels, Premieres
+"No"
 "NO DATA"
     GEEN DATA
 "No Frontends allow remote control."
+"No Genre"
 "No matches found"
     Geen programma's gevonden
 "No matching programs found."
@@ -609,6 +619,7 @@
 "Page Down"
 "Page recorded programs"
 "Page Up"
+"Parental Level"
 "Part $1 of $2"
     Deel $1 van $2
 "Past Month"
@@ -644,6 +655,8 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
@@ -699,6 +712,7 @@
 "Random Type"
 "Rating"
     Beoordeling
+"Rating:"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -826,6 +840,7 @@
 "Return to Statistics Page"
 "right"
 "Right"
+"Root Directory"
 "Rows to show between timeslot info"
 "Running"
 "Saturday"
@@ -879,6 +894,7 @@
 "Searches"
     Zoekopdrachten
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -943,6 +959,7 @@
 "Streaming"
 "Sub and Desc (Empty matches)"
     Dubbels en Beschrijving
+"Submit"
 "Submit Search"
 "Subtitle"
     Aflevering
@@ -1014,6 +1031,7 @@
     type
 "Type"
     Type
+"Uncategorized"
 "Undelete"
 "Undelete: $1"
 "Unknown"
@@ -1037,6 +1055,7 @@
     Datum/tijd gebruiken
 "useonairguide"
     gebruikepg
+"User Rating"
 "Value"
 "Video"
     Films
@@ -1119,6 +1138,7 @@
 "xmltvid"
     xmltvid
 "Year"
+"Year:"
 "Yes"
     Ja
 "Yesterday"

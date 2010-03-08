@@ -54,6 +54,8 @@
 "%s Songs (%s)"
     %s Pesmi (%s)
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
     Preklicano
 "Aborting"
@@ -189,6 +191,7 @@
     Začni novo iskanje
 "brightness"
     svetilnost
+"Browsable"
 "Browse"
     Brskanje
 "Browse = no"
@@ -282,6 +285,7 @@
     kontrast
 "Count"
     Število
+"Cover Image"
 "Create a New Playlist"
     Ustvari nov seznam predvajanja
 "Create a Random Mix"
@@ -356,6 +360,9 @@
     Neposredni download
 "Directed by"
     Režija
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
     Prikaz
 "Dolby Surround"
@@ -612,6 +619,7 @@
     Trajanje
 "Length (min)"
     Trajanje (min)
+"Length in minutes"
 "Links"
 "Listing &quot;Jump to&quot;"
     TV spored &quot;Skoči na&quot;
@@ -735,10 +743,12 @@
     Novo iskanje
 "New Titles, Premieres"
     Novi filmi, premiere
+"No"
 "NO DATA"
     NI PODATKOV
 "No Frontends allow remote control."
     Noben frontend ne dovoli oddaljenega nadzora
+"No Genre"
 "No matches found"
     Ni zadetkov
 "No matching programs found."
@@ -796,6 +806,7 @@
 "Page recorded programs"
 "Page Up"
     Stran gor
+"Parental Level"
 "Part $1 of $2"
     Del $1 od $2
 "Past Month"
@@ -858,6 +869,8 @@
     Za ponovno iskanje vnesite IMDB številko ali naslov
 "Please wait for the pending ajax request"
     Prosim počakajte na tekočo ajax zahtevo
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
     Možni konflikti
@@ -927,6 +940,7 @@
     Tip naključnega predvajanja
 "Rating"
     Ocena
+"Rating:"
 "Recently Added Albums"
     Pred kratkim dodani albumi
 "Recently completed jobs"
@@ -1065,6 +1079,7 @@
 "right"
 "Right"
     Desno
+"Root Directory"
 "Rows to show between timeslot info"
     Št. vrstic med časovno linijo
 "Running"
@@ -1130,6 +1145,7 @@
 "Searches"
     Iskanja
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
 "Server Statistics"
     Stratistike strežnika
@@ -1217,6 +1233,7 @@
     Predvajanje (stream)
 "Sub and Desc (Empty matches)"
     Podnaslov in opis (prazni zadetki)
+"Submit"
 "Submit Search"
     Začni iskati
 "Subtitle"
@@ -1311,6 +1328,7 @@
     tip
 "Type"
     Tip
+"Uncategorized"
 "Undelete"
     Obnovi
 "Undelete: $1"
@@ -1337,6 +1355,7 @@
     Uporabi datum/čas
 "useonairguide"
     uporabi vodiča po zraku
+"User Rating"
 "Value"
     Vrednost
 "Video"
@@ -1457,6 +1476,7 @@
 "xmltvid"
 "Year"
     Leto
+"Year:"
 "Yes"
     Da
 "Yesterday"

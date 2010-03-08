@@ -50,6 +50,8 @@
 "%s Songs"
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
 "Aborting"
 "Action"
@@ -150,6 +152,7 @@
 "Begin a New Search"
 "brightness"
     Llum
+"Browsable"
 "Browse"
 "Browse = no"
 "Browse = yes"
@@ -221,6 +224,7 @@
     contraste
 "Count"
     Comptar
+"Cover Image"
 "Create a New Playlist"
 "Create a Random Mix"
 "Create Schedule"
@@ -281,6 +285,9 @@
 "Direct Download"
 "Directed by"
     Dirigido por
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
     Mostrar
 "Dolby Surround"
@@ -489,6 +496,7 @@
     Duració
 "Length (min)"
     Duració (min)
+"Length in minutes"
 "Links"
 "Listing &quot;Jump to&quot;"
     Llistat &quot;Saltar a&quot;
@@ -587,9 +595,11 @@
 "New Search"
 "New Titles, Premieres"
     Nous títols, estrenes
+"No"
 "NO DATA"
     SENSE DADES
 "No Frontends allow remote control."
+"No Genre"
 "No matches found"
 "No matching programs found."
     No hi ha programes coincidents
@@ -639,6 +649,7 @@
 "Page Down"
 "Page recorded programs"
 "Page Up"
+"Parental Level"
 "Part $1 of $2"
     Part $1 de $2
 "Past Month"
@@ -677,6 +688,8 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
@@ -734,6 +747,7 @@
 "Random Type"
 "Rating"
     Puntuació
+"Rating:"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -862,6 +876,7 @@
 "Return to Statistics Page"
 "right"
 "Right"
+"Root Directory"
 "Rows to show between timeslot info"
     Fileres a mostrar entre informació
 "Running"
@@ -917,6 +932,7 @@
 "Searches"
     Recerques
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -985,6 +1001,7 @@
 "Streaming"
 "Sub and Desc (Empty matches)"
     Sub i Desc (Coincidències buides)
+"Submit"
 "Submit Search"
 "Subtitle"
     Subtitol
@@ -1058,6 +1075,7 @@
     tipus
 "Type"
     Tipus
+"Uncategorized"
 "Undelete"
 "Undelete: $1"
 "Unknown"
@@ -1081,6 +1099,7 @@
     Usar data/hora
 "useonairguide"
     usar guiaa emesa
+"User Rating"
 "Value"
     Valor
 "Video"
@@ -1165,6 +1184,7 @@
     Escrit por
 "xmltvid"
 "Year"
+"Year:"
 "Yes"
     Si
 "Yesterday"

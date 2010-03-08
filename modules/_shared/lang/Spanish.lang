@@ -59,6 +59,8 @@
 "%s Songs (%s)"
     %s Canciones (%s)
 "(height is calculated automatically from the recording aspect ratio)"
+"1 - Lowest"
+"4 - Highest"
 "Aborted"
     Cancelado
 "Aborting"
@@ -191,6 +193,7 @@
     Comenzar una Nueva Búsqueda
 "brightness"
     brillo
+"Browsable"
 "Browse"
     Buscar
 "Browse = no"
@@ -282,6 +285,7 @@
     contraste
 "Count"
     Contar
+"Cover Image"
 "Create a New Playlist"
     Crear una Nueva Lista de Reproducción
 "Create a Random Mix"
@@ -349,6 +353,9 @@
     Descarga Directa
 "Directed by"
     Dirigido por
+"Director"
+"Director:"
+"Directory Structure"
 "Display"
     Mostrar
 "Dolby Surround"
@@ -561,6 +568,7 @@
     Duración
 "Length (min)"
     Duración (min)
+"Length in minutes"
 "Links"
 "Listing &quot;Jump to&quot;"
     Listado &quot;Saltar a&quot;
@@ -658,9 +666,11 @@
 "New Search"
 "New Titles, Premieres"
     Nuevos Títulos, Estrenos
+"No"
 "NO DATA"
     SIN DATOS
 "No Frontends allow remote control."
+"No Genre"
 "No matches found"
     Sin resultados
 "No matching programs found."
@@ -710,6 +720,7 @@
 "Page Down"
 "Page recorded programs"
 "Page Up"
+"Parental Level"
 "Part $1 of $2"
     Parte $1 de $2
 "Past Month"
@@ -748,6 +759,8 @@
 "Playlists"
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+"Plot"
+"Plot:"
 "Pop-out player"
 "Possible conflicts"
 "Possible conflicts with this show"
@@ -805,6 +818,7 @@
 "Random Type"
 "Rating"
     Puntuación
+"Rating:"
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
@@ -933,6 +947,7 @@
 "Return to Statistics Page"
 "right"
 "Right"
+"Root Directory"
 "Rows to show between timeslot info"
     Filas a mostrar entre info
 "Running"
@@ -988,6 +1003,7 @@
 "Searches"
     Búsquedas
 "Searches will be performed against the title of all TV shows"
+"Season"
 "Series ID"
 "Server Statistics"
 "Set Host"
@@ -1056,6 +1072,7 @@
 "Streaming"
 "Sub and Desc (Empty matches)"
     Sub y Desc (Coincidencias vacías)
+"Submit"
 "Submit Search"
 "Subtitle"
     Subtítulo
@@ -1128,6 +1145,7 @@
     tipo
 "Type"
     Tipo
+"Uncategorized"
 "Undelete"
 "Undelete: $1"
 "Unknown"
@@ -1151,6 +1169,7 @@
     Usar fecha/hora
 "useonairguide"
     usar guía emitida
+"User Rating"
 "Value"
     Valor
 "Video"
@@ -1235,6 +1254,7 @@
     Escrito por
 "xmltvid"
 "Year"
+"Year:"
 "Yes"
     Sí
 "Yesterday"
