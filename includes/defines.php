@@ -15,7 +15,7 @@
 
 // Figure out the root path for this mythweb installation.  We need this in order
 // to cleanly reference things like the /js directory from subpaths.
-    if (isset($_SERVER['ORIG_SCRIPT_NAME']))
+    if (isset($_SERVER['ORIG_SCRIPT_NAME']) && !isset($_SERVER['FCGI_ROLE']))
         define('root', str_replace('//', '/', dirname($_SERVER['ORIG_SCRIPT_NAME']).'/'));
     else
         define('root', str_replace('//', '/', dirname($_SERVER['SCRIPT_NAME']).'/'));
@@ -47,7 +47,7 @@
 /**/
     $Path = '';
 
-    if (isset($_SERVER['ORIG_PATH_INFO']))
+    if (isset($_SERVER['ORIG_PATH_INFO']) && !isset($_SERVER['FCGI_ROLE']))
         $Path = $_SERVER['ORIG_PATH_INFO'];
     elseif (isset($_SERVER['PATH_INFO']))
         $Path = $_SERVER['PATH_INFO'];

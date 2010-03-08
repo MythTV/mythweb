@@ -25,7 +25,7 @@
 
 <div id="message">
 
-<h2><An unknown module was specified</h2>
+<h2>An unknown module was specified</h2>
 
 <p>
 <?php echo $Path[0] ?>
