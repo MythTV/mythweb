@@ -525,16 +525,11 @@ class Program {
  * @todo, this should get put into a "recording" class or something like that.
 /**/
     public static function get_preview_pixmap($hostname, $chanid, $starttime, $width=160, $height=120, $secs_in=null) {
-    // We have to calulate $secs_in from the db
-        if (is_null($secs_in))
-            $secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
-                       + _or(get_backend_setting('RecordPreRoll'), 0);
 
         return MythBackend::find($hostname)->httpRequest('GetPreviewImage', array('ChanId'      => $chanid,
                                                                          'StartTime'   => unix2mythtime($starttime),
                                                                          'Height'      => $height,
-                                                                         'Width'       => $width,
-                                                                         'SecsIn'      => $secs_in));
+                                                                         'Width'       => $width));
     }
 
 /**
