@@ -71,7 +71,7 @@
 <?php
     if (!$Settings['tv']) {
 ?>
-<h2>No TV Configured</h1>
+<h2>No TV Configured</h2>
 <p>
 MythTV is intended to run with TV settings configured.  Your installation does
 not appear to have been fully configured for TV viewing (there are no channels).
