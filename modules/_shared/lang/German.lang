@@ -61,8 +61,11 @@
 "%s Songs (%s)"
     %s Lieder (%s)
 "(height is calculated automatically from the recording aspect ratio)"
+    (die Höhe wird automatisch anhand des Seitenverhältnisses der Aufnahme berechnet)
 "1 - Lowest"
+    1 - Niedrigste
 "4 - Highest"
+    4 - Höchste
 "Aborted"
     Abgebrochen
 "Aborting"
@@ -70,9 +73,11 @@
 "Action"
     Aktion
 "Actions"
+    Aktionen
 "Activate"
     Aktivieren
 "Active Screens"
+    Aktive Bildschirme
 "Add"
     Hinzufügen
 "Add Album to Current Playlist"
@@ -84,6 +89,7 @@
     weitere
 "Add this Playlist as a Subplaylist"
 "Add To Active Screens"
+    Zu den aktiven Bildschirmen hinzufügen
 "Additional Tables"
     zus. Tabellen
 "Additional tables:"
@@ -297,6 +303,7 @@
 "Count"
     Gesamt
 "Cover Image"
+    Coverbild
 "Create a New Playlist"
     Neue Wiedergabeliste anlegen
 "Create a Random Mix"
@@ -304,6 +311,7 @@
     Speichern
 "Current MythWeb Skin"
 "Current MythWeb Template"
+    Aktuelle MythWeb Vorlage
 "Current Recording"
     Aktuelle Aufnahmen
 "Current recordings"
@@ -340,6 +348,7 @@
     Standard MythVideo Ansicht
 "Default MythWeb Skin"
 "Default MythWeb Template"
+    Standard MythWeb Vorlage
 "Delete"
     Löschen
 "delete"
@@ -373,7 +382,9 @@
 "Directed by"
     Regie
 "Director"
+    Regisseur
 "Director:"
+    Regisseur:
 "Directory Structure"
 "Display"
     Anzeigen
@@ -413,6 +424,7 @@
 "Editing "
     Bearbeite
 "Enable Flash Video player for recordings."
+    Flash-Videoabpsieler für Aufnahmen aktivieren.
 "Enable Video Playback"
     Videowiedergabe aktivieren
 "End"
@@ -454,6 +466,7 @@
 "Extra Information"
     Weitere Informationen
 "ffmpeg with MP3 support not detected"
+    ffmpeg mit MP3-Unterstützung nicht erkannt
 "File Size"
     Dateigröße
 "film"
@@ -479,17 +492,21 @@
 "Finished"
     Fertig
 "First recording"
+    Erste Aufnahme
 "First showing of each episode"
     Erste Ausstrahlung jeder Folge
 "Flag Commercials"
     Werbung markieren
 "FLV Width"
+    FLV Breite
 "For more information on the Power Search please go to:"
+    Für weitere Informationen zur erweiterten Suche gehen Sie zu:
 "Force HTTP for streams"
-    HTTP Protokoll erzwingen
+    HTTP-Protokoll erzwingen
 "Force HTTP/HTTPS port for streams"
-    HTTP/HTTPS Port erzwingen
+    HTTP/HTTPS-Port erzwingen
 "Forced"
+    Erzwungen
 "Forget Old"
     frühere Aufnahmen vergessen
 "format help"
@@ -542,7 +559,7 @@
     Max
 "Home"
 "Host"
-    Moderator
+    Rechner
 "Hosted by"
     Präsentiert von
 "Hour"
@@ -619,6 +636,7 @@
 "Last recording"
     letzte Aufnahme
 "Last showing of each episode"
+    letzte Ausstrahlung von jeder Folge
 "Later"
     später
 "left"
@@ -631,6 +649,7 @@
 "Length (min)"
     Dauer (Min.)
 "Length in minutes"
+    Dauer in Minuten
 "Links"
 "Listing &quot;Jump to&quot;"
     TV-Programm &quot;Gehe zu&quot;
@@ -693,7 +712,9 @@
 "more"
     mehr
 "Move Item Down in Playlist"
+    In der Wiedergabeliste nach unten verschieben
 "Move Item Up in Playlist"
+    In der Wiedergabeliste nach oben verschieben
 "movie"
     Spielfilm
 "Movies"
@@ -756,11 +777,13 @@
 "New Titles, Premieres"
     Neue Sendungen, Erstausstrahlungen
 "No"
+    Nein
 "NO DATA"
     Kein Programm verfügbar
 "No Frontends allow remote control."
     Kein Frontend erlaubt Fernsteuerung.
 "No Genre"
+    kein Genre
 "No matches found"
     Nichts gefunden
 "No matching programs found."
@@ -825,6 +848,7 @@
 "Page Up"
     Seite nach oben
 "Parental Level"
+    Altersfreigabe
 "Part $1 of $2"
     Teil $1 von $2
 "Past Month"
@@ -886,8 +910,11 @@
     Playlists
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
+    Bitte auf den ausstehenden AJAX Request warten
 "Plot"
+    Handlung
 "Plot:"
+    Handlung:
 "Pop-out player"
 "Possible conflicts"
     Mögliche Überschneidungen
@@ -899,11 +926,15 @@
     Erweiterte Suche
 "Power Search:"
 "Precip"
+    Niederschlag
 "Prefer a host for a storage group"
+    Bevorzuge einen Rechner mit einer Speichergruppe
 "Prefer a host for live sports with overtime"
+    Bevorzuge einen Rechner für Live-Sportübertragungen mit Verlängerung
 "Prefer Channum"
     bevorzuge Sendernummer
 "Prefer movies when shown at night"
+    Bevorzuge Spielfilme die abends ausgestrahlt werden
 "prefer_channum"
     bevorzuge Sendernummer
 "Preferred Input"
@@ -917,12 +948,19 @@
 "Previous recordings"
     alte Aufnahmen
 "Priority for a category"
+    Priorität einer Kategorie
 "Priority for a category type"
+    Priorität einer Kategorie
 "Priority for all matching titles"
+    Priorität aller passenden Titel
 "Priority for any show with End Late time"
+    Priorität von Sendungen mit verspätetem Aufnahmeende
 "Priority for HD shows under two hours"
+    Priorität von HD-Sendungen unter 2 Stunden Länge
 "Priority for movies by the year of release"
+    Priorität für Spielfilme nach Erscheinungsjahr
 "Priority when shown once"
+    Priorität bei einmaliger Ausstrahlung
 "Produced by"
     Produzent
 "Profile"
@@ -953,8 +991,9 @@
 "Random Mix Maker"
 "Random Type"
 "Rating"
-    Freigegeben ab
+    Altersfreigabe
 "Rating:"
+    Altersfreigabe:
 "Recently Added Albums"
     Neueste Alben
 "Recently completed jobs"
@@ -1166,7 +1205,9 @@
     Suchen
 "Searches will be performed against the title of all TV shows"
 "Season"
+    Staffel
 "Series ID"
+    Serien-ID
 "Server Statistics"
     Serverstatistik
 "Set Host"
@@ -1271,6 +1312,7 @@
     Surround-Ton
 "Tab"
 "Temp"
+    Temperatur
 "The requested recording schedule has been deleted."
     Die geplante Aufnahme wurde gelöscht.
 "themoviedb"
@@ -1310,8 +1352,9 @@
 "Title:"
     Titel:
 "Toggle Interactive Mode"
+    Interaktiven Modus ein/aus
 "Too Many"
-    zu viele
+    Zu viele
 "Top $1"
     Top $1
 "Top Played Songs"
@@ -1382,6 +1425,7 @@
 "useonairguide"
     DVB-EPG Daten verwenden
 "User Rating"
+    Bewertung
 "Value"
     Wert
 "Video"
@@ -1439,7 +1483,9 @@
 "Visit $1"
     Besuche $1
 "Watch on frontend"
+    Auf dem Frontend ansehen
 "Watch on iPod/iPhone"
+    Auf dem iPod/iPhone ansehen
 "Watched"
     Gesehen
 "Weather"
