@@ -90,8 +90,8 @@
         // Add to the database
             $filename   = basename($file);
             $title      = filenametotitle($filename);
-            $db->query('INSERT INTO videometadata ( title, filename, host, showlevel, browse )
-                                           VALUES (     ?,        ?,     ?,        1,      ? )',
+            $db->query('INSERT INTO videometadata ( title, filename, host, showlevel, browse, inetref )
+                                           VALUES (     ?,        ?,     ?,        1,      ?, "00000000" )',
                        strlen($title) > 0 ? $title : $filename,
                        $file,
                        hostname,
