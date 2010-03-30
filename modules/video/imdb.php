@@ -47,10 +47,7 @@
     // Escape any extra " in the title string
         $title            = str_replace('"', '\"', $title);
     // Setup the option list
-        $options          = array('IMDB'     => array( ' -M tv=both "%%TITLE%%"',
-                                                       ' -M tv=both\;type=fuzzy "%%TITLE%%"',
-                                                       ' -M s=tt\;ttype=ep "%%TITLE%%"'
-                                                     ),
+        $options          = array('IMDB'     => array( ' -M "%%TITLE%%"' ),
                                   'ALLOCINE' => array( ' -M "%%TITLE%%"')
                                  );
 
@@ -80,8 +77,27 @@
         $return['action'] = 'grab';
         $imdb             = setting('web_video_imdb_path', hostname);
         $imdbwebtype      = setting('web_video_imdb_type', hostname);
-        $artworkdir       = setting('VideoArtworkDir', hostname);
-        $posterfile       = $artworkdir.'/'.$imdbnum.'.jpg';
+    # Figure out the artwork directory
+        $artwork_dirs = $db->query_list('
+            SELECT  dirname
+            FROM    storagegroup
+            WHERE   groupname="Coverart"
+            ');
+        if (empty($artwork_dirs)) {
+            $return['warning'][] = 'MythWeb now requires use of the Coverart Storage Group.';
+            return;
+        }
+        foreach ($artwork_dirs as $dir) {
+            if (is_dir($dir) || is_link($dir)) {
+                $artwork_dir = $dir;
+                break;
+            }
+        }
+        if (empty($artwork_dir)) {
+            $return['warning'][] = 'Could not find a valid Coverart Storage Group directory';
+            return;
+        }
+        $posterfile = "$artwork_dir/$imdbnum.jpg";
     // Get the imdb data
         $data = array();
         $cmd = "$imdb -D $imdbnum";
@@ -104,12 +120,13 @@
     // If the file already exists, use it, don't bother regrabbing
         if (!file_exists($posterfile)) {
             $posterurl = $data['coverart'];
-            if (!is_writable($artworkdir))
+            if (!is_writable($artwork_dir))
                 $return['warning'][] = t('Video: Warning: Artwork');
             else {
                 if (!ini_get('allow_url_fopen'))
                     $return['warning'][] = t('Video: Warning: fopen');
                 elseif(strlen($posterurl) > 0) {
+                    $posterurl = preg_replace('/,.+$/', '', $posterurl);    // For now, only bother to grab the first poster URL
                     $posterjpg = @file_get_contents($posterurl);
                     if ($posterjpg === FALSE)
                         $return['warning'][] = t('Video: Warning: Artwork: Download');
@@ -141,7 +158,7 @@
                          $data['year'],
                          $data['userrating'],
                          $data['runtime'],
-                         ( @filesize($posterfile) > 0 ? $posterfile : 'No Cover' ),
+                         ( @filesize($posterfile) > 0 ? "$imdbnum.jpg" : 'No Cover' ),
                          $id
                          );
         $return['update'][] = $id;

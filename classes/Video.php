@@ -34,7 +34,7 @@ class Video {
         global $db;
         global $mythvideo_dir;
 
-// Video storage directories
+    // Video storage directories
         $video_dirs = $db->query_list('
             SELECT  dirname
             FROM    storagegroup
@@ -65,7 +65,7 @@ class Video {
         $this->browse       = $video['browse'];
     // And the artwork URL
         $this->cover_url = '';
-        if ($this->cover_file != 'No Cover') {
+        if ($this->cover_file && $this->cover_file != 'No Cover') {
             $exists = false;
             foreach ($video_dirs as $dir) {
                 $path = preg_replace('#/+#', '/', "$dir/$this->cover_file");

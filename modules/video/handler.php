@@ -81,24 +81,43 @@
     }
 // Create the symlink, if possible.
     else {
-        $dir = setting('VideoArtworkDir', hostname);
-        if ($dir) {
-        // You can't symlink on windows
-            if (strtoupper(substr(php_uname('s'), 0, 3)) != 'WIN') {
-                $ret = @symlink($dir, 'data/video_covers');
-                if (!$ret) {
-                    custom_error("Could not create a symlink to $dir, the local MythVideo artwork"
-                                .' directory for this hostname ('.hostname.').  Please create a'
-                                .' symlink to your MythVideo directory at data/video_covers in order to'
-                                .' use the video artwork portions of MythWeb.');
+        $artwork_dirs = $db->query_list('
+            SELECT  dirname
+            FROM    storagegroup
+            WHERE   groupname="Coverart"
+            ');
+        if (empty($artwork_dirs)) {
+            custom_error('MythWeb now requires use of the Coverart Storage Group.');
+        }
+    // You can't symlink on windows
+        if (strtoupper(substr(php_uname('s'), 0, 3)) == 'WIN') {
+            custom_error('MythWeb would like to create a symlink at data/video_covers,'
+                        .' but this host is running Windows, which does not work with'
+                        .' symbolic links.  Please create this directory manually and'
+                        .' reload this page.');
+        }
+    // Create a symlink to the first artwork directory that we find.
+    /** @todo we should really support multiple directories, but it's too much effort to hack in at the moment. */
+        else {
+            foreach ($artwork_dirs as $dir) {
+                if (is_dir($dir) || is_link($dir)) {
+                    $artwork_dir = $dir;
+                    break;
                 }
             }
-        }
-        else {
-            custom_error('Could not find a value in the database for the'
-                        .' MythVideo artwork directory for this hostname ('.hostname.').'
-                        .' Please update your <a href="'.root_url.'settings/mythweb">settings</a>'
-                        .' to point to the correct location.');
+            if (empty($artwork_dir)) {
+                custom_error("Could not find any valid Coverart storage directories.  Please"
+                            .' create a symlink to your Coverart storage directory at'
+                            .' data/video_covers in order to use the video artwork portions'
+                            .' of MythWeb.');
+            }
+            $ret = @symlink($artwork_dir, 'data/video_covers');
+            if (!$ret) {
+                custom_error("Could not create a symlink to $dir, the local MythVideo artwork"
+                            .' directory for this hostname ('.hostname.').  Please create a'
+                            .' symlink to your MythVideo directory at data/video_covers in order to'
+                            .' use the video artwork portions of MythWeb.');
+            }
         }
     }
 

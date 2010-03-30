@@ -857,7 +857,7 @@
 "Video: Warning: Artwork"
     Warning, Updating the video artwork failed. Please check the permissions on your Video Artwork Directory for this host
 "Video: Warning: Artwork: Download"
-    Downloading the artwork from imdb failed.
+    Downloading the artwork from tmdb failed.
 "Video: Warning: fopen"
     Warning, Your php.ini file has allow_url_fopen set to Off. To download the artwork, it is required to be On. Artwork will not be updated.
 "VideoAggressivePC"
