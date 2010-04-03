@@ -504,12 +504,8 @@ class Program {
  * Generate a thumbnail of the requested size, and return the URL to its cache
  * location.
 /**/
-    public function thumb_url($width=160, $height=120, $secs_in=null) {
+    public function thumb_url($width=160, $height=120, $secs_in=-1) {
 
-    // We have to calulate $secs_in from the db
-        if (is_null($secs_in))
-            $secs_in = _or(get_backend_setting('PreviewPixmapOffset'), 64)
-                       + _or(get_backend_setting('RecordPreRoll'), 0);
         $filename = explode('/', $this->filename);
         $filename = array_pop($filename);
 
