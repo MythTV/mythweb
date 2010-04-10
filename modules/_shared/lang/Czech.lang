@@ -3,219 +3,366 @@
     v
 " TRANSCODED"
 "# Tracks"
+    # Stopy
 "$1 B"
+    $1 B
 "$1 day"
+    $1 den
 "$1 days"
+    $1 dny
 "$1 episode"
+    $1 epizoda
 "$1 episodes"
+    $1 epizody
 "$1 GB"
+    $1 GB
 "$1 hr"
     $1 hodina
 "$1 hrs"
     $1 hodin
 "$1 is not responding."
+    $1 neodpovídá
 "$1 KB"
+    $1 KB
 "$1 MB"
+    $1 MB
 "$1 min"
     $1 minuta
 "$1 mins"
     $1 minut
 "$1 month"
+    $1 měsíc
 "$1 months"
+    $1 měsíce
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
-    $1 pořadů, obsazených $2 ($3) z $4 ($5 volných)
+    $1 programů, obsazených $2 ($3) z $4 ($5 volných)
 "$1 recording"
+    $1 nahrávka
 "$1 recordings"
+    $1 nahrávky
 "$1 requests pending."
+    $1 nevyřízený požadavek.
 "$1 Search"
+    $1 Vyhledat
 "$1 TB"
+    $1 TB
 "$1 to $2"
     $1 do $2
 "$1 wasted"
+    $1 zbytečný
 "$1 year"
+    $1 rok
 "$1 years"
+    $1 roky
 "%s Song (%s)"
+    %s Skladba (%s)
 "%s Songs"
+    %s Skladby
 "%s Songs (%s)"
+    %s Skladby (%s)
 "(height is calculated automatically from the recording aspect ratio)"
+    (výška je automaticky počítána z poměru stran nahrávky)
 "1 - Lowest"
+    1 - nejnižší
 "4 - Highest"
+    4 - nejvyšší
 "Aborted"
+    Zrušeno
 "Aborting"
+    Ruším
 "Action"
+    Činnost
 "Actions"
+    Činnosti
 "Activate"
     Zapnout
 "Active Screens"
+    Aktivní obrazovky
 "Add"
+    Přidat
 "Add Album to Current Playlist"
+    Přidat album do stávajícího playlistu
 "Add Mix"
+    Přidat mix
 "Add Song to Current Playlist"
+    Přidat skladbu do stávajícího playlistu
 "add string"
+    Přidat řetězec
 "Add this Playlist as a Subplaylist"
+    Přidat playlist jako subplaylist
 "Add To Active Screens"
+    Přidat na aktivní obrazovky
 "Additional Tables"
+    Další tabulky
 "Additional tables:"
+    Další tabulky:
 "Admin Key"
 "Advanced"
+    Rozšířené
 "Advanced Options"
     Rozšířené volby
 "Advanced Search"
+    Rozšířené vyhledávání
 "airdate"
+    datum vysílání
 "Airdate"
     datum vysílání
 "Airtime"
     Čas vysílání
 "Album Listing"
+    Seznam alb
 "Album Tracks"
+    Stopy alba
 "Albums"
+    Alba
 "Albums with songs by %s"
+    Alba se skladbami od %s
 "All"
+    Všechno
 "All Albums"
+    Všechna alba
 "All Categories"
+    Všechny kategorie
 "All Fields"
+    Všechna pole
 "All Genres"
+    Všechny žánry
 "All groups"
+    Všechny skupiny
 "All HDTV"
+    Všechny HDTV
 "All Hosts"
+    Všechny hosty
 "All recordings"
     Všechny nahrávky
 "All Songs"
+    Všechny skladby
 "ALLOCINETYPE"
 "Allows you to match any string of any length (including zero length)"
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
+    Při použití pokročilého vyhledávání umožňuje vyhledat pomocí dalších databázových tabulek
 "An error occured while adding your playlist."
+    Chyba při přidávání playlistu
 "and"
+    a
 "Any"
+    Jakýkoli
 "Any Category"
+    Jakákoli kategorie
 "Any Channel"
+    Jakýkoli kanál
 "Any Program Type"
+    Jakýkoli typ programu
 "Append"
+    Připojit
 "Append to Current Playlist"
+    Připojit ke stávajícímu playlistu
 "Are you sure you want to delete the following show?"
+    Opravdu smazat následující představení?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+    Opravdu smazat TENTO ULOŽENÝ PLAYLIST?
 "Are you sure you want to delete this show?"
+    Opravdu smazat toto představení?
 "Artist Listing"
+    Seznam umělců
 "Artists"
+    Umělci
 "Artists Beginning with %s"
+    Umělci začínající %s
 "ASX Stream"
+    ASX Stream
 "Audio Bitrate"
+    Datový tok audia
 "Audio for Hearing Impaired"
 "Audio for Visually Impaired"
 "Auto Expire"
+    Automatické vypršení
 "Auto-expire recordings"
-    Automaticky vypršet nahrávky
+    Automatické vypršení platnosti nahrávek
 "Auto-flag commercials"
     Automaticky značkovat reklamy
 "Auto-transcode"
     Automaticky překódovávat
 "AVC/H.264"
+    AVC/H.264
 "Avoid poor signal quality"
+    Vyhnout se špatné kvalitě signálu
 "Back"
+    Zpět
 "Back Tab"
 "Back to the program listing"
+    Zpět na seznam programu
 "Back to the recorded programs"
+    Zpět na nahrané pořady
 "Back to the recording schedules"
     Zpět na rozvrhy nahrávání
 "Backend Logs"
+    Logy backendu
 "Backend Status"
     Stav backendu
 "Backspace"
 "Begin a New Search"
+    Začít nové hledání
 "brightness"
+    jas
 "Browsable"
+    Prohledávatelné
 "Browse"
+    Procházet
 "Browse = no"
+    Procházet = ne
 "Browse = yes"
+    Procházet = ano
 "Browse all"
+    Procházet vše
 "Browse All Albums"
+    Procházet všechna alba
 "Browse Music"
+    Procházet hudbu
 "Browse the Music Database"
+    Procházet databázi hudby
 "By Artist Beginning With"
+    Podle autora začínajícího
 "By Genre"
+    Podle žánru
 "callsign"
+    ID stanice
 "Cancel"
+    Zrušit
 "Cancel this schedule."
     Zrušit tento rozvrh
 "Cancelled"
+    Zrušeno
 "Caps Lock"
+    Caps Lock
 "Cast"
+    Obsazení
 "Cast Information"
+    Informace o obsazení
 "category"
+    kategorie
 "Category"
     Kategorie
 "Category Legend"
 "CC"
+    CC
 "Chan. Callsign"
+    ID kanálu
 "Chan. Name"
+    Název kanálu
 "Chan. Number"
+    Číslo kanálu
 "Channel"
+    Kanál
 "channel"
+    kanál
 "Channel &quot;Jump to&quot;"
 "Channel Detail"
+    Detaily o kanálu
 "Channel Info"
+    Info o kanálu
 "Channels"
+    Kanály
 "channum"
     číslo kanálu
 "Check for duplicates in"
     Zkontrolovat duplicity
 "Childrens Movies"
+    Filmy pro děti
 "Choose Genre.."
+    Vybrat žánr
 "Choose Type"
+    Vybrat typ
 "Click to disable Auto Expire"
+    Kliknout pro zakázání automatického vypršení
 "Click to enable Auto Expire"
+    Kliknout pro povolení automatického vypršení
 "Click to View Playlist"
+    Kliknout pro zobrazení playlistu
 "Close Captioned priority"
 "Closed Captioning"
 "colour"
+    barva
 "Commands"
 "Commands:"
 "Commercials Flagged"
+    Reklamy označeny
 "commfree"
+    bez reklam
 "Conflict"
+    Konflikt
 "Conflicts"
+    Konflikty
 "Context"
+    Kontext
 "contrast"
+    kontrast
 "Count"
+    Počet
 "Cover Image"
+    Obrázek na obálce
 "Create a New Playlist"
+    Vytvořit nový playlist
 "Create a Random Mix"
+    Vytvořit náhodný mix
 "Create Schedule"
     Vytvořit rozvrh
 "Current MythWeb Skin"
+    Stávající skin MythWebu
 "Current MythWeb Template"
+    Stávající šablona MythWebu
 "Current Recording"
+    Současná nahrávka
 "Current recordings"
     Současné nahrávky
 "Currently Browsing:  $1"
-    Zrovna prohlížíte:  $1
+    Právě prohlížíte:  $1
 "Currently Recording:  Edit"
 "Custom"
 "Custom Schedule"
-    Upravený rozvrh
+    Vlastní rozvrh
 "Custom Search"
+    Vlastní vyhledávání
 "Customize Screens"
+    Vlastní obrazovky
 "Data"
+    Data
 "Database"
+    Databáze
 "Database Health"
+    Stav databáze
 "Date"
     Datum
 "Date Formats"
+    Formáty data
 "Deactivated"
+    Deaktivováno
 "Deaf Signed"
 "Default"
+    Výchozí
 "Default MythVideo View"
+    Výchozí vzhled MythVidea
 "Default MythWeb Skin"
+    Výchozí skin MythWebu
 "Default MythWeb Template"
+    Výchozí šablona MythWebu
 "Delete"
+    Smazat
 "delete"
+    smazat
 "Delete $1"
+    smazat $1
 "Delete + Rerecord"
+    Smazat + Znovunahrát
 "Delete and allow rerecord: $1"
+    Smazat a povolit znovunahrání: $1
 "Delete and rerecord"
+    Smazat a znovunahrát
 "Delete and rerecord $1"
+    Smazat a znovunahrát $1
 "Delete Forever"
+    Smazat navždy
 "DELETE this Saved Playlist"
 "DeleteKey"
 "Depending on the Search type this is where you enter actual main search commands"
@@ -224,97 +371,151 @@
 "Description"
     Popis
 "Destination"
+    Cíl
 "Details for: $1"
+    Detaily pro: $1
 "Direct Download"
+    Přímé stažení
 "Directed by"
+    Režírováno
 "Director"
+    Režisér
 "Director:"
+    Režisér:
 "Directory Structure"
+    Struktura adresářů
 "Display"
     Zobrazení
 "Dolby Surround"
+    Dolby Surround
 "Don't Record"
     Nenahrávat
 "Don't record this program."
+    Nenahrávat tento program
 "Done, Unknown Status"
+    Hotovo, neznámý stav 
 "Down"
+    Dolů
 "Download URL override"
 "Dup Method"
 "Duplicate"
+    Duplicita
 "Duplicate Check method"
     Metoda kontroly duplicit
 "Duplicates/Ignored"
 "Earlier"
+    Dříve
 "Earlier Showing"
+    Dříve zobrazeno
 "Edit"
+    Upravit
 "Edit existing group"
+    Upravit existující skupinu
 "Edit MythWeb and some MythTV settings."
+    Upravit MythWeb a některá nastavení MythTV
 "Edit Screen"
+    Upravit obrazovku
 "Edit settings for: $1"
+    Upravit nastavení pro: $1
 "Editing "
+    Upravování
 "Enable Flash Video player for recordings."
+    Povolit Flash video player pro nahrávky.
 "Enable Video Playback"
+    Povolit video playback
 "End"
+    Ukončit
 "End Late"
-    Končí pozdě
+    Ukonči později
 "Enter"
+    Zadat
 "Enter a new name for your playlist"
+    Zadat nový název pro playlist
 "Enter your search terms"
+    Zadat podmínky vyhledávání
 "enter your search terms"
+    zada podmínky vyhledávání
 "Episode"
     Díl
 "Episode Number"
+    Číslo dílu
 "Error"
+    Chyba
 "error: playgroup $1 exists"
+    chyba: skupina přehrávání $1 existuje
 "Errored"
+    Chybové
 "Erroring"
+    Chybující
 "Escape"
 "Everything"
 "Exclude Generic Episodes"
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
+    S vyjímkou opakujících se epizod
 "Exec. Producer"
 "Executive Producer"
+    Výkonný producent
 "Extended Check"
 "Extra Information"
 "ffmpeg with MP3 support not detected"
+    ffmpeg s podporou MP3 nenalezen
 "File Size"
+    Velikost souboru
 "film"
+    film
 "Filter"
+    Filtr
 "Filters"
+    Filtry
 "Find Date & Time Options"
+    Najít datum a možnosti času
 "Find Day"
+    Najít den
 "Find other showings of this program"
 "Find showings of this program"
 "Find Time"
+    Najít čas
 "Find Time must be of the format:  HH:MM:SS"
 "finetune"
 "Finished"
 "First recording"
+    První nahrávání
 "First showing of each episode"
+    První zobrazení každé epizody
 "Flag Commercials"
+    Označit reklamy
 "FLV Width"
 "For more information on the Power Search please go to:"
+    Pro více informací o pokročilém vyhledávání jdi na:
 "Force HTTP for streams"
 "Force HTTP/HTTPS port for streams"
 "Forced"
 "Forget Old"
     Zapomeň staré
 "format help"
+    formát nápovědy
 "Found %s results for '%s'"
+    Nalezeno %s výsledků pro '%s'
 "freqid"
 "Friday"
     Pátek
 "Frontends"
+    Frontendy
 "generic_date"
     %a %b %e, %Y
 "generic_time"
     %I:%M %p
 "Genre"
+    Žánr
 "genre_colors"
+    barvy žánru
 "Genres"
+    Žánry
 "Go"
+   Jít
 "Google"
+    Google
 "Group timeslots every"
 "Guest Starring"
 "Guide rating"
@@ -325,51 +526,61 @@
 "has Bookmark"
 "Has Cutlist"
 "HD"
+    HD
 "HDTV"
+    HDTV
 "Height"
+    Výška
 "Hide"
+    Skrýt
 "High"
+    Vysoký
 "Home"
+    Domů
 "Host"
+    Host
 "Hosted by"
 "Hour"
     Hodina
 "Hour Format"
     Formát hodin
 "hue"
+    odstín
 "Humidity"
     Vlhkost
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
+    IMDB
 "IMDBTYPE"
 "Inactive"
     Neaktivní
 "Inactive Screens"
+    Neaktivní obrazovky
 "info: activate recording"
 "info: default recording"
 "info: dont record"
 "info: flvplayer"
     <p>
-    Flash video playback is currently only a proof-of-concept and should be
-    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
-    default.
+    Integrace Flash video přehrávače je v tuto chvíli <b>VELMI</b> experimentální
+    a z tohoto důvodu je defaultně deaktivována.
     </p>
     <p>
-    It currently expects that ffmpeg is installed and compiled with mp3
-    support, and that the recordings files are accessible to your webserver
-    userid.  It probably won't work with Nupplevideo files, and in the end,
-    it may just not work at all (or maybe even worse).
+    - musí být instalován ffmpeg s podporou MP3
+    - nahrávky musí být přístupné uživateli Apache/Webserveru
+    - pravděpodobně nebude fungovat se soubory Nupplevidea
+    - a nakonec nemusí pracovat vůbec (nebo může být ještě hůře)
     </p>
     <p>
-    Enable this feature at your own risk, and don't expect too much
-    official help until it has left the experimental phase.
+    Povolte tuto možnost pouze na vlastní nebezpečí. Dokud se bude jednat o experimentální volbu, 
+    neočekávejte moc velkou pomoc.
     </p>
 "info: hidden advanced schedule"
 "info: record this"
 "info:forget old"
 "info:never record"
 "Insert"
+    Vložit
 "Jump"
     Skočit
 "Jump Points"
@@ -383,23 +594,33 @@
 "Key Controls"
 "Keybindings Editor"
 "Keyword"
+    Klíčová slova
 "Keyword Search"
+    Vyhledávání podle klíčových slov
 "Keyword Search:"
+    Vyhledávání podle klíčových slov:
 "Keywords"
+    Klíčová slova
 "Language"
     Jazyk
 "Last Recorded"
 "Last recording"
 "Last showing of each episode"
 "Later"
+    Později
 "left"
+    vlevo
 "Left"
+    Vlevo
 "leftl"
 "length"
     délka
 "Length"
+    Délka
 "Length (min)"
+    Délka (min)
 "Length in minutes"
+    Délka v minutách
 "Links"
 "Listing &quot;Jump to&quot;"
 "Listing Time Key"
@@ -416,6 +637,7 @@
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
+    Logy
 "Low"
 "Low Space"
 "Manual"
@@ -435,12 +657,17 @@
 "Monday"
     Pondělí
 "Mono"
+    Mono
 "More"
 "more"
 "Move Item Down in Playlist"
+    Posuň položku v playlistu dolů
 "Move Item Up in Playlist"
+    Posuň položku v playlistu nahoru
 "movie"
+    film
 "Movies"
+    Filmy
 "Movies, 3&frac12; Stars or more"
 "Movies, Stinkers (2 Stars or less)"
 "Music"
@@ -451,35 +678,49 @@
     MythMusic na webu.
 "MythMusic_Prefixes_To_Ignore"
 "MythTV"
+    MythTV
 "MythTV Status"
+    Stav MythTV
 "MythVideo Artwork Dir"
 "MythVideo Dir"
+    Adresář MythVidea
 "MythVideo on the web."
     MythVideo na webu.
 "mythvideo.db_folder_view"
 "mythvideo.ImageCacheSize"
 "mythvideo.sort_ignores_case"
 "MythWeb"
+    MythWeb
 "MythWeb Defaults"
 "MythWeb Global Defaults"
 "MythWeb Locked"
 "MythWeb Session"
 "MythWeb Skin"
+    Skin MythWebu
 "MythWeb Weather."
     MythWeb Počasí.
 "Name"
+    Název
 "name"
+    název
 "Narrow Your Search"
 "Never Record"
     Nikdy nenahrávat
 "New"
+    Nový
 "New episodes only"
+    Pouze nové epizody
 "New Episodes Only"
+    Pouze nové epizody
 "New Group"
+    Nová skupina
 "New Search"
+    Nové hledání
 "New Titles, Premieres"
 "No"
+    Ne
 "NO DATA"
+    ŽÁDNÁ DATA
 "No Frontends allow remote control."
 "No Genre"
 "No matches found"
@@ -529,10 +770,12 @@
 "Paused"
 "Pending"
 "People"
+    Lidé
 "People Search"
 "People Search:"
 "Percent of time spent recording"
 "Play"
+    Přehrát
 "Play Recording on Frontend"
 "Play this Album Now"
 "Play This Playlist Now"
@@ -544,24 +787,35 @@
 "Played %s times"
 "Played once"
 "Playlist"
+    Playlist
 "Playlist Info"
 "Playlist is empty"
+    Playlist je prázdný
 "Playlist Items"
+    Položky playlistu
 "Playlist Name"
+    Název playlistu
 "Playlist renamed successfully"
+    Playlist úspěšně přejmenován
 "Playlist saved successfully"
+    Playlist úspěšně uložen
 "Playlist: %s"
+    Playlist: %s
 "Playlists"
+    Playlisty
 "Please enter an imdb number or a title to do another search"
 "Please wait for the pending ajax request"
 "Plot"
 "Plot:"
 "Pop-out player"
 "Possible conflicts"
+    Možné konflikty
 "Possible conflicts with this show"
 "Power"
 "Power Search"
+    Pokročilé vyhledávání
 "Power Search:"
+    Pokročilé vyhledávání:
 "Precip"
 "Prefer a host for a storage group"
 "Prefer a host for live sports with overtime"
@@ -573,6 +827,7 @@
 "Pressure"
     Tlak
 "Previous Recording"
+    Předchozí nahrávka
 "Previous recordings"
     Předchozí nahrávky
 "Priority for a category"
@@ -584,12 +839,17 @@
 "Priority when shown once"
 "Produced by"
 "Profile"
+    Profil
 "profile"
+    profil
 "Program Categories"
+    Kategorie programů
 "Program Detail"
 "Program Flags"
 "Program ID"
+    ID programu
 "Program Information"
+    Informace o programu
 "Program Listing"
     Výpis pořadů
 "Program Type"
@@ -604,12 +864,15 @@
 "Rating"
     Hodnocení
 "Rating:"
+    Hodnocení:
 "Recently Added Albums"
 "Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
 "Record Date"
+    Datum záznamu
 "Record Length"
+    Délka záznamu
 "Record new and expire old"
     Nahrát nový a vypršet starý
 "Record This"
@@ -623,7 +886,9 @@
 "Recording Options"
 "Recording Options Help"
 "Recording Priority"
+    Priorita nahrávání
 "Recording Profile"
+    Profil nahrávání
 "Recording Schedules"
     Rozvrhy nahrávání
 "Recording Statistics"
@@ -721,7 +986,9 @@
 "Retry"
 "Return to Statistics Page"
 "right"
+    vpravo
 "Right"
+    Vpravo
 "Root Directory"
 "Rows to show between timeslot info"
 "Running"
@@ -730,10 +997,13 @@
 "Save"
     Uložit
 "Save or Rename the Current Playlist"
+    Uložit nebo přejmenovat stávající playlist
 "Save Schedule"
     Uložit rozvrh
 "Save/Rename"
+    Uložit/Přejmenovat
 "Save/Rename Playlist"
+    Uložit/Přejmenovat playlist
 "Saved Playlist Successfully Deleted"
 "Saved Playlists"
 "Scan Collection"
@@ -749,14 +1019,19 @@
 "Search"
     Vyhledat
 "Search $1"
+    Vyhledat $1
 "Search all program keywords for a match against search phrase below"
 "Search all program titles containing the Title text below"
 "Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
 "Search Music"
+    Vyhledat hudbu
 "Search Phrase"
+    Vyhledat frázi
 "Search Phrase:"
+    Vyhledat frázi
 "Search Results"
+    Výsledky hledání
 "Search the Music Database"
 "Search Type"
 "Search Type Help"
@@ -804,10 +1079,13 @@
 "Statistics"
 "Stats"
 "Status"
+    Stav
 "Status Bar"
 "Stereo"
+    Stereo
 "Still Recording: Edit"
 "Stopping"
+    Zastavení
 "Storage Group"
 "Streaming"
 "Sub and Desc (Empty matches)"
@@ -819,6 +1097,7 @@
 "Subtitled"
     Titulky
 "Subtitles Available"
+    Dostupné titulky
 "Sunday"
     Neděle
 "Surround Sound"
@@ -845,6 +1124,7 @@
     Název
 "Title Match"
 "Title search"
+    Vyhledat název
 "Title Search"
 "Title Search:"
 "Title:"
@@ -857,7 +1137,9 @@
 "Total Recorded"
 "Total Running Time"
 "Total Time"
+    Celkový čas
 "Total Time:  %s"
+    Celkový čas: %s
 "Track #%s from the album '%s'"
 "Transcode"
 "transcoder"
@@ -865,9 +1147,10 @@
 "Tuesday"
     Úterý
 "Tuner Busy"
+    Tuner je zaneprázdněn
 "TV"
 "TV functions, including recorded programs."
-    TV funkce včetně nahradných pořadů
+    TV funkce včetně nahraných pořadů
 "TV Submenu"
 "TV.com"
 "type"
@@ -926,6 +1209,7 @@
 "Visibility"
     Viditelnost
 "visible"
+    viditelný
 "Visit $1"
 "Watch on frontend"
 "Watch on iPod/iPhone"
@@ -963,7 +1247,10 @@
 "Written by"
 "xmltvid"
 "Year"
+    Rok
 "Year:"
+    Rok:
 "Yes"
     Ano
 "Yesterday"
+    Včera
