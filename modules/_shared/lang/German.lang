@@ -499,6 +499,7 @@
     Werbung markieren
 "FLV Width"
     FLV Breite
+"For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
     Für weitere Informationen zur erweiterten Suche gehen Sie zu:
 "Force HTTP for streams"

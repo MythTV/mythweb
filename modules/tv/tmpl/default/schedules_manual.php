@@ -81,7 +81,7 @@
                 <dt><?php echo t('Channel') ?>:&nbsp;</dt>
                 <dd><?php channel_select($schedule->chanid) ?></dd>
                 <dt><?php echo t('Start Date') ?>:&nbsp;</dt>
-                <dd><input type="text" name="startdate" size="10" maxlength="10" value="<?php echo date("Y-m-d", $schedule->starttime) ?>"></dd>
+                <dd><input type="text" name="startdate" size="10" maxlength="10" value="<?php echo date("Y-m-d", $schedule->starttime) ?>"><br /><?php echo t('For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day.') ?></dd>
                 <dt><?php echo t('Start Time') ?>:&nbsp;</dt>
                 <dd><input type="text" name="starttime" size="10" maxlength="8" value="<?php echo date("H:i:00", $schedule->starttime) ?>"></dd>
                 <dt><?php echo t('Length (min)') ?>:&nbsp;</dt>

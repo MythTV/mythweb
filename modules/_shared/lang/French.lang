@@ -64,9 +64,9 @@
 "(height is calculated automatically from the recording aspect ratio)"
     (la hauteur est calculée automatiquement en fonction du ratio de l'enregistrement)
 "1 - Lowest"
-    1 - Laxiste 
+    1 - Laxiste
 "4 - Highest"
-    4 - Sévère 
+    4 - Sévère
 "Aborted"
     Interrompu
 "Aborting"
@@ -523,6 +523,7 @@
     Baliser les publicités
 "FLV Width"
     Largeur FLV
+"For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
     Pour plus d'informations sur la recherche avancée, veuillez vous rendre à :
 "Force HTTP for streams"

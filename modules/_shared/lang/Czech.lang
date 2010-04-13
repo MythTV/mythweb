@@ -393,7 +393,7 @@
 "Don't record this program."
     Nenahrávat tento program
 "Done, Unknown Status"
-    Hotovo, neznámý stav 
+    Hotovo, neznámý stav
 "Down"
     Dolů
 "Download URL override"
@@ -486,6 +486,7 @@
 "Flag Commercials"
     Označit reklamy
 "FLV Width"
+"For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
     Pro více informací o pokročilém vyhledávání jdi na:
 "Force HTTP for streams"
@@ -513,7 +514,7 @@
 "Genres"
     Žánry
 "Go"
-   Jít
+    Jít
 "Google"
     Google
 "Group timeslots every"
