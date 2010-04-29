@@ -34,7 +34,7 @@
         $Channels = array();
     // Initialize the query
         if ($_SESSION['guide_favonly'])
-            $sql = 'SELECT channel.* FROM channel, favorites WHERE channel.chanid = favorites.chanid AND';
+            $sql = 'SELECT channel.* FROM channel, channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\' AND';
         else
             $sql = 'SELECT * FROM channel WHERE';
         $sql .= ' channel.visible=1';
