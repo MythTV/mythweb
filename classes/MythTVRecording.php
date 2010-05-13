@@ -28,7 +28,6 @@ class MythTVRecording {
     public  $findid;
     public  $deletepending;
     public  $transcoder;
-    public  $timestretch;
     public  $recpriority;
     public  $basename;
     public  $progstart;

@@ -116,7 +116,6 @@ class Program {
     public $rating;
     public $recording          = false;
     public $starstring;
-    public $timestretch        = 1.0;
     public $url;
 // recent/pending jobqueue entries
     public $jobs               = array();
@@ -241,9 +240,6 @@ class Program {
             $this->audioproperties          = $data['stereo'];
             $this->videoproperties          = $data['hdtv'];
             $this->subtitletype             = $data['closecaptioned'];
-
-            if ($data['tsdefault'])
-                $this->timestretch          = $data['tsdefault'];
         }
     // Assign shortcut names to the new audio/video/subtitle property flags
         $this->stereo                       = $this->audioproperties & 0x01;

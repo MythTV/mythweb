@@ -92,7 +92,6 @@
             $schedule->maxepisodes   = intval($_POST['maxepisodes']);
             $schedule->startoffset   = intval($_POST['startoffset']);
             $schedule->endoffset     = intval($_POST['endoffset']);
-            $schedule->tsdefault     = $_POST['timestretch'];
             $schedule->prefinput     = $_POST['prefinput'];
         // Some settings specific to manual recordings (since we have no program to match against)
             $schedule->chanid        = $_POST['channel'];

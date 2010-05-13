@@ -225,7 +225,6 @@
                 $schedule->endoffset     = intval($_POST['endoffset']);
                 $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
                 $schedule->transcoder    = $_POST['transcoder'];
-                $schedule->tsdefault     = $_POST['timestretch'];
                 $schedule->prefinput     = $_POST['prefinput'];
             // Keep track of the parent recording for overrides
                 if ($_POST['record'] == rectype_override) {

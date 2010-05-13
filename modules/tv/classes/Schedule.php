@@ -61,7 +61,6 @@ class Schedule {
     var $channel;
     var $will_record = false;
     var $css_class;         // css class, based on category and/or category_type
-    var $tsdefault;
 
 /**
  * Multiton style!
@@ -122,7 +121,6 @@ class Schedule {
         }
     // Empty Schedule
         elseif (is_null($data)) {
-            $this->tsdefault = defined('default_rec_ts') ? default_rec_ts : 1.0;
             return;
         }
     // Something else
@@ -207,13 +205,13 @@ class Schedule {
                                                title,subtitle,description,profile,recpriority,category,
                                                maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,
                                                recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,
-                                               findday,findtime,findid,autotranscode,parentid,transcoder,tsdefault,
+                                               findday,findtime,findid,autotranscode,parentid,transcoder,
                                                autouserjob1,autouserjob2,autouserjob3,autouserjob4,
                                                playgroup,storagegroup,prefinput,
                                                next_record,last_record,last_delete)
                                        VALUES (?,?,?,
                                                FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
-                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                          _or($this->recordid,      0,          true),
                          _or($this->type,          0,          true),
                          $this->chanid,
@@ -247,7 +245,6 @@ class Schedule {
                          _or($this->autotranscode, 0,          true),
                          _or($this->parentid,      0,          true),
                          _or($this->transcoder,    0,          true),
-                         _or($this->tsdefault,     1,          true),
                          _or($this->autouserjob1,  0,          true),
                          _or($this->autouserjob2,  0,          true),
                          _or($this->autouserjob3,  0,          true),
