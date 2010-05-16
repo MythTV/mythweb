@@ -29,8 +29,8 @@ class Program {
     public $callsign;
     public $channame;
     public $filename;
-    public $fs_high;
-    public $fs_low;
+    public $filesize;
+
     public $starttime;
     public $endtime;
     public $duplicate;
@@ -43,31 +43,33 @@ class Program {
     public $recpriority        = null;
     public $recstatus;
     public $recordid;
+
     public $rectype;
     public $dupin;
     public $dupmethod;
     public $recstartts;
     public $recendts;
-    public $previouslyshown;
     public $progflags;
     public $recgroup;
-    public $commfree;
     public $outputfilters;
     public $seriesid;
     public $programid;
+
     public $lastmodified;
     public $stars;
     public $airdate;
-    public $hasairdate;
     public $playgroup          = 'Default';
     public $recpriority2       = null;
+
     public $parentid;
     public $storagegroup       = 'Default';
-
-// Audio and Video properties
     public $audioproperties    = 0;
     public $videoproperties    = 0;
     public $subtitletype       = 0;
+    public $year               = 0;
+// everything above this line is serialized
+
+// Audio and Video properties
     public $stereo             = 0;
     public $mono               = 0;
     public $surround           = 0;
@@ -136,61 +138,44 @@ class Program {
             $this->callsign        = $data[6];
             $this->channame        = $data[7];
             $this->filename        = $data[8];
-            $this->fs_high         = $data[9];          # high-word of file size
-            $this->fs_low          = $data[10];         # low-word of file size
-            $this->starttime       = $data[11];         # show start-time
-            $this->endtime         = $data[12];         # show end-time
-            $this->duplicate       = $data[13];
-            $this->shareable       = $data[14];
-            $this->findid          = $data[15];
-            $this->hostname        = $data[16];
-            $this->sourceid        = $data[17];
-            $this->cardid          = $data[18];
-            $this->inputid         = $data[19];
-            $this->recpriority     = $data[20];
-            $this->recstatus       = $data[21];
-            $this->recordid        = $data[22];
-            $this->rectype         = $data[23];
-            $this->dupin           = $data[24];
-            $this->dupmethod       = $data[25];
-            $this->recstartts      = $data[26];         # ACTUAL start time (also maps to recorded.starttime)
-            $this->recendts        = $data[27];         # ACTUAL end time
-            $this->previouslyshown = $data[28];         # "repeat" field
-            $this->progflags       = $data[29];
-            $this->recgroup        = $data[30];
-            $this->commfree        = $data[31];
-            $this->outputfilters   = $data[32];
-            $this->seriesid        = $data[33];
-            $this->programid       = $data[34];
-            $this->lastmodified    = $data[35];
-            $this->stars           = $data[36];
-            $this->airdate         = $data[37];
-            $this->hasairdate      = $data[38];
-            $this->playgroup       = $data[39];
-            $this->recpriority2    = $data[40];
-            $this->parentid        = $data[41];
-            $this->storagegroup    = $data[42];
-            $this->audioproperties = $data[43];
-            $this->videoproperties = $data[44];
-            $this->subtitletype    = $data[45];
-            $this->year            = $data[46];
+            $this->filesize        = $data[9];
+
+            $this->starttime       = $data[10];         # show start-time
+            $this->endtime         = $data[11];         # show end-time
+            $this->findid          = $data[12];
+            $this->hostname        = $data[13];
+            $this->sourceid        = $data[14];
+            $this->cardid          = $data[15];
+            $this->inputid         = $data[16];
+            $this->recpriority     = $data[17];
+            $this->recstatus       = $data[18];
+            $this->recordid        = $data[19];
+
+            $this->rectype         = $data[20];
+            $this->dupin           = $data[21];
+            $this->dupmethod       = $data[22];
+            $this->recstartts      = $data[23];         # ACTUAL start time (also maps to recorded.starttime)
+            $this->recendts        = $data[24];         # ACTUAL end time
+            $this->progflags       = $data[25];
+            $this->recgroup        = $data[26];
+            $this->outputfilters   = $data[27];
+            $this->seriesid        = $data[28];
+            $this->programid       = $data[29];
+
+            $this->lastmodified    = $data[30];
+            $this->stars           = $data[31];
+            $this->airdate         = $data[32];
+            $this->playgroup       = $data[33];
+            $this->recpriority2    = $data[34];
+            $this->parentid        = $data[35];
+            $this->storagegroup    = $data[36];
+            $this->audioproperties = $data[37];
+            $this->videoproperties = $data[38];
+            $this->subtitletype    = $data[39];
+            $this->year            = $data[40];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
-            // Calculate the filesize
-                if (function_exists('gmp_add')) {
-                // GMP public functions should work better with 64 bit numbers.
-                    $size = gmp_add($this->fs_low,
-                                     gmp_mul('4294967296',
-                                             gmp_add($this->fs_high, $this->fs_low < 0 ? '1' : '0'))
-                                   );
-                    $this->filesize = gmp_strval($size);
-                }
-                else {
-                // This is inaccurate, but it's the best we can get without GMP.
-                    $this->filesize = ($this->fs_high + ($this->fs_low < 0)) * 4294967296 + $this->fs_low;
-                }
-            // And get some download info
-                $this->url = video_url($this);
+                $this->url = video_url($this); // get download info
             }
         // Assign the program flags
             $this->has_commflag   = ($this->progflags & 0x001) ? true : false;    // FL_COMMFLAG       = 0x001
@@ -323,7 +308,7 @@ class Program {
             }
         }
     // Special case for the original airdate, which the backend seems to misplace
-        if ($prog->has_airdate || !in_array($prog->airdate, array('0000-00-00', '0000', '1900-01-01')))
+        if (!in_array($prog->airdate, array('0000-00-00', '0000', '1900-01-01')))
             $this->airdate = $prog->airdate;
     // update fancy description in case a part of it changed
         $this->update_fancy_desc();
@@ -432,44 +417,41 @@ class Program {
                              $this->callsign       , // 06 chansign
                              $this->channame       , // 07 channame
                              $this->filename       , // 08 pathname
-                             $this->fs_high        , // 09 filesize upper 32 bits
-                             $this->fs_low         , // 10 filesize lower 32 bits
-                             $this->starttime      , // 11 startts
-                             $this->endtime        , // 12 endts
-                             $this->duplicate      , // 13 duplicate
-                             $this->shareable      , // 14 shareable
-                             $this->findid         , // 15 findid
-                             $this->hostname       , // 16 hostname
-                             $this->sourceid       , // 17 sourceid
-                             $this->cardid         , // 18 cardid
-                             $this->inputid        , // 19 inputid
-                             $this->recpriority    , // 20 recpriority
-                             $this->recstatus      , // 21 recstatus
-                             $this->recordid       , // 22 recordid
-                             $this->rectype        , // 23 rectype
-                             $this->dupin          , // 24 dupin
-                             $this->dupmethod      , // 25 dupmethod
-                             $this->recstartts     , // 26 recstartts
-                             $this->recendts       , // 27 recendts
-                             $this->previouslyshown, // 28 repeat
-                             $this->progflags      , // 29 programflags
-                             $this->recgroup       , // 30 recgroup
-                             $this->commfree       , // 31 chancommfree
-                             $this->outputfilters  , // 32 chanOutputFilters
-                             $this->seriesid       , // 33 seriesid
-                             $this->programid      , // 34 programid
-                             $this->lastmodified   , // 35 lastmodified
-                             $this->stars          , // 36 stars
-                             $this->airdate        , // 37 originalAirDate
-                             $this->hasairdate     , // 38 hasAirDate
-                             $this->playgroup      , // 39 playgroup
-                             $this->recpriority2   , // 40 recpriority2
-                             $this->parentid       , // 41 parentid
-                             $this->storagegroup   , // 42 storagegroup
-                             $this->audioproperties, // 43 audioprop
-                             $this->videoproperties, // 44 videoprop
-                             $this->subtitletype,    // 45 subtitletype
-                             '',                     // 46 trailing separator
+                             $this->filesize       , // 09 filesize
+
+                             $this->starttime      , // 10 startts
+                             $this->endtime        , // 11 endts
+                             $this->findid         , // 12 findid
+                             $this->hostname       , // 13 hostname
+                             $this->sourceid       , // 14 sourceid
+                             $this->cardid         , // 15 cardid
+                             $this->inputid        , // 16 inputid
+                             $this->recpriority    , // 17 recpriority
+                             $this->recstatus      , // 18 recstatus
+                             $this->recordid       , // 19 recordid
+
+                             $this->rectype        , // 20 rectype
+                             $this->dupin          , // 21 dupin
+                             $this->dupmethod      , // 22 dupmethod
+                             $this->recstartts     , // 23 recstartts
+                             $this->recendts       , // 24 recendts
+                             $this->progflags      , // 25 programflags
+                             $this->recgroup       , // 26 recgroup
+                             $this->outputfilters  , // 27 chanOutputFilters
+                             $this->seriesid       , // 28 seriesid
+                             $this->programid      , // 29 programid
+
+                             $this->lastmodified   , // 30 lastmodified
+                             $this->stars          , // 31 stars
+                             $this->airdate        , // 32 originalAirDate
+                             $this->playgroup      , // 33 playgroup
+                             $this->recpriority2   , // 34 recpriority2
+                             $this->parentid       , // 35 parentid
+                             $this->storagegroup   , // 36 storagegroup
+                             $this->audioproperties, // 37 audioprop
+                             $this->videoproperties, // 38 videoprop
+                             $this->subtitletype,    // 39 subtitletype
+                             $this->year,            // 40 year
                             )
                       );
     }
