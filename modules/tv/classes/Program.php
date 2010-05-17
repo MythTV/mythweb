@@ -137,11 +137,7 @@ class Program {
             $this->callsign        = $data[6];
             $this->channame        = $data[7];
             $this->filename        = $data[8];
-            if (function_exists('gmp_init')) {
-                $this->filesize    = gmp_strval(gmp_init($data[9]));
-            } else {
-                $this->filesize    = $data[9];
-            }
+            $this->filesize        = $data[9];
             $this->starttime       = $data[10];         # show start-time
             $this->endtime         = $data[11];         # show end-time
             $this->findid          = $data[12];

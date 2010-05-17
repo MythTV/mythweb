@@ -76,8 +76,11 @@
     // Starttime in the past -- See if it's a recording
         if ($_GET['starttime'] < time()) {
             $record = MythBackend::find()->queryProgramRows('QUERY_RECORDING TIMESLOT '.$_GET['chanid'].' '.unix2mythtime($_GET['starttime']), 1);
-            if (is_array($record[0]) && $_GET['chanid'] == $record[0][4] && $_GET['starttime'] == $record[0][26]) {
-                $program =& new Program($record[0]);
+            if (is_array($record[0])) {
+                $prog = new Program($record[0]);
+                if ($_GET['chanid'] == $prog->chanid && $_GET['starttime'] == $prog->starttime) {
+                    $program =& $prog;
+                }
             }
         }
     // Load the program

@@ -190,6 +190,9 @@
     }
 
     function by_file_size(&$a, &$b) {
+        if (function_exists('gmp_cmp')) {
+            return gmp_cmp($a->filesize, $b->filesize);
+        }
         if ($a->filesize == $b->filesize) return 0;
         return ($a->filesize > $b->filesize) ? 1 : -1;
     }
