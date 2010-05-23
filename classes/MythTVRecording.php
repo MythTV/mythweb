@@ -5,6 +5,7 @@ class MythTVRecording {
 
     public  $chanid;
     public  $starttime;
+    public  $endtime;
     public  $title;
     public  $subtitle;
     public  $description;
@@ -14,7 +15,7 @@ class MythTVRecording {
     public  $editing;
     public  $cutlist;
     public  $autoexpire;
-    public  $commdlagged;
+    public  $commflagged;
     public  $recgroup;
     public  $recordid;
     public  $seriesid;
@@ -28,6 +29,7 @@ class MythTVRecording {
     public  $findid;
     public  $deletepending;
     public  $transcoder;
+    public  $timestretch;
     public  $recpriority;
     public  $basename;
     public  $progstart;
@@ -38,6 +40,7 @@ class MythTVRecording {
     public  $transcoded;
     public  $watched;
     public  $storagegroup;
+    public  $bookmarkupdate;
 
     public function __construct(&$MythTV, $ChanID = NULL, $StartTime = NULL) {
         $this->MythTV       = $MythTV;

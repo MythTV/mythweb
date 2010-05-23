@@ -83,7 +83,7 @@
                 continue;
         // Get the length (24 == recendts; 23 == recstartts)
             $length = $record[24] - $record[23];
-        // Keep track of the total time and disk space used (9 == fs_high; 10 == fs_low)
+        // Keep track of the total time and disk space used (9 == filesize)
             $Total_Time += $length;
             if (function_exists('gmp_add')) {
             // GMP functions should work better with 64 bit numbers.

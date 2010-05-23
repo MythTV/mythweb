@@ -4,6 +4,7 @@ class MythTVProgram {
 
     public $MythTV;
 
+    // ProgramInfo fields
     public $title          = 'Untitled';
     public $subtitle       = 'Untitled';
     public $description    = 'No Description';
@@ -13,12 +14,9 @@ class MythTVProgram {
     public $callsign;
     public $channame;
     public $filename;
-    public $fs_high;
-    public $fs_low;
+    public $filesize;
     public $starttime;
     public $endtime;
-    public $duplicate;
-    public $shareable;
     public $findid;
     public $hostname;
     public $sourceid;
@@ -32,31 +30,53 @@ class MythTVProgram {
     public $dupmethod;
     public $recstartts;
     public $recendts;
-    public $previouslyshown;
     public $progflags;
     public $recgroup;
-    public $commfree;
     public $outputfilters;
     public $seriesid;
     public $programid;
     public $lastmodified;
     public $stars;
     public $airdate;
-    public $hasairdate;
     public $playgroup;
     public $recpriority2;
     public $parentid;
     public $storagegroup;
+    public $audioprop;
+    public $videoprop;
+    public $subtitletype;
+    public $year;
 
+    // Additional program table fields
+    public $category_type;
+    public $previouslyshown;
+    public $title_pronounce;
+    public $stereo;
+    public $subtitled;
+    public $hdtv;
+    public $closecaptioned;
+    public $partnumber;
+    public $parttotal;
+    public $originalairdate;
+    public $showtype;
+    public $colorcode;
+    public $syndicatedepisodenumber;
+    public $manualid;
+    public $generic;
+    public $listingsource;
+    public $first;
+    public $last;
+
+    // For interpreted program flags
     public $has_commflag;
     public $has_cutlist;
     public $auto_expire;
     public $is_editing;
     public $bookmark;
-    public $stereo;
-    public $closecaptioned;
-    public $hdtv;
+    public $is_recording;
+    public $is_playing;
     public $is_watched;
+
     public $will_record;
 
     public function __construct(&$MythTV, $ChanID = NULL, $StartTime = NULL) {
