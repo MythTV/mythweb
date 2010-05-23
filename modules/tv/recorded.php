@@ -33,7 +33,7 @@
             if (($_SESSION['recorded_title'] == $row[0]) || ($_SESSION['recorded_title'] == ''))
                 $prev_row++;
         // This row isn't the one we're looking for
-            if ($row[4] != $_REQUEST['chanid'] || $row[26] != $_REQUEST['starttime'])
+            if ($row[4] != $_REQUEST['chanid'] || $row[23] != $_REQUEST['starttime'])
                 continue;
         // Delete the recording
             MythBackend::find()->sendCommand(array($backendstr, implode(MythBackend::$backend_separator, $row), '0'));
