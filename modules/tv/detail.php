@@ -78,7 +78,7 @@
             $record = MythBackend::find()->queryProgramRows('QUERY_RECORDING TIMESLOT '.$_GET['chanid'].' '.unix2mythtime($_GET['starttime']), 1);
             if (is_array($record[0])) {
                 $prog = new Program($record[0]);
-                if ($_GET['chanid'] == $prog->chanid && $_GET['starttime'] == $prog->starttime) {
+                if ($_GET['chanid'] == $prog->chanid && $_GET['starttime'] == $prog->recstartts) {
                     $program =& $prog;
                 }
             }
