@@ -8,7 +8,14 @@
 # @author    $Author$
 #
 
-    use Math::Round qw(round_even);
+    use POSIX qw(ceil floor);
+
+# round to the nearest even integer
+    sub round_even {
+        my ($in) = @_;
+        my $n = floor($in);
+        return ($n % 2 == 0) ? $n : ceil($in);
+    }
 
     our $ffmpeg_pid;
     our $ffmpeg_pgid;
