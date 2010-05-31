@@ -28,8 +28,6 @@
 // Clean up some stuff
     require_once 'includes/cleanup.php';
 
-// Define some common stuff
-    require_once 'includes/defines.php';
 // Check out the php version info
     require_once 'includes/php_version_check.php';
 
@@ -45,6 +43,9 @@
 
 // Load the session handler routines
     require_once 'includes/session.php';
+
+// Define some common stuff
+    require_once 'includes/defines.php';
 
 // Load the translation routines so the modules can translate their descriptions
     require_once 'includes/translate.php';
