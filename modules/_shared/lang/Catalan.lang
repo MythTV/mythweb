@@ -52,6 +52,7 @@
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
 "Aborting"
@@ -108,6 +109,8 @@
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "and"
+"Animated Map"
+"Animation"
 "Any"
     Qualsevol
 "Any Category"
@@ -186,6 +189,7 @@
     Nom del canal
 "Chan. Number"
     Número del canal
+"Change Location"
 "Channel"
     Canal
 "channel"
@@ -230,6 +234,7 @@
 "Create a Random Mix"
 "Create Schedule"
     Crear programació
+"Current Conditions"
 "Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
@@ -320,6 +325,7 @@
 "End"
 "End Late"
     Acabar després
+"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
@@ -342,6 +348,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     mida de l'arxiu
@@ -515,6 +522,8 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -914,6 +923,8 @@
     Popup Programat
 "Science Fiction Movies"
     Pel·lícules ciència ficció
+"Screen Name"
+"Screen Settings"
 "Search"
     Cercar
 "Search $1"
@@ -950,6 +961,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
+"Severe Weather Alerts"
 "Shift"
 "Show"
     Programa
@@ -968,14 +980,18 @@
     Mostrant tots els programes
 "Showings between"
 "Shows"
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
+"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
+"Source:"
 "sourceid"
     id origen
 "Space"
@@ -990,6 +1006,7 @@
 "Start Time"
     Hora inici
 "Starting"
+"Static Map"
 "Statistics"
     Estadístiques
 "Stats"
@@ -1028,6 +1045,7 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Three Day Forecast"
 "Thursday"
     Dijous
 "Time"
@@ -1080,6 +1098,7 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
+"Units"
 "Unknown"
     Desconegut
 "Unknown action"

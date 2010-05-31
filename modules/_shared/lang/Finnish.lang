@@ -59,6 +59,7 @@
     %s kappaletta (%s)
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
     Keskeytetty
@@ -139,6 +140,8 @@
     Tapahtui virhe lisätessä soittolistaasi
 "and"
     ja
+"Animated Map"
+"Animation"
 "Any"
     Mikä vain
 "Any Category"
@@ -247,6 +250,7 @@
     Kanavan nimi
 "Chan. Number"
     Kanavan numero
+"Change Location"
 "Channel"
     Kanava
 "channel"
@@ -304,6 +308,7 @@
     Luo uusi Satunnainen miksaus
 "Create Schedule"
     Ajoita nauhoitus
+"Current Conditions"
 "Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
@@ -420,6 +425,7 @@
     Lopeta
 "End Late"
     Lopeta myöhemmin
+"English_Unit"
 "Enter"
     Syötä
 "Enter a new name for your playlist"
@@ -455,6 +461,7 @@
 "Extended Check"
     Pidennetty tarkistus
 "Extra Information"
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     Tiedostokoko
@@ -674,6 +681,8 @@
     Paikallinen serveristatistiikka
 "Local weather forecast"
     Paikallinen sääennuste
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -1161,6 +1170,8 @@
     Ajoitusten ikkunointi
 "Science Fiction Movies"
     Tieteiselokuvat
+"Screen Name"
+"Screen Settings"
 "Search"
     Hae
 "Search $1"
@@ -1205,6 +1216,7 @@
     pakotta kaikki virtaukset ladattavaksi http:n kautta.
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
+"Severe Weather Alerts"
 "Shift"
     Shift
 "Show"
@@ -1229,10 +1241,13 @@
     Ohjelmat välillä
 "Shows"
     Ohjelmat
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
     Hyppää eteenpäin
 "Skip Back"
     Hyppää taaksepäin
+"Slower"
 "Songs"
     Kappaleet
 "Songs for Genre"
@@ -1245,6 +1260,7 @@
     Pahoittelemme, mutta et voi lisätä tätä Soittolistaa, sillä se tekisi silmukkariippuvuuden.
 "sortby_channum"
     Lajittele kanavaluettelo kanvanumeron mukaan (valittu) tai lempinimen mukaan (ei valittu):
+"Source:"
 "sourceid"
     lähdetunnus
 "Space"
@@ -1261,6 +1277,7 @@
     Aloitusaika
 "Starting"
     Aloitukset
+"Static Map"
 "Statistics"
     Tilastot
 "Stats"
@@ -1314,6 +1331,7 @@
     Tämä Soittolista on jo ladattu!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Tämä tallentaa nykyisen, tallentamattoman Soittolistasi. Haluatko varmasti jatkaa?
+"Three Day Forecast"
 "Thursday"
     Torstai
 "Time"
@@ -1383,6 +1401,7 @@
     Poista poisto
 "Undelete: $1"
     Poista $1 poisto
+"Units"
 "Unknown"
     Tuntematon
 "Unknown action"

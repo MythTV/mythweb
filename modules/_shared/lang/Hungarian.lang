@@ -61,6 +61,7 @@
     %s Dal (%s)
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
     Megszakít
@@ -142,6 +143,8 @@
     Hiba történt a lejátszási lista hozzáadásakor
 "and"
     és
+"Animated Map"
+"Animation"
 "Any"
     Bármely
 "Any Category"
@@ -251,6 +254,7 @@
     Csat. név
 "Chan. Number"
     Csat. szám
+"Change Location"
 "Channel"
     Csatorna
 "channel"
@@ -308,6 +312,7 @@
     Véletlen mix készítése
 "Create Schedule"
     Program előállítása
+"Current Conditions"
 "Current MythWeb Skin"
     Jelenlegi MythWeb kinézet
 "Current MythWeb Template"
@@ -430,6 +435,7 @@
     Vége
 "End Late"
     Ráhagyás a végére
+"English_Unit"
 "Enter"
     Bevitel
 "Enter a new name for your playlist"
@@ -467,6 +473,7 @@
     Részletes vizsgálat
 "Extra Information"
     Extra Információ
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     Fájlméret
@@ -688,6 +695,8 @@
     Helyi szerver statisztikák
 "Local weather forecast"
     Helyi időjárás-jelentés
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -1181,6 +1190,8 @@
     Programozott popup
 "Science Fiction Movies"
     Fantasztikus filmek
+"Screen Name"
+"Screen Settings"
 "Search"
     Keres
 "Search $1"
@@ -1229,6 +1240,7 @@
     Néhány beállítási lapnak nagyon kevés a hibaellenőrzése. Könnyen belebonyolódhatsz, ha
     nem vagy kellően körültekintő. Az adatbásis egyszerű helyreállításával <b>nem</b>
     lehetséges a változtatások visszaállítása.
+"Severe Weather Alerts"
 "Shift"
     Léptet
 "Show"
@@ -1254,10 +1266,13 @@
     Műsorok ezek között
 "Shows"
     Műsorok
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
     Léptetés Előre
 "Skip Back"
     Léptetés Vissza
+"Slower"
 "Songs"
     Dalok
 "Songs for Genre"
@@ -1270,6 +1285,7 @@
     Sajnálom, de nem tudom hozzáadni ezt a lejátszó listát, mivel egymásra utalás történne.
 "sortby_channum"
     Csatornalisták sorbarendezése a csatronaszámok alapján (kipipálva) vagy hívójel alapján (nincs pipa)
+"Source:"
 "sourceid"
     forrás id
 "Space"
@@ -1286,6 +1302,7 @@
     Kezdési idő
 "Starting"
     Kezdés
+"Static Map"
 "Statistics"
     Statisztikák
 "Stats"
@@ -1339,6 +1356,7 @@
     Ez a lejétszólista már be van töltve!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Ez felül fogja írni a jelenleg még nem mentett lejátszólistát. Szeretnéd folytatni?
+"Three Day Forecast"
 "Thursday"
     Csütörtök
 "Time"
@@ -1409,6 +1427,7 @@
     Visszaállit
 "Undelete: $1"
     Visszaállit: $1
+"Units"
 "Unknown"
     Ismeretlen
 "Unknown action"

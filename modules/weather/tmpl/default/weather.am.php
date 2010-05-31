@@ -1,7 +1,7 @@
 <?php
 /**
  * Display template for Animated Maps for the Weather module
- a
+ *
  * @url         $URL$
  * @date        $Date$
  * @version     $Revision$
@@ -58,7 +58,7 @@
         }
 
         output  = '<form name="animap" id="animap" action="get">'
-        output += '<b>Slower</b> '
+        output += '<b><?php echo addslashes(t('Slower')) ?></b> '
 <?php
         for ($i=6;$i>=0;$i-=1)  {
             echo "output += '<input type=\"radio\" name=\"speedRadio\" value=\"". $i. "\" onClick=\"setDelay(". $i .")\"";
@@ -67,8 +67,8 @@
         }
 ?>
 
-        output += ' <b>Faster</b><br>'
-        output += '<img name="animation" src="<?php echo 'data/'. $matches[1] ."-0" ?>" alt="Animation" onload="setTimeout(\'animate()\', delay)">'
+        output += ' <b><?php echo addslashes(t('Faster')) ?></b><br>'
+        output += '<img name="animation" src="<?php echo 'data/'. $matches[1] ."-0" ?>" alt="<?php echo addslashes(t('Animation')) ?>" onload="setTimeout(\'animate()\', delay)">'
         output += '</form>'
         document.write(output);
 

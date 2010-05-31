@@ -49,6 +49,7 @@
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
 "Aborting"
@@ -101,6 +102,8 @@
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "and"
+"Animated Map"
+"Animation"
 "Any"
     Alle
 "Any Category"
@@ -177,6 +180,7 @@
 "Chan. Callsign"
 "Chan. Name"
 "Chan. Number"
+"Change Location"
 "Channel"
     Zender
 "channel"
@@ -220,6 +224,7 @@
 "Create a Random Mix"
 "Create Schedule"
     Opname plannen
+"Current Conditions"
 "Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
@@ -309,6 +314,7 @@
 "End"
 "End Late"
     Later stoppen
+"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
@@ -331,6 +337,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     bestandsgrootte
@@ -499,6 +506,8 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -876,6 +885,8 @@
     Geprogrammeerde Pop-up
 "Science Fiction Movies"
     Science Fiction Films
+"Screen Name"
+"Screen Settings"
 "Search"
     Zoeken
 "Search $1"
@@ -911,6 +922,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
+"Severe Weather Alerts"
 "Shift"
 "Show"
     Toon
@@ -928,14 +940,18 @@
     Alle programma's laten zien
 "Showings between"
 "Shows"
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
+"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
+"Source:"
 "sourceid"
     bron
 "Space"
@@ -949,6 +965,7 @@
 "Start Time"
     Start Tijd
 "Starting"
+"Static Map"
 "Statistics"
 "Stats"
 "Status"
@@ -986,6 +1003,7 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Three Day Forecast"
 "Thursday"
     Donderdag
 "Time"
@@ -1036,6 +1054,7 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
+"Units"
 "Unknown"
     Onbekend
 "Unknown action"

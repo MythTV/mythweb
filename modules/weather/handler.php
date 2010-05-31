@@ -13,6 +13,8 @@
  *
 /**/
 
+    require 'includes/weather_utils.php';
+
     $WeatherScreens = array();
 
 // Get configured WeatherScreens from the database

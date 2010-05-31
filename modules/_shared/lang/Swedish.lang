@@ -62,6 +62,7 @@
     %s sånger (%s)
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
     Avbröt
@@ -142,6 +143,8 @@
     Ett fel uppstod vid tillägg av din spellista.
 "and"
     och
+"Animated Map"
+"Animation"
 "Any"
     Alla
 "Any Category"
@@ -252,6 +255,7 @@
     Kanalnamn
 "Chan. Number"
     Kanalnummer
+"Change Location"
 "Channel"
     Kanal
 "channel"
@@ -309,6 +313,7 @@
     Skapa slumpvis mix
 "Create Schedule"
     Schemalägg
+"Current Conditions"
 "Current MythWeb Skin"
     Nuvarande MythWeb tema
 "Current MythWeb Template"
@@ -424,6 +429,7 @@
 "End"
 "End Late"
     Sluta senare
+"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
     Ange ett namn för din spellista
@@ -460,6 +466,7 @@
     Utbredd kontroll
 "Extra Information"
     Extra information
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     Filstorlek
@@ -679,6 +686,8 @@
     Lokal serverstatistik
 "Local weather forecast"
     Lokal väderprognos
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
     LÅSNER_FÖRVARNING
 "LOCKDOWN_NOTICE_2"
@@ -1177,6 +1186,8 @@
     Schemalagd popup
 "Science Fiction Movies"
     Science Fiction-filmer
+"Screen Name"
+"Screen Settings"
 "Search"
     Sök
 "Search $1"
@@ -1221,6 +1232,7 @@
     Varning!<br><br>
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
+"Severe Weather Alerts"
 "Shift"
     Shift
 "Show"
@@ -1245,10 +1257,13 @@
     Visningar mellan
 "Shows"
     Program
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
     Hoppa Framåt
 "Skip Back"
     Hoppa Bakåt
+"Slower"
 "Songs"
     Sånger
 "Songs for Genre"
@@ -1261,6 +1276,7 @@
     Tyvärr, du kan inte byta namn på denna spellista eftersom det skulle skapa ett cirkulärt beroende.
 "sortby_channum"
     sortera_kanalnummer
+"Source:"
 "sourceid"
     käll-id
 "Space"
@@ -1276,6 +1292,7 @@
 "Start Time"
     Starttid
 "Starting"
+"Static Map"
 "Statistics"
     Statistik
 "Stats"
@@ -1329,6 +1346,7 @@
     Denna spellista har redan laddats!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Detta skriver över din nuvarande, osparade spellista. Är du säker på att du vill fortsätta?
+"Three Day Forecast"
 "Thursday"
     Torsdag
 "Time"
@@ -1399,6 +1417,7 @@
     Oraderat
 "Undelete: $1"
     Oraderat: $1
+"Units"
 "Unknown"
     Okänd
 "Unknown action"

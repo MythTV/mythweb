@@ -64,6 +64,7 @@
     (výška je automaticky počítána z poměru stran nahrávky)
 "1 - Lowest"
     1 - nejnižší
+"18 Hour Forecast"
 "4 - Highest"
     4 - nejvyšší
 "Aborted"
@@ -146,6 +147,8 @@
     Chyba při přidávání playlistu
 "and"
     a
+"Animated Map"
+"Animation"
 "Any"
     Jakýkoli
 "Any Category"
@@ -253,6 +256,7 @@
     Název kanálu
 "Chan. Number"
     Číslo kanálu
+"Change Location"
 "Channel"
     Kanál
 "channel"
@@ -308,6 +312,7 @@
     Vytvořit náhodný mix
 "Create Schedule"
     Vytvořit rozvrh
+"Current Conditions"
 "Current MythWeb Skin"
     Stávající skin MythWebu
 "Current MythWeb Template"
@@ -427,6 +432,7 @@
     Ukončit
 "End Late"
     Ukonči později
+"English_Unit"
 "Enter"
     Zadat
 "Enter a new name for your playlist"
@@ -458,6 +464,7 @@
     Výkonný producent
 "Extended Check"
 "Extra Information"
+"Faster"
 "ffmpeg with MP3 support not detected"
     ffmpeg s podporou MP3 nenalezen
 "File Size"
@@ -636,6 +643,8 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -1019,6 +1028,8 @@
 "Scheduled"
 "Scheduled Popup"
 "Science Fiction Movies"
+"Screen Name"
+"Screen Settings"
 "Search"
     Vyhledat
 "Search $1"
@@ -1051,6 +1062,7 @@
 "Settings Table"
 "settings/stream: protocol"
 "settings: notice"
+"Severe Weather Alerts"
 "Shift"
 "Show"
 "Show group"
@@ -1063,14 +1075,18 @@
 "Showing all programs."
 "Showings between"
 "Shows"
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
+"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
+"Source:"
 "sourceid"
 "Space"
 "Special Searches"
@@ -1079,6 +1095,7 @@
 "Start Early"
 "Start Time"
 "Starting"
+"Static Map"
 "Statistics"
 "Stats"
 "Status"
@@ -1114,6 +1131,7 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Three Day Forecast"
 "Thursday"
     Čtvrtek
 "Time"
@@ -1160,6 +1178,7 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
+"Units"
 "Unknown"
 "Unknown action"
 "Unknown frontend"

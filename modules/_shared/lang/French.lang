@@ -65,6 +65,7 @@
     (la hauteur est calculée automatiquement en fonction du ratio de l'enregistrement)
 "1 - Lowest"
     1 - Laxiste
+"18 Hour Forecast"
 "4 - Highest"
     4 - Sévère
 "Aborted"
@@ -151,6 +152,8 @@
     Une erreur est survenue lors de l'ajout de votre liste de lecture.
 "and"
     et
+"Animated Map"
+"Animation"
 "Any"
     Tous
 "Any Category"
@@ -263,6 +266,7 @@
     Nom de chaîne
 "Chan. Number"
     N° de chaîne
+"Change Location"
 "Channel"
     Chaîne
 "channel"
@@ -323,6 +327,7 @@
     Créer un mélange aléatoire
 "Create Schedule"
     Créer une programmation
+"Current Conditions"
 "Current MythWeb Skin"
     Habillage MythWeb actuel
 "Current MythWeb Template"
@@ -451,6 +456,7 @@
     Fin
 "End Late"
     Arrêt en retard
+"English_Unit"
 "Enter"
     <-+ Entrée
 "Enter a new name for your playlist"
@@ -489,6 +495,7 @@
     Contrôle étendu
 "Extra Information"
     Informations supplémentaires
+"Faster"
 "ffmpeg with MP3 support not detected"
     ffmpeg avec support MP3 non détecté
 "File Size"
@@ -717,6 +724,8 @@
     Statistiques du serveur local
 "Local weather forecast"
     Prévisions météo locales
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
     MythWeb a détecté qu'un robot accède à cette installation. Nous avons désactivé cette installation pour empêcher que des robots effacent tous vos enregistrements ou permettent à d'autres personnes d'accéder à votre installation de mythweb sans votre permission. Veuillez sécurisez votre installation
 "LOCKDOWN_NOTICE_2"
@@ -1252,6 +1261,8 @@
     Popup Programmés
 "Science Fiction Movies"
     Films de science-fiction
+"Screen Name"
+"Screen Settings"
 "Search"
     Recherche
 "Search $1"
@@ -1308,6 +1319,7 @@
     Plusieurs de ces pages de paramètres ont peu de validation d'erreur, vous pouvez donc facilement
     détruire votre configuration si vous ne faites pas assez attention. La seule manière d'annuler vos
     modifications dans ce cas serait de restaurer la base de données à partir d'une copie de sauvegarde.
+"Severe Weather Alerts"
 "Shift"
     ^ Maj.
 "Show"
@@ -1332,10 +1344,13 @@
     Diffusions entre
 "Shows"
     Émissions
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
     Saut avant
 "Skip Back"
     Saut arrière
+"Slower"
 "Songs"
     Morceaux
 "Songs for Genre"
@@ -1348,6 +1363,7 @@
     Désolé, vous ne pouvez pas ajouter cette liste de lecture car cela créerait une dépendance circulaire.
 "sortby_channum"
     Classer les chaînes par numéro de chaîne (coché) ou par indicatif (décoché)
+"Source:"
 "sourceid"
     sourceid
 "Space"
@@ -1364,6 +1380,7 @@
     Heure de début
 "Starting"
     Démarrage en cours
+"Static Map"
 "Statistics"
     Statistiques
 "Stats"
@@ -1420,6 +1437,7 @@
     Cette liste de lecture est déjà chargée !
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
+"Three Day Forecast"
 "Thursday"
     Jeudi
 "Time"
@@ -1494,6 +1512,7 @@
     Récupérer
 "Undelete: $1"
     Récupérer : $1
+"Units"
 "Unknown"
     Inconnu
 "Unknown action"

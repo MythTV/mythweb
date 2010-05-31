@@ -17,7 +17,7 @@
     if(tmpl == 'default' && $db->query_num_rows('SHOW TABLES LIKE "weatherscreens"')) {
     // Settings options
         $Settings['weather'] = array('name'    => t('Weather'),
-                                     'choices' => array('screen' => 'Screen Settings'),
+                                     'choices' => array('screen' => t('Screen Settings')),
                                      'default' => 'screen',
                                     );
     // we should check to see that MythWeather is configured.

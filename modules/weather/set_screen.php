@@ -13,6 +13,8 @@
  *
 /**/
 
+require 'includes/weather_utils.php';
+
 // Load all of the known mythtv frontend hosts
     $Settings_Hosts = array();
     $sh = $db->query('SELECT DISTINCT hostname
@@ -178,7 +180,7 @@
             echo '<select name="inactive_screen">' ."\n";
             foreach ($_SESSION['weather']['inactive'] as $screen) 
                 if (! $screen->active) 
-                    echo '    <option>'. $screen ."</option>\n";
+                    echo '    <option value="' . $screen .'">'. getScreenTitle($screen) ."</option>\n";
             echo '</select>' ."\n";
         }
     }
@@ -196,9 +198,9 @@
             $screen->getData();
 
             echo '<li><input type="radio" name="active_screen" value="'. $screen->screen_id .'" id="active-screen-'. $screen->screen_id .'">';
-            echo '<label for="active-screen-'. $screen->screen_id .'">'. $screen->container ."</label></li>\n";
+            echo '<label for="active-screen-'. $screen->screen_id .'">'. getScreenTitle($screen->container) ."</label></li>\n";
             echo "<ul>\n";
-            echo '<li>Location: ';
+            echo '<li>'. t('Location:') .' ';
 
             foreach($screen->data as $key => $value) {
                 if (preg_match('/location/', $key)) { echo $value; break; }
@@ -206,7 +208,7 @@
             }
 
             echo "</li>\n";
-            echo '<li>Source: '. $screen->getSource() ."</li>\n";
+            echo '<li>'. t('Source:') .' '. $screen->getSource() ."</li>\n";
             echo "</ul>\n";
         }
         echo "</ol>";

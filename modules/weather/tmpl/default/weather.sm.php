@@ -27,7 +27,7 @@
 
         <div class="radar_image">
             <center>
-                <img name="static_map" src="<?php echo 'data/'. $matches[1] ?>" alt="Static Map">
+                <img name="static_map" src="<?php echo 'data/'. $matches[1] ?>" alt="<?php echo t('Static Map') ?>">
             </center>
         </div>
     </div>

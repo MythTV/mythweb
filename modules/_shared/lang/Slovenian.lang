@@ -56,6 +56,7 @@
     %s Pesmi (%s)
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
     Preklicano
@@ -133,6 +134,8 @@
     Med dodajanje predvajalenga seznama je prišlo do napake.
 "and"
     in
+"Animated Map"
+"Animation"
 "Any"
     Katerakoli
 "Any Category"
@@ -236,6 +239,7 @@
     Ime kanala
 "Chan. Number"
     Številka kanala
+"Change Location"
 "Channel"
     Kanal
 "channel"
@@ -293,6 +297,7 @@
     Ustvari naključni mix
 "Create Schedule"
     Ustvari plan snemanja
+"Current Conditions"
 "Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
@@ -405,6 +410,7 @@
     Konec
 "End Late"
     Končaj kasneje
+"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
     Vnesi novo ime za sznam predvajanja
@@ -438,6 +444,7 @@
 "Extended Check"
     Podrobni pregled
 "Extra Information"
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     Velikost datoteke
@@ -646,6 +653,8 @@
     Statistike domačega strežnika
 "Local weather forecast"
     Domača vremenska napoved
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -1124,6 +1133,8 @@
     Pop-upi
 "Science Fiction Movies"
     Znanstveno-fantastični filmi
+"Screen Name"
+"Screen Settings"
 "Search"
     Iskanje
 "Search $1"
@@ -1169,6 +1180,7 @@
 "settings: notice"
     Opozorilo:<br/><br/>
     Na večini nastavitvenih strani, se napake pogosto ne preverjajo. Če niste pazljivi, lahko kaj hitro zmešate stvari (predvsem glede baze). Tukaj <b>NI</b> mogoče razveljaviti vaših dejanj.
+"Severe Weather Alerts"
 "Shift"
 "Show"
     Prikaži
@@ -1189,10 +1201,13 @@
     Oddaje med
 "Shows"
     Oddaje
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
     Izpusti naprej
 "Skip Back"
     Izpusti nazaj
+"Slower"
 "Songs"
     Pesem
 "Songs for Genre"
@@ -1204,6 +1219,7 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
     Oprostite, tega seznama predvajanja ne morete dodati, ker bo povzročil ciklanje."
 "sortby_channum"
+"Source:"
 "sourceid"
     ID vira
 "Space"
@@ -1219,6 +1235,7 @@
     Čas začetka
 "Starting"
     Začenjam
+"Static Map"
 "Statistics"
     Statistike
 "Stats"
@@ -1268,6 +1285,7 @@
     Ta seznam predvajanja je že naložen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     To bo prepisalo vaš trenutno še ne shranjen seznam predvajanja. Ali ste prepričani, da želite nadaljevati?
+"Three Day Forecast"
 "Thursday"
     Četrtek
 "Time"
@@ -1335,6 +1353,7 @@
     Obnovi
 "Undelete: $1"
     Obnovi: $1
+"Units"
 "Unknown"
     Neznano
 "Unknown action"

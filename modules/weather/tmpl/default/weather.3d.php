@@ -21,7 +21,7 @@
     ?></p>
 
     <div class="forecast clearfix">
-        <h2><?php echo $screen->container ?></h2>
+        <h2><?php echo getScreenTitle($screen->container) ?></h2>
 
         <?php
             for($i=0;$i<3;$i++) {

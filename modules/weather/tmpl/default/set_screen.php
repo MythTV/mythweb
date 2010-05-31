@@ -34,11 +34,11 @@ if (isset($_SESSION['weather']['edit'])) {
     <td colspan="2"><?php echo t('Edit Screen') ?></td>
 </tr>
 <tr>
-    <th>Screen Name</th>
-    <td><?php echo $screen->container ?></td>
+    <th><?php echo t('Screen Name') ?></th>
+    <td><?php echo getScreenTitle($screen->container) ?></td>
 </tr>
 <tr>
-    <th>Location</th>
+    <th><?php echo t('Location') ?></th>
     <td><?php
             foreach($screen->data as $key => $value) {
                 if (preg_match('/location/', $key)) { echo $value; break; }
@@ -50,7 +50,7 @@ if (isset($_SESSION['weather']['edit'])) {
 
 <?php if (isset($_SESSION['weather']['search'])) { ?>
 <tr>
-    <th>Search Results</th>
+    <th><?php echo t('Search Results') ?></th>
     <?php if (count($screen->search)) { ?>
     <td><select name="weather_location" size="1"><?php
         foreach($screen->search as $key => $value) {
@@ -70,14 +70,14 @@ if (isset($_SESSION['weather']['edit'])) {
     <?php } } ?>
 </tr>
 <tr>
-    <th>Change Location</th>
+    <th><?php echo t('Change Location') ?></th>
     <td><input type="text" name="weather_search" size="15" value="<?php echo $_SESSION['weather']['search'] ?>"> <input type="submit" class="submit" name="edit_search" value="<?php echo t('Search') ?>"></td>
 </tr>
 <tr>
-    <th>Units</th>
+    <th><?php echo t('Units') ?></th>
     <td><select name="weather_units">
-            <option value="0" <?php echo $screen->units == 0 ? 'SELECTED' : '' ?>>SI</option>
-            <option value="1" <?php echo $screen->units == 1 ? 'SELECTED' : '' ?>>English</option>
+            <option value="0" <?php echo $screen->units == 0 ? 'SELECTED' : '' ?>><?php echo t('SI') ?></option>
+            <option value="1" <?php echo $screen->units == 1 ? 'SELECTED' : '' ?>><?php echo t('English_Unit') ?></option>
         </select>
     </td>
 </tr>

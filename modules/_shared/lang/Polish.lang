@@ -44,6 +44,7 @@
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
 "Aborting"
@@ -95,6 +96,8 @@
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
 "and"
+"Animated Map"
+"Animation"
 "Any"
     Dowolny
 "Any Category"
@@ -171,6 +174,7 @@
     Nazwa kanału
 "Chan. Number"
     Numer kanału
+"Change Location"
 "Channel"
     Kanał
 "channel"
@@ -213,6 +217,7 @@
 "Create a Random Mix"
 "Create Schedule"
     Utwórz zadanie
+"Current Conditions"
 "Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
@@ -297,6 +302,7 @@
     Koniec
 "End Late"
     Zakończ później
+"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
@@ -316,6 +322,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
 "film"
@@ -449,6 +456,8 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -796,6 +805,8 @@
 "Scheduled"
 "Scheduled Popup"
 "Science Fiction Movies"
+"Screen Name"
+"Screen Settings"
 "Search"
     Szukaj
 "Search $1"
@@ -830,6 +841,7 @@
     Tabela ustawień
 "settings/stream: protocol"
 "settings: notice"
+"Severe Weather Alerts"
 "Shift"
 "Show"
     Pokaż
@@ -846,14 +858,18 @@
 "Showing all programs."
 "Showings between"
 "Shows"
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
+"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
+"Source:"
 "sourceid"
 "Space"
 "Special Searches"
@@ -865,6 +881,7 @@
 "Start Time"
     Czas rozpoczęcia
 "Starting"
+"Static Map"
 "Statistics"
 "Stats"
 "Status"
@@ -896,6 +913,7 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Three Day Forecast"
 "Thursday"
     Czwartek
 "Time"
@@ -943,6 +961,7 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
+"Units"
 "Unknown"
     Nieznany
 "Unknown action"

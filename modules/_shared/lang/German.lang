@@ -64,6 +64,7 @@
     (die Höhe wird automatisch anhand des Seitenverhältnisses der Aufnahme berechnet)
 "1 - Lowest"
     1 - Niedrigste
+"18 Hour Forecast"
 "4 - Highest"
     4 - Höchste
 "Aborted"
@@ -143,6 +144,8 @@
     Beim Hinzufügen zur Wiedergabeliste trat ein Fehler auf.
 "and"
     und
+"Animated Map"
+"Animation"
 "Any"
     Jeder
 "Any Category"
@@ -250,6 +253,7 @@
     Sendername
 "Chan. Number"
     Senderplatz
+"Change Location"
 "Channel"
     Sender
 "channel"
@@ -309,6 +313,7 @@
 "Create a Random Mix"
 "Create Schedule"
     Speichern
+"Current Conditions"
 "Current MythWeb Skin"
 "Current MythWeb Template"
     Aktuelle MythWeb Vorlage
@@ -431,6 +436,7 @@
     Ende
 "End Late"
     verspätetes Aufnahmeende
+"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
     Bitte einen neuen Namen für Ihre Wiedergabeliste eingeben
@@ -465,6 +471,7 @@
     Erweiterte Prüfung
 "Extra Information"
     Weitere Informationen
+"Faster"
 "ffmpeg with MP3 support not detected"
     ffmpeg mit MP3-Unterstützung nicht erkannt
 "File Size"
@@ -675,6 +682,8 @@
     lokale Serverstatistik
 "Local weather forecast"
     lokale Wettervorhersage
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -1181,6 +1190,8 @@
     Aufnahmen Popup
 "Science Fiction Movies"
     Science-Fiction Filme
+"Screen Name"
+"Screen Settings"
 "Search"
     Suche
 "Search $1"
@@ -1224,6 +1235,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
+"Severe Weather Alerts"
 "Shift"
 "Show"
     Sendung
@@ -1247,10 +1259,13 @@
     zwischen
 "Shows"
     Sendungen
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
     springe vor
 "Skip Back"
     springe zurück
+"Slower"
 "Songs"
     Lieder
 "Songs for Genre"
@@ -1262,6 +1277,7 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
     Nach Sendernummer sortieren
+"Source:"
 "sourceid"
     Source ID
 "Space"
@@ -1278,6 +1294,7 @@
     Uhrzeit
 "Starting"
     Beginnt
+"Static Map"
 "Statistics"
     Statistiken
 "Stats"
@@ -1328,6 +1345,7 @@
     Wiedergabeliste bereits geladen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dies wird die aktuelle, noch nicht gespeicherte Wiedergabeliste überschreiben. Möchten Sie wirklich fortsetzen?
+"Three Day Forecast"
 "Thursday"
     Donnerstag
 "Time"
@@ -1401,6 +1419,7 @@
     Wiederherstellen
 "Undelete: $1"
     Wiederherstellen: $1
+"Units"
 "Unknown"
     Unbekannt
 "Unknown action"

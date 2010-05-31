@@ -65,6 +65,7 @@
     (højden er udregnet automatisk udfra optagelsens aspekt ratio)
 "1 - Lowest"
     1 - Lavest
+"18 Hour Forecast"
 "4 - Highest"
     4 - Højest
 "Aborted"
@@ -150,6 +151,8 @@
     En fejl opstod ved tilføjelse af din afspilningsliste.
 "and"
     og
+"Animated Map"
+"Animation"
 "Any"
     Alle
 "Any Category"
@@ -261,6 +264,7 @@
     Kanal navn
 "Chan. Number"
     Kanal nummer
+"Change Location"
 "Channel"
     Kanal
 "channel"
@@ -321,6 +325,7 @@
     Opret et tilfældigt mix
 "Create Schedule"
     Planlæg
+"Current Conditions"
 "Current MythWeb Skin"
     Nuværende MythWeb skin
 "Current MythWeb Template"
@@ -449,6 +454,7 @@
     End
 "End Late"
     Slut senere (min)
+"English_Unit"
 "Enter"
     Enter
 "Enter a new name for your playlist"
@@ -487,6 +493,7 @@
     Udvidet kontrol
 "Extra Information"
     Ekstra information
+"Faster"
 "ffmpeg with MP3 support not detected"
     ffmpeg med MP3 understøttelse ikke fundet
 "File Size"
@@ -711,6 +718,8 @@
     Statistik for lokal server
 "Local weather forecast"
     Lokal vejrudsigt
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -1241,6 +1250,8 @@
     Popup's
 "Science Fiction Movies"
     Science Fiction Film
+"Screen Name"
+"Screen Settings"
 "Search"
     Søg
 "Search $1"
@@ -1294,6 +1305,7 @@
     til at køre over HTTP i stedet.
 "settings: notice"
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
+"Severe Weather Alerts"
 "Shift"
     Shift
 "Show"
@@ -1318,10 +1330,13 @@
     Visninger imellem
 "Shows"
     Udsendelser
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
     Skip frem
 "Skip Back"
     Skip tilbage
+"Slower"
 "Songs"
     Sange
 "Songs for Genre"
@@ -1334,6 +1349,7 @@
     Undskyld, men du kan ikke tilføje denne afspilningsliste da det vil skabe en cirkulær afhængighed.
 "sortby_channum"
     Sorter efter kanal nummer i stedet for kaldenavn
+"Source:"
 "sourceid"
     Kilde ID
 "Space"
@@ -1350,6 +1366,7 @@
     Starttidspunkt
 "Starting"
     Starter
+"Static Map"
 "Statistics"
     Statistik
 "Stats"
@@ -1404,6 +1421,7 @@
     Denne afspilningsliste er alleredeåbnet!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dette vil overskrive din nuværende afspilningsliste. Er du sikker på du vil forsætte?
+"Three Day Forecast"
 "Thursday"
     Torsdag
 "Time"
@@ -1478,6 +1496,7 @@
     Fortryd sletning
 "Undelete: $1"
     Fortryd sletning: $1
+"Units"
 "Unknown"
     Ukendt
 "Unknown action"

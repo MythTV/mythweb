@@ -21,7 +21,7 @@
     ?></p>
 
     <div class="current_conditions clearfix">
-        <h2><?php echo $screen->container ?></h2>
+        <h2><?php echo getScreenTitle($screen->container) ?></h2>
 
         <div class="overview">
             <img src="<?php echo skin_url ?>img/weather/<?php echo $screen->data["weather_icon"] ?>" class="alpha_png" alt="">

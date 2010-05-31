@@ -61,6 +61,7 @@
     %s Canciones (%s)
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
+"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
     Cancelado
@@ -138,6 +139,8 @@
     Un error ocurrió al intentar agregar su lista de reproducción
 "and"
     y
+"Animated Map"
+"Animation"
 "Any"
     Cualquiera
 "Any Category"
@@ -238,6 +241,7 @@
     Nombre Canal
 "Chan. Number"
     Número Canal
+"Change Location"
 "Channel"
     Canal
 "channel"
@@ -293,6 +297,7 @@
     Crear una Mezcla Aleatoria
 "Create Schedule"
     Crear programación
+"Current Conditions"
 "Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
@@ -393,6 +398,7 @@
 "End"
 "End Late"
     Terminar más tarde
+"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
@@ -415,6 +421,7 @@
 "Executive Producer"
 "Extended Check"
 "Extra Information"
+"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     tamaño fichero
@@ -587,6 +594,8 @@
 "LOADING"
 "Local Server Statistics"
 "Local weather forecast"
+"Location"
+"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -985,6 +994,8 @@
     Popup Programado
 "Science Fiction Movies"
     Películas Ciencia Ficción
+"Screen Name"
+"Screen Settings"
 "Search"
     Buscar
 "Search $1"
@@ -1021,6 +1032,7 @@
 "settings/stream: protocol"
 "settings: notice"
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede romper el funcionamiento de MythTV
+"Severe Weather Alerts"
 "Shift"
 "Show"
     Programa
@@ -1039,14 +1051,18 @@
     Mostrando todos los programas
 "Showings between"
 "Shows"
+"SI"
+"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
+"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
+"Source:"
 "sourceid"
     id fuente
 "Space"
@@ -1061,6 +1077,7 @@
 "Start Time"
     Hora comienzo
 "Starting"
+"Static Map"
 "Statistics"
     Estadísticas
 "Stats"
@@ -1099,6 +1116,7 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+"Three Day Forecast"
 "Thursday"
     Jueves
 "Time"
@@ -1150,6 +1168,7 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
+"Units"
 "Unknown"
     Desconocido
 "Unknown action"
