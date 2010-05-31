@@ -837,6 +837,7 @@
 "Only New Episodes"
     Csak az új részeket
 "Only one specific channel ID (Channel priority)"
+"Only show distinct shows"
 "Only shows marked as HDTV"
 "Optimize Tables"
     Tábla optimalizálása
@@ -1345,8 +1346,6 @@
     Időáthidalás
 "Time Stretch"
     Időszéthúzás
-"Time Stretch Default"
-    Időszéthúzás alapértelmezése
 "Timeslot size"
     Időkeret mérete
 "title"

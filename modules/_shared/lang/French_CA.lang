@@ -886,6 +886,7 @@
     Seulement les nouveaux épisodes
 "Only one specific channel ID (Channel priority)"
     Seulement une chaîne spécifique (priorité de chaîne)
+"Only show distinct shows"
 "Only shows marked as HDTV"
     Seulement les émissions HD
 "Optimize Tables"
@@ -1426,8 +1427,6 @@
     Plage de temps
 "Time Stretch"
     Vitesse de lecture
-"Time Stretch Default"
-    Vitesse de lecture par défaut
 "Timeslot size"
     Durée de tranche horaire
 "title"

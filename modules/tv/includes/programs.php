@@ -83,7 +83,7 @@
  * Set $single_program to true if you only want information about programs that
  * start exactly at $start_time (used by program_detail.php)
 /**/
-    function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '') {
+    function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '', $distinctTitle = false) {
         global $Channels, $db;
     // Don't allow negative timestamps; it confuses MySQL
         if ($start_time < 0)
@@ -158,7 +158,11 @@
         if ($extra_query)
             $query .= ' AND '.$extra_query;
     // Group and sort
-        $query .= "\nGROUP BY channel.callsign, program.chanid, program.starttime ORDER BY program.starttime";
+        if (!$distinctTitle)
+            $query .= "\nGROUP BY channel.callsign, program.chanid, program.starttime";
+        else
+            $query .= "\nGROUP BY program.title";
+        $query .= " ORDER BY program.starttime";
     // Limit
         if ($single_program)
             $query .= "\n LIMIT 1";
@@ -225,6 +229,3 @@
     // Just in case, return an array of all programs found
         return $these_programs;
     }
-
-
-

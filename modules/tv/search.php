@@ -52,11 +52,12 @@
         $_SESSION['search']['aj']            = $_REQUEST['aj'];
         $_SESSION['search']['ctype']         = $_REQUEST['ctype'];
         $_SESSION['search']['categories']    = $_REQUEST['categories'];
-        $_SESSION['search']['hd']            = $_REQUEST['hd']        ? true : false;
-        $_SESSION['search']['commfree']      = $_REQUEST['commfree']  ? true : false;
-        $_SESSION['search']['unwatched']     = $_REQUEST['unwatched'] ? true : false;
-        $_SESSION['search']['scheduled']     = $_REQUEST['scheduled'] ? true : false;
-        $_SESSION['search']['generic']       = $_REQUEST['generic']   ? true : false;
+        $_SESSION['search']['hd']            = $_REQUEST['hd']              ? true : false;
+        $_SESSION['search']['commfree']      = $_REQUEST['commfree']        ? true : false;
+        $_SESSION['search']['unwatched']     = $_REQUEST['unwatched']       ? true : false;
+        $_SESSION['search']['scheduled']     = $_REQUEST['scheduled']       ? true : false;
+        $_SESSION['search']['generic']       = $_REQUEST['generic']         ? true : false;
+        $_SESSION['search']['distinctTitle'] = $_REQUEST['distinctTitle']   ? true : false;
         $_SESSION['search']['stars_gt']      = floatVal($_REQUEST['stars_gt']);
         $_SESSION['search']['stars_lt']      = floatVal($_REQUEST['stars_lt']);
         $_SESSION['search']['airdate_start'] = trim($_REQUEST['airdate_start']);
@@ -333,9 +334,9 @@
         if (!empty($query))
             $tmpdate = strtotime($_SESSION['search']['starttime']);
 	    if ($tmpdate == false) {
-            $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query);
+            $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query, $_SESSION['search']['distinctTitle']);
 	    } else {
-              $Results =& load_all_program_data($tmpdate, strtotime('+1 month'), NULL, false, $query);
+            $Results =& load_all_program_data($tmpdate, strtotime('+1 month'), NULL, false, $query, $_SESSION['search']['distinctTitle']);
 	    }
 
     }

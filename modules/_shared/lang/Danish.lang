@@ -875,6 +875,7 @@
     Kun Nye Afsnit
 "Only one specific channel ID (Channel priority)"
     Kun et specifikt kanal ID (Kanal prioritet)
+"Only show distinct shows"
 "Only shows marked as HDTV"
     Kun HDTV udsendelser
 "Optimize Tables"
@@ -1409,8 +1410,6 @@
 "Time Span"
     Tidsrum
 "Time Stretch"
-    Afspilnings tempo
-"Time Stretch Default"
     Afspilnings tempo
 "Timeslot size"
     Størrelse af tidsrum

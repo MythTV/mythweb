@@ -617,6 +617,7 @@
 "Only New Episodes"
     新しい番組のみ
 "Only one specific channel ID (Channel priority)"
+"Only show distinct shows"
 "Only shows marked as HDTV"
 "Optimize Tables"
 "or"
@@ -1003,8 +1004,6 @@
     放送時間
 "Time Span"
 "Time Stretch"
-"Time Stretch Default"
-    タイムストレッチ設定
 "Timeslot size"
     タイムスロットサイズ
 "title"

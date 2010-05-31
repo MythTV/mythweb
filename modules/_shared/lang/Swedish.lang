@@ -832,6 +832,7 @@
 "Only New Episodes"
     Endast nya avsnitt
 "Only one specific channel ID (Channel priority)"
+"Only show distinct shows"
 "Only shows marked as HDTV"
 "Optimize Tables"
     Optimera tabeller
@@ -1335,8 +1336,6 @@
     Tidsperiod
 "Time Stretch"
     Tidssträcka
-"Time Stretch Default"
-    Förvalt Tidssträcka
 "Timeslot size"
     Tidsluckestorlek
 "title"

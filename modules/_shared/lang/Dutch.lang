@@ -611,6 +611,7 @@
 "Only New Episodes"
     Enkel Nieuwe Afleveringen
 "Only one specific channel ID (Channel priority)"
+"Only show distinct shows"
 "Only shows marked as HDTV"
 "Optimize Tables"
 "or"
@@ -990,8 +991,6 @@
     Tijd
 "Time Span"
 "Time Stretch"
-"Time Stretch Default"
-    TimeStretch Standaard
 "Timeslot size"
 "title"
     titel

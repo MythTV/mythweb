@@ -832,6 +832,7 @@
     Nur neue Folgen
 "Only one specific channel ID (Channel priority)"
     Nur ein bestimmter Sender (Senderpriorität)
+"Only show distinct shows"
 "Only shows marked as HDTV"
     nur Sendungen in HDTV
 "Optimize Tables"
@@ -1334,8 +1335,6 @@
     Zeitspanne
 "Time Stretch"
     Zeitraffer
-"Time Stretch Default"
-    Zeitraffer Vorgabewert
 "Timeslot size"
     Zeitfenstergröße
 "title"

@@ -77,6 +77,10 @@
         <input type="checkbox" name="generic" id="generic" value="1"<?php
             if ($_SESSION['search']['generic']) echo ' CHECKED' ?>>
         <label for="generic"><?php echo t('Ignore generic shows') ?></label>
+        <br>
+        <input type="checkbox" name="distinctTitle" id="distinctTitle" value="1"<?php
+            if ($_SESSION['search']['distinctTitle']) echo ' CHECKED' ?>>
+        <label for="distinctTitle"><?php echo t('Only show distinct shows') ?></label>
         </p>
         <p>
         <?php echo t('Showings between'); ?>:<br>

@@ -792,6 +792,7 @@
 "Only New Episodes"
     Samo nove oddaje
 "Only one specific channel ID (Channel priority)"
+"Only show distinct shows"
 "Only shows marked as HDTV"
 "Optimize Tables"
     Optimizacija tabel
@@ -1274,8 +1275,6 @@
     Časovni razpon
 "Time Stretch"
     Časovni razteg
-"Time Stretch Default"
-    Privzeti časovni razteg
 "Timeslot size"
     Velikost časovnega razpona
 "title"

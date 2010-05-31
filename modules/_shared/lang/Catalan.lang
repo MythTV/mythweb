@@ -640,6 +640,7 @@
 "Only New Episodes"
     Sols nous episodis
 "Only one specific channel ID (Channel priority)"
+"Only show distinct shows"
 "Only shows marked as HDTV"
 "Optimize Tables"
 "or"
@@ -1032,8 +1033,6 @@
     Hora
 "Time Span"
 "Time Stretch"
-"Time Stretch Default"
-    Ajust de compressió de temps predeterminat
 "Timeslot size"
     Mida del bloc de temps
 "title"
