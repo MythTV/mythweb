@@ -244,6 +244,8 @@
             }
         }
     // Redirect back to the page again, but without the query string, so reloads are cleaner
+		if ($db->query_col('SELECT COUNT(*) FROM program WHERE chanid = ? and starttime = ? LIMIT 1', $program->chanid, $program->starttime) == 0)
+			redirect_browser(root.'tv/detail?recordid='.$schedule->recordid);
         redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
     elseif ($_REQUEST['forget_old']) {
