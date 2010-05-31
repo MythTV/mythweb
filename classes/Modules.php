@@ -27,7 +27,7 @@ class Modules implements Cache_Enabled {
             foreach (get_sorted_files(modules_path) as $module) {
                 if (preg_match('/^_/', $module))
                     continue;
-                if (!is_dir($module))
+                if (!is_dir(modules_path."/$module"))
                     continue;
                 if (!file_exists(modules_path."/$module/init.php"))
                     continue;
