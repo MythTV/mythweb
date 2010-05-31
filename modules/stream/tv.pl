@@ -51,7 +51,6 @@
     while (my ($video_dir) = $sh->fetchrow_array()) {
         next unless (-e "$video_dir/$basename");
         $filename = "$video_dir/$basename";
-        last;
     }
     $sh->finish;
 
