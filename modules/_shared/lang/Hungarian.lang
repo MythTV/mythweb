@@ -612,6 +612,7 @@
     Kényszerítés ennek a műsornak a felvételére.
 "info:forget old"
     Elfelejti ezen műsor korábbi felvételeit, így újrafelvételre kerülhet.
+"info:jumppoints"
 "info:never record"
     Meghamisítja ezen műsor korábbi felvételeit, igy nem lesz rögzítve.
 "Insert"

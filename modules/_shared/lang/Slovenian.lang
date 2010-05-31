@@ -573,6 +573,7 @@
     Vsili snemanje te oddaje.
 "info:forget old"
     Pozabi na prejšnja snemanja te oddaje, tako da se bo lahko spet posnela.
+"info:jumppoints"
 "info:never record"
     Prikaži prejšnje posnetke te oddaje tako, da se ne bo več posnela.
 "Insert"

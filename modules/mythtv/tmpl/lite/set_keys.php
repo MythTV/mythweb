@@ -14,15 +14,7 @@
 /**/
 ?>
 <div class="error" style="padding: 5px">
-    <ul>
-        <li>JumpPoints are globally active.  If you set a keybinding for a JumpPoint
-            that is the same as one defined in the Keybindings section, the
-            JumpPoint will override the keybinding.</li>
-        <li>You probably want to use function keys or keys combined with a modifier
-            (alt, control) for JumpPoints, otherwise you may run into some problems.</li>
-        <li>Changes to keybindings/jumppoints requires a restart of the affected
-            mythfrontend for now.  This may change in a future release.</li>
-    </ul>
+<?php echo t('info:jumppoints') ?>
 </div>
 
 <form class="form" method="post" action="<?php echo form_action ?>">

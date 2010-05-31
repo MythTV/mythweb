@@ -638,6 +638,7 @@
     Forcer l'enregistrement de cette diffusion.
 "info:forget old"
     Oublie les enregistrements précédents de cette émission pour qu'elle puisse être réenregistrée.
+"info:jumppoints"
 "info:never record"
     Simule un enregistrement précédent de cette émission pour qu'elle ne soit pas enregistrée.
 "Insert"

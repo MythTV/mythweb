@@ -342,6 +342,12 @@
     Force this specific showing to record.
 "info:forget old"
     Forget about previous recordings of this show, so it can be rerecorded.
+"info:jumppoints"
+    <ul>
+        <li>JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is the same as one defined in the Keybindings section, the JumpPoint will override the keybinding.</li>
+        <li>You probably want to use function keys or keys combined with a modifier (alt, control) for JumpPoints, otherwise you may run into some problems.</li>
+        <li>Changes to keybindings/jumppoints requires a restart of the affected mythfrontend for now.  This may change in a future release.</li>
+       </ul>
 "info:never record"
     Falsify a previous recording of this show so that it won't record.
 "Insert"

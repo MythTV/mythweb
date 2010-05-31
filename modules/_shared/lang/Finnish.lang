@@ -599,6 +599,7 @@
     info: nauhoita tämä
 "info:forget old"
     info: unohda vanhat
+"info:jumppoints"
 "info:never record"
     info: älä nauhoita koskaan
 "Insert"

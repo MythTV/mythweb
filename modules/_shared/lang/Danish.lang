@@ -633,6 +633,7 @@
     Tving denne specifikke visning til at blive optaget.
 "info:forget old"
     Glem tidligere optagelser af denne udsendelse, så de kan blive genoptaget.
+"info:jumppoints"
 "info:never record"
     Optag aldrig denne udsendelse.
 "Insert"

@@ -345,6 +345,7 @@
     Force this specific showing to record.
 "info:forget old"
     Forget about previous recordings of this show, so it can be rerecorded.
+"info:jumppoints"
 "info:never record"
     Falsify a previous recording of this show so that it won't record.
 "Insert"

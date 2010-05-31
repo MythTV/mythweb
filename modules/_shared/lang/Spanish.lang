@@ -530,6 +530,7 @@
 "info: hidden advanced schedule"
 "info: record this"
 "info:forget old"
+"info:jumppoints"
 "info:never record"
 "Insert"
 "Jump"
