@@ -27,7 +27,7 @@
 
     if ($program && $program->filename) {
         $flv_w = setting('WebFLV_w');
-        $flv_h = intVal($flv_w / $program->getAspect()) + 20;  // +20px for the playback controls
+        $flv_h = intVal($flv_w / $program->getAspect()) + 25;  // +25px for the playback controls
     }
 
 /*
@@ -174,11 +174,11 @@
             if ($program->is_watched)
                 echo '<img src="'.skin_url.'/img/flags/watched.png" title="'.t('Watched').'">';
 
-            // Report transcoded status for recordings 
-            if ($program->filename) { 
-                if ($program->is_transcoded) 
-                	echo t(' TRANSCODED'); 
-            } 
+            // Report transcoded status for recordings
+            if ($program->filename) {
+                if ($program->is_transcoded)
+                	echo t(' TRANSCODED');
+            }
             ?></td>
         </tr><?php
             if (strlen($program->category)) {
@@ -551,6 +551,7 @@
                             url: "<?php echo video_url($program, 'flv'); ?>",
                             duration: <?php echo $program->length ?>,
                             autoPlay: false,
+                            scaling: 'fit',
                             // Would be nice to auto-buffer, but we don't want to
                             // waste bandwidth and CPU on the remote machine.
                             autoBuffering: false
