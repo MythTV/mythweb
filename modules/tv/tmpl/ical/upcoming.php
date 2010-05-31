@@ -33,7 +33,7 @@
                                                    'sec'   => date('s', $show->endtime) ));
         $event->setProperty('summary',      $show->title.($show->subtitle ? ' - '.$show->subtitle : ''));
         $event->setProperty('description',  $show->description."\n\n".preg_replace('/([A-Z]+)/',' $1',$show->recstatus));
-        $event->setProperty('location', $show->channel->callsign); 
+        $event->setProperty('location', $show->channel->callsign);
         $calendar->setComponent($event);
     }
 

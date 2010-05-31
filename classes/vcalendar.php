@@ -105,6 +105,7 @@ class vcalendar {
     $this->setConfig( 'delimiter',  DIRECTORY_SEPARATOR );
     $this->xcaldecl   = array();
     $this->components = array();
+    $this->setProperty( 'X-WR-TIMEZONE', date('e') );
   }
 /*********************************************************************************/
 /**
