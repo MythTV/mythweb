@@ -116,11 +116,21 @@
     while (sysread DATA, $buffer, $read_size ) {
         print $buffer;
         $size -= $read_size;
-        if ($size == 0) {
-            last;
+        if ($size <= 0) {
+            my $fileSize = -s $filename;
+            my $filePos  = tell DATA;
+            if ( ($fileSize - $filePos) > 0 ) {
+                $size = $fileSize - $filePos;
+            }
+            else {
+                last;
+            }
         }
         if ($size < $read_size) {
             $read_size = $size;
+        }
+        if ($read_size < 0) {
+            $read_size = 0;
         }
     }
     close DATA;
