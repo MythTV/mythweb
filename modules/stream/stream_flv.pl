@@ -11,8 +11,10 @@
     use Math::Round qw(round_even);
 
     our $ffmpeg_pid;
+    our $ffmpeg_pgid;
 
 # Shutdown cleanup, of various types
+    $ffmpeg_pgid = setpgrp(0,0);
     $SIG{'TERM'} = \&shutdown_handler;
     $SIG{'PIPE'} = \&shutdown_handler;
     END {
@@ -20,6 +22,7 @@
     }
     sub shutdown_handler {
         kill(1, $ffmpeg_pid) if ($ffmpeg_pid);
+        kill(-1, $ffmpeg_pgid) if ($ffmpeg_pid);
     }
 
 # Find ffmpeg
@@ -92,7 +95,7 @@
         $size = int($lengthSec*($vbitrate*1000+$abitrate*1000)/8);
         print header(-type => 'video/x-flv','Content-Length' => $size);
     } else {
-        print header(-type => 'video/x-flv'); 
+        print header(-type => 'video/x-flv');
     }
 
     my $buffer;
