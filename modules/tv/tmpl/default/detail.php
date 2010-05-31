@@ -751,7 +751,7 @@
             if (is_array($frontends)) {
                 echo '<div class="x-frontends">'.t('Play Recording on Frontend').':<ul>';
                     foreach ($frontends as $frontend)
-                        echo '<li><a onclick="watchShow(\''.urlencode($frontend->getHost()).'\', \''.urlencode($program->chanid).'\', \''.urlencode($program->starttime).'\');">'.$frontend->getHost().'</a><br>';
+                        echo '<li><a onclick="watchShow(\''.urlencode($frontend->getHost()).'\', \''.urlencode($program->chanid).'\', \''.urlencode($program->recstarts).'\');">'.$frontend->getHost().'</a><br>';
                 echo '</ul></div>';
             }
         ?>
