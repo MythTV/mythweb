@@ -92,6 +92,18 @@
         player.document.write('<html><body style="background-color: black; margin: 0px; padding: 0px;">'+$$('.x-pixmap')[0].textContent+'</body></html>');
     }
 
+    function watchShow(host, chanid, starttime) {
+        new Ajax.Request('<?php echo root_url;?>remote/play_program_on_frontend', {
+                         method: 'get',
+                         parameters: {exit: 1,
+                                      host: host,
+                                      chanid: chanid,
+                                      starttime: starttime,
+                                      }
+                        }
+                        );
+    }
+
 // -->
 </script>
 
@@ -739,7 +751,7 @@
             if (is_array($frontends)) {
                 echo '<div class="x-frontends">'.t('Play Recording on Frontend').':<ul>';
                     foreach ($frontends as $frontend)
-                        echo '<li><a href="'.root_url.'remote/play_program_on_frontend?host='.urlencode($frontend->getHost()).'&chanid='.urlencode($program->chanid).'&starttime='.urlencode($program->starttime).'">'.$frontend->getHost().'</a><br>';
+                        echo '<li><a onclick="watchShow(\''.urlencode($frontend->getHost()).'\', \''.urlencode($program->chanid).'\', \''.urlencode($program->starttime).'\');">'.$frontend->getHost().'</a><br>';
                 echo '</ul></div>';
             }
         ?>
