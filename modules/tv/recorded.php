@@ -165,8 +165,10 @@
     ksort($Groups);
 
 // Keep track of the program/title the user wants to view
-    $_SESSION['recorded_title']    = $_REQUEST['title'];
-    $_SESSION['recorded_recgroup'] = $_REQUEST['recgroup'];
+    if (isset($_REQUEST['title']))
+        $_SESSION['recorded_title']    = $_REQUEST['title'];
+    if (isset($_REQUEST['recgroup']))
+        $_SESSION['recorded_recgroup'] = $_REQUEST['recgroup'];
 
 // The default sorting choice isn't so good for recorded programs, so we'll set our own default
     if (!is_array($_SESSION['recorded_sortby']) || !count($_SESSION['recorded_sortby']))
