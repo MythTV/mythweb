@@ -22,7 +22,8 @@
             list($match, $chanid) = $match;
         // First, delete any unwanted channels
             $query_params = array();
-            if ($_POST['delete_'.$chanid] == "true") {
+            if (preg_match('/^delete_(\\d+)$/', $key, $match) && $_POST[$key] == 'true') {
+                list($match, $chanid) = $match;
                 $query = 'DELETE FROM channel';
             }
             else {
