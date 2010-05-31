@@ -230,7 +230,7 @@ class WeatherScreen {
             $types_arr = explode(',', $types);
             foreach ($types_arr as $type) {
                 if ($type_hash[$this->container] == $type) {
-                    $results = $this->runScript($script, "-l \"$needle\"");
+                    $results = $this->runScript($script, '-l '.escapeshellarg($needle));
                     if (count($results))
                         $this->search[$source_id] = $results;
                 }
@@ -268,7 +268,7 @@ class WeatherScreen {
 
     // Generate args and run the script
         $units = $this->units == 0 ? 'SI' : 'ENG';
-        $output_array = $this->runScript($script, '-u '. $units .' -d '. getcwd() .'/'. data ." $location");
+        $output_array = $this->runScript($script, '-u '. escapeshellarg($units) .' -d '. escapeshellarg(getcwd() .'/'. data ." $location"));
 
     // Query db data items
         $sh = $db->query('SELECT weatherdatalayout.dataitem
@@ -299,7 +299,7 @@ class WeatherScreen {
                 }
             }
         }
-    
+
     }
 
     function runScript( $script, $args ) {
@@ -317,7 +317,7 @@ class WeatherScreen {
         $path         = implode('/', $scratch);
 
         if (chdir($path)) {
-            $command  = "$script $args";
+            $command  = escapeshellcmd($script)." $args";
             $output   = `./$command`;
         }
         else
