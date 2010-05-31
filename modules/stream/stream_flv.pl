@@ -83,10 +83,27 @@
                 "Can't do ffmpeg: $!\n${ffmpeg_command}";
         exit;
     }
-    print header(-type => 'video/x-flv');
+    # Guess the filesize based on duration and bitrate. This allows for progressive download behavior
+    my $lengthSec;
+    $dur = `ffmpeg -i $filename 2>&1 | grep "Duration" | cut -d ' ' -f 4 | sed s/,//`;
+    if ($dur && $dur =~ /\d*:\d*:.*/) {
+        @times = split(':',$dur);
+        $lengthSec = $times[0]*3600+$times[1]*60+$times[2];
+        $size = int($lengthSec*($vbitrate*1000+$abitrate*1000)/8);
+        print header(-type => 'video/x-flv','Content-Length' => $size);
+    } else {
+        print header(-type => 'video/x-flv'); 
+    }
+
     my $buffer;
-    while (read DATA, $buffer, 262144) {
+    if (read DATA, $buffer, 53) {
         print $buffer;
+        read DATA, $buffer, 8;
+        $durPrint = reverse pack("d",$lengthSec);
+        print $durPrint;
+        while (read DATA, $buffer, 262144) {
+            print $buffer;
+        }
     }
     close DATA;
 
