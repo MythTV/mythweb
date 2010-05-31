@@ -86,6 +86,10 @@
 
 // Define the http host used for access
 
+// Handle multiple http forwarded proxies by only using the first one in the list
+    if(isset($_SERVER['HTTP_X_FORWARDED_HOST']))
+        list($_SERVER['HTTP_X_FORWARDED_HOST']) = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
+
     define('http_host', isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']);
 
     $host = http_host;
