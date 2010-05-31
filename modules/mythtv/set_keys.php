@@ -75,7 +75,7 @@
     $sh = $db->query('SELECT *
                         FROM keybindings
                        WHERE hostname = ?
-                    ORDER BY (context = "Global") DESC, context',
+                    ORDER BY (context = "Global") DESC, context, action',
                      $_SESSION['settings']['host']);
     while ($row = $sh->fetch_assoc()) {
         $Keys[] = $row;
