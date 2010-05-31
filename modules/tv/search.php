@@ -216,14 +216,6 @@
                                     .'program.originalairdate<='.$db->escape(date('Y-m-d', $tmpdate)).')';
                 }
             }
-        // HDTV only?
-            if ($_SESSION['search']['hd'])
-                $extra_query[] = 'program.hdtv & 1';
-            if ($_SESSION['search']['generic'])
-                $extra_query[] = 'program.generic = 0';
-        // Commercial-free channels only?
-            if ($_SESSION['search']['commfree'])
-                $extra_query[] = 'channel.commmethod=-2';
         // Build the actual search query
             $query = '';
             foreach ($_SESSION['search']['as'] as $i => $string) {
@@ -320,6 +312,15 @@
                 $query[] = "people.name         $compare $search";
             $query   = implode(' OR ', $query);
         }
+
+    // HDTV only?
+        if ($_SESSION['search']['hd'])
+            $extra_query[] = 'program.hdtv & 1';
+        if ($_SESSION['search']['generic'])
+            $extra_query[] = 'program.generic = 0';
+    // Commercial-free channels only?
+        if ($_SESSION['search']['commfree'])
+            $extra_query[] = 'channel.commmethod=-2';
 
     // Finish the query and add any extra parameters
         if ($query)
