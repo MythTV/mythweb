@@ -69,6 +69,7 @@
     function t($str /* [, arg1, arg2, argN] */ ) {
         load_translation();
         global $L;
+
     // No string?
         if (!$str)
             return '';
@@ -114,7 +115,6 @@
  * created using the value of t(int).
 /**/
     function tn(/* string1, string2, stringN, int [, array-of-args] */) {
-        load_translation();
         $a = func_get_args();
     // Array of arguments?
         if (is_array($a[count($a)-1]))
@@ -141,6 +141,12 @@
     // Already loaded?
         if (is_array($L) && count($L))
             return;
+
+        $L = Cache::get('translations');
+
+        if (is_array($L) && count($L) > 0)
+            return;
+
         $L = array();
 
     // Load the primary language file, or English if the other doesn't exist.
@@ -185,6 +191,8 @@
     // No language array defined?
         if (!is_array($L) || !count($L))
             trigger_error('No language strings defined.', FATAL);
+
+        Cache::set('translations', $L);
     }
 
 /**

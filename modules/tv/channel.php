@@ -13,9 +13,6 @@
  *
 /**/
 
-// Load all channels
-    load_all_channels();
-
 // Path-based
     if ($Path[2]) {
         $_REQUEST['chanid'] = $Path[2];
@@ -24,7 +21,7 @@
     }
 
 // Chanid?
-    $this_channel =& load_one_channel($_REQUEST['chanid']);
+    $this_channel =& Channel::find($_REQUEST['chanid']);
 
 // New list date?
     if ($_REQUEST['date']) {
@@ -59,9 +56,10 @@
  * Prints a <select> of the available channels
 /**/
     function channel_select($params = '', $selected='') {
-        global $Channels;
+        $channels = Channel::getChannelList();
         echo "<select name=\"chanid\" $params>";
-        foreach ($Channels as $channel) {
+        foreach ($channels as $chanid) {
+            $channel =& Channel::find($chanid);
         // Not visible?
             if (empty($channel->visible))
                 continue;
@@ -104,4 +102,3 @@
         }
         echo '</select>';
     }
-

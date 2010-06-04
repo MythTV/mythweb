@@ -12,9 +12,6 @@
  *
 /**/
 
-// Populate the $Channels array
-    load_all_channels();
-
 // Path-based
     if ($Path[3])
         $_GET['recordid'] = $Path[3];
@@ -80,7 +77,7 @@
             $schedule->prefinput     = $_POST['prefinput'];
         // Some settings specific to manual recordings (since we have no program to match against)
             $schedule->chanid        = $_POST['channel'];
-            $schedule->station       = $Channels[$schedule->chanid]->callsign;
+            $schedule->station       = Channel::find($schedule->chanid)->callsign;
             $schedule->starttime     = strtotime($_POST['startdate'].' '.$_POST['starttime']);
             $schedule->endtime       = $schedule->starttime + ($_POST['length'] * 60);
             $schedule->description   = 'Manually scheduled';
@@ -91,7 +88,7 @@
             $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
             $schedule->transcoder    = $_POST['transcoder'];
         // Figure out the title
-            $channel = $Channels[$_POST['channel']];
+            $channel =& Channel::find($_POST['channel']);
             if (strcasecmp($_POST['title'], t('Use callsign')) == 0) {
                 if ($_SESSION["prefer_channum"])
                     $schedule->title = $channel->channum.' ('.$channel->callsign.')';
@@ -176,17 +173,11 @@
  * prints a <select> of the available channels
 /**/
     function channel_select($chanid) {
-        global $Channels;
+        $Channel_list = Channel::getChannelList();
         echo '<select name="channel">';
         $seen = array();
-        foreach ($Channels as $channel) {
-        // Ignore invisible channels
-            if ($channel->visible == 0)
-                continue;
-        // Group by channum
-            if ($seen[$channel->channum])
-                continue;
-            $seen[$channel->channum] = $channel;
+        foreach ($Channel_list as $chanid) {
+            $channel =& Channel::find($chanid);
 
         // Print the option
             echo '<option value="', $channel->chanid, '"',
@@ -194,7 +185,7 @@
         // Selected?
             if ($channel->chanid == $chanid)
                 echo ' SELECTED';
-        // Print ther est of the content
+        // Print the rest of the content
             echo '>';
             if ($_SESSION["prefer_channum"])
                 echo $channel->channum.'&nbsp;&nbsp;('.html_entities($channel->callsign).')';

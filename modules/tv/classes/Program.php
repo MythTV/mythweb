@@ -266,22 +266,9 @@ class Program {
         if (in_array($this->airdate, array('0000-00-00', '0000', '1900-01-01')))
             $this->airdate = NULL;
     // Do we have a chanid?  Load some info about it
-        if ($this->chanid && !isset($this->channel)) {
-        // No channel data?  Load it
-            global $Channels;
-            if (!is_array($Channels) || !count($Channels))
-                load_all_channels();
-        // Now we really should scan the $Channel array and add a link to this program's channel
-            foreach (array_keys($Channels) as $key) {
-                if ($Channels[$key]->chanid == $this->chanid) {
-                    $this->channel =& $Channels[$key];
-                    break;
-                }
-            }
-        // Not found
-            if (!$this->channel)
-                $this->channel =& load_one_channel($this->chanid);
-        }
+        if ($this->chanid && !isset($this->channel))
+            $this->channel =& Channel::find($this->chanid);
+
     // Calculate the duration
         if ($this->recendts)
             $this->length = $this->recendts - $this->recstartts;

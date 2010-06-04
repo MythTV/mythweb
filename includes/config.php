@@ -19,6 +19,9 @@
  *
 /**/
 
+    if (!isset($_SESSION['cache_engine']))
+        $_SESSION['cache_engine'] = 'Cache_Static';
+
 // Prefer channum over callsign?
     if (empty($_SESSION['prefer_channum']))
         $_SESSION['prefer_channum'] = setting('WebPrefer_Channum');

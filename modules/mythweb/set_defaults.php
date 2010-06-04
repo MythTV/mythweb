@@ -20,8 +20,9 @@
         $_SESSION['show_popup_info']     = $_POST['show_popup_info']     ? 1 : 0;
         $_SESSION['show_channel_icons']  = $_POST['show_channel_icons']  ? 1 : 0;
         $_SESSION['sortby_channum']      = $_POST['sortby_channum']      ? 1 : 0;
-        $_SESSION['genre_colors'] = $_POST['genre_colors'] ? 1 : 0;
+        $_SESSION['genre_colors']        = $_POST['genre_colors']        ? 1 : 0;
         $_SESSION['show_video_covers']   = $_POST['show_video_covers']   ? 1 : 0;
+        $_SESSION['cache_engine']        = $_POST['cache_engine'];
     }
 
 // These settings are limited to MythWeb itself

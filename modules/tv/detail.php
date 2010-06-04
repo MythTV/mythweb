@@ -298,7 +298,7 @@
     if ($program)
         $channel =& $program->channel;
     else
-        $channel =& load_one_channel($schedule->chanid);
+        $channel =& Channel::find($schedule->chanid);
 
 // Parse the list of scheduled recordings for possible conflicts
     global $Scheduled_Recordings;

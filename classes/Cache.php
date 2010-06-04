@@ -3,32 +3,48 @@
 class Cache {
     private static $Instance = null;
 
-    public static $Engines = array('Null',
-                                   'SHM',
-                                   'Static',
-                                   'Memcache',
-                                   'StaticMemcache'
+    public static $Engines = array('Cache_Null',
+                                   'Cache_Static',
+                                   'Cache_SHM',
+                                   'Cache_Memcache',
+                                   'Cache_Memcached',
+                                   'Cache_StaticSHM',
+                                   'Cache_StaticMemcache',
+                                   'Cache_StaticMemcached',
                                   );
 
     public static function &get($key = null) {
-        return Cache::$Instance->get($key);
+        $data = Cache::$Instance->get($key);
+        if (!$data)
+            return null;
+        return $data;
+
     }
 
     public static function &getObject($key = null) {
-        return unserialize(Cache::$Instance->get($key));
+        $obj = &Cache::$Instance->get($key);
+        if (is_string($obj))
+            return unserialize($obj);
+        return $obj;
     }
 
-    public static function set($key, $data, $lifeLength = 84000) {
+    public static function set($key, $data, $lifeLength = 600) {
         return Cache::$Instance->set($key, $data, $lifeLength);
     }
 
-    public static function setObject($object, $lifeLength = 84000) {
-        return Cache::$Instance->set($object->getKey(), serialize($object), $lifeLength);
+    public static function setObject($key, &$object, $lifeLength = 600) {
+        return Cache::$Instance->set($key, serialize($object), $lifeLength);
     }
 
     public static function initalize($engine = 'Cache_Static') {
+        if (!in_array($engine, self::$Engines))
+            $engine = 'Cache_Static';
         if (is_null(Cache::$Instance))
             Cache::$Instance = new $engine();
+    }
+
+    public static function delete($key) {
+        return Cache::set($key, null);
     }
 }
 

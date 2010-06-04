@@ -238,6 +238,15 @@
     Par artiste commençant par
 "By Genre"
     Par genre
+"cache_engine"
+"Cache_Memcache"
+"Cache_Memcached"
+"Cache_Null"
+"Cache_SHM"
+"Cache_Static"
+"Cache_StaticMemcache"
+"Cache_StaticMemcached"
+"Cache_StaticSHM"
 "callsign"
     indicatif
 "Cancel"

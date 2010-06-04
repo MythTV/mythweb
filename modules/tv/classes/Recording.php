@@ -12,9 +12,6 @@
  *
 /**/
 
-// Make sure the "Channels" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
-    require_once 'includes/channels.php';
-
 // Make sure the recording schedule type data gets loaded
     require_once 'includes/recording_schedules.php';
 
@@ -121,19 +118,8 @@ class Recording {
     // Turn type int a word
         $this->texttype = $GLOBALS['RecTypes'][$this->type];
     // Do we have a chanid?  Load some info about it
-        if ($this->chanid && !isset($this->channel)) {
-        // No channel data?  Load it
-            global $Channels;
-            if (!is_array($Channels) || !count($Channels))
-                load_all_channels();
-        // Now we really should scan the $Channel array and add a link to this recording's channel
-            foreach (array_keys($Channels) as $key) {
-                if ($Channels[$key]->chanid == $this->chanid) {
-                    $this->channel = &$Channels[$key];
-                    break;
-                }
-            }
-        }
+        if ($this->chanid && !isset($this->channel))
+            $this->channel =& Channel::find($this->chanid);
 
     // Find out which css category this recording falls into
         if ($this->chanid != '')

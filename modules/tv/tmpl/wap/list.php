@@ -61,18 +61,19 @@
         // Go through each channel and load/print its info - use references to avoid "copy" overhead
         $channel_count = 0;
         $displayed_channels = array();
-        foreach (array_keys($Channels) as $key) {
+		$channels = Channel::getChannelList();
+        foreach ($channels as $key) {
         // Ignore channels with no number
-            if (strlen($Channels[$key]->channum) < 1)
+            if (strlen(Channel::find($key)->channum) < 1)
                 continue;
         // Skip already-displayed channels
-            if ($displayed_channels[$Channels[$key]->channum])
+            if ($displayed_channels[Channel::find($key)->channum])
                 continue;
-            $displayed_channels[$Channels[$key]->channum] = 1;
+            $displayed_channels[Channel::find($key)->channum] = 1;
         // Count this channel
             $channel_count++;
         // Grab the reference
-            $channel = &$Channels[$key];
+            $channel =& Channel::find($key);
         // Print the data
             print_channel(&$channel, $list_starttime, $list_endtime);
         // Cleanup is a good thing

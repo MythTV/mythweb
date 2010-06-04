@@ -59,8 +59,9 @@
         $displayed_channels = array();
 
     // Go through each channel and load/print its info - use references to avoid "copy" overhead
-
-        foreach ($Channels as $channel) {
+        $channels = Channel::getChannelList();
+        foreach ($channels as $chanid) {
+            $channel =& Channel::find($chanid);
         // Ignore channels with no number
             if (strlen($channel->channum) < 1)
                 continue;

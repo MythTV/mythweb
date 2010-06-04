@@ -229,6 +229,15 @@
     Podle autora začínajícího
 "By Genre"
     Podle žánru
+"cache_engine"
+"Cache_Memcache"
+"Cache_Memcached"
+"Cache_Null"
+"Cache_SHM"
+"Cache_Static"
+"Cache_StaticMemcache"
+"Cache_StaticMemcached"
+"Cache_StaticSHM"
 "callsign"
     ID stanice
 "Cancel"

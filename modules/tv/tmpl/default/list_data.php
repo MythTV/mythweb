@@ -47,14 +47,13 @@
         $channel_count      = 0;
         $displayed_channels = array();
 
+        $Callsigns = Channel::getCallsignList();
+
     // Go through each channel and load/print its info - use references to avoid "copy" overhead
         foreach ($Callsigns as $chanid) {
-            $channel = $Channels[$chanid];
+            $channel =& Channel::find($chanid);
         // Ignore channels with no number
             if (strlen($channel->channum) < 1)
-                continue;
-        // Ignore invisible channels
-            if ($channel->visible == 0)
                 continue;
         // Skip already-displayed channels
             if ($displayed_channels[$channel->channum][$channel->callsign])

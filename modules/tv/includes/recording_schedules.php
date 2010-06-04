@@ -13,7 +13,6 @@
 /**/
 
 // Include our dependencies -- these are probably called elsewhere, but require_once will handle it
-    require_once 'includes/channels.php';
     require_once 'includes/programs.php';
     require_once 'includes/css.php';
 
@@ -62,31 +61,44 @@
 
 // Global lists of recording schedules and scheduled recordings
     global $Schedules;
-    $Schedules = array();
+    $Schedules = Cache::get('global_Schedules');
+    if (is_null($Schedules)) {
+        $Schedules = array();
 
-    $result = $db->query('SELECT record.*,
-                                 IF(record.type='.rectype_always.',-1,record.chanid)            AS chanid,
-                                 UNIX_TIMESTAMP(record.startdate)+TIME_TO_SEC(record.starttime) AS starttime,
-                                 UNIX_TIMESTAMP(record.enddate)+TIME_TO_SEC(record.endtime)     AS endtime
-                            FROM record');
+        $result = $db->query('SELECT record.*,
+                                     IF(record.type='.rectype_always.',-1,record.chanid)            AS chanid,
+                                     UNIX_TIMESTAMP(record.startdate)+TIME_TO_SEC(record.starttime) AS starttime,
+                                     UNIX_TIMESTAMP(record.enddate)+TIME_TO_SEC(record.endtime)     AS endtime
+                                FROM record');
 
-    while ($row = $result->fetch_assoc())
-        $Schedules[$row['recordid']] =& new Schedule($row);
+        while ($row = $result->fetch_assoc())
+            $Schedules[$row['recordid']] =& new Schedule($row);
+        Cache::set('global_Schedules', $Schedules);
+    }
 
 // Initialize
     global $Scheduled_Recordings, $Num_Conflicts, $Num_Scheduled;
-    $Scheduled_Recordings = array();
-    $Num_Conflicts        = 0;
-    $Num_Scheduled        = 0;
+    $Scheduled_Recordings   = Cache::get('global_Scheduled_Recordings');
+    $Num_Conflicts          = Cache::get('global_Num_Conflicts');
+    $Num_Scheduled          = Cache::get('global_Num_Scheduled');
 
-// Load all of the scheduled recordings.  We will need them at some point, so we
-// might as well get it overwith here.
-    foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
-        if ($key === 'offset')
-            list($Num_Conflicts, $Num_Scheduled) = $program;
-    // Normal entry:  $Scheduled_Recordings[callsign][starttime][]
-        else
-            $Scheduled_Recordings[$program[6]][$program[10]][] =& new Program($program);
+    if (is_null($Scheduled_Recordings)) {
+        $Scheduled_Recordings = array();
+        $Num_Conflicts        = 0;
+        $Num_Scheduled        = 0;
+
+    // Load all of the scheduled recordings.  We will need them at some point, so we
+    // might as well get it overwith here.
+        foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
+            if ($key === 'offset')
+                list($Num_Conflicts, $Num_Scheduled) = $program;
+        // Normal entry:  $Scheduled_Recordings[callsign][starttime][]
+            else
+                $Scheduled_Recordings[$program[6]][$program[10]][] =& new Program($program);
+        }
+        Cache::set('global_Scheduled_Recordings', $Scheduled_Recordings);
+        Cache::set('global_Num_Conflicts', $Num_Conflicts);
+        Cache::set('global_Num_Scheduled', $Num_Scheduled);
     }
 
 // Transcoder names

@@ -223,6 +223,15 @@
     Selaa artisteja, jotka alkavat"
 "By Genre"
     Lajityypin mukaan
+"cache_engine"
+"Cache_Memcache"
+"Cache_Memcached"
+"Cache_Null"
+"Cache_SHM"
+"Cache_Static"
+"Cache_StaticMemcache"
+"Cache_StaticMemcached"
+"Cache_StaticSHM"
 "callsign"
     Kutsumanimi
 "Cancel"

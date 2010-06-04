@@ -13,9 +13,6 @@
  *
 /**/
 
-// Populate the $Channels array
-    load_all_channels();
-
 // Load the sorting routines
     require_once 'includes/sorting.php';
 
@@ -153,9 +150,10 @@
         // Create a new program object
             $show =& new Program($record);
         // Assign a reference to this show to the various arrays
-            $All_Shows[]                         =& $show;
-            $Programs[$title][$key]              =& $show;
-            $Channels[$show->chanid]->programs[] =& $show;
+            $All_Shows[]                                =& $show;
+            $Programs[$title][$key]                     =& $show;
+            $channel = &Channel::find($show->chanid);
+            $channel->programs[]                        =& $show;
             unset($show);
         }
     }

@@ -57,7 +57,6 @@
     uasort($Categories, 'category_name_sort');
 
 // Load the tv-related libraries
-    require_once 'includes/channels.php';
     require_once 'includes/programs.php';
     require_once 'includes/recording_schedules.php';
 

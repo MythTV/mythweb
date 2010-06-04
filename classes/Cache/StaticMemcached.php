@@ -1,13 +1,13 @@
 <?php
 
-class Cache_StaticMemcache implements Cache_Engine {
+class Cache_StaticMemcached implements Cache_Engine {
 
     private $Static   = null;
     private $Memcache = null;
 
     public function __construct() {
         $this->Static   = new Cache_Static();
-        $this->Memcache = new Cache_Memcache();
+        $this->Memcache = new Cache_Memcached();
     }
 
     public function &get($key = null) {
@@ -22,6 +22,6 @@ class Cache_StaticMemcache implements Cache_Engine {
     }
 
     public static function isEnabled() {
-        return Cache_Static::isEnabled() && Cache_Memcache::isEnabled();
+        return Cache_Static::isEnabled() && Cache_Memcached::isEnabled();
     }
 }

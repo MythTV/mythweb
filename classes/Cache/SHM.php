@@ -2,23 +2,49 @@
 
 class Cache_SHM implements Cache_Engine {
     private static $SHMhandle = null;
+    private static $id = 'O';
+    private static $key = null;
+    private static $size = 16777216;
+    private static $keyMap = array();
 
     public function __construct() {
-        self::$SHMhandle = shm_attach(ftok(__FILE__, 'mythweb'), 67108864);
+        self::$key = ftok(__FILE__, self::$id);
+        self::$SHMhandle = shm_attach(self::$key, self::$size);
+        self::$keyMap = self::get('keyMap');
     }
 
     public function __destruct() {
+        self::set('keyMap', self::$keyMap, 9999999);
         shm_detach(self::$SHMhandle);
     }
 
     public function &get($key = null) {
-        $key = ftok(__FILE__, $key);
-        return shm_get_var(self::$SHMhandle,$key);
+        $start = microtime(true);
+        $data = shm_get_var(self::$SHMhandle, self::getVarKey($key));
+        if (!is_null($data)) {
+            if (time() <= $data['expire'])
+                return $data['data'];
+            else
+                @shm_remove_var(self::$SHMhandle, self::getVarKey($key));
+        }
+        FB::warn("Cache Miss $key: ".(microtime(true) - $start));
+        return null;
     }
 
     public function set($key, $data, $lifeLength) {
-        $key = ftok(__FILE__, $key);
-        return shm_put_var(self::$SHMhandle, $key, $data);
+        return shm_put_var(self::$SHMhandle, self::getVarKey($key),
+                           array('expire' => time()+$lifeLength,
+                                 'data'   => $data));
+    }
+
+    private static function getVarKey($key) {
+        if (is_int($key))
+            return $key;
+        if (is_null(self::$keyMap))
+            self::$keyMap = array('keyMap' => 1);
+        if (!isset(self::$keyMap[$key]))
+            self::$keyMap[$key] = count(self::$keyMap)+1;
+        return self::$keyMap[$key];
     }
 
     public static function isEnabled() {

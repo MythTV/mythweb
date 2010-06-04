@@ -1,7 +1,7 @@
 <?php
 
 class MythTV {
-    public $VERSION            = '.22';
+    public $VERSION            = '.24';
 
     public $RecordingTypes     = array( 1  => 'Once',
                                         2  => 'Daily',

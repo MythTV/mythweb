@@ -24,9 +24,6 @@
 // Load the sorting routines
     require_once 'includes/sorting.php';
 
-// Load all channels
-    load_all_channels();
-
 // Path-based search overrides request-based search type.
     if ($Path[2]) {
     // Don't forget to take all of the remaining path.

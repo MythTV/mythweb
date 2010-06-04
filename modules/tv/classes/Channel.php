@@ -14,22 +14,82 @@
 /**/
 
 class Channel {
-    var $chanid;
-    var $channum;
-    var $sourceid;
-    var $callsign;
-    var $name;
-    var $finetune;
-    var $videofilters;
-    var $xmltvid;
-    var $contrast;
-    var $brightness;
-    var $colour;
-    var $visible;
-    var $programs = array();
+    private static $channel_list = null;
+    private static $callsign_list = null;
+
+    private static $cacheKey = 'channel';
+
+    public $chanid;
+    public $channum;
+    public $sourceid;
+    public $callsign;
+    public $name;
+    public $finetune;
+    public $videofilters;
+    public $xmltvid;
+    public $contrast;
+    public $brightness;
+    public $colour;
+    public $visible;
+    public $programs = array();
+
+    public static function &find($id) {
+        $object = &Cache::getObject(self::$cacheKey."($id)");
+        if (get_class($object) !== 'Channel')
+            $object = new self($id);
+        return $object;
+    }
+
+    public static function getChannelList() {
+        if (is_null(self::$channel_list)) {
+            global $db;
+            $sql = 'SELECT channel.chanid FROM channel';
+            if ($_SESSION['guide_favonly'])
+                $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\' AND';
+            else
+                $sql .= ' WHERE';
+            $sql .= ' channel.visible = 1';
+            $sql .= ' GROUP BY channel.channum, channel.callsign';
+        // Sort
+            $sql .= ' ORDER BY '
+                    .($_SESSION["sortby_channum"] ? '' : 'channel.callsign, ')
+                    .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
+        // Query
+            $sh = $db->query($sql);
+            self::$channel_list = array();
+            while ($chanid = $sh->fetch_col())
+                self::$channel_list[] = $chanid;
+        }
+        return self::$channel_list;
+    }
+
+    public static function getCallsignList() {
+        if (is_null(self::$callsign_list)) {
+            global $db;
+            $sql = 'SELECT channel.chanid, channel.channum, channel.callsign FROM channel';
+            if ($_SESSION['guide_favonly'])
+                $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\' AND';
+            else
+                $sql .= ' WHERE';
+            $sql .= ' channel.visible = 1';
+            $sql .= ' GROUP BY channel.channum, channel.callsign';
+        // Sort
+            $sql .= ' ORDER BY '
+                    .($_SESSION["sortby_channum"] ? '' : 'channel.callsign, ')
+                    .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
+        // Query
+            $sh = $db->query($sql);
+            self::$callsign_list = array();
+            while ($channel_data = $sh->fetch_assoc())
+                self::$callsign_list[$channel_data['channum'].':'.$channel_data['callsign']] = $channel_data['chanid'];
+        }
+        return self::$callsign_list;
+    }
 
     /* public */
-    function __construct($channel_data) {
+    function __construct($chanid) {
+        global $db;
+        $channel_data = $db->query_assoc('SELECT * FROM channel WHERE chanid = ?', $chanid);
         $this->chanid       = $channel_data['chanid'];
         $this->channum      = $channel_data['channum'];
         $this->sourceid     = $channel_data['sourceid'];
@@ -60,6 +120,10 @@ class Channel {
     // Wipe the icon path completely if it doesn't exist.
         if (!is_file($this->icon))
             $this->icon = null;
+    }
+
+    function __destruct() {
+        Cache::set(self::$cacheKey."({$this->chanid})", &$this);
     }
 
 /** @deprecated FIXME:  this routine should get split out on its own, accepting

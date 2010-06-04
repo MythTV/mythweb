@@ -13,9 +13,6 @@
  *
 /**/
 
-// Make sure the "Channels" class gets loaded   (yes, I know this is recursive, but require_once will handle things nicely)
-    require_once 'includes/channels.php';
-
 // Reasons a recording wouldn't be happening (from libs/libmythtv/programinfo.h)
     $RecStatus_Types = array(
                               '-8' => 'TunerBusy',
@@ -79,12 +76,12 @@
     }
 
 /**
- * loads all program data for the specified time range into the $Channels array.
+ * loads all program data for the specified time range.
  * Set $single_program to true if you only want information about programs that
  * start exactly at $start_time (used by program_detail.php)
 /**/
     function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '', $distinctTitle = false) {
-        global $Channels, $db;
+        global $db;
     // Don't allow negative timestamps; it confuses MySQL
         if ($start_time < 0)
             $start_time = 0;
@@ -95,36 +92,13 @@
     // that the user can sort by chanid or channum).
         $channel_hash = array();
     // An array (that later gets converted to a string) containing the id's of channels we want to load
-        $these_channels = array();
-    // Information was requested about a specific chanid - let's make sure it has an entry in the global array
-        if ($chanid) {
-            if (!is_array($Channels))
-                $Channels = array();
-            $found = false;
-            foreach ($Channels as $channel) {
-                if ($channel->chanid == $chanid) {
-                    $found = true;
-                    break;
-                }
-            }
-            if (!$found)
-                load_one_channel($chanid);
-        }
-    // No channel data?  Load it
-        if (!is_array($Channels) || !count($Channels))
-            load_all_channels();
-    // Scan through the channels array and actually assign those references
-        foreach (array_keys($Channels) as $key) {
-            $channel_hash[$Channels[$key]->chanid] =& $Channels[$key];
-        // Reinitialize the programs array for this channel
-            $Channels[$key]->programs = array();
-        // Keep track of this channel id in case we're only grabbing info for certain channels - workound included to avoid blank chanid's
-            if ($Channels[$key]->chanid)
-                $these_channels[] = $Channels[$key]->chanid;
-        }
+        if ($chanid)
+            $these_channels[] = $chanid;
+        else
+            $these_channels = Channel::getChannelList();
     // convert $these_channels into a string so it'll go straight into the query
         if (!count($these_channels))
-            trigger_error("load_all_program_data() attempted with an empty \$Channels array", FATAL);
+            trigger_error("load_all_program_data() attempted with out any channels", FATAL);
         $these_channels = implode(',', $these_channels);
     // Build the sql query, and execute it
         $query = 'SELECT program.*,

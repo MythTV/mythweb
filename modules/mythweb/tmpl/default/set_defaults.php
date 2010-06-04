@@ -54,6 +54,22 @@
                <?php if ($_SESSION['show_video_covers']) echo ' CHECKED'; ?>></td>
 </tr>
 <tr>
+    <th><?php echo t('cache_engine'); ?>:</th>
+    <td><select name="cache_engine" id="cache_engine">
+            <?php
+                foreach(Cache::$Engines as $engine) {
+                    eval("\$enabled = $engine::isEnabled();");
+                    if ($enabled) {
+                        ?>
+                        <option value="<?php echo $engine;?>" <?php if ($_SESSION['cache_engine'] == $engine) echo 'SELECTED'; ?>><?php echo t($engine); ?>
+                        <?php
+                    }
+                }
+            ?>
+        </select>
+    </td>
+</tr>
+<tr>
     <td align="right"><input type="reset"  class="submit" value="<?php echo t('Reset') ?>"></td>
     <td align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>"></td>
 </tr>

@@ -156,7 +156,7 @@ class Schedule {
 
     // Do we have a chanid?  Load some info about it
         if ($this->chanid && !isset($this->channel)) {
-            $this->channel =& load_one_channel($this->chanid);
+            $this->channel =& Channel::find($this->chanid);
         }
 
     // Find out which css category this recording falls into
@@ -355,7 +355,7 @@ class Schedule {
                 case rectype_once:       $str .= t('rectype-long: once');       break;
                 case rectype_daily:      $str .= t('rectype-long: daily');      break;
                 case rectype_channel:
-                    $channel =& load_one_channel($this->chanid);
+                    $channel =& Channel::find($this->chanid);
                     $str     .= t('rectype-long: channel', $_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign);
                     break;
                 case rectype_always:     $str .= t('rectype-long: always');     break;

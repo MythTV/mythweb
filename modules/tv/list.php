@@ -42,9 +42,6 @@
 // Set a session variable so other sections know how to get back to this particular page
     $_SESSION['list_time'] = $list_starttime;
 
-// Populate the $Channels array
-    load_all_channels();
-
 // Load all relevant program information for all channels
     load_all_program_data($list_starttime, $list_endtime);
 

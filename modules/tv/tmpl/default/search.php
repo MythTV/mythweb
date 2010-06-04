@@ -207,7 +207,7 @@
                     echo '<br><a href="', root_url, 'tv/detail/', $chanid, '/', $showtime, '" class="italic">',
                          strftime($_SESSION['date_search'] ,$showtime);
                     if ($chanid != $show->chanid)
-                        echo ' (', $Channels[$chanid]->callsign, ')';
+                        echo ' (', Channel::find($chanid)->callsign, ')';
                     echo '</a>';
                 }
                 ?></td>
