@@ -114,6 +114,7 @@ EOF;
 ?>
         <a id="tv_link"<?php if ($Path[0] == 'tv') echo ' class="current_section"' ?> href="tv" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('TV functions, including recorded programs.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/tv.png" class="alpha_png" alt="MythTV">
+            <span style="display: none;"><?php echo t('Television'); ?></span>
         </a>
 <?php
     }
@@ -121,6 +122,7 @@ EOF;
 ?>
         <a id="music_link"<?php if ($Path[0] == 'music') echo ' class="current_section"' ?> href="music" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythMusic on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/music.png" class="alpha_png" alt="MythMusic">
+            <span style="display: none;"><?php echo t('Music'); ?></span>
         </a>
 <?php
       }
@@ -128,6 +130,7 @@ EOF;
 ?>
         <a id="video_link"<?php if ($Path[0] == 'video') echo ' class="current_section"' ?> href="video" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythVideo on the web.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/video.png" class="alpha_png" alt="MythVideo">
+            <span style="display: none;"><?php echo t('Videos'); ?></span>
         </a>
 <?php
       }
@@ -135,12 +138,14 @@ EOF;
 ?>
         <a id="weather_link"<?php if ($Path[0] == 'weather') echo ' class="current_section"' ?> href="weather" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('MythWeb Weather.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/weather.png" class="alpha_png" alt="MythWeather">
+            <span style="display: none;"><?php echo t('Weather'); ?></span>
         </a>
 <?php
       }
 ?>
         <a id="settings_link"<?php if ($Path[0] == 'settings') echo ' class="current_section"' ?> href="settings" onmouseover="return help_text('<?php echo str_replace("'", "\\'", t('Edit MythWeb and some MythTV settings.')) ?>')" onmouseout="return help_text()">
             <img src="<?php echo skin_url ?>img/settings.png" class="alpha_png" alt="<?php echo t('Settings') ?>">
+            <span style="display: none;"><?php echo t('Settings'); ?></span>
         </a>
     </div>
     <div id="extra_header">

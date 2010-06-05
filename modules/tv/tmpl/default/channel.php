@@ -51,7 +51,7 @@
 <?php
 
 // Only show the programs if there are some to display
-    if (is_array($this_channel->programs)) {
+    if (is_array($programs)) {
 ?><table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
     <td><?php echo t('Time')        ?></td>
@@ -62,7 +62,7 @@
 </tr><?php
 
         $row = 0;
-        foreach ($this_channel->programs as $show) {
+        foreach ($programs as $show) {
 
         // Print some additional information for movies
         $additional = '';

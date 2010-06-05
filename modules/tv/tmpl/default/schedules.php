@@ -180,7 +180,7 @@
         ?></td>
     <td class="x-group"><?php echo _or($schedule->recgroup, '&nbsp;') ?></td>
     <td class="x-type"><?php  echo $schedule->texttype ?></td>
-    <td class="x-group"><?php echo _or($schedule->storagegroup, '&nbsp;') ?></td>
+    <td class="x-sgroup"><?php echo _or($schedule->storagegroup, '&nbsp;') ?></td>
     <td class="x-startoffset"><?php echo _or($schedule->startoffset, '&nbsp;') ?></td>
     <td class="x-endoffset"><?php echo _or($schedule->endoffset, '&nbsp;') ?></td>
     <td class="x-lastrec"><?php echo _or($schedule->last_record, '&nbsp;') ?></td>

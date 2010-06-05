@@ -36,12 +36,12 @@
     }
 
 // Load the programs for today
-    $this_channel->programs = load_all_program_data(mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']), date('Y', $_SESSION['list_time'])),
-                                                    mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']) + 1, date('Y', $_SESSION['list_time'])),
-                                                    $this_channel->chanid);
+    $programs = load_all_program_data(mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']), date('Y', $_SESSION['list_time'])),
+                                      mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']) + 1, date('Y', $_SESSION['list_time'])),
+                                      $this_channel->chanid);
 
 // No data?  Assume today.
-    if (count($this_channel->programs) < 1) {
+    if (count($programs) < 1) {
         redirect_browser(root_url.'tv/channel/'.$this_channel->chanid.'/'.time());
     }
 
