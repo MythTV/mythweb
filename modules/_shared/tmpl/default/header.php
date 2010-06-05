@@ -57,14 +57,6 @@ EOF;
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="robots" content="noindex, nofollow">
 
-    <script type="text/javascript" src="js/prototype.js"></script>
-    <script type="text/javascript" src="js/prototip/prototip.js"></script>
-    <link rel="stylesheet" type="text/css" href="js/prototip/prototip.css">
-
-    <script type="text/javascript" src="js/utils.js"></script>
-    <script type="text/javascript" src="js/AC_OETags.js"></script>
-    <script type="text/javascript" src="js/table_sort.js"></script>
-
     <script type="text/javascript">
         <!--
         // -----------------------------------------------------------------------------
@@ -83,10 +75,27 @@ EOF;
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/header.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/menus.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/programming.css">
+    <link rel="stylesheet" type="text/css" href="js/prototip/prototip.css">
 
 <?php
     if (!empty($headers) && is_array($headers))
-        echo '    ', implode("\n    ", $headers), "\n";
+        foreach ($headers as $header)
+            if (strpos($header, 'text/css') !== false)
+                echo $header."\n";
+?>
+
+    <script type="text/javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" src="js/prototip/prototip.js"></script>
+
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/AC_OETags.js"></script>
+    <script type="text/javascript" src="js/table_sort.js"></script>
+
+<?php
+    if (!empty($headers) && is_array($headers))
+        foreach ($headers as $header)
+            if (strpos($header, 'text/css') === false)
+                echo $header."\n";
 ?>
 
 </head>
@@ -160,7 +169,7 @@ EOF;
 </div>
 
 
-<table width="100%" border="0" cellspacing="2" cellpadding="0">
+<table id="command_choices_table" width="100%" border="0" cellspacing="2" cellpadding="0">
 <tr>
 
     <td colspan="2" class="menu menu_border_t menu_border_b"><table class="body" width="100%" border="0" cellspacing="2" cellpadding="2">
