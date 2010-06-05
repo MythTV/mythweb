@@ -42,9 +42,6 @@
 // Set a session variable so other sections know how to get back to this particular page
     $_SESSION['list_time'] = $list_starttime;
 
-// Load all relevant program information for all channels
-    load_all_program_data($list_starttime, $list_endtime);
-
 // Are we an ajax request?
     if ($_REQUEST['ajax'])
         require_once tmpl_dir.'list_data.php';

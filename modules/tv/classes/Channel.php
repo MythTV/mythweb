@@ -145,12 +145,11 @@ class Channel {
             $timeslot_size = timeslot_size;
         }
 
-        foreach (array_keys($this->programs) as $key) {
+        $programs = &load_all_program_data($start_time, $end_time, $this->chanid);
+        foreach ($programs as &$program) {
         // Leave early?  just in case
             if ($timeslots_left < 1)
                 break;
-        // Grab a reference
-            $program = &$this->programs[$key];
         // Make sure this program happens within the specified timeslot
             if ($program->starttime >= $end_time || $program->endtime <= $start_time)
                 continue;

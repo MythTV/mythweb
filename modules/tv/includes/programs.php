@@ -145,7 +145,7 @@
     // No results
         if ($sh->num_rows() < 1) {
             $sh->finish();
-            return NULL;
+            return array();
         }
     // Build two separate queries for optimized selecting of recstatus
         $sh2 = $db->prepare('SELECT recstatus
