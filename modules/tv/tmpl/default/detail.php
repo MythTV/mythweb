@@ -356,15 +356,15 @@
                          echo '/'.urlencode($_GET['chanid']).'/'.urlencode($_GET['starttime']) ?>" method="post">
             <input type="hidden" name="change_display" value="1">
 
-                <label for="CurrentRecording"><input type="checkbox" id="CurrentRecording" name="CurrentRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_CurrentRecording']) echo "CHECKED"; ?>> <?php echo t('Current Recording'); ?><br>
+                <label for="CurrentRecording"><input type="checkbox" id="CurrentRecording" name="CurrentRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_CurrentRecording']) echo "CHECKED"; ?>> <?php echo t('Current Recording'); ?></label><br>
 
-                <label for="EarlierShowing"><input type="checkbox" id="EarlierShowing" name="EarlierShowing" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_EarlierShowing']) echo "CHECKED"; ?>> <?php echo t('Earlier Showing'); ?><br>
+                <label for="EarlierShowing"><input type="checkbox" id="EarlierShowing" name="EarlierShowing" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_EarlierShowing']) echo "CHECKED"; ?>> <?php echo t('Earlier Showing'); ?></label><br>
 
-                <label for="PreviousRecording"><input type="checkbox" id="PreviousRecording" name="PreviousRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_PreviousRecording']) echo "CHECKED"; ?>> <?php echo t('Previous Recording'); ?><br>
+                <label for="PreviousRecording"><input type="checkbox" id="PreviousRecording" name="PreviousRecording" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_PreviousRecording']) echo "CHECKED"; ?>> <?php echo t('Previous Recording'); ?></label><br>
 
-                <label for="WillRecord"><input type="checkbox" id="WillRecord" name="WillRecord" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_WillRecord']) echo "CHECKED"; ?>> <?php echo t('Will Record'); ?><br>
+                <label for="WillRecord"><input type="checkbox" id="WillRecord" name="WillRecord" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_WillRecord']) echo "CHECKED"; ?>> <?php echo t('Will Record'); ?></label><br>
 
-                <label for="Conflict"><input type="checkbox" id="Conflict" name="Conflict" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_Conflict']) echo "CHECKED"; ?>> <?php echo t('Conflicts'); ?><br>
+                <label for="Conflict"><input type="checkbox" id="Conflict" name="Conflict" onclick="$('change_display').submit()" <?php if ($_SESSION['recording_details']['show_Conflict']) echo "CHECKED"; ?>> <?php echo t('Conflicts'); ?></label><br>
                 </div>
         </form>
         </th>
