@@ -18,8 +18,8 @@
     $page_title = 'MythWeb - '.t('Program Detail').":  $schedule->title";
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
     $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.1.1.min.js"></script>';
 
 // Print the page header
@@ -107,7 +107,7 @@
 // -->
 </script>
 
-
+    <div id="content">
         <table id="x-info" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
 <?php   if ($channel) { ?>
@@ -760,6 +760,9 @@
 
 <?php
     }
+?>
+    </div>
+<?php
 
 // Print the page footer
     require 'modules/_shared/tmpl/'.tmpl.'/footer.php';

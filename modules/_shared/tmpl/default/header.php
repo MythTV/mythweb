@@ -71,11 +71,11 @@ EOF;
         // -->
     </script>
 
+    <link rel="stylesheet" type="text/css" href="js/prototip/prototip.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/header.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/menus.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/programming.css">
-    <link rel="stylesheet" type="text/css" href="js/prototip/prototip.css">
 
 <?php
     if (!empty($headers) && is_array($headers))
