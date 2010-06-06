@@ -403,7 +403,7 @@
         }
         if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['channel'] == 'on') {
             ?>
-                <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td>
+                <td class="x-channum"><?php echo $show->channum, ' - ', $show->channame ?></td>
             <?php
         }
         if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['recording group'] == 'on') {
