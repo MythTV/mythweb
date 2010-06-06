@@ -34,14 +34,17 @@ class Channel {
     public $programs = array();
 
     public static function &find($id) {
+        if ($id <= 1)
+            return null;
         $object = &Cache::getObject(self::$cacheKey."($id)");
-        if (get_class($object) !== 'Channel')
+        if (!is_object($object) || get_class($object) !== 'Channel')
             $object = new self($id);
         return $object;
     }
 
     public static function getChannelList() {
-        if (is_null(self::$channel_list)) {
+        $channel_list = Cache::get(self::$cacheKey.'[channelList]');
+        if (is_null($channel_list)) {
             global $db;
             $sql = 'SELECT channel.chanid FROM channel';
             if ($_SESSION['guide_favonly'])
@@ -56,15 +59,17 @@ class Channel {
                     .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
         // Query
             $sh = $db->query($sql);
-            self::$channel_list = array();
+            $channel_list = array();
             while ($chanid = $sh->fetch_col())
-                self::$channel_list[] = $chanid;
+                $channel_list[] = $chanid;
+            Cache::set(self::$cacheKey.'[channelList]', $channel_list);
         }
-        return self::$channel_list;
+        return $channel_list;
     }
 
     public static function getCallsignList() {
-        if (is_null(self::$callsign_list)) {
+        $callsign_list = Cache::get(self::$cacheKey.'[callsignList]');
+        if (is_null($callsign_list)) {
             global $db;
             $sql = 'SELECT channel.chanid, channel.channum, channel.callsign FROM channel';
             if ($_SESSION['guide_favonly'])
@@ -79,11 +84,12 @@ class Channel {
                     .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
         // Query
             $sh = $db->query($sql);
-            self::$callsign_list = array();
+            $callsign_list = array();
             while ($channel_data = $sh->fetch_assoc())
-                self::$callsign_list[$channel_data['channum'].':'.$channel_data['callsign']] = $channel_data['chanid'];
+                $callsign_list[$channel_data['channum'].':'.$channel_data['callsign']] = $channel_data['chanid'];
+            Cache::set(self::$cacheKey.'[callsignList]', $callsign_list);
         }
-        return self::$callsign_list;
+        return $callsign_list;
     }
 
     /* public */
