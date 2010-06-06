@@ -312,7 +312,7 @@
 EOM;
         }
 
-        echo "<tr id=\"inforow_$row\" class=\"recorded\">\n";
+        echo "<tr id=\"inforow_$row\" class=\"recorded inforow\">\n";
         if ($group_field != "")
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
 ?>
@@ -380,7 +380,7 @@ EOM;
 <?php       } ?>
 <?php   } ?>
         </td>
-</tr><tr id="statusrow_<?php echo $row ?>" class="recorded">
+</tr><tr id="statusrow_<?php echo $row ?>" class="recorded statusrow">
     <td colspan="6" valign="top"><?php echo $show->description ?></td>
     <td colspan="<?php echo 2 + $recgroup_cols ?>" class="x-progflags"><?php
         // Auto expire is interactive
