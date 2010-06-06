@@ -128,12 +128,12 @@
 }
 
 #listings td.x-status.will_record {
-    color:              #00FF00;
+    color:              #000000;
     background-color:   #00FF00;
 }
 
 #listings td.x-status.record_conflicting {
-    color:              #FF0000;
+    color:              #000000;
     background-color:   #FF0000;
 }
 
