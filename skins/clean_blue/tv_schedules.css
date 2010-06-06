@@ -1,0 +1,56 @@
+#no_schedules {
+    margin:         1em;
+    padding:        1em;
+    font-size:      200%;
+    text-align:     center;
+}
+
+#listings th {
+    font-weight:        normal;
+    text-align:         left;
+    white-space:        nowrap;
+}
+
+#listings th.x-priority {
+    text-align:         center;
+}
+
+#listings td.x-priority {
+    text-align:         center;
+}
+
+.scheduled td,
+th
+{
+    border-bottom:      1px solid #E4E4E4;
+}
+.x-priority,
+.x-channel,
+.x-profile,
+.x-transcoder,
+.x-sgroup,
+.x-startoffset,
+.x-endoffset,
+.x-group,
+.x-type,
+.x-lastrec
+{
+    background-color:   #C5D8E9;
+}
+
+#listings th {
+    text-align:         center;
+}
+
+.x-profile,
+.x-transcoder,
+.x-sgroup,
+.x-startoffset,
+.x-endoffset
+{
+    display: none;
+}
+
+#listings th {
+    font-weight:    bold;
+}

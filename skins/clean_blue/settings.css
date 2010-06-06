@@ -1,0 +1,187 @@
+/* @deprecated
+ * A class for the the cells containing settings in the various settings files
+/*/
+    .settings {
+    }
+
+/* The main box surrounding all settings editors */
+    #settings {
+        margin-top:     1em;
+    }
+
+/* Overview of the settings */
+
+    #settings .x-overview {
+        text-align:     center;
+        width:          15em;
+    }
+    #settings .x-title {
+        margin:         .5em;
+        font-size:      125%;
+        color:          #9B1919;
+    }
+
+/* The list of modules. */
+
+    #settings .x-modules {
+        white-space:    nowrap;
+    }
+    #settings .x-modules ul {
+        margin:             1em;
+        list-style-type:    none;
+        padding:            0px;
+    }
+    #settings .x-modules li {
+    }
+    #settings .x-modules a {
+        display: block;
+        text-align:         center;
+        text-decoration:    none;
+        font-size:          14px;
+        font-weight:        bold;
+        outline:            none;
+        border:             none !important;
+        padding:            6px 0 0;
+        width:              15em;
+        text-align:         center;
+        text-decoration:    none;
+        margin:             0 0 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: .5em;
+        height:             24px;
+        color:              #666666;
+        background-image:   url('./img/grey_fade.jpg');
+        -moz-border-radius:     8px;
+        -webkit-border-radius:  8px;
+    }
+    #settings .x-modules a:hover, #settings .x-modules a.x-selected {
+        color:              #FFFFFF;
+        background-image:   url('./img/blue_fade.jpg');
+    }
+    #settings .x-modules a.x-selected {
+        border-style:       solid;
+    }
+
+/* The list of sections for the current module. Normally displayed as tabs. */
+
+    #settings .x-sections {
+        padding:        0px 0em;
+        height:         4em;
+        vertical-align: middle;
+        min-width:      60%;
+    }
+
+    #settings .x-sections ul {
+        display:        inline;
+        list-style:     none;
+        margin:         0;
+        padding:        0;
+    }
+    #settings .x-sections a {
+        float: left;
+        text-align:         center;
+        text-decoration:    none;
+        font-size:          14px;
+        font-weight:        bold;
+        outline:            none;
+        border:             none !important;
+        padding:            6px 0 0;
+        width:              140px;
+        text-align:         center;
+        text-decoration:    none;
+        margin:             0 0 0 10px;
+        height:             24px;
+        color:              #666666;
+        background-image:   url('./img/grey_fade.jpg');
+        -moz-border-radius:     8px;
+        -webkit-border-radius:  8px;
+        white-space: nowrap;
+    }
+    #settings .x-sections a:hover, #settings .x-sections a.x-selected, #settings .x-sections a.active {
+        color:              #FFFFFF;
+        background-image:   url('./img/blue_fade.jpg');
+    }
+
+/* Select which host to edit the settings for. */
+
+    #settings .x-host {
+        text-align:         right;
+        width:              200px;
+    }
+
+/* A notification/warning */
+
+    #settings .x-notice,
+    .error {
+        -moz-border-radius:                 8px;
+        -webkit-border-radius:              8px;
+        -moz-box-shadow:                    1px 1px 5px #999;
+        -webkit-box-shadow:                 1px 1px 5px #999;
+        box-shadow:                         1px 1px 5px #999;
+        padding-bottom:                     1em;
+        margin-left:                        1em;
+        margin-right:                       1em;
+        margin-bottom:                      3em;
+        margin-top:                         1em;
+        width:                              auto !important;
+        margin:             1em;
+        padding:            .5em;
+        text-align:         center;
+        color:              #fbb;
+        background-color:   #360000;
+        border:             1px solid #F03030;
+    }
+
+/* The content of the settings that are being edited */
+
+    #settings .x-content {
+        background-color:   #102923;
+    }
+
+    #settings .x-content table {
+        width:              100%;
+    }
+    #settings .x-content table th, #settings .x-content table td {
+        padding:            .5em;
+    }
+
+    #settings .x-content th {
+        text-align:         right;
+        font-weight:        normal;
+        white-space:        nowrap;
+    }
+
+    #settings .x-content tr.x-sep th, #settings .x-content tr.x-sep td {
+    }
+
+
+#settings {
+    width: 95%;
+}
+
+#settings .x-content {
+            background-color:                   #c5d8e9;
+        -moz-border-radius:                 8px;
+        -webkit-border-radius:              8px;
+        -moz-box-shadow:                    1px 1px 5px #999;
+        -webkit-box-shadow:                 1px 1px 5px #999;
+        box-shadow:                         1px 1px 5px #999;
+        padding-bottom:                     1em;
+        margin-left:                        1em;
+        margin-right:                       1em;
+        margin-bottom:                      3em;
+        margin-top:                         1em;
+        width:                              auto !important;
+}
+
+#settings .x-content tr.x-sep th,
+#settings .x-content table th
+{
+    text-align: left;
+    width:      15em;
+}
+
+#settings .x-content .list {
+    background-color: #E4E4E4;
+}

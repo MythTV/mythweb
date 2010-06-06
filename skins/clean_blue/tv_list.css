@@ -1,0 +1,117 @@
+/*
+ *
+ * Styles used in /tv/list
+ *
+/*/
+
+.right_arrow {
+    float: right;
+}
+.left_arrow {
+    float: left;
+}
+
+.x-channel {
+    width:              8em;
+    height:             70px;
+    padding:            0 !important;
+    vertical-align:     middle;
+    background-color:   #FFFFFF;
+    white-space:        nowrap;
+    -moz-border-radius:     8px;
+    -webkit-border-radius:  8px;
+}
+.x-channel img {
+    position:           relative;
+    top:                -4px;
+    vertical-align:     middle;
+    max-width:          70px;
+    max-height:         30px;
+}
+.x-channel a {
+    display:            block;
+    text-align:         center;
+    padding:            5px;
+}
+.x-channel .x-preferred {
+    margin-left:        5px;
+    font-size:          200%;
+}
+
+#list_head {
+    width:              80%;
+    margin:             1em auto;
+}
+
+
+#x_current_time {
+    font-size:          150%;
+    margin-top:         .25em;
+    float:              left;
+    color:              #9B1919;
+}
+
+#x-jumpto {
+    position: absolute;
+    right:   1em;
+    color:              #9B1919;
+}
+#x-jumpto td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#x-jumpto td.x-jumpto {
+    font-size:          110%;
+    font-weight:        bold;
+}
+#x-jumpto td.x-hour {
+}
+#x-jumpto td.x-hour select {
+    text-align:         right;
+}
+#x-jumpto .x-day select {
+    text-align:         center;
+}
+
+#x-jumpto a img {
+    vertical-align:     middle;
+    height:             16px;
+    width:              16px;
+    margin-top:         -2px;
+    background-color:   #c5d8e9;
+}
+
+#x-jumpto a {
+    height:             20px;
+    width:              20px;
+    padding:            2px;
+    background-color:   #c5d8e9;
+    background-image: none !important;
+}
+
+#x-jumpto a:hover {
+    background-image:   url('./img/blue_fade.jpg');
+}
+
+.list td {
+    -moz-border-radius:     8px;
+    -webkit-border-radius:  8px;
+}
+
+.list td.menu a.link img {
+    float: left;
+}
+
+.list td.menu {
+    text-align: left;
+}
+
+.PreviousRecording,
+.record_duplicate,
+.record_old_duplicate
+{
+    opacity: .5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+}

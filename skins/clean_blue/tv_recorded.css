@@ -1,0 +1,169 @@
+/* This table holds the title and recgroup choices */
+
+#title_choices {
+    margin:     1em auto;
+}
+#title_choices td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#title_choices td.x-group, #title_choices td.x-recordings {
+    font-size:          110%;
+    font-weight:        bold;
+}
+#title_choices td.x-recordings {
+}
+
+/* This is the table that holds the list of recorded shows */
+
+#recorded_list {
+}
+
+#recorded_list td {
+    padding:        4px;
+}
+#recorded_list th {
+    padding:        0;
+    text-align:     left;
+    font-weight:    normal;
+}
+#recorded_list th a {
+    padding:        2px .5em;
+    display:        block;
+}
+
+#recorded_list td.x-pixmap {
+    padding:            0 !important;
+    width:              150px;
+    position:           relative;
+    margin-right:       .5em;
+}
+#recorded_list td.x-pixmap.x-noimg {
+    width:              50px;
+}
+#recorded_list td.x-pixmap a {
+}
+#recorded_list td.x-pixmap a:hover {
+    background-color:   #121;
+}
+
+#recorded_list td.x-pixmap a.x-pixmap {
+    float:          left;
+    height:         78px;
+}
+#recorded_list td.x-pixmap a.x-pixmap img {
+    width:          100px;
+}
+#recorded_list td.x-pixmap a.x-download {
+    margin-left:    102px;
+    display:        block;
+    padding:        7px;
+    height:         24px;
+    text-align:     center;
+    vertical-align: middle;
+}
+#recorded_list td.x-pixmap.x-noimg a.x-download {
+    margin-left:    2px;
+}
+
+
+#recorded_list th.x-title a, #recorded_list td.x-title {
+}
+#recorded_list th.x-subtitle a, #recorded_list td.x-subtitle {
+}
+#recorded_list th.x-programid a, #recorded_list td.x-programid {
+}
+#recorded_list th.x-channum a, #recorded_list td.x-channum {
+}
+#recorded_list th.x-airdate a, #recorded_list td.x-airdate {
+    text-align:     center;
+    white-space:    nowrap;
+}
+#recorded_list th.x-recgroup a, #recorded_list td.x-recgroup {
+}
+#recorded_list th.x-length a, #recorded_list td.x-length {
+    white-space:    nowrap;
+    text-align:     center;
+}
+#recorded_list th.x-filesize a, #recorded_list td.x-filesize {
+    white-space:    nowrap;
+    text-align:     center;
+}
+
+#recorded_list td.x-commands {
+    padding:            2px;
+    width:              5%;
+    white-space:        nowrap;
+    text-align:         center;
+    vertical-align:     top;
+}
+#recorded_list td.x-commands a {
+    display:            block;
+    padding:            .25em .5em;
+    margin:             0 0 3px 0;
+    color:              #666666;
+    background-image:   url('./img/grey_fade.jpg');
+    border:             1px #666666;
+    margin-right:       .5em;
+    margin-left:        .5em;
+    -moz-border-radius:     8px;
+    -webkit-border-radius:  8px;
+    text-decoration:        none;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+}
+
+#recorded_list td.x-commands a:hover {
+    color:              #FFFFFF;
+    background-image:   url('./img/blue_fade.jpg');
+    border:             1px #666666;
+    text-decoration:    none;
+}
+
+/* a class for the the cells containing recored programs in recorded_programs.php */
+
+.recorded .x-progflags img {
+    padding:    .3em;
+}
+
+#recorded_pager {
+    margin-top:         1em;
+    margin-bottom:      1em;
+    margin-left:        1em;
+    float:              left;
+}
+
+td.list {
+    width:                  0px !important;
+    margin:                 0px !important;
+    padding:                0px !important;
+/*    -moz-border-radius:     0px;
+    -webkit-border-radius:  0px;*/
+    -moz-box-shadow:        0px 0px 0px #999;
+	-webkit-box-shadow:     0px 0px 0px #999;
+    box-shadow:             0px 0px 0px #999;
+}
+
+#recorded_list td.x-pixmap img,
+#recorded_list td img.channelicon
+{
+    -moz-border-radius:     8px;
+    -webkit-border-radius:  8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+}
+
+tr.statusrow td,
+td.x-pixmap
+{
+    border-bottom:                  1px solid #E4E4E4 !important;
+}
+
+#title_choices .x-group,
+#title_choices .x-recordings
+{
+    color:                          #9B1919;
+}

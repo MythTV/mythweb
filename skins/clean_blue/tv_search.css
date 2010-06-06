@@ -1,0 +1,108 @@
+#search_options {
+    margin:     1em auto;
+}
+#search_options td {
+    padding:            .5em 1em;
+    vertical-align:     top;
+    white-space:        nowrap;
+}
+#search_options td.x-advanced {
+}
+#search_options td.x-timeopts {
+}
+#search_options td.x-progtype {
+}
+#search_options td.x-submit {
+    vertical-align:     middle;
+    padding:            1.5em;
+}
+
+
+#x_search_name {
+    font-size:          150%;
+    text-align:         center;
+}
+
+#search_results th {
+    font-weight:        normal;
+    text-align:         left;
+    white-space:        nowrap;
+}
+#search_results th.x-title {
+}
+#search_results th.x-category {
+}
+#search_results th.x-description {
+}
+#search_results th.x-channum {
+}
+#search_results th.x-airdate {
+}
+#search_results th.x-length {
+}
+
+#search_results td {
+}
+#search_results td.x-title {
+}
+#search_results td.x-category {
+}
+#search_results td.x-description {
+}
+#search_results td.x-channum {
+}
+#search_results td.x-airdate {
+    white-space:        nowrap;
+}
+#search_results td.x-length {
+    white-space:        nowrap;
+}
+
+#x_search_name {
+    color:#9B1919;
+    font-size:20px;
+
+}
+
+td.list {
+    display: none;
+}
+
+#search_results {
+    margin-left:   1em;
+    margin-right:  1em;
+    margin-bottom: 3em;
+    width: auto;
+}
+
+tr.list_separator {
+    background-color:   #C5D8E9;
+    text-align:         center;
+}
+
+tr.menu th {
+    font-weight:        bold !important;
+}
+
+.x-advanced a {
+    -moz-border-radius:                 8px;
+    -webkit-border-radius:              8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+    background-image:                   url('./img/grey_fade.jpg');
+    border:                             1px #666666 !important;
+    color:                              #666666;
+    font-weight:                        normal;
+}
+
+.x-advanced a:hover {
+    color:                  #FFFFFF !important;
+    background-image:       url('./img/blue_fade.jpg');
+    border:                 1px #666666;
+    text-decoration:        none;
+}
+
+#search_options td.x-submit {
+    vertical-align: bottom;
+}

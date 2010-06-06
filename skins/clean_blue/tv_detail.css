@@ -1,0 +1,363 @@
+/*
+ * Table around all program info (left column)
+/*/
+
+#x-info {
+    float:              left;
+    padding:            0px;
+    width:              45em;
+    margin:             10px 0px 10px 10px;
+    background-color:   #101a29;
+    color:              #E0E0FF;
+}
+
+/*
+ * This div contains the program overview:
+ * channel/title/subtitle/time/description
+/*/
+
+.x-channel {
+    width:              8em;
+    padding:            0 !important;
+    vertical-align:     middle;
+    background-color:   #202a49;
+    white-space:        nowrap;
+}
+.x-channel img {
+    position:           relative;
+    top:                -4px;
+    vertical-align:     middle;
+    max-width:          90px;
+    max-height:         50px;
+}
+.x-channel a {
+    display:            block;
+    text-align:         center;
+    padding:            5px;
+}
+.x-channel .x-preferred {
+    margin-left:        5px;
+    font-size:          200%;
+}
+
+#x-title {
+    padding:            .2em .5em;
+}
+#x-title a {
+    font-size:      175% !important;
+    font-weight:    bold;
+}
+
+#x-time {
+    margin-top:     .2em;
+    white-space:    nowrap;
+}
+#x-description {
+    padding:        .5em;
+}
+#x-progflags td {
+    padding:        .5em;
+}
+#x-progflags img {
+    margin-right:   .3em;
+}
+#x-progflags a img {
+}
+#x-progflags a:hover img {
+}
+
+#x-status {
+}
+
+
+#x-status th {
+    vertical-align:     top;
+    font-weight:        normal;
+    text-align:         right;
+    padding:            .25em;
+    white-space:        nowrap;
+}
+#x-status td {
+    padding:            .25em;
+}
+#x-status td a {
+    float:              left;
+    margin-right:       .5em;
+    font-weight:        bold;
+    border:             1px solid #7b8;
+    padding:            .15em .5em;
+}
+#x-status td a:hover {
+}
+
+#x-info .x-extras {
+}
+#x-info .x-extras th {
+    vertical-align: top;
+    font-weight:    normal;
+    text-align:     right;
+    padding:        .25em;
+    white-space:    nowrap;
+}
+#x-info .x-extras td {
+    padding:        .25em;
+}
+
+#x-conflicts th {
+    vertical-align:     top;
+    font-weight:        normal;
+    text-align:         right;
+    white-space:        nowrap;
+    padding:            .5em .25em;
+}
+#x-conflicts td {
+    padding:            .25em;
+    padding-bottom:     0;
+}
+#x-conflicts td a {
+    display:            block;
+    padding:            .15em .25em;
+    margin-bottom:      .25em;
+}
+#x-conflicts {
+}
+
+#x-info .x-links th {
+    vertical-align:     top;
+    font-weight:        normal;
+    text-align:         right;
+    white-space:        nowrap;
+    padding:            .4em .25em;
+}
+#x-info .x-links td {
+    padding:            .25em;
+    padding-bottom:     0;
+}
+#x-info .x-links td a {
+    display:            block;
+    padding:            .15em .25em;
+    margin-bottom:      .25em;
+}
+
+#x-downloads {
+    float:              left;
+    padding:            0px;
+    min-width:          350px;
+    max-width:          500px;
+    margin:             10px 0px 10px 10px;
+}
+#x-downloads img {
+    margin-right:       .3em;
+}
+#x-downloads a img {
+}
+#x-downloads a {
+}
+#x-downloads a:hover img {
+}
+#x-downloads div.x-pixmap {
+    padding:            1em 1em 0em 1em;
+    text-align:         center;
+}
+#x-downloads div.x-pixmap a.x-pixmap {
+    margin:             .25em auto;
+}
+
+#x-downloads div.x-links {
+    padding:            .5em;
+    text-align:         center;
+}
+
+#x-downloads div.x-links a {
+    position:           relative;
+    top:                -10px;
+    margin:             0px 1.5em;
+    padding:            .75em;
+}
+#x-downloads div.x-links a img {
+    position:           relative;
+    top:                10px;
+}
+#x-downloads div.x-links a:hover img {
+}
+#x-downloads div.x-links a:hover {
+    text-decoration:    none;
+}
+#x-downloads div.x-jobs {
+    padding:            .5em;
+}
+
+#x-downloads div.x-jobs a {
+    margin-right:       .5em;
+    font-weight:        bold;
+    padding:            .15em .5em;
+}
+#x-downloads div.x-jobs a:hover {
+}
+
+#x-downloads div.x-jobs ul {
+    padding:            0px 0px 0px 1.5em;
+}
+#x-downloads div.x-jobs li {
+    padding-bottom:     .25em;
+}
+
+#x-downloads div.x-jobs ul.x-queue li {
+    padding-bottom:     .75em;
+}
+
+#x-downloads div.x-frontends {
+    padding:            0.5em;
+}
+
+#x-downloads div.x-frontends ul {
+    padding:            0px 0px 0px 1.5em;
+}
+#x-downloads div.x-frontends li {
+    padding-bottom:     .25em;
+}
+
+#x-downloads div.x-frontends ul li {
+    padding-bottom:     .75em;
+}
+
+#x-downloads div.x-frontends ul li a {
+    font-weight:        bold;
+    margin-right:       0.5em;
+    padding:            0.15em 0.5em;
+}
+
+#x-downloads div.x-frontends ul li a:hover {
+    text-decoration:    underline;
+}
+
+#content html{
+    background-color:                   #c5d8e9;
+    -moz-border-radius:                 8px;
+    -webkit-border-radius:              8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+    -webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+    width:                              auto !important;
+    padding-bottom:                     1em;
+    margin-left:                        1em;
+    margin-right:                       1em;
+    margin-bottom:                      3em;
+}
+
+#schedule {
+    width:                              auto !important;
+    max-width:                          48%;
+}
+
+#div-x-info {
+    position:                           absolute;
+    right:                              0em;
+    -moz-border-radius:                 8px;
+    -webkit-border-radius:              8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+    -webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+    background-color:                   #c5d8e9;
+    padding-bottom:                     1em;
+    margin-left:                        1em;
+    margin-right:                       1em;
+    margin-bottom:                      3em;
+    width:                              auto !important;
+    max-width:                          48%;
+}
+
+#x-info {
+    width:                              auto !important;
+    margin-right:                       1em;
+    background-color:                   #c5d8e9;
+    color:                              #000000;
+    border:                             none;
+}
+
+#x-info *,
+#x-progflags,
+.x-extras
+{
+    border:                             none;
+}
+
+.x-channel {
+    background-color:                   transparent;
+    border:                             none;
+}
+
+.x-channel a img {
+    -moz-border-radius:                 8px;
+    -webkit-border-radius:              8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+    -webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+}
+
+#x-title {
+    border:                             none;
+    color:                              #000000;
+    -moz-border-radius:                 8px;
+    -webkit-border-radius:              8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+    -webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+}
+
+#x-status a,
+.x-jobs a,
+.x-frontends a
+{
+    color:              #666666;
+    background-image:   url('./img/grey_fade.jpg');
+    border:             1px #666666;
+    margin-right:       .5em;
+    margin-left:        .5em;
+    -moz-border-radius:     8px;
+    -webkit-border-radius:  8px;
+    text-decoration:        none;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+}
+
+#x-status a:hover,
+.x-jobs a:hover,
+.x-frontends a:hover
+{
+    color:              #FFFFFF;
+    background-image:   url('./img/blue_fade.jpg');
+    border:             1px #666666;
+    text-decoration:    none;
+}
+
+#x-downloads {
+    -moz-border-radius:                 8px;
+    -webkit-border-radius:              8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+    -webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+    background-color:                   #c5d8e9;
+    padding-bottom:                     1em;
+    margin-left:                        1em;
+    margin-right:                       1em;
+    margin-bottom:                      3em;
+    width:                              auto !important;
+    max-width:                          48%;
+}
+
+#x-downloads div.x-pixmap {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#x-downloads div.x-links {
+    margin-top: .5em;
+    width: 100%;
+}
+
+div.x-links a {
+    margin-right: .25em !important;
+    margin-left: .25em !important;
+}

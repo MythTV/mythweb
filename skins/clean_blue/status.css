@@ -1,0 +1,100 @@
+#content_wrapper {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+h1 {
+    font-size:      28px;
+    font-weight:    900;
+    color:          #9B1919;
+    margin-bottom:  30px;
+    text-align:     center;
+}
+h2 {
+    text-align:     center;
+    font-size:      18px;
+    font-weight:    800;
+    color:          #2A90C1;
+    border:         none;
+    padding:        0px;
+    margin-bottom:  10px;
+    margin-top:     0px;
+}
+hr {
+    display:none;
+}
+div.content {
+        background-color:                   #c5d8e9;
+        -moz-border-radius:                 8px;
+        -webkit-border-radius:              8px;
+        -moz-box-shadow:                    1px 1px 5px #999;
+        -webkit-box-shadow:                 1px 1px 5px #999;
+        box-shadow:                         1px 1px 5px #999;
+        padding-bottom:                     1em;
+        padding-left:                       1em;
+        padding-right:                      1em;
+        padding-top:                        1em;
+        margin-left:                        1em;
+        margin-right:                       1em;
+        margin-bottom:                      3em;
+        margin-top:                         1em;
+        width:                              auto !important;
+}
+div.schedule a {
+    position:        relative;
+    display:         block;
+    color:           white;
+    text-decoration: none;
+    padding:         .2em .8em;
+    margin-right:   280px;
+    /*width:           340px;*/
+    font-weight:                    bold;
+    color: #000000;
+}
+div.schedule a span {
+    display:none;
+}
+div.schedule a:hover {
+    color:              #000000;
+    background-color:   #E4E4E4;
+    background-image:   url('./img/grey_fade.jpg');
+    -moz-border-radius-topleft:     8px;
+    -moz-border-radius-bottomleft:     8px;
+    border-top-left-radius:  8px;
+    border-bottom-left-radius:     8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-left-radius:  8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+}
+div.schedule a:hover span {
+    display:          block;
+    position:         absolute;
+    color:            #000000;
+    background-color:   #E4E4E4;
+    right:            -291px;
+    top:            0px;
+    width:            280px;
+    padding:          5px;
+    -moz-border-radius:     8px;
+    -webkit-border-radius:  8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+
+}
+div.diskstatus {
+    //width:  325px;
+    height: 7em;
+    float:  left;
+}
+div.loadstatus {
+    //width:  325px;
+    height: 7em;
+    float:  right;
+}
+.jobfinished { color: white; }
+.jobaborted  { color: #ff2222;  }
+.joberrored  { color: #ff4444;  }
+.jobrunning  { color: #00ff00;  }

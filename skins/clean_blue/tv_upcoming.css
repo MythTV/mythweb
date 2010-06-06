@@ -1,0 +1,163 @@
+#display_options {
+    margin:     2em auto;
+}
+#display_options td {
+    padding:            .35em 1em;
+    vertical-align:     middle;
+    white-space:        nowrap;
+}
+#display_options td.x-title {
+    font-size:          110%;
+    font-weight:        bold;
+    color:              #9B1919;
+}
+#display_options td.x-check {
+    padding:            .35em .5em;
+    height:             2em;
+}
+#display_options td.x-check label {
+    padding-top:        .15em;
+    padding-bottom:     .15em;
+    padding-left:       .5em;
+    padding-right:      .35em;
+    margin-top:         .5em;
+    margin-bottom:      .5em;
+    margin-left:        0em;
+    margin-right:       0em;
+}
+#display_options td.x-check label:hover {
+    text-decoration:    none;
+}
+#display_options td.x-check input {
+    float:              none;
+    padding:            0px;
+    margin:             0px;
+    margin-right:       5px;
+    margin-top:         -1px;
+}
+
+#listings {
+    width: 100%;
+}
+#listings th {
+    font-weight:    normal;
+    text-align:     left;
+}
+
+#listings th.x-status {
+    text-align:         center;
+}
+#listings th.x-title {
+}
+#listings th.x-originalairdate {
+}
+#listings th.x-episodenumber {
+}
+#listings th.x-channum {
+}
+#listings th.x-recgroup {
+}
+#listings th.x-airdate {
+}
+#listings th.x-length {
+}
+
+#listings td.x-status {
+    text-align:         center;
+}
+#listings td.x-title {
+}
+#listings td.x-originalairdate {
+}
+#listings td.x-episodenumber {
+}
+#listings td.x-channum {
+}
+#listings td.x-recgroup {
+}
+#listings td.x-airdate {
+    white-space:        nowrap;
+}
+#listings td.x-length {
+    white-space:        nowrap;
+}
+#listings td.x-commands {
+    padding:            2px;
+    text-align:         center;
+    white-space:        nowrap;
+}
+#listings td.x-commands a {
+    display:            block;
+    padding:            .25em .5em;
+    margin:             0;
+    color:              #666666;
+    background-image:   url('./img/grey_fade.jpg');
+    border:             1px #666666 !important;
+    margin-right:       .5em;
+    margin-left:        .5em;
+    -moz-border-radius:     8px;
+    -webkit-border-radius:  8px;
+    text-decoration:        none;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+}
+
+#listings td.x-commands a:hover {
+    color:              #FFFFFF !important;
+    background-image:   url('./img/blue_fade.jpg');
+    text-decoration:        none;
+}
+
+#listings td.x-recording a {
+    border:             1px solid #0f0;
+}
+
+#listings td.list {
+    display:            none;
+}
+
+.will_record {
+    color:              #000000;
+    border:             none !important;
+}
+
+.record_conflicting  {
+    color:              #000000;
+    border:             none !important;
+}
+
+#listings td.x-status.will_record {
+    color:              #00FF00;
+    background-color:   #00FF00;
+}
+
+#listings td.x-status.record_conflicting {
+    color:              #FF0000;
+    background-color:   #FF0000;
+}
+
+.scheduled,
+.conflict
+{
+    background-color:   transparent !important;
+}
+
+#listings td {
+    border-bottom:      1px solid #E4E4E4;
+}
+
+.x-channum {
+    overflow:           hidden;
+    white-space:        nowrap;
+    max-width:          12em;
+}
+
+.x-title {
+    border:             none;
+}
+
+.list_separator {
+    text-align:         center;
+    font-weight:        bold;
+}

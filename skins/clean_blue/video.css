@@ -1,0 +1,108 @@
+    .video {
+        position:           relative;
+        padding:            1em;
+        float:              left;
+        background-color:   #003366;
+        margin-top:         1em;
+        margin-left:        1em;
+        background-color:                   #c5d8e9;
+        -moz-border-radius:                 8px;
+        -webkit-border-radius:              8px;
+        -moz-box-shadow:                    1px 1px 5px #999;
+        -webkit-box-shadow:                 1px 1px 5px #999;
+        box-shadow:                         1px 1px 5px #999;
+        border: none;
+    }
+
+    .video .title {
+        font-weight:        bold;
+        margin-bottom:      .5em;
+        height:             2.5em;
+        overflow:           hidden;
+    }
+
+    .video img {
+        float:              left;
+        padding-right:      1em;
+    }
+
+    .video .command {
+        position:           absolute;
+        bottom:             1em;
+        right:              1em;
+    }
+
+    #path {
+        position:           relative;
+        padding:            1em;
+        float:              left;
+        margin-top:         1em;
+        margin-left:        1em;
+        background-color:                   #c5d8e9;
+        -moz-border-radius:                 8px;
+        -webkit-border-radius:              8px;
+        -moz-box-shadow:                    1px 1px 5px #999;
+        -webkit-box-shadow:                 1px 1px 5px #999;
+        box-shadow:                         1px 1px 5px #999;
+        padding-bottom:                     1em;
+        margin-left:                        1em;
+        margin-right:                       1em;
+        margin-bottom:                      3em;
+        margin-top:                         1em;
+        width:                              auto !important;
+        border: none;
+    }
+
+    #path .active {
+        color:              yellow;
+    }
+
+    #window {
+        position:           fixed;
+        left:               35%;
+        right:              35%;
+        width:              30%;
+        top:                35%;
+        background-color:   green;
+        padding-top:        1em;
+        z-index:            10;
+        border:             2px solid gray;
+    }
+
+    #window_content a {
+        padding-right:      1em;
+        padding-left:       1em;
+    }
+
+    #window iframe {
+        width:              100%;
+        border:             0px;
+        height:             250px;
+    }
+
+    #window_title {
+        position:           absolute;
+        top:                1px;
+        left:               1em;
+        font-weight:        bold;
+    }
+
+    .popup {
+        width:              30%;
+        font-size:          9pt;
+    }
+
+    .popup dt {
+        clear:              left;
+        float:              left;
+        padding-top:        3px;
+        white-space:        nowrap;
+        width:              6em;
+        font-weight:        bold;
+        text-align:         right;
+    }
+
+    .popup  dd {
+        margin-left:        6.5em;
+        padding-top:        3px;
+    }

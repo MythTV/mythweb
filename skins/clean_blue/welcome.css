@@ -1,0 +1,115 @@
+#modules {
+    width:              600px;
+    margin:             100px auto;
+	margin-bottom:		3em;
+}
+
+#module_names {
+    margin:             0px;
+    margin-top:         10px;
+    padding:            0px;
+    float:              left;
+    width:              162px;
+    font-size:          2em;
+    min-height:         15em;
+    z-index:            1;
+}
+
+#module_names ul {
+    z-index:            1;
+    margin:             0px;
+    padding:            0px;
+    list-style-type:    none;
+    text-align:         right;
+}
+
+#module_names li {
+    position:                           relative;
+    z-index:                            1;
+    margin:                             0px -6px 0px 0px;
+    padding:                            0px .5em .15em 0px;
+    border:                             2px solid transparent;
+    white-space:                        nowrap;
+    -moz-border-radius-topleft:         8px;
+    -moz-border-radius-bottomleft:      8px;
+    -webkit-border-top-left-radius:     8px;
+    -webkit-border-bottom-left-radius:  8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+    background-image:                   url('./img/grey_fade.jpg');
+    margin-bottom:                      5px;
+}
+
+#module_names li a {
+    color:                              #000000 !important;
+}
+
+#module_names li a:hover,
+#module_names li:hover,
+#module_names:hover
+{
+    color:                              #FFFFFF !important;
+}
+
+#module_names li.selected,
+#module_names li.selected a
+{
+    color:              #FFFFFF !important;
+    background-image:   url('./img/blue_fade.jpg');
+}
+
+#module_info {
+    background-color:                   #C5D8E9;
+    margin-left:                        14em;
+    min-width:                          314px;
+    height:                             30em;
+    padding:                            .5em 1em;
+    z-index:                            99;
+    -moz-border-radius:                 8px;
+    -webkit-border-radius:              8px;
+    -moz-box-shadow:                    1px 1px 5px #999;
+	-webkit-box-shadow:                 1px 1px 5px #999;
+    box-shadow:                         1px 1px 5px #999;
+/*    background-image:                   url('./img/blue_fade.jpg');
+    background-size:                    100%;*/
+}
+
+.module_icon {
+    display: block;
+    margin: auto;
+}
+
+#mythtv_link {
+    display:        none;
+    float:          left;
+    width:          14em;
+    text-align:     center;
+    margin-top:     -1.5em;
+}
+
+#modules {
+    position:       relative;
+}
+
+#module_names {
+    left:           0px;
+    top:            0px;
+    float:          none;
+    position:       absolute;
+    z-index:        1 !important;
+    overflow:       hidden;
+    padding-left:    5px;
+}
+
+#module_names li {
+    margin-bottom:  .42em;
+}
+
+#module_info {
+    z-index:        99 !important;
+}
+
+a#reset {
+	margin-left: 1em;
+}
