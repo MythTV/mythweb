@@ -108,6 +108,8 @@
 </script>
 
     <div id="content">
+        <div id="contentBlock">
+        <div id="div-x-info">
         <table id="x-info" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
 <?php   if ($channel) { ?>
@@ -433,6 +435,7 @@
                 </td>
         </tr>
         </table>
+    </div>
 
 <?php if (!$program || !$program->filename || ($program->filename && $program->recendts > time())) { ?>
     <div id="schedule">
@@ -761,6 +764,7 @@
 <?php
     }
 ?>
+    </div>
     </div>
 <?php
 
