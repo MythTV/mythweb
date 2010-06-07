@@ -2,7 +2,7 @@ This is the INSTALL file for the MythWeb package.  It contains the installation
 requirements and instructions for MythWeb.  Please see README for other
 information.
 
-July 13, 2009
+June 6, 2010
 
 ========
 Contents
@@ -51,7 +51,7 @@ from communication by a firewall:
     http://www.perl.com/
 
 Current versions of these in use by the MythWeb developer(s) are 2.2.x for
-Apache, 5.1.x for PHP, and 5.8.x for Perl.  Make sure to build both Apache and
+Apache, 5.3.x for PHP, and 5.8.x for Perl.  Make sure to build both Apache and
 PHP according to the instructions at the PHP home site, and be sure to include
 support for session, MySQL, pcre, posix and json when building PHP.
 

@@ -1,7 +1,7 @@
 This is the README file for the MythWeb package.
 February 16, 2008
 
-Version: .22-svn
+Version: .24-svn
 (c) 2002-2008  Chris Petersen   <mythweb(a)forevermore(o)net>
                Isaac Richards   <ijr(a)po(o)cwru(o)edu>
                Thor Sigvaldason <mythtv(a)lamedomainname(o)com>
@@ -140,16 +140,16 @@ A: Check your apache logs for details about what caused the error.  Usually,
     an important setup file.
 
 Q: I can't see any thumbnail images of the recordings on my CIFS/SMB share.
-A: There is a bug in the Linux CIFS driver that is triggered by Apache when 
-    it uses 'sendfile' to send an image. To work around it, add the following 
+A: There is a bug in the Linux CIFS driver that is triggered by Apache when
+    it uses 'sendfile' to send an image. To work around it, add the following
     line to your Apache configuration (httpd.conf) file...
         EnableSendfile Off
     See http://httpd.apache.org/docs/2.2/mod/core.html#enablesendfile for info.
 
 Q: MythWeb complains about "Warning: Unknown Programme" after Daylight Savings
     Time has started/finished.
-A: PHP may not have determined your local timezone correctly. Read the PHP 
-    section of MythWeb's INSTALL file to find out how to correctly configure 
+A: PHP may not have determined your local timezone correctly. Read the PHP
+    section of MythWeb's INSTALL file to find out how to correctly configure
     your timezone in PHP.
 
 Q: Why is my MythWeb install locked?
