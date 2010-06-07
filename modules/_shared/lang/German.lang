@@ -226,15 +226,12 @@
     Nach Künstler beginnend mit
 "By Genre"
     Nach Genre
+"Cache_APC"
 "cache_engine"
 "Cache_Memcache"
 "Cache_Memcached"
 "Cache_Null"
 "Cache_SHM"
-"Cache_Static"
-"Cache_StaticMemcache"
-"Cache_StaticMemcached"
-"Cache_StaticSHM"
 "callsign"
     Kurzname
 "Cancel"

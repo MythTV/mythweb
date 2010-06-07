@@ -19,9 +19,9 @@ class MythBase {
     private static $instances = array();
 
     public static function &find() {
-        $args = func_get_args();
         $class = get_called_class();
-        $key = $class.'('.implode(',', $args).')';
+        $args = func_get_args();
+        $key = self::getCacheKey($class, $args);
         if (!isset(self::$instances[$key])) {
             self::$instances[$key] = &Cache::getObject($key);
             if (is_null(self::$instances[$key]) || !is_object(self::$instances[$key]) || get_class(self::$instances[$key]) !== $class) {
@@ -36,6 +36,18 @@ class MythBase {
     public function __destruct() {
         if (!is_null($this->cacheKey))
             Cache::setObject($this->cacheKey, $this, $this->cacheLifetime);
+    }
+
+    private static function getCacheKey($class, &$data) {
+        switch ($class) {
+            case 'Program':
+                $ret = array('chanid'=>$data[0]['chanid'], 'starttime'=>$data[0]['starttime']);
+                break;
+            default:
+                $ret = $data;
+                break;
+        }
+        return implode(',', $ret);
     }
 
 }

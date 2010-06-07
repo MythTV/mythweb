@@ -185,7 +185,7 @@
                    list($data['recstatus']) = $sh3->fetch_row();
                 }
             // Create a new instance
-                $program =& new Program($data);
+                $program =& Program::find($data);
             }
         // Add this program to the channel hash, etc.
             $these_programs[]                          =& $program;

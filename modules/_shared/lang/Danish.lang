@@ -236,15 +236,12 @@
     Efter kunstner startende med
 "By Genre"
     Efter genre
+"Cache_APC"
 "cache_engine"
 "Cache_Memcache"
 "Cache_Memcached"
 "Cache_Null"
 "Cache_SHM"
-"Cache_Static"
-"Cache_StaticMemcache"
-"Cache_StaticMemcached"
-"Cache_StaticSHM"
 "callsign"
     kaldenavn
 "Cancel"

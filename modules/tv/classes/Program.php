@@ -16,7 +16,7 @@
 /**
  * Program class
 /**/
-class Program {
+class Program extends MythBase {
 
 // The following fields are (in order) the fields returned from the backend on
 // a standard query.

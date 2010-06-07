@@ -5,10 +5,7 @@
  *  way to have them picked up.
  */
     t('Cache_Null');
-    t('Cache_Static');
+    t('Cache_APC');
     t('Cache_SHM');
     t('Cache_Memcache');
     t('Cache_Memcached');
-    t('Cache_StaticSHM');
-    t('Cache_StaticMemcache');
-    t('Cache_StaticMemcached');

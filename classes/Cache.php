@@ -4,9 +4,10 @@ class Cache {
     private static $Instance = null;
 
     public static $Engines = array('Cache_Null',
+                                   'Cache_APC',
                                    'Cache_SHM',
                                    'Cache_Memcache',
-                                   'Cache_Memcached',
+                                   'Cache_Memcached'
                                   );
 
     public static function &get($key = null) {

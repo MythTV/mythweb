@@ -13,6 +13,8 @@ class Cache_Memcached implements Cache_Engine {
     }
 
     public function &get($key = null) {
+        if (is_array($key))
+            return $this->Memcache->getMulti($key);
         return $this->Memcache->get($key);
     }
 

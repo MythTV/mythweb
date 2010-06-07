@@ -62,15 +62,6 @@ class Schedule {
     var $will_record = false;
     var $css_class;         // css class, based on category and/or category_type
 
-/**
- * Multiton style!
- **/
-    public function &find($recordid) {
-        if (!isset(self::$instances[$recordid]))
-            self::$instances[$recordid] = new self($recordid);
-        return self::$instances[$recordid];
-    }
-
     public function &findAll($sort = true) {
         global $db;
         $orderby = '';

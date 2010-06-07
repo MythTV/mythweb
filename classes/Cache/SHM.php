@@ -19,6 +19,12 @@ class Cache_SHM implements Cache_Engine {
     }
 
     public function &get($key = null) {
+        if (is_array($key)) {
+            $ret = array();
+            foreach ($key as $k => $v)
+                $ret[$k] = &self::get($v);
+            return $ret;
+        }
         $start = microtime(true);
         $data = shm_get_var(self::$SHMhandle, self::getVarKey($key));
         if (!is_null($data)) {

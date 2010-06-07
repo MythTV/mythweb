@@ -1,16 +1,11 @@
 <?php
 
-class Cache_Memcache implements Cache_Engine {
-
-    private $Memcache = null;
+class Cache_APC implements Cache_Engine {
 
     public function __construct() {
-        $this->Memcache = new Memcache;
-        $this->Memcache->addServer('localhost', 11211);
     }
 
     public function __destruct() {
-        $this->Memcache->close();
     }
 
     public function &get($key = null) {
@@ -20,15 +15,16 @@ class Cache_Memcache implements Cache_Engine {
                 $ret[$k] = &self::get($v);
             return $ret;
         }
-        return $this->Memcache->get($key);
+
+        return apc_fetch($key);
     }
 
     public function set($key, $data, $lifeLength) {
-        return $this->Memcache->set($key, $data, null, $lifeLength);
+        return apc_store($key, $data, $lifeLength);
     }
 
     public static function isEnabled() {
-        if (!class_exists('Memcache'))
+        if (!function_exists('apc_add'))
             return false;
         return true;
     }
