@@ -155,9 +155,8 @@ class Schedule {
         $this->texttype = $GLOBALS['RecTypes'][$this->type];
 
     // Do we have a chanid?  Load some info about it
-        if ($this->chanid && !isset($this->channel)) {
+        if ($this->chanid > 0 && !isset($this->channel))
             $this->channel =& Channel::find($this->chanid);
-        }
 
     // Find out which css category this recording falls into
         if ($this->chanid != '')

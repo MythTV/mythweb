@@ -13,11 +13,9 @@
  *
 /**/
 
-class Channel {
+class Channel extends MythBase {
     private static $channel_list = null;
     private static $callsign_list = null;
-
-    private static $cacheKey = 'channel';
 
     public $chanid;
     public $channum;
@@ -33,17 +31,8 @@ class Channel {
     public $visible;
     public $programs = array();
 
-    public static function &find($id) {
-        if ($id <= 1)
-            return null;
-        $object = &Cache::getObject(self::$cacheKey."($id)");
-        if (!is_object($object) || get_class($object) !== 'Channel')
-            $object = new self($id);
-        return $object;
-    }
-
     public static function getChannelList() {
-        $channel_list = Cache::get(self::$cacheKey.'[channelList]');
+        $channel_list = Cache::get('[channelList]');
         if (is_null($channel_list)) {
             global $db;
             $sql = 'SELECT channel.chanid FROM channel';
@@ -62,13 +51,13 @@ class Channel {
             $channel_list = array();
             while ($chanid = $sh->fetch_col())
                 $channel_list[] = $chanid;
-            Cache::set(self::$cacheKey.'[channelList]', $channel_list);
+            Cache::set('[channelList]', $channel_list);
         }
         return $channel_list;
     }
 
     public static function getCallsignList() {
-        $callsign_list = Cache::get(self::$cacheKey.'[callsignList]');
+        $callsign_list = Cache::get('[callsignList]');
         if (is_null($callsign_list)) {
             global $db;
             $sql = 'SELECT channel.chanid, channel.channum, channel.callsign FROM channel';
@@ -87,13 +76,17 @@ class Channel {
             $callsign_list = array();
             while ($channel_data = $sh->fetch_assoc())
                 $callsign_list[$channel_data['channum'].':'.$channel_data['callsign']] = $channel_data['chanid'];
-            Cache::set(self::$cacheKey.'[callsignList]', $callsign_list);
+            Cache::set('[callsignList]', $callsign_list);
         }
         return $callsign_list;
     }
 
     /* public */
     function __construct($chanid) {
+    // Are we loading up an invalid channel?
+        if ($chanid == -1)
+            return;
+
         global $db;
         $channel_data = $db->query_assoc('SELECT * FROM channel WHERE chanid = ?', $chanid);
         $this->chanid       = $channel_data['chanid'];
@@ -126,10 +119,6 @@ class Channel {
     // Wipe the icon path completely if it doesn't exist.
         if (!is_file($this->icon))
             $this->icon = null;
-    }
-
-    function __destruct() {
-        Cache::set(self::$cacheKey."({$this->chanid})", &$this);
     }
 
 /** @deprecated FIXME:  this routine should get split out on its own, accepting

@@ -20,7 +20,7 @@
 /**/
 
     if (!isset($_SESSION['cache_engine']))
-        $_SESSION['cache_engine'] = 'Cache_Static';
+        $_SESSION['cache_engine'] = 'Cache_Null';
 
 // Prefer channum over callsign?
     if (empty($_SESSION['prefer_channum']))

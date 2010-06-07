@@ -52,13 +52,16 @@
     // Go through each channel and load/print its info - use references to avoid "copy" overhead
         foreach ($Callsigns as $chanid) {
             $channel =& Channel::find($chanid);
+
         // Ignore channels with no number
             if (strlen($channel->channum) < 1)
                 continue;
+
         // Skip already-displayed channels
             if ($displayed_channels[$channel->channum][$channel->callsign])
                 continue;
             $displayed_channels[$channel->channum][$channel->callsign] = 1;
+
         // Display the timeslot bar?
             if ($channel_count % timeslotbar_skip == 0) {
             // Update the timeslot anchor

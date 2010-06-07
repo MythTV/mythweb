@@ -4,17 +4,13 @@ class Cache {
     private static $Instance = null;
 
     public static $Engines = array('Cache_Null',
-                                   'Cache_Static',
                                    'Cache_SHM',
                                    'Cache_Memcache',
                                    'Cache_Memcached',
-                                   'Cache_StaticSHM',
-                                   'Cache_StaticMemcache',
-                                   'Cache_StaticMemcached',
                                   );
 
     public static function &get($key = null) {
-        $data = Cache::$Instance->get($key);
+        $data = &Cache::$Instance->get($key);
         if (!$data)
             return null;
         return $data;
@@ -36,9 +32,9 @@ class Cache {
         return Cache::$Instance->set($key, serialize($object), $lifeLength);
     }
 
-    public static function initalize($engine = 'Cache_Static') {
+    public static function initalize($engine) {
         if (!in_array($engine, self::$Engines))
-            $engine = 'Cache_Static';
+            $engine = 'Cache_Null';
         if (is_null(Cache::$Instance))
             Cache::$Instance = new $engine();
     }
