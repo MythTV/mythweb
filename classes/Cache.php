@@ -43,6 +43,10 @@ class Cache {
     public static function delete($key) {
         return Cache::set($key, null);
     }
+
+    public static function clear() {
+        return Cache::$Instance->clear();
+    }
 }
 
 Cache::initalize($_SESSION['cache_engine']);

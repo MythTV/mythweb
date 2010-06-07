@@ -27,4 +27,8 @@ class Cache_Memcached implements Cache_Engine {
             return false;
         return true;
     }
+
+    public function clear() {
+        return $this->Memcache->flush();
+    }
 }

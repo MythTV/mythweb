@@ -15,10 +15,10 @@
 /**
  * A connection to a particular frontend
 /**/
-class MythFrontend {
+class MythFrontend extends MythBase {
 
 /** @var resource   File pointer to the socket connection. */
-    private $fp;
+    private $fp = false;
 
 /** @var bool       Connected?. */
     private $connected = false;
@@ -31,40 +31,27 @@ class MythFrontend {
 /** @var array      List of jump points available on this host. */
     private $jump_points = array();
 
-    private static $frontends;
-
     public static function findFrontends() {
-        global $db;
 
-        if (is_array(self::$frontends) && count(self::$frontends))
-            return self::$frontends;
+        $frontends = Cache::get('MythFrontends[Frontends]');
 
-        $frontends = array();
-        $frontends_sh = $db->query('SELECT DISTINCT settings.hostname
-                                      FROM settings
-                                     WHERE settings.hostname IS NOT NULL
-                                       AND settings.value = "NetworkControlEnabled"
-                                       AND settings.data  = 1');
-        while ( $host = $frontends_sh->fetch_col()) {
-            $frontend = MythFrontend::find($host);
-            if ($frontend)
-                $frontends[$host] = $frontend;
+        if (!is_array($frontends) || count($frontends) == 0) {
+            global $db;
+
+            $frontends = array();
+            $frontends_sh = $db->query('SELECT DISTINCT settings.hostname
+                                          FROM settings
+                                         WHERE settings.hostname IS NOT NULL
+                                           AND settings.value = "NetworkControlEnabled"
+                                           AND settings.data  = 1');
+            while ( $host = $frontends_sh->fetch_col()) {
+                $frontend = &MythFrontend::find($host);
+                if ($frontend->query_location() != 'OFFLINE')
+                    $frontends[$host] = $frontend;
+            }
+            Cache::set('MythFrontends[Frontends]', $frontends);
         }
-        self::$frontends = $frontends;
         return $frontends;
-    }
-
-    public static function find($host, $port = null) {
-    // Remove some characters that should never be here, anyway, and might
-    // confuse javascript/html
-        $host = preg_replace('/["\']+/', '', $host);
-        if (is_null($port))
-            $port = setting('NetworkControlPort', $host);
-        $frontend = new MythFrontend($host, $port);
-        $frontend->connect(2);
-        if ($frontend->query_location() == 'OFFLINE')
-            return false;
-        return $frontend;
     }
 
 /**
@@ -73,9 +60,17 @@ class MythFrontend {
  * @param string $host Hostname or IP for this frontend.
  * @param int    $port TCP port to connect to.
 /**/
-    public function __construct($host, $port) {
+    public function __construct($host, $port = null) {
+    // Remove some characters that should never be here, anyway, and might
+    // confuse javascript/html
+        $host = preg_replace('/["\']+/', '', $host);
+        if (is_null($port))
+            $port = setting('NetworkControlPort', $host);
         $this->host = $host;
         $this->port = $port;
+        $this->connect(2);
+        if ($this->query_location() == 'OFFLINE')
+            $this->connected = false;
     }
 
 /**
@@ -83,6 +78,7 @@ class MythFrontend {
 /**/
     function __destruct() {
        $this->disconnect();
+       parent::__destruct();
    }
 
 /**

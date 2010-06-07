@@ -56,4 +56,8 @@ class Cache_SHM implements Cache_Engine {
     public static function isEnabled() {
         return function_exists('shm_attach');
     }
+
+    public function clear() {
+        return shm_remove(self::$SHMhandle);
+    }
 }

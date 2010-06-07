@@ -24,8 +24,14 @@ class Cache_APC implements Cache_Engine {
     }
 
     public static function isEnabled() {
-        if (!function_exists('apc_add'))
+        if (!function_exists('apc_fetch'))
             return false;
         return true;
+    }
+
+    public function clear() {
+        apc_clear_cache('user');
+        apc_clear_cache();
+        return;
     }
 }

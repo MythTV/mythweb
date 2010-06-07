@@ -203,10 +203,9 @@ class MythBackend {
 /**/
     public function rescheduleRecording($recordid = -1) {
         $this->sendCommand('RESCHEDULE_RECORDINGS '.$recordid);
-        if ($this->listenForEvent('SCHEDULE_CHANGE')) {
-            Cache::delete('global_Scheduled_Recordings');
+        Cache::clear();
+        if ($this->listenForEvent('SCHEDULE_CHANGE'))
             return true;
-        }
         return false;
     }
 

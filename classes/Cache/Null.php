@@ -18,4 +18,8 @@ class Cache_Null implements Cache_Engine {
     public static function isEnabled() {
         return true;
     }
+
+    public function clear() {
+        return true;
+    }
 }
