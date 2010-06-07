@@ -66,7 +66,7 @@
  * Displays a <select> of the available skins
 /**/
     function skin_select($name = 'skin', $selected = null) {
-        echo '<select name="'.$name.'">';
+        echo '<select id="'.$name.'" name="'.$name.'">';
         foreach (get_sorted_files("skins/") as $skin) {
         // Skip the svn directory
             if (in_array($skin, array('.svn')))

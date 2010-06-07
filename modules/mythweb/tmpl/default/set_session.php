@@ -39,3 +39,13 @@
 </table>
 
 </form>
+
+<script type="text/javascript">
+    current_skin = $('skin').getValue();
+    Event.observe('skin', 'change', function() {
+        skin = $('skin').getValue();
+        $$('head link').each(function(s) { s.href = s.href.replace('skins/'+current_skin, 'skins/'+skin); });
+        current_skin = skin;
+        return;
+        });
+</script>
