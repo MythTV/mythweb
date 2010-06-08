@@ -1,5 +1,3 @@
-/* This table holds the title and recgroup choices */
-
 #title_choices {
     margin:     1em auto;
 }
@@ -13,11 +11,6 @@
     font-weight:        bold;
 }
 #title_choices td.x-recordings {
-}
-
-/* This is the table that holds the list of recorded shows */
-
-#recorded_list {
 }
 
 #recorded_list td {
@@ -66,21 +59,11 @@
     margin-left:    2px;
 }
 
-
-#recorded_list th.x-title a, #recorded_list td.x-title {
-}
-#recorded_list th.x-subtitle a, #recorded_list td.x-subtitle {
-}
-#recorded_list th.x-programid a, #recorded_list td.x-programid {
-}
-#recorded_list th.x-channum a, #recorded_list td.x-channum {
-}
 #recorded_list th.x-airdate a, #recorded_list td.x-airdate {
     text-align:     center;
     white-space:    nowrap;
 }
-#recorded_list th.x-recgroup a, #recorded_list td.x-recgroup {
-}
+
 #recorded_list th.x-length a, #recorded_list td.x-length {
     white-space:    nowrap;
     text-align:     center;
@@ -121,8 +104,6 @@
     text-decoration:    none;
 }
 
-/* a class for the the cells containing recored programs in recorded_programs.php */
-
 .recorded .x-progflags img {
     padding:    .3em;
 }
@@ -138,8 +119,6 @@ td.list {
     width:                  0px !important;
     margin:                 0px !important;
     padding:                0px !important;
-/*    -moz-border-radius:     0px;
-    -webkit-border-radius:  0px;*/
     -moz-box-shadow:        0px 0px 0px #999;
 	-webkit-box-shadow:     0px 0px 0px #999;
     box-shadow:             0px 0px 0px #999;

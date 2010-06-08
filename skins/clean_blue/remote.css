@@ -1,16 +1,10 @@
-/* @deprecated
- * A class for the the cells containing settings in the various settings files
-/*/
     .settings {
         background-color: #506080;
     }
 
-/* The main box surrounding all settings editors */
     #remote {
         margin-top:     1em;
     }
-
-/* Overview of the settings */
 
     #remote .x-overview {
         text-align:     center;
@@ -21,8 +15,6 @@
         font-size:      125%;
     }
 
-/* The list of modules. */
-
     #remote .x-modules {
         white-space:    nowrap;
     }
@@ -30,8 +22,6 @@
         margin:             1em;
         list-style-type:    none;
         padding:            0px;
-    }
-    #remote .x-modules li {
     }
     #remote .x-modules a {
         display:            block;
@@ -51,8 +41,6 @@
     #remote .x-modules a.x-selected {
         border-style:       solid;
     }
-
-/* The list of sections for the current module. Normally displayed as tabs. */
 
     #remote .x-sections {
         padding:        0px 1em;
@@ -98,14 +86,10 @@
         margin-bottom:      -1px;
     }
 
-/* Select which host to edit the settings for. */
-
     #remote .x-host {
         text-align:         right;
         border-bottom:      1px solid #9090B0;
     }
-
-/* A notification/warning */
 
     #remote .x-notice {
         margin:             1em;
@@ -115,8 +99,6 @@
         background-color:   #360000;
         border:             1px solid #F03030;
     }
-
-/* The content of the settings that are being edited */
 
     #remote .x-content {
         background-color:   #102923;
@@ -142,8 +124,6 @@
         border-bottom:      1px solid #304943;
     }
 
-/* Key controls */
-
     #remote_keys table td {
         text-align:         center;
         padding:            2px !important;
@@ -168,11 +148,6 @@
     #remote_keys table a.pressed:hover {
         background-color:   #8a7;
     }
-    #remote_keys table a.noshift {
-    }
-    #remote_keys table a.reqshift {
-    }
     #remote_keys table a.x-hidden {
         display:            none;
     }
-

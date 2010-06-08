@@ -20,9 +20,6 @@ a.music{
 }
 
 a.music:hover{
-	/*color: #fff;
-	background: #F21518;
-	text-decoration: none;*/
 	color: #F21518;
 }
 img{
@@ -179,8 +176,6 @@ p.pad{
 }
 
 #wrap{
-	/*background: #fff;
-	border: 1px solid #ccc;*/
 	text-align: left;
 	padding: 0px;
 	margin:0;
@@ -191,7 +186,6 @@ p.pad{
 
 #header{
 	position: relative;
-/*	background: #0E2F58;*/
 	height: 50px;
 	color: #fff;
 	padding: 8px 0 0px 15px;

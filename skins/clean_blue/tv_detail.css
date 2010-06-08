@@ -1,7 +1,3 @@
-/*
- * Table around all program info (left column)
-/*/
-
 #x-info {
     float:              left;
     padding:            0px;
@@ -10,11 +6,6 @@
     background-color:   #101a29;
     color:              #E0E0FF;
 }
-
-/*
- * This div contains the program overview:
- * channel/title/subtitle/time/description
-/*/
 
 .x-channel {
     width:              8em;
@@ -61,14 +52,6 @@
 #x-progflags img {
     margin-right:   .3em;
 }
-#x-progflags a img {
-}
-#x-progflags a:hover img {
-}
-
-#x-status {
-}
-
 
 #x-status th {
     vertical-align:     top;
@@ -87,11 +70,7 @@
     border:             1px solid #7b8;
     padding:            .15em .5em;
 }
-#x-status td a:hover {
-}
 
-#x-info .x-extras {
-}
 #x-info .x-extras th {
     vertical-align: top;
     font-weight:    normal;
@@ -118,8 +97,6 @@
     display:            block;
     padding:            .15em .25em;
     margin-bottom:      .25em;
-}
-#x-conflicts {
 }
 
 #x-info .x-links th {
@@ -149,12 +126,6 @@
 #x-downloads img {
     margin-right:       .3em;
 }
-#x-downloads a img {
-}
-#x-downloads a {
-}
-#x-downloads a:hover img {
-}
 #x-downloads div.x-pixmap {
     padding:            1em 1em 0em 1em;
     text-align:         center;
@@ -178,8 +149,6 @@
     position:           relative;
     top:                10px;
 }
-#x-downloads div.x-links a:hover img {
-}
 #x-downloads div.x-links a:hover {
     text-decoration:    none;
 }
@@ -191,8 +160,6 @@
     margin-right:       .5em;
     font-weight:        bold;
     padding:            .15em .5em;
-}
-#x-downloads div.x-jobs a:hover {
 }
 
 #x-downloads div.x-jobs ul {

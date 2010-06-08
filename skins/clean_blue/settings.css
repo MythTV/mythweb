@@ -1,15 +1,6 @@
-/* @deprecated
- * A class for the the cells containing settings in the various settings files
-/*/
-    .settings {
-    }
-
-/* The main box surrounding all settings editors */
     #settings {
         margin-top:     1em;
     }
-
-/* Overview of the settings */
 
     #settings .x-overview {
         text-align:     center;
@@ -21,8 +12,6 @@
         color:          #9B1919;
     }
 
-/* The list of modules. */
-
     #settings .x-modules {
         white-space:    nowrap;
     }
@@ -30,8 +19,6 @@
         margin:             1em;
         list-style-type:    none;
         padding:            0px;
-    }
-    #settings .x-modules li {
     }
     #settings .x-modules a {
         display: block;
@@ -62,8 +49,6 @@
     #settings .x-modules a.x-selected {
         border-style:       solid;
     }
-
-/* The list of sections for the current module. Normally displayed as tabs. */
 
     #settings .x-sections {
         padding:        0px 0em;
@@ -103,14 +88,10 @@
         background-image:   url('./img/blue_fade.jpg');
     }
 
-/* Select which host to edit the settings for. */
-
     #settings .x-host {
         text-align:         right;
         width:              200px;
     }
-
-/* A notification/warning */
 
     #settings .x-notice,
     .error {
@@ -133,8 +114,6 @@
         border:             1px solid #F03030;
     }
 
-/* The content of the settings that are being edited */
-
     #settings .x-content {
         background-color:   #102923;
     }
@@ -151,10 +130,6 @@
         font-weight:        normal;
         white-space:        nowrap;
     }
-
-    #settings .x-content tr.x-sep th, #settings .x-content tr.x-sep td {
-    }
-
 
 #settings {
     width: 95%;

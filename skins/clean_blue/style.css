@@ -1,7 +1,3 @@
-/*
- * Global page handlers.
-/*/
-
     html,body {
         border:           0;
         margin:           0;
@@ -13,17 +9,10 @@
         margin-bottom:      1em;
     }
 
-    /* For some reason, settings for the main body element doesn't always work for
-     * text inside of tables
-    /*/
     .body {
         font-size: 12px;
         font-family: Arial, Helvetica, sans-serif;
     }
-
-/*
- * We should try to keep links and labels looking consistent across the app.
-/*/
 
     a, a:link, .link { color: #000000; text-decoration: none; cursor: pointer;}
     a:active  { color: #666666; text-decoration: none; }
@@ -33,25 +22,18 @@
     label       { color: #000000; text-decoration: none; cursor: pointer;}
     label:hover { color: #666666; text-decoration: underline; }
 
-/* a class for the menu across the top of the page as well as menu headers throughout the page */
     .menu {          background-color: #c5d8e9; font-weight: bold; text-align: center; }
     .menu_border_t { border-top:    2px solid #9090B0 }
     .menu_border_b { border-bottom: 2px solid #9090B0 }
     .menu_border_l { border-left:   2px solid #9090B0 }
     .menu_border_r { border-right:  2px solid #9090B0 }
 
-/* a class for commands and other user input boxes */
-
-/* @deprecated old classes */
 .command_border_t { border-top:    2px solid #9090B0 }
 .command_border_b { border-bottom: 2px solid #9090B0 }
 .command_border_l { border-left:   2px solid #9090B0 }
 .command_border_r { border-right:  2px solid #9090B0 }
 .activecommand    { background-color: #108040 }
 
-/* New command classes */
-
-    /* Box to hold commands */
     .commandbox {
         background-color:   #c5d8e9;
         color:              #000000;
@@ -66,10 +48,6 @@
         background-color:   #e4e4e4;
         color:              #000000;
     }
-
-    /* Commands themselves */
-
-    .commands { /* Placeholder for handling sub-elements */ }
 
     .commands input.x-submit {
         padding:            0 .5em;
@@ -97,14 +75,8 @@
         color:              #FFFFFF;
     }
 
-/*
- * The following styles refer to forms and form elements throughout MythWeb
-/*/
-
-    /* Avoid those nasty extra linefeeds in IE </form> tags */
     form { display: inline; }
 
-    /* A special class for submit buttons */
     .submit {
         border:             2px outset #7b8;
         padding:            0 .5em;
@@ -120,7 +92,6 @@
         text-decoration:    underline;
     }
 
-    /* A special class for radio buttons and check boxes because some browsers render them weirdly */
     .radio {
         height:             14px !important;
         width:              14px !important;
@@ -128,7 +99,6 @@
         background-color:   #C0D0C0;
     }
 
-    /* Default styles for form fields */
     select {
         font-family:        Arial, Helvetica, sans-serif;
         color:              #000000 !important;
@@ -153,15 +123,10 @@
         border:             1px solid #666666;
     }
 
-    /* Quantity-sized elements look better with the text centered */
     input.quantity {
         width:              2em !important;
         text-align:         center;
     }
-
-/*
- * A special class for error stuff, so all page errors look the same.
-/*/
 
     #error, .error {
         color:              #F03030;
@@ -171,19 +136,12 @@
         padding:            8px;
     }
 
-/*
- * The following represent some global classes to accommodate minor but
- * oft-used manipulations like font sizes.0
-/*/
-
-    /* font size classes */
     .tiny   { font-size: 9px; }
     .small  { font-size: 9pt; }
     .normal { font-size: 10pt; }
     .large  { font-size: 12pt; }
     .huge   { font-size: 24px; }
 
-    /* fony style classes */
     .bold, .bold a, .bold a:link, .bold a:visited, .bold a:active, .bold a:hover {
         font-weight: bold !important;
     }
@@ -191,7 +149,6 @@
         font-style: italic !important;
     }
 
-    /* Handy for, well, hiding things..  Also for mouseover popup menus */
     .hidden {
         visibility: hidden;
         display:    none;
@@ -214,7 +171,6 @@
     .clearfix {display: block;}
     /* End hide from IE-mac */
 
-    /* Ajax little popup request thing style */
     #ajax_working {
         position:           fixed;
         bottom:             0px;
@@ -237,7 +193,6 @@
         cursor:             pointer;
     }
 
-/* I don't think we have a single image with a border in the default template, so disable it */
     a img {
         border:             0px;
         text-decoration:    none !important;
@@ -272,15 +227,6 @@ div.prototip * {
     background-color:                   transparent !important;
     border:                             none !important;
     color:                              #000000 !important;
-}
-
-div.prototip .toolbar {
-}
-
-div.prototip .title {
-}
-
-div.prototip .content {
 }
 
 div.prototip a.close {

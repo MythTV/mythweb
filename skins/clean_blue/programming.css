@@ -1,12 +1,3 @@
-/*
- *
- * The following subclasses are used for list displays that deal with tv
- * programming.
- *
-/*/
-
-/* some classes for various list displays */
-
     #list_content {
         margin-bottom:                      3em;
     }
@@ -37,7 +28,6 @@
         box-shadow:                         1px 1px 5px #999;
     }
 
-/* The category legend, and its associated popup */
     #command_choices a {
         white-space: nowrap;
     }
@@ -54,7 +44,6 @@
         font-size:        9pt;
     }
 
-/* A class for the left-cleared <dl> lists used for program details popups */
     dl.details_list {
         font-size:  9pt;
         margin:     .125em;
@@ -74,7 +63,6 @@
         margin-left: 9.5em;
     }
 
-/* Control the look of the text-based HDTV stamp throughout MythWeb */
     .hdtv_icon {
         font-size:   9pt;
         float:       right;
@@ -83,7 +71,6 @@
         font-weight: bold;
     }
 
-/* a class for the the cells containing recorded programs in recorded_programs.php */
 .scheduled   { background-color: #00FFCC; }
 .conflict    { background-color: #CCCC99; }
 .duplicate   { background-color: #304050; }
@@ -103,9 +90,6 @@
 .record_override_record   { border: 2px solid  #00FF90 !important; }
 
 
-/* There should be exactly one class in the next section corresponding to
-    each possible value of RecStatus_Types as defined in
-    includes/programs.php */
 .rec_class {
     background:  transparent;
     text-align:  center;
@@ -164,7 +148,6 @@
 .cat_series         { background-color: #C0C0C0; }
 .cat_tvshow         { }
 
-/* deprecated show categories that need to be integreted into the above list via regex, or have new categories created for them */
 .tv_Cine           { background-color: blue;            }
 .tv_Classic        { background-color: gray;            }
 .tv_Collectibles   { background-color: #708090;         }

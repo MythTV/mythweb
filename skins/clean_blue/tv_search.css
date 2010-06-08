@@ -6,12 +6,7 @@
     vertical-align:     top;
     white-space:        nowrap;
 }
-#search_options td.x-advanced {
-}
-#search_options td.x-timeopts {
-}
-#search_options td.x-progtype {
-}
+
 #search_options td.x-submit {
     vertical-align:     middle;
     padding:            1.5em;
@@ -28,29 +23,7 @@
     text-align:         left;
     white-space:        nowrap;
 }
-#search_results th.x-title {
-}
-#search_results th.x-category {
-}
-#search_results th.x-description {
-}
-#search_results th.x-channum {
-}
-#search_results th.x-airdate {
-}
-#search_results th.x-length {
-}
 
-#search_results td {
-}
-#search_results td.x-title {
-}
-#search_results td.x-category {
-}
-#search_results td.x-description {
-}
-#search_results td.x-channum {
-}
 #search_results td.x-airdate {
     white-space:        nowrap;
 }
