@@ -77,9 +77,9 @@
 
     <table id="stats" style="text-align: left;">
     <tr class="caption">
-     <td colspan="4"><?php echo t('Shows'); ?></td>
+     <td colspan="3"><?php echo t('Shows'); ?></td>
      <td></td>
-     <td colspan="4"><?php echo t('Channels'); ?></td>
+     <td colspan="3"><?php echo t('Channels'); ?></td>
     </tr>
     <tr>
      <th><?php echo t('Title'); ?></th>
