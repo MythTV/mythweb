@@ -164,6 +164,7 @@
     $prev_group = '';
     $cur_group  = '';
     foreach ($all_shows as $show) {
+        flush();
 
     // Set the class to be used to display the recording status character
         $rec_class = implode(' ', array(recstatus_class($show), $show->recstatus));

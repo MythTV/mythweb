@@ -212,3 +212,4 @@ EOF;
 <?php
 // Errors go here
     display_errors();
+    flush();

@@ -27,3 +27,6 @@
 
 </body>
 </html>
+
+<?php
+    flush();

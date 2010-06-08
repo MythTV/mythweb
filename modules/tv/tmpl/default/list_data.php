@@ -106,6 +106,7 @@
 ?>
     <td>&nbsp;</td>
 </tr><?php
+            flush();
         }
 ?>
 </table>
