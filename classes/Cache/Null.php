@@ -15,6 +15,10 @@ class Cache_Null implements Cache_Engine {
         return null;
     }
 
+    public function delete($key) {
+        return true;
+    }
+
     public static function isEnabled() {
         return true;
     }

@@ -22,6 +22,10 @@ class Cache_Memcached implements Cache_Engine {
         return $this->Memcache->set($key, $data, $lifeLength);
     }
 
+    public function delete($key) {
+        return $this->Memcache->delete($key);
+    }
+
     public static function isEnabled() {
         if (!class_exists('Memcached'))
             return false;

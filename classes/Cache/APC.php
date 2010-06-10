@@ -6,6 +6,12 @@ class Cache_APC implements Cache_Engine {
     }
 
     public function __destruct() {
+        return;
+        echo "\n<!--\n";
+        print_r(apc_cache_info('user'));
+        print_r(apc_cache_info('filehits'));
+        print_r(apc_cache_info());
+        echo "\n-->\n";
     }
 
     public function &get($key = null) {
@@ -21,6 +27,10 @@ class Cache_APC implements Cache_Engine {
 
     public function set($key, $data, $lifeLength) {
         return apc_store($key, $data, $lifeLength);
+    }
+
+    public function delete($key) {
+        return apc_delete($key);
     }
 
     public static function isEnabled() {

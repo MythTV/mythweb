@@ -672,7 +672,7 @@ class Program extends MythBase {
  * Revert a show to its default recording schedule settings
 /**/
     public function rec_default() {
-        $schedule =& $GLOBALS['Schedules'][$this->recordid];
+        $schedule =& Schedule::findAll($this->recordid);
         if ($schedule && ($schedule->type == rectype_override || $schedule->type == rectype_dontrec))
             $schedule->delete();
     }
@@ -682,7 +682,7 @@ class Program extends MythBase {
  * rectype_dontrec or rectype_override constants
 /**/
     public function rec_override($rectype) {
-        $schedule =& $GLOBALS['Schedules'][$this->recordid];
+        $schedule =& Schedule::find($this->recordid);
     // Unknown schedule?
         if (!$schedule) {
             add_error('Unknown schedule for this program\'s recordid:  '.$this->recordid);

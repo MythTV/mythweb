@@ -41,7 +41,7 @@ class Cache {
     }
 
     public static function delete($key) {
-        return Cache::set($key, null);
+        return Cache::$Instance->delete($key);
     }
 
     public static function clear() {

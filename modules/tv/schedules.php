@@ -22,12 +22,11 @@
 // Load the sorting routines
     require_once 'includes/sorting.php';
 
-// Load the recordings
-    global $Schedules;
 
 // Parse the recording list
     $the_schedules = array();
-    foreach ($Schedules as $key => $schedule) {
+    foreach (Schedule::findAll() as $key) {
+        $schedule = &Schedule::find($key);
     // Ignore overrides
     #    if ($schedule->type == rectype_override)
     #        continue;
@@ -38,11 +37,11 @@
     #        continue;
     // Couple of modifications
         if ($schedule->type == rectype_dontrec) {
-            $Schedules[$key]->profile  = '';
-            $Schedules[$key]->recgroup = '';
+            $schedule->profile  = '';
+            $schedule->recgroup = '';
         }
     // Add this show
-        $the_schedules[] =& $Schedules[$key];
+        $the_schedules[] = &$schedule;
     }
 
 // Sort the recordings
@@ -54,4 +53,3 @@
 
 // Exit
     exit;
-

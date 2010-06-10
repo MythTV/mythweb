@@ -32,16 +32,7 @@
     // Change language?  Make sure we load the new translation file, too.
         if ($_POST['language'] && $_POST['language'] != $_SESSION['language']){
             $_SESSION['language'] = $_POST['language'];
-        // Force the session to regenerate the date formats on language changes
-            unset($_SESSION['date_statusbar']);
-            unset($_SESSION['date_scheduled']);
-            unset($_SESSION['date_scheduled_popup']);
-            unset($_SESSION['date_recorded']);
-            unset($_SESSION['date_search']);
-            unset($_SESSION['date_listing_key']);
-            unset($_SESSION['date_listing_jump']);
-            unset($_SESSION['date_channel_jump']);
-            unset($_SESSION['date_job_status']);
+            Translate::find()->load_translation();
         }
 
         redirect_browser(module.'/'.$Path[1].'/'.$Path[2]);
@@ -88,7 +79,7 @@
 /**/
     function language_select() {
         echo '<select name="language">';
-        foreach ($GLOBALS['Languages'] as $lang => $details) {
+        foreach (Translate::$Languages as $lang => $details) {
         // Print the option
             echo '<option value="'.html_entities($lang).'"';
             if ($_SESSION['language'] == $lang)

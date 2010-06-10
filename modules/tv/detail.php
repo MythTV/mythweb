@@ -89,11 +89,10 @@
     }
 
 // Get the schedule for this recording, if one exists
-    global $Schedules;
     if ($program->recordid)
-        $schedule =& $Schedules[$program->recordid];
+        $schedule =& Schedule::find($program->recordid);
     elseif ($_GET['recordid'])
-        $schedule =& $Schedules[$_GET['recordid']];
+        $schedule =& Schedule::find($_GET['recordid']);
     else
         $schedule = new Schedule(NULL);
 
@@ -301,16 +300,15 @@
         $channel =& Channel::find($schedule->chanid);
 
 // Parse the list of scheduled recordings for possible conflicts
-    global $Scheduled_Recordings;
     $conflicting_shows = array();
-    foreach ($Scheduled_Recordings as $callsign => $shows) {
+    foreach (Schedule::findScheduled() as $callsign => $shows) {
     // Now the shows in this channel
-        foreach ($shows as $starttime => $show_group) {
+        foreach ($shows as $starttime => &$show_group) {
         // Clearly not a match
             if ($starttime > $program->endtime)
                 continue;
         // Parse each show group
-            foreach ($show_group as $key => $show) {
+            foreach ($show_group as $key => &$show) {
             // Ignore this show
                 if ($show->chanid == $program->chanid && $show->starttime == $program->starttime)
                     continue;
@@ -321,7 +319,7 @@
                 if ($show->endtime < $program->starttime)
                     continue;
             // Assign a reference to this show to the various arrays
-                $conflicting_shows[] =& $Scheduled_Recordings[$callsign][$starttime][$key];
+                $conflicting_shows[] =& $show;
             }
         }
     }

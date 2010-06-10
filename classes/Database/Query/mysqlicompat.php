@@ -123,6 +123,13 @@ class Database_Query_mysqlicompat extends Database_Query {
         return $return;
     }
 
+    function fetch_cols() {
+        $return = array();
+        while ($col = $this->fetch_col())
+            $return[] = $col;
+        return $return;
+    }
+
 /**
  * Fetch a single row
  *
@@ -205,4 +212,3 @@ class Database_Query_mysqlicompat extends Database_Query {
     }
 
 }
-

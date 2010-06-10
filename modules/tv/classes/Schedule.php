@@ -12,60 +12,61 @@
  *
 /**/
 
-class Schedule {
+class Schedule extends MythBase {
+	static private $scheduledRecordings;
 
-    var $recordid;
-    var $type;
-    var $chanid;
-    var $starttime;
-    var $endtime;
-    var $title;
-    var $subtitle;
-    var $description;
-    var $profile;
-    var $recpriority;
-    var $category;
-    var $maxnewest;
-    var $inactive;
-    var $maxepisodes;
-    var $autoexpire;
-    var $startoffset;
-    var $endoffset;
-    var $recgroup;
-    var $storagegroup;
-    var $dupmethod;
-    var $dupin;
-    var $station;
-    var $seriesid;
-    var $programid;
-    var $search;
-    var $autotranscode;
-    var $autocommflag;
-    var $autouserjob1;
-    var $autouserjob2;
-    var $autouserjob3;
-    var $autouserjob4;
-    var $findday;
-    var $findtime;
-    var $findid;
-    var $transcoder;
-    var $parentid;
+    public $recordid;
+    public $type;
+    public $chanid;
+    public $starttime;
+    public $endtime;
+    public $title;
+    public $subtitle;
+    public $description;
+    public $profile;
+    public $recpriority;
+    public $category;
+    public $maxnewest;
+    public $inactive;
+    public $maxepisodes;
+    public $autoexpire;
+    public $startoffset;
+    public $endoffset;
+    public $recgroup;
+    public $storagegroup;
+    public $dupmethod;
+    public $dupin;
+    public $station;
+    public $seriesid;
+    public $programid;
+    public $search;
+    public $autotranscode;
+    public $autocommflag;
+    public $autouserjob1;
+    public $autouserjob2;
+    public $autouserjob3;
+    public $autouserjob4;
+    public $findday;
+    public $findtime;
+    public $findid;
+    public $transcoder;
+    public $parentid;
 
-    var $playgroup;
-    var $prefinput;
-    var $next_record;
-    var $last_record;
-    var $last_delete;
+    public $playgroup;
+    public $prefinput;
+    public $next_record;
+    public $last_record;
+    public $last_delete;
 
-    var $texttype;
-    var $channel;
-    var $will_record = false;
-    var $css_class;         // css class, based on category and/or category_type
+    public $texttype;
+    public $channel;
+    public $will_record = false;
+    public $css_class;         // css class, based on category and/or category_type
 
-    public function &findAll($sort = true) {
+    public static function findAll($sort = true) {
         global $db;
         $orderby = '';
-        if (count($_SESSION['schedules_sortby'])) {
+        if ($sort && count($_SESSION['schedules_sortby'])) {
             $orderby = 'ORDER BY ';
             foreach ($_SESSION['schedules_sortby'] AS $key => $sort) {
                 if ($key > 0)
@@ -83,19 +84,39 @@ class Schedule {
                 }
                 $orderby .= ($sort['reverse'] ? ' DESC' : ' ASC');
             }
-        }
-        $recordIds = $db->query("SELECT recordid
-								   FROM record
-							  LEFT JOIN channel
-							         ON channel.chanid = record.chanid
-							   $orderby")->fetch_cols();
+			$recordIds = $db->query("SELECT recordid
+									   FROM record
+								  LEFT JOIN channel
+										 ON channel.chanid = record.chanid
+								   $orderby")->fetch_cols();
+		}
+		else {
+			$recordIds = $db->query("SELECT recordid
+									   FROM record")->fetch_cols();
+		}
         return $recordIds;
     }
+
+	public static function &findScheduled() {
+		if (is_null(self::$scheduledRecordings))
+			self::$scheduledRecordings =& Cache::get('Schedule::findScheduled');
+
+		if (is_null(self::$scheduledRecordings)) {
+			foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
+				if ($key === 'offset')
+					continue;
+			// Normal entry:  $scheduledRecordings[callsign][starttime][]
+				self::$scheduledRecordings[$program[6]][$program[10]][] =& new Program($program);
+			}
+			Cache::set('Schedule::findScheduled', self::$scheduledRecordings);
+		}
+		return self::$scheduledRecordings;
+	}
 
 /**
  * constructor
 /**/
-    function Schedule($data) {
+    public function __construct($data) {
         global $db;
     // Schedule object data -- just copy it into place
         if (is_object($data)) {
@@ -157,7 +178,7 @@ class Schedule {
 /**
  * Save this schedule
 /**/
-    function save($new_type) {
+    public function save($new_type) {
         global $db;
     // Make sure that recordid is null if it's empty
         if (empty($this->recordid)) {
@@ -268,7 +289,7 @@ class Schedule {
 /**
  * Delete this schedule
 /**/
-    function delete() {
+    public function delete() {
         global $db;
     // Delete this schedule from the database
         $sh = $db->query('DELETE FROM record WHERE recordid=?',
@@ -278,8 +299,6 @@ class Schedule {
             MythBackend::find()->rescheduleRecording($this->recordid);
     // Finish
         $sh->finish();
-    // Remove this from the $Schedules array in memory
-        unset($GLOBALS['Schedules'][$this->recordid]);
     }
 
 /**
@@ -287,7 +306,7 @@ class Schedule {
  * programs, but with a few extra checks, and some information arranged
  * differently.
 /**/
-    function details_list() {
+    public function details_list() {
     // Start the list, and print the title and schedule type
         $str = "<dl class=\"details_list\">\n"
             // Title

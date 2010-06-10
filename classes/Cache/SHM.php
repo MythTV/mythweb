@@ -43,6 +43,10 @@ class Cache_SHM implements Cache_Engine {
                                  'data'   => $data));
     }
 
+    public function delete($key) {
+        return shm_remove_var(self::$SHMhandle, $key);
+    }
+
     private static function getVarKey($key) {
         if (is_int($key))
             return $key;

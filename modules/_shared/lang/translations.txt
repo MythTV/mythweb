@@ -24,7 +24,7 @@ For translators:
     Untranslated strings will merely display the source (English) string.
 
     Don't forget to add your language to the $Languages array in
-    includes/translate.php, too.  That way, it will attempt to auto-detect the
+    classes/Translate.php, too.  That way, it will attempt to auto-detect the
     browser's preferred language, and show up in the mythweb settings language
     choice menu.
 
