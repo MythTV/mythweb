@@ -23,7 +23,9 @@
 th
 {
     border-bottom:      1px solid #E4E4E4;
+    white-space:        nowrap;
 }
+
 .x-priority,
 .x-channel,
 .x-profile,
@@ -48,9 +50,13 @@ th
 .x-startoffset,
 .x-endoffset
 {
-    display: none;
+    display:        none;
 }
 
 #listings th {
     font-weight:    bold;
+}
+
+.x-title {
+    width:          100%;
 }

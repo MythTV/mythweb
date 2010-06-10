@@ -13,9 +13,34 @@
     width:                              auto !important;
 }
 
+#backend_logs tr:first-child th:last-child {
+    width:                              100%;
+    padding-left:                       1em;
+}
+
 #backend_logs td,
 #backend_logs th
 {
+    white-space:            nowrap;
     border-bottom:          1px solid #E4E4E4;
+    padding-right:          1em;
 }
 
+#backend_logs td:last-child {
+    white-space: normal;
+}
+
+#backend_logs tr td:nth-child(2),
+#backend_logs tr th:nth-child(2)
+{
+    display: none;
+    width: 0px;
+    overflow: hidden;
+}
+
+#backend_logs tr td:nth-child(1),
+#backend_logs tr td:nth-child(4),
+#backend_logs tr td:nth-child(5)
+{
+    text-align: center;
+}

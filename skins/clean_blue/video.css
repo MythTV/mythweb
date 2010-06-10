@@ -1,17 +1,16 @@
     .video {
-        position:           relative;
-        padding:            1em;
-        float:              left;
-        background-color:   #003366;
-        margin-top:         1em;
-        margin-left:        1em;
+        position:                           relative;
+        padding:                            1em;
+        float:                              left;
+        margin-top:                         1em;
+        margin-left:                        1em;
         background-color:                   #c5d8e9;
         -moz-border-radius:                 8px;
         -webkit-border-radius:              8px;
         -moz-box-shadow:                    1px 1px 5px #999;
         -webkit-box-shadow:                 1px 1px 5px #999;
         box-shadow:                         1px 1px 5px #999;
-        border: none;
+        border:                             none;
     }
 
     .video .title {
@@ -63,10 +62,16 @@
         right:              35%;
         width:              30%;
         top:                35%;
-        background-color:   green;
         padding-top:        1em;
         z-index:            10;
-        border:             2px solid gray;
+        background-color:                   #c5d8e9;
+        -moz-border-radius:                 8px;
+        -webkit-border-radius:              8px;
+        -moz-box-shadow:                    1px 1px 5px #999;
+        -webkit-box-shadow:                 1px 1px 5px #999;
+        box-shadow:                         1px 1px 5px #999;
+        border:                             none;
+
     }
 
     #window_content a {
