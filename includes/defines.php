@@ -117,3 +117,5 @@
     $stream_url .= '/'.root;
 
     define('stream_url', $stream_url);
+
+    $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], strlen(root)-1);
