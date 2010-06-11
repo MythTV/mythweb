@@ -46,6 +46,7 @@ EOF;
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
     <base href="<?php echo root_url; ?>">
     <title><?php echo html_entities($page_title) ?></title>
 
