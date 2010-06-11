@@ -206,101 +206,101 @@
             <th><?php echo t('Type') ?>:</th>
             <td><?php echo $program->category_type;
                           if ($program->seriesid)
-                              echo ' (', $program->seriesid, ')' ?></dd>
+                              echo ' (', $program->seriesid, ')' ?></td>
         </tr><?php
             }
             if (strlen($program->syndicatedepisodenumber) > 0) {
         ?><tr class="x-extras">
             <th><?php echo t('Episode Number') ?>:</th>
-            <td><?php echo $program->syndicatedepisodenumber ?></dd>
+            <td><?php echo $program->syndicatedepisodenumber ?></td>
         </tr><?php
             }
             if (strlen($program->airdate)) {
         ?><tr class="x-extras">
             <th><?php echo t('Original Airdate') ?>:</th>
-            <td><?php echo $program->airdate ?></dd>
+            <td><?php echo $program->airdate ?></td>
         </tr><?php
             }
             if (strlen($program->programid) > 0) {
         ?><tr class="x-extras">
             <th><?php echo t('Program ID') ?>:</th>
-            <td><?php echo $program->programid ?></dd>
+            <td><?php echo $program->programid ?></td>
         </tr><?php
             }
             if ($program->get_credits('host', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Hosted by') ?>:</th>
-            <td><?php echo $program->get_credits('host', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('host', TRUE) ?></td>
         </tr><?php
             }
             if ($program->get_credits('presenter', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Presented by') ?>:</th>
-            <td><?php echo $program->get_credits('presenter', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('presenter', TRUE) ?></td>
         </tr><?php
             }
             if ($program->get_credits('actor', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Cast') ?>:</th>
-            <td><?php echo $program->get_credits('actor', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('actor', TRUE) ?></td>
         </tr><?php
             }
             if ($program->get_credits('guest_star', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Guest Starring') ?>:</th>
-            <td><?php echo $program->get_credits('guest_star', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('guest_star', TRUE) ?></td>
         </tr><?php
             }
             if ($program->get_credits('director', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Directed by') ?>:</th>
-            <td><?php echo $program->get_credits('director', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('director', TRUE) ?></td>
         </tr><?php
             }
             if ($program->get_credits('producer', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Produced by') ?>:</th>
-            <td><?php echo $program->get_credits('producer', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('producer', TRUE) ?></td>
         </tr><?php
             }
             if ($program->get_credits('executive_producer', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Exec. Producer') ?>:</th>
-            <td><?php echo $program->get_credits('executive_producer', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('executive_producer', TRUE) ?></td>
         </tr><?php
             }
             if ($program->get_credits('writer', TRUE)) {
         ?><tr class="x-extras">
             <th><?php echo t('Written by') ?>:</th>
-            <td><?php echo $program->get_credits('writer', TRUE) ?></dd>
+            <td><?php echo $program->get_credits('writer', TRUE) ?></td>
         </tr><?php
             }
             if (strlen($program->starstring) > 0) {
         ?><tr class="x-extras">
             <th><?php echo t('Guide rating') ?>:</th>
-            <td><?php echo $program->starstring ?></dd>
+            <td><?php echo $program->starstring ?></td>
         </tr><?php
             }
         ?><tr class="x-extras">
             <th><?php echo t('Length') ?>:</th>
-            <td><?php echo nice_length($program->length) ?></dd>
+            <td><?php echo nice_length($program->length) ?></td>
         </tr><?php
             if (strlen($program->filesize) > 0) {
         ?><tr class="x-extras">
             <th><?php echo t('File Size') ?>:</th>
-            <td><?php echo nice_filesize($program->filesize) ?></dd>
+            <td><?php echo nice_filesize($program->filesize) ?></td>
         </tr><?php
             }
             if (strlen($program->recgroup)) {
         ?><tr class="x-extras">
             <th><?php echo t('Recording Group') ?>:</th>
-            <td><?php echo $program->recgroup ?></dd>
+            <td><?php echo $program->recgroup ?></td>
         </tr><?php
             }
             if (strlen($program->playgroup)) {
         ?><tr class="x-extras">
             <th><?php echo t('Playback Group') ?>:</th>
-            <td><?php echo $program->playgroup ?></dd>
+            <td><?php echo $program->playgroup ?></td>
         </tr><?php
             }
         }
