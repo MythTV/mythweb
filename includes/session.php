@@ -50,11 +50,15 @@
             $id = 'user:'.$_SERVER['REMOTE_USER'];
         $data = $db->query_col('SELECT data
                                   FROM mythweb_sessions
-                                 WHERE id = ?',
+                                 WHERE id = ?
+                                    OR id = "default"
+                              ORDER BY id = "default" ASC
+                                 LIMIT 1',
                                $id
                                );
         if ($data)
             return $data;
+
         return '';
     }
 
@@ -93,7 +97,7 @@
 /**/
     function sess_gc($maxlifetime) {
         global $db;
-        $db->query('DELETE FROM mythweb_sessions WHERE NOW() > DATE_ADD(modified, INTERVAL ? SECOND)',
+        $db->query('DELETE FROM mythweb_sessions WHERE NOW() > DATE_ADD(modified, INTERVAL ? SECOND) AND id != "default"',
                    $maxlifetime);
         return true;
     }

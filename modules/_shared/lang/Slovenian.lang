@@ -268,6 +268,7 @@
     Izberi zvrst..
 "Choose Type"
     Izberi tip
+"Clear the current default session"
 "Click to disable Auto Expire"
     Klik za preklic Avto-brisanja
 "Click to enable Auto Expire"
@@ -304,7 +305,6 @@
 "Create Schedule"
     Ustvari plan snemanja
 "Current Conditions"
-"Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
     Trenutni posnetek
@@ -339,7 +339,6 @@
     Privzeti
 "Default MythVideo View"
     Privzeti prikaz MythVidea
-"Default MythWeb Skin"
 "Default MythWeb Template"
 "Delete"
     Odstrani
@@ -740,6 +739,7 @@
     MythWeb seja
 "MythWeb Skin"
     MythWeb preobleka
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb vreme.
 "Name"
@@ -1256,6 +1256,7 @@
     Ustavljanje
 "Storage Group"
     Skupina za shranjevanje
+"Store the current session as the default"
 "Streaming"
     Predvajanje (stream)
 "Sub and Desc (Empty matches)"

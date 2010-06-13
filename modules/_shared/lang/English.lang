@@ -122,11 +122,17 @@
 "By Artist Beginning With"
 "By Genre"
 "Cache_APC"
+    Alternative PHP Cache (Recommended)
 "cache_engine"
+    Enable a cache engine?
 "Cache_Memcache"
+    Memcache
 "Cache_Memcached"
+    Memcached (binary)
 "Cache_Null"
+    Disabled
 "Cache_SHM"
+    Unix Shared Memory
 "callsign"
 "Cancel"
 "Cancel this schedule."
@@ -153,6 +159,7 @@
 "Childrens Movies"
 "Choose Genre.."
 "Choose Type"
+"Clear the current default session"
 "Click to disable Auto Expire"
 "Click to enable Auto Expire"
 "Click to View Playlist"
@@ -173,7 +180,6 @@
 "Create a Random Mix"
 "Create Schedule"
 "Current Conditions"
-"Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
 "Current recordings"
@@ -193,7 +199,6 @@
     Deaf Signed
 "Default"
 "Default MythVideo View"
-"Default MythWeb Skin"
 "Default MythWeb Template"
 "Delete"
 "delete"
@@ -454,6 +459,7 @@
 "MythWeb Locked"
 "MythWeb Session"
 "MythWeb Skin"
+"MythWeb Template"
 "MythWeb Weather."
 "Name"
 "name"
@@ -801,6 +807,7 @@
 "Still Recording: Edit"
 "Stopping"
 "Storage Group"
+"Store the current session as the default"
 "Streaming"
 "Sub and Desc (Empty matches)"
 "Submit"

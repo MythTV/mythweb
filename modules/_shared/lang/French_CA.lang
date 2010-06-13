@@ -295,6 +295,7 @@
     Choisir le genre...
 "Choose Type"
     Choisir le type
+"Clear the current default session"
 "Click to disable Auto Expire"
     Cliquer pour désactiver l'auto-expiration
 "Click to enable Auto Expire"
@@ -334,8 +335,6 @@
 "Create Schedule"
     Créer une programmation
 "Current Conditions"
-"Current MythWeb Skin"
-    Habillage MythWeb actuel
 "Current MythWeb Template"
     Modèle MythWeb actuel
 "Current Recording"
@@ -372,8 +371,6 @@
     Par défaut
 "Default MythVideo View"
     Vue MythVideo par défaut
-"Default MythWeb Skin"
-    Habillage MythWeb par défaut
 "Default MythWeb Template"
     Modèle MythWeb par défaut
 "Delete"
@@ -824,6 +821,7 @@
     Session MythWeb
 "MythWeb Skin"
     Habillage de MythWeb
+"MythWeb Template"
 "MythWeb Weather."
     Météo MythWeb.
 "Name"
@@ -1403,6 +1401,7 @@
     Arrêt en cours
 "Storage Group"
     Groupe de stockage
+"Store the current session as the default"
 "Streaming"
     Diffusion en flux
 "Sub and Desc (Empty matches)"

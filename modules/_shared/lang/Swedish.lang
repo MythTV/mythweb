@@ -284,6 +284,7 @@
     Välj genre..
 "Choose Type"
     Välj typ
+"Clear the current default session"
 "Click to disable Auto Expire"
     Klicka för att avaktivera autoradering
 "Click to enable Auto Expire"
@@ -320,8 +321,6 @@
 "Create Schedule"
     Schemalägg
 "Current Conditions"
-"Current MythWeb Skin"
-    Nuvarande MythWeb tema
 "Current MythWeb Template"
     Nuvarande MythWeb mall
 "Current Recording"
@@ -358,8 +357,6 @@
     Standard
 "Default MythVideo View"
     Standard MythVideo vy
-"Default MythWeb Skin"
-    Standard MythWeb tema
 "Default MythWeb Template"
     Standard MyhtWeb mall
 "Delete"
@@ -778,6 +775,7 @@
     MythWeb-session
 "MythWeb Skin"
     MythWeb-skinn
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb väder.
 "Name"
@@ -1315,6 +1313,7 @@
     Stoppar
 "Storage Group"
     Lagringsgrupp
+"Store the current session as the default"
 "Streaming"
     Strömmande
 "Sub and Desc (Empty matches)"

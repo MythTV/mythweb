@@ -213,6 +213,7 @@
 "Childrens Movies"
 "Choose Genre.."
 "Choose Type"
+"Clear the current default session"
 "Click to disable Auto Expire"
 "Click to enable Auto Expire"
 "Click to View Playlist"
@@ -241,7 +242,6 @@
 "Create Schedule"
     Crear programació
 "Current Conditions"
-"Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
 "Current recordings"
@@ -269,7 +269,6 @@
 "Default"
     Por defecte
 "Default MythVideo View"
-"Default MythWeb Skin"
 "Default MythWeb Template"
 "Delete"
     Esborrar
@@ -597,6 +596,7 @@
 "MythWeb Session"
 "MythWeb Skin"
     Pell MythWeb
+"MythWeb Template"
 "MythWeb Weather."
     Temps MythWeb
 "Name"
@@ -1025,6 +1025,7 @@
 "Still Recording: Edit"
 "Stopping"
 "Storage Group"
+"Store the current session as the default"
 "Streaming"
 "Sub and Desc (Empty matches)"
     Sub i Desc (Coincidències buides)

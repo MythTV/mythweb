@@ -70,6 +70,13 @@
     </td>
 </tr>
 <tr>
+    <td>
+        <input type="submit" class="submit" name="set_current_session_as_default" value="<?php echo t('Store the current session as the default') ?>">
+        <input type="submit" class="submit" name="clear_current_default_session"  value="<?php echo t('Clear the current default session') ?>">
+    </td>
+    <td></td>
+</tr>
+<tr>
     <td align="right"><input type="reset"  class="submit" value="<?php echo t('Reset') ?>"></td>
     <td align="center"><input type="submit" class="submit" name="save" value="<?php echo t('Save') ?>"></td>
 </tr>

@@ -269,6 +269,7 @@
     Elegir Género
 "Choose Type"
     Elegir Tipo
+"Clear the current default session"
 "Click to disable Auto Expire"
     Click para deshabilitar Auto Expiración
 "Click to enable Auto Expire"
@@ -304,7 +305,6 @@
 "Create Schedule"
     Crear programación
 "Current Conditions"
-"Current MythWeb Skin"
 "Current MythWeb Template"
 "Current Recording"
 "Current recordings"
@@ -333,7 +333,6 @@
 "Default"
     Por defecto
 "Default MythVideo View"
-"Default MythWeb Skin"
 "Default MythWeb Template"
 "Delete"
     Borrar
@@ -668,6 +667,7 @@
 "MythWeb Session"
 "MythWeb Skin"
     Piel MythWeb
+"MythWeb Template"
 "MythWeb Weather."
     Tiempo MythWeb
 "Name"
@@ -1096,6 +1096,7 @@
 "Still Recording: Edit"
 "Stopping"
 "Storage Group"
+"Store the current session as the default"
 "Streaming"
 "Sub and Desc (Empty matches)"
     Sub y Desc (Coincidencias vacías)

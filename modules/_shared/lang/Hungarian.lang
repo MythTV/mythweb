@@ -283,6 +283,7 @@
     Műfaj választás...
 "Choose Type"
     Tipus választás
+"Clear the current default session"
 "Click to disable Auto Expire"
     Kattints az automatikus lejárat letiltásához
 "Click to enable Auto Expire"
@@ -319,8 +320,6 @@
 "Create Schedule"
     Program előállítása
 "Current Conditions"
-"Current MythWeb Skin"
-    Jelenlegi MythWeb kinézet
 "Current MythWeb Template"
     Jelenlegi MythWeb sablon
 "Current Recording"
@@ -357,8 +356,6 @@
     Alapértelmezett
 "Default MythVideo View"
     Alapértelmezett MythVideo Nézet
-"Default MythWeb Skin"
-    Alapértelmezett MythWeb kinézet
 "Default MythWeb Template"
     Alapértelmezett MythWeb sablon
 "Delete"
@@ -783,6 +780,7 @@
     Mythweb szakasz
 "MythWeb Skin"
     Mythweb kinézet
+"MythWeb Template"
 "MythWeb Weather."
     Mythweb időjárás
 "Name"
@@ -1325,6 +1323,7 @@
     Megállítás
 "Storage Group"
     Tároló csoport
+"Store the current session as the default"
 "Streaming"
     Sugárzás
 "Sub and Desc (Empty matches)"

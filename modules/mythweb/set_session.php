@@ -17,17 +17,11 @@
     if ($_POST['save']) {
     // Save the template
         if (isset($_POST['tmpl']))
-            setcookie('mythweb_tmpl', $_POST['tmpl'], 2147483647, root);
-
-        if (isset($_POST['tmpl_default']))
-            $_SESSION['tmpl'] = $_POST['tmpl_default'];
+            $_SESSION['tmpl'] = $_POST['tmpl'];
 
     // Save the skin
         if (isset($_POST['skin']))
-            setcookie('mythweb_skin', $_POST['skin'], 2147483647, root);
-
-        if (isset($_POST['skin_default']))
-            $_SESSION['skin'] = $_POST['skin_default'];
+            $_SESSION['skin'] = $_POST['skin'];
 
     // Change language?  Make sure we load the new translation file, too.
         if ($_POST['language'] && $_POST['language'] != $_SESSION['language']){

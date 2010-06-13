@@ -25,5 +25,10 @@
         $_SESSION['cache_engine']        = $_POST['cache_engine'];
     }
 
+    if ($_POST['set_current_session_as_default'])
+        sess_write('default', session_encode());
+    elseif ($_POST['clear_current_default_session'])
+        sess_destroy('default');
+
 // These settings are limited to MythWeb itself
     $Settings_Hosts = 'MythWeb';

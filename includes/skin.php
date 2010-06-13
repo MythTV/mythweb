@@ -27,40 +27,28 @@
         $tmpl = _or($_REQUEST['RESET_TMPL'], 'default');
     elseif (isset($_REQUEST['RESET_TEMPLATE']))
         $tmpl = _or($_REQUEST['RESET_TEMPLATE'], 'default');
-    elseif (isset($_COOKIE['mythweb_tmpl']))
-        $tmpl = $_COOKIE['mythweb_tmpl'];
     elseif (isMobileUser())
         $tmpl = 'wap';
     elseif (preg_match('/^(Lynx|ELinks)/i', $_SERVER['HTTP_USER_AGENT']))
         $tmpl = 'lite';
     elseif (preg_match('/(mobile\s+safari|ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
         $tmpl = 'iPod';
-    else
-        $tmpl = 'default';
 
     if (!file_exists(modules_path.'/_shared/tmpl/'.$tmpl.'/welcome.php'))
         $tmpl = 'default';
-
-    setcookie('mythweb_tmpl', $tmpl, 2147483647, root);
 
 // Figure out the skin
     $skin = $_SESSION['skin'];
 
     if (isset($_REQUEST['RESET_SKIN']))
         $skin = _or($_REQUEST['RESET_SKIN'], 'default');
-    elseif (isset($_COOKIE['mythweb_skin']))
-        $skin = $_COOKIE['mythweb_skin'];
     elseif (isMobileUser())
         $skin = 'wap';
     elseif (preg_match('/(mobile\s+safari|ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
         $skin = 'iPod-default';
-    else
-        $skin = 'default';
 
     if (!file_exists('skins/'.$skin.'/img/'))
         $skin = 'default';
-
-    setcookie('mythweb_skin', $skin, 2147483647, root);
 
 // We do want to over-ride the template for some paths.
 // We do this after setting because certain templates

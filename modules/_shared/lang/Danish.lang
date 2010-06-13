@@ -293,6 +293,7 @@
     Vælg genre..
 "Choose Type"
     Vælg type
+"Clear the current default session"
 "Click to disable Auto Expire"
     Klik for at deaktivere autoudløb
 "Click to enable Auto Expire"
@@ -332,8 +333,6 @@
 "Create Schedule"
     Planlæg
 "Current Conditions"
-"Current MythWeb Skin"
-    Nuværende MythWeb skin
 "Current MythWeb Template"
     Nuværende MythWeb template
 "Current Recording"
@@ -370,8 +369,6 @@
     Standard
 "Default MythVideo View"
     Standard MythVideo visning
-"Default MythWeb Skin"
-    Standard MythWeb skin
 "Default MythWeb Template"
     Standard MythWeb template
 "Delete"
@@ -813,6 +810,7 @@
     MythWeb session
 "MythWeb Skin"
     MythWeb skin
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb Vejrudsigt.
 "Name"
@@ -1389,6 +1387,7 @@
     Stopper
 "Storage Group"
     Opbevaringsgruppe
+"Store the current session as the default"
 "Streaming"
     Streaming
 "Sub and Desc (Empty matches)"

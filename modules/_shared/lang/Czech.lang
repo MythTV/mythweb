@@ -284,6 +284,7 @@
     Vybrat žánr
 "Choose Type"
     Vybrat typ
+"Clear the current default session"
 "Click to disable Auto Expire"
     Kliknout pro zakázání automatického vypršení
 "Click to enable Auto Expire"
@@ -319,8 +320,6 @@
 "Create Schedule"
     Vytvořit rozvrh
 "Current Conditions"
-"Current MythWeb Skin"
-    Stávající skin MythWebu
 "Current MythWeb Template"
     Stávající šablona MythWebu
 "Current Recording"
@@ -354,8 +353,6 @@
     Výchozí
 "Default MythVideo View"
     Výchozí vzhled MythVidea
-"Default MythWeb Skin"
-    Výchozí skin MythWebu
 "Default MythWeb Template"
     Výchozí šablona MythWebu
 "Delete"
@@ -714,6 +711,7 @@
 "MythWeb Session"
 "MythWeb Skin"
     Skin MythWebu
+"MythWeb Template"
 "MythWeb Weather."
     MythWeb Počasí.
 "Name"
@@ -1113,6 +1111,7 @@
 "Stopping"
     Zastavení
 "Storage Group"
+"Store the current session as the default"
 "Streaming"
 "Sub and Desc (Empty matches)"
 "Submit"
