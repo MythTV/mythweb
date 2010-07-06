@@ -75,7 +75,7 @@
 "Allows you to match any string of any length (including zero length)"
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
-"An error occured while adding your playlist."
+"An error occurred while adding your playlist."
 "and"
 "Animated Map"
 "Animation"
@@ -156,7 +156,7 @@
 "Channels"
 "channum"
 "Check for duplicates in"
-"Childrens Movies"
+"Children's Movies"
 "Choose Genre.."
 "Choose Type"
 "Clear the current default session"
@@ -165,7 +165,7 @@
 "Click to View Playlist"
 "Close Captioned priority"
 "Closed Captioning"
-"colour"
+"color"
 "Commands"
 "Commands:"
 "Commercials Flagged"
@@ -311,7 +311,7 @@
 "Guide Settings"
 "Handy Predefined Searches"
 "handy: overview"
-    This page contains pre-prepared complex searches of the program listings.
+    Some examples of complex searches possible with the listings.
 "has Bookmark"
 "Has Cutlist"
 "HD"
@@ -337,7 +337,7 @@
     Force this specific showing to record.
 "info: default recording"
     Reset any override requests so that this showing will schedule normally.
-"info: dont record"
+"info: don't record"
     Do not record this specific showing.
 "info: flvplayer"
     <p>
@@ -360,7 +360,7 @@
 "info: record this"
     Force this specific showing to record.
 "info:forget old"
-    Forget about previous recordings of this show, so it can be rerecorded.
+    Forget about previous recordings of this show, so it can be re-recorded.
 "info:jumppoints"
     <ul>
         <li>JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is the same as one defined in the Keybindings section, the JumpPoint will override the keybinding.</li>
@@ -410,9 +410,9 @@
 "Location"
 "Location:"
 "LOCKDOWN_NOTICE"
-    MythWeb has detected a bot accessing this install. We have locked down the install to prevent any issues with bots deleting all your recordings or allowing other people from accessing your mythweb install without your permission. Please secure your install (read the INSTALL and README files) and remove
+    MythWeb has detected a bot accessing your installation. We have locked down the service to prevent bots from deleting all your recordings or allowing other people to access MythWeb without your permission. Please secure your server (read the INSTALL and README files) and remove
 "LOCKDOWN_NOTICE_2"
-    to unlock this install. To disable this feature, read the README file.
+    to unlock this install. To disable this feature, review the README file.
 "Logs"
 "Low"
 "Low Space"
@@ -493,7 +493,7 @@
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
-"Only display favourite channels"
+"Only display favorite channels"
 "Only match commercial-free channels"
 "Only match HD programs"
 "Only match non-recorded shows"
@@ -540,8 +540,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please enter an imdb number or a title to do another search"
-"Please wait for the pending ajax request"
+"Please enter an IMDB number or a title to do another search"
+"Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
 "Pop-out player"
@@ -629,7 +629,7 @@
 "recstatus: lowdiskspace"
     There wasn't enough disk space available to record this program.
 "recstatus: manualoverride"
-    This showing was manually set to not record
+    This showing was manually set to not record.
 "recstatus: neverrecord"
     This show was marked to never be recorded.
 "recstatus: notlisted"
@@ -647,7 +647,7 @@
 "recstatus: toomanyrecordings"
     Too many recordings of this program have already been recorded.
 "recstatus: tunerbusy"
-    The tuner card was already being used when this program was scheduled to be recorded.
+    The tuner card was already in-use when this program was scheduled to be recorded.
 "recstatus: unknown"
     The status of this showing is unknown.
 "recstatus: willrecord"
@@ -753,13 +753,13 @@
 "Settings Table"
 "settings/stream: protocol"
     Many media players are incapable of playing files that are streamed from<br/>
-    https servers.  If you run MythWeb over https, you may want to ALSO create<br/>
-    a non-ssl installation and check this box, which will force all streaming<br/>
-    downloads to go out over http instead.
+    https servers.  If you run MythWeb over https, you may ALSO want to create<br/>
+    a non-SSL installation and check this box, which will force all streaming<br/>
+    downloads to utilize http instead.
 "settings: notice"
     Warning:<br><br>
-    Many settings pages have very little error checking. You can easily screw
-    things up if you're not careful, and short of restoring the database from
+    Many settings pages have very little error checking. You can easily alter a setting
+    which will result in a non-functional system, and short of restoring the database from
     a backup, there is <b>no</b> way to undo your changes.
 "Severe Weather Alerts"
 "Shift"
@@ -786,7 +786,7 @@
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
-"Sorry, but you cannot add this playlist as it would create a circular dependancy."
+"Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Sort channel list by channel number (checked) or by callsign (unchecked)
 "Source:"
@@ -886,21 +886,21 @@
 "Video Bitrate"
 "Video Playback"
 "Video: Error: IMDB"
-    Fatal Error, I am sorry, but there was a failure getting the imdb data. Please check your imdb number if you entered it by hand.
+    Fatal Error: There was a failure retrieving IMDB data. If you have manually specified the IMDB number then please confirm that it is accurate.
 "Video: Error: IMDB: Not Found"
-    Fatal Error, IMDB was not set in the settings table, please set it via the settings tab.
+    Fatal Error: IMDB was not enabled in the settings table. Please configure via the settings tab.
 "Video: Error: Missing ID"
-    Fatal Error, For some reason the id was not sent to the imdb script. Bailing out.
+    Fatal Error: The ID was not sent to the IMDB script.
 "Video: IMDB: No Matches"
-    There are not any matches for this title, please use the custom search to enter in a imdb number or a different title to search again.
+    There are no matches for this title. Please use the custom search to enter an IMDB number or use a different title to search again.
 "Video: IMDB: Window Title"
     IMDB Matches
 "Video: Warning: Artwork"
-    Warning, Updating the video artwork failed. Please check the permissions on your Video Artwork Directory for this host
+    Warning: Updating video artwork failed. Please check the permissions on your Video Artwork Directory for this host.
 "Video: Warning: Artwork: Download"
-    Downloading the artwork from tmdb failed.
+    Downloading the artwork from TMDB failed.
 "Video: Warning: fopen"
-    Warning, Your php.ini file has allow_url_fopen set to Off. To download the artwork, it is required to be On. Artwork will not be updated.
+    Warning: Your php.ini file has allow_url_fopen set to Off. To download artwork, it is required to be On. Artwork will not be updated.
 "VideoAggressivePC"
 "VideoArtworkDir"
 "VideoBrowserNoDB"
@@ -941,7 +941,7 @@
     Browse your music collection.
 "welcome: remote"
 "welcome: settings"
-    Configure MythWeb and some of the MythTV settings.
+    Configure MythWeb and some MythTV settings.
 "welcome: stats"
     MythTV recording statistics.
 "welcome: status"
