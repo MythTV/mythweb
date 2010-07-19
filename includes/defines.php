@@ -104,12 +104,31 @@
     if ($_SERVER['HTTP_PORT'] == '443' || $_SERVER['HTTP_PORT'] == '8443')
         $_SERVER['HTTPS'] = 'on';
 
-    define('root_url',   ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://' ).http_host.root);
+    $root_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
+    $root_auth_url = $root_url;
+
+    if (!ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
+        $root_auth_url .= $_SERVER['PHP_AUTH_USER'].':'.$_SERVER['PHP_AUTH_PW'].'@';
+    elseif (!ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']))
+        $root_auth_url .= $_SERVER['PHP_AUTH_USER'].'@';
+
+    $root_url .= http_host.root;
+    $root_auth_url .= http_host.root;
+
+    define('root_url',   $root_url);
+    define('root_auth_url', $root_auth_url);
+
+    unset($root_auth_url, $root_url);
 
     $stream_url = 'http';
     if (@$_SERVER['HTTPS'] == 'on' && !@$_SESSION['stream']['force_http'])
         $stream_url .='s';
-    $stream_url .= '://'.$_SERVER['HTTP_HOST'];
+    $stream_url .= '://';
+    if (!ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
+        $stream_url .= $_SERVER['PHP_AUTH_USER'].':'.$_SERVER['PHP_AUTH_PW'].'@';
+    elseif (!ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']))
+        $stream_url .= $_SERVER['PHP_AUTH_USER'].'@';
+    $stream_url .= $_SERVER['HTTP_HOST'];
     if (@$_SESSION['stream']['force_http'] && @$_SESSION['stream']['force_http_port'] > 0)
         $stream_url .= ":{$_SESSION['stream']['force_http_port']}";
     elseif ($_SERVER['HTTP_PORT'] > 0)
