@@ -104,7 +104,7 @@
                     -Content_length         => $size,
                     -Accept_Ranges          => 'bytes',
                     -Last_Modified          => time2str($mtime),
-                    -Content_disposition => " attachment; filename=\"$name.$suffix\""
+                    -Content_disposition => " attachment; filename=\"$name\""
                  );
     }
 
