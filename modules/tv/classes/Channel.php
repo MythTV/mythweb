@@ -29,6 +29,7 @@ class Channel extends MythBase {
     public $brightness;
     public $colour;
     public $visible;
+    public $useonairguide;
     public $programs = array();
 
     public static function getChannelList() {
@@ -89,19 +90,20 @@ class Channel extends MythBase {
 
         global $db;
         $channel_data = $db->query_assoc('SELECT * FROM channel WHERE chanid = ?', $chanid);
-        $this->chanid       = $channel_data['chanid'];
-        $this->channum      = $channel_data['channum'];
-        $this->sourceid     = $channel_data['sourceid'];
-        $this->callsign     = $channel_data['callsign'];
-        $this->name         = $channel_data['name'];
-        $this->finetune     = $channel_data['finetune'];
-        $this->videofilters = $channel_data['videofilters'];
-        $this->xmltvid      = $channel_data['xmltvid'];
-        $this->contrast     = $channel_data['contrast'];
-        $this->brightness   = $channel_data['brightness'];
-        $this->colour       = $channel_data['colour'];
-        $this->visible      = $channel_data['visible'];
-        $this->icon         = 'data/tv_icons/'.basename($channel_data['icon']);
+        $this->chanid           = $channel_data['chanid'];
+        $this->channum          = $channel_data['channum'];
+        $this->sourceid         = $channel_data['sourceid'];
+        $this->callsign         = $channel_data['callsign'];
+        $this->name             = $channel_data['name'];
+        $this->finetune         = $channel_data['finetune'];
+        $this->videofilters     = $channel_data['videofilters'];
+        $this->xmltvid          = $channel_data['xmltvid'];
+        $this->contrast         = $channel_data['contrast'];
+        $this->brightness       = $channel_data['brightness'];
+        $this->colour           = $channel_data['colour'];
+        $this->visible          = $channel_data['visible'];
+        $this->useonairguide    = $channel_data['useonairguide'];
+        $this->icon             = 'data/tv_icons/'.basename($channel_data['icon']);
     // Try to copy over any missing channel icons
         if ($channel_data['icon'] && !file_exists($this->icon)) {
         // Local file?
