@@ -38,8 +38,3 @@
         $args = array_slice($args, 1);
         return Translate::find()->number($string, $args);
     }
-
-
-
-
-

@@ -114,7 +114,11 @@ class Translate extends MythBase {
  * created using the value of t(int).
 /**/
     public function number(/* string1, string2, stringN, int [, array-of-args] */) {
-        $a = func_get_args();
+    // Flatten arrays
+        $ab = func_get_args();
+        $a[] = $ab[0];
+        foreach ($ab[1] as $b)
+            $a[] = $b;
     // Array of arguments?
         if (is_array($a[count($a)-1]))
             $args = array_pop($a);
@@ -125,7 +129,7 @@ class Translate extends MythBase {
             $args = array(t($int));
     // Return the appropriate translated string
         if ($a[$int-1])
-            return $this->translate($a[$int-1], $args);
+            return $this->string($a[$int-1], $args);
         return $this->string($a[count($a)-1], $args);
     }
 
@@ -146,17 +150,6 @@ class Translate extends MythBase {
 
     // Wipe any existing cache
         Cache::clear();
-
-    // Force the session to regenerate the date formats on language changes
-        unset($_SESSION['date_statusbar']);
-        unset($_SESSION['date_scheduled']);
-        unset($_SESSION['date_scheduled_popup']);
-        unset($_SESSION['date_recorded']);
-        unset($_SESSION['date_search']);
-        unset($_SESSION['date_listing_key']);
-        unset($_SESSION['date_listing_jump']);
-        unset($_SESSION['date_channel_jump']);
-        unset($_SESSION['date_job_status']);
 
     // Load the primary language file, or English if the other doesn't exist.
         if (file_exists(modules_path.'/_shared/lang/'.$language.'.lang'))
@@ -200,6 +193,18 @@ class Translate extends MythBase {
     // No language array defined?
         if (!is_array($this->translations) || !count($this->translations))
             trigger_error('No language strings defined.', FATAL);
+
+    // Generate the date formats
+        $_SESSION['date_statusbar']       = $this->string('generic_date').', '.$this->string('generic_time');
+        $_SESSION['date_scheduled']       = $this->string('generic_date').' ('.$this->string('generic_time').')';
+        $_SESSION['date_scheduled_popup'] = $this->string('generic_date');
+        $_SESSION['date_recorded']        = $this->string('generic_date').' ('.$this->string('generic_time').')';
+        $_SESSION['date_search']          = $this->string('generic_date').', '.$this->string('generic_time');
+        $_SESSION['date_listing_key']     = $this->string('generic_date').', '.$this->string('generic_time');
+        $_SESSION['date_listing_jump']    = $this->string('generic_date');
+        $_SESSION['date_channel_jump']    = $this->string('generic_date');
+        $_SESSION['date_job_status']      = $this->string('generic_date').', '.$this->string('generic_time');
+        $_SESSION['time_format']          = $this->string('generic_time');
 
         $this->currentLanguage = $language;
     }

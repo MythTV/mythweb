@@ -27,18 +27,6 @@
         $_SESSION['prefer_channum'] = setting('WebPrefer_Channum');
     define('prefer_channum', $_SESSION['prefer_channum']);
 
-// Load/set default date formats
-    if (!$_SESSION['date_statusbar'])       $_SESSION['date_statusbar']       = t('generic_date').', '.t('generic_time');
-    if (!$_SESSION['date_scheduled'])       $_SESSION['date_scheduled']       = t('generic_date').' ('.t('generic_time').')';
-    if (!$_SESSION['date_scheduled_popup']) $_SESSION['date_scheduled_popup'] = t('generic_date');
-    if (!$_SESSION['date_recorded'])        $_SESSION['date_recorded']        = t('generic_date').' ('.t('generic_time').')';
-    if (!$_SESSION['date_search'])          $_SESSION['date_search']          = t('generic_date').', '.t('generic_time');
-    if (!$_SESSION['date_listing_key'])     $_SESSION['date_listing_key']     = t('generic_date').', '.t('generic_time');
-    if (!$_SESSION['date_listing_jump'])    $_SESSION['date_listing_jump']    = t('generic_date');
-    if (!$_SESSION['date_channel_jump'])    $_SESSION['date_channel_jump']    = t('generic_date');
-    if (!$_SESSION['date_job_status'])      $_SESSION['date_job_status']      = t('generic_date').', '.t('generic_time');
-    if (!$_SESSION['time_format'])          $_SESSION['time_format']          = t('generic_time');
-
 // Show pixmaps on the recorded programs page?
     if (!isset($_SESSION['recorded_pixmaps']))
          $_SESSION['recorded_pixmaps'] = (tmpl == 'default') ? true : false;
