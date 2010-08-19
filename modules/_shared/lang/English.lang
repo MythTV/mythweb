@@ -75,7 +75,7 @@
 "Allows you to match any string of any length (including zero length)"
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
-"An error occurred while adding your playlist."
+"An error occured while adding your playlist."
 "and"
 "Animated Map"
 "Animation"
@@ -156,7 +156,7 @@
 "Channels"
 "channum"
 "Check for duplicates in"
-"Children's Movies"
+"Childrens Movies"
 "Choose Genre.."
 "Choose Type"
 "Clear the current default session"
@@ -165,7 +165,7 @@
 "Click to View Playlist"
 "Close Captioned priority"
 "Closed Captioning"
-"color"
+"colour"
 "Commands"
 "Commands:"
 "Commercials Flagged"
@@ -295,10 +295,6 @@
 "freqid"
 "Friday"
 "Frontends"
-"generic_date"
-    %a %b %e, %Y
-"generic_time"
-    %I:%M %p
 "Genre"
 "genre_colors"
     Display Genre Colors
@@ -337,8 +333,7 @@
     Force this specific showing to record.
 "info: default recording"
     Reset any override requests so that this showing will schedule normally.
-"info: don't record"
-    Do not record this specific showing.
+"info: dont record"
 "info: flvplayer"
     <p>
     Flash video playback is currently only a proof-of-concept and should be
@@ -493,7 +488,7 @@
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
-"Only display favorite channels"
+"Only display favourite channels"
 "Only match commercial-free channels"
 "Only match HD programs"
 "Only match non-recorded shows"
@@ -540,8 +535,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please enter an IMDB number or a title to do another search"
-"Please wait for the pending AJAX request"
+"Please enter an imdb number or a title to do another search"
+"Please wait for the pending ajax request"
 "Plot"
 "Plot:"
 "Pop-out player"
@@ -786,7 +781,7 @@
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
-"Sorry, but you cannot add this playlist as it would create a circular dependency."
+"Sorry, but you cannot add this playlist as it would create a circular dependancy."
 "sortby_channum"
     Sort channel list by channel number (checked) or by callsign (unchecked)
 "Source:"

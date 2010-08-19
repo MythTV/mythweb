@@ -513,10 +513,6 @@
     Pátek
 "Frontends"
     Frontendy
-"generic_date"
-    %a %b %e, %Y
-"generic_time"
-    %I:%M %p
 "Genre"
     Žánr
 "genre_colors"

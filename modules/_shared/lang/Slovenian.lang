@@ -500,10 +500,6 @@
     Petek
 "Frontends"
     Frontendi
-"generic_date"
-    %e.%m.%Y
-"generic_time"
-    %H:%M
 "Genre"
     Žanr
 "genre_colors"

@@ -395,10 +395,6 @@
 "Friday"
     Divendres
 "Frontends"
-"generic_date"
-    %b %e, %Y
-"generic_time"
-    %I:%M %p
 "Genre"
     Genere
 "genre_colors"

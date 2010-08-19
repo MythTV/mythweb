@@ -384,10 +384,6 @@
 "Friday"
     金曜日
 "Frontends"
-"generic_date"
-    %Y %b %e
-"generic_time"
-    %I:%M %p
 "Genre"
     ジャンル
 "genre_colors"

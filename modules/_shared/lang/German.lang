@@ -531,10 +531,6 @@
 "Friday"
     Freitag
 "Frontends"
-"generic_date"
-    %e.%m.%Y
-"generic_time"
-    %H:%M
 "Genre"
     Genre
 "genre_colors"
