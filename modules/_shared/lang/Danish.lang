@@ -552,6 +552,10 @@
     Fredag
 "Frontends"
     Frontends
+"generic_date"
+    %a %e %b %Y
+"generic_time"
+    %H:%M
 "Genre"
     Genre
 "genre_colors"

@@ -468,6 +468,10 @@
 "Friday"
     Viernes
 "Frontends"
+"generic_date"
+    %b %e, %Y
+"generic_time"
+    %I:%M %p
 "Genre"
     Género
 "genre_colors"

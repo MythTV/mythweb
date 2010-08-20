@@ -554,6 +554,10 @@
     Vendredi
 "Frontends"
     Frontaux
+"generic_date"
+    %e %b %Y
+"generic_time"
+    %I:%M %p
 "Genre"
     Genre
 "genre_colors"

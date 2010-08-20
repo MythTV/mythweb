@@ -528,6 +528,10 @@
     Péntek
 "Frontends"
     Lejátszók
+"generic_date"
+    %a %b %e, %Y
+"generic_time"
+    %I:%M %p
 "Genre"
     Műfaj
 "genre_colors"
