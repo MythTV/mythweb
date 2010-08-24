@@ -19,6 +19,8 @@
 // Attempt to load up firephp if installed on the server
     @include_once('FirePHPCore/fb.php');
 
+    require_once 'includes/errors.php';
+
 // Lazy load the classes...
     require_once 'includes/class_autoload.php';
 

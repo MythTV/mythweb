@@ -12,15 +12,10 @@
  * @subpackage
  *
 /**/
-
 // Set the desired page title
     $page_title = 'MythWeb - Error - '.htmlentities($errstr, ENT_COMPAT, 'UTF-8');
-
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="skins/errors.css">';
-
-// Print the page header
-    require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>
 
 <div id="message">

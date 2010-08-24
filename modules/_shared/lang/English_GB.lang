@@ -950,3 +950,5 @@
 "Year:"
 "Yes"
 "Yesterday"
+"You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
+"You must be running at least php 5.3 to use this program."

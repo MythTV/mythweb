@@ -107,6 +107,8 @@
 /**/
     function error_handler($errno, $errstr, $errfile, $errline, $vars) {
         global $db;
+        if (class_exists('Translate'))
+            $errstr = Translate::find()->string($errstr);
     // Try to auto-repair damaged SQL tables
         if ($db && preg_match("/Incorrect key file for table: '(\\w+)'/", $errstr, $match))
             $db->query('REPAIR TABLE '.$match[1]);
@@ -252,4 +254,3 @@
              $backtrace,
              'From:  MythWeb PHP Error <'.error_email.">\r\n");
     }
-
