@@ -2,10 +2,10 @@
 /**
  * This stub redirects to the default header.
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/_shared/tmpl/default/header.php $
- * @date        $Date: 2009-08-01 21:50:00 -0700 (Sat, 01 Aug 2009) $
- * @version     $Revision: 21099 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

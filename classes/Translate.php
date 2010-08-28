@@ -2,10 +2,10 @@
 /**
  *
  *
- * @url         $URL: svn+ssh://svn.mythtv.org/var/lib/svn/trunk/mythplugins/mythweb/modules/tv/classes/Channel.php $
- * @date        $Date: 2010-06-06 10:07:45 -0700 (Sun, 06 Jun 2010) $
- * @version     $Revision: 25003 $
- * @author      $Author: kormoc $
+ * @url         $URL$
+ * @date        $Date$
+ * @version     $Revision$
+ * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb
