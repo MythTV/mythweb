@@ -49,7 +49,7 @@
     text-align:         center;
 }
 
-#listings td.x-airdate {
+#listings td.x-airdate, #listings td.x-originalairdate {
     white-space:        nowrap;
 }
 #listings td.x-length {
