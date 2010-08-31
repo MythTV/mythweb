@@ -156,7 +156,7 @@
     <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['record date'] == 'on') { ?>
         <th class="x-recdate"><?php  echo get_sort_link('recdate',  t('Record Date'))  ?></th>
     <?php } if ($_SESSION['settings']['screens']['tv']['upcoming recordings']['length'] == 'on') { ?>
-        <th class="x-length" nowrap><?php  echo get_sort_link('length',  t('Record Length'))  ?></th>
+        <th class="x-length"><?php  echo get_sort_link('length',  t('Record Length'))  ?></th>
     <?php } ?>
 </tr><?php
     $row = 0;
