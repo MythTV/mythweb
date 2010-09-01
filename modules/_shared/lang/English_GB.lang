@@ -99,6 +99,7 @@
 "Auto Expire"
 "Auto-expire recordings"
 "Auto-flag commercials"
+    Auto-flag adverts
 "Auto-transcode"
 "AVC/H.264"
 "Avoid poor signal quality"
@@ -141,6 +142,7 @@
 "Category"
 "Category Legend"
 "CC"
+    Subtitles
 "Chan. Callsign"
 "Chan. Name"
 "Chan. Number"
@@ -166,6 +168,7 @@
 "Commands"
 "Commands:"
 "Commercials Flagged"
+    Adverts Flagged
 "commfree"
 "Conflict"
 "Conflicts"
@@ -282,6 +285,7 @@
 "First recording"
 "First showing of each episode"
 "Flag Commercials"
+    Flag Adverts
 "FLV Width"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
@@ -300,6 +304,7 @@
     %I:%M %p
 "Genre"
 "genre_colors"
+    genre_colours
 "Genres"
 "Go"
 "Google"
@@ -414,7 +419,9 @@
 "minutes"
 "Missing Cover"
 "Modify priority by star rating (0.0 to 1.0 for movies only)"
+    Modify priority by star rating (0.0 to 1.0 for films only)
 "Modify priority for a station on an input"
+    Modify priority for a channel on an input
 "Modify priority for all inputs on a card"
 "Modify priority for an input (Input priority)"
 "Modify priority for every card on a host"
@@ -486,9 +493,11 @@
 "Off"
 "Only a certain channel number"
 "Only channels marked as commercial free"
+    Only channels marked as advert free
 "Only channels that carry a specific station"
 "Only display favourite channels"
 "Only match commercial-free channels"
+    Only match advert-free channels
 "Only match HD programs"
     Only match HD programmes
 "Only match non-recorded shows"
@@ -497,12 +506,14 @@
 "Only show distinct shows"
 "Only shows marked as HDTV"
 "Optimize Tables"
+    Optimise Tables
 "or"
 "Original Airdate"
 "Originally aired between"
 "Override"
 "Page Down"
 "Page recorded programs"
+    Page recorded programmes
 "Page Up"
 "Parental Level"
 "Part $1 of $2"
@@ -518,9 +529,12 @@
 "Play"
 "Play Recording on Frontend"
 "Play this Album Now"
+    Play This Album Now
 "Play This Playlist Now"
 "Play this Playlist Now"
+    Play This Playlist Now
 "Play this Song Now"
+    Play This Song Now
 "Play Time"
 "Playback Group"
 "Playback Groups"
@@ -550,6 +564,7 @@
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
 "Prefer movies when shown at night"
+    Prefer films when shown at night
 "prefer_channum"
 "Preferred Input"
 "Presented by"
@@ -562,17 +577,21 @@
 "Priority for any show with End Late time"
 "Priority for HD shows under two hours"
 "Priority for movies by the year of release"
+    Priority for films by the year of release
 "Priority when shown once"
 "Produced by"
 "Profile"
 "profile"
 "Program Categories"
+    Programme Categories
 "Program Detail"
     Programme Detail
 "Program Flags"
+    Programme Flags
 "Program ID"
     Programme ID
 "Program Information"
+    Programme Information
 "Program Listing"
     Programme Listing
 "Program Type"
@@ -730,7 +749,9 @@
 "Search"
 "Search $1"
 "Search all program keywords for a match against search phrase below"
+    Search all programme keywords for a match against search phrase below
 "Search all program titles containing the Title text below"
+    Search all programme titles containing the Title text below
 "Search for all actors contained in a recording for a match against search phrase below"
 "Search for:  $1"
 "Search Music"
@@ -860,6 +881,7 @@
 "type"
 "Type"
 "Uncategorized"
+    Uncategorised
 "Undelete"
 "Undelete: $1"
 "Units"
