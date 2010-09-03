@@ -456,8 +456,8 @@ class Program extends MythBase {
  * Generate a new preview pixmap for this recording.
 /**/
     public function generate_pixmap() {
-        $ret = MythBackend::find()->sendCommand(array('QUERY_GENPIXMAP', $this->backend_row()));
-        if ($ret == 'BAD') {
+        $ret = MythBackend::find()->sendCommand(array('QUERY_GENPIXMAP2', "do_not_care", $this->backend_row()));
+        if ($ret == 'ERROR') {
             return 0;
         }
         return 1;
