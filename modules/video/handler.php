@@ -167,7 +167,7 @@
                 if (!isset($PATH['subs'][$path])) {
                     $p = '';
                     for ($i=0; $i<=$key;$i++) {
-                        $p .=$paths[$i];
+                        $p .= '/'.$paths[$i];
                     }
                     $PATH['subs'][$path] = array('display' => $path,
                                                  'path'    => "/$dir/$p",
@@ -258,8 +258,10 @@
     else
         $Filter_Search = "";
 
-    if (isset($_REQUEST['path']))
+    if (isset($_REQUEST['path'])) {
+        $_REQUEST['path'] = str_replace('//', '/', $_REQUEST['path']);
         $_SESSION['video']['path'] = preg_replace('#^/*#', '/', preg_replace('#/+$#', '', $_REQUEST['path']));
+    }
 
     if (isset($_SESSION['video']['path'])) {
         $where .= ' AND CONCAT("/", IF(INSTR(filename,"/"), LEFT(filename, LENGTH(filename) - LOCATE("/", REVERSE(filename))), "")) = '.$db->escape($_SESSION['video']['path']);

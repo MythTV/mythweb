@@ -256,7 +256,7 @@
 <table width="100%" border="0" cellpadding="4" cellspacing="2" class="list small">
 <tr class="menu">
 <td>
- <span style="float: right"><input type="button" value="<?php echo t('Scan Collection'); ?>" class="submit" onclick="scan()"></span>
+ <!-- <span style="float: right"><input type="button" value="<?php echo t('Scan Collection'); ?>" class="submit" onclick="scan()"></span> -->
  <form action="<?php echo root_url; ?>video" method="GET">
   <?php echo t('Display'); ?>:
   <select name="category" id="category" onchange="filter();">
