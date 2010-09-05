@@ -13,6 +13,8 @@
 
     $filename =~ s/mpg$/mp4/g;
     $basename =~ s/mpg$/mp4/g;
+    $filename =~ s/nuv$/mp4/g;
+    $basename =~ s/nuv$/mp4/g;
 
 # File size
     my $size = -s $filename;
