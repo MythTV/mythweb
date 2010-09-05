@@ -42,7 +42,12 @@
 
 // No data?  Assume today.
     if (count($programs) < 1) {
-        redirect_browser(root_url.'tv/channel/'.$this_channel->chanid.'/'.time());
+        $_SESSION['list_time'] = time();
+        $programs = load_all_program_data(mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']), date('Y', $_SESSION['list_time'])),
+                                          mktime(0, 0, 0, date('n', $_SESSION['list_time']), date('j', $_SESSION['list_time']) + 1, date('Y', $_SESSION['list_time'])),
+                                          $this_channel->chanid);
+        if (count($programs) < 1)
+            redirect_browser(root_url.'tv/list');
     }
 
 // Load the class for this page
