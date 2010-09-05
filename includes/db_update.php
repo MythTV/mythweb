@@ -16,7 +16,10 @@
     define('WebDBSchemaVer', 2);
 
 // What version does the database think it is?
-    $db_vers = setting('WebDBSchemaVer');
+    $db_vers = intval(setting('WebDBSchemaVer'));
+
+    if ($db_vers < 0)
+        $db_vers = 0;
 
 // The database is too new
     if ($db_vers > WebDBSchemaVer)
@@ -29,6 +32,7 @@
         switch ($db_vers) {
         // No version, no database
             case 0:
+                $db->query('DROP TABLE IF EXISTS mythweb_sessions');
                 $db->query('CREATE TABLE mythweb_sessions (
                                 id              VARCHAR(128) PRIMARY KEY NOT NULL DEFAULT "",
                                 modified        TIMESTAMP,
