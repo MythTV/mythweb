@@ -108,7 +108,7 @@ class Channel extends MythBase {
         if ($channel_data['icon'] && !file_exists($this->icon)) {
         // Local file?
             if (file_exists($channel_data['icon']))
-                copy($channel_data['icon'], $this->icon);
+                @copy($channel_data['icon'], $this->icon);
         // Otherwise, grab it from the backend
             else {
             // Make the request and store the result
