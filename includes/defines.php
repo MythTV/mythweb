@@ -107,6 +107,9 @@
     $root_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
     $root_auth_url = $root_url;
 
+    if (isset($_SERVER['PHP_AUTH_PW']))
+        $_SERVER['PHP_AUTH_PW'] = urlencode($_SERVER['PHP_AUTH_PW']);
+
     if (!ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
         $root_auth_url .= $_SERVER['PHP_AUTH_USER'].':'.$_SERVER['PHP_AUTH_PW'].'@';
     elseif (!ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']))
@@ -114,6 +117,9 @@
 
     $root_url .= http_host.root;
     $root_auth_url .= http_host.root;
+
+    if (!$_SESSION['stream']['include_user_and_password'])
+        $root_auth_url = $root_url;
 
     define('root_url',   $root_url);
     define('root_auth_url', $root_auth_url);
