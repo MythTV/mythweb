@@ -110,6 +110,10 @@ class Channel extends MythBase {
 
         global $db;
         $channel_data = $db->query_assoc('SELECT * FROM channel WHERE chanid = ?', $chanid);
+
+        if (!isset($channel_data['chanid']) || $channel_data['chanid'] != $chanid)
+            return;
+
         foreach ($channel_data AS $key => $value)
             $this->$key = $value;
         $this->icon = 'data/tv_icons/'.basename($channel_data['icon']);
