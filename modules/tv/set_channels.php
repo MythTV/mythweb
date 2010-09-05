@@ -97,11 +97,10 @@
     }
 
 // Load all of the channel data from the database
-    $Channels = array();
-    $sh = $db->query('SELECT * FROM channel ORDER BY '.$sortby);
-    while ($row = $sh->fetch_assoc()) {
-        $Channels[] = $row;
-    }
+    $channels = array();
+    $sh = $db->query('SELECT chanid FROM channel ORDER BY '.$sortby);
+    while ($row = $sh->fetch_col())
+        $channels[] = $row;
     $sh->finish();
 
 // These settings affect all of mythtv

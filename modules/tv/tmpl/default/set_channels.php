@@ -35,7 +35,6 @@
     <td width="5%"><?php  echo t('visible')       ?></td>
     <td width="5%"><?php  echo t('useonairguide') ?></td>
 </tr><?php
-    $channels = Channel::getChannelList(False);
     foreach ($channels as $chanid) {
         $channel =& Channel::find($chanid);
 ?><tr class="settings" align="center">
