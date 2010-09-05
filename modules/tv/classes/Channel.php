@@ -32,16 +32,21 @@ class Channel extends MythBase {
     public $useonairguide;
     public $programs = array();
 
-    public static function getChannelList() {
-        $channel_list = Cache::get('[channelList]');
+    public static function getChannelList($filtered=True) {
+        if ($filtered)
+            $channel_list = Cache::get('[filtered_channelList]');
+        else
+            $channel_list = Cache::get('[channelList]');
         if (is_null($channel_list)) {
             global $db;
             $sql = 'SELECT channel.chanid FROM channel';
-            if ($_SESSION['guide_favonly'])
-                $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\' AND';
-            else
-                $sql .= ' WHERE';
-            $sql .= ' channel.visible = 1';
+            if ($_SESSION['guide_favonly']) {
+                $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\'';
+                if ($filtered)
+                    $sql .= ' AND channel.visible = 1';
+            } elseif ($filtered) {
+                $sql .= ' WHERE channel.visible = 1';
+            }
             $sql .= ' GROUP BY channel.channum, channel.callsign';
         // Sort
             $sql .= ' ORDER BY '
