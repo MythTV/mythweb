@@ -140,7 +140,7 @@
 // Get the filesystem layout
     $PATH_TREE = array();
     $sh = $db->query('
-        SELECT      DISTINCT IF(INSTR(filename,"/"), LEFT(filename, LENGTH(filename) - LOCATE("/", REVERSE(filename))), "/") AS dirname
+        SELECT      DISTINCT IF(INSTR(filename,"/"), LEFT(filename, CHAR_LENGTH(filename) - LOCATE("/", REVERSE(filename))), "/") AS dirname
         FROM        videometadata
         ORDER BY    dirname');
     while ($dirname = $sh->fetch_col()) {
@@ -264,7 +264,7 @@
     }
 
     if (isset($_SESSION['video']['path'])) {
-        $where .= ' AND CONCAT("/", IF(INSTR(filename,"/"), LEFT(filename, LENGTH(filename) - LOCATE("/", REVERSE(filename))), "")) = '.$db->escape($_SESSION['video']['path']);
+        $where .= ' AND CONCAT("/", IF(INSTR(filename,"/"), LEFT(filename, CHAR_LENGTH(filename) - LOCATE("/", REVERSE(filename))), "")) = '.$db->escape($_SESSION['video']['path']);
     }
 // Deal with the parental locks
     if (isset($_REQUEST['VideoAdminPassword']))
