@@ -86,7 +86,7 @@ class MythTV {
             }
         }
         if (!$found)
-            die("Can not find a valid config file.\n");
+            die("Cannot find a valid config file.\n");
         $this->LoadConfig();
         $this->DB = Database::connect( $this->Config['DBName'],
                                        $this->Config['DBUserName'],

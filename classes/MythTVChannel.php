@@ -61,7 +61,7 @@ class MythTVChannel {
             die('MythTVChannel requires class MythTV to be passed');
         $this->MythTV = &$MythTV;
         if (is_null($ChanID))
-            die('$ChanID can not be NULL');
+            die('$ChanID cannot be NULL');
         $channel = $this->MythTV->DB->query_assoc('SELECT channel.*,
                                                           dtv_multiplex.bandwidth         AS dtv_bandwidth,
                                                           dtv_multiplex.constellation     AS dtv_constellation,
