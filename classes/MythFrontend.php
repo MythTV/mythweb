@@ -21,7 +21,7 @@ class MythFrontend extends MythBase {
     private $fp = false;
 
 /** @var bool       Connected?. */
-    private $connected = false;
+    public $connected = false;
 
 /** @var string     Hostname to connect to. */
     private $host;
