@@ -52,7 +52,7 @@
     }
 
 // Send a command?  (via ajax)
-    elseif ($_REQUEST['command']) {
+    elseif (isset($_REQUEST['command'])) {
         if (is_array($_SESSION['remote']['frontends']) && count($_SESSION['remote']['frontends'])) {
             foreach (array_keys($_SESSION['remote']['frontends']) as $host) {
                 $frontend = $Frontends[$host];
