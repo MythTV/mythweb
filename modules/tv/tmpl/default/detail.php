@@ -414,6 +414,9 @@
                     echo '<a href="',  root_url, 'tv/schedules">',
                          t('Back to the recording schedules'),
                          '</a>';
+                    echo '<a href="', root_url, 'tv/list?time=', $_SESSION['list_time'], '">',
+                         t('Back to the program listing'),
+                         '</a>';
                 }
                 else {
                     if ($program->endtime > time()) {
