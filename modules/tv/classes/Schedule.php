@@ -139,6 +139,18 @@ class Schedule extends MythBase {
         }
     // Something else
         else {
+		// Are we passing in a set of chanid, starttime?
+			if (func_num_args() == 2) {
+				$chanid = func_get_arg(0);
+				$start  = func_get_arg(1);
+				$data = $db->query_col('SELECT recordid
+							              FROM record
+								         WHERE record.chanid = ?
+								           AND record.starttime = FROM_UNIXTIME(?)',
+									    $chanid,
+										$start
+										);
+			}
         // Data is a recordid -- load its contents
             if (!is_array($data) && $data > 0) {
                 $data = $db->query_assoc('SELECT *, IF(type='.rectype_always.',-1,chanid)         AS chanid,

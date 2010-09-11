@@ -50,8 +50,12 @@
             elseif ($_REQUEST['activate'])
                 $program->activate();
         }
-        else
-            add_warning('Unknown program.');
+        else {
+            if ($_REQUEST['dontrec'])
+                $schedule =& Schedule::find($_GET['chanid'], $_GET['starttime'])->save(rectype_dontrec);
+            else
+                add_warning('Unknown program.');
+        }
 
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         redirect_browser(root_url.'tv/upcoming');
