@@ -18,7 +18,7 @@
     ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.'modules/tv');
 
 // We need the list of available playgroups
-    require_once 'modules/tv/includes/recording_schedules.php';
+    require_once 'modules/tv/classes/Schedule.php';
 
 // Save changes
     if ($_REQUEST['save'] && $_REQUEST['old_name']) {
@@ -78,4 +78,3 @@
 
 // These settings affect all of mythtv
     $Settings_Hosts = t('All Hosts');
-
