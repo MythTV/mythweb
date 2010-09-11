@@ -176,15 +176,15 @@ class Program extends MythBase {
                 $this->url = video_url($this); // get download info
             }
         // Assign the program flags
-            $this->has_commflag   = ($this->progflags & 0x001) ? true : false;    // FL_COMMFLAG       = 0x001
-            $this->has_cutlist    = ($this->progflags & 0x002) ? true : false;    // FL_CUTLIST        = 0x002
-            $this->auto_expire    = ($this->progflags & 0x004) ? true : false;    // FL_AUTOEXP        = 0x004
-            $this->is_editing     = ($this->progflags & 0x008) ? true : false;    // FL_EDITING        = 0x008
-            $this->bookmark       = ($this->progflags & 0x010) ? true : false;    // FL_BOOKMARK       = 0x010
-            $this->is_recording   = ($this->progflags & 0x020) ? true : false;    // FL_INUSERECORDING = 0x020
-            $this->is_playing     = ($this->progflags & 0x040) ? true : false;    // FL_INUSEPLAYING   = 0x040
-            $this->is_transcoded  = ($this->progflags & 0x400) ? true : false;    // FL_TRANSCODED     = 0x400
-            $this->is_watched     = ($this->progflags & 0x800) ? true : false;    // FL_WATCHED        = 0x800
+            $this->has_commflag   = ($this->progflags & 0x00000001) ? true : false;    // FL_COMMFLAG       = 0x00000001
+            $this->has_cutlist    = ($this->progflags & 0x00000002) ? true : false;    // FL_CUTLIST        = 0x00000002
+            $this->auto_expire    = ($this->progflags & 0x00000004) ? true : false;    // FL_AUTOEXP        = 0x00000004
+            $this->is_editing     = ($this->progflags & 0x00000008) ? true : false;    // FL_EDITING        = 0x00000008
+            $this->bookmark       = ($this->progflags & 0x00000010) ? true : false;    // FL_BOOKMARK       = 0x00000010
+            $this->is_recording   = ($this->progflags & 0x00100000) ? true : false;    // FL_INUSERECORDING = 0x00100000
+            $this->is_playing     = ($this->progflags & 0x00200000) ? true : false;    // FL_INUSEPLAYING   = 0x00200000
+            $this->is_transcoded  = ($this->progflags & 0x00000100) ? true : false;    // FL_TRANSCODED     = 0x00000100
+            $this->is_watched     = ($this->progflags & 0x00000200) ? true : false;    // FL_WATCHED        = 0x00000200
         // Can be deleted?
             $this->can_delete     = (!$this->is_recording && !$this->is_playing) || $this->recgroup != 'LiveTV';
         // Add a generic "will record" variable, too
