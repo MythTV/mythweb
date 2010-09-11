@@ -283,7 +283,7 @@
                  ON videometadata.intid = videometadatagenre.idvideo
         ' . $where . '
         GROUP BY    intid
-        ORDER BY    title');
+        ORDER BY    title,season,episode');
     while ($intid = $sh->fetch_col()) {
         $All_Videos[] = new Video($intid);
     }
@@ -293,10 +293,6 @@
     if (!is_array($_SESSION['video_sortby']))
         $_SESSION['video_sortby'] = array(array('field'   => 'title',
                                                 'reverse' => false));
-
-// Sort the programs
-    if (count($All_Videos))
-        sort_programs($All_Videos, 'video_sortby');
 
 // Load the class for this page
     require_once tmpl_dir.'video.php';
