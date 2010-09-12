@@ -55,7 +55,7 @@ class Modules implements Cache_Enabled {
         return self::$Modules[$module];
     }
 
-    public static function getModuleProperity($module, $key) {
+    public static function getModuleProperty($module, $key) {
         self::load();
         return self::$Modules[$module][$key];
     }

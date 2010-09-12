@@ -117,8 +117,8 @@
         </td>
     <td class="x-sections">
         <ul><?php
-            foreach (Modules::getModuleProperity('remote', 'links') as $link => $name) {
-                echo '<li><a href="', Modules::getModuleProperity('remote', 'path'), '/', $link, '"';
+            foreach (Modules::getModuleProperty('remote', 'links') as $link => $name) {
+                echo '<li><a href="', Modules::getModuleProperty('remote', 'path'), '/', $link, '"';
                 if ($link == $_REQUEST['type'])
                     echo ' class="x-selected"';
                 echo '>', html_entities($name), '</a></li>';
@@ -138,7 +138,7 @@
                 if (!$_SESSION['remote']['frontends'][$host])
                     next;
                 echo '<li><img id="hostscreen_', $host, '" class="x-screenshot"',
-                     ' src="', root, html_entities(Modules::getModuleProperity('remote', 'path').'/screenshot?format=jpg&width=960&host='.urlencode($host)),
+                     ' src="', root, html_entities(Modules::getModuleProperty('remote', 'path').'/screenshot?format=jpg&width=960&host='.urlencode($host)),
                      '" /></li>';
             }
             ?></ul>
