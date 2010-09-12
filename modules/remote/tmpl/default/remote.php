@@ -49,7 +49,7 @@
                                      });
         // Handle the response
             if (r.transport.responseText == '0') {
-                $('host_'+host).removeClassName('-selected');
+                $('host_'+host).removeClassName('x-selected');
                 frontends.splice(i, 1);
             }
         }
@@ -70,13 +70,13 @@
                 alert("<?php echo t('$1 is not responding.', '"+host+"') ?>");
                 return;
             }
-            $('host_'+host).addClassName('-selected');
+            $('host_'+host).addClassName('x-selected');
             frontends.push(host);
         }
     // Unset an active host?
         else {
             frontends.splice(i, 1);
-            $('host_'+host).removeClassName('-selected');
+            $('host_'+host).removeClassName('x-selected');
             new Ajax.Request('remote/',
                              {
                                 parameters: 'unping='+encodeURIComponent(host),
@@ -131,6 +131,18 @@
     require_once tmpl_dir.'/'.$_REQUEST['type'].'.php';
 ?>
 </td>
+</tr><tr>
+    <td class="x-screenshots" colspan="2">
+        <ul style="list-style-type: none"><?php
+            foreach (array_keys($Frontends) as $host) {
+                if (!$_SESSION['remote']['frontends'][$host])
+                    next;
+                echo '<li><img id="hostscreen_', $host, '" class="x-screenshot"',
+                     ' src="', root, html_entities(Modules::getModuleProperity('remote', 'path').'/screenshot?format=jpg&width=960&host='.urlencode($host)),
+                     '" /></li>';
+            }
+            ?></ul>
+        </td>
 </tr>
 </table>
 <?php

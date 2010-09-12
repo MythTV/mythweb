@@ -25,8 +25,10 @@ class MythFrontend extends MythBase {
 
 /** @var string     Hostname to connect to. */
     private $host;
-/** @var string     Hostname to connect to. */
+/** @var int        Port to connect to. */
     private $port;
+/** @var int        Port to connect to for HTTP requests (e.g. GetScreenShot). */
+    private $port_http = 6547;
 
 /** @var array      List of jump points available on this host. */
     private $jump_points = array();
@@ -115,8 +117,22 @@ class MythFrontend extends MythBase {
         return $this->connected = false;
     }
 
+/**
+ * Accessor method
+/**/
     public function getHost() {
         return $this->host;
+    }
+
+/**
+ * Request something from the backend's HTTP API
+/**/
+    public function httpRequest($path, $args = array()) {
+        $url = "http://{$this->host}:{$this->port_http}/MythFE/{$path}?";
+        foreach ($args as $key => $value) {
+            $url .= urlencode($key).'='.urlencode($value).'&';
+        }
+        return @file_get_contents($url);
     }
 
 /**
@@ -234,8 +250,24 @@ class MythFrontend extends MythBase {
         return false;
     }
 
+/**
+ * Tell the frontend to play a specific program
+ *
+ * @param int $chanid
+ * @param string $starttime
+/**/
     public function play_program($chanid, $starttime) {
         $starttime = date('Y-m-d\TH:i:s', $starttime);
         return $this->send_play("program $chanid $starttime resume");
     }
+    
+/**
+ * Tell the frontend to play a specific program
+ *
+ * @param array $args
+/**/
+    public function get_screenshot($args = array()) {
+        return $this->httpRequest('GetScreenShot', $args);
+    }
+    
 }

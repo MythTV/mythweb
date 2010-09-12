@@ -86,6 +86,8 @@
     // Reset "shift" to off
         if (shift)
             handle_shift();
+    // Update the screenshots
+        setTimeout(function() { $$('img.x-screenshot').each(function(s) { s.src = s.src+"#"+Math.random(); }); }, 500);
     }
 
     function handle_keypress(event) {
