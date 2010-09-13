@@ -184,7 +184,7 @@ recommended.
 =============
 
 As of 0.21, MythWeb contains configuration files for both Apache and Lighty.
-You will need to chose ONE of these files and install it in your webserver's
+You will need to choose ONE of these files and install it in your webserver's
 configuration directory.  This will be explained later.
 
 The first thing you must do is find the configuration file for your chosen
