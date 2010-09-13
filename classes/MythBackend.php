@@ -15,7 +15,8 @@ class MythBackend {
 
 // MYTH_PROTO_VERSION is defined in libmyth in mythtv/libs/libmyth/mythcontext.h
 // and should be the current MythTV protocol version.
-    static $protocol_version        = '61';
+    static $protocol_version        = '62';
+    static $protocol_token          = '78B5631E';
 
 // The character string used by the backend to separate records
     static $backend_separator       = '[]:[]';
@@ -88,7 +89,7 @@ class MythBackend {
             && $_SESSION['backend'][$this->host]['proto_version']['last_check_version'] == MythBackend::$protocol_version )
             return true;
 
-        $response = $this->sendCommand('MYTH_PROTO_VERSION '.MythBackend::$protocol_version);
+        $response = $this->sendCommand('MYTH_PROTO_VERSION '.MythBackend::$protocol_version.' '.MythBackend::$protocol_token);
         $_SESSION['backend'][$this->host]['proto_version']['last_check_version'] = @$response[1];
 
         if ($response[0] == 'ACCEPT') {
