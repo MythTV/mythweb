@@ -16,17 +16,12 @@
 // Save?
     if ($_POST['save']) {
     // Parse the post variables and save each group of channel info
-        foreach (array_keys($_POST) as $key) {
-        // Figure out the chanid, or leave
-            if (!preg_match('/^channum_(\\d+)$/', $key, $match)) continue;
-            list($match, $chanid) = $match;
-        // First, delete any unwanted channels
-            $query_params = array();
-            if (preg_match('/^delete_(\\d+)$/', $key, $match) && $_POST[$key] == 'true') {
-                list($match, $chanid) = $match;
-                $query = 'DELETE FROM channel';
-            }
+        foreach ($_POST['channel'] as $chanid => $data) {
+
+            if ($data['delete'] == 'true')
+                $db->query('DELETE FROM channel WHERE chanid=?', $chanid);
             else {
+                $query_params = array();
             // Not deleting so grab values that can be empty
                 $query = 'UPDATE channel SET xmltvid       = ?,
                                              freqid        = ?,
@@ -40,37 +35,36 @@
                                              commmethod    = ?,
                                              useonairguide = ?,
                                              visible       = ?';
-                $query_params[] = $_POST['xmltvid_'.$chanid];
-                $query_params[] = $_POST['freqid_'.$chanid];
-                $query_params[] = $_POST['finetune_'.$chanid];
-                $query_params[] = $_POST['videofilters_'.$chanid];
-                $query_params[] = $_POST['brightness_'.$chanid];
-                $query_params[] = $_POST['contrast_'.$chanid];
-                $query_params[] = $_POST['colour_'.$chanid];
-                $query_params[] = $_POST['hue_'.$chanid];
-                $query_params[] = $_POST['recpriority_'.$chanid];
-                $query_params[] = empty($_POST['commfree_'.$chanid])      ? -1 : -2;
-                $query_params[] = empty($_POST['useonairguide_'.$chanid]) ? 0 : 1;
-                $query_params[] = empty($_POST['visible_'.$chanid])       ? 0 : 1;
+                $query_params[] = $data['xmltvid'];
+                $query_params[] = $data['freqid'];
+                $query_params[] = $data['finetune'];
+                $query_params[] = $data['videofilters'];
+                $query_params[] = $data['brightness'];
+                $query_params[] = $data['contrast'];
+                $query_params[] = $data['colour'];
+                $query_params[] = $data['hue'];
+                $query_params[] = $data['recpriority'];
+                $query_params[] = empty($data['commfree'])      ? -1 : -2;
+                $query_params[] = empty($data['useonairguide']) ? 0 : 1;
+                $query_params[] = empty($data['visible'])       ? 0 : 1;
             // next, the fields that need to have a value, so we won't change them if they were emptied
-                if ($_POST['channum_'.$chanid]) {
+                if ($data['channum']) {
                     $query         .= ',channum=?';
-                    $query_params[] = $_POST['channum_'.$chanid];
+                    $query_params[] = $data['channum'];
                 }
-                if ($_POST['callsign_'.$chanid]) {
+                if ($data['callsign']) {
                     $query         .= ',callsign=?';
-                    $query_params[] = $_POST['callsign_'.$chanid];
+                    $query_params[] = $data['callsign'];
                 }
-                if ($_POST['name_'.$chanid]) {
+                if ($data['name']) {
                     $query         .= ',name=?';
-                    $query_params[] = $_POST['name_'.$chanid];
+                    $query_params[] = $data['name'];
                 }
+                $db->query($query.' WHERE chanid=?',
+                           $query_params,
+                           $chanid
+                           );
             }
-        // Submit the query
-            $db->query($query.' WHERE chanid=?',
-                       $query_params,
-                       $chanid
-                      );
         }
     // Do a reschedule to refresh scheduled recordings;
         MythBackend::find()->rescheduleRecording();

@@ -38,23 +38,23 @@
     foreach ($channels as $chanid) {
         $channel =& Channel::find($chanid);
 ?><tr class="settings" align="center">
-    <td><input type="checkbox" name="delete_<?php echo $channel->chanid ?>" id="delete_<?php echo $channel->chanid ?>" value="true" /></td>
+    <td><input type="checkbox" name="channel[<?php echo $channel->chanid ?>][delete]" id="delete_<?php echo $channel->chanid ?>" value="true" /></td>
     <td><?php echo html_entities($channel->sourceid) ?></td>
-    <td><input type="text" size="5"  name="xmltvid_<?php      echo $channel->chanid ?>" id="xmltvid_<?php      echo $channel->chanid ?>" value="<?php echo html_entities($channel->xmltvid)      ?>" style="text-align: center" /></td>
-    <td><input type="text" size="5"  name="channum_<?php      echo $channel->chanid ?>" id="channum_<?php      echo $channel->chanid ?>" value="<?php echo html_entities($channel->channum)      ?>" style="text-align: center" /></td>
-    <td><input type="text" size="10" name="callsign_<?php     echo $channel->chanid ?>" id="callsign_<?php     echo $channel->chanid ?>" value="<?php echo html_entities($channel->callsign)     ?>" /></td>
-    <td><input type="text" size="27" name="name_<?php         echo $channel->chanid ?>" id="name_<?php         echo $channel->chanid ?>" value="<?php echo html_entities($channel->name) ?>" /></td>
-    <td><input type="text" size="3"  name="freqid_<?php       echo $channel->chanid ?>" id="freqid_<?php       echo $channel->chanid ?>" value="<?php echo html_entities($channel->freqid)       ?>" style="text-align: center" /></td>
-    <td><input type="text" size="3"  name="finetune_<?php     echo $channel->chanid ?>" id="finetune_<?php     echo $channel->chanid ?>" value="<?php echo html_entities($channel->finetune)     ?>" style="text-align: center" /></td>
-    <td><input type="text" size="3"  name="videofilters_<?php echo $channel->chanid ?>" id="videofilters_<?php echo $channel->chanid ?>" value="<?php echo html_entities($channel->videofilters) ?>" style="text-align: center" /></td>
-    <td><input type="text" size="5"  name="brightness_<?php   echo $channel->chanid ?>" id="brightness_<?php   echo $channel->chanid ?>" value="<?php echo html_entities($channel->brightness)   ?>" style="text-align: center" /></td>
-    <td><input type="text" size="5"  name="contrast_<?php     echo $channel->chanid ?>" id="contrast_<?php     echo $channel->chanid ?>" value="<?php echo html_entities($channel->contrast)     ?>" style="text-align: center" /></td>
-    <td><input type="text" size="5"  name="colour_<?php       echo $channel->chanid ?>" id="colour_<?php       echo $channel->chanid ?>" value="<?php echo html_entities($channel->colour)       ?>" style="text-align: center" /></td>
-    <td><input type="text" size="5"  name="hue_<?php          echo $channel->chanid ?>" id="hue_<?php          echo $channel->chanid ?>" value="<?php echo html_entities($channel->hue)          ?>" style="text-align: center" /></td>
-    <td><input type="text" size="2"  name="recpriority_<?php  echo $channel->chanid ?>" id="recpriority_<?php  echo $channel->chanid ?>" value="<?php echo html_entities($channel->recpriority)  ?>" style="text-align: center" /></td>
-    <td><input type="checkbox" name="commfree_<?php           echo $channel->chanid ?>" value="1"<?php if (!empty($channel->commmethod) && $channel->commmethod == -2)      echo ' CHECKED' ?> /></td>
-    <td><input type="checkbox" name="visible_<?php            echo $channel->chanid ?>" value="1"<?php if (!empty($channel->visible))       echo ' CHECKED' ?> /></td>
-    <td><input type="checkbox" name="useonairguide_<?php      echo $channel->chanid ?>" value="1"<?php if (!empty($channel->useonairguide)) echo ' CHECKED' ?> /></td>
+    <td><input type="text" size="5"  name="channel[<?php echo $channel->chanid ?>][xmltvid]"       id="xmltvid_<?php      echo $channel->chanid ?>" value="<?php echo html_entities($channel->xmltvid)      ?>" style="text-align: center" /></td>
+    <td><input type="text" size="5"  name="channel[<?php echo $channel->chanid ?>][channum]"       id="channum_<?php      echo $channel->chanid ?>" value="<?php echo html_entities($channel->channum)      ?>" style="text-align: center" /></td>
+    <td><input type="text" size="10" name="channel[<?php echo $channel->chanid ?>][callsign]"      id="callsign_<?php     echo $channel->chanid ?>" value="<?php echo html_entities($channel->callsign)     ?>" /></td>
+    <td><input type="text" size="27" name="channel[<?php echo $channel->chanid ?>][name]"          id="name_<?php         echo $channel->chanid ?>" value="<?php echo html_entities($channel->name) ?>" /></td>
+    <td><input type="text" size="3"  name="channel[<?php echo $channel->chanid ?>][freqid]"        id="freqid_<?php       echo $channel->chanid ?>" value="<?php echo html_entities($channel->freqid)       ?>" style="text-align: center" /></td>
+    <td><input type="text" size="3"  name="channel[<?php echo $channel->chanid ?>][finetune]"      id="finetune_<?php     echo $channel->chanid ?>" value="<?php echo html_entities($channel->finetune)     ?>" style="text-align: center" /></td>
+    <td><input type="text" size="3"  name="channel[<?php echo $channel->chanid ?>][videofilters]"  id="videofilters_<?php echo $channel->chanid ?>" value="<?php echo html_entities($channel->videofilters) ?>" style="text-align: center" /></td>
+    <td><input type="text" size="5"  name="channel[<?php echo $channel->chanid ?>][brightness]"    id="brightness_<?php   echo $channel->chanid ?>" value="<?php echo html_entities($channel->brightness)   ?>" style="text-align: center" /></td>
+    <td><input type="text" size="5"  name="channel[<?php echo $channel->chanid ?>][contrast]"      id="contrast_<?php     echo $channel->chanid ?>" value="<?php echo html_entities($channel->contrast)     ?>" style="text-align: center" /></td>
+    <td><input type="text" size="5"  name="channel[<?php echo $channel->chanid ?>][colour]"        id="colour_<?php       echo $channel->chanid ?>" value="<?php echo html_entities($channel->colour)       ?>" style="text-align: center" /></td>
+    <td><input type="text" size="5"  name="channel[<?php echo $channel->chanid ?>][hue]"           id="hue_<?php          echo $channel->chanid ?>" value="<?php echo html_entities($channel->hue)          ?>" style="text-align: center" /></td>
+    <td><input type="text" size="2"  name="channel[<?php echo $channel->chanid ?>][recpriority]"   id="recpriority_<?php  echo $channel->chanid ?>" value="<?php echo html_entities($channel->recpriority)  ?>" style="text-align: center" /></td>
+    <td><input type="checkbox"       name="channel[<?php echo $channel->chanid ?>][commfree]"      value="1"<?php if (!empty($channel->commmethod) && $channel->commmethod == -2)      echo ' CHECKED' ?> /></td>
+    <td><input type="checkbox"       name="channel[<?php echo $channel->chanid ?>][visible]"       value="1"<?php if (!empty($channel->visible))       echo ' CHECKED' ?> /></td>
+    <td><input type="checkbox"       name="channel[<?php echo $channel->chanid ?>][useonairguide]" value="1"<?php if (!empty($channel->useonairguide)) echo ' CHECKED' ?> /></td>
 </tr><?php
     }
 ?>
