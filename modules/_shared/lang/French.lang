@@ -66,6 +66,7 @@
 "1 - Lowest"
     1 - Laxiste
 "18 Hour Forecast"
+    Prévisions sur 18 heures
 "4 - Highest"
     4 - Sévère
 "Aborted"
@@ -153,7 +154,9 @@
 "and"
     et
 "Animated Map"
+    Carte animée
 "Animation"
+    Animation
 "Any"
     Tous
 "Any Category"
@@ -239,6 +242,7 @@
 "By Genre"
     Par genre
 "Cache_APC"
+    Cache PHP de remplacement (recommandé)
 "cache_engine"
 "Cache_Memcache"
 "Cache_Memcached"
@@ -273,6 +277,7 @@
 "Chan. Number"
     N° de chaîne
 "Change Location"
+    Changer d'emplacement
 "Channel"
     Chaîne
 "channel"
@@ -296,6 +301,7 @@
 "Choose Type"
     Choisir le type
 "Clear the current default session"
+    Réinitialiser la session par défaut courante
 "Click to disable Auto Expire"
     Cliquer pour désactiver l'auto-expiration
 "Click to enable Auto Expire"
@@ -335,6 +341,7 @@
 "Create Schedule"
     Créer une programmation
 "Current Conditions"
+    Conditions actuelles
 "Current MythWeb Template"
     Modèle MythWeb actuel
 "Current Recording"
@@ -460,6 +467,7 @@
 "End Late"
     Arrêt en retard
 "English_Unit"
+    Anglaise
 "Enter"
     <-+ Entrée
 "Enter a new name for your playlist"
@@ -499,6 +507,7 @@
 "Extra Information"
     Informations supplémentaires
 "Faster"
+    Plus vite
 "ffmpeg with MP3 support not detected"
     ffmpeg avec support MP3 non détecté
 "File Size"
@@ -534,6 +543,7 @@
 "FLV Width"
     Largeur FLV
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
+    Pour les enregistrements journaliers, 5 jours par semaine hors week-end ou 7 jours.
 "For more information on the Power Search please go to:"
     Pour plus d'informations sur la recherche avancée, veuillez vous rendre à :
 "Force HTTP for streams"
@@ -557,7 +567,7 @@
 "generic_date"
     %e %b %Y
 "generic_time"
-    %I:%M %p
+    %H:%M
 "Genre"
     Genre
 "genre_colors"
@@ -649,6 +659,11 @@
 "info:forget old"
     Oublie les enregistrements précédents de cette émission pour qu'elle puisse être réenregistrée.
 "info:jumppoints"
+    <ul>
+        <li>Les raccourcis menu sont actifs partout.  Si vous assignez une touche déjà assignée dans l'éditeur d'assignation des touches à un raccourci menu, celui-ci aura la priorité.</li>
+        <li>Vous voudrez probablement utiliser des touches de fonction ou des touches combinées à un modificateur (alt, control) pour les raccourcis menu afin d'éviter de rencontrer des problèmes.</li>
+        <li>Les modifications des assignations de touches/raccourcis menu nécessitent actuellement que mythfrontend soit redémarré mais cela pourrait changer dans le futur.</li>
+    </ul>
 "info:never record"
     Simule un enregistrement précédent de cette émission pour qu'elle ne soit pas enregistrée.
 "Insert"
@@ -728,7 +743,9 @@
 "Local weather forecast"
     Prévisions météo locales
 "Location"
+    Emplacement
 "Location:"
+    Emplacement :
 "LOCKDOWN_NOTICE"
     MythWeb a détecté qu'un robot accède à cette installation. Nous avons désactivé cette installation pour empêcher que des robots effacent tous vos enregistrements ou permettent à d'autres personnes d'accéder à votre installation de mythweb sans votre permission. Veuillez sécurisez votre installation
 "LOCKDOWN_NOTICE_2"
@@ -822,6 +839,7 @@
 "MythWeb Skin"
     Habillage de MythWeb
 "MythWeb Template"
+    Modèle MythWeb
 "MythWeb Weather."
     Météo MythWeb.
 "Name"
@@ -901,6 +919,7 @@
 "Only one specific channel ID (Channel priority)"
     Seulement une chaîne spécifique (priorité de chaîne)
 "Only show distinct shows"
+    Seulement les émissions différentes
 "Only shows marked as HDTV"
     Seulement les émissions HD
 "Optimize Tables"
@@ -1266,7 +1285,9 @@
 "Science Fiction Movies"
     Films de science-fiction
 "Screen Name"
+    Nom d'écran
 "Screen Settings"
+    Réglages de l'écran
 "Search"
     Recherche
 "Search $1"
@@ -1324,6 +1345,7 @@
     détruire votre configuration si vous ne faites pas assez attention. La seule manière d'annuler vos
     modifications dans ce cas serait de restaurer la base de données à partir d'une copie de sauvegarde.
 "Severe Weather Alerts"
+    Alertes météo importantes
 "Shift"
     ^ Maj.
 "Show"
@@ -1349,12 +1371,15 @@
 "Shows"
     Émissions
 "SI"
+    SI
 "Six Day Forecast"
+    Prévisions sur six jours
 "Skip Ahead"
     Saut avant
 "Skip Back"
     Saut arrière
 "Slower"
+    Plus lent
 "Songs"
     Morceaux
 "Songs for Genre"
@@ -1368,6 +1393,7 @@
 "sortby_channum"
     Classer les chaînes par numéro de chaîne (coché) ou par indicatif (décoché)
 "Source:"
+    Source :
 "sourceid"
     sourceid
 "Space"
@@ -1385,6 +1411,7 @@
 "Starting"
     Démarrage en cours
 "Static Map"
+    Carte statique
 "Statistics"
     Statistiques
 "Stats"
@@ -1402,6 +1429,7 @@
 "Storage Group"
     Groupe de stockage
 "Store the current session as the default"
+    Sauvegarder la session courante comme défaut
 "Streaming"
     Diffusion en flux
 "Sub and Desc (Empty matches)"
@@ -1427,6 +1455,7 @@
 "Tab"
     Tab
 "Television"
+    Télévision
 "Temp"
     Temp.
 "The requested recording schedule has been deleted."
@@ -1444,6 +1473,7 @@
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
 "Three Day Forecast"
+    Prévisions sur trois jours
 "Thursday"
     Jeudi
 "Time"
@@ -1519,6 +1549,7 @@
 "Undelete: $1"
     Récupérer : $1
 "Units"
+    Unités
 "Unknown"
     Inconnu
 "Unknown action"
@@ -1593,6 +1624,7 @@
 "VideoNewBrowsable"
     Les fichiers nouvellement analysés seront affichables par défaut
 "Videos"
+    Vidéos
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
     Répertoire de base pour le stockage des vidéos
@@ -1672,4 +1704,6 @@
 "Yesterday"
     Hier
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
+    Il vous manque une extension PHP pour utiliser mysql. Veuillez installer php-mysqli ou un module similaire. 
 "You must be running at least php 5.3 to use this program."
+    Vous devez utiliser au minimum la version 5.3 de PHP pour utiliser de programme.
