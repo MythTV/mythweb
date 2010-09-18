@@ -66,6 +66,7 @@
 "1 - Lowest"
     1 - Lavest
 "18 Hour Forecast"
+    18 timers udsigt
 "4 - Highest"
     4 - Højest
 "Aborted"
@@ -152,7 +153,9 @@
 "and"
     og
 "Animated Map"
+    Animeret kort
 "Animation"
+    Animation
 "Any"
     Alle
 "Any Category"
@@ -271,6 +274,7 @@
 "Chan. Number"
     Kanal nummer
 "Change Location"
+    Skift lokation
 "Channel"
     Kanal
 "channel"
@@ -294,6 +298,7 @@
 "Choose Type"
     Vælg type
 "Clear the current default session"
+    Nulstil den aktuelle standardsession
 "Click to disable Auto Expire"
     Klik for at deaktivere autoudløb
 "Click to enable Auto Expire"
@@ -333,6 +338,7 @@
 "Create Schedule"
     Planlæg
 "Current Conditions"
+    Nuværende omstændigheder
 "Current MythWeb Template"
     Nuværende MythWeb template
 "Current Recording"
@@ -449,6 +455,8 @@
     Rediger indstillinger for: $1
 "Editing "
     Redigerer
+"Embed HTTP basic auth user name/password into stream urls"
+    Integrer HTTP basic auth brugernavn/kodeord ind i stream URLs
 "Enable Flash Video player for recordings."
     Aktiver Flash video afspiller for optagelser.
 "Enable Video Playback"
@@ -497,6 +505,7 @@
 "Extra Information"
     Ekstra information
 "Faster"
+    Hurtigere
 "ffmpeg with MP3 support not detected"
     ffmpeg med MP3 understøttelse ikke fundet
 "File Size"
@@ -532,6 +541,7 @@
 "FLV Width"
     FLV bredde
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
+    For daglige optagelser, 5 ugedage hvis en hverdag, eller 7 dage pr. uge hvis en weekenddag.
 "For more information on the Power Search please go to:"
     For mere information om super søgning, gå venligst til:
 "Force HTTP for streams"
@@ -722,7 +732,9 @@
 "Local weather forecast"
     Lokal vejrudsigt
 "Location"
+    Lokation
 "Location:"
+    Lokation:
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -811,6 +823,7 @@
 "MythWeb Skin"
     MythWeb skin
 "MythWeb Template"
+    MythWeb skabelon
 "MythWeb Weather."
     MythWeb Vejrudsigt.
 "Name"
@@ -890,6 +903,7 @@
 "Only one specific channel ID (Channel priority)"
     Kun et specifikt kanal ID (Kanal prioritet)
 "Only show distinct shows"
+    Vis kun forskellige shows
 "Only shows marked as HDTV"
     Kun HDTV udsendelser
 "Optimize Tables"
@@ -1255,7 +1269,9 @@
 "Science Fiction Movies"
     Science Fiction Film
 "Screen Name"
+    Skærmnavn
 "Screen Settings"
+    Skærmindstillinger
 "Search"
     Søg
 "Search $1"
@@ -1310,6 +1326,7 @@
 "settings: notice"
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
 "Severe Weather Alerts"
+    Alvorlige vejralarmer
 "Shift"
     Shift
 "Show"
@@ -1335,12 +1352,15 @@
 "Shows"
     Udsendelser
 "SI"
+    SI
 "Six Day Forecast"
+    Seks dages udsigt
 "Skip Ahead"
     Skip frem
 "Skip Back"
     Skip tilbage
 "Slower"
+    Langsommere
 "Songs"
     Sange
 "Songs for Genre"
@@ -1354,6 +1374,7 @@
 "sortby_channum"
     Sorter efter kanal nummer i stedet for kaldenavn
 "Source:"
+    Kilde:
 "sourceid"
     Kilde ID
 "Space"
@@ -1371,6 +1392,7 @@
 "Starting"
     Starter
 "Static Map"
+    Statisk kort
 "Statistics"
     Statistik
 "Stats"
@@ -1388,6 +1410,7 @@
 "Storage Group"
     Opbevaringsgruppe
 "Store the current session as the default"
+    Gem den aktuelle session som standard session
 "Streaming"
     Streaming
 "Sub and Desc (Empty matches)"
@@ -1413,6 +1436,7 @@
 "Tab"
     Tab
 "Television"
+    Fjernsyn
 "Temp"
     Midlertidig
 "The requested recording schedule has been deleted."
@@ -1428,6 +1452,7 @@
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dette vil overskrive din nuværende afspilningsliste. Er du sikker på du vil forsætte?
 "Three Day Forecast"
+    Tre dages udsigt
 "Thursday"
     Torsdag
 "Time"
@@ -1503,6 +1528,7 @@
 "Undelete: $1"
     Fortryd sletning: $1
 "Units"
+    Enheder
 "Unknown"
     Ukendt
 "Unknown action"
@@ -1646,4 +1672,6 @@
 "Yesterday"
     Igår
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
+    Du manger en PHP-udvidelse til MySQL. Installer venligst php-mysqli eller lignende
 "You must be running at least php 5.3 to use this program."
+    Du skal køre med mindst PHP 5.3 for at benytte dette program.
