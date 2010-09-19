@@ -76,6 +76,7 @@
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
 "An error occured while adding your playlist."
+    An error occurred while adding your playlist.
 "and"
 "Animated Map"
 "Animation"
@@ -157,6 +158,7 @@
 "channum"
 "Check for duplicates in"
 "Childrens Movies"
+    Children's Movies
 "Choose Genre.."
 "Choose Type"
 "Clear the current default session"
@@ -166,6 +168,7 @@
 "Close Captioned priority"
 "Closed Captioning"
 "colour"
+    color
 "Commands"
 "Commands:"
 "Commercials Flagged"
@@ -493,6 +496,7 @@
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
 "Only display favourite channels"
+    Only display favorite channels
 "Only match commercial-free channels"
 "Only match HD programs"
 "Only match non-recorded shows"
@@ -540,7 +544,9 @@
 "Playlist: %s"
 "Playlists"
 "Please enter an imdb number or a title to do another search"
+    Please enter an IMDB number or a title to do another search
 "Please wait for the pending ajax request"
+    Please wait for the pending AJAX request
 "Plot"
 "Plot:"
 "Pop-out player"
@@ -786,6 +792,7 @@
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
+    Sorry, but you cannot add this playlist as it would create a circular dependency.
 "sortby_channum"
     Sort channel list by channel number (checked) or by callsign (unchecked)
 "Source:"
