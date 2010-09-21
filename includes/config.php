@@ -22,6 +22,9 @@
     if (!isset($_SESSION['cache_engine']))
         $_SESSION['cache_engine'] = 'Cache_Null';
 
+// Force a null engine for now
+    $_SESSION['cache_engine'] = 'Cache_Null';
+
 // Do we encode passwords
     if (!isset($_SESSION['stream']['include_user_and_password']))
         $_SESSION['stream']['include_user_and_password'] = false;

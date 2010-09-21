@@ -53,6 +53,7 @@
                title="<?php echo t('show_video_covers'); ?>"
                <?php if ($_SESSION['show_video_covers']) echo ' CHECKED'; ?>></td>
 </tr>
+<!--
 <tr>
     <th><?php echo t('cache_engine'); ?>:</th>
     <td><select name="cache_engine" id="cache_engine">
@@ -69,6 +70,7 @@
         </select>
     </td>
 </tr>
+-->
 <tr>
     <td>
         <input type="submit" class="submit" name="set_current_session_as_default" value="<?php echo t('Store the current session as the default') ?>">
