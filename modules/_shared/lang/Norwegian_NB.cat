@@ -1,0 +1,99 @@
+"Action"
+    Action
+    \b(?:action|even)
+"Adult"
+    Erotikk
+    \b(?:adult|eroti|porno)
+"Animals"
+    Dyr
+    \b(?:animal|dyr)
+"Art_Music"
+    Kunst/Musikk
+    \b(?:art|kunst|dan(s|ce)|musikk|kultur|rock|pop)
+"Business"
+    Forretning
+    \b(?:biz|busine|økon|econ|intel)
+"Children"
+    Barneprogram
+    \b(?:child|barn|tegnef|animation|cartoon|kids)
+"Comedy"
+    Komedie
+    \b(?:[ck]omed|entertain|sitcom|underh|stand)
+"Crime_Mystery"
+    Krim/Mysterier
+    \b(?:[ck]rim|myster)
+"Documentary"
+    Dokumentar
+    \b(?:do[ck])
+"Drama"
+    Drama
+    \b(?:drama)
+"Educational"
+    Undervisning
+    \b(?:edu|interests|undervis)
+"Food"
+    Mat
+    \b(?:food|cook|essen|drink|mad|vin)
+"Game"
+    Spill
+    \b(?:game|spill)
+"Health_Medical"
+    Helse/Medisin
+    \b(?:health|medis|sundhe)
+"History"
+    Historie
+    \b(?:hist)
+"Horror"
+    Skrekk
+    \b(?:horror)
+"HowTo"
+    Gjør-det-selv
+    \b(?:how|home|house|garden|gjør|bolig)
+"Misc"
+    Diverse
+    \b(?:special|variety|info|collect)
+"News"
+    Nyheter
+    \b(?:news|current|verdensn|nyheter|aktuelt|rapport)
+"Reality"
+    Reality
+    \b(?:reality)
+"Romance"
+    Romantikk
+    \b(?:romance|romanti)
+"SciFi_Fantasy"
+    SciFi/Fantasy
+    \b(?:fantasy|sci\w*\W*fi|rom)
+"Science_Nature"
+    Naturvitenskap
+    \b(?:science|nature?|environment|vidensk)
+"Shopping"
+    Shopping
+    \b(?:shop)
+"Soaps"
+    Såpeopera
+    \b(?:soaps?|såpeop)
+"Spiritual"
+    Åndelig/Religion
+    \b(?:spirit|relig)
+"Sports"
+    Sport
+    \b(?:sport|fotball|håndball|badmin|tennis|golf)
+"Talk"
+    Talkshow
+    \b(?:talk)
+"Travel"
+    Reiseprogram
+    \b(?:travel|reise)
+"Unknown"
+    Ukjent  
+"War"
+    Krig
+    \b(?:war|krig)
+"Western"
+    Western
+    \b(?:west|cowb)
+"movie"
+    Film
+    \b(?:movie|film)
+    
