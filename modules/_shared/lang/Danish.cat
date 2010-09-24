@@ -12,10 +12,10 @@
     \b(?:art|kunst|dan(s|ce)|musi[ck]|[ck]ultur)
 "Business"
     Business
-    \b(?:biz|busine|økon)
+    \b(?:biz|busine|Ã¸kon)
 "Children"
     BÃ¸rneprogram
-    \b(?:child|børn|tegnef|animation)
+    \b(?:child|bÃ¸rn|tegnef|animation)
 "Comedy"
     Komedie
     \b(?:[ck]omed|entertain|sitcom|underh|stand)
@@ -48,7 +48,7 @@
     \b(?:horror)
 "HowTo"
     GÃ¸r-det-selv
-    \b(?:how|home|house|garden|gør|bolig)
+    \b(?:how|home|house|garden|gÃ¸r|bolig)
 "Misc"
     Diverse
     \b(?:special|variety|info|collect)
@@ -72,13 +72,13 @@
     \b(?:shop)
 "Soaps"
     SÃ¦beopera
-    \b(?:soaps?|sæbeop)
+    \b(?:soaps?|sÃ¦beop)
 "Spiritual"
     Ã…ndeligt/Religion
     \b(?:spirit|relig)
 "Sports"
     Sport
-    \b(?:sport|fodbold|håndbold|badmin|tennis|golf)
+    \b(?:sport|fodbold|hÃ¥ndbold|badmin|tennis|golf)
 "Talk"
     Talkshow
     \b(?:talk)
