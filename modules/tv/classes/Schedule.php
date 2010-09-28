@@ -120,6 +120,9 @@ class Schedule extends MythBase {
 /**/
     public function __construct($data) {
         global $db;
+
+		$this->dupmethod = _or(setting('prefDupMethod'), 0);
+
     // Schedule object data -- just copy it into place
         if (is_object($data)) {
         // Not the right type of object?
