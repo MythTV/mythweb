@@ -2,6 +2,7 @@
 " at "
     vid
 " TRANSCODED"
+    OMKODAD
 "# Tracks"
     # Låtar
 "$1 B"
@@ -61,11 +62,15 @@
 "%s Songs (%s)"
     %s sånger (%s)
 "(height is calculated automatically from the recording aspect ratio)"
+    (höjd beräknas automatiskt från inspelningens bildförhållande)
 "1 - Lowest"
+    1 - Lägst
 "18 Hour Forecast"
+    18 timmars prognos
 "4 - Highest"
+    4 - Högst
 "Aborted"
-    Avbröt
+    Avbruten
 "Aborting"
     Avbryter
 "Action"
@@ -93,6 +98,7 @@
 "Additional Tables"
     Ytterligare tabeller
 "Additional tables:"
+    Ytterligare tabeller:
 "Admin Key"
     Administrations nyckel
 "Advanced"
@@ -137,14 +143,19 @@
     Alla sånger
 "ALLOCINETYPE"
 "Allows you to match any string of any length (including zero length)"
+    Låter dig matcha godtycklig sträng av godtycklig längd
 "Allows you to match on a single character"
+    Låter dig matcha på ett enskilt tecken
 "Allows you to search through other database tables when using a power search"
+    Låter dig söka igenom andra databastabeller när en avancerad sökning anv�nds
 "An error occured while adding your playlist."
     Ett fel uppstod vid tillägg av din spellista.
 "and"
     och
 "Animated Map"
+    Animerad karta
 "Animation"
+    Animation
 "Any"
     Alla
 "Any Category"
@@ -188,6 +199,7 @@
 "AVC/H.264"
     AVC/H.264
 "Avoid poor signal quality"
+    Undvik dålig signalkvalitet
 "Back"
     Tillbaka
 "Back Tab"
@@ -209,6 +221,7 @@
 "brightness"
     ljusstyrka
 "Browsable"
+    Bläddringsbar
 "Browse"
     Bläddra
 "Browse = no"
@@ -262,6 +275,7 @@
 "Chan. Number"
     Kanalnummer
 "Change Location"
+    Byt plats
 "Channel"
     Kanal
 "channel"
@@ -285,6 +299,7 @@
 "Choose Type"
     Välj typ
 "Clear the current default session"
+    Rensa nuvarande standardsession
 "Click to disable Auto Expire"
     Klicka för att avaktivera autoradering
 "Click to enable Auto Expire"
@@ -292,6 +307,7 @@
 "Click to View Playlist"
     Klicka för att visa spellista
 "Close Captioned priority"
+    Undertextprioritet
 "Closed Captioning"
     Textning
 "colour"
@@ -299,6 +315,7 @@
 "Commands"
     Kommandon
 "Commands:"
+    Kommandon:
 "Commercials Flagged"
     Reklam markerad
 "commfree"
@@ -314,6 +331,7 @@
 "Count"
     Antal
 "Cover Image"
+    Omslagsbild
 "Create a New Playlist"
     Skapa ny spellista
 "Create a Random Mix"
@@ -321,6 +339,7 @@
 "Create Schedule"
     Schemalägg
 "Current Conditions"
+    Nuvarande förhållanden
 "Current MythWeb Template"
     Nuvarande MythWeb mall
 "Current Recording"
@@ -378,7 +397,9 @@
 "DELETE this Saved Playlist"
     RADERA denna sparade spellista
 "DeleteKey"
+    Delete
 "Depending on the Search type this is where you enter actual main search commands"
+    Beroende på söktyp så är det här som du anger sökkommandon
 "description"
     beskrivning
 "Description"
@@ -392,8 +413,11 @@
 "Directed by"
     Regisserad av
 "Director"
+    Regissör
 "Director:"
+    Regissör:
 "Directory Structure"
+    Katalogstruktur
 "Display"
     Visning
 "Dolby Surround"
@@ -407,33 +431,44 @@
 "Down"
     Ner
 "Download URL override"
-    Nedladdnings-URL-åsidosättning
+    Åsidosättning av medladdnings-URL
 "Dup Method"
     Dubblettmetod
 "Duplicate"
-    Dublett
+    Dubblett
 "Duplicate Check method"
     Dubblettmetod
 "Duplicates/Ignored"
+    Dubbletter/ignorerade
 "Earlier"
     Tidigare
 "Earlier Showing"
+    Tidigare visning
 "Edit"
     Redigera
 "Edit existing group"
+    Redigera existerande grupp
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
 "Edit Screen"
+    Redigera skärm
 "Edit settings for: $1"
-    Ändra insällningar för: $1
+    Ändra inställningar för: $1
 "Editing "
+    Redigerar
+"Embed HTTP basic auth user name/password into stream urls"
+    Integrera HTTP basic auth användarnamn/lösenord i ström-URL:er
 "Enable Flash Video player for recordings."
+    Aktivera Flash-videouppspelning av inspelningar
 "Enable Video Playback"
+    Aktivera videouppspelning
 "End"
+    End
 "End Late"
     Sluta senare
 "English_Unit"
 "Enter"
+    Enter
 "Enter a new name for your playlist"
     Ange ett namn för din spellista
 "Enter your search terms"
@@ -445,6 +480,7 @@
 "Episode Number"
     Avsnittsnummer
 "Error"
+    Fel
 "error: playgroup $1 exists"
     misslyckades: spelgrupp $1 existerar
 "Errored"
@@ -470,7 +506,9 @@
 "Extra Information"
     Extra information
 "Faster"
+    Fortare
 "ffmpeg with MP3 support not detected"
+    ffmpeg med MP3-stöd hittades inte
 "File Size"
     Filstorlek
 "film"
@@ -498,11 +536,15 @@
 "First recording"
     Första inspelning
 "First showing of each episode"
+    Första visning av alla avsnitt
 "Flag Commercials"
     Flagga reklam
 "FLV Width"
+    FLV-bredd
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
+    För dagliga inspelningar, 5 veckodagar om en vardag, eller 7 dagar per vecka om en lördag/söndag.
 "For more information on the Power Search please go to:"
+    För mer information om avancerad sökning gå till:
 "Force HTTP for streams"
     Tvinga HTTP för strömmar
 "Force HTTP/HTTPS port for streams"
@@ -528,6 +570,7 @@
 "Genre"
     Genre
 "genre_colors"
+    Använd färger för att visa genre
 "Genres"
     Genrer
 "Go"
@@ -575,8 +618,9 @@
 "Humidity"
     Luftfuktighet
 "Ignore generic shows"
-    Ignorera allmänna shower
+    Ignorera allmänna visningar
 "Ignore scheduled shows"
+    Ignorera schemalagda visningar
 "IMDB"
     IMDB
 "IMDBTYPE"
@@ -641,6 +685,7 @@
 "Keyword Search"
     Sök nyckelord
 "Keyword Search:"
+    Sök nyckelord:
 "Keywords"
     Nyckelord
 "Language"
@@ -650,6 +695,7 @@
 "Last recording"
     Senaste inspelning
 "Last showing of each episode"
+    Sista visning av varje avsnitt
 "Later"
     Senare
 "left"
@@ -665,6 +711,7 @@
 "Length (min)"
     Längd (min)
 "Length in minutes"
+    Längd i minuter
 "Links"
     Länkar
 "Listing &quot;Jump to&quot;"
@@ -690,7 +737,9 @@
 "Local weather forecast"
     Lokal väderprognos
 "Location"
+    Plats
 "Location:"
+    Plats:
 "LOCKDOWN_NOTICE"
     LÅSNER_FÖRVARNING
 "LOCKDOWN_NOTICE_2"
@@ -704,6 +753,7 @@
 "Manual"
     Manuell
 "Match related callsigns"
+    Matcha relaterade kanalnamn
 "matches"
     Träffar
 "Max star rating for movies"
@@ -718,6 +768,7 @@
 "Modify priority for an input (Input priority)"
 "Modify priority for every card on a host"
 "Modify unidentified episodes"
+    Modifiera oidentifierade avsnitt
 "Monday"
     Måndag
 "Mono"
@@ -771,11 +822,13 @@
 "MythWeb Global Defaults"
     MythWeb globala förval
 "MythWeb Locked"
+    MythWeb låst
 "MythWeb Session"
     MythWeb-session
 "MythWeb Skin"
     MythWeb-skinn
 "MythWeb Template"
+    MythWeb-mall
 "MythWeb Weather."
     MythWeb väder.
 "Name"
@@ -789,6 +842,7 @@
 "New"
     Ny
 "New episodes only"
+    Endast nya avsnitt
 "New Episodes Only"
     Endast nya avsnitt
 "New Group"
@@ -798,11 +852,13 @@
 "New Titles, Premieres"
     Nya titlar, premiärer
 "No"
+    Nej
 "NO DATA"
     INGA DATA
 "No Frontends allow remote control."
     Inga Frontends tillåter fjärrkontroll.
 "No Genre"
+    Ingen genre
 "No matches found"
     Inga träffar
 "No matching programs found."
@@ -820,6 +876,7 @@
 "None"
     Ingen
 "Not Listed"
+    Inte listad
 "Notes"
     Anteckningar
 "Number of episodes"
@@ -833,7 +890,9 @@
 "Off"
     Av
 "Only a certain channel number"
+    Endast ett bestämt kanalnummer
 "Only channels marked as commercial free"
+    Endast reklamfria kanaler
 "Only channels that carry a specific station"
 "Only display favourite channels"
     Visa endast favoritkanaler
@@ -842,18 +901,21 @@
 "Only match HD programs"
     Matcha endast HD-program
 "Only match non-recorded shows"
-    Matcha endast icke-inspelade shower
+    Matcha endast icke-inspelade visningar
 "Only New Episodes"
     Endast nya avsnitt
 "Only one specific channel ID (Channel priority)"
+    Endast ett specifikt kanal-ID (Kanalprioritet)
 "Only show distinct shows"
+    Endast unika titlar
 "Only shows marked as HDTV"
+    Endast visningar markerade som HDTV
 "Optimize Tables"
     Optimera tabeller
 "or"
     eller
 "Original Airdate"
-    Original Sändningsdatum
+    Ursprungligt sändningsdatum
 "Originally aired between"
     Visades ursprungligen mellan
 "Override"
@@ -865,6 +927,7 @@
 "Page Up"
     Bläddra upp
 "Parental Level"
+    Föräldranivå
 "Part $1 of $2"
     Del $1 av $2
 "Past Month"
@@ -882,6 +945,7 @@
 "People Search"
     Sök person
 "People Search:"
+    Sök person:
 "Percent of time spent recording"
     Procent av tid i inspelningsläge
 "Play"
@@ -899,9 +963,9 @@
 "Play Time"
     Speltid
 "Playback Group"
-    Uppspelning Grupp
+    Uppspelningsgrupp
 "Playback Groups"
-    Uppspelning Grupper
+    Uppspelningsgrupper
 "Played %s times"
     Spelad %s gånger
 "Played once"
@@ -929,7 +993,9 @@
 "Please wait for the pending ajax request"
     Vänta på den pågående ajax-begäran
 "Plot"
+    Handling
 "Plot:"
+    Handling:
 "Pop-out player"
 "Possible conflicts"
     Möjliga konflikter
@@ -940,15 +1006,18 @@
 "Power Search"
     Avancerad sökning
 "Power Search:"
+    Avancerad sökning:
 "Precip"
     Förhastat handlande
 "Prefer a host for a storage group"
+    Föredra en värd framför en lagringsgrupp
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
     Föredra kanalnummer
 "Prefer movies when shown at night"
+    Föredra filmer som visas på kvällen
 "prefer_channum"
-    föredra kanalnummer
+    Föredra kanalnummer
 "Preferred Input"
     Föredragen källa
 "Presented by"
@@ -960,12 +1029,16 @@
 "Previous recordings"
     Tidigare inspelningar
 "Priority for a category"
+    Prioritet för en kategori
 "Priority for a category type"
+    Prioritet för en kategorityp
 "Priority for all matching titles"
+    Prioritet för alla matchande titlar
 "Priority for any show with End Late time"
 "Priority for HD shows under two hours"
 "Priority for movies by the year of release"
 "Priority when shown once"
+    Prioritet vid endast en visning
 "Produced by"
     Producerad av
 "Profile"
@@ -973,6 +1046,7 @@
 "profile"
     profil
 "Program Categories"
+    Programkategorier
 "Program Detail"
     Programdetalj
 "Program Flags"
@@ -1004,6 +1078,7 @@
 "Rating"
     Betyg
 "Rating:"
+    Betyg:
 "Recently Added Albums"
     Nyligen tillagda album
 "Recently completed jobs"
@@ -1033,6 +1108,7 @@
 "Recording Options"
     Inspelningsinställningar
 "Recording Options Help"
+    Hjälp för inspelningsinställningar
 "Recording Priority"
     Inspelningsprioritet
 "Recording Profile"
@@ -1150,6 +1226,7 @@
 "Right"
     Höger
 "Root Directory"
+    Rotkatalog
 "Rows to show between timeslot info"
     Rader att visa mellan tidsluckeinfo
 "Running"
@@ -1204,8 +1281,9 @@
 "Search Music"
     Sök musik
 "Search Phrase"
-    Sök fras
+    Sökfras
 "Search Phrase:"
+    Sökfras:
 "Search Results"
     Sökresultat
 "Search the Music Database"
@@ -1213,11 +1291,14 @@
 "Search Type"
     Sök typ
 "Search Type Help"
+    Hjälp för söktyp
 "Search will perform complex SQL queries against the database as per the search phrase below"
+    Sökningen kommer att utföra SQL-förfrågningar mot databasen enligt sĶkfrasen nedan
 "Searches"
     Sökningar
 "Searches will be performed against the title of all TV shows"
 "Season"
+    Säsong
 "Series ID"
     Serie ID
 "Server Statistics"
@@ -1237,6 +1318,7 @@
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
 "Severe Weather Alerts"
+    Allvarliga vädervarningar
 "Shift"
     Shift
 "Show"
@@ -1248,11 +1330,11 @@
 "Show recordings"
     Visa inspelningar
 "show_channel_icons"
-    visa_kanal_ikoner
+    Visa kanalikoner
 "show_popup_info"
-    visa_popup_info
+    Visa popupinformation om program
 "show_video_covers"
-    visa_video_omslag
+    Visa omslagsbilder för videos
 "Showing all programs from the $1 group."
     Visar alla program i grupp: $1.
 "Showing all programs."
@@ -1262,12 +1344,15 @@
 "Shows"
     Program
 "SI"
+    SI
 "Six Day Forecast"
+    6-dygnsprognos
 "Skip Ahead"
     Hoppa Framåt
 "Skip Back"
     Hoppa Bakåt
 "Slower"
+    Långsammare
 "Songs"
     Sånger
 "Songs for Genre"
@@ -1279,8 +1364,9 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependancy."
     Tyvärr, du kan inte byta namn på denna spellista eftersom det skulle skapa ett cirkulärt beroende.
 "sortby_channum"
-    sortera_kanalnummer
+    Sortera efter kanalnummer i stället för kanalnamn
 "Source:"
+    Källa:
 "sourceid"
     käll-id
 "Space"
@@ -1296,7 +1382,9 @@
 "Start Time"
     Starttid
 "Starting"
+    Startar
 "Static Map"
+    Statisk karta
 "Statistics"
     Statistik
 "Stats"
@@ -1314,11 +1402,13 @@
 "Storage Group"
     Lagringsgrupp
 "Store the current session as the default"
+    Spara nuvarande session som standard
 "Streaming"
     Strömmande
 "Sub and Desc (Empty matches)"
     Textning och Beskrivning (Tomma träffar)
 "Submit"
+    Spara
 "Submit Search"
     Sök
 "Subtitle"
@@ -1338,6 +1428,7 @@
 "Tab"
     Flik
 "Television"
+    Television
 "Temp"
     Tillfälligt
 "The requested recording schedule has been deleted."
@@ -1353,6 +1444,7 @@
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Detta skriver över din nuvarande, osparade spellista. Är du säker på att du vill fortsätta?
 "Three Day Forecast"
+    3-dygnsprognos
 "Thursday"
     Torsdag
 "Time"
@@ -1374,8 +1466,11 @@
 "Title Search"
     Sök titel
 "Title Search:"
+    Sök titel:
 "Title:"
+    Titel:
 "Toggle Interactive Mode"
+    Växla interaktivt läge
 "Too Many"
     För många
 "Top $1"
@@ -1419,11 +1514,13 @@
 "Type"
     Typ
 "Uncategorized"
+    Okategoriserad
 "Undelete"
     Oraderat
 "Undelete: $1"
     Oraderat: $1
 "Units"
+    Enheter
 "Unknown"
     Okänd
 "Unknown action"
@@ -1449,6 +1546,7 @@
 "useonairguide"
     Användar guide information från tv sändnigen.
 "User Rating"
+    Användarbetyg
 "Value"
     Värde
 "Video"
@@ -1456,7 +1554,7 @@
 "Video Bitrate"
     Video Bitrate
 "Video Playback"
-    Video Återuppspelning
+    Videouppspelning
 "Video: Error: IMDB"
     Video: Fel: IMDB
 "Video: Error: IMDB: Not Found"
@@ -1572,13 +1670,16 @@
 "Written by"
     Skriven av
 "xmltvid"
-    xmltv-id
+    XMLTV-id
 "Year"
     År
 "Year:"
+    År:
 "Yes"
     Ja
 "Yesterday"
     Igår
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
+    Du saknar ett php-tillägg för mysql-interaktion. Vänligen installera php-mysqli eller liknande
 "You must be running at least php 5.3 to use this program."
+    Du måste köra minst version 5.3 av php för att använda detta program.
