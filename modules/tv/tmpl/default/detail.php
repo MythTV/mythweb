@@ -285,7 +285,7 @@
             <th><?php echo t('Length') ?>:</th>
             <td><?php echo nice_length($program->length) ?></td>
         </tr><?php
-            if (strlen($program->filesize) > 0) {
+            if (strlen($program->filesize) > 0 && $program->filesize > 0 ) {
         ?><tr class="x-extras">
             <th><?php echo t('File Size') ?>:</th>
             <td><?php echo nice_filesize($program->filesize) ?></td>
@@ -452,6 +452,21 @@
 <?php   if (!$schedule || $schedule->type != rectype_override && $schedule->type != rectype_dontrec) { ?>
         <div class="x-options">
             <h3><?php echo t('Schedule Options') ?>:</h3>
+<?php
+            if ($program && $schedule) {
+                echo '(<a href="'.root_url.'tv/';
+            // Link to different places for different kinds of schedules
+                if ($schedule->search) {   
+                    echo 'schedules/',
+                         ($schedule->search == searchtype_manual) ? 'manual'
+                                                                  : 'custom',
+                         '/', $schedule->recordid;
+                }
+                else
+                    echo 'detail?recordid='.$schedule->recordid;
+                echo '">'.t('View').'</a>)';
+            }
+?>
             <ul>
                 <li><input type="radio" class="radio" name="record" value="0" id="record_never"<?php
                         if (!$schedule->recordid || $schedule->search) echo ' CHECKED' ?> />
