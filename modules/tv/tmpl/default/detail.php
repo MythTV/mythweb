@@ -285,7 +285,7 @@
             <th><?php echo t('Length') ?>:</th>
             <td><?php echo nice_length($program->length) ?></td>
         </tr><?php
-            if (strlen($program->filesize) > 0 && $program->filesize > 0 ) {
+            if ($program->filename) {
         ?><tr class="x-extras">
             <th><?php echo t('File Size') ?>:</th>
             <td><?php echo nice_filesize($program->filesize) ?></td>
