@@ -458,6 +458,8 @@
     Éditer les paramètres pour : $1
 "Editing "
     En édition
+"Embed HTTP basic auth user name/password into stream urls"
+    Incorporer l'authentication HTTP de base dans les URLs de flux
 "Enable Flash Video player for recordings."
     Utiliser le lecteur Flash Vidéo pour les enregistrements
 "Enable Video Playback"
@@ -1629,6 +1631,8 @@
 "VideoTreeLoadMetaData"
     Répertoire de base pour le stockage des vidéos
 "VideoTreeNoDB"
+"View"
+    Afficher
 "View Albums by %s"
     Afficher les albums par %s
 "View Details of %s"
@@ -1704,6 +1708,6 @@
 "Yesterday"
     Hier
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
-    Il vous manque une extension PHP pour utiliser mysql. Veuillez installer php-mysqli ou un module similaire. 
+    Il vous manque une extension PHP pour utiliser mysql. Veuillez installer php-mysqli ou un module similaire.
 "You must be running at least php 5.3 to use this program."
     Vous devez utiliser au minimum la version 5.3 de PHP pour utiliser de programme.
