@@ -27,9 +27,11 @@
 "$1 mins"
     $1 min
 "$1 month"
+    $1 maand
 "$1 months"
+    $1 maanden
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
-    $1 programma's, U gebruikt $2 ($3) van $4.
+    $1 programma's, u gebruikt $2 ($3) van $4 ($5 vrij).
 "$1 recording"
     $1 opname
 "$1 recordings"
@@ -60,6 +62,7 @@
     Activeren
 "Active Screens"
 "Add"
+    Toevoegen
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
@@ -314,6 +317,7 @@
 "Edit Screen"
 "Edit settings for: $1"
 "Editing "
+"Embed HTTP basic auth user name/password into stream urls"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
@@ -538,10 +542,13 @@
     Maandag
 "Mono"
 "More"
+    Meer
 "more"
+    meer
 "Move Item Down in Playlist"
 "Move Item Up in Playlist"
 "movie"
+    film
 "Movies"
     Films
 "Movies, 3&frac12; Stars or more"
@@ -576,19 +583,25 @@
 "MythWeb Weather."
     Weer
 "Name"
+    Naam
 "name"
     naam
 "Narrow Your Search"
 "Never Record"
     Nooit Opnemen
 "New"
+    Nieuw
 "New episodes only"
+    Alleen nieuwe afleveringen
 "New Episodes Only"
+    Alleen nieuwe afleveringen
 "New Group"
+    Nieuwe groep
 "New Search"
 "New Titles, Premieres"
     Nieuwe Titels, Premieres
 "No"
+    Nee
 "NO DATA"
     GEEN DATA
 "No Frontends allow remote control."
@@ -1117,6 +1130,7 @@
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
@@ -1156,7 +1170,9 @@
 "What else is on at this time?"
     Wat wordt er nog uitgezonden op dit tijdstip?
 "Widescreen"
+    Breedbeeld
 "Width"
+    Breedte
 "Will Record"
 "Wind"
     Wind
@@ -1167,9 +1183,12 @@
 "xmltvid"
     xmltvid
 "Year"
+    Jaar
 "Year:"
+    Jaar:
 "Yes"
     Ja
 "Yesterday"
+    Gisteren
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
 "You must be running at least php 5.3 to use this program."
