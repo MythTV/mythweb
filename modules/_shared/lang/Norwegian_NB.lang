@@ -1600,6 +1600,8 @@
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
+    Vis
 "View Albums by %s"
     Se album fra %s
 "View Details of %s"
