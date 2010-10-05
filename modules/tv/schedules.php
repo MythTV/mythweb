@@ -44,6 +44,9 @@
         $the_schedules[] = &$schedule;
     }
 
+// Remove the reference. This prevents duplicate entries showing up in the list
+    unset($schedule);
+
 // Sort the recordings
     if (count($the_schedules))
         sort_programs($the_schedules, 'schedules_sortby');
