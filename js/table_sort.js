@@ -9,23 +9,34 @@
  *
 /**/
 
+var supported = 0;
+
 document.observe('dom:loaded', function () {
 // Not a dom v3 supported browser?
     if (typeof document.body.textContent == 'undefined') {
     // Let's work around for IE
         if (typeof document.body.innerText != 'undefined') {
-            HTMLElement.prototype.__defineGetter__('textContent', function () {
-                return this.innerText;
-            });
+            if (typeof HTMLElement != 'undefined') {
+                supported = 1;
+                HTMLElement.prototype.__defineGetter__('textContent', function () {
+                    return this.innerText;
+                });
+            }
         }
     // And now Safari
         else {
+            supported = 1;
             HTMLElement.prototype.__defineGetter__('textContent', function () {
                 return this.innerHTML;
             });
         }
     }
+    else {
+        supported = 1;
+    }
 });
+
+if (supported == 1) {
 
 var SortableTables = {
     tables:                     [],
@@ -567,3 +578,5 @@ var SortableTableSorts = {
         return SortableTableSorts.sortNumericInvert(a,b);
     }
 };
+
+}
