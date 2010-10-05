@@ -29,7 +29,7 @@
     }
     sub shutdown_handler {
         kill(1, $ffmpeg_pid) if ($ffmpeg_pid);
-        kill(-1, $ffmpeg_pgid) if ($ffmpeg_pid);
+        kill(-1, $ffmpeg_pgid) if ($ffmpeg_pgid);
     }
 
 # Find ffmpeg
