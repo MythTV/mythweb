@@ -9,9 +9,8 @@
  *
 /**/
 
-var supported = 0;
-
 document.observe('dom:loaded', function () {
+    var supported = 0;
 // Not a dom v3 supported browser?
     if (typeof document.body.textContent == 'undefined') {
     // Let's work around for IE
@@ -34,9 +33,10 @@ document.observe('dom:loaded', function () {
     else {
         supported = 1;
     }
-});
 
-if (supported == 1) {
+    if (supported == 1)
+        SortableTables.start();
+});
 
 var SortableTables = {
     tables:                     [],
@@ -77,8 +77,6 @@ var SortableTables = {
             this.callback_postsort(table_id, header_index);
     }
 };
-
-document.observe('dom:loaded', SortableTables.start);
 
 var SortableTable = Class.create({
     initialize:                 function (table) {
@@ -578,5 +576,3 @@ var SortableTableSorts = {
         return SortableTableSorts.sortNumericInvert(a,b);
     }
 };
-
-}
