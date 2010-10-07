@@ -1598,6 +1598,7 @@
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
 "View Albums by %s"
     Se album af %s
 "View Details of %s"

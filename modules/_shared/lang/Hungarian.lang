@@ -431,6 +431,7 @@
     Beállítások szerkesztése ehhez: $1
 "Editing "
     Szerkeszés
+"Embed HTTP basic auth user name/password into stream urls"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
     Videolejátszás engedélyezése
@@ -1513,6 +1514,7 @@
     Video indítási könyvtár
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
 "View Albums by %s"
     Album nézet ezzel: %s
 "View Details of %s"

@@ -423,6 +423,7 @@
     Muokkaa asetuksia: $1
 "Editing "
     Muokkaa
+"Embed HTTP basic auth user name/password into stream urls"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
     Mahdollista videon toisto
@@ -1476,6 +1477,7 @@
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
 "View Albums by %s"
     Katso %s:n albumit
 "View Details of %s"

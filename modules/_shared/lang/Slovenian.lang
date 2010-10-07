@@ -409,6 +409,7 @@
     Uredi nastavitve za: $1
 "Editing "
     Urejanje
+"Embed HTTP basic auth user name/password into stream urls"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
@@ -1441,6 +1442,7 @@
     Meta podatki
 "VideoTreeNoDB"
     Ni baze
+"View"
 "View Albums by %s"
     Prikaži albume z %s
 "View Details of %s"

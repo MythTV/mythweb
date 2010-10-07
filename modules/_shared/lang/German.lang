@@ -433,6 +433,7 @@
     Einstellungen für: $1
 "Editing "
     Bearbeite
+"Embed HTTP basic auth user name/password into stream urls"
 "Enable Flash Video player for recordings."
     Flash-Videoabpsieler für Aufnahmen aktivieren.
 "Enable Video Playback"
@@ -1497,6 +1498,7 @@
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
 "View Albums by %s"
     Zeige Alben von %s
 "View Details of %s"

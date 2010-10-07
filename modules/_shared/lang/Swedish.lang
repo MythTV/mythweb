@@ -1605,6 +1605,7 @@
     VideoTrädLaddaMetaData
 "VideoTreeNoDB"
     VideoTrädIngenDB
+"View"
 "View Albums by %s"
     Visa album efter %s
 "View Details of %s"

@@ -427,6 +427,7 @@
     Upravit nastavení pro: $1
 "Editing "
     Upravování
+"Embed HTTP basic auth user name/password into stream urls"
 "Enable Flash Video player for recordings."
     Povolit Flash video player pro nahrávky.
 "Enable Video Playback"
@@ -1229,6 +1230,7 @@
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"

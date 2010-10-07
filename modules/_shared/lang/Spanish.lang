@@ -398,6 +398,7 @@
 "Edit settings for: $1"
 "Editing "
     Editando
+"Embed HTTP basic auth user name/password into stream urls"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
@@ -1232,6 +1233,7 @@
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
+"View"
 "View Albums by %s"
 "View Details of %s"
 "View Saved Playlist"
