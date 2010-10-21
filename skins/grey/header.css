@@ -96,9 +96,10 @@
     font-size:    9pt;
 }
 #search_submit {
-    position:  relative;
-    top:       1px;
-    width:     64px;
-    font-size: 9pt;
+    position:      relative;
+    top:           1px;
+    padding-left:  .5em;
+    padding-right: .5em;
+    font-size:     9pt;
 }
 

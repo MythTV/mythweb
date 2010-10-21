@@ -113,13 +113,14 @@
     width:        150px;
     margin-right: 3px;
     padding:      0px 3px;
-    font-size:      9pt;
+    font-size:    9pt;
 }
 
 #search_submit {
     position:           relative;
     top:                1px;
-    width:              64px;
+    padding-left:       .5em;
+    padding-right:      .5em;
     font-size:          9pt;
 }
 
