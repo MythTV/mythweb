@@ -147,7 +147,7 @@
 "Allows you to match on a single character"
     Låter dig matcha på ett enskilt tecken
 "Allows you to search through other database tables when using a power search"
-    Låter dig söka igenom andra databastabeller när en avancerad sökning anv�nds
+    Låter dig söka igenom andra databastabeller när en avancerad sökning används
 "An error occured while adding your playlist."
     Ett fel uppstod vid tillägg av din spellista.
 "and"
@@ -183,7 +183,7 @@
 "ASX Stream"
     ASX-ström
 "Audio Bitrate"
-    Ljud bitrate
+    Ljudbithastiget
 "Audio for Hearing Impaired"
     Ljud för hörselskada
 "Audio for Visually Impaired"
@@ -637,27 +637,33 @@
     Spela inte in denna visning.
 "info: flvplayer"
     <p>
-    Flash video playback is currently only a proof-of-concept and should be
-    considered <b>EXTREMELY</b> experimental, which is why it has been disabled by
-    default.
+    Flash-videouppspelning är för närvarande att betrakta som en
+    <b>EXTREMT</b> experimentell funktion och är därför inaktiverad som
+    standard.
     </p>
     <p>
-    It currently expects that ffmpeg is installed and compiled with mp3
-    support, and that the recordings files are accessible to your webserver
-    userid.  It probably won't work with Nupplevideo files, and in the end,
-    it may just not work at all (or maybe even worse).
+    Den förutsätter att ffmpeg är installerat och kompilerat med stöd för
+    MP3, samt att inspelningarna är åtkomliga för din webbserver.  Det
+    fungerar troligen inte för Nupplevideo-filer, och i slutändan kanske inte
+    över huvud taget (eller möjligen ännu värre).
     </p>
     <p>
-    Enable this feature at your own risk, and don't expect too much
-    official help until it has left the experimental phase.
+    Aktivera denna funktion på egen risk, och förvänta dig inte alltför
+    mycket officiell hjälp tills funktionen har lämnat den experimentella
+    fasen.
     </p>
 "info: hidden advanced schedule"
     De avancerade inspelningsalternativen är gömda.
 "info: record this"
-    spela in dethär.
+    Tvinga denna visning att spelas in.
 "info:forget old"
     Glöm tidigare inspelningar av detta program, så att det kan återinspelas.
 "info:jumppoints"
+    <ul>
+        <li>JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is the same as one defined in the Keybindings section, the JumpPoint will override the keybinding.</li>
+        <li>You probably want to use function keys or keys combined with a modifier (alt, control) for JumpPoints, otherwise you may run into some problems.</li>
+        <li>Changes to keybindings/jumppoints requires a restart of the affected mythfrontend for now.  This may change in a future release.</li>
+       </ul>
 "info:never record"
     Spela aldrig in
 "Insert"
@@ -798,7 +804,7 @@
 "MythMusic on the web."
     MythMusic på webben
 "MythMusic_Prefixes_To_Ignore"
-    MythMusik_Förstavelser_Att_Ignorera
+    de den det a an the
 "MythTV"
     MythTV
 "MythTV Status"
@@ -814,7 +820,6 @@
 "mythvideo.ImageCacheSize"
     mythvideo.BildCacheStorlek
 "mythvideo.sort_ignores_case"
-    Mythvideo.typ_ignorera_fack
 "MythWeb"
     MythWeb
 "MythWeb Defaults"
@@ -989,7 +994,7 @@
 "Playlists"
     Spellistor
 "Please enter an imdb number or a title to do another search"
-    Ange ett imdb-nummer och en titel för att göra en ny sökning
+    Ange ett IMDB-nummer och en titel för att göra en ny sökning
 "Please wait for the pending ajax request"
     Vänta på den pågående ajax-begäran
 "Plot"
@@ -1192,19 +1197,19 @@
 "rectype: dontrec"
     Spela ej in
 "rectype: finddaily"
-    hitta dagligen
+    Hitta dagligen
 "rectype: findone"
-    hitta en
+    Hitta en
 "rectype: findweekly"
-    hitta veckovis
+    Hitta veckovis
 "rectype: once"
     Enstaka
 "rectype: override"
     Överskugga
 "rectype: weekly"
-    veckovis
+    Veckovis
 "regex: articles"
-    artiklar
+    An?|The|En|Ett|Den|De|Det
 "Remote"
     Otillgänglig
 "Remove Item from Playlist"
@@ -1212,7 +1217,7 @@
 "Repair Tables"
     Reparera tabeller
 "Repeat"
-    Repetera
+    Repris
 "Reset"
     Återställ
 "Reset template and skin to defaults"
@@ -1268,7 +1273,9 @@
 "Science Fiction Movies"
     Science Fiction-filmer
 "Screen Name"
+    Skärmnamn
 "Screen Settings"
+    Skärminställningar
 "Search"
     Sök
 "Search $1"
@@ -1293,7 +1300,7 @@
 "Search Type Help"
     Hjälp för söktyp
 "Search will perform complex SQL queries against the database as per the search phrase below"
-    Sökningen kommer att utföra SQL-förfrågningar mot databasen enligt sĶkfrasen nedan
+    Sökningen kommer att utföra SQL-förfrågningar mot databasen enligt sökfrasen nedan
 "Searches"
     Sökningar
 "Searches will be performed against the title of all TV shows"
@@ -1312,7 +1319,9 @@
 "Settings Table"
     Inställningstabell
 "settings/stream: protocol"
-    inställningar/ström: protokoll
+    Många mediaspelare klarar inte att spela strömmar över HTTPS.<br/>
+    Om du kör MythWeb över HTTPS kan du vilja skapa ytterligare en installation
+    som i stället använder HTTP, och aktivera inställningen "Tvinga HTTP för strömmar".
 "settings: notice"
     Varning!<br><br>
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
@@ -1320,7 +1329,7 @@
 "Severe Weather Alerts"
     Allvarliga vädervarningar
 "Shift"
-    Shift
+    Skift
 "Show"
     Visa
 "Show group"
@@ -1406,17 +1415,17 @@
 "Streaming"
     Strömmande
 "Sub and Desc (Empty matches)"
-    Textning och Beskrivning (Tomma träffar)
+    Undertitel och Beskrivning (Tomma träffar)
 "Submit"
     Spara
 "Submit Search"
     Sök
 "Subtitle"
-    Textning
+    Undertitel
 "Subtitle and Description"
-    Textning och Beskrivning
+    Undertitel och Beskrivning
 "Subtitle then Description"
-    Textning sen Beskrivning
+    Undertitel sen Beskrivning
 "Subtitled"
     Textad
 "Subtitles Available"
@@ -1426,7 +1435,7 @@
 "Surround Sound"
     Omgivande ljud
 "Tab"
-    Flik
+    Tab
 "Television"
     Television
 "Temp"
@@ -1552,25 +1561,25 @@
 "Video"
     Video
 "Video Bitrate"
-    Video Bitrate
+    Videobithastiget
 "Video Playback"
     Videouppspelning
 "Video: Error: IMDB"
-    Video: Fel: IMDB
+    Fel: Hämtning av IMDB-data misslyckades. Kontrollera att IMDB-numret är korrekt om du har angett det manuellt.
 "Video: Error: IMDB: Not Found"
-    Video: Fel: IMDB: Hittas inte
+    Fel: IMDB är inte aktiverat, vänligen gör det via "Inställningar".
 "Video: Error: Missing ID"
-    Video: Fel: Saknar ID
+    Fel: ID:t skickades inte till IMDB-skriptet.
 "Video: IMDB: No Matches"
-    Video: IMDB: Inga träffar
+    Inga träffar för denna titel. Använd en användardefinierad sökning för att ange ett IMDB-nummer eller använd en annan title för att söka igen. 
 "Video: IMDB: Window Title"
-    Video: IMDB: Fönster Titel
+    IMDB-träffar
 "Video: Warning: Artwork"
-    Video: Varning: Fotografi
+    Varning: Uppdateringen av bilder misslyckades. Vänligen kontrollera rättigheterna på bildkatalogerna för denna värd.
 "Video: Warning: Artwork: Download"
-    Video: Varning: Fotografi: Ladda ner
+    Nedladdning av bilder från TMDB misslyckades.
 "Video: Warning: fopen"
-    Video: Varning: föppna
+    Varning: Din php.ini-fil har allow_url_fopen satt till Off. För att ladda hem bilder krävs att den är satt till On. Bilder kommer inte att uppdateras. 
 "VideoAggressivePC"
     VideoaggresivPC
 "VideoArtworkDir"
@@ -1607,7 +1616,7 @@
     VideoTrädIngenDB
 "View"
 "View Albums by %s"
-    Visa album efter %s
+    Visa album av %s
 "View Details of %s"
     Visa detaljer för %s
 "View Saved Playlist"
@@ -1641,21 +1650,21 @@
 "welcome: backend_log"
     Visa serverloggarna.
 "welcome: music"
-    välkommen: musik
+    Sök, bläddra, och skapa spellistor i musikbiblioteket
 "welcome: remote"
-    välkommen: fjärrkontrollen
+    Fjärrkontroll
 "welcome: settings"
-    välkomemn: inställningar
+    Konfigurera MythWeb och vissa MythTV-inställningar.
 "welcome: stats"
-    välkommen: status
+    Se statistik för MythTV
 "welcome: status"
-    välkommen: status
+    Visa status för ditt MythTV-system.
 "welcome: tv"
-    välkommen: tv
+    Se vad som visas på TV, schemalägg inspelningar och hantera redan gjorda inspelningar. 
 "welcome: video"
-    välkommen: video
+    Bläddra i videobiblioteket
 "welcome: weather"
-    välkommen:  väder
+    Visa lokal väderprognos.
 "What else is on at this time?"
     Vad visas mer vid denna tid?
 "Widescreen"
