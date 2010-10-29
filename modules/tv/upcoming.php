@@ -138,6 +138,7 @@
             }
         }
     }
+    unset($show);
 
 // Sort the programs
     if (count($all_shows))
