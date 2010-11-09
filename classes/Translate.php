@@ -37,7 +37,7 @@ class Translate extends MythBase {
         'Czech'         => array('Czech',              'cs_CZ.UTF-8', 'cs_CZ.UTF-8'),
         'Polish'        => array('Polski',             'pl_PL.UTF-8', 'pl_PL'),
         'Hungarian'     => array('Magyar',             'hu_HU.UTF-8', 'hu_HU'),
-	'Norwegian_NB'  => array('Norsk Bokm&aring;l', 'nb_NO.UTF-8', 'nb_NO', 'nn_NO', 'se_NO', 'no', 'no_NO'),
+        'Norwegian_NB'  => array('Norsk Bokm&aring;l', 'nb_NO.UTF-8', array('nb_NO', 'nn_NO', 'se_NO', 'no_NO')),
     );
 
     private $currentLanguage = '';
