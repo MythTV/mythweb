@@ -55,7 +55,7 @@
     my ($abitrate) = $sh->fetchrow_array;
     $sh->finish();
 # auto-detect height based on aspect ratio
-    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND (type=30 OR type=31) AND data IS NOT NULL ORDER BY type');
+    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND (type=30 OR type=31) AND mark=0 AND data IS NOT NULL ORDER BY type');
     $sh->execute($chanid,$starttime);
     $x = $sh->fetchrow_array;           # type = 30
     $y = $sh->fetchrow_array if ($x);   # type = 31
