@@ -33,7 +33,7 @@
     border-right:       2px solid #e5e5e5;
     border-bottom:      2px solid #e5e5e5;
     border-left:        2px solid #e5e5e5;
-    //-moz-border-radius: 8px;
+    /* -moz-border-radius: 8px; */
 }
 #module_names li.selected a {
     display:            block;
@@ -46,7 +46,7 @@
     min-width:          314px;
     height:             30em;
     padding:            .5em 1em;
-    //-moz-border-radius:     8px;
+    /* -moz-border-radius:     8px; */
     text-align:         center;
 }
 

@@ -235,7 +235,7 @@ ul#nav li{
 }
 ul#nav li a{
 	display: block;
-	background: #666666; //#244A79;
+	background: #666666; /* #244A79; */
 	padding: 4px 5px;
 	color: #ffffff;
 	text-decoration: none;
