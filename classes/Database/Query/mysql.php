@@ -13,10 +13,6 @@
  *
  * Query handler for MySQL
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @copyright   Silicon Mechanics
  * @license     GPL
  *

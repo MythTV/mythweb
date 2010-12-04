@@ -2,10 +2,6 @@
 /**
  * Schedule a custom recording by manually specifying starttime and length
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  TV

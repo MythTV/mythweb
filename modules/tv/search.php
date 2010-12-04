@@ -9,10 +9,6 @@
  *
  *   Use ^ and/or $ to anchor the search, and enclose in // to use regex.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

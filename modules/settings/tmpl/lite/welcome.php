@@ -2,10 +2,6 @@
 /**
  * Welcome page description of the Settings module.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

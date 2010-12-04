@@ -4,10 +4,6 @@
  * pertain to Mythbackend and other things not actually present within MythWeb
  * itself.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

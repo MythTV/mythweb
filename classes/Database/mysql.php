@@ -13,10 +13,6 @@
  *
  * MySQL Database connection class.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @copyright   Silicon Mechanics
  * @license     GPL
  *

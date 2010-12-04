@@ -2,10 +2,6 @@
 /**
  * Jobqueue-related constants, routines, etc.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  *
  * @package     MythWeb
 /**/

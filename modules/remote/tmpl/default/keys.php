@@ -2,10 +2,6 @@
 /**
  * List of keystrokes to send to a frontend
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythTV

@@ -2,10 +2,6 @@
 /**
  * Collection of functions used by the various pages of the MythWeb Weather module
  *
- * @url         $URL: 
- * @date        $Date: 
- * @version     $Revision: 
- * @author      $Author: 
  * @license     GPL
  *
  * @package     MythWeb

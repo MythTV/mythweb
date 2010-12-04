@@ -5,10 +5,6 @@
  *
  * This is the default viewing mode, and shows the current program listings.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

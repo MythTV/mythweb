@@ -3,10 +3,6 @@
  * This allows you to create inline help items - popup tables linked to
  * mouseover events.  It requires the mouseovers.js file.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

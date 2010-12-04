@@ -2,10 +2,6 @@
 /**
  * Header for the settings section
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

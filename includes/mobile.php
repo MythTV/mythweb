@@ -23,10 +23,6 @@
  * development of very detailed themes/layouts for mobile devices. This
  * code is intented to be easily re-usable in different applications.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

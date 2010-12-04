@@ -20,10 +20,6 @@
  * compatibility so programs can take advantage of the better integration of
  * mysqli but still run on older installations.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @copyright   Silicon Mechanics
  * @license     GPL
  *

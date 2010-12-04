@@ -2,10 +2,6 @@
 /**
  * Connection routines for the new socket interface to mythfrontend.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythTV

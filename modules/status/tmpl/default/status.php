@@ -2,10 +2,6 @@
 /**
  * The display code for the status module.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

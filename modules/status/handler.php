@@ -3,10 +3,6 @@
  * A straight passthrough for the mythbackend status web page (usually on
  * port 6544)
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

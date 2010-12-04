@@ -24,10 +24,6 @@
  * define _errstr() and _errno() methods to return the appropriate database
  * engine error string/number.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @copyright   Silicon Mechanics
  * @license     GPL
  *

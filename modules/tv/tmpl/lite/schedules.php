@@ -3,10 +3,6 @@
  * This file defines a theme class for the all recordings section.
  * It must define one method.   documentation will be added someday.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  TV

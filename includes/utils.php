@@ -11,10 +11,6 @@
  * library.  If you would like to inquire about the status of this arrangement,
  * please contact me personally.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

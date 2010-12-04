@@ -14,10 +14,6 @@
  * This is an abstract superclass that defines the basic variables and functions
  * used by possible subclasses.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @copyright   Silicon Mechanics
  * @license     GPL
  *

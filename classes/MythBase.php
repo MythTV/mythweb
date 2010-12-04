@@ -2,10 +2,6 @@
 /**
  *  This is the base object to handle all the common features for all myth classes
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

@@ -3,10 +3,6 @@
  * Collection of functions used by the various pages that set up recording
  * schedules.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythTV

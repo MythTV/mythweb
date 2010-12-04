@@ -5,10 +5,6 @@
  *
  * You can disable this feature with the apache env var of MYTHWEB_LOCKDOWN_DISABLE being set to true
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

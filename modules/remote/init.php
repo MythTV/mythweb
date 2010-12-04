@@ -2,10 +2,6 @@
 /**
  * Initialization routines for the MythFrontend Remote Control
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

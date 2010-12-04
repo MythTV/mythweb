@@ -2,10 +2,6 @@
 /**
  * WeatherScreen class for MythWeb's Weather module
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

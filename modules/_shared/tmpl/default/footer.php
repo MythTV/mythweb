@@ -2,10 +2,6 @@
 /**
  * This footer file is shared by all MythWeb modules.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

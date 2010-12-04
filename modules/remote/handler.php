@@ -3,10 +3,6 @@
  * Control a MythFrontend via the telnet interface.  Be aware that this is only
  * active in the default template (i.e. requires javascript).
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  Remote

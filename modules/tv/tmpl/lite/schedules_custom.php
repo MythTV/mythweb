@@ -2,10 +2,6 @@
 /**
  * Schedule a custom recording by manually specifying various search options
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

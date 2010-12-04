@@ -2,10 +2,6 @@
 /**
  * Run a command on a frontend
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  Remote

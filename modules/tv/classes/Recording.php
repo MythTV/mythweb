@@ -2,10 +2,6 @@
 /**
  * The Recording object, and a couple of related subroutines.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

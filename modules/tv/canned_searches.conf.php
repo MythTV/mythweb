@@ -3,10 +3,6 @@
  * Should contain one variable, a hash of the 'advanced' searches.
  * Each of these searches will show up as an advanced search
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

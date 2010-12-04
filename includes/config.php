@@ -9,10 +9,6 @@
  *       editor settings that define them.  For now, this file will contain
  *       settings slowly moved from config/conf.php and related files.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

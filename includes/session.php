@@ -5,10 +5,6 @@
  * It also uses the global variable $db, so it must be called from init.php
  * *after* the database connection has been established.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

@@ -15,10 +15,6 @@
  * This is also the parent class for the full/expanded mysqli query object,
  * since many of the routines are shared between them.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @copyright   Silicon Mechanics
  * @license     GPL
  *

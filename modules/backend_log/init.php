@@ -2,10 +2,6 @@
 /**
  * Initialization routines for the MythWeb Backend Logs module
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

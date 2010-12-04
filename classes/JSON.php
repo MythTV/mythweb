@@ -3,10 +3,6 @@
  * Wrapper so we can support php less then 5.2 and/or installs without native json built in.
  * The native json is much faster, so prefer it if we can.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

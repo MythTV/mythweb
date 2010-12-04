@@ -2,10 +2,6 @@
 /**
  * An index for handy SQL searches in the listings data
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

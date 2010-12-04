@@ -2,10 +2,6 @@
 /**
  * Show search results, or how to perform a detailed search.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

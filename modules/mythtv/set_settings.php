@@ -2,10 +2,6 @@
 /**
  * Configure MythTV Settings table
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

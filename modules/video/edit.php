@@ -2,10 +2,6 @@
 /**
  * Edit MythVideo file information
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  Video

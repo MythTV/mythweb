@@ -2,10 +2,6 @@
 /**
  * Handler for all MythWeb Settings routines
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

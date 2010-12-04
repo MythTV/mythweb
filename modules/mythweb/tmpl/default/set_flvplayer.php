@@ -2,10 +2,6 @@
 /**
  * Enable or Disable the included FLV player
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

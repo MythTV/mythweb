@@ -3,10 +3,6 @@
  * This displays details about a program, as well as provides recording
  * commands.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

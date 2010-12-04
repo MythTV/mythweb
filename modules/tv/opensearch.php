@@ -2,10 +2,6 @@
 /**
  * An OpenSearch system for suggesting program names from the firefox toolbar
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

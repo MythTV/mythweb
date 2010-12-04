@@ -3,10 +3,6 @@
  * This file is part of MythWeb, a php-based interface for MythTV.
  * See http://www.mythtv.org/ for details.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

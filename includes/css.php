@@ -2,10 +2,6 @@
 /**
  * Various routines that deal with figuring out and/or displaying css.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

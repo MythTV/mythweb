@@ -2,10 +2,6 @@
 /**
  * This intigrates mythvideo's imdb grabber into mythvideo
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  *
  * @package     MythWeb
  * @subpackage  Video

@@ -2,10 +2,6 @@
 /**
  * This contains variables and functions related to the Program class
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

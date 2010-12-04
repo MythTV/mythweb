@@ -6,10 +6,6 @@
  * Initialization routines.  This file basically loads all of the necessary
  * shared files for the entire program.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb

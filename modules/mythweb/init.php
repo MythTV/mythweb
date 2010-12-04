@@ -4,10 +4,6 @@
  * pertain specifically to MythWeb.  It allows us to have a prettier URL when
  * editing, which integrating these into the settings module wouldn't.
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     GPL
  *
  * @package     MythWeb
