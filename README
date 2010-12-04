@@ -2,9 +2,9 @@ This is the README file for the MythWeb package.
 February 16, 2008
 
 Version: .24-svn
-(c) 2002-2008  Chris Petersen   <mythweb(a)forevermore(o)net>
-               Isaac Richards   <ijr(a)po(o)cwru(o)edu>
-               Thor Sigvaldason <mythtv(a)lamedomainname(o)com>
+(c) 2002-2010  Chris Petersen   <cpetersen(a)mythtv.org>
+               Rob Smith        <rsmith(a)mythtv.org>
+               Isaac Richards   <isaacr(a)mythtv.org>
                and others... (see mythtv.org commit logs for details)
 
 MythWeb is distributed under the GNU GENERAL PUBLIC LICENSE version 2, and where
