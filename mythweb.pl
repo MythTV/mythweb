@@ -2,10 +2,6 @@
 #
 # This is the perl-based module handler.  It is the counterpart of mythweb.php
 #
-# @url       $URL$
-# @date      $Date$
-# @version   $Revision$
-# @author    $Author$
 #
 
 # Load some required modules

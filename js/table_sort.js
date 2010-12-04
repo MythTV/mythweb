@@ -1,10 +1,6 @@
 /**
  * Javascript Table sorting lib
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     LGPL
  *
 /**/

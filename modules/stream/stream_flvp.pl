@@ -2,10 +2,6 @@
 #
 # MythWeb Streaming/Download module
 #
-# @url       $URL$
-# @date      $Date$
-# @version   $Revision$
-# @author    $Author$
 #
 
 # URI back to this file?  We just need to take the current URI and strip

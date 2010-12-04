@@ -2,10 +2,6 @@
 #
 # MythWeb Streaming/Download module
 #
-# @url       $URL$
-# @date      $Date$
-# @version   $Revision$
-# @author    $Author$
 #
 
     use Sys::Hostname;

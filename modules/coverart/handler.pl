@@ -2,10 +2,6 @@
 #
 # MythWeb Coverart/Download module
 #
-# @url       $URL$
-# @date      $Date$
-# @version   $Revision$
-# @author    $Author$
 #
 
 # Necessary constants for sysopen

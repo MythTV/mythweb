@@ -1,10 +1,6 @@
 /**
  * A random assortment of javascript utility routines
  *
- * @url         $URL$
- * @date        $Date$
- * @version     $Revision$
- * @author      $Author$
  * @license     LGPL
  *
 /**/
