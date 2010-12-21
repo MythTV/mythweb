@@ -99,7 +99,7 @@
     if ($dur && $dur =~ /\d*:\d*:.*/) {
         @times = split(':',$dur);
         $lengthSec = $times[0]*3600+$times[1]*60+$times[2];
-        $size = int($lengthSec*($vbitrate*1000+$abitrate*1000)/8);
+        $size = 1.05*int($lengthSec*($vbitrate*1024+$abitrate*1024)/8);
         print header(-type => 'video/x-flv','Content-Length' => $size);
     } else {
         print header(-type => 'video/x-flv');
