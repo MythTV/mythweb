@@ -31,8 +31,6 @@
         $tmpl = 'wap';
     elseif (preg_match('/^(Lynx|ELinks)/i', $_SERVER['HTTP_USER_AGENT']))
         $tmpl = 'lite';
-    elseif (preg_match('/(mobile\s+safari|ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
-        $tmpl = 'iPod';
 
     if (!file_exists(modules_path.'/_shared/tmpl/'.$tmpl.'/welcome.php'))
         $tmpl = 'default';
@@ -44,8 +42,6 @@
         $skin = _or($_REQUEST['RESET_SKIN'], 'default');
     elseif (isMobileUser())
         $skin = 'wap';
-    elseif (preg_match('/(mobile\s+safari|ipod|iphone)/i', $_SERVER['HTTP_USER_AGENT']))
-        $skin = 'iPod-default';
 
     if (!file_exists('skins/'.$skin.'/img/'))
         $skin = 'default';
