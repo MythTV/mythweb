@@ -97,7 +97,7 @@
     $_SERVER['HTTP_HOST'] = $host;
     $_SERVER['HTTP_PORT'] = $port;
 
-    if ($_SERVER['HTTP_PORT'] == '443' || $_SERVER['HTTP_PORT'] == '8443')
+    if ($_SERVER['HTTP_PORT'] == '443' || $_SERVER['HTTP_PORT'] == '8443' || $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
         $_SERVER['HTTPS'] = 'on';
 
     $root_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
