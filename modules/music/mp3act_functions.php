@@ -1332,9 +1332,9 @@ function playlist_add($type, $itemid)
     {
       if (!internalPlaylistAddPlaylistCheck($pl['playlist_id'], $itemid))
       {
-        // Some sort of nasty circular dependancy.
+        // Some sort of nasty circular dependency.
         $output[0] = 2;
-        $output[1] = t('Sorry, but you cannot add this playlist as it would create a circular dependancy.');
+        $output[1] = t('Sorry, but you cannot add this playlist as it would create a circular dependency.');
         return $output;
       }
     }
@@ -1342,7 +1342,7 @@ function playlist_add($type, $itemid)
     if (empty($pl_add['playlist_id']))
     {
     $output[0] = 2;
-    $output[1] = t('An error occured while adding your playlist.');
+    $output[1] = t('An error occurred while adding your playlist.');
     return $output;
     }
     $new_songcount += $pl_add['songcount'];

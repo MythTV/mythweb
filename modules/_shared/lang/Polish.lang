@@ -50,7 +50,6 @@
 "Aborting"
 "Action"
     Akcja
-"Actions"
 "Activate"
     Uaktywnij
 "Active Screens"
@@ -94,7 +93,7 @@
 "Allows you to match any string of any length (including zero length)"
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
-"An error occured while adding your playlist."
+"An error occurred while adding your playlist."
 "and"
 "Animated Map"
 "Animation"
@@ -110,7 +109,6 @@
 "Append to Current Playlist"
 "Are you sure you want to delete the following show?"
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-"Are you sure you want to delete this show?"
 "Artist Listing"
 "Artists"
 "Artists Beginning with %s"
@@ -167,7 +165,6 @@
 "Caps Lock"
 "Cast"
     Obsada
-"Cast Information"
 "category"
     kategoria
 "Category"
@@ -194,7 +191,7 @@
     numer kanału
 "Check for duplicates in"
     Sprawdzaj duplikaty w
-"Childrens Movies"
+"Children's Movies"
 "Choose Genre.."
 "Choose Type"
 "Clear the current default session"
@@ -203,8 +200,7 @@
 "Click to View Playlist"
 "Close Captioned priority"
 "Closed Captioning"
-"colour"
-    kolor
+"color"
 "Commands"
     Komendy
 "Commands:"
@@ -260,7 +256,6 @@
 "Delete + Rerecord"
     Usuń + Nagraj ponownie
 "Delete and allow rerecord: $1"
-"Delete and rerecord"
 "Delete and rerecord $1"
     Usuń i nagraj ponownie $1
 "Delete Forever"
@@ -325,9 +320,7 @@
 "Exclude Repeat and Generic Episodes"
 "Exclude Repeat Episodes"
 "Exec. Producer"
-"Executive Producer"
 "Extended Check"
-"Extra Information"
 "Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
@@ -449,7 +442,6 @@
 "Length (min)"
     Czas trwania (minut):
 "Length in minutes"
-"Links"
 "Listing &quot;Jump to&quot;"
 "Listing Time Key"
 "Listings"
@@ -559,7 +551,7 @@
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
-"Only display favourite channels"
+"Only display favorite channels"
 "Only match commercial-free channels"
 "Only match HD programs"
 "Only match non-recorded shows"
@@ -608,8 +600,8 @@
 "Playlist saved successfully"
 "Playlist: %s"
 "Playlists"
-"Please enter an imdb number or a title to do another search"
-"Please wait for the pending ajax request"
+"Please enter an IMDB number or a title to do another search"
+"Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
 "Pop-out player"
@@ -645,9 +637,7 @@
 "Program Categories"
 "Program Detail"
     Szczegóły Programu
-"Program Flags"
 "Program ID"
-"Program Information"
 "Program Listing"
 "Program Type"
 "Protocol"
@@ -676,7 +666,6 @@
 "Recording Details"
 "Recording Group"
     Grupy Nagrywania
-"Recording Groups"
 "Recording Options"
     Opcje Nagrywania
 "Recording Options Help"
@@ -688,7 +677,6 @@
     Zadania Nagrywania
 "Recording Statistics"
     Statystyki Nagrywania
-"Recording Titles"
 "recpriority"
     priorytet nagrania
 "recstatus: cancelled"
@@ -837,7 +825,6 @@
     Poszukiwania
 "Searches will be performed against the title of all TV shows"
 "Season"
-"Series ID"
 "Server Statistics"
 "Set Host"
 "Settings"
@@ -874,7 +861,7 @@
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
-"Sorry, but you cannot add this playlist as it would create a circular dependancy."
+"Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
 "Source:"
 "sourceid"
@@ -961,7 +948,6 @@
 "Tuner Busy"
 "TV"
 "TV functions, including recorded programs."
-"TV Submenu"
 "TV.com"
 "type"
     typ
@@ -1034,8 +1020,6 @@
 "visible"
     Widoczny
 "Visit $1"
-"Watch on frontend"
-"Watch on iPod/iPhone"
 "Watched"
 "Weather"
 "web_video_imdb_path"

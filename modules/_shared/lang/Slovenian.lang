@@ -64,7 +64,6 @@
     Preklicujem
 "Action"
     Akcija
-"Actions"
 "Activate"
     Aktiviraj
 "Active Screens"
@@ -130,8 +129,7 @@
 "Allows you to match any string of any length (including zero length)"
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
-"An error occured while adding your playlist."
-    Med dodajanje predvajalenga seznama je prišlo do napake.
+"An error occurred while adding your playlist."
 "and"
     in
 "Animated Map"
@@ -152,7 +150,6 @@
     Ste prepričani, da želite izbrisati to oddajo?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Ste prepričani da želite IZBRISATI TA PREDVAJALNI SEZNAM?
-"Are you sure you want to delete this show?"
 "Artist Listing"
     Seznam izvajalcev
 "Artists"
@@ -231,7 +228,6 @@
 "Caps Lock"
 "Cast"
     Zasedba
-"Cast Information"
 "category"
     kategorija
 "Category"
@@ -262,8 +258,7 @@
     številka kanala
 "Check for duplicates in"
     Preveri za duplikati v
-"Childrens Movies"
-    Otroški filmi
+"Children's Movies"
 "Choose Genre.."
     Izberi zvrst..
 "Choose Type"
@@ -278,8 +273,7 @@
 "Close Captioned priority"
 "Closed Captioning"
     Zaprti zajem
-"colour"
-    brava
+"color"
 "Commands"
     Ukazi
 "Commands:"
@@ -350,7 +344,6 @@
     Odstrani + Ponovno snemaj
 "Delete and allow rerecord: $1"
     Odstrani in dopusti ponovno snemanje: $1
-"Delete and rerecord"
 "Delete and rerecord $1"
     Odstrani + ponovno posnami $1
 "Delete Forever"
@@ -446,10 +439,8 @@
     Izključi ponovitve oddaj
 "Exec. Producer"
     Scenarist
-"Executive Producer"
 "Extended Check"
     Podrobni pregled
-"Extra Information"
 "Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
@@ -636,7 +627,6 @@
 "Length (min)"
     Trajanje (min)
 "Length in minutes"
-"Links"
 "Listing &quot;Jump to&quot;"
     TV spored &quot;Skoči na&quot;
 "Listing Time Key"
@@ -799,8 +789,7 @@
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
-"Only display favourite channels"
-    Prikaži samo priljubljene kanale
+"Only display favorite channels"
 "Only match commercial-free channels"
     Išči le kanale označene kot brez reklam
 "Only match HD programs"
@@ -885,10 +874,8 @@
     Seznam predvajanja: %s
 "Playlists"
     Seznami predvajanja
-"Please enter an imdb number or a title to do another search"
-    Za ponovno iskanje vnesite IMDB številko ali naslov
-"Please wait for the pending ajax request"
-    Prosim počakajte na tekočo ajax zahtevo
+"Please enter an IMDB number or a title to do another search"
+"Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
 "Pop-out player"
@@ -934,10 +921,8 @@
 "Program Categories"
 "Program Detail"
     Opis programa
-"Program Flags"
 "Program ID"
     ID programa
-"Program Information"
 "Program Listing"
     TV spored
 "Program Type"
@@ -982,7 +967,6 @@
     Podrobnosti o snemanju
 "Recording Group"
     Snemalne skupine
-"Recording Groups"
 "Recording Options"
     Snemalne možnosti
 "Recording Options Help"
@@ -994,7 +978,6 @@
     Snemalni plani
 "Recording Statistics"
     Statistike snemanja
-"Recording Titles"
 "recpriority"
     snemalna prioriteta
 "recstatus: cancelled"
@@ -1168,7 +1151,6 @@
     Iskanja
 "Searches will be performed against the title of all TV shows"
 "Season"
-"Series ID"
 "Server Statistics"
     Stratistike strežnika
 "Set Host"
@@ -1223,8 +1205,7 @@
     Predvajane pesmi
 "Songs Rated"
     Ocenjene pesmi
-"Sorry, but you cannot add this playlist as it would create a circular dependancy."
-    Oprostite, tega seznama predvajanja ne morete dodati, ker bo povzročil ciklanje."
+"Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
 "Source:"
 "sourceid"
@@ -1351,7 +1332,6 @@
 "TV"
 "TV functions, including recorded programs."
     Funkcije TV, vključno z posnetimi programi.
-"TV Submenu"
 "TV.com"
 "type"
     tip
@@ -1457,8 +1437,6 @@
     viden
 "Visit $1"
     Obišči $1
-"Watch on frontend"
-"Watch on iPod/iPhone"
 "Watched"
     Pogledano
 "Weather"

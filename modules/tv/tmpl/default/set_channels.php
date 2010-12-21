@@ -24,7 +24,7 @@
     <td width="5%"><?php  echo t('videofilters')  ?></td>
     <td width="7%"><?php  echo t('brightness')    ?></td>
     <td width="7%"><?php  echo t('contrast')      ?></td>
-    <td width="7%"><?php  echo t('colour')        ?></td>
+    <td width="7%"><?php  echo t('color')         ?></td>
     <td width="7%"><?php  echo t('hue')           ?></td>
     <td width="5%"><?php  echo t('recpriority')   ?></td>
     <td width="5%"><?php  echo t('commfree')      ?></td>

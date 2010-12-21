@@ -31,7 +31,7 @@
 
     function imdb_lookup(id, title) {
         if (pending_ajax_requests > 0) {
-            alert('<?php echo addslashes(t('Please wait for the pending ajax request')); ?>');
+            alert('<?php echo addslashes(t('Please wait for the pending AJAX request')); ?>');
             return;
         }
         ajax_add_request();
@@ -115,7 +115,7 @@
 
     function imdb_prompt(id) {
         var title  = $(id+'-title').childNodes[1].innerHTML;
-        var number = prompt('<?php echo addslashes(t('Please enter an imdb number or a title to do another search')); ?>', title);
+        var number = prompt('<?php echo addslashes(t('Please enter an IMDB number or a title to do another search')); ?>', title);
         if (typeof(number) != 'string' || number.length == 0)
             return;
         $('window').hide();

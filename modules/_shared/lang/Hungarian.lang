@@ -69,8 +69,6 @@
     Megszakítás
 "Action"
     Művelet
-"Actions"
-    Műveletek
 "Activate"
     Aktíválás
 "Active Screens"
@@ -139,8 +137,7 @@
 "Allows you to match any string of any length (including zero length)"
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
-"An error occured while adding your playlist."
-    Hiba történt a lejátszási lista hozzáadásakor
+"An error occurred while adding your playlist."
 "and"
     és
 "Animated Map"
@@ -161,7 +158,6 @@
     Valóban törlöd a következő műsort?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Valóban törlöd ezt az elmentett lejátszási listát?
-"Are you sure you want to delete this show?"
 "Artist Listing"
     Előadók listája
 "Artists"
@@ -244,8 +240,6 @@
     Caps Lock
 "Cast"
     Válogatás
-"Cast Information"
-    Válogatás info
 "category"
     kategória
 "Category"
@@ -277,8 +271,7 @@
     csatornaszám
 "Check for duplicates in"
     Kettőzések ellenőrzése ebben
-"Childrens Movies"
-    Gyermekfilmek
+"Children's Movies"
 "Choose Genre.."
     Műfaj választás...
 "Choose Type"
@@ -293,8 +286,7 @@
 "Close Captioned priority"
 "Closed Captioning"
     Zárt feliratozás
-"colour"
-    szín
+"color"
 "Commands"
     Parancsok
 "Commands:"
@@ -368,8 +360,6 @@
     Törlés + Újravesz
 "Delete and allow rerecord: $1"
     Töröl és megengedi az újravételt: $1
-"Delete and rerecord"
-    Töröl és újravesz
 "Delete and rerecord $1"
     Töröl és újravesz: $1
 "Delete Forever"
@@ -471,12 +461,8 @@
     Ismétlések kivételével
 "Exec. Producer"
     Külső támogató
-"Executive Producer"
-    Vezető Producer
 "Extended Check"
     Részletes vizsgálat
-"Extra Information"
-    Extra Információ
 "Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
@@ -675,8 +661,6 @@
 "Length (min)"
     Hossz (perc)
 "Length in minutes"
-"Links"
-    Hivatkozások
 "Listing &quot;Jump to&quot;"
     &quot;Ugrás&quot Listázás;
 "Listing Time Key"
@@ -841,8 +825,7 @@
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
-"Only display favourite channels"
-    Csak a kedven csatornák látszanak
+"Only display favorite channels"
 "Only match commercial-free channels"
     Csak a reklámmentes adók között
 "Only match HD programs"
@@ -930,10 +913,8 @@
     Lejátszó lista: %s
 "Playlists"
     Lejátszó listák
-"Please enter an imdb number or a title to do another search"
-    Gépelj be egy imdb számot vagy számcímet más kereséshez.
-"Please wait for the pending ajax request"
-    Várj, amíg az ajax kérés teljesül
+"Please enter an IMDB number or a title to do another search"
+"Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
 "Pop-out player"
@@ -980,12 +961,8 @@
 "Program Categories"
 "Program Detail"
     Program részletei
-"Program Flags"
-    Műsorjelzők
 "Program ID"
     Műsor ID
-"Program Information"
-    Műsor Információ
 "Program Listing"
     Program listázás
 "Program Type"
@@ -1033,8 +1010,6 @@
     A felvétel részletei
 "Recording Group"
     Felvételi csoport
-"Recording Groups"
-    Felvételi Csoportok
 "Recording Options"
     A felvétel opciói
 "Recording Options Help"
@@ -1046,8 +1021,6 @@
     Felvételi szabálytábla
 "Recording Statistics"
     Felvételi statisztika
-"Recording Titles"
-    Felvételek Címei
 "recpriority"
     felvelsőbbség
 "recstatus: cancelled"
@@ -1223,8 +1196,6 @@
     Keresőprofilok
 "Searches will be performed against the title of all TV shows"
 "Season"
-"Series ID"
-    Sorozat ID
 "Server Statistics"
     Szerver statisztikák
 "Set Host"
@@ -1286,8 +1257,7 @@
     Dalok Lejátszva
 "Songs Rated"
     Dal értéelve
-"Sorry, but you cannot add this playlist as it would create a circular dependancy."
-    Sajnálom, de nem tudom hozzáadni ezt a lejátszó listát, mivel egymásra utalás történne.
+"Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Csatornalisták sorbarendezése a csatronaszámok alapján (kipipálva) vagy hívójel alapján (nincs pipa)
 "Source:"
@@ -1421,8 +1391,6 @@
     TV
 "TV functions, including recorded programs."
     A TV funkciói felvételekkel
-"TV Submenu"
-    TV almenü
 "TV.com"
     TV.com
 "type"
@@ -1529,8 +1497,6 @@
     Látható
 "Visit $1"
     A(z) $1 látogatása
-"Watch on frontend"
-"Watch on iPod/iPhone"
 "Watched"
     Megtekintve
 "Weather"

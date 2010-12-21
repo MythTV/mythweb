@@ -24,8 +24,8 @@
 </tr><tr>
     <td colspan="2"><?php echo t('Guide Settings') ?>:</td>
 </tr><tr>
-    <td align="right"><?php echo t('Only display favourite channels') ?>:</td>
-    <td ><input class="radio" type="checkbox" title="In the program listing, only show channels marked as favourite channels" name="guide_favonly"<?php if ($_SESSION['guide_favonly']) echo ' CHECKED' ?>></td>
+    <td align="right"><?php echo t('Only display favorite channels') ?>:</td>
+    <td ><input class="radio" type="checkbox" title="In the program listing, only show channels marked as favorite channels" name="guide_favonly"<?php if ($_SESSION['guide_favonly']) echo ' CHECKED' ?>></td>
 </tr><tr>
     <td align="right"><?php echo t('Max star rating for movies') ?>:</td>
     <td><input type="text" size="5" name="max_stars" value="<?php echo intVal($_SESSION['max_stars']) ?>"></td>
