@@ -16,7 +16,7 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
-    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.1.1.min.js"></script>';
+    $headers[] = '<script type="text/javascript" src="'.root_url.'js/libs/flowplayer/flowplayer.js"></script>';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -555,7 +555,7 @@
 
             <div class="x-pixmap">
 <?php   if (setting('WebFLV_on')) { ?>
-<?php       if (file_exists('modules/tv/flowplayer-3.1.1.swf')) { ?>
+<?php       if (file_exists('js/libs/flowplayer/flowplayer.swf')) { ?>
 
 
           <!-- this A tag is where your Flowplayer will be placed. it can be anywhere -->
@@ -568,7 +568,7 @@
             <script>
                 flowplayer(
                     "player",
-                    "<?php echo root_url ?>tv/flowplayer-3.1.1.swf", {
+                    "<?php echo root_url ?>js/libs/flowplayer/flowplayer.swf", {
                     playlist: [
                         // this first PNG clip works as a splash image
                         {
