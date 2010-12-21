@@ -197,16 +197,22 @@ class Translate extends MythBase {
             trigger_error('No language strings defined.', FATAL);
 
     // Generate the date formats
-        $_SESSION['date_statusbar']       = $this->string('generic_date').', '.$this->string('generic_time');
-        $_SESSION['date_scheduled']       = $this->string('generic_date').' ('.$this->string('generic_time').')';
-        $_SESSION['date_scheduled_popup'] = $this->string('generic_date');
-        $_SESSION['date_recorded']        = $this->string('generic_date').' ('.$this->string('generic_time').')';
-        $_SESSION['date_search']          = $this->string('generic_date').', '.$this->string('generic_time');
-        $_SESSION['date_listing_key']     = $this->string('generic_date').', '.$this->string('generic_time');
-        $_SESSION['date_listing_jump']    = $this->string('generic_date');
-        $_SESSION['date_channel_jump']    = $this->string('generic_date');
-        $_SESSION['date_job_status']      = $this->string('generic_date').', '.$this->string('generic_time');
-        $_SESSION['time_format']          = $this->string('generic_time');
+        $session = array();
+        $session['date_statusbar']       = $this->string('generic_date').', '.$this->string('generic_time');
+        $session['date_scheduled']       = $this->string('generic_date').' ('.$this->string('generic_time').')';
+        $session['date_scheduled_popup'] = $this->string('generic_date');
+        $session['date_recorded']        = $this->string('generic_date').' ('.$this->string('generic_time').')';
+        $session['date_search']          = $this->string('generic_date').', '.$this->string('generic_time');
+        $session['date_listing_key']     = $this->string('generic_date').', '.$this->string('generic_time');
+        $session['date_listing_jump']    = $this->string('generic_date');
+        $session['date_channel_jump']    = $this->string('generic_date');
+        $session['date_job_status']      = $this->string('generic_date').', '.$this->string('generic_time');
+        $session['time_format']          = $this->string('generic_time');
+
+        foreach ($session as $key => $value)
+            if (!isset($_SESSION[$key]) || $_SESSION[$key] == '')
+                $_SESSION[$key] = $value;
+        unset($session);
 
         $this->currentLanguage = $language;
     }
