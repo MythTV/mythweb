@@ -30,7 +30,7 @@
  *
  * @return string The value (settings.data) associated with $field and $hostname.
 /**/
-    function setting($field, $hostname=null, $new_value = "old\0old") {
+    function setting($field, $hostname=null, $new_value = "old\0old", $clearSettingsCache = true) {
         global $db;
         static $cache = array();
     // Best not to have an array index that's null
@@ -54,7 +54,8 @@
         // occasional times where setting() gets called before we're actually
         // connected to the backend, the only known instance is in db_update.php
         // and those settings don't affect anything but MythWeb.
-            MythBackend::find()->sendCommand('CLEAR_SETTINGS_CACHE');
+            if ($clearSettingsCache)
+                MythBackend::find()->sendCommand('CLEAR_SETTINGS_CACHE');
         }
     // Not cached?
         elseif (!array_key_exists($field, $cache[$h])) {
