@@ -452,7 +452,7 @@
             if ($program && $schedule) {
                 echo '(<a href="'.root_url.'tv/';
             // Link to different places for different kinds of schedules
-                if ($schedule->search) {   
+                if ($schedule->search) {
                     echo 'schedules/',
                          ($schedule->search == searchtype_manual) ? 'manual'
                                                                   : 'custom',
@@ -768,7 +768,7 @@
             if (is_array($frontends)) {
                 echo '<div class="x-frontends">'.t('Play Recording on Frontend').':<ul>';
                     foreach ($frontends as $frontend)
-                        echo '<li><a onclick="watchShow(\''.urlencode($frontend->getHost()).'\', \''.urlencode($program->chanid).'\', \''.urlencode($program->starttime).'\');">'.$frontend->getHost().'</a><br>';
+                        echo '<li><a onclick="watchShow(\''.urlencode($frontend->getHost()).'\', \''.urlencode($program->chanid).'\', \''.urlencode($program->recstartts).'\');">'.$frontend->getHost().'</a><br>';
                 echo '</ul></div>';
             }
         ?>
