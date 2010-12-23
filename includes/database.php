@@ -38,11 +38,24 @@
 
 // Connect to the database
     if (!is_object($db)) {
-        $db = Database::connect($_SERVER['db_name'],
-                                $_SERVER['db_login'],
-                                $_SERVER['db_password'],
-                                $_SERVER['db_server'],
-                                NULL, 'mysql');
+        if (isset($_SERVER['db_name']) &&
+            isset($_SERVER['db_login']) &&
+            isset($_SERVER['db_password']) &&
+            isset($_SERVER['db_server'])) {
+            $db = Database::connect($_SERVER['db_name'],
+                                    $_SERVER['db_login'],
+                                    $_SERVER['db_password'],
+                                    $_SERVER['db_server'],
+                                    NULL, 'mysql');
+        }
+        else {
+            $info = UPnP_Client::discoverDatabase();
+            $db = Database::connect($info['name'],
+                                    $info['user'],
+                                    $info['pass'],
+                                    $info['host'],
+                                    NULL, 'mysql');
+        }
         $db->register_global_name('db');
     }
 

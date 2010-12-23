@@ -30,10 +30,6 @@ class MythBackend {
     private $port_http              = null;
 
     static function find($host = null, $port = null) {
-        $ip = UPnP_Client::discoverIps('urn:schemas-mythtv-org:device:MasterMediaServer:1');
-        var_dump($ip);
-        die();
-
         static $Backends = array();
 
     // Looking for the master backend?

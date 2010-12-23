@@ -2,37 +2,77 @@
 
 class UPnP_Client {
     static $ip = '239.255.255.250';
-    static $port = '1900';
-    static $timeout = 3;
+    static $minPort = '1900';
+    static $maxPort = '1910';
+    static $timeout = 1;
     static $maxPacketSize = 10240;
 
     static function discover($schema = null) {
     }
 
+    static function discoverDatabase() {
+        $ip = UPnP_Client::discoverIps('urn:schemas-mythtv-org:device:MasterMediaServer:1', 1);
+        $info = file_get_contents("http://$ip/Myth/GetConnectionInfo?Pin=");
+        preg_match('/<Database><Host>(.*)<\/Host><Port>(.*)<\/Port><UserName>(.*)<\/UserName><Password>(.*)<\/Password><Name>(.*)<\/Name><Type>.*<\/Type><\/Database>/', $info, $matches);
+        return array(
+            'host' => $matches[1],
+            'port' => $matches[2],
+            'user' => $matches[3],
+            'pass' => $matches[4],
+            'name' => $matches[5]);
+    }
+
     static function discoverIps($schema = null, $ipCount = 1) {
-        $ips = self::discoverRaw($schema, $ipCount);
-        var_dump($ips);
-        if ($ipCount == 1)
-            return substr($ips[0]['peer'], 0, strpos($ips[0]['peer'], ':'));
+        $devices = self::discoverRaw($schema, $ipCount);
+
+        foreach ($devices as $device) {
+            preg_match('/LOCATION: http:\/\/(.*):([0-9]+).*/', $device, $matches);
+            $ips[$matches[1]] = $matches[2];
+        }
+
+        if ($ipCount == 1) {
+            reset($ips);
+            $ip = key($ips);
+            $port = current($ips);
+            return "$ip:$port";
+        }
+
         $ret = array();
+        foreach ($ips as $ip => $port) {
+            $ret[] = "$ip:$port";
+            $ipCount--;
+            if ($ipCount == 0)
+                break;
+        }
         return $ret;
     }
 
-    static function discoverRaw ($schema = null, $count = null) {
+    static function discoverRaw ($schema = null, $count = 9999) {
+        if (!function_exists('socket_create'))
+            return false;
+
+        $port = self::$minPort;
+
     // Prep to receive UPnP data
-        $socket = stream_socket_server('udp://0.0.0.0:1900', $errno, $errstr, STREAM_SERVER_BIND);
-        if (!$socket) die("$errstr ($errno)");
-        $write = stream_socket_client('udp://239.255.255.250:1900', $errno, $errstr);
-        if (!$write) die("$errstr ($errno)");
+        while ($port < self::$maxPort) {
+            $valid = true;
+            $socket = socket_create(AF_INET,SOCK_DGRAM,SOL_UDP);
+            socket_bind($socket,'0.0.0.0', $port) or $valid = false;
+            if ($valid)
+                break;
+            socket_close($socket);
+            $port++;
+        }
 
     // Send a discovery
-        $out = "M-SEARCH * HTTP/1.1\r\n";
-        $out .= "Host: 239.255.255.250:1900\r\n";
-        $out .= "ST:$schema\r\n";
-        $out .= "Man:\"ssdp:discover\"\r\n";
-        $out .= "MX:".self::$timeout."\r\n";
+        $out  = "M-SEARCH * HTTP/1.1\r\n";
+        $out .= "HOST: 239.255.255.250:$port\r\n";
+        $out .= "MAN: \"ssdp:discover\"\r\n";
+        $out .= "MX: ".self::$timeout."\r\n";
+        $out .= "ST: $schema\r\n";
+        $out .= "USER-AGENT: MythWEB\r\n";
         $out .= "\r\n";
-        fwrite($write, $out);
+        socket_sendto($socket, $out, strlen($out), 0, '239.255.255.250', 1900);
 
     // Await replies
         $devices = array();
@@ -41,18 +81,16 @@ class UPnP_Client {
             $read = array($socket);
             $write = array();
             $except = array();
-            $pending = stream_select($read, $write, $except, 0, 0);
-            if ( $pending > 0 ) {
-                $pkt = stream_socket_recvfrom($socket, self::$maxPacketSize, 0, $peer);
-                if ($pkt !== false) {
-                    $devices[] = array('peer' => $peer, 'pkt' => $pkt);
-                    if (!is_null($count) && $count >= count($devices))
-                        break;
-                }
-            }
-            usleep(100000);
+            @socket_recv($socket, $data, 1024, MSG_DONTWAIT);
+            $data = trim($data);
+            if (is_null($data) || strlen($data) == 0)
+                usleep(10000);
+            else
+                $devices[] = $data;
+            if (count($devices) >= $count)
+                break;
         }
-        stream_socket_shutdown($socket, STREAM_SHUT_RDWR);
+        socket_close($socket);
         return $devices;
     }
 }

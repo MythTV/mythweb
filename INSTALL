@@ -59,6 +59,12 @@ It is also possible to use MythWeb with Lighttpd (Lighty):
 
     http://www.lighttpd.net/
 
+PHP Requirements:
+
+
+PHP Optionals:
+Sockets (UPnP Auto Discovery)
+
 ==========
 2.0 Source
 ==========
