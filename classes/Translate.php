@@ -165,11 +165,13 @@ class Translate extends MythBase {
         elseif (file_exists(modules_path.'/'.module.'/lang/English.lang'))
             $path = modules_path.'/'.module.'/lang/English.lang';
 
-        $file = file_get_contents($path);
+        $file = @file_get_contents($path);
 
     // Error?
-        if ($file === false)
-            trigger_error("Failed to open translation file:  $path", FATAL);
+        if ($file === false) {
+            trigger_error("Failed to open translation file:  $path", ERROR);
+            return false;
+        }
 
     // Parse the file
         foreach (preg_split('/\n(?=\S)/', $file) as $group) {
