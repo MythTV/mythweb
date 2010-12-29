@@ -9,8 +9,12 @@
 /**/
 
 // Add a custom include path?
-    if (!empty($_SERVER['include_path']) && $_SERVER['include_path'] != '.')
+    if (!empty($_SERVER['include_path']) && $_SERVER['include_path'] != '.') {
         ini_set('include_path', $_SERVER['include_path'].PATH_SEPARATOR.ini_get('include_path'));
+    }
+
+// Path to the MythTV bindings that are now installed by the MythTV package
+    ini_set('include_path', '/usr/local/share/mythtv/bindings/php/'.PATH_SEPARATOR.'/usr/share/mythtv/bindings/php/'.PATH_SEPARATOR.ini_get('include_path'));
 
 // Init
     require_once 'includes/init.php';
