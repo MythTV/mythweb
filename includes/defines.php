@@ -61,10 +61,21 @@
     $Path = explode('/', $Path);
 
 // Find the modules path
-    $path = dirname(dirname(find_in_path('modules/tv/init.php')));
-    if ($path == '')
-       $path = dirname(find_in_path('modules/welcome.php'));
-    define('modules_path', $path);
+    $paths = array(
+        dirname(dirname(find_in_path('modules/tv/init.php'))),
+        dirname(find_in_path('modules/welcome.php')),
+        dirname(__FILE__).'/../modules/',
+        );
+    foreach ($paths as $path) {
+        $path = realpath($path);
+        if (!is_dir($path))
+            continue;
+        define('modules_path', $path);
+        break;
+    }
+
+    if (!defined('modules_path'))
+        trigger_error("modules_path is undefined!\nFile is ".__file__, FATAL);
 
 // Handy reference to the current module
     foreach ($Path as $path) {
