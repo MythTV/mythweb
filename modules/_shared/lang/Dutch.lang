@@ -1,6 +1,4 @@
 ""
-" at "
-    aan
 " TRANSCODED"
 "# Tracks"
 "$1 B"
@@ -51,7 +49,6 @@
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
-"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
 "Aborting"
@@ -59,7 +56,6 @@
     Actie
 "Activate"
     Activeren
-"Active Screens"
 "Add"
     Toevoegen
 "Add Album to Current Playlist"
@@ -67,7 +63,6 @@
 "Add Song to Current Playlist"
 "add string"
 "Add this Playlist as a Subplaylist"
-"Add To Active Screens"
 "Additional Tables"
     Aanvullende tabellen
 "Additional tables:"
@@ -104,8 +99,6 @@
 "Allows you to search through other database tables when using a power search"
 "An error occurred while adding your playlist."
 "and"
-"Animated Map"
-"Animation"
 "Any"
     Alle
 "Any Category"
@@ -186,7 +179,6 @@
 "Chan. Callsign"
 "Chan. Name"
 "Chan. Number"
-"Change Location"
 "Channel"
     Zender
 "channel"
@@ -230,7 +222,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Opname plannen
-"Current Conditions"
 "Current MythWeb Template"
 "Current Recording"
 "Current recordings"
@@ -309,7 +300,6 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     MythWeb en enkele MythTV instellingen bewerken
-"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Embed HTTP basic auth user name/password into stream urls"
@@ -318,7 +308,6 @@
 "End"
 "End Late"
     Later stoppen
-"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
@@ -339,7 +328,6 @@
 "Exec. Producer"
     Uitv. Producent
 "Extended Check"
-"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     bestandsgrootte
@@ -410,10 +398,7 @@
     HDTV
 "Height"
 "Hide"
-"High"
-    Maximum
 "Home"
-"Host"
 "Hosted by"
 "Hour"
     Uur
@@ -421,8 +406,6 @@
     Weergave Tijd
 "hue"
     verzadiging
-"Humidity"
-    Vochtigheid
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -430,7 +413,6 @@
 "IMDBTYPE"
 "Inactive"
     Niet actief
-"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -506,15 +488,10 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
-"Local weather forecast"
-"Location"
-"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Logboek
-"Low"
-    Minimum
 "Low Space"
 "Manual"
     Manueel
@@ -688,7 +665,6 @@
 "Power Search"
     Geavanceerd zoeken
 "Power Search:"
-"Precip"
 "Prefer a host for a storage group"
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
@@ -697,8 +673,6 @@
 "Preferred Input"
 "Presented by"
     Presentator
-"Pressure"
-    Luchtdruk
 "Previous Recording"
 "Previous recordings"
     Eerdere opnames
@@ -891,8 +865,6 @@
     Geprogrammeerde Pop-up
 "Science Fiction Movies"
     Science Fiction Films
-"Screen Name"
-"Screen Settings"
 "Search"
     Zoeken
 "Search $1"
@@ -927,7 +899,6 @@
 "settings/stream: protocol"
 "settings: notice"
     Waarschuwing! Als u niet weet wat u doet, kan het veranderen van deze tabel de werking van MythTV ernstig verstoren.
-"Severe Weather Alerts"
 "Shift"
 "Show"
     Toon
@@ -945,18 +916,14 @@
     Alle programma's laten zien
 "Showings between"
 "Shows"
-"SI"
-"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
-"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
-"Source:"
 "sourceid"
     bron
 "Space"
@@ -970,7 +937,6 @@
 "Start Time"
     Start Tijd
 "Starting"
-"Static Map"
 "Statistics"
 "Stats"
 "Status"
@@ -1001,7 +967,6 @@
 "Surround Sound"
 "Tab"
 "Television"
-"Temp"
 "The requested recording schedule has been deleted."
     Het gevraagde opnameschema is verwijderd
 "themoviedb"
@@ -1010,7 +975,6 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
-"Three Day Forecast"
 "Thursday"
     Donderdag
 "Time"
@@ -1060,7 +1024,6 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
-"Units"
 "Unknown"
     Onbekend
 "Unknown action"
@@ -1120,8 +1083,6 @@
 "View Details of %s"
 "View Saved Playlist"
 "View Server Statistics"
-"Visibility"
-    Zichtbaarheid
 "visible"
     zichtbaar
 "Visit $1"
@@ -1148,8 +1109,6 @@
     Laten zien wat er op TV is, opnames plannen en opgenomen programma's beheren. Keuze uit de volgende items:
 "welcome: video"
     Doorheen uw filmcollectie bladeren.
-"welcome: weather"
-    Uw lokale weerbericht
 "What else is on at this time?"
     Wat wordt er nog uitgezonden op dit tijdstip?
 "Widescreen"
@@ -1157,10 +1116,6 @@
 "Width"
     Breedte
 "Will Record"
-"Wind"
-    Wind
-"Wind Chill"
-    Voeltemp. Wind
 "Written by"
     Auteur
 "xmltvid"

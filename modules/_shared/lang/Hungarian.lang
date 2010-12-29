@@ -1,5 +1,4 @@
 ""
-" at "
 " TRANSCODED"
 "# Tracks"
     # Sáv
@@ -61,7 +60,6 @@
     %s Dal (%s)
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
-"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
     Megszakít
@@ -71,8 +69,6 @@
     Művelet
 "Activate"
     Aktíválás
-"Active Screens"
-    Aktív képernyő
 "Add"
     Hozzáad
 "Add Album to Current Playlist"
@@ -85,8 +81,6 @@
     Szöveg hozzáadása
 "Add this Playlist as a Subplaylist"
     Add hozzá ezt a lejátszsi listát, mint al-lejátszási listát
-"Add To Active Screens"
-    Hozzáadás az aktív képernyőhöz
 "Additional Tables"
     További táblák
 "Additional tables:"
@@ -140,8 +134,6 @@
 "An error occurred while adding your playlist."
 "and"
     és
-"Animated Map"
-"Animation"
 "Any"
     Bármely
 "Any Category"
@@ -254,7 +246,6 @@
     Csat. név
 "Chan. Number"
     Csat. szám
-"Change Location"
 "Channel"
     Csatorna
 "channel"
@@ -311,7 +302,6 @@
     Véletlen mix készítése
 "Create Schedule"
     Program előállítása
-"Current Conditions"
 "Current MythWeb Template"
     Jelenlegi MythWeb sablon
 "Current Recording"
@@ -415,8 +405,6 @@
     Létező csoport szerkesztése
 "Edit MythWeb and some MythTV settings."
     A Mythweb és néhány MythTV beállítás.
-"Edit Screen"
-    Szerkesztő kép
 "Edit settings for: $1"
     Beállítások szerkesztése ehhez: $1
 "Editing "
@@ -429,7 +417,6 @@
     Vége
 "End Late"
     Ráhagyás a végére
-"English_Unit"
 "Enter"
     Bevitel
 "Enter a new name for your playlist"
@@ -463,7 +450,6 @@
     Külső támogató
 "Extended Check"
     Részletes vizsgálat
-"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     Fájlméret
@@ -552,12 +538,8 @@
     Magasság
 "Hide"
     Elrejt
-"High"
-    Magas
 "Home"
     Otthon
-"Host"
-    Gép
 "Hosted by"
     Kiszolgája
 "Hour"
@@ -566,8 +548,6 @@
     Óra formátum
 "hue"
     szinárnyalat
-"Humidity"
-    Páratartalom
 "Ignore generic shows"
     Kihagyja az általános műsorokat
 "Ignore scheduled shows"
@@ -578,8 +558,6 @@
     Imdb
 "Inactive"
     Inkaktív
-"Inactive Screens"
-    Inaktív képernyők
 "info: activate recording"
     Ezen műsor rögzítésének kényszerítése.
 "info: default recording"
@@ -681,16 +659,10 @@
     BETÖLTÉS
 "Local Server Statistics"
     Helyi szerver statisztikák
-"Local weather forecast"
-    Helyi időjárás-jelentés
-"Location"
-"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Naplók
-"Low"
-    Alacsony
 "Low Space"
     Kevés hely
 "Manual"
@@ -927,7 +899,6 @@
 "Power Search"
     Erős keresés
 "Power Search:"
-"Precip"
 "Prefer a host for a storage group"
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
@@ -939,8 +910,6 @@
     Felvételi bemenet
 "Presented by"
     Készítette
-"Pressure"
-    Nyomás
 "Previous Recording"
     Korábbi felvétel
 "Previous recordings"
@@ -1168,8 +1137,6 @@
     Programozott popup
 "Science Fiction Movies"
     Fantasztikus filmek
-"Screen Name"
-"Screen Settings"
 "Search"
     Keres
 "Search $1"
@@ -1216,7 +1183,6 @@
     Néhány beállítási lapnak nagyon kevés a hibaellenőrzése. Könnyen belebonyolódhatsz, ha
     nem vagy kellően körültekintő. Az adatbásis egyszerű helyreállításával <b>nem</b>
     lehetséges a változtatások visszaállítása.
-"Severe Weather Alerts"
 "Shift"
     Léptet
 "Show"
@@ -1242,13 +1208,10 @@
     Műsorok ezek között
 "Shows"
     Műsorok
-"SI"
-"Six Day Forecast"
 "Skip Ahead"
     Léptetés Előre
 "Skip Back"
     Léptetés Vissza
-"Slower"
 "Songs"
     Dalok
 "Songs for Genre"
@@ -1260,7 +1223,6 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Csatornalisták sorbarendezése a csatronaszámok alapján (kipipálva) vagy hívójel alapján (nincs pipa)
-"Source:"
 "sourceid"
     forrás id
 "Space"
@@ -1277,7 +1239,6 @@
     Kezdési idő
 "Starting"
     Kezdés
-"Static Map"
 "Statistics"
     Statisztikák
 "Stats"
@@ -1319,8 +1280,6 @@
 "Tab"
     Tab
 "Television"
-"Temp"
-    Átmeneti
 "The requested recording schedule has been deleted."
     A kért felvételi bejegyzés törölve lett.
 "themoviedb"
@@ -1333,7 +1292,6 @@
     Ez a lejétszólista már be van töltve!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Ez felül fogja írni a jelenleg még nem mentett lejátszólistát. Szeretnéd folytatni?
-"Three Day Forecast"
 "Thursday"
     Csütörtök
 "Time"
@@ -1402,7 +1360,6 @@
     Visszaállit
 "Undelete: $1"
     Visszaállit: $1
-"Units"
 "Unknown"
     Ismeretlen
 "Unknown action"
@@ -1491,8 +1448,6 @@
     Elmentett lejátszólisták megtekintése
 "View Server Statistics"
     Szerver statisztikák megtekintése
-"Visibility"
-    Láthatóság
 "visible"
     Látható
 "Visit $1"
@@ -1525,8 +1480,6 @@
     kezelheted a már rögzített műsorokat. Íme a választék:
 "welcome: video"
     Saját videogyűjtemény böngészése.
-"welcome: weather"
-    Helyi időjárás jelentés.
 "What else is on at this time?"
     Mi más van még ebben az időpontban?
 "Widescreen"
@@ -1535,10 +1488,6 @@
     Szélesség
 "Will Record"
     Rögzítve lesz
-"Wind"
-    Szél
-"Wind Chill"
-    Hűvös szél
 "Written by"
     Írta
 "xmltvid"

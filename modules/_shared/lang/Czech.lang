@@ -1,6 +1,4 @@
 ""
-" at "
-    v
 " TRANSCODED"
 "# Tracks"
     # Stopy
@@ -64,7 +62,6 @@
     (výška je automaticky počítána z poměru stran nahrávky)
 "1 - Lowest"
     1 - nejnižší
-"18 Hour Forecast"
 "4 - Highest"
     4 - nejvyšší
 "Aborted"
@@ -75,8 +72,6 @@
     Činnost
 "Activate"
     Zapnout
-"Active Screens"
-    Aktivní obrazovky
 "Add"
     Přidat
 "Add Album to Current Playlist"
@@ -89,8 +84,6 @@
     Přidat řetězec
 "Add this Playlist as a Subplaylist"
     Přidat playlist jako subplaylist
-"Add To Active Screens"
-    Přidat na aktivní obrazovky
 "Additional Tables"
     Další tabulky
 "Additional tables:"
@@ -144,8 +137,6 @@
 "An error occurred while adding your playlist."
 "and"
     a
-"Animated Map"
-"Animation"
 "Any"
     Jakýkoli
 "Any Category"
@@ -255,7 +246,6 @@
     Název kanálu
 "Chan. Number"
     Číslo kanálu
-"Change Location"
 "Channel"
     Kanál
 "channel"
@@ -310,7 +300,6 @@
     Vytvořit náhodný mix
 "Create Schedule"
     Vytvořit rozvrh
-"Current Conditions"
 "Current MythWeb Template"
     Stávající šablona MythWebu
 "Current Recording"
@@ -410,8 +399,6 @@
     Upravit existující skupinu
 "Edit MythWeb and some MythTV settings."
     Upravit MythWeb a některá nastavení MythTV
-"Edit Screen"
-    Upravit obrazovku
 "Edit settings for: $1"
     Upravit nastavení pro: $1
 "Editing "
@@ -425,7 +412,6 @@
     Ukončit
 "End Late"
     Ukonči později
-"English_Unit"
 "Enter"
     Zadat
 "Enter a new name for your playlist"
@@ -454,7 +440,6 @@
     S vyjímkou opakujících se epizod
 "Exec. Producer"
 "Extended Check"
-"Faster"
 "ffmpeg with MP3 support not detected"
     ffmpeg s podporou MP3 nenalezen
 "File Size"
@@ -531,12 +516,8 @@
     Výška
 "Hide"
     Skrýt
-"High"
-    Vysoký
 "Home"
     Domů
-"Host"
-    Host
 "Hosted by"
 "Hour"
     Hodina
@@ -544,8 +525,6 @@
     Formát hodin
 "hue"
     odstín
-"Humidity"
-    Vlhkost
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -553,8 +532,6 @@
 "IMDBTYPE"
 "Inactive"
     Neaktivní
-"Inactive Screens"
-    Neaktivní obrazovky
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -631,14 +608,10 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
-"Local weather forecast"
-"Location"
-"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Logy
-"Low"
 "Low Space"
 "Manual"
     Ručně
@@ -818,7 +791,6 @@
     Pokročilé vyhledávání
 "Power Search:"
     Pokročilé vyhledávání:
-"Precip"
 "Prefer a host for a storage group"
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
@@ -826,8 +798,6 @@
 "prefer_channum"
 "Preferred Input"
 "Presented by"
-"Pressure"
-    Tlak
 "Previous Recording"
     Předchozí nahrávka
 "Previous recordings"
@@ -1013,8 +983,6 @@
 "Scheduled"
 "Scheduled Popup"
 "Science Fiction Movies"
-"Screen Name"
-"Screen Settings"
 "Search"
     Vyhledat
 "Search $1"
@@ -1046,7 +1014,6 @@
 "Settings Table"
 "settings/stream: protocol"
 "settings: notice"
-"Severe Weather Alerts"
 "Shift"
 "Show"
 "Show group"
@@ -1059,18 +1026,14 @@
 "Showing all programs."
 "Showings between"
 "Shows"
-"SI"
-"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
-"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
-"Source:"
 "sourceid"
 "Space"
 "Special Searches"
@@ -1079,7 +1042,6 @@
 "Start Early"
 "Start Time"
 "Starting"
-"Static Map"
 "Statistics"
 "Stats"
 "Status"
@@ -1108,7 +1070,6 @@
 "Surround Sound"
 "Tab"
 "Television"
-"Temp"
 "The requested recording schedule has been deleted."
     Požadovaný rozvrh nahrávání byl vymazán
 "themoviedb"
@@ -1117,7 +1078,6 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
-"Three Day Forecast"
 "Thursday"
     Čtvrtek
 "Time"
@@ -1163,7 +1123,6 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
-"Units"
 "Unknown"
 "Unknown action"
 "Unknown frontend"
@@ -1213,8 +1172,6 @@
 "View Details of %s"
 "View Saved Playlist"
 "View Server Statistics"
-"Visibility"
-    Viditelnost
 "visible"
     viditelný
 "Visit $1"
@@ -1241,14 +1198,10 @@
     See what's on tv, schedule recordings and manage shows that you've already recorded.  Please see the following choices:
 "welcome: video"
     Browse your video collection.
-"welcome: weather"
-    Get the local weather forecast.
 "What else is on at this time?"
 "Widescreen"
 "Width"
 "Will Record"
-"Wind"
-"Wind Chill"
 "Written by"
 "xmltvid"
 "Year"

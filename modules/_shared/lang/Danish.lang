@@ -1,6 +1,4 @@
 ""
-" at "
-    ved
 " TRANSCODED"
     TRANSKODET
 "# Tracks"
@@ -65,8 +63,6 @@
     (højden er udregnet automatisk udfra optagelsens aspekt ratio)
 "1 - Lowest"
     1 - Lavest
-"18 Hour Forecast"
-    18 timers udsigt
 "4 - Highest"
     4 - Højest
 "Aborted"
@@ -77,8 +73,6 @@
     Handling
 "Activate"
     Aktiver
-"Active Screens"
-    Aktive sider
 "Add"
     Tilføj
 "Add Album to Current Playlist"
@@ -91,8 +85,6 @@
     tilføj streng
 "Add this Playlist as a Subplaylist"
     Tilføj denne afspilningsliste som en underafspilningsliste
-"Add To Active Screens"
-    Tilføj til aktive sider
 "Additional Tables"
     Ekstra tabeller
 "Additional tables:"
@@ -149,10 +141,6 @@
 "An error occurred while adding your playlist."
 "and"
     og
-"Animated Map"
-    Animeret kort
-"Animation"
-    Animation
 "Any"
     Alle
 "Any Category"
@@ -266,8 +254,6 @@
     Kanal navn
 "Chan. Number"
     Kanal nummer
-"Change Location"
-    Skift lokation
 "Channel"
     Kanal
 "channel"
@@ -328,8 +314,6 @@
     Opret et tilfældigt mix
 "Create Schedule"
     Planlæg
-"Current Conditions"
-    Nuværende omstændigheder
 "Current MythWeb Template"
     Nuværende MythWeb template
 "Current Recording"
@@ -438,8 +422,6 @@
     Rediger eksisterende gruppe
 "Edit MythWeb and some MythTV settings."
     Rediger MythWeb- og nogle MythTV-indstillinger
-"Edit Screen"
-    Rediger skærm
 "Edit settings for: $1"
     Rediger indstillinger for: $1
 "Editing "
@@ -454,7 +436,6 @@
     End
 "End Late"
     Slut senere (min)
-"English_Unit"
 "Enter"
     Enter
 "Enter a new name for your playlist"
@@ -489,8 +470,6 @@
     Producer
 "Extended Check"
     Udvidet kontrol
-"Faster"
-    Hurtigere
 "ffmpeg with MP3 support not detected"
     ffmpeg med MP3 understøttelse ikke fundet
 "File Size"
@@ -585,12 +564,8 @@
     Højde
 "Hide"
     Skjul
-"High"
-    Høj
 "Home"
     Home
-"Host"
-    Vært
 "Hosted by"
     Hosted af
 "Hour"
@@ -599,8 +574,6 @@
     Tidsformat
 "hue"
     farvetone
-"Humidity"
-    Luftfugtighed
 "Ignore generic shows"
     Ignorer generiske udsendelser
 "Ignore scheduled shows"
@@ -610,8 +583,6 @@
 "IMDBTYPE"
 "Inactive"
     Inaktiv
-"Inactive Screens"
-    Inaktive sider
 "info: activate recording"
     Tving denne specifikke visning til at optage.
 "info: default recording"
@@ -712,18 +683,10 @@
     Indlæser
 "Local Server Statistics"
     Statistik for lokal server
-"Local weather forecast"
-    Lokal vejrudsigt
-"Location"
-    Lokation
-"Location:"
-    Lokation:
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Logs
-"Low"
-    Lav
 "Low Space"
     Lidt plads
 "Manual"
@@ -984,8 +947,6 @@
     Super søgning
 "Power Search:"
     Super søgning:
-"Precip"
-    Nedbør
 "Prefer a host for a storage group"
     Foretræk en vært for en optagelsesgruppe
 "Prefer a host for live sports with overtime"
@@ -1000,8 +961,6 @@
     Foretruken input
 "Presented by"
     Præsenteret af
-"Pressure"
-    Lufttryk
 "Previous Recording"
     Tidligere optagelse
 "Previous recordings"
@@ -1240,10 +1199,6 @@
     Popup's
 "Science Fiction Movies"
     Science Fiction Film
-"Screen Name"
-    Skærmnavn
-"Screen Settings"
-    Skærmindstillinger
 "Search"
     Søg
 "Search $1"
@@ -1295,8 +1250,6 @@
     til at køre over HTTP i stedet.
 "settings: notice"
     Bemærk at ved at ændre i denne tabel uden at vide hvad du laver, kan du ødelægge mythtvs funktioner.
-"Severe Weather Alerts"
-    Alvorlige vejralarmer
 "Shift"
     Shift
 "Show"
@@ -1321,16 +1274,10 @@
     Visninger imellem
 "Shows"
     Udsendelser
-"SI"
-    SI
-"Six Day Forecast"
-    Seks dages udsigt
 "Skip Ahead"
     Skip frem
 "Skip Back"
     Skip tilbage
-"Slower"
-    Langsommere
 "Songs"
     Sange
 "Songs for Genre"
@@ -1342,8 +1289,6 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Sorter efter kanal nummer i stedet for kaldenavn
-"Source:"
-    Kilde:
 "sourceid"
     Kilde ID
 "Space"
@@ -1360,8 +1305,6 @@
     Starttidspunkt
 "Starting"
     Starter
-"Static Map"
-    Statisk kort
 "Statistics"
     Statistik
 "Stats"
@@ -1406,8 +1349,6 @@
     Tab
 "Television"
     Fjernsyn
-"Temp"
-    Midlertidig
 "The requested recording schedule has been deleted."
     Den planlagte optagelse er blevet slettet.
 "themoviedb"
@@ -1420,8 +1361,6 @@
     Denne afspilningsliste er alleredeåbnet!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dette vil overskrive din nuværende afspilningsliste. Er du sikker på du vil forsætte?
-"Three Day Forecast"
-    Tre dages udsigt
 "Thursday"
     Torsdag
 "Time"
@@ -1494,8 +1433,6 @@
     Fortryd sletning
 "Undelete: $1"
     Fortryd sletning: $1
-"Units"
-    Enheder
 "Unknown"
     Ukendt
 "Unknown action"
@@ -1574,8 +1511,6 @@
     Se gemt afspilningsliste
 "View Server Statistics"
     Se statistik for serveren
-"Visibility"
-    Sigtbarhed
 "visible"
     synlig
 "Visit $1"
@@ -1610,8 +1545,6 @@
     Se hvad der er i TV, planlæg dine optagelser og se hvad der allerede er optaget
 "welcome: video"
     Gennemse dine videor
-"welcome: weather"
-    Se den lokale vejrudsigten
 "What else is on at this time?"
     Hvad er der i fjernsynet på dette tidspunkt?
 "Widescreen"
@@ -1620,10 +1553,6 @@
     Bredde
 "Will Record"
     Skal optage
-"Wind"
-    Vind
-"Wind Chill"
-    Vindafkølningseffekt
 "Written by"
     Skrevet af
 "xmltvid"

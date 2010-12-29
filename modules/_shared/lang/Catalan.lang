@@ -1,6 +1,4 @@
 ""
-" at "
-    a
 " TRANSCODED"
 "# Tracks"
 "$1 B"
@@ -52,7 +50,6 @@
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
-"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
 "Aborting"
@@ -60,7 +57,6 @@
     Acció
 "Activate"
     Activar
-"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
@@ -68,7 +64,6 @@
 "add string"
     afegir cadena
 "Add this Playlist as a Subplaylist"
-"Add To Active Screens"
 "Additional Tables"
     Taules addicionals
 "Additional tables:"
@@ -108,8 +103,6 @@
 "Allows you to search through other database tables when using a power search"
 "An error occurred while adding your playlist."
 "and"
-"Animated Map"
-"Animation"
 "Any"
     Qualsevol
 "Any Category"
@@ -192,7 +185,6 @@
     Nom del canal
 "Chan. Number"
     Número del canal
-"Change Location"
 "Channel"
     Canal
 "channel"
@@ -237,7 +229,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Crear programació
-"Current Conditions"
 "Current MythWeb Template"
 "Current Recording"
 "Current recordings"
@@ -317,7 +308,6 @@
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
     Editar ajustos de MythWeb i alguns de MythTV
-"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Embed HTTP basic auth user name/password into stream urls"
@@ -326,7 +316,6 @@
 "End"
 "End Late"
     Acabar després
-"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
@@ -347,7 +336,6 @@
 "Exec. Producer"
     Productor exec.
 "Extended Check"
-"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     mida de l'arxiu
@@ -420,10 +408,7 @@
     HDTV
 "Height"
 "Hide"
-"High"
-    Alt
 "Home"
-"Host"
 "Hosted by"
     Enmagatzemat a
 "Hour"
@@ -432,8 +417,6 @@
     Format hora
 "hue"
     to
-"Humidity"
-    Humitat
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -441,7 +424,6 @@
 "IMDBTYPE"
 "Inactive"
     Inactiu
-"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -519,15 +501,10 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
-"Local weather forecast"
-"Location"
-"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Informes
-"Low"
-    Baix
 "Low Space"
 "Manual"
     Manual
@@ -710,7 +687,6 @@
 "Power Search"
     Recerca avançada
 "Power Search:"
-"Precip"
 "Prefer a host for a storage group"
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
@@ -720,8 +696,6 @@
 "Preferred Input"
 "Presented by"
     Presentat per
-"Pressure"
-    Pressió
 "Previous Recording"
 "Previous recordings"
     Enregistraments anteriors
@@ -917,8 +891,6 @@
     Popup Programat
 "Science Fiction Movies"
     Pel·lícules ciència ficció
-"Screen Name"
-"Screen Settings"
 "Search"
     Cercar
 "Search $1"
@@ -954,7 +926,6 @@
 "settings/stream: protocol"
 "settings: notice"
     Vigileu al canviar aquesta taula sense conaixement del que feu, podeu trencar el funcionament del MyhtTV
-"Severe Weather Alerts"
 "Shift"
 "Show"
     Programa
@@ -973,18 +944,14 @@
     Mostrant tots els programes
 "Showings between"
 "Shows"
-"SI"
-"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
-"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
-"Source:"
 "sourceid"
     id origen
 "Space"
@@ -999,7 +966,6 @@
 "Start Time"
     Hora inici
 "Starting"
-"Static Map"
 "Statistics"
     Estadístiques
 "Stats"
@@ -1031,7 +997,6 @@
 "Surround Sound"
 "Tab"
 "Television"
-"Temp"
 "The requested recording schedule has been deleted."
     La programació sol·licitat ha estat eliminada.
 "themoviedb"
@@ -1040,7 +1005,6 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
-"Three Day Forecast"
 "Thursday"
     Dijous
 "Time"
@@ -1092,7 +1056,6 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
-"Units"
 "Unknown"
     Desconegut
 "Unknown action"
@@ -1153,8 +1116,6 @@
 "View Details of %s"
 "View Saved Playlist"
 "View Server Statistics"
-"Visibility"
-    Visibilitat
 "visible"
     visible
 "Visit $1"
@@ -1183,17 +1144,11 @@
     benvingut: tv
 "welcome: video"
     benvingut: vídeo
-"welcome: weather"
-    benvingut: el temps
 "What else is on at this time?"
     Què més hi ha a aquest hora?
 "Widescreen"
 "Width"
 "Will Record"
-"Wind"
-    Vient
-"Wind Chill"
-    Sensació
 "Written by"
     Escrit por
 "xmltvid"

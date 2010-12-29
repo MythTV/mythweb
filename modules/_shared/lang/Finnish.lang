@@ -1,5 +1,4 @@
 ""
-" at "
 " TRANSCODED"
 "# Tracks"
     # Raidat
@@ -63,8 +62,6 @@
     (korkeus lasketaan automaattisesti tallenteen kuvasuhteella)
 "1 - Lowest"
     1 - Alin
-"18 Hour Forecast"
-    18 tunnin ennuste
 "4 - Highest"
     4 - Korkein
 "Aborted"
@@ -75,8 +72,6 @@
     Toiminto
 "Activate"
     Aktivoi
-"Active Screens"
-    Aktivoi näytöt
 "Add"
     Lisää
 "Add Album to Current Playlist"
@@ -89,8 +84,6 @@
     lisää lauseke
 "Add this Playlist as a Subplaylist"
     Lisää tämä Soittolista alisoittolistaksi
-"Add To Active Screens"
-    Lisää aktiivisiin näyttöihin
 "Additional Tables"
     Täydentävät taulukot
 "Additional tables:"
@@ -148,10 +141,6 @@
 "An error occurred while adding your playlist."
 "and"
     ja
-"Animated Map"
-    Animoitu kartta
-"Animation"
-    Animoitu
 "Any"
     Mikä vain
 "Any Category"
@@ -266,8 +255,6 @@
     Kanavan nimi
 "Chan. Number"
     Kanavan numero
-"Change Location"
-    Vaihda sijaintia
 "Channel"
     Kanava
 "channel"
@@ -328,8 +315,6 @@
     Luo uusi Satunnainen miksaus
 "Create Schedule"
     Ajoita tallennus
-"Current Conditions"
-    Nykyinen tila
 "Current MythWeb Template"
     Nykyinen MythWeb teema
 "Current Recording"
@@ -436,8 +421,6 @@
     Muokkaa ryhmää
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
-"Edit Screen"
-    Muokkaa kuvaa
 "Edit settings for: $1"
     Muokkaa asetuksia: $1
 "Editing "
@@ -452,7 +435,6 @@
     Lopeta
 "End Late"
     Lopeta myöhemmin
-"English_Unit"
 "Enter"
     Syötä
 "Enter a new name for your playlist"
@@ -487,8 +469,6 @@
     Tuottaja
 "Extended Check"
     Pidennetty tarkistus
-"Faster"
-    Nopeampi
 "ffmpeg with MP3 support not detected"
     Ei löydetty ffmpeg MP3 tukea
 "File Size"
@@ -582,12 +562,8 @@
     Korkeus
 "Hide"
     Piilota
-"High"
-    Korkein
 "Home"
     Koti
-"Host"
-    Palvelin
 "Hosted by"
     Isäntänä
 "Hour"
@@ -596,8 +572,6 @@
     Ajan muoto
 "hue"
     Värikylläisyys
-"Humidity"
-    Ilmankosteus
 "Ignore generic shows"
     Ohita yleiset ohjelmat
 "Ignore scheduled shows"
@@ -608,8 +582,6 @@
     IMBDTYPE
 "Inactive"
     Ei aktiivinen
-"Inactive Screens"
-    Ei aktiiviset näytöt
 "info: activate recording"
     Pakota tämän ohjelman tallennus
 "info: default recording"
@@ -718,18 +690,10 @@
     LATAA
 "Local Server Statistics"
     Paikallinen serveristatistiikka
-"Local weather forecast"
-    Paikallinen sääennuste
-"Location"
-    Sijainti
-"Location:"
-    Sijainti:
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Lokitiedostot
-"Low"
-    Alin
 "Low Space"
     Alhainen kovalevytila
 "Manual"
@@ -991,8 +955,6 @@
     Tehokas Haku
 "Power Search:"
     Tehokas Haku:
-"Precip"
-    Syvyys
 "Prefer a host for a storage group"
     Suosi palvelinta tallennusryhmän mukaan
 "Prefer a host for live sports with overtime"
@@ -1007,8 +969,6 @@
     Suosittu syöttö
 "Presented by"
     Esittää
-"Pressure"
-    Ilmanpaine
 "Previous Recording"
     Aiempi tallennus
 "Previous recordings"
@@ -1246,8 +1206,6 @@
     Ajoitusten ikkunointi
 "Science Fiction Movies"
     Tieteiselokuvat
-"Screen Name"
-"Screen Settings"
 "Search"
     Hae
 "Search $1"
@@ -1291,7 +1249,6 @@
     pakotta kaikki virtaukset ladattavaksi http:n kautta.
 "settings: notice"
     Varoitus: Näiden asetusten muokkaus voi haitata MythTV:n toimintaa.
-"Severe Weather Alerts"
 "Shift"
     Shift
 "Show"
@@ -1316,13 +1273,10 @@
     Ohjelmat välillä
 "Shows"
     Ohjelmat
-"SI"
-"Six Day Forecast"
 "Skip Ahead"
     Hyppää eteenpäin
 "Skip Back"
     Hyppää taaksepäin
-"Slower"
 "Songs"
     Kappaleet
 "Songs for Genre"
@@ -1334,7 +1288,6 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Lajittele kanavaluettelo kanvanumeron mukaan (valittu) tai lempinimen mukaan (ei valittu):
-"Source:"
 "sourceid"
     lähdetunnus
 "Space"
@@ -1351,7 +1304,6 @@
     Aloitusaika
 "Starting"
     Aloitukset
-"Static Map"
 "Statistics"
     Tilastot
 "Stats"
@@ -1393,8 +1345,6 @@
 "Tab"
     Välilehti
 "Television"
-"Temp"
-    Väliaikainen
 "The requested recording schedule has been deleted."
     Ajoitettu tallennus on poistettu
 "themoviedb"
@@ -1407,7 +1357,6 @@
     Tämä Soittolista on jo ladattu!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Tämä tallentaa nykyisen, tallentamattoman Soittolistasi. Haluatko varmasti jatkaa?
-"Three Day Forecast"
 "Thursday"
     Torstai
 "Time"
@@ -1476,7 +1425,6 @@
     Poista poisto
 "Undelete: $1"
     Poista $1 poisto
-"Units"
 "Unknown"
     Tuntematon
 "Unknown action"
@@ -1552,8 +1500,6 @@
     Katso tallennetut Soittolistat
 "View Server Statistics"
     Katso palvelimen tilastoja
-"Visibility"
-    Näkyvyys
 "visible"
     Näkyvä
 "Visit $1"
@@ -1585,8 +1531,6 @@
     esityksiä. Valitse seuraavista:
 "welcome: video"
     Hallitse videokokoelmaasi.
-"welcome: weather"
-    tervetuloa: säätila
 "What else is on at this time?"
     Mitä muuta on tähän aikaan?
 "Widescreen"
@@ -1595,10 +1539,6 @@
     Leveys
 "Will Record"
     Tulee tallentamaan
-"Wind"
-    Tuuli
-"Wind Chill"
-    Tuulen Viileys
 "Written by"
     Käsikirjoittaja
 "xmltvid"

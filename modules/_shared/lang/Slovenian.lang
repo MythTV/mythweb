@@ -1,6 +1,4 @@
 ""
-" at "
-    ob
 " TRANSCODED"
 "# Tracks"
     # Skladb
@@ -56,7 +54,6 @@
     %s Pesmi (%s)
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
-"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
     Preklicano
@@ -66,7 +63,6 @@
     Akcija
 "Activate"
     Aktiviraj
-"Active Screens"
 "Add"
     Dodaj
 "Add Album to Current Playlist"
@@ -79,7 +75,6 @@
     dodaj povezavo
 "Add this Playlist as a Subplaylist"
     Dodaj ta seznam kot podseznam
-"Add To Active Screens"
 "Additional Tables"
     Dodatne tabele
 "Additional tables:"
@@ -132,8 +127,6 @@
 "An error occurred while adding your playlist."
 "and"
     in
-"Animated Map"
-"Animation"
 "Any"
     Katerakoli
 "Any Category"
@@ -241,7 +234,6 @@
     Ime kanala
 "Chan. Number"
     Številka kanala
-"Change Location"
 "Channel"
     Kanal
 "channel"
@@ -298,7 +290,6 @@
     Ustvari naključni mix
 "Create Schedule"
     Ustvari plan snemanja
-"Current Conditions"
 "Current MythWeb Template"
 "Current Recording"
     Trenutni posnetek
@@ -397,7 +388,6 @@
     Uredi obstoječo skupino
 "Edit MythWeb and some MythTV settings."
     Uredi MythWeb in nekaj MythTV nastavitev.
-"Edit Screen"
 "Edit settings for: $1"
     Uredi nastavitve za: $1
 "Editing "
@@ -409,7 +399,6 @@
     Konec
 "End Late"
     Končaj kasneje
-"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
     Vnesi novo ime za sznam predvajanja
@@ -441,7 +430,6 @@
     Scenarist
 "Extended Check"
     Podrobni pregled
-"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
     Velikost datoteke
@@ -525,12 +513,8 @@
 "Height"
 "Hide"
     Skrij
-"High"
-    Visoka
 "Home"
     Domov
-"Host"
-    Gostitelj
 "Hosted by"
     Gostitelj
 "Hour"
@@ -539,8 +523,6 @@
     Format časa
 "hue"
     nasičenost
-"Humidity"
-    Vlažnost
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -548,7 +530,6 @@
     IMDB tip
 "Inactive"
     Neaktiven
-"Inactive Screens"
 "info: activate recording"
     Vsili snemanje te oddaje.
 "info: default recording"
@@ -647,16 +628,10 @@
     NALAGANJE
 "Local Server Statistics"
     Statistike domačega strežnika
-"Local weather forecast"
-    Domača vremenska napoved
-"Location"
-"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Dnevniki
-"Low"
-    Nizka
 "Low Space"
     Malo prostega diska
 "Manual"
@@ -888,7 +863,6 @@
 "Power Search"
     Napredno iskanje
 "Power Search:"
-"Precip"
 "Prefer a host for a storage group"
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
@@ -899,8 +873,6 @@
     Priljubljen vhod
 "Presented by"
     Predstavlja
-"Pressure"
-    Tlak
 "Previous Recording"
     Že posneta
 "Previous recordings"
@@ -1123,8 +1095,6 @@
     Pop-upi
 "Science Fiction Movies"
     Znanstveno-fantastični filmi
-"Screen Name"
-"Screen Settings"
 "Search"
     Iskanje
 "Search $1"
@@ -1169,7 +1139,6 @@
 "settings: notice"
     Opozorilo:<br/><br/>
     Na večini nastavitvenih strani, se napake pogosto ne preverjajo. Če niste pazljivi, lahko kaj hitro zmešate stvari (predvsem glede baze). Tukaj <b>NI</b> mogoče razveljaviti vaših dejanj.
-"Severe Weather Alerts"
 "Shift"
 "Show"
     Prikaži
@@ -1190,13 +1159,10 @@
     Oddaje med
 "Shows"
     Oddaje
-"SI"
-"Six Day Forecast"
 "Skip Ahead"
     Izpusti naprej
 "Skip Back"
     Izpusti nazaj
-"Slower"
 "Songs"
     Pesem
 "Songs for Genre"
@@ -1207,7 +1173,6 @@
     Ocenjene pesmi
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
-"Source:"
 "sourceid"
     ID vira
 "Space"
@@ -1223,7 +1188,6 @@
     Čas začetka
 "Starting"
     Začenjam
-"Static Map"
 "Statistics"
     Statistike
 "Stats"
@@ -1262,7 +1226,6 @@
     Prostorski zvok
 "Tab"
 "Television"
-"Temp"
 "The requested recording schedule has been deleted."
     Zahtevani snemalni plan je bil izbrisan.
 "themoviedb"
@@ -1275,7 +1238,6 @@
     Ta seznam predvajanja je že naložen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     To bo prepisalo vaš trenutno še ne shranjen seznam predvajanja. Ali ste prepričani, da želite nadaljevati?
-"Three Day Forecast"
 "Thursday"
     Četrtek
 "Time"
@@ -1342,7 +1304,6 @@
     Obnovi
 "Undelete: $1"
     Obnovi: $1
-"Units"
 "Unknown"
     Neznano
 "Unknown action"
@@ -1431,8 +1392,6 @@
     Prikaži shranjen seznam predvajanja
 "View Server Statistics"
     Prikaži statistike strežnika
-"Visibility"
-    Vidljivost
 "visible"
     viden
 "Visit $1"
@@ -1467,8 +1426,6 @@
     TV
 "welcome: video"
     Filmi
-"welcome: weather"
-    Vreme
 "What else is on at this time?"
     Kaj je še ob tem času?
 "Widescreen"
@@ -1476,10 +1433,6 @@
 "Width"
 "Will Record"
     Se bo posnelo
-"Wind"
-    Veter
-"Wind Chill"
-    Temperatura zraka
 "Written by"
     Napisal
 "xmltvid"

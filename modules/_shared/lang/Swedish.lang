@@ -1,6 +1,4 @@
 ""
-" at "
-    vid
 " TRANSCODED"
     OMKODAD
 "# Tracks"
@@ -65,8 +63,6 @@
     (höjd beräknas automatiskt från inspelningens bildförhållande)
 "1 - Lowest"
     1 - Lägst
-"18 Hour Forecast"
-    18 timmars prognos
 "4 - Highest"
     4 - Högst
 "Aborted"
@@ -77,8 +73,6 @@
     Handling
 "Activate"
     Aktivera
-"Active Screens"
-    Aktiva skärmar
 "Add"
     Lägg till
 "Add Album to Current Playlist"
@@ -91,8 +85,6 @@
     lägg till sträng
 "Add this Playlist as a Subplaylist"
     Lägg till denna spellista som en underspellista
-"Add To Active Screens"
-    Lägg till aktiva skärmar
 "Additional Tables"
     Ytterligare tabeller
 "Additional tables:"
@@ -149,10 +141,6 @@
 "An error occurred while adding your playlist."
 "and"
     och
-"Animated Map"
-    Animerad karta
-"Animation"
-    Animation
 "Any"
     Alla
 "Any Category"
@@ -267,8 +255,6 @@
     Kanalnamn
 "Chan. Number"
     Kanalnummer
-"Change Location"
-    Byt plats
 "Channel"
     Kanal
 "channel"
@@ -329,8 +315,6 @@
     Skapa slumpvis mix
 "Create Schedule"
     Schemalägg
-"Current Conditions"
-    Nuvarande förhållanden
 "Current MythWeb Template"
     Nuvarande MythWeb mall
 "Current Recording"
@@ -439,8 +423,6 @@
     Redigera existerande grupp
 "Edit MythWeb and some MythTV settings."
     Ändra MythWeb och några MythTV-inställningar
-"Edit Screen"
-    Redigera skärm
 "Edit settings for: $1"
     Ändra inställningar för: $1
 "Editing "
@@ -455,7 +437,6 @@
     End
 "End Late"
     Sluta senare
-"English_Unit"
 "Enter"
     Enter
 "Enter a new name for your playlist"
@@ -490,8 +471,6 @@
     Producent
 "Extended Check"
     Utbredd kontroll
-"Faster"
-    Fortare
 "ffmpeg with MP3 support not detected"
     ffmpeg med MP3-stöd hittades inte
 "File Size"
@@ -586,12 +565,8 @@
     Höjd
 "Hide"
     Göm
-"High"
-    Hög
 "Home"
     Hem
-"Host"
-    Värd
 "Hosted by"
     Värd
 "Hour"
@@ -600,8 +575,6 @@
     Timformat
 "hue"
     färgton
-"Humidity"
-    Luftfuktighet
 "Ignore generic shows"
     Ignorera allmänna visningar
 "Ignore scheduled shows"
@@ -612,8 +585,6 @@
     IMDBTYP
 "Inactive"
     Inaktiv
-"Inactive Screens"
-    Inaktiva skärmar
 "info: activate recording"
     aktivera inspelning
 "info: default recording"
@@ -723,20 +694,12 @@
     LADDAR
 "Local Server Statistics"
     Lokal serverstatistik
-"Local weather forecast"
-    Lokal väderprognos
-"Location"
-    Plats
-"Location:"
-    Plats:
 "LOCKDOWN_NOTICE"
     LÅSNER_FÖRVARNING
 "LOCKDOWN_NOTICE_2"
     LÅSNER_FÖRVARNING_2
 "Logs"
     Logg
-"Low"
-    Låg
 "Low Space"
     Lite utrymme
 "Manual"
@@ -992,8 +955,6 @@
     Avancerad sökning
 "Power Search:"
     Avancerad sökning:
-"Precip"
-    Förhastat handlande
 "Prefer a host for a storage group"
     Föredra en värd framför en lagringsgrupp
 "Prefer a host for live sports with overtime"
@@ -1007,8 +968,6 @@
     Föredragen källa
 "Presented by"
     Presenteras av
-"Pressure"
-    Lufttryck
 "Previous Recording"
     Föregående Inspelning
 "Previous recordings"
@@ -1244,10 +1203,6 @@
     Schemalagd popup
 "Science Fiction Movies"
     Science Fiction-filmer
-"Screen Name"
-    Skärmnamn
-"Screen Settings"
-    Skärminställningar
 "Search"
     Sök
 "Search $1"
@@ -1296,8 +1251,6 @@
     Varning!<br><br>
     Genom att ändra dessa inställningar utan att veta vad du gör kan du allvarligt
     störa MythTVs funktionalitet. Det går <b>inte</b> att ångra ändringar gjorda här.
-"Severe Weather Alerts"
-    Allvarliga vädervarningar
 "Shift"
     Skift
 "Show"
@@ -1322,16 +1275,10 @@
     Visningar mellan
 "Shows"
     Program
-"SI"
-    SI
-"Six Day Forecast"
-    6-dygnsprognos
 "Skip Ahead"
     Hoppa Framåt
 "Skip Back"
     Hoppa Bakåt
-"Slower"
-    Långsammare
 "Songs"
     Sånger
 "Songs for Genre"
@@ -1343,8 +1290,6 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Sortera efter kanalnummer i stället för kanalnamn
-"Source:"
-    Källa:
 "sourceid"
     käll-id
 "Space"
@@ -1361,8 +1306,6 @@
     Starttid
 "Starting"
     Startar
-"Static Map"
-    Statisk karta
 "Statistics"
     Statistik
 "Stats"
@@ -1407,8 +1350,6 @@
     Tab
 "Television"
     Television
-"Temp"
-    Tillfälligt
 "The requested recording schedule has been deleted."
     Det begärda inspelningsschemat har tagits bort.
 "themoviedb"
@@ -1421,8 +1362,6 @@
     Denna spellista har redan laddats!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Detta skriver över din nuvarande, osparade spellista. Är du säker på att du vill fortsätta?
-"Three Day Forecast"
-    3-dygnsprognos
 "Thursday"
     Torsdag
 "Time"
@@ -1495,8 +1434,6 @@
     Oraderat
 "Undelete: $1"
     Oraderat: $1
-"Units"
-    Enheter
 "Unknown"
     Okänd
 "Unknown action"
@@ -1590,8 +1527,6 @@
     Visa sparad spellista
 "View Server Statistics"
     Visa serverstatistik
-"Visibility"
-    Sikt
 "visible"
     synlig
 "Visit $1"
@@ -1626,8 +1561,6 @@
     Se vad som visas på TV, schemalägg inspelningar och hantera redan gjorda inspelningar.
 "welcome: video"
     Bläddra i videobiblioteket
-"welcome: weather"
-    Visa lokal väderprognos.
 "What else is on at this time?"
     Vad visas mer vid denna tid?
 "Widescreen"
@@ -1636,10 +1569,6 @@
     Bredd
 "Will Record"
     Kommer att spelas in
-"Wind"
-    Vind
-"Wind Chill"
-    Vindkyleffekt
 "Written by"
     Skriven av
 "xmltvid"

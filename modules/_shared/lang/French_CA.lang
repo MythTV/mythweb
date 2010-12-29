@@ -1,6 +1,4 @@
 ""
-" at "
-    &nbsp;à&nbsp;
 " TRANSCODED"
     TRANSCODÉ
 "# Tracks"
@@ -65,8 +63,6 @@
     (la hauteur est calculée automatiquement en fonction du ratio de l'enregistrement)
 "1 - Lowest"
     1 - Laxiste
-"18 Hour Forecast"
-    Prévisions sur 18 heures
 "4 - Highest"
     4 - Sévère
 "Aborted"
@@ -77,8 +73,6 @@
     Action
 "Activate"
     Activer
-"Active Screens"
-    Écrans actifs
 "Add"
     Ajouter
 "Add Album to Current Playlist"
@@ -91,8 +85,6 @@
     Ajouter condition
 "Add this Playlist as a Subplaylist"
     Ajouter cette liste de lecture comme sous-liste
-"Add To Active Screens"
-    Ajouter aux écrans actifs
 "Additional Tables"
     Tables supplémentaires
 "Additional tables:"
@@ -150,10 +142,6 @@
 "An error occurred while adding your playlist."
 "and"
     et
-"Animated Map"
-    Carte animée
-"Animation"
-    Animation
 "Any"
     Tous
 "Any Category"
@@ -269,8 +257,6 @@
     Nom de chaîne
 "Chan. Number"
     N° de chaîne
-"Change Location"
-    Changer d'emplacement
 "Channel"
     Chaîne
 "channel"
@@ -331,8 +317,6 @@
     Créer un mélange aléatoire
 "Create Schedule"
     Créer une programmation
-"Current Conditions"
-    Conditions actuelles
 "Current MythWeb Template"
     Modèle MythWeb actuel
 "Current Recording"
@@ -441,8 +425,6 @@
     Éditer le groupe existant
 "Edit MythWeb and some MythTV settings."
     Éditer les paramètres de Mythweb et certains de MythTV
-"Edit Screen"
-    Écran d'édition
 "Edit settings for: $1"
     Éditer les paramètres pour : $1
 "Editing "
@@ -457,8 +439,6 @@
     Fin
 "End Late"
     Arrêt en retard
-"English_Unit"
-    Anglaise
 "Enter"
     <-+ Entrée
 "Enter a new name for your playlist"
@@ -493,8 +473,6 @@
     Producteur exécutif
 "Extended Check"
     Contrôle étendu
-"Faster"
-    Plus vite
 "ffmpeg with MP3 support not detected"
     ffmpeg avec support MP3 non détecté
 "File Size"
@@ -589,12 +567,8 @@
     Hauteur
 "Hide"
     Cacher
-"High"
-    Max.
 "Home"
     Accueil
-"Host"
-    Ordinateur
 "Hosted by"
     Animé par
 "Hour"
@@ -603,8 +577,6 @@
     Format d'heure
 "hue"
     teinte
-"Humidity"
-    Humidité
 "Ignore generic shows"
     Ignorer les émissions génériques
 "Ignore scheduled shows"
@@ -615,8 +587,6 @@
     Imdb
 "Inactive"
     Inactif
-"Inactive Screens"
-    Écrans inactifs
 "info: activate recording"
     Forcer l'enregistrement de cette diffusion.
 "info: default recording"
@@ -725,20 +695,12 @@
     CHARGEMENT EN COURS
 "Local Server Statistics"
     Statistiques du serveur local
-"Local weather forecast"
-    Prévisions météo locales
-"Location"
-    Emplacement
-"Location:"
-    Emplacement :
 "LOCKDOWN_NOTICE"
     MythWeb a détecté qu'un robot accède à cette installation. Nous avons désactivé cette installation pour empêcher que des robots effacent tous vos enregistrements ou permettent à d'autres personnes d'accéder à votre installation de mythweb sans votre permission. Veuillez sécurisez votre installation
 "LOCKDOWN_NOTICE_2"
     (lire les fichiers INSTALL et README) et supprimer pour activer cette installation. Pour désactiver cette fonctionnalité, lisez le fichier README.
 "Logs"
     Journaux
-"Low"
-    Min.
 "Low Space"
     Espace faible
 "Manual"
@@ -1002,8 +964,6 @@
     Recherche avancée
 "Power Search:"
     Recherche avancée :
-"Precip"
-    Précip.
 "Prefer a host for a storage group"
     Préférer un ordinateur pour un groupe de stockage
 "Prefer a host for live sports with overtime"
@@ -1018,8 +978,6 @@
     Entrée préférée
 "Presented by"
     Présenté par
-"Pressure"
-    Pression
 "Previous Recording"
     Enregistrement précédent
 "Previous recordings"
@@ -1258,10 +1216,6 @@
     Popup Programmés
 "Science Fiction Movies"
     Films de science-fiction
-"Screen Name"
-    Nom d'écran
-"Screen Settings"
-    Réglages de l'écran
 "Search"
     Recherche
 "Search $1"
@@ -1316,8 +1270,6 @@
     Plusieurs de ces pages de paramètres ont peu de validation d'erreur, vous pouvez donc facilement
     détruire votre configuration si vous ne faites pas assez attention. La seule manière d'annuler vos
     modifications dans ce cas serait de restaurer la base de données à partir d'une copie de sauvegarde.
-"Severe Weather Alerts"
-    Alertes météo importantes
 "Shift"
     ^ Maj.
 "Show"
@@ -1342,16 +1294,10 @@
     Diffusions entre
 "Shows"
     Émissions
-"SI"
-    SI
-"Six Day Forecast"
-    Prévisions sur six jours
 "Skip Ahead"
     Saut avant
 "Skip Back"
     Saut arrière
-"Slower"
-    Plus lent
 "Songs"
     Chansons
 "Songs for Genre"
@@ -1363,7 +1309,6 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Classer les chaînes par numéro de chaîne (coché) ou par indicatif (décoché)
-"Source:"
 "sourceid"
     sourceid
 "Space"
@@ -1380,8 +1325,6 @@
     Heure de début
 "Starting"
     Démarrage en cours
-"Static Map"
-    Carte statique
 "Statistics"
     Statistiques
 "Stats"
@@ -1426,8 +1369,6 @@
     Tab
 "Television"
     Télévision
-"Temp"
-    Temp.
 "The requested recording schedule has been deleted."
     La programmation d'enregistrement demandée a été supprimée.
 "themoviedb"
@@ -1442,8 +1383,6 @@
     Cette liste de lecture est déjà chargée !
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
-"Three Day Forecast"
-    Prévisions sur trois jours
 "Thursday"
     Jeudi
 "Time"
@@ -1516,8 +1455,6 @@
     Récupérer
 "Undelete: $1"
     Récupérer : $1
-"Units"
-    Unités
 "Unknown"
     Inconnu
 "Unknown action"
@@ -1607,8 +1544,6 @@
     Afficher liste de lecture sauvegardée
 "View Server Statistics"
     Afficher les statistiques du serveur
-"Visibility"
-    Visibilité
 "visible"
     visible
 "Visit $1"
@@ -1643,8 +1578,6 @@
     Consulter la grille horaire, planifier un enregistrement et gérer des émissions déjà enregistrées. Vous pouvez choisir parmi les options suivantes :
 "welcome: video"
     Parcourir votre collection vidéo.
-"welcome: weather"
-    Obtenir les prévisions météorologiques locales.
 "What else is on at this time?"
     Quoi d'autre à cette heure ?
 "Widescreen"
@@ -1653,10 +1586,6 @@
     Largeur
 "Will Record"
     Sera enregistré
-"Wind"
-    Vent
-"Wind Chill"
-    Refroidissement éolien
 "Written by"
     Écrit par
 "xmltvid"

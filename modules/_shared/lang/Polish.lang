@@ -1,5 +1,4 @@
 ""
-" at "
 " TRANSCODED"
 "# Tracks"
 "$1 B"
@@ -44,7 +43,6 @@
 "%s Songs (%s)"
 "(height is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
-"18 Hour Forecast"
 "4 - Highest"
 "Aborted"
 "Aborting"
@@ -52,14 +50,12 @@
     Akcja
 "Activate"
     Uaktywnij
-"Active Screens"
 "Add"
 "Add Album to Current Playlist"
 "Add Mix"
 "Add Song to Current Playlist"
 "add string"
 "Add this Playlist as a Subplaylist"
-"Add To Active Screens"
 "Additional Tables"
 "Additional tables:"
 "Admin Key"
@@ -95,8 +91,6 @@
 "Allows you to search through other database tables when using a power search"
 "An error occurred while adding your playlist."
 "and"
-"Animated Map"
-"Animation"
 "Any"
     Dowolny
 "Any Category"
@@ -177,7 +171,6 @@
     Nazwa kanału
 "Chan. Number"
     Numer kanału
-"Change Location"
 "Channel"
     Kanał
 "channel"
@@ -220,7 +213,6 @@
 "Create a Random Mix"
 "Create Schedule"
     Utwórz zadanie
-"Current Conditions"
 "Current MythWeb Template"
 "Current Recording"
 "Current recordings"
@@ -293,7 +285,6 @@
     Edycja
 "Edit existing group"
 "Edit MythWeb and some MythTV settings."
-"Edit Screen"
 "Edit settings for: $1"
 "Editing "
 "Embed HTTP basic auth user name/password into stream urls"
@@ -303,7 +294,6 @@
     Koniec
 "End Late"
     Zakończ później
-"English_Unit"
 "Enter"
 "Enter a new name for your playlist"
 "Enter your search terms"
@@ -321,7 +311,6 @@
 "Exclude Repeat Episodes"
 "Exec. Producer"
 "Extended Check"
-"Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
 "film"
@@ -379,10 +368,7 @@
 "HDTV"
 "Height"
 "Hide"
-"High"
-    Wysoki
 "Home"
-"Host"
 "Hosted by"
     Udostępniony przez
 "Hour"
@@ -391,14 +377,12 @@
     Format godziny
 "hue"
     kolor
-"Humidity"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
 "IMDBTYPE"
 "Inactive"
     Bezczynny
-"Inactive Screens"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -453,15 +437,10 @@
 "Load this Saved Playlist"
 "LOADING"
 "Local Server Statistics"
-"Local weather forecast"
-"Location"
-"Location:"
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Logi
-"Low"
-    Niski
 "Low Space"
 "Manual"
     Ręczny
@@ -610,7 +589,6 @@
 "Power"
 "Power Search"
 "Power Search:"
-"Precip"
 "Prefer a host for a storage group"
 "Prefer a host for live sports with overtime"
 "Prefer Channum"
@@ -618,7 +596,6 @@
 "prefer_channum"
 "Preferred Input"
 "Presented by"
-"Pressure"
 "Previous Recording"
 "Previous recordings"
     Poprzednie nagrania
@@ -800,8 +777,6 @@
 "Scheduled"
 "Scheduled Popup"
 "Science Fiction Movies"
-"Screen Name"
-"Screen Settings"
 "Search"
     Szukaj
 "Search $1"
@@ -835,7 +810,6 @@
     Tabela ustawień
 "settings/stream: protocol"
 "settings: notice"
-"Severe Weather Alerts"
 "Shift"
 "Show"
     Pokaż
@@ -852,18 +826,14 @@
 "Showing all programs."
 "Showings between"
 "Shows"
-"SI"
-"Six Day Forecast"
 "Skip Ahead"
 "Skip Back"
-"Slower"
 "Songs"
 "Songs for Genre"
 "Songs Played"
 "Songs Rated"
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
-"Source:"
 "sourceid"
 "Space"
 "Special Searches"
@@ -875,7 +845,6 @@
 "Start Time"
     Czas rozpoczęcia
 "Starting"
-"Static Map"
 "Statistics"
 "Stats"
 "Status"
@@ -901,7 +870,6 @@
 "Surround Sound"
 "Tab"
 "Television"
-"Temp"
 "The requested recording schedule has been deleted."
 "themoviedb"
 "There are no items in this Playlist!"
@@ -909,7 +877,6 @@
 "TheTVDB"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
-"Three Day Forecast"
 "Thursday"
     Czwartek
 "Time"
@@ -956,7 +923,6 @@
 "Uncategorized"
 "Undelete"
 "Undelete: $1"
-"Units"
 "Unknown"
     Nieznany
 "Unknown action"
@@ -1015,8 +981,6 @@
 "View Details of %s"
 "View Saved Playlist"
 "View Server Statistics"
-"Visibility"
-    Widzialność
 "visible"
     Widoczny
 "Visit $1"
@@ -1044,14 +1008,10 @@
     recorded.  Please see the following choices:
 "welcome: video"
     Browse your video collection.
-"welcome: weather"
-    Get the local weather forecast.
 "What else is on at this time?"
 "Widescreen"
 "Width"
 "Will Record"
-"Wind"
-"Wind Chill"
 "Written by"
     Napisany przez
 "xmltvid"

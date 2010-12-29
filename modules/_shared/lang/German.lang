@@ -1,6 +1,4 @@
 ""
-" at "
-    um
 " TRANSCODED"
 "# Tracks"
     # Lieder
@@ -64,8 +62,6 @@
     (die Höhe wird automatisch anhand des Seitenverhältnisses der Aufnahme berechnet)
 "1 - Lowest"
     1 - Niedrigste
-"18 Hour Forecast"
-    18 Stunden Vorschau
 "4 - Highest"
     4 - Höchste
 "Aborted"
@@ -76,8 +72,6 @@
     Aktion
 "Activate"
     Aktivieren
-"Active Screens"
-    Aktive Bildschirme
 "Add"
     Hinzufügen
 "Add Album to Current Playlist"
@@ -90,8 +84,6 @@
     weitere
 "Add this Playlist as a Subplaylist"
     Diese Wiedergabeliste als Unterwiedergabeliste hinzufügen
-"Add To Active Screens"
-    Zu den aktiven Bildschirmen hinzufügen
 "Additional Tables"
     zus. Tabellen
 "Additional tables:"
@@ -149,10 +141,6 @@
 "An error occurred while adding your playlist."
 "and"
     und
-"Animated Map"
-    Animierte Karte
-"Animation"
-    Animation
 "Any"
     Jeder
 "Any Category"
@@ -267,8 +255,6 @@
     Sendername
 "Chan. Number"
     Senderplatz
-"Change Location"
-    Platz ändern
 "Channel"
     Sender
 "channel"
@@ -329,8 +315,6 @@
     Zufälligen Mix erzeugen
 "Create Schedule"
     Speichern
-"Current Conditions"
-    Aktuelle Zustände
 "Current MythWeb Template"
     Aktuelle MythWeb Vorlage
 "Current Recording"
@@ -439,8 +423,6 @@
     bestehende Gruppe bearbeiten
 "Edit MythWeb and some MythTV settings."
     Einstellungen für MythWeb & MythTV ändern
-"Edit Screen"
-    Bearbeiten
 "Edit settings for: $1"
     Einstellungen für: $1
 "Editing "
@@ -455,7 +437,6 @@
     Ende
 "End Late"
     verspätetes Aufnahmeende
-"English_Unit"
 "Enter"
     Eingabetaste
 "Enter a new name for your playlist"
@@ -490,8 +471,6 @@
     Produzent
 "Extended Check"
     Erweiterte Prüfung
-"Faster"
-    Schneller
 "ffmpeg with MP3 support not detected"
     ffmpeg mit MP3-Unterstützung nicht erkannt
 "File Size"
@@ -584,11 +563,7 @@
     Höhe
 "Hide"
     verstecken
-"High"
-    Max
 "Home"
-"Host"
-    Rechner
 "Hosted by"
     Präsentiert von
 "Hour"
@@ -597,8 +572,6 @@
     Zeitformat
 "hue"
     Farbton
-"Humidity"
-    Luftfeuchtigkeit
 "Ignore generic shows"
     Gewöhnliche Aufnahmen ignorieren
 "Ignore scheduled shows"
@@ -609,8 +582,6 @@
     IMDBTYPE
 "Inactive"
     Inaktiv
-"Inactive Screens"
-    Inaktive Bildschirme
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -708,18 +679,10 @@
     LADE
 "Local Server Statistics"
     lokale Serverstatistik
-"Local weather forecast"
-    lokale Wettervorhersage
-"Location"
-    Ort
-"Location:"
-    Ort:
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Logs
-"Low"
-    Min
 "Low Space"
     wenig Speicherplatz
 "Manual"
@@ -979,8 +942,6 @@
     Erweiterte Suche
 "Power Search:"
     Erweiterte Suche:
-"Precip"
-    Niederschlag
 "Prefer a host for a storage group"
     Bevorzuge einen Rechner mit einer Speichergruppe
 "Prefer a host for live sports with overtime"
@@ -995,8 +956,6 @@
     bevorzugte Quelle
 "Presented by"
     Präsentiert von
-"Pressure"
-    Luftdruck
 "Previous Recording"
     alte Aufnahme
 "Previous recordings"
@@ -1235,10 +1194,6 @@
     Aufnahmen Popup
 "Science Fiction Movies"
     Science-Fiction Filme
-"Screen Name"
-    Bildschirmname
-"Screen Settings"
-    Bildschirmeinstellungen
 "Search"
     Suche
 "Search $1"
@@ -1286,8 +1241,6 @@
 "settings/stream: protocol"
 "settings: notice"
     Achtung! Falls diese Tabelle ohne das nötige Hintergrundwissen verändert wird, könnte MythTVs Funktionalität nachhaltig gestört werden.
-"Severe Weather Alerts"
-    Ernste Wetterwarnungen
 "Shift"
     Hochstelltaste
 "Show"
@@ -1312,15 +1265,10 @@
     zwischen
 "Shows"
     Sendungen
-"SI"
-"Six Day Forecast"
-    Sechstage Vorschau
 "Skip Ahead"
     springe vor
 "Skip Back"
     springe zurück
-"Slower"
-    Langsamer
 "Songs"
     Lieder
 "Songs for Genre"
@@ -1332,8 +1280,6 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
 "sortby_channum"
     Nach Sendernummer sortieren
-"Source:"
-    Quelle:
 "sourceid"
     Quellen ID
 "Space"
@@ -1350,8 +1296,6 @@
     Uhrzeit
 "Starting"
     Beginnt
-"Static Map"
-    Statische Karte
 "Statistics"
     Statistiken
 "Stats"
@@ -1395,8 +1339,6 @@
     Tab
 "Television"
     Fernsehen
-"Temp"
-    Temperatur
 "The requested recording schedule has been deleted."
     Die geplante Aufnahme wurde gelöscht.
 "themoviedb"
@@ -1409,8 +1351,6 @@
     Wiedergabeliste bereits geladen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dies wird die aktuelle, noch nicht gespeicherte Wiedergabeliste überschreiben. Möchten Sie wirklich fortsetzen?
-"Three Day Forecast"
-    Dreitage Vorschau
 "Thursday"
     Donnerstag
 "Time"
@@ -1483,8 +1423,6 @@
     Wiederherstellen
 "Undelete: $1"
     Wiederherstellen: $1
-"Units"
-    Einheiten
 "Unknown"
     Unbekannt
 "Unknown action"
@@ -1564,8 +1502,6 @@
     Gespeicherte Wiedergabeliste anzeigen
 "View Server Statistics"
     Serverstatistiken anzeigen
-"Visibility"
-    Sichtweite
 "visible"
     Sichtbar
 "Visit $1"
@@ -1596,8 +1532,6 @@
     TV
 "welcome: video"
     Video
-"welcome: weather"
-    Wetter
 "What else is on at this time?"
     Was läuft noch zu dieser Zeit?
 "Widescreen"
@@ -1606,10 +1540,6 @@
     Breite
 "Will Record"
     geplante Aufnahme
-"Wind"
-    Windgeschwindigkeit
-"Wind Chill"
-    gefühlte Temperatur
 "Written by"
     Geschrieben von
 "xmltvid"
