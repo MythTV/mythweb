@@ -10,6 +10,7 @@
 
 // UTF-8 content
     header("Content-Type: text/html; charset=utf-8");
+    ob_end_flush();
 
 // Globals
     global $headers, $page_title;

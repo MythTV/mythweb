@@ -12,6 +12,9 @@
  *
 /**/
 
+// Start an output buffer to store up errors until the output
+    ob_start();
+
 // Attempt to load up firephp if installed on the server
     @include_once('FirePHPCore/fb.php');
 

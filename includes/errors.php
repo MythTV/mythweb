@@ -145,6 +145,7 @@
         else {
             echo "<hr><p><b>", error_type($errno), "</b>",
                 " at $errfile, line $errline:<br />$errstr</p>\n",
+                "<!-- ".build_backtrace($errno, $errstr, $errfile, $errline, $vars)." -->\n",
                 "<hr>\n";
         }
     }
