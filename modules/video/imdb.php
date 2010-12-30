@@ -13,10 +13,10 @@
 
 // We need the id always set, so enforce that here
     if (!isset($_REQUEST['id']))
-        die(JSON::encode(array('error' => array(t('Video: Error: Missing ID')))));
+        die(json_encode(array('error' => array(t('Video: Error: Missing ID')))));
 
     if (is_null(setting('web_video_imdb_path', hostname)))
-        die(JSON::encode(array('error' => array(t('Video: Error: IMDB: Not Found')))));
+        die(json_encode(array('error' => array(t('Video: Error: IMDB: Not Found')))));
 
     switch($_REQUEST['action'])
     {
@@ -31,7 +31,7 @@
             break;
     }
 
-    echo JSON::encode($return);
+    echo json_encode($return);
 
     function lookup($id, $title)
     {

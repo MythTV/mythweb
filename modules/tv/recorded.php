@@ -38,7 +38,7 @@
         // Exit early if we're in AJAX mode.
             if (isset($_REQUEST['ajax'])) {
                 header('Content-Type: application/json');
-                echo JSON::encode(array('id'   => $_REQUEST['id'],
+                echo json_encode(array('id'   => $_REQUEST['id'],
                                         'file' => $_REQUEST['file']));
                 exit;
             }

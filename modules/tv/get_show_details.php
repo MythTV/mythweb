@@ -7,6 +7,6 @@
 
     $program = load_one_program($_REQUEST['starttime'], $_REQUEST['chanid'], false);
 
-    echo JSON::encode(array( 'id'               => 'program-'.$_REQUEST['chanid'].'-'.$_REQUEST['starttime'],
+    echo json_encode(array( 'id'               => 'program-'.$_REQUEST['chanid'].'-'.$_REQUEST['starttime'],
                              'info'             => $program->details_list()
                            ));
