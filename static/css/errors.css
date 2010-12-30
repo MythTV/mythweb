@@ -1,0 +1,37 @@
+body {
+    background-color:#ccc;
+}
+
+#message {
+    position:           absolute;
+    top:                50%;
+    left:               50%;
+    margin-top:         -10em;
+    width:              50em;
+    height:             20em;
+    margin-left:        -25em;
+    border:             2px ridge #a22;
+    background-color:   #fff;
+    padding:            .5em 1em;
+}
+#message h2 {
+    text-align:         center;
+}
+#message .err {
+    font-weight:        bold;
+}
+
+#backtrace {
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    border-top:         2px ridge #a22;
+    padding:            .5em 1em;
+    font-size:          80%;
+    background-color:   #fdd;
+}
+#backtrace textarea {
+    width:              100%;
+    height:             8em;
+    background-color:   #fee;
+}
