@@ -137,12 +137,16 @@
 
 // Queue a job?
     if ($program && $program->filename && $_REQUEST['job']) {
+        $host = "";
+        if (setting("JobsRunOnRecordHost")){
+            $host = $program->hostname;
+        }
         $db->query('INSERT INTO jobqueue
                        SET chanid       = ?,
                            starttime    = FROM_UNIXTIME(?),
                            inserttime   = NOW(),
                            type         = ?,
-                           hostname     = "",
+                           hostname     = ?,
                            args         = "",
                            status       = ?,
                            statustime   = NOW(),
@@ -152,6 +156,7 @@
                    $program->chanid,
                    $program->recstartts,
                    $_REQUEST['job'],
+                   $host,
                    JOB_QUEUED,
                    JOB_USE_CUTLIST
                   );
