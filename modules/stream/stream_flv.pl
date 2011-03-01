@@ -35,6 +35,10 @@
 # Find ffmpeg
     $ffmpeg = '';
     foreach my $path (split(/:/, $ENV{'PATH'}.':/usr/local/bin:/usr/bin'), '.') {
+        if (-e "$path/mythffmpeg") {
+            $ffmpeg = "$path/mythffmpeg";
+            last;
+        }
         if (-e "$path/ffmpeg") {
             $ffmpeg = "$path/ffmpeg";
             last;
@@ -80,6 +84,7 @@
                         .' -r 24'
                         .' -f flv'
                         .' -deinterlace'
+                        .' -async 2'
                         .' -ac 2'
                         .' -ar 11025'
                         .' -ab '.shell_escape("${abitrate}k")
