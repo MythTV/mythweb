@@ -21,7 +21,7 @@
     // Keep a previous-row counter to return to after deleting
         $prev_row = -2;
     // We need to scan through the available recordings to get at the additional information required by the DELETE_RECORDING query
-        foreach (MythBackend::find()->queryProgramRows('QUERY_RECORDINGS Delete') as $row) {
+        foreach (MythBackend::find()->queryProgramRows('QUERY_RECORDINGS Unsorted') as $row) {
         // increment if row has the same title as the show we're deleting or if viewing 'all recordings'
             if (($_SESSION['recorded_title'] == $row[0]) || ($_SESSION['recorded_title'] == ''))
                 $prev_row++;
@@ -62,7 +62,7 @@
 
 // Parse the program list
     $warning    = NULL;
-    $recordings = MythBackend::find()->queryProgramRows('QUERY_RECORDINGS Delete');
+    $recordings = MythBackend::find()->queryProgramRows('QUERY_RECORDINGS Unsorted');
     while (true) {
         $Total_Used     = 0;
         $Total_Time     = 0;
