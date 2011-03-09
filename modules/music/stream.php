@@ -23,7 +23,7 @@
                                                WHERE ma.albumart_id = ?',
                                              $_GET['a']);
     // Set the XML transfer command
-        $xml_command = 'GetAlbumArt';
+        $xml_command = 'Content/GetAlbumArt';
     // Set the XML transfer file id
         $xml_id = $_GET['a'];
     }
@@ -43,7 +43,7 @@
                      WHERE song_id = ?',
                    $_GET['i']);
     // Set the XML transfer command
-        $xml_command = 'GetMusic';
+        $xml_command = 'Content/GetMusic';
     // Set the XML transfer file id
         $xml_id = $_GET['i'];
     }
@@ -98,7 +98,7 @@
         $Master_Host = get_backend_setting('MasterServerIP');
         $port = _or(get_backend_setting('BackendStatusPort', $Master_Host),
                     get_backend_setting('BackendStatusPort'));
-        readfile("http://$Master_Host:$port/Myth/$xml_command?Id=".$xml_id);
+        readfile("http://$Master_Host:$port/$xml_command?Id=".$xml_id);
     }
 
 // Nothing else to do
