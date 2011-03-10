@@ -22,15 +22,15 @@
 
 // Load the status page
     if (function_exists('curl_exec')) {
-        $ch = curl_init("http://$masterhost:$statusport$xml_param");
+        $ch = curl_init("http://$masterhost:$statusport/Status$xml_param");
         curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
         $status = curl_exec($ch);
         curl_close($ch);
     } else if (function_exists('file_get_contents'))
-        $status = file_get_contents("http://$masterhost:$statusport$xml_param");
+        $status = file_get_contents("http://$masterhost:$statusport/Status$xml_param");
     else
-        $status = implode("\n", file("http://$masterhost:$statusport$xml_param"));
+        $status = implode("\n", file("http://$masterhost:$statusport/Status$xml_param"));
 
 // Extract the page title
     preg_match('#<title>(.+?)</title>#s', $status, $title);

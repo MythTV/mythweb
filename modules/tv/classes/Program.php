@@ -481,7 +481,7 @@ class Program extends MythBase {
 /**/
     public static function get_preview_pixmap($hostname, $chanid, $starttime, $width=160, $height=120, $secs_in=null) {
 
-        return MythBackend::find($hostname)->httpRequest('GetPreviewImage', array('ChanId'      => $chanid,
+        return MythBackend::find($hostname)->httpRequest('Content/GetPreviewImage', array('ChanId'      => $chanid,
                                                                          'StartTime'   => unix2mythtime($starttime),
                                                                          'Height'      => $height,
                                                                          'Width'       => $width));
