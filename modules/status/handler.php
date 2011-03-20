@@ -19,14 +19,14 @@
     $statusport = setting('BackendStatusPort', '%');
 
 // XML mode?
-    $xml_param = ($Path[1] == 'xml') ? 'GetStatus' : 'GetStatusHTML';
+    $xml_param = ($Path[1] == 'xml') ? '/xml' : '';
 
 // Make sure the content is interpreted as UTF-8
     header('Content-Type:  text/html; charset=UTF-8');
 
 // Load the status page
     if (function_exists('curl_exec')) {
-        $ch = curl_init("http://$masterhost:$statusport/Status/$xml_param");
+        $ch = curl_init("http://$masterhost:$statusport$xml_param");
         curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
         $status = curl_exec($ch);
