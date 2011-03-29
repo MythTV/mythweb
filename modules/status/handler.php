@@ -15,7 +15,7 @@
     $statusport = setting('BackendStatusPort', '%');
 
 // XML mode?
-    $xml_param = ($Path[1] == 'xml') ? '/xml' : '';
+    $xml_param = ($Path[1] == 'xml') ? '/xml' : '/GetStatusHTML';
 
 // Make sure the content is interpreted as UTF-8
     header('Content-Type:  text/html; charset=UTF-8');
