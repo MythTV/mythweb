@@ -71,7 +71,7 @@
             if (($channel->chanid == $selected) ||
                 ($channel->chanid == $_GET['chanid']))
                 echo ' SELECTED';
-        // Print ther est of the content
+        // Print the rest of the content
             echo '>';
             if ($_SESSION["prefer_channum"])
                 echo $channel->channum.'&nbsp;&nbsp;('.html_entities($channel->callsign).')';
