@@ -76,7 +76,7 @@ class Video {
             }
             if ($exists) {
                 $this->cover_url = 'pl/coverart/'.$this->cover_file;
-                $this->cover_file = path;
+                $this->cover_file = $path;
                 list($width, $height) = @getimagesize($this->cover_file);
                 if ($width > 0 && $height > 0) {
                     $wscale = video_img_width / $width;
