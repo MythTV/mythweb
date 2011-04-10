@@ -26,7 +26,7 @@
         $where = ' WHERE UNIX_TIMESTAMP(starttime) > '.(time()-31*24*60*60);
     if ($_REQUEST['query_time'] == 'year')
         $where = ' WHERE UNIX_TIMESTAMP(starttime) > '.(time()-365*24*60*60);
-    $where .= ' AND oldrecorded.recstatus = -3';
+    $where .= ' AND oldrecorded.recstatus = -3 AND oldrecorded.future = 0';
 
     $limit = 'LIMIT 10';
     if (is_numeric($_REQUEST['count_dropdown']))

@@ -9,7 +9,7 @@
  *
 /**/
 
-    $enabled = $db->query_col('SELECT COUNT(*) FROM oldrecorded');
+    $enabled = $db->query_col('SELECT COUNT(*) FROM oldrecorded WHERE future = 0');
 
     if($enabled) {
         $Modules['stats'] = array('path' => 'stats',

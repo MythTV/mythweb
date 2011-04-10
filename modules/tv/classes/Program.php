@@ -628,7 +628,7 @@ class Program extends MythBase {
     // forgotten, so we have to search for matching rows
         $sh = $db->query('SELECT *
                             FROM oldrecorded
-                           WHERE title=? AND subtitle=? AND description=?',
+                           WHERE title=? AND subtitle=? AND description=? AND future = 0',
                          $this->title,
                          $this->subtitle,
                          $this->description);
