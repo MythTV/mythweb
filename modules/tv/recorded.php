@@ -175,28 +175,18 @@
         sort_programs($All_Shows, 'recorded_sortby');
 
 // How much free disk space on the backend machine?
-    list($size_high, $size_low, $used_high, $used_low) = MythBackend::find()->sendCommand('QUERY_FREE_SPACE_SUMMARY');
-    if (function_exists('gmp_add')) {
+    list($size, $used) = MythBackend::find()->sendCommand('QUERY_FREE_SPACE_SUMMARY');
+    if (function_exists('gmp_mul')) {
     // GMP functions should work better with 64 bit numbers.
-        $size = gmp_mul('1024',
-                        gmp_add($size_low,
-                                gmp_mul('4294967296',
-                                        gmp_add($size_high, $size_low < 0 ? '1' : '0'))
-                               )
-                       );
+        $size = gmp_mul('1024', $size);
         define(disk_size, gmp_strval($size));
-        $size = gmp_mul('1024',
-                        gmp_add($used_low,
-                                gmp_mul('4294967296',
-                                        gmp_add($used_high, $used_low < 0 ? '1' : '0'))
-                               )
-                       );
+        $size = gmp_mul('1024', $used);
         define(disk_used, gmp_strval($size));
     }
     else {
     // This is inaccurate, but it's the best we can get without GMP.
-        define(disk_size, (($size_high + ($size_low < 0)) * 4294967296 + $size_low) * 1024);
-        define(disk_used, (($used_high + ($used_low < 0)) * 4294967296 + $used_low) * 1024);
+        define(disk_size, ($size * 1024));
+        define(disk_used, ($used * 1024));
     }
 
 // Load the class for this page
