@@ -784,24 +784,28 @@ class Program extends MythBase {
 
     public function getAspect() {
         global $db;
-        $aspect = $db->query_col('SELECT recordedmarkup.type
-                                    FROM recordedmarkup
-                                   WHERE recordedmarkup.chanid    = ?
-                                     AND recordedmarkup.starttime = FROM_UNIXTIME(?)
-                                     AND recordedmarkup.type      IN (10, 11, 12, 13, 14)
- 	                            GROUP BY recordedmarkup.type
-                                ORDER BY SUM((SELECT IFNULL(rm.mark, recordedmarkup.mark)
- 	                                            FROM recordedmarkup AS rm
-                                               WHERE rm.chanid = recordedmarkup.chanid
- 	                                             AND rm.starttime = recordedmarkup.starttime
-                                                 AND rm.type IN (10, 11, 12, 13, 14)
-                                                 AND rm.mark > recordedmarkup.mark
-                                            ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC
-                                   LIMIT 1',
-                                   $this->chanid,
-                                   $this->recstartts
-                                   );
-        switch($aspect) {
+        $sh = $db->query('SELECT recordedmarkup.type,
+                                 recordedmarkup.data
+                            FROM recordedmarkup
+                           WHERE recordedmarkup.chanid    = ?
+                             AND recordedmarkup.starttime = FROM_UNIXTIME(?)
+                             AND recordedmarkup.type      IN (10, 11, 12, 13, 14)
+ 	                GROUP BY recordedmarkup.type
+                        ORDER BY SUM((SELECT IFNULL(rm.mark, recordedmarkup.mark)
+ 	                                FROM recordedmarkup AS rm
+                                       WHERE rm.chanid = recordedmarkup.chanid
+ 	                                 AND rm.starttime = recordedmarkup.starttime
+                                         AND rm.type IN (10, 11, 12, 13, 14)
+                                         AND rm.mark > recordedmarkup.mark
+                                ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC
+                           LIMIT 1',
+                           $this->chanid,
+                           $this->recstartts
+                           );
+        $row = $sh->fetch_assoc();
+        $sh->finish();
+
+        switch($row['aspect']) {
             case 10:
                 return 1;
             case 11:
@@ -811,10 +815,9 @@ class Program extends MythBase {
             case 13:
                 return 2.21/1;
             case 14:
-                return 4/3;
+                return $row['data']/10000.0;
             default:
                 return 4/3;
         }
     }
-
 }
