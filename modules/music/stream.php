@@ -95,9 +95,12 @@
     }
 // Otherwise, send it via the backend
     else {
-        $Master_Host = get_backend_setting('MasterServerIP');
+        $Master_Host = setting('MasterServerIP');
         $port = _or(get_backend_setting('BackendStatusPort', $Master_Host),
                     get_backend_setting('BackendStatusPort'));
+        if (stripos($Master_Host,':') !== false) {
+            $Master_Host = '['.$Master_Host.']';
+        }
         readfile("http://$Master_Host:$port/$xml_command?Id=".$xml_id);
     }
 
