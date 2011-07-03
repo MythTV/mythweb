@@ -127,46 +127,49 @@ class Program extends MythBase {
             $this->title           = trim($data[0]);    # program name/title
             $this->subtitle        = $data[1];          # episode name
             $this->description     = $data[2];          # episode description
-            $this->category        = $data[3];
-            $this->chanid          = $data[4];          # mysql chanid
-            $this->channum         = $data[5];
-            $this->callsign        = $data[6];
-            $this->channame        = $data[7];
-            $this->filename        = $data[8];
-            $this->filesize        = $data[9];
-            $this->starttime       = $data[10];         # show start-time
-            $this->endtime         = $data[11];         # show end-time
-            $this->findid          = $data[12];
-            $this->hostname        = $data[13];
-            $this->sourceid        = $data[14];
-            $this->cardid          = $data[15];
-            $this->inputid         = $data[16];
-            $this->recpriority     = $data[17];
-            $this->recstatus       = $data[18];
-            $this->recordid        = $data[19];
+            $this->season          = $data[3];
+            $this->episode         = $data[4];
+            $this->category        = $data[5];
+            $this->chanid          = $data[6];          # mysql chanid
+            $this->channum         = $data[7];
+            $this->callsign        = $data[8];
+            $this->channame        = $data[9];
+            $this->filename        = $data[10];
+            $this->filesize        = $data[11];
+            $this->starttime       = $data[12];         # show start-time
+            $this->endtime         = $data[13];         # show end-time
+            $this->findid          = $data[14];
+            $this->hostname        = $data[15];
+            $this->sourceid        = $data[16];
+            $this->cardid          = $data[17];
+            $this->inputid         = $data[18];
+            $this->recpriority     = $data[19];
+            $this->recstatus       = $data[20];
+            $this->recordid        = $data[21];
 
-            $this->rectype         = $data[20];
-            $this->dupin           = $data[21];
-            $this->dupmethod       = $data[22];
-            $this->recstartts      = $data[23];         # ACTUAL start time (also maps to recorded.starttime)
-            $this->recendts        = $data[24];         # ACTUAL end time
-            $this->progflags       = $data[25];
-            $this->recgroup        = $data[26];
-            $this->outputfilters   = $data[27];
-            $this->seriesid        = $data[28];
-            $this->programid       = $data[29];
+            $this->rectype         = $data[22];
+            $this->dupin           = $data[23];
+            $this->dupmethod       = $data[24];
+            $this->recstartts      = $data[25];         # ACTUAL start time (also maps to recorded.starttime)
+            $this->recendts        = $data[26];         # ACTUAL end time
+            $this->progflags       = $data[27];
+            $this->recgroup        = $data[28];
+            $this->outputfilters   = $data[29];
+            $this->seriesid        = $data[30];
+            $this->programid       = $data[31];
+            $this->inetref         = $data[32];
 
-            $this->lastmodified    = $data[30];
-            $this->stars           = $data[31];
-            $this->airdate         = $data[32];
-            $this->playgroup       = $data[33];
-            $this->recpriority2    = $data[34];
-            $this->parentid        = $data[35];
-            $this->storagegroup    = $data[36];
-            $this->audioproperties = $data[37];
-            $this->videoproperties = $data[38];
-            $this->subtitletype    = $data[39];
-            $this->year            = $data[40];
+            $this->lastmodified    = $data[33];
+            $this->stars           = $data[34];
+            $this->airdate         = $data[35];
+            $this->playgroup       = $data[36];
+            $this->recpriority2    = $data[37];
+            $this->parentid        = $data[38];
+            $this->storagegroup    = $data[39];
+            $this->audioproperties = $data[40];
+            $this->videoproperties = $data[41];
+            $this->subtitletype    = $data[42];
+            $this->year            = $data[43];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
                 $this->url = video_url($this); // get download info
@@ -392,47 +395,50 @@ class Program extends MythBase {
                              $this->title          , // 00 title
                              $this->subtitle       , // 01 subtitle
                              $this->description    , // 02 description
-                             $this->category       , // 03 category
-                             $this->chanid         , // 04 chanid
-                             $this->channum        , // 05 chanstr
-                             $this->callsign       , // 06 chansign
-                             $this->channame       , // 07 channame
-                             $this->filename       , // 08 pathname
-                             $this->filesize       , // 09 filesize
+                             $this->season         , // 03 season
+                             $this->episode        , // 04 episode
+                             $this->category       , // 05 category
+                             $this->chanid         , // 06 chanid
+                             $this->channum        , // 07 chanstr
+                             $this->callsign       , // 08 chansign
+                             $this->channame       , // 09 channame
+                             $this->filename       , // 10 pathname
+                             $this->filesize       , // 11 filesize
 
-                             $this->starttime      , // 10 startts
-                             $this->endtime        , // 11 endts
-                             $this->findid         , // 12 findid
-                             $this->hostname       , // 13 hostname
-                             $this->sourceid       , // 14 sourceid
-                             $this->cardid         , // 15 cardid
-                             $this->inputid        , // 16 inputid
-                             $this->recpriority    , // 17 recpriority
-                             $this->recstatus      , // 18 recstatus
-                             $this->recordid       , // 19 recordid
+                             $this->starttime      , // 12 startts
+                             $this->endtime        , // 13 endts
+                             $this->findid         , // 14 findid
+                             $this->hostname       , // 15 hostname
+                             $this->sourceid       , // 16 sourceid
+                             $this->cardid         , // 17 cardid
+                             $this->inputid        , // 18 inputid
+                             $this->recpriority    , // 19 recpriority
+                             $this->recstatus      , // 20 recstatus
+                             $this->recordid       , // 21 recordid
 
-                             $this->rectype        , // 20 rectype
-                             $this->dupin          , // 21 dupin
-                             $this->dupmethod      , // 22 dupmethod
-                             $this->recstartts     , // 23 recstartts
-                             $this->recendts       , // 24 recendts
-                             $this->progflags      , // 25 programflags
-                             $this->recgroup       , // 26 recgroup
-                             $this->outputfilters  , // 27 chanOutputFilters
-                             $this->seriesid       , // 28 seriesid
-                             $this->programid      , // 29 programid
+                             $this->rectype        , // 22 rectype
+                             $this->dupin          , // 23 dupin
+                             $this->dupmethod      , // 24 dupmethod
+                             $this->recstartts     , // 25 recstartts
+                             $this->recendts       , // 26 recendts
+                             $this->progflags      , // 27 programflags
+                             $this->recgroup       , // 28 recgroup
+                             $this->outputfilters  , // 29 chanOutputFilters
+                             $this->seriesid       , // 30 seriesid
+                             $this->programid      , // 31 programid
+                             $this->inetref        , // 32 inetref
 
-                             $this->lastmodified   , // 30 lastmodified
-                             $this->stars          , // 31 stars
-                             $this->airdate        , // 32 originalAirDate
-                             $this->playgroup      , // 33 playgroup
-                             $this->recpriority2   , // 34 recpriority2
-                             $this->parentid       , // 35 parentid
-                             $this->storagegroup   , // 36 storagegroup
-                             $this->audioproperties, // 37 audioprop
-                             $this->videoproperties, // 38 videoprop
-                             $this->subtitletype,    // 39 subtitletype
-                             $this->year,            // 40 year
+                             $this->lastmodified   , // 33 lastmodified
+                             $this->stars          , // 34 stars
+                             $this->airdate        , // 35 originalAirDate
+                             $this->playgroup      , // 36 playgroup
+                             $this->recpriority2   , // 37 recpriority2
+                             $this->parentid       , // 38 parentid
+                             $this->storagegroup   , // 39 storagegroup
+                             $this->audioproperties, // 40 audioprop
+                             $this->videoproperties, // 41 videoprop
+                             $this->subtitletype,    // 42 subtitletype
+                             $this->year,            // 43 year
                             )
                       );
     }

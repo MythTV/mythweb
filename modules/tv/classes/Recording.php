@@ -23,6 +23,8 @@ class Recording {
     var $title;
     var $subtitle;
     var $description;
+    var $season;
+    var $episode;
     var $category;
     var $profile;
     var $recgroup;
@@ -39,6 +41,7 @@ class Recording {
     var $progend;
     var $seriesid;
     var $programid;
+    var $inetref;
     var $texttype;
 
     var $basename;
@@ -66,6 +69,8 @@ class Recording {
             $this->title       = $recording_data['title'];
             $this->subtitle    = $recording_data['subtitle'];
             $this->description = $recording_data['description'];
+            $this->season      = $recording_data['season'];
+            $this->episode     = $recording_data['episode'];
             $this->category    = $recording_data['category'];
             $this->profile     = $recording_data['profile'];
             $this->recgroup    = $recording_data['recgroup'];
@@ -80,6 +85,7 @@ class Recording {
             $this->endoffset   = $recording_data['endoffset'];
             $this->seriesid    = $recording_data['seriesid'];
             $this->programid   = $recording_data['programid'];
+            $this->inetref     = $recording_data['inetref'];
             $this->progstart   = $recording_data['progstart'];
             $this->progend     = $recording_data['progend'];
             $this->basename    = $recording_data['basename'];

@@ -19,6 +19,8 @@ class Schedule extends MythBase {
     public $title;
     public $subtitle;
     public $description;
+    public $season;
+    public $episode;
     public $profile;
     public $recpriority;
     public $category;
@@ -35,6 +37,7 @@ class Schedule extends MythBase {
     public $station;
     public $seriesid;
     public $programid;
+    public $inetref;
     public $search;
     public $autotranscode;
     public $autocommflag;
@@ -104,7 +107,7 @@ class Schedule extends MythBase {
 				if ($program[21] == 6)
 					continue;
 			// Normal entry:  $scheduledRecordings[callsign][starttime][]
-				self::$scheduledRecordings[$program[6]][$program[10]][] =& new Program($program);
+				self::$scheduledRecordings[$program[8]][$program[12]][] =& new Program($program);
 			}
 			Cache::set('Schedule::findScheduled', self::$scheduledRecordings);
 		}
