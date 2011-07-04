@@ -153,6 +153,8 @@
                             echo ' SELECTED';
                         echo '>'.t('Subtitle then Description').'</option>';
                    ?></select></dd>
+                <dt><?php echo t('Look up Metadata') ?>:</dt>
+                <dd><input type="checkbox" class="radio" name="autometadata"<?php if ($schedule->autometadata) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo t('Auto-flag commercials') ?>:</dt>
                 <dd><input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" /></dd>
                 <dt><?php echo t('Auto-transcode') ?>:</dt>

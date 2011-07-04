@@ -63,6 +63,7 @@
             $schedule->autouserjob2  = $_POST['autouserjob2'] ? 1 : 0;
             $schedule->autouserjob3  = $_POST['autouserjob3'] ? 1 : 0;
             $schedule->autouserjob4  = $_POST['autouserjob4'] ? 1 : 0;
+            $schedule->autometadata  = $_POST['autometadata'] ? 1 : 0;
             $schedule->maxnewest     = $_POST['maxnewest']    ? 1 : 0;
             $schedule->dupin         = _or($_POST['dupin'] + $_POST['dupin2'], dupsin_all);
             $schedule->dupmethod     = _or($_POST['dupmethod'], 6);
@@ -119,6 +120,9 @@
     // Date/time/etc
         if (!$schedule->starttime)
             $schedule->starttime = time();
+    // auto-metadata-lookup
+        if (!isset($schedule->autometadata))
+            $schedule->autometadata = setting('AutoMetadataLookup');
     // auto-commercial-flag
         if (!isset($schedule->autocommflag))
             $schedule->autocommflag = setting('AutoCommercialFlag');

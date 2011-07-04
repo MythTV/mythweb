@@ -45,6 +45,7 @@ class Schedule extends MythBase {
     public $autouserjob2;
     public $autouserjob3;
     public $autouserjob4;
+    public $autometadata;
     public $findday;
     public $findtime;
     public $findid;
@@ -233,12 +234,12 @@ class Schedule extends MythBase {
                                                maxnewest,inactive,maxepisodes,autoexpire,startoffset,endoffset,
                                                recgroup,dupmethod,dupin,station,seriesid,programid,autocommflag,
                                                findday,findtime,findid,autotranscode,parentid,transcoder,
-                                               autouserjob1,autouserjob2,autouserjob3,autouserjob4,
+                                               autouserjob1,autouserjob2,autouserjob3,autouserjob4,autometadata,
                                                playgroup,storagegroup,prefinput,
                                                next_record,last_record,last_delete)
                                        VALUES (?,?,?,
                                                FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
-                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                          _or($this->recordid,      0,          true),
                          _or($this->type,          0,          true),
                          $this->chanid,
@@ -276,6 +277,7 @@ class Schedule extends MythBase {
                          _or($this->autouserjob2,  0,          true),
                          _or($this->autouserjob3,  0,          true),
                          _or($this->autouserjob4,  0,          true),
+                         _or($this->autometadata,  0,          true),
                          _or($this->playgroup,     'Default'       ),
                          _or($this->storagegroup,  'Default'       ),
                          _or($this->prefinput,     0,          true),

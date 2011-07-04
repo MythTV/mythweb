@@ -90,6 +90,8 @@
             <br />
             <?php echo t('Recording Profile') ?><br />
             <?php profile_select($schedule->profile) ?><br />
+        <input type="checkbox" class="radio" name="autometadata"<?php if ($schedule->autometadata) echo ' CHECKED' ?> value="1" />
+           <a><?php echo t('Look up Metadata') ?></a><br />
         <input type="checkbox" class="radio" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1" />
            <a><?php echo t('Auto-flag commercials') ?></a><br />
         <input type="checkbox" class="radio" name="autoexpire"<?php if ($schedule->autoexpire) echo ' CHECKED' ?> value="1" />
