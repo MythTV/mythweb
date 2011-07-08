@@ -82,6 +82,7 @@
     <td class="list"<?php if ($group_field) echo ' colspan="2"' ?>>&nbsp;</td>
     <th class="x-title"><?php             echo get_sort_link('title',           t('Title'))            ?></th>
     <th class="x-subtitle"><?php          echo get_sort_link('subtitle',        t('Subtitle'))         ?></th>
+    <th class="x-seasep"><?php            echo get_sort_link('season',          t('Seas/Ep'))          ?></th>
     <th class="x-programid"><?php         echo get_sort_link('programid',       t('Program ID'))       ?></th>
     <th class="x-originalairdate"><?php   echo get_sort_link('originalairdate', t('Original Airdate')) ?></th>
     <th class="x-airdate"><?php           echo get_sort_link('airdate',         t('Airdate'))          ?></th>
@@ -161,6 +162,7 @@ EOM;
     <td class="x-subtitle"><?php echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->subtitle.'</a>' ?></td>
+    <td class="x-seasep"><?php if ($show->episode > 0) {echo $show->season,'x',$show->episode;} ?></td>
     <td class="x-programid"><?php echo $show->programid ?></td>
     <td class="x-originalairdate"><?php echo $show->airdate ?></td>
     <td class="x-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td><?php
@@ -204,7 +206,7 @@ EOM;
 <?php   } ?>
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded statusrow">
-    <td colspan="6" valign="top"><?php echo $show->description ?></td>
+    <td colspan="7" valign="top"><?php echo $show->description ?></td>
     <td colspan="<?php echo 2 + $recgroup_cols ?>" class="x-progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
