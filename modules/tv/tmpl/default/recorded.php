@@ -162,7 +162,7 @@ EOM;
     <td class="x-subtitle"><?php echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->recstartts, '"'
                     .' title="', t('Recording Details'), '"'
                     .'>'.$show->subtitle.'</a>' ?></td>
-    <td class="x-seasep"><?php if ($show->episode > 0) {echo $show->season,'x',$show->episode;} ?></td>
+    <td class="x-seasep"><?php if ($show->episode > 0) {echo $show->season,'x',str_pad($show->episode,2,"0",STR_PAD_LEFT);} ?></td>
     <td class="x-programid"><?php echo $show->programid ?></td>
     <td class="x-originalairdate"><?php echo $show->airdate ?></td>
     <td class="x-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td><?php
