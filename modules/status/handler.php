@@ -27,10 +27,13 @@
         curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
         $status = curl_exec($ch);
         curl_close($ch);
-    } else if (function_exists('file_get_contents'))
+    }
+    else if (function_exists('file_get_contents')) {
         $status = file_get_contents("http://$masterhost:$statusport/Status$xml_param");
-    else
+    }
+    else {
         $status = implode("\n", file("http://$masterhost:$statusport/Status$xml_param"));
+    }
 
 // Extract the page title
     preg_match('#<title>(.+?)</title>#s', $status, $title);
@@ -38,8 +41,8 @@
 
 // Clean up the page, and add some invisible content with the actual URL grabbed
     $status = "<!-- Obtained from:  http://$masterhost:$statusport -->\n"
-             .preg_replace('#\s*</body>\s*</html>\s*$#s', '',
-                  preg_replace('/^.+?<body>\s*\n/s', "\n",
+             .preg_replace('#[\s\n]*</body>[\s\n]*</html>[\s\n]*$#s', '',
+                  preg_replace('/^.+?<body[^>]*>[\s\n]*/s', "\n",
                       $status
                   )
               );
