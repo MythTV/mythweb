@@ -585,6 +585,7 @@
     IMDBTYP
 "Inactive"
     Inaktiv
+"inetref"
 "info: activate recording"
     aktivera inspelning
 "info: default recording"
@@ -624,6 +625,7 @@
     Spela aldrig in
 "Insert"
     Sätta in
+"Internet Reference #"
 "Jump"
     Gå
 "Jump Points"

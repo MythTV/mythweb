@@ -587,6 +587,7 @@
     Imdb
 "Inactive"
     Inactif
+"inetref"
 "info: activate recording"
     Forcer l'enregistrement de cette diffusion.
 "info: default recording"
@@ -625,6 +626,7 @@
     Simule un enregistrement précédent de cette émission pour qu'elle ne soit pas enregistrée.
 "Insert"
     Inser
+"Internet Reference #"
 "Jump"
     Aller
 "Jump Points"

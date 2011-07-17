@@ -236,10 +236,10 @@ class Schedule extends MythBase {
                                                findday,findtime,findid,autotranscode,parentid,transcoder,
                                                autouserjob1,autouserjob2,autouserjob3,autouserjob4,autometadata,
                                                playgroup,storagegroup,prefinput,
-                                               next_record,last_record,last_delete)
+                                               next_record,last_record,last_delete,inetref,season,episode)
                                        VALUES (?,?,?,
                                                FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
-                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                          _or($this->recordid,      0,          true),
                          _or($this->type,          0,          true),
                          $this->chanid,
@@ -283,7 +283,10 @@ class Schedule extends MythBase {
                          _or($this->prefinput,     0,          true),
                          _or($this->next_record,   '00:00:00'      ),
                          _or($this->last_record,   '00:00:00'      ),
-                         _or($this->last_delete,   '00:00:00'      )
+                         _or($this->last_delete,   '00:00:00'      ),
+                         _or($this->inetref,       ''              ),
+                         _or($this->season,        0              ),
+                         _or($this->episode,       0              )
                         );
     // Get the id that was returned
         $recordid = $sh->insert_id();

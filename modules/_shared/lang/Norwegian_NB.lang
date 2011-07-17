@@ -584,6 +584,7 @@
     IMDB-type
 "Inactive"
     Inaktiv
+"inetref"
 "info: activate recording"
     Tving opptak av denne spesifikke sendingen.
 "info: default recording"
@@ -615,6 +616,7 @@
     Ta aldri opp denne sendingen.
 "Insert"
     Legg til
+"Internet Reference #"
 "Jump"
     Gå
 "Jump Points"

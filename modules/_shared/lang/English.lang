@@ -312,6 +312,7 @@
 "IMDBTYPE"
     Imdb
 "Inactive"
+"inetref"
 "info: activate recording"
     Force this specific showing to record.
 "info: default recording"
@@ -348,6 +349,7 @@
 "info:never record"
     Falsify a previous recording of this show so that it won't record.
 "Insert"
+"Internet Reference #"
 "Jump"
 "Jump Points"
 "Jump to"

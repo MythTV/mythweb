@@ -583,6 +583,7 @@
 "IMDBTYPE"
 "Inactive"
     Inaktiv
+"inetref"
 "info: activate recording"
     Tving denne specifikke visning til at optage.
 "info: default recording"
@@ -614,6 +615,7 @@
     Optag aldrig denne udsendelse.
 "Insert"
     Insert
+"Internet Reference #"
 "Jump"
     Gå
 "Jump Points"

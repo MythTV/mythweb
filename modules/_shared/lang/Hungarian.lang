@@ -558,6 +558,7 @@
     Imdb
 "Inactive"
     Inkaktív
+"inetref"
 "info: activate recording"
     Ezen műsor rögzítésének kényszerítése.
 "info: default recording"
@@ -592,6 +593,7 @@
     Meghamisítja ezen műsor korábbi felvételeit, igy nem lesz rögzítve.
 "Insert"
     Beszúrás
+"Internet Reference #"
 "Jump"
     Ugrás
 "Jump Points"

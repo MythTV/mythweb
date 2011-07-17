@@ -530,6 +530,7 @@
     IMDB tip
 "Inactive"
     Neaktiven
+"inetref"
 "info: activate recording"
     Vsili snemanje te oddaje.
 "info: default recording"
@@ -563,6 +564,7 @@
     Prikaži prejšnje posnetke te oddaje tako, da se ne bo več posnela.
 "Insert"
     Vstavi
+"Internet Reference #"
 "Jump"
     Skoči
 "Jump Points"

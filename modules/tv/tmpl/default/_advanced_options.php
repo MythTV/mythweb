@@ -132,6 +132,12 @@
                    ?></select></dd>
                 <dt><?php echo t('Preferred Input') ?>:</dt>
                 <dd><?php input_select($schedule->prefinput, 'prefinput') ?></dd>
+                <dt><?php echo t('Internet Reference #') ?>:</dt>
+                <dd><input type="text" name="inetref" value="<?php echo html_entities($schedule->inetref) ?>"></dd>
+                <dt><?php echo t('Season') ?>:</dt>
+                <dd><input type="text" class="quantity" name="season" value="<?php echo html_entities($schedule->season) ?>"></dd>
+                <dt><?php echo t('Episode') ?>:</dt>
+                <dd><input type="text" class="quantity" name="episode" value="<?php echo html_entities($schedule->episode) ?>"></dd>
                 <dt><label for="autometadata"><?php echo t('Look up Metadata') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autometadata" name="autometadata"<?php if ($schedule->autometadata) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autocommflag"><?php echo t('Auto-flag commercials') ?>:</label></dt>

@@ -582,6 +582,7 @@
     IMBDTYPE
 "Inactive"
     Ei aktiivinen
+"inetref"
 "info: activate recording"
     Pakota tämän ohjelman tallennus
 "info: default recording"
@@ -620,6 +621,7 @@
     Luo väärennös vanhemmasta tallennuksesta, jotta tätä esitystä ei tallenneta.
 "Insert"
     Syötä
+"Internet Reference #"
 "Jump"
     Hyppy
 "Jump Points"

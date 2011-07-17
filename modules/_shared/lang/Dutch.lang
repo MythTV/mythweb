@@ -413,6 +413,7 @@
 "IMDBTYPE"
 "Inactive"
     Niet actief
+"inetref"
 "info: activate recording"
 "info: default recording"
 "info: dont record"
@@ -438,6 +439,7 @@
 "info:jumppoints"
 "info:never record"
 "Insert"
+"Internet Reference #"
 "Jump"
     Ga
 "Jump Points"

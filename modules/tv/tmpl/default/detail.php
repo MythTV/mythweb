@@ -211,6 +211,24 @@
             <td><?php echo $program->syndicatedepisodenumber ?></td>
         </tr><?php
             }
+            if (strlen($program->inetref) > 0) {
+        ?><tr class="x-extras">
+            <th><?php echo t('inetref') ?>:</th>
+            <td><?php echo $program->inetref ?></td>
+        </tr><?php
+            }
+            if ($program->season > 0) {
+        ?><tr class="x-extras">
+            <th><?php echo t('Season') ?>:</th>
+            <td><?php echo $program->season ?></td>
+        </tr><?php
+            }
+            if ($program->episode > 0) {
+        ?><tr class="x-extras">
+            <th><?php echo t('Episode') ?>:</th>
+            <td><?php echo $program->episode ?></td>
+        </tr><?php
+            }
             if (strlen($program->airdate)) {
         ?><tr class="x-extras">
             <th><?php echo t('Original Airdate') ?>:</th>
