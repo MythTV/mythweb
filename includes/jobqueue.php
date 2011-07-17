@@ -70,6 +70,7 @@
     define('JOB_SYSTEMJOB',     0x00ff);
     define('JOB_TRANSCODE',     0x0001);
     define('JOB_COMMFLAG',      0x0002);
+    define('JOB_METADATA',      0x0004);
     define('JOB_USERJOB',       0xff00);
     define('JOB_USERJOB1',      0x0100);
     define('JOB_USERJOB2',      0x0200);
@@ -82,7 +83,8 @@
 /**/
     global $Jobs;
     $Jobs = array(JOB_TRANSCODE => t('Transcode'),
-                  JOB_COMMFLAG  => t('Flag Commercials')
+                  JOB_COMMFLAG  => t('Flag Commercials'),
+                  JOB_METADATA  => t('Look up Metadata')
                  );
 
 // Load up any defined user jobs
