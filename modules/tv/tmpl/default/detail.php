@@ -213,7 +213,7 @@
             }
             if (strlen($program->inetref) > 0) {
         ?><tr class="x-extras">
-            <th><?php echo t('inetref') ?>:</th>
+            <th><?php echo t('Internet Reference #') ?>:</th>
             <td><?php echo $program->inetref ?></td>
         </tr><?php
             }
