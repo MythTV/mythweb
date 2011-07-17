@@ -231,7 +231,7 @@
                 $schedule->autotranscode = $_POST['autotranscode'] ? 1 : 0;
                 $schedule->transcoder    = $_POST['transcoder'];
                 $schedule->prefinput     = $_POST['prefinput'];
-                $schedule->inetref       = intval($_POST['inetref']);
+                $schedule->inetref       = $_POST['inetref'];
                 $schedule->season        = intval($_POST['season']);
                 $schedule->episode       = intval($_POST['episode']);
 
