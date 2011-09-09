@@ -169,7 +169,7 @@ var SortableTable = Class.create({
                 sort_function = 'sortDate';
             else if (value.match(/^\W+ \d+$/))
                 sort_function = 'sortMonthDay';
-            else if (value.match(/^[\d\.]+[%]*$/))
+            else if (value.match(/^[-]?[\d\.]+[%]*$/))
                 sort_function = 'sortNumeric';
             else if (value.match(/^[£$]/))
                 sort_function = 'sortCurrency';
