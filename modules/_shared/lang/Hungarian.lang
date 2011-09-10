@@ -430,6 +430,7 @@
 "Episode Number"
     Rész száma
 "Error"
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
     hiba: $1 lejátszócsoport megnyitható
 "Errored"
@@ -674,6 +675,9 @@
     egyeztetés
 "Max star rating for movies"
     Legnagyobb szereplői értékelés a filmekhez
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     perc
 "Missing Cover"
@@ -771,6 +775,7 @@
     A lista üres
 "No matching programs found."
     Nem találtam egyező programot.
+"No metadata results found."
 "No Public Playlists"
     Nincs nyilvános lejátszólista
 "No recording schedules have been defined."
@@ -796,6 +801,7 @@
     Időkeretek száma
 "Off"
     Ki
+"OK"
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
@@ -1166,6 +1172,8 @@
 "Searches will be performed against the title of all TV shows"
 "Seas/Ep"
 "Season"
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
     Szerver statisztikák
 "Set Host"

@@ -76,7 +76,6 @@
 </tr>
 </table>
 </form>
-
 <table id="recorded_list" border="0" cellpadding="0" cellspacing="0" class="list small">
 <tr class="menu">
     <td class="list"<?php if ($group_field) echo ' colspan="2"' ?>>&nbsp;</td>

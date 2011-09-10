@@ -56,6 +56,11 @@
     width:     18em;
 }
 
+#schedule input.inetref {
+    width:         5em !important;
+    margin-right:  20px;    
+}
+
 /* A special subclass for options with extra-long input fields */
 #schedule .x-options dl.x-long input, .x-options dl.x-long textarea {
     width:     32em;
@@ -73,3 +78,63 @@
     padding:        .5em 0 1em 0;
 }
 
+/* Metadata specific classes */
+
+#metadata-message {
+    margin-bottom:      10px;
+}
+
+.multiple-metadata {
+}
+
+.metadata-item {
+    width:              500px;
+    min-height:         150px;
+    margin:             0px 15px 10px 0px;
+    border:             1px solid white;
+}
+
+.metadata-item.hover {
+   background-color:    white;
+   cursor:              pointer;
+   color:               #265990;
+}
+
+.metadata-item img {
+   float:               left;
+}
+
+.metadata-item img.coverart {
+   height:              150px;
+   width:               100px;
+   margin-right:        10px;
+}
+
+.metadata-item img.fanart {
+   height:              150px;
+   width:               100px;
+   margin-right:        10px;
+}
+
+.metadata-item img.banner {
+   height:              55px;
+   width:               300px;
+   margin:              5px auto -10px;
+   float:               none;
+}
+
+.metadata-item .no-art {
+   height:              2em;
+}
+
+
+.metadata-item .title {
+   font-size:           2em;
+   font-weight:         bold;
+   padding-top:         .5em;
+}
+
+.metadata-item .description {
+   padding:            0px 10px 10px;
+   text-align:         left;
+}

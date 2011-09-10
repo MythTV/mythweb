@@ -451,6 +451,7 @@
     Folge Nummer
 "Error"
     Fehler
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
     Fehler: Wiedergabegruppe $1 exisitiert
 "Errored"
@@ -695,6 +696,9 @@
     enthält
 "Max star rating for movies"
     Höchstwertung für Filme
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     Minuten
 "Missing Cover"
@@ -802,6 +806,7 @@
     Nichts gefunden
 "No matching programs found."
     Keine passenden Sendungen gefunden.
+"No metadata results found."
 "No Public Playlists"
     Keine öffentlichen Wiedergabelisten
 "No recording schedules have been defined."
@@ -828,6 +833,7 @@
     Anzahl der Zeitfenster
 "Off"
     Aus
+"OK"
 "Only a certain channel number"
     Nur ein bestimmter Senderplatz
 "Only channels marked as commercial free"
@@ -1231,6 +1237,8 @@
 "Seas/Ep"
 "Season"
     Staffel
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
     Serverstatistik
 "Set Host"

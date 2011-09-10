@@ -450,6 +450,7 @@
     Episodenummer
 "Error"
     Feil
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
     feil: avspillingsgruppen $1 eksisterer
 "Errored"
@@ -700,6 +701,9 @@
     er lik
 "Max star rating for movies"
     Maksimalt antall stjerner for film
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     minutter
 "Missing Cover"
@@ -807,6 +811,7 @@
     Ingen match funnet
 "No matching programs found."
     Ingen matchende programmer funnet.
+"No metadata results found."
 "No Public Playlists"
     Ingen tilgjengelige spillelister
 "No recording schedules have been defined."
@@ -833,6 +838,7 @@
     Antall tidsluker
 "Off"
     Av
+"OK"
 "Only a certain channel number"
     Kun et bestemt kanalnummer
 "Only channels marked as commercial free"
@@ -1237,6 +1243,8 @@
 "Seas/Ep"
 "Season"
     Sesong
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
     Tjenerstatistikk
 "Set Host"

@@ -240,6 +240,7 @@
 "Episode"
 "Episode Number"
 "Error"
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
@@ -392,6 +393,9 @@
 "matches"
 "Max star rating for movies"
     Max star rating for films
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
 "Missing Cover"
 "Modify priority by star rating (0.0 to 1.0 for movies only)"
@@ -454,6 +458,7 @@
 "No matches found"
 "No matching programs found."
     No matching programmes found.
+"No metadata results found."
 "No Public Playlists"
 "No recording schedules have been defined."
 "No. of recordings to keep"
@@ -467,6 +472,7 @@
 "Number of Songs"
 "Number of timeslots"
 "Off"
+"OK"
 "Only a certain channel number"
 "Only channels marked as commercial free"
     Only channels marked as advert free
@@ -732,6 +738,8 @@
 "Searches will be performed against the title of all TV shows"
 "Seas/Ep"
 "Season"
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
 "Set Host"
 "Settings"

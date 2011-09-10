@@ -317,6 +317,7 @@
 "Episode Number"
     Aflevering nr.
 "Error"
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
@@ -500,6 +501,9 @@
 "Match related callsigns"
 "matches"
 "Max star rating for movies"
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     minuten
 "Missing Cover"
@@ -581,6 +585,7 @@
     Geen programma's gevonden
 "No matching programs found."
     Geen overeenkomsten gevonden
+"No metadata results found."
 "No Public Playlists"
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
@@ -600,6 +605,7 @@
 "Number of Songs"
 "Number of timeslots"
 "Off"
+"OK"
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
@@ -891,6 +897,8 @@
 "Searches will be performed against the title of all TV shows"
 "Seas/Ep"
 "Season"
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
 "Set Host"
     Host instellen

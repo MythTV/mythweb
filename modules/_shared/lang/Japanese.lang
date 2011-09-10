@@ -315,6 +315,7 @@
 "Episode Number"
     番組番号
 "Error"
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
@@ -500,6 +501,9 @@
     条件
 "Max star rating for movies"
     映画の最大格付けスター
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     分
 "Missing Cover"
@@ -574,6 +578,7 @@
     一致する物がありませんでした
 "No matching programs found."
     該当する番組がありません
+"No metadata results found."
 "No Public Playlists"
 "No recording schedules have been defined."
     予約が設定されていません
@@ -594,6 +599,7 @@
 "Number of timeslots"
     タイムスロット数
 "Off"
+"OK"
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
@@ -891,6 +897,8 @@
 "Searches will be performed against the title of all TV shows"
 "Seas/Ep"
 "Season"
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
 "Set Host"
     ホスト設定

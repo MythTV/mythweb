@@ -235,3 +235,22 @@
 #feed_buttons a {
     padding-right:      1em;
 }
+
+#dialog-overlay {
+    background-color:   #506090;
+}
+
+#dialog-top {
+    background-color:   #203670;
+    border:             1px solid #203670;
+}
+
+#dialog-title {
+    color:              white;
+
+}
+
+#dialog-content {
+    background-color:   #265990;
+    text-align:         center;
+}

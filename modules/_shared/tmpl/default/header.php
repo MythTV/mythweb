@@ -70,6 +70,7 @@ EOF;
     </script>
 
     <link rel="stylesheet" type="text/css" href="js/prototip/prototip.css">
+    <link rel="stylesheet" type="text/css" href="js/dialog/dialog.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/header.css">
     <link rel="stylesheet" type="text/css" href="<?php echo skin_url ?>/menus.css">
@@ -84,6 +85,7 @@ EOF;
 
     <script type="text/javascript" src="js/prototype.js"></script>
     <script type="text/javascript" src="js/prototip/prototip.js"></script>
+    <script type="text/javascript" src="js/dialog/dialog.js"></script>
 
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/AC_OETags.js"></script>

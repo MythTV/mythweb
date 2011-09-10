@@ -395,6 +395,7 @@
 "Episode Number"
     Nº Episodio
 "Error"
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
 "Errored"
 "Erroring"
@@ -583,6 +584,9 @@
     coincidencias
 "Max star rating for movies"
     Máx. calificación para películas
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     minutos
 "Missing Cover"
@@ -662,6 +666,7 @@
     Sin resultados
 "No matching programs found."
     No hay programas coincidentes
+"No metadata results found."
 "No Public Playlists"
 "No recording schedules have been defined."
     No se han definido programaciones
@@ -684,6 +689,7 @@
 "Number of timeslots"
     Número de bloques horarios
 "Off"
+"OK"
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
@@ -985,6 +991,8 @@
 "Searches will be performed against the title of all TV shows"
 "Seas/Ep"
 "Season"
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
 "Set Host"
     Ajustar Host

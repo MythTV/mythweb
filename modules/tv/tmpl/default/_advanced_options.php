@@ -24,12 +24,237 @@
                         );
     }
 
+    // Tries to populate the inetref, season and episode fields
+    // by doing a metadata lookup against the backend.  If multiple
+    // results are return displays a dialog to let the user choose
+    // the appropriate show
+    function lookupMetadata(success, failure) {
+        ajax_add_request();
+
+        new Ajax.Request('<?php echo root_url ?>tv/lookup_metadata',
+                         {
+                            parameters: {
+                                              'title'    : "<?php echo $schedule->title ?>",
+                                              'subtitle' : "<?php echo $schedule->subtitle ?>",
+                                              'inetref'  : $("inetref").value,
+                                              'season'   : $("season").value,
+                                              'episode'  : $("episode").value
+                                        },
+                            asynchronous: true,
+                            method: 'get',
+                            onSuccess: success,
+                            onFailure: failure
+                         }
+                        );
+    }
+
+    // callback for when metadata is returned for this show
+    function onMetadata(transport) {
+        ajax_remove_request();
+
+        // make sure we got valid date
+        if (!transport || !transport.responseJSON || !transport.responseJSON.VideoLookupList) {
+           messageDialog("<?php echo t("Metadata Lookup Error")?>", 
+                         "<?php echo t("Server returned invalid data when attempting to retrieve metadata.")?>");
+        }
+
+        var list = transport.responseJSON.VideoLookupList;
+
+        // display an error if there's no data
+        if (list.Count == 0) {
+            messageDialog("<?php echo t("Metadata Lookup")?>", "<?php echo t("No metadata results found.")?>");
+
+        // populate the data immediately if there is one result
+        } else  if (list.Count == 1) {
+          updateMetadata(list.VideoLookups[0]);
+
+        // if we can pick the right item from the list then use it
+        // otherwise display a dialog for the user to choose which result
+        } else {
+           var item = guessItem(list);
+           if (item) {
+                updateMetadata(item);
+           } else {
+                multipleResultDialog(list);
+           }
+	}
+    }
+
+    // tries to find the correct item in list based off of the TMSref
+    // if we can find it, cool, if not return null
+    function guessItem(list) {
+        var tmsRef = "<?php echo $schedule->seriesid ?>";
+        for (var i=0; i < list.VideoLookups.length; i++) {
+            var item = list.VideoLookups[i];
+            if (tmsRef && item.TMSRef == tmsRef) {
+               return item;
+            }
+        }
+        return null;
+    }
+
+    // updates the inetref, season & episode values on the page
+    // optionally creates or updates a "metdata home page" link
+    // in the "More" section of the page
+    function updateMetadata(item) {
+         $("inetref").value = item.InetRef;
+         $("season").value = item.Season;
+         $("episode").value = item.Episode;
+
+         // if the item has a real HomePage then update it
+         if (!!item.HomePage) {
+             updateHomePage(item);
+
+         // otherwise do a lookup again
+         } else {
+             lookupMetadata(onHomePage, onMetadataFailure);
+         }
+
+    }
+
+    function onHomePage(transport) {
+        ajax_remove_request();
+
+        var fakeItem = {HomePage: ""};
+
+        // make sure we got valid data; if not ignore
+        if (!transport || !transport.responseJSON || !transport.responseJSON.VideoLookupList) {
+            updateHomePage(fakeItem);
+            return;
+        }
+
+        var list = transport.responseJSON.VideoLookupList;
+
+        // ignore if there's no data
+        if (list.Count == 0) {
+            updateHomePage(fakeItem);
+            return;
+
+        // populate the data immediately if there is one result
+        } else  if (list.Count == 1) {
+           updateHomePage(list.VideoLookups[0]);
+
+        // if we can pick the right item from the list then use it
+        // otherwise hich result
+        } else {
+           var item = guessItem(list);
+           if (item) {
+                updateMetadata(item);
+           } else {
+                updateHomePage(fakeItem);
+           }
+        }
+
+
+    }
+
+    // displays a dialog with an image and title of each possible show
+    // if the user clicks on one of them then populates the metadata in the page
+    function multipleResultDialog(list) {
+        // parent div for the result
+        var parent = new Element("div", {"class": "multiple-metadata"});
+
+        // add all of the results
+        parent.insert(generateResults(list));
+
+        // add a cancel "button" to exit without choosing an option
+        var a = new Element("a", {}).update("<?php echo t("Cancel") ?>");
+        Event.observe(a, "click", function() { Dialogs.close(); });
+        var d = new Element("div", {"class": "commands"});
+        d.insert(a);
+        parent.insert(d);
+
+        // display the dialog
+        new Dialog({
+                opacity: 0.9,
+                title: "<?php echo t("Select the correct show")?>",
+                content: parent
+                }).open();
+    }
+
+    // returns a div with a list of all of the items neatly formatted
+    function generateResults(list) {
+        var div = new Element("div", {"class": "metadata-list"});
+
+        for (var i=0; i < list.VideoLookups.length; i++) {
+            div.insert(generateResultsItem(list.VideoLookups[i]));
+        }
+
+       return div;
+    }
+
+    // returns a div for a single result
+    // includes hover and click event handlers
+    function generateResultsItem(item) {
+        var div = new Element("div", {"class": "metadata-item"});
+        Event.observe(div, "mouseover", function(e) { this.addClassName("hover");});
+        Event.observe(div, "mouseout", function(e) { this.removeClassName("hover");});
+        Event.observe(div, "click", function(e) { updateMetadata(item); Dialogs.close();});
+        var img = generateItemImg(item);
+        div.insert(img);
+        var title = new Element("div", {"class": "title"});
+        var titleString = item.Title;
+        if (item.Year && item.Year > 0) {
+            var suffix = " (" + item.Year + ")";
+            titleString = titleString.endsWith(suffix) ? titleString : titleString + suffix;
+        }
+ 
+        title.update(titleString);
+        div.insert(title);
+
+        var desc = new Element("div", {"class": "description"});
+        var descString = item.Description.length > 450 ? item.Description.substring(0, 450) + "..." : item.Description;
+        desc.update(descString);
+        div.insert(desc);
+
+        return div;
+    }
+
+    // generates an image or empty div based on if there is 
+    // any thumbnail art work for this item
+    function generateItemImg(item) {
+        if (item.Artwork && item.Artwork.length) {
+             var art = item.Artwork[0];
+             var thumbUrl = art.Thumbnail;
+            
+             // hack to allow proxying of ttvdb.com images since they don't allow hot linking
+             if (<?php echo $_SERVER['HTTPS'] == 'on' ? "false" : "true"?> &&  thumbUrl.startsWith("http://www.thetvdb.com")) {
+                 thumbUrl = "<?php echo root_url ?>tv/ttvdb_proxy?url=" + thumbUrl.substring(22);
+             }
+
+             return new Element("img", {src: thumbUrl, "class": art.Type});
+        }
+        return new Element("div", {"class": "no-art"});
+    }
+
+    // callback for failure contacting the server
+    function onMetadataFailure(response) {
+        ajax_remove_request();
+        messageDialog("<?php echo t("Metadata Lookup Error")?>", "<?php echo t("Error contacting server to retrieve metadata.")?>");
+    }
+
+    // displays a dialog with a message in it and an OK button
+    function messageDialog(title, msg) {
+        $("metadata-message").update(msg);
+        new Dialog({
+                opacity: 0.9,
+                title: title,
+                target:{
+                    id:'message-dialog',
+                    auto:true
+                }
+                }).open();
+
+    }
+
+    // Hook to start up the Dialog JS
+    Dialogs.load();
+
 // -->
 </script>
-
             <h3><?php echo t('Advanced Options') ?>:</h3>
             (<?php
-                echo '<a href="#" onclick="toggle_advanced(false); return false;" id="hide_advanced"';
+                echo '<a onclick="toggle_advanced(false); return false;" id="hide_advanced"';
                 if (!$_SESSION['tv']['show_advanced_schedule'])
                     echo ' style="display: none"';
                 echo '>', t('Hide'), '</a>',
@@ -133,11 +358,11 @@
                 <dt><?php echo t('Preferred Input') ?>:</dt>
                 <dd><?php input_select($schedule->prefinput, 'prefinput') ?></dd>
                 <dt><?php echo t('Internet Reference #') ?>:</dt>
-                <dd><input type="text" name="inetref" value="<?php echo html_entities($schedule->inetref) ?>"></dd>
+                <dd class="commands"><input id="inetref" class="inetref" type="text" name="inetref" value="<?php echo html_entities($schedule->inetref) ?>"><a onclick="lookupMetadata(onMetadata, onMetadataFailure); return false;"><?php echo t("Look up Metadata")?></a></dd>
                 <dt><?php echo t('Season') ?>:</dt>
-                <dd><input type="text" class="quantity" name="season" value="<?php echo html_entities($schedule->season) ?>"></dd>
+                <dd><input type="text" id="season" class="quantity" name="season" value="<?php echo html_entities($schedule->season) ?>"></dd>
                 <dt><?php echo t('Episode') ?>:</dt>
-                <dd><input type="text" class="quantity" name="episode" value="<?php echo html_entities($schedule->episode) ?>"></dd>
+                <dd><input type="text" id="episode" class="quantity" name="episode" value="<?php echo html_entities($schedule->episode) ?>"></dd>
                 <dt><label for="autometadata"><?php echo t('Look up Metadata') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autometadata" name="autometadata"<?php if ($schedule->autometadata) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autocommflag"><?php echo t('Auto-flag commercials') ?>:</label></dt>
@@ -167,3 +392,10 @@
                 <dd><input type="text" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>">
                     <?php echo t('minutes') ?></dd>
             </dl>
+
+<div style="display: none;" id="message-dialog">
+   <div id="metadata-message"></div>
+   <div class="commands">
+     <a onclick="Dialogs.close(); return false;"><?php echo t('OK') ?></a>
+   </div>
+</div>

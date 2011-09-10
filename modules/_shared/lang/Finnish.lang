@@ -449,6 +449,7 @@
     Jakson numero
 "Error"
     Virhe
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
     Virhe: soittoryhmä $1 on jo olemassa
 "Errored"
@@ -705,6 +706,9 @@
     vastaavuudet
 "Max star rating for movies"
     Maksimi tähtiluokitus elokuville
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     minuuttia
 "Missing Cover"
@@ -814,6 +818,7 @@
     Ei vastaavuuksia
 "No matching programs found."
     Ei vastaavia ohjelmia.
+"No metadata results found."
 "No Public Playlists"
     Ei yleisiä Soittolistoja
 "No recording schedules have been defined."
@@ -840,6 +845,7 @@
     Aikalokeroiden lukumäärä
 "Off"
     Pois päältä
+"OK"
 "Only a certain channel number"
     Vain tietty kanavanumero
 "Only channels marked as commercial free"
@@ -1235,6 +1241,8 @@
 "Searches will be performed against the title of all TV shows"
 "Seas/Ep"
 "Season"
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
     Serverin statistiikkaa
 "Set Host"

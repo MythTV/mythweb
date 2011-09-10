@@ -411,6 +411,7 @@
 "Episode Number"
     Številka oddaje
 "Error"
+"Error contacting server to retrieve metadata."
 "error: playgroup $1 exists"
     napaka: predvajalna skupina $1 že obstaja
 "Errored"
@@ -643,6 +644,9 @@
     zadetki
 "Max star rating for movies"
     Največja ocena za filme
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
 "minutes"
     minut
 "Missing Cover"
@@ -739,6 +743,7 @@
     Ni zadetkov
 "No matching programs found."
     Ni zadetkov.
+"No metadata results found."
 "No Public Playlists"
     Ni seznamov predvajanja
 "No recording schedules have been defined."
@@ -763,6 +768,7 @@
 "Number of timeslots"
     Število ponavljanj
 "Off"
+"OK"
 "Only a certain channel number"
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
@@ -1124,6 +1130,8 @@
 "Searches will be performed against the title of all TV shows"
 "Seas/Ep"
 "Season"
+"Select the correct show"
+"Server returned invalid data when attempting to retrieve metadata."
 "Server Statistics"
     Stratistike strežnika
 "Set Host"
