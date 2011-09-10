@@ -25,14 +25,14 @@
  * Add an element to elements array
  *
  * @access   public
- * @param    srting  The tag name of an element
- * @param    srting  The content of tag
+ * @param    string  The tag name of an element
+ * @param    string  The content of tag
  * @param    array   Attributes(if any) in 'attrName' => 'attrValue' format
  * @return   void
  */
 	public function addElement($elementName, $content, $attributes = null) {
-		$this->elements[$elementName]['name']       = $elementName;
-		$this->elements[$elementName]['content']    = $content;
+		$this->elements[$elementName]['name'] = $elementName;
+		$this->elements[$elementName]['content'] = htmlspecialchars($content);
 		$this->elements[$elementName]['attributes'] = $attributes;
 	}
 
@@ -48,7 +48,7 @@
 		if (! is_array($elementArray))
             return;
 		foreach ($elementArray as $elementName => $content)
-			$this->addElement($elementName, $content);
+			$this->addElement($elementName, htmlspecialchars($content));
 	}
 
 /**
