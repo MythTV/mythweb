@@ -166,11 +166,11 @@ EOM;
     <td class="x-originalairdate"><?php echo $show->airdate ?></td>
     <td class="x-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td><?php
         if ($_SESSION["show_channel_icons"] == true && !empty($show->channel->icon)) {
-                ?><td><a href="<?php echo root_url ?>tv/channel/<?php echo $show->channel->chanid, '/', $list_starttime ?>"
+                ?><td class="x-chanicon" rowspan="2"><a href="<?php echo root_url ?>tv/channel/<?php echo $show->channel->chanid, '/', $list_starttime ?>"
                     title="<?php echo t('Details for: $1', html_entities($show->channel->name)) ?>">
-                    <img class="channelicon" src="<?php echo $show->channel->icon ?>" width=70></a></td><?php
+                    <img class="channelicon" src="<?php echo $show->channel->icon ?>"></a></td><?php
         } else {?>
-	    <td class="x-channum"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td><?php
+	    <td class="x-channum" rowspan="2"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td><?php
         }
     if ($recgroup_cols)
         echo "    <td class=\"-recgroup\">$show->recgroup</td>\n";
@@ -205,7 +205,7 @@ EOM;
 <?php   } ?>
         </td>
 </tr><tr id="statusrow_<?php echo $row ?>" class="recorded statusrow">
-    <td colspan="7" valign="top"><?php echo $show->description ?></td>
+    <td colspan="6" valign="top"><?php echo $show->description ?></td>
     <td colspan="<?php echo 2 + $recgroup_cols ?>" class="x-progflags"><?php
         // Auto expire is interactive
             echo '<a onclick="set_autoexpire(', $row, ')" class="_autoexpire">',
