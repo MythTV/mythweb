@@ -1,0 +1,43 @@
+/**
+ * Dialog
+ *
+ * @author      Roland Franssen <franssen.roland@gmail.com>
+ * @license     MIT
+ * @version     2.1
+ **/
+ 
+/* DONT CHANGE */
+* html .fixed { position:absolute }
+.fixed { position:fixed }
+
+/* DIALOG CORE */
+#dialog-overlay { top:0;left:0;width:100%;height:100%;z-index:900 }
+#dialog-container { overflow:hidden;z-index:901;text-align:left }
+
+/* DIALOG TOP */
+#dialog-top{background:#999;border:1px solid #fff;padding:5px;font-weight:bold}
+#dialog-title{color:#333}
+#dialog-close{color:#fff;padding-left:5px}
+#dialog-close:hover{color:#ccc}
+
+/* DIALOG BOTTOM */
+#dialog-bottom{background:#eee;border-top:1px solid #ccc;color:#666;padding:5px;text-align:center;font-size:12px}
+#dialog-bottom .next,
+#dialog-bottom .prev{color:#ccc;font-weight:bold;color:#333}
+#dialog-bottom .next:hover,
+#dialog-bottom .prev:hover{color:#f90}
+#dialog-bottom .next{padding-left:10px}
+#dialog-bottom .prev{padding-right:10px}
+#dialog-bottom .curr{}
+
+/* DIALOG MISC */
+#dialog-loading{color:#ccc;font-weight:bold;text-align:center;padding:20px}
+
+/* DIALOG PREDEFINED */
+#dialog-container .alert,
+#dialog-container .confirm { text-align:center;color:#999 }
+#dialog-container .alert input,
+#dialog-container .confirm input { font-weight:bold;width:75px }
+
+/* DIALOG PERSONAL */
+#dialog-container .myFirstDialog { color:orange;font-size:20px }
