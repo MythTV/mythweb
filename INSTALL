@@ -199,8 +199,6 @@ webserver, and then follow the instructions in the appropriate subsection:
     mythweb.conf.apache         (See section 5.0)
     mythweb.conf.lighttpd       (See section 6.0)
 
-Please do not use Lighttpd unless you know what you are doing.
-
 ==========
 5.0 Apache
 ==========
@@ -366,7 +364,45 @@ or type "ifup eth0" if you used "ifdown eth0" to disable the network earlier.
 6.0 Lighttpd
 ============
 
-Sorry, no documentation here yet...
+Configuring lighttpd for mythweb is straightforward and easy.
+
+1.  Copy the lighttpd config template file from your mythweb
+sources to your lighttpd configuration directory:
+
+# cp -vi ./mythweb.conf.lighttpd /etc/lighttpd/mythweb.conf.lighttpd
+
+Be sure to edit it for any particulars of your setup.
+
+2.  Edit your main lighttpd.conf file and add an include (with any
+path adjustments, depending on where you stored it):
+
+include "/etc/lighttpd/mythweb.conf.lighttpd"
+
+3.  For HTTP Digest authentication, create the credentials file (see
+the htdigest documentation for more detail):
+
+# htdigest -c /etc/lighttpd/mythweb.htdigest 'Authorized MythWebbers' tom
+
+4.  Set up a hostname that begins with "mythweb", pointing to an IP on
+which your lighttpd server is listening.
+
+4a.  For DNS: If you run your own DNS, add an "A" record for
+mythweb.whatever.
+
+4b.  For /etc/hosts: On all of your client browser machines, add
+something like the following to /etc/hosts:
+
+192.186.0.3	mythweb.local mythweb
+
+Be sure to substitute the IP address at which lighttpd is reachable,
+of course.  Also, take note that some systems are particular about the
+whitespace between the IP address and the hostname in /etc/hosts --
+sometimes it must consist of tab (^H) characters.
+
+Then...  Restart lighttpd and go!
+
+Assuming you set it up this way, simply direct your browser to
+http://mythweb.local/ and enjoy.
 
 =======
 7.0 PHP
