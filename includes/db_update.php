@@ -9,7 +9,7 @@
 /**/
 
 // What *should* the database version be?
-    define('WebDBSchemaVer', 2);
+    define('WebDBSchemaVer', 3);
 
 // What version does the database think it is?
     $db_vers = intval(setting('WebDBSchemaVer'));
@@ -40,8 +40,17 @@
             case 1:
                 setting('WebPrefer_Channum', null, 1, false);
                 setting('WebDBSchemaVer',    null, ++$db_vers, false);
+        // Add default width for recording details if they have not been set yet
+            case 2:
+                $width = intval(setting('WebFLV_w'));
+                if ($width < 1) {
+                    setting('WebFLV_w', null, 320, false);
+                } elseif ($width < 160) {
+                    setting('WebFLV_w', null, 160, false);
+                }
+                setting('WebDBSchemaVer',    null, ++$db_vers, false);
         // All other numbers should run their changes sequentially
-            #case 2:
+            #case 3:
             #    # do something to upgrade the database here
             #    $db_vers++;
         }
