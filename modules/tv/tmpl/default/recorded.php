@@ -140,7 +140,11 @@ EOM;
             echo "    <td class=\"list\" rowspan=\"2\">&nbsp;</td>\n";
 ?>
     <td rowspan="2" class="x-pixmap<?php
-        if ($_SESSION['recorded_pixmaps']) { ?>">
+        if ($_SESSION['recorded_pixmaps']) { ?>"><?php
+        $padding = 39 - (50 / $show->getAspect());
+        if ($padding > 0) { ?>
+        <div style="height: <?php echo $padding; ?>px; width: 100px; float: left;">
+        </div><?php } ?>
         <a class="x-pixmap" href="<?php echo root_url ?>tv/detail/<?php echo $show->chanid, '/', $show->recstartts ?>" title="<?php echo t('Recording Details') ?>"
             ><img src="<?php echo $show->thumb_url(100,0) ?>" width="100" height="<?php echo floor(100 / $show->getAspect()); ?>"></a>
 <?php   }

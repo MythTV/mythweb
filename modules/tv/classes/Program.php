@@ -821,7 +821,7 @@ class Program extends MythBase {
             case 13:
                 return 2.21/1;
             case 14:
-                return $row['data']/10000.0;
+                return $row['data']/1000000.0;
             default:
                 return 4/3;
         }
