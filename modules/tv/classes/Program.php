@@ -811,7 +811,7 @@ class Program extends MythBase {
         $row = $sh->fetch_assoc();
         $sh->finish();
 
-        switch($row['aspect']) {
+        switch($row['type']) {
             case 10:
                 return 1;
             case 11:
