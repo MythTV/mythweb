@@ -264,6 +264,24 @@ Continue on in the file and find the following lines:
 You should update these so that they match the settings required to connect
 to your MythTV database server.
 
+If you have multiple lineups, or have a single lineup with more than 100
+channels, you need to increase the amount of memory that PHP is allowed to
+use as it processes various commands.  Look for "php_value memory_limit"
+and increase it.  In this example, with with 554 channels in the lineup, the
+memory limit had to be increased to allow searches to complete.
+
+        # If you have a large number of channels, you may need to increase
+        # this
+        # value to prevent PHP from running out of memory.
+            php_value memory_limit                  512M
+
+By default, php is configured to prevent scripts from running for more that
+30 seconds.  This may not be long enough if you have complex queries, or
+many channels in your lineup, so increase the 
+            php_value max_execution_time 30
+
+parameter.
+
 There are other settings in this file, too, which should be fairly well
 documented.  Please read through the comments in the file itself to see if
 you can benefit from features that are disabled by default, or settings
