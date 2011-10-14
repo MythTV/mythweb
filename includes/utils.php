@@ -51,7 +51,7 @@
         // connected to the backend, the only known instance is in db_update.php
         // and those settings don't affect anything but MythWeb.
             if ($clearSettingsCache)
-                MythBackend::find()->sendCommand('CLEAR_SETTINGS_CACHE');
+                MythBackend::find()->sendCommand(array('MESSAGE', 'CLEAR_SETTINGS_CACHE'));
         }
     // Not cached?
         elseif (!array_key_exists($field, $cache[$h])) {
