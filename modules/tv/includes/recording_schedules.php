@@ -38,8 +38,6 @@
 
 // More methods for duplicate recordings (restrictions against future showings)
     define('dupsin_newepisodes',    0x10);
-    define('dupsin_ex_repeats',     0x20);
-    define('dupsin_ex_generic',     0x40);
 
 // Recording types -- enum at the top of libs/libmythtv/recordingtypes.h
     $RecTypes = array(

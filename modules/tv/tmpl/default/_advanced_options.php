@@ -339,21 +339,9 @@
                             echo ' SELECTED';
                         echo '>' . t('None') . '</option>';
                         echo '<option value="', dupsin_newepisodes, '"';
-                        if ($schedule->dupin & dupsin_newepisodes && !($schedule->dupin & dupsin_ex_repeats))
+                        if ($schedule->dupin & dupsin_newepisodes)
                             echo ' SELECTED';
                         echo '>' . t('New Episodes Only') . '</option>';
-                        echo '<option value="', dupsin_ex_repeats,'"';
-                        if ($schedule->dupin & dupsin_ex_repeats && !($schedule->dupin & dupsin_ex_generic))
-                            echo ' SELECTED';
-                        echo '>' . t('Exclude Repeat Episodes') . '</option>';
-                        echo '<option value="', dupsin_ex_generic, '"';
-                        if ($schedule->dupin & dupsin_ex_generic && !($schedule->dupin & dupsin_ex_repeats))
-                            echo ' SELECTED';
-                        echo '>' . t('Exclude Generic Episodes') . '</option>';
-                        echo '<option value="', dupsin_ex_repeats + dupsin_ex_generic, '"';
-                        if ($schedule->dupin & dupsin_ex_repeats && $schedule->dupin & dupsin_ex_generic)
-                            echo ' SELECTED';
-                        echo '>' . t('Exclude Repeat and Generic Episodes') . '</option>';
                    ?></select></dd>
                 <dt><?php echo t('Preferred Input') ?>:</dt>
                 <dd><?php input_select($schedule->prefinput, 'prefinput') ?></dd>
