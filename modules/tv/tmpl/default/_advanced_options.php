@@ -97,7 +97,7 @@
     // optionally creates or updates a "metdata home page" link
     // in the "More" section of the page
     function updateMetadata(item) {
-         $("inetref").value = item.InetRef;
+         $("inetref").value = item.Inetref;
          $("season").value = item.Season;
          $("episode").value = item.Episode;
 
