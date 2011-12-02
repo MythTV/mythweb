@@ -324,3 +324,11 @@
     function unix2mythtime($time) {
         return date('Y-m-d\TH:i:s', $time);
     }
+
+/**
+ * Converts a unix timestamp into a myth timestamp
+/**/
+    function unix2gmtmythtime($time) {
+        return gmdate('Y-m-d\TH:i:s', $time);
+    }
+
