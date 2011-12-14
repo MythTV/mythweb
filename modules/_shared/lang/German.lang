@@ -139,6 +139,7 @@
 "Allows you to search through other database tables when using a power search"
     Ermöglicht die Suche anderer Datenbanktabellen wenneine  Powersuche verwendet wird
 "An error occurred while adding your playlist."
+    Ein Fehler ist beim hinzufügen Ihrer Playlist aufgetreten.
 "and"
     und
 "Any"
@@ -272,6 +273,7 @@
 "Check for duplicates in"
     Nach Wiederholungen suchen in
 "Children's Movies"
+    Kinderfilme
 "Choose Genre.."
     Genre wählen..
 "Choose Type"
@@ -289,6 +291,7 @@
 "Closed Captioning"
     Untertitel
 "color"
+    Farbe
 "Commands"
     Optionen
 "Commands:"
@@ -452,6 +455,7 @@
 "Error"
     Fehler
 "Error contacting server to retrieve metadata."
+    Beim abrufen von Metadaten ist ein Verbindungsfehler mit dem Server aufgetreten.
 "error: playgroup $1 exists"
     Fehler: Wiedergabegruppe $1 exisitiert
 "Errored"
@@ -462,12 +466,6 @@
     Escape
 "Everything"
     Alles
-"Exclude Generic Episodes"
-    keine gewöhnlichen Folgen
-"Exclude Repeat and Generic Episodes"
-    keine gewöhnlichen Folgen und Wiederholungen
-"Exclude Repeat Episodes"
-    keine Wiederholungen
 "Exec. Producer"
     Produzent
 "Extended Check"
@@ -534,6 +532,7 @@
 "Genre"
     Genre
 "genre_colors"
+    Genre Farben
 "Genres"
     Genre
 "Go"
@@ -584,8 +583,11 @@
 "Inactive"
     Inaktiv
 "info: activate recording"
+    info: Laufende Aufnahme
 "info: default recording"
+    info: standardmäßige Aufnahme
 "info: dont record"
+    info: nicht aufnehmen
 "info: flvplayer"
     <p>
     Die Flashvideointegration ist im Moment noch als <b>SEHR</b> experimentell
@@ -605,12 +607,17 @@
 "info: hidden advanced schedule"
     info: erweiterte Optionen versteckt
 "info: record this"
+    info: bitte aufnehmen
 "info:forget old"
+    info: alte Aufnahmen vergessen
 "info:jumppoints"
+    info: Sprungpunkte
 "info:never record"
+    info: nie aufnehmen
 "Insert"
     Einfügen
 "Internet Reference #"
+    Internet Referenznummer
 "Jump"
     Springen
 "Jump Points"
@@ -686,6 +693,7 @@
 "Logs"
     Logs
 "Look up Metadata"
+    Metadaten nachschlagen
 "Low Space"
     wenig Speicherplatz
 "Manual"
@@ -697,8 +705,11 @@
 "Max star rating for movies"
     Höchstwertung für Filme
 "Metadata Home Page"
+    Metadaten Homepage
 "Metadata Lookup"
+    Metadaten nachschlagen
 "Metadata Lookup Error"
+    Fehler beim Metadaten nachschlagen
 "minutes"
     Minuten
 "Missing Cover"
@@ -807,6 +818,7 @@
 "No matching programs found."
     Keine passenden Sendungen gefunden.
 "No metadata results found."
+    Keine Metadaten gefunden.
 "No Public Playlists"
     Keine öffentlichen Wiedergabelisten
 "No recording schedules have been defined."
@@ -841,6 +853,7 @@
 "Only channels that carry a specific station"
     Nur Sender mit speziellen Stationen
 "Only display favorite channels"
+    Nur Lieblingssender
 "Only match commercial-free channels"
     nur werbefreie Sender
 "Only match HD programs"
@@ -934,12 +947,15 @@
 "Playlists"
     Playlists
 "Please enter an IMDB number or a title to do another search"
+    Zm eine weitere Suche anzustoßen, geben Sie eine IMDB-Nummer oder einen Titel ein
 "Please wait for the pending AJAX request"
+    Bitte warten Sie auf die anstehende AJAX Anfrage
 "Plot"
     Handlung
 "Plot:"
     Handlung:
 "Pop-out player"
+    Wiedergabe im eigenen Fenster
 "Possible conflicts"
     Mögliche Überschneidungen
 "Possible conflicts with this show"
@@ -1235,10 +1251,13 @@
 "Searches will be performed against the title of all TV shows"
     Die Suchen werden gegen alle Sendungstitel gerichtet sein
 "Seas/Ep"
+    "Sta/Fol"
 "Season"
     Staffel
 "Select the correct show"
+    Wählen Sie die richtige Sendung
 "Server returned invalid data when attempting to retrieve metadata."
+    Beim Versuch Metadaten abzurufen gab der Server ungültige Daten zurück.
 "Server Statistics"
     Serverstatistik
 "Set Host"
@@ -1289,6 +1308,7 @@
 "Songs Rated"
     Lieder bewertet
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
+    Leider können Sie diese Playlist nicht hinzufügen, da sie eine zirkuläre Abhängigkeit schaffen würde.
 "sortby_channum"
     Nach Sendernummer sortieren
 "sourceid"
