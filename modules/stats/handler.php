@@ -34,11 +34,8 @@
     if ($_REQUEST['count_dropdown'] == 'all')
     	$limit = '';
 
-// How many tuners are tehre?
-    $tuners = $db->query_col('SELECT COUNT(*)
-                                FROM capturecard');
 
-// Get how many show titles their are
+// Get how many show titles there are
     $title_count = $db->query_num_rows('SELECT DISTINCT title
                                           FROM oldrecorded'.$where);
 

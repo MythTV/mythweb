@@ -67,7 +67,7 @@
             <dt><?php echo t('Total Recorded'); ?>:</dt>
             <dd><?php if(!is_null($time)) echo nice_length($time); else echo "0"; ?></dd>
 	    <dt><?php echo t('Percent of time spent recording'); ?>:</dt>
-	    <dd><?php if(($last - $first)!=0 && $tuners > 0) echo intval((($time / ($last - $first)) * 100)/$tuners); else echo "0"; ?>%</dd>
+	    <dd><?php if(($last - $first)!=0) echo intval(($time / ($last - $first)) * 100); else echo "0"; ?>%</dd>
         </dl>
     </div>
 
