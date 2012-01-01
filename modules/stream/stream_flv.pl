@@ -148,6 +148,11 @@
         print header(-type => 'video/x-flv');
     }
 
+# RFC 3875 4.3.3. script MUST NOT provide a response message-body for a HEAD request
+    if ($ENV{'REQUEST_METHOD'} eq 'HEAD') {
+        exit;
+    }
+
     my $buffer;
     if (read DATA, $buffer, 53) {
         print $buffer;
@@ -155,7 +160,10 @@
         $durPrint = reverse pack("d",$lengthSec);
         print $durPrint;
         while (read DATA, $buffer, 262144) {
-            print $buffer;
+        # Exit if the output pipe is broken i.e. client disconnect
+            unless (print $buffer ) {
+                last;
+            }
         }
     }
     close DATA;

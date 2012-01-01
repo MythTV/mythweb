@@ -108,13 +108,21 @@
                  );
     }
 
+# RFC 3875 4.3.3. script MUST NOT provide a response message-body for a HEAD request
+    if ($ENV{'REQUEST_METHOD'} eq 'HEAD') {
+        exit;
+    }
+
 # Seek to the requested position
     sysseek DATA, $start, 0;
 
 # Print the content to the browser
     my $buffer;
     while (sysread DATA, $buffer, $read_size ) {
-        print $buffer;
+    # Exit if the output pipe is broken i.e. client disconnect
+        unless (print $buffer ) {
+            last;
+        }
         $size -= $read_size;
         if ($size <= 0) {
             my $fileSize = -s $filename;
