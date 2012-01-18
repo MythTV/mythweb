@@ -21,7 +21,7 @@
 
 // Load the logs (remember that start and show are already safe for non-escaped usage)
     $Logs = array();
-    $sh   = $db->query('SELECT * FROM mythlog ORDER BY logid DESC LIMIT '.$_GET['start'].','.$_GET['show']);
+    $sh   = $db->query('SELECT * FROM logging ORDER BY id DESC LIMIT '.$_GET['start'].','.$_GET['show']);
     while ($row = $sh->fetch_assoc()) {
         $Logs[] = $row;
     }
