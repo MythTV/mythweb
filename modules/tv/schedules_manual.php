@@ -176,8 +176,8 @@
         $Channel_list = Channel::getChannelList();
         echo '<select name="channel">';
         $seen = array();
-        foreach ($Channel_list as $chanid) {
-            $channel =& Channel::find($chanid);
+        foreach ($Channel_list as $this_chanid) {
+            $channel =& Channel::find($this_chanid);
 
         // Print the option
             echo '<option value="', $channel->chanid, '"',
