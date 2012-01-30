@@ -17,7 +17,7 @@
         $schedule =& Schedule::find($_GET['recordid']);
     // Not a manual schedule
         if (empty($schedule->search) || $schedule->search != searchtype_manual)
-            redirect_browser('tv/schedules');
+            redirect_browser(root_url.'tv/schedules');
     }
 // Create a new, empty schedule
     else
@@ -46,7 +46,7 @@
             // Redirect back to the schedule list
                 add_warning(t('The requested recording schedule has been deleted.'));
                 save_session_errors();
-                header('Location: tv/schedules');
+                header('Location: '.root_url.'tv/schedules');
                 exit;
             }
         }
@@ -103,7 +103,7 @@
         // Save the schedule
             $schedule->save($type);
         // Redirect to the new schedule
-            header('Location: tv/schedules/manual/'.$schedule->recordid);
+            header('Location: '.root_url.'tv/schedules/manual/'.$schedule->recordid);
             exit;
         }
     }
