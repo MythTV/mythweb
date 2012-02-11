@@ -327,11 +327,11 @@
     // Search!
         if (!empty($query))
             $tmpdate = strtotime($_SESSION['search']['starttime']);
-	    if ($tmpdate == false) {
+        if ($tmpdate == false) {
             $Results =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, $query, $_SESSION['search']['distinctTitle']);
-	    } else {
+        } else {
             $Results =& load_all_program_data($tmpdate, strtotime('+1 month'), NULL, false, $query, $_SESSION['search']['distinctTitle']);
-	    }
+        }
 
     }
 

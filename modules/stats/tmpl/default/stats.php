@@ -24,7 +24,7 @@
 
 <div id="content_wrapper">
 
-	<form id="stats_form" name="stats_form" action="stats">
+    <form id="stats_form" name="stats_form" action="stats">
 
         <div id="query_time_div">
             <?php echo t('Time Span'); ?>&nbsp;
@@ -38,7 +38,7 @@
         </div>
 
         <div id="count_div">
-	    <?php echo t('Show'); ?>&nbsp;
+            <?php echo t('Show'); ?>&nbsp;
             <select name="count_dropdown" onchange="submit_form(null, null, 'stats_form');">
                 <option <?php if($_GET['count_dropdown']=='10')  echo 'selected' ?> value="10"><?php  echo t('Top $1', 10) ?></option>
                 <option <?php if($_GET['count_dropdown']=='25')  echo 'selected' ?> value="25"><?php  echo t('Top $1', 25) ?></option>
@@ -48,7 +48,7 @@
             </select>
         </div>
 
-	</form>
+    </form>
 
     <h2><?php echo t('Recording Statistics') ?></h2>
 
@@ -62,12 +62,12 @@
             <dd><?php echo date('l F jS, Y', $first); ?></dd>
             <dt><?php echo t('Last recording'); ?>:</dt>
             <dd><?php echo date('l F jS, Y', $last); ?></dd>
-	    <dt><?php echo t('Total Running Time'); ?>:</dt>
-	    <dd><?php if(($last - $first)!=0) echo nice_length($last - $first); else echo "0"; ?></dd>
+            <dt><?php echo t('Total Running Time'); ?>:</dt>
+            <dd><?php if(($last - $first)!=0) echo nice_length($last - $first); else echo "0"; ?></dd>
             <dt><?php echo t('Total Recorded'); ?>:</dt>
             <dd><?php if(!is_null($time)) echo nice_length($time); else echo "0"; ?></dd>
-	    <dt><?php echo t('Percent of time spent recording'); ?>:</dt>
-	    <dd><?php if(($last - $first)!=0) echo intval(($time / ($last - $first)) * 100); else echo "0"; ?>%</dd>
+            <dt><?php echo t('Percent of time spent recording'); ?>:</dt>
+            <dd><?php if(($last - $first)!=0) echo intval(($time / ($last - $first)) * 100); else echo "0"; ?>%</dd>
         </dl>
     </div>
 
@@ -89,7 +89,7 @@
     <?php
      $maxcount = count($shows);
      if (count($channels) > $maxcount)
-      $maxcount = count($channels);
+         $maxcount = count($channels);
      $padded = false;
      for ($i=0; $i<$maxcount; $i++) {
      ?>

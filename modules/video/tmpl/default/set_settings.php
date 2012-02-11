@@ -21,9 +21,9 @@
 
     <td><?php echo t('web_video_imdb_type'); ?>:</td>
     <td><select name="web_video_imdb_type">
-	   <option value="IMDB"  <?php if ($imdbType == "IMDB") echo 'SELECTED'; ?> ><?php echo t('IMDBTYPE'); ?></option>
-	   <option value="ALLOCINE" <?php if ($imdbType == "ALLOCINE") echo 'SELECTED'; ?> ><?php echo t('ALLOCINETYPE'); ?></option>
-	</select>
+           <option value="IMDB"  <?php if ($imdbType == "IMDB") echo 'SELECTED'; ?> ><?php echo t('IMDBTYPE'); ?></option>
+            <option value="ALLOCINE" <?php if ($imdbType == "ALLOCINE") echo 'SELECTED'; ?> ><?php echo t('ALLOCINETYPE'); ?></option>
+        </select>
     </td>
 </tr>
 <tr>

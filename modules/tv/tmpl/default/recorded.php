@@ -170,11 +170,11 @@ EOM;
     <td class="x-originalairdate"><?php echo $show->airdate ?></td>
     <td class="x-airdate"><?php echo strftime($_SESSION['date_recorded'], $show->starttime) ?></td><?php
         if ($_SESSION["show_channel_icons"] == true && !empty($show->channel->icon)) {
-                ?><td class="x-chanicon" rowspan="2"><a href="<?php echo root_url ?>tv/channel/<?php echo $show->channel->chanid, '/', $list_starttime ?>"
+    ?><td class="x-chanicon" rowspan="2"><a href="<?php echo root_url ?>tv/channel/<?php echo $show->channel->chanid, '/', $list_starttime ?>"
                     title="<?php echo t('Details for: $1', html_entities($show->channel->name)) ?>">
                     <img class="channelicon" src="<?php echo $show->channel->icon ?>"></a></td><?php
-        } else {?>
-	    <td class="x-channum" rowspan="2"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td><?php
+        } else { ?>
+    <td class="x-channum" rowspan="2"><?php echo $show->channel->channum, ' - ', $show->channel->name ?></td><?php
         }
     if ($recgroup_cols)
         echo "    <td class=\"-recgroup\">$show->recgroup</td>\n";

@@ -9,7 +9,7 @@
 /**/
 
 class Schedule extends MythBase {
-	static private $scheduledRecordings;
+    static private $scheduledRecordings;
 
     public $recordid;
     public $type;
@@ -65,47 +65,46 @@ class Schedule extends MythBase {
     public $css_class;         // css class, based on category and/or category_type
 
 
-	/**
-	 * Intended to be called as Schedule::availableRecordFilters()
-	 *
-	 * @return array sorted list of record filters available to the system keyed by filterid
-	/**/
+    /**
+     * Intended to be called as Schedule::availableRecordFilters()
+     *
+     * @return array sorted list of record filters available to the system keyed by filterid
+    /**/
     public static function availableRecordFilters() {
         static $cache = array();
         if (empty($cache)) {
             global $db;
-            $cache = $db->query_keyed_list_assoc('filterid', 
-				'SELECT filterid,description,newruledefault
-                                        FROM recordfilter
-                                    ORDER BY filterid');
+            $cache = $db->query_keyed_list_assoc('filterid',
+                'SELECT filterid,description,newruledefault
+                   FROM recordfilter
+               ORDER BY filterid'
+               );
         }
         return $cache;
     }
 
- 	/**
-	 *
-	 * @return an array of the filters for this Schedule.  Array includes
-	 * a property called "enabled" to indicate if the filter is enabled.
-	 * If this is not a real schedule "enabled" is from the newruledefault
-         * property
-         * 
-	/**/
-   public function recordFilters() {
-	$filters = array();
-	foreach (Schedule::availableRecordFilters() as $id => $filter) {
-		$filters[$id] = $filter;
-		// if this is a real schedule, use the filter property
-		if ($this->recordid) {
-			$mask = 1 << $id;
-			$filters[$id]['enabled'] = ($this->filter & $mask) == $mask;
-
-		// otherwise it's not a real schedule, so use the default value
-		} else {
-			$filters[$id]['enabled'] = $filter['newruledefault'];
-		}
-	}
-
-	return $filters;
+    /**
+     *
+     * @return an array of the filters for this Schedule.  Array includes
+     * a property called "enabled" to indicate if the filter is enabled.
+     * If this is not a real schedule "enabled" is from the newruledefault
+     * property
+     *
+    /**/
+    public function recordFilters() {
+        $filters = array();
+        foreach (Schedule::availableRecordFilters() as $id => $filter) {
+            $filters[$id] = $filter;
+            // if this is a real schedule, use the filter property
+            if ($this->recordid) {
+                $mask = 1 << $id;
+                $filters[$id]['enabled'] = ($this->filter & $mask) == $mask;
+                // otherwise it's not a real schedule, so use the default value
+            } else {
+                $filters[$id]['enabled'] = $filter['newruledefault'];
+            }
+        }
+        return $filters;
     }
 
     public static function findAll($sort = true) {
@@ -129,36 +128,38 @@ class Schedule extends MythBase {
                 }
                 $orderby .= ($sort['reverse'] ? ' DESC' : ' ASC');
             }
-			$recordIds = $db->query("SELECT recordid
-									   FROM record
-								  LEFT JOIN channel
-										 ON channel.chanid = record.chanid
-								   $orderby")->fetch_cols();
-		}
-		else {
-			$recordIds = $db->query("SELECT recordid
-									   FROM record")->fetch_cols();
-		}
+            $recordIds = $db->query("
+                SELECT    recordid
+                FROM      record
+                LEFT JOIN channel
+                       ON channel.chanid = record.chanid
+                $orderby"
+                )->fetch_cols();
+            }
+            else {
+            $recordIds = $db->query("SELECT recordid
+            FROM record")->fetch_cols();
+            }
         return $recordIds;
     }
 
-	public static function &findScheduled() {
-		if (is_null(self::$scheduledRecordings))
-			self::$scheduledRecordings =& Cache::get('Schedule::findScheduled');
+    public static function &findScheduled() {
+        if (is_null(self::$scheduledRecordings))
+            self::$scheduledRecordings =& Cache::get('Schedule::findScheduled');
 
-		if (is_null(self::$scheduledRecordings)) {
-			foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
-				if ($key === 'offset')
-					continue;
-				if ($program[21] == 6)
-					continue;
-			// Normal entry:  $scheduledRecordings[callsign][starttime][]
-				self::$scheduledRecordings[$program[8]][$program[12]][] =& new Program($program);
-			}
-			Cache::set('Schedule::findScheduled', self::$scheduledRecordings);
-		}
-		return self::$scheduledRecordings;
-	}
+        if (is_null(self::$scheduledRecordings)) {
+            foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
+                if ($key === 'offset')
+                    continue;
+                if ($program[21] == 6)
+                    continue;
+                // Normal entry:  $scheduledRecordings[callsign][starttime][]
+                self::$scheduledRecordings[$program[8]][$program[12]][] =& new Program($program);
+            }
+            Cache::set('Schedule::findScheduled', self::$scheduledRecordings);
+        }
+        return self::$scheduledRecordings;
+    }
 
 /**
  * constructor
@@ -166,7 +167,7 @@ class Schedule extends MythBase {
     public function __construct($data) {
         global $db;
 
-		$this->dupmethod = _or(setting('prefDupMethod'), 0);
+        $this->dupmethod = _or(setting('prefDupMethod'), 0);
 
     // Schedule object data -- just copy it into place
         if (is_object($data)) {
@@ -187,18 +188,19 @@ class Schedule extends MythBase {
         }
     // Something else
         else {
-		// Are we passing in a set of chanid, starttime?
-			if (func_num_args() == 2) {
-				$chanid = func_get_arg(0);
-				$start  = func_get_arg(1);
-				$data = $db->query_col('SELECT recordid
-							              FROM record
-								         WHERE record.chanid = ?
-								           AND record.starttime = FROM_UNIXTIME(?)',
-									    $chanid,
-										$start
-										);
-			}
+            // Are we passing in a set of chanid, starttime?
+            if (func_num_args() == 2) {
+                $chanid = func_get_arg(0);
+                $start  = func_get_arg(1);
+                $data = $db->query_col('
+                    SELECT recordid
+                    FROM   record
+                    WHERE  record.chanid = ?
+                       AND record.starttime = FROM_UNIXTIME(?)',
+                    $chanid,
+                    $start
+                    );
+            }
         // Data is a recordid -- load its contents
             if (!is_array($data) && $data > 0) {
                 $data = $db->query_assoc('SELECT *, IF(type='.rectype_always.',-1,chanid)         AS chanid,
@@ -332,7 +334,7 @@ class Schedule extends MythBase {
                          _or($this->inetref,       ''              ),
                          _or($this->season,        0              ),
                          _or($this->episode,       0              ),
-			 _or($this->filter,        0              )
+                         _or($this->filter,        0              )
                         );
     // Get the id that was returned
         $recordid = $sh->insert_id();

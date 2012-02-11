@@ -30,10 +30,10 @@
 // Set to defaults
     if ( !isset($_SESSION['recording_details'] )) {
         $_SESSION['recording_details']['show_Conflict'] = true;
-	$_SESSION['recording_details']['show_PreviousRecording'] = true;
-	$_SESSION['recording_details']['show_EarlierShowing'] = true;
-	$_SESSION['recording_details']['show_CurrentRecording'] = true;
-	$_SESSION['recording_details']['show_WillRecord'] = true;
+        $_SESSION['recording_details']['show_PreviousRecording'] = true;
+        $_SESSION['recording_details']['show_EarlierShowing'] = true;
+        $_SESSION['recording_details']['show_CurrentRecording'] = true;
+        $_SESSION['recording_details']['show_WillRecord'] = true;
     }
 
     if ( isset($_POST['change_display'])) {
@@ -237,7 +237,7 @@
                 $schedule->inetref       = $_POST['inetref'];
                 $schedule->season        = intval($_POST['season']);
                 $schedule->episode       = intval($_POST['episode']);
-		$schedule->filter	 = generateFilter();
+                $schedule->filter        = generateFilter();
 
             // Keep track of the parent recording for overrides
                 if ($_POST['record'] == rectype_override) {
@@ -254,8 +254,8 @@
             }
         }
     // Redirect back to the page again, but without the query string, so reloads are cleaner
-		if ($db->query_col('SELECT COUNT(*) FROM program WHERE chanid = ? and starttime = FROM_UNIXTIME(?) LIMIT 1', $program->chanid, $program->starttime) == 0)
-			redirect_browser(root.'tv/detail?recordid='.$schedule->recordid);
+        if ($db->query_col('SELECT COUNT(*) FROM program WHERE chanid = ? and starttime = FROM_UNIXTIME(?) LIMIT 1', $program->chanid, $program->starttime) == 0)
+            redirect_browser(root.'tv/detail?recordid='.$schedule->recordid);
         redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
     elseif ($_REQUEST['forget_old']) {

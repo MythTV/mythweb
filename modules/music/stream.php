@@ -74,9 +74,9 @@
         case 'ogg':
             $mime = 'application/ogg';
             break;
-	case 'm4a':
-	    $mime = 'audio/mp4a-latm';
-	    break;
+        case 'm4a':
+            $mime = 'audio/mp4a-latm';
+            break;
         default:
             $mime = 'application/octet-stream';
     }
@@ -106,4 +106,3 @@
 
 // Nothing else to do
     exit;
-

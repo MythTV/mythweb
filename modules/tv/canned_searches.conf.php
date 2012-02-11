@@ -37,7 +37,7 @@ $Canned_Searches = array(
           .' AND program.stars > 0.0',
 
     t('Children\'s Movies')
- 	    => 'category="children" AND category_type="movie"',
+        => 'category="children" AND category_type="movie"',
 
     t('Non-Series HDTV')
         => 'hdtv & 1 AND category_type != "series"',
@@ -55,4 +55,3 @@ $Canned_Searches = array(
         => 'category_type="movie" AND program.category="science fiction"',
 
     );
-

@@ -14,7 +14,7 @@
 
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.root_url.'dcss/video.css.php">';
-	$headers[] = '<link rel="stylesheet" type="text/css" href="'.root_url.'skins/'.skin.'/video.css">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root_url.'skins/'.skin.'/video.css">';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -38,15 +38,15 @@
     // Clean up the title string
         title = title.replace('&', '%26');
         new Ajax.Request('<?php echo root_url ?>video/imdb',
-    	                 {
+                         {
                             method:     'get',
-    	                    parameters: {
+                            parameters: {
                                             action: 'lookup',
                                             id:     id,
                                             title:  title
                                         },
-    	                    onSuccess:  imdb_handler
-    	                 });
+                            onSuccess:  imdb_handler
+                         });
     }
 
     function imdb_handler(response) {
@@ -102,15 +102,15 @@
         ajax_add_request();
         $('window').hide();
         new Ajax.Request('<?php echo root_url; ?>video/imdb',
-    	                 {
-    	                 	method:     'get',
-    	                 	parameters: {
-                                                action: 'grab',
-                                                id:     id,
-                                                number: number
-                                            },
-    	                 	onSuccess:  imdb_handler
-    	                 });
+            {
+                method:     'get',
+                parameters: {
+                    action: 'grab',
+                    id:     id,
+                    number: number
+                    },
+                onSuccess:  imdb_handler
+            });
     }
 
     function imdb_prompt(id) {
@@ -130,14 +130,14 @@
             return;
         ajax_add_request();
         new Ajax.Request('<?php echo root_url; ?>video/imdb',
-    	                    {
-    	                    	method:     'get',
-    	                    	parameters: {
-                                                action: 'metadata',
-                                                id:     id
-                                            },
-    	                    	onSuccess:  update_video_result
-    	                    });
+            {
+                method:     'get',
+                parameters: {
+                    action: 'metadata',
+                    id:     id
+                    },
+                onSuccess:  update_video_result
+            });
     }
 
     function update_video_result(result) {
@@ -201,14 +201,14 @@
         if (!Tips.hasTip(id) && loading_popups[id] != true ) {
             loading_popups[id] = true;
             new Ajax.Request('<?php echo root_url; ?>video/imdb',
-    	                    {
-    	                    	method:     'get',
-    	                    	parameters: {
-                                                action: 'metadata',
-                                                id:     id
-                                            },
-    	                    	onSuccess:  video_create_popup
-    	                    });
+                {
+                    method:     'get',
+                    parameters: {
+                        action: 'metadata',
+                        id:     id
+                        },
+                    onSuccess:  video_create_popup
+                });
         }
     }
 
@@ -230,10 +230,10 @@
     function scan() {
         ajax_add_request();
         new Ajax.Request('<?php echo root_url; ?>video/scan',
-    	                {
-    	                	method:    'get',
-    	                	onSuccess: reload
-    	                });
+            {
+                method:    'get',
+                onSuccess: reload
+            });
     }
 
     function reload() {

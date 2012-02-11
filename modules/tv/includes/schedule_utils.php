@@ -15,9 +15,9 @@
 /**/
     function generateFilter() {
         $total = 0;
-	    foreach (Schedule::availableRecordFilters() as $id => $filter) {
-		    $enabled = intval($_POST["recordfilter_$id"]);
-	        $total |= $enabled << $id;
+        foreach (Schedule::availableRecordFilters() as $id => $filter) {
+            $enabled = intval($_POST["recordfilter_$id"]);
+            $total |= $enabled << $id;
         }
         return $total;
     }
