@@ -293,6 +293,7 @@
     Kommandoer
 "Commands:"
     Kommandoer:
+"Commercial free"
 "Commercials Flagged"
     Reklamer markeret
 "commfree"
@@ -493,6 +494,7 @@
     Færdig
 "First recording"
     Første optagelse
+"First showing"
 "First showing of each episode"
     Første visning af alle episoder
 "Flag Commercials"
@@ -559,6 +561,7 @@
     Højde
 "Hide"
     Skjul
+"High definition"
 "Home"
     Home
 "Hosted by"
@@ -569,6 +572,7 @@
     Tidsformat
 "hue"
     farvetone
+"Identifiable episode"
 "Ignore generic shows"
     Ignorer generiske udsendelser
 "Ignore scheduled shows"
@@ -786,6 +790,7 @@
     Optag aldrig
 "New"
     Ny
+"New episode"
 "New episodes only"
     Kun nye episoder
 "New Group"
@@ -975,6 +980,7 @@
     Tidligere optagelse
 "Previous recordings"
     Tidligere optagelser
+"Primetime"
 "Priority for a category"
     Prioritet for en kategori
 "Priority for a category type"
@@ -1374,6 +1380,7 @@
 "There was a problem saving your playlist"
     Der var et problem med at gemme din afspilningsliste
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Denne afspilningsliste er alleredeåbnet!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

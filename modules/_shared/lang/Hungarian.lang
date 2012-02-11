@@ -281,6 +281,7 @@
 "Commands"
     Parancsok
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
     Reklámok bejelölve
 "commfree"
@@ -470,6 +471,7 @@
     Végzett
 "First recording"
     Első felvétel
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
     Reklámok jelölése
@@ -531,6 +533,7 @@
     Magasság
 "Hide"
     Elrejt
+"High definition"
 "Home"
     Otthon
 "Hosted by"
@@ -541,6 +544,7 @@
     Óra formátum
 "hue"
     szinárnyalat
+"Identifiable episode"
 "Ignore generic shows"
     Kihagyja az általános műsorokat
 "Ignore scheduled shows"
@@ -748,6 +752,7 @@
     Soha ne rögítse
 "New"
     Új
+"New episode"
 "New episodes only"
 "New Group"
     Új csoport
@@ -913,6 +918,7 @@
     Korábbi felvétel
 "Previous recordings"
     Korábbi felvételek
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -1290,6 +1296,7 @@
 "There was a problem saving your playlist"
     Hibát találtam, a lejátszólistát mentem
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Ez a lejétszólista már be van töltve!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

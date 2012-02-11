@@ -197,6 +197,7 @@
 "Commands"
     Komendy
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
 "commfree"
     bez reklam
@@ -326,6 +327,7 @@
 "finetune"
 "Finished"
 "First recording"
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
 "FLV Width"
@@ -365,6 +367,7 @@
 "HDTV"
 "Height"
 "Hide"
+"High definition"
 "Home"
 "Hosted by"
     Udostępniony przez
@@ -374,6 +377,7 @@
     Format godziny
 "hue"
     kolor
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -503,6 +507,7 @@
 "Never Record"
     Nigdy Nie Nagrywaj
 "New"
+"New episode"
 "New episodes only"
 "New Group"
 "New Search"
@@ -603,6 +608,7 @@
 "Previous Recording"
 "Previous recordings"
     Poprzednie nagrania
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -882,6 +888,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

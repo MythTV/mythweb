@@ -269,6 +269,7 @@
 "Commands"
     Ukazi
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
     Reklame označene
 "commfree"
@@ -449,6 +450,7 @@
     Končano
 "First recording"
     Prvo snemanje
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
     Označi reklame
@@ -506,6 +508,7 @@
 "Height"
 "Hide"
     Skrij
+"High definition"
 "Home"
     Domov
 "Hosted by"
@@ -516,6 +519,7 @@
     Format časa
 "hue"
     nasičenost
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -716,6 +720,7 @@
     Nikoli ne snemaj
 "New"
     Novo
+"New episode"
 "New episodes only"
 "New Group"
     Nova skupina
@@ -876,6 +881,7 @@
     Že posneta
 "Previous recordings"
     Že posneto
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -1236,6 +1242,7 @@
 "There was a problem saving your playlist"
     Pri shranjevanju seznama predvajanja je prišlo do napake
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Ta seznam predvajanja je že naložen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

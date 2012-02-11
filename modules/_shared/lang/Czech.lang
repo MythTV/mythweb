@@ -278,6 +278,7 @@
 "color"
 "Commands"
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
     Reklamy označeny
 "commfree"
@@ -458,6 +459,7 @@
 "Finished"
 "First recording"
     První nahrávání
+"First showing"
 "First showing of each episode"
     První zobrazení každé epizody
 "Flag Commercials"
@@ -511,6 +513,7 @@
     Výška
 "Hide"
     Skrýt
+"High definition"
 "Home"
     Domů
 "Hosted by"
@@ -520,6 +523,7 @@
     Formát hodin
 "hue"
     odstín
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -682,6 +686,7 @@
     Nikdy nenahrávat
 "New"
     Nový
+"New episode"
 "New episodes only"
     Pouze nové epizody
 "New Group"
@@ -803,6 +808,7 @@
     Předchozí nahrávka
 "Previous recordings"
     Předchozí nahrávky
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -1080,6 +1086,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

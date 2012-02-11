@@ -293,6 +293,7 @@
     Komennot
 "Commands:"
     Komennot:
+"Commercial free"
 "Commercials Flagged"
     Merkityt mainokset
 "commfree"
@@ -490,6 +491,7 @@
     Valmis
 "First recording"
     Ensimmäinen tallennus
+"First showing"
 "First showing of each episode"
     Ensimmäisen jakson ensimmäinen lähetys
 "Flag Commercials"
@@ -555,6 +557,7 @@
     Korkeus
 "Hide"
     Piilota
+"High definition"
 "Home"
     Koti
 "Hosted by"
@@ -565,6 +568,7 @@
     Ajan muoto
 "hue"
     Värikylläisyys
+"Identifiable episode"
 "Ignore generic shows"
     Ohita yleiset ohjelmat
 "Ignore scheduled shows"
@@ -788,6 +792,7 @@
     Älä tallenna koskaan
 "New"
     Uusi
+"New episode"
 "New episodes only"
     Vain uudet jaksot
 "New Group"
@@ -972,6 +977,7 @@
     Aiempi tallennus
 "Previous recordings"
     Aiemmat tallennukset
+"Primetime"
 "Priority for a category"
     Prioriteetti luokalle
 "Priority for a category type"
@@ -1355,6 +1361,7 @@
 "There was a problem saving your playlist"
     Soittolistasi tallennuksessa ilmeni ongelma
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Tämä Soittolista on jo ladattu!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

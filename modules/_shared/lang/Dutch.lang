@@ -206,6 +206,7 @@
 "Commands"
     Opdrachten
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
 "commfree"
     reclamevrij
@@ -347,6 +348,7 @@
     fijn afstemmen
 "Finished"
 "First recording"
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
 "FLV Width"
@@ -395,6 +397,7 @@
     HDTV
 "Height"
 "Hide"
+"High definition"
 "Home"
 "Hosted by"
 "Hour"
@@ -403,6 +406,7 @@
     Weergave Tijd
 "hue"
     verzadiging
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -562,6 +566,7 @@
     Nooit Opnemen
 "New"
     Nieuw
+"New episode"
 "New episodes only"
     Alleen nieuwe afleveringen
 "New Group"
@@ -679,6 +684,7 @@
 "Previous Recording"
 "Previous recordings"
     Eerdere opnames
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -979,6 +985,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

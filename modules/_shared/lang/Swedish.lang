@@ -293,6 +293,7 @@
     Kommandon
 "Commands:"
     Kommandon:
+"Commercial free"
 "Commercials Flagged"
     Reklam markerad
 "commfree"
@@ -492,6 +493,7 @@
     Färdig
 "First recording"
     Första inspelning
+"First showing"
 "First showing of each episode"
     Första visning av alla avsnitt
 "Flag Commercials"
@@ -558,6 +560,7 @@
     Höjd
 "Hide"
     Göm
+"High definition"
 "Home"
     Hem
 "Hosted by"
@@ -568,6 +571,7 @@
     Timformat
 "hue"
     färgton
+"Identifiable episode"
 "Ignore generic shows"
     Ignorera allmänna visningar
 "Ignore scheduled shows"
@@ -790,6 +794,7 @@
     Spela aldrig in
 "New"
     Ny
+"New episode"
 "New episodes only"
     Endast nya avsnitt
 "New Group"
@@ -971,6 +976,7 @@
     Föregående Inspelning
 "Previous recordings"
     Tidigare inspelningar
+"Primetime"
 "Priority for a category"
     Prioritet för en kategori
 "Priority for a category type"
@@ -1360,6 +1366,7 @@
 "There was a problem saving your playlist"
     Det uppstod ett problem med att spara din spellista
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Denna spellista har redan laddats!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

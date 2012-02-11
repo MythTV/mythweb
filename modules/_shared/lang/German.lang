@@ -296,6 +296,7 @@
     Optionen
 "Commands:"
     Befehle:
+"Commercial free"
 "Commercials Flagged"
     Werbung markiert
 "commfree"
@@ -496,6 +497,7 @@
     Fertig
 "First recording"
     Erste Aufnahme
+"First showing"
 "First showing of each episode"
     Erste Ausstrahlung jeder Folge
 "Flag Commercials"
@@ -561,6 +563,7 @@
     Höhe
 "Hide"
     verstecken
+"High definition"
 "Home"
 "Hosted by"
     Präsentiert von
@@ -570,6 +573,7 @@
     Zeitformat
 "hue"
     Farbton
+"Identifiable episode"
 "Ignore generic shows"
     Gewöhnliche Aufnahmen ignorieren
 "Ignore scheduled shows"
@@ -793,6 +797,7 @@
     Niemals aufnehmen
 "New"
     Neu
+"New episode"
 "New episodes only"
     nur neue Folgen
 "New Group"
@@ -981,6 +986,7 @@
     alte Aufnahme
 "Previous recordings"
     alte Aufnahmen
+"Primetime"
 "Priority for a category"
     Priorität einer Kategorie
 "Priority for a category type"
@@ -1375,6 +1381,7 @@
 "There was a problem saving your playlist"
     Wiedergabeliste konnte nicht gespeichert werden
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Wiedergabeliste bereits geladen!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

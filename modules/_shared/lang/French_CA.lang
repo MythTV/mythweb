@@ -295,6 +295,7 @@
     Commandes
 "Commands:"
     Commandes :
+"Commercial free"
 "Commercials Flagged"
     Publicités balisées
 "commfree"
@@ -494,6 +495,7 @@
     Terminé
 "First recording"
     Premier enregistrement
+"First showing"
 "First showing of each episode"
     Première diffusion de chaque épisode
 "Flag Commercials"
@@ -560,6 +562,7 @@
     Hauteur
 "Hide"
     Cacher
+"High definition"
 "Home"
     Accueil
 "Hosted by"
@@ -570,6 +573,7 @@
     Format d'heure
 "hue"
     teinte
+"Identifiable episode"
 "Ignore generic shows"
     Ignorer les émissions génériques
 "Ignore scheduled shows"
@@ -797,6 +801,7 @@
     Ne jamais enregistrer
 "New"
     Nouveau
+"New episode"
 "New episodes only"
     Seulement les nouveaux épisodes
 "New Group"
@@ -981,6 +986,7 @@
     Enregistrement précédent
 "Previous recordings"
     Enregistrements précédents
+"Primetime"
 "Priority for a category"
     Priorité d'une catégorie
 "Priority for a category type"
@@ -1381,6 +1387,7 @@
     Il y a eu un problème lors de la sauvegarde de votre liste de lecture
 "TheTVDB"
     La base de données TVDB
+"This Episode"
 "This playlist is already loaded!"
     Cette liste de lecture est déjà chargée !
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
