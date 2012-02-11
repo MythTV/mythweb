@@ -51,6 +51,7 @@ class Schedule extends MythBase {
     public $findid;
     public $transcoder;
     public $parentid;
+    public $filter;
 
     public $playgroup;
     public $prefinput;
@@ -62,6 +63,50 @@ class Schedule extends MythBase {
     public $channel;
     public $will_record = false;
     public $css_class;         // css class, based on category and/or category_type
+
+
+	/**
+	 * Intended to be called as Schedule::availableRecordFilters()
+	 *
+	 * @return array sorted list of record filters available to the system keyed by filterid
+	/**/
+    public static function availableRecordFilters() {
+        static $cache = array();
+        if (empty($cache)) {
+            global $db;
+            $cache = $db->query_keyed_list_assoc('filterid', 
+				'SELECT filterid,description,newruledefault
+                                        FROM recordfilter
+                                    ORDER BY filterid');
+        }
+        return $cache;
+    }
+
+ 	/**
+	 *
+	 * @return an array of the filters for this Schedule.  Array includes
+	 * a property called "enabled" to indicate if the filter is enabled.
+	 * If this is not a real schedule "enabled" is from the newruledefault
+         * property
+         * 
+	/**/
+   public function recordFilters() {
+	$filters = array();
+	foreach (Schedule::availableRecordFilters() as $id => $filter) {
+		$filters[$id] = $filter;
+		// if this is a real schedule, use the filter property
+		if ($this->recordid) {
+			$mask = 1 << $id;
+			$filters[$id]['enabled'] = ($this->filter & $mask) == $mask;
+
+		// otherwise it's not a real schedule, so use the default value
+		} else {
+			$filters[$id]['enabled'] = $filter['newruledefault'];
+		}
+	}
+
+	return $filters;
+    }
 
     public static function findAll($sort = true) {
         global $db;
@@ -236,10 +281,10 @@ class Schedule extends MythBase {
                                                findday,findtime,findid,autotranscode,parentid,transcoder,
                                                autouserjob1,autouserjob2,autouserjob3,autouserjob4,autometadata,
                                                playgroup,storagegroup,prefinput,
-                                               next_record,last_record,last_delete,inetref,season,episode)
+                                               next_record,last_record,last_delete,inetref,season,episode,filter)
                                        VALUES (?,?,?,
                                                FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
-                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                          _or($this->recordid,      0,          true),
                          _or($this->type,          0,          true),
                          $this->chanid,
@@ -286,7 +331,8 @@ class Schedule extends MythBase {
                          _or($this->last_delete,   '00:00:00'      ),
                          _or($this->inetref,       ''              ),
                          _or($this->season,        0              ),
-                         _or($this->episode,       0              )
+                         _or($this->episode,       0              ),
+			 _or($this->filter,        0              )
                         );
     // Get the id that was returned
         $recordid = $sh->insert_id();

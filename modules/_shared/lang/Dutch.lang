@@ -323,9 +323,6 @@
 "Erroring"
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
 "Exec. Producer"
     Uitv. Producent
 "Extended Check"
@@ -333,7 +330,6 @@
 "File Size"
     bestandsgrootte
 "film"
-"Filter"
 "Filters"
 "Find Date & Time Options"
     Datum &amp; tijd zoeken, opties
@@ -568,8 +564,6 @@
     Nieuw
 "New episodes only"
     Alleen nieuwe afleveringen
-"New Episodes Only"
-    Alleen nieuwe afleveringen
 "New Group"
     Nieuwe groep
 "New Search"
@@ -669,6 +663,7 @@
 "Possible conflicts"
 "Possible conflicts with this show"
     Mogelijk conflict met dit programma
+"Post Processing"
 "Power"
 "Power Search"
     Geavanceerd zoeken

@@ -421,12 +421,6 @@
 "Escape"
 "Everything"
     Vse
-"Exclude Generic Episodes"
-    Izključi splošne oddaje
-"Exclude Repeat and Generic Episodes"
-    Izključi ponovitve in splošne oddaje
-"Exclude Repeat Episodes"
-    Izključi ponovitve oddaj
 "Exec. Producer"
     Scenarist
 "Extended Check"
@@ -435,8 +429,6 @@
 "File Size"
     Velikost datoteke
 "film"
-"Filter"
-    Sito
 "Filters"
     Sita
 "Find Date & Time Options"
@@ -725,8 +717,6 @@
 "New"
     Novo
 "New episodes only"
-"New Episodes Only"
-    Samo nove oddaje
 "New Group"
     Nova skupina
 "New Search"
@@ -866,6 +856,7 @@
     Možni konflikti
 "Possible conflicts with this show"
     S to oddajo so možni konflikti
+"Post Processing"
 "Power"
     Napr.
 "Power Search"

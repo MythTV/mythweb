@@ -162,6 +162,9 @@
         redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->recstartts);
     }
 
+// Load the utility/display functions for scheduling
+    require_once 'includes/schedule_utils.php';
+
 // The user tried to update the recording settings - update the database and the variable in memory
     if (isset($_POST['save'])) {
         if ($schedule) {
@@ -234,6 +237,7 @@
                 $schedule->inetref       = $_POST['inetref'];
                 $schedule->season        = intval($_POST['season']);
                 $schedule->episode       = intval($_POST['episode']);
+		$schedule->filter	 = generateFilter();
 
             // Keep track of the parent recording for overrides
                 if ($_POST['record'] == rectype_override) {
@@ -347,9 +351,6 @@
     if ($program && $program->filename) {
         $program->load_jobs();
     }
-
-// Load the utility/display functions for scheduling
-    require_once 'includes/schedule_utils.php';
 
 // Setup some vars for the ipod template
     $Page_Previous_Location = root_url.'tv/list_shows_in_title_and_group?group='.urlencode($program->recgroup).'&title='.urlencode($program->title);

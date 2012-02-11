@@ -18,7 +18,6 @@
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
-
 // No schedules defined?
     if (!is_array($the_schedules) || !count($the_schedules)) {
         echo '<div id="no_schedules">',

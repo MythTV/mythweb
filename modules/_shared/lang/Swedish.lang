@@ -462,12 +462,6 @@
     Undgå
 "Everything"
     Allt
-"Exclude Generic Episodes"
-    Exkludera generiska avsnitt
-"Exclude Repeat and Generic Episodes"
-    Exkludera upprepade och generiska avsnitt
-"Exclude Repeat Episodes"
-    Exkludera upprepade avsnitt
 "Exec. Producer"
     Producent
 "Extended Check"
@@ -478,8 +472,6 @@
     Filstorlek
 "film"
     film
-"Filter"
-    Filter
 "Filters"
     Filter
 "Find Date & Time Options"
@@ -800,8 +792,6 @@
     Ny
 "New episodes only"
     Endast nya avsnitt
-"New Episodes Only"
-    Endast nya avsnitt
 "New Group"
     Ny grupp
 "New Search"
@@ -957,6 +947,7 @@
     Möjliga konflikter
 "Possible conflicts with this show"
     Möjliga konflikter med denna visning
+"Post Processing"
 "Power"
     Avancerat
 "Power Search"

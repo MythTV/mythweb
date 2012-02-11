@@ -401,9 +401,6 @@
 "Erroring"
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
 "Exec. Producer"
     Productor ejec.
 "Extended Check"
@@ -411,7 +408,6 @@
 "File Size"
     tamaño fichero
 "film"
-"Filter"
 "Filters"
 "Find Date & Time Options"
     Opciones Búsqueda Fecha y Hora
@@ -652,7 +648,6 @@
     Nunca grabar
 "New"
 "New episodes only"
-"New Episodes Only"
 "New Group"
 "New Search"
 "New Titles, Premieres"
@@ -758,6 +753,7 @@
 "Possible conflicts"
 "Possible conflicts with this show"
     Posibles conflictos con este programa
+"Post Processing"
 "Power"
     Avanzada
 "Power Search"

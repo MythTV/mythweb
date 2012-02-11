@@ -476,8 +476,6 @@
     Dateigröße
 "film"
     Film
-"Filter"
-    Filter
 "Filters"
     Filter
 "Find Date & Time Options"
@@ -797,8 +795,6 @@
     Neu
 "New episodes only"
     nur neue Folgen
-"New Episodes Only"
-    nur neue Folgen
 "New Group"
     Neue Gruppe
 "New Search"
@@ -960,6 +956,7 @@
     Mögliche Überschneidungen
 "Possible conflicts with this show"
     Mögliche Überschneidungen mit dieser Sendung
+"Post Processing"
 "Power"
     freie Suche
 "Power Search"

@@ -478,8 +478,6 @@
     Tamaño de Archivo
 "film"
     película
-"Filter"
-    Filtro
 "Filters"
     Filtros
 "Find Date & Time Options"
@@ -797,8 +795,6 @@
     Nuevos
 "New episodes only"
     Sólo nuevos episodios
-"New Episodes Only"
-    Sólo Nuevos Episodios
 "New Group"
     Nuevo Grupo
 "New Search"
@@ -960,6 +956,7 @@
     Posibles conflictos
 "Possible conflicts with this show"
     Posibles conflictos con este programa
+"Post Processing"
 "Power"
     Avanzada
 "Power Search"

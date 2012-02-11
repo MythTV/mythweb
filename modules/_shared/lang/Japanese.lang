@@ -321,9 +321,6 @@
 "Erroring"
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
 "Exec. Producer"
     製作責任者
 "Extended Check"
@@ -331,7 +328,6 @@
 "File Size"
     ファイルサイズ
 "film"
-"Filter"
 "Filters"
 "Find Date & Time Options"
     日時オプション
@@ -566,7 +562,6 @@
     もう録画しない
 "New"
 "New episodes only"
-"New Episodes Only"
 "New Group"
 "New Search"
 "New Titles, Premieres"
@@ -667,6 +662,7 @@
 "Possible conflicts"
 "Possible conflicts with this show"
     次の番組と衝突しています
+"Post Processing"
 "Power"
     パワー
 "Power Search"

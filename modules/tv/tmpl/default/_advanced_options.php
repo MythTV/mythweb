@@ -332,17 +332,6 @@
                             echo ' SELECTED';
                         echo '>' . t('Previous recordings') . '</option>';
                    ?></select></dd>
-                <dt><?php echo t('Filter')?>:</dt>
-                <dd><select name="dupin2"><?php
-                        echo '<option value="0"';
-                        if ($schedule->dupin == 0)
-                            echo ' SELECTED';
-                        echo '>' . t('None') . '</option>';
-                        echo '<option value="', dupsin_newepisodes, '"';
-                        if ($schedule->dupin & dupsin_newepisodes)
-                            echo ' SELECTED';
-                        echo '>' . t('New Episodes Only') . '</option>';
-                   ?></select></dd>
                 <dt><?php echo t('Preferred Input') ?>:</dt>
                 <dd><?php input_select($schedule->prefinput, 'prefinput') ?></dd>
                 <dt><?php echo t('Internet Reference #') ?>:</dt>
@@ -351,8 +340,19 @@
                 <dd><input type="text" id="season" class="quantity" name="season" value="<?php echo html_entities($schedule->season) ?>"></dd>
                 <dt><?php echo t('Episode') ?>:</dt>
                 <dd><input type="text" id="episode" class="quantity" name="episode" value="<?php echo html_entities($schedule->episode) ?>"></dd>
+		<fieldset>
+		<legend><?php echo t('Filters') ?></legend>
+		<?php
+		foreach ($schedule->recordFilters() as $id => $filter) {
+		?>
+	                <dt><label for="recordfilter_$id"><?php echo t($filter['description']) ?>:</label></dt>
+        	        <dd><input type="checkbox" class="radio" id="recordfilter_<?php echo $id ?>" name="recordfilter_<?php echo $id ?>"<?php if ($filter['enabled']) echo ' CHECKED' ?> value="1"></dd>
+		<?php } ?>
+		</fieldset>
+		<fieldset>
+		<legend><?php echo t('Post Processing') ?></legend>
                 <dt><label for="autometadata"><?php echo t('Look up Metadata') ?>:</label></dt>
-                <dd><input type="checkbox" class="radio" id="autometadata" name="autometadata"<?php if ($schedule->autometadata) echo ' CHECKED' ?> value="1"></dd>
+       	        <dd><input type="checkbox" class="radio" id="autometadata" name="autometadata"<?php if ($schedule->autometadata) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autocommflag"><?php echo t('Auto-flag commercials') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autocommflag" name="autocommflag"<?php if ($schedule->autocommflag) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autotranscode"><?php echo t('Auto-transcode') ?>:</label></dt>
@@ -365,6 +365,9 @@
                 <dd><input type="checkbox" class="radio" id="autouserjob3" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autouserjob4"><?php echo setting('UserJobDesc4') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autouserjob4" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1"></dd>
+		</fieldset>
+		<fieldset>
+		<legend><?php echo t('Schedule Options') ?></legend>
                 <dt><label for="inactive"><?php echo t('Inactive') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="inactive" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autoexpire"><?php echo t('Auto-expire recordings') ?>:</label></dt>
@@ -379,6 +382,7 @@
                 <dt><?php echo t('End Late') ?>:</dt>
                 <dd><input type="text" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>">
                     <?php echo t('minutes') ?></dd>
+		</fieldset>
             </dl>
 
 <div style="display: none;" id="message-dialog">

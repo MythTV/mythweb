@@ -441,12 +441,6 @@
     Kilép
 "Everything"
     Minden
-"Exclude Generic Episodes"
-    Általános részek kivételével
-"Exclude Repeat and Generic Episodes"
-    Az általános és az ismételt részek kivételével
-"Exclude Repeat Episodes"
-    Ismétlések kivételével
 "Exec. Producer"
     Külső támogató
 "Extended Check"
@@ -456,8 +450,6 @@
     Fájlméret
 "film"
     film
-"Filter"
-    Sorozatszűrő
 "Filters"
     Szűrők
 "Find Date & Time Options"
@@ -757,8 +749,6 @@
 "New"
     Új
 "New episodes only"
-"New Episodes Only"
-    Csak az új részeket
 "New Group"
     Új csoport
 "New Search"
@@ -902,6 +892,7 @@
     Leheséges ütközések
 "Possible conflicts with this show"
     Lehetséges ütközések ebben a műsorban
+"Post Processing"
 "Power"
     Energia
 "Power Search"

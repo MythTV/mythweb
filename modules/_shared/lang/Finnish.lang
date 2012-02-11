@@ -460,12 +460,6 @@
     Poistu
 "Everything"
     Kaikki
-"Exclude Generic Episodes"
-    Sulje rekisteröimättömät jaksot ulos
-"Exclude Repeat and Generic Episodes"
-    Sulje toistettavat ja rekisteröimättömät jaksot ulos
-"Exclude Repeat Episodes"
-    Sulje toistetut jaksot ulos
 "Exec. Producer"
     Tuottaja
 "Extended Check"
@@ -476,8 +470,6 @@
     Tiedostokoko
 "film"
     elokuva
-"Filter"
-    Filtteri
 "Filters"
     Filtterit
 "Find Date & Time Options"
@@ -798,8 +790,6 @@
     Uusi
 "New episodes only"
     Vain uudet jaksot
-"New Episodes Only"
-    Vain uudet jaksot
 "New Group"
     Uusi ryhmä
 "New Search"
@@ -957,6 +947,7 @@
     Mahdolliset ristiriidat
 "Possible conflicts with this show"
     Saattaa olla ristiriidassa tämän ohjelman kanssa
+"Post Processing"
 "Power"
     Virta
 "Power Search"

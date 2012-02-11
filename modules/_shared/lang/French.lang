@@ -464,12 +464,6 @@
     Échap
 "Everything"
     Tout
-"Exclude Generic Episodes"
-    Exclure les épisodes génériques
-"Exclude Repeat and Generic Episodes"
-    Exclure les rediffusions et les épisodes génériques
-"Exclude Repeat Episodes"
-    Exclure les rediffusions
 "Exec. Producer"
     Producteur exécutif
 "Extended Check"
@@ -480,8 +474,6 @@
     Taille du fichier
 "film"
     film
-"Filter"
-    Filtre
 "Filters"
     Filtres
 "Find Date & Time Options"
@@ -807,8 +799,6 @@
     Nouveau
 "New episodes only"
     Seulement les nouveaux épisodes
-"New Episodes Only"
-    Seulement les nouveaux épisodes
 "New Group"
     Nouveau groupe
 "New Search"
@@ -966,6 +956,7 @@
     Conflits potentiels
 "Possible conflicts with this show"
     Conflits potentiels avec cette diffusion
+"Post Processing"
 "Power"
     Avancée
 "Power Search"

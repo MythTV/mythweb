@@ -435,10 +435,6 @@
     Chybující
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
-    S vyjímkou opakujících se epizod
 "Exec. Producer"
 "Extended Check"
 "ffmpeg with MP3 support not detected"
@@ -447,8 +443,6 @@
     Velikost souboru
 "film"
     film
-"Filter"
-    Filtr
 "Filters"
     Filtry
 "Find Date & Time Options"
@@ -690,8 +684,6 @@
     Nový
 "New episodes only"
     Pouze nové epizody
-"New Episodes Only"
-    Pouze nové epizody
 "New Group"
     Nová skupina
 "New Search"
@@ -794,6 +786,7 @@
 "Possible conflicts"
     Možné konflikty
 "Possible conflicts with this show"
+"Post Processing"
 "Power"
 "Power Search"
     Pokročilé vyhledávání

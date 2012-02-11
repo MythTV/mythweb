@@ -463,12 +463,6 @@
     Escape
 "Everything"
     Alting
-"Exclude Generic Episodes"
-    Ekskluder generiske episoder
-"Exclude Repeat and Generic Episodes"
-    Ekskluder gentagne og generiske episoder
-"Exclude Repeat Episodes"
-    Ekskluder gentagne episoder
 "Exec. Producer"
     Producer
 "Extended Check"
@@ -479,8 +473,6 @@
     filstørrelse
 "film"
     film
-"Filter"
-    Filter
 "Filters"
     Filtre
 "Find Date & Time Options"
@@ -796,8 +788,6 @@
     Ny
 "New episodes only"
     Kun nye episoder
-"New Episodes Only"
-    Kun nye episoder
 "New Group"
     Ny gruppe
 "New Search"
@@ -960,6 +950,7 @@
     Mulige konflikter
 "Possible conflicts with this show"
     Mulige konflikter med denne udsendelse
+"Post Processing"
 "Power"
     Super
 "Power Search"
