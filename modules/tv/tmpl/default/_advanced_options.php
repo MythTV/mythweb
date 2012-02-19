@@ -34,11 +34,12 @@
         new Ajax.Request('<?php echo root_url ?>tv/lookup_metadata',
                          {
                             parameters: {
-                                              'title'    : "<?php echo $schedule->title ?>",
-                                              'subtitle' : "<?php echo $schedule->subtitle ?>",
-                                              'inetref'  : $("inetref").value,
-                                              'season'   : $("season").value,
-                                              'episode'  : $("episode").value
+                                              'title'        : "<?php echo $schedule->title ?>",
+                                              'subtitle'     : "<?php echo $schedule->subtitle ?>",
+                                              'inetref'      : $("inetref").value,
+                                              'season'       : $("season").value,
+                                              'episode'      : $("episode").value,
+                                              'allowgeneric' : "true"
                                         },
                             asynchronous: true,
                             method: 'get',

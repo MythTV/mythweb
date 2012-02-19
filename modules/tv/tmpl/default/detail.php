@@ -106,11 +106,12 @@
         new Ajax.Request('<?php echo root_url ?>tv/lookup_metadata',
                          {
                             parameters: {
-                                              'title'    : "<?php echo $schedule->title ?>",
-                                              'subtitle' : "<?php echo $schedule->subtitle ?>",
-                                              'inetref'  : "<?php echo ($program ? $program->inetref : $schedule->inetref) ?>",
-                                              'season'   : "<?php echo ($program ? $program->season : $schedule->season) ?>",
-                                              'episode'  : "<?php echo ($program ? $program->episode : $schedule->episode) ?>"
+                                              'title'        : "<?php echo $schedule->title ?>",
+                                              'subtitle'     : "<?php echo $schedule->subtitle ?>",
+                                              'inetref'      : "<?php echo ($program ? $program->inetref : $schedule->inetref) ?>",
+                                              'season'       : "<?php echo ($program ? $program->season : $schedule->season) ?>",
+                                              'episode'      : "<?php echo ($program ? $program->episode : $schedule->episode) ?>",
+                                              'allowgeneric' : "true"
                                         },
                             asynchronous: true,
                             method: 'get',
