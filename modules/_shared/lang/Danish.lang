@@ -92,11 +92,11 @@
 "Admin Key"
     Administrator kode
 "Advanced"
-    Advanceret
+    Avanceret
 "Advanced Options"
     Avancerede indstillinger
 "Advanced Search"
-    Advanceret søgning
+    Avanceret søgning
 "airdate"
     udsendelsesdato
 "Airdate"
@@ -288,10 +288,12 @@
 "Closed Captioning"
     Undertekster
 "color"
+    farve
 "Commands"
     Kommandoer
 "Commands:"
     Kommandoer:
+"Commercial free"
 "Commercials Flagged"
     Reklamer markeret
 "commfree"
@@ -451,6 +453,7 @@
 "Error"
     Fejl
 "Error contacting server to retrieve metadata."
+    Fejl ved hentning af metadata fra server
 "error: playgroup $1 exists"
     fejl: afspilningsgruppen $1 eksisterer
 "Errored"
@@ -461,12 +464,6 @@
     Escape
 "Everything"
     Alting
-"Exclude Generic Episodes"
-    Ekskluder generiske episoder
-"Exclude Repeat and Generic Episodes"
-    Ekskluder gentagne og generiske episoder
-"Exclude Repeat Episodes"
-    Ekskluder gentagne episoder
 "Exec. Producer"
     Producer
 "Extended Check"
@@ -477,8 +474,6 @@
     filstørrelse
 "film"
     film
-"Filter"
-    Filter
 "Filters"
     Filtre
 "Find Date & Time Options"
@@ -499,6 +494,7 @@
     Færdig
 "First recording"
     Første optagelse
+"First showing"
 "First showing of each episode"
     Første visning af alle episoder
 "Flag Commercials"
@@ -565,6 +561,7 @@
     Højde
 "Hide"
     Skjul
+"High definition"
 "Home"
     Home
 "Hosted by"
@@ -575,6 +572,7 @@
     Tidsformat
 "hue"
     farvetone
+"Identifiable episode"
 "Ignore generic shows"
     Ignorer generiske udsendelser
 "Ignore scheduled shows"
@@ -614,18 +612,18 @@
 "info:never record"
     Optag aldrig denne udsendelse.
 "Insert"
-    Insert
+    Indsæt
 "Internet Reference #"
 "Jump"
     Gå
 "Jump Points"
-    Hoppe punkter
+    Menu genveje
 "Jump to"
     Gå til
 "Jump To"
     Gå Til
 "JumpPoints Editor"
-    Menu genveje
+    Redigér menugenveje
 "Key Bindings"
     Tastatur genveje
 "Key bindings"
@@ -690,6 +688,7 @@
 "Logs"
     Logs
 "Look up Metadata"
+    Hent metadata
 "Low Space"
     Lidt plads
 "Manual"
@@ -701,8 +700,11 @@
 "Max star rating for movies"
     Maksimalt antal stjerne for film
 "Metadata Home Page"
+    Metadata hjemmeside
 "Metadata Lookup"
+    Metadata opslag
 "Metadata Lookup Error"
+    Fejl ved metadataopslag
 "minutes"
     minutter
 "Missing Cover"
@@ -722,7 +724,7 @@
 "Monday"
     Mandag
 "Mono"
-    Mone
+    Mono
 "More"
     Mere
 "more"
@@ -788,9 +790,8 @@
     Optag aldrig
 "New"
     Ny
+"New episode"
 "New episodes only"
-    Kun nye episoder
-"New Episodes Only"
     Kun nye episoder
 "New Group"
     Ny gruppe
@@ -811,6 +812,7 @@
 "No matching programs found."
     Ingen matchende programmer fundet.
 "No metadata results found."
+    Ingen metadata fundet.
 "No Public Playlists"
     Ingen tilgængelige afspilningslister
 "No recording schedules have been defined."
@@ -838,6 +840,7 @@
 "Off"
     Fra
 "OK"
+    OK
 "Only a certain channel number"
     Kun et bestemt kanal nummer
 "Only channels marked as commercial free"
@@ -845,6 +848,7 @@
 "Only channels that carry a specific station"
     Kun kanaler der har en specifik station
 "Only display favorite channels"
+    Vis kun favoritkanaler
 "Only match commercial-free channels"
     Find kun reklamefrie kanaler
 "Only match HD programs"
@@ -868,7 +872,7 @@
 "Originally aired between"
     Oprindeligt sendt mellem
 "Override"
-    Overskriv
+    Tilsidesæt
 "Page Down"
     Page Down
 "Page recorded programs"
@@ -938,7 +942,9 @@
 "Playlists"
     Afspilningslister
 "Please enter an IMDB number or a title to do another search"
+    Indtast IMDB nummer eller titel for at søge igen
 "Please wait for the pending AJAX request"
+    Afventer AJAX forespørgsel
 "Plot"
     Plot
 "Plot:"
@@ -948,7 +954,8 @@
 "Possible conflicts"
     Mulige konflikter
 "Possible conflicts with this show"
-    Mulige konflikpoter med denne udsendelse
+    Mulige konflikter med denne udsendelse
+"Post Processing"
 "Power"
     Super
 "Power Search"
@@ -973,6 +980,7 @@
     Tidligere optagelse
 "Previous recordings"
     Tidligere optagelser
+"Primetime"
 "Priority for a category"
     Prioritet for en kategori
 "Priority for a category type"
@@ -1240,10 +1248,13 @@
 "Searches will be performed against the title of all TV shows"
     Søgningen vil gennemgå alle titler på alle udsendelser
 "Seas/Ep"
+    Sæs/Epi
 "Season"
     Sæson
 "Select the correct show"
+    Vælg den korrekte udsendelse
 "Server returned invalid data when attempting to retrieve metadata."
+    Serveren svarede med ugyldige data ved metadata opslag
 "Server Statistics"
     Server statistik
 "Set Host"
@@ -1298,6 +1309,7 @@
 "Songs Rated"
     Bedømte sange
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
+    Playlisten kan ikke tilføjes da det vil skabe en cirkulær afhængighed.
 "sortby_channum"
     Sorter efter kanal nummer i stedet for kaldenavn
 "sourceid"
@@ -1325,7 +1337,7 @@
 "Status Bar"
     Status linie
 "Stereo"
-    Steroe
+    Stereo
 "Still Recording: Edit"
     Optager stadig: Rediger
 "Stopping"
@@ -1368,6 +1380,7 @@
 "There was a problem saving your playlist"
     Der var et problem med at gemme din afspilningsliste
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Denne afspilningsliste er alleredeåbnet!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
@@ -1574,7 +1587,7 @@
 "Yes"
     Ja
 "Yesterday"
-    Igår
+    I går
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
     Du manger en PHP-udvidelse til MySQL. Installer venligst php-mysqli eller lignende
 "You must be running at least php 5.3 to use this program."

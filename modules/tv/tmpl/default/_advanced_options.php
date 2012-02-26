@@ -34,11 +34,12 @@
         new Ajax.Request('<?php echo root_url ?>tv/lookup_metadata',
                          {
                             parameters: {
-                                              'title'    : "<?php echo $schedule->title ?>",
-                                              'subtitle' : "<?php echo $schedule->subtitle ?>",
-                                              'inetref'  : $("inetref").value,
-                                              'season'   : $("season").value,
-                                              'episode'  : $("episode").value
+                                              'title'        : "<?php echo $schedule->title ?>",
+                                              'subtitle'     : "<?php echo $schedule->subtitle ?>",
+                                              'inetref'      : $("inetref").value,
+                                              'season'       : $("season").value,
+                                              'episode'      : $("episode").value,
+                                              'allowgeneric' : "true"
                                         },
                             asynchronous: true,
                             method: 'get',
@@ -54,7 +55,7 @@
 
         // make sure we got valid date
         if (!transport || !transport.responseJSON || !transport.responseJSON.VideoLookupList) {
-           messageDialog("<?php echo t("Metadata Lookup Error")?>", 
+           messageDialog("<?php echo t("Metadata Lookup Error")?>",
                          "<?php echo t("Server returned invalid data when attempting to retrieve metadata.")?>");
         }
 
@@ -71,13 +72,13 @@
         // if we can pick the right item from the list then use it
         // otherwise display a dialog for the user to choose which result
         } else {
-           var item = guessItem(list);
-           if (item) {
+            var item = guessItem(list);
+            if (item) {
                 updateMetadata(item);
-           } else {
+            } else {
                 multipleResultDialog(list);
-           }
-	}
+            }
+        }
     }
 
     // tries to find the correct item in list based off of the TMSref
@@ -198,7 +199,7 @@
             var suffix = " (" + item.Year + ")";
             titleString = titleString.endsWith(suffix) ? titleString : titleString + suffix;
         }
- 
+
         title.update(titleString);
         div.insert(title);
 
@@ -210,13 +211,13 @@
         return div;
     }
 
-    // generates an image or empty div based on if there is 
+    // generates an image or empty div based on if there is
     // any thumbnail art work for this item
     function generateItemImg(item) {
         if (item.Artwork && item.Artwork.length) {
              var art = item.Artwork[0];
              var thumbUrl = art.Thumbnail;
-            
+
              // hack to allow proxying of ttvdb.com images since they don't allow hot linking
              if (<?php echo $_SERVER['HTTPS'] == 'on' ? "false" : "true"?> &&  thumbUrl.startsWith("http://www.thetvdb.com")) {
                  thumbUrl = "<?php echo root_url ?>tv/ttvdb_proxy?url=" + thumbUrl.substring(22);
@@ -318,7 +319,7 @@
                    ?></select></dd>
                 <dt><?php echo t('Check for duplicates in') ?>: </dt>
                 <dd><select name="dupin"><?php
-			$allOn = ($schedule->dupin & dupsin_all )== dupsin_all;
+                        $allOn = ($schedule->dupin & dupsin_all )== dupsin_all;
                         echo '<option value="', dupsin_all, '"';
                         if ($allOn || $schedule->dupin == 0)
                             echo ' SELECTED';
@@ -332,17 +333,6 @@
                             echo ' SELECTED';
                         echo '>' . t('Previous recordings') . '</option>';
                    ?></select></dd>
-                <dt><?php echo t('Filter')?>:</dt>
-                <dd><select name="dupin2"><?php
-                        echo '<option value="0"';
-                        if ($schedule->dupin == 0)
-                            echo ' SELECTED';
-                        echo '>' . t('None') . '</option>';
-                        echo '<option value="', dupsin_newepisodes, '"';
-                        if ($schedule->dupin & dupsin_newepisodes)
-                            echo ' SELECTED';
-                        echo '>' . t('New Episodes Only') . '</option>';
-                   ?></select></dd>
                 <dt><?php echo t('Preferred Input') ?>:</dt>
                 <dd><?php input_select($schedule->prefinput, 'prefinput') ?></dd>
                 <dt><?php echo t('Internet Reference #') ?>:</dt>
@@ -351,6 +341,17 @@
                 <dd><input type="text" id="season" class="quantity" name="season" value="<?php echo html_entities($schedule->season) ?>"></dd>
                 <dt><?php echo t('Episode') ?>:</dt>
                 <dd><input type="text" id="episode" class="quantity" name="episode" value="<?php echo html_entities($schedule->episode) ?>"></dd>
+                <fieldset>
+                <legend><?php echo t('Filters') ?></legend>
+                <?php
+                foreach ($schedule->recordFilters() as $id => $filter) {
+                ?>
+                        <dt><label for="recordfilter_$id"><?php echo t($filter['description']) ?>:</label></dt>
+                        <dd><input type="checkbox" class="radio" id="recordfilter_<?php echo $id ?>" name="recordfilter_<?php echo $id ?>"<?php if ($filter['enabled']) echo ' CHECKED' ?> value="1"></dd>
+                <?php } ?>
+                </fieldset>
+                <fieldset>
+                <legend><?php echo t('Post Processing') ?></legend>
                 <dt><label for="autometadata"><?php echo t('Look up Metadata') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autometadata" name="autometadata"<?php if ($schedule->autometadata) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autocommflag"><?php echo t('Auto-flag commercials') ?>:</label></dt>
@@ -365,6 +366,9 @@
                 <dd><input type="checkbox" class="radio" id="autouserjob3" name="autouserjob3"<?php if ($schedule->autouserjob3) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autouserjob4"><?php echo setting('UserJobDesc4') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="autouserjob4" name="autouserjob4"<?php if ($schedule->autouserjob4) echo ' CHECKED' ?> value="1"></dd>
+                </fieldset>
+                <fieldset>
+                <legend><?php echo t('Schedule Options') ?></legend>
                 <dt><label for="inactive"><?php echo t('Inactive') ?>:</label></dt>
                 <dd><input type="checkbox" class="radio" id="inactive" name="inactive"<?php if ($schedule->inactive) echo ' CHECKED' ?> value="1"></dd>
                 <dt><label for="autoexpire"><?php echo t('Auto-expire recordings') ?>:</label></dt>
@@ -379,6 +383,7 @@
                 <dt><?php echo t('End Late') ?>:</dt>
                 <dd><input type="text" class="quantity" name="endoffset" value="<?php echo html_entities($schedule->endoffset) ?>">
                     <?php echo t('minutes') ?></dd>
+                </fieldset>
             </dl>
 
 <div style="display: none;" id="message-dialog">

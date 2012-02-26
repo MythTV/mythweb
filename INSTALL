@@ -410,7 +410,7 @@ mythweb.whatever.
 4b.  For /etc/hosts: On all of your client browser machines, add
 something like the following to /etc/hosts:
 
-192.186.0.3	mythweb.local mythweb
+192.186.0.3    mythweb.local mythweb
 
 Be sure to substitute the IP address at which lighttpd is reachable, of
 course.  Also, take note that some systems are particular about the

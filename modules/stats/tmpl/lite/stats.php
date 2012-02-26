@@ -24,7 +24,7 @@
 
 <div id="content_wrapper">
 
-	<form id="stats_form" name="stats_form" action="stats">
+    <form id="stats_form" name="stats_form" action="stats">
 
         <div id="query_time_div">
             <select name="query_time">
@@ -50,7 +50,7 @@
             <input type="submit" value="go">
         </div>
 
-	</form>
+    </form>
 
     <h2><?php echo t('Recording Statistics') ?></h2>
 

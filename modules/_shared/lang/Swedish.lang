@@ -293,6 +293,7 @@
     Kommandon
 "Commands:"
     Kommandon:
+"Commercial free"
 "Commercials Flagged"
     Reklam markerad
 "commfree"
@@ -462,12 +463,6 @@
     Undgå
 "Everything"
     Allt
-"Exclude Generic Episodes"
-    Exkludera generiska avsnitt
-"Exclude Repeat and Generic Episodes"
-    Exkludera upprepade och generiska avsnitt
-"Exclude Repeat Episodes"
-    Exkludera upprepade avsnitt
 "Exec. Producer"
     Producent
 "Extended Check"
@@ -478,8 +473,6 @@
     Filstorlek
 "film"
     film
-"Filter"
-    Filter
 "Filters"
     Filter
 "Find Date & Time Options"
@@ -500,6 +493,7 @@
     Färdig
 "First recording"
     Första inspelning
+"First showing"
 "First showing of each episode"
     Första visning av alla avsnitt
 "Flag Commercials"
@@ -566,6 +560,7 @@
     Höjd
 "Hide"
     Göm
+"High definition"
 "Home"
     Hem
 "Hosted by"
@@ -576,6 +571,7 @@
     Timformat
 "hue"
     färgton
+"Identifiable episode"
 "Ignore generic shows"
     Ignorera allmänna visningar
 "Ignore scheduled shows"
@@ -798,9 +794,8 @@
     Spela aldrig in
 "New"
     Ny
+"New episode"
 "New episodes only"
-    Endast nya avsnitt
-"New Episodes Only"
     Endast nya avsnitt
 "New Group"
     Ny grupp
@@ -957,6 +952,7 @@
     Möjliga konflikter
 "Possible conflicts with this show"
     Möjliga konflikter med denna visning
+"Post Processing"
 "Power"
     Avancerat
 "Power Search"
@@ -980,6 +976,7 @@
     Föregående Inspelning
 "Previous recordings"
     Tidigare inspelningar
+"Primetime"
 "Priority for a category"
     Prioritet för en kategori
 "Priority for a category type"
@@ -1369,6 +1366,7 @@
 "There was a problem saving your playlist"
     Det uppstod ett problem med att spara din spellista
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     Denna spellista har redan laddats!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

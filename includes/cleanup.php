@@ -29,8 +29,8 @@
 /**/
     function &fix_crlfxy(&$array) {
         foreach ($array as $key => $val) {
-			if (is_array($val))
-				fix_crlfxy($array[$key]);
+            if (is_array($val))
+                fix_crlfxy($array[$key]);
             elseif (is_string($val)) {
                 $array[$key] = str_replace("\r\n", "\n", $val);
             // Process any imagemap submissions to make sure we also get the name itself

@@ -278,6 +278,7 @@
 "color"
 "Commands"
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
     Reklamy označeny
 "commfree"
@@ -435,10 +436,6 @@
     Chybující
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
-    S vyjímkou opakujících se epizod
 "Exec. Producer"
 "Extended Check"
 "ffmpeg with MP3 support not detected"
@@ -447,8 +444,6 @@
     Velikost souboru
 "film"
     film
-"Filter"
-    Filtr
 "Filters"
     Filtry
 "Find Date & Time Options"
@@ -464,6 +459,7 @@
 "Finished"
 "First recording"
     První nahrávání
+"First showing"
 "First showing of each episode"
     První zobrazení každé epizody
 "Flag Commercials"
@@ -517,6 +513,7 @@
     Výška
 "Hide"
     Skrýt
+"High definition"
 "Home"
     Domů
 "Hosted by"
@@ -526,6 +523,7 @@
     Formát hodin
 "hue"
     odstín
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -688,9 +686,8 @@
     Nikdy nenahrávat
 "New"
     Nový
+"New episode"
 "New episodes only"
-    Pouze nové epizody
-"New Episodes Only"
     Pouze nové epizody
 "New Group"
     Nová skupina
@@ -794,6 +791,7 @@
 "Possible conflicts"
     Možné konflikty
 "Possible conflicts with this show"
+"Post Processing"
 "Power"
 "Power Search"
     Pokročilé vyhledávání
@@ -810,6 +808,7 @@
     Předchozí nahrávka
 "Previous recordings"
     Předchozí nahrávky
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -1087,6 +1086,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

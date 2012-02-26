@@ -796,11 +796,11 @@ class Program extends MythBase {
                            WHERE recordedmarkup.chanid    = ?
                              AND recordedmarkup.starttime = FROM_UNIXTIME(?)
                              AND recordedmarkup.type      IN (10, 11, 12, 13, 14)
- 	                GROUP BY recordedmarkup.type
+                        GROUP BY recordedmarkup.type
                         ORDER BY SUM((SELECT IFNULL(rm.mark, recordedmarkup.mark)
- 	                                FROM recordedmarkup AS rm
+                                        FROM recordedmarkup AS rm
                                        WHERE rm.chanid = recordedmarkup.chanid
- 	                                 AND rm.starttime = recordedmarkup.starttime
+                                         AND rm.starttime = recordedmarkup.starttime
                                          AND rm.type IN (10, 11, 12, 13, 14)
                                          AND rm.mark > recordedmarkup.mark
                                 ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC

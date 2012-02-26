@@ -206,6 +206,7 @@
 "Commands"
     Opdrachten
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
 "commfree"
     reclamevrij
@@ -323,9 +324,6 @@
 "Erroring"
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
 "Exec. Producer"
     Uitv. Producent
 "Extended Check"
@@ -333,7 +331,6 @@
 "File Size"
     bestandsgrootte
 "film"
-"Filter"
 "Filters"
 "Find Date & Time Options"
     Datum &amp; tijd zoeken, opties
@@ -351,6 +348,7 @@
     fijn afstemmen
 "Finished"
 "First recording"
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
 "FLV Width"
@@ -399,6 +397,7 @@
     HDTV
 "Height"
 "Hide"
+"High definition"
 "Home"
 "Hosted by"
 "Hour"
@@ -407,6 +406,7 @@
     Weergave Tijd
 "hue"
     verzadiging
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -566,9 +566,8 @@
     Nooit Opnemen
 "New"
     Nieuw
+"New episode"
 "New episodes only"
-    Alleen nieuwe afleveringen
-"New Episodes Only"
     Alleen nieuwe afleveringen
 "New Group"
     Nieuwe groep
@@ -669,6 +668,7 @@
 "Possible conflicts"
 "Possible conflicts with this show"
     Mogelijk conflict met dit programma
+"Post Processing"
 "Power"
 "Power Search"
     Geavanceerd zoeken
@@ -684,6 +684,7 @@
 "Previous Recording"
 "Previous recordings"
     Eerdere opnames
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -984,6 +985,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

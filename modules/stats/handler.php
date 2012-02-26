@@ -30,15 +30,12 @@
 
     $limit = 'LIMIT 10';
     if (is_numeric($_REQUEST['count_dropdown']))
-    	$limit = 'LIMIT '.$_REQUEST['count_dropdown'];
+        $limit = 'LIMIT '.$_REQUEST['count_dropdown'];
     if ($_REQUEST['count_dropdown'] == 'all')
-    	$limit = '';
+        $limit = '';
 
-// How many tuners are tehre?
-    $tuners = $db->query_col('SELECT COUNT(*)
-                                FROM capturecard');
 
-// Get how many show titles their are
+// Get how many show titles there are
     $title_count = $db->query_num_rows('SELECT DISTINCT title
                                           FROM oldrecorded'.$where);
 
@@ -64,7 +61,7 @@
 // Get the top ten recorded shows
     $sh = $db->query('SELECT title,
                              COUNT(programid)               AS recorded,
-		                     MAX(UNIX_TIMESTAMP(starttime)) AS last_recorded
+                             MAX(UNIX_TIMESTAMP(starttime)) AS last_recorded
                         FROM oldrecorded '.$where.'
                     GROUP BY title
                     ORDER BY recorded DESC, last_recorded, title

@@ -11,6 +11,18 @@
 /**/
 
 /**
+ *  Generates a schedule filter paramater from the POST parameters
+/**/
+    function generateFilter() {
+        $total = 0;
+        foreach (Schedule::availableRecordFilters() as $id => $filter) {
+            $enabled = intval($_POST["recordfilter_$id"]);
+            $total |= $enabled << $id;
+        }
+        return $total;
+    }
+
+/**
  * Prints a <select> of the available recording inputs
 /**/
     function input_select($selected, $ename='prefinput') {

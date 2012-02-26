@@ -298,6 +298,7 @@
     Órdenes
 "Commands:"
     Órdenes:
+"Commercial free"
 "Commercials Flagged"
     Anuncios Marcados
 "commfree"
@@ -478,8 +479,6 @@
     Tamaño de Archivo
 "film"
     película
-"Filter"
-    Filtro
 "Filters"
     Filtros
 "Find Date & Time Options"
@@ -500,6 +499,7 @@
     Finalizada
 "First recording"
     Primera grabación
+"First showing"
 "First showing of each episode"
     Primera emisión de cada episodio
 "Flag Commercials"
@@ -565,6 +565,7 @@
     Altura
 "Hide"
     Ocultar
+"High definition"
 "Home"
     Inicio
 "Hosted by"
@@ -575,6 +576,7 @@
     Formato de Hora
 "hue"
     matiz
+"Identifiable episode"
 "Ignore generic shows"
     Ignorar programas genéricos
 "Ignore scheduled shows"
@@ -795,10 +797,9 @@
     Nunca Grabar
 "New"
     Nuevos
+"New episode"
 "New episodes only"
     Sólo nuevos episodios
-"New Episodes Only"
-    Sólo Nuevos Episodios
 "New Group"
     Nuevo Grupo
 "New Search"
@@ -960,6 +961,7 @@
     Posibles conflictos
 "Possible conflicts with this show"
     Posibles conflictos con este programa
+"Post Processing"
 "Power"
     Avanzada
 "Power Search"
@@ -983,6 +985,7 @@
     Grabación Anterior
 "Previous recordings"
     Grabaciones anteriores
+"Primetime"
 "Priority for a category"
     Prioridad de una categoría
 "Priority for a category type"
@@ -1379,6 +1382,7 @@
 "There was a problem saving your playlist"
     Hubo un problema al guardar su lista de reproducción
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
     ¡Esta lista de reproducción ya está cargada!
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"

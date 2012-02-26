@@ -21,14 +21,14 @@
         <br /><?php echo t('Currently Browsing:  $1', strftime($_SESSION['date_statusbar'], $list_starttime)) ?><br />
             <?php echo t('Jump to') ?><br />
             <select name="daytime"><?php
-		$day=getdate($start_time);
-		$start=$start_time - $day['hours'] * 60 * 60 - $day['minutes'] * 60;
-		for ($t=0;$t<48;$t++) {
-		    //echo "<option value=\"".($start + $t * 30 * 60)."\"";
-		    echo "<option value=\"".date('Hi',$start + $t * 30 * 60)."\"";
-		    if ($start+$t*30*60 <= $start_time && $start+($t+1)*30*60 > $start_time )
-		        echo ' SELECTED';
-		    echo '>'.date('g:i A',$start+$t*30*60).'</option>';
+                $day=getdate($start_time);
+                $start=$start_time - $day['hours'] * 60 * 60 - $day['minutes'] * 60;
+                for ($t=0;$t<48;$t++) {
+                    //echo "<option value=\"".($start + $t * 30 * 60)."\"";
+                    echo "<option value=\"".date('Hi',$start + $t * 30 * 60)."\"";
+                    if ($start+$t*30*60 <= $start_time && $start+($t+1)*30*60 > $start_time )
+                        echo ' SELECTED';
+                    echo '>'.date('g:i A',$start+$t*30*60).'</option>';
                 }
                 ?></select><br />
             <select name="date"><?php
@@ -57,7 +57,7 @@
         // Go through each channel and load/print its info - use references to avoid "copy" overhead
         $channel_count = 0;
         $displayed_channels = array();
-		$channels = Channel::getChannelList();
+        $channels = Channel::getChannelList();
         foreach ($channels as $key) {
         // Ignore channels with no number
             if (strlen(Channel::find($key)->channum) < 1)
@@ -92,6 +92,6 @@
         <b><a href="<?php echo root_url ?>tv/channel/<?php echo $channel->chanid ?>/<?php echo date('Ymd', $start_time) ?>">
         <?php echo $_SESSION["prefer_channum"] ? $channel->channum : $chann->callsign ?>&nbsp;
         <?php echo $_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum ?> </a></b>
-    	<a href="<?php echo root_url ?>tv/detail/<?php echo $channel->chanid ?>/<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
+        <a href="<?php echo root_url ?>tv/detail/<?php echo $channel->chanid ?>/<?php echo $channel->programs[0]->starttime ?>"><?php echo $channel->programs[0]->title ?></a><br />
         <?php
     }

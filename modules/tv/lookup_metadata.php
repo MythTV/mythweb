@@ -19,6 +19,7 @@
                    'Inetref'      => $_REQUEST['inetref'],
                    'Season'       => $_REQUEST['season'],
                    'Episode'      => $_REQUEST['episode'],
-                   'GrabberType'  => $_REQUEST['grabbertype']);
+                   'GrabberType'  => $_REQUEST['grabbertype'],
+                   'AllowGeneric' => $_REQUEST['allowgeneric']);
 
     echo MythBackend::find()->httpRequestAsJson($url, $args);

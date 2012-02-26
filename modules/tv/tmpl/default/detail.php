@@ -106,11 +106,12 @@
         new Ajax.Request('<?php echo root_url ?>tv/lookup_metadata',
                          {
                             parameters: {
-                                              'title'    : "<?php echo $schedule->title ?>",
-                                              'subtitle' : "<?php echo $schedule->subtitle ?>",
-                                              'inetref'  : "<?php echo ($program ? $program->inetref : $schedule->inetref) ?>",
-                                              'season'   : "<?php echo ($program ? $program->season : $schedule->season) ?>",
-                                              'episode'  : "<?php echo ($program ? $program->episode : $schedule->episode) ?>"
+                                              'title'        : "<?php echo $schedule->title ?>",
+                                              'subtitle'     : "<?php echo $schedule->subtitle ?>",
+                                              'inetref'      : "<?php echo ($program ? $program->inetref : $schedule->inetref) ?>",
+                                              'season'       : "<?php echo ($program ? $program->season : $schedule->season) ?>",
+                                              'episode'      : "<?php echo ($program ? $program->episode : $schedule->episode) ?>",
+                                              'allowgeneric' : "true"
                                         },
                             asynchronous: true,
                             method: 'get',
@@ -124,14 +125,14 @@
     // if metadata is found inserts a home page then update the links
     function detailOnMetadata(transport) {
         var list = transport.responseJSON.VideoLookupList;
-      
+
         updateHomePage(list.VideoLookups[0] || {});
 
     }
 
     // silently fail (no need to disrupt the page)
     function detailOnMetadataFailure(transport) {
-    } 
+    }
 
     function updateHomePage(item) {
          var homePage = $("home-page");
@@ -150,8 +151,8 @@
               homePage.href = item.HomePage;
          } else {
               $($$(".x-links")[0].children[1]).insert({top:
-                  new Element("a", 
-                      {href: item.HomePage, 
+                  new Element("a",
+                      {href: item.HomePage,
                        target: "_new", id: "home-page"}).
                       update(item.Title + " " + "<?php echo t("Metadata Home Page") ?>")});
          }
@@ -161,9 +162,9 @@
          }  else {
               var mhp = $("metadata-home-page");
               mhp && mhp.insert(
-                         new Element("a", 
-                              {id: "metadata-home-page-link", 
-                               href: item.HomePage, 
+                         new Element("a",
+                              {id: "metadata-home-page-link",
+                               href: item.HomePage,
                                target: "_new"}).
                               update("<?php echo t("Metadata Home Page")?>")
                           );
@@ -262,7 +263,7 @@
             // Report transcoded status for recordings
             if ($program->filename) {
                 if ($program->is_transcoded)
-                	echo t(' TRANSCODED');
+                    echo t(' TRANSCODED');
             }
             ?></td>
         </tr><?php

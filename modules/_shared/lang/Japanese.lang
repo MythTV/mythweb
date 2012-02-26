@@ -203,6 +203,7 @@
 "Commands"
     コマンド
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
 "commfree"
     CMカット
@@ -321,9 +322,6 @@
 "Erroring"
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
 "Exec. Producer"
     製作責任者
 "Extended Check"
@@ -331,7 +329,6 @@
 "File Size"
     ファイルサイズ
 "film"
-"Filter"
 "Filters"
 "Find Date & Time Options"
     日時オプション
@@ -350,6 +347,7 @@
 "Finished"
 "First recording"
     最初の録画
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
 "FLV Width"
@@ -396,6 +394,7 @@
 "HDTV"
 "Height"
 "Hide"
+"High definition"
 "Home"
 "Hosted by"
     主催
@@ -404,6 +403,7 @@
 "Hour Format"
     時間書式
 "hue"
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -565,8 +565,8 @@
 "Never Record"
     もう録画しない
 "New"
+"New episode"
 "New episodes only"
-"New Episodes Only"
 "New Group"
 "New Search"
 "New Titles, Premieres"
@@ -667,6 +667,7 @@
 "Possible conflicts"
 "Possible conflicts with this show"
     次の番組と衝突しています
+"Post Processing"
 "Power"
     パワー
 "Power Search"
@@ -684,6 +685,7 @@
 "Previous Recording"
 "Previous recordings"
     以前の録画
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -986,6 +988,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

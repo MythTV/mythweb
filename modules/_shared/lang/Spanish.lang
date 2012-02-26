@@ -268,6 +268,7 @@
 "Commands"
     Comandos
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
     Comerciales Marcados
 "commfree"
@@ -401,9 +402,6 @@
 "Erroring"
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
 "Exec. Producer"
     Productor ejec.
 "Extended Check"
@@ -411,7 +409,6 @@
 "File Size"
     tamaño fichero
 "film"
-"Filter"
 "Filters"
 "Find Date & Time Options"
     Opciones Búsqueda Fecha y Hora
@@ -430,6 +427,7 @@
 "Finished"
 "First recording"
     Primera grabación
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
 "FLV Width"
@@ -479,6 +477,7 @@
     HDTV
 "Height"
 "Hide"
+"High definition"
 "Home"
 "Hosted by"
 "Hour"
@@ -487,6 +486,7 @@
     Formato Hora
 "hue"
     tono
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -651,8 +651,8 @@
 "Never Record"
     Nunca grabar
 "New"
+"New episode"
 "New episodes only"
-"New Episodes Only"
 "New Group"
 "New Search"
 "New Titles, Premieres"
@@ -758,6 +758,7 @@
 "Possible conflicts"
 "Possible conflicts with this show"
     Posibles conflictos con este programa
+"Post Processing"
 "Power"
     Avanzada
 "Power Search"
@@ -775,6 +776,7 @@
 "Previous Recording"
 "Previous recordings"
     Grabaciones anteriores
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -1082,6 +1084,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"

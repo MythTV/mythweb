@@ -212,6 +212,7 @@
 "Commands"
     Comandes
 "Commands:"
+"Commercial free"
 "Commercials Flagged"
 "commfree"
     sense anuncis
@@ -331,9 +332,6 @@
 "Erroring"
 "Escape"
 "Everything"
-"Exclude Generic Episodes"
-"Exclude Repeat and Generic Episodes"
-"Exclude Repeat Episodes"
 "Exec. Producer"
     Productor exec.
 "Extended Check"
@@ -341,7 +339,6 @@
 "File Size"
     mida de l'arxiu
 "film"
-"Filter"
 "Filters"
 "Find Date & Time Options"
     Opcions de recerca per data i hora
@@ -360,6 +357,7 @@
 "Finished"
 "First recording"
     Primer  enregistrament
+"First showing"
 "First showing of each episode"
 "Flag Commercials"
 "FLV Width"
@@ -409,6 +407,7 @@
     HDTV
 "Height"
 "Hide"
+"High definition"
 "Home"
 "Hosted by"
     Enmagatzemat a
@@ -418,6 +417,7 @@
     Format hora
 "hue"
     to
+"Identifiable episode"
 "Ignore generic shows"
 "Ignore scheduled shows"
 "IMDB"
@@ -583,8 +583,8 @@
 "Never Record"
     Mai enregistrar
 "New"
+"New episode"
 "New episodes only"
-"New Episodes Only"
 "New Group"
 "New Search"
 "New Titles, Premieres"
@@ -690,6 +690,7 @@
 "Possible conflicts"
 "Possible conflicts with this show"
     Possibles conflictes amb aquest programa
+"Post Processing"
 "Power"
     Avançat
 "Power Search"
@@ -707,6 +708,7 @@
 "Previous Recording"
 "Previous recordings"
     Enregistraments anteriors
+"Primetime"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -1014,6 +1016,7 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This Episode"
 "This playlist is already loaded!"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
