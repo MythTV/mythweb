@@ -918,7 +918,7 @@
     Korábbi felvétel
 "Previous recordings"
     Korábbi felvételek
-"Primetime"
+"Prime time"
 "Priority for a category"
 "Priority for a category type"
 "Priority for all matching titles"
@@ -1296,9 +1296,10 @@
 "There was a problem saving your playlist"
     Hibát találtam, a lejátszólistát mentem
 "TheTVDB"
-"This Episode"
+"This episode"
 "This playlist is already loaded!"
     Ez a lejétszólista már be van töltve!
+"This series"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Ez felül fogja írni a jelenleg még nem mentett lejátszólistát. Szeretnéd folytatni?
 "Thursday"

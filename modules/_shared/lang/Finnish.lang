@@ -977,7 +977,7 @@
     Aiempi tallennus
 "Previous recordings"
     Aiemmat tallennukset
-"Primetime"
+"Prime time"
 "Priority for a category"
     Prioriteetti luokalle
 "Priority for a category type"
@@ -1361,9 +1361,10 @@
 "There was a problem saving your playlist"
     Soittolistasi tallennuksessa ilmeni ongelma
 "TheTVDB"
-"This Episode"
+"This episode"
 "This playlist is already loaded!"
     Tämä Soittolista on jo ladattu!
+"This series"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Tämä tallentaa nykyisen, tallentamattoman Soittolistasi. Haluatko varmasti jatkaa?
 "Thursday"

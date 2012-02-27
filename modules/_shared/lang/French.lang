@@ -986,7 +986,7 @@
     Enregistrement précédent
 "Previous recordings"
     Enregistrements précédents
-"Primetime"
+"Prime time"
 "Priority for a category"
     Priorité d'une catégorie
 "Priority for a category type"
@@ -1387,9 +1387,10 @@
     Il y a eu un problème lors de la sauvegarde de votre liste de lecture
 "TheTVDB"
     La base de données TVDB
-"This Episode"
+"This episode"
 "This playlist is already loaded!"
     Cette liste de lecture est déjà chargée !
+"This series"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
 "Thursday"

@@ -985,7 +985,7 @@
     Grabación Anterior
 "Previous recordings"
     Grabaciones anteriores
-"Primetime"
+"Prime time"
 "Priority for a category"
     Prioridad de una categoría
 "Priority for a category type"
@@ -1382,9 +1382,10 @@
 "There was a problem saving your playlist"
     Hubo un problema al guardar su lista de reproducción
 "TheTVDB"
-"This Episode"
+"This episode"
 "This playlist is already loaded!"
     ¡Esta lista de reproducción ya está cargada!
+"This series"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Se sobreescribirá su actual lista de reproducción no guardada. ¿Seguro que desea continuar?
 "Thursday"

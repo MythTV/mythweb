@@ -10,7 +10,8 @@
 t('New episode');
 t('Identifiable episode');
 t('First showing');
-t('Primetime');
+t('Prime time');
 t('Commercial free');
 t('High definition');
-t('This Episode');
+t('This episode');
+t('This series');
