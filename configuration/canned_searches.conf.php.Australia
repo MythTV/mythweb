@@ -20,6 +20,6 @@
 
 $Canned_Searches['Movies on Aussie TV (non HD)'] = '( program.category_type like "%movie%" OR program.title like "%movie%" ) AND timediff(program.endtime, program.starttime) > "01:10:00" and callsign not like "%HD%"';
 
-$Canned_Searches['Movies on Aussie TV (HD)'] = '( program.category_type like "%movie%" OR program.title like "%movie%" ) AND timediff(program.endtime, program.starttime) > "01:10:00" and callsign like "%HD%';
+$Canned_Searches['Movies on Aussie TV (HD)'] = '( program.category_type like "%movie%" OR program.title like "%movie%" ) AND timediff(program.endtime, program.starttime) > "01:10:00" and callsign like "%HD%"';
 
 ?>
