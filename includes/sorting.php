@@ -145,6 +145,12 @@
         return by_no_articles($a->subtitle, $b->subtitle);
     }
 
+    function by_season(&$a, &$b) {
+        $asep = $a->season.'x'.str_pad($a->episode,2,"0",STR_PAD_LEFT);
+        $bsep = $b->season.'x'.str_pad($b->episode,2,"0",STR_PAD_LEFT);
+        return strcasecmp($asep, $bsep);
+    }
+
     function by_type(&$a, &$b) {
         return strcasecmp($a->texttype, $b->texttype);
     }
