@@ -139,6 +139,7 @@
 "Allows you to search through other database tables when using a power search"
     Gir deg mulighet til å søke gjennom andre databasetabeller ved bruk av ekstra kraftig søkemetode
 "An error occurred while adding your playlist."
+    En feil oppstod når spillelisten din skulle legges til.
 "and"
     og
 "Any"
@@ -186,6 +187,7 @@
 "Back"
     Tilbake
 "Back Tab"
+    Fane tilbake
 "Back to the program listing"
     Tilbake til programoversikten
 "Back to the recorded programs"
@@ -271,6 +273,7 @@
 "Check for duplicates in"
     Kontroller for dubletter i
 "Children's Movies"
+    Barnefilmer
 "Choose Genre.."
     Velg sjanger..
 "Choose Type"
@@ -288,11 +291,13 @@
 "Closed Captioning"
     Undertekster
 "color"
+    farge
 "Commands"
     Kommandoer
 "Commands:"
     Kommandoer:
 "Commercial free"
+    Reklamefri
 "Commercials Flagged"
     Reklamer er markert
 "commfree"
@@ -452,6 +457,7 @@
 "Error"
     Feil
 "Error contacting server to retrieve metadata."
+    Feil, kunne ikke kontakte tjener for å hente metadata.
 "error: playgroup $1 exists"
     feil: avspillingsgruppen $1 eksisterer
 "Errored"
@@ -493,6 +499,7 @@
 "First recording"
     Første opptak
 "First showing"
+    Første visning
 "First showing of each episode"
     Første visning av hver episode
 "Flag Commercials"
@@ -560,6 +567,7 @@
 "Hide"
     Skjul
 "High definition"
+    High definition
 "Home"
     Hjem
 "Hosted by"
@@ -571,6 +579,7 @@
 "hue"
     fargetone
 "Identifiable episode"
+    Identifisert episode
 "Ignore generic shows"
     Ignorer generiske sendinger
 "Ignore scheduled shows"
@@ -613,6 +622,7 @@
 "Insert"
     Legg til
 "Internet Reference #"
+    Internett referansenummer
 "Jump"
     Gå
 "Jump Points"
@@ -687,6 +697,7 @@
 "Logs"
     Logger
 "Look up Metadata"
+    slå opp metadata
 "Low Space"
     Lite plass
 "Manual"
@@ -698,8 +709,11 @@
 "Max star rating for movies"
     Maksimalt antall stjerner for film
 "Metadata Home Page"
+    Metadata hjemmeside
 "Metadata Lookup"
+    Metadata oppslag
 "Metadata Lookup Error"
+    Oppslagsfeil for metadata
 "minutes"
     minutter
 "Missing Cover"
@@ -786,6 +800,7 @@
 "New"
     Ny
 "New episode"
+    Ny episode
 "New episodes only"
     Kun nye episoder
 "New Group"
@@ -807,6 +822,7 @@
 "No matching programs found."
     Ingen matchende programmer funnet.
 "No metadata results found."
+    Ingen metadata resultater funnet.
 "No Public Playlists"
     Ingen tilgjengelige spillelister
 "No recording schedules have been defined."
@@ -834,6 +850,7 @@
 "Off"
     Av
 "OK"
+    OK
 "Only a certain channel number"
     Kun et bestemt kanalnummer
 "Only channels marked as commercial free"
@@ -841,6 +858,7 @@
 "Only channels that carry a specific station"
     Kun kanaler som har en spesiell stasjon
 "Only display favorite channels"
+    Bare vis favorittkanaler
 "Only match commercial-free channels"
     Finn kun reklamefrie kanaler
 "Only match HD programs"
@@ -934,7 +952,9 @@
 "Playlists"
     Spillelister
 "Please enter an IMDB number or a title to do another search"
+    Vennligst legg til et IMDB nummer eller en tittel for å foreta et nytt søk
 "Please wait for the pending AJAX request"
+    Vennligst vent på AJAX-forespørsel
 "Plot"
     Plott
 "Plot:"
@@ -946,6 +966,7 @@
 "Possible conflicts with this show"
     Mulige konflikter for denne sendingen
 "Post Processing"
+    Etterprosessering
 "Power"
     Kraftig
 "Power Search"
@@ -971,6 +992,7 @@
 "Previous recordings"
     Tidligere opptak
 "Prime time"
+    Beste sendetid
 "Priority for a category"
     Prioritet for en kategori
 "Priority for a category type"
@@ -1238,10 +1260,13 @@
 "Searches will be performed against the title of all TV shows"
     Søk vil bli utført mot tittelen i alle TV sendinger
 "Seas/Ep"
+    Ses./Ep.
 "Season"
     Sesong
 "Select the correct show"
+    Velg riktig sending
 "Server returned invalid data when attempting to retrieve metadata."
+    Tjeneren returnerte ugyldige data under henting av metadata.
 "Server Statistics"
     Tjenerstatistikk
 "Set Host"
@@ -1361,15 +1386,19 @@
 "The requested recording schedule has been deleted."
     Det planlagte opptaket er slettet.
 "themoviedb"
+    themoviedb
 "There are no items in this Playlist!"
     Det er ingen elementer i denne spillelisten!
 "There was a problem saving your playlist"
     Det oppstod et problem under lagring av spillelisten din
 "TheTVDB"
+    TheTVDB
 "This episode"
+    Denne episoden
 "This playlist is already loaded!"
     Denne spillelisten er allerede åpnet!
 "This series"
+    Denne serien
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dette vil overskrive din gjeldende spilleliste. Er du sikker på du vil fortsette?
 "Thursday"
@@ -1568,6 +1597,7 @@
 "Written by"
     Skrevet av
 "xmltvid"
+    xmltvid
 "Year"
     År
 "Year:"
