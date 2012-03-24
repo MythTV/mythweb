@@ -701,7 +701,7 @@ class Program extends MythBase {
         $schedule->station     = $this->channel->callsign;       // Note that "callsign" becomes "station"
         $schedule->seriesid    = $this->seriesid;
         $schedule->programid   = $this->programid;
-        $schedule->search      = 0;
+//        $schedule->search      = 0;
         $schedule->inactive    = 0;
     // Save the schedule -- it'll know what to do about the override
         $schedule->save($rectype);
