@@ -156,6 +156,7 @@
 "Close Captioned priority"
 "Closed Captioning"
 "color"
+    colour
 "Commands"
 "Commands:"
 "Commercial free"
@@ -475,6 +476,7 @@
 "Only channels marked as commercial free"
 "Only channels that carry a specific station"
 "Only display favorite channels"
+    Only display favourite channels
 "Only match commercial-free channels"
 "Only match HD programs"
 "Only match non-recorded shows"
