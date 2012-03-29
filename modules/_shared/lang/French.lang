@@ -140,6 +140,7 @@
 "Allows you to search through other database tables when using a power search"
     Vous permet de rechercher parmi d'autres tables de la base de données lors d'une recherche avancée
 "An error occurred while adding your playlist."
+    Une erreur est survenue lors de l'ajout de votre liste de lecture
 "and"
     et
 "Any"
@@ -274,6 +275,7 @@
 "Check for duplicates in"
     Chercher les doublons dans
 "Children's Movies"
+    Vidéos pour les enfants
 "Choose Genre.."
     Choisir le genre...
 "Choose Type"
@@ -291,11 +293,13 @@
 "Closed Captioning"
     Sous-titrage codé
 "color"
+    couleur
 "Commands"
     Commandes
 "Commands:"
     Commandes :
 "Commercial free"
+    Sans publicité
 "Commercials Flagged"
     Publicités balisées
 "commfree"
@@ -455,6 +459,7 @@
 "Error"
     Erreur
 "Error contacting server to retrieve metadata."
+    Erreur pendant la connexion au serveur de métadonnées
 "error: playgroup $1 exists"
     erreur : le groupe de lecture $1 existe
 "Errored"
@@ -496,6 +501,7 @@
 "First recording"
     Premier enregistrement
 "First showing"
+    Première diffusion
 "First showing of each episode"
     Première diffusion de chaque épisode
 "Flag Commercials"
@@ -563,6 +569,7 @@
 "Hide"
     Cacher
 "High definition"
+    Haute Définition
 "Home"
     Accueil
 "Hosted by"
@@ -574,6 +581,7 @@
 "hue"
     teinte
 "Identifiable episode"
+    Épisode identifiable
 "Ignore generic shows"
     Ignorer les émissions génériques
 "Ignore scheduled shows"
@@ -623,6 +631,7 @@
 "Insert"
     Inser
 "Internet Reference #"
+    N° référence internet
 "Jump"
     Aller
 "Jump Points"
@@ -700,6 +709,7 @@
 "Logs"
     Journaux
 "Look up Metadata"
+    Récupérer les métadonnées
 "Low Space"
     Espace faible
 "Manual"
@@ -711,8 +721,11 @@
 "Max star rating for movies"
     Nombre maximal d'étoiles pour les films
 "Metadata Home Page"
+    Page d'accueil des métadonnées
 "Metadata Lookup"
+    Recherche des métadonnées
 "Metadata Lookup Error"
+    Erreur lors de la rcherche des métadonnées
 "minutes"
     minutes
 "Missing Cover"
@@ -802,6 +815,7 @@
 "New"
     Nouveau
 "New episode"
+    Nouvel épisode
 "New episodes only"
     Seulement les nouveaux épisodes
 "New Group"
@@ -823,6 +837,7 @@
 "No matching programs found."
     Aucun programme correspondant trouvé.
 "No metadata results found."
+    Aucune métadonnée trouvée
 "No Public Playlists"
     Aucune liste de lecture publique
 "No recording schedules have been defined."
@@ -857,6 +872,7 @@
 "Only channels that carry a specific station"
     Seulement les chaînes d'une station spécifique
 "Only display favorite channels"
+    Seulement les chaînes favorites
 "Only match commercial-free channels"
     Seulement les chaînes sans publicité
 "Only match HD programs"
@@ -950,7 +966,9 @@
 "Playlists"
     Listes de lecture
 "Please enter an IMDB number or a title to do another search"
+    Entrer un N° IMDB ou un titre pour une nouvelle recherche
 "Please wait for the pending AJAX request"
+    Veillez patienter pendant la requête AJAX
 "Plot"
     Résumé
 "Plot:"
@@ -962,6 +980,7 @@
 "Possible conflicts with this show"
     Conflits potentiels avec cette diffusion
 "Post Processing"
+    Traitement ultérieur
 "Power"
     Avancée
 "Power Search"
@@ -987,6 +1006,7 @@
 "Previous recordings"
     Enregistrements précédents
 "Prime time"
+    Début de soirée
 "Priority for a category"
     Priorité d'une catégorie
 "Priority for a category type"
@@ -1254,10 +1274,13 @@
 "Searches will be performed against the title of all TV shows"
     Les recherches seront effectuées sur le titre de tous les programmes TV
 "Seas/Ep"
+    Sais/Ép
 "Season"
     Saison
 "Select the correct show"
+    Sélectionner le bon programme
 "Server returned invalid data when attempting to retrieve metadata."
+    Le serveur a retourné des données invalides pendant la recherche de métadonnées
 "Server Statistics"
     Statistiques du serveur
 "Set Host"
@@ -1315,6 +1338,7 @@
 "Songs Rated"
     Morceaux évalués
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
+    Désolé mais vous ne pouvez pas ajouter cette liste de lecture parce qu'elle créerait une dépendance circulaire
 "sortby_channum"
     Classer les chaînes par numéro de chaîne (coché) ou par indicatif (décoché)
 "sourceid"
@@ -1388,9 +1412,11 @@
 "TheTVDB"
     La base de données TVDB
 "This episode"
+    Cet épisode
 "This playlist is already loaded!"
     Cette liste de lecture est déjà chargée !
 "This series"
+    Cette série
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
 "Thursday"
@@ -1541,6 +1567,7 @@
 "Videos"
     Vidéos
 "VideoStartupDir"
+    Répertoire de démarrage des vidéos
 "VideoTreeLoadMetaData"
     Répertoire de base pour le stockage des vidéos
 "VideoTreeNoDB"
