@@ -299,6 +299,7 @@
 "Commands:"
     Órdenes:
 "Commercial free"
+    Sin anuncios
 "Commercials Flagged"
     Anuncios Marcados
 "commfree"
@@ -500,6 +501,7 @@
 "First recording"
     Primera grabación
 "First showing"
+    Primera emisión
 "First showing of each episode"
     Primera emisión de cada episodio
 "Flag Commercials"
@@ -535,6 +537,7 @@
 "Genre"
     Género
 "genre_colors"
+    genre_colors
 "Genres"
     Géneros
 "Go"
@@ -577,6 +580,7 @@
 "hue"
     matiz
 "Identifiable episode"
+    Episodio identificable
 "Ignore generic shows"
     Ignorar programas genéricos
 "Ignore scheduled shows"
@@ -664,6 +668,7 @@
 "Left"
     Quedan
 "leftl"
+    leftl
 "length"
     duración
 "Length"
@@ -693,7 +698,9 @@
 "Local Server Statistics"
     Estadísticas del Servidor Local
 "LOCKDOWN_NOTICE"
+    LOCKDOWN_NOTICE
 "LOCKDOWN_NOTICE_2"
+    LOCKDOWN_NOTICE_2
 "Logs"
     Registros
 "Look up Metadata"
@@ -761,6 +768,7 @@
 "MythMusic_Prefixes_To_Ignore"
     MythMusic_Prefixes_To_Ignore
 "MythTV"
+    MythTV
 "MythTV Status"
     Estado de MythTV
 "MythVideo Artwork Dir"
@@ -770,9 +778,13 @@
 "MythVideo on the web."
     MythVideo en la web.
 "mythvideo.db_folder_view"
+    mythvideo.db_folder_view
 "mythvideo.ImageCacheSize"
+    mythvideo.ImageCacheSize
 "mythvideo.sort_ignores_case"
+    mythvideo.sort_ignores_case
 "MythWeb"
+    MythWeb
 "MythWeb Defaults"
     Valores Predeterminados de MythWeb
 "MythWeb Global Defaults"
@@ -798,6 +810,7 @@
 "New"
     Nuevos
 "New episode"
+    Nuevo episodio
 "New episodes only"
     Sólo nuevos episodios
 "New Group"
@@ -807,6 +820,7 @@
 "New Titles, Premieres"
     Tí­tulos Nuevos, Estrenos
 "No"
+    No
 "NO DATA"
     SIN DATOS
 "No Frontends allow remote control."
@@ -962,6 +976,7 @@
 "Possible conflicts with this show"
     Posibles conflictos con este programa
 "Post Processing"
+    Post Procesamiento
 "Power"
     Avanzada
 "Power Search"
@@ -977,6 +992,7 @@
 "Prefer movies when shown at night"
     Preferir películas de emisión nocturna
 "prefer_channum"
+    prefer_channum
 "Preferred Input"
     Entrada Preferida
 "Presented by"
@@ -986,6 +1002,7 @@
 "Previous recordings"
     Grabaciones anteriores
 "Prime time"
+    Horario de máxima audiencia
 "Priority for a category"
     Prioridad de una categoría
 "Priority for a category type"
@@ -1377,15 +1394,19 @@
 "The requested recording schedule has been deleted."
     La programación solicitada ha sido eliminada.
 "themoviedb"
+    themoviedb
 "There are no items in this Playlist!"
     ¡No hay elementos en esta Lista de Reproducción!
 "There was a problem saving your playlist"
     Hubo un problema al guardar su lista de reproducción
 "TheTVDB"
+    TheTVDB
 "This episode"
+    Este episodio
 "This playlist is already loaded!"
     ¡Esta lista de reproducción ya está cargada!
 "This series"
+    Esta serie
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Se sobreescribirá su actual lista de reproducción no guardada. ¿Seguro que desea continuar?
 "Thursday"
@@ -1449,6 +1470,7 @@
 "TV functions, including recorded programs."
     Funciones de TV, incluyendo programas grabados.
 "TV.com"
+    TV.com
 "type"
     tipo
 "Type"
