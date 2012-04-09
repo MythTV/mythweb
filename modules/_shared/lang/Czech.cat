@@ -1,99 +1,99 @@
 "Action"
-    Action
+    Akční
     \b(?:action|adven)
 "Adult"
-    Adult
+    Erotický
     \b(?:adult|erot)
 "Animals"
-    Animals
+    O zvířatech
     \b(?:animal|tiere)
 "Art_Music"
-    Art_Music
+    Hudební
     \b(?:art|dance|music|cultur)
 "Business"
-    Business
+    Biznis
     \b(?:biz|busine)
 "Children"
-    Children
+    Dětský
     \b(?:child|infan|animation|deti)
 "Comedy"
-    Comedy
+    Komedie
     \b(?:comed|entertain|sitcom|zabava)
 "Crime_Mystery"
-    Crime / Mystery
+    Krimi / Mysteriózní
     \b(?:crim|myster)
 "Documentary"
-    Documentary
+    Dokumentární
     \b(?:doc|dokument)
 "Drama"
     Drama
     \b(?:drama)
 "Educational"
-    Educational
+    Vzdělávací
     \b(?:edu|interests)
 "Food"
-    Food
+    Vaření
     \b(?:food|cook|drink)
 "Game"
-    Game
+    Herní
     \b(?:game)
 "Health_Medical"
-    Health / Medical
+    Zdraví
     \b(?:health|medic)
 "History"
-    History
+    Historický
     \b(?:hist)
 "Horror"
-    Horror
+    Horor
     \b(?:horror)
 "HowTo"
-    HowTo
+    Jak na to
     \b(?:how|home|house|garden)
 "Misc"
-    Misc
+    Různý
     \b(?:special|variety|info|collect)
 "News"
-    News
+    Spravodajství
     \b(?:news|current|zpravy)
 "Reality"
     Reality
     \b(?:reality)
 "Romance"
-    Romance
+    Romantický
     \b(?:romance)
 "SciFi_Fantasy"
     SciFi / Fantasy
     \b(?:fantasy|sci\w*\W*fi)
 "Science_Nature"
-    Science / Nature
+    Vědecký / Přírodopisní
     \b(?:science|nature|environment)
 "Shopping"
-    Shopping
+    Nakupování
     \b(?:shop)
 "Soaps"
-    Soaps
+    Mýdlová opera
     \b(?:soaps)
 "Spiritual"
-    Spiritual
+    Duchovní
     \b(?:spirit|relig)
 "Sports"
-    Sports
+    Sport
     \b(?:sport)
 "Talk"
-    Talk
+    Talk-show
     \b(?:talk)
 "Travel"
-    Travel
+    Cestopisní
     \b(?:travel)
 "Unknown"
-    Unknown
+    Neznámý
     
 "War"
-    War
+    Válečný
     \b(?:war)
 "Western"
     Western
     \b(?:west)
 "movie"
-    Movie
+    Film
     

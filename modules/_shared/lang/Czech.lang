@@ -1,4 +1,4 @@
-""
+﻿""
 " TRANSCODED"
 "# Tracks"
     # Stopy
@@ -89,6 +89,7 @@
 "Additional tables:"
     Další tabulky:
 "Admin Key"
+    Administrátorský klíč
 "Advanced"
     Rozšířené
 "Advanced Options"
@@ -131,10 +132,12 @@
     Všechny skladby
 "ALLOCINETYPE"
 "Allows you to match any string of any length (including zero length)"
+    Povolí vyhledávání řetězců libovolné délky (včetně nulové délky)
 "Allows you to match on a single character"
 "Allows you to search through other database tables when using a power search"
     Při použití pokročilého vyhledávání umožňuje vyhledat pomocí dalších databázových tabulek
 "An error occurred while adding your playlist."
+    Při přidávání playlistu se vyskytla chyba.
 "and"
     a
 "Any"
@@ -164,7 +167,9 @@
 "Audio Bitrate"
     Datový tok audia
 "Audio for Hearing Impaired"
+    Audio pro sluchově postižené
 "Audio for Visually Impaired"
+    Audio pro zrakově postižené
 "Auto Expire"
     Automatické vypršení
 "Auto-expire recordings"
@@ -191,6 +196,7 @@
 "Backend Status"
     Stav backendu
 "Backspace"
+    Krok zpět
 "Begin a New Search"
     Začít nové hledání
 "brightness"
@@ -238,6 +244,7 @@
 "Category"
     Kategorie
 "Category Legend"
+    Popis kategorie
 "CC"
     CC
 "Chan. Callsign"
@@ -262,6 +269,7 @@
 "Check for duplicates in"
     Zkontrolovat duplicity
 "Children's Movies"
+    Dětské filmy
 "Choose Genre.."
     Vybrat žánr
 "Choose Type"
@@ -276,9 +284,13 @@
 "Close Captioned priority"
 "Closed Captioning"
 "color"
+    barvy
 "Commands"
+    Příkazy
 "Commands:"
+    Příkazy:
 "Commercial free"
+    Bez reklam
 "Commercials Flagged"
     Reklamy označeny
 "commfree"
@@ -310,7 +322,9 @@
 "Currently Browsing:  $1"
     Právě prohlížíte:  $1
 "Currently Recording:  Edit"
+    Právě se nahrává: Editovat
 "Custom"
+    Vlastní
 "Custom Schedule"
     Vlastní rozvrh
 "Custom Search"
@@ -351,8 +365,10 @@
 "Delete Forever"
     Smazat navždy
 "DELETE this Saved Playlist"
+    SMAZAT tento uložený playlist
 "DeleteKey"
 "Depending on the Search type this is where you enter actual main search commands"
+    Vzhledem na typ vyhledávání sem můžete zadat aktuální hlavní vyhledávací příkazy
 "description"
     popis
 "Description"
@@ -390,6 +406,7 @@
 "Duplicate Check method"
     Metoda kontroly duplicit
 "Duplicates/Ignored"
+    Duplikáty/ignorované
 "Earlier"
     Dříve
 "Earlier Showing"
@@ -428,6 +445,7 @@
 "Error"
     Chyba
 "Error contacting server to retrieve metadata."
+    Chyba v kontaktováni serveru při získáni metadat.
 "error: playgroup $1 exists"
     chyba: skupina přehrávání $1 existuje
 "Errored"
@@ -436,8 +454,11 @@
     Chybující
 "Escape"
 "Everything"
+    Všechno
 "Exec. Producer"
+    Výkonný producent
 "Extended Check"
+    Rozšířená kontrola
 "ffmpeg with MP3 support not detected"
     ffmpeg s podporou MP3 nenalezen
 "File Size"
@@ -451,26 +472,36 @@
 "Find Day"
     Najít den
 "Find other showings of this program"
+    Najít další zobrazení tohoto programu
 "Find showings of this program"
+    Najít zobrazení tohoto programu
 "Find Time"
     Najít čas
 "Find Time must be of the format:  HH:MM:SS"
+    Čas musí být ve formátu:  HH:MM:SS
 "finetune"
+    Jemné ladění
 "Finished"
+    Dokončeno
 "First recording"
     První nahrávání
 "First showing"
+    První zobrazení
 "First showing of each episode"
     První zobrazení každé epizody
 "Flag Commercials"
     Označit reklamy
 "FLV Width"
+    FLV šířka
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
     Pro více informací o pokročilém vyhledávání jdi na:
 "Force HTTP for streams"
+    Vnutit HTTP pro streamy
 "Force HTTP/HTTPS port for streams"
+    Vnutit HTTP/HTTPS port pro streamy
 "Forced"
+    Vnucené
 "Forget Old"
     Zapomeň staré
 "format help"
@@ -498,6 +529,7 @@
     Google
 "Group timeslots every"
 "Guest Starring"
+    Dále hrají
 "Guide rating"
 "Guide Settings"
 "Handy Predefined Searches"
@@ -514,6 +546,7 @@
 "Hide"
     Skrýt
 "High definition"
+    HD
 "Home"
     Domů
 "Hosted by"
@@ -524,8 +557,10 @@
 "hue"
     odstín
 "Identifiable episode"
+    Identifikovatelná epizoda
 "Ignore generic shows"
 "Ignore scheduled shows"
+    Ignorovat naplánované pořady
 "IMDB"
     IMDB
 "IMDBTYPE"
@@ -602,22 +637,31 @@
 "Listings"
     Výpisy
 "Load"
+    Načíst
 "Load a Saved Playlist"
+    Načíst uložený playlist
 "Load Playlist"
+    Načíst playlist
 "Load Saved Playlists"
+    Načíst uložené playlisty
 "Load this Saved Playlist"
+    Načíst tento uložený playlist
 "LOADING"
+    NAČÍTÁVÁM
 "Local Server Statistics"
+    Statistiky lokálního serveru
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
     Logy
 "Look up Metadata"
 "Low Space"
+    Málo místa
 "Manual"
     Ručně
 "Match related callsigns"
 "matches"
+    shody
 "Max star rating for movies"
 "Metadata Home Page"
 "Metadata Lookup"
@@ -625,18 +669,23 @@
 "minutes"
     minuty
 "Missing Cover"
+    Chybějící obal
 "Modify priority by star rating (0.0 to 1.0 for movies only)"
 "Modify priority for a station on an input"
 "Modify priority for all inputs on a card"
+    Změnit priority pro všechny vstupy na kartě
 "Modify priority for an input (Input priority)"
 "Modify priority for every card on a host"
 "Modify unidentified episodes"
+    Změnit neidentifikované epizody
 "Monday"
     Pondělí
 "Mono"
     Mono
 "More"
+    Víc
 "more"
+    víc
 "Move Item Down in Playlist"
     Posuň položku v playlistu dolů
 "Move Item Up in Playlist"
@@ -675,6 +724,7 @@
 "MythWeb Skin"
     Skin MythWebu
 "MythWeb Template"
+    Šablona MythWebu
 "MythWeb Weather."
     MythWeb Počasí.
 "Name"
@@ -682,11 +732,13 @@
 "name"
     název
 "Narrow Your Search"
+    Upřesnit hledání
 "Never Record"
     Nikdy nenahrávat
 "New"
     Nový
 "New episode"
+    Nová epizoda
 "New episodes only"
     Pouze nové epizody
 "New Group"
@@ -694,16 +746,23 @@
 "New Search"
     Nové hledání
 "New Titles, Premieres"
+    Nové tituly, premiéry
 "No"
     Ne
 "NO DATA"
     ŽÁDNÁ DATA
 "No Frontends allow remote control."
+    Žádné frontendy nepovolují dálkové ovládaní
 "No Genre"
+    Žánr
 "No matches found"
+    Nebyly nalezeny žádné shody
 "No matching programs found."
+    Žádné shodné programy nenalezeny.
 "No metadata results found."
+    Nenalezeny žádné výsledky metadat.
 "No Public Playlists"
+    Žádný veřejný playlist.
 "No recording schedules have been defined."
     Žádné rozvrhy nahrávání nebyly definovány.
 "No. of recordings to keep"
@@ -713,62 +772,97 @@
 "None"
     Žádný
 "Not Listed"
+    Neuveden
 "Notes"
+    Poznámky
 "Number of episodes"
+    Počet epizod
 "Number of shows"
 "Number of Songs"
+    Počet písniček
 "Number of timeslots"
 "Off"
 "OK"
 "Only a certain channel number"
 "Only channels marked as commercial free"
+    Jen stanice bez reklam
 "Only channels that carry a specific station"
 "Only display favorite channels"
+    Zobrazit jenom favoritní stanice
 "Only match commercial-free channels"
+    Jen shodné stanice bez reklam
 "Only match HD programs"
+    Jen shodné HD programy
 "Only match non-recorded shows"
+    Jen shodné nenahrané pořady
 "Only New Episodes"
     Jen nové díly
 "Only one specific channel ID (Channel priority)"
 "Only show distinct shows"
+    Zobrazit pouze rozdílné pořady
 "Only shows marked as HDTV"
+    Jen HD pořady
 "Optimize Tables"
+    Optimalizovat tabulky
 "or"
+    nebo
 "Original Airdate"
     Původně vysíláno
 "Originally aired between"
+    Původně vysíláno mezi
 "Override"
+    Přepsát
 "Page Down"
 "Page recorded programs"
 "Page Up"
 "Parental Level"
+    Rodičovská úroveň
 "Part $1 of $2"
     Část $1 z $2
 "Past Month"
+    Minulý měsíc
 "Past Week"
+    Minulý týden
 "Past Year"
+    Minulý rok
 "Paused"
+    Pozastaveno
 "Pending"
+    Čekající
 "People"
     Lidé
 "People Search"
+    Hledání lidí
 "People Search:"
+    Hledání lidí:
 "Percent of time spent recording"
+    Procento času stráveno nahráváním
 "Play"
     Přehrát
 "Play Recording on Frontend"
+    Přehrát nahrávku na frontendu
 "Play this Album Now"
+    Přehrát tento album
 "Play This Playlist Now"
+    Přehrát tento playlist 
 "Play this Playlist Now"
+    Přehrát tento playlist
 "Play this Song Now"
+    Přehrát tuto skladbu
 "Play Time"
+    Čas přehrávání
 "Playback Group"
+    Přehrávání skupiny
 "Playback Groups"
+    Přehrávání skupin
 "Played %s times"
+    Přehráno %s krát
 "Played once"
+    Přehráno jednou
 "Playlist"
     Playlist
 "Playlist Info"
+    Informace o playlistu
 "Playlist is empty"
     Playlist je prázdný
 "Playlist Items"
@@ -784,14 +878,19 @@
 "Playlists"
     Playlisty
 "Please enter an IMDB number or a title to do another search"
+    Prosím zadejte IMDB číslo nebo název pro další hledání
 "Please wait for the pending AJAX request"
+    Prosím vyčkejte na čekající AJAX žádosti
 "Plot"
 "Plot:"
 "Pop-out player"
+    Pop-out přehrávač
 "Possible conflicts"
     Možné konflikty
 "Possible conflicts with this show"
+    Možné konflikty tohoto pořadu
 "Post Processing"
+    Post processing
 "Power"
 "Power Search"
     Pokročilé vyhledávání
@@ -803,19 +902,26 @@
 "Prefer movies when shown at night"
 "prefer_channum"
 "Preferred Input"
+    Přeferovaný vstup
 "Presented by"
 "Previous Recording"
     Předchozí nahrávka
 "Previous recordings"
     Předchozí nahrávky
-"Prime time"
+"Primetime"
 "Priority for a category"
+    Priorita pro kategorii
 "Priority for a category type"
+    Priorita pro typ kategorie
 "Priority for all matching titles"
+    Priorita pro všechny shodné názvy
 "Priority for any show with End Late time"
 "Priority for HD shows under two hours"
+    Priorita pro HD pořady pod dvě hodiny
 "Priority for movies by the year of release"
+    Priorita pro filmy podle roku uvedení
 "Priority when shown once"
+    Priorita pokud se vysílá jednou
 "Produced by"
 "Profile"
     Profil
@@ -824,26 +930,38 @@
 "Program Categories"
     Kategorie programů
 "Program Detail"
+    Detail programu
 "Program ID"
     ID programu
 "Program Listing"
     Výpis pořadů
 "Program Type"
+    Typ programu
 "Protocol"
+    Protokol
 "Queue a job"
+    Přidat úlohu
 "Queued"
+    Přidáno
 "Queued jobs"
+    Přidané úlohy
 "Random"
+    Náhodně
 "Random Items"
+    Náhodné položky
 "Random Mix Maker"
 "Random Type"
+    Náhodný typ
 "Rating"
     Hodnocení
 "Rating:"
     Hodnocení:
 "Recently Added Albums"
+    Nedávno přidané alba
 "Recently completed jobs"
+    Nedávno dokončené úlohy
 "Recently Played Songs"
+    Nedávno přehrávané písničky
 "recgroup"
 "Record Date"
     Datum záznamu
@@ -854,12 +972,17 @@
 "Record This"
     Nahrát toto
 "Recorded"
+    Nahráno
 "Recorded Programs"
     Nahrané pořady
 "Recording Details"
+    Detaily nahrávání
 "Recording Group"
+    Skupiny nahrávání
 "Recording Options"
+    Volby nahrávání
 "Recording Options Help"
+    Pomůcka volby nahrávání
 "Recording Priority"
     Priorita nahrávání
 "Recording Profile"
@@ -867,67 +990,68 @@
 "Recording Schedules"
     Rozvrhy nahrávání
 "Recording Statistics"
+    Statistiky nahrávání
 "recpriority"
 "recstatus: cancelled"
-    This was scheduled to be recorded but was manually canceled.
+    Byl nastaven pro nahrávání, ale byl manuálně zrušen.
 "recstatus: conflict"
-    Another program with a higher recording priority will be recorded.
+    Bude nahrán jiný program s vyšší nahrávací prioritou.
 "recstatus: currentrecording"
-    This episode was previously recorded and is still available in the list of recordings.
+    Tahle epizoda už byla nahrána a je stále dostupná v nahrávkách.
 "recstatus: deleted"
-    This showing was recorded but was deleted before recording was completed.
+    Tenhle pořad byl nahrán, ale byl vymazán před ukončením nahrávání.
 "recstatus: earliershowing"
-    This episode will be recorded at an earlier time instead.
+    Tahle epizoda bude nahrána v dřívějším čase.
 "recstatus: force_record"
-    This show was manually set to record this specific instance.
+    Tenhle pořad byl nastaven manuálně pro nahráni této specifické instance.
 "recstatus: inactive"
     Tento rozvrh nahrávání není aktivní.
 "recstatus: latershowing"
-    This episode will be recorded at a later time instead.
+    Tahle epizoda bude nahrána v pozdějším čase.
 "recstatus: lowdiskspace"
-    There wasn't enough disk space available to record this program.
+    Na disku není dost místa pro nahrání tohoto pořadu.
 "recstatus: manualoverride"
-    This showing was manually set to not record
+    Tenhle pořad byl manuálně nastaven, aby se nenahrál.
 "recstatus: neverrecord"
 "recstatus: notlisted"
 "recstatus: previousrecording"
-    This episode was previously recorded according to the duplicate policy chosen for this title.
+    Tato epizoda byla nahrána již drive vzhledem k duplicitě tohoto nazvu.
 "recstatus: recorded"
-    This showing was recorded.
+    Tenhle pořad byl nahrán.
 "recstatus: recording"
-    This showing is being recorded.
+    Tenhle pořad se nahrává.
 "recstatus: repeat"
-    This showing is a repeat and will not be recorded.
+    Tenhle pořad je repríza a proto nebude nahrán.
 "recstatus: stopped"
-    This showing was recorded but was stopped before recording was completed.
+    Tenhle pořad byl nahrán, ale byl zastaven před ukončením nahrávání.
 "recstatus: toomanyrecordings"
-    Too many recordings of this program have already been recorded.
+    Příliš mnoho nahrávek tohoto pořadu už bylo nahráno.
 "recstatus: tunerbusy"
-    The tuner card was already being used when this program was scheduled to be recorded.
+    Tuner byl používán, když měl být tento pořad nahrán.
 "recstatus: unknown"
-    The status of this showing is unknown.
+    Stav tohoto pořadu je neznámý.
 "recstatus: willrecord"
-    This showing will be recorded.
+    Tenhle pořad bude nahrán.
 "rectype-long: always"
-    Record at any time on any channel.
+    Nahrát v libovolném čase na této stanici.
 "rectype-long: channel"
-    Record at any time on channel $1.
+    Nahrát v libovolném čase na stanici $1.
 "rectype-long: daily"
-    Record this program in this timeslot every day.
+    Nahrát tento pořad v tomto čase každý den.
 "rectype-long: dontrec"
-    Do not record this specific showing.
+    Nenahrávat toto vysílání pořadu. 
 "rectype-long: finddaily"
-    Find and record one showing of this title each day.
+    Najít a nahrát jedno vysílání s tímto názvem každý den.
 "rectype-long: findone"
-    Find and record one showing of this title.
+    Najít a nahrát jedno vysílání s tímto názvem.
 "rectype-long: findweekly"
-    Find and record one showing of this title each week.
+    Najít a nahrát jedno vysílání s tímto názvem každý týden.
 "rectype-long: once"
-    Record only this showing.
+    Nahrát pouze toto vysílání.
 "rectype-long: override"
-    Record this specific showing.
+    Nahrát toto specifické vysílání.
 "rectype-long: weekly"
-    Record this program in this timeslot every week.
+    Nahrát tento pořad v tomto čase každý týden.
 "rectype: always"
     Vždy
 "rectype: channel"
@@ -937,15 +1061,15 @@
 "rectype: dontrec"
     Nenahrávat
 "rectype: finddaily"
-    Find One Daily
+    Najít jednou denně 
 "rectype: findone"
     Najdi jednou
 "rectype: findweekly"
-    Find One Weekly
+    Najít jednou týdenně 
 "rectype: once"
     Jednou
 "rectype: override"
-    Override (record)
+    Přepsat (nahrát)
 "rectype: weekly"
     Týdně
 "regex: articles"
@@ -953,12 +1077,15 @@
 "Remote"
 "Remove Item from Playlist"
 "Repair Tables"
+    Opravit tabulky
 "Repeat"
     Opakování
 "Reset"
 "Reset template and skin to defaults"
 "Retry"
+    Znovu
 "Return to Statistics Page"
+    Návrat na stránku statistiky
 "right"
     vpravo
 "Right"
@@ -979,25 +1106,39 @@
 "Save/Rename Playlist"
     Uložit/Přejmenovat playlist
 "Saved Playlist Successfully Deleted"
+    Uložený playlist úspěšně vymazán
 "Saved Playlists"
+    Uložené playlisty
 "Scan Collection"
 "Schedule"
+    Naplánovat
 "Schedule Manually"
+    Naplánovat manuálně
 "Schedule normally."
+    Naplánovat normálně
 "Schedule Options"
+    Plánovací možnosti
 "Schedule Override"
+    Přepsát naplánování
 "Schedule via $1."
+    Naplánovat prostředníctvem  $1.
 "Scheduled"
+    Naplánováno
 "Scheduled Popup"
 "Science Fiction Movies"
+    Scifi filmy
 "Search"
     Vyhledat
 "Search $1"
     Vyhledat $1
 "Search all program keywords for a match against search phrase below"
+    Prohledat klíčová slova programu podle zadané frázy
 "Search all program titles containing the Title text below"
+    Prohledat všechny programy, zda obsahují zadaný název
 "Search for all actors contained in a recording for a match against search phrase below"
+    Prohledat všechny herce v nahrávce, zda obsahují zadaný název
 "Search for:  $1"
+    Vyhledat:  $1
 "Search Music"
     Vyhledat hudbu
 "Search Phrase"
@@ -1007,70 +1148,108 @@
 "Search Results"
     Výsledky hledání
 "Search the Music Database"
+    Prohledat hudební databázi
 "Search Type"
+    Vyhledat typ
 "Search Type Help"
+    Pomůcka pro vyhledávaní typu
 "Search will perform complex SQL queries against the database as per the search phrase below"
 "Searches"
     Vyhledávání
 "Searches will be performed against the title of all TV shows"
+    Vyhledávání se bude provádět v názvech všech TV pořadů
 "Seas/Ep"
 "Season"
+    Série
 "Select the correct show"
 "Server returned invalid data when attempting to retrieve metadata."
+    Server vrátil nesprávné data při pokuse o získání metadat
 "Server Statistics"
+    Statistiky serveru
 "Set Host"
 "Settings"
+    Nastavení
 "settings"
+    nastavení
 "Settings Table"
+    Tabulka nastavení
 "settings/stream: protocol"
 "settings: notice"
 "Shift"
 "Show"
+    Zobrazit
 "Show group"
+    Zobrazit skupinu
 "Show pixmaps"
 "Show recordings"
+    Zobrazit nahrávky
 "show_channel_icons"
 "show_popup_info"
 "show_video_covers"
 "Showing all programs from the $1 group."
+    Zobrazuje všechny programy ze skupiny $1.
 "Showing all programs."
+    Zobrazuje všechny programy.
 "Showings between"
+    Vysílání mezi
 "Shows"
+    Pořady
 "Skip Ahead"
+    Skok vpřed
 "Skip Back"
+    Skok zpět
 "Songs"
+    Skladby
 "Songs for Genre"
+    Skladby pro źánr
 "Songs Played"
+    Přehrané skladby
 "Songs Rated"
+    Hodnocené skladby
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
+    Nemůžete vytvořit tento playlist, protože by vytvořil kruhovou závislost.
 "sortby_channum"
 "sourceid"
 "Space"
 "Special Searches"
+    Speciální vyhledávání
 "Star character"
 "Start Date"
+    Datum začátku
 "Start Early"
 "Start Time"
+    Čas začátku
 "Starting"
+    Začátek
 "Statistics"
+    Statistiky
 "Stats"
+    Statistiky
 "Status"
     Stav
 "Status Bar"
+    Stavový řádek
 "Stereo"
     Stereo
 "Still Recording: Edit"
+    Ještě se nahrává: Edit
 "Stopping"
     Zastavení
 "Storage Group"
 "Store the current session as the default"
 "Streaming"
+    Streamuje
 "Sub and Desc (Empty matches)"
 "Submit"
+    Potvrdit
 "Submit Search"
+    Potvrdit vyhledávání
 "Subtitle"
+    Podtitul
 "Subtitle and Description"
+    Podtitul a popis
 "Subtitle then Description"
+    Podtitul a potom popis
 "Subtitled"
     Titulky
 "Subtitles Available"
@@ -1078,24 +1257,33 @@
 "Sunday"
     Neděle
 "Surround Sound"
+    Prostorový zvuk
 "Tab"
 "Television"
+    Televize
 "The requested recording schedule has been deleted."
     Požadovaný rozvrh nahrávání byl vymazán
 "themoviedb"
 "There are no items in this Playlist!"
+    V playlistu nejsou žádné položky!
 "There was a problem saving your playlist"
+    Vyskytl se problém s ukládáním playlistu
 "TheTVDB"
-"This episode"
+"This Episode"
+    Tato epizoda
 "This playlist is already loaded!"
-"This series"
+    Tento playlist je právě načten
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+    Tohle přepíše váš aktuální, neuložený playlist. Opravdu chcete pokračovat?
 "Thursday"
     Čtvrtek
 "Time"
+    Čas
 "Time Span"
+    Časové rozpětí
 "Time Stretch"
 "Timeslot size"
+    Velikost časového slotu
 "title"
     název
 "Title"
@@ -1104,21 +1292,32 @@
 "Title search"
     Vyhledat název
 "Title Search"
+    Vyhledat název
 "Title Search:"
+    Vyhledat název:
 "Title:"
+    Název:
 "Toggle Interactive Mode"
+    Přepínač interaktivního módu
 "Too Many"
+    Příliš mnoho
 "Top $1"
 "Top Played Songs"
+    Nejhranější skladby
 "Top Rated Songs"
+    Nejlépe hodnoceny skladby
 "Total Length"
+    Celková délka
 "Total Recorded"
+    Celkem nahráno
 "Total Running Time"
+    Celkový čas od spuštění
 "Total Time"
     Celkový čas
 "Total Time:  %s"
     Celkový čas: %s
 "Track #%s from the album '%s'"
+    Skladba #%s z albumu '%s'
 "Transcode"
 "transcoder"
 "Transcoder"
@@ -1131,33 +1330,51 @@
     TV funkce včetně nahraných pořadů
 "TV.com"
 "type"
+    typ
 "Type"
+    Typ
 "Uncategorized"
+    Nezařazené
 "Undelete"
+    Obnovit
 "Undelete: $1"
+    Obnovit: $1
 "Unknown"
+    Neznámý
 "Unknown action"
+    Neznámá akce
 "Unknown frontend"
+    Neznámý frontend
 "Unknown Program."
+    Neznámý program.
 "Unknown Recording Schedule."
     Neznámý rozvrh nahrávání.
 "Up"
+    Nahoru
 "Upcoming Recordings"
     Nadcházející nahrávky
 "Update"
 "Update Recording Settings"
+    Obnovit nastavení nahrávání
 "Use callsign"
 "Use date/time"
+    Použít datum/čas
 "useonairguide"
 "User Rating"
+    Hodnocení uživatele
 "Value"
+    Hodnota
 "Video"
 "Video Bitrate"
 "Video Playback"
 "Video: Error: IMDB"
+    Video: Chyba: IMDB
 "Video: Error: IMDB: Not Found"
+    Video: Chyba: IMDB: Nenalezeno
 "Video: Error: Missing ID"
+    Video: Chyba: Chybějící ID
 "Video: IMDB: No Matches"
+    Video: IMDB: Nenalezeno
 "Video: IMDB: Window Title"
 "Video: Warning: Artwork"
 "Video: Warning: Artwork: Download"
@@ -1176,18 +1393,25 @@
 "VideoListUnknownFiletypes"
 "VideoNewBrowsable"
 "Videos"
+    Videa
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
 "View"
+    Zobrazit
 "View Albums by %s"
+    Zobrazit alba podle %s 
 "View Details of %s"
+    Zobrazit detaily podle %s 
 "View Saved Playlist"
+    Zobrazit uložené playlisty
 "View Server Statistics"
+    Zobrazit statistiky serveru
 "visible"
     viditelný
 "Visit $1"
 "Watched"
+    Shlédnuto
 "Weather"
     Počasí
 "web_video_imdb_path"
@@ -1202,18 +1426,22 @@
     Browse your music collection.
 "welcome: remote"
 "welcome: settings"
-    Configure MythWeb and some of the MythTV settings.
+    Nastavit MythWeb a některé MythTV nastavení.
 "welcome: stats"
 "welcome: status"
-    Show the backend status page.
+    Zobrazí stránku se statusem backendu.
 "welcome: tv"
-    See what's on tv, schedule recordings and manage shows that you've already recorded.  Please see the following choices:
+    Zobrazí, co je v TV, nastavení nahrávek a spravování pořadů, které byli nahrány.  Please see the following choices:
 "welcome: video"
-    Browse your video collection.
+    Prohlížení vašich video kolekcí.
 "What else is on at this time?"
+    Co dalšího se vysílá v tomto čase?
 "Widescreen"
+    Širokoúhlé
 "Width"
+    Šířka
 "Will Record"
+    Bude nahráno
 "Written by"
 "xmltvid"
 "Year"
@@ -1225,4 +1453,7 @@
 "Yesterday"
     Včera
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
+    Chybí vám php přípona pro mysql interakci. Prosím nainstalujte php-mysqli.
 "You must be running at least php 5.3 to use this program."
+    Musíte používat php 5.3 nebo vyšší, aby ste mohli použít tenhle pořad.
+
