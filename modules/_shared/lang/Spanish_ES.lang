@@ -226,14 +226,12 @@
 "By Genre"
     Por Género
 "Cache_APC"
-    Temporal_APC
 "cache_engine"
 "Cache_Memcache"
 "Cache_Memcached"
 "Cache_Null"
 "Cache_SHM"
 "callsign"
-    ID de emisora
 "Cancel"
     Cancelar
 "Cancel this schedule."
@@ -251,7 +249,6 @@
 "Category Legend"
     Leyenda de Categorí­a
 "CC"
-    SUB
 "Chan. Callsign"
     ID de Emisora del Canal
 "Chan. Name"
@@ -271,7 +268,6 @@
 "Channels"
     Canales
 "channum"
-    número del canal
 "Check for duplicates in"
     Buscar duplicados en
 "Children's Movies"
@@ -293,7 +289,6 @@
 "Closed Captioning"
     Subtítulos
 "color"
-    color
 "Commands"
     Órdenes
 "Commands:"
@@ -303,7 +298,6 @@
 "Commercials Flagged"
     Anuncios Marcados
 "commfree"
-    sin anuncios
 "Conflict"
     Conflicto
 "Conflicts"
@@ -311,7 +305,6 @@
 "Context"
     Contexto
 "contrast"
-    contraste
 "Count"
     Cuenta
 "Cover Image"
@@ -363,7 +356,6 @@
 "Delete"
     Eliminar
 "delete"
-    eliminar
 "Delete $1"
     Eliminar $1
 "Delete + Rerecord"
@@ -377,11 +369,9 @@
 "DELETE this Saved Playlist"
     ELIMINAR esta Lista de Reproducción Guardada
 "DeleteKey"
-    TeclaDeEliminación
 "Depending on the Search type this is where you enter actual main search commands"
     Dependiendo del tipo de Búsqueda, aquí es donde usted introduce las órdenes de búsqueda principales
 "description"
-    descripción
 "Description"
     Descripción
 "Destination"
@@ -475,7 +465,7 @@
 "Extended Check"
     Comprobación Extendida
 "ffmpeg with MP3 support not detected"
-    No fue detectado ffmpeg con admisión de MP3
+    No se detectó ffmpeg que admita MP3
 "File Size"
     Tamaño de Archivo
 "film"
@@ -495,7 +485,6 @@
 "Find Time must be of the format:  HH:MM:SS"
     Buscar Hora debe tener el formato: HH:MM:SS
 "finetune"
-    sintonía fina
 "Finished"
     Finalizada
 "First recording"
@@ -525,7 +514,6 @@
 "Found %s results for '%s'"
     Encontrados %s resultados para '%s'
 "freqid"
-    id de frecuencia
 "Friday"
     Viernes
 "Frontends"
@@ -537,7 +525,6 @@
 "Genre"
     Género
 "genre_colors"
-    genre_colors
 "Genres"
     Géneros
 "Go"
@@ -569,6 +556,7 @@
 "Hide"
     Ocultar
 "High definition"
+    Alta definición
 "Home"
     Inicio
 "Hosted by"
@@ -578,7 +566,6 @@
 "Hour Format"
     Formato de Hora
 "hue"
-    matiz
 "Identifiable episode"
     Episodio identificable
 "Ignore generic shows"
@@ -586,9 +573,7 @@
 "Ignore scheduled shows"
     Ignorar programados
 "IMDB"
-    IMDB
 "IMDBTYPE"
-    IMDBTYPE
 "Inactive"
     Inactivo
 "info: activate recording"
@@ -606,12 +591,12 @@
     <p>
     Necesita que ffmpeg esté instalado y compilado para reproducir MP3,
     y que los archivos de las grabaciones sean accesibles para el usuario que ejecuta su servidor web.
-    Probablemente no funcionará con archivos Nupplevideo y, finalmente, podría no funcionar en absoluto
+    Probablemente no funcionará con archivos Nupplevideo o, incluso, podría no funcionar en absoluto
     (o algo peor).
     </p>
     <p>
     Active esta característica bajo su responsabilidad y no espere demasiada
-    ayuda oficial hasta que abandone la fase experimental.
+    ayuda oficial hasta que el reproductor abandone la fase experimental.
     </p>
 "info: hidden advanced schedule"
     info: ocultar programación avanzada
@@ -664,11 +649,9 @@
 "Later"
     Más Tarde
 "left"
-    quedan
 "Left"
     Quedan
 "leftl"
-    leftl
 "length"
     duración
 "Length"
@@ -698,9 +681,7 @@
 "Local Server Statistics"
     Estadísticas del Servidor Local
 "LOCKDOWN_NOTICE"
-    LOCKDOWN_NOTICE
 "LOCKDOWN_NOTICE_2"
-    LOCKDOWN_NOTICE_2
 "Logs"
     Registros
 "Look up Metadata"
@@ -778,11 +759,8 @@
 "MythVideo on the web."
     MythVideo en la web.
 "mythvideo.db_folder_view"
-    mythvideo.db_folder_view
 "mythvideo.ImageCacheSize"
-    mythvideo.ImageCacheSize
 "mythvideo.sort_ignores_case"
-    mythvideo.sort_ignores_case
 "MythWeb"
     MythWeb
 "MythWeb Defaults"
@@ -1022,7 +1000,6 @@
 "Profile"
     Perfil
 "profile"
-    perfil
 "Program Categories"
     Categorías de Programas
 "Program Detail"
@@ -1060,7 +1037,6 @@
 "Recently Played Songs"
     Canciones Recientemente Reproducidas
 "recgroup"
-    grupograb
 "Record Date"
     Fecha de Grabación
 "Record Length"
@@ -1090,89 +1066,47 @@
 "Recording Statistics"
     Estadísticas de la Grabaciones
 "recpriority"
-    prioridadgrab
 "recstatus: cancelled"
-    estadograb: cancelada
 "recstatus: conflict"
-    estadograb: conflicto
 "recstatus: currentrecording"
-    estadograb: grabando
 "recstatus: deleted"
-    estadograb: eliminada
 "recstatus: earliershowing"
-    estadograb: pase anterior
 "recstatus: force_record"
-    estadograb: forzar_grabación
 "recstatus: inactive"
-    estadograb: inactivo
 "recstatus: latershowing"
-    estadograb: pase posterior
 "recstatus: lowdiskspace"
-    estadograb: pocoespaciodisco
 "recstatus: manualoverride"
-    estadograb: excepciónmanual
 "recstatus: neverrecord"
-    estadograb: nuncagrabar
 "recstatus: notlisted"
-    estadograb: nolistado
 "recstatus: previousrecording"
-    estadograb: grabaciónanterior
 "recstatus: recorded"
-    estadograb: grabado
 "recstatus: recording"
-    estadograb: grabando
 "recstatus: repeat"
-    estadograb: repetir
 "recstatus: stopped"
-    estadograb: detenida
 "recstatus: toomanyrecordings"
-    estadograb: demasiadasgrabaciones
 "recstatus: tunerbusy"
-    estadograb: sintonizadorocupado
 "recstatus: unknown"
-    estadograb: desconocido
 "recstatus: willrecord"
-    estadograb: segrabará
 "rectype-long: always"
-    tipograb-largo: siempre
 "rectype-long: channel"
-    tipograb-largo: canal
 "rectype-long: daily"
-    tipograb-largo: diario
 "rectype-long: dontrec"
-    tipograb-largo: nograbar
 "rectype-long: finddaily"
-    tipograb-largo: buscardiario
 "rectype-long: findone"
-    tipograb-largo: buscaruno
 "rectype-long: findweekly"
-    tipograb-largo: buscarsemanal
 "rectype-long: once"
-    tipograb-largo: unavez
 "rectype-long: override"
-    tipograb-largo: ignorar
 "rectype-long: weekly"
-    tipograb-largo: semanal
 "rectype: always"
-    tipograb: siempre
 "rectype: channel"
-    tipograb: canal
 "rectype: daily"
-    tipograb: diariamente
 "rectype: dontrec"
-    tipograb: nograbar
 "rectype: finddaily"
-    tipograb: buscardiario
 "rectype: findone"
-    tipograb: buscaruno
 "rectype: findweekly"
-    tipograb: buscarsemanal
 "rectype: once"
-    tipograb: unavez
 "rectype: override"
-    tipograb: ignorar
 "rectype: weekly"
-    tipograb: semanal
 "regex: articles"
     El|L(?:as?|os)
 "Remote"
@@ -1302,11 +1236,8 @@
 "Show recordings"
     Mostrar grabaciones
 "show_channel_icons"
-    mostrar_iconos_canales
 "show_popup_info"
-    mostrar_info_emergente
 "show_video_covers"
-    mostrar_portadas_vídeos
 "Showing all programs from the $1 group."
     Mostrando todos los programas del grupo $1
 "Showing all programs."
@@ -1330,9 +1261,7 @@
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
     Lo siento, pero no puede añadir esta lista de reproducción puesto que crearía una dependencia circular.
 "sortby_channum"
-    ordenarpor_númcanal
 "sourceid"
-    idfuente
 "Space"
     Espacio
 "Special Searches"
@@ -1504,7 +1433,6 @@
 "Use date/time"
     Usar fecha/hora
 "useonairguide"
-    usarguí­aemitida
 "User Rating"
     Puntuación del Usuario
 "Value"
@@ -1532,39 +1460,23 @@
 "Video: Warning: fopen"
     Vídeo: Aviso: fopen
 "VideoAggressivePC"
-    VídeoPCAgresivo
 "VideoArtworkDir"
-    DirGrafismosVídeo
 "VideoBrowserNoDB"
-    SinBDExploradorVídeos
 "VideoDefaultParentalLevel"
-    NivelParentalPredeterminadoVídeo
 "VideoDefaultPlayer"
-    ReproductorPredeterminadoVídeo
 "videofilters"
-    filtrosví­deo
 "VideoGalleryAspectRatio"
-    RelaciónAspectoGaleríaVídeos
 "VideoGalleryColsPerPage"
-    ColsPorPáginaGaleríaVídeos
 "VideoGalleryNoDB"
-    SinBDGaleríaVídeos
 "VideoGalleryRowsPerPage"
-    FilasPorPáginaGaleríaVídeos
 "VideoGallerySubtitle"
-    SubtítuloGaleríaVídeos
 "VideoListUnknownFiletypes"
-    TiposArchivoDesconocidosListaVídeos
 "VideoNewBrowsable"
-    NuevoNavegableVídeos
 "Videos"
     Vídeos
 "VideoStartupDir"
-    DirInicioVídeos
 "VideoTreeLoadMetaData"
-    CargaMetaDatosÁrbolVídeos
 "VideoTreeNoDB"
-    SinDBÁrbolVídeos
 "View"
     Ver
 "View Albums by %s"
@@ -1584,13 +1496,9 @@
 "Weather"
     El Tiempo
 "web_video_imdb_path"
-    ruta_imdb_vídeo_web
 "web_video_imdb_type"
-    tipo_imdb_vídeo_web
 "web_video_thumbnail_height"
-    alto_miniatura_vídeo_web
 "web_video_thumbnail_width"
-    ancho_miniatura_vídeo_web
 "Wednesday"
     Miércoles
 "welcome: backend_log"
@@ -1620,7 +1528,6 @@
 "Written by"
     Escrito por
 "xmltvid"
-    xmltvid
 "Year"
     Año
 "Year:"
