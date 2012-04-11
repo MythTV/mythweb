@@ -6,9 +6,9 @@
 "$1 B"
     $1 B
 "$1 day"
-    $1 dÌa
+    $1 d√≠a
 "$1 days"
-    $1 dÌas
+    $1 d√≠as
 "$1 episode"
     $1 episodio
 "$1 episodes"
@@ -36,13 +36,13 @@
 "$1 programs, using $2 ($3) out of $4 ($5 free)."
     $1 programas, que usan $2 ($3) de $4 ($5 libres))
 "$1 recording"
-    $1 grabaciÛn
+    $1 grabaci√≥n
 "$1 recordings"
     $1 grabaciones
 "$1 requests pending."
     $1 solicitudes pendientes.
 "$1 Search"
-    B˙squeda $1
+    B√∫squeda $1
 "$1 TB"
     $1 TB
 "$1 to $2"
@@ -50,17 +50,17 @@
 "$1 wasted"
     $1 desperdiciado
 "$1 year"
-    $1 aÒo
+    $1 a√±o
 "$1 years"
-    $1 aÒos
+    $1 a√±os
 "%s Song (%s)"
-    %s CanciÛn (%s)
+    %s Canci√≥n (%s)
 "%s Songs"
     %s Canciones
 "%s Songs (%s)"
     %s Canciones (%s)
 "(height is calculated automatically from the recording aspect ratio)"
-    (la altura se calcula autom·ticamente a partir de la relaciÛn de aspecto de la grabaciÛn)
+    (la altura se calcula autom√°ticamente a partir de la relaci√≥n de aspecto de la grabaci√≥n)
 "1 - Lowest"
     1 - La Menor
 "4 - Highest"
@@ -70,57 +70,57 @@
 "Aborting"
     Abortando
 "Action"
-    AcciÛn
+    Acci√≥n
 "Activate"
     Activar
 "Add"
-    AÒadir
+    A√±adir
 "Add Album to Current Playlist"
-    AÒadir ¡lbum a Lista de ReproducciÛn Actual
+    A√±adir √Ålbum a Lista de Reproducci√≥n Actual
 "Add Mix"
-    AÒadir Mezcla
+    A√±adir Mezcla
 "Add Song to Current Playlist"
-    AÒadir CanciÛn a Lista de ReproducciÛn Actual
+    A√±adir Canci√≥n a Lista de Reproducci√≥n Actual
 "add string"
-    aÒadir cadena
+    a√±adir cadena
 "Add this Playlist as a Subplaylist"
-    AÒadir esta Lista de ReproducciÛn como Sublista
+    A√±adir esta Lista de Reproducci√≥n como Sublista
 "Additional Tables"
     Tablas Adicionales
 "Additional tables:"
     Tablas adicionales:
 "Admin Key"
-    Clave de AdministraciÛn
+    Clave de Administraci√≥n
 "Advanced"
     Avanzado
 "Advanced Options"
     Opciones Avanzadas
 "Advanced Search"
-    B˙squeda Avanzada
+    B√∫squeda Avanzada
 "airdate"
-    emisiÛn
+    emisi√≥n
 "Airdate"
-    EmisiÛn
+    Emisi√≥n
 "Airtime"
     Horario
 "Album Listing"
-    Listado de ¡lbumes
+    Listado de √Ålbumes
 "Album Tracks"
-    Pistas del ¡lbum
+    Pistas del √Ålbum
 "Albums"
-    ¡lbumes
+    √Ålbumes
 "Albums with songs by %s"
-    ¡lbumes con canciones de %s
+    √Ålbumes con canciones de %s
 "All"
     Todos
 "All Albums"
-    Todos los ¡lbumes
+    Todos los √Ålbumes
 "All Categories"
-    Todas las CategorÌ≠as
+    Todas las Categor√≠¬≠as
 "All Fields"
     Todos los Campos
 "All Genres"
-    Todos los GÈneros
+    Todos los G√©neros
 "All groups"
     Todos los grupos
 "All HDTV"
@@ -136,29 +136,29 @@
 "Allows you to match any string of any length (including zero length)"
     Le permite buscar cadenas de cualquier longitud (cero inclusive)
 "Allows you to match on a single character"
-    Le permite buscar un ˙nico car·cter
+    Le permite buscar un √∫nico car√°cter
 "Allows you to search through other database tables when using a power search"
-    Le permite buscar en otras tablas de la base de datos al usar la b˙squeda avanzada
+    Le permite buscar en otras tablas de la base de datos al usar la b√∫squeda avanzada
 "An error occurred while adding your playlist."
-    OcurriÛ un error al aÒadir su lista de reproducciÛn.
+    Ocurri√≥ un error al a√±adir su lista de reproducci√≥n.
 "and"
     y
 "Any"
     Cualquiera
 "Any Category"
-    Cualquier CategorÌa
+    Cualquier Categor√≠a
 "Any Channel"
     Cualquier Canal
 "Any Program Type"
     Cualquier Tipo de Programa
 "Append"
-    AÒadir
+    A√±adir
 "Append to Current Playlist"
-    AÒadir a la Lista de ReproducciÛn Actual
+    A√±adir a la Lista de Reproducci√≥n Actual
 "Are you sure you want to delete the following show?"
-    øSeguro que desea eliminar el siguiente programa?
+    ¬øSeguro que desea eliminar el siguiente programa?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
-    øSeguro que desea ELIMINAR ESTA LISTA DE REPRODUCCI”N GUARDADA?
+    ¬øSeguro que desea ELIMINAR ESTA LISTA DE REPRODUCCI√ìN GUARDADA?
 "Artist Listing"
     Lista de Artistas
 "Artists"
@@ -184,11 +184,11 @@
 "AVC/H.264"
     AVC/H.264
 "Avoid poor signal quality"
-    Evitar baja calidad de seÒal
+    Evitar baja calidad de se√±al
 "Back"
-    Atr·s
+    Atr√°s
 "Back Tab"
-    Tabulador Atr·s
+    Tabulador Atr√°s
 "Back to the program listing"
     Volver a la lista de programas
 "Back to the recorded programs"
@@ -202,7 +202,7 @@
 "Backspace"
     Retroceso
 "Begin a New Search"
-    Comenzar una Nueva B˙squeda
+    Comenzar una Nueva B√∫squeda
 "brightness"
     brillo
 "Browsable"
@@ -212,19 +212,19 @@
 "Browse = no"
     Explorar = no
 "Browse = yes"
-    Explorar = sÌ
+    Explorar = s√≠
 "Browse all"
     Explorar todos
 "Browse All Albums"
-    Explorar todos los ¡lbumes
+    Explorar todos los √Ålbumes
 "Browse Music"
-    Explorar M˙sica
+    Explorar M√∫sica
 "Browse the Music Database"
-    Explorar la Base de Datos de M˙sica
+    Explorar la Base de Datos de M√∫sica
 "By Artist Beginning With"
     Por Artistas Que Comiencen Por
 "By Genre"
-    Por GÈnero
+    Por G√©nero
 "Cache_APC"
 "cache_engine"
 "Cache_Memcache"
@@ -235,26 +235,26 @@
 "Cancel"
     Cancelar
 "Cancel this schedule."
-    Cancelar esta programaciÛn
+    Cancelar esta programaci√≥n
 "Cancelled"
     Cancelada
 "Caps Lock"
-    Bloqueo de May˙sculas
+    Bloqueo de May√∫sculas
 "Cast"
     Reparto
 "category"
-    categorÌa
+    categor√≠a
 "Category"
-    CategorÌ≠a
+    Categor√≠¬≠a
 "Category Legend"
-    Leyenda de CategorÌ≠a
+    Leyenda de Categor√≠¬≠a
 "CC"
 "Chan. Callsign"
     ID de Emisora del Canal
 "Chan. Name"
     Nombre del Canal
 "Chan. Number"
-    N˙mero del Canal
+    N√∫mero del Canal
 "Channel"
     Canal
 "channel"
@@ -264,35 +264,35 @@
 "Channel Detail"
     Detalles del Canal
 "Channel Info"
-    InformaciÛn del Canal
+    Informaci√≥n del Canal
 "Channels"
     Canales
 "channum"
 "Check for duplicates in"
     Buscar duplicados en
 "Children's Movies"
-    PelÌculas Infantiles
+    Pel√≠culas Infantiles
 "Choose Genre.."
-    Elegir GÈnero..
+    Elegir G√©nero..
 "Choose Type"
     Elegir Tipo
 "Clear the current default session"
-    Eliminar la sesiÛn predeterminada actual
+    Eliminar la sesi√≥n predeterminada actual
 "Click to disable Auto Expire"
-    Pulsar para desactivar la AutoexpiraciÛn
+    Pulsar para desactivar la Autoexpiraci√≥n
 "Click to enable Auto Expire"
-    Pulsar para activar la AutoexpiraciÛn
+    Pulsar para activar la Autoexpiraci√≥n
 "Click to View Playlist"
-    Pulsar para Ver la Lista de ReproducciÛn
+    Pulsar para Ver la Lista de Reproducci√≥n
 "Close Captioned priority"
-    Prioridad de subtÌtulos
+    Prioridad de subt√≠tulos
 "Closed Captioning"
-    SubtÌtulos
+    Subt√≠tulos
 "color"
 "Commands"
-    ”rdenes
+    √ìrdenes
 "Commands:"
-    ”rdenes:
+    √ìrdenes:
 "Commercial free"
     Sin anuncios
 "Commercials Flagged"
@@ -308,17 +308,17 @@
 "Count"
     Cuenta
 "Cover Image"
-    Imagen de Car·tula
+    Imagen de Car√°tula
 "Create a New Playlist"
-    Crear una Nueva Lista de ReproducciÛn
+    Crear una Nueva Lista de Reproducci√≥n
 "Create a Random Mix"
     Crear una Mezcla Aleatoria
 "Create Schedule"
-    Crear ProgramaciÛn
+    Crear Programaci√≥n
 "Current MythWeb Template"
     Plantilla Predeterminada de MythWeb
 "Current Recording"
-    GrabaciÛn Actual
+    Grabaci√≥n Actual
 "Current recordings"
     Grabaciones actuales
 "Currently Browsing:  $1"
@@ -328,9 +328,9 @@
 "Custom"
     Personalizada
 "Custom Schedule"
-    ProgramaciÛn Personalizada
+    Programaci√≥n Personalizada
 "Custom Search"
-    B˙squeda Personalizada
+    B√∫squeda Personalizada
 "Customize Screens"
     Personalizar Pantallas
 "Data"
@@ -367,13 +367,13 @@
 "Delete Forever"
     Eliminar Para Siempre
 "DELETE this Saved Playlist"
-    ELIMINAR esta Lista de ReproducciÛn Guardada
+    ELIMINAR esta Lista de Reproducci√≥n Guardada
 "DeleteKey"
 "Depending on the Search type this is where you enter actual main search commands"
-    Dependiendo del tipo de B˙squeda, aquÌ es donde usted introduce las Ûrdenes de b˙squeda principales
+    Dependiendo del tipo de B√∫squeda, aqu√≠ es donde usted introduce las √≥rdenes de b√∫squeda principales
 "description"
 "Description"
-    DescripciÛn
+    Descripci√≥n
 "Destination"
     Destino
 "Details for: $1"
@@ -401,13 +401,13 @@
 "Down"
     Abajo
 "Download URL override"
-    Descargar excepciÛn de URL
+    Descargar excepci√≥n de URL
 "Dup Method"
-    MÈtodo de Duplicadas
+    M√©todo de Duplicadas
 "Duplicate"
     Duplicada
 "Duplicate Check method"
-    MÈtodo de ComprobaciÛn de Duplicadas
+    M√©todo de Comprobaci√≥n de Duplicadas
 "Duplicates/Ignored"
     Duplicadas/Ignoradas
 "Earlier"
@@ -419,39 +419,39 @@
 "Edit existing group"
     Editar el grupo existente
 "Edit MythWeb and some MythTV settings."
-    Editar la configuraciÛn de MythWeb y parte de MythTV
+    Editar la configuraci√≥n de MythWeb y parte de MythTV
 "Edit settings for: $1"
-    Editar la configuraciÛn de: $1
+    Editar la configuraci√≥n de: $1
 "Editing "
     Editando
 "Embed HTTP basic auth user name/password into stream urls"
-    Insertar nombre/contraseÒa de la autenticaciÛn b·sica de usuarios HTTP en los URL de flujos
+    Insertar nombre/contrase√±a de la autenticaci√≥n b√°sica de usuarios HTTP en los URL de flujos
 "Enable Flash Video player for recordings."
-    Activar el reproductor de vÌdeo Flash en las grabaciones
+    Activar el reproductor de v√≠deo Flash en las grabaciones
 "Enable Video Playback"
-    Activar la ReproducciÛn de VÌdeos
+    Activar la Reproducci√≥n de V√≠deos
 "End"
     Finalizar
 "End Late"
-    Finalizar M·s Tarde
+    Finalizar M√°s Tarde
 "Enter"
     Introducir
 "Enter a new name for your playlist"
-    Introduzca un nombre nuevo para su lista de reproducciÛn
+    Introduzca un nombre nuevo para su lista de reproducci√≥n
 "Enter your search terms"
-    Introducir sus tÈrminos de b˙squeda
+    Introducir sus t√©rminos de b√∫squeda
 "enter your search terms"
-    introduzca sus tÈrminos de b˙squeda
+    introduzca sus t√©rminos de b√∫squeda
 "Episode"
     Episodio
 "Episode Number"
-    N˙mero de Episodio
+    N√∫mero de Episodio
 "Error"
     Error
 "Error contacting server to retrieve metadata."
     Error al contactar con el servidor para recuperar los metadatos.
 "error: playgroup $1 exists"
-    error: el grupo de reproducciÛn $1 existe
+    error: el grupo de reproducci√≥n $1 existe
 "Errored"
     Con Errores
 "Erroring"
@@ -463,19 +463,19 @@
 "Exec. Producer"
     Productor Ejec.
 "Extended Check"
-    ComprobaciÛn Extendida
+    Comprobaci√≥n Extendida
 "ffmpeg with MP3 support not detected"
-    No se detectÛ ffmpeg que admita MP3
+    No se detect√≥ ffmpeg que admita MP3
 "File Size"
-    TamaÒo de Archivo
+    Tama√±o de Archivo
 "film"
-    pelÌcula
+    pel√≠cula
 "Filters"
     Filtros
 "Find Date & Time Options"
     Buscar Opciones de Fecha y Hora
 "Find Day"
-    Buscar DÌa
+    Buscar D√≠a
 "Find other showings of this program"
     Buscar otras emisiones de este programa
 "Find showings of this program"
@@ -488,19 +488,19 @@
 "Finished"
     Finalizada
 "First recording"
-    Primera grabaciÛn
+    Primera grabaci√≥n
 "First showing"
-    Primera emisiÛn
+    Primera emisi√≥n
 "First showing of each episode"
-    Primera emisiÛn de cada episodio
+    Primera emisi√≥n de cada episodio
 "Flag Commercials"
     Marcar Anuncios
 "FLV Width"
     Ancho de FLV
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
-    Para grabaciones diarias, 5 dÌas si no es en fin de semana, o 7 dÌas si es en fin de semana.
+    Para grabaciones diarias, 5 d√≠as si no es en fin de semana, o 7 d√≠as si es en fin de semana.
 "For more information on the Power Search please go to:"
-    Para m·s informaciÛn sobre la B˙squeda Avanzada, por favor, vaya a:
+    Para m√°s informaci√≥n sobre la B√∫squeda Avanzada, por favor, vaya a:
 "Force HTTP for streams"
     Forzar HTTP para los flujos
 "Force HTTP/HTTPS port for streams"
@@ -523,10 +523,10 @@
 "generic_time"
     %I:%M %p
 "Genre"
-    GÈnero
+    G√©nero
 "genre_colors"
 "Genres"
-    GÈneros
+    G√©neros
 "Go"
     Ir
 "Google"
@@ -536,13 +536,13 @@
 "Guest Starring"
     Estrellas Invitadas
 "Guide rating"
-    PuntuaciÛn de GuÌa
+    Puntuaci√≥n de Gu√≠a
 "Guide Settings"
-    ConfiguraciÛn de la GuÌ≠a
+    Configuraci√≥n de la Gu√≠¬≠a
 "Handy Predefined Searches"
-    B˙squedas Predefinidas ⁄tiles
+    B√∫squedas Predefinidas √ötiles
 "handy: overview"
-    ˙tiles: resumen
+    √∫tiles: resumen
 "has Bookmark"
     tiene un Marcador
 "Has Cutlist"
@@ -556,7 +556,7 @@
 "Hide"
     Ocultar
 "High definition"
-    Alta definiciÛn
+    Alta definici√≥n
 "Home"
     Inicio
 "Hosted by"
@@ -569,7 +569,7 @@
 "Identifiable episode"
     Episodio identificable
 "Ignore generic shows"
-    Ignorar programas genÈricos
+    Ignorar programas gen√©ricos
 "Ignore scheduled shows"
     Ignorar programados
 "IMDB"
@@ -577,31 +577,31 @@
 "Inactive"
     Inactivo
 "info: activate recording"
-    info: activar grabaciÛn
+    info: activar grabaci√≥n
 "info: default recording"
-    info: grabaciÛn predeterminada
+    info: grabaci√≥n predeterminada
 "info: dont record"
     info: no grabar
 "info: flvplayer"
     <p>
-    La reproducciÛn Flash es sÛlo una prueba de concepto y debe 
-    considerarse <b>EXTREMADAMENTE</b> experimental, por lo que est· desactivada
+    La reproducci√≥n Flash es s√≥lo una prueba de concepto y debe 
+    considerarse <b>EXTREMADAMENTE</b> experimental, por lo que est√° desactivada
     por defecto.
     </p>
     <p>
-    Necesita que ffmpeg estÈ instalado y compilado para reproducir MP3,
+    Necesita que ffmpeg est√© instalado y compilado para reproducir MP3,
     y que los archivos de las grabaciones sean accesibles para el usuario que ejecuta su servidor web.
-    Probablemente no funcionar· con archivos Nupplevideo o, incluso, podrÌa no funcionar en absoluto
+    Probablemente no funcionar√° con archivos Nupplevideo o, incluso, podr√≠a no funcionar en absoluto
     (o algo peor).
     </p>
     <p>
-    Active esta caracterÌstica bajo su responsabilidad y no espere demasiada
+    Active esta caracter√≠stica bajo su responsabilidad y no espere demasiada
     ayuda oficial hasta que el reproductor abandone la fase experimental.
     </p>
 "info: hidden advanced schedule"
-    info: ocultar programaciÛn avanzada
+    info: ocultar programaci√≥n avanzada
 "info: record this"
-    info: grabar Èste
+    info: grabar √©ste
 "info:forget old"
     info:olvidar antiguas
 "info:jumppoints"
@@ -633,33 +633,33 @@
 "Keyword"
     Palabra Clave
 "Keyword Search"
-    B˙squeda de Palabras Clave
+    B√∫squeda de Palabras Clave
 "Keyword Search:"
-    B˙squeda de Palabras Clave:
+    B√∫squeda de Palabras Clave:
 "Keywords"
     Palabras Clave
 "Language"
     Idioma
 "Last Recorded"
-    ⁄ltimo Grabado
+    √öltimo Grabado
 "Last recording"
-    ⁄ltima GrabaciÛn
+    √öltima Grabaci√≥n
 "Last showing of each episode"
-    ⁄ltima emisiÛn de cada episodio
+    √öltima emisi√≥n de cada episodio
 "Later"
-    M·s Tarde
+    M√°s Tarde
 "left"
 "Left"
     Quedan
 "leftl"
 "length"
-    duraciÛn
+    duraci√≥n
 "Length"
-    DuraciÛn
+    Duraci√≥n
 "Length (min)"
-    DuraciÛn (min)
+    Duraci√≥n (min)
 "Length in minutes"
-    DuraciÛn en minutos
+    Duraci√≥n en minutos
 "Listing &quot;Jump to&quot;"
     Lista &quot;Saltar a&quot;
 "Listing Time Key"
@@ -669,17 +669,17 @@
 "Load"
     Cargar
 "Load a Saved Playlist"
-    Cargar una Lista de ReproducciÛn Guardada
+    Cargar una Lista de Reproducci√≥n Guardada
 "Load Playlist"
-    Cargar Lista de ReproducciÛn
+    Cargar Lista de Reproducci√≥n
 "Load Saved Playlists"
-    Cargar Listas de ReproducciÛn Guardadas
+    Cargar Listas de Reproducci√≥n Guardadas
 "Load this Saved Playlist"
-    Cargar esta Lista de ReproducciÛn Guardada
+    Cargar esta Lista de Reproducci√≥n Guardada
 "LOADING"
     CARGANDO
 "Local Server Statistics"
-    EstadÌsticas del Servidor Local
+    Estad√≠sticas del Servidor Local
 "LOCKDOWN_NOTICE"
 "LOCKDOWN_NOTICE_2"
 "Logs"
@@ -695,21 +695,21 @@
 "matches"
     coincidencias
 "Max star rating for movies"
-    M·x. puntuaciÛn para las pelÌculas
+    M√°x. puntuaci√≥n para las pel√≠culas
 "Metadata Home Page"
-    P·gina de Inicio de los Metadatos
+    P√°gina de Inicio de los Metadatos
 "Metadata Lookup"
-    B˙squeda de Metadatos
+    B√∫squeda de Metadatos
 "Metadata Lookup Error"
-    Error en la B˙squeda de Metadatos
+    Error en la B√∫squeda de Metadatos
 "minutes"
     minutos
 "Missing Cover"
-    Car·tula Faltante
+    Car√°tula Faltante
 "Modify priority by star rating (0.0 to 1.0 for movies only)"
-    Modificar la prioridad mediante puntuaciÛn de estrellas (de 0.0 a 1.0 sÛlo para pelÌculas)
+    Modificar la prioridad mediante puntuaci√≥n de estrellas (de 0.0 a 1.0 s√≥lo para pel√≠culas)
 "Modify priority for a station on an input"
-    Modificar la prioridad de una estaciÛn en una entrada
+    Modificar la prioridad de una estaci√≥n en una entrada
 "Modify priority for all inputs on a card"
     Modificar la prioridad de todas las entradas de una tarjeta
 "Modify priority for an input (Input priority)"
@@ -723,27 +723,27 @@
 "Mono"
     Mono
 "More"
-    M·s
+    M√°s
 "more"
-    m·s
+    m√°s
 "Move Item Down in Playlist"
-    Mover Elemento Hacia Abajo en la Lista de ReproducciÛn
+    Mover Elemento Hacia Abajo en la Lista de Reproducci√≥n
 "Move Item Up in Playlist"
-    Mover Elemento Hacia Arriba en la Lista de ReproducciÛn
+    Mover Elemento Hacia Arriba en la Lista de Reproducci√≥n
 "movie"
-    pelÌcula
+    pel√≠cula
 "Movies"
-    PelÌ≠culas
+    Pel√≠¬≠culas
 "Movies, 3&frac12; Stars or more"
-    PelÌculas, 3&frac12; Estrellas o m·s
+    Pel√≠culas, 3&frac12; Estrellas o m√°s
 "Movies, Stinkers (2 Stars or less)"
-    PelÌculas, Bodrios (2 Estrellas o menos)
+    Pel√≠culas, Bodrios (2 Estrellas o menos)
 "Music"
-    M˙sica
+    M√∫sica
 "Music Specials"
-    Especiales de M˙sica
+    Especiales de M√∫sica
 "My Session"
-    Mi SesiÛn
+    Mi Sesi√≥n
 "MythMusic on the web."
     MythMusic en la web.
 "MythMusic_Prefixes_To_Ignore"
@@ -770,7 +770,7 @@
 "MythWeb Locked"
     MythWeb Bloqueado
 "MythWeb Session"
-    SesiÛn de MythWeb
+    Sesi√≥n de MythWeb
 "MythWeb Skin"
     Piel de MythWeb
 "MythWeb Template"
@@ -782,7 +782,7 @@
 "name"
     nombre
 "Narrow Your Search"
-    Refinar Su B˙squeda
+    Refinar Su B√∫squeda
 "Never Record"
     Nunca Grabar
 "New"
@@ -790,21 +790,21 @@
 "New episode"
     Nuevo episodio
 "New episodes only"
-    SÛlo nuevos episodios
+    S√≥lo nuevos episodios
 "New Group"
     Nuevo Grupo
 "New Search"
-    Nueva B˙squeda
+    Nueva B√∫squeda
 "New Titles, Premieres"
-    TÌ≠tulos Nuevos, Estrenos
+    T√≠¬≠tulos Nuevos, Estrenos
 "No"
     No
 "NO DATA"
     SIN DATOS
 "No Frontends allow remote control."
-    Ning˙n Cliente permite control remoto.
+    Ning√∫n Cliente permite control remoto.
 "No Genre"
-    Sin GÈnero
+    Sin G√©nero
 "No matches found"
     No se encontraron coincidencias
 "No matching programs found."
@@ -812,11 +812,11 @@
 "No metadata results found."
     No se encontraron resultados de metadatos
 "No Public Playlists"
-    No Hay Listas de ReproducciÛn P˙blicas
+    No Hay Listas de Reproducci√≥n P√∫blicas
 "No recording schedules have been defined."
     No se han definido grabaciones programadas
 "No. of recordings to keep"
-    N∫ de grabaciones a guardar
+    N¬∫ de grabaciones a guardar
 "Non-Music Specials"
     Especiales No Musicales
 "Non-Series HDTV"
@@ -828,55 +828,55 @@
 "Notes"
     Notas
 "Number of episodes"
-    N˙mero de episodios
+    N√∫mero de episodios
 "Number of shows"
-    N˙mero de programas
+    N√∫mero de programas
 "Number of Songs"
-    N˙mero de Canciones
+    N√∫mero de Canciones
 "Number of timeslots"
-    N˙mero de franjas horarias
+    N√∫mero de franjas horarias
 "Off"
     Desactivado
 "OK"
     Aceptar
 "Only a certain channel number"
-    SÛlo un n˙mero concreto de canal
+    S√≥lo un n√∫mero concreto de canal
 "Only channels marked as commercial free"
-    SÛlo canales marcados como libres de anuncios
+    S√≥lo canales marcados como libres de anuncios
 "Only channels that carry a specific station"
-    SÛlo canales que porten una estaciÛn especÌfica
+    S√≥lo canales que porten una estaci√≥n espec√≠fica
 "Only display favorite channels"
-    SÛlo mostrar canales favoritos
+    S√≥lo mostrar canales favoritos
 "Only match commercial-free channels"
-    SÛlo canales libres de anuncios
+    S√≥lo canales libres de anuncios
 "Only match HD programs"
-    SÛlo programas en HD
+    S√≥lo programas en HD
 "Only match non-recorded shows"
-    SÛlo programas no grabados
+    S√≥lo programas no grabados
 "Only New Episodes"
-    SÛlo Nuevos Episodios
+    S√≥lo Nuevos Episodios
 "Only one specific channel ID (Channel priority)"
-    SÛlo un ID de canal especÌfico (Prioridad de canal)
+    S√≥lo un ID de canal espec√≠fico (Prioridad de canal)
 "Only show distinct shows"
-    SÛlo mostrar programas distintos
+    S√≥lo mostrar programas distintos
 "Only shows marked as HDTV"
-    SÛlo programas marcados como HDTV
+    S√≥lo programas marcados como HDTV
 "Optimize Tables"
     Optimizar Tablas
 "or"
     o
 "Original Airdate"
-    Primera EmisiÛn
+    Primera Emisi√≥n
 "Originally aired between"
     Emitidos por primera vez entre
 "Override"
     Ignorar
 "Page Down"
-    P·gina Siguiente
+    P√°gina Siguiente
 "Page recorded programs"
     Pasar a programas grabados
 "Page Up"
-    P·gina Anterior
+    P√°gina Anterior
 "Parental Level"
     Nivel Parental
 "Part $1 of $2"
@@ -886,7 +886,7 @@
 "Past Week"
     La Semana Pasada
 "Past Year"
-    El AÒo Pasado
+    El A√±o Pasado
 "Paused"
     En Pausa
 "Pending"
@@ -894,55 +894,55 @@
 "People"
     Personas
 "People Search"
-    B˙squeda de Personas
+    B√∫squeda de Personas
 "People Search:"
-    B˙squeda de Personas:
+    B√∫squeda de Personas:
 "Percent of time spent recording"
     Porcentaje de tiempo dedicado a grabar
 "Play"
     Reproducir
 "Play Recording on Frontend"
-    Reproducir GrabaciÛn en el Cliente
+    Reproducir Grabaci√≥n en el Cliente
 "Play this Album Now"
-    Reproducir este ¡lbum Ahora
+    Reproducir este √Ålbum Ahora
 "Play This Playlist Now"
     Reproducir Esta Lista Ahora
 "Play this Playlist Now"
     Reproducir esta Lista Ahora
 "Play this Song Now"
-    Reproducir esta CanciÛn Ahora
+    Reproducir esta Canci√≥n Ahora
 "Play Time"
-    Tiempo de ReproducciÛn
+    Tiempo de Reproducci√≥n
 "Playback Group"
-    Grupo de ReproducciÛn
+    Grupo de Reproducci√≥n
 "Playback Groups"
-    Grupos de ReproducciÛn
+    Grupos de Reproducci√≥n
 "Played %s times"
     Reproducida %s veces
 "Played once"
     Reproducida una sola vez
 "Playlist"
-    Lista de ReproducciÛn
+    Lista de Reproducci√≥n
 "Playlist Info"
-    InformaciÛn de la Lista de ReproducciÛn
+    Informaci√≥n de la Lista de Reproducci√≥n
 "Playlist is empty"
-    La Lista de ReproducciÛn est· vacÌa
+    La Lista de Reproducci√≥n est√° vac√≠a
 "Playlist Items"
-    Elementos de la Lista de ReproducciÛn
+    Elementos de la Lista de Reproducci√≥n
 "Playlist Name"
-    Nombre de la Lista de ReproducciÛn
+    Nombre de la Lista de Reproducci√≥n
 "Playlist renamed successfully"
-    Nombre de la Lista de ReproducciÛn cambiado con Èxito
+    Nombre de la Lista de Reproducci√≥n cambiado con √©xito
 "Playlist saved successfully"
-    Lista de ReproducciÛn guardada con Èxito
+    Lista de Reproducci√≥n guardada con √©xito
 "Playlist: %s"
-    Lista de ReproducciÛn: %s
+    Lista de Reproducci√≥n: %s
 "Playlists"
-    Listas de ReproducciÛn
+    Listas de Reproducci√≥n
 "Please enter an IMDB number or a title to do another search"
-    Por favor, introduzca un n˙mero o tÌtulo de IMDB para efectuar otra b˙squeda
+    Por favor, introduzca un n√∫mero o t√≠tulo de IMDB para efectuar otra b√∫squeda
 "Please wait for the pending AJAX request"
-    Por favor, espere a la peticiÛn AJAX pendiente
+    Por favor, espere a la petici√≥n AJAX pendiente
 "Plot"
     Trama
 "Plot:"
@@ -958,17 +958,17 @@
 "Power"
     Avanzada
 "Power Search"
-    B˙squeda Avanzada
+    B√∫squeda Avanzada
 "Power Search:"
-    B˙squeda Avanzada:
+    B√∫squeda Avanzada:
 "Prefer a host for a storage group"
     Preferir un nodo para grupo de almacenamiento
 "Prefer a host for live sports with overtime"
-    Preferir un nodo para deportes en directo con prÛrroga
+    Preferir un nodo para deportes en directo con pr√≥rroga
 "Prefer Channum"
-    N∫ de Canal Preferido
+    N¬∫ de Canal Preferido
 "Prefer movies when shown at night"
-    Preferir pelÌculas de emisiÛn nocturna
+    Preferir pel√≠culas de emisi√≥n nocturna
 "prefer_channum"
     prefer_channum
 "Preferred Input"
@@ -976,23 +976,23 @@
 "Presented by"
     Presentado por
 "Previous Recording"
-    GrabaciÛn Anterior
+    Grabaci√≥n Anterior
 "Previous recordings"
     Grabaciones anteriores
 "Prime time"
-    Horario de m·xima audiencia
+    Horario de m√°xima audiencia
 "Priority for a category"
-    Prioridad de una categorÌa
+    Prioridad de una categor√≠a
 "Priority for a category type"
-    Prioridad de un tipo de categorÌa
+    Prioridad de un tipo de categor√≠a
 "Priority for all matching titles"
-    Prioridad para todos los tÌtulos coincidentes
+    Prioridad para todos los t√≠tulos coincidentes
 "Priority for any show with End Late time"
-    Prioridad para cualquier programa que finalice M·s Tarde
+    Prioridad para cualquier programa que finalice M√°s Tarde
 "Priority for HD shows under two hours"
     Prioridad para programas en HD de menos de dos horas
 "Priority for movies by the year of release"
-    Prioridad para pelÌculas por aÒo de estreno
+    Prioridad para pel√≠culas por a√±o de estreno
 "Priority when shown once"
     Prioridad al emitirse una sola vez
 "Produced by"
@@ -1001,7 +1001,7 @@
     Perfil
 "profile"
 "Program Categories"
-    CategorÌas de Programas
+    Categor√≠as de Programas
 "Program Detail"
     Detalles del Programa
 "Program ID"
@@ -1027,44 +1027,44 @@
 "Random Type"
     Tipo Aleatorio
 "Rating"
-    PuntuaciÛn
+    Puntuaci√≥n
 "Rating:"
-    PuntuaciÛn:
+    Puntuaci√≥n:
 "Recently Added Albums"
-    ¡lbumes Recientemente AÒadidos
+    √Ålbumes Recientemente A√±adidos
 "Recently completed jobs"
     Tareas recientemente completadas
 "Recently Played Songs"
     Canciones Recientemente Reproducidas
 "recgroup"
 "Record Date"
-    Fecha de GrabaciÛn
+    Fecha de Grabaci√≥n
 "Record Length"
-    DuraciÛn de la GrabaciÛn
+    Duraci√≥n de la Grabaci√≥n
 "Record new and expire old"
     Grabar nuevos y expirar antiguos
 "Record This"
-    Grabar …ste
+    Grabar √âste
 "Recorded"
     Grabado
 "Recorded Programs"
     Programas Grabados
 "Recording Details"
-    Detalles de GrabaciÛn
+    Detalles de Grabaci√≥n
 "Recording Group"
-    Grupo de GrabaciÛn
+    Grupo de Grabaci√≥n
 "Recording Options"
-    Opciones de GrabaciÛn
+    Opciones de Grabaci√≥n
 "Recording Options Help"
-    Ayuda de las Opciones de GrabaciÛn
+    Ayuda de las Opciones de Grabaci√≥n
 "Recording Priority"
-    Prioridad de GrabaciÛn
+    Prioridad de Grabaci√≥n
 "Recording Profile"
-    Perfil de GrabaciÛn
+    Perfil de Grabaci√≥n
 "Recording Schedules"
     Grabaciones Programadas
 "Recording Statistics"
-    EstadÌsticas de la Grabaciones
+    Estad√≠sticas de la Grabaciones
 "recpriority"
 "recstatus: cancelled"
 "recstatus: conflict"
@@ -1112,7 +1112,7 @@
 "Remote"
     Remoto
 "Remove Item from Playlist"
-    Eliminar Elemento de la Lista de ReproducciÛn
+    Eliminar Elemento de la Lista de Reproducci√≥n
 "Repair Tables"
     Reparar Tablas
 "Repeat"
@@ -1124,35 +1124,35 @@
 "Retry"
     Reintentar
 "Return to Statistics Page"
-    Regresar a la P·gina de EstadÌsticas
+    Regresar a la P√°gina de Estad√≠sticas
 "right"
     derecha
 "Right"
     Derecha
 "Root Directory"
-    Directorio RaÌz
+    Directorio Ra√≠z
 "Rows to show between timeslot info"
-    Filas a mostrar entre informaciÛn de franjas
+    Filas a mostrar entre informaci√≥n de franjas
 "Running"
-    Ejecut·ndose
+    Ejecut√°ndose
 "Saturday"
-    S·bado
+    S√°bado
 "Save"
     Guardar
 "Save or Rename the Current Playlist"
-    Guardar o Cambiar Nombre de la Lista de ReproducciÛn Actual
+    Guardar o Cambiar Nombre de la Lista de Reproducci√≥n Actual
 "Save Schedule"
-    Guardar ProgramaciÛn
+    Guardar Programaci√≥n
 "Save/Rename"
     Guardar/Cambiar el Nombre
 "Save/Rename Playlist"
-    Guardar/Cambiar el Nombre de la Lista de ReproducciÛn
+    Guardar/Cambiar el Nombre de la Lista de Reproducci√≥n
 "Saved Playlist Successfully Deleted"
-    Lista de ReproducciÛn Guardada: Eliminada con …xito
+    Lista de Reproducci√≥n Guardada: Eliminada con √âxito
 "Saved Playlists"
-    Listas de ReproducciÛn Guardadas
+    Listas de Reproducci√≥n Guardadas
 "Scan Collection"
-    Explorar ColecciÛn
+    Explorar Colecci√≥n
 "Schedule"
     Programar
 "Schedule Manually"
@@ -1160,49 +1160,49 @@
 "Schedule normally."
     Programar Normalmente
 "Schedule Options"
-    Opciones de ProgramaciÛn
+    Opciones de Programaci√≥n
 "Schedule Override"
-    Excepciones de ProgramaciÛn
+    Excepciones de Programaci√≥n
 "Schedule via $1."
-    Programar vÌa $1
+    Programar v√≠a $1
 "Scheduled"
     Programado
 "Scheduled Popup"
     Emergente Programado
 "Science Fiction Movies"
-    PelÌculas de Ciencia FicciÛn
+    Pel√≠culas de Ciencia Ficci√≥n
 "Search"
     Buscar
 "Search $1"
     Buscar $1
 "Search all program keywords for a match against search phrase below"
-    Buscar todas las palabras clave de programas que coincidan con la siguiente frase de b˙squeda
+    Buscar todas las palabras clave de programas que coincidan con la siguiente frase de b√∫squeda
 "Search all program titles containing the Title text below"
-    Buscar todos los tÌtulos de programas que contengan el siguiente texto
+    Buscar todos los t√≠tulos de programas que contengan el siguiente texto
 "Search for all actors contained in a recording for a match against search phrase below"
-    Buscar todos los actores contenidos en una grabaciÛn que coincidan con la siguiente frase de b˙squeda
+    Buscar todos los actores contenidos en una grabaci√≥n que coincidan con la siguiente frase de b√∫squeda
 "Search for:  $1"
     Buscar: $1
 "Search Music"
-    Buscar M˙sica
+    Buscar M√∫sica
 "Search Phrase"
     Buscar Frase
 "Search Phrase:"
     Buscar Frase:
 "Search Results"
-    Resultados de la B˙squeda
+    Resultados de la B√∫squeda
 "Search the Music Database"
-    Buscar en la Base de Datos de B˙squeda
+    Buscar en la Base de Datos de B√∫squeda
 "Search Type"
     Buscar Tipo
 "Search Type Help"
-    Ayuda de la B˙squeda por Tipo
+    Ayuda de la B√∫squeda por Tipo
 "Search will perform complex SQL queries against the database as per the search phrase below"
-    Buscar ejecutar· consultas SQL complejas en la base de datos como la siguiente frase de b˙squeda
+    Buscar ejecutar√° consultas SQL complejas en la base de datos como la siguiente frase de b√∫squeda
 "Searches"
-    B˙squedas
+    B√∫squedas
 "Searches will be performed against the title of all TV shows"
-    Se ejecutar·n b˙squedas en el tÌtulo de todos los programas de TV
+    Se ejecutar√°n b√∫squedas en el t√≠tulo de todos los programas de TV
 "Seas/Ep"
     Temp/Ep
 "Season"
@@ -1210,19 +1210,19 @@
 "Select the correct show"
     Seleccione el programa correcto
 "Server returned invalid data when attempting to retrieve metadata."
-    El servidor devolviÛ datos inv·lidos al tratar de recuperar los metadatos.
+    El servidor devolvi√≥ datos inv√°lidos al tratar de recuperar los metadatos.
 "Server Statistics"
-    EstadÌsticas del Servidor
+    Estad√≠sticas del Servidor
 "Set Host"
     Configurar Nodo
 "Settings"
-    ConfiguraciÛn
+    Configuraci√≥n
 "settings"
-    configuraciÛn
+    configuraci√≥n
 "Settings Table"
-    Tabla de ConfiguraciÛn
+    Tabla de Configuraci√≥n
 "settings/stream: protocol"
-    configuraciÛn/flujo: protocolo
+    configuraci√≥n/flujo: protocolo
 "settings: notice"
     Tenga cuidado al alterar esta tabla sin saber lo que hace, puede estropear el funcionamiento de MythTV
 "Shift"
@@ -1232,7 +1232,7 @@
 "Show group"
     Mostrar grupo
 "Show pixmaps"
-    Mostrar gr·ficos
+    Mostrar gr√°ficos
 "Show recordings"
     Mostrar grabaciones
 "show_channel_icons"
@@ -1249,23 +1249,23 @@
 "Skip Ahead"
     Saltar Adelante
 "Skip Back"
-    Saltar Atr·s
+    Saltar Atr√°s
 "Songs"
     Canciones
 "Songs for Genre"
-    Canciones por GÈnero
+    Canciones por G√©nero
 "Songs Played"
     Canciones Reproducidas
 "Songs Rated"
     Canciones Puntuadas
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
-    Lo siento, pero no puede aÒadir esta lista de reproducciÛn puesto que crearÌa una dependencia circular.
+    Lo siento, pero no puede a√±adir esta lista de reproducci√≥n puesto que crear√≠a una dependencia circular.
 "sortby_channum"
 "sourceid"
 "Space"
     Espacio
 "Special Searches"
-    B˙squedas Especiales
+    B√∫squedas Especiales
 "Star character"
     Personaje estrella
 "Start Date"
@@ -1277,7 +1277,7 @@
 "Starting"
     Iniciando
 "Statistics"
-    EstadÌsticas
+    Estad√≠sticas
 "Stats"
     Estad
 "Status"
@@ -1285,15 +1285,15 @@
 "Status Bar"
     Barra de Estado
 "Stereo"
-    EstÈreo
+    Est√©reo
 "Still Recording: Edit"
-    Grabando A˙n: Editar
+    Grabando A√∫n: Editar
 "Stopping"
-    DeteniÈndose
+    Deteni√©ndose
 "Storage Group"
     Grupo de Almacenamiento
 "Store the current session as the default"
-    Guardar la sesiÛn actual como predeterminada
+    Guardar la sesi√≥n actual como predeterminada
 "Streaming"
     Emitiendo Flujo
 "Sub and Desc (Empty matches)"
@@ -1301,17 +1301,17 @@
 "Submit"
     Enviar
 "Submit Search"
-    Enviar B˙squeda
+    Enviar B√∫squeda
 "Subtitle"
-    SubtÌtulo
+    Subt√≠tulo
 "Subtitle and Description"
-    SubtÌ≠tulo y DescripciÛn
+    Subt√≠¬≠tulo y Descripci√≥n
 "Subtitle then Description"
-    SubtÌtulo, luego DescripciÛn
+    Subt√≠tulo, luego Descripci√≥n
 "Subtitled"
     Subtitulado
 "Subtitles Available"
-    SubtÌtulos Disponibles
+    Subt√≠tulos Disponibles
 "Sunday"
     Domingo
 "Surround Sound"
@@ -1319,25 +1319,25 @@
 "Tab"
     Tab
 "Television"
-    TelevisiÛn
+    Televisi√≥n
 "The requested recording schedule has been deleted."
-    La programaciÛn solicitada ha sido eliminada.
+    La programaci√≥n solicitada ha sido eliminada.
 "themoviedb"
     themoviedb
 "There are no items in this Playlist!"
-    °No hay elementos en esta Lista de ReproducciÛn!
+    ¬°No hay elementos en esta Lista de Reproducci√≥n!
 "There was a problem saving your playlist"
-    Hubo un problema al guardar su lista de reproducciÛn
+    Hubo un problema al guardar su lista de reproducci√≥n
 "TheTVDB"
     TheTVDB
 "This episode"
     Este episodio
 "This playlist is already loaded!"
-    °Esta lista de reproducciÛn ya est· cargada!
+    ¬°Esta lista de reproducci√≥n ya est√° cargada!
 "This series"
     Esta serie
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
-    Se sobreescribir· su actual lista de reproducciÛn no guardada. øSeguro que desea continuar?
+    Se sobreescribir√° su actual lista de reproducci√≥n no guardada. ¬øSeguro que desea continuar?
 "Thursday"
     Jueves
 "Time"
@@ -1345,23 +1345,23 @@
 "Time Span"
     Franja Horaria
 "Time Stretch"
-    RalentizaciÛn Temporal
+    Ralentizaci√≥n Temporal
 "Timeslot size"
-    TamaÒo de la franja horaria
+    Tama√±o de la franja horaria
 "title"
-    tÌtulo
+    t√≠tulo
 "Title"
-    TÌtulo
+    T√≠tulo
 "Title Match"
-    Coindidencia en TÌtulo
+    Coindidencia en T√≠tulo
 "Title search"
-    B˙squeda de tÌtulos
+    B√∫squeda de t√≠tulos
 "Title Search"
-    B˙squeda de TÌ≠tulos
+    B√∫squeda de T√≠¬≠tulos
 "Title Search:"
-    B˙squeda de TÌtulos:
+    B√∫squeda de T√≠tulos:
 "Title:"
-    TÌtulo:
+    T√≠tulo:
 "Toggle Interactive Mode"
     Conmutar Modo Interactivo
 "Too Many"
@@ -1369,21 +1369,21 @@
 "Top $1"
     Los primeros $1
 "Top Played Songs"
-    Canciones M·s Reproducidas
+    Canciones M√°s Reproducidas
 "Top Rated Songs"
-    Canciones M·s Puntuadas
+    Canciones M√°s Puntuadas
 "Total Length"
-    DuraciÛn Total
+    Duraci√≥n Total
 "Total Recorded"
     Total Grabados
 "Total Running Time"
-    DuraciÛn Total
+    Duraci√≥n Total
 "Total Time"
     Tiempo Total
 "Total Time:  %s"
     Tiempo Total:  %s
 "Track #%s from the album '%s'"
-    Pista #%s del ·lbum '%s'
+    Pista #%s del √°lbum '%s'
 "Transcode"
     Transcodificador
 "transcoder"
@@ -1405,7 +1405,7 @@
 "Type"
     Tipo
 "Uncategorized"
-    Sin CategorÌa
+    Sin Categor√≠a
 "Undelete"
     Recuperar
 "Undelete: $1"
@@ -1413,52 +1413,52 @@
 "Unknown"
     Desconocido
 "Unknown action"
-    AcciÛn desconocida
+    Acci√≥n desconocida
 "Unknown frontend"
     Cliente desconocido
 "Unknown Program."
     Programa Desconocido.
 "Unknown Recording Schedule."
-    ProgramaciÛn Desconocida
+    Programaci√≥n Desconocida
 "Up"
     Arriba
 "Upcoming Recordings"
-    PrÛximas Grabaciones
+    Pr√≥ximas Grabaciones
 "Update"
     Actualizar
 "Update Recording Settings"
-    Actualizar ConfiguraciÛn de GrabaciÛn
+    Actualizar Configuraci√≥n de Grabaci√≥n
 "Use callsign"
     Usar ID de canal
 "Use date/time"
     Usar fecha/hora
 "useonairguide"
 "User Rating"
-    PuntuaciÛn del Usuario
+    Puntuaci√≥n del Usuario
 "Value"
     Valor
 "Video"
-    VÌdeo
+    V√≠deo
 "Video Bitrate"
-    Tasa de Bits del VÌdeo
+    Tasa de Bits del V√≠deo
 "Video Playback"
-    ReproducciÛn de VÌdeo
+    Reproducci√≥n de V√≠deo
 "Video: Error: IMDB"
-    VÌdeo: Error: IMDB
+    V√≠deo: Error: IMDB
 "Video: Error: IMDB: Not Found"
-    VÌdeo: Error: IMDB: No Encontrado
+    V√≠deo: Error: IMDB: No Encontrado
 "Video: Error: Missing ID"
-    VÌdeo: Error: IMDB: ID Faltante
+    V√≠deo: Error: IMDB: ID Faltante
 "Video: IMDB: No Matches"
-    VÌdeo: IMDB: No Hay Coincidencias
+    V√≠deo: IMDB: No Hay Coincidencias
 "Video: IMDB: Window Title"
-    VÌdeo: IMDB: TÌtulo de Ventana
+    V√≠deo: IMDB: T√≠tulo de Ventana
 "Video: Warning: Artwork"
-    VÌdeo: Aviso: Grafismos
+    V√≠deo: Aviso: Grafismos
 "Video: Warning: Artwork: Download"
-    VÌdeo: Aviso: Grafismo: Descarga
+    V√≠deo: Aviso: Grafismo: Descarga
 "Video: Warning: fopen"
-    VÌdeo: Aviso: fopen
+    V√≠deo: Aviso: fopen
 "VideoAggressivePC"
 "VideoArtworkDir"
 "VideoBrowserNoDB"
@@ -1473,20 +1473,20 @@
 "VideoListUnknownFiletypes"
 "VideoNewBrowsable"
 "Videos"
-    VÌdeos
+    V√≠deos
 "VideoStartupDir"
 "VideoTreeLoadMetaData"
 "VideoTreeNoDB"
 "View"
     Ver
 "View Albums by %s"
-    Ver ¡lbumes por %s
+    Ver √Ålbumes por %s
 "View Details of %s"
     Ver Detalles de %s
 "View Saved Playlist"
-    Ver Lista de RepoducciÛn Guardada
+    Ver Lista de Repoducci√≥n Guardada
 "View Server Statistics"
-    Ver EstadÌsticas del Servidor
+    Ver Estad√≠sticas del Servidor
 "visible"
     visible
 "Visit $1"
@@ -1500,27 +1500,27 @@
 "web_video_thumbnail_height"
 "web_video_thumbnail_width"
 "Wednesday"
-    MiÈrcoles
+    Mi√©rcoles
 "welcome: backend_log"
     bienvenidos: registro_servidor
 "welcome: music"
-    bienvenidos: m˙sica
+    bienvenidos: m√∫sica
 "welcome: remote"
     bienvenidos: remoto
 "welcome: settings"
-    bienvenidos: configuraciÛn
+    bienvenidos: configuraci√≥n
 "welcome: stats"
-    bienvenidos: estadÌsticas
+    bienvenidos: estad√≠sticas
 "welcome: status"
     bienvenidos: estado
 "welcome: tv"
     bienvenidos: tv
 "welcome: video"
-    bienvenidos: vÌdeo
+    bienvenidos: v√≠deo
 "What else is on at this time?"
-    øQuÈ m·s hay a esta hora?
+    ¬øQu√© m√°s hay a esta hora?
 "Widescreen"
-    Panor·mico
+    Panor√°mico
 "Width"
     Ancho
 "Will Record"
@@ -1529,14 +1529,14 @@
     Escrito por
 "xmltvid"
 "Year"
-    AÒo
+    A√±o
 "Year:"
-    AÒo:
+    A√±o:
 "Yes"
-    SÌ
+    S√≠
 "Yesterday"
     Ayer
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
-    Le falta una extensiÛn php para interactuar con mysql. Por favor, instale php-mysqli o similar
+    Le falta una extensi√≥n php para interactuar con mysql. Por favor, instale php-mysqli o similar
 "You must be running at least php 5.3 to use this program."
     Debe ejecutar php 5.3 al menos para usar este programa.

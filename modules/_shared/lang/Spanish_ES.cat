@@ -1,21 +1,21 @@
 "Action"
-    Acción
-    \b(?:action|adven|acci[óo]n|avent)
+    AcciÃ³n
+    \b(?:action|adven|acci[Ã³o]n|avent)
 "Adult"
     Adultos
-    \b(?:adult|er[oó]t)
+    \b(?:adult|er[oÃ³]t)
 "Animals"
     Animales
     \b(?:animal|tiere)
 "Art_Music"
-    Arte/Música
-    \b(?:art|dan[cz][ae]|m[uú]si[ck]|kunst|[ck]ultur)
+    Arte/MÃºsica
+    \b(?:art|dan[cz][ae]|m[uÃº]si[ck]|kunst|[ck]ultur)
 "Business"
     Negocios
     \b(?:biz|busine|negoc|econ)
 "Children"
     Infantil
-    \b(?:child|kin?d|infan|anima[ct]ion|niñ)
+    \b(?:child|kin?d|infan|anima[ct]ion|niÃ±)
 "Comedy"
     Comedia
     \b(?:comed|entertain|sitcom|humor)
@@ -32,7 +32,7 @@
     Educativo
     \b(?:edu|interests)
 "Food"
-    Alimentación
+    AlimentaciÃ³n
     \b(?:food|cook|comida|cocin|aliment)
 "Game"
     Juegos
@@ -48,21 +48,21 @@
     \b(?:horror|terror)
 "HowTo"
     Bricolaje
-    \b(?:how|home|house|garden|como|casa|jard[ií]n|brico|hogar)
+    \b(?:how|home|house|garden|como|casa|jard[iÃ­]n|brico|hogar)
 "Misc"
     Varios
     \b(?:[e]special|variedad|info|collect|colecci)
 "News"
     Noticias
-    \b(?:news|noticias|informa[ct]i[óov])
+    \b(?:news|noticias|informa[ct]i[Ã³ov])
 "Reality"
     Telerrealidad
     \b(?:reali[dt][iy])
 "Romance"
-    Romántico
+    RomÃ¡ntico
     \b(?:romance|lieb|romant)
 "SciFi_Fantasy"
-    Ciencia Ficción/Fantasía
+    Ciencia FicciÃ³n/FantasÃ­a
     \b(?:fantasy|sci\w*\W*fi|fantas|ficci)
 "Science_Nature"
     Ciencia/Naturaleza
@@ -88,11 +88,11 @@
 "Unknown"
     Desconocido
 "War"
-    Bélico
-    \b(?:war|guerr|b[eé]lic)
+    BÃ©lico
+    \b(?:war|guerr|b[eÃ©]lic)
 "Western"
     Oeste
     \b(?:west|oeste|vaquer)
 "movie"
-    Película
+    PelÃ­cula
     
