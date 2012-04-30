@@ -275,6 +275,11 @@ class Schedule extends MythBase {
         }
     // Update the type, in case it changed
         $this->type = $new_type;
+    // Clear the the search column for non-manual overrides.
+        if (($this->type == rectype_override || $this->type == rectype_dontrec)
+            && $this->search != searchtype_manual) {
+            $this->search = 0;
+        }
     // Update the record
         $sh = $db->query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,
                                                title,subtitle,description,profile,recpriority,category,
