@@ -161,12 +161,12 @@
  * Converts an sql timestamp into unixtime
 /**/
     function unixtime($sql_timestamp) {
-        return mktime(substr($sql_timestamp, 8,  2),    // hour
-                      substr($sql_timestamp, 10, 2),    // minute
-                      substr($sql_timestamp, 12, 2),    // second
-                      substr($sql_timestamp, 4,  2),    // month
-                      substr($sql_timestamp, 6,  2),    // day
-                      substr($sql_timestamp, 0,  4));   // year
+        return gmmktime(substr($sql_timestamp, 8,  2),    // hour
+                        substr($sql_timestamp, 10, 2),    // minute
+                        substr($sql_timestamp, 12, 2),    // second
+                        substr($sql_timestamp, 4,  2),    // month
+                        substr($sql_timestamp, 6,  2),    // day
+                        substr($sql_timestamp, 0,  4));   // year
     }
 
 /**
@@ -315,20 +315,12 @@
     function myth2unixtime($mythtime) {
         if (strlen($mythtime) < 1)
             return '';
-        return strtotime(str_replace('T', ' ', $mythtime));
+        return strtotime(str_replace('T', ' ', $mythtime), "UTC");
     }
 
 /**
  * Converts a unix timestamp into a myth timestamp
 /**/
     function unix2mythtime($time) {
-        return date('Y-m-d\TH:i:s', $time);
-    }
-
-/**
- * Converts a unix timestamp into a myth timestamp
-/**/
-    function unix2gmtmythtime($time) {
         return gmdate('Y-m-d\TH:i:s', $time);
     }
-
