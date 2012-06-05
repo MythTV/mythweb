@@ -122,6 +122,8 @@ class Database {
         }
     // Set database connection to utf8
         $dbh->query('SET NAMES utf8;');
+    // Make sure UNIX_TIMESTAMP AND FROM_UNIXTIME do the right things
+        $dbh->query('SET time_zone="+0:00";');
     // Return
         return $dbh;
     }

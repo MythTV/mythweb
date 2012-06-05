@@ -52,6 +52,10 @@
               "Cannot connect to database: $!\n\n";
         exit;
     }
+# Set database connection to utf8
+    $dbh->prepare("SET NAMES utf8;")->execute();
+# Make sure UNIX_TIMESTAMP AND FROM_UNIXTIME do the right things
+    $dbh->prepare("SET time_zone='+0:00';")->execute();
 
 # Find the path to the modules directory
     our $modules_dir = dirname(dirname(find_in_path('modules/tv/init.php')));
