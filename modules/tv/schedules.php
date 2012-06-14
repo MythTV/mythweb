@@ -36,6 +36,10 @@
             $schedule->profile  = '';
             $schedule->recgroup = '';
         }
+    // Add a blank channel, to suppress warnings
+        if (!$schedule->channel) {
+            $schedule->channel = Channel::find(null);
+        }
     // Add this show
         $the_schedules[] = &$schedule;
     }
