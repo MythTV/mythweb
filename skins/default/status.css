@@ -34,6 +34,7 @@ div.content {
     padding:            10px;
     margin-bottom:      30px;
     -moz-border-radius: 8px 0px 0px 8px;
+    border-radius:      8px 0px 0px 8px;
 }
 div.schedule a {
     position:        relative;

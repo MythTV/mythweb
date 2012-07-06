@@ -34,6 +34,7 @@
     border-bottom:      2px solid #48f;
     border-left:        2px solid #48f;
     -moz-border-radius: 8px;
+    border-radius:      8px;
 }
 #module_names li.selected a {
     display:            block;
@@ -46,7 +47,8 @@
     min-width:          314px;
     height:             30em;
     padding:            .5em 1em;
-    -moz-border-radius:     8px;
+    -moz-border-radius: 8px;
+    border-radius:      8px;
 }
 
 .module_icon {
