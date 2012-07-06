@@ -78,6 +78,7 @@
         white-space:        nowrap;
         -moz-border-radius-topleft:     8px;
         -moz-border-radius-topright:    8px;
+        border-radius:      8px 8px 0px 0px;
     }
     #remote .x-sections a:hover, #remote .x-sections a.x-selected {
         color:              white;

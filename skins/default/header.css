@@ -26,6 +26,7 @@
     border-bottom:      1px solid #000;
     border-left:        1px solid #79c;
     -moz-border-radius: 8px;
+    border-radius:      8px;
     text-align:         center;
     height:             48px;
     width:              48px;
@@ -80,6 +81,7 @@
     border-bottom:      1px solid #68b;
     border-left:        1px solid #002;
     -moz-border-radius: 6px;
+    border-radius:      6px;
     min-width:          225px;
 }
 #help_box {
@@ -98,6 +100,7 @@
     border-bottom:      1px solid #68b;
     border-left:        1px solid #002;
     -moz-border-radius: 8px;
+    border-radius:      8px;
     min-width:          225px;
     white-space:        nowrap;
 }
