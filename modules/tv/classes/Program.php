@@ -581,10 +581,16 @@ class Program extends MythBase {
     // forgotten, so we have to search for matching rows
         $sh = $db->query('SELECT *
                             FROM oldrecorded
-                           WHERE title=? AND subtitle=? AND description=? AND future = 0',
+                           WHERE title = ? AND
+                                 ((programid = '' AND subtitle = ?
+                                   AND description = ?) OR 
+                                  (programid <> '' AND programid = ?) OR 
+                                  (findid <> 0 AND findid = ?))',
                          $this->title,
                          $this->subtitle,
-                         $this->description);
+                         $this->description,
+                         $this->programid,
+                         $this->findid);
         while ($row = $sh->fetch_assoc()) {
             $prog =& new Program($row);
             MythBackend::find()->sendCommand(array('FORGET_RECORDING', $prog->backend_row(), '0'));
