@@ -23,6 +23,7 @@
     define('rectype_dontrec',     8);
     define('rectype_finddaily',   9);
     define('rectype_findweekly', 10);
+    define('rectype_template',   11);
 
 // Define the search types
     define('searchtype_power',    1);
