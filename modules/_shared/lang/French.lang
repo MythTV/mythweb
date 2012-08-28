@@ -1556,6 +1556,7 @@
 "VideoGalleryColsPerPage"
     Nombre de colonnes par page dans le mode gallerie vidéo
 "VideoGalleryNoDB"
+    Insertion du N° de la base de données dans le mode gallerie vidéo
 "VideoGalleryRowsPerPage"
     Nombre d'items par page dans le mode gallerie vidéo
 "VideoGallerySubtitle"
@@ -1571,6 +1572,7 @@
 "VideoTreeLoadMetaData"
     Répertoire de base pour le stockage des vidéos
 "VideoTreeNoDB"
+    Insertion du N° de la base de données dans le mode arborescence
 "View"
     Afficher
 "View Albums by %s"
