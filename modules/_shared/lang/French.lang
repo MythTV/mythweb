@@ -1554,11 +1554,11 @@
 "VideoGalleryAspectRatio"
     Ratio de la liste des vidéos
 "VideoGalleryColsPerPage"
-    Nombre de colonnes par page dans le mode gallerie vidéo
+    Nombre de colonnes par page dans le mode galerie vidéo
 "VideoGalleryNoDB"
-    Insertion du N° de la base de données dans le mode gallerie vidéo
+    Insertion du N° de la base de données dans le mode galerie vidéo
 "VideoGalleryRowsPerPage"
-    Nombre d'items par page dans le mode gallerie vidéo
+    Nombre d'items par page dans le mode galerie vidéo
 "VideoGallerySubtitle"
     Afficher les sous-titres
 "VideoListUnknownFiletypes"
