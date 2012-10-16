@@ -90,12 +90,14 @@ class Video {
         $this->childid = $video['childid'];
     // Figure out the URL
         $this->url = '#';
-        if (file_exists('data/video/'))
-            $this->url = implode('/', array_map('rawurlencode',
-                                             array_map('utf8tolocal',
-                                             explode('/',
-                                             'data/video/' . preg_replace('#^'.$mythvideo_dir.'/?#', '', $this->filename)
-                                       ))));
+    //// all junk, replacing
+//        if (file_exists('data/video/'))
+//            $this->url = implode('/', array_map('rawurlencode',
+//                                             array_map('utf8tolocal',
+//                                             explode('/',
+//                                             'data/video/' . preg_replace('#^'.$mythvideo_dir.'/?#', '', $this->filename)
+//                                       ))));
+        $this->url = 'video/stream?Id=' . $this->intid;
         $genre = $db->query('SELECT idgenre
                                FROM videometadatagenre
                               WHERE idvideo = ?',

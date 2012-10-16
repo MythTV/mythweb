@@ -30,6 +30,10 @@
         $type   = 'video/nuppelvideo';
         $suffix = '.nuv';
     }
+    elsif ($basename =~ /\.mkv$/) {
+        $type   = 'video/x-matroska';
+        $suffix = '.mkv';
+    }
     else {
         print header(),
               "Unknown video type requested:  $basename\n";
