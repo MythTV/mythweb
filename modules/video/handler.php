@@ -15,8 +15,10 @@
  * @global  string   $GLOBALS['mythvideo_dir']
  * @name    $mythvideo_dir
 /**/
-    global $mythvideo_dir;
-    $mythvideo_dir = setting('VideoStartupDir', hostname);
+
+//// dont need this...
+//    global $mythvideo_dir;
+//    $mythvideo_dir = setting('VideoStartupDir', hostname);
 
 // Load the video storage directories
     $video_dirs = $db->query_list('
@@ -37,6 +39,7 @@
         }
     }
 
+/** nor any of this...
 // Make sure the video directory exists
     if (file_exists('data/video')) {
     // File is not a directory or a symlink
@@ -93,7 +96,7 @@
                         .' reload this page.');
         }
     // Create a symlink to the first artwork directory that we find.
-    /** @todo we should really support multiple directories, but it's too much effort to hack in at the moment. */
+    // @todo we should really support multiple directories, but it's too much effort to hack in at the moment.
         else {
             foreach ($artwork_dirs as $dir) {
                 if (is_dir($dir) || is_link($dir)) {
@@ -116,6 +119,7 @@
             }
         }
     }
+*/
 
     define('video_img_height',  _or(setting('web_video_thumbnail_height', hostname), 140));
     define('video_img_width',   _or(setting('web_video_thumbnail_width', hostname),   94));
@@ -125,11 +129,17 @@
         case 'edit':
             require_once 'modules/video/edit.php';
             exit;
-        case 'imdb':
-            require_once 'modules/video/imdb.php';
-            exit;
-        case 'scan':
-            require_once 'modules/video/scan.php';
+//// this is probably doing bad things
+//        case 'imdb':
+//            require_once 'modules/video/imdb.php';
+//            exit;
+//// this is broken, so disable it
+//        case 'scan':
+//            require_once 'modules/video/scan.php';
+//            exit;
+//// new stuff
+        case 'stream':
+            require_once 'modules/video/stream.php';
             exit;
     }
 
