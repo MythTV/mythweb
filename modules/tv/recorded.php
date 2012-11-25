@@ -85,7 +85,7 @@
             }
         // keep track of their names and how many episodes we have recorded
             $Total_Programs++;
-            $Groups[$record[28]]++;
+            $Groups[$record[29]]++;
         // Hide LiveTV  and Deleted recordings from the title list
             if (($_REQUEST['recgroup'] && $_REQUEST['recgroup'] == $record[28]) || (!$_REQUEST['recgroup'] && $record[28] != 'LiveTV' && $record[28] != 'Deleted'))
                 $Program_Titles[$record[0]]++;
