@@ -125,6 +125,10 @@
 /* a class for the the cells containing recored programs in recorded_programs.php */
 .recorded {    background-color: #506080; }
 
+.recorded .x-originalairdate {
+    white-space: nowrap;
+}
+
 .recorded .x-progflags img {
     padding:    .3em;
 }

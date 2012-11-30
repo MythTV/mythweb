@@ -71,23 +71,23 @@
         // Skip the offset
             if ($key === 'offset')  // WHY IN THE WORLD DOES 0 == 'offset'?!?!?  so we use ===
                 continue;
-        // Get the length (26 == recendts; 25 == recstartts)
-            $length = $record[26] - $record[25];
+        // Get the length (267== recendts; 26 == recstartts)
+            $length = $record[27] - $record[26];
         // Keep track of the total time and disk space used (9 == filesize)
             $Total_Time += $length;
             if (function_exists('gmp_add')) {
             // GMP functions should work better with 64 bit numbers.
-                $Total_Used = gmp_strval(gmp_add($Total_Used, $record[11]));
+                $Total_Used = gmp_strval(gmp_add($Total_Used, $record[12]));
             }
             else {
             // This is inaccurate, but it's the best we can get without GMP.
-                $Total_Used += $record[11];
+                $Total_Used += $record[12];
             }
         // keep track of their names and how many episodes we have recorded
             $Total_Programs++;
             $Groups[$record[29]]++;
         // Hide LiveTV  and Deleted recordings from the title list
-            if (($_REQUEST['recgroup'] && $_REQUEST['recgroup'] == $record[28]) || (!$_REQUEST['recgroup'] && $record[28] != 'LiveTV' && $record[28] != 'Deleted'))
+            if (($_REQUEST['recgroup'] && $_REQUEST['recgroup'] == $record[29]) || (!$_REQUEST['recgroup'] && $record[29] != 'LiveTV' && $record[29] != 'Deleted'))
                 $Program_Titles[$record[0]]++;
         // Skip files with no chanid
             if (!$record[6])
@@ -95,10 +95,10 @@
         // Skip programs the user doesn't want to look at
             if ($_REQUEST['title'] && $_REQUEST['title'] != $record[0])
                 continue;
-            if ($_REQUEST['recgroup'] && $_REQUEST['recgroup'] != $record[28])
+            if ($_REQUEST['recgroup'] && $_REQUEST['recgroup'] != $record[29])
                 continue;
         // Hide LiveTV recordings from the default view
-            if (empty($_REQUEST['recgroup']) && ($record[28] == 'LiveTV' || $record[28] == 'Deleted'))
+            if (empty($_REQUEST['recgroup']) && ($record[29] == 'LiveTV' || $record[29] == 'Deleted'))
                 continue;
         // Make sure that everything we're dealing with is an array
             if (!is_array($Programs[$record[0]]))
