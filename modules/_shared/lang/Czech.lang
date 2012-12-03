@@ -1,4 +1,4 @@
-﻿""
+""
 " TRANSCODED"
 "# Tracks"
     # Stopy
@@ -46,6 +46,8 @@
     $1 TB
 "$1 to $2"
     $1 do $2
+"$1 video"
+"$1 videos"
 "$1 wasted"
     $1 zbytečný
 "$1 year"
@@ -844,7 +846,7 @@
 "Play this Album Now"
     Přehrát tento album
 "Play This Playlist Now"
-    Přehrát tento playlist 
+    Přehrát tento playlist
 "Play this Playlist Now"
     Přehrát tento playlist
 "Play this Song Now"
@@ -908,7 +910,7 @@
     Předchozí nahrávka
 "Previous recordings"
     Předchozí nahrávky
-"Primetime"
+"Prime time"
 "Priority for a category"
     Priorita pro kategorii
 "Priority for a category type"
@@ -1039,7 +1041,7 @@
 "rectype-long: daily"
     Nahrát tento pořad v tomto čase každý den.
 "rectype-long: dontrec"
-    Nenahrávat toto vysílání pořadu. 
+    Nenahrávat toto vysílání pořadu.
 "rectype-long: finddaily"
     Najít a nahrát jedno vysílání s tímto názvem každý den.
 "rectype-long: findone"
@@ -1061,11 +1063,11 @@
 "rectype: dontrec"
     Nenahrávat
 "rectype: finddaily"
-    Najít jednou denně 
+    Najít jednou denně
 "rectype: findone"
     Najdi jednou
 "rectype: findweekly"
-    Najít jednou týdenně 
+    Najít jednou týdenně
 "rectype: once"
     Jednou
 "rectype: override"
@@ -1269,10 +1271,10 @@
 "There was a problem saving your playlist"
     Vyskytl se problém s ukládáním playlistu
 "TheTVDB"
-"This Episode"
-    Tato epizoda
+"This episode"
 "This playlist is already loaded!"
     Tento playlist je právě načten
+"This series"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Tohle přepíše váš aktuální, neuložený playlist. Opravdu chcete pokračovat?
 "Thursday"
@@ -1400,9 +1402,9 @@
 "View"
     Zobrazit
 "View Albums by %s"
-    Zobrazit alba podle %s 
+    Zobrazit alba podle %s
 "View Details of %s"
-    Zobrazit detaily podle %s 
+    Zobrazit detaily podle %s
 "View Saved Playlist"
     Zobrazit uložené playlisty
 "View Server Statistics"
@@ -1456,4 +1458,3 @@
     Chybí vám php přípona pro mysql interakci. Prosím nainstalujte php-mysqli.
 "You must be running at least php 5.3 to use this program."
     Musíte používat php 5.3 nebo vyšší, aby ste mohli použít tenhle pořad.
-

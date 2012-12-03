@@ -40,6 +40,8 @@
 "$1 TB"
 "$1 to $2"
     $1 do $2
+"$1 video"
+"$1 videos"
 "$1 wasted"
     $1 posneto
 "$1 year"
