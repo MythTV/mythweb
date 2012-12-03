@@ -288,7 +288,7 @@
  </form>
 </td>
 <td style="text-align: right;">
- <?php echo count($All_Videos).' videos'; ?>
+ <?php echo tn('$1 video', '$1 videos', count($All_Videos)); ?>
 </td>
 </tr>
 </table>
