@@ -288,7 +288,14 @@
  </form>
 </td>
 <td style="text-align: right;">
- <?php echo tn('$1 video', '$1 videos', count($All_Videos)); ?>
+ <?php 
+     $video_count = count($All_Videos);
+     if( $video_count ) {
+         echo tn('$1 video', '$1 videos', $video_count); 
+     } else {
+         echo t('No videos');
+     }
+ ?>
 </td>
 </tr>
 </table>
