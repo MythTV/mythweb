@@ -63,12 +63,12 @@
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
                         if ($schedule->type == rectype_always) echo ' CHECKED' ?> />
                     <label for="record_always"><?php echo t('rectype-long: always') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_finddaily ?>" id="rectype_finddaily"<?php
-                        if ($schedule->type == rectype_finddaily) echo ' CHECKED' ?> />
-                    <label for="rectype_finddaily"><?php echo t('rectype-long: finddaily') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findweekly ?>" id="rectype_findweekly"<?php
-                        if($schedule->type == rectype_findweekly) echo ' CHECKED' ?> />
-                    <label for="rectype_findweekly"><?php echo t('rectype-long: findweekly') ?></label></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="rectype_daily"<?php
+                        if ($schedule->type == rectype_daily) echo ' CHECKED' ?> />
+                    <label for="rectype_daily"><?php echo t('rectype-long: finddaily') ?></label></li>
+                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="rectype_weekly"<?php
+                        if($schedule->type == rectype_weekly) echo ' CHECKED' ?> />
+                    <label for="rectype_weekly"><?php echo t('rectype-long: findweekly') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="rectype_findone"<?php
                         if ($schedule->type == rectype_findone) echo ' CHECKED' ?> />
                     <label for="rectype_findone"><?php echo t('rectype-long: findone') ?></label></li>

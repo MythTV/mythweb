@@ -500,8 +500,6 @@ class Program extends MythBase {
                 case rectype_findone:    $str .= t('rectype-long: findone');    break;
                 case rectype_override:   $str .= t('rectype-long: override');   break;
                 case rectype_dontrec:    $str .= t('rectype-long: dontrec');    break;
-                case rectype_finddaily:  $str .= t('rectype-long: finddaily');  break;
-                case rectype_findweekly: $str .= t('rectype-long: findweekly'); break;
                 default:                 $str .= t('Unknown');
             }
             $str .= "</dd>\n";

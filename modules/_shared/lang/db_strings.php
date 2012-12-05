@@ -15,3 +15,5 @@ t('Commercial free');
 t('High definition');
 t('This episode');
 t('This series');
+t('This time');
+t('This day and time');

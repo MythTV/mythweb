@@ -44,8 +44,8 @@
         // Only certain rectypes are allowed
             case rectype_findone:
             case rectype_always:
-            case rectype_finddaily:
-            case rectype_findweekly:
+            case rectype_daily:
+            case rectype_weekly:
                 break;
         // Everything else gets ignored
             default:

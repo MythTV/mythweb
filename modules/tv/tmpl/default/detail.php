@@ -579,21 +579,9 @@
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php
                         echo $schedule->type == rectype_once ? ' CHECKED' : '' ?> />
                     <label for="record_once"><?php echo t('rectype-long: once') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php
-                        echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?> />
-                    <label for="record_daily"><?php echo t('rectype-long: daily') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php
-                        echo $schedule->type == rectype_weekly ? ' CHECKED' : '' ?> />
-                    <label for="record_weekly"><?php echo t('rectype-long: weekly') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="record_findone"<?php
                         echo $schedule->type == rectype_findone ? ' CHECKED' : '' ?> />
                     <label for="record_findone"><?php echo t('rectype-long: findone') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_finddaily ?>" id="record_finddaily"<?php
-                        echo $schedule->type == rectype_finddaily ? ' CHECKED' : '' ?> />
-                    <label for="record_finddaily"><?php echo t('rectype-long: finddaily') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findweekly ?>" id="record_findweekly"<?php
-                        echo $schedule->type == rectype_findweekly ? ' CHECKED' : '' ?> />
-                    <label for="record_findweekly"><?php echo t('rectype-long: findweekly') ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_channel ?>" id="record_channel"<?php
                         echo $schedule->type == rectype_channel ? ' CHECKED' : '' ?> />
                     <label for="record_channel"><?php echo t('rectype-long: channel', $channel->callsign) ?></label></li>

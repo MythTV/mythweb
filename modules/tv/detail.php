@@ -176,8 +176,6 @@
                 case rectype_always:      $type = rectype_always;      break;
                 case rectype_weekly:      $type = rectype_weekly;      break;
                 case rectype_findone:     $type = rectype_findone;     break;
-                case rectype_finddaily:   $type = rectype_finddaily;   break;
-                case rectype_findweekly:  $type = rectype_findweekly;  break;
                 case rectype_override:    $type = rectype_override;    break;
                 case rectype_dontrec:     $type = rectype_dontrec;     break;
                 default:                  $type = 0;

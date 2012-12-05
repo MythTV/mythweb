@@ -73,16 +73,8 @@
         </a><br />
         <input type="radio" class="radio" name="record" value="<?php echo rectype_once ?>" id="record_once"<?php echo $schedule->type == rectype_once ? ' CHECKED' : '' ?>></input>
             <a>Record this showing</a><br />
-        <input type="radio" class="radio" name="record" value="<?php echo rectype_daily ?>" id="record_daily"<?php echo $schedule->type == rectype_daily ? ' CHECKED' : '' ?>></input>
-            <a>Record every day</a> at this time<br />
-        <input type="radio" class="radio" name="record" value="<?php echo rectype_weekly ?>" id="record_weekly"<?php echo $schedule->type == rectype_weekly ? ' CHECKED' : '' ?>></input>
-            <a>Record every week</a> at this time<br />
         <input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="record_findone"<?php echo $schedule->type == rectype_findone ? ' CHECKED' : '' ?>></input>
             <a>Find one episode</a><br />
-        <input type="radio" class="radio" name="record" value="<?php echo rectype_finddaily ?>" id="record_finddaily"<?php echo $schedule->type == rectype_finddaily ? ' CHECKED' : '' ?>></input>
-            <a>Find one episode every day</a><br />
-        <input type="radio" class="radio" name="record" value="<?php echo rectype_findweekly ?>" id="record_findweekly"<?php echo $schedule->type == rectype_findweekly ? ' CHECKED' : '' ?>></input>
-            <a>Find one episode every week</a><br />
         <input type="radio" class="radio" name="record" value="<?php echo rectype_channel ?>" id="record_channel"<?php echo $schedule->type == rectype_channel ? ' CHECKED' : '' ?>></input>
             <a>Always record on this channel</a><br />
         <input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php echo $schedule->type == rectype_always ? ' CHECKED' : '' ?>></input>
