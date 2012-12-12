@@ -14,11 +14,11 @@
         $host = $_REQUEST['host'];
         $frontends = MythFrontend::findFrontends();
         $frontends[$host]->play_program($chanid, $starttime);
-        header('Location: tv/detail/'.urlencode($chanid).'/'.urlencode($starttime));
+        header('Location: '.root_url.'tv/detail/'.urlencode($chanid).'/'.urlencode($starttime));
         exit;
     }
 
-    $Page_Previous_Location = 'tv/detail/'.urlencode($chanid).'/'.urlencode($starttime);
+    $Page_Previous_Location = root_url.'tv/detail/'.urlencode($chanid).'/'.urlencode($starttime);
     $Page_Previous_Location_Name = 'Details';
     $Page_Title_Short = 'Pick Frontend';
 
