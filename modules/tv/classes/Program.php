@@ -579,13 +579,13 @@ class Program extends MythBase {
         global $db;
     // The FORGET_RECORDING command requires the specific record to be
     // forgotten, so we have to search for matching rows
-        $sh = $db->query('SELECT *
+        $sh = $db->query("SELECT *
                             FROM oldrecorded
                            WHERE title = ? AND
                                  ((programid = '' AND subtitle = ?
                                    AND description = ?) OR 
                                   (programid <> '' AND programid = ?) OR 
-                                  (findid <> 0 AND findid = ?))',
+                                  (findid <> 0 AND findid = ?))",
                          $this->title,
                          $this->subtitle,
                          $this->description,
