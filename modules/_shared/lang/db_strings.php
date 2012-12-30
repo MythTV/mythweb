@@ -1,4 +1,4 @@
-<?php
+/<?php
 /*
  * This file is not actually run by mythweb but contains strings that 
  * exist only in the database, so that build_translation.pl does not
@@ -17,3 +17,4 @@ t('This episode');
 t('This series');
 t('This time');
 t('This day and time');
+t('This channel');

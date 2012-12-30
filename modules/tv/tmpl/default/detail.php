@@ -582,9 +582,6 @@
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="record_findone"<?php
                         echo $schedule->type == rectype_findone ? ' CHECKED' : '' ?> />
                     <label for="record_findone"><?php echo t('rectype-long: findone') ?></label></li>
-                <li><input type="radio" class="radio" name="record" value="<?php echo rectype_channel ?>" id="record_channel"<?php
-                        echo $schedule->type == rectype_channel ? ' CHECKED' : '' ?> />
-                    <label for="record_channel"><?php echo t('rectype-long: channel', $channel->callsign) ?></label></li>
                 <li><input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php
                         echo $schedule->type == rectype_always ? ' CHECKED' : '' ?> />
                     <label for="record_always"><?php echo t('rectype-long: always') ?></label></li>

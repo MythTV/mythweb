@@ -52,7 +52,6 @@ class Recording {
     var $record_daily   = false;
     var $record_weekly  = false;
     var $record_once    = false;
-    var $record_channel = false;
     var $record_always  = false;
 
     var $css_class;         // css class, based on category and/or category_type
@@ -104,7 +103,6 @@ class Recording {
         switch ($this->type) {
             case 1: $this->record_once    = true;  break;
             case 2: $this->record_daily   = true;  break;
-            case 3: $this->record_channel = true;  break;
             case 4: $this->record_always  = true;  break;
             case 5: $this->record_weekly  = true;  break;
             case 6: $this->record_findone = true;  break;
@@ -115,7 +113,6 @@ class Recording {
                               || $this->record_weekly
                               || $this->record_once
                               || $this->record_findone
-                              || $this->record_channel
                               || $this->record_always ) ? true : false;
     // Turn type int a word
         $this->texttype = $GLOBALS['RecTypes'][$this->type];

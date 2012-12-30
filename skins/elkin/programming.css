@@ -72,7 +72,6 @@
 .record_weekly            { border: 1px solid  #00F000 !important; }
 .record_timeslot          { border: 1px solid  #00F000 !important; }
 .record_once              { border: 1px solid  #00F000 !important; }
-.record_channel           { border: 1px solid  #00F000 !important; }
 .record_always            { border: 1px solid  #00F000 !important; }
 .record_conflicting       { border: 1px solid  #FF0000 !important; }
 .record_duplicate         { border: 2px dashed #90B0A0 !important; }

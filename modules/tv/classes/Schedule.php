@@ -437,10 +437,6 @@ class Schedule extends MythBase {
             switch ($this->type) {
                 case rectype_once:       $str .= t('rectype-long: once');       break;
                 case rectype_daily:      $str .= t('rectype-long: daily');      break;
-                case rectype_channel:
-                    $channel =& Channel::find($this->chanid);
-                    $str     .= t('rectype-long: channel', $_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign);
-                    break;
                 case rectype_always:     $str .= t('rectype-long: always');     break;
                 case rectype_weekly:     $str .= t('rectype-long: weekly');     break;
                 case rectype_findone:    $str .= t('rectype-long: findone');    break;

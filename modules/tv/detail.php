@@ -172,7 +172,6 @@
             switch ($_POST['record']) {
                 case rectype_once:        $type = rectype_once;        break;
                 case rectype_daily:       $type = rectype_daily;       break;
-                case rectype_channel:     $type = rectype_channel;     break;
                 case rectype_always:      $type = rectype_always;      break;
                 case rectype_weekly:      $type = rectype_weekly;      break;
                 case rectype_findone:     $type = rectype_findone;     break;

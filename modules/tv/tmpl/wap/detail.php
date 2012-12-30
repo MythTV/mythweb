@@ -75,8 +75,6 @@
             <a>Record this showing</a><br />
         <input type="radio" class="radio" name="record" value="<?php echo rectype_findone ?>" id="record_findone"<?php echo $schedule->type == rectype_findone ? ' CHECKED' : '' ?>></input>
             <a>Find one episode</a><br />
-        <input type="radio" class="radio" name="record" value="<?php echo rectype_channel ?>" id="record_channel"<?php echo $schedule->type == rectype_channel ? ' CHECKED' : '' ?>></input>
-            <a>Always record on this channel</a><br />
         <input type="radio" class="radio" name="record" value="<?php echo rectype_always ?>" id="record_always"<?php echo $schedule->type == rectype_always ? ' CHECKED' : '' ?>></input>
             <a>Always record on any channel</a><br />
             <br />

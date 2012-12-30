@@ -15,7 +15,6 @@
 // Constants for the recording types
     define('rectype_once',        1);
     define('rectype_daily',       2);
-    define('rectype_channel',     3);
     define('rectype_always',      4);
     define('rectype_weekly',      5);
     define('rectype_findone',     6);
@@ -42,7 +41,6 @@
     $RecTypes = array(
                       rectype_once       => t('rectype: once'),
                       rectype_daily      => t('rectype: daily'),
-                      rectype_channel    => t('rectype: channel'),
                       rectype_always     => t('rectype: always'),
                       rectype_weekly     => t('rectype: weekly'),
                       rectype_findone    => t('rectype: findone'),
