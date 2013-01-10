@@ -205,9 +205,12 @@
 
 // Get the video categories on the system
     $Category_String = array();
+    $Category_Index = array();
     $sh = $db->query('SELECT * FROM videocategory ORDER BY category');
-    while ($row = $sh->fetch_assoc())
+    while ($row = $sh->fetch_assoc()) {
         $Category_String[$row['intid']] = $row['category'];
+        $Category_Index[$row['category']] = $row['intid'];
+    }
     $sh->finish();
     $Category_String[0] = t('Uncategorized');
 
