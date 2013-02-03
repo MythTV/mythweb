@@ -60,3 +60,10 @@
     text-align:     center;
     margin-top:     -1.5em;
 }
+
+#tv_warning {
+    float:          left;
+    width:          65em;
+    text-align:     left;
+    margin-top:     1.5em;
+}

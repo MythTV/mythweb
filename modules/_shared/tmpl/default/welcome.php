@@ -65,23 +65,6 @@
 
     <div id="module_info">
 <?php
-    if (!$Settings['tv']) {
-?>
-<h2>No TV Configured</h2>
-<p>
-MythTV is intended to run with TV settings configured.  Your installation does
-not appear to have been fully configured for TV viewing (there are no channels).
-If you intend to use MythTV's TV functionality, please finish configuration
-via mythtv-setup before using MythWeb.
-</p>
-<p>
-MythWeb is capable of functioning without TV settings, but so much of its
-interface is designed to make the TV process as smooth as possible that you
-will likely find many nonfunctional links to TV functionality.  Don't be
-surprised to find &quot;unknown module&quot; messages when you follow links.
-</p>
-<?php
-    }
 // Print out the list of modules.  Each theme should include a welcome page for
 // each module.
     foreach (Modules::getModules() as $id => $module) {
@@ -96,6 +79,22 @@ surprised to find &quot;unknown module&quot; messages when you follow links.
     <div id="mythtv_link">
         <a href="http://www.mythtv.org/"><?php echo t('Visit $1', 'MythTV.org') ?></a>
     </div>
+
+<?php
+    if (!$Settings['tv']) {
+?>
+        <div id="tv_warning">
+            <h2><?php echo t('No TV configured!'); ?></h2>
+            <p>
+            <?php echo t('NO_TV_CONFIGURED_NOTICE_1'); ?>
+            </p>
+            <p>
+            <?php echo t('NO_TV_CONFIGURED_NOTICE_2'); ?>
+            </p>
+        </div>
+<?php
+    }
+?>
 
 </div>
 

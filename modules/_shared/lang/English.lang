@@ -461,8 +461,13 @@
 "No metadata results found."
 "No Public Playlists"
 "No recording schedules have been defined."
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
+"NO_TV_CONFIGURED_NOTICE_1"
+    MythTV is intended to run with TV settings configured.  Your installation does not appear to have been fully configured for TV viewing (there are no channels). If you intend to use MythTV's TV functionality, please finish configuration via mythtv-setup before using MythWeb.
+"NO_TV_CONFIGURED_NOTICE_2"
+    MythWeb is capable of functioning without TV settings, but so much of its interface is designed to make the TV process as smooth as possible that you will likely find many nonfunctional links to TV functionality.  Don't be surprised to find &quot;unknown module&quot; messages when you follow links.
 "Non-Music Specials"
 "Non-Series HDTV"
 "None"
@@ -634,8 +639,6 @@
     This showing will be recorded.
 "rectype-long: always"
     Record at any time on any channel.
-"rectype-long: channel"
-    Record at any time on channel $1.
 "rectype-long: daily"
     Record this program in this timeslot every day.
 "rectype-long: dontrec"
@@ -654,18 +657,12 @@
     Record this program in this timeslot every week.
 "rectype: always"
     Always
-"rectype: channel"
-    Channel
 "rectype: daily"
     Daily
 "rectype: dontrec"
     Don't Record
-"rectype: finddaily"
-    Find One Daily
 "rectype: findone"
     Find Once
-"rectype: findweekly"
-    Find One Weekly
 "rectype: once"
     Once
 "rectype: override"
@@ -800,9 +797,12 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
 "Time"
