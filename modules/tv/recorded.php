@@ -26,7 +26,7 @@
             if (($_SESSION['recorded_title'] == $row[0]) || ($_SESSION['recorded_title'] == ''))
                 $prev_row++;
         // This row isn't the one we're looking for
-            if ($row[6] != $_REQUEST['chanid'] || $row[25] != $_REQUEST['starttime'])
+            if ($row[7] != $_REQUEST['chanid'] || $row[26] != $_REQUEST['starttime'])
                 continue;
         // Delete the recording
             MythBackend::find()->sendCommand(array($backendstr, implode(MythBackend::$backend_separator, $row), '0'));
@@ -39,7 +39,7 @@
             if (isset($_REQUEST['ajax'])) {
                 header('Content-Type: application/json');
                 echo json_encode(array('id'   => $_REQUEST['id'],
-                                        'file' => $_REQUEST['file']));
+                                       'file' => $_REQUEST['file']));
                 exit;
             }
         // No need to scan the rest of the items, so leave early
@@ -71,7 +71,7 @@
         // Skip the offset
             if ($key === 'offset')  // WHY IN THE WORLD DOES 0 == 'offset'?!?!?  so we use ===
                 continue;
-        // Get the length (267== recendts; 26 == recstartts)
+        // Get the length (27 == recendts; 26 == recstartts)
             $length = $record[27] - $record[26];
         // Keep track of the total time and disk space used (9 == filesize)
             $Total_Time += $length;
