@@ -668,7 +668,7 @@
                     );
             </script>
 <?php       } elseif (file_exists('modules/tv/MFPlayer.swf')) { ?>
-                    <script langfuage="JavaScript" type="text/javascript">
+                    <script language="JavaScript" type="text/javascript">
                     <!--
                     // Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
                     var hasProductInstall = DetectFlashVer(6, 0, 65);
