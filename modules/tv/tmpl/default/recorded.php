@@ -297,7 +297,7 @@ EOM;
 ?>
     file = new Object();
     file.title      = '<?php echo addslashes($show->title)                  ?>';
-    file.subtitle   = '<?php echo addslashes($show->subtitle)               ?>';
+    file.subtitle   = '<?php echo str_replace("\n", '', nl2br(addslashes($show->subtitle)))               ?>';
     file.chanid     = '<?php echo addslashes($show->chanid)                 ?>';
     file.starttime  = '<?php echo addslashes($show->recstartts)             ?>';
     file.recgroup   = '<?php echo addslashes(str_replace('%2F', '/', rawurlencode($show->recgroup)))    ?>';
