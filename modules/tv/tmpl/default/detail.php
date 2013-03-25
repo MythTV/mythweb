@@ -263,7 +263,7 @@
             // Report transcoded status for recordings
             if ($program->filename) {
                 if ($program->is_transcoded)
-                    echo t(' TRANSCODED');
+                    echo '<img src="'.skin_url.'/img/flags/transcoded.png" title="'.t('Transcoded').'">';
             }
             ?></td>
         </tr><?php

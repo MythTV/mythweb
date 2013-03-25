@@ -234,6 +234,8 @@ EOM;
                 echo '<img src="'.skin_url.'/img/flags/bookmark.png"    title="'.t('has Bookmark').'"        alt="">';
             if ($show->is_watched)
                 echo '<img src="'.skin_url.'/img/flags/watched.png"     title="'.t('Watched').'"             alt="">';
+            if ($show->is_transcoded)
+                echo '<img src="'.skin_url.'/img/flags/transcoded.png"     title="'.t('Transcoded').'"             alt="">';
         ?></td>
 </tr><?php
         $prev_group = $cur_group;
