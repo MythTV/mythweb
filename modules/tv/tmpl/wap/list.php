@@ -71,7 +71,7 @@
         // Grab the reference
             $channel =& Channel::find($key);
         // Print the data
-            print_channel(&$channel, $list_starttime, $list_endtime);
+            print_channel($channel, $list_starttime, $list_endtime);
         // Cleanup is a good thing
             unset($channel);
         // Display the timeslot bar?

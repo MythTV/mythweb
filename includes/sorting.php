@@ -119,7 +119,7 @@
     function by_user_choice(&$a, &$b) {
         foreach ($GLOBALS['user_sort_choice'] as $sort) {
             $function = 'by_'.$sort['field'];
-            $response = $function(&$a, &$b);
+            $response = $function($a, $b);
         // Identical response, go on to the next sort choice
             if (!$response)
                 continue;
