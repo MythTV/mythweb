@@ -99,6 +99,8 @@
 </tr><?php
     $row     = 0;
     $section = -1;
+    $row_count = array();
+    $row_section = array();
 
     $prev_group = '';
     $cur_group  = '';
