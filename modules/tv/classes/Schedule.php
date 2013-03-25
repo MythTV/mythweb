@@ -158,6 +158,8 @@ class Schedule extends MythBase {
             }
             Cache::set('Schedule::findScheduled', self::$scheduledRecordings);
         }
+        if (is_null(self::$scheduledRecordings))
+            return array();
         return self::$scheduledRecordings;
     }
 
