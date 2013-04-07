@@ -63,6 +63,9 @@
     if (stripos($Master_Host,':') !== false) {
         $Master_Host = '['.$Master_Host.']';
     }
+    if (ob_get_level()) {
+        ob_end_clean();
+    }
     readfile("http://$Master_Host:$port/Content/GetVideo?Id=".$vid_id);
 
 // Nothing else to do
