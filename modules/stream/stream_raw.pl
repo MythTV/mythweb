@@ -45,6 +45,7 @@
     if ($name =~ /^\d+_\d+\.\w+$/) {
         if ($title =~ /\w/) {
             $name = $title;
+            $name .= sprintf(" - %dx%02d", $season, $episode) if $season and $episode;
             if ($subtitle =~ /\w/) {
                 $name .= " - $subtitle";
             }

@@ -24,12 +24,12 @@
     }
 
 # Get the basename from the database
-    my $sh = $dbh->prepare('SELECT basename, title, subtitle, endtime-starttime
+    my $sh = $dbh->prepare('SELECT basename, title, subtitle, endtime-starttime, season, episode
                               FROM recorded
                              WHERE starttime=FROM_UNIXTIME(?)
                                    AND recorded.chanid   = ?');
     $sh->execute($starttime, $chanid);
-    our ($basename, $title, $subtitle, $runtime) = $sh->fetchrow_array();
+    our ($basename, $title, $subtitle, $runtime, $season, $episode) = $sh->fetchrow_array();
     $sh->finish;
 
 # No match?
