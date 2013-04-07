@@ -26,7 +26,7 @@
         <table border="0" cellspacing="0" cellpadding="2">
         <tr>
 
-            <td nowrap align="center"><span class='link' onclick="list_update($('date_select')[$('date_select').selectedIndex].value);"><?php echo t('Jump To') ?>:</span>:&nbsp;&nbsp;</td>
+            <td nowrap align="center"><span class='link' onclick="list_update($('date_select')[$('date_select').selectedIndex].value);"><?php echo t('Jump To') ?></span>:&nbsp;&nbsp;</td>
             <td align="right"><?php echo t('Hour') ?>:&nbsp;</td>
             <td><select name="hour" style="text-align: right"><?php
                 for ($h=0;$h<24;$h++) {

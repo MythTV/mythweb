@@ -20,7 +20,7 @@
     ?></div>
     <table id="x-jumpto" class="commandbox commands" border="0" cellspacing="0" cellpadding="0">
     <tr>
-        <td class="x-jumpto"><span class='link' onclick="list_update($('date_select')[$('date_select').selectedIndex].value);"><?php echo t('Jump To') ?>:</span>:</td>
+        <td class="x-jumpto"><span class='link' onclick="list_update($('date_select')[$('date_select').selectedIndex].value);"><?php echo t('Jump To') ?></span>:</td>
         <td class="x-hour"><?php hour_select('id="hour_select" onchange="list_update($(\'hour_select\')[$(\'hour_select\').selectedIndex].value);"') ?></td>
         <td class="x-day">
             <a class="link" onclick="list_update(<?php echo $list_starttime - (24 * 60 * 60); ?>);">
