@@ -14,24 +14,24 @@
     function autoload($className) {
         global $Path;
         $className = str_replace('_', '/', $className);
-        if (file_exists("classes/$className.php")) {
+        if (file_exists("classes/$className.php"))
             include_once "classes/$className.php";
-            return true;
-        }
-        foreach (explode(PATH_SEPARATOR, ini_get('include_path')) as $path) {
-            if (!file_exists("$path/$className.php"))
-                continue;
-            include_once "$path/$className.php";
-            return true;
-        }
-        if (file_exists(modules_path.'/'.module."/classes/$className.php"))
+        elseif (file_exists(modules_path.'/'.module."/classes/$className.php"))
             include_once modules_path.'/'.module."/classes/$className.php";
         elseif (file_exists(modules_path.'/'.$Path[1]."/classes/$className.php"))
             include_once modules_path.'/'.$Path[1]."/classes/$className.php";
         elseif (file_exists(modules_path.'/'.$Path[0]."/classes/$className.php"))
             include_once modules_path.'/'.$Path[0]."/classes/$className.php";
-        else
+        else {
+            foreach (explode(PATH_SEPARATOR, ini_get('include_path')) as $path) {
+                if (!file_exists("$path/$className.php"))
+                    continue;
+                include_once "$path/$className.php";
+                return true;
+            }
             return false;
+        }
+        return true;
     }
 
     spl_autoload_register('autoload');
