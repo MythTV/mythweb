@@ -346,7 +346,7 @@
                 <?php
                 foreach ($schedule->recordFilters() as $id => $filter) {
                 ?>
-                        <dt><label for="recordfilter_$id"><?php echo t($filter['description']) ?>:</label></dt>
+                        <dt><label for="recordfilter_<?php echo $id; ?>"><?php echo t($filter['description']) ?>:</label></dt>
                         <dd><input type="checkbox" class="radio" id="recordfilter_<?php echo $id ?>" name="recordfilter_<?php echo $id ?>"<?php if ($filter['enabled']) echo ' CHECKED' ?> value="1"></dd>
                 <?php } ?>
                 </fieldset>
