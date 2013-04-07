@@ -72,3 +72,6 @@
 
 // And do some quick setup...
     MythBackend::find()->setTimezone();
+
+	// Set some default types
+    require_once 'includes/defaults.php';

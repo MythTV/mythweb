@@ -53,7 +53,7 @@
     function display_errors($leading='<p align="center">', $trailing = '</p>') {
         global $Errors, $Warnings;
     // Errors or warnings from a previous page?
-        if (@count($_SESSION['WARNINGS'])) {
+        if (is_array($_SESSION['WARNINGS']) && count($_SESSION['WARNINGS'])) {
             foreach ($_SESSION['WARNINGS'] as $warning) {
                 $Warnings[] = $warning;
             }
@@ -165,12 +165,16 @@ EOF;
     function save_session_errors() {
         global $Errors, $Warnings;
         $_SESSION['WARNINGS'] = array();
-        foreach ($Errors as $error) {
-            $_SESSION['WARNINGS'][] = $error;
-        }
-        foreach ($Warnings as $warning) {
-            $_SESSION['WARNINGS'][] = $warning;
-        }
+		if (is_array($Errors)) {
+			foreach ($Errors as $error) {
+				$_SESSION['WARNINGS'][] = $error;
+			}
+		}
+		if (is_array($Warnings)) {
+			foreach ($Warnings as $warning) {
+				$_SESSION['WARNINGS'][] = $warning;
+			}
+		}
     }
 
 /**
