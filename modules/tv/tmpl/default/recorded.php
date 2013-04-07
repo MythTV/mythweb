@@ -106,6 +106,10 @@
 
     foreach ($All_Shows as $show) {
         flush();
+
+        if (is_null($show))
+            continue;
+
         if ($_SESSION['recorded_paging'] > 0 && $rows > 0) {
             $rows--;
             continue;

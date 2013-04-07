@@ -13,7 +13,8 @@
  * settings.
 /**/
     function category_class(&$item) {
-        $css_class =array();
+        $css_class = array();
+        $cache = array();
     // Disable categories colorization
         if (isset($_SESSION['genre_colors'])
                   && $_SESSION['genre_colors'] == 0) {
