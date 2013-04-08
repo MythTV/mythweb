@@ -230,7 +230,16 @@
         }
         if ($program) {
         ?><tr id="x-progflags">
-            <td colspan="2"><?php
+            <td colspan="2">
+			<?php if (setting('recommend_enabled', null) && strlen($program->inetref) > 0) { ?>
+				<div id="feelings" inetref="<?php echo $program->inetref; ?>">
+					<div inetref="<?php echo $program->inetref; ?>" class="dislike feeling"></div>
+					<div inetref="<?php echo $program->inetref; ?>" class="meh feeling"></div>
+					<div inetref="<?php echo $program->inetref; ?>" class="like feeling"></div>
+				</div>
+			<?php } ?>
+			
+			<?php
         // Auto expire is interactive for recordings
             if ($program->filename) {
                 echo '<a onclick="set_autoexpire()">',
@@ -265,7 +274,8 @@
                 if ($program->is_transcoded)
                     echo '<img src="'.skin_url.'/img/flags/transcoded.png" title="'.t('Transcoded').'">';
             }
-            ?></td>
+            ?>
+			</td>
         </tr><?php
             if (strlen($program->category)) {
         ?><tr class="x-extras">

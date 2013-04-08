@@ -72,6 +72,7 @@ EOF;
         // -----------------------------------------------------------------------------
         // -->
     </script>
+		
 
     <link rel="stylesheet" type="text/css" href="js/prototip/prototip.css">
     <link rel="stylesheet" type="text/css" href="js/dialog/dialog.css">
@@ -88,13 +89,29 @@ EOF;
 ?>
 
     <script type="text/javascript" src="js/prototype.js"></script>
+	
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript"> jQuery.noConflict(); </script>
+	
     <script type="text/javascript" src="js/prototip/prototip.js"></script>
     <script type="text/javascript" src="js/dialog/dialog.js"></script>
-
+	
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/AC_OETags.js"></script>
     <script type="text/javascript" src="js/table_sort.js"></script>
 
+    <script type="text/javascript">
+        <!--
+        // -----------------------------------------------------------------------------
+        // - Setup variables for use with the recommend engines
+        // -----------------------------------------------------------------------------
+        var recommend_enabled   = <?php echo (bool)setting('recommend_enabled', null); ?>;
+        var recommend_server    = "<?php echo setting('recommend_server', null); ?>";
+        var recommend_key       = "<?php echo setting('recommend_key', null); ?>";
+        // -->
+    </script>
+	<script type="text/javascript" src="js/recommend.js"></script>
+	
 <?php
     if (!empty($headers) && is_array($headers))
         foreach ($headers as $header)

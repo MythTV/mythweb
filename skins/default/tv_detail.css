@@ -274,3 +274,34 @@
 #metadata-home-page {
     margin-left:        20px;
 }
+
+#feelings div {
+    float: right;
+    height: 24px;
+    width: 24px;
+    margin-right: 1em;
+}
+
+#feelings .like {
+    background-image: url('img/feelings/like-inactive.png');
+}
+
+#feelings .like.active, #feelings .like:hover {
+    background-image: url('img/feelings/like-active.png');
+}
+
+#feelings .meh {
+    background-image: url('img/feelings/meh-inactive.png');
+}
+
+#feelings .meh.active, #feelings .meh:hover {
+    background-image: url('img/feelings/meh-active.png');
+}
+
+#feelings .dislike {
+    background-image: url('img/feelings/dislike-inactive.png');
+}
+
+#feelings .dislike.active, #feelings .dislike:hover {
+    background-image: url('img/feelings/dislike-active.png');
+}
