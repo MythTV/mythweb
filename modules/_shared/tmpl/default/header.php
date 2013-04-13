@@ -217,6 +217,10 @@ EOF;
                         &nbsp; | &nbsp;
                         <a href="tv/recorded"><?php echo t('Recorded Programs') ?></a>
                         &nbsp; | &nbsp;
+						<?php if(setting('recommend_enabled', null)) { ?>
+						<a href="tv/recommended"><?php echo t('Recommended Programs') ?></a>
+                        &nbsp; | &nbsp;
+						<?php } ?>
                     <?php } ?>
                     <a href="status"><?php echo t('Backend Status') ?></a>
 <?php if (Modules::getModule('backend_log')) { ?>
