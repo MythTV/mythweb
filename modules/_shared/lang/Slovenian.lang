@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
     # Skladb
 "$1 B"
@@ -137,6 +136,8 @@
     Katerikoli kanal
 "Any Program Type"
     Katerikoli tip programa
+"API Key"
+"API Server"
 "Append"
     Dodaj
 "Append to Current Playlist"
@@ -396,6 +397,7 @@
 "Editing "
     Urejanje
 "Embed HTTP basic auth user name/password into stream urls"
+"Enable"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
@@ -745,9 +747,12 @@
     Ni seznamov predvajanja
 "No recording schedules have been defined."
     Definiran ni bil noben snemalni plan.
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Št. posnetkov za arhiv
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Ne-glasbene priljubljene
 "Non-Series HDTV"
@@ -856,6 +861,7 @@
 "Playlists"
     Seznami predvajanja
 "Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
@@ -934,6 +940,9 @@
     Pred kratkim predvajanje skladbe
 "recgroup"
     snemalna skupina
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
 "Record Length"
 "Record new and expire old"
@@ -1004,8 +1013,6 @@
     Ta oddaja se bo posnela.
 "rectype-long: always"
     Vedno posnami na kateremkoli kanalu
-"rectype-long: channel"
-    Snemaj kadarkoli na kanalu $1
 "rectype-long: daily"
     Posnami v tem času vsak dan
 "rectype-long: dontrec"
@@ -1024,18 +1031,12 @@
     Posnami to oddajo v tem času vsak teden
 "rectype: always"
     Vedno
-"rectype: channel"
-    Kanal
 "rectype: daily"
     Dnevno
 "rectype: dontrec"
     Ne snemaj
-"rectype: finddaily"
-    Najdi dnevno
 "rectype: findone"
     Najdi enkrat
-"rectype: findweekly"
-    Najdi tedensko
 "rectype: once"
     Najdi enkrat
 "rectype: override"
@@ -1245,10 +1246,13 @@
 "There was a problem saving your playlist"
     Pri shranjevanju seznama predvajanja je prišlo do napake
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
     Ta seznam predvajanja je že naložen!
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     To bo prepisalo vaš trenutno še ne shranjen seznam predvajanja. Ali ste prepričani, da želite nadaljevati?
 "Thursday"
@@ -1296,6 +1300,7 @@
     Skladbe #%s iz albuma '%s'
 "Transcode"
     Kodiraj
+"Transcoded"
 "transcoder"
     kodirnik
 "Transcoder"

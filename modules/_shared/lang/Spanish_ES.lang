@@ -1,6 +1,4 @@
 ""
-" TRANSCODED"
-    TRANSCODIFICADO
 "# Tracks"
     # Pistas
 "$1 B"
@@ -153,6 +151,8 @@
     Cualquier Canal
 "Any Program Type"
     Cualquier Tipo de Programa
+"API Key"
+"API Server"
 "Append"
     Añadir
 "Append to Current Playlist"
@@ -428,6 +428,7 @@
     Editando
 "Embed HTTP basic auth user name/password into stream urls"
     Insertar nombre/contraseña de la autenticación básica de usuarios HTTP en los URL de flujos
+"Enable"
 "Enable Flash Video player for recordings."
     Activar el reproductor de vídeo Flash en las grabaciones
 "Enable Video Playback"
@@ -817,9 +818,12 @@
     No Hay Listas de Reproducción Públicas
 "No recording schedules have been defined."
     No se han definido grabaciones programadas
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Nº de grabaciones a guardar
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Especiales No Musicales
 "Non-Series HDTV"
@@ -944,6 +948,7 @@
     Listas de Reproducción
 "Please enter an IMDB number or a title to do another search"
     Por favor, introduzca un número o título de IMDB para efectuar otra búsqueda
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
     Por favor, espere a la petición AJAX pendiente
 "Plot"
@@ -1040,6 +1045,9 @@
 "Recently Played Songs"
     Canciones Recientemente Reproducidas
 "recgroup"
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Fecha de Grabación
 "Record Length"
@@ -1091,7 +1099,6 @@
 "recstatus: unknown"
 "recstatus: willrecord"
 "rectype-long: always"
-"rectype-long: channel"
 "rectype-long: daily"
 "rectype-long: dontrec"
 "rectype-long: finddaily"
@@ -1101,12 +1108,9 @@
 "rectype-long: override"
 "rectype-long: weekly"
 "rectype: always"
-"rectype: channel"
 "rectype: daily"
 "rectype: dontrec"
-"rectype: finddaily"
 "rectype: findone"
-"rectype: findweekly"
 "rectype: once"
 "rectype: override"
 "rectype: weekly"
@@ -1333,12 +1337,15 @@
     Hubo un problema al guardar su lista de reproducción
 "TheTVDB"
     TheTVDB
+"This channel"
+"This day and time"
 "This episode"
     Este episodio
 "This playlist is already loaded!"
     ¡Esta lista de reproducción ya está cargada!
 "This series"
     Esta serie
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Se sobreescribirá su actual lista de reproducción no guardada. ¿Seguro que desea continuar?
 "Thursday"
@@ -1389,6 +1396,7 @@
     Pista #%s del álbum '%s'
 "Transcode"
     Transcodificador
+"Transcoded"
 "transcoder"
     transcodificador
 "Transcoder"

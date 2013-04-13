@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
     # Stopy
 "$1 B"
@@ -150,6 +149,8 @@
     Jakýkoli kanál
 "Any Program Type"
     Jakýkoli typ programu
+"API Key"
+"API Server"
 "Append"
     Připojit
 "Append to Current Playlist"
@@ -424,6 +425,7 @@
 "Editing "
     Upravování
 "Embed HTTP basic auth user name/password into stream urls"
+"Enable"
 "Enable Flash Video player for recordings."
     Povolit Flash video player pro nahrávky.
 "Enable Video Playback"
@@ -767,9 +769,12 @@
     Žádný veřejný playlist.
 "No recording schedules have been defined."
     Žádné rozvrhy nahrávání nebyly definovány.
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Podržet počet nahrávek
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
 "Non-Series HDTV"
 "None"
@@ -882,6 +887,7 @@
     Playlisty
 "Please enter an IMDB number or a title to do another search"
     Prosím zadejte IMDB číslo nebo název pro další hledání
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
     Prosím vyčkejte na čekající AJAX žádosti
 "Plot"
@@ -966,6 +972,9 @@
 "Recently Played Songs"
     Nedávno přehrávané písničky
 "recgroup"
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Datum záznamu
 "Record Length"
@@ -1037,8 +1046,6 @@
     Tenhle pořad bude nahrán.
 "rectype-long: always"
     Nahrát v libovolném čase na této stanici.
-"rectype-long: channel"
-    Nahrát v libovolném čase na stanici $1.
 "rectype-long: daily"
     Nahrát tento pořad v tomto čase každý den.
 "rectype-long: dontrec"
@@ -1057,18 +1064,12 @@
     Nahrát tento pořad v tomto čase každý týden.
 "rectype: always"
     Vždy
-"rectype: channel"
-    Kanál
 "rectype: daily"
     Denně
 "rectype: dontrec"
     Nenahrávat
-"rectype: finddaily"
-    Najít jednou denně
 "rectype: findone"
     Najdi jednou
-"rectype: findweekly"
-    Najít jednou týdenně
 "rectype: once"
     Jednou
 "rectype: override"
@@ -1272,10 +1273,13 @@
 "There was a problem saving your playlist"
     Vyskytl se problém s ukládáním playlistu
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
     Tento playlist je právě načten
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Tohle přepíše váš aktuální, neuložený playlist. Opravdu chcete pokračovat?
 "Thursday"
@@ -1322,6 +1326,7 @@
 "Track #%s from the album '%s'"
     Skladba #%s z albumu '%s'
 "Transcode"
+"Transcoded"
 "transcoder"
 "Transcoder"
 "Tuesday"

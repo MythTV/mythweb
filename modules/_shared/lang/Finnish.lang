@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
     # Raidat
 "$1 B"
@@ -151,6 +150,8 @@
     Mikä tahansa kanava
 "Any Program Type"
     Mikä tahansa ohjelmatyyppi
+"API Key"
+"API Server"
 "Append"
     Kiinnitys
 "Append to Current Playlist"
@@ -430,6 +431,7 @@
     Muokkaa
 "Embed HTTP basic auth user name/password into stream urls"
     Sisällä HTTP basic auth käyttäjätunnus/salasana virtojen urleihin
+"Enable"
 "Enable Flash Video player for recordings."
     Salli Flash videotoisto
 "Enable Video Playback"
@@ -820,9 +822,12 @@
     Ei yleisiä Soittolistoja
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Säilytettävien tallenteiden lkm
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Ei-musiikilliset erikoiset
 "Non-Series HDTV"
@@ -944,6 +949,7 @@
 "Playlists"
     Soittolistat
 "Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
 "Plot"
     Juoni
@@ -1038,6 +1044,9 @@
 "Recently Played Songs"
     Äskettäin soitetut kappaleet
 "recgroup"
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Tallennuspäivämäärä
 "Record Length"
@@ -1112,8 +1121,6 @@
     Ohjelma tullaan tallentamaan.
 "rectype-long: always"
     Tallenna mihin aikaan tahansa millä kanavalla tahansa.
-"rectype-long: channel"
-    Tallenna mihin aikaan tahansa kanavalla $1.
 "rectype-long: daily"
     Tallenna ohjelma tähän aikaan joka päivä.
 "rectype-long: dontrec"
@@ -1132,18 +1139,12 @@
     Tallenna ohjelma tähän aikaan joka viikko.
 "rectype: always"
     Aina
-"rectype: channel"
-    Kanavakohtainen
 "rectype: daily"
     Päivittäin
 "rectype: dontrec"
     Ei tallennusta
-"rectype: finddaily"
-    Etsi päivittäinen
 "rectype: findone"
     Etsi yksi
-"rectype: findweekly"
-    Etsi viikottainen
 "rectype: once"
     Kerran
 "rectype: override"
@@ -1364,10 +1365,13 @@
 "There was a problem saving your playlist"
     Soittolistasi tallennuksessa ilmeni ongelma
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
     Tämä Soittolista on jo ladattu!
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Tämä tallentaa nykyisen, tallentamattoman Soittolistasi. Haluatko varmasti jatkaa?
 "Thursday"
@@ -1415,6 +1419,7 @@
     Kappale #%s albumilta '%s'
 "Transcode"
     Jälkikäsittely
+"Transcoded"
 "transcoder"
     jälkikäsittelijä
 "Transcoder"

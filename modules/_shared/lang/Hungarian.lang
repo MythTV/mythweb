@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
     # Sáv
 "$1 B"
@@ -144,6 +143,8 @@
     Bármely csatorna
 "Any Program Type"
     Bármely program tipus
+"API Key"
+"API Server"
 "Append"
     Hozzáfűz
 "Append to Current Playlist"
@@ -413,6 +414,7 @@
 "Editing "
     Szerkeszés
 "Embed HTTP basic auth user name/password into stream urls"
+"Enable"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
     Videolejátszás engedélyezése
@@ -777,9 +779,12 @@
     Nincs nyilvános lejátszólista
 "No recording schedules have been defined."
     A felvételi szabálytábla üres.
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Megtartandó felvételek száma
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Nem zenei specialitás
 "Non-Series HDTV"
@@ -892,6 +897,7 @@
 "Playlists"
     Lejátszó listák
 "Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
@@ -971,6 +977,9 @@
     Nemrég lejátszott dalok
 "recgroup"
     felvételi csoport
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Felvétel Dátuma
 "Record Length"
@@ -1044,8 +1053,6 @@
     Ez a műsor rögzítve lesz.
 "rectype-long: always"
     Felvétel bármikor, bármelyik csatornáről.
-"rectype-long: channel"
-    Felvétel bármikor a(z) $1 csatornáról.
 "rectype-long: daily"
     Rögzítse ezt a műsort ebben az időkeretben minden nap.
 "rectype-long: dontrec"
@@ -1064,18 +1071,12 @@
     Rögzítse ezt a műsort ebben az időkeretben minden héten.
 "rectype: always"
     Mindíg
-"rectype: channel"
-    Csatorna
 "rectype: daily"
     Napi
 "rectype: dontrec"
     Nem rögzít
-"rectype: finddaily"
-    Napi keresés
 "rectype: findone"
     Egyszer keres
-"rectype: findweekly"
-    Heti keresés
 "rectype: once"
     Egyszer
 "rectype: override"
@@ -1299,10 +1300,13 @@
 "There was a problem saving your playlist"
     Hibát találtam, a lejátszólistát mentem
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
     Ez a lejétszólista már be van töltve!
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Ez felül fogja írni a jelenleg még nem mentett lejátszólistát. Szeretnéd folytatni?
 "Thursday"
@@ -1350,6 +1354,7 @@
     '%s' albumról a #%s sáv
 "Transcode"
     Átkódolás
+"Transcoded"
 "transcoder"
     átkódoló
 "Transcoder"

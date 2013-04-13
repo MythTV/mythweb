@@ -1,6 +1,4 @@
 ""
-" TRANSCODED"
-    TRANSKODET
 "# Tracks"
     # Lydspor
 "$1 B"
@@ -152,6 +150,8 @@
     Alle kanaler
 "Any Program Type"
     Alle program typer
+"API Key"
+"API Server"
 "Append"
     Tilføy
 "Append to Current Playlist"
@@ -436,6 +436,7 @@
     Redigerer
 "Embed HTTP basic auth user name/password into stream urls"
     Integrer HTTP basic auth brukernavn/passord inn i URL for strøm
+"Enable"
 "Enable Flash Video player for recordings."
     Aktiver Flash videoavspiller for opptak.
 "Enable Video Playback"
@@ -829,9 +830,12 @@
     Ingen tilgjengelige spillelister
 "No recording schedules have been defined."
     Ingen opptak er planlagt
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Antall opptak som skal tas vare på
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Spesialer som ikke er musikk
 "Non-Series HDTV"
@@ -956,6 +960,7 @@
     Spillelister
 "Please enter an IMDB number or a title to do another search"
     Vennligst legg til et IMDB nummer eller en tittel for å foreta et nytt søk
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
     Vennligst vent på AJAX-forespørsel
 "Plot"
@@ -1054,6 +1059,9 @@
     Siste sanger som er spilt
 "recgroup"
     Opptaksgrupper
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Opptaksdato
 "Record Length"
@@ -1128,8 +1136,6 @@
     Denne sendingen vil bli tatt opp.
 "rectype-long: always"
     Ta opp når som helst på alle kanaler.
-"rectype-long: channel"
-    Ta opp når som helst på kanal $1.
 "rectype-long: daily"
     Ta opp dette programmet på dette tidspunktet hver dag.
 "rectype-long: dontrec"
@@ -1148,18 +1154,12 @@
     Ta opp programmet på dette tidspunktet hver uke.
 "rectype: always"
     Alltid
-"rectype: channel"
-    Kanal
 "rectype: daily"
     Daglig
 "rectype: dontrec"
     Ta ikke opp
-"rectype: finddaily"
-    Finn 1 daglig
 "rectype: findone"
     Finn en
-"rectype: findweekly"
-    Finn 1 ukentlig
 "rectype: once"
     En enkelt gang
 "rectype: override"
@@ -1396,12 +1396,15 @@
     Det oppstod et problem under lagring av spillelisten din
 "TheTVDB"
     TheTVDB
+"This channel"
+"This day and time"
 "This episode"
     Denne episoden
 "This playlist is already loaded!"
     Denne spillelisten er allerede åpnet!
 "This series"
     Denne serien
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dette vil overskrive din gjeldende spilleliste. Er du sikker på du vil fortsette?
 "Thursday"
@@ -1452,6 +1455,7 @@
     Lydspor #%s fra albumet '%s'
 "Transcode"
     Transkod
+"Transcoded"
 "transcoder"
     transkoder
 "Transcoder"

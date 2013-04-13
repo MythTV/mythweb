@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
 "$1 B"
     $1 B
@@ -109,6 +108,8 @@
     Alle zenders
 "Any Program Type"
     Alle programmatypes
+"API Key"
+"API Server"
 "Append"
 "Append to Current Playlist"
 "Are you sure you want to delete the following show?"
@@ -306,6 +307,7 @@
 "Edit settings for: $1"
 "Editing "
 "Embed HTTP basic auth user name/password into stream urls"
+"Enable"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
@@ -590,9 +592,12 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     Er zijn geen opnameschema's gevonden.
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Aantal opnames bewaren
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Niet-Muziek Specials
 "Non-Series HDTV"
@@ -664,6 +669,7 @@
 "Playlist: %s"
 "Playlists"
 "Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
@@ -725,6 +731,9 @@
 "Recently Played Songs"
 "recgroup"
     opnamegroep
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
 "Record Length"
 "Record new and expire old"
@@ -793,8 +802,6 @@
     Dit programma zal opgenomen worden.
 "rectype-long: always"
     Altijd op elke zender opnemen.
-"rectype-long: channel"
-    Altijd op deze zender opnemen.
 "rectype-long: daily"
     Dagelijks in dit tijdsslot opnemen.
 "rectype-long: dontrec"
@@ -813,18 +820,12 @@
     Wekelijks in dit tijdsslot opnemen.
 "rectype: always"
     Altijd
-"rectype: channel"
-    Zender
 "rectype: daily"
     Dagelijks
 "rectype: dontrec"
     Niet Opnemen
-"rectype: finddaily"
-    Dagelijkse een uitzending opnemen.
 "rectype: findone"
     1 Opnemen
-"rectype: findweekly"
-    Wekelijkse een uitzending opnemen.
 "rectype: once"
     Deze
 "rectype: override"
@@ -988,9 +989,12 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Donderdag
@@ -1021,6 +1025,7 @@
 "Total Time:  %s"
 "Track #%s from the album '%s'"
 "Transcode"
+"Transcoded"
 "transcoder"
     transcoder
 "Transcoder"

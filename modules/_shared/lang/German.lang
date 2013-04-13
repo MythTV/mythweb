@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
     # Lieder
 "$1 B"
@@ -152,6 +151,8 @@
     Jeder Sender
 "Any Program Type"
     Jeder Programmtyp
+"API Key"
+"API Server"
 "Append"
     Hinzufügen
 "Append to Current Playlist"
@@ -435,6 +436,7 @@
     Bearbeite
 "Embed HTTP basic auth user name/password into stream urls"
     Bette HTTP basic auth Benutzername/Passwort in Stream URLs ein
+"Enable"
 "Enable Flash Video player for recordings."
     Flash-Videoabpsieler für Aufnahmen aktivieren.
 "Enable Video Playback"
@@ -826,9 +828,12 @@
     Keine öffentlichen Wiedergabelisten
 "No recording schedules have been defined."
     Keine Aufnahmen geplant.
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Wieviele Aufnahmen behalten
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Nicht-Musik Spezial
 "Non-Series HDTV"
@@ -952,6 +957,7 @@
     Playlists
 "Please enter an IMDB number or a title to do another search"
     Zm eine weitere Suche anzustoßen, geben Sie eine IMDB-Nummer oder einen Titel ein
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
     Bitte warten Sie auf die anstehende AJAX Anfrage
 "Plot"
@@ -1048,6 +1054,9 @@
     Zuletzt gespielte Lieder
 "recgroup"
     Aufnahmegruppe
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Sendezeit
 "Record Length"
@@ -1122,8 +1131,6 @@
     wird aufgenommen
 "rectype-long: always"
     Jede Ausstrahlung aufnehmen
-"rectype-long: channel"
-    Jede Ausstrahlung auf Sender $1 aufnehmen
 "rectype-long: daily"
     Täglich aufnehmen
 "rectype-long: dontrec"
@@ -1142,18 +1149,12 @@
     Wöchentlich aufnehmen
 "rectype: always"
     Immer
-"rectype: channel"
-    Sender
 "rectype: daily"
     Täglich
 "rectype: dontrec"
     Blockiert
-"rectype: finddaily"
-    Suche Täglich
 "rectype: findone"
     Suche Eine
-"rectype: findweekly"
-    Suche Wöchentlich
 "rectype: once"
     Einmalig
 "rectype: override"
@@ -1384,10 +1385,13 @@
 "There was a problem saving your playlist"
     Wiedergabeliste konnte nicht gespeichert werden
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
     Wiedergabeliste bereits geladen!
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dies wird die aktuelle, noch nicht gespeicherte Wiedergabeliste überschreiben. Möchten Sie wirklich fortsetzen?
 "Thursday"
@@ -1438,6 +1442,7 @@
     Lied #%s des Albums &quot;%s&quot;
 "Transcode"
     Umwandeln
+"Transcoded"
 "transcoder"
     Umwandlungsprofil
 "Transcoder"

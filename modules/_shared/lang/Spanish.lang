@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
 "$1 B"
     $1 B
@@ -140,6 +139,8 @@
     Cualquier Canal
 "Any Program Type"
     Cualquier Tipo de Programa
+"API Key"
+"API Server"
 "Append"
     Agregar
 "Append to Current Playlist"
@@ -384,6 +385,7 @@
 "Editing "
     Editando
 "Embed HTTP basic auth user name/password into stream urls"
+"Enable"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
@@ -672,9 +674,12 @@
 "No Public Playlists"
 "No recording schedules have been defined."
     No se han definido programaciones
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Nº de grabaciones a guardar
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Especiales No-Música
 "Non-Series HDTV"
@@ -754,6 +759,7 @@
 "Playlist: %s"
 "Playlists"
 "Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
@@ -817,6 +823,9 @@
 "Recently Played Songs"
 "recgroup"
     grupo
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
 "Record Length"
 "Record new and expire old"
@@ -886,8 +895,6 @@
     estado: se grabará
 "rectype-long: always"
     rectype-long: siempre
-"rectype-long: channel"
-    rectype-long: canal
 "rectype-long: daily"
     rectype-long: diario
 "rectype-long: dontrec"
@@ -906,18 +913,12 @@
     rectype-long: semanal
 "rectype: always"
     rectype: siempre
-"rectype: channel"
-    rectype: canal
 "rectype: daily"
     rectype: diariamente
 "rectype: dontrec"
     rectype: no grabar
-"rectype: finddaily"
-    rectype: buscar diario
 "rectype: findone"
     rectype: buscar uno
-"rectype: findweekly"
-    rectype: buscar semanal
 "rectype: once"
     rectype: una vez
 "rectype: override"
@@ -1087,9 +1088,12 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
     Jueves
@@ -1122,6 +1126,7 @@
 "Total Time:  %s"
 "Track #%s from the album '%s'"
 "Transcode"
+"Transcoded"
 "transcoder"
     recodificador
 "Transcoder"

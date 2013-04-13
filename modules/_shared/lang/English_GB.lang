@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
 "$1 B"
 "$1 day"
@@ -79,6 +78,8 @@
 "Any Channel"
 "Any Program Type"
     Any Programme Type
+"API Key"
+"API Server"
 "Append"
 "Append to Current Playlist"
 "Are you sure you want to delete the following show?"
@@ -232,6 +233,7 @@
 "Edit settings for: $1"
 "Editing "
 "Embed HTTP basic auth user name/password into stream urls"
+"Enable"
 "Enable Flash Video player for recordings."
 "Enable Video Playback"
 "End"
@@ -463,8 +465,11 @@
 "No metadata results found."
 "No Public Playlists"
 "No recording schedules have been defined."
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
 "Non-Series HDTV"
 "None"
@@ -535,6 +540,7 @@
 "Playlist: %s"
 "Playlists"
 "Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
 "Plot"
 "Plot:"
@@ -591,6 +597,9 @@
 "Recently completed jobs"
 "Recently Played Songs"
 "recgroup"
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
 "Record Length"
 "Record new and expire old"
@@ -651,8 +660,6 @@
     This showing will be recorded.
 "rectype-long: always"
     Record at any time on any channel.
-"rectype-long: channel"
-    Record at any time on channel $1.
 "rectype-long: daily"
     Record this programme in this timeslot every day.
 "rectype-long: dontrec"
@@ -671,18 +678,12 @@
     Record this programme in this timeslot every week.
 "rectype: always"
     Always
-"rectype: channel"
-    Channel
 "rectype: daily"
     Daily
 "rectype: dontrec"
     Don't Record
-"rectype: finddaily"
-    Find One Daily
 "rectype: findone"
     Find Once
-"rectype: findweekly"
-    Find One Weekly
 "rectype: once"
     Once
 "rectype: override"
@@ -814,9 +815,12 @@
 "There are no items in this Playlist!"
 "There was a problem saving your playlist"
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
 "Thursday"
 "Time"
@@ -842,6 +846,7 @@
 "Total Time:  %s"
 "Track #%s from the album '%s'"
 "Transcode"
+"Transcoded"
 "transcoder"
 "Transcoder"
 "Tuesday"

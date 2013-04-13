@@ -1,6 +1,4 @@
 ""
-" TRANSCODED"
-    OMKODAD
 "# Tracks"
     # Låtar
 "$1 B"
@@ -151,6 +149,8 @@
     Alla kanaler
 "Any Program Type"
     Alla programtyper
+"API Key"
+"API Server"
 "Append"
     Lägg till slutet
 "Append to Current Playlist"
@@ -432,6 +432,7 @@
     Redigerar
 "Embed HTTP basic auth user name/password into stream urls"
     Integrera HTTP basic auth användarnamn/lösenord i ström-URL:er
+"Enable"
 "Enable Flash Video player for recordings."
     Aktivera Flash-videouppspelning av inspelningar
 "Enable Video Playback"
@@ -822,9 +823,12 @@
     Inga publika spellistor
 "No recording schedules have been defined."
     Inga schemalagda inspelningar har definierats.
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Inspelningar att behålla
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Icke-musikspecialer
 "Non-Series HDTV"
@@ -945,6 +949,7 @@
 "Playlists"
     Spellistor
 "Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
 "Plot"
     Handling
@@ -1035,6 +1040,9 @@
     Nyligen spelade sånger
 "recgroup"
     inspelningsgrupp
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Inspelningsdatum
 "Record Length"
@@ -1109,8 +1117,6 @@
     Denna visning kommer att spelas in.
 "rectype-long: always"
     Spela in vilken tid som helst på alla kanaler.
-"rectype-long: channel"
-    Spela in vilken tid som helst på kanal $1.
 "rectype-long: daily"
     Spela in denna tid varje dag.
 "rectype-long: dontrec"
@@ -1129,18 +1135,12 @@
     Spela in denna tid varje vecka.
 "rectype: always"
     Alltid
-"rectype: channel"
-    Kanal
 "rectype: daily"
     Daglig
 "rectype: dontrec"
     Spela ej in
-"rectype: finddaily"
-    Hitta dagligen
 "rectype: findone"
     Hitta en
-"rectype: findweekly"
-    Hitta veckovis
 "rectype: once"
     Enstaka
 "rectype: override"
@@ -1369,10 +1369,13 @@
 "There was a problem saving your playlist"
     Det uppstod ett problem med att spara din spellista
 "TheTVDB"
+"This channel"
+"This day and time"
 "This episode"
 "This playlist is already loaded!"
     Denna spellista har redan laddats!
 "This series"
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Detta skriver över din nuvarande, osparade spellista. Är du säker på att du vill fortsätta?
 "Thursday"
@@ -1423,6 +1426,7 @@
     Spår nr %s fråm albumet '%s'
 "Transcode"
     Omkoda
+"Transcoded"
 "transcoder"
     omkodare
 "Transcoder"

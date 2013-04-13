@@ -1,6 +1,4 @@
 ""
-" TRANSCODED"
-    TRANSCODÉ
 "# Tracks"
     n° Pistes
 "$1 B"
@@ -153,6 +151,8 @@
     Toute chaîne
 "Any Program Type"
     Tout type d'émission
+"API Key"
+"API Server"
 "Append"
     Ajouter
 "Append to Current Playlist"
@@ -438,6 +438,7 @@
     En édition
 "Embed HTTP basic auth user name/password into stream urls"
     Incorporer l'authentication HTTP de base dans les URLs de flux
+"Enable"
 "Enable Flash Video player for recordings."
     Utiliser le lecteur Flash Vidéo pour les enregistrements
 "Enable Video Playback"
@@ -844,9 +845,12 @@
     Aucune liste de lecture publique
 "No recording schedules have been defined."
     Aucune programmation d'enregistrement n'a été définie
+"No TV configured!"
 "No videos"
 "No. of recordings to keep"
     Nombre d'enreg. à conserver
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
 "Non-Music Specials"
     Spéciaux non musicaux
 "Non-Series HDTV"
@@ -970,6 +974,7 @@
     Listes de lecture
 "Please enter an IMDB number or a title to do another search"
     Entrer un N° IMDB ou un titre pour une nouvelle recherche
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
     Veuillez patienter pendant la requête AJAX
 "Plot"
@@ -1068,6 +1073,9 @@
     Chansons récemment écoutées
 "recgroup"
     Groupe d'enr.
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     Date d'enregistrement
 "Record Length"
@@ -1142,8 +1150,6 @@
     Cette diffusion sera enregistrée.
 "rectype-long: always"
     Enregistrer à n'importe quelle heure sur n'importe quelle chaîne.
-"rectype-long: channel"
-    Enregistrer à n'importe quelle heure sur la chaîne $1.
 "rectype-long: daily"
     Enregistrer cette émission dans cette tranche horaire chaque jour.
 "rectype-long: dontrec"
@@ -1162,18 +1168,12 @@
     Enregistrer cette émission dans cette tranche horaire chaque semaine.
 "rectype: always"
     Toujours
-"rectype: channel"
-    Chaîne
 "rectype: daily"
     Quotidien
 "rectype: dontrec"
     Ne pas enregistrer
-"rectype: finddaily"
-    Trouver Une Quotidien
 "rectype: findone"
     Trouver Unique
-"rectype: findweekly"
-    Trouver Un Hebdomadaire
 "rectype: once"
     Unique
 "rectype: override"
@@ -1414,12 +1414,15 @@
     Il y a eu un problème lors de la sauvegarde de votre liste de lecture
 "TheTVDB"
     La base de données TVDB
+"This channel"
+"This day and time"
 "This episode"
     Cet épisode
 "This playlist is already loaded!"
     Cette liste de lecture est déjà chargée !
 "This series"
     Cette série
+"This time"
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
 "Thursday"
@@ -1470,6 +1473,7 @@
     Piste n°%s de l'album '%s'
 "Transcode"
     Transcoder
+"Transcoded"
 "transcoder"
     transcodeur
 "Transcoder"
