@@ -21,6 +21,7 @@ class Translate extends MythBase {
 // php locale for printing and finally the matching language and charset codes.
     public static $Languages = array(
         'Catalan'       => array('Catal&agrave;',      'ca_ES.UTF-8', 'ca_ES'),
+        'Chinese_HK'    => array('中文(香港)',         'zh_HK.UTF-8', array('zh_HK', 'zh_TW')),
         'Dutch'         => array('Nederlands',         'nl_NL',       array('nl_NL', 'nl_BE')),
         'English'       => array('English',            'en_US.UTF-8', 'en_US.ISO-8859-1'),
         'English_CA'    => array('English_CA',         'en_CA.UTF-8', 'en_CA.ISO-8859-1'),

@@ -1,0 +1,99 @@
+"Action"
+    動作
+    \b(?:動作|打鬥)
+"Adult"
+    成人
+    \b(?:成人|色情)
+"Animals"
+    動物
+    \b(?:動物)
+"Art_Music"
+    藝術音樂
+    \b(?:藝術|舞蹈|音樂|文化)
+"Business"
+    商業
+    \b(?:商業)
+"Children"
+    兒童
+    \b(?:兒童|嬰兒|動畫)
+"Comedy"
+    喜劇
+    \b(?:喜劇|娛樂|處境喜劇)
+"Crime_Mystery"
+    犯罪 / 懸疑
+    \b(?:犯罪|懸疑)
+"Documentary"
+    紀錄片
+    \b(?:紀錄)
+"Drama"
+    戲劇
+    \b(?:戲劇)
+"Educational"
+    教育
+    \b(?:教育|嗜好)
+"Food"
+    飲食
+    \b(?:飲食|烹飪)
+"Game"
+    遊戲
+    \b(?:遊戲)
+"Health_Medical"
+    健康 / 醫藥
+    \b(?:健康|醫藥)
+"History"
+    歷史
+    \b(?:歷史)
+"Horror"
+    恐怖
+    \b(?:恐怖)
+"HowTo"
+    動手做
+    \b(?:how|家居|園藝)
+"Misc"
+    雜項
+    \b(?:特備|綜藝|資訊|收藏)
+"News"
+    新聞
+    \b(?:新聞|即時)
+"Reality"
+    真人show
+    \b(?:真人)
+"Romance"
+    愛情
+    \b(?:愛情|浪漫)
+"SciFi_Fantasy"
+    科幻 / 奇幻
+    \b(?:奇幻|科幻|幻想)
+"Science_Nature"
+    科學 / 大自然
+    \b(?:科學|大自然)
+"Shopping"
+    購物
+    \b(?:購物)
+"Soaps"
+    肥皂劇
+    \b(?:肥皂劇)
+"Spiritual"
+    靈性
+    \b(?:靈性|宗教)
+"Sports"
+    體育
+    \b(?:體育)
+"Talk"
+    清談
+    \b(?:清談)
+"Travel"
+    旅遊
+    \b(?:旅遊)
+"Unknown"
+    不詳
+    
+"War"
+    戰爭
+    \b(?:戰爭)
+"Western"
+    西部片
+    \b(?:西部)
+"movie"
+    電影
+    

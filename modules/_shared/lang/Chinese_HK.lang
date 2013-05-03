@@ -1,0 +1,1546 @@
+""
+" TRANSCODED"
+"# Tracks"
+"$1 B"
+"$1 day"
+    $1 日
+"$1 days"
+    $1 日
+"$1 episode"
+    $1 集
+"$1 episodes"
+    $1 集
+"$1 GB"
+"$1 hr"
+    $1 小時
+"$1 hrs"
+    $1 小時
+"$1 is not responding."
+    %1 未有回應。
+"$1 KB"
+"$1 MB"
+"$1 min"
+    $1 分
+"$1 mins"
+    $1 分
+"$1 month"
+    $1 個月
+"$1 months"
+    $1 個月
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+    $1 個節目，用了 $4 中之 $2 ($3) (還剩 $5)。
+"$1 recording"
+    $1 個錄影
+"$1 recordings"
+    $1 個錄影
+"$1 requests pending."
+    $1 個要求待處理。
+"$1 Search"
+    $1 搜尋
+"$1 TB"
+"$1 to $2"
+    $1 至 $2
+"$1 video"
+    $1 條影片
+"$1 videos"
+    $1 條影片
+"$1 wasted"
+    浪費了 $1
+"$1 year"
+    $1 年
+"$1 years"
+    $1 年
+"%s Song (%s)"
+    %s 首歌 (%s)
+"%s Songs"
+    %s 首歌
+"%s Songs (%s)"
+    %s 首歌 (%s)
+"(height is calculated automatically from the recording aspect ratio)"
+    (會自動根據錄影的寬高比計算高度)
+"1 - Lowest"
+    1 - 最低
+"4 - Highest"
+    4 - 最高
+"Aborted"
+    中止
+"Aborting"
+    正在中止
+"Action"
+    動作
+"Activate"
+    啟用
+"Add"
+    添加
+"Add Album to Current Playlist"
+    將專輯添加至當前播放清單
+"Add Mix"
+"Add Song to Current Playlist"
+    將歌曲添加至當前播放清單
+"add string"
+    添加字串
+"Add this Playlist as a Subplaylist"
+    將此播放清單添加為子播放清單
+"Additional Tables"
+    額外表格
+"Additional tables:"
+    額外表格：
+"Admin Key"
+    管理按鍵
+"Advanced"
+    進階
+"Advanced Options"
+    進階選項
+"Advanced Search"
+    進階搜尋
+"airdate"
+    播放日期
+"Airdate"
+    播放日期
+"Airtime"
+    播放日期
+"Album Listing"
+    列出專輯
+"Album Tracks"
+    專輯歌曲
+"Albums"
+    專輯
+"Albums with songs by %s"
+"All"
+    全部
+"All Albums"
+    全部專輯
+"All Categories"
+    全部分類
+"All Fields"
+    全部欄位
+"All Genres"
+    全部種類
+"All groups"
+    全部羣組
+"All HDTV"
+    全部高清電視
+"All Hosts"
+    全部主機
+"All recordings"
+    全部錄影
+"All Songs"
+    全部歌曲
+"ALLOCINETYPE"
+    Allo Cin&eacute;
+"Allows you to match any string of any length (including zero length)"
+"Allows you to match on a single character"
+"Allows you to search through other database tables when using a power search"
+"An error occurred while adding your playlist."
+    添加至播放清單時出錯。
+"and"
+    和
+"Any"
+    任何
+"Any Category"
+    任何分類
+"Any Channel"
+    任何頻道
+"Any Program Type"
+    任何節目類型
+"Append"
+    附加
+"Append to Current Playlist"
+    附加至當前播放清單
+"Are you sure you want to delete the following show?"
+    真要刪除以下節目？
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+    真要刪除此儲存的播放清單？
+"Artist Listing"
+    列出藝人
+"Artists"
+    藝人
+"Artists Beginning with %s"
+    以 %s 開頭的藝人
+"ASX Stream"
+    ASX 串流
+"Audio Bitrate"
+    音訊位元率
+"Audio for Hearing Impaired"
+    為聽障者而設的音訊
+"Audio for Visually Impaired"
+    為視障者而設的音訊
+"Auto Expire"
+    自動失效
+"Auto-expire recordings"
+    令錄影自動失效
+"Auto-flag commercials"
+    自動標記廣告
+"Auto-transcode"
+    自動轉碼
+"AVC/H.264"
+"Avoid poor signal quality"
+    避免差的訊號質素
+"Back"
+    返回
+"Back Tab"
+"Back to the program listing"
+    返回節目列表
+"Back to the recorded programs"
+    返回節目錄影
+"Back to the recording schedules"
+    返回預錄
+"Backend Logs"
+"Backend Status"
+    後端狀況
+"Backspace"
+"Begin a New Search"
+    開始新搜尋
+"brightness"
+    亮度
+"Browsable"
+    可瀏覽
+"Browse"
+    瀏覽
+"Browse = no"
+    瀏覽 = 否
+"Browse = yes"
+    瀏覽 = 是
+"Browse all"
+    全部瀏覽
+"Browse All Albums"
+    瀏覽全部專輯
+"Browse Music"
+    瀏覽音樂
+"Browse the Music Database"
+    瀏覽音樂資料庫
+"By Artist Beginning With"
+    按以此開頭的藝人：
+"By Genre"
+    按種類
+"Cache_APC"
+    Alternative PHP Cache (Recommended)
+"cache_engine"
+    Enable a cache engine?
+"Cache_Memcache"
+    Memcache
+"Cache_Memcached"
+    Memcached (binary)
+"Cache_Null"
+    Disabled
+"Cache_SHM"
+    Unix Shared Memory
+"callsign"
+    稱呼
+"Cancel"
+    取消
+"Cancel this schedule."
+    取消此預錄。
+"Cancelled"
+    取消
+"Caps Lock"
+"Cast"
+"category"
+    分類
+"Category"
+    分類
+"Category Legend"
+    分類圖例
+"CC"
+    字幕(CC)
+"Chan. Callsign"
+    頻道稱呼
+"Chan. Name"
+    頻道名稱
+"Chan. Number"
+    頻道編號
+"Channel"
+    頻道
+"channel"
+    頻道
+"Channel &quot;Jump to&quot;"
+    頻道 &quot;跳至&quot;
+"Channel Detail"
+    頻道詳情
+"Channel Info"
+    頻道資訊
+"Channels"
+    頻道
+"channum"
+"Check for duplicates in"
+"Children's Movies"
+    兒童片
+"Choose Genre.."
+    選擇種類..
+"Choose Type"
+    選擇類型
+"Clear the current default session"
+    清除當前預設工作階段
+"Click to disable Auto Expire"
+    按此停用自動失效
+"Click to enable Auto Expire"
+    按此啟用自動失效
+"Click to View Playlist"
+    按此檢視播放清單
+"Close Captioned priority"
+    隱藏式字幕優先級
+"Closed Captioning"
+    隱藏式字幕
+"color"
+    色彩
+"Commands"
+    指令
+"Commands:"
+    指令：
+"Commercial free"
+    無廣告
+"Commercials Flagged"
+    已標記廣告
+"commfree"
+    無廣告
+"Conflict"
+"Conflicts"
+"Context"
+    境況
+"contrast"
+    對比
+"Count"
+"Cover Image"
+    封面
+"Create a New Playlist"
+    建立新播放清單
+"Create a Random Mix"
+"Create Schedule"
+    建立預錄
+"Current MythWeb Template"
+    當前 MythWeb 模版
+"Current Recording"
+    當前錄影
+"Current recordings"
+    當前錄影
+"Currently Browsing:  $1"
+    當前正在瀏覽：$1
+"Currently Recording:  Edit"
+    當前正在錄影：編輯
+"Custom"
+    自訂
+"Custom Schedule"
+    自訂預錄
+"Custom Search"
+    自訂搜尋
+"Customize Screens"
+    自訂化畫面
+"Data"
+    資料
+"Database"
+    資料庫
+"Database Health"
+    資料庫健康狀況
+"Date"
+    日期
+"Date Formats"
+    日期格式
+"Deactivated"
+    停用
+"Deaf Signed"
+    有手語
+"Default"
+    預設
+"Default MythVideo View"
+    預設 MythVideo 檢視
+"Default MythWeb Template"
+    預設 MythWeb 模版
+"Delete"
+    刪除
+"delete"
+    刪除
+"Delete $1"
+    刪除 $1
+"Delete + Rerecord"
+    刪除 + 重新錄影
+"Delete and allow rerecord: $1"
+    刪除並容許重新錄影：$1
+"Delete and rerecord $1"
+    刪除並重新錄影 $1
+"Delete Forever"
+    永久刪除
+"DELETE this Saved Playlist"
+    刪此儲存的播放清單
+"DeleteKey"
+    Del
+"Depending on the Search type this is where you enter actual main search commands"
+    視乎搜尋類型，此為真正輸入主搜尋指令的地方
+"description"
+    說明
+"Description"
+    說明
+"Destination"
+    目的地
+"Details for: $1"
+    $1 詳情
+"Direct Download"
+    直接下載
+"Directed by"
+    導演：
+"Director"
+    導演
+"Director:"
+    導演：
+"Directory Structure"
+    目錄結構
+"Display"
+    顯示
+"Dolby Surround"
+"Don't Record"
+    不要錄影
+"Don't record this program."
+    不要錄影此節目
+"Done, Unknown Status"
+    完成，狀況不詳
+"Down"
+    下
+"Download URL override"
+    改為使用的下載網址
+"Dup Method"
+"Duplicate"
+    重覆節目
+"Duplicate Check method"
+    重覆節目的檢查方法
+"Duplicates/Ignored"
+    重覆節目／不理會
+"Earlier"
+    提早
+"Earlier Showing"
+    節目提早
+"Edit"
+    編輯
+"Edit existing group"
+    編輯現有羣組
+"Edit MythWeb and some MythTV settings."
+    編輯 MythWeb 及一些 MythTV 設定。
+"Edit settings for: $1"
+    編輯 $1 的設定
+"Editing "
+    編輯
+"Embed HTTP basic auth user name/password into stream urls"
+    將基本的 HTTP 用戶／密碼認證功能嵌入串流網址
+"Enable Flash Video player for recordings."
+    啟用以 Flash 播放錄影影片。
+"Enable Video Playback"
+    啟用影片播放
+"End"
+"End Late"
+    結束日期
+"Enter"
+"Enter a new name for your playlist"
+    為閣下的新播放清單輸入名稱
+"Enter your search terms"
+    輸入搜尋項目
+"enter your search terms"
+    輸入搜尋項目
+"Episode"
+    集數
+"Episode Number"
+    集數
+"Error"
+    出錯
+"Error contacting server to retrieve metadata."
+    連接伺服器以取得元數據時出錯。
+"error: playgroup $1 exists"
+    出錯：已有 $1 播放羣組
+"Errored"
+    已出錯
+"Erroring"
+    正在出錯
+"Escape"
+    Esc
+"Everything"
+    全部
+"Exec. Producer"
+    執行監製
+"Extended Check"
+    額外檢查
+"ffmpeg with MP3 support not detected"
+    偵測不到支援 MP3 的 ffmpeg
+"File Size"
+    檔案大小
+"film"
+    電影
+"Filters"
+    篩選
+"Find Date & Time Options"
+    尋找日期及時間選項
+"Find Day"
+    尋找日期
+"Find other showings of this program"
+    尋找此節目其他播出集數
+"Find showings of this program"
+    尋找此節目的播出集數
+"Find Time"
+    尋找時間
+"Find Time must be of the format:  HH:MM:SS"
+    尋找時間的格式須為 HH:MM:SS
+"finetune"
+    微調
+"Finished"
+    完成
+"First recording"
+    首次錄影
+"First showing"
+    首次播出
+"First showing of each episode"
+    每集的首次播出
+"Flag Commercials"
+    標記廣告
+"FLV Width"
+    FLV 寬度
+"For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
+    對於每日錄影，若是平日的話則是星期一至五，若是週末的話則每週七天
+"For more information on the Power Search please go to:"
+"Force HTTP for streams"
+    串流強制使用 HTTP
+"Force HTTP/HTTPS port for streams"
+    串流強制使用的 HTTP/HTTPS 連接埠
+"Forced"
+    已強制
+"Forget Old"
+    忘掉舊的
+"format help"
+    格式說明
+"Found %s results for '%s'"
+"freqid"
+"Friday"
+    星期五
+"Frontends"
+    前端程式
+"generic_date"
+    %a %Y年%-m月%-d日
+"generic_time"
+    %p %l:%M
+"Genre"
+    種類
+"genre_colors"
+    顯示種類色彩
+"Genres"
+    種類
+"Go"
+    去
+"Google"
+"Group timeslots every"
+    每隔此時間將時段分組：
+"Guest Starring"
+    特別客串
+"Guide rating"
+"Guide Settings"
+"Handy Predefined Searches"
+"handy: overview"
+    Some examples of complex searches possible with the listings.
+"has Bookmark"
+    有書籤
+"Has Cutlist"
+"HD"
+    高清
+"HDTV"
+    高清電視
+"Height"
+    高度
+"Hide"
+    隱藏
+"High definition"
+    高清
+"Home"
+"Hosted by"
+"Hour"
+    小時
+"Hour Format"
+    小時格式
+"hue"
+"Identifiable episode"
+    可辨認集數
+"Ignore generic shows"
+    不理會普通節目
+"Ignore scheduled shows"
+    不理會預錄的節目
+"IMDB"
+"IMDBTYPE"
+    Imdb
+"Inactive"
+    未啟動
+"info: activate recording"
+    Force this specific showing to record.
+"info: default recording"
+    Reset any override requests so that this showing will schedule normally.
+"info: dont record"
+"info: flvplayer"
+    <p>
+    Flash 影片播放功能目前仍處於實驗階段，<b>極之</b>不穩定，
+    故此預設是關閉的。
+    </p>
+    <p>
+    此功能目前需要有 MP3 支援編譯進去的 ffmpeg，並且閣下網頁
+    伺服器的用戶識別號(userid)要能存取該等影片檔。此功能很可能
+    無法用於 Nupplevideo 檔。最後要說的是，此功能可能完全無法
+    運作，甚至可能有更糟糕的後果。
+    </p>
+    <p>
+    請自行決定是否啟用此功能；還有，在其離開實驗階段前別指望 MythTV 
+    開發團隊會提供很多支援。
+    </p>
+"info: hidden advanced schedule"
+    The advanced scheduling options are currently hidden.
+"info: record this"
+    Force this specific showing to record.
+"info:forget old"
+    Forget about previous recordings of this show, so it can be re-recorded.
+"info:jumppoints"
+    <ul>
+        <li>JumpPoints are globally active.  If you set a keybinding for a JumpPoint that is the same as one defined in the Keybindings section, the JumpPoint will override the keybinding.</li>
+        <li>You probably want to use function keys or keys combined with a modifier (alt, control) for JumpPoints, otherwise you may run into some problems.</li>
+        <li>Changes to keybindings/jumppoints requires a restart of the affected mythfrontend for now.  This may change in a future release.</li>
+       </ul>
+"info:never record"
+    Falsify a previous recording of this show so that it won't record.
+"Insert"
+    Ins
+"Internet Reference #"
+    互聯網參考 #
+"Jump"
+    跳
+"Jump Points"
+"Jump to"
+    跳至
+"Jump To"
+    跳至
+"JumpPoints Editor"
+    編輯 JumpPoint
+"Key Bindings"
+    按鍵聯繫
+"Key bindings"
+    按鍵聯繫
+"Key Controls"
+    按鍵控制
+"Keybindings Editor"
+    編輯按鍵聯繫
+"Keyword"
+    關鍵字
+"Keyword Search"
+    關鍵字搜尋
+"Keyword Search:"
+    關鍵字搜尋：
+"Keywords"
+    關鍵字
+"Language"
+    語言
+"Last Recorded"
+    最新錄影
+"Last recording"
+    最新錄影
+"Last showing of each episode"
+    每集最後一次播出
+"Later"
+    稍後
+"left"
+"Left"
+    左
+"leftl"
+"length"
+    長度
+"Length"
+    長度
+"Length (min)"
+    長度 (分鐘)
+"Length in minutes"
+    以分鐘計算的長度
+"Listing &quot;Jump to&quot;"
+    公告 &quot;跳至&quot;
+"Listing Time Key"
+    公告時間鍵
+"Listings"
+    公告
+"Load"
+    載入
+"Load a Saved Playlist"
+    載入儲存的播放清單
+"Load Playlist"
+    載入播放清單
+"Load Saved Playlists"
+    載入儲存的播放清單
+"Load this Saved Playlist"
+    載入此儲存的播放清單
+"LOADING"
+    正在載入
+"Local Server Statistics"
+    本機伺服器統計
+"LOCKDOWN_NOTICE"
+    MythWeb has detected a bot accessing your installation. We have locked down the service to prevent bots from deleting all your recordings or allowing other people to access MythWeb without your permission. Please secure your server (read the INSTALL and README files) and remove
+"LOCKDOWN_NOTICE_2"
+    to unlock this install. To disable this feature, review the README file.
+"Logs"
+    日誌
+"Look up Metadata"
+"Low Space"
+"Manual"
+    手動
+"Match related callsigns"
+    符合相關的稱呼
+"matches"
+    個符合
+"Max star rating for movies"
+    此電影的最大星級
+"Metadata Home Page"
+"Metadata Lookup"
+"Metadata Lookup Error"
+"minutes"
+    分鐘
+"Missing Cover"
+    缺少封面
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+"Modify priority for a station on an input"
+"Modify priority for all inputs on a card"
+"Modify priority for an input (Input priority)"
+"Modify priority for every card on a host"
+"Modify unidentified episodes"
+"Monday"
+    星期一
+"Mono"
+    單聲道
+"More"
+    更多
+"more"
+    更多
+"Move Item Down in Playlist"
+    將播放清單中的項目移下
+"Move Item Up in Playlist"
+    將播放清單中的項目移上
+"movie"
+    電影
+"Movies"
+    電影
+"Movies, 3&frac12; Stars or more"
+    電影，3&frac12; 星或以上
+"Movies, Stinkers (2 Stars or less)"
+    電影 (2 星或以下)
+"Music"
+"Music Specials"
+    音樂特輯
+"My Session"
+    我的工作階段
+"MythMusic on the web."
+"MythMusic_Prefixes_To_Ignore"
+    a an the
+"MythTV"
+"MythTV Status"
+    MythTV 狀況
+"MythVideo Artwork Dir"
+    MythVideo 美工圖案目錄
+"MythVideo Dir"
+    MythVideo 目錄
+"MythVideo on the web."
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
+"MythWeb"
+"MythWeb Defaults"
+    MythWeb 預設值
+"MythWeb Global Defaults"
+    MythWeb 全域預設值
+"MythWeb Locked"
+    MythWeb 已鎖定
+"MythWeb Session"
+    MythWeb 工作階段
+"MythWeb Skin"
+    MythWeb 佈景主題
+"MythWeb Template"
+    MythWeb 模版
+"MythWeb Weather."
+    MythWeb 天氣。
+"Name"
+    名稱
+"name"
+    名稱
+"Narrow Your Search"
+    縮窄搜尋
+"Never Record"
+    永不錄影
+"New"
+    新
+"New episode"
+    新集數
+"New episodes only"
+    只新集數
+"New Group"
+    新羣組
+"New Search"
+    新搜尋
+"New Titles, Premieres"
+"No"
+    否
+"NO DATA"
+    無資料
+"No Frontends allow remote control."
+    無前端程式容許遙控。
+"No Genre"
+    無種類
+"No matches found"
+    無符合
+"No matching programs found."
+    無符合節目。
+"No metadata results found."
+    無元數據結果。
+"No Public Playlists"
+    無公開播放清單
+"No recording schedules have been defined."
+    未設定預錄。
+"No TV configured!"
+    未設定好電視功能！
+"No videos"
+    無影片
+"No. of recordings to keep"
+    要保留錄影數
+"NO_TV_CONFIGURED_NOTICE_1"
+    MythTV 的功能要在設定好電視之後才能完全發揮 。
+    閣下看未有設定電視頻道。如要發揮 MythTV 的電視功能，
+    請在使用 MythWeb 前先以 mythtv-setup 進行設定。
+"NO_TV_CONFIGURED_NOTICE_2"
+    MythTV 可在未有設定好電視功能的情況使用，
+    但其大部份介面設定是以提供電視功能為前題，
+    故若未有設定電視功能，點擊某些連結可能會出現 &quot;模組不詳&quot; 的訊息。
+"Non-Music Specials"
+    非音樂特輯
+"Non-Series HDTV"
+    非連續劇高清電視
+"None"
+    無
+"Not Listed"
+    未列出
+"Notes"
+    備注
+"Number of episodes"
+    集數
+"Number of shows"
+    播放數
+"Number of Songs"
+    歌曲數
+"Number of timeslots"
+    時段數
+"Off"
+    關
+"OK"
+    好
+"Only a certain channel number"
+    只要某些頻道編號
+"Only channels marked as commercial free"
+    只要無廣告頻道
+"Only channels that carry a specific station"
+    只要某個台的頻道
+"Only display favorite channels"
+    只顯示最愛頻道
+"Only match commercial-free channels"
+    只要無廣告頻道
+"Only match HD programs"
+    只要高清節目
+"Only match non-recorded shows"
+    只要無錄影的節目
+"Only New Episodes"
+    只要新集數
+"Only one specific channel ID (Channel priority)"
+    只要一個特定頻道ID (頻道優先級)
+"Only show distinct shows"
+    只顯示特定播放的節目
+"Only shows marked as HDTV"
+    只顯示標記為高清的節目
+"Optimize Tables"
+    為表格進行最佳化
+"or"
+    或
+"Original Airdate"
+    原播出日期
+"Originally aired between"
+    原播出日期介乎：
+"Override"
+    蓋過
+"Page Down"
+    PgDn
+"Page recorded programs"
+    頁錄影的節目
+"Page Up"
+    PgUp
+"Parental Level"
+    家長分級
+"Part $1 of $2"
+    第 $1/$2 部份
+"Past Month"
+    上個月
+"Past Week"
+    上週
+"Past Year"
+    上年
+"Paused"
+    暫停
+"Pending"
+    待處理
+"People"
+    人物
+"People Search"
+    搜尋人物
+"People Search:"
+    搜尋人物：
+"Percent of time spent recording"
+    用於錄影的時間百份比
+"Play"
+    播放
+"Play Recording on Frontend"
+    在前端程式播放錄影
+"Play this Album Now"
+    立即播放此專輯
+"Play This Playlist Now"
+    立即播放此專輯
+"Play this Playlist Now"
+    立即播放此專輯
+"Play this Song Now"
+    立即播放此歌曲
+"Play Time"
+    播放時間
+"Playback Group"
+    播放羣組
+"Playback Groups"
+    播放羣組
+"Played %s times"
+    曾播放 %1 次
+"Played once"
+    曾播放一次
+"Playlist"
+    播放清單
+"Playlist Info"
+    播放清單資訊
+"Playlist is empty"
+    空的播放清單
+"Playlist Items"
+    播放清單項目
+"Playlist Name"
+    播放清單名稱
+"Playlist renamed successfully"
+    成功重新命名播放清單
+"Playlist saved successfully"
+    成功儲存播放清單
+"Playlist: %s"
+    播放清單：%s
+"Playlists"
+    播放清單
+"Please enter an IMDB number or a title to do another search"
+    請輸入 IMDB 編號或名稱以進行另一次搜尋
+"Please wait for the pending AJAX request"
+    請稍候待處理的 AJAX 請求
+"Plot"
+    劇情
+"Plot:"
+    劇情：
+"Pop-out player"
+"Possible conflicts"
+    可能有衝突
+"Possible conflicts with this show"
+    可能與此次播出有衝突
+"Post Processing"
+    後期處理
+"Power"
+"Power Search"
+"Power Search:"
+"Prefer a host for a storage group"
+    儲存羣組優先使用某部主機
+"Prefer a host for live sports with overtime"
+    加時的直播體育節目優先使用某部主機
+"Prefer Channum"
+    優先使用頻道編號
+"Prefer movies when shown at night"
+    晚上優先選擇電影
+"prefer_channum"
+    優先使用頻道編號而非稱呼
+"Preferred Input"
+    優先使用的輸入
+"Presented by"
+"Previous Recording"
+    上次錄影
+"Previous recordings"
+    上次錄影
+"Prime time"
+    黃金時間
+"Priority for a category"
+    分類優先級
+"Priority for a category type"
+    分類類型優先級
+"Priority for all matching titles"
+    所有符合節目的優先級
+"Priority for any show with End Late time"
+    任何逾時節目的優先級
+"Priority for HD shows under two hours"
+    兩小時以下高清節目的優先級
+"Priority for movies by the year of release"
+    任何在同年推出電影的優先級
+"Priority when shown once"
+    只播放一次的節目的優先級
+"Produced by"
+    監製：
+"Profile"
+    設定組合
+"profile"
+    設定組合
+"Program Categories"
+    節目分類
+"Program Detail"
+    節目詳情
+"Program ID"
+    節目ID
+"Program Listing"
+    節目公告
+"Program Type"
+    節目類型
+"Protocol"
+    協定
+"Queue a job"
+    查詢工作
+"Queued"
+    已排程
+"Queued jobs"
+    已排程工作
+"Random"
+    隨機
+"Random Items"
+    隨機項目
+"Random Mix Maker"
+"Random Type"
+    隨機類型
+"Rating"
+    評級
+"Rating:"
+    評級：
+"Recently Added Albums"
+    最近添加專輯
+"Recently completed jobs"
+    最近完成工作
+"Recently Played Songs"
+    最近播放歌曲
+"recgroup"
+    錄影羣組
+"Record Date"
+    錄影日期
+"Record Length"
+    錄影長度
+"Record new and expire old"
+    錄影新的，並將舊的設為失效
+"Record This"
+    錄影這個
+"Recorded"
+    已錄
+"Recorded Programs"
+    已錄節目
+"Recording Details"
+    錄影詳情
+"Recording Group"
+    錄影羣組
+"Recording Options"
+    錄影選項
+"Recording Options Help"
+    錄影選項說明
+"Recording Priority"
+    錄影優先級
+"Recording Profile"
+    錄影設定組合
+"Recording Schedules"
+    預錄
+"Recording Statistics"
+    錄影統計
+"recpriority"
+    錄影優先級
+"recstatus: cancelled"
+    This was scheduled to be recorded but was manually canceled.
+"recstatus: conflict"
+    Another program with a higher recording priority will be recorded.
+"recstatus: currentrecording"
+    This episode was previously recorded and is still available in the list of recordings.
+"recstatus: deleted"
+    This showing was recorded but was deleted before recording was completed.
+"recstatus: earliershowing"
+    此集會改為早些錄。
+"recstatus: force_record"
+    This show was manually set to record this specific instance.
+"recstatus: inactive"
+    This recording schedule is inactive.
+"recstatus: latershowing"
+    此集會改為遲些錄。
+"recstatus: lowdiskspace"
+    磁碟空間不足，無法錄影此節目。
+"recstatus: manualoverride"
+    This showing was manually set to not record.
+"recstatus: neverrecord"
+    This show was marked to never be recorded.
+"recstatus: notlisted"
+    This show does not match the current program listings.
+"recstatus: previousrecording"
+    This episode was previously recorded according to the duplicate policy chosen for this title.
+"recstatus: recorded"
+    This showing was recorded.
+"recstatus: recording"
+    This showing is being recorded.
+"recstatus: repeat"
+    This showing is a repeat and will not be recorded.
+"recstatus: stopped"
+    This showing was recorded but was stopped before recording was completed.
+"recstatus: toomanyrecordings"
+    此節目已錄影太多次。
+"recstatus: tunerbusy"
+    The tuner card was already in-use when this program was scheduled to be recorded.
+"recstatus: unknown"
+    The status of this showing is unknown.
+"recstatus: willrecord"
+    This showing will be recorded.
+"rectype-long: always"
+    Record at any time on any channel.
+"rectype-long: daily"
+    每日此時段錄影此節目。
+"rectype-long: dontrec"
+    Do not record this specific showing.
+"rectype-long: finddaily"
+    Find and record one showing of this title each day.
+"rectype-long: findone"
+    Find and record one showing of this title.
+"rectype-long: findweekly"
+    Find and record one showing of this title each week.
+"rectype-long: once"
+    Record only this showing.
+"rectype-long: override"
+    Record this specific showing.
+"rectype-long: weekly"
+    每週此時段錄影此節目。
+"rectype: always"
+    一定
+"rectype: daily"
+    每日
+"rectype: dontrec"
+    不錄影
+"rectype: findone"
+    Find Once
+"rectype: once"
+    一次
+"rectype: override"
+    Override (record)
+"rectype: weekly"
+    每週
+"regex: articles"
+    An?|The
+"Remote"
+    遙控
+"Remove Item from Playlist"
+    在播放清單移除此項目
+"Repair Tables"
+    修復表格
+"Repeat"
+    Rerun
+"Reset"
+    重置
+"Reset template and skin to defaults"
+    將模版和佈景主題重置為預設值
+"Retry"
+    再試
+"Return to Statistics Page"
+    返回統計頁
+"right"
+"Right"
+    右
+"Root Directory"
+    根目錄
+"Rows to show between timeslot info"
+"Running"
+    正在執行
+"Saturday"
+    星期六
+"Save"
+    儲存
+"Save or Rename the Current Playlist"
+    儲存或重新命名當前播放清單
+"Save Schedule"
+    儲存預錄
+"Save/Rename"
+    儲存／重新命名
+"Save/Rename Playlist"
+    儲存／重新命名播放清單
+"Saved Playlist Successfully Deleted"
+    已成功刪除儲存的播放清單
+"Saved Playlists"
+    儲存的播放清單
+"Scan Collection"
+    掃描影集
+"Schedule"
+    預錄
+"Schedule Manually"
+    手動預錄
+"Schedule normally."
+    正常預錄
+"Schedule Options"
+    預錄選項
+"Schedule Override"
+"Schedule via $1."
+    以 $1 預錄。
+"Scheduled"
+    已預錄
+"Scheduled Popup"
+"Science Fiction Movies"
+    科幻片
+"Search"
+    搜尋
+"Search $1"
+    搜尋 $1
+"Search all program keywords for a match against search phrase below"
+"Search all program titles containing the Title text below"
+"Search for all actors contained in a recording for a match against search phrase below"
+"Search for:  $1"
+    搜尋 $1
+"Search Music"
+    搜尋音樂
+"Search Phrase"
+    搜尋片語
+"Search Phrase:"
+    搜尋片語：
+"Search Results"
+    搜尋結果
+"Search the Music Database"
+    搜尋音樂資料庫
+"Search Type"
+    搜尋類型
+"Search Type Help"
+    搜尋類型說明
+"Search will perform complex SQL queries against the database as per the search phrase below"
+    會以以下每個搜尋片語對資料庫進行複雜的 SQL 查詢
+"Searches"
+    搜尋
+"Searches will be performed against the title of all TV shows"
+    搜尋會對所有電視節目進行
+"Seas/Ep"
+    季度／集數
+"Season"
+    季度
+"Select the correct show"
+    選擇正確節目
+"Server returned invalid data when attempting to retrieve metadata."
+    當向伺服器取得元數據時，伺服器傳回了無效的資料。
+"Server Statistics"
+    伺服器統計
+"Set Host"
+    設定主機
+"Settings"
+    設定
+"settings"
+    設定
+"Settings Table"
+    設定表
+"settings/stream: protocol"
+    很多媒體播放器無法播放以 https 進行的串流。<br/>
+    如閣下以 https 運行 MythWeb，您＊同時＊亦<br/>
+    要建立「非SSL」連線並勾選此項，此舉會強制<br/>
+    所有串流下載改為使用 http。
+"settings: notice"
+    警告：<br><br>
+    大部份設定頁面不會偵測填入的資料是否有錯。修改設定
+    很容易，但可能導致整個系統無法運作，並且無法自資料庫
+    回復，並且<b>無法</b>取消變更。
+"Shift"
+"Show"
+    顯示
+"Show group"
+    顯示羣組
+"Show pixmaps"
+    顯示 pixmap
+"Show recordings"
+    顯示錄影
+"show_channel_icons"
+    顯示頻道圖示
+"show_popup_info"
+    當滑鼠移到上方時顯示節目資訊
+"show_video_covers"
+    在影片介面顯示影片封面
+"Showing all programs from the $1 group."
+    顯示 $1 羣組的所有節目。
+"Showing all programs."
+    顯示所有節目。
+"Showings between"
+"Shows"
+"Skip Ahead"
+"Skip Back"
+"Songs"
+    歌曲
+"Songs for Genre"
+    此種類的歌曲
+"Songs Played"
+"Songs Rated"
+"Sorry, but you cannot add this playlist as it would create a circular dependency."
+"sortby_channum"
+    勾選代表按編號排列頻道清單；不勾選代表按稱呼排列
+"sourceid"
+"Space"
+    空格
+"Special Searches"
+    特別搜尋
+"Star character"
+    星號
+"Start Date"
+    開始日期
+"Start Early"
+    提早開始
+"Start Time"
+    開始時間
+"Starting"
+    正在開始
+"Statistics"
+    統計
+"Stats"
+    統計
+"Status"
+    狀況
+"Status Bar"
+    狀況列
+"Stereo"
+    立體聲
+"Still Recording: Edit"
+    仍在錄影：編輯
+"Stopping"
+    正在停止
+"Storage Group"
+    儲存羣組
+"Store the current session as the default"
+    將當前工作階段儲存為預設值
+"Streaming"
+    串流
+"Sub and Desc (Empty matches)"
+"Submit"
+    提交
+"Submit Search"
+    提交搜尋
+"Subtitle"
+    字幕
+"Subtitle and Description"
+    字幕及說明
+"Subtitle then Description"
+    字幕然後說明
+"Subtitled"
+    有字幕
+"Subtitles Available"
+    可開關字幕
+"Sunday"
+    星期日
+"Surround Sound"
+    環迴立體聲
+"Tab"
+"Television"
+    電視
+"The requested recording schedule has been deleted."
+    要求的預錄已刪除。
+"themoviedb"
+"There are no items in this Playlist!"
+    播放清單中無項目！
+"There was a problem saving your playlist"
+    儲存播放清單時發生問題
+"TheTVDB"
+"This channel"
+"This day and time"
+"This episode"
+    此集
+"This playlist is already loaded!"
+    已載入此播放清單！
+"This series"
+    此劇
+"This time"
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+    此舉會覆寫閣下當前的未儲存播放清單。是否確定繼續？
+"Thursday"
+    星期四
+"Time"
+    時間
+"Time Span"
+"Time Stretch"
+"Timeslot size"
+    時段大小
+"title"
+    節目名
+"Title"
+    節目名
+"Title Match"
+"Title search"
+    搜尋節目名
+"Title Search"
+    搜尋節目名
+"Title Search:"
+    搜尋節目名：
+"Title:"
+    節目名：
+"Toggle Interactive Mode"
+    切換互動模式
+"Too Many"
+    太多
+"Top $1"
+    最高 $1
+"Top Played Songs"
+    播放最多的歌曲
+"Top Rated Songs"
+    評級最高的歌曲
+"Total Length"
+    總長度
+"Total Recorded"
+    總錄影
+"Total Running Time"
+    總節目時間
+"Total Time"
+    總時間
+"Total Time:  %s"
+    總時間：%s
+"Track #%s from the album '%s'"
+    第 %s 首歌 (「%s」專輯)
+"Transcode"
+    轉碼
+"transcoder"
+    轉碼器
+"Transcoder"
+    轉碼器
+"Tuesday"
+    星期二
+"Tuner Busy"
+    調頻器正忙
+"TV"
+    電視
+"TV functions, including recorded programs."
+    電視，包括節目錄影。
+"TV.com"
+"type"
+    類型
+"Type"
+    類型
+"Uncategorized"
+    未分類
+"Undelete"
+    取消刪除
+"Undelete: $1"
+    取消刪除：$1
+"Unknown"
+    不詳
+"Unknown action"
+    不詳行動
+"Unknown frontend"
+    不詳前端程式
+"Unknown Program."
+    不詳程式。
+"Unknown Recording Schedule."
+    不詳預錄。
+"Up"
+    上
+"Upcoming Recordings"
+    未來錄影
+"Update"
+    更新
+"Update Recording Settings"
+    更新錄影設定
+"Use callsign"
+    使用稱呼
+"Use date/time"
+    使用日期／時間
+"useonairguide"
+"User Rating"
+    用戶評級
+"Value"
+    值
+"Video"
+    影片
+"Video Bitrate"
+    視訊位元率
+"Video Playback"
+    影片播放
+"Video: Error: IMDB"
+    嚴重出錯：未能取得 IMDB 資料。如閣下手動指定了 IMDB 編號，請確定該編號正確。
+"Video: Error: IMDB: Not Found"
+    嚴重出錯：未有在設定表啟用 IMDB。請在設定分頁設定。
+"Video: Error: Missing ID"
+    Fatal Error: The ID was not sent to the IMDB script.
+"Video: IMDB: No Matches"
+    找不到符合的節目。請以自訂搜尋輸入 IMDB 編號或不同節目名再搜尋。
+"Video: IMDB: Window Title"
+    IMDB Matches
+"Video: Warning: Artwork"
+    警告：未能更新影片美工圖案。請檢查此主機閣下美工圖案目錄的權限。
+"Video: Warning: Artwork: Download"
+    未能自 TMDB 下載美工圖案。
+"Video: Warning: fopen"
+    警告：閣下的 php.ini 檔案將 allow_url_fopen 設為「關閉」。要下載美工圖案，其必須為「開啟」。現在不會更新美工圖案。
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
+"videofilters"
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
+"Videos"
+    影片
+"VideoStartupDir"
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
+"View"
+    檢視
+"View Albums by %s"
+    檢視 %s 的專輯
+"View Details of %s"
+    檢視 %s 的詳情
+"View Saved Playlist"
+    檢視儲存的播放清單
+"View Server Statistics"
+    檢視伺服器統計
+"visible"
+    可見
+"Visit $1"
+    參訪 $1
+"Watched"
+    看過了
+"Weather"
+    天氣
+"web_video_imdb_path"
+    此網頁伺服器的 imdb.pl 路徑
+"web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
+"Wednesday"
+    星期三
+"welcome: backend_log"
+    顯示伺服器日誌。
+"welcome: music"
+    瀏覽音樂收藏。
+"welcome: remote"
+"welcome: settings"
+    設定 MythWeb 及一些 MythTV 設定。
+"welcome: stats"
+    MythTV 錄影統計。
+"welcome: status"
+    顯示後端伺服器狀況頁。
+"welcome: tv"
+    看看電視直播或錄起了什麼節目；又或者管理已錄起的節目。
+    您有以下選擇：
+"welcome: video"
+    瀏覽影集。
+"What else is on at this time?"
+    現在有什麼節目？
+"Widescreen"
+    寬螢幕
+"Width"
+    寬度
+"Will Record"
+    會錄影
+"Written by"
+    編劇：
+"xmltvid"
+"Year"
+    年份
+"Year:"
+    年份：
+"Yes"
+    是
+"Yesterday"
+    昨日
+"You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
+    缺少與 mysql 進行互動的 php 擴充套件。請安裝 php-mysqli 或類似軟件。
+"You must be running at least php 5.3 to use this program."
+    要執行此程式，須有 php 5.3 或以上版本。
