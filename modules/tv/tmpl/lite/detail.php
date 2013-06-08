@@ -65,7 +65,7 @@
                 </div>
                 <div id="external_searches">
                     (<?php echo t('Search') ?>: &nbsp;
-                    <a href="http://www.themoviedb.org/search?query=<?php echo urlencode($schedule->title) ?>"><?php echo t('themoviedb') ?></a>
+                    <a href="http://www.themoviedb.org/search/movie?query=<?php echo urlencode($schedule->title) ?>"><?php echo t('themoviedb') ?></a>
                     &nbsp;-&nbsp;
                     <a href="http://www.imdb.com/search/title?title=<?php echo urlencode($schedule->title) ?>"><?php echo t('IMDB') ?></a>
                     &nbsp;-&nbsp;
