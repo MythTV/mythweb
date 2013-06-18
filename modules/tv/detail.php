@@ -269,6 +269,10 @@
     // Redirect back to the page again, but without the query string, so reloads are cleaner
         redirect_browser(root_url.'tv/detail/'.$program->chanid.'/'.$program->starttime);
     }
+    else {
+    // Load default values from Default recording rule template
+        $schedule->merge(Schedule::recording_template('Default'));
+    }
 
 // Load the channel
     if ($program)

@@ -120,6 +120,8 @@
     // Date/time/etc
         if (!$schedule->starttime)
             $schedule->starttime = time();
+    // Load default values from Default recording rule template
+        $schedule->merge(Schedule::recording_template('Default'));
     }
 
 // Calculate the length

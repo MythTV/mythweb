@@ -160,6 +160,8 @@
             case searchtype_title:
             default:                 $schedule->search_type = t('Title');   break;
         }
+    // Load default values from Default recording rule template
+        $schedule->merge(Schedule::recording_template('Default'));
     }
 
 // Create an edit-friendly title
