@@ -242,6 +242,47 @@ class Schedule extends MythBase {
     }
 
 /**
+ * Alternative constructor for returning recording templates
+ **/
+    static function recording_template($name) {
+        global $db;
+        $sched = new Schedule(NULL);
+        $data = $db->query_assoc('
+            SELECT *
+            FROM   record
+            WHERE  type = ?
+            AND    title = ?',
+            rectype_template,
+            $name.' (Template)'
+        );
+
+        $template_params = array(
+            'recpriority', 'prefinput', 'startoffset', 'endoffset',
+            'dupmethod', 'dupin', 'filter', 'inactive',
+            'profile', 'recgroup', 'storagegroup', 'playgroup', 'autoexpire',
+            'maxepisodes', 'maxnewest',
+            'autocommflag', 'autotranscode', 'transcoder',
+            'autouserjob1', 'autouserjob2', 'autouserjob3', 'autouserjob4',
+            'autometadata');
+        foreach ($template_params as $param)
+            if (isset($data[$param]))
+                $sched->$param = $data[$param];
+
+        return $sched;
+    }
+
+/**
+ * Merge values from another schedule
+ **/
+    public function merge($prog) {
+        foreach (get_object_vars($prog) as $name => $value) {
+            if ($value && !$this->$name) {
+                $this->$name = $value;
+            }
+        }
+    }
+
+/**
  * Save this schedule
 /**/
     public function save($new_type) {
