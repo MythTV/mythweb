@@ -147,46 +147,11 @@
             }
         }
     }
-// Load default settings for recpriority, autoexpire etc
+// Set some defaults
     else {
     // Make sure we have a default rectype
         if (!$schedule->type)
             $schedule->type = rectype_always;
-    // auto-metadata-lookup
-        if (!isset($schedule->autometadata))
-            $schedule->autometadata = setting('AutoMetadataLookup');
-    // auto-commercial-flag
-        if (!isset($schedule->autocommflag))
-            $schedule->autocommflag = setting('AutoCommercialFlag');
-    // auto-user-jobs
-        if (!isset($schedule->autouserjob1))
-            $schedule->autouserjob1 = setting('AutoRunUserJob1');
-        if (!isset($schedule->autouserjob2))
-            $schedule->autouserjob2 = setting('AutoRunUserJob2');
-        if (!isset($schedule->autouserjob3))
-            $schedule->autouserjob3 = setting('AutoRunUserJob3');
-        if (!isset($schedule->autouserjob4))
-            $schedule->autouserjob4 = setting('AutoRunUserJob4');
-    // auto-transcode
-        if (!isset($schedule->autotranscode))
-            $schedule->autotranscode = setting('AutoTranscode');
-    // transcoder
-        if (!isset($schedule->transcoder))
-            $schedule->transcoder = setting('DefaultTranscoder');
-    // recpriority
-        if (!isset($schedule->recpriority)) {
-            $result = mysql_query('SELECT recpriority from channel where chanid='.escape($program->chanid));
-            list($schedule->recpriority) = mysql_fetch_row($result);
-            mysql_free_result($result);
-        }
-    // autoexpire
-        if (!isset($schedule->autoexpire))
-            $schedule->autoexpire = setting('AutoExpireDefault');
-    // start early / end late
-        if (!isset($schedule->startoffset))
-            $schedule->startoffset = setting('DefaultStartOffset');
-        if (!isset($schedule->endoffset))
-            $schedule->endoffset = setting('DefaultEndOffset');
     // Get the searchtype string
         switch ($schedule->search) {
             case searchtype_power:   $schedule->search_type = t('Power');   break;
