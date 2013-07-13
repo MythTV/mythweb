@@ -36,6 +36,9 @@
     require_once 'includes/errors.php';
     require_once 'includes/errordisplay.php';
 
+// Define some common stuff
+    require_once 'includes/defines.php';
+
 // Setup the database
     require_once 'includes/database.php';
 
@@ -44,9 +47,6 @@
 
 // Load the session handler routines
     require_once 'includes/session.php';
-
-// Define some common stuff
-    require_once 'includes/defines.php';
 
 // Load the translation routines so the modules can translate their descriptions
     require_once 'includes/translate.php';
