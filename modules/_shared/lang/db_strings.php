@@ -1,4 +1,4 @@
-/<?php
+<?php
 /*
  * This file is not actually run by mythweb but contains strings that 
  * exist only in the database, so that build_translation.pl does not
