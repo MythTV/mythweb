@@ -90,7 +90,7 @@
             if (($_REQUEST['recgroup'] && $_REQUEST['recgroup'] == $record[29]) || (!$_REQUEST['recgroup'] && $record[29] != 'LiveTV' && $record[29] != 'Deleted'))
                 $Program_Titles[$record[0]]++;
         // Skip files with no chanid
-            if (!$record[6])
+            if (!$record[7])
                 continue;
         // Skip programs the user doesn't want to look at
             if ($_REQUEST['title'] && $_REQUEST['title'] != $record[0])
