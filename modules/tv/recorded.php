@@ -120,14 +120,14 @@
             if ($_REQUEST['recgroup'] && $_REQUEST['title'] && $Groups[$_REQUEST['recgroup']] > 0) {
                 $warning = t('Showing all programs from the $1 group.', $_REQUEST['recgroup']);
                 unset($_REQUEST['title']);
-                unset($_SESSION['title']);
+                unset($_SESSION['recorded_title']);
                 continue;
             }
         // Catch anything else
             $_REQUEST['refresh'] = true;
             $warning         = t('Showing all programs.');
             unset($_REQUEST['title'], $_REQUEST['recgroup']);
-            unset($_SESSION['title'], $_SESSION['recgroup']);
+            unset($_SESSION['recorded_title'], $_SESSION['recorded_recgroup']);
             continue;
         }
     // Did the best we could to find some programs; let's move on.
