@@ -11,7 +11,7 @@
 /**/
 
 /**
- *  Generates a schedule filter paramater from the POST parameters
+ *  Generates a schedule filter parameter from the POST parameters
 /**/
     function generateFilter() {
         $total = 0;
