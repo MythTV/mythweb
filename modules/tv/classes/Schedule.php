@@ -274,7 +274,7 @@ class Schedule extends MythBase {
  **/
     public function merge($prog) {
         foreach (get_object_vars($prog) as $name => $value) {
-            if ($value && !$this->$name) {
+            if (isset($value) && !isset($this->$name)) {
                 $this->$name = $value;
             }
         }
