@@ -853,6 +853,7 @@
             </div>
 
         <?php
+            flush();
             $frontends = MythFrontend::findFrontends();
             if (is_array($frontends)) {
                 echo '<div class="x-frontends">'.t('Play Recording on Frontend').':<ul>';
