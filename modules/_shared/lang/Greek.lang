@@ -1,0 +1,1529 @@
+""
+"# Tracks"
+  # Τραγούδια
+"$1 B"
+  $1 B
+"$1 day"
+  $1 ημέρα
+"$1 days"
+  $1 ημέρες
+"$1 episode"
+  $1 επεισόδιο
+"$1 episodes"
+  $1 επεισόδια
+"$1 GB"
+  $1 GB
+"$1 hr"
+  $1 ώρα
+"$1 hrs"
+  $1 ώρες
+"$1 is not responding."
+  $1 δεν ανταποκρίνεται.
+"$1 KB"
+  $1 KB
+"$1 MB"
+  $1 MB
+"$1 min"
+  $1 λεπ
+"$1 mins"
+  $1 λεπτά
+"$1 month"
+  $1 μήνας
+"$1 months"
+  $1 μήνες
+"$1 programs, using $2 ($3) out of $4 ($5 free)."
+  $1 εγγραφές, καταλαμβάνοντας $2 ($3) από $4 ($5 ελεύθερα).
+"$1 recording"
+  $1 εγγραφή
+"$1 recordings"
+  $1 εγγραφές
+"$1 requests pending."
+  $1 αιτήσεις σε αναμονή.
+"$1 Search"
+  $1 Αναζήτηση
+"$1 TB"
+  $1 TB
+"$1 to $2"
+  $1 στο $2
+"$1 video"
+  $1 ταινία
+"$1 videos"
+  $1 ταινίες
+"$1 wasted"
+  $1 σπαταλούνται
+"$1 year"
+  $1 έτος
+"$1 years"
+  $1 έτη
+"%s Song (%s)"
+  %s Τραγούδι (%s)
+"%s Songs"
+  %s Τραγούδια
+"%s Songs (%s)"
+  %s Τραγούδια (%s)
+"(height is calculated automatically from the recording aspect ratio)"
+  (το ύψος υπολογίζεται αυτόματα από το λόγο πλευρών της εγγραφής)
+"1 - Lowest"
+  1 - Χαμηλότερο
+"4 - Highest"
+  4 - Υψηλότερο
+"Aborted"
+  Εγκαταλήφθηκε
+"Aborting"
+  Εγκαταλείπω
+"Action"
+  Ενέργεια
+"Activate"
+  Ενεργοποίηση
+"Add"
+  Προσθήκη
+"Add Album to Current Playlist"
+  Προσθήκη Δίσκου στην ενεργή Λίστα Αναπαραγωγής
+"Add Mix"
+  Προσθήκη Μιξαρίσματος
+"Add Song to Current Playlist"
+  Προσθήκη Τραγουδιού στην ενεργή Λίστα Αναπαραγωγής
+"add string"
+  προσθήκη κειμένου
+"Add this Playlist as a Subplaylist"
+  Ενσωμάτωση αυτής της λίστας σε άλλη
+"Additional Tables"
+  Επιπρόσθετοι Πίνακες
+"Additional tables:"
+  Επιπρόσθετοι πίνακες:
+"Admin Key"
+  Κλειδί διαχειριστή
+"Advanced"
+  Για Προχωρημένους
+"Advanced Options"
+  Επιλογές για Προχωρημένους
+"Advanced Search"
+  Προχωρημένη Αναζήτηση
+"airdate"
+  ημερομηνία προβολής
+"Airdate"
+  Ημερομηνία Προβολής
+"Airtime"
+  Ώρα προβολής
+"Album Listing"
+  Λίστα Δίσκων
+"Album Tracks"
+  Τραγούδια Δίσκου
+"Albums"
+  Δίσκοι
+"Albums with songs by %s"
+  Δίσκοι με τραγούδια από
+"All"
+  Όλα
+"All Albums"
+  Όλοι οι δίσκοι
+"All Categories"
+  Όλες οι Κατηγορίες
+"All Fields"
+  Όλα τα Πεδία
+"All Genres"
+  Όλα τα Είδη
+"All groups"
+  Όλες οι ομάδες
+"All HDTV"
+  Όλες οι HDTV
+"All Hosts"
+  Όλοι οι Η/Υ
+"All recordings"
+  Όλες οι εγγραφές
+"All Songs"
+  Όλα τα Τραγούδια
+"ALLOCINETYPE"
+"Allows you to match any string of any length (including zero length)"
+  Σας επιτρέπει να ταιριάξετε οποιοδήποτε κείμενο οποιουδήποτε μήκους (ακόμα και μηδενικού)
+"Allows you to match on a single character"
+  Σας επιτρέπει να ταιριάξετε ένα χαρακτήρα
+"Allows you to search through other database tables when using a power search"
+  Επιτρέπει σε δυναμική αναζήτηση να ψάξει και σε άλλους πίνακες της βάσης δεδομένων
+"An error occurred while adding your playlist."
+  Προκλήθηκε σφάλμα κατά την προσθήκη της λίστας αναπαραγωγής σας.
+"and"
+  και
+"Any"
+  Οποιοδήποτε
+"Any Category"
+  Οποιαδήποτε Κατηγορία
+"Any Channel"
+  Οποιοδήποτε Κανάλι
+"Any Program Type"
+  Κάθε Τύπο Εκπομπής
+"API Key"
+  Κλειδί API
+"API Server"
+  Διακομιστής API
+"Append"
+  Προσθήκη
+"Append to Current Playlist"
+  Προσθήκη στην Τρέχουσα Λίστα
+"Are you sure you want to delete the following show?"
+  Σίγουρα θέλετε να διαγράψετε την εκπομπή;
+"Are you sure you want to DELETE THIS SAVED PLAYLIST?"
+  Σίγουρα θέλετε να ΔΙΑΓΡΑΨΕΤΕ ΤΗΝ ΑΠΟΘΗΚΕΥΜΕΝΗ ΛΙΣΤΑ;
+"Artist Listing"
+  Λίστα Καλλιτεχνών
+"Artists"
+  Καλλιτέχνες
+"Artists Beginning with %s"
+  Καλλιτέχνες που αρχίζουν από %s
+"ASX Stream"
+  Ροή ASX
+"Audio Bitrate"
+  Διαμεταγωγή Ήχου
+"Audio for Hearing Impaired"
+  Ήχος για Άτομα με Προβλήματα Ακοής
+"Audio for Visually Impaired"
+  Ήχος για άτομα με Προβλήματα Όρασης
+"Auto Expire"
+  Αυτόματη Λήξη
+"Auto-expire recordings"
+  Αυτόματη Λήξη εγγραφών
+"Auto-flag commercials"
+  Αυτόματη σημείωση διαφημίσεων
+"Auto-transcode"
+  Αυτόματη επανακωδικοποίηση
+"AVC/H.264"
+  AVC/H.264
+"Avoid poor signal quality"
+  Αποφυγή χαμηλής ποιότητας σήματος
+"Back"
+  Πίσω
+"Back Tab"
+  Προηγούμενη Καρτέλα
+"Back to the program listing"
+  Πίσω στη λίστα εκπομπών
+"Back to the recorded programs"
+  Πίσω στις εγγραφές
+"Back to the recording schedules"
+  Πίσω στον προγραμματισμό εγγραφών
+"Backend Logs"
+  Αρχεία Καταγραφής του Backend
+"Backend Status"
+  Κατάσταση Διακομιστή
+"Backspace"
+  Διαγραφή Πίσω
+"Begin a New Search"
+  Δημιουργία Νέας Αναζήτησης
+"brightness"
+  φωτεινότητα
+"Browsable"
+  ορατό
+"Browse"
+  Περιήγηση
+"Browse = no"
+  Περιήγηση = όχι
+"Browse = yes"
+  Περιήγηση = ναι
+"Browse all"
+  Περιήγηση όλων
+"Browse All Albums"
+  Περιήγηση σε όλους τους δίσκους
+"Browse Music"
+  Περιήγηση Μουσικής
+"Browse the Music Database"
+  Περιηγηθείτε στη Μουσική Συλλογή σας
+"By Artist Beginning With"
+  Ανά Καλλιτέχνη που αρχίζει από
+"By Genre"
+  Ανά Είδος
+"Cache_APC"
+
+"cache_engine"
+
+"Cache_Memcache"
+
+"Cache_Memcached"
+
+"Cache_Null"
+
+"Cache_SHM"
+
+"callsign"
+  Όνομα
+"Cancel"
+  Ακύρωση
+"Cancel this schedule."
+  Ακύρωση αυτού του προγραμματισμού
+"Cancelled"
+  Ακυρώθηκε
+"Caps Lock"
+  Κεφαλαία
+"Cast"
+  Ηθοποιοί
+"category"
+  κατηγορία
+"Category"
+  Κατηγορία
+"Category Legend"
+  Επεξήγηση Κατηγορίας
+"CC"
+  Υπότιτλοι
+"Chan. Callsign"
+  Όνομα Καναλιού
+"Chan. Name"
+  Ονομασία καναλιού
+"Chan. Number"
+  Αριθ. Καναλιού
+"Channel"
+  Κανάλι
+"channel"
+  κανάλι
+"Channel &quot;Jump to&quot;"
+  Κανάλι &quot;Πήγαινε εκεί&quot;
+"Channel Detail"
+  Λεπτομέρειες Καναλιού
+"Channel Info"
+  Πληροφορίες Καναλιού
+"Channels"
+  Κανάλια
+"channum"
+  αριθ. καναλιού
+"Check for duplicates in"
+  Έλεγχος για διπλοεγγραφές σε
+"Children's Movies"
+  Παιδικές Ταινίες
+"Choose Genre.."
+  Επιλέξτε Είδος..
+"Choose Type"
+  Επιλέξτε Τύπο
+"Clear the current default session"
+  Διαγραφή της τρέχουσας συνεδρίας
+"Click to disable Auto Expire"
+  Πατήστε για απενεργοποίηση Αυτόματης Λήξης
+"Click to enable Auto Expire"
+  Πατήστε για ενεργοποίηση Αυτόματης Λήξης
+"Click to View Playlist"
+  Πατήστε για να δείτε τη Λίστα
+"Close Captioned priority"
+  Προτεραιότητα Κρυφών Υποτίτλων
+"Closed Captioning"
+  Κρυφοί Υπότιτλοι
+"color"
+  χρώμα
+"Commands"
+  Εντολές
+"Commands:"
+  Εντολές:
+"Commercial free"
+  Άνευ διαφημίσεων
+"Commercials Flagged"
+  Οι Διαφημίσεις Σημειώθηκαν
+"commfree"
+  χωρίς διαφημίσεις
+"Conflict"
+  Σύγκρουση
+"Conflicts"
+  Συγκρούσεις
+"Context"
+  Πλαίσιο
+"contrast"
+  αντίθεση
+"Count"
+  Μέτρηση
+"Cover Image"
+  Εξώφυλλο
+"Create a New Playlist"
+  Δημιουργία Νέας Λίστας
+"Create a Random Mix"
+  Δημιουργία Τυχαίας Μίξης
+"Create Schedule"
+  Προγραμματισμός Εγγραφής
+"Current MythWeb Template"
+  Τρέχον Πρότυπο Mythweb
+"Current Recording"
+  Τρέχουσα Εγγραφή
+"Current recordings"
+  Τρέχουσες εγγραφές
+"Currently Browsing:  $1"
+  Βρίσκεστε σε:  $1
+"Currently Recording:  Edit"
+  Γράφεται:  Επεξεργασία
+"Custom"
+  Προσαρμοσμένο
+"Custom Schedule"
+  Προσαρμοσμένος Χρονοπρογραμματισμός
+"Custom Search"
+  Προσαρμοσμένη Αναζήτηση
+"Customize Screens"
+  Προσαρμογή Οθονών
+"Data"
+  Δεδομένα
+"Database"
+  Βάση δεδομένων
+"Database Health"
+  Υγεία Βάσης Δεδομένων
+"Date"
+  Ημερομηνία
+"Date Formats"
+  Μορφές Ημερομηνίας
+"Deactivated"
+  Απενεργοποιημένων
+"Deaf Signed"
+  Νοηματική Γλώσσα
+"Default"
+  Προεπιλογή
+"Default MythVideo View"
+  Προεπιλεγμένη Όψη MythVideo
+"Default MythWeb Template"
+  Προεπιλεγμένο Πρότυπο MythWeb
+"Delete"
+  Διαγραφή
+"delete"
+  διαγραφή
+"Delete $1"
+  Διαγραφή $1
+"Delete + Rerecord"
+  Διαγραφή + Επανεγγραφή
+"Delete and allow rerecord: $1"
+  Διαγράψτε το και να επιτρέπεται η επανεγγραφή: $1
+"Delete and rerecord $1"
+  Διαγραφή και επανεγγραφή $1
+"Delete Forever"
+  Οριστική Διαγραφή
+"DELETE this Saved Playlist"
+"DeleteKey"
+"Depending on the Search type this is where you enter actual main search commands"
+"description"
+  περιγραφή
+"Description"
+  Περιγραφή
+"Destination"
+  Προορισμός
+"Details for: $1"
+  Λεπτομέρειες για: $1
+"Direct Download"
+  Απευθείας Κατέβασμα
+"Directed by"
+  Σκηνοθεσία
+"Director"
+  Σκηνοθέτης
+"Director:"
+  Σκηνοθέτης:
+"Directory Structure"
+  Δομή Φακέλων
+"Display"
+  Εμφάνιση
+"Dolby Surround"
+"Don't Record"
+  Μην το γράψεις
+"Don't record this program."
+  Να μη γραφτεί το πρόγραμμα
+"Done, Unknown Status"
+  Ολοκληρώθηκε, Άγνωστη Κατάσταση
+"Down"
+  Κάτω
+"Download URL override"
+"Dup Method"
+  Μέθοδος Διπλοεγ.
+"Duplicate"
+  Διπλό
+"Duplicate Check method"
+  Μέθοδος Εύρεσης Διπλοεγγραφών
+"Duplicates/Ignored"
+  Διπλοεγγραφών/Αγνοημένων
+"Earlier"
+  Νωρίτερα
+"Earlier Showing"
+  Νωρίτερη Εμφάνιση
+"Edit"
+  Επεξεργασία
+"Edit existing group"
+  Επεξεργασία υπάρχουσας ομάδας
+"Edit MythWeb and some MythTV settings."
+  Επεξεργασία του MythWeb και ορισμένων ρυθμίσεων του MythTV
+"Edit settings for: $1"
+  Επεξεργασία ρυθμίσεων για: $1
+"Editing "
+  Επεξεργασία 
+"Embed HTTP basic auth user name/password into stream urls"
+  Ενσωμάτωση βασικής πιστοποίησησης HTTP χρήστη/κωδικού στις διευθύνσεις ροών
+"Enable"
+  Ενεργοποίηση
+"Enable Flash Video player for recordings."
+  Χρήση προβολέα ταινιών Flash για εγγραφές.
+"Enable Video Playback"
+  Ενεργοποίηση Προβολής Ταινιών
+"End"
+  Λήξη
+"End Late"
+  Λήξη αργότερα
+"Enter"
+  Εισαγωγή
+"Enter a new name for your playlist"
+  Δώστε νέο όνομα για τη λίστα σας
+"Enter your search terms"
+  Δώστε τους όρους αναζήτησης
+"enter your search terms"
+  δώστε τους όρους αναζήτησης
+"Episode"
+  Επεισόδιο
+"Episode Number"
+  Αριθμός Επεισοδίου
+"Error"
+  Σφάλμα
+"Error contacting server to retrieve metadata."
+  Σφάλμα κατά την επαφή με το διακομιστή για λήψη πληροφοριών.
+"error: playgroup $1 exists"
+  σφάλμα: η λίστα $1 υπάρχει
+"Errored"
+  Εσφαλμένη
+"Erroring"
+  Σφάλει
+"Escape"
+  Διαφυγή
+"Everything"
+  Όλα
+"Exec. Producer"
+  Εκτελ. Παραγωγός
+"Extended Check"
+  Διευρυμένος Έλεγχος
+"ffmpeg with MP3 support not detected"
+  δε βρέθηκε έκδοση του ffmpeg με υποστήριξη MP3
+"File Size"
+  Μέγεθος Αρχείου
+"film"
+  ταινία
+"Filters"
+  Φίλτρα
+"Find Date & Time Options"
+  Επιλογές Αναζήτησης Χρόνου
+"Find Day"
+  Αναζήτηση Ημέρας
+"Find other showings of this program"
+  Εύρεση άλλων προβολών του προγράμματος
+"Find showings of this program"
+  Εύρεση προβολών του προγράμματος
+"Find Time"
+  Αναζήτηση Ώρας
+"Find Time must be of the format:  HH:MM:SS"
+  Η Ώρα Αναζήτησης πρέπει να είναι της μορφής:  ΩΩ:ΛΛ:ΔΔ
+"finetune"
+  λεπτομερής ρύθμιση
+"Finished"
+  Ολοκληρώθηκε
+"First recording"
+  Πρώτη εγγραφή
+"First showing"
+  Πρώτη προβολή
+"First showing of each episode"
+  Πρώτη προβολή κάθε επεισοδίου
+"Flag Commercials"
+  Σημείωση Διαφημήσεων
+"FLV Width"
+"For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
+  Για καθημερινές εγγραφές, 5 εργάσιμες αν πέσει Δευ-Παρ ή 7 ημέρες τη βδομάδα αν πέσει σε Σαββατοκύριακο.
+"For more information on the Power Search please go to:"
+  Για περισσότερες πληροφορίες σχετικά με τη Δυναμική Αναζήτηση παρακαλώ επισκευθείτε:
+"Force HTTP for streams"
+  Επιβολή HTTP για τις ροές
+"Force HTTP/HTTPS port for streams"
+  Επιβολή θύρας HTTP/HTTPS για τις ροές
+"Forced"
+  Επιβεβλημένο
+"Forget Old"
+  Να ξεχνιούνται οι παλαιότερες
+"format help"
+  βοήθεια μορφής
+"Found %s results for '%s'"
+  Βρέθηκαν %s αποτελέσματα για '%s'
+"freqid"
+  αναγνωριστικό συχνότητας
+"Friday"
+  Παρασκευή
+"Frontends"
+"generic_date"
+"generic_time"
+"Genre"
+  Κατηγορία
+"genre_colors"
+  χρώματα κατηγοριών
+"Genres"
+  Κατηγορίες
+"Go"
+  Πήγαινε
+"Google"
+"Group timeslots every"
+"Guest Starring"
+  Επίτιμος Προσκεκλημένος
+"Guide rating"
+"Guide Settings"
+"Handy Predefined Searches"
+  Χρήσιμες Προρρυθμισμένες Αναζητήσεις
+"handy: overview"
+  ευκολία: επισκόπιση
+"has Bookmark"
+  έχει Αποθηκευμένη Θέση
+"Has Cutlist"
+  Έχει λίστα κοψιμάτων
+"HD"
+"HDTV"
+"Height"
+  Ύψος
+"Hide"
+  Απόκρυψη
+"High definition"
+  Υψηλής ευκρίνειας
+"Home"
+"Hosted by"
+"Hour"
+  Ώρα
+"Hour Format"
+  Μορφή Ώρας
+"hue"
+  χρωματισμός
+"Identifiable episode"
+  Αναγνωρίσιμο επεισόδιο
+"Ignore generic shows"
+  Αγνόηση εκπομπών γενικού τύπου
+"Ignore scheduled shows"
+  Αγνόηση προγραμματισμένες εκπομπές
+"IMDB"
+"IMDBTYPE"
+"Inactive"
+  Ανενεργό
+"info: activate recording"
+  πληροφορίες: ενεργοποίηση εγγραφής
+"info: default recording"
+  πληροφορίες: προεπιλεγμένη εγγραφή
+"info: dont record"
+  πληροφορία: να μην γραφτεί
+"info: flvplayer"
+  πληροφορία: flvplayer
+"info: hidden advanced schedule"
+"info: record this"
+"info:forget old"
+"info:jumppoints"
+"info:never record"
+"Insert"
+"Internet Reference #"
+  Αναγνωριστικό Internet #
+"Jump"
+"Jump Points"
+"Jump to"
+"Jump To"
+  Πήγαινε στις
+"JumpPoints Editor"
+"Key Bindings"
+  Αντιστοιχίσεις Πλήκτρων
+"Key bindings"
+  Αντιστοιχίσεις πλήκτρων
+"Key Controls"
+  Αντιστοιχίσεις πλήκτρων
+"Keybindings Editor"
+"Keyword"
+  Λέξη κλειδί
+"Keyword Search"
+  Αναζήτηση Λέξης-κλειδιού
+"Keyword Search:"
+  Λέξη για Αναζήτηση:
+"Keywords"
+  Λέξεις κλειδιά
+"Language"
+  Γλώσσα
+"Last Recorded"
+  Τελευταία Ημ/νία Εγγραφής
+"Last recording"
+  Τελευταία εγγραφή
+"Last showing of each episode"
+  Τελευταία προβολή κάθε επεισοδίου
+"Later"
+  Αργότερα
+"left"
+  αριστερά 
+"Left"
+  Αριστερά
+"leftl"
+"length"
+  διάρκεια
+"Length"
+  Διάρκεια
+"Length (min)"
+  Διάρκεια (λεπτά)
+"Length in minutes"
+  Διάρκεια σε λεπτά
+"Listing &quot;Jump to&quot;"
+"Listing Time Key"
+"Listings"
+  Πρόγραμμα TV
+"Load"
+  Άνοιγμα
+"Load a Saved Playlist"
+  Άνοιγμα Αποθηκευμένης Λίστας
+"Load Playlist"
+  Άνοιγμα Λίστας
+"Load Saved Playlists"
+  Άνοιγμα Αποθηκευμένων Λιστών
+"Load this Saved Playlist"
+  Άνοιγμα της Αποθηκευμένης Λίστας
+"LOADING"
+  ΑΝΟΙΓΩ
+"Local Server Statistics"
+  Στατιστικά Τοπικού Διακομιστή
+"LOCKDOWN_NOTICE"
+"LOCKDOWN_NOTICE_2"
+"Logs"
+  Καταγραφές
+"Look up Metadata"
+  Αναζήτηση Πληροφοριών
+"Low Space"
+  Λίγος Ελεύθερος Χώρος
+"Manual"
+  Χειροκίνητα
+"Match related callsigns"
+"matches"
+  αποτελέσματα
+"Max star rating for movies"
+  Μέγιστη βαθμολογία αστεριών για ταινίες
+"Metadata Home Page"
+  Ιστοσελίδα Πληροφοριών
+"Metadata Lookup"
+  Αναζήτηση Πληροφοριών
+"Metadata Lookup Error"
+  Σφάλμα Αναζήτησης Πληροφοριών
+"minutes"
+  λεπτά
+"Missing Cover"
+  Χωρίς Εξώφυλλο
+"Modify priority by star rating (0.0 to 1.0 for movies only)"
+  Αλλαγή προτεραιότητας ανά αριθμό αστεριών (0.0 ως 1.0 μόνο για ταινίες)
+"Modify priority for a station on an input"
+  Αλλαγή προτεραιότητας για σταθμό σε είσοδο σήματος
+"Modify priority for all inputs on a card"
+  Αλλαγή προτεραιότητας για όλες τις εισόδους μιας κάρτας
+"Modify priority for an input (Input priority)"
+  Αλλαγή προτεραιότητας για μια είσοδο (Προτεραιότητα εισόδου)
+"Modify priority for every card on a host"
+  Αλλαγή προτεραιότητας για κάθε κάρτα σε έναν Η/Υ
+"Modify unidentified episodes"
+  Αλλαγή άγνωστων επεισοδίων
+"Monday"
+  Δευτέρα
+"Mono"
+  Μονοφωνικό
+"More"
+  Περισσότερα
+"more"
+  περισσότερα
+"Move Item Down in Playlist"
+  Μετακίνηση επιλογής πιο κάτω στη Λίστα
+"Move Item Up in Playlist"
+  Μετακίνηση επιλογής πιο πάνω στη Λίστα
+"movie"
+  ταινία
+"Movies"
+  Ταινίες
+"Movies, 3&frac12; Stars or more"
+  Ταινίες, 3&frac12; Αστέρια ή περισσότερα
+"Movies, Stinkers (2 Stars or less)"
+  Ταινίες, Χάλια (2 ή λιγότερα αστέρια)
+"Music"
+  Μουσική
+"Music Specials"
+  Μουσικά Αφιερώματα
+"My Session"
+  Η Συνεδρία μου
+"MythMusic on the web."
+"MythMusic_Prefixes_To_Ignore"
+"MythTV"
+"MythTV Status"
+  Κατάσταση MythTV
+"MythVideo Artwork Dir"
+  Φάκελος Εξωφύλλων του MythVideo
+"MythVideo Dir"
+  Φάκελος MythVideo
+"MythVideo on the web."
+  MythVideo στο διαδίκτυο.
+"mythvideo.db_folder_view"
+"mythvideo.ImageCacheSize"
+"mythvideo.sort_ignores_case"
+"MythWeb"
+"MythWeb Defaults"
+  Προεπιλογές MythWeb
+"MythWeb Global Defaults"
+"MythWeb Locked"
+  Το MythWeb είναι Κλειδωμένο
+"MythWeb Session"
+  Συνεδρία MythWeb
+"MythWeb Skin"
+  Θέμα MythWeb
+"MythWeb Template"
+  Πρότυπο MythWeb
+"MythWeb Weather."
+  Καιρός MythWeb
+"Name"
+  Όνομα
+"name"
+  όνομα
+"Narrow Your Search"
+  Επικεντρώτε την Αναζήτησή σας
+"Never Record"
+  Να μη γραφτεί ποτέ
+"New"
+  Νέο
+"New episode"
+  Νέο επεισόδιο
+"New episodes only"
+  Μόνο νέα επεισόδια
+"New Group"
+  Νέα Ομάδα
+"New Search"
+  Νέα Αναζήτηση
+"New Titles, Premieres"
+  Νέοι Τίτλοι, Πρεμιέρες
+"No"
+  Όχι
+"NO DATA"
+"No Frontends allow remote control."
+  Κανένας Η/Υ δεν επιτρέπει απομακρυσμένο έλεγχο.
+"No Genre"
+  Χωρίς Είδη
+"No matches found"
+  Δε βρέθηκαν αποτελέσματα
+"No matching programs found."
+  Δεν βρέθηκαν εκπομπές που να ταιριάζουν
+"No metadata results found."
+  Δε βρέθηκαν αποτελέσματα μεταπληροφοριών.
+"No Public Playlists"
+  Δεν υπάρχουν Κοινόχρηστες Λίστες
+"No recording schedules have been defined."
+  Δεν έχουν προγραμματιστεί εκπομπές προς εγγραφή.
+"No TV configured!"
+  Δεν έχει ρυθμιστεί η Τηλεόραση!
+"No videos"
+  Δεν υπάρχουν Ταινίες
+"No. of recordings to keep"
+  Αριθμός εγγραφών για διατήρηση
+"NO_TV_CONFIGURED_NOTICE_1"
+"NO_TV_CONFIGURED_NOTICE_2"
+"Non-Music Specials"
+  Ειδικά Αφιερώματα εκτός Μουσικής
+"Non-Series HDTV"
+  Υψηλής Ευκρίνειας εκτός Σειρών
+"None"
+  Κανένας
+"Not Listed"
+  Δεν αναφέρονται
+"Notes"
+  Σημειώσεις
+"Number of episodes"
+  Αριθμός επεισοδίων
+"Number of shows"
+  Αριθμός εκπομπών
+"Number of Songs"
+  Αριθμός Τραγουδιών
+"Number of timeslots"
+  Αριθμός προβολών
+"Off"
+  Όχι
+"OK"
+"Only a certain channel number"
+  Μόνο ένα συγκεκριμένο κανάλι
+"Only channels marked as commercial free"
+  Μόνο σε κανάλια χωρίς διαφημίσεις
+"Only channels that carry a specific station"
+  Μόνο κανάλια που έχουν συγκεκριμένο σταθμό
+"Only display favorite channels"
+  Εμφάνιση μόνο των αγαπημένων καναλιών
+"Only match commercial-free channels"
+  Μόνο εμφάνισε κανάλια ελεύθερα από διαφημίσεις
+"Only match HD programs"
+  Εμφάνιση μόνο HD εκπομπών
+"Only match non-recorded shows"
+  Εμφάνιση μόνο εκπομπών που δεν έχουν ξαναγραφτεί.
+"Only New Episodes"
+  Μόνο Νέα Επεισόδια
+"Only one specific channel ID (Channel priority)"
+  Μόνο ένα συγκεκριμένο Αναγνωρ καναλιού (Προτεραιότητα Καναλιού)
+"Only show distinct shows"
+  Μόνο συγκεκριμένες εκπομπές
+"Only shows marked as HDTV"
+  Μόνο εκπομπές HDTV
+"Optimize Tables"
+  Βελτιστοποίηση Πινάκων
+"or"
+ ή
+"Original Airdate"
+  Αρχική Προβολή
+"Originally aired between"
+  Αρχικά προβεβλημένο μεταξύ
+"Override"
+  Παράκαμψη
+"Page Down"
+  Σελίδα Κάτω
+"Page recorded programs"
+  Σελίδα γραμμένων εκπομπών
+"Page Up"
+  Σελίδα κάτω
+"Parental Level"
+  Γονικό Επίπεδο
+"Part $1 of $2"
+  Τμήμα $1 από $2
+"Past Month"
+  Τον Περασμένο Μήνα
+"Past Week"
+  Την Περασμένη Εβδομάδα
+"Past Year"
+  Πέρυσι
+"Paused"
+  Σε Παύση
+"Pending"
+  Εκκρεμεί
+"People"
+  Άνθρωποι
+"People Search"
+  Αναζήτηση Ανθρώπων
+"People Search:"
+  Αναζήτηση Ανθρώπων:
+"Percent of time spent recording"
+  Ποσοστό του χρόνου αφιερωμένο σε εγγραφές
+"Play"
+  Προβολή
+"Play Recording on Frontend"
+  Προβολή της Εγγραφής στον Η/Υ
+"Play this Album Now"
+  Παίξιμο αυτού του Δίσκου Τώρα
+"Play This Playlist Now"
+  Παίξιμο της Λίστας Τώρα
+"Play this Playlist Now"
+  Παίξιμο της Λίστας Τώρα
+"Play this Song Now"
+  Παίξιμο του Τραγουδιού Τώρα
+"Play Time"
+  Χρόνος Αναπαραγωγής
+"Playback Group"
+  Ομάδα Προβολής
+"Playback Groups"
+  Ομάδες Προβολής
+"Played %s times"
+  Παίχτηκαν %s φορές
+"Played once"
+  Παίχτηκαν μία φορά
+"Playlist"
+  Λίστα
+"Playlist Info"
+  Πληροφορίες Λίστας
+"Playlist is empty"
+  Η Λίστα είναι άδεια
+"Playlist Items"
+  Στοιχεία Λίστας
+"Playlist Name"
+  Όνομα Λίστας
+"Playlist renamed successfully"
+  Η Λίστα μετονομάστηκε επιτυχώς
+"Playlist saved successfully"
+  Η Λίστα αποθηκεύθηκε επιτυχώς
+"Playlist: %s"
+  Λίστα: %s
+"Playlists"
+  Λίστες
+"Please enter an IMDB number or a title to do another search"
+"Please rate more shows to get more results"
+  Παρακαλώ αξιολογήστε περισσότερες εκπομπές για να πάρετε περισσότερα αποτελέσματα
+"Please wait for the pending AJAX request"
+  Παρακαλώ περιμένετε για την αίτηση για AJAX που βρίσκεται σε εκκρεμότητα
+"Plot"
+  Υπόθεση
+"Plot:"
+  Υπόθεση:
+"Pop-out player"
+"Possible conflicts"
+  Πιθανές συγκρούσεις
+"Possible conflicts with this show"
+  Πιθανές συγκρούσεις με αυτή την εκπομπή
+"Post Processing"
+  Μετά την Εγγραφή
+"Power"
+"Power Search"
+  Δυναμική Αναζήτηση
+"Power Search:"
+  Δυναμική Αναζήτηση:
+"Prefer a host for a storage group"
+  Προτίμηση ενός Η/Υ για μια ομάδα αποθήκευσης
+"Prefer a host for live sports with overtime"
+  Προτίμηση ενός Η/Υ για ζωντανούς αγώνες με παράταση
+"Prefer Channum"
+  Προτίμηση Channum
+"Prefer movies when shown at night"
+  Προτίμηση ταινιών όταν προβάλλονται τη νύχτα
+"prefer_channum"
+  προτίμηση καναλιού
+"Preferred Input"
+  Προεπιλεγμένη Είσοδος
+"Presented by"
+  Παρουσιάζει ο
+"Previous Recording"
+  Προηγούμενη Εγγραφή
+"Previous recordings"
+  Προηγούμενες εγγραφές
+"Prime time"
+  Ώρα υψηλής τηλεθέασης
+"Priority for a category"
+  Προτεραιότητα για μια κατηγορία
+"Priority for a category type"
+  Προτεραιότητα για τύπο κατηγορίας
+"Priority for all matching titles"
+  Προτεραιότητα για όλους τους τίτλους που ταιριάζουν
+"Priority for any show with End Late time"
+  Προτεραιότητα για κάθε εκπομπή με παράταση χρόνου τερματισμού
+"Priority for HD shows under two hours"
+  Προτεραιότητα για εκπομπές HD κάτω των 2 ωρών
+"Priority for movies by the year of release"
+  Προτεραιότητα για ταινίες ανά έτος προβολής
+"Priority when shown once"
+  Προτεραιότητα για μοναδικές προβολές
+"Produced by"
+  Παραγωγός
+"Profile"
+  Πρότυπο
+"profile"
+  πρότυπο
+"Program Categories"
+  Κατηγορίες Εκπομπών
+"Program Detail
+  Λεπτομέρειες Εκπομπής
+"Program ID"
+  Αναγνωρ. Προγράμματος
+"Program Listing"
+  Πρόγραμμα Τηλεόρασης
+"Program Type"
+  Τύπος Προγράμματος
+"Protocol"
+  Πρωτόκολλο
+"Queue a job"
+"Queued"
+"Queued jobs"
+"Random"
+  Τυχαίο
+"Random Items"
+  Τυχαία Στοιχεία
+"Random Mix Maker"
+"Random Type"
+"Rating"
+"Rating:"
+"Recently Added Albums"
+"Recently completed jobs"
+"Recently Played Songs"
+"recgroup"
+"Recommend Videos"
+  Προτεινόμενες Ταινίες
+"Recommended"
+  Προτεινόμενες
+"Recommended Programs"
+  Προτεινόμενες Εκπομπές
+"Record Date"
+  Ημερομηνία Εγγραφής
+"Record Length"
+  Διάρκεια Εγγραφής
+"Record new and expire old"
+  Εγγραφή νέων και λήξη παλαιότερων
+"Record This"
+  Να γραφτεί
+"Recorded"
+  Γραμμένο
+"Recorded Programs"
+  Γραμμένες Εκπομπές
+"Recording Details"
+  Λεπτομέρειες Εγγραφής
+"Recording Group"
+  Ομάδα Εγγραφών
+"Recording Options"
+  Επιλογές Εγγραφής
+"Recording Options Help"
+  Βοήθεια Επιλογής Εγγραφής
+"Recording Priority"
+  Προτεραιότητα Εγγραφής
+"Recording Profile"
+  Πρότυπο Εγγραφής
+"Recording Schedules"
+  Προγραμματισμοί Εγγραφών
+"Recording Statistics"
+  Στατιστικά Εγγραφών
+"recpriority"
+"recstatus: cancelled"
+"recstatus: conflict"
+"recstatus: currentrecording"
+"recstatus: deleted"
+"recstatus: earliershowing"
+"recstatus: force_record"
+"recstatus: inactive"
+"recstatus: latershowing"
+"recstatus: lowdiskspace"
+"recstatus: manualoverride"
+"recstatus: neverrecord"
+"recstatus: notlisted"
+"recstatus: previousrecording"
+"recstatus: recorded"
+"recstatus: recording"
+"recstatus: repeat"
+"recstatus: stopped"
+"recstatus: toomanyrecordings"
+"recstatus: tunerbusy"
+"recstatus: unknown"
+"recstatus: willrecord"
+"rectype-long: always"
+  εφαρμογή κανόνα: πάντα
+"rectype-long: daily"
+  εφαρμογή κανόνα: καθημερινά
+"rectype-long: dontrec"
+  εφαρμογή κανόνα: να μη γραφτεί
+"rectype-long: finddaily"
+  εφαρμογή κανόνα: εύρεση καθημερινή
+"rectype-long: findone"
+  εφαρμογή κανόνα: βρες μια εγγραφή
+"rectype-long: findweekly"
+  εφαρμογή κανόνα: βρες μια εβδομαδιαία
+"rectype-long: once"
+  εφαρμογή κανόνα: μια φορά
+"rectype-long: override"
+  εφαρμογή κανόνα: παράκαμψη
+"rectype-long: weekly"
+  εφαρμογή κανόνα: κάθε εβδόμάδα
+"rectype: always"
+"rectype: daily"
+"rectype: dontrec"
+"rectype: findone"
+"rectype: once"
+"rectype: override"
+"rectype: weekly"
+"regex: articles"
+"Remote"
+  Τηλεχειριστήριο
+"Remove Item from Playlist"
+  Αφαίρεση Επιλογής από τη Λίστα
+"Repair Tables"
+  Επισκευή Πινάκων
+"Repeat"
+  Επανάληψη
+"Reset"
+  Επαναφορά
+"Reset template and skin to defaults"
+  Επαναφορά εμφάνισης και θέματος στις προεπιλογές
+"Retry"
+  Επανάληψη
+"Return to Statistics Page"
+"right"
+  δεξιά
+"Right"
+  Δεξιά
+"Root Directory"
+  Αρχικός Φάκελος
+"Rows to show between timeslot info"
+  Αριθμός Στηλών προς εμφάνιση μεταξύ πληροφοριών χρόνου
+"Running"
+  Εκτελείται
+"Saturday"
+  Σάββατο
+"Save"
+  Αποθήκευση
+"Save or Rename the Current Playlist"
+  Αποθήκευση ή Μετονομασία της τρέχουσας Λίστας
+"Save Schedule"
+  Αποθήκευση Προγράμματος
+"Save/Rename"
+  Αποθήκευση/Μετονομασία
+"Save/Rename Playlist"
+  Αποθήκευση/Μετονομασία Λίστας
+"Saved Playlist Successfully Deleted"
+  Η Αποθηκευμένη Λίστα Διαγράφηκε Επιτυχώς
+"Saved Playlists"
+  Αποθηκευμένες Λίστες
+"Scan Collection"
+  Ανίχνευση Συλλογής
+"Schedule"
+  Προγραμματισμός
+"Schedule Manually"
+  Χειροκίνητος Προγραμματισμός
+"Schedule normally."
+  Κανονικός προγραμματισμός.
+"Schedule Options"
+  Επιλογές Κανόνα Εγγραφής
+"Schedule Override"
+  Παράκαμψη Προγραμματισμού
+"Schedule via $1."
+  Προγραμματισμός μέσω $1
+"Scheduled"
+  Προγραμματισμένων
+"Scheduled Popup"
+"Science Fiction Movies"
+  Ταινίες Επιστημονικής Φαντασίας
+"Search"
+  Αναζήτηση
+"Search $1"
+  Αναζήτηση $1
+"Search all program keywords for a match against search phrase below"
+  Αναζήτηση σε όλες τις λέξεις κλειδί των προγραμμάτων για την φράση αναζήτησης
+"Search all program titles containing the Title text below"
+  Αναζήτηση στους Τίτλους των εκπομπών για το περακάτω κείμενο
+"Search for all actors contained in a recording for a match against search phrase below"
+  Αναζήτηση σε όλους τους ηθοποιούς μιας εγγραφής για την παρακάτω φράση
+"Search for:  $1"
+  Αναζήτηση για:  $1
+"Search Music"
+  Αναζήτηση Μουσικής
+"Search Phrase"
+  Φράση Αναζήτησης
+"Search Phrase:"
+  Φράση Αναζήτης:
+"Search Results"
+  Αποτελέσματα Αναζήτησης
+"Search the Music Database"
+  Αναζήτηση της Μουσικής Συλλογής
+"Search Type"
+  Είδος Αναζήτησης
+"Search Type Help"
+  Βοήθεια Τύπου Αναζήτησης
+"Search will perform complex SQL queries against the database as per the search phrase below"
+  Η Αναζήτηση θα εκτελέσει περίπλοκα ερωτήματα SQL στη βάση πληροφοριών σύμφωνα με την παρακάτω φράση αναζήτησης
+"Searches"
+  Αναζητήσεις
+"Searches will be performed against the title of all TV shows"
+  Οι αναζητήσεις θα γίνουν ανάμεσα στους τίτλους όλων των εκπομπών Τηλεόρασης
+"Seas/Ep"
+  Κύκλος/Επ
+"Season"
+  Κύκλος
+"Select the correct show"
+  Επιλέξτε τη σωστή εκπομπή
+"Server returned invalid data when attempting to retrieve metadata."
+  Ο Διακομιστής επέστρεψε λάθος δεδομένα κατά την απόπειρα λήψης πληροφοριών.
+"Server Statistics"
+  Στατιστικά Διακομιστή
+"Set Host"
+  Ορισμός Υπολογιστή
+"Settings"
+  Ρυθμίσεις
+"settings"
+  ρυθμίσεις
+"Settings Table"
+  Πίνακας Ρυθμίσεων
+"settings/stream: protocol"
+  ρυθμίσεις/ροή: πρωτόκολλο
+"settings: notice"
+  ρυθμίσεις: προειδοποίηση
+"Shift"
+  Μετακίνηση
+"Show"
+  Εμφάνιση
+"Show group"
+  Εμφάνιση ομάδας
+"Show pixmaps"
+  Εμφάνιση εικόνων
+"Show recordings"
+  Εμφάνιση εγγραφών
+"show_channel_icons"
+  εμφάνιση εικονικίων καναλιών
+"show_popup_info"
+  εμφάνιση παραθύρου πληροφοριών
+"show_video_covers"
+  εμφάνιση εξωφύλων ταινιών
+"Showing all programs from the $1 group."
+  Εμφάνιση όλων των εκπομπών από την ομάδα $1
+"Showing all programs."
+  Εμφάνιση όλων των εκπομπών.
+"Showings between"
+  Προβολές μεταξύ
+"Shows"
+  Προβολές
+"Skip Ahead"
+  Παράλειψη Μπροστά
+"Skip Back"
+  Παράλειψη Πίσω
+"Songs"
+  Τραγούδια
+"Songs for Genre"
+  Τραγούδια για το Είδος
+"Songs Played"
+  Τραγούδια που έχουν Παιχτεί
+"Songs Rated"
+  Τραγούδια Βαθμολογημένα
+"Sorry, but you cannot add this playlist as it would create a circular dependency."
+  Λυπάμαι, δεν μπορείτε να προσθέσετε τη λίστα αυτή επειδή θα δημιουργηθεί κυκλική εξάρτηση.
+"sortby_channum"
+  Ταξινόμηση ανά κανάλι
+"sourceid"
+  αναγνωριστικό εισόδου
+"Space"
+  Χώρος
+"Special Searches"
+  Ειδικές Αναζητήσεις
+"Star character"
+  Πρωταγωνιστής
+"Start Date"
+  Ημερομηνία Εκκίνησης
+"Start Early"
+  Εκκίνηση νωρίτερα
+"Start Time"
+  Ώρα Εκκίνησης
+"Starting"
+  Ξεκινάει
+"Statistics"
+  Στατιστικά
+"Stats"
+  Στατιστικά
+"Status"
+  Κατάσταση
+"Status Bar"
+  Γραμή Κατάστασης
+"Stereo"
+  Στερεοφωνικό
+"Still Recording: Edit"
+  Ακόμα Γράφεται: Επεξεργασία
+"Stopping"
+  Σταματάει
+"Storage Group"
+  Ομάδα Αποθήκευσης
+"Store the current session as the default"
+  Αποθήκευσης της τρέχουσας συνεδρίας ως προεπιλογή
+"Streaming"
+"Sub and Desc (Empty matches)"
+"Submit"
+  Υποβολή
+"Submit Search"
+  Υποβολή Αναζήτησης
+"Subtitle"
+  Υπότιτλος
+"Subtitle and Description"
+  Υπότιτλος και Περιγραφή
+"Subtitle then Description"
+  Υπότιτλος και μετά Περιγραφή
+"Subtitled"
+  Υποτιτλισμένο
+"Subtitles Available"
+  Με διαθέσιμους υποτίτλους
+"Sunday"
+  Κυριακή
+"Surround Sound"
+"Tab"
+  Καρτέλα
+"Television"
+  Τηλεόραση
+"The requested recording schedule has been deleted."
+  Το ζητούμενο πρόγραμμα εγγραφής έχει διαγραφεί.
+"themoviedb"
+"There are no items in this Playlist!"
+  Δεν υπάρχουν καταχωρήσεις στη Λίστα!
+"There was a problem saving your playlist"
+  Υπήρξε πρόβλημα κατά την αποθήκευση της λίστας σας
+"TheTVDB"
+"This channel"
+  Σε αυτό το κανάλι
+"This day and time"
+  Αυτή τη μέρα και ώρα
+"This episode"
+  Αυτό το επεισόδιο
+"This playlist is already loaded!"
+  Η συγκεκριμένη λίστα είναι ήδη φορτωμένη!
+"This series"
+  Αυτή τη σειρά
+"This time"
+  Αυτή την ώρα
+"This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
+  Αυτό θα διαγράψει την ενεργή, μη σωσμένη λίστα σας. Σίγουρα θέλετε να συνεχίσετε;
+"Thursday"
+  Πέμπτη
+"Time"
+  Ώρα
+"Time Span"
+  Χρονική Διάρκεια
+"Time Stretch"
+  Επιμήκυνση Χρόνου
+"Timeslot size"
+  Μέγεθος Χρόνου
+"title"
+  τίτλο
+"Title"
+  Τίτλος
+"Title Match"
+  Ταίριασμα Τίτλου
+"Title search"
+  Αναζήτηση τίτλου
+"Title Search"
+  Αναζήτηση Τίτλου
+"Title Search:"
+  Αναζήτηση Τίτλου:
+"Title:"
+  Τίτλος:
+"Toggle Interactive Mode"
+"Too Many"
+  Υπερβολικά Πολλά
+"Top $1"
+  $1 Πρώτα
+"Top Played Songs"
+  Πιο συχνά παιζόμενα Τραγούδια
+"Top Rated Songs"
+  Τραγούδια Υψηλότερης Βαθμολογίας
+"Total Length"
+  Ολικό Μήκος
+"Total Recorded"
+  Σύνολο Εγγραφών
+"Total Running Time"
+  Συνολική Διάρκεια
+"Total Time"
+  Συνολική Ώρα
+"Total Time:  %s"
+  Συνολικός Χρόνος:  %1
+"Track #%s from the album '%s'"
+  Το τραγούδι #%s από το δίσκο '%s'
+"Transcode"
+  Επανακωδικοποίηση
+"Transcoded"
+  Επανακωδικοποιημένο
+"transcoder"
+  επανακωδικοποιητής
+"Transcoder"
+  Επανακωδικοποιητής
+"Tuesday"
+  Τρίτη
+"Tuner Busy"
+  Ο Εγγραφέας είναι απασχολημένος
+"TV"
+  Τηλεόραση
+"TV functions, including recorded programs."
+  Λειτουργίες Τηλεόρασης, περιλαμβανομένων των γραμμένων εκπομπών
+"TV.com"
+"type"
+  τύπος
+"Type"
+  Τύπος
+"Uncategorized"
+  Χωρίς κατηγορία
+"Undelete"
+  Επαναφορά
+"Undelete: $1"
+  Επαναφορά: $1
+"Unknown"
+  Άγνωστο
+"Unknown action"
+  Άγνωστη περιπέτεια
+"Unknown frontend"
+  Άγνωστος frontend
+"Unknown Program."
+  Άγνωστο Πρόγραμμα.
+"Unknown Recording Schedule."
+  Άγνωστος Προγραμματισμός Εγγραφής.
+"Up"
+  Πάνω
+"Upcoming Recordings"
+  Προσεχείς Εγγραφές
+"Update"
+  Ενημέρωση
+"Update Recording Settings"
+  Ενημέρωση Ρυθμίσεων Εγγραφών
+"Use callsign"
+  Χρήση ονόματος
+"Use date/time"
+  Χρήση ημερομηνίας/ώρας
+"useonairguide"
+  χρήση EIT
+"User Rating"
+  Αξιολόγηση Χρήστη
+"Value"
+  Τιμή
+"Video"
+  Ταινίες
+"Video Bitrate"
+  Διαμεταγωγή Εικόνας
+"Video Playback"
+  Προβολή Ταινιών
+"Video: Error: IMDB"
+  Ταινία: Σφάλμα: IMDB
+"Video: Error: IMDB: Not Found"
+  Ταινία: Σφάλμα: IMDB: Δε Βρέθηκε
+"Video: Error: Missing ID"
+  Ταινία: Σφάλμα: Λείπει το αναγνωριστικό
+"Video: IMDB: No Matches"
+  Ταινία: IMDB: Δε βρέθηκαν αποτελέσματα
+"Video: IMDB: Window Title"
+  Ταινία: IMDB: Τίτλος Παραθύρου
+"Video: Warning: Artwork"
+  Ταινία: Προειδοποίηση: Εξώφυλλο
+"Video: Warning: Artwork: Download"
+  Ταινία: Προειδοποίηση: Εξώφυλλο: Κατέβασμα
+"Video: Warning: fopen"
+  Ταινία: Προειδοποίηση: fopen
+"VideoAggressivePC"
+"VideoArtworkDir"
+"VideoBrowserNoDB"
+"VideoDefaultParentalLevel"
+"VideoDefaultPlayer"
+"videofilters"
+"VideoGalleryAspectRatio"
+"VideoGalleryColsPerPage"
+"VideoGalleryNoDB"
+"VideoGalleryRowsPerPage"
+"VideoGallerySubtitle"
+"VideoListUnknownFiletypes"
+"VideoNewBrowsable"
+"Videos"
+  Ταινίες
+"VideoStartupDir"
+ Φάκελος Εκκίνησης Ταινιών
+"VideoTreeLoadMetaData"
+"VideoTreeNoDB"
+"View"
+  Προβολή
+"View Albums by %s"
+  Εμφάνιση Δίσκων από %s
+"View Details of %s"
+  Εμφάνιση Λεπτομερειών από %s
+"View Saved Playlist"
+  Εμφάνιση Αποθηκευμένης Λίστας
+"View Server Statistics"
+  Εμφάνιση Στατιστικών Διακομιστή
+"visible"
+  ορατό
+"Visit $1"
+  Επισκευτείτε το $1
+"Watched"
+  Προβλημένο
+"Weather"
+  Καιρός
+"web_video_imdb_path"
+"web_video_imdb_type"
+"web_video_thumbnail_height"
+"web_video_thumbnail_width"
+"Wednesday"
+  Τετάρτη
+"welcome: backend_log"
+  καλωσήρθατε: καταγραφές διακομιστή
+"welcome: music"
+  καλωσήρθατε: μουσική
+"welcome: remote"
+  καλωσήρθατε: τηλεχειριστήριο
+"welcome: settings"
+  καλωσήρθατε: ρυθμίσεις
+"welcome: stats"
+  καλωσήρθατε: στατιστικά
+"welcome: status"
+  καλωσήρθατε: κατάσταση
+"welcome: tv"
+  καλωσήρθατε: Τηλεόραση
+"welcome: video"
+  καλωσήρθατε: ταινίες
+"What else is on at this time?"
+  Τι άλλο προβάλλεται αυτή την ώρα;
+"Widescreen"
+  Ευρεία οθόνη
+"Width"
+  Πλάτος
+"Will Record"
+  Θα γράψει
+"Written by"
+ Σενάριο
+"xmltvid"
+"Year"
+  Έτος
+"Year:"
+  Έτος:
+"Yes"
+  Ναι
+"Yesterday"
+ Χθες
+"You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
+  Σας λείπει μια επέκταση της php που χρειάζεται για αλληλεπίδραση με την mysql. Παρακαλώ εγκαταστήστε το php-mysqli ή κάτι παρόμοιο
+"You must be running at least php 5.3 to use this program."
+  Πρέπει να τρέχετε τουλάχιστον την έκδοση 5.3 για να χρησιμοποιήσετε αυτό το πρόγραμμα.
