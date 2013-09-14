@@ -22,6 +22,18 @@
     // Change language?  Make sure we load the new translation file, too.
         if ($_POST['language'] && $_POST['language'] != $_SESSION['language']){
             $_SESSION['language'] = $_POST['language'];
+	    // Unset the date/time formats in session so translation can fill in the 
+	    // language specific defaults
+            unset($_SESSION['date_statusbar']);
+            unset($_SESSION['date_scheduled']);
+            unset($_SESSION['date_scheduled_popup']);
+            unset($_SESSION['date_recorded']);
+            unset($_SESSION['date_search']);
+            unset($_SESSION['date_listing_key']);
+            unset($_SESSION['date_listing_jump']);
+            unset($_SESSION['date_channel_jump']);
+            unset($_SESSION['date_job_status']);
+            unset($_SESSION['time_format']);
             Translate::find()->load_translation();
         }
 
