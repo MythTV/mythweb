@@ -19,7 +19,8 @@ Contents
 5.1         Apache Config
 5.2         Apache Security Config
 6.0     Lighttpd
-7.0     PHP
+7.0     nginx
+8.0     PHP
 
 =======
 Summary
@@ -183,8 +184,8 @@ it is not recommended.
 4.3 Webserver
 =============
 
-As of 0.21, MythWeb contains configuration files for both Apache and Lighty. 
-You will need to choose ONE of these files and install it in your
+As of 0.28, MythWeb contains configuration files for Apache, Lighty and 
+nginx. You will need to choose ONE of these files and install it in your
 webserver's configuration directory.  This will be explained later.
 
 The first thing you must do is find the configuration file for your chosen
@@ -192,6 +193,7 @@ webserver, and then follow the instructions in the appropriate subsection:
 
     mythweb.conf.apache         (See section 5.0)
     mythweb.conf.lighttpd       (See section 6.0)
+    mythweb.conf.nginx		(See section 7.0)
 
 ==========
 5.0 Apache
@@ -426,8 +428,35 @@ Then...  Restart lighttpd and go!
 Assuming you set it up this way, simply direct your browser to
 http://mythweb.local/ and enjoy.
 
+=========
+7.0 nginx
+=========
+
+Configuring nginx for mythweb.
+
+1. Copy the nginx config example to your nginx configuration directory
+
+# cp mythweb.conf.nginx /etc/nginx/sites-available/mythweb
+
+Edit for any specifics of your setup.
+
+2. For HTTP Basic Auth (nginx does not support HTTP Digest by default), 
+create the credentials with htpasswd.
+
+# htpasswd -c /etc/nginx/mythweb.passwd mythweb
+
+3. Make sure php-fpm is installed and running.
+
+# apt-get install php5-fpm
+
+4. Restart nginx
+
+You should be able to access mythweb at the root of the hostname you 
+defined (ex: https://localhost OR https://myth.mydomain.com)
+
+
 =======
-7.0 PHP
+8.0 PHP
 =======
 
 PHP tries to determine the system's local timezone settings automatically
