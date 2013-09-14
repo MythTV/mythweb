@@ -1,0 +1,53 @@
+##
+# mythweb configuration for nginx and php-fpm
+#
+# please modify before use
+##
+
+server {
+	# If you want to run a non-SSL connection change this to 80
+	listen 443;
+
+	# Set up the document root to where mythweb is located
+	root /var/www/mythweb;
+	index index.html index.htm;
+
+	# Hostname of the server running mythweb
+	server_name localhost;
+
+	# If you want to run a non-SSL connection comment out this block
+	ssl on;
+	ssl_certificate certs/server.crt;
+	ssl_certificate_key certs/server.key;
+
+	# Configure this section for HTTP Basic Auth
+	location / {
+		auth_basic "MythWeb";
+		auth_basic_user_file mythweb.passwd;
+		index /var/www/mythweb/mythweb.php;
+		try_files $uri @handler;
+	}
+
+	# Sets up the pass-through to php-fpm
+	location ~ \.php {
+		include		fastcgi_params;
+		fastcgi_index   mythweb.php;
+		fastcgi_split_path_info ^(.+\.php)(/?.+)$;
+		fastcgi_param   SCRIPT_FILENAME	$document_root$fastcgi_script_name;
+		fastcgi_param   PATH_INFO $fastcgi_path_info;
+		fastcgi_param   db_server localhost;
+		fastcgi_param   db_name  mythconverg;
+		fastcgi_param   db_login mythtv;
+		fastcgi_param   db_password mythtv;
+		fastcgi_param   hostname erdos;
+		fastcgi_pass	unix:/var/run/php5-fpm.sock;
+	}
+
+	# Required rewrite rules
+	location @handler {
+		rewrite /(.+\.(php|pl))/.*      /$1 last;
+		rewrite /(pl(/.*)?)$            /mythweb.pl/$1 last;
+		rewrite /(.+)$                  /mythweb.php/$1 last;
+		rewrite /(.*)$                  /mythweb.php last;
+	}
+}
