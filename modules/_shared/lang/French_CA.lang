@@ -46,7 +46,9 @@
 "$1 to $2"
     de $1 à $2
 "$1 video"
+    $1 vidéo
 "$1 videos"
+    $1 vidéos
 "$1 wasted"
     $1 perdus
 "$1 year"
@@ -152,7 +154,9 @@
 "Any Program Type"
     Tout type d'émission
 "API Key"
+    Clé API
 "API Server"
+    Serveur API
 "Append"
     Ajouter
 "Append to Current Playlist"
@@ -439,6 +443,7 @@
 "Embed HTTP basic auth user name/password into stream urls"
     Incorporer l'authentication HTTP de base dans les URLs de flux
 "Enable"
+    Activer
 "Enable Flash Video player for recordings."
     Utiliser le lecteur Flash Vidéo pour les enregistrements
 "Enable Video Playback"
@@ -446,7 +451,7 @@
 "End"
     Fin
 "End Late"
-    Arrêt en retard
+    Termine en retard
 "Enter"
     <-+ Entrée
 "Enter a new name for your playlist"
@@ -846,11 +851,15 @@
 "No recording schedules have been defined."
     Aucune programmation d'enregistrement n'a été définie
 "No TV configured!"
+     Pas de configuration TV!
 "No videos"
+    Pas de vidéos
 "No. of recordings to keep"
     Nombre d'enreg. à conserver
 "NO_TV_CONFIGURED_NOTICE_1"
+    MythTV devrait normalement être utilisé avec une configuration TV fonctionnelle.  Votre installation ne semble pas avec une configuration complète pour écouter la télévision (il n'y a pas de chaîne). Si vous désirez utilisé les fonctionnalités TV de MythTV, s.v.p. complétez votre configuration à l'aide de mythtv-setup avant d'utiliser MythWeb.
 "NO_TV_CONFIGURED_NOTICE_2"
+    MythWeb est en mesure de fonctionner sans configuration TV mais son interface étant prévue pour rendre l'utilisation de celle-ci le plus simple possible, il est très possible que vous rencontriez plusieurs liens TV non-fonctionnels.  Ne soyez pas surpris de recevoir des messages d'erreurs lorsque vous utiliserez ces liens.
 "Non-Music Specials"
     Spéciaux non musicaux
 "Non-Series HDTV"
@@ -872,6 +881,7 @@
 "Off"
     Désactivé
 "OK"
+    OK
 "Only a certain channel number"
     Seulement un numéro de chaîne spécifique
 "Only channels marked as commercial free"
@@ -975,6 +985,7 @@
 "Please enter an IMDB number or a title to do another search"
     Entrer un N° IMDB ou un titre pour une nouvelle recherche
 "Please rate more shows to get more results"
+    S'il vous plaît, choissisez plus d'émissions pour obtenir plus de résultats 
 "Please wait for the pending AJAX request"
     Veuillez patienter pendant la requête AJAX
 "Plot"
@@ -1074,8 +1085,11 @@
 "recgroup"
     Groupe d'enr.
 "Recommend Videos"
+    Recommander des vidéos
 "Recommended"
+    Recommandé
 "Recommended Programs"
+    Émissions recommandées
 "Record Date"
     Date d'enregistrement
 "Record Length"
@@ -1415,7 +1429,9 @@
 "TheTVDB"
     La base de données TVDB
 "This channel"
+    Cette chaine
 "This day and time"
+    Ce jour et cette heure
 "This episode"
     Cet épisode
 "This playlist is already loaded!"
@@ -1423,6 +1439,7 @@
 "This series"
     Cette série
 "This time"
+    cette heure
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Cela va écraser votre liste de lecture actuelle et non-sauvegardée. Êtes-vous sûr de vouloir continuer ?
 "Thursday"
@@ -1474,6 +1491,7 @@
 "Transcode"
     Transcoder
 "Transcoded"
+    Transcodé
 "transcoder"
     transcodeur
 "Transcoder"
@@ -1561,10 +1579,11 @@
 "VideoGalleryAspectRatio"
     Ratio de la liste des vidéos
 "VideoGalleryColsPerPage"
-    Nombre de colonnes par page dans le mode gallerie vidéo
+    Nombre de colonnes par page dans le mode galerie vidéo
 "VideoGalleryNoDB"
+    Insertion du N° de la base de données dans le mode galerie vidéo
 "VideoGalleryRowsPerPage"
-    Nombre d'items par page dans le mode gallerie vidéo
+    Nombre d'items par page dans le mode galerie vidéo
 "VideoGallerySubtitle"
     Afficher les sous-titres
 "VideoListUnknownFiletypes"
@@ -1578,6 +1597,7 @@
 "VideoTreeLoadMetaData"
     Répertoire de base pour le stockage des vidéos
 "VideoTreeNoDB"
+    Insertion du N° de la base de données dans le mode arborescence
 "View"
     Afficher
 "View Albums by %s"
