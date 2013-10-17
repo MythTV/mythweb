@@ -121,7 +121,7 @@ class Channel extends MythBase {
         // Otherwise, grab it from the backend
             else {
             // Make the request and store the result
-                $data = MythBackend::find()->httpRequest('Guide/GetChannelIcon', array('ChanID' => $this->chanid));
+                $data = MythBackend::find()->httpRequest('Guide/GetChannelIcon', array('ChanId' => $this->chanid));
                 if ($data)
                     file_put_contents($this->icon, $data);
                 unset($data);
