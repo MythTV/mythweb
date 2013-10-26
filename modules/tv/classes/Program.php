@@ -75,7 +75,7 @@ class Program extends MythBase {
 
     public function __construct($data) {
         global $db;
-    // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmythtv/programinfo.cpp
+    // This is a mythbackend-formatted program - info about this data structure is stored in libs/libmyth/programinfo.cpp
         if (!isset($data['chanid']) && isset($data[0])) {
         // Load the remaining info we got from mythbackend
             $this->title           = trim($data[0]);    # program name/title
@@ -83,50 +83,51 @@ class Program extends MythBase {
             $this->description     = $data[2];          # episode description
             $this->season          = $data[3];
             $this->episode         = $data[4];
-            $this->syndicatedepisodenumber = $data[5];
-            $this->category        = $data[6];
-            $this->chanid          = $data[7];          # mysql chanid
-            $this->channum         = $data[8];
-            $this->callsign        = $data[9];
-            $this->channame        = $data[10];
-            $this->filename        = $data[11];
-            $this->filesize        = $data[12];
-            $this->starttime       = $data[13];         # show start-time
-            $this->endtime         = $data[14];         # show end-time
-            $this->findid          = $data[15];
-            $this->hostname        = $data[16];
-            $this->sourceid        = $data[17];
-            $this->cardid          = $data[18];
-            $this->inputid         = $data[19];
-            $this->recpriority     = $data[20];
-            $this->recstatus       = $data[21];
-            $this->recordid        = $data[22];
+            $this->total_episodes  = $data[5];
+            $this->syndicatedepisodenumber = $data[6];
+            $this->category        = $data[7];
+            $this->chanid          = $data[8];          # mysql chanid
+            $this->channum         = $data[9];
+            $this->callsign        = $data[10];
+            $this->channame        = $data[11];
+            $this->filename        = $data[12];
+            $this->filesize        = $data[13];
+            $this->starttime       = $data[14];         # show start-time
+            $this->endtime         = $data[15];         # show end-time
+            $this->findid          = $data[16];
+            $this->hostname        = $data[17];
+            $this->sourceid        = $data[18];
+            $this->cardid          = $data[19];
+            $this->inputid         = $data[20];
+            $this->recpriority     = $data[21];
+            $this->recstatus       = $data[22];
+            $this->recordid        = $data[23];
 
-            $this->rectype         = $data[23];
-            $this->dupin           = $data[24];
-            $this->dupmethod       = $data[25];
-            $this->recstartts      = $data[26];         # ACTUAL start time (also maps to recorded.starttime)
-            $this->recendts        = $data[27];         # ACTUAL end time
-            $this->progflags       = $data[28];
-            $this->recgroup        = $data[29];
-            $this->outputfilters   = $data[30];
-            $this->seriesid        = $data[31];
-            $this->programid       = $data[32];
-            $this->inetref         = $data[33];
+            $this->rectype         = $data[24];
+            $this->dupin           = $data[25];
+            $this->dupmethod       = $data[26];
+            $this->recstartts      = $data[27];         # ACTUAL start time (also maps to recorded.starttime)
+            $this->recendts        = $data[28];         # ACTUAL end time
+            $this->progflags       = $data[29];
+            $this->recgroup        = $data[30];
+            $this->outputfilters   = $data[31];
+            $this->seriesid        = $data[32];
+            $this->programid       = $data[33];
+            $this->inetref         = $data[34];
 
-            $this->lastmodified    = $data[34];
-            $this->stars           = $data[35];
-            $this->airdate         = $data[36];
-            $this->playgroup       = $data[37];
-            $this->recpriority2    = $data[38];
-            $this->parentid        = $data[39];
-            $this->storagegroup    = $data[40];
-            $this->audioproperties = $data[41];
-            $this->videoproperties = $data[42];
-            $this->subtitletype    = $data[43];
-            $this->year            = $data[44];
-            $this->partnumber      = $data[45];
-            $this->parttotal       = $data[46];
+            $this->lastmodified    = $data[35];
+            $this->stars           = $data[36];
+            $this->airdate         = $data[37];
+            $this->playgroup       = $data[38];
+            $this->recpriority2    = $data[39];
+            $this->parentid        = $data[40];
+            $this->storagegroup    = $data[41];
+            $this->audioproperties = $data[42];
+            $this->videoproperties = $data[43];
+            $this->subtitletype    = $data[44];
+            $this->year            = $data[45];
+            $this->partnumber      = $data[46];
+            $this->parttotal       = $data[47];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
                 $this->url = video_url($this); // get download info
@@ -343,6 +344,7 @@ class Program extends MythBase {
                              $this->description    , // 02 description
                              $this->season         , // 03 season
                              $this->episode        , // 04 episode
+			     $this->total_episodes , // XXX
                              $this->syndicatedepisodenumber, // 05 syndicatedepisode
                              $this->category       , // 06 category
                              $this->chanid         , // 07 chanid

@@ -151,10 +151,10 @@ class Schedule extends MythBase {
             foreach (MythBackend::find()->queryProgramRows('QUERY_GETALLPENDING', 2) as $key => $program) {
                 if ($key === 'offset')
                     continue;
-                if ($program[21] == 6)
+                if ($program[22] == 6)
                     continue;
                 // Normal entry:  $scheduledRecordings[callsign][starttime][]
-                self::$scheduledRecordings[$program[9]][$program[13]][] =& new Program($program);
+                self::$scheduledRecordings[$program[10]][$program[14]][] =& new Program($program);
             }
             Cache::set('Schedule::findScheduled', self::$scheduledRecordings);
         }
