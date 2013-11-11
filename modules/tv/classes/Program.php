@@ -128,6 +128,7 @@ class Program extends MythBase {
             $this->year            = $data[45];
             $this->partnumber      = $data[46];
             $this->parttotal       = $data[47];
+            $this->category_type   = $data[48];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
                 $this->url = video_url($this); // get download info
@@ -344,7 +345,7 @@ class Program extends MythBase {
                              $this->description    , // 02 description
                              $this->season         , // 03 season
                              $this->episode        , // 04 episode
-			     $this->total_episodes , // XXX
+                             $this->total_episodes , // XXX
                              $this->syndicatedepisodenumber, // 05 syndicatedepisode
                              $this->category       , // 06 category
                              $this->chanid         , // 07 chanid
@@ -390,6 +391,7 @@ class Program extends MythBase {
                              $this->year           , // 44 year
                              $this->partnumber     , // 45 partnumber
                              $this->parttotal      , // 46 parttotal
+                             $this->category_type  , // 48 category type
                             )
                       );
     }
