@@ -39,7 +39,6 @@ server {
 		fastcgi_param   db_name  mythconverg;
 		fastcgi_param   db_login mythtv;
 		fastcgi_param   db_password mythtv;
-		fastcgi_param   hostname erdos;
 		fastcgi_pass	unix:/var/run/php5-fpm.sock;
 	}
 
