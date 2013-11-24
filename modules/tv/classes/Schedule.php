@@ -52,6 +52,7 @@ class Schedule extends MythBase {
     public $transcoder;
     public $parentid;
     public $filter;
+    public $recgroupid;
 
     public $playgroup;
     public $prefinput;
@@ -323,6 +324,11 @@ class Schedule extends MythBase {
             && $this->search != searchtype_manual) {
             $this->search = 0;
         }
+    // Find the recgroupid
+        $sh = $db->query('SELECT recgroupid FROM recgroups WHERE displayname = ?',
+                         _or($this->recgroup, 'Default'));
+        $this->recgroupid = $sh->fetch_col();
+        $sh->finish();
     // Update the record
         $sh = $db->query('REPLACE INTO record (recordid,type,chanid,starttime,startdate,endtime,enddate,search,
                                                title,subtitle,description,profile,recpriority,category,
@@ -331,10 +337,10 @@ class Schedule extends MythBase {
                                                findday,findtime,findid,autotranscode,parentid,transcoder,
                                                autouserjob1,autouserjob2,autouserjob3,autouserjob4,autometadata,
                                                playgroup,storagegroup,prefinput,
-                                               next_record,last_record,last_delete,inetref,season,episode,filter)
+                                               next_record,last_record,last_delete,inetref,season,episode,filter,recgroupid)
                                        VALUES (?,?,?,
                                                FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),FROM_UNIXTIME(?),
-                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                                               ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                          _or($this->recordid,      0,          true),
                          _or($this->type,          0,          true),
                          $this->chanid,
@@ -382,7 +388,8 @@ class Schedule extends MythBase {
                          _or($this->inetref,       ''              ),
                          _or($this->season,        0              ),
                          _or($this->episode,       0              ),
-                         _or($this->filter,        0              )
+                         _or($this->filter,        0              ),
+                         _or($this->recgroupid,    1              )
                         );
     // Get the id that was returned
         $recordid = $sh->insert_id();
