@@ -221,6 +221,10 @@ you need to type these commands before MythWeb will work:
     a2enmod headers
     a2enmod auth_digest
 
+The asx streaming feature requires cgi is enabled:
+
+    a2enmod cgi
+
 =================
 5.1 Apache Config
 =================
