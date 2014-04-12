@@ -76,7 +76,7 @@ class Schedule extends MythBase {
         if (empty($cache)) {
             global $db;
             $cache = $db->query_keyed_list_assoc('filterid',
-                'SELECT filterid,description,newruledefault
+                'SELECT filterid,description
                    FROM recordfilter
                ORDER BY filterid'
                );
@@ -88,22 +88,14 @@ class Schedule extends MythBase {
      *
      * @return an array of the filters for this Schedule.  Array includes
      * a property called "enabled" to indicate if the filter is enabled.
-     * If this is not a real schedule "enabled" is from the newruledefault
-     * property
      *
     /**/
     public function recordFilters() {
         $filters = array();
         foreach (Schedule::availableRecordFilters() as $id => $filter) {
             $filters[$id] = $filter;
-            // if this is a real schedule, use the filter property
-            if ($this->recordid) {
-                $mask = 1 << $id;
-                $filters[$id]['enabled'] = ($this->filter & $mask) == $mask;
-                // otherwise it's not a real schedule, so use the default value
-            } else {
-                $filters[$id]['enabled'] = $filter['newruledefault'];
-            }
+            $mask = 1 << $id;
+            $filters[$id]['enabled'] = ($this->filter & $mask) == $mask;
         }
         return $filters;
     }
