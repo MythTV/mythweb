@@ -23,6 +23,9 @@
     else
         $schedule = new Schedule(NULL);
 
+// Load the utility/display functions for scheduling
+    require_once 'includes/schedule_utils.php';
+
 // The user tried to update the recording settings - update the database and the variable in memory
     if (isset($_POST['save'])) {
     // Which type of recording is this?  Make sure an illegal one isn't specified
@@ -72,6 +75,10 @@
             $schedule->startoffset   = intval($_POST['startoffset']);
             $schedule->endoffset     = intval($_POST['endoffset']);
             $schedule->prefinput     = $_POST['prefinput'];
+            $schedule->inetref       = $_POST['inetref'];
+            $schedule->season        = intval($_POST['season']);
+            $schedule->episode       = intval($_POST['season']);
+            $schedule->filter        = generateFilter();
         // Some settings specific to manual recordings (since we have no program to match against)
             $schedule->chanid        = $_POST['channel'];
             $schedule->station       = Channel::find($schedule->chanid)->callsign;
@@ -128,9 +135,6 @@
     $schedule->length = intval(($schedule->endtime - $schedule->starttime) / 60);
     if ($schedule->length < 1)
         $schedule->length = 120;
-
-// Load the utility/display functions for scheduling
-    require_once 'includes/schedule_utils.php';
 
 // Load the class for this page
     require_once tmpl_dir.'schedules_manual.php';
