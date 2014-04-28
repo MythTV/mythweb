@@ -146,8 +146,8 @@
     }
 
     function by_season(&$a, &$b) {
-        $asep = $a->season.'x'.str_pad($a->episode,2,"0",STR_PAD_LEFT);
-        $bsep = $b->season.'x'.str_pad($b->episode,2,"0",STR_PAD_LEFT);
+        $asep = sprintf("%04dx%04d", $a->season, $a->episode);
+        $bsep = sprintf("%04dx%04d", $b->season, $b->episode);
         return strcasecmp($asep, $bsep);
     }
 
