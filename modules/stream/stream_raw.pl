@@ -34,6 +34,34 @@
         $type   = 'video/x-matroska';
         $suffix = '.mkv';
     }
+    elsif ($basename =~ /\.mp4$/) {
+        $type   = 'video/mp4';
+        $suffix = '.mp4';
+    }
+    elsif ($basename =~ /\.avi$/) {
+        $type   = 'video/x-msvideo';
+        $suffix = '.mp4';
+    }
+    elsif ($basename =~ /\.mov$/) {
+        $type   = 'video/quicktime';
+        $suffix = '.mov';
+    }
+    elsif ($basename =~ /\.wmv$/) {
+        $type   = 'video/x-ms-wmv';
+        $suffix = '.wmv';
+    }
+    elsif ($basename =~ /\.3gp$/) {
+        $type   = 'video/3gpp';
+        $suffix = '.3gp';
+    }
+    elsif ($basename =~ /\.ogv$/) {
+        $type   = 'video/ogg';
+        $suffix = '.ogv';
+    }
+    elsif ($basename =~ /\.webm$/) {
+        $type   = 'video/webm';
+        $suffix = '.webm';
+    }
     else {
         print header(),
               "Unknown video type requested:  $basename\n";
