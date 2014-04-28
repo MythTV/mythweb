@@ -1,11 +1,11 @@
 <?php
 /**
- * Stream a music file
+ * Stream a video file
  *
  * @license     GPL
  *
  * @package     MythWeb
- * @subpackage  Music
+ * @subpackage  Video
 /**/
 
 // Yes, a db connection
@@ -20,7 +20,7 @@
                                     WHERE intid = ?', $vid_id);
 
 // Mime type
-    switch (substr($fname, strrpos($fname, '.'))) {
+    switch (substr($fname, strrpos($fname, '.')+1)) {
         case 'mpg':
         case 'mpeg':
             $mime = 'video/mpeg';
@@ -49,7 +49,7 @@
             $mime = 'video/x-flv';
             break;
         default:
-            $mime = 'applicatoin/octet-stream';
+            $mime = 'application/octet-stream';
     }
     header('Content-Type: '.$mime);
 
