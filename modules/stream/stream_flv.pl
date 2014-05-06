@@ -102,7 +102,7 @@
         } elsif( $aspect->{'type'}== 13 ) {
             $x = 2.21; $y = 1;
         } elsif( $aspect->{'type'}== 14 ) {
-            $x = $aspect->{'data'}; $y = 10000;
+            $x = $aspect->{'data'}; $y = 1000000;
         } else {
             $x = 4; $y = 3;
         }
