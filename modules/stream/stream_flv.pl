@@ -73,7 +73,7 @@
     $y = $sh->fetchrow_array if ($x);   # type = 31
     $sh->finish();
 
-    if (!$x || !$y || $x <= 720) {      # <=720 means SD 
+    if (!$x || !$y || $x <= 720) {      # <=720 means SD
         $sh = $dbh->prepare('SELECT recordedmarkup.type, ' .
                'recordedmarkup.data '.
                'FROM recordedmarkup ' .
@@ -88,26 +88,26 @@
                '   AND rm.type IN (10, 11, 12, 13, 14)  ' .
                '   AND rm.mark > recordedmarkup.mark ' .
                '   ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC ' .
-               'LIMIT 1'); 
-        $sh->execute($chanid,$starttime); 
-        $aspect = $sh->fetchrow_hashref; 
-        $sh->finish(); 
+               'LIMIT 1');
+        $sh->execute($chanid,$starttime);
+        $aspect = $sh->fetchrow_hashref;
+        $sh->finish();
 
-        if( $aspect->{'type'} == 10 ) { 
-            $x = $y = 1; 
-        } elsif( $aspect->{'type'}== 11 ) { 
-            $x = 4; $y = 3; 
-        } elsif( $aspect->{'type'}== 12 ) { 
-            $x = 16; $y = 9; 
-        } elsif( $aspect->{'type'}== 13 ) { 
-            $x = 2.21; $y = 1; 
-        } elsif( $aspect->{'type'}== 14 ) { 
-            $x = $aspect->{'data'}; $y = 10000; 
-        } else { 
-            $x = 4; $y = 3; 
-        } 
-    } 
-    $height = round_even($width * ($y/$x)); 
+        if( $aspect->{'type'} == 10 ) {
+            $x = $y = 1;
+        } elsif( $aspect->{'type'}== 11 ) {
+            $x = 4; $y = 3;
+        } elsif( $aspect->{'type'}== 12 ) {
+            $x = 16; $y = 9;
+        } elsif( $aspect->{'type'}== 13 ) {
+            $x = 2.21; $y = 1;
+        } elsif( $aspect->{'type'}== 14 ) {
+            $x = $aspect->{'data'}; $y = 10000;
+        } else {
+            $x = 4; $y = 3;
+        }
+    }
+    $height = round_even($width * ($y/$x));
 
     $width    = 320 unless ($width    && $width    > 1);
     $height   = 240 unless ($height   && $height   > 1);
