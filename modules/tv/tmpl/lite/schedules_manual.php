@@ -84,8 +84,6 @@
                 <dd><input type="text" name="length" value="<?php echo $schedule->length ?>" size="10" maxlength="4"></dd>
                 <dt><?php echo t('Title') ?>:&nbsp;</dt>
                 <dd><input type="text" name="title" value="<?php echo $schedule->title ?>" size="30"></dd>
-                <dt><?php echo t('Subtitle') ?>:&nbsp;</dt>
-                <dd><input type="text" name="subtitle" value="<?php echo $schedule->subtitle ?>" size="30"></dd>
             </dl>
 
         </div>

@@ -84,8 +84,9 @@
             $schedule->station       = Channel::find($schedule->chanid)->callsign;
             $schedule->starttime     = strtotime($_POST['startdate'].' '.$_POST['starttime']);
             $schedule->endtime       = $schedule->starttime + ($_POST['length'] * 60);
-            $schedule->description   = 'Manually scheduled';
-            $schedule->category      = 'Manual recording';
+            $schedule->subtitle      = '';
+            $schedule->description   = '';
+            $schedule->category      = '';
             $schedule->search        = searchtype_manual;
             $schedule->findday       = date('w',     $schedule->starttime);
             $schedule->findtime      = date('H:m:s', $schedule->starttime);
@@ -101,12 +102,6 @@
             }
             else
                 $schedule->title = $_POST['title'];
-        // Now the subtitle
-            if (strcasecmp($_POST['subtitle'], t('Use date/time')) == 0)
-                $schedule->subtitle = date('Y-m-d H:i:s', $schedule->starttime)
-                                     .' ('.tn('$1 min', '$1 mins', $_POST['length']).')';
-            else
-                $schedule->subtitle = $_POST['subtitle'];
         // Save the schedule
             $schedule->save($type);
         // Redirect to the new schedule
@@ -116,10 +111,9 @@
     }
 // Load default settings for recpriority, autoexpire etc
     else {
-    // Default title/subtitle
+    // Default title
         if (!$schedule->title) {
             $schedule->title    = t('Use callsign');
-            $schedule->subtitle = t('Use date/time');
         }
     // Make sure we have a default rectype
         if (!$schedule->type)
