@@ -35,6 +35,7 @@ class Program extends MythBase {
     public $has_subtitles      = 0;
     public $subtitled          = 0;
     public $deaf_signed        = 0;
+    public $recordedid         = 0;
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
@@ -129,6 +130,7 @@ class Program extends MythBase {
             $this->partnumber      = $data[46];
             $this->parttotal       = $data[47];
             $this->category_type   = $data[48];
+            $this->recordedid      = $data[49];
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
                 $this->url = video_url($this); // get download info
@@ -176,6 +178,7 @@ class Program extends MythBase {
             $this->syndicatedepisodenumber  = $data['syndicatedepisodenumber'];
             $this->title_pronounce          = $data['title_pronounce'];
             $this->recstatus                = $data['recstatus'];
+            $this->recordedid               = $data['recordedid'];
 
         // These db fields should really get renamed...
             $this->audioproperties          = $data['stereo'];
@@ -392,6 +395,7 @@ class Program extends MythBase {
                              $this->partnumber     , // 45 partnumber
                              $this->parttotal      , // 46 parttotal
                              $this->category_type  , // 48 category type
+                             $this->recordedid     , // 49 recordedid
                             )
                       );
     }
