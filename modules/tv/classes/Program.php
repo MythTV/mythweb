@@ -216,6 +216,12 @@ class Program extends MythBase {
                                                 WHERE cardinputid=?',
                                               $this->inputid);
         }
+	else {
+            $this->inputname = $db->query_col('SELECT inputname
+                                                 FROM recorded
+                                                WHERE recordedid=?',
+                                              $this->recordedid);
+	}
     // Turn recstatus into a word
         if (isset($this->recstatus) && $GLOBALS['RecStatus_Types'][$this->recstatus]) {
             $this->recstatus_orig   = $this->recstatus;

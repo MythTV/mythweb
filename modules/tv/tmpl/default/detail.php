@@ -391,6 +391,12 @@
             <td><?php echo nice_filesize($program->filesize) ?></td>
         </tr><?php
             }
+            if ($program->inputname) {
+        ?><tr class="x-extras">
+            <th><?php echo t('Input Name') ?>:</th>
+            <td><?php echo $program->inputname ?></td>
+        </tr><?php
+            }
             if (strlen($program->recgroup)) {
         ?><tr class="x-extras">
             <th><?php echo t('Recording Group') ?>:</th>
