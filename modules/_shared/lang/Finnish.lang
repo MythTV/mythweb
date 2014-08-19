@@ -619,6 +619,7 @@
        </ul>
 "info:never record"
     Luo väärennös vanhemmasta tallennuksesta, jotta tätä esitystä ei tallenneta.
+"Input Name"
 "Insert"
     Syötä
 "Internet Reference #"
@@ -1461,8 +1462,6 @@
     Päivitä tallennusasetukset
 "Use callsign"
     Käytä lempinimeä
-"Use date/time"
-    Käytä päivämäärää/aikaa
 "useonairguide"
     Käytä Ohjelmavirran opasta
 "User Rating"

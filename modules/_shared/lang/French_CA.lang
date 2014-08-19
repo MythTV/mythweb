@@ -636,6 +636,7 @@
     </ul>
 "info:never record"
     Simule un enregistrement précédent de cette émission pour qu'elle ne soit pas enregistrée.
+"Input Name"
 "Insert"
     Inser
 "Internet Reference #"
@@ -851,7 +852,7 @@
 "No recording schedules have been defined."
     Aucune programmation d'enregistrement n'a été définie
 "No TV configured!"
-     Pas de configuration TV!
+    Pas de configuration TV!
 "No videos"
     Pas de vidéos
 "No. of recordings to keep"
@@ -985,7 +986,7 @@
 "Please enter an IMDB number or a title to do another search"
     Entrer un N° IMDB ou un titre pour une nouvelle recherche
 "Please rate more shows to get more results"
-    S'il vous plaît, choissisez plus d'émissions pour obtenir plus de résultats 
+    S'il vous plaît, choissisez plus d'émissions pour obtenir plus de résultats
 "Please wait for the pending AJAX request"
     Veuillez patienter pendant la requête AJAX
 "Plot"
@@ -1536,8 +1537,6 @@
     Actualiser les paramètres d'enregistrement
 "Use callsign"
     Utiliser l'indicatif
-"Use date/time"
-    Utiliser la date/heure
 "useonairguide"
     utiliser le guide des programmes électronique
 "User Rating"

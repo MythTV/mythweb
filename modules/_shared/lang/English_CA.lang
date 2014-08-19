@@ -353,6 +353,7 @@
        </ul>
 "info:never record"
     Falsify a previous recording of this show so that it won't record.
+"Input Name"
 "Insert"
 "Internet Reference #"
 "Jump"
@@ -859,7 +860,6 @@
 "Update"
 "Update Recording Settings"
 "Use callsign"
-"Use date/time"
 "useonairguide"
 "User Rating"
 "Value"

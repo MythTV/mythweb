@@ -622,6 +622,7 @@
        </ul>
 "info:never record"
     Spela aldrig in
+"Input Name"
 "Insert"
     Sätta in
 "Internet Reference #"
@@ -1471,8 +1472,6 @@
     Uppdatera inspelningsinställningar
 "Use callsign"
     Använd kanalnamn
-"Use date/time"
-    Använd datum/tid
 "useonairguide"
     Användar guide information från tv sändnigen.
 "User Rating"

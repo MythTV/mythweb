@@ -1,5 +1,4 @@
 ""
-" TRANSCODED"
 "# Tracks"
 "$1 B"
 "$1 day"
@@ -143,6 +142,8 @@
     任何頻道
 "Any Program Type"
     任何節目類型
+"API Key"
+"API Server"
 "Append"
     附加
 "Append to Current Playlist"
@@ -419,6 +420,7 @@
     編輯
 "Embed HTTP basic auth user name/password into stream urls"
     將基本的 HTTP 用戶／密碼認證功能嵌入串流網址
+"Enable"
 "Enable Flash Video player for recordings."
     啟用以 Flash 播放錄影影片。
 "Enable Video Playback"
@@ -595,6 +597,7 @@
        </ul>
 "info:never record"
     Falsify a previous recording of this show so that it won't record.
+"Input Name"
 "Insert"
     Ins
 "Internet Reference #"
@@ -924,6 +927,7 @@
     播放清單
 "Please enter an IMDB number or a title to do another search"
     請輸入 IMDB 編號或名稱以進行另一次搜尋
+"Please rate more shows to get more results"
 "Please wait for the pending AJAX request"
     請稍候待處理的 AJAX 請求
 "Plot"
@@ -1016,6 +1020,9 @@
     最近播放歌曲
 "recgroup"
     錄影羣組
+"Recommend Videos"
+"Recommended"
+"Recommended Programs"
 "Record Date"
     錄影日期
 "Record Length"
@@ -1390,6 +1397,7 @@
     第 %s 首歌 (「%s」專輯)
 "Transcode"
     轉碼
+"Transcoded"
 "transcoder"
     轉碼器
 "Transcoder"
@@ -1433,8 +1441,6 @@
     更新錄影設定
 "Use callsign"
     使用稱呼
-"Use date/time"
-    使用日期／時間
 "useonairguide"
 "User Rating"
     用戶評級

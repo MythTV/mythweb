@@ -591,6 +591,7 @@
 "info:jumppoints"
 "info:never record"
     Meghamisítja ezen műsor korábbi felvételeit, igy nem lesz rögzítve.
+"Input Name"
 "Insert"
     Beszúrás
 "Internet Reference #"
@@ -1398,8 +1399,6 @@
     Felvételi beállítások frissítése
 "Use callsign"
     Hívójel használata
-"Use date/time"
-    Használja a dátumot/időt
 "useonairguide"
     használja a sugárzott műsorújságot
 "User Rating"

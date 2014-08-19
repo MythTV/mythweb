@@ -622,6 +622,7 @@
 "info:jumppoints"
 "info:never record"
     Ta aldri opp denne sendingen.
+"Input Name"
 "Insert"
     Legg til
 "Internet Reference #"
@@ -1500,8 +1501,6 @@
     Oppdater opptaksinnstillinger
 "Use callsign"
     Bruk kallenavn
-"Use date/time"
-    Bruk dato/tid
 "useonairguide"
     bruk onairguide
 "User Rating"

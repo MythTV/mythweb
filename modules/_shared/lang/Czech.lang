@@ -593,6 +593,7 @@
 "info:forget old"
 "info:jumppoints"
 "info:never record"
+"Input Name"
 "Insert"
     Vložit
 "Internet Reference #"
@@ -1365,8 +1366,6 @@
 "Update Recording Settings"
     Obnovit nastavení nahrávání
 "Use callsign"
-"Use date/time"
-    Použít datum/čas
 "useonairguide"
 "User Rating"
     Hodnocení uživatele

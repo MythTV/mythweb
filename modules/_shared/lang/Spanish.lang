@@ -522,6 +522,7 @@
 "info:forget old"
 "info:jumppoints"
 "info:never record"
+"Input Name"
 "Insert"
 "Internet Reference #"
 "Jump"
@@ -1163,8 +1164,6 @@
     Actualizar Ajustes Grabación
 "Use callsign"
     Usar nombre canal
-"Use date/time"
-    Usar fecha/hora
 "useonairguide"
     usar guía emitida
 "User Rating"

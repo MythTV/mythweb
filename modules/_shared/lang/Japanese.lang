@@ -438,6 +438,7 @@
 "info:forget old"
 "info:jumppoints"
 "info:never record"
+"Input Name"
 "Insert"
 "Internet Reference #"
 "Jump"
@@ -1067,8 +1068,6 @@
     録画設定を保存
 "Use callsign"
     コールサインを使用する
-"Use date/time"
-    日時を使用する
 "useonairguide"
 "User Rating"
 "Value"

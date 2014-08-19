@@ -442,6 +442,7 @@
 "info:forget old"
 "info:jumppoints"
 "info:never record"
+"Input Name"
 "Insert"
 "Internet Reference #"
 "Jump"
@@ -1063,8 +1064,6 @@
     Opname-instellingen Vernieuwen
 "Use callsign"
     Zender gebruiken
-"Use date/time"
-    Datum/tijd gebruiken
 "useonairguide"
     gebruikepg
 "User Rating"

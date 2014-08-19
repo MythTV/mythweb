@@ -620,6 +620,7 @@
     info: Sprungpunkte
 "info:never record"
     info: nie aufnehmen
+"Input Name"
 "Insert"
     Einfügen
 "Internet Reference #"
@@ -1487,8 +1488,6 @@
     Speichern
 "Use callsign"
     Kurzname verwenden
-"Use date/time"
-    Datum/Uhrzeit verwenden
 "useonairguide"
     DVB-EPG Daten verwenden
 "User Rating"

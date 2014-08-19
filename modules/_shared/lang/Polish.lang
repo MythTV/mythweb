@@ -397,6 +397,7 @@
 "info:forget old"
 "info:jumppoints"
 "info:never record"
+"Input Name"
 "Insert"
 "Internet Reference #"
 "Jump"
@@ -963,8 +964,6 @@
     Uaktualnij Ustawienia Nagrywania
 "Use callsign"
     Użyj CALLSIGN?
-"Use date/time"
-    Użyj Data/Czas
 "useonairguide"
 "User Rating"
 "Value"

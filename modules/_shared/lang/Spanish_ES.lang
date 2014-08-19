@@ -611,6 +611,7 @@
     info:puntos de salto
 "info:never record"
     info:nunca grabar
+"Input Name"
 "Insert"
     Insertar
 "Internet Reference #"
@@ -1441,8 +1442,6 @@
     Actualizar Configuración de Grabación
 "Use callsign"
     Usar ID de canal
-"Use date/time"
-    Usar fecha/hora
 "useonairguide"
 "User Rating"
     Puntuación del Usuario

@@ -614,6 +614,7 @@
 "info:jumppoints"
 "info:never record"
     Optag aldrig denne udsendelse.
+"Input Name"
 "Insert"
     Indsæt
 "Internet Reference #"
@@ -1485,8 +1486,6 @@
     Opdater optagelsesindstillinger
 "Use callsign"
     Brug kaldenavn
-"Use date/time"
-    Brug dato/tid
 "useonairguide"
     brug onairguide
 "User Rating"
