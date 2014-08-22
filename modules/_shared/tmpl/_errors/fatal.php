@@ -40,4 +40,4 @@
 <?php
 
 // Print the page footer
-    require 'modules/_shared/tmpl/'.tmpl.'/footer.php';
+	require get_template_file('_shared', 'footer.php');

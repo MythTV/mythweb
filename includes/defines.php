@@ -9,6 +9,17 @@
  *
 /**/
 
+// Ensure some keys are set
+	$keys = [
+			 'HTTP_X_FORWARDED_PROTO',
+			 'HTTPS',
+			 ];
+	foreach ($keys as $key) {
+		if (!isset($_SERVER[$key]))
+			$_SERVER[$key] = NULL;
+	}
+
+
 // Figure out the root path for this mythweb installation.  We need this in order
 // to cleanly reference things like the /js directory from subpaths.
     if (isset($_SERVER['ORIG_SCRIPT_NAME']) && !isset($_SERVER['FCGI_ROLE']))
@@ -125,7 +136,7 @@
     $root_url .= http_host.root;
     $root_auth_url .= http_host.root;
 
-    if (!$_SESSION['stream']['include_user_and_password'])
+    if (!@$_SESSION['stream']['include_user_and_password'])
         $root_auth_url = $root_url;
 
     define('root_url',   $root_url);
@@ -137,9 +148,9 @@
     if (@$_SERVER['HTTPS'] == 'on' && !@$_SESSION['stream']['force_http'])
         $stream_url .='s';
     $stream_url .= '://';
-    if ($_SESSION['stream']['include_user_and_password'] && !ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
+    if (@$_SESSION['stream']['include_user_and_password'] && !ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
         $stream_url .= $_SERVER['PHP_AUTH_USER'].':'.$_SERVER['PHP_AUTH_PW'].'@';
-    elseif ($_SESSION['stream']['include_user_and_password'] && !ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']))
+    elseif (@$_SESSION['stream']['include_user_and_password'] && !ini_get('safe_mode') && isset($_SERVER['PHP_AUTH_USER']))
         $stream_url .= $_SERVER['PHP_AUTH_USER'].'@';
     $stream_url .= $_SERVER['HTTP_HOST'];
     if (@$_SESSION['stream']['force_http'] && @$_SESSION['stream']['force_http_port'] > 0)

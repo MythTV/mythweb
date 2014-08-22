@@ -33,6 +33,8 @@
         $h = is_null($hostname) ? '-null-' : $hostname;
         if (!isset($cache[$h]) || !is_array($cache[$h]))
             $cache[$h] = array();
+		if (!is_object($db))
+			return null;
     // Assigning a new value
         if ($new_value !== "old\0old") {
             if (is_null($hostname))
@@ -323,4 +325,13 @@
 /**/
     function unix2mythtime($time) {
         return gmdate('Y-m-d\TH:i:s', $time);
+    }
+
+// Template finder helper
+	function get_template_file($module, $file) {
+		$tmpl = tmpl;
+		if (tmpl == 'tmpl')
+			$tmpl = 'default';
+
+		return "modules/{$module}/tmpl/{$tmpl}/{$file}";
     }

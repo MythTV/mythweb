@@ -16,7 +16,7 @@
     $headers[] = '<link rel="stylesheet" type="text/css" href="skins/errors.css">';
 
 // Print the page header
-    @include 'modules/_shared/tmpl/'.tmpl.'/header.php';
+	include get_template_file('_shared', 'header.php');
 ?>
 
 <div id="message">
@@ -32,4 +32,4 @@
 <?php
 
 // Print the page footer
-    @include 'modules/_shared/tmpl/'.tmpl.'/footer.php';
+	include get_template_file('_shared', 'footer.php');

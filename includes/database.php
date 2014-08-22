@@ -15,11 +15,6 @@
                     .'The package is usually called something like php-mysql.');
     }
 
-// No database connection info defined?
-    if (empty($_SERVER['db_server']) || empty($_SERVER['db_name']) || empty($_SERVER['db_login'])) {
-        tailored_error('db_vars_error');
-    }
-
 // Load the database connection routines
     require_once 'classes/Database.php';
     require_once 'classes/Database/mysql.php';
@@ -50,12 +45,21 @@
         }
         else {
             $info = UPnP_Client::discoverDatabase();
+			
+			if (!$info) {
+				custom_error("UPnP Database Discovery failed!");
+			}
+			
             $db = Database::connect($info['name'],
                                     $info['user'],
                                     $info['pass'],
                                     $info['host'],
                                     NULL, 'mysql');
         }
+		if (!is_object($db)) {
+			custom_error("Database connection is not valid!");
+		}
+		
         $db->register_global_name('db');
     }
 
