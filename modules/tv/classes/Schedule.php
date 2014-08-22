@@ -198,7 +198,7 @@ class Schedule extends MythBase {
             }
         // Data is a recordid -- load its contents
             if (!is_array($data) && $data > 0) {
-                $data = $db->query_assoc('SELECT *, IF(type='.rectype_always.',-1,chanid)         AS chanid,
+                $data = $db->query_assoc('SELECT *, 
                                                  UNIX_TIMESTAMP(startdate)+TIME_TO_SEC(starttime) AS starttime,
                                                  UNIX_TIMESTAMP(enddate)+TIME_TO_SEC(endtime)     AS endtime
                                             FROM record

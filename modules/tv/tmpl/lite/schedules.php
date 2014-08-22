@@ -53,9 +53,11 @@
             $urlstr = 'recordid='.$schedule->recordid;
 
             $css_class = ($schedule->type == rectype_dontrec ? 'deactivated' : 'scheduled');
-        // If this is an 'always on any channel' or 'find one' recording w/o a channel, set the channel name to 'Any'
-            if ($schedule->type == rectype_always || ($schedule->type == rectype_findone && !preg_match('/\\S/', $schedule->channel->channum)))
+        // If this is an 'always on any channel' or 'find one' recording without the 'This Channel' filter, set the channel name to 'Any'
+            if (($schedule->type == rectype_always || $schedule->type == rectype_findone) && !($schedule->filter & (1 << 10))) {
                 $schedule->channel->name = '[ '.t('Any').' ]';
+                $schedule->channel->channum = 0;
+            }
 
         // Print a dividing row if grouping changes
             if ($group_field == 'type')
