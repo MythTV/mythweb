@@ -640,7 +640,7 @@ class Program extends MythBase {
  * Revert a show to its default recording schedule settings
 /**/
     public function rec_default() {
-        $schedule =& Schedule::findAll($this->recordid);
+        $schedule =& Schedule::find($this->recordid);
         if ($schedule && ($schedule->type == rectype_override || $schedule->type == rectype_dontrec))
             $schedule->delete();
     }
