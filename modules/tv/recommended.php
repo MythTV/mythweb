@@ -35,7 +35,7 @@
 		
 	}
 	
-	$shows =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, "({$query})", true);
+	$shows =& load_all_program_data(time(), strtotime('+1 month'), NULL, false, strlen($query) ? "({$query})" : 'FALSE', true);
 
 // Load the class for this page
     require_once tmpl_dir.'recommended.php';
