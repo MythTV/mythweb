@@ -11,9 +11,7 @@ FROM ubuntu:14.10
 MAINTAINER Rob Smith <kormoc@gmail.com>
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 libapache2-mod-php5 php5-mysql php-apc php5-gd php5-curl  avahi-daemon
-RUN sed -i'' s/#enable-dbus=yes/enable-dbus=no/g /etc/avahi/avahi-daemon.conf
-RUN sed -i'' s/#browse-domains/browse-domains/g /etc/avahi/avahi-daemon.conf
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 libapache2-mod-php5 php5-mysql php-apc php5-gd php5-curl
 
 RUN a2enmod rewrite
 RUN a2enmod deflate
@@ -47,4 +45,4 @@ ADD . /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
 
-CMD avahi-daemon & tail -F /var/log/apache2/*.log & /usr/sbin/apache2 -D FOREGROUND
+CMD tail -F /var/log/apache2/*.log & /usr/sbin/apache2 -D FOREGROUND
