@@ -10,10 +10,10 @@
 /**/
 
 // Ensure some keys are set
-	$keys = [
+	$keys = array(
 			 'HTTP_X_FORWARDED_PROTO',
 			 'HTTPS',
-			 ];
+			 );
 	foreach ($keys as $key) {
 		if (!isset($_SERVER[$key]))
 			$_SERVER[$key] = NULL;
