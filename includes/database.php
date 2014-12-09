@@ -44,22 +44,30 @@
                                     NULL, 'mysql');
         }
         else {
-            $info = UPnP_Client::discoverDatabase();
-			
-			if (!$info) {
-				custom_error("UPnP Database Discovery failed!");
+			if (!isset($_SESSION['upnp_db'])) {
+				for ($i=0; $i<10; $i++) {
+					$info = UPnP_Client::discoverDatabase();
+					if ($info) {
+						$_SESSION['upnp_db'] = $info;
+						break;
+					}
+				}
 			}
 			
-            $db = Database::connect($info['name'],
-                                    $info['user'],
-                                    $info['pass'],
-                                    $info['host'],
-                                    NULL, 'mysql');
+			if (!isset($_SESSION['upnp_db'])) {
+				custom_error("UPnP Database Discovery failed!");
+			}
+
+			$db = Database::connect($_SESSION['upnp_db']['name'],
+									$_SESSION['upnp_db']['user'],
+									$_SESSION['upnp_db']['pass'],
+									$_SESSION['upnp_db']['host'],
+									NULL, 'mysql');
         }
 		if (!is_object($db)) {
 			custom_error("Database connection is not valid!");
 		}
-		
+
         $db->register_global_name('db');
     }
 

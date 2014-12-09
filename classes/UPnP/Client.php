@@ -15,7 +15,7 @@ class UPnP_Client {
         $info = @file_get_contents("http://$ip/Myth/GetConnectionInfo?Pin=");
         if (!$info)
             return false;
-		
+
 		if (class_exists('SimpleXMLElement')) {
 			$data = new SimpleXMLElement($info);
 			return array(
@@ -25,7 +25,7 @@ class UPnP_Client {
 				'pass' => (string)$data->Database->Password[0],
 				'name' => (string)$data->Database->Name[0]);
 		}
-		
+
         preg_match('/<Database><Host>(.*)<\/Host><Port>(.*)<\/Port><UserName>(.*)<\/UserName><Password>(.*)<\/Password><Name>(.*)<\/Name><Type>.*<\/Type><\/Database>/', $info, $matches);
         return array(
             'host' => $matches[1],
@@ -47,12 +47,12 @@ class UPnP_Client {
         if (count($devices) == 0) {
             return false;
         }
-		
+
         foreach ($devices as $device) {
             preg_match('/LOCATION: http:\/\/(.*):([0-9]+).*/', $device, $matches);
 			$ips[] = [$matches[1], $matches[2]];
         }
-		
+
 		if (count($ips) == 0)
 			return false;
 
@@ -121,10 +121,14 @@ class UPnP_Client {
         $out .= "ST: $schema\r\n";
         $out .= "USER-AGENT: MythWEB\r\n";
         $out .= "\r\n";
-        socket_sendto($socket, $out, strlen($out), 0, $upnp_address, $upnp_port);
+        $res = @socket_sendto($socket, $out, strlen($out), 0, $upnp_address, $upnp_port);
 
     // Await replies
         $devices = array();
+
+		if ($res === false)
+			return $devices;
+
         $startTime = time();
         while (time() - $startTime < self::$timeout) {
             $read = array($socket);
