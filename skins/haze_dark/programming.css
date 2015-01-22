@@ -82,9 +82,9 @@
 .cat_Western        { background-color: #6B0F23; } /*hsl(347,75%,24%)*/
 .cat_Unknown        { background-color: #303030; } /*hsl(0,0%,19%)*/
 
-.cat_movie          { background-color: #A31418; !important; } /*hsl(358,78%,36%)*/
-.cat_series         { }
-.cat_tvshow         { }
+.type_movie         { background-color: #A31418; !important; } /*hsl(358,78%,36%)*/
+.type_series        { }
+.type_tvshow        { }
 
 /* deprecated show categories that need to be integreted into the above list via regex, or have new categories created for them */
 .tv_Cine           { background-color: blue;            }
