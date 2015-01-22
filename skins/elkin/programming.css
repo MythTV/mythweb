@@ -138,9 +138,9 @@
 .cat_Western        { background-color: #806040; }
 .cat_Unknown        { background-color: #FFFFFF; }
 
-.cat_movie          { background-color: #CCCC00 !important; }
-.cat_series         { }
-.cat_tvshow         { }
+.type_movie         { background-color: #CCCC00 !important; }
+.type_series        { }
+.type_tvshow        { }
 
 /* deprecated show categories that need to be integreted into the above list via regex, or have new categories created for them */
 .tv_Cine           { background-color: blue;            }

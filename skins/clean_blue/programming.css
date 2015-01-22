@@ -143,9 +143,9 @@
 .cat_Western        { background-color: #806040; }
 .cat_Unknown        { background-color: #9999FF; }
 
-.cat_movie          { background-color: #809090 !important; }
-.cat_series         { background-color: #C0C0C0; }
-.cat_tvshow         { }
+.type_movie         { background-color: #809090 !important; }
+.type_series        { background-color: #C0C0C0; }
+.type_tvshow        { }
 
 .tv_Cine           { background-color: blue;            }
 .tv_Classic        { background-color: gray;            }
