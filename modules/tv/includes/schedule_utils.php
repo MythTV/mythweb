@@ -30,12 +30,12 @@
     // Gather the data
         if (empty($inputs)) {
             global $db;
-            $sh = $db->query('SELECT cardinputid,
+            $sh = $db->query('SELECT cardid,
                                      IF(LENGTH(IFNULL(displayname,"")) > 0,
                                         displayname,
                                         CONCAT(cardid, ":", inputname)
                                        ) AS name
-                                FROM cardinput
+                                FROM capturecard
                             ORDER BY name');
             while (list($id, $name) = $sh->fetch_row()) {
                 $inputs[$id] = $name;

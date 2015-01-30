@@ -212,8 +212,8 @@ class Program extends MythBase {
     // Get the name of the input
         if ($this->inputid) {
             $this->inputname = $db->query_col('SELECT displayname
-                                                 FROM cardinput
-                                                WHERE cardinputid=?',
+                                                 FROM capturecard
+                                                WHERE cardid=?',
                                               $this->inputid);
         }
 	else {
