@@ -193,15 +193,14 @@ EOF;
 
                 <dd>
                 <SELECT style="width: 335px;"name="sqlcommands">
-                    <OPTION value="cardinput.cardinputid = 1"><?php echo t('Modify priority for an input (Input priority)') ?>
-                    <OPTION value="cardinput.cardid = 2"><?php echo t('Modify priority for all inputs on a card') ?>
+                    <OPTION value="capturecard.cardid = 1"><?php echo t('Modify priority for an input (Input priority)') ?>
                     <OPTION value="capturecard.hostname = 'mythbox'"><?php echo t('Modify priority for every card on a host') ?>
                     <OPTION value="channel.chanid = '1003'"><?php echo t('Only one specific channel ID (Channel priority)') ?>
                     <OPTION value="channel.channum = '3'"><?php echo t('Only a certain channel number') ?>
                     <OPTION value="channel.callsign = 'ESPN'"><?php echo t('Only channels that carry a specific station') ?>
                     <OPTION value="channel.callsign LIKE 'HBO%'"><?php echo t('Match related callsigns') ?>
                     <OPTION value="channel.commmethod = %1"><?php echo t('Only channels marked as commercial free') ?>
-                    <OPTION value="channel.callsign = 'ESPN' AND cardinput.cardinputid = 2"><?php echo t('Modify priority for a station on an input') ?>
+                    <OPTION value="channel.callsign = 'ESPN' AND capturecard.cardid = 2"><?php echo t('Modify priority for a station on an input') ?>
                     <OPTION value="program.title LIKE 'CSI: %'"><?php echo t('Priority for all matching titles') ?>
                     <OPTION SELECTED value="program.hdtv > 0"><?php echo t('Only shows marked as HDTV') ?>
                     <OPTION value="program.closecaptioned > 0"><?php echo t('Close Captioned priority') ?>
@@ -219,7 +218,7 @@ EOF;
                     <OPTION value="program.category_type = 'movie' AND program.airdate >= 2006"><?php echo t('Priority for movies by the year of release') ?>
                     <OPTION value="program.category_type = 'movie' AND HOUR(program.starttime) < 6"><?php echo t('Prefer movies when shown at night') ?>
                     <OPTION value="RECTABLE.endoffset > 0 AND program.category = 'Sports event' AND capturecard.hostname = 'mythbox'"><?php echo t('Prefer a host for live sports with overtime') ?>
-                    <OPTION value="cardinput.cardinputid = 1 AND channel.channum IN (3, 5, 39, 66)"><?php echo t('Avoid poor signal quality') ?>
+                    <OPTION value="capturecard.cardid = 1 AND channel.channum IN (3, 5, 39, 66)"><?php echo t('Avoid poor signal quality') ?>
                 </SELECT>
 
                 <script language="Javascript">
