@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Add a custom include path?
     if (!empty($_SERVER['include_path']) && $_SERVER['include_path'] != '.') {
