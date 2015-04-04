@@ -360,7 +360,7 @@
 "Don't Record"
     No grabar
 "Don't record this program."
-    No borrar este programa
+    No grabar este programa
 "Done, Unknown Status"
     Terminado, Estado Desconocido
 "Down"
@@ -895,7 +895,7 @@
 "recstatus: willrecord"
     estado: se grabará
 "rectype-long: always"
-    rectype-long: siempre
+    Grabar a cualquier hora y y canal.
 "rectype-long: daily"
     rectype-long: diario
 "rectype-long: dontrec"
@@ -903,11 +903,11 @@
 "rectype-long: finddaily"
     rectype-long: buscar diario
 "rectype-long: findone"
-    rectype-long: buscar uno
+    Encontrar y grabar un episodio con este titulo.
 "rectype-long: findweekly"
     rectype-long: buscar semana
 "rectype-long: once"
-    rectype-long: una vez
+    Grabar solo este episodio.
 "rectype-long: override"
     rectype-long: excepción
 "rectype-long: weekly"
