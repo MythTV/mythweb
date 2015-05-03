@@ -49,6 +49,10 @@
 .manualOverride           { color: #D03060; }
 .overlap                  { color: #FF0000; }
 
+.type_movie         { background-color: #F8B3B5; } /*hsl(358,85%,84%)*/
+.type_series        { }
+.type_tvshow        { }
+
 .cat_Action         { background-color: #FBCEC4; } /*hsl(10,90%,88%)*/
 .cat_Adult          { background-color: #F8CBB3; } /*hsl(21,85%,84%)*/
 .cat_Animals        { background-color: #FBE2C4; } /*hsl(32,90%,88%)*/
@@ -81,10 +85,6 @@
 .cat_War            { background-color: #F8B3CF; } /*hsl(336,85%,84%)*/
 .cat_Western        { background-color: #FBC4D0; } /*hsl(347,90%,88%)*/
 .cat_Unknown        { background-color: #EDEDED; } /*hsl(0,0%,93%)*/
-
-.type_movie         { background-color: #F8B3B5; !important; } /*hsl(358,85%,84%)*/
-.type_series        { }
-.type_tvshow        { }
 
 /* deprecated show categories that need to be integreted into the above list via regex, or have new categories created for them */
 .tv_Cine           { background-color: blue;            }
