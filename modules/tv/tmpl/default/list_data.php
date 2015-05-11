@@ -91,7 +91,8 @@
         <img src="<?php echo $channel->icon ?>" style="padding:5px;"><br>
 <?php       } ?>
         <?php echo ($_SESSION["prefer_channum"] ? $channel->channum : $channel->callsign), "\n" ?>
-<?php       if ($_SESSION["show_channel_icons"] == false || empty($channel->icon)) {
+<?php       /* Always display channel number/callsign for easier searchability. */
+            if (true || $_SESSION["show_channel_icons"] == false || empty($channel->icon)) {
                 echo '<br>('.($_SESSION["prefer_channum"] ? $channel->callsign : $channel->channum), ")\n";
 } ?>
         </a>
