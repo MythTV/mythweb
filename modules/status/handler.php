@@ -8,7 +8,7 @@
  * @package     MythWeb
  * @subpackage  Status
  *
-/**/
+ **/
 
 // Get the address/port of the master machine, enclose IPv6 with []
     $masterhost = preg_replace('@(.*?:.*)@', "[$1]", setting('MasterServerIP'));

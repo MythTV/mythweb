@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythWeb - '.t('Error');

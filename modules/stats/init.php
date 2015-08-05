@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Stats
  *
-/**/
+ **/
 
     $enabled = $db->query_col('SELECT COUNT(*) FROM oldrecorded WHERE future = 0');
 

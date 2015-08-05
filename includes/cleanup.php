@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // mod_redirect can do some weird things when php is run in cgi mode
     $keys = preg_grep('/^REDIRECT_/', array_keys($_SERVER));
@@ -26,7 +26,7 @@
  * Recursively fixes silly \r\n stuff that some browsers send.
  * Also adds a generic entry for fiends ending in _x or _y to better deal
  * with image inputs.
-/**/
+ **/
     function &fix_crlfxy(&$array) {
         foreach ($array as $key => $val) {
             if (is_array($val))
@@ -51,7 +51,7 @@
 
     /**
      * Recursively strip slashes from an array (eg. $_GET).
-    /**/
+     **/
         function &fix_magic_quotes(&$array) {
             foreach ($array as $key => $val) {
                 if (is_array($val))

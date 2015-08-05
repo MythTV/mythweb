@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Load the sorting routines
     require_once 'includes/sorting.php';

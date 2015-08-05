@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // UTF-8 content
     header("Content-Type: text/html; charset=utf-8");

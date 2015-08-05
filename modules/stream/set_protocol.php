@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Music
  *
-/**/
+ **/
 
 // Save?
     if ($_POST['save']) {

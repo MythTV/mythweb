@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
 // Make sure we at least have the mythweb settings defined
     if (empty($Settings['mythweb'])) {
@@ -40,7 +40,7 @@
 /**
  * @global  mixed   $GLOBALS['Settings_Hosts']
  * @name    $Settings_Hosts
-/**/
+ **/
     global $Settings_Hosts;
     $Settings_Hosts = t('MythWeb Session');
 
@@ -69,7 +69,7 @@
 
 /**
  * Prints out the host choices for this section.
-/**/
+ **/
     function host_choices() {
         global $Settings_Hosts;
         if (is_array($Settings_Hosts)) {

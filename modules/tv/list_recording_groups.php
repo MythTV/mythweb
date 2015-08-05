@@ -4,7 +4,7 @@
  *
  * @package     MythWeb
  * @subpackage  TV
-/**/
+ **/
 
     $sh = $db->query('SELECT DISTINCT recorded.recgroup
                         FROM recorded');

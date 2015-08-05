@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Enable/Disable help messages
     if (isset($_REQUEST['show_help'])) {

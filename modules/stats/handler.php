@@ -16,7 +16,7 @@
  *        AND oldrecorded.endtime <= oldrecorded.starttime
  *        AND program.endtime > program.starttime;
  *
-/**/
+ **/
     $where = ' WHERE 1';
     if ($_REQUEST['query_time'] == 'day')
         $where = ' WHERE UNIX_TIMESTAMP(starttime) > '.(time()-24*60*60);

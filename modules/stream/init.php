@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Music
  *
-/**/
+ **/
 
     $Settings['stream'] = array('name'    => t('Streaming'),
                                 'choices' => array('protocol'  => t('Protocol'),

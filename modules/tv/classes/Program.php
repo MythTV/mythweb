@@ -7,11 +7,11 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 /**
  * Program class
-/**/
+ **/
 class Program extends MythBase {
 
 // The following fields are (in order) the fields returned from the backend on
@@ -310,7 +310,7 @@ class Program extends MythBase {
 
 /**
  * Load info about any queued or recently finished jobs
-/**/
+ **/
     public function load_jobs() {
         if (empty($this->filename))
             return;
@@ -345,7 +345,7 @@ class Program extends MythBase {
 
 /**
  * Generate a mythproto-compatible row of data for this show.
-/**/
+ **/
     public function backend_row() {
         return implode(MythBackend::$backend_separator,
                        array(
@@ -409,7 +409,7 @@ class Program extends MythBase {
 /**
  * Get the last modification date of the pixmap that corresponds to this
  * recording.
-/**/
+ **/
     public function pixmap_last_mod() {
         $mod = MythBackend::find()->sendCommand(array('QUERY_PIXMAP_LASTMODIFIED', $this->backend_row()));
         if ($mod == 'BAD')
@@ -419,7 +419,7 @@ class Program extends MythBase {
 
 /**
  * Generate a new preview pixmap for this recording.
-/**/
+ **/
     public function generate_pixmap() {
         $ret = MythBackend::find()->sendCommand(array('QUERY_GENPIXMAP2', "do_not_care", $this->backend_row()));
         if ($ret == 'ERROR') {
@@ -431,7 +431,7 @@ class Program extends MythBase {
 /**
  * Generate a thumbnail of the requested size, and return the URL to its cache
  * location.
-/**/
+ **/
     public function thumb_url($width=160, $height=120, $secs_in=-1) {
 
         $filename = explode('/', $this->filename);
@@ -447,7 +447,7 @@ class Program extends MythBase {
  * Gets a preview image of the requested show
  *
  * @todo, this should get put into a "recording" class or something like that.
-/**/
+ **/
     public static function get_preview_pixmap($hostname, $chanid, $starttime, $width=160, $height=120, $secs_in=null) {
 
         return MythBackend::find($hostname)->httpRequest('Content/GetPreviewImage', array('ChanId'      => $chanid,
@@ -458,7 +458,7 @@ class Program extends MythBase {
 
 /**
  * The "details list" for each program.
-/**/
+ **/
     public function details_list() {
     // Start the list, and print the show airtime and title
         $str = "<dl class=\"details_list\">\n"
@@ -587,7 +587,7 @@ class Program extends MythBase {
  * and into something more generic, since this backend command is called from
  * several places depending on if a program or a non-expanded data row is being
  * used.
-/**/
+ **/
     public function rec_forget_old() {
         global $db;
     // The FORGET_RECORDING command requires the specific record to be
@@ -614,7 +614,7 @@ class Program extends MythBase {
 
 /**
  * "Never" record this show, by telling mythtv that it was already recorded
-/**/
+ **/
     public function rec_never_record() {
         $result = mysql_query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid,recordid,station,rectype,recstatus,duplicate) VALUES ('
                                 .escape($this->chanid)                    .','
@@ -638,7 +638,7 @@ class Program extends MythBase {
 
 /**
  * Revert a show to its default recording schedule settings
-/**/
+ **/
     public function rec_default() {
         $schedule =& Schedule::find($this->recordid);
         if ($schedule && ($schedule->type == rectype_override || $schedule->type == rectype_dontrec))
@@ -648,7 +648,7 @@ class Program extends MythBase {
 /**
  * Add an override or dontrec record to force this show to/not record pass in
  * rectype_dontrec or rectype_override constants
-/**/
+ **/
     public function rec_override($rectype) {
         $schedule =& Schedule::find($this->recordid);
     // Unknown schedule?
@@ -675,7 +675,7 @@ class Program extends MythBase {
 
 /**
  * Activate a program to record, even if it's in progress
-/**/
+ **/
     public function activate() {
         global $db;
     // If we have already started recording, allow the reactivate to happen, re #4814
@@ -693,7 +693,7 @@ class Program extends MythBase {
  * Intended to be called as program::category_types()
  *
  * @return array sorted list of category_type fields from the program table
-/**/
+ **/
     public function category_types() {
         static $cache = array();
         if (empty($cache)) {
@@ -709,7 +709,7 @@ class Program extends MythBase {
  * Intended to be called as program::categories()
  *
  * @return array sorted list of category fields from the program table
-/**/
+ **/
     public function categories() {
         static $cache = array();
         if (empty($cache)) {
@@ -727,7 +727,7 @@ class Program extends MythBase {
  * Stop recording the program is we are currently recording...
  *
  * @return bool did we actually stop recording?
-/**/
+ **/
     public function stopRecording() {
         if ($this->recstatus != 'Recording')
             return false;

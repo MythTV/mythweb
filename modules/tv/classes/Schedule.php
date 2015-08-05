@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 class Schedule extends MythBase {
     static private $scheduledRecordings;
@@ -70,7 +70,7 @@ class Schedule extends MythBase {
      * Intended to be called as Schedule::availableRecordFilters()
      *
      * @return array sorted list of record filters available to the system keyed by filterid
-    /**/
+     **/
     public static function availableRecordFilters() {
         static $cache = array();
         if (empty($cache)) {
@@ -89,7 +89,7 @@ class Schedule extends MythBase {
      * @return an array of the filters for this Schedule.  Array includes
      * a property called "enabled" to indicate if the filter is enabled.
      *
-    /**/
+     **/
     public function recordFilters() {
         $filters = array();
         foreach (Schedule::availableRecordFilters() as $id => $filter) {
@@ -158,7 +158,7 @@ class Schedule extends MythBase {
 
 /**
  * constructor
-/**/
+ **/
     public function __construct($data) {
         global $db;
 
@@ -277,7 +277,7 @@ class Schedule extends MythBase {
 
 /**
  * Save this schedule
-/**/
+ **/
     public function save($new_type) {
         global $db;
     // Make sure that recordid is null if it's empty
@@ -404,7 +404,7 @@ class Schedule extends MythBase {
 
 /**
  * Delete this schedule
-/**/
+ **/
     public function delete() {
         global $db;
     // Delete this schedule from the database
@@ -421,7 +421,7 @@ class Schedule extends MythBase {
  * The "details list" for recording schedules.  Very similar to that for
  * programs, but with a few extra checks, and some information arranged
  * differently.
-/**/
+ **/
     public function details_list() {
     // Start the list, and print the title and schedule type
         $str = "<dl class=\"details_list\">\n"
@@ -542,7 +542,7 @@ class Schedule extends MythBase {
 
 /**
  * prints a <select> of the various playback groups available
-/**/
+ **/
     function playgroup_select($this_playgroup, $name = 'playgroup', $schedule = NULL, $id = NULL, $js = NULL) {
     // Make sure we have some data
         static $playgroups = array();
@@ -585,7 +585,7 @@ class Schedule extends MythBase {
 
 /**
  * prints a <select> of the various recording profiles to choose from
-/**/
+ **/
     function profile_select($this_profile, $name='profile') {
         echo "<select name=\"$name\">";
         foreach(array('Default', 'Live TV', 'High Quality', 'Low Quality') as $profile) {
@@ -599,7 +599,7 @@ class Schedule extends MythBase {
 
 /**
  * prints a <select> of the various transcoders to choose from
-/**/
+ **/
     function transcoder_select($this_transcoder, $name='transcoder') {
         global $Transcoders;
         echo "<select name=\"$name\">";
@@ -615,7 +615,7 @@ class Schedule extends MythBase {
 
 /**
  * prints a <select> of the various recgroups available
-/**/
+ **/
     function recgroup_select(&$schedule, $name = 'recgroup') {
         $this_group =& $schedule->recgroup;
         static $groups = array();
@@ -667,7 +667,7 @@ class Schedule extends MythBase {
 
 /**
  * prints a <select> of the various storagegroups available
-/**/
+ **/
     function storagegroup_select($this_group, $name = 'storagegroup') {
         static $groups = array();
     // Load the recording groups?

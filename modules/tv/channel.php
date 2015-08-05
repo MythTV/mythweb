@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Path-based
     if ($Path[2]) {
@@ -55,7 +55,7 @@
 
 /**
  * Prints a <select> of the available channels
-/**/
+ **/
     function channel_select($params = '', $selected='') {
         $channels = Channel::getChannelList();
         echo "<select name=\"chanid\" $params>";
@@ -85,7 +85,7 @@
 /**
  * Prints a <select> of the available date range
  * Reused *almost* verbatim from modules/tv/list.php
-/**/
+ **/
     function date_select($params = '') {
         global $db;
     // Get the available date range

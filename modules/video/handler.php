@@ -6,7 +6,7 @@
  * @package     MythWeb
  * @subpackage  Video
  *
-/**/
+ **/
 
 /**
  * This points to the local filesystem path where MythVideo has been told to
@@ -14,7 +14,7 @@
  *
  * @global  string   $GLOBALS['mythvideo_dir']
  * @name    $mythvideo_dir
-/**/
+ **/
 
 //// dont need this...
 //    global $mythvideo_dir;

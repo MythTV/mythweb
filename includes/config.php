@@ -13,7 +13,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
     if (!isset($_SESSION['cache_engine']))
         $_SESSION['cache_engine'] = 'Cache_Null';

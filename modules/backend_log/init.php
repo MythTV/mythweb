@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Logs
  *
-/**/
+ **/
 
     global $db;
 

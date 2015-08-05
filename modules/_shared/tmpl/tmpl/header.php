@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 if (!defined('tmpl'))
     define('tmpl', 'default');

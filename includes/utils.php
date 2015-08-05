@@ -15,7 +15,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 /**
  * Get or set a database setting.
@@ -25,7 +25,7 @@
  * @param string $new_value New value (settings.data) to set.
  *
  * @return string The value (settings.data) associated with $field and $hostname.
-/**/
+ **/
     function setting($field, $hostname=null, $new_value = "old\0old", $clearSettingsCache = true) {
         global $db;
         static $cache = array();
@@ -74,7 +74,7 @@
 
 /**
  * Queries the database settings table for a particular setting, and returns its value
-/**/
+ **/
     function get_backend_setting($setting, $host = null) {
         if (is_null($host))
             $host = '%';
@@ -86,7 +86,7 @@
  *
  * @param        string     $file       Name of the file to look for
  * @return       mixed      Full path to the requested file, or null if it isn't found.
-/**/
+ **/
     function find_in_path($file) {
     // Split out each of the search paths
         foreach (explode(PATH_SEPARATOR, ini_get('include_path')) as $path) {
@@ -101,7 +101,7 @@
 
 /**
  * Print a redirect header and exit
-/**/
+ **/
     function redirect_browser($url) {
         header("Location: $url");
         echo "\n";
@@ -111,7 +111,7 @@
 /**
  * Pass in a filesize in bytes, and receive a more human-readable version
  * JS: adapted from php.net: sponger 10-Jun-2002 12:28
-/**/
+ **/
     function nice_filesize($size) {
     //  If it's less than a kb we just return the size
         if ($size < kb)
@@ -133,7 +133,7 @@
  * @param int $length time to convert.
  *
  * @return string Translated hour/minute string.
-/**/
+ **/
     function nice_length($length) {
         $years  = intVal( $length / 31556926 );
         $length = $length - ( $years * 31556926 );
@@ -161,7 +161,7 @@
 
 /**
  * Converts an sql timestamp into unixtime
-/**/
+ **/
     function unixtime($sql_timestamp) {
         return gmmktime(substr($sql_timestamp, 8,  2),    // hour
                         substr($sql_timestamp, 10, 2),    // minute
@@ -176,7 +176,7 @@
  *
  *  For lack of a function that escapes strings AND adds quotes, I wrote one
  *  myself to make the rest of my code read a bit easier.
-/**/
+ **/
     function escape($string, $allow_null = false) {
         global $db;
         return $db->escape($string);
@@ -189,14 +189,14 @@
  * @param string $str   String to convert to html entities
  *
  * @return UTF-8 entities for $str
-/**/
+ **/
     function html_entities($str) {
         return htmlentities($str, ENT_COMPAT, 'UTF-8');
     }
 
 /**
  * Returns a sorted list of files in a directory, minus . and ..
-/**/
+ **/
     function get_sorted_files($dir = '.', $regex = '', $negate = false) {
         $list = array();
         $handle = opendir($dir);
@@ -214,7 +214,7 @@
  * returns $this or $or_this
  * if $gt is set to true, $this will only be returned if it's > 0
  * if $gt is set to a number, $this will only be returned if it's > $gt
-/**/
+ **/
     function _or($this, $or_this, $gt = false) {
         if ($gt === true)
             return $this > 0 ? $this : $or_this;
@@ -229,7 +229,7 @@
  * determined based on the browser.
  *
  * @return string URL to access recordings
-/**/
+ **/
     function video_url($show, $ext = false) {
     // URL override?
         if (!$ext && $_SESSION['file_url_override'])
@@ -251,7 +251,7 @@
 
 /**
  * @return $str converted UTF-8 to local encoding
-/**/
+ **/
     function utf8tolocal($str) {
         if (empty($_SERVER['fs_encoding']))
             return $str;
@@ -266,7 +266,7 @@
 
 /**
  * Prints out a piece of data to the firebug console.
-/**/
+ **/
     function debug($data, $file = false) {
     // Put our data into a string
         if (is_array($data) || is_object($data))
@@ -313,7 +313,7 @@
 /**
  * Converts a myth timestamp into a unix timestamp
  * 1.0 cvs changed the format to:  2003-06-28T06:30:00
-/**/
+ **/
     function myth2unixtime($mythtime) {
         if (strlen($mythtime) < 1)
             return '';
@@ -322,7 +322,7 @@
 
 /**
  * Converts a unix timestamp into a myth timestamp
-/**/
+ **/
     function unix2mythtime($time) {
         return gmdate('Y-m-d\TH:i:s', $time);
     }

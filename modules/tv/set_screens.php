@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
     $Screens = array('upcoming recordings'  => array('title', 'original airdate', 'episode number', 'channel', 'recording group', 'airdate', 'record date', 'length'),
                     );

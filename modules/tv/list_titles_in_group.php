@@ -4,7 +4,7 @@
  *
  * @package     MythWeb
  * @subpackage  TV
-/**/
+ **/
 
     if (!isset($_REQUEST['group']) || strtolower($_REQUEST['group']) == 'all')
         $group = 'All';

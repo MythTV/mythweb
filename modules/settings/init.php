@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
 // The settings module is always enabled.
     $Modules['settings'] = array('path'        => 'settings',

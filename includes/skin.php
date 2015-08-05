@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 /*  So the order we do things is the following:
    If the user is attempting to reset the template, use that value

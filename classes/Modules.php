@@ -6,7 +6,7 @@
  *
  * @package     MythTV
  *
-/**/
+ **/
 
 class Modules implements Cache_Enabled {
     static private $Modules;

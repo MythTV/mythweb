@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
     $db->disable_fatal_errors();
     $has_tv = $db->query_col('SELECT COUNT(*) FROM channel WHERE visible=1');

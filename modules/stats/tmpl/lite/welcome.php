@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Stats
  *
-/**/
+ **/
 
 // Open with a div and an image
     echo '<div id="info_stats">',

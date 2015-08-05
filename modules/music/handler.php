@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Music
  *
-/**/
+ **/
 
 // Raw passthrough?
     if (substr($Path[1], -3) == '.js') {
@@ -36,7 +36,7 @@
 /**
  * Print the music streaming base URL.  Defined here because it's used by a
  * couple of different files called above.
-/**/
+ **/
     function stream_url() {
         return root_auth_url.'music/';
     }

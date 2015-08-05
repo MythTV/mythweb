@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
 // Reset keybindings?   (still need a way to get the backend to repopulate these)
 #    if ($_GET['RESET_KEYS']) {

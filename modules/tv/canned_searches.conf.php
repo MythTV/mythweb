@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 $Canned_Searches = array(
 

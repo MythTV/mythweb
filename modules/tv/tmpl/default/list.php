@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythWeb - ' . t('Program Listing') . ': '.strftime($_SESSION['date_statusbar'], $list_starttime);

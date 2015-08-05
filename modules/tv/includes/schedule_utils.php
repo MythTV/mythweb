@@ -8,11 +8,11 @@
  * @package     MythTV
  * @subpackage  TV
  *
-/**/
+ **/
 
 /**
  *  Generates a schedule filter parameter from the POST parameters
-/**/
+ **/
     function generateFilter() {
         $total = 0;
         foreach (Schedule::availableRecordFilters() as $id => $filter) {
@@ -24,7 +24,7 @@
 
 /**
  * Prints a <select> of the available recording inputs
-/**/
+ **/
     function input_select($selected, $ename='prefinput') {
         static $inputs;
     // Gather the data

@@ -5,7 +5,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
     $tables = $db->query('SHOW TABLES');
     while ($table = $tables->fetch_col()) {

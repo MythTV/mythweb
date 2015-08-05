@@ -8,7 +8,7 @@
  *
  * @package     MythWeb
  * @subpackage  Settings
-/**/
+ **/
 
     $Settings['mythweb'] = array('name'    => t('MythWeb'),
                                  'choices' => array('session'   => t('My Session'),

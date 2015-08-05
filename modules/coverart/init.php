@@ -7,5 +7,5 @@
  * @package     MythWeb
  * @subpackage  Video Coverart
  *
-/**/
+ **/
 ?>

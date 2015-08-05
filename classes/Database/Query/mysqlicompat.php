@@ -25,11 +25,11 @@
  * @uses        Database_mysqlicompat.php
  * @uses        Database_Query.php
  *
-/**/
+ **/
 
 /**
  * The basic mysqli database query type.
-/**/
+ **/
 class Database_Query_mysqlicompat extends Database_Query {
 
 /**
@@ -37,7 +37,7 @@ class Database_Query_mysqlicompat extends Database_Query {
  *
  * @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
  * @param mixed  ...       Additional arguments
-/**/
+ **/
     function execute() {
     // Load the function arguments, minus the query itself, which we already extracted
         $args = func_get_args();
@@ -108,12 +108,12 @@ class Database_Query_mysqlicompat extends Database_Query {
  *
  *      mysqli_fetch_row($result);   ->  $sh->fetch_row();
  *      mysqli_affected_rows($dbh);  ->  $sh->affected_rows();
-/**/
+ **/
 
 /**
  * Fetch a single column
  * @return mixed
-/**/
+ **/
     function fetch_col() {
         list($return) = mysqli_fetch_row($this->sh);
         return $return;
@@ -131,7 +131,7 @@ class Database_Query_mysqlicompat extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysqli-fetch-row.php
  * @return array
-/**/
+ **/
     function fetch_row() {
         return mysqli_fetch_row($this->sh);
     }
@@ -141,7 +141,7 @@ class Database_Query_mysqlicompat extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysqli-fetch-assoc.php
  * @return assoc
-/**/
+ **/
     function fetch_assoc() {
         return mysqli_fetch_assoc($this->sh);
     }
@@ -151,7 +151,7 @@ class Database_Query_mysqlicompat extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysqli-fetch-array.php
  * @return assoc
-/**/
+ **/
     function fetch_array($result_type=MYSQLI_BOTH) {
         return mysqli_fetch_array($this->sh, $result_type);
     }
@@ -161,7 +161,7 @@ class Database_Query_mysqlicompat extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysqli-fetch-object.php
  * @return object
-/**/
+ **/
     function fetch_object() {
         return mysqli_fetch_object($this->sh);
     }
@@ -169,7 +169,7 @@ class Database_Query_mysqlicompat extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysqli-data-seek.php
  * @return bool
-/**/
+ **/
     function data_seek($row_number) {
         return mysqli_data_seek($this->sh, $row_number);
     }
@@ -177,7 +177,7 @@ class Database_Query_mysqlicompat extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysqli-num-rows.php
  * @return int
-/**/
+ **/
     function num_rows() {
         return $this->num_rows;
     }
@@ -185,7 +185,7 @@ class Database_Query_mysqlicompat extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysqli-data-seek.php
  * @return int
-/**/
+ **/
     function affected_rows() {
         return $this->affected_rows;
     }
@@ -193,14 +193,14 @@ class Database_Query_mysqlicompat extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysqli-insert-id.php
  * @return int
-/**/
+ **/
     function insert_id() {
         return $this->insert_id;
     }
 
 /**
  * For anal people like me who like to free up memory manually
-/**/
+ **/
     function finish() {
         if ($this->sh && is_resource($this->sh))
             mysqli_free_result($this->sh);

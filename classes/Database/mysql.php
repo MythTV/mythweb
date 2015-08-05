@@ -22,11 +22,11 @@
  * @uses        Database.php
  * @uses        Database_Query_mysql.php
  *
-/**/
+ **/
 
 /**
  * Database connection class for mysql.
-/**/
+ **/
 class Database_mysql extends Database {
 
 /**
@@ -37,7 +37,7 @@ class Database_mysql extends Database {
  * @param string $password     Password to use when connecting
  * @param string $server       Database server to connect to (Default: localhost)
  * @param string $port         Port or socket address to connect to
-/**/
+ **/
     function __construct($db_name, $login, $password, $server='localhost', $port=NULL, $options=NULL) {
     // Attempt to make sure the extension is loaded
         if (!extension_loaded('mysql')) {
@@ -67,7 +67,7 @@ class Database_mysql extends Database {
  * @param string $string    string to escape
  *
  * @return string           escaped string
-/**/
+ **/
     function escape($string) {
     // Null?
         if (is_null($string))
@@ -84,7 +84,7 @@ class Database_mysql extends Database {
  * @param string $string    string to escape
  *
  * @return string           escaped string
-/**/
+ **/
     function escape_regex($string) {
     // Null?
         if (is_null($string))
@@ -100,7 +100,7 @@ class Database_mysql extends Database {
  *  @param string $query    The query string
  *
  *  @return Database_Query_mysql
-/**/
+ **/
     function &prepare($query) {
         $new_query = new Database_Query_mysql($this, $query);
         return $new_query;
@@ -108,28 +108,28 @@ class Database_mysql extends Database {
 
 /**
  * @return string The most recent error string
-/**/
+ **/
     function _errstr() {
         return $this->dbh ? mysql_error($this->dbh) : mysql_error();
     }
 
 /**
  * @return int The most recent error number
-/**/
+ **/
     function _errno() {
         return $this->dbh ? mysql_errno($this->dbh) : mysql_errno();
     }
 
 /**
  * @return string Information about the mysql server
-/**/
+ **/
     function server_info() {
         return mysql_get_server_info($this->dbh);
     }
 
 /**
  * @return bool true on success
-/**/
+ **/
     function close() {
         return mysql_close($this->dbh);
     }

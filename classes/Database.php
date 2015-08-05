@@ -30,13 +30,13 @@
  * @package     MythWeb
  * @subpackage  Database
  *
-/**/
+ **/
 
 /**
  * Abstract superclass for all database connection types.  This also defines the
  * Database::connect() function that handles creating instances of the
  * appropriate database handle for the requested database engine.
-/**/
+ **/
 class Database {
 
 /** @var resource   Resource handle for this database connection */
@@ -73,7 +73,7 @@ class Database {
 
 /**
  * Legacy constructor to catch things that the abstract classification won't
-/**/
+ **/
     function __construct() {
         trigger_error('The Database class should never be created as an object.  Use Database::connect() instead.', E_USER_ERROR);
     }
@@ -98,7 +98,7 @@ class Database {
  *                          engines that support them
  *
  * @return object           Database subclass based on requested $engine
-/**/
+ **/
     static function &connect($db_name, $login, $password, $server='localhost', $port=NULL, $engine='mysql_detect', $options=array()) {
     // For consistency, engine names are all lower case.
         $engine = strtolower($engine);
@@ -137,7 +137,7 @@ class Database {
  * @param mixed $args Scalar or nested array to be "flattened" into a single array.
  *
  * @return array      Single array comprised of all scalars present in $args.
-/**/
+ **/
     static function smart_args($args) {
         $new_args = array();
     // Not an array
@@ -160,7 +160,7 @@ class Database {
  *  Calls $this->escape() on an array of strings.
  *
  *  @return string
-/**/
+ **/
     function escape_array($array) {
         $new = array();
         foreach ($array as $string) {
@@ -173,7 +173,7 @@ class Database {
 
 /**
  * Execute any destruct handler functions.
-/**/
+ **/
     function __destruct() {
     // Globals already destroyed?
         if ($this->global_name && empty($GLOBALS[$this->global_name]))
@@ -195,7 +195,7 @@ class Database {
  * might need to use it.
  *
  * @param string $name The global name this instance is registered as.
-/**/
+ **/
     function register_global_name($name) {
         if ($GLOBALS[$name] === $this) {
             $this->global_name = $name;
@@ -210,7 +210,7 @@ class Database {
  * session_write_close) gets executed before in time.
  *
  * @link http://us2.php.net/session_set_save_handler
-/**/
+ **/
     function register_destruct_handler($func, $params=null) {
         $this->destruct_handlers[] = array('f' => $func,
                                            'p' => $params);
@@ -222,7 +222,7 @@ class Database {
  *  @param string $error     The string to set the error message to.  Set to
  *                           false if you want to wipe out the existing errors.
  *  @param bool   $backtrace Include a backtrace along with the error message.
-/**/
+ **/
     function error($error='', $backtrace=true) {
         if ($error === false) {
             $this->err   = null;
@@ -251,7 +251,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return mixed           Statement handle for the current type of database connection
-/**/
+ **/
     function &query($query) {
     // Hack to get query_row and query_assoc working correctly
         $args = array_slice(func_get_args(), 1);
@@ -275,7 +275,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return array
-/**/
+ **/
     function query_row($query) {
     // Query and return
         $args  = array_slice(func_get_args(), 1);
@@ -296,7 +296,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return assoc
-/**/
+ **/
     function query_assoc($query) {
     // Query and return
         $args  = array_slice(func_get_args(), 1);
@@ -317,7 +317,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return mixed
-/**/
+ **/
     function query_col($query) {
     // Query and return
         $args  = array_slice(func_get_args(), 1);
@@ -338,7 +338,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return array
-/**/
+ **/
     function query_list($query) {
     // Query and return
         $args  = array_slice(func_get_args(), 1);
@@ -363,7 +363,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return array
-/**/
+ **/
     function query_list_array($query) {
     // Query and return
         $args  = array_slice(func_get_args(), 1);
@@ -388,7 +388,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return array
-/**/
+ **/
     function query_list_assoc($query) {
     // Query and return
         $args  = array_slice(func_get_args(), 1);
@@ -415,7 +415,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return array
-/**/
+ **/
     function query_keyed_list_array($key, $query) {
     // Query and return
         $args  = array_slice(func_get_args(), 2);
@@ -442,7 +442,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return array
-/**/
+ **/
     function query_keyed_list_assoc($key, $query) {
     // Query and return
         $args  = array_slice(func_get_args(), 2);
@@ -466,7 +466,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return int   The number of rows affected by the requested query.
-/**/
+ **/
     function query_num_rows($query) {
     // Query and return
         $args = array_slice(func_get_args(), 1);
@@ -487,7 +487,7 @@ class Database {
  *  @param mixed  ...       Additional arguments
  *
  *  @return int   The insert_id generated by the requested query.
-/**/
+ **/
     function query_insert_id($query) {
     // Query and return
         $args = array_slice(func_get_args(), 1);
@@ -503,7 +503,7 @@ class Database {
 /**
  *  Wrapper for the last query statement's insert_id method.
  *  @return int
-/**/
+ **/
     function insert_id() {
         return $this->last_sh->insert_id();
     }
@@ -511,21 +511,21 @@ class Database {
 /**
  *  Wrapper for the last query statement's affected_rows method.
  *  @return int
-/**/
+ **/
     function affected_rows() {
         return $this->last_sh->affected_rows();
     }
 
 /**
  * This function and the next one control if the mysql_query throws a fatal error or not
-/**/
+ **/
     function enable_fatal_errors() {
         $this->fatal_errors = true;
     }
 
 /**
  * This function disables the fatal error trigger code
-/**/
+ **/
     function disable_fatal_errors() {
         $this->fatal_errors = false;
     }

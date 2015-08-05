@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Remote
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythFrontend Remote Control';

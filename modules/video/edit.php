@@ -6,7 +6,7 @@
  * @package     MythWeb
  * @subpackage  Video
  *
-/**/
+ **/
 
 /** @todo FIXME: this file needs to be rewritten to split out content/display */
 

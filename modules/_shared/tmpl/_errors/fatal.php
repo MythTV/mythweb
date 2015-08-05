@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage
  *
-/**/
+ **/
 // Set the desired page title
     $page_title = 'MythWeb - Error - '.htmlentities($errstr, ENT_COMPAT, 'UTF-8');
 // Custom headers

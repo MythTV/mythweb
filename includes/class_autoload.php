@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Sometimes a function will use if class_exists, and thus we shouldn't fail if we can't find it.
 

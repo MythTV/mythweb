@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Make sure the data directory exists and is writable
     if (!is_dir('data') && !mkdir('data', 0755)) {

@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  * @subpackage  Weather
-/**/
+ **/
 
 // Load all of the known mythtv frontend hosts
     $Settings_Hosts = array();

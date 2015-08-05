@@ -10,7 +10,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Were we passed a timestamp?  This is going to be the most common occurrence
     if ($_REQUEST['time'])
@@ -46,7 +46,7 @@
 
 /**
  * Prints a <select> of the available hour range
-/**/
+ **/
     function hour_select($params = '') {
         global $list_starttime;
         echo "<select name=\"hour\" $params>";
@@ -61,7 +61,7 @@
 
 /**
  * Prints a <select> of the available date range
-/**/
+ **/
     function date_select($params = '') {
         global $db;
         global $list_starttime;

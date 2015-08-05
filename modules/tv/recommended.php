@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 	$recommend_enabled = setting('recommend_enabled', null);
 	$recommend_server = setting('recommend_server', null);

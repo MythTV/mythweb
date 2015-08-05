@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // What *should* the database version be?
     define('WebDBSchemaVer', 4);

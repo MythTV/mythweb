@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Load the canned searches
     require_once 'modules/tv/canned_searches.conf.php';

@@ -6,7 +6,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Path-based
     if ($Path[3])
@@ -138,7 +138,7 @@
 
 /**
  * prints a <select> of the available channels
-/**/
+ **/
     function channel_select($chanid) {
         $Channel_list = Channel::getChannelList();
         echo '<select name="channel">';

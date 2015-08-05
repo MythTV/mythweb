@@ -8,7 +8,7 @@
  *
  * http://www.gossamer-threads.com/lists/mythtv/dev/102890?search_string=keyword%20search;#102890
  *
-/**/
+ **/
 
 // Path-based
     if ($Path[3])
@@ -187,7 +187,7 @@
 
 /**
  * Prints a <select> of the available program categories
-/**/
+ **/
     function category_select() {
         echo '<select name="channel"><option value=""';
         if (empty($chanid))
@@ -198,7 +198,7 @@
 
 /**
  * Prints a <select> of the available program category_types
-/**/
+ **/
     function category_type_select() {
         echo '<select name="channel"><option value=""';
         if (empty($chanid))
@@ -209,7 +209,7 @@
 
 /**
  * prints a <select> of the available channels
-/**/
+ **/
     function channel_select($chanid) {
         $Channel_list = Channel::getChannelList();
         echo '<select name="channel"><option value=""';
@@ -238,7 +238,7 @@
 
 /**
  * Prints a <select> of the various weekdays
-/**/
+ **/
     function day_select($day, $name='findday') {
         $days = array(t('Sunday'),    t('Monday'),   t('Tuesday'),
                              t('Wednesday'), t('Thursday'), t('Friday'),

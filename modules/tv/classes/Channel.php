@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 class Channel extends MythBase {
     private static $channel_list = null;

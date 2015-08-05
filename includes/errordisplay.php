@@ -15,14 +15,14 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 /**
  * Error messages should prevent saving.
  *
  * @global  mixed   $GLOBALS['Errors']
  * @name    $Errors
-/**/
+ **/
     global $Errors;
     $Errors = array();
 
@@ -31,7 +31,7 @@
  *
  * @global  mixed   $GLOBALS['Warnings']
  * @name    $Warnings
-/**/
+ **/
     global $Warnings;
     $Warnings = array();
 
@@ -42,14 +42,14 @@
  *
  * @global  mixed   $GLOBALS['BadItems']
  * @name    $BadItems
-/**/
+ **/
     global $BadItems;
     $BadItems = array();
 
 /**
  * This function displays any errors or warnings, in a javascript alert if the
  * browser has scripting enabled.
-/**/
+ **/
     function display_errors($leading='<p align="center">', $trailing = '</p>') {
         global $Errors, $Warnings;
     // Errors or warnings from a previous page?
@@ -96,7 +96,7 @@ EOF;
 /**
  * This function just draws a simple red line around something, to mark it as
  * containing erroneous data.  It really needs to be replaced with a style.
-/**/
+ **/
     function highlight_error($content, $field = '') {
         global $BadItems;
         if (!$field || $BadItems[$field])
@@ -110,7 +110,7 @@ EOF;
  *
  * @param string $warning The warning to add
  * @param mixed  $fields  String or array of strings to add to $BadItems.
-/**/
+ **/
     function add_error($error, $fields = NULL) {
         global $Errors, $BadItems;
         if (!preg_match('/\\w/', $error)) return;
@@ -130,7 +130,7 @@ EOF;
  *
  * @param string $warning The warning to add
  * @param mixed  $fields  String or array of strings to add to $BadItems.
-/**/
+ **/
     function add_warning($warning, $fields = NULL) {
         global $Warnings, $BadItems;
         if (!preg_match('/\\w/', $warning)) return;
@@ -147,21 +147,21 @@ EOF;
 
 /**
  * Test the existence of errors
-/**/
+ **/
     function errors() {
         return !empty($GLOBALS['Errors']);
     }
 
 /**
  * Test the existence of warnings
-/**/
+ **/
     function warnings() {
         return !empty($GLOBALS['Warnings']);
     }
 
 /**
  * Save errors and warnings into a session error/warning variable
-/**/
+ **/
     function save_session_errors() {
         global $Errors, $Warnings;
         $_SESSION['WARNINGS'] = array();
@@ -181,7 +181,7 @@ EOF;
  * Show one of the tailored error pages.
  *
  * @param string $error The error template page to load
-/**/
+ **/
     function tailored_error($error) {
         require_once "modules/_shared/tmpl/_errors/$error.php";
         exit;
@@ -193,7 +193,7 @@ EOF;
  * @param string $title  Page title.
  * @param string $header String for the error header.
  * @param string $text   Error text.
-/**/
+ **/
     function custom_error($text, $header='Error', $title='Error') {
         require_once 'modules/_shared/tmpl/_errors/error.php';
         exit;

@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Include our dependencies -- these are probably called elsewhere, but require_once will handle it
     require_once 'includes/programs.php';

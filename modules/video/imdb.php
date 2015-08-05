@@ -6,7 +6,7 @@
  * @package     MythWeb
  * @subpackage  Video
  *
-/**/
+ **/
 
     header('Content-Type: application/json');
     $return = array();

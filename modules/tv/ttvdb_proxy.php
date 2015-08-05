@@ -8,7 +8,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
     header('Content-Type: image/jpg');
 

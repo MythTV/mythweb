@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
     $hostname   = $Path[2];
     $chanid     = $Path[3];

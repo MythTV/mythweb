@@ -8,7 +8,7 @@
  * @package     MythWeb
  * @subpackage  Stats
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'Recording Statistics';

@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Default requested view
     if (empty($_REQUEST['view_module']) || !Modules::getModule($_REQUEST['view_module']))

@@ -5,7 +5,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 if (empty($_REQUEST['host'])) {
     header('HTTP/1.0 400 Bad Request');

@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Open with a div and an image
     echo '<div id="info_status">',

@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Status
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythTV Backend Status';

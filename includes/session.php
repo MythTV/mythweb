@@ -11,7 +11,7 @@
  *
  * @uses        $db
  *
-/**/
+ **/
 
 // Start the session
     session_name('mythweb_id');
@@ -32,14 +32,14 @@
 
 /**
  * We don't actually have to do anything for open and close, since we connected to the database in init.php
-/**/
+ **/
     function sess_do_nothing() {
         return true;
     }
 
 /**
  * Read the session data from the database
-/**/
+ **/
     function sess_read($id) {
         global $db;
         if (!empty($_SERVER['REMOTE_USER']))
@@ -60,7 +60,7 @@
 
 /**
  * Write the session data to the database
-/**/
+ **/
     function sess_write($id, $data) {
         global $db;
         if (empty($db))
@@ -77,7 +77,7 @@
 
 /**
  * Destroy the session
-/**/
+ **/
     function sess_destroy($id) {
         global $db;
         if (!empty($_SERVER['REMOTE_USER']))
@@ -90,7 +90,7 @@
 
 /**
  * Clear out any old sessions (we override $maxlifetime with our own variable)
-/**/
+ **/
     function sess_gc($maxlifetime) {
         global $db;
         $db->query('DELETE FROM mythweb_sessions WHERE NOW() > DATE_ADD(modified, INTERVAL ? SECOND) AND id != "default"',

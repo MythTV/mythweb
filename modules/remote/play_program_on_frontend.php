@@ -5,7 +5,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
     $chanid    = $_REQUEST['chanid'];
     $starttime = $_REQUEST['starttime'];

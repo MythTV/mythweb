@@ -8,7 +8,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythWeb - '.t('Program Detail').":  $schedule->title";

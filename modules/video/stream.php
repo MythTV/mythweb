@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  * @subpackage  Video
-/**/
+ **/
 
 // Yes, a db connection
     global $db;

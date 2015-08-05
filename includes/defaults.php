@@ -9,7 +9,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 	global $headers;
 	$headers = array();

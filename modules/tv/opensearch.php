@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Requesting information about the search query itself
     if ($_REQUEST['type'] == 'xml') {

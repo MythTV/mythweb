@@ -4,7 +4,7 @@
  *
  * @package     MythWeb
  * @subpackage  TV
-/**/
+ **/
 /*
     $SubModules[] = array('Name'    => 'Listings',
                           'URL'     => 'tv/list',

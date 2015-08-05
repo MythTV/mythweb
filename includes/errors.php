@@ -17,7 +17,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Probably already loaded, but it *is* used by this library
     require_once 'includes/errordisplay.php';
@@ -29,7 +29,7 @@
  *
  * @global  mixed   $GLOBALS['_DEBUG']
  * @name    $_DEBUG
-/**/
+ **/
     global $_DEBUG;
 
 // Define some easier-to-read error values
@@ -54,7 +54,7 @@
 /**
  * This user-defined assert handler sends an email with the assert info, and
  * just tosses a silent error out if it fails.
-/**/
+ **/
     function assert_handler($file, $line, $code) {
         $subject = 'ASSERT';
         $err = build_backtrace(-1, $code, $file, $line);
@@ -67,7 +67,7 @@
  *
  * @param  int $errno The error number to look up.
  * @return string     Human-readable name for error number $errno.
-/**/
+ **/
     function error_type($errno) {
         static $types = array(
             E_ERROR             => 'Error',
@@ -100,7 +100,7 @@
  *  it prints a more reassuring message to the viewer of the page and sends an
  *  email message to the address stored in Error_Email, which is defined in
  *  conf.php.
-/**/
+ **/
     function error_handler($errno, $errstr, $errfile, $errline, $vars) {
         global $db;
     // Leave early if we haven't requested reports from this kind of error
@@ -154,7 +154,7 @@
  * Build and return a human-readable backtrace message
  *
  * @return string containing the backtrace
-/**/
+ **/
     function build_backtrace($errno=null, $errstr=null, $errfile=null, $errline=null, $vars=null) {
         global $_DEBUG;
     // Generate an error message that can be emailed to the administrator
@@ -231,7 +231,7 @@
  * @param string $errfile   File the backtrace should reference.
  * @param int    $errline   Line in $errfile that the backtrace should reference.
  * @param string $subject   Email subject tagline.
-/**/
+ **/
     function email_backtrace($backtrace=null, $errfile=null, $errline=null, $subject="Backtrace") {
     // No email, just return
         if (!strstr(error_email, '@'))
