@@ -137,13 +137,28 @@
     function updateHomePage(item) {
          var homePage = $("home-page");
          var homeButton = $("metadata-home-page-link");
+         var traktPage = $("trakt-page");
 
          // if this item doesn't have a home page link then
          // remove the existing link or ignore
          if (!item.HomePage) {
              homePage && Element.remove(homePage);
              homeButton && Element.remove(homeButton);
+             traktPage && Element.remove(traktPage);
              return;
+         }
+         var episodeID = item.HomePage.match(/.*&id=(\d+)/)[1];
+         var traktHREF = "http://trakt.tv/search/tvdb/" + episodeID + "?id_type=episode"
+
+         // update the link or create it if this item does have a trakt page
+         if (traktPage) {
+              traktPage.href = traktHREF;
+         } else {
+              $($$(".x-links")[0].children[1]).insert({top:
+                  new Element("a",
+                      {href: traktHREF,
+                       target: "mythtwebtrakt", id: "trakt-page"}).
+                      update(item.Title + " " + "<?php echo t("Trakt.tv Home Page") ?>")});
          }
 
          // update the link or create it if this item does have a home page
