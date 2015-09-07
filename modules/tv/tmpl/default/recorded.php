@@ -231,7 +231,13 @@ EOM;
             if ($show->stereo)
                 echo '<img src="'.skin_url.'/img/flags/stereo.png"      title="'.t('Stereo').'"              alt="">';
             if ($show->hdtv)
-                echo '<img src="'.skin_url.'/img/flags/hd.png"          title="'.t('HD').'"                  alt="">';
+                echo '<img src="'.skin_url.'/img/flags/hd.png"         height=18 title="'.t('HD').'"                  alt="">';
+            if ($show->hd_ready)
+                echo '<img src="'.skin_url.'/img/flags/hd720.png"      height=18    title="'.t('720').'"                  alt="">';
+            if ($show->fullhd)
+                echo '<img src="'.skin_url.'/img/flags/hd1080.png"     height=18     title="'.t('1080').'"                  alt="">';
+            if ($show->damaged)
+                echo '<img src="'.skin_url.'/img/flags/damaged.png"    height=22      title="'.t('Damaged').'"                  alt="">';
             if ($show->has_commflag)
                 echo '<img src="'.skin_url.'/img/flags/commflagged.png" title="'.t('Commercials Flagged').'" alt="">';
             if ($show->has_cutlist)
