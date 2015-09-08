@@ -727,8 +727,14 @@ function musicLookup($type, $itemid)
         t('Recently Added Albums').'</a><br>
         <a class="music" href="#" onclick="updateBox(\'recentplay\',0); return false;">'.
         t('Recently Played Songs').'</a><br>
+        <a class="music" href="#" onclick="updateBox(\'recentplayalbum\',0); return false;">'.
+        t('Recently Played Albums').'</a><br>
         <a class="music" href="#" onclick="updateBox(\'topplay\',0); return false;">'.
         t('Top Played Songs').'</a><br>
+        <a class="music" href="#" onclick="updateBox(\'topplayalbum\',0); return false;">'.
+        t('Top Played Albums').'</a><br>
+        <a class="music" href="#" onclick="updateBox(\'topplayartist\',0); return false;">'.
+        t('Top Played Artist').'</a><br>
         <a class="music" href="#" onclick="updateBox(\'toprated\',0); return false;">'.
         t('Top Rated Songs').'</a><br>
         </p>
@@ -809,7 +815,65 @@ function musicLookup($type, $itemid)
       while ($row = mysql_fetch_array($result))
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
-          '', '', $row['name'], '', '', '', '');
+          '', '', $row['name'], $row['album_name'], $row['numplays'], '', '');
+      }
+      mysql_free_result($result);
+      $output .= '</ul>';
+      break;
+
+    case 'topplayalbum':
+      $query = 'SELECT ma.album_name, ma.album_id, ms.numplays, ms.name, mt.artist_name, ms.song_id, sum(ms.numplays) as playcount '.
+        'FROM music_songs AS ms '.
+        'LEFT JOIN music_albums AS ma ON ms.album_id=ma.album_id '.
+        'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
+        'WHERE ms.numplays > 0 '.
+        'GROUP BY ms.album_id '.
+        'ORDER BY playcount DESC '.
+        'LIMIT 40';
+      $result = mysql_query($query);
+      if (!$result)
+        break;
+
+      $output = '<div class="head">
+        <div class="right">
+        <a class="music" href="#"
+          onclick="switchPage(\'stats\'); return false;"
+          title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
+        <h2 class="music">'.t('Top Played Albums').'</h2></div>
+        <ul class="music">';
+      while ($row = mysql_fetch_array($result))
+      {
+        $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
+          $row['artist_name'], '', '', '', $row['playcount']."x");
+      }
+      mysql_free_result($result);
+      $output .= '</ul>';
+      break;
+
+    case 'topplayartist':
+      $query = 'SELECT ma.album_name, ma.album_id, mt.artist_id, ms.numplays, ms.name, mt.artist_name, ms.song_id, sum(ms.numplays) as playcount '.
+        'FROM music_songs AS ms '.
+        'LEFT JOIN music_albums AS ma ON ms.album_id=ma.album_id '.
+        'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
+        'WHERE ms.numplays > 0 '.
+        'GROUP BY ms.artist_id '.
+        'ORDER BY playcount DESC '.
+        'LIMIT 40';
+      $result = mysql_query($query);
+      if (!$result)
+        break;
+
+      $output = '<div class="head">
+        <div class="right">
+        <a class="music" href="#"
+          onclick="switchPage(\'stats\'); return false;"
+          title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
+        <h2 class="music">'.t('Top Played Artist').'</h2></div>
+        <ul class="music">';
+      while ($row = mysql_fetch_array($result))
+      {
+        $output .= getHtmlArtist($row['artist_id'], $row['artist_name'],
+          '', '', '', $row['playcount']."x");
       }
       mysql_free_result($result);
       $output .= '</ul>';
@@ -836,8 +900,37 @@ function musicLookup($type, $itemid)
       while ($row = mysql_fetch_array($result))
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
-          '', '', $row['name'], '', '', '', '');
+          '', '', $row['name'], date('m.d.Y', $row['playdate']), '', '', '');
       }
+      $output .= '</ul>';
+    break;
+
+    case 'recentplayalbum':
+      $query = 'SELECT ma.album_id, ms.name, ms.song_id, mt.artist_name, ma.album_name, UNIX_TIMESTAMP(ms.lastplay) AS playdate '.
+        'FROM music_songs AS ms '.
+        'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
+        'LEFT JOIN music_albums AS ma ON ms.album_id=ma.album_id '.
+        'WHERE ms.numplays > 0 '.
+        'GROUP BY ms.album_id '.
+        'ORDER BY ms.lastplay DESC '.
+        'LIMIT 40';
+      $result = mysql_query($query);
+      if (!$result)
+        break;
+
+      $output = '<div class="head">
+        <div class="right">
+        <a class="music" href="#"
+          onclick="switchPage(\'stats\'); return false;"
+          title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
+        <h2 class="music">'.t('Recently Played Albums').'</h2></div>
+        <ul class="music">';
+      while ($row = mysql_fetch_array($result))
+      {
+        $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
+          $row['artist_name'], '', '', '', date('m.d.Y', $row['playdate']));
+      }
+      mysql_free_result($result);
       $output .= '</ul>';
       break;
 

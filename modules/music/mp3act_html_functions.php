@@ -97,6 +97,47 @@ function getHtmlAlbum($id, $albumName, $artistName='', $year='', $numTracks='', 
   return $output;
 }
 
+function getHtmlArtist($id, $artistName='', $year='', $numTracks='', $length='', $extra='')
+{
+  static $alt = true;
+  $alt = !$alt;
+  $output = '<li'.($alt ? ' class="alt"' : '').'>';
+
+  if (!empty($extra))
+    $output .= '<small>'.$extra.'</small>';
+
+  $output .= '<a class="music" href="#"
+      onclick="pladd(\'artist\','.$id.'); return false;"
+      title="'.t('Add Artist to Current Playlist').'">
+    <img src="'.pic_dir().'add.gif" /></a>
+    <a class="music" href="#"
+      onclick="play(\'artist\','.$id.'); return false;"
+      title="'.t('Play this Artist Now').'">
+    <img src="'.pic_dir().'play.gif" /></a>
+    <a class="music" href="#"
+      onclick="updateBox(\'artist\','.$id.'); return false;"
+      title="'.sprintf(t('View Details of %s'), $artistName).'">'.
+    $artistName;
+
+  $output .= '</a>';
+
+  $sub_output = '';
+
+  if (!empty($year))
+    $sub_output .= t('Year').': '.$year.'<br>';
+
+  if (!empty($numTracks))
+    $sub_output .= t('# Tracks').': '.$numTracks.'<br>';
+
+  if (!empty($length))
+    $sub_output .= t('Total Length').': '.$length.'<br>';
+
+  if (!empty($sub_output))
+    $output .= '<p>'.$sub_output.'</p>';
+
+  $output .= '</li>';
+  return $output;
+}
 
 function getHtmlPlaylist($playlistId, $playlistName, $songcount, $length, $unsavedId = 0, $blnShowDelete = true)
 {
