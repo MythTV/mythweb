@@ -7,7 +7,7 @@
 # backends and database connections
 ################################################################################
 
-FROM ubuntu:14.10
+FROM ubuntu:14.04
 MAINTAINER Rob Smith <kormoc@gmail.com>
 
 RUN apt-get update
@@ -30,14 +30,16 @@ EXPOSE 80
 RUN rm -rvf /var/www/html/*
 
 # Pull down bindings
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythBackend.php         /var/www/html/classes/
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythBase.php            /var/www/html/classes/
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythFrontend.php        /var/www/html/classes/
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythTV.php              /var/www/html/classes/
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythTVChannel.php       /var/www/html/classes/
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythTVProgram.php       /var/www/html/classes/
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythTVRecording.php     /var/www/html/classes/
-ADD https://github.com/MythTV/mythtv/raw/master/mythtv/bindings/php/MythTVStorageGroup.php  /var/www/html/classes/
+ENV MYTHTV_BRANCH master
+ENV MYTHTV_SCM_BASE https://raw.githubusercontent.com/MythTV/mythtv/${MYTHTV_BRANCH}
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythBackend.php           /var/www/html/classes/
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythBase.php              /var/www/html/classes/
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythFrontend.php          /var/www/html/classes/
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythTV.php                /var/www/html/classes/
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythTVChannel.php         /var/www/html/classes/
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythTVProgram.php         /var/www/html/classes/
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythTVRecording.php       /var/www/html/classes/
+ADD ${MYTHTV_SCM_BASE}/mythtv/bindings/php/MythTVStorageGroup.php    /var/www/html/classes/
 
 ADD mythweb.conf.apache /etc/apache2/sites-enabled/mythweb.conf
 ADD . /var/www/html
