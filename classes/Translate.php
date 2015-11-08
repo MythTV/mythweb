@@ -29,6 +29,7 @@ class Translate extends MythBase {
         'French'        => array('Fran&ccedil;ais',    'fr_FR.UTF-8', 'fr_FR'),
         'French_CA'     => array('Fran&ccedil;ais_CA', 'fr_CA.UTF-8', 'fr_CA'),
         'Greek'         => array('Ελληνικά',           'el_GR.UTF-8', 'el_GR.UTF8'),
+        'Italian'       => array('Italian',            'it_IT.UTF-8', 'it_IT'),
         'Japanese'      => array('Japanese',           'ja_JP.UTF-8', 'ja_JP'),
         'Spanish'       => array('Espa&ntilde;ol',     'es_ES.UTF-8', 'es'),
         'Spanish'       => array('Espa&ntilde;ol_ES',  'es_ES.UTF-8', 'es_ES'),
