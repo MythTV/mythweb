@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Reasons a recording wouldn't be happening (from libs/libmythtv/programinfo.h)
     $RecStatus_Types = array(
@@ -60,7 +60,7 @@
 
 /**
  * a shortcut to load_all_program_data's single-program query
-/**/
+ **/
     function &load_one_program($start_time, $chanid, $manualid) {
         if ($manualid)
             $program =& load_all_program_data($start_time, $start_time, $chanid, true, 'program.manualid='.intval($manualid));
@@ -75,7 +75,7 @@
  * loads all program data for the specified time range.
  * Set $single_program to true if you only want information about programs that
  * start exactly at $start_time (used by program_detail.php)
-/**/
+ **/
     function &load_all_program_data($start_time, $end_time, $chanid = false, $single_program = false, $extra_query = '', $distinctTitle = false) {
         global $db;
     // Don't allow negative timestamps; it confuses MySQL

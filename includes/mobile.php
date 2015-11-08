@@ -26,7 +26,7 @@
  * @license     GPL
  *
  * @package     MythWeb
-/**/
+ **/
 
 
 /**

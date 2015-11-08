@@ -6,12 +6,12 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 /**
  * Returns a classname for a Program or a Schedule, based on its recording
  * settings.
-/**/
+ **/
     function category_class(&$item) {
         $css_class = array();
         $cache = array();
@@ -59,7 +59,7 @@
 /**
  * Returns a classname for a Program or a Schedule, based on its recording
  * status.
-/**/
+ **/
     function recstatus_class(&$item) {
         if ($item->recstatus && !strcasecmp(get_class($item), 'program')) {
             switch ($item->recstatus) {

@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Music
  *
-/**/
+ **/
 
 
 require_once('modules/music/mp3act_html_functions.php');

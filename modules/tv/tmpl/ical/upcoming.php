@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
     $calendar = new vcalendar();
     $calendar->setConfig($_SERVER['SERVER_SIGNATURE'], $_SERVER['HTTP_HOST']);

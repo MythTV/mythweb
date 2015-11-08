@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Logs
  *
-/**/
+ **/
 
 // Where to start searching from
     $_GET['start'] = intVal($_GET['start']);

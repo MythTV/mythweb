@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
     $Feed = new FeedWriter(RSS2);
     $Feed->setTitle('MythWeb - '.t('Recorded Programs'));

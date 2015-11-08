@@ -6,7 +6,7 @@
  * @package     MythWeb
  * @subpackage  Remote
  *
-/**/
+ **/
 
     $frontend = $Frontends[$Path[2]];
 

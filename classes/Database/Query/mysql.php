@@ -23,11 +23,11 @@
  * @uses        Database_mysql.php
  * @uses        Database_Query.php
  *
-/**/
+ **/
 
 /**
  * The basic MySQL database query type.
-/**/
+ **/
 class Database_Query_mysql extends Database_Query {
 
 /**
@@ -35,7 +35,7 @@ class Database_Query_mysql extends Database_Query {
  *
  * @param mixed  $arg      Query arguments to escape and insert at ? placeholders in $query
  * @param mixed  ...       Additional arguments
-/**/
+ **/
     function execute() {
     // Load the function arguments, minus the query itself, which we already extracted
         $args = func_get_args();
@@ -89,12 +89,12 @@ class Database_Query_mysql extends Database_Query {
  *
  *      mysql_fetch_row($result);   ->  $sh->fetch_row();
  *      mysql_affected_rows($dbh);  ->  $sh->affected_rows();
-/**/
+ **/
 
 /**
  * Fetch a single column
  * @return mixed
-/**/
+ **/
     function fetch_col() {
         list($return) = mysql_fetch_row($this->sh);
         return $return;
@@ -112,7 +112,7 @@ class Database_Query_mysql extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysql-fetch-row.php
  * @return array
-/**/
+ **/
     function fetch_row() {
         return mysql_fetch_row($this->sh);
     }
@@ -122,7 +122,7 @@ class Database_Query_mysql extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysql-fetch-assoc.php
  * @return assoc
-/**/
+ **/
     function fetch_assoc() {
         return mysql_fetch_assoc($this->sh);
     }
@@ -132,7 +132,7 @@ class Database_Query_mysql extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysql-fetch-array.php
  * @return assoc
-/**/
+ **/
     function fetch_array($result_type=MYSQL_BOTH) {
         return mysql_fetch_array($this->sh, $result_type);
     }
@@ -142,7 +142,7 @@ class Database_Query_mysql extends Database_Query {
  *
  * @link http://www.php.net/manual/en/function.mysql-fetch-object.php
  * @return object
-/**/
+ **/
     function fetch_object() {
         return mysql_fetch_object($this->sh);
     }
@@ -150,7 +150,7 @@ class Database_Query_mysql extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysql-data-seek.php
  * @return bool
-/**/
+ **/
     function data_seek($row_number) {
         return mysql_data_seek($this->sh, $row_number);
     }
@@ -158,7 +158,7 @@ class Database_Query_mysql extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysql-num-rows.php
  * @return int
-/**/
+ **/
     function num_rows() {
         return $this->num_rows;
     }
@@ -166,7 +166,7 @@ class Database_Query_mysql extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysql-data-seek.php
  * @return int
-/**/
+ **/
     function affected_rows() {
         return $this->affected_rows;
     }
@@ -174,14 +174,14 @@ class Database_Query_mysql extends Database_Query {
 /**
  * @link http://www.php.net/manual/en/function.mysql-insert-id.php
  * @return int
-/**/
+ **/
     function insert_id() {
         return $this->insert_id;
     }
 
 /**
  * For anal people like me who like to free up memory manually
-/**/
+ **/
     function finish() {
         if ($this->sh && is_resource($this->sh))
             mysql_free_result($this->sh);

@@ -11,7 +11,7 @@
  * @package     MythWeb
  * @subpackage  Classes
  *
-/**/
+ **/
 
 class Translate extends MythBase {
 // Cache for 24 hours
@@ -69,7 +69,7 @@ class Translate extends MythBase {
 
 /**
  * Returns $str, translated appropriately
-/**/
+ **/
     public function string($str /* [, arg1, arg2, argN] */ ) {
     // No string?
         if (!$str)
@@ -117,7 +117,7 @@ class Translate extends MythBase {
  * an optional array of string arguments can be included and will be passed
  * to t() for interpretation.  If no array is passed in, a default will be
  * created using the value of t(int).
-/**/
+ **/
     public function number(/* string1, string2, stringN, int [, array-of-args] */) {
     // Flatten arrays
         $ab = func_get_args();
@@ -142,7 +142,7 @@ class Translate extends MythBase {
  * Load a translation file into the global translation array
  *
  * @param string $path The path to the translation file
-/**/
+ **/
     public function load_translation($language = null) {
         if (is_null($language))
             $language = $_SESSION['language'];
@@ -261,7 +261,7 @@ class Translate extends MythBase {
  *   And the supplied parameter contains (amongst others) nl_BE.UTF-8
  *   and nl.ISO-8859-15, then nl_BE.UTF-8 will be picked.
  *
-/**/
+ **/
     private static function get_browser_lang() {
     // default to "everything is acceptable", as RFC2616 specifies
         $alparts = explode(',', $_SERVER["HTTP_ACCEPT_LANGUAGE"] ? $_SERVER["HTTP_ACCEPT_LANGUAGE"] : '*');

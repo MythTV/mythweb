@@ -10,7 +10,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Start an output buffer to store up errors until the output
     ob_start();

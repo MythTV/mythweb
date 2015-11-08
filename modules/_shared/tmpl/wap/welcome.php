@@ -6,7 +6,7 @@
  *
  * @package     MythTV
  *
-/**/
+ **/
 
    require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';
 ?>

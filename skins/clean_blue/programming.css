@@ -110,6 +110,10 @@
 .ManualOverride           { color: #D03060; }
 .Overlap                  { color: #FF0000; }
 
+.type_movie         { background-color: #809090; }
+.type_series        { background-color: #C0C0C0; }
+.type_tvshow        { }
+
 .cat_Action         { background-color: #A6A38A; }
 .cat_Adult          { background-color: #FF0066; }
 .cat_Animals        { background-color: #33FF66; }
@@ -142,10 +146,6 @@
 .cat_War            { background-color: #B06050; }
 .cat_Western        { background-color: #806040; }
 .cat_Unknown        { background-color: #9999FF; }
-
-.type_movie         { background-color: #809090 !important; }
-.type_series        { background-color: #C0C0C0; }
-.type_tvshow        { }
 
 .tv_Cine           { background-color: blue;            }
 .tv_Classic        { background-color: gray;            }

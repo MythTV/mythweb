@@ -8,7 +8,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Just a quick ajax responder to track show/hide of the advanced options
     if (isset($_REQUEST['show_advanced_schedule'])) {

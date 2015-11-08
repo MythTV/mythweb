@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Ensure some keys are set
 	$keys = array(
@@ -51,7 +51,7 @@
  *
  * @global  array   $GLOBALS['Path']
  * @name    $Path
-/**/
+ **/
     $Path = '';
 
     if (isset($_SERVER['ORIG_PATH_INFO']) && !isset($_SERVER['FCGI_ROLE']))

@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  * @subpackage  Music
-/**/
+ **/
 
 // Yes, a db connection
     global $db;

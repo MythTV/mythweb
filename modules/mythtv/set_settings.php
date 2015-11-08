@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
 // Load all of the known mythtv hosts
     $Settings_Hosts = array('' => '- '.t('All Hosts').' -');

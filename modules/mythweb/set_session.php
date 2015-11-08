@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
 // Save?
     if ($_POST['save']) {
@@ -42,7 +42,7 @@
 
 /**
  * Displays a <select> of the available templates
-/**/
+ **/
     function template_select($name = 'tmpl', $selected = null) {
         echo '<select name="'.$name.'">';
         foreach (array('default', 'lite') as $tmpl) {
@@ -57,7 +57,7 @@
 
 /**
  * Displays a <select> of the available skins
-/**/
+ **/
     function skin_select($name = 'skin', $selected = null) {
         echo '<select id="'.$name.'" name="'.$name.'">';
         foreach (get_sorted_files("skins/") as $skin) {
@@ -78,7 +78,7 @@
 
 /**
  * Displays a <select> of the available languages
-/**/
+ **/
     function language_select() {
         echo '<select name="language">';
         foreach (Translate::$Languages as $lang => $details) {

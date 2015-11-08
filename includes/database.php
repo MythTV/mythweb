@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // No MySQL libraries installed in PHP
     if (!function_exists('mysql_connect')) {
@@ -28,7 +28,7 @@
  *
  * @global  Database    $GLOBALS['db']
  * @name    $db
-/**/
+ **/
     global $db;
 
 // Connect to the database

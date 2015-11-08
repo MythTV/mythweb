@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 ?>
 <div class="error" style="padding: 5px">
 <?php echo t('info:jumppoints') ?>

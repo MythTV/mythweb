@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'Welcome to MythWeb!';

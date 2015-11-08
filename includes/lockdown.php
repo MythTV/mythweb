@@ -9,7 +9,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
     if ($_SERVER['MYTHWEB_LOCKDOWN_DISABLE'] != true) {
         if (   stristr('bot',     $_SERVER['HTTP_USER_AGENT']) !== false

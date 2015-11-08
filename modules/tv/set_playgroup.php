@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
 // We're now outside of the tv module directory, so we need to re-add it as a
 // search path.

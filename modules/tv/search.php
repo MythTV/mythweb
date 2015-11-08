@@ -14,7 +14,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 
 // Load the sorting routines
@@ -423,7 +423,7 @@
  * @param
  *
  * @return array
-/**/
+ **/
     function prep_search($str) {
     // negative match
         $neg = '';
@@ -447,7 +447,7 @@
 
 /**
  * Helps format search queries.
-/**/
+ **/
     function search_escape($value, $anchor='none') {
         global $db;
     // MySQL trims all text fields, so we should do the same
@@ -467,7 +467,7 @@
 
 /**
  * Prints out the entire advanced search string content block;
-/**/
+ **/
     function print_advanced_search_strings() {
     // Search fields
         static $search_fields;
@@ -534,7 +534,7 @@
 
 /**
  * Prints out a list of program types, along with checkboxes.
-/**/
+ **/
     function category_type_list() {
         foreach (Program::category_types() as $key => $type) {
             $safe_type = html_entities($type);
@@ -555,7 +555,7 @@
 
 /**
  * Prints out a list of program types, along with checkboxes.
-/**/
+ **/
     function category_list() {
         echo "<select multiple name='categories[]' size='5'>";
         echo "<option ".(in_array(t('All'), $_SESSION['search']['categories']) ? 'selected' : '' ).">".t('All')."</option>";
@@ -568,7 +568,7 @@
 
 /**
  * Print a <select> with movie star ratings in it.
-/**/
+ **/
     function movie_star_select($name) {
         echo '<select name="', $name, '">';
         for ($x=0; $x<=1; $x+=.125) {

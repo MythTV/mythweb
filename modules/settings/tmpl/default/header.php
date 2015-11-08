@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  * @subpackage  Settings
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythWeb - '.$Settings[$Path[1]]['name'].' :: '.$Settings[$Path[1]]['choices'][$Path[2]];

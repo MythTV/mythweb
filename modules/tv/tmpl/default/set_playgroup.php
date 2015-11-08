@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 ?>
 
 <form id="chg_grp_form" class="form" method="post" action="<?php echo form_action ?>">

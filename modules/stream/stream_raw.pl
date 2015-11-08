@@ -26,6 +26,10 @@
         $type   = 'video/mpeg';
         $suffix = '.mpg';
     }
+    elsif ($basename =~ /\.ts$/) {
+        $type   = 'video/mp2t';
+        $suffix = '.ts';
+    }
     elsif ($basename =~ /\.nuv$/) {
         $type   = 'video/nuppelvideo';
         $suffix = '.nuv';

@@ -7,7 +7,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
     define('PHP_MIN_VERSION', floatval(5.3));
 
 // Make sure we're running a new enough version of php

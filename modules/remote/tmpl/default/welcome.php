@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Remote
  *
-/**/
+ **/
 
 // Open with a div and an image
     echo '<div id="info_remote" class="hidden">',

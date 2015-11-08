@@ -6,14 +6,14 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // A global variable to track the last-used session;
     global $last_sort_session;
 
 /**
  * Returns a formatted link to the specified sort field
-/**/
+ **/
     function get_sort_link($field, $string) {
     // Get the URL
         $url = substr($_SERVER['PATH_INFO'], 1);
@@ -37,7 +37,7 @@
 
 /**
  * Returns the sort status of
-/**/
+ **/
     function sort_status($field, $session = NULL) {
     // Null session means to load the last sorted session
         if (!$session)
@@ -66,7 +66,7 @@
 
 /**
  * Sorts a list of programs by the user's session preferences
-/**/
+ **/
     function sort_programs(&$programs, $session) {
         $GLOBALS['last_sort_session'] = $session;
     // First, check for a sort variable passed in by the user
@@ -130,7 +130,7 @@
 
 /**
  * Sort strings but ignore definite articles.
-/**/
+ **/
     function by_no_articles(&$a, &$b) {
         return strcasecmp(preg_replace('/^(?:'.t('regex: articles').')\s+/i', '', $a),
                           preg_replace('/^(?:'.t('regex: articles').')\s+/i', '', $b)

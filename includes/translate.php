@@ -21,7 +21,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
     function t($string) {
         $args = func_get_args();

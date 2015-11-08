@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Make sure the image cache path exists and is writable
     if (!is_dir('data/tv_icons') && !mkdir('data/tv_icons', 0755)) {
@@ -32,7 +32,7 @@
 /**
  * @global  array   $GLOBALS['Categories']
  * @name    $Categories
-/**/
+ **/
     global $Categories;
     $Categories = array();
 
@@ -85,7 +85,7 @@
  * Load translation file for tv category names and regular expressions
  *
  * @param string $path The path to the translation file
-/**/
+ **/
     function load_tv_categories($path) {
         $file = file_get_contents($path);
     // Error?

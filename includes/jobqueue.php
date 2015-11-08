@@ -4,7 +4,7 @@
  *
  *
  * @package     MythWeb
-/**/
+ **/
 
 // Job status
     define('JOB_UNKNOWN',      0x0000);
@@ -26,7 +26,7 @@
 /**
  * @global  array   $GLOBALS['Job_Status']
  * @name    $Job_Status
-/**/
+ **/
     global $Job_Status;
     $Job_Status = array(JOB_UNKNOWN   => t('Unknown'),
                         JOB_QUEUED    => t('Queued'),
@@ -80,7 +80,7 @@
 /**
  * @global  array   $GLOBALS['Jobs']
  * @name    $Jobs
-/**/
+ **/
     global $Jobs;
     $Jobs = array(JOB_TRANSCODE => t('Transcode'),
                   JOB_COMMFLAG  => t('Flag Commercials'),

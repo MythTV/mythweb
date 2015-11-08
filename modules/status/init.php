@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Status
  *
-/**/
+ **/
 
 // The TV module is always enabled.
     $Modules['status'] = array('path'        => 'status',

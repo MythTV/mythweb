@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythWeb - '.t('MythWeb Global Defaults');

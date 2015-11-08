@@ -22,11 +22,11 @@
  *
  * @uses        Database.php
  *
-/**/
+ **/
 
 /**
  * Abstract superclass for all database query types.
-/**/
+ **/
 class Database_Query {
 
 /** @var resource   The related database connection handle */
@@ -63,7 +63,7 @@ class Database_Query {
  *
  * @param Database $dbh    The parent Database object
  * @param string   $query  The query string
-/**/
+ **/
     function __construct(&$db, $query) {
         $this->dbh             =  $db->dbh;
         $this->db              =& $db;

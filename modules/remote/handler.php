@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Remote
  *
-/**/
+ **/
 
 // Find the frontends
     $Frontends = MythFrontend::findFrontends();

@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Remote
  *
-/**/
+ **/
 
     if (tmpl == 'default') {
     // Add the module

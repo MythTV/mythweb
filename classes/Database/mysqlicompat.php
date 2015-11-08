@@ -29,11 +29,11 @@
  * @uses        Database.php
  * @uses        Database_Query_mysqlicompat.php
  *
-/**/
+ **/
 
 /**
  * Database connection class for mysqli, the improved mysql engine.
-/**/
+ **/
 class Database_mysqlicompat extends Database {
 
 /**
@@ -44,7 +44,7 @@ class Database_mysqlicompat extends Database {
  * @param string $password  Password to use when connecting
  * @param string $server    Database server to connect to (Default: localhost)
  * @param string $port      Port or socket address to connect to
-/**/
+ **/
     function __construct($db_name, $login, $password, $server='localhost', $port=NULL) {
     // Attempt to make sure the extension is loaded
         if (!extension_loaded('mysql')) {
@@ -74,7 +74,7 @@ class Database_mysqlicompat extends Database {
  * @param string $string    string to escape
  *
  * @return string           escaped string
-/**/
+ **/
     function escape($string) {
     // Null?
         if (is_null($string))
@@ -91,7 +91,7 @@ class Database_mysqlicompat extends Database {
  * @param string $string    string to escape
  *
  * @return string           escaped string
-/**/
+ **/
     function escape_regex($string) {
     // Null?
         if (is_null($string))
@@ -107,7 +107,7 @@ class Database_mysqlicompat extends Database {
  *  @param string $query    The query string
  *
  *  @return Database_Query_mysqli
-/**/
+ **/
     function &prepare($query) {
         $new_query = new Database_Query_mysqlicompat($this, $query);
         return $new_query;
@@ -115,28 +115,28 @@ class Database_mysqlicompat extends Database {
 
 /**
  * @return string The most recent error string
-/**/
+ **/
     function _errstr() {
         return $this->dbh ? mysqli_error($this->dbh) : mysqli_connect_error();
     }
 
 /**
  * @return int The most recent error number
-/**/
+ **/
     function _errno() {
         return $this->dbh ? mysqli_errno($this->dbh) : mysqli_connect_errno();
     }
 
 /**
  * @return string Information about the mysql server
-/**/
+ **/
     function server_info() {
         return mysqli_get_server_info($this->dbh);
     }
 
 /**
  * @return bool true on success
-/**/
+ **/
     function close() {
         return mysqli_close($this->dbh);
     }

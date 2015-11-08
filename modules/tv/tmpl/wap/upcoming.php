@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
         $page_title = 'MythWeb - '.t('Upcoming Recordings');
         require_once 'modules/_shared/tmpl/'.tmpl.'/header.php';

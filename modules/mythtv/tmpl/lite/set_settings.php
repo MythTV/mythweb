@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  Settings
  *
-/**/
+ **/
 ?>
 <form class="form" method="post" action="<?php echo form_action ?>">
 <input type="hidden" name="host" value="<?php echo html_entities($_SESSION['settings']['host']) ?>" />

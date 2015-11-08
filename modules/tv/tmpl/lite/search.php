@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Set the desired page title
     $page_title = 'MythWeb - '.t('Search');
@@ -20,7 +20,7 @@
 
 /**
  * Sorry, no advanced search options in the lite template for now.
-/**/
+ **/
 
 // Print the results list if a search was performed
     if ($_REQUEST['search']) {

@@ -7,7 +7,7 @@
  * @package     MythWeb
  * @subpackage  TV
  *
-/**/
+ **/
 
 // Scheduling a manual recording gets its own page
     if ($Path[2] == 'manual' || $Path[2] == 'custom') {

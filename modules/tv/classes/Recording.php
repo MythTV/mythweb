@@ -6,7 +6,7 @@
  *
  * @package     MythWeb
  *
-/**/
+ **/
 
 // Make sure the recording schedule type data gets loaded
     require_once 'includes/recording_schedules.php';

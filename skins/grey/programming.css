@@ -47,6 +47,10 @@
 .ManualOverride           { color: #D03060; }
 .Overlap                  { color: #FF0000; }
 
+.type_movie         { background-color: #809090; }
+.type_series        { }
+.type_tvshow        { }
+
 .cat_Action         { background-color: #906020; }
 .cat_Adult          { background-color: #702020; }
 .cat_Animals        { background-color: #609060; }
@@ -79,10 +83,6 @@
 .cat_War            { background-color: #B06050; }
 .cat_Western        { background-color: #806040; }
 .cat_Unknown        { background-color: #303030; }
-
-.type_movie         { background-color: #809090 !important; }
-.type_series        { }
-.type_tvshow        { }
 
 /* deprecated show categories that need to be integreted into the above list via regex, or have new categories created for them */
 .tv_Cine           { background-color: blue;            }
