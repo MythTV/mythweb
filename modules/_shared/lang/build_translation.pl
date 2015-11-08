@@ -61,7 +61,7 @@
     # Open a new output file
         open(DATA, ">$languages_path/tmp.$$.lang") or die "Couldn't create tempfile $languages_path/tmp.$$.lang:  $!\n";
     # Build the new file
-        foreach my $str (sort { lc($a) cmp lc($b) } keys %strings) {
+        foreach my $str (sort { lc($a) cmp lc($b) || $a cmp $b } keys %strings) {
             print DATA "\"$str\"\n";
             if ($translations{$str}) {
                 my $trans = $translations{$str};
