@@ -527,7 +527,7 @@
 "generic_date"
     %a %b %e, %Y
 "generic_time"
-    %I:%M %p
+    %H:%M
 "Genre"
     Lajityyppi
 "genre_colors"
