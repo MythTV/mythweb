@@ -15,10 +15,11 @@
 
 // Start the session
     session_name('mythweb_id');
-    session_set_cookie_params(60 * 60 * 24 * 365, '/');     // 1 year timeout on cookies
+    session_set_cookie_params(60 * 60 * 24 * 30, '/');     // 30 day timeout on cookies
     ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 30);   // 30 day timeout on sessions
     session_set_save_handler('sess_do_nothing', 'sess_do_nothing', 'sess_read', 'sess_write', 'sess_destroy', 'sess_gc');
     session_start();
+    setcookie(session_name(), session_id(), time() + 60*60*24*30, '/');     // Update 30 day timeout
 
 // Register a destruction handler for the db object, since the guys who write
 // PHP are smoking something and think objects should be destroyed before the
