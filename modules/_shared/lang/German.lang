@@ -63,8 +63,10 @@
     (die Höhe wird automatisch anhand des Seitenverhältnisses der Aufnahme berechnet)
 "1 - Lowest"
     1 - Niedrigste
+"1080"
 "4 - Highest"
     4 - Höchste
+"720"
 "Aborted"
     Abgebrochen
 "Aborting"
@@ -77,6 +79,7 @@
     Hinzufügen
 "Add Album to Current Playlist"
     Album der aktuellen Wiedergabeliste hinzufügen
+"Add Artist to Current Playlist"
 "Add Mix"
     Mix hinzufügen
 "Add Song to Current Playlist"
@@ -97,9 +100,9 @@
     Erweiterte Optionen
 "Advanced Search"
     Erweiterte Suche
-"airdate"
-    Sendezeit
 "Airdate"
+    Sendezeit
+"airdate"
     Sendezeit
 "Airtime"
     Sendezeit
@@ -245,9 +248,9 @@
     Feststelltaste
 "Cast"
     Besetzung
-"category"
-    Kategorie
 "Category"
+    Kategorie
+"category"
     Kategorie
 "Category Legend"
     Kategorien
@@ -382,9 +385,9 @@
     Löschtaste
 "Depending on the Search type this is where you enter actual main search commands"
     Abhängig vom Suchtyp werden hier die aktuellen Hauptsuchargumente eingegeben
-"description"
-    Beschreibung
 "Description"
+    Beschreibung
+"description"
     Beschreibung
 "Destination"
     Ziel
@@ -631,9 +634,9 @@
     Springen
 "Jump Points"
     Sprungpunkte
-"Jump to"
-    Gehe zu
 "Jump To"
+    Gehe zu
+"Jump to"
     Gehe zu
 "JumpPoints Editor"
     Sprungpunkt Editor
@@ -663,15 +666,15 @@
     letzte Ausstrahlung von jeder Folge
 "Later"
     später
-"left"
-    links
 "Left"
     Links
+"left"
+    links
 "leftl"
     links
-"length"
-    Dauer
 "Length"
+    Dauer
+"length"
     Dauer
 "Length (min)"
     Dauer (Min.)
@@ -727,8 +730,6 @@
     Priorität bei Sternchenbewertung ändern (0,0 - 1,0 - nur für Filme)
 "Modify priority for a station on an input"
     Priorität eines Senders von einem best. Eingang ändern
-"Modify priority for all inputs on a card"
-    Priorität aller Eingänge einer Karte ändern
 "Modify priority for an input (Input priority)"
     Priorität eines Eingangs ändern (Eingangspriorität)
 "Modify priority for every card on a host"
@@ -924,6 +925,7 @@
     die Aufnahme im Frontend abspielen
 "Play this Album Now"
     Dieses Album abspielen
+"Play this Artist Now"
 "Play This Playlist Now"
     Diese Wiedergabeliste abspielen
 "Play this Playlist Now"
@@ -1053,10 +1055,10 @@
     Neueste Alben
 "Recently completed jobs"
     Zuletzt fertiggestellte Aufträge
-"Recently Played Songs"
-    Zuletzt gespielte Lieder
 "Recently Played Albums"
     Zuletzt gespielte Alben
+"Recently Played Songs"
+    Zuletzt gespielte Lieder
 "recgroup"
     Aufnahmegruppe
 "Recommend Videos"
@@ -1184,10 +1186,10 @@
     Wiederholen
 "Return to Statistics Page"
     Zurück zur Statistikseite
-"right"
-    rechts
 "Right"
     Rechts
+"right"
+    rechts
 "Root Directory"
     Wurzelverzeichnis
 "Rows to show between timeslot info"
@@ -1409,16 +1411,16 @@
     Zeitraffer
 "Timeslot size"
     Zeitfenstergröße
-"title"
-    Titel
 "Title"
+    Titel
+"title"
     Titel
 "Title Match"
     Titel enthält
-"Title search"
-    Titelsuche
 "Title Search"
     Titel Suche
+"Title search"
+    Titelsuche
 "Title Search:"
     Titel Suche:
 "Title:"
@@ -1429,12 +1431,12 @@
     Zu viele
 "Top $1"
     Top $1
-"Top Played Songs"
-    Meistgespielte Lieder
 "Top Played Albums"
     Meistgespielte Alben
 "Top Played Artist"
     Meistgespielter Interpret
+"Top Played Songs"
+    Meistgespielte Lieder
 "Top Rated Songs"
     Bestbewertete Lieder
 "Total Length"
@@ -1449,12 +1451,13 @@
     Gesamtzeit: %s
 "Track #%s from the album '%s'"
     Lied #%s des Albums &quot;%s&quot;
+"Trakt.tv Home Page"
 "Transcode"
     Umwandeln
 "Transcoded"
-"transcoder"
-    Umwandlungsprofil
 "Transcoder"
+    Umwandlungsprofil
+"transcoder"
     Umwandlungsprofil
 "Tuesday"
     Dienstag
@@ -1466,10 +1469,10 @@
     TV-Funktionen inkl. allen Aufnahmen
 "TV.com"
     TV.com
-"type"
-    Modus
 "Type"
     Typ
+"type"
+    Modus
 "Uncategorized"
     Nicht kategorisiert
 "Undelete"
