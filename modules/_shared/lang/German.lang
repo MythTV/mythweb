@@ -46,7 +46,9 @@
 "$1 to $2"
     $1 bis $2
 "$1 video"
+    $1 Video
 "$1 videos"
+    $1 Videos
 "$1 wasted"
     $1 verschwendet
 "$1 year"
@@ -155,7 +157,9 @@
 "Any Program Type"
     Jeder Programmtyp
 "API Key"
+    API Schlüssel
 "API Server"
+    API Server
 "Append"
     Hinzufügen
 "Append to Current Playlist"
@@ -241,7 +245,7 @@
 "Cancel"
     Abbrechen
 "Cancel this schedule."
-    Aufnahme abbrechen
+    Diese Aufnahme abbrechen.
 "Cancelled"
     Abgebrochen
 "Caps Lock"
@@ -303,6 +307,7 @@
 "Commands:"
     Befehle:
 "Commercial free"
+    werbefrei
 "Commercials Flagged"
     Werbung markiert
 "commfree"
@@ -507,6 +512,7 @@
 "First recording"
     Erste Aufnahme
 "First showing"
+    Erste Ausstrahlung
 "First showing of each episode"
     Erste Ausstrahlung jeder Folge
 "Flag Commercials"
@@ -534,6 +540,7 @@
 "Friday"
     Freitag
 "Frontends"
+    Frontends
 "generic_date"
     %e.%m.%Y
 "generic_time"
@@ -573,6 +580,7 @@
 "Hide"
     verstecken
 "High definition"
+    High Definition
 "Home"
 "Hosted by"
     Präsentiert von
@@ -583,6 +591,7 @@
 "hue"
     Farbton
 "Identifiable episode"
+    Identifizierbare Folge
 "Ignore generic shows"
     Gewöhnliche Aufnahmen ignorieren
 "Ignore scheduled shows"
@@ -806,6 +815,7 @@
 "New"
     Neu
 "New episode"
+    Neue Folge
 "New episodes only"
     nur neue Folgen
 "New Group"
@@ -834,6 +844,7 @@
     Keine Aufnahmen geplant.
 "No TV configured!"
 "No videos"
+    Keine Videos
 "No. of recordings to keep"
     Wieviele Aufnahmen behalten
 "NO_TV_CONFIGURED_NOTICE_1"
@@ -859,6 +870,7 @@
 "Off"
     Aus
 "OK"
+    OK
 "Only a certain channel number"
     Nur ein bestimmter Senderplatz
 "Only channels marked as commercial free"
@@ -976,6 +988,7 @@
 "Possible conflicts with this show"
     Mögliche Überschneidungen mit dieser Sendung
 "Post Processing"
+    Nachbearbeitung
 "Power"
     freie Suche
 "Power Search"
@@ -1001,6 +1014,7 @@
 "Previous recordings"
     alte Aufnahmen
 "Prime time"
+    Hauptsendezeit
 "Priority for a category"
     Priorität einer Kategorie
 "Priority for a category type"
@@ -1062,8 +1076,11 @@
 "recgroup"
     Aufnahmegruppe
 "Recommend Videos"
+    Empfehle Videos
 "Recommended"
+    Empfohlen
 "Recommended Programs"
+    Empfohlene Sendungen
 "Record Date"
     Sendezeit
 "Record Length"
@@ -1360,6 +1377,7 @@
 "Store the current session as the default"
     Jetzige Session als Standard festlegen
 "Streaming"
+    Streaming
 "Sub and Desc (Empty matches)"
     Untertitel & Beschr. (kein Ergebnis)
 "Submit"
@@ -1387,18 +1405,25 @@
 "The requested recording schedule has been deleted."
     Die geplante Aufnahme wurde gelöscht.
 "themoviedb"
+    TheMovieDB
 "There are no items in this Playlist!"
     Wiedergabeliste ist leer!
 "There was a problem saving your playlist"
     Wiedergabeliste konnte nicht gespeichert werden
 "TheTVDB"
+    TheTVDB
 "This channel"
+    Dieser Sender
 "This day and time"
+    Dieser Tag und Zeit
 "This episode"
+    Diese Folge
 "This playlist is already loaded!"
     Wiedergabeliste bereits geladen!
 "This series"
+    Diese Serie
 "This time"
+    Diese Zeit
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Dies wird die aktuelle, noch nicht gespeicherte Wiedergabeliste überschreiben. Möchten Sie wirklich fortsetzen?
 "Thursday"
@@ -1455,6 +1480,7 @@
 "Transcode"
     Umwandeln
 "Transcoded"
+    Umgewandelt
 "Transcoder"
     Umwandlungsprofil
 "transcoder"
@@ -1607,6 +1633,6 @@
 "Yesterday"
     gestern
 "You are missing a php extension for mysql interaction. Please install php-mysqli or similar"
-    Die PHP-Erweiterung für MySQL ist nicht installiert. Bitte installieren.
+    Die PHP-Erweiterung für MySQL ist nicht installiert. Bitte installieren sie php-mysqli or ähnliches
 "You must be running at least php 5.3 to use this program."
     Es ist mindestens PHP 5.3 zur Ausführung dieses Programms nötig.
