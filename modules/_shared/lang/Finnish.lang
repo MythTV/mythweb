@@ -38,7 +38,7 @@
 "$1 recordings"
     $1 tallennetta
 "$1 requests pending."
-    $1 anomusta odottamassa
+    $1 anomusta odottamassa.
 "$1 Search"
     $1 Haku
 "$1 TB"
@@ -46,7 +46,9 @@
 "$1 to $2"
     $1 - $2
 "$1 video"
+    $1 video
 "$1 videos"
+    $1 videota
 "$1 wasted"
     $1 tuhlattu
 "$1 year"
@@ -54,13 +56,13 @@
 "$1 years"
     $1 vuotta
 "%s Song (%s)"
-    %s kappale
+    %s kappale (%s)
 "%s Songs"
     %s kappaletta
 "%s Songs (%s)"
     %s kappaletta (%s)
 "(height is calculated automatically from the recording aspect ratio)"
-    (korkeus lasketaan automaattisesti tallenteen kuvasuhteella)
+    (korkeus lasketaan automaattisesti tallenteen kuvasuhteesta)
 "1 - Lowest"
     1 - Alin
 "4 - Highest"
@@ -97,10 +99,10 @@
     Edistyneet valinnat
 "Advanced Search"
     Monipuolinen haku
-"airdate"
-    lähettämissaika
 "Airdate"
     Lähetysaika
+"airdate"
+    lähetysaika
 "Airtime"
     Lähetysaika
 "Album Listing"
@@ -140,6 +142,7 @@
 "Allows you to search through other database tables when using a power search"
     Sallii haut muihin tietokannan tauluihin kun tehdään tehohaku
 "An error occurred while adding your playlist."
+    Tapahtui virhe lisättäessä soittolistaa.
 "and"
     ja
 "Any"
@@ -151,11 +154,13 @@
 "Any Program Type"
     Mikä tahansa ohjelmatyyppi
 "API Key"
+    API -avain
 "API Server"
+    API -palvelin
 "Append"
-    Kiinnitys
+    Lisää
 "Append to Current Playlist"
-    Kiinnitä nykyiseen Soittolistaan
+    Lisää nykyiseen Soittolistaan
 "Are you sure you want to delete the following show?"
     Poistetaanko seuraavat ohjelmat?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
@@ -169,7 +174,7 @@
 "ASX Stream"
     ASX virtaus
 "Audio Bitrate"
-    Äänen bittitaajuus
+    Äänen bittinopeus
 "Audio for Hearing Impaired"
     Ääni kuulovammaisille
 "Audio for Visually Impaired"
@@ -244,9 +249,9 @@
     Caps Lock
 "Cast"
     Esiintyjät
-"category"
-    Kategoria
 "Category"
+    Kategoria
+"category"
     Kategoria
 "Category Legend"
     Kategorioiden Värit/Merkitys
@@ -265,9 +270,9 @@
 "Channel &quot;Jump to&quot;"
     Kanavahyppy
 "Channel Detail"
-    Kanavatiedot
+    Kanavan yksityiskohdat
 "Channel Info"
-    Kanavatiedot
+    Kanavan tiedot
 "Channels"
     Kanavat
 "channum"
@@ -275,6 +280,7 @@
 "Check for duplicates in"
     Tarkista kaksoiskappaleet
 "Children's Movies"
+    Lasten elokuvat
 "Choose Genre.."
     Valitse lajityyppi..
 "Choose Type"
@@ -292,17 +298,19 @@
 "Closed Captioning"
     Tekstitykset
 "color"
+    väri
 "Commands"
     Komennot
 "Commands:"
     Komennot:
 "Commercial free"
+    Mainosvapaa
 "Commercials Flagged"
     Merkityt mainokset
 "commfree"
     Mainosvapaa
 "Conflict"
-    Ristiriitaisuudet
+    Ristiriita
 "Conflicts"
     Ristiriidat
 "Context"
@@ -328,7 +336,7 @@
 "Currently Browsing:  $1"
     Selataan:  $1
 "Currently Recording:  Edit"
-    Tallennetaan nyt - Muokkaa
+    Tallennetaan nyt:  Muokkaa
 "Custom"
     Mukautettu
 "Custom Schedule"
@@ -346,7 +354,7 @@
 "Date"
     Aika
 "Date Formats"
-    Päivämäärän muoto
+    Päivämäärien muodot
 "Deactivated"
     Pois päältä
 "Deaf Signed"
@@ -374,11 +382,13 @@
 "DELETE this Saved Playlist"
     POISTA tämä tallennettu Soittolista
 "DeleteKey"
+    PoistoNäppäin
 "Depending on the Search type this is where you enter actual main search commands"
-"description"
-    kuvaus
+    Riippuen hakutyypistä tänne syötetään varsinaiset hakukomennot
 "Description"
     Kuvaus
+"description"
+    kuvaus
 "Destination"
     Kohde
 "Details for: $1"
@@ -400,15 +410,15 @@
 "Don't Record"
     Älä tallenna
 "Don't record this program."
-    Älä tallenna ohjelmaa.
+    Älä tallenna tätä ohjelmaa.
 "Done, Unknown Status"
-    Valmis, tuntematon tilanne
+    Valmis, tuntematon tila
 "Down"
     Alas
 "Download URL override"
-    Lataa URL -ohitin
+    Lataa URL -ohitus
 "Dup Method"
-    Metodi
+    Dup Metodi
 "Duplicate"
     Kaksoiskappale
 "Duplicate Check method"
@@ -422,7 +432,7 @@
 "Edit"
     Muokkaa
 "Edit existing group"
-    Muokkaa ryhmää
+    Muokkaa olemassa olevaa ryhmää
 "Edit MythWeb and some MythTV settings."
     Muokkaa MythWeb:in ja MythTV:n asetuksia.
 "Edit settings for: $1"
@@ -432,6 +442,7 @@
 "Embed HTTP basic auth user name/password into stream urls"
     Sisällä HTTP basic auth käyttäjätunnus/salasana virtojen urleihin
 "Enable"
+    Mahdollista
 "Enable Flash Video player for recordings."
     Salli Flash videotoisto
 "Enable Video Playback"
@@ -455,12 +466,13 @@
 "Error"
     Virhe
 "Error contacting server to retrieve metadata."
+    Virhe metadatan haussa yhdistettäessä palvelimeen
 "error: playgroup $1 exists"
     Virhe: soittoryhmä $1 on jo olemassa
 "Errored"
-    Virhe
+    Virheili
 "Erroring"
-    Virhe
+    Virheilee
 "Escape"
     Poistu
 "Everything"
@@ -490,12 +502,13 @@
 "Find Time must be of the format:  HH:MM:SS"
     Etsi aika, täytyy olla muotoa: TT:MM:SS
 "finetune"
-    Hienosäätö
+    hienosäätö
 "Finished"
     Valmis
 "First recording"
     Ensimmäinen tallennus
 "First showing"
+    Ensimmäinen lähetys
 "First showing of each episode"
     Ensimmäisen jakson ensimmäinen lähetys
 "Flag Commercials"
@@ -517,7 +530,7 @@
 "format help"
     apua muotoiluun
 "Found %s results for '%s'"
-    Löyti %s tulosta '%s':lle
+    Löytyi %s tulosta '%s':lle
 "freqid"
     freqid
 "Friday"
@@ -525,12 +538,13 @@
 "Frontends"
     Käyttöliittymät
 "generic_date"
-    %a %b %e, %Y
+    %a %e %b, %Y
 "generic_time"
     %H:%M
 "Genre"
     Lajityyppi
 "genre_colors"
+    Lajityypin värit
 "Genres"
     Lajityypit
 "Go"
@@ -542,9 +556,9 @@
 "Guest Starring"
     Vierailevat tähdet
 "Guide rating"
-    Arvostelu
+    Oppaan arvostelu
 "Guide Settings"
-    Ohjelmalistauksen Asetus
+    Oppaan asetukset
 "Handy Predefined Searches"
     Esitäytetyt Haut
 "handy: overview"
@@ -556,12 +570,13 @@
 "HD"
     HD
 "HDTV"
-    Tarkkapiirto
+    HDTV
 "Height"
     Korkeus
 "Hide"
     Piilota
 "High definition"
+    Teräväpiirto
 "Home"
     Koti
 "Hosted by"
@@ -573,22 +588,23 @@
 "hue"
     Värikylläisyys
 "Identifiable episode"
+    Tunnistettava jakso
 "Ignore generic shows"
     Ohita yleiset ohjelmat
 "Ignore scheduled shows"
     Ohita ajastetut ohjelmat
 "IMDB"
-    Internet MDB
+    IMDB
 "IMDBTYPE"
     IMBDTYPE
 "Inactive"
     Ei aktiivinen
 "info: activate recording"
-    Pakota tämän ohjelman tallennus
+    aktivoi tallennus
 "info: default recording"
     Poista kaikki lisämääreet siten että tämä esitys tallennetaan normaalisti.
 "info: dont record"
-    Älä tallenna
+    älä tallenna
 "info: flvplayer"
     <p>
     Flash videon toisto on tällä hetkellä konseptinkokeiluvaiheessa ja tulisi
@@ -620,6 +636,7 @@
 "info:never record"
     Luo väärennös vanhemmasta tallennuksesta, jotta tätä esitystä ei tallenneta.
 "Input Name"
+    Syöttönimi
 "Insert"
     Syötä
 "Internet Reference #"
@@ -627,9 +644,9 @@
     Hyppy
 "Jump Points"
     Hyppypisteet
-"Jump to"
-    Hyppää
 "Jump To"
+    Hyppää
+"Jump to"
     Hyppää
 "JumpPoints Editor"
     Hyppäämisasetukset
@@ -659,16 +676,16 @@
     Kunkin jakson viimeisin lähetys
 "Later"
     Myöhemmin
-"left"
-    jäljellä
 "Left"
     Vasen
+"left"
+    jäljellä
 "leftl"
     leftl
-"length"
-    pituus
 "Length"
     Pituus
+"length"
+    pituus
 "Length (min)"
     Pituus (min)
 "Length in minutes"
@@ -698,6 +715,7 @@
 "Logs"
     Lokitiedostot
 "Look up Metadata"
+    Etsi metadataa
 "Low Space"
     Alhainen kovalevytila
 "Manual"
@@ -708,8 +726,11 @@
 "Max star rating for movies"
     Maksimi tähtiluokitus elokuville
 "Metadata Home Page"
+    Metadatan kotisivu
 "Metadata Lookup"
+    Metadatan haku
 "Metadata Lookup Error"
+    Metadatan hakuvirhe
 "minutes"
     minuuttia
 "Missing Cover"
@@ -718,8 +739,6 @@
     Muokkaa prioriteettiä tähtien määrällä (0.0 - 1.0 vain elokuville)
 "Modify priority for a station on an input"
     Muokkaa kanavan prioriteettiä per sisääntulo (kortti)
-"Modify priority for all inputs on a card"
-    Muokkaa kortin kaikkien kanavan prioriteettiä
 "Modify priority for an input (Input priority)"
     Muokkaa kortin prioriteettiä (Sisääntulo prioriteetti)
 "Modify priority for every card on a host"
@@ -798,6 +817,7 @@
 "New"
     Uusi
 "New episode"
+    Uusi jakso
 "New episodes only"
     Vain uudet jaksot
 "New Group"
@@ -819,12 +839,15 @@
 "No matching programs found."
     Ei vastaavia ohjelmia.
 "No metadata results found."
+    Metadataa ei löytynyt
 "No Public Playlists"
     Ei yleisiä Soittolistoja
 "No recording schedules have been defined."
     Ajoituksia ei määritelty.
 "No TV configured!"
+    Ei määriteltyä TV:tä
 "No videos"
+    Ei videoita
 "No. of recordings to keep"
     Säilytettävien tallenteiden lkm
 "NO_TV_CONFIGURED_NOTICE_1"
@@ -850,6 +873,7 @@
 "Off"
     Pois päältä
 "OK"
+    OK
 "Only a certain channel number"
     Vain tietty kanavanumero
 "Only channels marked as commercial free"
@@ -857,6 +881,7 @@
 "Only channels that carry a specific station"
     Vain tietyn aseman kanavat
 "Only display favorite channels"
+    Näytä vain suosikkikanavat
 "Only match commercial-free channels"
     Vain mainoksettomat kanavat
 "Only match HD programs"
@@ -950,8 +975,11 @@
 "Playlists"
     Soittolistat
 "Please enter an IMDB number or a title to do another search"
+    Syötä IMDB -numero tai nimike hakeaksesi uudelleen
 "Please rate more shows to get more results"
+    Arvostele lisää ohjelmia saadaksesi lisää tuloksia
 "Please wait for the pending AJAX request"
+    Odota keskeneräistä AJAX -kutsua
 "Plot"
     Juoni
 "Plot:"
@@ -963,6 +991,7 @@
 "Possible conflicts with this show"
     Saattaa olla ristiriidassa tämän ohjelman kanssa
 "Post Processing"
+    Jälkikäsittely
 "Power"
     Virta
 "Power Search"
@@ -988,6 +1017,7 @@
 "Previous recordings"
     Aiemmat tallennukset
 "Prime time"
+    Parhaaseen aikaan
 "Priority for a category"
     Prioriteetti luokalle
 "Priority for a category type"
@@ -1046,8 +1076,11 @@
     Äskettäin soitetut kappaleet
 "recgroup"
 "Recommend Videos"
+    Suositellut videot
 "Recommended"
+    Suositellut
 "Recommended Programs"
+    Suositellut ohjelmat
 "Record Date"
     Tallennuspäivämäärä
 "Record Length"
@@ -1073,7 +1106,7 @@
 "Recording Profile"
     Tallennusprofiili
 "Recording Schedules"
-    Tulevat tallennukset
+    Ajoitetut ohjelmat
 "Recording Statistics"
     Tallennuksen statistiikat
 "recpriority"
@@ -1170,9 +1203,9 @@
     Yritä uudelleen
 "Return to Statistics Page"
     Palaa Statistiikat -sivulle
-"right"
-    oikein
 "Right"
+    oikea
+"right"
     oikea
 "Root Directory"
     Juurihakemisto
@@ -1230,6 +1263,7 @@
 "Search Phrase"
     Hakulause
 "Search Phrase:"
+    Hakulause:
 "Search Results"
     Haun tulokset
 "Search the Music Database"
@@ -1385,16 +1419,16 @@
     Ajan säätö
 "Timeslot size"
     Aikalokeron koko
-"title"
-    Nimike
 "Title"
+    Nimike
+"title"
     Nimike
 "Title Match"
     Nimike vastaavuus
-"Title search"
-    Nimikkeen haku
 "Title Search"
     Haku Nimikkeellä
+"Title search"
+    Nimikkeen haku
 "Title Search:"
 "Title:"
 "Toggle Interactive Mode"
@@ -1418,13 +1452,14 @@
     Kokonaisaika:  %s
 "Track #%s from the album '%s'"
     Kappale #%s albumilta '%s'
+"Trakt.tv Home Page"
 "Transcode"
     Jälkikäsittely
 "Transcoded"
-"transcoder"
-    jälkikäsittelijä
 "Transcoder"
     Jälkikäsittely
+"transcoder"
+    jälkikäsittelijä
 "Tuesday"
     Tiistai
 "Tuner Busy"
@@ -1435,10 +1470,10 @@
     Tallennetut ohjelmat ja muut TV-asetukset.
 "TV.com"
     TV.com
-"type"
-    tyyppi
 "Type"
     Tallennustapa
+"type"
+    tyyppi
 "Uncategorized"
 "Undelete"
     Poista poisto
@@ -1455,7 +1490,7 @@
 "Up"
     Ylös
 "Upcoming Recordings"
-    Tulevat tallennukset
+    Tulevat ohjelmat
 "Update"
     Päivitä
 "Update Recording Settings"

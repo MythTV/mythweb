@@ -2,7 +2,7 @@
     Toiminta
     \b(?:action|adven)
 "Adult"
-    Seksi
+    Aikuisviihde
     \b(?:adult|erot)
 "Animals"
     Eläimet
@@ -62,7 +62,7 @@
     Romanssi
     \b(?:romance)
 "SciFi_Fantasy"
-    Tieteisjännitys
+    Tieteisfantasia
     \b(?:fantasy|sci\w*\W*fi)
 "Science_Nature"
     Luonto
