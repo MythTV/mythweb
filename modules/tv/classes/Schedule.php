@@ -618,6 +618,7 @@ class Schedule extends MythBase {
  * prints a <select> of the various recgroups available
 /**/
     function recgroup_select(&$schedule, $name = 'recgroup') {
+        global $db;
         $this_group =& $schedule->recgroup;
         static $groups = array();
     // Load the recording groups?
@@ -625,22 +626,21 @@ class Schedule extends MythBase {
         // Default
             $groups['Default'] = t('Default');
         // Current recgroups
-            $result = mysql_query('SELECT DISTINCT recgroup FROM recorded '.
+            $sh = $db->query('SELECT DISTINCT recgroup FROM recorded '.
                 'WHERE recgroup != "LiveTV" AND recgroup != "Deleted" UNION '.
                 'SELECT DISTINCT recgroup FROM record '.
                 'WHERE recgroup != "LiveTV" AND recgroup != "Deleted" '.
                 'ORDER BY recgroup;');
 
-            while (list($group) = mysql_fetch_row($result)) {
+            while (list($group) = $sh->fetch_row()) {
                 if (empty($group) || $group == 'Default')
                     continue;
                 $groups[$group] = $group;
             }
-            mysql_free_result($result);
+            $sh->finish();
         }
     // Guess at default. Try category match etc..
         if (count($groups) > 1 && empty($this_group)) {
-            global $db;
             $program = load_one_program($schedule->starttime, $schedule->chanid, $schedule->manualid);
             $sh = $db->query('SELECT DISTINCT recgroup FROM record
                              WHERE recgroup REGEXP ? OR recgroup REGEXP ? OR recgroup REGEXP ?',
@@ -670,18 +670,19 @@ class Schedule extends MythBase {
  * prints a <select> of the various storagegroups available
 /**/
     function storagegroup_select($this_group, $name = 'storagegroup') {
+        global $db;
         static $groups = array();
     // Load the recording groups?
         if (!count($groups)) {
         // Default
             $groups['Default'] = 'Default';
         // Configured Storage Groups
-            $result = mysql_query('SELECT DISTINCT groupname FROM storagegroup');
-            while (list($group) = mysql_fetch_row($result)) {
+            $sh = $db->query('SELECT DISTINCT groupname FROM storagegroup');
+            while (list($group) = $sh->fetch_row()) {
                 $group or $group = 'Default';
                 $groups[$group]  = $group;
             }
-            mysql_free_result($result);
+            $sh->finish();
         }
     // Print the <select>
         echo "<select name=\"$name\">";
