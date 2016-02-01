@@ -591,7 +591,7 @@ class Program extends MythBase {
                          $this->programid,
                          $this->findid);
         while ($row = $sh->fetch_assoc()) {
-            $prog =& new Program($row);
+            $prog = new Program($row);
             MythBackend::find()->sendCommand(array('FORGET_RECORDING', $prog->backend_row(), '0'));
         }
         $sh->finish();

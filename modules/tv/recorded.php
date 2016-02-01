@@ -143,7 +143,7 @@
     foreach ($Programs as $title => $shows) {
         foreach ($shows as $key => $record) {
         // Create a new program object
-            $show =& new Program($record);
+            $show = new Program($record);
         // Assign a reference to this show to the various arrays
             $All_Shows[]                                =& $show;
             $Programs[$title][$key]                     =& $show;

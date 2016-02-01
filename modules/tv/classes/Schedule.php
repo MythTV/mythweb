@@ -154,7 +154,7 @@ class Schedule extends MythBase {
                 if ($program[21] == 6)
                     continue;
                 // Normal entry:  $scheduledRecordings[callsign][starttime][]
-                self::$scheduledRecordings[$program[9]][$program[13]][] =& new Program($program);
+                self::$scheduledRecordings[$program[9]][$program[13]][] = new Program($program);
             }
             Cache::set('Schedule::findScheduled', self::$scheduledRecordings);
         }
