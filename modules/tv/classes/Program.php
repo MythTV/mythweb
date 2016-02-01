@@ -628,7 +628,8 @@ class Program extends MythBase {
  * "Never" record this show, by telling mythtv that it was already recorded
  **/
     public function rec_never_record() {
-        $result = mysql_query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid,recordid,station,rectype,recstatus,duplicate) VALUES ('
+        global $db;
+        $sh = $db->query('REPLACE INTO oldrecorded (chanid,starttime,endtime,title,subtitle,description,category,seriesid,programid,recordid,station,rectype,recstatus,duplicate) VALUES ('
                                 .escape($this->chanid)                    .','
                                 .'NOW()'                                  .','
                                 .'NOW()'                                  .','
@@ -643,7 +644,8 @@ class Program extends MythBase {
                                 .escape(isset($this->rectype) ? $this->rectype : 0)                   .','
                                 .'11'                                     .','
                                 .'1'                                      .')')
-            or trigger_error('SQL Error: '.mysql_error(), FATAL);
+            or trigger_error('SQL Error: '.$db->error, FATAL);
+        $sh->finish();
     // Notify the backend of the changes
         MythBackend::find()->rescheduleRecording();
     }
