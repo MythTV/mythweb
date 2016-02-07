@@ -50,7 +50,7 @@ function getplaylistnames()
   if (!$sh)
     return '';
 
-  while ($row = $sh->fetch_array();)
+  while ($row = $sh->fetch_array())
   {
     $output .= '<option>'.$row['playlist_name'].'</option>';
   }
@@ -70,7 +70,7 @@ function genreform()
   $output = '<select id="genre" name="genre" onchange="updateBox(\'genre\',this.options[selectedIndex].value); return false;">
     <option value="" selected>'.t('Choose Genre..').'</option>';
 
-  while ($genre = $sh->fetch_array();)
+  while ($genre = $sh->fetch_array())
   {
     $output .= '<option value="'.$genre['genre'].'">'.$genre['genre'].'</option>';
   }
@@ -129,7 +129,7 @@ function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
         break;
 
       $albums = '';
-      while ($row2 = $sh->fetch_array();)
+      while ($row2 = $sh->fetch_array())
       {
         $albums .= '<li><a class="music" href="#"'.
           ' onclick="updateBox(\'album\','.$row2['album_id'].'); return false;"'.
@@ -164,7 +164,7 @@ function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
       if (!$sh)
         break;
       $albums = '';
-      while ($row2 = $sh->fetch_array();)
+      while ($row2 = $sh->fetch_array())
       {
         $albums .= '<li><a class="music" href="#"'.
           ' onclick="updateBox(\'album\','.$row2['album_id'].'); return false;"'.
@@ -295,7 +295,7 @@ function musicLookup($type, $itemid)
         <strong>'.t('Artist Listing').'</strong></p>
         <ul class="music">';
       $alt = false;
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= '<li'.($alt ? ' class="alt"' : '').'>
           <a class="music" href="#"
@@ -328,7 +328,7 @@ function musicLookup($type, $itemid)
         break;
 
       $alt = false;
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $row['artist_name']);
@@ -410,7 +410,7 @@ function musicLookup($type, $itemid)
       if (!$sh)
         break;
 
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', $row['track'], $row['name'],
@@ -439,7 +439,7 @@ function musicLookup($type, $itemid)
       if (!$sh)
         break;
 
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'],
@@ -482,7 +482,7 @@ function musicLookup($type, $itemid)
       if (!$sh)
         break;
 
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $artist = '';
         if ($itemid != $row['artist_id'])
@@ -508,7 +508,7 @@ function musicLookup($type, $itemid)
       if (!$sh)
         break;
 
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], '',
           $row['album_name'], $row['track'], $row['name'],
@@ -595,7 +595,7 @@ function musicLookup($type, $itemid)
         }
 
         $output .= '<ul class="music">';
-        while ($row = $sh->fetch_array();)
+        while ($row = $sh->fetch_array())
         {
           $output .= getHtmlPlaylist($row['playlist_id'], $row['playlist_name'],
             $row['songcount'], $row['length'], $unsaved_id);
@@ -664,7 +664,7 @@ function musicLookup($type, $itemid)
             return;
 
         $song_info = array();
-        while ($row2 = $sh->fetch_array();)
+        while ($row2 = $sh->fetch_array())
         {
             $song_info[$row2['song_id']] = $row2;
         }
@@ -681,7 +681,7 @@ function musicLookup($type, $itemid)
             return;
 
         $pl_info = array();
-        while ($row2 = $sh->fetch_array();)
+        while ($row2 = $sh->fetch_array())
         {
             $pl_info[$row2['playlist_id']] = $row2;
         }
@@ -789,7 +789,7 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Recently Added Albums').'</h2></div>
         <ul class="music">';
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $row['artist_name'], '', '', '', date('m.d.Y', $row['pubdate']));
@@ -817,7 +817,7 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Top Played Songs').'</h2></div>
         <ul class="music">';
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'], $row['album_name'], $row['numplays'], '', '');
@@ -902,7 +902,7 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Recently Played Songs').'</h2></div>
         <ul class="music">';
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'], date('m.d.Y', $row['playdate']), '', '', '');
@@ -956,7 +956,7 @@ function musicLookup($type, $itemid)
               title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
             <h2 class="music">'.t('Top Rated Songs').'</h2></div>
             <ul class="music">';
-        while ($row = $sh->fetch_array();)
+        while ($row = $sh->fetch_array())
         {
           $output .= getHtmlSong($row['song_id'], $row['artist_name'],
             '', '', $row['name'], '', '', '', $row['rating']);
@@ -993,7 +993,7 @@ function getRandItems($type)
     return '';
 
   $options = '';
-  while ($row = $sh->fetch_array();)
+  while ($row = $sh->fetch_array())
   {
     $options .= '<option value="'.$row[0].'">'.
       $row[1].'</option>';
@@ -1053,7 +1053,7 @@ function searchMusic($terms, $option)
   if($count > 0)
   {
     $output .= '<ul class="music">';
-    while ($row = $sh->fetch_array();)
+    while ($row = $sh->fetch_array())
     {
       $output .= getHtmlSong($row['song_id'], $row['artist_name'],
         $row['album_name'], $row['track'], $row['name'],
@@ -1162,7 +1162,7 @@ function viewPlaylist()
     return;
 
   $song_info = array();
-  while ($row = $sh->fetch_array();)
+  while ($row = $sh->fetch_array())
   {
     $song_info[$row['song_id']] = $row;
   }
@@ -1179,7 +1179,7 @@ function viewPlaylist()
     return;
 
   $pl_info = array();
-  while ($row = $sh->fetch_array();)
+  while ($row = $sh->fetch_array())
   {
     $pl_info[$row['playlist_id']] = $row;
   }
@@ -1493,7 +1493,7 @@ function playlist_add($type, $itemid)
   if (!$sh)
     return $output;
 
-  while ($row = $sh->fetch_array();)
+  while ($row = $sh->fetch_array())
   {
     $id = md5($row['song_id'].mt_rand());
     $output[0] .= getHtmlPlaylistEntrySong($id, $row['artist_name'],
@@ -1566,7 +1566,7 @@ function randAdd($type,$num=0,$items='',$rating='')
     $new_songcount = $pl['songcount'];
   }
 
-  while ($row = $sh->fetch_array();)
+  while ($row = $sh->fetch_array())
   {
     $songs[] = $row['song_id'];
     $new_length += $row['length'];
@@ -1602,7 +1602,7 @@ function getPlaylistM3u($id, $quality, $depth = 0)
   if (!$sh)
     return $tmp;
 
-  while ($row = $sh->fetch_array();)
+  while ($row = $sh->fetch_array())
   {
     $song_info[$row['song_id']] = $row;
   }
@@ -1660,7 +1660,7 @@ function play($type, $id, $quality = 'high')
     $sh = $db->query($query);
     if ($sh)
     {
-      while ($row = $sh->fetch_array();)
+      while ($row = $sh->fetch_array())
       {
         $tmp .= '#EXTINF:'.intval($row['length']).','.utf8_decode($row['artist_name']).' - '.utf8_decode($row['name'])."\n";
         $tmp .= stream_url().'stream?i='.$row['song_id']."\n";
