@@ -188,7 +188,7 @@ EOM;
     <td class="x-length"><?php echo nice_length($show->length) ?></td>
     <td class="x-filesize"><?php echo nice_filesize($show->filesize) ?></td>
     <td class="x-commands commands" rowspan="2"><?php
-        if ($show->is_recording) {
+        if ($show->endtime > time()) {
             echo '<a href="', root_url, 'tv/detail/', $show->chanid, '/', $show->recstartts, '">',
                  t('Still Recording: Edit'),
                  "</a>\n        ";
