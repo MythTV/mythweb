@@ -63,8 +63,12 @@
     (höjd beräknas automatiskt från inspelningens bildförhållande)
 "1 - Lowest"
     1 - Lägst
+"1080"
+    1080
 "4 - Highest"
     4 - Högst
+"720"
+    720
 "Aborted"
     Avbruten
 "Aborting"
@@ -77,6 +81,8 @@
     Lägg till
 "Add Album to Current Playlist"
     Lägg till album till aktuell spellista
+"Add Artist to Current Playlist"
+    Lägg till artist till aktuell spellista
 "Add Mix"
     Lägg till mix
 "Add Song to Current Playlist"
@@ -97,10 +103,10 @@
     Avancerade inställningar
 "Advanced Search"
     Avancerad sökning
-"airdate"
-    datum
 "Airdate"
     Datum
+"airdate"
+    datum
 "Airtime"
     Sändningstid
 "Album Listing"
@@ -139,6 +145,7 @@
 "Allows you to search through other database tables when using a power search"
     Låter dig söka igenom andra databastabeller när en avancerad sökning används
 "An error occurred while adding your playlist."
+    Ett fel upstod under tillägg av din spellista
 "and"
     och
 "Any"
@@ -150,6 +157,7 @@
 "Any Program Type"
     Alla programtyper
 "API Key"
+    API-Nyckel
 "API Server"
 "Append"
     Lägg till slutet
@@ -243,10 +251,10 @@
     Caps lock
 "Cast"
     Rollbesättning
-"category"
-    kategori
 "Category"
     Kategori
+"category"
+    kategori
 "Category Legend"
     Kategoriförklaring
 "CC"
@@ -274,6 +282,7 @@
 "Check for duplicates in"
     Sök dubbletter i
 "Children's Movies"
+    Barnfilmer
 "Choose Genre.."
     Välj genre..
 "Choose Type"
@@ -291,11 +300,13 @@
 "Closed Captioning"
     Textning
 "color"
+    färg
 "Commands"
     Kommandon
 "Commands:"
     Kommandon:
 "Commercial free"
+    Reklamfri
 "Commercials Flagged"
     Reklam markerad
 "commfree"
@@ -336,6 +347,8 @@
     Egen sökning
 "Customize Screens"
     Skräddarsy skärmar
+"Damaged"
+    Skadad
 "Data"
     Data
 "Database"
@@ -376,10 +389,10 @@
     Delete
 "Depending on the Search type this is where you enter actual main search commands"
     Beroende på söktyp så är det här som du anger sökkommandon
-"description"
-    beskrivning
 "Description"
     Beskrivning
+"description"
+    beskrivning
 "Destination"
     Destination
 "Details for: $1"
@@ -433,6 +446,7 @@
 "Embed HTTP basic auth user name/password into stream urls"
     Integrera HTTP basic auth användarnamn/lösenord i ström-URL:er
 "Enable"
+    Aktivera
 "Enable Flash Video player for recordings."
     Aktivera Flash-videouppspelning av inspelningar
 "Enable Video Playback"
@@ -456,6 +470,7 @@
 "Error"
     Fel
 "Error contacting server to retrieve metadata."
+    Fel vid serveranslutning för att hämta metadata.
 "error: playgroup $1 exists"
     misslyckades: spelgrupp $1 existerar
 "Errored"
@@ -463,7 +478,7 @@
 "Erroring"
     Misslyckas
 "Escape"
-    Undgå
+    Escape
 "Everything"
     Allt
 "Exec. Producer"
@@ -497,6 +512,7 @@
 "First recording"
     Första inspelning
 "First showing"
+    Första visning
 "First showing of each episode"
     Första visning av alla avsnitt
 "Flag Commercials"
@@ -564,6 +580,7 @@
 "Hide"
     Göm
 "High definition"
+    Högupplöst
 "Home"
     Hem
 "Hosted by"
@@ -575,6 +592,7 @@
 "hue"
     färgton
 "Identifiable episode"
+    Identifierbar episod
 "Ignore generic shows"
     Ignorera allmänna visningar
 "Ignore scheduled shows"
@@ -626,13 +644,14 @@
 "Insert"
     Sätta in
 "Internet Reference #"
+    Internetreferens-#
 "Jump"
     Gå
 "Jump Points"
     Hoppmarkeringar
-"Jump to"
-    Gå till
 "Jump To"
+    Gå till
+"Jump to"
     Gå till
 "JumpPoints Editor"
     Redigera hoppmarkeringar
@@ -662,16 +681,16 @@
     Sista visning av varje avsnitt
 "Later"
     Senare
-"left"
-    vänster
 "Left"
     Vänster
+"left"
+    vänster
 "leftl"
     vänsterl
-"length"
-    längd
 "Length"
     Längd
+"length"
+    längd
 "Length (min)"
     Längd (min)
 "Length in minutes"
@@ -703,6 +722,7 @@
 "Logs"
     Logg
 "Look up Metadata"
+    Sök efter Metadata
 "Low Space"
     Lite utrymme
 "Manual"
@@ -721,10 +741,13 @@
 "Missing Cover"
     Saknar omslag
 "Modify priority by star rating (0.0 to 1.0 for movies only)"
+    Ändra prioritet efter stjärnbetyg (0.0 till 1.0 för filmer endast)
 "Modify priority for a station on an input"
-"Modify priority for all inputs on a card"
+    Ändra prioritet för en station på en ingång
 "Modify priority for an input (Input priority)"
+    Ändra prioritet för en ingång (Ingångsprioritet)
 "Modify priority for every card on a host"
+    Ändra prioritet för alla kort på en värd
 "Modify unidentified episodes"
     Modifiera oidentifierade avsnitt
 "Monday"
@@ -799,6 +822,7 @@
 "New"
     Ny
 "New episode"
+    Nytt avsnitt
 "New episodes only"
     Endast nya avsnitt
 "New Group"
@@ -811,6 +835,8 @@
     Nej
 "NO DATA"
     INGA DATA
+"No episodes"
+    Inga avsnitt
 "No Frontends allow remote control."
     Inga Frontends tillåter fjärrkontroll.
 "No Genre"
@@ -820,12 +846,15 @@
 "No matching programs found."
     Inga matchande program hittades.
 "No metadata results found."
+    Inga metadataresultat funna.
 "No Public Playlists"
     Inga publika spellistor
 "No recording schedules have been defined."
     Inga schemalagda inspelningar har definierats.
 "No TV configured!"
+    Ingen TV konfigurerad
 "No videos"
+    Inga videos
 "No. of recordings to keep"
     Inspelningar att behålla
 "NO_TV_CONFIGURED_NOTICE_1"
@@ -857,6 +886,7 @@
     Endast reklamfria kanaler
 "Only channels that carry a specific station"
 "Only display favorite channels"
+    Visa bara favoritkanaler
 "Only match commercial-free channels"
     Matcha endast reklamfria kanaler
 "Only match HD programs"
@@ -915,6 +945,8 @@
     Spela inspelning på Frontend
 "Play this Album Now"
     Spela detta album nu
+"Play this Artist Now"
+    Spela denna artist nu
 "Play This Playlist Now"
     Spela denna spellista nu
 "Play this Playlist Now"
@@ -950,18 +982,23 @@
 "Playlists"
     Spellistor
 "Please enter an IMDB number or a title to do another search"
+    Ange ett IMDB-nummer eller en titel för ytterligare sökning
 "Please rate more shows to get more results"
+    Var god betygsätt fler program för att få fler resultat
 "Please wait for the pending AJAX request"
+    Var god vänta på utestående AJAX-begäran
 "Plot"
     Handling
 "Plot:"
     Handling:
 "Pop-out player"
+    Poput spelare
 "Possible conflicts"
     Möjliga konflikter
 "Possible conflicts with this show"
     Möjliga konflikter med denna visning
 "Post Processing"
+    Efterbearbetning
 "Power"
     Avancerat
 "Power Search"
@@ -971,6 +1008,7 @@
 "Prefer a host for a storage group"
     Föredra en värd framför en lagringsgrupp
 "Prefer a host for live sports with overtime"
+    Föredra en värd för direktsänd sport med övertid
 "Prefer Channum"
     Föredra kanalnummer
 "Prefer movies when shown at night"
@@ -986,6 +1024,7 @@
 "Previous recordings"
     Tidigare inspelningar
 "Prime time"
+    Bästa sändningstid
 "Priority for a category"
     Prioritet för en kategori
 "Priority for a category type"
@@ -993,8 +1032,11 @@
 "Priority for all matching titles"
     Prioritet för alla matchande titlar
 "Priority for any show with End Late time"
+    Prioritet för program med sluta sent tid
 "Priority for HD shows under two hours"
+    Prioritet för HD program under två timmar
 "Priority for movies by the year of release"
+    Prioritet för filmer från utgivningsår
 "Priority when shown once"
     Prioritet vid endast en visning
 "Produced by"
@@ -1037,13 +1079,18 @@
     Nyligen tillagda album
 "Recently completed jobs"
     Nyligen färdiga jobb
+"Recently Played Albums"
+    Nyligen spelade album
 "Recently Played Songs"
     Nyligen spelade sånger
 "recgroup"
     inspelningsgrupp
 "Recommend Videos"
+    Rekommendera Video
 "Recommended"
+    Rekommenderad
 "Recommended Programs"
+    Rekommenderade program
 "Record Date"
     Inspelningsdatum
 "Record Length"
@@ -1151,7 +1198,7 @@
 "regex: articles"
     An?|The|En|Ett|Den|De|Det
 "Remote"
-    Otillgänglig
+    Fjärr
 "Remove Item from Playlist"
     Ta bort post från spellista
 "Repair Tables"
@@ -1166,10 +1213,10 @@
     Försök igen
 "Return to Statistics Page"
     Återvänd till statistiksida
-"right"
-    höger
 "Right"
     Höger
+"right"
+    höger
 "Root Directory"
     Rotkatalog
 "Rows to show between timeslot info"
@@ -1217,8 +1264,11 @@
 "Search $1"
     Sök $1
 "Search all program keywords for a match against search phrase below"
+    Sök alla programnyckelord för en match mot sökfrasen nedan
 "Search all program titles containing the Title text below"
+    Sök alla programtitlar innehållande titeltexten nedan
 "Search for all actors contained in a recording for a match against search phrase below"
+    Sök efter alla aktörer som ingår i en inspelning för en match mot söksträng nedan
 "Search for:  $1"
     Sök efter: $1
 "Search Music"
@@ -1240,11 +1290,15 @@
 "Searches"
     Sökningar
 "Searches will be performed against the title of all TV shows"
+    Sökningar kommer att utföras mot titeln på alla TV-program
 "Seas/Ep"
+    Säs/avs
 "Season"
     Säsong
 "Select the correct show"
+    Välj rätt show
 "Server returned invalid data when attempting to retrieve metadata."
+    Servern returnerade ogiltiga data under hämtning av metadata.
 "Server Statistics"
     Serverstatistik
 "Set Host"
@@ -1300,6 +1354,7 @@
 "Songs Rated"
     Sånger rankning
 "Sorry, but you cannot add this playlist as it would create a circular dependency."
+    Tyvärr, men du kan inte lägga till denna spellista eftersom det skulle skapa ett cirkulärberoende.
 "sortby_channum"
     Sortera efter kanalnummer i stället för kanalnamn
 "sourceid"
@@ -1370,13 +1425,19 @@
 "There was a problem saving your playlist"
     Det uppstod ett problem med att spara din spellista
 "TheTVDB"
+    TheTVDB
 "This channel"
+    Denna kanal
 "This day and time"
+    Denna dag och tid
 "This episode"
+    Detta avsnitt
 "This playlist is already loaded!"
     Denna spellista har redan laddats!
 "This series"
+    Denna serie
 "This time"
+    Denna tid
 "This will overwrite your current, unsaved playlist. Are you sure you want to continue?"
     Detta skriver över din nuvarande, osparade spellista. Är du säker på att du vill fortsätta?
 "Thursday"
@@ -1389,15 +1450,15 @@
     Tidssträcka
 "Timeslot size"
     Tidsluckestorlek
-"title"
-    titel
 "Title"
     Titel
+"title"
+    titel
 "Title Match"
     Titel Träffar
-"Title search"
-    Sök titel
 "Title Search"
+    Sök titel
+"Title search"
     Sök titel
 "Title Search:"
     Sök titel:
@@ -1409,6 +1470,10 @@
     För många
 "Top $1"
     Topp $1
+"Top Played Albums"
+    Mest spelade album
+"Top Played Artist"
+    Mest spelade artister
 "Top Played Songs"
     Mest spelade sånger
 "Top Rated Songs"
@@ -1425,13 +1490,15 @@
     Total tid: %s
 "Track #%s from the album '%s'"
     Spår nr %s fråm albumet '%s'
+"Trakt.tv Home Page"
 "Transcode"
     Omkoda
 "Transcoded"
-"transcoder"
-    omkodare
+    Omkodad
 "Transcoder"
     Omkodare
+"transcoder"
+    omkodare
 "Tuesday"
     Tisdag
 "Tuner Busy"
@@ -1442,10 +1509,10 @@
     Tv-funktioner, inkl. inspelade program.
 "TV.com"
     TV.com
-"type"
-    typ
 "Type"
     Typ
+"type"
+    typ
 "Uncategorized"
     Okategoriserad
 "Undelete"
@@ -1535,6 +1602,7 @@
 "VideoTreeNoDB"
     VideoTrädIngenDB
 "View"
+    Visa
 "View Albums by %s"
     Visa album av %s
 "View Details of %s"
