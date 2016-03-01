@@ -105,7 +105,7 @@ EOF;
         // -----------------------------------------------------------------------------
         // - Setup variables for use with the recommend engines
         // -----------------------------------------------------------------------------
-        var recommend_enabled   = <?php echo (bool)setting('recommend_enabled', null); ?>;
+        var recommend_enabled   = <?php echo setting('recommend_enabled', null); ?>;
         var recommend_server    = "<?php echo setting('recommend_server', null); ?>";
         var recommend_key       = "<?php echo setting('recommend_key', null); ?>";
         // -->
