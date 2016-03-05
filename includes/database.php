@@ -10,7 +10,7 @@
  **/
 
 // No MySQL libraries installed in PHP
-    if (!function_exists('mysql_connect')) {
+    if (!function_exists('mysqli_connect')) {
         custom_error("Please install the MySQL libraries for PHP.\n"
                     .'The package is usually called something like php-mysql.');
     }
@@ -41,7 +41,7 @@
                                     $_SERVER['db_login'],
                                     $_SERVER['db_password'],
                                     $_SERVER['db_server'],
-                                    NULL, 'mysql');
+                                    NULL, 'mysqlicompat');
         }
         else {
 			if (!isset($_SESSION['upnp_db'])) {
@@ -62,7 +62,7 @@
 									$_SESSION['upnp_db']['user'],
 									$_SESSION['upnp_db']['pass'],
 									$_SESSION['upnp_db']['host'],
-									NULL, 'mysql');
+									NULL, 'mysqlicompat');
         }
 		if (!is_object($db)) {
 			custom_error("Database connection is not valid!");

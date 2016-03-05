@@ -28,50 +28,54 @@ function pic_dir()
 
 function GarbageCollector()
 {
+    global $db;
     // Run this occasionally to tidy up.
     if (0 == mt_rand(0, 30))
     {
         $query = 'DELETE FROM music_playlists '.
-            "WHERE playlist_name='".mysql_real_escape_string('MythWeb Temporary Playlist')."'".
+            "WHERE playlist_name='".$db->escape('MythWeb Temporary Playlist')."'".
             ' AND (NOW() - last_accessed) > ('.MYTH_PLAYLIST_SAVE_TIME.');';
-        mysql_query($query);
+        $sh = $db->query($query);
+        $sh->finish();
     }
 }
 
 function getplaylistnames()
 {
+  global $db;
   $output='';
   $query = 'SELECT playlist_name, hostname FROM music_playlists WHERE hostname=\'\';';
-  $result = mysql_query($query);
+  $sh = $db->query($query);
 
-  if (!$result)
+  if (!$sh)
     return '';
 
-  while ($row = mysql_fetch_array($result))
+  while ($row = $sh->fetch_array())
   {
     $output .= '<option>'.$row['playlist_name'].'</option>';
   }
-  mysql_free_result($result);
+  $sh->finish();
   return $output;
 }
 
 function genreform()
 {
+  global $db;
   $query = "SELECT genre FROM music_genres ORDER BY genre";
-  $result = mysql_query($query);
+  $sh = $db->query($query);
 
-  if (!$result)
+  if (!$sh)
     return '';
 
   $output = '<select id="genre" name="genre" onchange="updateBox(\'genre\',this.options[selectedIndex].value); return false;">
     <option value="" selected>'.t('Choose Genre..').'</option>';
 
-  while ($genre = mysql_fetch_array($result))
+  while ($genre = $sh->fetch_array())
   {
     $output .= '<option value="'.$genre['genre'].'">'.$genre['genre'].'</option>';
   }
   $output .= '</select>';
-  mysql_free_result($result);
+  $sh->finish();
   return $output;
 }
 
@@ -95,6 +99,7 @@ function getDropDown($type, $id)
 
 function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
 {
+  global $db;
   $childoutput='';
   $parentoutput ='';
   if ($page == 'browse' && $child != '')
@@ -107,31 +112,31 @@ function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
       $query = 'SELECT music_albums.album_name, music_artists.artist_name, music_artists.artist_id '.
         'FROM music_albums '.
         'LEFT JOIN music_artists ON music_albums.artist_id=music_artists.artist_id '.
-        'WHERE music_albums.album_id='.mysql_real_escape_string($childitem);
-      $result = mysql_query($query);
-      if (!$result)
+        'WHERE music_albums.album_id='.$db->escape($childitem);
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
 
       $query = 'SELECT album_name, album_id '.
         'FROM music_albums '.
         'WHERE artist_id='.$row['artist_id'].' '.
         'ORDER BY album_name';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
       $albums = '';
-      while ($row2 = mysql_fetch_array($result))
+      while ($row2 = $sh->fetch_array())
       {
         $albums .= '<li><a class="music" href="#"'.
           ' onclick="updateBox(\'album\','.$row2['album_id'].'); return false;"'.
           ' title="'.sprintf(t('View Details of %s'), $row2['album_name']).'">'.
           $row2['album_name'].'</a></li>';
       }
-      mysql_free_result($result);
+      $sh->finish();
 
       $childoutput .= '<span><a class="music" href="#"'.
         ' onclick="updateBox(\'artist\','.$row['artist_id'].'); return false;">'.
@@ -143,30 +148,30 @@ function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
     case 'artist':
       $query = 'SELECT artist_name '.
         'FROM music_artists '.
-        'WHERE artist_id='.mysql_real_escape_string($childitem);
-      $result = mysql_query($query);
-       if (!$result)
+        'WHERE artist_id='.$db->escape($childitem);
+      $sh = $db->query($query);
+       if (!$sh)
         break;
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
 
       $query = 'SELECT music_albums.album_id, album_name '.
         'FROM music_songs '.
         'LEFT JOIN music_albums ON music_songs.album_id=music_albums.album_id '.
-        'WHERE music_songs.artist_id='.mysql_real_escape_string($childitem).' '.
+        'WHERE music_songs.artist_id='.$db->escape($childitem).' '.
         'GROUP BY music_albums.album_id;';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
       $albums = '';
-      while ($row2 = mysql_fetch_array($result))
+      while ($row2 = $sh->fetch_array())
       {
         $albums .= '<li><a class="music" href="#"'.
           ' onclick="updateBox(\'album\','.$row2['album_id'].'); return false;"'.
           ' title="'.sprintf(t('View Details of %s'), $row2['album_name']).'">'.
           $row2['album_name'].'</a></li>';
       }
-      mysql_free_result($result);
+      $sh->finish();
 
       $childoutput .= '<span><a class="music" href="#"'.
         ' onclick="updateBox(\'artist\','.$childitem.'); return false;">'.
@@ -211,8 +216,8 @@ function buildBreadcrumb($page, $parent, $parentitem, $child, $childitem)
 
 function musicLookup($type, $itemid)
 {
-    global $db;
-  $sql_itemid = "'".mysql_real_escape_string($itemid)."'";
+  global $db;
+  $sql_itemid = "'".$db->escape($itemid)."'";
   switch($type)
   {
     case 'browse':
@@ -274,11 +279,11 @@ function musicLookup($type, $itemid)
                    "FROM music_artists " .
                    "GROUP BY artist_name_sort " .
                    "HAVING artist_name_sort " .
-                   "LIKE '" . mysql_real_escape_string($itemid.'%') . "' " .
+                   "LIKE '" . $db->escape($itemid.'%') . "' " .
                    "ORDER BY artist_name_sort";
       }
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
       $output = '<div class="head">
@@ -290,7 +295,7 @@ function musicLookup($type, $itemid)
         <strong>'.t('Artist Listing').'</strong></p>
         <ul class="music">';
       $alt = false;
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= '<li'.($alt ? ' class="alt"' : '').'>
           <a class="music" href="#"
@@ -299,7 +304,7 @@ function musicLookup($type, $itemid)
           $row['artist_name'].'</a></li>';
         $alt = !$alt;
       }
-      mysql_free_result($result);
+      $sh->finish();
       $output .= '</ul>';
       break;
 
@@ -318,17 +323,17 @@ function musicLookup($type, $itemid)
         'LEFT JOIN music_artists AS mt ON ma.artist_id=mt.artist_id '.
         'ORDER BY album_name, artist_name';
 
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
       $alt = false;
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $row['artist_name']);
       }
-      mysql_free_result($result);
+      $sh->finish();
       $output .= '</ul>';
       break;
 
@@ -338,12 +343,12 @@ function musicLookup($type, $itemid)
                'FROM music_songs '.
                'WHERE music_songs.album_id='.$sql_itemid.' '.
                'GROUP BY music_songs.album_id;';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
       $num_tracks = $row[0];
       $length = $row[1];
 
@@ -358,12 +363,12 @@ function musicLookup($type, $itemid)
                             ON ms.album_id=mal.album_id
                WHERE ms.album_id='.$sql_itemid.'
                LIMIT 1';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
 
     // Load album art
         $art_id = $db->query_col('SELECT ma.albumart_id
@@ -401,17 +406,17 @@ function musicLookup($type, $itemid)
                'LEFT JOIN music_genres ON ms.genre_id=music_genres.genre_id '.
                'WHERE ms.album_id='.$sql_itemid.' '.
                'ORDER BY ms.track';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', $row['track'], $row['name'],
           $row['length'], $row['numplays'], $row['genre'], $row['rating']);
       }
-      mysql_free_result($result);
+      $sh->finish();
       $output .= '</ul>';
       break;
 
@@ -430,17 +435,17 @@ function musicLookup($type, $itemid)
                'LEFT JOIN music_genres AS mg ON ms.genre_id=mg.genre_id '.
                'WHERE genre='.utf8_encode($sql_itemid);
 
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'],
           $row['length'], $row['numplays'], '', $row['rating']);
       }
-      mysql_free_result($result);
+      $sh->finish();
       $output .= '</ul>';
       break;
 
@@ -448,12 +453,12 @@ function musicLookup($type, $itemid)
       $query = 'SELECT artist_name '.
         'FROM music_artists '.
         'WHERE artist_id='.$sql_itemid;
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
       $artist = $row['artist_name'];
 
       $letter = (!preg_match('/^[0-9]/', $artist) ? strtoupper($artist{0}) : '#');
@@ -473,11 +478,11 @@ function musicLookup($type, $itemid)
         'LEFT JOIN music_artists AS mt ON ma.artist_id=mt.artist_id '.
         'WHERE ms.artist_id='.$sql_itemid.' '.
         'GROUP BY ma.album_id;';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $artist = '';
         if ($itemid != $row['artist_id'])
@@ -486,7 +491,7 @@ function musicLookup($type, $itemid)
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $artist, $row['year'], $row['num_tracks'], $row['length']);
       }
-      mysql_free_result($result);
+      $sh->finish();
 
       $output .='</ul><p><strong>'.t('Songs').'</strong></p>
         <ul class="music">';
@@ -499,17 +504,17 @@ function musicLookup($type, $itemid)
         'LEFT JOIN music_albums ON ms.album_id=music_albums.album_id '.
         'LEFT JOIN music_genres ON ms.genre_id=music_genres.genre_id '.
         'WHERE ms.artist_id='.$sql_itemid.';';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], '',
           $row['album_name'], $row['track'], $row['name'],
           $row['length'], $row['numplays'], $row['genre'], $row['rating']);
       }
-      mysql_free_result($result);
+      $sh->finish();
       $output .= '</ul>';
       break;
 
@@ -568,14 +573,14 @@ function musicLookup($type, $itemid)
       $query = 'SELECT playlist_id, playlist_name, songcount, hostname, SEC_TO_TIME(length/1000) AS length '.
         'FROM music_playlists '.
         'WHERE hostname=\'\'';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
       $output = '<div class="head">
         <h2 class="music">'.t('Saved Playlists').'</h2></div><br>';
 
-      if (mysql_num_rows($result) == 0)
+      if ($sh->num_rows == 0)
       {
         $output .= t('No Public Playlists');
       }
@@ -590,26 +595,26 @@ function musicLookup($type, $itemid)
         }
 
         $output .= '<ul class="music">';
-        while ($row = mysql_fetch_array($result))
+        while ($row = $sh->fetch_array())
         {
           $output .= getHtmlPlaylist($row['playlist_id'], $row['playlist_name'],
             $row['songcount'], $row['length'], $unsaved_id);
         }
         $output .= '</ul>';
       }
-      mysql_free_result($result);
+      $sh->finish();
       break;
 
     case 'saved_pl':
       $query = 'SELECT playlist_id, playlist_name, playlist_songs, songcount, SEC_TO_TIME(length/1000) AS length '.
         'FROM music_playlists '.
         'WHERE playlist_id='.$sql_itemid;
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
 
       $unsaved_id = 0;
       $pl = internalGetPlaylist();
@@ -654,16 +659,16 @@ function musicLookup($type, $itemid)
             'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
             'LEFT JOIN music_albums AS ma ON ms.album_id=ma.album_id '.
             'WHERE ms.song_id IN ('.$row['playlist_songs'].');';
-        $result = mysql_query($query);
-        if (!$result)
+        $sh = $db->query($query);
+        if (!$sh)
             return;
 
         $song_info = array();
-        while ($row2 = mysql_fetch_array($result))
+        while ($row2 = $sh->fetch_array())
         {
             $song_info[$row2['song_id']] = $row2;
         }
-        mysql_free_result($result);
+        $sh->finish();
 
         // Load the sub-playlist information
         // NB: MySQL 3.xx cannot use the CAST() function hense the negative number decimal
@@ -671,16 +676,16 @@ function musicLookup($type, $itemid)
         $query = 'SELECT playlist_id, playlist_name, SEC_TO_TIME(length/1000) AS length, songcount '.
             'FROM music_playlists '.
             'WHERE (-1.0 * (playlist_id+0.0)) IN ('.$row['playlist_songs'].');';
-        $result = mysql_query($query);
-        if (!$result)
+        $sh = $db->query($query);
+        if (!$sh)
             return;
 
         $pl_info = array();
-        while ($row2 = mysql_fetch_array($result))
+        while ($row2 = $sh->fetch_array())
         {
             $pl_info[$row2['playlist_id']] = $row2;
         }
-        mysql_free_result($result);
+        $sh->finish();
 
         $songs = explode(',', $row['playlist_songs']);
         $output .= '<ul class="music">';
@@ -706,20 +711,20 @@ function musicLookup($type, $itemid)
 
     case 'stats':
       $query = 'SELECT * FROM music_stats';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
 
       $query = 'SELECT COUNT(*) AS songs FROM music_songs WHERE numplays>0';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
-      $row2 = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row2 = $sh->fetch_array();
+      $sh->finish();
 
       $output = '<div class="head">
         <h2 class="music">'.t('Server Statistics').'</h2></div>
@@ -746,21 +751,21 @@ function musicLookup($type, $itemid)
                      'music_artists' => t('Artists'),
                      'music_genres'  => t('Genres')) as $table => $title)
       {
-        $result = mysql_query('SELECT COUNT(*) FROM '.$table.';');
-        if (!$result)
+        $sh = $db->query('SELECT COUNT(*) FROM '.$table.';');
+        if (!$sh)
           continue;
-        $count = mysql_fetch_array($result);
-        mysql_free_result($result);
+        $count = $sh->fetch_array();
+        $sh->finish();
         $output .= '<strong>'.$title.':</strong> '.$count[0].'<br>';
       }
       $output .= '<br><strong>'.t('Songs Played').':</strong> '.$row2['songs'].'<br>';
 
-      $result = mysql_query('SELECT COUNT(*) AS songs FROM music_songs WHERE rating > 0;');
-      if(!$result)
+      $sh = $db->query('SELECT COUNT(*) AS songs FROM music_songs WHERE rating > 0;');
+      if (!$sh)
         break;
 
-      $row3 = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row3 = $sh->fetch_array();
+      $sh->finish();
       $output .= '<strong>'.t('Songs Rated').':</strong> '.$row3['songs'].'<br></p>';
 
       break;
@@ -773,8 +778,8 @@ function musicLookup($type, $itemid)
         'GROUP BY ms.album_id '.
         'ORDER BY ms.date_entered DESC '.
         'LIMIT 40';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
       $output = '<div class="head">
@@ -784,12 +789,12 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Recently Added Albums').'</h2></div>
         <ul class="music">';
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $row['artist_name'], '', '', '', date('m.d.Y', $row['pubdate']));
       }
-      mysql_free_result($result);
+      $sh->finish();
       $output .= '</ul>';
       break;
 
@@ -801,8 +806,8 @@ function musicLookup($type, $itemid)
         'WHERE ms.numplays > 0 '.
         'ORDER BY ms.numplays DESC '.
         'LIMIT 40';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
       $output = '<div class="head">
@@ -812,12 +817,12 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Top Played Songs').'</h2></div>
         <ul class="music">';
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'], $row['album_name'], $row['numplays'], '', '');
       }
-      mysql_free_result($result);
+      $sh->finish();
       $output .= '</ul>';
       break;
 
@@ -886,8 +891,8 @@ function musicLookup($type, $itemid)
         'WHERE ms.numplays > 0 '.
         'ORDER BY ms.lastplay DESC '.
         'LIMIT 40';
-      $result = mysql_query($query);
-      if (!$result)
+      $sh = $db->query($query);
+      if (!$sh)
         break;
 
       $output = '<div class="head">
@@ -897,7 +902,7 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Recently Played Songs').'</h2></div>
         <ul class="music">';
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $output .= getHtmlSong($row['song_id'], $row['artist_name'],
           '', '', $row['name'], date('m.d.Y', $row['playdate']), '', '', '');
@@ -940,8 +945,8 @@ function musicLookup($type, $itemid)
           'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
           'ORDER BY ms.rating DESC '.
           'LIMIT 40';
-        $result = mysql_query($query);
-        if(!result)
+        $sh = $db->query($query);
+        if (!$sh)
           break;
 
         $output = '<div class="head">
@@ -951,7 +956,7 @@ function musicLookup($type, $itemid)
               title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
             <h2 class="music">'.t('Top Rated Songs').'</h2></div>
             <ul class="music">';
-        while ($row = mysql_fetch_array($result))
+        while ($row = $sh->fetch_array())
         {
           $output .= getHtmlSong($row['song_id'], $row['artist_name'],
             '', '', $row['name'], '', '', '', $row['rating']);
@@ -966,6 +971,8 @@ function musicLookup($type, $itemid)
 
 function getRandItems($type)
 {
+  global $db;
+
   switch ($type)
   {
     case 'artists':
@@ -981,17 +988,17 @@ function getRandItems($type)
       return '<br>'.t('All Songs');
   }
 
-  $result = mysql_query($query);
-  if (!$result)
+  $sh = $db->query($query);
+  if (!$sh)
     return '';
 
   $options = '';
-  while ($row = mysql_fetch_array($result))
+  while ($row = $sh->fetch_array())
   {
     $options .= '<option value="'.$row[0].'">'.
       $row[1].'</option>';
   }
-  mysql_free_result($result);
+  $sh->finish();
 
   return '<select name="random_items" multiple="multiple" size="12" style="width: 90%;">'.
     $options.'</select>';
@@ -1000,7 +1007,8 @@ function getRandItems($type)
 
 function searchMusic($terms, $option)
 {
-  $sql_terms = "'%".mysql_real_escape_string($terms)."%'";
+  global $db;
+  $sql_terms = "'%".$db->escape($terms)."%'";
   $query = 'SELECT ms.song_id, ma.album_name, ms.track, mt.artist_name, ms.name, ms.rating, '.
     'SEC_TO_TIME(ms.length/1000) AS length, genre '.
     'FROM music_songs AS ms '.
@@ -1029,11 +1037,11 @@ function searchMusic($terms, $option)
   }
   $query .= ' ORDER BY mt.artist_name, ma.album_name, ms.track, ms.name';
 
-  $result = mysql_query($query);
-  if (!$result)
+  $sh = $db->query($query);
+  if (!$sh)
     return '';
 
-  $count = mysql_num_rows($result);
+  $count = $sh->num_rows;
 
   $output = '<div class="head">
     <div class="right">
@@ -1045,7 +1053,7 @@ function searchMusic($terms, $option)
   if($count > 0)
   {
     $output .= '<ul class="music">';
-    while ($row = mysql_fetch_array($result))
+    while ($row = $sh->fetch_array())
     {
       $output .= getHtmlSong($row['song_id'], $row['artist_name'],
         $row['album_name'], $row['track'], $row['name'],
@@ -1058,6 +1066,7 @@ function searchMusic($terms, $option)
 
 function internalGetPlaylist($plId = 0)
 {
+  global $db;
   $row = array();
   if (empty($plId))
   {
@@ -1069,15 +1078,15 @@ function internalGetPlaylist($plId = 0)
   $query = 'SELECT playlist_id, playlist_name, playlist_songs, songcount, length AS length_in_secs'.
     ', SEC_TO_TIME(length/1000) AS length '.
     'FROM music_playlists '.
-    'WHERE playlist_id='.mysql_real_escape_string($plId);
+    'WHERE playlist_id='.$db->escape($plId);
 
-  $result = mysql_query($query);
-  if (!$result)
+  $sh = $db->query($query);
+  if (!$sh)
     return $row;
 
-  if (mysql_num_rows($result) > 0)
-    $row = mysql_fetch_array($result);
-  mysql_free_result($result);
+  if ($sh->num_rows > 0)
+    $row = $sh->fetch_array();
+  $sh->finish();
 
   // Set the last accessed time for Temporary playlists so that
   // we can run a garbage colnctor later.
@@ -1085,8 +1094,8 @@ function internalGetPlaylist($plId = 0)
   {
     $query = 'UPDATE music_playlists'.
       ' SET last_accessed=NULL '.
-      'WHERE playlist_id='.mysql_real_escape_string($plId);
-    mysql_query($query);
+      'WHERE playlist_id='.$db->escape($plId);
+    $db->query($query);
   }
 
   return $row;
@@ -1094,6 +1103,7 @@ function internalGetPlaylist($plId = 0)
 
 function internalUpdatePlaylist($songs, $count, $length)
 {
+  global $db;
   $plId = 0;
   if (!empty($_COOKIE['mp3act_playlist_id']))
     $plId = $_COOKIE['mp3act_playlist_id'];
@@ -1101,26 +1111,26 @@ function internalUpdatePlaylist($songs, $count, $length)
   $songlist = implode(',', $songs);
 
   $query = 'music_playlists SET'.
-    " playlist_songs='".mysql_real_escape_string($songlist)."'".
-    ',length='.mysql_real_escape_string($length).
-    ',songcount='.mysql_real_escape_string($count);
+    " playlist_songs='".$db->escape($songlist)."'".
+    ',length='.$db->escape($length).
+    ',songcount='.$db->escape($count);
 
   if (empty($plId))
   {
     $query = 'INSERT INTO '.$query.
-      ",hostname='".mysql_real_escape_string('mythweb-'.$_SERVER['SERVER_NAME'])."'".
+      ",hostname='".$db->escape('mythweb-'.$_SERVER['SERVER_NAME'])."'".
       ",playlist_name='".MYTH_WEB_PLAYLIST_NAME."'";
   }
   else
   {
     $query = 'UPDATE '.$query.
-      ' WHERE playlist_id='.mysql_real_escape_string($plId);
+      ' WHERE playlist_id='.$db->escape($plId);
   }
-  mysql_query($query);
+  $db->query($query);
 
   if (empty($plId))
   {
-    $plId = mysql_insert_id();
+    $plId = $db->insert_id();
     if ($plId)
     {
       setcookie('mp3act_playlist_id', $plId, time()+MYTH_PLAYLIST_SAVE_TIME);
@@ -1132,6 +1142,7 @@ function internalUpdatePlaylist($songs, $count, $length)
 
 function viewPlaylist()
 {
+  global $db;
   $pl = internalGetPlaylist();
 
   if (empty($pl['playlist_songs']))
@@ -1146,16 +1157,16 @@ function viewPlaylist()
     'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
     'LEFT JOIN music_albums AS ma ON ms.album_id=ma.album_id '.
     'WHERE ms.song_id IN ('.$pl['playlist_songs'].');';
-  $result = mysql_query($query);
-  if (!$result)
+  $sh = $db->query($query);
+  if (!$sh)
     return;
 
   $song_info = array();
-  while ($row = mysql_fetch_array($result))
+  while ($row = $sh->fetch_array())
   {
     $song_info[$row['song_id']] = $row;
   }
-  mysql_free_result($result);
+  $sh->finish();
 
   // Load the sub-playlist information
   // NB: MySQL 3.xx cannot use the CAST() function hense the negative number decimal
@@ -1163,16 +1174,16 @@ function viewPlaylist()
   $query = 'SELECT playlist_id, playlist_name, SEC_TO_TIME(length/1000) AS length, songcount '.
     'FROM music_playlists '.
     'WHERE (-1.0 * (playlist_id+0.0)) IN ('.$pl['playlist_songs'].');';
-  $result = mysql_query($query);
-  if (!$result)
+  $sh = $db->query($query);
+  if (!$sh)
     return;
 
   $pl_info = array();
-  while ($row = mysql_fetch_array($result))
+  while ($row = $sh->fetch_array())
   {
     $pl_info[$row['playlist_id']] = $row;
   }
-  mysql_free_result($result);
+  $sh->finish();
 
 
   $songs = explode(',', $pl['playlist_songs']);
@@ -1226,6 +1237,7 @@ function playlistInfo()
 
 function savePlaylist($pl_name, $newpl)
 {
+  global $db;
   $pl = internalGetPlaylist();
 
   if (!empty($pl['playlist_id']))
@@ -1240,11 +1252,11 @@ function savePlaylist($pl_name, $newpl)
   else
   {
     $query = 'UPDATE music_playlists SET'.
-      ' playlist_name=\''.mysql_real_escape_string($pl_name).'\''.
+      ' playlist_name=\''.$db->escape($pl_name).'\''.
       ",hostname='' ".
-      'WHERE playlist_id='.mysql_real_escape_string($pl['playlist_id']);
+      'WHERE playlist_id='.$db->escape($pl['playlist_id']);
 
-    mysql_query($query);
+    $db->query($query);
 
     if (MYTH_WEB_PLAYLIST_NAME == $pl['playlist_name'])
       $msg = t('Playlist saved successfully');
@@ -1274,6 +1286,7 @@ function clearPlaylist()
 
 function deletePlaylist($id)
 {
+  global $db;
   $rv = 0;
   if ($id == $_COOKIE['mp3act_playlist_id'])
   {
@@ -1282,14 +1295,15 @@ function deletePlaylist($id)
   }
 
   $query = 'DELETE FROM music_playlists '.
-    'WHERE playlist_id='.mysql_real_escape_string($id);
-  mysql_query($query);
+    'WHERE playlist_id='.$db->escape($id);
+  $db->query($query);
   return $rv;
 }
 
 
 function playlist_rem($itemid)
 {
+  global $db;
   $pl = internalGetPlaylist();
 
   $songs = explode(',', $pl['playlist_songs']);
@@ -1301,19 +1315,19 @@ function playlist_rem($itemid)
     if ($id > 0)
     {
       $query = 'SELECT length, 1 AS songcount FROM music_songs '.
-        'WHERE song_id='.mysql_real_escape_string($id);
+        'WHERE song_id='.$db->escape($id);
     }
     else
     {
       $query = 'SELECT length, songcount FROM music_playlists '.
-        'WHERE playlist_id='.mysql_real_escape_string(-1 * $id);
+        'WHERE playlist_id='.$db->escape(-1 * $id);
     }
-    $result = mysql_query($query);
+    $sh = $db->query($query);
     $length = $count = 0;
-    if ($result)
+    if ($sh)
     {
-      $row = mysql_fetch_array($result);
-      mysql_free_result($result);
+      $row = $sh->fetch_array();
+      $sh->finish();
       if ($row)
       {
         $length = $row['length'];
@@ -1330,6 +1344,7 @@ function playlist_rem($itemid)
 
 function playlist_move($item1,$item2)
 {
+  global $db;
   $pl = internalGetPlaylist();
 
   $idx1 = intval($item1);
@@ -1345,13 +1360,14 @@ function playlist_move($item1,$item2)
   $songs[$idx2] = $tmp;
 
   $query = 'UPDATE music_playlists SET'.
-    ' playlist_songs=\''.mysql_real_escape_string(implode(',', $songs)).'\' '.
-    'WHERE playlist_id='.mysql_real_escape_string($pl['playlist_id']).';';
-  mysql_query($query);
+    ' playlist_songs=\''.$db->escape(implode(',', $songs)).'\' '.
+    'WHERE playlist_id='.$db->escape($pl['playlist_id']).';';
+  $db->query($query);
 }
 
 function internalPlaylistAddPlaylistCheck($curPlId, $addPlId, $depth = 0)
 {
+  global $db;
   // Infinite loop protection (e.g. if the DB is messed up already)
   if ($depth > 25)
     return false;
@@ -1362,14 +1378,14 @@ function internalPlaylistAddPlaylistCheck($curPlId, $addPlId, $depth = 0)
 
   $query = 'SELECT playlist_songs '.
     'FROM music_playlists '.
-    'WHERE playlist_id='.mysql_real_escape_string($addPlId);
+    'WHERE playlist_id='.$db->escape($addPlId);
 
-  $result = mysql_query($query);
-  if (!$result)
+  $sh = $db->query($query);
+  if (!$sh)
     return false;
 
-  $row = mysql_fetch_array($result);
-  mysql_free_result($result);
+  $row = $sh->fetch_array();
+  $sh->finish();
 
   if (!$row) // Not a real playlist.
     return false;
@@ -1394,6 +1410,7 @@ function internalPlaylistAddPlaylistCheck($curPlId, $addPlId, $depth = 0)
 
 function playlist_add($type, $itemid)
 {
+  global $db;
   $output = array(0 => '', 1 => 0);
 
   if ('loadplaylist' == $type)
@@ -1453,7 +1470,7 @@ function playlist_add($type, $itemid)
     return $output;
   }
 
-  $sql_itemid = mysql_real_escape_string($itemid);
+  $sql_itemid = $db->escape($itemid);
   $query = 'SELECT ms.song_id, mt.artist_name, ma.album_name,'.
     ' length AS length_in_secs, SEC_TO_TIME(ms.length/1000) AS length, ms.name, ms.track '.
     'FROM music_songs AS ms '.
@@ -1472,11 +1489,11 @@ function playlist_add($type, $itemid)
       return $output;
   }
 
-  $result = mysql_query($query.' ORDER BY ms.track');
-  if (!$result)
+  $sh = $db->query($query.' ORDER BY ms.track');
+  if (!$sh)
     return $output;
 
-  while ($row = mysql_fetch_array($result))
+  while ($row = $sh->fetch_array())
   {
     $id = md5($row['song_id'].mt_rand());
     $output[0] .= getHtmlPlaylistEntrySong($id, $row['artist_name'],
@@ -1488,7 +1505,7 @@ function playlist_add($type, $itemid)
     $new_length += $row['length_in_secs'];
     $new_songcount++;
   }
-  mysql_free_result($result);
+  $sh->finish();
 
   internalUpdatePlaylist($songs, $new_songcount, $new_length);
 
@@ -1497,13 +1514,14 @@ function playlist_add($type, $itemid)
 
 function randAdd($type,$num=0,$items='',$rating='')
 {
+  global $db;
   $output = array(0 => 1);
   // Check to see if $items matches our REGEXP.
   if ($type != 'all' && !preg_match('/^[0-9]+(,[0-9]+)*$/', $items))
   {
     return $output;
   }
-  $sql_items = mysql_real_escape_string($items);
+  $sql_items = $db->escape($items);
 
   $query = 'SELECT song_id, length '.
     'FROM music_songs ';
@@ -1527,10 +1545,10 @@ function randAdd($type,$num=0,$items='',$rating='')
   }
 
   $query .= 'GROUP BY name ORDER BY RAND()+0 '.
-    'LIMIT '.mysql_real_escape_string(intval($num));
-  $result = mysql_query($query);
+    'LIMIT '.$db->escape(intval($num));
+  $sh = $db->query($query);
 
-  if (!$result)
+  if (!$sh)
     return $output;
 
   $pl = internalGetPlaylist();
@@ -1548,13 +1566,13 @@ function randAdd($type,$num=0,$items='',$rating='')
     $new_songcount = $pl['songcount'];
   }
 
-  while ($row = mysql_fetch_array($result))
+  while ($row = $sh->fetch_array())
   {
     $songs[] = $row['song_id'];
     $new_length += $row['length'];
     $new_songcount++;
   }
-  mysql_free_result($result);
+  $sh->finish();
 
   internalUpdatePlaylist($songs, $new_songcount, $new_length);
 
@@ -1563,6 +1581,7 @@ function randAdd($type,$num=0,$items='',$rating='')
 
 function getPlaylistM3u($id, $quality, $depth = 0)
 {
+  global $db;
   $tmp = '';
   if ($depth > 20)
     return $tmp;
@@ -1576,18 +1595,18 @@ function getPlaylistM3u($id, $quality, $depth = 0)
   $query = 'SELECT ms.song_id, artist_name, ms.name, (ms.length/1000) AS length '.
     'FROM music_songs AS ms '.
     'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
-    'WHERE ms.song_id IN ('.mysql_real_escape_string($pl['playlist_songs']).')';
+    'WHERE ms.song_id IN ('.$db->escape($pl['playlist_songs']).')';
 
   $song_info = array();
-  $result = mysql_query($query);
-  if (!$result)
+  $sh = $db->query($query);
+  if (!$sh)
     return $tmp;
 
-  while ($row = mysql_fetch_array($result))
+  while ($row = $sh->fetch_array())
   {
     $song_info[$row['song_id']] = $row;
   }
-  mysql_free_result($result);
+  $sh->finish();
 
   $songs = explode(',', $pl['playlist_songs']);
   foreach ($songs as $song_id)
@@ -1609,6 +1628,7 @@ function getPlaylistM3u($id, $quality, $depth = 0)
 
 function play($type, $id, $quality = 'high')
 {
+  global $db;
   $tmp = '';
   $query = '';
 
@@ -1623,7 +1643,7 @@ function play($type, $id, $quality = 'high')
              'LEFT JOIN music_artists AS mt ON ms.artist_id=mt.artist_id '.
              'WHERE ';
 
-    $sql_id = mysql_real_escape_string($id);
+    $sql_id = $db->escape($id);
     switch ($type)
     {
       case 'song':
@@ -1637,15 +1657,15 @@ function play($type, $id, $quality = 'high')
         return '';
     }
 
-    $result = mysql_query($query);
-    if ($result)
+    $sh = $db->query($query);
+    if ($sh)
     {
-      while ($row = mysql_fetch_array($result))
+      while ($row = $sh->fetch_array())
       {
         $tmp .= '#EXTINF:'.intval($row['length']).','.utf8_decode($row['artist_name']).' - '.utf8_decode($row['name'])."\n";
         $tmp .= stream_url().'stream?i='.$row['song_id']."\n";
       }
-      mysql_free_result($result);
+      $sh->finish();
     }
   }
 

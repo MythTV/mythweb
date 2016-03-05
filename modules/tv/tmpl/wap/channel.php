@@ -25,10 +25,11 @@
             <?php echo t('Jump to') ?><br />
             <select name="date"><?php
             // Find out how many days into the future we should bother checking
-                $result = mysql_query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
-                    or trigger_error('SQL Error: '.mysql_error(), FATAL);
-                list($max_days) = mysql_fetch_row($result);
-                mysql_free_result($result);
+                global $db;
+                $sh = $db->query('SELECT TO_DAYS(max(starttime)) - TO_DAYS(NOW()) FROM program')
+                    or trigger_error('SQL Error: '.$db->error, FATAL);
+                list($max_days) = $sh->fetch_row();
+                $sh->finish();
             // Print out the list
                 for ($i=-1;$i<=$max_days;$i++) {
                     $time = mktime(0,0,0, date('m'), date('d') + $i, date('Y'));
