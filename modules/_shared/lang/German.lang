@@ -82,6 +82,7 @@
 "Add Album to Current Playlist"
     Album der aktuellen Wiedergabeliste hinzufügen
 "Add Artist to Current Playlist"
+    Künstler der aktuellen Wiedergabeliste hinzufügen
 "Add Mix"
     Mix hinzufügen
 "Add Song to Current Playlist"
@@ -447,6 +448,7 @@
 "Embed HTTP basic auth user name/password into stream urls"
     Bette HTTP basic auth Benutzername/Passwort in Stream URLs ein
 "Enable"
+    aktivieren
 "Enable Flash Video player for recordings."
     Flash-Videoabpsieler für Aufnahmen aktivieren.
 "Enable Video Playback"
@@ -940,6 +942,7 @@
 "Play this Album Now"
     Dieses Album abspielen
 "Play this Artist Now"
+    Diesen Künstler abspielen
 "Play This Playlist Now"
     Diese Wiedergabeliste abspielen
 "Play this Playlist Now"
@@ -977,6 +980,7 @@
 "Please enter an IMDB number or a title to do another search"
     Zm eine weitere Suche anzustoßen, geben Sie eine IMDB-Nummer oder einen Titel ein
 "Please rate more shows to get more results"
+    Bitte bewerten Sie mehr Sendungen um mehr Ergebnisse zu erhalten
 "Please wait for the pending AJAX request"
     Bitte warten Sie auf die anstehende AJAX Anfrage
 "Plot"
@@ -1479,6 +1483,7 @@
 "Track #%s from the album '%s'"
     Lied #%s des Albums &quot;%s&quot;
 "Trakt.tv Home Page"
+    Trakt.tv Homepage
 "Transcode"
     Umwandeln
 "Transcoded"
