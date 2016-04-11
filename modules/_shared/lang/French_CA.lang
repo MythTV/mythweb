@@ -65,8 +65,12 @@
     (la hauteur est calculée automatiquement en fonction du ratio de l'enregistrement)
 "1 - Lowest"
     1 - Laxiste
+"1080"
+    1080
 "4 - Highest"
     4 - Sévère
+"720"
+    720
 "Aborted"
     Interrompu
 "Aborting"
@@ -79,10 +83,12 @@
     Ajouter
 "Add Album to Current Playlist"
     Ajouter l'album à la liste de lecture actuelle
+"Add Artist to Current Playlist"
+    Ajouter l'artiste à la liste de lecture actuelle
 "Add Mix"
     Ajouter mélange
 "Add Song to Current Playlist"
-    Ajoute la chanson à la liste de lecture actuelle
+    Ajouter la chanson à la liste de lecture actuelle
 "add string"
     Ajouter condition
 "Add this Playlist as a Subplaylist"
@@ -99,10 +105,10 @@
     Options avancées
 "Advanced Search"
     Recherche avancée
-"airdate"
-    date de diffusion
 "Airdate"
     Date de diffusion
+"airdate"
+    date de diffusion
 "Airtime"
     Heure de diffusion
 "Album Listing"
@@ -250,10 +256,10 @@
     Verr. maj.
 "Cast"
     Distribution
-"category"
-    catégorie
 "Category"
     Catégorie
+"category"
+    catégorie
 "Category Legend"
     Légende de catégorie
 "CC"
@@ -346,6 +352,8 @@
     Recherche personnalisée
 "Customize Screens"
     Personnaliser les écrans
+"Damaged"
+    Endommagé(e)
 "Data"
     Données
 "Database"
@@ -386,10 +394,10 @@
     Suppr.
 "Depending on the Search type this is where you enter actual main search commands"
     C'est ici que vous entrez vos principales commandes de recherche en fonction du type de celle-ci
-"description"
-    description
 "Description"
     Description
+"description"
+    description
 "Destination"
     Destination
 "Details for: $1"
@@ -637,6 +645,7 @@
 "info:never record"
     Simule un enregistrement précédent de cette émission pour qu'elle ne soit pas enregistrée.
 "Input Name"
+    Nom de l'entrée
 "Insert"
     Inser
 "Internet Reference #"
@@ -645,10 +654,10 @@
     Aller
 "Jump Points"
     Raccourcis menu
-"Jump to"
-    Aller à
 "Jump To"
     Aller À
+"Jump to"
+    Aller à
 "JumpPoints Editor"
     Éditeur de raccourcis menu
 "Key Bindings"
@@ -677,15 +686,15 @@
     Dernière diffusion de chaque épisode
 "Later"
     Plus tard
-"left"
-    gauche
 "Left"
     Gauche
+"left"
+    gauche
 "leftl"
     gauche
-"length"
-    Durée
 "Length"
+    Durée
+"length"
     Durée
 "Length (min)"
     Durée (min)
@@ -743,8 +752,6 @@
     Modifier la priorité par nombre d'étoiles (0.0 à 1.0 pour les films seulement)
 "Modify priority for a station on an input"
     Modifier la priorité pour une station sur une entrée
-"Modify priority for all inputs on a card"
-    Modifier la priorité pour toutes les entrées d'une carte
 "Modify priority for an input (Input priority)"
     Modifier la priorité pour une entrée (priorité d'entrée)
 "Modify priority for every card on a host"
@@ -837,6 +844,8 @@
     Non
 "NO DATA"
     PAS DE DONNÉES
+"No episodes"
+    Pas d'épisodes
 "No Frontends allow remote control."
     Aucun frontal ne permet le contrôle à distance
 "No Genre"
@@ -949,6 +958,8 @@
     Lire l'enregistrement sur le frontal
 "Play this Album Now"
     Écouter cet album maintenant
+"Play this Artist Now"
+    Écouter cet artiste maintenant
 "Play This Playlist Now"
     Écouter cette liste de lecture maintenant
 "Play this Playlist Now"
@@ -1081,6 +1092,8 @@
     Albums récemment ajoutés
 "Recently completed jobs"
     Tâches récemment complétées
+"Recently Played Albums"
+    Albums récemment écoutés
 "Recently Played Songs"
     Chansons récemment écoutées
 "recgroup"
@@ -1213,10 +1226,10 @@
     Réessayer
 "Return to Statistics Page"
     Retourner à la page des statistiques
-"right"
-    droite
 "Right"
     Droite
+"right"
+    droite
 "Root Directory"
     Répertoire racine
 "Rows to show between timeslot info"
@@ -1453,15 +1466,15 @@
     Vitesse de lecture
 "Timeslot size"
     Durée de tranche horaire
-"title"
-    titre
 "Title"
     Titre
+"title"
+    titre
 "Title Match"
     Correspondance de titre
-"Title search"
-    Recherche par titre
 "Title Search"
+    Recherche par titre
+"Title search"
     Recherche par titre
 "Title Search:"
     Recherche par titre :
@@ -1473,6 +1486,10 @@
     Trop d'entrées
 "Top $1"
     $1 premiers
+"Top Played Albums"
+    Albums les plus écoutés
+"Top Played Artist"
+    Artiste(s) le(s) plus écoutés
 "Top Played Songs"
     Chansons les plus écoutées
 "Top Rated Songs"
@@ -1489,14 +1506,16 @@
     Temps total :  %s
 "Track #%s from the album '%s'"
     Piste n°%s de l'album '%s'
+"Trakt.tv Home Page"
+    Page d'acceuil de Trakt.tv
 "Transcode"
     Transcoder
 "Transcoded"
     Transcodé
-"transcoder"
-    transcodeur
 "Transcoder"
     Transcodeur
+"transcoder"
+    transcodeur
 "Tuesday"
     Mardi
 "Tuner Busy"
@@ -1507,10 +1526,10 @@
     Fonctions TV, incluant les émissions enregistrées.
 "TV.com"
     TV.com
-"type"
-    type
 "Type"
     Type
+"type"
+    type
 "Uncategorized"
     Sans catégorie
 "Undelete"
@@ -1566,9 +1585,11 @@
 "Video: Warning: fopen"
     Attention, votre fichier php.ini contient allow_url_fopen à off. Pour télécharger l'affiche, il faut qu'il soit à on. L'affiche ne sera pas mise à jour.
 "VideoAggressivePC"
+    PC avec réglages vidéo agressifs
 "VideoArtworkDir"
     Répertoire de stockage des affiches
 "VideoBrowserNoDB"
+    N° du récupérateur de données
 "VideoDefaultParentalLevel"
     Niveau de contrôle parental par défaut
 "VideoDefaultPlayer"
