@@ -50,7 +50,7 @@ class Channel extends MythBase {
             $channel_list = Cache::get('[channelList]');
         if (is_null($channel_list)) {
             global $db;
-            $sql = 'SELECT channel.chanid FROM channel';
+            $sql = 'SELECT MIN(channel.chanid) AS chanid FROM channel';
             if ($_SESSION['guide_favonly']) {
                 $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\'';
                 if ($filtered)
@@ -62,7 +62,7 @@ class Channel extends MythBase {
         // Sort
             $sql .= ' ORDER BY '
                     .($_SESSION["sortby_channum"] ? '' : 'channel.callsign, ')
-                    .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
+                    .'(channel.channum + 0), channel.channum';  // sort by channum as both int and string to grab subchannels
         // Query
             $sh = $db->query($sql);
             $channel_list = array();
@@ -77,7 +77,7 @@ class Channel extends MythBase {
         $callsign_list = Cache::get('[callsignList]');
         if (is_null($callsign_list)) {
             global $db;
-            $sql = 'SELECT channel.chanid, channel.channum, channel.callsign FROM channel';
+            $sql = 'SELECT MIN(channel.chanid) AS chanid, channel.channum, channel.callsign FROM channel';
             if ($_SESSION['guide_favonly'])
                 $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\' AND';
             else
@@ -87,7 +87,7 @@ class Channel extends MythBase {
         // Sort
             $sql .= ' ORDER BY '
                     .($_SESSION["sortby_channum"] ? '' : 'channel.callsign, ')
-                    .'(channel.channum + 0), channel.channum, channel.chanid';  // sort by channum as both int and string to grab subchannels
+                    .'(channel.channum + 0), channel.channum';  // sort by channum as both int and string to grab subchannels
         // Query
             $sh = $db->query($sql);
             $callsign_list = array();
