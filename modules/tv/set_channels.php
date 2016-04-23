@@ -33,7 +33,7 @@
                                              visible       = ?';
                 $query_params[] = $data['xmltvid'];
                 $query_params[] = $data['freqid'];
-                $query_params[] = $data['finetune'];
+                $query_params[] = empty($data['finetune'])      ? 0 : $data['finetune'];
                 $query_params[] = $data['videofilters'];
                 $query_params[] = $data['brightness'];
                 $query_params[] = $data['contrast'];
