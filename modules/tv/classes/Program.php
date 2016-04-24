@@ -774,40 +774,22 @@ class Program extends MythBase {
 
     public function getAspect() {
         global $db;
-        $sh = $db->query('SELECT recordedmarkup.type,
-                                 recordedmarkup.data
-                            FROM recordedmarkup
-                           WHERE recordedmarkup.chanid    = ?
-                             AND recordedmarkup.starttime = FROM_UNIXTIME(?)
-                             AND recordedmarkup.type      IN (10, 11, 12, 13, 14)
-                        GROUP BY recordedmarkup.type, recordedmarkup.data
-                        ORDER BY SUM((SELECT IFNULL(rm.mark, recordedmarkup.mark)
-                                        FROM recordedmarkup AS rm
-                                       WHERE rm.chanid = recordedmarkup.chanid
-                                         AND rm.starttime = recordedmarkup.starttime
-                                         AND rm.type IN (10, 11, 12, 13, 14)
-                                         AND rm.mark > recordedmarkup.mark
-                                ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC
-                           LIMIT 1',
-                           $this->chanid,
-                           $this->recstartts
+        $sh = $db->query('SELECT aspect
+                            FROM recordedfile
+                           WHERE recordedid = ?',
+                           $this->recordedid
                            );
         $row = $sh->fetch_assoc();
         $sh->finish();
 
-        switch($row['type']) {
-            case 10:
-                return 1;
-            case 11:
-                return 4/3;
-            case 12:
-                return 16/9;
-            case 13:
-                return 2.21/1;
-            case 14:
-                return $row['data']/1000000.0;
-            default:
-                return 4/3;
+        if (($row['aspect'] > 1.777777) && ($row['aspect'] < 1.777779)) {
+            // avoid low precision 16:9 to avoid 320x179 thumbnails
+            return 16/9;
+        } elseif ($row['aspect'] > 1) {
+            return $row['aspect'];
+        } else {
+            // default 4:3
+            return 4/3;
         }
     }
 }
