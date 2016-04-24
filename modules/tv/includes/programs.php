@@ -128,10 +128,11 @@
         if ($extra_query)
             $query .= ' AND '.$extra_query;
     // Group and sort
-        if (!$distinctTitle)
-            $query .= "\nGROUP BY channel.callsign, program.chanid, program.starttime";
-        else
-            $query .= "\nGROUP BY program.title";
+    // FIXME reenable with e.g. ANY_VALUE or rewrite to use the Service API
+    //  if (!$distinctTitle)
+    //      $query .= "\nGROUP BY channel.callsign, program.chanid, program.starttime";
+    //  else
+    //      $query .= "\nGROUP BY program.title";
         $query .= " ORDER BY program.starttime";
     // Limit
         if ($single_program)
