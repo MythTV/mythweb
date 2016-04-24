@@ -214,6 +214,8 @@
  * returns $this or $or_this
  * if $gt is set to true, $this will only be returned if it's > 0
  * if $gt is set to a number, $this will only be returned if it's > $gt
+ *
+ * We require PHP 5.3 since fixes/0.24 which added a very similar ?: operator.
  **/
     function _or($this, $or_this, $gt = false) {
         if ($gt === true)
