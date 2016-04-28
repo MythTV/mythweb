@@ -97,7 +97,7 @@
             trigger_error("load_all_program_data() attempted with out any channels", FATAL);
         $these_channels = implode(',', $these_channels);
     // Build the sql query, and execute it
-        $query = 'SELECT program.*,
+        $query = 'SELECT DISTINCT program.*,
                          UNIX_TIMESTAMP(program.starttime) AS starttime_unix,
                          UNIX_TIMESTAMP(program.endtime) AS endtime_unix,
                          IFNULL(programrating.system, "") AS rater,
