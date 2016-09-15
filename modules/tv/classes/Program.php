@@ -701,7 +701,7 @@ class Program extends MythBase {
                        SET oldrecorded.reactivate = 1
                      WHERE oldrecorded.starttime  = ?
                        AND oldrecorded.chanid     = ?',
-                    $this->starttime,
+                    unix2mythtime($this->starttime),
                     $this->chanid
                   );
         $this->rec_override(rectype_override);
