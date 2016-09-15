@@ -641,7 +641,7 @@ class Program extends MythBase {
                                 .escape($this->category)                  .','
                                 .escape($this->seriesid)                  .','
                                 .escape($this->programid)                 .','
-                                .escape($this->inetref)                   .','
+                                .escape(isset($this->inetref) ? $this->inetref : '') .','
                                 .escape(isset($this->recordid) ? $this->recordid : 0)                  .','
                                 .escape($this->channel->callsign)         .','
                                 .escape(isset($this->rectype) ? $this->rectype : 0)                   .','
