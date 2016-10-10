@@ -120,6 +120,8 @@ class Database {
             $class = "Database_$engine";
             $dbh = new $class($db_name, $login, $password, $server, $port, $options);
         }
+    // Set SQL mode
+        $dbh->query('SET SESSION sql_mode = "";');
     // Set database connection to utf8
         $dbh->query('SET NAMES utf8;');
     // Make sure UNIX_TIMESTAMP AND FROM_UNIXTIME do the right things
