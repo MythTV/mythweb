@@ -10,6 +10,9 @@
     use Cwd 'abs_path';
     use File::Basename;
 
+# Add mythweb dir to @INC
+    use lib dirname(abs_path($ENV{'SCRIPT_FILENAME'} or $0));
+
 # pwd is / when running under mod_rewrite, so we should chdir to the script
 # directory for consistency
     chdir dirname(abs_path($ENV{'SCRIPT_FILENAME'} or $0));
