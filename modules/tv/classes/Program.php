@@ -31,6 +31,9 @@ class Program extends MythBase {
     public $hdtv               = 0;
     public $widescreen         = 0;
     public $avc                = 0;
+    public $hd_ready           = 0;
+    public $fullhd             = 0;
+    public $damaged            = 0;
     public $closecaptioned     = 0;
     public $has_subtitles      = 0;
     public $subtitled          = 0;
@@ -190,6 +193,9 @@ class Program extends MythBase {
         $this->hdtv                         = $this->videoproperties & 0x01;
         $this->widescreen                   = $this->videoproperties & 0x02;
         $this->avc                          = $this->videoproperties & 0x04;
+        $this->hd_ready                     = $this->videoproperties & 0x08;
+        $this->fullhd                       = $this->videoproperties & 0x10;
+        $this->damaged                      = $this->videoproperties & 0x20;
         $this->closecaptioned               = $this->subtitletype    & 0x01;
         $this->has_subtitles                = $this->subtitletype    & 0x02;
         $this->subtitled                    = $this->subtitletype    & 0x04;
@@ -265,6 +271,12 @@ class Program extends MythBase {
             $details[] = t('Widescreen');
         if ($this->avc)
             $details[] = t('AVC/H.264');
+        if ($this->hd_ready)
+            $details[] = t('720');
+        if ($this->fullhd)
+            $details[] = t('1080');
+        if ($this->damaged)
+            $details[] = t('Damaged');
         if ($this->parttotal > 1 || $this->partnumber > 1)
             $details[] = t('Part $1 of $2', $this->partnumber, $this->parttotal);
         if ($this->rating)
