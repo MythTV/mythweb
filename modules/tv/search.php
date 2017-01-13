@@ -156,13 +156,13 @@
             if (in_array('movie', $_SESSION['search']['ctype'])) {
                 if (count($_SESSION['search']['ctype']) > 1) {
                     $extra_query[] = 'IF(program.category_type = "movie",'
-                                    .'     program.stars >= '.$_SESSION['search']['stars_gt']
-                                    .' AND program.stars <= '.$_SESSION['search']['stars_lt']
+                                    .'     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 2, '.', '')
+                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'], 2, '.', '')
                                     .', 1)';
                 }
                 else {
-                    $extra_query[] = '     program.stars >= '.$_SESSION['search']['stars_gt']
-                                    .' AND program.stars <= '.$_SESSION['search']['stars_lt'];
+                    $extra_query[] = '     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 2, '.', '')
+                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'], 2, '.', '');
                 }
             }
         // Date range
