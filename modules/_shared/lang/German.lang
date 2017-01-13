@@ -1052,6 +1052,8 @@
     Zuletzt fertiggestellte Aufträge
 "Recently Played Songs"
     Zuletzt gespielte Lieder
+"Recently Played Albums"
+    Zuletzt gespielte Alben
 "recgroup"
     Aufnahmegruppe
 "Recommend Videos"
@@ -1426,6 +1428,10 @@
     Top $1
 "Top Played Songs"
     Meistgespielte Lieder
+"Top Played Albums"
+    Meistgespielte Alben
+"Top Played Artist"
+    Meistgespielter Interpret
 "Top Rated Songs"
     Bestbewertete Lieder
 "Total Length"
