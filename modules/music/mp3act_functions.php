@@ -835,7 +835,7 @@ function musicLookup($type, $itemid)
         'GROUP BY ms.album_id '.
         'ORDER BY playcount DESC '.
         'LIMIT 40';
-      $result = mysql_query($query);
+      $result = mysqli_query($query);
       if (!$result)
         break;
 
@@ -846,12 +846,12 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Top Played Albums').'</h2></div>
         <ul class="music">';
-      while ($row = mysql_fetch_array($result))
+      while ($row = mysqli_fetch_array($result))
       {
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $row['artist_name'], '', '', '', $row['playcount']."x");
       }
-      mysql_free_result($result);
+      mysqli_free_result($result);
       $output .= '</ul>';
       break;
 
@@ -864,7 +864,7 @@ function musicLookup($type, $itemid)
         'GROUP BY ms.artist_id '.
         'ORDER BY playcount DESC '.
         'LIMIT 40';
-      $result = mysql_query($query);
+      $result = mysqli_query($query);
       if (!$result)
         break;
 
@@ -875,12 +875,12 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Top Played Artist').'</h2></div>
         <ul class="music">';
-      while ($row = mysql_fetch_array($result))
+      while ($row = mysqli_fetch_array($result))
       {
         $output .= getHtmlArtist($row['artist_id'], $row['artist_name'],
           '', '', '', $row['playcount']."x");
       }
-      mysql_free_result($result);
+      mysqli_free_result($result);
       $output .= '</ul>';
       break;
 
@@ -919,7 +919,7 @@ function musicLookup($type, $itemid)
         'GROUP BY ms.album_id '.
         'ORDER BY ms.lastplay DESC '.
         'LIMIT 40';
-      $result = mysql_query($query);
+      $result = mysqli_query($query);
       if (!$result)
         break;
 
@@ -930,12 +930,12 @@ function musicLookup($type, $itemid)
           title="'.t('Return to Statistics Page').'">'.t('Back').'</a></div>
         <h2 class="music">'.t('Recently Played Albums').'</h2></div>
         <ul class="music">';
-      while ($row = mysql_fetch_array($result))
+      while ($row = mysqli_fetch_array($result))
       {
         $output .= getHtmlAlbum($row['album_id'], $row['album_name'],
           $row['artist_name'], '', '', '', date('m.d.Y', $row['playdate']));
       }
-      mysql_free_result($result);
+      mysqli_free_result($result);
       $output .= '</ul>';
       break;
 

@@ -52,10 +52,10 @@ class Database_mysql extends Database {
             }
         }
     // Connect to the database
-        $this->dbh = @mysql_connect($port ? "$server:$port" : $server, $login, $password)
+        $this->dbh = @mysqli_connect($port ? "$server:$port" : $server, $login, $password)
             or $this->error("Can't connect to the database server.");
         if ($this->dbh) {
-            @mysql_select_db($db_name, $this->dbh)
+            @mysqli_select_db($db_name, $this->dbh)
                 or $this->error("Can't access the database file.");
         }
     }
@@ -73,7 +73,7 @@ class Database_mysql extends Database {
         if (is_null($string))
             return 'NULL';
     // Just a string
-        return str_replace('?', '\\?', "'".mysql_real_escape_string($string, $this->dbh)."'");
+        return str_replace('?', '\\?', "'".mysqli_real_escape_string($string, $this->dbh)."'");
     }
 
 /**
@@ -110,28 +110,28 @@ class Database_mysql extends Database {
  * @return string The most recent error string
  **/
     function _errstr() {
-        return $this->dbh ? mysql_error($this->dbh) : mysql_error();
+        return $this->dbh ? mysqli_error($this->dbh) : mysqli_error();
     }
 
 /**
  * @return int The most recent error number
  **/
     function _errno() {
-        return $this->dbh ? mysql_errno($this->dbh) : mysql_errno();
+        return $this->dbh ? mysqli_errno($this->dbh) : mysqli_errno();
     }
 
 /**
  * @return string Information about the mysql server
  **/
     function server_info() {
-        return mysql_get_server_info($this->dbh);
+        return mysqli_get_server_info($this->dbh);
     }
 
 /**
  * @return bool true on success
  **/
     function close() {
-        return mysql_close($this->dbh);
+        return mysqli_close($this->dbh);
     }
 
 }
