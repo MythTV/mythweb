@@ -56,7 +56,7 @@ class Recording {
 
     var $css_class;         // css class, based on category and/or category_type
 
-    function Recording($recording_data) {
+    function __construct($recording_data) {
 
     // SQL data
         if (is_array($recording_data) && isset($recording_data['recordid'])) {
@@ -124,5 +124,8 @@ class Recording {
         if ($this->chanid != '')
             $this->css_class = category_class($this);
     }
+  function Recording($recording_data) {
+    self::__construct($recording_data);
+  }
 
 }

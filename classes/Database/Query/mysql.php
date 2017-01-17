@@ -54,7 +54,7 @@ class Database_Query_mysql extends Database_Query {
                 $arg = array_shift($args);
                 $this->last_query .= is_null($arg)
                                         ? 'NULL'
-                                        : "'".mysql_real_escape_string($arg)."'";
+                                        : "'".mysqli_real_escape_string($arg)."'";
             }
         }
     // Perform the query
@@ -63,20 +63,20 @@ class Database_Query_mysql extends Database_Query {
             $this->db->error();
             trigger_error($this->db->error, E_USER_ERROR);
         }
-        $this->sh = mysql_query($this->last_query, $this->dbh);
+        $this->sh = mysqli_query($this->last_query, $this->dbh);
 
     // Cache these
         if (is_bool($this->sh)) {
-            $this->insert_id     = mysql_insert_id($this->dbh);
-            $this->affected_rows = mysql_affected_rows($this->dbh);
+            $this->insert_id     = mysqli_insert_id($this->dbh);
+            $this->affected_rows = mysqli_affected_rows($this->dbh);
         }
         else {
-            $this->num_rows      = mysql_num_rows($this->sh);
+            $this->num_rows      = mysqli_num_rows($this->sh);
         }
 
         if ($this->sh === false) {
             if ($this->db->fatal_errors)
-                trigger_error('SQL Error: '.mysql_error($this->dbh).' [#'.mysql_errno($this->dbh).']', E_USER_ERROR);
+                trigger_error('SQL Error: '.mysqli_error($this->dbh).' [#'.mysqli_errno($this->dbh).']', E_USER_ERROR);
             else
                 $this->db->error();
         }
@@ -87,8 +87,8 @@ class Database_Query_mysql extends Database_Query {
  * php.  The only difference is that the resource handle gets passed-in
  * automatically.  eg.
  *
- *      mysql_fetch_row($result);   ->  $sh->fetch_row();
- *      mysql_affected_rows($dbh);  ->  $sh->affected_rows();
+ *      mysqli_fetch_row($result);   ->  $sh->fetch_row();
+ *      mysqli_affected_rows($dbh);  ->  $sh->affected_rows();
  **/
 
 /**
@@ -96,7 +96,7 @@ class Database_Query_mysql extends Database_Query {
  * @return mixed
  **/
     function fetch_col() {
-        list($return) = mysql_fetch_row($this->sh);
+        list($return) = mysqli_fetch_row($this->sh);
         return $return;
     }
 
@@ -114,7 +114,7 @@ class Database_Query_mysql extends Database_Query {
  * @return array
  **/
     function fetch_row() {
-        return mysql_fetch_row($this->sh);
+        return mysqli_fetch_row($this->sh);
     }
 
 /**
@@ -124,7 +124,7 @@ class Database_Query_mysql extends Database_Query {
  * @return assoc
  **/
     function fetch_assoc() {
-        return mysql_fetch_assoc($this->sh);
+        return mysqli_fetch_assoc($this->sh);
     }
 
 /**
@@ -134,7 +134,7 @@ class Database_Query_mysql extends Database_Query {
  * @return assoc
  **/
     function fetch_array($result_type=MYSQL_BOTH) {
-        return mysql_fetch_array($this->sh, $result_type);
+        return mysqli_fetch_array($this->sh, $result_type);
     }
 
 /**
@@ -144,7 +144,7 @@ class Database_Query_mysql extends Database_Query {
  * @return object
  **/
     function fetch_object() {
-        return mysql_fetch_object($this->sh);
+        return mysqli_fetch_object($this->sh);
     }
 
 /**
@@ -152,7 +152,7 @@ class Database_Query_mysql extends Database_Query {
  * @return bool
  **/
     function data_seek($row_number) {
-        return mysql_data_seek($this->sh, $row_number);
+        return mysqli_data_seek($this->sh, $row_number);
     }
 
 /**
@@ -184,7 +184,7 @@ class Database_Query_mysql extends Database_Query {
  **/
     function finish() {
         if ($this->sh && is_resource($this->sh))
-            mysql_free_result($this->sh);
+            mysqli_free_result($this->sh);
         unset($this->sh);
     }
 

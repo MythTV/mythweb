@@ -86,7 +86,7 @@
         // This sortby method is the first element in the sort array, let's reverse it (unless told otherwise)
             if ($_SESSION[$session][0]['field'] == $_GET['sortby']) {
                 if (isset($_GET['reverse']))
-                    $_SESSION[$session][0]['reverse'] = ($_GET['reverse'] > 0 || eregi('^y', $_GET['reverse'])) ? true : false;
+                    $_SESSION[$session][0]['reverse'] = ($_GET['reverse'] > 0 || preg_match('/^y/i', $_GET['reverse'])) ? true : false;
                 else
                     $_SESSION[$session][0]['reverse'] = $_SESSION[$session][0]['reverse'] ? false : true;
             }

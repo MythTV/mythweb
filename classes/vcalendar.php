@@ -84,7 +84,7 @@ class vcalendar {
  * @since 2.2.13 - 2007-12-30
  * @return void
  */
-  function vcalendar () {
+  function __construct () {
     $this->_makeVersion();
     $this->calscale   = null;
     $this->method     = null;
@@ -107,6 +107,9 @@ class vcalendar {
     $this->components = array();
     $this->setProperty( 'X-WR-TIMEZONE', date('e') );
   }
+ function vcalendar () {
+    self::__construct();
+ }
 /*********************************************************************************/
 /**
  * Property Name: CALSCALE
@@ -1792,7 +1795,7 @@ class calendarComponent {
  * @author Kjell-Inge Gustafsson <ical@kigkonsult.se>
  * @since 2.3.1 - 2007-11-19
  */
-  function calendarComponent() {
+  function __construct () {
     $this->objName         = ( isset( $this->timezonetype )) ?
                           strtolower( $this->timezonetype )  :  get_class ( $this );
     $this->uid             = array();
@@ -1850,6 +1853,9 @@ class calendarComponent {
     $this->xcaldecl        = array();
 
     $this->_makeDtstamp();
+  }
+  function calendarComponent() {
+    self::__construct();
   }
 /*********************************************************************************/
 /**
@@ -7027,8 +7033,11 @@ class vevent extends calendarComponent {
  * @since 0.3.0 - 2006-08-10
  * @return void
  */
-  function vevent() {
+  function __construct() {
     $this->calendarComponent();
+  }
+  function vevent() {
+    self::__construct();
   }
 /**
  * create formatted output for calendar component VEVENT object instance
@@ -7100,8 +7109,11 @@ class vtodo extends calendarComponent {
  * @since 0.3.0 - 2006-08-10
  * @return void
  */
-  function vtodo() {
+  function __construct() {
     $this->calendarComponent();
+  }
+  function vtodo() {
+    self::__construct();
   }
 /**
  * create formatted output for calendar component VTODO object instance
@@ -7174,8 +7186,11 @@ class vjournal extends calendarComponent {
  * @since 0.3.0 - 2006-08-10
  * @return void
  */
-  function vjournal() {
+  function __construct() {
     $this->calendarComponent();
+  }
+  function vjournal() {
+    self::__construct();
   }
 /**
  * create formatted output for calendar component VJOURNAL object instance
@@ -7237,8 +7252,11 @@ class vfreebusy extends calendarComponent {
  * @since 0.7.3 - 2006-09-09
  * @return void
  */
-  function vfreebusy() {
+  function __construct() {
     $this->calendarComponent();
+  }
+  function vfreebusy() {
+    self::__construct();
   }
 /**
  * create formatted output for calendar component VFREEBUSY object instance
@@ -7288,8 +7306,11 @@ class valarm extends calendarComponent {
  * @since 0.3.0 - 2006-08-10
  * @return void
  */
-  function valarm() {
+  function __construct() {
     $this->calendarComponent();
+  }
+  function valarm() {
+    self::__construct();
   }
 /**
  * create formatted output for calendar component VALARM object instance
@@ -7337,12 +7358,15 @@ class vtimezone extends calendarComponent {
  * @param string $timezonetype optional, default FALSE ( STANDARD / DAYLIGHT )
  * @return void
  */
-  function vtimezone( $timezonetype=FALSE ) {
+  function __construct( $timezonetype=FALSE ) {
     if( !$timezonetype )
       $this->timezonetype = 'VTIMEZONE';
     else
       $this->timezonetype = strtoupper( $timezonetype );
     $this->calendarComponent();
+  }
+  function vtimezone($timezonetype=FALSE) {
+    self::__construct($timezonetype=FALSE);
   }
 /**
  * create formatted output for calendar component VTIMEZONE object instance

@@ -23,7 +23,7 @@
          title="<?php echo t('Enable Flash Video player for recordings.') ?>"
         <?php
             $ffmpeg = '';
-            foreach (split (':', getenv ('PATH').':/usr/local/bin:/usr/bin') as $path) {
+            foreach (preg_split ('/:/', getenv ('PATH').':/usr/local/bin:/usr/bin') as $path) {
                 if (file_exists ($path."/ffmpeg")) {
                     $ffmpeg = $path."/ffmpeg";
                     break;
