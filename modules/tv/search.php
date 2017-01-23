@@ -281,7 +281,7 @@
             }
         // If the next thing starts with stars, it's a movie rating query
             if (preg_match('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*(.*?)$#', $search_str, $match)) {
-                $starcount = substr_count($match[1], '*') / 4;
+                $starcount = substr_count($match[1], '*') / 5;
                 if (preg_match('/1\\/2|\\.5|-/', $match[1]))
                     $starcount += 0.125;
             // Add this to the query -- convert european decimal to something mysql can understand
