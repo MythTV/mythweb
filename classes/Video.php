@@ -39,6 +39,7 @@ class Video {
             SELECT  dirname
             FROM    storagegroup
             WHERE   groupname="Coverart"
+            OR groupname="Fanart"
         ');
 
         $video = $db->query_assoc('
@@ -62,9 +63,16 @@ class Video {
         $this->showlevel    = $video['showlevel'];
         $this->filename     = $video['filename'];
         $this->cover_file   = $video['coverfile'];
+        $this->fanart_file  = $video['fanart'];
         $this->browse       = $video['browse'];
     // And the artwork URL
         $this->cover_url = '';
+        $fanart=false;
+        if (!$this->cover_file && $this->fanart_file) {
+            $foo = explode('/', $this->fanart_file);
+            $this->cover_file = $foo[count($foo) - 1];
+            $fanart=true;
+        }
         if ($this->cover_file && $this->cover_file != 'No Cover') {
             $exists = false;
             foreach ($video_dirs as $dir) {
@@ -75,7 +83,11 @@ class Video {
                 }
             }
             if ($exists) {
-                $this->cover_url = 'pl/coverart/'.$this->cover_file;
+                if ($fanart) {
+                    $this->cover_url = 'pl/fanart/'.$this->cover_file;
+                } else {
+                    $this->cover_url = 'pl/coverart/'.$this->cover_file;
+                }
                 $this->cover_file = $path;
                 list($width, $height) = @getimagesize($this->cover_file);
                 if ($width > 0 && $height > 0) {
