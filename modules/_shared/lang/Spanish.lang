@@ -518,16 +518,23 @@
     official help until it has left the experimental phase.
     </p>
 "info: hidden advanced schedule"
+    info: programación avanzada oculta
 "info: record this"
+    info: grabar esto
 "info:forget old"
+    info: olvidar antiguos
 "info:jumppoints"
+    info: puntos de salto
 "info:never record"
+    info: nunca grabar
 "Input Name"
 "Insert"
+    Añadir
 "Internet Reference #"
 "Jump"
     Saltar
 "Jump Points"
+    Puntos de Salto
 "Jump to"
     Saltar a
 "Jump To"
