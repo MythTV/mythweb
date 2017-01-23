@@ -571,19 +571,12 @@
  **/
     function movie_star_select($name) {
         echo '<select name="', $name, '">';
-        for ($x=0; $x<=1; $x+=.125) {
-            echo '<option value="', $x, '"';
-            if ($x == $_SESSION['search'][$name])
+        for ($x=0; $x<=max_stars; $x++) {
+            $v = number_format($x/max_stars, 3, '.', '');
+            echo '<option value="', $v, '"';
+            if ($v == $_SESSION['search'][$name])
                 echo ' SELECTED';
-            echo '>', str_repeat(star_character, intVal($x * max_stars));
-            $frac = ($x * max_stars) - intVal($x * max_stars);
-            if ($frac >= .75)
-                echo '&frac34;';
-            elseif ($frac >= .5)
-                echo '&frac12;';
-            elseif ($frac >= .25)
-                echo '&frac14;';
-            echo '</option>';
+            echo '>', str_repeat(star_character, $x), '</option>';
         }
         echo '</select>';
     }
