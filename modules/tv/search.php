@@ -156,13 +156,13 @@
             if (in_array('movie', $_SESSION['search']['ctype'])) {
                 if (count($_SESSION['search']['ctype']) > 1) {
                     $extra_query[] = 'IF(program.category_type = "movie",'
-                                    .'     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 2, '.', '')
-                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'], 2, '.', '')
+                                    .'     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 3, '.', '')
+                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'] + 0.001, 3, '.', '')
                                     .', 1)';
                 }
                 else {
-                    $extra_query[] = '     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 2, '.', '')
-                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'], 2, '.', '');
+                    $extra_query[] = '     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 3, '.', '')
+                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'] + 0.001, 3, '.', '');
                 }
             }
         // Date range
@@ -285,7 +285,7 @@
                 if (preg_match('/1\\/2|\\.5|-/', $match[1]))
                     $starcount += 0.125;
             // Add this to the query -- convert european decimal to something mysql can understand
-                $extra_query[] = 'program.stars >= '.str_replace(',', '.', $starcount);
+                $extra_query[] = 'program.stars >= '.number_format($starcount, 3, '.', '');
             // Remove the stars from the search string so we can continue looking for other things
                 $search_str = $match[2];
             }
