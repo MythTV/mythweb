@@ -215,12 +215,12 @@
  * if $gt is set to true, $this will only be returned if it's > 0
  * if $gt is set to a number, $this will only be returned if it's > $gt
  **/
-    function _or($this, $or_this, $gt = false) {
+    function _or($a, $or_this, $gt = false) {
         if ($gt === true)
-            return $this > 0 ? $this : $or_this;
+            return $a > 0 ? $a : $or_this;
         if (!empty($gt))
-            return $this > $gt ? $this : $or_this;
-        return $this ? $this : $or_this;
+            return $a > $gt ? $a : $or_this;
+        return $a ? $a : $or_this;
     }
 
 /**
