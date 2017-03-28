@@ -217,12 +217,12 @@
  *
  * We require PHP 5.3 since fixes/0.24 which added a very similar ?: operator.
  **/
-    function _or($this, $or_this, $gt = false) {
+    function _or($a, $or_this, $gt = false) {
         if ($gt === true)
-            return $this > 0 ? $this : $or_this;
+            return $a > 0 ? $a : $or_this;
         if (!empty($gt))
-            return $this > $gt ? $this : $or_this;
-        return $this ? $this : $or_this;
+            return $a > $gt ? $a : $or_this;
+        return $a ? $a : $or_this;
     }
 
 /**
