@@ -1,3 +1,5 @@
 .ht*
 *.orig
 .*.swp
+.pc
+patches
