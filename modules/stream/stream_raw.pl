@@ -42,6 +42,10 @@
         $type   = 'video/mp4';
         $suffix = '.mp4';
     }
+    elsif ($basename =~ /\.m4v$/) {
+        $type   = 'video/mp4';
+        $suffix = '.m4v';
+    }
     elsif ($basename =~ /\.avi$/) {
         $type   = 'video/x-msvideo';
         $suffix = '.mp4';

@@ -26,6 +26,7 @@
             $mime = 'video/mpeg';
             break;
         case 'mp4':
+        case 'm4v':
             $mime = 'video/mp4';
             break;
         case 'ogg':
