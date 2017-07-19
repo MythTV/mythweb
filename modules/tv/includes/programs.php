@@ -97,19 +97,32 @@
             trigger_error("load_all_program_data() attempted with out any channels", FATAL);
         $these_channels = implode(',', $these_channels);
     // Build the sql query, and execute it
+    // The weird stuff with pr1 and pr2 is to eliminate the mutiple ratings
+    // per program which causes duplicates to be found.
+    // This code selects the "rater" with the highest name alphabetically,
+    // so for example where raters available for a program are CHVRS ClassInd and VCHIP,
+    // it selects VCHIP.
         $query = 'SELECT DISTINCT program.*,
                          UNIX_TIMESTAMP(program.starttime) AS starttime_unix,
                          UNIX_TIMESTAMP(program.endtime) AS endtime_unix,
-                         IFNULL(programrating.system, "") AS rater,
-                         IFNULL(programrating.rating, "") AS rating,
+                         IFNULL(pr1.system, "") AS rater,
+                         IFNULL(pr1.rating, "") AS rating,
                          channel.callsign,
                          channel.channum
                   FROM program USE INDEX (id_start_end)
-                       LEFT JOIN programrating USING (chanid, starttime)
-                       LEFT JOIN channel USING (chanid)
-                       LEFT JOIN credits USING (chanid, starttime)
+                        LEFT JOIN programrating pr1
+                            on program.chanid = pr1.chanid
+                               and program.starttime = pr1.starttime
+                        LEFT OUTER JOIN programrating pr2
+                            on program.chanid = pr2.chanid
+                               and program.starttime = pr2.starttime
+                               and pr2.system > pr1.system
+                        LEFT JOIN channel on channel.chanid = program.chanid
+                        LEFT JOIN credits
+                            on program.chanid = credits.chanid
+                               and program.starttime = credits.starttime
                        LEFT JOIN people USING (person)
-                 WHERE';
+                 WHERE pr2.system is null and ';
     // Only loading a single channel worth of information
         if ($chanid > 0)
             $query .= ' program.chanid='.$db->escape($chanid);
