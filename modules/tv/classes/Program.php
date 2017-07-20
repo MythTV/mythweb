@@ -121,7 +121,7 @@ class Program extends MythBase {
 
             $this->lastmodified    = $data[35];
             $this->stars           = $data[36];
-            $this->airdate         = $data[37];
+            $this->airdate         = strftime('%a %b %e, %Y',strtotime($data[37]));
             $this->playgroup       = $data[38];
             $this->recpriority2    = $data[39];
             $this->parentid        = $data[40];
@@ -156,7 +156,7 @@ class Program extends MythBase {
     // SQL data
         else {
             if (in_array($data['airdate'], array('0000-00-00', '0000', '1900-01-01')))
-                $this->airdate              = $data['originalairdate'];
+                $this->airdate              = strftime('%a %b %e, %Y',strtotime($data['originalairdate']));
             else
                 $this->airdate              = $data['airdate'];
             $this->category                 = _or($data['category'],        t('Unknown'));
