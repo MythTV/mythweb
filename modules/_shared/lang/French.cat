@@ -54,7 +54,7 @@
     \b(?:vari)
 "News"
     Information
-    \b(?:news|info|journal)
+    \b(?:news|m.*t.*o|info|journal)
 "Reality"
     Téléréalité
     \b(?:realit.*)
