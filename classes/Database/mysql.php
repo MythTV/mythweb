@@ -73,7 +73,7 @@ class Database_mysql extends Database {
         if (is_null($string))
             return 'NULL';
     // Just a string
-        return str_replace('?', '\\?', "'".mysqli_real_escape_string($string, $this->dbh)."'");
+        return str_replace('?', '\\?', "'".mysqli_real_escape_string($this->dbh, $string)."'");
     }
 
 /**
