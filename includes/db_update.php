@@ -9,7 +9,7 @@
  **/
 
 // What *should* the database version be?
-    define('WebDBSchemaVer', 4);
+    define('WebDBSchemaVer', 5);
 
 // What version does the database think it is?
     $db_vers = intval(setting('WebDBSchemaVer'));
@@ -58,6 +58,10 @@
 				setting('recommend_server', null, 'http://myth-recommendations.aws.af.cm/');
 				setting('recommend_key', null, 'REQUIRED');
 				
+                setting('WebDBSchemaVer',    null, ++$db_vers, false);
+
+            case 4:
+                setting('mythweb_use_cdn', null, true);
                 setting('WebDBSchemaVer',    null, ++$db_vers, false);
 				
         // All other numbers should run their changes sequentially
