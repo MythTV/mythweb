@@ -62,7 +62,7 @@
         # Use the following environment settings to tell MythWeb where you want it to
         # look to connect to the database, the name of the database to connect to, and
         # the authentication info to use to connect.  The defaults will usually work
-        # fine unless you've changed mythtv's mysql.txt file, or are running MythWeb on
+        # fine unless you've changed mythtv's config.xml file, or are running MythWeb on
         # a different server from your main backend.  Make sure you have mod_env enabled.
         #
         # This is unneeded due to the upnp setup via the backend
