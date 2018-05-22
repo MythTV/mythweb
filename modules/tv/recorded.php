@@ -179,14 +179,14 @@
     if (function_exists('gmp_mul')) {
     // GMP functions should work better with 64 bit numbers.
         $size = gmp_mul('1024', $size);
-        define(disk_size, gmp_strval($size));
+        define('disk_size', gmp_strval($size));
         $size = gmp_mul('1024', $used);
-        define(disk_used, gmp_strval($size));
+        define('disk_used', gmp_strval($size));
     }
     else {
     // This is inaccurate, but it's the best we can get without GMP.
-        define(disk_size, ($size * 1024));
-        define(disk_used, ($used * 1024));
+        define('disk_size', ($size * 1024));
+        define('disk_used', ($used * 1024));
     }
 
 // Load the class for this page
