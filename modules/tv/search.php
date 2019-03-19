@@ -457,11 +457,11 @@
             case 'both':
                 return $db->escape($value);
             case 'start':
-                return $db->escape(preg_replace('/[\\s-_]+/', '%', $value).'%');
+                return $db->escape(preg_replace('/[\\s_-]+/', '%', $value).'%');
             case 'end':
-                return $db->escape('%'.preg_replace('/[\\s-_]+/', '%', $value));
+                return $db->escape('%'.preg_replace('/[\\s_-]+/', '%', $value));
             default:
-                return $db->escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
+                return $db->escape('%'.preg_replace('/[\\s_-]+/', '%', $value).'%');
         }
     }
 
