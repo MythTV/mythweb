@@ -468,7 +468,7 @@
                 ?></td>
         </tr><?php
         }
-        if (count($conflicting_shows)) {
+        if ($conflicting_shows && count($conflicting_shows)) {
         ?><tr id="x-conflicts">
             <th><?php echo t('Possible conflicts') ?>:<br><br>
         <div style="text-align: left;">
@@ -830,7 +830,7 @@
             </div>
             <div class="x-jobs">
 <?php
-        if (count($program->jobs_possible)) {
+        if ($program->jobs_possible && count($program->jobs_possible)) {
             echo t('Queue a job'), ':',
                  '            <ul class="x-queue">';
             foreach ($program->jobs_possible as $id => $job) {
@@ -842,7 +842,7 @@
             }
             echo '            </ul>';
         }
-        if (count($program->jobs['queue'])) {
+        if ($program->jobs['queue'] && count($program->jobs['queue'])) {
             echo t('Queued jobs'), ':',
                  '            <ul class="-queued">';
             foreach ($program->jobs['queue'] as $job) {
@@ -856,7 +856,7 @@
             }
             echo '            </ul>';
         }
-        if (count($program->jobs['done'])) {
+        if ($program->jobs['done'] && count($program->jobs['done'])) {
             echo t('Recently completed jobs'), ':',
                  '            <ul class="-done">';
             foreach ($program->jobs['done'] as $job) {
