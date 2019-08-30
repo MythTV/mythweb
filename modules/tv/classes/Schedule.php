@@ -103,7 +103,7 @@ class Schedule extends MythBase {
     public static function findAll($sort = true) {
         global $db;
         $orderby = '';
-        if ($sort && count($_SESSION['schedules_sortby'])) {
+        if ($sort && is_array($_SESSION['schedules_sortby']) && count($_SESSION['schedules_sortby'])) {
             $orderby = 'ORDER BY ';
             foreach ($_SESSION['schedules_sortby'] AS $key => $sort) {
                 if ($key > 0)
