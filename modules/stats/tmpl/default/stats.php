@@ -87,11 +87,12 @@
      <th><?php echo t('Last Recorded'); ?></th>
     </tr>
     <?php
-     $maxcount = count($shows);
-     if (count($channels) > $maxcount)
-         $maxcount = count($channels);
+     $showcount = (is_array($shows) ? count($shows) : 0);
+     $channelcount = (is_array($channels) ? count($channels) : 0);
+     if ($channelcount > $showcount)
+         $showcount = $channelcount;
      $padded = false;
-     for ($i=0; $i<$maxcount; $i++) {
+     for ($i=0; $i<$showcount; $i++) {
      ?>
      <tr>
      <?php
@@ -105,7 +106,7 @@
       elseif ($padded == false) {
        $padded = true;
       ?>
-       <td colspan="5" rowspan="<?php echo count($shows)-$i; ?>"></td>
+       <td colspan="5" rowspan="<?php echo $showcount-$i; ?>"></td>
       <?php
       }
       ?>
@@ -121,7 +122,7 @@
       elseif ($padded == false) {
        $padded = true;
       ?>
-       <td colspan="5" rowspan="<?php echo count($channels)-$i; ?>"></td>
+       <td colspan="5" rowspan="<?php echo $channelcount-$i; ?>"></td>
       <?php
       }
       ?>

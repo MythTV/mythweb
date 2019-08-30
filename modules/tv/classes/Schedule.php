@@ -546,7 +546,7 @@ class Schedule extends MythBase {
     function playgroup_select($this_playgroup, $name = 'playgroup', $schedule = NULL, $id = NULL, $js = NULL) {
     // Make sure we have some data
         static $playgroups = array();
-        if (!count($playgroups)) {
+        if (!is_array($playgroups) || !count($playgroups)) {
             global $db;
             $sh = $db->query('SELECT name FROM playgroup ORDER BY name = "Default" DESC, name');
             while (list($group) = $sh->fetch_row()) {
@@ -555,7 +555,8 @@ class Schedule extends MythBase {
             $sh->finish();
         }
     // Do PlayGroup titlematch
-        if (count($playgroups) > 1 && empty($this_playgroup) && is_object($schedule)) {
+        if (is_array($playgroups) && count($playgroups) > 1 &&
+            empty($this_playgroup) && is_object($schedule)) {
             $this_playgroup =& $schedule->this_playgroup;
             $sh = $db->query('SELECT DISTINCT name FROM playgroup
                               WHERE name = ? OR name = ? OR (titlematch <> "" AND ? REGEXP titlematch)
