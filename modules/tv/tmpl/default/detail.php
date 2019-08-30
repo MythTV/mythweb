@@ -842,7 +842,7 @@
             }
             echo '            </ul>';
         }
-        if (count($program->jobs['queue'])) {
+        if (is_array($program->jobs['queue']) && count($program->jobs['queue'])) {
             echo t('Queued jobs'), ':',
                  '            <ul class="-queued">';
             foreach ($program->jobs['queue'] as $job) {
@@ -856,7 +856,7 @@
             }
             echo '            </ul>';
         }
-        if (count($program->jobs['done'])) {
+        if (is_array($program->jobs['done']) && count($program->jobs['done'])) {
             echo t('Recently completed jobs'), ':',
                  '            <ul class="-done">';
             foreach ($program->jobs['done'] as $job) {
