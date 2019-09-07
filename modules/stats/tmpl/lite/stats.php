@@ -91,13 +91,15 @@
         <th><?php echo t('Count') ?></th>
         <th><?php echo t('Last Recorded') ?></th>
     </tr><?php
-        foreach($top_ten_shows as $num => $row) {
+        if (is_array($shows)) {
+          foreach($shows as $num => $row) {
             echo "<tr>\n",
                  "        <td>", ($num + 1), "</td>\n",
                  "        <td>", html_entities($row['title']), "</td>\n",
-                 "        <td>", $row['count'], "</td>\n",
+                 "        <td>", $row['recorded'], "</td>\n",
                  "        <td>".date('F j Y', $row['last_recorded'])."</td>\n",
                  "    </tr>\n";
+          }
         }
     ?>
     </table>
@@ -116,13 +118,15 @@
         <th><?php echo t('Count') ?></th>
         <th><?php echo t('Last Recorded') ?></th>
     </tr><?php
-        foreach($top_ten_chans as $num => $row) {
+        if (is_array($channels)) {
+          foreach($channels as $num => $row) {
             echo "<tr>\n",
                  "        <td>", ($num + 1), "</td>\n",
                  "        <td>", html_entities($row['name']), "</td>\n",
-                 "        <td>", $row['count'], "</td>\n",
+                 "        <td>", $row['recorded'], "</td>\n",
                  "        <td>".date('F j Y', $row['last_recorded'])."</td>\n",
                  "    </tr>\n";
+          }
         }
     ?>
     </table>
