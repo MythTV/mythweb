@@ -105,7 +105,7 @@
         $query = 'SELECT DISTINCT program.*,
                          UNIX_TIMESTAMP(program.starttime) AS starttime_unix,
                          UNIX_TIMESTAMP(program.endtime) AS endtime_unix,
-                         IFNULL(pr1.system, "") AS rater,
+                         IFNULL(pr1.`system`, "") AS rater,
                          IFNULL(pr1.rating, "") AS rating,
                          channel.callsign,
                          channel.channum
@@ -116,13 +116,13 @@
                         LEFT OUTER JOIN programrating pr2
                             on program.chanid = pr2.chanid
                                and program.starttime = pr2.starttime
-                               and pr2.system > pr1.system
+                               and pr2.`system` > pr1.`system`
                         LEFT JOIN channel on channel.chanid = program.chanid
                         LEFT JOIN credits
                             on program.chanid = credits.chanid
                                and program.starttime = credits.starttime
                        LEFT JOIN people USING (person)
-                 WHERE pr2.system is null and ';
+                 WHERE pr2.`system` is null and ';
     // Only loading a single channel worth of information
         if ($chanid > 0)
             $query .= ' program.chanid='.$db->escape($chanid);
