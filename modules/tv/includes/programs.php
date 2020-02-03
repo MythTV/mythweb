@@ -201,6 +201,7 @@
             }
         // Add this program to the channel hash, etc.
             $these_programs[]                          =& $program;
+            $channel_hash[$data['chanid']]             =  new stdClass();
             $channel_hash[$data['chanid']]->programs[] =& $program;
         // Cleanup
             unset($program);
