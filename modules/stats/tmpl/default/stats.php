@@ -59,9 +59,17 @@
             <dt><?php echo t('Number of episodes'); ?>:</dt>
             <dd><?php echo $show_count; ?></dd>
             <dt><?php echo t('First recording'); ?>:</dt>
-            <dd><?php echo date('l F jS, Y', $first); ?></dd>
+            <?php if ($first != 0) { ?>
+              <dd><?php echo date('l F jS, Y', $first); ?></dd>
+            <?php } else { ?>
+              <dd><?php echo t('None'); ?></dd>
+            <?php } ?>
             <dt><?php echo t('Last recording'); ?>:</dt>
-            <dd><?php echo date('l F jS, Y', $last); ?></dd>
+            <?php if ($last != 0) { ?>
+              <dd><?php echo date('l F jS, Y', $last); ?></dd>
+            <?php } else { ?>
+              <dd><?php echo t('None'); ?></dd>
+            <?php } ?>
             <dt><?php echo t('Total Running Time'); ?>:</dt>
             <dd><?php if(($last - $first)!=0) echo nice_length($last - $first); else echo "0"; ?></dd>
             <dt><?php echo t('Total Recorded'); ?>:</dt>
@@ -87,11 +95,12 @@
      <th><?php echo t('Last Recorded'); ?></th>
     </tr>
     <?php
-     $maxcount = count($shows);
-     if (count($channels) > $maxcount)
-         $maxcount = count($channels);
+     $showcount = (is_array($shows) ? count($shows) : 0);
+     $channelcount = (is_array($channels) ? count($channels) : 0);
+     if ($channelcount > $showcount)
+         $showcount = $channelcount;
      $padded = false;
-     for ($i=0; $i<$maxcount; $i++) {
+     for ($i=0; $i<$showcount; $i++) {
      ?>
      <tr>
      <?php
@@ -105,7 +114,7 @@
       elseif ($padded == false) {
        $padded = true;
       ?>
-       <td colspan="5" rowspan="<?php echo count($shows)-$i; ?>"></td>
+       <td colspan="5" rowspan="<?php echo $showcount-$i; ?>"></td>
       <?php
       }
       ?>
@@ -121,7 +130,7 @@
       elseif ($padded == false) {
        $padded = true;
       ?>
-       <td colspan="5" rowspan="<?php echo count($channels)-$i; ?>"></td>
+       <td colspan="5" rowspan="<?php echo $channelcount-$i; ?>"></td>
       <?php
       }
       ?>

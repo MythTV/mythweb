@@ -344,7 +344,7 @@
                 case 'Recorded':
                 case 'NeverRecord':
                     unset($Results[$key]);
-                    continue;
+                    continue 2;
             }
         }
     }
@@ -358,7 +358,7 @@
                 case 'EarlierShowing':
                 case 'LaterShowing':
                     unset($Results[$key]);
-                    continue;
+                    continue 2;
             }
         }
     }
@@ -457,11 +457,11 @@
             case 'both':
                 return $db->escape($value);
             case 'start':
-                return $db->escape(preg_replace('/[\\s-_]+/', '%', $value).'%');
+                return $db->escape(preg_replace('/[\\s\-_]+/', '%', $value).'%');
             case 'end':
-                return $db->escape('%'.preg_replace('/[\\s-_]+/', '%', $value));
+                return $db->escape('%'.preg_replace('/[\\s\-_]+/', '%', $value));
             default:
-                return $db->escape('%'.preg_replace('/[\\s-_]+/', '%', $value).'%');
+                return $db->escape('%'.preg_replace('/[\\s\-_]+/', '%', $value).'%');
         }
     }
 
