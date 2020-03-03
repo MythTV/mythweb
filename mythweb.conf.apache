@@ -212,12 +212,27 @@
     #    AddOutputFilterByType DEFLATE text/css
     #    AddOutputFilterByType DEFLATE application/x-javascript
 
+    # if we can auto-detect the deflate module, use it
+        <IfModule deflate_module>
+            BrowserMatch ^Mozilla/4 gzip-only-text/html
+            BrowserMatch ^Mozilla/4\.0[678] no-gzip
+            BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+            AddOutputFilterByType DEFLATE text/html
+            AddOutputFilterByType DEFLATE text/css
+            AddOutputFilterByType DEFLATE application/x-javascript
+        </IfModule>
+
     # This is helpful for mod_deflate -- it prevents proxies from changing
     # the user agent to/from this server, which can prevent compression from
     # being enabled.  It is disabled here because many distros seem not to
     # enable mod_headers by default, but I recommend that you enable it.
     #
     #    Header append Vary User-Agent env=!dont-vary
+
+    # If we can auto-detect the headers module, use it
+        <IfModule headers_module>
+            Header append Vary User-Agent env=!dont-vary
+        </IfModule>
 
     # Set up the perl handler so we can stream properly.  Do not use mod_perl
     # because it has a tendency to hold onto child processes, which causes
