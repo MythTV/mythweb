@@ -1,5 +1,7 @@
 ##
-# mythweb configuration for nginx and php-fpm
+# mythweb configuration for nginx
+# - Requires php-fpm to handle php
+# - Requires fcgiwrap to handle perl
 #
 # please modify before use
 ##
@@ -16,7 +18,6 @@ server {
 	server_name localhost;
 
 	# If you want to run a non-SSL connection comment out this block
-	ssl on;
 	ssl_certificate certs/server.crt;
 	ssl_certificate_key certs/server.key;
 
@@ -39,7 +40,17 @@ server {
 		fastcgi_param   db_name  mythconverg;
 		fastcgi_param   db_login mythtv;
 		fastcgi_param   db_password mythtv;
-		fastcgi_pass	unix:/var/run/php5-fpm.sock;
+		fastcgi_pass	unix:/var/run/php/php7.3-fpm.sock;
+	}
+
+	location ~ \.pl {
+		include		fastcgi_params;
+		fastcgi_index   mythweb.php;
+		fastcgi_param   db_server localhost;
+		fastcgi_param   db_name  mythconverg;
+		fastcgi_param   db_login mythtv;
+		fastcgi_param   db_password mythtv;
+		fastcgi_pass    unix:/var/run/fcgiwrap.socket;
 	}
 
 	# Required rewrite rules
