@@ -45,7 +45,6 @@ server {
 
 	location ~ \.pl {
 		include		fastcgi_params;
-		fastcgi_index   mythweb.php;
 		fastcgi_param   db_server localhost;
 		fastcgi_param   db_name  mythconverg;
 		fastcgi_param   db_login mythtv;
