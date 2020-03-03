@@ -238,7 +238,7 @@
             return 'file://'.$_SESSION['file_url_override'].str_replace('%2F', '/', rawurlencode(basename($show->filename)));
     // Which protocol should we use for downloads?
 
-        $url = stream_url."pl/stream/{$show->chanid}/{$show->recstartts}";
+        $url = root_url."pl/stream/{$show->chanid}/{$show->recstartts}";
     // Handle specific file extension modes
         switch ($ext) {
         // ASX mode gets the streaming module, with a slight addition
