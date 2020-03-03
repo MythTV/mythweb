@@ -180,7 +180,7 @@
         </div>
 <?php
         }
-        if (count($conflicting_shows)) {
+        if ($conflicting_shows && count($conflicting_shows)) {
             echo "    <div id=\"conflicting_shows\" class=\"clearfix\">\n        ",
                  t('Possible conflicts with this show'),
                  ":\n        <table>\n        ";
