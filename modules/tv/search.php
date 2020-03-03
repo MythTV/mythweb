@@ -156,13 +156,13 @@
             if (in_array('movie', $_SESSION['search']['ctype'])) {
                 if (count($_SESSION['search']['ctype']) > 1) {
                     $extra_query[] = 'IF(program.category_type = "movie",'
-                                    .'     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 2, '.', '')
-                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'], 2, '.', '')
+                                    .'     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 3, '.', '')
+                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'] + 0.001, 3, '.', '')
                                     .', 1)';
                 }
                 else {
-                    $extra_query[] = '     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 2, '.', '')
-                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'], 2, '.', '');
+                    $extra_query[] = '     program.stars >= '.number_format($_SESSION['search']['stars_gt'], 3, '.', '')
+                                    .' AND program.stars <= '.number_format($_SESSION['search']['stars_lt'] + 0.001, 3, '.', '');
                 }
             }
         // Date range
@@ -281,11 +281,11 @@
             }
         // If the next thing starts with stars, it's a movie rating query
             if (preg_match('#(\\*+\s*(1/2\b|0?\.5\b|-)?)\s*(.*?)$#', $search_str, $match)) {
-                $starcount = substr_count($match[1], '*') / 4;
+                $starcount = substr_count($match[1], '*') / 5;
                 if (preg_match('/1\\/2|\\.5|-/', $match[1]))
                     $starcount += 0.125;
             // Add this to the query -- convert european decimal to something mysql can understand
-                $extra_query[] = 'program.stars >= '.str_replace(',', '.', $starcount);
+                $extra_query[] = 'program.stars >= '.number_format($starcount, 3, '.', '');
             // Remove the stars from the search string so we can continue looking for other things
                 $search_str = $match[2];
             }
@@ -571,19 +571,12 @@
  **/
     function movie_star_select($name) {
         echo '<select name="', $name, '">';
-        for ($x=0; $x<=1; $x+=.125) {
-            echo '<option value="', $x, '"';
-            if ($x == $_SESSION['search'][$name])
+        for ($x=0; $x<=max_stars; $x++) {
+            $v = number_format($x/max_stars, 3, '.', '');
+            echo '<option value="', $v, '"';
+            if ($v == $_SESSION['search'][$name])
                 echo ' SELECTED';
-            echo '>', str_repeat(star_character, intVal($x * max_stars));
-            $frac = ($x * max_stars) - intVal($x * max_stars);
-            if ($frac >= .75)
-                echo '&frac34;';
-            elseif ($frac >= .5)
-                echo '&frac12;';
-            elseif ($frac >= .25)
-                echo '&frac14;';
-            echo '</option>';
+            echo '>', str_repeat(star_character, $x), '</option>';
         }
         echo '</select>';
     }
