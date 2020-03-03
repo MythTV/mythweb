@@ -61,9 +61,17 @@
             <dt><?php echo t('Number of episodes') ?>:</dt>
             <dd><?php echo $show_count ?></dd>
             <dt><?php echo t('First recording') ?>:</dt>
-            <dd><?php echo date('l F jS, Y', $first) ?></dd>
+            <?php if ($first != 0) { ?>
+              <dd><?php echo date('l F jS, Y', $first); ?></dd>
+            <?php } else { ?>
+              <dd><?php echo t('None'); ?></dd>
+            <?php } ?>
             <dt><?php echo t('Last recording') ?>:</dt>
-            <dd><?php echo date('l F jS, Y', $last) ?></dd>
+            <?php if ($last != 0) { ?>
+              <dd><?php echo date('l F jS, Y', $last); ?></dd>
+            <?php } else { ?>
+              <dd><?php echo t('None'); ?></dd>
+            <?php } ?>
             <dt><?php echo t('Total Time') ?>:</dt>
             <dd><?php echo t('$1 wasted', nice_length($time)) ?></dd>
         </dl>
@@ -83,13 +91,15 @@
         <th><?php echo t('Count') ?></th>
         <th><?php echo t('Last Recorded') ?></th>
     </tr><?php
-        foreach($top_ten_shows as $num => $row) {
+        if (is_array($shows)) {
+          foreach($shows as $num => $row) {
             echo "<tr>\n",
                  "        <td>", ($num + 1), "</td>\n",
                  "        <td>", html_entities($row['title']), "</td>\n",
-                 "        <td>", $row['count'], "</td>\n",
+                 "        <td>", $row['recorded'], "</td>\n",
                  "        <td>".date('F j Y', $row['last_recorded'])."</td>\n",
                  "    </tr>\n";
+          }
         }
     ?>
     </table>
@@ -108,13 +118,15 @@
         <th><?php echo t('Count') ?></th>
         <th><?php echo t('Last Recorded') ?></th>
     </tr><?php
-        foreach($top_ten_chans as $num => $row) {
+        if (is_array($channels)) {
+          foreach($channels as $num => $row) {
             echo "<tr>\n",
                  "        <td>", ($num + 1), "</td>\n",
                  "        <td>", html_entities($row['name']), "</td>\n",
-                 "        <td>", $row['count'], "</td>\n",
+                 "        <td>", $row['recorded'], "</td>\n",
                  "        <td>".date('F j Y', $row['last_recorded'])."</td>\n",
                  "    </tr>\n";
+          }
         }
     ?>
     </table>

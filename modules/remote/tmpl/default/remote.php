@@ -132,7 +132,7 @@
         <ul style="list-style-type: none"><?php
             foreach (array_keys($Frontends) as $host) {
                 if (!$_SESSION['remote']['frontends'][$host])
-                    next;
+                    continue;
                 echo '<li><img id="hostscreen_', $host, '" class="x-screenshot"',
                      ' src="', root, html_entities(Modules::getModuleProperty('remote', 'path').'/screenshot?format=jpg&width=960&host='.urlencode($host)),
                      '" /></li>';

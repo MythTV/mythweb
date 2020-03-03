@@ -39,12 +39,12 @@ class UPnP_Client {
         $devices = self::discoverRaw($schema, $ipCount);
 
         // Try ipv6
-        if (count($devices) == 0) {
+        if (!is_array($devices) || count($devices) == 0) {
             $devices = self::discoverRaw($schema, $ipCount, 'ipv6');
         }
 
         // Fail :(
-        if (count($devices) == 0) {
+        if (!is_array($devices) || count($devices) == 0) {
             return false;
         }
 

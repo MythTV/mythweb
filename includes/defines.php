@@ -95,6 +95,7 @@
             break;
         }
     }
+    defined('module') or define('module', '_shared');
 
 // Set up some constants used by nice_filesystem()
     define('kb', 1024);         // Kilobyte

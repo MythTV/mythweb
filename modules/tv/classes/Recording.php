@@ -92,7 +92,7 @@ class Recording {
     // Recording object data
         else {
             $tmp = @get_object_vars($recording_data);
-            if (count($tmp) > 0) {
+            if (is_array($tmp) && (count($tmp) > 0)) {
                 foreach ($tmp as $key => $value) {
                     $this->$key = $value;
                 }

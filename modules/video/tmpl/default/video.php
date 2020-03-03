@@ -13,7 +13,7 @@
     $page_title = 'MythWeb - '.t('Videos');
 
 // Custom headers
-    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root_url.'dcss/video.css.php">';
+    $headers[] = '<link rel="stylesheet" type="text/css" href="'.root_url.'dcss/video.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.root_url.'skins/'.skin.'/video.css">';
 
 // Print the page header
