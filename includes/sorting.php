@@ -16,7 +16,7 @@
  **/
     function get_sort_link($field, $string) {
     // Get the URL
-        $url = substr($_SERVER['PATH_INFO'], 1);
+        $url = substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 1);
         if (empty($url))
             $url = str_replace('mythweb.php/', '', $_SERVER['PHP_SELF']);
         else
