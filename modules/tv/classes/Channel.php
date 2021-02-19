@@ -54,9 +54,9 @@ class Channel extends MythBase {
             if ($_SESSION['guide_favonly']) {
                 $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\'';
                 if ($filtered)
-                    $sql .= ' AND channel.visible = 1';
+                    $sql .= ' AND channel.visible = 1 AND channel.deleted IS NULL';
             } elseif ($filtered) {
-                $sql .= ' WHERE channel.visible = 1';
+                $sql .= ' WHERE channel.visible = 1 AND channel.deleted IS NULL';
             }
             $sql .= ' GROUP BY channel.channum, channel.callsign';
         // Sort
@@ -82,7 +82,7 @@ class Channel extends MythBase {
                 $sql .= ', channelgroup, channelgroupnames WHERE channel.chanid = channelgroup.chanid AND channelgroup.grpid = channelgroupnames.grpid AND channelgroupnames.name = \'Favorites\' AND';
             else
                 $sql .= ' WHERE';
-            $sql .= ' channel.visible = 1';
+            $sql .= ' channel.visible = 1 AND channel.deleted IS NULL';
             $sql .= ' GROUP BY channel.channum, channel.callsign';
         // Sort
             $sql .= ' ORDER BY '
