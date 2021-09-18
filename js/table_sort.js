@@ -63,7 +63,7 @@ var SortableTables = {
         if (this.currently_sorting_table != null)
             return;
         if (this.callback_presort)
-            this.callback_presort(table_id, header_index);
+            this.callback_presort(table_id, heder_index);
         if (this.tables[table_id].callback_presort)
             this.tables[table_id].callback_presort(table_id, header_index);
         this.tables[table_id].sort(header_index);
