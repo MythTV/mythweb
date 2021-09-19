@@ -71,7 +71,7 @@
 <thead>
 <tr class="menu">
     <?php if ($group_field != '') echo "<th class=\"list\">&nbsp;</th>\n"; ?>
-    <th class="x-title"><?php      echo t('Title' );              ?></th>
+    <th class="x-title" sort_hint="sortMythwebTitle"><?php      echo t('Title' );              ?></th>
     <th class="x-priority"><?php   echo t('Recording Priority' ); ?></th>
     <th class="x-channel" sort_hint="sortMythwebChannel"><?php    echo t('Channel' );            ?></th>
     <th class="x-profile"><?php    echo t('Profile' );            ?></th>
