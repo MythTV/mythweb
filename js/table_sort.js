@@ -516,14 +516,6 @@ var SortableTableSorts = {
         return 0;
     },
 
-    sortMythwebTitle:           function (a,b) {
-        // As by_no_articles in includes/sorting.php
-        a = a.replace(/^(An?|The)\s+/i, "");
-        b = b.replace(/^(An?|The)\s+/i, "");
-
-        return SortableTableSorts.sortCaseInsensitive(a, b);
-    },
-
     sortMythwebPlayTime:        function (a,b) {
         if (a == b)
             return 0;

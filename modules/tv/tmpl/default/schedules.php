@@ -71,9 +71,9 @@
 <thead>
 <tr class="menu">
     <?php if ($group_field != '') echo "<th class=\"list\">&nbsp;</th>\n"; ?>
-    <th class="x-title" sort_hint="sortMythwebTitle"><?php      echo get_sort_link('title', t('Title' ));              ?></th>
+    <th class="x-title"><?php      echo get_sort_link('title', t('Title' ));              ?></th>
     <th class="x-priority"><?php   echo get_sort_link('recpriority', t('Recording Priority' )); ?></th>
-    <th class="x-channel" sort_hint="sortMythwebChannel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum_with_type' : 'callsign_with_type', t('Channel' ));            ?></th>
+    <th class="x-channel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum_with_type' : 'callsign_with_type', t('Channel' ));            ?></th>
     <th class="x-profile"><?php    echo get_sort_link('profile', t('Profile' ));            ?></th>
     <th class="x-transcoder"><?php echo get_sort_link('transcoder', t('Transcoder'));          ?></th>
     <th class="x-group"><?php      echo get_sort_link('recgroup', t('Recording Group'));     ?></th>
