@@ -31,7 +31,7 @@
 
 // Print the page contents
     $group_field = $_GET['sortby'];
-    if ($group_field == 'title' || !in_array($group_field, array('title', 'channum', 'type', 'profile', 'recgroup')))
+    if ($group_field == 'title' || !in_array($group_field, array('title', 'callsign', 'channum', 'type', 'profile', 'recgroup')))
         $group_field = '';
 ?>
 
@@ -40,7 +40,7 @@
     <?php if ($group_field != '') echo "<td class=\"list\">&nbsp;</td>\n" ?>
     <td><?php echo get_sort_link('title',    t('title')) ?></td>
     <td><?php echo get_sort_link('recpriority', t('recpriority')) ?></td>
-    <td><?php echo get_sort_link($_SESSION["prefer_channum"] ? 'channum' : 'callsign',  t('channel')) ?></td>
+    <td><?php echo get_sort_link($_SESSION["prefer_channum"] ? 'channum_with_type' : 'callsign_with_type',  t('channel')) ?></td>
     <td><?php echo get_sort_link('profile',  t('profile')) ?></td>
     <td><?php echo get_sort_link('transcoder',  t('transcoder')) ?></td>
     <td><?php echo get_sort_link('recgroup', t('recgroup')) ?></td>
@@ -56,12 +56,15 @@
         // If this is an 'always on any channel' or 'find one' recording without the 'This Channel' filter, set the channel name to 'Any'
             if (($schedule->type == rectype_always || $schedule->type == rectype_findone) && !($schedule->filter & (1 << 10))) {
                 $schedule->channel->name = '[ '.t('Any').' ]';
+                $schedule->channel->callsign = null;
                 $schedule->channel->channum = 0;
             }
 
         // Print a dividing row if grouping changes
             if ($group_field == 'type')
                 $cur_group = $schedule->texttype;
+            elseif ($group_field == 'callsign')
+                $cur_group = ($schedule->channel->callsign ? $schedule->channel->callsign.' - ' : '').$schedule->channel->name;
             elseif ($group_field == 'channum')
                 $cur_group = ($schedule->channel->channum ? $schedule->channel->channum.' - ' : '').$schedule->channel->name;
             elseif ($group_field == 'profile')

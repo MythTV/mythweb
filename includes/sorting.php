@@ -235,3 +235,53 @@
         if ($a->transcoder == $b->transcoder) return 0;
         return ($a->transcoder > $b->transcoder) ? 1 : -1;
     }
+
+    function by_callsign_with_type(&$a, &$b) {
+        // If this is an 'always on any channel' or 'find one' recording without the 'This Channel' filter, set the callsign to 'Any'
+        if (($a->type == rectype_always || $a->type == rectype_findone) && !($a->filter & (1 << 10)))
+            $ac = '['.t('Any').']';
+        else
+            $ac = $a->channel->callsign;
+
+        if (($b->type == rectype_always || $b->type == rectype_findone) && !($b->filter & (1 << 10)))
+            $bc = '['.t('Any').']';
+        else
+            $bc = $b->channel->callsign;
+
+        return strnatcasecmp($ac, $bc);
+    }
+
+    function by_channum_with_type(&$a, &$b) {
+        // If this is an 'always on any channel' or 'find one' recording without the 'This Channel' filter, set the channum to 'Any'
+        if (($a->type == rectype_always || $a->type == rectype_findone) && !($a->filter & (1 << 10)))
+            $ac = '['.t('Any').']';
+        else
+            $ac = $a->channel->channum;
+
+        if (($b->type == rectype_always || $b->type == rectype_findone) && !($b->filter & (1 << 10)))
+            $bc = '['.t('Any').']';
+        else
+            $bc = $b->channel->channum;
+
+        return strnatcasecmp($ac, $bc);
+    }
+
+    function by_endoffset(&$a, &$b) {
+        if ($a->endoffset == $b->endoffset) return 0;
+        return ($a->endoffset > $b->endoffset) ? 1 : -1;
+    }
+
+    function by_last_record(&$a, &$b) {
+        if ($a->last_record == $b->last_record) return 0;
+        return ($a->last_record > $b->last_record) ? 1 : -1;
+    }
+
+    function by_startoffset(&$a, &$b) {
+        if ($a->startoffset == $b->startoffset) return 0;
+        return ($a->startoffset > $b->startoffset) ? 1 : -1;
+    }
+
+    function by_storagegroup(&$a, &$b) {
+        if ($a->storagegroup == $b->storagegroup) return 0;
+        return ($a->storagegroup > $b->storagegroup) ? 1 : -1;
+    }

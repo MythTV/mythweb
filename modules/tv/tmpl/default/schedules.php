@@ -28,7 +28,7 @@
 
 // Print the page contents
     $group_field = $_GET['sortby'];
-    if ($group_field == 'title' || !in_array($group_field, array('title', 'channum', 'type', 'profile', 'recgroup')))
+    if ($group_field == 'title' || !in_array($group_field, array('title', 'callsign', 'channum', 'type', 'profile', 'recgroup')))
         $group_field = '';
 ?>
 
@@ -71,17 +71,17 @@
 <thead>
 <tr class="menu">
     <?php if ($group_field != '') echo "<th class=\"list\">&nbsp;</th>\n"; ?>
-    <th class="x-title"><?php      echo t('Title' );              ?></th>
-    <th class="x-priority"><?php   echo t('Recording Priority' ); ?></th>
-    <th class="x-channel" sort_hint="sortMythwebChannel"><?php    echo t('Channel' );            ?></th>
-    <th class="x-profile"><?php    echo t('Profile' );            ?></th>
-    <th class="x-transcoder"><?php echo t('Transcoder');          ?></th>
-    <th class="x-group"><?php      echo t('Recording Group');     ?></th>
-    <th class="x-type"><?php       echo t('Type');                ?></th>
-    <th class="x-sgroup"><?php     echo t('Storage Group');       ?></th>
-    <th class="x-startoffset"><?php echo t('Start Early');        ?></th>
-    <th class="x-endoffset"><?php  echo t('End Late');            ?></th>
-    <th class="x-lastrec"><?php    echo t('Last Recorded');       ?></th>
+    <th class="x-title" sort_hint="sortMythwebTitle"><?php      echo get_sort_link('title', t('Title' ));              ?></th>
+    <th class="x-priority"><?php   echo get_sort_link('recpriority', t('Recording Priority' )); ?></th>
+    <th class="x-channel" sort_hint="sortMythwebChannel"><?php    echo get_sort_link($_SESSION["prefer_channum"] ? 'channum_with_type' : 'callsign_with_type', t('Channel' ));            ?></th>
+    <th class="x-profile"><?php    echo get_sort_link('profile', t('Profile' ));            ?></th>
+    <th class="x-transcoder"><?php echo get_sort_link('transcoder', t('Transcoder'));          ?></th>
+    <th class="x-group"><?php      echo get_sort_link('recgroup', t('Recording Group'));     ?></th>
+    <th class="x-type"><?php       echo get_sort_link('type', t('Type'));                ?></th>
+    <th class="x-sgroup"><?php     echo get_sort_link('storagegroup', t('Storage Group'));       ?></th>
+    <th class="x-startoffset"><?php echo get_sort_link('startoffset', t('Start Early'));        ?></th>
+    <th class="x-endoffset"><?php  echo get_sort_link('endoffset', t('End Late'));            ?></th>
+    <th class="x-lastrec"><?php    echo get_sort_link('last_record', t('Last Recorded'));       ?></th>
 </tr>
 </thead>
 <?php
@@ -98,6 +98,7 @@
         // If this is an 'always on any channel' or 'find one' recording without the 'This Channel' filter, set the channel name to 'Any'
             if (($schedule->type == rectype_always || $schedule->type == rectype_findone) && !($schedule->filter & (1 << 10))) {
                 $schedule->channel->name = '[ '.t('Any').' ]';
+                $schedule->channel->callsign = null;
                 $schedule->channel->channum = 0;
             }
         // A program id counter for popup info
@@ -109,6 +110,8 @@
         // Print a dividing row if grouping changes
             if ($group_field == 'type')
                 $cur_group = $schedule->texttype;
+            elseif ($group_field == 'callsign')
+                $cur_group = ($schedule->channel->callsign ? $schedule->channel->callsign.' - ' : '').$schedule->channel->name;
             elseif ($group_field == 'channum')
                 $cur_group = ($schedule->channel->channum ? $schedule->channel->channum.' - ' : '').$schedule->channel->name;
             elseif ($group_field == 'profile')
