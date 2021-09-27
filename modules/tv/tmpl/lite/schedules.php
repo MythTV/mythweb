@@ -55,11 +55,10 @@
             $css_class = ($schedule->type == rectype_dontrec ? 'deactivated' : 'scheduled');
         // If this is an 'always on any channel' or 'find one' recording without the 'This Channel' filter, set the channel name to 'Any'
             if (($schedule->type == rectype_always || $schedule->type == rectype_findone) && !($schedule->filter & (1 << 10))) {
-                $schedule->channel->name = '[ '.t('Any').' ]';
-                $schedule->channel->callsign = null;
-                $schedule->channel->channum = 0;
+                $any_channel = true;
+            } else {
+                $any_channel = false;
             }
-
         // Print a dividing row if grouping changes
             if ($group_field == 'type')
                 $cur_group = $schedule->texttype;
@@ -112,15 +111,19 @@
             echo $schedule->recpriority
         ?></td>
     <td><?php
-            if ($_SESSION["prefer_channum"]) {
-                if ($schedule->channel->channum)
-                    echo $schedule->channel->channum.' - ';
+            if ($any_channel) {
+                echo '[ '.t('Any').' ]';
+            } else {
+                if ($_SESSION["prefer_channum"]) {
+                    if ($schedule->channel->channum)
+                        echo $schedule->channel->channum.' - ';
+                }
+                else {
+                    if ($schedule->channel->callsign)
+                        echo $schedule->channel->callsign.' - ';
+                }
+                echo $schedule->channel->name;
             }
-            else {
-                if ($schedule->channel->callsign)
-                    echo $schedule->channel->callsign.' - ';
-            }
-            echo $schedule->channel->name;
         ?></td>
     <td nowrap><?php echo _or($schedule->profile,  '&nbsp;') ?></td>
     <td nowrap>
