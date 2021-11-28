@@ -22,7 +22,8 @@ class Cache_APC implements Cache_Engine {
             return $ret;
         }
 
-        return apc_fetch($key);
+        $tmp = apc_fetch($key);
+        return $tmp;
     }
 
     public function set($key, $data, $lifeLength) {

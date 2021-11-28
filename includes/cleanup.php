@@ -47,7 +47,7 @@
     fix_crlfxy($_GET);
     fix_crlfxy($_POST);
     fix_crlfxy($_REQUEST);
-    if (get_magic_quotes_gpc()) {
+    if (false) { // get_magic_quotes_gpc()
 
     /**
      * Recursively strip slashes from an array (eg. $_GET).

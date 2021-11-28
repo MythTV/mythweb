@@ -20,7 +20,8 @@ class Cache_Memcache implements Cache_Engine {
                 $ret[$k] = &self::get($v);
             return $ret;
         }
-        return $this->Memcache->get($key);
+        $tmp = $this->Memcache->get($key);
+        return $tmp;
     }
 
     public function set($key, $data, $lifeLength) {

@@ -66,8 +66,10 @@
             $program =& load_all_program_data($start_time, $start_time, $chanid, true, 'program.manualid='.intval($manualid));
         else
             $program =& load_all_program_data($start_time, $start_time, $chanid, true);
-        if (!is_object($program) || strcasecmp(get_class($program), 'program'))
-            return NULL;
+        if (!is_object($program) || strcasecmp(get_class($program), 'program')) {
+            $tmp = NULL;
+            return $tmp;
+        }
         return $program;
     }
 
@@ -155,7 +157,8 @@
     // No results
         if ($sh->num_rows() < 1) {
             $sh->finish();
-            return array();
+            $tmp = array();
+            return $tmp;
         }
     // Build two separate queries for optimized selecting of recstatus
         $sh2 = $db->prepare('SELECT recstatus

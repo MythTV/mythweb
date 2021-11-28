@@ -12,16 +12,20 @@ class Cache {
 
     public static function &get($key = null) {
         $data = &Cache::$Instance->get($key);
-        if (!$data)
-            return null;
+        if (!$data) {
+            $tmp = null;
+            return $tmp;
+        }
         return $data;
 
     }
 
     public static function &getObject($key = null) {
         $obj = &Cache::$Instance->get($key);
-        if (is_string($obj))
-            return unserialize($obj);
+        if (is_string($obj)) {
+            $tmp = unserialize($obj);
+            return $tmp;
+        }
         return $obj;
     }
 

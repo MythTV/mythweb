@@ -8,7 +8,8 @@ class Cache_Null implements Cache_Engine {
                 $ret[$k] = &self::get($v);
             return $ret;
         }
-        return null;
+        $tmp = null;
+        return $tmp;
     }
 
     public function set($object, $data, $lifeLength) {

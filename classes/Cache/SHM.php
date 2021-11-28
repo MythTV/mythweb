@@ -34,7 +34,8 @@ class Cache_SHM implements Cache_Engine {
                 @shm_remove_var(self::$SHMhandle, self::getVarKey($key));
         }
         FB::warn("Cache Miss $key: ".(microtime(true) - $start));
-        return null;
+        $tmp = null;
+        return $tmp;
     }
 
     public function set($key, $data, $lifeLength) {

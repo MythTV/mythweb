@@ -19,8 +19,10 @@
     $sh->finish();
 
 // Make sure we have a valid host selected
-    if (!isset($Settings_Hosts[$_SESSION['settings']['host']]))
-        $_SESSION['settings']['host'] = reset(array_keys($Settings_Hosts));
+    if (!isset($Settings_Hosts[$_SESSION['settings']['host']])) {
+        $tmp = array_keys($Settings_Hosts);
+        $_SESSION['settings']['host'] = reset($tmp);
+    }
 
 // Make sure the session host gets updated to the posted one.
     if (isset($_POST['host']))

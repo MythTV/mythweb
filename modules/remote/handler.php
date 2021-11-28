@@ -44,7 +44,8 @@
 
 // Unknown send type?  Use the first one found
     if (empty($_REQUEST['type']) || !array_key_exists($_REQUEST['type'], Modules::getModuleProperty('remote', 'links'))) {
-        $_REQUEST['type'] = reset(array_keys(Modules::getModuleProperty('remote', 'links')));
+        $tmp = array_keys(Modules::getModuleProperty('remote', 'links'));
+        $_REQUEST['type'] = reset($tmp);
     }
 
 // Send a command?  (via ajax)
