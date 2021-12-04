@@ -39,7 +39,11 @@
     define('E_ASSERT_ERROR', 4096);
 
 // set the error reporting level for this script
-    error_reporting(FATAL | ERROR | WARNING | E_ERROR | E_WARNING | E_PARSE | E_COMPILE_ERROR);
+// With PHP 8.x far more warnings are thrown so supress them in the legacy code base
+    if (version_compare(PHP_VERSION, '8.0.0') < 0)
+        error_reporting(FATAL | ERROR | WARNING | E_ERROR | E_WARNING | E_PARSE | E_COMPILE_ERROR);
+    else
+        error_reporting(FATAL | ERROR | WARNING | E_ERROR | E_PARSE | E_COMPILE_ERROR);
 
 // Reconfigure the error handler to use our own routine
     set_error_handler('error_handler');
