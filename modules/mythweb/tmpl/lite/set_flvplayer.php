@@ -23,7 +23,7 @@
          title="Enable Flash Video player for recordings."
          <?php if (setting('WebFLV_on')) echo ' CHECKED' ?>></td>
 </tr><tr>
-<? /*  The SWF player can't handle different sizes yet, so don't turn these on
+<?php /*  The SWF player can't handle different sizes yet, so don't turn these on
     <th><?php echo t('Width') ?>:</th>
     <td><input type="text" name="width"
          size="5" title="FLV Width"
