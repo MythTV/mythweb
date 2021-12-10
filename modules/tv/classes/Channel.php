@@ -143,7 +143,7 @@ class Channel extends MythBase {
             $program_id_counter = 0;
     ## we will eventually need to check for list vs "by channel" display
     #  for now, we only have the main list display
-        if (defined('theme_num_time_slots')) {
+        if (defined('theme_num_time_slots') && defined('theme_timeslot_size')) {
             $timeslots_left = theme_num_time_slots;
             $timeslot_size = theme_timeslot_size;
         } else {
