@@ -133,7 +133,7 @@ class Database_Query_mysql extends Database_Query {
  * @link http://www.php.net/manual/en/function.mysql-fetch-array.php
  * @return assoc
  **/
-    function fetch_array($result_type=MYSQL_BOTH) {
+    function fetch_array($result_type=MYSQLI_BOTH) {
         return mysqli_fetch_array($this->sh, $result_type);
     }
 
