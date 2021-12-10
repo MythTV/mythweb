@@ -461,7 +461,7 @@ function musicLookup($type, $itemid)
       $sh->finish();
       $artist = $row['artist_name'];
 
-      $letter = (!preg_match('/^[0-9]/', $artist) ? strtoupper($artist{0}) : '#');
+      $letter = (!preg_match('/^[0-9]/', $artist) ? strtoupper($artist[0]) : '#');
 
       $output = '<div class="head">
         <div class="right">
