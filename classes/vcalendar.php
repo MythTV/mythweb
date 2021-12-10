@@ -4462,7 +4462,7 @@ class calendarComponent {
  * @since 2.2.2 - 2007-07-29
  * @param array  $datetime  datetime/(date)
  * @param string $tz        timezone
- * @return timestamp
+ * @return int
  */
   function _date2timestamp( $datetime, $tz=null ) {
     $output = null;
