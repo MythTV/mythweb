@@ -108,7 +108,7 @@
  *  email message to the address stored in Error_Email, which is defined in
  *  conf.php.
  **/
-    function error_handler($errno, $errstr, $errfile, $errline, $vars) {
+    function error_handler($errno, $errstr, $errfile, $errline, $vars = null) {
         global $db;
     // Leave early if we haven't requested reports from this kind of error
         if (!($errno & error_reporting()))
