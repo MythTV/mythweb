@@ -1391,7 +1391,7 @@ function internalPlaylistAddPlaylistCheck($curPlId, $addPlId, $depth = 0)
     return false;
 
   $songs = explode(',', $row['playlist_songs']);
-  $playlists = array_filter($songs, create_function('$n','return ($n < 0);'));
+  $playlists = array_filter($songs, function ($n) { return ($n < 0); });
 
   foreach ($playlists as $playlist_id)
   {
