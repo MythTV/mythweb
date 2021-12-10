@@ -740,9 +740,9 @@ class vcalendar {
       return FALSE;
     if( isset( $input['tz'] ) && ( '' < trim ( $input['tz'] ))) {
       $input['tz'] = (string) trim( $input['tz'] );
-      if( ctype_digit( $input['tz']{1} )) { // only numeric tz=offset
+      if( ctype_digit( $input['tz'][1])) { // only numeric tz=offset
         $offset = 0;
-        if( ctype_digit( $input['tz']{0} ))
+        if( ctype_digit( $input['tz'][0]))
           $input['tz'] = '+'.$input['tz'];
         $offset = $toolbox->_tz2offset( $input['tz'] );
         if( 0 != $offset) {
@@ -1436,10 +1436,10 @@ class vcalendar {
             /* get propname */
         $cix = $propname = null;
         for( $cix=0; $cix < strlen( $line ); $cix++ ) {
-          if( in_array( $line{$cix}, array( ':', ';' )))
+          if( in_array( $line[$cix], array( ':', ';' )))
             break;
           else
-            $propname .= $line{$cix};
+            $propname .= $line[$cix];
         }
             /* ignore version/prodid properties */
         if( in_array( strtoupper( $propname ), array( 'VERSION', 'PRODID' )))
@@ -1450,7 +1450,7 @@ class vcalendar {
         $attrix = -1;
         $strlen = strlen( $line );
         for( $cix=0; $cix < $strlen; $cix++ ) {
-          if((       ':'   == $line{$cix} )             &&
+          if((       ':'   == $line[$cix])             &&
                    ( '://' != substr( $line, $cix, 3 )) &&
              ( 'mailto:'   != strtolower( substr( $line, $cix - 6, 7 )))) {
             $attrEnd = TRUE;
@@ -1468,10 +1468,10 @@ class vcalendar {
               break;
             }
           }
-          if( ';' == $line{$cix} )
+          if( ';' == $line[$cix])
             $attr[++$attrix] = null;
           else
-            $attr[$attrix] .= $line{$cix};
+            $attr[$attrix] .= $line[$cix];
         }
 
             /* make attributes in array format */
@@ -2020,7 +2020,7 @@ class calendarComponent {
               foreach( $optparamvalue as $part ) {
                 $part = str_replace( 'MAILTO:', '', $part );
                 $part = str_replace( 'mailto:', '', $part );
-                if(( '"' == $part{0} ) && ( '"' == $part{strlen($part)-1} ))
+                if(( '"' == $part[0]) && ( '"' == $part[strlen($part)-1]))
                   $part = substr( $part, 1, ( strlen($part)-2 ));
                 $optarrays[$optparamlabel][] = $part;
               }
@@ -2028,7 +2028,7 @@ class calendarComponent {
             else {
               $part = str_replace( 'MAILTO:', '', $optparamvalue );
               $part = str_replace( 'mailto:', '', $part );
-              if(( '"' == $part{0} ) && ( '"' == $part{strlen($part)-1} ))
+              if(( '"' == $part[0]) && ( '"' == $part[strlen($part)-1]))
                 $part = substr( $part, 1, ( strlen($part)-2 ));
               $optarrays[$optparamlabel][] = $part;
             }
@@ -2669,14 +2669,14 @@ class calendarComponent {
       }
       if( !empty( $exdate['value'][0]['tz'] )   &&
            ( $exdate['value'][0]['tz'] != 'Z' ) &&
-        ( !( in_array($exdate['value'][0]['tz']{0}, array( '+', '-' )) &&
+        ( !( in_array($exdate['value'][0]['tz'][0], array( '+', '-' )) &&
              ctype_digit( substr( $exdate['value'][0]['tz'], 1 ))) &&
           !ctype_digit( $exdate['value'][0]['tz'] ) ) ) {
         $exdate['params']['TZID'] = $exdate['value'][0]['tz'];
         foreach( $exdate['value'] as $exix => $exdatea ) {
           if( !empty( $exdate['value'][0]['tz'] )   &&
                ( $exdate['value'][0]['tz'] != 'Z' ) &&
-            ( !( in_array($exdate['value'][0]['tz']{0}, array( '+', '-' )) &&
+            ( !( in_array($exdate['value'][0]['tz'][0], array( '+', '-' )) &&
                  ctype_digit( substr( $exdate['value'][0]['tz'], 1 ))) &&
               !ctype_digit( $exdate['value'][0]['tz'] ) ) )
             unset( $exdate['value'][$exix]['tz'] );
@@ -2839,8 +2839,8 @@ class calendarComponent {
           }
         }
         elseif(( 3 <= strlen( trim( $fbMember ))) &&    // string format duration
-               ( in_array( $fbMember{0}, array( 'P', '+', '-' )))) {
-          if( 'P' != $fbMember{0} )
+               ( in_array( $fbMember[0], array( 'P', '+', '-' )))) {
+          if( 'P' != $fbMember[0])
             $fbmember = substr( $fbMember, 1 );
           $freebusyPairMember = $this->_duration_string( $fbMember );
         }
@@ -3260,8 +3260,8 @@ class calendarComponent {
               }
             }
             elseif(( 3 <= strlen( trim( $rPeriod ))) &&    // string format duration
-                   ( in_array( $rPeriod{0}, array( 'P', '+', '-' )))) {
-              if( 'P' != $rPeriod{0} )
+                   ( in_array( $rPeriod[0], array( 'P', '+', '-' )))) {
+              if( 'P' != $rPeriod[0])
                 $rPeriod = substr( $rPeriod, 1 );
               $inputa[] = $this->_duration_string( $rPeriod );
             }
@@ -3343,7 +3343,7 @@ class calendarComponent {
       if( empty( $input['value'][0]['tz'] ) ||
          ( $input['value'][0]['tz'] == 'Z' ))
         $dummy = TRUE;
-      elseif( in_array($input['value'][0]['tz']{0}, array( '+', '-' )) &&
+      elseif( in_array($input['value'][0]['tz'][0], array( '+', '-' )) &&
                ctype_digit( substr( $input['value'][0]['tz'], 1 )))
         $dummy = TRUE;
       elseif( ctype_digit( $input['value'][0]['tz'] ))
@@ -3353,7 +3353,7 @@ class calendarComponent {
         foreach( $input['value'] as $eix => $inputa ) {
           if( !empty( $input['value'][0]['tz'] )   &&
                ( $input['value'][0]['tz'] != 'Z' ) &&
-            ( !( in_array( $input['value'][0]['tz']{0}, array( '+', '-' )) &&
+            ( !( in_array( $input['value'][0]['tz'][0], array( '+', '-' )) &&
                  ctype_digit( substr( $input['value'][0]['tz'], 1 ))) &&
               !ctype_digit( $input['value'][0]['tz'] ) ) )
             unset( $input['value'][$eix]['tz'] );
@@ -3845,14 +3845,14 @@ class calendarComponent {
       unset( $month );
       $this->_existRem( $params, 'VALUE', 'DATE-TIME' );   // ??
       $this->_existRem( $params, 'VALUE', 'DURATION' );
-      if( in_array( $year{0}, array( 'P', '+', '-' ))) { // duration
-        if( '-' == $year{0} )
+      if( in_array( $year[0], array( 'P', '+', '-' ))) { // duration
+        if( '-' == $year[0])
           $after = FALSE;
-        elseif( '+' == $year{0} )
+        elseif( '+' == $year[0])
           $after = TRUE;
-        elseif( 'P' == $year{0} )
+        elseif( 'P' == $year[0])
           $after = TRUE;
-        if( 'P' != $year{0} )
+        if( 'P' != $year[0])
           $year  = substr( $year, 1 );
         $date    = $this->_duration_string( $year);
       }
@@ -4111,7 +4111,7 @@ class calendarComponent {
     $length = 6;
     $str    = null;
     for( $p = 0; $p < $length; $p++ )
-      $unique .= $base{mt_rand( $start, $end )};
+      $unique .= $base[mt_rand( $start, $end )];
     $this->uid['value']  = $date.'-'.$unique.'@'.$this->getConfig( 'unique_id' );
     $this->uid['params'] = null;
   }
@@ -4749,7 +4749,7 @@ class calendarComponent {
    $output = array();
    $val    = null;
    for( $ix=0; $ix < strlen( $duration ); $ix++ ) {
-     switch( strtoupper( $duration{$ix} )) {
+     switch( strtoupper( $duration[$ix])) {
       case 'W':
         $output['week'] = $val;
         $val            = null;
@@ -4771,10 +4771,10 @@ class calendarComponent {
         $val            = null;
         break;
       default:
-        if( !ctype_digit( $duration{$ix} ))
+        if( !ctype_digit( $duration[$ix]))
           return false; // unknown duration controll character  !?!?
         else
-          $val .= $duration{$ix};
+          $val .= $duration[$ix];
      }
    }
    return $this->_duration_array( $output );
@@ -5475,7 +5475,7 @@ class calendarComponent {
       $input['value']['tz'] = (string) $input['value']['tz'];
     if( !empty( $input['value']['tz'] )   &&
          ( $input['value']['tz'] != 'Z' ) &&
-      ( !( in_array($input['value']['tz']{0}, array( '+', '-' )) &&
+      ( !( in_array($input['value']['tz'][0], array( '+', '-' )) &&
            ctype_digit( substr( $input['value']['tz'], 1 ))) &&
         !ctype_digit( $input['value']['tz'] ) ) ) {
       $input['params']['TZID'] = $input['value']['tz'];
@@ -6517,10 +6517,10 @@ class calendarComponent {
             /* get propname, (problem with x-properties, otherwise in previous loop) */
       $cix = $propname = null;
       for( $cix=0; $cix < strlen( $line ); $cix++ ) {
-        if( in_array( $line{$cix}, array( ':', ';' )))
+        if( in_array( $line[$cix], array( ':', ';' )))
           break;
         else {
-          $propname .= $line{$cix};
+          $propname .= $line[$cix];
         }
       }
       if(( 'x-' == substr( $propname, 0, 2 )) || ( 'X-' == substr( $propname, 0, 2 ))) {
@@ -6534,7 +6534,7 @@ class calendarComponent {
       $attrix = -1;
       $strlen = strlen( $line );
       for( $cix=0; $cix < $strlen; $cix++ ) {
-        if((       ':'   == $line{$cix} )             &&
+        if((       ':'   == $line[$cix])             &&
                  ( '://' != substr( $line, $cix, 3 )) &&
            ( 'mailto:'   != strtolower( substr( $line, $cix - 6, 7 )))) {
           $attrEnd = TRUE;
@@ -6552,10 +6552,10 @@ class calendarComponent {
             break;
           }
         }
-        if( ';' == $line{$cix} )
+        if( ';' == $line[$cix])
           $attr[++$attrix] = null;
         else
-          $attr[$attrix] .= $line{$cix};
+          $attr[$attrix] .= $line[$cix];
       }
             /* make attributes in array format */
       $propattr = array();
@@ -6977,7 +6977,7 @@ class calendarComponent {
           $pos = strpos( $string, "\\", $pos );
           if( FALSE === $pos )
             break;
-          if( !in_array( $string{($pos + 1)}, array( 'n', 'N', 'r', ',', ';' ))) {
+          if( !in_array( $string[($pos + 1)], array( 'n', 'N', 'r', ',', ';' ))) {
             $string = substr( $string, 0, $pos )."\\".substr( $string, ( $pos + 1 ));
             $pos += 1;
           }
