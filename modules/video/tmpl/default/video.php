@@ -313,7 +313,7 @@
 ?>
     <div id="<?php echo $video->intid; ?>" class="video" onmouseover="video_popup(this.id)" onmouseout="hovering_video_id = null;">
         <div id="<?php echo $video->intid; ?>_categoryid" class="hidden"><?php echo $video->category; ?></div>
-        <div id="<?php echo $video->intid; ?>_genre" class="hidden"><?php if (count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
+        <div id="<?php echo $video->intid; ?>_genre" class="hidden"><?php if ($video->genres != null && count($video->genres)) foreach ($video->genres as $genre) echo ' '.$genre.' ';?></div>
         <div id="<?php echo $video->intid; ?>_browse" class="hidden"><?php echo $video->browse; ?></div>
         <div id="<?php echo $video->intid; ?>-title" class="title">
             <a href="<?php echo $video->url; ?>"><?php echo html_entities($video->title); ?></a><?php

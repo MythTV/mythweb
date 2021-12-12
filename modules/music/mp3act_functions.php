@@ -461,7 +461,7 @@ function musicLookup($type, $itemid)
       $sh->finish();
       $artist = $row['artist_name'];
 
-      $letter = (!preg_match('/^[0-9]/', $artist) ? strtoupper($artist{0}) : '#');
+      $letter = (!preg_match('/^[0-9]/', $artist) ? strtoupper($artist[0]) : '#');
 
       $output = '<div class="head">
         <div class="right">
@@ -1391,7 +1391,7 @@ function internalPlaylistAddPlaylistCheck($curPlId, $addPlId, $depth = 0)
     return false;
 
   $songs = explode(',', $row['playlist_songs']);
-  $playlists = array_filter($songs, create_function('$n','return ($n < 0);'));
+  $playlists = array_filter($songs, function ($n) { return ($n < 0); });
 
   foreach ($playlists as $playlist_id)
   {
