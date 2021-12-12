@@ -728,7 +728,7 @@ class Program extends MythBase {
  *
  * @return array sorted list of category fields from the program table
  **/
-    public function categories() {
+    public static function categories() {
         static $cache = array();
         if (empty($cache)) {
             global $db;
