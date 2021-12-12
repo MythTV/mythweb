@@ -201,7 +201,7 @@ var SortableTable = Class.create({
         this.doHeaderArrows();
     // Fix any zebra striping
         this.fixZebraStripes();
-    // Remove the current index fromt he previous sorts and make sure it's uniq
+    // Remove the current index from the previous sorts and make sure it's uniq
         this.cache_previous_sorts = this.cache_previous_sorts.without(this.sort_cell_index).uniq();
     // Add in the sorted col
         this.cache_previous_sorts.push(this.sort_cell_index);
