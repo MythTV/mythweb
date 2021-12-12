@@ -29,7 +29,7 @@
                     break;
                 }
                 elseif (php_uname ('s') == 'Darwin' && file_exists ($path."/ffmpeg.app")) {
-                    $ffmpeg = $path."/ffmpeg".app;
+                    $ffmpeg = $path."/ffmpeg.app";
                     break;
                 }
             }
