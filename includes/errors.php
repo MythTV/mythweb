@@ -39,7 +39,14 @@
     define('E_ASSERT_ERROR', 4096);
 
 // set the error reporting level for this script
-    error_reporting(FATAL | ERROR | WARNING | E_ERROR | E_WARNING | E_PARSE | E_COMPILE_ERROR);
+
+    // PHP 8.0 has made some referencing issues more noisy
+    // MythWeb is littered with these issues so suppress them
+    // MythWeb is considered legacy so fixing them is unwarranted
+    if (version_compare(phpversion(), '8.0.0', '>='))
+        error_reporting(FATAL | ERROR | WARNING | E_ERROR | E_PARSE | E_COMPILE_ERROR);
+    else
+        error_reporting(FATAL | ERROR | WARNING | E_ERROR | E_WARNING | E_PARSE | E_COMPILE_ERROR);
 
 // Reconfigure the error handler to use our own routine
     set_error_handler('error_handler');
