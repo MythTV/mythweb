@@ -283,7 +283,7 @@ class Schedule extends MythBase {
     // Make sure that recordid is null if it's empty
         if (empty($this->recordid)) {
             $this->recordid = NULL;
-            $this->findid   = Math.floor(date('U', $this->starttime)/60/60/24) + 719528;
+            $this->findid   = floor(date('U', $this->starttime)/60/60/24) + 719528;
         // Only auto-default these properties if we're not dealing with a
         // search-based recording rule, otherwise take the values we
         // received from the custom schedule input form
