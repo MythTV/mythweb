@@ -50,9 +50,9 @@ EOF;
     <link rel="icon"          href="<?php echo skin_url ?>img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo skin_url ?>img/favicon.ico" type="image/x-icon">
 
-    <link rel="apple-touch-icon" href="<?php echo skin_url ?>img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo skin_url ?>img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo skin_url ?>img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" href="<?php echo skin_url ?>img/apple-touch-icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo skin_url ?>img/apple-touch-icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo skin_url ?>img/apple-touch-icons/apple-touch-icon-114x114.png" />
 
     <link type="application/opensearchdescription+xml" rel="search" href="tv/opensearch?type=xml" title="MythTV">
 
