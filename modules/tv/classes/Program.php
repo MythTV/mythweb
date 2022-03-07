@@ -195,12 +195,14 @@ class Program extends MythBase {
         $this->dolby                        = $this->audioproperties & 0x08;
         $this->audiohardhear                = $this->audioproperties & 0x10;
         $this->audiovisimpair               = $this->audioproperties & 0x20;
-        $this->hdtv                         = $this->videoproperties & 0x01;
-        $this->widescreen                   = $this->videoproperties & 0x02;
-        $this->avc                          = $this->videoproperties & 0x04;
-        $this->hd_ready                     = $this->videoproperties & 0x08;
-        $this->fullhd                       = $this->videoproperties & 0x10;
-        $this->damaged                      = $this->videoproperties & 0x20;
+
+        $this->widescreen                   = $this->videoproperties & 0x0001;
+        $this->hdtv                         = $this->videoproperties & 0x0002;
+        $this->avc                          = $this->videoproperties & 0x0008;
+        $this->hd_ready                     = $this->videoproperties & 0x0020;
+        $this->fullhd                       = $this->videoproperties & 0x0040;
+        $this->damaged                      = $this->videoproperties & 0x0400;
+
         $this->closecaptioned               = $this->subtitletype    & 0x01;
         $this->has_subtitles                = $this->subtitletype    & 0x02;
         $this->subtitled                    = $this->subtitletype    & 0x04;
