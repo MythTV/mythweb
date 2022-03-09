@@ -73,7 +73,7 @@
     function sess_write($id, $data) {
         global $db;
         if (empty($db))
-            return;
+            return false;
         if (!empty($_SERVER['REMOTE_USER']))
             $id = 'user:'.$_SERVER['REMOTE_USER'];
         $db->query('REPLACE INTO mythweb_sessions (id, modified, data) VALUES (?,CURRENT_TIMESTAMP,?)',
