@@ -1133,7 +1133,15 @@ function internalUpdatePlaylist($songs, $count, $length)
     $plId = $db->insert_id();
     if ($plId)
     {
-      setcookie('mp3act_playlist_id', $plId, time()+MYTH_PLAYLIST_SAVE_TIME);
+      if (PHP_VERSION_ID < 70300) {
+        setcookie('mp3act_playlist_id', $plId, time()+MYTH_PLAYLIST_SAVE_TIME, '/; SameSite=Strict');
+      } else {
+        setcookie('mp3act_playlist_id', $plId, [
+          'expires' => time()+MYTH_PLAYLIST_SAVE_TIME,
+          'path' => '/',
+          'samesite' => 'Strict'
+        ]);
+      }
       return $plId;
     }
   }
@@ -1272,7 +1280,15 @@ function clearPlaylist()
   $pl = internalGetPlaylist();
 
   // Trash the cookie (empties the playlist)
-  setcookie('mp3act_playlist_id', false, time()-3600);
+  if (PHP_VERSION_ID < 70300) {
+    setcookie('mp3act_playlist_id', false, time()-3600, '/; SameSite=Strict');
+  } else {
+    setcookie('mp3act_playlist_id', false, [
+      'expires' => time()-3600,
+      'path' => '/',
+      'samesite' => 'Strict'
+    ]);
+  }
 
   if (!empty($pl['playlist_name'])
       && MYTH_WEB_PLAYLIST_NAME == $pl['playlist_name'])
@@ -1291,7 +1307,15 @@ function deletePlaylist($id)
   if ($id == $_COOKIE['mp3act_playlist_id'])
   {
     $rv = 1;
-    setcookie('mp3act_playlist_id', false, time()-3600);
+    if (PHP_VERSION_ID < 70300) {
+      setcookie('mp3act_playlist_id', false, time()-3600, '/; SameSite=Strict');
+    } else {
+      setcookie('mp3act_playlist_id', false, [
+        'expires' => time()-3600,
+        'path' => '/',
+        'samesite' => 'Strict'
+      ]);
+    }
   }
 
   $query = 'DELETE FROM music_playlists '.
@@ -1416,7 +1440,15 @@ function playlist_add($type, $itemid)
   if ('loadplaylist' == $type)
   {
     clearPlaylist();
-    setcookie('mp3act_playlist_id', $itemid, time()+MYTH_PLAYLIST_SAVE_TIME);
+    if (PHP_VERSION_ID < 70300) {
+      setcookie('mp3act_playlist_id', $itemid, time()+MYTH_PLAYLIST_SAVE_TIME, '/; SameSite=Strict');
+    } else {
+      setcookie('mp3act_playlist_id', $itemid, [
+        'expires' => time()+MYTH_PLAYLIST_SAVE_TIME,
+        'path' => '/',
+        'samesite' => 'Strict'
+      ]);
+    }
     $output[0] = 1;
     return $output;
   }
