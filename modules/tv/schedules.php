@@ -47,6 +47,10 @@
 // Remove the reference. This prevents duplicate entries showing up in the list
     unset($schedule);
 
+// Force the default sort preferences
+    if (!is_array($_SESSION['schedules_sortby']) || !count($_SESSION['schedules_sortby']))
+        $_SESSION['schedules_sortby'] = array(array('field' => 'title', 'reverse' => false));
+
 // Sort the recordings
     if (count($the_schedules))
         sort_programs($the_schedules, 'schedules_sortby');
