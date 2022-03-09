@@ -106,8 +106,8 @@
         new Ajax.Request('<?php echo root_url ?>tv/lookup_metadata',
                          {
                             parameters: {
-                                              'title'        : "<?php echo $schedule->title ?>",
-                                              'subtitle'     : "<?php echo $schedule->subtitle ?>",
+                                              'title'        : "<?php echo preg_replace('/[\n\r]/', '\\n', $schedule->title) ?>",
+                                              'subtitle'     : "<?php echo preg_replace('/[\n\r]/', '\\n', $schedule->subtitle) ?>",
                                               'inetref'      : "<?php echo ($program ? $program->inetref : $schedule->inetref) ?>",
                                               'season'       : "<?php echo ($program ? $program->season : $schedule->season) ?>",
                                               'episode'      : "<?php echo ($program ? $program->episode : $schedule->episode) ?>",
