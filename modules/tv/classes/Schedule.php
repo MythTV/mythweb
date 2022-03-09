@@ -112,6 +112,15 @@ class Schedule extends MythBase {
                     case 'airdate':
                         $orderby .= 'starttime';
                         break;
+                    case 'callsign_with_type':
+                        $orderby .= 'CASE WHEN (type = '.rectype_always.' OR type = '.rectype_findone.') AND !(filter & (1 << 10)) THEN "" ELSE callsign END';
+                        break;
+                    case 'channum_with_type':
+                        $orderby .= 'CASE WHEN (type = '.rectype_always.' OR type = '.rectype_findone.') AND !(filter & (1 << 10)) THEN 0 ELSE channum END';
+                        break;
+                    case 'last_record':
+                        $orderby .= 'record.last_record';
+                        break;
                     case 'recpriority':
                         $orderby .= 'record.recpriority';
                         break;
