@@ -345,7 +345,7 @@
                 <dt><?php echo t('Transcoder') ?>:</dt>
                 <dd><?php transcoder_select($schedule->transcoder) ?></dd>
                 <dt><?php echo t('Recording Group') ?>:</dt>
-                <dd><?php recgroup_select($schedule->recgroup) ?></dd>
+                <dd><?php recgroup_select($schedule) ?></dd>
                 <dt><?php echo t('Storage Group') ?>:</dt>
                 <dd><?php storagegroup_select($schedule->storagegroup) ?></dd>
                 <dt><?php echo t('Recording Priority') ?>:</dt>
