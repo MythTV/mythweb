@@ -49,6 +49,9 @@
         $prev_group = '';
         $cur_group  = '';
         foreach ($the_schedules as $schedule) {
+        // Ignore templates until full support can be added
+            if ($schedule->type == rectype_template)
+                continue;
         // Reset the command variable to a default URL
             $urlstr = 'recordid='.$schedule->recordid;
 
