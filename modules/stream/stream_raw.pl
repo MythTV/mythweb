@@ -120,7 +120,7 @@
     if ($ENV{'HTTP_RANGE'}) {
     # Figure out the size of the requested chunk
         ($start, $end) = $ENV{'HTTP_RANGE'} =~ /bytes\W+(\d*)-(\d*)\W*$/;
-        if ($end < 1 || $end > $size) {
+        if ($end eq '' || $end < 1 || $end > $size) {
             $end = $size;
         }
         $size = $end - $start+1;
