@@ -332,7 +332,7 @@
 // Template finder helper
 	function get_template_file($module, $file) {
 		if (defined('tmpl'))
-                        $tmpl = tmpl;
+			$tmpl = tmpl;
 		else
 			$tmpl = 'default';
 
