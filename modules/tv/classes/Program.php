@@ -567,7 +567,7 @@ class Program extends MythBase {
     // No cached value -- load it
         if (!isset($this->credits[$role][$add_search_links])) {
         // Get the credits for the requested role
-            $result = $db->query('SELECT UNIQUE(people.name)
+            $result = $db->query('SELECT DISTINCT people.name
                                      FROM credits, people
                                     WHERE credits.person    = people.person
                                       AND credits.role      = ?
