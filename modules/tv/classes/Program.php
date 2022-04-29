@@ -509,6 +509,12 @@ class Program extends MythBase {
                    ."\t<dd>".html_entities($this->airdate)
                             ."</dd>\n";
         }
+    // Episode Number
+        if (!empty($this->syndicatedepisodenumber)) {
+            $str .= "\t<dt>".t('Episode Number').":</dt>\n"
+                   ."\t<dd>".html_entities($this->syndicatedepisodenumber)
+                            ."</dd>\n";
+        }
     // Category
         if (preg_match('/\\S/', $this->category)) {
             $str .= "\t<dt>".t('Category').":</dt>\n"
