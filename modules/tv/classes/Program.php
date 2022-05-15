@@ -39,6 +39,7 @@ class Program extends MythBase {
     public $subtitled          = 0;
     public $deaf_signed        = 0;
     public $recordedid         = 0;
+    public $bookmarkupdate     = '0000-00-00 00:00:00';  // zero date is default in recorded table, 1900-01-01 00:00:00 is default for QDateTime. Which to use?
 
 // The rest of these variables (which really need to get organized) are
 // calculated or queried separately from the db.
@@ -134,6 +135,8 @@ class Program extends MythBase {
             $this->parttotal       = $data[47];
             $this->category_type   = $data[48];
             $this->recordedid      = $data[49];
+            //$this->inputname       = $data[50];       # seems to get set further down...
+            $this->bookmarkupdate  = $data[51];         # assuming this index *should* match that supplied/commented in backend_row()
         // Is this a previously-recorded program?
             if (!empty($this->filename)) {
                 $this->url = video_url($this); // get download info
@@ -182,6 +185,7 @@ class Program extends MythBase {
             $this->title_pronounce          = $data['title_pronounce'];
             $this->recstatus                = $data['recstatus'];
             $this->recordedid               = $data['recordedid'];
+            $this->bookmarkupdate           = $data['bookmarkupdate'];
 
         // These db fields should really get renamed...
             $this->audioproperties          = $data['stereo'];
@@ -358,7 +362,7 @@ class Program extends MythBase {
     }
 
 /**
- * Generate a mythproto-compatible row of data for this show.
+ * Generate a mythproto-compatible row of data for this show.  Info about this data structure from MythTV: libs/libmyth/programinfo.cpp
  **/
     public function backend_row() {
         return implode(MythBackend::$backend_separator,
@@ -416,7 +420,10 @@ class Program extends MythBase {
                              $this->parttotal      , // 46 parttotal
                              $this->category_type  , // 48 category type
                              $this->recordedid     , // 49 recordedid
+                             $this->inputname      , // 50 inputname
+                             $this->bookmarkupdate , // 51 bookmarkupdate
                             )
+                            // should be of *length* MythBackend::$program_line_number from MythTV php bindings, see notes there
                       );
     }
 
