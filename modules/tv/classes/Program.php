@@ -765,7 +765,7 @@ class Program extends MythBase {
     public function stopRecording() {
         if ($this->recstatus != 'Recording')
             return false;
-        MythBackend::find()->sendCommand(array('STOP_RECORDING', $prog->backend_row(), '0'));
+        MythBackend::find()->sendCommand(array('STOP_RECORDING', $this->backend_row(), '0'));
         return true;
     }
 
