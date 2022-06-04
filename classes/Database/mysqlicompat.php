@@ -58,6 +58,10 @@ class Database_mysqlicompat extends Database {
                     dl('mysql.so');
             }
         }
+
+        // Silence exceptions in PHP 8.1.0+
+        mysqli_report(MYSQLI_REPORT_OFF);
+
     // Connect to the database
         $this->dbh = @mysqli_connect($server, $login, $password, NULL, $port)
             or $this->error("Can't connect to the database server.");
