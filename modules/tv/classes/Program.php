@@ -184,29 +184,30 @@ class Program extends MythBase {
             $this->recordedid               = $data['recordedid'];
 
         // These db fields should really get renamed...
-            $this->audioproperties          = $data['stereo'];
-            $this->videoproperties          = $data['hdtv'];
-            $this->subtitletype             = $data['closecaptioned'];
+            $this->audioproperties          = $data['audioprop'];
+            $this->videoproperties          = $data['videoprop'];
+            $this->subtitletype             = $data['subtitletypes'];
         }
     // Assign shortcut names to the new audio/video/subtitle property flags
-        $this->stereo                       = $this->audioproperties & 0x01;
-        $this->mono                         = $this->audioproperties & 0x02;
-        $this->surround                     = $this->audioproperties & 0x04;
-        $this->dolby                        = $this->audioproperties & 0x08;
-        $this->audiohardhear                = $this->audioproperties & 0x10;
-        $this->audiovisimpair               = $this->audioproperties & 0x20;
+        $this->stereo                       = preg_match('/STEREO/', $this->audioproperties);
+        $this->mono                         = preg_match('/MONO/', $this->audioproperties);
+        $this->surround                     = preg_match('/SURROUND/', $this->audioproperties);
+        $this->dolby                        = preg_match('/DOLBY/', $this->audioproperties);
+        $this->audiohardhear                = preg_match('/HARDHEAR/', $this->audioproperties);
+        $this->audiovisimpair               = preg_match('/VISUALIMPAIR/', $this->audioproperties);
 
-        $this->widescreen                   = $this->videoproperties & 0x0001;
-        $this->hdtv                         = $this->videoproperties & 0x0002;
-        $this->avc                          = $this->videoproperties & 0x0008;
-        $this->hd_ready                     = $this->videoproperties & 0x0020;
-        $this->fullhd                       = $this->videoproperties & 0x0040;
-        $this->damaged                      = $this->videoproperties & 0x0400;
+        $this->widescreen                   = preg_match('/WIDESCREEN/', $this->videoproperties);
+        $this->hdtv                         = preg_match('/HDTV/', $this->videoproperties);
+        $this->avc                          = preg_match('/AVC/', $this->videoproperties);
+        $this->hd_ready                     = preg_match('/720/', $this->videoproperties);
+        $this->fullhd                       = preg_match('/1080/', $this->videoproperties);
+        $this->damaged                      = preg_match('/DAMAGED/', $this->videoproperties);
 
-        $this->closecaptioned               = $this->subtitletype    & 0x01;
-        $this->has_subtitles                = $this->subtitletype    & 0x02;
-        $this->subtitled                    = $this->subtitletype    & 0x04;
-        $this->deaf_signed                  = $this->subtitletype    & 0x08;
+        $this->closecaptioned               = preg_match('/HARDHEAR/', $this->subtitletype);
+        $this->has_subtitles                = preg_match('/NORMAL/', $this->subtitletype);
+        $this->subtitled                    = preg_match('/ONSCREEN/', $this->subtitletype);
+        $this->deaf_signed                  = preg_match('/SIGNED/', $this->subtitletype);
+
     // Generate the star string, since mysql has issues with REPEAT() and
     // decimals, and the backend doesn't do it for us, anyway.
         $this->starstring = @str_repeat(star_character, intVal($this->stars * max_stars));
